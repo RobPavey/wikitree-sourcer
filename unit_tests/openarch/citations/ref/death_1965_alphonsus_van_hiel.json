@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"other:Akte van lijkvinding\"<br/>\nZeeuws Archief, Collection: Vogelwaarde overlijdensakten burgerlijke stand, Registration number: VOG-O-1965<br/>\n[https://www.openarch.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B OpenArch Record] (accessed 6 May 2021)<br/>\n[http://www.zeeuwengezocht.nl/nl/zoeken?mivast=1539&mizig=862&miadt=239&miaet=54&micode=25.VOG-O-1965&minr=17251196&miview=ldt Zeeuws Archief Record]\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Alphonsus was in a record on 3 March 1965 in Vogelwaarde, Nederland.<ref>\n'''Unclassified''':\n\"other:Akte van lijkvinding\"<br/>\nZeeuws Archief, Collection: Vogelwaarde overlijdensakten burgerlijke stand, Registration number: VOG-O-1965<br/>\n[https://www.openarch.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B OpenArch Record] (accessed 6 May 2021)<br/>\n[http://www.zeeuwengezocht.nl/nl/zoeken?mivast=1539&mizig=862&miadt=239&miaet=54&micode=25.VOG-O-1965&minr=17251196&miview=ldt Zeeuws Archief Record]\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Unclassified''': \"other:Akte van lijkvinding\"<br/>Zeeuws Archief, Collection: Vogelwaarde overlijdensakten burgerlijke stand, Registration number: VOG-O-1965<br/>[https://www.openarch.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B OpenArch Record] (accessed 6 May 2021)<br/>[http://www.zeeuwengezocht.nl/nl/zoeken?mivast=1539&mizig=862&miadt=239&miaet=54&micode=25.VOG-O-1965&minr=17251196&miview=ldt Zeeuws Archief Record]",
+    "type": "source"
+  }
+}

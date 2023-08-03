@@ -1,27 +1,28 @@
 {
-  "sourceOfData": "wiewaswie",
+  "sourceOfData": "openarch",
   "sourceType": "record",
   "recordType": "Marriage",
   "name": {
-    "name": "Jan Peter Janssen NN"
+    "forenames": "Jan",
+    "lastName": "NN"
   },
-  "personGender": "male",
   "eventDate": {
     "dateString": "21 Jun 1676"
   },
   "eventPlace": {
-    "placeString": "Oosterhout, Noord-Brabant, Nederland"
+    "placeString": "Oosterhout, Nederland"
   },
   "spouses": [
     {
       "name": {
-        "name": "Nelleken Janssen"
+        "forenames": "Nelleken",
+        "lastName": "Janssen"
       },
       "marriageDate": {
         "dateString": "21 Jun 1676"
       },
       "marriagePlace": {
-        "placeString": "Oosterhout, Noord-Brabant, Nederland"
+        "placeString": "Oosterhout, Nederland"
       },
       "personGender": "female"
     }

@@ -26,24 +26,28 @@ async function doFetch() {
   //console.log('doFetch, document.location is: ' + document.location);
 
   let url = document.location.href;
-  //console.log("doFetch, fetchUrl is: " + fetchUrl);
+  console.log("doFetch, url is: " + url);
 
   let archive = "";
   let identifier = "";
 
   // Example record URL
   // https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
+  // https://www.openarch.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B
 
-  if (/^https\:\/\/www\.openarch\.nl\/\w+\:[a-z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
-    archive = url.replace(/^https\:\/\/www\.openarch\.nl\/(\w+)\:[a-z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
+  if (/^https\:\/\/www\.openarch\.nl\/\w+\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
+    archive = url.replace(/^https\:\/\/www\.openarch\.nl\/(\w+)\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
     if (!archive || archive == url) {
       archive = "";
     }
-    identifier = url.replace(/^https\:\/\/www\.openarch\.nl\/\w+\:([a-z0-9\-]+)(?:\/\w\w)?\/?$/, "$1");
+    identifier = url.replace(/^https\:\/\/www\.openarch\.nl\/\w+\:([a-zA-Z0-9\-]+)(?:\/\w\w)?\/?$/, "$1");
     if (!identifier || identifier == url) {
       identifier = "";
     }
   }
+
+  console.log("doFetch, archive is: " + archive);
+  console.log("doFetch, identifier is: " + identifier);
 
   if (!archive || !identifier) {
     return { success: false, errorCondition: "NotRecordURL" };
@@ -52,7 +56,7 @@ async function doFetch() {
   // e.g. https://api.openarch.nl/1.1/records/show.json?archive=frl&identifier=ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
   let fetchUrl = "https://api.openarch.nl/1.1/records/show.json?archive=" + archive + "&identifier=" + identifier;
 
-  //console.log('doFetch, fetchUrl is: ' + fetchUrl);
+  console.log("doFetch, fetchUrl is: " + fetchUrl);
 
   let fetchOptionsHeaders = {
     accept: "application/x-gedcomx-v1+json, application/json",
@@ -71,7 +75,7 @@ async function doFetch() {
   try {
     let response = await fetch(fetchUrl, fetchOptions);
 
-    //console.log('doFetch, response.status is: ' + response.status);
+    console.log("doFetch, response.status is: " + response.status);
 
     if (response.status !== 200) {
       console.log("Looks like there was a problem. Status Code: " + response.status);
@@ -85,8 +89,8 @@ async function doFetch() {
 
     let jsonData = await response.text();
 
-    //console.log("doFetch: response text is:");
-    //console.log(jsonData);
+    console.log("doFetch: response text is:");
+    console.log(jsonData);
 
     if (!jsonData || jsonData[0] != `{`) {
       console.log("The response text does not look like JSON");

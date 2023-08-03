@@ -1,0 +1,132 @@
+{
+  "url": "https://www.openarch.nl/bhi:b576f38c-4cb2-490b-0029-d64ae7477873",
+  "dataObj": {
+    "A2A": {
+      "@Version": "1.7",
+      "a2a:Person": [
+        {
+          "@pid": "Person:1d977066-464e-11e3-a747-d206bceb4d38",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Joost",
+            "a2a:PersonNameLastName": "Janssen"
+          },
+          "a2a:Gender": "Onbekend"
+        },
+        {
+          "@pid": "Person:1d96d426-464e-11e3-a747-d206bceb4d38",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Lysken",
+            "a2a:PersonNameLastName": "Peters"
+          },
+          "a2a:Gender": "Onbekend"
+        },
+        {
+          "@pid": "Person:1d969b5a-464e-11e3-a747-d206bceb4d38",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Jan",
+            "a2a:PersonNamePatronym": "Peter Janssen",
+            "a2a:PersonNameLastName": "N.N."
+          },
+          "a2a:Gender": "Onbekend",
+          "a2a:Residence": {
+            "a2a:Place": "Dorst"
+          },
+          "a2a:PersonRemark": {
+            "@Key": "diversen",
+            "a2a:Value": "weduwnaar"
+          }
+        },
+        {
+          "@pid": "Person:1d972b42-464e-11e3-a747-d206bceb4d38",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Nelleken",
+            "a2a:PersonNameLastName": "Janssen"
+          },
+          "a2a:Gender": "Onbekend",
+          "a2a:Residence": {
+            "a2a:Place": "Dorst"
+          },
+          "a2a:PersonRemark": {
+            "@Key": "diversen",
+            "a2a:Value": "weduwe"
+          }
+        }
+      ],
+      "a2a:Event": {
+        "@eid": "Event1",
+        "a2a:EventType": "Trouwen",
+        "a2a:EventDate": {
+          "a2a:Year": "1676",
+          "a2a:Month": "6",
+          "a2a:Day": "21"
+        },
+        "a2a:EventPlace": {
+          "a2a:Place": "Oosterhout"
+        },
+        "a2a:EventReligion": {
+          "a2a:ReligionLiteral": "Nederduits Gereformeerd"
+        }
+      },
+      "a2a:RelationEP": [
+        {
+          "a2a:PersonKeyRef": "Person:1d977066-464e-11e3-a747-d206bceb4d38",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "other:Eerdere man"
+        },
+        {
+          "a2a:PersonKeyRef": "Person:1d96d426-464e-11e3-a747-d206bceb4d38",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "other:Eerdere vrouw"
+        },
+        {
+          "a2a:PersonKeyRef": "Person:1d969b5a-464e-11e3-a747-d206bceb4d38",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Bruidegom"
+        },
+        {
+          "a2a:PersonKeyRef": "Person:1d972b42-464e-11e3-a747-d206bceb4d38",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Bruid"
+        }
+      ],
+      "a2a:Source": {
+        "a2a:SourcePlace": {
+          "a2a:Place": "Oosterhout"
+        },
+        "a2a:SourceIndexDate": {
+          "a2a:From": "1676-06-21",
+          "a2a:To": "1676-06-21"
+        },
+        "a2a:SourceDate": {
+          "a2a:Year": "1676",
+          "a2a:Month": "6",
+          "a2a:Day": "21"
+        },
+        "a2a:SourceType": "DTB Trouwen",
+        "a2a:SourceReference": {
+          "a2a:Place": "Brabant",
+          "a2a:InstitutionName": "Brabants Historisch Informatie Centrum",
+          "a2a:Archive": "8089",
+          "a2a:Collection": "Archiefnaam: Regionaal Archief Tilburg, Bron: boek, Deel: 28, Periode: 1676-1687",
+          "a2a:Book": "Nederduits Gereformeerd trouwboek 1676-1687",
+          "a2a:Folio": "4",
+          "a2a:RegistryNumber": "28"
+        },
+        "a2a:SourceLastChangeDate": "2016-03-01",
+        "a2a:SourceDigitalOriginal": "https://www.bhic.nl/memorix/genealogy/search/deeds/b576f38c-4cb2-490b-0029-d64ae7477873",
+        "a2a:RecordGUID": "{b576f38c-4cb2-490b-0029-d64ae7477873}",
+        "a2a:SourceRemark": [
+          {
+            "@Key": "Opmerking",
+            "a2a:Value": "Datum ondertrouw: 30-05-1676"
+          },
+          {
+            "@Key": "Provenance",
+            "a2a:Value": "A2Acollection oai-pmh_20220918_43228_00043228.xml van BHI"
+          }
+        ]
+      }
+    }
+  },
+  "success": true
+}

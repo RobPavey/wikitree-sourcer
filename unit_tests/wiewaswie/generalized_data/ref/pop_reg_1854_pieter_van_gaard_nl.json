@@ -19,5 +19,8 @@
   "birthPlace": {
     "placeString": "Amsterdam"
   },
+  "collectionData": {
+    "id": "Bevolkingsregister"
+  },
   "hasValidData": true
 }

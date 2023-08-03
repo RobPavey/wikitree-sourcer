@@ -28,13 +28,52 @@ import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 import { placeData } from "./openarch_place_data.mjs";
 
+const RelationType = {
+  primary: "primary",
+  father: "father",
+  mother: "mother",
+  bride: "bride",
+  brideFather: "brideFather",
+  brideMother: "brideMother",
+  spouse: "spouse",
+};
+
 const typeData = {
+  default: {
+    relation: {
+      father: ["Vader"],
+      mother: ["Moeder"],
+    },
+  },
   "DTB Dopen": {
     // Baptismal registers
     enDocumentType: "Baptismal Registers",
     recordType: RT.Baptism,
+    relation: {
+      primary: ["Dopeling"],
+    },
+  },
+  "DTB Trouwen": {
+    // Marriage registers
+    enDocumentType: "Marriage Registers",
+    recordType: RT.Marriage,
+    relation: {
+      primary: ["Bruidegom"],
+      bride: ["Bruid"],
+    },
   },
 };
+
+function cleanOccupation(occupation) {
+  if (occupation) {
+    occupation = occupation.trim();
+
+    if (occupation == "Zonder") {
+      occupation = "";
+    }
+  }
+  return occupation;
+}
 
 class OpenarchEdReader extends ExtractedDataReader {
   constructor(ed) {
@@ -57,8 +96,8 @@ class OpenarchEdReader extends ExtractedDataReader {
     let url = ed.url;
     // Example record URL
     // https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
-    if (/^https\:\/\/www\.openarch\.nl\/\w+\:[a-z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
-      let archive = url.replace(/^https\:\/\/www\.openarch\.nl\/(\w+)\:[a-z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
+    if (/^https\:\/\/www\.openarch\.nl\/\w+\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
+      let archive = url.replace(/^https\:\/\/www\.openarch\.nl\/(\w+)\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
       if (archive && archive != url) {
         this.urlArchive = archive;
       }
@@ -76,13 +115,25 @@ class OpenarchEdReader extends ExtractedDataReader {
       let nameObj = new NameObj();
 
       let firstName = a2aName["a2a:PersonNameFirstName"];
+      let lastNamePrefix = a2aName["a2a:PersonNamePrefixLastName"];
       let lastName = a2aName["a2a:PersonNameLastName"];
 
       if (firstName) {
         nameObj.setForenames(firstName);
       }
-      if (lastName) {
-        nameObj.setLastName(lastName);
+      if (lastName || lastNamePrefix) {
+        let finalLastName = lastName;
+        if (lastNamePrefix) {
+          if (finalLastName) {
+            finalLastName = lastNamePrefix + " " + finalLastName;
+          } else {
+            finalLastName = lastNamePrefix;
+          }
+        }
+
+        if (finalLastName) {
+          nameObj.setLastName(finalLastName);
+        }
       }
 
       return nameObj;
@@ -139,6 +190,16 @@ class OpenarchEdReader extends ExtractedDataReader {
     }
   }
 
+  ageFromA2aAge(a2aAge) {
+    if (a2aAge) {
+      let years = a2aAge["a2a:PersonAgeYears"];
+      if (years) {
+        years = years.replace(/ jaar$/, "");
+        return years;
+      }
+    }
+  }
+
   makeParentsFromPersonObjects(father, mother) {
     if (father || mother) {
       let parents = {};
@@ -168,24 +229,36 @@ class OpenarchEdReader extends ExtractedDataReader {
     }
   }
 
-  extractPersonFieldByKey(personId, key) {
-    return "";
+  extractPersonFieldByKey(person, key) {
+    if (person) {
+      return person[key];
+    }
   }
 
-  extractIndexedPersonFieldByKey(personIndex, key) {
-    let personArray = this.a2a["a2a:Person"];
-    if (personArray && personArray.length > personIndex) {
-      let person = personArray[personIndex];
+  extractPrimaryPersonFieldByKey(key) {
+    let person = this.findPrimaryPerson();
+    if (person) {
       return person[key];
     }
   }
 
   findRelationshipByType(relationType) {
-    let relationshipArray = this.a2a["a2a:RelationEP"];
-    for (let relation of relationshipArray) {
-      let type = relation["a2a:RelationType"];
-      if (type == relationType) {
-        return relation;
+    let a2aRelationTypes = undefined;
+    if (this.typeData) {
+      a2aRelationTypes = this.typeData.relation[relationType];
+    }
+    if (!a2aRelationTypes || a2aRelationTypes.length == 0) {
+      a2aRelationTypes = typeData.default.relation[relationType];
+    }
+    if (a2aRelationTypes) {
+      for (let a2aRelationType of a2aRelationTypes) {
+        let relationshipArray = this.a2a["a2a:RelationEP"];
+        for (let relation of relationshipArray) {
+          let type = relation["a2a:RelationType"];
+          if (type == a2aRelationType) {
+            return relation;
+          }
+        }
       }
     }
   }
@@ -196,6 +269,31 @@ class OpenarchEdReader extends ExtractedDataReader {
       let personPid = person["@pid"];
       if (personPid == pid) {
         return person;
+      }
+    }
+  }
+
+  findPersonByRelationType(relationType) {
+    let relation = this.findRelationshipByType(relationType);
+    if (relation) {
+      let pid = relation["a2a:PersonKeyRef"];
+      if (pid) {
+        return this.findPersonById(pid);
+      }
+    }
+  }
+
+  findPrimaryPerson() {
+    let relation = this.findRelationshipByType(RelationType.primary);
+    if (relation) {
+      let pid = relation["a2a:PersonKeyRef"];
+      if (pid) {
+        return this.findPersonById(pid);
+      }
+    } else {
+      let personArray = this.a2a["a2a:Person"];
+      if (personArray && personArray.length > 0) {
+        return personArray[0];
       }
     }
   }
@@ -217,12 +315,12 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let a2aName = this.extractIndexedPersonFieldByKey(0, "a2a:PersonName");
+    let a2aName = this.extractPrimaryPersonFieldByKey("a2a:PersonName");
     return this.makeNameObjFromA2aName(a2aName);
   }
 
   getGender() {
-    let a2aGender = this.extractIndexedPersonFieldByKey(0, "a2a:Gender");
+    let a2aGender = this.extractPrimaryPersonFieldByKey("a2a:Gender");
     if (a2aGender == "Man") {
       return "male";
     } else if (a2aGender == "Vrouw") {
@@ -255,7 +353,7 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    let a2aDate = this.extractIndexedPersonFieldByKey(0, "a2a:BirthDate");
+    let a2aDate = this.extractPrimaryPersonFieldByKey("a2a:BirthDate");
     return this.makeDateObjFromA2aDate(a2aDate);
   }
 
@@ -272,7 +370,8 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
-    return "";
+    let a2aAge = this.extractPrimaryPersonFieldByKey("a2a:Age");
+    return this.ageFromA2aAge(a2aAge);
   }
 
   getAgeAtDeath() {
@@ -292,32 +391,48 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getOccupation() {
+    let profession = this.extractPrimaryPersonFieldByKey("a2a:Profession");
+    return cleanOccupation(profession);
+
     return "";
   }
 
   getSpouseObj(eventDateObj, eventPlaceObj) {
-    return undefined;
+    let bride = this.findPersonByRelationType(RelationType.bride);
+    if (bride) {
+      let brideName = this.extractPersonFieldByKey(bride, "a2a:PersonName");
+      let spouseNameObj = this.makeNameObjFromA2aName(brideName);
+      let a2aAge = this.extractPersonFieldByKey(bride, "a2a:Age");
+      let age = this.ageFromA2aAge(a2aAge);
+      let spouseObj = this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age);
+
+      if (spouseObj) {
+        spouseObj.personGender = "female";
+
+        let father = this.findPersonByRelationType(RelationType.brideFather);
+        let mother = this.findPersonByRelationType(RelationType.brideMother);
+        let brideParents = this.makeParentsFromPersonObjects(father, mother);
+        if (brideParents) {
+          spouseObj.parents = brideParents;
+        }
+      }
+
+      return spouseObj;
+    }
+
+    // for a death or burial or other records it can give the spouse
+    let spouse = this.findPersonByRelationType(RelationType.spouse);
+    if (spouse) {
+      let spouseName = this.extractPersonFieldByKey(spouse, "a2a:PersonName");
+      let spouseNameObj = this.makeNameObjFromA2aName(spouseName);
+      let spouseObj = this.makeSpouseObj(spouseNameObj);
+      return spouseObj;
+    }
   }
 
   getParents() {
-    let father = undefined;
-    let fatherRelation = this.findRelationshipByType("Vader");
-    if (fatherRelation) {
-      let fatherKeyRef = fatherRelation["a2a:PersonKeyRef"];
-      if (fatherKeyRef) {
-        father = this.findPersonById(fatherKeyRef);
-      }
-    }
-
-    let mother = undefined;
-    let motherRelation = this.findRelationshipByType("Moeder");
-    if (motherRelation) {
-      let motherKeyRef = motherRelation["a2a:PersonKeyRef"];
-      if (motherKeyRef) {
-        mother = this.findPersonById(motherKeyRef);
-      }
-    }
-
+    let father = this.findPersonByRelationType(RelationType.father);
+    let mother = this.findPersonByRelationType(RelationType.mother);
     return this.makeParentsFromPersonObjects(father, mother);
   }
 
@@ -326,6 +441,11 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
+    if (this.a2aSourceType) {
+      let collectionData = { id: this.a2aSourceType };
+      return collectionData;
+    }
+
     return undefined;
   }
 

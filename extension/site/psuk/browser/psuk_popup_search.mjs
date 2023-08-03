@@ -22,15 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addSameRecordMenuItem,
-  addBackMenuItem,
-  addMenuItem,
-  beginMainMenu,
-  endMainMenu,
-  doAsyncActionWithCatch,
-  closePopup,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItem, doAsyncActionWithCatch, closePopup } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
   doSearch,

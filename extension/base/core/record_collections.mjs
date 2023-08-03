@@ -1156,6 +1156,22 @@ const RecordCollectionData = [
       geneteka: { id: "marriages" },
     },
   },
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Netherlands
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // Canada Census
+  {
+    wtsId: "dtbDopen",
+    title: "DTB Dopen",
+    country: "Nederland",
+    dates: { year: 1851 },
+    sites: {
+      wiewaswie: { id: "DTB Dopen" },
+      openarch: { id: "DTB Dopen" },
+    },
+  },
 ];
 
 const RC = {

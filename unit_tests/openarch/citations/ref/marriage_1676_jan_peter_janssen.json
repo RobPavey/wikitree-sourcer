@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"DTB Trouwen (Marriage Registers)\"<br/>\nBrabants Historisch Informatie Centrum, Collection: Regionaal Archief Tilburg, Registration number: 28, Book: Nederduits Gereformeerd trouwboek 1676-1687<br/>\n[https://www.openarch.nl/bhi:b576f38c-4cb2-490b-0029-d64ae7477873 OpenArch Record] (accessed 6 May 2021)<br/>\n[https://www.bhic.nl/memorix/genealogy/search/deeds/b576f38c-4cb2-490b-0029-d64ae7477873 Brabants Historisch Informatie Centrum Record]<br/>\nJan NN marriage to Nelleken Janssen on 21 Jun 1676 in Oosterhout, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jan married Nelleken Janssen on 21 June 1676 in Oosterhout, Nederland.<ref>\n'''Marriage''':\n\"DTB Trouwen (Marriage Registers)\"<br/>\nBrabants Historisch Informatie Centrum, Collection: Regionaal Archief Tilburg, Registration number: 28, Book: Nederduits Gereformeerd trouwboek 1676-1687<br/>\n[https://www.openarch.nl/bhi:b576f38c-4cb2-490b-0029-d64ae7477873 OpenArch Record] (accessed 6 May 2021)<br/>\n[https://www.bhic.nl/memorix/genealogy/search/deeds/b576f38c-4cb2-490b-0029-d64ae7477873 Brabants Historisch Informatie Centrum Record]<br/>\nJan NN marriage to Nelleken Janssen on 21 Jun 1676 in Oosterhout, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"DTB Trouwen (Marriage Registers)\"<br/>Brabants Historisch Informatie Centrum, Collection: Regionaal Archief Tilburg, Registration number: 28, Book: Nederduits Gereformeerd trouwboek 1676-1687<br/>[https://www.openarch.nl/bhi:b576f38c-4cb2-490b-0029-d64ae7477873 OpenArch Record] (accessed 6 May 2021)<br/>[https://www.bhic.nl/memorix/genealogy/search/deeds/b576f38c-4cb2-490b-0029-d64ae7477873 Brabants Historisch Informatie Centrum Record]<br/>Jan NN marriage to Nelleken Janssen on 21 Jun 1676 in Oosterhout, Nederland.",
+    "type": "source"
+  }
+}

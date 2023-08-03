@@ -25,7 +25,7 @@ SOFTWARE.
 import {
   addSameRecordMenuItem,
   addBackMenuItem,
-  addMenuItem,
+  addMenuItemWithSubMenu,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
@@ -39,8 +39,8 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const openarchStartYear = 1837;
-const openarchEndYear = 1992;
+const openarchStartYear = 1000;
+const openarchEndYear = 2023;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -62,7 +62,7 @@ function addOpenarchDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addOpenarchDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "England and Wales";
+  const stdCountryName = "Netherlands";
 
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, openarchStartYear, openarchEndYear, [stdCountryName])) {
@@ -97,67 +97,23 @@ function addOpenarchDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItem(menu, "Search Open Archives (NL)...", function (element) {
-    setupOpenarchSearchSubMenu(data, backFunction, filter);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search Open Archives (NL)",
+    function (element) {
+      openarchSearch(data.generalizedData, "");
+    },
+    function () {
+      setupOpenarchSearchSubMenu(data, backFunction, filter);
+    }
+  );
 
   return true;
 }
 
-async function addOpenarchSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "openarch", function (element) {
+function addOpenarchSameRecordMenuItem(menu, data) {
+  addSameRecordMenuItem(menu, data, "openarch", function (element) {
     openarchSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addOpenarchSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      openarchStartYear,
-      openarchEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Open Archives (NL) Births", function (element) {
-    openarchSearch(data.generalizedData, "Births");
-  });
-}
-
-function addOpenarchSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      openarchStartYear,
-      openarchEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Open Archives (NL) Marriages", function (element) {
-    openarchSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addOpenarchSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      openarchStartYear,
-      openarchEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Open Archives (NL) Deaths", function (element) {
-    openarchSearch(data.generalizedData, "Deaths");
   });
 }
 
@@ -170,10 +126,7 @@ async function setupOpenarchSearchSubMenu(data, backFunction, filter) {
 
   addBackMenuItem(menu, backFunction);
 
-  await addOpenarchSameRecordMenuItem(menu, data, filter);
-  addOpenarchSearchBirthsMenuItem(menu, data, filter);
-  addOpenarchSearchMarriagesMenuItem(menu, data, filter);
-  addOpenarchSearchDeathsMenuItem(menu, data, filter);
+  addOpenarchSameRecordMenuItem(menu, data, filter);
 
   endMainMenu(menu);
 }

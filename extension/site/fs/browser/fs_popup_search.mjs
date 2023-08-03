@@ -102,8 +102,8 @@ function addFamilySearchDefaultSearchMenuItem(menu, data, backFunction, filter) 
   return true;
 }
 
-async function addFsSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "fs", function (element) {
+function addFsSameRecordMenuItem(menu, data) {
+  addSameRecordMenuItem(menu, data, "fs", function (element) {
     familySearchSearch(data.generalizedData, "SameCollection");
   });
 }
@@ -137,7 +137,7 @@ async function setupFamilySearchSearchSubMenu(data, backFunction) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
-  await addFsSameRecordMenuItem(menu, data);
+  addFsSameRecordMenuItem(menu, data);
   addFsSearchCollectionsMenuItem(menu, data, backToHereFunction);
   addFsSearchTreeMenuItem(menu, data);
   addFsSearchWithParametersMenuItem(menu, data, backToHereFunction);

@@ -64,5 +64,8 @@
       "birthPlace": "Vlissingen"
     }
   ],
+  "collectionData": {
+    "id": "Bevolkingsregister"
+  },
   "hasValidData": true
 }

@@ -106,8 +106,8 @@ function addFmpDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-async function addFmpSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "fmp", function (element) {
+function addFmpSameRecordMenuItem(menu, data) {
+  addSameRecordMenuItem(menu, data, "fmp", function (element) {
     fmpSearch(data.generalizedData, "SameCollection");
   });
 }
@@ -142,7 +142,7 @@ async function setupFmpSearchSubMenu(data, backFunction) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
-  await addFmpSameRecordMenuItem(menu, data);
+  addFmpSameRecordMenuItem(menu, data);
   addFmpSearchCollectionsMenuItem(menu, data, backToHereFunction);
   addFmpSearchTreeMenuItem(menu, data);
   addFmpSearchWithParametersMenuItem(menu, data, backToHereFunction);

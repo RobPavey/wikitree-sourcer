@@ -106,8 +106,8 @@ function addFreebmdDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-async function addFreebmdSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "freebmd", function (element) {
+function addFreebmdSameRecordMenuItem(menu, data) {
+  addSameRecordMenuItem(menu, data, "freebmd", function (element) {
     freebmdSearch(data.generalizedData, "SameCollection");
   });
 }
@@ -172,7 +172,7 @@ async function setupFreebmdSearchSubMenu(data, backFunction, filter) {
 
   addBackMenuItem(menu, backFunction);
 
-  await addFreebmdSameRecordMenuItem(menu, data, filter);
+  addFreebmdSameRecordMenuItem(menu, data, filter);
   addFreebmdSearchBirthsMenuItem(menu, data, filter);
   addFreebmdSearchMarriagesMenuItem(menu, data, filter);
   addFreebmdSearchDeathsMenuItem(menu, data, filter);

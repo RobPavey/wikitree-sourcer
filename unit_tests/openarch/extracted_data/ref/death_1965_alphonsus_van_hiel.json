@@ -1,0 +1,111 @@
+{
+  "url": "https://www.openarch.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B",
+  "dataObj": {
+    "A2A": {
+      "@xsi:schemaLocation": "http://Mindbus.nl/A2A http://Mindbus.nl/A2A/A2AAllInOne_v.1.7.xsd",
+      "@Version": "1.7",
+      "a2a:Person": [
+        {
+          "@pid": "Person1",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Alphonsus Jacobus Andreas",
+            "a2a:PersonNamePrefixLastName": "van",
+            "a2a:PersonNameLastName": "Hiel"
+          },
+          "a2a:Gender": "Man",
+          "a2a:Age": {
+            "a2a:PersonAgeYears": "70 jaar"
+          },
+          "a2a:BirthPlace": {
+            "a2a:Place": "Ossenisse"
+          },
+          "a2a:Profession": "Zonder"
+        },
+        {
+          "@pid": "Person2",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Emma Louisa",
+            "a2a:PersonNameLastName": "Truijman"
+          }
+        },
+        {
+          "@pid": "Person3",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Petrus Judocus",
+            "a2a:PersonNamePrefixLastName": "van",
+            "a2a:PersonNameLastName": "Hiel"
+          }
+        },
+        {
+          "@pid": "Person4",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Rozalia Petronella",
+            "a2a:PersonNameLastName": "Rosseel"
+          }
+        }
+      ],
+      "a2a:Event": {
+        "@eid": "Event1",
+        "a2a:EventType": "Overlijden",
+        "a2a:EventDate": {
+          "a2a:Year": "1965",
+          "a2a:Month": "3",
+          "a2a:Day": "3"
+        },
+        "a2a:EventPlace": {
+          "a2a:Place": "Vogelwaarde"
+        },
+        "a2a:EventRemark": {
+          "@Key": "Opmerking",
+          "a2a:Value": "Eerder gehuwd gehuwd geweest met Angela Rosalia Truijman. Betreft een in de gemeente Vogelwaarde gevonden lijk d.d. 03-03-1965. Aangifte gedaan door de Officier van Justitie bij de Arr. Rechtb. Middelburg"
+        }
+      },
+      "a2a:RelationEP": [
+        {
+          "a2a:PersonKeyRef": "Person1",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Overledene"
+        },
+        {
+          "a2a:PersonKeyRef": "Person2",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Partner"
+        },
+        {
+          "a2a:PersonKeyRef": "Person3",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Vader"
+        },
+        {
+          "a2a:PersonKeyRef": "Person4",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Moeder"
+        }
+      ],
+      "a2a:Source": {
+        "a2a:SourcePlace": {
+          "a2a:Place": "Vogelwaarde"
+        },
+        "a2a:SourceIndexDate": {
+          "a2a:From": "1965-01-01",
+          "a2a:To": "1965-12-31"
+        },
+        "a2a:SourceDate": {
+          "a2a:Year": "1965"
+        },
+        "a2a:SourceType": "other:Akte van lijkvinding",
+        "a2a:SourceReference": {
+          "a2a:InstitutionName": "Zeeuws Archief",
+          "a2a:Archive": "25",
+          "a2a:Collection": "Vogelwaarde overlijdensakten burgerlijke stand",
+          "a2a:RegistryNumber": "VOG-O-1965",
+          "a2a:DocumentNumber": "3"
+        },
+        "a2a:SourceLastChangeDate": "2016-09-23",
+        "a2a:SourceDigitalOriginal": "http://www.zeeuwengezocht.nl/nl/zoeken?mivast=1539&mizig=862&miadt=239&miaet=54&micode=25.VOG-O-1965&minr=17251196&miview=ldt",
+        "a2a:RecordGUID": "{9035582F-0BCC-4640-8BC2-95DA8D148A9B}"
+      }
+    }
+  },
+  "success": true
+}

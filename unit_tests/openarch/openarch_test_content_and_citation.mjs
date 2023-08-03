@@ -35,6 +35,14 @@ const regressionData = [
     caseName: "baptism_1789_gerryt_goudemond",
     url: "https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf",
   },
+  {
+    caseName: "death_1965_alphonsus_van_hiel",
+    url: "https://www.openarch.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B",
+  },
+  {
+    caseName: "marriage_1676_jan_peter_janssen",
+    url: "https://www.openarch.nl/bhi:b576f38c-4cb2-490b-0029-d64ae7477873",
+  },
 ];
 
 async function runTests(testManager) {

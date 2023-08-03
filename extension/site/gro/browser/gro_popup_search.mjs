@@ -192,8 +192,8 @@ function addGroDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-async function addGroSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "gro", function (element) {
+function addGroSameRecordMenuItem(menu, data) {
+  addSameRecordMenuItem(menu, data, "gro", function (element) {
     groSearch(data.generalizedData, "SameCollection");
   });
 }
@@ -207,7 +207,7 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
 
   addBackMenuItem(menu, backFunction);
 
-  await addGroSameRecordMenuItem(menu, data, filter);
+  addGroSameRecordMenuItem(menu, data, filter);
   addGroSearchBirthsMenuItem(menu, data, filter);
   addGroSearchDeathsMenuItem(menu, data, filter);
 

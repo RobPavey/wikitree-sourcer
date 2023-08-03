@@ -844,6 +844,10 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
+    if (this.documentType) {
+      let collectionData = { id: this.documentType };
+      return collectionData;
+    }
     return undefined;
   }
 

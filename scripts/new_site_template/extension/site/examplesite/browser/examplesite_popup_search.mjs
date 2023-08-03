@@ -104,8 +104,8 @@ function addExamplesiteDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-async function addExamplesiteSameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "examplesite", function (element) {
+function addExamplesiteSameRecordMenuItem(menu, data) {
+  addSameRecordMenuItem(menu, data, "examplesite", function (element) {
     examplesiteSearch(data.generalizedData, "SameCollection");
   });
 }
@@ -170,7 +170,7 @@ async function setupExamplesiteSearchSubMenu(data, backFunction, filter) {
 
   addBackMenuItem(menu, backFunction);
 
-  await addExamplesiteSameRecordMenuItem(menu, data, filter);
+  addExamplesiteSameRecordMenuItem(menu, data, filter);
   addExamplesiteSearchBirthsMenuItem(menu, data, filter);
   addExamplesiteSearchMarriagesMenuItem(menu, data, filter);
   addExamplesiteSearchDeathsMenuItem(menu, data, filter);

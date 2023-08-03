@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "forenames": "Alphonsus Jacobus Andreas",
+    "lastName": "van Hiel"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "3 Mar 1965"
+  },
+  "eventPlace": {
+    "placeString": "Vogelwaarde, Nederland"
+  },
+  "ageAtEvent": "70",
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Petrus Judocus",
+        "lastName": "van Hiel"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Rozalia Petronella",
+        "lastName": "Rosseel"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "other:Akte van lijkvinding"
+  },
+  "hasValidData": true
+}

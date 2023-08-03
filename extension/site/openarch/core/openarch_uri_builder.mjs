@@ -26,7 +26,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class OpenarchUriBuilder {
   constructor() {
-    this.uri = "https://www.openarch.org.uk/cgi/search.pl";
+    this.uri = "https://www.openarch.nl/search.php";
     this.searchTermAdded = false;
   }
 
@@ -57,44 +57,20 @@ class OpenarchUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addSourceType(string) {
+    this.addSearchParameter("sourcetype", string);
   }
 
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
+  addName(string) {
+    this.addSearchParameter("name", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
+  addArchiveCode(string) {
+    this.addSearchParameter("archive_code", string);
   }
 
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
-
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addEventPlace(string) {
+    this.addSearchParameter("eventplace", string);
   }
 
   getUri() {

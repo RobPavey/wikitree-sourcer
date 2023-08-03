@@ -107,8 +107,8 @@ function addAncestryDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-async function addAncestrySameRecordMenuItem(menu, data) {
-  await addSameRecordMenuItem(menu, data, "ancestry", function (element) {
+function addAncestrySameRecordMenuItem(menu, data) {
+  addSameRecordMenuItem(menu, data, "ancestry", function (element) {
     ancestrySearch(data.generalizedData, "SameCollection");
   });
 }
@@ -143,7 +143,7 @@ async function setupAncestrySearchSubMenu(data, backFunction) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
-  await addAncestrySameRecordMenuItem(menu, data);
+  addAncestrySameRecordMenuItem(menu, data);
   addAncestrySearchCollectionsMenuItem(menu, data, backToHereFunction);
   addAncestryTreesMenuItem(menu, data);
   addAncestrySearchWithParametersMenuItem(menu, data, backToHereFunction);

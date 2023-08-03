@@ -26,5 +26,8 @@
       "personGender": "female"
     }
   ],
+  "collectionData": {
+    "id": "DTB Trouwen"
+  },
   "hasValidData": true
 }
