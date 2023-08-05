@@ -18,5 +18,16 @@
       "vm.GetSearchResultsParameters.PeriodeTot": 1981
     },
     "selectData": {}
+  },
+  "undefined": {
+    "fieldData": {
+      "vm.GetSearchResultsParameters.PersonA.Voornaam": "George Frans",
+      "vm.GetSearchResultsParameters.PersonA.Achternaam": "Beek",
+      "vm.GetSearchResultsParameters.PersonA.Tussenvoegsel": "van der",
+      "vm.GetSearchResultsParameters.PeriodeVan": 1861,
+      "vm.GetSearchResultsParameters.PeriodeTot": 1981,
+      "vm.GetSearchResultsParameters.Plaats": "Haarlemmermeer"
+    },
+    "selectData": {}
   }
 }

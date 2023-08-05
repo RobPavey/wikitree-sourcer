@@ -54,6 +54,11 @@ function buildSearchUrl(buildUrlInput) {
 
   // add type to search
   if (sourceType) {
+    // if it starts with "other:" then remove that.
+    const otherPrefix = "other:";
+    if (sourceType.startsWith(otherPrefix)) {
+      sourceType = sourceType.substring(otherPrefix.length);
+    }
     builder.addSourceType(sourceType);
   }
   if (eventType) {
@@ -64,8 +69,8 @@ function buildSearchUrl(buildUrlInput) {
   if (gd.collectionData && gd.collectionData.nameParts) {
     let nameParts = gd.collectionData.nameParts;
     namePart = "";
-    if (nameParts.firstName) {
-      namePart = nameParts.firstName;
+    if (nameParts.forenames) {
+      namePart = nameParts.forenames;
     }
     if (nameParts.patronym) {
       if (namePart) {

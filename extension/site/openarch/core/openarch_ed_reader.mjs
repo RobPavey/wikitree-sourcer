@@ -525,7 +525,7 @@ class OpenarchEdReader extends ExtractedDataReader {
 
         let nameParts = {};
         if (firstName) {
-          nameParts.firstName = firstName;
+          nameParts.forenames = firstName;
         }
         if (lastNamePrefix) {
           nameParts.lastNamePrefix = lastNamePrefix;

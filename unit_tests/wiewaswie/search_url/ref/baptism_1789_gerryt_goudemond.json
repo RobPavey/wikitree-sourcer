@@ -1,0 +1,13 @@
+{
+  "std": {
+    "fieldData": {
+      "vm.GetSearchResultsParameters.PersonA.Voornaam": "Gerryt J.",
+      "vm.GetSearchResultsParameters.PeriodeVan": "1789",
+      "vm.GetSearchResultsParameters.PeriodeTot": "1789",
+      "vm.GetSearchResultsParameters.Plaats": "Leeuwarden"
+    },
+    "selectData": {
+      "vm.CurrentGetSearchResultsParameters.DocumentType": "DTB Dopen"
+    }
+  }
+}

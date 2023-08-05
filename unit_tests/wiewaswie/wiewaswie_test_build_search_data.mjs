@@ -36,7 +36,18 @@ const regressionData = [
           search_wiewaswie_searchLang: "nl",
         },
       },
+      {
+        typeOfSearch: "SpecifiedParameters",
+        searchParameters: {
+          place: "Haarlemmermeer",
+        },
+      },
     ],
+  },
+  {
+    caseName: "baptism_1789_gerryt_goudemond",
+    inputPath: "openarch/generalized_data/ref/baptism_1789_gerryt_goudemond",
+    typeOfSearch: "SameCollection",
   },
 ];
 

@@ -37,8 +37,8 @@ function buildSearchData(input) {
 
   if (gd.collectionData && gd.collectionData.nameParts) {
     let nameParts = gd.collectionData.nameParts;
-    if (nameParts.firstName && nameParts.firstName != "N.N." && nameParts.firstName != "NN") {
-      fieldData["vm.GetSearchResultsParameters.PersonA.Voornaam"] = nameParts.firstName;
+    if (nameParts.forenames && nameParts.forenames != "N.N." && nameParts.forenames != "NN") {
+      fieldData["vm.GetSearchResultsParameters.PersonA.Voornaam"] = nameParts.forenames;
     }
     if (nameParts.lastNamePrefix) {
       fieldData["vm.GetSearchResultsParameters.PersonA.Tussenvoegsel"] = nameParts.lastNamePrefix;
