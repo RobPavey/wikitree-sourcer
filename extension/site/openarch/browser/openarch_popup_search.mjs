@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import {
+  addMenuItem,
   addSameRecordMenuItem,
   addBackMenuItem,
   addMenuItemWithSubMenu,
@@ -30,6 +31,7 @@ import {
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   doSearch,
@@ -46,12 +48,26 @@ const openarchEndYear = 2023;
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function openarchSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+async function doOpenarchSearch(input) {
   doAsyncActionWithCatch("Open Archives (NL) Search", input, async function () {
     let loadedModule = await import(`../core/openarch_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
+}
+
+async function openarchSearch(generalizedData, typeOfSearch) {
+  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+  doOpenarchSearch(input);
+}
+
+async function openarchSearchWithParameters(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  doOpenarchSearch(input);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -112,8 +128,20 @@ function addOpenarchDefaultSearchMenuItem(menu, data, backFunction, filter) {
 }
 
 function addOpenarchSameRecordMenuItem(menu, data) {
-  addSameRecordMenuItem(menu, data, "openarch", function (element) {
+  let added = addSameRecordMenuItem(menu, data, "openarch", function (element) {
     openarchSearch(data.generalizedData, "SameCollection");
+  });
+
+  if (!added && data.generalizedData.sourceOfData == "wiewaswie") {
+    addMenuItem(menu, "Search OpenArch for the same record", function (element) {
+      openarchSearch(data.generalizedData, "SameCollection");
+    });
+  }
+}
+
+function addOpenarchSearchWithParametersMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Search with specified parameters", function (element) {
+    setupOpenarchSearchWithParametersSubMenu(data, backFunction);
   });
 }
 
@@ -127,8 +155,14 @@ async function setupOpenarchSearchSubMenu(data, backFunction, filter) {
   addBackMenuItem(menu, backFunction);
 
   addOpenarchSameRecordMenuItem(menu, data, filter);
+  addOpenarchSearchWithParametersMenuItem(menu, data, backFunction);
 
   endMainMenu(menu);
+}
+
+async function setupOpenarchSearchWithParametersSubMenu(data, backFunction) {
+  let dataModule = await import(`../core/openarch_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.OpenarchData, openarchSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Other Church Event''':\n\"DTB Lidmaten (Church membership records)\"<br/>\nAlleFriezen, Collection: Collectie doop-, trouw-, lidmaten- begraafboeken - Tresoar, Access code: 28, Inventory number: 797, Folio: 106, Book: Lidmatenregister Herv. Gemeente Arum<br/>\n[https://www.openarch.nl/frl:b319628e-3082-485a-aa5b-7a711898d92a OpenArch Record] (accessed 6 May 2021)<br/>\n[http://allefriezen.nl/zoeken/deeds/b319628e-3082-485a-aa5b-7a711898d92a AlleFriezen Record]\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Reinder was recorded in a church event in 1825 in Wonseradeel, Nederland.<ref>\n'''Other Church Event''':\n\"DTB Lidmaten (Church membership records)\"<br/>\nAlleFriezen, Collection: Collectie doop-, trouw-, lidmaten- begraafboeken - Tresoar, Access code: 28, Inventory number: 797, Folio: 106, Book: Lidmatenregister Herv. Gemeente Arum<br/>\n[https://www.openarch.nl/frl:b319628e-3082-485a-aa5b-7a711898d92a OpenArch Record] (accessed 6 May 2021)<br/>\n[http://allefriezen.nl/zoeken/deeds/b319628e-3082-485a-aa5b-7a711898d92a AlleFriezen Record]\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Other Church Event''': \"DTB Lidmaten (Church membership records)\"<br/>AlleFriezen, Collection: Collectie doop-, trouw-, lidmaten- begraafboeken - Tresoar, Access code: 28, Inventory number: 797, Folio: 106, Book: Lidmatenregister Herv. Gemeente Arum<br/>[https://www.openarch.nl/frl:b319628e-3082-485a-aa5b-7a711898d92a OpenArch Record] (accessed 6 May 2021)<br/>[http://allefriezen.nl/zoeken/deeds/b319628e-3082-485a-aa5b-7a711898d92a AlleFriezen Record]",
+    "type": "source"
+  }
+}

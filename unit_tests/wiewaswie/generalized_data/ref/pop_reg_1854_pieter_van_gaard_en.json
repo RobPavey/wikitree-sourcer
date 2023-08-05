@@ -20,7 +20,13 @@
     "placeString": "Amsterdam"
   },
   "collectionData": {
-    "id": "Bevolkingsregister"
+    "id": "Bevolkingsregister",
+    "eventType": "Registratie",
+    "nameParts": {
+      "forenames": "Pieter Gerardus Herms",
+      "lastNamePrefix": "van",
+      "lastName": "Gaard"
+    }
   },
   "hasValidData": true
 }

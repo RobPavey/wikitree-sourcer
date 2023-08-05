@@ -12,7 +12,11 @@
     "placeString": "Zeeland, Nederland"
   },
   "collectionData": {
-    "id": "Onroerend goed"
+    "id": "Onroerend goed",
+    "eventType": "transportakte",
+    "nameParts": {
+      "fullName": "Leonora Walen"
+    }
   },
   "hasValidData": true
 }

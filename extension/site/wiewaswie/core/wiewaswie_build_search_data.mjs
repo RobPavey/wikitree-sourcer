@@ -23,41 +23,112 @@ SOFTWARE.
 */
 
 import { separateLastNameIntoParts } from "./wiewaswie_name_utils.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { RC } from "../../../base/core/record_collections.mjs";
 
 function buildSearchData(input) {
   const gd = input.generalizedData;
+  const typeOfSearch = input.typeOfSearch;
+  const searchParameters = input.searchParameters;
   const options = input.options;
 
-  let fieldData = {
-    utf8: true,
-  };
+  let fieldData = {};
+  let selectData = {};
 
-  let forenames = gd.inferForenames();
-  if (forenames) {
-    fieldData["vm.GetSearchResultsParameters.PersonA.Voornaam"] = forenames;
+  if (gd.collectionData && gd.collectionData.nameParts) {
+    let nameParts = gd.collectionData.nameParts;
+    if (nameParts.firstName && nameParts.firstName != "N.N." && nameParts.firstName != "NN") {
+      fieldData["vm.GetSearchResultsParameters.PersonA.Voornaam"] = nameParts.firstName;
+    }
+    if (nameParts.lastNamePrefix) {
+      fieldData["vm.GetSearchResultsParameters.PersonA.Tussenvoegsel"] = nameParts.lastNamePrefix;
+    }
+    if (nameParts.lastName && nameParts.lastName != "N.N." && nameParts.lastName != "NN") {
+      fieldData["vm.GetSearchResultsParameters.PersonA.Achternaam"] = nameParts.lastName;
+    }
+    if (nameParts.patronym) {
+      fieldData["vm.GetSearchResultsParameters.PersonA.Patroniem"] = nameParts.patronym;
+    }
+    if (nameParts.fullName) {
+      // should only happen if the name is not broken into parts at all
+      let forenames = StringUtils.getWordsBeforeLastWord(nameParts.fullName);
+      let lastName = StringUtils.getLastWord(nameParts.fullName);
+      let patronym = "";
+      if (lastName && lastName == "N.N.") {
+        lastName = "";
+      }
+      if (forenames) {
+        fieldData["vm.GetSearchResultsParameters.PersonA.Voornaam"] = forenames;
+      }
+      if (lastName) {
+        fieldData["vm.GetSearchResultsParameters.PersonA.Achternaam"] = lastName;
+      }
+    }
+  } else {
+    let forenames = gd.inferForenames();
+    if (forenames) {
+      fieldData["vm.GetSearchResultsParameters.PersonA.Voornaam"] = forenames;
+    }
+
+    let lastName = gd.inferLastName();
+    if (lastName) {
+      let lastNameParts = separateLastNameIntoParts(lastName);
+      if (lastNameParts.lastName) {
+        fieldData["vm.GetSearchResultsParameters.PersonA.Achternaam"] = lastNameParts.lastName;
+      }
+      if (lastNameParts.lastNamePrefix) {
+        fieldData["vm.GetSearchResultsParameters.PersonA.Tussenvoegsel"] = lastNameParts.lastNamePrefix;
+      }
+      if (lastNameParts.patronym) {
+        fieldData["vm.GetSearchResultsParameters.PersonA.Patroniem"] = lastNameParts.patronym;
+      }
+    }
   }
 
-  let lastName = gd.inferLastName();
-  if (lastName) {
-    let lastNameParts = separateLastNameIntoParts(lastName);
-    if (lastNameParts.lastName) {
-      fieldData["vm.GetSearchResultsParameters.PersonA.Achternaam"] = lastNameParts.lastName;
+  if (typeOfSearch == "SameCollection") {
+    let year = gd.inferEventYear();
+    if (year) {
+      fieldData["vm.GetSearchResultsParameters.PeriodeVan"] = year;
+      fieldData["vm.GetSearchResultsParameters.PeriodeTot"] = year;
     }
-    if (lastNameParts.lastNamePrefix) {
-      fieldData["vm.GetSearchResultsParameters.PersonA.Tussenvoegsel"] = lastNameParts.lastNamePrefix;
-    }
-    if (lastNameParts.patronym) {
-      fieldData["vm.GetSearchResultsParameters.PersonA.Patroniem"] = lastNameParts.patronym;
+  } else {
+    let range = gd.inferPossibleLifeYearRange();
+    if (range) {
+      if (range.startYear) {
+        fieldData["vm.GetSearchResultsParameters.PeriodeVan"] = range.startYear;
+      }
+      if (range.endYear) {
+        fieldData["vm.GetSearchResultsParameters.PeriodeTot"] = range.endYear;
+      }
     }
   }
 
-  let range = gd.inferPossibleLifeYearRange();
-  if (range) {
-    if (range.startYear) {
-      fieldData["vm.GetSearchResultsParameters.PeriodeVan"] = range.startYear;
+  if (typeOfSearch == "SpecifiedParameters") {
+    if (searchParameters) {
+      if (searchParameters.place && searchParameters.place != "<none>") {
+        fieldData["vm.GetSearchResultsParameters.Plaats"] = searchParameters.place;
+      }
     }
-    if (range.endYear) {
-      fieldData["vm.GetSearchResultsParameters.PeriodeTot"] = range.endYear;
+  } else if (typeOfSearch == "SameCollection") {
+    let collectionData = gd.collectionData;
+    if (collectionData) {
+      if (collectionData.place) {
+        fieldData["vm.GetSearchResultsParameters.Plaats"] = collectionData.place;
+      }
+
+      if (gd.collectionData.id) {
+        let sourceType = RC.mapCollectionId(
+          gd.sourceOfData,
+          gd.collectionData.id,
+          "wiewaswie",
+          gd.inferEventCountry(),
+          gd.inferEventYear()
+        );
+
+        if (sourceType) {
+          selectData["vm.CurrentGetSearchResultsParameters.DocumentType"] = sourceType;
+        }
+      }
     }
   }
 
@@ -66,6 +137,7 @@ function buildSearchData(input) {
 
   var result = {
     fieldData: fieldData,
+    selectData: selectData,
   };
 
   return result;

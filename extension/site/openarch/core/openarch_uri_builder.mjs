@@ -61,6 +61,10 @@ class OpenarchUriBuilder {
     this.addSearchParameter("sourcetype", string);
   }
 
+  addEventType(string) {
+    this.addSearchParameter("eventtype", string);
+  }
+
   addName(string) {
     this.addSearchParameter("name", StringUtils.removeExtendedAsciiCharacters(string));
   }

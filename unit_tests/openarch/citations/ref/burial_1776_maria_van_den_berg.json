@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"DTB Begraven (Church records burials)\"<br/>\nStadsarchief Breda, Collection: Collectie DTB Breda, Access code: CB, Inventory number: 146, Folio: 3-079, Book: Begraven nh Princenhage 1757-1788<br/>\n[https://www.openarch.nl/brd:b05a07ca-8205-c036-8713-a68738acc33c OpenArch Record] (accessed 6 May 2021)<br/>\n[https://stadsarchief.breda.nl/collectie/archief/genealogische-bronnen/deeds/b05a07ca-8205-c036-8713-a68738acc33c Stadsarchief Breda Record]<br/>\nMaria van den Berg burial on 25 Apr 1776 in Princenhage, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Maria was buried on 25 April 1776 in Princenhage, Nederland.<ref>\n'''Burial''':\n\"DTB Begraven (Church records burials)\"<br/>\nStadsarchief Breda, Collection: Collectie DTB Breda, Access code: CB, Inventory number: 146, Folio: 3-079, Book: Begraven nh Princenhage 1757-1788<br/>\n[https://www.openarch.nl/brd:b05a07ca-8205-c036-8713-a68738acc33c OpenArch Record] (accessed 6 May 2021)<br/>\n[https://stadsarchief.breda.nl/collectie/archief/genealogische-bronnen/deeds/b05a07ca-8205-c036-8713-a68738acc33c Stadsarchief Breda Record]<br/>\nMaria van den Berg burial on 25 Apr 1776 in Princenhage, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"DTB Begraven (Church records burials)\"<br/>Stadsarchief Breda, Collection: Collectie DTB Breda, Access code: CB, Inventory number: 146, Folio: 3-079, Book: Begraven nh Princenhage 1757-1788<br/>[https://www.openarch.nl/brd:b05a07ca-8205-c036-8713-a68738acc33c OpenArch Record] (accessed 6 May 2021)<br/>[https://stadsarchief.breda.nl/collectie/archief/genealogische-bronnen/deeds/b05a07ca-8205-c036-8713-a68738acc33c Stadsarchief Breda Record]<br/>Maria van den Berg burial on 25 Apr 1776 in Princenhage, Nederland.",
+    "type": "source"
+  }
+}

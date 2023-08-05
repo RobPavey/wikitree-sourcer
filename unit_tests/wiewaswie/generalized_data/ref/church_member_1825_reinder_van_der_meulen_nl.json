@@ -23,7 +23,14 @@
     }
   ],
   "collectionData": {
-    "id": "DTB Overig"
+    "id": "DTB Overig",
+    "place": "Wonseradeel",
+    "eventType": "DTB Lidmaten inschrijving",
+    "nameParts": {
+      "forenames": "Reinder Harmens",
+      "lastNamePrefix": "van der",
+      "lastName": "Meulen"
+    }
   },
   "hasValidData": true
 }

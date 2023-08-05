@@ -36,6 +36,10 @@ const prefixes = [
   "von ",
   "Klein ",
   "Groot ",
+  "v.d. ",
+  "v. ",
+  "d. ",
+  "t. ",
 ];
 
 const noSpacePrefixes = ["de", "den", "der", "d'", "ten", "ter", "'t", "t'", "van", "ver", "von", "klein", "droot"];
@@ -99,14 +103,21 @@ function separateLastNameIntoParts(inputName) {
 function separateFullNameIntoParts(fullName) {
   let lastNameStartIndex = -1;
 
+  let firstPrefixIndex = -1;
   for (let prefix of prefixes) {
     const prefixWithSpace = " " + prefix;
     let index = fullName.indexOf(prefixWithSpace);
     if (index != -1 && index != 0) {
+      if (firstPrefixIndex == -1) {
+        firstPrefixIndex = index + 1;
+      } else if (index < firstPrefixIndex) {
+        firstPrefixIndex = index + 1;
+      }
+      let postPrefixIndex = index + prefixWithSpace.length;
       if (lastNameStartIndex == -1) {
-        lastNameStartIndex = index;
-      } else if (index < lastNameStartIndex) {
-        lastNameStartIndex = index;
+        lastNameStartIndex = postPrefixIndex;
+      } else if (postPrefixIndex > lastNameStartIndex) {
+        lastNameStartIndex = postPrefixIndex;
       }
     }
   }
@@ -114,7 +125,9 @@ function separateFullNameIntoParts(fullName) {
   let result = undefined;
   if (lastNameStartIndex != -1) {
     result = {};
-    result.forenames = fullName.substring(0, lastNameStartIndex).trim();
+
+    result.forenames = fullName.substring(0, firstPrefixIndex).trim();
+    result.lastNamePrefix = fullName.substring(firstPrefixIndex, lastNameStartIndex).trim();
     result.lastName = fullName.substring(lastNameStartIndex).trim();
   }
 

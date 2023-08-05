@@ -30,7 +30,13 @@
     }
   },
   "collectionData": {
-    "id": "BS Geboorte"
+    "id": "BS Geboorte",
+    "eventType": "Geboorte",
+    "nameParts": {
+      "forenames": "Jan",
+      "lastNamePrefix": "van der",
+      "lastName": "Wijk"
+    }
   },
   "hasValidData": true
 }

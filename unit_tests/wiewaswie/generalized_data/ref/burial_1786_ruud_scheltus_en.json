@@ -13,7 +13,12 @@
     "placeString": "Opsterland, Friesland, Nederland"
   },
   "collectionData": {
-    "id": "DTB Begraven"
+    "id": "DTB Begraven",
+    "place": "Opsterland",
+    "eventType": "Vermeld",
+    "nameParts": {
+      "fullName": "Ruud Scheltus"
+    }
   },
   "hasValidData": true
 }

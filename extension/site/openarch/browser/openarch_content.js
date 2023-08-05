@@ -26,7 +26,7 @@ async function doFetch() {
   //console.log('doFetch, document.location is: ' + document.location);
 
   let url = document.location.href;
-  console.log("doFetch, url is: " + url);
+  //console.log("doFetch, url is: " + url);
 
   let archive = "";
   let identifier = "";
@@ -46,8 +46,8 @@ async function doFetch() {
     }
   }
 
-  console.log("doFetch, archive is: " + archive);
-  console.log("doFetch, identifier is: " + identifier);
+  //console.log("doFetch, archive is: " + archive);
+  //console.log("doFetch, identifier is: " + identifier);
 
   if (!archive || !identifier) {
     return { success: false, errorCondition: "NotRecordURL" };
@@ -56,7 +56,7 @@ async function doFetch() {
   // e.g. https://api.openarch.nl/1.1/records/show.json?archive=frl&identifier=ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
   let fetchUrl = "https://api.openarch.nl/1.1/records/show.json?archive=" + archive + "&identifier=" + identifier;
 
-  console.log("doFetch, fetchUrl is: " + fetchUrl);
+  //console.log("doFetch, fetchUrl is: " + fetchUrl);
 
   let fetchOptionsHeaders = {
     accept: "application/x-gedcomx-v1+json, application/json",
@@ -75,11 +75,11 @@ async function doFetch() {
   try {
     let response = await fetch(fetchUrl, fetchOptions);
 
-    console.log("doFetch, response.status is: " + response.status);
+    //console.log("doFetch, response.status is: " + response.status);
 
     if (response.status !== 200) {
-      console.log("Looks like there was a problem. Status Code: " + response.status);
-      console.log("Fetch URL is: " + fetchUrl);
+      //console.log("Looks like there was a problem. Status Code: " + response.status);
+      //console.log("Fetch URL is: " + fetchUrl);
       return {
         success: false,
         errorCondition: "FetchError",
@@ -89,8 +89,8 @@ async function doFetch() {
 
     let jsonData = await response.text();
 
-    console.log("doFetch: response text is:");
-    console.log(jsonData);
+    //console.log("doFetch: response text is:");
+    //console.log(jsonData);
 
     if (!jsonData || jsonData[0] != `{`) {
       console.log("The response text does not look like JSON");
@@ -169,14 +169,14 @@ async function doFetchAndSendResponse(sendResponse, options) {
     // Extract the data.
     extractDataFromFetchAndRespond(document, result.dataObjects, options, sendResponse);
   } else {
-    if (result.errorCondition == "NotJSON") {
+    if (result.errorCondition == "NotJSON" || result.errorCondition == "NotRecordURL") {
       // This is normal for some pages that could be records but are not.
       // For example:
       // https://www.familysearch.org/search/genealogies
       let extractedData = { pageType: "unknown" };
       sendResponse({
         success: true,
-        contentType: "fs",
+        contentType: "openarch",
         extractedData: extractedData,
       });
     } else if (result.errorCondition == "FetchError" && result.status == 401) {
@@ -185,7 +185,7 @@ async function doFetchAndSendResponse(sendResponse, options) {
       let extractedData = { pageType: "unknown" };
       sendResponse({
         success: true,
-        contentType: "fs",
+        contentType: "openarch",
         extractedData: extractedData,
       });
     } else {
@@ -195,7 +195,7 @@ async function doFetchAndSendResponse(sendResponse, options) {
         errorMessage: "Fetch failed. Status code: " + result.status + ", Error condition: " + result.errorCondition,
         exceptionObject: result.exceptionObject,
         wasFetchError: true,
-        contentType: "fs",
+        contentType: "openarch",
       });
     }
   }

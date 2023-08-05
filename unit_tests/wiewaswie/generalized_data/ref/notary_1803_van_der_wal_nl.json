@@ -14,7 +14,13 @@
     "placeString": "Utrecht, Nederland"
   },
   "collectionData": {
-    "id": "Notariële archieven"
+    "id": "Notariële archieven",
+    "eventType": "Notariële akte",
+    "nameParts": {
+      "forenames": "Nicolaas Hendrik",
+      "lastNamePrefix": "van der",
+      "lastName": "Wal"
+    }
   },
   "hasValidData": true
 }

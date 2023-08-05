@@ -65,7 +65,14 @@
     }
   ],
   "collectionData": {
-    "id": "Bevolkingsregister"
+    "id": "Bevolkingsregister",
+    "place": "Vlissingen",
+    "eventType": "Registratie",
+    "nameParts": {
+      "forenames": "David",
+      "lastNamePrefix": "van",
+      "lastName": "Zwyndregt"
+    }
   },
   "hasValidData": true
 }

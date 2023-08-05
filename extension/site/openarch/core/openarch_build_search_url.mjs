@@ -24,7 +24,6 @@ SOFTWARE.
 
 import { OpenarchUriBuilder } from "./openarch_uri_builder.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
@@ -36,6 +35,7 @@ function buildSearchUrl(buildUrlInput) {
   // "SameCollection"
 
   let sourceType = "";
+  let eventType = "";
   if (typeOfSearch == "SameCollection") {
     if (gd.collectionData && gd.collectionData.id) {
       sourceType = RC.mapCollectionId(
@@ -46,14 +46,69 @@ function buildSearchUrl(buildUrlInput) {
         gd.inferEventYear()
       );
     }
+
+    if (gd.collectionData && gd.collectionData.eventType) {
+      eventType = gd.collectionData.eventType;
+    }
   }
 
   // add type to search
   if (sourceType) {
     builder.addSourceType(sourceType);
   }
+  if (eventType) {
+    builder.addEventType(eventType);
+  }
 
-  builder.addName(gd.inferFullName());
+  let namePart = gd.inferFullName();
+  if (gd.collectionData && gd.collectionData.nameParts) {
+    let nameParts = gd.collectionData.nameParts;
+    namePart = "";
+    if (nameParts.firstName) {
+      namePart = nameParts.firstName;
+    }
+    if (nameParts.patronym) {
+      if (namePart) {
+        namePart += " ";
+      }
+      namePart += nameParts.patronym;
+    }
+    if (nameParts.lastNamePrefix) {
+      if (namePart) {
+        namePart += " ";
+      }
+      namePart += nameParts.lastNamePrefix;
+    }
+    if (nameParts.lastName) {
+      if (namePart) {
+        namePart += " ";
+      }
+      namePart += nameParts.lastName;
+    }
+    if (!namePart && nameParts.fullName) {
+      // should only happen if the name is not broken into parts at all
+      namePart = nameParts.fullName;
+    }
+  }
+
+  if (typeOfSearch == "SameCollection") {
+    let year = gd.inferEventYear();
+    if (year) {
+      namePart += " " + year + "-" + year;
+    }
+  } else {
+    let range = gd.inferPossibleLifeYearRange();
+    if (range) {
+      if (range.startYear) {
+        namePart += " " + range.startYear;
+        if (range.endYear) {
+          namePart += "-" + range.endYear;
+        }
+      }
+    }
+  }
+
+  builder.addName(namePart);
 
   // Add collection reference gd if this is SameCollection
   if (typeOfSearch == "SameCollection") {

@@ -27,7 +27,12 @@
     }
   },
   "collectionData": {
-    "id": "DTB Dopen"
+    "id": "DTB Dopen",
+    "place": "Leeuwarden",
+    "eventType": "Doop",
+    "nameParts": {
+      "forenames": "Gerryt J."
+    }
   },
   "hasValidData": true
 }

@@ -17,7 +17,13 @@
     "yearString": "1932"
   },
   "collectionData": {
-    "id": "Beroep en bedrijf"
+    "id": "Beroep en bedrijf",
+    "eventType": "Registratie",
+    "nameParts": {
+      "forenames": "Rutger Antony",
+      "lastNamePrefix": "van",
+      "lastName": "Atterloo"
+    }
   },
   "hasValidData": true
 }

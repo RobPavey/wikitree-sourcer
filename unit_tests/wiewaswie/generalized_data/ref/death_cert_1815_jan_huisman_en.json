@@ -29,7 +29,12 @@
     }
   },
   "collectionData": {
-    "id": "BS Overlijden"
+    "id": "BS Overlijden",
+    "place": "Lippenhuizen",
+    "eventType": "Overlijden",
+    "nameParts": {
+      "fullName": "Jan Bartelds Huisman"
+    }
   },
   "hasValidData": true
 }

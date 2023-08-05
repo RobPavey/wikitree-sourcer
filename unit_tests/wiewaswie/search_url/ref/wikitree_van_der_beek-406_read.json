@@ -1,22 +1,22 @@
 {
   "std": {
     "fieldData": {
-      "utf8": true,
       "vm.GetSearchResultsParameters.PersonA.Voornaam": "George Frans",
       "vm.GetSearchResultsParameters.PersonA.Achternaam": "Beek",
       "vm.GetSearchResultsParameters.PersonA.Tussenvoegsel": "van der",
       "vm.GetSearchResultsParameters.PeriodeVan": 1861,
       "vm.GetSearchResultsParameters.PeriodeTot": 1981
-    }
+    },
+    "selectData": {}
   },
   "lang_nl": {
     "fieldData": {
-      "utf8": true,
       "vm.GetSearchResultsParameters.PersonA.Voornaam": "George Frans",
       "vm.GetSearchResultsParameters.PersonA.Achternaam": "Beek",
       "vm.GetSearchResultsParameters.PersonA.Tussenvoegsel": "van der",
       "vm.GetSearchResultsParameters.PeriodeVan": 1861,
       "vm.GetSearchResultsParameters.PeriodeTot": 1981
-    }
+    },
+    "selectData": {}
   }
 }

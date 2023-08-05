@@ -1161,15 +1161,40 @@ const RecordCollectionData = [
   // Netherlands
   ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  // Canada Census
   {
     wtsId: "dtbDopen",
     title: "DTB Dopen",
     country: "Nederland",
-    dates: { year: 1851 },
     sites: {
       wiewaswie: { id: "DTB Dopen" },
       openarch: { id: "DTB Dopen" },
+    },
+  },
+  {
+    wtsId: "dtbTrouwen",
+    title: "DTB Trouwen",
+    country: "Nederland",
+    sites: {
+      wiewaswie: { id: "DTB Trouwen" },
+      openarch: { id: "DTB Trouwen" },
+    },
+  },
+  {
+    wtsId: "dtbBegraven",
+    title: "DTB Begraven",
+    country: "Nederland",
+    sites: {
+      wiewaswie: { id: "DTB Begraven" },
+      openarch: { id: "DTB Begraven" },
+    },
+  },
+  {
+    wtsId: "dtbLidmaten",
+    title: "DTB Lidmaten",
+    country: "Nederland",
+    sites: {
+      wiewaswie: { id: "DTB Overig" },
+      openarch: { id: "other:DTB Lidmaten" },
     },
   },
 ];

@@ -29,7 +29,11 @@
     }
   },
   "collectionData": {
-    "id": "DTB Dopen"
+    "id": "DTB Dopen",
+    "nameParts": {
+      "firstName": "Gerryt J."
+    },
+    "place": "Leeuwarden"
   },
   "hasValidData": true
 }

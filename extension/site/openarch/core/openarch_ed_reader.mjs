@@ -43,11 +43,12 @@ const typeData = {
     relation: {
       father: ["Vader"],
       mother: ["Moeder"],
+      spouse: ["Partner"],
     },
   },
   "DTB Dopen": {
     // Baptismal registers
-    enDocumentType: "Baptismal Registers",
+    enDocumentType: "Church records baptisms",
     recordType: RT.Baptism,
     relation: {
       primary: ["Dopeling"],
@@ -55,11 +56,36 @@ const typeData = {
   },
   "DTB Trouwen": {
     // Marriage registers
-    enDocumentType: "Marriage Registers",
+    enDocumentType: "Church records marriages",
     recordType: RT.Marriage,
     relation: {
       primary: ["Bruidegom"],
       bride: ["Bruid"],
+    },
+  },
+  "DTB Begraven": {
+    // Burial registers
+    enDocumentType: "Church records burials",
+    recordType: RT.Burial,
+    relation: {
+      primary: ["Overledene"],
+    },
+  },
+  "other:DTB Lidmaten": {
+    // Church membership registers
+    enDocumentType: "Church membership records",
+    recordType: RT.OtherChurchEvent,
+    relation: {
+      primary: ["other:Man"],
+    },
+  },
+
+  // "other:" types
+  "other:Akte van lijkvinding": {
+    enDocumentType: "Act of corpse discovery",
+    recordType: RT.Death,
+    relation: {
+      primary: ["Overledene"],
     },
   },
 };
@@ -116,13 +142,26 @@ class OpenarchEdReader extends ExtractedDataReader {
 
       let firstName = a2aName["a2a:PersonNameFirstName"];
       let lastNamePrefix = a2aName["a2a:PersonNamePrefixLastName"];
+      let patronym = a2aName["a2a:PersonNamePatronym"];
       let lastName = a2aName["a2a:PersonNameLastName"];
 
-      if (firstName) {
+      if (firstName && firstName != "NN" && firstName != "N.N.") {
         nameObj.setForenames(firstName);
       }
-      if (lastName || lastNamePrefix) {
+      if (lastName || patronym || lastNamePrefix) {
         let finalLastName = lastName;
+        if (finalLastName == "NN" || finalLastName == "N.N.") {
+          finalLastName = "";
+        }
+
+        if (patronym) {
+          if (finalLastName) {
+            finalLastName = patronym + " " + finalLastName;
+          } else {
+            finalLastName = patronym;
+          }
+        }
+
         if (lastNamePrefix) {
           if (finalLastName) {
             finalLastName = lastNamePrefix + " " + finalLastName;
@@ -147,16 +186,29 @@ class OpenarchEdReader extends ExtractedDataReader {
       let month = a2aDate["a2a:Month"];
       let year = a2aDate["a2a:Year"];
 
-      if (day.length > 2 || month.length > 2 || year.length > 4) {
-        return;
+      let dayNum = 0;
+      let monthNum = 0;
+      let yearNum = 0;
+
+      if (day && day.length > 0 && day.length < 3) {
+        dayNum = parseInt(day);
+        if (isNaN(dayNum)) {
+          return;
+        }
       }
 
-      let dayNum = parseInt(day);
-      let monthNum = parseInt(month);
-      let yearNum = parseInt(year);
+      if (month && month.length > 0 && month.length < 3) {
+        monthNum = parseInt(month);
+        if (isNaN(monthNum)) {
+          return;
+        }
+      }
 
-      if (isNaN(dayNum) || isNaN(monthNum) || isNaN(yearNum)) {
-        return;
+      if (year && year.length > 0 && year.length < 5) {
+        yearNum = parseInt(year);
+        if (isNaN(yearNum)) {
+          return;
+        }
       }
 
       let dateString = DateUtils.getDateStringFromYearMonthDay(yearNum, monthNum, dayNum);
@@ -253,10 +305,20 @@ class OpenarchEdReader extends ExtractedDataReader {
     if (a2aRelationTypes) {
       for (let a2aRelationType of a2aRelationTypes) {
         let relationshipArray = this.a2a["a2a:RelationEP"];
-        for (let relation of relationshipArray) {
-          let type = relation["a2a:RelationType"];
-          if (type == a2aRelationType) {
-            return relation;
+        if (relationshipArray) {
+          if (Array.isArray(relationshipArray)) {
+            for (let relation of relationshipArray) {
+              let type = relation["a2a:RelationType"];
+              if (type == a2aRelationType) {
+                return relation;
+              }
+            }
+          } else {
+            let relation = relationshipArray;
+            let type = relation["a2a:RelationType"];
+            if (type == a2aRelationType) {
+              return relation;
+            }
           }
         }
       }
@@ -265,10 +327,20 @@ class OpenarchEdReader extends ExtractedDataReader {
 
   findPersonById(pid) {
     let personArray = this.a2a["a2a:Person"];
-    for (let person of personArray) {
-      let personPid = person["@pid"];
-      if (personPid == pid) {
-        return person;
+    if (personArray) {
+      if (Array.isArray(personArray)) {
+        for (let person of personArray) {
+          let personPid = person["@pid"];
+          if (personPid == pid) {
+            return person;
+          }
+        }
+      } else {
+        let person = personArray;
+        let personPid = person["@pid"];
+        if (personPid == pid) {
+          return person;
+        }
       }
     }
   }
@@ -443,10 +515,40 @@ class OpenarchEdReader extends ExtractedDataReader {
   getCollectionData() {
     if (this.a2aSourceType) {
       let collectionData = { id: this.a2aSourceType };
+
+      let a2aName = this.extractPrimaryPersonFieldByKey("a2a:PersonName");
+      if (a2aName) {
+        let firstName = a2aName["a2a:PersonNameFirstName"];
+        let lastNamePrefix = a2aName["a2a:PersonNamePrefixLastName"];
+        let patronym = a2aName["a2a:PersonNamePatronym"];
+        let lastName = a2aName["a2a:PersonNameLastName"];
+
+        let nameParts = {};
+        if (firstName) {
+          nameParts.firstName = firstName;
+        }
+        if (lastNamePrefix) {
+          nameParts.lastNamePrefix = lastNamePrefix;
+        }
+        if (patronym) {
+          nameParts.patronym = patronym;
+        }
+        if (lastName) {
+          nameParts.lastName = lastName;
+        }
+        collectionData.nameParts = nameParts;
+      }
+
+      let a2aPlace = this.extractEventFieldByKey("a2a:EventPlace");
+      if (a2aPlace) {
+        let place = a2aPlace["a2a:Place"];
+        if (place) {
+          collectionData.place = place;
+        }
+      }
+
       return collectionData;
     }
-
-    return undefined;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -455,8 +557,21 @@ class OpenarchEdReader extends ExtractedDataReader {
 
   getSourceTitle() {
     let title = this.a2aSourceType;
+    if (!title) {
+      title = "";
+    }
+
+    const otherPrefix = "other:";
+    if (title.startsWith(otherPrefix)) {
+      title = title.substring(otherPrefix.length);
+    }
+
     if (this.typeData && this.typeData.enDocumentType) {
-      title += " (" + this.typeData.enDocumentType + ")";
+      if (title) {
+        title += " (" + this.typeData.enDocumentType + ")";
+      } else {
+        title = this.typeData.enDocumentType;
+      }
     }
     return title;
   }
@@ -469,6 +584,9 @@ class OpenarchEdReader extends ExtractedDataReader {
 
     let registrationNumber = reference["a2a:RegistryNumber"];
     let book = reference["a2a:Book"];
+    let folio = reference["a2a:Folio"];
+    let documentNumber = reference["a2a:DocumentNumber"];
+    let archive = reference["a2a:Archive"];
     let institution = reference["a2a:InstitutionName"];
     let collection = reference["a2a:Collection"];
     if (collection) {
@@ -485,14 +603,27 @@ class OpenarchEdReader extends ExtractedDataReader {
     if (institution && collection) {
       let string = institution + ", Collection: " + collection;
 
+      if (archive) {
+        // This is what the english openarch page says in it's source citation
+        string += ", Access code: " + archive;
+      }
       if (registrationNumber) {
-        string += ", Registration number: " + registrationNumber;
+        // This is what the english openarch page says in it's source citation
+        string += ", Inventory number: " + registrationNumber;
+      }
+      if (documentNumber) {
+        // This is what the english openarch page says in it's source citation
+        string += ", Record number: " + documentNumber;
+      }
+      if (folio) {
+        string += ", Folio: " + folio;
       }
       if (book) {
         string += ", Book: " + book;
       }
       return string;
     }
+    return "";
   }
 
   getExternalLink() {

@@ -36,6 +36,14 @@ const regressionData = [
     url: "https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf",
   },
   {
+    caseName: "burial_1776_maria_van_den_berg",
+    url: "https://www.openarch.nl/brd:b05a07ca-8205-c036-8713-a68738acc33c",
+  },
+  {
+    caseName: "church_member_1825_reinder_van_der_meulen",
+    url: "https://www.openarch.nl/frl:b319628e-3082-485a-aa5b-7a711898d92a",
+  },
+  {
     caseName: "death_1965_alphonsus_van_hiel",
     url: "https://www.openarch.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B",
   },

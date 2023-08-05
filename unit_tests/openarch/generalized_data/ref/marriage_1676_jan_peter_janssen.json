@@ -4,7 +4,7 @@
   "recordType": "Marriage",
   "name": {
     "forenames": "Jan",
-    "lastName": "NN"
+    "lastName": "Peter Janssen"
   },
   "eventDate": {
     "dateString": "21 Jun 1676"
@@ -28,7 +28,13 @@
     }
   ],
   "collectionData": {
-    "id": "DTB Trouwen"
+    "id": "DTB Trouwen",
+    "nameParts": {
+      "firstName": "Jan",
+      "patronym": "Peter Janssen",
+      "lastName": "N.N."
+    },
+    "place": "Oosterhout"
   },
   "hasValidData": true
 }

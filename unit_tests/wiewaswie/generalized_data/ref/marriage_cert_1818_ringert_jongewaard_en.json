@@ -56,7 +56,12 @@
     }
   },
   "collectionData": {
-    "id": "BS Huwelijk"
+    "id": "BS Huwelijk",
+    "place": "Berkhout",
+    "eventType": "Huwelijk",
+    "nameParts": {
+      "fullName": "Ringert Jongewaard"
+    }
   },
   "hasValidData": true
 }

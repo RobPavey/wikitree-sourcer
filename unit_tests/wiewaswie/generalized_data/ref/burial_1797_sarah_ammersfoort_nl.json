@@ -23,7 +23,12 @@
     }
   ],
   "collectionData": {
-    "id": "DTB Begraven"
+    "id": "DTB Begraven",
+    "place": "Zeist",
+    "eventType": "Begraven",
+    "nameParts": {
+      "fullName": "Sarah Ammersfoort"
+    }
   },
   "hasValidData": true
 }

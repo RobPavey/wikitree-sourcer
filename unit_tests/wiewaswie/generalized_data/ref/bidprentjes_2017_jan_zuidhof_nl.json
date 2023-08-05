@@ -25,7 +25,12 @@
     }
   ],
   "collectionData": {
-    "id": "Bidprentjes"
+    "id": "Bidprentjes",
+    "place": "Venray",
+    "eventType": "Bidprentjes",
+    "nameParts": {
+      "fullName": "Jan Zuidhof"
+    }
   },
   "hasValidData": true
 }

@@ -12,7 +12,11 @@
     "placeString": "Gelderland, Nederland"
   },
   "collectionData": {
-    "id": "Sociale zorg"
+    "id": "Sociale zorg",
+    "eventType": "Weeskamer inschrijvingen",
+    "nameParts": {
+      "fullName": "Gerhard Haesebroek"
+    }
   },
   "hasValidData": true
 }

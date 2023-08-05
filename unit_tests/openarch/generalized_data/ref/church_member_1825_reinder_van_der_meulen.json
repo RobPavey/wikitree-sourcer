@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "OtherChurchEvent",
+  "name": {
+    "forenames": "Reinder",
+    "lastName": "van der Harmens Meulen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1825"
+  },
+  "eventPlace": {
+    "placeString": "Wonseradeel, Nederland"
+  },
+  "collectionData": {
+    "id": "other:DTB Lidmaten",
+    "nameParts": {
+      "firstName": "Reinder",
+      "lastNamePrefix": "van der",
+      "patronym": "Harmens",
+      "lastName": "Meulen"
+    },
+    "place": "Wonseradeel"
+  },
+  "hasValidData": true
+}

@@ -13,7 +13,12 @@
   },
   "occupation": "bijzitter",
   "collectionData": {
-    "id": "Fiscaal en financieel"
+    "id": "Fiscaal en financieel",
+    "place": "Bergum",
+    "eventType": "Tietjerksteradeel speciekohieren inschrijving",
+    "nameParts": {
+      "fullName": "Fokke Meer"
+    }
   },
   "hasValidData": true
 }

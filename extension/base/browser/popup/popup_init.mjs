@@ -75,7 +75,11 @@ function displaySiteNameChangedMessage(popupSiteName, contentSiteName) {
 
   displayMessageWithIcon(
     "warning",
-    "The web page domain changed after the extension icon was clicked. Please try again."
+    "The web page domain changed after the extension icon was clicked. The site changed from " +
+      popupSiteName +
+      " to " +
+      contentSiteName +
+      ". Please try again."
   );
 }
 

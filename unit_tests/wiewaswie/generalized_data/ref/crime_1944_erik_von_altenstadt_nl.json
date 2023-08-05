@@ -14,7 +14,13 @@
     "placeString": "Noord-Holland, Nederland"
   },
   "collectionData": {
-    "id": "Misdaad en straf"
+    "id": "Misdaad en straf",
+    "eventType": "Registratie",
+    "nameParts": {
+      "forenames": "Erik",
+      "lastNamePrefix": "von",
+      "lastName": "Schmit Von Altenstadt"
+    }
   },
   "hasValidData": true
 }

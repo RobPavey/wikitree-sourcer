@@ -498,12 +498,9 @@ class WiewaswieEdReader extends ExtractedDataReader {
     }
   }
 
-  makeNameObjFromFullName(fullNameString) {
+  extractNameFromSentence(fullNameString) {
     if (fullNameString) {
-      let nameObj = new NameObj();
-
       fullNameString = fullNameString.trim();
-
       // sometimes there is a prefix on the start of the name. e.g:
       //   de erfgenamen van + Nicolaas Hendrik van der Wal, wedr. van Cornelia Weydom
       // which translates to:
@@ -519,7 +516,7 @@ class WiewaswieEdReader extends ExtractedDataReader {
         }
       }
 
-      // sometimes the name that was extracted is actially several peoples names
+      // sometimes the name that was extracted is actually several peoples names
       // e.g.: "Erven Johanna Maria Pekstok wed. Curtius van Weijler"
       const nameSeparators = [" wed ", " wed. ", " wedr ", "wedr. ", ", "];
       for (let nameSeparator of nameSeparators) {
@@ -542,10 +539,22 @@ class WiewaswieEdReader extends ExtractedDataReader {
           }
         }
       }
+    }
+
+    return fullNameString;
+  }
+
+  makeNameObjFromFullName(fullNameString) {
+    if (fullNameString) {
+      let nameObj = new NameObj();
+
+      fullNameString = fullNameString.trim();
+
+      fullNameString = this.extractNameFromSentence(fullNameString);
 
       nameObj.setFullName(fullNameString);
 
-      // in order to search *from* wiewaswie it halps to be smart about how to separate
+      // in order to search *from* wiewaswie it helps to be smart about how to separate
       // the forenames and last name when using name prefixes. I guess this code could be in
       // generalizeDataUtils and used in Dutch profiles
       let parts = separateFullNameIntoParts(fullNameString);
@@ -554,7 +563,11 @@ class WiewaswieEdReader extends ExtractedDataReader {
           nameObj.setForenames(parts.forenames);
         }
         if (parts.lastName) {
-          nameObj.setLastName(parts.lastName);
+          if (parts.lastNamePrefix) {
+            nameObj.setLastName(parts.lastNamePrefix + " " + parts.lastName);
+          } else {
+            nameObj.setLastName(parts.lastName);
+          }
         }
       }
 
@@ -846,6 +859,56 @@ class WiewaswieEdReader extends ExtractedDataReader {
   getCollectionData() {
     if (this.documentType) {
       let collectionData = { id: this.documentType };
+
+      let eventPlace = this.extractEventFieldByDataKey("EventPlace");
+      if (eventPlace) {
+        collectionData.place = eventPlace;
+      }
+
+      if (this.eventType) {
+        collectionData.eventType = this.eventType;
+      }
+
+      // also store the uncleaned name
+      if (this.typeData.nameFormat == "full") {
+        let name = this.extractIndexedPersonFieldByFieldType(0, FT.fullName);
+        name = this.extractNameFromSentence(name);
+        if (name) {
+          let parts = separateFullNameIntoParts(name);
+          if (parts) {
+            collectionData.nameParts = parts;
+          } else {
+            collectionData.nameParts = { fullName: name };
+          }
+        }
+      } else if (this.typeData.nameFormat == "forenamesOnly") {
+        let forenames = this.extractIndexedPersonFieldByFieldType(0, FT.forenames);
+        if (forenames) {
+          collectionData.nameParts = { forenames: forenames };
+        }
+      }
+
+      if (!collectionData.nameParts) {
+        // can't find name in person fields, extract it from the title
+        let title = this.ed.title;
+        if (title) {
+          const prefix = this.documentType + " met ";
+          if (title.startsWith(prefix)) {
+            let name = title.substring(prefix.length);
+            if (name) {
+              name = this.extractNameFromSentence(name);
+
+              let parts = separateFullNameIntoParts(name);
+              if (parts) {
+                collectionData.nameParts = parts;
+              } else {
+                collectionData.nameParts = { fullName: name };
+              }
+            }
+          }
+        }
+      }
+
       return collectionData;
     }
     return undefined;

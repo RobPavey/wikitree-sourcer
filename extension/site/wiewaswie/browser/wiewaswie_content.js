@@ -34,6 +34,55 @@ async function getPendingSearch() {
   });
 }
 
+let refineRetries = 0;
+
+async function refineResults(selectData) {
+  elementsFound = false;
+  console.log("refineResults: selectData is: ");
+  console.log(selectData);
+
+  let searchContainer = document.querySelector("div.row.search-advanced");
+  console.log("refineResults: searchContainer is: ");
+  console.log(searchContainer);
+
+  let refineContainer = document.querySelector("div.row.search-facets");
+  console.log("refineResults: refineContainer is: ");
+  console.log(refineContainer);
+
+  if (refineContainer) {
+    for (var key in selectData) {
+      console.log("refineResults: selectData key is: " + key);
+      if (key) {
+        let value = selectData[key];
+        console.log("refineResults: selectData value is: " + value);
+
+        let selector =
+          "input[ng-model='" + key + "'] ~ div.selector-options > ul > li.ng-scope[data-value='" + value + "']";
+
+        let liElement = refineContainer.querySelector(selector);
+        if (liElement) {
+          console.log("refineResults: liElement found ");
+
+          // we have found the element but it may take a few milliseconds to be working
+          setTimeout(function () {
+            var event = new Event("click");
+            liElement.dispatchEvent(event);
+          }, 100);
+
+          elementsFound = true;
+        }
+      }
+    }
+  }
+
+  if (!elementsFound && refineRetries < 10) {
+    refineRetries += 1;
+    setTimeout(function () {
+      refineResults(selectData);
+    }, 100);
+  }
+}
+
 async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: called");
 
@@ -103,6 +152,12 @@ async function checkForPendingSearch() {
       chrome.storage.local.set({ wiewaswieSearchData: undefined }, function () {
         //console.log('cleared wiewaswieSearchData');
       });
+
+      let selectData = wiewaswieSearchData.selectData;
+
+      setTimeout(function () {
+        refineResults(selectData);
+      }, 100);
     }
   }
 }

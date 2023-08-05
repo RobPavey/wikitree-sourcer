@@ -1367,7 +1367,7 @@ async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFun
   endMainMenu(menu);
 }
 
-function addSameRecordMenuItem(menu, data, siteName, searchFunction) {
+function addSameRecordMenuItem(menu, data, siteName, searchFunction, equivSiteName = "") {
   let gd = data.generalizedData;
 
   //console.log("addSameRecordMenuItem, gd is")
@@ -1384,9 +1384,11 @@ function addSameRecordMenuItem(menu, data, siteName, searchFunction) {
       );
       if (fsCollectionId) {
         addMenuItem(menu, "Search the same collection for the same record", searchFunction);
+        return true;
       }
     }
   }
+  return false;
 }
 
 // This flag indicates whether the popup should resize after the initial setup -

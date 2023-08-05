@@ -12,7 +12,12 @@
     "placeString": "Waardenburg, Nederland, Nederland"
   },
   "collectionData": {
-    "id": "Familieadvertenties"
+    "id": "Familieadvertenties",
+    "place": "Waardenburg",
+    "eventType": "Geboorte",
+    "nameParts": {
+      "fullName": "Jan Willem Frederik Zylker"
+    }
   },
   "hasValidData": true
 }

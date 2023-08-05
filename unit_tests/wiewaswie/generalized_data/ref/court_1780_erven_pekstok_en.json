@@ -12,7 +12,11 @@
     "placeString": "Noord-Holland, Nederland"
   },
   "collectionData": {
-    "id": "Rechterlijke archieven"
+    "id": "Rechterlijke archieven",
+    "eventType": "Registratie",
+    "nameParts": {
+      "fullName": "Erven Johanna Maria Pekstok"
+    }
   },
   "hasValidData": true
 }

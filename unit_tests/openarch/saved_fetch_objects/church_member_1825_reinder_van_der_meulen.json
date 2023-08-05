@@ -1,0 +1,96 @@
+{
+  "A2A": {
+    "@Version": "1.7",
+    "a2a:Person": [
+      {
+        "@pid": "Person:cd5dfdf6-88cf-4239-b0c9-2249942d93e3",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Reinder",
+          "a2a:PersonNamePatronym": "Harmens",
+          "a2a:PersonNamePrefixLastName": "van der",
+          "a2a:PersonNameLastName": "Meulen"
+        },
+        "a2a:Gender": "Man",
+        "a2a:Residence": {
+          "a2a:Place": "Arum"
+        }
+      },
+      {
+        "@pid": "Person:08b587b4-d7ab-4f1c-bd73-9c4dbeb4e50a",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Trijntje",
+          "a2a:PersonNamePatronym": "Luitsens"
+        },
+        "a2a:Gender": "Vrouw",
+        "a2a:Residence": {
+          "a2a:Place": "Arum"
+        }
+      }
+    ],
+    "a2a:Event": {
+      "@eid": "Event1",
+      "a2a:EventType": "other:DTB Lidmaten inschrijving",
+      "a2a:EventDate": {
+        "a2a:Year": "1825"
+      },
+      "a2a:EventPlace": {
+        "a2a:Place": "Wonseradeel"
+      }
+    },
+    "a2a:RelationEP": [
+      {
+        "a2a:PersonKeyRef": "Person:cd5dfdf6-88cf-4239-b0c9-2249942d93e3",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "other:Man:"
+      },
+      {
+        "a2a:PersonKeyRef": "Person:08b587b4-d7ab-4f1c-bd73-9c4dbeb4e50a",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "other:Vrouw:"
+      }
+    ],
+    "a2a:Source": {
+      "a2a:SourcePlace": {
+        "a2a:Place": "Wonseradeel"
+      },
+      "a2a:SourceIndexDate": {
+        "a2a:From": "1825-01-01",
+        "a2a:To": "1825-12-31"
+      },
+      "a2a:SourceDate": {
+        "a2a:Year": "1825"
+      },
+      "a2a:SourceType": "other:DTB Lidmaten",
+      "a2a:SourceReference": {
+        "a2a:Place": "Leeuwarden",
+        "a2a:InstitutionName": "AlleFriezen",
+        "a2a:Archive": "28",
+        "a2a:Collection": "Archiefnaam: Collectie doop-, trouw-, lidmaten- begraafboeken - Tresoar, Deel: 797, Periode: 1772...",
+        "a2a:Book": "Lidmatenregister Herv. Gemeente Arum",
+        "a2a:Folio": "106",
+        "a2a:RegistryNumber": "797"
+      },
+      "a2a:SourceAvailableScans": {
+        "a2a:Scan": {
+          "a2a:OrderSequenceNumber": "1",
+          "a2a:Uri": "https://tresoar-images.memorix.nl/frl/thumb/640x480/NL-0400410000%2FNL-0400410000_28%2FNL-0400410000_28_0797%2FNL-0400410000_28_0797_000106.jp2",
+          "a2a:UriViewer": "http://allefriezen.nl/zoeken/deeds/b319628e-3082-485a-aa5b-7a711898d92a",
+          "a2a:UriPreview": "https://tresoar-images.memorix.nl/frl/thumb/250x250/NL-0400410000%2FNL-0400410000_28%2FNL-0400410000_28_0797%2FNL-0400410000_28_0797_000106.jp2"
+        }
+      },
+      "a2a:SourceLastChangeDate": "2022-08-11",
+      "a2a:SourceDigitalOriginal": "http://allefriezen.nl/zoeken/deeds/b319628e-3082-485a-aa5b-7a711898d92a",
+      "a2a:RecordGUID": "{b319628e-3082-485a-aa5b-7a711898d92a}",
+      "a2a:SourceRemark": [
+        {
+          "@Key": "Opmerking",
+          "a2a:Value": "In 1825 lidmaat\r\nIn november 1827 hij overleden\r\nIn augustus 1841 zij vertrokken naar Achlum"
+        },
+        {
+          "@Key": "Provenance",
+          "a2a:Value": "A2Acollection oai-pmh_20220920_18366_00018366.xml van FRL"
+        }
+      ]
+    }
+  }
+}

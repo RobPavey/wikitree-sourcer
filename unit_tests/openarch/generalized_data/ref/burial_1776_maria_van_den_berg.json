@@ -1,27 +1,26 @@
 {
-  "sourceOfData": "wiewaswie",
+  "sourceOfData": "openarch",
   "sourceType": "record",
   "recordType": "Burial",
   "name": {
-    "name": "Maria van den Berg",
     "forenames": "Maria",
     "lastName": "van den Berg"
   },
+  "personGender": "female",
   "eventDate": {
     "dateString": "25 Apr 1776"
   },
   "eventPlace": {
-    "placeString": "Princenhage, Noord-Brabant, Nederland"
+    "placeString": "Princenhage, Nederland"
   },
   "collectionData": {
     "id": "DTB Begraven",
-    "place": "Princenhage",
-    "eventType": "Begraven",
     "nameParts": {
-      "forenames": "Maria",
+      "firstName": "Maria",
       "lastNamePrefix": "van den",
       "lastName": "Berg"
-    }
+    },
+    "place": "Princenhage"
   },
   "hasValidData": true
 }

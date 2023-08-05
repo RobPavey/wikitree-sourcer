@@ -1,0 +1,102 @@
+{
+  "url": "https://www.openarch.nl/brd:b05a07ca-8205-c036-8713-a68738acc33c",
+  "dataObj": {
+    "A2A": {
+      "@Version": "1.7",
+      "a2a:Person": [
+        {
+          "@pid": "Person:51007244-1dfd-7b76-e3b3-239f5372dff9",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Peter",
+            "a2a:PersonNamePrefixLastName": "van",
+            "a2a:PersonNameLastName": "Beek"
+          },
+          "a2a:Gender": "Onbekend"
+        },
+        {
+          "@pid": "Person:beed7a60-9bb9-0b76-5d60-5041bf19a745",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Maria",
+            "a2a:PersonNamePrefixLastName": "van den",
+            "a2a:PersonNameLastName": "Berg"
+          },
+          "a2a:Gender": "Vrouw"
+        }
+      ],
+      "a2a:Event": {
+        "@eid": "Event1",
+        "a2a:EventType": "Begraven",
+        "a2a:EventDate": {
+          "a2a:Year": "1776",
+          "a2a:Month": "4",
+          "a2a:Day": "25"
+        },
+        "a2a:EventPlace": {
+          "a2a:Place": "Princenhage"
+        }
+      },
+      "a2a:RelationEP": {
+        "a2a:PersonKeyRef": "Person:beed7a60-9bb9-0b76-5d60-5041bf19a745",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Overledene"
+      },
+      "a2a:RelationPP": {
+        "a2a:PersonKeyRef": [
+          "Person:beed7a60-9bb9-0b76-5d60-5041bf19a745",
+          "Person:51007244-1dfd-7b76-e3b3-239f5372dff9"
+        ],
+        "a2a:RelationType": "Relatie"
+      },
+      "a2a:Source": {
+        "a2a:SourcePlace": {
+          "a2a:Place": "Princenhage"
+        },
+        "a2a:SourceIndexDate": {
+          "a2a:From": "1776-04-25",
+          "a2a:To": "1776-04-25"
+        },
+        "a2a:SourceDate": {
+          "a2a:Year": "1776",
+          "a2a:Month": "4",
+          "a2a:Day": "25"
+        },
+        "a2a:SourceType": "DTB Begraven",
+        "a2a:SourceReference": {
+          "a2a:Place": "Breda",
+          "a2a:InstitutionName": "Stadsarchief Breda",
+          "a2a:Archive": "CB",
+          "a2a:Collection": "Archiefnaam: Collectie DTB Breda, Bron: boek, Deel: 146, Periode: 1757-1788",
+          "a2a:Book": "Begraven nh Princenhage 1757-1788",
+          "a2a:Folio": "3-079",
+          "a2a:RegistryNumber": "146"
+        },
+        "a2a:SourceAvailableScans": {
+          "a2a:Scan": {
+            "a2a:OrderSequenceNumber": "1",
+            "a2a:Uri": "https://images.memorix.nl/brd/thumb/640x480/83e26f76-8751-11e3-9bbe-638a5f86232f.jpg",
+            "a2a:UriViewer": "https://stadsarchief.breda.nl/collectie/archief/genealogische-bronnen/deeds/b05a07ca-8205-c036-8713-a68738acc33c",
+            "a2a:UriPreview": "https://images.memorix.nl/brd/thumb/250x250/83e26f76-8751-11e3-9bbe-638a5f86232f.jpg"
+          }
+        },
+        "a2a:SourceLastChangeDate": "2014-01-28",
+        "a2a:SourceDigitalOriginal": "https://stadsarchief.breda.nl/collectie/archief/genealogische-bronnen/deeds/b05a07ca-8205-c036-8713-a68738acc33c",
+        "a2a:RecordGUID": "{b05a07ca-8205-c036-8713-a68738acc33c}",
+        "a2a:SourceRemark": [
+          {
+            "@Key": "Opmerking",
+            "a2a:Value": "woonde op Wevershijken"
+          },
+          {
+            "@Key": "Opmerking",
+            "a2a:Value": "<a target=\"_blank\" href='/collectie/archief/bladeren-door-bronnen/deeds?f={\"search_s_register_naam\":{\"v\":\"Begraven+nh+Princenhage+1757-1788\"}}'>Bekijk Akten</a>"
+          },
+          {
+            "@Key": "Provenance",
+            "a2a:Value": "A2Acollection oai-pmh_20210830_6142_00006142.xml van BRD"
+          }
+        ]
+      }
+    }
+  },
+  "success": true
+}

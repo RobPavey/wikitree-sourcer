@@ -39,7 +39,12 @@
     }
   ],
   "collectionData": {
-    "id": "Bevolkingsregister"
+    "id": "Bevolkingsregister",
+    "place": "Waverveen en Waveren",
+    "eventType": "Registratie",
+    "nameParts": {
+      "fullName": "Jan Sties"
+    }
   },
   "hasValidData": true
 }

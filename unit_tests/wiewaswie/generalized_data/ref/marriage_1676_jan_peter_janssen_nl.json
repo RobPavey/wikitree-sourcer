@@ -27,7 +27,12 @@
     }
   ],
   "collectionData": {
-    "id": "DTB Trouwen"
+    "id": "DTB Trouwen",
+    "place": "Oosterhout",
+    "eventType": "Trouwen",
+    "nameParts": {
+      "fullName": "Jan Peter Janssen N.N"
+    }
   },
   "hasValidData": true
 }

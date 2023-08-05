@@ -14,7 +14,14 @@
     "placeString": "Princenhage, Noord-Brabant, Nederland"
   },
   "collectionData": {
-    "id": "DTB Begraven"
+    "id": "DTB Begraven",
+    "place": "Princenhage",
+    "eventType": "Begraven",
+    "nameParts": {
+      "forenames": "Maria",
+      "lastNamePrefix": "van den",
+      "lastName": "Berg"
+    }
   },
   "hasValidData": true
 }

@@ -29,33 +29,6 @@ const categories = [
   { value: "wikitree_plus_search", text: "WikiTree Plus" },
 ];
 
-let controls = [
-  {
-    parameterName: "birthPlace",
-    type: "select",
-    label: "Birth place to use in search",
-    values: [
-      { value: "ancestry.com", text: "ancestry.com" },
-      { value: "ancestry.co.uk", text: "ancestry.co.uk" },
-      { value: "ancestry.ca", text: "ancestry.ca" },
-      { value: "ancestry.com.au", text: "ancestry.com.au" },
-      { value: "ancestry.de", text: "ancestry.de" },
-      { value: "ancestry.it", text: "ancestry.it" },
-      { value: "ancestry.fr", text: "ancestry.fr" },
-      { value: "ancestry.se", text: "ancestry.se" },
-      { value: "ancestry.mx", text: "ancestry.mx" },
-      { value: "ancestrylibrary.com", text: "ancestrylibrary.com" },
-      {
-        value: "ancestrylibraryedition.co.uk",
-        text: "ancestrylibraryedition.co.uk",
-      },
-      { value: "ancestrylibrary.ca", text: "ancestrylibrary.ca" },
-      { value: "ancestrylibrary.com.au", text: "ancestrylibrary.com.au" },
-    ],
-    defaultValue: "ancestry.com",
-  },
-];
-
 function buildSelectValuesForPlace(placeString, countries) {
   let values = [];
 

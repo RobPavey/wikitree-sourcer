@@ -14,7 +14,13 @@
     "placeString": "Noord-Brabant, Nederland"
   },
   "collectionData": {
-    "id": "Memories van Successie"
+    "id": "Memories van Successie",
+    "eventType": "Overlijden",
+    "nameParts": {
+      "forenames": "Helena",
+      "lastNamePrefix": "van",
+      "lastName": "Zwolgen"
+    }
   },
   "hasValidData": true
 }

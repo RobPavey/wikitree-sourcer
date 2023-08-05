@@ -25,7 +25,11 @@
     }
   },
   "collectionData": {
-    "id": "DTB Begraven"
+    "id": "DTB Begraven",
+    "eventType": "Begraven",
+    "nameParts": {
+      "fullName": "Peter"
+    }
   },
   "hasValidData": true
 }

@@ -14,7 +14,13 @@
     "placeString": "Noord-Holland, Nederland"
   },
   "collectionData": {
-    "id": "Militairen"
+    "id": "Militairen",
+    "eventType": "Registratie",
+    "nameParts": {
+      "forenames": "Hend.k",
+      "lastNamePrefix": "van",
+      "lastName": "Zyl"
+    }
   },
   "hasValidData": true
 }
