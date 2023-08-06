@@ -11,11 +11,12 @@
     "dateString": "1 Jan 1817"
   },
   "eventPlace": {
-    "placeString": "Noord-Holland, Nederland"
+    "placeString": "Amsterdam, Noord-Holland, Nederland"
   },
   "collectionData": {
     "id": "Militairen",
     "documentPlace": "Amsterdam",
+    "place": "Amsterdam",
     "eventType": "Registratie",
     "nameParts": {
       "forenames": "Hend.k",

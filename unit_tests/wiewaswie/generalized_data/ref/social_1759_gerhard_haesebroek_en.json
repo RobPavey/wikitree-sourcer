@@ -9,11 +9,12 @@
     "dateString": "11 Jul 1759"
   },
   "eventPlace": {
-    "placeString": "Gelderland, Nederland"
+    "placeString": "Zutphen, Gelderland, Nederland"
   },
   "collectionData": {
     "id": "Sociale zorg",
     "documentPlace": "Zutphen",
+    "place": "Zutphen",
     "eventType": "Weeskamer inschrijvingen",
     "nameParts": {
       "fullName": "Gerhard Haesebroek"

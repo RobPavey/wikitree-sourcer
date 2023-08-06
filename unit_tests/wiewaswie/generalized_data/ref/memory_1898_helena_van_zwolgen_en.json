@@ -11,11 +11,12 @@
     "dateString": "10 Dec 1898"
   },
   "eventPlace": {
-    "placeString": "Noord-Brabant, Nederland"
+    "placeString": "Oss, Noord-Brabant, Nederland"
   },
   "collectionData": {
     "id": "Memories van Successie",
     "documentPlace": "Oss",
+    "place": "Oss",
     "eventType": "Overlijden",
     "nameParts": {
       "forenames": "Helena",

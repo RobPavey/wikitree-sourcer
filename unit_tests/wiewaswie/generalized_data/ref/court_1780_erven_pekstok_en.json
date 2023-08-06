@@ -9,11 +9,12 @@
     "dateString": "28 Nov 1780"
   },
   "eventPlace": {
-    "placeString": "Noord-Holland, Nederland"
+    "placeString": "Amsterdam, Noord-Holland, Nederland"
   },
   "collectionData": {
     "id": "Rechterlijke archieven",
     "documentPlace": "Amsterdam",
+    "place": "Amsterdam",
     "eventType": "Registratie",
     "nameParts": {
       "fullName": "Erven Johanna Maria Pekstok"

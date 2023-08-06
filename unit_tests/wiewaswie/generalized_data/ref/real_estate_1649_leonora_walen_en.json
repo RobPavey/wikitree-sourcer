@@ -9,11 +9,12 @@
     "yearString": "1649"
   },
   "eventPlace": {
-    "placeString": "Zeeland, Nederland"
+    "placeString": "Sint-Maartensdijk, Zeeland, Nederland"
   },
   "collectionData": {
     "id": "Onroerend goed",
     "documentPlace": "Sint-Maartensdijk",
+    "place": "Sint-Maartensdijk",
     "eventType": "transportakte",
     "nameParts": {
       "fullName": "Leonora Walen"

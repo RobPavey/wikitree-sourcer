@@ -10,7 +10,7 @@
     "dateString": "13 Feb 1694"
   },
   "eventPlace": {
-    "placeString": "Groningen, Nederland"
+    "placeString": "Kerkelijke gemeente Mensingeweer en Maarslag, Groningen, Nederland"
   },
   "parents": {
     "father": {
@@ -27,6 +27,7 @@
   "collectionData": {
     "id": "DTB Begraven",
     "documentPlace": "Kerkelijke gemeente Mensingeweer en Maarslag",
+    "place": "Kerkelijke gemeente Mensingeweer en Maarslag",
     "eventType": "Begraven",
     "nameParts": {
       "fullName": "Peter"

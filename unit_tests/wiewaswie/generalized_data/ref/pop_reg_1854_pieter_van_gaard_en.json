@@ -11,7 +11,7 @@
     "dateString": "30 Oct 1854"
   },
   "eventPlace": {
-    "placeString": "Noord-Holland, Nederland"
+    "placeString": "Amsterdam, Noord-Holland, Nederland"
   },
   "birthDate": {
     "dateString": "30 Oct 1854"
@@ -22,6 +22,7 @@
   "collectionData": {
     "id": "Bevolkingsregister",
     "documentPlace": "Amsterdam",
+    "place": "Amsterdam",
     "eventType": "Registratie",
     "nameParts": {
       "forenames": "Pieter Gerardus Herms",

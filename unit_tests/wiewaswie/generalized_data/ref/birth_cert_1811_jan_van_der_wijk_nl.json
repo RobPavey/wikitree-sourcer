@@ -12,7 +12,7 @@
     "dateString": "8 Nov 1811"
   },
   "eventPlace": {
-    "placeString": "Friesland, Nederland"
+    "placeString": "Opsterland, Friesland, Nederland"
   },
   "birthDate": {
     "dateString": "8 Nov 1811"
@@ -32,6 +32,7 @@
   "collectionData": {
     "id": "BS Geboorte",
     "documentPlace": "Opsterland",
+    "place": "Opsterland",
     "eventType": "Geboorte",
     "nameParts": {
       "forenames": "Jan",

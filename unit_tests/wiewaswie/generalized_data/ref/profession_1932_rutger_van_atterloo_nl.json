@@ -11,7 +11,7 @@
     "yearString": "1932"
   },
   "eventPlace": {
-    "placeString": "Noord-Holland, Nederland"
+    "placeString": "Amsterdam, Noord-Holland, Nederland"
   },
   "birthDate": {
     "yearString": "1932"
@@ -19,6 +19,7 @@
   "collectionData": {
     "id": "Beroep en bedrijf",
     "documentPlace": "Amsterdam",
+    "place": "Amsterdam",
     "eventType": "Registratie",
     "nameParts": {
       "forenames": "Rutger Antony",

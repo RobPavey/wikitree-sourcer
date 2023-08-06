@@ -27,6 +27,8 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { separateFullNameIntoParts } from "./wiewaswie_name_utils.mjs";
 
+const unknownText = "Onbekend";
+
 const FT = {
   forenames: "forenames",
   fullName: "fullName",
@@ -664,21 +666,13 @@ class WiewaswieEdReader extends ExtractedDataReader {
 
   getEventPlaceObj() {
     let eventPlace = this.extractEventFieldByDataKey("EventPlace");
-    let documentPlace = this.extractSourceFieldByDataKey("DocumentPlace");
+    let documentPlace = this.extractSourceFieldByDataKey("CertificatePlace");
     let region = this.extractSourceFieldByDataKey("CollectionRegion");
 
     let placeString = "";
-    if (eventPlace) {
-      if (documentPlace) {
-        if (eventPlace != documentPlace) {
-          placeString += eventPlace + ", " + documentPlace;
-        } else {
-          placeString += eventPlace;
-        }
-      } else {
-        placeString += eventPlace;
-      }
-    } else if (documentPlace) {
+    if (eventPlace && eventPlace != unknownText) {
+      placeString += eventPlace;
+    } else if (documentPlace && documentPlace != unknownText) {
       placeString += documentPlace;
     }
 
@@ -867,13 +861,16 @@ class WiewaswieEdReader extends ExtractedDataReader {
       let collectionData = { id: this.documentType };
 
       let eventPlace = this.extractEventFieldByDataKey("EventPlace");
-      if (eventPlace) {
+      if (eventPlace && eventPlace != unknownText) {
         collectionData.place = eventPlace;
       }
 
       let documentPlace = this.extractSourceFieldByDataKey("CertificatePlace");
-      if (documentPlace) {
+      if (documentPlace && documentPlace != unknownText) {
         collectionData.documentPlace = documentPlace;
+        if (!collectionData.place) {
+          collectionData.place = documentPlace;
+        }
       }
 
       if (this.eventType) {
