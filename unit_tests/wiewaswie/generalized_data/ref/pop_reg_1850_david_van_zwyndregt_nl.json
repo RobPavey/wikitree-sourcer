@@ -67,6 +67,7 @@
   "collectionData": {
     "id": "Bevolkingsregister",
     "place": "Vlissingen",
+    "documentPlace": "Vlissingen",
     "eventType": "Registratie",
     "nameParts": {
       "forenames": "David",

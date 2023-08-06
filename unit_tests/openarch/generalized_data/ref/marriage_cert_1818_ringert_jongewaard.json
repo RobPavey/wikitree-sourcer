@@ -1,0 +1,70 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "forenames": "Ringert",
+    "lastName": "Jongewaard"
+  },
+  "eventDate": {
+    "dateString": "20 Sep 1818"
+  },
+  "eventPlace": {
+    "placeString": "Berkhout, Nederland"
+  },
+  "ageAtEvent": "24",
+  "occupation": "arbeider",
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Trijntje",
+        "lastName": "Jacobs Water"
+      },
+      "marriageDate": {
+        "dateString": "20 Sep 1818"
+      },
+      "marriagePlace": {
+        "placeString": "Berkhout, Nederland"
+      },
+      "age": "24",
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "forenames": "Jacob",
+            "lastName": "Water"
+          }
+        },
+        "mother": {
+          "name": {
+            "forenames": "Geertje",
+            "lastName": "Jacobs Voorn"
+          }
+        }
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Cornelis",
+        "lastName": "Jongewaard"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Neeltje",
+        "lastName": "de Reus"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "BS Huwelijk",
+    "nameParts": {
+      "forenames": "Ringert",
+      "lastName": "Jongewaard"
+    },
+    "place": "Berkhout"
+  },
+  "hasValidData": true
+}

@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 
-function buildSelectValuesForPlaces(placeNames) {
+function buildSelectValuesForPlaces(generalizedData) {
   let values = [];
 
   function addValue(valueString) {
@@ -38,6 +38,7 @@ function buildSelectValuesForPlaces(placeNames) {
 
   addValue("<none>");
 
+  let placeNames = generalizedData.inferPlaceNames();
   for (let placeName of placeNames) {
     let place = new PlaceObj();
     place.placeString = placeName;
@@ -53,6 +54,11 @@ function buildSelectValuesForPlaces(placeNames) {
     }
   }
 
+  if (generalizedData.collectionData) {
+    addValue(generalizedData.collectionData.documentPlace);
+    addValue(generalizedData.collectionData.place);
+  }
+
   //console.log("buildSelectValuesForPlace: values is:");
   //console.log(values);
 
@@ -63,14 +69,15 @@ const OpenarchData = {
   getAdditionalControls(generalizedData, parameters, options) {
     let controls = [];
 
-    let placeNames = generalizedData.inferPlaceNames();
-    if (placeNames && placeNames.length > 0) {
+    let placeValues = buildSelectValuesForPlaces(generalizedData);
+
+    if (placeValues && placeValues.length > 0) {
       let placeControl = {};
       placeControl.elementId = "place";
       placeControl.parameterName = "place";
       placeControl.type = "select";
       placeControl.label = "Place to use in search";
-      placeControl.values = buildSelectValuesForPlaces(placeNames);
+      placeControl.values = placeValues;
       controls.push(placeControl);
     }
 

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"BS Geboorte (Civil registration births)\"<br/>\nAlleFriezen, Collection: Burgerlijke Stand Opsterland - Tresoar, Archive: 30-28, Inventory number: 1001, Book: Geboorteregister 1811, Folio: 062<br/>\n[https://www.openarch.nl/frl:920ffe70-6378-e93b-71a0-58a1e1237e3f OpenArch Record] (accessed 6 May 2021)<br/>\n[http://allefriezen.nl/zoeken/deeds/920ffe70-6378-e93b-71a0-58a1e1237e3f AlleFriezen Record]<br/>\nJan van der Wijk birth 8 Nov 1811, son of Jan Luitsens & Bieke Egberts.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jan, son of Jan Luitsens & Bieke Egberts, was born on 8 November 1811.<ref>\n'''Birth Registration''':\n\"BS Geboorte (Civil registration births)\"<br/>\nAlleFriezen, Collection: Burgerlijke Stand Opsterland - Tresoar, Archive: 30-28, Inventory number: 1001, Book: Geboorteregister 1811, Folio: 062<br/>\n[https://www.openarch.nl/frl:920ffe70-6378-e93b-71a0-58a1e1237e3f OpenArch Record] (accessed 6 May 2021)<br/>\n[http://allefriezen.nl/zoeken/deeds/920ffe70-6378-e93b-71a0-58a1e1237e3f AlleFriezen Record]<br/>\nJan van der Wijk birth 8 Nov 1811, son of Jan Luitsens & Bieke Egberts.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"BS Geboorte (Civil registration births)\"<br/>AlleFriezen, Collection: Burgerlijke Stand Opsterland - Tresoar, Archive: 30-28, Inventory number: 1001, Book: Geboorteregister 1811, Folio: 062<br/>[https://www.openarch.nl/frl:920ffe70-6378-e93b-71a0-58a1e1237e3f OpenArch Record] (accessed 6 May 2021)<br/>[http://allefriezen.nl/zoeken/deeds/920ffe70-6378-e93b-71a0-58a1e1237e3f AlleFriezen Record]<br/>Jan van der Wijk birth 8 Nov 1811, son of Jan Luitsens & Bieke Egberts.",
+    "type": "source"
+  }
+}

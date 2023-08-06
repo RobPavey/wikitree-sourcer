@@ -2,6 +2,7 @@
   "sourceOfData": "openarch",
   "sourceType": "record",
   "recordType": "OtherChurchEvent",
+  "recordSubtype": "MemberRegistration",
   "name": {
     "forenames": "Reinder",
     "lastName": "van der Harmens Meulen"

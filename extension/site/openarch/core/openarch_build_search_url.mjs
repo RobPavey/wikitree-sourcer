@@ -117,7 +117,11 @@ function buildSearchUrl(buildUrlInput) {
 
   // Add collection reference gd if this is SameCollection
   if (typeOfSearch == "SameCollection") {
-    builder.addEventPlace(gd.collectionData.place);
+    if (gd.sourceOfData == "wiewaswie" && gd.collectionData.documentPlace) {
+      builder.addEventPlace(gd.collectionData.documentPlace);
+    } else {
+      builder.addEventPlace(gd.collectionData.place);
+    }
     builder.addArchiveCode(gd.collectionData.archiveCode);
   }
 

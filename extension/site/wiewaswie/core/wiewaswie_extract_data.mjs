@@ -158,6 +158,12 @@ function extractData(document, url) {
     result.title = title.textContent;
   }
 
+  // extract language because it is not always in the URL
+  const languageElement = document.querySelector("header > div.navbar li.language > a.active");
+  if (languageElement) {
+    result.language = languageElement.textContent;
+  }
+
   result.success = true;
 
   //console.log(result);

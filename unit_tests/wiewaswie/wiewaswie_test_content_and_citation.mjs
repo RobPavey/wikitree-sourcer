@@ -32,13 +32,62 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    caseName: "baptism_1789_gerryt_goudemond_en",
-    url: "https://www.wiewaswie.nl/en/detail/54339285",
+    // example with no language in URL
+    caseName: "baptism_1789_gerryt_goudemond",
+    url: "https://www.wiewaswie.nl/detail/54339285",
     optionVariants: [
+      {
+        variantName: "lang_page",
+        optionOverrides: {
+          citation_wiewaswie_languageVersionToCite: "page",
+        },
+      },
+      {
+        variantName: "lang_en",
+        optionOverrides: {
+          citation_wiewaswie_languageVersionToCite: "en",
+        },
+      },
       {
         variantName: "lang_nl",
         optionOverrides: {
           citation_wiewaswie_languageVersionToCite: "nl",
+        },
+      },
+      {
+        variantName: "lang_omit",
+        optionOverrides: {
+          citation_wiewaswie_languageVersionToCite: "omit",
+        },
+      },
+    ],
+  },
+  {
+    caseName: "baptism_1789_gerryt_goudemond_en",
+    url: "https://www.wiewaswie.nl/en/detail/54339285",
+    optionVariants: [
+      {
+        variantName: "lang_page",
+        optionOverrides: {
+          citation_wiewaswie_languageVersionToCite: "page",
+        },
+      },
+      {
+        variantName: "lang_en",
+        optionOverrides: {
+          citation_wiewaswie_languageVersionToCite: "en",
+        },
+      },
+      {
+        variantName: "lang_nl",
+        optionOverrides: {
+          citation_wiewaswie_languageVersionToCite: "nl",
+        },
+      },
+      {
+        variantName: "lang_omit",
+        optionOverrides: {
+          citation_wiewaswie_languageVersionToCite: "omit",
         },
       },
     ],

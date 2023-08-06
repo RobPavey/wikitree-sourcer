@@ -21,6 +21,7 @@
   },
   "collectionData": {
     "id": "Bevolkingsregister",
+    "documentPlace": "Amsterdam",
     "eventType": "Registratie",
     "nameParts": {
       "forenames": "Pieter Gerardus Herms",

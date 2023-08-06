@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { RT } from "../../../base/core/record_type.mjs";
+import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
@@ -44,6 +44,18 @@ const typeData = {
       father: ["Vader"],
       mother: ["Moeder"],
       spouse: ["Partner"],
+      bride: ["Bruid"],
+      brideFather: ["Vader van de bruid"],
+      brideMother: ["Moeder van de bruid"],
+    },
+    referenceKeys: {
+      "a2a:InstitutionName": "",
+      "a2a:Collection": "Collection",
+      "a2a:Archive": "Archive",
+      "a2a:RegistryNumber": "Inventory number",
+      "a2a:DocumentNumber": "Record number",
+      "a2a:Folio": "Folio",
+      "a2a:Book": "Book",
     },
   },
   "DTB Dopen": {
@@ -60,7 +72,11 @@ const typeData = {
     recordType: RT.Marriage,
     relation: {
       primary: ["Bruidegom"],
-      bride: ["Bruid"],
+      father: ["Vader van de bruidegom", "Vader"],
+      mother: ["Moeder van de bruidegom", "Moeder"],
+    },
+    referenceKeys: {
+      "a2a:Archive": "Access code",
     },
   },
   "DTB Begraven": {
@@ -75,8 +91,36 @@ const typeData = {
     // Church membership registers
     enDocumentType: "Church membership records",
     recordType: RT.OtherChurchEvent,
+    recordSubtype: RecordSubtype.MemberRegistration,
     relation: {
       primary: ["other:Man"],
+    },
+  },
+
+  "BS Geboorte": {
+    // Civil Birth
+    enDocumentType: "Civil registration births",
+    recordType: RT.BirthRegistration,
+    relation: {
+      primary: ["Kind"],
+    },
+  },
+  "BS Huwelijk": {
+    // Civil Marriage
+    enDocumentType: "Civil registration marriages",
+    recordType: RT.MarriageRegistration,
+    relation: {
+      primary: ["Bruidegom"],
+      father: ["Vader van de bruidegom", "Vader"],
+      mother: ["Moeder van de bruidegom", "Moeder"],
+    },
+  },
+  "BS Overlijden": {
+    // Civil Death
+    enDocumentType: "Civil registration deaths",
+    recordType: RT.DeathRegistration,
+    relation: {
+      primary: ["Overledene"],
     },
   },
 
@@ -86,6 +130,9 @@ const typeData = {
     recordType: RT.Death,
     relation: {
       primary: ["Overledene"],
+    },
+    referenceKeys: {
+      "a2a:Archive": "Access code",
     },
   },
 };
@@ -115,6 +162,7 @@ class OpenarchEdReader extends ExtractedDataReader {
         this.typeData = typeData[this.a2aSourceType];
         if (this.typeData) {
           this.recordType = this.typeData.recordType;
+          this.recordSubtype = this.typeData.recordSubtype;
         }
       }
     }
@@ -292,6 +340,24 @@ class OpenarchEdReader extends ExtractedDataReader {
     if (person) {
       return person[key];
     }
+  }
+
+  getNameForReferenceKey(key) {
+    let name = undefined;
+    if (this.typeData && this.typeData.referenceKeys) {
+      name = this.typeData.referenceKeys[key];
+    }
+
+    if (name === undefined) {
+      name = typeData.default.referenceKeys[key];
+    }
+
+    if (name === undefined) {
+      name = key;
+      name = name.replace("a2a:", "");
+    }
+
+    return name;
   }
 
   findRelationshipByType(relationType) {
@@ -576,54 +642,58 @@ class OpenarchEdReader extends ExtractedDataReader {
     return title;
   }
 
-  getSourceReference() {
+  getSourceReference(options) {
     let reference = this.extractSourceFieldByKey("a2a:SourceReference");
     if (!reference) {
       return "";
     }
 
-    let registrationNumber = reference["a2a:RegistryNumber"];
-    let book = reference["a2a:Book"];
-    let folio = reference["a2a:Folio"];
-    let documentNumber = reference["a2a:DocumentNumber"];
-    let archive = reference["a2a:Archive"];
-    let institution = reference["a2a:InstitutionName"];
-    let collection = reference["a2a:Collection"];
-    if (collection) {
-      const prefix = "Archiefnaam: ";
-      if (collection.startsWith(prefix)) {
-        collection = collection.substring(prefix.length);
-      }
-      let remainderIndex = collection.search(/\,\s+[^,:]+\:/);
-      if (remainderIndex != -1) {
-        collection = collection.substring(0, remainderIndex);
+    let string = "";
+
+    function addPart(reader, referenceKey) {
+      let value = reference[referenceKey];
+
+      if (value) {
+        let name = reader.getNameForReferenceKey(referenceKey);
+
+        if (referenceKey == "a2a:Collection") {
+          const prefix = "Archiefnaam: ";
+          if (value.startsWith(prefix)) {
+            value = value.substring(prefix.length);
+          }
+          let remainderIndex = value.search(/\,\s+[^,:]+\:/);
+          if (remainderIndex != -1) {
+            value = value.substring(0, remainderIndex);
+          }
+        }
+
+        if (string) {
+          string += ", ";
+        }
+        if (name) {
+          string += name + ": ";
+        }
+        string += value;
       }
     }
 
-    if (institution && collection) {
-      let string = institution + ", Collection: " + collection;
+    addPart(this, "a2a:InstitutionName");
+    addPart(this, "a2a:Collection");
 
-      if (archive) {
-        // This is what the english openarch page says in it's source citation
-        string += ", Access code: " + archive;
-      }
-      if (registrationNumber) {
-        // This is what the english openarch page says in it's source citation
-        string += ", Inventory number: " + registrationNumber;
-      }
-      if (documentNumber) {
-        // This is what the english openarch page says in it's source citation
-        string += ", Record number: " + documentNumber;
-      }
-      if (folio) {
-        string += ", Folio: " + folio;
-      }
-      if (book) {
-        string += ", Book: " + book;
-      }
-      return string;
+    if (options.citation_openarch_includeArchiveNumInSourceRef) {
+      addPart(this, "a2a:Archive");
     }
-    return "";
+    if (options.citation_openarch_includeRegNumInSourceRef) {
+      addPart(this, "a2a:RegistryNumber");
+    }
+    if (options.citation_openarch_includeDocNumInSourceRef) {
+      addPart(this, "a2a:DocumentNumber");
+    }
+    addPart(this, "a2a:Book");
+    if (options.citation_openarch_includeFolioNumInSourceRef) {
+      addPart(this, "a2a:Folio");
+    }
+    return string;
   }
 
   getExternalLink() {

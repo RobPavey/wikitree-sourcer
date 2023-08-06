@@ -1,0 +1,112 @@
+{
+  "url": "https://www.openarch.nl/frl:920ffe70-6378-e93b-71a0-58a1e1237e3f",
+  "dataObj": {
+    "A2A": {
+      "@Version": "1.7",
+      "a2a:Person": [
+        {
+          "@pid": "Person:b31c075d-5764-afcc-cdb0-a707df3e0eec",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Bieke",
+            "a2a:PersonNamePatronym": "Egberts"
+          },
+          "a2a:Gender": "Vrouw"
+        },
+        {
+          "@pid": "Person:b0d312d9-a037-d0b3-b008-4640a12dc819",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Jan",
+            "a2a:PersonNamePatronym": "Luitsens"
+          },
+          "a2a:Gender": "Man"
+        },
+        {
+          "@pid": "Person:8763d365-2a93-370f-6061-6c7dac1e5e24",
+          "a2a:PersonName": {
+            "a2a:PersonNameFirstName": "Jan",
+            "a2a:PersonNamePrefixLastName": "van der",
+            "a2a:PersonNameLastName": "Wijk"
+          },
+          "a2a:Gender": "Man",
+          "a2a:BirthDate": {
+            "a2a:Year": "1811",
+            "a2a:Month": "11",
+            "a2a:Day": "8"
+          }
+        }
+      ],
+      "a2a:Event": {
+        "@eid": "Event1",
+        "a2a:EventType": "Geboorte",
+        "a2a:EventDate": {
+          "a2a:Year": "1811",
+          "a2a:Month": "11",
+          "a2a:Day": "8"
+        }
+      },
+      "a2a:RelationEP": [
+        {
+          "a2a:PersonKeyRef": "Person:b31c075d-5764-afcc-cdb0-a707df3e0eec",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Moeder"
+        },
+        {
+          "a2a:PersonKeyRef": "Person:b0d312d9-a037-d0b3-b008-4640a12dc819",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Vader"
+        },
+        {
+          "a2a:PersonKeyRef": "Person:8763d365-2a93-370f-6061-6c7dac1e5e24",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Kind"
+        }
+      ],
+      "a2a:Source": {
+        "a2a:SourcePlace": {
+          "a2a:Place": "Opsterland"
+        },
+        "a2a:SourceIndexDate": {
+          "a2a:From": "1811-11-09",
+          "a2a:To": "1811-11-09"
+        },
+        "a2a:SourceDate": {
+          "a2a:Year": "1811",
+          "a2a:Month": "11",
+          "a2a:Day": "9"
+        },
+        "a2a:SourceType": "BS Geboorte",
+        "a2a:SourceReference": {
+          "a2a:Place": "Leeuwarden",
+          "a2a:InstitutionName": "AlleFriezen",
+          "a2a:Archive": "30-28",
+          "a2a:Collection": "Archiefnaam: Burgerlijke Stand Opsterland - Tresoar, Bron: boek, Deel: 1001, Periode: 1811",
+          "a2a:Book": "Geboorteregister 1811",
+          "a2a:Folio": "062",
+          "a2a:RegistryNumber": "1001"
+        },
+        "a2a:SourceAvailableScans": {
+          "a2a:Scan": {
+            "a2a:OrderSequenceNumber": "1",
+            "a2a:Uri": "https://tresoar-images.memorix.nl/frl/thumb/640x480/d095984e-f7e1-9878-9a89-1abc64a18d28.jpg",
+            "a2a:UriViewer": "http://allefriezen.nl/zoeken/deeds/920ffe70-6378-e93b-71a0-58a1e1237e3f",
+            "a2a:UriPreview": "https://tresoar-images.memorix.nl/frl/thumb/250x250/d095984e-f7e1-9878-9a89-1abc64a18d28.jpg"
+          }
+        },
+        "a2a:SourceLastChangeDate": "2019-08-20",
+        "a2a:SourceDigitalOriginal": "http://allefriezen.nl/zoeken/deeds/920ffe70-6378-e93b-71a0-58a1e1237e3f",
+        "a2a:RecordGUID": "{920ffe70-6378-e93b-71a0-58a1e1237e3f}",
+        "a2a:SourceRemark": [
+          {
+            "@Key": "Opmerking",
+            "a2a:Value": "Familienaam vader niet vermeld in de akte, maar later vermeld als \"van der Wijk\"\n<i><b>Verkeerde akte? Gebruik toets \"Volgende\" rechtsboven op afbeeldingsscherm.</b></i>"
+          },
+          {
+            "@Key": "Provenance",
+            "a2a:Value": "A2Acollection oai-pmh_20220125_9334_00009334.xml van FRL"
+          }
+        ]
+      }
+    }
+  },
+  "success": true
+}

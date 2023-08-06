@@ -35,9 +35,27 @@ const citationOptionsGroup = {
   subsection: "openarch",
   options: [
     {
-      optionName: "changeNamesToInitialCaps",
+      optionName: "includeArchiveNumInSourceRef",
       type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
+      label: "Include archive/access number/ code in source reference",
+      defaultValue: true,
+    },
+    {
+      optionName: "includeRegNumInSourceRef",
+      type: "checkbox",
+      label: "Include registry/inventory number in source reference",
+      defaultValue: true,
+    },
+    {
+      optionName: "includeDocNumInSourceRef",
+      type: "checkbox",
+      label: "Include document number in source reference",
+      defaultValue: true,
+    },
+    {
+      optionName: "includeFolioNumInSourceRef",
+      type: "checkbox",
+      label: "Include folio/page number in source reference",
       defaultValue: true,
     },
   ],

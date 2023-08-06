@@ -63,8 +63,27 @@ const citationOptionsGroup = {
         { value: "page", text: "Use the language of the current page" },
         { value: "en", text: "en" },
         { value: "nl", text: "nl" },
+        { value: "omit", text: "No language in URL (defaults to nl)" },
       ],
       defaultValue: "page",
+    },
+    {
+      optionName: "includeArchiveNumInSourceRef",
+      type: "checkbox",
+      label: "Include archive number/code in source reference",
+      defaultValue: false,
+    },
+    {
+      optionName: "includeRegNumInSourceRef",
+      type: "checkbox",
+      label: "Include registration number in source reference",
+      defaultValue: true,
+    },
+    {
+      optionName: "includePageNumInSourceRef",
+      type: "checkbox",
+      label: "Include page number in source reference",
+      defaultValue: false,
     },
   ],
 };

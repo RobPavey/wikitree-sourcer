@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "forenames": "Jan",
+    "lastName": "van der Wijk"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "8 Nov 1811"
+  },
+  "birthDate": {
+    "dateString": "8 Nov 1811"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Jan",
+        "lastName": "Luitsens"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Bieke",
+        "lastName": "Egberts"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "BS Geboorte",
+    "nameParts": {
+      "forenames": "Jan",
+      "lastNamePrefix": "van der",
+      "lastName": "Wijk"
+    }
+  },
+  "hasValidData": true
+}

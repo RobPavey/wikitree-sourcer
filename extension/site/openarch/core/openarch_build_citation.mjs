@@ -35,7 +35,7 @@ function buildSourceTitle(ed, gd, edReader, builder) {
 }
 
 function buildSourceReference(ed, gd, edReader, builder) {
-  builder.sourceReference += edReader.getSourceReference();
+  builder.sourceReference += edReader.getSourceReference(builder.options);
 }
 
 function buildRecordLink(ed, gd, edReader, builder) {

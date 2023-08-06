@@ -15,6 +15,7 @@
   },
   "collectionData": {
     "id": "Militairen",
+    "documentPlace": "Amsterdam",
     "eventType": "Registratie",
     "nameParts": {
       "forenames": "Hend.k",

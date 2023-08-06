@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "forenames": "Jan",
+    "lastName": "Bartelds Huisman"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "17 Feb 1815"
+  },
+  "eventPlace": {
+    "placeString": "Opsterland, Nederland"
+  },
+  "collectionData": {
+    "id": "BS Overlijden",
+    "nameParts": {
+      "forenames": "Jan",
+      "patronym": "Bartelds",
+      "lastName": "Huisman"
+    },
+    "place": "Opsterland"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,130 @@
+{
+  "A2A": {
+    "@xsi:schemaLocation": "http://Mindbus.nl/A2A http://Mindbus.nl/A2A/A2AAllInOne_v.1.7.xsd",
+    "@Version": "1.7",
+    "a2a:Person": [
+      {
+        "@pid": "Person1",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Ringert",
+          "a2a:PersonNameLastName": "Jongewaard"
+        },
+        "a2a:Age": {
+          "a2a:PersonAgeYears": "24"
+        },
+        "a2a:Profession": "arbeider"
+      },
+      {
+        "@pid": "Person2",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Cornelis",
+          "a2a:PersonNameLastName": "Jongewaard"
+        }
+      },
+      {
+        "@pid": "Person3",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Neeltje",
+          "a2a:PersonNamePrefixLastName": "de",
+          "a2a:PersonNameLastName": "Reus"
+        }
+      },
+      {
+        "@pid": "Person4",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Trijntje",
+          "a2a:PersonNamePatronym": "Jacobs",
+          "a2a:PersonNameLastName": "Water"
+        },
+        "a2a:Age": {
+          "a2a:PersonAgeYears": "24"
+        },
+        "a2a:Profession": "dienstmaagd"
+      },
+      {
+        "@pid": "Person5",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Jacob",
+          "a2a:PersonNameLastName": "Water"
+        }
+      },
+      {
+        "@pid": "Person6",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Geertje",
+          "a2a:PersonNamePatronym": "Jacobs",
+          "a2a:PersonNameLastName": "Voorn"
+        }
+      }
+    ],
+    "a2a:Event": {
+      "@eid": "Event1",
+      "a2a:EventType": "Huwelijk",
+      "a2a:EventDate": {
+        "a2a:Year": "1818",
+        "a2a:Month": "9",
+        "a2a:Day": "20"
+      },
+      "a2a:EventPlace": {
+        "a2a:Place": "Berkhout"
+      }
+    },
+    "a2a:RelationEP": [
+      {
+        "a2a:PersonKeyRef": "Person1",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Bruidegom"
+      },
+      {
+        "a2a:PersonKeyRef": "Person2",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Vader van de bruidegom"
+      },
+      {
+        "a2a:PersonKeyRef": "Person3",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Moeder van de bruidegom"
+      },
+      {
+        "a2a:PersonKeyRef": "Person4",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Bruid"
+      },
+      {
+        "a2a:PersonKeyRef": "Person5",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Vader van de bruid"
+      },
+      {
+        "a2a:PersonKeyRef": "Person6",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Moeder van de bruid"
+      }
+    ],
+    "a2a:Source": {
+      "a2a:SourcePlace": {
+        "a2a:Place": "Berkhout"
+      },
+      "a2a:SourceIndexDate": {
+        "a2a:From": "1818-01-01",
+        "a2a:To": "1818-12-31"
+      },
+      "a2a:SourceDate": {
+        "a2a:Year": "1818",
+        "a2a:Month": "9",
+        "a2a:Day": "20"
+      },
+      "a2a:SourceType": "BS Huwelijk",
+      "a2a:SourceReference": {
+        "a2a:InstitutionName": "Noord-Hollands Archief",
+        "a2a:DocumentNumber": "6"
+      },
+      "a2a:SourceLastChangeDate": "2012-12-29",
+      "a2a:RecordGUID": "{f46f13cf-4f53-4a37-9421-91c0e2a458e0}",
+      "a2a:SourceRemark": {
+        "@Key": "Provenance",
+        "a2a:Value": "Datadump ExportBS+Huwelijk_20210301_045447.csv van NHA, csv2a2a"
+      }
+    }
+  }
+}

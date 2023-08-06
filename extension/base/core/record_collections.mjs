@@ -1162,7 +1162,7 @@ const RecordCollectionData = [
   ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
   {
-    wtsId: "dtbDopen",
+    wtsId: "NetherlandsBaptisms",
     title: "DTB Dopen",
     country: "Nederland",
     sites: {
@@ -1171,7 +1171,7 @@ const RecordCollectionData = [
     },
   },
   {
-    wtsId: "dtbTrouwen",
+    wtsId: "NetherlandsChurchMarriages",
     title: "DTB Trouwen",
     country: "Nederland",
     sites: {
@@ -1180,7 +1180,7 @@ const RecordCollectionData = [
     },
   },
   {
-    wtsId: "dtbBegraven",
+    wtsId: "NetherlandsBurials",
     title: "DTB Begraven",
     country: "Nederland",
     sites: {
@@ -1189,12 +1189,39 @@ const RecordCollectionData = [
     },
   },
   {
-    wtsId: "dtbLidmaten",
+    wtsId: "NetherlandsChurchMembership",
     title: "DTB Lidmaten",
     country: "Nederland",
     sites: {
       wiewaswie: { id: "DTB Overig" },
       openarch: { id: "other:DTB Lidmaten" },
+    },
+  },
+  {
+    wtsId: "NetherlandsCivilBirths",
+    title: "Netherlands Civil Births",
+    country: "Nederland",
+    sites: {
+      wiewaswie: { id: "BS Geboorte" },
+      openarch: { id: "BS Geboorte" },
+    },
+  },
+  {
+    wtsId: "NetherlandsCivilMarriages",
+    title: "Netherlands Civil Marriages",
+    country: "Nederland",
+    sites: {
+      wiewaswie: { id: "BS Huwelijk" },
+      openarch: { id: "BS Huwelijk" },
+    },
+  },
+  {
+    wtsId: "NetherlandsCivilDeaths",
+    title: "Netherlands Civil Deaths",
+    country: "Nederland",
+    sites: {
+      wiewaswie: { id: "BS Overlijden" },
+      openarch: { id: "BS Overlijden" },
     },
   },
 ];

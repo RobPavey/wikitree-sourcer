@@ -406,9 +406,15 @@ class WiewaswieEdReader extends ExtractedDataReader {
       let urlRemainder = ed.url.substring(urlPrefix.length);
       if (urlRemainder.startsWith("en")) {
         this.lang = "en";
+        urlRemainder = urlRemainder.substring(3);
       } else if (urlRemainder.startsWith("nl")) {
         this.lang = "nl";
+        urlRemainder = urlRemainder.substring(3);
       }
+      this.urlRecordNumber = urlRemainder;
+    }
+    if (!this.lang && ed.language) {
+      this.lang = ed.language.toLowerCase();
     }
   }
 
@@ -865,6 +871,11 @@ class WiewaswieEdReader extends ExtractedDataReader {
         collectionData.place = eventPlace;
       }
 
+      let documentPlace = this.extractSourceFieldByDataKey("CertificatePlace");
+      if (documentPlace) {
+        collectionData.documentPlace = documentPlace;
+      }
+
       if (this.eventType) {
         collectionData.eventType = this.eventType;
       }
@@ -926,9 +937,11 @@ class WiewaswieEdReader extends ExtractedDataReader {
     return title;
   }
 
-  getSourceReference() {
+  getSourceReference(options) {
     let registrationNumber = this.extractSourceFieldByDataKey("RegistrationNumber");
     let book = this.extractSourceFieldByDataKey("Book");
+    let page = this.extractSourceFieldByDataKey("Page");
+    let archive = this.extractSourceFieldByDataKey("Archive");
     let institution = this.extractSourceFieldByDataKey("HeritageInstitutionName");
 
     let collection = this.extractSourceFieldByDataKey("Collection");
@@ -946,11 +959,18 @@ class WiewaswieEdReader extends ExtractedDataReader {
     if (institution && collection) {
       let string = institution + ", Collection: " + collection;
 
-      if (registrationNumber) {
+      if (archive && options.citation_wiewaswie_includeArchiveNumInSourceRef) {
+        string += ", Archive: " + archive;
+      }
+
+      if (registrationNumber && options.citation_wiewaswie_includeRegNumInSourceRef) {
         string += ", Registration number: " + registrationNumber;
       }
       if (book) {
         string += ", Book: " + book;
+      }
+      if (page && options.citation_wiewaswie_includePageNumInSourceRef) {
+        string += ", Page: " + page;
       }
       return string;
     }
@@ -973,6 +993,23 @@ class WiewaswieEdReader extends ExtractedDataReader {
 
       return externalLink;
     }
+  }
+
+  getRecordUrlToCite(options) {
+    let url = "https://www.wiewaswie.nl/";
+    if (!this.urlRecordNumber) {
+      return this.ed.url;
+    }
+    const citeOption = options.citation_wiewaswie_languageVersionToCite;
+    if (citeOption == "en") {
+      url += "en/";
+    } else if (citeOption == "nl") {
+      url += "nl/";
+    } else if (citeOption == "page" && this.lang) {
+      url += this.lang + "/";
+    }
+    url += this.urlRecordNumber;
+    return url;
   }
 }
 

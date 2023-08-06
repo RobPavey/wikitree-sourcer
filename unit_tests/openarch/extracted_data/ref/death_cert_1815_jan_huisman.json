@@ -1,0 +1,87 @@
+{
+  "url": "https://www.openarch.nl/frl:034e7de7-24cc-6d54-d435-98c38c0b44c7",
+  "dataObj": {
+    "A2A": {
+      "@Version": "1.7",
+      "a2a:Person": {
+        "@pid": "Person:009c70c4-4cb0-26ac-b324-91c98b47c726",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Jan",
+          "a2a:PersonNamePatronym": "Bartelds",
+          "a2a:PersonNameLastName": "Huisman"
+        },
+        "a2a:Gender": "Man",
+        "a2a:Age": {
+          "a2a:PersonAgeLiteral": "79 jaar"
+        },
+        "a2a:PersonRemark": {
+          "@Key": "diversen",
+          "a2a:Value": "gehuwd"
+        }
+      },
+      "a2a:Event": {
+        "@eid": "Event1",
+        "a2a:EventType": "Overlijden",
+        "a2a:EventDate": {
+          "a2a:Year": "1815",
+          "a2a:Month": "2",
+          "a2a:Day": "17"
+        },
+        "a2a:EventPlace": {
+          "a2a:Place": "Opsterland"
+        }
+      },
+      "a2a:RelationEP": {
+        "a2a:PersonKeyRef": "Person:009c70c4-4cb0-26ac-b324-91c98b47c726",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Overledene"
+      },
+      "a2a:Source": {
+        "a2a:SourcePlace": {
+          "a2a:Place": "Opsterland"
+        },
+        "a2a:SourceIndexDate": {
+          "a2a:From": "1815-02-20",
+          "a2a:To": "1815-02-20"
+        },
+        "a2a:SourceDate": {
+          "a2a:Year": "1815",
+          "a2a:Month": "2",
+          "a2a:Day": "20"
+        },
+        "a2a:SourceType": "BS Overlijden",
+        "a2a:SourceReference": {
+          "a2a:Place": "Leeuwarden",
+          "a2a:InstitutionName": "AlleFriezen",
+          "a2a:Archive": "30-28",
+          "a2a:Collection": "Archiefnaam: Burgerlijke Stand Opsterland - Tresoar, Bron: boek, Deel: 3005, Periode: 1815",
+          "a2a:Book": "Overlijdensregister 1815 Lippenhuizen",
+          "a2a:Folio": "002",
+          "a2a:RegistryNumber": "3005"
+        },
+        "a2a:SourceAvailableScans": {
+          "a2a:Scan": {
+            "a2a:OrderSequenceNumber": "1",
+            "a2a:Uri": "https://tresoar-images.memorix.nl/frl/thumb/640x480/f5891ad9-7675-2258-a11f-fbfd1961cc2b.jpg",
+            "a2a:UriViewer": "http://allefriezen.nl/zoeken/deeds/034e7de7-24cc-6d54-d435-98c38c0b44c7",
+            "a2a:UriPreview": "https://tresoar-images.memorix.nl/frl/thumb/250x250/f5891ad9-7675-2258-a11f-fbfd1961cc2b.jpg"
+          }
+        },
+        "a2a:SourceLastChangeDate": "2019-08-20",
+        "a2a:SourceDigitalOriginal": "http://allefriezen.nl/zoeken/deeds/034e7de7-24cc-6d54-d435-98c38c0b44c7",
+        "a2a:RecordGUID": "{034e7de7-24cc-6d54-d435-98c38c0b44c7}",
+        "a2a:SourceRemark": [
+          {
+            "@Key": "Opmerking",
+            "a2a:Value": "<i><b>Verkeerde akte? Gebruik \"Volgende\" rechtsboven op afbeeldingsscherm.</b></i>"
+          },
+          {
+            "@Key": "Provenance",
+            "a2a:Value": "A2Acollection oai-pmh_20220125_29502_00029502.xml van FRL"
+          }
+        ]
+      }
+    }
+  },
+  "success": true
+}

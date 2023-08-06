@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"BS Overlijden (Civil registration deaths)\"<br/>\nAlleFriezen, Collection: Burgerlijke Stand Opsterland - Tresoar, Archive: 30-28, Inventory number: 3005, Book: Overlijdensregister 1815 Lippenhuizen, Folio: 002<br/>\n[https://www.openarch.nl/frl:034e7de7-24cc-6d54-d435-98c38c0b44c7 OpenArch Record] (accessed 6 May 2021)<br/>\n[http://allefriezen.nl/zoeken/deeds/034e7de7-24cc-6d54-d435-98c38c0b44c7 AlleFriezen Record]<br/>\nJan Bartelds Huisman death 17 Feb 1815 in Opsterland, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jan died on 17 February 1815 in Opsterland, Nederland.<ref>\n'''Death Registration''':\n\"BS Overlijden (Civil registration deaths)\"<br/>\nAlleFriezen, Collection: Burgerlijke Stand Opsterland - Tresoar, Archive: 30-28, Inventory number: 3005, Book: Overlijdensregister 1815 Lippenhuizen, Folio: 002<br/>\n[https://www.openarch.nl/frl:034e7de7-24cc-6d54-d435-98c38c0b44c7 OpenArch Record] (accessed 6 May 2021)<br/>\n[http://allefriezen.nl/zoeken/deeds/034e7de7-24cc-6d54-d435-98c38c0b44c7 AlleFriezen Record]<br/>\nJan Bartelds Huisman death 17 Feb 1815 in Opsterland, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"BS Overlijden (Civil registration deaths)\"<br/>AlleFriezen, Collection: Burgerlijke Stand Opsterland - Tresoar, Archive: 30-28, Inventory number: 3005, Book: Overlijdensregister 1815 Lippenhuizen, Folio: 002<br/>[https://www.openarch.nl/frl:034e7de7-24cc-6d54-d435-98c38c0b44c7 OpenArch Record] (accessed 6 May 2021)<br/>[http://allefriezen.nl/zoeken/deeds/034e7de7-24cc-6d54-d435-98c38c0b44c7 AlleFriezen Record]<br/>Jan Bartelds Huisman death 17 Feb 1815 in Opsterland, Nederland.",
+    "type": "source"
+  }
+}

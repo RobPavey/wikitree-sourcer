@@ -25,18 +25,8 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { WiewaswieEdReader } from "./wiewaswie_ed_reader.mjs";
 
-function buildWiewaswieUrl(ed, builder) {
-  let url = ed.url;
-
-  // url is like this: https://www.wiewaswie.nl/en/detail/77973687
-
-  let lang = builder.options.citation_wiewaswie_languageVersionToCite;
-
-  if (lang != "page") {
-    url = url.replace(/\/\w\w\/detail\//, "/" + lang + "/detail/");
-  }
-
-  return url;
+function buildWiewaswieUrl(ed, edReader, builder) {
+  return edReader.getRecordUrlToCite(builder.options);
 }
 
 function buildSourceTitle(ed, gd, edReader, builder) {
@@ -44,11 +34,11 @@ function buildSourceTitle(ed, gd, edReader, builder) {
 }
 
 function buildSourceReference(ed, gd, edReader, builder) {
-  builder.sourceReference += edReader.getSourceReference();
+  builder.sourceReference += edReader.getSourceReference(builder.options);
 }
 
 function buildRecordLink(ed, gd, edReader, builder) {
-  var wiewaswieUrl = buildWiewaswieUrl(ed, builder);
+  var wiewaswieUrl = buildWiewaswieUrl(ed, edReader, builder);
 
   let recordLink = "[" + wiewaswieUrl + " WieWasWie Record]";
   builder.recordLinkOrTemplate = recordLink;

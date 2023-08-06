@@ -36,6 +36,10 @@ const regressionData = [
     url: "https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf",
   },
   {
+    caseName: "birth_cert_1811_jan_van_der_wijk",
+    url: "https://www.openarch.nl/frl:920ffe70-6378-e93b-71a0-58a1e1237e3f",
+  },
+  {
     caseName: "burial_1776_maria_van_den_berg",
     url: "https://www.openarch.nl/brd:b05a07ca-8205-c036-8713-a68738acc33c",
   },
@@ -48,8 +52,16 @@ const regressionData = [
     url: "https://www.openarch.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B",
   },
   {
+    caseName: "death_cert_1815_jan_huisman",
+    url: "https://www.openarch.nl/frl:034e7de7-24cc-6d54-d435-98c38c0b44c7",
+  },
+  {
     caseName: "marriage_1676_jan_peter_janssen",
     url: "https://www.openarch.nl/bhi:b576f38c-4cb2-490b-0029-d64ae7477873",
+  },
+  {
+    caseName: "marriage_cert_1818_ringert_jongewaard",
+    url: "https://www.openarch.nl/nha:f46f13cf-4f53-4a37-9421-91c0e2a458e0",
   },
 ];
 
