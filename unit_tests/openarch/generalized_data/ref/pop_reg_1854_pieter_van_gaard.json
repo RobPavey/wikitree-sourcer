@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "PopulationRegister",
+  "name": {
+    "forenames": "Pieter Gerardus Herms",
+    "lastName": "van Gaard"
+  },
+  "eventDate": {
+    "dateString": "30 Oct 1854"
+  },
+  "eventPlace": {
+    "placeString": "Amsterdam, Noord-Holland, Nederland"
+  },
+  "birthDate": {
+    "dateString": "30 Oct 1854"
+  },
+  "birthPlace": {
+    "placeString": "Amsterdam, Noord-Holland, Nederland"
+  },
+  "collectionData": {
+    "id": "other:Bevolkingsregister 1853-1863",
+    "nameParts": {
+      "forenames": "Pieter Gerardus Herms",
+      "lastNamePrefix": "van",
+      "lastName": "Gaard"
+    },
+    "place": "Amsterdam"
+  },
+  "hasValidData": true
+}

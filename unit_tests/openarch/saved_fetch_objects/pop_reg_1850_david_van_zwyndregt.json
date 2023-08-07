@@ -1,0 +1,198 @@
+{
+  "A2A": {
+    "@xsi:schemaLocation": "http://Mindbus.nl/A2A http://Mindbus.nl/A2A/A2AAllInOne_v.1.7.xsd",
+    "@Version": "1.7",
+    "a2a:Person": [
+      {
+        "@pid": "Person3106678182",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "David",
+          "a2a:PersonNamePrefixLastName": "van",
+          "a2a:PersonNameLastName": "Zwyndregt"
+        },
+        "a2a:BirthDate": {
+          "a2a:LiteralDate": "15-12-1806",
+          "a2a:Year": "1806",
+          "a2a:Month": "12",
+          "a2a:Day": "15"
+        },
+        "a2a:BirthPlace": {
+          "a2a:Place": "Vlissingen"
+        },
+        "a2a:Profession": "Scheepstimmerman"
+      },
+      {
+        "@pid": "Person3106678183",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Jacoba Elisabeth",
+          "a2a:PersonNameLastName": "Heyl"
+        },
+        "a2a:BirthDate": {
+          "a2a:LiteralDate": "23-04-1805",
+          "a2a:Year": "1805",
+          "a2a:Month": "04",
+          "a2a:Day": "23"
+        },
+        "a2a:BirthPlace": {
+          "a2a:Place": "Veere"
+        },
+        "a2a:Profession": "Geen"
+      },
+      {
+        "@pid": "Person3106678184",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Rokus",
+          "a2a:PersonNamePrefixLastName": "van",
+          "a2a:PersonNameLastName": "Zwyndregt"
+        },
+        "a2a:BirthDate": {
+          "a2a:LiteralDate": "28-10-1835",
+          "a2a:Year": "1835",
+          "a2a:Month": "10",
+          "a2a:Day": "28"
+        },
+        "a2a:BirthPlace": {
+          "a2a:Place": "Vlissingen"
+        },
+        "a2a:Profession": "Kleermakersleerling"
+      },
+      {
+        "@pid": "Person3106678185",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Jan Hendrik",
+          "a2a:PersonNamePrefixLastName": "van",
+          "a2a:PersonNameLastName": "Zwyndregt"
+        },
+        "a2a:BirthDate": {
+          "a2a:LiteralDate": "17-08-1839",
+          "a2a:Year": "1839",
+          "a2a:Month": "08",
+          "a2a:Day": "17"
+        },
+        "a2a:BirthPlace": {
+          "a2a:Place": "Vlissingen"
+        },
+        "a2a:Profession": "Geen"
+      },
+      {
+        "@pid": "Person3106678186",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Catharina",
+          "a2a:PersonNamePrefixLastName": "van",
+          "a2a:PersonNameLastName": "Zwyndregt"
+        },
+        "a2a:BirthDate": {
+          "a2a:LiteralDate": "15-10-1837",
+          "a2a:Year": "1837",
+          "a2a:Month": "10",
+          "a2a:Day": "15"
+        },
+        "a2a:BirthPlace": {
+          "a2a:Place": "Vlissingen"
+        },
+        "a2a:Profession": "Geen"
+      },
+      {
+        "@pid": "Person3106678187",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Jozina",
+          "a2a:PersonNameLastName": "Arinksen"
+        },
+        "a2a:BirthDate": {
+          "a2a:LiteralDate": "24-04-1777",
+          "a2a:Year": "1777",
+          "a2a:Month": "04",
+          "a2a:Day": "24"
+        },
+        "a2a:BirthPlace": {
+          "a2a:Place": "Vlissingen"
+        },
+        "a2a:Profession": "Geen"
+      }
+    ],
+    "a2a:Event": {
+      "@eid": "Event1",
+      "a2a:EventType": "Registratie",
+      "a2a:EventDate": {
+        "a2a:LiteralDate": "1850-1858",
+        "a2a:Year": "1850"
+      },
+      "a2a:EventPlace": {
+        "a2a:Place": "Vlissingen"
+      }
+    },
+    "a2a:RelationEP": [
+      {
+        "a2a:PersonKeyRef": "Person3106678182",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "other:Persoon in bevolkingsregister"
+      },
+      {
+        "a2a:PersonKeyRef": "Person3106678183",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "other:Persoon in bevolkingsregister"
+      },
+      {
+        "a2a:PersonKeyRef": "Person3106678184",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "other:Persoon in bevolkingsregister"
+      },
+      {
+        "a2a:PersonKeyRef": "Person3106678185",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "other:Persoon in bevolkingsregister"
+      },
+      {
+        "a2a:PersonKeyRef": "Person3106678186",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "other:Persoon in bevolkingsregister"
+      },
+      {
+        "a2a:PersonKeyRef": "Person3106678187",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "other:Persoon in bevolkingsregister"
+      }
+    ],
+    "a2a:Source": {
+      "a2a:SourcePlace": {
+        "a2a:Country": "Nederland",
+        "a2a:Place": "Vlissingen"
+      },
+      "a2a:SourceIndexDate": {
+        "a2a:From": "1850-01-01",
+        "a2a:To": "1858-12-31"
+      },
+      "a2a:SourceDate": {
+        "a2a:LiteralDate": "1850-1858",
+        "a2a:Year": "1850"
+      },
+      "a2a:SourceType": "Bevolkingsregister",
+      "a2a:SourceReference": {
+        "a2a:Place": "Middelburg",
+        "a2a:InstitutionName": "Zeeuws Archief",
+        "a2a:Archive": "7434",
+        "a2a:Collection": "Burgerlijke Stand en Bevolking Gemeente Vlissingen, 1810-1994",
+        "a2a:Book": "Vlissingen, wijkregister 1850-1858 deel H",
+        "a2a:Folio": "202",
+        "a2a:RegistryNumber": "481",
+        "a2a:DocumentNumber": []
+      },
+      "a2a:SourceAvailableScans": {
+        "a2a:Scan": {
+          "a2a:OrderSequenceNumber": "1",
+          "a2a:Uri": "https://proxy.archieven.nl/download/239/9F950BE994284B3BB0568C3B98148104",
+          "a2a:UriViewer": "https://proxy.archieven.nl/embed/239/9F950BE994284B3BB0568C3B98148104",
+          "a2a:UriPreview": "https://proxy.archieven.nl/thumb/239/9F950BE994284B3BB0568C3B98148104"
+        }
+      },
+      "a2a:SourceLastChangeDate": "2023-01-24",
+      "a2a:SourceDigitalOriginal": "https://hdl.handle.net/21.12113/A1278296E9C64A759A1505DFC1244C95",
+      "a2a:RecordIdentifier": "3106678181",
+      "a2a:RecordGUID": "{A1278296-E9C6-4A75-9A15-05DFC1244C95}",
+      "a2a:SourceRemark": {
+        "@Key": "Provenance",
+        "a2a:Value": "A2Acollection NL-MdbZA_7434-481_54_A2A.xml van ZAR"
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@
     "forenames": "Jan",
     "lastName": "Peter Janssen"
   },
+  "personGender": "male",
   "eventDate": {
     "dateString": "21 Jun 1676"
   },

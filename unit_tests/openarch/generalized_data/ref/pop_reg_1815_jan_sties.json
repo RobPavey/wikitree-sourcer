@@ -1,0 +1,54 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "PopulationRegister",
+  "name": {
+    "lastName": "Jan Sties"
+  },
+  "eventDate": {
+    "yearString": "1815",
+    "fromDate": {
+      "dateString": "1 Jan 1815"
+    },
+    "toDate": {
+      "dateString": "31 Dec 1815"
+    }
+  },
+  "eventPlace": {
+    "placeString": "Breukelen, Nederland"
+  },
+  "householdArrayFields": [
+    "name",
+    "birthDate"
+  ],
+  "householdArray": [
+    {
+      "name": "Jan Sties"
+    },
+    {
+      "name": "Jacobus van den Coolwijk",
+      "birthDate": "20 Mar 1752"
+    },
+    {
+      "name": "Willem van Gaard"
+    },
+    {
+      "name": "Jan C van Bremen",
+      "birthDate": "3 May 1752"
+    },
+    {
+      "name": "Adrieanes Lammering"
+    },
+    {
+      "name": "Hendrik Meijjer"
+    }
+  ],
+  "collectionData": {
+    "id": "Bevolkingsregister",
+    "nameParts": {
+      "lastName": "Jan Sties"
+    },
+    "place": "Breukelen"
+  },
+  "hasValidData": true
+}

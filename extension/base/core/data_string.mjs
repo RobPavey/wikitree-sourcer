@@ -424,6 +424,19 @@ function getPopulationRegisterString(gd, options) {
     dataString += ", " + occupation + ",";
   }
 
+  let eventDateObj = gd.inferEventDateObj();
+  if (eventDateObj) {
+    if (eventDateObj.fromDate && eventDateObj.toDate) {
+      dataString +=
+        " between " +
+        eventDateObj.fromDate.getDataStringFormat(false, "") +
+        " and " +
+        eventDateObj.toDate.getDataStringFormat(false, "");
+    } else {
+      dataString += " " + getDateWithPreposition(eventDateObj);
+    }
+  }
+
   let place = gd.inferFullEventPlace();
   if (place) {
     dataString += " " + getPlaceWithPreposition(place);

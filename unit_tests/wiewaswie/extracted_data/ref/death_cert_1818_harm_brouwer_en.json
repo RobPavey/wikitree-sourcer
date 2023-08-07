@@ -1,0 +1,132 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/14841572",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Deceased",
+        "value": "Harm Brouwer"
+      },
+      {
+        "label": "Profession",
+        "value": "arbeider",
+        "dataKey": "SourceDetail.Profession"
+      },
+      {
+        "label": "Place of birth",
+        "value": "IJhorst (De Wijk)",
+        "dataKey": "SourceDetail.BirthPlace"
+      },
+      {
+        "label": "Gender",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "Age",
+        "value": "60 jaar",
+        "dataKey": "SourceDetail.Age"
+      }
+    ],
+    [
+      {
+        "label": "Father",
+        "value": "Klein Jan"
+      }
+    ],
+    [
+      {
+        "label": "Mother",
+        "value": "Femmigje Jans"
+      }
+    ],
+    [
+      {
+        "label": "Partner",
+        "value": "Klaasje Klaassen"
+      },
+      {
+        "label": "Gender",
+        "value": "Vrouw",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "Overledene_relatie",
+        "value": "Echtgenote",
+        "dataKey": "Comment"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Overlijden",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "31-01-1818",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Event place",
+      "value": "Noord (Hoogeveen)",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "BS Overlijden",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Drents Archief",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Assen",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Drenthe",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Archive",
+      "value": "0167.014",
+      "dataKey": "SourceDetail.Archive"
+    },
+    {
+      "label": "Registration number",
+      "value": "1818",
+      "dataKey": "SourceDetail.RegistrationNumber"
+    },
+    {
+      "label": "Sourcenumber",
+      "value": "13",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "01-02-1818",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Hoogeveen",
+      "dataKey": "SourceDetail.CertificatePlace"
+    },
+    {
+      "label": "Aktesoort",
+      "value": "Overlijden",
+      "dataKey": "Comment"
+    }
+  ],
+  "originalSourceLink": "http://alledrenten.nl/akte/harm-brouwer/04f64b1a-94a1-4b1a-86a9-517233fba337",
+  "title": "BS Overlijden met Harm Brouwer",
+  "language": "EN"
+}

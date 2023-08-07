@@ -63,6 +63,18 @@ const regressionData = [
     caseName: "marriage_cert_1818_ringert_jongewaard",
     url: "https://www.openarch.nl/nha:f46f13cf-4f53-4a37-9421-91c0e2a458e0",
   },
+  {
+    caseName: "pop_reg_1815_jan_sties",
+    url: "https://www.openarch.nl/vev:408970a5-600a-58a4-f456-138a8e37cdaf",
+  },
+  {
+    caseName: "pop_reg_1850_david_van_zwyndregt",
+    url: "https://www.openarch.nl/zar:A1278296-E9C6-4A75-9A15-05DFC1244C95",
+  },
+  {
+    caseName: "pop_reg_1854_pieter_van_gaard",
+    url: "https://www.openarch.nl/saa:63a0d46f-94b3-4a93-a886-cf9980fdb4ff",
+  },
 ];
 
 async function runTests(testManager) {

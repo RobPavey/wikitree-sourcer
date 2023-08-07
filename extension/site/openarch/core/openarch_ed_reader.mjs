@@ -70,6 +70,7 @@ const typeData = {
     // Marriage registers
     enDocumentType: "Church records marriages",
     recordType: RT.Marriage,
+    fixedGender: "male", // the primary person is always the groom
     relation: {
       primary: ["Bruidegom"],
       father: ["Vader van de bruidegom", "Vader"],
@@ -109,6 +110,7 @@ const typeData = {
     // Civil Marriage
     enDocumentType: "Civil registration marriages",
     recordType: RT.MarriageRegistration,
+    fixedGender: "male", // the primary person is always the groom
     relation: {
       primary: ["Bruidegom"],
       father: ["Vader van de bruidegom", "Vader"],
@@ -121,6 +123,23 @@ const typeData = {
     recordType: RT.DeathRegistration,
     relation: {
       primary: ["Overledene"],
+    },
+  },
+
+  Bevolkingsregister: {
+    // Population register
+    enDocumentType: "Population register",
+    recordType: RT.PopulationRegister,
+    relation: {
+      primary: ["Geregistreerde"],
+    },
+  },
+  "other:Bevolkingsregister 1853-1863": {
+    // Population register
+    enDocumentType: "Population register 1853-1863",
+    recordType: RT.PopulationRegister,
+    relation: {
+      primary: ["Geregistreerde"],
     },
   },
 
@@ -227,6 +246,54 @@ class OpenarchEdReader extends ExtractedDataReader {
     }
   }
 
+  makeFullNameFromA2aName(a2aName) {
+    // e.g. "a2a:PersonName": { "a2a:PersonNameFirstName": "Hendrik", "a2a:PersonNameLastName": "Goudemond" },
+
+    if (a2aName) {
+      let fullName = "";
+
+      let firstName = a2aName["a2a:PersonNameFirstName"];
+      let lastNamePrefix = a2aName["a2a:PersonNamePrefixLastName"];
+      let patronym = a2aName["a2a:PersonNamePatronym"];
+      let lastName = a2aName["a2a:PersonNameLastName"];
+
+      if (firstName && firstName != "NN" && firstName != "N.N.") {
+        fullName = firstName;
+      }
+      if (lastName || patronym || lastNamePrefix) {
+        let finalLastName = lastName;
+        if (finalLastName == "NN" || finalLastName == "N.N.") {
+          finalLastName = "";
+        }
+
+        if (patronym) {
+          if (finalLastName) {
+            finalLastName = patronym + " " + finalLastName;
+          } else {
+            finalLastName = patronym;
+          }
+        }
+
+        if (lastNamePrefix) {
+          if (finalLastName) {
+            finalLastName = lastNamePrefix + " " + finalLastName;
+          } else {
+            finalLastName = lastNamePrefix;
+          }
+        }
+
+        if (finalLastName) {
+          if (fullName) {
+            fullName += " ";
+          }
+          fullName += finalLastName;
+        }
+      }
+
+      return fullName;
+    }
+  }
+
   makeDateObjFromA2aDate(a2aDate) {
     // e.g.       "a2a:EventDate": { "a2a:Year": "1789", "a2a:Month": "8", "a2a:Day": "14" },
     if (a2aDate) {
@@ -296,6 +363,11 @@ class OpenarchEdReader extends ExtractedDataReader {
       if (years) {
         years = years.replace(/ jaar$/, "");
         return years;
+      }
+      let literal = a2aAge["a2a:PersonAgeLiteral"];
+      if (literal) {
+        literal = literal.replace(/ jaar$/, "");
+        return literal;
       }
     }
   }
@@ -458,6 +530,10 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getGender() {
+    if (this.typeData && this.typeData.fixedGender) {
+      return this.typeData.fixedGender;
+    }
+
     let a2aGender = this.extractPrimaryPersonFieldByKey("a2a:Gender");
     if (a2aGender == "Man") {
       return "male";
@@ -470,11 +546,34 @@ class OpenarchEdReader extends ExtractedDataReader {
 
   getEventDateObj() {
     let a2aDate = this.extractEventFieldByKey("a2a:EventDate");
-    return this.makeDateObjFromA2aDate(a2aDate);
+
+    if (a2aDate) {
+      return this.makeDateObjFromA2aDate(a2aDate);
+    }
+
+    let dateRange = this.extractSourceFieldByKey("a2a:SourceIndexDate");
+    if (dateRange) {
+      let from = dateRange["a2a:From"];
+      let to = dateRange["a2a:To"];
+      if (from && to) {
+        let fromDateObj = this.makeDateObjFromYyyymmddDate(from, "-");
+        let toDateObj = this.makeDateObjFromYyyymmddDate(to, "-");
+        if (fromDateObj && toDateObj) {
+          let dateObj = new DateObj();
+          dateObj.yearString = fromDateObj.getYearString();
+          dateObj.fromDate = fromDateObj;
+          dateObj.toDate = toDateObj;
+          return dateObj;
+        }
+      }
+    }
   }
 
   getEventPlaceObj() {
     let a2aPlace = this.extractEventFieldByKey("a2a:EventPlace");
+    if (!a2aPlace) {
+      a2aPlace = this.extractSourceFieldByKey("a2a:SourcePlace");
+    }
     return this.makePlaceObjFromA2aPlace(a2aPlace);
   }
 
@@ -496,7 +595,9 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getBirthPlaceObj() {
-    return undefined;
+    let place = this.extractPrimaryPersonFieldByKey("a2a:BirthPlace");
+    let placeObj = this.makePlaceObjFromA2aPlace(place);
+    return placeObj;
   }
 
   getDeathDateObj() {
@@ -575,6 +676,57 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getHousehold() {
+    if (this.a2aSourceType == "Bevolkingsregister") {
+      let personArray = this.a2a["a2a:Person"];
+      if (personArray.length > 1) {
+        let householdArray = [];
+        let fields = ["name"];
+
+        for (let person of personArray) {
+          let a2aName = this.extractPersonFieldByKey(person, "a2a:PersonName");
+          let name = this.makeFullNameFromA2aName(a2aName);
+
+          if (name) {
+            let householdMember = { name: name };
+
+            function addMemberField(reader, dataKey, fieldName, type = "") {
+              let value = reader.extractPersonFieldByKey(person, dataKey);
+              if (value) {
+                if (type == "date") {
+                  let dateObj = reader.makeDateObjFromA2aDate(value);
+                  if (dateObj) {
+                    value = dateObj.getDateString();
+                  }
+                } else if (type == "place") {
+                  let place = value["a2a:Place"];
+                  if (place) {
+                    value = place;
+                  } else {
+                    value = "";
+                  }
+                }
+
+                householdMember[fieldName] = value;
+                if (!fields.includes(fieldName)) {
+                  fields.push(fieldName);
+                }
+              }
+            }
+
+            addMemberField(this, "a2a:Profession", "profession");
+            addMemberField(this, "a2a:BirthDate", "birthDate", "date");
+            addMemberField(this, "a2a:BirthPlace", "birthPlace", "place");
+
+            householdArray.push(householdMember);
+          }
+        }
+
+        let result = {};
+        result.members = householdArray;
+        result.fields = fields;
+        return result;
+      }
+    }
     return undefined;
   }
 
@@ -606,6 +758,9 @@ class OpenarchEdReader extends ExtractedDataReader {
       }
 
       let a2aPlace = this.extractEventFieldByKey("a2a:EventPlace");
+      if (!a2aPlace) {
+        a2aPlace = this.extractSourceFieldByKey("a2a:SourcePlace");
+      }
       if (a2aPlace) {
         let place = a2aPlace["a2a:Place"];
         if (place) {

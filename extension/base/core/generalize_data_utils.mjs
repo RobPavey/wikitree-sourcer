@@ -484,7 +484,11 @@ class DateObj {
     let classObj = new DateObj();
     const keys = Object.keys(obj);
     for (let key of keys) {
-      classObj[key] = obj[key];
+      if (key == "fromDate" || key == "toDate") {
+        classObj[key] = DateObj.createFromPlainObject(obj[key]);
+      } else {
+        classObj[key] = obj[key];
+      }
     }
 
     return classObj;

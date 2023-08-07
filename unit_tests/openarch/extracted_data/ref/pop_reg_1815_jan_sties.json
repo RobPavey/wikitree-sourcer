@@ -1,0 +1,117 @@
+{
+  "url": "https://www.openarch.nl/vev:408970a5-600a-58a4-f456-138a8e37cdaf",
+  "dataObj": {
+    "A2A": {
+      "@xsi:schemaLocation": "http://Mindbus.nl/A2A http://Mindbus.nl/A2A/A2AAllInOne_v.1.7.xsd",
+      "@Version": "1.7",
+      "a2a:Person": [
+        {
+          "@pid": "Person1",
+          "a2a:PersonName": {
+            "a2a:PersonNameLastName": "Jan Sties"
+          }
+        },
+        {
+          "@pid": "Person2",
+          "a2a:PersonName": {
+            "a2a:PersonNameLastName": "Jacobus van den Coolwijk"
+          },
+          "a2a:BirthDate": {
+            "a2a:Year": "1752",
+            "a2a:Month": "3",
+            "a2a:Day": "20"
+          }
+        },
+        {
+          "@pid": "Person3",
+          "a2a:PersonName": {
+            "a2a:PersonNameLastName": "Willem van Gaard"
+          }
+        },
+        {
+          "@pid": "Person4",
+          "a2a:PersonName": {
+            "a2a:PersonNameLastName": "Jan C van Bremen"
+          },
+          "a2a:BirthDate": {
+            "a2a:Year": "1752",
+            "a2a:Month": "5",
+            "a2a:Day": "3"
+          }
+        },
+        {
+          "@pid": "Person5",
+          "a2a:PersonName": {
+            "a2a:PersonNameLastName": "Adrieanes Lammering"
+          }
+        },
+        {
+          "@pid": "Person6",
+          "a2a:PersonName": {
+            "a2a:PersonNameLastName": "Hendrik Meijjer"
+          }
+        }
+      ],
+      "a2a:Event": {
+        "@eid": "Event1",
+        "a2a:EventType": "Registratie"
+      },
+      "a2a:RelationEP": [
+        {
+          "a2a:PersonKeyRef": "Person1",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Geregistreerde"
+        },
+        {
+          "a2a:PersonKeyRef": "Person2",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Geregistreerde"
+        },
+        {
+          "a2a:PersonKeyRef": "Person3",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Geregistreerde"
+        },
+        {
+          "a2a:PersonKeyRef": "Person4",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Geregistreerde"
+        },
+        {
+          "a2a:PersonKeyRef": "Person5",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Geregistreerde"
+        },
+        {
+          "a2a:PersonKeyRef": "Person6",
+          "a2a:EventKeyRef": "Event1",
+          "a2a:RelationType": "Geregistreerde"
+        }
+      ],
+      "a2a:Source": {
+        "a2a:SourcePlace": {
+          "a2a:Place": "Breukelen"
+        },
+        "a2a:SourceIndexDate": {
+          "a2a:From": "1815-01-01",
+          "a2a:To": "1815-12-31"
+        },
+        "a2a:SourceType": "Bevolkingsregister",
+        "a2a:SourceReference": {
+          "a2a:InstitutionName": "Regionaal Historisch Centrum Vecht en Venen",
+          "a2a:Archive": "1202",
+          "a2a:Collection": "Bevolkingsregistratie Waverveen en Waveren, deel 1, staat van inwoners",
+          "a2a:RegistryNumber": "404"
+        },
+        "a2a:SourceLastChangeDate": "2018-04-08",
+        "a2a:SourceDigitalOriginal": "http://www.rhcvechtenvenen.nl/collectie?mivast=386&miadt=386&miaet=54&micode=1202-404&minr=956928&miview=ldt",
+        "a2a:RecordGUID": "{408970a5-600a-58a4-f456-138a8e37cdaf}",
+        "a2a:SourceRemark": {
+          "@Key": "Provenance",
+          "a2a:Value": "MI bestand NL-BklVV_1202-404_54_MI.xml van VEV"
+        }
+      }
+    }
+  },
+  "success": true
+}

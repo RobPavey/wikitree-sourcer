@@ -1,0 +1,96 @@
+{
+  "A2A": {
+    "@Version": "1.7",
+    "a2a:Person": {
+      "@pid": "Person:961f6b49-7190-53f7-e053-b784100aa83b",
+      "a2a:PersonName": {
+        "a2a:PersonNameFirstName": "Pieter Gerardus Herms",
+        "a2a:PersonNamePrefixLastName": "van",
+        "a2a:PersonNameLastName": "Gaard"
+      },
+      "a2a:Gender": "Onbekend",
+      "a2a:BirthDate": {
+        "a2a:Year": "1854",
+        "a2a:Month": "10",
+        "a2a:Day": "30"
+      },
+      "a2a:BirthPlace": {
+        "a2a:Place": "Amsterdam"
+      },
+      "a2a:PersonRemark": {
+        "@Key": "diversen",
+        "a2a:Value": "Buurtcode: AA\nAdres: Amsterdam Nieuwe Looijerstraat 318 Houtk Hofje"
+      }
+    },
+    "a2a:Event": {
+      "@eid": "Event1",
+      "a2a:EventType": "Registratie",
+      "a2a:EventDate": {
+        "a2a:Year": "1854",
+        "a2a:Month": "10",
+        "a2a:Day": "30"
+      }
+    },
+    "a2a:RelationEP": {
+      "a2a:PersonKeyRef": "Person:961f6b49-7190-53f7-e053-b784100aa83b",
+      "a2a:EventKeyRef": "Event1",
+      "a2a:RelationType": "Geregistreerde"
+    },
+    "a2a:Source": {
+      "a2a:SourcePlace": {
+        "a2a:Place": "Amsterdam"
+      },
+      "a2a:SourceIndexDate": {
+        "a2a:From": "1854-10-30",
+        "a2a:To": "1854-10-30"
+      },
+      "a2a:SourceDate": {
+        "a2a:Year": "1854",
+        "a2a:Month": "10",
+        "a2a:Day": "30"
+      },
+      "a2a:SourceType": "other:Bevolkingsregister 1853-1863",
+      "a2a:SourceReference": {
+        "a2a:Place": "Amsterdam",
+        "a2a:InstitutionName": "Stadsarchief Amsterdam",
+        "a2a:Archive": "5000",
+        "a2a:Collection": "Deel: 644, Periode: 1851-1863",
+        "a2a:Book": "Bevolkingsregister 1853-1863",
+        "a2a:RegistryNumber": "644"
+      },
+      "a2a:SourceAvailableScans": {
+        "a2a:Scan": {
+          "a2a:OrderSequenceNumber": "1",
+          "a2a:Uri": "https://images.memorix.nl/ams/thumb/640x480/5830e877-3ee2-5753-25e8-f5ade6355d4e.jpg",
+          "a2a:UriViewer": "https://archief.amsterdam/indexen/deeds/63a0d46f-94b3-4a93-a886-cf9980fdb4ff",
+          "a2a:UriPreview": "https://images.memorix.nl/ams/thumb/250x250/5830e877-3ee2-5753-25e8-f5ade6355d4e.jpg"
+        }
+      },
+      "a2a:SourceLastChangeDate": "2020-07-25",
+      "a2a:SourceDigitalOriginal": "https://archief.amsterdam/indexen/deeds/63a0d46f-94b3-4a93-a886-cf9980fdb4ff",
+      "a2a:RecordGUID": "{63a0d46f-94b3-4a93-a886-cf9980fdb4ff}",
+      "a2a:SourceRemark": [
+        {
+          "@Key": "Opmerking",
+          "a2a:Value": []
+        },
+        {
+          "@Key": "InventarisLink",
+          "a2a:Value": "https://archief.amsterdam/archief/5000/644"
+        },
+        {
+          "@Key": "AkteSoort",
+          "a2a:Value": "Registratie"
+        },
+        {
+          "@Key": "filename",
+          "a2a:Value": "BRGC00066000218"
+        },
+        {
+          "@Key": "Provenance",
+          "a2a:Value": "A2Acollection oai-pmh_20230312_50444_00050444.xml van SAA"
+        }
+      ]
+    }
+  }
+}

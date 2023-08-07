@@ -10,6 +10,9 @@
   "eventDate": {
     "dateString": "8 Nov 1811"
   },
+  "eventPlace": {
+    "placeString": "Opsterland, Nederland"
+  },
   "birthDate": {
     "dateString": "8 Nov 1811"
   },
@@ -33,7 +36,8 @@
       "forenames": "Jan",
       "lastNamePrefix": "van der",
       "lastName": "Wijk"
-    }
+    },
+    "place": "Opsterland"
   },
   "hasValidData": true
 }

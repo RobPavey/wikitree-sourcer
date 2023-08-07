@@ -1802,7 +1802,15 @@ class NarrativeBuilder {
     this.narrative += " was recorded in a population register";
 
     if (eventDateObj) {
-      this.narrative += " " + this.formatDateObj(eventDateObj, true);
+      if (eventDateObj.fromDate && eventDateObj.toDate) {
+        this.narrative +=
+          " between " +
+          this.formatDateObj(eventDateObj.fromDate, false) +
+          " and " +
+          this.formatDateObj(eventDateObj.toDate, false);
+      } else {
+        this.narrative += " " + this.formatDateObj(eventDateObj, true);
+      }
     }
 
     if (eventPlace) {

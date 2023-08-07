@@ -1222,6 +1222,7 @@ const RecordCollectionData = [
     sites: {
       wiewaswie: { id: "BS Overlijden" },
       openarch: { id: "BS Overlijden" },
+      ancestry: { id: "61287" },
     },
   },
 ];

@@ -184,6 +184,11 @@ const regressionData = [
   },
 
   {
+    caseName: "death_cert_1818_harm_brouwer_en",
+    url: "https://www.wiewaswie.nl/en/detail/14841572",
+  },
+
+  {
     caseName: "fam_adv_1954_jan_zylker_en",
     url: "https://www.wiewaswie.nl/en/detail/46002199",
   },

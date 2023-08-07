@@ -1,0 +1,45 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "name": "Harm Brouwer"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "31 Jan 1818"
+  },
+  "eventPlace": {
+    "placeString": "Noord (Hoogeveen), Drenthe, Nederland"
+  },
+  "birthPlace": {
+    "placeString": "IJhorst (De Wijk)"
+  },
+  "deathDate": {
+    "dateString": "31 Jan 1818"
+  },
+  "ageAtEvent": "60",
+  "occupation": "arbeider",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Klein Jan"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Femmigje Jans"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "BS Overlijden",
+    "place": "Noord (Hoogeveen)",
+    "documentPlace": "Hoogeveen",
+    "eventType": "Overlijden",
+    "nameParts": {
+      "fullName": "Harm Brouwer"
+    }
+  },
+  "hasValidData": true
+}

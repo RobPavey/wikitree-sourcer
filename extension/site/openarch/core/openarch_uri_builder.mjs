@@ -74,6 +74,11 @@ class OpenarchUriBuilder {
   }
 
   addEventPlace(string) {
+    // The openarch search seems just want the part before the open paren
+    let parenIndex = string.indexOf("(");
+    if (parenIndex != -1) {
+      string = string.substring(0, parenIndex).trim();
+    }
     this.addSearchParameter("eventplace", string);
   }
 

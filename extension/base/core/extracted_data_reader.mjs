@@ -220,6 +220,47 @@ class ExtractedDataReader {
     }
   }
 
+  makeDateObjFromYyyymmddDate(yyyymmddDate, separator) {
+    if (yyyymmddDate) {
+      let parts = yyyymmddDate.split(separator);
+      if (parts.length != 3) {
+        if (parts.length == 1) {
+          // could be year only
+          if (/^\d\d\d\d$/.test(yyyymmddDate)) {
+            let dateObj = new DateObj();
+            dateObj.yearString = yyyymmddDate;
+            return dateObj;
+          }
+        }
+        return;
+      }
+
+      let year = parts[0];
+      let month = parts[1];
+      let day = parts[2];
+
+      if (day.length != 2 || month.length != 2 || year.length != 4) {
+        return;
+      }
+
+      let dayNum = parseInt(day);
+      let monthNum = parseInt(month);
+      let yearNum = parseInt(year);
+
+      if (isNaN(dayNum) || isNaN(monthNum) || isNaN(yearNum)) {
+        return;
+      }
+
+      let dateString = DateUtils.getDateStringFromYearMonthDay(yearNum, monthNum, dayNum);
+
+      if (dateString) {
+        let dateObj = new DateObj();
+        dateObj.dateString = dateString;
+        return dateObj;
+      }
+    }
+  }
+
   makeDateObjFromYear(yearString) {
     if (yearString) {
       let dateObj = new DateObj();
