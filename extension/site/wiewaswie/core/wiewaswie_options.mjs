@@ -71,7 +71,7 @@ const citationOptionsGroup = {
       optionName: "includeArchiveNumInSourceRef",
       type: "checkbox",
       label: "Include archive number/code in source reference",
-      defaultValue: false,
+      defaultValue: true,
     },
     {
       optionName: "includeRegNumInSourceRef",
@@ -83,7 +83,7 @@ const citationOptionsGroup = {
       optionName: "includePageNumInSourceRef",
       type: "checkbox",
       label: "Include page number in source reference",
-      defaultValue: false,
+      defaultValue: true,
     },
   ],
 };
