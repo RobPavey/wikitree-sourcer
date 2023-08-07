@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "forenames": "Jan",
+    "lastName": "Hardewel"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "27 Mar 1767"
+  },
+  "eventPlace": {
+    "placeString": "Nederhorst den Berg, Nederland"
+  },
+  "collectionData": {
+    "id": "other:Aanbevelingsbrief",
+    "nameParts": {
+      "forenames": "Jan",
+      "lastName": "Hardewel"
+    },
+    "place": "Nederhorst den Berg"
+  },
+  "hasValidData": true
+}

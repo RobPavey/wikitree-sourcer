@@ -1,0 +1,59 @@
+{
+  "A2A": {
+    "@xsi:schemaLocation": "http://Mindbus.nl/A2A http://Mindbus.nl/A2A/A2AAllInOne_v.1.7.xsd",
+    "@Version": "1.7",
+    "a2a:Person": {
+      "@pid": "229782890",
+      "a2a:PersonName": {
+        "a2a:PersonNameFirstName": "Jan",
+        "a2a:PersonNameLastName": "Hardewel"
+      },
+      "a2a:Gender": "Man"
+    },
+    "a2a:Event": {
+      "@eid": "Event1",
+      "a2a:EventType": "other:Aanbevelingsbrief",
+      "a2a:EventPlace": {
+        "a2a:Place": "Nederhorst den Berg"
+      }
+    },
+    "a2a:RelationEP": {
+      "a2a:PersonKeyRef": "229782890",
+      "a2a:EventKeyRef": "Event1",
+      "a2a:RelationType": "Geregistreerde",
+      "a2a:ExtendedRelationType": "Ordinaris;Verzoeker;Logementhouder"
+    },
+    "a2a:Source": {
+      "a2a:SourcePlace": {
+        "a2a:Place": "Genealogische persoonsinfo Nederhorst den Berg"
+      },
+      "a2a:SourceIndexDate": {
+        "a2a:From": "1600-01-01",
+        "a2a:To": "1800-01-01"
+      },
+      "a2a:SourceDate": {
+        "a2a:Year": "1767",
+        "a2a:Month": "3",
+        "a2a:Day": "27"
+      },
+      "a2a:SourceType": "other:Aanbevelingsbrief",
+      "a2a:SourceReference": {
+        "a2a:Place": "Hilversum",
+        "a2a:InstitutionName": "Streekarchief Gooi en Vechtstreek",
+        "a2a:Archive": "SAGV155.7 - Archief van het gerecht Nederhorst den Berg",
+        "a2a:Collection": "Register van diverse schepenakten, tevens huwelijksakten , 1624-1722",
+        "a2a:Folio": "31-33",
+        "a2a:RegistryNumber": "3364",
+        "a2a:DocumentNumber": "120"
+      },
+      "a2a:SourceLastChangeDate": "2020-04-21",
+      "a2a:SourceDigitalOriginal": "https://zoeken.gooienvechthistorisch.nl/detail.php?id=228902318",
+      "a2a:RecordIdentifier": "228902318 / IND0023716",
+      "a2a:RecordGUID": "{4ef2a544-e9c5-666c-6387-5ce14af05bea}",
+      "a2a:SourceRemark": {
+        "@Key": "Provenance",
+        "a2a:Value": "Genealogische persoonsinfo Nederhorst den Berg.csv gedownload via https://zoeken.gooienvechthistorisch.nl/opendata.php gecombineerd met gescrape-de akte, scan en broninformatie van website en omgezet naar A2A"
+      }
+    }
+  }
+}

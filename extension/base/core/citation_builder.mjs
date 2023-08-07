@@ -173,6 +173,13 @@ class CitationBuilder {
       options: this.options,
     };
     let dataString = DataString.buildDataString(input);
+
+    if (!dataString) {
+      // Some sites would default to a list or table in this case but for site using
+      // addStandardDataString we try to genarate a default string with name, date, place
+      dataString = DataString.buildDefaultDataString(input);
+    }
+
     if (dataString) {
       if (!dataString.endsWith(".")) {
         dataString += ".";

@@ -31,4 +31,8 @@ function generalizeData(input) {
   return commonGeneralizeData("wiewaswie", edReader);
 }
 
-export { generalizeData };
+function regeneralizeData(ed, gd) {
+  return gd;
+}
+
+export { generalizeData, regeneralizeData };

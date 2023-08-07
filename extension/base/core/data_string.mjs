@@ -1328,6 +1328,22 @@ function getDivorceString(gd, options) {
   return dataString;
 }
 
+function getDefaultString(gd, options) {
+  let dataString = getFullName(gd);
+
+  let date = gd.inferEventDateObj();
+  if (date) {
+    dataString += " " + getDateWithPreposition(date);
+  }
+
+  let place = gd.inferFullEventPlace();
+  if (place) {
+    dataString += " " + getPlaceWithPreposition(place);
+  }
+
+  return dataString;
+}
+
 const DataString = {
   buildDataString: function (input) {
     if (!input || !input.generalizedData || !input.options) {
@@ -1399,6 +1415,23 @@ const DataString = {
         break;
       }
     }
+
+    if (dataString) {
+      dataString += ".";
+    }
+
+    return dataString;
+  },
+
+  buildDefaultDataString: function (input) {
+    if (!input || !input.generalizedData || !input.options) {
+      return "";
+    }
+
+    let gd = input.generalizedData;
+    let options = input.options;
+
+    let dataString = getDefaultString(gd, options);
 
     if (dataString) {
       dataString += ".";

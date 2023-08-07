@@ -597,6 +597,8 @@ function isManualClassificationNeeded(data) {
       if (options.citation_fs_dataStyle == "string") {
         result.isRecordTypeNeeded = true;
       }
+    } else if (data.generalizedData.sourceOfData == "openarch" || data.generalizedData.sourceOfData == "wiwwaswie") {
+      result.isRecordTypeNeeded = true;
     }
   }
 
@@ -858,6 +860,7 @@ function setupBuildCitationSubMenu(
     PassengerList: `Passenger List`,
     PassportApplication: `Passport Application`,
     Pension: `Pension`,
+    PopulationRegister: `Population Register`,
     Probate: `Probate`,
     QuarterSession: `Quarter Session`,
     RateBook: `Rate Book`,
@@ -961,7 +964,7 @@ function setupBuildCitationSubMenu(
     addBreak(menu.list);
 
     // text input
-    textInputField = addTextInput("refTitleInput", "Choose meaningful title: ", function (event) {
+    textInputField = addTextInput("refTitleInput", "Choose label: ", function (event) {
       refTitle = event.target.value;
       //console.log("set ref title to: " + refTitle);
     });

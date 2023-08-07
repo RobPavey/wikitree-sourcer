@@ -502,8 +502,14 @@ class OpenarchEdReader extends ExtractedDataReader {
       }
     } else {
       let personArray = this.a2a["a2a:Person"];
-      if (personArray && personArray.length > 0) {
-        return personArray[0];
+      if (personArray) {
+        if (Array.isArray(personArray)) {
+          if (personArray && personArray.length > 0) {
+            return personArray[0];
+          }
+        } else {
+          return personArray;
+        }
       }
     }
   }
@@ -547,6 +553,11 @@ class OpenarchEdReader extends ExtractedDataReader {
   getEventDateObj() {
     let a2aDate = this.extractEventFieldByKey("a2a:EventDate");
 
+    if (a2aDate) {
+      return this.makeDateObjFromA2aDate(a2aDate);
+    }
+
+    a2aDate = this.extractSourceFieldByKey("a2a:SourceDate");
     if (a2aDate) {
       return this.makeDateObjFromA2aDate(a2aDate);
     }

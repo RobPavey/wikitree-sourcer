@@ -32,6 +32,10 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "aanbevelingsbrief_1767_jan_hardewel",
+    url: "https://www.openarch.nl/sgv:4ef2a544-e9c5-666c-6387-5ce14af05bea",
+  },
+  {
     caseName: "baptism_1789_gerryt_goudemond",
     url: "https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf",
   },
