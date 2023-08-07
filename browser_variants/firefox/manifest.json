@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "1.8.5",
+  "version": "1.9.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": [
     "storage",
@@ -38,10 +38,12 @@
     "*://www.census.nationalarchives.ie/*",
     "*://*.nli.ie/*",
     "*://*.newspapers.com/*",
+    "*://*.openarch.nl/*",
     "*://paperspast.natlib.govt.nz/*",
     "*://probatesearch.service.gov.uk/*",
     "*://www.scotlandspeople.gov.uk/*",
-    "*://trove.nla.gov.au/*"
+    "*://trove.nla.gov.au/*",
+    "*://www.wiewaswie.nl/*"
   ],
   "background": {
     "page": "base/browser/background/background.html"
@@ -162,6 +164,11 @@
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
     {
+      "matches": ["*://*.openarch.nl/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/openarch/browser/openarch_content.js"]
+    },
+    {
       "matches": ["*://paperspast.natlib.govt.nz/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
@@ -180,6 +187,11 @@
       "matches": ["*://trove.nla.gov.au/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/trove/browser/trove_content.js"]
+    },
+    {
+      "matches": ["*://www.wiewaswie.nl/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/wiewaswie/browser/wiewaswie_content.js"]
     }
   ],
   "options_ui": {
@@ -217,9 +229,11 @@
     "site/naie/core/naie_extract_data.mjs",
     "site/nli/core/nli_extract_data.mjs",
     "site/np/core/np_extract_data.mjs",
+    "site/openarch/core/openarch_extract_data.mjs",
     "site/ppnz/core/ppnz_extract_data.mjs",
     "site/scotp/core/scotp_extract_data.mjs",
-    "site/trove/core/trove_extract_data.mjs"
+    "site/trove/core/trove_extract_data.mjs",
+    "site/wiewaswie/core/wiewaswie_extract_data.mjs"
   ],
   "browser_specific_settings": {
     "gecko": {

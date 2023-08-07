@@ -118,7 +118,7 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
     if (lastSpaceIndex == -1) {
       // unlikely that there are no spaces at all in the name
       object.nameObj.lastName = name;
-      if (lnabFromId && lnabFromId != "Unknown") {
+      if (lnabFromId && lnabFromId.toLowerCase() != "unknown") {
         object.lastNameAtBirth = lnabFromId;
         object.lastNameAtDeath = object.lastNameAtBirth;
       }
@@ -144,7 +144,7 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
 
     object.nameObj.lastName = lastName;
     object.nameObj.forenames = name.substring(0, spaceBeforeLastNameIndex);
-    if (lastName && lastName != "Unknown") {
+    if (lastName && lastName.toLowerCase() != "unknown") {
       object.lastNameAtBirth = lastName;
       object.lastNameAtDeath = object.lastNameAtBirth;
     }
@@ -162,7 +162,7 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
       console.log("LNAB in name '" + name + "' does not match LNAB in wikiId '" + wikiId + "'");
     }
 
-    if (lnab && lnab != "Unknown") {
+    if (lnab && lnab.toLowerCase() != "unknown") {
       object.lastNameAtBirth = lnab;
     }
 
@@ -171,7 +171,7 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
     let lastNameAtDeath = name.substring(closeParenIndex + 1).trim();
     lastNameAtDeath = removeSuffixes(lastNameAtDeath);
 
-    if (lastNameAtDeath && lastNameAtDeath != "Unknown") {
+    if (lastNameAtDeath && lastNameAtDeath.toLowerCase() != "unknown") {
       object.lastNameAtDeath = lastNameAtDeath;
     }
     if (object.lastNameAtBirth) {
@@ -213,10 +213,10 @@ function generalizeData(input) {
     result.name.otherLastNames = ed.otherLastNames;
   }
   // WT doesn't have a last name as such but every profile has a LNAB
-  if (ed.lnab && ed.lnab != "Unknown") {
+  if (ed.lnab && ed.lnab.toLowerCase() != "unknown") {
     result.lastNameAtBirth = ed.lnab;
   }
-  if (ed.currentLastName && ed.currentLastName != "Unknown") {
+  if (ed.currentLastName && ed.currentLastName.toLowerCase() != "unknown") {
     result.lastNameAtDeath = ed.currentLastName;
   }
   if (result.lastNameAtBirth) {
@@ -225,7 +225,7 @@ function generalizeData(input) {
     result.name.lastName = result.lastNameAtDeath;
   }
 
-  if (ed.mothersMaidenName && ed.mothersMaidenName != "Unknown") {
+  if (ed.mothersMaidenName && ed.mothersMaidenName.toLowerCase() != "unknown") {
     result.mothersMaidenName = ed.mothersMaidenName;
   }
 
@@ -277,10 +277,10 @@ function generalizeData(input) {
       if (name) {
         let obj = getPartsFromWikiTreeName(name, ed.parents.father.wikiId);
         result.parents.father = { name: obj.nameObj };
-        if (obj.lastNameAtBirth && obj.lastNameAtBirth != "Unknown") {
+        if (obj.lastNameAtBirth && obj.lastNameAtBirth.toLowerCase() != "unknown") {
           result.parents.father.lastNameAtBirth = obj.lastNameAtBirth;
         }
-        if (obj.lastNameAtDeath && obj.lastNameAtDeath != "Unknown") {
+        if (obj.lastNameAtDeath && obj.lastNameAtDeath.toLowerCase() != "unknown") {
           result.parents.father.lastNameAtDeath = obj.lastNameAtDeath;
         }
       }
@@ -290,10 +290,10 @@ function generalizeData(input) {
       if (name) {
         let obj = getPartsFromWikiTreeName(name, ed.parents.mother.wikiId);
         result.parents.mother = { name: obj.nameObj };
-        if (obj.lastNameAtBirth && obj.lastNameAtBirth != "Unknown") {
+        if (obj.lastNameAtBirth && obj.lastNameAtBirth.toLowerCase() != "unknown") {
           result.parents.mother.lastNameAtBirth = obj.lastNameAtBirth;
         }
-        if (obj.lastNameAtDeath && obj.lastNameAtDeath != "Unknown") {
+        if (obj.lastNameAtDeath && obj.lastNameAtDeath.toLowerCase() != "unknown") {
           result.parents.mother.lastNameAtDeath = obj.lastNameAtDeath;
         }
       }

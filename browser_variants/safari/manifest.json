@@ -139,6 +139,11 @@
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
     {
+      "matches": ["*://*.openarch.nl/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/openarch/browser/openarch_content.js"]
+    },
+    {
       "matches": ["*://paperspast.natlib.govt.nz/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
@@ -157,6 +162,11 @@
       "matches": ["*://trove.nla.gov.au/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/trove/browser/trove_content.js"]
+    },
+    {
+      "matches": ["*://www.wiewaswie.nl/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/wiewaswie/browser/wiewaswie_content.js"]
     }
   ],
   "options_ui": {
@@ -194,9 +204,11 @@
     "site/naie/core/naie_extract_data.mjs",
     "site/nli/core/nli_extract_data.mjs",
     "site/np/core/np_extract_data.mjs",
+    "site/openarch/core/openarch_extract_data.mjs",
     "site/ppnz/core/ppnz_extract_data.mjs",
     "site/scotp/core/scotp_extract_data.mjs",
-    "site/trove/core/trove_extract_data.mjs"
+    "site/trove/core/trove_extract_data.mjs",
+    "site/wiewaswie/core/wiewaswie_extract_data.mjs"
   ],
   "manifest_version": 2
 }
