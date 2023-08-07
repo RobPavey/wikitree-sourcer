@@ -1,7 +1,7 @@
 {
   "sourceOfData": "openarch",
   "sourceType": "record",
-  "recordType": "DeathRegistration",
+  "recordType": "Death",
   "name": {
     "forenames": "Jan",
     "lastName": "Bartelds Huisman"

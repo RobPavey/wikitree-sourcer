@@ -1,7 +1,7 @@
 {
   "sourceOfData": "openarch",
   "sourceType": "record",
-  "recordType": "BirthRegistration",
+  "recordType": "Birth",
   "name": {
     "forenames": "Jan",
     "lastName": "van der Wijk"

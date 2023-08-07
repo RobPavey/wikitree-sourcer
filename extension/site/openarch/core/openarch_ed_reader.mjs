@@ -101,7 +101,7 @@ const typeData = {
   "BS Geboorte": {
     // Civil Birth
     enDocumentType: "Civil registration births",
-    recordType: RT.BirthRegistration,
+    recordType: RT.Birth,
     relation: {
       primary: ["Kind"],
     },
@@ -109,7 +109,7 @@ const typeData = {
   "BS Huwelijk": {
     // Civil Marriage
     enDocumentType: "Civil registration marriages",
-    recordType: RT.MarriageRegistration,
+    recordType: RT.Marriage,
     fixedGender: "male", // the primary person is always the groom
     relation: {
       primary: ["Bruidegom"],
@@ -120,7 +120,7 @@ const typeData = {
   "BS Overlijden": {
     // Civil Death
     enDocumentType: "Civil registration deaths",
-    recordType: RT.DeathRegistration,
+    recordType: RT.Death,
     relation: {
       primary: ["Overledene"],
     },
