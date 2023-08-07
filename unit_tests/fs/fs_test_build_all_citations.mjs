@@ -309,6 +309,18 @@ const regressionData = [
       },
     ],
   },
+  {
+    caseName: "m4qy_n7x_walter_leeke",
+    url: "https://www.familysearch.org/tree/person/details/LJJH-F8B",
+    optionVariants: [
+      {
+        variantName: "exclude_non_fs_sources",
+        optionOverrides: {
+          addMerge_fsAllCitations_excludeNonFsSources: true,
+        },
+      },
+    ],
+  },
 ];
 
 const optionVariants = [

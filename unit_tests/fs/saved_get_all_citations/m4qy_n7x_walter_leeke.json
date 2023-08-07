@@ -1,0 +1,1741 @@
+{
+  "fsSources": [
+    {
+      "id": "Q63L-7PY",
+      "title": "Walter Harvey Leeke, \"England and Wales Death Registration Index 1837-2007\"",
+      "titleUserContributed": false,
+      "tombstoned": false,
+      "titleUpdatedBy": "cis.user.MM98-N7F7",
+      "titleSubmittedBy": "cis.user.MM98-N7F7",
+      "titleUpdatedOn": 1691258357823,
+      "citation": "\"England and Wales Death Registration Index 1837-2007,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:2NJF-CWR : 31 December 2014), Walter Harvey Leeke, 1858; from \"England & Wales Deaths, 1837-2006,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing Death, Newport (Shropshire), Shropshire, England, General Register Office, Southport, England.",
+      "citationUpdatedBy": "cis.user.MM98-N7F7",
+      "citationSubmittedBy": "cis.user.MM98-N7F7",
+      "citationUpdatedOn": 1691258357823,
+      "uri": {
+        "uri": "https://familysearch.org/ark:/61903/1:1:2NJF-CWR"
+      },
+      "uriUpdatedBy": "cis.user.MM98-N7F7",
+      "uriSubmittedBy": "cis.user.MM98-N7F7",
+      "uriUpdatedOn": 1691258357823,
+      "notesUpdatedBy": "cis.user.MM98-N7F7",
+      "notesSubmittedBy": "cis.user.MM98-N7F7",
+      "notesUpdatedOn": 1691258357823,
+      "updatedOn": 1691258357823,
+      "updatedBy": "cis.user.MM98-N7F7",
+      "submittedBy": "cis.user.MM98-N7F7",
+      "createdOn": 1691258357823,
+      "createdBy": "cis.user.MM98-N7F7",
+      "sourceType": "FSREADONLY",
+      "lang": "en",
+      "evidence": {
+        "facts": [
+          {
+            "factType": "Name",
+            "fieldType": "Interpreted",
+            "value": "Walter Harvey Leeke"
+          },
+          {
+            "originalDate": "1858",
+            "displayDate": "1858",
+            "eventDate": "+1858",
+            "sortYear": "1858",
+            "sortKey": "C18580000GC18589999",
+            "eventPlace": "Newport (Shropshire), Shropshire, England",
+            "factType": "Death"
+          }
+        ]
+      },
+      "event": {
+        "originalDate": "1858",
+        "displayDate": "1858",
+        "eventDate": "+1858",
+        "sortYear": "1858",
+        "sortKey": "C18580000GC18589999",
+        "eventPlace": "Newport (Shropshire), Shropshire, England",
+        "factType": "Death"
+      },
+      "eventUserContributed": false,
+      "eventUpdatedBy": "cis.user.MM98-N7F7",
+      "eventSubmittedBy": "cis.user.MM98-N7F7",
+      "eventUpdatedOn": 1691258357823,
+      "maaiHintDismissed": false,
+      "maaiHDUpdatedBy": "cis.user.MM98-N7F7",
+      "maaiHDSubmittedBy": "cis.user.MM98-N7F7",
+      "maaiHDUpdatedOn": 1691258357823
+    },
+    {
+      "id": "MCKM-WHT",
+      "title": "Walter Harvey Leeke, \"England Births and Christenings, 1538-1975\"",
+      "titleUserContributed": false,
+      "tombstoned": false,
+      "titleUpdatedBy": "cis.wkca.MMMM-M93P",
+      "titleSubmittedBy": "cis.wkca.MMMM-M9QH",
+      "titleUpdatedOn": 1415327720832,
+      "citation": "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:J3Q2-MBK : 10 April 2021), Walter Harvey Leeke, 1855.",
+      "citationUpdatedBy": "cis.wkca.MMMM-M93P",
+      "citationSubmittedBy": "cis.wkca.MMMM-M9QH",
+      "citationUpdatedOn": 1415327720832,
+      "uri": {
+        "uri": "https://familysearch.org/ark:/61903/1:1:J3Q2-MBK"
+      },
+      "uriUpdatedBy": "cis.wkca.MMMM-M93P",
+      "uriSubmittedBy": "cis.wkca.MMMM-M9QH",
+      "uriUpdatedOn": 1415327720832,
+      "notes": "This extracted record was used to create this person in Family Tree.",
+      "notesUpdatedBy": "cis.wkca.MMMM-M93P",
+      "notesSubmittedBy": "cis.wkca.MMMM-M9QH",
+      "notesUpdatedOn": 1415327720832,
+      "updatedOn": 1415327720832,
+      "updatedBy": "cis.wkca.MMMM-M93P",
+      "submittedBy": "cis.wkca.MMMM-M9QH",
+      "createdOn": 1415327720832,
+      "createdBy": "cis.wkca.MMMM-M93P",
+      "sourceType": "IGI",
+      "lang": "en-us",
+      "evidence": {
+        "facts": [
+          {
+            "factType": "Name",
+            "fieldType": "Original",
+            "value": "WALTER HARVEY LEEKE"
+          },
+          {
+            "factType": "Name",
+            "fieldType": "Interpreted",
+            "value": "Walter Harvey Leeke"
+          },
+          {
+            "factType": "Gender",
+            "fieldType": "Original",
+            "value": "Male"
+          },
+          {
+            "originalDate": "+1855-10-21",
+            "displayDate": "21 October 1855",
+            "eventDate": "+1855-10-21",
+            "sortYear": "1855",
+            "sortKey": "C18551021GC18551021",
+            "eventPlace": "Longford, Shropshire, England, United Kingdom",
+            "factType": "Christening"
+          },
+          {
+            "originalDate": "+1857-11-11",
+            "displayDate": "11 November 1857",
+            "eventDate": "+1857-11-11",
+            "sortYear": "1857",
+            "sortKey": "C18571111GC18571111",
+            "factType": "Death"
+          },
+          {
+            "factType": "OTHER",
+            "fieldType": "Interpreted",
+            "value": "174083564"
+          }
+        ]
+      },
+      "event": {
+        "originalDate": "+1855-10-21",
+        "displayDate": "21 October 1855",
+        "eventDate": "+1855-10-21",
+        "sortYear": "1855",
+        "sortKey": "C18551021GC18551021",
+        "eventPlace": "Longford, Shropshire, England, United Kingdom",
+        "factType": "Christening"
+      },
+      "eventUserContributed": false,
+      "maaiHintDismissed": false
+    }
+  ],
+  "sourceData": {
+    "https://familysearch.org/ark:/61903/1:1:J3Q2-MBK": {
+      "dataObj": {
+        "id": "r_946389737",
+        "lang": "en",
+        "links": {
+          "next": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:9HB8-XQJ?seek=next"
+          },
+          "prev": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:9HB8-XQJ?seek=prev"
+          },
+          "self": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:9HB8-XQJ"
+          }
+        },
+        "description": "#sd_p_12469680859",
+        "persons": [
+          {
+            "id": "p_12469680859",
+            "extracted": true,
+            "principal": true,
+            "gender": {
+              "type": "http://gedcomx.org/Male",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "8da99eb1-3071-4e31-a121-9b5e97663e69",
+                      "type": "http://gedcomx.org/Original",
+                      "labelId": "PR_SEX_CODE_ORIG",
+                      "text": "Male"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/J3Q2-MBK?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/9HB8-XQJ?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:J3Q2-MBK"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "Walter Harvey Leeke",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Walter Harvey",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "ad3d85de-3047-40ab-b676-71e836406e97",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_GN_ORIG",
+                                "text": "WALTER HARVEY"
+                              },
+                              {
+                                "id": "bde566c7-bf01-4b28-a134-4e08674ae8cc",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1584823458679
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Walter Harvey"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Leeke",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "d8988c6e-8bcf-48a4-b81c-b885d87cc59d",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_NAME_SURN_ORIG",
+                                "text": "LEEKE"
+                              },
+                              {
+                                "id": "0e82a946-28d8-43e5-8a8f-9bb91093b610",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1584823458679
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_SURN",
+                                "text": "Leeke"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "id": "90652587-92f0-4a01-b7bb-1e9cf6f964eb",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1584823458672
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "PR_NAME_ORIG",
+                            "text": "WALTER HARVEY LEEKE"
+                          },
+                          {
+                            "id": "e0eb3be4-51c8-4c4a-9cfd-92d9dac87d31",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1584823458679
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "PR_NAME",
+                            "text": "Walter Harvey Leeke"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "facts": [
+              {
+                "type": "http://gedcomx.org/Christening",
+                "date": {
+                  "original": "21 Oct 1855",
+                  "formal": "+1855-10-21",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Date",
+                      "values": [
+                        {
+                          "id": "8674a133-bd0e-47f5-a7f9-5722cc3031af",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "EVENT_DATE_ORIG",
+                          "text": "21 Oct 1855"
+                        },
+                        {
+                          "id": "0fa0cdbc-c3fa-49c3-8889-27cf492810a8",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1584823458669
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_DATE",
+                          "text": "21 Oct 1855",
+                          "resource": "+1855-10-21"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Month",
+                      "values": [
+                        {
+                          "id": "caeee91d-35e3-4832-989d-59531fa4454d",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1584823458669
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_MONTH",
+                          "text": "10"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Day",
+                      "values": [
+                        {
+                          "id": "8398a4af-4bbb-48c5-87c8-3f9edd368560",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1584823458669
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_DAY",
+                          "text": "21"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Year",
+                      "values": [
+                        {
+                          "id": "d893bcf9-0d8f-434f-822c-b9476a3b0ddc",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "EVENT_YEAR_ORIG",
+                          "text": "1855"
+                        },
+                        {
+                          "id": "ec1c8c9d-ae30-4668-9fb4-75cfe3184cb6",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1584823458669
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_YEAR",
+                          "text": "1855"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "place": {
+                  "original": "Longford, Shropshire, England, United Kingdom",
+                  "description": "#place_1618577",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Place",
+                      "values": [
+                        {
+                          "id": "1ca2ba8a-05f5-462c-a5cb-7bb632132d18",
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE_SUP",
+                          "text": "Bts, Longford By Newport, Shrops County, England",
+                          "qualifiers": [
+                            {
+                              "value": "SUP",
+                              "name": "http://familysearch.org/types/qualifiers/Info"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "5c1daec3-d075-4fc4-8fee-baa222c4a9ac",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "EVENT_PLACE_ORIG",
+                          "text": "Longford by Newport, Shropshire, England"
+                        },
+                        {
+                          "id": "08ef3f2b-a50d-47a1-9045-978e4225fad5",
+                          "confidence": "http://confidence/93",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/LocalityTreatment/ver/1"
+                            },
+                            "modified": 1584823458699
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE",
+                          "text": "Longford, Shropshire, England, United Kingdom",
+                          "resource": "https://www.familysearch.org/platform/places/description/1618577",
+                          "qualifiers": [
+                            {
+                              "value": "1013, 1026, 1010",
+                              "name": "StdQualifier"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "primary": true,
+                "fields": [
+                  {
+                    "type": "http://familysearch.org/types/fields/EventType",
+                    "values": [
+                      {
+                        "id": "8598de89-bd55-435f-adb1-49cab7e78d11",
+                        "type": "http://gedcomx.org/Interpreted",
+                        "labelId": "EVENT_TYPE",
+                        "text": "Christening"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "http://gedcomx.org/Death",
+                "date": {
+                  "original": "11 Nov 1857",
+                  "formal": "+1857-11-11",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Date",
+                      "values": [
+                        {
+                          "id": "ac7a9b99-01c8-47e8-9cdb-0c05bf800181",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_DEA_DATE_ORIG",
+                          "text": "11 Nov 1857"
+                        },
+                        {
+                          "id": "7f0c37b1-9be5-403e-9f3f-fb0b5d2ac91d",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1584823458672
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_DEA_DATE",
+                          "text": "11 Nov 1857",
+                          "resource": "+1857-11-11"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Month",
+                      "values": [
+                        {
+                          "id": "7dfe312c-1df8-4f73-b805-2b0f05ffa0a3",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1584823458672
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_DEA_MONTH",
+                          "text": "11"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Day",
+                      "values": [
+                        {
+                          "id": "4bf07fb7-c7f2-4cc8-b3d1-d718f5a3b5ec",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1584823458672
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_DEA_DAY",
+                          "text": "11"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Year",
+                      "values": [
+                        {
+                          "id": "66492848-ab53-4743-8b85-5b5aad45f772",
+                          "type": "http://gedcomx.org/Original",
+                          "labelId": "PR_DEA_YEAR_ORIG",
+                          "text": "1857"
+                        },
+                        {
+                          "id": "a14aa262-a180-49f5-b2d0-4de45a9ce2ea",
+                          "attribution": {
+                            "contributor": {
+                              "resource": "http://treatment/StandardsDateTreatment/ver/2"
+                            },
+                            "modified": 1584823458672
+                          },
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "PR_DEA_YEAR",
+                          "text": "1857"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "fields": [
+              {
+                "type": "http://familysearch.org/types/fields/FsPrTreeId",
+                "values": [
+                  {
+                    "id": "f7814129-371a-4f92-bdc2-2a0cfd672671",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "FS_PR_TREE_ID",
+                    "text": "174083564"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p_12469680860",
+            "extracted": true,
+            "principal": false,
+            "gender": {
+              "type": "http://gedcomx.org/Male",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "0bd17ea5-e0fe-420b-b520-437c666baf6c",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/CvGenderTreatment/ver/1"
+                        },
+                        "modified": 1584823458692
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_FTHR_SEX_CODE",
+                      "text": "Male",
+                      "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/J3Q2-MB2?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/9HB8-XQJ?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:J3Q2-MB2"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "Ralph Merrick Leeke",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Ralph Merrick",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "a3ac92f8-b79f-49f9-a270-f4c6fdf0bdd1",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_FTHR_NAME_GN_ORIG",
+                                "text": "RALPH MERRICK"
+                              },
+                              {
+                                "id": "b395f413-96bc-4496-9738-82a6ea0deb9c",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1584823458686
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_FTHR_NAME_GN",
+                                "text": "Ralph Merrick"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Leeke",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "id": "ce535a37-92d7-47c4-a7e5-286d13f6cb40",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_FTHR_NAME_SURN_ORIG",
+                                "text": "LEEKE"
+                              },
+                              {
+                                "id": "9e3dd3c7-d9b0-4028-b665-04ddf53ef95a",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1584823458686
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_FTHR_NAME_SURN",
+                                "text": "Leeke"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "id": "4e92e7f8-3166-4d8a-b395-be79684d6b21",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1584823458679
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "PR_FTHR_NAME_ORIG",
+                            "text": "RALPH MERRICK LEEKE"
+                          },
+                          {
+                            "id": "989b6f90-0455-4a2a-a2cd-f39529538269",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1584823458686
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "PR_FTHR_NAME",
+                            "text": "Ralph Merrick Leeke"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": [
+              {
+                "type": "http://familysearch.org/types/fields/FsPrFthrTreeId",
+                "values": [
+                  {
+                    "id": "51a17ae2-5513-423c-aa1f-50e71be9a20c",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "FS_PR_FTHR_TREE_ID",
+                    "text": "174083601"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p_12469680861",
+            "extracted": true,
+            "principal": false,
+            "gender": {
+              "type": "http://gedcomx.org/Female",
+              "fields": [
+                {
+                  "type": "http://gedcomx.org/Gender",
+                  "values": [
+                    {
+                      "id": "85c0a75a-778a-4deb-9ac7-c53c082a6505",
+                      "attribution": {
+                        "contributor": {
+                          "resource": "http://treatment/CvGenderTreatment/ver/1"
+                        },
+                        "modified": 1584823458692
+                      },
+                      "type": "http://gedcomx.org/Interpreted",
+                      "labelId": "PR_MTHR_SEX_CODE",
+                      "text": "Female",
+                      "resource": "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+                    }
+                  ]
+                }
+              ]
+            },
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/J3Q2-MBL?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/9HB8-XQJ?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:J3Q2-MBL"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "Hester Urania",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Hester Urania",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "id": "929d9863-2130-4f14-8630-1fc98b6b7951",
+                                "type": "http://gedcomx.org/Original",
+                                "labelId": "PR_MTHR_NAME_GN_ORIG",
+                                "text": "HESTER URANIA"
+                              },
+                              {
+                                "id": "2a5ed062-1bcb-412c-8a83-120779f9bea1",
+                                "attribution": {
+                                  "contributor": {
+                                    "resource": "http://treatment/NameTreatment/ver/1"
+                                  },
+                                  "modified": 1584823458692
+                                },
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_MTHR_NAME_GN",
+                                "text": "Hester Urania"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "id": "cead2194-ae66-4a98-813a-ff13fdecd386",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1584823458686
+                            },
+                            "type": "http://gedcomx.org/Original",
+                            "labelId": "PR_MTHR_NAME_ORIG",
+                            "text": "HESTER URANIA"
+                          },
+                          {
+                            "id": "df592f48-355f-49ca-9753-2fa60ef5bae3",
+                            "attribution": {
+                              "contributor": {
+                                "resource": "http://treatment/NameTreatment/ver/1"
+                              },
+                              "modified": 1584823458692
+                            },
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "PR_MTHR_NAME",
+                            "text": "Hester Urania"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fields": [
+              {
+                "type": "http://familysearch.org/types/fields/FsPrMthrTreeId",
+                "values": [
+                  {
+                    "id": "75dc2aa1-928a-4a11-8561-fcebab4555ff",
+                    "type": "http://gedcomx.org/Interpreted",
+                    "labelId": "FS_PR_MTHR_TREE_ID",
+                    "text": "174083621"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "id": "MM9.1.6/P39H-53NR",
+            "type": "http://gedcomx.org/ParentChild",
+            "person1": {
+              "resource": "#p_12469680860",
+              "resourceId": "p_12469680860"
+            },
+            "person2": {
+              "resource": "#p_12469680859",
+              "resourceId": "p_12469680859"
+            }
+          },
+          {
+            "id": "MM9.1.6/P39H-53NT",
+            "type": "http://gedcomx.org/ParentChild",
+            "person1": {
+              "resource": "#p_12469680861",
+              "resourceId": "p_12469680861"
+            },
+            "person2": {
+              "resource": "#p_12469680859",
+              "resourceId": "p_12469680859"
+            }
+          },
+          {
+            "id": "MM9.1.6/P39H-53NY",
+            "type": "http://gedcomx.org/Couple",
+            "person1": {
+              "resource": "#p_12469680860",
+              "resourceId": "p_12469680860"
+            },
+            "person2": {
+              "resource": "#p_12469680861",
+              "resourceId": "p_12469680861"
+            }
+          }
+        ],
+        "sourceDescriptions": [
+          {
+            "id": "sd_c_1473014",
+            "about": "https://www.familysearch.org/platform/records/collections/1473014",
+            "resourceType": "http://gedcomx.org/Collection",
+            "created": 1382223556137,
+            "modified": 1690531442465,
+            "coverage": [
+              {
+                "spatial": {
+                  "original": "England",
+                  "description": "#place_1986340"
+                },
+                "temporal": {
+                  "original": "1538/1975",
+                  "formal": "1538/1975"
+                },
+                "recordType": "http://gedcomx.org/Vital"
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en_US",
+                "value": "England Births and Christenings, 1538-1975"
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://www.familysearch.org/platform/records/collections/1473014"]
+            }
+          },
+          {
+            "id": "src_r_946389737",
+            "mediaType": "image/jpeg",
+            "about": "https://www.familysearch.org/ark:/61903/1:2:9HB8-XQJ",
+            "componentOf": {
+              "description": "#sd_c_1473014"
+            },
+            "resourceType": "http://gedcomx.org/Record",
+            "created": 1584823458934,
+            "modified": 1690531442465,
+            "coverage": [
+              {
+                "spatial": {
+                  "original": "Longford, Shropshire, England, United Kingdom",
+                  "description": "#place_1618577"
+                },
+                "temporal": {
+                  "original": "21 Oct 1855"
+                },
+                "recordType": "http://gedcomx.org/Vital"
+              }
+            ],
+            "citations": [
+              {
+                "value": "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:9HB8-XQJ : 10 April 2021), Entry for Walter Harvey Leeke, 1855."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Entry for Walter Harvey Leeke, \"England Births and Christenings, 1538-1975\""
+              }
+            ],
+            "rights": ["http://familysearch.org/records/recordPermissions/CdsPrmAnyone"],
+            "identifiers": {
+              "$": ["https://www.familysearch.org/platform/externalId/easy/1000523099328"],
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:9HB8-XQJ"]
+            },
+            "descriptor": {
+              "resource": "https://www.familysearch.org/service/cds/recapi/collections/1473014?arkName=1:2:9HB8-XQJ"
+            }
+          },
+          {
+            "id": "sd_p_12469680859",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:J3Q2-MBK",
+            "componentOf": {
+              "description": "#src_r_946389737"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:J3Q2-MBK : 10 April 2021), Walter Harvey Leeke, 1855."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Walter Harvey Leeke, \"England Births and Christenings, 1538-1975\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:J3Q2-MBK"]
+            }
+          },
+          {
+            "id": "sd_p_12469680860",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:J3Q2-MB2",
+            "componentOf": {
+              "description": "#src_r_946389737"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:J3Q2-MB2 : 10 April 2021), Ralph Merrick Leeke in entry for Walter Harvey Leeke, 1855."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Ralph Merrick Leeke in entry for Walter Harvey Leeke, \"England Births and Christenings, 1538-1975\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:J3Q2-MB2"]
+            }
+          },
+          {
+            "id": "sd_p_12469680861",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:J3Q2-MBL",
+            "componentOf": {
+              "description": "#src_r_946389737"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:J3Q2-MBL : 10 April 2021), Hester Urania in entry for Walter Harvey Leeke, 1855."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Hester Urania in entry for Walter Harvey Leeke, \"England Births and Christenings, 1538-1975\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:J3Q2-MBL"]
+            }
+          }
+        ],
+        "places": [
+          {
+            "place": {
+              "resource": "https://www.familysearch.org/platform/places/description/1618577",
+              "resourceId": "place_1618577"
+            }
+          },
+          {
+            "id": "place_1986340",
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986340"]
+            }
+          }
+        ],
+        "fields": [
+          {
+            "type": "http://familysearch.org/types/fields/ExtData",
+            "values": [
+              {
+                "id": "59b6ff54-e6fa-43da-8ce5-a1eae1fdc504",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "EXT_DATA",
+                "text": "{ \"EVENT_PLACE_ALT_ORIG\": \"LONGFORD BY NEWPORT,SHROPSHIRE,ENGLAND\", \"EVENT_DATE_ALT_ORIG\": \"21 OCT 1855\", \"PR_DEA_DATE_ALT_ORIG\": \"11 NOV 1857\", \"PR_SEX_CODE_ALT_ORIG\": \"M\"}"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/BatchLocality",
+            "values": [
+              {
+                "id": "f0d907c3-7d1a-48c6-b2bd-96204b9463fd",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_BATCH_LOCALITY",
+                "text": "Shropshire, England"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/CollectionId",
+            "values": [
+              {
+                "id": "f2c70c23-ee84-4145-b5d2-1ca2a9e38974",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_COLLECTION_ID",
+                "text": "1473014"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/DigitalFilmNumber",
+            "values": [
+              {
+                "id": "c5e1c628-33dc-4f7f-88c9-1660eb6a1335",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_DIGITAL_FILM_NBR",
+                "text": "008039670"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/FilmNumber",
+            "values": [
+              {
+                "id": "589df638-97d9-4128-a452-b49acaeb002f",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_FILM_NBR",
+                "text": "502936"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordGroup",
+            "values": [
+              {
+                "id": "96f6532e-f0eb-4e15-9b59-6b50e61bbcb1",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_GROUP",
+                "text": "England-ODM"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordVersion",
+            "values": [
+              {
+                "id": "94c1b2a2-fbdf-400f-882f-ad711c1c67f5",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_VERSION",
+                "text": "4"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SortKey",
+            "values": [
+              {
+                "id": "05649ed6-7b2b-4289-9c00-aea62479189e",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_SORT_KEY",
+                "text": "0502936_C05381-1X_1855_10_21_1000523099328"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SystemOfOrigin",
+            "values": [
+              {
+                "id": "dadf2a64-376f-4730-bf49-acf28d490e61",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_SYSTEM_OF_ORIGIN",
+                "text": "ODM"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UdeBatchNumber",
+            "values": [
+              {
+                "id": "2a59435d-6d3d-40c5-9848-e862a7cb5a8a",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_UDE_BATCH_NBR",
+                "text": "C05381-1"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UniqueId",
+            "values": [
+              {
+                "id": "66ba7965-368b-4359-9c1e-4871e3d78ae0",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_UNIQUE_ID",
+                "text": "1000523099328"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/FsVisStatus",
+            "values": [
+              {
+                "id": "0158ba25-900c-4edc-854e-4b83f7e07ba9",
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_VIS_STATUS",
+                "text": "VISIBLE"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordVersion",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_VERSION",
+                "text": "5"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UserModified",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_USER_MODIFIED",
+                "text": "false"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/CdsBatchId",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_CDS_BATCH_ID",
+                "text": "52960"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/PublicationStatus",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_PUB_STATUS",
+                "text": "Production"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "https://familysearch.org/ark:/61903/1:1:2NJF-CWR": {
+      "dataObj": {
+        "id": "r_22938425505",
+        "lang": "en",
+        "links": {
+          "next": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:9961-9C6F?seek=next"
+          },
+          "prev": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:9961-9C6F?seek=prev"
+          },
+          "self": {
+            "href": "https://www.familysearch.org/ark:/61903/1:2:9961-9C6F"
+          }
+        },
+        "description": "#sd_p_14982983305",
+        "persons": [
+          {
+            "id": "p_14982983305",
+            "extracted": true,
+            "principal": true,
+            "links": {
+              "persona": {
+                "href": "https://www.familysearch.org/platform/records/personas/2NJF-CWR?flag=fsh"
+              },
+              "record": {
+                "href": "https://www.familysearch.org/platform/records/records/9961-9C6F?flag=fsh"
+              }
+            },
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:2NJF-CWR"]
+            },
+            "names": [
+              {
+                "type": "http://gedcomx.org/BirthName",
+                "nameForms": [
+                  {
+                    "fullText": "Walter Harvey Leeke",
+                    "parts": [
+                      {
+                        "type": "http://gedcomx.org/Given",
+                        "value": "Walter Harvey",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Given",
+                            "values": [
+                              {
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_GN",
+                                "text": "Walter Harvey"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "http://gedcomx.org/Surname",
+                        "value": "Leeke",
+                        "fields": [
+                          {
+                            "type": "http://gedcomx.org/Surname",
+                            "values": [
+                              {
+                                "type": "http://gedcomx.org/Interpreted",
+                                "labelId": "PR_NAME_SURN",
+                                "text": "Leeke"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "fields": [
+                      {
+                        "type": "http://gedcomx.org/Name",
+                        "values": [
+                          {
+                            "type": "http://gedcomx.org/Interpreted",
+                            "labelId": "PR_NAME",
+                            "text": "Walter Harvey Leeke"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "facts": [
+              {
+                "type": "http://gedcomx.org/Death",
+                "date": {
+                  "original": "1858",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Date",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_DATE",
+                          "text": "1858"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Year",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_YEAR",
+                          "text": "1858"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "place": {
+                  "original": "Newport (Shropshire), Shropshire, England",
+                  "fields": [
+                    {
+                      "type": "http://gedcomx.org/Place",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE",
+                          "text": "Newport (Shropshire), Shropshire, England"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://familysearch.org/types/fields/RegistrationDistrict",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE_LEVEL_3",
+                          "text": "Newport (Shropshire)"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/County",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE_LEVEL_2",
+                          "text": "Shropshire"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "http://gedcomx.org/Country",
+                      "values": [
+                        {
+                          "type": "http://gedcomx.org/Interpreted",
+                          "labelId": "EVENT_PLACE_LEVEL_1",
+                          "text": "England"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "primary": true
+              }
+            ]
+          }
+        ],
+        "sourceDescriptions": [
+          {
+            "id": "sd_c_2285341",
+            "about": "https://www.familysearch.org/platform/records/collections/2285341",
+            "resourceType": "http://gedcomx.org/Collection",
+            "created": 1387492839317,
+            "modified": 1658155244365,
+            "coverage": [
+              {
+                "spatial": {
+                  "original": "England",
+                  "description": "#place_1986340"
+                },
+                "temporal": {
+                  "original": "1837/1920",
+                  "formal": "1837/1920"
+                },
+                "recordType": "http://gedcomx.org/Death"
+              },
+              {
+                "spatial": {
+                  "original": "Wales",
+                  "description": "#place_1986311"
+                },
+                "temporal": {
+                  "original": "1837/1920",
+                  "formal": "1837/1920"
+                },
+                "recordType": "http://gedcomx.org/Death"
+              },
+              {
+                "spatial": {
+                  "original": "United Kingdom",
+                  "description": "#place_1927033"
+                },
+                "temporal": {
+                  "original": "1837/1920",
+                  "formal": "1837/1920"
+                },
+                "recordType": "http://gedcomx.org/Death"
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en_US",
+                "value": "England and Wales Death Registration Index 1837-2007"
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://www.familysearch.org/platform/records/collections/2285341"]
+            }
+          },
+          {
+            "id": "src_r_22938425505",
+            "mediaType": "image/jpeg",
+            "about": "https://www.familysearch.org/ark:/61903/1:2:9961-9C6F",
+            "componentOf": {
+              "description": "#sd_c_2285341"
+            },
+            "resourceType": "http://gedcomx.org/Record",
+            "created": 1391833051393,
+            "modified": 1658155244365,
+            "coverage": [
+              {
+                "spatial": {
+                  "original": "Newport (Shropshire), Shropshire, England"
+                },
+                "temporal": {
+                  "original": "1858",
+                  "formal": "+1858"
+                },
+                "recordType": "http://gedcomx.org/Death"
+              }
+            ],
+            "citations": [
+              {
+                "value": "\"England and Wales Death Registration Index 1837-2007,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:9961-9C6F : 31 December 2014), 1858; from \"England & Wales Deaths, 1837-2006,\" index, <i>findmypast</i> (http://www.findmypast.com : 2012); citing Death, Newport (Shropshire), Shropshire, England, General Register Office, Southport, England."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Entry for Walter Harvey Leeke, \"England and Wales Death Registration Index 1837-2007\""
+              }
+            ],
+            "identifiers": {
+              "$": ["https://www.familysearch.org/platform/externalId/easy/1001811403892"],
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:2:9961-9C6F"]
+            },
+            "descriptor": {
+              "resource": "https://www.familysearch.org/service/cds/recapi/collections/2285341?arkName=1:2:9961-9C6F"
+            }
+          },
+          {
+            "id": "sd_p_14982983305",
+            "about": "https://www.familysearch.org/ark:/61903/1:1:2NJF-CWR",
+            "componentOf": {
+              "description": "#src_r_22938425505"
+            },
+            "resourceType": "http://gedcomx.org/Person",
+            "citations": [
+              {
+                "value": "\"England and Wales Death Registration Index 1837-2007,\" database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:2NJF-CWR : 31 December 2014), Walter Harvey Leeke, 1858; from \"England & Wales Deaths, 1837-2006,\" database, <i>findmypast</i> (http://www.findmypast.com : 2012); citing Death, Newport (Shropshire), Shropshire, England, General Register Office, Southport, England."
+              }
+            ],
+            "titles": [
+              {
+                "lang": "en",
+                "value": "Walter Harvey Leeke, \"England and Wales Death Registration Index 1837-2007\""
+              }
+            ],
+            "identifiers": {
+              "http://gedcomx.org/Persistent": ["https://www.familysearch.org/ark:/61903/1:1:2NJF-CWR"]
+            }
+          }
+        ],
+        "places": [
+          {
+            "id": "place_1986311",
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986311"]
+            }
+          },
+          {
+            "id": "place_1927033",
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1927033"]
+            }
+          },
+          {
+            "id": "place_1986340",
+            "identifiers": {
+              "http://gedcomx.org/Primary": ["https://api.familysearch.org/authorities/v1/place/1986340"]
+            }
+          }
+        ],
+        "fields": [
+          {
+            "type": "http://familysearch.org/types/fields/UniqueIdentifier",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "UNIQUE_IDENTIFIER",
+                "text": "1001811403892"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/EventType",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EVENT_TYPE",
+                "text": "Death"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/EventRegQtr",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EVENT_REG_QTR",
+                "text": "Jan-Feb-Mar"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/EventRegDate",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EVENT_REG_DATE",
+                "text": "1858"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/EventDistrictReg",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EVENT_DISTRICT_REG",
+                "text": "Newport (Shropshire)"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/EventCounty",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EVENT_COUNTY",
+                "text": "Shropshire"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SourceVolume",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "SOURCE_VOLUME",
+                "text": "6A"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SourcePage",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "SOURCE_PAGE",
+                "text": "646"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/ExtLineNbr",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EXT_LINE_NBR",
+                "text": "12"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/EventPlaceLevel1Type",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EVENT_PLACE_LEVEL_1_TYPE",
+                "text": "Country"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/EventPlaceLevel2Type",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EVENT_PLACE_LEVEL_2_TYPE",
+                "text": "County"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/EventPlaceLevel3Type",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EVENT_PLACE_LEVEL_3_TYPE",
+                "text": "Registration District"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/Evquarter",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EVQUARTER",
+                "text": "1"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/ExtAdditionalEntryFlag",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EXT_ADDITIONAL_ENTRY_FLAG",
+                "text": "N"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/ExtRefNbr",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "EXT_REF_NBR",
+                "text": "18556805"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/CollectionId",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "FS_COLLECTION_ID",
+                "text": "2285341"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/PpqId",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "PPQ_ID",
+                "text": "13-1239"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordGroup",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Original",
+                "labelId": "RECORD_GROUP",
+                "text": "deaths_1800stxt"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/SortKey",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "SORT_KEY",
+                "text": "000018556805_1858_1_000001001811403892"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/RecordVersion",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_RECORD_VERSION",
+                "text": "1"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/UserModified",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_USER_MODIFIED",
+                "text": "false"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/CdsBatchId",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_CDS_BATCH_ID",
+                "text": "18144"
+              }
+            ]
+          },
+          {
+            "type": "http://familysearch.org/types/fields/PublicationStatus",
+            "values": [
+              {
+                "type": "http://gedcomx.org/Interpreted",
+                "labelId": "FS_PUB_STATUS",
+                "text": "Production"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

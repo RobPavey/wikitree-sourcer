@@ -95,10 +95,6 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
     }
 
     if (options.addMerge_fsAllCitations_excludeNonFsSources) {
-      // could check whether uri is of right form instead
-      if (source.sourceType != "FSREADONLY") {
-        continue;
-      }
       if (!sourceObj.uri) {
         continue;
       }
