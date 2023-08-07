@@ -28,6 +28,7 @@ import { RC } from "../../../base/core/record_collections.mjs";
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const typeOfSearch = buildUrlInput.typeOfSearch;
+  const searchParameters = buildUrlInput.searchParameters;
 
   var builder = new OpenarchUriBuilder();
 
@@ -114,6 +115,15 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   builder.addName(namePart);
+
+  // Add place for specified parameters
+  if (typeOfSearch == "SpecifiedParameters") {
+    if (searchParameters) {
+      if (searchParameters.place && searchParameters.place != "<none>") {
+        builder.addEventPlace(searchParameters.place);
+      }
+    }
+  }
 
   // Add collection reference gd if this is SameCollection
   if (typeOfSearch == "SameCollection") {
