@@ -1142,6 +1142,12 @@ const addMergeAddPersonOptionsGroup = {
       defaultValue: false,
     },
     {
+      optionName: "diedYoungImage",
+      type: "text",
+      label: "Image to use in Died Young sticker if default not wanted (e.g. 'Died_Young-1.jpg')",
+      defaultValue: "",
+    },
+    {
       optionName: "generateIntro",
       type: "select",
       label: "Create a birth/parentage line in the biography",

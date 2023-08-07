@@ -822,7 +822,12 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
 
   let intro = "";
   if (addDiedYoung) {
-    intro += "{{Died Young}}\n";
+    let image = options.addMerge_addPerson_diedYoungImage;
+    if (image) {
+      intro += "{{Died Young|image=" + image + "}}\n";
+    } else {
+      intro += "{{Died Young}}\n";
+    }
   }
 
   // possibly add intro

@@ -482,6 +482,18 @@ function buildPage() {
         labelElement.appendChild(labelTextNode);
         labelElement.appendChild(optionElement);
         optionDivElement.appendChild(labelElement);
+      } else if (option.type == "text") {
+        optionElement = document.createElement("input");
+        optionElement.type = "text";
+        optionElement.className = "optionText";
+
+        let labelTextNode = document.createTextNode(option.label + ": ");
+
+        let labelElement = document.createElement("label");
+
+        labelElement.appendChild(labelTextNode);
+        labelElement.appendChild(optionElement);
+        optionDivElement.appendChild(labelElement);
       } else if (option.type == "color") {
         optionElement = document.createElement("input");
         optionElement.type = "color";
