@@ -645,7 +645,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
     let motherName = "";
     let fatherWikiId = "";
     let motherWikiId = "";
-    if (addIntroOpt == "fromSavedData") {
+    if (addIntroOpt == "fromSavedData" || !pageParents) {
       let parentNames = personGd.inferParentNamesForDataString();
       fatherName = parentNames.fatherName;
       motherName = parentNames.motherName;
@@ -785,6 +785,8 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
       }
       pageParents = getPageParentsForAddingSibling(father, mother);
       parentsLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, pageParents);
+    } else {
+      parentsLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, undefined);
     }
 
     return parentsLine;
@@ -914,7 +916,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
           let marriagePlaceString = "";
           let marriagePlaceObj = spouse.marriagePlace;
           if (marriagePlaceObj) {
-            let preposition = WTS_String.getPrepositionForPlaceString(marriagePlaceObj.placeString);
+            let preposition = StringUtils.getPrepositionForPlaceString(marriagePlaceObj.placeString);
             marriagePlaceString = preposition + " " + marriagePlaceObj.placeString;
           }
 
@@ -944,7 +946,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
 
         let deathPlace = personGd.inferDeathPlace();
         if (deathPlace) {
-          let preposition = WTS_String.getPrepositionForPlaceString(deathPlace);
+          let preposition = StringUtils.getPrepositionForPlaceString(deathPlace);
           deathPlace = preposition + " " + deathPlace;
         }
 
