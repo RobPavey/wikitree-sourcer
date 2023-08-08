@@ -212,7 +212,7 @@ function extractDataInEditMode(document, result) {
   // Get Wiki ID from the "person" span item
   const profileWikiId = getTextBySelector(document, ".person");
   result.wikiId = profileWikiId;
-  result.lnab = profileWikiId.replace(/^([^\-]+)\-.*$/, "$1");
+  result.lnab = profileWikiId.replace(/^(.+)\-\d+$/, "$1");
 }
 
 function getDateStatus(document, selector) {
@@ -293,7 +293,7 @@ function getParentsFromDocumentInReadOrPrivateMode(document, result) {
     const wikiId = pathName.replace(/(?:https?\:\/\/www\.wikitree\.com)?\/wiki\//, "");
     var fullName = getTextBySelector(parentUrls[index], "span[itemprop=name]");
 
-    var lastName = wikiId.replace(/^([^\-]+)\-\d*$/, "$1");
+    var lastName = wikiId.replace(/^(.+)\-\d+$/, "$1");
 
     if (parentUrls.length == 2) {
       // if there are 2 parents the assume the first is father and second is mother
