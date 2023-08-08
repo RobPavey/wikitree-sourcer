@@ -31,7 +31,7 @@ async function setupOpccornPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
     extractFailedMessage:
-      "It looks like a Cornwall OPC page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
+      "It looks like a Cornwall OPC page but not a 'more-info' page.\n\nTo get to the 'more-info' page click the 'more' link next to the search result that you wish to cite.",
     generalizeFailedMessage: "It looks like a Cornwall OPC page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,

@@ -31,7 +31,7 @@ import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 async function setupOpenarchPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a Open Archives (NL) page but not record page.",
+    extractFailedMessage: "It looks like an Open Archives (NL) page but not a record page.",
     generalizeFailedMessage: "It looks like a Open Archives (NL) page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     regeneralizeFunction: regeneralizeData,
