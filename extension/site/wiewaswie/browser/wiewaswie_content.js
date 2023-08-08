@@ -23,12 +23,15 @@ SOFTWARE.
 */
 
 async function getPendingSearch() {
+  //console.log("getPendingSearch");
   return new Promise((resolve, reject) => {
     try {
       chrome.storage.local.get(["wiewaswieSearchData"], function (value) {
+        //console.log("getPendingSearch resolve");
         resolve(value.wiewaswieSearchData);
       });
     } catch (ex) {
+      //console.log("getPendingSearch catch");
       reject(ex);
     }
   });
@@ -38,30 +41,30 @@ let refineRetries = 0;
 
 async function refineResults(selectData) {
   elementsFound = false;
-  console.log("refineResults: selectData is: ");
-  console.log(selectData);
+  //console.log("refineResults: selectData is: ");
+  //console.log(selectData);
 
   let searchContainer = document.querySelector("div.row.search-advanced");
-  console.log("refineResults: searchContainer is: ");
-  console.log(searchContainer);
+  //console.log("refineResults: searchContainer is: ");
+  //console.log(searchContainer);
 
   let refineContainer = document.querySelector("div.row.search-facets");
-  console.log("refineResults: refineContainer is: ");
-  console.log(refineContainer);
+  //console.log("refineResults: refineContainer is: ");
+  //console.log(refineContainer);
 
   if (refineContainer) {
     for (var key in selectData) {
-      console.log("refineResults: selectData key is: " + key);
+      //console.log("refineResults: selectData key is: " + key);
       if (key) {
         let value = selectData[key];
-        console.log("refineResults: selectData value is: " + value);
+        //console.log("refineResults: selectData value is: " + value);
 
         let selector =
           "input[ng-model='" + key + "'] ~ div.selector-options > ul > li.ng-scope[data-value='" + value + "']";
 
         let liElement = refineContainer.querySelector(selector);
         if (liElement) {
-          console.log("refineResults: liElement found ");
+          //console.log("refineResults: liElement found ");
 
           // we have found the element but it may take a few milliseconds to be working
           setTimeout(function () {
@@ -96,11 +99,16 @@ async function checkForPendingSearch() {
   if (/https\:\/\/www\.wiewaswie\.nl\/\w\w\/\w+\/\?advancedsearch=1/.test(document.URL)) {
     //console.log("checkForPendingSearch: URL matches");
 
-    let wiewaswieSearchData = await getPendingSearch();
+    let wiewaswieSearchData = undefined;
+    try {
+      wiewaswieSearchData = await getPendingSearch();
+    } catch (error) {
+      //console.log("checkForPendingSearch: getPendingSearch reject");
+    }
 
     if (wiewaswieSearchData) {
       //console.log("checkForPendingSearch: got formValues:");
-      //console.log(freecenSearchData);
+      //console.log(wiewaswieSearchData);
 
       let searchUrl = wiewaswieSearchData.url;
       let timeStamp = wiewaswieSearchData.timeStamp;
@@ -150,7 +158,7 @@ async function checkForPendingSearch() {
 
       // clear the search data
       chrome.storage.local.set({ wiewaswieSearchData: undefined }, function () {
-        //console.log('cleared wiewaswieSearchData');
+        //console.log("cleared wiewaswieSearchData");
       });
 
       let selectData = wiewaswieSearchData.selectData;
