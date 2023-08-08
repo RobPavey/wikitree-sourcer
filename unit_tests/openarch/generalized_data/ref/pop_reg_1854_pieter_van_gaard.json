@@ -10,13 +10,15 @@
     "dateString": "30 Oct 1854"
   },
   "eventPlace": {
-    "placeString": "Amsterdam, Noord-Holland, Nederland"
+    "placeString": "Amsterdam, Noord-Holland, Nederland",
+    "country": "Nederland"
   },
   "birthDate": {
     "dateString": "30 Oct 1854"
   },
   "birthPlace": {
-    "placeString": "Amsterdam, Noord-Holland, Nederland"
+    "placeString": "Amsterdam, Noord-Holland, Nederland",
+    "country": "Nederland"
   },
   "collectionData": {
     "id": "other:Bevolkingsregister 1853-1863",

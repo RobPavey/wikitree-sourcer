@@ -11,7 +11,8 @@
     "dateString": "8 Nov 1811"
   },
   "eventPlace": {
-    "placeString": "Opsterland, Nederland"
+    "placeString": "Opsterland, Nederland",
+    "country": "Nederland"
   },
   "birthDate": {
     "dateString": "8 Nov 1811"

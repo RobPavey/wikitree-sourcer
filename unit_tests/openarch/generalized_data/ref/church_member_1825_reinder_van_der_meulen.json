@@ -12,7 +12,8 @@
     "dateString": "1825"
   },
   "eventPlace": {
-    "placeString": "Wonseradeel, Nederland"
+    "placeString": "Wonseradeel, Nederland",
+    "country": "Nederland"
   },
   "collectionData": {
     "id": "other:DTB Lidmaten",

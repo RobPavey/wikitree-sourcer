@@ -11,10 +11,12 @@
     "dateString": "3 Mar 1965"
   },
   "eventPlace": {
-    "placeString": "Vogelwaarde, Nederland"
+    "placeString": "Vogelwaarde, Nederland",
+    "country": "Nederland"
   },
   "birthPlace": {
-    "placeString": "Ossenisse, Nederland"
+    "placeString": "Ossenisse, Nederland",
+    "country": "Nederland"
   },
   "ageAtEvent": "70",
   "spouses": [

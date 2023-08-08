@@ -11,7 +11,8 @@
     "dateString": "25 Apr 1776"
   },
   "eventPlace": {
-    "placeString": "Princenhage, Nederland"
+    "placeString": "Princenhage, Nederland",
+    "country": "Nederland"
   },
   "collectionData": {
     "id": "DTB Begraven",

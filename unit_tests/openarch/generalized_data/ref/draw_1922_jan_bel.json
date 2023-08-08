@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "forenames": "Jan Remmelt",
+    "lastName": "Bel"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1922"
+  },
+  "eventPlace": {
+    "placeString": "Haarlem, Noord-Holland, Nederland",
+    "country": "Nederland"
+  },
+  "birthDate": {
+    "dateString": "24 Dec 1902"
+  },
+  "birthPlace": {
+    "placeString": "Haarlem, Nederland",
+    "country": "Nederland"
+  },
+  "collectionData": {
+    "id": "other:Militairen",
+    "nameParts": {
+      "forenames": "Jan Remmelt",
+      "lastName": "Bel"
+    },
+    "place": "Haarlem"
+  },
+  "hasValidData": true
+}

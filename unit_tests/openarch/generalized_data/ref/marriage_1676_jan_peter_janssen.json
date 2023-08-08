@@ -11,7 +11,8 @@
     "dateString": "21 Jun 1676"
   },
   "eventPlace": {
-    "placeString": "Oosterhout, Nederland"
+    "placeString": "Oosterhout, Nederland",
+    "country": "Nederland"
   },
   "spouses": [
     {
@@ -23,7 +24,8 @@
         "dateString": "21 Jun 1676"
       },
       "marriagePlace": {
-        "placeString": "Oosterhout, Nederland"
+        "placeString": "Oosterhout, Nederland",
+        "country": "Nederland"
       },
       "personGender": "female"
     }

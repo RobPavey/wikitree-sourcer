@@ -1,0 +1,71 @@
+{
+  "A2A": {
+    "@xsi:schemaLocation": "http://Mindbus.nl/A2A http://Mindbus.nl/A2A/A2AAllInOne_v.1.7.xsd",
+    "@Version": "1.7",
+    "a2a:Person": {
+      "@pid": "Person111555",
+      "a2a:PersonName": {
+        "a2a:PersonNameFirstName": "Jan Remmelt",
+        "a2a:PersonNameLastName": "Bel"
+      },
+      "a2a:Gender": "Man",
+      "a2a:Age": [],
+      "a2a:BirthDate": {
+        "a2a:LiteralDate": "24-12-1902",
+        "a2a:Year": "1902",
+        "a2a:Month": "12",
+        "a2a:Day": "24"
+      },
+      "a2a:BirthPlace": {
+        "a2a:Place": "Haarlem"
+      }
+    },
+    "a2a:Event": {
+      "@eid": "Event1",
+      "a2a:EventType": "other:Loting",
+      "a2a:EventDate": {
+        "a2a:LiteralDate": "1922",
+        "a2a:Year": "1922"
+      },
+      "a2a:EventPlace": {
+        "a2a:Country": "Nederland",
+        "a2a:Province": "Noord-Holland",
+        "a2a:Place": "Haarlem"
+      }
+    },
+    "a2a:RelationEP": {
+      "a2a:PersonKeyRef": "Person111555",
+      "a2a:EventKeyRef": "Event1",
+      "a2a:RelationType": "other:Loteling"
+    },
+    "a2a:Source": {
+      "a2a:SourcePlace": {
+        "a2a:Place": "Haarlem"
+      },
+      "a2a:SourceIndexDate": {
+        "a2a:From": "1922-01-01",
+        "a2a:To": "1922-12-31"
+      },
+      "a2a:SourceDate": {
+        "a2a:LiteralDate": "1922",
+        "a2a:Year": "1922"
+      },
+      "a2a:SourceType": "other:Militairen",
+      "a2a:SourceReference": {
+        "a2a:Place": "Haarlem",
+        "a2a:InstitutionName": "Noord-Hollands Archief",
+        "a2a:Archive": "23",
+        "a2a:Collection": "Militie - Lotingsregisters",
+        "a2a:RegistryNumber": "377"
+      },
+      "a2a:SourceAvailableScans": {
+        "a2a:Scan": {
+          "a2a:OrderSequenceNumber": "1",
+          "a2a:UriViewer": "http://militieregisters.nl/file?name=MRNHA00146000261"
+        }
+      },
+      "a2a:SourceLastChangeDate": "2014-10-29",
+      "a2a:RecordGUID": "{99634afa-4797-4f8d-945c-ac6396063a97}"
+    }
+  }
+}

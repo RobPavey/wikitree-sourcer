@@ -11,7 +11,8 @@
     "dateString": "27 Mar 1767"
   },
   "eventPlace": {
-    "placeString": "Nederhorst den Berg, Nederland"
+    "placeString": "Nederhorst den Berg, Nederland",
+    "country": "Nederland"
   },
   "collectionData": {
     "id": "other:Aanbevelingsbrief",

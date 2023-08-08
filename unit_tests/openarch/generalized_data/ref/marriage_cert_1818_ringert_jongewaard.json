@@ -11,7 +11,8 @@
     "dateString": "20 Sep 1818"
   },
   "eventPlace": {
-    "placeString": "Berkhout, Nederland"
+    "placeString": "Berkhout, Nederland",
+    "country": "Nederland"
   },
   "ageAtEvent": "24",
   "occupation": "arbeider",
@@ -25,7 +26,8 @@
         "dateString": "20 Sep 1818"
       },
       "marriagePlace": {
-        "placeString": "Berkhout, Nederland"
+        "placeString": "Berkhout, Nederland",
+        "country": "Nederland"
       },
       "age": "24",
       "personGender": "female",

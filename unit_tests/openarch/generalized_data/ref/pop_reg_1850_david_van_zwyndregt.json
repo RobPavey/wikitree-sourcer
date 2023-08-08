@@ -10,13 +10,15 @@
     "dateString": "1850"
   },
   "eventPlace": {
-    "placeString": "Vlissingen, Zeeland, Nederland"
+    "placeString": "Vlissingen, Zeeland, Nederland",
+    "country": "Nederland"
   },
   "birthDate": {
     "dateString": "15 Dec 1806"
   },
   "birthPlace": {
-    "placeString": "Vlissingen, Zeeland, Nederland"
+    "placeString": "Vlissingen, Zeeland, Nederland",
+    "country": "Nederland"
   },
   "occupation": "Scheepstimmerman",
   "householdArrayFields": [

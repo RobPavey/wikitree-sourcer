@@ -1,0 +1,148 @@
+{
+  "A2A": {
+    "@xsi:schemaLocation": "http://Mindbus.nl/A2A http://Mindbus.nl/A2A/A2AAllInOne_v.1.7.xsd",
+    "@Version": "1.7",
+    "a2a:Person": [
+      {
+        "@pid": "Person1347703562",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "George Frans Lodewijk",
+          "a2a:PersonNamePrefixLastName": "van der",
+          "a2a:PersonNameLastName": "Beek"
+        },
+        "a2a:Residence": {
+          "a2a:Place": "Haarlem"
+        }
+      },
+      {
+        "@pid": "Person1347703563",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Jan Remmelt",
+          "a2a:PersonNameLastName": "Bel"
+        },
+        "a2a:Residence": {
+          "a2a:Place": "Haarlem"
+        }
+      },
+      {
+        "@pid": "Person1347703564",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Johannes",
+          "a2a:PersonNamePrefixLastName": "van",
+          "a2a:PersonNameLastName": "Beek"
+        },
+        "a2a:Residence": {
+          "a2a:Place": "Haarlem"
+        }
+      },
+      {
+        "@pid": "Person1347703565",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Paulus",
+          "a2a:PersonNameLastName": "Beaufort"
+        },
+        "a2a:Residence": {
+          "a2a:Place": "Haarlem"
+        }
+      },
+      {
+        "@pid": "Person1347703566",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Wilhelmus Andreas Maria",
+          "a2a:PersonNamePrefixLastName": "van",
+          "a2a:PersonNameLastName": "Beek"
+        },
+        "a2a:Residence": {
+          "a2a:Place": "Haarlem"
+        }
+      },
+      {
+        "@pid": "Person1347703567",
+        "a2a:PersonName": {
+          "a2a:PersonNameFirstName": "Willem Christiaan Johannes",
+          "a2a:PersonNamePrefixLastName": "van",
+          "a2a:PersonNameLastName": "Beek"
+        },
+        "a2a:Residence": {
+          "a2a:Place": "Haarlem"
+        }
+      }
+    ],
+    "a2a:Event": {
+      "@eid": "Event1",
+      "a2a:EventType": "other:Inschrijving",
+      "a2a:EventDate": [],
+      "a2a:EventPlace": []
+    },
+    "a2a:RelationEP": [
+      {
+        "a2a:PersonKeyRef": "Person1347703562",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Geregistreerde"
+      },
+      {
+        "a2a:PersonKeyRef": "Person1347703563",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Geregistreerde"
+      },
+      {
+        "a2a:PersonKeyRef": "Person1347703564",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Geregistreerde"
+      },
+      {
+        "a2a:PersonKeyRef": "Person1347703565",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Geregistreerde"
+      },
+      {
+        "a2a:PersonKeyRef": "Person1347703566",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Geregistreerde"
+      },
+      {
+        "a2a:PersonKeyRef": "Person1347703567",
+        "a2a:EventKeyRef": "Event1",
+        "a2a:RelationType": "Geregistreerde"
+      }
+    ],
+    "a2a:Source": {
+      "a2a:SourcePlace": {
+        "a2a:Country": "Nederland"
+      },
+      "a2a:SourceIndexDate": {
+        "a2a:From": "1922-01-01",
+        "a2a:To": "1922-12-31"
+      },
+      "a2a:SourceDate": {
+        "a2a:Year": "1922"
+      },
+      "a2a:SourceType": "other:Militieregisters",
+      "a2a:SourceReference": {
+        "a2a:Place": "Haarlem",
+        "a2a:InstitutionName": "Noord-Hollands Archief",
+        "a2a:Archive": "23",
+        "a2a:Collection": "Militieregisters",
+        "a2a:Book": "Militieregister, 1922",
+        "a2a:RegistryNumber": "377",
+        "a2a:DocumentNumber": "7"
+      },
+      "a2a:SourceAvailableScans": {
+        "a2a:Scan": {
+          "a2a:OrderSequenceNumber": "1",
+          "a2a:Uri": "https://proxy.archieven.nl/download/236/3833FEC9545D4FDAA5E5B10BC05F70F9",
+          "a2a:UriViewer": "https://proxy.archieven.nl/embed/236/3833FEC9545D4FDAA5E5B10BC05F70F9",
+          "a2a:UriPreview": "https://proxy.archieven.nl/thumb/236/3833FEC9545D4FDAA5E5B10BC05F70F9"
+        }
+      },
+      "a2a:SourceLastChangeDate": "2019-02-02",
+      "a2a:SourceDigitalOriginal": "https://hdl.handle.net/21.12102/6ABC1CEF57257FEAE053CA00A8C0CBDA",
+      "a2a:RecordIdentifier": "1347703561",
+      "a2a:RecordGUID": "{6ABC1CEF-5725-7FEA-E053-CA00A8C0CBDA}",
+      "a2a:SourceRemark": {
+        "@Key": "Provenance",
+        "a2a:Value": "A2Acollection NL-HlmNHA_23-377_54_A2A.xml van NHA"
+      }
+    }
+  }
+}

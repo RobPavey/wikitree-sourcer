@@ -60,12 +60,21 @@ const regressionData = [
     url: "https://www.openarch.nl/frl:034e7de7-24cc-6d54-d435-98c38c0b44c7",
   },
   {
+    // has example of a2a:Place with province
+    caseName: "draw_1922_jan_bel",
+    url: "https://www.openarch.nl/nha:99634afa-4797-4f8d-945c-ac6396063a97",
+  },
+  {
     caseName: "marriage_1676_jan_peter_janssen",
     url: "https://www.openarch.nl/bhi:b576f38c-4cb2-490b-0029-d64ae7477873",
   },
   {
     caseName: "marriage_cert_1818_ringert_jongewaard",
     url: "https://www.openarch.nl/nha:f46f13cf-4f53-4a37-9421-91c0e2a458e0",
+  },
+  {
+    caseName: "militia_1922_george_van_der_beek",
+    url: "https://www.openarch.nl/nha:6ABC1CEF-5725-7FEA-E053-CA00A8C0CBDA",
   },
   {
     caseName: "pop_reg_1815_jan_sties",

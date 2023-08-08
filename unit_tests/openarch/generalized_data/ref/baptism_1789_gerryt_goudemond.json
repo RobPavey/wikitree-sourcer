@@ -9,7 +9,8 @@
     "dateString": "14 Aug 1789"
   },
   "eventPlace": {
-    "placeString": "Leeuwarden, Friesland, Nederland"
+    "placeString": "Leeuwarden, Friesland, Nederland",
+    "country": "Nederland"
   },
   "birthDate": {
     "dateString": "8 Aug 1789"

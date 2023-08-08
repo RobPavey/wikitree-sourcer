@@ -1,0 +1,95 @@
+{
+  "url": "https://www.wiewaswie.nl/en/detail/32166839",
+  "success": true,
+  "people": [
+    [
+      {
+        "label": "Deceased",
+        "value": "George Frans van der Beek"
+      },
+      {
+        "label": "Place of birth",
+        "value": "Haarlemmermeer",
+        "dataKey": "SourceDetail.BirthPlace"
+      },
+      {
+        "label": "Gender",
+        "value": "Man",
+        "dataKey": "SourceDetail.Gender"
+      },
+      {
+        "label": "Age",
+        "value": "12 weken",
+        "dataKey": "SourceDetail.Age"
+      }
+    ],
+    [
+      {
+        "label": "Father",
+        "value": "George Frans van der Beek"
+      }
+    ],
+    [
+      {
+        "label": "Mother",
+        "value": "Hendrika Christina Verweij"
+      }
+    ]
+  ],
+  "eventList": [
+    {
+      "label": "Event",
+      "value": "Overlijden",
+      "dataKey": "SourceDetail.Event"
+    },
+    {
+      "label": "Event date",
+      "value": "29-03-1896",
+      "dataKey": "SourceDetail.EventDate"
+    },
+    {
+      "label": "Event place",
+      "value": "Haarlemmermeer",
+      "dataKey": "SourceDetail.EventPlace"
+    }
+  ],
+  "sourceList": [
+    {
+      "label": "Document type",
+      "value": "BS Overlijden",
+      "dataKey": "SourceDetail.DocumentType"
+    },
+    {
+      "label": "Heritage institution",
+      "value": "Noord-Hollands Archief",
+      "dataKey": "SourceDetail.HeritageInstitutionName"
+    },
+    {
+      "label": "Institution place",
+      "value": "Haarlem",
+      "dataKey": "SourceDetail.HeritageInstitutionPlace"
+    },
+    {
+      "label": "Collection region",
+      "value": "Noord-Holland",
+      "dataKey": "SourceDetail.CollectionRegion"
+    },
+    {
+      "label": "Sourcenumber",
+      "value": "72",
+      "dataKey": "SourceDetail.Page"
+    },
+    {
+      "label": "Registration date",
+      "value": "31-03-1896",
+      "dataKey": "SourceDetail.RegistrationDate"
+    },
+    {
+      "label": "Document place",
+      "value": "Haarlemmermeer",
+      "dataKey": "SourceDetail.CertificatePlace"
+    }
+  ],
+  "title": "BS Overlijden met George Frans van der Beek",
+  "language": "EN"
+}

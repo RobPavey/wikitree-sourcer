@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Militairen\"<br/>\nNoord-Hollands Archief, Collection: Militie - Lotingsregisters, Archive: 23, Inventory number: 377<br/>\n[https://www.openarch.nl/nha:99634afa-4797-4f8d-945c-ac6396063a97 OpenArch Record] (accessed 6 May 2021)<br/>\nJan Remmelt Bel in 1922 in Haarlem, Noord-Holland, Nederland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jan was in a record in 1922 in Haarlem, Noord-Holland, Nederland.<ref>\n'''Unclassified''':\n\"Militairen\"<br/>\nNoord-Hollands Archief, Collection: Militie - Lotingsregisters, Archive: 23, Inventory number: 377<br/>\n[https://www.openarch.nl/nha:99634afa-4797-4f8d-945c-ac6396063a97 OpenArch Record] (accessed 6 May 2021)<br/>\nJan Remmelt Bel in 1922 in Haarlem, Noord-Holland, Nederland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Unclassified''': \"Militairen\"<br/>Noord-Hollands Archief, Collection: Militie - Lotingsregisters, Archive: 23, Inventory number: 377<br/>[https://www.openarch.nl/nha:99634afa-4797-4f8d-945c-ac6396063a97 OpenArch Record] (accessed 6 May 2021)<br/>Jan Remmelt Bel in 1922 in Haarlem, Noord-Holland, Nederland.",
+    "type": "source"
+  }
+}

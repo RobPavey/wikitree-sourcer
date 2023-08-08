@@ -363,6 +363,7 @@ function cleanAge(age) {
 
   age = age.trim();
   age = age.replace("dagen", "days");
+  age = age.replace("weken", "weeks");
   age = age.replace("jaar", "years");
 
   if (age.endsWith(" years")) {
@@ -953,24 +954,27 @@ class WiewaswieEdReader extends ExtractedDataReader {
       }
     }
 
-    if (institution && collection) {
-      let string = institution + ", Collection: " + collection;
+    let string = "";
 
-      if (archive && options.citation_wiewaswie_includeArchiveNumInSourceRef) {
-        string += ", Archive: " + archive;
+    function addField(label, value, enabled = true) {
+      if (label && value && enabled) {
+        if (string) {
+          string += ", ";
+        }
+        string += label + ": " + value;
       }
-
-      if (registrationNumber && options.citation_wiewaswie_includeRegNumInSourceRef) {
-        string += ", Registration number: " + registrationNumber;
-      }
-      if (book) {
-        string += ", Book: " + book;
-      }
-      if (page && options.citation_wiewaswie_includePageNumInSourceRef) {
-        string += ", Page: " + page;
-      }
-      return string;
     }
+
+    if (institution) {
+      string += institution;
+    }
+
+    addField("Collection", collection);
+    addField("Archive", archive, options.citation_wiewaswie_includeArchiveNumInSourceRef);
+    addField("Registration number", registrationNumber, options.citation_wiewaswie_includeRegNumInSourceRef);
+    addField("Book", book);
+    addField("Page", page, options.citation_wiewaswie_includePageNumInSourceRef);
+    return string;
   }
 
   getExternalLink() {

@@ -15,7 +15,8 @@
     }
   },
   "eventPlace": {
-    "placeString": "Breukelen, Nederland"
+    "placeString": "Breukelen, Nederland",
+    "country": "Nederland"
   },
   "householdArrayFields": [
     "name",

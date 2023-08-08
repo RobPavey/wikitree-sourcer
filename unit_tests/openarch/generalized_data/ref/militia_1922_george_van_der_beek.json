@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "openarch",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "forenames": "George Frans Lodewijk",
+    "lastName": "van der Beek"
+  },
+  "eventDate": {
+    "dateString": "1922"
+  },
+  "collectionData": {
+    "id": "other:Militieregisters",
+    "nameParts": {
+      "forenames": "George Frans Lodewijk",
+      "lastNamePrefix": "van der",
+      "lastName": "Beek"
+    }
+  },
+  "hasValidData": true
+}

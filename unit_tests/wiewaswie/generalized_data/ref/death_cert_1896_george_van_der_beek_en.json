@@ -1,0 +1,50 @@
+{
+  "sourceOfData": "wiewaswie",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "name": "George Frans van der Beek",
+    "forenames": "George Frans",
+    "lastName": "van der Beek"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "29 Mar 1896"
+  },
+  "eventPlace": {
+    "placeString": "Haarlemmermeer, Noord-Holland, Nederland"
+  },
+  "birthPlace": {
+    "placeString": "Haarlemmermeer"
+  },
+  "deathDate": {
+    "dateString": "29 Mar 1896"
+  },
+  "ageAtEvent": "12 weeks",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "George Frans van der Beek",
+        "forenames": "George Frans",
+        "lastName": "van der Beek"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Hendrika Christina Verweij"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "BS Overlijden",
+    "place": "Haarlemmermeer",
+    "documentPlace": "Haarlemmermeer",
+    "eventType": "Overlijden",
+    "nameParts": {
+      "forenames": "George Frans",
+      "lastNamePrefix": "van der",
+      "lastName": "Beek"
+    }
+  },
+  "hasValidData": true
+}

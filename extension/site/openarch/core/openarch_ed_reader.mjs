@@ -340,18 +340,44 @@ class OpenarchEdReader extends ExtractedDataReader {
     // e.g.       "a2a:EventDate": { "a2a:Year": "1789", "a2a:Month": "8", "a2a:Day": "14" },
     if (a2aPlace) {
       let place = a2aPlace["a2a:Place"];
+      let province = a2aPlace["a2a:Province"];
+      let country = a2aPlace["a2a:Country"];
 
-      if (place) {
-        let placeString = place;
+      let placeString = "";
+
+      function addPart(part) {
+        if (part) {
+          if (placeString) {
+            placeString += ", ";
+          }
+          placeString += part;
+        }
+      }
+
+      if (place && !province && !country) {
         let placeInfo = placeData[place];
         if (placeInfo) {
-          placeString += ", " + placeInfo.province + ", " + placeInfo.country;
-        } else {
-          placeString += ", Nederland";
+          province = placeInfo.province;
+          country = placeInfo.country;
         }
+      }
 
+      // this may be a bad assumption as records could be in Belgium?
+      // If there is no place at all don't make a place just for country
+      if ((place || province) && !country) {
+        country = "Nederland";
+      }
+
+      addPart(place);
+      addPart(province);
+      addPart(country);
+
+      if (placeString) {
         let placeObj = new PlaceObj();
         placeObj.placeString = placeString;
+        if (country) {
+          placeObj.country = country;
+        }
         return placeObj;
       }
     }
@@ -359,16 +385,18 @@ class OpenarchEdReader extends ExtractedDataReader {
 
   ageFromA2aAge(a2aAge) {
     if (a2aAge) {
-      let years = a2aAge["a2a:PersonAgeYears"];
-      if (years) {
-        years = years.replace(/ jaar$/, "");
-        return years;
+      let age = a2aAge["a2a:PersonAgeYears"];
+      if (!age) {
+        age = a2aAge["a2a:PersonAgeLiteral"];
       }
-      let literal = a2aAge["a2a:PersonAgeLiteral"];
-      if (literal) {
-        literal = literal.replace(/ jaar$/, "");
-        return literal;
+      if (age) {
+        age = age.replace(/ jaar$/, "");
+        age = age.replace(/\s+jaar/, " years");
+        age = age.replace(/\s+weken/, " weeks");
+        age = age.replace(/\s+dagen/, " days");
       }
+
+      return age;
     }
   }
 
@@ -553,13 +581,19 @@ class OpenarchEdReader extends ExtractedDataReader {
   getEventDateObj() {
     let a2aDate = this.extractEventFieldByKey("a2a:EventDate");
 
-    if (a2aDate) {
-      return this.makeDateObjFromA2aDate(a2aDate);
+    if (a2aDate && Object.keys(a2aDate).length > 0) {
+      let dateObj = this.makeDateObjFromA2aDate(a2aDate);
+      if (dateObj) {
+        return dateObj;
+      }
     }
 
     a2aDate = this.extractSourceFieldByKey("a2a:SourceDate");
-    if (a2aDate) {
-      return this.makeDateObjFromA2aDate(a2aDate);
+    if (a2aDate && Object.keys(a2aDate).length > 0) {
+      let dateObj = this.makeDateObjFromA2aDate(a2aDate);
+      if (dateObj) {
+        return dateObj;
+      }
     }
 
     let dateRange = this.extractSourceFieldByKey("a2a:SourceIndexDate");
