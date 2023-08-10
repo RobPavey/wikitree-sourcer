@@ -834,6 +834,14 @@ const narrativeCensusOptionsGroup = {
   ],
 };
 
+const narrativeSlaveScheduleOptionsGroup = {
+  category: "narrative",
+  subcategory: "slaveSchedule",
+  tab: "narrative",
+  subsection: "slaveSchedule",
+  options: [narrativeIncludeAgeOption, narrativeAgeFormatOption],
+};
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Household Table options groups
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1271,6 +1279,7 @@ registerSubheadingForOptions(
   "When date and place are for registration, not marriage"
 );
 registerSubsectionForOptions("narrative", "obituary", "Obituary");
+registerSubsectionForOptions("narrative", "slaveSchedule", "Slave Schedule");
 
 registerSubsectionForOptions("table", "general", "General");
 registerSubheadingForOptions("table", "general", "table", "When using a table");
@@ -1304,6 +1313,7 @@ registerOptionsGroup(narrativeMarriageRegOptionsGroup);
 registerOptionsGroup(narrativeMarriageRegEvtOptionsGroup);
 registerOptionsGroup(narrativeMarriageRegRegOptionsGroup);
 registerOptionsGroup(narrativeObituaryOptionsGroup);
+registerOptionsGroup(narrativeSlaveScheduleOptionsGroup);
 
 registerOptionsGroup(tableGeneralOptionsGroup);
 registerOptionsGroup(tableTableOptionsGroup);

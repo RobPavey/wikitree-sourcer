@@ -196,6 +196,10 @@ function determineRecordType(extractedData) {
       type: RT.NonpopulationCensus,
       matches: ["Census Non-Population Schedule"],
     },
+    {
+      type: RT.SlaveSchedule,
+      matches: ["Slave Schedules"],
+    },
     { type: RT.Census, matches: ["Census", "1939 England and Wales Register"] },
     {
       type: RT.ElectoralRegister,
@@ -1257,6 +1261,34 @@ function generalizeDataGivenRecordType(ed, result) {
   } else if (result.recordType == RT.NonpopulationCensus) {
     result.setEventDate(getCleanValueForRecordDataList(ed, ["Enumeration Date"], "date"));
     result.setEventPlace(getCleanValueForRecordDataList(ed, ["Place"]));
+  } else if (result.recordType == RT.SlaveSchedule) {
+    result.setEventDate(getCleanValueForRecordDataList(ed, ["Residence Date"], "date"));
+    result.setEventPlace(getCleanValueForRecordDataList(ed, ["Residence Place"]));
+    result.setFieldIfValueExists("ageAtEvent", getCleanValueForRecordDataList(ed, ["Age"]));
+
+    let role = getCleanValueForRecordDataList(ed, ["Role"]);
+    let numEnslavedPeople = getCleanValueForRecordDataList(ed, ["Number of Enslaved People"]);
+    let race = getCleanValueForRecordDataList(ed, ["Race"]);
+    let slaveOwner = getCleanValueForRecordDataList(ed, ["Slave Owner"]);
+    let wasFugitive = getCleanValueForRecordDataList(ed, ["Fugitive"]);
+    if (role || numEnslavedPeople || race || slaveOwner || wasFugitive) {
+      result.typeSpecificData = {};
+      if (role) {
+        result.typeSpecificData.role = role;
+      }
+      if (numEnslavedPeople) {
+        result.typeSpecificData.numEnslavedPeople = numEnslavedPeople;
+      }
+      if (race) {
+        result.typeSpecificData.race = race;
+      }
+      if (slaveOwner) {
+        result.typeSpecificData.slaveOwner = slaveOwner;
+      }
+      if (wasFugitive && wasFugitive == "X") {
+        result.typeSpecificData.wasFugitive = true;
+      }
+    }
   } else if (result.recordType == RT.Marriage) {
     result.setEventDate(
       getCleanValueForRecordDataList(

@@ -3104,8 +3104,13 @@ class GeneralizedData {
         defaultTitle: "Apprenticeship",
       },
       {
+        type: RT.SlaveSchedule,
+        defaultTitle: "Slave Schedule",
+      },
+      {
         type: RT.SocialSecurity,
         defaultTitle: "Social Security",
+        addYear: true,
       },
       {
         type: RT.SchoolRecords,

@@ -456,6 +456,50 @@ function getPopulationRegisterString(gd, options) {
   return dataString;
 }
 
+function getSlaveScheduleString(gd, options) {
+  let dataString = getFullName(gd);
+
+  let age = cleanAge(gd.ageAtEvent);
+  if (age) {
+    dataString += ", " + age + ",";
+  }
+
+  if (gd.typeSpecificData) {
+    let role = gd.typeSpecificData.role;
+    if (role) {
+      if (!dataString.endsWith(",")) {
+        dataString += ",";
+      }
+      if (gd.typeSpecificData.wasFugitive) {
+        dataString += " fugitive";
+      }
+      if (gd.personGender) {
+        dataString += " " + gd.personGender;
+      }
+      if (gd.typeSpecificData.race) {
+        dataString += " " + gd.typeSpecificData.race.toLowerCase();
+      }
+      dataString += " " + role.toLowerCase();
+      if (gd.typeSpecificData.numEnslavedPeople) {
+        dataString += " of " + gd.typeSpecificData.numEnslavedPeople + " enslaved people";
+      }
+      dataString += ",";
+    }
+  }
+
+  let eventDateObj = gd.inferEventDateObj();
+  if (eventDateObj) {
+    dataString += " " + getDateWithPreposition(eventDateObj);
+  }
+
+  let place = gd.inferFullEventPlace();
+  if (place) {
+    dataString += " " + getPlaceWithPreposition(place);
+  }
+
+  return dataString;
+}
+
 function getUkRegistrationString(gd, options, type) {
   let dataString = getFullName(gd);
   dataString += " " + type;
@@ -1412,6 +1456,10 @@ const DataString = {
       }
       case RT.Divorce: {
         dataString = getDivorceString(gd, options);
+        break;
+      }
+      case RT.SlaveSchedule: {
+        dataString = getSlaveScheduleString(gd, options);
         break;
       }
     }

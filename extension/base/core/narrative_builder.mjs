@@ -1786,6 +1786,74 @@ class NarrativeBuilder {
     this.addOccupationAsSeparateSentence(occupation, relationship);
   }
 
+  buildSlaveScheduleString() {
+    let gd = this.eventGd;
+
+    let eventDateObj = this.eventGd.inferEventDateObj();
+    let eventPlace = gd.inferFullEventPlace();
+
+    this.narrative = this.getPersonNameOrPronoun();
+
+    this.narrative += " was recorded";
+    this.addAgeForMainSentence(gd.ageAtEvent);
+    this.narrative += " in a slave schedule";
+
+    if (eventDateObj) {
+      this.narrative += " " + this.formatDateObj(eventDateObj, true);
+    }
+
+    if (eventPlace) {
+      this.narrative += " " + this.getPlaceWithPreposition(eventPlace);
+    }
+
+    if (gd.typeSpecificData) {
+      let role = gd.typeSpecificData.role;
+      if (role == "Enslaved Person") {
+        let wasFugitive = gd.typeSpecificData.wasFugitive;
+        let race = gd.typeSpecificData.race;
+        if (race) {
+          this.narrative += " as a";
+          if (wasFugitive) {
+            this.narrative += " fugitive";
+          }
+          if (this.personGender) {
+            this.narrative += " " + this.personGender;
+          }
+          this.narrative += " " + race.toLowerCase() + " enslaved person";
+        } else {
+          this.narrative += " as";
+          if (this.personGender) {
+            if (wasFugitive) {
+              this.narrative += " a fugitive";
+            } else {
+              this.narrative += " a";
+            }
+            this.narrative += this.personGender;
+          } else {
+            if (wasFugitive) {
+              this.narrative += " a fugitive";
+            } else {
+              this.narrative += " an";
+            }
+          }
+          this.narrative += " enslaved person";
+        }
+      } else if (role == "Slave Owner") {
+        this.narrative += " as a slave owner";
+        let numEnslavedPeople = gd.typeSpecificData.numEnslavedPeople;
+        if (numEnslavedPeople) {
+          this.narrative += " of " + numEnslavedPeople + " enslaved people";
+        }
+      } else if (role) {
+        this.narrative += " as a " + role;
+      }
+    }
+
+    this.addAgeAsSeparateSentence(gd.ageAtEvent);
+
+    this.narrative += ".";
+  }
+
   buildPopulationRegisterString() {
     let gd = this.eventGd;
 
@@ -2403,6 +2471,11 @@ class NarrativeBuilder {
       case RT.Newspaper: {
         this.buildFunction = this.buildNewspaperString;
         this.optionsSubcategory = "newspaper";
+        break;
+      }
+      case RT.SlaveSchedule: {
+        this.buildFunction = this.buildSlaveScheduleString;
+        this.optionsSubcategory = "slaveSchedule";
         break;
       }
     }

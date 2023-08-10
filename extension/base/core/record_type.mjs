@@ -79,6 +79,7 @@ const RT = {
   Heraldry: `Heraldry`,
   Bastardy: `Bastardy`,
   Patent: `Patent`,
+  SlaveSchedule: `SlaveSchedule`,
 };
 
 const RecordSubtype = {

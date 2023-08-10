@@ -866,6 +866,7 @@ function setupBuildCitationSubMenu(
     RateBook: `Rate Book`,
     Residence: `Residence`,
     SchoolRecords: `School Records`,
+    SlaveSchedule: `Slave Schedule`,
     SocialSecurity: `Social Security`,
     Tax: `Tax`,
     Will: `Will`,
