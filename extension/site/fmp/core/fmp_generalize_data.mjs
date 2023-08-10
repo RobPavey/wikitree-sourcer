@@ -50,6 +50,7 @@ function determineRecordType(extractedData) {
 
     { type: RT.Divorce, matches: ["Divorce Index"] },
 
+    { type: RT.SlaveSchedule, matches: ["Slave Schedule"] },
     { type: RT.Census, matches: ["Census", "1939 Register"] },
     { type: RT.ElectoralRegister, matches: ["Electoral Roll"] },
 

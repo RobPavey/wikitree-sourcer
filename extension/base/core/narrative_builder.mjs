@@ -1828,7 +1828,7 @@ class NarrativeBuilder {
             } else {
               this.narrative += " a";
             }
-            this.narrative += this.personGender;
+            this.narrative += " " + this.personGender;
           } else {
             if (wasFugitive) {
               this.narrative += " a fugitive";

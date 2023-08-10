@@ -106,6 +106,7 @@ const factTypeToRecordType = [
   {
     type: "Census",
     defaultRT: RT.Census,
+    titleMatches: [{ recordType: RT.SlaveSchedule, matches: ["Slave Schedule"] }],
   },
   {
     type: "Residence",
@@ -692,6 +693,19 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     result.spouses.push(resultSpouse);
+  } else if (result.recordType == RT.SlaveSchedule) {
+    let freeOrEnslaved = ed.recordData["Flag Free Or Enslaved"];
+    if (freeOrEnslaved == "Owner") {
+      result.typeSpecificData = { role: "Slave Owner" };
+    } else if (freeOrEnslaved == "Slave") {
+      result.typeSpecificData = { role: "Enslaved Person" };
+    }
+    if (result.typeSpecificData) {
+      let race = ed.recordData["Race"];
+      if (race) {
+        result.typeSpecificData.race = race;
+      }
+    }
   }
 
   if (ed.household) {

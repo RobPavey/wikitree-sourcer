@@ -1,6 +1,6 @@
 {
   "sourceType": "record",
-  "recordType": "Census",
+  "recordType": "SlaveSchedule",
   "sourceOfData": "fs",
   "name": {
     "name": "Jesse Jeter",
