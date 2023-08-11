@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Notariële archieven (Notarial Archives)\"<br/>\nHet Utrechts Archief, Collection: Notarissen in de stad Utrecht 1560-1905, Archive: 34-4, Registration number: 2321, Book: M. J. VAN BUUREN, Page: 7<br/>\n[https://www.wiewaswie.nl/en/detail/107874851 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD Het Utrechts Archief Record]<br/>\nNicolaas Hendrik van der Wal on 16 Jan 1803 in Utrecht, Nederland.\n</ref>",
+    "citation": "<ref>\n'''Unclassified''':\n\"Notariële archieven (Notarial Archives)\"<br/>\nHet Utrechts Archief, Collection: Notarissen in de stad Utrecht 1560-1905, Archive: 34-4, Registration number: 2321, Book: M. J. VAN BUUREN, Sourcenumber: 7<br/>\n[https://www.wiewaswie.nl/en/detail/107874851 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD Het Utrechts Archief Record]<br/>\nNicolaas Hendrik van der Wal on 16 Jan 1803 in Utrecht, Nederland.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Nicolaas was in a record on 16 January 1803 in Utrecht, Nederland.<ref>\n'''Unclassified''':\n\"Notariële archieven (Notarial Archives)\"<br/>\nHet Utrechts Archief, Collection: Notarissen in de stad Utrecht 1560-1905, Archive: 34-4, Registration number: 2321, Book: M. J. VAN BUUREN, Page: 7<br/>\n[https://www.wiewaswie.nl/en/detail/107874851 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD Het Utrechts Archief Record]<br/>\nNicolaas Hendrik van der Wal on 16 Jan 1803 in Utrecht, Nederland.\n</ref>",
+    "citation": "Nicolaas was in a record on 16 January 1803 in Utrecht, Nederland.<ref>\n'''Unclassified''':\n\"Notariële archieven (Notarial Archives)\"<br/>\nHet Utrechts Archief, Collection: Notarissen in de stad Utrecht 1560-1905, Archive: 34-4, Registration number: 2321, Book: M. J. VAN BUUREN, Sourcenumber: 7<br/>\n[https://www.wiewaswie.nl/en/detail/107874851 WieWasWie Record] (accessed 6 May 2021)<br/>\n[https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD Het Utrechts Archief Record]<br/>\nNicolaas Hendrik van der Wal on 16 Jan 1803 in Utrecht, Nederland.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Notariële archieven (Notarial Archives)\"<br/>Het Utrechts Archief, Collection: Notarissen in de stad Utrecht 1560-1905, Archive: 34-4, Registration number: 2321, Book: M. J. VAN BUUREN, Page: 7<br/>[https://www.wiewaswie.nl/en/detail/107874851 WieWasWie Record] (accessed 6 May 2021)<br/>[https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD Het Utrechts Archief Record]<br/>Nicolaas Hendrik van der Wal on 16 Jan 1803 in Utrecht, Nederland.",
+    "citation": "* '''Unclassified''': \"Notariële archieven (Notarial Archives)\"<br/>Het Utrechts Archief, Collection: Notarissen in de stad Utrecht 1560-1905, Archive: 34-4, Registration number: 2321, Book: M. J. VAN BUUREN, Sourcenumber: 7<br/>[https://www.wiewaswie.nl/en/detail/107874851 WieWasWie Record] (accessed 6 May 2021)<br/>[https://hetutrechtsarchief.nl/collectie/609C5C37326C4642E0534701000A17FD Het Utrechts Archief Record]<br/>Nicolaas Hendrik van der Wal on 16 Jan 1803 in Utrecht, Nederland.",
     "type": "source"
   }
 }

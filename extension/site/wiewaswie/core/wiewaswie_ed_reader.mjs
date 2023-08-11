@@ -433,8 +433,21 @@ class WiewaswieEdReader extends ExtractedDataReader {
     }
   }
 
+  extractFieldLabelByDataKey(fieldArray, lastPartOfDataKey) {
+    const dataKey = "SourceDetail." + lastPartOfDataKey;
+    for (let field of fieldArray) {
+      if (field.dataKey == dataKey) {
+        return field.label;
+      }
+    }
+  }
+
   extractSourceFieldByDataKey(lastPartOfDataKey) {
     return this.extractFieldByDataKey(this.ed.sourceList, lastPartOfDataKey);
+  }
+
+  extractSourceFieldLabelByDataKey(lastPartOfDataKey) {
+    return this.extractFieldLabelByDataKey(this.ed.sourceList, lastPartOfDataKey);
   }
 
   extractEventFieldByDataKey(lastPartOfDataKey) {
@@ -936,44 +949,52 @@ class WiewaswieEdReader extends ExtractedDataReader {
   }
 
   getSourceReference(options) {
-    let registrationNumber = this.extractSourceFieldByDataKey("RegistrationNumber");
-    let book = this.extractSourceFieldByDataKey("Book");
-    let page = this.extractSourceFieldByDataKey("Page");
-    let archive = this.extractSourceFieldByDataKey("Archive");
-    let institution = this.extractSourceFieldByDataKey("HeritageInstitutionName");
-
-    let collection = this.extractSourceFieldByDataKey("Collection");
-    if (collection) {
-      const prefix = "Archiefnaam: ";
-      if (collection.startsWith(prefix)) {
-        collection = collection.substring(prefix.length);
-      }
-      let remainderIndex = collection.search(/\,\s+[^,:]+\:/);
-      if (remainderIndex != -1) {
-        collection = collection.substring(0, remainderIndex);
-      }
-    }
-
     let string = "";
 
-    function addField(label, value, enabled = true) {
-      if (label && value && enabled) {
-        if (string) {
-          string += ", ";
+    function addSourceField(reader, dataKey, backupLabel, enabled = true) {
+      if (enabled) {
+        let value = reader.extractSourceFieldByDataKey(dataKey);
+        if (value) {
+          let label = reader.extractSourceFieldLabelByDataKey(dataKey);
+          if (!label) {
+            label = backupLabel;
+          }
+
+          if (dataKey == "Collection") {
+            const prefix = "Archiefnaam: ";
+            if (value.startsWith(prefix)) {
+              value = value.substring(prefix.length);
+            }
+            let remainderIndex = value.search(/\,\s+[^,:]+\:/);
+            if (remainderIndex != -1) {
+              value = value.substring(0, remainderIndex);
+            }
+          }
+
+          if (string) {
+            string += ", ";
+          }
+          string += label + ": " + value;
         }
-        string += label + ": " + value;
       }
     }
+
+    let institution = this.extractSourceFieldByDataKey("HeritageInstitutionName");
 
     if (institution) {
       string += institution;
     }
 
-    addField("Collection", collection);
-    addField("Archive", archive, options.citation_wiewaswie_includeArchiveNumInSourceRef);
-    addField("Registration number", registrationNumber, options.citation_wiewaswie_includeRegNumInSourceRef);
-    addField("Book", book);
-    addField("Page", page, options.citation_wiewaswie_includePageNumInSourceRef);
+    addSourceField(this, "Collection", "Collection");
+    addSourceField(this, "Archive", "Archive", options.citation_wiewaswie_includeArchiveNumInSourceRef);
+    addSourceField(
+      this,
+      "RegistrationNumber",
+      "Registration number",
+      options.citation_wiewaswie_includeRegNumInSourceRef
+    );
+    addSourceField(this, "Book", "Book");
+    addSourceField(this, "Page", "Page", options.citation_wiewaswie_includePageNumInSourceRef);
     return string;
   }
 
