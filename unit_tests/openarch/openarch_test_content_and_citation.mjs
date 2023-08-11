@@ -38,6 +38,20 @@ const regressionData = [
   {
     caseName: "baptism_1789_gerryt_goudemond",
     url: "https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf",
+    optionVariants: [
+      {
+        variantName: "sourceRefPageWithLinks",
+        optionOverrides: {
+          citation_openarch_sourceRefType: "pageWithLinks",
+        },
+      },
+      {
+        variantName: "sourceRefPage",
+        optionOverrides: {
+          citation_openarch_sourceRefType: "page",
+        },
+      },
+    ],
   },
   {
     caseName: "birth_cert_1811_jan_van_der_wijk",

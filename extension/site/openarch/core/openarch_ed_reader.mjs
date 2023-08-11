@@ -843,6 +843,37 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getSourceReference(options) {
+    let type = options.citation_openarch_sourceRefType;
+
+    if (type == "pageWithLinks") {
+      if (this.ed.citationParts && this.ed.citationParts.length > 0) {
+        let string = "";
+        for (let part of this.ed.citationParts) {
+          if (part.type == "1" && part.tag) {
+            let tag = part.tag.toLowerCase();
+            if (tag == "a") {
+              if (part.href && part.text) {
+                string += "[" + part.href + " " + part.text + "]";
+              } else if (part.text) {
+                string += part.text;
+              }
+            } else if (tag == "br") {
+              string += "<br/>";
+            } else {
+              string += part.text;
+            }
+          } else {
+            string += part.text;
+          }
+        }
+        return string;
+      } else if (this.ed.citationText) {
+        return this.ed.citationText;
+      }
+    } else if (type == "page" && this.ed.citationText) {
+      return this.ed.citationText;
+    }
+
     let reference = this.extractSourceFieldByKey("a2a:SourceReference");
     if (!reference) {
       return "";

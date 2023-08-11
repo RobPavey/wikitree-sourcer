@@ -78,10 +78,28 @@ function extractDataFromFetch(document, url, dataObjects, options) {
 
   let dataObj = dataObjects.dataObj;
 
-  if (document) {
-    result.url = document.URL;
-  } else {
+  if (url) {
     result.url = url;
+  } else if (document) {
+    result.url = document.URL;
+  }
+
+  if (document) {
+    const citationParagraph = document.querySelector("div.container > div.row > div.col-md-8 > h3 ~ p");
+    if (citationParagraph) {
+      result.citationText = citationParagraph.textContent;
+      result.citationParts = [];
+      for (const child of citationParagraph.childNodes) {
+        let part = {};
+        part.type = child.nodeType;
+        part.tag = child.tagName;
+        if (part.tag && part.tag.toLowerCase() == "a") {
+          part.href = child.getAttribute("href");
+        }
+        part.text = child.textContent;
+        result.citationParts.push(part);
+      }
+    }
   }
 
   result.dataObj = dataObj;

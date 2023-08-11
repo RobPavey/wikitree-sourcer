@@ -26,6 +26,7 @@ import {
   registerSubsectionForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
+  registerSubheadingForOptions,
 } from "../../../base/core/options/options_registry.mjs";
 
 const citationOptionsGroup = {
@@ -35,9 +36,33 @@ const citationOptionsGroup = {
   subsection: "openarch",
   options: [
     {
+      optionName: "sourceRefType",
+      type: "select",
+      label: "For the 'source reference' part of the citation",
+      values: [
+        { value: "api", text: "Generate in English using API data" },
+        {
+          value: "pageWithLinks",
+          text: "Use the citation text from the page (with links and breaks)",
+        },
+        { value: "page", text: "Use the citation text from the page (plain text)" },
+      ],
+      defaultValue: "api",
+    },
+  ],
+};
+
+const citationApiSourceRefOptionsGroup = {
+  category: "citation",
+  subcategory: "openarch",
+  tab: "citation",
+  subsection: "openarch",
+  subheading: "api",
+  options: [
+    {
       optionName: "includeArchiveNumInSourceRef",
       type: "checkbox",
-      label: "Include archive/access number/ code in source reference",
+      label: "Include archive/access number/code in source reference",
       defaultValue: true,
     },
     {
@@ -65,4 +90,6 @@ registerSubsectionForOptions("search", "openarch", "Open Archives (NL)");
 registerSiteSearchPopupOptionsGroup("openarch", 7, 7);
 
 registerSubsectionForOptions("citation", "openarch", "Open Archives (NL)");
+registerSubheadingForOptions("citation", "openarch", "api", "When generating 'source reference' from API");
 registerOptionsGroup(citationOptionsGroup);
+registerOptionsGroup(citationApiSourceRefOptionsGroup);
