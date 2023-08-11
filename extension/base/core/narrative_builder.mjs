@@ -942,7 +942,13 @@ class NarrativeBuilder {
       let districtFormat = this.getSubcatOption("regDistrictFormat", "Reg");
 
       if (districtFormat == "theDistrict") {
-        this.narrative += " in the " + registrationDistrict + " district";
+        let addedDistrict = false;
+        let eventYearNum = DateUtils.getYearNumFromYearString(gd.inferEventYear());
+        if (gd.isRecordInCountry("Ireland") && eventYearNum && eventYearNum >= 1864) {
+          this.narrative += " in the " + registrationDistrict + " Superintendent Registrar's District";
+        } else {
+          this.narrative += " in the " + registrationDistrict + " district";
+        }
       } else if (districtFormat == "districtName") {
         this.narrative += " in " + registrationDistrict;
       } else if (districtFormat == "districtCounty") {
