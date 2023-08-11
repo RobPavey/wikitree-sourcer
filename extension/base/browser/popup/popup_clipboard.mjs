@@ -32,7 +32,7 @@ function writeToClipboardSuccessMessage(objectName, internalSave, extraMessage =
   let message1 = objectName + " saved to clipboard.";
   let message2 = extraMessage;
   if (internalSave) {
-    message2 = "It is also saved internally.";
+    message2 = "It is also saved internally.\n" + extraMessage;
   }
   displayMessageWithIconThenClosePopup("check", message1, message2);
 }

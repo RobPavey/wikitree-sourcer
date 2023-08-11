@@ -65,7 +65,9 @@ async function savePersonData(data, getAllCitationsFunction) {
     console.log(data);
 
     let message1 = "Person Data saved to local storage.";
-    let message2 = "";
+    let message2 =
+      "\nTo use the data in the add person flow use 'Set Fields from Person Data'\n\n" +
+      "To use it for merging into an existing profile use 'Merge/Edit from external data'";
     displayMessageWithIconThenClosePopup("check", message1, message2);
   });
 }

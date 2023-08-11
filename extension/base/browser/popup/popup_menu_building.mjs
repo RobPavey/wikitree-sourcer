@@ -338,7 +338,7 @@ async function displayMessageWithIconThenClosePopup(iconType, message1, message2
 
   setTimeout(function () {
     closePopup();
-  }, 1500);
+  }, 10000);
 }
 
 function beginMainMenu() {

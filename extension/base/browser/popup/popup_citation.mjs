@@ -65,7 +65,14 @@ async function saveCitation(citationObject) {
     document.body.style.width = widthBeforeEditCitation;
   }
 
-  return await writeToClipboard(citationObject.citation, "Citation", true);
+  let message2 = "";
+  if (citationObject.type == "source") {
+    message2 = "\nThis is a source type citation and should be pasted after the Sources heading.";
+  } else {
+    message2 = "\nThis is an inline citation and should be pasted before the Sources heading.";
+  }
+
+  return await writeToClipboard(citationObject.citation, "Citation", true, message2);
 }
 
 // Global to remember the popup menu width before EditCitation
