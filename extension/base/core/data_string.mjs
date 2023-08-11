@@ -607,7 +607,7 @@ function addRegistrationPlace(gd, options) {
   if (gd.isRecordInCountry("Ireland") && registrationDistrict) {
     let eventYearNum = DateUtils.getYearNumFromYearString(gd.inferEventYear());
     if (eventYearNum && eventYearNum >= 1864) {
-      placeString = " in the " + registrationDistrict + " Superintendent Registrar's district";
+      placeString = " in the " + registrationDistrict + " Superintendent Registrar's District";
     } else {
       placeString = " in the " + registrationDistrict + " registration area";
     }
