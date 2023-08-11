@@ -37,9 +37,13 @@ function buildSourceReference(ed, gd, builder) {
   // Census Returns of England and Wales, 1911;
   // Registration District Number: 10; ED, institution, or vessel: 03; Piece: 802<br/>
 
-  builder.sourceReference = "National Library of Ireland";
+  builder.addSourceReferenceText("National Library of Ireland");
+  builder.addSourceReferenceText(ed.parishTitle);
   if (ed.dioceseParish && ed.county) {
     builder.sourceReference += ", " + ed.dioceseParish + ", " + ed.county;
+  }
+  if (ed.registerTitle) {
+    builder.addSourceReferenceText(ed.registerTitle);
   }
   if (ed.pageInfo) {
     builder.addSourceReferenceText(ed.pageInfo);
