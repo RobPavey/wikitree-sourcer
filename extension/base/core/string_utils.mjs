@@ -74,6 +74,34 @@ const StringUtils = {
     return string;
   },
 
+  changeAllCapsWordsToInitialCaps: function (string) {
+    if (!string || string.length == 0) {
+      return;
+    }
+
+    let newString = "";
+    let words = string.split(" ");
+    for (let word of words) {
+      if (word.length > 0) {
+        let newWord = word;
+        if (word.length > 1) {
+          let ucWord = word.toUpperCase();
+          if (word == ucWord) {
+            let lcWord = word.toLowerCase();
+            newWord = ucWord[0] + lcWord.substring(1);
+          }
+        }
+
+        if (newString) {
+          newString += " ";
+        }
+        newString += newWord;
+      }
+    }
+
+    return newString;
+  },
+
   toInitialCaps: function (string) {
     if (string) {
       if (string.length > 1) {

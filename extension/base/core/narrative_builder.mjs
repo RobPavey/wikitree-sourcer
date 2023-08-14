@@ -1143,7 +1143,7 @@ class NarrativeBuilder {
     }
 
     if (spouseName) {
-      spouseName = StringUtils.toInitialCapsEachWord(spouseName, true);
+      spouseName = StringUtils.changeAllCapsWordsToInitialCaps(spouseName);
       this.narrative += " " + spouseName;
       this.addAgeForMainSentence(spouseAge);
       this.addParentageForMainSentenceGivenParentsAndGender(spouseParents, spouseGender);
@@ -2126,8 +2126,7 @@ class NarrativeBuilder {
     }
 
     if (spouseName) {
-      spouseName = StringUtils.toInitialCapsEachWord(spouseName, true);
-
+      spouseName = StringUtils.changeAllCapsWordsToInitialCaps(spouseName);
       this.narrative += " was divorced from " + spouseName;
     } else {
       this.narrative += " was in a divorce record";
