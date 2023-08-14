@@ -37,7 +37,7 @@ async function getPendingSearch() {
   });
 }
 
-let refineRetries = 0;
+var refineRetries = 0;
 
 async function refineResults(selectData) {
   elementsFound = false;
