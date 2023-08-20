@@ -247,6 +247,11 @@ async function fsGetAllCitationsAction(data) {
 
 async function fsGetAllCitationsForSavePersonData(data) {
   try {
+    if (!data.extractedData.sourceIds || data.extractedData.sourceIds.length <= 0) {
+      // no sources - nothing to do
+      return { success: true };
+    }
+
     let input = Object.assign({}, data);
     input.options = options;
     input.runDate = new Date();
