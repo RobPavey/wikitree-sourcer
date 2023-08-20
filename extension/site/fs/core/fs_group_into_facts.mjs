@@ -518,10 +518,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
         if (!parentB) {
           return "";
         } else {
-          return parentB;
+          return parentB.name;
         }
       } else if (!parentB) {
-        return parentA;
+        return parentA.name;
       }
 
       return mergeNames(parentA.name, parentB.name);

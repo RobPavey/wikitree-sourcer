@@ -232,7 +232,7 @@ async function fsGetAllCitationsAction(data) {
       // It can fail even if there is an image URL, for example findagrave images:
       // https://www.ancestry.com/discoveryui-content/view/2221897:60527
       // This is not considered an error there just will be no sharing link
-      const message = "An error occurred geting sources.";
+      const message = "An error occurred getting sources.";
       displayMessageWithIcon("warning", message, response.errorMessage);
     }
   } catch (e) {
