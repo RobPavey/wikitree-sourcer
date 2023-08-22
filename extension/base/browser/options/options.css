@@ -140,3 +140,35 @@ h4 {
   position: relative;
   top: 1px;
 }
+
+.topbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.padHamburger {
+  display: block;
+  width: 25px;
+  padding: 0;
+}
+
+.hamburger {
+  padding: 0;
+  display: block;
+  background-color: white;
+  border: 0px;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
+}
