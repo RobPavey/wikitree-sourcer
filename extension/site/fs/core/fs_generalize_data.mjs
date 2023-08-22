@@ -696,15 +696,13 @@ function generalizeDataGivenRecordType(ed, result) {
   } else if (result.recordType == RT.SlaveSchedule) {
     let freeOrEnslaved = ed.recordData["Flag Free Or Enslaved"];
     if (freeOrEnslaved == "Owner") {
-      result.typeSpecificData = { role: "Slave Owner" };
+      result.setTypeSpecficDataValue("role", "Slave Owner");
     } else if (freeOrEnslaved == "Slave") {
-      result.typeSpecificData = { role: "Enslaved Person" };
+      result.setTypeSpecficDataValue("role", "Enslaved Person");
     }
     if (result.typeSpecificData) {
       let race = ed.recordData["Race"];
-      if (race) {
-        result.typeSpecificData.race = race;
-      }
+      result.setTypeSpecficDataValue("race", race);
     }
   }
 

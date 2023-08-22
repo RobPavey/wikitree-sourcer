@@ -1917,6 +1917,11 @@ class NarrativeBuilder {
 
     let possessiveName = this.getPossessiveName();
 
+    let dateIsNotGrantDate = false;
+    if (this.eventGd.getTypeSpecficDataValue("dateIsNotGrantDate")) {
+      dateIsNotGrantDate = true;
+    }
+
     if (deathDateObj && eventDateObj) {
       let pronoun = this.getPossessivePronounInitialCaps().toLowerCase();
       this.narrative += this.getPersonNameOrPronoun() + " died " + this.formatDateObj(deathDateObj, true);
@@ -1925,7 +1930,7 @@ class NarrativeBuilder {
       } else if (residencePlace) {
         this.narrative += " residing " + this.getPlaceWithPreposition(residencePlace);
       }
-      if (this.eventGd.dateIsNotGrantDate) {
+      if (dateIsNotGrantDate) {
         this.narrative += " and " + pronoun + " estate was in the probate process";
       } else {
         this.narrative += " and " + pronoun + " estate passed probate";
@@ -1946,8 +1951,8 @@ class NarrativeBuilder {
       } else if (residencePlace) {
         this.narrative += " residing " + this.getPlaceWithPreposition(residencePlace);
       }
-    } else {
-      if (this.eventGd.dateIsNotGrantDate) {
+    } else if (eventDateObj) {
+      if (dateIsNotGrantDate) {
         this.narrative += possessiveName + " estate was in the probate process";
       } else {
         this.narrative += possessiveName + " estate passed probate";
