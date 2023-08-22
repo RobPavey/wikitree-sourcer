@@ -1655,6 +1655,23 @@ class GeneralizedData {
     }
   }
 
+  setTypeSpecficDataValue(key, value) {
+    if (key && value) {
+      if (!this.typeSpecificData) {
+        this.typeSpecificData = {};
+      }
+      this.typeSpecificData[key] = value;
+    }
+  }
+
+  getTypeSpecficDataValue(key) {
+    if (key) {
+      if (this.typeSpecificData) {
+        return this.typeSpecificData[key];
+      }
+    }
+  }
+
   addSpouse() {
     if (this.spouses == undefined) {
       this.spouses = [];

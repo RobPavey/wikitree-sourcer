@@ -5,7 +5,9 @@
   "name": {
     "name": "Cornelia V Pearsall"
   },
-  "dateIsNotGrantDate": true,
+  "typeSpecificData": {
+    "dateIsNotGrantDate": true
+  },
   "eventDate": {
     "yearString": "1877"
   },

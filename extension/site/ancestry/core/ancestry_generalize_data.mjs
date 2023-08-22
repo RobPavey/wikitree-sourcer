@@ -56,6 +56,7 @@ const eventTypeStringToDataType = {
 const recordTypeByFields = [
   { type: RT.Divorce, labels: ["Divorce Date"] },
   { type: RT.Marriage, labels: ["Marriage Date", "Marriage Place", "Spouse"] },
+  { type: RT.Marriage, labels: ["Marriage Banns Date", "Marriage Banns Place", "Spouse"] },
   {
     type: RT.Marriage,
     labels: ["Marriage License Date", "Allegation Place", "Spouse"],
@@ -83,6 +84,7 @@ const recordTypeByFields = [
   },
   { type: RT.Death, labels: ["Death Date", "Monthly Meeting"] },
   { type: RT.Military, labels: ["Enlistment Date", "Enlistment Place"] },
+  { type: RT.Will, labels: ["Will Date"] },
 ];
 
 function determineRecordType(extractedData) {
@@ -567,16 +569,8 @@ function determineRoleGivenRecordType(extractedData, result) {
   // possibly any other type should go through here?
   // We could possibly test if recordData num properties is <= 4 or something like that
   else if (recordType == RT.Unclassified || recordType == RT.Employment) {
-    let value = getCleanValueForRecordDataList(extractedData, [
-      "Birth Date",
-      "Baptism Date",
-      "Christening Date",
-      "Death Date",
-      "Burial Date",
-      "Cremation Date",
-      "Marriage Date",
-    ]);
-    if (!value) {
+    let hasDateKey = testForWordsInRecordDataKeys(extractedData, ["Date", "Place"]);
+    if (!hasDateKey) {
       if (extractedData.recordData["Child"]) {
         if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
           result.role = Role.Parent;
@@ -587,14 +581,13 @@ function determineRoleGivenRecordType(extractedData, result) {
         result.setPrimaryPersonFullName(extractedData.recordData["Spouse"]);
       }
     } else {
-      let value2 = getCleanValueForRecordDataList(extractedData, [
-        "Baptism Date",
-        "Christening Date",
-        "Burial Date",
-        "Cremation Date",
+      let hasBaptismOrBurialKey = testForWordsInRecordDataKeys(extractedData, [
+        "Baptism",
+        "Christening",
+        "Burial",
+        "Cremation",
       ]);
-
-      if (!value2) {
+      if (!hasBaptismOrBurialKey) {
         // sometimes the parent's record for a child's birth gives that parents birth date
         // (Usually inferred from the parent's age)
         // Example: https://www.ancestry.com/discoveryui-content/view/602090064:61441
@@ -609,34 +602,23 @@ function determineRoleGivenRecordType(extractedData, result) {
     }
   } else if (recordType == RT.Obituary) {
     // obituary can have lots of relations
-    let value = getCleanValueForRecordDataList(extractedData, [
-      "Death Date",
-      "Burial Date",
-      "Cremation Date",
-      "Burial Year",
-    ]);
-    if (!value) {
-      if (
-        !extractedData.recordData["Death Date"] &&
-        !extractedData.recordData["Death Place"] &&
-        !extractedData.recordData["Death Age"]
-      ) {
-        if (extractedData.recordData["Child"]) {
-          result.role = Role.Parent;
-          result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
-        } else if (extractedData.recordData["Spouse"]) {
-          result.role = Role.Spouse;
-          result.setPrimaryPersonFullName(extractedData.recordData["Spouse"]);
-        } else if (extractedData.recordData["Father"]) {
-          result.role = Role.Child;
-          result.setPrimaryPersonFullName(extractedData.recordData["Father"]);
-        } else if (extractedData.recordData["Mother"]) {
-          result.role = Role.Child;
-          result.setPrimaryPersonFullName(extractedData.recordData["Mother"]);
-        } else if (extractedData.recordData["Siblings"]) {
-          result.role = Role.Sibling;
-          result.setPrimaryPersonFullName(extractedData.recordData["Siblings"]);
-        }
+    let hasDeathOrBurialKey = testForWordsInRecordDataKeys(extractedData, ["Death", "Burial", "Cremation"]);
+    if (!hasDeathOrBurialKey) {
+      if (extractedData.recordData["Child"]) {
+        result.role = Role.Parent;
+        result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
+      } else if (extractedData.recordData["Spouse"]) {
+        result.role = Role.Spouse;
+        result.setPrimaryPersonFullName(extractedData.recordData["Spouse"]);
+      } else if (extractedData.recordData["Father"]) {
+        result.role = Role.Child;
+        result.setPrimaryPersonFullName(extractedData.recordData["Father"]);
+      } else if (extractedData.recordData["Mother"]) {
+        result.role = Role.Child;
+        result.setPrimaryPersonFullName(extractedData.recordData["Mother"]);
+      } else if (extractedData.recordData["Siblings"]) {
+        result.role = Role.Sibling;
+        result.setPrimaryPersonFullName(extractedData.recordData["Siblings"]);
       }
     }
   }
@@ -731,6 +713,41 @@ function getCleanValueForRecordDataList(ed, fieldNames, type = "") {
       return value;
     }
   }
+}
+
+function testForWordsInRecordDataKeys(ed, words) {
+  if (ed.recordData) {
+    for (let key of Object.keys(ed.recordData)) {
+      let keyWords = key.split(" ");
+      for (let keyWord of keyWords) {
+        let lcKeyWord = keyWord.toLowerCase();
+        for (let word of words) {
+          let lcWord = word.toLowerCase();
+          if (lcWord == lcKeyWord) {
+            return true;
+          }
+        }
+      }
+    }
+  }
+
+  return false;
+}
+
+function testForRecordDataKey(ed, testKeys) {
+  if (ed.recordData) {
+    for (let key of Object.keys(ed.recordData)) {
+      let lcKey = key.toLowerCase();
+      for (let testKey of testKeys) {
+        let lcTestKey = testKey.toLowerCase();
+        if (lcTestKey == lcKey) {
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
 }
 
 function buildParents(ed, result) {
@@ -1272,22 +1289,11 @@ function generalizeDataGivenRecordType(ed, result) {
     let slaveOwner = getCleanValueForRecordDataList(ed, ["Slave Owner"]);
     let wasFugitive = getCleanValueForRecordDataList(ed, ["Fugitive"]);
     if (role || numEnslavedPeople || race || slaveOwner || wasFugitive) {
-      result.typeSpecificData = {};
-      if (role) {
-        result.typeSpecificData.role = role;
-      }
-      if (numEnslavedPeople) {
-        result.typeSpecificData.numEnslavedPeople = numEnslavedPeople;
-      }
-      if (race) {
-        result.typeSpecificData.race = race;
-      }
-      if (slaveOwner) {
-        result.typeSpecificData.slaveOwner = slaveOwner;
-      }
-      if (wasFugitive && wasFugitive == "X") {
-        result.typeSpecificData.wasFugitive = true;
-      }
+      result.setTypeSpecficDataValue("role", role);
+      result.setTypeSpecficDataValue("numEnslavedPeople", numEnslavedPeople);
+      result.setTypeSpecficDataValue("race", race);
+      result.setTypeSpecficDataValue("slaveOwner", slaveOwner);
+      result.setTypeSpecficDataValue("wasFugitive", wasFugitive && wasFugitive == "X");
     }
   } else if (result.recordType == RT.Marriage) {
     result.setEventDate(
@@ -1622,18 +1628,24 @@ function generalizeDataGivenRecordType(ed, result) {
       result.ageAtDeath = age;
     }
   } else if (result.recordType == RT.Will || result.recordType == RT.Probate) {
-    result.setDeathDate(getCleanRecordDataValue(ed, "Death Date", "date"));
+    let deathDate = getCleanRecordDataValue(ed, "Death Date", "date");
+    result.setDeathDate(deathDate);
     result.setDeathYear(getCleanRecordDataValue(ed, "Death Year"));
+    result.setResidencePlace(getCleanRecordDataValue(ed, "Residence Place"));
 
     let probateGrantDate = getCleanValueForRecordDataList(
       ed,
       ["Probate Date", "Will Proved Date", "Grant Date"],
       "date"
     );
+    let willDate = getCleanValueForRecordDataList(ed, ["Will Date"], "date");
+
     if (probateGrantDate) {
       result.setEventDate(probateGrantDate);
+      result.setTypeSpecficDataValue("willDate", willDate);
     } else {
-      result.dateIsNotGrantDate = true;
+      result.setTypeSpecficDataValue("dateIsNotGrantDate", true);
+      result.setEventDate(willDate);
     }
     result.setEventYear(getCleanRecordDataValue(ed, "Probate Year"));
 
@@ -1657,7 +1669,7 @@ function generalizeDataGivenRecordType(ed, result) {
       }
     }
 
-    if (result.recordType == RT.Will) {
+    if (result.recordType == RT.Will && probateGrantDate) {
       result.recordSubtype = "Probate"; // for now assume Ancestry Will records have probate date
     }
 
@@ -2336,7 +2348,7 @@ function regeneralizeDataWithLinkedRecords(input) {
   //console.log("regeneralizeDataWithLinkedRecords, linkedRecords is:");
   //console.log(linkedRecords);
 
-  if (ed.household) {
+  if (ed.household && result.householdArray) {
     for (let extractedMember of ed.household.members) {
       if (extractedMember.link) {
         // find the same member in the generalized data

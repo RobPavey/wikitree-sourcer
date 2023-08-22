@@ -961,6 +961,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/46470693:2495",
   },
   {
+    caseName: "us_nj_will_1801_john_carnes",
+    url: "https://www.ancestry.com/discoveryui-content/view/401:2793",
+  },
+  {
     caseName: "us_ny_census_1892_henry_brixius",
     url: "https://www.ancestry.com/discoveryui-content/view/93143:8940",
   },

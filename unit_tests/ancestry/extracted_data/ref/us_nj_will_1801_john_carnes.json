@@ -1,0 +1,50 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/401:2793",
+  "pageType": "record",
+  "dbId": "2793",
+  "recordId": "401",
+  "ancestryTemplate": "{{Ancestry Record|2793|401}}",
+  "domain": "com",
+  "titleName": "John Carnes",
+  "titleCollection": "New Jersey, U.S., Abstract of Wills, 1670-1817",
+  "recordData": {
+    "Name": "John Carnes",
+    "Gender": "Male",
+    "Residence Date": "1801",
+    "Residence Place": "New Jersey, USA",
+    "Death Place": "Mendham, Morris",
+    "Will Date": "8 Jan 1801",
+    "Probate Date": "2 May 1801",
+    "Spouse": "Martha",
+    "Household Members (Name)<br/>Relationship": "John Carnes<br/>Martha Wife"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2793&h=450000401&indiv=try&viewrecord=1&r=an"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "John Carnes",
+        "Relationship": ""
+      },
+      {
+        "Household Members (Name)": "Martha",
+        "dbId": "2793",
+        "recordId": "450000401",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2793&h=450000401&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Wife"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2793/images/32669_236580-00078?pid=401&usePUB=true&usePUBJs=true",
+  "imageDbId": "2793",
+  "imageRecordId": "32669_236580-00078",
+  "sourceCitation": "New Jersey, Published Archives Series, First Series; John L. Murphy Publishing Company; New Jersey State Archives",
+  "sourceInformation": "Ancestry.com. New Jersey, U.S., Abstract of Wills, 1670-1817 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: New Jersey State Archives. New Jersey, Published Archives Series, First Series. Trenton, New Jersey: John L Murphy Publishing Company.",
+  "originalData": "New Jersey State Archives. New Jersey, Published Archives Series, First Series. Trenton, New Jersey: John L Murphy Publishing Company.",
+  "sourceDescription": "This database contains 13 volumes of details abstracted from early New Jersey wills. Learn more..."
+}

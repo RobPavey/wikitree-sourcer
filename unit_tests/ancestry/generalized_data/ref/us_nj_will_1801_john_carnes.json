@@ -1,0 +1,27 @@
+{
+  "sourceType": "record",
+  "recordType": "Will",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "John Carnes"
+  },
+  "personGender": "male",
+  "residencePlace": {
+    "placeString": "New Jersey, USA"
+  },
+  "eventDate": {
+    "dateString": "2 May 1801"
+  },
+  "typeSpecificData": {
+    "willDate": "8 Jan 1801"
+  },
+  "recordSubtype": "Probate",
+  "deathPlace": {
+    "placeString": "Mendham, Morris"
+  },
+  "lastNameAtDeath": "Carnes",
+  "collectionData": {
+    "id": "2793"
+  },
+  "hasValidData": true
+}
