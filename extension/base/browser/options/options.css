@@ -172,3 +172,18 @@ h4 {
   transition: all 0.3s ease-in-out;
   background-color: black;
 }
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -8,7 +8,7 @@
     <nav class="topbar">
       <div class="padHamburger"></div>
       <h2>WikiTree Sourcer user options</h2>
-      <button class="hamburger">
+      <button id="dialogButton" class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -40,5 +40,17 @@
     </div>
 
     <script type="module" src="options.mjs"></script>
+
+    <dialog id="dialog">
+      <ul>
+        <span id="closeDialog" class="close">&times;</span>
+
+        <button id="resetOptions" class="saveButton">Reset Options</button>
+        <br />
+        <button id="saveOptions" class="saveButton">Save Options</button>
+        <br />
+        <button id="loadOptions" class="saveButton">Load Options</button>
+      </ul>
+    </dialog>
   </body>
 </html>

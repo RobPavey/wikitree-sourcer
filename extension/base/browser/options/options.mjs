@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { callFunctionWithStoredOptions } from "./options_loader.mjs";
+import { callFunctionWithStoredOptions, options } from "./options_loader.mjs";
 import { optionsRegistry } from "../../core/options/options_database.mjs";
 import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
 import { getDefaultOptions } from "../../core/options/options_database.mjs";
@@ -185,6 +185,102 @@ async function saveOptionsFromPage() {
   }
 
   saveOptions(options);
+}
+
+function resetOptions() {
+  let options = getDefaultOptions();
+  saveOptions(options);
+  restoreOptions();
+
+  let dialogElement = document.getElementById("dialog");
+  if (dialogElement) {
+    dialogElement.close();
+  }
+}
+
+function wrapOptionsToSaveToFile() {
+  let now = new Date();
+
+  // sv-SE uses ISO format
+  let dateFormatter = Intl.DateTimeFormat("sv-SE", { dateStyle: "short", timeStyle: "medium" });
+
+  let datePart = dateFormatter.format(now);
+  datePart = datePart.replace(/:/g, "").replace(/ /g, "_");
+
+  let filename = "Sourcer_options_" + datePart;
+
+  const manifest = chrome.runtime.getManifest();
+  let wrappedOptions = {
+    fileName: filename,
+    extension: manifest.name,
+    version: manifest.version,
+    browser: navigator.userAgent,
+    timestamp: now.toISOString(),
+    options: options,
+  };
+  return wrappedOptions;
+}
+
+function getBackupLink(wrappedJsonData) {
+  let link = document.createElement("a");
+  let json = JSON.stringify(wrappedJsonData);
+  if (/(?=.*\bSafari\b)(?!.*\b(Chrome|Firefox)\b).*/.test(navigator.userAgent)) {
+    // Safari doesn't handle blobs or the download attribute properly
+    link.href = "data:application/octet-stream;base64," + window.btoa(json);
+    link.target = "_blank";
+  } else {
+    let blob = new Blob([json], { type: "text/plain" });
+    link.href = URL.createObjectURL(blob);
+    link.download = wrappedJsonData.id + ".txt";
+  }
+  return link;
+}
+
+function downloadBackupData(key, data, button) {
+  const wrapped = wrapBackupData(key, data);
+  const link = $(getBackupLink(wrapped)).addClass("button download").text("Download").hide();
+  $(button).hide().parent().append(" ").append(link);
+  link.fadeIn();
+}
+
+function saveOptionsToFile() {
+  let wrappedOptions = wrapOptionsToSaveToFile();
+
+  let link = document.createElement("a");
+  let json = JSON.stringify(wrappedOptions);
+  if (/(?=.*\bSafari\b)(?!.*\b(Chrome|Firefox)\b).*/.test(navigator.userAgent)) {
+    // Safari doesn't handle blobs or the download attribute properly
+    link.href = "data:application/octet-stream;base64," + window.btoa(json);
+    link.target = "_blank";
+  } else {
+    let blob = new Blob([json], { type: "text/plain" });
+    link.href = URL.createObjectURL(blob);
+    link.download = wrappedJsonData.id + ".txt";
+  }
+}
+
+function loadOptionsFromFile() {
+  if (window.FileReader) {
+    let reader = new FileReader();
+  }
+}
+
+function openDialog() {
+  let dialogElement = document.getElementById("dialog");
+  if (dialogElement) {
+    dialogElement.showModal();
+
+    document.getElementById("resetOptions").addEventListener("click", resetOptions);
+    document.getElementById("saveOptions").addEventListener("click", saveOptionsToFile);
+    document.getElementById("loadOptions").addEventListener("click", loadOptionsFromFile);
+  }
+}
+
+function closeDialog() {
+  let dialogElement = document.getElementById("dialog");
+  if (dialogElement) {
+    dialogElement.close();
+  }
 }
 
 var lastSubsectionSelected = undefined;
@@ -531,6 +627,8 @@ function buildPage() {
   restoreOptions();
 
   document.getElementById("save").addEventListener("click", saveOptionsFromPage);
+  document.getElementById("dialogButton").addEventListener("click", openDialog);
+  document.getElementById("closeDialog").addEventListener("click", closeDialog);
 }
 
 document.addEventListener("DOMContentLoaded", buildPage);
