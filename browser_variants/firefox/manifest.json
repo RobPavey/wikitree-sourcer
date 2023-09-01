@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "1.9.1",
+  "version": "1.10.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": [
     "storage",
@@ -39,6 +39,7 @@
     "*://*.nli.ie/*",
     "*://*.newspapers.com/*",
     "*://*.openarchieven.nl/*",
+    "*://*.openarch.nl/*",
     "*://paperspast.natlib.govt.nz/*",
     "*://probatesearch.service.gov.uk/*",
     "*://www.scotlandspeople.gov.uk/*",
