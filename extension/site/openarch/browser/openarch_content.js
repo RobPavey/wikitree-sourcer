@@ -32,15 +32,15 @@ async function doFetch() {
   let identifier = "";
 
   // Example record URL
-  // https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
-  // https://www.openarch.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B
+  // https://www.openarchieven.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
+  // https://www.openarchieven.nl/zar:9035582F-0BCC-4640-8BC2-95DA8D148A9B
 
-  if (/^https\:\/\/www\.openarch\.nl\/\w+\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
-    archive = url.replace(/^https\:\/\/www\.openarch\.nl\/(\w+)\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
+  if (/^https\:\/\/www\.openarchieven\.nl\/\w+\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
+    archive = url.replace(/^https\:\/\/www\.openarchieven\.nl\/(\w+)\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
     if (!archive || archive == url) {
       archive = "";
     }
-    identifier = url.replace(/^https\:\/\/www\.openarch\.nl\/\w+\:([a-zA-Z0-9\-]+)(?:\/\w\w)?\/?$/, "$1");
+    identifier = url.replace(/^https\:\/\/www\.openarchieven\.nl\/\w+\:([a-zA-Z0-9\-]+)(?:\/\w\w)?\/?$/, "$1");
     if (!identifier || identifier == url) {
       identifier = "";
     }

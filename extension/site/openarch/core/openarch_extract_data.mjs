@@ -33,17 +33,17 @@ function extractData(document, url) {
   let lang = document.documentElement.lang;
 
   // URL for a record maybe something like:
-  // https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
+  // https://www.openarchieven.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
   // or
-  // https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf/nl
+  // https://www.openarchieven.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf/nl
   // where the language part on end may be en, nl, de or fr
 
-  if (!/^https\:\/\/www\.openarch\.nl\/frl\:[a-z0-9\-]+\/?(?:\w\w)?$/.test(url)) {
+  if (!/^https\:\/\/www\.openarchieven\.nl\/frl\:[a-z0-9\-]+\/?(?:\w\w)?$/.test(url)) {
     return result;
   }
 
   // remove any language part from the URL
-  url = url.replace(/^(https\:\/\/www\.openarch\.nl\/frl\:[a-z0-9\-]+)\/?(?:\w\w)?$/, "$1");
+  url = url.replace(/^(https\:\/\/www\.openarchieven\.nl\/frl\:[a-z0-9\-]+)\/?(?:\w\w)?$/, "$1");
   result.url = url;
 
   result.lang = lang;
