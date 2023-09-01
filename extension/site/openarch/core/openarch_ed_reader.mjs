@@ -188,9 +188,9 @@ class OpenarchEdReader extends ExtractedDataReader {
 
     let url = ed.url;
     // Example record URL
-    // https://www.openarch.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
-    if (/^https\:\/\/www\.openarch\.nl\/\w+\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
-      let archive = url.replace(/^https\:\/\/www\.openarch\.nl\/(\w+)\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
+    // https://www.openarchieven.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf
+    if (/^https\:\/\/www\.openarchieven\.nl\/\w+\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/.test(url)) {
+      let archive = url.replace(/^https\:\/\/www\.openarchieven\.nl\/(\w+)\:[a-zA-Z0-9\-]+(?:\/\w\w)?\/?$/, "$1");
       if (archive && archive != url) {
         this.urlArchive = archive;
       }

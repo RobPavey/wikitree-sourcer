@@ -26,7 +26,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class OpenarchUriBuilder {
   constructor() {
-    this.uri = "https://www.openarch.nl/search.php";
+    this.uri = "https://www.openarchieven.nl/search.php";
     this.searchTermAdded = false;
   }
 

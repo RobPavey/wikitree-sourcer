@@ -37,7 +37,7 @@
     "*://www.census.nationalarchives.ie/*",
     "*://*.nli.ie/*",
     "*://*.newspapers.com/*",
-    "*://*.openarch.nl/*",
+    "*://*.openarchieven.nl/*",
     "*://paperspast.natlib.govt.nz/*",
     "*://probatesearch.service.gov.uk/*",
     "*://www.scotlandspeople.gov.uk/*",
@@ -164,7 +164,7 @@
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
     {
-      "matches": ["*://*.openarch.nl/*"],
+      "matches": ["*://*.openarchieven.nl/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/openarch/browser/openarch_content.js"]
     },
@@ -295,7 +295,7 @@
     },
     {
       "resources": ["site/openarch/core/openarch_extract_data.mjs"],
-      "matches": ["*://*.openarch.nl/*"]
+      "matches": ["*://*.openarchieven.nl/*"]
     },
     {
       "resources": ["site/ppnz/core/ppnz_extract_data.mjs"],
