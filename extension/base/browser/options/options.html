@@ -14,7 +14,7 @@
         <span class="bar"></span>
       </button>
     </nav>
-    <div class="tabbedArea">
+    <div id="tabArea" class="tabbedArea">
       <div class="tabs">
         <button class="tab" id="search-tab">Search</button>
         <button class="tab" id="citation-tab">Citation</button>
@@ -36,7 +36,6 @@
     <br />
     <div align="center">
       <div id="status"></div>
-      <button id="save" class="saveButton">Save changes (all tabs)</button>
     </div>
 
     <script type="module" src="options.mjs"></script>
@@ -50,13 +49,6 @@
         <button id="saveOptions" class="saveButton">Export Options</button>
         <br />
         <button id="loadOptions" class="saveButton">Import Options</button>
-      </ul>
-    </dialog>
-    <dialog id="downloadDialog">
-      <ul>
-        <span id="closeDownloadDialog" class="close">&times;</span>
-
-        The file will be saved to the downloads folder.
       </ul>
     </dialog>
   </body>

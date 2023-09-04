@@ -235,4 +235,8 @@ async function callFunctionWithStoredOptions(optionsFunction) {
   optionsFunction(options);
 }
 
-export { callFunctionWithStoredOptions, options };
+function replaceCachedOptions(newOptions) {
+  options = newOptions;
+}
+
+export { callFunctionWithStoredOptions, replaceCachedOptions, options };
