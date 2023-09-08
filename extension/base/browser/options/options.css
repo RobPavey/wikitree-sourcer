@@ -187,3 +187,32 @@ h4 {
   text-decoration: none;
   cursor: pointer;
 }
+
+ul.list {
+  list-style-type: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
+}
+ul.list li {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* popup menu button */
+.popupMenuButton {
+  background-color: #cfcfcf;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-size: 14px;
+  padding: 10px 10px;
+  margin: 10px 10px;
+}
+.popupMenuButton:hover {
+  background-color: #8fc642;
+}
+.popupMenuButton:active {
+  position: relative;
+  top: 1px;
+}

@@ -41,14 +41,20 @@
     <script type="module" src="options.mjs"></script>
 
     <dialog id="dialog">
-      <ul>
+      <dev class="dialogHeader">
         <span id="closeDialog" class="close">&times;</span>
-
-        <button id="resetOptions" class="saveButton">Reset Options</button>
-        <br />
-        <button id="saveOptions" class="saveButton">Export Options</button>
-        <br />
-        <button id="loadOptions" class="saveButton">Import Options</button>
+        WikiTree Sourcer Options popup
+      </dev>
+      <ul class="list">
+        <li>
+          <button id="resetOptions" class="popupMenuButton">Reset Options to Defaults</button>
+        </li>
+        <li>
+          <button id="saveOptions" class="popupMenuButton">Export Options to File</button>
+        </li>
+        <li>
+          <button id="loadOptions" class="popupMenuButton">Import Options from File</button>
+        </li>
       </ul>
     </dialog>
   </body>
