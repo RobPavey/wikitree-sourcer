@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1869",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Cocker",
+    "forenames": ""
+  },
+  "lastNameAtBirth": "Cocker",
+  "birthDate": {
+    "yearString": "1869",
+    "quarter": 2
+  },
+  "mothersMaidenName": "Thorley",
+  "personGender": "male",
+  "registrationDistrict": "Chorlton",
+  "collectionData": {
+    "id": "births",
+    "volume": "08C",
+    "page": "709"
+  },
+  "hasValidData": true
+}

@@ -877,7 +877,7 @@ class NameObj {
 
   removeTitle(name, isFull = false) {
     if (!name) {
-      return 0;
+      return "";
     }
 
     let wordCount = StringUtils.countWords(name);
