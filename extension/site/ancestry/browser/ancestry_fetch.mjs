@@ -90,7 +90,7 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
   //console.log("data is:");
   //console.log(data);
 
-  if (data.startsWith(`{"id":`)) {
+  if (data.startsWith(`{`)) {
     const jsonData = data;
     const dataObj = JSON.parse(jsonData);
 

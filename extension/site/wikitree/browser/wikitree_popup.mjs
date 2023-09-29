@@ -920,7 +920,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
           }
           let marriagePlaceString = "";
           let marriagePlaceObj = spouse.marriagePlace;
-          if (marriagePlaceObj) {
+          if (marriagePlaceObj && marriagePlaceObj.placeString) {
             let preposition = StringUtils.getPrepositionForPlaceString(marriagePlaceObj.placeString);
             marriagePlaceString = preposition + " " + marriagePlaceObj.placeString;
           }
