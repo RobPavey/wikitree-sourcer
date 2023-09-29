@@ -149,6 +149,16 @@ h4 {
   padding: 0 24px;
 }
 
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
+}
+
 .hamburgerButtonContainer {
   display: block;
   width: 25px;
@@ -163,17 +173,7 @@ h4 {
   cursor: pointer;
 }
 
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: black;
-}
-
-/* The Close Button */
+/* The Close Button in the dialog */
 .close {
   color: #aaa;
   font-size: 28px;
@@ -238,12 +238,7 @@ ul.buttonTextList li.comment {
 }
 
 dialog {
-  /*z-index: 10;*/
-  /*margin-top: 10px;   This positions at top of window rather than center */
-  /*background: green;*/
-  /*border-color: #8fc642;*/
   border: 1px solid black;
-
   width: 400px;
   max-width: 100%;
   padding: 0px;
@@ -255,6 +250,9 @@ dialog {
   font-weight: bold;
 }
 
-/*dialog::backdrop {
+/*
+  This is how to change the dimming color for the background when the dialog is up:
+dialog::backdrop {
   background-color: #c1d094af;
-}*/
+}
+*/
