@@ -6,9 +6,9 @@
   </head>
   <body>
     <nav class="topbar">
-      <div class="padHamburger"></div>
+      <div class="hamburgerButtonContainer"></div>
       <h2>WikiTree Sourcer user options</h2>
-      <button id="dialogButton" class="hamburger">
+      <button id="dialogButton" class="hamburgerButton">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -41,19 +41,44 @@
     <script type="module" src="options.mjs"></script>
 
     <dialog id="dialog">
-      <dev class="dialogHeader">
+      <div class="dialogHeader">
         <span id="closeDialog" class="close">&times;</span>
-        WikiTree Sourcer Options popup
-      </dev>
-      <ul class="list">
+        WikiTree Sourcer Options tools
+      </div>
+      <ul class="dialogMenuItemList">
         <li>
-          <button id="resetOptions" class="popupMenuButton">Reset Options to Defaults</button>
+          <button id="resetOptions" class="popupMenuButton">
+            <ul class="buttonTextList">
+              <li class="title">Reset Options to Defaults</li>
+              <li class="comment">
+                All options will be reset to the built-in defaults. It may be advisable to export your current options
+                to a file as a backup first.
+              </li>
+            </ul>
+          </button>
         </li>
         <li>
-          <button id="saveOptions" class="popupMenuButton">Export Options to File</button>
+          <button id="saveOptions" class="popupMenuButton">
+            <ul class="buttonTextList">
+              <li class="title">Export Options to File</li>
+              <li class="comment">
+                Your current options will be saved to a JSON file in the downloads folder. This can be used as a backup,
+                a set of options that you switch back and forth between, or shared with another device or user.
+              </li>
+            </ul>
+          </button>
         </li>
         <li>
-          <button id="loadOptions" class="popupMenuButton">Import Options from File</button>
+          <button id="loadOptions" class="popupMenuButton">
+            <ul class="buttonTextList">
+              <li class="title">Import Options from File...</li>
+              <li class="comment">
+                A file selector will allow you to select a file which must be in JSON format. The options values in that
+                file will replace your current options. If some options are missing from the file then your current
+                values for those options will be unchanged.
+              </li>
+            </ul>
+          </button>
         </li>
       </ul>
     </dialog>

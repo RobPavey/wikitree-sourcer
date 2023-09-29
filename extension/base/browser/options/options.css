@@ -149,13 +149,13 @@ h4 {
   padding: 0 24px;
 }
 
-.padHamburger {
+.hamburgerButtonContainer {
   display: block;
   width: 25px;
   padding: 0;
 }
 
-.hamburger {
+.hamburgerButton {
   padding: 0;
   display: block;
   background-color: white;
@@ -176,9 +176,11 @@ h4 {
 /* The Close Button */
 .close {
   color: #aaa;
-  float: right;
   font-size: 28px;
   font-weight: bold;
+  position: absolute;
+  top: 0px;
+  right: 6px;
 }
 
 .close:hover,
@@ -188,31 +190,71 @@ h4 {
   cursor: pointer;
 }
 
-ul.list {
+ul.dialogMenuItemList {
   list-style-type: none; /* Remove bullets */
   margin: 0;
   padding: 0;
 }
-ul.list li {
+ul.dialogMenuItemList li {
   padding: 0px;
+  margin: 0px;
+}
+
+ul.buttonTextList {
+  list-style-type: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
+}
+ul.buttonTextList li.title {
+  padding: 0px;
+  margin: 0px;
+  font-weight: bold;
+}
+ul.buttonTextList li.comment {
+  padding-top: 10px;
   margin: 0px;
 }
 
 /* popup menu button */
 .popupMenuButton {
+  text-align: left;
   background-color: #cfcfcf;
-  border-radius: 10px;
+  border-radius: 0px;
+  border-width: 0px;
+  border-top: 1px solid #bbb;
   display: inline-block;
   cursor: pointer;
   color: black;
+  background-color: white;
   font-size: 14px;
   padding: 10px 10px;
-  margin: 10px 10px;
+  width: 100%;
 }
 .popupMenuButton:hover {
-  background-color: #8fc642;
+  background-color: #e1f0b4;
 }
 .popupMenuButton:active {
-  position: relative;
-  top: 1px;
+  background-color: #c1d084;
 }
+
+dialog {
+  /*z-index: 10;*/
+  /*margin-top: 10px;   This positions at top of window rather than center */
+  /*background: green;*/
+  /*border-color: #8fc642;*/
+  border: 1px solid black;
+
+  width: 400px;
+  max-width: 100%;
+  padding: 0px;
+}
+
+.dialogHeader {
+  padding: 10px;
+  background: #ffe270;
+  font-weight: bold;
+}
+
+/*dialog::backdrop {
+  background-color: #c1d094af;
+}*/

@@ -272,9 +272,9 @@ function saveOptionsToFile() {
   if (isSafariOnMacOs()) {
     downloadFileForMacOsSafari(json);
   } else {
-    //openDownloadDialog(json, wrappedOptions.filename);
     downloadFile(json, wrappedOptions.filename);
   }
+  closeDialog();
 }
 
 function doLoadOptionsFromFile() {
@@ -354,10 +354,10 @@ function loadOptionsFromFile() {
   doLoadOptionsFromFile()
     .then(closeDialog)
     .catch((result) => {
-      let message = "The options file was not valid. Options not changed.";
+      let message = "The options file was not valid. The current options were not changed.";
       let reason = result.errorMessage;
       if (reason) {
-        message += "\n" + reason;
+        message += "\n\nThis error occurred:\n" + reason;
       }
       alert(message);
       console.log(result);
@@ -373,6 +373,21 @@ function openDialog() {
     document.getElementById("saveOptions").addEventListener("click", saveOptionsToFile);
     document.getElementById("loadOptions").addEventListener("click", loadOptionsFromFile);
     document.getElementById("closeDialog").addEventListener("click", closeDialog);
+
+    // The HTML Dialog element doesn't automatically close if the use clicks outside the dialog.
+    // The below implements that. It works because the full window dimming background of the dialog
+    // is a child of the dialog element
+    dialogElement.addEventListener("click", (e) => {
+      const dialogDimensions = dialogElement.getBoundingClientRect();
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        dialogElement.close();
+      }
+    });
   }
 }
 
