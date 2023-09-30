@@ -22,7 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Country data
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const CountryData = [
+  // Europe
   {
     stdName: "England",
     matches: ["England", "England, United Kingdom", "England, UK", "England, U.K."],
@@ -121,6 +126,7 @@ const CountryData = [
   { stdName: "Norway", matches: ["Norway", "Norge"] },
   { stdName: "Finland", matches: ["Finland", "Suomi"] },
   { stdName: "Iceland", matches: ["Iceland", "Ísland"] },
+  { stdName: "Greenland", matches: ["Greenland", "Kalaallit Nunaat"] },
 
   { stdName: "Czechoslovakia", matches: ["Czechoslovakia"] },
   { stdName: "Czechia", matches: ["Czechia"], partOf: ["Czechoslovakia"] },
@@ -150,18 +156,64 @@ const CountryData = [
   { stdName: "Montenegro", matches: ["Montenegro", "Црна Гора"], partOf: ["Yugoslavia"] },
   { stdName: "Kosovo", matches: ["Kosovo"], partOf: ["Yugoslavia"] },
   { stdName: "North Macedonia", matches: ["North Macedonia", "Северна Македонија"], partOf: ["Yugoslavia"] },
-
   { stdName: "Albania", matches: ["Albania", "Shqipëria"] },
-
-  { stdName: "Russia", matches: ["Russia"] },
-
   { stdName: "Greece", matches: ["Greece", "Ελλάδα"] },
+
+  // Middle East
   { stdName: "Turkey", matches: ["Turkey"] },
+  { stdName: "Syria", matches: ["Syria"] },
+  { stdName: "Lebanon", matches: ["Lebanon"] },
+  { stdName: "Israel", matches: ["Israel"] },
+  { stdName: "Jordan", matches: ["Jordan"] },
+  { stdName: "Saudi Arabia", matches: ["Saudi Arabia"] },
+  { stdName: "Yemen", matches: ["Yemen"] },
+  { stdName: "Oman", matches: ["Oman"] },
+  { stdName: "United Arab Emirates", matches: ["United Arab Emirates", "UAE"] },
+  { stdName: "Qatar", matches: ["Qatar"] },
+  { stdName: "Bahrain", matches: ["Bahrain"] },
+  { stdName: "Kuwait", matches: ["Kuwait"] },
+  { stdName: "Iraq", matches: ["Iraq"] },
+  { stdName: "Iran", matches: ["Iran"] },
 
-  { stdName: "Algeria", matches: ["Algeria"] },
+  // Central Asia
+  { stdName: "Russia", matches: ["Russia", "Россия"] },
+  { stdName: "Afghanistan", matches: ["Afghanistan", "افغانستان"] },
+  { stdName: "Turkmenistan", matches: ["Turkmenistan"] },
+  { stdName: "Uzbekistan", matches: ["Uzbekistan", "O`zbekiston"] },
+  { stdName: "Kazakhstan", matches: ["Kazakhstan", "Қазақстан"] },
+  { stdName: "Kyrgyzstan", matches: ["Kyrgyzstan", "Кыргызстан"] },
+  { stdName: "Tajikistan", matches: ["Tajikistan", "Тоҷикистон"] },
+  { stdName: "Mongolia", matches: ["Mongolia", "Монгол Улс"] },
 
-  { stdName: "Afghanistan", matches: ["Afghanistan"] },
+  // East Asia
+  { stdName: "China", matches: ["China", "中国"] },
+  { stdName: "Taiwan", matches: ["Taiwan", "台灣"] },
+  { stdName: "North Korea", matches: ["North Korea", "조선민주주의인민공화국"] },
+  { stdName: "South Korea", matches: ["South Korea", "대한민국"] },
+  { stdName: "Japan", matches: ["Japan", "日本"] },
+  { stdName: "Philippines", matches: ["Philippines"] },
 
+  // South Asia
+  { stdName: "India", matches: ["India"] },
+  { stdName: "Pakistan", matches: ["Pakistan", "پاکستان"] },
+  { stdName: "Sri Lanka", matches: ["Sri Lanka"] },
+  { stdName: "Bangladesh", matches: ["Bangladesh", "বাংলাদেশ"] },
+  { stdName: "Nepal", matches: ["Nepal", "नेपाल"] },
+  { stdName: "Bhutan", matches: ["Bhutan"] },
+
+  // South-east Asia
+  { stdName: "Myanmar", matches: ["Myanmar", "Burma", "မြန်မာ"] },
+  { stdName: "Thailand", matches: ["Thailand", "ประเทศไทย"] },
+  { stdName: "Cambodia", matches: ["Cambodia", "កម្ពុជា"] },
+  { stdName: "Vietnam", matches: ["Vietnam", "Việt Nam"] },
+  { stdName: "Laos", matches: ["Laos", "ປະເທດລາວ"] },
+
+  { stdName: "Malaysia", matches: ["Malaysia"] },
+  { stdName: "Singapore", matches: ["Singapore"] },
+  { stdName: "Brunei", matches: ["Brunei"] },
+  { stdName: "Indonesia", matches: ["Indonesia"] },
+
+  // North America
   {
     stdName: "United States",
     matches: ["United States", "USA", "US", "U.S.", "U.S.A.", "U.S", "U.S.A", "United States of America"],
@@ -176,6 +228,30 @@ const CountryData = [
   },
   { stdName: "Mexico", matches: ["Mexico"], hasStates: true },
 
+  // Central America
+  { stdName: "Costa Rica", matches: ["Costa Rica"] },
+  { stdName: "Guatemala", matches: ["Guatemala"] },
+  { stdName: "Belize", matches: ["Belize"] },
+  { stdName: "Honduras", matches: ["Honduras"] },
+  { stdName: "El Salvador", matches: ["El Salvador"] },
+  { stdName: "Panama", matches: ["Panama"] },
+
+  // South America
+  { stdName: "Colombia", matches: ["Colombia"] },
+  { stdName: "Equador", matches: ["Equador"] },
+  { stdName: "Venezuela", matches: ["Venezuela"] },
+  { stdName: "Guyana", matches: ["Guyana"] },
+  { stdName: "Suriname", matches: ["Suriname"] },
+  { stdName: "French Guiana", matches: ["French Guiana"] },
+  { stdName: "Brazil", matches: ["Brazil"] },
+  { stdName: "Peru", matches: ["Peru"] },
+  { stdName: "Bolivia", matches: ["Bolivia"] },
+  { stdName: "Paraguay", matches: ["Paraguay"] },
+  { stdName: "Uruguay", matches: ["Uruguay"] },
+  { stdName: "Chile", matches: ["Chile"] },
+  { stdName: "Argentina", matches: ["Argentina"] },
+
+  // Australasia
   {
     stdName: "Australia",
     matches: ["Australia"],
@@ -183,10 +259,73 @@ const CountryData = [
     usesMiddleNames: true,
   },
   { stdName: "New Zealand", matches: ["New Zealand"], usesMiddleNames: true },
-  { stdName: "South Africa", matches: ["South Africa"] },
-  { stdName: "Philippines", matches: ["Philippines"] },
   { stdName: "American Samoa", matches: ["American Samoa"] },
+  { stdName: "Papua New Guinea", matches: ["Papua New Guinea"] },
+
+  // North Africa
+  { stdName: "Algeria", matches: ["Algeria"] },
+  { stdName: "Morocco", matches: ["Morocco"] },
+  { stdName: "Tunisia", matches: ["Tunisia"] },
+  { stdName: "Libya", matches: ["Libya"] },
+  { stdName: "Egypt", matches: ["Egypt"] },
+  { stdName: "Western Sahara", matches: ["Egypt", "الصحراء الغربية"] },
+
+  // West Africa
+  { stdName: "Mauritania", matches: ["Mauritania", "موريتانيا"] },
+  { stdName: "Mali", matches: ["Mali"] },
+  { stdName: "Niger", matches: ["Niger"] },
+  { stdName: "Senegal", matches: ["Senegal"] },
+  { stdName: "The Gambia", matches: ["The Gambia"] },
+  { stdName: "Guinea-Bissau", matches: ["Guinea-Bissau"] },
+  { stdName: "Guinea", matches: ["Guinea"] },
+  { stdName: "Sierra Leone", matches: ["Sierra Leone"] },
+  { stdName: "Liberia", matches: ["Liberia"] },
+  { stdName: "Côte d'Ivoire", matches: ["Côte d'Ivoire", "Ivory Coast"] },
+  { stdName: "Burkina Faso", matches: ["Burkina Faso"] },
+  { stdName: "Ghana", matches: ["Ghana"] },
+  { stdName: "Togo", matches: ["Togo"] },
+  { stdName: "Benin", matches: ["Benin"] },
+  { stdName: "Nigeria", matches: ["Nigeria"] },
+
+  // Central Africa
+  { stdName: "Cameroon", matches: ["Cameroon"] },
+  { stdName: "Chad", matches: ["Chad"] },
+  { stdName: "Central African Republic", matches: ["Central African Republic", "République centrafricaine"] },
+  { stdName: "Equatorial Guinea", matches: ["Equatorial Guinea"] },
+  { stdName: "Gabon", matches: ["Gabon"] },
+  { stdName: "Republic of the Congo", matches: ["Republic of the Congo"] },
+  { stdName: "Democratic Republic of the Congo", matches: ["Democratic Republic of the Congo"] },
+  { stdName: "Rwanda", matches: ["Rwanda"] },
+  { stdName: "Burundi", matches: ["Burundi"] },
+
+  // East Africa
+  { stdName: "Kenya", matches: ["Kenya"] },
+  { stdName: "Sudan", matches: ["Sudan"] },
+  { stdName: "South Sudan", matches: ["South Sudan"] },
+  { stdName: "Uganda", matches: ["Uganda"] },
+  { stdName: "Eritrea", matches: ["Eritrea"] },
+  { stdName: "Djibouti", matches: ["Djibouti"] },
+  { stdName: "Ethiopia", matches: ["Ethiopia"] },
+  { stdName: "Somalia", matches: ["Somalia"] },
+  { stdName: "Tanzania", matches: ["Tanzania"] },
+
+  // Southern Africa
+  { stdName: "South Africa", matches: ["South Africa"] },
+  { stdName: "Zimbabwe", matches: ["Zimbabwe"] },
+  { stdName: "Angola", matches: ["Angola"] },
+  { stdName: "Zambia", matches: ["Zambia"] },
+  { stdName: "Malawi", matches: ["Malawi"] },
+  { stdName: "Mozambique", matches: ["Mozambique"] },
+  { stdName: "Namibia", matches: ["Namibia"] },
+  { stdName: "Botswana", matches: ["Botswana"] },
+  { stdName: "Lesotho", matches: ["Lesotho"] },
+  { stdName: "Eswatini", matches: ["Eswatini", "Swaziland"] },
+  { stdName: "Madagascar", matches: ["Madagascar"] },
 ];
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// County data
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const CountyData = {
   England: [
