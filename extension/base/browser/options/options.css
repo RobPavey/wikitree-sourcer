@@ -211,7 +211,7 @@ ul.buttonTextList li.title {
   font-weight: bold;
 }
 ul.buttonTextList li.comment {
-  padding-top: 10px;
+  padding-top: 5px;
   margin: 0px;
 }
 
@@ -239,7 +239,7 @@ ul.buttonTextList li.comment {
 
 dialog {
   border: 1px solid black;
-  width: 400px;
+  width: 700px;
   max-width: 100%;
   padding: 0px;
 }
