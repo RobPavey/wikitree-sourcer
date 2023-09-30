@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"U.S., Find a Grave Index, 1600s-Current\"<br/>\nURL: {{FindAGrave|129805818}}<br/>\n{{Ancestry Record|60525|106712744|uk}} (accessed 6 May 2021)<br/>\nAda Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"U.S., Find a Grave Index, 1600s-Current\"<br/>\nURL: {{FindAGrave|129805818}}<br/>\n{{Ancestry Record|60525|106712744|uk}} (accessed 6 May 2021)<br/>\nAda Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America. Born in 1867.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Ada died in 1931 and was buried in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave Index, 1600s-Current\"<br/>\nURL: {{FindAGrave|129805818}}<br/>\n{{Ancestry Record|60525|106712744|uk}} (accessed 6 May 2021)<br/>\nAda Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America.\n</ref>",
+    "citation": "Ada died in 1931 and was buried in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave Index, 1600s-Current\"<br/>\nURL: {{FindAGrave|129805818}}<br/>\n{{Ancestry Record|60525|106712744|uk}} (accessed 6 May 2021)<br/>\nAda Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America. Born in 1867.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Burial''': \"U.S., Find a Grave Index, 1600s-Current\"<br/>URL: {{FindAGrave|129805818}}<br/>{{Ancestry Record|60525|106712744|uk}} (accessed 6 May 2021)<br/>Ada Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America.",
+    "citation": "* '''Burial''': \"U.S., Find a Grave Index, 1600s-Current\"<br/>URL: {{FindAGrave|129805818}}<br/>{{Ancestry Record|60525|106712744|uk}} (accessed 6 May 2021)<br/>Ada Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America. Born in 1867.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"U.S., Find a Grave Index, 1600s-Current,\" database, ({{Ancestry Record|60525|106712744|uk}} : accessed 6 May 2021), Ada Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America; citing URL {{FindAGrave|129805818}}</ref>",
+    "citation": "<ref>\"U.S., Find a Grave Index, 1600s-Current,\" database, ({{Ancestry Record|60525|106712744|uk}} : accessed 6 May 2021), Ada Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America. Born in 1867; citing URL {{FindAGrave|129805818}}</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Ada died in 1931 and was buried in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America.<ref>\"U.S., Find a Grave Index, 1600s-Current,\" database, ({{Ancestry Record|60525|106712744|uk}} : accessed 6 May 2021), Ada Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America; citing URL {{FindAGrave|129805818}}</ref>",
+    "citation": "Ada died in 1931 and was buried in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America.<ref>\"U.S., Find a Grave Index, 1600s-Current,\" database, ({{Ancestry Record|60525|106712744|uk}} : accessed 6 May 2021), Ada Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America. Born in 1867; citing URL {{FindAGrave|129805818}}</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"U.S., Find a Grave Index, 1600s-Current,\" database, ({{Ancestry Record|60525|106712744|uk}} : accessed 6 May 2021), Ada Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America; citing URL {{FindAGrave|129805818}}",
+    "citation": "* \"U.S., Find a Grave Index, 1600s-Current,\" database, ({{Ancestry Record|60525|106712744|uk}} : accessed 6 May 2021), Ada Lucretia Kirby burial (died in 1931) in Swan Point Cemetery, Providence, Providence County, Rhode Island, United States of America. Born in 1867; citing URL {{FindAGrave|129805818}}",
     "type": "source"
   },
   "partial_ee_style_inline": {

@@ -1152,6 +1152,30 @@ function getBurialString(gd, options) {
     dataString += ". Cause of death: " + gd.causeOfDeath;
   }
 
+  // Include the birth date if known, but try to exclude it if it is just a year estimated (by transcriber)
+  // from the age.
+  if (gd.birthDate) {
+    let includeBirthDate = true;
+    if (age) {
+      if (!gd.birthDate.dateString) {
+        // only a year
+        includeBirthDate = false;
+      } else if (gd.birthDate.dateString == gd.birthDate.yearString) {
+        // only a year
+        includeBirthDate = false;
+      } else if (gd.birthDate.dateString.length <= 4) {
+        // only a year
+        includeBirthDate = false;
+      }
+    } else {
+      // there is no age, so if there is a birth date it may be from original and may add info
+    }
+
+    if (includeBirthDate) {
+      dataString += ". Born " + getDateWithPreposition(gd.birthDate);
+    }
+  }
+
   return dataString;
 }
 
