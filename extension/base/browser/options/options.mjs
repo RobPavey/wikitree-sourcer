@@ -796,19 +796,3 @@ function buildPage() {
 }
 
 document.addEventListener("DOMContentLoaded", buildPage);
-
-// Listen for messages (from the popup script mostly)
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  //console.log("options page received message request");
-  //console.log(request);
-  if (request.type == "isOptionsPage") {
-    sendResponse({ success: true }); // do this to let the caller we received message
-  } else if (request.type == "resetOptions") {
-    //console.log("reset options request");
-    let options = getDefaultOptions();
-    saveOptions(options);
-    restoreOptions();
-    //console.log("sending response");
-    sendResponse({ success: true }); // do this to let the caller we received message
-  }
-});
