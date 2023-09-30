@@ -84,6 +84,7 @@ const recordTypeByFields = [
   },
   { type: RT.Death, labels: ["Death Date", "Monthly Meeting"] },
   { type: RT.Military, labels: ["Enlistment Date", "Enlistment Place"] },
+  { type: RT.Military, labels: ["Military Date", "Military Place"] },
   { type: RT.Will, labels: ["Will Date"] },
 ];
 
