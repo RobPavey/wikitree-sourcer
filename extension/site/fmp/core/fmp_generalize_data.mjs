@@ -974,7 +974,11 @@ function generalizeDataGivenRecordType(ed, result) {
 }
 
 function generalizeProfileData(ed, result) {
-  result.setLastNameAndForenames(ed.surname, ed.givenName);
+  if (ed.fullName) {
+    result.setFullName(ed.fullName);
+  } else {
+    result.setLastNameAndForenames(ed.surname, ed.givenName);
+  }
   result.setBirthYear(ed.birthYear);
   result.setBirthDate(ed.birthDate);
   result.setBirthPlace(ed.birthPlace);
@@ -991,11 +995,13 @@ function generalizeProfileData(ed, result) {
     mother.name.setFullName(ed.motherName);
   }
 
-  for (let dataSpouse of ed.spouses) {
-    let spouse = result.addSpouse();
-    spouse.name.setFullName(dataSpouse.name);
-    spouse.marriageDate.dateString = dataSpouse.marriageDate;
-    spouse.marriagePlace.placeString = dataSpouse.marriagePlace;
+  if (ed.spouses) {
+    for (let dataSpouse of ed.spouses) {
+      let spouse = result.addSpouse();
+      spouse.name.setFullName(dataSpouse.name);
+      spouse.marriageDate.dateString = dataSpouse.marriageDate;
+      spouse.marriagePlace.placeString = dataSpouse.marriagePlace;
+    }
   }
 
   result.hasValidData = true;

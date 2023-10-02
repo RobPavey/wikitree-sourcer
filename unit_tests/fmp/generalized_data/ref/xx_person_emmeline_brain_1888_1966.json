@@ -1,0 +1,31 @@
+{
+  "name": {
+    "lastName": "Brain",
+    "forenames": "Emmeline May"
+  },
+  "birthDate": {
+    "yearString": "1888"
+  },
+  "birthPlace": {
+    "placeString": "Wilnecote, Warwickshire, England"
+  },
+  "deathDate": {
+    "yearString": "1966"
+  },
+  "deathPlace": {
+    "placeString": "Hamble, Hampshire, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Robert Brain"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Elizabeth Kimberlin"
+      }
+    }
+  },
+  "hasValidData": true
+}

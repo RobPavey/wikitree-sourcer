@@ -397,8 +397,17 @@ const regressionData = [
   // Person pages
 
   {
+    caseName: "xx_person_emmeline_brain_1888_1966",
+    url: "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964296/profile",
+  },
+  {
     caseName: "xx_person_john_kimberlin_1800_1871",
     url: "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile",
+  },
+  {
+    // This is from a public tree that I do not own
+    caseName: "xx_person_joseph_rose_1858_1927",
+    url: "https://www.findmypast.co.uk/search-family-tree/transcript?id=1615406188&ref=3481B4D0-F26F-4D46-BF33-37AD8DDCB559",
   },
 ];
 

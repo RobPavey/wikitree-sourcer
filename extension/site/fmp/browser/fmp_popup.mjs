@@ -198,6 +198,7 @@ async function setupFmpPopupMenu(extractedData) {
     addFmpBuildHouseholdTableMenuItem(menu, data);
   } else if (isProfile) {
     await addSearchMenus(menu, data, backFunction, "fmp");
+    addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data);
   }
 

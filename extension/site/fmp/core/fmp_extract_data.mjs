@@ -93,8 +93,8 @@ function extractUrlInfo(result, url) {
     // https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181965009/profile
     if (/\#\/trees\/[a-f0-9\-]+\/[0-9]+\/profile/.test(remainder)) {
       result.urlPath = remainder;
-      result.urlTreeId = remainder.replace(/\#\/trees\/([a-f0-9\-]+)\/[0-9]+\/profile/, "$1");
-      result.urlProfileId = remainder.replace(/\#\/trees\/[a-f0-9\-]+\/([0-9]+)\/profile/, "$1");
+      result.urlTreeId = remainder.replace(/\#\/trees\/([a-f0-9\-]+)\/[0-9]+\/profile/i, "$1");
+      result.urlProfileId = remainder.replace(/\#\/trees\/[a-f0-9\-]+\/([0-9]+)\/profile/i, "$1");
       return true;
     }
     return false;
@@ -102,6 +102,12 @@ function extractUrlInfo(result, url) {
 
   result.urlPath = remainder.substring(0, queryIndex);
   result.urlParameters = remainder.substring(queryIndex + 1);
+
+  // It could still be a family tree found by searching family trees
+  if (remainder.startsWith("search-family-tree")) {
+    result.urlTreeId = result.urlParameters.replace(/.*id=([a-f0-9\-]+).*/i, "$1");
+    result.urlProfileId = result.urlParameters.replace(/.*ref=([a-f0-9\-]+).*/i, "$1");
+  }
 
   return true;
 }
@@ -606,6 +612,108 @@ function extractProfileData(document, result) {
   //console.log(result);
 }
 
+function extractReadOnlyProfileData(document, result) {
+  function extractName(article) {
+    let name = "";
+
+    let labelText = article.getAttribute("aria-label");
+    if (labelText) {
+      const prefix = "Tree node transcript for ";
+      if (labelText.startsWith(prefix)) {
+        name = labelText.substring(prefix.length);
+      }
+    }
+    return name;
+  }
+
+  function extractBirthFact(para) {
+    let datePara = para.nextSibling;
+    if (datePara) {
+      let blankPara = datePara.nextSibling;
+      if (blankPara) {
+        let placePara = blankPara.nextSibling;
+        if (placePara) {
+          result.birthDate = datePara.textContent;
+          result.birthPlace = placePara.textContent;
+        }
+      }
+    }
+  }
+
+  function extractDeathFact(para) {
+    let datePara = para.nextSibling;
+    if (datePara) {
+      let blankPara = datePara.nextSibling;
+      if (blankPara) {
+        let placePara = blankPara.nextSibling;
+        if (placePara) {
+          result.deathDate = datePara.textContent;
+          result.deathPlace = placePara.textContent;
+        }
+      }
+    }
+  }
+
+  function extractMarriageFact(para) {
+    let namePara = para.nextSibling;
+    if (namePara) {
+      let datePara = namePara.nextSibling;
+      if (datePara) {
+        let blankPara = datePara.nextSibling;
+        if (blankPara) {
+          let placePara = blankPara.nextSibling;
+          if (placePara) {
+            let spouse = {};
+            spouse.name = namePara.textContent;
+            spouse.marriageDate = datePara.textContent;
+            spouse.marriagePlace = placePara.textContent;
+            if (!result.spouses) {
+              result.spouses = [];
+            }
+            let isDuplicate = false;
+            for (let existingSpouse of result.spouses) {
+              if (
+                existingSpouse.name == spouse.name &&
+                existingSpouse.marriageDate == spouse.marriageDate &&
+                existingSpouse.marriagePlace == spouse.marriagePlace
+              ) {
+                isDuplicate = true;
+              }
+            }
+            if (!isDuplicate) {
+              result.spouses.push(spouse);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  let article = document.querySelector("#main > article");
+  if (!article) {
+    return;
+  }
+
+  let name = extractName(article);
+  if (name) {
+    result.fullName = name;
+  }
+
+  // find the birth section
+  let paras = article.querySelectorAll("div > div > div > div > div > div > div > div > div > p");
+  for (let para of paras) {
+    if (para.textContent == "Birth") {
+      extractBirthFact(para);
+    } else if (para.textContent == "Death") {
+      extractDeathFact(para);
+    } else if (para.textContent == "Marriage") {
+      extractMarriageFact(para);
+    }
+  }
+
+  result.success = true;
+}
+
 function extractStyle1TranscriptionData(document, result) {
   // the class names seem generated and may not be consistent
   // the attribute data-testid seems useful.
@@ -855,7 +963,12 @@ function extractData(document, url) {
       result = extractImageData(document, result);
     }
   } else if (result.urlTreeId && result.urlProfileId) {
-    extractProfileData(document, result);
+    // it is a tree but could either be an editable on or a view of someone else's
+    if (result.urlPath.startsWith("search-family-tree")) {
+      extractReadOnlyProfileData(document, result);
+    } else {
+      extractProfileData(document, result);
+    }
   } else {
     //console.log("FMP extractData, urlPath doesn't look like a valid page");
     isValidPath = false;

@@ -1,0 +1,31 @@
+{
+  "name": {
+    "name": "Joseph Rose"
+  },
+  "birthDate": {
+    "dateString": "1858"
+  },
+  "birthPlace": {
+    "placeString": "Chester, Cheshire"
+  },
+  "deathDate": {
+    "dateString": "10 Jun 1927"
+  },
+  "deathPlace": {
+    "placeString": "20 Tarvin Road, Chester"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Elizabeth Bentley"
+      },
+      "marriageDate": {
+        "dateString": "Oct 1884"
+      },
+      "marriagePlace": {
+        "placeString": "Birkenhead, Cheshire"
+      }
+    }
+  ],
+  "hasValidData": true
+}
