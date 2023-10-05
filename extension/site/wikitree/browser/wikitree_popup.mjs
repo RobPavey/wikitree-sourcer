@@ -47,6 +47,7 @@ import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 
 import { generalizeData } from "../core/wikitree_generalize_data.mjs";
+import { wtApiGetPerson, wtApiGetPeople } from "./wikitree_api.mjs";
 
 import { GeneralizedData, dateQualifiers } from "/base/core/generalize_data_utils.mjs";
 
@@ -54,6 +55,49 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
+
+var haveValidApiResponse = false;
+var apiResponse = undefined;
+
+async function makeApiRequests(extractedData) {
+  if (haveValidApiResponse) {
+    return;
+  }
+
+  if (extractedData.pageType == "editFamily") {
+    if (extractedData.familyMemberWikiId) {
+      let ids = extractedData.familyMemberWikiId;
+      if (extractedData.familyMemberSpouseWikiId) {
+        ids += "," + extractedData.familyMemberSpouseWikiId;
+      }
+      const fields = "Id,Gender,Name,FirstName,LastNameAtBirth";
+      wtApiGetPeople(ids, fields).then(
+        function handleResolve(jsonData) {
+          if (jsonData && jsonData.length > 0) {
+            haveValidApiResponse = true;
+            apiResponse = jsonData;
+          }
+        },
+        function handleReject(reason) {
+          // nothing to do here
+        }
+      );
+    }
+  } else {
+    const fields = "Id,Gender,Name,FirstName,LastNameAtBirth";
+    wtApiGetPerson(extractedData.wikiId, fields).then(
+      function handleResolve(jsonData) {
+        if (jsonData && jsonData.length > 0) {
+          haveValidApiResponse = true;
+          apiResponse = jsonData;
+        }
+      },
+      function handleReject(reason) {
+        // nothing to do here
+      }
+    );
+  }
+}
 
 function convertTimestampDiffToText(timeStamp) {
   if (!timeStamp) {
@@ -555,6 +599,20 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
   let personEd = personData.extractedData;
   let personGd = personData.generalizedData;
 
+  function getGenderFromApiResponse(wikiId) {
+    let apiIdObj = apiResponse[0].resultByKey[wikiId];
+    if (apiIdObj) {
+      let apiPerson = apiResponse[0].people[apiIdObj.Id];
+      if (apiPerson) {
+        if (apiPerson.Gender) {
+          return apiPerson.Gender;
+        }
+      }
+    }
+
+    return "";
+  }
+
   function getPageParentsForAddingChild(otherParentName, otherParentWikiId) {
     let parents = {};
     parents.genderKnown = false;
@@ -563,52 +621,92 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
     let pageParent2Name = otherParentName;
     let pageParent1WikiId = data.extractedData.familyMemberWikiId;
     let pageParent2WikiId = otherParentWikiId;
+    let pageParent1Gender = "";
+    let pageParent2Gender = "";
 
-    let parent1HasParen = false;
-    if (pageParent1Name) {
-      let birthName = pageParent1Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
-      if (birthName && birthName != pageParent1Name) {
-        pageParent1Name = birthName;
-        parent1HasParen = true;
+    if (haveValidApiResponse && apiResponse) {
+      //console.log("getWikiTreeEditFamilyData, apiResponse is:");
+      //console.log(apiResponse);
+
+      pageParent1Gender = getGenderFromApiResponse(pageParent1WikiId);
+      if (pageParent1Gender) {
+        parents.genderKnown = true;
+      }
+
+      if (pageParent2WikiId) {
+        pageParent2Gender = getGenderFromApiResponse(pageParent2WikiId);
+
+        if (pageParent2Gender) {
+          parents.genderKnown = true;
+        }
       }
     }
 
-    let parent2HasParen = false;
-    if (pageParent2Name) {
-      let birthName = pageParent2Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
-      if (birthName && birthName != pageParent2Name) {
-        pageParent2Name = birthName;
-        parent2HasParen = true;
+    if (!parents.genderKnown) {
+      let parent1HasParen = false;
+      if (pageParent1Name) {
+        let birthName = pageParent1Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
+        if (birthName && birthName != pageParent1Name) {
+          pageParent1Name = birthName;
+          parent1HasParen = true;
+        }
+      }
+
+      let parent2HasParen = false;
+      if (pageParent2Name) {
+        let birthName = pageParent2Name.replace(/^([^\(]+)\(([^\)]+)\)([^\(\)]+)$/, "$1$2");
+        if (birthName && birthName != pageParent2Name) {
+          pageParent2Name = birthName;
+          parent2HasParen = true;
+        }
+      }
+
+      if (pageParent1Name && pageParent2Name) {
+        if (parent1HasParen && !parent2HasParen) {
+          pageParent2Gender = "Male";
+          pageParent1Gender = "Female";
+          parents.genderKnown = true;
+        } else {
+          if (!parent1HasParen && parent2HasParen) {
+            parents.genderKnown = true;
+          }
+          pageParent1Gender = "Male";
+          pageParent2Gender = "Female";
+        }
+      } else if (pageParent1Name) {
+        if (parent1HasParen) {
+          pageParent1Gender = "Female";
+          parents.genderKnown = true;
+        } else {
+          pageParent1Gender = "Male";
+        }
       }
     }
 
     if (pageParent1Name && pageParent2Name) {
-      if (parent1HasParen && !parent2HasParen) {
-        parents.fatherName = pageParent2Name;
-        parents.fatherWikiId = pageParent2WikiId;
-        parents.motherName = pageParent1Name;
-        parents.motherWikiId = pageParent1WikiId;
-        parents.genderKnown = true;
-      } else {
-        if (!parent1HasParen && parent2HasParen) {
-          parents.genderKnown = true;
-        }
-
+      if (pageParent1Gender == "Male") {
         parents.fatherName = pageParent1Name;
         parents.fatherWikiId = pageParent1WikiId;
         parents.motherName = pageParent2Name;
         parents.motherWikiId = pageParent2WikiId;
-      }
-    } else if (pageParent1Name) {
-      if (parent1HasParen) {
+      } else {
+        parents.fatherName = pageParent2Name;
+        parents.fatherWikiId = pageParent2WikiId;
         parents.motherName = pageParent1Name;
         parents.motherWikiId = pageParent1WikiId;
-        parents.genderKnown = true;
-      } else {
+      }
+    } else if (pageParent1Name) {
+      if (pageParent1Gender == "Male") {
         parents.fatherName = pageParent1Name;
         parents.fatherWikiId = pageParent1WikiId;
+      } else {
+        parents.motherName = pageParent1Name;
+        parents.motherWikiId = pageParent1WikiId;
       }
     }
+
+    //console.log("getWikiTreeEditFamilyData, returning parents:");
+    //console.log(parents);
 
     return parents;
   }
@@ -1696,6 +1794,8 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
     }
     return;
   }
+
+  makeApiRequests(extractedData);
 
   // get generalized data
   let generalizedData = generalizeData({ extractedData: extractedData });
