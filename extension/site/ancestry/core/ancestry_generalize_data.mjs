@@ -1994,6 +1994,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "Arrival Year",
           "Date Received",
           "Passport Issue Date",
+          "Examination Date",
         ],
         "date"
       )
@@ -2045,7 +2046,7 @@ function generalizeDataGivenRecordType(ed, result) {
     result.setBirthDate(getCleanValueForRecordDataList(ed, ["Birth Date"], "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, ["Birth Place"]));
 
-    let ageAtEvent = getCleanValueForRecordDataList(ed, ["Age", "Departure Age", "Arrival Age"]);
+    let ageAtEvent = getCleanValueForRecordDataList(ed, ["Age", "Departure Age", "Arrival Age", "Examination Age"]);
     if (ageAtEvent) {
       result.ageAtEvent = ageAtEvent;
     }
