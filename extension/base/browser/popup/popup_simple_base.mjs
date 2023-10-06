@@ -67,7 +67,7 @@ async function simplePopupBuildCitation(data) {
     return;
   }
 
-  console.log("simplePopupBuildCitation");
+  //console.log("simplePopupBuildCitation");
 
   let householdTableString = buildHouseholdTableString(
     data.extractedData,
@@ -76,7 +76,7 @@ async function simplePopupBuildCitation(data) {
     simplePopupFunctions.buildHouseholdTableFunction
   );
 
-  console.log(householdTableString);
+  //console.log(householdTableString);
 
   doAsyncActionWithCatch("Building Citation", data, async function () {
     const input = {
@@ -103,7 +103,7 @@ async function simplePopupBuildCitation(data) {
 async function simplePopupBuildHouseholdTable(data) {
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
-    // console.log("simplePopupBuildHouseholdTable, waiting another 10ms")
+    //console.log("simplePopupBuildHouseholdTable, waiting another 10ms")
     setTimeout(function () {
       simplePopupBuildHouseholdTable(data);
     }, 10);

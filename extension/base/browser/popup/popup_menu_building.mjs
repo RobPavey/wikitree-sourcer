@@ -333,8 +333,6 @@ async function displayMessage(message1, message2) {
 }
 
 async function displayBusyMessage(message1, message2) {
-  console.log("displayBusyMessage, message = " + message1);
-
   let existingBusyContainer = document.getElementById("busyContainer");
   if (existingBusyContainer) {
     let messageLabel1 = document.getElementById("messageLabel1");
@@ -381,11 +379,8 @@ async function displayBusyMessage(message1, message2) {
 }
 
 async function displayBusyMessageAfterDelay(message1, message2) {
-  console.log("displayBusyMessageAfterDelay, message = " + message1);
-
   let existingBusyContainer = document.getElementById("busyContainer");
   if (existingBusyContainer) {
-    console.log("displayBusyMessageAfterDelay, already displayed");
     displayBusyMessage(message1, message2);
     return;
   }
@@ -394,16 +389,13 @@ async function displayBusyMessageAfterDelay(message1, message2) {
   waitingBusyMessage2 = message2;
 
   function displayBusyMessageIfNotCancelled() {
-    console.log("displayBusyMessageAfterDelay, waitingBusyMessage1 = " + waitingBusyMessage1);
     if (waitingBusyMessage1) {
-      console.log("displayBusyMessageAfterDelay, displaying after timeout");
       displayBusyMessage(waitingBusyMessage1, waitingBusyMessage2);
       waitingBusyMessage1 = "";
       waitingBusyMessage2 = "";
     }
   }
 
-  console.log("displayBusyMessageAfterDelay, starting timeout");
   setTimeout(displayBusyMessageIfNotCancelled, 100);
 }
 

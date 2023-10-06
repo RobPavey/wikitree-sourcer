@@ -178,7 +178,6 @@ var recordPageCache = undefined;
 async function getRecordPageCache() {
   if (!recordPageCache) {
     recordPageCache = {};
-    console.log("getRecordPageCache, calling getLocalStorageItem");
     let item = await getLocalStorageItem("ancestry_recordPageCache");
     if (item) {
       recordPageCache = item;
@@ -215,22 +214,14 @@ async function cacheRecordPage(cacheTag, recordUrl, result) {
 
 async function getCachedRecordPage(cacheTag, recordUrl) {
   let ancestryRecordPageCache = await getRecordPageCache();
-  console.log("getCachedRecordPage, cacheTag is: " + cacheTag + ", recordUrl is: " + recordUrl);
 
   if (cacheTag) {
-    console.log("getCachedRecordPage, ancestryRecordPageCache is:");
-    console.log(ancestryRecordPageCache);
-
     let cache = ancestryRecordPageCache[cacheTag];
-
-    console.log("getCachedRecordPage, cache is: ");
-    console.log(cache);
 
     if (cache && Array.isArray(cache) && cache.length > 0) {
       for (let index = cache.length - 1; index > 0; index--) {
         let cacheEntry = cache[index];
         if (cacheEntry.recordUrl == recordUrl) {
-          console.log("getCachedRecordPage, match found");
           return cacheEntry.result;
         }
       }
