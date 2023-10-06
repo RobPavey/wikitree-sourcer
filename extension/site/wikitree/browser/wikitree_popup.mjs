@@ -86,6 +86,10 @@ async function makeApiRequests(extractedData) {
       );
     }
   } else {
+    /*
+      Currently we only use waitForAPIResponse in the EditFamily case
+      so no need to request API data for any other case until we have a use for it.
+
     const fields = "Id,Gender,Name,FirstName,LastNameAtBirth";
     wtApiGetPerson(extractedData.wikiId, fields).then(
       function handleResolve(jsonData) {
@@ -99,6 +103,7 @@ async function makeApiRequests(extractedData) {
         // nothing to do here
       }
     );
+    */
   }
 }
 
