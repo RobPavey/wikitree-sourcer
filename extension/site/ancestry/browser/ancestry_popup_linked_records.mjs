@@ -22,12 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  displayMessage,
-  displayMessageWithIcon,
-  keepPopupOpenForDebug,
-} from "/base/browser/popup/popup_menu_building.mjs";
-
 import { extractRecord } from "../core/ancestry_extract_data.mjs";
 
 import { extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
@@ -134,7 +128,7 @@ async function getDataForLinkedHouseholdRecords(data, processfunction) {
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.link, name: name, cacheTage: "" });
+        linkedRecords.push({ link: member.link, name: name, cacheTag: "Household" });
       }
     }
   }
@@ -234,7 +228,7 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction) {
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.link, name: name, cacheTage: "" });
+        linkedRecords.push({ link: member.link, name: name, cacheTag: "Household" });
       }
     }
   }

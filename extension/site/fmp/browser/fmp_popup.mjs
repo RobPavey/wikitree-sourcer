@@ -29,7 +29,7 @@ import {
   addMenuItem,
   addMenuDivider,
   beginMainMenu,
-  displayMessage,
+  displayBusyMessage,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
@@ -137,7 +137,7 @@ function addFmpBuildHouseholdTableMenuItem(menu, data) {
       );
     } else {
       addMenuItem(menu, "Build Household Table", function (element) {
-        displayMessage("Building table...");
+        displayBusyMessage("Building table...");
         fmpBuildHouseholdTable(data);
       });
     }

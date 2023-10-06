@@ -96,7 +96,14 @@ function isFirefox() {
   return isFirefoxBrowser;
 }
 
+// used for delayed busy message
+var waitingBusyMessage1 = "";
+var waitingBusyMessage2 = "";
+
 function emptyMenu() {
+  waitingBusyMessage1 = "";
+  waitingBusyMessage2 = "";
+
   let menuElement = document.getElementById("menu");
 
   while (menuElement.firstChild) {
@@ -325,6 +332,81 @@ async function displayMessage(message1, message2) {
   document.getElementById("menu").appendChild(fragment);
 }
 
+async function displayBusyMessage(message1, message2) {
+  console.log("displayBusyMessage, message = " + message1);
+
+  let existingBusyContainer = document.getElementById("busyContainer");
+  if (existingBusyContainer) {
+    let messageLabel1 = document.getElementById("messageLabel1");
+    let messageLabel2 = document.getElementById("messageLabel2");
+
+    if (messageLabel1) {
+      messageLabel1.innerText = message1;
+    }
+
+    if (messageLabel2) {
+      messageLabel2.innerText = message2;
+    }
+    return;
+  }
+
+  emptyMenu();
+
+  let fragment = document.createDocumentFragment();
+
+  let busy = document.createElement("div");
+  busy.id = "busyContainer";
+  busy.className = "busyContainer";
+  fragment.appendChild(busy);
+
+  let loader = document.createElement("div");
+  loader.className = "spinner";
+  busy.appendChild(loader);
+
+  let label = document.createElement("label");
+  label.className = "messageLabel";
+  label.id = "messageLabel1";
+  label.innerText = message1;
+  fragment.appendChild(label);
+
+  if (message2) {
+    let label2 = document.createElement("label");
+    label2.className = "messageLabel";
+    label2.id = "messageLabel2";
+    label2.innerText = message2;
+    fragment.appendChild(label2);
+  }
+
+  document.getElementById("menu").appendChild(fragment);
+}
+
+async function displayBusyMessageAfterDelay(message1, message2) {
+  console.log("displayBusyMessageAfterDelay, message = " + message1);
+
+  let existingBusyContainer = document.getElementById("busyContainer");
+  if (existingBusyContainer) {
+    console.log("displayBusyMessageAfterDelay, already displayed");
+    displayBusyMessage(message1, message2);
+    return;
+  }
+
+  waitingBusyMessage1 = message1;
+  waitingBusyMessage2 = message2;
+
+  function displayBusyMessageIfNotCancelled() {
+    console.log("displayBusyMessageAfterDelay, waitingBusyMessage1 = " + waitingBusyMessage1);
+    if (waitingBusyMessage1) {
+      console.log("displayBusyMessageAfterDelay, displaying after timeout");
+      displayBusyMessage(waitingBusyMessage1, waitingBusyMessage2);
+      waitingBusyMessage1 = "";
+      waitingBusyMessage2 = "";
+    }
+  }
+
+  console.log("displayBusyMessageAfterDelay, starting timeout");
+  setTimeout(displayBusyMessageIfNotCancelled, 100);
+}
+
 async function displayMessageThenClosePopup(message1, message2) {
   displayMessage(message1, message2);
 
@@ -341,6 +423,23 @@ async function displayMessageWithIconThenClosePopup(iconType, message1, message2
   }, 10000);
 }
 
+function addMenuTitle(menu) {
+  // create a list item and add it to the list
+  let listItem = document.createElement("li");
+  listItem.className = "menuItem";
+
+  let label = document.createElement("label");
+  label.className = "menuTitle";
+  label.innerText = "WikiTree Sourcer";
+  listItem.appendChild(label);
+
+  let sup = document.createElement("sup");
+  sup.innerText = "\u00A0[1]";
+  label.appendChild(sup);
+
+  menu.list.appendChild(listItem);
+}
+
 function beginMainMenu() {
   emptyMenu();
 
@@ -349,12 +448,16 @@ function beginMainMenu() {
   list.className = "list";
   fragment.appendChild(list);
 
-  return {
+  let menu = {
     fragment: fragment,
     list: list,
     dividerOnNext: false,
     numNavItems: 0,
   };
+
+  addMenuTitle(menu);
+
+  return menu;
 }
 
 function endMainMenu(menu) {
@@ -379,7 +482,7 @@ function setMenuItemClassName(menu, element, mainClassName) {
 }
 
 async function openExceptionPage(message, input, error, requestReport) {
-  displayMessage("An error occurred. Gathering more debug information ...");
+  displayBusyMessage("An error occurred. Gathering more debug information ...");
 
   let errorName = "";
   let errorMessage = "";
@@ -421,7 +524,7 @@ async function openExceptionPage(message, input, error, requestReport) {
 
 async function doAsyncActionWithCatch(actionText, input, actionFunc) {
   if (actionText) {
-    displayMessage(actionText + " ...");
+    displayBusyMessage(actionText + " ...");
   }
   try {
     await actionFunc();
@@ -1061,7 +1164,7 @@ function addBuildCitationMenuItem(
     });
   } else {
     addMenuItem(menu, menuText, function (element) {
-      displayMessage("Building citation...");
+      displayBusyMessage("Building citation...");
       buildFunction(input);
     });
   }
@@ -1462,6 +1565,8 @@ export {
   endMainMenu,
   closePopup,
   displayMessage,
+  displayBusyMessage,
+  displayBusyMessageAfterDelay,
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
   displayMessageThenClosePopup,

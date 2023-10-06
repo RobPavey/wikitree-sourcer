@@ -29,7 +29,7 @@ import {
   addMenuItem,
   addMenuDivider,
   beginMainMenu,
-  displayMessage,
+  displayBusyMessage,
   doAsyncActionWithCatch,
   closePopup,
   keepPopupOpenForDebug,
@@ -256,7 +256,7 @@ async function fsGetAllCitationsForSavePersonData(data) {
     input.options = options;
     input.runDate = new Date();
 
-    displayMessage("Getting sources...");
+    displayBusyMessage("Getting sources...");
     let response = await fsGetAllCitations(input);
 
     if (response.success) {
@@ -287,7 +287,7 @@ function addFsBuildHouseholdTableMenuItem(menu, data) {
 
   if (fieldNames && objectArray) {
     addMenuItem(menu, "Build Household Table", function (element) {
-      displayMessage("Building table...");
+      displayBusyMessage("Building table...");
       fsBuildHouseholdTable(data);
     });
   }
@@ -317,13 +317,13 @@ function addBuildBookCitationMenuItems(menu, data) {
     let input = Object.assign({}, data);
     input.type = "inline";
 
-    displayMessage("Building citation...");
+    displayBusyMessage("Building citation...");
     fsBuildCitation(input);
   });
   addMenuItem(menu, "Build Source Citation", function (element) {
     let input = Object.assign({}, data);
     input.type = "source";
-    displayMessage("Building citation...");
+    displayBusyMessage("Building citation...");
     fsBuildCitation(input);
   });
 }
@@ -331,7 +331,7 @@ function addBuildBookCitationMenuItems(menu, data) {
 function addSaveAllCitationsMenuItem(menu, data) {
   if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
     addMenuItem(menu, "Build All Citations", function (element) {
-      displayMessage("Getting sources...");
+      displayBusyMessage("Getting sources...");
       fsGetAllCitationsAction(data);
     });
   }

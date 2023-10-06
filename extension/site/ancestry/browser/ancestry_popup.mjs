@@ -30,7 +30,8 @@ import {
   addMenuDivider,
   addItalicMessageMenuItem,
   beginMainMenu,
-  displayMessage,
+  displayBusyMessage,
+  displayBusyMessageAfterDelay,
   displayMessageWithIcon,
   doAsyncActionWithCatch,
   closePopup,
@@ -118,7 +119,7 @@ function displayPrefetchWaitingMessage(baseMessage, isRequired) {
       message += "WikiTree Sourcer will proceed without the sharing data.\n";
     }
 
-    displayMessage(message);
+    displayBusyMessage(message);
   }
 }
 
@@ -464,7 +465,7 @@ function ancestryGoToFullSizeSharingImage(data) {
 
 async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalExtractedData) {
   //console.log("extractRecordFromUrlFromPersonSourceCitation");
-  displayMessage("WikiTree Sourcer fetching full record page ...\n(This might take several seconds)");
+  displayBusyMessageAfterDelay("WikiTree Sourcer fetching full record page ...\n(This might take several seconds)");
 
   let extractResult = await extractRecordHtmlFromUrl(recordUrl, "Full");
 
@@ -496,7 +497,7 @@ function addAncestryBuildSharingTemplateMenuItem(menu, data) {
     return;
   }
   addMenuItem(menu, "Build Sharing Template", function (element) {
-    displayMessage("Building sharing template...");
+    displayBusyMessage("Building sharing template...");
     ancestryBuildSharingTemplate(data.extractedData);
   });
 }
@@ -506,7 +507,7 @@ function addAncestryBuildSharingUrlMenuItem(menu, data) {
     return;
   }
   addMenuItem(menu, "Build Sharing URL", function (element) {
-    displayMessage("Building sharing URL...");
+    displayBusyMessage("Building sharing URL...");
     ancestryBuildSharingUrl(data.extractedData);
   });
 }
@@ -514,7 +515,7 @@ function addAncestryBuildSharingUrlMenuItem(menu, data) {
 function addAncestryBuildHouseholdTableMenuItem(menu, data) {
   if (data.generalizedData.hasHouseholdTable()) {
     addMenuItem(menu, "Build Household Table", function (element) {
-      displayMessage("Building table...");
+      displayBusyMessage("Building table...");
       ancestryBuildHouseholdTable(data);
     });
   }
@@ -546,7 +547,7 @@ function addAncestryImageBuildCitationMenuItems(menu, data) {
     menu,
     "Build Inline Image Citation",
     function (element) {
-      displayMessage("Building citation...");
+      displayBusyMessage("Building citation...");
       data.type = "inline";
       ancestryBuildCitation(data);
     },
@@ -556,7 +557,7 @@ function addAncestryImageBuildCitationMenuItems(menu, data) {
     menu,
     "Build Source Image Citation",
     function (element) {
-      displayMessage("Building citation...");
+      displayBusyMessage("Building citation...");
       data.type = "source";
       ancestryBuildCitation(data);
     },
@@ -569,7 +570,7 @@ function addAncestrySharingPageBuildCitationMenuItems(menu, data) {
     menu,
     "Build Inline Citation",
     function (element) {
-      displayMessage("Building citation...");
+      displayBusyMessage("Building citation...");
       data.type = "inline";
       ancestryBuildCitationWithLinkData(data); // avoid prefetch
     },
@@ -579,7 +580,7 @@ function addAncestrySharingPageBuildCitationMenuItems(menu, data) {
     menu,
     "Build Source Citation",
     function (element) {
-      displayMessage("Building citation...");
+      displayBusyMessage("Building citation...");
       data.type = "source";
       ancestryBuildCitationWithLinkData(data); // avoid prefetch
     },

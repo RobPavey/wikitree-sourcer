@@ -30,7 +30,7 @@ import {
   addMenuItem,
   addItalicMessageMenuItem,
   setPopupMenuWidth,
-  displayMessage,
+  displayBusyMessageAfterDelay,
   macSecondMonitorWorkaround,
   openExceptionPage,
   displayMessageWithIcon,
@@ -145,7 +145,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
         return;
       }
 
-      displayMessage("WikiTree Sourcer initializing menu ...");
+      displayBusyMessageAfterDelay("WikiTree Sourcer initializing menu ...");
 
       //console.log("setupMenuBasedOnContent, chrome.runtime.lastError is:");
       //console.log(chrome.runtime.lastError);
@@ -171,7 +171,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             let timeWaited = (numRetriesToMessageContent * retryDelay) / 1000;
             if (timeWaited > 1) {
               let timeWaitedString = timeWaited.toFixed(2) + " seconds";
-              displayMessage(
+              displayBusyMessage(
                 "WikiTree Sourcer is waiting for the page to respond...\nTab still not responding after " +
                   timeWaitedString
               );
@@ -215,7 +215,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             let timeWaited = (numRetriesToExtractContent * retryDelay) / 1000;
             if (timeWaited > 1) {
               let timeWaitedString = timeWaited.toFixed(2) + " seconds";
-              displayMessage(
+              displayBusyMessage(
                 "WikiTree Sourcer is waiting for the data to be available...\nTab seems incomplete after " +
                   timeWaitedString
               );
@@ -429,10 +429,10 @@ async function initPopupGivenActiveTab(activeTab, options, siteName, menuSetupFu
 
 async function callFunctionWithActiveTab(func) {
   //console.log("callFunctionWithActiveTab");
-  //displayMessage("WikiTree Sourcer initializing menu ...\ncallFunctionWithActiveTab");
+  //displayBusyMessage("WikiTree Sourcer initializing menu ...\ncallFunctionWithActiveTab");
 
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    //displayMessage("WikiTree Sourcer initializing menu ...\ncallFunctionWithActiveTab, got tab");
+    //displayBusyMessage("WikiTree Sourcer initializing menu ...\ncallFunctionWithActiveTab, got tab");
     //console.log("callFunctionWithActiveTab, got tab");
     if (tabs && tabs.length > 0 && tabs[0]) {
       func(tabs[0]);
@@ -449,7 +449,7 @@ function initPopupInternal(siteName, menuSetupFunction) {
   macSecondMonitorWorkaround();
   setPopupMenuWidth();
 
-  displayMessage("WikiTree Sourcer initializing menu ...");
+  displayBusyMessageAfterDelay("WikiTree Sourcer initializing menu ...");
 
   // first get the options, then setup menu
   callFunctionWithStoredOptions(function (options) {

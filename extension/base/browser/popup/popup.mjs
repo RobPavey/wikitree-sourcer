@@ -27,7 +27,7 @@ import { separateUrlIntoParts } from "./popup_utils.mjs";
 
 import {
   setPopupMenuWidth,
-  displayMessage,
+  displayBusyMessage,
   displayMessageWithIcon,
   macSecondMonitorWorkaround,
   openExceptionPage,
@@ -303,7 +303,7 @@ function initPopup() {
   setPopupMenuWidth();
 
   //console.log("WikiTree Sourcer: popup.mjs: initPopup");
-  displayMessage("WikiTree Sourcer initializing menu ...");
+  displayBusyMessage("WikiTree Sourcer initializing menu ...");
 
   initPopupWithActiveTab();
 }

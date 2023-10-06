@@ -29,7 +29,7 @@ import {
   addMenuDivider,
   addMenuItem,
   beginMainMenu,
-  displayMessage,
+  displayBusyMessage,
   doAsyncActionWithCatch,
   openExceptionPage,
 } from "/base/browser/popup/popup_menu_building.mjs";
@@ -143,7 +143,7 @@ function addBuildHouseholdTableMenuItem(menu, data) {
 
   if (fieldNames && objectArray) {
     addMenuItem(menu, "Build Household Table", function (element) {
-      displayMessage("Building table...");
+      displayBusyMessage("Building table...");
       simplePopupBuildHouseholdTable(data);
     });
   }

@@ -32,7 +32,7 @@ import {
   addBackMenuItem,
   addMenuDivider,
   addBreak,
-  displayMessage,
+  displayBusyMessage,
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
   closePopup,
@@ -58,6 +58,7 @@ import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 var haveValidApiResponse = false;
 var apiResponse = undefined;
+var timeApiRequestMade = undefined;
 
 async function makeApiRequests(extractedData) {
   if (haveValidApiResponse) {
@@ -76,6 +77,7 @@ async function makeApiRequests(extractedData) {
           if (jsonData && jsonData.length > 0) {
             haveValidApiResponse = true;
             apiResponse = jsonData;
+            timeApiRequestMade = Date.now();
           }
         },
         function handleReject(reason) {
@@ -90,6 +92,7 @@ async function makeApiRequests(extractedData) {
         if (jsonData && jsonData.length > 0) {
           haveValidApiResponse = true;
           apiResponse = jsonData;
+          timeApiRequestMade = Date.now();
         }
       },
       function handleReject(reason) {
@@ -97,6 +100,36 @@ async function makeApiRequests(extractedData) {
       }
     );
   }
+}
+
+function waitForAPIResponse() {
+  const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+
+  return new Promise(async (resolve, reject) => {
+    if (haveValidApiResponse) {
+      resolve(apiResponse);
+      return;
+    }
+
+    if (!timeApiRequestMade) {
+      resolve(undefined);
+      return;
+    }
+
+    let timeWaited = Date.now() - timeApiRequestMade;
+
+    while (timeWaited < 1000 && !haveValidApiResponse) {
+      await sleep(10);
+      timeWaited = Date.now() - timeApiRequestMade;
+    }
+
+    if (haveValidApiResponse) {
+      resolve(apiResponse);
+      return;
+    }
+
+    resolve(undefined);
+  });
 }
 
 function convertTimestampDiffToText(timeStamp) {
@@ -624,7 +657,9 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
     let pageParent1Gender = "";
     let pageParent2Gender = "";
 
-    if (haveValidApiResponse && apiResponse) {
+    waitForAPIResponse();
+
+    if (apiResponse) {
       //console.log("getWikiTreeEditFamilyData, apiResponse is:");
       //console.log(apiResponse);
 
@@ -1114,7 +1149,7 @@ async function doSetFieldsFromPersonData(tabId, wtPersonData) {
     //console.log(wtPersonData);
 
     chrome.tabs.sendMessage(tabId, { type: "setFields", personData: wtPersonData }, function (response) {
-      displayMessage("Setting fields ...");
+      displayBusyMessage("Setting fields ...");
 
       //console.log("doSetFieldsFromPersonData, chrome.runtime.lastError is:");
       //console.log(chrome.runtime.lastError);
@@ -1147,6 +1182,8 @@ async function doSetFieldsFromPersonData(tabId, wtPersonData) {
 }
 
 async function setFieldsFromPersonData(data, personData, tabId, citationObject, backFunction) {
+  displayBusyMessage("Setting fields ...");
+
   let wtPersonData = getWikiTreeEditFamilyData(data, personData, citationObject);
 
   function processFunction() {

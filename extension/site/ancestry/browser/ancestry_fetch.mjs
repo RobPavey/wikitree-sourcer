@@ -173,18 +173,71 @@ async function fetchAncestrySharingDataObj(ed) {
   return result;
 }
 
+var recordPageCache = undefined;
+
 async function getRecordPageCache() {
-  let recordPageCache = {};
-  let item = await getLocalStorageItem("ancestry_recordPageCache");
-  if (item) {
-    recordPageCache = item;
+  if (!recordPageCache) {
+    recordPageCache = {};
+    console.log("getRecordPageCache, calling getLocalStorageItem");
+    let item = await getLocalStorageItem("ancestry_recordPageCache");
+    if (item) {
+      recordPageCache = item;
+    }
   }
   return recordPageCache;
 }
 
+const maxCacheLength = 30;
+
 async function setRecordPageCache(recordPageCache) {
   let items = { ancestry_recordPageCache: recordPageCache };
   chrome.storage.local.set(items);
+}
+
+async function cacheRecordPage(cacheTag, recordUrl, result) {
+  if (cacheTag) {
+    let ancestryRecordPageCache = await getRecordPageCache();
+
+    let existingCache = ancestryRecordPageCache[cacheTag];
+    if (existingCache && Array.isArray(existingCache)) {
+      if (existingCache.length >= maxCacheLength) {
+        existingCache.shift(); // remove the first element
+      }
+      existingCache.push({ recordUrl: recordUrl, result: result });
+    } else {
+      let cache = [{ recordUrl: recordUrl, result: result }];
+      ancestryRecordPageCache[cacheTag] = cache;
+    }
+
+    setRecordPageCache(ancestryRecordPageCache);
+  }
+}
+
+async function getCachedRecordPage(cacheTag, recordUrl) {
+  let ancestryRecordPageCache = await getRecordPageCache();
+  console.log("getCachedRecordPage, cacheTag is: " + cacheTag + ", recordUrl is: " + recordUrl);
+
+  if (cacheTag) {
+    console.log("getCachedRecordPage, ancestryRecordPageCache is:");
+    console.log(ancestryRecordPageCache);
+
+    let cache = ancestryRecordPageCache[cacheTag];
+
+    console.log("getCachedRecordPage, cache is: ");
+    console.log(cache);
+
+    if (cache && Array.isArray(cache) && cache.length > 0) {
+      for (let index = cache.length - 1; index > 0; index--) {
+        let cacheEntry = cache[index];
+        if (cacheEntry.recordUrl == recordUrl) {
+          console.log("getCachedRecordPage, match found");
+          return cacheEntry.result;
+        }
+      }
+    }
+  }
+
+  return undefined;
 }
 
 async function fetchAncestryRecordPage(recordUrl, cacheTag) {
@@ -195,21 +248,9 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
   }
 
   try {
-    let ancestryRecordPageCache = await getRecordPageCache();
-    //console.log("fetchAncestryRecordPage, cacheTag is: " + cacheTag);
-
-    if (cacheTag) {
-      //console.log("fetchAncestryRecordPage, ancestryRecordPageCache is:");
-      //console.log(ancestryRecordPageCache);
-
-      let cache = ancestryRecordPageCache[cacheTag];
-
-      //console.log("fetchAncestryRecordPage, cache is: ");
-      //console.log(cache);
-
-      if (cache && cache.recordUrl == recordUrl) {
-        return cache.result;
-      }
+    let cachedResult = await getCachedRecordPage(cacheTag, recordUrl);
+    if (cachedResult) {
+      return cachedResult;
     }
 
     let mode = "cors";
@@ -276,11 +317,7 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
     //console.log("result is: ");
     //console.log(result);
 
-    if (cacheTag) {
-      let cache = { recordUrl: recordUrl, result: result };
-      ancestryRecordPageCache[cacheTag] = cache;
-      setRecordPageCache(ancestryRecordPageCache);
-    }
+    cacheRecordPage(cacheTag, recordUrl, result);
   } catch (error) {
     console.log("WikiTree Sourcer:: fetchAncestryRecordPage, failed. Error message is: " + error.message);
   }

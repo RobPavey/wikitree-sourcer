@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { displayMessage } from "/base/browser/popup/popup_menu_building.mjs";
+import { displayBusyMessage } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 
@@ -99,7 +99,7 @@ async function fsGetAllCitations(input) {
   let retryCount = 0;
   while (retryCount < 3 && !sourcesObj.success && sourcesObj.allowRetry) {
     retryCount++;
-    displayMessage("Getting sources, retry " + retryCount + " ...");
+    displayBusyMessage("Getting sources, retry " + retryCount + " ...");
     sourcesObj = await fetchFsSourcesJson(ed.sourceIds);
   }
 

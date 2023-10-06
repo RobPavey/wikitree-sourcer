@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { displayMessage, displayMessageWithIcon } from "/base/browser/popup/popup_menu_building.mjs";
+import { displayBusyMessage, displayMessageWithIcon } from "/base/browser/popup/popup_menu_building.mjs";
 
 var requestsTracker = {
   requestStates: [],
@@ -47,7 +47,7 @@ function displayStatusMessage() {
   for (let requestState of requestsTracker.requestStates) {
     message += "\n'" + requestState.request.name + "' " + requestState.status;
   }
-  displayMessage(message);
+  displayBusyMessage(message);
 }
 
 function parallelRequestsDisplayErrorsMessage(actionName) {
@@ -155,6 +155,7 @@ function doRequestsInParallel(requests, requestFunction) {
   for (let request of requests) {
     let requestState = {
       request: request,
+      status: "initilaizing...",
     };
     requestsTracker.requestStates.push(requestState);
   }
