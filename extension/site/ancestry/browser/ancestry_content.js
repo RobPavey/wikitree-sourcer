@@ -28,7 +28,7 @@ siteContentInit(`ancestry`, `site/ancestry/core/ancestry_extract_data.mjs`);
 // All code below this is for editing the citation on an image page
 ////////////////////////////////////////////////////////////////////////////////
 
-// we store this in a glabal, the text is in the edit box but we need to remember the
+// we store this in a global, the text is in the edit box but we need to remember the
 // whole citation to save it - I guess we could reload it on save but this seems better.
 var lastCitationObject = undefined;
 

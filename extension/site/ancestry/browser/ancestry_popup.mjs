@@ -42,6 +42,7 @@ import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/p
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
 import {
+  clearCitation,
   saveCitation,
   doesCitationWantHouseholdTable,
   buildHouseholdTableString,
@@ -51,7 +52,7 @@ import {
 import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
+import { writeToClipboard, clearClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 
 import {
   extractDataFromHtml,
@@ -231,6 +232,8 @@ async function ancestryBuildCitationWithLinkData(data) {
 }
 
 async function ancestryBuildCitation(data) {
+  clearCitation();
+
   if (!ancestryPrefetch.areBuildCitationDependenciesReady) {
     // dependencies not ready, wait a few milliseconds and try again
     console.log("ancestryBuildCitation, waiting another 10ms");
@@ -254,6 +257,8 @@ async function ancestryBuildCitation(data) {
 }
 
 async function ancestryBuildSharingTemplate(extractedData) {
+  clearClipboard();
+
   if (!ancestryPrefetch.areBuildSharingDependenciesReady) {
     // dependencies not ready, wait a few milliseconds and try again
     console.log("ancestryBuildSharingTemplate, waiting another 10ms");
@@ -304,6 +309,8 @@ async function ancestryBuildSharingTemplate(extractedData) {
 }
 
 async function ancestryBuildSharingUrl(extractedData) {
+  clearClipboard();
+
   if (!ancestryPrefetch.areBuildSharingDependenciesReady) {
     // dependencies not ready, wait a few milliseconds and try again
     console.log("ancestryBuildSharingUrl, waiting another 10ms");
@@ -345,6 +352,8 @@ async function ancestryBuildSharingUrl(extractedData) {
 }
 
 async function ancestryBuildHouseholdTableWithLinkedRecords(data) {
+  clearClipboard();
+
   // if there are linked records then add that data to the generalized data
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {

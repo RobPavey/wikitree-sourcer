@@ -31,7 +31,7 @@ import {
   shouldPopupWindowResize,
 } from "./popup_menu_building.mjs";
 
-import { writeToClipboard } from "./popup_clipboard.mjs";
+import { writeToClipboard, clearClipboard } from "./popup_clipboard.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -50,6 +50,13 @@ async function getLatestCitation() {
     } catch (ex) {
       reject(ex);
     }
+  });
+}
+
+async function clearCitation() {
+  clearClipboard();
+  chrome.storage.local.remove("latestCitation", function () {
+    //console.log("latestCitation is removed");
   });
 }
 
@@ -227,6 +234,7 @@ function buildCitationObjectForTable(extractedData, generalizedData, sharingData
 }
 
 export {
+  clearCitation,
   saveCitation,
   addEditCitationMenuItem,
   getLatestCitation,

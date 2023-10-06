@@ -170,4 +170,13 @@ async function writeToClipboard(text, objectName, internalSave, extraMessage = "
   }
 }
 
-export { writeToClipboard };
+async function clearClipboard() {
+  try {
+    await navigator.clipboard.writeText("");
+  } catch (error) {
+    console.log("Clipboard clear failed.");
+    console.log(error);
+  }
+}
+
+export { writeToClipboard, clearClipboard };

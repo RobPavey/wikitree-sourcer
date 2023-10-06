@@ -36,6 +36,7 @@ import {
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import {
+  clearCitation,
   saveCitation,
   buildHouseholdTableString,
   buildCitationObjectForTable,
@@ -46,7 +47,7 @@ import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
+import { writeToClipboard, clearClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
 import { generalizeData, generalizeDataGivenRecordType } from "../core/fmp_generalize_data.mjs";
@@ -58,6 +59,8 @@ import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function fmpBuildCitation(data) {
+  clearCitation();
+
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
     // console.log("fmpBuildCitation, waiting another 10ms")
@@ -94,6 +97,8 @@ async function fmpBuildCitation(data) {
 }
 
 async function fmpBuildHouseholdTable(data) {
+  clearClipboard();
+
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
     console.log("fmpBuildHouseholdTable, waiting another 10ms");

@@ -47,6 +47,9 @@ async function getLatestPersonData() {
 }
 
 async function savePersonData(data, getAllCitationsFunction) {
+  // clear the current save in case the user clicks away while awaiting getAllCitationsFunction
+  chrome.storage.local.remove("latestPersonData");
+
   if (getAllCitationsFunction) {
     if (options.addMerge_addPerson_includeAllCitations || options.addMerge_mergeEdit_includeAllCitations) {
       let response = await getAllCitationsFunction(data);

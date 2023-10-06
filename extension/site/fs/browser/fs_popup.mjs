@@ -45,6 +45,7 @@ import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
 
 import {
+  clearCitation,
   saveCitation,
   buildHouseholdTableString,
   buildCitationObjectForTable,
@@ -53,7 +54,7 @@ import { getDefaultOptions } from "/base/core/options/options_database.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
+import { writeToClipboard, clearClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
 import { generalizeData, generalizeDataGivenRecordType } from "../core/fs_generalize_data.mjs";
@@ -67,6 +68,8 @@ import { fsGetAllCitations } from "./fs_get_all_citations.mjs";
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function fsBuildCitation(data) {
+  clearCitation();
+
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
     //console.log("fsBuildCitation, waiting another 10ms")
@@ -103,6 +106,8 @@ async function fsBuildCitation(data) {
 }
 
 async function fsBuildHouseholdTable(data) {
+  clearClipboard();
+
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
     console.log("fsBuildHouseholdTable, waiting another 10ms");
@@ -191,6 +196,8 @@ async function fsSaveUnitTestDataForAllCitations(input, response) {
 
 async function fsGetAllCitationsAction(data) {
   try {
+    clearClipboard();
+
     let input = Object.assign({}, data);
     input.options = options;
     input.runDate = new Date();

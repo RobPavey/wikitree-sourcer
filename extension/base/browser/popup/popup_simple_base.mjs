@@ -37,6 +37,7 @@ import {
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import {
+  clearCitation,
   saveCitation,
   buildHouseholdTableString,
   buildCitationObjectForTable,
@@ -46,7 +47,7 @@ import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
+import { writeToClipboard, clearClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 
 var simplePopupFunctions = {
   buildCitationFunction: undefined,
@@ -58,6 +59,8 @@ var simplePopupFunctions = {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function simplePopupBuildCitation(data) {
+  clearCitation();
+
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
     //console.log("simplePopupBuildCitation, waiting another 10ms")
@@ -101,6 +104,8 @@ async function simplePopupBuildCitation(data) {
 }
 
 async function simplePopupBuildHouseholdTable(data) {
+  clearClipboard();
+
   if (!isCachedDataCacheReady) {
     // dependencies not ready, wait a few milliseconds and try again
     //console.log("simplePopupBuildHouseholdTable, waiting another 10ms")
