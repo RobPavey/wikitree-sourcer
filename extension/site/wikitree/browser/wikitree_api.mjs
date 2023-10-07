@@ -55,7 +55,7 @@ function wtApiGetPerson(id, fields) {
     action: "getPerson",
     key: id,
     fields: fields,
-    appId: "WBE",
+    appId: "Sourcer",
   });
 
   return wtApiCall(body);
@@ -66,7 +66,7 @@ function wtApiGetPeople(ids, fields) {
     action: "getPeople",
     keys: ids,
     fields: fields,
-    appId: "WBE",
+    appId: "Sourcer",
   });
 
   return wtApiCall(body);
