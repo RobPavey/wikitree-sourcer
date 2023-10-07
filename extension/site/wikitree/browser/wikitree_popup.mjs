@@ -47,7 +47,7 @@ import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 
 import { generalizeData } from "../core/wikitree_generalize_data.mjs";
-import { wtApiGetPerson, wtApiGetPeople } from "./wikitree_api.mjs";
+import { wtApiGetRelatives, wtApiGetPeople } from "./wikitree_api.mjs";
 
 import { GeneralizedData, dateQualifiers } from "/base/core/generalize_data_utils.mjs";
 
@@ -80,13 +80,13 @@ async function makeApiRequests(extractedData) {
         }
       }
 
+      timeApiRequestMade = Date.now();
       const fields = "Id,Gender,Name,FirstName,MiddleName,LastNameAtBirth";
       wtApiGetPeople(ids, fields).then(
         function handleResolve(jsonData) {
           if (jsonData && jsonData.length > 0) {
             haveValidApiResponse = true;
             apiResponse = jsonData;
-            timeApiRequestMade = Date.now();
           }
         },
         function handleReject(reason) {
@@ -95,24 +95,19 @@ async function makeApiRequests(extractedData) {
       );
     }
   } else {
-    /*
-      Currently we only use waitForAPIResponse in the EditFamily case
-      so no need to request API data for any other case until we have a use for it.
-
-    const fields = "Id,Gender,Name,FirstName,LastNameAtBirth";
-    wtApiGetPerson(extractedData.wikiId, fields).then(
+    timeApiRequestMade = Date.now();
+    const fields = "Id,Gender,Name,FirstName,MiddleName,LastNameAtBirth,LastNameCurrent";
+    wtApiGetRelatives(extractedData.wikiId, fields, true, false, false, true).then(
       function handleResolve(jsonData) {
         if (jsonData && jsonData.length > 0) {
           haveValidApiResponse = true;
           apiResponse = jsonData;
-          timeApiRequestMade = Date.now();
         }
       },
       function handleReject(reason) {
         // nothing to do here
       }
     );
-    */
   }
 }
 
@@ -144,6 +139,89 @@ function waitForAPIResponse() {
 
     resolve(undefined);
   });
+}
+
+async function updateGeneralizedDataUsingApiResponse(data) {
+  function getApiPersonFromGetRelatives(wikiId) {
+    let items = apiResponse[0].items;
+    for (let item of items) {
+      if (item.key == wikiId) {
+        return item.person;
+      }
+    }
+  }
+
+  function getSpouseInfoFromApiPerson(apiPerson, wikiId) {
+    if (apiPerson.Spouses && typeof apiPerson.Spouses == "object") {
+      for (let spouseKey of Object.keys(apiPerson.Spouses)) {
+        let spouse = apiPerson.Spouses[spouseKey];
+        if (spouse && spouse.Name == wikiId) {
+          return {
+            lnab: spouse.LastNameAtBirth,
+            cln: spouse.LastNameCurrent,
+            firstName: spouse.FirstName,
+            middleName: spouse.MiddleName,
+          };
+        }
+      }
+    }
+  }
+
+  function updatePersonWithApiInfo(person, apiInfo) {
+    if (apiInfo.lnab) {
+      person.lastNameAtBirth = apiInfo.lnab;
+    }
+    if (apiInfo.cln) {
+      person.lastNameAtDeath = apiInfo.cln;
+    }
+
+    if (person.name) {
+      if (apiInfo.lnab) {
+        person.name.lastName = apiInfo.lnab;
+      }
+      let forenames = apiInfo.firstName;
+      if (apiInfo.middleName) {
+        if (forenames) {
+          forenames += " ";
+        }
+        forenames += apiInfo.middleName;
+      }
+      if (forenames) {
+        person.name.forenames = forenames;
+      }
+    }
+  }
+
+  await waitForAPIResponse();
+  if (!apiResponse) {
+    return;
+  }
+
+  // Fix things that can be wrong in generalizedData in rare cases
+  let ed = data.extractedData;
+  if (!ed) {
+    return;
+  }
+  let gd = data.generalizedData;
+  if (!gd) {
+    return;
+  }
+
+  let apiPerson = getApiPersonFromGetRelatives(ed.wikiId);
+  if (!apiPerson) {
+    return;
+  }
+
+  if (ed.spouses && gd.spouses && ed.spouses.length == gd.spouses.length) {
+    for (let edSpouseIndex = 0; edSpouseIndex < ed.spouses.length; edSpouseIndex++) {
+      let edSpouse = ed.spouses[edSpouseIndex];
+      let gdSpouse = gd.spouses[edSpouseIndex];
+      let apiInfo = getSpouseInfoFromApiPerson(apiPerson, edSpouse.wikiId);
+      if (apiInfo) {
+        updatePersonWithApiInfo(gdSpouse, apiInfo);
+      }
+    }
+  }
 }
 
 function convertTimestampDiffToText(timeStamp) {
@@ -639,7 +717,7 @@ function getWikiTreeMergeEditData(data, personData, citationObject) {
   return result;
 }
 
-function getWikiTreeEditFamilyData(data, personData, citationObject) {
+async function getWikiTreeEditFamilyData(data, personData, citationObject) {
   // this input is:
   // data: the extracted data from the current page
   // personData: the stored person data which is extractedData and generalizedData (not as objects)
@@ -685,7 +763,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
     return birthName;
   }
 
-  function getPageParentsForAddingChild(otherParentName, otherParentWikiId) {
+  async function getPageParentsForAddingChild(otherParentName, otherParentWikiId) {
     let parents = {};
     parents.genderKnown = false;
 
@@ -698,7 +776,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
     let pageParent1BirthName = pageParent1Name;
     let pageParent2BirthName = pageParent2Name;
 
-    waitForAPIResponse();
+    await waitForAPIResponse();
 
     if (apiResponse) {
       //console.log("getWikiTreeEditFamilyData, apiResponse is:");
@@ -959,7 +1037,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
     return parentsLine;
   }
 
-  function generateParentsLine(fullName, birthDateString, birthPlace) {
+  async function generateParentsLine(fullName, birthDateString, birthPlace) {
     let relationship = data.extractedData.relationshipToFamilyMember;
 
     let parentsLine = "";
@@ -969,18 +1047,18 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
       let otherParentName = data.extractedData.familyMemberSpouseName;
       let otherParentWikiId = data.extractedData.familyMemberSpouseWikiId;
 
-      pageParents = getPageParentsForAddingChild(otherParentName, otherParentWikiId);
+      pageParents = await getPageParentsForAddingChild(otherParentName, otherParentWikiId);
       parentsLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, pageParents);
 
       result.childParentLines = {};
-      let noneParents = getPageParentsForAddingChild("", "");
+      let noneParents = await getPageParentsForAddingChild("", "");
       let noneLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, noneParents);
       result.childParentLines["none"] = noneLine;
 
       let possibleSpouses = data.extractedData.familyMemberSpouses;
       if (possibleSpouses && possibleSpouses.length > 0) {
         for (let spouse of possibleSpouses) {
-          let parents = getPageParentsForAddingChild(spouse.name, spouse.wikiId);
+          let parents = await getPageParentsForAddingChild(spouse.name, spouse.wikiId);
           let line = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, parents);
 
           result.childParentLines[spouse.wikiId] = line;
@@ -1080,7 +1158,7 @@ function getWikiTreeEditFamilyData(data, personData, citationObject) {
       birthPlace = preposition + " " + birthPlace;
     }
 
-    result.parentLine = generateParentsLine(fullName, birthDateString, birthPlace);
+    result.parentLine = await generateParentsLine(fullName, birthDateString, birthPlace);
     intro += result.parentLine;
   }
 
@@ -1279,7 +1357,7 @@ async function doSetFieldsFromPersonData(tabId, wtPersonData) {
 async function setFieldsFromPersonData(data, personData, tabId, citationObject, backFunction) {
   displayBusyMessage("Setting fields ...");
 
-  let wtPersonData = getWikiTreeEditFamilyData(data, personData, citationObject);
+  let wtPersonData = await getWikiTreeEditFamilyData(data, personData, citationObject);
 
   function processFunction() {
     updateAfterCheckWtPersonData(data, wtPersonData);
@@ -1942,6 +2020,11 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
   }
+
+  // This will rebuild the generalizedData if and when the WikiTree API call responds
+  // It is only needed for rare cases like https://www.wikitree.com/wiki/Gilmour-1415 where the husband's
+  // name has a space in it.
+  updateGeneralizedDataUsingApiResponse(data);
 
   // This will result in cachedDataCache being set once it is ready (used for some (e.g. GRO) search menu items)
   updateDataCacheWithWikiTreeExtract(extractedData, generalizedData);

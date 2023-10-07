@@ -22,7 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+const appId = "Sourcer";
+
 function wtApiCall(body) {
+  body.appId = appId;
+
   return new Promise((resolve, reject) => {
     fetch("https://api.wikitree.com/api.php", {
       method: "POST",
@@ -55,7 +59,6 @@ function wtApiGetPerson(id, fields) {
     action: "getPerson",
     key: id,
     fields: fields,
-    appId: "Sourcer",
   });
 
   return wtApiCall(body);
@@ -66,10 +69,23 @@ function wtApiGetPeople(ids, fields) {
     action: "getPeople",
     keys: ids,
     fields: fields,
-    appId: "Sourcer",
   });
 
   return wtApiCall(body);
 }
 
-export { wtApiGetPerson, wtApiGetPeople };
+function wtApiGetRelatives(ids, fields, getParents, getChildren, getSiblings, getSpouses) {
+  const body = new URLSearchParams({
+    action: "getRelatives",
+    keys: ids,
+    fields: fields,
+    getParents: getParents,
+    getChildren: getChildren,
+    getSiblings: getSiblings,
+    getSpouses: getSpouses,
+  });
+
+  return wtApiCall(body);
+}
+
+export { wtApiGetPerson, wtApiGetPeople, wtApiGetRelatives };

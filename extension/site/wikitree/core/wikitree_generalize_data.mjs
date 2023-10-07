@@ -104,6 +104,8 @@ function getPartsFromWikiTreeName(wikiTreeName, wikiId) {
     // this should always be the case
     lnabFromId = wikiId.substring(0, hyphenSuffix);
   }
+  // replace _ with space
+  lnabFromId = lnabFromId.replace(/\_/g, " ");
 
   let object = {};
   object.nameObj = new NameObj();
@@ -325,6 +327,8 @@ function generalizeData(input) {
   }
 
   result.hasValidData = true;
+
+  //console.log(result);
 
   return result;
 }
