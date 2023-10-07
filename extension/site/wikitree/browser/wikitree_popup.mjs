@@ -152,15 +152,55 @@ async function updateGeneralizedDataUsingApiResponse(data) {
   }
 
   function getSpouseInfoFromApiPerson(apiPerson, wikiId) {
+    wikiId = wikiId.replace(/\s/g, "_");
     if (apiPerson.Spouses && typeof apiPerson.Spouses == "object") {
       for (let spouseKey of Object.keys(apiPerson.Spouses)) {
         let spouse = apiPerson.Spouses[spouseKey];
-        if (spouse && spouse.Name == wikiId) {
+        if (spouse) {
+          let spouseWikiId = spouse.Name.replace(/\s/g, "_");
+          if (spouseWikiId == wikiId) {
+            return {
+              lnab: spouse.LastNameAtBirth,
+              cln: spouse.LastNameCurrent,
+              firstName: spouse.FirstName,
+              middleName: spouse.MiddleName,
+            };
+          }
+        }
+      }
+    }
+  }
+
+  function getFatherInfoFromApiPerson(apiPerson, wikiId) {
+    wikiId = wikiId.replace(/\s/g, "_");
+    if (apiPerson.Father && apiPerson.Parents) {
+      let father = apiPerson.Parents[apiPerson.Father];
+      if (father) {
+        let fatherWikiId = father.Name.replace(/\s/g, "_");
+        if (fatherWikiId == wikiId) {
           return {
-            lnab: spouse.LastNameAtBirth,
-            cln: spouse.LastNameCurrent,
-            firstName: spouse.FirstName,
-            middleName: spouse.MiddleName,
+            lnab: father.LastNameAtBirth,
+            cln: father.LastNameCurrent,
+            firstName: father.FirstName,
+            middleName: father.MiddleName,
+          };
+        }
+      }
+    }
+  }
+
+  function getMotherInfoFromApiPerson(apiPerson, wikiId) {
+    wikiId = wikiId.replace(/\s/g, "_");
+    if (apiPerson.Mother && apiPerson.Parents) {
+      let mother = apiPerson.Parents[apiPerson.Mother];
+      if (mother) {
+        let motherWikiId = mother.Name.replace(/\s/g, "_");
+        if (motherWikiId == wikiId) {
+          return {
+            lnab: mother.LastNameAtBirth,
+            cln: mother.LastNameCurrent,
+            firstName: mother.FirstName,
+            middleName: mother.MiddleName,
           };
         }
       }
@@ -168,17 +208,18 @@ async function updateGeneralizedDataUsingApiResponse(data) {
   }
 
   function updatePersonWithApiInfo(person, apiInfo) {
-    if (apiInfo.lnab) {
-      person.lastNameAtBirth = apiInfo.lnab;
-    }
-    if (apiInfo.cln) {
-      person.lastNameAtDeath = apiInfo.cln;
+    function updateValueIfNeeded(object, fieldName, apiValue) {
+      if (apiValue && object[fieldName] != apiValue) {
+        console.log("Due to WikiTree API, changing " + fieldName + " from " + object[fieldName] + " to " + apiValue);
+        object[fieldName] = apiValue;
+      }
     }
 
+    updateValueIfNeeded(person, "lastNameAtBirth", apiInfo.lnab);
+    updateValueIfNeeded(person, "lastNameAtDeath", apiInfo.cln);
+
     if (person.name) {
-      if (apiInfo.lnab) {
-        person.name.lastName = apiInfo.lnab;
-      }
+      updateValueIfNeeded(person.name, "lastName", apiInfo.lnab);
       let forenames = apiInfo.firstName;
       if (apiInfo.middleName) {
         if (forenames) {
@@ -186,9 +227,7 @@ async function updateGeneralizedDataUsingApiResponse(data) {
         }
         forenames += apiInfo.middleName;
       }
-      if (forenames) {
-        person.name.forenames = forenames;
-      }
+      updateValueIfNeeded(person.name, "forenames", forenames);
     }
   }
 
@@ -219,6 +258,25 @@ async function updateGeneralizedDataUsingApiResponse(data) {
       let apiInfo = getSpouseInfoFromApiPerson(apiPerson, edSpouse.wikiId);
       if (apiInfo) {
         updatePersonWithApiInfo(gdSpouse, apiInfo);
+      }
+    }
+  }
+
+  if (ed.parents && gd.parents) {
+    if (ed.parents.father && gd.parents.father) {
+      let edFather = ed.parents.father;
+      let gdFather = gd.parents.father;
+      let apiInfo = getFatherInfoFromApiPerson(apiPerson, edFather.wikiId);
+      if (apiInfo) {
+        updatePersonWithApiInfo(gdFather, apiInfo);
+      }
+    }
+    if (ed.parents.mother && gd.parents.mother) {
+      let edMother = ed.parents.mother;
+      let gdMother = gd.parents.mother;
+      let apiInfo = getMotherInfoFromApiPerson(apiPerson, edMother.wikiId);
+      if (apiInfo) {
+        updatePersonWithApiInfo(gdMother, apiInfo);
       }
     }
   }
