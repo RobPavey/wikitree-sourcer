@@ -317,6 +317,7 @@ li.dividerBelow {
 }
 
 .spinner {
+  /* inspired by https://projects.lukehaas.me/css-loaders/ */
   font-size: 10px;
   margin: 0px auto;
   text-indent: -9999em;
