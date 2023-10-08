@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan, 1901.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan, 1901.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>James McKechan, 1901.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan (52), married, Coal Miner, head of household in Stevenston, Ayrshire, Scotland, United Kingdom. Born in KILWINNING, AYRSHIRE.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan (52), married, Coal Miner, head of household in Stevenston, Ayrshire, Scotland, United Kingdom. Born in KILWINNING, AYRSHIRE.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>James McKechan (52), married, Coal Miner, head of household in Stevenston, Ayrshire, Scotland, United Kingdom. Born in KILWINNING, AYRSHIRE.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nName: James McKechan; Census Date: 1901; Census Place: Stevenston, Ayrshire, Scotland, United Kingdom; Marital Status: Married; Occupation: COAL MINER; Birth Date: 1849; Birth Place: KILWINNING, AYRSHIRE; Age: 52; Rooms Count: 2; Code Employed: W; Inhabited Flag: 1; Relationship To Head: HEAD; Source Folio Suf: 18; Source Schedule Nbr: 142; Source Street Address1: NEW STREET.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nName: James McKechan; Census Date: 1901; Census Place: Stevenston, Ayrshire, Scotland, United Kingdom; Marital Status: Married; Occupation: COAL MINER; Birth Date: 1849; Birth Place: KILWINNING, AYRSHIRE; Age: 52; Rooms Count: 2; Code Employed: W; Inhabited Flag: 1; Relationship To Head: HEAD; Source Folio Suf: 18; Source Schedule Nbr: 142; Source Street Address1: NEW STREET.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>Name: James McKechan; Census Date: 1901; Census Place: Stevenston, Ayrshire, Scotland, United Kingdom; Marital Status: Married; Occupation: COAL MINER; Birth Date: 1849; Birth Place: KILWINNING, AYRSHIRE; Age: 52; Rooms Count: 2; Code Employed: W; Inhabited Flag: 1; Relationship To Head: HEAD; Source Folio Suf: 18; Source Schedule Nbr: 142; Source Street Address1: NEW STREET.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James McKechan\n|-\n| Census Date || 1901\n|-\n| Census Place || Stevenston, Ayrshire, Scotland, United Kingdom\n|-\n| Marital Status || Married\n|-\n| Occupation || COAL MINER\n|-\n| Birth Date || 1849\n|-\n| Birth Place || KILWINNING, AYRSHIRE\n|-\n| Age || 52\n|-\n| Rooms Count || 2\n|-\n| Code Employed || W\n|-\n| Inhabited Flag || 1\n|-\n| Relationship To Head || HEAD\n|-\n| Source Folio Suf || 18\n|-\n| Source Schedule Nbr || 142\n|-\n| Source Street Address1 || NEW STREET\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || James McKechan\n|-\n| Census Date || 1901\n|-\n| Census Place || Stevenston, Ayrshire, Scotland, United Kingdom\n|-\n| Marital Status || Married\n|-\n| Occupation || COAL MINER\n|-\n| Birth Date || 1849\n|-\n| Birth Place || KILWINNING, AYRSHIRE\n|-\n| Age || 52\n|-\n| Rooms Count || 2\n|-\n| Code Employed || W\n|-\n| Inhabited Flag || 1\n|-\n| Relationship To Head || HEAD\n|-\n| Source Folio Suf || 18\n|-\n| Source Schedule Nbr || 142\n|-\n| Source Street Address1 || NEW STREET\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>Name: James McKechan; Census Date: 1901; Census Place: Stevenston, Ayrshire, Scotland, United Kingdom; Marital Status: Married; Occupation: COAL MINER; Birth Date: 1849; Birth Place: KILWINNING, AYRSHIRE; Age: 52; Rooms Count: 2; Code Employed: W; Inhabited Flag: 1; Relationship To Head: HEAD; Source Folio Suf: 18; Source Schedule Nbr: 142; Source Street Address1: NEW STREET.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan, 1901.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan, 1901.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>James McKechan, 1901.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan (52), married, Coal Miner, head of household in Stevenston, Ayrshire, Scotland, United Kingdom. Born in KILWINNING, AYRSHIRE.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan (52), married, Coal Miner, head of household in Stevenston, Ayrshire, Scotland, United Kingdom. Born in KILWINNING, AYRSHIRE.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>James McKechan (52), married, Coal Miner, head of household in Stevenston, Ayrshire, Scotland, United Kingdom. Born in KILWINNING, AYRSHIRE.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan, 1901.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "In the 1901 census James (age 52), Coal Miner, was the married head of household in Stevenston, Ayrshire, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>\nJames McKechan, 1901.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing Piece/Folio: 3; Page: 33; Line: 9; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7Y7S-3YMM}} (accessed 6 May 2021)<br/>James McKechan, 1901.",
+    "type": "source"
+  }
+}

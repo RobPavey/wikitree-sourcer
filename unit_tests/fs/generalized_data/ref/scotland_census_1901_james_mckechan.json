@@ -1,0 +1,133 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "James McKechan",
+    "lastName": "McKechan",
+    "forenames": "James"
+  },
+  "birthDate": {
+    "dateString": "1849",
+    "yearString": "1849"
+  },
+  "birthPlace": {
+    "placeString": "KILWINNING, AYRSHIRE"
+  },
+  "eventDate": {
+    "dateString": "1901",
+    "yearString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "Stevenston, Ayrshire, Scotland, United Kingdom"
+  },
+  "ageAtEvent": "52",
+  "occupation": "Coal Miner",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "James McKechan",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "52",
+      "birthYear": "1849",
+      "occupation": "Coal Miner",
+      "birthPlace": "KILWINNING, AYRSHIRE",
+      "isSelected": true
+    },
+    {
+      "name": "Mary McKechan",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "52",
+      "birthYear": "1849",
+      "birthPlace": "KILWINNING, AYRSHIRE"
+    },
+    {
+      "name": "Rob McKechan",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "19",
+      "birthYear": "1882",
+      "occupation": "Backer",
+      "birthPlace": "STEVENSTON, AYRSHIRE"
+    },
+    {
+      "name": "Alex McKechan",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "15",
+      "birthYear": "1886",
+      "occupation": "Coal Miner",
+      "birthPlace": "STEVENSTON, AYRSHIRE"
+    },
+    {
+      "name": "William McKechan",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "13",
+      "birthYear": "1888",
+      "occupation": "Pit Drawer",
+      "birthPlace": "AMERICA"
+    },
+    {
+      "name": "Mary McKechan",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "10",
+      "birthYear": "1891",
+      "occupation": "Schooler",
+      "birthPlace": "STEVENSTON, AYRSHIRE"
+    },
+    {
+      "name": "Jennie Sinclar",
+      "relationship": "visitor",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "26",
+      "birthYear": "1875",
+      "birthPlace": "COATBRIDGE, LANARKSHIRE, SCOTLAND"
+    },
+    {
+      "name": "Mary Sinclar",
+      "relationship": "null",
+      "gender": "female",
+      "age": "0",
+      "birthYear": "1901",
+      "birthPlace": "IRVINE, AYRSHIRE"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "spouses": [
+    {
+      "name": {
+        "name": "Mary McKechan"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "3212239",
+    "page": "33",
+    "folio": "3"
+  },
+  "hasValidData": true
+}
