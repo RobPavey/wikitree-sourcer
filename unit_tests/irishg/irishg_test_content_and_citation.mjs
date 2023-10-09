@@ -63,6 +63,11 @@ const regressionData = [
     ],
   },
   {
+    // Test for converting MC name to mixed case
+    caseName: "birth_1866_andrew_mcdermott",
+    url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/c943b58347915",
+  },
+  {
     // missing sex and MMN
     caseName: "birth_1898_mark_donnelly",
     url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/1c3e5511946689?b=https%3A%2F%2Fcivilrecords.irishgenealogy.ie%2Fchurchrecords%2Fcivil-perform-search.jsp%3Fnamefm%3DMark%26namel%3D%26exact%3D%26name2fm%3D%26name2l%3D%26location%3D%26yyfrom%3D%26yyto%3D%26century%3D%26decade%3D%26sort%3D%26pageSize%3D100%26ddBfrom%3D%26mmBfrom%3D%26yyBfrom%3D%26ddMfrom%3D%26mmMfrom%3D%26yyMfrom%3D%26ddDfrom%3D%26mmDfrom%3D%26yyDfrom%3D%26ddPfrom%3D%26mmPfrom%3D%26yyPfrom%3D%26ddBto%3D%26mmBto%3D%26yyBto%3D%26ddMto%3D%26mmMto%3D%26yyMto%3D%26ddDto%3D%26mmDto%3D%26yyDto%3D%26ddPto%3D%26mmPto%3D%26yyPto%3D%26locationB%3D%26locationM%3D%26locationD%3D%26locationP%3D%26keywordb%3D%26keywordm%3D%26keywordd%3D%26keywordp%3D%26event%3DB%26district%3DBelfast%26submit%3DSearch",
@@ -92,6 +97,14 @@ const regressionData = [
   {
     caseName: "marriage_1770_bartle_fagan_mary_malone",
     url: "https://churchrecords.irishgenealogy.ie/churchrecords/details/7da64d0073868?b=https%3A%2F%2Fchurchrecords.irishgenealogy.ie%2Fchurchrecords%2Fsearch.jsp%3Fnamefm%3Dmary%26namel%3Dmalone%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch",
+  },
+  {
+    caseName: "marriage_1856_david_mc_guire_elizabeth_mackey",
+    url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/4a18be3262887?b=https%3A%2F%2Fcivilrecords.irishgenealogy.ie%2Fchurchrecords%2Fcivil-perform-search.jsp%3Fnamefm%3D%26namel%3DMackey%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch",
+  },
+  {
+    caseName: "marriage_1933_lena_oconnell_john_oconnor",
+    url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/21f0721197204?b=https%3A%2F%2Fcivilrecords.irishgenealogy.ie%2Fchurchrecords%2Fcivil-perform-search.jsp%3Fnamefm%3DJohn%26namel%3DO%2527Connor%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch",
   },
 ];
 

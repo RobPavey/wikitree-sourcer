@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventPlace": {
+    "placeString": "Ballinrobe",
+    "country": "Ireland"
+  },
+  "registrationDistrict": "Ballinrobe",
+  "eventDate": {
+    "dateString": "1866"
+  },
+  "name": {
+    "name": "Andrew McDermott"
+  },
+  "birthDate": {
+    "dateString": "1866"
+  },
+  "collectionData": {
+    "id": "births",
+    "registrationId": "8347915"
+  },
+  "hasValidData": true
+}

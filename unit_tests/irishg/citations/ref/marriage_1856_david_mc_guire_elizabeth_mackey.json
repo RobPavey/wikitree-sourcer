@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Civil Records of Irish Births, Deaths and Marriages\"<br/>\nGeneral Register Office, Ireland; Group Registration ID: 3262887; SR District/Reg Area: Carrick on Shannon<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/images/marriage_returns/marriages_1856/09505/5445053.pdf IrishGenealogy.ie Image] - [https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/4a18be3262887 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nElizabeth Mackey marriage to David McGuire on 19 Feb 1856 in the Carrick on Shannon registration area.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Elizabeth married David McGuire on 19 February 1856 in the Carrick on Shannon district.<ref>\n'''Marriage Registration''':\n\"Civil Records of Irish Births, Deaths and Marriages\"<br/>\nGeneral Register Office, Ireland; Group Registration ID: 3262887; SR District/Reg Area: Carrick on Shannon<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/images/marriage_returns/marriages_1856/09505/5445053.pdf IrishGenealogy.ie Image] - [https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/4a18be3262887 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nElizabeth Mackey marriage to David McGuire on 19 Feb 1856 in the Carrick on Shannon registration area.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Civil Records of Irish Births, Deaths and Marriages\"<br/>General Register Office, Ireland; Group Registration ID: 3262887; SR District/Reg Area: Carrick on Shannon<br/>[https://civilrecords.irishgenealogy.ie/churchrecords/images/marriage_returns/marriages_1856/09505/5445053.pdf IrishGenealogy.ie Image] - [https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/4a18be3262887 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Elizabeth Mackey marriage to David McGuire on 19 Feb 1856 in the Carrick on Shannon registration area.",
+    "type": "source"
+  }
+}

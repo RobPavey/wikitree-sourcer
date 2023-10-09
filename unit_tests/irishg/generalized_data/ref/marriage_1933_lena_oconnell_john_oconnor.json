@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "eventPlace": {
+    "placeString": "Caherciveen",
+    "country": "Ireland"
+  },
+  "registrationDistrict": "Caherciveen",
+  "eventDate": {
+    "dateString": "20 April 1933"
+  },
+  "name": {
+    "name": "John O'Connor"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Lena O'Connell"
+      },
+      "marriageDate": {
+        "dateString": "20 April 1933"
+      },
+      "marriagePlace": "Caherciveen"
+    }
+  ],
+  "collectionData": {
+    "id": "civil-marriages",
+    "registrationId": "1197204"
+  },
+  "hasValidData": true
+}

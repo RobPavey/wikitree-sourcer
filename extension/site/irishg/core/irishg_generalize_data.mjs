@@ -25,24 +25,13 @@ SOFTWARE.
 import { GeneralizedData, GD, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 function cleanFullName(name) {
-  if (!name) {
-    return "";
-  }
+  // in irishg there are sometimes name like: "ISABELLA MC DONALD"
+  let modifiedName = name.replace(/MC (\w)/, "MC$1");
 
-  let cleanName = StringUtils.toInitialCapsEachWord(name);
-
-  cleanName = cleanName.replace(/Mc (\w)/, "Mc$1");
-
-  // The above will change "O'CONNOR" to "O'connor"
-  // So the replace below will change "O'connor" to "O'Connor"
-  function replacer(letter) {
-    return letter.toUpperCase();
-  }
-  cleanName = cleanName.replace(/'(\w)/g, replacer);
-
-  return cleanName;
+  return NameUtils.convertNameFromAllCapsToMixedCase(modifiedName);
 }
 
 function cleanDate(dateString) {

@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "eventPlace": {
+    "placeString": "Carrick on Shannon",
+    "country": "Ireland"
+  },
+  "registrationDistrict": "Carrick on Shannon",
+  "eventDate": {
+    "dateString": "19 February 1856"
+  },
+  "name": {
+    "name": "Elizabeth Mackey"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "David McGuire"
+      },
+      "marriageDate": {
+        "dateString": "19 February 1856"
+      },
+      "marriagePlace": "Carrick on Shannon"
+    }
+  ],
+  "collectionData": {
+    "id": "civil-marriages",
+    "registrationId": "3262887"
+  },
+  "hasValidData": true
+}

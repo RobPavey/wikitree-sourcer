@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { GD, GeneralizedData, PlaceObj, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { getRecordType } from "./scotp_utils.mjs";
 import { getRegistrationDistrict, getCountyDisplayName } from "./scotp_registration_districts.mjs";
@@ -57,131 +58,8 @@ function standardizeCountyName(countyName) {
   return stdName;
 }
 
-function shouldUpperCaseAfterMac(name) {
-  // input is all lower case
-  const exceptions = ["Macilbowie", "Mackenzie", "Macmaster"];
-
-  if (name.length < 5) {
-    // exclude names like "Mack", "Mach"
-    return false;
-  }
-
-  if (exceptions.includes(name)) {
-    return false;
-  }
-  return true;
-}
-
-function shouldUpperCaseAfterMc(name) {
-  const exceptions = ["Mcilbowie", "Mckenzie", "Mcmaster"];
-
-  if (exceptions.includes(name)) {
-    return false;
-  }
-  return true;
-}
-
-function shouldUpperCaseAfterO(name) {
-  return true;
-}
-
 function standardizeName(string) {
-  // Note: this is a complicated issue for names like:
-  // MACGREGOR, MCLELLAN, MACKIE, MACHIN
-  // O'CONNOR
-  // If it is already mixed case then we should leave it how it is. Except for special cases
-  // like "(Mrs) FRASER" in th surname
-  // If it is all upper case then maybe there should be a user option to leave in upper case
-  // Else can take a stab at it with a few rules and exceptions
-
-  if (!string || string.length == 0) {
-    return string;
-  }
-
-  let originalStringClean = string.trim();
-
-  let resultString = originalStringClean;
-
-  // replace any multiple white spaces with one space
-  resultString = resultString.replace(/\s+/g, " ");
-
-  // Check for something in parantheses at start (can happin the 1881 census) see example in
-  // test case census_lds_1881_mrs_fraser which has "(Mrs) FRASER" in th surname
-  // Another example has "(A M) FRASER" in surname and "Donald" in forname.
-  // For now remove anything in parens at start
-  if (resultString.startsWith("(")) {
-    let closeIndex = resultString.indexOf(")");
-    if (closeIndex != -1) {
-      resultString = resultString.substring(closeIndex + 1).trim();
-      if (!resultString) {
-        return originalStringClean;
-      }
-    }
-  }
-
-  // if there are any periods in the name remove them, replacing with a space if needed
-  if (resultString.includes(".")) {
-    resultString = resultString.replace(/\.\s/g, " ");
-    resultString = resultString.replace(/\.$/, "");
-    resultString = resultString.replace(/\.([^\s])/g, " $1");
-  }
-
-  // if the string is already mixed case do not change it.
-  // Unless it is something like "BAIRD or MCGREGOR"
-  if (!StringUtils.isAllUppercase(resultString)) {
-    let partialString = resultString.replace(/\s+or\s+/g, "");
-    if (!StringUtils.isAllUppercase(partialString)) {
-      return originalStringClean;
-    }
-  }
-
-  if (resultString.length == 1) {
-    return resultString[0].toUpperCase();
-  }
-
-  resultString = resultString.toLowerCase().trim();
-
-  function upperCaseLetterAtIndex(toUpperIndex) {
-    resultString =
-      resultString.substring(0, toUpperIndex) +
-      resultString[toUpperIndex].toUpperCase() +
-      resultString.substring(toUpperIndex + 1);
-  }
-
-  var index = 0;
-  do {
-    upperCaseLetterAtIndex(index);
-
-    let word = "";
-    let nextSpaceIndex = resultString.indexOf(" ", index);
-    if (nextSpaceIndex != -1) {
-      word = resultString.substring(index, nextSpaceIndex);
-    } else {
-      word = resultString.substring(index);
-    }
-
-    // check for Mac or word
-    if (word.startsWith("Mac") && word.length > 3 && word[3] != " ") {
-      if (shouldUpperCaseAfterMac(word)) {
-        upperCaseLetterAtIndex(index + 3);
-      }
-    } else if (word.startsWith("Mc") && word.length > 2 && word[2] != " ") {
-      if (shouldUpperCaseAfterMc(word)) {
-        upperCaseLetterAtIndex(index + 2);
-      }
-    } else if (word.startsWith("O'") && word.length > 2 && word[2] != " ") {
-      if (shouldUpperCaseAfterO(word)) {
-        upperCaseLetterAtIndex(index + 2);
-      }
-    }
-
-    index = nextSpaceIndex;
-    if (index != -1) {
-      index++;
-    }
-  } while (index != -1);
-
-  return resultString;
+  return NameUtils.convertNameFromAllCapsToMixedCase(string);
 }
 
 function getRdNumber(ed) {

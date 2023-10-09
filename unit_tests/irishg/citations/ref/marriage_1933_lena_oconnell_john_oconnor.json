@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Civil Records of Irish Births, Deaths and Marriages\"<br/>\nGeneral Register Office, Ireland; Group Registration ID: 1197204; SR District/Reg Area: Caherciveen<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/images/marriage_returns/marriages_1933/08983/5251112.pdf IrishGenealogy.ie Image] - [https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/21f0721197204 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor marriage to Lena O'Connell on 20 Apr 1933 in the Caherciveen Superintendent Registrar's District.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John married Lena O'Connell on 20 April 1933 in the Caherciveen Superintendent Registrar's District.<ref>\n'''Marriage Registration''':\n\"Civil Records of Irish Births, Deaths and Marriages\"<br/>\nGeneral Register Office, Ireland; Group Registration ID: 1197204; SR District/Reg Area: Caherciveen<br/>\n[https://civilrecords.irishgenealogy.ie/churchrecords/images/marriage_returns/marriages_1933/08983/5251112.pdf IrishGenealogy.ie Image] - [https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/21f0721197204 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nJohn O'Connor marriage to Lena O'Connell on 20 Apr 1933 in the Caherciveen Superintendent Registrar's District.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Civil Records of Irish Births, Deaths and Marriages\"<br/>General Register Office, Ireland; Group Registration ID: 1197204; SR District/Reg Area: Caherciveen<br/>[https://civilrecords.irishgenealogy.ie/churchrecords/images/marriage_returns/marriages_1933/08983/5251112.pdf IrishGenealogy.ie Image] - [https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/21f0721197204 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>John O'Connor marriage to Lena O'Connell on 20 Apr 1933 in the Caherciveen Superintendent Registrar's District.",
+    "type": "source"
+  }
+}
