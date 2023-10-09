@@ -1275,6 +1275,10 @@ async function displaySavedPersonData(data, backFunction) {
   }
 }
 
+async function clearCachedFetchData() {
+  chrome.storage.local.remove("ancestry_recordPageCache");
+}
+
 function keepPopupOpenForDebug() {
   keepPopupOpen = true;
 }
@@ -1306,6 +1310,10 @@ function setupDebugSubmenuMenu(data, backFunction) {
       displaySavedPersonData(data, toHereBackFunction);
     });
   }
+
+  addMenuItem(menu, "Clear cached fetch data", function (element) {
+    clearCachedFetchData();
+  });
 
   if (!keepPopupOpen) {
     addMenuItem(menu, "Keep popup open for inspect", function (element) {
