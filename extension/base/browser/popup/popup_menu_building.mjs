@@ -25,6 +25,7 @@ SOFTWARE.
 import { options } from "/base/browser/options/options_loader.mjs";
 import { RC } from "/base/core/record_collections.mjs";
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
+import { clearAsyncResultCache } from "/base/core/async_result_cache.mjs";
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
@@ -1276,7 +1277,17 @@ async function displaySavedPersonData(data, backFunction) {
 }
 
 async function clearCachedFetchData() {
-  chrome.storage.local.remove("ancestry_recordPageCache");
+  clearAsyncResultCache("AncestryFetchHousehold");
+  clearAsyncResultCache("AncestryFetchChild");
+  clearAsyncResultCache("AncestryFetchFather");
+  clearAsyncResultCache("AncestryFetchMother");
+  clearAsyncResultCache("AncestryFetchSiblings");
+  clearAsyncResultCache("AncestryFetchSpouse");
+  clearAsyncResultCache("AncestryFetchFullRecord");
+}
+
+async function clearLocalStorage() {
+  chrome.storage.local.clear();
 }
 
 function keepPopupOpenForDebug() {
@@ -1313,6 +1324,9 @@ function setupDebugSubmenuMenu(data, backFunction) {
 
   addMenuItem(menu, "Clear cached fetch data", function (element) {
     clearCachedFetchData();
+  });
+  addMenuItem(menu, "Clear ALL local storage for extension", function (element) {
+    clearLocalStorage();
   });
 
   if (!keepPopupOpen) {

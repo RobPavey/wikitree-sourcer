@@ -77,6 +77,8 @@ import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 import { fetchAncestrySharingDataObj, extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
 
+import { registerAsyncCacheTag } from "../../../base/core/async_result_cache.mjs";
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Prefetch data and functions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -476,7 +478,8 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
   //console.log("extractRecordFromUrlFromPersonSourceCitation");
   displayBusyMessageAfterDelay("WikiTree Sourcer fetching full record page ...\n(This might take several seconds)");
 
-  let extractResult = await extractRecordHtmlFromUrl(recordUrl, "Full");
+  registerAsyncCacheTag("AncestryFetchFullRecord");
+  let extractResult = await extractRecordHtmlFromUrl(recordUrl, "AncestryFetchFullRecord");
 
   if (extractResult.success) {
     let extractedData = extractDataFromHtml(extractResult.htmlText, recordUrl);
