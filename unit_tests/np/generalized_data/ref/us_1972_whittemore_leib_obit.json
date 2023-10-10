@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "np",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "1972-11-01"
+  },
+  "eventPlace": {
+    "placeString": "New London, Connecticut"
+  },
+  "newspaperName": "The Day",
+  "hasValidData": true
+}

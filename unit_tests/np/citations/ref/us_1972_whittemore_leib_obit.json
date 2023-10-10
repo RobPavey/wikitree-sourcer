@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1972 Newspaper''':\n\"Newspapers.com\"<br/>\nThe Day (New London, Connecticut) Wed, Nov 1, 1972, page 33<br/>\n{{Newspapers.com|133180369}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the The Day on 1 November 1972 in New London, Connecticut.<ref>\n'''1972 Newspaper''':\n\"Newspapers.com\"<br/>\nThe Day (New London, Connecticut) Wed, Nov 1, 1972, page 33<br/>\n{{Newspapers.com|133180369}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1972 Newspaper''': \"Newspapers.com\"<br/>The Day (New London, Connecticut) Wed, Nov 1, 1972, page 33<br/>{{Newspapers.com|133180369}} (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

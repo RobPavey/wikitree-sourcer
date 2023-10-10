@@ -45,7 +45,6 @@ function extractData(document, url) {
 
   if (titleElement && locationElement && dateElement && pageNumberElement) {
     // This is the old format page. It changed around the end of March 2023
-
     result.newspaperTitle = titleElement.innerHTML;
     result.location = locationElement.innerHTML;
     result.publicationDate = dateElement.innerHTML.split(",")[0];
@@ -59,6 +58,10 @@ function extractData(document, url) {
     let mainContentNode = document.querySelector("#mainContent");
     if (mainContentNode) {
       let aNode = mainContentNode.querySelector("div > div.hideMobile > a[href^='https://www.newspapers.com/paper/']");
+      if (!aNode) {
+        // Oct 2023: seems to have changed to have a relative URL here
+        aNode = mainContentNode.querySelector("div > div.hideMobile > a[href^='/paper/']");
+      }
       if (aNode) {
         let headingNode = aNode.querySelector("h2");
         let locationNode = aNode.querySelector("p");
