@@ -92,6 +92,11 @@ function determineRecordType(extractedData) {
   const titleMatches = [
     { type: RT.Baptism, matches: ["Christening Index"] },
     {
+      type: RT.Birth,
+      matches: ["Birth Index"],
+      requiredData: ["Birth Date", "Birth Place"],
+    },
+    {
       type: RT.BirthRegistration,
       matches: ["Birth Index"],
       requiredData: ["Birth Registration Date"],
