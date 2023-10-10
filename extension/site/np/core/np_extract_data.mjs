@@ -32,6 +32,32 @@ function cleanText(inputText) {
   return text;
 }
 
+function extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode) {
+  if (publisherNode && locationNode && dateNode && pageNode) {
+    result.newspaperTitle = publisherNode.textContent;
+    result.location = locationNode.textContent;
+    result.publicationDate = dateNode.textContent;
+
+    let pageString = pageNode.textContent;
+    pageString = pageString.replace(/^page\s*/i, ""); // remove "Page " from start
+    result.pageNumber = pageString;
+
+    let date = dateNode.getAttribute("datetime");
+    if (date) {
+      result.eventDate = date;
+    } else {
+      result.eventDate = result.publicationDate;
+    }
+
+    if (result.location && result.location.indexOf("•") != -1) {
+      let index = result.location.indexOf("•");
+      result.location = result.location.substring(0, index).trim();
+    }
+
+    result.success = true;
+  }
+}
+
 function extractData(document, url) {
   var result = {};
   result.url = url;
@@ -63,33 +89,25 @@ function extractData(document, url) {
         aNode = mainContentNode.querySelector("div > div.hideMobile > a[href^='/paper/']");
       }
       if (aNode) {
-        let headingNode = aNode.querySelector("h2");
+        let publisherNode = aNode.querySelector("h2");
         let locationNode = aNode.querySelector("p");
         let dateNode = aNode.querySelector("time");
         let pageNode = aNode.querySelector("span");
+        extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode);
+      }
 
-        if (headingNode && locationNode && dateNode && pageNode) {
-          result.newspaperTitle = headingNode.textContent;
-          result.location = locationNode.textContent;
-          result.publicationDate = dateNode.textContent;
+      // backup code in case layout changes again, this uses class names, which didn't used to
+      // exist when this was first written
+      if (!result.success) {
+        aNode = mainContentNode.querySelector("a[class*='PublicationInfo_Container']");
 
-          let pageString = pageNode.textContent;
-          pageString = pageString.replace(/^page\s*/i, ""); // remove "Page " from start
-          result.pageNumber = pageString;
+        if (aNode) {
+          let publisherNode = aNode.querySelector("[class*='PublicationInfo_Publisher']");
+          let locationNode = aNode.querySelector("[class*='PublicationInfo_Location']");
+          let dateNode = aNode.querySelector("time");
+          let pageNode = aNode.querySelector("[class*='PublicationInfo_Page']");
 
-          let date = dateNode.getAttribute("datetime");
-          if (date) {
-            result.eventDate = date;
-          } else {
-            result.eventDate = result.publicationDate;
-          }
-
-          if (result.location && result.location.indexOf("•") != -1) {
-            let index = result.location.indexOf("•");
-            result.location = result.location.substring(0, index).trim();
-          }
-
-          result.success = true;
+          extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode);
         }
       }
     }
