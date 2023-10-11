@@ -421,7 +421,7 @@ function addMenuTitle(menu) {
   let listItem = document.createElement("li");
   listItem.className = "menuItem";
 
-  let label = document.createElement("label");
+  let label = document.createElement("div");
   label.className = "menuTitle";
   label.innerText = "WikiTree Sourcer";
   listItem.appendChild(label);
