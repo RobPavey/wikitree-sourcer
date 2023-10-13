@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Marxoy Mc Wattier",
+    "forenames": "Marxoy",
+    "lastName": "Mc Wattier"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "Lindsay, Victoria-Haliburton, Ontario, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

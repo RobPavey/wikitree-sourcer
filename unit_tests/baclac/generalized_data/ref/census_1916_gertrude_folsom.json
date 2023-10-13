@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Gertrude L Folsom",
+    "forenames": "Gertrude L",
+    "lastName": "Folsom"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1916"
+  },
+  "eventPlace": {
+    "placeString": "Town of Cardston, Lethbridge, Alberta, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

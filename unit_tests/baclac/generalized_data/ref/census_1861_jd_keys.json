@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Jd Keys",
+    "forenames": "Jd",
+    "lastName": "Keys"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1861"
+  },
+  "eventPlace": {
+    "placeString": "Montréal, Hochelaga, Canada East (Quebec), Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

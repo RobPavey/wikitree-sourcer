@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=23447983 Canada Census Record] (accessed 6 May 2021)<br/>\nFrancois Montminy.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Francois was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=23447983 Canada Census Record] (accessed 6 May 2021)<br/>\nFrancois Montminy.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=23447983 Canada Census Record] (accessed 6 May 2021)<br/>Francois Montminy.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "John Smith",
+    "forenames": "John",
+    "lastName": "Smith"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "Hamilton East, Bonaventure, Quebec, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

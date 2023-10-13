@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "May MC KENZIE",
+    "forenames": "May",
+    "lastName": "MC KENZIE"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "eventPlace": {
+    "placeString": "Kincardine, Bruce South, Ontario, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

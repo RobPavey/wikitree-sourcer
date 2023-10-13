@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Robert MacDonald",
+    "forenames": "Robert",
+    "lastName": "MacDonald"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1906"
+  },
+  "eventPlace": {
+    "placeString": "Town of Portage la Prairie, Portage la Prairie, Manitoba, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

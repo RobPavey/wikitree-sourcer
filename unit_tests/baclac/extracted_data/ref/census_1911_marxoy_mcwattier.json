@@ -1,0 +1,30 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=15446480",
+  "success": true,
+  "name": "Mc Wattier, Marxoy",
+  "recordData": {
+    "Census year": "Census of Canada, 1911",
+    "Gender": "Female",
+    "Age": "33 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "15446480",
+    "Month of birth": "October",
+    "Year of birth": "1879",
+    "Marital Status": "Married",
+    "Relationship": "Wife",
+    "Place of birth": "Scotland",
+    "Place of residence": "Queen",
+    "Ethnic origin": "Scotch",
+    "Province": "Ontario",
+    "District name": "Victoria-Haliburton",
+    "District number": "129",
+    "Sub-district name": "Lindsay",
+    "Sub-district number": "65",
+    "Reference": "RG31 - Statistics Canada",
+    "Page number": "14",
+    "Family number": "154",
+    "Microfilm reel number": "T-20406",
+    "Image number": "e002032278",
+    "Help page": "Census"
+  }
+}

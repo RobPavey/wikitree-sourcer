@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Pierre Ka-He-Ro-Ton",
+    "forenames": "Pierre",
+    "lastName": "Ka-He-Ro-Ton"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "eventPlace": {
+    "placeString": "Sault-St. Louis, Laprairie, Quebec, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

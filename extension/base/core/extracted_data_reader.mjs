@@ -126,6 +126,22 @@ class ExtractedDataReader {
     return "";
   }
 
+  getUnit() {
+    return "";
+  }
+
+  getServiceNumber() {
+    return "";
+  }
+
+  getMilitaryBranch() {
+    return "";
+  }
+
+  getMilitaryRegiment() {
+    return "";
+  }
+
   getSpouseObj(eventDateObj, eventPlaceObj) {
     return undefined;
   }
@@ -257,6 +273,42 @@ class ExtractedDataReader {
         let dateObj = new DateObj();
         dateObj.dateString = dateString;
         return dateObj;
+      }
+    }
+  }
+
+  makeDateObjFromMonthDdYyyyTimeDate(inputDateString) {
+    // Example: May 17 1916 12:00AM
+    if (inputDateString) {
+      let parts = inputDateString.split(" ");
+      if (parts.length == 4) {
+        let month = parts[0];
+        let day = parts[1];
+        let year = parts[2];
+
+        if (day.length < 1 || month.length < 3 || year.length != 4) {
+          return;
+        }
+
+        let dayNum = parseInt(day);
+        let yearNum = parseInt(year);
+
+        if (isNaN(dayNum) || isNaN(yearNum)) {
+          return;
+        }
+
+        let initialDateString = day + " " + month + " " + year;
+
+        let parsedDate = DateUtils.parseDateString(initialDateString);
+        if (parsedDate && parsedDate.isValid) {
+          let dateString = DateUtilsgetStdShortFormDateString(parsedDate);
+
+          if (dateString) {
+            let dateObj = new DateObj();
+            dateObj.dateString = dateString;
+            return dateObj;
+          }
+        }
       }
     }
   }

@@ -1,0 +1,30 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=66233187",
+  "success": true,
+  "name": "Smith, John",
+  "recordData": {
+    "Census year": "Census of Canada, 1921",
+    "Gender": "Male",
+    "Age": "6 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "66233187",
+    "Estimate year of birth": "1915",
+    "Marital Status": "Single",
+    "Relationship": "Son",
+    "Place of birth": "Ontario",
+    "Ethnic origin": "Scotch",
+    "Province": "Ontario",
+    "District name": "Wentworth",
+    "District number": "141",
+    "Sub-district name": "Dundas (Town)",
+    "Sub-district number": "68",
+    "Sub-district description": "Polling Subdivision - Valley Ward",
+    "Reference": "RG31 - Statistics Canada",
+    "Page number": "10",
+    "Line number": "17",
+    "Family number": "121",
+    "Microfilm reel number": "T-25849",
+    "Image number": "e003050466",
+    "Help page": "Census"
+  }
+}

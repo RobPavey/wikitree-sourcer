@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "FRANCOIS XAVIER MONTMINY",
+    "forenames": "FRANCOIS XAVIER",
+    "lastName": "MONTMINY"
+  },
+  "eventPlace": {
+    "placeString": "undefined, undefined, undefined, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Francois Montminy",
+    "forenames": "Francois",
+    "lastName": "Montminy"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "eventPlace": {
+    "placeString": "St. Gilles, Lotbinière (county), Canada East (Quebec), Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

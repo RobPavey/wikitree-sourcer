@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=44376755 Canada Census Record] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=44376755 Canada Census Record] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=44376755 Canada Census Record] (accessed 6 May 2021)<br/>John Smith.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=21511208",
+  "success": true,
+  "name": "L'GERMAIN, Jean",
+  "recordData": {
+    "Census year": "Census of Canada, 1881",
+    "Gender": "Male",
+    "Age": "55 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "21511208",
+    "Year of birth": "1826",
+    "Place of birth": "Quebec",
+    "Nationality": "Francaise",
+    "Religion": "Catholic",
+    "Province": "Quebec",
+    "District name": "Yamaska",
+    "District number": "57",
+    "Sub-district name": "St. Michel",
+    "Sub-district number": "B",
+    "Reference": "RG31 - Statistics Canada",
+    "Page number": "44",
+    "Family number": "184",
+    "Container": "35",
+    "Microfilm reel number": "C-13199",
+    "Image number": "e008145918",
+    "Help page": "Census"
+  }
+}

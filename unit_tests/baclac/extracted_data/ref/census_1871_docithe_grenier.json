@@ -1,0 +1,27 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=40070185",
+  "success": true,
+  "name": "Grenier, Docithé L.",
+  "recordData": {
+    "Census year": "Census of Canada, 1871",
+    "Gender": "Male",
+    "Age": "32 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "40070185",
+    "Estimate year of birth": "1839",
+    "Marital Status": "Married",
+    "Place of birth": "Quebec",
+    "Religion": "Catholic",
+    "Province": "Quebec",
+    "District name": "Maskinongé",
+    "District number": "128",
+    "Sub-district name": "Rivière-du-Loup",
+    "Sub-district number": "b",
+    "Reference": "RG31 - Statistics Canada",
+    "Page number": "9",
+    "Line number": "9",
+    "Microfilm reel number": "C-10075",
+    "Image number": "4395481_00130",
+    "Help page": "Census"
+  }
+}

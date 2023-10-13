@@ -1,0 +1,28 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=849292",
+  "success": true,
+  "name": "MacDonald, Robert",
+  "recordData": {
+    "Census year": "Census of Northwest Provinces, 1906",
+    "Gender": "Male",
+    "Age": "2 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "849292",
+    "Estimate year of birth": "1904",
+    "Marital Status": "Single",
+    "Relationship": "Son",
+    "Place of birth": "Manitoba",
+    "Province": "Manitoba",
+    "District name": "Portage la Prairie",
+    "District number": "6",
+    "Sub-district number": "19",
+    "Sub-district description": "Town of Portage la Prairie",
+    "Reference": "RG31 - Statistics Canada",
+    "Division": "B",
+    "Page number": "56",
+    "Family number": "373",
+    "Microfilm reel number": "T-18355",
+    "Image number": "e001203991",
+    "Help page": "Census"
+  }
+}

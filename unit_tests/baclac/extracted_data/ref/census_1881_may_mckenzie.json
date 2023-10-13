@@ -1,0 +1,30 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=20538834",
+  "success": true,
+  "name": "MC KENZIE, May",
+  "recordData": {
+    "Census year": "Census of Canada, 1881",
+    "Gender": "Female",
+    "Age": "32 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "20538834",
+    "Year of birth": "1849",
+    "Marital Status": "Married",
+    "Place of birth": "Scotland",
+    "Nationality": "Scotch",
+    "Religion": "Presbyterian Church Of Canada",
+    "Province": "Ontario",
+    "District name": "Bruce South",
+    "District number": "176",
+    "Sub-district name": "Kincardine",
+    "Sub-district number": "E",
+    "Reference": "RG31 - Statistics Canada",
+    "Division": "1",
+    "Page number": "21",
+    "Family number": "84",
+    "Container": "1",
+    "Microfilm reel number": "C-13275",
+    "Image number": "e008204611",
+    "Help page": "Census"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Mary E FENTON",
+    "forenames": "Mary E",
+    "lastName": "FENTON"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "eventPlace": {
+    "placeString": "Arran, Bruce North, Ontario, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

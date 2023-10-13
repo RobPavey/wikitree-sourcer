@@ -1,0 +1,30 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=17167476",
+  "success": true,
+  "name": "Smith, John",
+  "recordData": {
+    "Census year": "Census of Canada, 1911",
+    "Gender": "Male",
+    "Age": "55 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "17167476",
+    "Month of birth": "October",
+    "Year of birth": "1855",
+    "Marital Status": "Married",
+    "Relationship": "Head",
+    "Place of birth": "Quebec",
+    "Place of residence": "Bonaventure",
+    "Province": "Quebec",
+    "District name": "Bonaventure",
+    "District number": "148",
+    "Sub-district name": "Hamilton East",
+    "Sub-district number": "5",
+    "Sub-district description": "Bonaventure",
+    "Reference": "RG31 - Statistics Canada",
+    "Page number": "7",
+    "Family number": "52",
+    "Microfilm reel number": "T-20417",
+    "Image number": "e002045658",
+    "Help page": "Census"
+  }
+}

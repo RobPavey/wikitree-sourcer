@@ -1,0 +1,27 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=44445788",
+  "success": true,
+  "name": "Keys, J...d",
+  "recordData": {
+    "Census year": "Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)",
+    "Gender": "Male",
+    "Age": "35 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "44445788",
+    "Estimate year of birth": "1826",
+    "Marital Status": "Married",
+    "Place of birth": "Ireland",
+    "Religion": "Catholic",
+    "Province": "Canada East (Quebec)",
+    "District name": "Hochelaga",
+    "District number": "20",
+    "Sub-district name": "Montréal",
+    "Sub-district number": "3",
+    "Reference": "RG31 - Statistics Canada",
+    "Page number": "153",
+    "Line number": "37",
+    "Microfilm reel number": "C-1280-1281",
+    "Image number": "4108708_00331",
+    "Help page": "Census"
+  }
+}

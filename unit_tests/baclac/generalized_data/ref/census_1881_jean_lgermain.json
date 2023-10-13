@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Jean L'GERMAIN",
+    "forenames": "Jean",
+    "lastName": "L'GERMAIN"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "eventPlace": {
+    "placeString": "St. Michel, Yamaska, Quebec, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

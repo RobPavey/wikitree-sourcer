@@ -1,0 +1,26 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=44376755",
+  "success": true,
+  "name": "Smith, John",
+  "recordData": {
+    "Census year": "Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)",
+    "Gender": "Male",
+    "Age": "14 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "44376755",
+    "Estimate year of birth": "1847",
+    "Marital Status": "Single",
+    "Place of birth": "Sutton C. E",
+    "Province": "Canada East (Quebec)",
+    "District name": "Brome",
+    "District number": "9",
+    "Sub-district name": "Sutton",
+    "Sub-district number": "5",
+    "Reference": "RG31 - Statistics Canada",
+    "Page number": "255",
+    "Line number": "19",
+    "Microfilm reel number": "C-1270",
+    "Image number": "4108676_00544",
+    "Help page": "Census"
+  }
+}

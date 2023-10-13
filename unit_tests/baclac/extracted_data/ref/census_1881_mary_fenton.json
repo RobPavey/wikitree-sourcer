@@ -1,0 +1,30 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=20567235",
+  "success": true,
+  "name": "FENTON, Mary E.",
+  "recordData": {
+    "Census year": "Census of Canada, 1881",
+    "Gender": "Female",
+    "Age": "32 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "20567235",
+    "Year of birth": "1849",
+    "Marital Status": "Married",
+    "Place of birth": "Ontario",
+    "Nationality": "English",
+    "Religion": "Church of England",
+    "Province": "Ontario",
+    "District name": "Bruce North",
+    "District number": "177",
+    "Sub-district name": "Arran",
+    "Sub-district number": "B",
+    "Reference": "RG31 - Statistics Canada",
+    "Division": "2",
+    "Page number": "60",
+    "Family number": "255",
+    "Container": "16",
+    "Microfilm reel number": "C-13275",
+    "Image number": "e008205196",
+    "Help page": "Census"
+  }
+}

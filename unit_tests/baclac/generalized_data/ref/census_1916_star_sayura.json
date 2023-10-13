@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "* Sayura",
+    "forenames": "*",
+    "lastName": "Sayura"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1916"
+  },
+  "eventPlace": {
+    "placeString": "Townships 24 and 25, Calgary West, Alberta, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=pffww&IdNumber=174866&q=Francois%20Montminy Canada Census Record] (accessed 6 May 2021)<br/>\nFRANCOIS XAVIER MONTMINY in undefined, undefined, undefined, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Francois was in a record in undefined, undefined, undefined, Canada.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=pffww&IdNumber=174866&q=Francois%20Montminy Canada Census Record] (accessed 6 May 2021)<br/>\nFRANCOIS XAVIER MONTMINY in undefined, undefined, undefined, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=pffww&IdNumber=174866&q=Francois%20Montminy Canada Census Record] (accessed 6 May 2021)<br/>FRANCOIS XAVIER MONTMINY in undefined, undefined, undefined, Canada.",
+    "type": "source"
+  }
+}

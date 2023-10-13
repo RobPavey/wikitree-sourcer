@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=cangaz&IdNumber=1888&q=John%20Smith Canada Census Record] (accessed 6 May 2021)<br/>\nUnknown in undefined, undefined, undefined, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record in undefined, undefined, undefined, Canada.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=cangaz&IdNumber=1888&q=John%20Smith Canada Census Record] (accessed 6 May 2021)<br/>\nUnknown in undefined, undefined, undefined, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=cangaz&IdNumber=1888&q=John%20Smith Canada Census Record] (accessed 6 May 2021)<br/>Unknown in undefined, undefined, undefined, Canada.",
+    "type": "source"
+  }
+}

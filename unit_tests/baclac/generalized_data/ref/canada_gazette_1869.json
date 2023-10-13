@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "name": {},
+  "eventPlace": {
+    "placeString": "undefined, undefined, undefined, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

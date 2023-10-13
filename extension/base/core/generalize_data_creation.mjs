@@ -75,6 +75,12 @@ function commonGeneralizeData(sourceOfData, edReader) {
   setStandardizedField("maritalStatus", edReader.getMaritalStatus(), GD.standardizeMaritalStatus);
   setStandardizedField("occupation", edReader.getOccupation(), GD.standardizeOccupation);
 
+  // military fields
+  setField("unit", edReader.getUnit());
+  setField("serviceNumber", edReader.getServiceNumber());
+  setField("militaryBranch", edReader.getMilitaryBranch());
+  setField("militaryRegiment", edReader.getMilitaryRegiment());
+
   result.addSpouseObj(edReader.getSpouseObj(result.eventDate, result.eventPlace));
 
   setField("parents", edReader.getParents());

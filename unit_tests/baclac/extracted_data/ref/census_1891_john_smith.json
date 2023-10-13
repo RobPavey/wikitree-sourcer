@@ -1,0 +1,26 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=26261677",
+  "success": true,
+  "name": "Smith, John",
+  "recordData": {
+    "Census year": "Census of Canada, 1891",
+    "Gender": "Male",
+    "Age": "67 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "26261677",
+    "Year of birth": "1824",
+    "Marital Status": "Married",
+    "Province": "Ontario",
+    "District name": "Oxford South",
+    "District number": "105",
+    "Sub-district name": "Ingersoll Town",
+    "Sub-district number": "B",
+    "Reference": "RG31 - Statistics Canada",
+    "Division": "1",
+    "Page number": "32-33",
+    "Family number": "162",
+    "Microfilm reel number": "T-6361",
+    "Image number": "30953_148163-00058",
+    "Help page": "Census"
+  }
+}

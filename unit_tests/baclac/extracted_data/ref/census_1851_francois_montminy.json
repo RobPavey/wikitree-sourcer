@@ -1,0 +1,25 @@
+{
+  "url": "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=23447983",
+  "success": true,
+  "name": "Montminy, Francois",
+  "recordData": {
+    "Census year": "Census of 1851 (Canada East, Canada West, New Brunswick and Nova Scotia)",
+    "Gender": "Male",
+    "Age": "33 years",
+    "Found in": "Genealogy / Census",
+    "Item ID number": "23447983",
+    "Estimate year of birth": "1818",
+    "Place of birth": "St Giles",
+    "Province": "Canada East (Quebec)",
+    "District name": "Lotbinière (county)",
+    "District number": "14",
+    "Sub-district name": "St. Gilles",
+    "Sub-district number": "198",
+    "Reference": "RG31 - Statistics Canada",
+    "Page number": "17",
+    "Line number": "20",
+    "Microfilm reel number": "C-1126",
+    "Image number": "e002306386",
+    "Help page": "Census"
+  }
+}

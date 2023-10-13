@@ -18,6 +18,7 @@
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
+    "*://*.bac-lac.gc.ca/*",
     "*://*.billiongraves.com/*",
     "*://*.cornwall-opc-database.org/*",
     "*://*.cwgc.org/*",
@@ -81,6 +82,11 @@
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
+    },
+    {
+      "matches": ["*://*.bac-lac.gc.ca/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/baclac/browser/baclac_content.js"]
     },
     {
       "matches": ["*://*.billiongraves.com/*"],
@@ -226,6 +232,10 @@
         "*://*.ancestrylibrary.ca/*",
         "*://*.ancestrylibrary.com.au/*"
       ]
+    },
+    {
+      "resources": ["site/baclac/core/baclac_extract_data.mjs"],
+      "matches": ["*://*.bac-lac.gc.ca/*"]
     },
     {
       "resources": ["site/bg/core/bg_extract_data.mjs"],

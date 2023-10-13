@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Docithé L Grenier",
+    "forenames": "Docithé L",
+    "lastName": "Grenier"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "eventPlace": {
+    "placeString": "Rivière-du-Loup, Maskinongé, Quebec, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}
