@@ -1,7 +1,7 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
   "name": {
     "name": "John Smith",
     "forenames": "John",
@@ -15,5 +15,10 @@
     "placeString": "Ingersoll Town, Oxford South, Ontario, Canada",
     "country": "Canada"
   },
+  "birthDate": {
+    "yearString": "1824"
+  },
+  "ageAtEvent": "67",
+  "maritalStatus": "married",
   "hasValidData": true
 }

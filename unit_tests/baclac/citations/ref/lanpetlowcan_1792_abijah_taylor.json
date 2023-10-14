@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Land Petition''':\n\"Land Petitions of Lower Canada, 1764 to 1841\"<br/>\nReference: RG 1 L3L, Volume 194, pages 92346-92403; Microfilm: C-2566; Item ID number: 84657<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=lanpetlowcan&id=84657&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Abijah Taylor; Year: 1792 & 1831.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Abijah was in a land petition record in 1792 in Lower Canada, Canada.<ref>\n'''Land Petition''':\n\"Land Petitions of Lower Canada, 1764 to 1841\"<br/>\nReference: RG 1 L3L, Volume 194, pages 92346-92403; Microfilm: C-2566; Item ID number: 84657<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=lanpetlowcan&id=84657&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Abijah Taylor; Year: 1792 & 1831.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Land Petition''': \"Land Petitions of Lower Canada, 1764 to 1841\"<br/>Reference: RG 1 L3L, Volume 194, pages 92346-92403; Microfilm: C-2566; Item ID number: 84657<br/>[http://central.bac-lac.gc.ca/.redirect?app=lanpetlowcan&id=84657&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Name: Abijah Taylor; Year: 1792 & 1831.",
+    "type": "source"
+  }
+}

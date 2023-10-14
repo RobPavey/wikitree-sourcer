@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=20538834 Canada Census Record] (accessed 6 May 2021)<br/>\nMay MC KENZIE.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Census of Canada, 1881\"<br/>\nReference: RG31 - Statistics Canada; Page: 21; Family number: 84; Microfilm reel number: C-13275; Image number: e008204611; Item ID number: 20538834<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=20538834&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nMay Mc Kenzie (32), married in Kincardine, Bruce South, Ontario, Canada. Born in Scotland.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "May was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=20538834 Canada Census Record] (accessed 6 May 2021)<br/>\nMay MC KENZIE.\n</ref>",
+    "citation": "In the 1881 census May (age 32) was recorded as married in Kincardine, Bruce South, Ontario, Canada.<ref>\n'''1881 Census''':\n\"Census of Canada, 1881\"<br/>\nReference: RG31 - Statistics Canada; Page: 21; Family number: 84; Microfilm reel number: C-13275; Image number: e008204611; Item ID number: 20538834<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=20538834&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nMay Mc Kenzie (32), married in Kincardine, Bruce South, Ontario, Canada. Born in Scotland.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=20538834 Canada Census Record] (accessed 6 May 2021)<br/>May MC KENZIE.",
+    "citation": "* '''1881 Census''': \"Census of Canada, 1881\"<br/>Reference: RG31 - Statistics Canada; Page: 21; Family number: 84; Microfilm reel number: C-13275; Image number: e008204611; Item ID number: 20538834<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=20538834&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>May Mc Kenzie (32), married in Kincardine, Bruce South, Ontario, Canada. Born in Scotland.",
     "type": "source"
   }
 }

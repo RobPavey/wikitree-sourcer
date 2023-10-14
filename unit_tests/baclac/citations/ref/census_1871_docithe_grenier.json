@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=40070185 Canada Census Record] (accessed 6 May 2021)<br/>\nDocithé L Grenier.\n</ref>",
+    "citation": "<ref>\n'''1871 Census''':\n\"Census of Canada, 1871\"<br/>\nReference: RG31 - Statistics Canada; Page: 9; Line: 9; Microfilm reel number: C-10075; Image number: 4395481_00130; Item ID number: 40070185<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=40070185&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nDocithé L Grenier (32), married in Rivière-du-Loup, Maskinongé, Quebec, Canada. Born in Quebec.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Docithé was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=40070185 Canada Census Record] (accessed 6 May 2021)<br/>\nDocithé L Grenier.\n</ref>",
+    "citation": "In the 1871 census Docithé (age 32) was recorded as married in Rivière-du-Loup, Maskinongé, Quebec, Canada.<ref>\n'''1871 Census''':\n\"Census of Canada, 1871\"<br/>\nReference: RG31 - Statistics Canada; Page: 9; Line: 9; Microfilm reel number: C-10075; Image number: 4395481_00130; Item ID number: 40070185<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=40070185&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nDocithé L Grenier (32), married in Rivière-du-Loup, Maskinongé, Quebec, Canada. Born in Quebec.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=40070185 Canada Census Record] (accessed 6 May 2021)<br/>Docithé L Grenier.",
+    "citation": "* '''1871 Census''': \"Census of Canada, 1871\"<br/>Reference: RG31 - Statistics Canada; Page: 9; Line: 9; Microfilm reel number: C-10075; Image number: 4395481_00130; Item ID number: 40070185<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=40070185&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Docithé L Grenier (32), married in Rivière-du-Loup, Maskinongé, Quebec, Canada. Born in Quebec.",
     "type": "source"
   }
 }

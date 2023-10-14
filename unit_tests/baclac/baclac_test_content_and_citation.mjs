@@ -102,11 +102,48 @@ const regressionData = [
     url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=66233187",
   },
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Immigration
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "immfrochi_1949_ng_suey_jun",
+    url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=immfrochi&IdNumber=96809&q=Smith",
+  },
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // LandGrant
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "lanboauppcan_1790_bethsheba_soper",
+    url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=lanboauppcan&IdNumber=14220&q=Wilson",
+  },
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // LandPetition
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "lanpetlowcan_1792_abijah_taylor",
+    url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=lanpetlowcan&IdNumber=84657&q=taylor",
+  },
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Military
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   {
+    caseName: "coumarwwi_1918_rob_roy_mcgregor",
+    url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=coumarwwi&IdNumber=8046&q=Macgregor",
+  },
+  {
     caseName: "military_ww1_francois_montminy",
     url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=pffww&IdNumber=174866&q=Francois%20Montminy",
+  },
+  {
+    caseName: "nwmp_john_mcvicar",
+    url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=nwmp&IdNumber=46734&q=duncan",
+  },
+  {
+    caseName: "porros_1784_john_smith",
+    url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=porros&IdNumber=1270&q=Smith",
+  },
+  {
+    caseName: "roynavled_jean_beaucage",
+    url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=roynavled&IdNumber=5273&q=jean-pierre",
   },
 ];
 

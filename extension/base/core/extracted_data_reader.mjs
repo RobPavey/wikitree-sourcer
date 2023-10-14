@@ -130,6 +130,10 @@ class ExtractedDataReader {
     return "";
   }
 
+  getRank() {
+    return "";
+  }
+
   getServiceNumber() {
     return "";
   }
@@ -336,6 +340,14 @@ class ExtractedDataReader {
     if (placeString) {
       let placeObj = new PlaceObj();
       placeObj.placeString = placeString;
+      return placeObj;
+    }
+  }
+
+  makePlaceObjFromCountryName(countryString) {
+    if (countryString) {
+      let placeObj = new PlaceObj();
+      placeObj.country = countryString;
       return placeObj;
     }
   }

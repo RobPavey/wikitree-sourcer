@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "name": "Rob Roy McGregor",
+    "forenames": "Rob Roy",
+    "lastName": "McGregor"
+  },
+  "eventDate": {
+    "dateString": "1914-1919"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "unit": "1st Res. Bn",
+  "rank": "Private",
+  "serviceNumber": "102343",
+  "hasValidData": true
+}

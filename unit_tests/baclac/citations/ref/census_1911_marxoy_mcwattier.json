@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=15446480 Canada Census Record] (accessed 6 May 2021)<br/>\nMarxoy Mc Wattier.\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"Census of Canada, 1911\"<br/>\nReference: RG31 - Statistics Canada; Page: 14; Family number: 154; Microfilm reel number: T-20406; Image number: e002032278; Item ID number: 15446480<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=15446480&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nMarxoy Mc Wattier (33), wife, in Lindsay, Victoria-Haliburton, Ontario, Canada. Born in Scotland.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Marxoy was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=15446480 Canada Census Record] (accessed 6 May 2021)<br/>\nMarxoy Mc Wattier.\n</ref>",
+    "citation": "In the 1911 census Marxoy (age 33) was a married wife in Lindsay, Victoria-Haliburton, Ontario, Canada.<ref>\n'''1911 Census''':\n\"Census of Canada, 1911\"<br/>\nReference: RG31 - Statistics Canada; Page: 14; Family number: 154; Microfilm reel number: T-20406; Image number: e002032278; Item ID number: 15446480<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=15446480&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nMarxoy Mc Wattier (33), wife, in Lindsay, Victoria-Haliburton, Ontario, Canada. Born in Scotland.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=15446480 Canada Census Record] (accessed 6 May 2021)<br/>Marxoy Mc Wattier.",
+    "citation": "* '''1911 Census''': \"Census of Canada, 1911\"<br/>Reference: RG31 - Statistics Canada; Page: 14; Family number: 154; Microfilm reel number: T-20406; Image number: e002032278; Item ID number: 15446480<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=15446480&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Marxoy Mc Wattier (33), wife, in Lindsay, Victoria-Haliburton, Ontario, Canada. Born in Scotland.",
     "type": "source"
   }
 }

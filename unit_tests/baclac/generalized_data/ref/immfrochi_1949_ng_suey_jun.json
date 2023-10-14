@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Immigration",
+  "name": {
+    "name": "ng suey jun (mrs l f smith)"
+  },
+  "eventDate": {
+    "dateString": "1 Jun 1949"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "ageAtEvent": "26",
+  "hasValidData": true
+}

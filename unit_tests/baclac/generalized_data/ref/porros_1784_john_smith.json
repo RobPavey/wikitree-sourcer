@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "name": "John Smith",
+    "forenames": "John",
+    "lastName": "Smith"
+  },
+  "eventDate": {
+    "yearString": "1784"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "ageAtEvent": "34",
+  "hasValidData": true
+}

@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "name": "John Duncan Mcvicar",
+    "forenames": "John Duncan",
+    "lastName": "Mcvicar"
+  },
+  "eventDate": {
+    "dateString": "1873-1904"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "unit": "North West Mounted Police",
+  "serviceNumber": "2658",
+  "hasValidData": true
+}

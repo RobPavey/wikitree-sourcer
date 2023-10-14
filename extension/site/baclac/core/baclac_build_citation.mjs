@@ -45,7 +45,16 @@ function buildRecordLink(ed, gd, edReader, builder) {
   builder.recordLinkOrTemplate = recordLink;
 }
 
-const referenceKeys = [["reference"]];
+const referenceKeys = [
+  ["reference"],
+  ["page number"],
+  ["line number"],
+  ["family number"],
+  ["microfilm reel number", "microfilm"],
+  ["bundle"],
+  ["image number"],
+  ["item id number"],
+];
 
 function isReferenceKey(key) {
   let lcKey = key.toLowerCase();
@@ -91,6 +100,11 @@ function buildDataList(ed, gd, edReader, builder) {
   } else if (options.citation_general_dataListSeparator == "commaSpace") {
     itemSep = ",";
     valueSep = "";
+  }
+
+  let name = gd.inferFullName();
+  if (name) {
+    dataString += "Name" + valueSep + " " + name;
   }
 
   if (recordData) {

@@ -868,8 +868,11 @@ class NameObj {
     if (!name) {
       return name;
     }
-    // remove any '.' characters in name
-    name = name.replace(/\./g, "");
+    // remove any single '.' characters in name
+    // We want to leave an elipsis meaning un transcribed characters
+    name = name.replace(/([^\.])\.([^\.])/g, "$1 $2");
+    name = name.replace(/^\.([^\.])/g, "$1");
+    name = name.replace(/([^\.])\.$/, "$1");
     name = name.replace(/\s+/g, " ");
     name = name.trim();
     return name;
@@ -3107,6 +3110,14 @@ class GeneralizedData {
       {
         type: RT.LandTax,
         defaultTitle: "Land Tax",
+      },
+      {
+        type: RT.LandGrant,
+        defaultTitle: "Land Grant",
+      },
+      {
+        type: RT.LandPetition,
+        defaultTitle: "Land Petition",
       },
       {
         type: RT.Tax,

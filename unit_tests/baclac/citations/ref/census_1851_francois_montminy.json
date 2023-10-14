@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=23447983 Canada Census Record] (accessed 6 May 2021)<br/>\nFrancois Montminy.\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"Census of 1851 (Canada East, Canada West, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 17; Line: 20; Microfilm reel number: C-1126; Image number: e002306386; Item ID number: 23447983<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=23447983&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nFrancois Montminy (33) in St. Gilles, Lotbinière (county), Canada East (Quebec), Canada. Born in St Giles.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Francois was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=23447983 Canada Census Record] (accessed 6 May 2021)<br/>\nFrancois Montminy.\n</ref>",
+    "citation": "In the 1851 census Francois (age 33) was in St. Gilles, Lotbinière (county), Canada East (Quebec), Canada.<ref>\n'''1851 Census''':\n\"Census of 1851 (Canada East, Canada West, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 17; Line: 20; Microfilm reel number: C-1126; Image number: e002306386; Item ID number: 23447983<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=23447983&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nFrancois Montminy (33) in St. Gilles, Lotbinière (county), Canada East (Quebec), Canada. Born in St Giles.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=23447983 Canada Census Record] (accessed 6 May 2021)<br/>Francois Montminy.",
+    "citation": "* '''1851 Census''': \"Census of 1851 (Canada East, Canada West, New Brunswick and Nova Scotia)\"<br/>Reference: RG31 - Statistics Canada; Page: 17; Line: 20; Microfilm reel number: C-1126; Image number: e002306386; Item ID number: 23447983<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=23447983&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Francois Montminy (33) in St. Gilles, Lotbinière (county), Canada East (Quebec), Canada. Born in St Giles.",
     "type": "source"
   }
 }

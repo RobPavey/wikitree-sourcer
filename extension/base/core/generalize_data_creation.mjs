@@ -77,6 +77,7 @@ function commonGeneralizeData(sourceOfData, edReader) {
 
   // military fields
   setField("unit", edReader.getUnit());
+  setField("rank", edReader.getRank());
   setField("serviceNumber", edReader.getServiceNumber());
   setField("militaryBranch", edReader.getMilitaryBranch());
   setField("militaryRegiment", edReader.getMilitaryRegiment());

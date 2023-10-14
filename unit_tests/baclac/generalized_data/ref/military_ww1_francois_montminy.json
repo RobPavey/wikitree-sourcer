@@ -1,15 +1,22 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Military",
   "name": {
-    "name": "FRANCOIS XAVIER MONTMINY",
-    "forenames": "FRANCOIS XAVIER",
-    "lastName": "MONTMINY"
+    "name": "Francois Xavier Montminy",
+    "forenames": "Francois Xavier",
+    "lastName": "Montminy"
+  },
+  "eventDate": {
+    "dateString": "1914-1918"
   },
   "eventPlace": {
-    "placeString": "undefined, undefined, undefined, Canada",
+    "placeString": "Canada",
     "country": "Canada"
   },
+  "birthDate": {
+    "dateString": "15 Apr 1896"
+  },
+  "serviceNumber": "3283044",
   "hasValidData": true
 }

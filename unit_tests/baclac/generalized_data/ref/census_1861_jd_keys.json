@@ -1,10 +1,10 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
   "name": {
-    "name": "Jd Keys",
-    "forenames": "Jd",
+    "name": "J...d Keys",
+    "forenames": "J...d",
     "lastName": "Keys"
   },
   "personGender": "male",
@@ -15,5 +15,10 @@
     "placeString": "Montréal, Hochelaga, Canada East (Quebec), Canada",
     "country": "Canada"
   },
+  "birthPlace": {
+    "placeString": "Ireland"
+  },
+  "ageAtEvent": "35",
+  "maritalStatus": "married",
   "hasValidData": true
 }

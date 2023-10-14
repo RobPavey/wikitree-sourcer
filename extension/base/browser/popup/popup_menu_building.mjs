@@ -943,6 +943,8 @@ function setupBuildCitationSubMenu(
     Heraldry: `Heraldic Record`,
     Immigration: `Immigration`,
     LandTax: `Land Tax`,
+    LandPetition: `Land Petition`,
+    LandGrant: `Land Grant`,
     LegalRecord: `Legal Record`,
     Marriage: `Marriage`,
     MarriageRegistration: `Marriage Registration`,

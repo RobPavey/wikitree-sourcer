@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Military''':\n\"Royal Canadian Navy Service Ledger Sheets, 1910 to 1941\"<br/>\nReference: RG 150, accession 1992-93/170, Volume 6; Item ID number: 5273<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=roynavled&id=5273&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Jean Pierre Beaucage; Date of birth: 1923-03-02; Place of birth: St.Therese, Quebec; Occupation: Painter; Religion: Roman Catholic; Service number: 4326.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jean was in a military record in 1910-1941 in Canada. Their service number was 4326.<ref>\n'''Military''':\n\"Royal Canadian Navy Service Ledger Sheets, 1910 to 1941\"<br/>\nReference: RG 150, accession 1992-93/170, Volume 6; Item ID number: 5273<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=roynavled&id=5273&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Jean Pierre Beaucage; Date of birth: 1923-03-02; Place of birth: St.Therese, Quebec; Occupation: Painter; Religion: Roman Catholic; Service number: 4326.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Military''': \"Royal Canadian Navy Service Ledger Sheets, 1910 to 1941\"<br/>Reference: RG 150, accession 1992-93/170, Volume 6; Item ID number: 5273<br/>[http://central.bac-lac.gc.ca/.redirect?app=roynavled&id=5273&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Name: Jean Pierre Beaucage; Date of birth: 1923-03-02; Place of birth: St.Therese, Quebec; Occupation: Painter; Religion: Roman Catholic; Service number: 4326.",
+    "type": "source"
+  }
+}

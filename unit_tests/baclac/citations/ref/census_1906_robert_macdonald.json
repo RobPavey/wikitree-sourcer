@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=849292 Canada Census Record] (accessed 6 May 2021)<br/>\nRobert MacDonald.\n</ref>",
+    "citation": "<ref>\n'''1906 Census''':\n\"Census of Northwest Provinces, 1906\"<br/>\nReference: RG31 - Statistics Canada; Page: 56; Family number: 373; Microfilm reel number: T-18355; Image number: e001203991; Item ID number: 849292<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=849292&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nRobert MacDonald (2), single son, in Portage la Prairie, Manitoba, Canada. Born in Manitoba.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Robert was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=849292 Canada Census Record] (accessed 6 May 2021)<br/>\nRobert MacDonald.\n</ref>",
+    "citation": "In the 1906 census Robert (age 2) was a son in Portage la Prairie, Manitoba, Canada.<ref>\n'''1906 Census''':\n\"Census of Northwest Provinces, 1906\"<br/>\nReference: RG31 - Statistics Canada; Page: 56; Family number: 373; Microfilm reel number: T-18355; Image number: e001203991; Item ID number: 849292<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=849292&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nRobert MacDonald (2), single son, in Portage la Prairie, Manitoba, Canada. Born in Manitoba.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=849292 Canada Census Record] (accessed 6 May 2021)<br/>Robert MacDonald.",
+    "citation": "* '''1906 Census''': \"Census of Northwest Provinces, 1906\"<br/>Reference: RG31 - Statistics Canada; Page: 56; Family number: 373; Microfilm reel number: T-18355; Image number: e001203991; Item ID number: 849292<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=849292&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Robert MacDonald (2), single son, in Portage la Prairie, Manitoba, Canada. Born in Manitoba.",
     "type": "source"
   }
 }

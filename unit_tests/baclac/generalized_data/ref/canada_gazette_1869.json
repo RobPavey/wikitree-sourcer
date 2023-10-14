@@ -2,9 +2,11 @@
   "sourceOfData": "baclac",
   "sourceType": "record",
   "recordType": "Newspaper",
-  "name": {},
+  "eventDate": {
+    "dateString": "20 Mar 1869"
+  },
   "eventPlace": {
-    "placeString": "undefined, undefined, undefined, Canada",
+    "placeString": "Canada",
     "country": "Canada"
   },
   "hasValidData": true

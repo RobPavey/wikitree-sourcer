@@ -1,11 +1,11 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
   "name": {
-    "name": "Jean L'GERMAIN",
+    "name": "Jean L'Germain",
     "forenames": "Jean",
-    "lastName": "L'GERMAIN"
+    "lastName": "L'Germain"
   },
   "personGender": "male",
   "eventDate": {
@@ -15,5 +15,12 @@
     "placeString": "St. Michel, Yamaska, Quebec, Canada",
     "country": "Canada"
   },
+  "birthDate": {
+    "yearString": "1826"
+  },
+  "birthPlace": {
+    "placeString": "Quebec"
+  },
+  "ageAtEvent": "55",
   "hasValidData": true
 }

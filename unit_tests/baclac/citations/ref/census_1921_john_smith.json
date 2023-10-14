@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=66233187 Canada Census Record] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
+    "citation": "<ref>\n'''1921 Census''':\n\"Census of Canada, 1921\"<br/>\nReference: RG31 - Statistics Canada; Page: 10; Line: 17; Family number: 121; Microfilm reel number: T-25849; Image number: e003050466; Item ID number: 66233187<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=66233187&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (6), single son, in Dundas (Town), Wentworth, Ontario, Canada. Born in Ontario.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "John was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=66233187 Canada Census Record] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
+    "citation": "In the 1921 census John (age 6) was a son in Dundas (Town), Wentworth, Ontario, Canada.<ref>\n'''1921 Census''':\n\"Census of Canada, 1921\"<br/>\nReference: RG31 - Statistics Canada; Page: 10; Line: 17; Family number: 121; Microfilm reel number: T-25849; Image number: e003050466; Item ID number: 66233187<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=66233187&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (6), single son, in Dundas (Town), Wentworth, Ontario, Canada. Born in Ontario.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=66233187 Canada Census Record] (accessed 6 May 2021)<br/>John Smith.",
+    "citation": "* '''1921 Census''': \"Census of Canada, 1921\"<br/>Reference: RG31 - Statistics Canada; Page: 10; Line: 17; Family number: 121; Microfilm reel number: T-25849; Image number: e003050466; Item ID number: 66233187<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=66233187&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>John Smith (6), single son, in Dundas (Town), Wentworth, Ontario, Canada. Born in Ontario.",
     "type": "source"
   }
 }

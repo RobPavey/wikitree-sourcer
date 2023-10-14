@@ -12,8 +12,13 @@
     "yearString": "1916"
   },
   "eventPlace": {
-    "placeString": "Townships 24 and 25, Calgary West, Alberta, Canada",
+    "placeString": "Calgary West, Alberta, Canada",
     "country": "Canada"
   },
+  "birthPlace": {
+    "placeString": "Austria"
+  },
+  "ageAtEvent": "35",
+  "maritalStatus": "married",
   "hasValidData": true
 }

@@ -1,7 +1,7 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
   "name": {
     "name": "Docithé L Grenier",
     "forenames": "Docithé L",
@@ -15,5 +15,10 @@
     "placeString": "Rivière-du-Loup, Maskinongé, Quebec, Canada",
     "country": "Canada"
   },
+  "birthPlace": {
+    "placeString": "Quebec"
+  },
+  "ageAtEvent": "32",
+  "maritalStatus": "married",
   "hasValidData": true
 }

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=17167476 Canada Census Record] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
+    "citation": "<ref>\n'''1911 Census''':\n\"Census of Canada, 1911\"<br/>\nReference: RG31 - Statistics Canada; Page: 7; Family number: 52; Microfilm reel number: T-20417; Image number: e002045658; Item ID number: 17167476<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=17167476&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (55), married head of household in Hamilton East, Bonaventure, Quebec, Canada. Born in Quebec.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "John was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=17167476 Canada Census Record] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
+    "citation": "In the 1911 census John (age 55) was the married head of household in Hamilton East, Bonaventure, Quebec, Canada.<ref>\n'''1911 Census''':\n\"Census of Canada, 1911\"<br/>\nReference: RG31 - Statistics Canada; Page: 7; Family number: 52; Microfilm reel number: T-20417; Image number: e002045658; Item ID number: 17167476<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=17167476&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (55), married head of household in Hamilton East, Bonaventure, Quebec, Canada. Born in Quebec.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=17167476 Canada Census Record] (accessed 6 May 2021)<br/>John Smith.",
+    "citation": "* '''1911 Census''': \"Census of Canada, 1911\"<br/>Reference: RG31 - Statistics Canada; Page: 7; Family number: 52; Microfilm reel number: T-20417; Image number: e002045658; Item ID number: 17167476<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=17167476&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>John Smith (55), married head of household in Hamilton East, Bonaventure, Quebec, Canada. Born in Quebec.",
     "type": "source"
   }
 }

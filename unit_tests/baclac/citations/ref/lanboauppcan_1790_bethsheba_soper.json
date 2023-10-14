@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Land Grant''':\n\"Land Boards of Upper Canada, 1765 to 1804\"<br/>\nReference: RG 1 L4, Volume 7, pages 303; Microfilm: C-14027; Item ID number: 14220<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=lanboauppcan&id=14220&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Bethsheba Soper/wilson; Year: 1790; District: Mecklenburg; Description: re petition.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Bethsheba was in a land grant record in 1790 in Mecklenburg, Upper Canada, Canada.<ref>\n'''Land Grant''':\n\"Land Boards of Upper Canada, 1765 to 1804\"<br/>\nReference: RG 1 L4, Volume 7, pages 303; Microfilm: C-14027; Item ID number: 14220<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=lanboauppcan&id=14220&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Bethsheba Soper/wilson; Year: 1790; District: Mecklenburg; Description: re petition.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Land Grant''': \"Land Boards of Upper Canada, 1765 to 1804\"<br/>Reference: RG 1 L4, Volume 7, pages 303; Microfilm: C-14027; Item ID number: 14220<br/>[http://central.bac-lac.gc.ca/.redirect?app=lanboauppcan&id=14220&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Name: Bethsheba Soper/wilson; Year: 1790; District: Mecklenburg; Description: re petition.",
+    "type": "source"
+  }
+}

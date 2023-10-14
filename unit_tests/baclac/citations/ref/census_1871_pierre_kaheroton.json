@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=38937965 Canada Census Record] (accessed 6 May 2021)<br/>\nPierre Ka-He-Ro-Ton.\n</ref>",
+    "citation": "<ref>\n'''1871 Census''':\n\"Census of Canada, 1871\"<br/>\nReference: RG31 - Statistics Canada; Page: 19; Line: 12; Microfilm reel number: C-10058; Image number: 4395473_00346; Item ID number: 38937965<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=38937965&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nPierre Ka-He-Ro-Ton (33), married in Sault-St. Louis, Laprairie, Quebec, Canada. Born in Quebec.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Pierre was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=38937965 Canada Census Record] (accessed 6 May 2021)<br/>\nPierre Ka-He-Ro-Ton.\n</ref>",
+    "citation": "In the 1871 census Pierre (age 33) was recorded as married in Sault-St. Louis, Laprairie, Quebec, Canada.<ref>\n'''1871 Census''':\n\"Census of Canada, 1871\"<br/>\nReference: RG31 - Statistics Canada; Page: 19; Line: 12; Microfilm reel number: C-10058; Image number: 4395473_00346; Item ID number: 38937965<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=38937965&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nPierre Ka-He-Ro-Ton (33), married in Sault-St. Louis, Laprairie, Quebec, Canada. Born in Quebec.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=38937965 Canada Census Record] (accessed 6 May 2021)<br/>Pierre Ka-He-Ro-Ton.",
+    "citation": "* '''1871 Census''': \"Census of Canada, 1871\"<br/>Reference: RG31 - Statistics Canada; Page: 19; Line: 12; Microfilm reel number: C-10058; Image number: 4395473_00346; Item ID number: 38937965<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=38937965&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Pierre Ka-He-Ro-Ton (33), married in Sault-St. Louis, Laprairie, Quebec, Canada. Born in Quebec.",
     "type": "source"
   }
 }

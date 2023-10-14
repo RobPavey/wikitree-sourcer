@@ -62,6 +62,29 @@ function extractData(document, url) {
           label = label.substring(0, label.length - 1);
         }
         value = value.trim();
+
+        if (valueElement.childElementCount > 0) {
+          // there is a element (as well as text) in this row value
+          // It could be a link like in the "Help page:	" row. But it could also
+          // be several text nodes separated by <br> elements.
+          // First check if all the child elements are <br>s
+          let brsFound = false;
+          let nonBrsFound = false;
+          for (let childElement of valueElement.children) {
+            if (childElement.tagName == "BR") {
+              brsFound = true;
+            } else {
+              nonBrsFound = true;
+            }
+          }
+
+          if (brsFound && !nonBrsFound) {
+            let innerHtml = valueElement.innerHTML;
+            innerHtml = innerHtml.replace(/\s*<br>\s*/, " & ");
+            value = innerHtml.trim();
+          }
+        }
+
         result.recordData[label] = value;
       }
     }

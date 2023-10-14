@@ -1,7 +1,7 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
   "name": {
     "name": "Pierre Ka-He-Ro-Ton",
     "forenames": "Pierre",
@@ -15,5 +15,10 @@
     "placeString": "Sault-St. Louis, Laprairie, Quebec, Canada",
     "country": "Canada"
   },
+  "birthPlace": {
+    "placeString": "Quebec"
+  },
+  "ageAtEvent": "33",
+  "maritalStatus": "married",
   "hasValidData": true
 }

@@ -58,6 +58,8 @@ const RT = {
   MedicalPatient: `MedicalPatient`,
   QuarterSession: `QuarterSession`,
   LandTax: `LandTax`,
+  LandPetition: `LandPetition`,
+  LandGrant: `LandGrant`,
   Tax: `Tax`,
   ValuationRoll: `ValuationRoll`,
   Apprenticeship: `Apprenticeship`,

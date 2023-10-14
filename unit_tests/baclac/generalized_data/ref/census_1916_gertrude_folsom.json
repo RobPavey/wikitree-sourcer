@@ -1,7 +1,7 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
   "name": {
     "name": "Gertrude L Folsom",
     "forenames": "Gertrude L",
@@ -12,8 +12,13 @@
     "yearString": "1916"
   },
   "eventPlace": {
-    "placeString": "Town of Cardston, Lethbridge, Alberta, Canada",
+    "placeString": "Cardston, Lethbridge, Alberta, Canada",
     "country": "Canada"
   },
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "ageAtEvent": "33",
+  "maritalStatus": "married",
   "hasValidData": true
 }

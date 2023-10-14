@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Military''':\n\"Black Loyalist Refugees—Port Roseway Associates, 1782 to 1807\"<br/>\nReference: MG9-B9-14, Volume 1, Page 201-202; Microfilm reel number: H-984; Item ID number: 1270<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=porros&id=1270&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: John Smith; Age: 34; Year: 1784; Record Title: Muster Book of Free Black, Settlement of Birchtown.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John was in a military record in 1784 in Canada.<ref>\n'''Military''':\n\"Black Loyalist Refugees—Port Roseway Associates, 1782 to 1807\"<br/>\nReference: MG9-B9-14, Volume 1, Page 201-202; Microfilm reel number: H-984; Item ID number: 1270<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=porros&id=1270&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: John Smith; Age: 34; Year: 1784; Record Title: Muster Book of Free Black, Settlement of Birchtown.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Military''': \"Black Loyalist Refugees—Port Roseway Associates, 1782 to 1807\"<br/>Reference: MG9-B9-14, Volume 1, Page 201-202; Microfilm reel number: H-984; Item ID number: 1270<br/>[http://central.bac-lac.gc.ca/.redirect?app=porros&id=1270&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Name: John Smith; Age: 34; Year: 1784; Record Title: Muster Book of Free Black, Settlement of Birchtown.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Military''':\n\"North West Mounted Police (NWMP)—Personnel Records, 1873–1904\"<br/>\nReference: RG18, Volume 10044; Item ID number: 46734<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=nwmp&id=46734&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: John Duncan Mcvicar; Regimental number: 2658.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John was in a military record in 1873-1904 in Canada. They were in the North West Mounted Police (service number 2658).<ref>\n'''Military''':\n\"North West Mounted Police (NWMP)—Personnel Records, 1873–1904\"<br/>\nReference: RG18, Volume 10044; Item ID number: 46734<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=nwmp&id=46734&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: John Duncan Mcvicar; Regimental number: 2658.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Military''': \"North West Mounted Police (NWMP)—Personnel Records, 1873–1904\"<br/>Reference: RG18, Volume 10044; Item ID number: 46734<br/>[http://central.bac-lac.gc.ca/.redirect?app=nwmp&id=46734&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Name: John Duncan Mcvicar; Regimental number: 2658.",
+    "type": "source"
+  }
+}

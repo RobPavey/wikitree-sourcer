@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Military''':\n\"Courts Martial of First World War\"<br/>\nReference: RG150 - Ministry of the Overseas Military Forces of Canada, Series 8, File 649-M-40924, Microfilm Reel Number T-8679, Finding Aid Number 150-5; Item ID number: 8046<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=coumarwwi&id=8046&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Rob Roy McGregor; Date of Service: 1918/12/10-1918/26/12; Rank: Private; Regimental number: 102343; Unit: 1st Res. Bn; Offence: 12(1a).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Rob was in a military record in 1914-1919 in Canada. They were in the 1st Res. Bn (service number 102343).<ref>\n'''Military''':\n\"Courts Martial of First World War\"<br/>\nReference: RG150 - Ministry of the Overseas Military Forces of Canada, Series 8, File 649-M-40924, Microfilm Reel Number T-8679, Finding Aid Number 150-5; Item ID number: 8046<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=coumarwwi&id=8046&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Rob Roy McGregor; Date of Service: 1918/12/10-1918/26/12; Rank: Private; Regimental number: 102343; Unit: 1st Res. Bn; Offence: 12(1a).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Military''': \"Courts Martial of First World War\"<br/>Reference: RG150 - Ministry of the Overseas Military Forces of Canada, Series 8, File 649-M-40924, Microfilm Reel Number T-8679, Finding Aid Number 150-5; Item ID number: 8046<br/>[http://central.bac-lac.gc.ca/.redirect?app=coumarwwi&id=8046&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Name: Rob Roy McGregor; Date of Service: 1918/12/10-1918/26/12; Rank: Private; Regimental number: 102343; Unit: 1st Res. Bn; Offence: 12(1a).",
+    "type": "source"
+  }
+}

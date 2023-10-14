@@ -1,7 +1,7 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
   "name": {
     "name": "John Smith",
     "forenames": "John",
@@ -15,5 +15,11 @@
     "placeString": "Dundas (Town), Wentworth, Ontario, Canada",
     "country": "Canada"
   },
+  "birthPlace": {
+    "placeString": "Ontario"
+  },
+  "ageAtEvent": "6",
+  "relationshipToHead": "son",
+  "maritalStatus": "single",
   "hasValidData": true
 }

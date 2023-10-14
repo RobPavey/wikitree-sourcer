@@ -25,7 +25,7 @@ SOFTWARE.
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
-import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
+import { NameObj, DateObj, PlaceObj, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
 // Document types
 const typeData = {
@@ -35,10 +35,41 @@ const typeData = {
     recordType: RT.Newspaper,
     noName: true,
   },
+  citregmtlcircou: {
+    // Citizenship Registration, Montreal Circuit Court
+    foundIn: "Genealogy / Immigrants & Citizenship /Citizenship Registration, Montreal Circuit Court , 1851 to 1945",
+    recordType: RT.Naturalization,
+    defaultEventPlace: "Montreal, Canada",
+  },
   census: {
     // Census
     foundIn: "Genealogy / Census",
     recordType: RT.Census,
+  },
+  coumarwwi: {
+    // Courts Martial of First World War
+    foundIn: "Genealogy / Military / Courts Martial of First World War",
+    recordType: RT.Military,
+    defaultEventDate: "1914-1919",
+  },
+  immbef1865: {
+    // Immigrants before 1865
+    foundIn: "Genealogy / Immigrants & Citizenship / Immigrants before 1865",
+    recordType: RT.Immigration,
+    defaultEventDate: "1865",
+    defaultEventDateQualifier: dateQualifiers.BEFORE,
+  },
+  immfrochi: {
+    // Immigrants from China, 1885 to 1952
+    foundIn: "Genealogy / Immigration & Citizenship / Immigrants from China, 1885 to 1952",
+    recordType: RT.Immigration,
+    defaultEventDate: "1885-1952",
+  },
+  immrusemp: {
+    // Immigrants from the Russian Empire, 1898 to 1922
+    foundIn: "Genealogy / Immigrants & Citizenship / Immigrants from the Russian Empire, 1898 to 1922",
+    recordType: RT.Immigration,
+    defaultEventDate: "1898-1922",
   },
   kia: {
     // Second World War Service Files – War Dead
@@ -46,11 +77,50 @@ const typeData = {
     recordType: RT.Military,
     defaultEventDate: "1939-1947",
   },
+  lanboauppcan: {
+    // Land Boards of Upper Canada, 1765 to 1804
+    foundIn: "Genealogy / Land / Land Boards of Upper Canada, 1765 to 1804",
+    recordType: RT.LandGrant,
+    defaultEventDate: "1765-1804",
+    extraPlaceString: "Upper Canada, Canada",
+  },
+  lanpetlowcan: {
+    // Land Petitions of Lower Canada, 1764 to 1841
+    foundIn: "Genealogy / Land / Land Petitions of Lower Canada, 1764 to 1841",
+    recordType: RT.LandPetition,
+    defaultEventDate: "1764-1841",
+    extraPlaceString: "Lower Canada, Canada",
+  },
+  lanpetuppcan: {
+    // Land Petitions of Upper Canada, 1763-1865
+    foundIn: "Genealogy / Land / Land Petitions of Upper Canada, 1763-1865<",
+    recordType: RT.LandPetition,
+    defaultEventDate: "1763-1865",
+    extraPlaceString: "Upper Canada, Canada",
+  },
+  nwmp: {
+    // North West Mounted Police (NWMP)—Personnel Records, 1873–190
+    foundIn: "Genealogy / Military / North West Mounted Police (NWMP)—Personnel Records, 1873–1904",
+    recordType: RT.Military,
+    defaultEventDate: "1873-1904",
+  },
   pffww: {
     // First World War Personnel Records
     foundIn: "Genealogy / Military / First World War Personnel Records",
     recordType: RT.Military,
     defaultEventDate: "1914-1918",
+  },
+  porros: {
+    // Black Loyalist Refugees—Port Roseway Associates, 1782 to 1807
+    foundIn: "Genealogy / Military / Black Loyalist Refugees—Port Roseway Associates, 1782 to 1807",
+    recordType: RT.Military,
+    defaultEventDate: "1782-1807",
+  },
+  roynavled: {
+    // Royal Canadian Navy Service Ledger Sheets, 1910 to 1941
+    foundIn: "Genealogy / Military / Royal Canadian Navy Service Ledger Sheets, 1910 to 1941",
+    recordType: RT.Military,
+    defaultEventDate: "1910-1941",
   },
 };
 
@@ -103,6 +173,19 @@ class BaclacEdReader extends ExtractedDataReader {
     }
 
     return this.ed.recordData[label];
+  }
+
+  getRecordDataValueForList(labelList) {
+    if (!this.ed.recordData) {
+      return undefined;
+    }
+
+    for (let label of labelList) {
+      let value = this.getRecordDataValue(label);
+      if (value) {
+        return value;
+      }
+    }
   }
 
   makeDateObjFromBaclacDateString(dateString) {
@@ -204,12 +287,41 @@ class BaclacEdReader extends ExtractedDataReader {
       let eventDateString = this.getRecordDataValue("Enlistment date");
       if (eventDateString) {
         return this.makeDateObjFromBaclacDateString(eventDateString);
-      } else {
-        let defaultEventDate = this.typeData.defaultEventDate;
-        if (defaultEventDate) {
-          return this.makeDateObjFromDateString(defaultEventDate);
-        }
       }
+      let eventYearString = this.getRecordDataValue("Year");
+      if (eventYearString) {
+        return this.makeDateObjFromYear(eventYearString);
+      }
+    } else if (this.recordType == RT.Immigration) {
+      let eventDateString = this.getRecordDataValue("Date of registration");
+      if (eventDateString) {
+        return this.makeDateObjFromBaclacDateString(eventDateString);
+      }
+    } else if (this.recordType == RT.LandGrant || this.recordType == RT.LandPetition) {
+      let yearString = this.getRecordDataValue("Year");
+      if (yearString) {
+        // sometimes there are two dates with a " & " between them
+        if (yearString.includes(" & ")) {
+          let parts = yearString.split(" & ");
+          if (parts.length > 0 && parts[0].length == 4) {
+            yearString = parts[0].trim();
+          } else {
+            yearString = "";
+          }
+        }
+        return this.makeDateObjFromYear(yearString);
+      }
+    } else if (this.recordType == RT.Naturalization) {
+      let yearString = this.getRecordDataValue("Year of naturalization");
+      if (yearString) {
+        return this.makeDateObjFromYear(yearString);
+      }
+    }
+
+    // no event date found yet
+    let defaultEventDate = this.typeData.defaultEventDate;
+    if (defaultEventDate) {
+      return this.makeDateObjFromDateString(defaultEventDate);
     }
   }
 
@@ -229,12 +341,19 @@ class BaclacEdReader extends ExtractedDataReader {
       let district = this.getRecordDataValue("District name");
       let subDistrict = this.getRecordDataValue("Sub-district name");
 
+      // there is sometimes a "Sub-district description" and no "Sub-district name"
+      // but the description doesn't work as part of the placeString except under a few cases
       if (!subDistrict) {
-        subDistrict = this.getRecordDataValue("Sub-district description");
-        if (subDistrict && subDistrict.length > 30) {
-          // if it is something like this then don't include in place name:
-          // Townships 30, 31 and 32, ranges 1, 2, 3, 4, 5 and 6, west of fourth meridian
-          subDistrict = "";
+        let description = this.getRecordDataValue("Sub-district description");
+        if (description && description.length < 30) {
+          if (/^Town of [^\,]+$/.test(description)) {
+            let townName = description.replace(/^Town of ([^\,]+)$/, "$1");
+            if (townName && townName != description) {
+              if (townName != district) {
+                subDistrict = townName;
+              }
+            }
+          }
         }
       }
 
@@ -242,14 +361,27 @@ class BaclacEdReader extends ExtractedDataReader {
       addPart(district);
       addPart(province);
       addPart("Canada");
+    } else if (this.recordType == RT.LandGrant || this.recordType == RT.LandPetition) {
+      let district = this.getRecordDataValueForList(["District", "Place of registration"]);
+      addPart(district);
     } else if (this.recordType == RT.Military) {
       let eventPlace = this.getRecordDataValue("Place of enlistment");
       addPart(eventPlace);
     }
 
+    if (this.typeData.extraPlaceString) {
+      addPart(this.typeData.extraPlaceString);
+    }
+
     let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
     if (!placeObj) {
       placeObj = new PlaceObj();
+
+      if (this.typeData.defaultEventPlace) {
+        placeObj.placeString = this.typeData.defaultEventPlace;
+      } else {
+        placeObj.placeString = "Canada";
+      }
     }
     placeObj.country = "Canada";
 
@@ -280,13 +412,36 @@ class BaclacEdReader extends ExtractedDataReader {
 
   getBirthDateObj() {
     let dateOfBirth = this.getRecordDataValue("Date of birth");
-    return this.makeDateObjFromBaclacDateString(dateOfBirth);
+    if (dateOfBirth) {
+      return this.makeDateObjFromBaclacDateString(dateOfBirth);
+    }
+    let yearOfBirth = this.getRecordDataValue("Year of birth");
+    if (yearOfBirth) {
+      let dateObj = this.makeDateObjFromYear(yearOfBirth);
+      return dateObj;
+    }
+    let estYearOfBirth = this.getRecordDataValue("Estimate year of birth");
+    if (estYearOfBirth) {
+      let age = this.getAgeAtEvent();
+      if (!age) {
+        let dateObj = this.makeDateObjFromYear(estYearOfBirth);
+        if (dateObj) {
+          dateObj.qualifier = dateQualifiers.ABOUT;
+          return dateObj;
+        }
+      }
+    }
   }
 
   getBirthPlaceObj() {
     let placeString = this.getRecordDataValue("Place of birth");
-    let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
-    return placeObj;
+    if (placeString) {
+      return this.makePlaceObjFromFullPlaceName(placeString);
+    }
+    let countryString = this.getRecordDataValue("Birth country");
+    if (countryString) {
+      return this.makePlaceObjFromCountryName(countryString);
+    }
   }
 
   getDeathDateObj() {
@@ -301,7 +456,14 @@ class BaclacEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
-    return "";
+    let ageString = this.getRecordDataValue("Age");
+    if (ageString) {
+      const yearSuffix = " years";
+      if (ageString.endsWith(yearSuffix)) {
+        ageString = ageString.substring(0, ageString.length - yearSuffix.length);
+      }
+    }
+    return ageString;
   }
 
   getAgeAtDeath() {
@@ -313,23 +475,39 @@ class BaclacEdReader extends ExtractedDataReader {
   }
 
   getRelationshipToHead() {
-    return "";
+    return this.getRecordDataValue("Relationship");
   }
 
   getMaritalStatus() {
-    return "";
+    let status = this.getRecordDataValue("Marital Status");
+    if (status) {
+      if (status == "Not indicated") {
+        status = "";
+      }
+    }
+    return status;
   }
 
   getOccupation() {
-    return "";
+    return this.getRecordDataValue("Occupation");
   }
 
   getUnit() {
-    return this.getRecordDataValue("Unit");
+    let unit = this.getRecordDataValue("Unit");
+    if (!unit) {
+      if (this.urlApp == "nwmp") {
+        unit = "North West Mounted Police";
+      }
+    }
+    return unit;
+  }
+
+  getRank() {
+    return this.getRecordDataValue("Rank");
   }
 
   getServiceNumber() {
-    return this.getRecordDataValue("Service number");
+    return this.getRecordDataValueForList(["Service number", "Regimental number"]);
   }
 
   getMilitaryBranch() {
@@ -408,8 +586,11 @@ class BaclacEdReader extends ExtractedDataReader {
     addSourceReferencePart("Page", this.getRecordDataValue("Page number"));
     addSourceReferencePart("Line", this.getRecordDataValue("Line number"));
     addSourceReferencePart("Family number", this.getRecordDataValue("Family number"));
+    addSourceReferencePart("Bundle", this.getRecordDataValue("Bundle"));
     addSourceReferencePart("Microfilm reel number", this.getRecordDataValue("Microfilm reel number"));
+    addSourceReferencePart("Microfilm", this.getRecordDataValue("Microfilm"));
     addSourceReferencePart("Image number", this.getRecordDataValue("Image number"));
+    addSourceReferencePart("Item ID number", this.getRecordDataValue("Item ID number"));
 
     return reference;
   }

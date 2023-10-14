@@ -61,6 +61,14 @@ const NameUtils = {
       return true;
     }
 
+    function shouldUpperCaseAfterApostrophe(name) {
+      return true;
+    }
+
+    function shouldUpperCaseAfterHyphen(name) {
+      return true;
+    }
+
     if (!string || string.length == 0) {
       return string;
     }
@@ -86,11 +94,12 @@ const NameUtils = {
       }
     }
 
-    // if there are any periods in the name remove them, replacing with a space if needed
+    // if there are any single periods in the name remove them, replacing with a space if needed
+    // however if there are three periods like ... then leave them
     if (resultString.includes(".")) {
-      resultString = resultString.replace(/\.\s/g, " ");
-      resultString = resultString.replace(/\.$/, "");
-      resultString = resultString.replace(/\.([^\s])/g, " $1");
+      resultString = resultString.replace(/([^\.])\.([^\.])/g, "$1 $2");
+      resultString = resultString.replace(/^\.([^\.])/, "$1");
+      resultString = resultString.replace(/([^\.])\.$/, "$1");
     }
 
     // if all the words in the string are already mixed case or all lower case do not change it.
@@ -144,6 +153,21 @@ const NameUtils = {
       } else if (word.startsWith("O'") && word.length > 2 && word[2] != " ") {
         if (shouldUpperCaseAfterO(word)) {
           upperCaseLetterAtIndex(index + 2);
+        }
+      } else if (word.includes("'") && word.length > 2 && word[2] != " ") {
+        if (shouldUpperCaseAfterApostrophe(word)) {
+          let quoteIndex = word.indexOf("'");
+          if ((quoteIndex != -1) & (quoteIndex < word.length - 1)) {
+            upperCaseLetterAtIndex(quoteIndex + 1);
+          }
+        }
+      } else if (word.includes("-") && word.length > 2 && word[2] != " ") {
+        if (shouldUpperCaseAfterHyphen(word)) {
+          let quoteIndex = word.indexOf("-");
+          while ((quoteIndex != -1) & (quoteIndex < word.length - 1)) {
+            upperCaseLetterAtIndex(quoteIndex + 1);
+            quoteIndex = word.indexOf("-", quoteIndex + 1);
+          }
         }
       }
 

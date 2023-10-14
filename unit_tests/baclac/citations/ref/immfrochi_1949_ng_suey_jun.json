@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Immigrants from China, 1885 to 1952\"<br/>\nReference: RG 76 D2a, Volume 1068; Microfilm reel number: T-3486; Item ID number: 96809<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=immfrochi&id=96809&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: ng suey jun (mrs l f smith); Age: 26; Date of registration: 1949-06-01; Serial number: 96800; C.I. 6 certificate number: C9129; Type of record: General Registers of Chinese Immigration.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "ng immigrated on 1 June 1949 in Canada.<ref>\n'''Immigration''':\n\"Immigrants from China, 1885 to 1952\"<br/>\nReference: RG 76 D2a, Volume 1068; Microfilm reel number: T-3486; Item ID number: 96809<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=immfrochi&id=96809&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: ng suey jun (mrs l f smith); Age: 26; Date of registration: 1949-06-01; Serial number: 96800; C.I. 6 certificate number: C9129; Type of record: General Registers of Chinese Immigration.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Immigration''': \"Immigrants from China, 1885 to 1952\"<br/>Reference: RG 76 D2a, Volume 1068; Microfilm reel number: T-3486; Item ID number: 96809<br/>[http://central.bac-lac.gc.ca/.redirect?app=immfrochi&id=96809&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Name: ng suey jun (mrs l f smith); Age: 26; Date of registration: 1949-06-01; Serial number: 96800; C.I. 6 certificate number: C9129; Type of record: General Registers of Chinese Immigration.",
+    "type": "source"
+  }
+}

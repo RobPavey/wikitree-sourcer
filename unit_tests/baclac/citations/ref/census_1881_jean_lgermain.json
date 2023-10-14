@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=21511208 Canada Census Record] (accessed 6 May 2021)<br/>\nJean L'GERMAIN.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Census of Canada, 1881\"<br/>\nReference: RG31 - Statistics Canada; Page: 44; Family number: 184; Microfilm reel number: C-13199; Image number: e008145918; Item ID number: 21511208<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=21511208&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJean L'Germain (55) in St. Michel, Yamaska, Quebec, Canada. Born in Quebec.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Jean was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=21511208 Canada Census Record] (accessed 6 May 2021)<br/>\nJean L'GERMAIN.\n</ref>",
+    "citation": "In the 1881 census Jean (age 55) was in St. Michel, Yamaska, Quebec, Canada.<ref>\n'''1881 Census''':\n\"Census of Canada, 1881\"<br/>\nReference: RG31 - Statistics Canada; Page: 44; Family number: 184; Microfilm reel number: C-13199; Image number: e008145918; Item ID number: 21511208<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=21511208&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJean L'Germain (55) in St. Michel, Yamaska, Quebec, Canada. Born in Quebec.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=21511208 Canada Census Record] (accessed 6 May 2021)<br/>Jean L'GERMAIN.",
+    "citation": "* '''1881 Census''': \"Census of Canada, 1881\"<br/>Reference: RG31 - Statistics Canada; Page: 44; Family number: 184; Microfilm reel number: C-13199; Image number: e008145918; Item ID number: 21511208<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=21511208&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Jean L'Germain (55) in St. Michel, Yamaska, Quebec, Canada. Born in Quebec.",
     "type": "source"
   }
 }

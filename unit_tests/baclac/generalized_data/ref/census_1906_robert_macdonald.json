@@ -1,7 +1,7 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
   "name": {
     "name": "Robert MacDonald",
     "forenames": "Robert",
@@ -12,8 +12,14 @@
     "yearString": "1906"
   },
   "eventPlace": {
-    "placeString": "Town of Portage la Prairie, Portage la Prairie, Manitoba, Canada",
+    "placeString": "Portage la Prairie, Manitoba, Canada",
     "country": "Canada"
   },
+  "birthPlace": {
+    "placeString": "Manitoba"
+  },
+  "ageAtEvent": "2",
+  "relationshipToHead": "son",
+  "maritalStatus": "single",
   "hasValidData": true
 }

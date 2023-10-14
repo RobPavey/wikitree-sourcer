@@ -1,7 +1,7 @@
 {
   "sourceOfData": "baclac",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
   "name": {
     "name": "John Smith",
     "forenames": "John",
@@ -15,5 +15,14 @@
     "placeString": "Hamilton East, Bonaventure, Quebec, Canada",
     "country": "Canada"
   },
+  "birthDate": {
+    "yearString": "1855"
+  },
+  "birthPlace": {
+    "placeString": "Quebec"
+  },
+  "ageAtEvent": "55",
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
   "hasValidData": true
 }

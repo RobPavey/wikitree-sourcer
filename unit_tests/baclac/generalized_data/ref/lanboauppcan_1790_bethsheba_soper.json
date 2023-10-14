@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "LandGrant",
+  "name": {
+    "name": "Bethsheba Soper/wilson",
+    "forenames": "Bethsheba",
+    "lastName": "Soper/wilson"
+  },
+  "eventDate": {
+    "yearString": "1790"
+  },
+  "eventPlace": {
+    "placeString": "Mecklenburg, Upper Canada, Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

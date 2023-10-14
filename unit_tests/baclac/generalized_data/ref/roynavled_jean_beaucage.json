@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "name": "Jean Pierre Beaucage",
+    "forenames": "Jean Pierre",
+    "lastName": "Beaucage"
+  },
+  "eventDate": {
+    "dateString": "1910-1941"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "birthDate": {
+    "dateString": "2 Mar 1923"
+  },
+  "birthPlace": {
+    "placeString": "St.Therese, Quebec"
+  },
+  "occupation": "Painter",
+  "serviceNumber": "4326",
+  "hasValidData": true
+}
