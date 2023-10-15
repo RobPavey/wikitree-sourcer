@@ -27,6 +27,7 @@ import { getUnitTestOptions } from "../extension/base/core/options/options_datab
 
 // Register all test modules, this is the order that they will be run in
 import "../unit_tests/ancestry/ancestry_test.mjs";
+import "../unit_tests/baclac/baclac_test.mjs";
 import "../unit_tests/bg/bg_test.mjs";
 import "../unit_tests/cwgc/cwgc_test.mjs";
 import "../unit_tests/fg/fg_test.mjs";
@@ -49,7 +50,6 @@ import "../unit_tests/wikitree/wikitree_test.mjs";
 import "../unit_tests/opccorn/opccorn_test.mjs";
 import "../unit_tests/wiewaswie/wiewaswie_test.mjs";
 import "../unit_tests/openarch/openarch_test.mjs";
-import "../unit_tests/baclac/baclac_test.mjs";
 
 function testSuiteEnabled(parameters, testSuiteName) {
   return parameters.testSuiteName == "" || parameters.testSuiteName == testSuiteName;

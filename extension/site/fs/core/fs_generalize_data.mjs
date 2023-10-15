@@ -329,6 +329,31 @@ function determineRecordTypeAndRole(extractedData, result) {
   result.recordType = recordType;
 }
 
+function cleanName(name) {
+  if (!name) {
+    return name;
+  }
+
+  // Some name cleaning is done in generalize_data_utils but extra required for this site
+  // is done here
+
+  // For something like "Bessie J.e. Alline" we want to remove the periods and have
+  // "Bessie J E Alline"
+
+  name = name.replace(/([^\.])\.(\s)/g, "$1$2");
+  name = name.replace(/(\s[^\.\s])\.([^\.\s\)\]])/g, "$1 $2");
+  name = name.replace(/^\.([^\.])/g, "$1");
+  name = name.replace(/([^\.])\.$/, "$1");
+  name = name.replace(/\s+/g, " ");
+
+  // if there is a single lowercase letter followed by a space or end of string, change to uppercase
+  name = name.replace(/(\s[a-z]\s)/g, (match, p1) => p1.toUpperCase());
+  name = name.replace(/^([a-z]\s)/g, (match, p1) => p1.toUpperCase());
+  name = name.replace(/(\s[a-z])$/g, (match, p1) => p1.toUpperCase());
+
+  return name;
+}
+
 function cleanOccupation(text) {
   let newText = text;
   if (text && /^[^a-z]+$/.test(text)) {
@@ -940,8 +965,8 @@ function generalizeData(input) {
 
   result.setPersonGender(ed.gender);
 
-  result.setFullName(ed.fullName);
-  result.setLastNameAndForenames(ed.surname, ed.givenName);
+  result.setFullName(cleanName(ed.fullName));
+  result.setLastNameAndForenames(cleanName(ed.surname), cleanName(ed.givenName));
 
   let birthDate = selectDate(ed.birthDate, ed.birthDateOriginal);
   result.setBirthDate(birthDate);

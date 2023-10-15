@@ -33,6 +33,12 @@ import {
 import { RC } from "../../../base/core/record_collections.mjs";
 import { RT, Role } from "../../../base/core/record_type.mjs";
 
+function cleanName(name) {
+  // currently all cleaning we need is done in generalize_data_utils
+  // Ancestry names are pretty good
+  return name;
+}
+
 const eventTypeStringToDataType = {
   BirthRegistration: RT.BirthRegistration,
   Birth: RT.Birth,
@@ -529,7 +535,7 @@ function determineRoleGivenRecordType(extractedData, result) {
         // ignore if Father or Mother fields
         if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
           result.role = Role.Parent;
-          result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
+          result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Child"]));
         }
       }
     }
@@ -545,7 +551,7 @@ function determineRoleGivenRecordType(extractedData, result) {
     if (!value) {
       if (extractedData.recordData["Child"]) {
         result.role = Role.Parent;
-        result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
+        result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Child"]));
       } else if (extractedData.recordData["Spouse"]) {
         if (
           !extractedData.recordData["Death Date"] &&
@@ -555,7 +561,7 @@ function determineRoleGivenRecordType(extractedData, result) {
           !extractedData.recordData["Burial Place"]
         ) {
           result.role = Role.Spouse;
-          result.setPrimaryPersonFullName(extractedData.recordData["Spouse"]);
+          result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Spouse"]));
         }
       }
     }
@@ -567,7 +573,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       if (extractedData.recordData["Child"]) {
         if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
           result.role = Role.Parent;
-          result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
+          result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Child"]));
         }
       }
     }
@@ -580,11 +586,11 @@ function determineRoleGivenRecordType(extractedData, result) {
       if (extractedData.recordData["Child"]) {
         if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
           result.role = Role.Parent;
-          result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
+          result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Child"]));
         }
       } else if (extractedData.recordData["Spouse"]) {
         result.role = Role.Spouse;
-        result.setPrimaryPersonFullName(extractedData.recordData["Spouse"]);
+        result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Spouse"]));
       }
     } else {
       let hasBaptismOrBurialKey = testForWordsInRecordDataKeys(extractedData, [
@@ -601,7 +607,7 @@ function determineRoleGivenRecordType(extractedData, result) {
         if (extractedData.recordData["Child"]) {
           if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
             result.role = Role.Parent;
-            result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
+            result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Child"]));
           }
         }
       }
@@ -612,19 +618,19 @@ function determineRoleGivenRecordType(extractedData, result) {
     if (!hasDeathOrBurialKey) {
       if (extractedData.recordData["Child"]) {
         result.role = Role.Parent;
-        result.setPrimaryPersonFullName(extractedData.recordData["Child"]);
+        result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Child"]));
       } else if (extractedData.recordData["Spouse"]) {
         result.role = Role.Spouse;
-        result.setPrimaryPersonFullName(extractedData.recordData["Spouse"]);
+        result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Spouse"]));
       } else if (extractedData.recordData["Father"]) {
         result.role = Role.Child;
-        result.setPrimaryPersonFullName(extractedData.recordData["Father"]);
+        result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Father"]));
       } else if (extractedData.recordData["Mother"]) {
         result.role = Role.Child;
-        result.setPrimaryPersonFullName(extractedData.recordData["Mother"]);
+        result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Mother"]));
       } else if (extractedData.recordData["Siblings"]) {
         result.role = Role.Sibling;
-        result.setPrimaryPersonFullName(extractedData.recordData["Siblings"]);
+        result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Siblings"]));
       }
     }
   }
@@ -2074,7 +2080,7 @@ function generalizeRecordData(input, result) {
     fullName = getCleanRecordDataValue(ed, "Name");
   }
 
-  result.setFullName(fullName);
+  result.setFullName(cleanName(fullName));
 
   if (!fullName && ed.recordData) {
     const firstName = getCleanRecordDataValue(ed, "First Name");
@@ -2215,7 +2221,7 @@ function generalizeProfileData(input, result) {
   result.sourceType = "profile";
   result.sourceOfData = "ancestry";
 
-  result.setFullName(ed.titleName);
+  result.setFullName(cleanName(ed.titleName));
 
   result.setBirthDate(ed.birthDate);
   result.setBirthPlace(ed.birthPlace);
@@ -2228,7 +2234,7 @@ function generalizeProfileData(input, result) {
     for (let marriage of ed.marriages) {
       let spouse = result.addSpouse();
       if (marriage.spouseName) {
-        spouse.name.setFullName(marriage.spouseName);
+        spouse.name.setFullName(cleanName(marriage.spouseName));
       }
       if (marriage.date) {
         spouse.marriageDate.setDateAndQualifierFromString(marriage.date);
@@ -2241,11 +2247,11 @@ function generalizeProfileData(input, result) {
 
   if (ed.fatherName) {
     let father = result.addFather();
-    father.name.setFullName(ed.fatherName);
+    father.name.setFullName(cleanName(ed.fatherName));
   }
   if (ed.motherName) {
     let mother = result.addMother();
-    mother.name.setFullName(ed.motherName);
+    mother.name.setFullName(cleanName(ed.motherName));
   }
 
   // analyze the surname - sometimes Ancestry users put the LNAB in parens
@@ -2274,7 +2280,7 @@ function generalizeProfileData(input, result) {
       }
     }
   }
-  result.setLastNameAndForenames(surname, ed.givenName);
+  result.setLastNameAndForenames(cleanName(surname), cleanName(ed.givenName));
 }
 
 // This function generalizes the data (ed) extracted from an Ancestry page.

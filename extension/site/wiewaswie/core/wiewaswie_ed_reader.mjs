@@ -356,6 +356,25 @@ const typeData = {
   },
 };
 
+function cleanName(name) {
+  if (!name) {
+    return name;
+  }
+
+  // Some name cleaning is done in generalize_data_utils but extra required for this site
+  // is done here
+
+  // For something like "Jan Peter Janssen N.N." we want to change it to
+  // "Jan Peter Janssen NN" to avoid issues with the cleanName in generalize_data_utils
+  name = name.replace(/\sN\.N\./g, " NN");
+
+  // For something like "Jan Peter Janssen N.N" we want to change it to
+  // "Jan Peter Janssen NN" to avoid issues with the cleanName in generalize_data_utils
+  name = name.replace(/\sN\.N$/g, " NN");
+
+  return name;
+}
+
 function cleanAge(age) {
   if (!age) {
     return "";
@@ -572,7 +591,7 @@ class WiewaswieEdReader extends ExtractedDataReader {
 
       fullNameString = fullNameString.trim();
 
-      fullNameString = this.extractNameFromSentence(fullNameString);
+      fullNameString = cleanName(this.extractNameFromSentence(fullNameString));
 
       nameObj.setFullName(fullNameString);
 
