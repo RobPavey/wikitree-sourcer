@@ -169,6 +169,8 @@ const NameUtils = {
             quoteIndex = word.indexOf("-", quoteIndex + 1);
           }
         }
+      } else if (word.startsWith("(") && word[1] != " ") {
+        upperCaseLetterAtIndex(index + 1);
       }
 
       index = nextSpaceIndex;

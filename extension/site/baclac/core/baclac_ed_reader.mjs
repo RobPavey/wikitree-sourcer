@@ -25,6 +25,7 @@ SOFTWARE.
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameObj, DateObj, PlaceObj, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
 // Document types
@@ -56,6 +57,12 @@ const typeData = {
     foundIn: "Genealogy / Military / Courts Martial of First World War",
     recordType: RT.Military,
     defaultEventDate: "1914-1919",
+  },
+  diawlmking: {
+    // Diaries of William Lyon Mackenzie King
+    foundIn: "Archives / Diaries of William Lyon Mackenzie King",
+    recordType: RT.Unclassified,
+    noName: true,
   },
   fonandcol: {
     // Collections and Fonds
@@ -193,6 +200,11 @@ class BaclacEdReader extends ExtractedDataReader {
 
   makeNameObjFromFullNameWithComma(fullNameString) {
     if (fullNameString) {
+      // Some immigration records have names in all lowercase.
+      if (StringUtils.isAllLowercase(fullNameString)) {
+        fullNameString = fullNameString.toUpperCase();
+      }
+
       let cleanName = NameUtils.convertNameFromAllCapsToMixedCase(fullNameString);
 
       let nameObj = new NameObj();
@@ -348,6 +360,18 @@ class BaclacEdReader extends ExtractedDataReader {
     } else if (this.recordType == RT.GovernmentDocument) {
       let dateString = this.getRecordDataValueForKeys(["Meeting date"]);
       return this.makeDateObjFromDateString(dateString);
+    } else if (this.urlApp == "diawlmking") {
+      // Example title: "Item 3064 : Nov 12, 1904 (Page 3)"
+      if (/^Item \d+\s\:\s\w\w\w\s\d\d\,\s*\d\d\d\d\s.*$/.test(this.ed.name)) {
+        let dateString = this.ed.name.replace(/^Item \d+\s\:\s(\w\w\w\s\d\d\,\s*\d\d\d\d)\s.*$/, "$1");
+        if (dateString && dateString != this.ed.name) {
+          return this.makeDateObjFromDateString(dateString);
+        }
+      }
+      let yearString = this.getRecordDataValue("Year");
+      if (yearString) {
+        return this.makeDateObjFromYear(yearString);
+      }
     }
 
     // no event date found yet

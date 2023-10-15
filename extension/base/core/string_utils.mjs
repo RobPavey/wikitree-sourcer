@@ -379,6 +379,19 @@ const StringUtils = {
 
     return false;
   },
+
+  isAllLowercase: function (string) {
+    if (!string) {
+      return false;
+    }
+
+    let lowerString = string.toLowerCase();
+    if (lowerString == string) {
+      return true;
+    }
+
+    return false;
+  },
 };
 
 export { StringUtils };

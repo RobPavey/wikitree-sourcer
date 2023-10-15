@@ -868,12 +868,23 @@ class NameObj {
     if (!name) {
       return name;
     }
-    // remove any single '.' characters in name
-    // We want to leave an elipsis meaning un transcribed characters
-    name = name.replace(/([^\.])\.([^\.])/g, "$1 $2");
+    // remove any single '.' characters at end of a word in name or at start
+    // We want to leave an elipsis meaning untranscribed characters
+    // For something like "Bessie J.e. Alline" we want to remove the periods and have
+    // "Bessie J e Alline"
+    // But sometimes the period represents untranscribed characters e.g. "Hend.k van Zyl"
+
+    name = name.replace(/([^\.])\.(\s)/g, "$1$2");
+    name = name.replace(/(\s[^\.\s])\.([^\.\s\)\]])/g, "$1 $2");
     name = name.replace(/^\.([^\.])/g, "$1");
     name = name.replace(/([^\.])\.$/, "$1");
     name = name.replace(/\s+/g, " ");
+
+    // if there is a single lowercase letter followed by a space or end of string, change to uppercase
+    name = name.replace(/(\s[a-z]\s)/g, (match, p1) => p1.toUpperCase());
+    name = name.replace(/^([a-z]\s)/g, (match, p1) => p1.toUpperCase());
+    name = name.replace(/(\s[a-z])$/g, (match, p1) => p1.toUpperCase());
+
     name = name.trim();
     return name;
   }
