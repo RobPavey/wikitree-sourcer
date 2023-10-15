@@ -29,6 +29,11 @@ import { NameObj, DateObj, PlaceObj, dateQualifiers } from "../../../base/core/g
 
 // Document types
 const typeData = {
+  cabcon: {
+    // Cabinet Conclusions
+    foundIn: "Archives / Cabinet Conclusions",
+    recordType: RT.GovernmentDocument,
+  },
   cangaz: {
     // Canada Gazette
     foundIn: "Library / Canada Gazette, 1841 to 1997",
@@ -51,6 +56,11 @@ const typeData = {
     foundIn: "Genealogy / Military / Courts Martial of First World War",
     recordType: RT.Military,
     defaultEventDate: "1914-1919",
+  },
+  fonandcol: {
+    // Collections and Fonds
+    foundIn: "Archives / Collections and Fonds",
+    recordType: RT.Unclassified,
   },
   immbef1865: {
     // Immigrants before 1865
@@ -162,29 +172,14 @@ class BaclacEdReader extends ExtractedDataReader {
 
     if (this.typeData) {
       this.recordType = this.typeData.recordType;
+
+      if (app == "fonandcol") {
+        if (ed.name.includes("Scrip") && ed.name.includes("Métis")) {
+          this.recordType = RT.MetisScrip;
+        }
+      }
     } else {
       this.recordType = RT.Unclassified;
-    }
-  }
-
-  getRecordDataValue(label) {
-    if (!this.ed.recordData) {
-      return undefined;
-    }
-
-    return this.ed.recordData[label];
-  }
-
-  getRecordDataValueForList(labelList) {
-    if (!this.ed.recordData) {
-      return undefined;
-    }
-
-    for (let label of labelList) {
-      let value = this.getRecordDataValue(label);
-      if (value) {
-        return value;
-      }
     }
   }
 
@@ -221,6 +216,16 @@ class BaclacEdReader extends ExtractedDataReader {
     }
   }
 
+  getLabeledValueFromMetisScripTitle(labelString) {
+    let titleParts = this.ed.name.split(" = ");
+    titleParts = titleParts[0].split("; ");
+    for (let part of titleParts) {
+      if (part.startsWith(labelString)) {
+        return part.substring(labelString.length).trim();
+      }
+    }
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -248,6 +253,27 @@ class BaclacEdReader extends ExtractedDataReader {
   getNameObj() {
     if (!this.typeData.noName) {
       let nameString = this.ed.name;
+      if (this.urlApp == "fonandcol") {
+        let title = this.ed.name;
+        const scripPrefix = "Scrip affidavit for ";
+        if (title.startsWith(scripPrefix)) {
+          let remainder = title.substring(scripPrefix.length);
+          let semiColonIndex = remainder.indexOf(";");
+          if (semiColonIndex != -1) {
+            remainder = remainder.substring(0, semiColonIndex);
+          }
+          nameString = remainder;
+        }
+      } else if (this.urlApp == "cabcon") {
+        let preNameString = "National Parole Board, ";
+        if (nameString.includes(preNameString)) {
+          let index = nameString.indexOf(preNameString);
+          if (index != -1) {
+            nameString = nameString.substring(index + preNameString.length).trim();
+          }
+        }
+      }
+
       return this.makeNameObjFromFullNameWithComma(nameString);
     }
   }
@@ -316,6 +342,12 @@ class BaclacEdReader extends ExtractedDataReader {
       if (yearString) {
         return this.makeDateObjFromYear(yearString);
       }
+    } else if (this.recordType == RT.MetisScrip) {
+      let dateString = this.getLabeledValueFromMetisScripTitle("date of issue: ");
+      return this.makeDateObjFromDateString(dateString);
+    } else if (this.recordType == RT.GovernmentDocument) {
+      let dateString = this.getRecordDataValueForKeys(["Meeting date"]);
+      return this.makeDateObjFromDateString(dateString);
     }
 
     // no event date found yet
@@ -362,7 +394,7 @@ class BaclacEdReader extends ExtractedDataReader {
       addPart(province);
       addPart("Canada");
     } else if (this.recordType == RT.LandGrant || this.recordType == RT.LandPetition) {
-      let district = this.getRecordDataValueForList(["District", "Place of registration"]);
+      let district = this.getRecordDataValueForKeys(["District", "Place of registration"]);
       addPart(district);
     } else if (this.recordType == RT.Military) {
       let eventPlace = this.getRecordDataValue("Place of enlistment");
@@ -430,6 +462,11 @@ class BaclacEdReader extends ExtractedDataReader {
           return dateObj;
         }
       }
+    }
+
+    if (this.recordType == RT.MetisScrip) {
+      let dateString = this.getLabeledValueFromMetisScripTitle("born: ");
+      return this.makeDateObjFromDateString(dateString);
     }
   }
 
@@ -507,7 +544,7 @@ class BaclacEdReader extends ExtractedDataReader {
   }
 
   getServiceNumber() {
-    return this.getRecordDataValueForList(["Service number", "Regimental number"]);
+    return this.getRecordDataValueForKeys(["Service number", "Regimental number"]);
   }
 
   getMilitaryBranch() {
@@ -524,6 +561,24 @@ class BaclacEdReader extends ExtractedDataReader {
   }
 
   getParents() {
+    if (this.recordType == RT.MetisScrip) {
+      let fatherName = this.getLabeledValueFromMetisScripTitle("father: ");
+      let motherName = this.getLabeledValueFromMetisScripTitle("mother: ");
+
+      // Example: father: François St. Germain (French Canadian); mother: Louise Morand (Métis)
+      function cleanName(nameString) {
+        if (nameString.endsWith(")")) {
+          let lastOpenParenIndex = nameString.lastIndexOf("(");
+          if (lastOpenParenIndex != -1) {
+            nameString = nameString.substring(0, lastOpenParenIndex).trim();
+          }
+        }
+        return nameString;
+      }
+
+      return this.makeParentsFromFullNames(cleanName(fatherName), cleanName(motherName));
+    }
+
     return undefined;
   }
 

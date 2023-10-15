@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "GovernmentDocument",
+  "name": {
+    "name": "Hazen Smith"
+  },
+  "eventDate": {
+    "dateString": "1974-04-11"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

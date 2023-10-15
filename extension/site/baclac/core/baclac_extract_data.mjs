@@ -52,7 +52,7 @@ function extractData(document, url) {
   const rowElements = recordElement.querySelectorAll("div.CFCS-table-row-flex");
   for (let row of rowElements) {
     const labelElement = row.querySelector("div.CFCS-row-label");
-    const valueElement = row.querySelector("div.CFCS-row-value");
+    let valueElement = row.querySelector("div.CFCS-row-value");
     if (labelElement && valueElement) {
       let label = labelElement.textContent;
       let value = valueElement.textContent;
@@ -64,24 +64,68 @@ function extractData(document, url) {
         value = value.trim();
 
         if (valueElement.childElementCount > 0) {
-          // there is a element (as well as text) in this row value
-          // It could be a link like in the "Help page:	" row. But it could also
-          // be several text nodes separated by <br> elements.
-          // First check if all the child elements are <br>s
-          let brsFound = false;
-          let nonBrsFound = false;
-          for (let childElement of valueElement.children) {
-            if (childElement.tagName == "BR") {
-              brsFound = true;
-            } else {
-              nonBrsFound = true;
+          let tableCells = valueElement.querySelectorAll("div.CFCS-display-table-cell");
+          let scriptNode = valueElement.querySelector("script");
+          if (tableCells.length > 0) {
+            // This happens on fonandcol record in the "Context of this Record" row
+            value = "";
+            for (let cell of tableCells) {
+              if (cell.childElementCount == 2) {
+                let title = cell.children[0].textContent;
+                if (title) {
+                  if (value) {
+                    value += " / ";
+                  }
+                  value += title.trim();
+                }
+              }
             }
-          }
+          } else if (scriptNode && label != "Container note(s)") {
+            // This happens on fonandcol record in the "Finding aid no." row
+            // There is nothing useful
+            value = "";
+            let containerElements = valueElement.querySelectorAll("div.CFCS-field-container");
+            for (let element of containerElements) {
+              let text = element.textContent.trim();
+              text = text.replace(/\s+/g, " ");
+              if (text) {
+                if (value) {
+                  value += ", ";
+                }
+                value += text;
+              }
+            }
+          } else {
+            // In case of "Container note(s)" row there is another level
+            let containerElement = valueElement.querySelector("div.CFCS-field-container");
+            if (containerElement) {
+              valueElement = containerElement;
+              let spanElement = valueElement.querySelector("span");
+              if (spanElement) {
+                valueElement = spanElement;
+              }
+            }
 
-          if (brsFound && !nonBrsFound) {
-            let innerHtml = valueElement.innerHTML;
-            innerHtml = innerHtml.replace(/\s*<br>\s*/, " & ");
-            value = innerHtml.trim();
+            // there is a element (as well as text) in this row value
+            // It could be a link like in the "Help page:	" row. But it could also
+            // be several text nodes separated by <br> elements.
+            // First check if all the child elements are <br>s
+
+            let brsFound = false;
+            let nonBrsFound = false;
+            for (let childElement of valueElement.children) {
+              if (childElement.tagName == "BR") {
+                brsFound = true;
+              } else {
+                nonBrsFound = true;
+              }
+            }
+
+            if (brsFound && !nonBrsFound) {
+              let innerHtml = valueElement.innerHTML;
+              innerHtml = innerHtml.replace(/\s*<br>\s*/g, " & ");
+              value = innerHtml.trim();
+            }
           }
         }
 

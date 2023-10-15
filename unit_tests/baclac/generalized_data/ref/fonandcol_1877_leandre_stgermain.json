@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "MetisScrip",
+  "name": {
+    "name": "Leandre St Germain",
+    "forenames": "Leandre",
+    "lastName": "St Germain"
+  },
+  "eventDate": {
+    "dateString": "20 April 1877"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "birthDate": {
+    "dateString": "13 August 1839"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "François St Germain"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Louise Morand"
+      }
+    }
+  },
+  "hasValidData": true
+}

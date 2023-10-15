@@ -60,6 +60,7 @@ const RT = {
   LandTax: `LandTax`,
   LandPetition: `LandPetition`,
   LandGrant: `LandGrant`,
+  MetisScrip: `MetisScrip`,
   Tax: `Tax`,
   ValuationRoll: `ValuationRoll`,
   Apprenticeship: `Apprenticeship`,
@@ -82,6 +83,7 @@ const RT = {
   Bastardy: `Bastardy`,
   Patent: `Patent`,
   SlaveSchedule: `SlaveSchedule`,
+  GovernmentDocument: `GovernmentDocument`,
 };
 
 const RecordSubtype = {

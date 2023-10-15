@@ -74,6 +74,8 @@ function removeUnwantedKeysForDataString(keys, recordData) {
     if (key.includes("Hierarchical level")) continue;
     if (key.includes("Type of material")) continue;
     if (key.includes("Help page")) continue;
+    if (key.includes("Additional information")) continue;
+    if (key.includes("General Note")) continue;
 
     if (isReferenceKey(key)) continue;
 
@@ -102,9 +104,20 @@ function buildDataList(ed, gd, edReader, builder) {
     valueSep = "";
   }
 
-  let name = gd.inferFullName();
-  if (name) {
-    dataString += "Name" + valueSep + " " + name;
+  if (ed.url.includes("fonandcol") && ed.name) {
+    let text = ed.name;
+    let sepIndex = text.indexOf(" = ");
+    if (sepIndex != -1) {
+      text = text.substring(0, sepIndex).trim();
+    }
+    dataString += text;
+  } else if (ed.url.includes("cabcon") && ed.name) {
+    dataString += ed.name;
+  } else {
+    let name = gd.inferFullName();
+    if (name) {
+      dataString += "Name" + valueSep + " " + name;
+    }
   }
 
   if (recordData) {

@@ -2323,6 +2323,7 @@ class NarrativeBuilder {
       { recordType: RT.LandTax, string: "was in a land tax record" },
       { recordType: RT.LandPetition, string: "was in a land petition record" },
       { recordType: RT.LandGrant, string: "was in a land grant record" },
+      { recordType: RT.MetisScrip, string: "was in a Métis script record" },
       { recordType: RT.Apprenticeship, string: "was a master or apprentice" },
       {
         recordType: RT.SocialSecurity,
@@ -2349,6 +2350,7 @@ class NarrativeBuilder {
         string: "was recorded in a church event",
       },
       { recordType: RT.Heraldry, string: "was in a heraldic record" },
+      { recordType: RT.GovernmentDocument, string: "was in a government document" },
     ];
 
     let gd = this.eventGd;

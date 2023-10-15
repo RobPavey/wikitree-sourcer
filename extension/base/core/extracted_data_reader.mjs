@@ -424,12 +424,22 @@ class ExtractedDataReader {
     return result;
   }
 
+  getRecordDataValue(key) {
+    if (!this.ed.recordData) {
+      return undefined;
+    }
+
+    return this.ed.recordData[key];
+  }
+
   getRecordDataValueForKeys(keys) {
-    if (keys && keys.length > 0) {
-      for (let key of keys) {
-        let value = this.ed.recordData[key];
-        if (value) {
-          return value;
+    if (this.ed.recordData) {
+      if (keys && keys.length > 0) {
+        for (let key of keys) {
+          let value = this.ed.recordData[key];
+          if (value) {
+            return value;
+          }
         }
       }
     }

@@ -3120,6 +3120,10 @@ class GeneralizedData {
         defaultTitle: "Land Petition",
       },
       {
+        type: RT.MetisScrip,
+        defaultTitle: "Métis Scrip",
+      },
+      {
         type: RT.Tax,
         defaultTitle: "Tax Record",
       },
