@@ -187,6 +187,13 @@ const regressionData = [
     caseName: "ordincou_1905_mcdonald",
     url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=ordincou&IdNumber=125814&q=Scrip",
   },
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Old format census records
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "old_census_1901_malcom_cameron",
+    url: "https://www.bac-lac.gc.ca/eng/census/1901/Pages/item.aspx?itemid=31526",
+  },
 ];
 
 async function runTests(testManager) {

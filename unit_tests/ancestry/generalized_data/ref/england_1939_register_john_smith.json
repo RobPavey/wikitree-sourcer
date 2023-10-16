@@ -65,7 +65,8 @@
   "collectionData": {
     "id": "61596",
     "schedule": "126",
-    "borough": "Enfield"
+    "borough": "Enfield",
+    "enumerationDistrict": "Beci"
   },
   "hasValidData": true
 }

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1901 Census''':\nReference: RG31 - Statistics Canada; Microfilm: T-6430<br/>\n[https://www.bac-lac.gc.ca/eng/census/1901/Pages/item.aspx?itemid=31526 Library and Archives Canada] (accessed 6 May 2021)<br/>\nMalcom Cameron (33), married head of household in Kootenay East - North Riding, Yale and Cariboo, British Columbia, Canada. Born in Ontario.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1901 census Malcom (age 33) was the married head of household in Kootenay East - North Riding, Yale and Cariboo, British Columbia, Canada.<ref>\n'''1901 Census''':\nReference: RG31 - Statistics Canada; Microfilm: T-6430<br/>\n[https://www.bac-lac.gc.ca/eng/census/1901/Pages/item.aspx?itemid=31526 Library and Archives Canada] (accessed 6 May 2021)<br/>\nMalcom Cameron (33), married head of household in Kootenay East - North Riding, Yale and Cariboo, British Columbia, Canada. Born in Ontario.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1901 Census''': Reference: RG31 - Statistics Canada; Microfilm: T-6430<br/>[https://www.bac-lac.gc.ca/eng/census/1901/Pages/item.aspx?itemid=31526 Library and Archives Canada] (accessed 6 May 2021)<br/>Malcom Cameron (33), married head of household in Kootenay East - North Riding, Yale and Cariboo, British Columbia, Canada. Born in Ontario.",
+    "type": "source"
+  }
+}

@@ -64,7 +64,12 @@
     }
   ],
   "collectionData": {
-    "id": "8947"
+    "id": "8947",
+    "district": "Gaspé",
+    "districtNumber": "159",
+    "subDistrict": "35 - Newport",
+    "subDistrictNumber": "35",
+    "familyNumber": "75"
   },
   "hasValidData": true
 }

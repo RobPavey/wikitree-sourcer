@@ -88,7 +88,10 @@
     }
   ],
   "collectionData": {
-    "id": "8991"
+    "id": "8991",
+    "enumerationDistrict": "14",
+    "subDistrictNumber": "61",
+    "familyNumber": "50"
   },
   "hasValidData": true
 }

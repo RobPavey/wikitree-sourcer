@@ -1,0 +1,30 @@
+{
+  "url": "https://www.bac-lac.gc.ca/eng/census/1901/Pages/item.aspx?itemid=31526",
+  "success": true,
+  "name": "Malcom Cameron",
+  "recordData": {
+    "Surname": "Cameron",
+    "Given Name": "Malcom",
+    "Gender": "Male",
+    "Age": "33",
+    "Birth Date": "1867-05-15",
+    "Marital Status": "Married",
+    "Place of Birth": "Ontario",
+    "Religion": "Presbyterian",
+    "Relationship": "Head",
+    "Ethnic Origin": "Scotch",
+    "Nationality": "Canadian",
+    "Province": "British Columbia",
+    "District Name": "Yale and Cariboo",
+    "District Number": "5",
+    "Sub-District Name": "Kootenay East - North Riding",
+    "Sub-District Number": "D",
+    "Division Number": "6",
+    "Family Number": "34",
+    "Page Number": "3",
+    "Microfilm": "T-6430",
+    "Reference": "RG31 - Statistics Canada",
+    "Item Number": "31526"
+  },
+  "isOldPageStyle": true
+}

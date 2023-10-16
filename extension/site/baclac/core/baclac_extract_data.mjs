@@ -22,6 +22,49 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function extractDataForOldStylePage(document, main, url, result) {
+  const contentAreaElement = main.querySelector("#ContentArea");
+  if (!contentAreaElement) {
+    return;
+  }
+
+  let paragraphs = contentAreaElement.querySelectorAll("div.col-md-6 > p");
+
+  let name = result.name;
+  name = name.replace("Item:", "");
+  name = name.replace(/\s+/g, " ").trim();
+  result.name = name;
+
+  result.recordData = {};
+
+  for (let paragraph of paragraphs) {
+    let innerHtml = paragraph.innerHTML;
+    // example: "<strong>Surname: </strong>Cameron"
+    if (innerHtml.includes("<strong>")) {
+      const keyStartString = "<strong>";
+      const keyEndString = "</strong>";
+      let startIndex = innerHtml.indexOf(keyStartString);
+      let endIndex = innerHtml.indexOf(keyEndString);
+      if (startIndex != -1 && endIndex != -1 && startIndex < endIndex) {
+        let key = innerHtml.substring(startIndex + keyStartString.length, endIndex).trim();
+        let value = innerHtml.substring(endIndex + keyEndString.length).trim();
+        if (key.endsWith(":")) {
+          key = key.substring(0, key.length - 1);
+        }
+        console.log("key: " + key + ", value: " + value);
+        if (!value.includes("<br>")) {
+          result.recordData[key] = value;
+        }
+      }
+    }
+  }
+
+  if (Object.keys(result.recordData).length > 0) {
+    result.isOldPageStyle = true;
+    result.success = true;
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -40,10 +83,13 @@ function extractData(document, url) {
     return result;
   }
 
-  result.name = nameElement.textContent;
+  result.name = nameElement.textContent.trim();
 
   const recordElement = main.querySelector("#record-display");
   if (!recordElement) {
+    // It might be an old style page
+    extractDataForOldStylePage(document, main, url, result);
+
     return result;
   }
 

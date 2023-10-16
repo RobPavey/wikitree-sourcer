@@ -24,10 +24,16 @@ SOFTWARE.
 
 import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
 import { BaclacEdReader } from "./baclac_ed_reader.mjs";
+import { BaclacOldStyleEdReader } from "./baclac_old_style_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let edReader = new BaclacEdReader(input.extractedData);
+  let edReader = undefined;
+  if (input.extractedData.isOldPageStyle) {
+    edReader = new BaclacOldStyleEdReader(input.extractedData);
+  } else {
+    edReader = new BaclacEdReader(input.extractedData);
+  }
   return commonGeneralizeData("baclac", edReader);
 }
 

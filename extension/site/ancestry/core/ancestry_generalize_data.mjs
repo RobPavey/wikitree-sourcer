@@ -2178,39 +2178,28 @@ function generalizeRecordData(input, result) {
     };
 
     if (ed.recordData) {
+      function addRef(key, value) {
+        if (key && value) {
+          result.collectionData[key] = value;
+        }
+      }
       // could be an image page
-      let volume = getCleanValueForRecordDataList(ed, ["Volume", "Volume Number", "Volume number"]);
-      if (volume) {
-        result.collectionData.volume = volume;
-      }
-      let page = getCleanValueForRecordDataList(ed, ["Page", "Page number", "Page Number"]);
-      if (page) {
-        result.collectionData.page = page;
-      }
-      let folio = getCleanRecordDataValue(ed, "Folio");
-      if (folio) {
-        result.collectionData.folio = folio;
-      }
-      let piece = getCleanRecordDataValue(ed, "Piece");
-      if (piece) {
-        result.collectionData.piece = piece;
-      }
-      let schedule = getCleanValueForRecordDataList(ed, ["Schedule Number", "Household Schedule Number"]);
-      if (schedule) {
-        result.collectionData.schedule = schedule;
-      }
-      let parish = getCleanValueForRecordDataList(ed, ["Civil Parish", "Parish"]);
-      if (parish) {
-        result.collectionData.parish = parish;
-      }
-      let county = getCleanValueForRecordDataList(ed, ["County/Island", "County"]);
-      if (county) {
-        result.collectionData.county = county;
-      }
-      let borough = getCleanValueForRecordDataList(ed, ["Borough"]);
-      if (borough) {
-        result.collectionData.borough = borough;
-      }
+      addRef("volume", getCleanValueForRecordDataList(ed, ["Volume", "Volume Number", "Volume number"]));
+      addRef("page", getCleanValueForRecordDataList(ed, ["Page", "Page number", "Page Number"]));
+      addRef("folio", getCleanRecordDataValue(ed, "Folio"));
+      addRef("piece", getCleanRecordDataValue(ed, "Piece"));
+      addRef("schedule", getCleanValueForRecordDataList(ed, ["Schedule Number", "Household Schedule Number"]));
+      addRef("parish", getCleanValueForRecordDataList(ed, ["Civil Parish", "Parish"]));
+      addRef("county", getCleanValueForRecordDataList(ed, ["County/Island", "County"]));
+      addRef("borough", getCleanValueForRecordDataList(ed, ["Borough"]));
+
+      addRef("enumerationDistrict", getCleanRecordDataValue(ed, "Enumeration District"));
+      addRef("district", getCleanRecordDataValue(ed, "District"));
+      addRef("districtNumber", getCleanRecordDataValue(ed, "District Number"));
+      addRef("subDistrict", getCleanRecordDataValue(ed, "Sub-District"));
+      addRef("subDistrictNumber", getCleanRecordDataValue(ed, "Sub-District Number"));
+      addRef("divisionNumber", getCleanRecordDataValue(ed, "Division Number"));
+      addRef("familyNumber", getCleanRecordDataValue(ed, "Family Number"));
     }
   }
 }

@@ -41,7 +41,8 @@
   "collectionData": {
     "id": "61596",
     "schedule": "176",
-    "borough": "Islington"
+    "borough": "Islington",
+    "enumerationDistrict": "ALBP"
   },
   "hasValidData": true
 }

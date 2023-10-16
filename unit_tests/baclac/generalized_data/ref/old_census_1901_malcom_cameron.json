@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Cameron",
+    "forenames": "Malcom"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "Kootenay East - North Riding, Yale and Cariboo, British Columbia, Canada",
+    "country": "Canada"
+  },
+  "birthDate": {
+    "dateString": "15 May 1867"
+  },
+  "birthPlace": {
+    "placeString": "Ontario"
+  },
+  "ageAtEvent": "33",
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "collectionData": {
+    "id": "census1901",
+    "district": "Yale and Cariboo",
+    "districtNumber": "5",
+    "subDistrict": "Kootenay East - North Riding",
+    "subDistrictNumber": "D",
+    "divisionNumber": "6",
+    "familyNumber": "34",
+    "page": "3"
+  },
+  "hasValidData": true
+}
