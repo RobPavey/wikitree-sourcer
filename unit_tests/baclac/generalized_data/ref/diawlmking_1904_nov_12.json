@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Diary",
+  "eventDate": {
+    "dateString": "Nov 12, 1904"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

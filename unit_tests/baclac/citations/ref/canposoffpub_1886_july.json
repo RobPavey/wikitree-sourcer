@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1886 Directory''':\nPage: 338; Item ID number: 8933<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=canposoffpub&id=8933&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nDate: 1886-07; Document type: Postal Guides.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a directory in July 1886 in Canada.<ref>\n'''1886 Directory''':\nPage: 338; Item ID number: 8933<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=canposoffpub&id=8933&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nDate: 1886-07; Document type: Postal Guides.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1886 Directory''': Page: 338; Item ID number: 8933<br/>[http://central.bac-lac.gc.ca/.redirect?app=canposoffpub&id=8933&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Date: 1886-07; Document type: Postal Guides.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n\"Orders-in-Council\"<br/>\nReference: RG2, Privy Council Office, Series A-1-a. For Order in Council see volume  901,  Access Code 90; Item ID number: 125814<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=ordincou&id=125814&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nOrder in Council number: 1905-2108; Date introduced: 1905-11-17; Date considered: 1906-01-03; Date approved: 1906-01-06; Remarks: See also 1905-1148.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a government document in Canada.<ref>\n\"Orders-in-Council\"<br/>\nReference: RG2, Privy Council Office, Series A-1-a. For Order in Council see volume  901,  Access Code 90; Item ID number: 125814<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=ordincou&id=125814&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nOrder in Council number: 1905-2108; Date introduced: 1905-11-17; Date considered: 1906-01-03; Date approved: 1906-01-06; Remarks: See also 1905-1148.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* \"Orders-in-Council\"<br/>Reference: RG2, Privy Council Office, Series A-1-a. For Order in Council see volume  901,  Access Code 90; Item ID number: 125814<br/>[http://central.bac-lac.gc.ca/.redirect?app=ordincou&id=125814&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Order in Council number: 1905-2108; Date introduced: 1905-11-17; Date considered: 1906-01-03; Date approved: 1906-01-06; Remarks: See also 1905-1148.",
+    "type": "source"
+  }
+}

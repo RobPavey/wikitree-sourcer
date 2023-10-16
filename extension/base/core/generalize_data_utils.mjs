@@ -3206,6 +3206,14 @@ class GeneralizedData {
         defaultTitle: "Other Church Event",
         subtypes: [{ title: "Church Member Registration", subtype: RecordSubtype.MemberRegistration }],
       },
+      {
+        type: RT.GovernmentRecord,
+        defaultTitle: "Government Record",
+      },
+      {
+        type: RT.Diary,
+        defaultTitle: "Diary Entry",
+      },
     ];
 
     function lookup(gd, collectionTitle, table) {

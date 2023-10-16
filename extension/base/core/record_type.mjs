@@ -84,6 +84,7 @@ const RT = {
   Patent: `Patent`,
   SlaveSchedule: `SlaveSchedule`,
   GovernmentDocument: `GovernmentDocument`,
+  Diary: `Diary`,
 };
 
 const RecordSubtype = {

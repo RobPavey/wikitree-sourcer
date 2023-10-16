@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n\"Indian Affairs Annual Reports, 1864 to 1990\"<br/>\nPage: 163; Item ID number: 24798<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=indaffannrep&id=24798&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nYear: 1912; Link to Related Resource: Click here; Publication type: Federal/national.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a government document in Canada.<ref>\n\"Indian Affairs Annual Reports, 1864 to 1990\"<br/>\nPage: 163; Item ID number: 24798<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=indaffannrep&id=24798&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nYear: 1912; Link to Related Resource: Click here; Publication type: Federal/national.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* \"Indian Affairs Annual Reports, 1864 to 1990\"<br/>Page: 163; Item ID number: 24798<br/>[http://central.bac-lac.gc.ca/.redirect?app=indaffannrep&id=24798&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Year: 1912; Link to Related Resource: Click here; Publication type: Federal/national.",
+    "type": "source"
+  }
+}

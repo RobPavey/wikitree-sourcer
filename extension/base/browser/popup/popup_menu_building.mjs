@@ -934,6 +934,7 @@ function setupBuildCitationSubMenu(
     CriminalRegister: `Criminal Register`,
     Death: `Death`,
     DeathRegistration: `Death Registration`,
+    Diary: `Diary`,
     Directory: `Directory`,
     Divorce: `Divorce`,
     ElectoralRegister: `Electoral Register`,

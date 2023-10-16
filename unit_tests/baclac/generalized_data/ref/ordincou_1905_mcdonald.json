@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "GovernmentDocument",
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

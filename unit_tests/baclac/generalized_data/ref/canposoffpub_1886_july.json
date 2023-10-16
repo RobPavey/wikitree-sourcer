@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Directory",
+  "eventDate": {
+    "dateString": "July 1886"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

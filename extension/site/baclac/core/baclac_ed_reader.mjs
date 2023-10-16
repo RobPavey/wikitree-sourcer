@@ -41,6 +41,12 @@ const typeData = {
     recordType: RT.Newspaper,
     noName: true,
   },
+  canposoffpub: {
+    // Canadian Post Office Publications
+    foundIn: "Library / Canadian Post Office Publications",
+    recordType: RT.Directory,
+    noName: true,
+  },
   citregmtlcircou: {
     // Citizenship Registration, Montreal Circuit Court
     foundIn: "Genealogy / Immigrants & Citizenship /Citizenship Registration, Montreal Circuit Court , 1851 to 1945",
@@ -61,7 +67,7 @@ const typeData = {
   diawlmking: {
     // Diaries of William Lyon Mackenzie King
     foundIn: "Archives / Diaries of William Lyon Mackenzie King",
-    recordType: RT.Unclassified,
+    recordType: RT.Diary,
     noName: true,
   },
   fonandcol: {
@@ -87,6 +93,12 @@ const typeData = {
     foundIn: "Genealogy / Immigrants & Citizenship / Immigrants from the Russian Empire, 1898 to 1922",
     recordType: RT.Immigration,
     defaultEventDate: "1898-1922",
+  },
+  indaffannrep: {
+    // Indian Affairs Annual Reports, 1864 to 1990
+    foundIn: "Library / Indian Affairs Annual Reports, 1864 to 1990",
+    recordType: RT.GovernmentDocument,
+    noName: true,
   },
   kia: {
     // Second World War Service Files – War Dead
@@ -120,6 +132,12 @@ const typeData = {
     foundIn: "Genealogy / Military / North West Mounted Police (NWMP)—Personnel Records, 1873–1904",
     recordType: RT.Military,
     defaultEventDate: "1873-1904",
+  },
+  ordincou: {
+    // Orders-in-Council
+    foundIn: "Archives / Orders-in-Council",
+    recordType: RT.GovernmentDocument,
+    noName: true,
   },
   pffww: {
     // First World War Personnel Records
@@ -371,6 +389,21 @@ class BaclacEdReader extends ExtractedDataReader {
       let yearString = this.getRecordDataValue("Year");
       if (yearString) {
         return this.makeDateObjFromYear(yearString);
+      }
+    } else if (this.urlApp == "canposoffpub") {
+      let title = this.ed.name;
+      let preDateString = "Canada official postal guide, ";
+      if (title.includes(preDateString)) {
+        let index = title.indexOf(preDateString);
+        if (index != -1) {
+          let dateString = title.substring(index + preDateString.length).trim();
+          return this.makeDateObjFromDateString(dateString);
+        }
+      }
+    } else if (this.urlApp == "indaffannrep") {
+      let eventDateString = this.getRecordDataValueForKeys(["Date approved", "Date considered", "Date introduced"]);
+      if (eventDateString) {
+        return this.makeDateObjFromBaclacDateString(eventDateString);
       }
     }
 
