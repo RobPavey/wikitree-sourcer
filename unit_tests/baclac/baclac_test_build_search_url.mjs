@@ -26,12 +26,16 @@ import { buildSearchUrl } from "../../extension/site/baclac/core/baclac_build_se
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+  {
+    caseName: "ancestry_canada_census_1901_malcom_cameron",
+    inputPath: "ancestry/generalized_data/ref/canada_census_1901_malcom_cameron",
+    typeOfSearch: "Census",
   },
-  */
+  {
+    caseName: "baclac_census_1906_robert_macdonald",
+    inputPath: "baclac/generalized_data/ref/census_1906_robert_macdonald",
+    typeOfSearch: "AllCollections",
+  },
 ];
 
 async function runTests(testManager) {

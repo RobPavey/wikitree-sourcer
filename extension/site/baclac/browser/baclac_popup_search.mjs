@@ -26,10 +26,14 @@ import {
   addSameRecordMenuItem,
   addBackMenuItem,
   addMenuItem,
+  addMenuItemWithSubMenu,
   beginMainMenu,
   endMainMenu,
+  setupSearchCollectionsSubMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
+
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   doSearch,
@@ -39,19 +43,46 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const baclacStartYear = 1837;
+const baclacStartYear = 1800;
 const baclacEndYear = 1992;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function baclacSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("Canada Census Search", input, async function () {
+async function baclacDoSearch(input) {
+  doAsyncActionWithCatch("Canada Library and Archives Search", input, async function () {
     let loadedModule = await import(`../core/baclac_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
+}
+
+async function baclacSearch(generalizedData, typeOfSearch) {
+  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+  baclacDoSearch(input);
+}
+
+async function baclacSearchCollection(generalizedData, collectionWtsId) {
+  let searchParams = {
+    collectionWtsId: collectionWtsId,
+  };
+  const input = {
+    typeOfSearch: "SpecifiedCollection",
+    searchParameters: searchParams,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  baclacDoSearch(input);
+}
+
+async function baclacSearchWithParameters(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  baclacDoSearch(input);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +93,7 @@ function addBaclacDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addBaclacDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "England and Wales";
+  const stdCountryName = "Canada";
 
   if (filter) {
     if (!testFilterForDatesAndCountries(filter, baclacStartYear, baclacEndYear, [stdCountryName])) {
@@ -97,9 +128,16 @@ function addBaclacDefaultSearchMenuItem(menu, data, backFunction, filter) {
     }
   }
 
-  addMenuItem(menu, "Search Canada Census...", function (element) {
-    setupBaclacSearchSubMenu(data, backFunction, filter);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search Library and Archives Canada",
+    function (element) {
+      baclacSearch(data.generalizedData, "Census");
+    },
+    function () {
+      setupBaclacSearchSubMenu(data, backFunction, filter);
+    }
+  );
 
   return true;
 }
@@ -110,54 +148,27 @@ function addBaclacSameRecordMenuItem(menu, data) {
   });
 }
 
-function addBaclacSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      baclacStartYear,
-      baclacEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Canada Census Births", function (element) {
-    baclacSearch(data.generalizedData, "Births");
+function addBaclacSearchCensusMenuItem(menu, data) {
+  addMenuItem(menu, "Search LAC census records", function (element) {
+    baclacSearch(data.generalizedData, "Census");
   });
 }
 
-function addBaclacSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      baclacStartYear,
-      baclacEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Canada Census Marriages", function (element) {
-    baclacSearch(data.generalizedData, "Marriages");
+function addBaclacSearchAllCollectionsMenuItem(menu, data) {
+  addMenuItem(menu, "Search all LAC collections", function (element) {
+    baclacSearch(data.generalizedData, "AllCollections");
   });
 }
 
-function addBaclacSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      baclacStartYear,
-      baclacEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Canada Census Deaths", function (element) {
-    baclacSearch(data.generalizedData, "Deaths");
+function addBaclacSearchCollectionsMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Search a specific collection", function (element) {
+    setupSearchCollectionsSubMenu(data, "baclac", baclacSearchCollection, backFunction);
+  });
+}
+
+function addBaclacSearchWithParametersMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Search with specified parameters", function (element) {
+    setupBaclacSearchWithParametersSubMenu(data, backFunction);
   });
 }
 
@@ -170,16 +181,22 @@ async function setupBaclacSearchSubMenu(data, backFunction, filter) {
 
   addBackMenuItem(menu, backFunction);
 
-  addBaclacSameRecordMenuItem(menu, data, filter);
-  addBaclacSearchBirthsMenuItem(menu, data, filter);
-  addBaclacSearchMarriagesMenuItem(menu, data, filter);
-  addBaclacSearchDeathsMenuItem(menu, data, filter);
+  addBaclacSameRecordMenuItem(menu, data);
+  addBaclacSearchCensusMenuItem(menu, data);
+  addBaclacSearchAllCollectionsMenuItem(menu, data);
+  addBaclacSearchCollectionsMenuItem(menu, data, backFunction);
+  addBaclacSearchWithParametersMenuItem(menu, data, backFunction);
 
   endMainMenu(menu);
+}
+
+async function setupBaclacSearchWithParametersSubMenu(data, backFunction) {
+  let dataModule = await import(`../core/baclac_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.BaclacData, baclacSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("baclac", "Canada Census", addBaclacDefaultSearchMenuItem);
+registerSearchMenuItemFunction("baclac", "Library and Archives Canada", addBaclacDefaultSearchMenuItem);

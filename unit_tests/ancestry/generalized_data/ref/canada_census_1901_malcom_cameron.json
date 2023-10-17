@@ -1,0 +1,86 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Malcom Cameron"
+  },
+  "personGender": "male",
+  "birthPlace": {
+    "placeString": "Ontario"
+  },
+  "eventDate": {
+    "dateString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "Canada, British Columbia"
+  },
+  "ageAtEvent": "33",
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Malcom Cameron",
+      "age": "33",
+      "relationship": "head",
+      "isSelected": true,
+      "maritalStatus": "married",
+      "gender": "male",
+      "birthDate": "15 May 1867",
+      "birthPlace": "Ontario"
+    },
+    {
+      "name": "11429028 Rosilla Cameron",
+      "age": "26",
+      "relationship": "wife",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429028&indiv=try"
+    },
+    {
+      "name": "11429029 Donald Cameron",
+      "age": "8",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429029&indiv=try"
+    },
+    {
+      "name": "11429030 Clive Cameron",
+      "age": "7",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429030&indiv=try"
+    },
+    {
+      "name": "11429031 Alexander Cameron",
+      "age": "5",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429031&indiv=try"
+    },
+    {
+      "name": "11429032 Clarence Cameron",
+      "age": "2",
+      "relationship": "son",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429032&indiv=try"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "11429028 Rosilla Cameron"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "8826",
+    "district": "Yale and Cariboo",
+    "districtNumber": "5",
+    "subDistrict": "Kootenay (East/Est), (North Riding/Division Nord)",
+    "subDistrictNumber": "6",
+    "familyNumber": "34"
+  },
+  "hasValidData": true
+}

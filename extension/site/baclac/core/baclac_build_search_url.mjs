@@ -87,106 +87,33 @@ function addAppropriateSurname(gd, type, builder) {
   }
 }
 
-function isInYearRange(rangeStart, rangeEnd, dataStart, dataEnd) {
-  // return true if the range dataStart-dataEnd is within or overlaps range rangeStart-rangeEnd
-
-  if (dataStart > rangeEnd || dataEnd < rangeStart) {
-    return false; // no overlap and not inside
-  }
-
-  return true;
-}
-
-function isMiddleNameLikelyAnInitial(dates, type) {
-  let startYearNum = DateUtils.getYearNumFromYearString(dates.startYear);
-  let endYearNum = DateUtils.getYearNumFromYearString(dates.endYear);
-
-  if (!startYearNum) {
-    startYearNum = 1837;
-  }
-  if (!endYearNum) {
-    endYearNum = 2000;
-  }
-
-  if (startYearNum > endYearNum) {
-    endYearNum = startYearNum; // should never happen but just in case
-  }
-
-  let useInitial = false;
-
-  if (isInYearRange(startYearNum, endYearNum, 1866, 1866)) {
-    useInitial = true;
-  } else if (type == "births" && isInYearRange(startYearNum, endYearNum, 1910, 1965)) {
-    useInitial = true;
-  } else if (type == "marriages" && isInYearRange(startYearNum, endYearNum, 1910, 1983)) {
-    useInitial = true;
-  } else if (type == "deaths" && isInYearRange(startYearNum, endYearNum, 1910, 1969)) {
-    useInitial = true;
-  }
-
-  return useInitial;
-}
-
-function addAppropriateGivenNames(gd, dates, type, builder) {
-  // there is a limit on the number of given names that the indices contain
-  // For now just use first name plus first middle name
-  // Oftern they contain the first letter of the third name but of the first 2 are long they might not
-  let firstName = gd.inferFirstName();
-  let middleName = gd.inferMiddleName();
-
-  if (middleName && middleName.length > 1 && isMiddleNameLikelyAnInitial(dates, type)) {
-    middleName = middleName.substr(0, 1); // make an initial
-  }
-
-  let givenNames = firstName;
-  if (middleName) {
-    givenNames += " " + middleName;
-  }
-  builder.addGivenNames(givenNames);
-}
-
-function includeMothersName(dates, mothersMaidenName) {
-  let yearNum = DateUtils.getYearNumFromYearString(dates.startYear);
-  if (!yearNum) {
-    return false;
-  }
-
-  if (yearNum > 1911) {
-    return true;
-  }
-
-  return false;
-}
-
-function includeSpouseNameIfValidThruDateRange(dates, gd, builder) {
-  //if (dates.startYear > 1911) {
-  if (gd.spouses && gd.spouses.length == 1) {
-    let spouse = gd.spouses[0];
-    if (spouse.name) {
-      let spouseSurname = spouse.name.inferLastName();
-      builder.addOtherSurname(spouseSurname);
-    }
-  }
-  //}
-}
-
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
-  const dataCache = buildUrlInput.dataCache;
   const typeOfSearch = buildUrlInput.typeOfSearch;
 
   var builder = new BaclacUriBuilder();
 
   // typeOfSearch can be:
-  // "Births"
-  // "Marriages"
-  // "Deaths"
   // "SameCollection"
+  // "SpecifiedCollection"
+  // "Census"
+  // "All Collections"
+  // "SpecifiedParameters"
 
-  let type = typeOfSearch.toLowerCase();
-  if (typeOfSearch == "SameCollection") {
+  if (typeOfSearch == "Census") {
+    builder.addDataSource("Genealogy", "Census");
+    builder.addLastName(gd.inferLastName());
+    builder.addFirstName(gd.inferForenames());
+
+    builder.addBirthYear(gd.inferBirthYear(), 2);
+
+    // This can fail if there is no birth country specified in the census being searched
+    // Could possibly have some data in RC
+    //builder.addBirthPlace(gd.inferBirthCountry());
+  } else if (typeOfSearch == "SameCollection") {
+    let collectionId = "";
     if (gd.collectionData && gd.collectionData.id) {
-      type = RC.mapCollectionId(
+      collectionId = RC.mapCollectionId(
         gd.sourceOfData,
         gd.collectionData.id,
         "baclac",
@@ -195,102 +122,47 @@ function buildSearchUrl(buildUrlInput) {
       );
     } else {
       // should never happen
-      type = "births";
-    }
-  }
-
-  // add type to search
-  if (type == "births") {
-    builder.addType("Births");
-  } else if (type == "marriages") {
-    builder.addType("Marriages");
-  } else if (type == "deaths") {
-    builder.addType("Deaths");
-  }
-
-  // compute the start and end dates
-  let dates = {
-    startYear: undefined,
-    endYear: undefined,
-  };
-
-  if (typeOfSearch == "SameCollection") {
-    // must be coming from a record of same type and date should be exact
-    let eventYear = gd.inferEventYear();
-    dates.startYear = eventYear;
-    dates.endYear = eventYear;
-  } else if (type == "births") {
-    let birthYear = gd.inferBirthYear();
-    let birthDateQualifier = gd.inferBirthDateQualifier();
-    gd.setDatesUsingQualifier(dates, birthYear, birthDateQualifier);
-  } else if (type == "marriages") {
-    let eventYear = gd.inferEventYear();
-
-    let birthYear = gd.inferBirthYear();
-    if (birthYear) {
-      dates.startYear = addNumToYearString(birthYear, 14);
-    } else if (eventYear) {
-      dates.startYear = subtractNumFromYearString(eventYear, 100);
     }
 
-    let deathYear = gd.inferDeathYear();
-    if (deathYear) {
-      dates.endYear = deathYear;
-    } else if (eventYear) {
-      dates.endYear = addNumToYearString(eventYear, 100);
+    if (collectionId) {
+      // Assume it will be a census for now
+      builder.addDataSource("Genealogy", "Census");
+      builder.addCensusApplicationCode(collectionId);
+
+      builder.addLastName(gd.inferLastName());
+      builder.addFirstName(gd.inferForenames());
+
+      builder.addAge(gd.ageAtEvent, 0);
+      builder.addBirthPlace(gd.inferBirthCountry());
+
+      // Add collection reference gd if this is SameCollection
+      builder.addDistrict(gd.collectionData.district);
+      builder.addSubDistrict(gd.collectionData.subDistrict);
+      builder.addPageNumber(gd.collectionData.page);
     }
-  } else if (type == "deaths") {
-    let deathYear = gd.inferDeathYear();
-    let deathDateQualifier = gd.inferDeathDateQualifier();
-    gd.setDatesUsingQualifier(dates, deathYear, deathDateQualifier);
-  }
+  } else if (typeOfSearch == "AllCollections") {
+    let searchString = gd.inferForenames() + " " + gd.inferLastName();
+    builder.addSearchStringExact(searchString);
 
-  // constrain years to the range covered by Baclac
-  constrainYears(dates);
-
-  // set the date parameters
-  if (dates.startYear) {
-    builder.addStartYear(dates.startYear);
-  }
-  if (dates.endYear) {
-    builder.addEndYear(dates.endYear);
-  }
-
-  addAppropriateSurname(gd, type, builder);
-
-  addAppropriateGivenNames(gd, dates, type, builder);
-
-  // now set specific fields for each type
-  if (type == "births") {
-    if (includeMothersName(dates, gd.mothersMaidenName)) {
-      builder.addOtherSurname(gd.mothersMaidenName);
+    let dateRange = gd.inferPossibleLifeYearRange();
+    if (dateRange && dateRange.startYear && dateRange.endYear) {
+      builder.addDateRange(dateRange.startYear.toString(), dateRange.endYear.toString());
     }
-  } else if (type == "marriages") {
-    includeSpouseNameIfValidThruDateRange(dates, gd, builder);
-  } else if (type == "deaths") {
-    // although BMD Entries do not seem to have age of death before 1866 it doesn't
-    // seem to throw off the search if it is included. However if the entry includes the
-    // age of death and it is off by even 1 year it fails to find it. So only include age
-    // if this is SameCollection
-    let age = gd.inferAgeAtDeath();
-    if (age != undefined && age >= 0) {
-      if (typeOfSearch != "SameCollection") {
-        let range = 5;
-        if (age < 14) {
-          range = 2;
-        } else if (age > 50) {
-          range = 10;
-        }
-        age = age.toString() + "%" + range.toString();
+  } else if (typeOfSearch == "SpecifiedCollection") {
+    let searchParams = buildUrlInput.searchParameters;
+    if (searchParams.collectionWtsId) {
+      let collection = RC.findCollectionByWtsId(searchParams.collectionWtsId);
+      if (collection && collection.sites["baclac"]) {
+        let baclacCollectionId = collection.sites["baclac"].id;
+        builder.addCensusApplicationCode(baclacCollectionId);
+
+        builder.addDataSource("Genealogy", "Census");
+
+        builder.addLastName(gd.inferLastNameGivenParametersAndCollection(undefined, collection, true));
+        builder.addFirstName(gd.inferForenames());
       }
-      builder.addAgeAtDeath(age);
     }
-  }
-
-  // Add collection reference gd if this is SameCollection
-  if (typeOfSearch == "SameCollection") {
-    builder.addVolume(gd.collectionData.volume);
-    builder.addPage(gd.collectionData.page);
+  } else if (typeOfSearch == "SpecifiedParameters") {
   }
 
   const url = builder.getUri();

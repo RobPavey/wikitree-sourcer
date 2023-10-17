@@ -23,10 +23,9 @@ SOFTWARE.
 */
 
 import { RT } from "../../../base/core/record_type.mjs";
+import { RC } from "../../../base/core/record_collections.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
-import { NameUtils } from "../../../base/core/name_utils.mjs";
-import { StringUtils } from "../../../base/core/string_utils.mjs";
-import { NameObj, DateObj, PlaceObj, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 
 class BaclacOldStyleEdReader extends ExtractedDataReader {
   constructor(ed) {
@@ -234,8 +233,14 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
     if (this.recordType == RT.Census) {
       let yearString = this.getCensusYearFromUrl();
       if (yearString) {
+        let collectionId = "census" + yearString;
+        let altIdCollection = RC.findCollectionByAltId("baclac", collectionId);
+        if (altIdCollection) {
+          collectionId = altIdCollection.sites["baclac"].id;
+        }
+
         let collectionData = {
-          id: "census" + yearString,
+          id: collectionId,
         };
 
         function addRef(fieldName, value) {

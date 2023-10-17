@@ -1009,14 +1009,54 @@ const RecordCollectionData = [
 
   // Canada Census
   {
+    wtsId: "CanadaCensus1825LowerEast",
+    title: "1825 Census of Lower/East Canada",
+    country: "Canada",
+    dates: { year: 1825 },
+    sites: {
+      baclac: { id: "Census of Lower Canada, 1825", altId: "census1825" },
+    },
+  },
+  {
+    wtsId: "CanadaCensus1831LowerEast",
+    title: "1831 Census of Lower/East Canada",
+    country: "Canada",
+    dates: { year: 1831 },
+    sites: {
+      baclac: { id: "Census of Lower Canada, 1831", altId: "census1831" },
+    },
+  },
+  {
+    wtsId: "CanadaCensus1842LowerEast",
+    title: "1842 Census of East Canada",
+    country: "Canada",
+    dates: { year: 1842 },
+    sites: {
+      fs: { id: "1834340" },
+      ancestry: { id: "9808" },
+      fmp: { id: "Lower Canada Census 1842" },
+      baclac: { id: "Census of Canada East, 1842", altId: "census1842-Canada-East" },
+    },
+  },
+  {
+    wtsId: "CanadaCensus1842UpperWest",
+    title: "1842 Census of Canada West",
+    country: "Canada",
+    dates: { year: 1842 },
+    sites: {
+      baclac: { id: "Census of Canada West, 1842", altId: "census1842-Canada-West" },
+    },
+  },
+  {
     wtsId: "CanadaCensus1851",
     title: "1851 Census of Canada",
     country: "Canada",
     dates: { year: 1851 },
     sites: {
       fs: { id: "1325192" },
-      ancestry: { id: "1061", aldId: "1851Canada" },
+      ancestry: { id: "1061", altId: "1851Canada" },
       fmp: { id: "Canada Census 1851" },
+      baclac: { id: "Census of 1851 (Canada East, Canada West, New Brunswick and Nova Scotia)", altId: "" },
     },
   },
   {
@@ -1028,6 +1068,10 @@ const RecordCollectionData = [
       // fs: { id: "2143998"}, (seems to be per state)
       ancestry: { id: "1570" },
       fmp: { id: "Canada Census 1861" },
+      baclac: {
+        id: "Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)",
+        altId: "",
+      },
     },
   },
   {
@@ -1039,6 +1083,16 @@ const RecordCollectionData = [
       fs: { id: "1551612" },
       ancestry: { id: "1578" },
       fmp: { id: "Canada Census 1871" },
+      baclac: { id: "Census of Canada, 1871", altId: "" },
+    },
+  },
+  {
+    wtsId: "CanadaCensus1871Ontario",
+    title: "1871 Census of Canada (Ontario)",
+    country: "Canada",
+    dates: { year: 1871 },
+    sites: {
+      baclac: { id: "Federal Census of 1871 (Ontario Index)", altId: "" },
     },
   },
   {
@@ -1050,6 +1104,7 @@ const RecordCollectionData = [
       fs: { id: "1804541" },
       ancestry: { id: "1577", altId: "1881Canada" },
       fmp: { id: "Canada Census 1881" },
+      baclac: { id: "Census of Canada, 1881", altId: "" },
     },
   },
   {
@@ -1061,6 +1116,7 @@ const RecordCollectionData = [
       fs: { id: "1583536" },
       ancestry: { id: "1274" },
       fmp: { id: "Canada Census 1891" },
+      baclac: { id: "Census of Canada, 1891", altId: "" },
     },
   },
   {
@@ -1085,6 +1141,7 @@ const RecordCollectionData = [
         id: "Canada Census 1901",
         searchQueryFields: { maritalstatus: "maritalstatus" },
       },
+      baclac: { id: "Census of Canada, 1901", altId: "" },
     },
   },
   {
@@ -1106,6 +1163,7 @@ const RecordCollectionData = [
       fs: { id: "2143998" },
       ancestry: { id: "8947" },
       fmp: { id: "Canada Census 1911" },
+      baclac: { id: "Census of Canada, 1911", altId: "" },
     },
   },
   {
@@ -1116,6 +1174,7 @@ const RecordCollectionData = [
     householdTableColumns: ["name", "gender", "age", "relationship", "maritalStatus", "birthPlace", "occupation"],
     sites: {
       ancestry: { id: "8991" },
+      baclac: { id: "Census of Canada, 1921", altId: "" },
     },
   },
   {
@@ -1128,6 +1187,43 @@ const RecordCollectionData = [
       ancestry: { id: "62640" },
     },
   },
+  {
+    wtsId: "CanadaCensus1870Manitoba",
+    title: "1870 Census of Manitoba",
+    country: "Canada",
+    dates: { year: 1870 },
+    sites: {
+      baclac: { id: "Census of Manitoba, 1870", altId: "" },
+    },
+  },
+  {
+    wtsId: "CanadaCensus1906NorthwestProvinces",
+    title: "1906 Census of Northwest Provinces",
+    country: "Canada",
+    dates: { year: 1906 },
+    sites: {
+      baclac: { id: "Census of Northwest Provinces, 1906", altId: "" },
+    },
+  },
+  {
+    wtsId: "CanadaCensus1916Prairie",
+    title: "1916 Census of Manitoba",
+    country: "Canada",
+    dates: { year: 1916 },
+    sites: {
+      baclac: { id: "Census of the Prairie Provinces, 1916", altId: "" },
+    },
+  },
+  {
+    wtsId: "CanadaCensus1926Prairie",
+    title: "1926 Census of Manitoba",
+    country: "Canada",
+    dates: { year: 1926 },
+    sites: {
+      baclac: { id: "Census of the Prairie Provinces, 1926", altId: "" },
+    },
+  },
+
   // Poland
   {
     wtsId: "PolandBirthReg",

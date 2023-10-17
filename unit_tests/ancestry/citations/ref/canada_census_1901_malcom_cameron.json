@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of Canada\"<br/>\nYear: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>\n{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1901 census Malcom (age 33) was the married head of household in Canada, British Columbia.<ref>\n'''1901 Census''':\n\"1901 Census of Canada\"<br/>\nYear: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>\n{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of Canada\"<br/>Year: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of Canada\"<br/>\nYear: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>\n{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)<br/>\nMalcom Cameron (33), married head of household in Canada, British Columbia. Born in Ontario.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1901 census Malcom (age 33) was the married head of household in Canada, British Columbia.<ref>\n'''1901 Census''':\n\"1901 Census of Canada\"<br/>\nYear: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>\n{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)<br/>\nMalcom Cameron (33), married head of household in Canada, British Columbia. Born in Ontario.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of Canada\"<br/>Year: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)<br/>Malcom Cameron (33), married head of household in Canada, British Columbia. Born in Ontario.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of Canada\"<br/>\nYear: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>\n{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)<br/>\nName: Malcom Cameron; Gender: Male; Racial or Tribal Origin: Scottish; Nationality: Canadian; Marital Status: Married; Age: 33; Birth Date: 15 May 1867; Birth Place: Ontario; Residence Date: 1901; Province: British Columbia; Residence Place: Canada; Relation to Head of House: Head; Religion: Presbyterian; District: Yale and Cariboo; District Number: 5; Sub-District: Kootenay (East/Est), (North Riding/Division Nord); Sub-District Number: 6; Dwelling Number: 33; Family Number: 34; <br/>Household Members (Name) Age Relationship:<br/>11429027 Malcom Cameron 33 Head<br/>11429028 Rosilla Cameron 26 Wife<br/>11429029 Donald Cameron 8 Son<br/>11429030 Clive Cameron 7 Son<br/>11429031 Alexander Cameron 5 Son<br/>11429032 Clarence Cameron 2 Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1901 census Malcom (age 33) was the married head of household in Canada, British Columbia.<ref>\n'''1901 Census''':\n\"1901 Census of Canada\"<br/>\nYear: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>\n{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)<br/>\nName: Malcom Cameron; Gender: Male; Racial or Tribal Origin: Scottish; Nationality: Canadian; Marital Status: Married; Age: 33; Birth Date: 15 May 1867; Birth Place: Ontario; Residence Date: 1901; Province: British Columbia; Residence Place: Canada; Relation to Head of House: Head; Religion: Presbyterian; District: Yale and Cariboo; District Number: 5; Sub-District: Kootenay (East/Est), (North Riding/Division Nord); Sub-District Number: 6; Dwelling Number: 33; Family Number: 34; <br/>Household Members (Name) Age Relationship:<br/>11429027 Malcom Cameron 33 Head<br/>11429028 Rosilla Cameron 26 Wife<br/>11429029 Donald Cameron 8 Son<br/>11429030 Clive Cameron 7 Son<br/>11429031 Alexander Cameron 5 Son<br/>11429032 Clarence Cameron 2 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of Canada\"<br/>Year: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)<br/>Name: Malcom Cameron; Gender: Male; Racial or Tribal Origin: Scottish; Nationality: Canadian; Marital Status: Married; Age: 33; Birth Date: 15 May 1867; Birth Place: Ontario; Residence Date: 1901; Province: British Columbia; Residence Place: Canada; Relation to Head of House: Head; Religion: Presbyterian; District: Yale and Cariboo; District Number: 5; Sub-District: Kootenay (East/Est), (North Riding/Division Nord); Sub-District Number: 6; Dwelling Number: 33; Family Number: 34; <br/>Household Members (Name) Age Relationship:<br/>11429027 Malcom Cameron 33 Head<br/>11429028 Rosilla Cameron 26 Wife<br/>11429029 Donald Cameron 8 Son<br/>11429030 Clive Cameron 7 Son<br/>11429031 Alexander Cameron 5 Son<br/>11429032 Clarence Cameron 2 Son.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of Canada\"<br/>\nYear: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>\n{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Malcom Cameron\n|-\n| Gender || Male\n|-\n| Racial or Tribal Origin || Scottish\n|-\n| Nationality || Canadian\n|-\n| Marital Status || Married\n|-\n| Age || 33\n|-\n| Birth Date || 15 May 1867\n|-\n| Birth Place || Ontario\n|-\n| Residence Date || 1901\n|-\n| Province || British Columbia\n|-\n| Residence Place || Canada\n|-\n| Relation to Head of House || Head\n|-\n| Religion || Presbyterian\n|-\n| District || Yale and Cariboo\n|-\n| District Number || 5\n|-\n| Sub-District || Kootenay (East/Est), (North Riding/Division Nord)\n|-\n| Sub-District Number || 6\n|-\n| Dwelling Number || 33\n|-\n| Family Number || 34\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || 11429027 Malcom Cameron 33 Head<br/>11429028 Rosilla Cameron 26 Wife<br/>11429029 Donald Cameron 8 Son<br/>11429030 Clive Cameron 7 Son<br/>11429031 Alexander Cameron 5 Son<br/>11429032 Clarence Cameron 2 Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1901 census Malcom (age 33) was the married head of household in Canada, British Columbia.<ref>\n'''1901 Census''':\n\"1901 Census of Canada\"<br/>\nYear: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>\n{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Malcom Cameron\n|-\n| Gender || Male\n|-\n| Racial or Tribal Origin || Scottish\n|-\n| Nationality || Canadian\n|-\n| Marital Status || Married\n|-\n| Age || 33\n|-\n| Birth Date || 15 May 1867\n|-\n| Birth Place || Ontario\n|-\n| Residence Date || 1901\n|-\n| Province || British Columbia\n|-\n| Residence Place || Canada\n|-\n| Relation to Head of House || Head\n|-\n| Religion || Presbyterian\n|-\n| District || Yale and Cariboo\n|-\n| District Number || 5\n|-\n| Sub-District || Kootenay (East/Est), (North Riding/Division Nord)\n|-\n| Sub-District Number || 6\n|-\n| Dwelling Number || 33\n|-\n| Family Number || 34\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || 11429027 Malcom Cameron 33 Head<br/>11429028 Rosilla Cameron 26 Wife<br/>11429029 Donald Cameron 8 Son<br/>11429030 Clive Cameron 7 Son<br/>11429031 Alexander Cameron 5 Son<br/>11429032 Clarence Cameron 2 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of Canada\"<br/>Year: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34<br/>{{Ancestry Record|8826|11429027}} (accessed 6 May 2021)<br/>Name: Malcom Cameron; Gender: Male; Racial or Tribal Origin: Scottish; Nationality: Canadian; Marital Status: Married; Age: 33; Birth Date: 15 May 1867; Birth Place: Ontario; Residence Date: 1901; Province: British Columbia; Residence Place: Canada; Relation to Head of House: Head; Religion: Presbyterian; District: Yale and Cariboo; District Number: 5; Sub-District: Kootenay (East/Est), (North Riding/Division Nord); Sub-District Number: 6; Dwelling Number: 33; Family Number: 34; <br/>Household Members (Name) Age Relationship:<br/>11429027 Malcom Cameron 33 Head<br/>11429028 Rosilla Cameron 26 Wife<br/>11429029 Donald Cameron 8 Son<br/>11429030 Clive Cameron 7 Son<br/>11429031 Alexander Cameron 5 Son<br/>11429032 Clarence Cameron 2 Son.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1901 Census of Canada,\" database, ({{Ancestry Record|8826|11429027}} : accessed 6 May 2021), Malcom Cameron (33), married head of household in Canada, British Columbia. Born in Ontario; citing Year 1901, Census Place Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia, Page 3, Family No 34.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1901 census Malcom (age 33) was the married head of household in Canada, British Columbia.<ref>\"1901 Census of Canada,\" database, ({{Ancestry Record|8826|11429027}} : accessed 6 May 2021), Malcom Cameron (33), married head of household in Canada, British Columbia. Born in Ontario; citing Year 1901, Census Place Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia, Page 3, Family No 34.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1901 Census of Canada,\" database, ({{Ancestry Record|8826|11429027}} : accessed 6 May 2021), Malcom Cameron (33), married head of household in Canada, British Columbia. Born in Ontario; citing Year 1901, Census Place Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia, Page 3, Family No 34.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1901 Census'':\n\"1901 Census of Canada\", database, \nYear 1901, Census Place Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia, Page 3, Family No 34, \n({{Ancestry Record|8826|11429027}} : accessed 6 May 2021), \nName: Malcom Cameron; Gender: Male; Racial or Tribal Origin: Scottish; Nationality: Canadian; Marital Status: Married; Age: 33; Birth Date: 15 May 1867; Birth Place: Ontario; Residence Date: 1901; Province: British Columbia; Residence Place: Canada; Relation to Head of House: Head; Religion: Presbyterian; District: Yale and Cariboo; District Number: 5; Sub-District: Kootenay (East/Est), (North Riding/Division Nord); Sub-District Number: 6; Dwelling Number: 33; Family Number: 34; Household Members (Name) Age Relationship: 11429027 Malcom Cameron 33 Head, 11429028 Rosilla Cameron 26 Wife, 11429029 Donald Cameron 8 Son, 11429030 Clive Cameron 7 Son, 11429031 Alexander Cameron 5 Son, 11429032 Clarence Cameron 2 Son.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1901 census Malcom (age 33) was the married head of household in Canada, British Columbia.<ref>\n''1901 Census'':\n\"1901 Census of Canada\", database, \nYear 1901, Census Place Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia, Page 3, Family No 34, \n({{Ancestry Record|8826|11429027}} : accessed 6 May 2021), \nName: Malcom Cameron; Gender: Male; Racial or Tribal Origin: Scottish; Nationality: Canadian; Marital Status: Married; Age: 33; Birth Date: 15 May 1867; Birth Place: Ontario; Residence Date: 1901; Province: British Columbia; Residence Place: Canada; Relation to Head of House: Head; Religion: Presbyterian; District: Yale and Cariboo; District Number: 5; Sub-District: Kootenay (East/Est), (North Riding/Division Nord); Sub-District Number: 6; Dwelling Number: 33; Family Number: 34; Household Members (Name) Age Relationship: 11429027 Malcom Cameron 33 Head, 11429028 Rosilla Cameron 26 Wife, 11429029 Donald Cameron 8 Son, 11429030 Clive Cameron 7 Son, 11429031 Alexander Cameron 5 Son, 11429032 Clarence Cameron 2 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1901 Census'': \"1901 Census of Canada\", database, Year 1901, Census Place Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia, Page 3, Family No 34, ({{Ancestry Record|8826|11429027}} : accessed 6 May 2021), Name: Malcom Cameron; Gender: Male; Racial or Tribal Origin: Scottish; Nationality: Canadian; Marital Status: Married; Age: 33; Birth Date: 15 May 1867; Birth Place: Ontario; Residence Date: 1901; Province: British Columbia; Residence Place: Canada; Relation to Head of House: Head; Religion: Presbyterian; District: Yale and Cariboo; District Number: 5; Sub-District: Kootenay (East/Est), (North Riding/Division Nord); Sub-District Number: 6; Dwelling Number: 33; Family Number: 34; Household Members (Name) Age Relationship: 11429027 Malcom Cameron 33 Head, 11429028 Rosilla Cameron 26 Wife, 11429029 Donald Cameron 8 Son, 11429030 Clive Cameron 7 Son, 11429031 Alexander Cameron 5 Son, 11429032 Clarence Cameron 2 Son.",
+    "type": "source"
+  }
+}

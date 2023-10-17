@@ -644,6 +644,33 @@ class BaclacEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
+    if (this.recordType == RT.Census) {
+      let censusYearString = this.getRecordDataValue("Census year");
+      if (censusYearString) {
+        let collectionId = censusYearString;
+
+        let collectionData = {
+          id: collectionId,
+        };
+
+        function addRef(fieldName, value) {
+          if (value) {
+            collectionData[fieldName] = value;
+          }
+        }
+
+        addRef("district", this.getRecordDataValue("District name"));
+        addRef("districtNumber", this.getRecordDataValue("District number"));
+        addRef("subDistrict", this.getRecordDataValue("Sub-district name"));
+        addRef("subDistrictNumber", this.getRecordDataValue("Sub-district number"));
+        addRef("divisionNumber", this.getRecordDataValue("Division"));
+        addRef("familyNumber", this.getRecordDataValue("Family number"));
+        addRef("page", this.getRecordDataValue("Page number"));
+
+        return collectionData;
+      }
+    }
+
     return undefined;
   }
 

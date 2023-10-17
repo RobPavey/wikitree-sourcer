@@ -69,6 +69,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/2074:4628",
   },
   {
+    caseName: "canada_census_1901_malcom_cameron",
+    url: "https://www.ancestry.com/discoveryui-content/view/11429027:8826",
+  },
+  {
     caseName: "canada_census_1911_nominges_albert",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8947&h=442578&ssrc=pt&tid=160114497&pid=412193732194&usePUB=true",
   },

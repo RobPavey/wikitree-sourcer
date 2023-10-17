@@ -2194,7 +2194,7 @@ function generalizeRecordData(input, result) {
       addRef("borough", getCleanValueForRecordDataList(ed, ["Borough"]));
 
       addRef("enumerationDistrict", getCleanRecordDataValue(ed, "Enumeration District"));
-      addRef("district", getCleanRecordDataValue(ed, "District"));
+      addRef("district", getCleanValueForRecordDataList(ed, ["District", "County/District"]));
       addRef("districtNumber", getCleanRecordDataValue(ed, "District Number"));
       addRef("subDistrict", getCleanRecordDataValue(ed, "Sub-District"));
       addRef("subDistrictNumber", getCleanRecordDataValue(ed, "Sub-District Number"));

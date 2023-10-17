@@ -2405,7 +2405,8 @@ class GeneralizedData {
     } else if (
       this.recordType == RT.BirthRegistration ||
       this.recordType == RT.Baptism ||
-      this.recordType == RT.Birth
+      this.recordType == RT.Birth ||
+      this.recordType == RT.BirthOrBaptism
     ) {
       if (this.eventPlace && !this.role) {
         birthPlace = this.eventPlace;
@@ -2417,6 +2418,38 @@ class GeneralizedData {
     }
 
     return undefined;
+  }
+
+  inferBirthCountry() {
+    let placeNames = [];
+
+    let deathPlace = this.inferBirthPlace();
+    if (deathPlace) {
+      placeNames.push(deathPlace);
+    }
+
+    if (
+      this.recordType == RT.BirthRegistration ||
+      this.recordType == RT.Birth ||
+      this.recordType == RT.Baptism ||
+      this.recordType == RT.BirthOrBaptism
+    ) {
+      let eventPlace = this.inferEventPlace();
+      if (eventPlace && !this.role) {
+        placeNames.push(eventPlace);
+      }
+
+      // Collection
+      if (this.collectionData) {
+        let collection = RC.findCollection(this.sourceOfData, this.collectionData.id);
+        let country = RC.getCountryFromCollection(collection);
+        if (country) {
+          placeNames.push(country);
+        }
+      }
+    }
+
+    return this.inferCountryFromPlaceNames(placeNames);
   }
 
   inferDeathPlace() {

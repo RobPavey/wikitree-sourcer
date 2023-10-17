@@ -1,0 +1,93 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/11429027:8826",
+  "pageType": "record",
+  "dbId": "8826",
+  "recordId": "11429027",
+  "ancestryTemplate": "{{Ancestry Record|8826|11429027}}",
+  "domain": "com",
+  "titleName": "Malcom Cameron",
+  "titleCollection": "1901 Census of Canada",
+  "recordData": {
+    "Name": "Malcom Cameron",
+    "Gender": "Male",
+    "Racial or Tribal Origin": "Scottish",
+    "Nationality": "Canadian",
+    "Marital Status": "Married",
+    "Age": "33",
+    "Birth Date": "15 May 1867",
+    "Birth Place": "Ontario",
+    "Residence Date": "1901",
+    "Province": "British Columbia",
+    "Residence Place": "Canada",
+    "Relation to Head of House": "Head",
+    "Religion": "Presbyterian",
+    "District": "Yale and Cariboo",
+    "District Number": "5",
+    "Sub-District": "Kootenay (East/Est), (North Riding/Division Nord)",
+    "Sub-District Number": "6",
+    "Dwelling Number": "33",
+    "Family Number": "34",
+    "Household Members (Name)<br/>Age<br/>Relationship": "11429027 Malcom Cameron 33 Head<br/>11429028 Rosilla Cameron 26 Wife<br/>11429029 Donald Cameron 8 Son<br/>11429030 Clive Cameron 7 Son<br/>11429031 Alexander Cameron 5 Son<br/>11429032 Clarence Cameron 2 Son"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "11429027 Malcom Cameron",
+        "Age": "33",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "11429028 Rosilla Cameron",
+        "dbId": "8826",
+        "recordId": "11429028",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429028&indiv=try",
+        "Age": "26",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members (Name)": "11429029 Donald Cameron",
+        "dbId": "8826",
+        "recordId": "11429029",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429029&indiv=try",
+        "Age": "8",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members (Name)": "11429030 Clive Cameron",
+        "dbId": "8826",
+        "recordId": "11429030",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429030&indiv=try",
+        "Age": "7",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members (Name)": "11429031 Alexander Cameron",
+        "dbId": "8826",
+        "recordId": "11429031",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429031&indiv=try",
+        "Age": "5",
+        "Relationship": "Son"
+      },
+      {
+        "Household Members (Name)": "11429032 Clarence Cameron",
+        "dbId": "8826",
+        "recordId": "11429032",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8826&h=11429032&indiv=try",
+        "Age": "2",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8826/images/z000012718?pid=11429027&usePUB=true&usePUBJs=true",
+  "imageDbId": "8826",
+  "imageRecordId": "z000012718",
+  "sourceCitation": "Year: 1901; Census Place: Kootenay (East/Est), (North Riding/Division Nord), Yale and Cariboo, British Columbia; Page: 3; Family No: 34",
+  "sourceInformation": "Ancestry.com. 1901 Census of Canada [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2006. Original data: Library and Archives Canada. Census of Canada, 1901. Ottawa, Ontario, Canada: Library and Archives Canada, 2004. http://www.bac-lac.gc.ca/eng/census/1901/Pages/about-census.aspxl. Series RG31-C-1. Statistics Canada Fonds. Microfilm reels: T-6428 to T-6556.Images are reproduced with the permission of Library and Archives Canada.",
+  "originalData": "Library and Archives Canada. Census of Canada, 1901. Ottawa, Ontario, Canada: Library and Archives Canada, 2004. http://www.bac-lac.gc.ca/eng/census/1901/Pages/about-census.aspxl. Series RG31-C-1. Statistics Canada Fonds. Microfilm reels: T-6428 to T-6556.Images are reproduced with the permission of Library and Archives Canada.",
+  "sourceDescription": "The fourth census of Canada covers seven provinces - British Columbia, Manitoba, New Brunswick, Nova Scotia, Ontario, Prince Edward Island, and Quebec; two territories - the Yukon Territory and the Northwest Territories; and one district - the District of Keewatin. In 1901 the Northwest Territories was comprised of these seven districts: Alberta, Assiniboia, Athabasca, Franklin, Mackenzie, Saskatchewan, and Ungava. The census provides many details about individuals and families including: name, gender, age, relationship to head of household, marital status, birthplace, religion, and occupation. Learn more..."
+}
