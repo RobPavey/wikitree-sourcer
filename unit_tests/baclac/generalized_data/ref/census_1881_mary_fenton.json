@@ -23,5 +23,15 @@
   },
   "ageAtEvent": "32",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of Canada, 1881",
+    "district": "Bruce North",
+    "districtNumber": "177",
+    "subDistrict": "Arran",
+    "subDistrictNumber": "B",
+    "divisionNumber": "2",
+    "familyNumber": "255",
+    "page": "60"
+  },
   "hasValidData": true
 }

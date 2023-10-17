@@ -24,5 +24,14 @@
   "ageAtEvent": "55",
   "relationshipToHead": "head",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of Canada, 1911",
+    "district": "Bonaventure",
+    "districtNumber": "148",
+    "subDistrict": "Hamilton East",
+    "subDistrictNumber": "5",
+    "familyNumber": "52",
+    "page": "7"
+  },
   "hasValidData": true
 }

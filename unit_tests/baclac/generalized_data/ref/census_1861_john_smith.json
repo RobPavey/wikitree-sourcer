@@ -20,5 +20,13 @@
   },
   "ageAtEvent": "14",
   "maritalStatus": "single",
+  "collectionData": {
+    "id": "Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)",
+    "district": "Brome",
+    "districtNumber": "9",
+    "subDistrict": "Sutton",
+    "subDistrictNumber": "5",
+    "page": "255"
+  },
   "hasValidData": true
 }

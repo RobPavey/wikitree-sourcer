@@ -20,5 +20,13 @@
   },
   "ageAtEvent": "33",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of the Prairie Provinces, 1916",
+    "district": "Lethbridge",
+    "districtNumber": "38",
+    "subDistrictNumber": "7",
+    "familyNumber": "33",
+    "page": "4"
+  },
   "hasValidData": true
 }

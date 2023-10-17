@@ -20,5 +20,15 @@
   },
   "ageAtEvent": "67",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of Canada, 1891",
+    "district": "Oxford South",
+    "districtNumber": "105",
+    "subDistrict": "Ingersoll Town",
+    "subDistrictNumber": "B",
+    "divisionNumber": "1",
+    "familyNumber": "162",
+    "page": "32-33"
+  },
   "hasValidData": true
 }

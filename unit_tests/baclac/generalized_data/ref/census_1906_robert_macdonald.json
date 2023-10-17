@@ -21,5 +21,14 @@
   "ageAtEvent": "2",
   "relationshipToHead": "son",
   "maritalStatus": "single",
+  "collectionData": {
+    "id": "Census of Northwest Provinces, 1906",
+    "district": "Portage la Prairie",
+    "districtNumber": "6",
+    "subDistrictNumber": "19",
+    "divisionNumber": "B",
+    "familyNumber": "373",
+    "page": "56"
+  },
   "hasValidData": true
 }

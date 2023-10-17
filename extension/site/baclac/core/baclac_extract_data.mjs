@@ -51,7 +51,7 @@ function extractDataForOldStylePage(document, main, url, result) {
         if (key.endsWith(":")) {
           key = key.substring(0, key.length - 1);
         }
-        console.log("key: " + key + ", value: " + value);
+        //console.log("key: " + key + ", value: " + value);
         if (!value.includes("<br>")) {
           result.recordData[key] = value;
         }

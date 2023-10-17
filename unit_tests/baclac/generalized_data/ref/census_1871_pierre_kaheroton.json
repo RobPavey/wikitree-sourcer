@@ -20,5 +20,13 @@
   },
   "ageAtEvent": "33",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of Canada, 1871",
+    "district": "Laprairie",
+    "districtNumber": "115",
+    "subDistrict": "Sault-St. Louis",
+    "subDistrictNumber": "g",
+    "page": "19"
+  },
   "hasValidData": true
 }

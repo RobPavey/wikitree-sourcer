@@ -24,5 +24,14 @@
   "ageAtEvent": "33",
   "relationshipToHead": "wife",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of Canada, 1911",
+    "district": "Victoria-Haliburton",
+    "districtNumber": "129",
+    "subDistrict": "Lindsay",
+    "subDistrictNumber": "65",
+    "familyNumber": "154",
+    "page": "14"
+  },
   "hasValidData": true
 }

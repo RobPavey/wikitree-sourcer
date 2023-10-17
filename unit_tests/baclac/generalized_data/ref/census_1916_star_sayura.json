@@ -20,5 +20,14 @@
   },
   "ageAtEvent": "35",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of the Prairie Provinces, 1916",
+    "district": "Calgary West",
+    "districtNumber": "35",
+    "subDistrictNumber": "14",
+    "divisionNumber": "B",
+    "familyNumber": "108",
+    "page": "11"
+  },
   "hasValidData": true
 }

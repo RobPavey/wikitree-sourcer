@@ -19,5 +19,13 @@
     "placeString": "St Giles"
   },
   "ageAtEvent": "33",
+  "collectionData": {
+    "id": "Census of 1851 (Canada East, Canada West, New Brunswick and Nova Scotia)",
+    "district": "Lotbinière (county)",
+    "districtNumber": "14",
+    "subDistrict": "St. Gilles",
+    "subDistrictNumber": "198",
+    "page": "17"
+  },
   "hasValidData": true
 }

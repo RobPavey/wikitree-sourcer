@@ -23,5 +23,15 @@
   },
   "ageAtEvent": "32",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of Canada, 1881",
+    "district": "Bruce South",
+    "districtNumber": "176",
+    "subDistrict": "Kincardine",
+    "subDistrictNumber": "E",
+    "divisionNumber": "1",
+    "familyNumber": "84",
+    "page": "21"
+  },
   "hasValidData": true
 }

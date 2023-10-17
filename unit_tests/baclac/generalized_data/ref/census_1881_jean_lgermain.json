@@ -22,5 +22,14 @@
     "placeString": "Quebec"
   },
   "ageAtEvent": "55",
+  "collectionData": {
+    "id": "Census of Canada, 1881",
+    "district": "Yamaska",
+    "districtNumber": "57",
+    "subDistrict": "St. Michel",
+    "subDistrictNumber": "B",
+    "familyNumber": "184",
+    "page": "44"
+  },
   "hasValidData": true
 }

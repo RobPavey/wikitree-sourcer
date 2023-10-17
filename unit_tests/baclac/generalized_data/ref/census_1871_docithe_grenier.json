@@ -20,5 +20,13 @@
   },
   "ageAtEvent": "32",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of Canada, 1871",
+    "district": "Maskinongé",
+    "districtNumber": "128",
+    "subDistrict": "Rivière-du-Loup",
+    "subDistrictNumber": "b",
+    "page": "9"
+  },
   "hasValidData": true
 }

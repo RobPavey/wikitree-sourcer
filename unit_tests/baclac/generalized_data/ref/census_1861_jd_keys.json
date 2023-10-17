@@ -20,5 +20,13 @@
   },
   "ageAtEvent": "35",
   "maritalStatus": "married",
+  "collectionData": {
+    "id": "Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)",
+    "district": "Hochelaga",
+    "districtNumber": "20",
+    "subDistrict": "Montréal",
+    "subDistrictNumber": "3",
+    "page": "153"
+  },
   "hasValidData": true
 }
