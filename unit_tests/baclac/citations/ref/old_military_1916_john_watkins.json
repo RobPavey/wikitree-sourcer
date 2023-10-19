@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Military''':\nReference: RG 150, Accession 1992-93/166, Box 10125 - 18<br/>\n[https://www.bac-lac.gc.ca/eng/discover/military-heritage/first-world-war/personnel-records/Pages/item.aspx?IdNumber=301389 Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: John Watkins; Name: WATKINS, JOHN; Regimental Number: 931499; Date of Birth: 1897-01-19; Place of Birth: Brisco BC Canada; Enlistment Date: May 17 1916 12:00AM; Place of Enlistment: Brisco BC Canada; Unit: 225th Overseas Battalion; Item Number: 301389; Record Group: Canadian Expeditionary Force (CEF).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John was in a military record in Canada.<ref>\n'''Military''':\nReference: RG 150, Accession 1992-93/166, Box 10125 - 18<br/>\n[https://www.bac-lac.gc.ca/eng/discover/military-heritage/first-world-war/personnel-records/Pages/item.aspx?IdNumber=301389 Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: John Watkins; Name: WATKINS, JOHN; Regimental Number: 931499; Date of Birth: 1897-01-19; Place of Birth: Brisco BC Canada; Enlistment Date: May 17 1916 12:00AM; Place of Enlistment: Brisco BC Canada; Unit: 225th Overseas Battalion; Item Number: 301389; Record Group: Canadian Expeditionary Force (CEF).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Military''': Reference: RG 150, Accession 1992-93/166, Box 10125 - 18<br/>[https://www.bac-lac.gc.ca/eng/discover/military-heritage/first-world-war/personnel-records/Pages/item.aspx?IdNumber=301389 Library and Archives Canada] (accessed 6 May 2021)<br/>Name: John Watkins; Name: WATKINS, JOHN; Regimental Number: 931499; Date of Birth: 1897-01-19; Place of Birth: Brisco BC Canada; Enlistment Date: May 17 1916 12:00AM; Place of Enlistment: Brisco BC Canada; Unit: 225th Overseas Battalion; Item Number: 301389; Record Group: Canadian Expeditionary Force (CEF).",
+    "type": "source"
+  }
+}

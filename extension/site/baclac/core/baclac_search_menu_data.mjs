@@ -25,135 +25,37 @@ SOFTWARE.
 import { RC } from "../../../base/core/record_collections.mjs";
 
 const categories = [
-  { value: "all", text: "All Categories" },
-  { value: "35", text: "Census & Voter Lists" },
-  { value: "34", text: "Birth, Marriage & Death" },
-  { value: "39", text: "Military" },
-  { value: "40", text: "Immigration & Emigration" },
-  { value: "33", text: "Stories, Memories & Histories" },
-  { value: "37", text: "Directories & Member Lists" },
-  { value: "36", text: "Court, Land, Wills & Financial" },
-  { value: "41", text: "Dictionaries, Encyclopedias & Reference" },
+  { value: "all", text: "All Collections" },
+
+  { value: "Archives", text: "- All Archives" },
+  { value: "Archives|CabCon", text: "- - Cabinet Conclusions" },
+  { value: "Archives|FonAndCol", text: "- - Collections and Fonds" },
+  { value: "Archives|DiaWlmKing", text: "- - Diaries of William Lyon Mackenzie King" },
+  { value: "Archives|FilVidAndSou", text: "- - Film, Video and Sound" },
+  { value: "Archives|IndResWesCan", text: "- - First Nations Reserves – Western Canada" },
+  { value: "Archives|OrdInCou", text: "- - Orders-in-Council" },
+  { value: "Archives|PosOffPosMas", text: "- - Post Offices and Postmasters" },
+
+  { value: "Genealogy", text: "- All Genealogy" },
+
+  { value: "Genealogy|ImmCit", text: "- - All Genealogy / Immigration & Citizenship" },
+  {
+    value: "Genealogy|ImmCit|CitRegMtlCirCou",
+    text: "Citizenship Registration, Montreal Circuit Court , 1851 to 1945",
+  },
+  { value: "Genealogy|ImmCit|ImmBef1865", text: "- - - Immigrants before 1865" },
+  { value: "Genealogy|ImmCit|ImmFroChi", text: "- - - Immigrants from China, 1885 to 1952" },
+  { value: "Genealogy|ImmCit|ImmFroChi", text: "- - - Immigrants" },
+  { value: "Genealogy|ImmCit|ImmFroChi", text: "- - - Immigrants" },
+  { value: "Genealogy|ImmCit|ImmFroChi", text: "- - - Immigrants" },
+  { value: "Genealogy|ImmCit|ImmFroChi", text: "- - - Immigrants" },
+  { value: "Genealogy|ImmCit|ImmFroChi", text: "- - - Immigrants" },
+  { value: "Genealogy|ImmCit|ImmFroChi", text: "- - - Immigrants" },
+
+  { value: "Library", text: "- All Library" },
+  { value: "Library|CanGaz", text: "- - Library / Canada Gazette, 1841 to 1997" },
+  { value: "Library|LacCat", text: "- - National Library Collections " },
 ];
-
-const subcategories = [
-  { value: "all", text: "All Subcategories" },
-
-  {
-    value: "cen_century1700",
-    text: "Census & Voter Lists 1700s",
-    category: "35",
-  },
-  {
-    value: "cen_century1800",
-    text: "Census & Voter Lists 1800s",
-    category: "35",
-  },
-  {
-    value: "cen_century1900",
-    text: "Census & Voter Lists 1900s",
-    category: "35",
-  },
-
-  { value: "bmd_birth", text: "Birth, Baptism & Christening", category: "34" },
-  { value: "bmd_marriage", text: "Marriage & Divorce", category: "34" },
-  {
-    value: "bmd_death",
-    text: "Death, Burial, Cemetery & Obituaries",
-    category: "34",
-  },
-
-  { value: "mil_draft", text: "Draft, Enlistment and Service", category: "39" },
-  { value: "mil_casualties", text: "Casualties", category: "39" },
-  {
-    value: "mil_lists",
-    text: "Soldier, Veteran & Prisoner Rolls & Lists",
-    category: "39",
-  },
-  { value: "mil_pension", text: "Pension Records", category: "39" },
-
-  { value: "img_passlists", text: "Passenger Lists", category: "40" },
-  { value: "img_crewlists", text: "Crew Lists", category: "40" },
-  { value: "img_citizenship", text: "Citizenship Records", category: "40" },
-  {
-    value: "img_books",
-    text: "Immigration & Emigration Books",
-    category: "40",
-  },
-
-  {
-    value: "flh_family",
-    text: "Family Histories, Journals & Biographies",
-    category: "33",
-  },
-  { value: "flh_oral", text: "Oral Histories & Interviews", category: "33" },
-  { value: "flh_place", text: "Social & Place Histories", category: "33" },
-
-  { value: "dir_city", text: "City & Area Directories", category: "37" },
-  {
-    value: "dir_society",
-    text: "Society & Employment Directories",
-    category: "37",
-  },
-  { value: "dir_church", text: "Church Records & Histories", category: "37" },
-  { value: "dir_school", text: "School Lists & Yearbooks", category: "37" },
-
-  {
-    value: "clp_court",
-    text: "Court, Governmental & Criminal Records",
-    category: "36",
-  },
-  {
-    value: "clp_wills",
-    text: "Wills, Estates & Guardian Records",
-    category: "36",
-  },
-
-  {
-    value: "ref_guides",
-    text: "Research Guides & Finding Aids",
-    category: "41",
-  },
-];
-
-const wtsCollectionData = {
-  EnglandAndWalesBirthReg: { category: "34", subcategory: "bmd_birth" },
-  EnglandAndWalesMarriageReg: { category: "34", subcategory: "bmd_marriage" },
-  EnglandAndWalesDeathReg: { category: "34", subcategory: "bmd_death" },
-
-  EnglandWalesAndScotlandCensus1841: {
-    category: "35",
-    subcategory: "cen_century1800",
-  },
-  EnglandWalesAndScotlandCensus1851: {
-    category: "35",
-    subcategory: "cen_century1800",
-  },
-  EnglandWalesAndScotlandCensus1861: {
-    category: "35",
-    subcategory: "cen_century1800",
-  },
-  EnglandWalesAndScotlandCensus1871: {
-    category: "35",
-    subcategory: "cen_century1800",
-  },
-  EnglandWalesAndScotlandCensus1881: {
-    category: "35",
-    subcategory: "cen_century1800",
-  },
-  EnglandWalesAndScotlandCensus1891: {
-    category: "35",
-    subcategory: "cen_century1800",
-  },
-  EnglandWalesAndScotlandCensus1901: {
-    category: "35",
-    subcategory: "cen_century1900",
-  },
-  EnglandWalesAndScotlandCensus1911: {
-    category: "35",
-    subcategory: "cen_century1900",
-  },
-};
 
 const BaclacData = {
   includeCategories: function (generalizedData, parameters) {
@@ -161,79 +63,22 @@ const BaclacData = {
   },
 
   includeSubcategories: function (generalizedData, parameters) {
-    return true;
+    return false;
   },
 
   includeCollections: function (generalizedData, parameters) {
     return false;
   },
 
-  includeSpouses: function (generalizedData, parameters) {
-    return true;
-  },
-
-  includeParents: function (generalizedData, parameters) {
-    return true;
-  },
-
-  getPriorityFromStdCountry: function (stdCountry) {
-    return countryStdNameToPriority[stdCountry];
-  },
-
   getCategories: function (generalizedData, parameters, options) {
     return categories;
   },
 
-  getSubcategories: function (generalizedData, parameters, options) {
-    let result = [];
+  getSubcategories: function (generalizedData, parameters, options) {},
 
-    if (parameters.category == "all") {
-      for (let subcategory of subcategories) {
-        let isDuplicate = false;
-        for (let otherSubcategory of result) {
-          if (otherSubcategory.value == subcategory.value) {
-            isDuplicate = true;
-            break;
-          }
-        }
-        if (!isDuplicate) {
-          result.push(subcategory);
-        }
-      }
-    } else {
-      for (let subcategory of subcategories) {
-        if (!subcategory.category || subcategory.category == parameters.category) {
-          result.push(subcategory);
-        }
-      }
-    }
+  setDefaultSearchParameters: function (generalizedData, parameters, options) {},
 
-    return result;
-  },
-
-  setDefaultSearchParameters: function (generalizedData, parameters, options) {
-    //console.log("setDefaultSearchParameters: generalizedData is")
-    //console.log(generalizedData)
-    if (generalizedData.collectionData) {
-      let source = generalizedData.sourceOfData;
-      let sourceId = generalizedData.collectionData.id;
-      let country = generalizedData.inferEventCountry();
-      let collection = RC.findCollection(source, sourceId);
-
-      if (collection) {
-        let catAndSubCat = wtsCollectionData[collection.wtsId];
-        parameters.category = catAndSubCat.category;
-        parameters.subcategory = catAndSubCat.subcategory;
-      }
-    }
-  },
-
-  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {
-    let subcategories = this.getSubcategories(generalizedData, parameters, options);
-    if (subcategories && subcategories.length > 0) {
-      parameters.subcategory = subcategories[0].value;
-    }
-  },
+  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {},
 
   updateParametersOnSubcategoryChange: function (generalizedData, parameters, options) {},
 

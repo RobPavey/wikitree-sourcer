@@ -237,6 +237,9 @@ async function setupSimplePopupMenu(input) {
   if (input.buildHouseholdTableFunction) {
     addBuildHouseholdTableMenuItem(menu, data);
   }
+  if (input.customMenuFunction) {
+    input.customMenuFunction(menu, data);
+  }
 
   addStandardMenuEnd(menu, data, backFunction);
 }

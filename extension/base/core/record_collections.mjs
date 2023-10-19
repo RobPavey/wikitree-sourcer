@@ -1056,7 +1056,7 @@ const RecordCollectionData = [
       fs: { id: "1325192" },
       ancestry: { id: "1061", altId: "1851Canada" },
       fmp: { id: "Canada Census 1851" },
-      baclac: { id: "Census of 1851 (Canada East, Canada West, New Brunswick and Nova Scotia)", altId: "" },
+      baclac: { id: "Census of 1851 (Canada East, Canada West, New Brunswick and Nova Scotia)", altId: "census1851" },
     },
   },
   {
@@ -1070,7 +1070,7 @@ const RecordCollectionData = [
       fmp: { id: "Canada Census 1861" },
       baclac: {
         id: "Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)",
-        altId: "",
+        altId: "census1861",
       },
     },
   },
@@ -1083,7 +1083,7 @@ const RecordCollectionData = [
       fs: { id: "1551612" },
       ancestry: { id: "1578" },
       fmp: { id: "Canada Census 1871" },
-      baclac: { id: "Census of Canada, 1871", altId: "" },
+      baclac: { id: "Census of Canada, 1871", altId: "census1871" },
     },
   },
   {
@@ -1092,7 +1092,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1871 },
     sites: {
-      baclac: { id: "Federal Census of 1871 (Ontario Index)", altId: "" },
+      baclac: { id: "Federal Census of 1871 (Ontario Index)", altId: "census1871" },
     },
   },
   {
@@ -1104,7 +1104,7 @@ const RecordCollectionData = [
       fs: { id: "1804541" },
       ancestry: { id: "1577", altId: "1881Canada" },
       fmp: { id: "Canada Census 1881" },
-      baclac: { id: "Census of Canada, 1881", altId: "" },
+      baclac: { id: "Census of Canada, 1881", altId: "census1881" },
     },
   },
   {
@@ -1116,7 +1116,7 @@ const RecordCollectionData = [
       fs: { id: "1583536" },
       ancestry: { id: "1274" },
       fmp: { id: "Canada Census 1891" },
-      baclac: { id: "Census of Canada, 1891", altId: "" },
+      baclac: { id: "Census of Canada, 1891", altId: "census1891" },
     },
   },
   {
@@ -1141,7 +1141,7 @@ const RecordCollectionData = [
         id: "Canada Census 1901",
         searchQueryFields: { maritalstatus: "maritalstatus" },
       },
-      baclac: { id: "Census of Canada, 1901", altId: "" },
+      baclac: { id: "Census of Canada, 1901", altId: "census1901" },
     },
   },
   {
@@ -1163,7 +1163,7 @@ const RecordCollectionData = [
       fs: { id: "2143998" },
       ancestry: { id: "8947" },
       fmp: { id: "Canada Census 1911" },
-      baclac: { id: "Census of Canada, 1911", altId: "" },
+      baclac: { id: "Census of Canada, 1911", altId: "census1911" },
     },
   },
   {
@@ -1174,7 +1174,7 @@ const RecordCollectionData = [
     householdTableColumns: ["name", "gender", "age", "relationship", "maritalStatus", "birthPlace", "occupation"],
     sites: {
       ancestry: { id: "8991" },
-      baclac: { id: "Census of Canada, 1921", altId: "" },
+      baclac: { id: "Census of Canada, 1921", altId: "census1921" },
     },
   },
   {
@@ -1193,7 +1193,13 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1870 },
     sites: {
-      baclac: { id: "Census of Manitoba, 1870", altId: "" },
+      // not on fs or fmp
+      ancestry: { id: "61494" },
+      baclac: {
+        id: "Census of Manitoba, 1870",
+        altId: "census1870",
+        useSearchFields: ["gender", "age", "maritalStatus"],
+      },
     },
   },
   {
@@ -1619,6 +1625,28 @@ const RC = {
     }
 
     return undefined;
+  },
+  doesCollectionSupportSearchField: function (collection, siteName, fieldName) {
+    if (!collection) {
+      return false;
+    }
+
+    let siteData = collection.sites[siteName];
+    if (!siteData) {
+      return false;
+    }
+
+    let useFields = siteData.useSearchFields;
+    if (!useFields) {
+      // if no fields specified then assume use all
+      return true;
+    }
+
+    if (useFields.includes(fieldName)) {
+      return true;
+    }
+
+    return false;
   },
 };
 

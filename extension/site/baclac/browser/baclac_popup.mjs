@@ -26,6 +26,31 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/baclac_generalize_data.mjs";
 import { buildCitation } from "../core/baclac_build_citation.mjs";
+import { RT } from "/base/core/record_type.mjs";
+import { doSearch } from "/base/browser/popup/popup_search.mjs";
+import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import { options } from "/base/browser/options/options_loader.mjs";
+
+async function baclacDoSearch(input) {
+  doAsyncActionWithCatch("Canada Library and Archives Search", input, async function () {
+    let loadedModule = await import(`../core/baclac_build_search_url.mjs`);
+    doSearch(loadedModule, input);
+  });
+}
+
+async function baclacSearchOldCensus(data) {
+  let ed = data.extractedData;
+  let gd = data.generalizedData;
+  const input = { typeOfSearch: "SameOldCensus", extractedData: ed, generalizedData: gd, options: options };
+  baclacDoSearch(input);
+}
+
+async function baclacSearchOldRecord(data) {
+  let ed = data.extractedData;
+  let gd = data.generalizedData;
+  const input = { typeOfSearch: "SameOldCollection", extractedData: ed, generalizedData: gd, options: options };
+  baclacDoSearch(input);
+}
 
 async function setupBaclacPopupMenu(extractedData) {
   let input = {
@@ -34,9 +59,26 @@ async function setupBaclacPopupMenu(extractedData) {
       "It looks like a Canada Census page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
     generalizeFailedMessage: "It looks like a Canada Census page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
-    buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "baclac",
   };
+
+  if (extractedData.isOldPageStyle) {
+    input.customMenuFunction = function (menu, data) {
+      let gd = data.generalizedData;
+      if (gd.recordType == RT.Census) {
+        addMenuItem(menu, "Search new LAC site for this census record", function (element) {
+          baclacSearchOldCensus(data);
+        });
+      } else {
+        addMenuItem(menu, "Search new LAC site for this record", function (element) {
+          baclacSearchOldRecord(data);
+        });
+      }
+    };
+  } else {
+    input.buildCitationFunction = buildCitation;
+  }
+
   setupSimplePopupMenu(input);
 }
 

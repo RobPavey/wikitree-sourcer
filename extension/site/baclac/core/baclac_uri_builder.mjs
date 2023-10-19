@@ -96,6 +96,10 @@ class BaclacUriBuilder {
     }
   }
 
+  addDataSourceAsString(string) {
+    this.addSearchParameter("DataSource", string);
+  }
+
   addSearchString(string) {
     this.addSearchParameter("q", StringUtils.removeExtendedAsciiCharacters(string));
   }
@@ -298,6 +302,10 @@ class BaclacUriBuilder {
 
   addFamilyNumber(string) {
     this.addSearchParameter("FamilyNumber", string);
+  }
+
+  addIdNumber(string) {
+    this.addSearchParameter("IdNumber", string);
   }
 
   getUri() {

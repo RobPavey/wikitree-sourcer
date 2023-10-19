@@ -25,14 +25,33 @@ SOFTWARE.
 import { RT } from "../../../base/core/record_type.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
-import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
+import { NameObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
+
+const urlStringsToRecordType = [
+  {
+    recordType: RT.Census,
+    urlStrings: ["/census/"],
+  },
+  {
+    recordType: RT.Military,
+    urlStrings: ["/military-heritage/"],
+  },
+];
 
 class BaclacOldStyleEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
-    if (ed.url.includes("/census/")) {
-      this.recordType = RT.Census;
+    this.recordType = RT.Unclassified;
+    for (let type of urlStringsToRecordType) {
+      for (let match of type.urlStrings) {
+        if (ed.url.includes(match)) {
+          this.recordType = type.recordType;
+          break;
+        }
+      }
     }
   }
 
@@ -59,6 +78,37 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
       }
     }
   }
+
+  makeNameObjFromFullNameWithComma(fullNameString) {
+    if (fullNameString) {
+      // Some immigration records have names in all lowercase.
+      if (StringUtils.isAllLowercase(fullNameString)) {
+        fullNameString = fullNameString.toUpperCase();
+      }
+
+      let cleanName = NameUtils.convertNameFromAllCapsToMixedCase(fullNameString);
+
+      let nameObj = new NameObj();
+
+      let commaIndex = cleanName.indexOf(",");
+      if (commaIndex != -1) {
+        let parts = cleanName.split(",");
+        if (parts.length == 2) {
+          let lastName = parts[0].trim();
+          let forenames = parts[1].trim();
+          let fullName = forenames + " " + lastName;
+          nameObj.setFullName(fullName);
+          nameObj.setForenames(forenames);
+          nameObj.setLastName(lastName);
+        }
+      } else {
+        nameObj.setFullName(cleanName);
+      }
+
+      return nameObj;
+    }
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,6 +134,10 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
     let forenames = this.getRecordDataValue("Given Name");
     if (lastName && forenames) {
       return this.makeNameObjFromForenamesAndLastName(forenames, lastName);
+    }
+    let fullName = this.getRecordDataValue("Name");
+    if (fullName) {
+      return this.makeNameObjFromFullNameWithComma(fullName);
     }
     if (this.ed.name) {
       return this.makeNameObjFromFullName(this.ed.name);
@@ -120,6 +174,7 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
       let province = this.getRecordDataValue("Province");
       let district = this.getRecordDataValue("District Name");
       let subDistrict = this.getRecordDataValue("Sub-District Name");
+      let parish = this.getRecordDataValue("Parish");
 
       // there is sometimes a "Sub-district description" and no "Sub-district name"
       // but the description doesn't work as part of the placeString except under a few cases
@@ -139,6 +194,10 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
 
       addPart(subDistrict);
       addPart(district);
+
+      if (!placeString) {
+        addPart(parish);
+      }
       addPart(province);
       addPart("Canada");
     }
@@ -146,12 +205,7 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
     let placeObj = this.makePlaceObjFromFullPlaceName(placeString);
     if (!placeObj) {
       placeObj = new PlaceObj();
-
-      if (this.typeData.defaultEventPlace) {
-        placeObj.placeString = this.typeData.defaultEventPlace;
-      } else {
-        placeObj.placeString = "Canada";
-      }
+      placeObj.placeString = "Canada";
     }
     placeObj.country = "Canada";
 
@@ -227,6 +281,15 @@ class BaclacOldStyleEdReader extends ExtractedDataReader {
 
   getOccupation() {
     return this.getRecordDataValue("Occupation");
+  }
+
+  getParents() {
+    let fatherName = this.getRecordDataValue("Father's Name");
+    if (fatherName) {
+      return this.makeParentsFromFullNames(fatherName, undefined);
+    }
+
+    return undefined;
   }
 
   getCollectionData() {

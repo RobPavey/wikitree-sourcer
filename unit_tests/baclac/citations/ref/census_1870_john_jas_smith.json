@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"Census of Manitoba, 1870\"<br/>\nReference: MG 9 E3   Manitoba Census Returns; Page: 333; Line: 85; Image number: e010985649; Item ID number: 47181882<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=47181882&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Jas Smith (3), single in Manitoba, Canada. Born in RED RIVER.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1870 census John (age 3) was in Manitoba, Canada.<ref>\n'''1870 Census''':\n\"Census of Manitoba, 1870\"<br/>\nReference: MG 9 E3   Manitoba Census Returns; Page: 333; Line: 85; Image number: e010985649; Item ID number: 47181882<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=47181882&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Jas Smith (3), single in Manitoba, Canada. Born in RED RIVER.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1870 Census''': \"Census of Manitoba, 1870\"<br/>Reference: MG 9 E3   Manitoba Census Returns; Page: 333; Line: 85; Image number: e010985649; Item ID number: 47181882<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=47181882&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>John Jas Smith (3), single in Manitoba, Canada. Born in RED RIVER.",
+    "type": "source"
+  }
+}

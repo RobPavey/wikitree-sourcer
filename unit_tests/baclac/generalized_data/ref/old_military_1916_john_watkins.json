@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "name": "John Watkins",
+    "forenames": "John",
+    "lastName": "Watkins"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "birthPlace": {
+    "placeString": "Brisco BC Canada"
+  },
+  "hasValidData": true
+}

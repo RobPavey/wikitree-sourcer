@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "John Jas Smith",
+    "forenames": "John Jas",
+    "lastName": "Smith"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1870"
+  },
+  "eventPlace": {
+    "placeString": "Manitoba, Canada",
+    "country": "Canada"
+  },
+  "birthPlace": {
+    "placeString": "RED RIVER"
+  },
+  "ageAtEvent": "3",
+  "maritalStatus": "single",
+  "collectionData": {
+    "id": "Census of Manitoba, 1870",
+    "page": "333"
+  },
+  "hasValidData": true
+}

@@ -36,6 +36,20 @@ const regressionData = [
     inputPath: "baclac/generalized_data/ref/census_1906_robert_macdonald",
     typeOfSearch: "AllCollections",
   },
+  {
+    caseName: "baclac_census_1870_john_jas_smith",
+    inputPath: "baclac/generalized_data/ref/census_1870_john_jas_smith",
+    typeOfSearch: "SameCollection",
+  },
+  {
+    caseName: "canada_gazette_1869",
+    inputPath: "baclac/generalized_data/ref/canada_gazette_1869",
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: {
+      category: "Library / Canada Gazette, 1841 to 1997",
+      lastNameIndex: 0,
+    },
+  },
 ];
 
 async function runTests(testManager) {

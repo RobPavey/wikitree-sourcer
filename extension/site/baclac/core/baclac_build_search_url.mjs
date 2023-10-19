@@ -24,66 +24,62 @@ SOFTWARE.
 
 import { BaclacUriBuilder } from "./baclac_uri_builder.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
 
-function addNumToYearString(yearString, num) {
-  let yearNum = DateUtils.getYearNumFromYearString(yearString);
-  if (yearNum) {
-    yearNum += num;
-    return yearNum.toString();
-  } else {
-    return yearString;
-  }
-}
+function buildSameOldCollectionSearchUrl(buildUrlInput, builder) {
+  const gd = buildUrlInput.generalizedData;
+  const ed = buildUrlInput.extractedData;
 
-function subtractNumFromYearString(yearString, num) {
-  let yearNum = DateUtils.getYearNumFromYearString(yearString);
-  if (yearNum) {
-    yearNum -= num;
-    return yearNum.toString();
-  } else {
-    return yearString;
-  }
-}
-
-const minBaclacYear = 1837;
-const maxBaclacYear = 1992;
-
-function constrainYear(yearString) {
-  if (!yearString) {
-    return yearString;
-  }
-
-  let yearNum = DateUtils.getYearNumFromYearString(yearString);
-  if (yearNum) {
-    if (yearNum < minBaclacYear) {
-      yearNum = minBaclacYear;
-    } else if (yearNum > maxBaclacYear) {
-      yearNum = maxBaclacYear;
+  // We want to build the data source from the URL. A URL liks:
+  // https://www.bac-lac.gc.ca/eng/discover/military-heritage/first-world-war/personnel-records/Pages/item.aspx?IdNumber=301389
+  // Should have a data source on the new site of:
+  // Genealogy|Military|PfFww
+  let url = ed.url;
+  const discoverPrefix = "https://www.bac-lac.gc.ca/eng/discover/";
+  if (url && url.startsWith(discoverPrefix)) {
+    let remainder = url.substring(discoverPrefix.length);
+    let string = "";
+    let parts = remainder.split("/");
+    const partToNew = {
+      "military-heritage": "Genealogy|Military",
+      "personnel-records": "PfFww",
+    };
+    for (let part of parts) {
+      if (part == "Pages" || part.startsWith("item")) {
+        break;
+      }
+      let level = partToNew[part];
+      if (level) {
+        if (string) {
+          string += "|";
+        }
+        string += level;
+      }
     }
-    return yearNum.toString();
+
+    builder.addDataSourceAsString(string);
   } else {
-    return yearString;
+    builder.addDataSource("Genealogy");
   }
-}
+  builder.addLastName(gd.inferLastName());
+  builder.addFirstName(gd.inferForenames());
 
-function constrainYears(dates) {
-  dates.startYear = constrainYear(dates.startYear);
-  dates.endYear = constrainYear(dates.endYear);
-}
+  builder.addBirthYear(gd.inferBirthYear(), 2);
 
-function addAppropriateSurname(gd, type, builder) {
-  let lastName = gd.lastNameAtBirth;
-  if (type == "deaths" || !lastName) {
-    lastName = gd.inferLastNameAtDeath();
+  let searchString = gd.inferForenames() + " " + gd.inferLastName();
+  searchString = searchString.trim();
+  if (!searchString) {
+    if (ed.recordData) {
+      let name = ed.recordData["Name"];
+      if (name) {
+        searchString += name;
+      }
+    }
   }
+  builder.addSearchString(searchString.trim());
 
-  if (!lastName) {
-    lastName = gd.inferLastName();
-  }
-
-  if (lastName) {
-    builder.addSurname(lastName);
+  if (ed.recordData) {
+    let itemId = ed.recordData["Item Number"];
+    builder.addIdNumber(itemId);
   }
 }
 
@@ -110,6 +106,18 @@ function buildSearchUrl(buildUrlInput) {
     // This can fail if there is no birth country specified in the census being searched
     // Could possibly have some data in RC
     //builder.addBirthPlace(gd.inferBirthCountry());
+  } else if (typeOfSearch == "SameOldCensus") {
+    builder.addDataSource("Genealogy", "Census");
+    builder.addLastName(gd.inferLastName());
+    builder.addFirstName(gd.inferForenames());
+
+    builder.addBirthYear(gd.inferBirthYear(), 2);
+
+    // This can fail if there is no birth country specified in the census being searched
+    // Could possibly have some data in RC
+    //builder.addBirthPlace(gd.inferBirthCountry());
+  } else if (typeOfSearch == "SameOldCollection") {
+    buildSameOldCollectionSearchUrl(buildUrlInput, builder);
   } else if (typeOfSearch == "SameCollection") {
     let collectionId = "";
     if (gd.collectionData && gd.collectionData.id) {
@@ -125,6 +133,12 @@ function buildSearchUrl(buildUrlInput) {
     }
 
     if (collectionId) {
+      let collection = RC.findCollection("baclac", collectionId);
+
+      function includeField(fieldName) {
+        return RC.doesCollectionSupportSearchField(collection, "baclac", fieldName);
+      }
+
       // Assume it will be a census for now
       builder.addDataSource("Genealogy", "Census");
       builder.addCensusApplicationCode(collectionId);
@@ -132,8 +146,18 @@ function buildSearchUrl(buildUrlInput) {
       builder.addLastName(gd.inferLastName());
       builder.addFirstName(gd.inferForenames());
 
-      builder.addAge(gd.ageAtEvent, 0);
-      builder.addBirthPlace(gd.inferBirthCountry());
+      if (includeField("age")) {
+        builder.addAge(gd.ageAtEvent, 0);
+      }
+      if (includeField("maritalStatus")) {
+        builder.addMaritalStatus(gd.maritalStatus);
+      }
+      if (includeField("gender")) {
+        builder.addGender(gd.personGender);
+      }
+      if (includeField("birthCountry")) {
+        builder.addBirthPlace(gd.inferBirthCountry());
+      }
 
       // Add collection reference gd if this is SameCollection
       builder.addDistrict(gd.collectionData.district);
@@ -163,6 +187,32 @@ function buildSearchUrl(buildUrlInput) {
       }
     }
   } else if (typeOfSearch == "SpecifiedParameters") {
+    let parameters = buildUrlInput.searchParameters;
+    let lastName = gd.inferLastName();
+    let lastNames = gd.inferLastNameGivenParametersAndCollection(parameters, undefined, true);
+    if (lastNames) {
+      lastName = lastNames;
+    }
+
+    let searchString = gd.inferForenames() + " " + lastName;
+    searchString = searchString.replace(/\s+/g, " ");
+    searchString = searchString.trim();
+    builder.addSearchStringExact(searchString);
+
+    let dateRange = gd.inferPossibleLifeYearRange();
+    if (dateRange && dateRange.startYear && dateRange.endYear) {
+      builder.addDateRange(dateRange.startYear.toString(), dateRange.endYear.toString());
+    }
+
+    let category = parameters.category;
+    if (category != "all") {
+      if (category && category.includes("|")) {
+        let levels = category.split("|");
+        if (levels.length > 1) {
+          builder.addDataSource(levels[0], levels[1]);
+        }
+      }
+    }
   }
 
   const url = builder.getUri();

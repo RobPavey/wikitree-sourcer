@@ -54,6 +54,10 @@ const regressionData = [
     url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=44376755",
   },
   {
+    caseName: "census_1870_john_jas_smith",
+    url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=47181882",
+  },
+  {
     caseName: "census_1871_docithe_grenier",
     url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=40070185",
   },
@@ -193,6 +197,13 @@ const regressionData = [
   {
     caseName: "old_census_1901_malcom_cameron",
     url: "https://www.bac-lac.gc.ca/eng/census/1901/Pages/item.aspx?itemid=31526",
+  },
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Old format other records
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "old_military_1916_john_watkins",
+    url: "https://www.bac-lac.gc.ca/eng/discover/military-heritage/first-world-war/personnel-records/Pages/item.aspx?IdNumber=301389",
   },
 ];
 

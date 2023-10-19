@@ -260,8 +260,10 @@ const AncestryData = {
 
       if (collection) {
         let catAndSubCat = wtsCollectionData[collection.wtsId];
-        parameters.category = catAndSubCat.category;
-        parameters.subcategory = catAndSubCat.subcategory;
+        if (catAndSubCat) {
+          parameters.category = catAndSubCat.category;
+          parameters.subcategory = catAndSubCat.subcategory;
+        }
       }
     }
   },

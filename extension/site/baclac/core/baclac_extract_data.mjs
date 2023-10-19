@@ -30,30 +30,70 @@ function extractDataForOldStylePage(document, main, url, result) {
 
   let paragraphs = contentAreaElement.querySelectorAll("div.col-md-6 > p");
 
-  let name = result.name;
-  name = name.replace("Item:", "");
-  name = name.replace(/\s+/g, " ").trim();
-  result.name = name;
+  if (paragraphs.length) {
+    // Old census records come through here
+    let name = result.name;
+    name = name.replace("Item:", "");
+    name = name.replace(/\s+/g, " ").trim();
+    result.name = name;
 
-  result.recordData = {};
+    result.recordData = {};
 
-  for (let paragraph of paragraphs) {
-    let innerHtml = paragraph.innerHTML;
-    // example: "<strong>Surname: </strong>Cameron"
-    if (innerHtml.includes("<strong>")) {
-      const keyStartString = "<strong>";
-      const keyEndString = "</strong>";
-      let startIndex = innerHtml.indexOf(keyStartString);
-      let endIndex = innerHtml.indexOf(keyEndString);
-      if (startIndex != -1 && endIndex != -1 && startIndex < endIndex) {
-        let key = innerHtml.substring(startIndex + keyStartString.length, endIndex).trim();
-        let value = innerHtml.substring(endIndex + keyEndString.length).trim();
-        if (key.endsWith(":")) {
-          key = key.substring(0, key.length - 1);
+    for (let paragraph of paragraphs) {
+      let innerHtml = paragraph.innerHTML;
+      // example: "<strong>Surname: </strong>Cameron"
+      if (innerHtml.includes("<strong>")) {
+        const keyStartString = "<strong>";
+        const keyEndString = "</strong>";
+        let startIndex = innerHtml.indexOf(keyStartString);
+        let endIndex = innerHtml.indexOf(keyEndString);
+        if (startIndex != -1 && endIndex != -1 && startIndex < endIndex) {
+          let key = innerHtml.substring(startIndex + keyStartString.length, endIndex).trim();
+          let value = innerHtml.substring(endIndex + keyEndString.length).trim();
+          if (key.endsWith(":")) {
+            key = key.substring(0, key.length - 1);
+          }
+          //console.log("key: " + key + ", value: " + value);
+          if (!value.includes("<br>")) {
+            result.recordData[key] = value;
+          }
         }
-        //console.log("key: " + key + ", value: " + value);
-        if (!value.includes("<br>")) {
-          result.recordData[key] = value;
+      }
+    }
+  } else {
+    result.recordData = {};
+    let rows = contentAreaElement.querySelectorAll("div.genapp_item_display_container");
+    for (let row of rows) {
+      let labelElement = row.querySelector(".genapp_item_display_label");
+      let value = "";
+      let valueElements = row.querySelectorAll("div.genapp_item_display_data > ul > li");
+      if (valueElements.length) {
+        for (let valueElement of valueElements) {
+          let text = valueElement.textContent;
+          if (text) {
+            if (value) {
+              value += ", ";
+            }
+            value += text.trim();
+          }
+        }
+      } else {
+        let valueElement = row.querySelector(".genapp_item_display_data");
+        if (valueElement) {
+          value = valueElement.textContent;
+        }
+      }
+      if (value) {
+        value = value.trim();
+        let label = labelElement.textContent;
+        if (label) {
+          label = label.trim();
+          if (label.endsWith(":")) {
+            label = label.substring(0, label.length - 1);
+          }
+          if (!value.includes("<br>")) {
+            result.recordData[label] = value;
+          }
         }
       }
     }
