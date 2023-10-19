@@ -1014,6 +1014,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1825 },
     sites: {
+      fs: { id: "1834346" },
       ancestry: { id: "9807", altId: "" },
       baclac: { id: "Census of Lower Canada, 1825", altId: "census1825" },
     },
@@ -1024,6 +1025,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1831 },
     sites: {
+      fs: { id: "1834329" },
       baclac: { id: "Census of Lower Canada, 1831", altId: "census1831" },
     },
   },
@@ -1045,6 +1047,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1842 },
     sites: {
+      fs: { id: "1834342" },
       baclac: { id: "Census of Canada West, 1842", altId: "census1842-Canada-West" },
     },
   },
@@ -1209,6 +1212,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1906 },
     sites: {
+      fs: { id: "1584925" },
       ancestry: { id: "8827" },
       baclac: { id: "Census of Northwest Provinces, 1906", altId: "" },
     },
@@ -1219,6 +1223,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1916 },
     sites: {
+      fs: { id: "1529118" },
       ancestry: { id: "1556" },
       baclac: { id: "Census of the Prairie Provinces, 1916", altId: "" },
     },
@@ -1229,6 +1234,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1926 },
     sites: {
+      fs: { id: "3005862" },
       baclac: { id: "Census of the Prairie Provinces, 1926", altId: "" },
     },
   },

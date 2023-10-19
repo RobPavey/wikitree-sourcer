@@ -33,18 +33,11 @@ const citationOptionsGroup = {
   subcategory: "baclac",
   tab: "citation",
   subsection: "baclac",
-  options: [
-    {
-      optionName: "changeNamesToInitialCaps",
-      type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
-      defaultValue: true,
-    },
-  ],
+  options: [],
 };
 
-registerSubsectionForOptions("search", "baclac", "Canada Census");
+registerSubsectionForOptions("search", "baclac", "Library and Archives Canada");
 registerSiteSearchPopupOptionsGroup("baclac", 7, 7);
 
-registerSubsectionForOptions("citation", "baclac", "Canada Census");
+registerSubsectionForOptions("citation", "baclac", "Library and Archives Canada");
 registerOptionsGroup(citationOptionsGroup);
