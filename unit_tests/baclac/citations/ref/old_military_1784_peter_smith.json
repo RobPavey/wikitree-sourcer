@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Military''':\nReference: MG 23 D1, Series 1<br/>\n[https://www.bac-lac.gc.ca/eng/discover/military-heritage/loyalists/loyalists-ward-chipman/pages/item.aspx?IdNumber=106& Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Peter SMITH; Given Name(s): Peter; Surname: SMITH; Place: Digby; Group/Regiment: Soldier, New Jersey Volunteers; Type of Records: Muster roll; Year: 1784; Volume: 24; Page(s): 5; Record Title: Muster Roll of Disbanded Officers Discharged and Disbanded Soldiers and Loyalists Mustered at Digby the 29th May 1784.; Item Number: 106.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Peter was in a military record in Canada.<ref>\n'''Military''':\nReference: MG 23 D1, Series 1<br/>\n[https://www.bac-lac.gc.ca/eng/discover/military-heritage/loyalists/loyalists-ward-chipman/pages/item.aspx?IdNumber=106& Library and Archives Canada] (accessed 6 May 2021)<br/>\nName: Peter SMITH; Given Name(s): Peter; Surname: SMITH; Place: Digby; Group/Regiment: Soldier, New Jersey Volunteers; Type of Records: Muster roll; Year: 1784; Volume: 24; Page(s): 5; Record Title: Muster Roll of Disbanded Officers Discharged and Disbanded Soldiers and Loyalists Mustered at Digby the 29th May 1784.; Item Number: 106.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Military''': Reference: MG 23 D1, Series 1<br/>[https://www.bac-lac.gc.ca/eng/discover/military-heritage/loyalists/loyalists-ward-chipman/pages/item.aspx?IdNumber=106& Library and Archives Canada] (accessed 6 May 2021)<br/>Name: Peter SMITH; Given Name(s): Peter; Surname: SMITH; Place: Digby; Group/Regiment: Soldier, New Jersey Volunteers; Type of Records: Muster roll; Year: 1784; Volume: 24; Page(s): 5; Record Title: Muster Roll of Disbanded Officers Discharged and Disbanded Soldiers and Loyalists Mustered at Digby the 29th May 1784.; Item Number: 106.",
+    "type": "source"
+  }
+}

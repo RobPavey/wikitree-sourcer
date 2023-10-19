@@ -1014,6 +1014,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1825 },
     sites: {
+      ancestry: { id: "9807", altId: "" },
       baclac: { id: "Census of Lower Canada, 1825", altId: "census1825" },
     },
   },
@@ -1208,6 +1209,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1906 },
     sites: {
+      ancestry: { id: "8827" },
       baclac: { id: "Census of Northwest Provinces, 1906", altId: "" },
     },
   },
@@ -1217,6 +1219,7 @@ const RecordCollectionData = [
     country: "Canada",
     dates: { year: 1916 },
     sites: {
+      ancestry: { id: "1556" },
       baclac: { id: "Census of the Prairie Provinces, 1916", altId: "" },
     },
   },

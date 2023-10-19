@@ -202,6 +202,10 @@ const regressionData = [
   // Old format other records
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   {
+    caseName: "old_military_1784_peter_smith",
+    url: "https://www.bac-lac.gc.ca/eng/discover/military-heritage/loyalists/loyalists-ward-chipman/pages/item.aspx?IdNumber=106&",
+  },
+  {
     caseName: "old_military_1916_john_watkins",
     url: "https://www.bac-lac.gc.ca/eng/discover/military-heritage/first-world-war/personnel-records/Pages/item.aspx?IdNumber=301389",
   },

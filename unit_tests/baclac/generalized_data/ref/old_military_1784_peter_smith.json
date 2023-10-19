@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "name": "Peter SMITH"
+  },
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "hasValidData": true
+}

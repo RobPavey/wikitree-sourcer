@@ -185,7 +185,9 @@ async function setupBaclacSearchSubMenu(data, backFunction, filter) {
   addBaclacSearchCensusMenuItem(menu, data);
   addBaclacSearchAllCollectionsMenuItem(menu, data);
   addBaclacSearchCollectionsMenuItem(menu, data, backFunction);
-  addBaclacSearchWithParametersMenuItem(menu, data, backFunction);
+
+  // Not implementing Search with Parameters until there is a clear need
+  //addBaclacSearchWithParametersMenuItem(menu, data, backFunction);
 
   endMainMenu(menu);
 }

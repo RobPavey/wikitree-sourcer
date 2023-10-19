@@ -28,6 +28,14 @@ function extractDataForOldStylePage(document, main, url, result) {
     return;
   }
 
+  const itemPrefix = "Item:";
+  if (result.name) {
+    if (result.name.startsWith(itemPrefix)) {
+      result.name = result.name.substring(itemPrefix.length).trim();
+    }
+    result.name = result.name.replace(/\s+/g, " ").trim();
+  }
+
   let paragraphs = contentAreaElement.querySelectorAll("div.col-md-6 > p");
 
   if (paragraphs.length) {
