@@ -121,6 +121,11 @@ function extractData(document, url) {
   }
   result.success = false;
 
+  if (url.includes("bac-lac.gc.ca/fra/")) {
+    result.isFrenchPage = true;
+    return result;
+  }
+
   const main = document.querySelector("main");
   if (!main) {
     return result;

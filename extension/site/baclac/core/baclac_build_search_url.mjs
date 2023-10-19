@@ -128,6 +128,14 @@ function buildSameOldCollectionSearchUrl(buildUrlInput, builder) {
       useNamesInSearchString: true,
       useServiceNumberInSearch: true,
     },
+    {
+      // Search: https://www.bac-lac.gc.ca/eng/discover/land/land-grants-western-canada-1870-1930/Pages/land-grants-western-canada.aspx
+      // Record: https://www.bac-lac.gc.ca/eng/discover/land/land-grants-western-canada-1870-1930/Pages/item.aspx?IdNumber=503714&
+      // This collection doesn't seem to be available on new system yet
+      urlFragment: "land/land-grants-western-canada-1870-1930",
+      dataSource: "Genealogy|Land",
+      useNamesInSearchString: true,
+    },
   ];
 
   const defaultDataType = { dataSource: "Genealogy" };

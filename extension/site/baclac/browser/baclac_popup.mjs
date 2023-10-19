@@ -53,11 +53,20 @@ async function baclacSearchOldRecord(data) {
 }
 
 async function setupBaclacPopupMenu(extractedData) {
+  let extractFailedMessage =
+    "It looks like a Library and Archives Canada page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.";
+  let generalizeFailedMessage =
+    "It looks like a Library and Archives Canada page but does not contain the required data.";
+  if (extractedData.isFrenchPage && !extractedData.success) {
+    extractFailedMessage =
+      "This looks like a page in French/Français. " +
+      "Sourcer does not currently support extracting the data from the French language site. " +
+      "Try switching to the English version of the page.";
+  }
   let input = {
     extractedData: extractedData,
-    extractFailedMessage:
-      "It looks like a Library and Archives Canada page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
-    generalizeFailedMessage: "It looks like a Library and Archives Canada page but does not contain the required data.",
+    extractFailedMessage: extractFailedMessage,
+    generalizeFailedMessage: generalizeFailedMessage,
     generalizeDataFunction: generalizeData,
     siteNameToExcludeFromSearch: "baclac",
   };
