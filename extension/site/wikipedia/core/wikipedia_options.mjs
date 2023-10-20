@@ -35,6 +35,48 @@ const citationOptionsGroup = {
   subsection: "wikipedia",
   options: [
     {
+      optionName: "citationLinkType",
+      type: "select",
+      label: "Link type to use in citation",
+      values: [
+        {
+          value: "special",
+          text: "Special WikiTree Wikipedia link (double brackets)",
+        },
+        {
+          value: "external",
+          text: "Standard WikiTree External link (single brackets)",
+        },
+        { value: "permalink", text: "Permalink to the current version of the page" },
+        {
+          value: "plainSimple",
+          text: "Plain visible simple URL",
+        },
+        {
+          value: "plainPermalink",
+          text: "Plain visible permalink URL to current version of page",
+        },
+      ],
+      defaultValue: "special",
+    },
+    {
+      optionName: "buildLinkType",
+      type: "select",
+      label: "Link type to use when building link (not citation)",
+      values: [
+        {
+          value: "special",
+          text: "Special WikiTree Wikipedia link (double brackets)",
+        },
+        {
+          value: "external",
+          text: "Standard WikiTree External link (single brackets)",
+        },
+        { value: "permalink", text: "Permalink to the current version of the page" },
+      ],
+      defaultValue: "special",
+    },
+    {
       optionName: "linkSurroundingText",
       type: "select",
       label: "Extra text to include when building a link (not a citation)",

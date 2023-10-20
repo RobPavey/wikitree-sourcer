@@ -34,6 +34,38 @@ const regressionData = [
   {
     caseName: "world_war_i",
     url: "https://en.wikipedia.org/wiki/World_War_I",
+    optionVariants: [
+      {
+        variantName: "linkPermalink",
+        optionOverrides: {
+          citation_wikipedia_citationLinkType: "permalink",
+        },
+      },
+      {
+        variantName: "linkExternal",
+        optionOverrides: {
+          citation_wikipedia_citationLinkType: "external",
+        },
+      },
+      {
+        variantName: "linkSpecial",
+        optionOverrides: {
+          citation_wikipedia_citationLinkType: "special",
+        },
+      },
+      {
+        variantName: "linkPlainPermalink",
+        optionOverrides: {
+          citation_wikipedia_citationLinkType: "plainPermalink",
+        },
+      },
+      {
+        variantName: "linkPlainSimple",
+        optionOverrides: {
+          citation_wikipedia_citationLinkType: "plainSimple",
+        },
+      },
+    ],
   },
 ];
 

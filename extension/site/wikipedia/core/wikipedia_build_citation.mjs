@@ -24,13 +24,6 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildWikipediaUrl(ed, builder) {
-  if (ed.permalink) {
-    return ed.permalink;
-  }
-  return ed.url;
-}
-
 function buildSourceTitle(ed, gd, builder) {
   builder.sourceTitle = ed.title;
 }
@@ -40,9 +33,25 @@ function buildSourceReference(ed, gd, builder) {
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var wikipediaUrl = buildWikipediaUrl(ed, builder);
+  let options = builder.getOptions();
+  let wikipediaUrl = ed.url;
+  let linkOption = options.citation_wikipedia_citationLinkType;
 
-  let recordLink = "[" + wikipediaUrl + " Wikipedia]";
+  if (ed.permalink && (linkOption == "permalink" || linkOption == "plainPermalink")) {
+    wikipediaUrl = ed.permalink;
+  }
+
+  let recordLink = wikipediaUrl;
+  if (linkOption == "permalink" || linkOption == "external") {
+    recordLink = "[" + wikipediaUrl + " Wikipedia]";
+  } else if (linkOption == "special") {
+    if (ed.title) {
+      recordLink = "[[Wikipedia:" + ed.title + "|" + ed.title + "]]";
+    } else {
+      recordLink = "[" + wikipediaUrl + " Wikipedia]";
+    }
+  }
+
   builder.recordLinkOrTemplate = recordLink;
 }
 

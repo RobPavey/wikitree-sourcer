@@ -50,16 +50,22 @@ async function buildWikiTreePermalink(data) {
     const linkString = "[" + link + " " + ed.title + "]";
 
     buildWikiTreeLinkText(linkString);
+  } else {
+    buildWikiTreeExternalLink(data);
   }
 }
 
 async function buildWikiTreeExternalLink(data) {
   let ed = data.extractedData;
   let url = ed.url;
-  if (url && ed.title) {
-    const linkString = "[" + url + " " + ed.title + "]";
-
-    buildWikiTreeLinkText(linkString);
+  if (url) {
+    if (ed.title) {
+      const linkString = "[" + url + " " + ed.title + "]";
+      buildWikiTreeLinkText(linkString);
+    } else {
+      const linkString = "[" + url + " Wikipedia]";
+      buildWikiTreeLinkText(linkString);
+    }
   }
 }
 
@@ -69,6 +75,21 @@ async function buildWikiTreeSpecialLink(data) {
     const linkString = "[[Wikipedia:" + ed.title + "|" + ed.title + "]]";
 
     buildWikiTreeLinkText(linkString);
+  } else {
+    buildWikiTreeExternalLink(data);
+  }
+}
+
+async function buildWikiTreeLink(data) {
+  let ed = data.extractedData;
+  let linkOption = options.citation_wikipedia_citationLinkType;
+
+  if (linkOption == "special") {
+    buildWikiTreeSpecialLink(data);
+  } else if (linkOption == "external") {
+    buildWikiTreeExternalLink(data);
+  } else if (linkOption == "permalink") {
+    buildWikiTreePermalink(data);
   }
 }
 
@@ -83,20 +104,9 @@ async function setupWikipediaPopupMenu(extractedData) {
   };
 
   input.customMenuFunction = function (menu, data) {
-    let ed = data.extractedData;
-    if (ed.permalink && ed.title) {
-      addMenuItem(menu, "Build WikiTree External link (permalink)", function (element) {
-        buildWikiTreePermalink(data);
-      });
-    }
-    if (ed.url && ed.title) {
-      addMenuItem(menu, "Build WikiTree External link", function (element) {
-        buildWikiTreeExternalLink(data);
-      });
-      addMenuItem(menu, "Build WikiTree Special Wikipedia link", function (element) {
-        buildWikiTreeSpecialLink(data);
-      });
-    }
+    addMenuItem(menu, "Build WikiTree link", function (element) {
+      buildWikiTreeLink(data);
+    });
   };
 
   setupSimplePopupMenu(input);
