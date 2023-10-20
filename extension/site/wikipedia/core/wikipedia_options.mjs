@@ -33,7 +33,25 @@ const citationOptionsGroup = {
   subcategory: "wikipedia",
   tab: "citation",
   subsection: "wikipedia",
-  options: [],
+  options: [
+    {
+      optionName: "linkSurroundingText",
+      type: "select",
+      label: "Extra text to include when building a link (not a citation)",
+      values: [
+        { value: "none", text: "No extra text" },
+        {
+          value: "seeOnW",
+          text: "'See: <link> on Wikipedia'",
+        },
+        {
+          value: "seeOnWForMoreInfo",
+          text: "'See: <link> on Wikipedia for more information'",
+        },
+      ],
+      defaultValue: "none",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "wikipedia", "Wikipedia");

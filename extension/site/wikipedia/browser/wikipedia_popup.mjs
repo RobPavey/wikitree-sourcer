@@ -28,6 +28,20 @@ import { generalizeData } from "../core/wikipedia_generalize_data.mjs";
 import { buildCitation } from "../core/wikipedia_build_citation.mjs";
 import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 import { addMenuItem } from "/base/browser/popup/popup_menu_building.mjs";
+import { options } from "/base/browser/options/options_loader.mjs";
+
+async function buildWikiTreeLinkText(linkString) {
+  let text = linkString;
+  let textOption = options.citation_wikipedia_linkSurroundingText;
+
+  if (textOption == "seeOnW") {
+    text = "See: " + linkString + " on Wikipedia";
+  } else if (textOption == "seeOnWForMoreInfo") {
+    text = "See: " + linkString + " on Wikipedia for more information";
+  }
+
+  writeToClipboard(text, "Wikipedia Link");
+}
 
 async function buildWikiTreePermalink(data) {
   let ed = data.extractedData;
@@ -35,7 +49,7 @@ async function buildWikiTreePermalink(data) {
   if (link && ed.title) {
     const linkString = "[" + link + " " + ed.title + "]";
 
-    writeToClipboard(linkString, "Wikipedia Link");
+    buildWikiTreeLinkText(linkString);
   }
 }
 
@@ -45,7 +59,7 @@ async function buildWikiTreeExternalLink(data) {
   if (url && ed.title) {
     const linkString = "[" + url + " " + ed.title + "]";
 
-    writeToClipboard(linkString, "Wikipedia Link");
+    buildWikiTreeLinkText(linkString);
   }
 }
 
@@ -54,7 +68,7 @@ async function buildWikiTreeSpecialLink(data) {
   if (ed.title) {
     const linkString = "[[Wikipedia:" + ed.title + "|" + ed.title + "]]";
 
-    writeToClipboard(linkString, "Wikipedia Link");
+    buildWikiTreeLinkText(linkString);
   }
 }
 
