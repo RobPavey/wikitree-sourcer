@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "url": "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964321/profile",
+  "subDomain": "tree",
+  "domain": "findmypast.co.uk",
+  "urlPath": "#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964321/profile",
+  "urlTreeId": "918c5b61-df62-4dec-b840-31cad3d86bf9",
+  "urlProfileId": "1181964321",
+  "givenName": "John William Edington",
+  "surname": "Dickens",
+  "birthYear": "1869",
+  "birthPlace": "Pill, Easton In Gordano, Somerset",
+  "deathYear": "1947",
+  "deathPlace": "Paignton, Devon, England",
+  "fatherName": "George Frederick Dickens",
+  "motherName": "Elizabeth Yeatman Gilmore",
+  "birthDate": "15 Jan 1869",
+  "spouses": [
+    {
+      "name": "Rebecca Maggs",
+      "marriageDate": "1892",
+      "marriagePlace": "Bedminster, Somerset"
+    }
+  ],
+  "deathDate": "9 May 1947"
+}

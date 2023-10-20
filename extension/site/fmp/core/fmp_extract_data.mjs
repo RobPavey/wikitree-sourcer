@@ -394,14 +394,29 @@ function extractProfileData(document, result) {
       // example string:
       // Born 1800, Atherstone, Warwickshire, England • Died 1871, Mancetter, Warwickshire, England
       // Note that this only gives years. Exact date is available in timeline.
+      // Another example:
+      // Captain of the British steamship Mineola • Born 1869, Pill, Easton In Gordano, Somerset • Died 1947, Paignton, Devon, England
       let birthInfo = "";
       let deathInfo = "";
+      let startIndex = 0;
       let sepIndex = info.indexOf("•");
+      if (sepIndex != -1) {
+        if (!info.startsWith("Born") && !info.startsWith("Died")) {
+          // must be a top-line bio, skip it
+          info = info.substring(sepIndex + 1).trim();
+          sepIndex = info.indexOf("•");
+        }
+      }
+
       if (sepIndex != -1) {
         birthInfo = info.substring(0, sepIndex).trim();
         deathInfo = info.substring(sepIndex + 1).trim();
       } else {
-        birthInfo = info.trim();
+        if (info.startsWith("Born")) {
+          birthInfo = info.trim();
+        } else if (info.startsWith("Died")) {
+          birthInfo = info.trim();
+        }
       }
 
       if (birthInfo) {
