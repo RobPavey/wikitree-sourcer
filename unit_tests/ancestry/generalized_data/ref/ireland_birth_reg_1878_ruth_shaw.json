@@ -1,6 +1,6 @@
 {
   "sourceType": "record",
-  "recordType": "BirthRegistration",
+  "recordType": "Birth",
   "sourceOfData": "ancestry",
   "name": {
     "name": "Ruth Gladdis Shaw"
@@ -11,8 +11,11 @@
   "birthDate": {
     "dateString": "1878"
   },
+  "birthPlace": {
+    "placeString": "Limerick, Ireland"
+  },
   "eventPlace": {
-    "placeString": "Ireland"
+    "placeString": "Limerick, Ireland"
   },
   "lastNameAtBirth": "Shaw",
   "collectionData": {

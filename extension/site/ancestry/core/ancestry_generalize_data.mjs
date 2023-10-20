@@ -99,18 +99,38 @@ function determineRecordType(extractedData) {
     { type: RT.Baptism, matches: ["Christening Index"] },
     {
       type: RT.Birth,
-      matches: ["Birth Index"],
-      requiredData: ["Birth Date", "Birth Place"],
+      matches: ["Birth Index", "Births Index"],
+      requiredData: ["Birth Date"],
+    },
+    {
+      type: RT.Birth,
+      matches: ["Birth Index", "Births Index"],
+      requiredData: ["Birth Place"],
     },
     {
       type: RT.BirthRegistration,
-      matches: ["Birth Index"],
+      matches: ["Birth Index", "Births Index"],
       requiredData: ["Birth Registration Date"],
     },
     {
       type: RT.BirthRegistration,
-      matches: ["Birth Index"],
+      matches: ["Birth Index", "Births Index"],
       requiredData: ["Birth Registration Place"],
+    },
+    {
+      type: RT.BirthRegistration,
+      matches: ["Birth Index", "Births Index"],
+      requiredData: ["Registration Date"],
+    },
+    {
+      type: RT.BirthRegistration,
+      matches: ["Birth Index", "Births Index"],
+      requiredData: ["Registration Year"],
+    },
+    {
+      type: RT.BirthRegistration,
+      matches: ["Birth Index", "Births Index"],
+      requiredData: ["Registration Place"],
     },
     {
       type: RT.Birth,
@@ -186,9 +206,39 @@ function determineRecordType(extractedData) {
       requiredData: ["Burial Place"],
     },
     {
+      type: RT.Death,
+      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
+      requiredData: ["Death Date", "Death Place"],
+    },
+    {
       type: RT.DeathRegistration,
-      matches: ["Deaths", "Death Records", "Death Index"],
+      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
       requiredData: ["Death Registration Place"],
+    },
+    {
+      type: RT.DeathRegistration,
+      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
+      requiredData: ["Registration Place"],
+    },
+    {
+      type: RT.DeathRegistration,
+      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
+      requiredData: ["Registration Date"],
+    },
+    {
+      type: RT.DeathRegistration,
+      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
+      requiredData: ["Registration Year"],
+    },
+    {
+      type: RT.DeathRegistration,
+      matches: ["Deaths", "Death Records", "Scotland, Local Heritage Index"],
+      requiredData: ["Date of Registration"],
+    },
+    {
+      type: RT.DeathRegistration,
+      matches: ["Deaths", "Death Records", "Scotland, Local Heritage Index"],
+      requiredData: ["Registration district"],
     },
     {
       type: RT.Death,
@@ -420,36 +470,6 @@ function determineRecordType(extractedData) {
   }
 
   if (extractedData.titleCollection) {
-    // check for birth or death registration
-    if (extractedData.titleCollection.includes("Registration")) {
-      if (extractedData.titleCollection.includes("Birth")) {
-        return RT.BirthRegistration;
-      }
-      if (extractedData.titleCollection.includes("Death")) {
-        return RT.DeathRegistration;
-      }
-      if (extractedData.titleCollection.includes("Marriage")) {
-        return RT.MarriageRegistration;
-      }
-    }
-
-    // check for a marriage
-    if (
-      extractedData.titleCollection.includes("Marriage") &&
-      extractedData.recordData &&
-      extractedData.recordData["Marriage Date"]
-    ) {
-      return RT.Marriage;
-    }
-
-    if (extractedData.titleCollection.includes("Criminal Register")) {
-      return RT.CriminalRegister;
-    }
-
-    if (extractedData.titleCollection.includes("Freemason Membership")) {
-      return RT.FreemasonMembership;
-    }
-
     for (let titleMatch of titleMatches) {
       let titleMatched = false;
       for (let match of titleMatch.matches) {
