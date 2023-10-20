@@ -45,7 +45,8 @@
     "*://probatesearch.service.gov.uk/*",
     "*://www.scotlandspeople.gov.uk/*",
     "*://trove.nla.gov.au/*",
-    "*://www.wiewaswie.nl/*"
+    "*://www.wiewaswie.nl/*",
+    "*://*.wikipedia.org/*"
   ],
   "background": {
     "page": "base/browser/background/background.html"
@@ -199,6 +200,11 @@
       "matches": ["*://www.wiewaswie.nl/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/wiewaswie/browser/wiewaswie_content.js"]
+    },
+    {
+      "matches": ["*://*.wikipedia.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/wikipedia/browser/wikipedia_content.js"]
     }
   ],
   "options_ui": {
@@ -241,7 +247,8 @@
     "site/ppnz/core/ppnz_extract_data.mjs",
     "site/scotp/core/scotp_extract_data.mjs",
     "site/trove/core/trove_extract_data.mjs",
-    "site/wiewaswie/core/wiewaswie_extract_data.mjs"
+    "site/wiewaswie/core/wiewaswie_extract_data.mjs",
+    "site/wikipedia/core/wikipedia_extract_data.mjs"
   ],
   "browser_specific_settings": {
     "gecko": {

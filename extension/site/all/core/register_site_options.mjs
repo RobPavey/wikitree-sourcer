@@ -52,3 +52,4 @@ import "../../scotp/core/scotp_options.mjs";
 import "../../trove/core/trove_options.mjs";
 import "../../wiewaswie/core/wiewaswie_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
+import "../../wikipedia/core/wikipedia_options.mjs";

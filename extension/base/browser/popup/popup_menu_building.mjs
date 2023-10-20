@@ -938,6 +938,7 @@ function setupBuildCitationSubMenu(
     Directory: `Directory`,
     Divorce: `Divorce`,
     ElectoralRegister: `Electoral Register`,
+    Encyclopedia: `Encyclopedia`,
     Employment: `Employment`,
     FamHistOrPedigree: `Family History Or Pedigree`,
     FreemasonMembership: `Freemason Membership`,

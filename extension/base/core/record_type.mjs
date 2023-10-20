@@ -85,6 +85,7 @@ const RT = {
   SlaveSchedule: `SlaveSchedule`,
   GovernmentDocument: `GovernmentDocument`,
   Diary: `Diary`,
+  Encyclopedia: `Encyclopedia`,
 };
 
 const RecordSubtype = {

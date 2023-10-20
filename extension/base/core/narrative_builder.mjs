@@ -2351,7 +2351,8 @@ class NarrativeBuilder {
       },
       { recordType: RT.Heraldry, string: "was in a heraldic record" },
       { recordType: RT.GovernmentDocument, string: "was in a government document" },
-      { recordType: RT.GovernmentDocument, string: "was in a diary entry" },
+      { recordType: RT.Diary, string: "was in a diary entry" },
+      { recordType: RT.Encyclopedia, string: "was in an encyclopedia entry" },
     ];
 
     let gd = this.eventGd;

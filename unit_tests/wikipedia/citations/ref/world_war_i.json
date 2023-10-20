@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in an encyclopedia entry.<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* \"World War I\"<br/>Wikipedia, The Free Encyclopedia, Wikipedia contributors<br/>[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}
