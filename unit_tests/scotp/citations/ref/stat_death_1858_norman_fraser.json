@@ -46,5 +46,17 @@
   "dataStyle_table_source": {
     "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 564/3/102<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: NORMAN; Age at death: 0; Mother's Maiden Name: ROBERTSON; Gender: M; Year: 1858; RD Name: Greenock Old or West.",
     "type": "source"
+  },
+  "narrativeAgeFormatCommas_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 564/3/102<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nNorman Fraser death registered 1858 in Greenock Old or West (age 0, mother's maiden name Robertson).\n</ref>",
+    "type": "inline"
+  },
+  "narrativeAgeFormatCommas_narrative": {
+    "citation": "Norman's death, age 0, was registered in 1858 in the Greenock Old or West district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 564/3/102<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nNorman Fraser death registered 1858 in Greenock Old or West (age 0, mother's maiden name Robertson).\n</ref>",
+    "type": "narrative"
+  },
+  "narrativeAgeFormatCommas_source": {
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 564/3/102<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Norman Fraser death registered 1858 in Greenock Old or West (age 0, mother's maiden name Robertson).",
+    "type": "source"
   }
 }

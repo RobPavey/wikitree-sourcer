@@ -345,6 +345,12 @@ const regressionData = [
     // https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&surname=Fraser&surname_so=exact&forename=Norman&forename_so=starts&other_surname_so=exact&mmsurname_so=exact&birth_year_range=1&rd_real_name%5B0%5D=GREENOCK%20OLD%20OR%20WEST%20OR%20GREENOCK%20WEST%20OR%20GREENOCK%20MIDDLE%20OR%20GREENOCK%20NEW%20OR%20MIDDLE%20OR%20GREENOCK%20EAST%20OR%20GREENOCK&rd_display_name%5B0%5D=GREENOCK%20OLD%20OR%20WEST%7CGREENOCK%20WEST%7CGREENOCK%20MIDDLE%7CGREENOCK%20NEW%20OR%20MIDDLE%7CGREENOCK%20EAST%7CGREENOCK_GREENOCK&rdno%5B0%5D=GREENOCK%20OLD%20OR%20WEST%20OR%20GREENOCK%20WEST%20OR%20GREENOCK%20MIDDLE%20OR%20GREENOCK%20NEW%20OR%20MIDDLE%20OR%20GREENOCK%20EAST%20OR%20GREENOCK&record_type=stat_deaths
     caseName: "stat_death_1858_norman_fraser",
     url: "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
+    optionVariants: [
+      {
+        variantName: "narrativeAgeFormatCommas",
+        optionOverrides: { narrative_deathReg_ageFormat: "commasAge" },
+      },
+    ],
   },
   {
     // Hundreds of results, this is not first page
