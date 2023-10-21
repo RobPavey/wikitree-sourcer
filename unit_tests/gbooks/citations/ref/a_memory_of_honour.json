@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books Record] (accessed 6 May 2021)<br/>Unknown.",
+    "type": "source"
+  }
+}

@@ -22,42 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
+import { HathiEdReader } from "./hathi_ed_reader.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new WikipediaUriBuilder();
-
-  let searchString = "";
-
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
-    }
-  }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
-
-  builder.addSearchQuery(searchString);
-
-  builder.addTitle("Special:Search");
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
+// This function generalizes the data extracted from the page content.
+function generalizeData(input) {
+  let edReader = new HathiEdReader(input.extractedData);
+  return commonGeneralizeData("hathi", edReader);
 }
 
-export { buildSearchUrl };
+export { generalizeData };

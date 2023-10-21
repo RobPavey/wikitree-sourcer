@@ -33,6 +33,7 @@
     "*://www.freecen.org.uk/*",
     "*://www.freereg.org.uk/*",
     "*://geneteka.genealodzy.pl/*",
+    "*://www.google.com/books/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.irishgenealogy.ie/*",
     "*://www.census.nationalarchives.ie/*",
@@ -144,6 +145,11 @@
       "matches": ["*://geneteka.genealodzy.pl/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/geneteka/browser/geneteka_content.js"]
+    },
+    {
+      "matches": ["*://www.google.com/books/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/gbooks/browser/gbooks_content.js"]
     },
     {
       "matches": ["*://www.gro.gov.uk/gro/content/certificates/*"],
@@ -288,6 +294,10 @@
     {
       "resources": ["site/geneteka/core/geneteka_extract_data.mjs"],
       "matches": ["*://geneteka.genealodzy.pl/*"]
+    },
+    {
+      "resources": ["site/gbooks/core/gbooks_extract_data.mjs"],
+      "matches": ["*://www.google.com/*"]
     },
     {
       "resources": ["site/gro/core/gro_extract_data.mjs"],

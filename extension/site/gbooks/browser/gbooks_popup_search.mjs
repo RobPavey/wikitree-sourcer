@@ -32,10 +32,10 @@ import { options } from "/base/browser/options/options_loader.mjs";
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function wikipediaSearch(generalizedData) {
+async function gbooksSearch(generalizedData) {
   const input = { generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("Wikipedia Search", input, async function () {
-    let loadedModule = await import(`../core/wikipedia_build_search_url.mjs`);
+  doAsyncActionWithCatch("Google Books Search", input, async function () {
+    let loadedModule = await import(`../core/gbooks_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
 }
@@ -44,12 +44,12 @@ async function wikipediaSearch(generalizedData) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addWikipediaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addWikipediaDefaultSearchMenuItem, data is:");
+function addGbooksDefaultSearchMenuItem(menu, data, backFunction, filter) {
+  //console.log("addGbooksDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  addMenuItem(menu, "Search Wikipedia", function (element) {
-    wikipediaSearch(data.generalizedData);
+  addMenuItem(menu, "Search Google Books", function (element) {
+    gbooksSearch(data.generalizedData);
   });
 
   return true;
@@ -63,4 +63,4 @@ function addWikipediaDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("wikipedia", "Wikipedia", addWikipediaDefaultSearchMenuItem);
+registerSearchMenuItemFunction("gbooks", "Google Books", addGbooksDefaultSearchMenuItem);

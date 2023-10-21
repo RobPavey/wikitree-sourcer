@@ -22,42 +22,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+function extractData(document, url) {
+  var result = {};
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new WikipediaUriBuilder();
-
-  let searchString = "";
-
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
-    }
+  if (url) {
+    result.url = url;
   }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
+  result.success = false;
 
-  builder.addSearchQuery(searchString);
+  /*
+  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
+  //console.log("entriesQuery size is: " + entriesQuery.length);
+  if (entries.length < 1) {
+    return result;
+  }
+  */
 
-  builder.addTitle("Special:Search");
+  result.success = true;
 
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
+  //console.log(result);
 
   return result;
 }
 
-export { buildSearchUrl };
+export { extractData };

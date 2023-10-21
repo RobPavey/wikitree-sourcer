@@ -926,6 +926,7 @@ function setupBuildCitationSubMenu(
     Baptism: `Baptism`,
     Birth: `Birth`,
     BirthRegistration: `Birth Registration`,
+    Book: `Book`,
     Burial: `Burial`,
     Certificate: `Certificate`,
     Census: `Census`,
@@ -1414,6 +1415,13 @@ function setupSupportSubmenuMenu(data, backFunction) {
   fspDiv.appendChild(fspLinkButton);
   fspDiv.appendChild(fspLabel2);
   menu.list.appendChild(fspDiv);
+  let manifest = chrome.runtime.getManifest();
+  if (manifest && manifest.version) {
+    let versionLabel = document.createElement("label");
+    versionLabel.className = "messageLabel";
+    versionLabel.innerText = "WikiTree Sourcer version is: " + manifest.version;
+    menu.list.appendChild(versionLabel);
+  }
 
   let toHereBackFunction = function () {
     setupSupportSubmenuMenu(data, backFunction);

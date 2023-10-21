@@ -22,42 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
-
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new WikipediaUriBuilder();
-
-  let searchString = "";
-
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
-    }
-  }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
-
-  builder.addSearchQuery(searchString);
-
-  builder.addTitle("Special:Search");
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
-}
-
-export { buildSearchUrl };
+siteContentInit(`gbooks`, `site/gbooks/core/gbooks_extract_data.mjs`);

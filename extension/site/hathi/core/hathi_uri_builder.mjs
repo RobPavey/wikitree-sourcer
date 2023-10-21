@@ -24,12 +24,9 @@ SOFTWARE.
 
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
-// Example search:
-// https://en.wikipedia.org/w/index.php?fulltext=1&search=Rob+Pavey&title=Special%3ASearch&ns0=1
-
-class WikipediaUriBuilder {
+class HathiUriBuilder {
   constructor() {
-    this.uri = "https://en.wikipedia.org/w/index.php";
+    this.uri = "https://www.hathi.org.uk/cgi/search.pl";
     this.searchTermAdded = false;
   }
 
@@ -60,13 +57,44 @@ class WikipediaUriBuilder {
     }
   }
 
-  addSearchQuery(string) {
-    this.addSearchParameter("fulltext", "1");
-    this.addSearchParameter("search", string);
+  addType(string) {
+    this.addSearchParameter("type", string);
   }
 
-  addTitle(string) {
-    this.addSearchParameter("title", string);
+  addSurname(string) {
+    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
+  }
+
+  addGivenNames(string) {
+    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
+  }
+
+  addOtherSurname(string) {
+    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
+  }
+
+  addOtherGivenNames(string) {
+    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
+  }
+
+  addStartYear(string) {
+    this.addSearchParameter("start", string);
+  }
+
+  addEndYear(string) {
+    this.addSearchParameter("end", string);
+  }
+
+  addAgeAtDeath(string) {
+    this.addSearchParameter("aad", string);
+  }
+
+  addVolume(string) {
+    this.addSearchParameter("vol", string);
+  }
+
+  addPage(string) {
+    this.addSearchParameter("pgno", string);
   }
 
   getUri() {
@@ -74,4 +102,4 @@ class WikipediaUriBuilder {
   }
 }
 
-export { WikipediaUriBuilder };
+export { HathiUriBuilder };

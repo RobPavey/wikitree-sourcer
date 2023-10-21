@@ -22,42 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/hathi_generalize_data.mjs";
+import { buildCitation } from "../core/hathi_build_citation.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new WikipediaUriBuilder();
-
-  let searchString = "";
-
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
-    }
-  }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
-
-  builder.addSearchQuery(searchString);
-
-  builder.addTitle("Special:Search");
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
+async function setupHathiPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage:
+      "It looks like a Hathi Trust page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
+    generalizeFailedMessage: "It looks like a Hathi Trust page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "hathi",
   };
-
-  return result;
+  setupSimplePopupMenu(input);
 }
 
-export { buildSearchUrl };
+initPopup("hathi", setupHathiPopupMenu);

@@ -3247,6 +3247,10 @@ class GeneralizedData {
         type: RT.Diary,
         defaultTitle: "Diary Entry",
       },
+      {
+        type: RT.Book,
+        defaultTitle: "Book",
+      },
     ];
 
     function lookup(gd, collectionTitle, table) {

@@ -22,42 +22,34 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
+import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new WikipediaUriBuilder();
-
-  let searchString = "";
-
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
-    }
+class GbooksEdReader extends ExtractedDataReader {
+  constructor(ed) {
+    super(ed);
+    this.recordType = RT.Book;
   }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
 
-  builder.addSearchQuery(searchString);
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Overrides of the relevant get functions used in commonGeneralizeData
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  builder.addTitle("Special:Search");
+  hasValidData() {
+    if (!this.ed.success) {
+      return false; //the extract failed, GeneralizedData is not even normally called in this case
+    }
 
-  const url = builder.getUri();
+    return true;
+  }
 
-  //console.log("URL is " + url);
+  getSourceType() {
+    return "record";
+  }
 
-  var result = {
-    url: url,
-  };
-
-  return result;
+  getCollectionData() {
+    return undefined;
+  }
 }
 
-export { buildSearchUrl };
+export { GbooksEdReader };

@@ -22,42 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { registerTest } from "../test_utils/test_registry.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
+import * as test_content_and_citation from "./gbooks_test_content_and_citation.mjs";
+import * as test_build_search_url from "./gbooks_test_build_search_url.mjs";
 
-  var builder = new WikipediaUriBuilder();
-
-  let searchString = "";
-
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
-    }
-  }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
-
-  builder.addSearchQuery(searchString);
-
-  builder.addTitle("Special:Search");
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
+async function runTests(testManager) {
+  await test_content_and_citation.runTests(testManager);
+  await test_build_search_url.runTests(testManager);
 }
 
-export { buildSearchUrl };
+registerTest("gbooks", runTests);
+
+export { runTests };

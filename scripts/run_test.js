@@ -51,6 +51,8 @@ import "../unit_tests/opccorn/opccorn_test.mjs";
 import "../unit_tests/wiewaswie/wiewaswie_test.mjs";
 import "../unit_tests/openarch/openarch_test.mjs";
 import "../unit_tests/wikipedia/wikipedia_test.mjs";
+import "../unit_tests/hathi/hathi_test.mjs";
+import "../unit_tests/gbooks/gbooks_test.mjs";
 
 function testSuiteEnabled(parameters, testSuiteName) {
   return parameters.testSuiteName == "" || parameters.testSuiteName == testSuiteName;

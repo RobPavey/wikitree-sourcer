@@ -40,6 +40,8 @@ import "../../freecen/core/freecen_options.mjs";
 import "../../freereg/core/freereg_options.mjs";
 import "../../geneteka/core/geneteka_options.mjs";
 import "../../gro/core/gro_options.mjs";
+import "../../gbooks/core/gbooks_options.mjs";
+import "../../hathi/core/hathi_options.mjs";
 import "../../irishg/core/irishg_options.mjs";
 import "../../baclac/core/baclac_options.mjs";
 import "../../naie/core/naie_options.mjs";

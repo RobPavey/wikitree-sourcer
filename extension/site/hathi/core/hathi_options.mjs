@@ -22,42 +22,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+import {
+  registerSubsectionForOptions,
+  registerOptionsGroup,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
+const citationOptionsGroup = {
+  category: "citation",
+  subcategory: "hathi",
+  tab: "citation",
+  subsection: "hathi",
+  options: [
+    {
+      optionName: "changeNamesToInitialCaps",
+      type: "checkbox",
+      label: "Change any person and place names in all caps to initial caps",
+      defaultValue: true,
+    },
+  ],
+};
 
-  var builder = new WikipediaUriBuilder();
+registerSubsectionForOptions("search", "hathi", "Hathi Trust");
+registerSiteSearchPopupOptionsGroup("hathi", 7, 7);
 
-  let searchString = "";
-
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
-    }
-  }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
-
-  builder.addSearchQuery(searchString);
-
-  builder.addTitle("Special:Search");
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
-}
-
-export { buildSearchUrl };
+registerSubsectionForOptions("citation", "hathi", "Hathi Trust");
+registerOptionsGroup(citationOptionsGroup);

@@ -22,42 +22,49 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
+class GbooksUriBuilder {
+  constructor() {
+    // e.g. https://www.google.com/search?tbm=bks&q=John+Smith
+    this.uri = "https://www.google.com/search?tbm=bks";
+    this.searchTermAdded = true;
+  }
 
-  var builder = new WikipediaUriBuilder();
-
-  let searchString = "";
-
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
+  addSearchTerm(string) {
+    if (string == undefined || string == "") {
+      return;
+    }
+    if (!this.searchTermAdded) {
+      this.uri = this.uri.concat("?", string);
+      this.searchTermAdded = true;
+    } else {
+      this.uri = this.uri.concat("&", string);
     }
   }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
 
-  builder.addSearchQuery(searchString);
+  addSearchParameter(parameter, value) {
+    if (value == undefined || value == "") {
+      return;
+    }
 
-  builder.addTitle("Special:Search");
+    const encodedValue = encodeURIComponent(value);
 
-  const url = builder.getUri();
+    if (!this.searchTermAdded) {
+      this.uri = this.uri.concat("?", parameter, "=", encodedValue);
+      this.searchTermAdded = true;
+    } else {
+      this.uri = this.uri.concat("&", parameter, "=", encodedValue);
+    }
+  }
 
-  //console.log("URL is " + url);
+  addSearchQuery(string) {
+    this.addSearchParameter("q", string);
+  }
 
-  var result = {
-    url: url,
-  };
-
-  return result;
+  getUri() {
+    return this.uri;
+  }
 }
 
-export { buildSearchUrl };
+export { GbooksUriBuilder };

@@ -86,6 +86,7 @@ const RT = {
   GovernmentDocument: `GovernmentDocument`,
   Diary: `Diary`,
   Encyclopedia: `Encyclopedia`,
+  Book: `Book`,
 };
 
 const RecordSubtype = {

@@ -2353,6 +2353,7 @@ class NarrativeBuilder {
       { recordType: RT.GovernmentDocument, string: "was in a government document" },
       { recordType: RT.Diary, string: "was in a diary entry" },
       { recordType: RT.Encyclopedia, string: "was in an encyclopedia entry" },
+      { recordType: RT.Book, string: "was mentioned in a book" },
     ];
 
     let gd = this.eventGd;

@@ -22,42 +22,37 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new WikipediaUriBuilder();
-
-  let searchString = "";
-
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
-    }
-  }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
-
-  builder.addSearchQuery(searchString);
-
-  builder.addTitle("Special:Search");
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
+function buildHathiUrl(ed, builder) {
+  // could provide option to use a search style URL but don't see any reason to so far
+  return ed.url;
 }
 
-export { buildSearchUrl };
+function buildSourceTitle(ed, gd, builder) {
+  builder.sourceTitle += "Put Source Title here";
+}
+
+function buildSourceReference(ed, gd, builder) {
+  builder.sourceReference = "Put Source Reference here";
+}
+
+function buildRecordLink(ed, gd, builder) {
+  var hathiUrl = buildHathiUrl(ed, builder);
+
+  let recordLink = "[" + hathiUrl + " Hathi Trust Record]";
+  builder.recordLinkOrTemplate = recordLink;
+}
+
+function buildCoreCitation(ed, gd, builder) {
+  buildSourceTitle(ed, gd, builder);
+  buildSourceReference(ed, gd, builder);
+  buildRecordLink(ed, gd, builder);
+  builder.addStandardDataString(gd);
+}
+
+function buildCitation(input) {
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
+}
+
+export { buildCitation };

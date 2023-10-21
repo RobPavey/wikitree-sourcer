@@ -22,42 +22,30 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { WikipediaUriBuilder } from "./wikipedia_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { extractData } from "../../extension/site/hathi/core/hathi_extract_data.mjs";
+import { generalizeData } from "../../extension/site/hathi/core/hathi_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/hathi/core/hathi_build_citation.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
+import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
-  var builder = new WikipediaUriBuilder();
+const regressionData = [
+  /*
+  {
+    caseName: "b_1902_calvert_florence",
+    url: "https://www.hathi.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+  },
+  */
+];
 
-  let searchString = "";
+async function runTests(testManager) {
+  await runExtractDataTests("hathi", extractData, regressionData, testManager);
 
-  function addTerm(term) {
-    if (term) {
-      if (searchString) {
-        searchString += " ";
-      }
-      searchString += term;
-    }
-  }
-  addTerm(gd.inferFullName());
-  addTerm(gd.inferBirthYear());
-  addTerm(gd.inferDeathYear());
+  await runGeneralizeDataTests("hathi", generalizeData, regressionData, testManager);
 
-  builder.addSearchQuery(searchString);
-
-  builder.addTitle("Special:Search");
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("hathi", functions, regressionData, testManager);
 }
 
-export { buildSearchUrl };
+export { runTests };
