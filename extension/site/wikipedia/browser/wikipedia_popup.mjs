@@ -101,6 +101,7 @@ async function setupWikipediaPopupMenu(extractedData) {
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "wikipedia",
+    doNotIncludeSearch: true,
   };
 
   input.customMenuFunction = function (menu, data) {

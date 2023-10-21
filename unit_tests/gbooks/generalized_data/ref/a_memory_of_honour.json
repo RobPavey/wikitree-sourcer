@@ -1,6 +1,14 @@
 {
   "sourceOfData": "gbooks",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Book",
+  "name": {
+    "name": "David McKeen"
+  },
+  "eventDate": {
+    "dateString": "1964"
+  },
+  "bookTitle": "A Memory of Honour",
+  "bookSubtitle": "A Study of the House of Cobham of Kent in the Reign of Elizabeth I.. Books I-IV. · Books 1-4",
   "hasValidData": true
 }

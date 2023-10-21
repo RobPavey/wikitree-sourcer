@@ -26,8 +26,10 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class HathiUriBuilder {
   constructor() {
-    this.uri = "https://www.hathi.org.uk/cgi/search.pl";
-    this.searchTermAdded = false;
+    // Example:
+    // https://babel.hathitrust.org/cgi/ls?field1=ocr&a=srchls&ft=ft&lmt=ft&q1=Admiral+Nelson
+    this.uri = "https://babel.hathitrust.org/cgi/ls?field1=ocr&a=srchls&ft=ft&lmt=ft";
+    this.searchTermAdded = true;
   }
 
   addSearchTerm(string) {
@@ -57,44 +59,8 @@ class HathiUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
-  }
-
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
-
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addSearchQuery(string) {
+    this.addSearchParameter("q1", string);
   }
 
   getUri() {

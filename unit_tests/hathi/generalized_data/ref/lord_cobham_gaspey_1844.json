@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "hathi",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "name": "Thomas Gaspey",
+    "forenames": "Thomas",
+    "lastName": "Gaspey"
+  },
+  "eventDate": {
+    "dateString": "1844"
+  },
+  "bookTitle": "The life and times of the good Lord Cobham / by Thomas Gaspey v.1",
+  "hasValidData": true
+}

@@ -26,21 +26,40 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 
 function buildHathiUrl(ed, builder) {
   // could provide option to use a search style URL but don't see any reason to so far
+  if (ed.permalinkSeq) {
+    return ed.permalinkSeq;
+  }
+  if (ed.permalink) {
+    return ed.permalink;
+  }
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  if (ed.name) {
+    builder.sourceTitle += ed.name;
+  } else if (ed.metaTitle) {
+    builder.sourceTitle += ed.metaTitle;
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  function addTerm(title, value) {
+    if (value.endsWith(".")) {
+      value = value.substring(0, value.length - 1);
+    }
+
+    builder.addSourceReferenceField(title, value);
+  }
+  addTerm("Author", ed.creator);
+  addTerm("Publisher", ed.publisher);
+  addTerm("Page", ed.pageNumber);
 }
 
 function buildRecordLink(ed, gd, builder) {
   var hathiUrl = buildHathiUrl(ed, builder);
 
-  let recordLink = "[" + hathiUrl + " Hathi Trust Record]";
+  let recordLink = "[" + hathiUrl + " Hathi Trust]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
@@ -48,7 +67,6 @@ function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
 }
 
 function buildCitation(input) {

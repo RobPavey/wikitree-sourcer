@@ -22,32 +22,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  addSameRecordMenuItem,
-  addBackMenuItem,
-  addMenuItem,
-  beginMainMenu,
-  endMainMenu,
-  doAsyncActionWithCatch,
-} from "/base/browser/popup/popup_menu_building.mjs";
+import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
-
-const hathiStartYear = 1837;
-const hathiEndYear = 1992;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function hathiSearch(generalizedData, typeOfSearch) {
-  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+async function hathiSearch(generalizedData) {
+  const input = { generalizedData: generalizedData, options: options };
   doAsyncActionWithCatch("Hathi Trust Search", input, async function () {
     let loadedModule = await import(`../core/hathi_build_search_url.mjs`);
     doSearch(loadedModule, input);
@@ -59,124 +45,16 @@ async function hathiSearch(generalizedData, typeOfSearch) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addHathiDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addHathiDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const stdCountryName = "England and Wales";
-
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, hathiStartYear, hathiEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      hathiStartYear,
-      hathiEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      hathiStartYear,
-      hathiEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      hathiStartYear,
-      hathiEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addHathiDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addHathiDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
-  }
-
-  addMenuItem(menu, "Search Hathi Trust...", function (element) {
-    setupHathiSearchSubMenu(data, backFunction, filter);
+  addMenuItem(menu, "Search Hathi Trust", function (element) {
+    hathiSearch(data.generalizedData);
   });
 
   return true;
 }
 
-function addHathiSameRecordMenuItem(menu, data) {
-  addSameRecordMenuItem(menu, data, "hathi", function (element) {
-    hathiSearch(data.generalizedData, "SameCollection");
-  });
-}
-
-function addHathiSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      hathiStartYear,
-      hathiEndYear,
-      maxLifespan
-    );
-    if (!birthPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Hathi Trust Births", function (element) {
-    hathiSearch(data.generalizedData, "Births");
-  });
-}
-
-function addHathiSearchMarriagesMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      hathiStartYear,
-      hathiEndYear,
-      maxLifespan
-    );
-    if (!marriagePossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Hathi Trust Marriages", function (element) {
-    hathiSearch(data.generalizedData, "Marriages");
-  });
-}
-
-function addHathiSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter) {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      hathiStartYear,
-      hathiEndYear,
-      maxLifespan
-    );
-    if (!deathPossibleInRange) {
-      return;
-    }
-  }
-  addMenuItem(menu, "Search Hathi Trust Deaths", function (element) {
-    hathiSearch(data.generalizedData, "Deaths");
-  });
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupHathiSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  addHathiSameRecordMenuItem(menu, data, filter);
-  addHathiSearchBirthsMenuItem(menu, data, filter);
-  addHathiSearchMarriagesMenuItem(menu, data, filter);
-  addHathiSearchDeathsMenuItem(menu, data, filter);
-
-  endMainMenu(menu);
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites

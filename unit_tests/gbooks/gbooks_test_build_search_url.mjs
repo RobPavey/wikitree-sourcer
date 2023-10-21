@@ -26,12 +26,10 @@ import { buildSearchUrl } from "../../extension/site/gbooks/core/gbooks_build_se
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+  {
+    caseName: "a_memory_of_honour",
+    inputPath: "gbooks/generalized_data/ref/a_memory_of_honour",
   },
-  */
 ];
 
 async function runTests(testManager) {

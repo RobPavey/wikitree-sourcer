@@ -31,12 +31,10 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.hathi.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "lord_cobham_gaspey_1844",
+    url: "https://babel.hathitrust.org/cgi/pt?id=msu.31293016866653&seq=119",
   },
-  */
 ];
 
 async function runTests(testManager) {

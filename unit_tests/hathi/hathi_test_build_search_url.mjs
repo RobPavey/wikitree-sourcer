@@ -26,12 +26,10 @@ import { buildSearchUrl } from "../../extension/site/hathi/core/hathi_build_sear
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+  {
+    caseName: "lord_cobham_gaspey_1844",
+    inputPath: "hathi/generalized_data/ref/lord_cobham_gaspey_1844",
   },
-  */
 ];
 
 async function runTests(testManager) {

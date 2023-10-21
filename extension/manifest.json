@@ -35,6 +35,7 @@
     "*://geneteka.genealodzy.pl/*",
     "*://www.google.com/books/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
+    "*://*.hathitrust.org/*",
     "*://*.irishgenealogy.ie/*",
     "*://www.census.nationalarchives.ie/*",
     "*://*.nli.ie/*",
@@ -155,6 +156,11 @@
       "matches": ["*://www.gro.gov.uk/gro/content/certificates/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
+    },
+    {
+      "matches": ["*://*.hathitrust.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/hathi/browser/hathi_content.js"]
     },
     {
       "matches": ["*://*.irishgenealogy.ie/*"],
@@ -302,6 +308,10 @@
     {
       "resources": ["site/gro/core/gro_extract_data.mjs"],
       "matches": ["*://www.gro.gov.uk/*"]
+    },
+    {
+      "resources": ["site/hathi/core/hathi_extract_data.mjs"],
+      "matches": ["*://*.hathitrust.org/*"]
     },
     {
       "resources": ["site/irishg/core/irishg_extract_data.mjs"],

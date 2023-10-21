@@ -92,6 +92,8 @@ function commonGeneralizeData(sourceOfData, edReader) {
 
   setField("collectionData", edReader.getCollectionData());
 
+  edReader.setCustomFields(result);
+
   result.hasValidData = true;
 
   return result;

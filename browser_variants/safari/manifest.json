@@ -119,9 +119,19 @@
       "js": ["base/browser/content/content_common.js", "site/geneteka/browser/geneteka_content.js"]
     },
     {
+      "matches": ["*://www.google.com/books/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/gbooks/browser/gbooks_content.js"]
+    },
+    {
       "matches": ["https://www.gro.gov.uk/gro/content/certificates/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
+    },
+    {
+      "matches": ["*://*.hathitrust.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/hathi/browser/hathi_content.js"]
     },
     {
       "matches": ["*://*.irishgenealogy.ie/*"],
@@ -210,7 +220,9 @@
     "site/freereg/core/freereg_extract_data.mjs",
     "site/fs/core/fs_extract_data.mjs",
     "site/geneteka/core/geneteka_extract_data.mjs",
+    "site/gbooks/core/gbooks_extract_data.mjs",
     "site/gro/core/gro_extract_data.mjs",
+    "site/hathi/core/hathi_extract_data.mjs",
     "site/irishg/core/irishg_extract_data.mjs",
     "site/naie/core/naie_extract_data.mjs",
     "site/nli/core/nli_extract_data.mjs",

@@ -24,10 +24,44 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
 
 class HathiEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+    this.recordType = RT.Book;
+  }
+
+  makeNameObjFromFullNameWithComma(fullNameString) {
+    if (fullNameString) {
+      // Some immigration records have names in all lowercase.
+      if (StringUtils.isAllLowercase(fullNameString)) {
+        fullNameString = fullNameString.toUpperCase();
+      }
+
+      let cleanName = NameUtils.convertNameFromAllCapsToMixedCase(fullNameString);
+
+      let nameObj = new NameObj();
+
+      let commaIndex = cleanName.indexOf(",");
+      if (commaIndex != -1) {
+        let parts = cleanName.split(",");
+        if (parts.length == 2) {
+          let lastName = parts[0].trim();
+          let forenames = parts[1].trim();
+          let fullName = forenames + " " + lastName;
+          nameObj.setFullName(fullName);
+          nameObj.setForenames(forenames);
+          nameObj.setLastName(lastName);
+        }
+      } else {
+        nameObj.setFullName(cleanName);
+      }
+
+      return nameObj;
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,83 +81,40 @@ class HathiEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    return undefined;
-  }
+    let nameString = "";
+    if (this.ed.creator) {
+      nameString += this.ed.creator;
+    } else if (this.ed.author) {
+      nameString += this.ed.author;
+    }
 
-  getGender() {
-    return "";
+    return this.makeNameObjFromFullNameWithComma(nameString);
   }
 
   getEventDateObj() {
-    return undefined;
+    if (this.ed.publisher) {
+      let string = this.ed.publisher;
+      let year = string.replace(/^.*(\d\d\d\d)\.$/, "$1");
+      if (year && year.length == 4) {
+        return this.makeDateObjFromDateString(year);
+      }
+    }
   }
 
-  getEventPlaceObj() {
-    return undefined;
-  }
+  setCustomFields(gd) {
+    if (this.ed.name) {
+      gd.bookTitle = this.ed.name;
+    } else if (this.ed.metaTitle) {
+      gd.bookTitle = this.ed.metaTitle;
+    } else if (this.ed.dcTitle) {
+      gd.bookTitle = this.ed.dcTitle;
+    } else if (this.ed.title) {
+      gd.bookTitle = this.ed.title;
+    }
 
-  getLastNameAtBirth() {
-    return "";
-  }
-
-  getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
-  getBirthDateObj() {
-    return undefined;
-  }
-
-  getBirthPlaceObj() {
-    return undefined;
-  }
-
-  getDeathDateObj() {
-    return undefined;
-  }
-
-  getDeathPlaceObj() {
-    return undefined;
-  }
-
-  getAgeAtEvent() {
-    return "";
-  }
-
-  getAgeAtDeath() {
-    return "";
-  }
-
-  getRegistrationDistrict() {
-    return "";
-  }
-
-  getRelationshipToHead() {
-    return "";
-  }
-
-  getMaritalStatus() {
-    return "";
-  }
-
-  getOccupation() {
-    return "";
-  }
-
-  getSpouseObj(eventDateObj, eventPlaceObj) {
-    return undefined;
-  }
-
-  getParents() {
-    return undefined;
-  }
-
-  getHousehold() {
-    return undefined;
+    if (this.ed.subtitle) {
+      gd.bookSubtitle = this.ed.subtitle;
+    }
   }
 
   getCollectionData() {
