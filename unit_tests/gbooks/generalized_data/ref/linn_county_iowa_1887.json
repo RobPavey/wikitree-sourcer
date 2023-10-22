@@ -1,0 +1,11 @@
+{
+  "sourceOfData": "gbooks",
+  "sourceType": "record",
+  "recordType": "Book",
+  "eventDate": {
+    "dateString": "1887"
+  },
+  "bookTitle": "Portrait and Biographical Album of Linn County, Iowa",
+  "bookSubtitle": "Containing Full Page Portraits and Biographical Sketches of Prominent and Representative Citizens of the County, Together with Portraits and Biographies of All the Governors of Iowa, and of the Presidents of the United States · Volume 2",
+  "hasValidData": true
+}

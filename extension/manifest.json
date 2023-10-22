@@ -18,6 +18,7 @@
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
+    "*://archive.org/*",
     "*://*.bac-lac.gc.ca/*",
     "*://*.billiongraves.com/*",
     "*://*.cornwall-opc-database.org/*",
@@ -33,7 +34,15 @@
     "*://www.freecen.org.uk/*",
     "*://www.freereg.org.uk/*",
     "*://geneteka.genealodzy.pl/*",
-    "*://www.google.com/books/*",
+    "*://*.google.com/books/*",
+    "*://*.google.co.uk/books/*",
+    "*://*.google.ca/books/*",
+    "*://*.google.com.au/books/*",
+    "*://*.google.de/books/*",
+    "*://*.google.it/books/*",
+    "*://*.google.fr/books/*",
+    "*://*.google.se/books/*",
+    "*://*.google.mx/books/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.hathitrust.org/*",
     "*://*.irishgenealogy.ie/*",
@@ -85,6 +94,11 @@
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
+    },
+    {
+      "matches": ["*://archive.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/archive/browser/archive_content.js"]
     },
     {
       "matches": ["*://*.bac-lac.gc.ca/*"],
@@ -148,7 +162,17 @@
       "js": ["base/browser/content/content_common.js", "site/geneteka/browser/geneteka_content.js"]
     },
     {
-      "matches": ["*://www.google.com/books/*"],
+      "matches": [
+        "*://*.google.com/books/*",
+        "*://*.google.co.uk/books/*",
+        "*://*.google.ca/books/*",
+        "*://*.google.com.au/books/*",
+        "*://*.google.de/books/*",
+        "*://*.google.it/books/*",
+        "*://*.google.fr/books/*",
+        "*://*.google.se/books/*",
+        "*://*.google.mx/books/*"
+      ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/gbooks/browser/gbooks_content.js"]
     },
@@ -252,6 +276,10 @@
       ]
     },
     {
+      "resources": ["site/archive/core/archive_extract_data.mjs"],
+      "matches": ["*://archive.org/*"]
+    },
+    {
       "resources": ["site/baclac/core/baclac_extract_data.mjs"],
       "matches": ["*://*.bac-lac.gc.ca/*"]
     },
@@ -303,7 +331,17 @@
     },
     {
       "resources": ["site/gbooks/core/gbooks_extract_data.mjs"],
-      "matches": ["*://www.google.com/*"]
+      "matches": [
+        "*://*.google.com/*",
+        "*://*.google.co.uk/*",
+        "*://*.google.ca/*",
+        "*://*.google.com.au/*",
+        "*://*.google.de/*",
+        "*://*.google.it/*",
+        "*://*.google.fr/*",
+        "*://*.google.se/*",
+        "*://*.google.mx/*"
+      ]
     },
     {
       "resources": ["site/gro/core/gro_extract_data.mjs"],

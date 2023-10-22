@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Book''':\n\"The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham\"<br/>\nSir John Oldcastle, 1600, V&S Publishers<br/>\n[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021)<br/>\nSir John Oldcastle in 1600.\n</ref>",
+    "citation": "<ref>\n'''Book''':\nSir John Oldcastle, ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham: As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants''<br/>\nV&S Publishers, 1600<br/>\n[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Sir was mentioned in a book in 1600.<ref>\n'''Book''':\n\"The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham\"<br/>\nSir John Oldcastle, 1600, V&S Publishers<br/>\n[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021)<br/>\nSir John Oldcastle in 1600.\n</ref>",
+    "citation": "Sir was mentioned in a book in 1600.<ref>\n'''Book''':\nSir John Oldcastle, ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham: As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants''<br/>\nV&S Publishers, 1600<br/>\n[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Book''': \"The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham\"<br/>Sir John Oldcastle, 1600, V&S Publishers<br/>[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021)<br/>Sir John Oldcastle in 1600.",
+    "citation": "* '''Book''': Sir John Oldcastle, ''The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham: As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants''<br/>V&S Publishers, 1600<br/>[https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover Google Books] (accessed 6 May 2021)",
     "type": "source"
   }
 }

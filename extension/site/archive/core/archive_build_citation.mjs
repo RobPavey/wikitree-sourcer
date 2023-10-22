@@ -24,65 +24,23 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildGbooksUrl(ed, builder) {
+function buildArchiveUrl(ed, builder) {
+  // could provide option to use a search style URL but don't see any reason to so far
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  let title = "";
-  if (ed.title) {
-    title += ed.title;
-  } else if (ed.headTitle) {
-    title += ed.headTitle;
-  }
-  let author = ed.author;
-  if (!author && ed.authors && ed.authors.length > 0) {
-    author = ed.authors[0];
-  }
-  let subtitle = ed.subtitle;
-
-  let sourceTitle = "";
-  if (author && title && subtitle) {
-    sourceTitle = author + ", ''" + title + ": " + subtitle + "''";
-  } else if (author && title) {
-    sourceTitle = author + ", ''" + title + "''";
-  } else if (title && subtitle) {
-    sourceTitle = "''" + title + ": " + subtitle + "''";
-  } else if (title) {
-    sourceTitle = "''" + title + "''";
-  }
-  if (sourceTitle) {
-    builder.sourceTitle = sourceTitle;
-    builder.putSourceTitleInQuotes = false;
-  }
+  builder.sourceTitle += "Put Source Title here";
 }
 
 function buildSourceReference(ed, gd, builder) {
-  let string = "";
-  function addPart(part) {
-    if (part) {
-      if (string) {
-        string += ", ";
-      }
-      string += part;
-    }
-  }
-  addPart(ed.publisher);
-  addPart(ed.date);
-
-  // if the URL includes a page then we can refer to that:
-  let pageNumber = ed.url.replace(/^.*[\?\&]pg\=([^\&]+).*$/, "$1");
-  if (pageNumber && pageNumber != ed.url) {
-    addPart("p. " + pageNumber);
-  }
-
-  builder.sourceReference = string;
+  builder.sourceReference = "Put Source Reference here";
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var gbooksUrl = buildGbooksUrl(ed, builder);
+  var archiveUrl = buildArchiveUrl(ed, builder);
 
-  let recordLink = "[" + gbooksUrl + " Google Books]";
+  let recordLink = "[" + archiveUrl + " Internet Archive Record]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
@@ -90,6 +48,7 @@ function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
+  builder.addStandardDataString(gd);
 }
 
 function buildCitation(input) {

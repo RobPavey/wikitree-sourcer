@@ -22,44 +22,30 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { extractData } from "../../extension/site/gbooks/core/gbooks_extract_data.mjs";
-import { generalizeData } from "../../extension/site/gbooks/core/gbooks_generalize_data.mjs";
-import { buildCitation } from "../../extension/site/gbooks/core/gbooks_build_citation.mjs";
+import { extractData } from "../../extension/site/archive/core/archive_extract_data.mjs";
+import { generalizeData } from "../../extension/site/archive/core/archive_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/archive/core/archive_build_citation.mjs";
 
 import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
+  /*
   {
-    caseName: "a_memory_of_honour",
-    url: "https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en",
+    caseName: "b_1902_calvert_florence",
+    url: "https://www.archive.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
   },
-  {
-    caseName: "calendar_of_state_papers_uk",
-    url: "https://www.google.co.uk/books/edition/Calendar_of_State_Papers_Domestic_Series/Qw4SAAAAYAAJ?hl=en&gbpv=1&pg=PA504&printsec=frontcover&pli=1",
-  },
-  {
-    caseName: "harvard_classics_all_51_volumes",
-    url: "https://www.google.com/books/edition/Harvard_Classics_All_51_Volumes/wOGcEAAAQBAJ?hl=en&gbpv=0",
-  },
-  {
-    caseName: "linn_county_iowa_1887",
-    url: "https://www.google.com/books/edition/Portrait_and_Biographical_Album_of_Linn/hlA0AQAAMAAJ?q=&gbpv=1&bsq=riddle#f=false",
-  },
-  {
-    caseName: "oldcastle",
-    url: "https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham+Lord&printsec=frontcover",
-  },
+  */
 ];
 
 async function runTests(testManager) {
-  await runExtractDataTests("gbooks", extractData, regressionData, testManager);
+  await runExtractDataTests("archive", extractData, regressionData, testManager);
 
-  await runGeneralizeDataTests("gbooks", generalizeData, regressionData, testManager);
+  await runGeneralizeDataTests("archive", generalizeData, regressionData, testManager);
 
   const functions = { buildCitation: buildCitation };
-  await runBuildCitationTests("gbooks", functions, regressionData, testManager);
+  await runBuildCitationTests("archive", functions, regressionData, testManager);
 }
 
 export { runTests };

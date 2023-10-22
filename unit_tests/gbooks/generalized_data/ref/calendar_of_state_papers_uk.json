@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "gbooks",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "name": "Great Britain Public Record Office"
+  },
+  "eventDate": {
+    "dateString": "1856"
+  },
+  "bookTitle": "Calendar of State Papers, Domestic Series, of the Reigns of Edward VI., Mary, Elizabeth, 1547-[1625]",
+  "bookSubtitle": "Volume 1",
+  "hasValidData": true
+}

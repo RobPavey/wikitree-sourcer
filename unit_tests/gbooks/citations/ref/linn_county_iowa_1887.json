@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Book''':\n''Portrait and Biographical Album of Linn County, Iowa: Containing Full Page Portraits and Biographical Sketches of Prominent and Representative Citizens of the County, Together with Portraits and Biographies of All the Governors of Iowa, and of the Presidents of the United States · Volume 2''<br/>\nBrookhaven Press, 1887<br/>\n[https://www.google.com/books/edition/Portrait_and_Biographical_Album_of_Linn/hlA0AQAAMAAJ?q=&gbpv=1&bsq=riddle#f=false Google Books] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in a book in 1887.<ref>\n'''Book''':\n''Portrait and Biographical Album of Linn County, Iowa: Containing Full Page Portraits and Biographical Sketches of Prominent and Representative Citizens of the County, Together with Portraits and Biographies of All the Governors of Iowa, and of the Presidents of the United States · Volume 2''<br/>\nBrookhaven Press, 1887<br/>\n[https://www.google.com/books/edition/Portrait_and_Biographical_Album_of_Linn/hlA0AQAAMAAJ?q=&gbpv=1&bsq=riddle#f=false Google Books] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Book''': ''Portrait and Biographical Album of Linn County, Iowa: Containing Full Page Portraits and Biographical Sketches of Prominent and Representative Citizens of the County, Together with Portraits and Biographies of All the Governors of Iowa, and of the Presidents of the United States · Volume 2''<br/>Brookhaven Press, 1887<br/>[https://www.google.com/books/edition/Portrait_and_Biographical_Album_of_Linn/hlA0AQAAMAAJ?q=&gbpv=1&bsq=riddle#f=false Google Books] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

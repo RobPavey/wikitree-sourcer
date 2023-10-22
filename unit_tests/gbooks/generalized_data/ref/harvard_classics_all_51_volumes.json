@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "gbooks",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "name": "Johann Wolfgang von Goethe"
+  },
+  "eventDate": {
+    "dateString": "2022"
+  },
+  "bookTitle": "Harvard Classics (All 51 Volumes)",
+  "hasValidData": true
+}

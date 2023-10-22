@@ -25,10 +25,9 @@ SOFTWARE.
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
-class GbooksEdReader extends ExtractedDataReader {
+class ArchiveEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
-    this.recordType = RT.Book;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -48,32 +47,83 @@ class GbooksEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let nameString = "";
-    if (this.ed.author) {
-      nameString += this.ed.author;
-    } else if (this.ed.authors) {
-      nameString += this.ed.authors[0];
-    }
+    return undefined;
+  }
 
-    return this.makeNameObjFromFullName(nameString);
+  getGender() {
+    return "";
   }
 
   getEventDateObj() {
-    if (this.ed.date) {
-      return this.makeDateObjFromDateString(this.ed.date);
-    }
+    return undefined;
   }
 
-  setCustomFields(gd) {
-    if (this.ed.title) {
-      gd.bookTitle = this.ed.title;
-    } else if (this.ed.headTitle) {
-      gd.bookTitle = this.ed.headTitle;
-    }
+  getEventPlaceObj() {
+    return undefined;
+  }
 
-    if (this.ed.subtitle) {
-      gd.bookSubtitle = this.ed.subtitle;
-    }
+  getLastNameAtBirth() {
+    return "";
+  }
+
+  getLastNameAtDeath() {
+    return "";
+  }
+
+  getMothersMaidenName() {
+    return "";
+  }
+
+  getBirthDateObj() {
+    return undefined;
+  }
+
+  getBirthPlaceObj() {
+    return undefined;
+  }
+
+  getDeathDateObj() {
+    return undefined;
+  }
+
+  getDeathPlaceObj() {
+    return undefined;
+  }
+
+  getAgeAtEvent() {
+    return "";
+  }
+
+  getAgeAtDeath() {
+    return "";
+  }
+
+  getRegistrationDistrict() {
+    return "";
+  }
+
+  getRelationshipToHead() {
+    return "";
+  }
+
+  getMaritalStatus() {
+    return "";
+  }
+
+  getOccupation() {
+    return "";
+  }
+
+  getSpouseObj(eventDateObj, eventPlaceObj) {
+    return undefined;
+  }
+
+  getParents() {
+    return undefined;
+  }
+
+  getHousehold() {
+    return undefined;
   }
 
   getCollectionData() {
@@ -81,4 +131,4 @@ class GbooksEdReader extends ExtractedDataReader {
   }
 }
 
-export { GbooksEdReader };
+export { ArchiveEdReader };

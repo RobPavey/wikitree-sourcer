@@ -82,13 +82,38 @@ function extractData(document, url) {
         if (parentNodeOfTitle) {
           let publishedElement = parentNodeOfTitle.nextSibling;
           if (publishedElement) {
-            const authorLink = publishedElement.querySelector("a");
-            if (authorLink) {
+            const authorLinks = publishedElement.querySelectorAll("a");
+            if (authorLinks.length == 1) {
+              let authorLink = authorLinks[0];
               let author = authorLink.textContent;
               if (author) {
                 result.author = author;
               }
               let dateElement = authorLink.nextSibling;
+              if (dateElement && dateElement.textContent) {
+                let date = dateElement.textContent;
+                date = date.replace(/[\s·]+/, " ").trim();
+                result.date = date;
+              }
+            } else if (authorLinks.length == 0) {
+              let dateString = publishedElement.textContent;
+              if (dateString && /^.*\d\d\d\d$/.test(dateString)) {
+                let withNoPunct = dateString.replace(/[\,\.\\s]*/g, "");
+                if (withNoPunct) {
+                  result.date = dateString;
+                }
+              }
+            } else {
+              // multiple authors
+              result.authors = [];
+              for (let authorLink of authorLinks) {
+                let author = authorLink.textContent;
+                if (author) {
+                  result.authors.push(author);
+                }
+              }
+              let lastAuthorLink = authorLinks[authorLinks.length - 1];
+              let dateElement = lastAuthorLink.nextSibling;
               if (dateElement && dateElement.textContent) {
                 let date = dateElement.textContent;
                 date = date.replace(/[\s·]+/, " ").trim();
