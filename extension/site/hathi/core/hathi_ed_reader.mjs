@@ -115,6 +115,10 @@ class HathiEdReader extends ExtractedDataReader {
     if (this.ed.subtitle) {
       gd.bookSubtitle = this.ed.subtitle;
     }
+
+    if (this.ed.author) {
+      gd.bookAuthor = this.ed.author;
+    }
   }
 
   getCollectionData() {

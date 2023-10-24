@@ -41,10 +41,12 @@ function buildSearchUrl(buildUrlInput) {
       searchString += term;
     }
   }
-  addTerm(gd.inferFullName());
 
   if (gd.bookTitle) {
     addTerm('"' + gd.bookTitle + '"');
+    addTerm(gd.bookAuthor);
+  } else {
+    addTerm(gd.inferFullName());
   }
 
   let birthYear = gd.inferBirthYear();

@@ -47,17 +47,6 @@ class GbooksEdReader extends ExtractedDataReader {
     return "record";
   }
 
-  getNameObj() {
-    let nameString = "";
-    if (this.ed.author) {
-      nameString += this.ed.author;
-    } else if (this.ed.authors) {
-      nameString += this.ed.authors[0];
-    }
-
-    return this.makeNameObjFromFullName(nameString);
-  }
-
   getEventDateObj() {
     if (this.ed.date) {
       return this.makeDateObjFromDateString(this.ed.date);
@@ -73,6 +62,12 @@ class GbooksEdReader extends ExtractedDataReader {
 
     if (this.ed.subtitle) {
       gd.bookSubtitle = this.ed.subtitle;
+    }
+
+    if (this.ed.author) {
+      gd.bookAuthor = this.ed.author;
+    } else if (this.ed.aboutThisEdition && this.ed.aboutThisEdition["Author"]) {
+      gd.bookAuthor = this.ed.aboutThisEdition["Author"];
     }
   }
 

@@ -2,12 +2,10 @@
   "sourceOfData": "gbooks",
   "sourceType": "record",
   "recordType": "Book",
-  "name": {
-    "name": "Johann Wolfgang von Goethe"
-  },
   "eventDate": {
     "dateString": "2022"
   },
   "bookTitle": "Harvard Classics (All 51 Volumes)",
+  "bookAuthor": "Johann Wolfgang von Goethe, Gotthold Ephraim Lessing, Thomas Carlyle, René Descartes, Immanuel Kant, Charles Darwin, Martin Luther, Robert Louis Stevenson, William Shakespeare, Dante Alighieri, Euripides, Percy Bysshe Shelley, Charles Lamb, Henry David Thoreau, Samuel Johnson, John Stuart Mill, David Hume, Joseph Addison, John Locke, John Fletcher, Francis Beaumont, Leigh Hunt, Epictetus, Thomas De Quincey, Samuel Taylor Coleridge, Jonathan Swift, Christopher Marlowe, Jacob Grimm, Wilhelm Grimm, William Hazlitt, Marcus Tullius Cicero, Daniel Defoe, Aesop, Richard Henry Dana, John Dryden, Philip Massinger, Pedro Calderón de la Barca, John Ruskin, Oliver Wendell Holmes, Ernest Renan, Robert Burns, David Garrick, Ralph Waldo Emerson, John Webster, Izaak Walton, John Bunyan, James Russell Lowell, Charles Augustin Sainte-Beuve, Homer, Edmund BurkeMORE, …",
   "hasValidData": true
 }

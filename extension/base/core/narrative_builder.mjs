@@ -2301,6 +2301,29 @@ class NarrativeBuilder {
     this.narrative += ".";
   }
 
+  buildBookString() {
+    let gd = this.eventGd;
+
+    let dateObj = gd.inferEventDateObj();
+
+    this.narrative += "This person was mentioned in ";
+
+    if (gd.bookTitle) {
+      this.narrative += "the book ''" + gd.bookTitle + "''";
+    } else {
+      this.narrative += "a book";
+    }
+
+    if (dateObj) {
+      let formattedDate = this.formatDateObj(dateObj, true);
+      if (formattedDate) {
+        this.narrative += " " + formattedDate;
+      }
+    }
+
+    this.narrative += ".";
+  }
+
   buildDefaultString() {
     const narratives = [
       {
@@ -2353,7 +2376,6 @@ class NarrativeBuilder {
       { recordType: RT.GovernmentDocument, string: "was in a government document" },
       { recordType: RT.Diary, string: "was in a diary entry" },
       { recordType: RT.Encyclopedia, string: "was in an encyclopedia entry" },
-      { recordType: RT.Book, string: "was mentioned in a book" },
     ];
 
     let gd = this.eventGd;
@@ -2493,6 +2515,11 @@ class NarrativeBuilder {
       case RT.SlaveSchedule: {
         this.buildFunction = this.buildSlaveScheduleString;
         this.optionsSubcategory = "slaveSchedule";
+        break;
+      }
+      case RT.Book: {
+        this.buildFunction = this.buildBookString;
+        this.optionsSubcategory = "book";
         break;
       }
     }

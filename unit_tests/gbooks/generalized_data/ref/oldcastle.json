@@ -2,13 +2,11 @@
   "sourceOfData": "gbooks",
   "sourceType": "record",
   "recordType": "Book",
-  "name": {
-    "name": "Sir John Oldcastle"
-  },
   "eventDate": {
     "dateString": "1600"
   },
   "bookTitle": "The First Part of the True and Honorable Historie of the Life of Sir John Old-castle, the Good Lord Cobham",
   "bookSubtitle": "As it Hath Been Lately Acted by the Right Honorable the Earle of Notingham, Lord High Admirall of England His Seruants",
+  "bookAuthor": "Sir John Oldcastle",
   "hasValidData": true
 }

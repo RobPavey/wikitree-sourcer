@@ -2,13 +2,11 @@
   "sourceOfData": "gbooks",
   "sourceType": "record",
   "recordType": "Book",
-  "name": {
-    "name": "Robert Charles Anderson"
-  },
   "eventDate": {
     "dateString": "1995"
   },
   "bookTitle": "The Great Migration Begins",
   "bookSubtitle": "Immigrants to New England, 1620-1633",
+  "bookAuthor": "Robert Charles Anderson",
   "hasValidData": true
 }
