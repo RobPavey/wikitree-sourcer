@@ -282,6 +282,7 @@ function contentMessageListener(
 
   //console.log("contentMessageListener, message arrived, request is : ");
   //console.log(request);
+  //console.log(sender);
 
   if (additionalMessageHandler) {
     let handlerResult = additionalMessageHandler(request, sender, sendResponse);

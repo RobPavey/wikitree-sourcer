@@ -36,6 +36,14 @@
     "*://www.freereg.org.uk/*",
     "*://geneteka.genealodzy.pl/*",
     "*://*.google.com/books/*",
+    "*://*.google.co.uk/books/*",
+    "*://*.google.ca/books/*",
+    "*://*.google.com.au/books/*",
+    "*://*.google.de/books/*",
+    "*://*.google.it/books/*",
+    "*://*.google.fr/books/*",
+    "*://*.google.se/books/*",
+    "*://*.google.mx/books/*",
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.hathitrust.org/*",
     "*://*.irishgenealogy.ie/*",
@@ -155,8 +163,19 @@
       "js": ["base/browser/content/content_common.js", "site/geneteka/browser/geneteka_content.js"]
     },
     {
-      "matches": ["*://*.google.com/books/*"],
+      "matches": [
+        "*://*.google.com/books*",
+        "*://*.google.co.uk/books*",
+        "*://*.google.ca/books*",
+        "*://*.google.com.au/books*",
+        "*://*.google.de/books*",
+        "*://*.google.it/books*",
+        "*://*.google.fr/books*",
+        "*://*.google.se/books*",
+        "*://*.google.mx/books*"
+      ],
       "run_at": "document_idle",
+      "all_frames": true,
       "js": ["base/browser/content/content_common.js", "site/gbooks/browser/gbooks_content.js"]
     },
     {

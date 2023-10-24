@@ -66,6 +66,44 @@ function extractData(document, url) {
           }
         }
       }
+    } else if (headingText == "About this edition") {
+      result.aboutThisEdition = {};
+      let parentElement = headingElement.parentElement;
+      if (parentElement) {
+        let nextSib = parentElement.nextSibling;
+        if (nextSib) {
+          let editionElements = nextSib.querySelectorAll(":scope > div > div > div > div > div");
+          for (let editionElement of editionElements) {
+            let spanElements = editionElement.querySelectorAll(":scope > span");
+            if (spanElements.length == 2) {
+              let label = spanElements[0].textContent;
+              if (label) {
+                label = label.trim();
+                label = label.replace(/\:$/, "");
+              }
+              let value = spanElements[1].textContent;
+              if (value) {
+                value = value.trim();
+              }
+              if (label && value) {
+                result.aboutThisEdition[label] = value;
+              }
+              let linkElements = spanElements[1].querySelectorAll("a");
+              if (linkElements.length > 1) {
+                let array = [];
+                result.aboutThisEdition[label + "_array"] = [];
+                for (let linkElement of linkElements) {
+                  let text = linkElement.textContent;
+                  if (text) {
+                    array.push(text.trim());
+                  }
+                }
+                result.aboutThisEdition[label + "_array"] = array;
+              }
+            }
+          }
+        }
+      }
     } else {
       let ariaLevel = headingElement.getAttribute("aria-level");
       if (ariaLevel == 1) {

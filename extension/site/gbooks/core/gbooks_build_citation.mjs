@@ -25,6 +25,20 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildGbooksUrl(ed, builder) {
+  if (ed.shareLink && ed.urlPageNumber) {
+    // "https://www.google.com/books/edition/Calendar_of_State_Papers_Domestic_Series/Qw4SAAAAYAAJ?hl=en&gbpv=1&pg=PR3&printsec=frontcover"
+
+    let link = ed.shareLink;
+    let regexp = new RegExp("\\&pg\\=[A-Z0-9]+");
+    link = link.replace(regexp, "&pg=" + ed.urlPageNumber);
+    return link;
+  }
+  if (ed.pageLink) {
+    return ed.pageLink;
+  }
+  if (ed.shareLink) {
+    return ed.shareLink;
+  }
   return ed.url;
 }
 
@@ -71,9 +85,17 @@ function buildSourceReference(ed, gd, builder) {
   addPart(ed.date);
 
   // if the URL includes a page then we can refer to that:
-  let pageNumber = ed.url.replace(/^.*[\?\&]pg\=([^\&]+).*$/, "$1");
-  if (pageNumber && pageNumber != ed.url) {
-    addPart("p. " + pageNumber);
+  if (ed.pageNumber) {
+    addPart("page " + ed.pageNumber);
+  } else {
+    let url = buildGbooksUrl(ed, builder);
+    let pageNumber = url.replace(/^.*[\?\&]pg\=([^\&]+).*$/, "$1");
+    if (pageNumber && pageNumber != url) {
+      if (pageNumber.startsWith("PA")) {
+        pageNumber = pageNumber.substring(2);
+      }
+      addPart("page " + pageNumber);
+    }
   }
 
   builder.sourceReference = string;
