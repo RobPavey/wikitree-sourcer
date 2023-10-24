@@ -125,19 +125,24 @@
     },
     {
       "matches": [
-        "*://*.google.com/books*",
-        "*://*.google.co.uk/books*",
-        "*://*.google.ca/books*",
-        "*://*.google.com.au/books*",
-        "*://*.google.de/books*",
-        "*://*.google.it/books*",
-        "*://*.google.fr/books*",
-        "*://*.google.se/books*",
-        "*://*.google.mx/books*"
+        "*://*.google.com/books/*",
+        "*://*.google.co.uk/books/*",
+        "*://*.google.ca/books/*",
+        "*://*.google.com.au/books/*",
+        "*://*.google.de/books/*",
+        "*://*.google.it/books/*",
+        "*://*.google.fr/books/*",
+        "*://*.google.se/books/*",
+        "*://*.google.mx/books/*"
       ],
       "run_at": "document_idle",
-      "all_frames": true,
       "js": ["base/browser/content/content_common.js", "site/gbooks/browser/gbooks_content.js"]
+    },
+    {
+      "matches": ["*://books.google.com/books*"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "js": ["site/gbooks/browser/gbooks_content_iframe.js"]
     },
     {
       "matches": ["https://www.gro.gov.uk/gro/content/certificates/*"],

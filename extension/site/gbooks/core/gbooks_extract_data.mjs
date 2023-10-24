@@ -33,7 +33,7 @@ function extractData(document, url) {
   const headTitle = document.querySelector("head > title");
   result.headTitle = headTitle.textContent;
 
-  const inputs = document.querySelectorAll("span div > input[type='text']");
+  const inputs = document.querySelectorAll("div[role='dialog'] div > input[type='text']");
 
   if (inputs.length > 0) {
     result.citations = [];
