@@ -42,6 +42,8 @@ function extractData(document, url) {
       if (prevSib) {
         let type = prevSib.textContent;
         let text = input.value;
+        // citations can contain non-standard space characters.
+        text = text.replace(/\s/g, " ").trim();
         result.citations.push({ type: type, text: text });
       }
     }
@@ -114,6 +116,14 @@ function extractData(document, url) {
         let subtitle = titleElement.nextSibling;
         if (subtitle && subtitle.textContent) {
           result.subtitle = subtitle.textContent.trim();
+          // there can be an extra bit on end. e.g:
+          // "A Study of the House of Cobham of Kent in the Reign of Elizabeth I.. Books I-IV. · Books 1-4"
+          if (result.subtitle.includes("·")) {
+            let bulletIndex = result.subtitle.indexOf("·");
+            if (bulletIndex != -1) {
+              result.subtitle = result.subtitle.substring(0, bulletIndex).trim();
+            }
+          }
         }
 
         let parentNodeOfTitle = titleElement.parentElement;

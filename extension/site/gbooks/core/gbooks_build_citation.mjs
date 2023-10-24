@@ -42,26 +42,186 @@ function buildGbooksUrl(ed, builder) {
   return ed.url;
 }
 
+function getCitationOfType(ed, type) {
+  let citations = ed.citations;
+  if (citations && citations.length > 0) {
+    for (let citationEntry of citations) {
+      if (citationEntry.type == type) {
+        return citationEntry.text;
+      }
+    }
+  }
+}
+
+function getPartsOfCitationString(ed, type, builder) {
+  let citation = getCitationOfType(ed, type);
+  if (citation) {
+    let title = ed.title;
+    if (title) {
+      let titleMatchString = title;
+      if (ed.subtitle) {
+        titleMatchString = title + ": " + ed.subtitle;
+      }
+      let result = {};
+      let titleIndex = citation.indexOf(titleMatchString);
+      if (titleIndex == -1) {
+        titleMatchString = title;
+        titleIndex = citation.indexOf(titleMatchString);
+      }
+      if (titleIndex != -1) {
+        if (titleIndex > 0) {
+          result.authors = citation.substring(0, titleIndex).trim();
+        }
+        let titleEndIndex = titleIndex + titleMatchString.length;
+        if (titleEndIndex < citation.length) {
+          let publisher = citation.substring(titleEndIndex).trim();
+          if (publisher.endsWith(".")) {
+            publisher = publisher.substring(0, publisher.length - 1).trim();
+          }
+          if (publisher.startsWith(".")) {
+            publisher = publisher.substring(1).trim();
+          }
+          result.publisher = publisher;
+        }
+      }
+      //console.log("getPartsOfChicagoCitation, result is:");
+      //console.log(result);
+      return result;
+    }
+  }
+}
+
+function getPartsOfChicagoCitation(ed, builder) {
+  return getPartsOfCitationString(ed, "Chicago", builder);
+}
+
+function getAuthorPartOfSourceTitle(ed, builder) {
+  let authorOption = builder.getOptions().citation_gbooks_authorNames;
+
+  let authorText = "";
+
+  function addAuthor(author) {
+    if (author) {
+      if (authorText) {
+        authorText += ", ";
+      }
+      authorText += author;
+    }
+  }
+
+  function getAuthorPartPageAll() {
+    if (ed.author) {
+      authorText = ed.author;
+    } else if (ed.authors && ed.authors.length > 0) {
+      for (let author of ed.authors) {
+        addAuthor(author);
+      }
+    }
+  }
+
+  function getAuthorPartPage3() {
+    if (ed.author) {
+      authorText = ed.author;
+    } else if (ed.authors && ed.authors.length > 0) {
+      let numAuthorsToInclude = ed.authors.length;
+      if (numAuthorsToInclude > 3) {
+        numAuthorsToInclude = 3;
+      }
+      for (let authorIndex = 0; authorIndex < numAuthorsToInclude; authorIndex++) {
+        addAuthor(ed.authors[authorIndex]);
+      }
+      if (ed.authors.length > 3) {
+        authorText += " et al";
+      }
+    }
+  }
+
+  function getAuthorPartPage3Editors() {
+    if (ed.author) {
+      authorText = ed.author;
+    } else if (ed.authors && ed.authors.length > 0) {
+      let numAuthorsToInclude = ed.authors.length;
+      let useEditors = false;
+      let multipleEditors = false;
+      let editorString = "";
+      if (numAuthorsToInclude > 3) {
+        numAuthorsToInclude = 3;
+        if (ed.aboutThisEdition) {
+          if (ed.aboutThisEdition["Editor"]) {
+            editorString = ed.aboutThisEdition["Editor"];
+          } else if (ed.aboutThisEdition["Editors"]) {
+            editorString = ed.aboutThisEdition["Editors"];
+            multipleEditors = true;
+          }
+        }
+        if (editorString) {
+          useEditors = true;
+        }
+      }
+      if (useEditors) {
+        addAuthor(editorString);
+        if (editorString) {
+          if (multipleEditors) {
+            authorText += ", eds.";
+          } else {
+            authorText += ", ed.";
+          }
+        }
+      } else {
+        for (let authorIndex = 0; authorIndex < numAuthorsToInclude; authorIndex++) {
+          addAuthor(ed.authors[authorIndex]);
+        }
+        if (ed.authors.length > 3) {
+          authorText += " et al.";
+        }
+      }
+    }
+  }
+
+  function getAuthorPartFromCitationString() {
+    let citationType = "Chicago";
+    if (authorOption == "apa") {
+      citationType = "APA";
+    }
+    let citationParts = getPartsOfCitationString(ed, citationType, builder);
+    if (citationParts.authors) {
+      addAuthor(citationParts.authors);
+    } else {
+      // hopefully should never happen
+      getAuthorPartPage3Editors();
+    }
+  }
+
+  if (authorOption == "pageAll") {
+    getAuthorPartPageAll();
+  } else if (authorOption == "page3") {
+    getAuthorPartPage3();
+  } else if (authorOption == "page3Editors") {
+    getAuthorPartPage3Editors();
+  } else if (authorOption == "chicago" || authorOption == "apa") {
+    getAuthorPartFromCitationString();
+  }
+
+  return authorText;
+}
+
 function buildSourceTitle(ed, gd, builder) {
+  let titleOption = builder.getOptions().citation_gbooks_titleContent;
+
   let title = "";
   if (ed.title) {
     title += ed.title;
+    if (titleOption == "titlePlusSubtitle" && ed.subtitle) {
+      title += ": " + ed.subtitle;
+    }
   } else if (ed.headTitle) {
     title += ed.headTitle;
   }
-  let author = ed.author;
-  if (!author && ed.authors && ed.authors.length > 0) {
-    author = ed.authors[0];
-  }
-  let subtitle = ed.subtitle;
+  let author = getAuthorPartOfSourceTitle(ed, builder);
 
   let sourceTitle = "";
-  if (author && title && subtitle) {
-    sourceTitle = author + ", ''" + title + ": " + subtitle + "''";
-  } else if (author && title) {
+  if (author && title) {
     sourceTitle = author + ", ''" + title + "''";
-  } else if (title && subtitle) {
-    sourceTitle = "''" + title + ": " + subtitle + "''";
   } else if (title) {
     sourceTitle = "''" + title + "''";
   }
@@ -81,11 +241,22 @@ function buildSourceReference(ed, gd, builder) {
       string += part;
     }
   }
-  addPart(ed.publisher);
-  addPart(ed.date);
+
+  let publisher = ed.publisher;
+  let publisherOption = builder.getOptions().citation_gbooks_publisherDetails;
+  if (publisherOption == "chicago" || !publisher) {
+    let chicagoParts = getPartsOfChicagoCitation(ed, builder);
+    if (chicagoParts && chicagoParts.publisher) {
+      publisher = chicagoParts.publisher;
+      addPart(publisher);
+    }
+  } else {
+    addPart(ed.publisher);
+    addPart(ed.date);
+  }
 
   // if the URL includes a page then we can refer to that:
-  if (ed.pageNumber) {
+  if (ed.pageNumber && ed.pageNumber != "Contents unavailable") {
     addPart("page " + ed.pageNumber);
   } else {
     let url = buildGbooksUrl(ed, builder);

@@ -1,14 +1,26 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Book''':\nDavid McKeen, ''A Memory of Honour: A Study of the House of Cobham of Kent in the Reign of Elizabeth I.. Books I-IV. · Books 1-4''<br/>\nUniversity of Birmingham, 1964<br/>\n[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Book''':\nDavid McKeen, ''A Memory of Honour: A Study of the House of Cobham of Kent in the Reign of Elizabeth I.. Books I-IV.''<br/>\nUnited Kingdom: University of Birmingham, 1964<br/>\n[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "David was mentioned in a book in 1964.<ref>\n'''Book''':\nDavid McKeen, ''A Memory of Honour: A Study of the House of Cobham of Kent in the Reign of Elizabeth I.. Books I-IV. · Books 1-4''<br/>\nUniversity of Birmingham, 1964<br/>\n[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books] (accessed 6 May 2021)\n</ref>",
+    "citation": "David was mentioned in a book in 1964.<ref>\n'''Book''':\nDavid McKeen, ''A Memory of Honour: A Study of the House of Cobham of Kent in the Reign of Elizabeth I.. Books I-IV.''<br/>\nUnited Kingdom: University of Birmingham, 1964<br/>\n[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Book''': David McKeen, ''A Memory of Honour: A Study of the House of Cobham of Kent in the Reign of Elizabeth I.. Books I-IV. · Books 1-4''<br/>University of Birmingham, 1964<br/>[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books] (accessed 6 May 2021)",
+    "citation": "* '''Book''': David McKeen, ''A Memory of Honour: A Study of the House of Cobham of Kent in the Reign of Elizabeth I.. Books I-IV.''<br/>United Kingdom: University of Birmingham, 1964<br/>[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "noSubtitle_inline": {
+    "citation": "<ref>\n'''Book''':\nDavid McKeen, ''A Memory of Honour''<br/>\nUnited Kingdom: University of Birmingham, 1964<br/>\n[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "noSubtitle_narrative": {
+    "citation": "David was mentioned in a book in 1964.<ref>\n'''Book''':\nDavid McKeen, ''A Memory of Honour''<br/>\nUnited Kingdom: University of Birmingham, 1964<br/>\n[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "noSubtitle_source": {
+    "citation": "* '''Book''': David McKeen, ''A Memory of Honour''<br/>United Kingdom: University of Birmingham, 1964<br/>[https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en Google Books] (accessed 6 May 2021)",
     "type": "source"
   }
 }

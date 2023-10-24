@@ -34,18 +34,78 @@ const regressionData = [
   {
     caseName: "a_memory_of_honour",
     url: "https://www.google.com/books/edition/A_Memory_of_Honour/exkJswEACAAJ?hl=en",
+    optionVariants: [
+      {
+        variantName: "noSubtitle",
+        optionOverrides: { citation_gbooks_titleContent: "title" },
+      },
+    ],
   },
   {
     caseName: "calendar_of_state_papers_uk",
     url: "https://www.google.co.uk/books/edition/Calendar_of_State_Papers_Domestic_Series/Qw4SAAAAYAAJ?hl=en&gbpv=1&pg=PA504&printsec=frontcover&pli=1",
+    optionVariants: [
+      {
+        variantName: "authorPageAllPubPage",
+        optionOverrides: { citation_gbooks_authorNames: "pageAll", citation_gbooks_publisherDetails: "page" },
+      },
+      {
+        variantName: "authorPage3PubChicago",
+        optionOverrides: { citation_gbooks_authorNames: "page3", citation_gbooks_publisherDetails: "chicago" },
+      },
+      {
+        variantName: "authorPage3Editors",
+        optionOverrides: { citation_gbooks_authorNames: "page3Editors" },
+      },
+      {
+        variantName: "authorChicago",
+        optionOverrides: { citation_gbooks_authorNames: "chicago" },
+      },
+      {
+        variantName: "authorApa",
+        optionOverrides: { citation_gbooks_authorNames: "apa" },
+      },
+    ],
+  },
+  {
+    caseName: "great_migration_snippet",
+    url: "https://www.google.com/books/edition/The_Great_Migration_Begins/aD4hAQAAMAAJ?hl=en&gbpv=1&bsq=Robert+Charles+Anderson,+The+Great+Migration+Begins:+Immigrants+to+New+England+1620-1633,&dq=Robert+Charles+Anderson,+The+Great+Migration+Begins:+Immigrants+to+New+England+1620-1633,&printsec=frontcover",
   },
   {
     caseName: "harvard_classics_all_51_volumes",
     url: "https://www.google.com/books/edition/Harvard_Classics_All_51_Volumes/wOGcEAAAQBAJ?hl=en&gbpv=0",
+    optionVariants: [
+      {
+        variantName: "authorPageAllPubPage",
+        optionOverrides: { citation_gbooks_authorNames: "pageAll", citation_gbooks_publisherDetails: "page" },
+      },
+      {
+        variantName: "authorPage3PubChicago",
+        optionOverrides: { citation_gbooks_authorNames: "page3", citation_gbooks_publisherDetails: "chicago" },
+      },
+      {
+        variantName: "authorPage3Editors",
+        optionOverrides: { citation_gbooks_authorNames: "page3Editors" },
+      },
+      {
+        variantName: "authorChicago",
+        optionOverrides: { citation_gbooks_authorNames: "chicago" },
+      },
+      {
+        variantName: "authorApa",
+        optionOverrides: { citation_gbooks_authorNames: "apa" },
+      },
+    ],
   },
   {
     caseName: "linn_county_iowa_1887",
     url: "https://www.google.com/books/edition/Portrait_and_Biographical_Album_of_Linn/hlA0AQAAMAAJ?q=&gbpv=1&bsq=riddle#f=false",
+    optionVariants: [
+      {
+        variantName: "noSubtitle",
+        optionOverrides: { citation_gbooks_titleContent: "title" },
+      },
+    ],
   },
   {
     caseName: "oldcastle",

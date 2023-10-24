@@ -39,6 +39,7 @@ async function setupGbooksPopupMenu(extractedData, tabId) {
       if (response && response.success) {
         extractedData.shareLink = response.shareLink;
         extractedData.pageLink = response.pageLink;
+        extractedData.pageLabel = response.pageLabel;
         extractedData.pageNumber = response.pageNumber;
         extractedData.urlPageNumber = response.urlPageNumber;
       }

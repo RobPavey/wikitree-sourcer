@@ -33,7 +33,41 @@ const citationOptionsGroup = {
   subcategory: "gbooks",
   tab: "citation",
   subsection: "gbooks",
-  options: [],
+  options: [
+    {
+      optionName: "authorNames",
+      type: "select",
+      label: "How to generate author text",
+      values: [
+        { value: "pageAll", text: "Use the authors from the page (first name first)" },
+        { value: "page3", text: 'Use the first 3 authors from the page (first name first) with "et al"' },
+        { value: "page3Editors", text: "Use the first 3 authors from the page (first name first) or editors" },
+        { value: "chicago", text: "Use the authors from the Chicago citation" },
+        { value: "apa", text: "Use the authors from the APA citation" },
+      ],
+      defaultValue: "page3Editors",
+    },
+    {
+      optionName: "titleContent",
+      type: "select",
+      label: "How to generate the title text",
+      values: [
+        { value: "title", text: "Use just the title from the page" },
+        { value: "titlePlusSubtitle", text: "Use the title and subtitle from the page" },
+      ],
+      defaultValue: "titlePlusSubtitle",
+    },
+    {
+      optionName: "publisherDetails",
+      type: "select",
+      label: "How to generate publisher details",
+      values: [
+        { value: "page", text: "Use the publisher name and date from the page" },
+        { value: "chicago", text: "Use the publisher name and date from the Chicago citation (includes country)" },
+      ],
+      defaultValue: "chicago",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "gbooks", "Google Books");

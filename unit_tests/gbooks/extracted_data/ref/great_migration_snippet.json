@@ -1,0 +1,35 @@
+{
+  "url": "https://www.google.com/books/edition/The_Great_Migration_Begins/aD4hAQAAMAAJ?hl=en&gbpv=1&bsq=Robert+Charles+Anderson,+The+Great+Migration+Begins:+Immigrants+to+New+England+1620-1633,&dq=Robert+Charles+Anderson,+The+Great+Migration+Begins:+Immigrants+to+New+England+1620-1633,&printsec=frontcover",
+  "success": true,
+  "headTitle": "The Great Migration Begins - Google Books",
+  "citations": [
+    {
+      "type": "APA",
+      "text": "Anderson, R. C. (1995). The Great Migration Begins: Immigrants to New England, 1620-1633. United States: New England Historic Genealogical Society."
+    },
+    {
+      "type": "MLA",
+      "text": "Anderson, Robert Charles. The Great Migration Begins: Immigrants to New England, 1620-1633. United States, New England Historic Genealogical Society, 1995."
+    },
+    {
+      "type": "Chicago",
+      "text": "Anderson, Robert Charles. The Great Migration Begins: Immigrants to New England, 1620-1633. United States: New England Historic Genealogical Society, 1995."
+    }
+  ],
+  "title": "The Great Migration Begins",
+  "subtitle": "Immigrants to New England, 1620-1633",
+  "author": "Robert Charles Anderson",
+  "date": "1995",
+  "aboutThisEdition": {
+    "Page count": "53",
+    "Published": "1995",
+    "Format": "Hardcover",
+    "Publisher": "New England Historic Genealogical Society",
+    "Original from": "the University of Wisconsin - Madison",
+    "Digitized": "May 5, 2011",
+    "Language": "English",
+    "Author": "Robert Charles Anderson",
+    "Contributor": "New England Historic Genealogical Society"
+  },
+  "publisher": "New England Historic Genealogical Society"
+}

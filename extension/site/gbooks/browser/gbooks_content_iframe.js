@@ -99,9 +99,13 @@ function iframeMessageHandler(request, sender, sendResponse) {
 
       if (pageLabel) {
         //console.log("pageLabel is: " + pageLabel);
+        response.pageLabel = pageLabel;
 
-        let parts = pageLabel.split(" ");
-        let pageNumber = parts[parts.length - 1];
+        let pageNumber = pageLabel;
+        const pagePrefix = "Page ";
+        if (pageNumber.startsWith(pagePrefix)) {
+          pageNumber = pageNumber.substring(pagePrefix.length).trim();
+        }
         response.pageNumber = pageNumber;
 
         const isPageNumberDecimal = /^\d+$/.test(pageNumber);
@@ -111,6 +115,9 @@ function iframeMessageHandler(request, sender, sendResponse) {
         }
         response.decimalPageNumber = decimalPageNumber;
 
+        // there can be anywhere between 2-4 page elements, try to find the one that matches the pageLabel
+        // this may not be possible if the pageLabel is something line "Contents" e.g. in
+        // https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1
         let pageElements = document.querySelectorAll("img[aria-label='Page'");
         for (let pageElement of pageElements) {
           let src = pageElement.getAttribute("src");
@@ -148,6 +155,40 @@ function iframeMessageHandler(request, sender, sendResponse) {
 
                   if (thisIsThePage) {
                     response.pageLink = src;
+                    response.urlPageNumber = pageString;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        if (!response.pageLink) {
+          let pageElement = undefined;
+          if (pageElements.length == 1) {
+            pageElement = pageElements[0];
+          } else if (pageElements.length == 2) {
+            pageElement = pageElements[1];
+          } else if (pageElements.length == 3) {
+            pageElement = pageElements[1];
+          } else if (pageElements.length == 4) {
+            pageElement = pageElements[2];
+          } else if (pageElements.length == 5) {
+            pageElement = pageElements[3];
+          } else {
+            pageElement = pageElements[pageElements.length - 1];
+          }
+          if (pageElement) {
+            let src = pageElement.getAttribute("src");
+            if (src) {
+              response.pageLink = src;
+              const pagePrefix = "&pg=";
+              if (src.includes(pagePrefix)) {
+                let pageIndex = src.indexOf(pagePrefix);
+                if (pageIndex != -1) {
+                  let pageEndIndex = src.indexOf("&", pageIndex + pagePrefix.length);
+                  if (pageEndIndex != -1) {
+                    let pageString = src.substring(pageIndex + pagePrefix.length, pageEndIndex);
                     response.urlPageNumber = pageString;
                   }
                 }
