@@ -97,6 +97,18 @@ function iframeMessageHandler(request, sender, sendResponse) {
         }
       }
 
+      let dialogElements = document.querySelectorAll("div.popup-menu[role='dialog']");
+      for (let dialogElement of dialogElements) {
+        let inputElement = dialogElement.querySelector("#entity-page-share-input");
+        if (inputElement) {
+          // this is the dialog that contains the share input
+          let visibility = dialogElement.style.visibility;
+          if (visibility == "visible") {
+            response.isShareLinkVisible = true;
+          }
+        }
+      }
+
       if (pageLabel) {
         //console.log("pageLabel is: " + pageLabel);
         response.pageLabel = pageLabel;
@@ -115,23 +127,38 @@ function iframeMessageHandler(request, sender, sendResponse) {
         }
         response.decimalPageNumber = decimalPageNumber;
 
+        const urlPagePrefix = "&pg=";
+        let documentUrlPageNumber = "";
+        let iframeUrl = window.location.href;
+        if (iframeUrl && iframeUrl.includes(urlPagePrefix)) {
+          let url = iframeUrl;
+          let pageIndex = url.indexOf(urlPagePrefix);
+          if (pageIndex != -1) {
+            let pageEndIndex = url.indexOf("&", pageIndex + urlPagePrefix.length);
+            if (pageEndIndex != -1) {
+              let pageString = url.substring(pageIndex + urlPagePrefix.length, pageEndIndex);
+              documentUrlPageNumber = pageString.substring(2);
+            }
+          }
+        }
+
         // there can be anywhere between 2-4 page elements, try to find the one that matches the pageLabel
         // this may not be possible if the pageLabel is something line "Contents" e.g. in
         // https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1
         let pageElements = document.querySelectorAll("img[aria-label='Page'");
+        let pageElementMatchingDocumentUrl = undefined;
         for (let pageElement of pageElements) {
           let src = pageElement.getAttribute("src");
           //console.log("pageElement src is: " + src);
 
           // example, pageLabel = "Page 709"
           // https://books.google.com/books/content?id=Qw4SAAAAYAAJ&pg=PA709&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U2LI7dyXgYSCcMbnI7PjGzP_x8-AQ&w=1025
-          const pagePrefix = "&pg=";
-          if (src.includes(pagePrefix)) {
-            let pageIndex = src.indexOf(pagePrefix);
+          if (src.includes(urlPagePrefix)) {
+            let pageIndex = src.indexOf(urlPagePrefix);
             if (pageIndex != -1) {
-              let pageEndIndex = src.indexOf("&", pageIndex + pagePrefix.length);
+              let pageEndIndex = src.indexOf("&", pageIndex + urlPagePrefix.length);
               if (pageEndIndex != -1) {
-                let pageString = src.substring(pageIndex + pagePrefix.length, pageEndIndex);
+                let pageString = src.substring(pageIndex + urlPagePrefix.length, pageEndIndex);
                 let isRoman = false;
                 let urlPageNumber = "";
                 if (pageString.startsWith("PR")) {
@@ -157,6 +184,10 @@ function iframeMessageHandler(request, sender, sendResponse) {
                     response.pageLink = src;
                     response.urlPageNumber = pageString;
                   }
+
+                  if (urlPageNumber == documentUrlPageNumber) {
+                    pageElementMatchingDocumentUrl = pageElement;
+                  }
                 }
               }
             }
@@ -165,30 +196,33 @@ function iframeMessageHandler(request, sender, sendResponse) {
 
         if (!response.pageLink) {
           let pageElement = undefined;
-          if (pageElements.length == 1) {
-            pageElement = pageElements[0];
-          } else if (pageElements.length == 2) {
-            pageElement = pageElements[1];
-          } else if (pageElements.length == 3) {
-            pageElement = pageElements[1];
-          } else if (pageElements.length == 4) {
-            pageElement = pageElements[2];
-          } else if (pageElements.length == 5) {
-            pageElement = pageElements[3];
+          if (pageElementMatchingDocumentUrl) {
+            pageElement = pageElementMatchingDocumentUrl;
           } else {
-            pageElement = pageElements[pageElements.length - 1];
+            if (pageElements.length == 1) {
+              pageElement = pageElements[0];
+            } else if (pageElements.length == 2) {
+              pageElement = pageElements[1];
+            } else if (pageElements.length == 3) {
+              pageElement = pageElements[1];
+            } else if (pageElements.length == 4) {
+              pageElement = pageElements[2];
+            } else if (pageElements.length == 5) {
+              pageElement = pageElements[3];
+            } else {
+              pageElement = pageElements[pageElements.length - 1];
+            }
           }
           if (pageElement) {
             let src = pageElement.getAttribute("src");
             if (src) {
               response.pageLink = src;
-              const pagePrefix = "&pg=";
-              if (src.includes(pagePrefix)) {
-                let pageIndex = src.indexOf(pagePrefix);
+              if (src.includes(urlPagePrefix)) {
+                let pageIndex = src.indexOf(urlPagePrefix);
                 if (pageIndex != -1) {
-                  let pageEndIndex = src.indexOf("&", pageIndex + pagePrefix.length);
+                  let pageEndIndex = src.indexOf("&", pageIndex + urlPagePrefix.length);
                   if (pageEndIndex != -1) {
-                    let pageString = src.substring(pageIndex + pagePrefix.length, pageEndIndex);
+                    let pageString = src.substring(pageIndex + urlPagePrefix.length, pageEndIndex);
                     response.urlPageNumber = pageString;
                   }
                 }

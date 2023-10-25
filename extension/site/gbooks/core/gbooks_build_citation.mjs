@@ -25,20 +25,31 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildGbooksUrl(ed, builder) {
-  if (ed.shareLink && ed.urlPageNumber) {
-    // "https://www.google.com/books/edition/Calendar_of_State_Papers_Domestic_Series/Qw4SAAAAYAAJ?hl=en&gbpv=1&pg=PR3&printsec=frontcover"
+  // If the share link dialog is up then this overrides everything
+  if (ed.isShareLinkVisible && ed.shareLink) {
+    return ed.shareLink;
+  }
 
+  // if we have a urlPageNumber then this is our best guess of what page is actually being viewed
+  // It comes from the url of the page in the iframe.
+  if (ed.urlPageNumber && ed.shareLink) {
+    // However the pageLink is of the form:
+    // https://books.google.com/books/content?id=sDbPAAAAMAAJ&pg=PP20&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0ukQ8GUn2z9hh1cJpuMDwI7nRpUg&w=1025
+    // while we actually want to use the form of the shareLink which is like:
+    // https://www.google.com/books/edition/The_First_Part_of_the_True_and_Honorable/sDbPAAAAMAAJ?hl=en&gbpv=1&dq=Cobham%20Lord&pg=PP21&printsec=frontcover
+
+    // It seems that there will always be a shareLink when the iFrame is oprn - it is just out of date
+    // it is the page when the iframe opened or when the share dialog was last brought up
     let link = ed.shareLink;
     let regexp = new RegExp("\\&pg\\=[A-Z0-9]+");
     link = link.replace(regexp, "&pg=" + ed.urlPageNumber);
     return link;
   }
-  if (ed.pageLink) {
-    return ed.pageLink;
-  }
+
   if (ed.shareLink) {
     return ed.shareLink;
   }
+
   return ed.url;
 }
 
