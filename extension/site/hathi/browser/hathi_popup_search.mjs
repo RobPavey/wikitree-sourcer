@@ -34,7 +34,7 @@ import { options } from "/base/browser/options/options_loader.mjs";
 
 async function hathiSearch(generalizedData) {
   const input = { generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("Hathi Trust Search", input, async function () {
+  doAsyncActionWithCatch("HathiTrust Search", input, async function () {
     let loadedModule = await import(`../core/hathi_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
@@ -45,7 +45,7 @@ async function hathiSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addHathiDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Hathi Trust", function (element) {
+  addMenuItem(menu, "Search HathiTrust", function (element) {
     hathiSearch(data.generalizedData);
   });
 
@@ -60,4 +60,4 @@ function addHathiDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("hathi", "Hathi Trust", addHathiDefaultSearchMenuItem);
+registerSearchMenuItemFunction("hathi", "HathiTrust", addHathiDefaultSearchMenuItem);

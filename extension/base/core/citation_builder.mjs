@@ -151,8 +151,12 @@ class CitationBuilder {
       this.sourceReference += itemSep + " ";
     }
 
-    const valueSep = this.getSourceReferenceValueSeparator();
-    this.sourceReference += label + valueSep + " " + value;
+    if (label) {
+      const valueSep = this.getSourceReferenceValueSeparator();
+      this.sourceReference += label + valueSep + " " + value;
+    } else {
+      this.sourceReference += value;
+    }
   }
 
   addSourceReferenceText(value) {

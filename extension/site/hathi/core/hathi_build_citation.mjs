@@ -36,10 +36,28 @@ function buildHathiUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  if (ed.name) {
-    builder.sourceTitle += ed.name;
-  } else if (ed.metaTitle) {
-    builder.sourceTitle += ed.metaTitle;
+  let author = ed.author;
+  if (!author) {
+    author = ed.creator;
+  }
+
+  let title = ed.dcTitle;
+  if (!title) {
+    title = ed.metaTitle;
+  }
+  if (!title) {
+    title = ed.title;
+  }
+
+  let sourceTitle = "";
+  if (author && title) {
+    sourceTitle = author + ", ''" + title + "''";
+  } else if (title) {
+    sourceTitle = "''" + title + "''";
+  }
+  if (sourceTitle) {
+    builder.sourceTitle = sourceTitle;
+    builder.putSourceTitleInQuotes = false;
   }
 }
 
@@ -51,15 +69,14 @@ function buildSourceReference(ed, gd, builder) {
 
     builder.addSourceReferenceField(title, value);
   }
-  addTerm("Author", ed.creator);
-  addTerm("Publisher", ed.publisher);
-  addTerm("Page", ed.pageNumber);
+  addTerm("", ed.publisher);
+  addTerm("page", ed.pageNumber);
 }
 
 function buildRecordLink(ed, gd, builder) {
   var hathiUrl = buildHathiUrl(ed, builder);
 
-  let recordLink = "[" + hathiUrl + " Hathi Trust]";
+  let recordLink = "[" + hathiUrl + " HathiTrust]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Book''':\n\"The life and times of the good Lord Cobham / by Thomas Gaspey v.1\"<br/>\nAuthor: Gaspey, Thomas; Publisher: London : H. Cunningham, 1844; Page: 95<br/>\n[https://babel.hathitrust.org/cgi/pt?id=msu.31293016866653&seq=119 Hathi Trust] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Book''':\nGaspey, Thomas., ''The life and times of the good Lord Cobham / by Thomas Gaspey v.1''<br/>\nLondon : H. Cunningham, 1844; page: 95<br/>\n[https://babel.hathitrust.org/cgi/pt?id=msu.31293016866653&seq=119 HathiTrust] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the book ''The life and times of the good Lord Cobham / by Thomas Gaspey v.1'' in 1844.<ref>\n'''Book''':\n\"The life and times of the good Lord Cobham / by Thomas Gaspey v.1\"<br/>\nAuthor: Gaspey, Thomas; Publisher: London : H. Cunningham, 1844; Page: 95<br/>\n[https://babel.hathitrust.org/cgi/pt?id=msu.31293016866653&seq=119 Hathi Trust] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the book ''The life and times of the good Lord Cobham / by Thomas Gaspey v.1'' in 1844.<ref>\n'''Book''':\nGaspey, Thomas., ''The life and times of the good Lord Cobham / by Thomas Gaspey v.1''<br/>\nLondon : H. Cunningham, 1844; page: 95<br/>\n[https://babel.hathitrust.org/cgi/pt?id=msu.31293016866653&seq=119 HathiTrust] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Book''': \"The life and times of the good Lord Cobham / by Thomas Gaspey v.1\"<br/>Author: Gaspey, Thomas; Publisher: London : H. Cunningham, 1844; Page: 95<br/>[https://babel.hathitrust.org/cgi/pt?id=msu.31293016866653&seq=119 Hathi Trust] (accessed 6 May 2021)",
+    "citation": "* '''Book''': Gaspey, Thomas., ''The life and times of the good Lord Cobham / by Thomas Gaspey v.1''<br/>London : H. Cunningham, 1844; page: 95<br/>[https://babel.hathitrust.org/cgi/pt?id=msu.31293016866653&seq=119 HathiTrust] (accessed 6 May 2021)",
     "type": "source"
   }
 }

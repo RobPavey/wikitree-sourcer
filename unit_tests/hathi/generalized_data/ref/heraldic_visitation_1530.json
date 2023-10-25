@@ -1,0 +1,12 @@
+{
+  "sourceOfData": "hathi",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {},
+  "eventDate": {
+    "dateString": "1863"
+  },
+  "bookTitle": "Heraldic visitation of the northern counties in 1530 by Thomas Tonge, Norroy king of arms; with an appendix of other heraldic documents relating to the north of England. ed. by W. Hylton Dyer Longstaffe.",
+  "bookAuthor": "Tonge, Thomas, d. 1534.",
+  "hasValidData": true
+}

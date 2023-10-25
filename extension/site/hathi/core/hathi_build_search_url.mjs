@@ -40,21 +40,24 @@ function buildSearchUrl(buildUrlInput) {
       searchString += term;
     }
   }
-  addTerm(gd.inferFullName());
+
+  let eventYear = gd.inferEventYear();
 
   if (gd.bookTitle) {
     addTerm(gd.bookTitle);
-  }
-
-  let birthYear = gd.inferBirthYear();
-  let deathYear = gd.inferDeathYear();
-  let eventYear = gd.inferEventYear();
-
-  if (birthYear || deathYear) {
-    addTerm(birthYear);
-    addTerm(deathYear);
-  } else {
     addTerm(eventYear);
+  } else {
+    addTerm(gd.inferFullName());
+
+    let birthYear = gd.inferBirthYear();
+    let deathYear = gd.inferDeathYear();
+
+    if (birthYear || deathYear) {
+      addTerm(birthYear);
+      addTerm(deathYear);
+    } else {
+      addTerm(eventYear);
+    }
   }
 
   builder.addSearchQuery(searchString);

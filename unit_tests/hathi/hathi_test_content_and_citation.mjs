@@ -32,6 +32,12 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    // example used on England Orphan Trail citation templates:
+    // https://www.wikitree.com/wiki/Space:Foundations_OT_-_Citation_templates#HathiTrust
+    caseName: "heraldic_visitation_1530",
+    url: "https://babel.hathitrust.org/cgi/pt?id=mdp.39015031227203&view=1up&seq=79",
+  },
+  {
     caseName: "lord_cobham_gaspey_1844",
     url: "https://babel.hathitrust.org/cgi/pt?id=msu.31293016866653&seq=119",
   },

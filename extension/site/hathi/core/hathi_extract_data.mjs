@@ -40,7 +40,9 @@ function extractData(document, url) {
 
   const titleElement = document.querySelector("head > title");
   if (titleElement && titleElement.textContent) {
-    result.title = titleElement.textContent.trim();
+    let title = titleElement.textContent.trim();
+    title = title.replace(/\s+/g, " ").trim();
+    result.title = title;
   }
 
   const dcTitleElement = document.querySelector("body h1 > span[property='dc:title']");
