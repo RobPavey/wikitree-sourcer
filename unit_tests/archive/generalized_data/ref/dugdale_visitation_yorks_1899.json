@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "archive",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "lastName": "Dugdale",
+    "forenames": "William"
+  },
+  "eventDate": {
+    "dateString": "1899"
+  },
+  "bookTitle": "Dugdale's Visitation of Yorkshire, with additions",
+  "bookAuthor": "Dugdale, William, Sir, 1605-1686; Clay, John William, 1838-1918",
+  "hasValidData": true
+}

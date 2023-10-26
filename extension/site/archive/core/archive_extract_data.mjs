@@ -30,13 +30,35 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
-    return result;
+  const itemTitleSpan = document.querySelector("h1.item-title > span");
+  if (itemTitleSpan) {
+    result.title = itemTitleSpan.textContent;
   }
-  */
+
+  result.metadata = {};
+  const metaDataElements = document.querySelectorAll("dl.metadata-definition");
+  for (let metaDataElement of metaDataElements) {
+    let dtElement = metaDataElement.querySelector("dt");
+    let ddElement = metaDataElement.querySelector("dd");
+    if (dtElement && ddElement) {
+      let label = dtElement.textContent;
+      let value = ddElement.textContent;
+      if (label && value) {
+        label = label.trim();
+        value = value.trim();
+        result.metadata[label] = value;
+      }
+    }
+  }
+
+  const pageFooterSpan = document.querySelector("span.BRcurrentpage");
+  if (pageFooterSpan) {
+    let pageXOfY = pageFooterSpan.textContent;
+    if (pageXOfY) {
+      pageXOfY = pageXOfY.trim();
+      result.pageXOfY = pageXOfY;
+    }
+  }
 
   result.success = true;
 

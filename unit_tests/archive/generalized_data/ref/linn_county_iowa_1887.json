@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "archive",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "name": "Chapman Brothers pbl"
+  },
+  "eventDate": {
+    "dateString": "1887"
+  },
+  "bookTitle": "Portrait and biographical album of Linn County, Iowa",
+  "bookAuthor": "Chapman Brothers. pbl",
+  "hasValidData": true
+}

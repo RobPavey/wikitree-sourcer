@@ -120,10 +120,6 @@ class HathiEdReader extends ExtractedDataReader {
       gd.bookAuthor = this.ed.author;
     }
   }
-
-  getCollectionData() {
-    return undefined;
-  }
 }
 
 export { HathiEdReader };
