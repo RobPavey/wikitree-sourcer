@@ -333,6 +333,33 @@ class OpccornEdReader extends ExtractedDataReader {
           dateObj.dateString = dateString;
         }
       }
+    } else {
+      let year = this.ed.recordData["Year Written"];
+      if (year) {
+        // Banns can have two years for the three dates
+        const slashIndex = year.indexOf("/");
+        if (slashIndex != -1) {
+          year = year.substring(0, slashIndex);
+        }
+
+        dateObj.yearString = year;
+
+        let dayMonth = this.ed.recordData["Date Written"];
+        if (dayMonth) {
+          let parts = dayMonth.split("-");
+          if (parts.length == 2) {
+            let day = parts[0];
+            // remove leading 0
+            if (day && day.length == 2 && day[0] == "0") {
+              day = day.substring(1);
+            }
+            let month = parts[1];
+
+            let dateString = day + " " + month + " " + year;
+            dateObj.dateString = dateString;
+          }
+        }
+      }
     }
     return dateObj;
   }

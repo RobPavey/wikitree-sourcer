@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Michell",
+    "forenames": "John"
+  },
+  "eventDate": {
+    "yearString": "1844",
+    "dateString": "3 Aug 1844"
+  },
+  "eventPlace": {
+    "placeString": "Cornwall, England",
+    "county": "Cornwall",
+    "country": "England"
+  },
+  "hasValidData": true
+}

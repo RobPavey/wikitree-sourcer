@@ -577,6 +577,11 @@ class DateObj {
 
   getFormattedStringForCitationOrNarrative(format, highlightOption, addPreposition, prepSuffix = "") {
     let dateString = this.getDateString();
+
+    if (!dateString) {
+      return "";
+    }
+
     let qualifier = this.qualifier;
 
     let parsedDate = DateUtils.parseDateString(dateString);
