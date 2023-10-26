@@ -26,12 +26,10 @@ import { buildSearchUrl } from "../../extension/site/archive/core/archive_build_
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*{
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+  {
+    caseName: "archive_dugdale_visitation_yorks_1899",
+    inputPath: "archive/generalized_data/ref/dugdale_visitation_yorks_1899",
   },
-  */
 ];
 
 async function runTests(testManager) {

@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { StringUtils } from "../../../base/core/string_utils.mjs";
-
 class ArchiveUriBuilder {
   constructor() {
-    this.uri = "https://www.archive.org.uk/cgi/search.pl";
+    // EXAMPLE TITLE SEARCH:
+    // https://archive.org/search?query=title%3A%28Dugdale%27s%20Visitation%20of%20Yorkshire%2C%20with%20additions%29
+    this.uri = "https://archive.org/search";
     this.searchTermAdded = false;
   }
 
@@ -57,44 +57,8 @@ class ArchiveUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
-  }
-
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
-
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addSearchQuery(string) {
+    this.addSearchParameter("query", string);
   }
 
   getUri() {

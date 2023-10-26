@@ -45,7 +45,7 @@ async function examplesiteSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addExamplesiteDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search ExampleSite...", function (element) {
+  addMenuItem(menu, "Search ExampleSite", function (element) {
     examplesiteSearch(data.generalizedData);
   });
 

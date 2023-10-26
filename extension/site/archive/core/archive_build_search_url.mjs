@@ -29,11 +29,50 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new ArchiveUriBuilder();
 
-  // Add collection reference gd if this is SameCollection
-  if (typeOfSearch == "SameCollection") {
-    builder.addVolume(gd.collectionData.volume);
-    builder.addPage(gd.collectionData.page);
+  let searchString = "";
+
+  // the searchs string can specify various parts. e.g.
+  // https://archive.org/search?query=
+  //  title%3A%28Dugdale%27s%20Visitation%20of%20Yorkshire%2C%20with%20additions%29
+  //  %20AND%20date%3A%5B1899-01-01%20TO%201899-12-31%5D
+  // unencoded that is:
+  //  title:(Dugdale's Visitation of Yorkshire, with additions) AND date:[1899-01-01 TO 1899-12-31]
+  // Another example:
+  // https://archive.org/search?query=%28John%20Smith%29%20AND%20date%3A1856-06-02
+  // (John Smith) AND date:1856-06-02
+
+  function addTerm(term) {
+    if (term) {
+      if (searchString) {
+        searchString += " AND ";
+      }
+      searchString += term;
+    }
   }
+
+  let eventYear = gd.inferEventYear();
+
+  if (gd.bookTitle) {
+    addTerm("title:(" + gd.bookTitle + ")");
+    addTerm("date:" + eventYear);
+  } else {
+    addTerm("(" + gd.inferFullName() + ")");
+
+    let birthYear = gd.inferBirthYear();
+    let deathYear = gd.inferDeathYear();
+
+    if (birthYear && deathYear) {
+      addTerm("date:[" + birthYear + " TO " + deathYear + "]");
+    } else if (eventYear) {
+      addTerm("date:" + eventYear);
+    } else if (birthYear) {
+      addTerm("date:" + birthYear);
+    } else if (deathYear) {
+      addTerm("date:" + deathYear);
+    }
+  }
+
+  builder.addSearchQuery(searchString);
 
   const url = builder.getUri();
 

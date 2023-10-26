@@ -22,8 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { StringUtils } from "../../../base/core/string_utils.mjs";
-
 class HathiUriBuilder {
   constructor() {
     // Example:

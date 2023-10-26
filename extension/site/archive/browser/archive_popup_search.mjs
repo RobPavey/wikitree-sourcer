@@ -45,7 +45,7 @@ async function archiveSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addArchiveDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Internet Archive...", function (element) {
+  addMenuItem(menu, "Search Internet Archive", function (element) {
     archiveSearch(data.generalizedData);
   });
 
