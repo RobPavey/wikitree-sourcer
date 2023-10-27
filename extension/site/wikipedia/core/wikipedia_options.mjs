@@ -62,7 +62,7 @@ const citationOptionsGroup = {
     {
       optionName: "citationSpecialLinkText",
       type: "select",
-      label: "If using a special WikiTree Wikipedia link, what text to display",
+      label: "If using a special WikiTree Wikipedia link (in citation), what text to display",
       values: [
         {
           value: "title",
