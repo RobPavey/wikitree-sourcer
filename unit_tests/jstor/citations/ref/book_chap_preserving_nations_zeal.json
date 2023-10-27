@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Book''':\nAnne-Françoise Morel, ''The Quest for an Appropriate Past in Literature, Art and Architecture: CHAPTER 24 Preserving the Nation’s Zeal: Church Buildings and English Christian History in Stuart England''<br/>\nBrill; 2019; pp. 707-730 (24 pages)<br/>\n[https://www.jstor.org/stable/10.1163/j.ctvbqs5nk.31 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the book ''The Quest for an Appropriate Past in Literature, Art and Architecture'' in 2019.<ref>\n'''Book''':\nAnne-Françoise Morel, ''The Quest for an Appropriate Past in Literature, Art and Architecture: CHAPTER 24 Preserving the Nation’s Zeal: Church Buildings and English Christian History in Stuart England''<br/>\nBrill; 2019; pp. 707-730 (24 pages)<br/>\n[https://www.jstor.org/stable/10.1163/j.ctvbqs5nk.31 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Book''': Anne-Françoise Morel, ''The Quest for an Appropriate Past in Literature, Art and Architecture: CHAPTER 24 Preserving the Nation’s Zeal: Church Buildings and English Christian History in Stuart England''<br/>Brill; 2019; pp. 707-730 (24 pages)<br/>[https://www.jstor.org/stable/10.1163/j.ctvbqs5nk.31 JSTOR] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

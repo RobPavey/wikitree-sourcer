@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Journal''':\n''Virginia Gleanings in England''<br/>\nThe Virginia Magazine of History and Biography; Vol. 23, No. 3 (Jul., 1915), pp. 294-296 (3 pages)<br/>\n[https://www.jstor.org/stable/4243451 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the journal ''The Virginia Magazine of History and Biography'' in July 1915.<ref>\n'''Journal''':\n''Virginia Gleanings in England''<br/>\nThe Virginia Magazine of History and Biography; Vol. 23, No. 3 (Jul., 1915), pp. 294-296 (3 pages)<br/>\n[https://www.jstor.org/stable/4243451 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Journal''': ''Virginia Gleanings in England''<br/>The Virginia Magazine of History and Biography; Vol. 23, No. 3 (Jul., 1915), pp. 294-296 (3 pages)<br/>[https://www.jstor.org/stable/4243451 JSTOR] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

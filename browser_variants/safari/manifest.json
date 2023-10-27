@@ -160,6 +160,11 @@
       "js": ["base/browser/content/content_common.js", "site/irishg/browser/irishg_content.js"]
     },
     {
+      "matches": ["*://*.jstor.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/jstor/browser/jstor_content.js"]
+    },
+    {
       "matches": ["*://www.census.nationalarchives.ie/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/naie/browser/naie_content.js"]
@@ -246,6 +251,7 @@
     "site/gro/core/gro_extract_data.mjs",
     "site/hathi/core/hathi_extract_data.mjs",
     "site/irishg/core/irishg_extract_data.mjs",
+    "site/jstor/core/jstor_extract_data.mjs",
     "site/naie/core/naie_extract_data.mjs",
     "site/nli/core/nli_extract_data.mjs",
     "site/np/core/np_extract_data.mjs",

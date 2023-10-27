@@ -3256,6 +3256,10 @@ class GeneralizedData {
         type: RT.Book,
         defaultTitle: "Book",
       },
+      {
+        type: RT.Journal,
+        defaultTitle: "Journal",
+      },
     ];
 
     function lookup(gd, collectionTitle, table) {

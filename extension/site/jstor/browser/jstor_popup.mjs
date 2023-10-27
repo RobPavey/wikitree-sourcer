@@ -22,24 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { ExamplesiteUriBuilder } from "./examplesite_uri_builder.mjs";
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/jstor_generalize_data.mjs";
+import { buildCitation } from "../core/jstor_build_citation.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new ExamplesiteUriBuilder();
-
-  // call methods on builder here
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
+async function setupJstorPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage:
+      "It looks like a JSTOR page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
+    generalizeFailedMessage: "It looks like a JSTOR page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "jstor",
   };
-
-  return result;
+  setupSimplePopupMenu(input);
 }
 
-export { buildSearchUrl };
+initPopup("jstor", setupJstorPopupMenu);

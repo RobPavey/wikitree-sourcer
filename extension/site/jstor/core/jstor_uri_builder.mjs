@@ -22,24 +22,48 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { ExamplesiteUriBuilder } from "./examplesite_uri_builder.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
+class JstorUriBuilder {
+  constructor() {
+    this.uri = "https://www.jstor.org/action/doBasicSearch";
+    this.searchTermAdded = false;
+  }
 
-  var builder = new ExamplesiteUriBuilder();
+  addSearchTerm(string) {
+    if (string == undefined || string == "") {
+      return;
+    }
+    if (!this.searchTermAdded) {
+      this.uri = this.uri.concat("?", string);
+      this.searchTermAdded = true;
+    } else {
+      this.uri = this.uri.concat("&", string);
+    }
+  }
 
-  // call methods on builder here
+  addSearchParameter(parameter, value) {
+    if (value == undefined || value == "") {
+      return;
+    }
 
-  const url = builder.getUri();
+    const encodedValue = encodeURIComponent(value);
 
-  //console.log("URL is " + url);
+    if (!this.searchTermAdded) {
+      this.uri = this.uri.concat("?", parameter, "=", encodedValue);
+      this.searchTermAdded = true;
+    } else {
+      this.uri = this.uri.concat("&", parameter, "=", encodedValue);
+    }
+  }
 
-  var result = {
-    url: url,
-  };
+  addSearchQuery(string) {
+    this.addSearchParameter("Query", string);
+  }
 
-  return result;
+  getUri() {
+    return this.uri;
+  }
 }
 
-export { buildSearchUrl };
+export { JstorUriBuilder };

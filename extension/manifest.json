@@ -46,6 +46,7 @@
     "*://www.gro.gov.uk/gro/content/certificates/*",
     "*://*.hathitrust.org/*",
     "*://*.irishgenealogy.ie/*",
+    "*://*.jstor.org/*",
     "*://www.census.nationalarchives.ie/*",
     "*://*.nli.ie/*",
     "*://*.newspapers.com/*",
@@ -196,6 +197,11 @@
       "matches": ["*://*.irishgenealogy.ie/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/irishg/browser/irishg_content.js"]
+    },
+    {
+      "matches": ["*://*.jstor.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/jstor/browser/jstor_content.js"]
     },
     {
       "matches": ["*://www.census.nationalarchives.ie/*"],
@@ -360,6 +366,10 @@
     {
       "resources": ["site/irishg/core/irishg_extract_data.mjs"],
       "matches": ["*://*.irishgenealogy.ie/*"]
+    },
+    {
+      "resources": ["site/jstor/core/jstor_extract_data.mjs"],
+      "matches": ["*://*.jstor.org/*"]
     },
     {
       "resources": ["site/naie/core/naie_extract_data.mjs"],

@@ -22,24 +22,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { ExamplesiteUriBuilder } from "./examplesite_uri_builder.mjs";
+import {
+  registerSubsectionForOptions,
+  registerOptionsGroup,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
+const citationOptionsGroup = {
+  category: "citation",
+  subcategory: "jstor",
+  tab: "citation",
+  subsection: "jstor",
+  options: [
+    {
+      optionName: "changeNamesToInitialCaps",
+      type: "checkbox",
+      label: "Change any person and place names in all caps to initial caps",
+      defaultValue: true,
+    },
+  ],
+};
 
-  var builder = new ExamplesiteUriBuilder();
+registerSubsectionForOptions("search", "jstor", "JSTOR");
+registerSiteSearchPopupOptionsGroup("jstor", 7, 7);
 
-  // call methods on builder here
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
-}
-
-export { buildSearchUrl };
+registerSubsectionForOptions("citation", "jstor", "JSTOR");
+registerOptionsGroup(citationOptionsGroup);

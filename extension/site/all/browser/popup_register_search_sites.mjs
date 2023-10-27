@@ -55,3 +55,4 @@ import "/site/wiewaswie/browser/wiewaswie_popup_search.mjs";
 import "/site/wikitree/browser/wikitree_popup_search.mjs";
 import "/site/wikipedia/browser/wikipedia_popup_search.mjs";
 import "/site/archive/browser/archive_popup_search.mjs";
+import "/site/jstor/browser/jstor_popup_search.mjs";

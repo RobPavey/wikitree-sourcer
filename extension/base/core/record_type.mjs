@@ -87,6 +87,7 @@ const RT = {
   Diary: `Diary`,
   Encyclopedia: `Encyclopedia`,
   Book: `Book`,
+  Journal: `Journal`,
 };
 
 const RecordSubtype = {

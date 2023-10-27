@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Journal''':\nM. Hamlin Cannon, ''A Pension Office Note on Brigham Young's Father''<br/>\nThe American Historical Review; Vol. 50, No. 1 (Oct., 1944), pp. 82-90 (9 pages); Published By: Oxford University Press<br/>\n[https://www.jstor.org/stable/1843569 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the journal ''The American Historical Review'' in October 1944.<ref>\n'''Journal''':\nM. Hamlin Cannon, ''A Pension Office Note on Brigham Young's Father''<br/>\nThe American Historical Review; Vol. 50, No. 1 (Oct., 1944), pp. 82-90 (9 pages); Published By: Oxford University Press<br/>\n[https://www.jstor.org/stable/1843569 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Journal''': M. Hamlin Cannon, ''A Pension Office Note on Brigham Young's Father''<br/>The American Historical Review; Vol. 50, No. 1 (Oct., 1944), pp. 82-90 (9 pages); Published By: Oxford University Press<br/>[https://www.jstor.org/stable/1843569 JSTOR] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

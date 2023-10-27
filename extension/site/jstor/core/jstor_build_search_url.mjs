@@ -22,14 +22,47 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { ExamplesiteUriBuilder } from "./examplesite_uri_builder.mjs";
+import { JstorUriBuilder } from "./jstor_uri_builder.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
 
-  var builder = new ExamplesiteUriBuilder();
+  var builder = new JstorUriBuilder();
 
-  // call methods on builder here
+  let searchString = "";
+
+  function addTerm(term) {
+    if (term) {
+      if (searchString) {
+        searchString += " ";
+      }
+      searchString += term;
+    }
+  }
+
+  let eventYear = gd.inferEventYear();
+
+  if (gd.bookTitle) {
+    addTerm(gd.bookTitle);
+    addTerm(eventYear);
+  } else if (gd.journalArticle) {
+    addTerm(gd.journalArticle);
+    addTerm(eventYear);
+  } else {
+    addTerm(gd.inferFullName());
+
+    let birthYear = gd.inferBirthYear();
+    let deathYear = gd.inferDeathYear();
+
+    if (birthYear || deathYear) {
+      addTerm(birthYear);
+      addTerm(deathYear);
+    } else {
+      addTerm(eventYear);
+    }
+  }
+
+  builder.addSearchQuery(searchString);
 
   const url = builder.getUri();
 

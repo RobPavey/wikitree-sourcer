@@ -22,24 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { ExamplesiteUriBuilder } from "./examplesite_uri_builder.mjs";
-
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new ExamplesiteUriBuilder();
-
-  // call methods on builder here
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
-}
-
-export { buildSearchUrl };
+siteContentInit(`jstor`, `site/jstor/core/jstor_extract_data.mjs`);

@@ -2324,6 +2324,29 @@ class NarrativeBuilder {
     this.narrative += ".";
   }
 
+  buildJournalString() {
+    let gd = this.eventGd;
+
+    let dateObj = gd.inferEventDateObj();
+
+    this.narrative += "This person was mentioned in ";
+
+    if (gd.journalName) {
+      this.narrative += "the journal ''" + gd.journalName + "''";
+    } else {
+      this.narrative += "a book";
+    }
+
+    if (dateObj) {
+      let formattedDate = this.formatDateObj(dateObj, true);
+      if (formattedDate) {
+        this.narrative += " " + formattedDate;
+      }
+    }
+
+    this.narrative += ".";
+  }
+
   buildDefaultString() {
     const narratives = [
       {
@@ -2520,6 +2543,11 @@ class NarrativeBuilder {
       case RT.Book: {
         this.buildFunction = this.buildBookString;
         this.optionsSubcategory = "book";
+        break;
+      }
+      case RT.Journal: {
+        this.buildFunction = this.buildJournalString;
+        this.optionsSubcategory = "journal";
         break;
       }
     }

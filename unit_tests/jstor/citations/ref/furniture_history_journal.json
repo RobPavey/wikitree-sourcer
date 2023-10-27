@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Journal''':\nPeter Brears, ''THE SIR HENRY SAVILE CHEST: PAINTED FURNITURE FROM YORKSHIRE''<br/>\nFurniture History; Vol. 39 (2003), pp. 65-70 (6 pages); Published By: The Furniture History Society<br/>\n[https://www.jstor.org/stable/23409273 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the journal ''Furniture History'' in 2003.<ref>\n'''Journal''':\nPeter Brears, ''THE SIR HENRY SAVILE CHEST: PAINTED FURNITURE FROM YORKSHIRE''<br/>\nFurniture History; Vol. 39 (2003), pp. 65-70 (6 pages); Published By: The Furniture History Society<br/>\n[https://www.jstor.org/stable/23409273 JSTOR] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Journal''': Peter Brears, ''THE SIR HENRY SAVILE CHEST: PAINTED FURNITURE FROM YORKSHIRE''<br/>Furniture History; Vol. 39 (2003), pp. 65-70 (6 pages); Published By: The Furniture History Society<br/>[https://www.jstor.org/stable/23409273 JSTOR] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

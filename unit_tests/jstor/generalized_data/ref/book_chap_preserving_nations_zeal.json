@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "jstor",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "name": "Anne-Françoise Morel"
+  },
+  "eventDate": {
+    "dateString": "2019"
+  },
+  "bookTitle": "The Quest for an Appropriate Past in Literature, Art and Architecture",
+  "bookAuthor": "Anne-Françoise Morel",
+  "hasValidData": true
+}

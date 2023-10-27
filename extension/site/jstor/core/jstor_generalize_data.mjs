@@ -22,24 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { ExamplesiteUriBuilder } from "./examplesite_uri_builder.mjs";
+import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
+import { JstorEdReader } from "./jstor_ed_reader.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-
-  var builder = new ExamplesiteUriBuilder();
-
-  // call methods on builder here
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
+// This function generalizes the data extracted from the page content.
+function generalizeData(input) {
+  let edReader = new JstorEdReader(input.extractedData);
+  return commonGeneralizeData("jstor", edReader);
 }
 
-export { buildSearchUrl };
+export { generalizeData };

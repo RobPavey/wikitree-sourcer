@@ -22,24 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { ExamplesiteUriBuilder } from "./examplesite_uri_builder.mjs";
+import { buildSearchUrl } from "../../extension/site/jstor/core/jstor_build_search_url.mjs";
+import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
+const regressionData = [
+  /*
+  {
+    caseName: "england_marriage_reg_handford-3_sc",
+    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
+    typeOfSearch: "SameCollection",
+  },
+  */
+];
 
-  var builder = new ExamplesiteUriBuilder();
-
-  // call methods on builder here
-
-  const url = builder.getUri();
-
-  //console.log("URL is " + url);
-
-  var result = {
-    url: url,
-  };
-
-  return result;
+async function runTests(testManager) {
+  await runBuildSearchUrlTests("jstor", buildSearchUrl, regressionData, testManager);
 }
 
-export { buildSearchUrl };
+export { runTests };
