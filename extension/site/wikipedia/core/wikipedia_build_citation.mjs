@@ -25,17 +25,26 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle = ed.title;
+  let articleTitle = ed.title;
+
+  if (articleTitle) {
+    builder.sourceTitle = 'Wikipedia contributors, "' + articleTitle + '"';
+  } else {
+    builder.sourceTitle = "Wikipedia contributors";
+  }
+
+  builder.putSourceTitleInQuotes = false;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Wikipedia, The Free Encyclopedia, Wikipedia contributors";
+  builder.sourceReference = "''Wikipedia, The Free Encyclopedia''";
 }
 
 function buildRecordLink(ed, gd, builder) {
   let options = builder.getOptions();
   let wikipediaUrl = ed.url;
   let linkOption = options.citation_wikipedia_citationLinkType;
+  let specialLinkTextOption = options.citation_wikipedia_citationSpecialLinkText;
 
   if (ed.permalink && (linkOption == "permalink" || linkOption == "plainPermalink")) {
     wikipediaUrl = ed.permalink;
@@ -46,9 +55,13 @@ function buildRecordLink(ed, gd, builder) {
     recordLink = "[" + wikipediaUrl + " Wikipedia]";
   } else if (linkOption == "special") {
     if (ed.title) {
-      recordLink = "[[Wikipedia:" + ed.title + "|" + ed.title + "]]";
+      if (specialLinkTextOption == "title") {
+        recordLink = "[[Wikipedia:" + ed.title + "|" + ed.title + "]]";
+      } else {
+        recordLink = "[[Wikipedia:" + ed.title + "|Wikipedia]]";
+      }
     } else {
-      recordLink = "[" + wikipediaUrl + " Wikipedia]";
+      recordLink = "[[Wikipedia:" + ed.title + "|Wikipedia]]";
     }
   }
 

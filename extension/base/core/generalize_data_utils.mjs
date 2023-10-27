@@ -3260,6 +3260,11 @@ class GeneralizedData {
         type: RT.Journal,
         defaultTitle: "Journal",
       },
+      {
+        type: RT.Encyclopedia,
+        defaultTitle: "Encyclopedia",
+        sourceMatches: [{ title: "Wikipedia entry", matches: ["wikipedia"] }],
+      },
     ];
 
     function lookup(gd, collectionTitle, table) {
@@ -3292,6 +3297,16 @@ class GeneralizedData {
                       title = year + " " + title;
                     }
                   }
+                  return title;
+                }
+              }
+            }
+          }
+          if (obj.sourceMatches) {
+            for (let sourceMatch of obj.sourceMatches) {
+              for (let match of sourceMatch.matches) {
+                if (gd.sourceOfData == match) {
+                  let title = sourceMatch.title;
                   return title;
                 }
               }

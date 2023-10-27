@@ -60,6 +60,22 @@ const citationOptionsGroup = {
       defaultValue: "special",
     },
     {
+      optionName: "citationSpecialLinkText",
+      type: "select",
+      label: "If using a special WikiTree Wikipedia link, what text to display",
+      values: [
+        {
+          value: "title",
+          text: "Wikipedia entry title",
+        },
+        {
+          value: "wikpedia",
+          text: "'Wikipedia'",
+        },
+      ],
+      defaultValue: "wikpedia",
+    },
+    {
       optionName: "buildLinkType",
       type: "select",
       label: "Link type to use when building link (not citation)",
