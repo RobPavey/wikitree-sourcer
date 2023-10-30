@@ -24,6 +24,7 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
@@ -33,6 +34,7 @@ const citationOptionsGroup = {
   subcategory: "wikipedia",
   tab: "citation",
   subsection: "wikipedia",
+  subheading: "citation",
   options: [
     {
       optionName: "citationLinkType",
@@ -45,7 +47,7 @@ const citationOptionsGroup = {
         },
         {
           value: "external",
-          text: "Standard WikiTree External link (single brackets)",
+          text: "Standard WikiTree External link (single brackets) to page URL",
         },
         { value: "permalink", text: "Permalink to the current version of the page" },
         {
@@ -57,24 +59,48 @@ const citationOptionsGroup = {
           text: "Plain visible permalink URL to current version of page",
         },
       ],
-      defaultValue: "special",
+      defaultValue: "permalink",
     },
     {
-      optionName: "citationSpecialLinkText",
+      optionName: "citationLinkLocation",
       type: "select",
-      label: "If using a special WikiTree Wikipedia link (in citation), what text to display",
+      label: "If not using a visble URL, where to put link",
       values: [
         {
           value: "title",
-          text: "Wikipedia entry title",
+          text: "The source title",
         },
         {
-          value: "wikpedia",
-          text: "'Wikipedia'",
+          value: "reference",
+          text: "With 'Wikipedia, The Free Encyclopedia'",
+        },
+        {
+          value: "afterWikipedia",
+          text: "As separate link with text 'Wikipedia'",
+        },
+        {
+          value: "afterWikipediaEntry",
+          text: "As separate link with text 'Wikipedia Entry'",
         },
       ],
-      defaultValue: "wikpedia",
+      defaultValue: "reference",
     },
+    {
+      optionName: "citationUseItalics",
+      type: "checkbox",
+      label: "Put the text 'Wikipedia, The Free Encyclopedia' in italics",
+      defaultValue: true,
+    },
+  ],
+};
+
+const buildLinkOptionsGroup = {
+  category: "citation",
+  subcategory: "wikipedia",
+  tab: "citation",
+  subsection: "wikipedia",
+  subheading: "link",
+  options: [
     {
       optionName: "buildLinkType",
       type: "select",
@@ -98,6 +124,7 @@ const citationOptionsGroup = {
       label: "Extra text to include when building a link (not a citation)",
       values: [
         { value: "none", text: "No extra text" },
+        { value: "wikipedia", text: "'Wikipedia : <link>'" },
         {
           value: "seeOnW",
           text: "'See: <link> on Wikipedia'",
@@ -116,4 +143,7 @@ registerSubsectionForOptions("search", "wikipedia", "Wikipedia");
 registerSiteSearchPopupOptionsGroup("wikipedia", 10, 10);
 
 registerSubsectionForOptions("citation", "wikipedia", "Wikipedia");
+registerSubheadingForOptions("citation", "wikipedia", "citation", "When building a citation");
 registerOptionsGroup(citationOptionsGroup);
+registerSubheadingForOptions("citation", "wikipedia", "link", "When building a link");
+registerOptionsGroup(buildLinkOptionsGroup);

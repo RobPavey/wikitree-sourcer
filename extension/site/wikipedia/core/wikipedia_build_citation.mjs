@@ -24,11 +24,52 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
+function getLink(ed, gd, builder, linkText) {
+  let options = builder.getOptions();
+  let wikipediaUrl = ed.url;
+  let linkOption = options.citation_wikipedia_citationLinkType;
+
+  if (ed.permalink && (linkOption == "permalink" || linkOption == "plainPermalink")) {
+    wikipediaUrl = ed.permalink;
+  }
+
+  let recordLink = wikipediaUrl;
+  if (linkOption == "permalink" || linkOption == "external") {
+    recordLink = "[" + wikipediaUrl + " " + linkText + "]";
+  } else if (linkOption == "special") {
+    if (linkText) {
+      recordLink = "[[Wikipedia:" + ed.title + "|" + linkText + "]]";
+    } else {
+      recordLink = "[[Wikipedia:" + ed.title + "|Wikipedia]]";
+    }
+  }
+
+  return recordLink;
+}
+
+function getWtfe(options) {
+  let italicsOption = options.citation_wikipedia_citationUseItalics;
+
+  if (italicsOption) {
+    return "''Wikipedia, The Free Encyclopedia''";
+  } else {
+    return "Wikipedia, The Free Encyclopedia";
+  }
+}
+
 function buildSourceTitle(ed, gd, builder) {
   let articleTitle = ed.title;
+  let options = builder.getOptions();
+  let linkOption = options.citation_wikipedia_citationLinkType;
+  let linkLocationOption = options.citation_wikipedia_citationLinkLocation;
 
   if (articleTitle) {
-    builder.sourceTitle = 'Wikipedia contributors, "' + articleTitle + '"';
+    if (linkLocationOption == "title" && linkOption != "plainSimple" && linkOption != "plainPermalink") {
+      let linkText = getLink(ed, gd, builder, articleTitle);
+      builder.sourceTitle = 'Wikipedia contributors, "' + linkText + '"';
+    } else {
+      builder.sourceTitle = 'Wikipedia contributors, "' + articleTitle + '"';
+    }
   } else {
     builder.sourceTitle = "Wikipedia contributors";
   }
@@ -37,35 +78,37 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "''Wikipedia, The Free Encyclopedia''";
+  let options = builder.getOptions();
+  let linkOption = options.citation_wikipedia_citationLinkType;
+  let linkLocationOption = options.citation_wikipedia_citationLinkLocation;
+
+  if (
+    linkOption == "plainSimple" ||
+    linkOption == "plainPermalink" ||
+    linkLocationOption == "afterWikipedia" ||
+    linkLocationOption == "afterWikipediaEntry"
+  ) {
+    builder.sourceReference = getWtfe(options);
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
   let options = builder.getOptions();
   let wikipediaUrl = ed.url;
   let linkOption = options.citation_wikipedia_citationLinkType;
-  let specialLinkTextOption = options.citation_wikipedia_citationSpecialLinkText;
+  let linkLocationOption = options.citation_wikipedia_citationLinkLocation;
 
-  if (ed.permalink && (linkOption == "permalink" || linkOption == "plainPermalink")) {
-    wikipediaUrl = ed.permalink;
+  if (linkOption == "plainSimple" || linkOption == "plainPermalink") {
+    builder.recordLinkOrTemplate = getLink(ed, gd, builder, "");
+  } else if (linkLocationOption == "reference") {
+    builder.recordLinkOrTemplate = getLink(ed, gd, builder, getWtfe(options));
+  } else if (linkLocationOption == "title") {
+    builder.recordLinkOrTemplate = getWtfe(options);
+  } else if (linkLocationOption == "afterWikipedia") {
+    builder.recordLinkOrTemplate = getLink(ed, gd, builder, "Wikipedia");
+  } else if (linkLocationOption == "afterWikipediaEntry") {
+    builder.recordLinkOrTemplate = getLink(ed, gd, builder, "Wikipedia Entry");
   }
-
-  let recordLink = wikipediaUrl;
-  if (linkOption == "permalink" || linkOption == "external") {
-    recordLink = "[" + wikipediaUrl + " Wikipedia]";
-  } else if (linkOption == "special") {
-    if (ed.title) {
-      if (specialLinkTextOption == "title") {
-        recordLink = "[[Wikipedia:" + ed.title + "|" + ed.title + "]]";
-      } else {
-        recordLink = "[[Wikipedia:" + ed.title + "|Wikipedia]]";
-      }
-    } else {
-      recordLink = "[[Wikipedia:" + ed.title + "|Wikipedia]]";
-    }
-  }
-
-  builder.recordLinkOrTemplate = recordLink;
 }
 
 function buildCoreCitation(ed, gd, builder) {

@@ -2347,6 +2347,20 @@ class NarrativeBuilder {
     this.narrative += ".";
   }
 
+  buildEncyclopediaString() {
+    let gd = this.eventGd;
+
+    this.narrative += "This person was mentioned in ";
+
+    if (gd.sourceOfData == "wikipedia") {
+      this.narrative += "a Wikipedia entry";
+    } else {
+      this.narrative += "an encyclopedia entry";
+    }
+
+    this.narrative += ".";
+  }
+
   buildDefaultString() {
     const narratives = [
       {
@@ -2398,7 +2412,6 @@ class NarrativeBuilder {
       { recordType: RT.Heraldry, string: "was in a heraldic record" },
       { recordType: RT.GovernmentDocument, string: "was in a government document" },
       { recordType: RT.Diary, string: "was in a diary entry" },
-      { recordType: RT.Encyclopedia, string: "was in an encyclopedia entry" },
     ];
 
     let gd = this.eventGd;
@@ -2548,6 +2561,11 @@ class NarrativeBuilder {
       case RT.Journal: {
         this.buildFunction = this.buildJournalString;
         this.optionsSubcategory = "journal";
+        break;
+      }
+      case RT.Encyclopedia: {
+        this.buildFunction = this.buildEncyclopediaString;
+        this.optionsSubcategory = "encyclopedia";
         break;
       }
     }

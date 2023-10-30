@@ -34,7 +34,9 @@ async function buildWikiTreeLinkText(linkString) {
   let text = linkString;
   let textOption = options.citation_wikipedia_linkSurroundingText;
 
-  if (textOption == "seeOnW") {
+  if (textOption == "wikipedia") {
+    text = "Wikipedia: " + linkString;
+  } else if (textOption == "seeOnW") {
     text = "See: " + linkString + " on Wikipedia";
   } else if (textOption == "seeOnWForMoreInfo") {
     text = "See: " + linkString + " on Wikipedia for more information";
@@ -82,7 +84,7 @@ async function buildWikiTreeSpecialLink(data) {
 
 async function buildWikiTreeLink(data) {
   let ed = data.extractedData;
-  let linkOption = options.citation_wikipedia_citationLinkType;
+  let linkOption = options.citation_wikipedia_buildLinkType;
 
   if (linkOption == "special") {
     buildWikiTreeSpecialLink(data);

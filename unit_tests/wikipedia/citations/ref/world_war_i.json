@@ -1,74 +1,122 @@
 {
   "std_inline": {
-    "citation": "<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[[Wikipedia:World War I|World War I]] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in an encyclopedia entry.<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[[Wikipedia:World War I|World War I]] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* \"World War I\"<br/>Wikipedia, The Free Encyclopedia, Wikipedia contributors<br/>[[Wikipedia:World War I|World War I]] (accessed 6 May 2021)",
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"World War I\"<br/>[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)",
     "type": "source"
   },
   "linkPermalink_inline": {
-    "citation": "<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "linkPermalink_narrative": {
-    "citation": "This person was in an encyclopedia entry.<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "linkPermalink_source": {
-    "citation": "* \"World War I\"<br/>Wikipedia, The Free Encyclopedia, Wikipedia contributors<br/>[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia] (accessed 6 May 2021)",
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"World War I\"<br/>[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)",
     "type": "source"
   },
   "linkExternal_inline": {
-    "citation": "<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[https://en.wikipedia.org/wiki/World_War_I Wikipedia] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[https://en.wikipedia.org/wiki/World_War_I ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "linkExternal_narrative": {
-    "citation": "This person was in an encyclopedia entry.<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[https://en.wikipedia.org/wiki/World_War_I Wikipedia] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[https://en.wikipedia.org/wiki/World_War_I ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "linkExternal_source": {
-    "citation": "* \"World War I\"<br/>Wikipedia, The Free Encyclopedia, Wikipedia contributors<br/>[https://en.wikipedia.org/wiki/World_War_I Wikipedia] (accessed 6 May 2021)",
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"World War I\"<br/>[https://en.wikipedia.org/wiki/World_War_I ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)",
     "type": "source"
   },
   "linkSpecial_inline": {
-    "citation": "<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[[Wikipedia:World War I|World War I]] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[[Wikipedia:World War I|''Wikipedia, The Free Encyclopedia'']] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "linkSpecial_narrative": {
-    "citation": "This person was in an encyclopedia entry.<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\n[[Wikipedia:World War I|World War I]] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[[Wikipedia:World War I|''Wikipedia, The Free Encyclopedia'']] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "linkSpecial_source": {
-    "citation": "* \"World War I\"<br/>Wikipedia, The Free Encyclopedia, Wikipedia contributors<br/>[[Wikipedia:World War I|World War I]] (accessed 6 May 2021)",
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"World War I\"<br/>[[Wikipedia:World War I|''Wikipedia, The Free Encyclopedia'']] (accessed 6 May 2021)",
     "type": "source"
   },
   "linkPlainPermalink_inline": {
-    "citation": "<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\nhttps://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n''Wikipedia, The Free Encyclopedia''<br/>\nhttps://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "linkPlainPermalink_narrative": {
-    "citation": "This person was in an encyclopedia entry.<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\nhttps://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n''Wikipedia, The Free Encyclopedia''<br/>\nhttps://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "linkPlainPermalink_source": {
-    "citation": "* \"World War I\"<br/>Wikipedia, The Free Encyclopedia, Wikipedia contributors<br/>https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 (accessed 6 May 2021)",
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"World War I\"<br/>''Wikipedia, The Free Encyclopedia''<br/>https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 (accessed 6 May 2021)",
     "type": "source"
   },
   "linkPlainSimple_inline": {
-    "citation": "<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\nhttps://en.wikipedia.org/wiki/World_War_I (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n''Wikipedia, The Free Encyclopedia''<br/>\nhttps://en.wikipedia.org/wiki/World_War_I (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "linkPlainSimple_narrative": {
-    "citation": "This person was in an encyclopedia entry.<ref>\n\"World War I\"<br/>\nWikipedia, The Free Encyclopedia, Wikipedia contributors<br/>\nhttps://en.wikipedia.org/wiki/World_War_I (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n''Wikipedia, The Free Encyclopedia''<br/>\nhttps://en.wikipedia.org/wiki/World_War_I (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "linkPlainSimple_source": {
-    "citation": "* \"World War I\"<br/>Wikipedia, The Free Encyclopedia, Wikipedia contributors<br/>https://en.wikipedia.org/wiki/World_War_I (accessed 6 May 2021)",
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"World War I\"<br/>''Wikipedia, The Free Encyclopedia''<br/>https://en.wikipedia.org/wiki/World_War_I (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "linkLocationTitle_inline": {
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 World War I]\"<br/>\n''Wikipedia, The Free Encyclopedia'' (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "linkLocationTitle_narrative": {
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 World War I]\"<br/>\n''Wikipedia, The Free Encyclopedia'' (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "linkLocationTitle_source": {
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 World War I]\"<br/>''Wikipedia, The Free Encyclopedia'' (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "linkLocationReference_inline": {
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "linkLocationReference_narrative": {
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "linkLocationReference_source": {
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"World War I\"<br/>[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "linkLocationAfterW_inline": {
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n''Wikipedia, The Free Encyclopedia''<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "linkLocationAfterW_narrative": {
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n''Wikipedia, The Free Encyclopedia''<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "linkLocationAfterW_source": {
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"World War I\"<br/>''Wikipedia, The Free Encyclopedia''<br/>[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "linkLocationAfterWE_inline": {
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n''Wikipedia, The Free Encyclopedia''<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia Entry] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "linkLocationAfterWE_narrative": {
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"World War I\"<br/>\n''Wikipedia, The Free Encyclopedia''<br/>\n[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia Entry] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "linkLocationAfterWE_source": {
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"World War I\"<br/>''Wikipedia, The Free Encyclopedia''<br/>[https://en.wikipedia.org/w/index.php?title=World_War_I&oldid=1180666851 Wikipedia Entry] (accessed 6 May 2021)",
     "type": "source"
   }
 }

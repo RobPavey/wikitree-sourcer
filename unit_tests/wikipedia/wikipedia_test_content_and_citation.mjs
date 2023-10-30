@@ -65,6 +65,30 @@ const regressionData = [
           citation_wikipedia_citationLinkType: "plainSimple",
         },
       },
+      {
+        variantName: "linkLocationTitle",
+        optionOverrides: {
+          citation_wikipedia_citationLinkLocation: "title",
+        },
+      },
+      {
+        variantName: "linkLocationReference",
+        optionOverrides: {
+          citation_wikipedia_citationLinkLocation: "reference",
+        },
+      },
+      {
+        variantName: "linkLocationAfterW",
+        optionOverrides: {
+          citation_wikipedia_citationLinkLocation: "afterWikipedia",
+        },
+      },
+      {
+        variantName: "linkLocationAfterWE",
+        optionOverrides: {
+          citation_wikipedia_citationLinkLocation: "afterWikipediaEntry",
+        },
+      },
     ],
   },
 ];
