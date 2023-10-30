@@ -100,37 +100,17 @@ function determineRecordType(extractedData) {
     {
       type: RT.Birth,
       matches: ["Birth Index", "Births Index"],
-      requiredData: ["Birth Date"],
-    },
-    {
-      type: RT.Birth,
-      matches: ["Birth Index", "Births Index"],
-      requiredData: ["Birth Place"],
+      requiredData: [["Birth Date"], ["Birth Place"]],
     },
     {
       type: RT.BirthRegistration,
       matches: ["Birth Index", "Births Index"],
-      requiredData: ["Birth Registration Date"],
-    },
-    {
-      type: RT.BirthRegistration,
-      matches: ["Birth Index", "Births Index"],
-      requiredData: ["Birth Registration Place"],
-    },
-    {
-      type: RT.BirthRegistration,
-      matches: ["Birth Index", "Births Index"],
-      requiredData: ["Registration Date"],
-    },
-    {
-      type: RT.BirthRegistration,
-      matches: ["Birth Index", "Births Index"],
-      requiredData: ["Registration Year"],
-    },
-    {
-      type: RT.BirthRegistration,
-      matches: ["Birth Index", "Births Index"],
-      requiredData: ["Registration Place"],
+      requiredData: [
+        ["Birth Registration Place"],
+        ["Registration Date"],
+        ["Registration Year"],
+        ["Registration Place"],
+      ],
     },
     {
       type: RT.Birth,
@@ -139,22 +119,22 @@ function determineRecordType(extractedData) {
     {
       type: RT.Baptism,
       matches: ["Births and Christenings", "Births and Baptisms", "Church of England Baptisms", "Baptism Index"],
-      requiredData: ["Baptism Date"],
+      requiredData: [["Baptism Date"]],
     },
     {
       type: RT.Birth,
       matches: ["Births and Christenings", "Births and Baptisms", "Canada Births", "Canada, Births", "Birth Registers"],
-      requiredData: ["Birth Date"],
+      requiredData: [["Birth Date"]],
     },
     {
       type: RT.Birth,
       matches: ["Millennium File", "Vital Extracts", "Membership of The Church of Jesus Christ of Latter-day Saints"],
-      requiredData: ["Birth Date"],
+      requiredData: [["Birth Date"]],
     },
     {
       type: RT.Birth,
       matches: ["Births"],
-      requiredData: ["Birth Date", "Birth Place", "Gender"],
+      requiredData: [["Birth Date", "Birth Place", "Gender"]],
     },
     {
       type: RT.BirthOrBaptism,
@@ -193,57 +173,44 @@ function determineRecordType(extractedData) {
     {
       type: RT.Burial,
       matches: ["Deaths and Burials", "Cemetery", "Funeral Home", "Gravestone"],
-      requiredData: ["Burial Date"],
+      requiredData: [["Burial Date"]],
     },
     {
       type: RT.Cremation,
       matches: ["Cemetery Records"],
-      requiredData: ["Cremation Date"],
+      requiredData: [["Cremation Date"]],
     },
     {
       type: RT.Burial,
       matches: ["Historical Cemetery Commission Index", "Headstone Transcriptions", "Cemetery", "Funeral"],
-      requiredData: ["Burial Place"],
+      requiredData: [["Burial Place"]],
     },
     {
       type: RT.Death,
       matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
-      requiredData: ["Death Date", "Death Place"],
+      requiredData: [["Death Date", "Death Place"]],
     },
     {
       type: RT.DeathRegistration,
       matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
-      requiredData: ["Death Registration Place"],
-    },
-    {
-      type: RT.DeathRegistration,
-      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
-      requiredData: ["Registration Place"],
-    },
-    {
-      type: RT.DeathRegistration,
-      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
-      requiredData: ["Registration Date"],
-    },
-    {
-      type: RT.DeathRegistration,
-      matches: ["Deaths", "Death Records", "Death Index", "Deaths Index"],
-      requiredData: ["Registration Year"],
+      requiredData: [
+        ["Death Registration Place"],
+        ["Registration Place"],
+        ["Death Registration Date"],
+        ["Registration Date"],
+        ["Death Registration Year"],
+        ["Registration Year"],
+      ],
     },
     {
       type: RT.DeathRegistration,
       matches: ["Deaths", "Death Records", "Scotland, Local Heritage Index"],
-      requiredData: ["Date of Registration"],
-    },
-    {
-      type: RT.DeathRegistration,
-      matches: ["Deaths", "Death Records", "Scotland, Local Heritage Index"],
-      requiredData: ["Registration district"],
+      requiredData: [["Date of Registration"], ["Registration district"]],
     },
     {
       type: RT.Death,
       matches: ["Deaths", "Death Records", "Scotland, Local Heritage Index"],
-      requiredData: ["Death Date"],
+      requiredData: [["Death Date"]],
     },
     {
       type: RT.Death,
@@ -334,6 +301,7 @@ function determineRecordType(extractedData) {
         "War Pension",
         "Royal Naval Reserve Service Records",
         "Marine Corps Muster",
+        "Army Roll of Honour",
       ],
     },
     { type: RT.Military, matches: ["War"], secondMatches: ["Pension"] },
@@ -387,22 +355,22 @@ function determineRecordType(extractedData) {
     {
       type: RT.Certificate,
       matches: ["Certificate"],
-      requiredData: ["Issue Date"],
+      requiredData: [["Issue Date"]],
     },
     {
       type: RT.Residence,
       matches: ["Residents", "U.S., Public Records Index"],
-      requiredData: ["Residence Place"],
+      requiredData: [["Residence Place"]],
     },
     {
       type: RT.Residence,
       matches: ["U.S., Public Records Index"],
-      requiredData: ["Residence"],
+      requiredData: [["Residence"]],
     },
     {
       type: RT.Residence,
       matches: ["U.S., Public Records Index"],
-      requiredData: ["Residence Date"],
+      requiredData: [["Residence Date"]],
     },
     {
       type: RT.FamHistOrPedigree,
@@ -417,35 +385,35 @@ function determineRecordType(extractedData) {
       // https://www.ancestry.com/discoveryui-content/view/154307070:61039
       type: RT.Baptism,
       matches: ["Catholic Parish Registers"],
-      requiredData: ["Name", "Child", "Gender"],
+      requiredData: [["Name", "Child", "Gender"]],
     },
     {
       type: RT.MarriageRegistration,
       matches: ["Marriage Index"],
-      requiredData: ["Marriage Registration Place", "Spouse"],
+      requiredData: [["Marriage Registration Place", "Spouse"]],
     },
     {
       type: RT.Marriage,
       matches: ["Marriage Index"],
-      requiredData: ["Spouse"],
+      requiredData: [["Spouse"]],
     },
     {
       type: RT.Birth,
       matches: ["American Genealogical-Biographical Index"],
-      requiredData: ["Birth Date"],
+      requiredData: [["Birth Date"]],
     },
     {
       type: RT.Military,
       matches: ["Veteran", "Soldier", "Military", "Armed"],
-      requiredData: ["Rank"],
+      requiredData: [["Rank"]],
     },
     {
       type: RT.Military,
       matches: ["Veterans", "Soldier", "Military", "Armed"],
-      requiredData: ["Muster In Date"],
+      requiredData: [["Muster In Date"]],
     },
     { type: RT.PassportApplication, matches: ["Passport Application"] },
-    { type: RT.Pension, matches: ["Pension Index"] },
+    { type: RT.Pension, matches: [["Pension Index"]] },
   ];
 
   //console.log("in determineRecordType");
@@ -498,15 +466,17 @@ function determineRecordType(extractedData) {
       if (!titleMatch.requiredData) {
         return titleMatch.type;
       } else if (extractedData.recordData) {
-        let match = true;
-        for (let fieldName of titleMatch.requiredData) {
-          if (!extractedData.recordData[fieldName]) {
-            match = false;
-            break;
+        for (let requiredDataSet of titleMatch.requiredData) {
+          let match = true;
+          for (let fieldName of requiredDataSet) {
+            if (!extractedData.recordData[fieldName]) {
+              match = false;
+              break;
+            }
           }
-        }
-        if (match) {
-          return titleMatch.type;
+          if (match) {
+            return titleMatch.type;
+          }
         }
       }
     }
@@ -548,7 +518,14 @@ function determineRoleGivenRecordType(extractedData, result) {
     // if there is a baptism date etc then this is likely a record for this person not a
     // child or spouse. There could be a birth date though - for the parent of the child
     // e.g.: https://www.ancestry.com/discoveryui-content/view/300065623:8703?ssrc=pt&tid=180320731&pid=412419830925
-    let value = getCleanValueForRecordDataList(extractedData, ["Baptism Date", "Christening Date"]);
+    let value = getCleanValueForRecordDataList(extractedData, [
+      "Baptism Date",
+      "Christening Date",
+      "Birth Date",
+      "Baptism Year",
+      "Christening Year",
+      "Birth Year",
+    ]);
     if (!value) {
       if (extractedData.recordData["Child"]) {
         // some family records have all parents and children of the primary person
@@ -565,8 +542,14 @@ function determineRoleGivenRecordType(extractedData, result) {
     let value = getCleanValueForRecordDataList(extractedData, [
       "Death Date",
       "Burial Date",
+      "Death Registration Date",
+      "Registration Date",
       "Cremation Date",
+      "Death Year",
       "Burial Year",
+      "Cremation Year",
+      "Death Registration Year",
+      "Registration Year",
     ]);
     if (!value) {
       if (extractedData.recordData["Child"]) {
@@ -588,7 +571,14 @@ function determineRoleGivenRecordType(extractedData, result) {
   } else if (recordType == RT.Marriage || recordType == RT.MarriageRegistration) {
     // if there is a date etc then this is likely a record for this person not a
     // child or spouse
-    let value = getCleanValueForRecordDataList(extractedData, ["Marriage Date", "Allegation Date"]);
+    let value = getCleanValueForRecordDataList(extractedData, [
+      "Marriage Date",
+      "Marriage Banns Date",
+      "Allegation Date",
+      "Marriage Year",
+      "Marriage Banns Year",
+      "Allegation Year",
+    ]);
     if (!value) {
       if (extractedData.recordData["Child"]) {
         if (!extractedData.recordData["Father"] && !extractedData.recordData["Mother"]) {
@@ -1801,6 +1791,8 @@ function generalizeDataGivenRecordType(ed, result) {
         [
           "Event Date",
           "Date",
+          "Death Date",
+          "Casualty Date",
           "Enlistment Date",
           "Service Start Date",
           "First Service Date",
@@ -1816,22 +1808,25 @@ function generalizeDataGivenRecordType(ed, result) {
     );
     result.setBirthDate(getCleanValueForRecordDataList(ed, ["Birth Date"], "date"));
     result.setDeathDate(getCleanValueForRecordDataList(ed, ["Death Date"], "date"));
-    result.setEventYear(
-      getCleanValueForRecordDataList(ed, [
-        "Event Year",
-        "Year",
-        "Enlistment Year",
-        "Service Year",
-        "Year Range",
-        "Year range",
-      ])
-    );
+    if (!result.eventDate) {
+      result.setEventYear(
+        getCleanValueForRecordDataList(ed, [
+          "Event Year",
+          "Year",
+          "Enlistment Year",
+          "Service Year",
+          "Year Range",
+          "Year range",
+        ])
+      );
+    }
     result.setEventPlace(
       getCleanValueForRecordDataList(ed, [
         "Event Place",
         "Death Place",
         "Place",
         "Location",
+        "Theatre of War",
         "Enlistment Place",
         "Residence",
         "Residence Place",
@@ -1846,6 +1841,10 @@ function generalizeDataGivenRecordType(ed, result) {
       ])
     );
 
+    let enlistmentDate = getCleanValueForRecordDataList(ed, ["Enlistment Date"], "date");
+    if (enlistmentDate) {
+      result.enlistmentDate = enlistmentDate;
+    }
     let dischargeDate = getCleanValueForRecordDataList(ed, ["Discharge Date"], "date");
     if (dischargeDate) {
       result.dischargeDate = dischargeDate;
@@ -1859,7 +1858,16 @@ function generalizeDataGivenRecordType(ed, result) {
     if (rank) {
       result.rank = rank;
     }
-    let unit = getCleanValueForRecordDataList(ed, ["Corps, Regiment or Unit", "Regiment", "Military Unit", "Unit"]);
+    let unit = getCleanValueForRecordDataList(ed, [
+      "Corps, Regiment or Unit",
+      "Regiment",
+      "Casualty Regiment",
+      "Enlistment Regiment",
+      "Military Unit",
+      "Unit",
+      "Casualty Unit",
+      "Enlistment Unit",
+    ]);
     if (unit) {
       result.unit = unit;
     }

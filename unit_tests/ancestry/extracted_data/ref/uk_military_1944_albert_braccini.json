@@ -1,0 +1,28 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/84274:1604?ssrc=pt&tid=180461776&pid=202343229183",
+  "pageType": "record",
+  "dbId": "1604",
+  "recordId": "84274",
+  "ancestryTemplate": "{{Ancestry Record|1604|84274}}",
+  "domain": "com",
+  "titleName": "Albert Braccini",
+  "titleCollection": "UK, Army Roll of Honour, 1939-1945",
+  "recordData": {
+    "Name": "Albert Braccini [A Braccini]",
+    "Rank": "Serjeant",
+    "Birth Place": "Fife",
+    "Residence Date": "1941",
+    "Residence": "Dundee",
+    "Casualty Date": "19 Sep 1944",
+    "Regimental Number": "2756087",
+    "Enlistment Regiment": "Black Watch (Royal Highland Regiment)",
+    "Enlistment Unit": "Infantry",
+    "Theatre of War": "Italy",
+    "Casualty Regiment": "London Scottish (Donside)",
+    "Casualty Unit": "Infantry"
+  },
+  "sourceCitation": "The National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press",
+  "sourceInformation": "Ancestry.com. UK, Army Roll of Honour, 1939-1945 [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2009. Original data: England. The National Archives. “War Office: Roll of Honour, Second World War.” Database. Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304). CD Rom. Naval & Military Press.",
+  "originalData": "England. The National Archives. “War Office: Roll of Honour, Second World War.” Database. Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304). CD Rom. Naval & Military Press.",
+  "sourceDescription": "This database contains the Roll of Honour – a listing of British Army casualties from World War II (WWII). Learn more..."
+}

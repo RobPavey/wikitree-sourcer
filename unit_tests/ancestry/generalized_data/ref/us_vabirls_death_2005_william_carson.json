@@ -7,7 +7,7 @@
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "5 Jun 1947"
+    "dateString": "3 May 2005"
   },
   "birthDate": {
     "dateString": "21 Dec 1929"
@@ -15,6 +15,7 @@
   "deathDate": {
     "dateString": "3 May 2005"
   },
+  "enlistmentDate": "5 Jun 1947",
   "dischargeDate": "9 May 1949",
   "militaryBranch": "NAVY",
   "collectionData": {

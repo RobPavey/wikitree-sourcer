@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death Registration''': \"Victoria, Australia, Death Index, 1840-1991\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>\nFrederick Blood death 1879 in Victoria, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>\nFrederick Blood death 1879 in Victoria, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death Registration''': \"Victoria, Australia, Death Index, 1840-1991\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>Frederick Blood death 1879 in Victoria, Australia.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>\nName: Frederick Blood; Death Registration Date: 1879; Death Registration Place: Victoria, Australia; Father: Richard Blood; Mother: Haddon; Spouse: Bridget Heir.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>\nName: Frederick Blood; Death Registration Date: 1879; Death Registration Place: Victoria, Australia; Father: Richard Blood; Mother: Haddon; Spouse: Bridget Heir.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death Registration''': \"Victoria, Australia, Death Index, 1840-1991\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>Name: Frederick Blood; Death Registration Date: 1879; Death Registration Place: Victoria, Australia; Father: Richard Blood; Mother: Haddon; Spouse: Bridget Heir.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Frederick Blood\n|-\n| Death Registration Date || 1879\n|-\n| Death Registration Place || Victoria, Australia\n|-\n| Father || Richard Blood\n|-\n| Mother || Haddon\n|-\n| Spouse || Bridget Heir\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Frederick Blood\n|-\n| Death Registration Date || 1879\n|-\n| Death Registration Place || Victoria, Australia\n|-\n| Father || Richard Blood\n|-\n| Mother || Haddon\n|-\n| Spouse || Bridget Heir\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death Registration''': \"Victoria, Australia, Death Index, 1840-1991\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>Name: Frederick Blood; Death Registration Date: 1879; Death Registration Place: Victoria, Australia; Father: Richard Blood; Mother: Haddon; Spouse: Bridget Heir.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Victoria, Australia, Death Index, 1840-1991,\" database, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Frederick Blood death 1879 in Victoria, Australia; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\"Victoria, Australia, Death Index, 1840-1991,\" database, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Frederick Blood death 1879 in Victoria, Australia; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Victoria, Australia, Death Index, 1840-1991,\" database, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Frederick Blood death 1879 in Victoria, Australia; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death Registration'':\n\"Victoria, Australia, Death Index, 1840-1991\", database, \nThe Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907, \n({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), \nName: Frederick Blood; Death Registration Date: 1879; Death Registration Place: Victoria, Australia; Father: Richard Blood; Mother: Haddon; Spouse: Bridget Heir.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\n''Death Registration'':\n\"Victoria, Australia, Death Index, 1840-1991\", database, \nThe Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907, \n({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), \nName: Frederick Blood; Death Registration Date: 1879; Death Registration Place: Victoria, Australia; Father: Richard Blood; Mother: Haddon; Spouse: Bridget Heir.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death Registration'': \"Victoria, Australia, Death Index, 1840-1991\", database, The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Name: Frederick Blood; Death Registration Date: 1879; Death Registration Place: Victoria, Australia; Father: Richard Blood; Mother: Haddon; Spouse: Bridget Heir.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, Army Roll of Honour, 1939-1945\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>\n{{Ancestry Record|1604|84274}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Albert was in a military record on 19 September 1944 in Italy. They were in the London Scottish (Donside) (service number 2756087).<ref>\n'''Military''':\n\"UK, Army Roll of Honour, 1939-1945\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>\n{{Ancestry Record|1604|84274}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Military''': \"UK, Army Roll of Honour, 1939-1945\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>{{Ancestry Record|1604|84274}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, Army Roll of Honour, 1939-1945\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>\n{{Ancestry Record|1604|84274}} (accessed 6 May 2021)<br/>\nName: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Albert was in a military record on 19 September 1944 in Italy. They were in the London Scottish (Donside) (service number 2756087).<ref>\n'''Military''':\n\"UK, Army Roll of Honour, 1939-1945\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>\n{{Ancestry Record|1604|84274}} (accessed 6 May 2021)<br/>\nName: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Military''': \"UK, Army Roll of Honour, 1939-1945\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>{{Ancestry Record|1604|84274}} (accessed 6 May 2021)<br/>Name: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, Army Roll of Honour, 1939-1945\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>\n{{Ancestry Record|1604|84274}} (accessed 6 May 2021)<br/>\nName: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Albert was in a military record on 19 September 1944 in Italy. They were in the London Scottish (Donside) (service number 2756087).<ref>\n'''Military''':\n\"UK, Army Roll of Honour, 1939-1945\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>\n{{Ancestry Record|1604|84274}} (accessed 6 May 2021)<br/>\nName: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Military''': \"UK, Army Roll of Honour, 1939-1945\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>{{Ancestry Record|1604|84274}} (accessed 6 May 2021)<br/>Name: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, Army Roll of Honour, 1939-1945\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>\n{{Ancestry Record|1604|84274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Albert Braccini [A Braccini]\n|-\n| Rank || Serjeant\n|-\n| Birth Place || Fife\n|-\n| Residence Date || 1941\n|-\n| Residence || Dundee\n|-\n| Casualty Date || 19 Sep 1944\n|-\n| Regimental Number || 2756087\n|-\n| Enlistment Regiment || Black Watch (Royal Highland Regiment)\n|-\n| Enlistment Unit || Infantry\n|-\n| Theatre of War || Italy\n|-\n| Casualty Regiment || London Scottish (Donside)\n|-\n| Casualty Unit || Infantry\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Albert was in a military record on 19 September 1944 in Italy. They were in the London Scottish (Donside) (service number 2756087).<ref>\n'''Military''':\n\"UK, Army Roll of Honour, 1939-1945\"<br/>\nThe National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>\n{{Ancestry Record|1604|84274}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Albert Braccini [A Braccini]\n|-\n| Rank || Serjeant\n|-\n| Birth Place || Fife\n|-\n| Residence Date || 1941\n|-\n| Residence || Dundee\n|-\n| Casualty Date || 19 Sep 1944\n|-\n| Regimental Number || 2756087\n|-\n| Enlistment Regiment || Black Watch (Royal Highland Regiment)\n|-\n| Enlistment Unit || Infantry\n|-\n| Theatre of War || Italy\n|-\n| Casualty Regiment || London Scottish (Donside)\n|-\n| Casualty Unit || Infantry\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Military''': \"UK, Army Roll of Honour, 1939-1945\"<br/>The National Archives of the UK (TNA); Kew, Surrey, England; War Office: Roll of Honour, Second World War.; Publication Title: Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304); Publication Format: CD Rom; Publisher: Naval & Military Press<br/>{{Ancestry Record|1604|84274}} (accessed 6 May 2021)<br/>Name: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"UK, Army Roll of Honour, 1939-1945,\" database, ({{Ancestry Record|1604|84274}} : accessed 6 May 2021), Name Albert Braccini [A Braccini], Rank Serjeant, Birth Place Fife, Residence Date 1941, Residence Dundee, Casualty Date 19 Sep 1944, Regimental Number 2756087, Enlistment Regiment Black Watch (Royal Highland Regiment), Enlistment Unit Infantry, Theatre of War Italy, Casualty Regiment London Scottish (Donside), Casualty Unit Infantry; citing The National Archives of the UK (TNA), Kew, Surrey, England, War Office Roll of Honour, Second World War., Publication Title Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304), Publication Format CD Rom, Publisher Naval & Military Press.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Albert was in a military record on 19 September 1944 in Italy. They were in the London Scottish (Donside) (service number 2756087).<ref>\"UK, Army Roll of Honour, 1939-1945,\" database, ({{Ancestry Record|1604|84274}} : accessed 6 May 2021), Name Albert Braccini [A Braccini], Rank Serjeant, Birth Place Fife, Residence Date 1941, Residence Dundee, Casualty Date 19 Sep 1944, Regimental Number 2756087, Enlistment Regiment Black Watch (Royal Highland Regiment), Enlistment Unit Infantry, Theatre of War Italy, Casualty Regiment London Scottish (Donside), Casualty Unit Infantry; citing The National Archives of the UK (TNA), Kew, Surrey, England, War Office Roll of Honour, Second World War., Publication Title Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304), Publication Format CD Rom, Publisher Naval & Military Press.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"UK, Army Roll of Honour, 1939-1945,\" database, ({{Ancestry Record|1604|84274}} : accessed 6 May 2021), Name Albert Braccini [A Braccini], Rank Serjeant, Birth Place Fife, Residence Date 1941, Residence Dundee, Casualty Date 19 Sep 1944, Regimental Number 2756087, Enlistment Regiment Black Watch (Royal Highland Regiment), Enlistment Unit Infantry, Theatre of War Italy, Casualty Regiment London Scottish (Donside), Casualty Unit Infantry; citing The National Archives of the UK (TNA), Kew, Surrey, England, War Office Roll of Honour, Second World War., Publication Title Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304), Publication Format CD Rom, Publisher Naval & Military Press.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Military'':\n\"UK, Army Roll of Honour, 1939-1945\", database, \nThe National Archives of the UK (TNA), Kew, Surrey, England, War Office Roll of Honour, Second World War., Publication Title Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304), Publication Format CD Rom, Publisher Naval & Military Press, \n({{Ancestry Record|1604|84274}} : accessed 6 May 2021), \nName: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Albert was in a military record on 19 September 1944 in Italy. They were in the London Scottish (Donside) (service number 2756087).<ref>\n''Military'':\n\"UK, Army Roll of Honour, 1939-1945\", database, \nThe National Archives of the UK (TNA), Kew, Surrey, England, War Office Roll of Honour, Second World War., Publication Title Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304), Publication Format CD Rom, Publisher Naval & Military Press, \n({{Ancestry Record|1604|84274}} : accessed 6 May 2021), \nName: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Military'': \"UK, Army Roll of Honour, 1939-1945\", database, The National Archives of the UK (TNA), Kew, Surrey, England, War Office Roll of Honour, Second World War., Publication Title Army Roll of Honour 1939-45. Soldiers Died in World War Two. (WO304), Publication Format CD Rom, Publisher Naval & Military Press, ({{Ancestry Record|1604|84274}} : accessed 6 May 2021), Name: Albert Braccini [A Braccini]; Rank: Serjeant; Birth Place: Fife; Residence Date: 1941; Residence: Dundee; Casualty Date: 19 Sep 1944; Regimental Number: 2756087; Enlistment Regiment: Black Watch (Royal Highland Regiment); Enlistment Unit: Infantry; Theatre of War: Italy; Casualty Regiment: London Scottish (Donside); Casualty Unit: Infantry.",
+    "type": "source"
+  }
+}

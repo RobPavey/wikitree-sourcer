@@ -1,0 +1,28 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1181988:61650",
+  "pageType": "record",
+  "dbId": "61650",
+  "recordId": "1181988",
+  "ancestryTemplate": "{{Ancestry Record|61650|1181988}}",
+  "domain": "com",
+  "titleName": "Frederick Blood",
+  "titleCollection": "Victoria, Australia, Death Index, 1840-1991",
+  "recordData": {
+    "Name": "Frederick Blood",
+    "Death Registration Date": "1879",
+    "Death Registration Place": "Victoria, Australia",
+    "Father": "Richard Blood",
+    "Mother": "Haddon",
+    "Spouse": "Bridget Heir",
+    "Reference Number": "3907"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61650&h=61181988&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61650&h=76181988&indiv=try&viewrecord=1&r=an",
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61650&h=46181988&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceCitation": "The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records",
+  "sourceInformation": "Ancestry.com. Victoria, Australia, Death Index, 1840-1991 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2018. Original data: Victoria, Australia, Death Index, 1840-1991. The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia.",
+  "originalData": "Victoria, Australia, Death Index, 1840-1991. The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia.",
+  "sourceDescription": "This collection contains an index of death records from the state of Victoria, Australia between 1840 and 1991. Learn more..."
+}
