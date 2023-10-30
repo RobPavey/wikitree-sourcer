@@ -33,14 +33,7 @@ const citationOptionsGroup = {
   subcategory: "hathi",
   tab: "citation",
   subsection: "hathi",
-  options: [
-    {
-      optionName: "changeNamesToInitialCaps",
-      type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
-      defaultValue: true,
-    },
-  ],
+  options: [],
 };
 
 registerSubsectionForOptions("search", "hathi", "HathiTrust");

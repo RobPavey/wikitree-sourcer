@@ -33,14 +33,7 @@ const citationOptionsGroup = {
   subcategory: "archive",
   tab: "citation",
   subsection: "archive",
-  options: [
-    {
-      optionName: "changeNamesToInitialCaps",
-      type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
-      defaultValue: true,
-    },
-  ],
+  options: [],
 };
 
 registerSubsectionForOptions("search", "archive", "Internet Archive");
