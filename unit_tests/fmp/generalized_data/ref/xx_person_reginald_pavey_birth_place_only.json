@@ -1,0 +1,22 @@
+{
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Reginald John"
+  },
+  "birthPlace": {
+    "placeString": "Endon, Staffordshire, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Arthur Eli Pavey"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Emmeline May Brain"
+      }
+    }
+  },
+  "hasValidData": true
+}
