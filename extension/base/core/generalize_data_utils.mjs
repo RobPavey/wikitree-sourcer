@@ -3070,6 +3070,7 @@ class GeneralizedData {
         type: RT.Census,
         defaultTitle: "Census",
         addYear: true,
+        subtypes: [{ title: "LDS Census", subtype: RecordSubtype.LdsCensus }],
       },
       {
         type: RT.NonpopulationCensus,

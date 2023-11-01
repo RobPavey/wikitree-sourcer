@@ -94,6 +94,7 @@ const RecordSubtype = {
   Banns: `Banns`,
   MarriageOrBanns: `MarriageOrBanns`,
   MemberRegistration: `MemberRegistration`,
+  LdsCensus: `LdsCensus`,
 };
 
 const Role = {
