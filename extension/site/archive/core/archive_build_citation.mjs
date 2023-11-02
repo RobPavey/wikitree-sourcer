@@ -50,11 +50,13 @@ function buildSourceTitle(ed, gd, builder) {
 
 function buildSourceReference(ed, gd, builder) {
   function addTerm(title, value) {
-    if (value.endsWith(".")) {
-      value = value.substring(0, value.length - 1);
-    }
+    if (value) {
+      if (value.endsWith(".")) {
+        value = value.substring(0, value.length - 1);
+      }
 
-    builder.addSourceReferenceField(title, value);
+      builder.addSourceReferenceField(title, value);
+    }
   }
   addTerm("", ed.metadata["Publisher"]);
   addTerm("", ed.metadata["Publication date"]);
