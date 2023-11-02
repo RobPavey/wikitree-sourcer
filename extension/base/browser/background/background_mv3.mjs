@@ -29,11 +29,11 @@ import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 
 function setPopup(tab, popupPage) {
   //console.log("WikiTree Sourcer, background script (MV2), set popup on tab " + tab + " to: " + popupPage);
-  chrome.browserAction.setPopup({ tabId: tab, popup: popupPage });
+  chrome.action.setPopup({ tabId: tab, popup: popupPage });
 }
 
 function setIcon(tab, iconPath) {
-  chrome.browserAction.setIcon({ tabId: tab, path: iconPath });
+  chrome.action.setIcon({ tabId: tab, path: iconPath });
 }
 
 // Listen for messages (from the popup script mostly)

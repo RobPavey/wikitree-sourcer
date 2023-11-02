@@ -2,9 +2,8 @@
   "name": "WikiTree Sourcer",
   "version": "1.11.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
-  "permissions": [
-    "storage",
-    "contextMenus",
+  "permissions": ["storage", "contextMenus"],
+  "host_permissions": [
     "*://*.ancestry.com/*",
     "*://*.ancestry.co.uk/*",
     "*://*.ancestry.ca/*",
@@ -23,7 +22,7 @@
     "page": "base/browser/background/background_safari.html",
     "persistent": false
   },
-  "browser_action": {
+  "action": {
     "default_popup": "base/browser/popup/popup.html",
     "default_icon": {
       "16": "images/wts_inactive_16.png",
@@ -233,34 +232,152 @@
     "128": "images/wikitree_sourcer128.png"
   },
   "web_accessible_resources": [
-    "site/wikitree/core/wikitree_extract_data.mjs",
-    "site/ancestry/core/ancestry_extract_data.mjs",
-    "site/archive/core/archive_extract_data.mjs",
-    "site/baclac/core/baclac_extract_data.mjs",
-    "site/bg/core/bg_extract_data.mjs",
-    "site/opccorn/core/opccorn_extract_data.mjs",
-    "site/cwgc/core/cwgc_extract_data.mjs",
-    "site/fg/core/fg_extract_data.mjs",
-    "site/fmp/core/fmp_extract_data.mjs",
-    "site/freebmd/core/freebmd_extract_data.mjs",
-    "site/freecen/core/freecen_extract_data.mjs",
-    "site/freereg/core/freereg_extract_data.mjs",
-    "site/fs/core/fs_extract_data.mjs",
-    "site/geneteka/core/geneteka_extract_data.mjs",
-    "site/gbooks/core/gbooks_extract_data.mjs",
-    "site/gro/core/gro_extract_data.mjs",
-    "site/hathi/core/hathi_extract_data.mjs",
-    "site/irishg/core/irishg_extract_data.mjs",
-    "site/jstor/core/jstor_extract_data.mjs",
-    "site/naie/core/naie_extract_data.mjs",
-    "site/nli/core/nli_extract_data.mjs",
-    "site/np/core/np_extract_data.mjs",
-    "site/openarch/core/openarch_extract_data.mjs",
-    "site/ppnz/core/ppnz_extract_data.mjs",
-    "site/scotp/core/scotp_extract_data.mjs",
-    "site/trove/core/trove_extract_data.mjs",
-    "site/wiewaswie/core/wiewaswie_extract_data.mjs",
-    "site/wikipedia/core/wikipedia_extract_data.mjs"
+    {
+      "resources": ["site/wikitree/core/wikitree_extract_data.mjs"],
+      "matches": ["*://*.wikitree.com/*"]
+    },
+    {
+      "resources": ["site/ancestry/core/ancestry_extract_data.mjs"],
+      "matches": [
+        "*://*.ancestry.com/*",
+        "*://*.ancestry.co.uk/*",
+        "*://*.ancestry.ca/*",
+        "*://*.ancestry.com.au/*",
+        "*://*.ancestry.de/*",
+        "*://*.ancestry.it/*",
+        "*://*.ancestry.fr/*",
+        "*://*.ancestry.se/*",
+        "*://*.ancestry.mx/*",
+        "*://*.ancestrylibrary.com/*",
+        "*://*.ancestrylibraryedition.co.uk/*",
+        "*://*.ancestrylibrary.ca/*",
+        "*://*.ancestrylibrary.com.au/*"
+      ]
+    },
+    {
+      "resources": ["site/archive/core/archive_extract_data.mjs"],
+      "matches": ["*://archive.org/*"]
+    },
+    {
+      "resources": ["site/baclac/core/baclac_extract_data.mjs"],
+      "matches": ["*://*.bac-lac.gc.ca/*"]
+    },
+    {
+      "resources": ["site/bg/core/bg_extract_data.mjs"],
+      "matches": ["*://*.billiongraves.com/*"]
+    },
+    {
+      "resources": ["site/opccorn/core/opccorn_extract_data.mjs"],
+      "matches": ["*://*.cornwall-opc-database.org/*"]
+    },
+    {
+      "resources": ["site/cwgc/core/cwgc_extract_data.mjs"],
+      "matches": ["*://*.cwgc.org/*"]
+    },
+    {
+      "resources": ["site/fg/core/fg_extract_data.mjs"],
+      "matches": ["*://www.findagrave.com/*"]
+    },
+    {
+      "resources": ["site/fmp/core/fmp_extract_data.mjs"],
+      "matches": [
+        "*://*.findmypast.com/*",
+        "*://*.findmypast.co.uk/*",
+        "*://*.findmypast.ie/*",
+        "*://*.findmypast.com.au/*",
+        "*://www-findmypast-co-uk.nls.idm.oclc.org/*"
+      ]
+    },
+    {
+      "resources": ["site/freebmd/core/freebmd_extract_data.mjs"],
+      "matches": ["*://www.freebmd.org.uk/*"]
+    },
+    {
+      "resources": ["site/freecen/core/freecen_extract_data.mjs"],
+      "matches": ["*://www.freecen.org.uk/*"]
+    },
+    {
+      "resources": ["site/freereg/core/freereg_extract_data.mjs"],
+      "matches": ["*://www.freereg.org.uk/*"]
+    },
+    {
+      "resources": ["site/fs/core/fs_extract_data.mjs"],
+      "matches": ["*://www.familysearch.org/*"]
+    },
+    {
+      "resources": ["site/geneteka/core/geneteka_extract_data.mjs"],
+      "matches": ["*://geneteka.genealodzy.pl/*"]
+    },
+    {
+      "resources": ["site/gbooks/core/gbooks_extract_data.mjs"],
+      "matches": [
+        "*://*.google.com/*",
+        "*://*.google.co.uk/*",
+        "*://*.google.ca/*",
+        "*://*.google.com.au/*",
+        "*://*.google.de/*",
+        "*://*.google.it/*",
+        "*://*.google.fr/*",
+        "*://*.google.se/*",
+        "*://*.google.mx/*"
+      ]
+    },
+    {
+      "resources": ["site/gro/core/gro_extract_data.mjs"],
+      "matches": ["*://www.gro.gov.uk/*"]
+    },
+    {
+      "resources": ["site/hathi/core/hathi_extract_data.mjs"],
+      "matches": ["*://*.hathitrust.org/*"]
+    },
+    {
+      "resources": ["site/irishg/core/irishg_extract_data.mjs"],
+      "matches": ["*://*.irishgenealogy.ie/*"]
+    },
+    {
+      "resources": ["site/jstor/core/jstor_extract_data.mjs"],
+      "matches": ["*://*.jstor.org/*"]
+    },
+    {
+      "resources": ["site/naie/core/naie_extract_data.mjs"],
+      "matches": ["*://www.census.nationalarchives.ie/*"]
+    },
+    {
+      "resources": ["site/nli/core/nli_extract_data.mjs"],
+      "matches": ["*://*.nli.ie/*"]
+    },
+    {
+      "resources": ["site/np/core/np_extract_data.mjs"],
+      "matches": ["*://*.newspapers.com/*"]
+    },
+    {
+      "resources": ["site/openarch/core/openarch_extract_data.mjs"],
+      "matches": ["*://*.openarchieven.nl/*"]
+    },
+    {
+      "resources": ["site/ppnz/core/ppnz_extract_data.mjs"],
+      "matches": ["*://paperspast.natlib.govt.nz/*"]
+    },
+    {
+      "resources": ["site/psuk/core/psuk_extract_data.mjs"],
+      "matches": ["*://probatesearch.service.gov.uk/*"]
+    },
+    {
+      "resources": ["site/scotp/core/scotp_extract_data.mjs"],
+      "matches": ["*://www.scotlandspeople.gov.uk/*"]
+    },
+    {
+      "resources": ["site/trove/core/trove_extract_data.mjs"],
+      "matches": ["*://trove.nla.gov.au/*"]
+    },
+    {
+      "resources": ["site/wiewaswie/core/wiewaswie_extract_data.mjs"],
+      "matches": ["*://www.wiewaswie.nl/*"]
+    },
+    {
+      "resources": ["site/wikipedia/core/wikipedia_extract_data.mjs"],
+      "matches": ["*://*.wikipedia.org/*"]
+    }
   ],
-  "manifest_version": 2
+  "manifest_version": 3
 }
