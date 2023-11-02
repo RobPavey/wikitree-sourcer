@@ -22,8 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { getSyncStorageItems } from "/base/browser/common/browser_compat.mjs";
-
 // This module contains code to work around the size quota's on chrome.storage.sync
 // the chrome limit QUOTA_BYTES_PER_ITEM is 8192
 // As of 1 Sep 2022 the defaultOptions size was 8177 and it then went over
@@ -63,7 +61,7 @@ async function loadOptions() {
     //console.log("loadOptions: total sync storage in use is : " + bytesInUse);
   });
 
-  let itemsNew = await getSyncStorageItems([
+  let itemsNew = await chrome.storage.sync.get([
     "options_search",
     "options_citation",
     "options_narrative",
@@ -95,7 +93,7 @@ async function loadOptions() {
       loadedOptions.options_version = 5; // there was a bug in versions 4/5 where options_version wasn't saved
     }
   } else {
-    let itemsOld = await getSyncStorageItems(["options"]);
+    let itemsOld = await chrome.storage.sync.get(["options"]);
     if (itemsOld.options) {
       loadedOptions = itemsOld.options;
     }

@@ -19,8 +19,8 @@
     "*://*.ancestrylibrary.com.au/*"
   ],
   "background": {
-    "page": "base/browser/background/background_safari.html",
-    "persistent": false
+    "service_worker": "base/browser/background/background_mv3.mjs",
+    "type": "module"
   },
   "action": {
     "default_popup": "base/browser/popup/popup.html",

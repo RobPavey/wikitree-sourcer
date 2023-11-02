@@ -26,39 +26,14 @@ SOFTWARE.
 // Browser compatibility
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function getTabDetails(tabId) {
-  // while chrome.tabs.get exists on Firefox it does not return a promise so await doesn't work
-  // meanwhile the browser global does not exist in Chrome
-  //if (typeof browser === "undefined") {
-  return await chrome.tabs.get(tabId);
-  //} else {
-  //  return await browser.tabs.get(tabId);
-  //}
-}
-
 async function getLocalStorageItem(key) {
   let item = undefined;
   let items = undefined;
-  //if (typeof browser === "undefined") {
   items = await chrome.storage.local.get(key);
-  // } else {
-  //  items = await browser.storage.local.get(key);
-  //}
-
   if (items && items[key]) {
     item = items[key];
   }
   return item;
 }
 
-async function getSyncStorageItems(keyList) {
-  let items = undefined;
-  //if (typeof browser === "undefined") {
-  items = await chrome.storage.sync.get(keyList);
-  //} else {
-  //  items = await browser.storage.sync.get(keyList);
-  //}
-  return items;
-}
-
-export { getTabDetails, getLocalStorageItem, getSyncStorageItems };
+export { getLocalStorageItem };
