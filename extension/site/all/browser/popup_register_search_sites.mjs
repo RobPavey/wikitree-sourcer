@@ -28,6 +28,7 @@ SOFTWARE.
 // so the order of imports here does not affect that - unless two sites have the same
 // priority set, in that case the order of import would probably control their order
 import "/site/ancestry/browser/ancestry_popup_search.mjs";
+import "/site/archive/browser/archive_popup_search.mjs";
 import "/site/baclac/browser/baclac_popup_search.mjs";
 import "/site/bg/browser/bg_popup_search.mjs";
 import "/site/cwgc/browser/cwgc_popup_search.mjs";
@@ -42,6 +43,7 @@ import "/site/gbooks/browser/gbooks_popup_search.mjs";
 import "/site/gro/browser/gro_popup_search.mjs";
 import "/site/hathi/browser/hathi_popup_search.mjs";
 import "/site/irishg/browser/irishg_popup_search.mjs";
+import "/site/jstor/browser/jstor_popup_search.mjs";
 import "/site/naie/browser/naie_popup_search.mjs";
 import "/site/nli/browser/nli_popup_search.mjs";
 import "/site/np/browser/np_popup_search.mjs";
@@ -54,5 +56,3 @@ import "/site/trove/browser/trove_popup_search.mjs";
 import "/site/wiewaswie/browser/wiewaswie_popup_search.mjs";
 import "/site/wikitree/browser/wikitree_popup_search.mjs";
 import "/site/wikipedia/browser/wikipedia_popup_search.mjs";
-import "/site/archive/browser/archive_popup_search.mjs";
-import "/site/jstor/browser/jstor_popup_search.mjs";

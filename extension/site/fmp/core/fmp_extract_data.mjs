@@ -368,6 +368,46 @@ function extractProfileData(document, result) {
     return parentName;
   }
 
+  function extractPlaceNameFromInfoString(stringAfterYear) {
+    if (!stringAfterYear) {
+      return "";
+    }
+    // get place
+    let placeString = stringAfterYear.trim();
+    if (placeString) {
+      if (placeString.startsWith("at age ")) {
+        let atInIndex = placeString.indexOf(" at in ");
+        if (atInIndex != -1) {
+          placeString = placeString.substring(atInIndex + 7).trim();
+        } else {
+          let inIndex = placeString.indexOf(" in ");
+          if (inIndex != -1) {
+            placeString = placeString.substring(inIndex + 4).trim();
+          } else {
+            let atIndex = placeString.indexOf(" at ");
+            if (atIndex != -1) {
+              placeString = placeString.substring(atIndex + 4).trim();
+            } else {
+              placeString = "";
+            }
+          }
+        }
+      } else if (placeString.startsWith("at in ")) {
+        placeString = placeString.substring(6);
+      } else if (placeString.startsWith("in ")) {
+        placeString = placeString.substring(3);
+      } else if (placeString.startsWith("at ")) {
+        placeString = placeString.substring(3);
+      }
+
+      if (placeString.endsWith(".")) {
+        placeString = placeString.substring(0, placeString.length - 1).trim();
+      }
+    }
+
+    return placeString;
+  }
+
   let container = document.querySelector("#maincontent > div > div.container.ng-scope");
 
   if (!container) {
@@ -398,7 +438,6 @@ function extractProfileData(document, result) {
       // Captain of the British steamship Mineola • Born 1869, Pill, Easton In Gordano, Somerset • Died 1947, Paignton, Devon, England
       let birthInfo = "";
       let deathInfo = "";
-      let startIndex = 0;
       let sepIndex = info.indexOf("•");
       if (sepIndex != -1) {
         if (!info.startsWith("Born") && !info.startsWith("Died")) {
@@ -415,25 +454,44 @@ function extractProfileData(document, result) {
         if (info.startsWith("Born")) {
           birthInfo = info.trim();
         } else if (info.startsWith("Died")) {
-          birthInfo = info.trim();
+          deathInfo = info.trim();
         }
       }
 
       if (birthInfo) {
-        let commaIndex = birthInfo.indexOf(",");
-        if (commaIndex != -1) {
-          let birthYear = birthInfo.substring(0, commaIndex).trim();
-          let birthPlace = birthInfo.substring(commaIndex + 1).trim();
+        // It could be of any of these fowms:
+        // Born 1885, Pancras, London
+        // Born 1885
+        // Born Pancras, London
+        if (/^Born \d\d\d\d$/.test(birthInfo)) {
+          // year only
+          let year = birthInfo.replace(/^Born (\d+)$/, "$1");
+          if (year && birthInfo != year) {
+            result.birthYear = year;
+          }
+        } else if (/^Born \d\d\d\d\,.+$/.test(birthInfo)) {
+          // year and place
+          let commaIndex = birthInfo.indexOf(",");
+          if (commaIndex != -1) {
+            let birthYear = birthInfo.substring(0, commaIndex).trim();
+            let birthPlace = birthInfo.substring(commaIndex + 1).trim();
 
-          if (birthYear) {
-            let year = birthYear.replace(/^Born (\d+)$/, "$1");
-            if (year && birthYear != year) {
-              result.birthYear = year;
+            if (birthYear) {
+              let year = birthYear.replace(/^Born (\d+)$/, "$1");
+              if (year && birthYear != year) {
+                result.birthYear = year;
+              }
+            }
+
+            if (birthPlace) {
+              result.birthPlace = birthPlace;
             }
           }
-
-          if (birthPlace) {
-            result.birthPlace = birthPlace;
+        } else {
+          // place only
+          let place = birthInfo.replace(/^Born (.+)$/, "$1");
+          if (place && place != birthInfo) {
+            result.birthPlace = place;
           }
         }
       }
@@ -453,6 +511,42 @@ function extractProfileData(document, result) {
 
           if (deathPlace) {
             result.deathPlace = deathPlace;
+          }
+        }
+
+        // It could be of any of these fowms:
+        // Died 1885, Pancras, London
+        // Died 1885
+        // Died Pancras, London
+        if (/^Died \d\d\d\d$/.test(deathInfo)) {
+          // year only
+          let year = deathInfo.replace(/^Died (\d+)$/, "$1");
+          if (year && deathInfo != year) {
+            result.deathYear = year;
+          }
+        } else if (/^Died \d\d\d\d\,.+$/.test(deathInfo)) {
+          // year and place
+          let commaIndex = deathInfo.indexOf(",");
+          if (commaIndex != -1) {
+            let deathYear = deathInfo.substring(0, commaIndex).trim();
+            let deathPlace = deathInfo.substring(commaIndex + 1).trim();
+
+            if (deathYear) {
+              let year = deathYear.replace(/^Died (\d+)$/, "$1");
+              if (year && deathYear != year) {
+                result.deathYear = year;
+              }
+            }
+
+            if (deathPlace) {
+              result.deathPlace = deathPlace;
+            }
+          }
+        } else {
+          // place only
+          let place = deathInfo.replace(/^Died (.+)$/, "$1");
+          if (place && place != deathInfo) {
+            result.deathPlace = place;
           }
         }
       }
@@ -481,9 +575,41 @@ function extractProfileData(document, result) {
       let birthIconNode = eventNode.querySelector("i.icon-birth");
       let deathIconNode = eventNode.querySelector("i.icon-death");
       let marriageIconNode = eventNode.querySelector("i.icon-marriage");
+      let eventHeading = eventNode.querySelector("h3.timeline-event__heading");
       let eventYearNode = eventNode.querySelector("strong.timeline-event__year");
       let eventYear = "";
-      if (eventYearNode) {
+      let eventDate = ""; // another way to get full date but not currently needed
+      if (eventHeading) {
+        let heading = eventHeading.textContent;
+        if (heading) {
+          let date = "";
+          if (birthIconNode) {
+            date = heading.replace(/^Born\s+(.+)$/, "$1");
+          } else if (deathIconNode) {
+            date = heading.replace(/^Died\s+(.+)$/, "$1");
+          }
+          if (date && date != heading) {
+            date = date.trim();
+            if (date.length == 4) {
+              eventYear = date;
+            } else {
+              if (/^\d\d?\s+\w\w\w\s+\d\d\d\d$/.test(date)) {
+                eventDate = date;
+                let year = date.replace(/^\d\d?\s+\w\w\w\s+(\d\d\d\d)$/, "$1");
+                if (year && year != date) {
+                  eventYear = year;
+                }
+              } else if (/^\w\w\w\s+\d\d\d\d$/.test(date)) {
+                eventDate = date;
+                let year = date.replace(/^\w\w\w\s+(\d\d\d\d)$/, "$1");
+                if (year && year != date) {
+                  eventYear = year;
+                }
+              }
+            }
+          }
+        }
+      } else if (eventYearNode) {
         eventYear = eventYearNode.textContent.trim();
       } else if (birthIconNode) {
         eventYear = result.birthYear;
@@ -511,16 +637,7 @@ function extractProfileData(document, result) {
                   }
                 }
 
-                // get place
-                let placeString = info.substring(yearIndex + eventYear.length).trim();
-                if (placeString) {
-                  if (placeString.startsWith("in ")) {
-                    placeString = placeString.substring(3);
-                  }
-                  if (placeString.endsWith(".")) {
-                    placeString = placeString.substring(0, placeString.length - 1).trim();
-                  }
-                }
+                let placeString = extractPlaceNameFromInfoString(info.substring(yearIndex + eventYear.length));
 
                 if (dateString && dateString.length > result.birthYear.length) {
                   result.birthDate = dateString;
@@ -543,24 +660,7 @@ function extractProfileData(document, result) {
                   }
                 }
 
-                // get place
-                let placeString = info.substring(yearIndex + eventYear.length).trim();
-                if (placeString) {
-                  if (placeString.startsWith("in ")) {
-                    placeString = placeString.substring(3);
-                  } else if (placeString.startsWith("at age ")) {
-                    let inIndex = placeString.indexOf(" in ");
-                    if (inIndex != -1) {
-                      placeString = placeString.substring(inIndex + 4).trim();
-                    } else {
-                      placeString = "";
-                    }
-                  }
-
-                  if (placeString.endsWith(".")) {
-                    placeString = placeString.substring(0, placeString.length - 1).trim();
-                  }
-                }
+                let placeString = extractPlaceNameFromInfoString(info.substring(yearIndex + eventYear.length));
 
                 if (dateString && dateString.length > result.deathYear.length) {
                   result.deathDate = dateString;
@@ -592,16 +692,7 @@ function extractProfileData(document, result) {
                       dateString = datePart + " " + eventYear;
                     }
 
-                    // get place
-                    let placeString = info.substring(yearIndex + eventYear.length).trim();
-                    if (placeString) {
-                      if (placeString.startsWith("in ")) {
-                        placeString = placeString.substring(3);
-                      }
-                      if (placeString.endsWith(".")) {
-                        placeString = placeString.substring(0, placeString.length - 1).trim();
-                      }
-                    }
+                    let placeString = extractPlaceNameFromInfoString(info.substring(yearIndex + eventYear.length));
 
                     let spouse = {};
                     spouse.name = spouseName;

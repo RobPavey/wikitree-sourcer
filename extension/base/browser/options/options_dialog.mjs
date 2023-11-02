@@ -22,10 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { replaceCachedOptions, options } from "./options_loader.mjs";
+import { options } from "./options_loader.mjs";
 import { getDefaultOptions } from "../../core/options/options_database.mjs";
 import { saveOptions } from "./options_storage.mjs";
-import { restoreOptions } from "./options_save_restore.mjs";
+import { restoreOptionsGivenOptions } from "./options_save_restore.mjs";
 
 function getBrowserName() {
   if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
@@ -62,9 +62,8 @@ function isSafariOnMacOs() {
 }
 
 function resetOptions() {
-  replaceCachedOptions(getDefaultOptions());
+  restoreOptionsGivenOptions(getDefaultOptions());
   saveOptions(options);
-  restoreOptions();
 
   let dialogElement = document.getElementById("dialog");
   if (dialogElement) {
@@ -153,8 +152,8 @@ function doLoadOptionsFromFile() {
                   //console.log(mergedOptions);
 
                   try {
+                    restoreOptionsGivenOptions(mergedOptions);
                     saveOptions(mergedOptions);
-                    restoreOptions();
 
                     let dialogElement = document.getElementById("dialog");
                     if (dialogElement) {

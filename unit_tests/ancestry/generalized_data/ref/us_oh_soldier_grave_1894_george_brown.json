@@ -6,7 +6,7 @@
     "name": "George W Brown"
   },
   "eventDate": {
-    "dateString": "13 Jun 1861"
+    "dateString": "21 Nov 1894"
   },
   "birthDate": {
     "dateString": "15 Nov 1815"
@@ -17,6 +17,7 @@
   "eventPlace": {
     "placeString": "Center Twp"
   },
+  "enlistmentDate": "13 Jun 1861",
   "dischargeDate": "16 Aug 1862",
   "rank": "Private",
   "militaryBranch": "Army",

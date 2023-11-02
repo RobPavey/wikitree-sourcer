@@ -33,14 +33,7 @@ const citationOptionsGroup = {
   subcategory: "jstor",
   tab: "citation",
   subsection: "jstor",
-  options: [
-    {
-      optionName: "changeNamesToInitialCaps",
-      type: "checkbox",
-      label: "Change any person and place names in all caps to initial caps",
-      defaultValue: true,
-    },
-  ],
+  options: [],
 };
 
 registerSubsectionForOptions("search", "jstor", "JSTOR");

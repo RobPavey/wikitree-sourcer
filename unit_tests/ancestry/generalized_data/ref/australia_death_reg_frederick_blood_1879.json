@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Frederick Blood"
+  },
+  "eventDate": {
+    "dateString": "1879"
+  },
+  "deathDate": {
+    "dateString": "1879"
+  },
+  "registrationDistrict": "Victoria",
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "lastNameAtDeath": "Blood",
+  "collectionData": {
+    "id": "61650"
+  },
+  "hasValidData": true
+}

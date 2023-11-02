@@ -405,6 +405,11 @@ const regressionData = [
     url: "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile",
   },
   {
+    // This is sent to me by Allan Entwisthle, URL is fake
+    caseName: "xx_person_joseph_rose_1839",
+    url: "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile",
+  },
+  {
     // This is from a public tree that I do not own
     caseName: "xx_person_joseph_rose_1858_1927",
     url: "https://www.findmypast.co.uk/search-family-tree/transcript?id=1615406188&ref=3481B4D0-F26F-4D46-BF33-37AD8DDCB559",
@@ -412,6 +417,11 @@ const regressionData = [
   {
     caseName: "xx_person_jwe_dickens_1869_1947",
     url: "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964321/profile",
+  },
+  {
+    // created as a test - has only birth place (no date)
+    caseName: "xx_person_reginald_pavey_birth_place_only",
+    url: "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1850399906/profile",
   },
 ];
 

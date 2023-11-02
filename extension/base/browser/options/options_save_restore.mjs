@@ -27,31 +27,35 @@ import { optionsRegistry } from "../../core/options/options_database.mjs";
 import { getDefaultOptions } from "../../core/options/options_database.mjs";
 import { saveOptions } from "./options_storage.mjs";
 
+function restoreOptionsGivenOptions(inputOptions) {
+  replaceCachedOptions(inputOptions);
+  for (let optionsGroup of optionsRegistry.optionsGroups) {
+    let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
+
+    for (let option of optionsGroup.options) {
+      let fullOptionName = optionNamePrefix + option.optionName;
+
+      let element = document.getElementById(fullOptionName);
+      if (!element) {
+        console.log("restoreOptions: no element found with id: " + fullOptionName);
+        continue;
+      }
+
+      if (option.type == "checkbox") {
+        element.checked = options[fullOptionName];
+      } else {
+        element.value = options[fullOptionName];
+      }
+    }
+  }
+}
+
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 function restoreOptions() {
   // get the values from the stored user options
   callFunctionWithStoredOptions(function (storedOptions) {
-    replaceCachedOptions(storedOptions);
-    for (let optionsGroup of optionsRegistry.optionsGroups) {
-      let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
-
-      for (let option of optionsGroup.options) {
-        let fullOptionName = optionNamePrefix + option.optionName;
-
-        let element = document.getElementById(fullOptionName);
-        if (!element) {
-          console.log("restoreOptions: no element found with id: " + fullOptionName);
-          continue;
-        }
-
-        if (option.type == "checkbox") {
-          element.checked = options[fullOptionName];
-        } else {
-          element.value = options[fullOptionName];
-        }
-      }
-    }
+    restoreOptionsGivenOptions(storedOptions);
   });
 }
 
@@ -83,4 +87,4 @@ async function saveOptionsFromPage() {
   saveOptions(options);
 }
 
-export { restoreOptions, saveOptionsFromPage };
+export { restoreOptions, restoreOptionsGivenOptions, saveOptionsFromPage };

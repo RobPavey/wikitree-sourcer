@@ -49,6 +49,10 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=1779&h=1732471",
   },
   {
+    caseName: "australia_death_reg_frederick_blood_1879",
+    url: "https://www.ancestry.com/discoveryui-content/view/1181988:61650",
+  },
+  {
     caseName: "australia_electoral_roll_1936_george_stemm",
     url: "https://www.ancestry.com/discoveryui-content/view/2135557:1207",
   },
@@ -701,6 +705,10 @@ const regressionData = [
   {
     caseName: "uk_burial_1923_amelia_mccarthy",
     url: "https://www.ancestry.co.uk/discoveryui-content/view/1712038:70845?ssrc=pt&tid=172368945&pid=392239251049",
+  },
+  {
+    caseName: "uk_military_1944_albert_braccini",
+    url: "https://www.ancestry.com/discoveryui-content/view/84274:1604?ssrc=pt&tid=180461776&pid=202343229183",
   },
   {
     caseName: "uk_prison_hulk_1831_jas_toomer",

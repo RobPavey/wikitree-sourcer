@@ -30,7 +30,7 @@ import {
   DateObj,
   PlaceObj,
 } from "../../../base/core/generalize_data_utils.mjs";
-import { RT, Role } from "../../../base/core/record_type.mjs";
+import { RT, Role, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 const factTypeToRecordType = [
@@ -293,6 +293,17 @@ function determineRecordType(extractedData) {
   return RT.Unclassified;
 }
 
+function determineRecordSubtype(recordType, extractedData) {
+  if (recordType == RT.Census) {
+    let collectionTitle = extractedData.collectionTitle;
+    if (collectionTitle) {
+      if (collectionTitle.includes("Church Census Records") && collectionTitle.includes("Latter-day Saints")) {
+        return RecordSubtype.LdsCensus;
+      }
+    }
+  }
+}
+
 function determineRecordTypeAndRole(extractedData, result) {
   let recordType = determineRecordType(extractedData);
 
@@ -327,6 +338,11 @@ function determineRecordTypeAndRole(extractedData, result) {
   }
 
   result.recordType = recordType;
+
+  let recordSubtype = determineRecordSubtype(recordType, extractedData);
+  if (recordSubtype) {
+    result.recordSubtype = recordSubtype;
+  }
 }
 
 function cleanName(name) {

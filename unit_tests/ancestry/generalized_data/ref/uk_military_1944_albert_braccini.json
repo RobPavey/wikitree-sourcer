@@ -1,0 +1,21 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Albert Braccini"
+  },
+  "eventDate": {
+    "dateString": "19 Sep 1944"
+  },
+  "eventPlace": {
+    "placeString": "Italy"
+  },
+  "serviceNumber": "2756087",
+  "rank": "Serjeant",
+  "unit": "London Scottish (Donside)",
+  "collectionData": {
+    "id": "1604"
+  },
+  "hasValidData": true
+}

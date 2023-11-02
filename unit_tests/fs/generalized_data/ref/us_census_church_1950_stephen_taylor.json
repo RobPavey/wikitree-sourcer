@@ -1,6 +1,7 @@
 {
   "sourceType": "record",
   "recordType": "Census",
+  "recordSubtype": "LdsCensus",
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {

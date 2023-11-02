@@ -1,0 +1,10 @@
+{
+  "name": {
+    "lastName": "Rose",
+    "forenames": "Joseph"
+  },
+  "birthDate": {
+    "yearString": "1839"
+  },
+  "hasValidData": true
+}
