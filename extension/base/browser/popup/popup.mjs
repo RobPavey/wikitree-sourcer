@@ -48,8 +48,35 @@ function setupPopupMenuWhenError(message) {
   );
 }
 
+function displayOldGoogleBooksMessage() {
+  displayMessageWithIcon(
+    "warning",
+    "WikiTree Sourcer does not support Classic Google Books. Please switch to the new Google Books."
+  );
+}
+
 function setupDefaultPopupMenuWhenNoResponseFromContent() {
   popupState.progress = progressState.defaultPopupDisplayError;
+
+  //console.log("setupDefaultPopupMenuWhenNoResponseFromContent, popupState is:");
+  //console.log(popupState);
+
+  // Check for some special cases where we can give more helpful messages
+  // This a bit site specific but helpful for the user
+  if (popupState.initialStateInDefaultPopup && popupState.initialStateInDefaultPopup.tabUrl) {
+    let url = popupState.initialStateInDefaultPopup.tabUrl;
+    //console.log("setupDefaultPopupMenuWhenNoResponseFromContent, have url:");
+    //console.log(url);
+
+    // Test for Old Google books
+    // e.g.: https://books.google.com/books?id=hlA0AQAAMAAJ&newbks=1&newbks_redir=0&printsec=frontcover&q=riddle#v=snippet&q=riddle&f=false
+    if (/^https?\:\/\/books\.google\.[^\/]+\/books.*$/.test(url)) {
+      // it is the old style google books
+      displayOldGoogleBooksMessage();
+      return;
+    }
+  }
+
   displayMessageWithIcon(
     "warning",
     `
