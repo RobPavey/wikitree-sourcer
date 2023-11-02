@@ -241,6 +241,8 @@ function iframeMessageHandler(request, sender, sendResponse) {
   return false;
 }
 
+console.log("gbooks_content_iframe loaded");
+
 // Listen for messages (from the popup script mostly)
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   return iframeMessageHandler(request, sender, sendResponse);
