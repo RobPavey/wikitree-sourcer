@@ -35,6 +35,7 @@ import {
   displayMessageWithIcon,
   doAsyncActionWithCatch,
   closePopup,
+  isFirefox,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -495,6 +496,12 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
     );
     let message = "Error fetching linked record from URL:\n\n" + recordUrl;
     message += "\n\nThis could be due to internet connectivity issues or server issues.";
+    if (isFirefox()) {
+      message += "\n\nIt could be because you have not granted the extension permissions for the ancestry site.";
+      message +=
+        "\nTo to that go to 'about:addons' in Firefox and click on the '...' next to Sourcer and click 'Manage'";
+      message += " then click on the 'Permissions' tab.";
+    }
     message += "\n\nPlease try again.\n";
     displayMessageWithIcon("warning", message);
   }
