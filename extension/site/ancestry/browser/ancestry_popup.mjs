@@ -38,6 +38,8 @@ import {
   isFirefox,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
+import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
+
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
@@ -477,6 +479,13 @@ function ancestryGoToFullSizeSharingImage(data) {
 
 async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalExtractedData) {
   //console.log("extractRecordFromUrlFromPersonSourceCitation");
+
+  // request permission for Firefox if needed
+  const reason = "Because this not a complete source record the extension must request the data from the full record.";
+  if (!(await checkPermissionForSiteFromUrl(reason, recordUrl))) {
+    return;
+  }
+
   displayBusyMessageAfterDelay("WikiTree Sourcer fetching full record page ...\n(This might take several seconds)");
 
   registerAsyncCacheTag("AncestryFetchFullRecord");
@@ -496,12 +505,15 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
     );
     let message = "Error fetching linked record from URL:\n\n" + recordUrl;
     message += "\n\nThis could be due to internet connectivity issues or server issues.";
+
+    // This may not be required since we request permissions above
     if (isFirefox()) {
       message += "\n\nIt could be because you have not granted the extension permissions for the ancestry site.";
       message +=
         "\nTo to that go to 'about:addons' in Firefox and click on the '...' next to Sourcer and click 'Manage'";
       message += " then click on the 'Permissions' tab.";
     }
+
     message += "\n\nPlease try again.\n";
     displayMessageWithIcon("warning", message);
   }

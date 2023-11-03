@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 import {
   doSearch,
@@ -43,6 +44,12 @@ const scotpEndYear = 2500;
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function scotpSearch(generalizedData, parameters) {
+  // request permission for Firefox if needed
+  const reason = "Sourcer needs to load a content script on the Scotlands People site to complete the search.";
+  if (!(await checkPermissionForSite(reason, "https://www.scotlandspeople.gov.uk/*"))) {
+    return;
+  }
+
   const input = {
     typeOfSearch: "SpecifiedParameters",
     searchParameters: parameters,

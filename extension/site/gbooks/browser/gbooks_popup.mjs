@@ -26,8 +26,16 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/gbooks_generalize_data.mjs";
 import { buildCitation } from "../core/gbooks_build_citation.mjs";
+import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
 async function setupGbooksPopupMenu(extractedData, tabId) {
+  // request permission for Firefox if needed
+  let reason = "To get the page number the extension needs to load a content script into the books iframe.";
+  reason += "\nYou will need to reload the page after allowing the permission";
+  if (!(await checkPermissionForSiteFromUrl(reason, extractedData.url, "", "books", true))) {
+    return;
+  }
+
   // send an additional message to attempt to get the pageLink from an iframe
   chrome.tabs.sendMessage(tabId, { type: "getPageViewerInfo" }, function (response) {
     console.log("response from getPageViewerInfo is:");

@@ -25,6 +25,7 @@ SOFTWARE.
 import { displayBusyMessage } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 import { fetchFsSourcesJson, fetchRecord } from "./fs_fetch.mjs";
 import {
@@ -94,6 +95,12 @@ async function fsGetAllCitations(input) {
   let ed = input.extractedData;
   let options = input.options;
   let runDate = input.runDate;
+
+  // request permission for Firefox if needed
+  const reason = "Sourcer needs to request the list of sources from FamilySearch.";
+  if (!(await checkPermissionForSite(reason, "*://www.familysearch.org/*"))) {
+    return;
+  }
 
   let sourcesObj = await fetchFsSourcesJson(ed.sourceIds);
   let retryCount = 0;

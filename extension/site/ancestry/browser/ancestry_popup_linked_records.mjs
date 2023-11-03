@@ -28,6 +28,7 @@ import { extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
 import { registerAsyncCacheTag } from "../../../base/core/async_result_cache.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
+import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
 const oneHourInMs = 1000 * 60 * 60;
 registerAsyncCacheTag("AncestryFetchHousehold", 30, oneHourInMs);
@@ -56,6 +57,15 @@ function extractDataFromHtml(htmlText, recordUrl) {
 }
 
 async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
+  // check permissions
+  if (linkedRecords.length > 0) {
+    let url = linkedRecords[0].link;
+    const reason = "The extension needs to request the data from linked records.";
+    if (!(await checkPermissionForSiteFromUrl(reason, url))) {
+      return;
+    }
+  }
+
   let requests = [];
   for (let record of linkedRecords) {
     let request = {
