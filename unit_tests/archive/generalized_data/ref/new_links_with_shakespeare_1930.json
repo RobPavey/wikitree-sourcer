@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "archive",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "name": "E.a.b.f Hist.s"
+  },
+  "eventDate": {
+    "dateString": "1930"
+  },
+  "bookTitle": "New Links With Shakespeare",
+  "bookAuthor": "E.a.b.f. Hist.s.",
+  "hasValidData": true
+}

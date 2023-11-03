@@ -39,6 +39,10 @@ const regressionData = [
     caseName: "linn_county_iowa_1887",
     url: "https://archive.org/details/portraitbiolinn00chap",
   },
+  {
+    caseName: "new_links_with_shakespeare_1930",
+    url: "https://archive.org/details/in.ernet.dli.2015.182244/page/n155/mode/2up",
+  },
 ];
 
 async function runTests(testManager) {
