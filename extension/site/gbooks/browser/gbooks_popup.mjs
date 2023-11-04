@@ -29,31 +29,38 @@ import { buildCitation } from "../core/gbooks_build_citation.mjs";
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
 async function setupGbooksPopupMenu(extractedData, tabId) {
-  // request permission for Firefox if needed
-  let reason = "To get the page number the extension needs to load a content script into the books iframe.";
-  reason += "\nYou will need to reload the page after allowing the permission";
-  if (!(await checkPermissionForSiteFromUrl(reason, extractedData.url, "", "books", true))) {
-    return;
-  }
+  // if the pageviewer is active then attempt to get the page from that
+  if (extractedData.url && extractedData.url.includes("gbpv=1")) {
+    // request permission for Firefox if needed
+    const checkPermissionsOptions = {
+      reason: "To get the page number the extension needs to load a content script into the books iframe.",
+      needsPopupDisplayed: true,
+      overrideSubdomain: "books",
+      allowSkip: true,
+    };
+    let allowed = await checkPermissionForSiteFromUrl(extractedData.url, checkPermissionsOptions);
 
-  // send an additional message to attempt to get the pageLink from an iframe
-  chrome.tabs.sendMessage(tabId, { type: "getPageViewerInfo" }, function (response) {
-    console.log("response from getPageViewerInfo is:");
-    console.log(response);
-    if (chrome.runtime.lastError) {
-      console.log("getPageViewerInfo failed");
-      console.log(chrome.runtime.lastError);
-    } else {
-      if (response && response.success) {
-        extractedData.shareLink = response.shareLink;
-        extractedData.pageLink = response.pageLink;
-        extractedData.pageLabel = response.pageLabel;
-        extractedData.pageNumber = response.pageNumber;
-        extractedData.urlPageNumber = response.urlPageNumber;
-        extractedData.isShareLinkVisible = response.isShareLinkVisible;
-      }
+    if (allowed) {
+      // send an additional message to attempt to get the pageLink from an iframe
+      chrome.tabs.sendMessage(tabId, { type: "getPageViewerInfo" }, function (response) {
+        console.log("response from getPageViewerInfo is:");
+        console.log(response);
+        if (chrome.runtime.lastError) {
+          console.log("getPageViewerInfo failed");
+          console.log(chrome.runtime.lastError);
+        } else {
+          if (response && response.success) {
+            extractedData.shareLink = response.shareLink;
+            extractedData.pageLink = response.pageLink;
+            extractedData.pageLabel = response.pageLabel;
+            extractedData.pageNumber = response.pageNumber;
+            extractedData.urlPageNumber = response.urlPageNumber;
+            extractedData.isShareLinkVisible = response.isShareLinkVisible;
+          }
+        }
+      });
     }
-  });
+  }
 
   let input = {
     extractedData: extractedData,

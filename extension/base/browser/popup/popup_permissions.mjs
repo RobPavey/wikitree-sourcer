@@ -30,22 +30,15 @@ import {
   displayMessageWithIcon,
 } from "./popup_menu_building.mjs";
 
-function writeToClipboardSuccessMessage(objectName, internalSave, extraMessage = "") {
-  let message1 = objectName + " saved to clipboard.";
-  let message2 = extraMessage;
-  if (internalSave) {
-    message2 = "It is also saved internally.\n" + extraMessage;
-  }
-  displayMessageWithIconThenClosePopup("check", message1, message2);
-}
+async function requestPermissionsFromUser(permissions, options) {
+  const reasonMessage = options.reason;
+  const allowSkip = options.allowSkip;
+  const needsPopupDisplayed = options.needsPopupDisplayed;
 
-async function requestPermissionsFromUser(reasonMessage, permissions, allowSkip = false) {
   function addBreak(fragment) {
     let br = document.createElement("br");
     fragment.appendChild(br);
   }
-
-  // This is currently only used on Safari
 
   emptyMenu();
 
@@ -83,8 +76,12 @@ async function requestPermissionsFromUser(reasonMessage, permissions, allowSkip 
 
   let label3 = document.createElement("label");
   label3.className = "messageLabel";
-  label3.innerText =
-    "Press the button below to request the permission. This will restart the extension so you will have to click on the Sourcer [1] icon again.";
+
+  let label3Message = "Press the button below to request the permission.";
+  if (needsPopupDisplayed) {
+    label3Message += " This will close the popup so you will have to click on the Sourcer [1] icon again.";
+  }
+  label3.innerText = label3Message;
   messageDiv3.appendChild(label3);
 
   addBreak(messageDiv3);
@@ -105,7 +102,7 @@ async function requestPermissionsFromUser(reasonMessage, permissions, allowSkip 
   // skip button
   let skipButton = undefined;
   if (allowSkip) {
-    let skipButton = document.createElement("button");
+    skipButton = document.createElement("button");
     skipButton.className = "dialogButton";
     skipButton.innerText = "Continue without permission";
 
@@ -150,7 +147,7 @@ async function requestPermissionsFromUser(reasonMessage, permissions, allowSkip 
   });
 }
 
-async function checkPermissionForSites(reasonMessage, siteMatches, allowSkip = false) {
+async function checkPermissionForSites(siteMatches, options) {
   if (!isFirefox()) {
     return true;
   }
@@ -163,36 +160,37 @@ async function checkPermissionForSites(reasonMessage, siteMatches, allowSkip = f
   }
 
   // request permission from Firefox
-  return await requestPermissionsFromUser(reasonMessage, permissions, allowSkip);
+  return await requestPermissionsFromUser(permissions, options);
 }
 
-async function checkPermissionForSite(reasonMessage, matchString, allowSkip = false) {
+async function checkPermissionForSite(matchString, options) {
   if (!isFirefox()) {
     return true;
   }
 
   let siteMatches = [matchString];
-  return await checkPermissionForSites(reasonMessage, siteMatches, allowSkip);
+  return await checkPermissionForSites(siteMatches, options);
 }
 
-async function checkPermissionForSiteFromUrl(reasonMessage, url, defaultDomain, overrideSubdomain, allowSkip = false) {
+async function checkPermissionForSiteFromUrl(url, options) {
   let domain = url.replace(/https?\:\/\/[^\.]+\.([^\/]+)\/.*/, "$1");
   if (!domain || domain == url) {
-    if (!defaultDomain) {
+    if (!options.defaultDomain) {
       return false;
     }
-    domain = defaultDomain;
+    domain = options.defaultDomain;
   }
 
   // we want a match string like: "*://*.ancestry.com/*"
 
   let subDomain = "*";
-  if (overrideSubdomain) {
-    subDomain = overrideSubdomain;
+  if (options.overrideSubdomain) {
+    subDomain = options.overrideSubdomain;
   }
 
   let matchString = "*://" + subDomain + "." + domain + "/*";
 
-  return await checkPermissionForSite(reasonMessage, matchString, allowSkip);
+  return await checkPermissionForSite(matchString, options);
 }
+
 export { checkPermissionForSite, checkPermissionForSites, checkPermissionForSiteFromUrl };

@@ -481,8 +481,11 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
   //console.log("extractRecordFromUrlFromPersonSourceCitation");
 
   // request permission for Firefox if needed
-  const reason = "Because this not a complete source record the extension must request the data from the full record.";
-  if (!(await checkPermissionForSiteFromUrl(reason, recordUrl))) {
+  const checkPermissionsOptions = {
+    reason: "Because this not a complete source record the extension must request the data from the full record.",
+    needsPopupDisplayed: true,
+  };
+  if (!(await checkPermissionForSiteFromUrl(recordUrl, checkPermissionsOptions))) {
     return;
   }
 

@@ -28,7 +28,7 @@ function deleteFolder(dir) {
   fs.rmSync(dir, { recursive: true, force: true });
 }
 
-function deleteFolder(src, dst) {
+function copyFolder(src, dst) {
   fs.cpSync(src, dst, { recursive: true });
 }
 

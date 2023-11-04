@@ -97,8 +97,11 @@ async function fsGetAllCitations(input) {
   let runDate = input.runDate;
 
   // request permission for Firefox if needed
-  const reason = "Sourcer needs to request the list of sources from FamilySearch.";
-  if (!(await checkPermissionForSite(reason, "*://www.familysearch.org/*"))) {
+  const checkPermissionsOptions = {
+    reason: "Sourcer needs to request the list of sources from FamilySearch.",
+    needsPopupDisplayed: true,
+  };
+  if (!(await checkPermissionForSite("*://www.familysearch.org/*", checkPermissionsOptions))) {
     return;
   }
 

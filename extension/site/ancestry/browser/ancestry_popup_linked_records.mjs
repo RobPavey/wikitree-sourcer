@@ -57,11 +57,14 @@ function extractDataFromHtml(htmlText, recordUrl) {
 }
 
 async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
-  // check permissions
+  // request permission for Firefox if needed
   if (linkedRecords.length > 0) {
     let url = linkedRecords[0].link;
-    const reason = "The extension needs to request the data from linked records.";
-    if (!(await checkPermissionForSiteFromUrl(reason, url))) {
+    const checkPermissionsOptions = {
+      reason: "The extension needs to request the data from linked records.",
+      needsPopupDisplayed: true,
+    };
+    if (!(await checkPermissionForSiteFromUrl(url, checkPermissionsOptions))) {
       return;
     }
   }
