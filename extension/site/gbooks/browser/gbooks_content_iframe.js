@@ -31,17 +31,18 @@ SOFTWARE.
 // https://books.google.com/books?id=Qw4SAAAAYAAJ&printsec=frontcover ...
 
 // from https://medium.com/swlh/how-to-build-a-roman-numeral-to-integer-function-in-javascript-8298657a26f7
-const romanHash = {
-  I: 1,
-  V: 5,
-  X: 10,
-  L: 50,
-  C: 100,
-  D: 500,
-  M: 1000,
-};
 // s = 1989
 function romanToInt(romanString) {
+  const romanHash = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+
   if (!romanString) {
     return;
   }
