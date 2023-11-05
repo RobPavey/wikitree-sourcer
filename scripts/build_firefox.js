@@ -24,12 +24,25 @@ SOFTWARE.
 
 import fs from "fs";
 
+import child_process from "child_process";
+
 function deleteFolder(dir) {
   fs.rmSync(dir, { recursive: true, force: true });
 }
 
 function copyFolder(src, dst) {
   fs.cpSync(src, dst, { recursive: true });
+}
+
+function createPackage() {
+  // from: https://stackoverflow.com/questions/15641243/need-to-zip-an-entire-directory-using-node-js
+  const zipPath = "browser_variants/firefox.zip";
+  if (fs.existsSync(zipPath)) {
+    fs.rmSync(zipPath);
+  }
+  child_process.execSync(`zip -r ../firefox.zip * -x "*.DS_Store"`, {
+    cwd: "browser_variants/firefox",
+  });
 }
 
 function buildFirefox() {
@@ -47,6 +60,8 @@ function buildFirefox() {
 
   copyFolder(extBasePath, ffBasePath);
   copyFolder(extSitePath, ffSitePath);
+
+  createPackage();
 }
 
 buildFirefox();
