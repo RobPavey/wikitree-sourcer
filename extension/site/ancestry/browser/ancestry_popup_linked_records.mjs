@@ -96,7 +96,7 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     return newResponse;
   }
 
-  let requestsResult = await doRequestsInParallel(requests, requestFunction, 100);
+  let requestsResult = await doRequestsInParallel(requests, requestFunction, 20);
 
   //console.log("returned from doRequestsInParallel, requestsResult is:  ");
   //console.log(requestsResult);
