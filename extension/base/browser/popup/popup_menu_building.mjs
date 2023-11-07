@@ -313,6 +313,74 @@ async function displayMessageWithIcon(iconType, message1, message2) {
   document.getElementById("menu").appendChild(fragment);
 }
 
+async function displayMessageWithIconAndWaitForContinue(iconType, message1, message2) {
+  emptyMenu();
+
+  let fragment = document.createDocumentFragment();
+
+  let rowDiv = document.createElement("div");
+  rowDiv.className = "messageRowDiv";
+  fragment.appendChild(rowDiv);
+
+  let imageDiv = document.createElement("div");
+  imageDiv.className = "messageColumnDiv messageIconDiv";
+  rowDiv.appendChild(imageDiv);
+
+  let imagePath = "/images/check_icon.svg";
+  switch (iconType) {
+    case "check":
+      imagePath = "/images/check_icon.svg";
+      break;
+    case "warning":
+      imagePath = "/images/warning_icon.svg";
+      break;
+  }
+
+  let image = document.createElement("img");
+  image.className = "messageIconInDiv";
+  image.setAttribute("src", imagePath);
+  image.setAttribute("width", "30");
+  image.setAttribute("height", "30");
+  imageDiv.appendChild(image);
+
+  let labelDiv = document.createElement("div");
+  labelDiv.className = "messageColumnDiv messageLabelDiv";
+  rowDiv.appendChild(labelDiv);
+
+  let label = document.createElement("label");
+  label.className = "messageLabelInDiv";
+  label.innerText = message1;
+  labelDiv.appendChild(label);
+
+  // continue button
+  let continueButton = document.createElement("button");
+  continueButton.className = "dialogButton";
+  continueButton.innerText = "Continue";
+  let buttonDiv = document.createElement("div");
+  buttonDiv.className = "flex-parent jc-center";
+  buttonDiv.appendChild(continueButton);
+  labelDiv.appendChild(buttonDiv);
+
+  if (message2) {
+    let label2 = document.createElement("label");
+    label2.className = "messageLabelInDiv";
+    label2.innerText = message2;
+    labelDiv.appendChild(label2);
+  }
+
+  document.getElementById("menu").appendChild(fragment);
+
+  // sometime if there is a really long messgae (like for paralell requests)
+  // the popup can be scolled down when this message is displayed.
+  imageDiv.scrollIntoView(true);
+
+  return new Promise(function (resolve, reject) {
+    continueButton.onclick = async function (element) {
+      resolve(true);
+    };
+  });
+}
+
 async function displayMessage(message1, message2) {
   emptyMenu();
 
@@ -398,6 +466,71 @@ async function displayBusyMessageAfterDelay(message1, message2) {
   }
 
   setTimeout(displayBusyMessageIfNotCancelled, 100);
+}
+
+async function displayBusyMessageWithSkipButton(message1, message2, skipCallback) {
+  let existingBusyContainer = document.getElementById("busyContainer");
+  let existingSkipButton = document.getElementById("skipButton");
+  if (existingBusyContainer && existingSkipButton) {
+    let messageLabel1 = document.getElementById("messageLabel1");
+    let messageLabel2 = document.getElementById("messageLabel2");
+
+    if (messageLabel1) {
+      messageLabel1.innerText = message1;
+    }
+
+    if (messageLabel2) {
+      messageLabel2.innerText = message2;
+    }
+
+    existingSkipButton.onclick = async function (element) {
+      skipCallback();
+    };
+
+    return;
+  }
+
+  emptyMenu();
+
+  let fragment = document.createDocumentFragment();
+
+  let busy = document.createElement("div");
+  busy.id = "busyContainer";
+  busy.className = "busyContainer";
+  fragment.appendChild(busy);
+
+  let loader = document.createElement("div");
+  loader.className = "spinner";
+  busy.appendChild(loader);
+
+  let label = document.createElement("label");
+  label.className = "messageLabel";
+  label.id = "messageLabel1";
+  label.innerText = message1;
+  fragment.appendChild(label);
+
+  // skip button
+  let skipButton = document.createElement("button");
+  skipButton.id = "skipButton";
+  skipButton.className = "dialogButton";
+  skipButton.innerText = "Skip";
+  let buttonDiv = document.createElement("div");
+  buttonDiv.className = "flex-parent jc-center";
+  buttonDiv.appendChild(skipButton);
+  fragment.appendChild(buttonDiv);
+  skipButton.onclick = async function (element) {
+    skipCallback();
+  };
+
+  if (message2) {
+    let label2 = document.createElement("label");
+    label2.className = "messageLabel";
+    label2.id = "messageLabel2";
+    label2.innerText = message2;
+    fragment.appendChild(label2);
+  }
+
+  document.getElementById("menu").appendChild(fragment);
 }
 
 async function displayMessageThenClosePopup(message1, message2) {
@@ -1595,8 +1728,10 @@ export {
   displayMessage,
   displayBusyMessage,
   displayBusyMessageAfterDelay,
+  displayBusyMessageWithSkipButton,
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
+  displayMessageWithIconAndWaitForContinue,
   displayMessageThenClosePopup,
   displayUnexpectedErrorMessage,
   emptyMenu,

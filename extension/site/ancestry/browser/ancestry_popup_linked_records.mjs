@@ -70,24 +70,21 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     let newResponse = { success: false };
     let response = await extractRecordHtmlFromUrl(input.link, input.cacheTag);
 
-    let retryCount = 0;
-    while (!response.success && response.allowRetry && retryCount < 3) {
-      retryCount++;
-      updateStatusFunction("retry " + retryCount);
-      response = await extractRecordHtmlFromUrl(input.link, input.cacheTag);
-    }
-
     if (response.success) {
       let extractedData = extractDataFromHtml(response.htmlText, response.recordUrl);
       newResponse.extractedData = extractedData;
       newResponse.success = true;
     } else {
       newResponse.allowRetry = response.allowRetry;
+      newResponse.statusCode = response.statusCode;
     }
     return newResponse;
   }
 
-  let requestsResult = await doRequestsInParallel(requests, requestFunction);
+  let requestsResult = await doRequestsInParallel(requests, requestFunction, 100);
+
+  //console.log("returned from doRequestsInParallel, requestsResult is:  ");
+  //console.log(requestsResult);
 
   let processInput = data;
   processInput.linkedRecordFailureCount = requestsResult.failureCount;
