@@ -94,7 +94,7 @@ function updateQueueTimingForResponse(response) {
   }
 }
 
-async function monitorRequestQueue(doRequest) {
+async function monitorRequestQueue(doRequest, resolve) {
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
@@ -117,6 +117,8 @@ async function monitorRequestQueue(doRequest) {
       // if this request has had several retries already and the lastst one was a 429
       // then wait an additional time befor queueing it
       if (matchingRequestState.retryCount > 1 && matchingRequestState.statusCode == 429) {
+        matchingRequestState.status = "waiting...";
+        displayStatusMessage(resolve);
         await sleep(additionalRetryWaitime);
       }
 
@@ -130,6 +132,8 @@ async function monitorRequestQueue(doRequest) {
       }
       //console.log("responseArray.length = " + responseArray.length + ", numRecent429s = " + numRecent429s);
       if (numRecent429s >= 3) {
+        matchingRequestState.status = "waiting...";
+        displayStatusMessage(resolve);
         await sleep(additionalManyRecent429sWaitime);
       }
 
@@ -149,7 +153,7 @@ function resetStaticCounts() {
   requestsTracker.failureCount = 0;
 }
 
-function displayStatusMessage() {
+function displayStatusMessage(resolve) {
   const baseMessage = "WikiTree Sourcer fetching additional records ...\n\n(This might take several seconds)...\n";
 
   let message2 = "";
@@ -159,6 +163,8 @@ function displayStatusMessage() {
 
   displayBusyMessageWithSkipButton(baseMessage, message2, function () {
     queueResponseTracker.skippedByUser = true;
+    queueResponseTracker.abortRequests = true;
+    terminateParallelRequests(resolve);
   });
 }
 
@@ -180,13 +186,25 @@ async function parallelRequestsDisplayErrorsMessage(actionName) {
   await displayMessageWithIconAndWaitForContinue("warning", baseMessage, message2);
 }
 
-function updateStatusForRequest(request, status) {
+function updateStatusForRequest(request, status, resolve) {
   let matchingRequestState = findRequestStateForRequest(request);
 
   if (matchingRequestState) {
     matchingRequestState.status = status;
-    displayStatusMessage();
+    displayStatusMessage(resolve);
   }
+}
+
+function terminateParallelRequests(resolve) {
+  // if there were any failures then remember that for caller
+  let callbackInput = { failureCount: requestsTracker.failureCount, responses: [] };
+  for (let requestState of requestsTracker.requestStates) {
+    callbackInput.responses.push(requestState.response);
+  }
+  resetStaticCounts();
+
+  //console.log("About to call resolve in handleRequestResponse");
+  resolve(callbackInput);
 }
 
 function handleRequestResponse(request, response, doRequest, resolve) {
@@ -237,7 +255,7 @@ function handleRequestResponse(request, response, doRequest, resolve) {
     }
   }
 
-  displayStatusMessage();
+  displayStatusMessage(resolve);
 
   updateQueueTimingForResponse(response);
   if (queueResponseTracker.abortRequests) {
@@ -249,23 +267,13 @@ function handleRequestResponse(request, response, doRequest, resolve) {
         requestsTracker.failureCount++;
       }
     }
-  } else if (queueResponseTracker.skippedByUser) {
-    queueResponseTracker.abortRequests = true;
   }
 
   if (
     requestsTracker.receivedResponseCount == requestsTracker.expectedResponseCount ||
     queueResponseTracker.abortRequests
   ) {
-    // if there were any failures then remember that for caller
-    let callbackInput = { failureCount: requestsTracker.failureCount, responses: [] };
-    for (let requestState of requestsTracker.requestStates) {
-      callbackInput.responses.push(requestState.response);
-    }
-    resetStaticCounts();
-
-    //console.log("About to call resolve in handleRequestResponse");
-    resolve(callbackInput);
+    terminateParallelRequests(resolve);
   }
 }
 
@@ -287,7 +295,7 @@ function doRequestsInParallel(requests, requestFunction, timeBetweenRequests = 1
 
   if (requests.length == 0) {
     let callbackInput = { failureCount: 0, responses: [] };
-    resolve(callbackInput);
+    return callbackInput;
   }
 
   if (timeBetweenRequests > 0) {
@@ -311,7 +319,7 @@ function doRequestsInParallel(requests, requestFunction, timeBetweenRequests = 1
     async function doRequest(request) {
       try {
         let response = await requestFunction(request.input, function (status) {
-          updateStatusForRequest(request, status);
+          updateStatusForRequest(request, status, resolve);
         });
         handleRequestResponse(request, response, doRequest, resolve);
       } catch (error) {
@@ -325,9 +333,9 @@ function doRequestsInParallel(requests, requestFunction, timeBetweenRequests = 1
       requestQueue.push(request);
     }
 
-    displayStatusMessage();
+    displayStatusMessage(resolve);
 
-    monitorRequestQueue(doRequest);
+    monitorRequestQueue(doRequest, resolve);
   });
 }
 
