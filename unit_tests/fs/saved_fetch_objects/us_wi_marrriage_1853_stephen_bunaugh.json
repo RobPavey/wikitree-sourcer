@@ -1,0 +1,663 @@
+{
+  "id" : "r_364381330",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MX1R-VQZ?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MX1R-VQZ?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MX1R-VQZ"
+    }
+  },
+  "description" : "#sd_p_10832284404",
+  "persons" : [ {
+    "id" : "p_10832284404",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "4388f5e3-78c0-44af-8de6-9c43081fcb2c",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Male"
+        }, {
+          "id" : "1090eec8-6e84-40ef-bb2f-b288e86498a5",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1694014225808
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109693"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/XRP7-LN5?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/MX1R-VQZ?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XRP7-LN5" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Stephen Bunaugh",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Stephen",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "5b5a734c-b218-4736-91ac-d36326969026",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Stephen"
+            }, {
+              "id" : "d4aadbfb-ba8d-4b23-b010-a3edb7db8e02",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1694014225794
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Stephen"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Bunaugh",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "5b3c8988-7d15-4a8b-b44c-6416fcdbc16d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Bunaugh"
+            }, {
+              "id" : "462cf4ac-adc0-43fd-b38f-b2fc96e3ac31",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1694014225794
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Bunaugh"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "86e5e722-6139-4adb-b1e9-c20efe5eeb45",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1694014225785
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Stephen Bunaugh"
+          }, {
+            "id" : "9ac6f6f3-fcab-465e-9f84-1730f30bffbe",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1694014225794
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Stephen Bunaugh"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_10832284403",
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "db6df196-9b9f-4641-aa4b-ce264d5c98ca",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "SP_SEX_CODE_ORIG",
+          "text" : "Female"
+        }, {
+          "id" : "b78b0d40-8e26-455e-97b3-096fd8113eb2",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1694014225812
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/109658"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/XRP7-LNP?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/MX1R-VQZ?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XRP7-LNP" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Susan B. Newbury",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Susan B.",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "abc6994e-de29-48c1-a6fb-68bfeadc6490",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Susan B."
+            }, {
+              "id" : "fa021f1c-fc69-4783-8480-cc06c5dbc4a5",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1694014225808
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Susan B."
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Newbury",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "cd6c4a96-aa7a-439c-a59a-ea7928eea0df",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Newbury"
+            }, {
+              "id" : "9d93628e-3ab6-4c90-ba0d-1085e94b7869",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1694014225808
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Newbury"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "2b077af4-fbb5-46a4-93d1-b8a988825f19",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1694014225794
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Susan B. Newbury"
+          }, {
+            "id" : "14b62936-73a7-4232-a4a3-9508670b3c67",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1694014225808
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Susan B. Newbury"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/PJ8P-V1WH",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_10832284404",
+      "resourceId" : "p_10832284404"
+    },
+    "person2" : {
+      "resource" : "#p_10832284403",
+      "resourceId" : "p_10832284403"
+    },
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "14 12 1853",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "c76a9bfc-e380-4599-8392-62e156209cb1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1694014225785
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "14 12 1853"
+          }, {
+            "id" : "0d8635d8-9b92-4214-9c88-0384199a82b9",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1580401204701
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "14 Dec 1853",
+            "resource" : "+1853-12-14"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "06c16a79-0c51-4359-b326-62172e4b6f29",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "12"
+          }, {
+            "id" : "457be1ed-b0e8-403f-9283-2b35597a3091",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1580401204701
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "12"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "87792cd3-9cd9-4a4c-86c0-f52df61fccc6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "14"
+          }, {
+            "id" : "c7f672d6-0f7b-4cb7-be0b-f6f4f026349a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1580401204701
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "14"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "1faeabcb-5b98-4540-b781-ae847dc107ef",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1853"
+          }, {
+            "id" : "8c3ea753-c156-4949-88f8-cc31dd657381",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1580401204701
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1853"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Wheatland, Kenosha, Wisconsin, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "48375e73-5db8-4a88-9c24-16dc0adc2cbc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Wheatland, Kenosha, Wisconsin, United States"
+          }, {
+            "id" : "b787bcb2-378d-42a3-ad38-b4cf2b4de42d",
+            "confidence" : "http://confidence/100",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1580401204720
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Wheatland, Kenosha, Wisconsin, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/5525351",
+            "qualifiers" : [ {
+              "value" : "1013, 1026, 1010",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "9a90a1b8-d564-4442-9992-4ec692fbec61",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "marriage"
+        }, {
+          "id" : "8e630b68-1b75-4c97-8969-77818cdad5f2",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Marriage"
+        } ]
+      } ]
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1708704",
+    "about" : "https://www.familysearch.org/platform/records/collections/1708704",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223802522,
+    "modified" : 1694093389039,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Wisconsin, United States of America",
+        "description" : "#place_1-59"
+      },
+      "temporal" : {
+        "original" : "1836/1930",
+        "formal" : "1836/1930"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Wisconsin Marriages, 1836-1930"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1708704" ]
+    }
+  }, {
+    "id" : "src_r_364381330",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:MX1R-VQZ",
+    "componentOf" : {
+      "description" : "#sd_c_1708704"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1580401204732,
+    "modified" : 1694093389039,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Wheatland, Kenosha, Wisconsin, United States"
+      },
+      "temporal" : {
+        "original" : "14 12 1853"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:MX1R-VQZ : 6 September 2023), Entry for Stephen Bunaugh, 1853."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Stephen Bunaugh, \"Wisconsin Marriages, 1836-1930\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmNoAccess" ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/305676442" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:MX1R-VQZ" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1708704?arkName=1:2:MX1R-VQZ"
+    }
+  }, {
+    "id" : "sd_p_10832284404",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:XRP7-LN5",
+    "componentOf" : {
+      "description" : "#src_r_364381330"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:XRP7-LN5 : 6 September 2023), Stephen Bunaugh, 1853."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Stephen Bunaugh, \"Wisconsin Marriages, 1836-1930\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XRP7-LN5" ]
+    }
+  }, {
+    "id" : "sd_p_10832284403",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:XRP7-LNP",
+    "componentOf" : {
+      "description" : "#src_r_364381330"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:XRP7-LNP : 6 September 2023), Susan B. Newbury in entry for Stephen Bunaugh, 1853."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Susan B. Newbury in entry for Stephen Bunaugh, \"Wisconsin Marriages, 1836-1930\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:XRP7-LNP" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1-59",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/59?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "c7dad168-81bc-4ecd-9cd3-4eff6decb8a9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{ \"EVENT_PLACE_ALT_ORIG\": \"Wheatland, Kenosha, Wisconsin\", \"EVENT_DATE_ALT_ORIG\": \"14 Dec 1853\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "0a8f158d-5351-4f3a-9756-09084521ca44",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "215101"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "b81efa22-2592-4b11-851f-320ff7447ba7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Juneau, Wisconsin, United States"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "8faa2310-7f66-4c13-a159-36e7978c20a0",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "1708704"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
+    "values" : [ {
+      "id" : "f669501f-6307-4b59-814c-712591ef8cd0",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007619664"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FilmNumber",
+    "values" : [ {
+      "id" : "296b3fc4-6df4-4996-a21f-a3ccac399c34",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "1276050"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "e1640394-6dbe-4dc4-80cb-cdb544a67aa7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PacketLetter",
+    "values" : [ {
+      "id" : "6a693b2e-86f6-4659-acf3-a1a32165ca20",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PACKET_LTR",
+      "text" : "I"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "e4038c1d-90ee-4cc7-b743-20139802fbb5",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "Wisconsin-EASy"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordNumber",
+    "values" : [ {
+      "id" : "ba2dc30f-a33d-4100-b367-734c83113e41",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "40"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "d0464d19-6809-4a21-a655-28bec0fb699a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "1276050_M00352-4X_1853_12_14_0000305676442"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfOrigin",
+    "values" : [ {
+      "id" : "c148b371-2557-4e13-b5dc-eaa9010aadb9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_ORIGIN",
+      "text" : "EASY"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UdeBatchNumber",
+    "values" : [ {
+      "id" : "df0c82bc-cd9f-4994-8be6-93149394c4a9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "M00352-4"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "b1f63ab4-c262-481d-81a9-44cd66ec4da2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "305676442"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "8dce5895-ef2c-46e0-b56b-8750e364a81f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceComposite",
+    "values" : [ {
+      "id" : "0eb1ec93-2c54-4e90-b4ef-7c866962cd32",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_COMPOSITE_ORIG",
+      "text" : "it 3, cn 1131"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceReference",
+    "values" : [ {
+      "id" : "52d84622-98ce-4dc6-b5fb-f10349317563",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_REFERENCE_ORIG",
+      "text" : "Items 1-2"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "8"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "78496"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

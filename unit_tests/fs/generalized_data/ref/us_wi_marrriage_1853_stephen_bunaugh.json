@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Stephen Bunaugh",
+    "lastName": "Bunaugh",
+    "forenames": "Stephen"
+  },
+  "eventDate": {
+    "dateString": "14 Dec 1853",
+    "yearString": "1853"
+  },
+  "eventPlace": {
+    "placeString": "Wheatland, Kenosha, Wisconsin, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Susan B. Newbury",
+        "lastName": "Newbury",
+        "forenames": "Susan B."
+      },
+      "marriageDate": {
+        "dateString": "14 Dec 1853"
+      },
+      "marriagePlace": {
+        "placeString": "Wheatland, Kenosha, Wisconsin, United States"
+      }
+    }
+  ],
+  "marriageDate": "14 Dec 1853",
+  "collectionData": {
+    "id": "1708704"
+  },
+  "hasValidData": true
+}

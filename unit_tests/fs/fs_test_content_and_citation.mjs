@@ -405,6 +405,11 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSP",
   },
   {
+    // Had some issues with the marriage date format
+    caseName: "us_wi_marrriage_1853_stephen_bunaugh",
+    url: "https://www.familysearch.org/ark:/61903/1:1:XRP7-LN5",
+  },
+  {
     caseName: "us_ww1_draft_1917_john_smith",
     url: "https://www.familysearch.org/ark:/61903/1:1:K6Z6-RVT",
   },

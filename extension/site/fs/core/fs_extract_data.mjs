@@ -1370,12 +1370,137 @@ function processImageLinks(document, result, options) {
   }
 }
 
+function buildBestDateFromDateObject(date) {
+  /*
+  Here is an example date object from https://www.familysearch.org/ark:/61903/1:1:XRP7-LN5
+
+  The original date is a bad form.
+
+        "date" : {
+        "original" : "14 12 1853",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "c76a9bfc-e380-4599-8392-62e156209cb1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1694014225785
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "14 12 1853"
+          }, {
+            "id" : "0d8635d8-9b92-4214-9c88-0384199a82b9",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1580401204701
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "14 Dec 1853",
+            "resource" : "+1853-12-14"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "06c16a79-0c51-4359-b326-62172e4b6f29",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "12"
+          }, {
+            "id" : "457be1ed-b0e8-403f-9283-2b35597a3091",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1580401204701
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "12"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "87792cd3-9cd9-4a4c-86c0-f52df61fccc6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "14"
+          }, {
+            "id" : "c7f672d6-0f7b-4cb7-be0b-f6f4f026349a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1580401204701
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "14"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "1faeabcb-5b98-4540-b781-ae847dc107ef",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1853"
+          }, {
+            "id" : "8c3ea753-c156-4949-88f8-cc31dd657381",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1580401204701
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1853"
+          } ]
+        } ]
+      },
+  */
+
+  let goodDateRexExp = /\s*\d\d?\s+[a-zA-Z]+\s+\d\d\d\d/;
+
+  let bestBackupDate = "";
+  let originalDate = date.original;
+  if (originalDate) {
+    bestBackupDate = originalDate;
+    if (goodDateRexExp.test(originalDate)) {
+      return originalDate;
+    }
+  }
+
+  // see if there is a better date in the fields
+  for (let field of date.fields) {
+    if (field.type == "http://gedcomx.org/Date") {
+      for (let value of field.values) {
+        let text = value.text;
+        if (!bestBackupDate) {
+          bestBackupDate = test;
+        }
+        if (goodDateRexExp.test(text)) {
+          return text;
+        }
+      }
+    }
+  }
+
+  return bestBackupDate;
+}
+
 function addRecordDataForFact(result, fact, factType) {
   let factTypeWithSpaces = factType.replace(/([a-z])([A-Z])/g, "$1 $2");
   if (fact.date) {
-    if (fact.date.original) {
+    let date = buildBestDateFromDateObject(fact.date);
+    if (date) {
       let label = factTypeWithSpaces + " Date";
-      let value = fact.date.original;
+      let value = date;
       result.recordData[label] = value;
     }
   }
