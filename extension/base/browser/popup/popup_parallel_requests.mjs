@@ -49,9 +49,6 @@ function findRequestStateForRequest(request) {
   return matchingRequestState;
 }
 
-const maxWaitime = 3200;
-const additionalRetryWaitime = 3200;
-const additionalManyRecent429sWaitime = 5000;
 var requestQueue = [];
 var queueResponseTracker = {
   totalSuccess: 0,
@@ -62,6 +59,16 @@ var queueResponseTracker = {
   abortRequests: false,
   lastFewResponses: [],
 };
+
+const defaultQueueOptions = {
+  initialWaitBetweenRequests: 1,
+  maxWaitime: 3200,
+  additionalRetryWaitime: 3200,
+  additionalManyRecent429sWaitime: 5000,
+  slowDownFromStartCount: 30,
+  slowDownFromStartMult: 2,
+};
+var queueOptions = defaultQueueOptions;
 
 function clearRequestQueue() {
   requestQueue = [];
@@ -85,7 +92,7 @@ function updateQueueTimingForResponse(response) {
         queueResponseTracker.abortRequests = true;
       }
 
-      if (queueResponseTracker.waitBetweenRequests < maxWaitime) {
+      if (queueResponseTracker.waitBetweenRequests < queueOptions.maxWaitime) {
         queueResponseTracker.waitBetweenRequests *= 2;
       }
     } else {
@@ -94,16 +101,26 @@ function updateQueueTimingForResponse(response) {
   }
 }
 
-async function monitorRequestQueue(doRequest, resolve) {
+async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  if (requestedQueueOptions) {
+    // Use the spread operator to override the default queue options with
+    // any that are set in teh requested options.
+    queueOptions = { ...defaultQueueOptions, ...requestedQueueOptions };
+  }
+
+  if (queueOptions.initialWaitBetweenRequests > 0) {
+    queueResponseTracker.waitBetweenRequests = queueOptions.initialWaitBetweenRequests;
   }
 
   // if initial queue length is more than a certain amount
   // then increase the sleep time to try to avoid triggering the
   // error 429 "Too many requests".
-  if (requestQueue.length) {
-    queueResponseTracker.waitBetweenRequests *= 4;
+  if (requestQueue.length >= queueOptions.slowDownFromStartCount) {
+    queueResponseTracker.waitBetweenRequests *= queueOptions.slowDownFromStartMult;
   }
 
   while (requestsTracker.receivedResponseCount != requestsTracker.expectedResponseCount) {
@@ -119,7 +136,7 @@ async function monitorRequestQueue(doRequest, resolve) {
       if (matchingRequestState.retryCount > 1 && matchingRequestState.statusCode == 429) {
         matchingRequestState.status = "waiting...";
         displayStatusMessage(resolve);
-        await sleep(additionalRetryWaitime);
+        await sleep(queueOptions.additionalRetryWaitime);
       }
 
       // if we have had several 429s in the last few responses then wait a bit extra
@@ -134,7 +151,7 @@ async function monitorRequestQueue(doRequest, resolve) {
       if (numRecent429s >= 3) {
         matchingRequestState.status = "waiting...";
         displayStatusMessage(resolve);
-        await sleep(additionalManyRecent429sWaitime);
+        await sleep(queueOptions.additionalManyRecent429sWaitime);
       }
 
       doRequest(nextRequest);
@@ -280,7 +297,7 @@ function handleRequestResponse(request, response, doRequest, resolve) {
 // This function does a series of asynchronous requests in parallel and returns
 // when they are all completed. It is passed an array of request objects and an
 // async function to call for each request
-function doRequestsInParallel(requests, requestFunction, timeBetweenRequests = 1) {
+function doRequestsInParallel(requests, requestFunction, requestedQueueOptions = defaultQueueOptions) {
   // requests is an array of objects, each has the following fields
   //   name : a name that can be used in the status display
   //   input : data to be passed to the request function (varies by site/action)
@@ -296,10 +313,6 @@ function doRequestsInParallel(requests, requestFunction, timeBetweenRequests = 1
   if (requests.length == 0) {
     let callbackInput = { failureCount: 0, responses: [] };
     return callbackInput;
-  }
-
-  if (timeBetweenRequests > 0) {
-    queueResponseTracker.waitBetweenRequests = timeBetweenRequests;
   }
 
   resetStaticCounts();
@@ -335,7 +348,7 @@ function doRequestsInParallel(requests, requestFunction, timeBetweenRequests = 1
 
     displayStatusMessage(resolve);
 
-    monitorRequestQueue(doRequest, resolve);
+    monitorRequestQueue(doRequest, resolve, requestedQueueOptions);
   });
 }
 

@@ -96,7 +96,15 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     return newResponse;
   }
 
-  let requestsResult = await doRequestsInParallel(requests, requestFunction, 20);
+  const queueOptions = {
+    initialWaitBetweenRequests: 20,
+    maxWaitime: 3200,
+    additionalRetryWaitime: 3200,
+    additionalManyRecent429sWaitime: 5000,
+    slowDownFromStartCount: 10,
+    slowDownFromStartMult: 4,
+  };
+  let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
 
   //console.log("returned from doRequestsInParallel, requestsResult is:  ");
   //console.log(requestsResult);
