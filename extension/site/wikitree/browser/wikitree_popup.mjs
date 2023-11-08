@@ -47,7 +47,7 @@ import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 
 import { generalizeData } from "../core/wikitree_generalize_data.mjs";
-import { wtApiGetRelatives, wtApiGetPeople } from "./wikitree_api.mjs";
+import { wtApiGetRelatives, wtApiGetPeople, wtApiGetBio } from "./wikitree_api.mjs";
 
 import { GeneralizedData, dateQualifiers } from "/base/core/generalize_data_utils.mjs";
 
@@ -723,24 +723,84 @@ function getProfileLinkForAddMerge(personEd, personGd) {
   return linkString;
 }
 
-function getWikiTreeMergeEditData(data, personData, citationObject) {
+async function getWikiTreeMergeEditData(data, personData, citationObject) {
   let personEd = personData.extractedData;
   let personGd = personData.generalizedData;
   let result = getWikiTreeAddMergeData(data, personEd, personGd, citationObject);
+  result.bio = "";
+  result.sources = "";
 
+  let canIncludeBmdBioLines = true;
+  let needsBioText = false;
   if (citationObject && options.addMerge_mergeEdit_includeCitation) {
     let citationText = citationObject.citation;
     if (citationText) {
+      needsBioText = true;
       // Note, if this is not an inline citation it should go after Sources
       // however I haven't yet found a way to make that happen
-      result.bio = citationText;
+      if (citationObject.type == "source") {
+        result.sources = citationText;
+      } else {
+        result.bio = citationText;
+        canIncludeBmdBioLines = false;
+      }
     }
   }
 
   if (!citationObject && options.addMerge_mergeEdit_includeAllCitations) {
     let allCitationsText = personData.allCitationsString;
     if (allCitationsText) {
-      result.bio = allCitationsText;
+      needsBioText = true;
+      if (personData.allCitationsType == "source") {
+        result.sources = allCitationsText;
+      } else {
+        result.bio = allCitationsText;
+        canIncludeBmdBioLines = false;
+      }
+    }
+  }
+
+  if (canIncludeBmdBioLines) {
+    if (options.addMerge_mergeEdit_includeBirthLine) {
+      let birthLine = getBirthLine(personGd);
+      if (birthLine) {
+        if (!result.bio) {
+          result.bio = "";
+        } else {
+          result.bio += "\n\n";
+        }
+        result.bio += birthLine;
+      }
+    }
+
+    let nameOrPronoun = getPersonNameOrPronoun(personGd, options);
+
+    if (nameOrPronoun) {
+      // we want to follow some of the narrative options here but can't use NarrativeBuilder because
+      // we don't (necessarily) have an eventGd.
+      if (options.addMerge_mergeEdit_includeMarriageLines && personGd.spouses) {
+        let marriageLines = getMarriageLines(personGd, nameOrPronoun);
+        if (marriageLines) {
+          if (!result.bio) {
+            result.bio = "";
+          } else {
+            result.bio += "\n\n";
+          }
+          result.bio += marriageLines;
+        }
+      }
+
+      if (options.addMerge_mergeEdit_includeDeathLine) {
+        let deathLine = getDeathLine(personGd, nameOrPronoun);
+        if (deathLine) {
+          if (!result.bio) {
+            result.bio = "";
+          } else {
+            result.bio += "\n\n";
+          }
+          result.bio += deathLine;
+        }
+      }
     }
   }
 
@@ -749,15 +809,19 @@ function getWikiTreeMergeEditData(data, personData, citationObject) {
     let linkString = getProfileLinkForAddMerge(personEd, personGd);
 
     if (linkString) {
-      if (result.bio) {
-        result.bio += "\n\n";
-      } else {
-        result.bio = "";
+      needsBioText = true;
+      result.seeAlso = "See also:\n";
+      result.seeAlso += "* " + linkString;
+    }
+  }
+
+  if (needsBioText && data.extractedData.wikiId) {
+    let responses = await wtApiGetBio(data.extractedData.wikiId);
+    if (responses.length == 1) {
+      let response = responses[0];
+      if (response.bio) {
+        result.existingBioText = response.bio;
       }
-      //result.sources += "== Sources ==\n";
-      //result.sources += "<references />\n";
-      result.bio += "See also:\n";
-      result.bio += linkString;
     }
   }
 
@@ -773,6 +837,133 @@ function getWikiTreeMergeEditData(data, personData, citationObject) {
   }
 
   return result;
+}
+
+function getBirthLine(personGd) {
+  let parentsLine = "";
+
+  let fullName = personGd.inferFullName();
+
+  let birthDateString = "";
+  let birthDateObj = personGd.birthDate;
+  if (birthDateObj) {
+    let format = options.narrative_general_dateFormat;
+    let highlight = options.narrative_general_dateHighlight;
+    birthDateString = personGd.getNarrativeDateFormat(birthDateObj, format, highlight, true);
+  }
+
+  let birthPlace = personGd.inferBirthPlace();
+  if (birthPlace) {
+    let preposition = StringUtils.getPrepositionForPlaceString(birthPlace);
+    birthPlace = preposition + " " + birthPlace;
+  }
+
+  let parentNames = personGd.inferParentNamesForDataString();
+  let fatherName = parentNames.fatherName;
+  let motherName = parentNames.motherName;
+
+  if (fullName && (birthDateString || birthPlace || fatherName || motherName)) {
+    parentsLine += fullName;
+    if (birthDateString || birthPlace) {
+      parentsLine += " was born";
+      if (birthDateString) {
+        parentsLine += " " + birthDateString;
+      }
+      if (birthPlace) {
+        parentsLine += " " + birthPlace;
+      }
+    }
+
+    if (fatherName || motherName) {
+      parentsLine += ", ";
+      if (personGd.personGender == "male") {
+        parentsLine += "son";
+      } else if (personGd.personGender == "female") {
+        parentsLine += "daughter";
+      } else {
+        parentsLine += "child";
+      }
+      parentsLine += " of ";
+
+      if (fatherName && motherName) {
+        parentsLine += fatherName + " and " + motherName;
+      } else if (fatherName) {
+        parentsLine += fatherName;
+      } else {
+        parentsLine += motherName;
+      }
+    }
+
+    parentsLine += ".";
+  }
+  return parentsLine;
+}
+
+function getMarriageLines(personGd, nameOrPronoun) {
+  let resultText = "";
+
+  for (let spouse of personGd.spouses) {
+    let spouseName = spouse.name.inferFullName();
+    let marriageDateString = "";
+    let marriageDateObj = spouse.marriageDate;
+    if (marriageDateObj) {
+      let format = options.narrative_general_dateFormat;
+      let highlight = options.narrative_general_dateHighlight;
+      marriageDateString = personGd.getNarrativeDateFormat(marriageDateObj, format, highlight, true);
+    }
+    let marriagePlaceString = "";
+    let marriagePlaceObj = spouse.marriagePlace;
+    if (marriagePlaceObj && marriagePlaceObj.placeString) {
+      let preposition = StringUtils.getPrepositionForPlaceString(marriagePlaceObj.placeString);
+      marriagePlaceString = preposition + " " + marriagePlaceObj.placeString;
+    }
+
+    if (spouseName && marriageDateString) {
+      let marriageString = nameOrPronoun + " married " + spouseName + " " + marriageDateString;
+      if (marriagePlaceString) {
+        marriageString += " " + marriagePlaceString;
+      }
+      if (!resultText) {
+        resultText = "";
+      } else {
+        resultText += "\n\n";
+      }
+      resultText += marriageString + ".";
+    }
+  }
+  return resultText;
+}
+
+function getDeathLine(personGd, nameOrPronoun) {
+  let resultText = "";
+
+  let deathDateString = "";
+  let deathDateObj = personGd.inferDeathDateObj();
+  if (deathDateObj) {
+    let format = options.narrative_general_dateFormat;
+    let highlight = options.narrative_general_dateHighlight;
+    deathDateString = personGd.getNarrativeDateFormat(deathDateObj, format, highlight, true);
+  }
+
+  let deathPlace = personGd.inferDeathPlace();
+  if (deathPlace) {
+    let preposition = StringUtils.getPrepositionForPlaceString(deathPlace);
+    deathPlace = preposition + " " + deathPlace;
+  }
+
+  if (deathDateString) {
+    let deathString = nameOrPronoun + " died " + deathDateString;
+    if (deathPlace) {
+      deathString += " " + deathPlace;
+    }
+    if (!resultText) {
+      resultText = "";
+    } else {
+      resultText += "\n\n";
+    }
+    resultText += deathString + ".";
+  }
+  return resultText;
 }
 
 async function getWikiTreeEditFamilyData(data, personData, citationObject) {
@@ -1273,64 +1464,26 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
       // we want to follow some of the narrative options here but can't use NarrativeBuilder because
       // we don't (necessarily) have an eventGd.
       if (options.addMerge_addPerson_includeMarriageLines && personGd.spouses) {
-        for (let spouse of personGd.spouses) {
-          let spouseName = spouse.name.inferFullName();
-          let marriageDateString = "";
-          let marriageDateObj = spouse.marriageDate;
-          if (marriageDateObj) {
-            let format = options.narrative_general_dateFormat;
-            let highlight = options.narrative_general_dateHighlight;
-            marriageDateString = personGd.getNarrativeDateFormat(marriageDateObj, format, highlight, true);
-          }
-          let marriagePlaceString = "";
-          let marriagePlaceObj = spouse.marriagePlace;
-          if (marriagePlaceObj && marriagePlaceObj.placeString) {
-            let preposition = StringUtils.getPrepositionForPlaceString(marriagePlaceObj.placeString);
-            marriagePlaceString = preposition + " " + marriagePlaceObj.placeString;
-          }
-
-          if (spouseName && marriageDateString) {
-            let marriageString = nameOrPronoun + " married " + spouseName + " " + marriageDateString;
-            if (marriagePlaceString) {
-              marriageString += " " + marriagePlaceString;
-            }
-            if (!result.notes) {
-              result.notes = "";
-            } else {
-              result.notes += "\n\n";
-            }
-            result.notes += marriageString + ".";
-          }
-        }
-      }
-
-      if (options.addMerge_addPerson_includeDeathLine) {
-        let deathDateString = "";
-        let deathDateObj = personGd.inferDeathDateObj();
-        if (deathDateObj) {
-          let format = options.narrative_general_dateFormat;
-          let highlight = options.narrative_general_dateHighlight;
-          deathDateString = personGd.getNarrativeDateFormat(deathDateObj, format, highlight, true);
-        }
-
-        let deathPlace = personGd.inferDeathPlace();
-        if (deathPlace) {
-          let preposition = StringUtils.getPrepositionForPlaceString(deathPlace);
-          deathPlace = preposition + " " + deathPlace;
-        }
-
-        if (deathDateString) {
-          let deathString = nameOrPronoun + " died " + deathDateString;
-          if (deathPlace) {
-            deathString += " " + deathPlace;
-          }
+        let marriageLines = getMarriageLines(personGd, nameOrPronoun);
+        if (marriageLines) {
           if (!result.notes) {
             result.notes = "";
           } else {
             result.notes += "\n\n";
           }
+          result.notes += marriageLines;
+        }
+      }
 
-          result.notes += deathString + ".";
+      if (options.addMerge_addPerson_includeDeathLine) {
+        let deathLine = getDeathLine(personGd, nameOrPronoun);
+        if (deathLine) {
+          if (!result.notes) {
+            result.notes = "";
+          } else {
+            result.notes += "\n\n";
+          }
+          result.notes += deathLine;
         }
       }
     }
@@ -1600,7 +1753,7 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
 }
 
 async function mergeEditFromPersonData(data, personData, citationObject, tabId, backFunction) {
-  let wtPersonData = getWikiTreeMergeEditData(data, personData, citationObject);
+  let wtPersonData = await getWikiTreeMergeEditData(data, personData, citationObject);
 
   function processFunction() {
     updateAfterCheckWtPersonData(data, wtPersonData);
