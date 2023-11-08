@@ -816,12 +816,16 @@ async function getWikiTreeMergeEditData(data, personData, citationObject) {
   }
 
   if (needsBioText && data.extractedData.wikiId) {
-    let responses = await wtApiGetBio(data.extractedData.wikiId);
-    if (responses.length == 1) {
-      let response = responses[0];
-      if (response.bio) {
-        result.existingBioText = response.bio;
+    try {
+      let responses = await wtApiGetBio(data.extractedData.wikiId);
+      if (responses.length == 1) {
+        let response = responses[0];
+        if (response.bio) {
+          result.existingBioText = response.bio;
+        }
       }
+    } catch (error) {
+      // api access failed, continue without existing bio
     }
   }
 

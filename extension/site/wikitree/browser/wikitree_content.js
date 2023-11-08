@@ -665,7 +665,11 @@ function mergeBioText(personData) {
       seeAlsoToAdd = seeAlsoToAdd.replace(/^See also\:\s*/, "");
     }
     if (endOfSourcesSectionIndex == existingText.length) {
-      newText += "\n\n";
+      if (seeAlsoIndex != -1) {
+        newText += "\n";
+      } else {
+        newText += "\n\n";
+      }
     }
     newText += seeAlsoToAdd;
   }
@@ -719,7 +723,7 @@ function postMergeEditData(wikitreeMergeEditData) {
     }
   }
 
-  ///console.log("about to post, person is:");
+  //console.log("about to post, person is:");
   //console.log(person);
 
   const body = {
