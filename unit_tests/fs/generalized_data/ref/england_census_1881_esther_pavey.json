@@ -43,7 +43,7 @@
       "age": "38",
       "birthYear": "1843",
       "occupation": "Picture Frame Maker Employing 1 Lad",
-      "birthPlace": "Plymouth, Devon, England"
+      "birthPlace": "Plymouth, Devon"
     },
     {
       "name": "Esther Pavey",
@@ -52,7 +52,7 @@
       "gender": "female",
       "age": "39",
       "birthYear": "1842",
-      "birthPlace": "London, Middlesex, England",
+      "birthPlace": "London, Middlesex",
       "isSelected": true
     },
     {
@@ -63,7 +63,7 @@
       "age": "78",
       "birthYear": "1803",
       "occupation": "Annuitant",
-      "birthPlace": "Plymouth, Devon, England"
+      "birthPlace": "Plymouth, Devon"
     },
     {
       "name": "Sidney H Harper",
@@ -73,7 +73,7 @@
       "age": "18",
       "birthYear": "1863",
       "occupation": "Picture Frame Maker",
-      "birthPlace": "Kentish Town, Middlesex, England"
+      "birthPlace": "Kentish Town, Middlesex"
     }
   ],
   "maritalStatus": "married",

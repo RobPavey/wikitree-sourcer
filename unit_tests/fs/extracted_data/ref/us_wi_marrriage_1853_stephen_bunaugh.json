@@ -1,0 +1,35 @@
+{
+  "recordData": {
+    "Name": "Stephen Bunaugh",
+    "Marriage Date": "14 Dec 1853",
+    "Marriage Place": "Wheatland, Kenosha, Wisconsin, United States",
+    "Source Reference": "Items 1-2"
+  },
+  "fullName": "Stephen Bunaugh",
+  "givenName": "Stephen",
+  "surname": "Bunaugh",
+  "gender": "male",
+  "eventDateOriginal": "14 12 1853",
+  "eventDate": "14 Dec 1853",
+  "eventYear": "1853",
+  "eventPlaceOriginal": "Wheatland, Kenosha, Wisconsin, United States",
+  "eventPlace": "Wheatland, Kenosha, Wisconsin, United States",
+  "factType": "Marriage",
+  "spouseFullName": "Susan B. Newbury",
+  "spouseGivenName": "Susan B.",
+  "spouseSurname": "Newbury",
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Wheatland, Kenosha, Wisconsin\", \"EVENT_DATE_ALT_ORIG\": \"14 Dec 1853\"}",
+  "fsCollectionId": "1708704",
+  "referenceData": {
+    "digitalFilmNumber": "007619664",
+    "filmNumber": "1276050",
+    "packetLetter": "I",
+    "recordNumber": "40"
+  },
+  "collectionTitle": "Wisconsin Marriages, 1836-1930",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MX1R-VQZ",
+  "citation": "\"Wisconsin Marriages, 1836-1930\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:XRP7-LN5 : 6 September 2023), Stephen Bunaugh, 1853.",
+  "sourceTitleForPerson": "Stephen Bunaugh, \"Wisconsin Marriages, 1836-1930\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:XRP7-LN5",
+  "pageType": "record"
+}

@@ -2428,9 +2428,9 @@ class GeneralizedData {
   inferBirthCountry() {
     let placeNames = [];
 
-    let deathPlace = this.inferBirthPlace();
-    if (deathPlace) {
-      placeNames.push(deathPlace);
+    let birthPlace = this.inferBirthPlace();
+    if (birthPlace) {
+      placeNames.push(birthPlace);
     }
 
     if (

@@ -88,4 +88,13 @@ function wtApiGetRelatives(ids, fields, getParents, getChildren, getSiblings, ge
   return wtApiCall(body);
 }
 
-export { wtApiGetPerson, wtApiGetPeople, wtApiGetRelatives };
+function wtApiGetBio(id) {
+  const body = new URLSearchParams({
+    action: "getBio",
+    key: id,
+  });
+
+  return wtApiCall(body);
+}
+
+export { wtApiGetPerson, wtApiGetPeople, wtApiGetRelatives, wtApiGetBio };

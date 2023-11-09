@@ -203,8 +203,7 @@ async function ancestryBuildCitationWithLinkData(data) {
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
       // some of the linked records could not be retrieved.
-      parallelRequestsDisplayErrorsMessage("building citation");
-      return;
+      await parallelRequestsDisplayErrorsMessage("building citation");
     }
 
     regeneralizeDataWithLinkedRecords(data);
@@ -363,8 +362,7 @@ async function ancestryBuildHouseholdTableWithLinkedRecords(data) {
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
       // some of the linked records could not be retrieved.
-      parallelRequestsDisplayErrorsMessage("building household table");
-      return;
+      await parallelRequestsDisplayErrorsMessage("building household table");
     }
 
     regeneralizeDataWithLinkedRecords(data);
@@ -658,8 +656,7 @@ async function setupAncestryPopupMenuWithLinkData(data) {
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
       // some of the linked records could not be retrieved.
-      parallelRequestsDisplayErrorsMessage("initializing menu");
-      return;
+      await parallelRequestsDisplayErrorsMessage("initializing menu");
     }
 
     regeneralizeDataWithLinkedRecords(data);

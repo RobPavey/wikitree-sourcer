@@ -84,7 +84,13 @@ async function getSourcerCitations(runDate, result, type, options) {
     return newResponse;
   }
 
-  let requestsResult = await doRequestsInParallel(requests, requestFunction);
+  const queueOptions = {
+    initialWaitBetweenRequests: 1,
+    maxWaitime: 1600,
+    additionalRetryWaitime: 1600,
+    additionalManyRecent429sWaitime: 1600,
+  };
+  let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
 
   result.failureCount = requestsResult.failureCount;
 

@@ -81,6 +81,8 @@ function buildSelectValuesForPlace(placeString, countries) {
     addValue(country);
   }
 
+  addValue("<none>");
+
   //console.log("buildSelectValuesForPlace: values is:");
   //console.log(values);
 

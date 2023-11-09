@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh, 1853.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Stephen married Susan B. Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh, 1853.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>Stephen Bunaugh, 1853.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh marriage to Susan B. Newbury on 14 Dec 1853 in Wheatland, Kenosha, Wisconsin, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Stephen married Susan B. Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh marriage to Susan B. Newbury on 14 Dec 1853 in Wheatland, Kenosha, Wisconsin, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>Stephen Bunaugh marriage to Susan B. Newbury on 14 Dec 1853 in Wheatland, Kenosha, Wisconsin, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nName: Stephen Bunaugh; Marriage Date: 14 Dec 1853; Marriage Place: Wheatland, Kenosha, Wisconsin, United States; Source Reference: Items 1-2.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Stephen married Susan B. Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nName: Stephen Bunaugh; Marriage Date: 14 Dec 1853; Marriage Place: Wheatland, Kenosha, Wisconsin, United States; Source Reference: Items 1-2.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>Name: Stephen Bunaugh; Marriage Date: 14 Dec 1853; Marriage Place: Wheatland, Kenosha, Wisconsin, United States; Source Reference: Items 1-2.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Stephen Bunaugh\n|-\n| Marriage Date || 14 Dec 1853\n|-\n| Marriage Place || Wheatland, Kenosha, Wisconsin, United States\n|-\n| Source Reference || Items 1-2\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Stephen married Susan B. Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Stephen Bunaugh\n|-\n| Marriage Date || 14 Dec 1853\n|-\n| Marriage Place || Wheatland, Kenosha, Wisconsin, United States\n|-\n| Source Reference || Items 1-2\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>Name: Stephen Bunaugh; Marriage Date: 14 Dec 1853; Marriage Place: Wheatland, Kenosha, Wisconsin, United States; Source Reference: Items 1-2.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh, 1853.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Stephen married Susan B. Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh, 1853.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>Stephen Bunaugh, 1853.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Stephen married Susan B. Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh marriage to Susan B. Newbury on 14 Dec 1853 in Wheatland, Kenosha, Wisconsin, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Stephen married Susan B. Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh marriage to Susan B. Newbury on 14 Dec 1853 in Wheatland, Kenosha, Wisconsin, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>Stephen Bunaugh marriage to Susan B. Newbury on 14 Dec 1853 in Wheatland, Kenosha, Wisconsin, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh, 1853.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Stephen married Susan B. Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>\nStephen Bunaugh, 1853.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)<br/>Stephen Bunaugh, 1853.",
+    "type": "source"
+  }
+}

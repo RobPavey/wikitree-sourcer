@@ -22,6 +22,33 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { CD } from "../../../base/core/country_data.mjs";
+
+function modifyLocationForSearch(location, options) {
+  let exactness = options.search_wikitree_locationExactness;
+
+  if (exactness == "none") {
+    return "";
+  }
+
+  if (!location) {
+    return "";
+  }
+
+  if (exactness == "full") {
+    return location;
+  }
+
+  // option is country only
+  let country = CD.matchCountryFromPlaceName(location);
+  if (country) {
+    return country.stdName;
+  }
+
+  // no country found - omit location
+  return "";
+}
+
 function buildSearchData(input) {
   //console.log("buildSearchData, input is:");
   //console.log(input);
@@ -65,9 +92,11 @@ function buildSearchData(input) {
 
   let birthPlace = "";
   if (parameters) {
-    birthPlace = parameters.birthPlace;
+    if (parameters.birthPlace != "<none>") {
+      birthPlace = parameters.birthPlace;
+    }
   } else {
-    birthPlace = gd.inferBirthPlace();
+    birthPlace = modifyLocationForSearch(gd.inferBirthPlace(), options);
   }
   if (birthPlace) {
     fieldData.simpleNameFields["birth_location"] = birthPlace;
@@ -75,9 +104,11 @@ function buildSearchData(input) {
 
   let deathPlace = "";
   if (parameters) {
-    deathPlace = parameters.deathPlace;
+    if (parameters.deathPlace != "<none>") {
+      deathPlace = parameters.deathPlace;
+    }
   } else {
-    deathPlace = gd.inferDeathPlace();
+    deathPlace = modifyLocationForSearch(gd.inferDeathPlace(), options);
   }
   if (deathPlace) {
     fieldData.simpleNameFields["death_location"] = deathPlace;

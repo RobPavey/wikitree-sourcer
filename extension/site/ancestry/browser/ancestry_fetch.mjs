@@ -224,7 +224,12 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
     // On Firefox it may return zero any time you use "no-cors"
     if (!response || response.status !== 200) {
       console.log("Looks like there was a problem. Status Code: " + response.status);
+      // it would be nice if the response told us how long to wait but it does not
+      // as of 6 Nov 2023
+      //console.log("Full response is : ");
+      //console.log(response);
       result.allowRetry = true;
+      result.statusCode = response.status;
       return result;
     }
 

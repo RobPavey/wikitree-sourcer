@@ -36,7 +36,7 @@
       "name": "Eleanor Pearson",
       "relationship": "head",
       "maritalStatus": "single",
-      "age": "47 years",
+      "age": "47",
       "birthYear": "1903",
       "occupation": "Clerk",
       "birthPlace": "Illinois"
@@ -45,7 +45,7 @@
       "name": "Ruth Pearson",
       "relationship": "sister",
       "maritalStatus": "single",
-      "age": "40 years",
+      "age": "40",
       "birthYear": "1910",
       "occupation": "Typist",
       "birthPlace": "Ill",

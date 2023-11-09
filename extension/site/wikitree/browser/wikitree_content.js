@@ -565,6 +565,124 @@ function post(path, params, method = "post") {
   form.submit();
 }
 
+function getExistingBioText(personData) {
+  // if in edit mode then use the text area rather than what the API returns
+  // Hmm, maybe not because if it is not saved that is not what the merge will be using
+  // But maybe that is what they want? Things will be messed up if there are
+  // unsaved changes in the open tab.
+  let editTextArea = document.querySelector("#wpTextbox1");
+  if (editTextArea) {
+    return editTextArea.value;
+  }
+
+  if (personData.existingBioText) {
+    return personData.existingBioText;
+  }
+}
+
+function mergeBioText(personData) {
+  let existingText = getExistingBioText(personData);
+
+  if (!existingText) {
+    return "";
+  }
+
+  let startOfBiographySectionIndex = -1;
+  let startOfSourcesSectionIndex = -1;
+  let endOfBiographySectionIndex = -1;
+  let endOfSourcesSectionIndex = -1;
+
+  let inBio = false;
+  let inSources = false;
+
+  const regex1 = RegExp("==s*[^=\n]+s*==", "g");
+  let array1;
+
+  while ((array1 = regex1.exec(existingText)) !== null) {
+    let matchedText = array1[0];
+    //console.log(`Found ${array1[0]} at index ${array1.index}. Next starts at ${regex1.lastIndex}.`);
+
+    if (inBio) {
+      endOfBiographySectionIndex = array1.index;
+      inBio = false;
+    } else if (inSources) {
+      endOfSourcesSectionIndex = array1.index;
+      inSources = false;
+    }
+
+    if (/\=\=\s*Biography\s*\=\=/.test(matchedText)) {
+      if (startOfBiographySectionIndex != -1) {
+        // already found start of bio, must be multiple
+        return "";
+      }
+      startOfBiographySectionIndex = array1.index;
+      inBio = true;
+    } else if (/\=\=\s*Sources\s*\=\=/.test(matchedText)) {
+      if (startOfSourcesSectionIndex != -1) {
+        // already found start of sources, must be multiple
+        return "";
+      }
+      startOfSourcesSectionIndex = array1.index;
+      inSources = true;
+    }
+  }
+
+  if (endOfSourcesSectionIndex == -1 && inSources) {
+    endOfSourcesSectionIndex = existingText.length;
+  }
+
+  if (!endOfBiographySectionIndex || !endOfSourcesSectionIndex) {
+    return "";
+  }
+
+  //console.log("startOfBiographySectionIndex = " + startOfBiographySectionIndex);
+  //console.log("endOfBiographySectionIndex = " + endOfBiographySectionIndex);
+  //console.log("startOfSourcesSectionIndex = " + startOfSourcesSectionIndex);
+  //console.log("endOfSourcesSectionIndex = " + endOfSourcesSectionIndex);
+
+  let indexToAddSources = endOfSourcesSectionIndex;
+  let seeAlsoIndex = existingText.indexOf("See also:", startOfSourcesSectionIndex);
+  if (seeAlsoIndex != -1 && seeAlsoIndex < endOfSourcesSectionIndex) {
+    indexToAddSources = seeAlsoIndex;
+  }
+
+  let newText = existingText.substring(0, endOfBiographySectionIndex);
+  if (personData.bio) {
+    newText += personData.bio + "\n\n";
+  }
+  newText += existingText.substring(endOfBiographySectionIndex, indexToAddSources);
+  if (personData.sources) {
+    if (indexToAddSources == existingText.length) {
+      newText += "\n\n";
+    }
+    newText += personData.sources;
+    if (seeAlsoIndex != -1) {
+      // want a gap between this added source and "See also:"
+      newText += "\n\n";
+    }
+  }
+  newText += existingText.substring(indexToAddSources, endOfSourcesSectionIndex);
+  if (personData.seeAlso) {
+    let seeAlsoToAdd = personData.seeAlso;
+    if (seeAlsoIndex != -1) {
+      // there is already a See Also section:
+      seeAlsoToAdd = seeAlsoToAdd.replace(/^See also\:\s*/, "");
+    }
+    if (endOfSourcesSectionIndex == existingText.length) {
+      if (seeAlsoIndex != -1) {
+        newText += "\n";
+      } else {
+        newText += "\n\n";
+      }
+    }
+    newText += seeAlsoToAdd;
+  }
+  // add back any text that was after Sources section
+  newText += existingText.substring(endOfSourcesSectionIndex);
+
+  return newText;
+}
+
 function postMergeEditData(wikitreeMergeEditData) {
   const personData = wikitreeMergeEditData.wtPersonData;
   const wikiId = wikitreeMergeEditData.wikiId;
@@ -592,10 +710,25 @@ function postMergeEditData(wikitreeMergeEditData) {
     summary: personData.changeExplanation,
   };
 
-  if (personData.bio) {
-    person.person.Bio = personData.bio;
-    person.options = { mergeBio: 1 };
+  if (personData.bio || personData.sources || personData.seeAlso) {
+    if (personData.bio && !personData.sources && !personData.seeAlso) {
+      person.person.Bio = personData.bio;
+      person.options = { mergeBio: 1 };
+    } else {
+      // we need to get the existing profile text and merge it here, but this is tricky
+      // if the page we are viewing is not in edit mode. Could use the API I guess.
+      let mergedBio = mergeBioText(personData);
+      if (mergedBio) {
+        person.person.Bio = mergedBio;
+      } else {
+        person.person.Bio = personData.bio + "\n\n" + personData.sources + "\n\n" + personData.seeAlso;
+        person.options = { mergeBio: 1 };
+      }
+    }
   }
+
+  //console.log("about to post, person is:");
+  //console.log(person);
 
   const body = {
     user_name: wikiId,

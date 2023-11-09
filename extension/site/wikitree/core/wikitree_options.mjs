@@ -62,6 +62,18 @@ const searchOptionsGroup = {
       ],
       defaultValue: "bothVariant",
     },
+    {
+      optionName: "locationExactness",
+      type: "select",
+      label: "Include birth/death locations in default search",
+      values: [
+        { value: "full", text: "Use full location" },
+        { value: "country", text: "Use country only" },
+        { value: "none", text: "Do not incude locations" },
+      ],
+      defaultValue: "country",
+      unitTestValue: "full",
+    },
   ],
 };
 

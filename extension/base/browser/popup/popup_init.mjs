@@ -30,6 +30,7 @@ import {
   addMenuItem,
   addItalicMessageMenuItem,
   setPopupMenuWidth,
+  displayBusyMessage,
   displayBusyMessageAfterDelay,
   macSecondMonitorWorkaround,
   openExceptionPage,

@@ -1221,6 +1221,24 @@ const addMergeMergeEditOptionsGroup = {
       label: "Add a link/template to the biography if merging from a profile",
       defaultValue: false,
     },
+    {
+      optionName: "includeBirthLine",
+      type: "checkbox",
+      label: "Include a line in bio for any known birth info (if not already including narratives or inline citations)",
+      defaultValue: false,
+    },
+    {
+      optionName: "includeMarriageLines",
+      type: "checkbox",
+      label: "Include a line in bio for each known marriage (if not already including narratives or inline citations)",
+      defaultValue: false,
+    },
+    {
+      optionName: "includeDeathLine",
+      type: "checkbox",
+      label: "Include a line in bio for any known death info (if not already including narratives or inline citations)",
+      defaultValue: false,
+    },
   ],
 };
 

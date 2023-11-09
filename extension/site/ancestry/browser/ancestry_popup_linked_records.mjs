@@ -28,6 +28,7 @@ import { extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
 import { registerAsyncCacheTag } from "../../../base/core/async_result_cache.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
+import { getCachedAsyncResult } from "../../../base/core/async_result_cache.mjs";
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
 const oneHourInMs = 1000 * 60 * 60;
@@ -70,12 +71,25 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
   }
 
   let requests = [];
+  let cachedResponses = [];
   for (let record of linkedRecords) {
-    let request = {
-      name: record.name,
-      input: record,
-    };
-    requests.push(request);
+    let cachedResult = await getCachedAsyncResult(record.cacheTag, record.link);
+
+    if (cachedResult) {
+      let extractedData = extractDataFromHtml(cachedResult.htmlText, record.link);
+      let cachedResponse = {
+        name: record.name,
+        link: record.link,
+        extractedData: extractedData,
+      };
+      cachedResponses.push(cachedResponse);
+    } else {
+      let request = {
+        name: record.name,
+        input: record,
+      };
+      requests.push(request);
+    }
   }
 
   async function requestFunction(input, updateStatusFunction) {
@@ -83,40 +97,73 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     let newResponse = { success: false };
     let response = await extractRecordHtmlFromUrl(input.link, input.cacheTag);
 
-    let retryCount = 0;
-    while (!response.success && response.allowRetry && retryCount < 3) {
-      retryCount++;
-      updateStatusFunction("retry " + retryCount);
-      response = await extractRecordHtmlFromUrl(input.link, input.cacheTag);
-    }
-
     if (response.success) {
       let extractedData = extractDataFromHtml(response.htmlText, response.recordUrl);
+      newResponse.link = response.recordUrl;
       newResponse.extractedData = extractedData;
       newResponse.success = true;
     } else {
       newResponse.allowRetry = response.allowRetry;
+      newResponse.statusCode = response.statusCode;
     }
     return newResponse;
   }
 
-  let requestsResult = await doRequestsInParallel(requests, requestFunction);
+  const queueOptions = {
+    initialWaitBetweenRequests: 20,
+    maxWaitime: 3200,
+    additionalRetryWaitime: 3200,
+    additionalManyRecent429sWaitime: 5000,
+    slowDownFromStartCount: 10,
+    slowDownFromStartMult: 4,
+  };
+  let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
+
+  //console.log("returned from doRequestsInParallel, requestsResult is:  ");
+  //console.log(requestsResult);
+
+  function findCachedResponseByLink(link) {
+    for (let cachedResponse of cachedResponses) {
+      if (cachedResponse.link == link) {
+        return cachedResponse;
+      }
+    }
+  }
+
+  function findRequestResponseByLink(link) {
+    if (requestsResult) {
+      for (let response of requestsResult.responses) {
+        if (response) {
+          if (response.link == link) {
+            return response;
+          }
+        }
+      }
+    }
+  }
 
   let processInput = data;
   processInput.linkedRecordFailureCount = requestsResult.failureCount;
   processInput.linkedRecords = [];
 
-  if (linkedRecords.length == requestsResult.responses.length) {
-    for (let i = 0; i < linkedRecords.length; i++) {
-      let linkedRecord = {
-        name: linkedRecords[i].name,
-        link: linkedRecords[i].link,
-      };
-      if (requestsResult.responses[i]) {
-        linkedRecord.extractedData = requestsResult.responses[i].extractedData;
+  for (let i = 0; i < linkedRecords.length; i++) {
+    let link = linkedRecords[i].link;
+    let linkedRecord = {
+      name: linkedRecords[i].name,
+      link: link,
+    };
+
+    let cachedResponse = findCachedResponseByLink(link);
+    if (cachedResponse) {
+      linkedRecord.extractedData = cachedResponse.extractedData;
+    } else {
+      let requestResponse = findRequestResponseByLink(link);
+      if (requestResponse) {
+        linkedRecord.extractedData = requestResponse.extractedData;
       }
-      processInput.linkedRecords.push(linkedRecord);
     }
+
+    processInput.linkedRecords.push(linkedRecord);
   }
 
   //keepPopupOpenForDebug();
