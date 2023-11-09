@@ -43,7 +43,7 @@
       "age": "31",
       "birthYear": "1849",
       "occupation": "Farmer",
-      "birthPlace": "Indiana, United States"
+      "birthPlace": "Indiana"
     },
     {
       "name": "Alice Miller",
@@ -53,7 +53,7 @@
       "age": "25",
       "birthYear": "1855",
       "occupation": "Keeping House",
-      "birthPlace": "Indiana, United States",
+      "birthPlace": "Indiana",
       "isSelected": true
     },
     {
@@ -63,7 +63,7 @@
       "gender": "male",
       "age": "8",
       "birthYear": "1872",
-      "birthPlace": "Indiana, United States"
+      "birthPlace": "Indiana"
     },
     {
       "name": "Charley Miller",
@@ -72,7 +72,7 @@
       "gender": "male",
       "age": "6",
       "birthYear": "1874",
-      "birthPlace": "Indiana, United States"
+      "birthPlace": "Indiana"
     },
     {
       "name": "James Miller",
@@ -81,7 +81,7 @@
       "gender": "male",
       "age": "4",
       "birthYear": "1876",
-      "birthPlace": "Indiana, United States"
+      "birthPlace": "Indiana"
     },
     {
       "name": "Arnold Miller",
@@ -90,7 +90,7 @@
       "gender": "male",
       "age": "1",
       "birthYear": "1879",
-      "birthPlace": "Indiana, United States"
+      "birthPlace": "Indiana"
     }
   ],
   "maritalStatus": "married",

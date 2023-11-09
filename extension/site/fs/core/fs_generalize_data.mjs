@@ -32,6 +32,7 @@ import {
 } from "../../../base/core/generalize_data_utils.mjs";
 import { RT, Role, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { CD } from "../../../base/core/country_data.mjs";
 
 const factTypeToRecordType = [
   {
@@ -782,6 +783,10 @@ function generalizeDataGivenRecordType(ed, result) {
           }
           let age = member.age;
           if (age && age != "Unknown" && age != "999") {
+            if (age.search(/[^\d]/) != -1) {
+              age = age.replace(/\s*years\s*$/i, "");
+            }
+
             householdMember.age = age;
             fieldsEncountered.age = true;
           }
@@ -806,7 +811,21 @@ function generalizeDataGivenRecordType(ed, result) {
             birthPlace = member.birthPlaceOriginal;
           }
           if (birthPlace && birthPlace != "Unknown") {
-            householdMember.birthPlace = cleanPlace(birthPlace);
+            birthPlace = cleanPlace(birthPlace);
+
+            // Some censuses (like the US 1880) put the country name on all birth places
+            // try to remove it
+            if (result.eventPlace && result.eventPlace.placeString) {
+              let eventCountry = CD.extractCountryFromPlaceName(result.eventPlace.placeString);
+              let birthCountry = CD.extractCountryFromPlaceName(birthPlace);
+              if (eventCountry && eventCountry.country && birthCountry && birthCountry.country) {
+                if (eventCountry.country.stdName == birthCountry.country.stdName) {
+                  birthPlace = birthCountry.remainder;
+                }
+              }
+            }
+
+            householdMember.birthPlace = birthPlace;
             fieldsEncountered.birthPlace = true;
           }
           let isSelected = member["isSelected"];
