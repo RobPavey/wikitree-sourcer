@@ -72,6 +72,7 @@ const searchOptionsGroup = {
         { value: "none", text: "Do not incude locations" },
       ],
       defaultValue: "country",
+      unitTestValue: "full",
     },
   ],
 };
