@@ -35,7 +35,6 @@ import {
   macSecondMonitorWorkaround,
   openExceptionPage,
   displayMessageWithIcon,
-  displayBusyMessage,
 } from "./popup_menu_building.mjs";
 
 import "/site/all/browser/popup_register_search_sites.mjs";

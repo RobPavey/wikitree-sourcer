@@ -41,14 +41,34 @@ async function updatePage(request) {
     descriptionElement.innerText = message;
   }
 
-  //console.log("error is:");
+  //console.log("errorName is:");
+  //console.log(errorName);
+  //console.log("errorMessage is:");
+  //console.log(errorMessage);
+  //console.log("errorStack is:");
   //console.log(errorStack);
   //console.log("input is:");
   //console.log(input);
 
   let detailsElement = document.getElementById("details");
-  if (detailsElement && errorStack) {
-    detailsElement.innerText = errorStack;
+  if (detailsElement) {
+    let text = "";
+    if (errorName) {
+      text += errorName;
+    }
+    if (errorMessage) {
+      if (text) {
+        text += "\n\n";
+      }
+      text += errorMessage;
+    }
+    if (errorStack) {
+      if (text) {
+        text += "\n\n";
+      }
+      text += errorStack;
+    }
+    detailsElement.innerText = text;
   }
 
   try {

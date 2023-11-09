@@ -216,6 +216,7 @@ async function loadPopupModuleForSupportedSite(popupModulePath) {
     popupState.progress = progressState.defaultPopupException;
 
     console.log("WikiTree Sourcer: error in loadPopupModuleForSupportedSite. Path is: ", src);
+    console.log(e);
 
     let message = "Error when attempting a dynamic import of the popup module in a the default popup.\n";
     openExceptionPage(message, popupModulePath, e, false);
