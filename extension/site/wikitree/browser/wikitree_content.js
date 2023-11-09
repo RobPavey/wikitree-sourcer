@@ -656,6 +656,10 @@ function mergeBioText(personData) {
       newText += "\n\n";
     }
     newText += personData.sources;
+    if (seeAlsoIndex != -1) {
+      // want a gap between this added source and "See also:"
+      newText += "\n\n";
+    }
   }
   newText += existingText.substring(indexToAddSources, endOfSourcesSectionIndex);
   if (personData.seeAlso) {
