@@ -31,6 +31,9 @@ import {
 } from "./popup_menu_building.mjs";
 
 async function requestPermissionsFromUser(permissions, options) {
+  //console.log("requestPermissionsFromUser, permissions is:");
+  //console.log(permissions);
+
   const reasonMessage = options.reason;
   const allowSkip = options.allowSkip;
   const needsPopupDisplayed = options.needsPopupDisplayed;
@@ -79,7 +82,7 @@ async function requestPermissionsFromUser(permissions, options) {
 
   let label3Message = "Press the button below to request the permission.";
   if (needsPopupDisplayed) {
-    label3Message += " This will close the popup so you will have to click on the Sourcer [1] icon again.";
+    label3Message += " This may close the popup so you may have to click on the Sourcer [1] icon again.";
   }
   label3.innerText = label3Message;
   messageDiv3.appendChild(label3);
@@ -122,7 +125,7 @@ async function requestPermissionsFromUser(permissions, options) {
       let savedMenuStyle = menu.style;
       menu.style = "display:none";
       try {
-        let requestResult = await browser.permissions.request(permissions);
+        let requestResult = await chrome.permissions.request(permissions);
         menu.style = savedMenuStyle;
         if (!requestResult) {
           displayMessageWithIcon("warning", "Permission request failed");
@@ -131,7 +134,7 @@ async function requestPermissionsFromUser(permissions, options) {
 
         resolve(true);
       } catch (error) {
-        console.log("Exception caught during browser.permissions.request.");
+        console.log("Exception caught during chrome.permissions.request.");
         console.log(error);
         menu.style = savedMenuStyle;
         displayMessageThenClosePopup("Permission request failed.");
@@ -148,15 +151,15 @@ async function requestPermissionsFromUser(permissions, options) {
 }
 
 async function checkPermissionForSites(siteMatches, options) {
-  if (!isFirefox()) {
-    return true;
-  }
-
   let permissions = { origins: siteMatches };
-  let hasPermission = await browser.permissions.contains(permissions);
+  let hasPermission = await chrome.permissions.contains(permissions);
 
   if (hasPermission) {
     return true;
+  }
+
+  if (options.checkOnly) {
+    return false;
   }
 
   // request permission from Firefox
@@ -164,10 +167,6 @@ async function checkPermissionForSites(siteMatches, options) {
 }
 
 async function checkPermissionForSite(matchString, options) {
-  if (!isFirefox()) {
-    return true;
-  }
-
   let siteMatches = [matchString];
   return await checkPermissionForSites(siteMatches, options);
 }

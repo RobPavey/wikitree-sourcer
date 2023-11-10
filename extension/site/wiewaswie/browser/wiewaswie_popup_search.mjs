@@ -41,6 +41,7 @@ import {
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 const wiewaswieStartYear = 1000; // I have seem lots of dates like 1039 and some of 1000
 const wiewaswieEndYear = 2040;
@@ -56,6 +57,16 @@ async function doWiewaswieSearch(input) {
 
     let fieldData = buildResult.fieldData;
     let selectData = buildResult.selectData;
+
+    const checkPermissionsOptions = {
+      reason:
+        "To perform a search on WieWasWie a content script needs to be loaded on the www.wiewaswie.nl search page.",
+    };
+    let allowed = await checkPermissionForSite("*://www.wiewaswie.nl/*", checkPermissionsOptions);
+    if (!allowed) {
+      closePopup();
+      return;
+    }
 
     let searchUrl = "https://www.wiewaswie.nl/en/search/?advancedsearch=1";
     let lang = options.search_wiewaswie_searchLang;

@@ -42,6 +42,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -57,6 +58,16 @@ function freecenDoSearch(input) {
     let fieldData = buildResult.fieldData;
 
     const searchUrl = "https://www.freecen.org.uk/search_queries/new?locale=en";
+
+    const checkPermissionsOptions = {
+      reason: "To perform a search on FreeCen a content script needs to be loaded on the freecen.org.uk search page.",
+    };
+    let allowed = await checkPermissionForSite("*://www.freecen.org.uk/*", checkPermissionsOptions);
+    if (!allowed) {
+      closePopup();
+      return;
+    }
+
     try {
       const freecenSearchData = {
         timeStamp: Date.now(),

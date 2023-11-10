@@ -56,12 +56,27 @@ import { CD } from "../../../base/core/country_data.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+
+async function checkIfWeHavePermissionsToUseApi() {
+  const checkPermissionsOptions = {
+    checkOnly: true,
+  };
+  let allowed = await checkPermissionForSite("*://api.wikitree.com/*", checkPermissionsOptions);
+  return allowed;
+}
+
 var haveValidApiResponse = false;
 var apiResponse = undefined;
 var timeApiRequestMade = undefined;
 
 async function makeApiRequests(extractedData) {
   if (haveValidApiResponse) {
+    return;
+  }
+
+  let havePermission = await checkIfWeHavePermissionsToUseApi();
+  if (!havePermission) {
     return;
   }
 
@@ -229,6 +244,11 @@ async function updateGeneralizedDataUsingApiResponse(data) {
       }
       updateValueIfNeeded(person.name, "forenames", forenames);
     }
+  }
+
+  let havePermission = await checkIfWeHavePermissionsToUseApi();
+  if (!havePermission) {
+    return;
   }
 
   await waitForAPIResponse();
@@ -724,6 +744,15 @@ function getProfileLinkForAddMerge(personEd, personGd) {
 }
 
 async function getWikiTreeMergeEditData(data, personData, citationObject) {
+  const checkPermissionsOptions = {
+    reason: "To initiate a merge/edit the extension needs access to wikitree.com.",
+  };
+  let allowed = await checkPermissionForSite("*://*.wikitree.com/*", checkPermissionsOptions);
+  if (!allowed) {
+    closePopup();
+    return;
+  }
+
   let personEd = personData.extractedData;
   let personGd = personData.generalizedData;
   let result = getWikiTreeAddMergeData(data, personEd, personGd, citationObject);
