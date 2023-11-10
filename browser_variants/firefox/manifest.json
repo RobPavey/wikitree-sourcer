@@ -60,7 +60,8 @@
     "*://*.wikipedia.org/*"
   ],
   "background": {
-    "page": "base/browser/background/background.html"
+    "scripts": ["base/browser/background/background_mv3.mjs"],
+    "type": "module"
   },
   "action": {
     "default_popup": "base/browser/popup/popup.html",
@@ -421,7 +422,8 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "{9c98db38-a25c-475a-bdb9-48f6ec303214}"
+      "id": "{9c98db38-a25c-475a-bdb9-48f6ec303214}",
+      "strict_min_version": "109.0"
     }
   },
   "manifest_version": 3
