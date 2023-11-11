@@ -1766,6 +1766,10 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
     return false;
   }
 
+  if (!wtPersonData) {
+    return;
+  }
+
   if (nameNeedsUserCheck()) {
     return;
   }
