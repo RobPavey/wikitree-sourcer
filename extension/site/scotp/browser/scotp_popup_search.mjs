@@ -44,7 +44,7 @@ const scotpEndYear = 2500;
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function scotpSearch(generalizedData, parameters) {
-  // request permission for Firefox if needed
+  // request permission if needed
   const checkPermissionsOptions = {
     reason: "Sourcer needs to load a content script on the Scotlands People site to complete the search",
   };

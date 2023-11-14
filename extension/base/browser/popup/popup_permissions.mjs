@@ -22,13 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  displayMessageWithIconThenClosePopup,
-  displayMessageThenClosePopup,
-  emptyMenu,
-  isFirefox,
-  displayMessageWithIcon,
-} from "./popup_menu_building.mjs";
+import { displayMessageThenClosePopup, emptyMenu, displayMessageWithIcon } from "./popup_menu_building.mjs";
 
 async function requestPermissionsFromUser(permissions, options) {
   //console.log("requestPermissionsFromUser, permissions is:");
@@ -130,9 +124,9 @@ async function requestPermissionsFromUser(permissions, options) {
         if (!requestResult) {
           displayMessageWithIcon("warning", "Permission request failed");
           resolve(false);
+        } else {
+          resolve(true);
         }
-
-        resolve(true);
       } catch (error) {
         console.log("Exception caught during chrome.permissions.request.");
         console.log(error);
@@ -152,6 +146,10 @@ async function requestPermissionsFromUser(permissions, options) {
 
 async function checkPermissionForSites(siteMatches, options) {
   let permissions = { origins: siteMatches };
+
+  //console.log("checkPermissionForSites, permissions is:");
+  //console.log(permissions);
+
   let hasPermission = await chrome.permissions.contains(permissions);
 
   if (hasPermission) {
@@ -180,6 +178,15 @@ async function checkPermissionForSiteFromUrl(url, options) {
     domain = options.defaultDomain;
   }
 
+  // Note: it is best to use the scheme in the URL rather than "*" because the request
+  // has to be a subset of what is in the manifest. On Safari if there is a content match
+  // for, say, "https://*.wikitree.com/*" and we request "*://*.wikitree.com/*" it will get an
+  // exception.
+  let scheme = url.replace(/(https?)\:\/\/[^\.]+\.[^\/]+\/.*/, "$1");
+  if (!scheme || scheme == url) {
+    scheme = "https";
+  }
+
   // we want a match string like: "*://*.ancestry.com/*"
 
   let subDomain = "*";
@@ -187,7 +194,7 @@ async function checkPermissionForSiteFromUrl(url, options) {
     subDomain = options.overrideSubdomain;
   }
 
-  let matchString = "*://" + subDomain + "." + domain + "/*";
+  let matchString = scheme + "://" + subDomain + "." + domain + "/*";
 
   return await checkPermissionForSite(matchString, options);
 }

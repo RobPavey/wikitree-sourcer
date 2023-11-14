@@ -26,19 +26,21 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/gbooks_generalize_data.mjs";
 import { buildCitation } from "../core/gbooks_build_citation.mjs";
-import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 async function setupGbooksPopupMenu(extractedData, tabId) {
   // if the pageviewer is active then attempt to get the page from that
   if (extractedData.url && extractedData.url.includes("gbpv=1")) {
-    // request permission for Firefox if needed
+    // request permission for if needed
     const checkPermissionsOptions = {
       reason: "To get the page number the extension needs to load a content script into the books iframe.",
       needsPopupDisplayed: true,
-      overrideSubdomain: "books",
       allowSkip: true,
     };
-    let allowed = await checkPermissionForSiteFromUrl(extractedData.url, checkPermissionsOptions);
+    // the books link will be to google.com when the current url is google.co.uk
+    // so don't use the page URL to check.
+    // NOTE: On Firefox the page has to be reloaded after permission is granted.
+    let allowed = await checkPermissionForSite("*://books.google.com/*", checkPermissionsOptions);
 
     if (allowed) {
       // send an additional message to attempt to get the pageLink from an iframe

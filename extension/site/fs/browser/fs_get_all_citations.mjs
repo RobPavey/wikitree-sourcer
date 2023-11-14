@@ -102,7 +102,7 @@ async function fsGetAllCitations(input) {
   let options = input.options;
   let runDate = input.runDate;
 
-  // request permission for Firefox if needed
+  // request permission if needed
   const checkPermissionsOptions = {
     reason: "Sourcer needs to request the list of sources from FamilySearch.",
     needsPopupDisplayed: true,

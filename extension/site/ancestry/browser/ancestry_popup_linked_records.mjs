@@ -58,7 +58,7 @@ function extractDataFromHtml(htmlText, recordUrl) {
 }
 
 async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
-  // request permission for Firefox if needed
+  // request permission if needed
   if (linkedRecords.length > 0) {
     let url = linkedRecords[0].link;
     const checkPermissionsOptions = {

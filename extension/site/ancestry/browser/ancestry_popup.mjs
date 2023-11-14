@@ -478,7 +478,7 @@ function ancestryGoToFullSizeSharingImage(data) {
 async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalExtractedData) {
   //console.log("extractRecordFromUrlFromPersonSourceCitation");
 
-  // request permission for Firefox if needed
+  // request permission if needed
   const checkPermissionsOptions = {
     reason: "Because this not a complete source record the extension must request the data from the full record.",
     needsPopupDisplayed: true,
