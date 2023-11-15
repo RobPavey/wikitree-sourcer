@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <link rel="stylesheet" href="user_citation.css" />
+      <title>WikiTree Sourcer Manual Citation Builder</title>
+    </head>
+  </head>
+  <body>
+    <h2>WikiTree Sourcer Manual Citation Builder</h2>
+
+    <div id="requestReport">
+      <label>Use this form to create a citation for unsupported sites. See</label>
+
+      <a href="https://www.wikitree.com/wiki/Pavey-429"> documentation </a>
+      <label> for details. </label>
+
+      <br />
+      <br />
+    </div>
+
+    <table id="formTable" class="formTable">
+      <tbody>
+        <tr id="citationTypeRow">
+          <td>Type of citation:</td>
+          <td>
+            <select id="citationType">
+              <option value="narrative">Narrative plus Inline</option>
+              <option value="inline">Inline</option>
+              <option value="source">Source</option>
+            </select>
+          </td>
+        </tr>
+        <tr id="sourceTypeRow">
+          <td>Type of source:</td>
+          <td>
+            <select id="sourceType">
+              <option value="book">Book or Article</option>
+              <option value="record">Record</option>
+            </select>
+          </td>
+        </tr>
+        <tr id="narrativeRow">
+          <td>Narrative sentence:</td>
+          <td><input id="narrative" class="stretchTextBox" type="text" /></td>
+        </tr>
+        <tr id="labelRow">
+          <td>Label:</td>
+          <td><input id="label" class="stretchTextBox" type="text" /></td>
+        </tr>
+        <tr id="authorRow">
+          <td>Author:</td>
+          <td><input id="author" class="stretchTextBox" type="text" /></td>
+        </tr>
+        <tr>
+          <td>Source title:</td>
+          <td><input id="sourceTitle" class="stretchTextBox" type="text" /></td>
+        </tr>
+        <tr id="sourceReferenceRow">
+          <td>Source reference:</td>
+          <td><input id="sourceReference" class="stretchTextBox" type="text" /></td>
+        </tr>
+        <tr id="dataStringRow">
+          <td>Data string:</td>
+          <td><input id="dataString" class="stretchTextBox" type="text" /></td>
+        </tr>
+        <tr id="urlRow">
+          <td>URL:</td>
+          <td><input id="url" class="stretchTextBox" type="text" /></td>
+        </tr>
+        <tr id="linkTextRow">
+          <td>Link text:</td>
+          <td><input id="linkText" class="stretchTextBox" type="text" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button id="saveButton" class="dialogButton">Build citation</button>
+
+    <script type="module" src="user_citation.mjs"></script>
+  </body>
+</html>

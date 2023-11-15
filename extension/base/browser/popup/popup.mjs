@@ -27,6 +27,10 @@ import { separateUrlIntoParts } from "./popup_utils.mjs";
 
 import {
   setPopupMenuWidth,
+  beginMainMenu,
+  addMenuItem,
+  addItalicMessageMenuItem,
+  addMenuDivider,
   displayBusyMessage,
   displayMessageWithIcon,
   macSecondMonitorWorkaround,
@@ -34,7 +38,7 @@ import {
   isSafari,
 } from "./popup_menu_building.mjs";
 
-import { buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addStandardMenuEnd } from "/base/browser/popup/popup_menu_blocks.mjs";
 
 var detectedSupportedSite = false;
 
@@ -100,7 +104,14 @@ function setupUnrecognizedSiteMenu() {
   message += "\n\nWikiTree Sourcer works on wikitree.com profile pages and record pages from certain genealogy sites.";
   message += "\n\nTry browsing to a wikitree.com person profile or a record page and try the extension there.";
 
-  buildMinimalMenuWithMessage(message, {}, backFunction);
+  let menu = beginMainMenu();
+  addItalicMessageMenuItem(menu, message);
+  addMenuDivider(menu);
+  addMenuItem(menu, "Build Citation using Form", function (element) {
+    chrome.tabs.create({ url: "/base/browser/user_citation/user_citation.html" }, function (createdTab) {});
+  });
+
+  addStandardMenuEnd(menu, undefined, backFunction);
 }
 
 function doesUrlMatchPattern(urlParts, patternParts) {

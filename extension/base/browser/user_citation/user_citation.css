@@ -1,0 +1,46 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+    sans-serif;
+  font-size: 14px;
+}
+h2 {
+  color: #000;
+  text-align: center;
+  font-size: 2em;
+}
+h3 {
+  color: #000;
+  padding: 0px 0px;
+}
+h4 {
+  color: #000;
+  padding: 0px 0px;
+  margin: 10px 0px;
+}
+
+table.formTable {
+  /*table-layout: auto !important;*/
+  width: 100%;
+}
+
+/*
+.formTable th,
+.formTable td,
+.formTable thead th,
+.formTable tbody td,
+.formTable tfoot td,
+.formTable tfoot th {
+  width: auto !important;
+}
+*/
+
+tr td:first-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.stretchTextBox {
+  width: 100%;
+  border: 1;
+  box-sizing: border-box;
+}
