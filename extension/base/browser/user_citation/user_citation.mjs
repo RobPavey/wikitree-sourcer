@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { CitationBuilder } from "/base/core/citation_builder.mjs";
 import { callFunctionWithStoredOptions } from "/base/browser/options/options_loader.mjs";
+import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
 
 function refreshAfterChange(options) {
   //console.log("refreshAfterChange called");
@@ -32,6 +33,7 @@ function refreshAfterChange(options) {
   let narrativeRow = document.getElementById("narrativeRow");
   let authorRow = document.getElementById("authorRow");
   let labelRow = document.getElementById("labelRow");
+  let previewRow = document.getElementById("previewRow");
 
   if (citationTypeElement.value == "narrative") {
     narrativeRow.style.display = "";
@@ -50,6 +52,14 @@ function refreshAfterChange(options) {
   } else {
     labelRow.style.display = "none";
   }
+
+  if (options.citation_userCitation_showPreview) {
+    previewRow.style.display = "";
+  } else {
+    previewRow.style.display = "none";
+  }
+
+  document.getElementById("previewText").value = buildCitation(options);
 }
 
 function buildCitation(options) {
@@ -73,15 +83,17 @@ function buildCitation(options) {
   const sourceType = document.getElementById("sourceType").value;
   const author = document.getElementById("author").value;
   const sourceTitle = document.getElementById("sourceTitle").value;
-  if (sourceType == "book") {
-    builder.putSourceTitleInQuotes = false;
-    if (author) {
-      builder.sourceTitle = author + ", ''" + sourceTitle + "''";
+  if (sourceTitle) {
+    if (sourceType == "book") {
+      builder.putSourceTitleInQuotes = false;
+      if (author) {
+        builder.sourceTitle = author + ", ''" + sourceTitle + "''";
+      } else {
+        builder.sourceTitle = "''" + sourceTitle + "''";
+      }
     } else {
-      builder.sourceTitle = "''" + sourceTitle + "''";
+      builder.sourceTitle = sourceTitle;
     }
-  } else {
-    builder.sourceTitle = sourceTitle;
   }
 
   builder.sourceReference = document.getElementById("sourceReference").value;
@@ -99,6 +111,15 @@ function buildCitation(options) {
 
   let fullCitation = builder.getCitationString();
 
+  return fullCitation;
+}
+
+function buildCitationAndSave(options) {
+  //console.log("buildCitationAndSave options is :");
+  //console.log(options);
+
+  let fullCitation = buildCitation(options);
+
   try {
     navigator.clipboard.writeText(fullCitation);
     //console.log("Clipboard set");
@@ -109,21 +130,65 @@ function buildCitation(options) {
 }
 
 function saveCitationClicked() {
-  callFunctionWithStoredOptions(buildCitation);
+  callFunctionWithStoredOptions(buildCitationAndSave);
 }
 
-function onChange() {
+function onChangeOfAnyInput() {
   callFunctionWithStoredOptions(refreshAfterChange);
 }
 
-function initDialog() {
+function saveUiState() {
+  const citationType = document.getElementById("citationType").value;
+  const sourceType = document.getElementById("sourceType").value;
+
+  let uiState = {
+    citationType: citationType,
+    sourceType: sourceType,
+  };
+
+  let items = { user_citation_uiState: uiState };
+  chrome.storage.local.set(items);
+}
+
+async function restoreUiState() {
+  let savedUiState = await getLocalStorageItem("user_citation_uiState");
+  if (savedUiState) {
+    document.getElementById("citationType").value = savedUiState.citationType;
+    document.getElementById("sourceType").value = savedUiState.sourceType;
+  } else {
+    // defaults
+    document.getElementById("citationType").value = "inline";
+    document.getElementById("sourceType").value = "record";
+  }
+}
+
+function onChangeOfSelect() {
+  saveUiState();
+}
+
+function onStorageChanged(changes) {
+  console.log("onStorageChanged, changes is:");
+  console.log(changes);
+
+  if (changes.options_citation) {
+    console.log("citation options changed");
+    callFunctionWithStoredOptions(refreshAfterChange);
+  }
+}
+
+async function initDialog() {
   //console.log("initDialog called");
 
-  document.getElementById("formTable").addEventListener("change", onChange);
+  await restoreUiState();
 
+  document.getElementById("formTable").addEventListener("change", onChangeOfAnyInput);
+  document.getElementById("citationType").addEventListener("change", onChangeOfSelect);
+  document.getElementById("sourceType").addEventListener("change", onChangeOfSelect);
   document.getElementById("saveButton").addEventListener("click", saveCitationClicked);
 
   callFunctionWithStoredOptions(refreshAfterChange);
+
+  chrome.storage.onChanged.addListener(onStorageChanged);
 }
 
 //console.log("user_citation.mjs loaded");

@@ -71,7 +71,7 @@ const searchOptionsGroup = {
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// Citation options groups
+// Citation options groups, General
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const citationOptionsGroup = {
@@ -199,6 +199,25 @@ const citationOptionsGroup = {
       type: "checkbox",
       label: "Indent the 'data string' part of the citation (inline citations only)",
       defaultValue: false,
+    },
+  ],
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Citation options groups, User Citation
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const userCitationOptionsGroup = {
+  category: "citation",
+  subcategory: "userCitation",
+  tab: "citation",
+  subsection: "userCitation",
+  options: [
+    {
+      optionName: "showPreview",
+      type: "checkbox",
+      label: "Show live preview of the resulting citation text",
+      defaultValue: true,
     },
   ],
 };
@@ -1273,6 +1292,7 @@ const contextGeneralOptionsGroup = {
 registerSubsectionForOptions("search", "general", "General");
 
 registerSubsectionForOptions("citation", "general", "General");
+registerSubsectionForOptions("citation", "userCitation", "User Citation");
 
 registerSubsectionForOptions("narrative", "general", "General");
 registerSubsectionForOptions("narrative", "baptism", "Baptism");
@@ -1312,6 +1332,7 @@ registerSubsectionForOptions("context", "general", "General");
 
 registerOptionsGroup(searchOptionsGroup);
 registerOptionsGroup(citationOptionsGroup);
+registerOptionsGroup(userCitationOptionsGroup);
 
 registerOptionsGroup(narrativeOptionsGroup);
 registerOptionsGroup(narrativeBaptismOptionsGroup);

@@ -36,6 +36,7 @@ import {
   macSecondMonitorWorkaround,
   openExceptionPage,
   isSafari,
+  closePopup,
 } from "./popup_menu_building.mjs";
 
 import { addStandardMenuEnd } from "/base/browser/popup/popup_menu_blocks.mjs";
@@ -93,6 +94,33 @@ Please check that you are logged into this site (if required) and on a record pa
   );
 }
 
+async function openUserCitationTab() {
+  const url = chrome.runtime.getURL("/base/browser/user_citation/user_citation.html");
+
+  let views = chrome.extension.getViews({
+    type: "tab",
+  });
+
+  let existingTab = undefined;
+  for (let view of views) {
+    if (view.document.documentURI == url) {
+      let tab = await view.chrome.tabs.getCurrent();
+      existingTab = tab;
+    }
+  }
+
+  if (existingTab) {
+    chrome.tabs.update(existingTab.id, { active: true });
+  } else {
+    chrome.tabs.create({ url: url });
+  }
+
+  // popup will close automatically if new tab created or tab exists in same window
+  // but it tab esists in a different window on another screen for example we still
+  // want to close the popup.
+  closePopup();
+}
+
 function setupUnrecognizedSiteMenu() {
   popupState.progress = progressState.defaultPopupSiteNotRecognized;
 
@@ -108,7 +136,7 @@ function setupUnrecognizedSiteMenu() {
   addItalicMessageMenuItem(menu, message);
   addMenuDivider(menu);
   addMenuItem(menu, "Build Citation using Form", function (element) {
-    chrome.tabs.create({ url: "/base/browser/user_citation/user_citation.html" }, function (createdTab) {});
+    openUserCitationTab();
   });
 
   addStandardMenuEnd(menu, undefined, backFunction);

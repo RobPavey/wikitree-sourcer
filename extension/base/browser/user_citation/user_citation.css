@@ -19,20 +19,8 @@ h4 {
 }
 
 table.formTable {
-  /*table-layout: auto !important;*/
   width: 100%;
 }
-
-/*
-.formTable th,
-.formTable td,
-.formTable thead th,
-.formTable tbody td,
-.formTable tfoot td,
-.formTable tfoot th {
-  width: auto !important;
-}
-*/
 
 tr td:first-child {
   width: 1%;
@@ -43,4 +31,35 @@ tr td:first-child {
   width: 100%;
   border: 1;
   box-sizing: border-box;
+}
+
+.stretchTextArea {
+  width: 100%;
+  height: 150px;
+  border: 1;
+  box-sizing: border-box;
+}
+
+.previewRow {
+  margin-top: 30;
+}
+
+/* save button */
+.saveButton {
+  background-color: #25422d;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  color: #f5f6f5;
+  font-size: 16px;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+.saveButton:hover {
+  background-color: #8fc642;
+}
+.saveButton:active {
+  position: relative;
+  top: 1px;
 }

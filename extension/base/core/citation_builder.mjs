@@ -465,6 +465,15 @@ class CitationBuilder {
     }
 
     citation = citation.trim();
+    while (citation.endsWith("\n") || citation.endsWith("<br/>")) {
+      if (citation.endsWith("\n")) {
+        citation = citation.substring(0, citation.length - 1).trim();
+      } else if (citation.endsWith("<br/>")) {
+        citation = citation.substring(0, citation.length - 5).trim();
+      }
+    }
+
+    citation = citation.trim();
     while (citation.endsWith(",") || citation.endsWith(";")) {
       citation = citation.substring(0, citation.length - 1).trim();
     }

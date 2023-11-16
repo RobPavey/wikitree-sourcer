@@ -13,7 +13,7 @@
       <label>Use this form to create a citation for unsupported sites. See</label>
 
       <a href="https://www.wikitree.com/wiki/Pavey-429"> documentation </a>
-      <label> for details. </label>
+      <label> for details. To clear all fields reload this page.</label>
 
       <br />
       <br />
@@ -72,10 +72,17 @@
           <td>Link text:</td>
           <td><input id="linkText" class="stretchTextBox" type="text" /></td>
         </tr>
+        <tr id="previewRow" class="previewRow">
+          <td>Preview:</td>
+          <td>
+            <br /><br />
+            <textarea id="previewText" class="stretchTextArea" readonly> </textarea>
+          </td>
+        </tr>
       </tbody>
     </table>
 
-    <button id="saveButton" class="dialogButton">Build citation</button>
+    <button id="saveButton" class="saveButton">Build citation and save to clipboard</button>
 
     <script type="module" src="user_citation.mjs"></script>
   </body>
