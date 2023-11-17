@@ -111,6 +111,7 @@ async function openUserCitationTab() {
 
   if (existingTab) {
     chrome.tabs.update(existingTab.id, { active: true });
+    chrome.windows.update(existingTab.windowId, { focused: true });
   } else {
     chrome.tabs.create({ url: url });
   }
@@ -135,7 +136,7 @@ function setupUnrecognizedSiteMenu() {
   let menu = beginMainMenu();
   addItalicMessageMenuItem(menu, message);
   addMenuDivider(menu);
-  addMenuItem(menu, "Build Citation using Form", function (element) {
+  addMenuItem(menu, "Show Citation Assistant", function (element) {
     openUserCitationTab();
   });
 

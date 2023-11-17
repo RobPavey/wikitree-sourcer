@@ -59,6 +59,17 @@ function refreshAfterChange(options) {
     previewRow.style.display = "none";
   }
 
+  // hide or show hints
+  let hintStyle = "none";
+  let showHints = options.citation_userCitation_showHints;
+  if (showHints) {
+    hintStyle = "";
+  }
+  let hintElements = document.querySelectorAll("td > i.comment");
+  for (let hint of hintElements) {
+    hint.style.display = hintStyle;
+  }
+
   document.getElementById("previewText").value = buildCitation(options);
 }
 
@@ -77,7 +88,14 @@ function buildCitation(options) {
   builder.meaningfulTitle = labelText;
 
   if (type == "narrative") {
-    builder.narrative = document.getElementById("narrative").value;
+    let narrative = document.getElementById("narrative").value;
+    if (narrative) {
+      narrative = narrative.trim();
+      if (!narrative.endsWith(".")) {
+        narrative += ".";
+      }
+      builder.narrative = narrative;
+    }
   }
 
   const sourceType = document.getElementById("sourceType").value;
@@ -123,6 +141,13 @@ function buildCitationAndSave(options) {
   try {
     navigator.clipboard.writeText(fullCitation);
     //console.log("Clipboard set");
+
+    // Update status to let user know options were saved.
+    var status = document.getElementById("saveStatus");
+    status.textContent = "Citation saved to clipboard.";
+    setTimeout(function () {
+      status.textContent = "";
+    }, 750);
   } catch (error) {
     console.log("Clipboard write failed. Using dialog instead.");
     //console.log(error);

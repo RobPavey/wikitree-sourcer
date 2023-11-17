@@ -219,6 +219,12 @@ const userCitationOptionsGroup = {
       label: "Show live preview of the resulting citation text",
       defaultValue: true,
     },
+    {
+      optionName: "showHints",
+      type: "checkbox",
+      label: "Show hints below the input fields",
+      defaultValue: true,
+    },
   ],
 };
 
@@ -1292,7 +1298,7 @@ const contextGeneralOptionsGroup = {
 registerSubsectionForOptions("search", "general", "General");
 
 registerSubsectionForOptions("citation", "general", "General");
-registerSubsectionForOptions("citation", "userCitation", "User Citation");
+registerSubsectionForOptions("citation", "userCitation", "Citation Assistant");
 
 registerSubsectionForOptions("narrative", "general", "General");
 registerSubsectionForOptions("narrative", "baptism", "Baptism");

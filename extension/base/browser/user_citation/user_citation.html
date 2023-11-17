@@ -3,16 +3,16 @@
   <head>
     <head>
       <link rel="stylesheet" href="user_citation.css" />
-      <title>WikiTree Sourcer Manual Citation Builder</title>
+      <title>WikiTree Sourcer Citation Assistant</title>
     </head>
   </head>
   <body>
-    <h2>WikiTree Sourcer Manual Citation Builder</h2>
+    <h2>WikiTree Sourcer Citation Assistant</h2>
 
     <div id="requestReport">
       <label>Use this form to create a citation for unsupported sites. See</label>
 
-      <a href="https://www.wikitree.com/wiki/Pavey-429"> documentation </a>
+      <a href="https://www.wikitree.com/wiki/Space:WikiTree_Sourcer:_Citation_Assistant"> documentation </a>
       <label> for details. To clear all fields reload this page.</label>
 
       <br />
@@ -42,35 +42,79 @@
         </tr>
         <tr id="narrativeRow">
           <td>Narrative sentence:</td>
-          <td><input id="narrative" class="stretchTextBox" type="text" /></td>
+          <td>
+            <input id="narrative" class="stretchTextBox" type="text" />
+            <br />
+            <i class="comment">A narrative sentence, for the biography, that comes before the inline citation</i>
+          </td>
         </tr>
         <tr id="labelRow">
           <td>Label:</td>
-          <td><input id="label" class="stretchTextBox" type="text" /></td>
+          <td>
+            <input id="label" class="stretchTextBox" type="text" />
+            <br />
+            <i class="comment">
+              A label to describe how this source relates to the profile. e.g. "Death", "Death of son John", "1851
+              Census", or "Member of Parliament" (do not include the quotes)
+            </i>
+          </td>
         </tr>
         <tr id="authorRow">
           <td>Author:</td>
-          <td><input id="author" class="stretchTextBox" type="text" /></td>
+          <td>
+            <input id="author" class="stretchTextBox" type="text" />
+            <br />
+            <i class="comment">The author(s) of the book or article</i>
+          </td>
         </tr>
         <tr>
           <td>Source title:</td>
-          <td><input id="sourceTitle" class="stretchTextBox" type="text" /></td>
+          <td>
+            <input id="sourceTitle" class="stretchTextBox" type="text" />
+            <br />
+            <i class="comment">The title of the book or article or the name of the collection of records</i>
+          </td>
         </tr>
         <tr id="sourceReferenceRow">
           <td>Source reference:</td>
-          <td><input id="sourceReference" class="stretchTextBox" type="text" /></td>
+          <td>
+            <input id="sourceReference" class="stretchTextBox" type="text" />
+            <br />
+            <i class="comment"
+              >Where the source document may be found and where in the document. Possibly publisher, date published
+              etc.</i
+            >
+          </td>
         </tr>
         <tr id="dataStringRow">
-          <td>Data string:</td>
-          <td><input id="dataString" class="stretchTextBox" type="text" /></td>
+          <td>Info from source:</td>
+          <td>
+            <input id="dataString" class="stretchTextBox" type="text" />
+            <br />
+            <i class="comment"
+              >Most relevant information in the source. e.g. "John Smith born 10 Apr 1832" (do not include the
+              quotes)</i
+            >
+          </td>
         </tr>
         <tr id="urlRow">
           <td>URL:</td>
-          <td><input id="url" class="stretchTextBox" type="text" /></td>
+          <td>
+            <input id="url" class="stretchTextBox" type="text" />
+            <br />
+            <i class="comment"
+              >Copy/paste the URL from the cited page or, if the site provides a permalink, use that instead</i
+            >
+          </td>
         </tr>
         <tr id="linkTextRow">
           <td>Link text:</td>
-          <td><input id="linkText" class="stretchTextBox" type="text" /></td>
+          <td>
+            <input id="linkText" class="stretchTextBox" type="text" />
+            <i class="comment"
+              >The link text for the hyperlink to the above URL. If omitted a visible URL will be used.</i
+            >
+          </td>
         </tr>
         <tr id="previewRow" class="previewRow">
           <td>Preview:</td>
@@ -83,6 +127,8 @@
     </table>
 
     <button id="saveButton" class="saveButton">Build citation and save to clipboard</button>
+    <br />
+    <label id="saveStatus"></label>
 
     <script type="module" src="user_citation.mjs"></script>
   </body>
