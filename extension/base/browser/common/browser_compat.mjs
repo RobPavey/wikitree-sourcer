@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { isSafari } from "/base/browser/common/browser_check.mjs";
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Browser compatibility
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -36,4 +38,29 @@ async function getLocalStorageItem(key) {
   return item;
 }
 
-export { getLocalStorageItem };
+async function openOrShowOptionsPage() {
+  // Safari doesn't open the existing Options tab if it exists. So in Safari check for that
+  // first.
+  if (isSafari()) {
+    // See if options page is already open
+    const optionsUrl = chrome.runtime.getURL("base/browser/options/options.html");
+    let views = chrome.extension.getViews({
+      type: "tab",
+    });
+
+    let existingTab = undefined;
+    for (let view of views) {
+      if (view.document.documentURI == optionsUrl) {
+        let tab = await view.chrome.tabs.getCurrent();
+        chrome.tabs.update(tab.id, { active: true });
+        chrome.windows.update(tab.windowId, { focused: true });
+        return;
+      }
+    }
+  }
+
+  // Not Safari with an existin options page oprn, so use normal method
+  chrome.runtime.openOptionsPage();
+}
+
+export { getLocalStorageItem, openOrShowOptionsPage };

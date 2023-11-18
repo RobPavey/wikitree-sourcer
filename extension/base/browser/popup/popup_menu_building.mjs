@@ -26,6 +26,8 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { RC } from "/base/core/record_collections.mjs";
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 import { clearAsyncResultCache } from "/base/core/async_result_cache.mjs";
+import { isSafari, isFirefox } from "/base/browser/common/browser_check.mjs";
+import { openOrShowOptionsPage } from "/base/browser/common/browser_compat.mjs";
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
@@ -62,39 +64,6 @@ function macSecondMonitorWorkaround() {
       }
     });
   }
-}
-
-function getBrowserName() {
-  if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
-    return "Opera";
-  } else if (navigator.userAgent.indexOf("Chrome") != -1) {
-    return "Chrome";
-  } else if (navigator.userAgent.indexOf("Safari") != -1) {
-    return "Safari";
-  } else if (navigator.userAgent.indexOf("Firefox") != -1) {
-    return "Firefox";
-  } else if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
-    //IF IE > 10
-    return "IE";
-  } else {
-    return "unknown";
-  }
-}
-
-function isSafari() {
-  //console.log("navigator.userAgent is:");
-  //console.log(navigator.userAgent);
-  let browserName = getBrowserName();
-  //console.log("browserName is:");
-  //console.log(browserName);
-  const isSafariBrowser = browserName == "Safari";
-  return isSafariBrowser;
-}
-
-function isFirefox() {
-  let browserName = getBrowserName();
-  const isFirefoxBrowser = browserName == "Firefox";
-  return isFirefoxBrowser;
 }
 
 // used for delayed busy message
@@ -764,7 +733,7 @@ function addMessageMenuItem(menu, message) {
 
 function addOptionsMenuItem(menu) {
   addMenuItem(menu, "Options... (opens in new tab)", function (element) {
-    chrome.runtime.openOptionsPage();
+    openOrShowOptionsPage();
     closePopup();
   });
 }
@@ -1739,8 +1708,6 @@ export {
   doAsyncActionWithCatch,
   shouldPopupWindowResize,
   macSecondMonitorWorkaround,
-  isSafari,
-  isFirefox,
   keepPopupOpen,
   keepPopupOpenForDebug,
   saveUnitTestData,

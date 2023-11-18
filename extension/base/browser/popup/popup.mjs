@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { popupState, progressState } from "./popup_state.mjs";
 import { separateUrlIntoParts } from "./popup_utils.mjs";
+import { isSafari } from "/base/browser/common/browser_check.mjs";
 
 import {
   setPopupMenuWidth,
@@ -38,7 +39,6 @@ import {
   openExceptionPage,
   addOptionsMenuItem,
   addSupportMenuItem,
-  isSafari,
   closePopup,
 } from "./popup_menu_building.mjs";
 

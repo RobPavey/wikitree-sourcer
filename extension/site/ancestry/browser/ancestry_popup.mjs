@@ -35,8 +35,8 @@ import {
   displayMessageWithIcon,
   doAsyncActionWithCatch,
   closePopup,
-  isFirefox,
 } from "/base/browser/popup/popup_menu_building.mjs";
+import { isFirefox } from "/base/browser/common/browser_check.mjs";
 
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 

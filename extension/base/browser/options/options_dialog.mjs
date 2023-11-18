@@ -26,23 +26,7 @@ import { options } from "./options_loader.mjs";
 import { getDefaultOptions } from "../../core/options/options_database.mjs";
 import { saveOptions } from "./options_storage.mjs";
 import { restoreOptionsGivenOptions } from "./options_save_restore.mjs";
-
-function getBrowserName() {
-  if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
-    return "Opera";
-  } else if (navigator.userAgent.indexOf("Chrome") != -1) {
-    return "Chrome";
-  } else if (navigator.userAgent.indexOf("Safari") != -1) {
-    return "Safari";
-  } else if (navigator.userAgent.indexOf("Firefox") != -1) {
-    return "Firefox";
-  } else if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
-    //IF IE > 10
-    return "IE";
-  } else {
-    return "unknown";
-  }
-}
+import { getBrowserName } from "../common/browser_check.mjs";
 
 function isSafariOnMacOs() {
   let browserName = getBrowserName();
