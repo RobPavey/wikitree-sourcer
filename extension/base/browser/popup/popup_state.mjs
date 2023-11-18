@@ -39,6 +39,8 @@ const progressState = {
   sitePopupCalledMenuSetup: 13,
   sitePopupDisplayError: 14, // e.g. url changed or siteName changed
   sitePopupException: 15,
+  defaultPopupSiteHasPermissionButNotRecognized: 16,
+  defaultPopupIsExtensionPage: 17,
 };
 
 var popupState = {

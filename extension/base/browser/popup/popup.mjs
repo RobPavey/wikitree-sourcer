@@ -29,17 +29,21 @@ import {
   setPopupMenuWidth,
   beginMainMenu,
   addMenuItem,
+  endMainMenu,
   addItalicMessageMenuItem,
   addMenuDivider,
   displayBusyMessage,
   displayMessageWithIcon,
   macSecondMonitorWorkaround,
   openExceptionPage,
+  addOptionsMenuItem,
+  addSupportMenuItem,
   isSafari,
   closePopup,
 } from "./popup_menu_building.mjs";
 
 import { addStandardMenuEnd } from "/base/browser/popup/popup_menu_blocks.mjs";
+import { addEditCitationMenuItem } from "/base/browser/popup/popup_citation.mjs";
 
 var detectedSupportedSite = false;
 
@@ -61,7 +65,7 @@ function displayOldGoogleBooksMessage() {
 }
 
 function setupDefaultPopupMenuWhenNoResponseFromContent() {
-  popupState.progress = progressState.defaultPopupDisplayError;
+  popupState.progress = progressState.defaultPopupSiteHasPermissionButNotRecognized;
 
   //console.log("setupDefaultPopupMenuWhenNoResponseFromContent, popupState is:");
   //console.log(popupState);
@@ -82,16 +86,23 @@ function setupDefaultPopupMenuWhenNoResponseFromContent() {
     }
   }
 
-  displayMessageWithIcon(
-    "warning",
-    `
-WikiTree Sourcer has not yet been able to extract the required data from this page.
+  let backFunction = function () {
+    setupDefaultPopupMenuWhenNoResponseFromContent();
+  };
 
-The extension appears to have permissions for this page but the page type could not be identified and the content script is not responding.
+  let message = "WikiTree Sourcer has not yet been able to extract the required data from this page.";
+  message +=
+    "\n\nThe extension appears to have permissions for this page but the page type could not be identified and the content script is not responding.";
+  message += "\n\nPlease check that you are logged into this site (if required) and on a record page and try again.";
 
-Please check that you are logged into this site (if required) and on a record page and try again.
-`
-  );
+  let menu = beginMainMenu();
+  addItalicMessageMenuItem(menu, message);
+  addMenuDivider(menu);
+  addMenuItem(menu, "Show Citation Assistant", function (element) {
+    openUserCitationTab();
+  });
+
+  addStandardMenuEnd(menu, undefined, backFunction);
 }
 
 async function openUserCitationTab() {
@@ -141,6 +152,55 @@ function setupUnrecognizedSiteMenu() {
   });
 
   addStandardMenuEnd(menu, undefined, backFunction);
+}
+
+function setupExtensionPageMenu(url) {
+  popupState.progress = progressState.defaultPopupIsExtensionPage;
+
+  let backFunction = function () {
+    setupExtensionPageMenu(url);
+  };
+
+  let pageType = "";
+  if (url.endsWith("user_citation.html")) {
+    pageType = "user_citation";
+  } else if (url.endsWith("options.html")) {
+    pageType = "options";
+  } else if (url.endsWith("exception.html")) {
+    pageType = "exception";
+  }
+
+  let message = "";
+
+  if (pageType == "user_citation") {
+    message = "WikiTree Sourcer Citation Assistant page.";
+  } else if (pageType == "options") {
+    message = "WikiTree Sourcer options page.";
+  } else if (pageType == "exception") {
+    message = "WikiTree Sourcer exception page.";
+  } else {
+    message = "WikiTree Sourcer extension page.";
+  }
+
+  let menu = beginMainMenu();
+  addItalicMessageMenuItem(menu, message);
+  if (pageType != "user_citation") {
+    addMenuDivider(menu);
+    addMenuItem(menu, "Show Citation Assistant", function (element) {
+      openUserCitationTab();
+    });
+  }
+
+  addMenuDivider(menu);
+  if (pageType != "user_citation") {
+    addEditCitationMenuItem(menu, backFunction);
+  }
+  if (pageType != "options") {
+    addOptionsMenuItem(menu);
+  }
+  addSupportMenuItem(menu, undefined, backFunction);
+
+  endMainMenu(menu);
 }
 
 function doesUrlMatchPattern(urlParts, patternParts) {
@@ -280,7 +340,7 @@ var initPopupGivenActiveTabRetryCount = 0;
 const initPopupGivenActiveTabRetryOnCompleteDelay = 100;
 const initPopupGivenActiveTabRetryOnCompleteMaxCount = 5;
 
-function initPopupGivenActiveTab(activeTab) {
+async function initPopupGivenActiveTab(activeTab) {
   if (detectedSupportedSite) {
     // our work here is done
     return;
@@ -323,6 +383,33 @@ function initPopupGivenActiveTab(activeTab) {
       }, initPopupGivenActiveTabRetryOnCompleteDelay);
       return;
     }
+  }
+
+  // Check if this is an extension page
+  let url = activeTab.pendingUrl ? activeTab.pendingUrl : activeTab.url;
+  let views = chrome.extension.getViews({ type: "tab" });
+  let isExtensionPage = false;
+  if (url) {
+    // Firefox will come thrugh here
+    for (let view of views) {
+      if (view.document.documentURI == url) {
+        isExtensionPage = true;
+        break;
+      }
+    }
+  } else {
+    // Chrome will come through here
+    for (let view of views) {
+      let extensionTab = await view.chrome.tabs.getCurrent();
+      if (extensionTab.id == activeTab.id) {
+        isExtensionPage = true;
+        url = view.document.documentURI;
+      }
+    }
+  }
+  if (isExtensionPage) {
+    setupExtensionPageMenu(url);
+    return;
   }
 
   // this will be empty string if not a supported page
