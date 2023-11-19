@@ -773,6 +773,10 @@ function extractTreeMediaTemplate(result, url) {
 
   // becomes: {{Ancestry Tree Media|86808578|d69a7d6a-c773-48b1-ab09-19100cd55c14}}
 
+  // Occasionally one can get to a URL like this through a redirect:
+  // https://www.ancestry.com/family-tree/tree/15648882/media/c611543e32ea44fe973fc479bb82369c
+  // In that case we should add the missing dashes.
+
   const treePrefix = "/tree/";
   const mediaPrefix = "/media/";
   let treePrefixIndex = url.indexOf(treePrefix);
@@ -794,6 +798,13 @@ function extractTreeMediaTemplate(result, url) {
         }
         if (mediaEndIndex != -1) {
           let media = url.substring(mediaIndex, mediaEndIndex);
+          if (media.length == 32 && media.indexOf("-") == -1) {
+            // the dashes are missing, this can cause a suggestion
+            let withDashes = media.replace(/(........)(....)(....)(....)(............)/, "$1-$2-$3-$4-$5");
+            if (withDashes) {
+              media = withDashes;
+            }
+          }
           result.ancestryTemplate = "{{Ancestry Tree Media|" + tree + "|" + media + "}}";
         }
       }
