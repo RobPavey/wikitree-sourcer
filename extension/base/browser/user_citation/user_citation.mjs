@@ -65,7 +65,7 @@ function refreshAfterChange(options) {
   if (showHints) {
     hintStyle = "";
   }
-  let hintElements = document.querySelectorAll("td > i.comment");
+  let hintElements = document.querySelectorAll("td > .comment");
   for (let hint of hintElements) {
     hint.style.display = hintStyle;
   }
