@@ -307,7 +307,7 @@ class ExtractedDataReader {
 
         let parsedDate = DateUtils.parseDateString(initialDateString);
         if (parsedDate && parsedDate.isValid) {
-          let dateString = DateUtilsgetStdShortFormDateString(parsedDate);
+          let dateString = DateUtils.getStdShortFormDateString(parsedDate);
 
           if (dateString) {
             let dateObj = new DateObj();
