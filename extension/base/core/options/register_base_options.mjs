@@ -225,6 +225,12 @@ const userCitationOptionsGroup = {
       label: "Show hints below the input fields",
       defaultValue: true,
     },
+    {
+      optionName: "showPlaceholders",
+      type: "checkbox",
+      label: "Show example placeholder text in input fields",
+      defaultValue: true,
+    },
   ],
 };
 

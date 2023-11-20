@@ -70,6 +70,15 @@ function refreshAfterChange(options) {
     hint.style.display = hintStyle;
   }
 
+  // hide or show placeholders
+  let showPlaceholders = options.citation_userCitation_showPlaceholders;
+  let inputElements = document.querySelectorAll("td > input[type='text']");
+  for (let inputElement of inputElements) {
+    if (!showPlaceholders) {
+      inputElement.placeholder = "";
+    }
+  }
+
   document.getElementById("previewText").value = buildCitation(options);
 }
 
