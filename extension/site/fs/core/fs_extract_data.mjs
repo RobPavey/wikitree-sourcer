@@ -945,6 +945,35 @@ function extractData(document, url) {
 }
 
 function getDateValueFromDate(date, fieldTypeEnding, labelId) {
+  function getBestDateValueText(values, currentValue) {
+    let dateString = currentValue;
+
+    if (values.length == 0) {
+      return dateString;
+    }
+
+    let bestValueIsAllNumbers = false;
+    if (/\d\d? \d\d? \d\d\d?\d?/.test(dateString)) {
+      bestValueIsAllNumbers = true;
+    }
+
+    for (let value of values) {
+      let text = value.text;
+      if (text) {
+        if (!dateString || bestValueIsAllNumbers) {
+          dateString = text;
+
+          if (/^\s*\d\d?[\s\/\-]*\d\d?[\s\/\-]*\d\d\d?\d?\s*$/.test(text)) {
+            // it is not a great date - it is all numbers
+            bestValueIsAllNumbers = true;
+          }
+        }
+      }
+    }
+
+    return dateString;
+  }
+
   let closeMatch = undefined;
   if (date.fields) {
     for (let field of date.fields) {
@@ -956,16 +985,12 @@ function getDateValueFromDate(date, fieldTypeEnding, labelId) {
           }
         }
 
-        if (!closeMatch && field.values.length > 0) {
-          closeMatch = field.values[0].text;
-        }
+        closeMatch = getBestDateValueText(field.values, closeMatch);
       } else {
         if (field.values) {
           for (let value of field.values) {
             if (value.labelId == labelId) {
-              if (!closeMatch && field.values.length > 0) {
-                closeMatch = field.values[0].text;
-              }
+              closeMatch = getBestDateValueText(field.values, closeMatch);
             }
           }
         }

@@ -1,0 +1,45 @@
+{
+  "recordData": {
+    "Name": "Thomas Frederick Day",
+    "Christening Date": "13 Aug 1876",
+    "Christening Place": "Manchester, Lancashire, England, United Kingdom",
+    "Birth Date": "14 Jul 1876",
+    "Birth Place": "Manchester, Lancaster, England"
+  },
+  "fullName": "Thomas Frederick Day",
+  "givenName": "Thomas Frederick",
+  "surname": "Day",
+  "gender": "male",
+  "factType": "Christening",
+  "eventDateOriginal": "13 8 1876",
+  "eventDate": "13 Aug 1876",
+  "eventYear": "1876",
+  "eventPlaceOriginal": "Manchester, Lancashire, England, United Kingdom",
+  "eventPlace": "Manchester, Lancashire, England, United Kingdom",
+  "birthDateOriginal": "14 7 1876",
+  "birthDate": "14 Jul 1876",
+  "birthYear": "1876",
+  "birthPlace": "Manchester, Lancaster, England",
+  "father": {
+    "fullName": "Fred Day",
+    "givenName": "Fred",
+    "surname": "Day"
+  },
+  "mother": {
+    "fullName": "Ann Christie Day",
+    "givenName": "Ann Christie",
+    "surname": "Day"
+  },
+  "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Manchester, Lancashire, England\", \"EVENT_DATE_ALT_ORIG\": \"13 AUG 1876\", \"PR_BIR_DATE_ALT_ORIG\": \"14 JUL 1876\", \"PR_SEX_CODE_ALT_ORIG\": \"M\"}",
+  "fsCollectionId": "1473014",
+  "referenceData": {
+    "digitalFilmNumber": "007568302",
+    "filmNumber": "438182"
+  },
+  "collectionTitle": "England Births and Christenings, 1538-1975",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9HYG-X32",
+  "citation": "\"England Births and Christenings, 1538-1975\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:JWCM-S2G : 3 February 2023), Thomas Frederick Day, 1876.",
+  "sourceTitleForPerson": "Thomas Frederick Day, \"England Births and Christenings, 1538-1975\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:JWCM-S2G",
+  "pageType": "record"
+}

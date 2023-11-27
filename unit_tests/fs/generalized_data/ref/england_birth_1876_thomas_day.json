@@ -1,0 +1,45 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Thomas Frederick Day",
+    "lastName": "Day",
+    "forenames": "Thomas Frederick"
+  },
+  "birthDate": {
+    "dateString": "14 Jul 1876",
+    "yearString": "1876"
+  },
+  "birthPlace": {
+    "placeString": "Manchester, Lancaster, England"
+  },
+  "eventDate": {
+    "dateString": "13 Aug 1876",
+    "yearString": "1876"
+  },
+  "eventPlace": {
+    "placeString": "Manchester, Lancashire, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Fred Day",
+        "forenames": "Fred",
+        "lastName": "Day"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ann Christie Day",
+        "forenames": "Ann Christie",
+        "lastName": "Day"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1473014"
+  },
+  "hasValidData": true
+}

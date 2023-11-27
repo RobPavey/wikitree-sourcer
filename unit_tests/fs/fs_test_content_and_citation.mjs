@@ -89,6 +89,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW",
   },
   {
+    caseName: "england_birth_1876_thomas_day",
+    url: "https://www.familysearch.org/ark:/61903/1:1:JWCM-S2G",
+  },
+  {
     caseName: "england_burial_1865_joseph_golden",
     url: "https://www.familysearch.org/ark:/61903/1:1:QLYW-5F4G",
   },
