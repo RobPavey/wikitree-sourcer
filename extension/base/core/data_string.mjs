@@ -545,6 +545,34 @@ function getUkRegistrationString(gd, options, type) {
   if (type == "birth") {
     if (gd.mothersMaidenName) {
       dataString += ", mother's maiden name " + gd.mothersMaidenName;
+    } else {
+      if (gd.parents) {
+        let fatherName = "";
+        if (gd.parents.father && gd.parents.father.name) {
+          fatherName = gd.parents.father.name.inferFullName();
+        }
+        let motherName = "";
+        if (gd.parents.mother && gd.parents.mother.name) {
+          motherName = gd.parents.mother.name.inferFullName();
+        }
+
+        if (gd.personGender == "male") {
+          dataString += ", son of";
+        } else if (gd.personGender == "female") {
+          dataString += ", daughter of";
+        } else {
+          dataString += ", child of";
+        }
+        if (fatherName) {
+          dataString += " " + fatherName;
+        }
+        if (motherName) {
+          if (fatherName) {
+            dataString += " &";
+          }
+          dataString += " " + motherName;
+        }
+      }
     }
   } else if (type == "death") {
     let bornOrAgeText = "";

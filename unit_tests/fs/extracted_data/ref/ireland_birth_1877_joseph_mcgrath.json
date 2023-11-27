@@ -1,0 +1,39 @@
+{
+  "recordData": {
+    "Name": "Joseph McGrath",
+    "Birth Registration Place": "Omagh, County Tyrone, Ireland",
+    "Birth Date": "14 Dec 1877"
+  },
+  "fullName": "Joseph McGrath",
+  "givenName": "Joseph",
+  "surname": "McGrath",
+  "gender": "male",
+  "factType": "BirthRegistration",
+  "eventPlaceOriginal": "Omagh, County Tyrone, Ireland",
+  "eventPlace": "Omagh, County Tyrone, Ireland",
+  "birthDateOriginal": "14 Dec 1877",
+  "birthDate": "14 Dec 1877",
+  "birthYear": "1877",
+  "father": {
+    "fullName": "John McGrath",
+    "givenName": "John",
+    "surname": "McGrath"
+  },
+  "mother": {
+    "fullName": "Isabella Devlin McGrath",
+    "givenName": "Isabella",
+    "surname": "Devlin McGrath"
+  },
+  "fsCollectionId": "2659409",
+  "referenceData": {
+    "digitalFilmNumber": "007720461",
+    "recordNumber": "13"
+  },
+  "fsImageNumber": "00182",
+  "collectionTitle": "Ireland Civil Registration, 1845-1913",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QT97-82RM",
+  "citation": "\"Ireland Civil Registration, 1845-1913\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPR9-YZH4 : 17 March 2023), Joseph McGrath, .",
+  "sourceTitleForPerson": "Joseph McGrath, \"Ireland Civil Registration, 1845-1913\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QPR9-YZH4",
+  "pageType": "record"
+}

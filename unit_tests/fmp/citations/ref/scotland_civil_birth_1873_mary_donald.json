@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Mary's birth was registered in 1873 in Riccarton, Ayrshire, Scotland. She was the daughter of Alexander Donald & Mary Drennan.<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth Registration''': \"Scotland, Modern And Civil Births 1855-2019\"<br/>[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nMary Elizabeth Donald birth registered 1873 in Riccarton, Ayrshire, Scotland, daughter of Alexander Donald & Mary Drennan.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Mary's birth was registered in 1873 in Riccarton, Ayrshire, Scotland. She was the daughter of Alexander Donald & Mary Drennan.<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nMary Elizabeth Donald birth registered 1873 in Riccarton, Ayrshire, Scotland, daughter of Alexander Donald & Mary Drennan.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth Registration''': \"Scotland, Modern And Civil Births 1855-2019\"<br/>[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)<br/>Mary Elizabeth Donald birth registered 1873 in Riccarton, Ayrshire, Scotland, daughter of Alexander Donald & Mary Drennan.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Mary Elizabeth; Last name: Donald; Sex: Female; Birth year: 1873; Birth place: Riccarton,Ayr,Scotland; Place: Riccarton; County: Ayrshire; Country: Scotland; Father's first name(s): Alexander; Father's last name: Donald; Mother's first name(s): Mary; Mother's last name: Drennan.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Mary's birth was registered in 1873 in Riccarton, Ayrshire, Scotland. She was the daughter of Alexander Donald & Mary Drennan.<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Mary Elizabeth; Last name: Donald; Sex: Female; Birth year: 1873; Birth place: Riccarton,Ayr,Scotland; Place: Riccarton; County: Ayrshire; Country: Scotland; Father's first name(s): Alexander; Father's last name: Donald; Mother's first name(s): Mary; Mother's last name: Drennan.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth Registration''': \"Scotland, Modern And Civil Births 1855-2019\"<br/>[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Mary Elizabeth; Last name: Donald; Sex: Female; Birth year: 1873; Birth place: Riccarton,Ayr,Scotland; Place: Riccarton; County: Ayrshire; Country: Scotland; Father's first name(s): Alexander; Father's last name: Donald; Mother's first name(s): Mary; Mother's last name: Drennan.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Mary Elizabeth\n|-\n| Last name || Donald\n|-\n| Sex || Female\n|-\n| Birth year || 1873\n|-\n| Birth place || Riccarton,Ayr,Scotland\n|-\n| Place || Riccarton\n|-\n| County || Ayrshire\n|-\n| Country || Scotland\n|-\n| Father's first name(s) || Alexander\n|-\n| Father's last name || Donald\n|-\n| Mother's first name(s) || Mary\n|-\n| Mother's last name || Drennan\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Mary's birth was registered in 1873 in Riccarton, Ayrshire, Scotland. She was the daughter of Alexander Donald & Mary Drennan.<ref>\n'''Birth Registration''':\n\"Scotland, Modern And Civil Births 1855-2019\"<br/>\n[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Mary Elizabeth\n|-\n| Last name || Donald\n|-\n| Sex || Female\n|-\n| Birth year || 1873\n|-\n| Birth place || Riccarton,Ayr,Scotland\n|-\n| Place || Riccarton\n|-\n| County || Ayrshire\n|-\n| Country || Scotland\n|-\n| Father's first name(s) || Alexander\n|-\n| Father's last name || Donald\n|-\n| Mother's first name(s) || Mary\n|-\n| Mother's last name || Drennan\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth Registration''': \"Scotland, Modern And Civil Births 1855-2019\"<br/>[https://www.findmypast.co.uk/transcript?id=R_687493053 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Mary Elizabeth; Last name: Donald; Sex: Female; Birth year: 1873; Birth place: Riccarton,Ayr,Scotland; Place: Riccarton; County: Ayrshire; Country: Scotland; Father's first name(s): Alexander; Father's last name: Donald; Mother's first name(s): Mary; Mother's last name: Drennan.",
+    "type": "source"
+  }
+}

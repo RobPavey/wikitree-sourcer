@@ -1,0 +1,45 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Hellen Muriel Morris",
+    "lastName": "Morris",
+    "forenames": "Hellen Muriel"
+  },
+  "birthDate": {
+    "dateString": "23 Nov 1901",
+    "yearString": "1901"
+  },
+  "birthPlace": {
+    "placeString": "Chicago, Cook, Illinois, United States"
+  },
+  "eventDate": {
+    "dateString": "26 Jun 1925",
+    "yearString": "1925"
+  },
+  "eventPlace": {
+    "placeString": "Cook, Illinois, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Edward Morris",
+        "forenames": "Edward",
+        "lastName": "Morris"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Helen Swift",
+        "forenames": "Helen",
+        "lastName": "Swift"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1462519"
+  },
+  "hasValidData": true
+}

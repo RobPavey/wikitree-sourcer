@@ -1,0 +1,49 @@
+{
+  "recordData": {
+    "Name": "Hellen Muriel Morris",
+    "Birth Registration Date": "26 Jun 1925",
+    "Birth Registration Place": "Cook, Illinois, United States",
+    "Birth Date": "23 Nov 1901",
+    "Birth Place": "Chicago, Cook, Illinois, United States",
+    "Source Certificate Nbr": "16881",
+    "Vis Status": "VISIBLE",
+    "System Of Record": "SLS"
+  },
+  "fullName": "Hellen Muriel Morris",
+  "givenName": "Hellen Muriel",
+  "surname": "Morris",
+  "gender": "female",
+  "factType": "BirthRegistration",
+  "eventDateOriginal": "26 Jun 1925",
+  "eventDate": "26 Jun 1925",
+  "eventYear": "1925",
+  "eventPlaceOriginal": "Cook, Illinois, United States",
+  "eventPlace": "Cook, Illinois, United States",
+  "birthDateOriginal": "23 Nov 1901",
+  "birthDate": "23 Nov 1901",
+  "birthYear": "1901",
+  "birthPlace": "Chicago, Cook, Illinois, United States",
+  "mother": {
+    "fullName": "Helen Swift",
+    "givenName": "Helen",
+    "surname": "Swift"
+  },
+  "father": {
+    "fullName": "Edward Morris",
+    "givenName": "Edward",
+    "surname": "Morris"
+  },
+  "extData": "{\"FS_COLLECTION_ID\":\"1462519\",\"FS_FOLDER\":\"100713512\"}",
+  "referenceData": {
+    "digitalFilmNumber": "100713512",
+    "imageNumber": "388"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:Q2KF-5KB4",
+  "collectionTitle": "Illinois, Cook County, Birth Certificates, 1871-1949",
+  "fsCollectionId": "1462519",
+  "citation": "\"Illinois, Cook County, Birth Certificates, 1871-1949\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM : Wed Nov 15 09:16:27 UTC 2023), Entry for Hellen Muriel Morris and Edward Morris, 26 Jun 1925.",
+  "sourceTitleForPerson": "Hellen Muriel Morris, \"Illinois, Cook County, Birth Certificates, 1871-1949\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9LB-ZJGZ",
+  "pageType": "record"
+}

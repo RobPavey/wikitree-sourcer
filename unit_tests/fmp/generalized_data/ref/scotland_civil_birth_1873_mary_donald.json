@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Donald",
+    "forenames": "Mary Elizabeth"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "placeString": "Riccarton, Ayrshire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "Alexander",
+        "lastName": "Donald"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Mary",
+        "lastName": "Drennan"
+      }
+    }
+  },
+  "eventDate": {
+    "yearString": "1873"
+  },
+  "birthDate": {
+    "yearString": "1873"
+  },
+  "lastNameAtBirth": "Donald",
+  "collectionData": {
+    "id": "Scotland, Modern And Civil Births 1855-2019"
+  },
+  "hasValidData": true
+}

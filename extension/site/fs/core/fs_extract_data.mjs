@@ -2921,6 +2921,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
           result.factType == "Christening" ||
           result.factType == "Baptism" ||
           result.factType == "Birth" ||
+          result.factType == "BirthRegistration" ||
           result.factType == "Death" ||
           result.factType == "Marriage"
         ) {

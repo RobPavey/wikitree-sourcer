@@ -167,6 +167,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:XWLP-S75",
   },
   {
+    caseName: "ireland_birth_1877_joseph_mcgrath",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QPR9-YZH4",
+  },
+  {
     caseName: "ireland_census_1911_joseph_moore",
     url: "https://www.familysearch.org/ark:/61903/1:1:QYCX-NXN2",
   },
@@ -290,6 +294,10 @@ const regressionData = [
   {
     caseName: "us_death_fg_1898_mary_volentine",
     url: "https://www.familysearch.org/ark:/61903/1:1:QVV5-53JY",
+  },
+  {
+    caseName: "us_il_birth_1901_hellen_morris",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM",
   },
   {
     caseName: "us_il_child_birth_1918_alice_cain",

@@ -786,10 +786,20 @@ class NarrativeBuilder {
     // it being the registration date/quarter.
     // It might require either a separate record type or a flag in the GD
     let isDateTheRegistrationDate = false;
+    let hasAdditionalDate = false;
     if (registrationDistrict && (this.eventGd.isRecordInCountry("United Kingdom") || !eventPlace)) {
       isDateTheRegistrationDate = true;
     } else if ((quarter || year == dateString) && year) {
       isDateTheRegistrationDate = true;
+    } else if (dateString) {
+      // there could be two different dates, e.g. one for birth and one for registration
+      if (typeString == "birth") {
+        let birthDateString = this.eventGd.inferBirthDate();
+        if (birthDateString != dateString) {
+          isDateTheRegistrationDate = true;
+          hasAdditionalDate = true;
+        }
+      }
     }
 
     let isPlaceTheRegistrationPlace = false;
@@ -800,12 +810,20 @@ class NarrativeBuilder {
 
     if (!isDateTheRegistrationDate) {
       // sometimes there is no event date but there is a marriage date
+      // or this can happen for FS birth reg where the birth date is known
+      // but the registration date is not
       if (!dateObj) {
         if (typeString == "marriage" && this.eventGd.marriageDate) {
           dateObj = new DateObj();
           dateObj.dateString = this.eventGd.marriageDate;
           dateString = this.eventGd.marriageDate;
           year = dateObj.getYearString();
+        } else if (typeString == "birth") {
+          dateObj = this.eventGd.inferBirthDateObj();
+          dateString = this.eventGd.inferBirthDate();
+        } else if (typeString == "death") {
+          dateObj = this.eventGd.inferDeathDateObj();
+          dateString = this.eventGd.inferDeathDate();
         }
       }
     }
@@ -845,7 +863,20 @@ class NarrativeBuilder {
           this.addAgeForMainSentence(ageAtEvent);
         }
 
-        this.addMmnForMainSentence(this.eventGd.mothersMaidenName);
+        if (hasAdditionalDate) {
+          if (typeString == "birth") {
+            let birthDateObj = this.eventGd.inferBirthDateObj();
+            if (birthDateObj) {
+              this.narrative += " (" + this.formatDateObj(birthDateObj, true) + ")";
+            }
+          }
+        }
+        const mmn = this.eventGd.mothersMaidenName;
+        if (mmn) {
+          this.addMmnForMainSentence(mmn);
+        } else {
+          this.addParentageForMainSentence();
+        }
 
         if (spouseName) {
           this.narrative += " to " + spouseName;

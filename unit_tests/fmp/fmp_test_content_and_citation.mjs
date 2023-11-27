@@ -366,6 +366,10 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=R_858111454",
   },
   {
+    caseName: "scotland_civil_birth_1873_mary_donald",
+    url: "https://www.findmypast.co.uk/transcript?id=R_687493053",
+  },
+  {
     caseName: "uk_death_reg_1997_leslie_collins",
     url: "https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1997%2F9%2F81840835",
   },

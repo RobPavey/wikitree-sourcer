@@ -1,0 +1,1588 @@
+{
+  "id" : "r_102534515947",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1699983054427,
+    "created" : 1699983054427
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q2KF-5KB4?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q2KF-5KB4?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q2KF-5KB4"
+    }
+  },
+  "description" : "#sd_p_101630697540",
+  "persons" : [ {
+    "id" : "p_101630697540",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "06bf14c4-f891-455c-8b6a-1036c7ce0e80",
+        "attribution" : {
+          "modified" : 1699983054427,
+          "created" : 1699983054427
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "26cd2f50-8e45-413a-9ca6-795ead924a1f",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "26cd2f50-8e45-413a-9ca6-795ead924a1f",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1665086352346,
+            "created" : 1665086352346
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QKDC-1YHM?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q2KF-5KB4?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM" ]
+    },
+    "names" : [ {
+      "id" : "a6f92c0e-92b2-4643-bd55-7662ab292957",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Hellen Muriel Morris",
+        "parts" : [ {
+          "id" : "5d04be15-36a7-42fc-b564-8309bc868a35",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Hellen Muriel",
+          "fields" : [ {
+            "id" : "6f3346d2-4a0f-4074-ad8a-f2c9a20bb9f3",
+            "attribution" : {
+              "modified" : 1699983054427,
+              "created" : 1699983054427
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "b4d73b62-bdff-48df-b64d-bf62649c9ef7",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Hellen Muriel"
+            }, {
+              "id" : "b4d73b62-bdff-48df-b64d-bf62649c9ef7",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1665086352295,
+                "created" : 1665086352295
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Hellen Muriel"
+            } ]
+          } ]
+        }, {
+          "id" : "3449e966-bda8-4bb4-bb5c-1e55e6fc8fd6",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Morris",
+          "fields" : [ {
+            "id" : "3647301a-9fc8-435a-86c8-2c467583fec9",
+            "attribution" : {
+              "modified" : 1699983054427,
+              "created" : 1699983054427
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "6a580c7d-feb8-4d3e-9f4d-d120f45e06b0",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Morris"
+            }, {
+              "id" : "6a580c7d-feb8-4d3e-9f4d-d120f45e06b0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1665086352295,
+                "created" : 1665086352295
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Morris"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "b66da236-8a8d-4636-a2cf-0bdcc8bdc9c0",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "6229642f-5415-4913-93d5-0788078ef1ff",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1665086352284,
+              "created" : 1665086352284
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Hellen Muriel Morris"
+          }, {
+            "id" : "6229642f-5415-4913-93d5-0788078ef1ff",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1665086352295,
+              "created" : 1665086352295
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Hellen Muriel Morris"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "6c945357-5c2e-4ee7-8c03-00168a238c59",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://familysearch.org/types/facts/BirthRegistration",
+      "date" : {
+        "id" : "e605f820-4820-4995-90a3-28c9ca01fd9a",
+        "original" : "26 Jun 1925",
+        "formal" : "+1925-06-26",
+        "fields" : [ {
+          "id" : "55ad9a03-eca3-43b9-adc3-8a4fa899d72b",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "84d3aa3f-595b-4cc4-ac22-677ef168543a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "26 Jun 1925"
+          }, {
+            "id" : "84d3aa3f-595b-4cc4-ac22-677ef168543a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1665086352283,
+              "created" : 1665086352283
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "26 Jun 1925",
+            "resource" : "+1925-06-26",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "9deba7f1-a051-41a9-9cad-2f62f4a7428e",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "a533a31a-8750-4949-aae4-4407c8e5337a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Jun"
+          }, {
+            "id" : "a533a31a-8750-4949-aae4-4407c8e5337a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1665086352283,
+              "created" : 1665086352283
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "6"
+          } ]
+        }, {
+          "id" : "7838ab88-5a8a-4e3a-ad60-48ef92c59dfb",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "4713d5f2-caf5-4f0b-9952-7cdcc6ba01d6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "26"
+          }, {
+            "id" : "4713d5f2-caf5-4f0b-9952-7cdcc6ba01d6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1665086352283,
+              "created" : 1665086352283
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "26"
+          } ]
+        }, {
+          "id" : "4d05ff3a-f5da-4899-8703-e1b0d0b185e6",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "e1f9ecf0-2e16-4cbc-8eed-817dc4e0a618",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1925"
+          }, {
+            "id" : "e1f9ecf0-2e16-4cbc-8eed-817dc4e0a618",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1665086352283,
+              "created" : 1665086352283
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1925"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "009bb4f6-f0a7-4c55-a9a9-5bce7122117d",
+        "original" : "Cook, Illinois, United States",
+        "confidence" : "http://confidence/100",
+        "description" : "#place_392481",
+        "fields" : [ {
+          "id" : "44a983a6-3eed-4f4b-9c07-3d9662fe84f6",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "46124d9f-8965-4b59-a467-823d1c1aa69d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : ", Cook, Illinois"
+          }, {
+            "id" : "46124d9f-8965-4b59-a467-823d1c1aa69d",
+            "confidence" : "http://confidence/100",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1665086352385,
+              "created" : 1665086352385
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Cook, Illinois, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/392481",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            }, {
+              "value" : "910, 913",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "960730b0-d764-4a71-af48-30f7342305d5",
+        "attribution" : {
+          "modified" : 1699983054427,
+          "created" : 1699983054427
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "cfe1e98f-5367-48be-978b-bd7c8837006a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Birth Registration",
+          "resource" : "http://familysearch.org/types/facts/BirthRegistration"
+        } ]
+      } ]
+    }, {
+      "id" : "93e36acd-cdf8-425d-8981-9eec9fbfe9da",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "5486e704-6b92-48e8-9c55-b5a93488e7ce",
+        "original" : "23 Nov 1901",
+        "formal" : "+1901-11-23",
+        "fields" : [ {
+          "id" : "44755832-7fe4-4cb4-9f8e-492e97df9bac",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "207ef8bf-7a2e-49a9-b400-ab703420bd33",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1901"
+          }, {
+            "id" : "207ef8bf-7a2e-49a9-b400-ab703420bd33",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1665086352284,
+              "created" : 1665086352284
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1901"
+          } ]
+        }, {
+          "id" : "b84ae4e9-a2d4-436a-ac32-a9aec0515e9f",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "688de50c-548f-4826-8c52-a1d787487080",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "23"
+          }, {
+            "id" : "688de50c-548f-4826-8c52-a1d787487080",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1665086352284,
+              "created" : 1665086352284
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DAY",
+            "text" : "23"
+          } ]
+        }, {
+          "id" : "d8d92f8a-3fe7-4cb2-8660-0c23a59388a4",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "b63ff5c6-45dd-4eb7-9306-fb781ea835f1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "23 Nov 1901"
+          }, {
+            "id" : "b63ff5c6-45dd-4eb7-9306-fb781ea835f1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1665086352284,
+              "created" : 1665086352284
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "23 Nov 1901",
+            "resource" : "+1901-11-23",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "9f18a4ba-e3be-43cd-81ba-c457264206f1",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "4f22ca71-2ed7-44d2-8545-51331558d527",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "Nov"
+          }, {
+            "id" : "4f22ca71-2ed7-44d2-8545-51331558d527",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1665086352284,
+              "created" : 1665086352284
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_MONTH",
+            "text" : "11"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "c58b24aa-d70e-49fe-b8eb-60eb5a92b179",
+        "original" : "Chicago, Cook, Illinois, United States",
+        "fields" : [ {
+          "id" : "9fbd779b-7ef9-46b8-b872-5926a0cae74c",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "717d31d7-294c-4297-a575-45cf7fd1f971",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_COUNTY_ORIG",
+            "text" : "Cook"
+          }, {
+            "id" : "717d31d7-294c-4297-a575-45cf7fd1f971",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_COUNTY",
+            "text" : "Cook"
+          } ]
+        }, {
+          "id" : "29d4040c-05f4-4944-961a-e950917d59f9",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "ab1f940f-f65f-4681-9667-edfdc0fc9ac9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Chicago, Cook, Illinois, United States",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "ad9abd31-f973-4b63-961f-ffcb78285d35",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "6dae3c92-5743-482d-ab7a-a5badb9ff049",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_CITY_ORIG",
+            "text" : "Chicago"
+          }, {
+            "id" : "6dae3c92-5743-482d-ab7a-a5badb9ff049",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_CITY",
+            "text" : "Chicago"
+          } ]
+        }, {
+          "id" : "342b214e-d244-4e9b-ad66-95d543bdc559",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "75a9a5a7-33fd-4144-b8f9-ac4a4a161226",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_STATE_ORIG",
+            "text" : "Illinois"
+          }, {
+            "id" : "75a9a5a7-33fd-4144-b8f9-ac4a4a161226",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_STATE",
+            "text" : "Illinois"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "de44b10f-747e-45a5-998c-695716eebbd9",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "f5ce6eb5-9051-48ab-bff4-c29056afe8c1",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_100713512_00388_00000_00012774102499_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Hellen Muriel Morris",
+      "gender" : "Female",
+      "birthDate" : "23 Nov 1901",
+      "birthPlace" : "Chicago, Cook, Illinois, United States"
+    }
+  }, {
+    "id" : "p_101630697541",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "0e399d75-c5bc-401e-9f73-684087f3703c",
+        "attribution" : {
+          "modified" : 1699983054427,
+          "created" : 1699983054427
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "630637c6-b994-4539-99fc-afdfe1b63e7e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1665086352346,
+            "created" : 1665086352346
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QKDC-1YH9?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q2KF-5KB4?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YH9" ]
+    },
+    "names" : [ {
+      "id" : "bb3dd6f1-61b9-4b78-a81e-4a8b6bd09f7c",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Edward Morris",
+        "parts" : [ {
+          "id" : "8d177206-53e0-4af6-9443-6be60e3f3697",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Edward",
+          "fields" : [ {
+            "id" : "fb29c8ad-8a80-4f74-87bf-fd1626367221",
+            "attribution" : {
+              "modified" : 1699983054427,
+              "created" : 1699983054427
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "b4438edf-4b29-4d09-9727-97f414a9fad4",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Edward"
+            }, {
+              "id" : "b4438edf-4b29-4d09-9727-97f414a9fad4",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1665086352302,
+                "created" : 1665086352302
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Edward"
+            } ]
+          } ]
+        }, {
+          "id" : "c8a864c0-b213-4b24-aadc-a8ba63f2dcc0",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Morris",
+          "fields" : [ {
+            "id" : "181cb174-5225-45b4-b5cf-4a085cee8e5a",
+            "attribution" : {
+              "modified" : 1699983054427,
+              "created" : 1699983054427
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "7484e2aa-5f7e-4a25-8fe7-7950b33bd990",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Morris"
+            }, {
+              "id" : "7484e2aa-5f7e-4a25-8fe7-7950b33bd990",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1665086352302,
+                "created" : 1665086352302
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Morris"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "e9f03177-7e47-4d8b-947f-fdbec250be4b",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "1d71ba5e-4122-4954-88b1-0bfee08edbd9",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1665086352295,
+              "created" : 1665086352295
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "Edward Morris"
+          }, {
+            "id" : "1d71ba5e-4122-4954-88b1-0bfee08edbd9",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1665086352302,
+              "created" : 1665086352302
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Edward Morris"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "ab98b54a-2a6f-4314-905c-5e59f03659b0",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "ae1aaefe-4263-4b0c-8796-16050c8a1a01",
+        "original" : "1886",
+        "formal" : "+1886",
+        "fields" : [ {
+          "id" : "10218e04-9289-464e-9490-facca177048c",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://familysearch.org/types/fields/YearEst",
+          "values" : [ {
+            "id" : "9676bfa3-0b03-4391-a7b1-1a32330490c7",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/EstBirthYearTreatment/ver/2"
+              },
+              "modified" : 1665086352351,
+              "created" : 1665086352351
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_BIR_YEAR_EST",
+            "text" : "1886",
+            "resource" : "+1886"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "d2baeca5-2240-407c-9abe-e1af3b551484",
+        "original" : "Chicago, Illinois",
+        "fields" : [ {
+          "id" : "eb415212-e186-4546-a08b-3632e534c038",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "6eb4379e-4019-4dae-a0a4-1a2003e7b717",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_BIR_PLACE_ORIG",
+            "text" : "Chicago Illinois"
+          }, {
+            "id" : "6eb4379e-4019-4dae-a0a4-1a2003e7b717",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_BIR_PLACE",
+            "text" : "Chicago, Illinois",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "833dc78f-cf27-4579-922c-58925cdbecba",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "03e1d8c1-1741-4833-af2d-60512dddf8f4",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_FTHR_AGE_ORIG",
+        "text" : "39"
+      }, {
+        "id" : "03e1d8c1-1741-4833-af2d-60512dddf8f4",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1665086352315,
+          "created" : 1665086352315
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_FTHR_AGE",
+        "text" : "39",
+        "resource" : "P39Y"
+      } ],
+      "qualifiers" : [ {
+        "value" : "ef35b543-f4f4-41fe-9030-c2740faae885",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "02821044-bd37-4c11-8086-af94bcb10725",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "9aebce52-388b-4969-a12d-29ca190fa720",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_100713512_00388_00000_00012774102499_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Edward Morris",
+      "gender" : "Male",
+      "birthDate" : "1886",
+      "birthPlace" : "Chicago, Illinois"
+    }
+  }, {
+    "id" : "p_101630697542",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "9e8b0812-6cdf-45de-ba24-04eb097708f8",
+        "attribution" : {
+          "modified" : 1699983054427,
+          "created" : 1699983054427
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "0573050f-4607-49e8-aa03-2cb7b6d727ea",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1665086352346,
+            "created" : 1665086352346
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QKDC-1YHS?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q2KF-5KB4?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHS" ]
+    },
+    "names" : [ {
+      "id" : "bcb71498-5d0a-4314-8239-5ada6e1c3ab1",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Helen Swift",
+        "parts" : [ {
+          "id" : "a19d011a-f157-4622-9f46-efdb526fdf3a",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Helen",
+          "fields" : [ {
+            "id" : "c32a3815-d880-4004-9da5-e7d8a1a63fb5",
+            "attribution" : {
+              "modified" : 1699983054427,
+              "created" : 1699983054427
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "7dd9c26f-86d1-42d2-bf15-b3ffb7cb64ee",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Helen"
+            }, {
+              "id" : "7dd9c26f-86d1-42d2-bf15-b3ffb7cb64ee",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1665086352313,
+                "created" : 1665086352313
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Helen"
+            } ]
+          } ]
+        }, {
+          "id" : "7547a09f-c25e-4cb6-ba56-538af2e52180",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Swift",
+          "fields" : [ {
+            "id" : "092c0cd3-2fe7-4617-a043-35989dc0ed9f",
+            "attribution" : {
+              "modified" : 1699983054427,
+              "created" : 1699983054427
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "ffc42de0-8c0a-45a9-8148-d2964a741f9d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Swift"
+            }, {
+              "id" : "ffc42de0-8c0a-45a9-8148-d2964a741f9d",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1665086352313,
+                "created" : 1665086352313
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Swift"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "0c674a75-a3e3-46d6-a1ef-ac92576ffb0a",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "e4d24efb-a41c-41be-932c-b818947e96bd",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1665086352303,
+              "created" : 1665086352303
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "Helen Swift"
+          }, {
+            "id" : "e4d24efb-a41c-41be-932c-b818947e96bd",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1665086352313,
+              "created" : 1665086352313
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Helen Swift"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "cfeab261-006d-481e-8fab-6459e2a00161",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "65115918-bc10-4e30-8a15-a22e380fecfe",
+        "original" : "1888",
+        "formal" : "+1888",
+        "fields" : [ {
+          "id" : "1e718a4f-7b7b-4de5-9016-42ecd76b54c8",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://familysearch.org/types/fields/YearEst",
+          "values" : [ {
+            "id" : "21c73846-5abb-4c72-a1ac-7cb9ae7709ed",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/EstBirthYearTreatment/ver/2"
+              },
+              "modified" : 1665086352355,
+              "created" : 1665086352355
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_BIR_YEAR_EST",
+            "text" : "1888",
+            "resource" : "+1888"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "5fa0588c-29bb-4531-b69f-aab353d1f23e",
+        "original" : "Barnstable Mass",
+        "fields" : [ {
+          "id" : "8984f970-eead-491d-bfb6-d8336e90f2a1",
+          "attribution" : {
+            "modified" : 1699983054427,
+            "created" : 1699983054427
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "9878e9c4-9f75-4fcd-86b9-e3cc20a0c5cf",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_BIR_PLACE_ORIG",
+            "text" : "Barnstable Mass"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "72a609ca-5692-402f-bb05-4acd87caa605",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "41b12a60-2b0d-48bb-b417-fe413c656b7b",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_MTHR_AGE_ORIG",
+        "text" : "37"
+      }, {
+        "id" : "41b12a60-2b0d-48bb-b417-fe413c656b7b",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://treatment/AgeTreatment/ver/1"
+          },
+          "modified" : 1665086352318,
+          "created" : 1665086352318
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_MTHR_AGE",
+        "text" : "37",
+        "resource" : "P37Y"
+      } ],
+      "qualifiers" : [ {
+        "value" : "998debe8-3859-4266-9675-4b84f96ca0e0",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "66aa806d-6837-416c-9e03-e690c126f761",
+      "attribution" : {
+        "modified" : 1699983054427,
+        "created" : 1699983054427
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "73e8a840-f458-4521-bf7c-e8ac44d4d41d",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_100713512_00388_00000_00012774102499_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Helen Swift",
+      "gender" : "Female",
+      "birthDate" : "1888",
+      "birthPlace" : "Barnstable Mass"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "25df71d2-4399-4174-833a-698ef1b13506",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_101630697542",
+      "resourceId" : "p_101630697542"
+    },
+    "person2" : {
+      "resource" : "#p_101630697540",
+      "resourceId" : "p_101630697540"
+    }
+  }, {
+    "id" : "728480cf-c637-4a35-a70b-f2f7dfbbec25",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_101630697541",
+      "resourceId" : "p_101630697541"
+    },
+    "person2" : {
+      "resource" : "#p_101630697542",
+      "resourceId" : "p_101630697542"
+    }
+  }, {
+    "id" : "3979d530-68bd-497f-9b56-8a8046a9278e",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_101630697541",
+      "resourceId" : "p_101630697541"
+    },
+    "person2" : {
+      "resource" : "#p_101630697540",
+      "resourceId" : "p_101630697540"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_102534515947",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:Q2KF-5KB4",
+    "componentOf" : {
+      "description" : "#sd_c_1462519",
+      "descriptionId" : "sd_c_1462519"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1699983054427,
+    "modified" : 1700039787746,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Cook, Illinois, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/392481"
+      },
+      "temporal" : {
+        "original" : "26 Jun 1925"
+      },
+      "recordType" : "http://gedcomx.org/Birth"
+    } ],
+    "citations" : [ {
+      "value" : "\"Illinois, Cook County, Birth Certificates, 1871-1949\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM : Wed Nov 15 09:16:27 UTC 2023), Entry for Hellen Muriel Morris and Edward Morris, 26 Jun 1925."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Hellen Muriel Morris, \"Illinois, Cook County, Birth Certificates, 1871-1949\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/12774102499" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:Q2KF-5KB4" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1462519?arkName=1:2:Q2KF-5KB4"
+    }
+  }, {
+    "id" : "sd_c_1462519",
+    "about" : "https://www.familysearch.org/platform/records/collections/1462519",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223326487,
+    "modified" : 1699983054427,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Cook, Illinois, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/392481"
+      },
+      "temporal" : {
+        "original" : "1871/1949",
+        "formal" : "+1871/+1949"
+      },
+      "recordType" : "http://gedcomx.org/Birth"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Illinois, Cook County, Birth Certificates, 1871-1949"
+    }, {
+      "lang" : "fr",
+      "value" : "Illinois, certificats de naissance, comté de Cook, 1871-1949"
+    }, {
+      "lang" : "no",
+      "value" : "Illinois, Cook County, fødselsattester, 1871-1949"
+    }, {
+      "lang" : "es",
+      "value" : "Illinois, Condado de Cook, Certificados de nacimiento, 1871-1949"
+    }, {
+      "lang" : "mn",
+      "value" : "Иллинойс, Күүк дүүрэг, Төрсний гэрчилгээ, 1871-1949 он"
+    }, {
+      "lang" : "ko",
+      "value" : "일리노이, 쿡 카운티, 출생 증명서, 1871-1949"
+    }, {
+      "lang" : "ja",
+      "value" : "イリノイ州、クック郡、出生証明書、1871年-1949年"
+    }, {
+      "lang" : "id",
+      "value" : "Illinois, Wilayah Cook, Akta Kelahiran, 1871-1949"
+    }, {
+      "lang" : "hu",
+      "value" : "Illinois, Cook megye, Születési anyakönyvi kivonatok, 1871–1949"
+    }, {
+      "lang" : "sk",
+      "value" : "Illinois, okres Cook, rodné listy, 1871 – 1949"
+    }, {
+      "lang" : "th",
+      "value" : "อิลลินอยส์, เทศมณฑลคุก, สูติบัตร, ปี 1871-1949"
+    }, {
+      "lang" : "to",
+      "value" : "Illinois, Vahefonua Cook, Ngaahi Tohitaʻú, 1871-1949"
+    }, {
+      "lang" : "bg",
+      "value" : "Илинойс, окръг Кук, Удостоверения за раждане, 1871 – 1949"
+    }, {
+      "lang" : "km",
+      "value" : "រដ្ឋអ៊ីលីណយ, ខោនធីឃុក, សំបុត្រកំណើត, ឆ្នាំ 1871-1949"
+    }, {
+      "lang" : "pl",
+      "value" : "Illinois, Hrabstwo Cook, Akty urodzenia, 1871–1949"
+    }, {
+      "lang" : "ro",
+      "value" : "Illinois, Ținutul Cook, Certificate de naștere, 1871-1949"
+    }, {
+      "lang" : "sv",
+      "value" : "Illinois, Cook County, Födelseattest, 1871-1949"
+    }, {
+      "lang" : "sm",
+      "value" : "Illinois, Hạt Cook, Giấy Khai Sinh, 1871-1949"
+    }, {
+      "lang" : "vi",
+      "value" : "Illinois, Hạt Cook, Giấy Khai Sinh, 1871-1949"
+    }, {
+      "lang" : "sq",
+      "value" : "Illinois, Qarku Cook, Certifikatat e Lindjes, 1871-1949"
+    }, {
+      "lang" : "pt",
+      "value" : "Illinois, Condado de Cook, Certidões de Nascimento, 1871-1949"
+    }, {
+      "lang" : "de",
+      "value" : "Illinois, Cook County, Geburtsurkunden, 1871-1949"
+    }, {
+      "lang" : "uk",
+      "value" : "Іллінойс, округ Кук, свідоцтва про народження, 1871–1949 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Illinois, okrug Cook, potvrde o rođenju, 1871.-1949."
+    }, {
+      "lang" : "cs",
+      "value" : "Illinois, kraj Cook, rodné listy, 1871–1949"
+    }, {
+      "lang" : "da",
+      "value" : "Illinois, Cook County, Birth Certificates, 1871-1949"
+    }, {
+      "lang" : "nl",
+      "value" : "Geboorteakten, Cook County, Illinois, Verenigde Staten van Amerika, 1871-1949"
+    }, {
+      "lang" : "et",
+      "value" : "Illinois, Cooki maakond, sünnitunnistused, 1871–1949"
+    }, {
+      "lang" : "fj",
+      "value" : "Illinois, Yasayasa o Cook, Sitivikiti ni Sucu, 1871-1949"
+    }, {
+      "lang" : "fi",
+      "value" : "Illinois, Cookin piirikunta, syntymätodistukset 1871–1949"
+    }, {
+      "lang" : "tl",
+      "value" : "Illinois, County ng Cook, Mga Sertipiko ng Kapanganakan, 1871-1949"
+    }, {
+      "lang" : "mg",
+      "value" : "Illinois, Fivondronan' i Cook, Kopia nahaterahana, 1871-1949"
+    }, {
+      "lang" : "ceb",
+      "value" : "Illinois, Cook County, Mga Sertipiko sa Pagkatawo, 1871-1949"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1462519" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9LB-ZJGZ",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9LB-ZJGZ" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1462519?arkName=3:1:3QSQ-G9LB-ZJGZ"
+    }
+  }, {
+    "id" : "sd_p_101630697542",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHS",
+    "componentOf" : {
+      "description" : "#src_r_102534515947",
+      "descriptionId" : "src_r_102534515947"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Illinois, Cook County, Birth Certificates, 1871-1949\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM : Wed Nov 15 09:16:27 UTC 2023), Entry for Hellen Muriel Morris and Edward Morris, 26 Jun 1925."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Helen Swift, \"Illinois, Cook County, Birth Certificates, 1871-1949\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHS" ]
+    }
+  }, {
+    "id" : "sd_p_101630697540",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM",
+    "componentOf" : {
+      "description" : "#src_r_102534515947",
+      "descriptionId" : "src_r_102534515947"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Illinois, Cook County, Birth Certificates, 1871-1949\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM : Wed Nov 15 09:16:27 UTC 2023), Entry for Hellen Muriel Morris and Edward Morris, 26 Jun 1925."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Hellen Muriel Morris, \"Illinois, Cook County, Birth Certificates, 1871-1949\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM" ]
+    }
+  }, {
+    "id" : "sd_p_101630697541",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YH9",
+    "componentOf" : {
+      "description" : "#src_r_102534515947",
+      "descriptionId" : "src_r_102534515947"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Illinois, Cook County, Birth Certificates, 1871-1949\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM : Wed Nov 15 09:16:27 UTC 2023), Entry for Hellen Muriel Morris and Edward Morris, 26 Jun 1925."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Edward Morris, \"Illinois, Cook County, Birth Certificates, 1871-1949\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YH9" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_392481",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/392481" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "30da1ed5-3bbd-4dcf-a094-64411e5f827b",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/SourceCertificateNbr",
+    "values" : [ {
+      "id" : "8394980d-dfcc-4a9d-aa09-f3fad85b0425",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_CERTIFICATE_NBR_ORIG",
+      "text" : "16881"
+    } ]
+  }, {
+    "id" : "c8e73b07-e6d5-4c14-83ab-d1619fc8a95e",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "95586586-c270-4635-b113-e4bb9d60790f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "90ca124f-910c-4db7-ab67-e55c2097ae00",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "05936975-2d5e-4f68-a71d-82e87b6cc1e8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "710ede87-73b4-4a35-84a5-83199c7f2eae",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "417e84bb-036f-429f-b1fd-104e2b7567b9",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"FS_COLLECTION_ID\":\"1462519\",\"FS_FOLDER\":\"100713512\"}"
+    } ]
+  }, {
+    "id" : "3a1968ce-8b4b-4871-bfdf-1d98149b8e67",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "60897330-f45c-41cf-bd4b-a0d04d79b179",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "70444"
+    } ]
+  }, {
+    "id" : "3568368e-3fb5-4771-aa4f-d070984d6403",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "db3cb771-b4dd-4ec2-a5d7-8fc3d98857b5",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "14-1824"
+    } ]
+  }, {
+    "id" : "3116354f-157b-41c7-bf8e-766d9895848b",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "d11cb68e-026b-4490-a782-864746bcfddd",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "5c7d8246-51cd-4d15-bfda-fd84ed39604e",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "6abe40e1-9996-4144-8c2e-de5375f40e26",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "14-1824; 2015-08-25 19:44:22; CarterTP; Illinois, Cook County Delayed Births, 1871-1940 - FSI"
+    } ]
+  }, {
+    "id" : "34371f74-7cf6-4a0c-97da-abb8db3c8b28",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/VisStatus",
+    "values" : [ {
+      "id" : "ef429170-e36d-4d64-9b87-5591b23d7cc0",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "id" : "aa6ab901-5603-41eb-8138-8411cee0db33",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "372ff977-cc70-4044-9172-8e51a46f6734",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Cook, Illinois, United States"
+    } ]
+  }, {
+    "id" : "6a40e967-9d43-4cd6-a5cf-766ec528812e",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "69217dce-cd8a-4910-9558-5bfff335db93",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "100713512_00388"
+    } ]
+  }, {
+    "id" : "dc4c3194-70b2-4216-ae44-a87ce1993cb0",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "fd58a85c-66cf-412b-b45f-f718a0f76ca2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Illinois, Cook County Delayed Births, 1871-1940 - FSI"
+    } ]
+  }, {
+    "id" : "c873f0db-99c0-4a2f-aa51-a109642af3c5",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "7f44b390-5e01-4886-b1cc-38be24bd5b90",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_DAS_VERIFY\":\"26-AUG-15\",\"FS_IMAGE_NBR\":\"00388\",\"FS_IMS_IMAGE_ID\":\"100713512_00388\",\"FS_IMAGE_ID\":\"/100713512/100713512_00388.jpg\",\"FS_UNIQUE_ID\":\"12774102499\",\"FS_FOLDER_IMAGE_SEQ\":\"388\"}"
+    } ]
+  }, {
+    "id" : "4686148f-7f8a-4eb4-b7eb-872f3eff14a3",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "a566a587-0164-4a86-82f7-dc969a598e45",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_100713512_00388_00000_00012774102499"
+    } ]
+  }, {
+    "id" : "5e8ad182-0c4f-4dfc-b744-1ede2e78fa15",
+    "attribution" : {
+      "modified" : 1699983054427,
+      "created" : 1699983054427
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "17ff4d5a-ee0c-4dab-b02a-9177f66df5ec",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "9"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "100713512"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "388"
+    } ]
+  } ]
+}

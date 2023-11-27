@@ -397,6 +397,20 @@ const narrativeIncludeParentageOption = {
   defaultValue: "inMainSentence",
 };
 
+function getNarrativeIncludeParentageOption(defaultValue) {
+  return {
+    optionName: "includeParentage",
+    type: "select",
+    label: "Include parentage if known",
+    values: [
+      { value: "no", text: "No" },
+      { value: "inMainSentence", text: "In the main sentence" },
+      { value: "inSeparateSentence", text: "In a separate following sentence" },
+    ],
+    defaultValue: defaultValue,
+  };
+}
+
 const narrativeParentageFormatOption = {
   optionName: "parentageFormat",
   type: "select",
@@ -537,6 +551,8 @@ const narrativeBirthRegRegOptionsGroup = {
       ],
       defaultValue: "oneSentence",
     },
+    getNarrativeIncludeParentageOption("inSeparateSentence"),
+    narrativeParentageFormatOption,
     narrativeIncludeMmnOption,
     narrativeRegistrationDistrictFormatOption,
   ],

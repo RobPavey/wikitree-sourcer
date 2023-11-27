@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Joseph McGrath",
+    "lastName": "McGrath",
+    "forenames": "Joseph"
+  },
+  "birthDate": {
+    "dateString": "14 Dec 1877",
+    "yearString": "1877"
+  },
+  "eventPlace": {
+    "placeString": "Omagh, County Tyrone, Ireland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John McGrath",
+        "forenames": "John",
+        "lastName": "McGrath"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Isabella Devlin McGrath",
+        "forenames": "Isabella",
+        "lastName": "Devlin McGrath"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "2659409"
+  },
+  "hasValidData": true
+}
