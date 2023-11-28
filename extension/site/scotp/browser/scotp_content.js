@@ -213,14 +213,14 @@ async function doHighlightForRefQuery() {
   }
 }
 
-async function getPendingSearch() {
+async function getPendingSearch(storageName) {
   return new Promise((resolve, reject) => {
     try {
-      chrome.storage.local.get(["scotpSearchData"], function (value) {
+      chrome.storage.local.get([storageName], function (value) {
         // clear the search data
-        chrome.storage.local.remove(["scotpSearchData"], function () {
+        chrome.storage.local.remove([storageName], function () {
           //console.log('cleared scotpSearchData');
-          resolve(value.scotpSearchData);
+          resolve(value[storageName]);
         });
       });
     } catch (ex) {
@@ -712,7 +712,18 @@ async function checkForPendingSearch() {
     return;
   }
 
+  let isAdvancedSearch = false;
+  let isSearchResults = false;
+  let storageName = "";
   if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/advanced-search/")) {
+    isAdvancedSearch = true;
+    storageName = "scotpSearchData";
+  } else if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/record-results/")) {
+    isSearchResults = true;
+    storageName = "scotpSearchRefineData";
+  }
+
+  if (isAdvancedSearch || isSearchResults) {
     //console.log("checkForPendingSearch: URL matches");
 
     // check logged in
@@ -721,7 +732,7 @@ async function checkForPendingSearch() {
       return;
     }
 
-    let searchData = await getPendingSearch();
+    let searchData = await getPendingSearch(storageName);
 
     if (searchData) {
       //console.log("checkForPendingSearch: got searchData:");
@@ -738,7 +749,7 @@ async function checkForPendingSearch() {
       //console.log("checkForPendingSearch: timeStampNow is :" + timeStampNow);
       //console.log("checkForPendingSearch: timeSinceSearch is :" + timeSinceSearch);
 
-      if (timeSinceSearch < 10000 && searchUrl == document.URL) {
+      if (timeSinceSearch < 10000 && (isSearchResults || searchUrl == document.URL)) {
         // we are doing a search
         hideElementsDuringSearch();
 
@@ -830,7 +841,12 @@ async function checkForPendingSearch() {
         }
 
         // try to submit form
-        let formElement = document.getElementById("advanced-search-form");
+        let formElementId = "advanced-search-form";
+        if (isSearchResults) {
+          formElementId = "refine-advanced-search-form";
+        }
+
+        let formElement = document.getElementById(formElementId);
         if (formElement) {
           //console.log("checkForPendingSearch: found formElement:");
           //console.log(formElement);

@@ -33,42 +33,53 @@ class ScotpFormDataBuilder {
     this.formData = {};
     this.formData.urlPart = ScotpRecordType.getSearchUrlPart(recordType);
     this.formData.fields = [];
+
+    this.refineData = {};
+    this.refineData.fields = [];
   }
 
-  addTextField(parameter, value) {
+  pushField(field, addToRefine = false) {
+    if (addToRefine) {
+      this.refineData.fields.push(field);
+    } else {
+      this.formData.fields.push(field);
+    }
+  }
+
+  addTextField(parameter, value, addToRefine = false) {
     if (value == undefined || value == "") {
       return;
     }
 
     let field = { fieldKey: parameter, type: "text", value: value };
-    this.formData.fields.push(field);
+    this.pushField(field, addToRefine);
   }
 
-  addSearchOption(parameter, searchOption) {
+  addSearchOption(parameter, searchOption, addToRefine = false) {
     if (searchOption) {
       let field = { fieldKey: parameter, type: "so", value: searchOption };
-      this.formData.fields.push(field);
+      this.pushField(field, addToRefine);
     }
   }
 
-  addRadioButtonField(parameter, value) {
+  addRadioButtonField(parameter, value, addToRefine = false) {
     let field = { fieldKey: parameter, type: "radio", value: value };
     this.formData.fields.push(field);
   }
 
-  addCheckboxField(parameter, value) {
+  addCheckboxField(parameter, value, addToRefine = false) {
     let field = { fieldKey: parameter, type: "checkbox", value: value };
-    this.formData.fields.push(field);
+    this.pushField(field, addToRefine);
   }
 
-  addSelectField(parameter, value) {
+  addSelectField(parameter, value, addToRefine = false) {
     let field = { fieldKey: parameter, type: "select", value: value };
-    this.formData.fields.push(field);
+    this.pushField(field, addToRefine);
   }
 
-  addMultipleSelectField(parameter, values) {
+  addMultipleSelectField(parameter, values, addToRefine = false) {
     let field = { fieldKey: parameter, type: "multipleSelect", values: values };
-    this.formData.fields.push(field);
+    this.pushField(field, addToRefine);
   }
 
   addSurname(string, searchOption) {
@@ -190,6 +201,15 @@ class ScotpFormDataBuilder {
 
   addParentName(string, searchOption) {
     // not used in search
+    let fieldName = "edit-search-params-nrs-parent-one";
+    if (this.addedFirstParent) {
+      fieldName = "edit-search-params-nrs-parent-two";
+    } else {
+      this.addedFirstParent = true;
+    }
+
+    this.addTextField(fieldName, string, true);
+    this.addSearchOption(fieldName, searchOption, true);
   }
 
   addMothersMaidenName(string, searchOption) {
@@ -272,7 +292,7 @@ class ScotpFormDataBuilder {
   }
 
   getFormData() {
-    return this.formData;
+    return { formData: this.formData, refineData: this.refineData };
   }
 }
 

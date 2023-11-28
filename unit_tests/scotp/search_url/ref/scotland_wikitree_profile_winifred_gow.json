@@ -1,309 +1,355 @@
 {
   "std": {
-    "urlPart": "statutory-records/stat-births",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-from",
-        "type": "text",
-        "value": "1890"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-to",
-        "type": "text",
-        "value": "1900"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Gow"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Winifred Agnes"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      }
-    ]
+    "formData": {
+      "urlPart": "statutory-records/stat-births",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-from",
+          "type": "text",
+          "value": "1890"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-to",
+          "type": "text",
+          "value": "1900"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Gow"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Winifred Agnes"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "rc_baptism": {
-    "urlPart": "church-registers/church-births-baptisms/cr-baptisms",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-from",
-        "type": "text",
-        "value": "1890"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-to",
-        "type": "text",
-        "value": "1900"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Gow"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Winifred Agnes"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-2",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-str-parish-congregation",
-        "type": "multipleSelect",
-        "values": [
-          "MP|6|GREENOCK, ST MARY'S"
-        ]
-      }
-    ]
+    "formData": {
+      "urlPart": "church-registers/church-births-baptisms/cr-baptisms",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-from",
+          "type": "text",
+          "value": "1890"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-to",
+          "type": "text",
+          "value": "1900"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Gow"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Winifred Agnes"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-2",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-str-parish-congregation",
+          "type": "multipleSelect",
+          "values": [
+            "MP|6|GREENOCK, ST MARY'S"
+          ]
+        }
+      ]
+    },
+    "refineData": {
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-parent-one",
+          "type": "text",
+          "value": "Jane Holmes"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-parent-one",
+          "type": "so",
+          "value": "soundex"
+        }
+      ]
+    }
   },
   "stat_death": {
-    "urlPart": "statutory-records/stat-deaths",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-from",
-        "type": "text",
-        "value": "1984"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-to",
-        "type": "text",
-        "value": "1994"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-dob",
-        "type": "text",
-        "value": "1895"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-birth-year-range",
-        "type": "select",
-        "value": 1
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Gow"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Winifred Agnes"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      }
-    ]
+    "formData": {
+      "urlPart": "statutory-records/stat-deaths",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-from",
+          "type": "text",
+          "value": "1984"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-to",
+          "type": "text",
+          "value": "1994"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-dob",
+          "type": "text",
+          "value": "1895"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-birth-year-range",
+          "type": "select",
+          "value": 1
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Gow"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Winifred Agnes"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "stat_marriage": {
-    "urlPart": "statutory-records/stat-marriages",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-from",
-        "type": "text",
-        "value": "1918"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-to",
-        "type": "text",
-        "value": "1928"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Gow"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Winifred Agnes"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-2",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-spsurname",
-        "type": "text",
-        "value": "Phillips"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-spsurname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-spforename",
-        "type": "text",
-        "value": "Alexander"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-spforename",
-        "type": "so",
-        "value": "soundex"
-      }
-    ]
+    "formData": {
+      "urlPart": "statutory-records/stat-marriages",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-from",
+          "type": "text",
+          "value": "1918"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-to",
+          "type": "text",
+          "value": "1928"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Gow"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Winifred Agnes"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-2",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-spsurname",
+          "type": "text",
+          "value": "Phillips"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-spsurname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-spforename",
+          "type": "text",
+          "value": "Alexander"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-spforename",
+          "type": "so",
+          "value": "soundex"
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "stat_marriage_no_spouse": {
-    "urlPart": "statutory-records/stat-marriages",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-from",
-        "type": "text",
-        "value": "1910"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-to",
-        "type": "text",
-        "value": "1989"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Gow"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Winifred Agnes"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-2",
-        "type": "radio",
-        "value": true
-      }
-    ]
+    "formData": {
+      "urlPart": "statutory-records/stat-marriages",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-from",
+          "type": "text",
+          "value": "1910"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-to",
+          "type": "text",
+          "value": "1989"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Gow"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Winifred Agnes"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-2",
+          "type": "radio",
+          "value": true
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "valuation": {
-    "urlPart": "valuation-rolls/vr",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-1895",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Gow"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Winifred Agnes"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      }
-    ]
+    "formData": {
+      "urlPart": "valuation-rolls/vr",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-1895",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Gow"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Winifred Agnes"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "prison": {
-    "urlPart": "prison-registers/prison-records",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-hss-yearadmitted-year-from",
-        "type": "text",
-        "value": "1895"
-      },
-      {
-        "fieldKey": "edit-search-params-hss-yearadmitted-year-to",
-        "type": "text",
-        "value": "1921"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Gow"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Winifred Agnes"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      }
-    ]
+    "formData": {
+      "urlPart": "prison-registers/prison-records",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-hss-yearadmitted-year-from",
+          "type": "text",
+          "value": "1895"
+        },
+        {
+          "fieldKey": "edit-search-params-hss-yearadmitted-year-to",
+          "type": "text",
+          "value": "1921"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Gow"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Winifred Agnes"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   }
 }

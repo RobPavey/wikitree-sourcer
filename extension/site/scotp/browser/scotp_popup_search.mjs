@@ -63,15 +63,26 @@ async function scotpSearch(generalizedData, parameters) {
     // since many site searchs can be on the popup for a site, it makes sense to dynamically
     // load the build search module
     let loadedModule = await import(`../core/scotp_build_search_data.mjs`);
-    let formData = loadedModule.buildSearchData(input);
+    let searchData = loadedModule.buildSearchData(input);
+    let formData = searchData.formData;
 
     const searchUrl = "https://www.scotlandspeople.gov.uk/advanced-search/" + formData.urlPart;
     try {
       const scotpSearchData = {
         timeStamp: Date.now(),
         url: searchUrl,
-        formData: formData,
+        formData: searchData.formData,
       };
+
+      if (searchData.refineData && searchData.refineData.fields.length > 0) {
+        const scotpSearchRefineData = {
+          timeStamp: Date.now(),
+          url: searchUrl,
+          formData: searchData.refineData,
+        };
+
+        await chrome.storage.local.set({ scotpSearchRefineData: scotpSearchRefineData });
+      }
 
       // this stores the search data in local storage which is then picked up by the
       // content script in the new tab/window

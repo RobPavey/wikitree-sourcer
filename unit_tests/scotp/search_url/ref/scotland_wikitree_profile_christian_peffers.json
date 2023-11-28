@@ -1,137 +1,152 @@
 {
   "std": {
-    "urlPart": "statutory-records/stat-births",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-from",
-        "type": "text",
-        "value": "1864"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-to",
-        "type": "text",
-        "value": "1874"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Peffers"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Christian Johns"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      }
-    ]
+    "formData": {
+      "urlPart": "statutory-records/stat-births",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-from",
+          "type": "text",
+          "value": "1864"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-to",
+          "type": "text",
+          "value": "1874"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Peffers"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Christian Johns"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "stat_marriage": {
-    "urlPart": "statutory-records/stat-marriages",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-from",
-        "type": "text",
-        "value": "1887"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-to",
-        "type": "text",
-        "value": "1897"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Peffers"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Christian Johns"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-2",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-spsurname",
-        "type": "text",
-        "value": "Milne"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-spsurname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-spforename",
-        "type": "text",
-        "value": "John"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-spforename",
-        "type": "so",
-        "value": "soundex"
-      }
-    ]
+    "formData": {
+      "urlPart": "statutory-records/stat-marriages",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-from",
+          "type": "text",
+          "value": "1887"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-search-year-year-to",
+          "type": "text",
+          "value": "1897"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Peffers"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Christian Johns"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-2",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-spsurname",
+          "type": "text",
+          "value": "Milne"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-spsurname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-spforename",
+          "type": "text",
+          "value": "John"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-spforename",
+          "type": "so",
+          "value": "soundex"
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "wills": {
-    "urlPart": "legal-records/wills",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-year-from",
-        "type": "text",
-        "value": "1925"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-year-year-to",
-        "type": "text",
-        "value": "1925"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Milne"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Christian Johnston"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      }
-    ]
+    "formData": {
+      "urlPart": "legal-records/wills",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-year-from",
+          "type": "text",
+          "value": "1925"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-year-year-to",
+          "type": "text",
+          "value": "1925"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Milne"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Christian Johnston"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   }
 }

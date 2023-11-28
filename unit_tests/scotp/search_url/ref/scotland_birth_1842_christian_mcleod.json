@@ -1,277 +1,350 @@
 {
   "std": {
-    "urlPart": "church-registers/church-births-baptisms/opr-births",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-from",
-        "type": "text",
-        "value": "1841"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-to",
-        "type": "text",
-        "value": "1843"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Mcleod"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Christian"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-rd-name",
-        "type": "multipleSelect",
-        "values": [
-          "RAYNE_RAYNE"
-        ]
-      }
-    ]
+    "formData": {
+      "urlPart": "church-registers/church-births-baptisms/opr-births",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-from",
+          "type": "text",
+          "value": "1841"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-to",
+          "type": "text",
+          "value": "1843"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Mcleod"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Christian"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-rd-name",
+          "type": "multipleSelect",
+          "values": [
+            "RAYNE_RAYNE"
+          ]
+        }
+      ]
+    },
+    "refineData": {
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-parent-one",
+          "type": "text",
+          "value": "William Mcleod"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-parent-one",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-parent-two",
+          "type": "text",
+          "value": "Helen White"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-parent-two",
+          "type": "so",
+          "value": "soundex"
+        }
+      ]
+    }
   },
   "noFather": {
-    "urlPart": "church-registers/church-births-baptisms/opr-births",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-from",
-        "type": "text",
-        "value": "1841"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-to",
-        "type": "text",
-        "value": "1843"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Mcleod"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Christian"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-rd-name",
-        "type": "multipleSelect",
-        "values": [
-          "RAYNE_RAYNE"
-        ]
-      }
-    ]
+    "formData": {
+      "urlPart": "church-registers/church-births-baptisms/opr-births",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-from",
+          "type": "text",
+          "value": "1841"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-to",
+          "type": "text",
+          "value": "1843"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Mcleod"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Christian"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-rd-name",
+          "type": "multipleSelect",
+          "values": [
+            "RAYNE_RAYNE"
+          ]
+        }
+      ]
+    },
+    "refineData": {
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-parent-one",
+          "type": "text",
+          "value": "Helen White"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-parent-one",
+          "type": "so",
+          "value": "soundex"
+        }
+      ]
+    }
   },
   "noMother": {
-    "urlPart": "church-registers/church-births-baptisms/opr-births",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-from",
-        "type": "text",
-        "value": "1841"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-to",
-        "type": "text",
-        "value": "1843"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Mcleod"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Christian"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-rd-name",
-        "type": "multipleSelect",
-        "values": [
-          "RAYNE_RAYNE"
-        ]
-      }
-    ]
+    "formData": {
+      "urlPart": "church-registers/church-births-baptisms/opr-births",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-from",
+          "type": "text",
+          "value": "1841"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-to",
+          "type": "text",
+          "value": "1843"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Mcleod"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Christian"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-rd-name",
+          "type": "multipleSelect",
+          "values": [
+            "RAYNE_RAYNE"
+          ]
+        }
+      ]
+    },
+    "refineData": {
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-parent-one",
+          "type": "text",
+          "value": "William Mcleod"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-parent-one",
+          "type": "so",
+          "value": "soundex"
+        }
+      ]
+    }
   },
   "noParents": {
-    "urlPart": "church-registers/church-births-baptisms/opr-births",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-from",
-        "type": "text",
-        "value": "1841"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-to",
-        "type": "text",
-        "value": "1843"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Mcleod"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Christian"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-rd-name",
-        "type": "multipleSelect",
-        "values": [
-          "RAYNE_RAYNE"
-        ]
-      }
-    ]
+    "formData": {
+      "urlPart": "church-registers/church-births-baptisms/opr-births",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-from",
+          "type": "text",
+          "value": "1841"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-to",
+          "type": "text",
+          "value": "1843"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Mcleod"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Christian"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-rd-name",
+          "type": "multipleSelect",
+          "values": [
+            "RAYNE_RAYNE"
+          ]
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "birthRange10": {
-    "urlPart": "church-registers/church-births-baptisms/opr-births",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-from",
-        "type": "text",
-        "value": "1832"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-to",
-        "type": "text",
-        "value": "1852"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Mcleod"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Christian"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-rd-name",
-        "type": "multipleSelect",
-        "values": [
-          "RAYNE_RAYNE"
-        ]
-      }
-    ]
+    "formData": {
+      "urlPart": "church-registers/church-births-baptisms/opr-births",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-from",
+          "type": "text",
+          "value": "1832"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-to",
+          "type": "text",
+          "value": "1852"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Mcleod"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Christian"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-rd-name",
+          "type": "multipleSelect",
+          "values": [
+            "RAYNE_RAYNE"
+          ]
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "searchDeath": {
-    "urlPart": "church-registers/church-deaths-burials/opr-deaths",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-from",
-        "type": "text",
-        "value": "1842"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-to",
-        "type": "text",
-        "value": "1855"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Mcleod"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "Christian"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-f",
-        "type": "radio",
-        "value": true
-      }
-    ]
+    "formData": {
+      "urlPart": "church-registers/church-deaths-burials/opr-deaths",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-from",
+          "type": "text",
+          "value": "1842"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-to",
+          "type": "text",
+          "value": "1855"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Mcleod"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "Christian"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-f",
+          "type": "radio",
+          "value": true
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   }
 }

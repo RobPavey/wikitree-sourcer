@@ -599,8 +599,6 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
 }
 
 function setParents(gd, scotpRecordType, parameters, options, builder) {
-  /* As of 27 Nov 2022 there is no way to search by parents on the advanced search page
-     You can specify the parents when refining the search.
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.parents)) {
     let searchOption = options.search_scotp_parentNameSoundex ? "soundex" : "exact";
 
@@ -612,7 +610,6 @@ function setParents(gd, scotpRecordType, parameters, options, builder) {
       builder.addParentName(parentNames.motherName, searchOption);
     }
   }
-  */
 
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.mmn)) {
     let searchOption = options.search_scotp_parentNameSoundex ? "soundex" : "exact";

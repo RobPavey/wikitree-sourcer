@@ -1,124 +1,134 @@
 {
   "std": {
-    "urlPart": "census-returns/census",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-census-year-1841",
-        "type": "checkbox",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-census-year-1851",
-        "type": "checkbox",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-census-year-1861",
-        "type": "checkbox",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-census-year-1871",
-        "type": "checkbox",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-census-year-1881",
-        "type": "checkbox",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-census-year-1891",
-        "type": "checkbox",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-census-year-1901",
-        "type": "checkbox",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-census-year-1911",
-        "type": "checkbox",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-census-year-1921",
-        "type": "checkbox",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Fraser"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "James"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-m",
-        "type": "radio",
-        "value": true
-      },
-      {
-        "fieldKey": "edit-search-params-str-district",
-        "type": "multipleSelect",
-        "values": [
-          "MILTON_MILTON"
-        ]
-      }
-    ]
+    "formData": {
+      "urlPart": "census-returns/census",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-census-year-1841",
+          "type": "checkbox",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-census-year-1851",
+          "type": "checkbox",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-census-year-1861",
+          "type": "checkbox",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-census-year-1871",
+          "type": "checkbox",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-census-year-1881",
+          "type": "checkbox",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-census-year-1891",
+          "type": "checkbox",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-census-year-1901",
+          "type": "checkbox",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-census-year-1911",
+          "type": "checkbox",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-census-year-1921",
+          "type": "checkbox",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Fraser"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "James"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-m",
+          "type": "radio",
+          "value": true
+        },
+        {
+          "fieldKey": "edit-search-params-str-district",
+          "type": "multipleSelect",
+          "values": [
+            "MILTON_MILTON"
+          ]
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   },
   "oprBirth": {
-    "urlPart": "church-registers/church-births-baptisms/opr-births",
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-from",
-        "type": "text",
-        "value": "1825"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-year-field-year-to",
-        "type": "text",
-        "value": "1835"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "text",
-        "value": "Fraser"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-surname",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "text",
-        "value": "James"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-forename",
-        "type": "so",
-        "value": "soundex"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-m",
-        "type": "radio",
-        "value": true
-      }
-    ]
+    "formData": {
+      "urlPart": "church-registers/church-births-baptisms/opr-births",
+      "fields": [
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-from",
+          "type": "text",
+          "value": "1825"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-year-field-year-to",
+          "type": "text",
+          "value": "1835"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "text",
+          "value": "Fraser"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-surname",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "text",
+          "value": "James"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-forename",
+          "type": "so",
+          "value": "soundex"
+        },
+        {
+          "fieldKey": "edit-search-params-nrs-sex-m",
+          "type": "radio",
+          "value": true
+        }
+      ]
+    },
+    "refineData": {
+      "fields": []
+    }
   }
 }
