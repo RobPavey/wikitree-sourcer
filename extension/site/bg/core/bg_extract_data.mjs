@@ -111,7 +111,12 @@ function buildFullAddress(cemetery) {
 }
 
 function extractFromJson(document, result, dataScript) {
-  const dataJson = JSON.parse(dataScript.innerHTML);
+  const jsonText = dataScript.innerHTML;
+  if (!jsonText || !jsonText.startsWith("{")) {
+    console.log("bg extract not JSON text");
+    return result;
+  }
+  const dataJson = JSON.parse(jsonText);
   // Either the main person on memorial or some inscribed
   let personData = null;
   if (dataJson["@type"] && dataJson["@type"] === "Person") {
