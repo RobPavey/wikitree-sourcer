@@ -973,6 +973,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/46470693:2495",
   },
   {
+    caseName: "us_ma_parent_will_1828_john_augesten",
+    url: "https://www.ancestry.com/discoveryui-content/view/7967038:9069",
+  },
+  {
     caseName: "us_nj_will_1801_john_carnes",
     url: "https://www.ancestry.com/discoveryui-content/view/401:2793",
   },

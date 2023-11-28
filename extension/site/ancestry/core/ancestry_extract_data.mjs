@@ -395,7 +395,7 @@ function extractRecordData(document, result) {
           result.recordData[label] = value;
         }
 
-        if (label.includes("Household")) {
+        if (label.includes("Household") || label.includes("Others Listed")) {
           result.household = {};
           if (headings.length > 0) {
             result.household.headings = [];
@@ -404,46 +404,46 @@ function extractRecordData(document, result) {
               result.household.headings.push(cleanText(heading.textContent));
             }
           }
-        }
 
-        for (let subRow of subTableRows.values()) {
-          if (result.household !== undefined && result.household.members !== undefined) {
-            let member = {};
-            let subRowCells = subRow.querySelectorAll("td");
-            if (subRowCells.length > 0) {
-              for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
-                let cell = subRowCells[cellIndex];
-                let memberText = cleanText(cell.textContent);
+          for (let subRow of subTableRows.values()) {
+            if (result.household !== undefined && result.household.members !== undefined) {
+              let member = {};
+              let subRowCells = subRow.querySelectorAll("td");
+              if (subRowCells.length > 0) {
+                for (let cellIndex = 0; cellIndex < subRowCells.length; cellIndex++) {
+                  let cell = subRowCells[cellIndex];
+                  let memberText = cleanText(cell.textContent);
 
-                if (cellIndex == 0) {
-                  // check for a closed record
-                  let lcText = memberText.toLowerCase();
+                  if (cellIndex == 0) {
+                    // check for a closed record
+                    let lcText = memberText.toLowerCase();
 
-                  if (
-                    lcText == "this record is officially closed." ||
-                    (lcText.includes("record") && lcText.includes("closed"))
-                  ) {
-                    member.isClosed = true;
-                    memberText = "Closed Record";
+                    if (
+                      lcText == "this record is officially closed." ||
+                      (lcText.includes("record") && lcText.includes("closed"))
+                    ) {
+                      member.isClosed = true;
+                      memberText = "Closed Record";
+                    }
+                  }
+
+                  let heading = result.household.headings[cellIndex];
+                  member[heading] = memberText;
+
+                  let linkNode = cell.querySelector("a");
+                  if (linkNode) {
+                    let link = linkNode.getAttribute("href");
+                    let extractResult = {};
+                    extractDbAndRecordId(extractResult, link);
+                    member.dbId = extractResult.dbId;
+                    member.recordId = extractResult.recordId;
+                    member.link = link; // used to fetch additional records if needed
                   }
                 }
-
-                let heading = result.household.headings[cellIndex];
-                member[heading] = memberText;
-
-                let linkNode = cell.querySelector("a");
-                if (linkNode) {
-                  let link = linkNode.getAttribute("href");
-                  let extractResult = {};
-                  extractDbAndRecordId(extractResult, link);
-                  member.dbId = extractResult.dbId;
-                  member.recordId = extractResult.recordId;
-                  member.link = link; // used to fetch additional records if needed
-                }
               }
-            }
 
-            result.household.members.push(member);
+              result.household.members.push(member);
+            }
           }
         }
       }

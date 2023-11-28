@@ -263,6 +263,17 @@ async function processWithFetchedLinkData(data, processFunction) {
         });
       }
     }
+  } else if (data.extractedData.household && role) {
+    if (data.extractedData.household.members.length > 1) {
+      let primaryMember = data.extractedData.household.members[0];
+      if (primaryMember.link) {
+        linkedRecords.push({
+          link: primaryMember.link,
+          name: "Primary person",
+          cacheTag: "AncestryFetchPrimary",
+        });
+      }
+    }
   }
 
   if (linkedRecords.length > 0) {

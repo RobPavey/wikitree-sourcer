@@ -1,0 +1,119 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/7967038:9069",
+  "pageType": "record",
+  "dbId": "9069",
+  "recordId": "7967038",
+  "ancestryTemplate": "{{Ancestry Record|9069|7967038}}",
+  "domain": "com",
+  "titleName": "John Augesten",
+  "titleCollection": "Massachusetts, U.S., Wills and Probate Records, 1635-1991",
+  "recordData": {
+    "Name": "John Augesten",
+    "Gender": "Male",
+    "Relationship": "Son",
+    "Others Listed (Name)<br/>Relationship": "John Warren<br/>Susanah Warren Wife<br/>Jondthan M. Warren Son<br/>Joseph A. Warren Son<br/>Samuel D. Warren Son<br/>Mary Chapin Mariam Daughter<br/>Ioreph Alonro Son<br/>Samuel Danies Son<br/>Anna Grout Daughter<br/>Sally Warren Daughter<br/>Delia Maria Warren Daughter<br/>Anna G. Susannah Daughter<br/>John Augesten Son"
+  },
+  "household": {
+    "headings": [
+      "Others Listed (Name)",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Others Listed (Name)": "John Warren",
+        "dbId": "9069",
+        "recordId": "383020",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=383020&indiv=try",
+        "Relationship": ""
+      },
+      {
+        "Others Listed (Name)": "Susanah Warren",
+        "dbId": "9069",
+        "recordId": "6921726",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=6921726&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Wife"
+      },
+      {
+        "Others Listed (Name)": "Jondthan M. Warren",
+        "dbId": "9069",
+        "recordId": "7092075",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7092075&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Son"
+      },
+      {
+        "Others Listed (Name)": "Joseph A. Warren",
+        "dbId": "9069",
+        "recordId": "7267401",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7267401&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Son"
+      },
+      {
+        "Others Listed (Name)": "Samuel D. Warren",
+        "dbId": "9069",
+        "recordId": "7397224",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7397224&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Son"
+      },
+      {
+        "Others Listed (Name)": "Mary Chapin Mariam",
+        "dbId": "9069",
+        "recordId": "7532860",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7532860&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Daughter"
+      },
+      {
+        "Others Listed (Name)": "Ioreph Alonro",
+        "dbId": "9069",
+        "recordId": "7627974",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7627974&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Son"
+      },
+      {
+        "Others Listed (Name)": "Samuel Danies",
+        "dbId": "9069",
+        "recordId": "7725411",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7725411&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Son"
+      },
+      {
+        "Others Listed (Name)": "Anna Grout",
+        "dbId": "9069",
+        "recordId": "7790312",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7790312&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Daughter"
+      },
+      {
+        "Others Listed (Name)": "Sally Warren",
+        "dbId": "9069",
+        "recordId": "7855872",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7855872&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Daughter"
+      },
+      {
+        "Others Listed (Name)": "Delia Maria Warren",
+        "dbId": "9069",
+        "recordId": "7898003",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7898003&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Daughter"
+      },
+      {
+        "Others Listed (Name)": "Anna G. Susannah",
+        "dbId": "9069",
+        "recordId": "7940314",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=9069&h=7940314&indiv=try&viewrecord=1&r=an",
+        "Relationship": "Daughter"
+      },
+      {
+        "Others Listed (Name)": "John Augesten",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/9069/images/007704452_00510?pid=7967038&usePUB=true&usePUBJs=true",
+  "imageDbId": "9069",
+  "imageRecordId": "007704452_00510",
+  "sourceCitation": "Probate Records (Worcester County, Massachusetts); Index 1731-1881; Author: Massachusetts. Probate Court (Worcester County)",
+  "sourceInformation": "Ancestry.com. Massachusetts, U.S., Wills and Probate Records, 1635-1991 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2015. Original data: Massachusetts County, District and Probate Courts.",
+  "originalData": "Massachusetts County, District and Probate Courts.",
+  "sourceDescription": "You can’t take it with you. Find out what was left behind and to whom in 200 years of Massachusetts probate records. Learn more..."
+}

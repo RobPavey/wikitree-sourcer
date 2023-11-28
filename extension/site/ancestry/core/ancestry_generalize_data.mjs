@@ -92,6 +92,7 @@ const recordTypeByFields = [
   { type: RT.Military, labels: ["Enlistment Date", "Enlistment Place"] },
   { type: RT.Military, labels: ["Military Date", "Military Place"] },
   { type: RT.Will, labels: ["Will Date"] },
+  { type: RT.Will, labels: ["Others Listed (Name)<br/>Relationship"] },
 ];
 
 function determineRecordType(extractedData) {
@@ -236,11 +237,16 @@ function determineRecordType(extractedData) {
       type: RT.ElectoralRegister,
       matches: ["Electoral Roll", "Voter Registers", "Electoral Registers"],
     },
-    { type: RT.Probate, matches: ["Probate"] },
     {
       type: RT.Will,
       matches: ["Prerogative Court of Canterbury Wills", "Will Index"],
     },
+    {
+      type: RT.Will,
+      matches: ["Wills and Probate"],
+      requiredData: [["Others Listed (Name)<br/>Relationship"], ["Will Date"]],
+    },
+    { type: RT.Probate, matches: ["Probate"] },
     {
       type: RT.MarriageRegistration,
       matches: ["Civil Registration Marriage Index"],
@@ -512,6 +518,22 @@ function determineRoleGivenRecordType(extractedData, result) {
     return; // can't assign a role
   }
 
+  function relationshipToRole(relationship) {
+    if (relationship == "Child") {
+      return Role.Child;
+    } else if (relationship == "Son" || relationship == "Daughter") {
+      return Role.Child;
+    } else if (relationship == "Spouse" || relationship == "Wife") {
+      return Role.Spouse;
+    } else if (relationship == "Father") {
+      return Role.Parent;
+    } else if (relationship == "Mother") {
+      return Role.Parent;
+    } else if (relationship == "Sibling" || relationship == "Siblings") {
+      return Role.Sibling;
+    }
+  }
+
   let recordType = result.recordType;
 
   if (recordType == RT.Baptism || recordType == RT.Birth || recordType == RT.BirthOrBaptism) {
@@ -641,6 +663,24 @@ function determineRoleGivenRecordType(extractedData, result) {
       } else if (extractedData.recordData["Siblings"]) {
         result.role = Role.Sibling;
         result.setPrimaryPersonFullName(cleanName(extractedData.recordData["Siblings"]));
+      }
+    }
+  } else if (recordType == RT.Will) {
+    // will can have lots of relations, sometimes they get put in household table
+    if (extractedData.household && extractedData.household.members.length > 1) {
+      const members = extractedData.household.members;
+      if (members[0].link) {
+        // the first person has a link, this implies the record person is not the primary
+        for (let member of members) {
+          if (!member.link) {
+            // this is the primary
+            let relationship = member.Relationship;
+            result.role = relationshipToRole(relationship);
+
+            let otherName = members[0]["Others Listed (Name)"];
+            result.setPrimaryPersonFullName(cleanName(otherName));
+          }
+        }
       }
     }
   }
@@ -2422,7 +2462,7 @@ function regeneralizeDataWithLinkedRecords(input) {
     }
   } else if (ed.linkData && result.role) {
     // if there are linkData and this person is not the primary person on the record
-    // we should be able to get more detail from the linData of the primary person
+    // we should be able to get more detail from the linkData of the primary person
 
     // Note the code below may be redundant because the code that adds the linked records
     // only adds the one that is needed so we are duplicating things here
@@ -2559,6 +2599,28 @@ function regeneralizeDataWithLinkedRecords(input) {
             result.spouses.push(otherParent);
           }
         }
+      }
+    }
+  } else if (ed.household) {
+    // could be a non-census household. For example a will with other people listed
+    if (ed.household.members && ed.household.members.length > 0) {
+      let primaryMember = ed.household.members[0];
+      if (linkedRecords.length == 1 && linkedRecords[0].link == primaryMember.link) {
+        let primaryLinkedRecord = linkedRecords[0];
+        let gdInput = {};
+        gdInput.extractedData = primaryLinkedRecord.extractedData;
+        let generalizedData = generalizeData(gdInput);
+        if (generalizedData.eventPlace) {
+          result.eventPlace = generalizedData.eventPlace;
+        }
+        if (generalizedData.eventDate) {
+          result.eventDate = generalizedData.eventDate;
+        }
+
+        let primaryPersonName = generalizedData.inferFullName();
+        result.setPrimaryPersonFullName(primaryPersonName);
+
+        result.setPrimaryPersonGender(generalizedData.personGender);
       }
     }
   }

@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Will",
+  "role": "Child",
+  "primaryPerson": {
+    "name": {
+      "name": "John Warren"
+    }
+  },
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "John Augesten"
+  },
+  "personGender": "male",
+  "typeSpecificData": {
+    "dateIsNotGrantDate": true
+  },
+  "lastNameAtDeath": "Augesten",
+  "collectionData": {
+    "id": "9069"
+  },
+  "hasValidData": true
+}
