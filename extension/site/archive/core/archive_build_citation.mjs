@@ -36,6 +36,14 @@ function buildSourceTitle(ed, gd, builder) {
 
   let title = ed.title;
 
+  if (builder.options.citation_archive_includeArkLink) {
+    let ark = ed.metadata["Identifier-ark"];
+    if (ark) {
+      let link = "https://n2t.net/" + ark;
+      title = "[" + link + " " + title + "]";
+    }
+  }
+
   let sourceTitle = "";
   if (author && title) {
     sourceTitle = author + ", ''" + title + "''";

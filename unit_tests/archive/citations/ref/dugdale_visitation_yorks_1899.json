@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Book''':\nDugdale, William, Sir, 1605-1686; Clay, John William, 1838-1918, ''Dugdale's Visitation of Yorkshire, with additions''<br/>\nExeter, W. Pollard & Co; 1899; page: 89<br/>\n[https://archive.org/details/dugdalesvisitati03dugd/page/89/mode/1up?view=theater Internet Archive] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Book''':\nDugdale, William, Sir, 1605-1686; Clay, John William, 1838-1918, ''[https://n2t.net/ark:/13960/t6vx0h83r Dugdale's Visitation of Yorkshire, with additions]''<br/>\nExeter, W. Pollard & Co; 1899; page: 89<br/>\n[https://archive.org/details/dugdalesvisitati03dugd/page/89/mode/1up?view=theater Internet Archive] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the book ''Dugdale's Visitation of Yorkshire, with additions'' in 1899.<ref>\n'''Book''':\nDugdale, William, Sir, 1605-1686; Clay, John William, 1838-1918, ''Dugdale's Visitation of Yorkshire, with additions''<br/>\nExeter, W. Pollard & Co; 1899; page: 89<br/>\n[https://archive.org/details/dugdalesvisitati03dugd/page/89/mode/1up?view=theater Internet Archive] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the book ''Dugdale's Visitation of Yorkshire, with additions'' in 1899.<ref>\n'''Book''':\nDugdale, William, Sir, 1605-1686; Clay, John William, 1838-1918, ''[https://n2t.net/ark:/13960/t6vx0h83r Dugdale's Visitation of Yorkshire, with additions]''<br/>\nExeter, W. Pollard & Co; 1899; page: 89<br/>\n[https://archive.org/details/dugdalesvisitati03dugd/page/89/mode/1up?view=theater Internet Archive] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Book''': Dugdale, William, Sir, 1605-1686; Clay, John William, 1838-1918, ''Dugdale's Visitation of Yorkshire, with additions''<br/>Exeter, W. Pollard & Co; 1899; page: 89<br/>[https://archive.org/details/dugdalesvisitati03dugd/page/89/mode/1up?view=theater Internet Archive] (accessed 6 May 2021)",
+    "citation": "* '''Book''': Dugdale, William, Sir, 1605-1686; Clay, John William, 1838-1918, ''[https://n2t.net/ark:/13960/t6vx0h83r Dugdale's Visitation of Yorkshire, with additions]''<br/>Exeter, W. Pollard & Co; 1899; page: 89<br/>[https://archive.org/details/dugdalesvisitati03dugd/page/89/mode/1up?view=theater Internet Archive] (accessed 6 May 2021)",
     "type": "source"
   }
 }

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Book''':\nE.a.b.f. Hist.s., ''New Links With Shakespeare''<br/>\n1930; page: (156 of 175)<br/>\n[https://archive.org/details/in.ernet.dli.2015.182244/page/n155/mode/2up Internet Archive] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Book''':\nE.a.b.f. Hist.s., ''[https://n2t.net/ark:/13960/t8cg54x3b New Links With Shakespeare]''<br/>\n1930; page: (156 of 175)<br/>\n[https://archive.org/details/in.ernet.dli.2015.182244/page/n155/mode/2up Internet Archive] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the book ''New Links With Shakespeare'' in 1930.<ref>\n'''Book''':\nE.a.b.f. Hist.s., ''New Links With Shakespeare''<br/>\n1930; page: (156 of 175)<br/>\n[https://archive.org/details/in.ernet.dli.2015.182244/page/n155/mode/2up Internet Archive] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the book ''New Links With Shakespeare'' in 1930.<ref>\n'''Book''':\nE.a.b.f. Hist.s., ''[https://n2t.net/ark:/13960/t8cg54x3b New Links With Shakespeare]''<br/>\n1930; page: (156 of 175)<br/>\n[https://archive.org/details/in.ernet.dli.2015.182244/page/n155/mode/2up Internet Archive] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Book''': E.a.b.f. Hist.s., ''New Links With Shakespeare''<br/>1930; page: (156 of 175)<br/>[https://archive.org/details/in.ernet.dli.2015.182244/page/n155/mode/2up Internet Archive] (accessed 6 May 2021)",
+    "citation": "* '''Book''': E.a.b.f. Hist.s., ''[https://n2t.net/ark:/13960/t8cg54x3b New Links With Shakespeare]''<br/>1930; page: (156 of 175)<br/>[https://archive.org/details/in.ernet.dli.2015.182244/page/n155/mode/2up Internet Archive] (accessed 6 May 2021)",
     "type": "source"
   }
 }

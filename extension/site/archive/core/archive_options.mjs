@@ -33,7 +33,14 @@ const citationOptionsGroup = {
   subcategory: "archive",
   tab: "citation",
   subsection: "archive",
-  options: [],
+  options: [
+    {
+      optionName: "includeArkLink",
+      type: "checkbox",
+      label: "Include a persistent link to the document",
+      defaultValue: true,
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "archive", "Internet Archive");
