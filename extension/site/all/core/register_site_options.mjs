@@ -46,6 +46,7 @@ import "../../archive/core/archive_options.mjs";
 import "../../irishg/core/irishg_options.mjs";
 import "../../jstor/core/jstor_options.mjs";
 import "../../baclac/core/baclac_options.mjs";
+import "../../mh/core/mh_options.mjs";
 import "../../naie/core/naie_options.mjs";
 import "../../nli/core/nli_options.mjs";
 import "../../np/core/np_options.mjs";

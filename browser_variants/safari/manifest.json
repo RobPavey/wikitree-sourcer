@@ -164,6 +164,11 @@
       "js": ["base/browser/content/content_common.js", "site/jstor/browser/jstor_content.js"]
     },
     {
+      "matches": ["*://*.myheritage.com/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/mh/browser/mh_content.js"]
+    },
+    {
       "matches": ["*://www.census.nationalarchives.ie/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/naie/browser/naie_content.js"]
@@ -337,6 +342,10 @@
     {
       "resources": ["site/jstor/core/jstor_extract_data.mjs"],
       "matches": ["*://*.jstor.org/*"]
+    },
+    {
+      "resources": ["site/mh/core/mh_extract_data.mjs"],
+      "matches": ["*://*.myheritage.com/*"]
     },
     {
       "resources": ["site/naie/core/naie_extract_data.mjs"],

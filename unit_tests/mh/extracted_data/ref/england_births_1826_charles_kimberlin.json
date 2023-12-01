@@ -1,0 +1,32 @@
+{
+  "url": "https://www.myheritage.com/research/record-30042-49707075/charles-kimberlin-in-england-births-christenings",
+  "success": true,
+  "collectionTitle": "England Births and Christenings, 1538-1975",
+  "recordData": {
+    "Name": {
+      "value": "Charles Kimberlin"
+    },
+    "Gender": {
+      "value": "Male"
+    },
+    "Christening": {
+      "dateString": "Jan 6 1826",
+      "placeString": "Atherstone Near Tamworth, Warwick, England"
+    },
+    "Father": {
+      "value": "John Kimberlin"
+    },
+    "Mother": {
+      "value": "Elizabh."
+    },
+    "Indexing Project (Batch) Number": {
+      "value": "C03973-1"
+    },
+    "System Origin": {
+      "value": "England-ODM"
+    },
+    "GS Film number": {
+      "value": "557265"
+    }
+  }
+}

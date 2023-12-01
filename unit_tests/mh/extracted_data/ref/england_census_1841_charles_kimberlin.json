@@ -1,0 +1,94 @@
+{
+  "url": "https://www.myheritage.com/research/record-10150-12380625/charles-kimberlin-in-1841-england-wales-census",
+  "success": true,
+  "collectionTitle": "1841 England & Wales Census",
+  "recordData": {
+    "Name": {
+      "value": "Charles Kimberlin"
+    },
+    "Gender": {
+      "value": "Male"
+    },
+    "Birth": {
+      "dateString": "Between 1822 and 1826",
+      "placeString": "Warwickshire, England"
+    },
+    "Residence": {
+      "dateString": "1841",
+      "placeString": "Kingsbury, Kingsbury, Warwickshire, England"
+    },
+    "Age": {
+      "value": "15 - 19"
+    }
+  },
+  "recordSections": {
+    "Census": {
+      "Parish": "Kingsbury",
+      "Series": "HO107",
+      "Page": "4\\9",
+      "County": "Warwickshire",
+      "Piece": "1130",
+      "Family": "392",
+      "Country": "England",
+      "Registrar's district": "Fazeley",
+      "Line": "25",
+      "Date": "1841",
+      "Superintendent registrar's district": "Tamworth",
+      "Image": "10",
+      "Enum. District": "10"
+    }
+  },
+  "household": {
+    "headings": [
+      "Relation to head",
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Relation to head": "Head (implied)",
+        "link": "https://www.myheritage.com/research/record-10150-12380618/john-bunney-in-1841-england-wales-census",
+        "Name": "John Bunney",
+        "Age": "40 - 44"
+      },
+      {
+        "Relation to head": "Wife (implied)",
+        "link": "https://www.myheritage.com/research/record-10150-12380619/ruth-bunney-in-1841-england-wales-census",
+        "Name": "Ruth Bunney",
+        "Age": "40 - 44"
+      },
+      {
+        "Relation to head": "Son (implied)",
+        "link": "https://www.myheritage.com/research/record-10150-12380620/john-bunney-in-1841-england-wales-census",
+        "Name": "John Bunney",
+        "Age": "20 - 24"
+      },
+      {
+        "link": "https://www.myheritage.com/research/record-10150-12380621/bartholomew-slater-in-1841-england-wales-census",
+        "Name": "Bartholomew Slater",
+        "Age": "30 - 34"
+      },
+      {
+        "link": "https://www.myheritage.com/research/record-10150-12380622/john-dowling-in-1841-england-wales-census",
+        "Name": "John Dowling",
+        "Age": "30 - 34"
+      },
+      {
+        "link": "https://www.myheritage.com/research/record-10150-12380623/william-rudkin-in-1841-england-wales-census",
+        "Name": "William Rudkin",
+        "Age": "20 - 24"
+      },
+      {
+        "link": "https://www.myheritage.com/research/record-10150-12380624/mary-newborough-in-1841-england-wales-census",
+        "Name": "Mary Newborough",
+        "Age": "20 - 24"
+      },
+      {
+        "isSelected": true,
+        "link": "https://www.myheritage.com/research/record-10150-12380625/charles-kimberlin-in-1841-england-wales-census",
+        "Name": "Charles Kimberlin",
+        "Age": "15 - 19"
+      }
+    ]
+  }
+}

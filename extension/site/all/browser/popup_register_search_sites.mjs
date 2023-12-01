@@ -44,6 +44,7 @@ import "/site/gro/browser/gro_popup_search.mjs";
 import "/site/hathi/browser/hathi_popup_search.mjs";
 import "/site/irishg/browser/irishg_popup_search.mjs";
 import "/site/jstor/browser/jstor_popup_search.mjs";
+import "/site/mh/browser/mh_popup_search.mjs";
 import "/site/naie/browser/naie_popup_search.mjs";
 import "/site/nli/browser/nli_popup_search.mjs";
 import "/site/np/browser/np_popup_search.mjs";

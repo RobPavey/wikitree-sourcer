@@ -1,0 +1,90 @@
+{
+  "url": "https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees",
+  "success": true,
+  "collectionTitle": "MyHeritage Family Trees",
+  "recordData": {
+    "Name": {
+      "value": "Charles Kimberlin"
+    },
+    "Birth": {
+      "dateString": "Dec 15 1825",
+      "placeString": "Atherstone, Warwickshire, England"
+    },
+    "Baptism": {
+      "dateString": "Jan 6 1826",
+      "placeString": "Atherstone, Warwickshire, England"
+    },
+    "Marriage": {
+      "descriptionString": "Marriage to: Emily Kimberlin - Black (born Mason)",
+      "dateString": "Apr 26 1851",
+      "placeString": "Aston Juxta Birmingham, Warwick, England"
+    },
+    "Death": {
+      "value": "Apr 18 1860"
+    }
+  },
+  "recordSections": {
+    "Family members": {
+      "Parents": [
+        {
+          "name": "John Kimberlin",
+          "link": "https://www.myheritage.com/research/record-1-451433851-1-500602/john-kimberlin-in-myheritage-family-trees",
+          "dateRange": "1800 - 1871",
+          "gender": "male"
+        },
+        {
+          "name": "Elizabeth Kimberlin (born Smith)",
+          "link": "https://www.myheritage.com/research/record-1-451433851-1-501075/elizabeth-kimberlin-born-smith-in-myheritage-family-trees",
+          "dateRange": "1798 - 1840",
+          "gender": "female"
+        }
+      ],
+      "Wife": [
+        {
+          "name": "Emily Kimberlin - Black (born Mason)",
+          "link": "https://www.myheritage.com/research/record-1-451433851-1-508892/emily-kimberlin-black-born-mason-in-myheritage-family-trees",
+          "dateRange": "1826 - 1916",
+          "gender": "female"
+        }
+      ],
+      "Siblings": [
+        {
+          "name": "Thomas Kimberlin",
+          "link": "https://www.myheritage.com/research/record-1-451433851-1-508905/thomas-kimberlin-in-myheritage-family-trees",
+          "dateRange": "1824 - ?",
+          "gender": "male"
+        },
+        {
+          "name": "Elizabeth Moore (born Kimberlin)",
+          "link": "https://www.myheritage.com/research/record-1-451433851-1-508889/elizabeth-moore-born-kimberlin-in-myheritage-family-trees",
+          "dateRange": "1827 - ?",
+          "gender": "female"
+        }
+      ],
+      "Children": [
+        {
+          "name": "Mary Elizabeth Brain (born Kimberlin)",
+          "link": "https://www.myheritage.com/research/record-1-451433851-1-508893/mary-elizabeth-brain-born-kimberlin-in-myheritage-family-trees",
+          "dateRange": "1853 - 1933",
+          "gender": "female"
+        },
+        {
+          "name": "Charles Kimberlin",
+          "link": "https://www.myheritage.com/research/record-1-451433851-1-508895/charles-kimberlin-in-myheritage-family-trees",
+          "dateRange": "1859 - ?",
+          "gender": "male"
+        },
+        {
+          "name": "Emily Kimberlin",
+          "link": "https://www.myheritage.com/research/record-1-451433851-1-508894/emily-kimberlin-in-myheritage-family-trees",
+          "dateRange": "1854 - 1948",
+          "gender": "female"
+        },
+        {
+          "name": "<Private> Kimberlin",
+          "link": "https://www.myheritage.com/research/record-1-451433851-1-508953/myheritage-family-trees"
+        }
+      ]
+    }
+  }
+}
