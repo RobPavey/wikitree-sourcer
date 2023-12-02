@@ -40,7 +40,13 @@ function extractData(document, url) {
   let collectionInfoBoxTitle = recordDectective.querySelector("div.collection_info_box_title");
 
   if (collectionInfoBoxTitle) {
-    result.collectionTitle = collectionInfoBoxTitle.textContent;
+    result.collectionTitle = collectionInfoBoxTitle.textContent.trim();
+  }
+
+  if (result.collectionTitle == "MyHeritage Family Trees") {
+    result.pageType = "person";
+  } else {
+    result.pageType = "record";
   }
 
   let recordHeader = recordBody.querySelector("div.record_header");
@@ -51,6 +57,19 @@ function extractData(document, url) {
   let recordMainContent = recordBody.querySelector("div.record_main_content");
   if (!recordMainContent) {
     return result;
+  }
+
+  let recordImage = recordMainContent.querySelector("div.recordImage");
+  if (recordImage) {
+    let maleImage = recordImage.querySelector("div[class*='_M_']");
+    if (maleImage) {
+      result.personGender = "male";
+    } else {
+      let femaleImage = recordImage.querySelector("div[class*='_F_']");
+      if (femaleImage) {
+        result.personGender = "female";
+      }
+    }
   }
 
   let recordFieldsTables = recordMainContent.querySelectorAll("table.recordFieldsTable");

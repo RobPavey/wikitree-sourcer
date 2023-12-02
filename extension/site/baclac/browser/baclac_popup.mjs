@@ -53,8 +53,7 @@ async function baclacSearchOldRecord(data) {
 }
 
 async function setupBaclacPopupMenu(extractedData) {
-  let extractFailedMessage =
-    "It looks like a Library and Archives Canada page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.";
+  let extractFailedMessage = "It looks like a Library and Archives Canada page but not record page.";
   let generalizeFailedMessage =
     "It looks like a Library and Archives Canada page but does not contain the required data.";
   if (extractedData.isFrenchPage && !extractedData.success) {

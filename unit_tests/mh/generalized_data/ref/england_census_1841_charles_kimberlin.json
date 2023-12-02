@@ -1,6 +1,13 @@
 {
   "sourceOfData": "mh",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
+  "name": {
+    "name": "Charles Kimberlin"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1841"
+  },
   "hasValidData": true
 }

@@ -1,0 +1,30 @@
+{
+  "url": "https://www.myheritage.com/research/record-10017-3144396/charles-kimberlin-in-passenger-immigration-lists",
+  "success": true,
+  "collectionTitle": "Passenger and Immigration Lists, 1500 - 1900",
+  "pageType": "record",
+  "recordData": {
+    "Name": {
+      "value": "Charles Kimberlin"
+    },
+    "Arrival": {
+      "dateString": "1882",
+      "placeString": "Allegheny Co., Pennsylvania"
+    },
+    "Document type": {
+      "value": "Immigrant Record"
+    },
+    "Accession #": {
+      "value": "9998245928"
+    },
+    "Gale Id": {
+      "value": "1348225"
+    },
+    "Source publication code": {
+      "value": "9701"
+    },
+    "Source": {
+      "value": "Passenger and Immigration Lists Index"
+    }
+  }
+}

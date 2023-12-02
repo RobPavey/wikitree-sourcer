@@ -43,6 +43,10 @@ const regressionData = [
     caseName: "england_census_1851_william_pavey",
     url: "https://www.myheritage.com/research/record-10151-40011245/william-henry-pavey-in-1851-england-wales-census",
   },
+  {
+    caseName: "us_pa_immigration_1882_charles_kimberlin",
+    url: "https://www.myheritage.com/research/record-10017-3144396/charles-kimberlin-in-passenger-immigration-lists",
+  },
 
   // Family Tree person pages
   {

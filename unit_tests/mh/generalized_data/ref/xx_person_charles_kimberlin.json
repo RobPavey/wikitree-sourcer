@@ -1,6 +1,10 @@
 {
   "sourceOfData": "mh",
-  "sourceType": "record",
+  "sourceType": "profile",
   "recordType": "Unclassified",
+  "name": {
+    "name": "Charles Kimberlin"
+  },
+  "personGender": "male",
   "hasValidData": true
 }

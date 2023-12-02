@@ -30,8 +30,7 @@ import { buildCitation } from "../core/examplesite_build_citation.mjs";
 async function setupExamplesitePopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage:
-      "It looks like a ExampleSite page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
+    extractFailedMessage: "It looks like a ExampleSite page but not a record page.",
     generalizeFailedMessage: "It looks like a ExampleSite page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,

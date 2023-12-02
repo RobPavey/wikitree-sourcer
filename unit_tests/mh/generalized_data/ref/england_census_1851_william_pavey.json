@@ -1,6 +1,13 @@
 {
   "sourceOfData": "mh",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
+  "name": {
+    "name": "William Henry Pavey"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1851"
+  },
   "hasValidData": true
 }

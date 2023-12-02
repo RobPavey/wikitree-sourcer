@@ -30,8 +30,7 @@ import { buildCitation } from "../core/jstor_build_citation.mjs";
 async function setupJstorPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage:
-      "It looks like a JSTOR page but not an Entry Information page.\n\nTo get to the Entry Information page click the red rectangle with 'Info' in it next to the search result that you wish to cite.",
+    extractFailedMessage: "It looks like a JSTOR page but not an article page.",
     generalizeFailedMessage: "It looks like a JSTOR page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,

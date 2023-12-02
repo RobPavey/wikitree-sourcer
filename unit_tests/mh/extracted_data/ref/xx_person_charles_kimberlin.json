@@ -2,6 +2,8 @@
   "url": "https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees",
   "success": true,
   "collectionTitle": "MyHeritage Family Trees",
+  "pageType": "person",
+  "personGender": "male",
   "recordData": {
     "Name": {
       "value": "Charles Kimberlin"

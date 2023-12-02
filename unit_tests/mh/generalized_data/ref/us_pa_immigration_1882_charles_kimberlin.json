@@ -1,13 +1,12 @@
 {
   "sourceOfData": "mh",
   "sourceType": "record",
-  "recordType": "Baptism",
+  "recordType": "Immigration",
   "name": {
     "name": "Charles Kimberlin"
   },
-  "personGender": "male",
   "eventDate": {
-    "dateString": "6 Jan 1826"
+    "dateString": "1882"
   },
   "hasValidData": true
 }
