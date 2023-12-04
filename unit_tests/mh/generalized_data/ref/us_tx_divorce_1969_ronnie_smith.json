@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "name": {
+    "name": "Ronnie L Smith"
+  },
+  "eventDate": {
+    "dateString": "25 Apr 1969"
+  },
+  "eventPlace": {
+    "placeString": "Lubbock, Texas, USA"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Linda Smith"
+      }
+    }
+  ],
+  "hasValidData": true
+}

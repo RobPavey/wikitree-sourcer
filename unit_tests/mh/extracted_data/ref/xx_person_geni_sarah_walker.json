@@ -1,0 +1,65 @@
+{
+  "url": "https://www.myheritage.com/research/record-40000-246802060/sarah-ann-walker-born-west-in-geni-world-family-tree",
+  "success": true,
+  "collectionTitle": "Geni World Family Tree",
+  "pageType": "person",
+  "recordTitle": "Sarah Ann Walker (born West)",
+  "recordData": {
+    "Name": {
+      "value": "Sarah Ann Walker (born West)"
+    },
+    "Gender": {
+      "value": "Female"
+    },
+    "Birth": {
+      "dateString": "Dec 28 1820",
+      "placeString": "Dickson County, Tennessee, United States"
+    },
+    "Occupation": {
+      "value": "Married Henry Walker September 10, 1839, in Calloway, Kentucky, and they had 8 children"
+    },
+    "Death": {
+      "dateString": "Oct 10 1902"
+    },
+    "Father": {
+      "value": "John West"
+    },
+    "Mother": {
+      "value": "Sarah West (born Walker)"
+    },
+    "Husband": {
+      "value": "Henry Walker"
+    },
+    "Children": {
+      "value": "Mary J. Walker, Martha K. Walker, Henry A. Walker, Sarah W. Walker, Richard Dewitt Walker, Ann Walker, Malinda Walker, Eliza Walker, Isabell Walker",
+      "values": [
+        "Mary J. Walker",
+        "Martha K. Walker",
+        "Henry A. Walker",
+        "Sarah W. Walker",
+        "Richard Dewitt Walker",
+        "Ann Walker",
+        "Malinda Walker",
+        "Eliza Walker",
+        "Isabell Walker"
+      ]
+    },
+    "Siblings": {
+      "value": "Susan Sanders (born West), Samuel Walker West, Isaac West, Phoebe West, Lucinda West, Diane West, Malinda Goodrich (born West), John Carrol West, Solomon Linn West",
+      "values": [
+        "Susan Sanders (born West)",
+        "Samuel Walker West",
+        "Isaac West",
+        "Phoebe West",
+        "Lucinda West",
+        "Diane West",
+        "Malinda Goodrich (born West)",
+        "John Carrol West",
+        "Solomon Linn West"
+      ]
+    },
+    "Source": {
+      "value": "View full record on Geni website"
+    }
+  }
+}

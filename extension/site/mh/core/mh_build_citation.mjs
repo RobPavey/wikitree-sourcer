@@ -35,6 +35,8 @@ const refKeys = [
   "GS Film number",
   "Volume",
   "Page",
+  "Reference ID",
+  "File #",
 ];
 
 function removeUnwantedKeysForDataString(keys, recordData) {

@@ -32,6 +32,11 @@ const recordTypeData = [
     recordType: RT.Immigration,
     documentTypes: ["Immigrant Record"],
   },
+  {
+    recordType: RT.Divorce,
+    documentTypes: ["Divorce"],
+  },
+
   // collection matches
   {
     recordType: RT.Baptism,
@@ -49,7 +54,19 @@ const recordTypeData = [
   },
   {
     recordType: RT.Directory,
-    collectionTitleMatches: [["Business Register"]],
+    collectionTitleMatches: [["Business Register"], ["U.S. Public Records Index"], ["Phone and Address Listings"]],
+  },
+  {
+    recordType: RT.SocialSecurity,
+    collectionTitleMatches: [["Social Security Applications and Claims"]],
+  },
+  {
+    recordType: RT.Employment,
+    collectionTitleMatches: [["Medicare Public Provider"], ["Attorney Registrations"], ["Job Applications"]],
+  },
+  {
+    recordType: RT.FamHistOrPedigree,
+    collectionTitleMatches: [["Biographies"], ["Genealogy of the"], "Personal Reminiscences of"],
   },
 
   // matches using required fields only
@@ -64,6 +81,7 @@ const typeDataEventLabels = {
   Immigration: ["Arrival"],
   Census: ["Residence"],
   Marriage: ["Marriage"],
+  Divorce: ["Divorce"],
 };
 
 const typeDataEventDateLabels = {
@@ -318,6 +336,24 @@ class MhEdReader extends ExtractedDataReader {
       nameString = this.ed.recordTitle;
     }
 
+    if (nameString.includes(" & ")) {
+      if (
+        this.recordType == RT.Marriage ||
+        this.recordType == RT.MarriageRegistration ||
+        this.recordType == RT.Divorce
+      ) {
+        let ampIndex = nameString.indexOf(" & ");
+        if (ampIndex != -1) {
+          nameString = nameString.substring(0, ampIndex).trim();
+        }
+      }
+    }
+    if (nameString.includes("(born ")) {
+      // this person's name is a married name plus the maiden name
+      // we really want the name at birth. However we don't know hpw much of the
+      // name before the "(born " is the married last name (it could have spaces in it)
+    }
+
     return this.makeNameObjFromFullName(nameString);
   }
 
@@ -465,14 +501,32 @@ class MhEdReader extends ExtractedDataReader {
       let spouseName = this.getRecordDataValueString(["Spouse", "Spouse (implied)"]);
 
       if (!spouseName) {
-        // Sometimes a marriage lists the bride and groom, we treat the groom as the
-        // primary person and the bride as the spouse
-        let brideValue = this.getRecordDataValue(["Bride"]);
-        if (brideValue) {
-          if (brideValue.value) {
-            spouseName = brideValue.value;
-          } else if (brideValue["Name"]) {
-            spouseName = brideValue["Name"];
+        function getNameStringFromValue(value) {
+          if (value) {
+            if (value.value) {
+              return value.value;
+            } else if (value["Name"]) {
+              return value["Name"];
+            }
+          }
+        }
+
+        // Sometimes a marriage lists the bride and groom, we treat firth person listed
+        // (before the & in the name) as the primary person
+        let brideValue = this.getRecordDataValue(["Bride", "Wife"]);
+        let groomValue = this.getRecordDataValue(["Groom", "Husband"]);
+        let brideName = getNameStringFromValue(brideValue);
+        let groomName = getNameStringFromValue(groomValue);
+        if (brideName && groomName) {
+          let nameObj = this.getNameObj();
+          if (nameObj && nameObj.name) {
+            let primaryName = nameObj.name;
+
+            if (primaryName == groomName) {
+              spouseName = brideName;
+            } else if (primaryName == brideName) {
+              spouseName = groomName;
+            }
           }
         }
       }

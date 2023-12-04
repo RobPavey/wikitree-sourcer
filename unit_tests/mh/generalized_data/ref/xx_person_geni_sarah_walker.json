@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "profile",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Sarah Ann Walker (born West)"
+  },
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "28 Dec 1820"
+  },
+  "birthPlace": {
+    "placeString": "Dickson County, Tennessee, United States"
+  },
+  "deathDate": {
+    "dateString": "10 Oct 1902"
+  },
+  "occupation": "Married Henry Walker September 10, 1839, in Calloway, Kentucky, and they had 8 children",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John West"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Sarah West (born Walker)"
+      }
+    }
+  },
+  "hasValidData": true
+}

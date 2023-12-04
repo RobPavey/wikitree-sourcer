@@ -81,6 +81,8 @@ function extractData(document, url) {
 
   if (result.collectionTitle == "MyHeritage Family Trees") {
     result.pageType = "person";
+  } else if (result.collectionTitle == "Geni World Family Tree") {
+    result.pageType = "person";
   } else {
     result.pageType = "record";
   }

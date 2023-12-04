@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Marriages and Divorces\"<br/>\nFile #: 012440<br/>\n[https://www.myheritage.com/research/record-10069-35470791/ronnie-l-smith-and-linda-smith-in-texas-marriages-divorces MyHeritage Record] (accessed 6 May 2021)<br/>\nRonnie L Smith divorce from Linda Smith on 25 Apr 1969 in Lubbock, Texas, USA.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ronnie was divorced from Linda Smith on 25 April 1969 in Lubbock, Texas, USA.<ref>\n'''Divorce''':\n\"Texas Marriages and Divorces\"<br/>\nFile #: 012440<br/>\n[https://www.myheritage.com/research/record-10069-35470791/ronnie-l-smith-and-linda-smith-in-texas-marriages-divorces MyHeritage Record] (accessed 6 May 2021)<br/>\nRonnie L Smith divorce from Linda Smith on 25 Apr 1969 in Lubbock, Texas, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Divorce''': \"Texas Marriages and Divorces\"<br/>File #: 012440<br/>[https://www.myheritage.com/research/record-10069-35470791/ronnie-l-smith-and-linda-smith-in-texas-marriages-divorces MyHeritage Record] (accessed 6 May 2021)<br/>Ronnie L Smith divorce from Linda Smith on 25 Apr 1969 in Lubbock, Texas, USA.",
+    "type": "source"
+  }
+}

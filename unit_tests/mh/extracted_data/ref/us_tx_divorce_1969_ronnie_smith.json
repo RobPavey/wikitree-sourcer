@@ -1,0 +1,37 @@
+{
+  "url": "https://www.myheritage.com/research/record-10069-35470791/ronnie-l-smith-and-linda-smith-in-texas-marriages-divorces",
+  "success": true,
+  "collectionTitle": "Texas Marriages and Divorces",
+  "pageType": "record",
+  "recordTitle": "Ronnie L Smith & Linda Smith",
+  "recordData": {
+    "Document type": {
+      "value": "Divorce"
+    },
+    "Marriage": {
+      "dateString": "Sep 11 1965"
+    },
+    "Divorce": {
+      "dateString": "Apr 25 1969",
+      "placeString": "Lubbock, Texas, USA"
+    },
+    "File #": {
+      "value": "012440"
+    },
+    "Children": {
+      "value": "1"
+    },
+    "Husband": {
+      "value": "Ronnie L Smith"
+    },
+    "Birth": {
+      "dateString": "Circa 1947"
+    },
+    "Age": {
+      "value": "22"
+    },
+    "Wife": {
+      "value": "Linda Smith"
+    }
+  }
+}

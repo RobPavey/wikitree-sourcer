@@ -59,11 +59,19 @@ const regressionData = [
     caseName: "us_pa_immigration_1882_charles_kimberlin",
     url: "https://www.myheritage.com/research/record-10017-3144396/charles-kimberlin-in-passenger-immigration-lists",
   },
+  {
+    caseName: "us_tx_divorce_1969_ronnie_smith",
+    url: "https://www.myheritage.com/research/record-10069-35470791/ronnie-l-smith-and-linda-smith-in-texas-marriages-divorces",
+  },
 
   // Family Tree person pages
   {
     caseName: "xx_person_charles_kimberlin",
     url: "https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees",
+  },
+  {
+    caseName: "xx_person_geni_sarah_walker",
+    url: "https://www.myheritage.com/research/record-40000-246802060/sarah-ann-walker-born-west-in-geni-world-family-tree",
   },
 ];
 
