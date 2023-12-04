@@ -5,19 +5,24 @@
   "pageType": "record",
   "recordTitle": "Joseph O'Connor",
   "recordData": {
-    "Marriage date": {
+    "marriage-date": {
+      "label": "Marriage date",
       "value": "July-Aug-Sep 1914"
     },
-    "Marriage place": {
+    "marriage": {
+      "label": "Marriage place",
       "placeString": "St Olave Bermondsey, England"
     },
-    "Spouse (implied)": {
+    "spouse": {
+      "label": "Spouse (implied)",
       "value": "Daisy L Crockson"
     },
-    "Volume": {
+    "volume-number": {
+      "label": "Volume",
       "value": "1d"
     },
-    "Page": {
+    "volume-page": {
+      "label": "Page",
       "value": "427"
     }
   },

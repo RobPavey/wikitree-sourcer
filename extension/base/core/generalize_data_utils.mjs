@@ -513,7 +513,7 @@ class DateObj {
     }
   }
 
-  setDateAndQualifierFromString(dateString, isYearString) {
+  setDateAndQualifierFromString(dateString, isYearString = false) {
     const prefixes = [
       { prefix: "about", qualifier: dateQualifiers.ABOUT },
       { prefix: "abt", qualifier: dateQualifiers.ABOUT },
@@ -521,6 +521,7 @@ class DateObj {
       { prefix: "aft", qualifier: dateQualifiers.AFTER },
       { prefix: "before", qualifier: dateQualifiers.BEFORE }, // must come before bef
       { prefix: "bef", qualifier: dateQualifiers.BEFORE },
+      { prefix: "circa", qualifier: dateQualifiers.ABOUT },
     ];
 
     if (!dateString) {

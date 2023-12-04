@@ -101,6 +101,8 @@ class MhEdReader extends ExtractedDataReader {
     super(ed);
     if (ed.recordData) {
       this.determineSourceTypeAndRecordType();
+
+      this.setupCoupleData();
     }
   }
 
@@ -114,7 +116,7 @@ class MhEdReader extends ExtractedDataReader {
 
       for (let typeData of recordTypeData) {
         if (typeData.documentTypes) {
-          let docType = this.getSimpleRecordDataValue("Document type");
+          let docType = this.getSimpleRecordDataValueString("Document type");
           if (docType) {
             let docTypesMatch = false;
             for (let typeDataDocType of typeData.documentTypes) {
@@ -189,7 +191,7 @@ class MhEdReader extends ExtractedDataReader {
           for (let requiredFieldSet of typeData.requiredFields) {
             let fieldsPresent = true;
             for (let field of requiredFieldSet) {
-              if (!ed.recordData[field]) {
+              if (!this.findRecordDataFieldByLabel(field)) {
                 fieldsPresent = false;
               }
             }
@@ -210,8 +212,65 @@ class MhEdReader extends ExtractedDataReader {
     }
   }
 
-  getSimpleRecordDataValue(label) {
-    let valueObj = this.ed.recordData[label];
+  findRecordDataFieldByLabel(label) {
+    for (let field of Object.values(this.ed.recordData)) {
+      if (field.label == label) {
+        return field;
+      }
+    }
+  }
+
+  findRecordDataFieldByLabels(labels) {
+    if (labels && this.ed.recordData) {
+      for (let field of Object.values(this.ed.recordData)) {
+        if (labels.includes(field.label)) {
+          return field;
+        }
+      }
+    }
+  }
+
+  findRecordDataFieldByKeysOrLabels(keys, labels) {
+    if (keys && this.ed.recordData) {
+      for (let key of Object.keys(this.ed.recordData)) {
+        if (keys.includes(key)) {
+          return this.ed.recordData[key];
+        }
+      }
+    }
+
+    if (labels && this.ed.recordData) {
+      for (let field of Object.values(this.ed.recordData)) {
+        if (labels.includes(field.label)) {
+          return field;
+        }
+      }
+    }
+  }
+
+  getRecordDataValue(labels) {
+    let valueObj = this.findRecordDataFieldByLabels(labels);
+    if (valueObj) {
+      return valueObj;
+    }
+  }
+
+  getRecordDataValueByKeysOrLabels(keys, labels) {
+    let valueObj = this.findRecordDataFieldByKeysOrLabels(keys, labels);
+    if (valueObj) {
+      return valueObj;
+    }
+  }
+
+  getRecordDataValueString(labels) {
+    let value = this.getRecordDataValue(labels);
+    if (value && value.value) {
+      return value.value;
+    }
+  }
+
+  getSimpleRecordDataValueString(label) {
+    let valueObj = this.findRecordDataFieldByLabel(label);
     if (valueObj) {
       return valueObj.value;
     }
@@ -248,24 +307,6 @@ class MhEdReader extends ExtractedDataReader {
     return this.getRecordDataValue(labels);
   }
 
-  getRecordDataValue(labels) {
-    if (labels) {
-      for (let label of labels) {
-        let value = this.ed.recordData[label];
-        if (value) {
-          return value;
-        }
-      }
-    }
-  }
-
-  getRecordDataValueString(labels) {
-    let value = this.getRecordDataValue(labels);
-    if (value && value.value) {
-      return value.value;
-    }
-  }
-
   cleanMhDate(dateString) {
     if (!dateString) {
       return "";
@@ -274,6 +315,9 @@ class MhEdReader extends ExtractedDataReader {
     dateString = dateString.trim();
 
     if (/^\d\d\d\d$/.test(dateString)) {
+      return dateString;
+    } else if (/^Circa \d\d\d\d$/.test(dateString)) {
+      // The "Circa " gets handled in DateObj
       return dateString;
     } else if (/^[A-Z][a-z][a-z]\-[A-Z][a-z][a-z]\-[A-Z][a-z][a-z]\s+\d\d\d\d$/.test(dateString)) {
       return dateString;
@@ -309,6 +353,97 @@ class MhEdReader extends ExtractedDataReader {
     return string;
   }
 
+  setupCoupleData() {
+    // if this record is actually for two people then get their details and decide which is primary
+    let titleString = this.ed.recordTitle;
+    if (!titleString.includes(" & ")) {
+      return;
+    }
+
+    let ampIndex = titleString.indexOf(" & ");
+    if (ampIndex == -1) {
+      return;
+    }
+
+    function buildPersonData(mainValue, maritalStatusValue, ageValue, birthDateValue) {
+      let person = {};
+
+      if (mainValue) {
+        if (mainValue.value) {
+          person.name = mainValue.value;
+        } else if (mainValue["Name"]) {
+          person.name = mainValue["Name"];
+        }
+
+        if (mainValue["Residence"]) {
+          person.residence = mainValue["Residence"];
+        }
+      }
+
+      if (maritalStatusValue) {
+        if (maritalStatusValue.value) {
+          person.maritalStatus = maritalStatusValue.value;
+        }
+      }
+
+      if (ageValue) {
+        if (ageValue.value) {
+          person.age = ageValue.value;
+        }
+      }
+
+      if (!person.age && birthDateValue) {
+        if (birthDateValue.value) {
+          person.birthDateString = birthDateValue.value;
+        } else if (birthDateValue.dateString) {
+          person.birthDateString = birthDateValue.dateString;
+        }
+      }
+
+      return person;
+    }
+
+    let coupleData = {};
+
+    let primaryNameString = titleString.substring(0, ampIndex).trim();
+
+    coupleData.primaryNameString = primaryNameString;
+
+    let husbandMainValue = this.getRecordDataValueByKeysOrLabels(
+      ["person-canonical-events.name-as-groom", "husband-name"],
+      ["Groom", "Husband"]
+    );
+    let husbandMaritalStatusValue = this.getRecordDataValue(["Groom marital status"]);
+    let husbandAgeValue = this.getRecordDataValueByKeysOrLabels(["husband-age"], []);
+    let husbandBirthDateValue = this.getRecordDataValueByKeysOrLabels(["husband-birth"], []);
+
+    let wifeMainValue = this.getRecordDataValueByKeysOrLabels(
+      ["person-canonical-events.name-as-bride", "wife-name"],
+      ["Bride", "Wife"]
+    );
+    let wifeMaritalStatusValue = this.getRecordDataValue(["Bride marital status"]);
+    let wifeAgeValue = this.getRecordDataValueByKeysOrLabels(["wife-age"], []);
+    let wifeBirthDateValue = this.getRecordDataValueByKeysOrLabels(["wife-birth"], []);
+
+    coupleData.husband = buildPersonData(
+      husbandMainValue,
+      husbandMaritalStatusValue,
+      husbandAgeValue,
+      husbandBirthDateValue
+    );
+    coupleData.wife = buildPersonData(wifeMainValue, wifeMaritalStatusValue, wifeAgeValue, wifeBirthDateValue);
+
+    if (coupleData.husband.name == primaryNameString) {
+      coupleData.primaryPerson = coupleData.husband;
+      coupleData.spouse = coupleData.wife;
+    } else if (coupleData.wife.name == primaryNameString) {
+      coupleData.primaryPerson = coupleData.wife;
+      coupleData.spouse = coupleData.husband;
+    }
+
+    this.coupleData = coupleData;
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -330,27 +465,21 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let nameString = this.getSimpleRecordDataValue("Name");
+    let nameString = this.getSimpleRecordDataValueString("Name");
 
     if (!nameString) {
       nameString = this.ed.recordTitle;
     }
 
-    if (nameString.includes(" & ")) {
-      if (
-        this.recordType == RT.Marriage ||
-        this.recordType == RT.MarriageRegistration ||
-        this.recordType == RT.Divorce
-      ) {
-        let ampIndex = nameString.indexOf(" & ");
-        if (ampIndex != -1) {
-          nameString = nameString.substring(0, ampIndex).trim();
-        }
+    if (this.coupleData) {
+      if (this.coupleData.primaryPerson && this.coupleData.primaryPerson.name) {
+        nameString = this.coupleData.primaryPerson.name;
       }
     }
+
     if (nameString.includes("(born ")) {
       // this person's name is a married name plus the maiden name
-      // we really want the name at birth. However we don't know hpw much of the
+      // we really want the name at birth. However we don't know how much of the
       // name before the "(born " is the married last name (it could have spaces in it)
     }
 
@@ -362,7 +491,7 @@ class MhEdReader extends ExtractedDataReader {
       return this.ed.personGender;
     }
 
-    let gender = this.getSimpleRecordDataValue("Gender");
+    let gender = this.getSimpleRecordDataValueString("Gender");
     if (gender) {
       return gender.toLowerCase();
     }
@@ -426,6 +555,9 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
+    // if this is a divorce or possibly marriage it could have the birth date of both people
+    // which one to use depends on which person is primary
+
     let valueObj = this.getBirthDataValue();
     if (valueObj && valueObj.dateString) {
       return this.makeDateObjFromDateString(this.cleanMhDate(valueObj.dateString));
@@ -462,6 +594,11 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
+    if (this.coupleData && this.coupleData.primaryPerson) {
+      if (this.coupleData.primaryPerson.age) {
+        return this.coupleData.primaryPerson.age;
+      }
+    }
     return "";
   }
 
@@ -500,34 +637,9 @@ class MhEdReader extends ExtractedDataReader {
     if (this.recordType != RT.Census) {
       let spouseName = this.getRecordDataValueString(["Spouse", "Spouse (implied)"]);
 
-      if (!spouseName) {
-        function getNameStringFromValue(value) {
-          if (value) {
-            if (value.value) {
-              return value.value;
-            } else if (value["Name"]) {
-              return value["Name"];
-            }
-          }
-        }
-
-        // Sometimes a marriage lists the bride and groom, we treat firth person listed
-        // (before the & in the name) as the primary person
-        let brideValue = this.getRecordDataValue(["Bride", "Wife"]);
-        let groomValue = this.getRecordDataValue(["Groom", "Husband"]);
-        let brideName = getNameStringFromValue(brideValue);
-        let groomName = getNameStringFromValue(groomValue);
-        if (brideName && groomName) {
-          let nameObj = this.getNameObj();
-          if (nameObj && nameObj.name) {
-            let primaryName = nameObj.name;
-
-            if (primaryName == groomName) {
-              spouseName = brideName;
-            } else if (primaryName == brideName) {
-              spouseName = groomName;
-            }
-          }
+      if (!spouseName && this.coupleData) {
+        if (this.coupleData.spouse && this.coupleData.spouse.name) {
+          spouseName = this.coupleData.spouse.name;
         }
       }
 
@@ -545,6 +657,15 @@ class MhEdReader extends ExtractedDataReader {
               spouse.marriagePlace = marriagePlaceObj;
             }
           }
+
+          if (this.coupleData) {
+            let spouseData = this.coupleData.spouse;
+            if (spouseData) {
+              if (spouseData.age) {
+                spouse.age = spouseData.age;
+              }
+            }
+          }
           return spouse;
         }
       }
@@ -555,8 +676,8 @@ class MhEdReader extends ExtractedDataReader {
   getParents() {
     // Note that the calling function will automatically try to determine parents for census
     if (this.recordType != RT.Census) {
-      let fatherValue = this.ed.recordData["Father"];
-      let motherValue = this.ed.recordData["Mother"];
+      let fatherValue = this.getRecordDataValue(["Father"]);
+      let motherValue = this.getRecordDataValue(["Mother"]);
       if (fatherValue || motherValue) {
         let parents = {};
         if (fatherValue) {

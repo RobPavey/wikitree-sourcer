@@ -5,29 +5,37 @@
   "pageType": "record",
   "recordTitle": "Charles Kimberlin",
   "recordData": {
-    "Name": {
+    "NAME": {
+      "label": "Name",
       "value": "Charles Kimberlin"
     },
-    "Gender": {
+    "gender": {
+      "label": "Gender",
       "value": "Male"
     },
-    "Christening": {
+    "christening": {
+      "label": "Christening",
       "dateString": "Jan 6 1826",
       "placeString": "Atherstone Near Tamworth, Warwick, England"
     },
-    "Father": {
+    "father-name": {
+      "label": "Father",
       "value": "John Kimberlin"
     },
-    "Mother": {
+    "mother-name": {
+      "label": "Mother",
       "value": "Elizabh."
     },
-    "Indexing Project (Batch) Number": {
+    "UDE_BATCH_NUMBER": {
+      "label": "Indexing Project (Batch) Number",
       "value": "C03973-1"
     },
-    "System Origin": {
+    "RECORD_GROUP": {
+      "label": "System Origin",
       "value": "England-ODM"
     },
-    "GS Film number": {
+    "FILM_NUMBER": {
+      "label": "GS Film number",
       "value": "557265"
     }
   }

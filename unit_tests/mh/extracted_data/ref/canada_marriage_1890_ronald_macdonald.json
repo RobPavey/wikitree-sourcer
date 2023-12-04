@@ -5,31 +5,39 @@
   "pageType": "record",
   "recordTitle": "Ronald MacDonald & Annie Alberta MacDonald",
   "recordData": {
-    "Marriage": {
+    "person-events.marriage": {
+      "label": "Marriage",
       "dateString": "Dec 24 1890",
       "placeString": "Prince Edward Island, Canada"
     },
-    "Groom": {
+    "person-canonical-events.name-as-groom": {
+      "label": "Groom",
       "Name": "Ronald MacDonald",
       "Residence": "Charlottetown, Queens, Prince Edward Island, Canada"
     },
-    "Bride": {
+    "person-relatives.spouse.name-as-bride": {
+      "label": "Bride",
       "Name": "Annie Alberta MacDonald",
       "Residence": "Charlottetown, Queens, Prince Edward Island, Canada"
     },
-    "Groom marital status": {
+    "custom_1": {
+      "label": "Groom marital status",
       "value": "Bachelor"
     },
-    "Bride marital status": {
+    "custom_2": {
+      "label": "Bride marital status",
       "value": "Spinster"
     },
-    "Marriage license": {
+    "custom_4": {
+      "label": "Marriage license",
       "value": "Dec 23 1890"
     },
-    "Officient": {
+    "custom_5": {
+      "label": "Officient",
       "value": "David Sutherland"
     },
-    "Notes": {
+    "person-canonical-events.notes": {
+      "label": "Notes",
       "value": "also spelt Macdonald"
     }
   }

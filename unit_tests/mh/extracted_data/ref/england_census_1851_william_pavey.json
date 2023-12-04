@@ -5,33 +5,42 @@
   "pageType": "record",
   "recordTitle": "William Henry Pavey",
   "recordData": {
-    "Name": {
+    "NAME": {
+      "label": "Name",
       "value": "William Henry Pavey"
     },
-    "Gender": {
+    "gender": {
+      "label": "Gender",
       "value": "Male"
     },
-    "Birth": {
+    "birth": {
+      "label": "Birth",
       "dateString": "Circa 1832",
       "placeString": "Stonehouse, Devonshire, England"
     },
-    "Residence": {
+    "census": {
+      "label": "Residence",
       "dateString": "1851",
       "placeString": "18 Clarendon Place, Saint Andrew Part of, Devonshire, England"
     },
-    "Age": {
+    "age": {
+      "label": "Age",
       "value": "19"
     },
-    "Marital status": {
+    "marital-status": {
+      "label": "Marital status",
       "value": "Single"
     },
-    "Father": {
+    "father": {
+      "label": "Father",
       "value": "William Henry Pavey"
     },
-    "Mother": {
+    "mother": {
+      "label": "Mother",
       "value": "Elizabeth Pavey"
     },
-    "Siblings": {
+    "siblings": {
+      "label": "Siblings",
       "value": "Fredrick A Pavey, Jemima Anne Pavey, John L Pavey, Marian Pavey, Isabella Pavey, Charles Pavey, Mary Pavey, Julia Pavey, Fanny Pavey",
       "values": [
         "Fredrick A Pavey",

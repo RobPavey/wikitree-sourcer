@@ -196,7 +196,8 @@ class ExtractedDataReader {
   makeDateObjFromDateString(dateString) {
     if (dateString) {
       let dateObj = new DateObj();
-      dateObj.dateString = dateString;
+
+      dateObj.setDateAndQualifierFromString(dateString);
       return dateObj;
     }
   }

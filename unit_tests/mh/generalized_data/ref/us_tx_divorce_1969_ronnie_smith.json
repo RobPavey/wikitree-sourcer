@@ -11,11 +11,17 @@
   "eventPlace": {
     "placeString": "Lubbock, Texas, USA"
   },
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1943"
+  },
+  "ageAtEvent": "26",
   "spouses": [
     {
       "name": {
         "name": "Linda Smith"
-      }
+      },
+      "age": "22"
     }
   ],
   "hasValidData": true

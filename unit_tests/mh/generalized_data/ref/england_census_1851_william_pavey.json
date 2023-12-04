@@ -12,6 +12,10 @@
   "eventPlace": {
     "placeString": "18 Clarendon Place, Saint Andrew Part of, Devonshire, England"
   },
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1832"
+  },
   "birthPlace": {
     "placeString": "Stonehouse, Devonshire, England"
   },

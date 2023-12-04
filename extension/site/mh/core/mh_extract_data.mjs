@@ -58,6 +58,135 @@ function getPlaceElementText(placeElement) {
   }
 }
 
+function addField(resultObject, labelElement, valueElement, rowElement) {
+  if (labelElement && valueElement) {
+    let labelText = cleanLabel(labelElement.textContent);
+
+    let dataFieldId = "";
+    if (rowElement) {
+      let id = rowElement.getAttribute("data-field-id");
+      if (id) {
+        dataFieldId = id;
+      }
+    }
+    if (!dataFieldId) {
+      dataFieldId = labelText;
+    }
+
+    if (labelText) {
+      let valueObj = { label: labelText };
+
+      let eventDateElement = valueElement.querySelector("span.event_date");
+      let eventPlaceElement = valueElement.querySelector("span.event_place");
+      if (eventDateElement || eventPlaceElement) {
+        if (eventDateElement) {
+          let dateString = eventDateElement.textContent;
+          if (dateString) {
+            valueObj.dateString = dateString;
+          }
+        }
+        if (eventPlaceElement) {
+          let placeString = getPlaceElementText(eventPlaceElement);
+          if (placeString) {
+            valueObj.placeString = placeString.trim();
+          }
+        }
+      } else {
+        // for a person page the events do not have spans, check for that
+        let eventSeparators = valueElement.querySelectorAll("div.eventSeparator");
+        if (eventSeparators.length > 0) {
+          let hasValueBeforeDate = false;
+          if (eventSeparators.length > 1) {
+            hasValueBeforeDate = true;
+          }
+
+          let childNodes = valueElement.childNodes;
+          if (
+            hasValueBeforeDate &&
+            childNodes.length > 4 &&
+            childNodes[0].nodeType == 3 &&
+            childNodes[2].nodeType == 3
+          ) {
+            let descriptionString = childNodes[0].textContent;
+            if (descriptionString) {
+              valueObj.descriptionString = descriptionString.trim();
+            }
+            let dateString = childNodes[2].textContent;
+            if (dateString) {
+              valueObj.dateString = dateString.trim();
+            }
+          } else if (childNodes.length > 0 && childNodes[0].nodeType == 3) {
+            let dateString = childNodes[0].textContent;
+            if (dateString) {
+              valueObj.dateString = dateString.trim();
+            }
+          }
+
+          let placeString = getPlaceElementText(valueElement);
+          if (placeString) {
+            valueObj.placeString = placeString.trim();
+          }
+        } else {
+          // it could be a sub-table
+          let valueTable = valueElement.querySelector("table");
+          if (valueTable) {
+            let valueRows = valueTable.querySelectorAll("tr");
+            for (let valueRow of valueRows) {
+              let cells = valueRow.querySelectorAll("td");
+              if (cells.length == 2) {
+                let subLabel = cleanLabel(cells[0].textContent);
+
+                let value = "";
+                let placeString = getPlaceElementText(cells[1]);
+                if (placeString) {
+                  value = placeString;
+                } else {
+                  value = cells[1].textContent.trim();
+                }
+                valueObj[subLabel] = value;
+              }
+            }
+          } else {
+            // it could be a simple value or multiple values (like "Siblings")
+            let spanElements = valueElement.querySelectorAll("span");
+            if (spanElements.length > 0) {
+              let valueString = "";
+              let values = [];
+              for (let span of spanElements) {
+                if (!span.classList.contains("record_annotation")) {
+                  let textContent = span.textContent.trim();
+                  if (textContent) {
+                    if (valueString) {
+                      valueString += ", ";
+                    }
+                    valueString += textContent;
+                    values.push(textContent);
+                  }
+                }
+              }
+              if (!valueString) {
+                let textContent = valueElement.textContent.trim();
+                if (textContent) {
+                  valueString = textContent;
+                }
+              }
+              valueObj.value = valueString;
+
+              if (values.length > 1) {
+                valueObj.values = values;
+              }
+            } else {
+              let valueString = valueElement.textContent.trim();
+              valueObj.value = valueString;
+            }
+          }
+        }
+      }
+      resultObject[dataFieldId] = valueObj;
+    }
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -127,6 +256,10 @@ function extractData(document, url) {
     for (let row of rows) {
       let labelElement = row.querySelector("td.recordFieldLabel");
       let valueElement = row.querySelector("td.recordFieldValue");
+
+      addField(result.recordData, labelElement, valueElement, row);
+
+      /*
       if (labelElement && valueElement) {
         let labelText = cleanLabel(labelElement.textContent);
 
@@ -246,6 +379,7 @@ function extractData(document, url) {
           }
         }
       }
+      */
     }
   }
 

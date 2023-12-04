@@ -5,21 +5,26 @@
   "pageType": "record",
   "recordTitle": "Charles Kimberlin",
   "recordData": {
-    "Name": {
+    "NAME": {
+      "label": "Name",
       "value": "Charles Kimberlin"
     },
-    "Gender": {
+    "gender": {
+      "label": "Gender",
       "value": "Male"
     },
-    "Birth": {
+    "birth": {
+      "label": "Birth",
       "dateString": "Between 1822 and 1826",
       "placeString": "Warwickshire, England"
     },
-    "Residence": {
+    "census": {
+      "label": "Residence",
       "dateString": "1841",
       "placeString": "Kingsbury, Kingsbury, Warwickshire, England"
     },
-    "Age": {
+    "age": {
+      "label": "Age",
       "value": "15 - 19"
     }
   },

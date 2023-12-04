@@ -5,31 +5,40 @@
   "pageType": "record",
   "recordTitle": "Barbara Jones",
   "recordData": {
-    "Name": {
+    "NAME": {
+      "label": "Name",
       "value": "Barbara Jones"
     },
-    "Residence": {
+    "person-events.livedin": {
+      "label": "Residence",
       "placeString": "Victoria, Australia"
     },
-    "Post code": {
+    "custom_1": {
+      "label": "Post code",
       "value": "3996"
     },
-    "Business": {
+    "custom_2": {
+      "label": "Business",
       "value": "Barbara M Jones (TRD)"
     },
-    "Business type": {
+    "custom_4": {
+      "label": "Business type",
       "value": "Individual/Sole Trader"
     },
-    "Australian Business Number": {
+    "custom_5": {
+      "label": "Australian Business Number",
       "value": "81532745640"
     },
-    "ABN last updated": {
+    "custom_6": {
+      "label": "ABN last updated",
       "value": "Sep 27 2010"
     },
-    "ABN status": {
+    "custom_7": {
+      "label": "ABN status",
       "value": "Cancelled"
     },
-    "ABN status date": {
+    "custom_8": {
+      "label": "ABN status date",
       "value": "Jan 6 2009"
     }
   }

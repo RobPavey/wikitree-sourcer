@@ -5,33 +5,50 @@
   "pageType": "record",
   "recordTitle": "Ronnie L Smith & Linda Smith",
   "recordData": {
-    "Document type": {
+    "document-type": {
+      "label": "Document type",
       "value": "Divorce"
     },
-    "Marriage": {
+    "marriage": {
+      "label": "Marriage",
       "dateString": "Sep 11 1965"
     },
-    "Divorce": {
+    "divorce": {
+      "label": "Divorce",
       "dateString": "Apr 25 1969",
       "placeString": "Lubbock, Texas, USA"
     },
-    "File #": {
+    "certificate": {
+      "label": "File #",
       "value": "012440"
     },
-    "Children": {
+    "number-children": {
+      "label": "Children",
       "value": "1"
     },
-    "Husband": {
+    "husband-name": {
+      "label": "Husband",
       "value": "Ronnie L Smith"
     },
-    "Birth": {
+    "husband-birth birth": {
+      "label": "Birth",
+      "dateString": "Circa 1943"
+    },
+    "husband-age": {
+      "label": "Age",
+      "value": "26"
+    },
+    "wife-name": {
+      "label": "Wife",
+      "value": "Linda Smith"
+    },
+    "wife-birth": {
+      "label": "Birth",
       "dateString": "Circa 1947"
     },
-    "Age": {
+    "wife-age": {
+      "label": "Age",
       "value": "22"
-    },
-    "Wife": {
-      "value": "Linda Smith"
     }
   }
 }

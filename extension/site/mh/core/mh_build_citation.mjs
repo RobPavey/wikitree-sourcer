@@ -25,7 +25,7 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
 
-const refKeys = [
+const refLabels = [
   "Accession #",
   "Gale Id",
   "Source publication code",
@@ -40,11 +40,11 @@ const refKeys = [
 ];
 
 function removeUnwantedKeysForDataString(keys, recordData) {
-  const exactMatchesToExclude = refKeys;
+  const exactMatchesToExclude = refLabels;
 
-  function isKeyWanted(key) {
+  function isLabelWanted(label) {
     for (let match of exactMatchesToExclude) {
-      if (match == key) {
+      if (match == label) {
         return false;
       }
     }
@@ -55,8 +55,12 @@ function removeUnwantedKeysForDataString(keys, recordData) {
   let newKeys = [];
 
   for (let key of keys) {
-    if (isKeyWanted(key)) {
-      newKeys.push(key);
+    let field = recordData[key];
+    if (field) {
+      let label = field.label;
+      if (isLabelWanted(label)) {
+        newKeys.push(key);
+      }
     }
   }
 
@@ -84,10 +88,10 @@ function buildSourceReference(ed, gd, builder) {
   if (!builder.sourceReference) {
     if (ed.recordData) {
       for (let key of Object.keys(ed.recordData)) {
-        if (refKeys.includes(key)) {
-          let value = ed.recordData[key];
-          if (value && value.value) {
-            builder.addSourceReferenceField(key, value.value);
+        let field = ed.recordData[key];
+        if (field && field.label && refLabels.includes(field.label)) {
+          if (field.value) {
+            builder.addSourceReferenceField(field.label, field.value);
           }
         }
       }
@@ -125,17 +129,17 @@ function buildDataList(ed, gd, builder) {
   keys = removeUnwantedKeysForDataString(keys, recordData);
 
   let dataListString = "";
-  function addValue(key, value) {
+  function addValue(label, value) {
     if (value) {
       value = value.trim();
       if (dataListString != "") {
         dataListString += itemSep + " ";
       }
-      if (key) {
+      if (label) {
         if (value.startsWith("http")) {
-          dataListString += "[" + value + " " + key + "]";
+          dataListString += "[" + value + " " + label + "]";
         } else {
-          dataListString += key + valueSep + " " + value;
+          dataListString += label + valueSep + " " + value;
         }
       } else {
         dataListString += value;
@@ -145,22 +149,22 @@ function buildDataList(ed, gd, builder) {
 
   for (let key of keys) {
     let valueObj = recordData[key];
-    if (valueObj) {
+    if (valueObj && valueObj.label) {
       if (valueObj.value) {
-        addValue(key, valueObj.value);
+        addValue(valueObj.label, valueObj.value);
       } else if (valueObj.dateString || valueObj.placeString || valueObj.descriptionString) {
         if (valueObj.descriptionString) {
-          if (valueObj.descriptionString.startsWith(key)) {
+          if (valueObj.descriptionString.startsWith(valueObj.label)) {
             addValue("", valueObj.descriptionString);
           } else {
-            addValue(key, valueObj.descriptionString);
+            addValue(valueObj.label, valueObj.descriptionString);
           }
         }
         if (valueObj.dateString) {
-          addValue(key + " date", valueObj.dateString);
+          addValue(valueObj.label + " date", valueObj.dateString);
         }
         if (valueObj.placeString) {
-          addValue(key + " place", valueObj.placeString);
+          addValue(valueObj.label + " place", valueObj.placeString);
         }
       }
     }

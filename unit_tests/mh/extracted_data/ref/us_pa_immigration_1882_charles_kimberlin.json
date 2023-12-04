@@ -5,26 +5,33 @@
   "pageType": "record",
   "recordTitle": "Charles Kimberlin",
   "recordData": {
-    "Name": {
+    "NAME": {
+      "label": "Name",
       "value": "Charles Kimberlin"
     },
-    "Arrival": {
+    "arrival": {
+      "label": "Arrival",
       "dateString": "1882",
       "placeString": "Allegheny Co., Pennsylvania"
     },
-    "Document type": {
+    "document-type": {
+      "label": "Document type",
       "value": "Immigrant Record"
     },
-    "Accession #": {
+    "Accession Number": {
+      "label": "Accession #",
       "value": "9998245928"
     },
     "Gale Id": {
+      "label": "Gale Id",
       "value": "1348225"
     },
-    "Source publication code": {
+    "Source Publication Code": {
+      "label": "Source publication code",
       "value": "9701"
     },
     "Source": {
+      "label": "Source",
       "value": "Passenger and Immigration Lists Index"
     }
   }
