@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.myheritage.com/research/record-10150-12380625/charles-kimberlin-in-1841-england-wales-census MyHeritage Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 England & Wales Census\"<br/>\nParish: Kingsbury; Series: HO107; Page: 4\\9; County: Warwickshire; Piece: 1130; Family: 392; Country: England; Registrar's district: Fazeley; Line: 25; Date: 1841; Superintendent registrar's district: Tamworth; Image: 10; Enum. District: 10<br/>\n[https://www.myheritage.com/research/record-10150-12380625/charles-kimberlin-in-1841-england-wales-census MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Kimberlin in Kingsbury, Kingsbury, Warwickshire, England. Born in Warwickshire, England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.myheritage.com/research/record-10150-12380625/charles-kimberlin-in-1841-england-wales-census MyHeritage Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "In the 1841 census Charles was in Kingsbury, Kingsbury, Warwickshire, England.<ref>\n'''1841 Census''':\n\"1841 England & Wales Census\"<br/>\nParish: Kingsbury; Series: HO107; Page: 4\\9; County: Warwickshire; Piece: 1130; Family: 392; Country: England; Registrar's district: Fazeley; Line: 25; Date: 1841; Superintendent registrar's district: Tamworth; Image: 10; Enum. District: 10<br/>\n[https://www.myheritage.com/research/record-10150-12380625/charles-kimberlin-in-1841-england-wales-census MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Kimberlin in Kingsbury, Kingsbury, Warwickshire, England. Born in Warwickshire, England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.myheritage.com/research/record-10150-12380625/charles-kimberlin-in-1841-england-wales-census MyHeritage Record] (accessed 6 May 2021)<br/>Unknown.",
+    "citation": "* '''1841 Census''': \"1841 England & Wales Census\"<br/>Parish: Kingsbury; Series: HO107; Page: 4\\9; County: Warwickshire; Piece: 1130; Family: 392; Country: England; Registrar's district: Fazeley; Line: 25; Date: 1841; Superintendent registrar's district: Tamworth; Image: 10; Enum. District: 10<br/>[https://www.myheritage.com/research/record-10150-12380625/charles-kimberlin-in-1841-england-wales-census MyHeritage Record] (accessed 6 May 2021)<br/>Charles Kimberlin in Kingsbury, Kingsbury, Warwickshire, England. Born in Warwickshire, England.",
     "type": "source"
   }
 }

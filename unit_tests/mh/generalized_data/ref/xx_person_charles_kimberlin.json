@@ -6,5 +6,11 @@
     "name": "Charles Kimberlin"
   },
   "personGender": "male",
+  "birthDate": {
+    "dateString": "15 Dec 1825"
+  },
+  "birthPlace": {
+    "placeString": "Atherstone, Warwickshire, England"
+  },
   "hasValidData": true
 }

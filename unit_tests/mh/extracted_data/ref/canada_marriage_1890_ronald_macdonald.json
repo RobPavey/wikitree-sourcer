@@ -1,0 +1,36 @@
+{
+  "url": "https://www.myheritage.com/research/record-20440-604/ronald-macdonald-and-annie-alberta-macdonald-in-canada-prince-edward-island-marriages",
+  "success": true,
+  "collectionTitle": "Canada, Prince Edward Island Marriages",
+  "pageType": "record",
+  "recordTitle": "Ronald MacDonald & Annie Alberta MacDonald",
+  "recordData": {
+    "Marriage": {
+      "dateString": "Dec 24 1890",
+      "placeString": "Prince Edward Island, Canada"
+    },
+    "Groom": {
+      "Name": "Ronald MacDonald",
+      "Residence": "Charlottetown, Queens, Prince Edward Island, Canada"
+    },
+    "Bride": {
+      "Name": "Annie Alberta MacDonald",
+      "Residence": "Charlottetown, Queens, Prince Edward Island, Canada"
+    },
+    "Groom marital status": {
+      "value": "Bachelor"
+    },
+    "Bride marital status": {
+      "value": "Spinster"
+    },
+    "Marriage license": {
+      "value": "Dec 23 1890"
+    },
+    "Officient": {
+      "value": "David Sutherland"
+    },
+    "Notes": {
+      "value": "also spelt Macdonald"
+    }
+  }
+}

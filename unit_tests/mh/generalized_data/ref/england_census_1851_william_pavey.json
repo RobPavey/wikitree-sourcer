@@ -9,5 +9,93 @@
   "eventDate": {
     "dateString": "1851"
   },
+  "eventPlace": {
+    "placeString": "18 Clarendon Place, Saint Andrew Part of, Devonshire, England"
+  },
+  "birthPlace": {
+    "placeString": "Stonehouse, Devonshire, England"
+  },
+  "relationshipToHead": "son",
+  "maritalStatus": "single",
+  "householdArrayFields": [
+    "relationship",
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "relationship": "head",
+      "name": "William Henry Pavey",
+      "age": "44"
+    },
+    {
+      "relationship": "wife",
+      "name": "Elizabeth Pavey",
+      "age": "43"
+    },
+    {
+      "relationship": "son",
+      "name": "William Henry Pavey",
+      "age": "19",
+      "isSelected": true
+    },
+    {
+      "relationship": "son",
+      "name": "Fredrick A Pavey",
+      "age": "18"
+    },
+    {
+      "relationship": "daughter",
+      "name": "Jemima Anne Pavey",
+      "age": "16"
+    },
+    {
+      "relationship": "son",
+      "name": "John L Pavey",
+      "age": "14"
+    },
+    {
+      "relationship": "daughter",
+      "name": "Marian Pavey",
+      "age": "12"
+    },
+    {
+      "relationship": "daughter",
+      "name": "Isabella Pavey",
+      "age": "10"
+    },
+    {
+      "relationship": "son",
+      "name": "Charles Pavey",
+      "age": "8"
+    },
+    {
+      "relationship": "daughter",
+      "name": "Mary Pavey",
+      "age": "6"
+    },
+    {
+      "relationship": "daughter",
+      "name": "Julia Pavey",
+      "age": "4"
+    },
+    {
+      "relationship": "daughter",
+      "name": "Fanny Pavey",
+      "age": "2"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Henry Pavey"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Elizabeth Pavey"
+      }
+    }
+  },
   "hasValidData": true
 }

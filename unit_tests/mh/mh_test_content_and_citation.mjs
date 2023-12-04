@@ -32,6 +32,14 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "australia_business_register_2010_barbara_jones",
+    url: "https://www.myheritage.com/research/record-20422-391107/barbara-jones-in-australia-business-register",
+  },
+  {
+    caseName: "canada_marriage_1890_ronald_macdonald",
+    url: "https://www.myheritage.com/research/record-20440-604/ronald-macdonald-and-annie-alberta-macdonald-in-canada-prince-edward-island-marriages",
+  },
+  {
     caseName: "england_births_1826_charles_kimberlin",
     url: "https://www.myheritage.com/research/record-30042-49707075/charles-kimberlin-in-england-births-christenings",
   },
@@ -42,6 +50,10 @@ const regressionData = [
   {
     caseName: "england_census_1851_william_pavey",
     url: "https://www.myheritage.com/research/record-10151-40011245/william-henry-pavey-in-1851-england-wales-census",
+  },
+  {
+    caseName: "england_marriage_reg_1914_joseph_oconnor",
+    url: "https://www.myheritage.com/research/record-10443-22304592/joseph-oconnor-in-england-wales-marriage-index",
   },
   {
     caseName: "us_pa_immigration_1882_charles_kimberlin",

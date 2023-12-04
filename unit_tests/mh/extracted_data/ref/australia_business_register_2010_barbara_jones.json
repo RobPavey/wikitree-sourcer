@@ -1,0 +1,36 @@
+{
+  "url": "https://www.myheritage.com/research/record-20422-391107/barbara-jones-in-australia-business-register",
+  "success": true,
+  "collectionTitle": "Australia, Business Register",
+  "pageType": "record",
+  "recordTitle": "Barbara Jones",
+  "recordData": {
+    "Name": {
+      "value": "Barbara Jones"
+    },
+    "Residence": {
+      "placeString": "Victoria, Australia"
+    },
+    "Post code": {
+      "value": "3996"
+    },
+    "Business": {
+      "value": "Barbara M Jones (TRD)"
+    },
+    "Business type": {
+      "value": "Individual/Sole Trader"
+    },
+    "Australian Business Number": {
+      "value": "81532745640"
+    },
+    "ABN last updated": {
+      "value": "Sep 27 2010"
+    },
+    "ABN status": {
+      "value": "Cancelled"
+    },
+    "ABN status date": {
+      "value": "Jan 6 2009"
+    }
+  }
+}

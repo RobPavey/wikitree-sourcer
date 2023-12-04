@@ -9,5 +9,20 @@
   "eventDate": {
     "dateString": "6 Jan 1826"
   },
+  "eventPlace": {
+    "placeString": "Atherstone Near Tamworth, Warwick, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Kimberlin"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Elizabh"
+      }
+    }
+  },
   "hasValidData": true
 }

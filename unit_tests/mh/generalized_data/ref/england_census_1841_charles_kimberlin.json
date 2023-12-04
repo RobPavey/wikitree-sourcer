@@ -9,5 +9,54 @@
   "eventDate": {
     "dateString": "1841"
   },
+  "eventPlace": {
+    "placeString": "Kingsbury, Kingsbury, Warwickshire, England"
+  },
+  "birthPlace": {
+    "placeString": "Warwickshire, England"
+  },
+  "householdArrayFields": [
+    "relationship",
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "relationship": "head",
+      "name": "John Bunney",
+      "age": "40 - 44"
+    },
+    {
+      "relationship": "wife",
+      "name": "Ruth Bunney",
+      "age": "40 - 44"
+    },
+    {
+      "relationship": "son",
+      "name": "John Bunney",
+      "age": "20 - 24"
+    },
+    {
+      "name": "Bartholomew Slater",
+      "age": "30 - 34"
+    },
+    {
+      "name": "John Dowling",
+      "age": "30 - 34"
+    },
+    {
+      "name": "William Rudkin",
+      "age": "20 - 24"
+    },
+    {
+      "name": "Mary Newborough",
+      "age": "20 - 24"
+    },
+    {
+      "name": "Charles Kimberlin",
+      "age": "15 - 19",
+      "isSelected": true
+    }
+  ],
   "hasValidData": true
 }

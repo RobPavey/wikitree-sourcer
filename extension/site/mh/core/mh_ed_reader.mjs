@@ -24,8 +24,15 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { GD } from "../../../base/core/generalize_data_utils.mjs";
 
 const recordTypeData = [
+  // put ones with Document type first
+  {
+    recordType: RT.Immigration,
+    documentTypes: ["Immigrant Record"],
+  },
+  // collection matches
   {
     recordType: RT.Baptism,
     collectionTitleMatches: [["Births and Christenings"]],
@@ -37,8 +44,18 @@ const recordTypeData = [
     requiredRecordSections: [["Census"]],
   },
   {
-    recordType: RT.Immigration,
-    documentTypes: ["Immigrant Record"],
+    recordType: RT.MarriageRegistration,
+    collectionTitleMatches: [["England & Wales, Marriage Index, 1837-2005"]],
+  },
+  {
+    recordType: RT.Directory,
+    collectionTitleMatches: [["Business Register"]],
+  },
+
+  // matches using required fields only
+  {
+    recordType: RT.Marriage,
+    requiredFields: [["Marriage date", "Marriage place"], ["Marriage"]],
   },
 ];
 
@@ -46,6 +63,19 @@ const typeDataEventLabels = {
   Baptism: ["Christening", "Baptism"],
   Immigration: ["Arrival"],
   Census: ["Residence"],
+  Marriage: ["Marriage"],
+};
+
+const typeDataEventDateLabels = {
+  Directory: ["ABN last updated", "ABN status date"],
+  Marriage: ["Marriage date"],
+  MarriageRegistration: ["Marriage date"],
+};
+
+const typeDataEventPlaceLabels = {
+  Directory: ["Residence"],
+  Marriage: ["Marriage place"],
+  MarriageRegistration: ["Marriage place"],
 };
 
 class MhEdReader extends ExtractedDataReader {
@@ -109,6 +139,29 @@ class MhEdReader extends ExtractedDataReader {
           }
         }
 
+        if (typeData.requiredRecordSections) {
+          if (!ed.recordSections) {
+            continue;
+          }
+
+          let requiredSectionsPresent = false;
+          for (let requiredSectionSet of typeData.requiredRecordSections) {
+            let sectionsPresent = true;
+            for (let section of requiredSectionSet) {
+              if (!ed.recordSections[section]) {
+                sectionsPresent = false;
+              }
+            }
+            if (sectionsPresent) {
+              requiredSectionsPresent = true;
+              break;
+            }
+          }
+          if (!requiredSectionsPresent) {
+            continue;
+          }
+        }
+
         if (typeData.requiredFields) {
           if (!ed.recordData) {
             continue;
@@ -149,14 +202,49 @@ class MhEdReader extends ExtractedDataReader {
   getEventDataValue() {
     if (this.recordType) {
       let labels = typeDataEventLabels[this.recordType];
-      if (labels) {
-        for (let label of labels) {
-          let value = this.ed.recordData[label];
-          if (value) {
-            return value;
-          }
+      return this.getRecordDataValue(labels);
+    }
+  }
+
+  getEventDateValue() {
+    if (this.recordType) {
+      let labels = typeDataEventDateLabels[this.recordType];
+      return this.getRecordDataValue(labels);
+    }
+  }
+
+  getEventPlaceValue() {
+    if (this.recordType) {
+      let labels = typeDataEventPlaceLabels[this.recordType];
+      return this.getRecordDataValue(labels);
+    }
+  }
+
+  getBirthDataValue() {
+    const labels = ["Birth"];
+    return this.getRecordDataValue(labels);
+  }
+
+  getDeathDataValue() {
+    const labels = ["Death"];
+    return this.getRecordDataValue(labels);
+  }
+
+  getRecordDataValue(labels) {
+    if (labels) {
+      for (let label of labels) {
+        let value = this.ed.recordData[label];
+        if (value) {
+          return value;
         }
       }
+    }
+  }
+
+  getRecordDataValueString(labels) {
+    let value = this.getRecordDataValue(labels);
+    if (value && value.value) {
+      return value.value;
     }
   }
 
@@ -169,6 +257,18 @@ class MhEdReader extends ExtractedDataReader {
 
     if (/^\d\d\d\d$/.test(dateString)) {
       return dateString;
+    } else if (/^[A-Z][a-z][a-z]\-[A-Z][a-z][a-z]\-[A-Z][a-z][a-z]\s+\d\d\d\d$/.test(dateString)) {
+      return dateString;
+    } else if (/^[A-Z][a-z][a-z][a-z]*\-[A-Z][a-z][a-z][a-z]*\-[A-Z][a-z][a-z][a-z]*\s+\d\d\d\d$/.test(dateString)) {
+      // e.g. July-Aug-Sep 1914
+      let newString = dateString.replace(
+        /([A-Z][a-z][a-z])[a-z]*\-([A-Z][a-z][a-z])[a-z]*\-([A-Z][a-z][a-z])[a-z]*\s+(\d\d\d\d)/,
+        "$1-$2-$3 $4"
+      );
+      if (newString) {
+        return newString;
+      }
+      return dateString;
     } else if (dateString.startsWith("Between")) {
     } else if (/^[A-Z-a-z][a-z][a-z]\s+\d\d?\s+\d\d\d\d$/.test(dateString)) {
       // e.g. Aug 22 1822
@@ -177,6 +277,18 @@ class MhEdReader extends ExtractedDataReader {
         return newString;
       }
     }
+  }
+
+  cleanMhRelationship(string) {
+    if (string) {
+      // is it right to remove the "implied" from the relationship?
+      // What if it is incorrect?
+      const impliedSuffix = " (implied)";
+      if (string.endsWith(impliedSuffix)) {
+        string = string.substring(0, string.length - impliedSuffix.length);
+      }
+    }
+    return string;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -200,7 +312,13 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    return this.makeNameObjFromFullName(this.getSimpleRecordDataValue("Name"));
+    let nameString = this.getSimpleRecordDataValue("Name");
+
+    if (!nameString) {
+      nameString = this.ed.recordTitle;
+    }
+
+    return this.makeNameObjFromFullName(nameString);
   }
 
   getGender() {
@@ -217,15 +335,45 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
+    let dateString = "";
     let valueObj = this.getEventDataValue();
     if (valueObj && valueObj.dateString) {
-      return this.makeDateObjFromDateString(this.cleanMhDate(valueObj.dateString));
+      dateString = valueObj.dateString;
+    }
+
+    if (!dateString) {
+      valueObj = this.getEventDateValue();
+      if (valueObj && valueObj.value) {
+        dateString = valueObj.value;
+      }
+    }
+
+    if (dateString) {
+      return this.makeDateObjFromDateString(this.cleanMhDate(dateString));
     }
 
     return undefined;
   }
 
   getEventPlaceObj() {
+    let placeString = "";
+
+    let valueObj = this.getEventDataValue();
+    if (valueObj && valueObj.placeString) {
+      placeString = valueObj.placeString;
+    }
+
+    if (!placeString) {
+      valueObj = this.getEventPlaceValue();
+      if (valueObj && valueObj.placeString) {
+        placeString = valueObj.placeString;
+      }
+    }
+
+    if (placeString) {
+      return this.makePlaceObjFromFullPlaceName(placeString);
+    }
+
     return undefined;
   }
 
@@ -242,18 +390,38 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
+    let valueObj = this.getBirthDataValue();
+    if (valueObj && valueObj.dateString) {
+      return this.makeDateObjFromDateString(this.cleanMhDate(valueObj.dateString));
+    }
+
     return undefined;
   }
 
   getBirthPlaceObj() {
+    let valueObj = this.getBirthDataValue();
+    if (valueObj && valueObj.placeString) {
+      return this.makePlaceObjFromFullPlaceName(valueObj.placeString);
+    }
+
     return undefined;
   }
 
   getDeathDateObj() {
+    let valueObj = this.getDeathDataValue();
+    if (valueObj && valueObj.dateString) {
+      return this.makeDateObjFromDateString(this.cleanMhDate(valueObj.dateString));
+    }
+
     return undefined;
   }
 
   getDeathPlaceObj() {
+    let valueObj = this.getDeathDataValue();
+    if (valueObj && valueObj.placeString) {
+      return this.makePlaceObjFromFullPlaceName(valueObj.placeString);
+    }
+
     return undefined;
   }
 
@@ -270,27 +438,162 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getRelationshipToHead() {
+    if (this.ed.household) {
+      const household = this.ed.household;
+      if (household.headings.includes("Relation to head")) {
+        for (let member of household.members) {
+          if (member.isSelected) {
+            return this.cleanMhRelationship(member["Relation to head"]);
+          }
+        }
+      }
+    }
     return "";
   }
 
   getMaritalStatus() {
-    return "";
+    return this.getRecordDataValueString(["Marital status"]);
   }
 
   getOccupation() {
-    return "";
+    return this.getRecordDataValueString(["Occupation"]);
   }
 
   getSpouseObj(eventDateObj, eventPlaceObj) {
+    // Note that the calling function will automatically try to determine spouse for census
+    if (this.recordType != RT.Census) {
+      let spouseName = this.getRecordDataValueString(["Spouse", "Spouse (implied)"]);
+
+      if (!spouseName) {
+        // Sometimes a marriage lists the bride and groom, we treat the groom as the
+        // primary person and the bride as the spouse
+        let brideValue = this.getRecordDataValue(["Bride"]);
+        if (brideValue) {
+          if (brideValue.value) {
+            spouseName = brideValue.value;
+          } else if (brideValue["Name"]) {
+            spouseName = brideValue["Name"];
+          }
+        }
+      }
+
+      if (spouseName) {
+        let spouseNameObj = this.makeNameObjFromFullName(spouseName);
+        if (spouseNameObj) {
+          let spouse = { name: spouseNameObj };
+          if (this.recordType == RT.Marriage || this.recordType == RT.MarriageRegistration) {
+            let marriageDateObj = this.getEventDateObj();
+            if (marriageDateObj) {
+              spouse.marriageDate = marriageDateObj;
+            }
+            let marriagePlaceObj = this.getEventPlaceObj();
+            if (marriagePlaceObj) {
+              spouse.marriagePlace = marriagePlaceObj;
+            }
+          }
+          return spouse;
+        }
+      }
+    }
     return undefined;
   }
 
   getParents() {
+    // Note that the calling function will automatically try to determine parents for census
+    if (this.recordType != RT.Census) {
+      let fatherValue = this.ed.recordData["Father"];
+      let motherValue = this.ed.recordData["Mother"];
+      if (fatherValue || motherValue) {
+        let parents = {};
+        if (fatherValue) {
+          let fatherName = fatherValue.value;
+          if (fatherName) {
+            let fatherNameObj = this.makeNameObjFromFullName(fatherName);
+            if (fatherNameObj) {
+              parents.father = { name: fatherNameObj };
+            }
+          }
+        }
+        if (motherValue) {
+          let motherName = motherValue.value;
+          if (motherName) {
+            let motherNameObj = this.makeNameObjFromFullName(motherName);
+            if (motherNameObj) {
+              parents.mother = { name: motherNameObj };
+            }
+          }
+        }
+        return parents;
+      }
+    }
+
     return undefined;
   }
 
   getHousehold() {
-    return undefined;
+    const ed = this.ed;
+    const household = ed.household;
+    if (!household) {
+      return undefined;
+    }
+
+    const stdFieldNames = [
+      { stdName: "name", siteHeadings: ["Name"] },
+      { stdName: "age", siteHeadings: ["Age"] },
+      { stdName: "relationship", siteHeadings: ["Relation to head"] },
+    ];
+    function headingToStdName(heading) {
+      for (let entry of stdFieldNames) {
+        if (entry.siteHeadings.includes(heading)) {
+          return entry.stdName;
+        }
+      }
+    }
+
+    let headings = household.headings;
+    let members = household.members;
+    if (headings && members) {
+      let householdArray = [];
+      for (let member of members) {
+        let householdMember = {};
+        if (member.isClosed) {
+          householdMember.isClosed = true;
+        } else {
+          for (let heading of headings) {
+            let fieldName = headingToStdName(heading);
+            if (fieldName) {
+              let fieldValue = member[heading];
+              if (fieldValue) {
+                if (fieldName == "relationship") {
+                  fieldValue = GD.standardizeRelationshipToHead(this.cleanMhRelationship(fieldValue));
+                }
+
+                householdMember[fieldName] = fieldValue;
+              }
+            }
+          }
+          let isSelected = member.isSelected;
+          if (isSelected) {
+            householdMember.isSelected = isSelected;
+          }
+        }
+        householdArray.push(householdMember);
+      }
+
+      let result = {};
+      result.members = householdArray;
+
+      let fields = [];
+      for (let heading of headings) {
+        let fieldName = headingToStdName(heading);
+        if (fieldName) {
+          fields.push(fieldName);
+        }
+      }
+      result.fields = fields;
+
+      return result;
+    }
   }
 
   getCollectionData() {

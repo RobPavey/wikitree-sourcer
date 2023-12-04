@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Immigration''':\n\"Passenger and Immigration Lists, 1500 - 1900\"<br/>\nAccession #: 9998245928; Gale Id: 1348225; Source publication code: 9701; Source: Passenger and Immigration Lists Index<br/>\n[https://www.myheritage.com/research/record-10017-3144396/charles-kimberlin-in-passenger-immigration-lists MyHeritage Record] (accessed 6 May 2021)<br/>\nName: Charles Kimberlin; Arrival date: 1882; Arrival place: Allegheny Co., Pennsylvania; Document type: Immigrant Record.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Charles immigrated in 1882 in Allegheny Co., Pennsylvania.<ref>\n'''Immigration''':\n\"Passenger and Immigration Lists, 1500 - 1900\"<br/>\nAccession #: 9998245928; Gale Id: 1348225; Source publication code: 9701; Source: Passenger and Immigration Lists Index<br/>\n[https://www.myheritage.com/research/record-10017-3144396/charles-kimberlin-in-passenger-immigration-lists MyHeritage Record] (accessed 6 May 2021)<br/>\nName: Charles Kimberlin; Arrival date: 1882; Arrival place: Allegheny Co., Pennsylvania; Document type: Immigrant Record.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Immigration''': \"Passenger and Immigration Lists, 1500 - 1900\"<br/>Accession #: 9998245928; Gale Id: 1348225; Source publication code: 9701; Source: Passenger and Immigration Lists Index<br/>[https://www.myheritage.com/research/record-10017-3144396/charles-kimberlin-in-passenger-immigration-lists MyHeritage Record] (accessed 6 May 2021)<br/>Name: Charles Kimberlin; Arrival date: 1882; Arrival place: Allegheny Co., Pennsylvania; Document type: Immigrant Record.",
+    "type": "source"
+  }
+}

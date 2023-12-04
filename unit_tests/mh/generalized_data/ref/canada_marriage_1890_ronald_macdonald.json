@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "Ronald MacDonald & Annie Alberta MacDonald"
+  },
+  "eventDate": {
+    "dateString": "24 Dec 1890"
+  },
+  "eventPlace": {
+    "placeString": "Prince Edward Island, Canada"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Annie Alberta MacDonald"
+      },
+      "marriageDate": {
+        "dateString": "24 Dec 1890"
+      },
+      "marriagePlace": {
+        "placeString": "Prince Edward Island, Canada"
+      }
+    }
+  ],
+  "hasValidData": true
+}

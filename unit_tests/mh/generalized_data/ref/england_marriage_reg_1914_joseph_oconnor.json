@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "name": "Joseph O'Connor"
+  },
+  "eventDate": {
+    "dateString": "Jul-Aug-Sep 1914"
+  },
+  "eventPlace": {
+    "placeString": "St Olave Bermondsey, England"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Daisy L Crockson"
+      },
+      "marriageDate": {
+        "dateString": "Jul-Aug-Sep 1914"
+      },
+      "marriagePlace": {
+        "placeString": "St Olave Bermondsey, England"
+      }
+    }
+  ],
+  "hasValidData": true
+}

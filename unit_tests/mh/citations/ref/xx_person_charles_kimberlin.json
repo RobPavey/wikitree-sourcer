@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees MyHeritage Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "<ref>\n'''Unclassified''':\n\"MyHeritage Family Trees\"<br/>\n[https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees MyHeritage Record] (accessed 6 May 2021)<br/>\nName: Charles Kimberlin; Birth date: Dec 15 1825; Birth place: Atherstone, Warwickshire, England; Baptism date: Jan 6 1826; Baptism place: Atherstone, Warwickshire, England; Marriage to: Emily Kimberlin - Black (born Mason); Marriage date: Apr 26 1851; Marriage place: Aston Juxta Birmingham, Warwick, England; Death: Apr 18 1860.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees MyHeritage Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "Charles was in a record.<ref>\n'''Unclassified''':\n\"MyHeritage Family Trees\"<br/>\n[https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees MyHeritage Record] (accessed 6 May 2021)<br/>\nName: Charles Kimberlin; Birth date: Dec 15 1825; Birth place: Atherstone, Warwickshire, England; Baptism date: Jan 6 1826; Baptism place: Atherstone, Warwickshire, England; Marriage to: Emily Kimberlin - Black (born Mason); Marriage date: Apr 26 1851; Marriage place: Aston Juxta Birmingham, Warwick, England; Death: Apr 18 1860.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees MyHeritage Record] (accessed 6 May 2021)<br/>Unknown.",
+    "citation": "* '''Unclassified''': \"MyHeritage Family Trees\"<br/>[https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees MyHeritage Record] (accessed 6 May 2021)<br/>Name: Charles Kimberlin; Birth date: Dec 15 1825; Birth place: Atherstone, Warwickshire, England; Baptism date: Jan 6 1826; Baptism place: Atherstone, Warwickshire, England; Marriage to: Emily Kimberlin - Black (born Mason); Marriage date: Apr 26 1851; Marriage place: Aston Juxta Birmingham, Warwick, England; Death: Apr 18 1860.",
     "type": "source"
   }
 }

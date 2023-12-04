@@ -1,15 +1,15 @@
 {
   "sourceOfData": "mh",
   "sourceType": "record",
-  "recordType": "Immigration",
+  "recordType": "Directory",
   "name": {
-    "name": "Charles Kimberlin"
+    "name": "Barbara Jones"
   },
   "eventDate": {
-    "dateString": "1882"
+    "dateString": "27 Sep 2010"
   },
   "eventPlace": {
-    "placeString": "Allegheny Co., Pennsylvania"
+    "placeString": "Victoria, Australia"
   },
   "hasValidData": true
 }

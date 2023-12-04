@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.myheritage.com/research/record-30042-49707075/charles-kimberlin-in-england-births-christenings MyHeritage Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\nIndexing Project (Batch) Number: C03973-1; System Origin: England-ODM; GS Film number: 557265<br/>\n[https://www.myheritage.com/research/record-30042-49707075/charles-kimberlin-in-england-births-christenings MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Kimberlin baptism on 6 Jan 1826, son of John Kimberlin & Elizabh, in Atherstone Near Tamworth, Warwick, England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Unclassified''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.myheritage.com/research/record-30042-49707075/charles-kimberlin-in-england-births-christenings MyHeritage Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "Charles, son of John Kimberlin & Elizabh, was baptised on 6 January 1826 in Atherstone Near Tamworth, Warwick, England.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\nIndexing Project (Batch) Number: C03973-1; System Origin: England-ODM; GS Film number: 557265<br/>\n[https://www.myheritage.com/research/record-30042-49707075/charles-kimberlin-in-england-births-christenings MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Kimberlin baptism on 6 Jan 1826, son of John Kimberlin & Elizabh, in Atherstone Near Tamworth, Warwick, England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.myheritage.com/research/record-30042-49707075/charles-kimberlin-in-england-births-christenings MyHeritage Record] (accessed 6 May 2021)<br/>Unknown.",
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>Indexing Project (Batch) Number: C03973-1; System Origin: England-ODM; GS Film number: 557265<br/>[https://www.myheritage.com/research/record-30042-49707075/charles-kimberlin-in-england-births-christenings MyHeritage Record] (accessed 6 May 2021)<br/>Charles Kimberlin baptism on 6 Jan 1826, son of John Kimberlin & Elizabh, in Atherstone Near Tamworth, Warwick, England.",
     "type": "source"
   }
 }

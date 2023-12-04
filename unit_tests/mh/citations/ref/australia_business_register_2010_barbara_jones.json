@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''2010 Directory''':\n\"Australia, Business Register\"<br/>\n[https://www.myheritage.com/research/record-20422-391107/barbara-jones-in-australia-business-register MyHeritage Record] (accessed 6 May 2021)<br/>\nName: Barbara Jones; Residence place: Victoria, Australia; Post code: 3996; Business: Barbara M Jones (TRD); Business type: Individual/Sole Trader; Australian Business Number: 81532745640; ABN last updated: Sep 27 2010; ABN status: Cancelled; ABN status date: Jan 6 2009.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Barbara was in a directory on 27 September 2010 in Victoria, Australia.<ref>\n'''2010 Directory''':\n\"Australia, Business Register\"<br/>\n[https://www.myheritage.com/research/record-20422-391107/barbara-jones-in-australia-business-register MyHeritage Record] (accessed 6 May 2021)<br/>\nName: Barbara Jones; Residence place: Victoria, Australia; Post code: 3996; Business: Barbara M Jones (TRD); Business type: Individual/Sole Trader; Australian Business Number: 81532745640; ABN last updated: Sep 27 2010; ABN status: Cancelled; ABN status date: Jan 6 2009.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''2010 Directory''': \"Australia, Business Register\"<br/>[https://www.myheritage.com/research/record-20422-391107/barbara-jones-in-australia-business-register MyHeritage Record] (accessed 6 May 2021)<br/>Name: Barbara Jones; Residence place: Victoria, Australia; Post code: 3996; Business: Barbara M Jones (TRD); Business type: Individual/Sole Trader; Australian Business Number: 81532745640; ABN last updated: Sep 27 2010; ABN status: Cancelled; ABN status date: Jan 6 2009.",
+    "type": "source"
+  }
+}

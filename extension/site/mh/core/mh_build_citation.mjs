@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2023 Robert M Pavey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,17 +23,74 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { DataString } from "../../../base/core/data_string.mjs";
+
+const refKeys = [
+  "Accession #",
+  "Gale Id",
+  "Source publication code",
+  "Source",
+  "Indexing Project (Batch) Number",
+  "System Origin",
+  "GS Film number",
+  "Volume",
+  "Page",
+];
+
+function removeUnwantedKeysForDataString(keys, recordData) {
+  const exactMatchesToExclude = refKeys;
+
+  function isKeyWanted(key) {
+    for (let match of exactMatchesToExclude) {
+      if (match == key) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  let newKeys = [];
+
+  for (let key of keys) {
+    if (isKeyWanted(key)) {
+      newKeys.push(key);
+    }
+  }
+
+  return newKeys;
+}
 
 function buildMhUrl(ed, builder) {
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle += ed.collectionTitle;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  if (ed.recordSections) {
+    const censusData = ed.recordSections["Census"];
+    if (censusData) {
+      for (let key of Object.keys(censusData)) {
+        builder.addSourceReferenceField(key, censusData[key]);
+      }
+    }
+  }
+
+  if (!builder.sourceReference) {
+    if (ed.recordData) {
+      for (let key of Object.keys(ed.recordData)) {
+        if (refKeys.includes(key)) {
+          let value = ed.recordData[key];
+          if (value && value.value) {
+            builder.addSourceReferenceField(key, value.value);
+          }
+        }
+      }
+    }
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
@@ -43,11 +100,101 @@ function buildRecordLink(ed, gd, builder) {
   builder.recordLinkOrTemplate = recordLink;
 }
 
+// we can't use the standard one in citationBuilder because values are more complex in
+// recorData for MH
+function buildDataList(ed, gd, builder) {
+  let options = builder.options;
+  let recordData = ed.recordData;
+  if (!recordData) {
+    return;
+  }
+
+  let itemSep = ";";
+  let valueSep = ":";
+  if (options.citation_general_dataListSeparator == "commaColon") {
+    itemSep = ",";
+    valueSep = ":";
+  } else if (options.citation_general_dataListSeparator == "commaSpace") {
+    itemSep = ",";
+    valueSep = "";
+  }
+
+  let keys = Object.keys(recordData);
+  keys = removeUnwantedKeysForDataString(keys, recordData);
+
+  let dataListString = "";
+  function addValue(key, value) {
+    if (value) {
+      value = value.trim();
+      if (dataListString != "") {
+        dataListString += itemSep + " ";
+      }
+      if (key) {
+        if (value.startsWith("http")) {
+          dataListString += "[" + value + " " + key + "]";
+        } else {
+          dataListString += key + valueSep + " " + value;
+        }
+      } else {
+        dataListString += value;
+      }
+    }
+  }
+
+  for (let key of keys) {
+    let valueObj = recordData[key];
+    if (valueObj) {
+      if (valueObj.value) {
+        addValue(key, valueObj.value);
+      } else if (valueObj.dateString || valueObj.placeString || valueObj.descriptionString) {
+        if (valueObj.descriptionString) {
+          if (valueObj.descriptionString.startsWith(key)) {
+            addValue("", valueObj.descriptionString);
+          } else {
+            addValue(key, valueObj.descriptionString);
+          }
+        }
+        if (valueObj.dateString) {
+          addValue(key + " date", valueObj.dateString);
+        }
+        if (valueObj.placeString) {
+          addValue(key + " place", valueObj.placeString);
+        }
+      }
+    }
+  }
+
+  return dataListString;
+}
+
+function buildDataString(ed, gd, builder) {
+  let input = {
+    generalizedData: gd,
+    options: builder.options,
+  };
+  let dataString = DataString.buildDataString(input);
+
+  if (!dataString) {
+    dataString = buildDataList(ed, gd, builder);
+  }
+
+  if (!dataString) {
+    dataString = DataString.buildDefaultDataString(input);
+  }
+
+  if (dataString) {
+    if (!dataString.endsWith(".")) {
+      dataString += ".";
+    }
+    builder.dataString = dataString;
+  }
+}
+
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  buildDataString(ed, gd, builder);
 }
 
 function buildCitation(input) {

@@ -22,6 +22,42 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function cleanLabel(label) {
+  if (!label) {
+    return label;
+  }
+  label = label.trim();
+  if (label.endsWith(":")) {
+    label = label.substring(0, label.length - 1);
+  }
+
+  // I considered changing all labels to lower case but that doesn't
+  // work when I want to include the label in a string like the Source Reference
+
+  return label;
+}
+
+function getPlaceElementText(placeElement) {
+  let placeString = "";
+  if (placeElement) {
+    let calloutLink = placeElement.querySelector("div.mapCalloutContainer > span.map_callout_link ");
+    if (calloutLink) {
+      for (let node of calloutLink.childNodes) {
+        if (node.nodeType == 3) {
+          placeString = node.textContent;
+          break;
+        }
+      }
+    }
+    if (!placeString) {
+      placeString = placeElement.textContent;
+    }
+  }
+  if (placeString) {
+    return placeString.trim();
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -52,6 +88,11 @@ function extractData(document, url) {
   let recordHeader = recordBody.querySelector("div.record_header");
   if (!recordHeader) {
     return result;
+  }
+
+  let recordTitle = recordHeader.querySelector("div.record_title");
+  if (recordTitle) {
+    result.recordTitle = recordTitle.textContent.trim();
   }
 
   let recordMainContent = recordBody.querySelector("div.record_main_content");
@@ -85,7 +126,7 @@ function extractData(document, url) {
       let labelElement = row.querySelector("td.recordFieldLabel");
       let valueElement = row.querySelector("td.recordFieldValue");
       if (labelElement && valueElement) {
-        let labelText = labelElement.textContent;
+        let labelText = cleanLabel(labelElement.textContent);
 
         if (labelText) {
           let eventDateElement = valueElement.querySelector("span.event_date");
@@ -99,19 +140,7 @@ function extractData(document, url) {
               }
             }
             if (eventPlaceElement) {
-              let placeString = "";
-              let calloutLink = eventPlaceElement.querySelector("div.mapCalloutContainer > span.map_callout_link ");
-              if (calloutLink) {
-                for (let node of calloutLink.childNodes) {
-                  if (node.nodeType == 3) {
-                    placeString = node.textContent;
-                    break;
-                  }
-                }
-              }
-              if (!placeString) {
-                placeString = eventPlaceElement.textContent;
-              }
+              let placeString = getPlaceElementText(eventPlaceElement);
               if (placeString) {
                 valueObj.placeString = placeString.trim();
               }
@@ -150,52 +179,66 @@ function extractData(document, url) {
                 }
               }
 
-              let placeString = "";
-              let calloutLink = valueElement.querySelector("div.mapCalloutContainer > span.map_callout_link ");
-              if (calloutLink) {
-                for (let node of calloutLink.childNodes) {
-                  if (node.nodeType == 3) {
-                    placeString = node.textContent;
-                    break;
-                  }
-                }
-              }
+              let placeString = getPlaceElementText(valueElement);
               if (placeString) {
                 valueObj.placeString = placeString.trim();
               }
               result.recordData[labelText] = valueObj;
             } else {
-              // it could be a simple value or multiple values (like "Siblings")
-              let spanElements = valueElement.querySelectorAll("span");
-              if (spanElements.length > 0) {
-                let valueString = "";
-                let values = [];
-                for (let span of spanElements) {
-                  if (!span.classList.contains("record_annotation")) {
-                    let textContent = span.textContent.trim();
-                    if (textContent) {
-                      if (valueString) {
-                        valueString += ", ";
+              // it could be a sub-table
+              let valueTable = valueElement.querySelector("table");
+              if (valueTable) {
+                let valueRows = valueTable.querySelectorAll("tr");
+                let valueObj = {};
+                for (let valueRow of valueRows) {
+                  let cells = valueRow.querySelectorAll("td");
+                  if (cells.length == 2) {
+                    let subLabel = cleanLabel(cells[0].textContent);
+
+                    let value = "";
+                    let placeString = getPlaceElementText(cells[1]);
+                    if (placeString) {
+                      value = placeString;
+                    } else {
+                      value = cells[1].textContent.trim();
+                    }
+                    valueObj[subLabel] = value;
+                  }
+                }
+                result.recordData[labelText] = valueObj;
+              } else {
+                // it could be a simple value or multiple values (like "Siblings")
+                let spanElements = valueElement.querySelectorAll("span");
+                if (spanElements.length > 0) {
+                  let valueString = "";
+                  let values = [];
+                  for (let span of spanElements) {
+                    if (!span.classList.contains("record_annotation")) {
+                      let textContent = span.textContent.trim();
+                      if (textContent) {
+                        if (valueString) {
+                          valueString += ", ";
+                        }
+                        valueString += textContent;
+                        values.push(textContent);
                       }
-                      valueString += textContent;
-                      values.push(textContent);
                     }
                   }
-                }
-                if (!valueString) {
-                  let textContent = valueElement.textContent.trim();
-                  if (textContent) {
-                    valueString = textContent;
+                  if (!valueString) {
+                    let textContent = valueElement.textContent.trim();
+                    if (textContent) {
+                      valueString = textContent;
+                    }
                   }
+                  if (values.length > 1) {
+                    result.recordData[labelText] = { value: valueString, values: values };
+                  } else if (valueString) {
+                    result.recordData[labelText] = { value: valueString };
+                  }
+                } else {
+                  let valueText = valueElement.textContent;
+                  result.recordData[labelText] = { value: valueText.trim() };
                 }
-                if (values.length > 1) {
-                  result.recordData[labelText] = { value: valueString, values: values };
-                } else if (valueString) {
-                  result.recordData[labelText] = { value: valueString };
-                }
-              } else {
-                let valueText = valueElement.textContent;
-                result.recordData[labelText] = { value: valueText.trim() };
               }
             }
           }
@@ -233,7 +276,7 @@ function extractData(document, url) {
                 let label = "";
                 for (let cell of cells) {
                   if (cell.classList.contains("infoGroup")) {
-                    label = cell.textContent;
+                    label = cleanLabel(cell.textContent);
                   } else {
                     let value = cell.textContent;
                     if (label && value) {
@@ -267,7 +310,7 @@ function extractData(document, url) {
               let labelElement = row.querySelector("td.recordFieldLabel");
               let valueElement = row.querySelector("td.recordFieldValue");
               if (labelElement && valueElement) {
-                let label = labelElement.textContent.trim();
+                let label = cleanLabel(labelElement.textContent);
 
                 // the value could have different structures, for a "Family members"
                 // section it is a list of people
@@ -335,7 +378,7 @@ function extractData(document, url) {
         let cells = row.querySelectorAll("td.groupRowValue");
         for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
           if (cellIndex < headings.length) {
-            let label = headings[cellIndex];
+            let label = cleanLabel(headings[cellIndex]);
             let cell = cells[cellIndex];
             let personLink = cell.querySelector("a");
             if (personLink) {
