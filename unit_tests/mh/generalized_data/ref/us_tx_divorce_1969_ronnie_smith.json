@@ -21,6 +21,9 @@
       "name": {
         "name": "Linda Smith"
       },
+      "marriageDate": {
+        "dateString": "11 Sep 1965"
+      },
       "age": "22"
     }
   ],

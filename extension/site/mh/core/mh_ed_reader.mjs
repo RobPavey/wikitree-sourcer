@@ -656,6 +656,17 @@ class MhEdReader extends ExtractedDataReader {
             if (marriagePlaceObj) {
               spouse.marriagePlace = marriagePlaceObj;
             }
+          } else if (this.recordType == RT.Divorce) {
+            // there may be a marriage date
+            let marriageValue = this.getRecordDataValue(["Marriage"]);
+            if (marriageValue) {
+              if (marriageValue.dateString) {
+                spouse.marriageDate = this.makeDateObjFromDateString(this.cleanMhDate(marriageValue.dateString));
+              }
+              if (marriageValue.placeString) {
+                spouse.marriagePlace = this.makePlaceObjFromFullPlaceName(marriageValue.placeString);
+              }
+            }
           }
 
           if (this.coupleData) {
@@ -666,6 +677,7 @@ class MhEdReader extends ExtractedDataReader {
               }
             }
           }
+
           return spouse;
         }
       }
