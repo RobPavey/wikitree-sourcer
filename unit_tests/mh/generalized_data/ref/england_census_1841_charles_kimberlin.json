@@ -15,6 +15,7 @@
   "birthPlace": {
     "placeString": "Warwickshire, England"
   },
+  "ageAtEvent": "15",
   "householdArrayFields": [
     "relationship",
     "name",
@@ -24,39 +25,48 @@
     {
       "relationship": "head",
       "name": "John Bunney",
-      "age": "40 - 44"
+      "age": "40"
     },
     {
       "relationship": "wife",
       "name": "Ruth Bunney",
-      "age": "40 - 44"
+      "age": "40"
     },
     {
       "relationship": "son",
       "name": "John Bunney",
-      "age": "20 - 24"
+      "age": "20"
     },
     {
       "name": "Bartholomew Slater",
-      "age": "30 - 34"
+      "age": "30"
     },
     {
       "name": "John Dowling",
-      "age": "30 - 34"
+      "age": "30"
     },
     {
       "name": "William Rudkin",
-      "age": "20 - 24"
+      "age": "20"
     },
     {
       "name": "Mary Newborough",
-      "age": "20 - 24"
+      "age": "20"
     },
     {
       "name": "Charles Kimberlin",
-      "age": "15 - 19",
+      "age": "15",
       "isSelected": true
     }
   ],
+  "collectionData": {
+    "id": "10150",
+    "enumDistrict": "10",
+    "county": "Warwickshire",
+    "familyNumber": "392",
+    "piece": "1130",
+    "book": "4",
+    "page": "9"
+  },
   "hasValidData": true
 }

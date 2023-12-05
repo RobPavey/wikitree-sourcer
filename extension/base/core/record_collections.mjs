@@ -293,6 +293,7 @@ const RecordCollectionData = [
     dates: { year: 1841, exactDate: "6 Jun 1841" },
     sites: {
       fs: { id: "1493745", title: "England and Wales Census, 1841" },
+      mh: { id: "10150", title: "1841 England & Wales Census" },
     },
   },
   {
@@ -303,6 +304,7 @@ const RecordCollectionData = [
     dates: { year: 1851, exactDate: "30 Mar 1851" },
     sites: {
       fs: { id: "2563939", title: "England and Wales Census, 1851" },
+      mh: { id: "10151", title: "1851 England & Wales Census" },
     },
   },
   {

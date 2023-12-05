@@ -19,6 +19,7 @@
   "birthPlace": {
     "placeString": "Stonehouse, Devonshire, England"
   },
+  "ageAtEvent": "19",
   "relationshipToHead": "son",
   "maritalStatus": "single",
   "householdArrayFields": [
@@ -100,6 +101,16 @@
         "name": "Elizabeth Pavey"
       }
     }
+  },
+  "collectionData": {
+    "id": "10151",
+    "district": "Saint Andrew",
+    "eccPar": "Saint James",
+    "enumDistrict": "1 L",
+    "county": "Devonshire",
+    "familyNumber": "46",
+    "piece": "1879",
+    "page": "314"
   },
   "hasValidData": true
 }

@@ -96,6 +96,69 @@ const typeDataEventPlaceLabels = {
   MarriageRegistration: ["Marriage place"],
 };
 
+function cleanMhDate(dateString) {
+  if (!dateString) {
+    return "";
+  }
+
+  dateString = dateString.trim();
+
+  if (/^\d\d\d\d$/.test(dateString)) {
+    return dateString;
+  } else if (/^Circa \d\d\d\d$/.test(dateString)) {
+    // The "Circa " gets handled in DateObj
+    return dateString;
+  } else if (/^[A-Z][a-z][a-z]\-[A-Z][a-z][a-z]\-[A-Z][a-z][a-z]\s+\d\d\d\d$/.test(dateString)) {
+    return dateString;
+  } else if (/^[A-Z][a-z][a-z][a-z]*\-[A-Z][a-z][a-z][a-z]*\-[A-Z][a-z][a-z][a-z]*\s+\d\d\d\d$/.test(dateString)) {
+    // e.g. July-Aug-Sep 1914
+    let newString = dateString.replace(
+      /([A-Z][a-z][a-z])[a-z]*\-([A-Z][a-z][a-z])[a-z]*\-([A-Z][a-z][a-z])[a-z]*\s+(\d\d\d\d)/,
+      "$1-$2-$3 $4"
+    );
+    if (newString) {
+      return newString;
+    }
+    return dateString;
+  } else if (dateString.startsWith("Between")) {
+  } else if (/^[A-Z-a-z][a-z][a-z]\s+\d\d?\s+\d\d\d\d$/.test(dateString)) {
+    // e.g. Aug 22 1822
+    let newString = dateString.replace(/([A-Z-a-z][a-z][a-z])\s+(\d\d?)\s+(\d\d\d\d)/, "$2 $1 $3");
+    if (newString) {
+      return newString;
+    }
+  }
+}
+
+function cleanMhRelationship(string) {
+  if (string) {
+    // is it right to remove the "implied" from the relationship?
+    // What if it is incorrect?
+    const impliedSuffix = " (implied)";
+    if (string.endsWith(impliedSuffix)) {
+      string = string.substring(0, string.length - impliedSuffix.length);
+    }
+  }
+  return string;
+}
+
+function cleanMhAge(string) {
+  if (!string) {
+    return "";
+  }
+
+  string = string.trim();
+
+  // Census records like 1841 contains ages like "15 - 19" when the
+  // census record says 15. Change to 15.
+  if (string.includes("-")) {
+    string = string.replace(/(\d+)\s*\-\s*\d*/, "$1");
+    string = string.replace(/\s+/g, " ");
+  }
+
+  return string;
+}
+
 class MhEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
@@ -307,52 +370,6 @@ class MhEdReader extends ExtractedDataReader {
     return this.getRecordDataValue(labels);
   }
 
-  cleanMhDate(dateString) {
-    if (!dateString) {
-      return "";
-    }
-
-    dateString = dateString.trim();
-
-    if (/^\d\d\d\d$/.test(dateString)) {
-      return dateString;
-    } else if (/^Circa \d\d\d\d$/.test(dateString)) {
-      // The "Circa " gets handled in DateObj
-      return dateString;
-    } else if (/^[A-Z][a-z][a-z]\-[A-Z][a-z][a-z]\-[A-Z][a-z][a-z]\s+\d\d\d\d$/.test(dateString)) {
-      return dateString;
-    } else if (/^[A-Z][a-z][a-z][a-z]*\-[A-Z][a-z][a-z][a-z]*\-[A-Z][a-z][a-z][a-z]*\s+\d\d\d\d$/.test(dateString)) {
-      // e.g. July-Aug-Sep 1914
-      let newString = dateString.replace(
-        /([A-Z][a-z][a-z])[a-z]*\-([A-Z][a-z][a-z])[a-z]*\-([A-Z][a-z][a-z])[a-z]*\s+(\d\d\d\d)/,
-        "$1-$2-$3 $4"
-      );
-      if (newString) {
-        return newString;
-      }
-      return dateString;
-    } else if (dateString.startsWith("Between")) {
-    } else if (/^[A-Z-a-z][a-z][a-z]\s+\d\d?\s+\d\d\d\d$/.test(dateString)) {
-      // e.g. Aug 22 1822
-      let newString = dateString.replace(/([A-Z-a-z][a-z][a-z])\s+(\d\d?)\s+(\d\d\d\d)/, "$2 $1 $3");
-      if (newString) {
-        return newString;
-      }
-    }
-  }
-
-  cleanMhRelationship(string) {
-    if (string) {
-      // is it right to remove the "implied" from the relationship?
-      // What if it is incorrect?
-      const impliedSuffix = " (implied)";
-      if (string.endsWith(impliedSuffix)) {
-        string = string.substring(0, string.length - impliedSuffix.length);
-      }
-    }
-    return string;
-  }
-
   setupCoupleData() {
     // if this record is actually for two people then get their details and decide which is primary
     let titleString = this.ed.recordTitle;
@@ -388,7 +405,7 @@ class MhEdReader extends ExtractedDataReader {
 
       if (ageValue) {
         if (ageValue.value) {
-          person.age = ageValue.value;
+          person.age = cleanMhAge(ageValue.value);
         }
       }
 
@@ -514,7 +531,7 @@ class MhEdReader extends ExtractedDataReader {
     }
 
     if (dateString) {
-      return this.makeDateObjFromDateString(this.cleanMhDate(dateString));
+      return this.makeDateObjFromDateString(cleanMhDate(dateString));
     }
 
     return undefined;
@@ -560,7 +577,7 @@ class MhEdReader extends ExtractedDataReader {
 
     let valueObj = this.getBirthDataValue();
     if (valueObj && valueObj.dateString) {
-      return this.makeDateObjFromDateString(this.cleanMhDate(valueObj.dateString));
+      return this.makeDateObjFromDateString(cleanMhDate(valueObj.dateString));
     }
 
     return undefined;
@@ -578,7 +595,7 @@ class MhEdReader extends ExtractedDataReader {
   getDeathDateObj() {
     let valueObj = this.getDeathDataValue();
     if (valueObj && valueObj.dateString) {
-      return this.makeDateObjFromDateString(this.cleanMhDate(valueObj.dateString));
+      return this.makeDateObjFromDateString(cleanMhDate(valueObj.dateString));
     }
 
     return undefined;
@@ -598,6 +615,11 @@ class MhEdReader extends ExtractedDataReader {
       if (this.coupleData.primaryPerson.age) {
         return this.coupleData.primaryPerson.age;
       }
+    } else {
+      let ageValue = this.getRecordDataValueByKeysOrLabels(["age"], ["Age"]);
+      if (ageValue && ageValue.value) {
+        return cleanMhAge(ageValue.value);
+      }
     }
     return "";
   }
@@ -616,7 +638,7 @@ class MhEdReader extends ExtractedDataReader {
       if (household.headings.includes("Relation to head")) {
         for (let member of household.members) {
           if (member.isSelected) {
-            return this.cleanMhRelationship(member["Relation to head"]);
+            return cleanMhRelationship(member["Relation to head"]);
           }
         }
       }
@@ -661,7 +683,7 @@ class MhEdReader extends ExtractedDataReader {
             let marriageValue = this.getRecordDataValue(["Marriage"]);
             if (marriageValue) {
               if (marriageValue.dateString) {
-                spouse.marriageDate = this.makeDateObjFromDateString(this.cleanMhDate(marriageValue.dateString));
+                spouse.marriageDate = this.makeDateObjFromDateString(cleanMhDate(marriageValue.dateString));
               }
               if (marriageValue.placeString) {
                 spouse.marriagePlace = this.makePlaceObjFromFullPlaceName(marriageValue.placeString);
@@ -752,7 +774,9 @@ class MhEdReader extends ExtractedDataReader {
               let fieldValue = member[heading];
               if (fieldValue) {
                 if (fieldName == "relationship") {
-                  fieldValue = GD.standardizeRelationshipToHead(this.cleanMhRelationship(fieldValue));
+                  fieldValue = GD.standardizeRelationshipToHead(cleanMhRelationship(fieldValue));
+                } else if (fieldName == "age") {
+                  fieldValue = cleanMhAge(fieldValue);
                 }
 
                 householdMember[fieldName] = fieldValue;
@@ -784,6 +808,69 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
+    let url = this.ed.url;
+    if (!url) {
+      return undefined;
+    }
+    // Example record URL:
+    // https://www.myheritage.com/research/record-10069-35470791/ronnie-l-smith-and-linda-smith-in-texas-marriages-divorces#
+    // Example person profile URL:
+    // https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees
+
+    let collectionId = "";
+    if (/^https?\:\/\/.+\.myheritage.+\/research\/record\-\d+\-\d+\//.test(url)) {
+      let collectionPart = url.replace(/^https?\:\/\/.+\.myheritage.+\/research\/record\-(\d+)\-\d+\/.+$/, "$1");
+      if (collectionPart && collectionPart != url) {
+        collectionId = collectionPart;
+      }
+    }
+
+    if (collectionId) {
+      let collectionData = {
+        id: collectionId,
+      };
+
+      if (this.ed.recordSections) {
+        let censusSection = this.ed.recordSections["Census"];
+        if (censusSection) {
+          function addRefForCensusValue(fieldName, value) {
+            if (value) {
+              collectionData[fieldName] = value;
+            }
+          }
+
+          function addRefForCensusKey(fieldName, key) {
+            let value = censusSection[key];
+            addRefForCensusValue(fieldName, value);
+          }
+
+          addRefForCensusKey("district", "Registration district");
+          addRefForCensusKey("eccPar", "Ecclesiastical district");
+          addRefForCensusKey("enumDistrict", "Enum. District");
+          addRefForCensusKey("county", "County");
+          addRefForCensusKey("familyNumber", "Family");
+          addRefForCensusKey("folio", "Folio");
+          addRefForCensusKey("piece", "Piece");
+
+          let pageString = censusSection["Page"];
+          if (pageString.includes("\\")) {
+            let book = pageString.replace(/^(\d+)\\\d+$/, "$1");
+            let page = pageString.replace(/^\d+\\(\d+)$/, "$1");
+            if (book && page && book != pageString && page != pageString) {
+              addRefForCensusValue("book", book);
+              addRefForCensusValue("page", page);
+            } else {
+              addRefForCensusValue("page", pageString);
+            }
+          } else {
+            addRefForCensusValue("page", pageString);
+          }
+        }
+      }
+
+      return collectionData;
+    }
+
     return undefined;
   }
 }
