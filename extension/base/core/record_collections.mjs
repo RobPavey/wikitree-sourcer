@@ -641,6 +641,7 @@ const RecordCollectionData = [
         id: "1004",
         searchQueryFields: { district: "", registrationNumber: "f-F0003968" }, // no Page or ED supported
       },
+      fs: { id: "2016000", title: "Scotland Census, 1841" },
       scotp: { id: "census1841" },
     },
   },
@@ -660,6 +661,7 @@ const RecordCollectionData = [
           page: "f-F8007E01",
         },
       },
+      fs: { id: "2028673", title: "Scotland Census, 1851" },
       scotp: { id: "census1851" },
     },
   },
@@ -678,6 +680,7 @@ const RecordCollectionData = [
           registrationNumber: "f-F0003B89",
         },
       },
+      fs: { id: "2028677", title: "Scotland Census, 1861" },
       scotp: { id: "census1861" },
     },
   },
@@ -696,6 +699,7 @@ const RecordCollectionData = [
           registrationNumber: "f-F0003B89",
         },
       },
+      fs: { id: "2028678", title: "Scotland Census, 1871" },
       scotp: { id: "census1871" },
     },
   },
@@ -714,6 +718,7 @@ const RecordCollectionData = [
           registrationNumber: "f-F0003B89",
         },
       },
+      fs: { id: "2046756", title: "Scotland Census, 1881" },
       scotp: { id: "census1881" },
     },
   },
@@ -732,6 +737,7 @@ const RecordCollectionData = [
           registrationNumber: "f-F0003B89",
         },
       },
+      fs: { id: "2046943", title: "Scotland Census, 1891" },
       scotp: { id: "census1891" },
     },
   },
@@ -750,6 +756,7 @@ const RecordCollectionData = [
           registrationNumber: "f-F0003B89",
         },
       },
+      fs: { id: "3212239", title: "Scotland Census, 1901" },
       scotp: { id: "census1901" },
     },
   },
@@ -763,6 +770,7 @@ const RecordCollectionData = [
       scotp: { id: "census1911" },
     },
   },
+
   // 1939 Register
   {
     wtsId: "EnglandAndWales1939Register",
