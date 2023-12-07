@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { MhUriBuilder } from "./mh_uri_builder.mjs";
+import { RT } from "../../../base/core/record_type.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
@@ -30,6 +31,40 @@ function buildSearchUrl(buildUrlInput) {
   var builder = new MhUriBuilder();
 
   // call methods on builder here
+
+  builder.addNameAndGender(gd.inferForenames(), gd.inferLastName(), gd.personGender);
+
+  builder.addBirth(gd.inferBirthYear(), gd.inferBirthPlace());
+  builder.addDeath(gd.inferDeathYear(), gd.inferDeathPlace());
+
+  // record types where event date/place is a residence date/place
+  const residenceRecordTypes = [RT.Census, RT.Residence, RT.Directory];
+  if (residenceRecordTypes.includes(gd.recordType)) {
+    builder.addEvent("livedin", gd.inferEventYear(), gd.inferEventPlace());
+  }
+
+  builder.endEventList();
+
+  // add relatives
+  if (gd.parents) {
+    if (gd.parents.father && gd.parents.father.name) {
+      let name = gd.parents.father.name;
+      builder.addFather(name.inferForenames(), name.inferLastName());
+    }
+    if (gd.parents.mother && gd.parents.mother.name) {
+      let name = gd.parents.mother.name;
+      builder.addMother(name.inferForenames(), name.inferLastName());
+    }
+  }
+
+  if (gd.spouses && gd.spouses.length == 1) {
+    let spouse = gd.spouses[0];
+    if (spouse.name) {
+      builder.addSpouse(spouse.name.inferForenames(), spouse.name.inferLastName());
+    }
+  }
+
+  builder.endRelativeList();
 
   const url = builder.getUri();
 

@@ -26,13 +26,18 @@ import { buildSearchUrl } from "../../extension/site/mh/core/mh_build_search_url
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "england_marriage_reg_handford-3_sc",
+    caseName: "ancestry_england_marriage_reg_handford-3_sc",
     inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
   },
-  */
+  {
+    caseName: "mh_xx_person_charles_kimberlin",
+    inputPath: "mh/generalized_data/ref/xx_person_charles_kimberlin",
+  },
+  {
+    caseName: "wikitree_pavey-455_read",
+    inputPath: "wikitree/generalized_data/ref/pavey-455_read",
+  },
 ];
 
 async function runTests(testManager) {
