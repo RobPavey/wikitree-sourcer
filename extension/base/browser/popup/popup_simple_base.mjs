@@ -49,6 +49,8 @@ import { options } from "/base/browser/options/options_loader.mjs";
 
 import { writeToClipboard, clearClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 
+import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
+
 var simplePopupFunctions = {
   buildCitationFunction: undefined,
   buildHouseholdTableFunction: undefined,
@@ -224,19 +226,24 @@ async function setupSimplePopupMenu(input) {
     addMenuDivider(menu);
   }
 
-  if (input.buildCitationFunction) {
-    addBuildCitationMenuItems(
-      menu,
-      data,
-      simplePopupBuildCitation,
-      backFunction,
-      input.regeneralizeFunction,
-      input.userInputFunction
-    );
+  if (generalizedData.sourceType == "profile") {
+    addSavePersonDataMenuItem(menu, data);
+  } else {
+    if (input.buildCitationFunction) {
+      addBuildCitationMenuItems(
+        menu,
+        data,
+        simplePopupBuildCitation,
+        backFunction,
+        input.regeneralizeFunction,
+        input.userInputFunction
+      );
+    }
+    if (input.buildHouseholdTableFunction) {
+      addBuildHouseholdTableMenuItem(menu, data);
+    }
   }
-  if (input.buildHouseholdTableFunction) {
-    addBuildHouseholdTableMenuItem(menu, data);
-  }
+
   if (input.customMenuFunction) {
     input.customMenuFunction(menu, data);
   }

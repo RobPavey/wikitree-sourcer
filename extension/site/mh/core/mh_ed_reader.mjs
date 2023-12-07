@@ -25,6 +25,7 @@ SOFTWARE.
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { GD } from "../../../base/core/generalize_data_utils.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 const recordTypeData = [
   // put ones with Document type first
@@ -166,6 +167,8 @@ class MhEdReader extends ExtractedDataReader {
       this.determineSourceTypeAndRecordType();
 
       this.setupCoupleData();
+
+      this.setupNameParts();
     }
   }
 
@@ -461,6 +464,69 @@ class MhEdReader extends ExtractedDataReader {
     this.coupleData = coupleData;
   }
 
+  setupNameParts() {
+    let nameString = this.getSimpleRecordDataValueString("Name");
+
+    if (!nameString) {
+      nameString = this.ed.recordTitle;
+    }
+
+    if (this.coupleData) {
+      if (this.coupleData.primaryPerson && this.coupleData.primaryPerson.name) {
+        nameString = this.coupleData.primaryPerson.name;
+      }
+    }
+
+    this.nameParts = this.separateMhNameIntoParts(nameString);
+  }
+
+  separateMhNameIntoParts(nameString) {
+    let parts = {
+      fullName: nameString,
+    };
+
+    if (!nameString) {
+      return parts;
+    }
+
+    const bornPrefix = "(born ";
+    if (nameString.includes(bornPrefix)) {
+      let bornIndex = nameString.indexOf(bornPrefix);
+      if (bornIndex != -1) {
+        let closeParenIndex = nameString.indexOf(")", bornIndex);
+        if (closeParenIndex != -1) {
+          let fullMarriedName = nameString.substring(0, bornIndex).trim();
+          // this can have other last names e.g.: "Emily Kimberlin - Black (born Mason)"
+          const lnSep = " - ";
+          let lnSepIndex = fullMarriedName.indexOf(lnSep);
+          if (lnSepIndex != -1) {
+            fullMarriedName = fullMarriedName.substring(0, lnSepIndex).trim();
+            parts.otherLastNames = fullMarriedName.substring(lnSepIndex + lnSep.length).trim();
+          }
+          parts.forenames = StringUtils.getWordsBeforeLastWord(fullMarriedName);
+
+          parts.lnab = nameString.substring(bornIndex + bornPrefix.length, closeParenIndex).trim();
+          parts.cln = StringUtils.getLastWord(fullMarriedName);
+          parts.fullName = parts.forenames + " " + parts.lnab;
+        }
+      }
+    } else {
+      if (StringUtils.countWords(nameString) > 1) {
+        parts.lastName = StringUtils.getLastWord(nameString);
+        parts.forenames = StringUtils.getWordsBeforeLastWord(nameString);
+        parts.lnab = parts.lastName;
+      }
+    }
+
+    return parts;
+  }
+
+  makeNameObjFromMhFullName(nameString) {
+    let parts = this.separateMhNameIntoParts(nameString);
+    let nameObj = this.makeNameObjFromFullName(parts.fullName);
+    return nameObj;
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -482,25 +548,7 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let nameString = this.getSimpleRecordDataValueString("Name");
-
-    if (!nameString) {
-      nameString = this.ed.recordTitle;
-    }
-
-    if (this.coupleData) {
-      if (this.coupleData.primaryPerson && this.coupleData.primaryPerson.name) {
-        nameString = this.coupleData.primaryPerson.name;
-      }
-    }
-
-    if (nameString.includes("(born ")) {
-      // this person's name is a married name plus the maiden name
-      // we really want the name at birth. However we don't know how much of the
-      // name before the "(born " is the married last name (it could have spaces in it)
-    }
-
-    return this.makeNameObjFromFullName(nameString);
+    return this.makeNameObjFromFullName(this.nameParts.fullName);
   }
 
   getGender() {
@@ -560,10 +608,32 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtBirth() {
+    if (
+      this.sourceType == "profile" ||
+      this.recordType == "Birth" ||
+      this.recordType == "BirthRegistration" ||
+      this.recordType == "Baptism"
+    ) {
+      if (this.nameParts.lnab) {
+        return this.nameParts.lnab;
+      }
+    }
+
     return "";
   }
 
   getLastNameAtDeath() {
+    if (
+      this.sourceType == "profile" ||
+      this.recordType == "Death" ||
+      this.recordType == "DeathRegistration" ||
+      this.recordType == "Burial"
+    ) {
+      if (this.nameParts.cln) {
+        return this.nameParts.cln;
+      }
+    }
+
     return "";
   }
 
@@ -666,7 +736,7 @@ class MhEdReader extends ExtractedDataReader {
       }
 
       if (spouseName) {
-        let spouseNameObj = this.makeNameObjFromFullName(spouseName);
+        let spouseNameObj = this.makeNameObjFromMhFullName(spouseName);
         if (spouseNameObj) {
           let spouse = { name: spouseNameObj };
           if (this.recordType == RT.Marriage || this.recordType == RT.MarriageRegistration) {
@@ -704,6 +774,32 @@ class MhEdReader extends ExtractedDataReader {
         }
       }
     }
+
+    if (this.sourceType == "profile") {
+      if (this.ed.recordSections) {
+        let familySection = this.ed.recordSections["Family members"];
+        if (familySection) {
+          let persons = familySection["Spouse"];
+          if (!persons) {
+            persons = familySection["Wife"];
+          }
+          if (!persons) {
+            persons = familySection["Husband"];
+          }
+          if (persons) {
+            if (persons.length == 1) {
+              let person = persons[0];
+              let spouseNameObj = this.makeNameObjFromMhFullName(person.name);
+              if (spouseNameObj) {
+                let spouse = { name: spouseNameObj };
+                return spouse;
+              }
+            }
+          }
+        }
+      }
+    }
+
     return undefined;
   }
 
@@ -717,7 +813,7 @@ class MhEdReader extends ExtractedDataReader {
         if (fatherValue) {
           let fatherName = fatherValue.value;
           if (fatherName) {
-            let fatherNameObj = this.makeNameObjFromFullName(fatherName);
+            let fatherNameObj = this.makeNameObjFromMhFullName(fatherName);
             if (fatherNameObj) {
               parents.father = { name: fatherNameObj };
             }
@@ -726,13 +822,74 @@ class MhEdReader extends ExtractedDataReader {
         if (motherValue) {
           let motherName = motherValue.value;
           if (motherName) {
-            let motherNameObj = this.makeNameObjFromFullName(motherName);
+            let motherNameObj = this.makeNameObjFromMhFullName(motherName);
             if (motherNameObj) {
               parents.mother = { name: motherNameObj };
             }
           }
         }
         return parents;
+      }
+    }
+
+    function makeParentFromNameParts(reader, nameParts) {
+      if (!nameParts.fullName) {
+        return undefined;
+      }
+
+      let nameObj = reader.makeNameObjFromFullName(nameParts.fullName);
+      if (nameObj) {
+        let parent = { name: nameObj };
+        if (nameParts.lnab) {
+          parent.lastNameAtBirth = nameParts.lnab;
+        }
+        if (nameParts.cln) {
+          parent.lastNameAtDeath = nameParts.cln;
+        }
+        return parent;
+      }
+    }
+
+    if (this.sourceType == "profile") {
+      if (this.ed.recordSections) {
+        let familySection = this.ed.recordSections["Family members"];
+        if (familySection) {
+          let parents = {};
+          let persons = familySection["Parents"];
+          if (persons) {
+            if (persons.length == 1) {
+              let person = persons[0];
+              let nameParts = this.separateMhNameIntoParts(person.name);
+              let parent = makeParentFromNameParts(this, nameParts);
+              if (parent) {
+                if (person.gender == "female") {
+                  parents.mother = parent;
+                } else {
+                  parents.father = parent;
+                }
+              }
+            } else if (persons.length == 2) {
+              let fatherPerson = persons[1].gender == "female" ? persons[0] : persons[1];
+              let motherPerson = persons[1].gender == "female" ? persons[1] : persons[0];
+
+              let fatherNameParts = this.separateMhNameIntoParts(fatherPerson.name);
+              let father = makeParentFromNameParts(this, fatherNameParts);
+              let motherNameParts = this.separateMhNameIntoParts(motherPerson.name);
+              let mother = makeParentFromNameParts(this, motherNameParts);
+
+              if (father) {
+                parents.father = father;
+              }
+              if (mother) {
+                parents.mother = mother;
+              }
+            }
+          }
+
+          if (parents.mother || parents.father) {
+            return parents;
+          }
+        }
       }
     }
 

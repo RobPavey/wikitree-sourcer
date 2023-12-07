@@ -3,9 +3,11 @@
   "sourceType": "profile",
   "recordType": "Unclassified",
   "name": {
-    "name": "Sarah Ann Walker (born West)"
+    "name": "Sarah Ann West"
   },
   "personGender": "female",
+  "lastNameAtBirth": "West",
+  "lastNameAtDeath": "Walker",
   "birthDate": {
     "dateString": "28 Dec 1820"
   },
@@ -24,7 +26,7 @@
     },
     "mother": {
       "name": {
-        "name": "Sarah West (born Walker)"
+        "name": "Sarah Walker"
       }
     }
   },

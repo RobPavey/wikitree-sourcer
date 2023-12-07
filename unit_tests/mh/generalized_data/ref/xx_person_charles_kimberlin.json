@@ -6,11 +6,34 @@
     "name": "Charles Kimberlin"
   },
   "personGender": "male",
+  "lastNameAtBirth": "Kimberlin",
   "birthDate": {
     "dateString": "15 Dec 1825"
   },
   "birthPlace": {
     "placeString": "Atherstone, Warwickshire, England"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Emily Mason"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Kimberlin"
+      },
+      "lastNameAtBirth": "Kimberlin"
+    },
+    "mother": {
+      "name": {
+        "name": "Elizabeth Smith"
+      },
+      "lastNameAtBirth": "Smith",
+      "lastNameAtDeath": "Kimberlin"
+    }
   },
   "hasValidData": true
 }
