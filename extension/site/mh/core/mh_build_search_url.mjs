@@ -23,12 +23,66 @@ SOFTWARE.
 */
 
 import { MhUriBuilder } from "./mh_uri_builder.mjs";
+import { RC } from "../../../base/core/record_collections.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
 function buildSearchUrl(buildUrlInput) {
+  //console.log("mh buildSearchUrl, buildUrlInput is:");
+  //console.log(buildUrlInput);
+
   const gd = buildUrlInput.generalizedData;
+  const options = buildUrlInput.options;
+  const typeOfSearch = buildUrlInput.typeOfSearch;
+  const searchParameters = buildUrlInput.searchParameters;
 
   var builder = new MhUriBuilder();
+
+  let includeFather = true;
+  let includeMother = true;
+  let spouseIndex = 0;
+
+  if (typeOfSearch == "SpecifiedCollection") {
+    let collectionWtsId = searchParameters.collectionWtsId;
+    if (collectionWtsId) {
+      let collection = RC.findCollectionByWtsId(collectionWtsId);
+      let urlPart = collection.sites.mh.urlPart;
+      if (urlPart) {
+        builder.setCategory(urlPart);
+      }
+    }
+  } else if (typeOfSearch == "SpecifiedParameters") {
+    let category = searchParameters.category;
+    let subcategory = searchParameters.subcategory;
+    let collection = searchParameters.collection;
+    includeFather = searchParameters.father;
+    includeMother = searchParameters.mother;
+    spouseIndex = searchParameters.spouseIndex;
+    if (subcategory && subcategory != "all") {
+      builder.setCategory(subcategory);
+    } else if (category && category != "all") {
+      builder.setCategory(category);
+    }
+  } else if (typeOfSearch == "FamilyTree") {
+    let categoryUrlPart = "collection-1/myheritage-family-trees";
+    builder.setCategory(categoryUrlPart);
+  } else if (typeOfSearch == "SameCollection") {
+    let mhCollectionId = RC.mapCollectionId(
+      gd.sourceOfData,
+      gd.collectionData.id,
+      "mh",
+      gd.inferEventCountry(),
+      gd.inferEventYear()
+    );
+    if (mhCollectionId) {
+      let collection = RC.findCollection("mh", mhCollectionId);
+      if (collection) {
+        let urlPart = collection.sites.mh.urlPart;
+        if (urlPart) {
+          builder.setCategory(urlPart);
+        }
+      }
+    }
+  }
 
   // call methods on builder here
 
@@ -36,6 +90,12 @@ function buildSearchUrl(buildUrlInput) {
 
   builder.addBirth(gd.inferBirthYear(), gd.inferBirthPlace());
   builder.addDeath(gd.inferDeathYear(), gd.inferDeathPlace());
+
+  // record types where event date/place is a marriage date/place
+  const marriageRecordTypes = [RT.Marriage, RT.MarriageRegistration];
+  if (marriageRecordTypes.includes(gd.recordType)) {
+    builder.addEvent("marriage", gd.inferEventYear(), gd.inferEventPlace());
+  }
 
   // record types where event date/place is a residence date/place
   const residenceRecordTypes = [RT.Census, RT.Residence, RT.Directory];
@@ -47,19 +107,26 @@ function buildSearchUrl(buildUrlInput) {
 
   // add relatives
   if (gd.parents) {
-    if (gd.parents.father && gd.parents.father.name) {
+    if (includeFather && gd.parents.father && gd.parents.father.name) {
       let name = gd.parents.father.name;
       builder.addFather(name.inferForenames(), name.inferLastName());
     }
-    if (gd.parents.mother && gd.parents.mother.name) {
+    if (includeMother && gd.parents.mother && gd.parents.mother.name) {
       let name = gd.parents.mother.name;
       builder.addMother(name.inferForenames(), name.inferLastName());
     }
   }
 
-  if (gd.spouses && gd.spouses.length == 1) {
-    let spouse = gd.spouses[0];
-    if (spouse.name) {
+  if (gd.spouses && gd.spouses.length >= 1) {
+    let spouse = undefined;
+    if (typeOfSearch == "SpecifiedParameters") {
+      if (spouseIndex != -1 && spouseIndex < gd.spouses.length) {
+        spouse = gd.spouses[spouseIndex];
+      }
+    } else if (gd.spouses.length == 1) {
+      spouse = gd.spouses[0];
+    }
+    if (spouse && spouse.name) {
       builder.addSpouse(spouse.name.inferForenames(), spouse.name.inferLastName());
     }
   }

@@ -115,6 +115,17 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 // &qevents-any/1event_3=Event+et.livedin+ey.1900+ep.London+epmo.similar
 // &qevents=List
 
+// Refined to US census:
+// https://www.myheritage.com/research/
+//  category-1100/us-census
+//  ?s=1
+//  &formId=census
+//  &formMode=1&useTranslation=1&exactSearch=&action=query&view_mode=card&initialFormIds=master,census&p=1&qname=Name+fn.Charles+fnmo.1+ln.Kimberlin+lnmsrs.false+g.M&qbirth=Event+et.birth+ey.1859&qevents-event1=Event+et.any+ep.Nether%2F3Whitacre%2C%2F3Warwickshire%2C%2F3England%2C%2F3United%2F3Kingdom+epmo.similar&qevents-any/1event_1=Event+et.death+ey.1954+ep.Highgate%2C%2F3Middlesex%2C%2F3England%2C%2F3United%2F3Kingdom+epmo.similar&qevents=List&qrelatives-relative=Relative+rt.father+rn.*qrelative_relativeName&qrelative_relativeName=Name+fn.Charles&qrelatives-addRelative_1=Relative+rt.mother+rn.*qaddRelative_1_addRelativeName&qaddRelative_1_addRelativeName=Name+fn.Emily&qrelatives-addRelative_2=Relative+rt.spouse+rn.*qaddRelative_2_addRelativeName&qaddRelative_2_addRelativeName=Name+fn.Eliza%2F3Jane&qrelatives=List
+
+// https://www.myheritage.com/research/category-15000/public-records
+// https://www.myheritage.com/research/category-2000/birth-marriage-death
+// https://www.myheritage.com/research/category-2020/marriage-divorce
+
 function encodeNameString(nameString) {
   let result = StringUtils.removeExtendedAsciiCharacters(nameString);
 
@@ -131,9 +142,9 @@ class MhUriBuilder {
     this.relativeCount = 0;
   }
 
-  setCategory() {}
-
-  setCollection() {}
+  setCategory(urlPart) {
+    this.uri += "/" + urlPart;
+  }
 
   addSearchTerm(string) {
     const stdQueryStart = "?s=1&formId=master&formMode=1&useTranslation=1&exactSearch=&p=1&action=query&view_mode=card";

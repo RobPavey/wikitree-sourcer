@@ -68,6 +68,11 @@ const RecordCollectionData = [
       },
       gro: { id: "births", dates: { from: 1837, to: 2019 } },
       freebmd: { id: "births", dates: { from: 1837, to: 1992 } },
+      mh: {
+        id: "10442",
+        title: "England & Wales, Birth Index, 1837-2005",
+        urlPart: "collection-10442/england-wales-birth-index-1837-2005",
+      },
     },
   },
   {
@@ -106,6 +111,11 @@ const RecordCollectionData = [
         dates: { from: 1837, to: 2005 },
       },
       freebmd: { id: "marriages", dates: { from: 1837, to: 1992 } },
+      mh: {
+        id: "10443",
+        title: "England & Wales, Marriage Index, 1837-2005",
+        urlPart: "collection-10443/england-wales-marriage-index-1837-2005",
+      },
     },
   },
   {
@@ -151,6 +161,11 @@ const RecordCollectionData = [
       },
       gro: { id: "deaths", dates: { from: 1837, to: 2019 } },
       freebmd: { id: "deaths", dates: { from: 1837, to: 1992 } },
+      mh: {
+        id: "10444",
+        title: "England & Wales, Death Index, 1837-2005",
+        urlPart: "collection-10444/england-wales-death-index-1837-2005",
+      },
     },
   },
   {
@@ -293,7 +308,7 @@ const RecordCollectionData = [
     dates: { year: 1841, exactDate: "6 Jun 1841" },
     sites: {
       fs: { id: "1493745", title: "England and Wales Census, 1841" },
-      mh: { id: "10150", title: "1841 England & Wales Census" },
+      mh: { id: "10150", title: "1841 England & Wales Census", urlPart: "collection-10150/1841-england-wales-census" },
     },
   },
   {
@@ -304,7 +319,7 @@ const RecordCollectionData = [
     dates: { year: 1851, exactDate: "30 Mar 1851" },
     sites: {
       fs: { id: "2563939", title: "England and Wales Census, 1851" },
-      mh: { id: "10151", title: "1851 England & Wales Census" },
+      mh: { id: "10151", title: "1851 England & Wales Census", urlPart: "collection-10151/1851-england-wales-census" },
     },
   },
   {
@@ -315,6 +330,7 @@ const RecordCollectionData = [
     dates: { year: 1861, exactDate: "7 Apr 1861" },
     sites: {
       fs: { id: "1493747", title: "England and Wales Census, 1861" },
+      mh: { id: "10152", title: "1861 England & Wales Census", urlPart: "collection-10152/1861-england-wales-census" },
     },
   },
   {
@@ -325,6 +341,7 @@ const RecordCollectionData = [
     dates: { year: 1871, exactDate: "2 Apr 1871" },
     sites: {
       fs: { id: "1538354", title: "England and Wales Census, 1871" },
+      mh: { id: "10153", title: "1871 England & Wales Census", urlPart: "collection-10153/1871-england-wales-census" },
     },
   },
   {
@@ -335,6 +352,7 @@ const RecordCollectionData = [
     dates: { year: 1881, exactDate: "3 Apr 1881" },
     sites: {
       fs: { id: "2562194", title: "England and Wales Census, 1881" },
+      mh: { id: "10154", title: "1881 England & Wales Census", urlPart: "collection-10154/1881-england-wales-census" },
     },
   },
   {
@@ -345,6 +363,7 @@ const RecordCollectionData = [
     dates: { year: 1891, exactDate: "5 Apr 1891" },
     sites: {
       fs: { id: "1865747", title: "England and Wales Census, 1891" },
+      mh: { id: "10155", title: "1891 England & Wales Census", urlPart: "collection-10155/1891-england-wales-census" },
     },
   },
   {
@@ -355,6 +374,7 @@ const RecordCollectionData = [
     dates: { year: 1901, exactDate: "31 Mar 1901" },
     sites: {
       fs: { id: "1888129", title: "England and Wales Census, 1901" },
+      mh: { id: "10156", title: "1901 England & Wales Census", urlPart: "collection-10156/1901-england-wales-census" },
     },
   },
   {
@@ -372,6 +392,7 @@ const RecordCollectionData = [
         searchQueryFields: { maritalStatus: "condition" },
       },
       freecen: { id: "1911", title: "1911 England and Wales census" },
+      mh: { id: "10446", title: "1911 England & Wales Census", urlPart: "collection-10446/1911-england-wales-census" },
     },
   },
   {
@@ -460,11 +481,6 @@ const RecordCollectionData = [
         id: "8767",
         altId: "uki1861",
         title: "1861 England Census",
-        searchQueryFields: {
-          piece: "f-F0007B87",
-          folio: "f-F0007B88",
-          page: "f-F000597C",
-        },
       },
     },
   },
@@ -643,6 +659,7 @@ const RecordCollectionData = [
       },
       fs: { id: "2016000", title: "Scotland Census, 1841" },
       scotp: { id: "census1841" },
+      mh: { id: "10979", title: "1841 Scotland Census", urlPart: "collection-10979/1841-scotland-census" },
     },
   },
   {
@@ -663,6 +680,7 @@ const RecordCollectionData = [
       },
       fs: { id: "2028673", title: "Scotland Census, 1851" },
       scotp: { id: "census1851" },
+      mh: { id: "10980", title: "1851 Scotland Census", urlPart: "collection-10980/1851-scotland-census" },
     },
   },
   {
@@ -682,6 +700,7 @@ const RecordCollectionData = [
       },
       fs: { id: "2028677", title: "Scotland Census, 1861" },
       scotp: { id: "census1861" },
+      mh: { id: "10978", title: "1861 Scotland Census", urlPart: "collection-10978/1861-scotland-census" },
     },
   },
   {
@@ -701,6 +720,7 @@ const RecordCollectionData = [
       },
       fs: { id: "2028678", title: "Scotland Census, 1871" },
       scotp: { id: "census1871" },
+      mh: { id: "10976", title: "1871 Scotland Census", urlPart: "collection-10976/1871-scotland-census" },
     },
   },
   {
@@ -720,6 +740,7 @@ const RecordCollectionData = [
       },
       fs: { id: "2046756", title: "Scotland Census, 1881" },
       scotp: { id: "census1881" },
+      mh: { id: "10977", title: "1881 Scotland Census", urlPart: "collection-10977/1881-scotland-census" },
     },
   },
   {
@@ -739,6 +760,7 @@ const RecordCollectionData = [
       },
       fs: { id: "2046943", title: "Scotland Census, 1891" },
       scotp: { id: "census1891" },
+      mh: { id: "10974", title: "1891 Scotland Census", urlPart: "collection-10974/1891-scotland-census" },
     },
   },
   {
@@ -758,6 +780,7 @@ const RecordCollectionData = [
       },
       fs: { id: "3212239", title: "Scotland Census, 1901" },
       scotp: { id: "census1901" },
+      mh: { id: "10975", title: "1901 Scotland Census", urlPart: "collection-10975/1901-scotland-census" },
     },
   },
   {
@@ -785,6 +808,11 @@ const RecordCollectionData = [
         searchQueryFields: { maritalStatus: "maritalstatus" },
       },
       fs: { id: "2836130", title: "England and Wales National Register, 1939" },
+      mh: {
+        id: "10678",
+        title: "1939 Register of England & Wales",
+        urlPart: "collection-10678/1939-register-of-england-wales",
+      },
     },
   },
   // England & Wales Probate
@@ -794,6 +822,11 @@ const RecordCollectionData = [
     country: "England and Wales",
     sites: {
       ancestry: { id: "1904", dates: { from: 1858, to: 1995 } },
+      mh: {
+        id: "10691",
+        title: "England & Wales, Index of Wills and Probates, 1853-1943",
+        urlPart: "collection-10691/england-wales-index-of-wills-probates-1853-1943",
+      },
     },
   },
   // British Phone Books
@@ -820,6 +853,11 @@ const RecordCollectionData = [
       fs: { id: "1803959" },
       ancestry: { id: "5058" },
       fmp: { id: "US Census 1790" },
+      mh: {
+        id: "10120",
+        title: "1790 United States Federal Census",
+        urlPart: "collection-10120/1790-united-states-federal-census",
+      },
     },
   },
   {
@@ -831,6 +869,11 @@ const RecordCollectionData = [
       fs: { id: "1804228" },
       ancestry: { id: "7590" },
       fmp: { id: "US Census 1800" },
+      mh: {
+        id: "10121",
+        title: "1800 United States Federal Census",
+        urlPart: "collection-10121/1800-united-states-federal-census",
+      },
     },
   },
   {
@@ -842,6 +885,11 @@ const RecordCollectionData = [
       fs: { id: "1803765" },
       ancestry: { id: "7613" },
       fmp: { id: "US Census 1810" },
+      mh: {
+        id: "10122",
+        title: "1810 United States Federal Census",
+        urlPart: "collection-10122/1810-united-states-federal-census",
+      },
     },
   },
   {
@@ -853,6 +901,11 @@ const RecordCollectionData = [
       fs: { id: "1803955" },
       ancestry: { id: "7734" },
       fmp: { id: "US Census 1820" },
+      mh: {
+        id: "10123",
+        title: "1820 United States Federal Census",
+        urlPart: "collection-10123/1820-united-states-federal-census",
+      },
     },
   },
   {
@@ -864,6 +917,11 @@ const RecordCollectionData = [
       fs: { id: "1803958" },
       ancestry: { id: "8058" },
       fmp: { id: "US Census 1830" },
+      mh: {
+        id: "10125",
+        title: "1830 United States Federal Census",
+        urlPart: "collection-10125/1830-united-states-federal-census",
+      },
     },
   },
   {
@@ -875,6 +933,11 @@ const RecordCollectionData = [
       fs: { id: "1786457" },
       ancestry: { id: "8057" },
       fmp: { id: "US Census 1840" },
+      mh: {
+        id: "10124",
+        title: "1840 United States Federal Census",
+        urlPart: "collection-10124/1840-united-states-federal-census",
+      },
     },
   },
   {
@@ -887,6 +950,11 @@ const RecordCollectionData = [
       fs: { id: "1401638" },
       ancestry: { id: "8054" },
       fmp: { id: "US Census 1850" },
+      mh: {
+        id: "10126",
+        title: "1850 United States Federal Census",
+        urlPart: "collection-10126/1850-united-states-federal-census",
+      },
     },
   },
   {
@@ -899,6 +967,11 @@ const RecordCollectionData = [
       fs: { id: "1473181" },
       ancestry: { id: "7667" },
       fmp: { id: "US Census 1860" },
+      mh: {
+        id: "10127",
+        title: "1860 United States Federal Census",
+        urlPart: "collection-10127/1860-united-states-federal-census",
+      },
     },
   },
   {
@@ -911,6 +984,11 @@ const RecordCollectionData = [
       fs: { id: "1438024" },
       ancestry: { id: "7163" },
       fmp: { id: "US Census 1870" },
+      mh: {
+        id: "10128",
+        title: "1870 United States Federal Census",
+        urlPart: "collection-10128/1870-united-states-federal-census",
+      },
     },
   },
   {
@@ -923,6 +1001,11 @@ const RecordCollectionData = [
       fs: { id: "1417683" },
       ancestry: { id: "6742" },
       fmp: { id: "US Census 1880" },
+      mh: {
+        id: "10129",
+        title: "1880 United States Federal Census",
+        urlPart: "collection-10129/1880-united-states-federal-census",
+      },
     },
   },
   {
@@ -938,6 +1021,11 @@ const RecordCollectionData = [
         title: "1890 United States Federal Census Fragment",
       },
       fmp: { id: "US Census 1890" },
+      mh: {
+        id: "10130",
+        title: "1890 United States Federal Census",
+        urlPart: "collection-10130/1890-united-states-federal-census",
+      },
     },
   },
   {
@@ -950,6 +1038,11 @@ const RecordCollectionData = [
       fs: { id: "1325221" },
       ancestry: { id: "7602" },
       fmp: { id: "US Census 1900" },
+      mh: {
+        id: "10131",
+        title: "1900 United States Federal Census",
+        urlPart: "collection-10131/1900-united-states-federal-census",
+      },
     },
   },
   {
@@ -962,6 +1055,11 @@ const RecordCollectionData = [
       fs: { id: "1727033" },
       ancestry: { id: "7884" },
       fmp: { id: "US Census 1910" },
+      mh: {
+        id: "10132",
+        title: "1910 United States Federal Census",
+        urlPart: "collection-10132/1910-united-states-federal-census",
+      },
     },
   },
   {
@@ -974,6 +1072,11 @@ const RecordCollectionData = [
       fs: { id: "1488411" },
       ancestry: { id: "6061" },
       fmp: { id: "US Census 1920" },
+      mh: {
+        id: "10133",
+        title: "1920 United States Federal Census",
+        urlPart: "collection-10133/1920-united-states-federal-census",
+      },
     },
   },
   {
@@ -986,6 +1089,11 @@ const RecordCollectionData = [
       fs: { id: "1810731" },
       ancestry: { id: "6224" },
       fmp: { id: "US Census 1930" },
+      mh: {
+        id: "10134",
+        title: "1930 United States Federal Census",
+        urlPart: "collection-10134/1930-united-states-federal-census",
+      },
     },
   },
   {
@@ -998,6 +1106,11 @@ const RecordCollectionData = [
       fs: { id: "2000219" },
       ancestry: { id: "2442" },
       fmp: { id: "US Census 1940" },
+      mh: {
+        id: "10053",
+        title: "1940 United States Federal Census",
+        urlPart: "collection-10053/1940-united-states-federal-census",
+      },
     },
   },
   {
@@ -1010,6 +1123,11 @@ const RecordCollectionData = [
       ancestry: { id: "62308" },
       fs: { id: "4464515" },
       // fmp: { id: "US Census 1950"}, // Not yet transcribed on FMP (as of 31 Aug 2022)
+      mh: {
+        id: "11006",
+        title: "1950 United States Federal Census",
+        urlPart: "collection-11006/1950-united-states-federal-census",
+      },
     },
   },
 
@@ -1027,6 +1145,11 @@ const RecordCollectionData = [
       fs: { id: "1834346" },
       ancestry: { id: "9807", altId: "" },
       baclac: { id: "Census of Lower Canada, 1825", altId: "census1825" },
+      mh: {
+        id: "30265",
+        title: "1825 Canada, Lower Canada Census",
+        urlPart: "collection-11006/1825-canada-lower-canada-census",
+      },
     },
   },
   {
@@ -1049,6 +1172,11 @@ const RecordCollectionData = [
       ancestry: { id: "9808" },
       fmp: { id: "Lower Canada Census 1842" },
       baclac: { id: "Census of Canada East, 1842", altId: "census1842-Canada-East" },
+      mh: {
+        id: "30264",
+        title: "1842 Canada, Lower Canada Census",
+        urlPart: "collection-30264/1842-canada-lower-canada-census",
+      },
     },
   },
   {
@@ -1071,6 +1199,7 @@ const RecordCollectionData = [
       ancestry: { id: "1061", altId: "1851Canada" },
       fmp: { id: "Canada Census 1851" },
       baclac: { id: "Census of 1851 (Canada East, Canada West, New Brunswick and Nova Scotia)", altId: "census1851" },
+      mh: { id: "10522", title: "1851 Canada Census", urlPart: "collection-10522/1851-canada-census" },
     },
   },
   {
@@ -1086,6 +1215,7 @@ const RecordCollectionData = [
         id: "Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)",
         altId: "census1861",
       },
+      mh: { id: "10521", title: "1861 Canada Census", urlPart: "collection-10521/1861-canada-census" },
     },
   },
   {
@@ -1098,6 +1228,7 @@ const RecordCollectionData = [
       ancestry: { id: "1578" },
       fmp: { id: "Canada Census 1871" },
       baclac: { id: "Census of Canada, 1871", altId: "census1871" },
+      mh: { id: "10520", title: "1871 Canada Census", urlPart: "collection-10520/1871-canada-census" },
     },
   },
   {
@@ -1119,6 +1250,7 @@ const RecordCollectionData = [
       ancestry: { id: "1577", altId: "1881Canada" },
       fmp: { id: "Canada Census 1881" },
       baclac: { id: "Census of Canada, 1881", altId: "census1881" },
+      mh: { id: "10441", title: "1881 Canada Census", urlPart: "collection-10441/1881-canada-census" },
     },
   },
   {
@@ -1131,6 +1263,7 @@ const RecordCollectionData = [
       ancestry: { id: "1274" },
       fmp: { id: "Canada Census 1891" },
       baclac: { id: "Census of Canada, 1891", altId: "census1891" },
+      mh: { id: "10440", title: "1891 Canada Census", urlPart: "collection-10440/1891-canada-census" },
     },
   },
   {
@@ -1156,6 +1289,7 @@ const RecordCollectionData = [
         searchQueryFields: { maritalstatus: "maritalstatus" },
       },
       baclac: { id: "Census of Canada, 1901", altId: "census1901" },
+      mh: { id: "10448", title: "1901 Canada Census", urlPart: "collection-10448/1901-canada-census" },
     },
   },
   {
@@ -1178,6 +1312,7 @@ const RecordCollectionData = [
       ancestry: { id: "8947" },
       fmp: { id: "Canada Census 1911" },
       baclac: { id: "Census of Canada, 1911", altId: "census1911" },
+      mh: { id: "10447", title: "1911 Canada Census", urlPart: "collection-10447/1911-canada-census" },
     },
   },
   {
@@ -1189,6 +1324,7 @@ const RecordCollectionData = [
     sites: {
       ancestry: { id: "8991" },
       baclac: { id: "Census of Canada, 1921", altId: "census1921" },
+      mh: { id: "10690", title: "1921 Canada Census", urlPart: "collection-10690/1921-canada-census" },
     },
   },
   {
@@ -1199,6 +1335,7 @@ const RecordCollectionData = [
     householdTableColumns: ["name", "gender", "age", "relationship", "maritalStatus", "birthPlace", "occupation"],
     sites: {
       ancestry: { id: "62640" },
+      mh: { id: "20654", title: "1931 Canada Census", urlPart: "collection-20654/1931-canada-census" },
     },
   },
   {

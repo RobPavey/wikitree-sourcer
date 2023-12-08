@@ -2585,7 +2585,22 @@ class GeneralizedData {
 
   inferEventPlace() {
     if (this.eventPlace) {
-      return this.eventPlace.placeString;
+      if (this.eventPlace.placeString) {
+        return this.eventPlace.placeString;
+      }
+
+      function addTerm(term) {
+        if (term) {
+          if (placeString) {
+            placeString += ", ";
+          }
+          placeString += term;
+        }
+      }
+      let placeString = "";
+      addTerm(this.eventPlace.county);
+      addTerm(this.eventPlace.country);
+      return placeString;
     }
   }
 

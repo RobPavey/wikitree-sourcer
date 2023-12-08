@@ -292,7 +292,7 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
         listElement.appendChild(br);
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.checked = true;
+        checkbox.checked = parameters.father;
         checkbox.addEventListener("change", function () {
           if (this.checked) {
             parameters.father = true;
@@ -320,7 +320,7 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
         listElement.appendChild(br);
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.checked = true;
+        checkbox.checked = parameters.mother;
         checkbox.addEventListener("change", function () {
           if (this.checked) {
             parameters.mother = true;
@@ -543,6 +543,8 @@ function addWarningMessages(data, siteData, listElement, parameters) {
 }
 
 function setupParametersElements(data, siteData, listElement, parameters) {
+  console.log("setupParametersElements, parameters is:");
+  console.log(parameters);
   // remove any existing children (this function gets called recursively)
   while (listElement.firstChild) {
     listElement.removeChild(listElement.firstChild);

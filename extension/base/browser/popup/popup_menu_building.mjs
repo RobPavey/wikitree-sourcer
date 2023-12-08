@@ -1612,14 +1612,14 @@ function addSameRecordMenuItem(menu, data, siteName, searchFunction, equivSiteNa
 
   if (gd.sourceType == "record") {
     if (gd.collectionData && gd.collectionData.id) {
-      let fsCollectionId = RC.mapCollectionId(
+      let collectionId = RC.mapCollectionId(
         gd.sourceOfData,
         gd.collectionData.id,
         siteName,
         gd.inferEventCountry(),
         gd.inferEventYear()
       );
-      if (fsCollectionId) {
+      if (collectionId) {
         addMenuItem(menu, "Search the same collection for the same record", searchFunction);
         return true;
       }

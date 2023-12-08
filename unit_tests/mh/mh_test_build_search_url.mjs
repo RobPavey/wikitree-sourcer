@@ -29,6 +29,7 @@ const regressionData = [
   {
     caseName: "ancestry_england_marriage_reg_handford-3_sc",
     inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
+    typeOfSearch: "SameCollection",
   },
   {
     caseName: "mh_xx_person_charles_kimberlin",
