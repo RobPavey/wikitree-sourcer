@@ -319,7 +319,8 @@ function buildSearchUrl(buildUrlInput) {
 
   // spouses/marriages. Only add if searching for same record/collection or with parameters
   if (parameters || sameCollection) {
-    if (gd.spouses && gd.spouses.length > 0) {
+    // census search doesn't work with spouse specified
+    if (gd.spouses && gd.spouses.length > 0 && gd.recordType != RT.Census) {
       let spouse = undefined;
       if (parameters) {
         if (parameters.spouseIndex != -1 && parameters.spouseIndex < gd.spouses.length) {
@@ -393,11 +394,17 @@ function buildSearchUrl(buildUrlInput) {
     // In theory we could add volume and page. But it seems like that could be collection specific.
 
     if (gd.collectionData) {
-      builder.addVolume(gd.collectionData.volume);
-      builder.addPage(gd.collectionData.page);
-      builder.addPiece(gd.collectionData.piece);
-      builder.addFolio(gd.collectionData.folio);
       builder.addParish(gd.collectionData.parish);
+      builder.addVolume(gd.collectionData.volume);
+
+      // Scotland census has Folio and Page on FS but not on FMP
+      // This is hard to handle through collections data because FMP census collection
+      // is for England, Wales and Scotland
+      if (!(gd.recordType == RT.Census && gd.inferEventCountry() == "Scotland")) {
+        builder.addPage(gd.collectionData.page);
+        builder.addPiece(gd.collectionData.piece);
+        builder.addFolio(gd.collectionData.folio);
+      }
     }
 
     builder.addMaritalStatus(gd.maritalStatus);
