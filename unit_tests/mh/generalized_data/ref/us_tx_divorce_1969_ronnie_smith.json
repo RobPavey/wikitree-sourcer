@@ -5,6 +5,7 @@
   "name": {
     "name": "Ronnie L Smith"
   },
+  "personGender": "male",
   "eventDate": {
     "dateString": "25 Apr 1969"
   },
@@ -24,7 +25,8 @@
       "marriageDate": {
         "dateString": "11 Sep 1965"
       },
-      "age": "22"
+      "age": "22",
+      "personGender": "female"
     }
   ],
   "collectionData": {

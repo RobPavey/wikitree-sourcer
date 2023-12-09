@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Australia, New South Wales Marriage Index, 1788-1966\"<br/>\n[https://www.myheritage.com/research/record-10915-31089/charles-chamberlain-and-elizabeth-potter-in-australia-new-south-wales-marriage-index MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Chamberlain marriage to Elizabeth Potter in 1851 in Sydney, St Andrew's Scots Church, New South Wales, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Charles married Elizabeth Potter in 1851 in Sydney, St Andrew's Scots Church, New South Wales, Australia.<ref>\n'''Marriage''':\n\"Australia, New South Wales Marriage Index, 1788-1966\"<br/>\n[https://www.myheritage.com/research/record-10915-31089/charles-chamberlain-and-elizabeth-potter-in-australia-new-south-wales-marriage-index MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Chamberlain marriage to Elizabeth Potter in 1851 in Sydney, St Andrew's Scots Church, New South Wales, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Australia, New South Wales Marriage Index, 1788-1966\"<br/>[https://www.myheritage.com/research/record-10915-31089/charles-chamberlain-and-elizabeth-potter-in-australia-new-south-wales-marriage-index MyHeritage Record] (accessed 6 May 2021)<br/>Charles Chamberlain marriage to Elizabeth Potter in 1851 in Sydney, St Andrew's Scots Church, New South Wales, Australia.",
+    "type": "source"
+  }
+}

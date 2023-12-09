@@ -27,6 +27,14 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 import { GD } from "../../../base/core/generalize_data_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
+// for some common collections specify the exact record type for every record
+// in the collection
+const collectionIdToRecordType = {
+  10092: RT.BirthRegistration,
+  10442: RT.BirthRegistration,
+  10443: RT.MarriageRegistration,
+};
+
 const recordTypeData = [
   // put ones with Document type first
   {
@@ -48,6 +56,10 @@ const recordTypeData = [
     recordType: RT.Census,
     collectionTitleMatches: [["Census"]],
     requiredRecordSections: [["Census"]],
+  },
+  {
+    recordType: RT.BirthRegistration,
+    collectionTitleMatches: [["England & Wales, Birth Index, 1837-2005"], ["Birth", "GRO Index"]],
   },
   {
     recordType: RT.MarriageRegistration,
@@ -72,8 +84,16 @@ const recordTypeData = [
 
   // matches using required fields only
   {
+    recordType: RT.Baptism,
+    requiredFields: [["Baptism date", "Baptism place"], ["Baptism"], ["Christening"]],
+  },
+  {
     recordType: RT.Marriage,
     requiredFields: [["Marriage date", "Marriage place"], ["Marriage"]],
+  },
+  {
+    recordType: RT.Birth,
+    requiredFields: [["Birth date", "Birth place"], ["Birth"]],
   },
 ];
 
@@ -82,6 +102,9 @@ const typeDataEventLabels = {
   Immigration: ["Arrival"],
   Census: ["Residence"],
   Marriage: ["Marriage"],
+  MarriageRegistration: ["Marriage"],
+  Birth: ["Birth"],
+  BirthRegistration: ["Birth"],
   Divorce: ["Divorce"],
 };
 
@@ -89,12 +112,16 @@ const typeDataEventDateLabels = {
   Directory: ["ABN last updated", "ABN status date"],
   Marriage: ["Marriage date"],
   MarriageRegistration: ["Marriage date"],
+  Birth: ["Birth date"],
+  BirthRegistration: ["Birth date"],
 };
 
 const typeDataEventPlaceLabels = {
   Directory: ["Residence"],
   Marriage: ["Marriage place"],
   MarriageRegistration: ["Marriage place"],
+  Birth: ["Birth place"],
+  BirthRegistration: ["Birth place"],
 };
 
 function cleanMhDate(dateString) {
@@ -121,14 +148,20 @@ function cleanMhDate(dateString) {
       return newString;
     }
     return dateString;
-  } else if (dateString.startsWith("Between")) {
-  } else if (/^[A-Z-a-z][a-z][a-z]\s+\d\d?\s+\d\d\d\d$/.test(dateString)) {
-    // e.g. Aug 22 1822
-    let newString = dateString.replace(/([A-Z-a-z][a-z][a-z])\s+(\d\d?)\s+(\d\d\d\d)/, "$2 $1 $3");
+  } else if (/^[A-Z-a-z][a-z][a-z]+\s+\d\d?\s+\d\d\d\d$/.test(dateString)) {
+    // e.g. Aug 22 1822 or July 4 1961
+    let newString = dateString.replace(/([A-Z-a-z][a-z][a-z]+)\s+(\d\d?)\s+(\d\d\d\d)/, "$2 $1 $3");
+    if (newString) {
+      return newString;
+    }
+  } else if (/^Between \d\d\d\d and \d\d\d\d$/.test(dateString)) {
+    let newString = dateString.replace(/^Between (\d\d\d\d) and (\d\d\d\d)$/, "$1-$2");
     if (newString) {
       return newString;
     }
   }
+
+  return dateString;
 }
 
 function cleanMhRelationship(string) {
@@ -164,6 +197,7 @@ class MhEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
     if (ed.recordData) {
+      this.setupUrlParts();
       this.determineSourceTypeAndRecordType();
 
       this.setupCoupleData();
@@ -179,6 +213,14 @@ class MhEdReader extends ExtractedDataReader {
       this.sourceType = "profile";
     } else if (ed.pageType == "record") {
       this.sourceType = "record";
+
+      if (this.urlParts.collectionId) {
+        let rtFromCollection = collectionIdToRecordType[this.urlParts.collectionId];
+        if (rtFromCollection) {
+          this.recordType = rtFromCollection;
+          return;
+        }
+      }
 
       for (let typeData of recordTypeData) {
         if (typeData.documentTypes) {
@@ -395,8 +437,20 @@ class MhEdReader extends ExtractedDataReader {
           person.name = mainValue["Name"];
         }
 
+        if (mainValue["Age"]) {
+          person.age = cleanMhAge(mainValue["Age"]);
+        }
+
         if (mainValue["Residence"]) {
           person.residence = mainValue["Residence"];
+        }
+
+        if (mainValue["Father"]) {
+          person.fatherName = mainValue["Father"];
+        }
+
+        if (mainValue["Mother"]) {
+          person.motherName = mainValue["Mother"];
         }
       }
 
@@ -412,11 +466,13 @@ class MhEdReader extends ExtractedDataReader {
         }
       }
 
-      if (!person.age && birthDateValue) {
+      if (!person.age && (birthDateValue || mainValue["Birth"])) {
         if (birthDateValue.value) {
           person.birthDateString = birthDateValue.value;
         } else if (birthDateValue.dateString) {
           person.birthDateString = birthDateValue.dateString;
+        } else if (mainValue["Birth"]) {
+          person.birthDateString = mainValue["Birth"];
         }
       }
 
@@ -453,6 +509,9 @@ class MhEdReader extends ExtractedDataReader {
     );
     coupleData.wife = buildPersonData(wifeMainValue, wifeMaritalStatusValue, wifeAgeValue, wifeBirthDateValue);
 
+    coupleData.husband.gender = "male";
+    coupleData.wife.gender = "female";
+
     if (coupleData.husband.name == primaryNameString) {
       coupleData.primaryPerson = coupleData.husband;
       coupleData.spouse = coupleData.wife;
@@ -478,6 +537,36 @@ class MhEdReader extends ExtractedDataReader {
     }
 
     this.nameParts = this.separateMhNameIntoParts(nameString);
+  }
+
+  setupUrlParts() {
+    this.urlParts = {};
+
+    let url = this.ed.url;
+    if (!url) {
+      return;
+    }
+
+    // Example record URL:
+    // https://www.myheritage.com/research/record-10069-35470791/ronnie-l-smith-and-linda-smith-in-texas-marriages-divorces#
+    // can also look like:
+    // https://www.myheritage.com/research/record-20618-3185920-F/frank-c-gemperline-and-edna-schwamberger-in-ohio-marriages
+    // Example person profile URL:
+    // https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees
+
+    let collectionId = "";
+    if (/^https?\:\/\/.+\.myheritage.+\/research\/record\-\d+\-\d+(?:\-\w+)?\//.test(url)) {
+      let collectionPart = url.replace(
+        /^https?\:\/\/.+\.myheritage.+\/research\/record\-(\d+)\-\d+(?:\-\w+)?\/.+$/,
+        "$1"
+      );
+      if (collectionPart && collectionPart != url) {
+        collectionId = collectionPart;
+      }
+    }
+    if (collectionId) {
+      this.urlParts.collectionId = collectionId;
+    }
   }
 
   separateMhNameIntoParts(nameString) {
@@ -527,6 +616,38 @@ class MhEdReader extends ExtractedDataReader {
     return nameObj;
   }
 
+  makeDateObjFromMhValueObj(valueObj) {
+    if (!valueObj) {
+      return undefined;
+    }
+
+    if (valueObj.dateString) {
+      return this.makeDateObjFromDateString(cleanMhDate(valueObj.dateString));
+    }
+
+    if (valueObj.value) {
+      return this.makeDateObjFromDateString(cleanMhDate(valueObj.value));
+    }
+
+    if (valueObj["Year"]) {
+      return this.makeDateObjFromYear(cleanMhDate(valueObj["Year"]));
+    }
+  }
+
+  makePlaceObjFromMhValueObj(valueObj) {
+    if (!valueObj) {
+      return undefined;
+    }
+
+    if (valueObj.placeString) {
+      return this.makePlaceObjFromFullPlaceName(valueObj.placeString);
+    }
+
+    if (valueObj["District"]) {
+      return this.makePlaceObjFromFullPlaceName(valueObj["District"]);
+    }
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -561,47 +682,40 @@ class MhEdReader extends ExtractedDataReader {
       return gender.toLowerCase();
     }
 
+    if (this.coupleData && this.coupleData.primaryPerson && this.coupleData.primaryPerson.gender) {
+      return this.coupleData.primaryPerson.gender;
+    }
+
     return "";
   }
 
   getEventDateObj() {
-    let dateString = "";
     let valueObj = this.getEventDataValue();
-    if (valueObj && valueObj.dateString) {
-      dateString = valueObj.dateString;
+    let dateObj = this.makeDateObjFromMhValueObj(valueObj);
+    if (dateObj) {
+      return dateObj;
     }
 
-    if (!dateString) {
-      valueObj = this.getEventDateValue();
-      if (valueObj && valueObj.value) {
-        dateString = valueObj.value;
-      }
-    }
-
-    if (dateString) {
-      return this.makeDateObjFromDateString(cleanMhDate(dateString));
+    valueObj = this.getEventDateValue();
+    dateObj = this.makeDateObjFromMhValueObj(valueObj);
+    if (dateObj) {
+      return dateObj;
     }
 
     return undefined;
   }
 
   getEventPlaceObj() {
-    let placeString = "";
-
     let valueObj = this.getEventDataValue();
-    if (valueObj && valueObj.placeString) {
-      placeString = valueObj.placeString;
+    let placeObj = this.makePlaceObjFromMhValueObj(valueObj);
+    if (placeObj) {
+      return placeObj;
     }
 
-    if (!placeString) {
-      valueObj = this.getEventPlaceValue();
-      if (valueObj && valueObj.placeString) {
-        placeString = valueObj.placeString;
-      }
-    }
-
-    if (placeString) {
-      return this.makePlaceObjFromFullPlaceName(placeString);
+    valueObj = this.getEventPlaceValue();
+    placeObj = this.makePlaceObjFromMhValueObj(valueObj);
+    if (placeObj) {
+      return placeObj;
     }
 
     return undefined;
@@ -638,6 +752,11 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getMothersMaidenName() {
+    let valueObj = this.getRecordDataValueByKeysOrLabels(["mother-last-name"], ["Mother's maiden name"]);
+    if (valueObj && valueObj.value) {
+      return valueObj.value;
+    }
+
     return "";
   }
 
@@ -646,8 +765,9 @@ class MhEdReader extends ExtractedDataReader {
     // which one to use depends on which person is primary
 
     let valueObj = this.getBirthDataValue();
-    if (valueObj && valueObj.dateString) {
-      return this.makeDateObjFromDateString(cleanMhDate(valueObj.dateString));
+    let dateObj = this.makeDateObjFromMhValueObj(valueObj);
+    if (dateObj) {
+      return dateObj;
     }
 
     return undefined;
@@ -664,8 +784,9 @@ class MhEdReader extends ExtractedDataReader {
 
   getDeathDateObj() {
     let valueObj = this.getDeathDataValue();
-    if (valueObj && valueObj.dateString) {
-      return this.makeDateObjFromDateString(cleanMhDate(valueObj.dateString));
+    let dateObj = this.makeDateObjFromMhValueObj(valueObj);
+    if (dateObj) {
+      return dateObj;
     }
 
     return undefined;
@@ -699,6 +820,10 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getRegistrationDistrict() {
+    let district = this.getRecordDataValueByKeysOrLabels(["registration"], ["Registration"]);
+    if (district && district.value) {
+      return district.value;
+    }
     return "";
   }
 
@@ -767,6 +892,21 @@ class MhEdReader extends ExtractedDataReader {
               if (spouseData.age) {
                 spouse.age = spouseData.age;
               }
+              if (spouseData.gender) {
+                spouse.personGender = spouseData.gender;
+              }
+
+              if (spouseData.fatherName || spouseData.motherName) {
+                spouse.parents = {};
+                let fatherNameObj = this.makeNameObjFromMhFullName(spouseData.fatherName);
+                if (fatherNameObj) {
+                  spouse.parents.father = { name: fatherNameObj };
+                }
+                let motherNameObj = this.makeNameObjFromMhFullName(spouseData.motherName);
+                if (motherNameObj) {
+                  spouse.parents.mother = { name: motherNameObj };
+                }
+              }
             }
           }
 
@@ -808,24 +948,39 @@ class MhEdReader extends ExtractedDataReader {
     if (this.recordType != RT.Census) {
       let fatherValue = this.getRecordDataValue(["Father"]);
       let motherValue = this.getRecordDataValue(["Mother"]);
+      let fatherName = "";
+      let motherName = "";
       if (fatherValue || motherValue) {
-        let parents = {};
         if (fatherValue) {
-          let fatherName = fatherValue.value;
-          if (fatherName) {
-            let fatherNameObj = this.makeNameObjFromMhFullName(fatherName);
-            if (fatherNameObj) {
-              parents.father = { name: fatherNameObj };
-            }
-          }
+          fatherName = fatherValue.value;
         }
         if (motherValue) {
-          let motherName = motherValue.value;
-          if (motherName) {
-            let motherNameObj = this.makeNameObjFromMhFullName(motherName);
-            if (motherNameObj) {
-              parents.mother = { name: motherNameObj };
-            }
+          motherName = motherValue.value;
+        }
+      } else {
+        if (this.coupleData && this.coupleData.primaryPerson) {
+          let primaryPerson = this.coupleData.primaryPerson;
+          if (primaryPerson.fatherName) {
+            fatherName = primaryPerson.fatherName;
+          }
+          if (primaryPerson.motherName) {
+            motherName = primaryPerson.motherName;
+          }
+        }
+      }
+
+      if (fatherName || motherName) {
+        let parents = {};
+        if (fatherName) {
+          let fatherNameObj = this.makeNameObjFromMhFullName(fatherName);
+          if (fatherNameObj) {
+            parents.father = { name: fatherNameObj };
+          }
+        }
+        if (motherName) {
+          let motherNameObj = this.makeNameObjFromMhFullName(motherName);
+          if (motherNameObj) {
+            parents.mother = { name: motherNameObj };
           }
         }
         return parents;
@@ -965,40 +1120,24 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
-    let url = this.ed.url;
-    if (!url) {
-      return undefined;
-    }
-    // Example record URL:
-    // https://www.myheritage.com/research/record-10069-35470791/ronnie-l-smith-and-linda-smith-in-texas-marriages-divorces#
-    // Example person profile URL:
-    // https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees
-
-    let collectionId = "";
-    if (/^https?\:\/\/.+\.myheritage.+\/research\/record\-\d+\-\d+\//.test(url)) {
-      let collectionPart = url.replace(/^https?\:\/\/.+\.myheritage.+\/research\/record\-(\d+)\-\d+\/.+$/, "$1");
-      if (collectionPart && collectionPart != url) {
-        collectionId = collectionPart;
-      }
-    }
-
+    let collectionId = this.urlParts.collectionId;
     if (collectionId) {
       let collectionData = {
         id: collectionId,
       };
 
+      function addRef(fieldName, value) {
+        if (value) {
+          collectionData[fieldName] = value;
+        }
+      }
+
       if (this.ed.recordSections) {
         let censusSection = this.ed.recordSections["Census"];
         if (censusSection) {
-          function addRefForCensusValue(fieldName, value) {
-            if (value) {
-              collectionData[fieldName] = value;
-            }
-          }
-
           function addRefForCensusKey(fieldName, key) {
             let value = censusSection[key];
-            addRefForCensusValue(fieldName, value);
+            addRef(fieldName, value);
           }
 
           addRefForCensusKey("district", "Registration district");
@@ -1014,15 +1153,41 @@ class MhEdReader extends ExtractedDataReader {
             let book = pageString.replace(/^(\d+)\\\d+$/, "$1");
             let page = pageString.replace(/^\d+\\(\d+)$/, "$1");
             if (book && page && book != pageString && page != pageString) {
-              addRefForCensusValue("book", book);
-              addRefForCensusValue("page", page);
+              addRef("book", book);
+              addRef("page", page);
             } else {
-              addRefForCensusValue("page", pageString);
+              addRef("page", pageString);
             }
           } else {
-            addRefForCensusValue("page", pageString);
+            addRef("page", pageString);
           }
         }
+      }
+
+      function addRefForRecordDataKeysOrLabels(reader, fieldName, keys, labels) {
+        let valueObj = reader.getRecordDataValueByKeysOrLabels(keys, labels);
+        if (valueObj) {
+          let value = "";
+          if (valueObj.value) {
+            value = valueObj.value;
+          }
+          addRef(fieldName, value);
+        }
+      }
+
+      addRefForRecordDataKeysOrLabels(this, "page", ["Page", "page"], ["Page"]);
+      addRefForRecordDataKeysOrLabels(this, "volume", ["Vol", "vol"], ["Volume"]);
+
+      let registrationObj = this.getRecordDataValueByKeysOrLabels(["registration"], ["Registration"]);
+      if (registrationObj) {
+        function addRefForRegistrationKey(fieldName, key) {
+          let value = registrationObj[key];
+          addRef(fieldName, value);
+        }
+
+        addRefForRegistrationKey("book", "Book");
+        addRefForRegistrationKey("page", "Page");
+        addRefForRegistrationKey("number", "Number");
       }
 
       return collectionData;

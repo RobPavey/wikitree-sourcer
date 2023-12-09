@@ -13,6 +13,9 @@
   "birthPlace": {
     "placeString": "Atherstone, Warwickshire, England"
   },
+  "deathDate": {
+    "dateString": "18 Apr 1860"
+  },
   "spouses": [
     {
       "name": {

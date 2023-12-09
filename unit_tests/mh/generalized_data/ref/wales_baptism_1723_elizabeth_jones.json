@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "Elizabeth Jones"
+  },
+  "eventDate": {
+    "dateString": "16 Apr 1723"
+  },
+  "eventPlace": {
+    "placeString": "St Asaph, Flintshire, Wales"
+  },
+  "lastNameAtBirth": "Jones",
+  "birthDate": {
+    "dateString": "1723"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "David Jones"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "10929",
+    "page": "22"
+  },
+  "hasValidData": true
+}

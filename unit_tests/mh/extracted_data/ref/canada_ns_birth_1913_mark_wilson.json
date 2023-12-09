@@ -1,0 +1,33 @@
+{
+  "url": "https://www.myheritage.com/research/record-10904-217005/mark-wilson-in-canada-nova-scotia-birth-index",
+  "success": true,
+  "collectionTitle": "Canada, Nova Scotia, Birth Index, 1908-1917",
+  "pageType": "record",
+  "recordTitle": "Mark Wilson",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Mark Wilson"
+    },
+    "birth": {
+      "label": "Birth",
+      "dateString": "Nov 27 1913",
+      "placeString": "Broughton, Cape Breton, Nova Scotia, Canada"
+    },
+    "gender": {
+      "label": "Gender",
+      "value": "Male"
+    },
+    "registration": {
+      "label": "Registration",
+      "Year": "1913",
+      "Book": "1913",
+      "Page": "50,600,207",
+      "Number": "50,600,209"
+    },
+    "reference": {
+      "label": "Reference",
+      "value": "Historical Vital Statistics Nova Scotia Archives"
+    }
+  }
+}

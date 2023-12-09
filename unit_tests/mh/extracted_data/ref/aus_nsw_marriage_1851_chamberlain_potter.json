@@ -1,0 +1,26 @@
+{
+  "url": "https://www.myheritage.com/research/record-10915-31089/charles-chamberlain-and-elizabeth-potter-in-australia-new-south-wales-marriage-index",
+  "success": true,
+  "collectionTitle": "Australia, New South Wales Marriage Index, 1788-1966",
+  "pageType": "record",
+  "recordTitle": "Charles Chamberlain & Elizabeth Potter",
+  "recordData": {
+    "groom": {
+      "label": "Groom",
+      "value": "Charles Chamberlain"
+    },
+    "bride": {
+      "label": "Bride",
+      "value": "Elizabeth Potter"
+    },
+    "marriage": {
+      "label": "Marriage",
+      "Year": "1851",
+      "District": "Sydney, St Andrew's Scots Church, New South Wales, Australia"
+    },
+    "registration": {
+      "label": "Registration",
+      "value": "New South Wales, Australia"
+    }
+  }
+}

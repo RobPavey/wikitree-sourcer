@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Canada, Nova Scotia, Birth Index, 1908-1917\"<br/>\nReference: Historical Vital Statistics Nova Scotia Archives<br/>\n[https://www.myheritage.com/research/record-10904-217005/mark-wilson-in-canada-nova-scotia-birth-index MyHeritage Record] (accessed 6 May 2021)<br/>\nMark Wilson born on 27 Nov 1913 in Broughton, Cape Breton, Nova Scotia, Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mark was born on 27 November 1913 in Broughton, Cape Breton, Nova Scotia, Canada.<ref>\n'''Birth''':\n\"Canada, Nova Scotia, Birth Index, 1908-1917\"<br/>\nReference: Historical Vital Statistics Nova Scotia Archives<br/>\n[https://www.myheritage.com/research/record-10904-217005/mark-wilson-in-canada-nova-scotia-birth-index MyHeritage Record] (accessed 6 May 2021)<br/>\nMark Wilson born on 27 Nov 1913 in Broughton, Cape Breton, Nova Scotia, Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Canada, Nova Scotia, Birth Index, 1908-1917\"<br/>Reference: Historical Vital Statistics Nova Scotia Archives<br/>[https://www.myheritage.com/research/record-10904-217005/mark-wilson-in-canada-nova-scotia-birth-index MyHeritage Record] (accessed 6 May 2021)<br/>Mark Wilson born on 27 Nov 1913 in Broughton, Cape Breton, Nova Scotia, Canada.",
+    "type": "source"
+  }
+}

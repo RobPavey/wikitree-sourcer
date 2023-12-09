@@ -3,33 +3,33 @@
   "sourceType": "record",
   "recordType": "MarriageRegistration",
   "name": {
-    "name": "Joseph O'Connor"
+    "name": "Henry Charles Chamberlin"
   },
   "eventDate": {
-    "quarter": 3,
-    "yearString": "1914"
+    "quarter": 2,
+    "yearString": "1902"
   },
   "eventPlace": {
-    "placeString": "St Olave Bermondsey, England"
+    "placeString": "Smallburgh, Norfolk, England"
   },
   "spouses": [
     {
       "name": {
-        "name": "Daisy L Crockson"
+        "name": "Eliza Jane Abigail"
       },
       "marriageDate": {
-        "quarter": 3,
-        "yearString": "1914"
+        "quarter": 2,
+        "yearString": "1902"
       },
       "marriagePlace": {
-        "placeString": "St Olave Bermondsey, England"
+        "placeString": "Smallburgh, Norfolk, England"
       }
     }
   ],
   "collectionData": {
     "id": "10443",
-    "page": "427",
-    "volume": "1d"
+    "page": "63",
+    "volume": "4b"
   },
   "hasValidData": true
 }

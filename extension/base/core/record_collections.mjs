@@ -97,6 +97,11 @@ const RecordCollectionData = [
     isDeath: true,
     sites: {
       ancestry: { id: "8782", dates: { from: 1916, to: 2007 } },
+      mh: {
+        id: "10092",
+        title: "England & Wales Births, GRO Indexes, 1911 - 1954",
+        urlPart: "collection-10092/england-wales-births-gro-indexes-1911-1954",
+      },
     },
   },
   {

@@ -27,16 +27,22 @@ import { DataString } from "../../../base/core/data_string.mjs";
 
 const refLabels = [
   "Accession #",
-  "Gale Id",
-  "Source publication code",
-  "Source",
-  "Indexing Project (Batch) Number",
-  "System Origin",
-  "GS Film number",
-  "Volume",
-  "Page",
-  "Reference ID",
+  "Certificate",
   "File #",
+  "Gale Id",
+  "GS Film number",
+  "Indexing Project (Batch) Number",
+  "NRS Reference",
+  "Page",
+  "Page #",
+  "Reference",
+  "Reference ID",
+  "Registration #",
+  "Source",
+  "Source publication code",
+  "System Origin",
+  "Town #",
+  "Volume",
 ];
 
 function removeUnwantedKeysForDataString(keys, recordData) {

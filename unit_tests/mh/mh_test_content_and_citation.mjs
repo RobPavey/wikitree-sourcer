@@ -32,12 +32,28 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "aus_nsw_marriage_1851_chamberlain_potter",
+    url: "https://www.myheritage.com/research/record-10915-31089/charles-chamberlain-and-elizabeth-potter-in-australia-new-south-wales-marriage-index",
+  },
+  {
     caseName: "australia_business_register_2010_barbara_jones",
     url: "https://www.myheritage.com/research/record-20422-391107/barbara-jones-in-australia-business-register",
   },
   {
     caseName: "canada_marriage_1890_ronald_macdonald",
     url: "https://www.myheritage.com/research/record-20440-604/ronald-macdonald-and-annie-alberta-macdonald-in-canada-prince-edward-island-marriages",
+  },
+  {
+    caseName: "canada_ns_birth_1913_mark_wilson",
+    url: "https://www.myheritage.com/research/record-10904-217005/mark-wilson-in-canada-nova-scotia-birth-index",
+  },
+  {
+    caseName: "england_birth_gro_1954_david_jones",
+    url: "https://www.myheritage.com/research/record-10092-120140340/david-jones-in-england-wales-births-gro-indexes",
+  },
+  {
+    caseName: "england_birth_reg_1842_david_jones",
+    url: "https://www.myheritage.com/research/record-10442-110136566/david-jones-in-england-wales-birth-index",
   },
   {
     caseName: "england_births_1826_charles_kimberlin",
@@ -52,8 +68,20 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-10151-40011245/william-henry-pavey-in-1851-england-wales-census",
   },
   {
+    caseName: "england_marriage_reg_1902_chamberlin_abigail",
+    url: "https://www.myheritage.com/research/record-10443-15542228/henry-charles-chamberlin-in-england-wales-marriage-index",
+  },
+  {
     caseName: "england_marriage_reg_1914_joseph_oconnor",
     url: "https://www.myheritage.com/research/record-10443-22304592/joseph-oconnor-in-england-wales-marriage-index",
+  },
+  {
+    caseName: "us_nc_birth_1961_mark_wilson",
+    url: "https://www.myheritage.com/research/record-10779-191744/mark-edward-wilson-in-north-carolina-mecklenburg-county-birth-index",
+  },
+  {
+    caseName: "us_oh_marriage_1921_gemperline",
+    url: "https://www.myheritage.com/research/record-20618-3185920-F/frank-c-gemperline-and-edna-schwamberger-in-ohio-marriages",
   },
   {
     caseName: "us_pa_immigration_1882_charles_kimberlin",
@@ -62,6 +90,10 @@ const regressionData = [
   {
     caseName: "us_tx_divorce_1969_ronnie_smith",
     url: "https://www.myheritage.com/research/record-10069-35470791/ronnie-l-smith-and-linda-smith-in-texas-marriages-divorces",
+  },
+  {
+    caseName: "wales_baptism_1723_elizabeth_jones",
+    url: "https://www.myheritage.com/research/record-10929-1352539-F/david-jones-in-wales-parish-births-baptisms",
   },
 
   // Family Tree person pages

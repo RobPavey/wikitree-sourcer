@@ -1,0 +1,30 @@
+{
+  "url": "https://www.myheritage.com/research/record-10443-15542228/henry-charles-chamberlin-in-england-wales-marriage-index",
+  "success": true,
+  "collectionTitle": "England & Wales, Marriage Index, 1837-2005",
+  "pageType": "record",
+  "recordTitle": "Henry Charles Chamberlin",
+  "recordData": {
+    "marriage-date": {
+      "label": "Marriage date",
+      "value": "Apr-May-June 1902"
+    },
+    "marriage": {
+      "label": "Marriage place",
+      "placeString": "Smallburgh, Norfolk, England"
+    },
+    "spouse": {
+      "label": "Spouse (implied)",
+      "value": "Eliza Jane Abigail"
+    },
+    "volume-number": {
+      "label": "Volume",
+      "value": "4b"
+    },
+    "volume-page": {
+      "label": "Page",
+      "value": "63"
+    }
+  },
+  "recordSections": {}
+}

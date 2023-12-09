@@ -1,0 +1,17 @@
+{
+  "url": "https://www.myheritage.com/research/record-10779-191744/mark-edward-wilson-in-north-carolina-mecklenburg-county-birth-index",
+  "success": true,
+  "collectionTitle": "North Carolina, Mecklenburg County Birth Index, 1913-2019",
+  "pageType": "record",
+  "recordTitle": "Mark Edward Wilson",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Mark Edward Wilson"
+    },
+    "birth": {
+      "label": "Birth",
+      "dateString": "July 4 1961"
+    }
+  }
+}

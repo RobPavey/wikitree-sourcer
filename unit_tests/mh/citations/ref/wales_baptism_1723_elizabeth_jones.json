@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Wales, Parish Births and Baptisms\"<br/>\nPage: 22<br/>\n[https://www.myheritage.com/research/record-10929-1352539-F/david-jones-in-wales-parish-births-baptisms MyHeritage Record] (accessed 6 May 2021)<br/>\nElizabeth Jones baptism on 16 Apr 1723 (born 1723), child of David Jones, in St Asaph, Flintshire, Wales.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Elizabeth, child of David Jones, was born in 1723 and baptised on 16 April 1723 in St Asaph, Flintshire, Wales.<ref>\n'''Baptism''':\n\"Wales, Parish Births and Baptisms\"<br/>\nPage: 22<br/>\n[https://www.myheritage.com/research/record-10929-1352539-F/david-jones-in-wales-parish-births-baptisms MyHeritage Record] (accessed 6 May 2021)<br/>\nElizabeth Jones baptism on 16 Apr 1723 (born 1723), child of David Jones, in St Asaph, Flintshire, Wales.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Wales, Parish Births and Baptisms\"<br/>Page: 22<br/>[https://www.myheritage.com/research/record-10929-1352539-F/david-jones-in-wales-parish-births-baptisms MyHeritage Record] (accessed 6 May 2021)<br/>Elizabeth Jones baptism on 16 Apr 1723 (born 1723), child of David Jones, in St Asaph, Flintshire, Wales.",
+    "type": "source"
+  }
+}

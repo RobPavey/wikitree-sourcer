@@ -1,0 +1,33 @@
+{
+  "url": "https://www.myheritage.com/research/record-10929-1352539-F/david-jones-in-wales-parish-births-baptisms",
+  "success": true,
+  "collectionTitle": "Wales, Parish Births and Baptisms",
+  "pageType": "record",
+  "recordTitle": "Elizabeth Jones",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Elizabeth Jones"
+    },
+    "birth": {
+      "label": "Birth",
+      "dateString": "1723"
+    },
+    "baptism": {
+      "label": "Baptism",
+      "dateString": "Apr 16 1723",
+      "placeString": "St Asaph, Flintshire, Wales"
+    },
+    "father": {
+      "label": "Father",
+      "value": "David Jones"
+    },
+    "page": {
+      "label": "Page",
+      "value": "22"
+    }
+  },
+  "recordSections": {
+    "Source": {}
+  }
+}

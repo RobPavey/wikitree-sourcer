@@ -1,0 +1,30 @@
+{
+  "url": "https://www.myheritage.com/research/record-10442-110136566/david-jones-in-england-wales-birth-index",
+  "success": true,
+  "collectionTitle": "England & Wales, Birth Index, 1837-2005",
+  "pageType": "record",
+  "recordTitle": "David Jones",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "David Jones"
+    },
+    "birth-date": {
+      "label": "Birth date",
+      "value": "Apr-May-June 1842"
+    },
+    "birth": {
+      "label": "Birth place",
+      "placeString": "Newcastle in Emlyn, Cardiganshire, Wales"
+    },
+    "volume-number": {
+      "label": "Volume",
+      "value": "26"
+    },
+    "volume-page": {
+      "label": "Page",
+      "value": "685"
+    }
+  },
+  "recordSections": {}
+}

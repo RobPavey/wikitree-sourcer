@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "David Jones"
+  },
+  "eventDate": {
+    "quarter": 2,
+    "yearString": "1842"
+  },
+  "eventPlace": {
+    "placeString": "Newcastle in Emlyn, Cardiganshire, Wales"
+  },
+  "lastNameAtBirth": "Jones",
+  "collectionData": {
+    "id": "10442",
+    "page": "685",
+    "volume": "26"
+  },
+  "hasValidData": true
+}

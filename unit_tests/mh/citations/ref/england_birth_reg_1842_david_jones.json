@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales, Birth Index, 1837-2005\"<br/>\nVolume: 26; Page: 685<br/>\n[https://www.myheritage.com/research/record-10442-110136566/david-jones-in-england-wales-birth-index MyHeritage Record] (accessed 6 May 2021)<br/>\nDavid Jones birth registered Apr-May-Jun 1842 in Newcastle in Emlyn, Cardiganshire, Wales.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "David's birth was registered in the Apr-May-Jun quarter of 1842 in Newcastle in Emlyn, Cardiganshire, Wales.<ref>\n'''Birth Registration''':\n\"England & Wales, Birth Index, 1837-2005\"<br/>\nVolume: 26; Page: 685<br/>\n[https://www.myheritage.com/research/record-10442-110136566/david-jones-in-england-wales-birth-index MyHeritage Record] (accessed 6 May 2021)<br/>\nDavid Jones birth registered Apr-May-Jun 1842 in Newcastle in Emlyn, Cardiganshire, Wales.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales, Birth Index, 1837-2005\"<br/>Volume: 26; Page: 685<br/>[https://www.myheritage.com/research/record-10442-110136566/david-jones-in-england-wales-birth-index MyHeritage Record] (accessed 6 May 2021)<br/>David Jones birth registered Apr-May-Jun 1842 in Newcastle in Emlyn, Cardiganshire, Wales.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "url": "https://www.myheritage.com/research/record-20618-3185920-F/frank-c-gemperline-and-edna-schwamberger-in-ohio-marriages",
+  "success": true,
+  "collectionTitle": "Ohio Marriages",
+  "pageType": "record",
+  "recordTitle": "Frank C. Gemperline & Edna Schwamberger",
+  "recordData": {
+    "person-events.marriage": {
+      "label": "Marriage",
+      "dateString": "May 4 1921",
+      "placeString": "Ohio, United States"
+    },
+    "person-canonical-events.name-as-groom": {
+      "label": "Groom",
+      "Name": "Frank C. Gemperline",
+      "Birth": "Circa 1898",
+      "Age": "23",
+      "Father": "Charles Gemperline",
+      "Mother": "Catherine Volmer"
+    },
+    "person-relatives.spouse.name-as-bride": {
+      "label": "Bride",
+      "Name": "Edna Schwamberger",
+      "Birth": "Circa 1898",
+      "Age": "23",
+      "Father": "John Schwamberger",
+      "Mother": "Fanny Herbst"
+    }
+  },
+  "recordSections": {}
+}

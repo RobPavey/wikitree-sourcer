@@ -1,0 +1,33 @@
+{
+  "url": "https://www.myheritage.com/research/record-10092-120140340/david-jones-in-england-wales-births-gro-indexes",
+  "success": true,
+  "collectionTitle": "England & Wales Births, GRO Indexes, 1911 - 1954",
+  "pageType": "record",
+  "recordTitle": "David Jones",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "David Jones"
+    },
+    "birth-date": {
+      "label": "Birth date",
+      "value": "Apr-May-June 1954"
+    },
+    "birth": {
+      "label": "Birth place",
+      "placeString": "Salford, England"
+    },
+    "mother-last-name": {
+      "label": "Mother's maiden name",
+      "value": "Jones"
+    },
+    "Vol": {
+      "label": "Volume",
+      "value": "10f"
+    },
+    "Page": {
+      "label": "Page",
+      "value": "609"
+    }
+  }
+}

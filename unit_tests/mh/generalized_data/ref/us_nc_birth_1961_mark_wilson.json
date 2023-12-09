@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "name": "Mark Edward Wilson"
+  },
+  "eventDate": {
+    "dateString": "4 July 1961"
+  },
+  "lastNameAtBirth": "Wilson",
+  "birthDate": {
+    "dateString": "4 July 1961"
+  },
+  "collectionData": {
+    "id": "10779"
+  },
+  "hasValidData": true
+}

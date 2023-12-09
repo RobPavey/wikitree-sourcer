@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Ohio Marriages\"<br/>\n[https://www.myheritage.com/research/record-20618-3185920-F/frank-c-gemperline-and-edna-schwamberger-in-ohio-marriages MyHeritage Record] (accessed 6 May 2021)<br/>\nFrank C Gemperline (23) marriage to Edna Schwamberger (23) on 4 May 1921 in Ohio, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Frank (age 23), son of Charles Gemperline & Catherine Volmer, married Edna Schwamberger (age 23), daughter of John Schwamberger & Fanny Herbst, on 4 May 1921 in Ohio, United States.<ref>\n'''Marriage''':\n\"Ohio Marriages\"<br/>\n[https://www.myheritage.com/research/record-20618-3185920-F/frank-c-gemperline-and-edna-schwamberger-in-ohio-marriages MyHeritage Record] (accessed 6 May 2021)<br/>\nFrank C Gemperline (23) marriage to Edna Schwamberger (23) on 4 May 1921 in Ohio, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Ohio Marriages\"<br/>[https://www.myheritage.com/research/record-20618-3185920-F/frank-c-gemperline-and-edna-schwamberger-in-ohio-marriages MyHeritage Record] (accessed 6 May 2021)<br/>Frank C Gemperline (23) marriage to Edna Schwamberger (23) on 4 May 1921 in Ohio, United States.",
+    "type": "source"
+  }
+}

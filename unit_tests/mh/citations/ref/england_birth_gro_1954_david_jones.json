@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales Births, GRO Indexes, 1911 - 1954\"<br/>\nVolume: 10f; Page: 609<br/>\n[https://www.myheritage.com/research/record-10092-120140340/david-jones-in-england-wales-births-gro-indexes MyHeritage Record] (accessed 6 May 2021)<br/>\nDavid Jones birth registered Apr-May-Jun 1954 in Salford, England, mother's maiden name Jones.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "David's birth was registered in the Apr-May-Jun quarter of 1954 in Salford, England.<ref>\n'''Birth Registration''':\n\"England & Wales Births, GRO Indexes, 1911 - 1954\"<br/>\nVolume: 10f; Page: 609<br/>\n[https://www.myheritage.com/research/record-10092-120140340/david-jones-in-england-wales-births-gro-indexes MyHeritage Record] (accessed 6 May 2021)<br/>\nDavid Jones birth registered Apr-May-Jun 1954 in Salford, England, mother's maiden name Jones.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales Births, GRO Indexes, 1911 - 1954\"<br/>Volume: 10f; Page: 609<br/>[https://www.myheritage.com/research/record-10092-120140340/david-jones-in-england-wales-births-gro-indexes MyHeritage Record] (accessed 6 May 2021)<br/>David Jones birth registered Apr-May-Jun 1954 in Salford, England, mother's maiden name Jones.",
+    "type": "source"
+  }
+}

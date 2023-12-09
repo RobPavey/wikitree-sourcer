@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"North Carolina, Mecklenburg County Birth Index, 1913-2019\"<br/>\n[https://www.myheritage.com/research/record-10779-191744/mark-edward-wilson-in-north-carolina-mecklenburg-county-birth-index MyHeritage Record] (accessed 6 May 2021)<br/>\nMark Edward Wilson born on 4 Jul 1961.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mark was born on 4 July 1961.<ref>\n'''Birth''':\n\"North Carolina, Mecklenburg County Birth Index, 1913-2019\"<br/>\n[https://www.myheritage.com/research/record-10779-191744/mark-edward-wilson-in-north-carolina-mecklenburg-county-birth-index MyHeritage Record] (accessed 6 May 2021)<br/>\nMark Edward Wilson born on 4 Jul 1961.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"North Carolina, Mecklenburg County Birth Index, 1913-2019\"<br/>[https://www.myheritage.com/research/record-10779-191744/mark-edward-wilson-in-north-carolina-mecklenburg-county-birth-index MyHeritage Record] (accessed 6 May 2021)<br/>Mark Edward Wilson born on 4 Jul 1961.",
+    "type": "source"
+  }
+}

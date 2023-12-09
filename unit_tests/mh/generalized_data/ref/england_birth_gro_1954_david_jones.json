@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "David Jones"
+  },
+  "eventDate": {
+    "quarter": 2,
+    "yearString": "1954"
+  },
+  "eventPlace": {
+    "placeString": "Salford, England"
+  },
+  "lastNameAtBirth": "Jones",
+  "mothersMaidenName": "Jones",
+  "collectionData": {
+    "id": "10092",
+    "page": "609",
+    "volume": "10f"
+  },
+  "hasValidData": true
+}

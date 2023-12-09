@@ -3,31 +3,32 @@
   "sourceType": "record",
   "recordType": "Marriage",
   "name": {
-    "name": "Ronald MacDonald"
+    "name": "Charles Chamberlain"
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "24 Dec 1890"
+    "yearString": "1851"
   },
   "eventPlace": {
-    "placeString": "Prince Edward Island, Canada"
+    "placeString": "Sydney, St Andrew's Scots Church, New South Wales, Australia"
   },
+  "registrationDistrict": "New South Wales, Australia",
   "spouses": [
     {
       "name": {
-        "name": "Annie Alberta MacDonald"
+        "name": "Elizabeth Potter"
       },
       "marriageDate": {
-        "dateString": "24 Dec 1890"
+        "yearString": "1851"
       },
       "marriagePlace": {
-        "placeString": "Prince Edward Island, Canada"
+        "placeString": "Sydney, St Andrew's Scots Church, New South Wales, Australia"
       },
       "personGender": "female"
     }
   ],
   "collectionData": {
-    "id": "20440"
+    "id": "10915"
   },
   "hasValidData": true
 }

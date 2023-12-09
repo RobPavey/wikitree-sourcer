@@ -1,0 +1,59 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "Frank C Gemperline"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "4 May 1921"
+  },
+  "eventPlace": {
+    "placeString": "Ohio, United States"
+  },
+  "ageAtEvent": "23",
+  "spouses": [
+    {
+      "name": {
+        "name": "Edna Schwamberger"
+      },
+      "marriageDate": {
+        "dateString": "4 May 1921"
+      },
+      "marriagePlace": {
+        "placeString": "Ohio, United States"
+      },
+      "age": "23",
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "John Schwamberger"
+          }
+        },
+        "mother": {
+          "name": {
+            "name": "Fanny Herbst"
+          }
+        }
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Charles Gemperline"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Catherine Volmer"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "20618"
+  },
+  "hasValidData": true
+}

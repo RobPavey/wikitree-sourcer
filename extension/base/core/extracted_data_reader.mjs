@@ -197,6 +197,27 @@ class ExtractedDataReader {
     if (dateString) {
       let dateObj = new DateObj();
 
+      // handle quarter strings
+      let quarterRegex = /^([A-Z][a-z][a-z]\-[A-Z][a-z][a-z]\-[A-Z][a-z][a-z])\s+(\d\d\d\d)/;
+      if (quarterRegex.test(dateString)) {
+        let quarterString = dateString.replace(quarterRegex, "$1");
+        let yearString = dateString.replace(quarterRegex, "$2");
+        if (quarterString && quarterString != dateString && yearString && yearString != dateString) {
+          const quarterStringToQuarter = {
+            "Jan-Feb-Mar": 1,
+            "Apr-May-Jun": 2,
+            "Jul-Aug-Sep": 3,
+            "Oct-Nov-Dec": 4,
+          };
+          let quarter = quarterStringToQuarter[quarterString];
+          if (quarter) {
+            dateObj.quarter = quarter;
+            dateObj.yearString = yearString;
+            return dateObj;
+          }
+        }
+      }
+
       dateObj.setDateAndQualifierFromString(dateString);
       return dateObj;
     }

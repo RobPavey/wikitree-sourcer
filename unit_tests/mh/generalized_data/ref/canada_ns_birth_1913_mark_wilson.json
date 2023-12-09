@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "name": "Mark Wilson"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "27 Nov 1913"
+  },
+  "eventPlace": {
+    "placeString": "Broughton, Cape Breton, Nova Scotia, Canada"
+  },
+  "lastNameAtBirth": "Wilson",
+  "birthDate": {
+    "dateString": "27 Nov 1913"
+  },
+  "birthPlace": {
+    "placeString": "Broughton, Cape Breton, Nova Scotia, Canada"
+  },
+  "collectionData": {
+    "id": "10904",
+    "book": "1913",
+    "page": "50,600,207",
+    "number": "50,600,209"
+  },
+  "hasValidData": true
+}
