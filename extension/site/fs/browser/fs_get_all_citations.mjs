@@ -102,13 +102,15 @@ async function fsGetAllCitations(input) {
   let options = input.options;
   let runDate = input.runDate;
 
+  let result = { success: false };
+
   // request permission if needed
   const checkPermissionsOptions = {
     reason: "Sourcer needs to request the list of sources from FamilySearch.",
     needsPopupDisplayed: true,
   };
   if (!(await checkPermissionForSite("*://www.familysearch.org/*", checkPermissionsOptions))) {
-    return;
+    return result;
   }
 
   let sourcesObj = await fetchFsSourcesJson(ed.sourceIds);
@@ -118,8 +120,6 @@ async function fsGetAllCitations(input) {
     displayBusyMessage("Getting sources, retry " + retryCount + " ...");
     sourcesObj = await fetchFsSourcesJson(ed.sourceIds);
   }
-
-  let result = { success: false };
 
   if (sourcesObj.success) {
     try {
