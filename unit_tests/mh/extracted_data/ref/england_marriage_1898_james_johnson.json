@@ -1,0 +1,48 @@
+{
+  "url": "https://www.myheritage.com/research/record-30012-50353/james-johnson-in-england-norfolk-parish-registers",
+  "success": true,
+  "collectionTitle": "England, Norfolk Parish Registers, 1538-1900",
+  "pageType": "record",
+  "recordTitle": "James Johnson",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "James Johnson"
+    },
+    "gender": {
+      "label": "Gender",
+      "value": "Male"
+    },
+    "marriage": {
+      "label": "Marriage",
+      "dateString": "July 10 1898",
+      "placeString": "Bawdeswell, Norfolk, England"
+    },
+    "marital-status": {
+      "label": "Marital status",
+      "value": "Single"
+    },
+    "livedin": {
+      "label": "Residence",
+      "dateString": "July 10 1898",
+      "placeString": "Bawdeswell"
+    },
+    "spouse-name": {
+      "label": "Wife",
+      "value": "Martha Richardson"
+    },
+    "FILM_NUMBER": {
+      "label": "GS Film number",
+      "value": "1657289"
+    },
+    "DIGITAL_GS_NUMBER": {
+      "label": "Digital Folder Number",
+      "value": "004008716"
+    },
+    "IMAGE_NBR": {
+      "label": "Image Number",
+      "value": "00078"
+    }
+  },
+  "recordSections": {}
+}

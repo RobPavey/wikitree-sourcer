@@ -1,0 +1,51 @@
+{
+  "url": "https://www.myheritage.com/research/record-10926-5577902/hans-peter-lund-wilson-in-norway-church-records",
+  "success": true,
+  "collectionTitle": "Norway Church Records, 1815-1938",
+  "pageType": "record",
+  "recordTitle": "Hans Peter Lund Wilson",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Hans Peter Lund Wilson"
+    },
+    "form-type": {
+      "label": "Record type",
+      "value": "Birth/Baptism"
+    },
+    "birth": {
+      "label": "Birth",
+      "dateString": "Apr 14 1906"
+    },
+    "baptism": {
+      "label": "Baptism",
+      "dateString": "May 27 1906",
+      "placeString": "Uranienborg, Oslo, Norge"
+    },
+    "gender": {
+      "label": "Gender",
+      "value": "Male"
+    },
+    "father": {
+      "label": "Father",
+      "Name": "George Philip Samsen",
+      "Birth": "1870"
+    },
+    "mother": {
+      "label": "Mother",
+      "Name": "Elder Wilse",
+      "Birth": "1875",
+      "Residence": "Skovveria 20"
+    }
+  },
+  "recordSections": {
+    "Source": {
+      "Sequence #": "1010",
+      "Reference #": "SAO/A-10877/F/Fa/L0005",
+      "Year Range": "1895-1907",
+      "Description": "Church book from Uranienborg parish 1895-1907 (0301M24)",
+      "Page #": "279",
+      "Entry #": "29"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "James Johnson"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "10 July 1898"
+  },
+  "eventPlace": {
+    "placeString": "Bawdeswell, Norfolk, England"
+  },
+  "maritalStatus": "single",
+  "spouses": [
+    {
+      "name": {
+        "name": "Martha Richardson"
+      },
+      "personGender": "female",
+      "marriageDate": {
+        "dateString": "10 July 1898"
+      },
+      "marriagePlace": {
+        "placeString": "Bawdeswell, Norfolk, England"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "30012"
+  },
+  "hasValidData": true
+}

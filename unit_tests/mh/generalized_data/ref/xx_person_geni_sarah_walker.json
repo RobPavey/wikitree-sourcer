@@ -18,6 +18,14 @@
     "dateString": "10 Oct 1902"
   },
   "occupation": "Married Henry Walker September 10, 1839, in Calloway, Kentucky, and they had 8 children",
+  "spouses": [
+    {
+      "name": {
+        "name": "Henry Walker"
+      },
+      "personGender": "male"
+    }
+  ],
   "parents": {
     "father": {
       "name": {

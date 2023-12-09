@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Register of Marriages For the Parish of Edinburgh, 1751 - 1800\"<br/>\n[https://www.myheritage.com/research/record-71507-619/register-of-marriages-for-the-parish-of-edinburgh-1751-1800-in-register-of-marriages-for-the-parish-of-edinburgh?snippet=c7d438a361a656ad2af09fdc4b9a83ee MyHeritage Record] (accessed 6 May 2021)<br/>\nUnknown marriage registered in Edinburgh, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Unknown married in Edinburgh, United Kingdom.<ref>\n'''Marriage Registration''':\n\"Register of Marriages For the Parish of Edinburgh, 1751 - 1800\"<br/>\n[https://www.myheritage.com/research/record-71507-619/register-of-marriages-for-the-parish-of-edinburgh-1751-1800-in-register-of-marriages-for-the-parish-of-edinburgh?snippet=c7d438a361a656ad2af09fdc4b9a83ee MyHeritage Record] (accessed 6 May 2021)<br/>\nUnknown marriage registered in Edinburgh, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Register of Marriages For the Parish of Edinburgh, 1751 - 1800\"<br/>[https://www.myheritage.com/research/record-71507-619/register-of-marriages-for-the-parish-of-edinburgh-1751-1800-in-register-of-marriages-for-the-parish-of-edinburgh?snippet=c7d438a361a656ad2af09fdc4b9a83ee MyHeritage Record] (accessed 6 May 2021)<br/>Unknown marriage registered in Edinburgh, United Kingdom.",
+    "type": "source"
+  }
+}

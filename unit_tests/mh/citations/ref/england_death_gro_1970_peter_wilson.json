@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Deaths, GRO Indexes, 1969 - 2007\"<br/>\nVolume: 10c; Page: 1233<br/>\n[https://www.myheritage.com/research/record-10093-95546275/peter-wilson-in-england-wales-deaths-gro-indexes MyHeritage Record] (accessed 6 May 2021)<br/>\nPeter Wilson death Nov 1970.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Peter died (age 70) in November 1970.<ref>\n'''Death Registration''':\n\"England & Wales Deaths, GRO Indexes, 1969 - 2007\"<br/>\nVolume: 10c; Page: 1233<br/>\n[https://www.myheritage.com/research/record-10093-95546275/peter-wilson-in-england-wales-deaths-gro-indexes MyHeritage Record] (accessed 6 May 2021)<br/>\nPeter Wilson death Nov 1970.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Deaths, GRO Indexes, 1969 - 2007\"<br/>Volume: 10c; Page: 1233<br/>[https://www.myheritage.com/research/record-10093-95546275/peter-wilson-in-england-wales-deaths-gro-indexes MyHeritage Record] (accessed 6 May 2021)<br/>Peter Wilson death Nov 1970.",
+    "type": "source"
+  }
+}

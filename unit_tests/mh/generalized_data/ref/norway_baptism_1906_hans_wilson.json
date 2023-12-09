@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "Hans Peter Lund Wilson"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "27 May 1906"
+  },
+  "eventPlace": {
+    "placeString": "Uranienborg, Oslo, Norge"
+  },
+  "lastNameAtBirth": "Wilson",
+  "birthDate": {
+    "dateString": "14 Apr 1906"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "George Philip Samsen"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Elder Wilse"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "10926"
+  },
+  "hasValidData": true
+}

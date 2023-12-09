@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "name": "Peter Wilson"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "2 May 2008"
+  },
+  "birthDate": {
+    "dateString": "15 Feb 1934"
+  },
+  "deathDate": {
+    "dateString": "2 May 2008"
+  },
+  "collectionData": {
+    "id": "10002"
+  },
+  "hasValidData": true
+}

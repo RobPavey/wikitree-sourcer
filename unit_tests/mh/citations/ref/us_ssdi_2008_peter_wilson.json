@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"U.S. Social Security Death Index (SSDI)\"<br/>\n[https://www.myheritage.com/research/record-10002-58770563/peter-wilson-in-us-social-security-death-index-ssdi MyHeritage Record] (accessed 6 May 2021)<br/>\nPeter Wilson death 2 May 2008 (born 15 Feb 1934).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Peter died (age 74) on 2 May 2008.<ref>\n'''Death''':\n\"U.S. Social Security Death Index (SSDI)\"<br/>\n[https://www.myheritage.com/research/record-10002-58770563/peter-wilson-in-us-social-security-death-index-ssdi MyHeritage Record] (accessed 6 May 2021)<br/>\nPeter Wilson death 2 May 2008 (born 15 Feb 1934).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"U.S. Social Security Death Index (SSDI)\"<br/>[https://www.myheritage.com/research/record-10002-58770563/peter-wilson-in-us-social-security-death-index-ssdi MyHeritage Record] (accessed 6 May 2021)<br/>Peter Wilson death 2 May 2008 (born 15 Feb 1934).",
+    "type": "source"
+  }
+}

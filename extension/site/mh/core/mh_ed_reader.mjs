@@ -45,6 +45,20 @@ const recordTypeData = [
     recordType: RT.Divorce,
     documentTypes: ["Divorce"],
   },
+  {
+    recordType: RT.Burial,
+    documentTypes: ["Death / Burial", "Death/Burial"],
+    requiredFields: [["Burial"]],
+  },
+  {
+    recordType: RT.Death,
+    documentTypes: ["Death / Burial", "Death/Burial"],
+    requiredFields: [["Death"]],
+  },
+  {
+    recordType: RT.DeathOrBurial,
+    documentTypes: ["Death / Burial", "Death/Burial"],
+  },
 
   // collection matches
   {
@@ -63,7 +77,11 @@ const recordTypeData = [
   },
   {
     recordType: RT.MarriageRegistration,
-    collectionTitleMatches: [["England & Wales, Marriage Index, 1837-2005"]],
+    collectionTitleMatches: [["England & Wales, Marriage Index, 1837-2005"], ["Register of Marriages For "]],
+  },
+  {
+    recordType: RT.DeathRegistration,
+    collectionTitleMatches: [["England & Wales, Death Index"], ["England & Wales Deaths,"]],
   },
   {
     recordType: RT.Directory,
@@ -79,13 +97,21 @@ const recordTypeData = [
   },
   {
     recordType: RT.FamHistOrPedigree,
-    collectionTitleMatches: [["Biographies"], ["Genealogy of the"], "Personal Reminiscences of"],
+    collectionTitleMatches: [["Biographies"], ["Genealogy of the"], ["Personal Reminiscences of"]],
   },
 
   // matches using required fields only
   {
     recordType: RT.Baptism,
     requiredFields: [["Baptism date", "Baptism place"], ["Baptism"], ["Christening"]],
+  },
+  {
+    recordType: RT.Burial,
+    requiredFields: [["Burial date", "Burial place"], ["Burial"]],
+  },
+  {
+    recordType: RT.Death,
+    requiredFields: [["Death date", "Death place"], ["Death"]],
   },
   {
     recordType: RT.Marriage,
@@ -99,13 +125,16 @@ const recordTypeData = [
 
 const typeDataEventLabels = {
   Baptism: ["Christening", "Baptism"],
-  Immigration: ["Arrival"],
-  Census: ["Residence"],
-  Marriage: ["Marriage"],
-  MarriageRegistration: ["Marriage"],
   Birth: ["Birth"],
   BirthRegistration: ["Birth"],
+  Burial: ["Burial"],
+  Census: ["Residence"],
+  Death: ["Death"],
+  DeathOrBurial: ["Death / Burial", "Burial", "Death"],
   Divorce: ["Divorce"],
+  Immigration: ["Arrival"],
+  Marriage: ["Marriage"],
+  MarriageRegistration: ["Marriage"],
 };
 
 const typeDataEventDateLabels = {
@@ -114,6 +143,8 @@ const typeDataEventDateLabels = {
   MarriageRegistration: ["Marriage date"],
   Birth: ["Birth date"],
   BirthRegistration: ["Birth date"],
+  Death: ["Death date"],
+  DeathRegistration: ["Death date"],
 };
 
 const typeDataEventPlaceLabels = {
@@ -122,6 +153,8 @@ const typeDataEventPlaceLabels = {
   MarriageRegistration: ["Marriage place"],
   Birth: ["Birth place"],
   BirthRegistration: ["Birth place"],
+  Death: ["Death place"],
+  DeathRegistration: ["Death place"],
 };
 
 function cleanMhDate(dateString) {
@@ -224,8 +257,9 @@ class MhEdReader extends ExtractedDataReader {
 
       for (let typeData of recordTypeData) {
         if (typeData.documentTypes) {
-          let docType = this.getSimpleRecordDataValueString("Document type");
-          if (docType) {
+          let docTypeValue = this.getRecordDataValueByKeysOrLabels(["formtype"], ["Document type", "Record type"]);
+          if (docTypeValue && docTypeValue.value) {
+            let docType = docTypeValue.value;
             let docTypesMatch = false;
             for (let typeDataDocType of typeData.documentTypes) {
               if (typeDataDocType == docType) {
@@ -527,7 +561,10 @@ class MhEdReader extends ExtractedDataReader {
     let nameString = this.getSimpleRecordDataValueString("Name");
 
     if (!nameString) {
-      nameString = this.ed.recordTitle;
+      let title = this.ed.recordTitle;
+      if (title != this.ed.collectionTitle) {
+        nameString = title;
+      }
     }
 
     if (this.coupleData) {
@@ -706,16 +743,22 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getEventPlaceObj() {
-    let valueObj = this.getEventDataValue();
-    let placeObj = this.makePlaceObjFromMhValueObj(valueObj);
+    let placeObj = this.makePlaceObjFromMhValueObj(this.getEventDataValue());
     if (placeObj) {
       return placeObj;
     }
 
-    valueObj = this.getEventPlaceValue();
-    placeObj = this.makePlaceObjFromMhValueObj(valueObj);
+    placeObj = this.makePlaceObjFromMhValueObj(this.getEventPlaceValue());
     if (placeObj) {
       return placeObj;
+    }
+
+    let valueObj = this.getRecordDataValue(["Place"]);
+    if (valueObj && valueObj.value) {
+      placeObj = this.makePlaceObjFromFullPlaceName(valueObj.value);
+      if (placeObj) {
+        return placeObj;
+      }
     }
 
     return undefined;
@@ -860,10 +903,37 @@ class MhEdReader extends ExtractedDataReader {
         }
       }
 
+      let spouseGender = "";
+
+      if (!spouseName) {
+        let wifeValueObj = this.getRecordDataValue(["Wife"]);
+        if (wifeValueObj) {
+          if (wifeValueObj["Name"]) {
+            spouseName = wifeValueObj["Name"];
+          } else if (wifeValueObj.value) {
+            spouseName = wifeValueObj.value;
+          }
+          spouseGender = "female";
+        } else {
+          let husbandValueObj = this.getRecordDataValue(["Husband"]);
+          if (husbandValueObj) {
+            if (husbandValueObj["Name"]) {
+              spouseName = husbandValueObj["Name"];
+            } else if (husbandValueObj.value) {
+              spouseName = husbandValueObj.value;
+            }
+            spouseGender = "male";
+          }
+        }
+      }
+
       if (spouseName) {
         let spouseNameObj = this.makeNameObjFromMhFullName(spouseName);
         if (spouseNameObj) {
           let spouse = { name: spouseNameObj };
+          if (spouseGender) {
+            spouse.personGender = spouseGender;
+          }
           if (this.recordType == RT.Marriage || this.recordType == RT.MarriageRegistration) {
             let marriageDateObj = this.getEventDateObj();
             if (marriageDateObj) {
@@ -906,6 +976,20 @@ class MhEdReader extends ExtractedDataReader {
                 if (motherNameObj) {
                   spouse.parents.mother = { name: motherNameObj };
                 }
+              }
+            }
+          } else {
+            let spouseFatherName = this.getRecordDataValueString(["Wife's father", "Husband's father"]);
+            let spouseMotherName = this.getRecordDataValueString(["Wife's mother", "Husband's mother"]);
+            if (spouseFatherName || spouseMotherName) {
+              spouse.parents = {};
+              let fatherNameObj = this.makeNameObjFromMhFullName(spouseFatherName);
+              if (fatherNameObj) {
+                spouse.parents.father = { name: fatherNameObj };
+              }
+              let motherNameObj = this.makeNameObjFromMhFullName(spouseMotherName);
+              if (motherNameObj) {
+                spouse.parents.mother = { name: motherNameObj };
               }
             }
           }
@@ -952,10 +1036,18 @@ class MhEdReader extends ExtractedDataReader {
       let motherName = "";
       if (fatherValue || motherValue) {
         if (fatherValue) {
-          fatherName = fatherValue.value;
+          if (fatherValue["Name"]) {
+            fatherName = fatherValue["Name"];
+          } else if (fatherValue.value) {
+            fatherName = fatherValue.value;
+          }
         }
         if (motherValue) {
-          motherName = motherValue.value;
+          if (motherValue["Name"]) {
+            motherName = motherValue["Name"];
+          } else if (motherValue.value) {
+            motherName = motherValue.value;
+          }
         }
       } else {
         if (this.coupleData && this.coupleData.primaryPerson) {

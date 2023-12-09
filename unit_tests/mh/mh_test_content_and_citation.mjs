@@ -44,6 +44,10 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-20440-604/ronald-macdonald-and-annie-alberta-macdonald-in-canada-prince-edward-island-marriages",
   },
   {
+    caseName: "denmark_death_burial_1807_james_johnsen",
+    url: "https://www.myheritage.com/research/record-10455-20399043/james-johnsen-in-denmark-church-records",
+  },
+  {
     caseName: "canada_ns_birth_1913_mark_wilson",
     url: "https://www.myheritage.com/research/record-10904-217005/mark-wilson-in-canada-nova-scotia-birth-index",
   },
@@ -68,12 +72,32 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-10151-40011245/william-henry-pavey-in-1851-england-wales-census",
   },
   {
+    caseName: "england_death_gro_1970_peter_wilson",
+    url: "https://www.myheritage.com/research/record-10093-95546275/peter-wilson-in-england-wales-deaths-gro-indexes",
+  },
+  {
+    caseName: "england_marriage_1898_james_johnson",
+    url: "https://www.myheritage.com/research/record-30012-50353/james-johnson-in-england-norfolk-parish-registers",
+  },
+  {
     caseName: "england_marriage_reg_1902_chamberlin_abigail",
     url: "https://www.myheritage.com/research/record-10443-15542228/henry-charles-chamberlin-in-england-wales-marriage-index",
   },
   {
     caseName: "england_marriage_reg_1914_joseph_oconnor",
     url: "https://www.myheritage.com/research/record-10443-22304592/joseph-oconnor-in-england-wales-marriage-index",
+  },
+  {
+    caseName: "jamaica_church_1867_james_johnson",
+    url: "https://www.myheritage.com/research/record-30261-278584/james-johnson-in-jamaica-church-of-england-parish-register-transcripts",
+  },
+  {
+    caseName: "norway_baptism_1906_hans_wilson",
+    url: "https://www.myheritage.com/research/record-10926-5577902/hans-peter-lund-wilson-in-norway-church-records",
+  },
+  {
+    caseName: "scotland_marriage_reg_1800_peter_wilson",
+    url: "https://www.myheritage.com/research/record-71507-619/register-of-marriages-for-the-parish-of-edinburgh-1751-1800-in-register-of-marriages-for-the-parish-of-edinburgh?snippet=c7d438a361a656ad2af09fdc4b9a83ee",
   },
   {
     caseName: "us_nc_birth_1961_mark_wilson",
@@ -86,6 +110,10 @@ const regressionData = [
   {
     caseName: "us_pa_immigration_1882_charles_kimberlin",
     url: "https://www.myheritage.com/research/record-10017-3144396/charles-kimberlin-in-passenger-immigration-lists",
+  },
+  {
+    caseName: "us_ssdi_2008_peter_wilson",
+    url: "https://www.myheritage.com/research/record-10002-58770563/peter-wilson-in-us-social-security-death-index-ssdi",
   },
   {
     caseName: "us_tx_divorce_1969_ronnie_smith",

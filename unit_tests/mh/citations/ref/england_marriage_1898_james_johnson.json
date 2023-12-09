@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"England, Norfolk Parish Registers, 1538-1900\"<br/>\nGS Film number: 1657289; Digital Folder Number: 004008716; Image Number: 00078<br/>\n[https://www.myheritage.com/research/record-30012-50353/james-johnson-in-england-norfolk-parish-registers MyHeritage Record] (accessed 6 May 2021)<br/>\nJames Johnson marriage to Martha Richardson on 10 Jul 1898 in Bawdeswell, Norfolk, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James married Martha Richardson on 10 July 1898 in Bawdeswell, Norfolk, England.<ref>\n'''Marriage''':\n\"England, Norfolk Parish Registers, 1538-1900\"<br/>\nGS Film number: 1657289; Digital Folder Number: 004008716; Image Number: 00078<br/>\n[https://www.myheritage.com/research/record-30012-50353/james-johnson-in-england-norfolk-parish-registers MyHeritage Record] (accessed 6 May 2021)<br/>\nJames Johnson marriage to Martha Richardson on 10 Jul 1898 in Bawdeswell, Norfolk, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"England, Norfolk Parish Registers, 1538-1900\"<br/>GS Film number: 1657289; Digital Folder Number: 004008716; Image Number: 00078<br/>[https://www.myheritage.com/research/record-30012-50353/james-johnson-in-england-norfolk-parish-registers MyHeritage Record] (accessed 6 May 2021)<br/>James Johnson marriage to Martha Richardson on 10 Jul 1898 in Bawdeswell, Norfolk, England.",
+    "type": "source"
+  }
+}

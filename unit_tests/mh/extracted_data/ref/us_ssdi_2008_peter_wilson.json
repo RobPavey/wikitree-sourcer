@@ -1,0 +1,33 @@
+{
+  "url": "https://www.myheritage.com/research/record-10002-58770563/peter-wilson-in-us-social-security-death-index-ssdi",
+  "success": true,
+  "collectionTitle": "U.S. Social Security Death Index (SSDI)",
+  "pageType": "record",
+  "recordTitle": "Peter Wilson",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Peter Wilson"
+    },
+    "gender": {
+      "label": "Gender",
+      "value": "Male"
+    },
+    "birth": {
+      "label": "Birth",
+      "dateString": "Feb 15 1934"
+    },
+    "death": {
+      "label": "Death",
+      "dateString": "May 2 2008"
+    },
+    "livedin": {
+      "label": "Last residence",
+      "placeString": "Baton Rouge, Louisiana 70812, USA"
+    },
+    "issuing-state": {
+      "label": "SSN issuing state",
+      "value": "Mississippi"
+    }
+  }
+}

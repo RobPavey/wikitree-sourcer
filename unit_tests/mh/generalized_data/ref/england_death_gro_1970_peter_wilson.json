@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "Peter Wilson"
+  },
+  "birthDate": {
+    "dateString": "29 Oct 1900"
+  },
+  "deathDate": {
+    "dateString": "Nov 1970"
+  },
+  "deathPlace": {
+    "placeString": "Ince, England"
+  },
+  "collectionData": {
+    "id": "10093",
+    "page": "1233",
+    "volume": "10c"
+  },
+  "hasValidData": true
+}

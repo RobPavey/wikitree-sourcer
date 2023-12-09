@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death or Burial''':\n\"Denmark Church Records, 1576-1919\"<br/>\n[https://www.myheritage.com/research/record-10455-20399043/james-johnsen-in-denmark-church-records MyHeritage Record] (accessed 6 May 2021)<br/>\nJames Johnsen death or burial (died age 39) on 8 Jul 1807 at Frederiks Hospital, København, Denmark.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James (age 39) died or was buried on 8 July 1807 at Frederiks Hospital, København, Denmark.<ref>\n'''Death or Burial''':\n\"Denmark Church Records, 1576-1919\"<br/>\n[https://www.myheritage.com/research/record-10455-20399043/james-johnsen-in-denmark-church-records MyHeritage Record] (accessed 6 May 2021)<br/>\nJames Johnsen death or burial (died age 39) on 8 Jul 1807 at Frederiks Hospital, København, Denmark.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death or Burial''': \"Denmark Church Records, 1576-1919\"<br/>[https://www.myheritage.com/research/record-10455-20399043/james-johnsen-in-denmark-church-records MyHeritage Record] (accessed 6 May 2021)<br/>James Johnsen death or burial (died age 39) on 8 Jul 1807 at Frederiks Hospital, København, Denmark.",
+    "type": "source"
+  }
+}

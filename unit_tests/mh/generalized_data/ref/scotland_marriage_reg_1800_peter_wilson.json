@@ -1,0 +1,12 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "eventPlace": {
+    "placeString": "Edinburgh, United Kingdom"
+  },
+  "collectionData": {
+    "id": "71507"
+  },
+  "hasValidData": true
+}

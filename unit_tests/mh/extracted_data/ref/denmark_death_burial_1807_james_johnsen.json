@@ -1,0 +1,45 @@
+{
+  "url": "https://www.myheritage.com/research/record-10455-20399043/james-johnsen-in-denmark-church-records",
+  "success": true,
+  "collectionTitle": "Denmark Church Records, 1576-1919",
+  "pageType": "record",
+  "recordTitle": "James Johnsen",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "James Johnsen"
+    },
+    "formtype": {
+      "label": "Record type",
+      "value": "Death / Burial"
+    },
+    "gender": {
+      "label": "Gender",
+      "value": "Male"
+    },
+    "age": {
+      "label": "Age",
+      "value": "39"
+    },
+    "birth": {
+      "label": "Birth / Baptism",
+      "dateString": "Circa 1768"
+    },
+    "death": {
+      "label": "Death / Burial",
+      "dateString": "July 8 1807",
+      "placeString": "Frederiks Hospital, København, Denmark"
+    }
+  },
+  "recordSections": {
+    "Book": {
+      "Country": "Denmark",
+      "Volume date": "1757-1807",
+      "Record type": "Death / Burial",
+      "County": "København",
+      "Book": "1",
+      "Parish": "Frederiks Hospital",
+      "Page": "429-428"
+    }
+  }
+}

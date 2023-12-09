@@ -1,0 +1,55 @@
+{
+  "url": "https://www.myheritage.com/research/record-30261-278584/james-johnson-in-jamaica-church-of-england-parish-register-transcripts",
+  "success": true,
+  "collectionTitle": "Jamaica Church of England Parish Register Transcripts, 1664-1880",
+  "pageType": "record",
+  "recordTitle": "James Johnson",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "James Johnson"
+    },
+    "gender": {
+      "label": "Gender",
+      "value": "Male"
+    },
+    "christening": {
+      "label": "Christening",
+      "dateString": "May 24 1867",
+      "placeString": "All Parishes, Jamaica"
+    },
+    "line-number": {
+      "label": "Line",
+      "value": "203"
+    },
+    "father-name": {
+      "label": "Father",
+      "value": "James Johnson"
+    },
+    "mother-name": {
+      "label": "Mother",
+      "value": "Ann"
+    },
+    "PAGE": {
+      "label": "Page",
+      "value": "355"
+    },
+    "LINE_NBR": {
+      "label": "Line Number",
+      "value": "203"
+    },
+    "FILM_NUMBER": {
+      "label": "GS Film number",
+      "value": "1291720"
+    },
+    "DIGITAL_GS_NUMBER": {
+      "label": "Digital Folder Number",
+      "value": "004620480"
+    },
+    "IMAGE_NBR": {
+      "label": "Image Number",
+      "value": "00444"
+    }
+  },
+  "recordSections": {}
+}

@@ -1,0 +1,30 @@
+{
+  "url": "https://www.myheritage.com/research/record-10093-95546275/peter-wilson-in-england-wales-deaths-gro-indexes",
+  "success": true,
+  "collectionTitle": "England & Wales Deaths, GRO Indexes, 1969 - 2007",
+  "pageType": "record",
+  "recordTitle": "Peter Wilson",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Peter Wilson"
+    },
+    "birth": {
+      "label": "Birth",
+      "dateString": "Oct 29 1900"
+    },
+    "death": {
+      "label": "Death",
+      "dateString": "Nov 1970",
+      "placeString": "Ince, England"
+    },
+    "Vol": {
+      "label": "Volume",
+      "value": "10c"
+    },
+    "Page": {
+      "label": "Page",
+      "value": "1233"
+    }
+  }
+}

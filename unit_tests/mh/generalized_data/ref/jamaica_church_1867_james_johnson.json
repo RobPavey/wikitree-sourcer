@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "James Johnson"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "24 May 1867"
+  },
+  "eventPlace": {
+    "placeString": "All Parishes, Jamaica"
+  },
+  "lastNameAtBirth": "Johnson",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Johnson"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ann"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "30261",
+    "page": "355"
+  },
+  "hasValidData": true
+}

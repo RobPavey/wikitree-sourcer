@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Jamaica Church of England Parish Register Transcripts, 1664-1880\"<br/>\nLine: 203; Page: 355; GS Film number: 1291720; Digital Folder Number: 004620480; Image Number: 00444<br/>\n[https://www.myheritage.com/research/record-30261-278584/james-johnson-in-jamaica-church-of-england-parish-register-transcripts MyHeritage Record] (accessed 6 May 2021)<br/>\nJames Johnson baptism on 24 May 1867, son of James Johnson & Ann, in All Parishes, Jamaica.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James, son of James Johnson & Ann, was baptised on 24 May 1867 in All Parishes, Jamaica.<ref>\n'''Baptism''':\n\"Jamaica Church of England Parish Register Transcripts, 1664-1880\"<br/>\nLine: 203; Page: 355; GS Film number: 1291720; Digital Folder Number: 004620480; Image Number: 00444<br/>\n[https://www.myheritage.com/research/record-30261-278584/james-johnson-in-jamaica-church-of-england-parish-register-transcripts MyHeritage Record] (accessed 6 May 2021)<br/>\nJames Johnson baptism on 24 May 1867, son of James Johnson & Ann, in All Parishes, Jamaica.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Jamaica Church of England Parish Register Transcripts, 1664-1880\"<br/>Line: 203; Page: 355; GS Film number: 1291720; Digital Folder Number: 004620480; Image Number: 00444<br/>[https://www.myheritage.com/research/record-30261-278584/james-johnson-in-jamaica-church-of-england-parish-register-transcripts MyHeritage Record] (accessed 6 May 2021)<br/>James Johnson baptism on 24 May 1867, son of James Johnson & Ann, in All Parishes, Jamaica.",
+    "type": "source"
+  }
+}
