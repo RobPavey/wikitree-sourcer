@@ -1,0 +1,41 @@
+{
+  "url": "https://www.myheritage.com/research/record-10691-1584846/henry-taylor-in-england-wales-index-of-wills-probates",
+  "success": true,
+  "collectionTitle": "England & Wales, Index of Wills and Probates, 1853-1943",
+  "pageType": "record",
+  "recordTitle": "Henry Taylor",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Henry Taylor"
+    },
+    "gender": {
+      "label": "Gender",
+      "value": "Male"
+    },
+    "event-year": {
+      "label": "Event Year",
+      "value": "1898"
+    },
+    "livedin": {
+      "label": "Residence",
+      "placeString": "Sheffield, South Yorkshire, England"
+    },
+    "death": {
+      "label": "Death",
+      "dateString": "Nov 29 1897",
+      "placeString": "Sheffield, South Yorkshire, England"
+    },
+    "record-type": {
+      "label": "Record Type",
+      "value": "Letter of Administration"
+    },
+    "spouse": {
+      "label": "Wife",
+      "value": "Annie Taylor"
+    }
+  },
+  "recordSections": {
+    "Beneficiaries": {}
+  }
+}

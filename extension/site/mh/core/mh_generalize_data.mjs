@@ -31,4 +31,9 @@ function generalizeData(input) {
   return commonGeneralizeData("mh", edReader);
 }
 
-export { generalizeData };
+function generalizeDataGivenRecordType(ed, result) {
+  let edReader = new MhEdReader(ed, result.recordType);
+  return commonGeneralizeData("mh", edReader);
+}
+
+export { generalizeData, generalizeDataGivenRecordType };

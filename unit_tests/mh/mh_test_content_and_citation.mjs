@@ -88,6 +88,14 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-10443-22304592/joseph-oconnor-in-england-wales-marriage-index",
   },
   {
+    caseName: "england_probate_1898_henry_taylor",
+    url: "https://www.myheritage.com/research/record-10691-1584846/henry-taylor-in-england-wales-index-of-wills-probates",
+  },
+  {
+    caseName: "france_burial_1788_henry_tillier",
+    url: "https://www.myheritage.com/research/record-10911-1793347/henry-joseph-tillier-in-france-compilation-of-vital-records",
+  },
+  {
     caseName: "jamaica_church_1867_james_johnson",
     url: "https://www.myheritage.com/research/record-30261-278584/james-johnson-in-jamaica-church-of-england-parish-register-transcripts",
   },

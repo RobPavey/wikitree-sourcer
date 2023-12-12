@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death or Burial''':\n\"France, Compilation of Vital Records, 1585-1928\"<br/>\n[https://www.myheritage.com/research/record-10911-1793347/henry-joseph-tillier-in-france-compilation-of-vital-records MyHeritage Record] (accessed 6 May 2021)<br/>\nHenry Joseph TILLIER death or burial on 5 Oct 1788 in Lyon, France.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Henry died or was buried on 5 October 1788 in Lyon, France.<ref>\n'''Death or Burial''':\n\"France, Compilation of Vital Records, 1585-1928\"<br/>\n[https://www.myheritage.com/research/record-10911-1793347/henry-joseph-tillier-in-france-compilation-of-vital-records MyHeritage Record] (accessed 6 May 2021)<br/>\nHenry Joseph TILLIER death or burial on 5 Oct 1788 in Lyon, France.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death or Burial''': \"France, Compilation of Vital Records, 1585-1928\"<br/>[https://www.myheritage.com/research/record-10911-1793347/henry-joseph-tillier-in-france-compilation-of-vital-records MyHeritage Record] (accessed 6 May 2021)<br/>Henry Joseph TILLIER death or burial on 5 Oct 1788 in Lyon, France.",
+    "type": "source"
+  }
+}

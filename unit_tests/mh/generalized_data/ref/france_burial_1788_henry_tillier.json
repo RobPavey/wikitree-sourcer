@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "DeathOrBurial",
+  "name": {
+    "name": "Henry Joseph TILLIER"
+  },
+  "eventDate": {
+    "dateString": "5 Oct 1788"
+  },
+  "eventPlace": {
+    "placeString": "Lyon, France"
+  },
+  "collectionData": {
+    "id": "10911"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Probate",
+  "name": {
+    "name": "Henry Taylor"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1898"
+  },
+  "deathDate": {
+    "dateString": "29 Nov 1897"
+  },
+  "deathPlace": {
+    "placeString": "Sheffield, South Yorkshire, England"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Annie Taylor"
+      },
+      "personGender": "female"
+    }
+  ],
+  "collectionData": {
+    "id": "10691"
+  },
+  "hasValidData": true
+}

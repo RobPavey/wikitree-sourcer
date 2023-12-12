@@ -39,122 +39,162 @@ const recordTypeData = [
   // put ones with Document type first
   {
     recordType: RT.Immigration,
-    documentTypes: ["Immigrant Record"],
+    documentTypes: ["immigrant record"],
   },
   {
     recordType: RT.Divorce,
-    documentTypes: ["Divorce"],
+    documentTypes: ["divorce"],
   },
   {
     recordType: RT.Burial,
-    documentTypes: ["Death / Burial", "Death/Burial"],
-    requiredFields: [["Burial"]],
+    documentTypes: ["death / burial", "death/burial"],
+    requiredFields: [["burial"]],
   },
   {
     recordType: RT.Death,
-    documentTypes: ["Death / Burial", "Death/Burial"],
-    requiredFields: [["Death"]],
+    documentTypes: ["death / burial", "death/burial"],
+    requiredFields: [["death"]],
   },
   {
     recordType: RT.DeathOrBurial,
-    documentTypes: ["Death / Burial", "Death/Burial"],
+    documentTypes: ["death / burial", "death/burial"],
+  },
+  {
+    recordType: RT.Will,
+    documentTypes: ["will"],
+  },
+  {
+    recordType: RT.Probate,
+    documentTypes: ["probate", "letter of administration", "intestacy"],
+  },
+  {
+    recordType: RT.LegalRecord,
+    documentTypes: ["insolvency"],
   },
 
   // collection matches
   {
     recordType: RT.Baptism,
-    collectionTitleMatches: [["Births and Christenings"]],
-    requiredFields: [["Christening"], ["Baptism"]],
+    collectionTitleMatches: [["births and christenings"]],
+    requiredFields: [["christening"], ["baptism"]],
   },
   {
     recordType: RT.Census,
-    collectionTitleMatches: [["Census"]],
+    collectionTitleMatches: [["census"]],
     requiredRecordSections: [["Census"]],
   },
   {
     recordType: RT.BirthRegistration,
-    collectionTitleMatches: [["England & Wales, Birth Index, 1837-2005"], ["Birth", "GRO Index"]],
+    collectionTitleMatches: [["england & wales, birth index, 1837-2005"], ["birth", "gro index"]],
   },
   {
     recordType: RT.MarriageRegistration,
-    collectionTitleMatches: [["England & Wales, Marriage Index, 1837-2005"], ["Register of Marriages For "]],
+    collectionTitleMatches: [["england & wales, marriage index, 1837-2005"], ["register of marriages for "]],
   },
   {
     recordType: RT.DeathRegistration,
-    collectionTitleMatches: [["England & Wales, Death Index"], ["England & Wales Deaths,"]],
+    collectionTitleMatches: [["england & wales, death index"], ["england & wales deaths,"]],
   },
   {
     recordType: RT.Directory,
-    collectionTitleMatches: [["Business Register"], ["U.S. Public Records Index"], ["Phone and Address Listings"]],
+    collectionTitleMatches: [["business register"], ["u.s. public records index"], ["phone and address listings"]],
   },
   {
     recordType: RT.SocialSecurity,
-    collectionTitleMatches: [["Social Security Applications and Claims"]],
+    collectionTitleMatches: [["social security applications and claims"]],
   },
   {
     recordType: RT.Employment,
-    collectionTitleMatches: [["Medicare Public Provider"], ["Attorney Registrations"], ["Job Applications"]],
+    collectionTitleMatches: [["medicare public provider"], ["attorney registrations"], ["job applications"]],
   },
   {
     recordType: RT.FamHistOrPedigree,
-    collectionTitleMatches: [["Biographies"], ["Genealogy of the"], ["Personal Reminiscences of"]],
+    collectionTitleMatches: [["biographies"], ["genealogy of the"], ["personal reminiscences of"]],
+  },
+  {
+    recordType: RT.Directory,
+    collectionTitleMatches: [["directory and gazetteer"]],
+  },
+  {
+    recordType: RT.ElectoralRegister,
+    collectionTitleMatches: [["register of electors"]],
+  },
+  {
+    recordType: RT.Probate,
+    collectionTitleMatches: [["will and probate index"]],
   },
 
   // matches using required fields only
   {
     recordType: RT.Baptism,
-    requiredFields: [["Baptism date", "Baptism place"], ["Baptism"], ["Christening"]],
+    requiredFields: [["baptism date", "baptism place"], ["baptism"], ["christening"]],
   },
   {
     recordType: RT.Burial,
-    requiredFields: [["Burial date", "Burial place"], ["Burial"]],
+    requiredFields: [["burial date", "burial place"], ["burial"]],
   },
   {
+    recordType: RT.Will,
+    requiredFields: [["will", "court"]],
+  },
+  {
+    recordType: RT.ElectoralRegister,
+    requiredFields: [["voter registration"]],
+  },
+  {
+    recordType: RT.CriminalRegister,
+    requiredFields: [["offence", "conviction"], ["imprisonment"]],
+  },
+
+  {
     recordType: RT.Death,
-    requiredFields: [["Death date", "Death place"], ["Death"]],
+    requiredFields: [["death date", "death place"], ["death"]],
   },
   {
     recordType: RT.Marriage,
-    requiredFields: [["Marriage date", "Marriage place"], ["Marriage"]],
+    requiredFields: [["marriage date", "marriage place"], ["marriage"]],
   },
   {
     recordType: RT.Birth,
-    requiredFields: [["Birth date", "Birth place"], ["Birth"]],
+    requiredFields: [["birth date", "birth place"], ["birth"]],
   },
 ];
 
 const typeDataEventLabels = {
-  Baptism: ["Christening", "Baptism"],
-  Birth: ["Birth"],
-  BirthRegistration: ["Birth"],
-  Burial: ["Burial"],
-  Census: ["Residence"],
-  Death: ["Death"],
-  DeathOrBurial: ["Death / Burial", "Burial", "Death"],
-  Divorce: ["Divorce"],
-  Immigration: ["Arrival"],
-  Marriage: ["Marriage"],
-  MarriageRegistration: ["Marriage"],
+  Baptism: ["christening", "baptism"],
+  Birth: ["birth"],
+  BirthRegistration: ["birth"],
+  Burial: ["burial"],
+  Census: ["residence"],
+  CriminalRegister: ["conviction", "imprisonment"],
+  Death: ["death"],
+  DeathOrBurial: ["death / burial", "burial", "death"],
+  Divorce: ["divorce"],
+  ElectoralRegister: ["voter registration"],
+  Immigration: ["arrival"],
+  Marriage: ["marriage"],
+  MarriageRegistration: ["marriage"],
+  Will: ["will"],
 };
 
 const typeDataEventDateLabels = {
-  Directory: ["ABN last updated", "ABN status date"],
-  Marriage: ["Marriage date"],
-  MarriageRegistration: ["Marriage date"],
-  Birth: ["Birth date"],
-  BirthRegistration: ["Birth date"],
-  Death: ["Death date"],
-  DeathRegistration: ["Death date"],
+  Directory: ["abn last updated", "abn status date"],
+  Marriage: ["marriage date"],
+  MarriageRegistration: ["marriage date"],
+  Birth: ["birth date"],
+  BirthRegistration: ["birth date"],
+  Death: ["death date"],
+  DeathRegistration: ["death date"],
 };
 
 const typeDataEventPlaceLabels = {
-  Directory: ["Residence"],
-  Marriage: ["Marriage place"],
-  MarriageRegistration: ["Marriage place"],
-  Birth: ["Birth place"],
-  BirthRegistration: ["Birth place"],
-  Death: ["Death place"],
-  DeathRegistration: ["Death place"],
+  Directory: ["residence"],
+  Marriage: ["marriage place"],
+  MarriageRegistration: ["marriage place"],
+  Birth: ["birth place"],
+  BirthRegistration: ["birth place"],
+  Death: ["death place"],
+  DeathRegistration: ["death place"],
 };
 
 function cleanMhDate(dateString) {
@@ -227,11 +267,11 @@ function cleanMhAge(string) {
 }
 
 class MhEdReader extends ExtractedDataReader {
-  constructor(ed) {
+  constructor(ed, userGivenRecordType = undefined) {
     super(ed);
     if (ed.recordData) {
       this.setupUrlParts();
-      this.determineSourceTypeAndRecordType();
+      this.determineSourceTypeAndRecordType(userGivenRecordType);
 
       this.setupCoupleData();
 
@@ -239,13 +279,18 @@ class MhEdReader extends ExtractedDataReader {
     }
   }
 
-  determineSourceTypeAndRecordType() {
+  determineSourceTypeAndRecordType(userGivenRecordType) {
     let ed = this.ed;
 
     if (ed.pageType == "person") {
       this.sourceType = "profile";
     } else if (ed.pageType == "record") {
       this.sourceType = "record";
+
+      if (userGivenRecordType) {
+        this.recordType = userGivenRecordType;
+        return;
+      }
 
       if (this.urlParts.collectionId) {
         let rtFromCollection = collectionIdToRecordType[this.urlParts.collectionId];
@@ -257,9 +302,9 @@ class MhEdReader extends ExtractedDataReader {
 
       for (let typeData of recordTypeData) {
         if (typeData.documentTypes) {
-          let docTypeValue = this.getRecordDataValueByKeysOrLabels(["formtype"], ["Document type", "Record type"]);
+          let docTypeValue = this.getRecordDataValueByKeysOrLabels(["formtype"], ["document type", "record type"]);
           if (docTypeValue && docTypeValue.value) {
-            let docType = docTypeValue.value;
+            let docType = docTypeValue.value.toLowerCase();
             let docTypesMatch = false;
             for (let typeDataDocType of typeData.documentTypes) {
               if (typeDataDocType == docType) {
@@ -281,6 +326,7 @@ class MhEdReader extends ExtractedDataReader {
             continue;
           }
 
+          title = title.toLowerCase();
           let collectionTitlesMatch = false;
           for (let typeDataTitleParts of typeData.collectionTitleMatches) {
             let partsMatch = true;
@@ -356,8 +402,11 @@ class MhEdReader extends ExtractedDataReader {
 
   findRecordDataFieldByLabel(label) {
     for (let field of Object.values(this.ed.recordData)) {
-      if (field.label == label) {
-        return field;
+      if (field.label) {
+        let fieldLabel = field.label.toLowerCase();
+        if (fieldLabel == label) {
+          return field;
+        }
       }
     }
   }
@@ -365,8 +414,11 @@ class MhEdReader extends ExtractedDataReader {
   findRecordDataFieldByLabels(labels) {
     if (labels && this.ed.recordData) {
       for (let field of Object.values(this.ed.recordData)) {
-        if (labels.includes(field.label)) {
-          return field;
+        if (field.label) {
+          let label = field.label.toLowerCase();
+          if (labels.includes(label)) {
+            return field;
+          }
         }
       }
     }
@@ -383,8 +435,11 @@ class MhEdReader extends ExtractedDataReader {
 
     if (labels && this.ed.recordData) {
       for (let field of Object.values(this.ed.recordData)) {
-        if (labels.includes(field.label)) {
-          return field;
+        if (field.label) {
+          let label = field.label.toLowerCase();
+          if (labels.includes(label)) {
+            return field;
+          }
         }
       }
     }
@@ -421,31 +476,47 @@ class MhEdReader extends ExtractedDataReader {
   getEventDataValue() {
     if (this.recordType) {
       let labels = typeDataEventLabels[this.recordType];
-      return this.getRecordDataValue(labels);
+      let value = this.getRecordDataValue(labels);
+      if (value) {
+        return value;
+      }
     }
+
+    let value = this.getRecordDataValue(["event"]);
+    return value;
   }
 
   getEventDateValue() {
     if (this.recordType) {
       let labels = typeDataEventDateLabels[this.recordType];
-      return this.getRecordDataValue(labels);
+      let value = this.getRecordDataValue(labels);
+      if (value) {
+        return value;
+      }
     }
+    let value = this.getRecordDataValue(["event date", "event year", "date", "year", "date of grant", "year of grant"]);
+    return value;
   }
 
   getEventPlaceValue() {
     if (this.recordType) {
       let labels = typeDataEventPlaceLabels[this.recordType];
-      return this.getRecordDataValue(labels);
+      let value = this.getRecordDataValue(labels);
+      if (value) {
+        return value;
+      }
     }
+    let value = this.getRecordDataValue(["event place", "place"]);
+    return value;
   }
 
   getBirthDataValue() {
-    const labels = ["Birth"];
+    const labels = ["birth"];
     return this.getRecordDataValue(labels);
   }
 
   getDeathDataValue() {
-    const labels = ["Death"];
+    const labels = ["death"];
     return this.getRecordDataValue(labels);
   }
 
@@ -500,12 +571,12 @@ class MhEdReader extends ExtractedDataReader {
         }
       }
 
-      if (!person.age && (birthDateValue || mainValue["Birth"])) {
+      if (!person.age && (birthDateValue || (mainValue && mainValue["Birth"]))) {
         if (birthDateValue.value) {
           person.birthDateString = birthDateValue.value;
         } else if (birthDateValue.dateString) {
           person.birthDateString = birthDateValue.dateString;
-        } else if (mainValue["Birth"]) {
+        } else if (mainValue && mainValue["Birth"]) {
           person.birthDateString = mainValue["Birth"];
         }
       }
@@ -521,7 +592,7 @@ class MhEdReader extends ExtractedDataReader {
 
     let husbandMainValue = this.getRecordDataValueByKeysOrLabels(
       ["person-canonical-events.name-as-groom", "husband-name"],
-      ["Groom", "Husband"]
+      ["groom", "husband"]
     );
     let husbandMaritalStatusValue = this.getRecordDataValue(["Groom marital status"]);
     let husbandAgeValue = this.getRecordDataValueByKeysOrLabels(["husband-age"], []);
@@ -529,7 +600,7 @@ class MhEdReader extends ExtractedDataReader {
 
     let wifeMainValue = this.getRecordDataValueByKeysOrLabels(
       ["person-canonical-events.name-as-bride", "wife-name"],
-      ["Bride", "Wife"]
+      ["bride", "wife"]
     );
     let wifeMaritalStatusValue = this.getRecordDataValue(["Bride marital status"]);
     let wifeAgeValue = this.getRecordDataValueByKeysOrLabels(["wife-age"], []);
@@ -558,7 +629,7 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   setupNameParts() {
-    let nameString = this.getSimpleRecordDataValueString("Name");
+    let nameString = this.getSimpleRecordDataValueString("name");
 
     if (!nameString) {
       let title = this.ed.recordTitle;
@@ -663,6 +734,14 @@ class MhEdReader extends ExtractedDataReader {
     }
 
     if (valueObj.value) {
+      // sometimes the value is something like "Oct 5 1788 - Lyon, France"
+      let parts = valueObj.value.split(" - ");
+      if (parts.length == 2) {
+        let dateObj = this.makeDateObjFromDateString(cleanMhDate(parts[0]));
+        if (dateObj) {
+          return dateObj;
+        }
+      }
       return this.makeDateObjFromDateString(cleanMhDate(valueObj.value));
     }
 
@@ -682,6 +761,17 @@ class MhEdReader extends ExtractedDataReader {
 
     if (valueObj["District"]) {
       return this.makePlaceObjFromFullPlaceName(valueObj["District"]);
+    }
+
+    if (valueObj.value) {
+      // sometimes the value is something like "Oct 5 1788 - Lyon, France"
+      let parts = valueObj.value.split(" - ");
+      if (parts.length == 2) {
+        let placeObj = this.makePlaceObjFromFullPlaceName(parts[1]);
+        if (placeObj) {
+          return placeObj;
+        }
+      }
     }
   }
 
@@ -714,7 +804,7 @@ class MhEdReader extends ExtractedDataReader {
       return this.ed.personGender;
     }
 
-    let gender = this.getSimpleRecordDataValueString("Gender");
+    let gender = this.getSimpleRecordDataValueString("gender");
     if (gender) {
       return gender.toLowerCase();
     }
@@ -753,7 +843,7 @@ class MhEdReader extends ExtractedDataReader {
       return placeObj;
     }
 
-    let valueObj = this.getRecordDataValue(["Place"]);
+    let valueObj = this.getRecordDataValue(["place"]);
     if (valueObj && valueObj.value) {
       placeObj = this.makePlaceObjFromFullPlaceName(valueObj.value);
       if (placeObj) {
@@ -795,7 +885,7 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getMothersMaidenName() {
-    let valueObj = this.getRecordDataValueByKeysOrLabels(["mother-last-name"], ["Mother's maiden name"]);
+    let valueObj = this.getRecordDataValueByKeysOrLabels(["mother-last-name"], ["mother's maiden name"]);
     if (valueObj && valueObj.value) {
       return valueObj.value;
     }
@@ -850,7 +940,7 @@ class MhEdReader extends ExtractedDataReader {
         return this.coupleData.primaryPerson.age;
       }
     } else {
-      let ageValue = this.getRecordDataValueByKeysOrLabels(["age"], ["Age"]);
+      let ageValue = this.getRecordDataValueByKeysOrLabels(["age"], ["age"]);
       if (ageValue && ageValue.value) {
         return cleanMhAge(ageValue.value);
       }
@@ -863,7 +953,7 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getRegistrationDistrict() {
-    let district = this.getRecordDataValueByKeysOrLabels(["registration"], ["Registration"]);
+    let district = this.getRecordDataValueByKeysOrLabels(["registration"], ["registration"]);
     if (district && district.value) {
       return district.value;
     }
@@ -885,17 +975,17 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getMaritalStatus() {
-    return this.getRecordDataValueString(["Marital status"]);
+    return this.getRecordDataValueString(["marital status"]);
   }
 
   getOccupation() {
-    return this.getRecordDataValueString(["Occupation"]);
+    return this.getRecordDataValueString(["occupation"]);
   }
 
   getSpouseObj(eventDateObj, eventPlaceObj) {
     // Note that the calling function will automatically try to determine spouse for census
     if (this.recordType != RT.Census) {
-      let spouseName = this.getRecordDataValueString(["Spouse", "Spouse (implied)"]);
+      let spouseName = this.getRecordDataValueString(["spouse", "spouse (implied)"]);
 
       if (!spouseName && this.coupleData) {
         if (this.coupleData.spouse && this.coupleData.spouse.name) {
@@ -906,7 +996,7 @@ class MhEdReader extends ExtractedDataReader {
       let spouseGender = "";
 
       if (!spouseName) {
-        let wifeValueObj = this.getRecordDataValue(["Wife"]);
+        let wifeValueObj = this.getRecordDataValue(["wife"]);
         if (wifeValueObj) {
           if (wifeValueObj["Name"]) {
             spouseName = wifeValueObj["Name"];
@@ -915,7 +1005,7 @@ class MhEdReader extends ExtractedDataReader {
           }
           spouseGender = "female";
         } else {
-          let husbandValueObj = this.getRecordDataValue(["Husband"]);
+          let husbandValueObj = this.getRecordDataValue(["husband"]);
           if (husbandValueObj) {
             if (husbandValueObj["Name"]) {
               spouseName = husbandValueObj["Name"];
@@ -945,7 +1035,7 @@ class MhEdReader extends ExtractedDataReader {
             }
           } else if (this.recordType == RT.Divorce) {
             // there may be a marriage date
-            let marriageValue = this.getRecordDataValue(["Marriage"]);
+            let marriageValue = this.getRecordDataValue(["marriage"]);
             if (marriageValue) {
               if (marriageValue.dateString) {
                 spouse.marriageDate = this.makeDateObjFromDateString(cleanMhDate(marriageValue.dateString));
@@ -979,8 +1069,8 @@ class MhEdReader extends ExtractedDataReader {
               }
             }
           } else {
-            let spouseFatherName = this.getRecordDataValueString(["Wife's father", "Husband's father"]);
-            let spouseMotherName = this.getRecordDataValueString(["Wife's mother", "Husband's mother"]);
+            let spouseFatherName = this.getRecordDataValueString(["wife's father", "husband's father"]);
+            let spouseMotherName = this.getRecordDataValueString(["wife's mother", "husband's mother"]);
             if (spouseFatherName || spouseMotherName) {
               spouse.parents = {};
               let fatherNameObj = this.makeNameObjFromMhFullName(spouseFatherName);
@@ -1030,8 +1120,8 @@ class MhEdReader extends ExtractedDataReader {
   getParents() {
     // Note that the calling function will automatically try to determine parents for census
     if (this.recordType != RT.Census) {
-      let fatherValue = this.getRecordDataValue(["Father"]);
-      let motherValue = this.getRecordDataValue(["Mother"]);
+      let fatherValue = this.getRecordDataValue(["father"]);
+      let motherValue = this.getRecordDataValue(["mother"]);
       let fatherName = "";
       let motherName = "";
       if (fatherValue || motherValue) {
@@ -1267,10 +1357,10 @@ class MhEdReader extends ExtractedDataReader {
         }
       }
 
-      addRefForRecordDataKeysOrLabels(this, "page", ["Page", "page"], ["Page"]);
-      addRefForRecordDataKeysOrLabels(this, "volume", ["Vol", "vol"], ["Volume"]);
+      addRefForRecordDataKeysOrLabels(this, "page", ["Page", "page"], ["page"]);
+      addRefForRecordDataKeysOrLabels(this, "volume", ["Vol", "vol"], ["volume"]);
 
-      let registrationObj = this.getRecordDataValueByKeysOrLabels(["registration"], ["Registration"]);
+      let registrationObj = this.getRecordDataValueByKeysOrLabels(["registration"], ["registration"]);
       if (registrationObj) {
         function addRefForRegistrationKey(fieldName, key) {
           let value = registrationObj[key];

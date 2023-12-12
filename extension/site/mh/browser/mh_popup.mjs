@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
-import { generalizeData } from "../core/mh_generalize_data.mjs";
+import { generalizeData, generalizeDataGivenRecordType } from "../core/mh_generalize_data.mjs";
 import { buildCitation } from "../core/mh_build_citation.mjs";
 
 async function setupMhPopupMenu(extractedData) {
@@ -34,6 +34,7 @@ async function setupMhPopupMenu(extractedData) {
     generalizeFailedMessage: "It looks like a MyHeritage page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
+    regeneralizeFunction: generalizeDataGivenRecordType,
     siteNameToExcludeFromSearch: "mh",
   };
   setupSimplePopupMenu(input);
