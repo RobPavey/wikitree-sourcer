@@ -1,0 +1,77 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Robert Moore"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1 Apr 1950"
+  },
+  "eventPlace": {
+    "placeString": "320 East 21 St New York, Manhattan, New York, New York, United States"
+  },
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1932"
+  },
+  "birthPlace": {
+    "placeString": "New York, United States"
+  },
+  "ageAtEvent": "18",
+  "relationshipToHead": "son",
+  "maritalStatus": "single",
+  "householdArrayFields": [
+    "relationship",
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "relationship": "head",
+      "name": "Frances Moore",
+      "age": "40"
+    },
+    {
+      "relationship": "son",
+      "name": "John Moore",
+      "age": "22"
+    },
+    {
+      "relationship": "son",
+      "name": "Robert Moore",
+      "age": "18",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "male",
+      "birthPlace": "New York, United States"
+    },
+    {
+      "relationship": "son",
+      "name": "Raymond Moore",
+      "age": "11"
+    },
+    {
+      "relationship": "son",
+      "name": "William Moore",
+      "age": "6"
+    },
+    {
+      "relationship": "daughter",
+      "name": "Theresa Moore",
+      "age": "14"
+    },
+    {
+      "relationship": "grandmother",
+      "name": "Kelleher Moore",
+      "age": "70"
+    }
+  ],
+  "collectionData": {
+    "id": "11006",
+    "enumDistrict": "31-908",
+    "county": "New York"
+  },
+  "hasValidData": true
+}

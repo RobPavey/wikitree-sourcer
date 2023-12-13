@@ -42,7 +42,10 @@
       "relationship": "son",
       "name": "William Henry Pavey",
       "age": "19",
-      "isSelected": true
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "male",
+      "birthPlace": "Stonehouse, Devonshire, England"
     },
     {
       "relationship": "son",

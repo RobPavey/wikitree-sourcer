@@ -1,0 +1,117 @@
+{
+  "url": "https://www.myheritage.com/research/record-11006-106128020/robert-moore-in-1950-united-states-federal-census",
+  "success": true,
+  "collectionTitle": "1950 United States Federal Census",
+  "pageType": "record",
+  "recordTitle": "Robert Moore",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Robert Moore"
+    },
+    "gender": {
+      "label": "Gender",
+      "value": "Male"
+    },
+    "birth": {
+      "label": "Birth",
+      "dateString": "Circa 1932",
+      "placeString": "New York, United States"
+    },
+    "census": {
+      "label": "Residence",
+      "dateString": "Apr 1 1950",
+      "placeString": "320 East 21 St New York, Manhattan, New York, New York, United States"
+    },
+    "age": {
+      "label": "Age",
+      "value": "18"
+    },
+    "race": {
+      "label": "Race",
+      "value": "White"
+    },
+    "marital-status": {
+      "label": "Marital status",
+      "value": "Single"
+    },
+    "parents.name": {
+      "label": "Mother",
+      "value": "Frances Moore"
+    },
+    "siblings.name": {
+      "label": "Siblings",
+      "value": "Theresa Moore, John Moore, Raymond Moore, William Moore",
+      "values": [
+        "Theresa Moore",
+        "John Moore",
+        "Raymond Moore",
+        "William Moore"
+      ]
+    }
+  },
+  "recordSections": {
+    "Census": {
+      "City": "Manhattan",
+      "Series": "T628",
+      "County": "New York",
+      "Dwelling #": "48",
+      "State": "New York",
+      "Line": "7",
+      "Date": "Apr 1 1950",
+      "Enum. District": "31-908"
+    }
+  },
+  "household": {
+    "headings": [
+      "Relation to head",
+      "Name",
+      "Age"
+    ],
+    "members": [
+      {
+        "Relation to head": "Head",
+        "link": "https://www.myheritage.com/research/record-11006-106128001/frances-moore-in-1950-united-states-federal-census",
+        "Name": "Frances Moore",
+        "Age": "40"
+      },
+      {
+        "Relation to head": "Son",
+        "link": "https://www.myheritage.com/research/record-11006-106128019/john-moore-in-1950-united-states-federal-census",
+        "Name": "John Moore",
+        "Age": "22"
+      },
+      {
+        "isSelected": true,
+        "Relation to head": "Son",
+        "link": "https://www.myheritage.com/research/record-11006-106128020/robert-moore-in-1950-united-states-federal-census",
+        "Name": "Robert Moore",
+        "Age": "18"
+      },
+      {
+        "Relation to head": "Son",
+        "link": "https://www.myheritage.com/research/record-11006-106128021/raymond-moore-in-1950-united-states-federal-census",
+        "Name": "Raymond Moore",
+        "Age": "11"
+      },
+      {
+        "Relation to head": "Son",
+        "link": "https://www.myheritage.com/research/record-11006-106128022/william-moore-in-1950-united-states-federal-census",
+        "Name": "William Moore",
+        "Age": "6"
+      },
+      {
+        "Relation to head": "Daughter",
+        "link": "https://www.myheritage.com/research/record-11006-106128017/theresa-moore-in-1950-united-states-federal-census",
+        "Name": "Theresa Moore",
+        "Age": "14"
+      },
+      {
+        "Relation to head": "Grand Mother",
+        "link": "https://www.myheritage.com/research/record-11006-106128018/kelleher-moore-in-1950-united-states-federal-census",
+        "Name": "Kelleher Moore",
+        "Age": "70"
+      }
+    ]
+  }
+}

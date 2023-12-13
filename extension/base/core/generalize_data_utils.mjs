@@ -1664,6 +1664,35 @@ class GeneralizedData {
     if (household && household.fields && household.members) {
       this.householdArrayFields = household.fields;
       this.householdArray = household.members;
+
+      // sometimes there are fields that are not in the table but are
+      // available for the selected person
+      for (let member of this.householdArray) {
+        if (member.isSelected) {
+          if (!member.maritalStatus && this.maritalStatus) {
+            member.maritalStatus = this.maritalStatus;
+          }
+          if (!member.age && this.ageAtEvent) {
+            member.age = this.ageAtEvent;
+          }
+          if (!member.relationship && this.relationshipToHead) {
+            member.relationship = this.relationshipToHead;
+          }
+          if (!member.occupation && this.occupation) {
+            member.occupation = this.occupation;
+          }
+          if (!member.gender && this.personGender) {
+            member.gender = this.personGender;
+          }
+          if (!member.birthPlace) {
+            let birthPlace = this.inferBirthPlace();
+            if (birthPlace) {
+              member.birthPlace = birthPlace;
+            }
+          }
+          break;
+        }
+      }
     }
   }
 

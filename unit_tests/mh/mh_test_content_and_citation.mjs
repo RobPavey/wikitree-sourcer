@@ -108,6 +108,14 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-71507-619/register-of-marriages-for-the-parish-of-edinburgh-1751-1800-in-register-of-marriages-for-the-parish-of-edinburgh?snippet=c7d438a361a656ad2af09fdc4b9a83ee",
   },
   {
+    caseName: "uk_convict_transport_1832_henry_taylor",
+    url: "https://www.myheritage.com/research/record-20146-62040/henry-taylor-in-united-kingdom-convict-transportation-registers",
+  },
+  {
+    caseName: "us_census_1950_robert_moore",
+    url: "https://www.myheritage.com/research/record-11006-106128020/robert-moore-in-1950-united-states-federal-census",
+  },
+  {
     caseName: "us_nc_birth_1961_mark_wilson",
     url: "https://www.myheritage.com/research/record-10779-191744/mark-edward-wilson-in-north-carolina-mecklenburg-county-birth-index",
   },

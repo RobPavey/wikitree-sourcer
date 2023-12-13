@@ -1,0 +1,34 @@
+{
+  "url": "https://www.myheritage.com/research/record-20146-62040/henry-taylor-in-united-kingdom-convict-transportation-registers",
+  "success": true,
+  "collectionTitle": "United Kingdom, Convict Transportation Registers",
+  "pageType": "record",
+  "recordTitle": "Henry Taylor",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Henry Taylor"
+    },
+    "person-events.conviction": {
+      "label": "Conviction",
+      "dateString": "July 26 1832",
+      "placeString": "Suffolk Assizes, Suffolk, England"
+    },
+    "custom_1": {
+      "label": "Sentence",
+      "value": "14 years"
+    },
+    "person-events.transit": {
+      "label": "Transit",
+      "dateString": "Sep 28 1832"
+    },
+    "person-canonical-events.ship-name": {
+      "label": "Ship",
+      "value": "Georgiana"
+    },
+    "custom_5": {
+      "label": "Reference",
+      "value": "Class and Piece Number HO11/8, Page Number 434"
+    }
+  }
+}

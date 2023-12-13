@@ -123,6 +123,14 @@ const recordTypeData = [
     recordType: RT.Probate,
     collectionTitleMatches: [["will and probate index"]],
   },
+  {
+    recordType: RT.PassengerList,
+    collectionTitleMatches: [["passenger list"], ["passenger manifest"]],
+  },
+  {
+    recordType: RT.ConvictTransportation,
+    collectionTitleMatches: [["convict transportation"]],
+  },
 
   // matches using required fields only
   {
@@ -145,6 +153,10 @@ const recordTypeData = [
     recordType: RT.CriminalRegister,
     requiredFields: [["offence", "conviction"], ["imprisonment"]],
   },
+  {
+    recordType: RT.Immigration,
+    requiredFields: [["arrival"]],
+  },
 
   {
     recordType: RT.Death,
@@ -166,6 +178,7 @@ const typeDataEventLabels = {
   BirthRegistration: ["birth"],
   Burial: ["burial"],
   Census: ["residence"],
+  ConvictTransportation: ["conviction", "transit"],
   CriminalRegister: ["conviction", "imprisonment"],
   Death: ["death"],
   DeathOrBurial: ["death / burial", "burial", "death"],
@@ -174,6 +187,7 @@ const typeDataEventLabels = {
   Immigration: ["arrival"],
   Marriage: ["marriage"],
   MarriageRegistration: ["marriage"],
+  PassengerList: ["arrival"],
   Will: ["will"],
 };
 
@@ -1331,7 +1345,7 @@ class MhEdReader extends ExtractedDataReader {
           addRefForCensusKey("piece", "Piece");
 
           let pageString = censusSection["Page"];
-          if (pageString.includes("\\")) {
+          if (pageString && pageString.includes("\\")) {
             let book = pageString.replace(/^(\d+)\\\d+$/, "$1");
             let page = pageString.replace(/^\d+\\(\d+)$/, "$1");
             if (book && page && book != pageString && page != pageString) {

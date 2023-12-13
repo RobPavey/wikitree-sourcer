@@ -59,7 +59,9 @@
     {
       "name": "Charles Kimberlin",
       "age": "15",
-      "isSelected": true
+      "isSelected": true,
+      "gender": "male",
+      "birthPlace": "Warwickshire, England"
     }
   ],
   "collectionData": {

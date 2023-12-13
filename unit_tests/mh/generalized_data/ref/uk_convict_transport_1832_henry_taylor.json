@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "ConvictTransportation",
+  "name": {
+    "name": "Henry Taylor"
+  },
+  "eventDate": {
+    "dateString": "26 July 1832"
+  },
+  "eventPlace": {
+    "placeString": "Suffolk Assizes, Suffolk, England"
+  },
+  "collectionData": {
+    "id": "20146"
+  },
+  "hasValidData": true
+}

@@ -26,6 +26,7 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData, generalizeDataGivenRecordType } from "../core/mh_generalize_data.mjs";
 import { buildCitation } from "../core/mh_build_citation.mjs";
+import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 async function setupMhPopupMenu(extractedData) {
   let input = {
@@ -35,6 +36,7 @@ async function setupMhPopupMenu(extractedData) {
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     regeneralizeFunction: generalizeDataGivenRecordType,
+    buildHouseholdTableFunction: buildHouseholdTable,
     siteNameToExcludeFromSearch: "mh",
   };
   setupSimplePopupMenu(input);
