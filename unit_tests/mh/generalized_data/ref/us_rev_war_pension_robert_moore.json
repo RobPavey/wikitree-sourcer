@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Pension",
+  "name": {
+    "name": "Robert Moore"
+  },
+  "eventPlace": {
+    "placeString": "North Carolina, USA"
+  },
+  "collectionData": {
+    "id": "10021"
+  },
+  "service": "N.C.",
+  "hasValidData": true
+}

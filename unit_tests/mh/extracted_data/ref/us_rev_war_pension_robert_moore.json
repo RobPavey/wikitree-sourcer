@@ -1,0 +1,33 @@
+{
+  "url": "https://www.myheritage.com/research/record-10021-49744/robert-moore-in-revolutionary-war-pension-records",
+  "success": true,
+  "collectionTitle": "Revolutionary War Pension Records",
+  "pageType": "record",
+  "recordTitle": "Robert Moore",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Robert Moore"
+    },
+    "livedin": {
+      "label": "State",
+      "placeString": "North Carolina, USA"
+    },
+    "Service": {
+      "label": "Service",
+      "value": "N.C."
+    },
+    "Pension Number": {
+      "label": "Pension #",
+      "value": "S. 2857"
+    },
+    "pensioner": {
+      "label": "Pensioner",
+      "value": "[Blank] [Blank]"
+    },
+    "Additional Names": {
+      "label": "Additional names",
+      "value": "Butler,  Clark,  Danl Boyd,  Davie,  Francis Beard,  Joseph Smith,  L D Pace,  Lancy Moore,  Lincoln,  Malbade,  Malica Dickerson,  Mc Dowell,  Moore,  Robert Moore,  Th Dougan,  Thomas Dougan,  W R Turner,  William Clark,  William S Wisdom,  William S Wisdome,  William T Anderson,  Wm Clark,  Wm S Wisdom, Clark, Edward Sharp, Lincoln, Malbade, Mc Dowell, Robert Moore, Robt Moore, William S Wisdom, William T Anderson"
+    }
+  }
+}

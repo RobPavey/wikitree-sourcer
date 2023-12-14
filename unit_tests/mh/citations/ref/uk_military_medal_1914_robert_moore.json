@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Military''':\n\"United Kingdom, Service Medal and Award Rolls Index, 1914-1918\"<br/>\nReference: WO 372/14/73909; Source: The National Archives<br/>\n[https://www.myheritage.com/research/record-10872-1271724/robert-moore-in-united-kingdom-service-medal-award-rolls-index MyHeritage Record] (accessed 6 May 2021)<br/>\nName: Robert Moore; Date: 1914-1920; Corps: Royal Engineers; Regiment number: 64462; Rank: Sapper.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Robert was in a military record in 1914-1920.<ref>\n'''Military''':\n\"United Kingdom, Service Medal and Award Rolls Index, 1914-1918\"<br/>\nReference: WO 372/14/73909; Source: The National Archives<br/>\n[https://www.myheritage.com/research/record-10872-1271724/robert-moore-in-united-kingdom-service-medal-award-rolls-index MyHeritage Record] (accessed 6 May 2021)<br/>\nName: Robert Moore; Date: 1914-1920; Corps: Royal Engineers; Regiment number: 64462; Rank: Sapper.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Military''': \"United Kingdom, Service Medal and Award Rolls Index, 1914-1918\"<br/>Reference: WO 372/14/73909; Source: The National Archives<br/>[https://www.myheritage.com/research/record-10872-1271724/robert-moore-in-united-kingdom-service-medal-award-rolls-index MyHeritage Record] (accessed 6 May 2021)<br/>Name: Robert Moore; Date: 1914-1920; Corps: Royal Engineers; Regiment number: 64462; Rank: Sapper.",
+    "type": "source"
+  }
+}

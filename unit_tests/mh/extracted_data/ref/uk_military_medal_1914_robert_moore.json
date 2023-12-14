@@ -1,0 +1,37 @@
+{
+  "url": "https://www.myheritage.com/research/record-10872-1271724/robert-moore-in-united-kingdom-service-medal-award-rolls-index",
+  "success": true,
+  "collectionTitle": "United Kingdom, Service Medal and Award Rolls Index, 1914-1918",
+  "pageType": "record",
+  "recordTitle": "Robert Moore",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Robert Moore"
+    },
+    "militaryService": {
+      "label": "Date",
+      "value": "1914-1920"
+    },
+    "corps": {
+      "label": "Corps",
+      "value": "Royal Engineers"
+    },
+    "reg_number": {
+      "label": "Regiment number",
+      "value": "64462"
+    },
+    "rank": {
+      "label": "Rank",
+      "value": "Sapper"
+    },
+    "ref": {
+      "label": "Reference",
+      "value": "WO 372/14/73909"
+    },
+    "source": {
+      "label": "Source",
+      "value": "View this record on the website of The National Archives"
+    }
+  }
+}

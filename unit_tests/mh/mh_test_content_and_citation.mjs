@@ -116,6 +116,10 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-20146-62040/henry-taylor-in-united-kingdom-convict-transportation-registers",
   },
   {
+    caseName: "uk_military_medal_1914_robert_moore",
+    url: "https://www.myheritage.com/research/record-10872-1271724/robert-moore-in-united-kingdom-service-medal-award-rolls-index",
+  },
+  {
     caseName: "us_census_1950_robert_moore",
     url: "https://www.myheritage.com/research/record-11006-106128020/robert-moore-in-1950-united-states-federal-census",
   },
@@ -130,6 +134,10 @@ const regressionData = [
   {
     caseName: "us_pa_immigration_1882_charles_kimberlin",
     url: "https://www.myheritage.com/research/record-10017-3144396/charles-kimberlin-in-passenger-immigration-lists",
+  },
+  {
+    caseName: "us_rev_war_pension_robert_moore",
+    url: "https://www.myheritage.com/research/record-10021-49744/robert-moore-in-revolutionary-war-pension-records",
   },
   {
     caseName: "us_ssdi_2008_peter_wilson",

@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "name": "Robert Moore"
+  },
+  "eventDate": {
+    "dateString": "1914-1920"
+  },
+  "collectionData": {
+    "id": "10872"
+  },
+  "rank": "Sapper",
+  "hasValidData": true
+}

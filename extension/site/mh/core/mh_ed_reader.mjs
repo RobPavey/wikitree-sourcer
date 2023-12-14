@@ -132,6 +132,34 @@ const recordTypeData = [
     collectionTitleMatches: [["convict transportation"]],
   },
   {
+    recordType: RT.Newspaper,
+    collectionTitleMatches: [["newspaper"]],
+  },
+  {
+    recordType: RT.Pension,
+    collectionTitleMatches: [["pension"]],
+  },
+  {
+    recordType: RT.Memorial,
+    collectionTitleMatches: [["commonwealth war graves"]],
+  },
+  {
+    recordType: RT.Military,
+    collectionTitleMatches: [
+      ["enlistment"],
+      ["service medal"],
+      ["navy", "service record"],
+      ["army", "service record"],
+      ["marine", "service record"],
+      ["navy", "awards"],
+      ["army", "awards"],
+      ["marine", "awards"],
+      ["soldiers"],
+      ["muster roll"],
+      ["royal navy reserve"],
+    ],
+  },
+  {
     recordType: RT.Census,
     collectionTitleMatches: [["census"]],
     requiredFields: [["residence date", "residence place"], ["residence"]],
@@ -196,6 +224,10 @@ const typeDataEventLabels = {
   Immigration: ["arrival"],
   Marriage: ["marriage"],
   MarriageRegistration: ["marriage"],
+  Memorial: ["burial", "burial / commemoration"],
+  Military: ["enlistment"],
+  Newspaper: ["publication"],
+  Pension: ["residence"],
   Residence: ["residence"],
   PassengerList: ["arrival"],
   Will: ["will"],
@@ -892,6 +924,34 @@ class MhEdReader extends ExtractedDataReader {
       }
     }
 
+    let placeString = "";
+    function addPart(reader, labels) {
+      let valueObj = reader.getRecordDataValue(labels);
+      if (valueObj) {
+        let part = valueObj.placeString;
+        if (!part) {
+          part = valueObj.value;
+        }
+        if (part) {
+          if (placeString) {
+            placeString += ", ";
+          }
+          placeString += part;
+        }
+      }
+    }
+    addPart(this, ["sub-division"]);
+    addPart(this, ["division"]);
+    addPart(this, ["district"]);
+    addPart(this, ["electorate"]);
+    addPart(this, ["county"]);
+    addPart(this, ["region"]);
+    addPart(this, ["state"]);
+    addPart(this, ["country"]);
+    if (placeString) {
+      return this.makePlaceObjFromFullPlaceName(placeString);
+    }
+
     return undefined;
   }
 
@@ -1365,6 +1425,21 @@ class MhEdReader extends ExtractedDataReader {
 
       return result;
     }
+  }
+
+  setCustomFields(gd) {
+    function addStringField(reader, key, labels) {
+      let value = reader.getRecordDataValueString(labels);
+      if (value) {
+        gd[key] = value;
+      }
+    }
+
+    addStringField(this, "rank", ["rank", "ending rank"]);
+    addStringField(this, "regiment", ["regiment"]);
+    addStringField(this, "unit", ["unit", "unit / ship", "military unit"]);
+    addStringField(this, "service", ["service"]);
+    addStringField(this, "serviceNumber", ["service #"]);
   }
 
   getCollectionData() {

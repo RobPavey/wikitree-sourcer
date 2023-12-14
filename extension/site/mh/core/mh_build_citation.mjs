@@ -103,7 +103,12 @@ function buildSourceReference(ed, gd, builder) {
         let field = ed.recordData[key];
         if (field && field.label && refLabels.includes(field.label)) {
           if (field.value) {
-            builder.addSourceReferenceField(field.label, field.value);
+            const viewSource = "View this record on the website of ";
+            let value = field.value;
+            if (value.startsWith(viewSource)) {
+              value = value.substring(viewSource.length);
+            }
+            builder.addSourceReferenceField(field.label, value);
           }
         }
       }
