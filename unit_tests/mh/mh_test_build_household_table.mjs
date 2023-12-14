@@ -22,18 +22,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { registerTest } from "../test_utils/test_registry.mjs";
+import { buildHouseholdTable } from "../../extension/base/core/table_builder.mjs";
+import { buildCitation } from "../../extension/site/mh/core/mh_build_citation.mjs";
+import { runBuildHouseholdTableTests } from "../test_utils/test_build_household_table_utils.mjs";
 
-import * as test_content_and_citation from "./mh_test_content_and_citation.mjs";
-import * as test_build_household_table from "./mh_test_build_household_table.mjs";
-import * as test_build_search_url from "./mh_test_build_search_url.mjs";
+const regressionData = [
+  {
+    caseName: "england_census_1841_charles_kimberlin",
+    optionVariants: [
+      {
+        variantName: "citationInCaption",
+        optionOverrides: {
+          table_general_autoGenerate: "citationInTableCaption",
+          table_table_caption: "titlePlace",
+        },
+      },
+    ],
+  },
+  {
+    caseName: "england_census_1851_william_pavey",
+  },
+  {
+    caseName: "france_census_1936_robert_moore",
+  },
+  {
+    caseName: "us_census_1950_robert_moore",
+  },
+];
 
 async function runTests(testManager) {
-  await test_content_and_citation.runTests(testManager);
-  await test_build_household_table.runTests(testManager);
-  await test_build_search_url.runTests(testManager);
+  await runBuildHouseholdTableTests("mh", buildHouseholdTable, buildCitation, regressionData, testManager);
 }
-
-registerTest("mh", runTests);
 
 export { runTests };

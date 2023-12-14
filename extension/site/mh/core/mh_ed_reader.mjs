@@ -117,7 +117,7 @@ const recordTypeData = [
   },
   {
     recordType: RT.ElectoralRegister,
-    collectionTitleMatches: [["register of electors"]],
+    collectionTitleMatches: [["register of electors"], ["electoral roll"], ["voter registration"], ["voter list"]],
   },
   {
     recordType: RT.Probate,
@@ -130,6 +130,11 @@ const recordTypeData = [
   {
     recordType: RT.ConvictTransportation,
     collectionTitleMatches: [["convict transportation"]],
+  },
+  {
+    recordType: RT.Census,
+    collectionTitleMatches: [["census"]],
+    requiredFields: [["residence date", "residence place"], ["residence"]],
   },
 
   // matches using required fields only
@@ -170,6 +175,10 @@ const recordTypeData = [
     recordType: RT.Birth,
     requiredFields: [["birth date", "birth place"], ["birth"]],
   },
+  {
+    recordType: RT.Residence,
+    requiredFields: [["residence date", "residence place"], ["residence"]],
+  },
 ];
 
 const typeDataEventLabels = {
@@ -183,10 +192,11 @@ const typeDataEventLabels = {
   Death: ["death"],
   DeathOrBurial: ["death / burial", "burial", "death"],
   Divorce: ["divorce"],
-  ElectoralRegister: ["voter registration"],
+  ElectoralRegister: ["voter registration", "election", "residence"],
   Immigration: ["arrival"],
   Marriage: ["marriage"],
   MarriageRegistration: ["marriage"],
+  Residence: ["residence"],
   PassengerList: ["arrival"],
   Will: ["will"],
 };
@@ -773,8 +783,25 @@ class MhEdReader extends ExtractedDataReader {
       return this.makePlaceObjFromFullPlaceName(valueObj.placeString);
     }
 
-    if (valueObj["District"]) {
-      return this.makePlaceObjFromFullPlaceName(valueObj["District"]);
+    let placeString = "";
+    function addPart(part) {
+      if (part) {
+        if (placeString) {
+          placeString += ", ";
+        }
+        placeString += part;
+      }
+    }
+    addPart(valueObj["Sub-division"]);
+    addPart(valueObj["Division"]);
+    addPart(valueObj["District"]);
+    addPart(valueObj["Electorate"]);
+    addPart(valueObj["County"]);
+    addPart(valueObj["Region"]);
+    addPart(valueObj["State"]);
+    addPart(valueObj["Country"]);
+    if (placeString) {
+      return this.makePlaceObjFromFullPlaceName(placeString);
     }
 
     if (valueObj.value) {
@@ -1254,14 +1281,21 @@ class MhEdReader extends ExtractedDataReader {
       return undefined;
     }
 
+    if (this.recordType != RT.Census) {
+      return undefined;
+    }
+
+    let birthIsYear = true;
+
     const stdFieldNames = [
-      { stdName: "name", siteHeadings: ["Name"] },
-      { stdName: "age", siteHeadings: ["Age"] },
-      { stdName: "relationship", siteHeadings: ["Relation to head"] },
+      { stdName: "name", siteHeadings: ["name"] },
+      { stdName: "age", siteHeadings: ["age"] },
+      { stdName: "relationship", siteHeadings: ["relation to head", "relation"] },
     ];
     function headingToStdName(heading) {
+      let lcHeading = heading.toLowerCase();
       for (let entry of stdFieldNames) {
-        if (entry.siteHeadings.includes(heading)) {
+        if (entry.siteHeadings.includes(lcHeading)) {
           return entry.stdName;
         }
       }
@@ -1277,10 +1311,10 @@ class MhEdReader extends ExtractedDataReader {
           householdMember.isClosed = true;
         } else {
           for (let heading of headings) {
-            let fieldName = headingToStdName(heading);
-            if (fieldName) {
-              let fieldValue = member[heading];
-              if (fieldValue) {
+            let fieldValue = member[heading];
+            if (fieldValue) {
+              let fieldName = headingToStdName(heading);
+              if (fieldName) {
                 if (fieldName == "relationship") {
                   fieldValue = GD.standardizeRelationshipToHead(cleanMhRelationship(fieldValue));
                 } else if (fieldName == "age") {
@@ -1288,6 +1322,15 @@ class MhEdReader extends ExtractedDataReader {
                 }
 
                 householdMember[fieldName] = fieldValue;
+              } else {
+                let lcHeading = heading.toLowerCase();
+                if (lcHeading == "birth") {
+                  if (birthIsYear) {
+                    householdMember["birthYear"] = fieldValue;
+                  } else {
+                    householdMember["birthDate"] = fieldValue;
+                  }
+                }
               }
             }
           }
@@ -1307,6 +1350,15 @@ class MhEdReader extends ExtractedDataReader {
         let fieldName = headingToStdName(heading);
         if (fieldName) {
           fields.push(fieldName);
+        } else {
+          let lcHeading = heading.toLowerCase();
+          if (lcHeading == "birth") {
+            if (birthIsYear) {
+              fields.push("birthYear");
+            } else {
+              fields.push("birthDate");
+            }
+          }
         }
       }
       result.fields = fields;

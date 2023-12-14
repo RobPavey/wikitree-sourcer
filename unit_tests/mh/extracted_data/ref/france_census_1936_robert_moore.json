@@ -1,0 +1,63 @@
+{
+  "url": "https://www.myheritage.com/research/record-20397-2372852/robert-moore-in-france-paris-census",
+  "success": true,
+  "collectionTitle": "France, Paris Census, 1936",
+  "pageType": "record",
+  "recordTitle": "Robert MOORE",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Robert MOORE"
+    },
+    "person-canonical-events.gender": {
+      "label": "Gender",
+      "value": "Male"
+    },
+    "person-events.birth": {
+      "label": "Birth",
+      "dateString": "1883",
+      "placeString": "Orne, Normandie, France"
+    },
+    "person-events.livedin": {
+      "label": "Residence",
+      "dateString": "1936",
+      "placeString": "Saint-Thomas d'Aquin, 7e Arrondissement, Paris, Île-de-France, France"
+    },
+    "person-relatives.household-members.name": {
+      "label": "Household members",
+      "value": "Aline MOORE"
+    }
+  },
+  "recordSections": {
+    "Census": {
+      "Quarter": "Saint-Thomas d'Aquin",
+      "Arrondissement": "7e Arrondissement",
+      "Department": "Paris",
+      "Region": "Île-de-France",
+      "Country": "France",
+      "Date": "1936",
+      "Source": "Archives de Paris"
+    }
+  },
+  "household": {
+    "headings": [
+      "Relation",
+      "Name",
+      "Birth"
+    ],
+    "members": [
+      {
+        "Relation": "Wife",
+        "link": "https://www.myheritage.com/research/record-20397-100895/aline-moore-in-france-paris-census",
+        "Name": "Aline MOORE",
+        "Birth": "1878"
+      },
+      {
+        "isSelected": true,
+        "link": "https://www.myheritage.com/research/record-20397-2372852/robert-moore-in-france-paris-census",
+        "Name": "Robert MOORE",
+        "Birth": "1883"
+      }
+    ]
+  }
+}

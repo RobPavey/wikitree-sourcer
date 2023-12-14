@@ -1,0 +1,44 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Robert MOORE"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1936"
+  },
+  "eventPlace": {
+    "placeString": "Saint-Thomas d'Aquin, 7e Arrondissement, Paris, Île-de-France, France"
+  },
+  "birthDate": {
+    "dateString": "1883"
+  },
+  "birthPlace": {
+    "placeString": "Orne, Normandie, France"
+  },
+  "householdArrayFields": [
+    "relationship",
+    "name",
+    "birthYear"
+  ],
+  "householdArray": [
+    {
+      "relationship": "wife",
+      "name": "Aline MOORE",
+      "birthYear": "1878"
+    },
+    {
+      "name": "Robert MOORE",
+      "birthYear": "1883",
+      "isSelected": true,
+      "gender": "male",
+      "birthPlace": "Orne, Normandie, France"
+    }
+  ],
+  "collectionData": {
+    "id": "20397"
+  },
+  "hasValidData": true
+}

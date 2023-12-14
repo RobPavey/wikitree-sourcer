@@ -39,6 +39,7 @@ const refLabels = [
   "NRS Reference",
   "Page",
   "Page #",
+  "Record #",
   "Reference",
   "Reference ID",
   "Registration #",
@@ -47,6 +48,7 @@ const refLabels = [
   "System Origin",
   "Town #",
   "Volume",
+  "Volume #",
 ];
 
 function removeUnwantedKeysForDataString(keys, recordData) {

@@ -1,0 +1,8 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Occupation || Birth Place\n|-\n| John Bunney ||  || 40 ||  || \n|-\n| Ruth Bunney ||  || 40 ||  || \n|-\n| John Bunney ||  || 20 ||  || \n|-\n| Bartholomew Slater ||  || 30 ||  || \n|-\n| John Dowling ||  || 30 ||  || \n|-\n| William Rudkin ||  || 20 ||  || \n|-\n| Mary Newborough ||  || 20 ||  || \n|-\n| '''Charles Kimberlin''' || '''M''' || '''15''' ||  || '''Warwickshire, England'''\n|}"
+  },
+  "citationInCaption": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|+ 1841 Census of England and Wales: Kingsbury, Kingsbury, Warwickshire, England<ref>\n'''1841 Census''':\n\"1841 England & Wales Census\"<br/>\nParish: Kingsbury; Series: HO107; Page: 4\\9; County: Warwickshire; Piece: 1130; Family: 392; Country: England; Registrar's district: Fazeley; Line: 25; Date: 1841; Superintendent registrar's district: Tamworth; Image: 10; Enum. District: 10<br/>\n[https://www.myheritage.com/research/record-10150-12380625/charles-kimberlin-in-1841-england-wales-census MyHeritage Record] (accessed 6 May 2021)<br/>\nCharles Kimberlin (15) in Kingsbury, Kingsbury, Warwickshire, England. Born in Warwickshire, England.\n</ref>\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Occupation || Birth Place\n|-\n| John Bunney ||  || 40 ||  || \n|-\n| Ruth Bunney ||  || 40 ||  || \n|-\n| John Bunney ||  || 20 ||  || \n|-\n| Bartholomew Slater ||  || 30 ||  || \n|-\n| John Dowling ||  || 30 ||  || \n|-\n| William Rudkin ||  || 20 ||  || \n|-\n| Mary Newborough ||  || 20 ||  || \n|-\n| '''Charles Kimberlin''' || '''M''' || '''15''' ||  || '''Warwickshire, England'''\n|}"
+  }
+}

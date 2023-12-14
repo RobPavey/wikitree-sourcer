@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1936 Census''':\n\"France, Paris Census, 1936\"<br/>\nQuarter: Saint-Thomas d'Aquin; Arrondissement: 7e Arrondissement; Department: Paris; Region: Île-de-France; Country: France; Date: 1936; Source: Archives de Paris<br/>\n[https://www.myheritage.com/research/record-20397-2372852/robert-moore-in-france-paris-census MyHeritage Record] (accessed 6 May 2021)<br/>\nRobert MOORE in Saint-Thomas d'Aquin, 7e Arrondissement, Paris, Île-de-France, France. Born in Orne, Normandie, France.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1936 census Robert was in Saint-Thomas d'Aquin, 7e Arrondissement, Paris, Île-de-France, France.<ref>\n'''1936 Census''':\n\"France, Paris Census, 1936\"<br/>\nQuarter: Saint-Thomas d'Aquin; Arrondissement: 7e Arrondissement; Department: Paris; Region: Île-de-France; Country: France; Date: 1936; Source: Archives de Paris<br/>\n[https://www.myheritage.com/research/record-20397-2372852/robert-moore-in-france-paris-census MyHeritage Record] (accessed 6 May 2021)<br/>\nRobert MOORE in Saint-Thomas d'Aquin, 7e Arrondissement, Paris, Île-de-France, France. Born in Orne, Normandie, France.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1936 Census''': \"France, Paris Census, 1936\"<br/>Quarter: Saint-Thomas d'Aquin; Arrondissement: 7e Arrondissement; Department: Paris; Region: Île-de-France; Country: France; Date: 1936; Source: Archives de Paris<br/>[https://www.myheritage.com/research/record-20397-2372852/robert-moore-in-france-paris-census MyHeritage Record] (accessed 6 May 2021)<br/>Robert MOORE in Saint-Thomas d'Aquin, 7e Arrondissement, Paris, Île-de-France, France. Born in Orne, Normandie, France.",
+    "type": "source"
+  }
+}

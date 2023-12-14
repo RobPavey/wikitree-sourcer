@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| William Henry Pavey || Head ||  ||  || 44 ||  || \n|-\n| Elizabeth Pavey || Wife ||  ||  || 43 ||  || \n|-\n| '''William Henry Pavey''' || '''Son''' || '''Unmarried''' || '''M''' || '''19''' ||  || '''Stonehouse, Devonshire, England'''\n|-\n| Fredrick A Pavey || Son ||  ||  || 18 ||  || \n|-\n| Jemima Anne Pavey || Daughter ||  ||  || 16 ||  || \n|-\n| John L Pavey || Son ||  ||  || 14 ||  || \n|-\n| Marian Pavey || Daughter ||  ||  || 12 ||  || \n|-\n| Isabella Pavey || Daughter ||  ||  || 10 ||  || \n|-\n| Charles Pavey || Son ||  ||  || 8 ||  || \n|-\n| Mary Pavey || Daughter ||  ||  || 6 ||  || \n|-\n| Julia Pavey || Daughter ||  ||  || 4 ||  || \n|-\n| Fanny Pavey || Daughter ||  ||  || 2 ||  || \n|}"
+  }
+}

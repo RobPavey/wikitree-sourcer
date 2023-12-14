@@ -96,6 +96,10 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-10911-1793347/henry-joseph-tillier-in-france-compilation-of-vital-records",
   },
   {
+    caseName: "france_census_1936_robert_moore",
+    url: "https://www.myheritage.com/research/record-20397-2372852/robert-moore-in-france-paris-census",
+  },
+  {
     caseName: "jamaica_church_1867_james_johnson",
     url: "https://www.myheritage.com/research/record-30261-278584/james-johnson-in-jamaica-church-of-england-parish-register-transcripts",
   },
