@@ -248,7 +248,11 @@ async function fsGetAllCitationsAction(data) {
     keepPopupOpenForDebug();
 
     const message = "An exception occurred getting sources.";
-    displayMessageWithIcon("warning", message, "");
+    let message2 = "";
+    if (e && e.message) {
+      message2 = e.message;
+    }
+    displayMessageWithIcon("warning", message, message2);
   }
 }
 
