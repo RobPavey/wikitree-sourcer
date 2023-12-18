@@ -37,6 +37,15 @@ function openInNewTab(link, currentTab, options) {
 }
 
 function openAncestryLink(tab, link, options) {
+  // do not redirect sharing links when using library edition since that does not work
+  if (link.includes("/sharing/") || link.includes("%2Fsharing%2F")) {
+    let desiredDomain = options.search_ancestry_domain;
+    if (desiredDomain.includes("library")) {
+      openInNewTab(link, tab, options);
+      return;
+    }
+  }
+
   //console.log("openAncestryLink, link is: " + link);
   if (link.startsWith("https://click.linksynergy")) {
     // NOTE: Ancestry switched from Partnerize to Rakuten on 18 Apr 2023. Partnerize used the
