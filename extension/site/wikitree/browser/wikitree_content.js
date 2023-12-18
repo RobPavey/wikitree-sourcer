@@ -595,7 +595,7 @@ function mergeBioText(personData) {
   let inBio = false;
   let inSources = false;
 
-  const regex1 = RegExp("==s*[^=\n]+s*==", "g");
+  const regex1 = RegExp("==[^=\n]+==[^=]", "g");
   let array1;
 
   while ((array1 = regex1.exec(existingText)) !== null) {
@@ -678,7 +678,12 @@ function mergeBioText(personData) {
     newText += seeAlsoToAdd;
   }
   // add back any text that was after Sources section
-  newText += existingText.substring(endOfSourcesSectionIndex);
+  if (endOfSourcesSectionIndex != existingText.length) {
+    if (personData.sources || personData.seeAlso) {
+      newText += "\n\n";
+    }
+    newText += existingText.substring(endOfSourcesSectionIndex);
+  }
 
   return newText;
 }
@@ -711,19 +716,15 @@ function postMergeEditData(wikitreeMergeEditData) {
   };
 
   if (personData.bio || personData.sources || personData.seeAlso) {
-    if (personData.bio && !personData.sources && !personData.seeAlso) {
-      person.person.Bio = personData.bio;
-      person.options = { mergeBio: 1 };
+    // we need to get the existing profile text and merge it here, but this is tricky
+    // if the page we are viewing is not in edit mode. Could use the API I guess.
+    let mergedBio = mergeBioText(personData);
+
+    if (mergedBio) {
+      person.person.Bio = mergedBio;
     } else {
-      // we need to get the existing profile text and merge it here, but this is tricky
-      // if the page we are viewing is not in edit mode. Could use the API I guess.
-      let mergedBio = mergeBioText(personData);
-      if (mergedBio) {
-        person.person.Bio = mergedBio;
-      } else {
-        person.person.Bio = personData.bio + "\n\n" + personData.sources + "\n\n" + personData.seeAlso;
-        person.options = { mergeBio: 1 };
-      }
+      person.person.Bio = personData.bio + "\n\n" + personData.sources + "\n\n" + personData.seeAlso;
+      person.options = { mergeBio: 1 };
     }
   }
 

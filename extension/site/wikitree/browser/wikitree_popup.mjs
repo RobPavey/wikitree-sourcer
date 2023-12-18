@@ -799,6 +799,7 @@ async function getWikiTreeMergeEditData(data, personData, citationObject) {
           result.bio += "\n\n";
         }
         result.bio += birthLine;
+        needsBioText = true;
       }
     }
 
@@ -816,6 +817,7 @@ async function getWikiTreeMergeEditData(data, personData, citationObject) {
             result.bio += "\n\n";
           }
           result.bio += marriageLines;
+          needsBioText = true;
         }
       }
 
@@ -828,6 +830,7 @@ async function getWikiTreeMergeEditData(data, personData, citationObject) {
             result.bio += "\n\n";
           }
           result.bio += deathLine;
+          needsBioText = true;
         }
       }
     }
