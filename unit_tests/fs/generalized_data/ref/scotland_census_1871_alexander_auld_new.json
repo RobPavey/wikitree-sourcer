@@ -1,0 +1,102 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Alexander Auld",
+    "lastName": "Auld",
+    "forenames": "Alexander"
+  },
+  "birthDate": {
+    "dateString": "1820",
+    "yearString": "1820"
+  },
+  "birthPlace": {
+    "placeString": "Lanarkshire"
+  },
+  "eventDate": {
+    "dateString": "1871",
+    "yearString": "1871"
+  },
+  "eventPlace": {
+    "placeString": "Tradeston, Lanarkshire, Scotland"
+  },
+  "ageAtEvent": "51",
+  "occupation": "Pattern Designer For Calico Printer",
+  "householdArrayFields": [
+    "name",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Alexander Auld",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "51",
+      "birthYear": "1820",
+      "occupation": "Pattern Designer For Calico Printer",
+      "birthPlace": "Lanarkshire",
+      "isSelected": true
+    },
+    {
+      "name": "Jane Mcc K Auld",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "48",
+      "birthYear": "1823",
+      "birthPlace": "Stirlingshire"
+    },
+    {
+      "name": "Jane M K Auld",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "22",
+      "birthYear": "1849",
+      "occupation": "Millinery Saleswoman",
+      "birthPlace": "Lanarkshire"
+    },
+    {
+      "name": "Alexander K Auld",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "19",
+      "birthYear": "1852",
+      "occupation": "Dress and Skirling Salesman",
+      "birthPlace": "Lanarkshire"
+    },
+    {
+      "name": "Grace J Auld",
+      "gender": "female",
+      "age": "15",
+      "birthYear": "1856",
+      "birthPlace": "Lanarkshire"
+    },
+    {
+      "name": "William R Auld",
+      "gender": "male",
+      "age": "14",
+      "birthYear": "1857",
+      "occupation": "Office Boy",
+      "birthPlace": "Lanarkshire"
+    },
+    {
+      "name": "Margaret C Auld",
+      "gender": "female",
+      "age": "6",
+      "birthYear": "1865",
+      "birthPlace": "Renfrewshire"
+    }
+  ],
+  "maritalStatus": "married",
+  "collectionData": {
+    "id": "2028678",
+    "page": "2"
+  },
+  "hasValidData": true
+}

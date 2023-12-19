@@ -1717,6 +1717,7 @@ const fieldData = [
   { fieldFsType: "FolioNo" },
   { fieldFsType: "DigitalFilmNumber" },
   { fieldFsType: "FilmNumber" },
+  { fieldFsType: "FilmNbr" },
   { fieldFsType: "ImageApid" },
   { fieldFsType: "ImageId" },
   { fieldFsType: "PpqId" },

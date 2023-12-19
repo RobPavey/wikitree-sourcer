@@ -1,0 +1,3986 @@
+{
+  "id" : "r_22138533212",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1701718688502,
+    "created" : 1701718688502
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9M89-F24S?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9M89-F24S?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9M89-F24S"
+    }
+  },
+  "description" : "#sd_p_13808448713",
+  "persons" : [ {
+    "id" : "p_13808448712",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "4c10bf26-8162-4131-bb33-45c418abefff",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "453f11a2-94cd-40c8-9adb-f5a303abf4bb",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "453f11a2-94cd-40c8-9adb-f5a303abf4bb",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1701875907287,
+            "created" : 1701875907287
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VB4X-MPG?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M89-F24S?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001063625592" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG" ]
+    },
+    "names" : [ {
+      "id" : "ac553adf-46d0-4164-8c1a-e8388e884ae7",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "William Muir",
+        "parts" : [ {
+          "id" : "94ebfadf-012e-4df6-b144-5ba66bd7c0b8",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William",
+          "fields" : [ {
+            "id" : "ddbfcb75-df2b-4359-9ee3-2eafd7eed5ea",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "22b97e43-4575-4d6f-ab9a-07ded4ade3c2",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "WILLIAM"
+            }, {
+              "id" : "22b97e43-4575-4d6f-ab9a-07ded4ade3c2",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "William"
+            } ]
+          } ]
+        }, {
+          "id" : "1627455c-9262-4112-81b7-fb76028299f0",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Muir",
+          "fields" : [ {
+            "id" : "7bc17593-96c3-4931-b102-b1787fe7c7f5",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "d5777b6a-dccb-4ad2-b512-e4e6bdebfaee",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "MUIR"
+            }, {
+              "id" : "d5777b6a-dccb-4ad2-b512-e4e6bdebfaee",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "a52f942d-91b4-4a11-a9b9-aca3dbcb7ab0",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "32a460f0-2ed9-4c7b-9306-c0779e800139",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "William Muir"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "MARRIED",
+      "fields" : [ {
+        "id" : "c72ee7b6-1118-4636-b892-0a9fa0d16112",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "00de71a7-f7d4-4a78-a7aa-5628a6e17d23",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "MARRIED"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Occupation",
+      "value" : "CARTER",
+      "fields" : [ {
+        "id" : "c43b6c3f-5d4e-49ca-99b4-644df02d54bd",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/Occupation",
+        "values" : [ {
+          "id" : "ce4f17c8-9f9d-43b0-911f-19088e63eccb",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_OCCUPATION_ORIG",
+          "text" : "CARTER"
+        } ]
+      } ]
+    }, {
+      "id" : "7420c6ff-97ce-4400-8b47-be3324e9289e",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "35fd517f-5c9a-4f92-bdf7-332965d93c37",
+        "original" : "1861",
+        "fields" : [ {
+          "id" : "10b49eb0-54d6-4f56-ba5c-a2f31158eed7",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "cff88821-4090-4c6e-aab6-634a31df7efa",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1861",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "c7e74856-62b3-4937-b6c0-39b435000464",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "a2573061-107e-4a88-a60b-cf71162cb2d6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1861"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "9b26253d-ad85-40c2-a040-08b70f65b4b0",
+        "original" : "Partick, Lanarkshire, Scotland",
+        "fields" : [ {
+          "id" : "20f3b078-26ca-4e5b-abaa-0c4215e8488a",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Parish",
+          "values" : [ {
+            "id" : "2df87ea3-946f-4dee-92f0-813cb7ad19c1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PARISH_ORIG",
+            "text" : "Govan"
+          } ]
+        }, {
+          "id" : "246c0e29-48ab-4f47-9d69-112a37c232db",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "3143c13c-fbba-4f0b-82da-50042a06a445",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "Scotland"
+          } ]
+        }, {
+          "id" : "a9a788d9-7a16-4205-b39f-e3a53d6f5250",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Town",
+          "values" : [ {
+            "id" : "2812b014-286a-4f50-b602-c72f38980960",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWN_ORIG",
+            "text" : "PARTICK"
+          } ]
+        }, {
+          "id" : "31a58a76-030d-462f-9cef-2bb7c73c0812",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "3975ebcd-7e99-45b8-8684-b099204f3b9c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Lanarkshire"
+          } ]
+        }, {
+          "id" : "87d2c19f-f752-4768-b633-4eae08c8f202",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "6c35bb9e-5e16-4970-8094-506336231741",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Partick, Lanarkshire, Scotland",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "79cff567-ffc4-4497-96ce-56b0eb2fb556",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
+          "values" : [ {
+            "id" : "2f18e6d8-b8f9-4e70-b9fb-42f511f89626",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_ORIG",
+            "text" : "3"
+          } ]
+        }, {
+          "id" : "05d27b11-d790-43a1-b20b-e693c3c67b08",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "1689978e-c9ed-4c6c-8f3a-c56339304635",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "Partick"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "22f06104-2b0d-4e37-aeee-7a66c45ca804",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "3bc65550-c427-4306-b1fc-144b3faac0b6",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "8f639467-8d18-4344-b16d-33ae60947849",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "68d8a31b-b005-4f97-ae73-7d0d8d3baf51",
+        "fields" : [ {
+          "id" : "187b008a-ce11-4408-b3b7-528ce3d220ad",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Address",
+          "values" : [ {
+            "id" : "d591ce95-b3f3-4876-8386-6bfba8e09c76",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_ADDRESS_ORIG",
+            "text" : "Douglas Street"
+          } ]
+        } ]
+      },
+      "primary" : false
+    }, {
+      "id" : "8994a270-db15-4573-9f11-888f8e55a19d",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "91077986-17ab-4679-9f95-a9f9ebb4fb58",
+        "original" : "1829",
+        "fields" : [ {
+          "id" : "3519a9fb-f72c-49d5-bbd5-f94ac7195dee",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "29f56c1b-b412-423f-a31b-39b105a2f2b0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1829"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "e81c7aa3-8b19-4a00-8bab-8ff59adfbb8d",
+        "original" : "Renfrewshire",
+        "fields" : [ {
+          "id" : "10e0f6b4-aa6a-4039-89f2-4c5c9913df51",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "84a0e670-4da0-461a-b025-6b4b05a97500",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Renfrewshire",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "21400c55-4f4c-4119-92c3-e52ad34c0285",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "a9b059a5-214b-4e33-9215-4dca529e41d8",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_COUNTY_ORIG",
+            "text" : "RENFREWSHIRE"
+          } ]
+        }, {
+          "id" : "6800cad3-7e2d-4aaf-baa0-cc91bf38e81c",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/CityOrTown",
+          "values" : [ {
+            "id" : "91cc2de9-9d46-41ff-befb-c600e61bfdc1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_CITY_TOWN_ORIG",
+            "text" : "Paisley"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "a6f45e56-f606-48f8-8674-319574f7cd3f",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FilmNbr",
+      "values" : [ {
+        "id" : "63ae4bfe-4dee-4d1d-b7eb-1dba0488e318",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_FILM_NBR",
+        "text" : "103866"
+      } ]
+    }, {
+      "id" : "d973b3e4-03ec-4aa9-9a05-05c043801c5e",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceFolioNbr",
+      "values" : [ {
+        "id" : "2e17e0ac-96be-454d-a4cc-5d3de73db681",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_FOLIO_NBR_ORIG",
+        "text" : "2"
+      } ]
+    }, {
+      "id" : "fe451c2a-5195-416c-80b6-d719ec95e058",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceScheduleNbr",
+      "values" : [ {
+        "id" : "da84009b-898b-4b98-b3b8-059e8833992f",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SCHEDULE_NBR_ORIG",
+        "text" : "112"
+      } ]
+    }, {
+      "id" : "5a9f9f88-59ed-43f8-a55f-f47b511a4bc4",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "e1bc645a-4408-4da6-8309-f3e1c3095791",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_004548765_00852_022_022_1001063625592"
+      } ]
+    }, {
+      "id" : "28f77c26-a0cf-4ff2-8b19-33dffaa2ad4c",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagInhabited",
+      "values" : [ {
+        "id" : "dcc252ec-669d-462c-bbab-6073df7d2957",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_INHABITED_ORIG",
+        "text" : "Y"
+      } ]
+    }, {
+      "id" : "a848875c-ede2-4b7c-bd7d-3dda732bd38a",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FsUnsupported",
+      "values" : [ {
+        "id" : "1bfd7293-ccfb-43ed-a83a-ded6936ff9de",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNSUPPORTED",
+        "text" : "{\"RELATIONSHIP\":\"HEAD\"}"
+      } ]
+    }, {
+      "id" : "962cd304-bd98-4980-bd3d-211f8c685b6d",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageType",
+      "values" : [ {
+        "id" : "af65d789-1a9c-47e9-8998-aad02c13ec56",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_TYPE_ORIG",
+        "text" : "6"
+      } ]
+    }, {
+      "id" : "7924a2fb-db8b-4a94-8c0f-131c831b5310",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePieceNbr",
+      "values" : [ {
+        "id" : "a0ce17a7-5f42-4dc0-bb09-409e9c3a77ec",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PIECE_NBR_ORIG",
+        "text" : "646"
+      } ]
+    }, {
+      "id" : "96703ae6-d063-445a-832f-6ebcf9a50753",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceRegNbr",
+      "values" : [ {
+        "id" : "7b7b0373-0e94-4d60-90a4-da632728713a",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_REG_NBR_ORIG",
+        "text" : "RG09"
+      } ]
+    }, {
+      "id" : "81bb47ea-e40e-47a0-aebb-cd2be41f6857",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+      "values" : [ {
+        "id" : "48324cd1-cad2-4ec1-bf3b-9002681deb6a",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_NBR_ORIG",
+        "text" : "22"
+      } ]
+    }, {
+      "id" : "43169653-ef8d-49d3-bea6-87e3e38abfab",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "0d124403-37fa-42bc-b4e0-d76b38ae5693",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "32"
+      }, {
+        "id" : "0d124403-37fa-42bc-b4e0-d76b38ae5693",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "32"
+      } ],
+      "qualifiers" : [ {
+        "value" : "115c765b-91d0-4768-90cd-54faa4c821d1",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "William Muir",
+      "gender" : "Male",
+      "birthDate" : "1829",
+      "birthPlace" : "Renfrewshire"
+    }
+  }, {
+    "id" : "p_13808448713",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "6b23ad38-d632-4e7d-b84b-79b04ed90085",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "5b0e7f71-eb8d-43a8-87ca-9b18335d7b25",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "5b0e7f71-eb8d-43a8-87ca-9b18335d7b25",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1701875907289,
+            "created" : 1701875907289
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VB4X-MPP?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M89-F24S?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001065218953" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPP" ]
+    },
+    "names" : [ {
+      "id" : "2c2e813b-ec29-4562-8a52-4a81e160a7c5",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Margaret Muir",
+        "parts" : [ {
+          "id" : "95ed7eb7-198b-477f-847c-d5d6d6e1143b",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Margaret",
+          "fields" : [ {
+            "id" : "02138ae4-fa66-4643-a0e0-7d1ed181bce4",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "c7c21b55-cf66-48c6-8346-7a780f3c428c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "MARGARET"
+            }, {
+              "id" : "c7c21b55-cf66-48c6-8346-7a780f3c428c",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Margaret"
+            } ]
+          } ]
+        }, {
+          "id" : "3ef3595f-b31e-483d-9271-312396d00ea5",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Muir",
+          "fields" : [ {
+            "id" : "0ee0d0ce-b058-4860-ac7d-b4e0ca7e0678",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "57e84ea1-67f5-4a3e-9e78-a1a84a58a822",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "MUIR"
+            }, {
+              "id" : "57e84ea1-67f5-4a3e-9e78-a1a84a58a822",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "3b9ffa78-1f32-4c95-9058-abf4984764db",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "3b178039-4d48-4a52-a7d8-a9b06f5f947f",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Margaret Muir"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "MARRIED",
+      "fields" : [ {
+        "id" : "3ca7f336-1874-4208-8eed-cbbf37ab1686",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "2ead25b5-3df0-4199-8d02-04a520c39696",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "MARRIED"
+        } ]
+      } ]
+    }, {
+      "id" : "0ecac92e-c25d-4681-9589-673271623af6",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "4234cb61-9c36-4e5e-85c6-5cf2bd86f495",
+        "original" : "1861",
+        "fields" : [ {
+          "id" : "82212e61-f4b4-4f53-8262-7e301ba4b404",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "57e585a7-2d00-4400-b302-d5af9ddce2bc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1861",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "e544af52-c3e5-4281-81bc-4cac007e23cc",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "a07e6ba1-7973-4fa1-8e4b-8765f35cdb56",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1861"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "44773bbb-80d8-4255-a8e6-6a426ec061b8",
+        "original" : "Partick, Lanarkshire, Scotland",
+        "fields" : [ {
+          "id" : "7b95678d-de4a-43b7-933b-db120cc64bcf",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Parish",
+          "values" : [ {
+            "id" : "685876ea-0846-4305-aea7-3111a1e6f9ac",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PARISH_ORIG",
+            "text" : "Govan"
+          } ]
+        }, {
+          "id" : "cfb493a1-49aa-4c6e-b225-cbb977ebd36a",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "01216fdb-0905-43c9-bcfc-4f323541d72a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Lanarkshire"
+          } ]
+        }, {
+          "id" : "08afdc92-32bc-4e51-9ef3-e3758509f82f",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
+          "values" : [ {
+            "id" : "ebc6d07c-c19f-4bce-b621-dea4c0e3aefe",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_ORIG",
+            "text" : "3"
+          } ]
+        }, {
+          "id" : "904333ed-808f-4d9b-b45d-85530a67d450",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "bd993517-e788-4bcb-8670-0fc100f7ba75",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "Scotland"
+          } ]
+        }, {
+          "id" : "00d2ae4d-5046-4948-99e8-cb9da81e5a36",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Town",
+          "values" : [ {
+            "id" : "26b7e71c-2dce-4a79-9f38-036f145dee0a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWN_ORIG",
+            "text" : "PARTICK"
+          } ]
+        }, {
+          "id" : "e02b0b2e-54fe-48c2-b763-4ae95de42a35",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "b717dd12-ef7f-4bdd-a523-d8afe9b1278c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Partick, Lanarkshire, Scotland",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "820d075c-abbd-402d-b212-4f170c701234",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "22c30c9c-48e9-4ba9-8b3b-8ca2a363f3db",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "Partick"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "5d2c6291-f5cf-422b-aa8e-d19fecae9eeb",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "3fcb5f6a-196f-4d85-baa3-bcf7ce7a9e59",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "719c12a2-287f-4d14-9b13-ecb8e6779ecd",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "7c4f8fa6-2264-4a38-a88f-6b18045155d0",
+        "original" : "1828",
+        "fields" : [ {
+          "id" : "3ccc69dd-cc15-4ec9-97b1-1cb7561ce372",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "1195707f-a079-4276-a2ae-1851cd4e510b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1828"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "38400e80-cb30-4ccb-a745-c62f4b7e2e76",
+        "original" : "Lanarkshire",
+        "fields" : [ {
+          "id" : "9ac6bcc7-cba1-4c88-87cb-d8f862ec0e0e",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "207ff35b-3e2a-4345-a977-bc1be921e37f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_COUNTY_ORIG",
+            "text" : "LANARKSHIRE"
+          } ]
+        }, {
+          "id" : "d6d59817-7b32-41bf-84e9-d000ba6dd234",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/CityOrTown",
+          "values" : [ {
+            "id" : "e548b82f-5b13-4676-96a8-72bd72374b94",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_CITY_TOWN_ORIG",
+            "text" : "Glasgow"
+          } ]
+        }, {
+          "id" : "3095fa08-4ecd-4a36-b000-b8848d552da2",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "5bc6dc48-a1e6-4b8d-9da4-ec85bfd86806",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Lanarkshire",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "c59b25c8-2156-4123-b54a-1cf46db307ae",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "746d9812-2053-4b39-ba0a-6267fe883880",
+        "fields" : [ {
+          "id" : "33fa19ba-384c-4016-9a87-020971859b95",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Address",
+          "values" : [ {
+            "id" : "350ff787-f965-47e9-a882-2e03cba34756",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_ADDRESS_ORIG",
+            "text" : "DOUGLAS STREET"
+          } ]
+        } ]
+      },
+      "primary" : false
+    } ],
+    "fields" : [ {
+      "id" : "75a61b60-eb18-4b57-8ef1-92671783cd64",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FilmNbr",
+      "values" : [ {
+        "id" : "bbb8baa6-ad0e-491c-a416-f84c6f345b6a",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_FILM_NBR",
+        "text" : "103866"
+      } ]
+    }, {
+      "id" : "f113d6c7-ed74-4eed-bec1-08d8a104f8a5",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePieceNbr",
+      "values" : [ {
+        "id" : "e23e6d98-d5e9-4a14-b476-7846658cddf8",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PIECE_NBR_ORIG",
+        "text" : "646"
+      } ]
+    }, {
+      "id" : "1a1dc7c4-9aea-4b75-aa8a-8c1899d8b17f",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageType",
+      "values" : [ {
+        "id" : "ced2d076-035a-4ec1-ba5c-f70a06ae6df4",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_TYPE_ORIG",
+        "text" : "6"
+      } ]
+    }, {
+      "id" : "10a0b560-87dd-4614-8812-4f4fb8065b63",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagInhabited",
+      "values" : [ {
+        "id" : "0453f96f-7e05-4989-aac6-b341113e80f1",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_INHABITED_ORIG",
+        "text" : "Y"
+      } ]
+    }, {
+      "id" : "0cf21d87-e642-43e5-97b0-97aba96f5fca",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FsUnsupported",
+      "values" : [ {
+        "id" : "9cd59d9f-a881-41a7-916a-5b3259e87869",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNSUPPORTED",
+        "text" : "{\"UNIQUE_IDENTIFIER\":\"1001065218953\"}"
+      } ]
+    }, {
+      "id" : "60ec2c3c-18ec-40ff-9883-d09de1380ebf",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "f82176c7-f2cf-490a-b71d-696647a90e96",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_004548765_00852_022_023_1001065218953"
+      } ]
+    }, {
+      "id" : "aba14683-7825-4439-a1b5-6e608bc7b50d",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+      "values" : [ {
+        "id" : "bbc92865-1739-4643-9039-4cd39e986675",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_NBR_ORIG",
+        "text" : "22"
+      } ]
+    }, {
+      "id" : "120d4828-2f7c-4677-8e93-1ce44b33a663",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceScheduleNbr",
+      "values" : [ {
+        "id" : "5951e8db-2a8d-41b2-87c9-1ac8189fa8eb",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SCHEDULE_NBR_ORIG",
+        "text" : "112"
+      } ]
+    }, {
+      "id" : "e270a9d0-7f25-48d6-a13d-8ea617c14d88",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceFolioNbr",
+      "values" : [ {
+        "id" : "e9eecbeb-7783-4709-937c-241aec7cc257",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_FOLIO_NBR_ORIG",
+        "text" : "2"
+      } ]
+    }, {
+      "id" : "2bd795a6-5430-4a14-bfbf-0fd92a7a99e0",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceRegNbr",
+      "values" : [ {
+        "id" : "b1469a7a-b958-4638-88f0-990b8dd7bfeb",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_REG_NBR_ORIG",
+        "text" : "RG09"
+      } ]
+    }, {
+      "id" : "7391c6ab-48c3-4b4c-af1f-e0b8500c34aa",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "86436ffe-f325-4296-a111-236712604f4b",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "33"
+      }, {
+        "id" : "86436ffe-f325-4296-a111-236712604f4b",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "33"
+      } ],
+      "qualifiers" : [ {
+        "value" : "2e8a888e-bc2e-4963-8d69-a18d5d7ba4ed",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Margaret Muir",
+      "gender" : "Female",
+      "birthDate" : "1828",
+      "birthPlace" : "Lanarkshire"
+    }
+  }, {
+    "id" : "p_13808448714",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "e9894362-79de-41f1-9f37-77034980a86e",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "164df143-d01d-4aae-a7be-97a0cce91b81",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "164df143-d01d-4aae-a7be-97a0cce91b81",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1701875907292,
+            "created" : 1701875907292
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VB4X-MP5?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M89-F24S?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001063606686" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MP5" ]
+    },
+    "names" : [ {
+      "id" : "7f49e44d-db51-40cc-beaf-5406c17426f9",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Agnes Muir",
+        "parts" : [ {
+          "id" : "c221af43-9405-4198-b4c7-78c6a80a579f",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Agnes",
+          "fields" : [ {
+            "id" : "3b0e47e4-6a3b-48e6-81a0-d73997357e80",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "72a50b15-b93f-433c-b2a7-97938a1934bd",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "AGNES"
+            }, {
+              "id" : "72a50b15-b93f-433c-b2a7-97938a1934bd",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Agnes"
+            } ]
+          } ]
+        }, {
+          "id" : "707898cc-dab9-4860-a61a-14e55272acc0",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Muir",
+          "fields" : [ {
+            "id" : "d3639b5b-114e-4cf3-997a-64b551e052f5",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "f73f11a4-9e38-473c-bb38-19b113d3adee",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "MUIR"
+            }, {
+              "id" : "f73f11a4-9e38-473c-bb38-19b113d3adee",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "fcf26934-768d-4d4a-b1a9-8477f9a39c8c",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "8ec57c33-26d6-4ec5-bd21-34e26394f5e3",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Agnes Muir"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "UNMARRIED",
+      "fields" : [ {
+        "id" : "78392f5f-86b6-4654-8df5-b8966fa7fcee",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "37331fa1-4bf6-462f-8c6b-bfe8583be275",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "UNMARRIED"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Occupation",
+      "value" : "SCHOLAR",
+      "fields" : [ {
+        "id" : "c97cca4c-8098-489f-bf5e-843235bbb2d3",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/Occupation",
+        "values" : [ {
+          "id" : "66c50a24-8f9d-46cc-8eb9-e8ee86c1c8d6",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_OCCUPATION_ORIG",
+          "text" : "SCHOLAR"
+        } ]
+      } ]
+    }, {
+      "id" : "00faeece-338b-4425-a3e4-c4978e0d3519",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "d363ce84-95a8-4136-b298-ed57a920a7ae",
+        "original" : "1854",
+        "fields" : [ {
+          "id" : "2ec22945-d224-4a5d-b3c1-067445099ced",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "f7e6f6d7-3d36-42e4-a163-7d3daacf118e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1854"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "a73f1cc2-d3ff-467b-b5d2-d7e77d701ff4",
+        "original" : "Dunbartonshire",
+        "fields" : [ {
+          "id" : "4726590b-232f-47e7-a876-c0ffad0a8bc3",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/CityOrTown",
+          "values" : [ {
+            "id" : "f26ad0c2-b1b4-4969-8f0e-8b99c589f40c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_CITY_TOWN_ORIG",
+            "text" : "?"
+          } ]
+        }, {
+          "id" : "6fdbb3e5-7508-400f-8fd9-5838bd0a4476",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "cfb5b04f-f051-48c4-954b-2f2ebfdfc325",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Dunbartonshire",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "fd8a8e67-ab7b-4b7d-a2c3-4fb693bf5024",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "e3518ae8-88c9-46b4-9791-f3192f806fcf",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_COUNTY_ORIG",
+            "text" : "DUNBARTONSHIRE"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "80dc74e3-a3ba-4fae-8cff-5304c2f01fc8",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "ac5df067-6542-4de9-9100-1ae422cf3359",
+        "original" : "1861",
+        "fields" : [ {
+          "id" : "d26cf2cd-745d-4121-bba9-eeabf32e5f08",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "0d0894c7-708f-400a-8e11-0f97835ed0ab",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1861"
+          } ]
+        }, {
+          "id" : "0bbfb1f4-a38c-476b-b972-e344fefff5f2",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "41f0865f-743d-4003-862e-7649dbd4ff67",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1861",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "b8fee18a-7c0e-4e32-9545-86d3a851f5cb",
+        "original" : "Partick, Lanarkshire, Scotland",
+        "fields" : [ {
+          "id" : "526f8ec8-85cc-411e-a53e-ff8c86b8693b",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Town",
+          "values" : [ {
+            "id" : "2c4b77c8-c5de-4489-af50-335b4df154ae",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWN_ORIG",
+            "text" : "PARTICK"
+          } ]
+        }, {
+          "id" : "92f29231-0ee0-4107-866f-ea9cb10066db",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "43154d91-843c-412e-a662-c2b83df449fe",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Lanarkshire"
+          } ]
+        }, {
+          "id" : "97bb1df2-ed0e-445d-84bc-f65f7a7d3bf5",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "cbe81e55-e076-4761-b347-c75b3dea4389",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Partick, Lanarkshire, Scotland",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "94c3d059-47b5-43fa-bc25-16764ab0832b",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "a2fa71c8-62ae-40ba-b5d1-dbe0e88d4ba2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "Scotland"
+          } ]
+        }, {
+          "id" : "80101508-a051-4388-bc45-ffd1fad1decb",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Parish",
+          "values" : [ {
+            "id" : "e2616205-a8d5-490e-866a-32f0c1e2afe0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PARISH_ORIG",
+            "text" : "Govan"
+          } ]
+        }, {
+          "id" : "07b0a5dd-df72-4827-afdd-c513975c049c",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "cf16fda3-47fd-4686-83b4-3c66faf1dc87",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "Partick"
+          } ]
+        }, {
+          "id" : "44d3763d-4ec6-4a02-8fea-8318f1bac820",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
+          "values" : [ {
+            "id" : "fe204581-d4ac-42b2-918e-7fc9d4671fb4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_ORIG",
+            "text" : "3"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "bafd80fd-a47a-4ec5-a9a4-2467121d7da8",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "d53c2e37-9efc-4f09-81c5-f30d8c5979ae",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "a39c877f-170a-4e12-aefb-0838261fdaee",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "2cfca2a6-c7eb-4e06-8c8c-8c2ed823a716",
+        "fields" : [ {
+          "id" : "5cd9681c-340e-4c2d-834c-8c6cf4c7f6e5",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Address",
+          "values" : [ {
+            "id" : "d5743ac5-1cd4-4b8b-8bc9-20c08042a6a2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_ADDRESS_ORIG",
+            "text" : "Douglas Street"
+          } ]
+        } ]
+      },
+      "primary" : false
+    } ],
+    "fields" : [ {
+      "id" : "297f3d59-d7f2-48bb-8f45-505fe0cf7153",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagInhabited",
+      "values" : [ {
+        "id" : "6d481ad2-125e-44f1-a39a-ee4297fef9d4",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_INHABITED_ORIG",
+        "text" : "Y"
+      } ]
+    }, {
+      "id" : "a46284c1-8583-47df-ab45-0b36ff7fdb79",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePieceNbr",
+      "values" : [ {
+        "id" : "f074687e-b66f-4351-b7c7-2689631509c3",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PIECE_NBR_ORIG",
+        "text" : "646"
+      } ]
+    }, {
+      "id" : "3f6bbdb3-ebcd-4b24-86b7-c805cfa78fb0",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FsUnsupported",
+      "values" : [ {
+        "id" : "f5ed2c3a-930b-428e-bffd-8b841dc746ef",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNSUPPORTED",
+        "text" : "{\"IMAGE_ID_NORM\":\"dgs:004548765.004548765_00852\",\"IMAGE_ID\":\"/004548765/004548765_00852.jpg\"}"
+      } ]
+    }, {
+      "id" : "494370a6-a35f-4ddd-a521-5bd3b67a60a8",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceScheduleNbr",
+      "values" : [ {
+        "id" : "82251c89-e562-41bd-b53c-43066880c4ac",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SCHEDULE_NBR_ORIG",
+        "text" : "112"
+      } ]
+    }, {
+      "id" : "65315048-9514-4353-9d72-b9e1cc51a8cc",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "fbdfd00f-24a2-4e7f-8e4c-6c3045d08414",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_004548765_00852_022_024_1001063606686"
+      } ]
+    }, {
+      "id" : "b4d9f165-8fdd-4b05-ae1e-9649567b2d62",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+      "values" : [ {
+        "id" : "a156a16b-210e-4f78-a23f-26c75bd5f86c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_NBR_ORIG",
+        "text" : "22"
+      } ]
+    }, {
+      "id" : "8a0c8d46-9d76-4aa4-9970-afa746de54fb",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FilmNbr",
+      "values" : [ {
+        "id" : "9fef9db2-389d-4281-a833-c880c655d1d3",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_FILM_NBR",
+        "text" : "103866"
+      } ]
+    }, {
+      "id" : "f0ba6238-138a-4a55-ab08-20e6639ddecf",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceRegNbr",
+      "values" : [ {
+        "id" : "206926d5-de35-4184-98f5-cac76bfe0712",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_REG_NBR_ORIG",
+        "text" : "RG09"
+      } ]
+    }, {
+      "id" : "6d8c8e56-aa50-444f-84f9-ad275417eab4",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceFolioNbr",
+      "values" : [ {
+        "id" : "4a1ac9ae-ebb2-4525-944c-9323d818d389",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_FOLIO_NBR_ORIG",
+        "text" : "2"
+      } ]
+    }, {
+      "id" : "3a551d68-8c86-4a4e-8f22-93245e8389ef",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageType",
+      "values" : [ {
+        "id" : "0ffb1c43-8506-4529-8dfb-5ee1ac825f87",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_TYPE_ORIG",
+        "text" : "6"
+      } ]
+    }, {
+      "id" : "77298d3f-9b6a-4ec9-8a3e-0eab539c9596",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "c0564436-a95e-4bb1-b224-2c713a8be3f8",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "7"
+      }, {
+        "id" : "c0564436-a95e-4bb1-b224-2c713a8be3f8",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "7"
+      } ],
+      "qualifiers" : [ {
+        "value" : "36f67d18-f98e-4c18-968c-5942ca2f23d0",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Agnes Muir",
+      "gender" : "Female",
+      "birthDate" : "1854",
+      "birthPlace" : "Dunbartonshire"
+    }
+  }, {
+    "id" : "p_13808448715",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "73af2584-2669-44af-94aa-af03768a2531",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "c2f42c0e-206b-4c2b-8b3f-681f212a277d",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "c2f42c0e-206b-4c2b-8b3f-681f212a277d",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1701875907294,
+            "created" : 1701875907294
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VB4X-MPR?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M89-F24S?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001063606687" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPR" ]
+    },
+    "names" : [ {
+      "id" : "0427f371-682f-4950-90a9-8b6446767454",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "James Muir",
+        "parts" : [ {
+          "id" : "fd7b34a8-0138-470c-9043-c3054bcada0f",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "James",
+          "fields" : [ {
+            "id" : "7b856525-f253-4d23-9306-e85aa063cedc",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "4ad45f50-49c1-48af-bbb6-34b39f53cf28",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "JAMES"
+            }, {
+              "id" : "4ad45f50-49c1-48af-bbb6-34b39f53cf28",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "James"
+            } ]
+          } ]
+        }, {
+          "id" : "e702aa2e-d69d-45ca-995e-bcedc82f1b0e",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Muir",
+          "fields" : [ {
+            "id" : "b30a1624-8ecf-4b58-b69d-1400bb197ed8",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "fb5841f9-b3c3-48c3-b8b1-ceccdc9dd977",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "MUIR"
+            }, {
+              "id" : "fb5841f9-b3c3-48c3-b8b1-ceccdc9dd977",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "4c2d9aee-6663-4295-9980-8fa6b7a4eb3d",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "433018a3-6105-4940-aabc-dafb3d4eab21",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "James Muir"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "UNMARRIED",
+      "fields" : [ {
+        "id" : "65b968ef-8445-4110-b81f-2a0811e88117",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "b20afe65-0b8b-4511-9673-0a40ae693a59",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "UNMARRIED"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Occupation",
+      "value" : "SCHOLAR",
+      "fields" : [ {
+        "id" : "0f7a76c8-00e6-4c65-8ea0-c401134af867",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/Occupation",
+        "values" : [ {
+          "id" : "44467584-9297-4026-b633-761f8a8cac1f",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_OCCUPATION_ORIG",
+          "text" : "SCHOLAR"
+        } ]
+      } ]
+    }, {
+      "id" : "4cb5a6de-d51d-41fb-8e84-dfa5b14779d1",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "4cb0038b-6447-4368-8c65-57baaf37da62",
+        "original" : "1856",
+        "fields" : [ {
+          "id" : "9fb2df64-1f73-47e2-83d3-355e2400cf67",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "f3940d7e-1a98-4529-94f7-ccbde4ffd41c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1856"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "30a769eb-9422-497e-8cc3-a9c5a619c1df",
+        "original" : "Lanarkshire",
+        "fields" : [ {
+          "id" : "5266df5f-3237-47f2-aca7-8b760dd986bd",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "42ae0f1e-362b-402a-a5be-8022b7f900c0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Lanarkshire",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "8d07bed7-ee13-424e-bde5-f1ef845354d5",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/CityOrTown",
+          "values" : [ {
+            "id" : "b4251d6d-b829-414e-b6fe-a00bd0b7a6e5",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_CITY_TOWN_ORIG",
+            "text" : "Partick"
+          } ]
+        }, {
+          "id" : "f1d29016-86aa-4f7d-88f1-a56098670fda",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "783697e4-ec91-42dc-82f0-f164e963be71",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_COUNTY_ORIG",
+            "text" : "LANARKSHIRE"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "51b33091-bf86-49a7-95f2-aeab1b993d91",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "3f83df52-2b10-4e3f-81c4-0aa33b26ea4c",
+        "original" : "1861",
+        "fields" : [ {
+          "id" : "da57729f-8dfc-4478-8535-18719aff3918",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "6db3c97f-0ec1-4ae5-a92a-2c6e986c170c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1861"
+          } ]
+        }, {
+          "id" : "9c84737d-2c1b-42aa-a1eb-f980700a169a",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "333cd4c9-a38f-4b38-8560-9833a4514b2f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1861",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "777cb826-7eef-4034-962b-397c45bf2c1c",
+        "original" : "Partick, Lanarkshire, Scotland",
+        "fields" : [ {
+          "id" : "f76e9eba-8530-42f1-8aeb-d24d092ee907",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
+          "values" : [ {
+            "id" : "6e15f05f-f63c-4698-bcf9-a678ee36fa56",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_ORIG",
+            "text" : "3"
+          } ]
+        }, {
+          "id" : "332c47f6-5656-42f5-ab1a-cc6ec57cfce5",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Town",
+          "values" : [ {
+            "id" : "fec09ea0-ec3d-4fd0-8a96-68640b9299aa",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWN_ORIG",
+            "text" : "PARTICK"
+          } ]
+        }, {
+          "id" : "0182d3af-a73c-42fe-99e5-08ed75c15ff6",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "688a7e4b-e207-4435-923d-3054474c92ec",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Partick, Lanarkshire, Scotland",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "26385962-5377-4d72-a090-c529bdfab520",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "01583e80-ddb3-4194-8253-9925071be590",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "Scotland"
+          } ]
+        }, {
+          "id" : "55ef3fd7-f035-4ebb-b5da-9c4a09c92684",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Parish",
+          "values" : [ {
+            "id" : "25123345-8b09-4ab1-946e-3f15df3a27de",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PARISH_ORIG",
+            "text" : "Govan"
+          } ]
+        }, {
+          "id" : "93ec1dca-6d53-4ad6-8de9-cebffc575261",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "b2cf2194-8bb3-4ca8-98b5-8bfa5d14595d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Lanarkshire"
+          } ]
+        }, {
+          "id" : "4ea1bcfe-af30-483e-9fe9-ba97e456838b",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "82791e24-5b98-4dc7-b5a1-603c874f6daa",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "Partick"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "0982c46c-b22b-4cdc-90c0-ac9118005dfa",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "17c843d1-71a0-4f80-b13b-9e31c4386228",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "1993b186-814b-45dc-8f09-4efc8c2adc37",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "3eab1879-a4f5-4274-9e53-2a606736a620",
+        "fields" : [ {
+          "id" : "beac1d38-3258-4368-ae03-1ded10f47179",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Address",
+          "values" : [ {
+            "id" : "a9accb3e-9ada-4e12-8dc9-98b61b79d34f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_ADDRESS_ORIG",
+            "text" : "DOUGLAS STREET"
+          } ]
+        } ]
+      },
+      "primary" : false
+    } ],
+    "fields" : [ {
+      "id" : "6f6ed7d1-a8e6-4c4d-a925-8459bc118070",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceRegNbr",
+      "values" : [ {
+        "id" : "fa7bab10-24bd-4677-8677-632d7e9da568",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_REG_NBR_ORIG",
+        "text" : "RG09"
+      } ]
+    }, {
+      "id" : "c8c6643f-70c7-4a33-8519-8e5fa7348efe",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagInhabited",
+      "values" : [ {
+        "id" : "aeaccb7d-0ef2-4aa2-9b2c-96020a373988",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_INHABITED_ORIG",
+        "text" : "Y"
+      } ]
+    }, {
+      "id" : "f6fd2e97-684c-4a58-8e30-c6fd2ee1b6b9",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "ae59d059-dd1d-4ab9-8f07-ebad5c8fb1a2",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_004548765_00852_022_025_1001063606687"
+      } ]
+    }, {
+      "id" : "62e927c8-29f1-45dd-b544-e4147fc54762",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FsUnsupported",
+      "values" : [ {
+        "id" : "42fd3d4b-80b7-4348-a796-771c150caf87",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNSUPPORTED",
+        "text" : "{\"RELATIONSHIP\":\"SON\"}"
+      } ]
+    }, {
+      "id" : "5ec3b9d3-dae2-4113-80ee-7a0810b565c7",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePieceNbr",
+      "values" : [ {
+        "id" : "a15f683d-1ddc-46ac-9af2-a24423afb984",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PIECE_NBR_ORIG",
+        "text" : "646"
+      } ]
+    }, {
+      "id" : "58aa18e4-127b-4dd7-bd48-84ce0c71b2d3",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceScheduleNbr",
+      "values" : [ {
+        "id" : "8d76d342-bf50-41bb-825c-296d5fa35048",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SCHEDULE_NBR_ORIG",
+        "text" : "112"
+      } ]
+    }, {
+      "id" : "b63228fe-8518-498e-9afe-f2f1ccd051ca",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FilmNbr",
+      "values" : [ {
+        "id" : "fbc9ef08-e2f0-4e18-8ec7-135791b0b8d5",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_FILM_NBR",
+        "text" : "103866"
+      } ]
+    }, {
+      "id" : "8d4dc4f3-4be0-4c13-939e-52d9ad0c0117",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageType",
+      "values" : [ {
+        "id" : "155b30d5-c37d-46fc-9a83-030a16704f69",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_TYPE_ORIG",
+        "text" : "6"
+      } ]
+    }, {
+      "id" : "3fcbb430-90f2-4177-8e6c-51261d5df072",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceFolioNbr",
+      "values" : [ {
+        "id" : "f6454821-7858-4b84-a0a0-083885536cad",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_FOLIO_NBR_ORIG",
+        "text" : "2"
+      } ]
+    }, {
+      "id" : "b877453f-2f8a-4d5f-84fc-3f86d4fe8707",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+      "values" : [ {
+        "id" : "a4bb8ea1-3970-4b16-a53f-ffa057ca96d1",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_NBR_ORIG",
+        "text" : "22"
+      } ]
+    }, {
+      "id" : "bb4eca09-c793-467d-8794-1c304bc2c7a6",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "1bc09ac8-da60-4395-a181-e7b32401e983",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "5"
+      }, {
+        "id" : "1bc09ac8-da60-4395-a181-e7b32401e983",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "5"
+      } ],
+      "qualifiers" : [ {
+        "value" : "a866d80c-20eb-446f-996b-3b2813746651",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "James Muir",
+      "gender" : "Male",
+      "birthDate" : "1856",
+      "birthPlace" : "Lanarkshire"
+    }
+  }, {
+    "id" : "p_13808448716",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "eb70cadb-7ef9-4ef9-ae12-0a37d0f5d843",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "e55f0fb6-fb00-4bbd-90b4-e59c2da767cd",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "e55f0fb6-fb00-4bbd-90b4-e59c2da767cd",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1701875907313,
+            "created" : 1701875907313
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VB4X-MPT?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M89-F24S?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da2",
+      "descriptionId" : "sd_da2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001063607194" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPT" ]
+    },
+    "names" : [ {
+      "id" : "16c9124b-d1bd-4e42-bbac-fe285c8169e2",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "William Muir",
+        "parts" : [ {
+          "id" : "d628e2ab-68dc-43eb-98f8-943987ed5c09",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William",
+          "fields" : [ {
+            "id" : "b13cbad4-aab7-4af8-8b89-d023807c2ad7",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "fa56db2b-8530-4856-b4ca-68f632650dfe",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "WILLIAM"
+            }, {
+              "id" : "fa56db2b-8530-4856-b4ca-68f632650dfe",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "William"
+            } ]
+          } ]
+        }, {
+          "id" : "c65e27e5-6482-49cc-99bc-2aaca7e39a22",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Muir",
+          "fields" : [ {
+            "id" : "300e9ad3-be80-4973-b2b7-6b54d955b97a",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "690627fb-b52a-4e63-92b0-30e8c6d09bc7",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "MUIR"
+            }, {
+              "id" : "690627fb-b52a-4e63-92b0-30e8c6d09bc7",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "be1f9693-34e8-4545-a1c1-2c655393face",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "92c65649-ad09-41bc-afa4-2839e64bffac",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "William Muir"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "UNMARRIED",
+      "fields" : [ {
+        "id" : "16b8a516-f899-4173-853b-9f96c36c5ac0",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "4be9dda9-9145-4b4e-8915-d7dd3576cbdc",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "UNMARRIED"
+        } ]
+      } ]
+    }, {
+      "id" : "bc03f014-c318-45e0-a935-e5b176871bcf",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "c9062e00-9a28-4e8b-ae80-0cfb389f3fc8",
+        "original" : "1858",
+        "fields" : [ {
+          "id" : "69b8f237-c6a9-46c4-8cfa-866661021ecd",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "e8d75204-1a0f-41bb-ab1f-24405afef212",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1858"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "03d32a09-55f3-4659-95a0-8103e4719dbb",
+        "original" : "Lanarkshire",
+        "fields" : [ {
+          "id" : "8f683439-009f-4c40-85c6-14979d391ab4",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/CityOrTown",
+          "values" : [ {
+            "id" : "47aaf2bc-1a25-43dd-88ce-8fd2a5076fec",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_CITY_TOWN_ORIG",
+            "text" : "Partick"
+          } ]
+        }, {
+          "id" : "4ee73cd8-11e7-47b1-bdd9-fd19d137bd8a",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "2fc1ba9b-c515-4447-806c-27152f09be06",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_COUNTY_ORIG",
+            "text" : "LANARKSHIRE"
+          } ]
+        }, {
+          "id" : "ea064241-b2cb-4c1b-b320-2df296fda7d0",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "2f643e12-b5ac-4a27-a8be-f3673558dfa9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Lanarkshire",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "9da7bf58-724d-4103-815e-d7c80f280246",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "12d1c7c1-f5a0-4a7b-9354-daba8cf00fcb",
+        "original" : "1861",
+        "fields" : [ {
+          "id" : "0ca3e8a6-a0dc-419d-ba29-810ecda53fda",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "e980a1c0-4bd2-4974-8759-16dbb62b490c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1861",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "aa00e674-1620-4ee4-a12c-abdf2abf548d",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "2c900eaa-a161-41e9-ab53-dc0f8795982d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1861"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "6a3ef5c3-3f58-4906-91d8-702b7283b21e",
+        "original" : "Partick, Lanarkshire, Scotland",
+        "fields" : [ {
+          "id" : "39b7b8b7-0501-4d2e-a1fb-eed5cc655d39",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "dacd4603-35f8-423d-a41b-9b619c9f1898",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "Partick"
+          } ]
+        }, {
+          "id" : "f32ad7ac-2f8f-4403-9c19-539781a058e7",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Town",
+          "values" : [ {
+            "id" : "b8701ab8-5a38-4123-aff0-6354b604c207",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWN_ORIG",
+            "text" : "PARTICK"
+          } ]
+        }, {
+          "id" : "d9a666de-716f-48ff-879e-e87039e1ea38",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "d2760574-a81e-4735-b894-d3ef13f956a7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "Scotland"
+          } ]
+        }, {
+          "id" : "317a686b-e44d-442c-ba7e-83138332998c",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Parish",
+          "values" : [ {
+            "id" : "162cfae3-4996-4057-9ecd-f231e56d27e9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PARISH_ORIG",
+            "text" : "Govan"
+          } ]
+        }, {
+          "id" : "10244321-8aa2-4ec5-aa98-2d400c652ece",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "aebdff02-05ee-48c0-9f9a-e2eab979ccf1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Lanarkshire"
+          } ]
+        }, {
+          "id" : "45b35c26-3533-4672-99d3-e7dc5b3659fb",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
+          "values" : [ {
+            "id" : "8825c381-7370-4555-bb9e-c7c18f7d7ee9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_ORIG",
+            "text" : "3"
+          } ]
+        }, {
+          "id" : "4995ce71-b376-4ad6-bc15-7c08f673d89e",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "ab1945be-8de1-48c0-a6ad-e7121c698ad9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Partick, Lanarkshire, Scotland",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "f475decf-6911-48d8-9b91-a0f4626a4fcd",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "955c3614-a6b5-4617-b2c9-a89de0cbdd74",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "d3551178-a102-414b-b60f-156c5742bdb5",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "364a82bd-5649-45c7-9c63-dc242f9ba75d",
+        "fields" : [ {
+          "id" : "8d0238aa-739c-4c34-b2b6-14ac9d82e653",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Address",
+          "values" : [ {
+            "id" : "49fe0a0f-a56a-437c-8ce6-cc458e50c6ce",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_ADDRESS_ORIG",
+            "text" : "Douglas Street"
+          } ]
+        } ]
+      },
+      "primary" : false
+    } ],
+    "fields" : [ {
+      "id" : "3878930e-9988-44b6-99e6-6347a5fddba9",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceFolioNbr",
+      "values" : [ {
+        "id" : "0b282799-c754-4cfd-b7d0-cc841338d85f",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_FOLIO_NBR_ORIG",
+        "text" : "2"
+      } ]
+    }, {
+      "id" : "6673b966-beda-4c3f-9194-eb352b938d2d",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+      "values" : [ {
+        "id" : "a6aaed32-fe23-4456-a72c-e503ad1292c9",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_NBR_ORIG",
+        "text" : "23"
+      } ]
+    }, {
+      "id" : "4ef50c2b-608b-48a3-9608-38627ef43918",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FilmNbr",
+      "values" : [ {
+        "id" : "ec0e53ea-9274-4708-8988-1e264a83a5b0",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_FILM_NBR",
+        "text" : "103866"
+      } ]
+    }, {
+      "id" : "e508c8dd-9602-4ef1-99c7-84be46fdd074",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceScheduleNbr",
+      "values" : [ {
+        "id" : "f8de0708-03f0-4678-a4f2-fd507342770d",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SCHEDULE_NBR_ORIG",
+        "text" : "112"
+      } ]
+    }, {
+      "id" : "bd68e7b1-e436-48b4-8b82-d5aa198b2748",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "b1303cdc-8cc0-43b1-adfa-11a23419ef74",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_004548765_00853_023_001_1001063607194"
+      } ]
+    }, {
+      "id" : "8b030279-96ac-4881-9ff8-a4d35984c7b2",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/ExtData",
+      "values" : [ {
+        "id" : "0c2ad04b-afd4-4fcb-8176-c5e9895ab2c4",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "EXT_DATA_ORIG",
+        "text" : "{\"URPRN\":\"0\"}"
+      } ]
+    }, {
+      "id" : "21966f78-1bc3-4439-b070-f1136d051321",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePieceNbr",
+      "values" : [ {
+        "id" : "0ac838ae-f6ec-453d-a019-36dfbb7239de",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PIECE_NBR_ORIG",
+        "text" : "646"
+      } ]
+    }, {
+      "id" : "5c3311b5-0b50-4882-9d9b-ed3b7d0fc502",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceRegNbr",
+      "values" : [ {
+        "id" : "47af1a00-417b-4b70-baae-e9469864e67e",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_REG_NBR_ORIG",
+        "text" : "RG09"
+      } ]
+    }, {
+      "id" : "65dc1493-b1ec-484c-abd6-6448271abe92",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagInhabited",
+      "values" : [ {
+        "id" : "5eeda755-b1f5-41d5-845a-1f8c86464599",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_INHABITED_ORIG",
+        "text" : "Y"
+      } ]
+    }, {
+      "id" : "af6ca2b1-ce49-4977-acdd-a09b202f3091",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageType",
+      "values" : [ {
+        "id" : "bf4832b1-016f-4b47-ab40-054cf4c30b2d",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_TYPE_ORIG",
+        "text" : "6"
+      } ]
+    }, {
+      "id" : "94c3e813-21fb-4115-a4d4-3d1ea9f46c1c",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "741f4598-4765-415d-80e4-467b41ae30f2",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "3"
+      }, {
+        "id" : "741f4598-4765-415d-80e4-467b41ae30f2",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "3"
+      } ],
+      "qualifiers" : [ {
+        "value" : "f7eeb995-ddb3-41c4-b781-7a1e06429ba7",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "William Muir",
+      "gender" : "Male",
+      "birthDate" : "1858",
+      "birthPlace" : "Lanarkshire"
+    }
+  }, {
+    "id" : "p_13808448717",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "4a9f240b-94d8-48c9-9e58-cd3ac8e583ae",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "e39e101b-6406-4001-90f6-332e874ff984",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "e39e101b-6406-4001-90f6-332e874ff984",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1701875907316,
+            "created" : 1701875907316
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VB4X-MPY?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M89-F24S?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da2",
+      "descriptionId" : "sd_da2"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001065113401" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPY" ]
+    },
+    "names" : [ {
+      "id" : "da2f14d4-a9cd-45f1-8bce-5364845d0cf6",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Margaret Muir",
+        "parts" : [ {
+          "id" : "40706de8-e609-4f5c-a644-8926f2229eb1",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Margaret",
+          "fields" : [ {
+            "id" : "9db73ed3-1c7c-4b42-a8ad-b0596159bb04",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "a08fab10-5cee-49be-89a3-985d8a15fc1c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "MARGARET"
+            }, {
+              "id" : "a08fab10-5cee-49be-89a3-985d8a15fc1c",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Margaret"
+            } ]
+          } ]
+        }, {
+          "id" : "fbfebd44-ecb2-45b6-90bb-65658afd91f4",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Muir",
+          "fields" : [ {
+            "id" : "71d86703-7674-4cba-88fe-a8a26f1fe939",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "f1363570-384b-458f-a668-976c52649a3e",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "MUIR"
+            }, {
+              "id" : "f1363570-384b-458f-a668-976c52649a3e",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "5d99b9d1-c215-47b9-8b50-8c41df4b6373",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "d3903d7c-b715-42ec-9e48-790c3f76d5ec",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Margaret Muir"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "UNMARRIED",
+      "fields" : [ {
+        "id" : "8468aebf-ecfa-41bd-9946-82e0314a4189",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "2aa002df-3425-4547-89d6-6872d939e632",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "UNMARRIED"
+        } ]
+      } ]
+    }, {
+      "id" : "5a2be4c5-b96c-4cd0-840a-50e456a4c201",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "e17486a8-174b-4202-80ed-c2691a609df5",
+        "fields" : [ {
+          "id" : "23de0342-216b-48c2-b2dc-686df6f86189",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Address",
+          "values" : [ {
+            "id" : "6723ee30-f572-4104-a9e2-0e2b09a0502a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_ADDRESS_ORIG",
+            "text" : "Douglas Street"
+          } ]
+        } ]
+      },
+      "primary" : false
+    }, {
+      "id" : "a1b2b8e4-5359-4888-9bea-18960a8b9894",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Census",
+      "date" : {
+        "id" : "afe01316-0ada-4fec-a419-1879f387a0ca",
+        "original" : "1861",
+        "fields" : [ {
+          "id" : "dcc7d805-5f1f-4e9a-9281-69f0826f9722",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "b1d649c3-0cfa-4fe7-b9df-17f3fd3000a1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1861"
+          } ]
+        }, {
+          "id" : "09241e7e-0fd5-4a65-9996-257c901b9101",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "2bca1698-3936-4586-9610-c7e14495ca57",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "1861",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "20108d52-2e87-4f4d-a598-7cfed9651d43",
+        "original" : "Partick, Lanarkshire, Scotland",
+        "fields" : [ {
+          "id" : "d9138b35-b49c-48de-af7b-bb95fa2f7130",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "fbd5d9da-943a-494a-9261-bf50422b45a0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "Scotland"
+          } ]
+        }, {
+          "id" : "a83ab7b6-dcfd-4f25-ba47-1b074ba87765",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/EnumerationDistrict",
+          "values" : [ {
+            "id" : "a41a0ae0-0630-41c6-a8fc-9c4db17012b3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ENUMERATION_ORIG",
+            "text" : "3"
+          } ]
+        }, {
+          "id" : "f2619cf0-b0a8-4156-b178-0b67f48ff1c0",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "14ba1f49-f70c-450e-82ca-f5483b0f5d70",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Lanarkshire"
+          } ]
+        }, {
+          "id" : "7d9d5d37-6b34-477b-9ce7-3d1cc21944da",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Parish",
+          "values" : [ {
+            "id" : "bbf90617-d12a-445a-98bf-27c2f0627f30",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PARISH_ORIG",
+            "text" : "Govan"
+          } ]
+        }, {
+          "id" : "5f707bd1-5545-413a-a76e-32c03b6c42ff",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/District",
+          "values" : [ {
+            "id" : "3c9a97a1-1f70-40f4-9b4d-b1bcb39a3e69",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DISTRICT_ORIG",
+            "text" : "Partick"
+          } ]
+        }, {
+          "id" : "5000d600-8410-4e59-9bed-c98676340fdb",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Town",
+          "values" : [ {
+            "id" : "34cf3cfd-43d9-461d-b7b6-38d95fa42750",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_TOWN_ORIG",
+            "text" : "PARTICK"
+          } ]
+        }, {
+          "id" : "7c7da8d4-649f-4f52-8300-94fe3c73adc6",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "96bbafaa-b8ce-49c7-b9c9-a9d90e343468",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Partick, Lanarkshire, Scotland",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "44627de8-c367-4fdb-9aca-d3b8932a5648",
+        "attribution" : {
+          "modified" : 1701718688502,
+          "created" : 1701718688502
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "de59c747-41d9-42ec-bada-8fc9b7f73d4b",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Census",
+          "resource" : "http://gedcomx.org/Census"
+        } ]
+      } ]
+    }, {
+      "id" : "279eeb1f-45b7-404a-8ce7-7e9cf2aaa314",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "de1a9ee6-3cdb-4836-9667-5e3dd3226123",
+        "original" : "1860",
+        "fields" : [ {
+          "id" : "306302c0-4313-4d81-8e85-2b6b63cc3a07",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "a5c2f1db-4e2e-431a-beef-3d8e3e22b354",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1860"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "98af2037-ec7e-4fa4-bac6-1c8be5b6dc4b",
+        "original" : "Lanarkshire",
+        "fields" : [ {
+          "id" : "501f595c-2859-4808-b706-4cb782ecfcd3",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "2898d496-ef5d-45e1-9fd0-9e0a4191779f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_COUNTY_ORIG",
+            "text" : "LANARKSHIRE"
+          } ]
+        }, {
+          "id" : "da8145e9-b2a0-4f90-901a-1a3c84a57d0a",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "86c86662-89ea-4d56-bd30-a2fab1ef8535",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Lanarkshire",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "08fe2582-7c7d-4b49-b5aa-a759a5964653",
+          "attribution" : {
+            "modified" : 1701718688502,
+            "created" : 1701718688502
+          },
+          "type" : "http://familysearch.org/types/fields/CityOrTown",
+          "values" : [ {
+            "id" : "61b119b0-bd1b-45aa-b0c3-292345aa2795",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_CITY_TOWN_ORIG",
+            "text" : "Partick"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "45a096e3-9e85-493e-97ff-0a8435b6e0ce",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceFolioNbr",
+      "values" : [ {
+        "id" : "5a997aaa-50b8-43c5-a06b-d4cafdfa697a",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_FOLIO_NBR_ORIG",
+        "text" : "2"
+      } ]
+    }, {
+      "id" : "b8aa9e6d-236c-4389-a97e-80e26a6f4efe",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FsUnsupported",
+      "values" : [ {
+        "id" : "8d3c2af6-6646-42b6-a88b-faa87c10de88",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNSUPPORTED",
+        "text" : "{\"FREE_PAGE_FLAG\":\"1\"}"
+      } ]
+    }, {
+      "id" : "d1769c4e-6cd6-4d17-aaa7-214409b3cd19",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+      "values" : [ {
+        "id" : "8a7d8a68-2b3d-4cfb-a9a7-3f3f7d6c1d3c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_NBR_ORIG",
+        "text" : "23"
+      } ]
+    }, {
+      "id" : "f0733872-10c6-4f8c-9da5-22c47ec33bee",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceScheduleNbr",
+      "values" : [ {
+        "id" : "20e18361-7f79-457b-a2e9-3fddbd14f6d1",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SCHEDULE_NBR_ORIG",
+        "text" : "112"
+      } ]
+    }, {
+      "id" : "c83d8dc9-b3d1-4cde-b12f-800511f0c1d6",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "4d21cae0-410f-402b-ad97-59e974847446",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_004548765_00853_023_002_1001065113401"
+      } ]
+    }, {
+      "id" : "93ff0b3c-b3b8-4a06-b33c-f0667f89ebc9",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/FilmNbr",
+      "values" : [ {
+        "id" : "a7664f61-587e-462e-81bf-8586e2fe8c5c",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_FILM_NBR",
+        "text" : "103866"
+      } ]
+    }, {
+      "id" : "56b24479-220d-4211-aa23-6fc5d4c89819",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePieceNbr",
+      "values" : [ {
+        "id" : "49cf3831-72a6-4d92-9daf-d20f99bdee29",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PIECE_NBR_ORIG",
+        "text" : "646"
+      } ]
+    }, {
+      "id" : "e398046c-e2ad-43fd-b9fa-267cb0d4bc67",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourcePageType",
+      "values" : [ {
+        "id" : "712fe923-ed1d-48e8-92d6-09daf172eb19",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_PAGE_TYPE_ORIG",
+        "text" : "6"
+      } ]
+    }, {
+      "id" : "a3181151-a7e2-4ee2-98b0-b547059dd184",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/SourceRegNbr",
+      "values" : [ {
+        "id" : "8a4b327f-00ba-431e-81ab-4564a328573b",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_REG_NBR_ORIG",
+        "text" : "RG09"
+      } ]
+    }, {
+      "id" : "887b321b-f7c4-4211-83b8-359555a0c260",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://familysearch.org/types/fields/MiscFlagInhabited",
+      "values" : [ {
+        "id" : "c4624d67-ba30-4453-afe8-7d58c5021cf8",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "MISC_FLAG_INHABITED_ORIG",
+        "text" : "Y"
+      } ]
+    }, {
+      "id" : "b3180e34-6267-444f-b8ca-52a01c0c8de5",
+      "attribution" : {
+        "modified" : 1701718688502,
+        "created" : 1701718688502
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "75658a7b-e2ff-4903-a49d-39d6bc994455",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "1"
+      }, {
+        "id" : "75658a7b-e2ff-4903-a49d-39d6bc994455",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "1"
+      } ],
+      "qualifiers" : [ {
+        "value" : "ce47e241-8bcd-4573-bcc5-c00a453b4a84",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Margaret Muir",
+      "gender" : "Female",
+      "birthDate" : "1860",
+      "birthPlace" : "Lanarkshire"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "4875d734-dea3-49de-81a6-daa63822b057",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13808448712",
+      "resourceId" : "p_13808448712"
+    },
+    "person2" : {
+      "resource" : "#p_13808448716",
+      "resourceId" : "p_13808448716"
+    }
+  }, {
+    "id" : "91812319-fbbf-4a37-9627-57c135afad3e",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_13808448712",
+      "resourceId" : "p_13808448712"
+    },
+    "person2" : {
+      "resource" : "#p_13808448713",
+      "resourceId" : "p_13808448713"
+    }
+  }, {
+    "id" : "eda47b21-c661-4d47-ba7b-9fa714744274",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13808448712",
+      "resourceId" : "p_13808448712"
+    },
+    "person2" : {
+      "resource" : "#p_13808448714",
+      "resourceId" : "p_13808448714"
+    }
+  }, {
+    "id" : "62164675-7f60-4605-81da-d776d079c3e9",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13808448712",
+      "resourceId" : "p_13808448712"
+    },
+    "person2" : {
+      "resource" : "#p_13808448717",
+      "resourceId" : "p_13808448717"
+    }
+  }, {
+    "id" : "f5272ffa-bfe3-4aee-acf9-8d0cfa9e76ba",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13808448712",
+      "resourceId" : "p_13808448712"
+    },
+    "person2" : {
+      "resource" : "#p_13808448715",
+      "resourceId" : "p_13808448715"
+    }
+  }, {
+    "id" : "ae17a93f-650c-4f2d-b705-1aa0c6f265d3",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13808448713",
+      "resourceId" : "p_13808448713"
+    },
+    "person2" : {
+      "resource" : "#p_13808448715",
+      "resourceId" : "p_13808448715"
+    }
+  }, {
+    "id" : "697757cc-0cde-45c8-be08-aa4205da4aef",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13808448713",
+      "resourceId" : "p_13808448713"
+    },
+    "person2" : {
+      "resource" : "#p_13808448714",
+      "resourceId" : "p_13808448714"
+    }
+  }, {
+    "id" : "6c4c02a0-53f0-4dd5-9138-eb50c074c66d",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13808448713",
+      "resourceId" : "p_13808448713"
+    },
+    "person2" : {
+      "resource" : "#p_13808448716",
+      "resourceId" : "p_13808448716"
+    }
+  }, {
+    "id" : "623d1cc5-0662-4b75-83c2-4b5dc80c667e",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13808448713",
+      "resourceId" : "p_13808448713"
+    },
+    "person2" : {
+      "resource" : "#p_13808448717",
+      "resourceId" : "p_13808448717"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_22138533212",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9M89-F24S",
+    "componentOf" : {
+      "description" : "#sd_c_2028677",
+      "descriptionId" : "sd_c_2028677"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1701718688502,
+    "modified" : 1701876403847,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Partick, Lanarkshire, Scotland"
+      },
+      "temporal" : {
+        "original" : "1861",
+        "formal" : "+1861"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "citations" : [ {
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    }, {
+      "description" : "#sd_da2",
+      "descriptionId" : "sd_da2"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Household of William Muir, \"Scotland Census, 1861\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmFhlc", "http://familysearch.org/records/recordPermissions/CdsPrmLdsMember" ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9M89-F24S" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2028677?arkName=1:2:9M89-F24S"
+    }
+  }, {
+    "id" : "sd_c_2028677",
+    "about" : "https://www.familysearch.org/platform/records/collections/2028677",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223614352,
+    "modified" : 1701718688502,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Scotland",
+        "description" : "https://www.familysearch.org/platform/places/description/266"
+      },
+      "temporal" : {
+        "original" : "1861/1861",
+        "formal" : "+1861/+1861"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Scotland Census, 1861"
+    }, {
+      "lang" : "zh",
+      "value" : "蘇格蘭人口普查，1861 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Recensement d’Écosse de 1861"
+    }, {
+      "lang" : "ru",
+      "value" : "Шотландия, перепись населения, 1861 г."
+    }, {
+      "lang" : "no",
+      "value" : "Skottland Folketelling, 1861"
+    }, {
+      "lang" : "es",
+      "value" : "Censo de Escocia, 1861"
+    }, {
+      "lang" : "mn",
+      "value" : "Шотланд улсын хүн амын тооллого, 1861 он"
+    }, {
+      "lang" : "ko",
+      "value" : "스코틀랜드 인구 조사, 1861"
+    }, {
+      "lang" : "ja",
+      "value" : "スコットランド国勢調査、1861年"
+    }, {
+      "lang" : "it",
+      "value" : "Censimento della Scozia, 1861"
+    }, {
+      "lang" : "id",
+      "value" : "Sensus Skotlandia, 1861"
+    }, {
+      "lang" : "hu",
+      "value" : "Skóciai népszámlálás, 1861"
+    }, {
+      "lang" : "sk",
+      "value" : "Sčítanie ľudu v Škótsku, 1861"
+    }, {
+      "lang" : "th",
+      "value" : "สํามะโนประชากรสก็อตแลนด์, ปี 1861"
+    }, {
+      "lang" : "to",
+      "value" : "Tohi Kakai Sikotilani, 1861"
+    }, {
+      "lang" : "bg",
+      "value" : "Преброяване на населението в Шотландия, 1861"
+    }, {
+      "lang" : "km",
+      "value" : "ជំរឿនប្រទេសស្កុតលែន, ឆ្នាំ 1861"
+    }, {
+      "lang" : "pl",
+      "value" : "Spis powszechny Szkocji z roku 1861"
+    }, {
+      "lang" : "ro",
+      "value" : "Recensământul din Scoția, 1861"
+    }, {
+      "lang" : "sv",
+      "value" : "Skottland, folkräkning, 1861"
+    }, {
+      "lang" : "sm",
+      "value" : "Điều Tra Dân Số Scotland, 1861"
+    }, {
+      "lang" : "vi",
+      "value" : "Điều Tra Dân Số Scotland, 1861"
+    }, {
+      "lang" : "sq",
+      "value" : "Regjistrimi i Skocisë, 1861"
+    }, {
+      "lang" : "pt",
+      "value" : "Censo da Escócia, 1861"
+    }, {
+      "lang" : "de",
+      "value" : "Scotland Census, 1861"
+    }, {
+      "lang" : "uk",
+      "value" : "Шотландія, перепис населення, 1861 р."
+    }, {
+      "lang" : "hr",
+      "value" : "Popis stanovništva Škotske 1861. godine."
+    }, {
+      "lang" : "cs",
+      "value" : "Sčítání lidu ve Skotsku, 1861"
+    }, {
+      "lang" : "nl",
+      "value" : "Volkstelling Schotland, 1861"
+    }, {
+      "lang" : "et",
+      "value" : "Šotimaa Rahvaloendus, 1861"
+    }, {
+      "lang" : "fj",
+      "value" : "Wililewenivanua e Sikoteladi, 1861"
+    }, {
+      "lang" : "fi",
+      "value" : "Skotlanti, väestönlaskenta, 1861"
+    }, {
+      "lang" : "tl",
+      "value" : "Census ng Scotland, 1861"
+    }, {
+      "lang" : "mg",
+      "value" : "Fanisam-bahoaka tany Écosse, 1861"
+    }, {
+      "lang" : "ceb",
+      "value" : "Sensus sa Scotland, 1861"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/2028677" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:9398-Z21H-J",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:9398-Z21H-J" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2028677?arkName=3:1:9398-Z21H-J"
+    }
+  }, {
+    "id" : "sd_da2",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:9398-Z2BS-6",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:9398-Z2BS-6" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2028677?arkName=3:1:9398-Z2BS-6"
+    }
+  }, {
+    "id" : "sd_p_13808448712",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG",
+    "componentOf" : {
+      "description" : "#src_r_22138533212",
+      "descriptionId" : "src_r_22138533212"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "William Muir, \"Scotland Census, 1861\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001063625592" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG" ]
+    }
+  }, {
+    "id" : "sd_p_13808448713",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPP",
+    "componentOf" : {
+      "description" : "#src_r_22138533212",
+      "descriptionId" : "src_r_22138533212"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Margaret Muir, \"Scotland Census, 1861\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001065218953" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPP" ]
+    }
+  }, {
+    "id" : "sd_p_13808448716",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPT",
+    "componentOf" : {
+      "description" : "#src_r_22138533212",
+      "descriptionId" : "src_r_22138533212"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "William Muir, \"Scotland Census, 1861\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001063607194" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPT" ]
+    }
+  }, {
+    "id" : "sd_p_13808448715",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPR",
+    "componentOf" : {
+      "description" : "#src_r_22138533212",
+      "descriptionId" : "src_r_22138533212"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "James Muir, \"Scotland Census, 1861\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001063606687" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPR" ]
+    }
+  }, {
+    "id" : "sd_p_13808448717",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPY",
+    "componentOf" : {
+      "description" : "#src_r_22138533212",
+      "descriptionId" : "src_r_22138533212"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Margaret Muir, \"Scotland Census, 1861\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001065113401" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPY" ]
+    }
+  }, {
+    "id" : "sd_p_13808448714",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VB4X-MP5",
+    "componentOf" : {
+      "description" : "#src_r_22138533212",
+      "descriptionId" : "src_r_22138533212"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Agnes Muir, \"Scotland Census, 1861\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001063606686" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MP5" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "0a64a14b-d4d2-4213-8d1a-e9e6b61f9138",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "bed3c04c-a3c6-4755-8d19-31d8e1a9ee36",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000000000000_0000000004548765_0000000000000852_0000000000000022_0000000000000022_0001001063625592"
+    } ]
+  }, {
+    "id" : "e07d0cbd-53a1-4aff-819f-1393e51a0fc8",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "d1f6e816-737d-4303-abb0-03cb8dfa5881",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "5ee30b54-5aa7-43d8-b320-2b22741a4f7e",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "4e8ebe6b-04f3-4e1d-93a9-e5661555512f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "9ce1ad89-ec90-484c-9f45-c56b42692875",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "cfb1f1dc-c878-4665-a701-5fc065bf5cfb",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "SC1861txt"
+    } ]
+  }, {
+    "id" : "724fe0eb-e8e7-4ecf-8e0d-0723179c2577",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://familysearch.org/types/fields/SourceLineNbr",
+    "values" : [ {
+      "id" : "c99d00de-6779-407e-b825-677462513cfc",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_LINE_NBR_ORIG",
+      "text" : "24"
+    } ]
+  }, {
+    "id" : "d6120f8d-347f-4ae1-be0f-e568da4e3869",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "01020d56-a674-46b4-8d8c-385593394649",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "7"
+    } ]
+  }, {
+    "id" : "2b5c37f8-1080-4b53-82c7-5c7931b23323",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "389bae99-a699-4de0-b8f8-4f16e64161ac",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "5739"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "004548765_006_M93P-DRX"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "115"
+    } ]
+  } ]
+}

@@ -1,0 +1,95 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Margaret Muir",
+    "lastName": "Muir",
+    "forenames": "Margaret"
+  },
+  "birthDate": {
+    "dateString": "1828",
+    "yearString": "1828"
+  },
+  "birthPlace": {
+    "placeString": "Lanarkshire"
+  },
+  "eventDate": {
+    "dateString": "1861",
+    "yearString": "1861"
+  },
+  "eventPlace": {
+    "placeString": "Partick, Lanarkshire, Scotland"
+  },
+  "ageAtEvent": "33",
+  "householdArrayFields": [
+    "name",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William Muir",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "32",
+      "birthYear": "1829",
+      "occupation": "Carter",
+      "birthPlace": "Renfrewshire"
+    },
+    {
+      "name": "Margaret Muir",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "33",
+      "birthYear": "1828",
+      "birthPlace": "Lanarkshire",
+      "isSelected": true
+    },
+    {
+      "name": "Agnes Muir",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "7",
+      "birthYear": "1854",
+      "occupation": "Scholar",
+      "birthPlace": "Dunbartonshire"
+    },
+    {
+      "name": "James Muir",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "5",
+      "birthYear": "1856",
+      "occupation": "Scholar",
+      "birthPlace": "Lanarkshire"
+    },
+    {
+      "name": "William Muir",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "3",
+      "birthYear": "1858",
+      "birthPlace": "Lanarkshire"
+    },
+    {
+      "name": "Margaret Muir",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "1",
+      "birthYear": "1860",
+      "birthPlace": "Lanarkshire"
+    }
+  ],
+  "maritalStatus": "married",
+  "collectionData": {
+    "id": "2028677",
+    "page": "22"
+  },
+  "hasValidData": true
+}

@@ -220,7 +220,16 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:XTXN-PTY",
   },
   {
+    caseName: "scotland_census_1861_margaret_muir",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPP",
+  },
+  {
     caseName: "scotland_census_1871_alexander_auld",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VBPV-BM1?from=lynx1UIV8&treeref=MSGJ-7PP",
+  },
+  {
+    // the fetch data returned by FS has changed since the one above was saved
+    caseName: "scotland_census_1871_alexander_auld_new",
     url: "https://www.familysearch.org/ark:/61903/1:1:VBPV-BM1?from=lynx1UIV8&treeref=MSGJ-7PP",
   },
   {
