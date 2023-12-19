@@ -127,7 +127,7 @@ async function fsGetAllCitations(input) {
 
       filterAndEnhanceFsSourcesIntoSources(result, options);
 
-      let citationType = options.addMerge_fsAllCitations_citationType;
+      let citationType = input.citationType;
 
       switch (citationType) {
         case "fsPlainInline":

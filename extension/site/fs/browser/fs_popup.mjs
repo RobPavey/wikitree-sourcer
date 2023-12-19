@@ -27,8 +27,11 @@ import {
   addBuildCitationMenuItems,
   addMenuItemWithSubtitle,
   addMenuItem,
+  addMenuItemWithSubMenu,
+  addBackMenuItem,
   addMenuDivider,
   beginMainMenu,
+  endMainMenu,
   displayBusyMessage,
   doAsyncActionWithCatch,
   closePopup,
@@ -194,13 +197,16 @@ async function fsSaveUnitTestDataForAllCitations(input, response) {
   writeToClipboard(debugText, message);
 }
 
-async function fsGetAllCitationsAction(data) {
+async function fsGetAllCitationsAction(data, citationType) {
   try {
     clearClipboard();
+
+    displayBusyMessage("Getting sources...");
 
     let input = Object.assign({}, data);
     input.options = options;
     input.runDate = new Date();
+    input.citationType = citationType;
 
     if (saveUnitTestData) {
       // if saving unit test data we don't want to exclude any sources
@@ -339,11 +345,26 @@ function addBuildBookCitationMenuItems(menu, data) {
   });
 }
 
-function addSaveAllCitationsMenuItem(menu, data) {
+function addSaveAllCitationsMenuItem(menu, data, backFunction) {
   if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
-    addMenuItem(menu, "Build All Citations", function (element) {
-      displayBusyMessage("Getting sources...");
-      fsGetAllCitationsAction(data);
+    addMenuItemWithSubMenu(
+      menu,
+      "Build All Citations",
+      function (element) {
+        let citationType = options.addMerge_fsAllCitations_citationType;
+        fsGetAllCitationsAction(data, citationType);
+      },
+      function () {
+        setupBuildAllCitationsSubMenu(data, backFunction);
+      }
+    );
+  }
+}
+
+function addBuildAllCitationsSubmenuMenuItem(menu, data, text, citationType) {
+  if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
+    addMenuItem(menu, text, function (element) {
+      fsGetAllCitationsAction(data, citationType);
     });
   }
 }
@@ -371,6 +392,20 @@ function addFsImageBuildCitationMenuItems(menu, data) {
     },
     "It is recommended to Build Source Citation on the Record Page instead if one exists."
   );
+}
+
+function setupBuildAllCitationsSubMenu(data, backFunction) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Narratives plus Sourcer style inline citations", "narrative");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Sourcer style inline citations", "inline");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Sourcer style source citations", "source");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Inline citations using text on FS Sources page", "fsPlainInline");
+  addBuildAllCitationsSubmenuMenuItem(menu, data, "Source citations using text on FS Sources page", "fsPlainSource");
+
+  endMainMenu(menu);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -435,7 +470,7 @@ async function setupFsPopupMenu(extractedData) {
     await addSearchMenus(menu, data, backFunction, "fs");
     addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data, fsGetAllCitationsForSavePersonData);
-    addSaveAllCitationsMenuItem(menu, data);
+    addSaveAllCitationsMenuItem(menu, data, backFunction);
     addBuildFsTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "book") {
     addBuildBookCitationMenuItems(menu, data);
