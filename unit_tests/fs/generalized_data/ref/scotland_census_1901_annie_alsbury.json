@@ -1,0 +1,119 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Annie Alsbury",
+    "lastName": "Alsbury",
+    "forenames": "Annie"
+  },
+  "birthDate": {
+    "dateString": "1865",
+    "yearString": "1865"
+  },
+  "birthPlace": {
+    "placeString": "DYSART, FIFESHIRE"
+  },
+  "eventDate": {
+    "dateString": "1901",
+    "yearString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "North Leith, Midlothian, Scotland, United Kingdom"
+  },
+  "registrationDistrict": "NORTH LEITH",
+  "ageAtEvent": "36",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "John Alsbury",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "37",
+      "birthYear": "1864",
+      "occupation": "Sailmaker",
+      "birthPlace": "GRANTON, MIDLOTHIAN, SCOTLAND"
+    },
+    {
+      "name": "Annie Alsbury",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "36",
+      "birthYear": "1865",
+      "birthPlace": "DYSART, FIFESHIRE",
+      "isSelected": true
+    },
+    {
+      "name": "Annie Alsbury",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "10",
+      "birthYear": "1891",
+      "occupation": "Scholar",
+      "birthPlace": "AUSTRALIA QUEENSLAND"
+    },
+    {
+      "name": "James Alsbury",
+      "relationship": "son",
+      "gender": "male",
+      "age": "9",
+      "birthYear": "1892",
+      "occupation": "Scholar",
+      "birthPlace": "AUSTRALIA QUEENSLAND"
+    },
+    {
+      "name": "Isabella Alsbury",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "7",
+      "birthYear": "1894",
+      "occupation": "Scholar",
+      "birthPlace": "AUSTRALIA QUEENSLAND"
+    },
+    {
+      "name": "David Alsbury",
+      "relationship": "son",
+      "gender": "male",
+      "age": "3",
+      "birthYear": "1898",
+      "birthPlace": "DYSART, FIFESHIRE"
+    },
+    {
+      "name": "John Alsbury",
+      "relationship": "son",
+      "gender": "male",
+      "age": "0",
+      "birthYear": "1901",
+      "birthPlace": "NO LEITH, MIDLOTHIAN, SCOTLAND"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "spouses": [
+    {
+      "name": {
+        "name": "John Alsbury"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "3212239",
+    "page": "17",
+    "folio": "14"
+  },
+  "hasValidData": true
+}

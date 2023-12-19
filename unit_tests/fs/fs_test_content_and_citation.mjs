@@ -233,6 +233,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VBPV-BM1?from=lynx1UIV8&treeref=MSGJ-7PP",
   },
   {
+    caseName: "scotland_census_1901_annie_alsbury",
+    url: "https://www.familysearch.org/ark:/61903/1:1:7YN6-17PZ",
+  },
+  {
     caseName: "scotland_census_1901_james_mckechan",
     url: "https://www.familysearch.org/ark:/61903/1:1:7Y7S-3YMM",
   },

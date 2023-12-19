@@ -1235,6 +1235,11 @@ function processImageLinks(document, result, options) {
   let externalImageReference = result.externalImageReference;
   let externalRecordSeqOrig = result.externalRecordSeqOrig;
 
+  //console.log("processImageLinks, externalImageId = " + externalImageId);
+  //console.log("processImageLinks, extImageUrl = " + extImageUrl);
+  //console.log("processImageLinks, externalImageReference = " + externalImageReference);
+  //console.log("processImageLinks, externalRecordSeqOrig = " + externalRecordSeqOrig);
+
   let externalFilmNumber = undefined;
   if (result.referenceData) {
     externalFilmNumber = result.referenceData.externalFilmNumber;
@@ -1334,6 +1339,9 @@ function processImageLinks(document, result, options) {
         //}
       }
 
+      //console.log("processImageLinks, isFindMyPast = " + isFindMyPast + ", link is");
+      //console.log(url);
+
       if (isFindMyPast) {
         // is is possible that an externalUir of "971304" means FMP, have not confirmed yet
         // Just assume the link is FMP for now
@@ -1369,11 +1377,20 @@ function processImageLinks(document, result, options) {
 
           // if there is no parentId on the URL then the "/browse" part is required
           if (!uriQuery.toLowerCase().includes("parentid")) {
-            prefix = "https://search." + domain + "/record/browse?id=";
+            // Note that this record has a link where adding browse does not work:
+            // https://www.familysearch.org/ark:/61903/1:1:7YN6-17PZ
+            // From the records I have looked at it seems that if there are more than two slashes it is an image
+            // and the "browse" works
+            let parts = url.split("/");
+            if (parts.length > 3) {
+              prefix = "https://search." + domain + "/record/browse?id=";
+            }
           }
 
           let uri = prefix + uriQuery;
           result.externalImageUrl = uri;
+
+          //console.log("processImageLinks, result.externalImageUrl = " + result.externalImageUrl);
         }
       }
     }
