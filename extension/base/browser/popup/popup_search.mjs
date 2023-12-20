@@ -404,10 +404,10 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
   endMainMenu(menu);
 }
 
-function setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList) {
+function setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList, excludeSite) {
   //console.log("setupAllSitesSubmenu called, subMenuFunctionList.length = " + subMenuFunctionList.length);
   let backToHereFunction = function () {
-    setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList);
+    setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList, excludeSite);
   };
 
   let menu = beginMainMenu();
@@ -487,7 +487,7 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
   if (itemsAdded < registeredSearchMenuItemFunctions.length) {
     // add the "All search sites.." submenu item
     addMenuItem(menu, subMenuText, function (element) {
-      setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList);
+      setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList, excludeSite);
     });
   }
 }
