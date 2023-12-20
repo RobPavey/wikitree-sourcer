@@ -272,6 +272,7 @@ async function fsGetAllCitationsForSavePersonData(data) {
     let input = Object.assign({}, data);
     input.options = options;
     input.runDate = new Date();
+    input.citationType = options.addMerge_fsAllCitations_citationType;
 
     displayBusyMessage("Getting sources...");
     let response = await fsGetAllCitations(input);
