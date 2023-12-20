@@ -1,0 +1,41 @@
+{
+  "personId": "LDQL-N2Q",
+  "fullName": "Richard Roman Sr",
+  "givenName": "Richard",
+  "surname": "Roman",
+  "suffix": "Sr",
+  "gender": "male",
+  "birthDateOriginal": "1788",
+  "birthDate": "1788",
+  "deathDateOriginal": "8 September 1846",
+  "deathDate": "8 September 1846",
+  "deathPlaceOriginal": "Russell, Virginia, United States",
+  "deathPlace": "Russell Parish, Campbell, Virginia, United States",
+  "spouses": [
+    {
+      "fullName": "Sarah \"Sallie\" Evans",
+      "givenName": "Sarah \"Sallie\"",
+      "surname": "Evans"
+    }
+  ],
+  "father": {
+    "fullName": "William Phillip Roman",
+    "givenName": "William Phillip",
+    "surname": "Roman"
+  },
+  "mother": {
+    "fullName": "Margaret Thompson",
+    "givenName": "Margaret",
+    "surname": "Thompson"
+  },
+  "sourceIds": [
+    "QV78-5P9",
+    "QCCF-X19",
+    "3LK7-8QJ",
+    "3S48-1M2",
+    "SLDM-7XW",
+    "SLDM-73X",
+    "MMBP-67H"
+  ],
+  "pageType": "person"
+}

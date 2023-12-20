@@ -499,13 +499,23 @@ function selectDate(dateString, originalDateString) {
   return dateString;
 }
 
-function selectPlace(placeString, originalPlaceString) {
+function selectPlace(placeString, originalPlaceString, isPerson = false) {
   placeString = cleanPlace(placeString);
   originalPlaceString = cleanPlace(originalPlaceString);
 
   // sometimes there is no place but there is an original place
   if (!placeString) {
     return originalPlaceString;
+  }
+
+  if (!originalPlaceString) {
+    return placeString;
+  }
+
+  // we have both, for a person prioritize the original as that seems
+  // to be the latest one entered and what is showing on page
+  if (isPerson) {
+    placeString = originalPlaceString;
   }
 
   // Sometimes FS puts things in that are not WikiTree approved
@@ -917,7 +927,7 @@ function generalizeDataForPerson(ed, result) {
       result.birthDate.qualifier = dateQualifiers.BEFORE;
 
       if (!result.birthPlace) {
-        let baptismPlace = selectPlace(ed.baptismPlace, ed.baptismPlaceOriginal);
+        let baptismPlace = selectPlace(ed.baptismPlace, ed.baptismPlaceOriginal, true);
         result.setBirthPlace(baptismPlace);
       }
     }
@@ -930,7 +940,7 @@ function generalizeDataForPerson(ed, result) {
       result.deathDate.qualifier = dateQualifiers.BEFORE;
 
       if (!result.deathPlace) {
-        let burialPlace = selectPlace(ed.burialPlace, ed.burialPlaceOriginal);
+        let burialPlace = selectPlace(ed.burialPlace, ed.burialPlaceOriginal, true);
         result.setDeathPlace(burialPlace);
       }
     }
@@ -955,7 +965,7 @@ function generalizeDataForPerson(ed, result) {
 
       if (spouse.marriagePlace || spouse.marriagePlaceOriginal) {
         resultSpouse.marriagePlace = new PlaceObj();
-        resultSpouse.marriagePlace.placeString = selectPlace(spouse.marriagePlace, spouse.marriagePlaceOriginal);
+        resultSpouse.marriagePlace.placeString = selectPlace(spouse.marriagePlace, spouse.marriagePlaceOriginal, true);
       }
 
       result.spouses.push(resultSpouse);
@@ -986,8 +996,10 @@ function generalizeData(input) {
 
   let result = new GeneralizedData();
 
+  let isPerson = false;
   if (ed.pageType == "person") {
     result.sourceType = "profile";
+    isPerson = true;
   } else if (ed.pageType == "book") {
     generalizeDataForBook(ed, result);
     return result;
@@ -1006,21 +1018,21 @@ function generalizeData(input) {
   let birthDate = selectDate(ed.birthDate, ed.birthDateOriginal);
   result.setBirthDate(birthDate);
   result.setBirthYear(ed.birthYear);
-  let birthPlace = selectPlace(ed.birthPlace, ed.birthPlaceOriginal);
+  let birthPlace = selectPlace(ed.birthPlace, ed.birthPlaceOriginal, isPerson);
   result.setBirthPlace(birthPlace);
 
   let deathDate = selectDate(ed.deathDate, ed.deathDateOriginal);
   result.setDeathDate(deathDate);
   result.setDeathYear(ed.deathYear);
 
-  let deathPlace = selectPlace(ed.deathPlace, ed.deathPlaceOriginal);
+  let deathPlace = selectPlace(ed.deathPlace, ed.deathPlaceOriginal, isPerson);
   result.setDeathPlace(deathPlace);
 
   let eventDate = selectDate(ed.eventDate, ed.eventDateOriginal);
   result.setEventDate(eventDate);
   result.setEventYear(ed.eventYear);
 
-  let eventPlace = selectPlace(ed.eventPlace, ed.eventPlaceOriginal);
+  let eventPlace = selectPlace(ed.eventPlace, ed.eventPlaceOriginal, isPerson);
 
   if (result.role && result.role != Role.Primary) {
     if (result.recordType == RT.Burial) {

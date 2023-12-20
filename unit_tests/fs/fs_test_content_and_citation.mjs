@@ -518,6 +518,11 @@ const personRegressionData = [
     fetchType: "person",
   },
   {
+    caseName: "xx_profile_richard_roman_1788_1846",
+    url: "https://www.familysearch.org/tree/person/details/LDQL-N2Q",
+    fetchType: "person",
+  },
+  {
     caseName: "xx_profile_sarah_moats_1854_1946",
     url: "https://www.familysearch.org/tree/person/details/MQWP-4VQ",
     fetchType: "person",

@@ -1,0 +1,46 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Richard Roman Sr",
+    "lastName": "Roman",
+    "forenames": "Richard",
+    "suffix": "Sr"
+  },
+  "birthDate": {
+    "dateString": "1788"
+  },
+  "deathDate": {
+    "dateString": "8 September 1846"
+  },
+  "deathPlace": {
+    "placeString": "Russell, Virginia, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Sarah \"Sallie\" Evans",
+        "lastName": "Evans",
+        "forenames": "Sarah \"Sallie\""
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Phillip Roman",
+        "lastName": "Roman",
+        "forenames": "William Phillip"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Margaret Thompson",
+        "lastName": "Thompson",
+        "forenames": "Margaret"
+      }
+    }
+  },
+  "hasValidData": true
+}
