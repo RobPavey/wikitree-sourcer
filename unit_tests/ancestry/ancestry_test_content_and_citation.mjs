@@ -1185,6 +1185,10 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },
   {
+    caseName: "xx_profile_william_no_last_name",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262544635265/facts",
+  },
+  {
     // has a "Possible marriage records" fact
     caseName: "xx_profile_william_saville_1995_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262406177056/facts",

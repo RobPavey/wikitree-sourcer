@@ -2313,25 +2313,27 @@ function generalizeProfileData(input, result) {
 
   // analyze the surname - sometimes Ancestry users put the LNAB in parens
   let surname = ed.surname;
-  const openParenIndex = surname.indexOf("(");
-  if (result.name && openParenIndex == 0) {
-    const closeParenIndex = surname.indexOf(")", openParenIndex);
-    if (closeParenIndex != -1) {
-      let lnab = surname.substring(openParenIndex + 1, closeParenIndex).trim();
-      let remainder = surname.substring(closeParenIndex + 1).trim();
-      if (lnab && remainder) {
-        result.lastNameAtBirth = lnab;
-        surname = lnab;
-        const spaceIndex = remainder.indexOf(" ");
-        if (spaceIndex == -1) {
-          result.lastNameAtDeath = remainder;
-        } else {
-          // there are multiple names after close paren
-          // These could be last name at death folloed by other married names
-          // Could check names of spouses to get more info
-          const cln = remainder.substring(0, spaceIndex);
-          if (cln) {
+  if (surname) {
+    const openParenIndex = surname.indexOf("(");
+    if (result.name && openParenIndex == 0) {
+      const closeParenIndex = surname.indexOf(")", openParenIndex);
+      if (closeParenIndex != -1) {
+        let lnab = surname.substring(openParenIndex + 1, closeParenIndex).trim();
+        let remainder = surname.substring(closeParenIndex + 1).trim();
+        if (lnab && remainder) {
+          result.lastNameAtBirth = lnab;
+          surname = lnab;
+          const spaceIndex = remainder.indexOf(" ");
+          if (spaceIndex == -1) {
             result.lastNameAtDeath = remainder;
+          } else {
+            // there are multiple names after close paren
+            // These could be last name at death folloed by other married names
+            // Could check names of spouses to get more info
+            const cln = remainder.substring(0, spaceIndex);
+            if (cln) {
+              result.lastNameAtDeath = remainder;
+            }
           }
         }
       }

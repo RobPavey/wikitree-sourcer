@@ -1,0 +1,22 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "William",
+    "forenames": "William"
+  },
+  "personGender": "male",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Robert Michael Pavey"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Summer Ariana Lopez"
+      }
+    }
+  },
+  "hasValidData": true
+}
