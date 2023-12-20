@@ -13,8 +13,8 @@
 		B881D54C270E748700F218CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B881D54A270E748700F218CF /* Main.storyboard */; };
 		B881D555270E748700F218CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D554270E748700F218CF /* AppDelegate.swift */; };
 		B881D558270E748700F218CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B881D556270E748700F218CF /* Main.storyboard */; };
-		B881D560270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B881D55F270E748700F218CF /* WikiTree Sourcer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B881D56A270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B881D569270E748700F218CF /* WikiTree Sourcer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B881D560270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B881D55F270E748700F218CF /* WikiTree Sourcer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B881D56A270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B881D569270E748700F218CF /* WikiTree Sourcer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B881D570270E748700F218CF /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = B881D533270E748400F218CF /* Main.html */; };
 		B881D571270E748700F218CF /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = B881D533270E748400F218CF /* Main.html */; };
 		B881D572270E748700F218CF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B881D535270E748400F218CF /* Icon.png */; };
@@ -65,26 +65,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B881D583270E748700F218CF /* Embed App Extensions */ = {
+		B881D583270E748700F218CF /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				B881D560270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed App Extensions */,
+				B881D560270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B881D58A270E748700F218CF /* Embed App Extensions */ = {
+		B881D58A270E748700F218CF /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				B881D56A270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed App Extensions */,
+				B881D56A270E748700F218CF /* WikiTree Sourcer Extension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -267,7 +267,7 @@
 				B881D53C270E748700F218CF /* Sources */,
 				B881D53D270E748700F218CF /* Frameworks */,
 				B881D53E270E748700F218CF /* Resources */,
-				B881D583270E748700F218CF /* Embed App Extensions */,
+				B881D583270E748700F218CF /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -286,7 +286,7 @@
 				B881D54E270E748700F218CF /* Sources */,
 				B881D54F270E748700F218CF /* Frameworks */,
 				B881D550270E748700F218CF /* Resources */,
-				B881D58A270E748700F218CF /* Embed App Extensions */,
+				B881D58A270E748700F218CF /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -340,7 +340,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					B881D53F270E748700F218CF = {
 						CreatedOnToolsVersion = 13.0;
@@ -558,9 +558,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -617,9 +619,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -782,6 +786,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 55;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 976MR27Z6Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -815,6 +820,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 55;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 976MR27Z6Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -850,6 +856,7 @@
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/WikiTree Sourcer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 56;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 976MR27Z6Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -887,6 +894,7 @@
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/WikiTree Sourcer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 56;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 976MR27Z6Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
