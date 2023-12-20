@@ -1,6 +1,6 @@
 {
   "sourceType": "record",
-  "recordType": "Military",
+  "recordType": "Memorial",
   "sourceOfData": "ancestry",
   "name": {
     "name": "James Holmes"
@@ -9,6 +9,9 @@
   "eventDate": {
     "dateString": "15 Sep 1918"
   },
+  "eventPlace": {
+    "placeString": "Cairo War Memorial Cemetery"
+  },
   "birthDate": {
     "qualifier": 2,
     "dateString": "1884"
@@ -16,9 +19,7 @@
   "deathDate": {
     "dateString": "15 Sep 1918"
   },
-  "serviceNumber": "293250",
-  "unit": "Cameronian (Scottish Rifles)",
-  "burialPlace": "Cairo War Memorial Cemetery, Egypt",
+  "ageAtEvent": "34",
   "collectionData": {
     "id": "2706"
   },

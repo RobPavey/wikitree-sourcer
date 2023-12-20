@@ -275,6 +275,10 @@ function determineRecordType(extractedData) {
     { type: RT.CrewList, matches: ["Crew List"] },
     { type: RT.ConvictTransportation, matches: ["Convict Transportation"] },
     {
+      type: RT.Memorial,
+      matches: ["Commonwealth War Graves"],
+    },
+    {
       type: RT.Military,
       matches: [
         "Medal and Award Rolls",
@@ -2110,6 +2114,7 @@ function generalizeDataGivenRecordType(ed, result) {
       "Electoral Place",
       "Parliamentary Division",
       "Death County",
+      "Cemetery",
     ]);
 
     if (!eventPlace) {
@@ -2124,6 +2129,9 @@ function generalizeDataGivenRecordType(ed, result) {
     // lots of record have a birth date. The narrative may not use it but search can.
     result.setBirthDate(getCleanValueForRecordDataList(ed, ["Birth Date"], "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, ["Birth Place"]));
+
+    result.setDeathDate(getCleanValueForRecordDataList(ed, ["Death Date"], "date"));
+    result.setDeathPlace(getCleanValueForRecordDataList(ed, ["Death Place"]));
 
     let ageAtEvent = getCleanValueForRecordDataList(ed, ["Age", "Departure Age", "Arrival Age", "Examination Age"]);
     if (ageAtEvent) {
