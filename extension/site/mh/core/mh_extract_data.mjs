@@ -187,6 +187,131 @@ function addField(resultObject, labelElement, valueElement, rowElement) {
   }
 }
 
+function extractDataForFamilyTreeProfile(document, result) {
+  let profileContent = document.querySelector("#viewProfileContent");
+
+  result.pageType = "person";
+  let nameAndDatesDiv = profileContent.querySelector("div.profileNameAndDatesContainer");
+  if (!nameAndDatesDiv) {
+    return result;
+  }
+
+  result.profileData = {};
+
+  let nameAndDatesRows = nameAndDatesDiv.querySelectorAll("table > tbody > tr");
+
+  for (let row of nameAndDatesRows) {
+    let nameSpan = row.querySelector("h1 span.FL_LabelxxLargeBold");
+    if (nameSpan) {
+      let name = nameSpan.textContent;
+      if (name) {
+        result.profileData.name = name;
+      }
+    } else {
+      let labelCell = row.querySelector("td.FL_LabelBold");
+      if (labelCell) {
+        let label = cleanLabel(labelCell.textContent);
+        if (label) {
+          let valueCells = row.querySelectorAll("td.FL_Label");
+          if (valueCells.length == 2) {
+            let dateCell = valueCells[0];
+            let placeCell = valueCells[1];
+            if (dateCell) {
+              let date = dateCell.textContent;
+              if (date) {
+                date = date.replace(/[\u200e\u200f]/g, "");
+
+                // example "1912 (at age ~54)"
+                let age = "";
+                if (date.includes("(at age")) {
+                  age = date.replace(/.* \(at age ([~\d\w]+)\)/, "$1");
+                  date = date.replace(/(.*) \(at age [~\d\w]+\)/, "$1");
+                }
+
+                if (label == "Born") {
+                  result.profileData.birthDate = date.trim();
+                } else if (label == "Died") {
+                  result.profileData.deathDate = date.trim();
+                  if (age) {
+                    result.ageAtDeath = age;
+                  }
+                }
+              }
+            }
+            if (placeCell) {
+              let placeLinks = placeCell.querySelectorAll("a");
+              let place = "";
+              if (placeLinks.length == 2) {
+                let placeTextLink = placeLinks[1];
+                place = placeTextLink.textContent;
+              } else {
+                place = placeCell.textContent;
+              }
+              if (place) {
+                place = place.trim();
+                if (label == "Born") {
+                  result.profileData.birthPlace = place;
+                } else if (label == "Died") {
+                  result.profileData.deathPlace = place;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // look for marriage events to find spouses
+  // Note, this only works if the "Events" tab has been clicked - not accesible otherwise :(
+  let eventRows = profileContent.querySelectorAll("tr.EventRow");
+  for (let eventRow of eventRows) {
+    let eventsText = eventRow.querySelector("td.EventsText");
+    if (eventsText) {
+      let labelSpans = eventsText.querySelectorAll("span.FL_Label");
+      if (labelSpans.length > 0) {
+        let boldLabel = labelSpans[0].querySelector("span.FL_LabelBold");
+        if (boldLabel) {
+          let labelText = boldLabel.textContent;
+          if (labelText && labelText.startsWith("Marriage to")) {
+            let boldLink = labelSpans[0].querySelector("a.FL_LinkBold");
+            if (boldLink) {
+              let name = boldLink.textContent;
+              if (name) {
+                let spouse = {};
+                spouse.name = name;
+
+                if (labelSpans.length == 3) {
+                  let placeSpan = labelSpans[1];
+                  let dateSpan = labelSpans[2];
+
+                  let place = placeSpan.textContent;
+                  let date = dateSpan.textContent;
+
+                  if (place) {
+                    spouse.marriagePlace = place;
+                  }
+                  if (date) {
+                    spouse.marriageDate = date;
+                  }
+                }
+
+                if (!result.profileData.spouses) {
+                  result.profileData.spouses = [];
+                }
+                result.profileData.spouses.push(spouse);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  result.success = true;
+  return result;
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -197,15 +322,20 @@ function extractData(document, url) {
 
   let recordBody = document.querySelector("#record_body");
   if (!recordBody) {
+    let profileContent = document.querySelector("#viewProfileContent");
+    if (profileContent) {
+      return extractDataForFamilyTreeProfile(document, result);
+    }
     return result;
   }
 
   let recordDectective = document.querySelector("#record_detective_root");
+  if (recordDectective) {
+    let collectionInfoBoxTitle = recordDectective.querySelector("div.collection_info_box_title");
 
-  let collectionInfoBoxTitle = recordDectective.querySelector("div.collection_info_box_title");
-
-  if (collectionInfoBoxTitle) {
-    result.collectionTitle = collectionInfoBoxTitle.textContent.trim();
+    if (collectionInfoBoxTitle) {
+      result.collectionTitle = collectionInfoBoxTitle.textContent.trim();
+    }
   }
 
   if (result.collectionTitle == "MyHeritage Family Trees") {

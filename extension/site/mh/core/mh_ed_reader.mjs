@@ -325,7 +325,7 @@ function cleanMhAge(string) {
 class MhEdReader extends ExtractedDataReader {
   constructor(ed, userGivenRecordType = undefined) {
     super(ed);
-    if (ed.recordData) {
+    if (ed.recordData || ed.profileData) {
       this.setupUrlParts();
       this.determineSourceTypeAndRecordType(userGivenRecordType);
 
@@ -457,6 +457,9 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   findRecordDataFieldByLabel(label) {
+    if (!this.ed.recordData) {
+      return undefined;
+    }
     for (let field of Object.values(this.ed.recordData)) {
       if (field.label) {
         let fieldLabel = field.label.toLowerCase();
@@ -468,6 +471,9 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   findRecordDataFieldByLabels(labels) {
+    if (!this.ed.recordData) {
+      return undefined;
+    }
     if (labels && this.ed.recordData) {
       for (let field of Object.values(this.ed.recordData)) {
         if (field.label) {
@@ -481,6 +487,9 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   findRecordDataFieldByKeysOrLabels(keys, labels) {
+    if (!this.ed.recordData) {
+      return undefined;
+    }
     if (keys && this.ed.recordData) {
       for (let key of Object.keys(this.ed.recordData)) {
         if (keys.includes(key)) {
@@ -490,6 +499,9 @@ class MhEdReader extends ExtractedDataReader {
     }
 
     if (labels && this.ed.recordData) {
+      if (!this.ed.recordData) {
+        return undefined;
+      }
       for (let field of Object.values(this.ed.recordData)) {
         if (field.label) {
           let label = field.label.toLowerCase();
@@ -579,7 +591,7 @@ class MhEdReader extends ExtractedDataReader {
   setupCoupleData() {
     // if this record is actually for two people then get their details and decide which is primary
     let titleString = this.ed.recordTitle;
-    if (!titleString.includes(" & ")) {
+    if (!titleString || !titleString.includes(" & ")) {
       return;
     }
 
@@ -689,7 +701,7 @@ class MhEdReader extends ExtractedDataReader {
 
     if (!nameString) {
       let title = this.ed.recordTitle;
-      if (title != this.ed.collectionTitle) {
+      if (title && title != this.ed.collectionTitle) {
         nameString = title;
       }
     }
@@ -698,6 +710,10 @@ class MhEdReader extends ExtractedDataReader {
       if (this.coupleData.primaryPerson && this.coupleData.primaryPerson.name) {
         nameString = this.coupleData.primaryPerson.name;
       }
+    }
+
+    if (!nameString && this.ed.profileData && this.ed.profileData.name) {
+      nameString = this.ed.profileData.name;
     }
 
     this.nameParts = this.separateMhNameIntoParts(nameString);
@@ -857,7 +873,7 @@ class MhEdReader extends ExtractedDataReader {
       return false; //the extract failed, GeneralizedData is not even normally called in this case
     }
 
-    if (!this.ed.recordData) {
+    if (!this.ed.recordData && !this.ed.profileData) {
       return false;
     }
 
@@ -1000,6 +1016,11 @@ class MhEdReader extends ExtractedDataReader {
 
     let valueObj = this.getBirthDataValue();
     let dateObj = this.makeDateObjFromMhValueObj(valueObj);
+
+    if (!dateObj && this.ed.profileData) {
+      dateObj = this.makeDateObjFromDateString(cleanMhDate(this.ed.profileData.birthDate));
+    }
+
     if (dateObj) {
       return dateObj;
     }
@@ -1008,9 +1029,16 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getBirthPlaceObj() {
+    let placeString = "";
     let valueObj = this.getBirthDataValue();
     if (valueObj && valueObj.placeString) {
-      return this.makePlaceObjFromFullPlaceName(valueObj.placeString);
+      placeString = valueObj.placeString;
+    } else if (this.ed.profileData) {
+      placeString = this.ed.profileData.birthPlace;
+    }
+
+    if (placeString) {
+      return this.makePlaceObjFromFullPlaceName(placeString);
     }
 
     return undefined;
@@ -1019,6 +1047,11 @@ class MhEdReader extends ExtractedDataReader {
   getDeathDateObj() {
     let valueObj = this.getDeathDataValue();
     let dateObj = this.makeDateObjFromMhValueObj(valueObj);
+
+    if (!dateObj && this.ed.profileData) {
+      dateObj = this.makeDateObjFromDateString(cleanMhDate(this.ed.profileData.deathDate));
+    }
+
     if (dateObj) {
       return dateObj;
     }
@@ -1027,9 +1060,16 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getDeathPlaceObj() {
+    let placeString = "";
     let valueObj = this.getDeathDataValue();
     if (valueObj && valueObj.placeString) {
-      return this.makePlaceObjFromFullPlaceName(valueObj.placeString);
+      placeString = valueObj.placeString;
+    } else if (this.ed.profileData) {
+      placeString = this.ed.profileData.deathPlace;
+    }
+
+    if (placeString) {
+      return this.makePlaceObjFromFullPlaceName(placeString);
     }
 
     return undefined;

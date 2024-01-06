@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "profile",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "William Edward Cowling"
+  },
+  "lastNameAtBirth": "Cowling",
+  "birthDate": {
+    "dateString": "June 1858"
+  },
+  "birthPlace": {
+    "placeString": "St Gennys, Cornwall"
+  },
+  "deathDate": {
+    "dateString": "1912"
+  },
+  "deathPlace": {
+    "placeString": "Coxford, St Gennys, Cornwall"
+  },
+  "hasValidData": true
+}
