@@ -240,22 +240,24 @@ class FreeregEdReader extends ExtractedDataReader {
     }
   }
 
-  getSpouseObj(eventDateObj, eventPlaceObj) {
+  getSpouses() {
     if (this.recordType == RT.Marriage) {
+      let eventDateObj = this.getEventDateObj();
+      let eventPlaceObj = this.getEventPlaceObj();
       if (this.isGroom()) {
         let forenames = this.getRecordDataValueForKeys(["Bride forename"]);
         let surname = this.getRecordDataValueForKeys(["Bride surname"]);
         surname = StringUtils.toInitialCapsEachWord(surname, true);
         let spouseNameObj = this.makeNameObjFromForenamesAndLastName(forenames, surname);
         let age = this.getRecordDataValueForKeys(["Bride age"]);
-        return this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age);
+        return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age)];
       } else {
         let forenames = this.getRecordDataValueForKeys(["Groom forename"]);
         let surname = this.getRecordDataValueForKeys(["Groom surname"]);
         surname = StringUtils.toInitialCapsEachWord(surname, true);
         let spouseNameObj = this.makeNameObjFromForenamesAndLastName(forenames, surname);
         let age = this.getRecordDataValueForKeys(["Groom age"]);
-        return this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age);
+        return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age)];
       }
     }
   }

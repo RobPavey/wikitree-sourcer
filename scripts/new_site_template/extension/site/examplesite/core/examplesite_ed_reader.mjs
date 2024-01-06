@@ -114,7 +114,7 @@ class ExamplesiteEdReader extends ExtractedDataReader {
     return "";
   }
 
-  getSpouseObj(eventDateObj, eventPlaceObj) {
+  getSpouses() {
     return undefined;
   }
 

@@ -146,7 +146,7 @@ class ExtractedDataReader {
     return "";
   }
 
-  getSpouseObj(eventDateObj, eventPlaceObj) {
+  getSpouses() {
     return undefined;
   }
 

@@ -790,7 +790,10 @@ class WiewaswieEdReader extends ExtractedDataReader {
     return occupation;
   }
 
-  getSpouseObj(eventDateObj, eventPlaceObj) {
+  getSpouses() {
+    let eventDateObj = this.getEventDateObj();
+    let eventPlaceObj = this.getEventPlaceObj();
+
     let bride = this.findPersonByFirstFieldType(FT.personBride);
     if (bride) {
       let brideName = this.extractPersonFieldByFieldType(bride, FT.personBride);
@@ -817,7 +820,7 @@ class WiewaswieEdReader extends ExtractedDataReader {
         }
       }
 
-      return spouseObj;
+      return [spouseObj];
     }
 
     // for a death or burial or other records it can give the spouse
@@ -826,7 +829,7 @@ class WiewaswieEdReader extends ExtractedDataReader {
       let spouseName = this.extractPersonFieldByFieldType(spouse, FT.personSpouse);
       let spouseNameObj = this.makeNameObjFromFullName(spouseName);
       let spouseObj = this.makeSpouseObj(spouseNameObj);
-      return spouseObj;
+      return [spouseObj];
     }
   }
 

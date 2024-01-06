@@ -2433,6 +2433,10 @@ class NarrativeBuilder {
         string: "was in a family history or pedigree",
       },
       {
+        recordType: RT.FamilyTree,
+        string: "was in a family tree",
+      },
+      {
         recordType: RT.Naturalization,
         string: "was in a naturalization record",
       },

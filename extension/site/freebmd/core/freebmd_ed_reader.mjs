@@ -134,9 +134,13 @@ class FreebmdEdReader extends ExtractedDataReader {
     return this.ed.registrationDistrict;
   }
 
-  getSpouseObj(eventDateObj, eventPlaceObj) {
+  getSpouses() {
     if (this.ed.spouse) {
-      return this.makeSpouseObj(this.makeNameObjFromFullName(this.ed.spouse), eventDateObj, eventPlaceObj);
+      let spouseName = this.makeNameObjFromFullName(this.ed.spouse);
+      let marriageDateObj = this.getEventDateObj();
+      let marriagePlaceObj = this.getEventPlaceObj();
+      let spouse = this.makeSpouseObj(spouseName, marriageDateObj, marriagePlaceObj);
+      return [spouse];
     }
   }
 

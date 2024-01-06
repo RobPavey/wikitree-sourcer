@@ -18,5 +18,18 @@
   "deathPlace": {
     "placeString": "Coxford, St Gennys, Cornwall"
   },
+  "spouses": [
+    {
+      "name": {
+        "name": "Abigail Henwood Rich"
+      },
+      "marriageDate": {
+        "dateString": "1878"
+      },
+      "marriagePlace": {
+        "placeString": "St Gennys, Cornwall"
+      }
+    }
+  ],
   "hasValidData": true
 }

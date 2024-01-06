@@ -78,6 +78,7 @@ const RT = {
   LegalRecord: `LegalRecord`,
   RateBook: `RateBook`,
   FamHistOrPedigree: `FamHistOrPedigree`,
+  FamilyTree: `FamilyTree`,
   OtherChurchEvent: `OtherChurchEvent`, // other than baptism, marriage, burial etc. e.g. Confirmation, Seat Rents
   Heraldry: `Heraldry`,
   Bastardy: `Bastardy`,

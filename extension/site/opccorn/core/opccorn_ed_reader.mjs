@@ -494,17 +494,23 @@ class OpccornEdReader extends ExtractedDataReader {
     return age;
   }
 
-  getSpouseObj(eventDateObj, eventPlaceObj) {
-    let spouseObj = undefined;
+  getSpouses() {
+    let spouses = undefined;
 
     let forename = this.ed.recordData["Bride Fn"];
     let surname = this.ed.recordData["Bride Sn"];
 
     if (forename || surname) {
+      let eventDateObj = this.getEventDateObj();
+      let eventPlaceObj = this.getEventPlaceObj();
+
       let nameObj = this.makeNameObjFromForenamesAndLastName(forename, this.cleanLastName(surname));
-      spouseObj = this.makeSpouseObj(nameObj, eventDateObj, eventPlaceObj, this.ed.recordData["Bride Age"]);
+      let spouseObj = this.makeSpouseObj(nameObj, eventDateObj, eventPlaceObj, this.ed.recordData["Bride Age"]);
+      if (spouseObj) {
+        spouses = [spouseObj];
+      }
     }
-    return spouseObj;
+    return spouses;
   }
 
   getParents() {

@@ -112,6 +112,10 @@ const recordTypeData = [
     collectionTitleMatches: [["biographies"], ["genealogy of the"], ["personal reminiscences of"]],
   },
   {
+    recordType: RT.FamilyTree,
+    collectionTitleMatches: [["family trees"], ["family tree"]],
+  },
+  {
     recordType: RT.Directory,
     collectionTitleMatches: [["directory and gazetteer"]],
   },
@@ -974,6 +978,7 @@ class MhEdReader extends ExtractedDataReader {
   getLastNameAtBirth() {
     if (
       this.sourceType == "profile" ||
+      this.recordType == "FamilyTree" ||
       this.recordType == "Birth" ||
       this.recordType == "BirthRegistration" ||
       this.recordType == "Baptism"
@@ -989,6 +994,7 @@ class MhEdReader extends ExtractedDataReader {
   getLastNameAtDeath() {
     if (
       this.sourceType == "profile" ||
+      this.recordType == "FamilyTree" ||
       this.recordType == "Death" ||
       this.recordType == "DeathRegistration" ||
       this.recordType == "Burial"
@@ -1123,7 +1129,7 @@ class MhEdReader extends ExtractedDataReader {
     return this.getRecordDataValueString(["occupation"]);
   }
 
-  getSpouseObj(eventDateObj, eventPlaceObj) {
+  getSpouses() {
     // Note that the calling function will automatically try to determine spouse for census
     if (this.recordType != RT.Census) {
       let spouseName = this.getRecordDataValueString(["spouse", "spouse (implied)"]);
@@ -1225,12 +1231,12 @@ class MhEdReader extends ExtractedDataReader {
             }
           }
 
-          return spouse;
+          return [spouse];
         }
       }
     }
 
-    if (this.sourceType == "profile") {
+    if (this.recordType == RT.FamilyTree) {
       if (this.ed.recordSections) {
         let familySection = this.ed.recordSections["Family members"];
         if (familySection) {
@@ -1247,11 +1253,26 @@ class MhEdReader extends ExtractedDataReader {
               let spouseNameObj = this.makeNameObjFromMhFullName(person.name);
               if (spouseNameObj) {
                 let spouse = { name: spouseNameObj };
-                return spouse;
+                return [spouse];
               }
             }
           }
         }
+      }
+    }
+
+    if (this.sourceType == "profile") {
+      if (this.ed.profileData && this.ed.profileData.spouses) {
+        let spouses = [];
+        for (let spouse of this.ed.profileData.spouses) {
+          let nameParts = this.separateMhNameIntoParts(spouse.name);
+          let nameObj = this.makeNameObjFromFullName(nameParts.fullName);
+          let dateObj = this.makeDateObjFromDateString(cleanMhDate(spouse.marriageDate));
+          let placeObj = this.makePlaceObjFromFullPlaceName(spouse.marriagePlace);
+          let spouseObj = { name: nameObj, marriageDate: dateObj, marriagePlace: placeObj };
+          spouses.push(spouseObj);
+        }
+        return spouses;
       }
     }
 
@@ -1328,7 +1349,7 @@ class MhEdReader extends ExtractedDataReader {
       }
     }
 
-    if (this.sourceType == "profile") {
+    if (this.recordType == RT.FamilyTree) {
       if (this.ed.recordSections) {
         let familySection = this.ed.recordSections["Family members"];
         if (familySection) {

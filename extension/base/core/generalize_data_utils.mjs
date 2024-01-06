@@ -3278,6 +3278,10 @@ class GeneralizedData {
         defaultTitle: "Family History or Pedigree",
       },
       {
+        type: RT.FamilyTree,
+        defaultTitle: "Family Tree",
+      },
+      {
         type: RT.Heraldry,
         defaultTitle: "Heraldic Record",
       },

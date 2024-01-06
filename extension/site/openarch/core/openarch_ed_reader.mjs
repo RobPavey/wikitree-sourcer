@@ -681,13 +681,16 @@ class OpenarchEdReader extends ExtractedDataReader {
     return "";
   }
 
-  getSpouseObj(eventDateObj, eventPlaceObj) {
+  getSpouses() {
     let bride = this.findPersonByRelationType(RelationType.bride);
     if (bride) {
       let brideName = this.extractPersonFieldByKey(bride, "a2a:PersonName");
       let spouseNameObj = this.makeNameObjFromA2aName(brideName);
       let a2aAge = this.extractPersonFieldByKey(bride, "a2a:Age");
       let age = this.ageFromA2aAge(a2aAge);
+      let eventDateObj = this.getEventDateObj();
+      let eventPlaceObj = this.getEventPlaceObj();
+
       let spouseObj = this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age);
 
       if (spouseObj) {
@@ -701,7 +704,7 @@ class OpenarchEdReader extends ExtractedDataReader {
         }
       }
 
-      return spouseObj;
+      return [spouseObj];
     }
 
     // for a death or burial or other records it can give the spouse
@@ -710,7 +713,7 @@ class OpenarchEdReader extends ExtractedDataReader {
       let spouseName = this.extractPersonFieldByKey(spouse, "a2a:PersonName");
       let spouseNameObj = this.makeNameObjFromA2aName(spouseName);
       let spouseObj = this.makeSpouseObj(spouseNameObj);
-      return spouseObj;
+      return [spouseObj];
     }
   }
 

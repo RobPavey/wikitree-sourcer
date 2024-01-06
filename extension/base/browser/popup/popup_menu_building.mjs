@@ -1044,6 +1044,7 @@ function setupBuildCitationSubMenu(
     Encyclopedia: `Encyclopedia`,
     Employment: `Employment`,
     FamHistOrPedigree: `Family History Or Pedigree`,
+    FamilyTree: `FamilyTree`,
     FreemasonMembership: `Freemason Membership`,
     GovernmentDocument: `Government Document`,
     Heraldry: `Heraldic Record`,
