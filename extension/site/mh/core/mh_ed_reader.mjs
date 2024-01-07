@@ -1280,57 +1280,6 @@ class MhEdReader extends ExtractedDataReader {
   }
 
   getParents() {
-    // Note that the calling function will automatically try to determine parents for census
-    if (this.recordType != RT.Census) {
-      let fatherValue = this.getRecordDataValue(["father"]);
-      let motherValue = this.getRecordDataValue(["mother"]);
-      let fatherName = "";
-      let motherName = "";
-      if (fatherValue || motherValue) {
-        if (fatherValue) {
-          if (fatherValue["Name"]) {
-            fatherName = fatherValue["Name"];
-          } else if (fatherValue.value) {
-            fatherName = fatherValue.value;
-          }
-        }
-        if (motherValue) {
-          if (motherValue["Name"]) {
-            motherName = motherValue["Name"];
-          } else if (motherValue.value) {
-            motherName = motherValue.value;
-          }
-        }
-      } else {
-        if (this.coupleData && this.coupleData.primaryPerson) {
-          let primaryPerson = this.coupleData.primaryPerson;
-          if (primaryPerson.fatherName) {
-            fatherName = primaryPerson.fatherName;
-          }
-          if (primaryPerson.motherName) {
-            motherName = primaryPerson.motherName;
-          }
-        }
-      }
-
-      if (fatherName || motherName) {
-        let parents = {};
-        if (fatherName) {
-          let fatherNameObj = this.makeNameObjFromMhFullName(fatherName);
-          if (fatherNameObj) {
-            parents.father = { name: fatherNameObj };
-          }
-        }
-        if (motherName) {
-          let motherNameObj = this.makeNameObjFromMhFullName(motherName);
-          if (motherNameObj) {
-            parents.mother = { name: motherNameObj };
-          }
-        }
-        return parents;
-      }
-    }
-
     function makeParentFromNameParts(reader, nameParts) {
       if (!nameParts.fullName) {
         return undefined;
@@ -1349,46 +1298,120 @@ class MhEdReader extends ExtractedDataReader {
       }
     }
 
-    if (this.recordType == RT.FamilyTree) {
-      if (this.ed.recordSections) {
-        let familySection = this.ed.recordSections["Family members"];
-        if (familySection) {
-          let parents = {};
-          let persons = familySection["Parents"];
-          if (persons) {
-            if (persons.length == 1) {
-              let person = persons[0];
-              let nameParts = this.separateMhNameIntoParts(person.name);
-              let parent = makeParentFromNameParts(this, nameParts);
-              if (parent) {
-                if (person.gender == "female") {
-                  parents.mother = parent;
-                } else {
-                  parents.father = parent;
-                }
-              }
-            } else if (persons.length == 2) {
-              let fatherPerson = persons[1].gender == "female" ? persons[0] : persons[1];
-              let motherPerson = persons[1].gender == "female" ? persons[1] : persons[0];
-
-              let fatherNameParts = this.separateMhNameIntoParts(fatherPerson.name);
-              let father = makeParentFromNameParts(this, fatherNameParts);
-              let motherNameParts = this.separateMhNameIntoParts(motherPerson.name);
-              let mother = makeParentFromNameParts(this, motherNameParts);
-
-              if (father) {
-                parents.father = father;
-              }
-              if (mother) {
-                parents.mother = mother;
-              }
+    // Note that the calling function will automatically try to determine parents for census
+    if (this.sourceType == "record") {
+      if (this.recordType != RT.Census) {
+        let fatherValue = this.getRecordDataValue(["father"]);
+        let motherValue = this.getRecordDataValue(["mother"]);
+        let fatherName = "";
+        let motherName = "";
+        if (fatherValue || motherValue) {
+          if (fatherValue) {
+            if (fatherValue["Name"]) {
+              fatherName = fatherValue["Name"];
+            } else if (fatherValue.value) {
+              fatherName = fatherValue.value;
             }
           }
-
-          if (parents.mother || parents.father) {
-            return parents;
+          if (motherValue) {
+            if (motherValue["Name"]) {
+              motherName = motherValue["Name"];
+            } else if (motherValue.value) {
+              motherName = motherValue.value;
+            }
+          }
+        } else {
+          if (this.coupleData && this.coupleData.primaryPerson) {
+            let primaryPerson = this.coupleData.primaryPerson;
+            if (primaryPerson.fatherName) {
+              fatherName = primaryPerson.fatherName;
+            }
+            if (primaryPerson.motherName) {
+              motherName = primaryPerson.motherName;
+            }
           }
         }
+
+        if (fatherName || motherName) {
+          let parents = {};
+          if (fatherName) {
+            let fatherNameObj = this.makeNameObjFromMhFullName(fatherName);
+            if (fatherNameObj) {
+              parents.father = { name: fatherNameObj };
+            }
+          }
+          if (motherName) {
+            let motherNameObj = this.makeNameObjFromMhFullName(motherName);
+            if (motherNameObj) {
+              parents.mother = { name: motherNameObj };
+            }
+          }
+          return parents;
+        }
+      }
+
+      if (this.recordType == RT.FamilyTree) {
+        if (this.ed.recordSections) {
+          let familySection = this.ed.recordSections["Family members"];
+          if (familySection) {
+            let parents = {};
+            let persons = familySection["Parents"];
+            if (persons) {
+              if (persons.length == 1) {
+                let person = persons[0];
+                let nameParts = this.separateMhNameIntoParts(person.name);
+                let parent = makeParentFromNameParts(this, nameParts);
+                if (parent) {
+                  if (person.gender == "female") {
+                    parents.mother = parent;
+                  } else {
+                    parents.father = parent;
+                  }
+                }
+              } else if (persons.length == 2) {
+                let fatherPerson = persons[1].gender == "female" ? persons[0] : persons[1];
+                let motherPerson = persons[1].gender == "female" ? persons[1] : persons[0];
+
+                let fatherNameParts = this.separateMhNameIntoParts(fatherPerson.name);
+                let father = makeParentFromNameParts(this, fatherNameParts);
+                let motherNameParts = this.separateMhNameIntoParts(motherPerson.name);
+                let mother = makeParentFromNameParts(this, motherNameParts);
+
+                if (father) {
+                  parents.father = father;
+                }
+                if (mother) {
+                  parents.mother = mother;
+                }
+              }
+            }
+
+            if (parents.mother || parents.father) {
+              return parents;
+            }
+          }
+        }
+      }
+    } else if (this.ed.profileData) {
+      // it is a profile
+      let edParents = this.ed.profileData.parents;
+      if (edParents) {
+        let parents = {};
+        if (edParents.father) {
+          let nameParts = this.separateMhNameIntoParts(edParents.father);
+          let father = makeParentFromNameParts(this, nameParts);
+          if (father) {
+            parents.father = father;
+          }
+        }
+        if (edParents.mother) {
+          let nameParts = this.separateMhNameIntoParts(edParents.mother);
+          let mother = makeParentFromNameParts(this, nameParts);
+          if (mother) {
+            parents.mother = mother;
+          }
+        }
+        return parents;
       }
     }
 

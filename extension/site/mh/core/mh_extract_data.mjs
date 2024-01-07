@@ -187,7 +187,7 @@ function addField(resultObject, labelElement, valueElement, rowElement) {
   }
 }
 
-function extractDataForFamilyTreeProfile(document, result) {
+function extractDataForFamilyTreeProfile(document, url, result) {
   let profileContent = document.querySelector("#viewProfileContent");
 
   result.pageType = "person";
@@ -262,46 +262,79 @@ function extractDataForFamilyTreeProfile(document, result) {
     }
   }
 
-  // look for marriage events to find spouses
-  // Note, this only works if the "Events" tab has been clicked - not accesible otherwise :(
-  let eventRows = profileContent.querySelectorAll("tr.EventRow");
-  for (let eventRow of eventRows) {
-    let eventsText = eventRow.querySelector("td.EventsText");
-    if (eventsText) {
-      let labelSpans = eventsText.querySelectorAll("span.FL_Label");
-      if (labelSpans.length > 0) {
-        let boldLabel = labelSpans[0].querySelector("span.FL_LabelBold");
-        if (boldLabel) {
-          let labelText = boldLabel.textContent;
-          if (labelText && labelText.startsWith("Marriage to")) {
-            let boldLink = labelSpans[0].querySelector("a.FL_LinkBold");
-            if (boldLink) {
-              let name = boldLink.textContent;
-              if (name) {
-                let spouse = {};
-                spouse.name = name;
+  // the page can have either the Info or Events tab selected - the url tells us which
+  let tabInnerContent = profileContent.querySelector("#tabsInnerContent");
+  if (tabInnerContent) {
+    if (url.endsWith("-events")) {
+      // look for marriage events to find spouses
+      // Note, this only works if the "Events" tab has been clicked - not accesible otherwise :(
+      let eventRows = profileContent.querySelectorAll("tr.EventRow");
+      for (let eventRow of eventRows) {
+        let eventsText = eventRow.querySelector("td.EventsText");
+        if (eventsText) {
+          let labelSpans = eventsText.querySelectorAll("span.FL_Label");
+          if (labelSpans.length > 0) {
+            let boldLabel = labelSpans[0].querySelector("span.FL_LabelBold");
+            if (boldLabel) {
+              let labelText = boldLabel.textContent;
+              if (labelText && labelText.startsWith("Marriage to")) {
+                let boldLink = labelSpans[0].querySelector("a.FL_LinkBold");
+                if (boldLink) {
+                  let name = boldLink.textContent;
+                  if (name) {
+                    let spouse = {};
+                    spouse.name = name;
 
-                if (labelSpans.length == 3) {
-                  let placeSpan = labelSpans[1];
-                  let dateSpan = labelSpans[2];
+                    if (labelSpans.length == 3) {
+                      let placeSpan = labelSpans[1];
+                      let dateSpan = labelSpans[2];
 
-                  let place = placeSpan.textContent;
-                  let date = dateSpan.textContent;
+                      let place = placeSpan.textContent;
+                      let date = dateSpan.textContent;
 
-                  if (place) {
-                    spouse.marriagePlace = place;
-                  }
-                  if (date) {
-                    spouse.marriageDate = date;
+                      if (place) {
+                        spouse.marriagePlace = place;
+                      }
+                      if (date) {
+                        spouse.marriageDate = date;
+                      }
+                    }
+
+                    if (!result.profileData.spouses) {
+                      result.profileData.spouses = [];
+                    }
+                    result.profileData.spouses.push(spouse);
                   }
                 }
-
-                if (!result.profileData.spouses) {
-                  result.profileData.spouses = [];
-                }
-                result.profileData.spouses.push(spouse);
               }
             }
+          }
+        }
+      }
+    } else if (url.endsWith("-info")) {
+      let peopleCells = tabInnerContent.querySelectorAll("table > tbody > tr > td");
+      for (let personCell of peopleCells) {
+        let personLink = personCell.querySelector("a.FL_LinkBold");
+        let personDescription = personCell.querySelector("span.FL_LabelDimmed");
+        if (personLink && personDescription) {
+          let desc = personDescription.textContent;
+          let name = personLink.textContent;
+          if (desc.endsWith("husband") || desc.endsWith("wife")) {
+            let spouse = { name: name };
+            if (!result.profileData.spouses) {
+              result.profileData.spouses = [];
+            }
+            result.profileData.spouses.push(spouse);
+          } else if (desc.endsWith("father")) {
+            if (!result.profileData.parents) {
+              result.profileData.parents = {};
+            }
+            result.profileData.parents.father = name;
+          } else if (desc.endsWith("mother")) {
+            if (!result.profileData.parents) {
+              result.profileData.parents = {};
+            }
+            result.profileData.parents.mother = name;
           }
         }
       }
@@ -324,7 +357,7 @@ function extractData(document, url) {
   if (!recordBody) {
     let profileContent = document.querySelector("#viewProfileContent");
     if (profileContent) {
-      return extractDataForFamilyTreeProfile(document, result);
+      return extractDataForFamilyTreeProfile(document, url, result);
     }
     return result;
   }
@@ -338,13 +371,7 @@ function extractData(document, url) {
     }
   }
 
-  //  if (result.collectionTitle == "MyHeritage Family Trees") {
-  //    result.pageType = "person";
-  //  } else if (result.collectionTitle == "Geni World Family Tree") {
-  //    result.pageType = "person";
-  //  } else {
   result.pageType = "record";
-  //  }
 
   let recordHeader = recordBody.querySelector("div.record_header");
   if (!recordHeader) {

@@ -162,12 +162,20 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-40000-246802060/sarah-ann-walker-born-west-in-geni-world-family-tree",
   },
   {
-    caseName: "xx_person_william_cowling_1858_1912",
-    url: "https://www.myheritage.com/site-family-tree-437577731/burgess-keast?familyTreeID=13#!profile-13020635-info",
+    caseName: "xx_person_mary_cowling_1883_1962_events",
+    url: "https://www.myheritage.com/site-family-tree-437577731/burgess-keast?familyTreeID=13#!profile-13020554-events",
+  },
+  {
+    caseName: "xx_person_mary_cowling_1883_1962_info",
+    url: "https://www.myheritage.com/site-family-tree-437577731/burgess-keast?familyTreeID=13#!profile-13020554-info",
   },
   {
     caseName: "xx_person_william_cowling_1858_1912_events",
     url: "https://www.myheritage.com/site-family-tree-437577731/burgess-keast?familyTreeID=13#!profile-13020635-events",
+  },
+  {
+    caseName: "xx_person_william_cowling_1858_1912_info",
+    url: "https://www.myheritage.com/site-family-tree-437577731/burgess-keast?familyTreeID=13#!profile-13020635-info",
   },
 ];
 

@@ -1,0 +1,22 @@
+{
+  "url": "https://www.myheritage.com/site-family-tree-437577731/burgess-keast?familyTreeID=13#!profile-13020554-info",
+  "success": true,
+  "pageType": "person",
+  "profileData": {
+    "name": "Mary Elizabeth Headon (born Cowling)",
+    "birthDate": "Circa 1883",
+    "birthPlace": "St Gennys, Cornwall",
+    "deathDate": "Oct 18 1962",
+    "deathPlace": "Freedom Fields Hospital, Plymouth, Devon",
+    "spouses": [
+      {
+        "name": "John Headon"
+      }
+    ],
+    "parents": {
+      "father": "William Edward Cowling",
+      "mother": "Abigail Henwood Cowling (born Rich)"
+    }
+  },
+  "ageAtDeath": "~79"
+}

@@ -18,5 +18,12 @@
   "deathPlace": {
     "placeString": "Coxford, St Gennys, Cornwall"
   },
+  "spouses": [
+    {
+      "name": {
+        "name": "Abigail Henwood Rich"
+      }
+    }
+  ],
   "hasValidData": true
 }

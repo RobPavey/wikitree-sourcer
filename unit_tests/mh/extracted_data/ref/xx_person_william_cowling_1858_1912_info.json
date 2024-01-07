@@ -7,7 +7,12 @@
     "birthDate": "June 1858",
     "birthPlace": "St Gennys, Cornwall",
     "deathDate": "1912",
-    "deathPlace": "Coxford, St Gennys, Cornwall"
+    "deathPlace": "Coxford, St Gennys, Cornwall",
+    "spouses": [
+      {
+        "name": "Abigail Henwood Cowling (born Rich)"
+      }
+    ]
   },
   "ageAtDeath": "~54"
 }

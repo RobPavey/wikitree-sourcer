@@ -1,0 +1,46 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "profile",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Mary Elizabeth Cowling"
+  },
+  "lastNameAtBirth": "Cowling",
+  "lastNameAtDeath": "Headon",
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1883"
+  },
+  "birthPlace": {
+    "placeString": "St Gennys, Cornwall"
+  },
+  "deathDate": {
+    "dateString": "18 Oct 1962"
+  },
+  "deathPlace": {
+    "placeString": "Freedom Fields Hospital, Plymouth, Devon"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "John Headon"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Edward Cowling"
+      },
+      "lastNameAtBirth": "Cowling"
+    },
+    "mother": {
+      "name": {
+        "name": "Abigail Henwood Rich"
+      },
+      "lastNameAtBirth": "Rich",
+      "lastNameAtDeath": "Cowling"
+    }
+  },
+  "hasValidData": true
+}
