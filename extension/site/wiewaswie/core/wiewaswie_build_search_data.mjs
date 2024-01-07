@@ -31,6 +31,7 @@ function buildSearchData(input) {
   const typeOfSearch = input.typeOfSearch;
   const searchParameters = input.searchParameters;
   const options = input.options;
+  const runDate = input.runDate;
 
   let fieldData = {};
   let selectData = {};
@@ -92,7 +93,8 @@ function buildSearchData(input) {
       fieldData["vm.GetSearchResultsParameters.PeriodeTot"] = year;
     }
   } else {
-    let range = gd.inferPossibleLifeYearRange();
+    const maxLifespan = Number(options.search_general_maxLifespan);
+    let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
     if (range) {
       if (range.startYear) {
         fieldData["vm.GetSearchResultsParameters.PeriodeVan"] = range.startYear;

@@ -46,6 +46,7 @@ function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   let parameters = buildUrlInput.searchParameters;
   const options = buildUrlInput.options;
+  const runDate = buildUrlInput.runDate;
 
   if (!parameters) {
     parameters = {};
@@ -54,7 +55,8 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new PpnzUriBuilder();
 
-  const dateRange = gd.inferPossibleLifeYearRange();
+  const maxLifespan = Number(buildUrlInput.options.search_general_maxLifespan);
+  const dateRange = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
   if (options.search_ppnz_addToDateRange != "none") {
     // although the values are ints in options sometimes they come through as strings in browser
     let offsetToRange = Number(options.search_ppnz_addToDateRange);

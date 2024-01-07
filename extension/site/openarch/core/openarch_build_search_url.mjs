@@ -28,6 +28,7 @@ import { RC } from "../../../base/core/record_collections.mjs";
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const typeOfSearch = buildUrlInput.typeOfSearch;
+  const runDate = buildUrlInput.runDate;
   const searchParameters = buildUrlInput.searchParameters;
 
   var builder = new OpenarchUriBuilder();
@@ -103,7 +104,8 @@ function buildSearchUrl(buildUrlInput) {
       namePart += " " + year + "-" + year;
     }
   } else {
-    let range = gd.inferPossibleLifeYearRange();
+    const maxLifespan = Number(buildUrlInput.options.search_general_maxLifespan);
+    let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
     if (range) {
       if (range.startYear) {
         namePart += " " + range.startYear;

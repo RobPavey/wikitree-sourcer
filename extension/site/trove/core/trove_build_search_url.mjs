@@ -162,6 +162,7 @@ function buildSearchUrl(buildUrlInput) {
 
   const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
+  const runDate = buildUrlInput.runDate;
   let parameters = buildUrlInput.searchParameters;
 
   if (!parameters) {
@@ -171,7 +172,8 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new TroveUriBuilder();
 
-  const dateRange = gd.inferPossibleLifeYearRange();
+  const maxLifespan = Number(buildUrlInput.options.search_general_maxLifespan);
+  const dateRange = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
   if (options.search_trove_addToDateRange != "none") {
     // although the values are ints in options sometimes they come through as strings in browser
     let offsetToRange = Number(options.search_trove_addToDateRange);

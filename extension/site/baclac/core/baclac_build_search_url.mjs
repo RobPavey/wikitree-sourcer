@@ -200,6 +200,9 @@ function buildSameOldCollectionSearchUrl(buildUrlInput, builder) {
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const typeOfSearch = buildUrlInput.typeOfSearch;
+  const runDate = buildUrlInput.runDate;
+
+  const maxLifespan = Number(buildUrlInput.options.search_general_maxLifespan);
 
   var builder = new BaclacUriBuilder();
 
@@ -276,7 +279,7 @@ function buildSearchUrl(buildUrlInput) {
     let searchString = gd.inferForenames() + " " + gd.inferLastName();
     builder.addSearchStringExact(searchString);
 
-    let dateRange = gd.inferPossibleLifeYearRange();
+    let dateRange = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
     if (dateRange && dateRange.startYear && dateRange.endYear) {
       builder.addDateRange(dateRange.startYear.toString(), dateRange.endYear.toString());
     }
@@ -308,7 +311,7 @@ function buildSearchUrl(buildUrlInput) {
     searchString = searchString.trim();
     builder.addSearchStringExact(searchString);
 
-    let dateRange = gd.inferPossibleLifeYearRange();
+    let dateRange = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
     if (dateRange && dateRange.startYear && dateRange.endYear) {
       builder.addDateRange(dateRange.startYear.toString(), dateRange.endYear.toString());
     }

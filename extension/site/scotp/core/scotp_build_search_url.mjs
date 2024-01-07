@@ -224,13 +224,13 @@ function adjustCountyForSpecialCases(countyName, scotpRecordType, placeObj, date
   return countyName;
 }
 
-function setDates(gd, scotpRecordType, parameters, options, builder) {
+function setDates(gd, scotpRecordType, parameters, options, runDate, builder) {
   // start off by setting dates to the years the person could have lived
   // then we could refine it depending on recordType and source gd
   // e.g. if the source data is a birth and the scotpRecordType is OPR births
   // then use a range around the source birth date
   let maxLifespan = Number(options.search_general_maxLifespan);
-  let dates = gd.inferPossibleLifeYearRange(maxLifespan);
+  let dates = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
 
   let eventClass = ScotpRecordType.getEventClass(scotpRecordType);
 
@@ -665,6 +665,7 @@ function buildSearchUrl(buildUrlInput) {
   const dataCache = buildUrlInput.dataCache;
   const typeOfSearch = buildUrlInput.typeOfSearch;
   const parameters = buildUrlInput.searchParameters;
+  const runDate = buildUrlInput.runDate;
 
   let scotpRecordType = parameters.subcategory;
   var builder = new ScotpUriBuilder(scotpRecordType);
@@ -674,7 +675,7 @@ function buildSearchUrl(buildUrlInput) {
   // A simple search URL that works:
   // https://www.scotlandspeople.gov.uk/record-results?search_type=people&record_type=crbirths_baptism&surname=Macgregor
 
-  let dates = setDates(gd, scotpRecordType, parameters, options, builder);
+  let dates = setDates(gd, scotpRecordType, parameters, options, runDate, builder);
 
   setAge(gd, scotpRecordType, parameters, options, builder);
 

@@ -52,6 +52,7 @@ function addAppropriateGivenNames(gd, builder) {
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
+  const maxLifespan = Number(buildUrlInput.options.search_general_maxLifespan);
 
   var builder = new OpccornUriBuilder();
 
@@ -63,7 +64,7 @@ function buildSearchUrl(buildUrlInput) {
 
   // compute the start and end dates
 
-  let dateRange = gd.inferPossibleLifeYearRange();
+  let dateRange = gd.inferPossibleLifeYearRange(maxLifespan);
 
   // set the date parameters
   if (dateRange.startYear) {

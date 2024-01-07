@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 /** Infers possible year range to search in for the given type of record. */
-function inferDates(gd, recordType, maxLifespan) {
+function inferDates(gd, recordType, maxLifespan, runDate) {
   if (recordType === "B") {
     const birthYear = gd.inferBirthYear();
     if (birthYear) {
@@ -41,7 +41,7 @@ function inferDates(gd, recordType, maxLifespan) {
       };
     }
   }
-  const range = gd.inferPossibleLifeYearRange(maxLifespan);
+  const range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
   return { fromYear: range.startYear, toYear: parseInt(range.endYear) + 1 };
 }
 
@@ -50,6 +50,7 @@ function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
   const parameters = buildUrlInput.searchParameters;
+  const runDate = buildUrlInput.runDate;
 
   const province = parameters.province;
   const recordType = parameters.recordType;
@@ -58,7 +59,7 @@ function buildSearchUrl(buildUrlInput) {
 
   const lastName = gd.inferLastName();
   const firstName = gd.inferFirstName();
-  const { fromYear, toYear } = inferDates(gd, recordType, maxLifespan);
+  const { fromYear, toYear } = inferDates(gd, recordType, maxLifespan, runDate);
 
   const url = new URL("https://geneteka.genealodzy.pl/index.php?op=gt&lang=eng");
   url.searchParams.append("bdm", recordType);

@@ -116,6 +116,11 @@ async function runBuildSearchUrlTests(
       userOptions = { ...userOptions, ...testData.userOptions };
     }
 
+    // to save setting the run date on every test case
+    if (!testData.runDate) {
+      testData.runDate = new Date("1 December 2023");
+    }
+
     let typeOfSearch = testData.typeOfSearch;
     const input = {
       typeOfSearch: typeOfSearch,
@@ -123,6 +128,7 @@ async function runBuildSearchUrlTests(
       generalizedData: generalizedData,
       dataCache: testDataCache,
       options: userOptions,
+      runDate: testData.runDate,
     };
 
     let result = {}; // this is an object containing all the types

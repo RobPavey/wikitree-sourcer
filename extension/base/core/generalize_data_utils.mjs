@@ -3709,12 +3709,15 @@ class GeneralizedData {
     return true; // if we don't know the birth or death year then it could be in range
   }
 
-  inferPossibleLifeYearRange(maxLifespan = possibleLifeSpan) {
+  inferPossibleLifeYearRange(maxLifespan = possibleLifeSpan, runDate = undefined) {
     let birthYear = this.inferBirthYear();
     let deathYear = this.inferDeathYear();
     let eventYear = this.inferEventYear();
 
     let currentDate = new Date();
+    if (runDate) {
+      currentDate = new Date(runDate);
+    }
     let currentYear = currentDate.getFullYear();
 
     let birthYearNum = DateUtils.getYearNumFromYearString(birthYear);
