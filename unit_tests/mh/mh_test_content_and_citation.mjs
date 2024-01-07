@@ -154,6 +154,11 @@ const regressionData = [
 
   // Family Tree person pages
   {
+    // person in my MH tree
+    caseName: "xx_person_charles_kimberlin_1825_1860_info",
+    url: "https://www.myheritage.com/person-1508888_451433851_451433851/charles-kimberlin#!info",
+  },
+  {
     caseName: "xx_person_charles_kimberlin",
     url: "https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees",
   },

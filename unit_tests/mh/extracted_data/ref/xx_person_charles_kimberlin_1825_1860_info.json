@@ -1,0 +1,19 @@
+{
+  "url": "https://www.myheritage.com/person-1508888_451433851_451433851/charles-kimberlin#!info",
+  "success": true,
+  "pageType": "person",
+  "profileData": {
+    "name": "Charles Kimberlin",
+    "birthDate": "Dec 15 1825",
+    "birthPlace": "Atherstone, Warwickshire, England",
+    "spouses": [
+      {
+        "name": "Emily Kimberlin - Black (born Mason)"
+      }
+    ],
+    "parents": {
+      "father": "John Kimberlin",
+      "mother": "Elizabeth Kimberlin (born Smith)"
+    }
+  }
+}

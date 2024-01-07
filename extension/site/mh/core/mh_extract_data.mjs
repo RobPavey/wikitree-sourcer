@@ -263,9 +263,15 @@ function extractDataForFamilyTreeProfile(document, url, result) {
   }
 
   // the page can have either the Info or Events tab selected - the url tells us which
+  // but is variable, better to use the label text
   let tabInnerContent = profileContent.querySelector("#tabsInnerContent");
   if (tabInnerContent) {
-    if (url.endsWith("-events")) {
+    let tabLabel = tabInnerContent.querySelector(".FL_LabelLargeBold");
+    let label = "";
+    if (tabLabel) {
+      label = tabLabel.textContent.trim();
+    }
+    if (label.startsWith("Events")) {
       // look for marriage events to find spouses
       // Note, this only works if the "Events" tab has been clicked - not accesible otherwise :(
       let eventRows = profileContent.querySelectorAll("tr.EventRow");
@@ -311,7 +317,7 @@ function extractDataForFamilyTreeProfile(document, url, result) {
           }
         }
       }
-    } else if (url.endsWith("-info")) {
+    } else if (label.endsWith("family")) {
       let peopleCells = tabInnerContent.querySelectorAll("table > tbody > tr > td");
       for (let personCell of peopleCells) {
         let personLink = personCell.querySelector("a.FL_LinkBold");
