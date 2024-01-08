@@ -57,6 +57,10 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FM%2F69318%2F1",
   },
   {
+    caseName: "british_india_marriage_1901_margaret_shepherd",
+    url: "https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2",
+  },
+  {
     caseName: "census_1911_pavey-342",
     url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1911%2FRG14%2F00802%2F0395%2F1",
   },

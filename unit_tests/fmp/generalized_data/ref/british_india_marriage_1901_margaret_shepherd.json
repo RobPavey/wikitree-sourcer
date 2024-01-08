@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Shepherd",
+    "forenames": "Margaret"
+  },
+  "eventPlace": {
+    "placeString": "India"
+  },
+  "eventDate": {
+    "dateString": "1901-1905",
+    "yearString": "1901-05"
+  },
+  "spouses": [
+    {
+      "name": {
+        "firstNames": "Arthur William P",
+        "lastName": "Jones"
+      },
+      "marriageDate": {
+        "dateString": "1901-1905",
+        "yearString": "1901-05"
+      },
+      "marriagePlace": {
+        "placeString": "India"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "British India Office Marriages",
+    "volume": "10",
+    "folio": "1556"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"British India Office Marriages\"<br/>\nReference: Z/N/11/10; Folio: 1556; Volume: 10<br/>\n[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Margaret married Arthur William P Jones in 1901-1905 in India.<ref>\n'''Marriage''':\n\"British India Office Marriages\"<br/>\nReference: Z/N/11/10; Folio: 1556; Volume: 10<br/>\n[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"British India Office Marriages\"<br/>Reference: Z/N/11/10; Folio: 1556; Volume: 10<br/>[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"British India Office Marriages\"<br/>\nReference: Z/N/11/10; Folio: 1556; Volume: 10<br/>\n[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nMargaret Shepherd marriage to Arthur William P Jones in 1901-1905 in India.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Margaret married Arthur William P Jones in 1901-1905 in India.<ref>\n'''Marriage''':\n\"British India Office Marriages\"<br/>\nReference: Z/N/11/10; Folio: 1556; Volume: 10<br/>\n[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nMargaret Shepherd marriage to Arthur William P Jones in 1901-1905 in India.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"British India Office Marriages\"<br/>Reference: Z/N/11/10; Folio: 1556; Volume: 10<br/>[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>Margaret Shepherd marriage to Arthur William P Jones in 1901-1905 in India.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"British India Office Marriages\"<br/>\nReference: Z/N/11/10; Folio: 1556; Volume: 10<br/>\n[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Margaret; Last name: Shepherd; Marriage date: 1901-1905; Spouse's first name(s): Arthur William P.; Spouse's last name: Jones; Piece: N/11; Volume: 10.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Margaret married Arthur William P Jones in 1901-1905 in India.<ref>\n'''Marriage''':\n\"British India Office Marriages\"<br/>\nReference: Z/N/11/10; Folio: 1556; Volume: 10<br/>\n[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Margaret; Last name: Shepherd; Marriage date: 1901-1905; Spouse's first name(s): Arthur William P.; Spouse's last name: Jones; Piece: N/11; Volume: 10.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"British India Office Marriages\"<br/>Reference: Z/N/11/10; Folio: 1556; Volume: 10<br/>[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Margaret; Last name: Shepherd; Marriage date: 1901-1905; Spouse's first name(s): Arthur William P.; Spouse's last name: Jones; Piece: N/11; Volume: 10.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"British India Office Marriages\"<br/>\nReference: Z/N/11/10; Folio: 1556; Volume: 10<br/>\n[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Margaret\n|-\n| Last name || Shepherd\n|-\n| Marriage date || 1901-1905\n|-\n| Spouse's first name(s) || Arthur William P.\n|-\n| Spouse's last name || Jones\n|-\n| Presidency || -\n|-\n| Piece || N/11\n|-\n| Volume || 10\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Margaret married Arthur William P Jones in 1901-1905 in India.<ref>\n'''Marriage''':\n\"British India Office Marriages\"<br/>\nReference: Z/N/11/10; Folio: 1556; Volume: 10<br/>\n[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Margaret\n|-\n| Last name || Shepherd\n|-\n| Marriage date || 1901-1905\n|-\n| Spouse's first name(s) || Arthur William P.\n|-\n| Spouse's last name || Jones\n|-\n| Presidency || -\n|-\n| Piece || N/11\n|-\n| Volume || 10\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"British India Office Marriages\"<br/>Reference: Z/N/11/10; Folio: 1556; Volume: 10<br/>[https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Margaret; Last name: Shepherd; Marriage date: 1901-1905; Spouse's first name(s): Arthur William P.; Spouse's last name: Jones; Piece: N/11; Volume: 10.",
+    "type": "source"
+  }
+}

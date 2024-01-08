@@ -314,6 +314,16 @@ function setEventDateFromRecordDataKeys(ed, result, keys) {
 function buildMainPlaceObj(ed) {
   let placeObj = {};
   placeObj.headingPlace = ed.place;
+
+  // special case for a British India Office marriage that has a heading place of Great Britain
+  // Are we always certain that the marriage was performed in India?
+  // e.g. https://www.findmypast.co.uk/transcript?id=BL%2FBIND%2FFIBIS%2FREGOFFMAR%2F8128%2F2
+  if (ed.collection == "British India Office Marriages") {
+    if (placeObj.headingPlace == "Great Britain") {
+      placeObj.headingPlace = "India";
+    }
+  }
+
   placeObj.country = getCleanRecordDataValue(ed, "Country");
   placeObj.state = getCleanRecordDataValue(ed, "State");
   placeObj.county = getCleanRecordDataValue(ed, "County");
