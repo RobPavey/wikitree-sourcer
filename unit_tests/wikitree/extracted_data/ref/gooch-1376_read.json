@@ -1,0 +1,28 @@
+{
+  "hasValidData": true,
+  "firstNames": "John",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Gooch",
+  "currentLastName": "Gooch",
+  "mothersMaidenName": "",
+  "birthDate": "",
+  "birthDateStatus": "none",
+  "deathDate": "Oct 1795",
+  "deathDateStatus": "before",
+  "birthLocation": "",
+  "deathLocation": "Harrison, Kentucky, United States",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Unknown-480428",
+      "name": "Elizabeth (Unknown) Gooch",
+      "marriageString": "â€” married [date unknown] [location unknown]"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Gooch-1376",
+  "currentTabText": "John Gooch's Profile",
+  "pageType": "read",
+  "wikiId": "Gooch-1376",
+  "name": "John Gooch"
+}

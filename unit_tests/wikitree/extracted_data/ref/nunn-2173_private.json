@@ -1,0 +1,37 @@
+{
+  "hasValidData": true,
+  "firstNames": "Admiral",
+  "prefNames": "Nelson",
+  "middleNames": "Nelson",
+  "lnab": "Nunn",
+  "currentLastName": "Nunn",
+  "mothersMaidenName": "Nunn",
+  "birthDate": "1815",
+  "birthDateStatus": "none",
+  "deathDate": "Mar 1899",
+  "deathDateStatus": "before",
+  "birthLocation": "North Carolina, United States",
+  "deathLocation": "Dallas, Arkansas, United States",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Sartin-323",
+      "name": "Mary Anna (Sartin) Nunn",
+      "marriageString": "â€” married 26 Jan 1836 in Caswell, North Carolina, United States",
+      "marriageDate": "â€” married 26 Jan 1836",
+      "marriagePlace": "Caswell, North Carolina, United States"
+    }
+  ],
+  "url": "https://www.wikitree.com/index.php?title=Nunn-2173",
+  "currentTabText": "Nelson Nunn's Profile",
+  "pageType": "private",
+  "wikiId": "Nunn-2173",
+  "name": "Admiral Nelson Nunn",
+  "nicknames": "A.N.",
+  "parents": {
+    "mother": {
+      "wikiId": "Nunn-3499",
+      "name": "Mary Nunn"
+    }
+  }
+}

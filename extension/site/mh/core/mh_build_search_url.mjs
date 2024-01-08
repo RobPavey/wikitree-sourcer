@@ -41,6 +41,8 @@ function buildSearchUrl(buildUrlInput) {
   let includeMother = true;
   let spouseIndex = 0;
 
+  let lastName = gd.inferLastName();
+
   if (typeOfSearch == "SpecifiedCollection") {
     let collectionWtsId = searchParameters.collectionWtsId;
     if (collectionWtsId) {
@@ -61,6 +63,14 @@ function buildSearchUrl(buildUrlInput) {
       builder.setCategory(subcategory);
     } else if (category && category != "all") {
       builder.setCategory(category);
+    }
+    let lastNamesArray = gd.inferPersonLastNamesArray(gd);
+    if (lastNamesArray.length > 0) {
+      if (lastNamesArray.length == 1) {
+        lastName = lastNamesArray[0];
+      } else if (lastNamesArray.length > searchParameters.lastNameIndex) {
+        lastName = lastNamesArray[searchParameters.lastNameIndex];
+      }
     }
   } else if (typeOfSearch == "FamilyTree") {
     let categoryUrlPart = "collection-1/myheritage-family-trees";
@@ -86,7 +96,7 @@ function buildSearchUrl(buildUrlInput) {
 
   // call methods on builder here
 
-  builder.addNameAndGender(gd.inferForenames(), gd.inferLastName(), gd.personGender);
+  builder.addNameAndGender(gd.inferForenames(), lastName, gd.personGender);
 
   builder.addBirth(gd.inferBirthYear(), gd.inferBirthPlace());
   builder.addDeath(gd.inferDeathYear(), gd.inferDeathPlace());

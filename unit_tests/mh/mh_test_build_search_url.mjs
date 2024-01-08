@@ -36,6 +36,21 @@ const regressionData = [
     inputPath: "mh/generalized_data/ref/xx_person_charles_kimberlin",
   },
   {
+    caseName: "wikitree_gooch-1376_read",
+    inputPath: "wikitree/generalized_data/ref/gooch-1376_read",
+  },
+  {
+    caseName: "wikitree_littlemore-13_read",
+    inputPath: "wikitree/generalized_data/ref/littlemore-13_read",
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: {
+      lastNameIndex: 1,
+      spouseIndex: 0,
+      father: true,
+      mother: true,
+    },
+  },
+  {
     caseName: "wikitree_pavey-455_read",
     inputPath: "wikitree/generalized_data/ref/pavey-455_read",
   },

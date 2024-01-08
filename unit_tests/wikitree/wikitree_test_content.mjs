@@ -51,6 +51,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Ellacott-59",
   },
   {
+    // has death date and place but no birth details
+    caseName: "gooch-1376_read",
+    url: "https://www.wikitree.com/wiki/Gooch-1376",
+  },
+  {
     // Scotland example
     caseName: "gow-822_read",
     url: "https://www.wikitree.com/wiki/Gow-822",
@@ -83,6 +88,10 @@ const regressionData = [
   {
     caseName: "moore-12982_private",
     url: "https://www.wikitree.com/wiki/Moore-12982",
+  },
+  {
+    caseName: "nunn-2173_private",
+    url: "https://www.wikitree.com/index.php?title=Nunn-2173",
   },
   {
     caseName: "nz_sowerby-41_read",

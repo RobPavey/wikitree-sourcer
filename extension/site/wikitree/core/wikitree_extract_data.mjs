@@ -283,6 +283,9 @@ function getBirthOrDeathLocation(startNode, selector) {
 function getParentsFromDocumentInReadOrPrivateMode(document, result) {
   // there is no easy way to distinguish the parents, there could be 0, 1 or 2 and they don't say if they are mother
   // or father. So we have to compare the lnab - if it matches this person then it is the father.
+  // Actually this is not safe - there can be only a mother and the lnab can be hers
+  // So we look at the text to see if it says
+  // "[father unknown]" (public view) or "[father?]" (private view)
   var parentUrls = document.querySelectorAll(".VITALS span[itemprop=parent] a[itemprop=url]");
   for (let index = 0; index < parentUrls.length; ++index) {
     if (result.parents == undefined) {
@@ -312,10 +315,10 @@ function getParentsFromDocumentInReadOrPrivateMode(document, result) {
       var parentVitals = document.querySelector(".VITALS span[itemprop=parent]").closest("div");
       if (parentVitals) {
         let text = parentVitals.textContent;
-        if (text.includes("[father unknown]")) {
+        if (text.includes("[father unknown]") || text.includes("[father?]")) {
           parentIdentified = true;
           isFather = false;
-        } else if (text.includes("[mother unknown]")) {
+        } else if (text.includes("[mother unknown]") || text.includes("[mother?]")) {
           parentIdentified = true;
           isFather = true;
         }

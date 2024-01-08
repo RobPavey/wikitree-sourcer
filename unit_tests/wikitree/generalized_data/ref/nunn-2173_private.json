@@ -1,0 +1,58 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Admiral",
+    "middleNames": "Nelson",
+    "prefNames": "Nelson",
+    "nicknames": "A.N.",
+    "lastName": "Nunn"
+  },
+  "lastNameAtBirth": "Nunn",
+  "lastNameAtDeath": "Nunn",
+  "mothersMaidenName": "Nunn",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "1815",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "Mar 1899",
+    "qualifier": 3
+  },
+  "birthPlace": {
+    "placeString": "North Carolina, United States"
+  },
+  "deathPlace": {
+    "placeString": "Dallas, Arkansas, United States"
+  },
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Mary Nunn",
+        "lastName": "Nunn",
+        "forenames": "Mary"
+      },
+      "lastNameAtBirth": "Nunn",
+      "lastNameAtDeath": "Nunn"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Mary Anna",
+        "lastName": "Sartin",
+        "name": "Mary Anna Sartin"
+      },
+      "lastNameAtBirth": "Sartin",
+      "lastNameAtDeath": "Nunn",
+      "marriageDate": {
+        "dateString": "â€” married 26 Jan 1836"
+      },
+      "marriagePlace": {
+        "placeString": "Caswell, North Carolina, United States"
+      }
+    }
+  ],
+  "hasValidData": true
+}

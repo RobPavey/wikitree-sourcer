@@ -234,6 +234,7 @@ class MhUriBuilder {
 
       ep = ep.trim();
       ep = ep.replace(/%20/g, "%2F3");
+      ep = ep.replace(/\./g, "%2F2");
     }
 
     if (ey || ep) {

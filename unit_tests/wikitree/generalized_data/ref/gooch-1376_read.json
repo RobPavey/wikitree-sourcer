@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "John",
+    "lastName": "Gooch"
+  },
+  "lastNameAtBirth": "Gooch",
+  "lastNameAtDeath": "Gooch",
+  "personGender": "male",
+  "deathDate": {
+    "dateString": "Oct 1795",
+    "qualifier": 3
+  },
+  "deathPlace": {
+    "placeString": "Harrison, Kentucky, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Elizabeth",
+        "lastName": "Gooch",
+        "name": "Elizabeth Gooch"
+      },
+      "lastNameAtDeath": "Gooch"
+    }
+  ],
+  "hasValidData": true
+}
