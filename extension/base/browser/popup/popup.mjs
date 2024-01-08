@@ -38,7 +38,8 @@ import {
   macSecondMonitorWorkaround,
   openExceptionPage,
   addOptionsMenuItem,
-  addSupportMenuItem,
+  addHelpMenuItem,
+  addBuyMeACoffeeMenuItem,
   closePopup,
 } from "./popup_menu_building.mjs";
 
@@ -195,10 +196,11 @@ function setupExtensionPageMenu(url) {
   if (pageType != "user_citation") {
     addEditCitationMenuItem(menu, backFunction);
   }
+  addBuyMeACoffeeMenuItem(menu);
   if (pageType != "options") {
     addOptionsMenuItem(menu);
   }
-  addSupportMenuItem(menu, undefined, backFunction);
+  addHelpMenuItem(menu, undefined, backFunction);
 
   endMainMenu(menu);
 }

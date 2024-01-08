@@ -738,11 +738,20 @@ function addOptionsMenuItem(menu) {
   });
 }
 
-function addSupportMenuItem(menu, data, backFunction) {
-  let menuItemText = isSafari() ? "Support..." : "Support/Donate...";
+function addHelpMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Help...", function (element) {
+    setupHelpSubmenuMenu(data, backFunction);
+  });
+}
 
-  addMenuItem(menu, menuItemText, function (element) {
-    setupSupportSubmenuMenu(data, backFunction);
+function addBuyMeACoffeeMenuItem(menu) {
+  if (isSafari()) {
+    return; // no donations on Safari version
+  }
+
+  addMenuItem(menu, "Buy me a coffee...", function (element) {
+    chrome.tabs.create({ url: "https://www.buymeacoffee.com/RobPavey" });
+    closePopup();
   });
 }
 
@@ -1454,80 +1463,35 @@ function setupDebugSubmenuMenu(data, backFunction) {
   endMainMenu(menu);
 }
 
-function setupSupportSubmenuMenu(data, backFunction) {
+function setupHelpSubmenuMenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
 
-  if (!isSafari()) {
-    // intro message
-
-    let introLabel = document.createElement("label");
-    introLabel.className = "messageLabel";
-    introLabel.innerText = "WikiTree Sourcer is a free browser extension developed by Rob Pavey.";
-    menu.list.appendChild(introLabel);
-
-    // Buy me a Coffee
-
-    let coffeeDiv = document.createElement("div");
-    coffeeDiv.className = "messageParagraph";
-
-    let coffeeLabel1 = document.createElement("label");
-    coffeeLabel1.innerText =
-      "If you find it useful and wish to show your appreciation and support the ongoing development and maintainance of this extension you can make a donation at ";
-
-    let coffeeLinkButton = document.createElement("button");
-    coffeeLinkButton.className = "linkButton";
-    coffeeLinkButton.innerText = "buy me a coffee.";
-    coffeeLinkButton.onclick = async function (element) {
-      chrome.tabs.create({ url: "https://www.buymeacoffee.com/RobPavey" });
-      closePopup();
-    };
-
-    let coffeeLabel2 = document.createElement("label");
-    coffeeLabel2.innerText = ".";
-
-    coffeeDiv.appendChild(coffeeLabel1);
-    coffeeDiv.appendChild(coffeeLinkButton);
-    coffeeDiv.appendChild(coffeeLabel2);
-    menu.list.appendChild(coffeeDiv);
-  }
-
-  // tech support and FSP link
-
-  let fspDiv = document.createElement("div");
-  fspDiv.className = "messageParagraph";
-
-  let fspLabel1 = document.createElement("label");
-  fspLabel1.innerText = "For the User Guide and technical support see the ";
-
-  let fspLinkButton = document.createElement("button");
-  fspLinkButton.className = "linkButton";
-  fspLinkButton.innerText = "WikiTree Sourcer Free Space Page.";
-  fspLinkButton.onclick = async function (element) {
-    chrome.tabs.create({
-      url: "https://www.wikitree.com/wiki/Space:WikiTree_Sourcer",
-    });
-    closePopup();
-  };
-
-  let fspLabel2 = document.createElement("label");
-  fspLabel2.innerText = ".";
-
-  fspDiv.appendChild(fspLabel1);
-  fspDiv.appendChild(fspLinkButton);
-  fspDiv.appendChild(fspLabel2);
-  menu.list.appendChild(fspDiv);
   let manifest = chrome.runtime.getManifest();
   if (manifest && manifest.version) {
-    let versionLabel = document.createElement("label");
-    versionLabel.className = "messageLabel";
-    versionLabel.innerText = "WikiTree Sourcer version is: " + manifest.version;
-    menu.list.appendChild(versionLabel);
+    let message = "WikiTree Sourcer version is: " + manifest.version;
+    addItalicMessageMenuItem(menu, message);
   }
 
+  function addLinkMenuItem(message, link) {
+    addMenuItem(menu, message, function () {
+      chrome.tabs.create({ url: link });
+      closePopup();
+    });
+  }
+
+  addLinkMenuItem(
+    "Open main WikiTree Sourcer Free Space Page...",
+    "https://www.wikitree.com/wiki/Space:WikiTree_Sourcer"
+  );
+  addLinkMenuItem("Open User Guide...", "https://www.wikitree.com/wiki/Space:WikiTree_Sourcer_User_Guide");
+  addLinkMenuItem("Open Release Notes...", "https://www.wikitree.com/wiki/Space:WikiTree_Sourcer_Release_Notes");
+  addLinkMenuItem("Open YouTube Intro Video...", "https://www.youtube.com/watch?v=oUfbvN8k8UI");
+  addLinkMenuItem("Open G2G forum...", "https://www.wikitree.com/g2g/questions");
+
   let toHereBackFunction = function () {
-    setupSupportSubmenuMenu(data, backFunction);
+    setupHelpSubmenuMenu(data, backFunction);
   };
 
   addMenuDivider(menu);
@@ -1684,7 +1648,8 @@ export {
   setupSearchCollectionsSubMenu,
   hasBirthOrDeathYear,
   addBackMenuItem,
-  addSupportMenuItem,
+  addHelpMenuItem,
+  addBuyMeACoffeeMenuItem,
   addOptionsMenuItem,
   addItalicMessageMenuItem,
   addMenuItemWithSubMenu,

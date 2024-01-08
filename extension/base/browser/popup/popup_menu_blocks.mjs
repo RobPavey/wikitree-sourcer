@@ -24,7 +24,8 @@ SOFTWARE.
 
 import {
   addItalicMessageMenuItem,
-  addSupportMenuItem,
+  addHelpMenuItem,
+  addBuyMeACoffeeMenuItem,
   addOptionsMenuItem,
   addMenuDivider,
   beginMainMenu,
@@ -36,8 +37,9 @@ import { addEditCitationMenuItem } from "/base/browser/popup/popup_citation.mjs"
 function addStandardMenuEnd(menu, data, backFunction) {
   addMenuDivider(menu);
   addEditCitationMenuItem(menu, backFunction);
+  addBuyMeACoffeeMenuItem(menu);
   addOptionsMenuItem(menu);
-  addSupportMenuItem(menu, data, backFunction);
+  addHelpMenuItem(menu, data, backFunction);
 
   endMainMenu(menu);
 }
