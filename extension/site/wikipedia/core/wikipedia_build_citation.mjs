@@ -33,14 +33,29 @@ function getLink(ed, gd, builder, linkText) {
     wikipediaUrl = ed.permalink;
   }
 
+  let lang = "";
+  const url = ed.url;
+  if (url) {
+    // e.g. "https://de.wikipedia.org/wiki/Georg_Thoma"
+    let prefix = url.replace(/^https?\:\/\/(\w+)\.wikipedia.*$/, "$1");
+    if (prefix && prefix != url && prefix != "en") {
+      lang = prefix;
+    }
+  }
+
   let recordLink = wikipediaUrl;
   if (linkOption == "permalink" || linkOption == "external") {
     recordLink = "[" + wikipediaUrl + " " + linkText + "]";
   } else if (linkOption == "special") {
+    let wikiText = "Wikipedia:";
+    if (lang) {
+      wikiText += lang + ":";
+    }
+
     if (linkText) {
-      recordLink = "[[Wikipedia:" + ed.title + "|" + linkText + "]]";
+      recordLink = "[[" + wikiText + ed.title + "|" + linkText + "]]";
     } else {
-      recordLink = "[[Wikipedia:" + ed.title + "|Wikipedia]]";
+      recordLink = "[[" + wikiText + ed.title + "|Wikipedia]]";
     }
   }
 

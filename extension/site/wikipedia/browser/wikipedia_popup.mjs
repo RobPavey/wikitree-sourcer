@@ -74,7 +74,22 @@ async function buildWikiTreeExternalLink(data) {
 async function buildWikiTreeSpecialLink(data) {
   let ed = data.extractedData;
   if (ed.title) {
-    const linkString = "[[Wikipedia:" + ed.title + "|" + ed.title + "]]";
+    let lang = "";
+    const url = ed.url;
+    if (url) {
+      // e.g. "https://de.wikipedia.org/wiki/Georg_Thoma"
+      let prefix = url.replace(/^https?\:\/\/(\w+)\.wikipedia.*$/, "$1");
+      if (prefix && prefix != url && prefix != "en") {
+        lang = prefix;
+      }
+    }
+
+    let wikiText = "Wikipedia:";
+    if (lang) {
+      wikiText += lang + ":";
+    }
+
+    const linkString = "[[" + wikiText + ed.title + "|" + ed.title + "]]";
 
     buildWikiTreeLinkText(linkString);
   } else {
