@@ -29,6 +29,7 @@
     "maritalStatus",
     "gender",
     "age",
+    "race",
     "birthYear",
     "birthPlace"
   ],
@@ -40,6 +41,7 @@
       "gender": "female",
       "age": "31",
       "birthYear": "1909",
+      "race": "White",
       "birthPlace": "Mississippi",
       "isSelected": true
     },
@@ -50,6 +52,7 @@
       "gender": "female",
       "age": "12",
       "birthYear": "1928",
+      "race": "White",
       "birthPlace": "Mississippi"
     },
     {
@@ -59,6 +62,7 @@
       "gender": "female",
       "age": "10",
       "birthYear": "1930",
+      "race": "White",
       "birthPlace": "Mississippi"
     },
     {
@@ -68,6 +72,7 @@
       "gender": "female",
       "age": "7",
       "birthYear": "1933",
+      "race": "White",
       "birthPlace": "Mississippi"
     },
     {
@@ -77,11 +82,13 @@
       "gender": "female",
       "age": "5",
       "birthYear": "1935",
+      "race": "White",
       "birthPlace": "Mississippi"
     }
   ],
   "maritalStatus": "married",
   "relationshipToHead": "head",
+  "race": "White",
   "collectionData": {
     "id": "2000219"
   },

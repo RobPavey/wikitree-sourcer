@@ -28,6 +28,7 @@
     "maritalStatus",
     "gender",
     "age",
+    "race",
     "birthYear",
     "birthPlace"
   ],
@@ -39,6 +40,7 @@
       "gender": "male",
       "age": "43",
       "birthYear": "1897",
+      "race": "White",
       "birthPlace": "Texas",
       "isSelected": true
     },
@@ -49,6 +51,7 @@
       "gender": "female",
       "age": "42",
       "birthYear": "1898",
+      "race": "White",
       "birthPlace": "Texas"
     },
     {
@@ -58,6 +61,7 @@
       "gender": "female",
       "age": "16",
       "birthYear": "1924",
+      "race": "White",
       "birthPlace": "Texas"
     },
     {
@@ -67,6 +71,7 @@
       "gender": "female",
       "age": "14",
       "birthYear": "1926",
+      "race": "White",
       "birthPlace": "Texas"
     },
     {
@@ -76,6 +81,7 @@
       "gender": "female",
       "age": "6",
       "birthYear": "1934",
+      "race": "White",
       "birthPlace": "Texas"
     },
     {
@@ -85,6 +91,7 @@
       "gender": "female",
       "age": "6",
       "birthYear": "1934",
+      "race": "White",
       "birthPlace": "Texas"
     },
     {
@@ -94,6 +101,7 @@
       "gender": "male",
       "age": "19",
       "birthYear": "1921",
+      "race": "White",
       "birthPlace": "Texas"
     },
     {
@@ -103,11 +111,13 @@
       "gender": "male",
       "age": "10",
       "birthYear": "1930",
+      "race": "White",
       "birthPlace": "Texas"
     }
   ],
   "maritalStatus": "married",
   "relationshipToHead": "head",
+  "race": "White",
   "spouses": [
     {
       "name": {

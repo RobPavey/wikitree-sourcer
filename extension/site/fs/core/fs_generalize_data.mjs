@@ -811,6 +811,12 @@ function generalizeDataGivenRecordType(ed, result) {
             fieldsEncountered.birthDate = true;
           }
 
+          let race = member.race;
+          if (race && race != "Unknown") {
+            householdMember.race = race;
+            fieldsEncountered.race = true;
+          }
+
           let occupation = cleanOccupation(member.occupation);
           if (occupation && occupation != "Unknown") {
             householdMember.occupation = occupation;
@@ -853,6 +859,7 @@ function generalizeDataGivenRecordType(ed, result) {
         "maritalStatus",
         "gender",
         "age",
+        "race",
         "birthYear",
         "occupation",
         "birthPlace",
@@ -1136,6 +1143,10 @@ function generalizeData(input) {
 
   if (!result.maritalStatus && ed.recordData) {
     result.setMaritalStatus(ed.recordData["MaritalStatus"]);
+  }
+
+  if (ed.recordData && ed.recordData["Race"]) {
+    result.race = ed.recordData["Race"];
   }
 
   if (ed.household && ed.household.members) {

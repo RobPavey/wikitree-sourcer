@@ -1684,6 +1684,9 @@ class GeneralizedData {
           if (!member.gender && this.personGender) {
             member.gender = this.personGender;
           }
+          if (!member.race && this.race) {
+            member.race = this.race;
+          }
           if (!member.birthPlace) {
             let birthPlace = this.inferBirthPlace();
             if (birthPlace) {

@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Status || Relation || Occupation || Birth Place\n|-\n| Frances Moore ||  || 40 ||  || Head ||  || \n|-\n| John Moore ||  || 22 ||  || Son ||  || \n|-\n| '''Robert Moore''' || '''M''' || '''18''' || '''Never married''' || '''Son''' ||  || '''New York, United States'''\n|-\n| Raymond Moore ||  || 11 ||  || Son ||  || \n|-\n| William Moore ||  || 6 ||  || Son ||  || \n|-\n| Theresa Moore ||  || 14 ||  || Daughter ||  || \n|-\n| Kelleher Moore ||  || 70 ||  || Grandmother ||  || \n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Race || Age || Status || Relation || Occupation || Birth Place\n|-\n| Frances Moore ||  ||  || 40 ||  || Head ||  || \n|-\n| John Moore ||  ||  || 22 ||  || Son ||  || \n|-\n| '''Robert Moore''' || '''M''' || '''White''' || '''18''' || '''Never married''' || '''Son''' ||  || '''New York, United States'''\n|-\n| Raymond Moore ||  ||  || 11 ||  || Son ||  || \n|-\n| William Moore ||  ||  || 6 ||  || Son ||  || \n|-\n| Theresa Moore ||  ||  || 14 ||  || Daughter ||  || \n|-\n| Kelleher Moore ||  ||  || 70 ||  || Grandmother ||  || \n|}"
   }
 }

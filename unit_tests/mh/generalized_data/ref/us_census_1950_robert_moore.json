@@ -20,6 +20,7 @@
     "placeString": "New York, United States"
   },
   "ageAtEvent": "18",
+  "race": "White",
   "relationshipToHead": "son",
   "maritalStatus": "single",
   "householdArrayFields": [
@@ -45,6 +46,7 @@
       "isSelected": true,
       "maritalStatus": "single",
       "gender": "male",
+      "race": "White",
       "birthPlace": "New York, United States"
     },
     {

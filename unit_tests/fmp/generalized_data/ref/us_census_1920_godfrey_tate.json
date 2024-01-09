@@ -1,0 +1,105 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Tate",
+    "forenames": "Godfrey"
+  },
+  "eventPlace": {
+    "placeString": "Virginia, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "Godfrey",
+        "lastName": "Tate",
+        "name": "Godfrey Tate"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Carrie",
+        "lastName": "Tate",
+        "name": "Carrie Tate"
+      }
+    }
+  },
+  "birthDate": {
+    "yearString": "1920",
+    "qualifier": 2
+  },
+  "ageAtEvent": "0",
+  "birthPlace": {
+    "placeString": "Virginia"
+  },
+  "eventDate": {
+    "yearString": "1920"
+  },
+  "maritalStatus": "single",
+  "relationshipToHead": "son",
+  "race": "Black",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Godfrey Tate",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "29",
+      "birthYear": "1891",
+      "birthPlace": "Virginia"
+    },
+    {
+      "name": "Carrie Tate",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "27",
+      "birthYear": "1893",
+      "birthPlace": "Virginia"
+    },
+    {
+      "isSelected": true,
+      "name": "Godfrey Tate",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "0",
+      "race": "Black",
+      "birthYear": "1920",
+      "birthPlace": "Virginia"
+    },
+    {
+      "name": "Frances Johnson",
+      "relationship": "mother-in-law",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "58",
+      "birthYear": "1862",
+      "birthPlace": "Virginia"
+    },
+    {
+      "name": "Oliver Johnson",
+      "relationship": "father-in-law",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "60",
+      "birthYear": "1860",
+      "birthPlace": "Virginia"
+    }
+  ],
+  "collectionData": {
+    "id": "US Census 1920"
+  },
+  "hasValidData": true
+}

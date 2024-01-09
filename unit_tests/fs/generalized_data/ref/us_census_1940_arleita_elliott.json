@@ -28,6 +28,7 @@
     "maritalStatus",
     "gender",
     "age",
+    "race",
     "birthYear",
     "birthPlace"
   ],
@@ -39,6 +40,7 @@
       "gender": "male",
       "age": "27",
       "birthYear": "1913",
+      "race": "White",
       "birthPlace": "New Hampshire"
     },
     {
@@ -48,12 +50,14 @@
       "gender": "female",
       "age": "28",
       "birthYear": "1912",
+      "race": "White",
       "birthPlace": "New Hampshire",
       "isSelected": true
     }
   ],
   "maritalStatus": "married",
   "relationshipToHead": "wife",
+  "race": "White",
   "spouses": [
     {
       "name": {

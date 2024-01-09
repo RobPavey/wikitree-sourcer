@@ -35,6 +35,7 @@
       "name": "M A Jones",
       "age": "34",
       "isSelected": true,
+      "race": "White",
       "maritalStatus": "married",
       "gender": "female",
       "birthPlace": "Ind Carolina",

@@ -1130,6 +1130,7 @@ function generalizeDataGivenRecordType(ed, result) {
         },
         { stdName: "age", siteHeadings: ["Age"] },
         { stdName: "relationship", siteHeadings: ["Relationship"] },
+        { stdName: "race", siteHeadings: ["Race"] },
       ];
       function headingToStdName(heading) {
         for (let entry of stdFieldNames) {
@@ -2402,6 +2403,7 @@ function setExtraGdHouseholdFields(extractedData, generalizedMember, fieldNames)
   }
 
   setMemberData("age", ["Age"]);
+  setMemberData("race", ["Race"]);
   setMemberData(
     "relationship",
     ["Relationship to Head", "Relation to Head", "Relation to Head of House", "Relationship", "Relation"],

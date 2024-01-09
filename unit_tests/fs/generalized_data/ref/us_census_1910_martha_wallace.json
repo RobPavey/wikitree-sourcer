@@ -29,6 +29,7 @@
     "maritalStatus",
     "gender",
     "age",
+    "race",
     "birthYear",
     "birthPlace"
   ],
@@ -40,6 +41,7 @@
       "gender": "male",
       "age": "64",
       "birthYear": "1846",
+      "race": "White",
       "birthPlace": "Alabama"
     },
     {
@@ -49,6 +51,7 @@
       "gender": "female",
       "age": "44",
       "birthYear": "1866",
+      "race": "White",
       "birthPlace": "Alabama"
     },
     {
@@ -58,6 +61,7 @@
       "gender": "female",
       "age": "20",
       "birthYear": "1890",
+      "race": "White",
       "birthPlace": "Alabama"
     },
     {
@@ -67,6 +71,7 @@
       "gender": "female",
       "age": "18",
       "birthYear": "1892",
+      "race": "White",
       "birthPlace": "Alabama",
       "isSelected": true
     },
@@ -77,6 +82,7 @@
       "gender": "female",
       "age": "15",
       "birthYear": "1895",
+      "race": "White",
       "birthPlace": "Alabama"
     },
     {
@@ -86,6 +92,7 @@
       "gender": "female",
       "age": "13",
       "birthYear": "1897",
+      "race": "White",
       "birthPlace": "Alabama"
     },
     {
@@ -95,6 +102,7 @@
       "gender": "female",
       "age": "9",
       "birthYear": "1901",
+      "race": "White",
       "birthPlace": "Alabama"
     },
     {
@@ -104,6 +112,7 @@
       "gender": "male",
       "age": "6",
       "birthYear": "1904",
+      "race": "White",
       "birthPlace": "Alabama"
     },
     {
@@ -113,11 +122,13 @@
       "gender": "male",
       "age": "25",
       "birthYear": "1885",
+      "race": "White",
       "birthPlace": "Alabama"
     }
   ],
   "maritalStatus": "single",
   "relationshipToHead": "daughter",
+  "race": "White",
   "parents": {
     "father": {
       "name": {

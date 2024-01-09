@@ -51,6 +51,7 @@
       "age": "12",
       "relationship": "son",
       "isSelected": true,
+      "race": "White",
       "maritalStatus": "single",
       "gender": "female",
       "occupation": "None",

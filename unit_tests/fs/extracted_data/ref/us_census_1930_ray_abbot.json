@@ -68,6 +68,7 @@
         "birthPlaceOriginal": "Kentucky",
         "birthPlace": "Kentucky",
         "maritalStatus": "Married",
+        "race": "White",
         "age": "57",
         "relationship": "Head"
       },
@@ -81,6 +82,7 @@
         "birthPlaceOriginal": "Kentucky",
         "birthPlace": "Kentucky",
         "maritalStatus": "Married",
+        "race": "White",
         "age": "55",
         "relationship": "Wife"
       },
@@ -94,6 +96,7 @@
         "birthPlaceOriginal": "Kentucky",
         "birthPlace": "Kentucky",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "22",
         "relationship": "Son"
       },
@@ -107,6 +110,7 @@
         "birthPlaceOriginal": "Kentucky",
         "birthPlace": "Kentucky",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "20",
         "relationship": "Son"
       },
@@ -120,6 +124,7 @@
         "birthPlaceOriginal": "Kentucky",
         "birthPlace": "Kentucky",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "18",
         "relationship": "Daughter"
       },
@@ -133,6 +138,7 @@
         "birthPlaceOriginal": "Kentucky",
         "birthPlace": "Kentucky",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "15",
         "relationship": "Daughter"
       },
@@ -147,6 +153,7 @@
         "birthPlaceOriginal": "Kentucky",
         "birthPlace": "Kentucky",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "12",
         "relationship": "Son"
       }

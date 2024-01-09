@@ -36,6 +36,9 @@ const regressionData = [
   {
     caseName: "england_census_1921_arthur_pavey",
   },
+  {
+    caseName: "us_census_1920_godfrey_tate",
+  },
 ];
 
 async function runTests(testManager) {

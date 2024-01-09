@@ -30,6 +30,7 @@
       "name": "Jas Willson",
       "age": "47",
       "isSelected": true,
+      "race": "White",
       "gender": "male",
       "occupation": "Farmer",
       "birthPlace": "Geor",

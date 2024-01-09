@@ -382,6 +382,10 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=USC%2F1860%2F0000634121703",
   },
   {
+    caseName: "us_census_1920_godfrey_tate",
+    url: "https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078",
+  },
+  {
     caseName: "wales_baptism_1908_bruce_ridd",
     url: "https://search.findmypast.co.uk/record?id=GBPRS/B/871892573/1",
   },

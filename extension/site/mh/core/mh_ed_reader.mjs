@@ -1099,6 +1099,13 @@ class MhEdReader extends ExtractedDataReader {
     return "";
   }
 
+  getRace() {
+    let raceValue = this.getRecordDataValueByKeysOrLabels(["race"], ["race"]);
+    if (raceValue && raceValue.value) {
+      return raceValue.value;
+    }
+  }
+
   getRegistrationDistrict() {
     let district = this.getRecordDataValueByKeysOrLabels(["registration"], ["registration"]);
     if (district && district.value) {

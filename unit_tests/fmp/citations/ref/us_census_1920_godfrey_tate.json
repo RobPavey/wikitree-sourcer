@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1920 Census''':\n\"US Census 1920\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1920 census Godfrey (age 0) was the son of Godfrey Tate in Virginia, United States.<ref>\n'''1920 Census''':\n\"US Census 1920\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1920 Census''': \"US Census 1920\"<br/>[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1920 Census''':\n\"US Census 1920\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nGodfrey Tate (0), single son, in household of Godfrey Tate (29) in Virginia, United States. Born in Virginia.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1920 census Godfrey (age 0) was the son of Godfrey Tate in Virginia, United States.<ref>\n'''1920 Census''':\n\"US Census 1920\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nGodfrey Tate (0), single son, in household of Godfrey Tate (29) in Virginia, United States. Born in Virginia.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1920 Census''': \"US Census 1920\"<br/>[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)<br/>Godfrey Tate (0), single son, in household of Godfrey Tate (29) in Virginia, United States. Born in Virginia.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1920 Census''':\n\"US Census 1920\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Godfrey; Last name: Tate; Relationship: Son; Marital status: Single; Gender: Male; Age: 0; Birth year: 1920; Birth place: Virginia; Ethnicity: American; Race: Black; Father's first name(s): Godfrey; Father's last name: Tate; Father's birth place: Virginia; Mother's first name(s): Carrie; Mother's last name: Tate; Mother's birth place: Virginia; State: Virginia.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1920 census Godfrey (age 0) was the son of Godfrey Tate in Virginia, United States.<ref>\n'''1920 Census''':\n\"US Census 1920\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)<br/>\nFirst name(s): Godfrey; Last name: Tate; Relationship: Son; Marital status: Single; Gender: Male; Age: 0; Birth year: 1920; Birth place: Virginia; Ethnicity: American; Race: Black; Father's first name(s): Godfrey; Father's last name: Tate; Father's birth place: Virginia; Mother's first name(s): Carrie; Mother's last name: Tate; Mother's birth place: Virginia; State: Virginia.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1920 Census''': \"US Census 1920\"<br/>[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Godfrey; Last name: Tate; Relationship: Son; Marital status: Single; Gender: Male; Age: 0; Birth year: 1920; Birth place: Virginia; Ethnicity: American; Race: Black; Father's first name(s): Godfrey; Father's last name: Tate; Father's birth place: Virginia; Mother's first name(s): Carrie; Mother's last name: Tate; Mother's birth place: Virginia; State: Virginia.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1920 Census''':\n\"US Census 1920\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Godfrey\n|-\n| Last name || Tate\n|-\n| Relationship || Son\n|-\n| Marital status || Single\n|-\n| Gender || Male\n|-\n| Age || 0\n|-\n| Birth year || 1920\n|-\n| Birth place || Virginia\n|-\n| Ethnicity || American\n|-\n| Race || Black\n|-\n| Father's first name(s) || Godfrey\n|-\n| Father's last name || Tate\n|-\n| Father's birth place || Virginia\n|-\n| Mother's first name(s) || Carrie\n|-\n| Mother's last name || Tate\n|-\n| Mother's birth place || Virginia\n|-\n| City/township || -\n|-\n| County || -\n|-\n| State || Virginia\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1920 census Godfrey (age 0) was the son of Godfrey Tate in Virginia, United States.<ref>\n'''1920 Census''':\n\"US Census 1920\"<br/>\n[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| First name(s) || Godfrey\n|-\n| Last name || Tate\n|-\n| Relationship || Son\n|-\n| Marital status || Single\n|-\n| Gender || Male\n|-\n| Age || 0\n|-\n| Birth year || 1920\n|-\n| Birth place || Virginia\n|-\n| Ethnicity || American\n|-\n| Race || Black\n|-\n| Father's first name(s) || Godfrey\n|-\n| Father's last name || Tate\n|-\n| Father's birth place || Virginia\n|-\n| Mother's first name(s) || Carrie\n|-\n| Mother's last name || Tate\n|-\n| Mother's birth place || Virginia\n|-\n| City/township || -\n|-\n| County || -\n|-\n| State || Virginia\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1920 Census''': \"US Census 1920\"<br/>[https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Image] - [https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078 FindMyPast Transcription] (accessed 6 May 2021)<br/>First name(s): Godfrey; Last name: Tate; Relationship: Son; Marital status: Single; Gender: Male; Age: 0; Birth year: 1920; Birth place: Virginia; Ethnicity: American; Race: Black; Father's first name(s): Godfrey; Father's last name: Tate; Father's birth place: Virginia; Mother's first name(s): Carrie; Mother's last name: Tate; Mother's birth place: Virginia; State: Virginia.",
+    "type": "source"
+  }
+}

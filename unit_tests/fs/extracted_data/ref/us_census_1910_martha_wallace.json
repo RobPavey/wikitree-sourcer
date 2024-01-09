@@ -68,6 +68,7 @@
         "birthPlaceOriginal": "Alabama",
         "birthPlace": "Alabama",
         "maritalStatus": "Married",
+        "race": "White",
         "age": "64",
         "relationship": "Head"
       },
@@ -81,6 +82,7 @@
         "birthPlaceOriginal": "Alabama",
         "birthPlace": "Alabama",
         "maritalStatus": "Married",
+        "race": "White",
         "age": "44",
         "relationship": "Wife"
       },
@@ -94,6 +96,7 @@
         "birthPlaceOriginal": "Alabama",
         "birthPlace": "Alabama",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "20",
         "relationship": "Daughter"
       },
@@ -108,6 +111,7 @@
         "birthPlaceOriginal": "Alabama",
         "birthPlace": "Alabama",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "18",
         "relationship": "Daughter"
       },
@@ -121,6 +125,7 @@
         "birthPlaceOriginal": "Alabama",
         "birthPlace": "Alabama",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "15",
         "relationship": "Daughter"
       },
@@ -134,6 +139,7 @@
         "birthPlaceOriginal": "Alabama",
         "birthPlace": "Alabama",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "13",
         "relationship": "Daughter"
       },
@@ -147,6 +153,7 @@
         "birthPlaceOriginal": "Alabama",
         "birthPlace": "Alabama",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "9",
         "relationship": "Daughter"
       },
@@ -160,6 +167,7 @@
         "birthPlaceOriginal": "Alabama",
         "birthPlace": "Alabama",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "6",
         "relationship": "Son"
       },
@@ -173,6 +181,7 @@
         "birthPlaceOriginal": "Alabama",
         "birthPlace": "Alabama",
         "maritalStatus": "Single",
+        "race": "White",
         "age": "25",
         "relationship": "Hired man"
       }

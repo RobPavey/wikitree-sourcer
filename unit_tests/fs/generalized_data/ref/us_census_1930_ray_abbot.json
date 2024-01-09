@@ -29,6 +29,7 @@
     "maritalStatus",
     "gender",
     "age",
+    "race",
     "birthYear",
     "birthPlace"
   ],
@@ -40,6 +41,7 @@
       "gender": "male",
       "age": "57",
       "birthYear": "1873",
+      "race": "White",
       "birthPlace": "Kentucky"
     },
     {
@@ -49,6 +51,7 @@
       "gender": "female",
       "age": "55",
       "birthYear": "1875",
+      "race": "White",
       "birthPlace": "Kentucky"
     },
     {
@@ -58,6 +61,7 @@
       "gender": "male",
       "age": "22",
       "birthYear": "1908",
+      "race": "White",
       "birthPlace": "Kentucky"
     },
     {
@@ -67,6 +71,7 @@
       "gender": "male",
       "age": "20",
       "birthYear": "1910",
+      "race": "White",
       "birthPlace": "Kentucky"
     },
     {
@@ -76,6 +81,7 @@
       "gender": "female",
       "age": "18",
       "birthYear": "1912",
+      "race": "White",
       "birthPlace": "Kentucky"
     },
     {
@@ -85,6 +91,7 @@
       "gender": "female",
       "age": "15",
       "birthYear": "1915",
+      "race": "White",
       "birthPlace": "Kentucky"
     },
     {
@@ -94,12 +101,14 @@
       "gender": "male",
       "age": "12",
       "birthYear": "1918",
+      "race": "White",
       "birthPlace": "Kentucky",
       "isSelected": true
     }
   ],
   "maritalStatus": "single",
   "relationshipToHead": "son",
+  "race": "White",
   "parents": {
     "father": {
       "name": {

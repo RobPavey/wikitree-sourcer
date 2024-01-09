@@ -536,6 +536,11 @@ function generalizeDataGivenRecordType(ed, result) {
     let relationshipToHead = getRecordDataValueForList(ed, ["Relationship", "Relationship to head"]);
     result.setRelationshipToHead(relationshipToHead);
 
+    let race = getRecordDataValueForList(ed, ["Race"]);
+    if (race) {
+      result.race = race;
+    }
+
     if (ed.household) {
       let headings = ed.household.headings;
       let members = ed.household.members;
@@ -627,6 +632,15 @@ function generalizeDataGivenRecordType(ed, result) {
             if (age && age != "-") {
               householdMember.age = age;
               fieldsEncountered.age = true;
+            }
+
+            let race = member["Race"];
+            if (!race && isSelected && result.race) {
+              race = result.race;
+            }
+            if (race && age != "-") {
+              householdMember.race = race;
+              fieldsEncountered.race = true;
             }
 
             let birthYear = member["Birth year"];

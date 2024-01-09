@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Race || Age || Status || Relation || Occupation || Birth Place\n|-\n| Godfrey Tate || M ||  || 29 || Married || Head ||  || Virginia\n|-\n| Carrie Tate || F ||  || 27 || Married || Wife ||  || Virginia\n|-\n| '''Godfrey Tate''' || '''M''' || '''Black''' || '''0''' || '''Single''' || '''Son''' ||  || '''Virginia'''\n|-\n| Frances Johnson || F ||  || 58 || Married || Mother-in-law ||  || Virginia\n|-\n| Oliver Johnson || M ||  || 60 || Married || Father-in-law ||  || Virginia\n|}"
+  }
+}

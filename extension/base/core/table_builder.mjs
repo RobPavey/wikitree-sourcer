@@ -63,6 +63,7 @@ class TableBuilder {
       maritalStatus: "Status",
       gender: "Sex",
       age: "Age",
+      race: "Race",
       maritalStatus: "Status",
       birthDate: "Birth Date",
       birthYear: "Birth Year",

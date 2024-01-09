@@ -19,6 +19,7 @@
     "relationship",
     "gender",
     "age",
+    "race",
     "birthYear"
   ],
   "householdArray": [
@@ -31,205 +32,239 @@
       "relationship": "slave",
       "gender": "male",
       "age": "50",
-      "birthYear": "1800"
+      "birthYear": "1800",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "27",
-      "birthYear": "1823"
+      "birthYear": "1823",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "22",
-      "birthYear": "1828"
+      "birthYear": "1828",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "24",
-      "birthYear": "1826"
+      "birthYear": "1826",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "48",
-      "birthYear": "1802"
+      "birthYear": "1802",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "28",
-      "birthYear": "1822"
+      "birthYear": "1822",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "19",
-      "birthYear": "1831"
+      "birthYear": "1831",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "18",
-      "birthYear": "1832"
+      "birthYear": "1832",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "12",
-      "birthYear": "1838"
+      "birthYear": "1838",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "6",
-      "birthYear": "1844"
+      "birthYear": "1844",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "6",
-      "birthYear": "1844"
+      "birthYear": "1844",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "0",
-      "birthYear": "1850"
+      "birthYear": "1850",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "23",
-      "birthYear": "1827"
+      "birthYear": "1827",
+      "race": "Mulatto"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "40",
-      "birthYear": "1810"
+      "birthYear": "1810",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "16",
-      "birthYear": "1834"
+      "birthYear": "1834",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "14",
-      "birthYear": "1836"
+      "birthYear": "1836",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "13",
-      "birthYear": "1837"
+      "birthYear": "1837",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "59",
-      "birthYear": "1791"
+      "birthYear": "1791",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "10",
-      "birthYear": "1840"
+      "birthYear": "1840",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "4",
-      "birthYear": "1846"
+      "birthYear": "1846",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "2",
-      "birthYear": "1848"
+      "birthYear": "1848",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "65",
-      "birthYear": "1785"
+      "birthYear": "1785",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "48",
-      "birthYear": "1802"
+      "birthYear": "1802",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "60",
-      "birthYear": "1790"
+      "birthYear": "1790",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "33",
-      "birthYear": "1817"
+      "birthYear": "1817",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "12",
-      "birthYear": "1838"
+      "birthYear": "1838",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "11",
-      "birthYear": "1839"
+      "birthYear": "1839",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "9",
-      "birthYear": "1841"
+      "birthYear": "1841",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "7",
-      "birthYear": "1843"
+      "birthYear": "1843",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "5",
-      "birthYear": "1845"
+      "birthYear": "1845",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "3",
-      "birthYear": "1847"
+      "birthYear": "1847",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "male",
       "age": "1",
-      "birthYear": "1849"
+      "birthYear": "1849",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "1",
-      "birthYear": "1849"
+      "birthYear": "1849",
+      "race": "Black"
     },
     {
       "relationship": "slave",
       "gender": "female",
       "age": "80",
-      "birthYear": "1770"
+      "birthYear": "1770",
+      "race": "Black"
     }
   ],
   "relationshipToHead": "owner",

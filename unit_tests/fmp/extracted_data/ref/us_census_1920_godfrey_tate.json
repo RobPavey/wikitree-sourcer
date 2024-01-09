@@ -1,0 +1,107 @@
+{
+  "success": true,
+  "url": "https://www.findmypast.co.uk/transcript?id=USC%2F1920%2F004968971%2F00196%2F078",
+  "subDomain": "www",
+  "domain": "findmypast.co.uk",
+  "urlPath": "transcript",
+  "urlParameters": "id=USC%2F1920%2F004968971%2F00196%2F078",
+  "heading": "Godfrey Tate in 1920",
+  "collection": "US Census 1920",
+  "place": "Virginia, United States",
+  "personGender": "male",
+  "recordData": {
+    "First name(s)": "Godfrey",
+    "Last name": "Tate",
+    "Relationship": "Son",
+    "Marital status": "Single",
+    "Gender": "Male",
+    "Age": "0",
+    "Birth year": "1920",
+    "Birth place": "Virginia",
+    "Ethnicity": "American",
+    "Race": "Black",
+    "Father's first name(s)": "Godfrey",
+    "Father's last name": "Tate",
+    "Father's birth place": "Virginia",
+    "Mother's first name(s)": "Carrie",
+    "Mother's last name": "Tate",
+    "Mother's birth place": "Virginia",
+    "City/township": "-",
+    "County": "-",
+    "State": "Virginia",
+    "Record set": "Us Census 1920",
+    "Category": "Census, land & surveys",
+    "Subcategory": "Census",
+    "Collections from": "Americas, United States"
+  },
+  "household": {
+    "headings": [
+      "First name(s)",
+      "Last name",
+      "Relationship",
+      "Marital status",
+      "Gender",
+      "Age",
+      "Birth year",
+      "Birth place"
+    ],
+    "members": [
+      {
+        "isSelected": false,
+        "First name(s)": "Godfrey",
+        "Last name": "Tate",
+        "Relationship": "Self",
+        "Marital status": "Married",
+        "Gender": "Male",
+        "Age": "29",
+        "Birth year": "1891",
+        "Birth place": "Virginia"
+      },
+      {
+        "isSelected": false,
+        "First name(s)": "Carrie",
+        "Last name": "Tate",
+        "Relationship": "Wife",
+        "Marital status": "Married",
+        "Gender": "Female",
+        "Age": "27",
+        "Birth year": "1893",
+        "Birth place": "Virginia"
+      },
+      {
+        "isSelected": true,
+        "First name(s)": "Godfrey",
+        "Last name": "Tate",
+        "Relationship": "Son",
+        "Marital status": "Single",
+        "Gender": "Male",
+        "Age": "0",
+        "Birth year": "1920",
+        "Birth place": "Virginia"
+      },
+      {
+        "isSelected": false,
+        "First name(s)": "Frances",
+        "Last name": "Johnson",
+        "Relationship": "Mother-in-law",
+        "Marital status": "Married",
+        "Gender": "Female",
+        "Age": "58",
+        "Birth year": "1862",
+        "Birth place": "Virginia"
+      },
+      {
+        "isSelected": false,
+        "First name(s)": "Oliver",
+        "Last name": "Johnson",
+        "Relationship": "Father-in-law",
+        "Marital status": "Married",
+        "Gender": "Male",
+        "Age": "60",
+        "Birth year": "1860",
+        "Birth place": "Virginia"
+      }
+    ]
+  },
+  "imageUrl": "https://search.findmypast.co.uk/record?id=USC%2F1920%2F004968971%2F00196&parentid=USC%2F1920%2F004968971%2F00196%2F078"
+}

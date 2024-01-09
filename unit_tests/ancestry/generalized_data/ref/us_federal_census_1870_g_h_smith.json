@@ -51,6 +51,7 @@
       "name": "G H Smith",
       "age": "8/12",
       "isSelected": true,
+      "race": "Black",
       "gender": "male",
       "occupation": "At Home",
       "birthDate": "Apr",

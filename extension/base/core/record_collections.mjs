@@ -41,6 +41,7 @@ const householdTableColumnsUsFederalPre1880 = ["name", "gender", "age", "marital
 const householdTableColumnsUsFederalPost1880 = [
   "name",
   "gender",
+  "race",
   "age",
   "maritalStatus",
   "relationship",

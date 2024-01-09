@@ -110,6 +110,10 @@ class ExtractedDataReader {
     return "";
   }
 
+  getRace() {
+    return "";
+  }
+
   getRegistrationDistrict() {
     return "";
   }

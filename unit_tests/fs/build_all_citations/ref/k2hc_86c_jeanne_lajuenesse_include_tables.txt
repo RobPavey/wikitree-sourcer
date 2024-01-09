@@ -8,25 +8,25 @@ Jane Young (10), single daughter, in household of Edward Young (42) in Monkton t
 </ref>
 {| border="1" cellpadding="4"
 |- bgcolor=#E1F0B4
-| Name || Sex || Age || Status || Relation || Occupation || Birth Place
+| Name || Sex || Race || Age || Status || Relation || Occupation || Birth Place
 |-
-| Edward Young || M || 42 || Married || Head ||  || Canada French
+| Edward Young || M || White || 42 || Married || Head ||  || Canada French
 |-
-| Malvina Young || F || 41 || Married || Wife ||  || Vermont
+| Malvina Young || F || White || 41 || Married || Wife ||  || Vermont
 |-
-| Edward Young Jr. || M || 19 || Single || Son ||  || Vermont
+| Edward Young Jr. || M || White || 19 || Single || Son ||  || Vermont
 |-
-| Joseph Young || M || 16 || Single || Son ||  || Canada Fr
+| Joseph Young || M || White || 16 || Single || Son ||  || Canada Fr
 |-
-| Fred Young || M || 14 || Single || Son ||  || Canada Fr
+| Fred Young || M || White || 14 || Single || Son ||  || Canada Fr
 |-
-| Moses Young || M || 12 || Single || Son ||  || Canada Fr
+| Moses Young || M || White || 12 || Single || Son ||  || Canada Fr
 |-
-| '''Jane Young''' || '''F''' || '''10''' || '''Single''' || '''Daughter''' ||  || '''Canada Fr'''
+| '''Jane Young''' || '''F''' || '''White''' || '''10''' || '''Single''' || '''Daughter''' ||  || '''Canada Fr'''
 |-
-| Nelson Young || M || 8 || Single || Son ||  || Canada Fr
+| Nelson Young || M || White || 8 || Single || Son ||  || Canada Fr
 |-
-| Malvina Young || F || 7 || Single || Daughter ||  || Canada Fr
+| Malvina Young || F || White || 7 || Single || Daughter ||  || Canada Fr
 |}
 
 Jane (age 17), daughter of Ed Young & Melvina Lavaly, married Edmond Prince (age 23) on 15 June 1907 in Burlington, Chittenden, Vermont, United States.<ref>
@@ -143,21 +143,21 @@ Jane Prince (30), wife, in household of Edmond Prince (35) in City Of New Bedfor
 </ref>
 {| border="1" cellpadding="4"
 |- bgcolor=#E1F0B4
-| Name || Sex || Age || Status || Relation || Occupation || Birth Place
+| Name || Sex || Race || Age || Status || Relation || Occupation || Birth Place
 |-
-| Edmond Prince || M || 35 || Married || Head ||  || Canada
+| Edmond Prince || M || White || 35 || Married || Head ||  || Canada
 |-
-| '''Jane Prince''' || '''F''' || '''30''' || '''Married''' || '''Wife''' ||  || '''Canada'''
+| '''Jane Prince''' || '''F''' || '''White''' || '''30''' || '''Married''' || '''Wife''' ||  || '''Canada'''
 |-
-| Flora Prince || F || 9 || Single || Daughter ||  || Massachusetts
+| Flora Prince || F || White || 9 || Single || Daughter ||  || Massachusetts
 |-
-| Dorlina Prince || F || 2 || Single || Daughter ||  || Massachusetts
+| Dorlina Prince || F || White || 2 || Single || Daughter ||  || Massachusetts
 |-
-| Alzear Prince || M || 3 || Single || Son ||  || Massachusetts
+| Alzear Prince || M || White || 3 || Single || Son ||  || Massachusetts
 |-
-| Loretta Prince || F || 1 || Single || Daughter ||  || Massachusetts
+| Loretta Prince || F || White || 1 || Single || Daughter ||  || Massachusetts
 |-
-| Armand Prince || M || 0 || Single || Son ||  || Massachusetts
+| Armand Prince || M || White || 0 || Single || Son ||  || Massachusetts
 |}
 
 Jeanne's son Roland Adelard Prince was born on 16 April 1923 in New Bedford, Bristol, Massachusetts, United States.<ref>
@@ -179,15 +179,15 @@ Joan Prince (40), widowed head of household in Plainfield, Windham, Connecticut,
 </ref>
 {| border="1" cellpadding="4"
 |- bgcolor=#E1F0B4
-| Name || Sex || Age || Status || Relation || Occupation || Birth Place
+| Name || Sex || Race || Age || Status || Relation || Occupation || Birth Place
 |-
-| '''Joan Prince''' || '''F''' || '''40''' || '''Widowed''' || '''Head''' ||  || '''Canada'''
+| '''Joan Prince''' || '''F''' || '''White''' || '''40''' || '''Widowed''' || '''Head''' ||  || '''Canada'''
 |-
-| Dorina Prince || F || 15 || Single || Daughter ||  || Massachusetts
+| Dorina Prince || F || White || 15 || Single || Daughter ||  || Massachusetts
 |-
-| Elzear Prince || M || 13 || Single || Son ||  || Massachusetts
+| Elzear Prince || M || White || 13 || Single || Son ||  || Massachusetts
 |-
-| Armand Prince || M || 10 || Single || Son ||  || Massachusetts
+| Armand Prince || M || White || 10 || Single || Son ||  || Massachusetts
 |}
 
 In the 1940 census Jane (age 50) was the wife of Israel Burke in Norwalk, Fairfield, Connecticut, United States.<ref>
@@ -200,19 +200,19 @@ Jane Burke (50), wife, in household of Israel Burke (69) in Norwalk, Fairfield, 
 </ref>
 {| border="1" cellpadding="4"
 |- bgcolor=#E1F0B4
-| Name || Sex || Age || Status || Relation || Occupation || Birth Place
+| Name || Sex || Race || Age || Status || Relation || Occupation || Birth Place
 |-
-| Israel Burke || M || 69 || Married || Head ||  || Canada
+| Israel Burke || M || White || 69 || Married || Head ||  || Canada
 |-
-| '''Jane Burke''' || '''F''' || '''50''' || '''Married''' || '''Wife''' ||  || '''Canada'''
+| '''Jane Burke''' || '''F''' || '''White''' || '''50''' || '''Married''' || '''Wife''' ||  || '''Canada'''
 |-
-| Edgar Burke || M || 17 || Single || Son ||  || Connecticut
+| Edgar Burke || M || White || 17 || Single || Son ||  || Connecticut
 |-
-| Roland Prince || M || 16 || Single || Stepson ||  || Massachusetts
+| Roland Prince || M || White || 16 || Single || Stepson ||  || Massachusetts
 |-
-| Ernest Prince || M || 15 || Single || Stepson ||  || Connecticut
+| Ernest Prince || M || White || 15 || Single || Stepson ||  || Connecticut
 |-
-| Dorina Lussier || F || 25 || Widowed || Stepdaughter ||  || Massachusetts
+| Dorina Lussier || F || White || 25 || Widowed || Stepdaughter ||  || Massachusetts
 |-
-| Arthur Lussier || M || 4 || Single || Step-grandson ||  || Connecticut
+| Arthur Lussier || M || White || 4 || Single || Step-grandson ||  || Connecticut
 |}

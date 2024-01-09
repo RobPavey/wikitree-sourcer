@@ -3296,6 +3296,26 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
                   }
                 }
               }
+            } else if (factType == "Race") {
+              if (fact.values) {
+                for (let value of fact.values) {
+                  if (value.labelId == "PR_RACE_OR_COLOR") {
+                    member.race = value.text;
+                  }
+                }
+              } else if (fact.fields) {
+                for (let field of fact.fields) {
+                  if (field.type.endsWith("/Race")) {
+                    if (field.values) {
+                      for (let value of field.values) {
+                        if (value.labelId == "PR_RACE_OR_COLOR") {
+                          member.race = value.text;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             } else if (factType == "RelationshipToHead") {
               if (fact.values) {
                 for (let value of fact.values) {
@@ -3320,6 +3340,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
       if (person.fields) {
         const personFieldsMap = {
           Age: "age",
+          RaceOrColorCss: "race",
           RelationshipToHeadCode: "relationship",
           RelationshipToHead: "relationship",
           RelationshipToOwner: "relationship", // only for slaves

@@ -28,6 +28,7 @@
     "maritalStatus",
     "gender",
     "age",
+    "race",
     "birthYear",
     "birthPlace"
   ],
@@ -39,6 +40,7 @@
       "gender": "male",
       "age": "35",
       "birthYear": "1905",
+      "race": "White",
       "birthPlace": "Michigan"
     },
     {
@@ -48,6 +50,7 @@
       "gender": "female",
       "age": "32",
       "birthYear": "1908",
+      "race": "White",
       "birthPlace": "Sweden",
       "isSelected": true
     },
@@ -58,6 +61,7 @@
       "gender": "female",
       "age": "13",
       "birthYear": "1927",
+      "race": "White",
       "birthPlace": "Michigan"
     },
     {
@@ -67,11 +71,13 @@
       "gender": "female",
       "age": "8",
       "birthYear": "1932",
+      "race": "White",
       "birthPlace": "Michigan"
     }
   ],
   "maritalStatus": "married",
   "relationshipToHead": "wife",
+  "race": "White",
   "spouses": [
     {
       "name": {

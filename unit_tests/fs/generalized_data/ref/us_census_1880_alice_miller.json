@@ -30,6 +30,7 @@
     "maritalStatus",
     "gender",
     "age",
+    "race",
     "birthYear",
     "occupation",
     "birthPlace"
@@ -42,6 +43,7 @@
       "gender": "male",
       "age": "31",
       "birthYear": "1849",
+      "race": "White",
       "occupation": "Farmer",
       "birthPlace": "Indiana"
     },
@@ -52,6 +54,7 @@
       "gender": "female",
       "age": "25",
       "birthYear": "1855",
+      "race": "White",
       "occupation": "Keeping House",
       "birthPlace": "Indiana",
       "isSelected": true
@@ -63,6 +66,7 @@
       "gender": "male",
       "age": "8",
       "birthYear": "1872",
+      "race": "White",
       "birthPlace": "Indiana"
     },
     {
@@ -72,6 +76,7 @@
       "gender": "male",
       "age": "6",
       "birthYear": "1874",
+      "race": "White",
       "birthPlace": "Indiana"
     },
     {
@@ -81,6 +86,7 @@
       "gender": "male",
       "age": "4",
       "birthYear": "1876",
+      "race": "White",
       "birthPlace": "Indiana"
     },
     {
@@ -90,11 +96,13 @@
       "gender": "male",
       "age": "1",
       "birthYear": "1879",
+      "race": "White",
       "birthPlace": "Indiana"
     }
   ],
   "maritalStatus": "married",
   "relationshipToHead": "wife",
+  "race": "White",
   "spouses": [
     {
       "name": {

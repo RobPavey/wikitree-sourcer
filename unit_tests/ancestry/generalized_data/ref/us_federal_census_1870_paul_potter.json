@@ -26,6 +26,7 @@
       "name": "Paul Potter",
       "age": "48",
       "isSelected": true,
+      "race": "White",
       "gender": "male",
       "occupation": "Farm Laborer",
       "birthDate": "abt 1822",
