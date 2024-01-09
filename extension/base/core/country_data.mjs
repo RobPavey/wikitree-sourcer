@@ -30,7 +30,7 @@ const CountryData = [
   // Europe
   {
     stdName: "England",
-    matches: ["England", "England, United Kingdom", "England, UK", "England, U.K."],
+    matches: ["England", "England, United Kingdom", "England, UK", "England, U.K.", "Eng", "Eng English"],
     partOf: ["United Kingdom", "England and Wales"],
     usesMiddleNames: true,
   },
@@ -42,7 +42,7 @@ const CountryData = [
   },
   {
     stdName: "Scotland",
-    matches: ["Scotland", "Scotland, United Kingdom", "Scotland, UK", "Scotland, U.K.", "Alba"],
+    matches: ["Scotland", "Scotland, United Kingdom", "Scotland, UK", "Scotland, U.K.", "Alba", "Sct", "Scot"],
     partOf: ["United Kingdom"],
     usesMiddleNames: true,
   },
@@ -445,7 +445,7 @@ const CountyData = {
     { stdName: "Forfarshire", matches: ["Forfarshire", "Forfar"] },
     {
       stdName: "Inverness-shire",
-      matches: ["Inverness-shire", "Invernesshire", "Invernessshire", , "Inverneshire", "Inverness"],
+      matches: ["Inverness-shire", "Invernesshire", "Invernessshire", "Inverneshire", "Inverness"],
     },
     { stdName: "Kincardineshire", matches: ["Kincardineshire", "Kincardine"] },
     {
@@ -747,7 +747,7 @@ const CD = {
 
     for (let country of CountryData) {
       for (let match of country.matches) {
-        if (countryName == match) {
+        if (match && countryName.toLowerCase() == match.toLowerCase()) {
           return country.stdName;
         }
       }
@@ -767,7 +767,7 @@ const CD = {
 
     for (let county of countyArray) {
       for (let match of county.matches) {
-        if (countyName == match) {
+        if (match && countyName.toLowerCase() == match.toLowerCase()) {
           return county.stdName;
         }
       }
@@ -789,7 +789,7 @@ const CD = {
 
     for (let state of stateArray) {
       for (let match of state.matches) {
-        if (stateName == match) {
+        if (match && stateName.toLowerCase() == match.toLowerCase()) {
           return state.stdName;
         }
       }
