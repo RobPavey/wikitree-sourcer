@@ -1,0 +1,1108 @@
+{
+  "id" : "r_22006734421",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9M7V-54Q9?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9M7V-54Q9?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9M7V-54Q9"
+    }
+  },
+  "description" : "#sd_p_13563176741",
+  "persons" : [ {
+    "id" : "p_13563176741",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "d52af0a9-73bc-4ea8-8aa4-c190b7b36073",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VVQK-T88?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M7V-54Q9?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VVQK-T88" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Billy Ray Scroggins",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Billy Ray",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "91084b1b-e2d0-44f2-98a9-2b58b9045464",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Billy Ray"
+            }, {
+              "id" : "04a3cbde-7545-4d18-b50d-a1eacc7d9e3c",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1568954136518
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Billy Ray"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Scroggins",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "a82261fe-9cfc-49dd-88dc-3b7018c1f85b",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Scroggins"
+            }, {
+              "id" : "cf99bf77-e9ad-4b38-ad34-8c1a9b275bfb",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1568954136518
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Scroggins"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "78d176b6-a586-4aea-b4c6-5b28bde752dd",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Billy Ray Scroggins"
+          }, {
+            "id" : "152aaedc-f684-4aa5-aa4b-ee2df7666f6b",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1568954136518
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Billy Ray Scroggins"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "original" : "California",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "8143ec55-a4b0-474a-b147-3c15d76d5ab4",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_RES_PLACE",
+            "text" : "California"
+          } ]
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "p_13563176742",
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "c0a42199-2409-407a-bf6a-26d2b0f86b47",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "text" : "Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VVQK-T8D?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M7V-54Q9?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VVQK-T8D" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Joan Frances Rowsey",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Joan Frances",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "2fc2daf5-d0ca-4cae-a3ff-6de1b5999505",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Joan Frances"
+            }, {
+              "id" : "54fc77c2-ba77-428b-bb7e-8017207a446a",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1568954136526
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Joan Frances"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Rowsey",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "27388866-4d32-4c22-a007-60f2756480ce",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Rowsey"
+            }, {
+              "id" : "ff2dff7d-4d2a-41d8-9b03-a1ae959962f2",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1568954136526
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Rowsey"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "cb6c337a-6f04-45c6-ac17-495a62fb4e64",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1568954136518
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Joan Frances Rowsey"
+          }, {
+            "id" : "b0305ad2-0485-4b77-81eb-eb6f2e8666ff",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1568954136526
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Joan Frances Rowsey"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "original" : "California",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "a4f4f46c-780b-4d2f-a9d2-941785430c61",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_RES_PLACE",
+            "text" : "California"
+          } ]
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "p_145288666700",
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/WKHB-LLT2?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M7V-54Q9?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:WKHB-LLT2" ]
+    },
+    "fields" : [ {
+      "type" : "http://familysearch.org/types/fields/Type",
+      "values" : [ {
+        "id" : "e3efcc33-f1cb-428f-bd27-e79c92c03168",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "OFFICIATOR_TYPE",
+        "text" : "Civil celebrant"
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/WCPN-NWM9",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_13563176741",
+      "resourceId" : "p_13563176741"
+    },
+    "person2" : {
+      "resource" : "#p_13563176742",
+      "resourceId" : "p_13563176742"
+    },
+    "facts" : [ {
+      "type" : "http://familysearch.org/types/facts/MarriageRegistration",
+      "date" : {
+        "original" : "6 Jun 0006",
+        "formal" : "+0006-06-06",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "5e83818e-9547-4789-87d1-d126f7b5995a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "6 6 6"
+          }, {
+            "id" : "1d8e323d-a17a-4849-87ba-af6946ac7784",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "6 Jun 0006",
+            "resource" : "+0006-06-06"
+          }, {
+            "id" : "edb4ed87-a703-4ad8-946b-b00fdeba0ac7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "6 6 6"
+          }, {
+            "id" : "96ae1e63-d819-42d4-bb5b-c3f84fb707da",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "6 Jun 1806",
+            "resource" : "+1806-06-06"
+          }, {
+            "id" : "55f0b6cc-01a6-4040-9e34-461d6310b82d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "6 6 6"
+          }, {
+            "id" : "52fea23e-2327-46d1-be13-178b022db8a4",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "6 Jun 1906",
+            "resource" : "+1906-06-06"
+          }, {
+            "id" : "990c0c0b-f8f7-433d-a98b-f11d9d191b32",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "6 6 6"
+          }, {
+            "id" : "124bf446-b242-4a82-9f65-b26b833e2bd3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "6 Jun 2006",
+            "resource" : "+2006-06-06"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "d2ad4eb4-15d7-464d-baf7-4ef2c956be1d",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "6d896e19-9f80-4e57-b126-48ef79fcce78",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "ffad6cb5-cd42-4adf-b531-4dad4658468d",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "63a9df4b-fbd0-47de-b9eb-f1fc87bfab4f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "3f3cc801-9ab4-4256-9f66-98d198b54f85",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "53e1552a-cf9d-4d44-a772-14f005898f37",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1806"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "757d62e0-1743-4864-ad7d-f804124b11ad",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "9348f0cd-9f2a-4097-aedf-7795be5222d3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "d6a2c056-9f7c-45c5-a3bb-281fc77ecef7",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1906"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "7c5003cb-be66-4286-ae27-6d6155c4a82c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "0d0f0007-0f05-45c9-8f03-891b7ebd95d6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "7bf9ace4-fd2c-4db2-81bf-af6d61cbe4ac",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136511
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "2006"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Clark, Nevada, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "8735e1ec-70d3-4adf-a540-c7871c0516a6",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1568954136546
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : ", Clark, Nevada"
+          }, {
+            "id" : "2b258b5d-987a-4786-a320-6d9bbf804095",
+            "confidence" : "http://confidence/91",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1568954136546
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Clark, Nevada, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/395910",
+            "qualifiers" : [ {
+              "value" : "1010, 1013, 1014",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "140aeeee-456d-42e5-9c0c-eb0e35b95e4b",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Clark"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "110133c5-fad3-466f-b3a9-90096e9d6ead",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Marriage Registration"
+        }, {
+          "id" : "f070b426-b62f-4554-98a8-131b3b0a3f55",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Marriage Registration"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "6 Apr 1983",
+        "formal" : "+1983-04-06",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "2cbe3519-ce88-4611-8777-0478ed1019a2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DATE_ORIG",
+            "text" : "6 Apr 1983"
+          }, {
+            "id" : "f32ecf7a-b30b-44e8-a865-b1d352d03887",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136503
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DATE",
+            "text" : "6 Apr 1983",
+            "resource" : "+1983-04-06"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "5c9a0211-9186-4b69-a97b-75180ea24163",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_MONTH_ORIG",
+            "text" : "Apr"
+          }, {
+            "id" : "bc38bb13-1723-43aa-8efc-ac0646fe9585",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136503
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_MONTH",
+            "text" : "4"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "cb235430-56cd-4f6b-9b68-9028ae49a904",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DAY_ORIG",
+            "text" : "6"
+          }, {
+            "id" : "7ba85c79-e4ae-4fec-b4c8-1749d92cf42a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136503
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DAY",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "15678ae1-c147-4781-baf1-9d10723153dd",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_YEAR_ORIG",
+            "text" : "1983"
+          }, {
+            "id" : "074cbee3-df41-4798-a96f-94f32619fc50",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136503
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_YEAR",
+            "text" : "1983"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Clark, Nevada, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "aa00f365-a6b3-43f0-8d12-f6e4a79b9074",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_PLACE",
+            "text" : "Clark, Nevada, United States"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "ea97b9da-83a3-48ff-82d2-9578befd7789",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_COUNTY_ORIG",
+            "text" : "Clark"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "6 Apr 1983",
+        "formal" : "+1983-04-06",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "49af446d-aba2-45db-b91a-44ab8e873f9c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DATE_ORIG",
+            "text" : "6 Apr 1983"
+          }, {
+            "id" : "9d6a1355-711c-440a-80db-1d02e6db0a57",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136505
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DATE",
+            "text" : "6 Apr 1983",
+            "resource" : "+1983-04-06"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "0db8ae3f-0d7e-434d-91fb-e4c25b3bfbcd",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_MONTH_ORIG",
+            "text" : "Apr"
+          }, {
+            "id" : "60c3a566-1230-48c8-9b1a-479f87a25613",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136505
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_MONTH",
+            "text" : "4"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "bc889640-f79a-4719-9137-bd6f8f3d055c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DAY_ORIG",
+            "text" : "6"
+          }, {
+            "id" : "f34ac5e7-57c5-4dbf-8655-2f0d720310ba",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136505
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DAY",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "887277e8-6dba-49c8-9473-390c72b94bde",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_YEAR_ORIG",
+            "text" : "1983"
+          }, {
+            "id" : "9a976c66-9407-4eed-9f51-be150cf80042",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136505
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_YEAR",
+            "text" : "1983"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "6 Apr 1983",
+        "formal" : "+1983-04-06",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "629a5234-5005-407e-a3ca-3224c8f207a0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DATE_ORIG",
+            "text" : "6 Apr 1983"
+          }, {
+            "id" : "98efce24-6e03-4e20-994c-80fb04eaac32",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136508
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DATE",
+            "text" : "6 Apr 1983",
+            "resource" : "+1983-04-06"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "b500a466-3f20-4399-bb5e-e836c2d5b464",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_MONTH_ORIG",
+            "text" : "Apr"
+          }, {
+            "id" : "0f23e40c-0c59-4cea-a7ad-ec7951424bed",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136508
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_MONTH",
+            "text" : "4"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "9f919a0c-25df-4794-9d15-3245caeb9fa2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DAY_ORIG",
+            "text" : "6"
+          }, {
+            "id" : "36b65221-f5cf-4d1f-8f91-a6c3d3401d75",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136508
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DAY",
+            "text" : "6"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "d4ad3335-4224-4dd8-a7c9-779bbfd35397",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_YEAR_ORIG",
+            "text" : "1983"
+          }, {
+            "id" : "602b233c-c624-4ec3-85a6-7bf89ed5fe17",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568954136508
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_YEAR",
+            "text" : "1983"
+          } ]
+        } ]
+      }
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1949338",
+    "about" : "https://www.familysearch.org/platform/records/collections/1949338",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223451055,
+    "modified" : 1674720967105,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Nevada, United States",
+        "description" : "#place_1-21"
+      },
+      "temporal" : {
+        "original" : "1956/2005",
+        "formal" : "1956/2005"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Nevada Marriage Index, 1956-2005"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1949338" ]
+    }
+  }, {
+    "id" : "src_r_22006734421",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9M7V-54Q9",
+    "componentOf" : {
+      "description" : "#sd_c_1949338"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1568954136563,
+    "modified" : 1674720967105,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Clark, Nevada, United States"
+      },
+      "temporal" : {
+        "original" : "6 Jun 0006"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "citations" : [ {
+      "value" : "\"Nevada Marriage Index, 1956-2005\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:9M7V-54Q9 : 20 September 2019), Entry for Billy Ray Scroggins and Joan Frances Rowsey, 6."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Billy Ray Scroggins and Joan Frances Rowsey, \"Nevada Marriage Index, 1956-2005\""
+    } ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1000989244307" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9M7V-54Q9" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1949338?arkName=1:2:9M7V-54Q9"
+    }
+  }, {
+    "id" : "sd_p_13563176741",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VVQK-T88",
+    "componentOf" : {
+      "description" : "#src_r_22006734421"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Nevada Marriage Index, 1956-2005\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:VVQK-T88 : 20 September 2019), Billy Ray Scroggins and Joan Frances Rowsey, 6."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Billy Ray Scroggins, \"Nevada Marriage Index, 1956-2005\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VVQK-T88" ]
+    }
+  }, {
+    "id" : "sd_p_13563176742",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VVQK-T8D",
+    "componentOf" : {
+      "description" : "#src_r_22006734421"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Nevada Marriage Index, 1956-2005\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:VVQK-T8D : 20 September 2019), Billy Ray Scroggins and Joan Frances Rowsey, 6."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Joan Frances Rowsey, \"Nevada Marriage Index, 1956-2005\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VVQK-T8D" ]
+    }
+  }, {
+    "id" : "sd_p_145288666700",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:WKHB-LLT2",
+    "componentOf" : {
+      "description" : "#src_r_22006734421"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Nevada Marriage Index, 1956-2005\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:WKHB-LLT2 : 20 September 2019), Billy Ray Scroggins and Joan Frances Rowsey, 6."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "<Unknown> in entry for Billy Ray Scroggins and Joan Frances Rowsey, \"Nevada Marriage Index, 1956-2005\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:WKHB-LLT2" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1-21",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/21?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/ExtFilmNbr",
+    "values" : [ {
+      "id" : "c1b1b516-a0a0-4971-bae2-58c7406041cc",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_FILM_NBR",
+      "text" : "519706"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "8c1b2ed9-ed86-4587-810f-2ea5900922ff",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "1949338"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "54d58179-9c02-4e0f-a97e-24c223f0f758",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "No Traveler; 2019-09-19T11:56:36-0600; gilberts; 5351; TB; work.sg_1949338_dio729_b17214_201909161110; No Traveler"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "54837c13-979d-42d6-846f-0c7273ccddfc",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "2595902"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "0a991c8b-bec8-46ae-8066-28d63ccc2d76",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000000_002595902_1000989244307"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "b1be74fa-e16f-4449-8392-0f4e23ca7716",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "1000989244307"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "b5dad630-3464-44f3-bfd3-204d0f83d61e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceBookNbr",
+    "values" : [ {
+      "id" : "fe6fbd63-fc66-4b1f-9488-4f45ecc61a0d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_BOOK_NBR",
+      "text" : "677"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourceInstrumentNbr",
+    "values" : [ {
+      "id" : "5e24bd10-9ecc-4871-accd-7ab6f5f4576a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_INSTRUMENT_NBR",
+      "text" : "219706"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourcePage",
+    "values" : [ {
+      "id" : "8013bfda-567d-4b67-93a1-7f0261e0fbe0",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_PAGE",
+      "text" : "B434671"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourcePubYear",
+    "values" : [ {
+      "id" : "1e7e2031-0a76-4b0f-ba37-92846e22594e",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_PUB_YEAR_ORIG",
+      "text" : "1983"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "2"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "49995"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ],
+  "qualifiers" : [ {
+    "value" : "true",
+    "name" : "TreatmentWarnings"
+  } ]
+}

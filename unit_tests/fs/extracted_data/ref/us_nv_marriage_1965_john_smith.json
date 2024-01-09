@@ -1,0 +1,28 @@
+{
+  "recordData": {
+    "Name": "John Percy Smith",
+    "Marriage Registration Place": "Clark, Nevada, United States",
+    "Marriage Date": "30 Apr 1965",
+    "Marriage Place (Original)": ", Nevada, United States"
+  },
+  "fullName": "John Percy Smith",
+  "givenName": "John Percy",
+  "surname": "Smith",
+  "eventPlaceOriginal": "Clark, Nevada, United States",
+  "eventPlace": "Clark, Nevada, United States",
+  "eventPlaceL2": "Clark",
+  "factType": "MarriageRegistration",
+  "spouseFullName": "Elsie Margaret Tibbils",
+  "spouseGivenName": "Elsie Margaret",
+  "spouseSurname": "Tibbils",
+  "fsCollectionId": "1949338",
+  "referenceData": {
+    "sourcePageNbr": "F09"
+  },
+  "collectionTitle": "Nevada Marriage Index, 1956-2005",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9M7B-3HQ6",
+  "citation": "\"Nevada Marriage Index, 1956-2005\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VVVW-XS7 : 21 July 2021), John Percy Smith and Elsie Margaret Tibbils, .",
+  "sourceTitleForPerson": "John Percy Smith, \"Nevada Marriage Index, 1956-2005\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:VVVW-XS7",
+  "pageType": "record"
+}

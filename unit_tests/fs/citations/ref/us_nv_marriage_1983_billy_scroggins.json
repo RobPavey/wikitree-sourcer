@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins and Joan Frances Rowsey, 6.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins and Joan Frances Rowsey, 6.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>Billy Ray Scroggins and Joan Frances Rowsey, 6.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins marriage to Joan Frances Rowsey on 6 Apr 1983 in Clark, Nevada, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins marriage to Joan Frances Rowsey on 6 Apr 1983 in Clark, Nevada, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>Billy Ray Scroggins marriage to Joan Frances Rowsey on 6 Apr 1983 in Clark, Nevada, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nName: Billy Ray Scroggins; Residence Place: California; Marriage Registration Date: 6 Jun 0006; Marriage Registration Place: Clark, Nevada, United States; Marriage Date: 6 Apr 1983; Marriage Place (Original): Clark, Nevada, United States; Source Instrument Nbr: 219706; Source Pub Year: 1983.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nName: Billy Ray Scroggins; Residence Place: California; Marriage Registration Date: 6 Jun 0006; Marriage Registration Place: Clark, Nevada, United States; Marriage Date: 6 Apr 1983; Marriage Place (Original): Clark, Nevada, United States; Source Instrument Nbr: 219706; Source Pub Year: 1983.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>Name: Billy Ray Scroggins; Residence Place: California; Marriage Registration Date: 6 Jun 0006; Marriage Registration Place: Clark, Nevada, United States; Marriage Date: 6 Apr 1983; Marriage Place (Original): Clark, Nevada, United States; Source Instrument Nbr: 219706; Source Pub Year: 1983.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Billy Ray Scroggins\n|-\n| Residence Place || California\n|-\n| Marriage Registration Date || 6 Jun 0006\n|-\n| Marriage Registration Place || Clark, Nevada, United States\n|-\n| Marriage Date || 6 Apr 1983\n|-\n| Marriage Place (Original) || Clark, Nevada, United States\n|-\n| Source Instrument Nbr || 219706\n|-\n| Source Pub Year || 1983\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Billy Ray Scroggins\n|-\n| Residence Place || California\n|-\n| Marriage Registration Date || 6 Jun 0006\n|-\n| Marriage Registration Place || Clark, Nevada, United States\n|-\n| Marriage Date || 6 Apr 1983\n|-\n| Marriage Place (Original) || Clark, Nevada, United States\n|-\n| Source Instrument Nbr || 219706\n|-\n| Source Pub Year || 1983\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>Name: Billy Ray Scroggins; Residence Place: California; Marriage Registration Date: 6 Jun 0006; Marriage Registration Place: Clark, Nevada, United States; Marriage Date: 6 Apr 1983; Marriage Place (Original): Clark, Nevada, United States; Source Instrument Nbr: 219706; Source Pub Year: 1983.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins and Joan Frances Rowsey, 6.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins and Joan Frances Rowsey, 6.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>Billy Ray Scroggins and Joan Frances Rowsey, 6.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins marriage to Joan Frances Rowsey on 6 Apr 1983 in Clark, Nevada, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins marriage to Joan Frances Rowsey on 6 Apr 1983 in Clark, Nevada, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>Billy Ray Scroggins marriage to Joan Frances Rowsey on 6 Apr 1983 in Clark, Nevada, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins and Joan Frances Rowsey, 6.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Billy married Joan Frances Rowsey on 6 April 1983 in Clark, Nevada, United States.<ref>\n'''Marriage Registration''':\n\"Nevada Marriage Index, 1956-2005\"<br/>\nciting Page: B434671; Affiliate Film Number: 519706<br/>\n{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>\nBilly Ray Scroggins and Joan Frances Rowsey, 6.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage Registration''': \"Nevada Marriage Index, 1956-2005\"<br/>citing Page: B434671; Affiliate Film Number: 519706<br/>{{FamilySearch Record|VVQK-T88}} (accessed 6 May 2021)<br/>Billy Ray Scroggins and Joan Frances Rowsey, 6.",
+    "type": "source"
+  }
+}

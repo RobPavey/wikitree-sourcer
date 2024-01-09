@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Billy Ray Scroggins",
+    "lastName": "Scroggins",
+    "forenames": "Billy Ray"
+  },
+  "eventDate": {
+    "dateString": "6 Jun 0006",
+    "yearString": "6"
+  },
+  "eventPlace": {
+    "placeString": "Clark, Nevada, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Joan Frances Rowsey",
+        "lastName": "Rowsey",
+        "forenames": "Joan Frances"
+      },
+      "marriageDate": {
+        "dateString": "6 Apr 1983"
+      },
+      "marriagePlace": {
+        "placeString": "Clark, Nevada, United States"
+      }
+    }
+  ],
+  "marriageDate": "6 Apr 1983",
+  "collectionData": {
+    "id": "1949338",
+    "page": "B434671"
+  },
+  "hasValidData": true
+}

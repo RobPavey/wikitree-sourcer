@@ -371,6 +371,14 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:Q2R1-ZVMS",
   },
   {
+    caseName: "us_nv_marriage_1965_john_smith",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VVVW-XS7",
+  },
+  {
+    caseName: "us_nv_marriage_1983_billy_scroggins",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VVQK-T88",
+  },
+  {
     caseName: "us_ny_census_1915_philo_lee",
     url: "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCS",
   },

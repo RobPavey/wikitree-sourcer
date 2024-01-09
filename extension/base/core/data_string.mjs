@@ -797,7 +797,7 @@ function getMarriageRegistrationString(gd, options) {
   }
 
   let date = gd.inferEventDateObj();
-  if (!date && gd.marriageDate) {
+  if (gd.marriageDate) {
     date = new DateObj();
     date.dateString = gd.marriageDate;
   }

@@ -1,0 +1,562 @@
+{
+  "id" : "r_22014268333",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9M7B-3HQ6?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9M7B-3HQ6?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9M7B-3HQ6"
+    }
+  },
+  "description" : "#sd_p_13574154665",
+  "persons" : [ {
+    "id" : "p_13574154665",
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VVVW-XS7?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M7B-3HQ6?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VVVW-XS7" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "John Percy Smith",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "John Percy",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "c592db83-51b0-4e31-a016-006d849c48c3",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "John Percy"
+            }, {
+              "id" : "b4bb01d9-4372-4209-b9b2-d2062dafd132",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1626883782758
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "John Percy"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Smith",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "77ef912a-ba3c-4568-8835-79340016b2fc",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Smith"
+            }, {
+              "id" : "1754b763-dfb7-4074-bf11-05c96568ff30",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1626883782758
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Smith"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "481eafdf-b6ea-4e5a-8b71-0897fd7ff097",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1626883782752
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "John Percy Smith"
+          }, {
+            "id" : "84ae459e-4766-4dbe-add2-57acd7f0bf6b",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1626883782758
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "John Percy Smith"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "p_13574154666",
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VVVW-XSW?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9M7B-3HQ6?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VVVW-XSW" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Elsie Margaret Tibbils",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Elsie Margaret",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "ba73571f-9efb-45e9-b80b-f110cfd1b042",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Elsie Margaret"
+            }, {
+              "id" : "16ec89f5-d7c9-4bcf-84e3-7c2104237046",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1626883782764
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Elsie Margaret"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Tibbils",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "e8f5c383-8918-4249-9df6-e7eebd6acc94",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Tibbils"
+            }, {
+              "id" : "d4ba0faa-b4a5-4555-8faf-91396f9796c3",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1626883782764
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Tibbils"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "0890bcb8-5862-4299-927b-e7d3f6feeeb0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1626883782759
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Elsie Margaret Tibbils"
+          }, {
+            "id" : "c9dc7c1e-af95-492b-a911-132bfeddd846",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/NameTreatment/ver/1"
+              },
+              "modified" : 1626883782764
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Elsie Margaret Tibbils"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "relationships" : [ {
+    "id" : "MM9.1.6/PQ68-1PQD",
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_13574154665",
+      "resourceId" : "p_13574154665"
+    },
+    "person2" : {
+      "resource" : "#p_13574154666",
+      "resourceId" : "p_13574154666"
+    },
+    "facts" : [ {
+      "type" : "http://familysearch.org/types/facts/MarriageRegistration",
+      "place" : {
+        "original" : "Clark, Nevada, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "3820dde7-13bd-4bf9-ade8-cd2e49712d3e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1568947701309
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : ", Clark, Nevada"
+          }, {
+            "id" : "e0e5dd8b-3eb5-4b00-8011-6172ba198ffa",
+            "confidence" : "http://confidence/94",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1568947701309
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Clark, Nevada, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/395910",
+            "qualifiers" : [ {
+              "value" : "1014, 1013",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "d24493fd-2c86-4c1f-a4a4-d29870b7d4a3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Clark"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "ce2ee5be-ec09-4f38-8ca4-f60380de873e",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Marriage Registration"
+        }, {
+          "id" : "5ce9005a-fc5f-41d7-886b-a9eb232f887a",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Marriage Registration"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "original" : "30 Apr 1965",
+        "formal" : "+1965-04-30",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "181692df-bf92-4884-a100-b5fe9b47a624",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DATE_ORIG",
+            "text" : "30 Apr 1965"
+          }, {
+            "id" : "ecd5e617-fbf7-4bfa-9d6e-f1b3a971c13f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568947701281
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DATE",
+            "text" : "30 Apr 1965",
+            "resource" : "+1965-04-30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "0b41b0d3-221e-4870-a6fa-188902669ac9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_MONTH_ORIG",
+            "text" : "Apr"
+          }, {
+            "id" : "e3573217-62c4-4d0a-afb6-c8c037c22286",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568947701281
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_MONTH",
+            "text" : "4"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "fd49fc2b-d3da-4e3a-ad1a-d40bfbf54c28",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DAY_ORIG",
+            "text" : "30"
+          }, {
+            "id" : "f85e5f7d-6b3e-4293-a715-ffb6a4140fc9",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568947701281
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DAY",
+            "text" : "30"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "b0add851-8810-41cc-8eb1-c30af6cea3a3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_YEAR_ORIG",
+            "text" : "1965"
+          }, {
+            "id" : "14faf71c-03c7-4074-83ce-1587f076690b",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1568947701281
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_YEAR",
+            "text" : "1965"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : ", Nevada, United States",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "860dc6cb-4526-4c86-908c-742d3ee086e7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_PLACE_ORIG",
+            "text" : ", Nevada, United States"
+          } ]
+        } ]
+      }
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1949338",
+    "about" : "https://www.familysearch.org/platform/records/collections/1949338",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223451055,
+    "modified" : 1674720967105,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Nevada, United States",
+        "description" : "#place_1-21"
+      },
+      "temporal" : {
+        "original" : "1956/2005",
+        "formal" : "1956/2005"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Nevada Marriage Index, 1956-2005"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1949338" ]
+    }
+  }, {
+    "id" : "src_r_22014268333",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9M7B-3HQ6",
+    "componentOf" : {
+      "description" : "#sd_c_1949338"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1568947701332,
+    "modified" : 1674720967105,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Clark, Nevada, United States"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "citations" : [ {
+      "value" : "\"Nevada Marriage Index, 1956-2005\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:2:9M7B-3HQ6 : 21 July 2021), Entry for John Percy Smith and Elsie Margaret Tibbils, ."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for John Percy Smith and Elsie Margaret Tibbils, \"Nevada Marriage Index, 1956-2005\""
+    } ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1000996037451" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9M7B-3HQ6" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1949338?arkName=1:2:9M7B-3HQ6"
+    }
+  }, {
+    "id" : "sd_p_13574154665",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VVVW-XS7",
+    "componentOf" : {
+      "description" : "#src_r_22014268333"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Nevada Marriage Index, 1956-2005\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VVVW-XS7 : 21 July 2021), John Percy Smith and Elsie Margaret Tibbils, ."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "John Percy Smith, \"Nevada Marriage Index, 1956-2005\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VVVW-XS7" ]
+    }
+  }, {
+    "id" : "sd_p_13574154666",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VVVW-XSW",
+    "componentOf" : {
+      "description" : "#src_r_22014268333"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Nevada Marriage Index, 1956-2005\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VVVW-XSW : 21 July 2021), John Percy Smith and Elsie Margaret Tibbils, ."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Elsie Margaret Tibbils, \"Nevada Marriage Index, 1956-2005\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VVVW-XSW" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1-21",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/21?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/CollectionId",
+    "values" : [ {
+      "id" : "15c0d0a7-cbbd-46bf-b504-606819ec04c7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_COLLECTION_ID",
+      "text" : "1949338"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "36967db6-6fbf-44f6-9890-109734f27ac9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "27bb194a-5efb-46b0-a64c-8038ff14e0ac",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "No Traveler; 2019-09-19T11:56:36-0600; gilberts; 5351; TB; work.sg_1949338_dio729_b17214_201909161110; No Traveler"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "209f3931-1ba7-4beb-a6f4-2591c07f8ed6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "9256891"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "da573b2b-1e29-48cf-a939-56af6ffb2630",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000000_009256891_1000996037451"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "values" : [ {
+      "id" : "6aa436a2-0ca5-47e2-b80b-f25541430979",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNIQUE_ID",
+      "text" : "1000996037451"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/FsVisStatus",
+    "values" : [ {
+      "id" : "ffee4354-1ff8-4bce-b230-3a7ed2a5ecea",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SourcePage",
+    "values" : [ {
+      "id" : "9c2dc69a-3018-4533-8ffa-6945c0d3e588",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_PAGE_ORIG",
+      "text" : "F09"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "3"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "63503"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

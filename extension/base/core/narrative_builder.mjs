@@ -812,19 +812,17 @@ class NarrativeBuilder {
       // sometimes there is no event date but there is a marriage date
       // or this can happen for FS birth reg where the birth date is known
       // but the registration date is not
-      if (!dateObj) {
-        if (typeString == "marriage" && this.eventGd.marriageDate) {
-          dateObj = new DateObj();
-          dateObj.dateString = this.eventGd.marriageDate;
-          dateString = this.eventGd.marriageDate;
-          year = dateObj.getYearString();
-        } else if (typeString == "birth") {
-          dateObj = this.eventGd.inferBirthDateObj();
-          dateString = this.eventGd.inferBirthDate();
-        } else if (typeString == "death") {
-          dateObj = this.eventGd.inferDeathDateObj();
-          dateString = this.eventGd.inferDeathDate();
-        }
+      if (typeString == "marriage" && this.eventGd.marriageDate) {
+        dateObj = new DateObj();
+        dateObj.dateString = this.eventGd.marriageDate;
+        dateString = this.eventGd.marriageDate;
+        year = dateObj.getYearString();
+      } else if (typeString == "birth") {
+        dateObj = this.eventGd.inferBirthDateObj();
+        dateString = this.eventGd.inferBirthDate();
+      } else if (typeString == "death") {
+        dateObj = this.eventGd.inferDeathDateObj();
+        dateString = this.eventGd.inferDeathDate();
       }
     }
 

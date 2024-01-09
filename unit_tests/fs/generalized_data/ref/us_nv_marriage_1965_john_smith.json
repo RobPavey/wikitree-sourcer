@@ -1,0 +1,34 @@
+{
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "John Percy Smith",
+    "lastName": "Smith",
+    "forenames": "John Percy"
+  },
+  "eventPlace": {
+    "placeString": "Clark, Nevada, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Elsie Margaret Tibbils",
+        "lastName": "Tibbils",
+        "forenames": "Elsie Margaret"
+      },
+      "marriagePlace": {
+        "placeString": "Clark, Nevada, United States"
+      },
+      "marriageDate": {
+        "dateString": "30 Apr 1965"
+      }
+    }
+  ],
+  "marriageDate": "30 Apr 1965",
+  "collectionData": {
+    "id": "1949338",
+    "page": "F09"
+  },
+  "hasValidData": true
+}

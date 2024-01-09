@@ -1,0 +1,37 @@
+{
+  "recordData": {
+    "Name": "Billy Ray Scroggins",
+    "Residence Place": "California",
+    "Marriage Registration Date": "6 Jun 0006",
+    "Marriage Registration Place": "Clark, Nevada, United States",
+    "Marriage Date": "6 Apr 1983",
+    "Marriage Place (Original)": "Clark, Nevada, United States",
+    "Source Instrument Nbr": "219706",
+    "Source Pub Year": "1983"
+  },
+  "fullName": "Billy Ray Scroggins",
+  "givenName": "Billy Ray",
+  "surname": "Scroggins",
+  "gender": "male",
+  "eventDateOriginal": "6 Jun 0006",
+  "eventDate": "6 Jun 0006",
+  "eventYear": "6",
+  "eventPlaceOriginal": "Clark, Nevada, United States",
+  "eventPlace": "Clark, Nevada, United States",
+  "eventPlaceL2": "Clark",
+  "factType": "MarriageRegistration",
+  "spouseFullName": "Joan Frances Rowsey",
+  "spouseGivenName": "Joan Frances",
+  "spouseSurname": "Rowsey",
+  "referenceData": {
+    "externalFilmNumber": "519706",
+    "sourcePageNbr": "B434671"
+  },
+  "fsCollectionId": "1949338",
+  "collectionTitle": "Nevada Marriage Index, 1956-2005",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9M7V-54Q9",
+  "citation": "\"Nevada Marriage Index, 1956-2005\", database, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:VVQK-T88 : 20 September 2019), Billy Ray Scroggins and Joan Frances Rowsey, 6.",
+  "sourceTitleForPerson": "Billy Ray Scroggins, \"Nevada Marriage Index, 1956-2005\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:VVQK-T88",
+  "pageType": "record"
+}
