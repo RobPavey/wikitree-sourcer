@@ -140,6 +140,10 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Spencer-1038",
   },
   {
+    caseName: "tulloch-46_read",
+    url: "https://www.wikitree.com/wiki/Tulloch-46",
+  },
+  {
     // Has father but no mother
     caseName: "winbush-11_read",
     url: "https://www.wikitree.com/wiki/Winbush-11",

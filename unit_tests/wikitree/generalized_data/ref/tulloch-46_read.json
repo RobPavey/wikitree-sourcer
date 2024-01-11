@@ -1,0 +1,45 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Johannah Grieg",
+    "lastName": "Tulloch"
+  },
+  "lastNameAtBirth": "Tulloch",
+  "lastNameAtDeath": "Tulloch",
+  "mothersMaidenName": "Nisbet",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "1795",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "1800",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Vatster, East Yell, SHI, SCT"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Andrew Tulloch",
+        "lastName": "Tulloch",
+        "forenames": "Andrew"
+      },
+      "lastNameAtBirth": "Tulloch",
+      "lastNameAtDeath": "Tulloch"
+    },
+    "mother": {
+      "name": {
+        "name": "Helen Barbara Nisbet",
+        "lastName": "Nisbet",
+        "forenames": "Helen Barbara"
+      },
+      "lastNameAtBirth": "Nisbet",
+      "lastNameAtDeath": "Nisbet"
+    }
+  },
+  "spouses": [],
+  "hasValidData": true
+}

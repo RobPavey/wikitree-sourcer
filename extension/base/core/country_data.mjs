@@ -594,7 +594,7 @@ const CD = {
           return country;
         }
         let ending = ", " + match;
-        if (placeName.endsWith(ending)) {
+        if (placeName.toLowerCase().endsWith(ending.toLowerCase())) {
           return country;
         }
       }
@@ -611,7 +611,7 @@ const CD = {
           return { country: country, remainder: "", originalCountryString: placeName };
         }
         let ending = ", " + match;
-        if (placeName.endsWith(ending)) {
+        if (placeName.toLowerCase().endsWith(ending.toLowerCase())) {
           let remainder = placeName.substring(0, placeName.length - ending.length);
           return { country: country, remainder: remainder, originalCountryString: match };
         }

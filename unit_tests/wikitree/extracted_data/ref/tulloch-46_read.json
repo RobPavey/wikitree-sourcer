@@ -1,0 +1,32 @@
+{
+  "hasValidData": true,
+  "firstNames": "Johannah Grieg",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Tulloch",
+  "currentLastName": "Tulloch",
+  "mothersMaidenName": "Nisbet",
+  "birthDate": "1795",
+  "birthDateStatus": "none",
+  "deathDate": "1800",
+  "deathDateStatus": "about",
+  "birthLocation": "Vatster, East Yell, SHI, SCT",
+  "deathLocation": "",
+  "personGender": "female",
+  "spouses": [],
+  "url": "https://www.wikitree.com/wiki/Tulloch-46",
+  "currentTabText": "Johannah Grieg Tulloch's Profile",
+  "pageType": "read",
+  "wikiId": "Tulloch-46",
+  "name": "Johannah Grieg Tulloch",
+  "parents": {
+    "father": {
+      "wikiId": "Tulloch-16",
+      "name": "Andrew Tulloch"
+    },
+    "mother": {
+      "wikiId": "Nisbet-18",
+      "name": "Helen Barbara Nisbet"
+    }
+  }
+}
