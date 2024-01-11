@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1869&range=0&surname=LOCKWOOD&motherssurname=SCRIVENER&forename1=AMY&forename2=ISABEL&gender=F&quarter=D&district=GREAT%20BOUGHTON%2C%20NOW%20CHESTER&volume=08A&page=351 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nLockwood, Amy Isabel (Mother's maiden name: Scrivener).<br/>\n''GRO Reference:'' 1869 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/chester.html Great Boughton, Now Chester] Volume 08A Page 351.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Amy's birth was registered in the Oct-Nov-Dec quarter of 1869 in the Great Boughton, Now Chester district.<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1869&range=0&surname=LOCKWOOD&motherssurname=SCRIVENER&forename1=AMY&forename2=ISABEL&gender=F&quarter=D&district=GREAT%20BOUGHTON%2C%20NOW%20CHESTER&volume=08A&page=351 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nLockwood, Amy Isabel (Mother's maiden name: Scrivener).<br/>\n''GRO Reference:'' 1869 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/chester.html Great Boughton, Now Chester] Volume 08A Page 351.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1869&range=0&surname=LOCKWOOD&motherssurname=SCRIVENER&forename1=AMY&forename2=ISABEL&gender=F&quarter=D&district=GREAT%20BOUGHTON%2C%20NOW%20CHESTER&volume=08A&page=351 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Lockwood, Amy Isabel (Mother's maiden name: Scrivener).<br/>''GRO Reference:'' 1869 Oct-Nov-Dec in [https://www.ukbmd.org.uk/reg/districts/chester.html Great Boughton, Now Chester] Volume 08A Page 351.",
+    "type": "source"
+  }
+}

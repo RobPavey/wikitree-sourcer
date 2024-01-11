@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1841&range=0&surname=HUMPHREYS&motherssurname=DAVIES&forename1=WILLIAM&gender=M&quarter=M&district=OF%20MONTGOMERY%20ON%20THE%20COUNTIES%20OF%20MONTGOMERY%20AND%20SA&volume=27&page=95 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nHumphreys, William (Mother's maiden name: Davies).<br/>\n''GRO Reference:'' 1841 Jan-Feb-Mar in [https://www.ukbmd.org.uk/reg/districts/montgomery.html Of Montgomery On the Counties of Montgomery and Sa] Volume 27 Page 95.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "William's birth was registered in the Jan-Feb-Mar quarter of 1841 in the Montgomery On the Counties of Montgomery and Sa district.<ref>\n'''Birth Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1841&range=0&surname=HUMPHREYS&motherssurname=DAVIES&forename1=WILLIAM&gender=M&quarter=M&district=OF%20MONTGOMERY%20ON%20THE%20COUNTIES%20OF%20MONTGOMERY%20AND%20SA&volume=27&page=95 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>\nHumphreys, William (Mother's maiden name: Davies).<br/>\n''GRO Reference:'' 1841 Jan-Feb-Mar in [https://www.ukbmd.org.uk/reg/districts/montgomery.html Of Montgomery On the Counties of Montgomery and Sa] Volume 27 Page 95.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Birth&year=1841&range=0&surname=HUMPHREYS&motherssurname=DAVIES&forename1=WILLIAM&gender=M&quarter=M&district=OF%20MONTGOMERY%20ON%20THE%20COUNTIES%20OF%20MONTGOMERY%20AND%20SA&volume=27&page=95 GRO Online Indexes - Birth] (accessed 6 May 2021)<br/>Humphreys, William (Mother's maiden name: Davies).<br/>''GRO Reference:'' 1841 Jan-Feb-Mar in [https://www.ukbmd.org.uk/reg/districts/montgomery.html Of Montgomery On the Counties of Montgomery and Sa] Volume 27 Page 95.",
+    "type": "source"
+  }
+}

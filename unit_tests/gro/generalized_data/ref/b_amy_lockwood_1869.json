@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1869",
+    "quarter": 4
+  },
+  "name": {
+    "lastName": "Lockwood",
+    "forenames": "Amy Isabel"
+  },
+  "lastNameAtBirth": "Lockwood",
+  "birthDate": {
+    "yearString": "1869",
+    "quarter": 4
+  },
+  "mothersMaidenName": "Scrivener",
+  "personGender": "female",
+  "registrationDistrict": "Great Boughton, Now Chester",
+  "collectionData": {
+    "id": "births",
+    "volume": "08A",
+    "page": "351"
+  },
+  "hasValidData": true
+}

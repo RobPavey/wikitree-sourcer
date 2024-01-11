@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1841",
+    "quarter": 1
+  },
+  "name": {
+    "lastName": "Humphreys",
+    "forenames": "William"
+  },
+  "lastNameAtBirth": "Humphreys",
+  "birthDate": {
+    "yearString": "1841",
+    "quarter": 1
+  },
+  "mothersMaidenName": "Davies",
+  "personGender": "male",
+  "registrationDistrict": "Montgomery On the Counties of Montgomery and Sa",
+  "collectionData": {
+    "id": "births",
+    "volume": "27",
+    "page": "95"
+  },
+  "hasValidData": true
+}

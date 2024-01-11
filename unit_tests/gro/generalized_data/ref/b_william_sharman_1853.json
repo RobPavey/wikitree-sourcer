@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1853",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Sharman",
+    "forenames": "William"
+  },
+  "lastNameAtBirth": "Sharman",
+  "birthDate": {
+    "yearString": "1853",
+    "quarter": 2
+  },
+  "mothersMaidenName": "Cox",
+  "personGender": "male",
+  "registrationDistrict": "Moulton in the County of Northampton",
+  "collectionData": {
+    "id": "births",
+    "volume": "03B",
+    "page": "114"
+  },
+  "hasValidData": true
+}

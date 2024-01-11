@@ -36,6 +36,9 @@ const regressionData = [
     caseName: "b_alfred_watkins_1862",
   },
   {
+    caseName: "b_amy_lockwood_1869",
+  },
+  {
     caseName: "b_ann_beecroft_1845",
   },
   {
@@ -134,6 +137,12 @@ const regressionData = [
   },
   {
     caseName: "b_william_cox_1867",
+  },
+  {
+    caseName: "b_william_humphreys_1841",
+  },
+  {
+    caseName: "b_william_sharman_1853",
   },
   /////////// Deaths /////////////////////
   {

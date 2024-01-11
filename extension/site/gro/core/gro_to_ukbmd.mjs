@@ -22,26 +22,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { isValidUkbmdDistrictName } from "./gro_ukbmd_districts.mjs";
+
 // NOTE: Broken UKBMD links on WikiTree can be found with this search:
 // https://plus.wikitree.com/default.htm?report=err6&Query=ukbmd+&MaxErrors=1000&ErrorID=965
 // Other suggestions related to ukbmd can be found using this search:
 // https://plus.wikitree.com/default.htm?report=err6&Query=ukbmd+&MaxErrors=1000&ErrorID=
 
+// UPDATE: In 2.1.3 (Jan 2024) I added a full list of UKBMD district names and no longer
+// create a link if it is not in that list. So Sourcer should no longer create broken links.
+
 function getUkbmdDistrictPageUrl(district) {
   // https://www.ukbmd.org.uk/reg/districts/st%20pancras.html
 
   const overrides = {
+    aldington: "east ashford", // was never a district, just part of one
+    "alston and garregill": "alston", // transcription error?
     "alston and garrigill": "alston",
+    "alston with garrigill": "alston",
     "ashby de la zouch": "ashby-de-la-zouch",
     "ashby de la louch": "ashby-de-la-zouch", // transcription error?
     "ashby de la zouche": "ashby-de-la-zouch", // transcription error?
     "ashby dela zouch": "ashby-de-la-zouch",
     ashbydelazouch: "ashby-de-la-zouch",
     ashtonunderlyne: "ashton under lyne",
+    bamsley: "barnsley", // transcription error?
     "bangor and beaumaris": "bangor",
     "barrow in furness": "barrow-in-furness",
     "barrowin furness": "barrow-in-furness",
     "barrow on soar": "barrow upon soar",
+    "barton regis bristol": "barton regis", // could be date specific?
     "bermondsey now st olave southwark": "bermondsey",
     "berwick upon tweed": "berwick",
     bootle: "bootle1",
@@ -51,7 +61,9 @@ function getUkbmdDistrictPageUrl(district) {
     "bournemouth christchurch and poole": "bournemouth",
     "bradford and north bierley yorkshire": "bradford",
     "bradford yorkshire": "bradford",
+    "bradford wills": "bradford on avon", // transcription error
     "bradford wilts": "bradford on avon",
+    "bradford wilts and somerset": "bradford on avon",
     "bridgend and cowbridge": "bridgend",
     brighthelmston: "brighton",
     "bristol barton regis": "barton regis", // could be date specific?
@@ -69,19 +81,28 @@ function getUkbmdDistrictPageUrl(district) {
     "chapel on le frith": "chapel-en-le-frith",
     chapelenlefrith: "chapel-en-le-frith",
     "chester le street": "chester-le-street",
+    "chesterle street": "chester-le-street",
+    "chester lestreet": "chester-le-street",
     chesterlestreet: "chester-le-street",
+    "cholsey in the wallingford": "wallingford",
     "city of london": "london city",
     "county of london": "london city",
     "cricklade and wootton bassett": "cricklade",
     "dorchester and cerne": "dorchester",
+    "dorchester and corne": "dorchester", // transcription error?
+    drayton: "market drayton",
+    duddeston: "aston",
     "durham and lanchester": "durham",
     "east and west flegg": "flegg",
     "east and west flegg norfolk": "flegg",
     eastgrinsted: "east grinstead",
     "ecclesall burlow": "ecclesall bierlow", // transcription error?
     "foleshill and sowe": "foleshill",
+    "foleshill lowe": "foleshill", // transcription error?
+    "foleshill sowe": "foleshill",
     gainsbro: "gainsborough",
     gainsburgh: "gainsborough", // transcription error?
+    "great boughton and hawarden": "great boughton",
     "gravesend milton": "gravesend",
     "gravesend and milton": "gravesend",
     "gravesend and melton": "gravesend", // transcription error?
@@ -89,35 +110,51 @@ function getUkbmdDistrictPageUrl(district) {
     haggerston: "shoreditch",
     "hatfield and welwyn": "hatfield",
     "hayfield and glossop": "hayfield",
+    heckington: "sleaford",
+    "helmsley and kirkbymoorside": "helmsley",
     "hemel himpsted": "hemel hempstead", // transcription error?
     "hereford and dore": "hereford",
     "houghton le spring": "houghton-le-spring",
     "highworth and swindon": "highworth",
     "isle of thanet": "thanet",
     "isle of w": "isle of wight", // transcription error?
+    "islington east": "islington",
+    "islington north": "islington",
+    "islington south": "islington",
+    "islington south east": "islington",
+    "islington south west": "islington",
+    "islington west": "islington",
     kemington: "kensington", // transcription error?
     "kensington paddington and fulham": "kensington",
     "kingston on thames": "kingston", // note that "kingston upon thames" is a valid later district (we may need a date check)
     knaresbro: "knaresborough",
+    "lady wood birmingham in the county of warwick": "birmingham",
+    "leek and longnor": "leek",
     "lexden and winstree": "lexden",
     "lewes chailey and westfirle": "lewes",
     "lewes chailey westfirle and newhaven": "lewes",
     "lewes chailey westfirle and new haven": "lewes", // transcription error?
     "lewes chailey westfirld and newhaven": "lewes", // transcription error?
     "lewes chinley westfirle and newhaven": "lewes", // transcription error?
+    llanewst: "llanwrst", // transcription error?
     llangadock: "llandovery",
     "loddon and clavering": "loddon",
     "manchester and prestwich": "manchester",
     "manchester and prestwick": "manchester", // transcription error?
     "matlock bakewell and tideswell": "matlock",
     "mitford and launditch": "mitford",
+    "mortlake in the county of surrey": "richmond1",
+    "moulton in the county of northampton": "kettering",
     "mutford and lothingland": "mutford",
+    mynyddslwyn: "newport2",
+    mynyddyslwyn: "newport2", // typo
     "nantmel and rhayader": "rhayader",
     "rhayader and nantinel": "rhayader", // transcription error?
     "neath port talbot": "neath-port-talbot", // should be "neath" before 1996 (e.g. Walters-9901)
     "newcastle on tyne": "newcastle upon tyne",
     "newcastle on tyne and northumberland": "newcastle upon tyne",
     "newcastle emlyn": "newcastle in emlyn",
+    "newport pagnett": "newport pagnell", // transcription error?
     "newport salop": "newport1",
     "newport salop and stafford": "newport1",
     "newport salop and staffordshire": "newport1",
@@ -126,6 +163,7 @@ function getUkbmdDistrictPageUrl(district) {
     "newport mon": "newport2",
     "newtown and llanidloes": "newtown",
     norhamshire: "northamptonshire",
+    pontepact: "pontefract",
     "pont y pridd": "pontypridd",
     "presteigne kington": "presteigne",
     "presteigne and kington": "presteigne",
@@ -144,22 +182,28 @@ function getUkbmdDistrictPageUrl(district) {
     "royston and buntingford": "royston",
     "royston buntingford": "royston",
     scarboro: "scarborough",
+    scarisbrick: "ormskirk", // was never a district, just part of one
     "scilly isles": "scilly",
     "scilly islands": "scilly",
     "st agnes in the county of cornwall": "truro",
     "st aubyn in the county of devon": "stoke damerel", // was never a district, just part of one
+    "st augustine in the city and county of bristol": "bristol", // was never a district, just part of one
     "st columb major": "st columb",
     "st george the martyr southwark": "st george southwark",
+    "st george the martyr southwack": "st george southwark", // typo
     "st giles and st george": "st giles",
     "st giles in the fields and st george bloomsbury": "st giles",
+    "st giles in the fields of st george bloomsbury": "st giles",
     "st just in penwith": "penzance",
     "st luke chelsea": "chelsea",
     "st mary carlisle": "carlisle",
+    "st mary magdalen bermondsey": "bermondsey",
     "st mary magdalen bermondsey surrey": "bermondsey",
     "st mary newington": "newington",
     "st mary newington surrey": "newington",
     "st james clerkenwell": "clerkenwell",
     "st olave": "st olave southwark",
+    "st olaves": "st olave southwark",
     "st olaves union southwark": "st olave southwark",
     "st saviour london": "st saviour southwark",
     "st saviours london": "st saviour southwark",
@@ -170,6 +214,7 @@ function getUkbmdDistrictPageUrl(district) {
     "st saviour": "st saviour southwark",
     "st thomas union devon": "st thomas",
     stalbridge: "north dorset",
+    "stannon county of cumberland": "carlisle", // typo, stanwix?
     "stockton and ledgefield": "stockton", // typo
     "stockton and sedgefield": "stockton",
     stonebridge: "stourbridge", // typo
@@ -182,6 +227,7 @@ function getUkbmdDistrictPageUrl(district) {
     "tunstd happg": "tunstead",
     "tunstd and happg": "tunstead",
     "tunstead and happing": "tunstead",
+    "tynemouth union northumberland": "tynemouth",
     "upton upon severn": "upton on severn",
     "vale of glamorgan": "vale-of-glamorgan",
     "wandsworth and clapham": "wandsworth",
@@ -195,6 +241,7 @@ function getUkbmdDistrictPageUrl(district) {
     "west bromwich north east": "west bromwich",
     "west croydon": "croydon",
     "west derby and toxteth park": "west derby",
+    "west derby of toxteth park": "west derby",
     "westderby and toxteth park": "west derby", // transcription error?
     "westbury and whorwellsdown": "westbury",
     "westminster st james": "st james westminster",
@@ -205,8 +252,12 @@ function getUkbmdDistrictPageUrl(district) {
     "wigton cumberland": "wigton",
     "wimborne and cranborne": "wimborne",
     "winchester and hursley": "winchester",
+    "wolstanton and barslem": "wolstanton", // typo in transcription?
     "wolstanton and burslem": "wolstanton",
+    "wolstanton and burslew": "wolstanton", // typo in transcription?
     "wolverhampton and seisdon": "wolverhampton",
+    "wolverhamton and seisdon": "wolverhampton", // typo in transcription?
+    woodchurch: "wirral",
     "wortley and penistone": "wortley",
     "yarmouth great yarmouth": "yarmouth",
     "great yarmouth great yarmouth": "yarmouth",
@@ -224,6 +275,7 @@ function getUkbmdDistrictPageUrl(district) {
   };
 
   const ambiguousNames = [
+    "newcastle", // could be in staffs or northumberland
     "newport", // could be in shrops or monmouthshire
     "wellington", // could be in shrops or somerset
   ];
@@ -296,9 +348,11 @@ function getUkbmdDistrictPageUrl(district) {
     " hertferdshore", // transcription error
     " kent",
     " lancashire",
+    " leicestershire",
     " london",
     " middlesex",
     " norfolk",
+    " northumberland",
     " notts",
     " salop",
     " shropshire",
@@ -347,12 +401,13 @@ function getUkbmdDistrictPageUrl(district) {
   districtName = districtName.replace("saint", "st");
   // it is a little odd that we remove "-" below but then add it back for things like chapel-en-le-frith
   districtName = districtName.replace(/\s*[\,\.\(\)\-\_\=]+\s*/g, " ").trim();
-  districtName = districtName.replace(/[\']/g, "").trim();
+  districtName = districtName.replace(/[\'\"]/g, "").trim();
   districtName = districtName.replace(/\s+\&\s+/g, " and ").trim();
   districtName = districtName.replace(/^district of the\s+/, "").trim();
   districtName = districtName.replace(/^district of\s+/, "").trim();
   districtName = districtName.replace(/^of\s+/, "").trim();
   districtName = districtName.replace(/\s+poor\s+law\s+union$/, "").trim();
+  districtName = districtName.replace(/union$/, "").trim(); // example BEDFORDUNION
   districtName = districtName.replace(/\s+union$/, "").trim();
   districtName = districtName.replace(/\s+district$/, "").trim();
   districtName = districtName.replace(/\s+hundred$/, "").trim();
@@ -417,6 +472,8 @@ function getUkbmdDistrictPageUrl(district) {
   else if (districtName.indexOf("counties") != -1) {
     districtName = districtName.replace(/^of /, "");
     districtName = districtName.replace(/ in the counties of.*/, "");
+    districtName = districtName.replace(/ on the counties of.*/, ""); // maybe a typo
+    districtName = districtName.replace(/ of the counties of.*/, ""); // maybe a typo
     districtName = districtName.replace(/ counties of.*/, "");
     districtName = districtName.trim();
   }
@@ -439,6 +496,29 @@ function getUkbmdDistrictPageUrl(district) {
   }
 
   districtName = encodeURI(districtName);
+
+  if (!isValidUkbmdDistrictName(districtName)) {
+    let invalidLink = true;
+
+    // try some rules that might find the correct name
+
+    // sometimes the name includes the old and new district names.
+    // e.g.: GREAT BOUGHTON, NOW CHESTER
+    if (districtName.includes("%20now%20")) {
+      let newDistrictName = districtName.replace(/.*%20now%20(.+)$/, "$1");
+      if (newDistrictName && newDistrictName != districtName) {
+        if (isValidUkbmdDistrictName(newDistrictName)) {
+          districtName = newDistrictName;
+          invalidLink = false;
+        }
+      }
+    }
+
+    if (invalidLink) {
+      return "";
+    }
+  }
+
   const url = "https://www.ukbmd.org.uk/reg/districts/" + districtName + ".html";
   return url;
 }
