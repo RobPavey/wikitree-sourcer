@@ -160,17 +160,17 @@ function getAutoYearsToAddOrSubtract(isAdd, qualifier, type, dateInput) {
   }
 
   switch (qualifier) {
-    case qualifier.NONE:
+    case dateQualifiers.NONE:
       break;
-    case qualifier.EXACT:
+    case dateQualifiers.EXACT:
       break;
-    case qualifier.ABOUT:
+    case dateQualifiers.ABOUT:
       yearAdjustment += isAdd ? 5 : -5;
       break;
-    case qualifier.BEFORE:
+    case dateQualifiers.BEFORE:
       yearAdjustment += isAdd ? 0 : -5;
       break;
-    case qualifier.AFTER:
+    case dateQualifiers.AFTER:
       yearAdjustment += isAdd ? 5 : 0;
       break;
   }
