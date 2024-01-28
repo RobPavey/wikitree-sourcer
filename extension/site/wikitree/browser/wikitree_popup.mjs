@@ -159,9 +159,11 @@ function waitForAPIResponse() {
 async function updateGeneralizedDataUsingApiResponse(data) {
   function getApiPersonFromGetRelatives(wikiId) {
     let items = apiResponse[0].items;
-    for (let item of items) {
-      if (item.key == wikiId) {
-        return item.person;
+    if (items && items.length) {
+      for (let item of items) {
+        if (item.key == wikiId) {
+          return item.person;
+        }
       }
     }
   }
