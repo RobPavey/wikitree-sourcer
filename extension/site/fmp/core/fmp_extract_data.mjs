@@ -841,8 +841,14 @@ function extractStyle1TranscriptionData(document, result) {
     result.collection = "";
     for (let divNode of childDivNodeList) {
       let text = divNode.textContent;
-      if (text) {
-        result.collection += cleanText(text);
+      if (text && !result.collection) {
+        // Sometimes there are extra div elements with text like
+        // "Actions for this transcript".
+        // This only seems to happen in narrow browser windows (seen on Firefox and Vivaldi).
+        const lcText = text.toLowerCase();
+        if (!lcText.includes("actions for")) {
+          result.collection = cleanText(text);
+        }
       }
     }
   }
