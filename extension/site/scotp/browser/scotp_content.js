@@ -687,21 +687,24 @@ function doLegacySearch() {
 async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
 
-  if (document.URL.includes("search_type=people")) {
-    let isLegacy = false;
-    if (document.URL.includes("/record-results?")) {
-      // an old saved search URL, just in case they start working again check for 404 error
-      const errorBlock = document.getElementById("block-404pagenotfoundblock");
-      if (errorBlock) {
+  if (document.URL) {
+    let lcUrl = document.URL.toLowerCase();
+    if (lcUrl.includes("search_type=people")) {
+      let isLegacy = false;
+      if (lcUrl.includes("/record-results?")) {
+        // an old saved search URL, just in case they start working again check for 404 error
+        const errorBlock = document.getElementById("block-404pagenotfoundblock");
+        if (errorBlock) {
+          isLegacy = true;
+        }
+      } else if (lcUrl.includes("/advanced-search?")) {
+        // a modified old search URL
         isLegacy = true;
       }
-    } else if (document.URL.includes("/advanced-search?")) {
-      // a modified old search URL
-      isLegacy = true;
-    }
-    if (isLegacy) {
-      doLegacySearch();
-      return;
+      if (isLegacy) {
+        doLegacySearch();
+        return;
+      }
     }
   }
 
