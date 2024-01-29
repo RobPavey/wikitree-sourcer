@@ -26,8 +26,10 @@ import { options } from "/base/browser/options/options_loader.mjs";
 import { RC } from "/base/core/record_collections.mjs";
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 import { clearAsyncResultCache } from "/base/core/async_result_cache.mjs";
-import { isSafari, isFirefox } from "/base/browser/common/browser_check.mjs";
+import { isSafari } from "/base/browser/common/browser_check.mjs";
 import { openOrShowOptionsPage } from "/base/browser/common/browser_compat.mjs";
+
+import { clearCitation } from "/base/browser/popup/popup_citation.mjs";
 
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
@@ -1013,6 +1015,8 @@ function setupBuildCitationSubMenu(
   regeneralizeFunction,
   userInputFunction
 ) {
+  clearCitation();
+
   if (userInputFunction) {
     setupBuildCitationSubMenuForRequestedUserInput(
       data,
