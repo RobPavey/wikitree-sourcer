@@ -795,6 +795,11 @@ class NarrativeBuilder {
       // there could be two different dates, e.g. one for birth and one for registration
       if (typeString == "birth") {
         let birthDateString = this.eventGd.inferBirthDate();
+        if (gd.role && gd.role != Role.Primary) {
+          if (gd.primaryPerson && gd.primaryPerson.birthDate) {
+            birthDateString = gd.primaryPerson.birthDate.getDateString();
+          }
+        }
         if (birthDateString != dateString) {
           isDateTheRegistrationDate = true;
           hasAdditionalDate = true;
@@ -818,8 +823,18 @@ class NarrativeBuilder {
         dateString = this.eventGd.marriageDate;
         year = dateObj.getYearString();
       } else if (typeString == "birth") {
-        dateObj = this.eventGd.inferBirthDateObj();
-        dateString = this.eventGd.inferBirthDate();
+        if (gd.role && gd.role != Role.Primary) {
+          if (gd.primaryPerson && gd.primaryPerson.birthDate) {
+            dateObj = gd.primaryPerson.birthDate;
+          }
+        } else {
+          dateObj = this.eventGd.inferBirthDateObj();
+        }
+        if (dateObj) {
+          dateString = dateObj.getDateString();
+        } else {
+          dateString = this.eventGd.inferBirthDate();
+        }
       } else if (typeString == "death") {
         dateObj = this.eventGd.inferDeathDateObj();
         dateString = this.eventGd.inferDeathDate();

@@ -1,0 +1,42 @@
+{
+  "recordData": {
+    "Name": "Peter Blyth Crombie",
+    "Birth Date": "1880",
+    "Age": "41",
+    "Source Certificate Nbr": "62112",
+    "Vis Status": "VISIBLE",
+    "System Of Record": "SLS"
+  },
+  "eventPlaceOriginal": "Cook, Illinois, United States",
+  "eventPlace": "Cook, Illinois, United States",
+  "fullName": "Peter Blyth Crombie",
+  "givenName": "Peter Blyth",
+  "surname": "Crombie",
+  "gender": "male",
+  "birthDateOriginal": "1880",
+  "age": "41",
+  "relatedPersonFactType": "BirthRegistration",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Catherine Crombie",
+  "relatedPersonGivenName": "Catherine",
+  "relatedPersonSurname": "Crombie",
+  "relatedPersonGender": "female",
+  "relatedPersonBirthDate": "12 May 1921",
+  "relatedPersonBirthYear": "1921",
+  "referenceData": {
+    "filmNumber": "1379094",
+    "indexingBatchNumber": "C05571-7",
+    "packetLetter": "A",
+    "digitalFilmNumber": "004441046_004_M9ZL-P5L",
+    "imageNumber": "294"
+  },
+  "extData": "{\"FS_COLLECTION_ID\":\"1462519\",\"FS_FOLDER\":\"004441046\"}",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MZ8Z-ZG1",
+  "collectionTitle": "Illinois, Cook County, Birth Certificates, 1871-1949",
+  "fsCollectionId": "1462519",
+  "citation": "\"Illinois, Cook County, Birth Certificates, 1871-1949\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:N77T-TL9 : Wed Nov 15 09:04:03 UTC 2023), Entry for Catherine Crombie and Peter Blyth Crombie.",
+  "sourceTitleForPerson": "Peter Blyth Crombie, \"Illinois, Cook County, Birth Certificates, 1871-1949\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:N77T-TLS",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:S3HT-61DS-5H7",
+  "pageType": "record"
+}

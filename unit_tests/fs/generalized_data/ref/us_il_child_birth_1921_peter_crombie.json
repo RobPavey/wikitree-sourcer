@@ -1,0 +1,35 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": {
+    "name": {
+      "name": "Catherine Crombie",
+      "lastName": "Crombie",
+      "forenames": "Catherine"
+    },
+    "gender": "female",
+    "birthDate": {
+      "dateString": "12 May 1921",
+      "yearString": "1921"
+    }
+  },
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Peter Blyth Crombie",
+    "lastName": "Crombie",
+    "forenames": "Peter Blyth"
+  },
+  "birthDate": {
+    "dateString": "1880"
+  },
+  "eventPlace": {
+    "placeString": "Cook, Illinois, United States"
+  },
+  "ageAtEvent": "41",
+  "collectionData": {
+    "id": "1462519"
+  },
+  "hasValidData": true
+}

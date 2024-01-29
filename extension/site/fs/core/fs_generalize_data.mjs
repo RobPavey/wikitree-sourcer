@@ -1047,7 +1047,11 @@ function generalizeData(input) {
       let deathYear = ed.relatedPersonDeathYear;
       result.setPrimaryPersonDeathDate(deathDate);
       result.setPrimaryPersonDeathYear(deathYear);
-    } else if (result.recordType == RT.Baptism) {
+    } else if (
+      result.recordType == RT.Baptism ||
+      result.recordType == RT.BirthRegistration ||
+      result.recordType == RT.Birth
+    ) {
       let birthDate = selectDate(ed.relatedPersonBirthDate, ed.relatedPersonBirthDateOriginal);
       let birthYear = ed.relatedPersonBirthYear;
       result.setPrimaryPersonBirthDate(birthDate);

@@ -321,6 +321,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:N7S6-GJ7",
   },
   {
+    caseName: "us_il_child_birth_1921_peter_crombie",
+    url: "https://www.familysearch.org/ark:/61903/1:1:N77T-TLS",
+  },
+  {
     caseName: "us_in_child_marriage_1937_sally_knight",
     url: "https://www.familysearch.org/ark:/61903/1:1:27K9-9K9",
   },
