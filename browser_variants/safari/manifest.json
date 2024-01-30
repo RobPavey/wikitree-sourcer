@@ -33,25 +33,25 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.wikitree.com/*"],
+      "matches": ["*://*.wikitree.com/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/wikitree/browser/wikitree_content.js"]
     },
     {
       "matches": [
-        "https://*.ancestry.com/*",
-        "https://*.ancestry.co.uk/*",
-        "https://*.ancestry.ca/*",
-        "https://*.ancestry.com.au/*",
-        "https://*.ancestry.de/*",
-        "https://*.ancestry.it/*",
-        "https://*.ancestry.fr/*",
-        "https://*.ancestry.se/*",
-        "https://*.ancestry.mx/*",
-        "https://*.ancestrylibrary.com/*",
-        "https://*.ancestrylibraryedition.co.uk/*",
-        "https://*.ancestrylibrary.ca/*",
-        "https://*.ancestrylibrary.com.au/*"
+        "*://*.ancestry.com/*",
+        "*://*.ancestry.co.uk/*",
+        "*://*.ancestry.ca/*",
+        "*://*.ancestry.com.au/*",
+        "*://*.ancestry.de/*",
+        "*://*.ancestry.it/*",
+        "*://*.ancestry.fr/*",
+        "*://*.ancestry.se/*",
+        "*://*.ancestry.mx/*",
+        "*://*.ancestrylibrary.com/*",
+        "*://*.ancestrylibraryedition.co.uk/*",
+        "*://*.ancestrylibrary.ca/*",
+        "*://*.ancestrylibrary.com.au/*"
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
@@ -98,22 +98,22 @@
       "js": ["base/browser/content/content_common.js", "site/fg/browser/fg_content.js"]
     },
     {
-      "matches": ["https://www.familysearch.org/*"],
+      "matches": ["*://www.familysearch.org/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/fs/browser/fs_content.js"]
     },
     {
-      "matches": ["https://www.freebmd.org.uk/*"],
+      "matches": ["*://www.freebmd.org.uk/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/freebmd/browser/freebmd_content.js"]
     },
     {
-      "matches": ["https://www.freecen.org.uk/*"],
+      "matches": ["*://www.freecen.org.uk/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/freecen/browser/freecen_content.js"]
     },
     {
-      "matches": ["https://www.freereg.org.uk/*"],
+      "matches": ["*://www.freereg.org.uk/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/freereg/browser/freereg_content.js"]
     },
@@ -144,7 +144,7 @@
       "js": ["site/gbooks/browser/gbooks_content_iframe.js"]
     },
     {
-      "matches": ["https://www.gro.gov.uk/gro/content/certificates/*"],
+      "matches": ["*://www.gro.gov.uk/gro/content/certificates/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
     },
