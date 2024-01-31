@@ -105,6 +105,34 @@ async function doFetch() {
         }
       }
     }
+  } else if (
+    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w\w\w\w\-\w\w\w\w?/.test(
+      fetchUrl
+    )
+  ) {
+    // This is also an image with a person details selected - newer form
+    // https://www.familysearch.org/ark:/61903/3:1:3QS7-L9S9-RGHR?view=index&action=view&personArk=%2Fark%3A%2F61903%2F1%3A1%3AQ2Q8-11ZZ
+    let newUrl = fetchUrl.replace(
+      /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w\w?).*$/,
+      "https://www.familysearch.org/ark:/$1/1:1:$2"
+    );
+    if (newUrl && newUrl != fetchUrl) {
+      fetchUrl = newUrl;
+
+      // we have the URL for the person record in the URL, But the user can change to a different person without the URL
+      // changing.
+      let selectedPersonLinkNode = document.querySelector(
+        "#root > div > div > div > div > div:nth-child(1) > div > div > div > div.spacerCss_sqhrtfm > aside > div > div > div:nth-child(4) > aside > div > div > div.contentWrapper_cfjslsq > div > div.contentCss_czb43rf > div > div > div.bleedCss_b1cy5i06 > div > div > div > div > h2 > span > a"
+      );
+      if (selectedPersonLinkNode) {
+        let link = selectedPersonLinkNode.getAttribute("href");
+        if (link) {
+          if (/\/ark\:\/\d+\/1\:1\:\w\w\w\w\-\w\w\w/.test(link)) {
+            fetchUrl = "https://www.familysearch.org" + link;
+          }
+        }
+      }
+    }
   }
 
   // This seems like a recent change on FamilySearch (noticed on 25 May 2022).
@@ -113,7 +141,7 @@ async function doFetch() {
     fetchUrl = fetchUrl.replace("www.familysearch.org/search/ark:/", "www.familysearch.org/ark:/");
   }
 
-  //console.log('doFetch, fetchUrl is: ' + fetchUrl);
+  //console.log("doFetch, fetchUrl is: " + fetchUrl);
 
   let fetchOptionsHeaders = {
     accept: "application/x-gedcomx-v1+json, application/json",
@@ -136,7 +164,7 @@ async function doFetch() {
   try {
     let response = await fetch(fetchUrl, fetchOptions);
 
-    //console.log('doFetch, response.status is: ' + response.status);
+    //console.log("doFetch, response.status is: " + response.status);
 
     if (response.status !== 200) {
       console.log("Looks like there was a problem. Status Code: " + response.status);
@@ -284,6 +312,14 @@ function shouldUseFetch() {
   ) {
     // This is an image with a person details selected
     // https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9MR-NFZL?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVTHY-ZB3&action=view&groupId=TH-1971-27766-10578-99
+    useFetch = true;
+  } else if (
+    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w+\-\w+.*$/.test(
+      location.href
+    )
+  ) {
+    // This is also an image with a person details selected - newer form
+    // https://www.familysearch.org/ark:/61903/3:1:3QS7-L9S9-RGHR?view=index&action=view&personArk=%2Fark%3A%2F61903%2F1%3A1%3AQ2Q8-11ZZ
     useFetch = true;
   } else {
     let main = document.querySelector("#main");
