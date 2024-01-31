@@ -454,15 +454,18 @@ function buildCoreCitation(ed, gd, builder) {
   if ((ed.fsImageUrl || ed.externalImageUrl) && ed.externalImageUrl != "bad") {
     let text = "";
     if (ed.externalImageUrl) {
-      if (builder.options.citation_fs_includeExternalImageLink) {
-        if (ed.externalImageUrl.includes("findmypast")) {
-          text += "[" + ed.externalImageUrl + " FindMyPast Image]";
-          let subReqString = builder.getSubReqString(builder.options.citation_fs_subscriptionRequired);
-          if (subReqString) {
-            text += " (" + subReqString + ")";
+      if (false) {
+        // decided to remove external links 31 Jan 2024 because they can make bad links
+        if (builder.options.citation_fs_includeExternalImageLink) {
+          if (ed.externalImageUrl.includes("findmypast")) {
+            text += "[" + ed.externalImageUrl + " FindMyPast Image]";
+            let subReqString = builder.getSubReqString(builder.options.citation_fs_subscriptionRequired);
+            if (subReqString) {
+              text += " (" + subReqString + ")";
+            }
+          } else {
+            text += "[" + ed.externalImageUrl + " External Image]";
           }
-        } else {
-          text += "[" + ed.externalImageUrl + " External Image]";
         }
       }
     } else {

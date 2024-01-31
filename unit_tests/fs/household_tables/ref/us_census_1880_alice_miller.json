@@ -1,5 +1,8 @@
 {
   "std": {
     "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Race || Age || Status || Relation || Occupation || Birth Place\n|-\n| William Miller || M || White || 31 || Married || Head || Farmer || Indiana\n|-\n| '''Alice Miller''' || '''F''' || '''White''' || '''25''' || '''Married''' || '''Wife''' || '''Keeping House''' || '''Indiana'''\n|-\n| Alonzo Miller || M || White || 8 || Single || Son ||  || Indiana\n|-\n| Charley Miller || M || White || 6 || Single || Son ||  || Indiana\n|-\n| James Miller || M || White || 4 || Single || Son ||  || Indiana\n|-\n| Arnold Miller || M || White || 1 || Single || Son ||  || Indiana\n|}"
+  },
+  "no_race": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Age || Status || Relation || Occupation || Birth Place\n|-\n| William Miller || M || 31 || Married || Head || Farmer || Indiana\n|-\n| '''Alice Miller''' || '''F''' || '''25''' || '''Married''' || '''Wife''' || '''Keeping House''' || '''Indiana'''\n|-\n| Alonzo Miller || M || 8 || Single || Son ||  || Indiana\n|-\n| Charley Miller || M || 6 || Single || Son ||  || Indiana\n|-\n| James Miller || M || 4 || Single || Son ||  || Indiana\n|-\n| Arnold Miller || M || 1 || Single || Son ||  || Indiana\n|}"
   }
 }
