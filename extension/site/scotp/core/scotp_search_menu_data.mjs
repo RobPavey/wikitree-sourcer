@@ -367,7 +367,7 @@ const ScotpData = {
       }
     }
 
-    if (eventClass == "marriage" && parameters.spouseIndex != -1) {
+    if (eventClass == "marriage" && parameters.spouseIndex != -1 && generalizedData.spouses) {
       let spouse = generalizedData.spouses[parameters.spouseIndex];
 
       if (spouse && spouse.marriageDate) {
