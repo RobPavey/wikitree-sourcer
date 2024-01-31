@@ -45,6 +45,11 @@ class TableBuilder {
         return false;
       }
     }
+
+    if (fieldName == "race") {
+      return this.options.table_general_includeRace;
+    }
+
     return true;
   }
 

@@ -935,6 +935,12 @@ const tableGeneralOptionsGroup = {
       ],
       defaultValue: "table",
     },
+    {
+      optionName: "includeRace",
+      type: "checkbox",
+      label: "Include race for person if known",
+      defaultValue: true,
+    },
   ],
 };
 

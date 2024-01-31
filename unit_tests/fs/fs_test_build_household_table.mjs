@@ -138,6 +138,12 @@ const regressionData = [
   {
     // https://www.familysearch.org/ark:/61903/1:1:MHSV-QLY
     caseName: "us_census_1880_alice_miller",
+    optionVariants: [
+      {
+        variantName: "no_race",
+        optionOverrides: { table_general_includeRace: false },
+      },
+    ],
   },
   {
     // https://www.familysearch.org/ark:/61903/1:1:VB3M-FG7
