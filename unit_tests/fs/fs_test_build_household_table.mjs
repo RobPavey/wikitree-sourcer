@@ -148,6 +148,10 @@ const regressionData = [
     caseName: "us_census_1940_william_huffstetler",
   },
   {
+    // https://www.familysearch.org/ark:/61903/1:1:6XPH-GLS7
+    caseName: "us_census_1950_ruth_chambers",
+  },
+  {
     // https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z
     caseName: "us_census_lds_1940_dora_remington",
   },

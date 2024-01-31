@@ -1,0 +1,101 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Ruth E Chambers",
+    "lastName": "Chambers",
+    "forenames": "Ruth E"
+  },
+  "birthDate": {
+    "dateString": "1905",
+    "yearString": "1905"
+  },
+  "birthPlace": {
+    "placeString": "Louisiana"
+  },
+  "eventDate": {
+    "dateString": "10 April 1950"
+  },
+  "eventPlace": {
+    "placeString": "Houston, Harris, Texas, United States"
+  },
+  "ageAtEvent": "45",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Dunbar N Chambers",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "46",
+      "birthYear": "1904",
+      "occupation": "President",
+      "birthPlace": "Mississippi"
+    },
+    {
+      "name": "Ruth E Chambers",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "45",
+      "birthYear": "1905",
+      "birthPlace": "Louisiana",
+      "isSelected": true
+    },
+    {
+      "name": "Erminie C Chambers",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "18",
+      "birthYear": "1932",
+      "birthPlace": "Arkansas"
+    },
+    {
+      "name": "Dunbar N Jr Chambers, Jr",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "15",
+      "birthYear": "1935",
+      "birthPlace": "Louisiana"
+    },
+    {
+      "name": "John P Chambers",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "7",
+      "birthYear": "1943",
+      "birthPlace": "Louisiana"
+    }
+  ],
+  "maritalStatus": "married",
+  "relationshipToHead": "wife",
+  "race": "White",
+  "spouses": [
+    {
+      "name": {
+        "name": "Dunbar N Chambers"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "4464515",
+    "page": "15"
+  },
+  "hasValidData": true
+}

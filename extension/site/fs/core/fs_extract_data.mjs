@@ -3242,7 +3242,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
           }
         }
       } else {
-        // no name, this happes for closed records (e.g. england_census_1939_ellen_day)
+        // no name, this happens for closed records (e.g. england_census_1939_ellen_day)
         // but also for slaves (e.g. us_va_census_slaves_1850_jesse_jeter)
         if (!person.gender) {
           member.isClosed = true;
@@ -3423,7 +3423,42 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
           return sheetDiff;
         });
       } else if (hasLineNumbers) {
-        // sort by line number
+        // sort by line number unless it looks like they go over a page in which case try to
+        // adjust the line numbers so it sorts correctly
+        let lowestLineNumber = 1000;
+        let highestLineNumber = 0;
+        for (let member of result.household.members) {
+          if (member.lineNumber < lowestLineNumber) {
+            lowestLineNumber = member.lineNumber;
+          }
+          if (member.lineNumber > highestLineNumber) {
+            highestLineNumber = member.lineNumber;
+          }
+        }
+        if (lowestLineNumber == 1 && highestLineNumber > result.household.members.length + 2) {
+          // it looks like there is a page break, we can sort it out so long as the household length
+          // is less than the number of lines on a page. Assume highestLineNumber is the number on a page.
+          // We need to find the break point.
+          let highestIndexOnSecondPage = result.household.members.length;
+          for (let index = 1; index < result.household.members.length; index++) {
+            let lineNumberUsed = false;
+            for (let member of result.household.members) {
+              if (member.lineNumber == index) {
+                lineNumberUsed = true;
+                break;
+              }
+            }
+            if (!lineNumberUsed) {
+              highestIndexOnSecondPage = index;
+              break;
+            }
+          }
+          for (let member of result.household.members) {
+            if (member.lineNumber <= highestIndexOnSecondPage) {
+              member.lineNumber += highestLineNumber;
+            }
+          }
+        }
         result.household.members.sort((a, b) => (Number(a.lineNumber) > Number(b.lineNumber) ? 1 : -1));
       }
     }

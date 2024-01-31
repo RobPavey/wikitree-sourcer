@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Sex || Race || Age || Status || Relation || Occupation || Birth Place\n|-\n| Dunbar N Chambers || M ||  || 46 || Married || Head || President || Mississippi\n|-\n| '''Ruth E Chambers''' || '''F''' ||  || '''45''' || '''Married''' || '''Wife''' ||  || '''Louisiana'''\n|-\n| Erminie C Chambers || F ||  || 18 || Never married || Daughter ||  || Arkansas\n|-\n| Dunbar N Jr Chambers, Jr || M ||  || 15 || Never married || Son ||  || Louisiana\n|-\n| John P Chambers || M ||  || 7 || Never married || Son ||  || Louisiana\n|}"
+  }
+}

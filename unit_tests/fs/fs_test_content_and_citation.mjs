@@ -293,6 +293,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:6XVR-FRK3",
   },
   {
+    caseName: "us_census_1950_ruth_chambers",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6XPH-GLS7",
+  },
+  {
     caseName: "us_census_1950_ruth_pearson",
     url: "https://www.familysearch.org/ark:/61903/1:1:6X12-6VV7",
   },
