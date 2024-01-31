@@ -1569,12 +1569,12 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     let fatherName = getCleanRecordDataValue(ed, "Father");
-    if (fatherName) {
+    if (fatherName && fatherName.toLowerCase() != "n/a" && fatherName.toLowerCase() != "unknown") {
       let father = result.addFather();
       father.name.name = fatherName;
     }
     let motherName = getCleanRecordDataValue(ed, "Mother");
-    if (motherName) {
+    if (motherName && motherName.toLowerCase() != "n/a" && motherName.toLowerCase() != "unknown") {
       let mother = result.addMother();
       mother.name.name = motherName;
     }
