@@ -31,7 +31,7 @@ import {
   DateObj,
 } from "../../../base/core/generalize_data_utils.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
-import { RT, Role } from "../../../base/core/record_type.mjs";
+import { RT, RecordSubtype, Role } from "../../../base/core/record_type.mjs";
 
 function cleanName(name) {
   // currently all cleaning we need is done in generalize_data_utils
@@ -1455,6 +1455,22 @@ function generalizeDataGivenRecordType(ed, result) {
 
       if (result.personGender == "female") {
         result.lastNameAtDeath = name.inferLastName();
+      }
+    }
+
+    // check if the record subtype shoul be banns
+    if (ed.recordData && ed.recordData["Record Type"]) {
+      let ancestryRecordType = ed.recordData["Record Type"];
+      if (ancestryRecordType.includes("Marriage Banns") || ancestryRecordType.includes("Marriage Bann")) {
+        result.recordSubtype = RecordSubtype.Banns;
+      }
+    }
+    if (!result.recordSubtype) {
+      let marriageBannsDate = getCleanValueForRecordDataList(ed, ["Marriage Banns Date"], "date");
+      let marriageBannsPlace = getCleanValueForRecordDataList(ed, ["Marriage Banns Place"]);
+
+      if (marriageBannsDate || marriageBannsPlace) {
+        result.recordSubtype = RecordSubtype.Banns;
       }
     }
   } else if (result.recordType == RT.MarriageRegistration) {
