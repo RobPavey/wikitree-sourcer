@@ -1,0 +1,48 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Emmeline May Brain",
+    "lastName": "Brain",
+    "forenames": "Emmeline May"
+  },
+  "birthDate": {
+    "dateString": "27 APR 1887"
+  },
+  "birthPlace": {
+    "placeString": "Wilnecote, Warwickshire, England"
+  },
+  "deathDate": {
+    "dateString": "24 APR 1966"
+  },
+  "deathPlace": {
+    "placeString": "Scotland"
+  },
+  "personGender": "female",
+  "spouses": [
+    {
+      "name": {
+        "name": "Arthur Eli Pavey"
+      },
+      "marriageDate": {
+        "dateString": "April 1913"
+      },
+      "marriagePlace": {
+        "placeString": "Tamworth, Staffordshire"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Robert Brain"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Elizabeth Kimberlin"
+      }
+    }
+  },
+  "hasValidData": true
+}

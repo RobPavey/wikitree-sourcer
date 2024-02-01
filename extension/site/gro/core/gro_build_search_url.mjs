@@ -28,7 +28,7 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { DataCache } from "../../../base/core/data_cache.mjs";
 
 function getPersonGenderFromGeneralizedDataOrDataCache(generalizedData, dataCache, isBirth) {
-  let personGender = generalizedData.personGender;
+  let personGender = generalizedData.inferPersonGender();
 
   if (!personGender) {
     // search the data cache for the person

@@ -473,8 +473,8 @@ function getSlaveScheduleString(gd, options) {
       if (gd.typeSpecificData.wasFugitive) {
         dataString += " fugitive";
       }
-      if (gd.personGender) {
-        dataString += " " + gd.personGender;
+      if (gd.inferPersonGender()) {
+        dataString += " " + gd.inferPersonGender();
       }
       if (gd.typeSpecificData.race) {
         dataString += " " + gd.typeSpecificData.race.toLowerCase();
@@ -556,9 +556,9 @@ function getUkRegistrationString(gd, options, type) {
           motherName = gd.parents.mother.name.inferFullName();
         }
 
-        if (gd.personGender == "male") {
+        if (gd.inferPersonGender() == "male") {
           dataString += ", son of";
-        } else if (gd.personGender == "female") {
+        } else if (gd.inferPersonGender() == "female") {
           dataString += ", daughter of";
         } else {
           dataString += ", child of";
@@ -704,9 +704,9 @@ function getBirthRegistrationString(gd, options) {
         motherName = gd.parents.mother.name.inferFullName();
       }
 
-      if (gd.personGender == "male") {
+      if (gd.inferPersonGender() == "male") {
         dataString += ", son of";
-      } else if (gd.personGender == "female") {
+      } else if (gd.inferPersonGender() == "female") {
         dataString += ", daughter of";
       } else {
         dataString += ", child of";
@@ -855,9 +855,9 @@ function getBirthString(gd, options) {
 
     let parentNames = gd.inferParentNamesForDataString();
     if (parentNames.fatherName || parentNames.motherName) {
-      if (gd.personGender == "male") {
+      if (gd.inferPersonGender() == "male") {
         dataString += ", son of ";
-      } else if (gd.personGender == "female") {
+      } else if (gd.inferPersonGender() == "female") {
         dataString += ", daughter of ";
       } else {
         dataString += ", child of ";
@@ -912,9 +912,9 @@ function getDeathString(gd, options) {
 
   let parentNames = gd.inferParentNamesForDataString();
   if (parentNames.fatherName || parentNames.motherName) {
-    if (gd.personGender == "male") {
+    if (gd.inferPersonGender() == "male") {
       dataString += ", son of ";
-    } else if (gd.personGender == "female") {
+    } else if (gd.inferPersonGender() == "female") {
       dataString += ", daughter of ";
     } else {
       dataString += ", child of ";
@@ -937,9 +937,9 @@ function getDeathString(gd, options) {
       let spouseName = spouse.name.inferFullName();
       if (spouseName) {
         let relation = "spouse";
-        if (gd.personGender == "male") {
+        if (gd.inferPersonGender() == "male") {
           relation = "husband";
-        } else if (gd.personGender == "female") {
+        } else if (gd.inferPersonGender() == "female") {
           relation = "wife";
         }
         if (!dataString.endsWith(",")) {
@@ -996,9 +996,9 @@ function getBaptismString(gd, options) {
 
   let parentNames = gd.inferParentNamesForDataString();
   if (parentNames.fatherName || parentNames.motherName) {
-    if (gd.personGender == "male") {
+    if (gd.inferPersonGender() == "male") {
       dataString += ", son of ";
-    } else if (gd.personGender == "female") {
+    } else if (gd.inferPersonGender() == "female") {
       dataString += ", daughter of ";
     } else {
       dataString += ", child of ";
@@ -1126,9 +1126,9 @@ function getBurialString(gd, options) {
         motherName = gd.parents.mother.name.inferFullName();
       }
 
-      if (gd.personGender == "male") {
+      if (gd.inferPersonGender() == "male") {
         dataString += ", son of";
-      } else if (gd.personGender == "female") {
+      } else if (gd.inferPersonGender() == "female") {
         dataString += ", daughter of";
       } else {
         dataString += ", child of";

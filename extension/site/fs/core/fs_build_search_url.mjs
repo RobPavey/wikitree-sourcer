@@ -181,8 +181,8 @@ function buildSearchUrl(buildUrlInput) {
     parameters = buildUrlInput.searchParameters;
   }
 
-  if (gd.personGender && shouldAddSearchTerm(collection, "gender", true)) {
-    builder.addGender(gd.personGender);
+  if (gd.inferPersonGender() && shouldAddSearchTerm(collection, "gender", true)) {
+    builder.addGender(gd.inferPersonGender());
   }
 
   let forenames = gd.inferForenames();
@@ -264,7 +264,7 @@ function buildSearchUrl(buildUrlInput) {
         // if searching for a census record do not add the surname of the spouse
         // since, if it is a wife their last name will no be different
         let spouseLastName = spouse.name.inferLastName();
-        if (gd.personGender == "male") {
+        if (gd.inferPersonGender() == "male") {
           if (sameCollection) {
             if (gd.recordType == RT.Census) {
               spouseLastName = "";

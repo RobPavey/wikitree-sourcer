@@ -46,7 +46,7 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   builder.addGivenNames(gd.inferForenames());
-  builder.addGender(gd.personGender);
+  builder.addGender(gd.inferPersonGender());
 
   if (gd.sourceType == "record" && gd.recordType == RT.Census) {
     builder.addAge(gd.inferAgeAtEvent());

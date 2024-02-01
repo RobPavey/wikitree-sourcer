@@ -158,7 +158,7 @@ function buildSearchData(input) {
     fieldData["search_query_marital_status"] = maritalStatusCode;
   }
 
-  let sex = gd.personGender;
+  let sex = gd.inferPersonGender();
   if (sex && sex != "-") {
     fieldData["search_query_sex"] = sex.toUpperCase()[0];
   }

@@ -241,6 +241,7 @@ class NarrativeBuilder {
 
   getPersonNameOrPronounWithFlag(isMidSentence = false) {
     let gd = this.eventGd;
+    let personGender = this.personGender;
 
     let nameOption = this.getNameOrPronounOption();
     let result = { isValid: false };
@@ -274,12 +275,11 @@ class NarrativeBuilder {
     }
 
     function tryPronoun() {
-      let gender = gd.personGender;
-      if (gender == "male") {
+      if (personGender == "male") {
         result.nameOrPronoun = "He";
         result.isPronoun = true;
         return true;
-      } else if (gender == "female") {
+      } else if (personGender == "female") {
         result.nameOrPronoun = "She";
         result.isPronoun = true;
         return true;
@@ -361,7 +361,7 @@ class NarrativeBuilder {
     let nameOrPronounObj = this.getPersonNameOrPronounWithFlag(isMidSentence);
     if (nameOrPronounObj.isValid) {
       if (nameOrPronounObj.isPronoun) {
-        let gender = gd.personGender;
+        let gender = this.personGender;
         if (gender == "male") {
           return isMidSentence ? "his" : "His";
         } else if (gender == "female") {
@@ -498,12 +498,12 @@ class NarrativeBuilder {
 
   addParentageForMainSentence() {
     let parentNames = this.eventGd.inferParentNamesForDataString();
-    this.addParentageForMainSentenceGivenParentsAndGender(parentNames, this.eventGd.personGender);
+    this.addParentageForMainSentenceGivenParentsAndGender(parentNames, this.personGender);
   }
 
   addSpouseParentageForMainSentence() {
     let parentNames = this.eventGd.inferParentNamesForDataString();
-    this.addParentageForMainSentenceGivenParentsAndGender(parentNames, this.eventGd.personGender);
+    this.addParentageForMainSentenceGivenParentsAndGender(parentNames, this.personGender);
   }
 
   addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, personGender) {
@@ -529,7 +529,7 @@ class NarrativeBuilder {
 
   addParentageAsSeparateSentence() {
     let parentNames = this.eventGd.inferParentNamesForDataString();
-    this.addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, this.eventGd.personGender);
+    this.addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, this.personGender);
   }
 
   formatDate(dateString, addPreposition, prepSuffix = "") {
@@ -2681,6 +2681,8 @@ function buildNarrative(input) {
     builder.personGender = wtGeneralizedData.personGender;
   } else if (eventGeneralizedData.personGender) {
     builder.personGender = eventGeneralizedData.personGender;
+  } else {
+    builder.personGender = eventGeneralizedData.inferPersonGender();
   }
 
   builder.buildNarrativeString();
@@ -2693,6 +2695,8 @@ function getFieldsUsedInNarrative(eventGd, options) {
   builder.eventGd = eventGd;
   if (eventGd.personGender) {
     builder.personGender = eventGd.personGender;
+  } else {
+    builder.personGender = eventGd.inferPersonGender();
   }
 
   return builder.getFieldsUsed();

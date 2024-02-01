@@ -374,7 +374,7 @@ function getPersonNameOrPronoun(gd, options) {
   }
 
   function tryPronoun() {
-    let gender = gd.personGender;
+    let gender = gd.inferPersonGender();
     if (gender == "male") {
       nameOrPronoun = "He";
       return true;

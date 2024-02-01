@@ -1281,6 +1281,12 @@ function handlePersonSourceCitation(document, result) {
     }
   }
 
+  // In addition extract the person facts page data, this can be useful to get gender etc
+  let personResult = {};
+  personResult.url = result.url;
+  handlePersonFacts(document, personResult);
+  result.personExtractedData = personResult;
+
   //console.log("handleFactEdit, recordUrl is: " + result.recordUrl);
 }
 

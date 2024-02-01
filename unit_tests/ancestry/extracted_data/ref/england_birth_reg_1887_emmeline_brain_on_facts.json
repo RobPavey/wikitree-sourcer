@@ -1,0 +1,22 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552198684/facts",
+  "pageType": "personFacts",
+  "givenName": "Emmeline May",
+  "surname": "Brain",
+  "titleName": "Emmeline May Brain",
+  "birthDate": "27 APR 1887",
+  "birthPlace": "Wilnecote, Warwickshire, England",
+  "deathDate": "24 APR 1966",
+  "deathPlace": "Scotland",
+  "gender": "Female",
+  "marriages": [
+    {
+      "date": "April 1913",
+      "place": "Tamworth, Staffordshire",
+      "spouseName": "Arthur Eli Pavey"
+    }
+  ],
+  "fatherName": "Robert Brain",
+  "motherName": "Mary Elizabeth Kimberlin",
+  "ancestryTemplate": "{{Ancestry Tree|86808578|46552198684}}"
+}

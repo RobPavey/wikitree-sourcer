@@ -1246,7 +1246,7 @@ class GeneralizedData {
     // eventPlace: a PlaceObj object
     // residencePlace: a PlaceObj object
     // registrationDistrict: a string
-    // personGender: a lowerface string, either "male", "female" or not defined
+    // personGender: a lowercase string, either "male", "female" or not defined
     // parents: an object with father and mother fields
     // spouses: an array of objects
     // primaryPerson: used if role is not Primary
@@ -1350,6 +1350,8 @@ class GeneralizedData {
         if (obj.primaryPerson.gender) {
           classObj[key].gender = obj.primaryPerson.gender;
         }
+      } else if (key == "personGeneralizedData") {
+        classObj[key] = GeneralizedData.createFromPlainObject(obj[key]);
       } else {
         classObj[key] = obj[key];
       }
@@ -2325,6 +2327,18 @@ class GeneralizedData {
     }
 
     return suffix;
+  }
+
+  inferPersonGender() {
+    if (this.personGender) {
+      return this.personGender;
+    }
+
+    if (this.personGeneralizedData) {
+      if (this.personGeneralizedData.personGender) {
+        return this.personGeneralizedData.personGender;
+      }
+    }
   }
 
   inferBirthDateObj() {

@@ -2362,6 +2362,15 @@ function generalizeData(input) {
     generalizeProfileData(input, result);
   } else {
     generalizeRecordData(input, result);
+
+    if (ed.personExtractedData) {
+      let personInput = input;
+      personInput.extractedData = ed.personExtractedData;
+      let personGd = new GeneralizedData();
+      generalizeProfileData(personInput, personGd);
+      personGd.hasValidData = true;
+      result.personGeneralizedData = personGd;
+    }
   }
 
   result.hasValidData = true;

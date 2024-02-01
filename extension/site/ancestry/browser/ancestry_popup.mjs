@@ -494,6 +494,9 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
 
   if (extractResult.success) {
     let extractedData = extractDataFromHtml(extractResult.htmlText, recordUrl);
+    if (originalExtractedData.personExtractedData) {
+      extractedData.personExtractedData = originalExtractedData.personExtractedData;
+    }
     setupAncestryPopupMenu(extractedData);
   } else if (extractResult.errorStatus == "subscriptionHasNoAccess") {
     originalExtractedData.pageType = "record";

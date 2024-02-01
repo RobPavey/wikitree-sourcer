@@ -628,7 +628,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   let eventDate = gd.inferEventDate();
   let eventPlace = gd.inferEventPlace();
   let nameObj = gd.name;
-  let personGender = gd.personGender;
+  let personGender = gd.inferPersonGender();
   let age = gd.age;
   let mothersMaidenName = gd.mothersMaidenName;
   let parents = gd.parents;

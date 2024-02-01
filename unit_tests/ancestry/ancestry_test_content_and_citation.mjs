@@ -138,6 +138,11 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8912&h=33557671&indiv=try&o_vc=Record:OtherRecord&rhSource=8913",
   },
   {
+    // Saved when viewing the source from a person facts page
+    caseName: "england_birth_reg_1887_emmeline_brain_on_facts",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552198684/facts",
+  },
+  {
     // Saved July 2022 - still says Registration District, has MMN
     caseName: "england_birth_reg_1949_maureen_hale",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8782&h=22191988&tid=172368945&pid=392241408802&hid=1048116409333&_gl=1*9eek4q*_ga*NTE3MDQyOTk1LjE2NTY5NDk1Nzk.*_ga_4QT8FMEX30*MTY1Njk2OTIyOC4zLjEuMTY1Njk2OTYwNS4w",

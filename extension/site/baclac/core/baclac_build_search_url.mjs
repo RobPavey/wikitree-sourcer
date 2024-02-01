@@ -56,7 +56,7 @@ function buildSameOldCensusSearchUrl(buildUrlInput, builder) {
       builder.addMaritalStatus(gd.maritalStatus);
     }
     if (includeField("gender")) {
-      builder.addGender(gd.personGender);
+      builder.addGender(gd.inferPersonGender());
     }
     if (includeField("birthCountry")) {
       builder.addBirthPlace(gd.inferBirthCountry());
@@ -264,7 +264,7 @@ function buildSearchUrl(buildUrlInput) {
         builder.addMaritalStatus(gd.maritalStatus);
       }
       if (includeField("gender")) {
-        builder.addGender(gd.personGender);
+        builder.addGender(gd.inferPersonGender());
       }
       if (includeField("birthCountry")) {
         builder.addBirthPlace(gd.inferBirthCountry());

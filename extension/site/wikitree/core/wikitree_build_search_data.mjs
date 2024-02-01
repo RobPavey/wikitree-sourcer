@@ -144,7 +144,7 @@ function buildSearchData(input) {
     }
   }
 
-  let sex = gd.personGender;
+  let sex = gd.inferPersonGender();
   if (sex && sex != "-") {
     if (sex == "male") {
       fieldData.radioFields.push({ name: "gender", value: "Male" });

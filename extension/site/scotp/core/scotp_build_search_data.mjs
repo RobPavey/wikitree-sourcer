@@ -685,7 +685,7 @@ function buildSearchData(input) {
   setNames(gd, scotpRecordType, parameters, options, builder);
 
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.gender)) {
-    builder.addGender(gd.personGender);
+    builder.addGender(gd.inferPersonGender());
   }
 
   setParents(gd, scotpRecordType, parameters, options, builder);

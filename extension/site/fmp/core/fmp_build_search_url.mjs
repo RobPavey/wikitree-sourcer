@@ -101,7 +101,7 @@ function buildTreeSearchUrl(buildUrlInput) {
   url += "root=";
   addField("fn", gd.inferForenames());
   addField("ln", gd.inferLastName());
-  addField("g", encodeGender(gd.personGender));
+  addField("g", encodeGender(gd.inferPersonGender()));
   addField("yob", gd.inferBirthYear());
   addField("pob", gd.inferBirthPlace());
 
@@ -206,7 +206,7 @@ function buildSearchUrl(buildUrlInput) {
   builder.addCollection(subcategory);
   builder.addDataSetName(dataSetName);
 
-  builder.addGender(gd.personGender);
+  builder.addGender(gd.inferPersonGender());
 
   let hasAnyName = false;
   let lastName = gd.inferLastNameGivenParametersAndCollection(parameters, collection);

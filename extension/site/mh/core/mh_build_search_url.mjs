@@ -96,7 +96,7 @@ function buildSearchUrl(buildUrlInput) {
 
   // call methods on builder here
 
-  builder.addNameAndGender(gd.inferForenames(), lastName, gd.personGender);
+  builder.addNameAndGender(gd.inferForenames(), lastName, gd.inferPersonGender());
 
   builder.addBirth(gd.inferBirthYear(), gd.inferBirthPlace());
   builder.addDeath(gd.inferDeathYear(), gd.inferDeathPlace());

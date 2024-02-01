@@ -12,5 +12,25 @@
   "recordData": {},
   "titleCollection": "Dorset, England, Church of England Baptisms, Marriages and Burials, 1538-1812",
   "sourceCitation": "Dorset History Centre; Dorchester, England; Dorset Parish Registers; Reference: PE/THO: RE1/3",
-  "sourceInformation": "TitleDorset, England, Church of England Baptisms, Marriages and Burials, 1538-1812AuthorAncestry.comPublisherAncestry.com Operations, Inc.Publisher date2011Publisher locationProvo, UT, USA"
+  "sourceInformation": "TitleDorset, England, Church of England Baptisms, Marriages and Burials, 1538-1812AuthorAncestry.comPublisherAncestry.com Operations, Inc.Publisher date2011Publisher locationProvo, UT, USA",
+  "personExtractedData": {
+    "url": "https://www.ancestry.com/family-tree/person/tree/86808578/person/46588142707/facts?msg=ntm&msgParams=%7c2%7c2%7c&mpid=46588142707&nec=0&mdbid=2243&mrpid=151040635",
+    "givenName": "Leonard",
+    "surname": "Pavey",
+    "titleName": "Leonard Pavey V",
+    "birthDate": "1728",
+    "birthPlace": "Yarcombe,Devon,England",
+    "deathDate": "21 JUL 1813",
+    "deathPlace": "Wilmington, Devon, England",
+    "gender": "Male",
+    "marriages": [
+      {
+        "date": "13 Apr 1752",
+        "place": "Thorncombe, Dorset, England",
+        "spouseName": "Martha Northam"
+      }
+    ],
+    "fatherName": "Leonard Pavey IV",
+    "motherName": "Ann Hearn"
+  }
 }
