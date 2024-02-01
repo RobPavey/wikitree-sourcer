@@ -212,16 +212,16 @@ class OpenarchEdReader extends ExtractedDataReader {
       let patronym = a2aName["a2a:PersonNamePatronym"];
       let lastName = a2aName["a2a:PersonNameLastName"];
 
-      if (firstName && firstName != "NN" && firstName != "N.N.") {
+      if (firstName && firstName != "NN" && firstName != "N.N." && firstName != []) {
         nameObj.setForenames(firstName);
       }
       if (lastName || patronym || lastNamePrefix) {
         let finalLastName = lastName;
-        if (finalLastName == "NN" || finalLastName == "N.N.") {
+        if (finalLastName == "NN" || finalLastName == "N.N." || finalLastName == []) {
           finalLastName = "";
         }
 
-        if (patronym) {
+        if (patronym && patronym != []) {
           if (finalLastName) {
             finalLastName = patronym + " " + finalLastName;
           } else {
@@ -229,7 +229,7 @@ class OpenarchEdReader extends ExtractedDataReader {
           }
         }
 
-        if (lastNamePrefix) {
+        if (lastNamePrefix && lastNamePrefix != []) {
           if (finalLastName) {
             finalLastName = lastNamePrefix + " " + finalLastName;
           } else {

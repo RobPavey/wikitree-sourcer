@@ -38,6 +38,13 @@ const dateQualifiers = {
   AFTER: 4,
 };
 
+function isString(value) {
+  if (value && (typeof value === "string" || value instanceof String)) {
+    return true;
+  }
+  return false;
+}
+
 const GD = {
   extractYearStringFromDateString: function (date) {
     var result = undefined;
@@ -968,7 +975,7 @@ class NameObj {
   }
 
   setFullName(name) {
-    if (name) {
+    if (name && isString(name)) {
       this.name = this.cleanName(name);
       this.name = this.moveNicknamesFromNameString(this.name);
       this.name = this.removeTitle(this.name, true);
@@ -976,13 +983,13 @@ class NameObj {
   }
 
   setLastName(name) {
-    if (name) {
+    if (name && isString(name)) {
       this.lastName = this.cleanName(name);
     }
   }
 
   setForenames(name) {
-    if (name) {
+    if (name && isString(name)) {
       // sometimes the given names can contain "&quot;"
       name = name.replace(/\&quot\;/g, '"');
 
@@ -993,27 +1000,27 @@ class NameObj {
   }
 
   setFirstName(name) {
-    if (name) {
+    if (name && isString(name)) {
       this.firstName = this.cleanName(name);
       this.firstName = this.removeTitle(this.firstName);
     }
   }
 
   setFirstNames(name) {
-    if (name) {
+    if (name && isString(name)) {
       this.firstNames = this.cleanName(name);
       this.firstNames = this.removeTitle(this.firstNames);
     }
   }
 
   setMiddleName(name) {
-    if (name) {
+    if (name && isString(name)) {
       this.middleName = this.cleanName(name);
     }
   }
 
   setMiddleNames(name) {
-    if (name) {
+    if (name && isString(name)) {
       this.middleNames = this.cleanName(name);
     }
   }
