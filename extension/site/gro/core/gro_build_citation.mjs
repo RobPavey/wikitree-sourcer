@@ -251,7 +251,8 @@ async function buildCoreCitation(ed, runDate, builder) {
       dataString += mmn + ")";
     }
   } else {
-    if (ed.ageAtDeath) {
+    // age at death can be zero so need to check if property exists
+    if (ed.hasOwnProperty("ageAtDeath")) {
       dataString += " (Age at death: ";
       dataString += ed.ageAtDeath + ")";
     } else if (ed.birthYear) {
