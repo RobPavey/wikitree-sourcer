@@ -334,12 +334,25 @@ function buildSourceReferenceFromFsCitation(ed, options) {
     <i>findmypast</i> (http://www.findmypast.com : n.d.);
     citing PRO HO 107, The National Archives, Kew, Surrey.
     */
+
+    // For FindAGrave index records we want to remove the link to avoid
+    // Suggestion 571 "FindAGrave - Link without Grave ID"
+    // We end up adding a proper FindAGrave template later
+    let citation = ed.citation;
+    if (citation.includes("findagrave.com")) {
+      // The citation can include somthing like:
+      // "; citing record ID , <i>Find a Grave</i>, http://www.findagrave.com.
+      // In that example there is no record ID
+      citation = citation.replace(/,?\s*https?\:\/\/www\.findagrave\.com/, "");
+      citation = citation.replace("citing record ID , <i>Find a Grave</i>", "citing <i>Find a Grave</i>");
+    }
+
     const citingString = "citing ";
-    let citingIndex = ed.citation.indexOf(citingString);
+    let citingIndex = citation.indexOf(citingString);
     if (citingIndex != -1) {
       citingIndex += citingString.length;
 
-      let refString = ed.citation.substring(citingIndex);
+      let refString = citation.substring(citingIndex);
       const fromString = "from ";
 
       if (options.citation_fs_sourceRef == "fsCitationShort") {

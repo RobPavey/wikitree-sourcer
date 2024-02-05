@@ -1,0 +1,28 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Donald Richmond Payne",
+    "lastName": "Payne",
+    "forenames": "Donald Richmond"
+  },
+  "birthDate": {
+    "dateString": "27 Mar 1915",
+    "yearString": "1915"
+  },
+  "deathDate": {
+    "dateString": "9 Jul 1973"
+  },
+  "eventDate": {
+    "dateString": "1973",
+    "yearString": "1973"
+  },
+  "eventPlace": {
+    "placeString": "Woodstock, Windsor, Vermont, United States of America"
+  },
+  "collectionData": {
+    "id": "2221801"
+  },
+  "hasValidData": true
+}

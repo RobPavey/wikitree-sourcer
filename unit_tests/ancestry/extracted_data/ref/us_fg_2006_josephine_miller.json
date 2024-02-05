@@ -1,0 +1,35 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/83153657:60525?tid=&pid=&queryId=28e1fa4c-7016-41ed-a62e-25b4bce8a187&_phsrc=Zqm5774&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "60525",
+  "recordId": "83153657",
+  "ancestryTemplate": "{{Ancestry Record|60525|83153657}}",
+  "domain": "com",
+  "titleName": "Josephine Ann Miller",
+  "titleCollection": "U.S., Find a Grave® Index, 1600s-Current",
+  "recordData": {
+    "Name": "Josephine Ann Miller",
+    "Maiden Name": "Keogh",
+    "Birth Date": "2 Jun 1925",
+    "Birth Place": "Bradford, Miami County, Ohio, United States of America",
+    "Death Date": "11 Jul 2006",
+    "Death Place": "Miamisburg, Montgomery County, Ohio, United States of America",
+    "Cemetery": "Forest Hill Cemetery",
+    "Burial or Cremation Place": "Piqua, Miami County, Ohio, United States of America",
+    "Has Bio?": "N",
+    "Spouse": "Marion Leroy Miller",
+    "Children": "Joseph Paul Miller",
+    "URL": "https://www.findagrave.com/memorial/18816950/josephine-ann-miller"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=60525&h=19043911&indiv=try&viewrecord=1&r=an",
+    "Children": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=60525&h=183004220&indiv=try&viewrecord=1&r=an",
+    "URL": "https://www.findagrave.com/memorial/18816950/josephine-ann-miller"
+  },
+  "imageUrl": "https://www.findagrave.com/memorial/18816950/josephine-ann-miller",
+  "imageDbId": "https://www.findagrave.com/memorial/18816950/josephine-ann-miller",
+  "imageRecordId": "https://www.findagrave.com/memorial/18816950/josephine-ann-miller",
+  "sourceInformation": "Ancestry.com. U.S., Find a Grave® Index, 1600s-Current [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2012. Original data: Find a Grave. Find a Grave®. http://www.findagrave.com/cgi-bin/fg.cgi.",
+  "originalData": "Find a Grave. Find a Grave®. http://www.findagrave.com/cgi-bin/fg.cgi.",
+  "sourceDescription": "This database contains an index to cemetery and burial details posted on Find a Grave® from the United States. The records are dated between the 1600s and the present. Find a Grave® provides users a virtual cemetery experience, with images of grave markers from around the world, photos, biographies, and other details uploaded by volunteers. Learn more..."
+}

@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\nciting <i>Find a Grave</i><br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne, 1973.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\nciting <i>Find a Grave</i><br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne, 1973.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>citing <i>Find a Grave</i><br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}<br/>Donald Richmond Payne, 1973.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne burial (died on 9 Jul 1973) in 1973 in Woodstock, Windsor, Vermont, United States of America. Born on 27 Mar 1915.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne burial (died on 9 Jul 1973) in 1973 in Woodstock, Windsor, Vermont, United States of America. Born on 27 Mar 1915.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}<br/>Donald Richmond Payne burial (died on 9 Jul 1973) in 1973 in Woodstock, Windsor, Vermont, United States of America. Born on 27 Mar 1915.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nName: Donald Richmond Payne; Burial Date: 1973; Burial Place: Woodstock, Windsor, Vermont, United States of America; Birth Date: 27 Mar 1915; Death Date: 09 Jul 1973; Age Years: 58; Photo Included Flag: Y; Misc Note: Contains Biography.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nName: Donald Richmond Payne; Burial Date: 1973; Burial Place: Woodstock, Windsor, Vermont, United States of America; Birth Date: 27 Mar 1915; Death Date: 09 Jul 1973; Age Years: 58; Photo Included Flag: Y; Misc Note: Contains Biography.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}<br/>Name: Donald Richmond Payne; Burial Date: 1973; Burial Place: Woodstock, Windsor, Vermont, United States of America; Birth Date: 27 Mar 1915; Death Date: 09 Jul 1973; Age Years: 58; Photo Included Flag: Y; Misc Note: Contains Biography.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}\n{| border=\"1\"\n| Name || Donald Richmond Payne\n|-\n| Burial Date || 1973\n|-\n| Burial Place || Woodstock, Windsor, Vermont, United States of America\n|-\n| Birth Date || 27 Mar 1915\n|-\n| Death Date || 09 Jul 1973\n|-\n| Age Years || 58\n|-\n| Photo Included Flag || Y\n|-\n| Misc Note || Contains Biography\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}\n{| border=\"1\"\n| Name || Donald Richmond Payne\n|-\n| Burial Date || 1973\n|-\n| Burial Place || Woodstock, Windsor, Vermont, United States of America\n|-\n| Birth Date || 27 Mar 1915\n|-\n| Death Date || 09 Jul 1973\n|-\n| Age Years || 58\n|-\n| Photo Included Flag || Y\n|-\n| Misc Note || Contains Biography\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}<br/>Name: Donald Richmond Payne; Burial Date: 1973; Burial Place: Woodstock, Windsor, Vermont, United States of America; Birth Date: 27 Mar 1915; Death Date: 09 Jul 1973; Age Years: 58; Photo Included Flag: Y; Misc Note: Contains Biography.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne, 1973.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne, 1973.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}<br/>Donald Richmond Payne, 1973.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\nciting <i>Find a Grave</i><br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne burial (died on 9 Jul 1973) in 1973 in Woodstock, Windsor, Vermont, United States of America. Born on 27 Mar 1915.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\nciting <i>Find a Grave</i><br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne burial (died on 9 Jul 1973) in 1973 in Woodstock, Windsor, Vermont, United States of America. Born on 27 Mar 1915.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>citing <i>Find a Grave</i><br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}<br/>Donald Richmond Payne burial (died on 9 Jul 1973) in 1973 in Woodstock, Windsor, Vermont, United States of America. Born on 27 Mar 1915.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\nciting <i>Find a Grave</i><br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne, 1973.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\nciting <i>Find a Grave</i><br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}<br/>\nDonald Richmond Payne, 1973.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>citing <i>Find a Grave</i><br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}<br/>Donald Richmond Payne, 1973.",
+    "type": "source"
+  }
+}

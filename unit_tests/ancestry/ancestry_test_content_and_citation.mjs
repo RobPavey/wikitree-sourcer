@@ -891,6 +891,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/4001446:1276",
   },
   {
+    caseName: "us_fg_2006_josephine_miller",
+    url: "https://www.ancestry.com/discoveryui-content/view/83153657:60525?tid=&pid=&queryId=28e1fa4c-7016-41ed-a62e-25b4bce8a187&_phsrc=Zqm5774&_phstart=successSource",
+  },
+  {
     caseName: "us_ia_child_birth_1894_eva_warnock",
     url: "https://www.ancestry.com/discoveryui-content/view/602090064:61441",
   },

@@ -348,7 +348,11 @@ function addReferenceDataToSourceReference(ed, builder, options) {
               value = modifyValueForUrl(value);
             }
 
-            builder.addSourceReferenceField(key, value);
+            if (value.startsWith("{{")) {
+              builder.addSourceReferenceText(value);
+            } else {
+              builder.addSourceReferenceField(key, value);
+            }
           }
         }
       }
@@ -570,10 +574,14 @@ function cleanOriginalData(text) {
   text = text.trim();
 
   // remove bad Find a Grave links
-  text = text.replace(/^Find a Grave\.\s+Find a Grave\./, "Find a Grave.");
+  text = text.replace(/^Find a Grave\.\s+Find a Grave®?\./, "Find a Grave.");
   text = text.trim();
-  text = text.replace(/^Find a Grave\.\s+http\:\/\/www\.findagrave\.com\/cgi\-bin\/fg\.cgi\.?/, "");
+  text = text.replace(/^Find a Grave\.\s+https?\:\/\/www\.findagrave\.com\/cgi\-bin\/fg\.cgi\.?/, "");
   text = text.trim();
+
+  // just in case it is a FindAGrave format I don't recognize.
+  // This avoids Suggestion 571 "FindAGrave - Link without Grave ID"
+  text = text.replace(/https?\:\/\/www\.findagrave\.com[^\s]+]/, "");
 
   // The Original data string can get quite long and often has verbose ownership verbiage on the end that if not part
   // of a normal citation. Note that this Original Data string is only used when there is no Source Citation string.

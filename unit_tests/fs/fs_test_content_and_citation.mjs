@@ -317,6 +317,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:QVV5-53JY",
   },
   {
+    caseName: "us_fg_1973_donald_payne",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QVLL-6F6T",
+  },
+  {
     caseName: "us_il_birth_1901_hellen_morris",
     url: "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHM",
   },

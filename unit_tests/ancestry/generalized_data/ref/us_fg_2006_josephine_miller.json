@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Burial",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Josephine Ann Miller"
+  },
+  "birthDate": {
+    "dateString": "2 Jun 1925"
+  },
+  "deathDate": {
+    "dateString": "11 Jul 2006"
+  },
+  "eventPlace": {
+    "placeString": "Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America"
+  },
+  "deathPlace": {
+    "placeString": "Piqua, Miami County, Ohio, United States of America"
+  },
+  "lastNameAtDeath": "Miller",
+  "collectionData": {
+    "id": "60525"
+  },
+  "hasValidData": true
+}
