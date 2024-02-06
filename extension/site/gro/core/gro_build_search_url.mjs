@@ -99,7 +99,34 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   builder.addFirstForename(gd.inferFirstName());
-  builder.addSecondForename(gd.inferSecondForename());
+
+  // Second forename. This should never be an initial. So if what we have is an initial
+  // we should either not add it or expand it if we have other sources of information
+  let secondForename = gd.inferSecondForename();
+  if (secondForename) {
+    if (secondForename.length == 1) {
+      if (gd.personGeneralizedData) {
+        let pgd = gd.personGeneralizedData;
+        let personFirstName = pgd.inferFirstName();
+        let personSecondForename = pgd.inferSecondForename();
+        if (personSecondForename && personSecondForename.length > 1) {
+          if (personSecondForename[0] == secondForename) {
+            if (gd.inferFirstName() == personFirstName) {
+              let lastNameAtBirth = gd.inferLastNameAtBirth();
+              let lastNameAtDeath = gd.inferLastNameAtDeath();
+              let personLastNameAtBirth = pgd.inferLastNameAtBirth();
+              let personLastNameAtDeath = pgd.inferLastNameAtDeath();
+              if (personLastNameAtBirth == lastNameAtBirth || personLastNameAtDeath == lastNameAtDeath) {
+                builder.addSecondForename(personSecondForename);
+              }
+            }
+          }
+        }
+      }
+    } else {
+      builder.addSecondForename(secondForename);
+    }
+  }
 
   let personGender = getPersonGenderFromGeneralizedDataOrDataCache(
     gd,
