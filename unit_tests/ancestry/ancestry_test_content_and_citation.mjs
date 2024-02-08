@@ -1213,6 +1213,10 @@ const regressionData = [
     url: "https://www.ancestry.com/sharing/26033082?h=b2ba14&clickref=1011lwhmX9Rt%2C1011lwhmX9Rt&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate+External",
   },
   {
+    caseName: "yy_sharing_mark_germany_marriage",
+    url: "https://www.ancestry.com/sharing/9157607?mark=7b22746f6b656e223a226e5462303635657a394764346a583745615a47496d354f6f454248484d42363242684c65696742534a5a493d222c22746f6b656e5f76657273696f6e223a225632227d",
+  },
+  {
     caseName: "yy_sharing_us_census_1870_wm_kemper",
     url: "https://www.ancestry.com/sharing/236392?token=3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c",
   },

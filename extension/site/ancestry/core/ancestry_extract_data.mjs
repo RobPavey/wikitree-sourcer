@@ -1036,12 +1036,17 @@ function extractSharingImageOrRecordDetailsV2(document, result) {
     result.personNarrative = personNarrative.textContent.trim();
   }
 
-  // https://www.ancestry.com/sharing/236392?token=3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c
-
   let num1 = result.url.replace(/.*\.ancestry[^\/]+\/sharing\/([^\?]+)\?.*/, "$1");
-  let num2 = result.url.replace(/.*\.ancestry[^\/]+\/sharing\/[^\?]+\?token\=([^\?\&]+).*/, "$1");
+  let num2 = "";
+  if (result.url.includes("?token=")) {
+    // https://www.ancestry.com/sharing/236392?token=3832226f2908014024cae3a4bbf644cc019539bca23c8b7133f0affb1529385c
+    num2 = result.url.replace(/.*\.ancestry[^\/]+\/sharing\/[^\?]+\?token\=([^\?\&]+).*/, "$1");
+  } else if (result.url.includes("?mark=")) {
+    // https://www.ancestry.com/sharing/9157607?mark=7b22746f6b656e223a226e5462303635657a394764346a583745615a47496d354f6f454248484d42363242684c65696742534a5a493d222c22746f6b656e5f76657273696f6e223a225632227d
+    num2 = result.url.replace(/.*\.ancestry[^\/]+\/sharing\/[^\?]+\?mark\=([^\?\&]+).*/, "$1");
+  }
 
-  if (num1 && num2) {
+  if (num1 && num2 && num1 != result.url && num2 != result.url) {
     result.ancestryTemplate = "{{Ancestry Sharing|" + num1 + "|" + num2 + "}}";
   }
 }
