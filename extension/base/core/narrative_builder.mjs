@@ -2009,6 +2009,8 @@ class NarrativeBuilder {
       } else if (residencePlace) {
         this.narrative += ". " + this.getPossessivePronounInitialCaps() + " last residence was " + residencePlace;
       }
+    } else if (this.getPersonNameOrPronoun()) {
+      this.narrative += this.getPersonNameOrPronoun() + " was in a probate record";
     }
 
     this.narrative += ".";

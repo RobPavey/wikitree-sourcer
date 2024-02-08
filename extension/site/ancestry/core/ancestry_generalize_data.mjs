@@ -57,6 +57,7 @@ const eventTypeStringToDataType = {
   Divorce: RT.Divorce,
   MilitaryService: RT.Military,
   TaxList: RT.Tax,
+  Will: RT.Will,
 };
 
 const recordTypeByFields = [

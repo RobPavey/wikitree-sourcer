@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": ".<ref>\n'''Probate''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Probate''': \"Dorset, England, Wills and Probates, 1565-1858\"<br/>Dorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>{{Ancestry Record|2119|37801}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)<br/>\nJohn Luckham probate. Residence Broadway, Dorset, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": ".<ref>\n'''Probate''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)<br/>\nJohn Luckham probate. Residence Broadway, Dorset, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Probate''': \"Dorset, England, Wills and Probates, 1565-1858\"<br/>Dorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>{{Ancestry Record|2119|37801}} (accessed 6 May 2021)<br/>John Luckham probate. Residence Broadway, Dorset, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)<br/>\nName: John Luckham; Record Type: Will; Residence Date: 1841; Residence Place: Broadway, Dorset, England; Probate Court: Dorset Archdeaconry.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": ".<ref>\n'''Probate''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)<br/>\nName: John Luckham; Record Type: Will; Residence Date: 1841; Residence Place: Broadway, Dorset, England; Probate Court: Dorset Archdeaconry.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Probate''': \"Dorset, England, Wills and Probates, 1565-1858\"<br/>Dorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>{{Ancestry Record|2119|37801}} (accessed 6 May 2021)<br/>Name: John Luckham; Record Type: Will; Residence Date: 1841; Residence Place: Broadway, Dorset, England; Probate Court: Dorset Archdeaconry.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Probate''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Luckham\n|-\n| Record Type || Will\n|-\n| Residence Date || 1841\n|-\n| Residence Place || Broadway, Dorset, England\n|-\n| Probate Court || Dorset Archdeaconry\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": ".<ref>\n'''Probate''':\n\"Dorset, England, Wills and Probates, 1565-1858\"<br/>\nDorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>\n{{Ancestry Record|2119|37801}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John Luckham\n|-\n| Record Type || Will\n|-\n| Residence Date || 1841\n|-\n| Residence Place || Broadway, Dorset, England\n|-\n| Probate Court || Dorset Archdeaconry\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Probate''': \"Dorset, England, Wills and Probates, 1565-1858\"<br/>Dorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11<br/>{{Ancestry Record|2119|37801}} (accessed 6 May 2021)<br/>Name: John Luckham; Record Type: Will; Residence Date: 1841; Residence Place: Broadway, Dorset, England; Probate Court: Dorset Archdeaconry.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Dorset, England, Wills and Probates, 1565-1858,\" database, ({{Ancestry Record|2119|37801}} : accessed 6 May 2021), John Luckham probate. Residence Broadway, Dorset, England; citing Dorset History Centre, Dorchester, England, UK, Reference Number Ad/Dt/W/1841, Event Record Number 11.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": ".<ref>\"Dorset, England, Wills and Probates, 1565-1858,\" database, ({{Ancestry Record|2119|37801}} : accessed 6 May 2021), John Luckham probate. Residence Broadway, Dorset, England; citing Dorset History Centre, Dorchester, England, UK, Reference Number Ad/Dt/W/1841, Event Record Number 11.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Dorset, England, Wills and Probates, 1565-1858,\" database, ({{Ancestry Record|2119|37801}} : accessed 6 May 2021), John Luckham probate. Residence Broadway, Dorset, England; citing Dorset History Centre, Dorchester, England, UK, Reference Number Ad/Dt/W/1841, Event Record Number 11.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Probate'':\n\"Dorset, England, Wills and Probates, 1565-1858\", database, \nDorset History Centre, Dorchester, England, UK, Reference Number Ad/Dt/W/1841, Event Record Number 11, \n({{Ancestry Record|2119|37801}} : accessed 6 May 2021), \nName: John Luckham; Record Type: Will; Residence Date: 1841; Residence Place: Broadway, Dorset, England; Probate Court: Dorset Archdeaconry.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": ".<ref>\n''Probate'':\n\"Dorset, England, Wills and Probates, 1565-1858\", database, \nDorset History Centre, Dorchester, England, UK, Reference Number Ad/Dt/W/1841, Event Record Number 11, \n({{Ancestry Record|2119|37801}} : accessed 6 May 2021), \nName: John Luckham; Record Type: Will; Residence Date: 1841; Residence Place: Broadway, Dorset, England; Probate Court: Dorset Archdeaconry.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Probate'': \"Dorset, England, Wills and Probates, 1565-1858\", database, Dorset History Centre, Dorchester, England, UK, Reference Number Ad/Dt/W/1841, Event Record Number 11, ({{Ancestry Record|2119|37801}} : accessed 6 May 2021), Name: John Luckham; Record Type: Will; Residence Date: 1841; Residence Place: Broadway, Dorset, England; Probate Court: Dorset Archdeaconry.",
+    "type": "source"
+  }
+}

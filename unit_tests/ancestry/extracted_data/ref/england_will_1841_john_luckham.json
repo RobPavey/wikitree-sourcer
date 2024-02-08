@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/37801:2119",
+  "pageType": "record",
+  "dbId": "2119",
+  "recordId": "37801",
+  "ancestryTemplate": "{{Ancestry Record|2119|37801}}",
+  "domain": "com",
+  "titleName": "John Luckham",
+  "titleCollection": "Dorset, England, Wills and Probates, 1565-1858",
+  "recordData": {
+    "Name": "John Luckham",
+    "Record Type": "Will",
+    "Residence Date": "1841",
+    "Residence Place": "Broadway, Dorset, England",
+    "Probate Court": "Dorset Archdeaconry"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2119/images/32451_1831115184_0033-00384?pid=37801&usePUB=true&usePUBJs=true",
+  "imageDbId": "2119",
+  "imageRecordId": "32451_1831115184_0033-00384",
+  "sourceCitation": "Dorset History Centre; Dorchester, England, UK; Reference Number: Ad/Dt/W/1841; Event Record Number: 11",
+  "sourceInformation": "Ancestry.com. Dorset, England, Wills and Probates, 1565-1858 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Wills and Other Probate Records c. 1558-1858. Dorchester, Dorset, England: Dorset History Centre.",
+  "originalData": "Wills and Other Probate Records c. 1558-1858. Dorchester, Dorset, England: Dorset History Centre.",
+  "sourceDescription": "This is a collection of Wills, Letters of Administration and Inventories for Dorset, England, between 1565-1858. These records are primarily parish registers because the church took care of wills prior to 1858. The wills contain last wishes of the deceased and what they wished done with their real estate and other personal property. The Letters of Administration gave a person power to be executor when no will was available and an Inventory was simply a list of possessions and their values. Inventories were required before a Letter of Administration was given. Learn more..."
+}

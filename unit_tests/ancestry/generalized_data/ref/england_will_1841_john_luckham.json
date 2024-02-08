@@ -1,0 +1,19 @@
+{
+  "sourceType": "record",
+  "recordType": "Will",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "John Luckham"
+  },
+  "residencePlace": {
+    "placeString": "Broadway, Dorset, England"
+  },
+  "typeSpecificData": {
+    "dateIsNotGrantDate": true
+  },
+  "lastNameAtDeath": "Luckham",
+  "collectionData": {
+    "id": "2119"
+  },
+  "hasValidData": true
+}

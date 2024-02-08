@@ -676,6 +676,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/17893479:1904",
   },
   {
+    caseName: "england_will_1841_john_luckham",
+    url: "https://www.ancestry.com/discoveryui-content/view/37801:2119",
+  },
+  {
     caseName: "germany_baptism_1840_johanna_hartmann",
     url: "https://www.ancestry.com/discoveryui-content/view/68166661:9866",
   },
