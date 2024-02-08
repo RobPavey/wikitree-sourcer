@@ -141,6 +141,7 @@ const citationOptionsGroup = {
       ],
       defaultValue: "string",
     },
+    /* decided to remove external links 31 Jan 2024 because they can make bad links
     {
       optionName: "includeExternalImageLink",
       type: "checkbox",
@@ -167,6 +168,7 @@ const citationOptionsGroup = {
       defaultValue: "none",
       unitTestValue: "subscriptionRequired",
     },
+    */
   ],
 };
 
