@@ -33,18 +33,21 @@ const CountryData = [
     matches: ["England", "England, United Kingdom", "England, UK", "England, U.K.", "Eng", "Eng English"],
     partOf: ["United Kingdom", "England and Wales"],
     usesMiddleNames: true,
+    wifeChangesName: true,
   },
   {
     stdName: "Wales",
     matches: ["Wales", "Wales, United Kingdom", "Wales, UK", "Wales, U.K.", "Cymru"],
     partOf: ["United Kingdom", "England and Wales"],
     usesMiddleNames: true,
+    wifeChangesName: true,
   },
   {
     stdName: "Scotland",
     matches: ["Scotland", "Scotland, United Kingdom", "Scotland, UK", "Scotland, U.K.", "Alba", "Sct", "Scot"],
     partOf: ["United Kingdom"],
     usesMiddleNames: true,
+    wifeChangesName: false, // historically they did not always
   },
   {
     stdName: "England and Wales",
@@ -61,6 +64,7 @@ const CountryData = [
     partOf: ["United Kingdom"],
     invalidCountryName: true, // we never want to use this as a country name in a placename or a search
     usesMiddleNames: true,
+    wifeChangesName: true,
   },
   {
     stdName: "Guernsey",
@@ -108,9 +112,10 @@ const CountryData = [
     stdName: "United Kingdom",
     matches: ["United Kingdom", "U.K.", "UK", "Great Britain"],
     usesMiddleNames: true,
+    wifeChangesName: true,
   }, // must come after ones it contains
 
-  { stdName: "Ireland", matches: ["Ireland", "Éire"], usesMiddleNames: true },
+  { stdName: "Ireland", matches: ["Ireland", "Éire"], usesMiddleNames: true, wifeChangesName: true },
   { stdName: "France", matches: ["France"] },
   { stdName: "Germany", matches: ["Germany"] },
   { stdName: "German Empire", matches: ["German Empire"] },
@@ -119,6 +124,21 @@ const CountryData = [
   { stdName: "Netherlands", matches: ["Netherlands", "Nederland"] },
   { stdName: "Belgium", matches: ["Belgium"] },
   { stdName: "Luxembourg", matches: ["Luxembourg"] },
+  {
+    stdName: "Spain",
+    matches: [
+      "Spain",
+      "España",
+      "Espana",
+      "Iberia",
+      "Hispania",
+      "Hesperia",
+      "Kingdom of Spain",
+      "Reino de España",
+      "Espagne",
+    ],
+  },
+  { stdName: "Portugal", matches: ["Portugal", "República Portuguesa"] },
   { stdName: "Andorra", matches: ["Andorra"] },
 
   { stdName: "Sweden", matches: ["Sweden", "Sverige"] },
@@ -219,12 +239,14 @@ const CountryData = [
     matches: ["United States", "USA", "US", "U.S.", "U.S.A.", "U.S", "U.S.A", "United States of America"],
     hasStates: true,
     usesMiddleNames: true,
+    wifeChangesName: true,
   },
   {
     stdName: "Canada",
     matches: ["Canada"],
     hasStates: true,
     usesMiddleNames: true,
+    wifeChangesName: true,
   },
   { stdName: "Mexico", matches: ["Mexico"], hasStates: true },
 
@@ -257,8 +279,9 @@ const CountryData = [
     matches: ["Australia"],
     hasStates: true,
     usesMiddleNames: true,
+    wifeChangesName: true,
   },
-  { stdName: "New Zealand", matches: ["New Zealand"], usesMiddleNames: true },
+  { stdName: "New Zealand", matches: ["New Zealand"], usesMiddleNames: true, wifeChangesName: true },
   { stdName: "American Samoa", matches: ["American Samoa"] },
   { stdName: "Papua New Guinea", matches: ["Papua New Guinea"] },
 
@@ -846,6 +869,20 @@ const CD = {
     for (let country of CountryData) {
       if (country.stdName == stdName) {
         if (country.usesMiddleNames) {
+          return true;
+        }
+        break;
+      }
+    }
+    return false;
+  },
+
+  wifeChangesName: function (countryName) {
+    let stdName = CD.standardizeCountryName(countryName);
+
+    for (let country of CountryData) {
+      if (country.stdName == stdName) {
+        if (country.wifeChangesName) {
           return true;
         }
         break;

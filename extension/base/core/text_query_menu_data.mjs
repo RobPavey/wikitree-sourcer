@@ -84,7 +84,7 @@ function addNameCheckboxes(gd, parameters, options, controls) {
   }
 
   let lnab = gd.inferLastNameAtBirth();
-  let cln = gd.inferLastNameAtDeath();
+  let cln = gd.inferLastNameAtDeath(options);
   let givenNames = gd.inferForenames();
   let firstName = gd.inferFirstName();
 

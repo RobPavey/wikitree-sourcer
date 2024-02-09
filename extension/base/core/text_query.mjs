@@ -30,7 +30,7 @@ function setDefaultTextQueryParameters(parameters, gd, options) {
   parameters.includePrefName = true;
 
   const lnab = gd.inferLastNameAtBirth();
-  const cln = gd.inferLastNameAtDeath();
+  const cln = gd.inferLastNameAtDeath(options);
   parameters.includeLnab = true;
   parameters.includeCln = lnab != cln;
 
@@ -105,11 +105,11 @@ function buildQueryString(searchSiteName, gd, parameters, options) {
   addNameVariant(givenNameVariants, getInitials(gd.inferForenames()), "includeGivenNameInitials");
 
   addNameVariant(lastNameVariants, gd.inferLastNameAtBirth(), "includeLnab");
-  addNameVariant(lastNameVariants, gd.inferLastNameAtDeath(), "includeCln");
+  addNameVariant(lastNameVariants, gd.inferLastNameAtDeath(options), "includeCln");
 
   if (proximity == 0) {
     addNameVariant(lastNameAtStartVariants, gd.inferLastNameAtBirth(), "includeLnabAtStart");
-    addNameVariant(lastNameAtStartVariants, gd.inferLastNameAtDeath(), "includeClnAtStart");
+    addNameVariant(lastNameAtStartVariants, gd.inferLastNameAtDeath(options), "includeClnAtStart");
   }
 
   if (gd.name) {

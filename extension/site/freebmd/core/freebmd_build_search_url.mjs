@@ -93,10 +93,10 @@ function constrainYears(dates) {
   dates.endQuarter = constrainQuarter(dates.endYear, dates.endQuarter);
 }
 
-function addAppropriateSurname(gd, type, builder) {
+function addAppropriateSurname(gd, type, builder, options) {
   let lastName = gd.lastNameAtBirth;
   if (type == "deaths" || !lastName) {
-    lastName = gd.inferLastNameAtDeath();
+    lastName = gd.inferLastNameAtDeath(options);
   }
 
   if (!lastName) {
@@ -199,6 +199,7 @@ function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const dataCache = buildUrlInput.dataCache;
   const typeOfSearch = buildUrlInput.typeOfSearch;
+  const options = buildUrlInput.options;
 
   var builder = new FreebmdUriBuilder();
 
@@ -285,7 +286,7 @@ function buildSearchUrl(buildUrlInput) {
     builder.addEndQuarter(dates.endQuarter);
   }
 
-  addAppropriateSurname(gd, type, builder);
+  addAppropriateSurname(gd, type, builder, options);
 
   addAppropriateGivenNames(gd, dates, type, builder);
 

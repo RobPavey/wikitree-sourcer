@@ -28,6 +28,7 @@ import { DateUtils } from "../../../base/core/date_utils.mjs";
 function buildSearchData(input) {
   const gd = input.generalizedData;
   const typeOfSearch = input.typeOfSearch;
+  const options = input.options;
 
   let stage1TextFieldData = {
     lastname: "",
@@ -48,7 +49,7 @@ function buildSearchData(input) {
     dayofprobate: "",
   };
 
-  stage1TextFieldData.lastname = gd.inferLastNameAtDeath();
+  stage1TextFieldData.lastname = gd.inferLastNameAtDeath(options);
   stage1TextFieldData.firstname = gd.inferForenames();
   stage1TextFieldData.yearofdeath = gd.inferDeathYear();
 

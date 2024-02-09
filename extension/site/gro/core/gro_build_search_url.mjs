@@ -45,6 +45,7 @@ function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const dataCache = buildUrlInput.dataCache;
   const typeOfSearch = buildUrlInput.typeOfSearch;
+  const options = buildUrlInput.options;
 
   var builder = new GroUriBuilder();
 
@@ -87,7 +88,7 @@ function buildSearchUrl(buildUrlInput) {
     builder.addIndex("EW_Death");
     builder.addYear(gd.inferDeathYear());
     builder.addYearRange("1");
-    builder.addSurname(gd.inferLastNameAtDeath());
+    builder.addSurname(gd.inferLastNameAtDeath(options));
     builder.addAge(gd.inferAgeAtDeath());
     builder.addAgeRange("5");
 
@@ -113,9 +114,9 @@ function buildSearchUrl(buildUrlInput) {
           if (personSecondForename[0] == secondForename) {
             if (gd.inferFirstName() == personFirstName) {
               let lastNameAtBirth = gd.inferLastNameAtBirth();
-              let lastNameAtDeath = gd.inferLastNameAtDeath();
+              let lastNameAtDeath = gd.inferLastNameAtDeath(options);
               let personLastNameAtBirth = pgd.inferLastNameAtBirth();
-              let personLastNameAtDeath = pgd.inferLastNameAtDeath();
+              let personLastNameAtDeath = pgd.inferLastNameAtDeath(options);
               if (personLastNameAtBirth == lastNameAtBirth || personLastNameAtDeath == lastNameAtDeath) {
                 builder.addSecondForename(personSecondForename);
               }

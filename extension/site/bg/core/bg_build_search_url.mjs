@@ -77,7 +77,7 @@ function buildSearchUrl(buildUrlInput) {
   const givenNameExactness = options.search_bg_exactFirstNames ? true : false;
   builder.addGivenNames(firstNames, givenNameExactness);
 
-  let lastName = gd.inferLastNameAtDeath();
+  let lastName = gd.inferLastNameAtDeath(options);
   if (!lastName) {
     lastName = gd.inferLastName();
   }

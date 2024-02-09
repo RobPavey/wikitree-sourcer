@@ -90,7 +90,7 @@ function buildSearchUrl(input) {
     query = addToQueryString(query, "LastNameatBirth", lastNameAtBirth);
   }
 
-  let lastNameAtDeath = gd.inferLastNameAtDeath();
+  let lastNameAtDeath = gd.inferLastNameAtDeath(options);
   if (lastNameAtDeath && lastNameAtDeath != lastNameAtBirth) {
     query = addToQueryString(query, "CurrentLastName", lastNameAtDeath);
   }

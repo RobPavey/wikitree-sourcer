@@ -159,7 +159,7 @@ function buildSearchData(input) {
     addStartAndEndYearFromEventYear(gd, options, eventYear, dateQualifier, fieldData);
     fieldData["ba"] = true;
   } else if (type == "burial") {
-    lastName = gd.inferLastNameAtDeath();
+    lastName = gd.inferLastNameAtDeath(options);
     eventYear = gd.inferDeathYear();
     dateQualifier = gd.inferDeathDateQualifier();
     county = gd.inferDeathCounty();

@@ -125,7 +125,7 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  let lastName = gd.inferLastNameAtDeath();
+  let lastName = gd.inferLastNameAtDeath(options);
   if (!lastName) {
     lastName = gd.inferLastName();
   }

@@ -543,7 +543,7 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
 
   result.lnab = personGd.inferLastNameAtBirth();
 
-  let cln = personGd.inferLastNameAtDeath();
+  let cln = personGd.inferLastNameAtDeath(options);
   if (cln != result.lnab) {
     result.cln = cln;
   }

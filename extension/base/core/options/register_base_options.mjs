@@ -1152,6 +1152,17 @@ const addMergeGeneralOptionsGroup = {
       defaultValue: "countrySpecific",
     },
     {
+      optionName: "useHusbandsLastName",
+      type: "select",
+      label: "Assume that a woman took husband's last name",
+      values: [
+        { value: "never", text: "Never" },
+        { value: "always", text: "Always" },
+        { value: "countrySpecific", text: "Only for certain countries" },
+      ],
+      defaultValue: "countrySpecific",
+    },
+    {
       optionName: "standardizeCountryNameForUsa",
       type: "select",
       label: "Standardize the country name for the United States of America to",

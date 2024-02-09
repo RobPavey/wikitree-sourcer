@@ -2248,7 +2248,7 @@ class GeneralizedData {
     return "";
   }
 
-  inferLastNameAtDeath() {
+  inferLastNameAtDeath(options = undefined) {
     function getSpouseLnab(spouse) {
       if (spouse.lastNameAtBirth) {
         return spouse.lastNameAtBirth;
@@ -2258,13 +2258,55 @@ class GeneralizedData {
       }
     }
 
+    let useHusbandsLastName = true;
+    if (options) {
+      if (options.addMerge_general_useHusbandsLastName == "never") {
+        useHusbandsLastName = false;
+      } else if (options.addMerge_general_useHusbandsLastName == "countrySpecific") {
+        useHusbandsLastName = false;
+        let countryList = this.inferCountries();
+        let numUsing = 0;
+        let numNotUsing = 0;
+        for (let countryName of countryList) {
+          if (CD.wifeChangesName(countryName)) {
+            numUsing++;
+          } else {
+            numNotUsing++;
+          }
+        }
+        if (numUsing > 0 && numNotUsing == 0) {
+          useHusbandsLastName = true;
+        } else if (numUsing > 0) {
+          let birthPlace = this.inferBirthPlace();
+          if (birthPlace) {
+            let country = CD.matchCountryFromPlaceName(birthPlace);
+            if (country) {
+              if (CD.wifeChangesName(country.stdName)) {
+                useHusbandsLastName = true;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // If this.lastNameAtDeath is set and is the same as this.lastNameAtBirth that might
+    // indicate that the person did not change their name at marriage. The only reason we consider adjusting
+    // it is that we might be coming from from a WikiTree profile where a contributor forgot
+    // to change the lnab.
+    if (this.lastNameAtDeath) {
+      if (this.sourceOfData != "wikitree" || !useHusbandsLastName) {
+        return this.lastNameAtDeath;
+      }
+    }
+
     // this is a woman and had spouses it may be that the CLN has not been set to husband's name
     let lnabAndLnadPresentAndDifferent = false;
     if (this.lastNameAtDeath && this.lastNameAtBirth && this.lastNameAtDeath != this.lastNameAtBirth) {
       lnabAndLnadPresentAndDifferent = true;
     }
 
-    if (this.personGender == "female" && this.spouses && !lnabAndLnadPresentAndDifferent) {
+    if (useHusbandsLastName && this.personGender == "female" && this.spouses && !lnabAndLnadPresentAndDifferent) {
       let lastSpouseLastName = "";
       let lastMarriageDate = undefined;
       for (let spouse of this.spouses) {
@@ -2284,7 +2326,7 @@ class GeneralizedData {
                   lastSpouseLastName = spouseLnab;
                 } else {
                   // sometimes an Ancestry profile might have multiple marriages, some with no spouse name
-                  // If this is close to last marriage ignore it as it probably referes to the same one
+                  // If this is close to last marriage ignore it as it probably refers to the same one
                   // (if could be generated from the "years married" in the 1911 census for example)
                   // Otherwise count it and set name to blank
                   if (diff > 380) {
