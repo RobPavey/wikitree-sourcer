@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Scobie",
+    "forenames": "William"
+  },
+  "eventDate": {
+    "dateString": "18 October 1836"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Renfrewshire",
+    "placeString": "Abbey, Renfrewshire, Scotland"
+  },
+  "recordSubtype": "MarriageOrBanns",
+  "spouses": [
+    {
+      "name": {
+        "name": "Margery Robertson/Pollock"
+      },
+      "marriageDate": {
+        "dateString": "18 October 1836"
+      },
+      "marriagePlace": {
+        "country": "Scotland",
+        "county": "Renfrewshire",
+        "placeString": "Abbey, Renfrewshire, Scotland"
+      }
+    }
+  ],
+  "collectionData": {
+    "frameNumber": "2833"
+  },
+  "hasValidData": true
+}

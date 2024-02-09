@@ -1468,6 +1468,20 @@ function generalizeData(input) {
         if (slashIndex != -1) {
           remainder = spouseName.substring(slashIndex);
           spouseName = spouseName.substring(0, slashIndex);
+
+          // sometimes (rarely) there is a second name after the /
+          // e.g. MARGERY ROBERTSON/POLLOCK FR2833 (FR2833)
+          // See Pollock-1150
+          // We want to keep that name as we don't know which is actually the last name
+          // Possibly Robertson is her maiden name?
+          let frameNumberIndex = remainder.search(/FR\d/);
+          if (frameNumberIndex != -1 && frameNumberIndex > 1) {
+            let extraName = remainder.substring(1, frameNumberIndex).trim();
+            if (extraName) {
+              spouseName += "/" + extraName;
+              remainder = "/" + remainder.substring(frameNumberIndex);
+            }
+          }
         }
         if (spouseName != "-----" && !spouseName.startsWith("NAME NOT GIVEN")) {
           setMarriageData(ed, result, spouseName, "", true);

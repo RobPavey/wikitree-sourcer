@@ -206,6 +206,11 @@ const regressionData = [
     caseName: "church_mar_cos_1668_christane_mcgregor",
     url: "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   },
+  {
+    // https://www.scotlandspeople.gov.uk/record-results/102760922765c5703a1d1a2
+    caseName: "church_mar_cos_1836_william_scobie",
+    url: "https://www.scotlandspeople.gov.uk/record-results/102760922765c5703a1d1a2",
+  },
   // ============ Church registers - Banns and Marriages - Roman Catholic Church (cr_banns) ==============
   {
     // https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=M&record_type%5B0%5D=crbanns_marriages&church_type=Catholic%20Registers&dl_cat=church&dl_rec=church-banns-marriages&surname=McGregor&surname_so=exact&forename_so=starts&spouse_surname_so=exact&spouse_forename_so=exact&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches

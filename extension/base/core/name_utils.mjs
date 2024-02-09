@@ -69,6 +69,10 @@ const NameUtils = {
       return true;
     }
 
+    function shouldUpperCaseAfterSlash(name) {
+      return true;
+    }
+
     if (!string || string.length == 0) {
       return string;
     }
@@ -158,15 +162,23 @@ const NameUtils = {
         if (shouldUpperCaseAfterApostrophe(word)) {
           let quoteIndex = word.indexOf("'");
           if ((quoteIndex != -1) & (quoteIndex < word.length - 1)) {
-            upperCaseLetterAtIndex(quoteIndex + 1);
+            upperCaseLetterAtIndex(index + quoteIndex + 1);
           }
         }
       } else if (word.includes("-") && word.length > 2 && word[2] != " ") {
         if (shouldUpperCaseAfterHyphen(word)) {
           let quoteIndex = word.indexOf("-");
           while ((quoteIndex != -1) & (quoteIndex < word.length - 1)) {
-            upperCaseLetterAtIndex(quoteIndex + 1);
+            upperCaseLetterAtIndex(index + quoteIndex + 1);
             quoteIndex = word.indexOf("-", quoteIndex + 1);
+          }
+        }
+      } else if (word.includes("/") && word.length > 2 && word[2] != " ") {
+        if (shouldUpperCaseAfterSlash(word)) {
+          let quoteIndex = word.indexOf("/");
+          while ((quoteIndex != -1) & (quoteIndex < word.length - 1)) {
+            upperCaseLetterAtIndex(index + quoteIndex + 1);
+            quoteIndex = word.indexOf("/", quoteIndex + 1);
           }
         }
       } else if (word.startsWith("(") && word[1] != " ") {

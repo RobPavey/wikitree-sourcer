@@ -1,0 +1,28 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results/102760922765c5703a1d1a2",
+  "success": true,
+  "isRowSelected": true,
+  "numResultsOnPage": 1,
+  "recordData": {
+    "Surname": "SCOBIE",
+    "Forename": "WILLIAM",
+    "Spouse Name": "MARGERY ROBERTSON/POLLOCK FR2833 (FR2833)",
+    "Date": "18/10/1836",
+    "Parish Number": "559",
+    "Ref": "80/385",
+    "Parish": "Abbey"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/buy-credits?destination=/record-results/102760922765c5703a1d1a2&get-referer=1&nojs=",
+  "pageHeader": "Church registers - Old parish registers - Banns and Marriages",
+  "searchCriteria": {
+    "Church type": "Old Parish Registers - Marriages",
+    "Surname": "SCOBIE",
+    "Surname options": "Exact names only",
+    "Forename": "WILLIAM",
+    "Forename options": "Names that begin with",
+    "County/city": "ALL",
+    "Parish/Congregation": "ABBEY LANDWARD|ABBEY BURGH|ABBEY_ABBEY"
+  },
+  "recordGroup": "church_registers",
+  "recordType": "opr_marriages"
+}
