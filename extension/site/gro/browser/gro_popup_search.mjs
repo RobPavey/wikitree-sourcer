@@ -40,6 +40,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 
 import { CD } from "/base/core/country_data.mjs";
+import { RT } from "/base/core/record_type.mjs";
 
 const groStartYear = 1837;
 const groEndYear = 2021;
@@ -193,9 +194,35 @@ function addGroDefaultSearchMenuItem(menu, data, backFunction, filter) {
 }
 
 function addGroSameRecordMenuItem(menu, data) {
-  addSameRecordMenuItem(menu, data, "gro", function (element) {
-    groSearch(data.generalizedData, "SameCollection");
-  });
+  let gd = data.generalizedData;
+  let subtitle = "";
+  let recordType = gd.recordType;
+  if (recordType == RT.BirthRegistration) {
+    let year = data.generalizedData.inferBirthYear();
+    if (year) {
+      if (year < groStartYear || year > groEndYear || (year > 1934 && year < 1984)) {
+        subtitle = "Birth year " + year + " is not covered by GRO";
+      }
+    }
+  } else if (recordType == RT.DeathRegistration) {
+    let year = data.generalizedData.inferDeathYear();
+    if (year) {
+      if (year < groStartYear || year > groEndYear || (year > 1957 && year < 1984)) {
+        subtitle = "Death year " + year + " is not covered by GRO";
+      }
+    }
+  }
+
+  addSameRecordMenuItem(
+    menu,
+    data,
+    "gro",
+    function (element) {
+      groSearch(data.generalizedData, "SameCollection");
+    },
+    "",
+    subtitle
+  );
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -1573,7 +1573,7 @@ async function setupSearchCollectionsSubMenu(data, siteName, searchCollectionFun
   endMainMenu(menu);
 }
 
-function addSameRecordMenuItem(menu, data, siteName, searchFunction, equivSiteName = "") {
+function addSameRecordMenuItem(menu, data, siteName, searchFunction, equivSiteName = "", subtitle = "") {
   let gd = data.generalizedData;
 
   //console.log("addSameRecordMenuItem, gd is")
@@ -1589,7 +1589,12 @@ function addSameRecordMenuItem(menu, data, siteName, searchFunction, equivSiteNa
         gd.inferEventYear()
       );
       if (collectionId) {
-        addMenuItem(menu, "Search the same collection for the same record", searchFunction);
+        if (subtitle) {
+          addMenuItemWithSubtitle(menu, "Search the same collection for the same record", searchFunction, subtitle);
+        } else {
+          addMenuItem(menu, "Search the same collection for the same record", searchFunction);
+        }
+
         return true;
       }
     }
