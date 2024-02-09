@@ -94,6 +94,8 @@ const recordTypeByFields = [
   { type: RT.Military, labels: ["Military Date", "Military Place"] },
   { type: RT.Will, labels: ["Will Date"] },
   { type: RT.Will, labels: ["Others Listed (Name)<br/>Relationship"] },
+  { type: RT.Death, labels: ["Death Date", "Death Place"] },
+  { type: RT.Death, labels: ["Death Date", "Cause of Death"] },
 ];
 
 function determineRecordType(extractedData) {
@@ -1113,6 +1115,11 @@ function generalizeDataGivenRecordType(ed, result) {
     let ageAtDeath = getCleanValueForRecordDataList(ed, ["Age at Death", "Death Age", "Age"]);
     if (ageAtDeath) {
       result.ageAtDeath = ageAtDeath;
+    }
+
+    let causeOfDeath = getCleanValueForRecordDataList(ed, ["Cause of Death"]);
+    if (causeOfDeath) {
+      result.causeOfDeath = causeOfDeath;
     }
 
     // later England Death Registration include exact birth date

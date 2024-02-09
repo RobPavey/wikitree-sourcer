@@ -968,6 +968,10 @@ function getDeathString(gd, options) {
     dataString += ", mother's maiden name " + gd.mothersMaidenName;
   }
 
+  if (gd.causeOfDeath) {
+    dataString += ". Cause of death: " + gd.causeOfDeath;
+  }
+
   return dataString;
 }
 
