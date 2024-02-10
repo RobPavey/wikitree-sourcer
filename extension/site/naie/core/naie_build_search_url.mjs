@@ -49,7 +49,7 @@ function buildSearchUrl(buildUrlInput) {
   builder.addGender(gd.inferPersonGender());
 
   if (gd.sourceType == "record" && gd.recordType == RT.Census) {
-    builder.addAge(gd.inferAgeAtEvent());
+    builder.addAge(gd.inferAgeAtEventAsString());
   } else {
     // work out age in census year
     let censusYearString = parameters.collection;

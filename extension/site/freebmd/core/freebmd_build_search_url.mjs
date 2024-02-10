@@ -303,7 +303,7 @@ function buildSearchUrl(buildUrlInput) {
     // age of death and it is off by even 1 year it fails to find it. So only include age
     // if this is SameCollection
     let age = gd.inferAgeAtDeath();
-    if (age != undefined && age >= 0) {
+    if (age !== undefined && age >= 0) {
       if (typeOfSearch != "SameCollection") {
         let range = 5;
         if (age < 14) {

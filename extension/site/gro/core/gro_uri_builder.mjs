@@ -31,7 +31,7 @@ class GroUriBuilder {
   }
 
   addSearchTerm(string) {
-    if (string == undefined || string == "") {
+    if (string === undefined || string === "") {
       return;
     }
     if (!this.searchTermAdded) {
@@ -43,7 +43,7 @@ class GroUriBuilder {
   }
 
   addSearchParameter(parameter, value) {
-    if (value == undefined || value == "") {
+    if (value === undefined || value === "") {
       return;
     }
 

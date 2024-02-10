@@ -2720,8 +2720,20 @@ class GeneralizedData {
   }
 
   inferAgeAtDeath() {
-    if (this.ageAtDeath) {
-      return this.ageAtDeath;
+    if (this.ageAtDeath !== undefined) {
+      let ageAtDeath = this.ageAtDeath;
+      if (typeof ageAtDeath == "string") {
+        let ageNum = parseInt(ageAtDeath);
+        if (ageNum != NaN) {
+          ageAtDeath = ageNum;
+        } else {
+          ageAtDeath = undefined;
+        }
+      }
+
+      if (ageAtDeath !== undefined) {
+        return ageAtDeath;
+      }
     }
 
     let birthDateString = this.inferBirthDate();
@@ -2734,9 +2746,38 @@ class GeneralizedData {
     return undefined;
   }
 
+  inferAgeAtDeathAsString() {
+    if (this.ageAtDeath !== undefined) {
+      let ageAtDeath = this.ageAtDeath;
+      if (typeof ageAtDeath == "string") {
+        return ageAtDeath;
+      }
+
+      return ageAtDeath.toString();
+    }
+
+    let ageAtDeathNum = this.inferAgeAtDeath();
+    if (ageAtDeathNum !== undefined) {
+      return ageAtDeathNum.toString();
+    }
+    return "";
+  }
+
   inferAgeAtEvent() {
-    if (this.ageAtEvent) {
-      return this.ageAtEvent;
+    if (this.ageAtEvent !== undefined) {
+      let ageAtEvent = this.ageAtEvent;
+      if (typeof ageAtEvent == "string") {
+        let ageNum = parseInt(ageAtEvent);
+        if (ageNum != NaN) {
+          ageAtEvent = ageNum;
+        } else {
+          ageAtEvent = undefined;
+        }
+      }
+
+      if (ageAtEvent !== undefined) {
+        return ageAtEvent;
+      }
     }
 
     if (this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
@@ -2753,6 +2794,23 @@ class GeneralizedData {
     }
 
     return undefined;
+  }
+
+  inferAgeAtEventAsString() {
+    if (this.ageAtEvent !== undefined) {
+      let ageAtEvent = this.ageAtEvent;
+      if (typeof ageAtEvent == "string") {
+        return ageAtEvent;
+      }
+
+      return ageAtEvent.toString();
+    }
+
+    let ageAtEventNum = this.inferAgeAtEvent();
+    if (ageAtEventNum !== undefined) {
+      return ageAtEventNum.toString();
+    }
+    return "";
   }
 
   inferPlaceNames() {

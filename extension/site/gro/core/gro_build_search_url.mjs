@@ -89,7 +89,8 @@ function buildSearchUrl(buildUrlInput) {
     builder.addYear(gd.inferDeathYear());
     builder.addYearRange("1");
     builder.addSurname(gd.inferLastNameAtDeath(options));
-    builder.addAge(gd.inferAgeAtDeath());
+
+    builder.addAge(gd.inferAgeAtDeathAsString());
     builder.addAgeRange("5");
 
     if (gd.recordType == RT.DeathRegistration) {

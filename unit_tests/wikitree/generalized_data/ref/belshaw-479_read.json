@@ -1,0 +1,48 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Alice",
+    "lastName": "Belshaw"
+  },
+  "lastNameAtBirth": "Belshaw",
+  "lastNameAtDeath": "Belshaw",
+  "mothersMaidenName": "Jowett",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "18 Sep 1882",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "1882",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Wigan, Lancashire, England, United Kingdom"
+  },
+  "deathPlace": {
+    "placeString": "Wigan, Lancashire, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Christopher Belshaw",
+        "lastName": "Belshaw",
+        "forenames": "Christopher"
+      },
+      "lastNameAtBirth": "Belshaw",
+      "lastNameAtDeath": "Belshaw"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Elizabeth",
+        "lastName": "Jowett",
+        "name": "Elizabeth Jowett"
+      },
+      "lastNameAtBirth": "Jowett",
+      "lastNameAtDeath": "Belshaw"
+    }
+  },
+  "spouses": [],
+  "hasValidData": true
+}

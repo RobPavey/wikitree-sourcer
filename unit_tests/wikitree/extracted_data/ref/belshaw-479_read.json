@@ -1,0 +1,32 @@
+{
+  "hasValidData": true,
+  "firstNames": "Alice",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Belshaw",
+  "currentLastName": "Belshaw",
+  "mothersMaidenName": "Jowett",
+  "birthDate": "18 Sep 1882",
+  "birthDateStatus": "none",
+  "deathDate": "1882",
+  "deathDateStatus": "about",
+  "birthLocation": "Wigan, Lancashire, England, United Kingdom",
+  "deathLocation": "Wigan, Lancashire, England",
+  "personGender": "female",
+  "spouses": [],
+  "url": "https://www.wikitree.com/wiki/Belshaw-479",
+  "currentTabText": "Alice Belshaw's Profile",
+  "pageType": "read",
+  "wikiId": "Belshaw-479",
+  "name": "Alice Belshaw",
+  "parents": {
+    "father": {
+      "wikiId": "Belshaw-11",
+      "name": "Christopher Belshaw"
+    },
+    "mother": {
+      "wikiId": "Jowett-1",
+      "name": "Elizabeth (Jowett) Belshaw"
+    }
+  }
+}

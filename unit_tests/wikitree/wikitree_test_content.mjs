@@ -30,6 +30,11 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 
 const regressionData = [
   {
+    // can cause issues with age of death
+    caseName: "belshaw-479_read",
+    url: "https://www.wikitree.com/wiki/Belshaw-479",
+  },
+  {
     caseName: "black-16695_read",
     url: "https://www.wikitree.com/wiki/Black-16695",
   },

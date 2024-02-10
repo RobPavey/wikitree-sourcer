@@ -27,6 +27,12 @@ import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_util
 
 const regressionData = [
   {
+    // can cause issues with date of death
+    caseName: "belshaw-479_read_wikitree",
+    inputPath: "wikitree/generalized_data/ref/belshaw-479_read",
+    typeOfSearch: "EW_Death",
+  },
+  {
     caseName: "pavey-451_wikitree",
     inputPath: "wikitree/generalized_data/ref/pavey-451_read",
     typeOfSearch: "EW_Death",

@@ -115,12 +115,12 @@
         {
           "fieldKey": "edit-search-params-hss-age-age-from",
           "type": "text",
-          "value": "6"
+          "value": "7"
         },
         {
           "fieldKey": "edit-search-params-hss-age-age-to",
           "type": "text",
-          "value": "12"
+          "value": "13"
         },
         {
           "fieldKey": "edit-search-params-nrs-surname",

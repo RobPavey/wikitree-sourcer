@@ -1395,19 +1395,9 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
   if (options.addMerge_addPerson_addDiedYoung) {
     let ageAtDeath = personGd.inferAgeAtDeath();
     if (ageAtDeath !== undefined) {
-      if (typeof ageAtDeath == "string") {
-        let ageNum = parseInt(ageAtDeath);
-        if (ageNum != NaN) {
-          ageAtDeath = ageNum;
-        } else {
-          ageAtDeath = undefined;
-        }
-      }
-      if (ageAtDeath !== undefined) {
-        if (ageAtDeath <= 15) {
-          if (!personGd.spouses) {
-            addDiedYoung = true;
-          }
+      if (ageAtDeath <= 15) {
+        if (!personGd.spouses) {
+          addDiedYoung = true;
         }
       }
     }

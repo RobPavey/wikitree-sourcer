@@ -776,7 +776,7 @@ class NarrativeBuilder {
     let registrationDistrict = this.eventGd.registrationDistrict;
     let eventPlace = this.eventGd.inferFullEventPlace();
 
-    let ageAtEvent = this.eventGd.inferAgeAtEvent();
+    let ageAtEvent = this.eventGd.inferAgeAtEventAsString();
 
     let gd = this.eventGd;
 
@@ -1081,7 +1081,7 @@ class NarrativeBuilder {
 
     this.narrative += " died";
 
-    let ageAtEvent = this.eventGd.inferAgeAtEvent();
+    let ageAtEvent = this.eventGd.inferAgeAtEventAsString();
     this.addAgeForMainSentence(ageAtEvent);
 
     if (dateObj) {
@@ -1154,7 +1154,7 @@ class NarrativeBuilder {
     let gd = this.eventGd;
     let dateObj = this.eventGd.inferEventDateObj();
     let place = this.eventGd.inferFullEventPlace();
-    let ageAtEvent = this.eventGd.inferAgeAtEvent();
+    let ageAtEvent = this.eventGd.inferAgeAtEventAsString();
 
     let spouseName = "";
     let spouseAge = "";

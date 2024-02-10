@@ -386,8 +386,8 @@ function buildSearchUrl(buildUrlInput) {
 
     if (parameters.subcategory == "civil_deaths") {
       let ageAtDeath = gd.inferAgeAtDeath();
-      if (ageAtDeath && parameters.ageAtDeath) {
-        builder.addAgeAtDeath(ageAtDeath);
+      if (ageAtDeath !== undefined && parameters.ageAtDeath) {
+        builder.addAgeAtDeath(ageAtDeath.toString());
       }
     }
   }

@@ -465,6 +465,22 @@ const DateUtils = {
       return 0;
     }
 
+    // If one date is just a year and one is an exact day this can cause strange results
+    // e.g. Birth date is 18 Sep 1882 and death date is 1882 can case a negative age at death
+    if (!(parsedDate1.hasDay && parsedDate2.hasDay)) {
+      parsedDate1.hasDay = false;
+      parsedDate1.dayNum = 0;
+      parsedDate2.hasDay = false;
+      parsedDate2.dayNum = 0;
+    }
+
+    if (!(parsedDate1.hasMonth && parsedDate2.hasMonth)) {
+      parsedDate1.hasMonth = false;
+      parsedDate1.monthNum = 0;
+      parsedDate2.hasMonth = false;
+      parsedDate2.monthNum = 0;
+    }
+
     let date1Days = DateUtils.getParsedDateInDays(parsedDate1);
     let date2Days = DateUtils.getParsedDateInDays(parsedDate2);
 
@@ -475,6 +491,22 @@ const DateUtils = {
   getDaysBetweenParsedDates: function (parsedDate1, parsedDate2) {
     if (!parsedDate1.isValid || !parsedDate2.isValid) {
       return 0;
+    }
+
+    // If one date is just a year and one is an exact day this can cause strange results
+    // e.g. Birth date is 18 Sep 1882 and death date is 1882 can case a negative age at death
+    if (!(parsedDate1.hasDay && parsedDate2.hasDay)) {
+      parsedDate1.hasDay = false;
+      parsedDate1.dayNum = 0;
+      parsedDate2.hasDay = false;
+      parsedDate2.dayNum = 0;
+    }
+
+    if (!(parsedDate1.hasMonth && parsedDate2.hasMonth)) {
+      parsedDate1.hasMonth = false;
+      parsedDate1.monthNum = 0;
+      parsedDate2.hasMonth = false;
+      parsedDate2.monthNum = 0;
     }
 
     let date1Days = DateUtils.getParsedDateInDays(parsedDate1);
