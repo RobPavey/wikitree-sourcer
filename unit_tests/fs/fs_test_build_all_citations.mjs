@@ -331,6 +331,10 @@ const regressionData = [
       },
     ],
   },
+  {
+    caseName: "lkbm_zx9_randolph_marsh",
+    url: "https://www.familysearch.org/tree/person/details/LKBM-ZX9",
+  },
 ];
 
 const optionVariants = [

@@ -197,6 +197,13 @@ function inferBestEventDateForCompare(gd) {
             }
           }
         }
+      } else if (gd.recordType == RT.Birth) {
+        if (!gd.role || gd.role == Role.Primary) {
+          let birthDate = gd.inferBirthDate();
+          if (birthDate) {
+            eventDate = birthDate;
+          }
+        }
       }
     }
   }
