@@ -262,6 +262,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "kh6d_7g5_sherod_canada",
+    url: "https://www.familysearch.org/tree/person/sources/KH6D-7G5",
+  },
+  {
     caseName: "l231_r8m_harry_pavey",
     url: "https://www.familysearch.org/tree/person/details/L231-R8M",
     optionVariants: [

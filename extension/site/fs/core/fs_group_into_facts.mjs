@@ -117,6 +117,13 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     let fullNameA = nameObjA.inferFullName();
     let fullNameB = nameObjB.inferFullName();
 
+    if (!fullNameA || !fullNameB) {
+      if (!fullNameA && !fullNameB) {
+        return NameObj.createFromPlainObject(nameObjA);
+      }
+      return undefined;
+    }
+
     if (fullNameA == fullNameB) {
       return NameObj.createFromPlainObject(nameObjA);
     }
