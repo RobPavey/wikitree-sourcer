@@ -776,7 +776,13 @@ class NarrativeBuilder {
     let registrationDistrict = this.eventGd.registrationDistrict;
     let eventPlace = this.eventGd.inferFullEventPlace();
 
-    let ageAtEvent = this.eventGd.inferAgeAtEventAsString();
+    // ageAtEvent - generally we only want to include this if it is included in the record
+    // we don't want to compute it as that might give the misleading idea that the record contains
+    // the age.
+    let ageAtEvent = this.eventGd.ageAtEvent;
+    if (!ageAtEvent && typeString == "death") {
+      ageAtEvent = this.eventGd.ageAtDeath;
+    }
 
     let gd = this.eventGd;
 
