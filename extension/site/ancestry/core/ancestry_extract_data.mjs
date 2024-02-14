@@ -1436,6 +1436,31 @@ function handlePersonFacts(document, result) {
     }
   }
 
+  // Get the list of sources
+  let sourcesSection = document.querySelector("section.factsSectionSources");
+  if (sourcesSection) {
+    let researchList = sourcesSection.querySelector("ul.researchList");
+    if (researchList) {
+      let researchListItems = researchList.querySelectorAll("li.researchListItem");
+      if (researchListItems.length > 0) {
+        result.sources = [];
+        for (let researchListItem of researchListItems) {
+          let dbIdInput = researchListItem.querySelector("input.dbId");
+          let recordIdInput = researchListItem.querySelector("input.recordId");
+
+          if (dbIdInput && recordIdInput) {
+            let dbId = dbIdInput.value;
+            let recordId = recordIdInput.value;
+            if (dbId && recordId) {
+              let source = { dbId: dbId, recordId: recordId };
+              result.sources.push(source);
+            }
+          }
+        }
+      }
+    }
+  }
+
   // #family46552199474 > div.noTopSpacing.userCard.userCardSize2 > div.userCardContent.textWrap > h4
 
   //console.log("handleFactEdit, recordUrl is: " + result.recordUrl);

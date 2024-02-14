@@ -22,5 +22,71 @@
   ],
   "fatherName": "John More",
   "motherName": "Mary More",
+  "sources": [
+    {
+      "dbId": "8860",
+      "recordId": "4832519"
+    },
+    {
+      "dbId": "8767",
+      "recordId": "17046020"
+    },
+    {
+      "dbId": "7572",
+      "recordId": "14217284"
+    },
+    {
+      "dbId": "6598",
+      "recordId": "11821176"
+    },
+    {
+      "dbId": "7814",
+      "recordId": "2217758"
+    },
+    {
+      "dbId": "8914",
+      "recordId": "23686209"
+    },
+    {
+      "dbId": "8913",
+      "recordId": "20154333"
+    },
+    {
+      "dbId": "9841",
+      "recordId": "88142195"
+    },
+    {
+      "dbId": "9841",
+      "recordId": "179700059"
+    },
+    {
+      "dbId": "9852",
+      "recordId": "31469714"
+    },
+    {
+      "dbId": "2056",
+      "recordId": "174184"
+    },
+    {
+      "dbId": "1623",
+      "recordId": "2018126"
+    },
+    {
+      "dbId": "61265",
+      "recordId": "17847728"
+    },
+    {
+      "dbId": "3145",
+      "recordId": "12802811"
+    },
+    {
+      "dbId": "2410",
+      "recordId": "4588695"
+    },
+    {
+      "dbId": "70845",
+      "recordId": "6217110"
+    }
+  ],
   "ancestryTemplate": "{{Ancestry Tree|86808578|260052341589}}"
 }

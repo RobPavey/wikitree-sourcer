@@ -18,5 +18,47 @@
   ],
   "fatherName": "Robert Brain",
   "motherName": "Mary Elizabeth Kimberlin",
+  "sources": [
+    {
+      "dbId": "6598",
+      "recordId": "16590030"
+    },
+    {
+      "dbId": "7814",
+      "recordId": "34673534"
+    },
+    {
+      "dbId": "2352",
+      "recordId": "56819025"
+    },
+    {
+      "dbId": "61596",
+      "recordId": "44774986"
+    },
+    {
+      "dbId": "8912",
+      "recordId": "33557671"
+    },
+    {
+      "dbId": "8913",
+      "recordId": "3291674"
+    },
+    {
+      "dbId": "60625",
+      "recordId": "5553593"
+    },
+    {
+      "dbId": "61709",
+      "recordId": "30356423"
+    },
+    {
+      "dbId": "61709",
+      "recordId": "61984"
+    },
+    {
+      "dbId": "60526",
+      "recordId": "3010505"
+    }
+  ],
   "ancestryTemplate": "{{Ancestry Tree|86808578|46552198684}}"
 }

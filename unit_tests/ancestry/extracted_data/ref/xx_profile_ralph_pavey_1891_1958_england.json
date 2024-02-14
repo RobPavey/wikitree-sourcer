@@ -23,5 +23,71 @@
   ],
   "fatherName": "Harry Alfred Pavey",
   "motherName": "Amelia Elizabeth Littlemore",
+  "sources": [
+    {
+      "dbId": "7814",
+      "recordId": "2229789"
+    },
+    {
+      "dbId": "2352",
+      "recordId": "1903047"
+    },
+    {
+      "dbId": "61596",
+      "recordId": "10189262"
+    },
+    {
+      "dbId": "1262",
+      "recordId": "4043567"
+    },
+    {
+      "dbId": "7579",
+      "recordId": "34824452"
+    },
+    {
+      "dbId": "8912",
+      "recordId": "26906501"
+    },
+    {
+      "dbId": "8913",
+      "recordId": "22052680"
+    },
+    {
+      "dbId": "8753",
+      "recordId": "48342087"
+    },
+    {
+      "dbId": "1904",
+      "recordId": "17893479"
+    },
+    {
+      "dbId": "2364",
+      "recordId": "1642657"
+    },
+    {
+      "dbId": "1558",
+      "recordId": "5339253"
+    },
+    {
+      "dbId": "1795",
+      "recordId": "40083750"
+    },
+    {
+      "dbId": "1623",
+      "recordId": "3673301"
+    },
+    {
+      "dbId": "1210",
+      "recordId": "5685523"
+    },
+    {
+      "dbId": "5119",
+      "recordId": "4306526"
+    },
+    {
+      "dbId": "5119",
+      "recordId": "1047048"
+    }
+  ],
   "ancestryTemplate": "{{Ancestry Tree|86808578|46552199708}}"
 }

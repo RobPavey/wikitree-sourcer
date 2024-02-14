@@ -31,6 +31,44 @@
       }
     ],
     "fatherName": "Leonard Pavey IV",
-    "motherName": "Ann Hearn"
+    "motherName": "Ann Hearn",
+    "sources": [
+      {
+        "dbId": "2243",
+        "recordId": "1038990"
+      },
+      {
+        "dbId": "2243",
+        "recordId": "151041285"
+      },
+      {
+        "dbId": "2243",
+        "recordId": "151040635"
+      },
+      {
+        "dbId": "9841",
+        "recordId": "173229489"
+      },
+      {
+        "dbId": "9849",
+        "recordId": "4403430"
+      },
+      {
+        "dbId": "9852",
+        "recordId": "22575416"
+      },
+      {
+        "dbId": "60526",
+        "recordId": "144295034"
+      },
+      {
+        "dbId": "2319",
+        "recordId": "595050"
+      },
+      {
+        "dbId": "1851",
+        "recordId": "440230"
+      }
+    ]
   }
 }

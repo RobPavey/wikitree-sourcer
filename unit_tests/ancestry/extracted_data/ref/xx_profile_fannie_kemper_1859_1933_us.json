@@ -22,5 +22,71 @@
   ],
   "fatherName": "William K. Kemper",
   "motherName": "Mary \"Polly\" (Hornberger) Kemper",
+  "sources": [
+    {
+      "dbId": "7667",
+      "recordId": "3883624"
+    },
+    {
+      "dbId": "7163",
+      "recordId": "40866586"
+    },
+    {
+      "dbId": "6742",
+      "recordId": "45747473"
+    },
+    {
+      "dbId": "7602",
+      "recordId": "45545965"
+    },
+    {
+      "dbId": "6061",
+      "recordId": "46341201"
+    },
+    {
+      "dbId": "6224",
+      "recordId": "70925678"
+    },
+    {
+      "dbId": "1030",
+      "recordId": "0"
+    },
+    {
+      "dbId": "2703",
+      "recordId": "9626887"
+    },
+    {
+      "dbId": "61843",
+      "recordId": "237349714"
+    },
+    {
+      "dbId": "61378",
+      "recordId": "901521294"
+    },
+    {
+      "dbId": "61378",
+      "recordId": "902484483"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "302270798"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "302474174"
+    },
+    {
+      "dbId": "60525",
+      "recordId": "107722562"
+    },
+    {
+      "dbId": "60901",
+      "recordId": "763343664"
+    },
+    {
+      "dbId": "60901",
+      "recordId": "763340638"
+    }
+  ],
   "ancestryTemplate": "{{Ancestry Tree|11748183|12992988602}}"
 }
