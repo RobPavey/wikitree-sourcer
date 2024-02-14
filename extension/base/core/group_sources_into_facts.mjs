@@ -22,12 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { CD } from "../../../base/core/country_data.mjs";
-import { Role } from "../../../base/core/record_type.mjs";
-import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { CD } from "./country_data.mjs";
+import { Role } from "./record_type.mjs";
+import { DateUtils } from "./date_utils.mjs";
 
-import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
-import { getFieldsUsedInNarrative } from "../../../base/core/narrative_builder.mjs";
+import { NameObj, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
+import { getFieldsUsedInNarrative } from "./narrative_builder.mjs";
 
 function attemptToMergeSourceIntoPriorFact(source, result, type) {
   //console.log("attemptToMergeSourceIntoPriorFact");

@@ -31,9 +31,9 @@ import { buildNarrative } from "../../../base/core/narrative_builder.mjs";
 
 import { groupSourcesIntoFacts } from "../../../base/core/group_sources_into_facts.mjs";
 
-import { extractDataFromFetch } from "./fs_extract_data.mjs";
-import { generalizeData } from "./fs_generalize_data.mjs";
-import { buildCitation } from "./fs_build_citation.mjs";
+import { extractRecord } from "./ancestry_extract_data.mjs";
+import { generalizeData } from "./ancestry_generalize_data.mjs";
+import { buildCitation } from "./ancestry_build_citation.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
 
 function inferEventDate(source) {
@@ -717,171 +717,8 @@ function doesCitationWantHouseholdTable(citationType, generalizedData, options) 
   return false;
 }
 
-function buildSourcerCitation(runDate, sourceDataObjects, source, type, options) {
-  if (sourceDataObjects) {
-    source.dataObjects = sourceDataObjects;
+function buildSourcerCitation(runDate, sourceDataObjects, source, type, options) {}
 
-    let extractedData = extractDataFromFetch(undefined, "", source.dataObjects, "record", options);
-    if (extractedData && extractedData.pageType) {
-      source.extractedData = extractedData;
+async function buildSourcerCitations(result, type, options) {}
 
-      let generalizedData = generalizeData({ extractedData: extractedData });
-      if (generalizedData && generalizedData.hasValidData) {
-        source.generalizedData = generalizedData;
-
-        let householdTableString = "";
-        if (doesCitationWantHouseholdTable(type, generalizedData, options)) {
-          const tableInput = {
-            extractedData: extractedData,
-            generalizedData: generalizedData,
-            dataCache: undefined,
-            options: options,
-          };
-
-          const tableObject = buildHouseholdTable(tableInput);
-          householdTableString = tableObject.tableString;
-        }
-
-        const input = {
-          extractedData: extractedData,
-          generalizedData: generalizedData,
-          runDate: runDate,
-          type: type,
-          dataCache: undefined,
-          options: options,
-          householdTableString: householdTableString,
-        };
-        const citationObject = buildCitation(input);
-        citationObject.generalizedData = generalizedData;
-        source.citationObject = citationObject;
-      }
-    }
-  }
-
-  if (!source.citationObject) {
-    // we don't have an FS fetch object, or it wasn't a record object we could process,
-    // see what we can do by parsing FS citation string
-
-    //console.log("getSourcerCitation: could not fetch, source is:");
-    //console.log(source);
-
-    if (/^"[^"]+"\s+\d\d\d\d http/.test(source.citation)) {
-      let year = source.citation.replace(/^"[^"]+"\s+(\d\d\d\d) http.*$/, "$1");
-      if (year && year != source.citation) {
-        source.sortYear = year;
-      }
-      let firstSentence = source.citation.replace(/^"([^"]+)"\s+\d\d\d\d http.*$/, "$1");
-      if (firstSentence && firstSentence != source.citation) {
-        source.firstSentence = firstSentence;
-      }
-      let link = source.citation.replace(/^"[^"]+"\s+\d\d\d\d (http.*)\. Accessed.*$/, "$1");
-      if (link && link != source.citation) {
-        source.link = link;
-      }
-
-      let title = source.title;
-      if (!title) {
-        title = source.firstSentence;
-      }
-      if (title) {
-        let joinIndex = title.search(/[\s\n]+in\s+the\s+/);
-        if (joinIndex != -1) {
-          source.prefName = title.substring(0, joinIndex);
-        }
-      }
-    }
-  }
-}
-
-async function buildSourcerCitations(result, type, options) {
-  try {
-    if (options.addMerge_fsAllCitations_excludeOtherRoleSources) {
-      let newSources = [];
-      for (let source of result.sources) {
-        if (source.citationObject) {
-          const gd = source.generalizedData;
-          if (gd && gd.role && gd.role != Role.Primary) {
-            // exclude this one
-          } else {
-            newSources.push(source);
-          }
-        } else {
-          newSources.push(source);
-        }
-      }
-      result.sources = newSources;
-    }
-
-    if (options.addMerge_fsAllCitations_excludeRetiredSources != "never") {
-      let newSources = [];
-      for (let source of result.sources) {
-        let removeSource = false;
-        let ed = source.extractedData;
-        // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
-        if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
-          if (options.addMerge_fsAllCitations_excludeRetiredSources == "always") {
-            removeSource = true;
-          } else {
-            // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
-            // but the current URL is store in either forwardPersonToArk or extData in this case.
-            let currentSourceUrl = ed.forwardPersonToArk;
-            if (!currentSourceUrl) {
-              if (ed.extData && ed.extData.startsWith("http")) {
-                currentSourceUrl = ed.extData;
-              }
-            }
-
-            if (currentSourceUrl) {
-              currentSourceUrl = currentSourceUrl.replace("www.familysearch.org", "familysearch.org");
-
-              //console.log("currentSourceUrl = " + currentSourceUrl);
-
-              for (let otherSource of result.sources) {
-                //console.log("otherSource.uri = " + otherSource.uri);
-                if (otherSource.uri == currentSourceUrl) {
-                  removeSource = true;
-                  //console.log("removing duplicate source");
-                  break;
-                }
-              }
-            }
-          }
-        }
-
-        if (!removeSource) {
-          newSources.push(source);
-        }
-      }
-      result.sources = newSources;
-    }
-
-    sortSourcesUsingFsSortKeysAndFetchedRecords(result);
-
-    if (type == "source") {
-      generateSourcerCitationsStringForTypeSource(result, options);
-    } else {
-      let groupCitations = options.addMerge_fsAllCitations_groupCitations;
-
-      if (groupCitations) {
-        groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative
-        sortFacts(result);
-        generateSourcerCitationsStringForFacts(result, type, options);
-      } else {
-        if (type == "inline") {
-          generateSourcerCitationsStringForTypeInline(result, options);
-        } else {
-          // must be narrative
-          generateSourcerCitationsStringForTypeNarrative(result, options);
-        }
-      }
-    }
-
-    result.citationsStringType = type;
-    result.success = true;
-  } catch (error) {
-    result.success = false;
-    result.errorMessage = error.message;
-  }
-}
-
-export { filterAndEnhanceFsSourcesIntoSources, buildSourcerCitation, buildSourcerCitations, buildFsPlainCitations };
+export { buildSourcerCitation, buildSourcerCitations };

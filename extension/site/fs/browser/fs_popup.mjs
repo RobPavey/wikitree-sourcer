@@ -197,7 +197,7 @@ async function fsSaveUnitTestDataForAllCitations(input, response) {
   writeToClipboard(debugText, message);
 }
 
-async function fsGetAllCitationsAction(data, citationType) {
+async function fsBuildAllCitationsAction(data, citationType) {
   try {
     clearClipboard();
 
@@ -220,7 +220,7 @@ async function fsGetAllCitationsAction(data, citationType) {
     let response = await fsGetAllCitations(input);
 
     if (response.success) {
-      //console.log("fsGetAllCitationsAction, response is");
+      //console.log("fsBuildAllCitationsAction, response is");
       //console.log(response);
       //keepPopupOpenForDebug();
 
@@ -249,7 +249,7 @@ async function fsGetAllCitationsAction(data, citationType) {
       displayMessageWithIcon("warning", message, response.errorMessage);
     }
   } catch (e) {
-    console.log("fsGetAllCitationsAction caught exception on fsGetAllCitations:");
+    console.log("fsBuildAllCitationsAction caught exception on fsGetAllCitations:");
     console.log(e);
     keepPopupOpenForDebug();
 
@@ -346,14 +346,14 @@ function addBuildBookCitationMenuItems(menu, data) {
   });
 }
 
-function addSaveAllCitationsMenuItem(menu, data, backFunction) {
+function addBuildAllCitationsMenuItem(menu, data, backFunction) {
   if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
     addMenuItemWithSubMenu(
       menu,
       "Build All Citations",
       function (element) {
         let citationType = options.addMerge_fsAllCitations_citationType;
-        fsGetAllCitationsAction(data, citationType);
+        fsBuildAllCitationsAction(data, citationType);
       },
       function () {
         setupBuildAllCitationsSubMenu(data, backFunction);
@@ -365,7 +365,7 @@ function addSaveAllCitationsMenuItem(menu, data, backFunction) {
 function addBuildAllCitationsSubmenuMenuItem(menu, data, text, citationType) {
   if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
     addMenuItem(menu, text, function (element) {
-      fsGetAllCitationsAction(data, citationType);
+      fsBuildAllCitationsAction(data, citationType);
     });
   }
 }
@@ -471,7 +471,7 @@ async function setupFsPopupMenu(extractedData) {
     await addSearchMenus(menu, data, backFunction, "fs");
     addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data, fsGetAllCitationsForSavePersonData);
-    addSaveAllCitationsMenuItem(menu, data, backFunction);
+    addBuildAllCitationsMenuItem(menu, data, backFunction);
     addBuildFsTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "book") {
     addBuildBookCitationMenuItems(menu, data);
