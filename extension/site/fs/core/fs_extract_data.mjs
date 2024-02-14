@@ -217,7 +217,118 @@ function extractRelatives(relatives, result) {
   }
 }
 
+function extractDataForImageInNewViewer(document, result) {
+  //console.log("extractDataForImageInNewViewer");
+
+  let mainNode = document.querySelector("#main");
+  if (!mainNode) {
+    result.pageType = "unknown";
+    return;
+  }
+
+  let asideNodes = document.querySelectorAll("aside ");
+
+  //console.log("Num aside nodes = " + asideNodes.length);
+
+  let titleSpan = mainNode.querySelector("div header div  > h1 > span");
+
+  //console.log("titleSpan is:");
+  //console.log(titleSpan);
+
+  if (titleSpan) {
+    let title = titleSpan.textContent.trim();
+    if (title) {
+      result.filmTitle = title;
+    }
+  }
+
+  let imageNumberInput = mainNode.querySelector("div input[aria-label='Enter Image number']");
+  //console.log("imageNumberInput is:");
+  //console.log(imageNumberInput);
+  if (imageNumberInput) {
+    let totalImagesPara = undefined;
+    let possibleNumImagesParas = mainNode.querySelectorAll("div > p");
+    //console.log("possibleNumImagesParas.length = " + possibleNumImagesParas.length);
+    for (let para of possibleNumImagesParas) {
+      let text = para.textContent;
+      //console.log("text = " + text);
+      if (text && /^\s*of\s+\d+\s*$/.test(text)) {
+        //console.log("para match, text = " + text);
+        totalImagesPara = para;
+      }
+    }
+
+    if (totalImagesPara) {
+      let imageNumber = imageNumberInput.value;
+      let totalImages = totalImagesPara.textContent.trim();
+
+      if (imageNumber && totalImages) {
+        result.imageNumber = imageNumber;
+        result.totalImages = totalImages;
+      }
+    }
+  }
+
+  let filmNumberLink = undefined;
+  let possibleFilmNumberLinks = mainNode.querySelectorAll("div header div nav span a");
+  //console.log("possibleFilmNumberLinks.length = " + possibleFilmNumberLinks.length);
+  for (let link of possibleFilmNumberLinks) {
+    let text = link.textContent;
+    //console.log("text = " + text);
+    if (text && /^\s*\#\d+\s*$/.test(text)) {
+      //console.log("link match, text = " + text);
+      filmNumberLink = link;
+    }
+  }
+
+  if (filmNumberLink) {
+    let filmNumber = filmNumberLink.textContent.trim();
+
+    if (filmNumber) {
+      result.filmNumber = filmNumber.substring(1); // take # off start
+    }
+  } else {
+    // try using aside nodes (side bar)
+
+    let groupDataTab = undefined;
+    for (let asideNode of asideNodes) {
+      let groupDataTabTest = asideNode.querySelector("#tabs--1--panel--1");
+      //console.log("groupDataTabTest is:");
+      //console.log(groupDataTabTest);
+      if (groupDataTabTest) {
+        groupDataTab = groupDataTabTest;
+        break;
+      }
+    }
+    //console.log("groupDataTab is:");
+    //console.log(groupDataTab);
+
+    if (groupDataTab) {
+      let possibleLinks = groupDataTab.querySelectorAll("div ul div a");
+      //console.log("possibleLinks.length = " + possibleLinks.length);
+
+      for (let link of possibleLinks) {
+        let text = link.textContent;
+        let href = link.getAttribute("href");
+        if (text && href) {
+          if (/^\s*\d+\s*$/.test(text)) {
+            if (href.includes("imageGroupNumbers")) {
+              result.filmNumber = link.textContent.trim();
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  if (result.filmNumber || result.imageNumber) {
+    result.pageType = "image";
+  }
+}
+
 function extractDataForImage(filmViewerNode, result) {
+  //console.log("extractDataForImage");
   // Example images:
 
   // This one has transcribed data under "Image Index"
@@ -863,6 +974,9 @@ function extractData(document, url) {
 
         extractDataForPersonPageFormat2(document, personId, result);
         return result;
+      } else if (url.startsWith("https://www.familysearch.org/ark:/61903/3:1:")) {
+        // e.g.: https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS4F-NQ21?view=explore&groupId=M9DG-2LY
+        extractDataForImageInNewViewer(document, result);
       } else {
         console.log("page type is unknown but has a #main element");
         result.pageType = "unknown";
