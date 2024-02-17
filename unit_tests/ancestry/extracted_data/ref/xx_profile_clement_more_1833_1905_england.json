@@ -25,67 +25,83 @@
   "sources": [
     {
       "dbId": "8860",
-      "recordId": "4832519"
+      "recordId": "4832519",
+      "title": "1851 England Census"
     },
     {
       "dbId": "8767",
-      "recordId": "17046020"
+      "recordId": "17046020",
+      "title": "1861 England Census"
     },
     {
       "dbId": "7572",
-      "recordId": "14217284"
+      "recordId": "14217284",
+      "title": "1881 England Census"
     },
     {
       "dbId": "6598",
-      "recordId": "11821176"
+      "recordId": "11821176",
+      "title": "1891 England Census"
     },
     {
       "dbId": "7814",
-      "recordId": "2217758"
+      "recordId": "2217758",
+      "title": "1901 England Census"
     },
     {
       "dbId": "8914",
-      "recordId": "23686209"
+      "recordId": "23686209",
+      "title": "England &amp; Wales, Civil Registration Death Index, 1837-1915"
     },
     {
       "dbId": "8913",
-      "recordId": "20154333"
+      "recordId": "20154333",
+      "title": "England &amp; Wales, Civil Registration Marriage Index, 1837-1915"
     },
     {
       "dbId": "9841",
-      "recordId": "88142195"
+      "recordId": "88142195",
+      "title": "England, Select Births and Christenings, 1538-1975"
     },
     {
       "dbId": "9841",
-      "recordId": "179700059"
+      "recordId": "179700059",
+      "title": "England, Select Births and Christenings, 1538-1975"
     },
     {
       "dbId": "9852",
-      "recordId": "31469714"
+      "recordId": "31469714",
+      "title": "England, Select Marriages, 1538-1973"
     },
     {
       "dbId": "2056",
-      "recordId": "174184"
+      "recordId": "174184",
+      "title": "London and Surrey, England, Marriage Bonds and Allegations, 1597-1921"
     },
     {
       "dbId": "1623",
-      "recordId": "2018126"
+      "recordId": "2018126",
+      "title": "London, England, Church of England Marriages and Banns, 1754-1938"
     },
     {
       "dbId": "61265",
-      "recordId": "17847728"
+      "recordId": "17847728",
+      "title": "London, England, City Directories, 1736-1943"
     },
     {
       "dbId": "3145",
-      "recordId": "12802811"
+      "recordId": "12802811",
+      "title": "UK, City and County Directories, 1766 - 1946"
     },
     {
       "dbId": "2410",
-      "recordId": "4588695"
+      "recordId": "4588695",
+      "title": "UK, Poll Books and Electoral Registers, 1538-1893"
     },
     {
       "dbId": "70845",
-      "recordId": "6217110"
+      "recordId": "6217110",
+      "title": "Web: UK, Burial and Cremation Index, 1576-2014"
     }
   ],
   "ancestryTemplate": "{{Ancestry Tree|86808578|260052341589}}"

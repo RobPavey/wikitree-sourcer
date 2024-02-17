@@ -374,7 +374,9 @@ async function displayMessage(message1, message2) {
 
 async function displayBusyMessage(message1, message2) {
   let existingBusyContainer = document.getElementById("busyContainer");
-  if (existingBusyContainer) {
+  let existingSkipButton = document.getElementById("skipButton");
+
+  if (existingBusyContainer && !existingSkipButton) {
     let messageLabel1 = document.getElementById("messageLabel1");
     let messageLabel2 = document.getElementById("messageLabel2");
 

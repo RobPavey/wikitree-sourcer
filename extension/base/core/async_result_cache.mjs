@@ -30,8 +30,11 @@ function registerAsyncCacheTag(cacheTag, maxLength = 10, expireTime = 1000 * 60 
   if (!cacheTag) {
     return;
   }
-  let cache = { maxLength: maxLength, expireTime: expireTime };
-  cacheRegistry[cacheTag] = cache;
+  // we allow calling the register function multiple times.
+  if (!cacheRegistry[cacheTag]) {
+    let cache = { maxLength: maxLength, expireTime: expireTime };
+    cacheRegistry[cacheTag] = cache;
+  }
 }
 
 function getLocalStorageKeyForAsyncCache(cacheTag) {

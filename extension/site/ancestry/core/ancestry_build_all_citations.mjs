@@ -592,7 +592,12 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
         }
       } else {
         for (let source of fact.sources) {
-          citationsString += source.citationObject.citation;
+          if (source.citationObject) {
+            citationsString += source.citationObject.citation;
+          } else {
+            console.log("generateSourcerCitationsStringForFacts, no citationObject for source:");
+            console.log(source);
+          }
         }
       }
       citationCount += fact.sources.length;
@@ -717,8 +722,138 @@ function doesCitationWantHouseholdTable(citationType, generalizedData, options) 
   return false;
 }
 
-function buildSourcerCitation(runDate, sourceDataObjects, source, type, options) {}
+function buildSourcerCitation(runDate, source, type, options) {
+  //console.log("buildSourcerCitation: source is:");
+  //console.log(source);
 
-async function buildSourcerCitations(result, type, options) {}
+  let ed = source.extractedData;
+  let gd = source.generalizedData;
+
+  if (gd && gd.hasValidData) {
+    let householdTableString = "";
+    if (doesCitationWantHouseholdTable(type, gd, options)) {
+      const tableInput = {
+        extractedData: ed,
+        generalizedData: gd,
+        dataCache: undefined,
+        options: options,
+      };
+
+      const tableObject = buildHouseholdTable(tableInput);
+      householdTableString = tableObject.tableString;
+    }
+
+    const input = {
+      extractedData: ed,
+      generalizedData: gd,
+      runDate: runDate,
+      type: type,
+      dataCache: undefined,
+      options: options,
+      householdTableString: householdTableString,
+    };
+    const citationObject = buildCitation(input);
+
+    //console.log("buildSourcerCitation: buildCitation returned:");
+    //console.log(citationObject);
+
+    citationObject.generalizedData = gd;
+    source.citationObject = citationObject;
+  }
+}
+
+async function buildSourcerCitations(result, type, options) {
+  try {
+    if (options.addMerge_fsAllCitations_excludeOtherRoleSources) {
+      let newSources = [];
+      for (let source of result.sources) {
+        if (source.citationObject) {
+          const gd = source.generalizedData;
+          if (gd && gd.role && gd.role != Role.Primary) {
+            // exclude this one
+          } else {
+            newSources.push(source);
+          }
+        } else {
+          newSources.push(source);
+        }
+      }
+      result.sources = newSources;
+    }
+
+    if (options.addMerge_fsAllCitations_excludeRetiredSources != "never") {
+      let newSources = [];
+      for (let source of result.sources) {
+        let removeSource = false;
+        let ed = source.extractedData;
+        // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
+        if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
+          if (options.addMerge_fsAllCitations_excludeRetiredSources == "always") {
+            removeSource = true;
+          } else {
+            // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
+            // but the current URL is store in either forwardPersonToArk or extData in this case.
+            let currentSourceUrl = ed.forwardPersonToArk;
+            if (!currentSourceUrl) {
+              if (ed.extData && ed.extData.startsWith("http")) {
+                currentSourceUrl = ed.extData;
+              }
+            }
+
+            if (currentSourceUrl) {
+              currentSourceUrl = currentSourceUrl.replace("www.familysearch.org", "familysearch.org");
+
+              //console.log("currentSourceUrl = " + currentSourceUrl);
+
+              for (let otherSource of result.sources) {
+                //console.log("otherSource.uri = " + otherSource.uri);
+                if (otherSource.uri == currentSourceUrl) {
+                  removeSource = true;
+                  //console.log("removing duplicate source");
+                  break;
+                }
+              }
+            }
+          }
+        }
+
+        if (!removeSource) {
+          newSources.push(source);
+        }
+      }
+      result.sources = newSources;
+    }
+
+    sortSourcesUsingFsSortKeysAndFetchedRecords(result);
+
+    if (type == "source") {
+      generateSourcerCitationsStringForTypeSource(result, options);
+    } else {
+      let groupCitations = options.addMerge_fsAllCitations_groupCitations;
+
+      if (groupCitations) {
+        groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative
+        sortFacts(result);
+        generateSourcerCitationsStringForFacts(result, type, options);
+      } else {
+        if (type == "inline") {
+          generateSourcerCitationsStringForTypeInline(result, options);
+        } else {
+          // must be narrative
+          generateSourcerCitationsStringForTypeNarrative(result, options);
+        }
+      }
+    }
+
+    result.citationsStringType = type;
+    result.success = true;
+  } catch (error) {
+    console.log("caught exception, error is:");
+    console.log(error);
+
+    result.success = false;
+    result.errorMessage = error.message;
+  }
+}
 
 export { buildSourcerCitation, buildSourcerCitations };

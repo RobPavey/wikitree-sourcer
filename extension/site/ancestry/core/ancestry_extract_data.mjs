@@ -1447,12 +1447,17 @@ function handlePersonFacts(document, result) {
         for (let researchListItem of researchListItems) {
           let dbIdInput = researchListItem.querySelector("input.dbId");
           let recordIdInput = researchListItem.querySelector("input.recordId");
+          let titleInput = researchListItem.querySelector("input.title");
 
           if (dbIdInput && recordIdInput) {
             let dbId = dbIdInput.value;
             let recordId = recordIdInput.value;
             if (dbId && recordId) {
               let source = { dbId: dbId, recordId: recordId };
+
+              if (titleInput) {
+                source.title = titleInput.value;
+              }
               result.sources.push(source);
             }
           }

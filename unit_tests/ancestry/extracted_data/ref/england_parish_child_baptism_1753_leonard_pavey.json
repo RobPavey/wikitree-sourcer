@@ -35,39 +35,48 @@
     "sources": [
       {
         "dbId": "2243",
-        "recordId": "1038990"
+        "recordId": "1038990",
+        "title": "Dorset, England, Church of England Baptisms, Marriages and Burials, 1538-1812"
       },
       {
         "dbId": "2243",
-        "recordId": "151041285"
+        "recordId": "151041285",
+        "title": "Dorset, England, Church of England Baptisms, Marriages and Burials, 1538-1812"
       },
       {
         "dbId": "2243",
-        "recordId": "151040635"
+        "recordId": "151040635",
+        "title": "Dorset, England, Church of England Baptisms, Marriages and Burials, 1538-1812"
       },
       {
         "dbId": "9841",
-        "recordId": "173229489"
+        "recordId": "173229489",
+        "title": "England, Select Births and Christenings, 1538-1975"
       },
       {
         "dbId": "9849",
-        "recordId": "4403430"
+        "recordId": "4403430",
+        "title": "England, Select Dorset Church of England Parish Registers, 1538-1910"
       },
       {
         "dbId": "9852",
-        "recordId": "22575416"
+        "recordId": "22575416",
+        "title": "England, Select Marriages, 1538–1973"
       },
       {
         "dbId": "60526",
-        "recordId": "144295034"
+        "recordId": "144295034",
+        "title": "UK and Ireland, Find A Grave Index, 1300s-Current"
       },
       {
         "dbId": "2319",
-        "recordId": "595050"
+        "recordId": "595050",
+        "title": "UK, Land Tax Redemption, 1798"
       },
       {
         "dbId": "1851",
-        "recordId": "440230"
+        "recordId": "440230",
+        "title": "UK, Register of Duties Paid for Apprentices' Indentures, 1710-1811"
       }
     ]
   }

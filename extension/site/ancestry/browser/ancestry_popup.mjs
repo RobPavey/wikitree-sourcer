@@ -496,8 +496,9 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
 
   displayBusyMessageAfterDelay("WikiTree Sourcer fetching full record page ...\n(This might take several seconds)");
 
-  registerAsyncCacheTag("AncestryFetchFullRecord");
-  let extractResult = await extractRecordHtmlFromUrl(recordUrl, "AncestryFetchFullRecord");
+  const cacheTag = "AncestryFetchFullRecord";
+  registerAsyncCacheTag(cacheTag);
+  let extractResult = await extractRecordHtmlFromUrl(recordUrl, cacheTag);
 
   if (extractResult.success) {
     let extractedData = extractDataFromHtml(extractResult.htmlText, recordUrl);
@@ -585,6 +586,8 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
           } else {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
           }
+
+          keepPopupOpenForDebug(); // Temporary!!!!
           writeToClipboard(response.citationsString, message, false, message2);
         }
       } else {

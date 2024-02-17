@@ -26,67 +26,83 @@
   "sources": [
     {
       "dbId": "7814",
-      "recordId": "2229789"
+      "recordId": "2229789",
+      "title": "1901 England Census"
     },
     {
       "dbId": "2352",
-      "recordId": "1903047"
+      "recordId": "1903047",
+      "title": "1911 England Census"
     },
     {
       "dbId": "61596",
-      "recordId": "10189262"
+      "recordId": "10189262",
+      "title": "1939 England and Wales Register"
     },
     {
       "dbId": "1262",
-      "recordId": "4043567"
+      "recordId": "4043567",
+      "title": "British Army WWI Medal Rolls Index Cards, 1914-1920"
     },
     {
       "dbId": "7579",
-      "recordId": "34824452"
+      "recordId": "34824452",
+      "title": "England &amp; Wales, Death Index, 1916-2007"
     },
     {
       "dbId": "8912",
-      "recordId": "26906501"
+      "recordId": "26906501",
+      "title": "England &amp; Wales, FreeBMD Birth Index, 1837-1915"
     },
     {
       "dbId": "8913",
-      "recordId": "22052680"
+      "recordId": "22052680",
+      "title": "England &amp; Wales, FreeBMD Marriage Index, 1837-1915"
     },
     {
       "dbId": "8753",
-      "recordId": "48342087"
+      "recordId": "48342087",
+      "title": "England &amp; Wales, Marriage Index, 1916-2005"
     },
     {
       "dbId": "1904",
-      "recordId": "17893479"
+      "recordId": "17893479",
+      "title": "England &amp; Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1966"
     },
     {
       "dbId": "2364",
-      "recordId": "1642657"
+      "recordId": "1642657",
+      "title": "Liverpool, England, Crew Lists 1861-1919"
     },
     {
       "dbId": "1558",
-      "recordId": "5339253"
+      "recordId": "5339253",
+      "title": "London, England, Births and Baptisms, 1813-1906"
     },
     {
       "dbId": "1795",
-      "recordId": "40083750"
+      "recordId": "40083750",
+      "title": "London, England, Electoral Registers, 1832-1965"
     },
     {
       "dbId": "1623",
-      "recordId": "3673301"
+      "recordId": "3673301",
+      "title": "London, England, Marriages and Banns, 1754-1921"
     },
     {
       "dbId": "1210",
-      "recordId": "5685523"
+      "recordId": "5685523",
+      "title": "New South Wales, Australia, Unassisted Immigrant Passenger Lists, 1826-1922"
     },
     {
       "dbId": "5119",
-      "recordId": "4306526"
+      "recordId": "4306526",
+      "title": "UK, WWI Service Medal and Award Rolls, 1914-1920"
     },
     {
       "dbId": "5119",
-      "recordId": "1047048"
+      "recordId": "1047048",
+      "title": "UK, WWI Service Medal and Award Rolls, 1914-1920"
     }
   ],
   "ancestryTemplate": "{{Ancestry Tree|86808578|46552199708}}"

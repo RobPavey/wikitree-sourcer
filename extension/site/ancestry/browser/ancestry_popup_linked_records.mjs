@@ -117,9 +117,12 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     slowDownFromStartCount: 10,
     slowDownFromStartMult: 4,
   };
+  //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
+  //console.log(requests);
+
   let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
 
-  //console.log("returned from doRequestsInParallel, requestsResult is:  ");
+  //console.log("returned from doRequestsInParallel, requestsResult is:");
   //console.log(requestsResult);
 
   function findCachedResponseByLink(link) {
@@ -203,8 +206,10 @@ async function getDataForLinkedHouseholdRecords(data, processfunction) {
   }
 
   if (linkedRecords.length > 0) {
+    //console.log("getDataForLinkedHouseholdRecords. calling getDataForLinkedRecords");
     getDataForLinkedRecords(data, linkedRecords, processfunction);
   } else {
+    //console.log("getDataForLinkedHouseholdRecords. calling processfunction directly");
     processfunction(data);
   }
 }

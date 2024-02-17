@@ -25,67 +25,83 @@
   "sources": [
     {
       "dbId": "7667",
-      "recordId": "3883624"
+      "recordId": "3883624",
+      "title": "1860 United States Federal Census"
     },
     {
       "dbId": "7163",
-      "recordId": "40866586"
+      "recordId": "40866586",
+      "title": "1870 United States Federal Census"
     },
     {
       "dbId": "6742",
-      "recordId": "45747473"
+      "recordId": "45747473",
+      "title": "1880 United States Federal Census"
     },
     {
       "dbId": "7602",
-      "recordId": "45545965"
+      "recordId": "45545965",
+      "title": "1900 United States Federal Census"
     },
     {
       "dbId": "6061",
-      "recordId": "46341201"
+      "recordId": "46341201",
+      "title": "1920 United States Federal Census"
     },
     {
       "dbId": "6224",
-      "recordId": "70925678"
+      "recordId": "70925678",
+      "title": "1930 United States Federal Census"
     },
     {
       "dbId": "1030",
-      "recordId": "0"
+      "recordId": "0",
+      "title": "Ancestry Family Trees"
     },
     {
       "dbId": "2703",
-      "recordId": "9626887"
+      "recordId": "9626887",
+      "title": "New York, State Census, 1915"
     },
     {
       "dbId": "61843",
-      "recordId": "237349714"
+      "recordId": "237349714",
+      "title": "Newspapers.com Obituary Index, 1800s-current"
     },
     {
       "dbId": "61378",
-      "recordId": "901521294"
+      "recordId": "901521294",
+      "title": "Ohio, County Marriages, 1774-1993"
     },
     {
       "dbId": "61378",
-      "recordId": "902484483"
+      "recordId": "902484483",
+      "title": "Ohio, County Marriages, 1774-1993"
     },
     {
       "dbId": "2469",
-      "recordId": "302270798"
+      "recordId": "302270798",
+      "title": "U.S. City Directories, 1821-1989"
     },
     {
       "dbId": "2469",
-      "recordId": "302474174"
+      "recordId": "302474174",
+      "title": "U.S. City Directories, 1821-1989"
     },
     {
       "dbId": "60525",
-      "recordId": "107722562"
+      "recordId": "107722562",
+      "title": "U.S., Find A Grave Index, 1600s-Current"
     },
     {
       "dbId": "60901",
-      "recordId": "763343664"
+      "recordId": "763343664",
+      "title": "U.S., Social Security Applications and Claims Index, 1936-2007"
     },
     {
       "dbId": "60901",
-      "recordId": "763340638"
+      "recordId": "763340638",
+      "title": "U.S., Social Security Applications and Claims Index, 1936-2007"
     }
   ],
   "ancestryTemplate": "{{Ancestry Tree|11748183|12992988602}}"

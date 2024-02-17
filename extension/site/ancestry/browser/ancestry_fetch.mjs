@@ -23,7 +23,11 @@ SOFTWARE.
 */
 
 import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
-import { getCachedAsyncResult, addCachedAsyncResult } from "../../../base/core/async_result_cache.mjs";
+import {
+  registerAsyncCacheTag,
+  getCachedAsyncResult,
+  addCachedAsyncResult,
+} from "../../../base/core/async_result_cache.mjs";
 
 async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, recordId, url) {
   let mode = "cors";
@@ -106,27 +110,17 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
   return { success: false };
 }
 
-async function getLastSharingData() {
-  return await getLocalStorageItem("ancestry_lastSharingData");
-}
-
-async function setLastSharingData(lastSharingData) {
-  let items = { ancestry_lastSharingData: lastSharingData };
-  chrome.storage.local.set(items);
-}
-
 async function fetchAncestrySharingDataObj(ed) {
   let result = { success: false, dataObj: undefined };
 
-  // If the request is the same as the last one made then reuse the result to avoid sending too
-  // many fetch requests to server.
-  let lastSharingData = await getLastSharingData();
-  if (lastSharingData && ed.url == lastSharingData.url) {
-    //console.log("fetchAncestrySharingDataObj, reusing result:");
-    //console.log(lastSharingData.dataObj);
-    result.success = true;
-    result.dataObj = lastSharingData.dataObj;
-    return result;
+  const cacheTag = "AncestryFetchSharingObj";
+  registerAsyncCacheTag(cacheTag, 30);
+
+  const recordUrl = ed.url;
+  let cachedResult = await getCachedAsyncResult(cacheTag, recordUrl);
+  if (cachedResult) {
+    //console.log("fetchAncestrySharingDataObj, found in cache");
+    return cachedResult;
   }
 
   let sharingData = {
@@ -163,8 +157,8 @@ async function fetchAncestrySharingDataObj(ed) {
     //console.log(sharingData.dataObj);
 
     if (result.success && result.dataObj) {
-      sharingData.dataObj = result.dataObj;
-      setLastSharingData(sharingData);
+      //console.log("fetchAncestrySharingDataObj, generated and saving to cache");
+      addCachedAsyncResult(cacheTag, recordUrl, result);
     }
   }
 

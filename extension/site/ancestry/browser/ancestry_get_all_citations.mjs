@@ -25,10 +25,207 @@ SOFTWARE.
 import { displayBusyMessage } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
-import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
-import { extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
+import { fetchAncestrySharingDataObj, extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
+
 import { buildSourcerCitation, buildSourcerCitations } from "../core/ancestry_build_all_citations.mjs";
+import { generalizeData, regeneralizeDataWithLinkedRecords } from "../core/ancestry_generalize_data.mjs";
+
+import {
+  extractDataFromHtml,
+  getDataForLinkedHouseholdRecords,
+  processWithFetchedLinkData,
+  getDataForCitationAndHouseholdRecords,
+} from "./ancestry_popup_linked_records.mjs";
+
+async function getSharingDataObj(source) {
+  try {
+    let response = await fetchAncestrySharingDataObj(source.extractedData);
+
+    if (response.success) {
+      source.sharingDataObj = response.dataObj;
+    } else {
+      // It can fail even if there is an image URL, for example findagrave images:
+      // https://www.ancestry.com/discoveryui-content/view/2221897:60527
+      // This is not considered an error there just will be no sharing link
+    }
+  } catch (e) {
+    console.log("getAncestrySharingDataObj caught exception on fetchAncestrySharingDataObj:");
+    console.log(e);
+  }
+}
+
+async function updateWithLinkData(data) {
+  return new Promise((resolve, reject) => {
+    try {
+      processWithFetchedLinkData(data, function (data) {
+        resolve(data);
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
+async function updateWithHouseholdData(data) {
+  //console.log("updateWithHouseholdData, data is:");
+  //console.log(data);
+  return new Promise((resolve, reject) => {
+    try {
+      getDataForLinkedHouseholdRecords(data, function (data) {
+        resolve(data);
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
+async function updateDataUsingLinkedRecords(data) {
+  if (!data || !data.extractedData) {
+    return;
+  }
+
+  await updateWithLinkData(data);
+
+  if (data.extractedData.household) {
+    await updateWithHouseholdData(data);
+  }
+
+  processWithFetchedLinkData(data, updateWithLinkData);
+
+  regeneralizeDataWithLinkedRecords(data);
+}
+
+async function getExtractedAndGeneralizedData(runDate, source, type, options, updateStatusFunction) {
+  //console.log("getExtractedAndGeneralizedData, source is:");
+  //console.log(source);
+
+  let uri = source.recordUrl;
+
+  let fetchResult = { success: false };
+
+  if (uri) {
+    fetchResult = await extractRecordHtmlFromUrl(uri);
+    let retryCount = 0;
+    while (!fetchResult.success && fetchResult.allowRetry && retryCount < 3) {
+      retryCount++;
+      updateStatusFunction("retry " + retryCount);
+      fetchResult = await extractRecordHtmlFromUrl(uri);
+    }
+  }
+
+  //console.log("getExtractedAndGeneralizedData, fetchResult is:");
+  //console.log(fetchResult);
+
+  let htmlText = undefined;
+  if (fetchResult.success) {
+    htmlText = fetchResult.htmlText;
+
+    let extractedData = extractDataFromHtml(htmlText, source.recordUrl);
+    source.extractedData = extractedData;
+
+    //console.log("getExtractedAndGeneralizedData: extractedData is:");
+    //console.log(extractedData);
+
+    //console.log("getExtractedAndGeneralizedData: extractedData.pageType is: " + extractedData.pageType);
+
+    if (extractedData && extractedData.pageType && extractedData.pageType != "unknown") {
+      // get generalized data
+      //console.log("getExtractedAndGeneralizedData: calling generalizeData");
+      source.generalizedData = generalizeData({ extractedData: extractedData });
+
+      //console.log("getExtractedAndGeneralizedData: source.generalizedData is:");
+      //console.log(source.generalizedData);
+    }
+  }
+}
+
+async function getSourcerCitations(runDate, result, type, options) {
+  //console.log("getSourcerCitations, result is:");
+  //console.log(result);
+
+  if (result.sources.length == 0) {
+    result.citationsString = "";
+    result.citationsStringType = type;
+    return;
+  }
+
+  let requests = [];
+  for (let source of result.sources) {
+    let request = {
+      name: source.title,
+      input: source,
+    };
+    requests.push(request);
+  }
+
+  async function requestFunction(input, updateStatusFunction) {
+    //console.log("getSourcerCitations, requestFunction input is:");
+    //console.log(input);
+
+    updateStatusFunction("fetching...");
+    let newResponse = { success: true };
+    await getExtractedAndGeneralizedData(runDate, input, type, options, updateStatusFunction);
+
+    //console.log("getSourcerCitations, requestFunction, newResponse is:");
+    //console.log(newResponse);
+
+    return newResponse;
+  }
+
+  const queueOptions = {
+    initialWaitBetweenRequests: 1,
+    maxWaitime: 1600,
+    additionalRetryWaitime: 1600,
+    additionalManyRecent429sWaitime: 1600,
+  };
+  let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
+  //console.log("getSourcerCitations: after getExtractedAndGeneralizedData parallel, requestsResult is:");
+  //console.log(requestsResult);
+
+  result.failureCount = requestsResult.failureCount;
+
+  // we now have the directly referenced source records extracted and generalized.
+  // For some record we need to get linked records.
+  for (let source of result.sources) {
+    if (source.extractedData && source.generalizedData) {
+      let data = { extractedData: source.extractedData, generalizedData: source.generalizedData };
+
+      await getSharingDataObj(source);
+      await updateDataUsingLinkedRecords(data);
+
+      //console.log("getSourcerCitations: after updateDataUsingLinkedRecords, source is:");
+      //console.log(source);
+
+      buildSourcerCitation(runDate, source, type, options);
+    }
+  }
+
+  buildSourcerCitations(result, type, options);
+}
+
+function filterSourceIdsToSources(result, sourceIds, options) {
+  //console.log("filterSourceIdsToSources, result is:");
+  //console.log(result);
+  //console.log("filterSourceIdsToSources, sourceIds is:");
+  //console.log(sourceIds);
+
+  result.sources = [];
+
+  for (let sourceId of sourceIds) {
+    let recordUrl = result.urlStart + "/discoveryui-content/view/" + sourceId.recordId + ":" + sourceId.dbId;
+    let source = {
+      recordUrl: recordUrl,
+      title: sourceId.title,
+    };
+    result.sources.push(source);
+  }
+
+  //console.log("filterSourceIdsToSources end, result is:");
+  //console.log(result);
+}
 
 async function ancestryGetAllCitations(input) {
   let ed = input.extractedData;
@@ -37,6 +234,48 @@ async function ancestryGetAllCitations(input) {
 
   let result = { success: false };
 
+  let sourceIds = ed.sources;
+  if (!sourceIds || sourceIds.length == 0) {
+    result.errorMessage = "No sources for person";
+    return result;
+  }
+
+  // request permission if needed
+  // personUrl will be something like:
+  // https://www.ancestry.com/family-tree/person/tree/86808578/person/260180350040/facts
+  let personUrl = ed.url;
+  // we want a record URL like this:
+  // https://www.ancestry.com/discoveryui-content/view/7080503:8978
+  let urlStart = personUrl.replace(/^(https?\:\/\/[^\.\.]+\.ancestry\.[^\/]+)\/.*$/, "$1");
+  if (!urlStart || urlStart == personUrl) {
+    result.errorMessage = "Could not parse url: " + personUrl;
+    return result;
+  }
+  let firstSource = sourceIds[0];
+  let firstSourceRecordUrl = urlStart + "/discoveryui-content/view/" + firstSource.recordId + ":" + firstSource.dbId;
+  result.urlStart = urlStart;
+  const checkPermissionsOptions = {
+    reason: "In order to get all the source records the extension must request the data from the server.",
+    needsPopupDisplayed: true,
+  };
+  if (!(await checkPermissionForSiteFromUrl(firstSourceRecordUrl, checkPermissionsOptions))) {
+    result.errorMessage = "No permissions to get sources. If you just allowed it then please try again.";
+    return result;
+  }
+
+  //console.log("ancestryGetAllCitations, checked permissions, result is:");
+  //console.log(result);
+
+  try {
+    filterSourceIdsToSources(result, sourceIds, options);
+    let citationType = input.citationType;
+    await getSourcerCitations(runDate, result, citationType, options);
+  } catch (error) {
+    result.errorMessage = error.message;
+    console.log("caught exception, error is:");
+    console.log(error);
+    return result;
+  }
   return result;
 }
 

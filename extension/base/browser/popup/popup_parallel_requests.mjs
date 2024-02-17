@@ -24,6 +24,7 @@ SOFTWARE.
 
 import {
   displayBusyMessageWithSkipButton,
+  displayBusyMessage,
   displayMessageWithIconAndWaitForContinue,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
@@ -220,8 +221,16 @@ function terminateParallelRequests(resolve) {
   }
   resetStaticCounts();
 
-  //console.log("About to call resolve in handleRequestResponse");
+  // This removes the status message with the skip button.
+  // Strangely this seems to fix an occasional bug with the resolve
+  // not completing the promise. It is not obvious why.
+  displayBusyMessage("Finished fetch requests", "Processing results");
+
+  //console.log("About to call resolve in terminateParallelRequests, resolve is:");
+  //console.log(resolve);
+  //console.log(callbackInput);
   resolve(callbackInput);
+  //console.log("resolve has been called in terminateParallelRequests");
 }
 
 function handleRequestResponse(request, response, doRequest, resolve) {
@@ -244,6 +253,9 @@ function handleRequestResponse(request, response, doRequest, resolve) {
       matchingRequestState.response = response;
     }
     requestsTracker.receivedResponseCount++;
+
+    //console.log("in parallel_requests handleRequestResponse, requestsTracker is:");
+    //console.log(requestsTracker);
   } else {
     //console.log("handleRequestResponse: Failed response, request name is: " + request.name);
     //console.log("handleRequestResponse: matchingRequestState is:");
@@ -261,7 +273,7 @@ function handleRequestResponse(request, response, doRequest, resolve) {
         matchingRequestState.statusCode = response.statusCode;
       }
     } else {
-      //console.log("handleRequestResponse: setting status to failed");
+      console.log("handleRequestResponse: setting status to failed");
       matchingRequestState.status = "failed";
       if (response.statusCode) {
         matchingRequestState.status += " (error " + response.statusCode + ")";
@@ -290,6 +302,7 @@ function handleRequestResponse(request, response, doRequest, resolve) {
     requestsTracker.receivedResponseCount == requestsTracker.expectedResponseCount ||
     queueResponseTracker.abortRequests
   ) {
+    //console.log("in parallel_requests handleRequestResponse, calling terminateParallelRequests");
     terminateParallelRequests(resolve);
   }
 }
@@ -328,27 +341,35 @@ function doRequestsInParallel(requests, requestFunction, requestedQueueOptions =
     requestsTracker.requestStates.push(requestState);
   }
 
-  return new Promise((resolve) => {
-    async function doRequest(request) {
-      try {
-        let response = await requestFunction(request.input, function (status) {
-          updateStatusForRequest(request, status, resolve);
-        });
-        handleRequestResponse(request, response, doRequest, resolve);
-      } catch (error) {
-        let response = { success: false, error: error };
-        handleRequestResponse(request, response, doRequest, resolve);
+  return new Promise((resolve, reject) => {
+    try {
+      async function doRequest(request) {
+        try {
+          let response = await requestFunction(request.input, function (status) {
+            updateStatusForRequest(request, status, resolve);
+          });
+          handleRequestResponse(request, response, doRequest, resolve);
+        } catch (error) {
+          console.log("doRequestsInParallel: caught error in request. Error is:");
+          console.log(error);
+          let response = { success: false, error: error };
+          handleRequestResponse(request, response, doRequest, resolve);
+        }
       }
+
+      clearRequestQueue();
+      for (let request of requests) {
+        requestQueue.push(request);
+      }
+
+      displayStatusMessage(resolve);
+
+      monitorRequestQueue(doRequest, resolve, requestedQueueOptions);
+    } catch (error) {
+      console.log("doRequestsInParallel, error caught in promise, error is:");
+      console.log(error);
+      reject(error);
     }
-
-    clearRequestQueue();
-    for (let request of requests) {
-      requestQueue.push(request);
-    }
-
-    displayStatusMessage(resolve);
-
-    monitorRequestQueue(doRequest, resolve, requestedQueueOptions);
   });
 }
 

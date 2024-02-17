@@ -21,43 +21,53 @@
   "sources": [
     {
       "dbId": "6598",
-      "recordId": "16590030"
+      "recordId": "16590030",
+      "title": "1891 England Census"
     },
     {
       "dbId": "7814",
-      "recordId": "34673534"
+      "recordId": "34673534",
+      "title": "1901 England Census"
     },
     {
       "dbId": "2352",
-      "recordId": "56819025"
+      "recordId": "56819025",
+      "title": "1911 England Census"
     },
     {
       "dbId": "61596",
-      "recordId": "44774986"
+      "recordId": "44774986",
+      "title": "1939 England and Wales Register"
     },
     {
       "dbId": "8912",
-      "recordId": "33557671"
+      "recordId": "33557671",
+      "title": "England &amp; Wales, Civil Registration Birth Index, 1837-1915"
     },
     {
       "dbId": "8913",
-      "recordId": "3291674"
+      "recordId": "3291674",
+      "title": "England &amp; Wales, FreeBMD Marriage Index, 1837-1915"
     },
     {
       "dbId": "60625",
-      "recordId": "5553593"
+      "recordId": "5553593",
+      "title": "Gloucestershire, England, Electoral Registers, 1832-1974"
     },
     {
       "dbId": "61709",
-      "recordId": "30356423"
+      "recordId": "30356423",
+      "title": "Staffordshire, England, Birth, Marriage and Death Indexes, 1837-2017"
     },
     {
       "dbId": "61709",
-      "recordId": "61984"
+      "recordId": "61984",
+      "title": "Staffordshire, England, Birth, Marriage and Death Indexes, 1837-2017"
     },
     {
       "dbId": "60526",
-      "recordId": "3010505"
+      "recordId": "3010505",
+      "title": "UK and Ireland, Find A Grave Index, 1300s-Current"
     }
   ],
   "ancestryTemplate": "{{Ancestry Tree|86808578|46552198684}}"
