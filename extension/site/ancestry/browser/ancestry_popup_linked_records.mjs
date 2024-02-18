@@ -120,59 +120,67 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
   //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
   //console.log(requests);
 
-  let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
+  try {
+    //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
+    //console.log(requests);
 
-  //console.log("returned from doRequestsInParallel, requestsResult is:");
-  //console.log(requestsResult);
+    let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
 
-  function findCachedResponseByLink(link) {
-    for (let cachedResponse of cachedResponses) {
-      if (cachedResponse.link == link) {
-        return cachedResponse;
+    //console.log("getDataForLinkedRecords, returned from doRequestsInParallel, requestsResult is:");
+    //console.log(requestsResult);
+
+    function findCachedResponseByLink(link) {
+      for (let cachedResponse of cachedResponses) {
+        if (cachedResponse.link == link) {
+          return cachedResponse;
+        }
       }
     }
-  }
 
-  function findRequestResponseByLink(link) {
-    if (requestsResult) {
-      for (let response of requestsResult.responses) {
-        if (response) {
-          if (response.link == link) {
-            return response;
+    function findRequestResponseByLink(link) {
+      if (requestsResult) {
+        for (let response of requestsResult.responses) {
+          if (response) {
+            if (response.link == link) {
+              return response;
+            }
           }
         }
       }
     }
-  }
 
-  let processInput = data;
-  processInput.linkedRecordFailureCount = requestsResult.failureCount;
-  processInput.linkedRecords = [];
+    let processInput = data;
+    processInput.linkedRecordFailureCount = requestsResult.failureCount;
+    processInput.linkedRecords = [];
 
-  for (let i = 0; i < linkedRecords.length; i++) {
-    let link = linkedRecords[i].link;
-    let linkedRecord = {
-      name: linkedRecords[i].name,
-      link: link,
-    };
+    for (let i = 0; i < linkedRecords.length; i++) {
+      let link = linkedRecords[i].link;
+      let linkedRecord = {
+        name: linkedRecords[i].name,
+        link: link,
+      };
 
-    let cachedResponse = findCachedResponseByLink(link);
-    if (cachedResponse) {
-      linkedRecord.extractedData = cachedResponse.extractedData;
-    } else {
-      let requestResponse = findRequestResponseByLink(link);
-      if (requestResponse) {
-        linkedRecord.extractedData = requestResponse.extractedData;
+      let cachedResponse = findCachedResponseByLink(link);
+      if (cachedResponse) {
+        linkedRecord.extractedData = cachedResponse.extractedData;
+      } else {
+        let requestResponse = findRequestResponseByLink(link);
+        if (requestResponse) {
+          linkedRecord.extractedData = requestResponse.extractedData;
+        }
       }
+
+      processInput.linkedRecords.push(linkedRecord);
     }
 
-    processInput.linkedRecords.push(linkedRecord);
+    //keepPopupOpenForDebug();
+    //console.log("processInput is:");
+    //console.log(processInput);
+    processFunction(processInput);
+  } catch (error) {
+    console.log("getDataForLinkedRecords, caught error in doRequestsInParallel, error is:");
+    console.log(error);
   }
-
-  //keepPopupOpenForDebug();
-  //console.log("processInput is:");
-  //console.log(processInput);
-  processFunction(processInput);
 }
 
 async function getDataForLinkedHouseholdRecords(data, processfunction) {

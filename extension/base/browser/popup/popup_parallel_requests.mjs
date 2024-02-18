@@ -104,7 +104,22 @@ function updateQueueTimingForResponse(response) {
 
 async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
   function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    //console.log("monitorRequestQueue, sleep for: " + ms);
+    return new Promise((resolveTimeout) =>
+      setTimeout(function () {
+        //console.log("monitorRequestQueue, sleep completed");
+        resolveTimeout();
+        // There is a problem where the Promise in the main function is not getting resolved.
+        // The issue seems to be that we call terminateParallelRequests which calls resolve which
+        // should cause the promise to return. But then this timeout happens before control passes to the
+        // caller of doRequestsInParallel and that somehow looses the resolve and reactivates the Promise.
+        // Very weird. This is a workaround that seems to work.
+        if (requestsTracker.terminated) {
+          //console.log("monitorRequestQueue, timeout after parallel requests terminated, terminating again");
+          terminateParallelRequests(resolve);
+        }
+      }, ms)
+    );
   }
 
   if (requestedQueueOptions) {
@@ -169,6 +184,7 @@ function resetStaticCounts() {
   requestsTracker.expectedResponseCount = 0;
   requestsTracker.receivedResponseCount = 0;
   requestsTracker.failureCount = 0;
+  requestsTracker.terminated = false;
 }
 
 function displayStatusMessage(resolve) {
@@ -214,6 +230,10 @@ function updateStatusForRequest(request, status, resolve) {
 }
 
 function terminateParallelRequests(resolve) {
+  // NOTE: this can currently get called multiple times.
+  // This is to resolve any issue with timeouts where tasks and microtasks seem to be
+  // conflicting.
+
   // if there were any failures then remember that for caller
   let callbackInput = { failureCount: requestsTracker.failureCount, responses: [] };
   for (let requestState of requestsTracker.requestStates) {
@@ -226,8 +246,9 @@ function terminateParallelRequests(resolve) {
   // not completing the promise. It is not obvious why.
   displayBusyMessage("Finished fetch requests", "Processing results");
 
-  //console.log("About to call resolve in terminateParallelRequests, resolve is:");
-  //console.log(resolve);
+  requestsTracker.terminated = true;
+
+  //console.log("About to call resolve in terminateParallelRequest, callbackInput is:");
   //console.log(callbackInput);
   resolve(callbackInput);
   //console.log("resolve has been called in terminateParallelRequests");
@@ -325,6 +346,7 @@ function doRequestsInParallel(requests, requestFunction, requestedQueueOptions =
 
   if (requests.length == 0) {
     let callbackInput = { failureCount: 0, responses: [] };
+    //console.log("doRequestsInParallel, requests length is zero");
     return callbackInput;
   }
 
