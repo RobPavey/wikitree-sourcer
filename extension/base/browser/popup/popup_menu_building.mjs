@@ -1409,6 +1409,7 @@ async function clearCachedFetchData() {
   clearAsyncResultCache("AncestryFetchSiblings");
   clearAsyncResultCache("AncestryFetchSpouse");
   clearAsyncResultCache("AncestryFetchFullRecord");
+  clearAsyncResultCache("AncestryFetchSharingObj");
 }
 
 async function clearLocalStorage() {

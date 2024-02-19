@@ -749,6 +749,7 @@ function buildSourcerCitation(runDate, source, type, options) {
       runDate: runDate,
       type: type,
       dataCache: undefined,
+      sharingDataObj: source.sharingDataObj,
       options: options,
       householdTableString: householdTableString,
     };

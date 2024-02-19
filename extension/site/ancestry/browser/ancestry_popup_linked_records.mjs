@@ -124,7 +124,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
     //console.log(requests);
 
-    let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
+    const displayMessage = "WikiTree Sourcer fetching linked records";
+    let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions, displayMessage);
 
     //console.log("getDataForLinkedRecords, returned from doRequestsInParallel, requestsResult is:");
     //console.log(requestsResult);

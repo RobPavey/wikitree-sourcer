@@ -1456,7 +1456,12 @@ function handlePersonFacts(document, result) {
               let source = { dbId: dbId, recordId: recordId };
 
               if (titleInput) {
-                source.title = titleInput.value;
+                let title = titleInput.value;
+                if (title) {
+                  title = title.replace("&amp;", "&");
+                  title = title.trim();
+                  source.title = title;
+                }
               }
               result.sources.push(source);
             }

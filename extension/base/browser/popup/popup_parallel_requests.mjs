@@ -36,6 +36,7 @@ var requestsTracker = {
   callbackFunction: undefined,
   requestFunction: undefined,
   requestFunctionName: "", // used in console error messages
+  displayMessage: "",
 };
 
 var monitoredSleepsInProgress = 0;
@@ -204,10 +205,15 @@ function resetStaticCounts() {
   requestsTracker.expectedResponseCount = 0;
   requestsTracker.receivedResponseCount = 0;
   requestsTracker.failureCount = 0;
+  requestsTracker.displayMessage = "";
 }
 
 function displayStatusMessage(resolve) {
-  const baseMessage = "WikiTree Sourcer fetching additional records ...\n\n(This might take several seconds)...\n";
+  let baseMessage = requestsTracker.displayMessage;
+  if (!baseMessage) {
+    baseMessage = "WikiTree Sourcer fetching additional records";
+  }
+  baseMessage += " ...\n\n(This might take several seconds)...\n";
 
   let message2 = "";
   for (let requestState of requestsTracker.requestStates) {
@@ -351,7 +357,12 @@ function handleRequestResponse(request, response, doRequest, resolve) {
 // This function does a series of asynchronous requests in parallel and returns
 // when they are all completed. It is passed an array of request objects and an
 // async function to call for each request
-function doRequestsInParallel(requests, requestFunction, requestedQueueOptions = defaultQueueOptions) {
+function doRequestsInParallel(
+  requests,
+  requestFunction,
+  requestedQueueOptions = defaultQueueOptions,
+  displayMessage = ""
+) {
   // requests is an array of objects, each has the following fields
   //   name : a name that can be used in the status display
   //   input : data to be passed to the request function (varies by site/action)
@@ -372,6 +383,7 @@ function doRequestsInParallel(requests, requestFunction, requestedQueueOptions =
 
   resetStaticCounts();
   requestsTracker.expectedResponseCount = requests.length;
+  requestsTracker.displayMessage = displayMessage;
 
   requestsTracker.requestStates = [];
   for (let request of requests) {

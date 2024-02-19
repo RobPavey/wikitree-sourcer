@@ -98,9 +98,11 @@ async function updateDataUsingLinkedRecords(data) {
   regeneralizeDataWithLinkedRecords(data);
 }
 
-async function getExtractedAndGeneralizedData(runDate, source, type, options, updateStatusFunction) {
+async function getExtractedAndGeneralizedData(source) {
   //console.log("getExtractedAndGeneralizedData, source is:");
   //console.log(source);
+
+  let newResponse = { success: true };
 
   let uri = source.recordUrl;
 
@@ -108,38 +110,42 @@ async function getExtractedAndGeneralizedData(runDate, source, type, options, up
 
   if (uri) {
     fetchResult = await extractRecordHtmlFromUrl(uri);
-    let retryCount = 0;
-    while (!fetchResult.success && fetchResult.allowRetry && retryCount < 3) {
-      retryCount++;
-      updateStatusFunction("retry " + retryCount);
-      fetchResult = await extractRecordHtmlFromUrl(uri);
+    if (!fetchResult.success) {
+      newResponse.allowRetry = response.allowRetry;
+      newResponse.statusCode = response.statusCode;
+      return newResponse;
     }
+  } else {
+    return newResponse;
   }
 
   //console.log("getExtractedAndGeneralizedData, fetchResult is:");
   //console.log(fetchResult);
 
   let htmlText = undefined;
-  if (fetchResult.success) {
-    htmlText = fetchResult.htmlText;
+  htmlText = fetchResult.htmlText;
 
-    let extractedData = extractDataFromHtml(htmlText, source.recordUrl);
-    source.extractedData = extractedData;
+  let extractedData = extractDataFromHtml(htmlText, source.recordUrl);
+  source.extractedData = extractedData;
 
-    //console.log("getExtractedAndGeneralizedData: extractedData is:");
-    //console.log(extractedData);
+  //console.log("getExtractedAndGeneralizedData: extractedData is:");
+  //console.log(extractedData);
 
-    //console.log("getExtractedAndGeneralizedData: extractedData.pageType is: " + extractedData.pageType);
+  //console.log("getExtractedAndGeneralizedData: extractedData.pageType is: " + extractedData.pageType);
 
-    if (extractedData && extractedData.pageType && extractedData.pageType != "unknown") {
-      // get generalized data
-      //console.log("getExtractedAndGeneralizedData: calling generalizeData");
-      source.generalizedData = generalizeData({ extractedData: extractedData });
+  if (extractedData && extractedData.pageType && extractedData.pageType != "unknown") {
+    // get generalized data
+    //console.log("getExtractedAndGeneralizedData: calling generalizeData");
+    source.generalizedData = generalizeData({ extractedData: extractedData });
 
-      //console.log("getExtractedAndGeneralizedData: source.generalizedData is:");
-      //console.log(source.generalizedData);
-    }
+    //console.log("getExtractedAndGeneralizedData: source.generalizedData is:");
+    //console.log(source.generalizedData);
   }
+
+  newResponse.link = fetchResult.recordUrl;
+  newResponse.extractedData = extractedData;
+  newResponse.success = true;
+  return newResponse;
 }
 
 async function getSourcerCitations(runDate, result, type, options) {
@@ -161,13 +167,13 @@ async function getSourcerCitations(runDate, result, type, options) {
     requests.push(request);
   }
 
-  async function requestFunction(input, updateStatusFunction) {
+  async function fetchSourceRequestFunction(input, updateStatusFunction) {
     //console.log("getSourcerCitations, requestFunction input is:");
     //console.log(input);
 
     updateStatusFunction("fetching...");
     let newResponse = { success: true };
-    await getExtractedAndGeneralizedData(runDate, input, type, options, updateStatusFunction);
+    await getExtractedAndGeneralizedData(input);
 
     //console.log("getSourcerCitations, requestFunction, newResponse is:");
     //console.log(newResponse);
@@ -181,11 +187,35 @@ async function getSourcerCitations(runDate, result, type, options) {
     additionalRetryWaitime: 1600,
     additionalManyRecent429sWaitime: 1600,
   };
-  let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions);
+  const message = "WikiTree Sourcer fetching record for each source";
+  let requestsResult = await doRequestsInParallel(requests, fetchSourceRequestFunction, queueOptions, message);
   //console.log("getSourcerCitations: after getExtractedAndGeneralizedData parallel, requestsResult is:");
   //console.log(requestsResult);
 
   result.failureCount = requestsResult.failureCount;
+
+  let sharingRequests = [];
+  for (let source of result.sources) {
+    let request = {
+      name: source.title,
+      input: source,
+    };
+    sharingRequests.push(request);
+  }
+  async function getSharingObjRequestFunction(input, updateStatusFunction) {
+    updateStatusFunction("getting sharing link...");
+    let newResponse = { success: true };
+    await getSharingDataObj(input);
+    return newResponse;
+  }
+  const sharingMessage = "WikiTree Sourcer fetching sharing link each source";
+  let sharingRequestsResult = await doRequestsInParallel(
+    sharingRequests,
+    getSharingObjRequestFunction,
+    queueOptions,
+    sharingMessage
+  );
+  result.failureCount += sharingRequestsResult.failureCount;
 
   // we now have the directly referenced source records extracted and generalized.
   // For some record we need to get linked records.
@@ -193,15 +223,21 @@ async function getSourcerCitations(runDate, result, type, options) {
     if (source.extractedData && source.generalizedData) {
       let data = { extractedData: source.extractedData, generalizedData: source.generalizedData };
 
-      await getSharingDataObj(source);
+      //displayBusyMessage("Getting Sharing data");
+      //await getSharingDataObj(source);
+      displayBusyMessage("Getting Linked records");
       await updateDataUsingLinkedRecords(data);
 
       //console.log("getSourcerCitations: after updateDataUsingLinkedRecords, source is:");
       //console.log(source);
 
+      displayBusyMessage("buildSourcerCitation");
       buildSourcerCitation(runDate, source, type, options);
     }
   }
+
+  console.log("getSourcerCitations: before buildSourcerCitations, result is:");
+  console.log(result);
 
   buildSourcerCitations(result, type, options);
 }
