@@ -38,6 +38,41 @@ var requestsTracker = {
   requestFunctionName: "", // used in console error messages
 };
 
+var monitoredSleepsInProgress = 0;
+
+function doUnmonitoredSleep(ms) {
+  //console.log("monitorRequestQueue, starting sleep for: " + ms + " at time: " + Date.now());
+  return new Promise((resolveTimeout) =>
+    setTimeout(function () {
+      //console.log("monitorRequestQueue, sleep completed for: " + ms + " at time: " + Date.now());
+      resolveTimeout();
+    }, ms)
+  );
+}
+
+function doMonitoredSleep(ms) {
+  // The purpose of this is to allow the loop in monitorRequestQueue do do sleeps in between
+  // checking the queue. The issue it solves is that the requests could all complete and the
+  // parallel requests terminate while there was still a timeout for the sleep - which could then
+  // call its callback when the next set of parallel requests had started.
+
+  //console.log("monitorRequestQueue, starting sleep for: " + ms + " at time: " + Date.now());
+  monitoredSleepsInProgress++;
+  return new Promise((resolveTimeout) =>
+    setTimeout(function () {
+      monitoredSleepsInProgress--;
+      //console.log("monitorRequestQueue, sleep completed for: " + ms + " at time: " + Date.now());
+      resolveTimeout();
+    }, ms)
+  );
+}
+
+async function waitForAnyMonitoredSleepsToComplete() {
+  while (monitoredSleepsInProgress) {
+    await doUnmonitoredSleep(1);
+  }
+}
+
 function findRequestStateForRequest(request) {
   // find linkedRecord for this url
   let matchingRequestState = undefined;
@@ -103,24 +138,7 @@ function updateQueueTimingForResponse(response) {
 }
 
 async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
-  function sleep(ms) {
-    //console.log("monitorRequestQueue, sleep for: " + ms);
-    return new Promise((resolveTimeout) =>
-      setTimeout(function () {
-        //console.log("monitorRequestQueue, sleep completed");
-        resolveTimeout();
-        // There is a problem where the Promise in the main function is not getting resolved.
-        // The issue seems to be that we call terminateParallelRequests which calls resolve which
-        // should cause the promise to return. But then this timeout happens before control passes to the
-        // caller of doRequestsInParallel and that somehow looses the resolve and reactivates the Promise.
-        // Very weird. This is a workaround that seems to work.
-        if (requestsTracker.terminated) {
-          //console.log("monitorRequestQueue, timeout after parallel requests terminated, terminating again");
-          terminateParallelRequests(resolve);
-        }
-      }, ms)
-    );
-  }
+  //console.log("monitorRequestQueue starting at time: " + Date.now());
 
   if (requestedQueueOptions) {
     // Use the spread operator to override the default queue options with
@@ -147,12 +165,12 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       //console.log("matchingRequestState is:");
       //console.log(matchingRequestState);
 
-      // if this request has had several retries already and the lastst one was a 429
+      // if this request has had several retries already and the latest one was a 429
       // then wait an additional time befor queueing it
       if (matchingRequestState.retryCount > 1 && matchingRequestState.statusCode == 429) {
         matchingRequestState.status = "waiting...";
         displayStatusMessage(resolve);
-        await sleep(queueOptions.additionalRetryWaitime);
+        await doUnmonitoredSleep(queueOptions.additionalRetryWaitime);
       }
 
       // if we have had several 429s in the last few responses then wait a bit extra
@@ -167,13 +185,15 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       if (numRecent429s >= 3) {
         matchingRequestState.status = "waiting...";
         displayStatusMessage(resolve);
-        await sleep(queueOptions.additionalManyRecent429sWaitime);
+        await doUnmonitoredSleep(queueOptions.additionalManyRecent429sWaitime);
+      } else {
+        await doUnmonitoredSleep(queueResponseTracker.waitBetweenRequests);
       }
 
       doRequest(nextRequest);
     }
 
-    await sleep(queueResponseTracker.waitBetweenRequests);
+    await doMonitoredSleep(1); // just to allow other tasks to run
     if (queueResponseTracker.abortRequests) {
       break;
     }
@@ -184,7 +204,6 @@ function resetStaticCounts() {
   requestsTracker.expectedResponseCount = 0;
   requestsTracker.receivedResponseCount = 0;
   requestsTracker.failureCount = 0;
-  requestsTracker.terminated = false;
 }
 
 function displayStatusMessage(resolve) {
@@ -229,29 +248,30 @@ function updateStatusForRequest(request, status, resolve) {
   }
 }
 
-function terminateParallelRequests(resolve) {
+async function terminateParallelRequests(resolve) {
   // NOTE: this can currently get called multiple times.
   // This is to resolve any issue with timeouts where tasks and microtasks seem to be
   // conflicting.
+
+  //console.log("terminateParallelRequests called at time: " + Date.now());
 
   // if there were any failures then remember that for caller
   let callbackInput = { failureCount: requestsTracker.failureCount, responses: [] };
   for (let requestState of requestsTracker.requestStates) {
     callbackInput.responses.push(requestState.response);
   }
+
+  await waitForAnyMonitoredSleepsToComplete();
+
   resetStaticCounts();
 
   // This removes the status message with the skip button.
-  // Strangely this seems to fix an occasional bug with the resolve
-  // not completing the promise. It is not obvious why.
   displayBusyMessage("Finished fetch requests", "Processing results");
-
-  requestsTracker.terminated = true;
 
   //console.log("About to call resolve in terminateParallelRequest, callbackInput is:");
   //console.log(callbackInput);
   resolve(callbackInput);
-  //console.log("resolve has been called in terminateParallelRequests");
+  //console.log("resolve has been called in terminateParallelRequests, time is: " + Date.now());
 }
 
 function handleRequestResponse(request, response, doRequest, resolve) {
