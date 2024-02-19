@@ -202,7 +202,7 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
 
 const regressionData = [
   {
-    // was causing a big in mergeParents because one set of parents had father and mother and
+    // was causing a bug in mergeParents because one set of parents had father and mother and
     // another had only mother
     caseName: "2w9v_57q_bessie_allen",
     url: "https://www.familysearch.org/tree/person/sources/2W9V-57Q",

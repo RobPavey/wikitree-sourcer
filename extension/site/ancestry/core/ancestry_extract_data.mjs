@@ -1439,9 +1439,40 @@ function handlePersonFacts(document, result) {
   // Get the list of sources
   let sourcesSection = document.querySelector("section.factsSectionSources");
   if (sourcesSection) {
-    let researchList = sourcesSection.querySelector("ul.researchList");
-    if (researchList) {
-      let researchListItems = researchList.querySelectorAll("li.researchListItem");
+    let conBody = sourcesSection.querySelector("div > div.conBody");
+    let researchListHeadings = conBody.querySelectorAll("h3");
+    let researchLists = conBody.querySelectorAll("ul.researchList");
+
+    let ancestrySourcesList = undefined;
+    let otherSourcesList = undefined;
+    let webLinksList = undefined;
+    if (researchListHeadings.length == researchLists.length) {
+      for (let index = 0; index < researchLists.length; index++) {
+        let heading = researchListHeadings[index];
+        let list = researchLists[index];
+        let type = undefined;
+        if (list.classList.contains("researchListWebLinks")) {
+          type = "webLinks";
+        } else if (heading.textContent == "Ancestry sources") {
+          type = "ancestrySources";
+        } else if (heading.textContent == "Other sources") {
+          type = "otherSources";
+        } else if (heading.textContent == "Web links") {
+          type = "webLinks";
+        }
+
+        if (type == "ancestrySources") {
+          ancestrySourcesList = list;
+        } else if (type == "otherSources") {
+          otherSourcesList = list;
+        } else if (type == "webLinks") {
+          webLinksList = list;
+        }
+      }
+    }
+
+    if (ancestrySourcesList) {
+      let researchListItems = ancestrySourcesList.querySelectorAll("li.researchListItem");
       if (researchListItems.length > 0) {
         result.sources = [];
         for (let researchListItem of researchListItems) {
@@ -1464,6 +1495,52 @@ function handlePersonFacts(document, result) {
                 }
               }
               result.sources.push(source);
+            }
+          }
+        }
+      }
+    }
+
+    if (otherSourcesList) {
+      let researchListItems = otherSourcesList.querySelectorAll("li.researchListItem");
+      if (researchListItems.length > 0) {
+        result.otherSources = [];
+        for (let researchListItem of researchListItems) {
+          let titleInput = researchListItem.querySelector("input.title");
+          let viewRecordLinkInput = researchListItem.querySelector("input.viewRecordLink");
+
+          if (titleInput && viewRecordLinkInput) {
+            let title = titleInput.value;
+            let viewRecordLink = viewRecordLinkInput.value;
+            if (title && viewRecordLink) {
+              title = title.replace("&amp;", "&");
+              title = title.trim();
+
+              let source = { title: title, viewRecordLink: viewRecordLink };
+              result.otherSources.push(source);
+            }
+          }
+        }
+      }
+    }
+
+    if (webLinksList) {
+      let researchListItems = webLinksList.querySelectorAll("li.researchListItem");
+      if (researchListItems.length > 0) {
+        result.webLinks = [];
+        for (let researchListItem of researchListItems) {
+          let titleElement = researchListItem.querySelector("h4.webLinkTitle");
+          let webLinkElement = researchListItem.querySelector("p.webLinkHref > a");
+
+          if (titleElement && webLinkElement) {
+            let title = titleElement.textContent;
+            let webLink = webLinkElement.getAttribute("href");
+            if (title && webLink) {
+              title = title.replace("&amp;", "&");
+              title = title.trim();
+
+              let source = { title: title, webLink: webLink };
+              result.webLinks.push(source);
             }
           }
         }
