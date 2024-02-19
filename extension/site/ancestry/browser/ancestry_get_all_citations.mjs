@@ -32,12 +32,16 @@ import { fetchAncestrySharingDataObj, extractRecordHtmlFromUrl } from "./ancestr
 import { buildSourcerCitation, buildSourcerCitations } from "../core/ancestry_build_all_citations.mjs";
 import { generalizeData, regeneralizeDataWithLinkedRecords } from "../core/ancestry_generalize_data.mjs";
 
+import { registerAsyncCacheTag } from "../../../base/core/async_result_cache.mjs";
+
 import {
   extractDataFromHtml,
   getDataForLinkedHouseholdRecords,
   processWithFetchedLinkData,
   getDataForCitationAndHouseholdRecords,
 } from "./ancestry_popup_linked_records.mjs";
+
+registerAsyncCacheTag("AncestryFetchPersonSourceRecord", 30);
 
 async function getSharingDataObj(source) {
   try {
@@ -109,7 +113,7 @@ async function getExtractedAndGeneralizedData(source) {
   let fetchResult = { success: false };
 
   if (uri) {
-    fetchResult = await extractRecordHtmlFromUrl(uri);
+    fetchResult = await extractRecordHtmlFromUrl(uri, "AncestryFetchPersonSourceRecord");
     if (!fetchResult.success) {
       newResponse.allowRetry = response.allowRetry;
       newResponse.statusCode = response.statusCode;

@@ -38,6 +38,7 @@ registerAsyncCacheTag("AncestryFetchFather", 10, oneHourInMs);
 registerAsyncCacheTag("AncestryFetchMother", 10, oneHourInMs);
 registerAsyncCacheTag("AncestryFetchSiblings", 20, oneHourInMs);
 registerAsyncCacheTag("AncestryFetchSpouse", 10, oneHourInMs);
+registerAsyncCacheTag("AncestryFetchFullRecord", 10, oneHourInMs);
 
 function extractDataFromHtml(htmlText, recordUrl) {
   //console.log("extractDataFromHtml, recordUrl is: " + recordUrl);

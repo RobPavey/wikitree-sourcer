@@ -171,7 +171,7 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       if (matchingRequestState.retryCount > 1 && matchingRequestState.statusCode == 429) {
         matchingRequestState.status = "waiting...";
         displayStatusMessage(resolve);
-        await doUnmonitoredSleep(queueOptions.additionalRetryWaitime);
+        await doMonitoredSleep(queueOptions.additionalRetryWaitime);
       }
 
       // if we have had several 429s in the last few responses then wait a bit extra
@@ -186,9 +186,9 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       if (numRecent429s >= 3) {
         matchingRequestState.status = "waiting...";
         displayStatusMessage(resolve);
-        await doUnmonitoredSleep(queueOptions.additionalManyRecent429sWaitime);
+        await doMonitoredSleep(queueOptions.additionalManyRecent429sWaitime);
       } else {
-        await doUnmonitoredSleep(queueResponseTracker.waitBetweenRequests);
+        await doMonitoredSleep(queueResponseTracker.waitBetweenRequests);
       }
 
       doRequest(nextRequest);
