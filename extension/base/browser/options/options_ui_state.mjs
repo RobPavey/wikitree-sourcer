@@ -31,6 +31,7 @@ var uiState = {
     citation: "general",
     narrative: "general",
     table: "general",
+    buildAll: "general",
     addMerge: "general",
     context: "general",
   },

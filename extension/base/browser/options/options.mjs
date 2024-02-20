@@ -152,6 +152,7 @@ function buildPage() {
       buttonElement: "narrative-tab",
     },
     table: { panelElement: "table-panel", buttonElement: "table-tab" },
+    buildAll: { panelElement: "buildAll-panel", buttonElement: "buildAll-tab" },
     addMerge: {
       panelElement: "addMerge-panel",
       buttonElement: "addMerge-tab",

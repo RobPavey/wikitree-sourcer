@@ -66,6 +66,7 @@ async function loadOptions() {
     "options_citation",
     "options_narrative",
     "options_table",
+    "options_buildAll",
     "options_addPerson", // legacy
     "options_addMerge", // replaced addPerson in options version 6
     "options_context",
@@ -81,6 +82,7 @@ async function loadOptions() {
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_citation, "citation");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_narrative, "narrative");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_table, "table");
+    putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_buildAll, "buildAll");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addPerson, "addPerson");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_addMerge, "addMerge");
     putNewLoadedOptionsSetInOptions(loadedOptions, itemsNew.options_context, "context");
@@ -106,7 +108,7 @@ async function loadOptions() {
 }
 
 function convertOptionsObjectToSaveFormat(options) {
-  const prefixes = ["search", "citation", "narrative", "table", "addMerge", "context", "options_version"];
+  const prefixes = ["search", "citation", "narrative", "table", "buildAll", "addMerge", "context", "options_version"];
 
   let newOptions = {};
 
@@ -151,6 +153,7 @@ async function saveOptions(options) {
         options_citation: saveFormatOptions.citation,
         options_narrative: saveFormatOptions.narrative,
         options_table: saveFormatOptions.table,
+        options_buildAll: saveFormatOptions.buildAll,
         options_addMerge: saveFormatOptions.addMerge,
         options_context: saveFormatOptions.context,
         options_version: saveFormatOptions.options_version,
@@ -182,6 +185,7 @@ async function saveOptions(options) {
                 options_citation: saveFormatOptions.citation,
                 options_narrative: saveFormatOptions.narrative,
                 options_table: saveFormatOptions.table,
+                options_buildAll: saveFormatOptions.buildAll,
                 options_addMerge: saveFormatOptions.addMerge,
                 options_context: saveFormatOptions.context,
                 options: saveFormatOptions.options,

@@ -94,7 +94,7 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
       }
     }
 
-    if (options.addMerge_fsAllCitations_excludeNonFsSources) {
+    if (options.buildAll_ancestry_excludeNonFsSources) {
       if (!sourceObj.uri) {
         continue;
       }
@@ -519,7 +519,7 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     citationText += cleanCitationText;
   }
 
-  if (source.notes && !includedNotes && options.addMerge_fsAllCitations_includeNotes) {
+  if (source.notes && !includedNotes && options.buildAll_ancestry_includeNotes) {
     // some notes are an automatic comment like "Source created by RecordSeek.com"
     // Not useful to include that.
     if (!source.notes.startsWith("Source created by ")) {
@@ -765,7 +765,7 @@ function buildSourcerCitation(runDate, source, type, options) {
 
 async function buildSourcerCitations(result, type, options) {
   try {
-    if (options.addMerge_fsAllCitations_excludeOtherRoleSources) {
+    if (options.buildAll_ancestry_excludeOtherRoleSources) {
       let newSources = [];
       for (let source of result.sources) {
         if (source.citationObject) {
@@ -782,14 +782,14 @@ async function buildSourcerCitations(result, type, options) {
       result.sources = newSources;
     }
 
-    if (options.addMerge_fsAllCitations_excludeRetiredSources != "never") {
+    if (options.buildAll_ancestry_excludeRetiredSources != "never") {
       let newSources = [];
       for (let source of result.sources) {
         let removeSource = false;
         let ed = source.extractedData;
         // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
         if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
-          if (options.addMerge_fsAllCitations_excludeRetiredSources == "always") {
+          if (options.buildAll_ancestry_excludeRetiredSources == "always") {
             removeSource = true;
           } else {
             // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
@@ -830,7 +830,7 @@ async function buildSourcerCitations(result, type, options) {
     if (type == "source") {
       generateSourcerCitationsStringForTypeSource(result, options);
     } else {
-      let groupCitations = options.addMerge_fsAllCitations_groupCitations;
+      let groupCitations = options.buildAll_ancestry_groupCitations;
 
       if (groupCitations) {
         groupSourcesIntoFacts(result, type, options); // only needed for inlne and narrative

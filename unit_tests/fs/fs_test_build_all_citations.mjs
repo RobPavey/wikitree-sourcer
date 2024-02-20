@@ -73,7 +73,7 @@ async function fsTestGetAllCitations(input) {
 
     filterAndEnhanceFsSourcesIntoSources(result, options);
 
-    let citationType = options.addMerge_fsAllCitations_citationType;
+    let citationType = options.buildAll_fs_citationType;
 
     switch (citationType) {
       case "fsPlainInline":
@@ -214,8 +214,8 @@ const regressionData = [
       {
         variantName: "no_include_notes",
         optionOverrides: {
-          addMerge_fsAllCitations_citationType: "fsPlainSource",
-          addMerge_fsAllCitations_includeNotes: false,
+          buildAll_fs_citationType: "fsPlainSource",
+          buildAll_fs_includeNotes: false,
         },
       },
     ],
@@ -232,7 +232,7 @@ const regressionData = [
       {
         variantName: "exclude_other_role_sources",
         optionOverrides: {
-          addMerge_fsAllCitations_excludeOtherRoleSources: true,
+          buildAll_fs_excludeOtherRoleSources: true,
         },
       },
       {
@@ -250,13 +250,13 @@ const regressionData = [
       {
         variantName: "not_grouped",
         optionOverrides: {
-          addMerge_fsAllCitations_groupCitations: false,
+          buildAll_fs_groupCitations: false,
         },
       },
       {
         variantName: "no_exclude_retired_sources",
         optionOverrides: {
-          addMerge_fsAllCitations_excludeRetiredSources: "never",
+          buildAll_fs_excludeRetiredSources: "never",
         },
       },
     ],
@@ -272,7 +272,7 @@ const regressionData = [
       {
         variantName: "not_grouped",
         optionOverrides: {
-          addMerge_fsAllCitations_groupCitations: false,
+          buildAll_fs_groupCitations: false,
         },
       },
     ],
@@ -284,13 +284,13 @@ const regressionData = [
       {
         variantName: "no_external",
         optionOverrides: {
-          addMerge_fsAllCitations_excludeNonFsSources: true,
+          buildAll_fs_excludeNonFsSources: true,
         },
       },
       {
         variantName: "not_grouped",
         optionOverrides: {
-          addMerge_fsAllCitations_groupCitations: false,
+          buildAll_fs_groupCitations: false,
         },
       },
     ],
@@ -302,7 +302,7 @@ const regressionData = [
       {
         variantName: "no_external",
         optionOverrides: {
-          addMerge_fsAllCitations_excludeNonFsSources: true,
+          buildAll_fs_excludeNonFsSources: true,
         },
       },
     ],
@@ -314,7 +314,7 @@ const regressionData = [
       {
         variantName: "exclude_other_role_sources",
         optionOverrides: {
-          addMerge_fsAllCitations_excludeOtherRoleSources: true,
+          buildAll_fs_excludeOtherRoleSources: true,
         },
       },
     ],
@@ -326,7 +326,7 @@ const regressionData = [
       {
         variantName: "exclude_non_fs_sources",
         optionOverrides: {
-          addMerge_fsAllCitations_excludeNonFsSources: true,
+          buildAll_fs_excludeNonFsSources: true,
         },
       },
     ],
@@ -341,31 +341,31 @@ const optionVariants = [
   {
     variantName: "narrative",
     optionOverrides: {
-      addMerge_fsAllCitations_citationType: "narrative",
+      buildAll_fs_citationType: "narrative",
     },
   },
   {
     variantName: "inline",
     optionOverrides: {
-      addMerge_fsAllCitations_citationType: "inline",
+      buildAll_fs_citationType: "inline",
     },
   },
   {
     variantName: "source",
     optionOverrides: {
-      addMerge_fsAllCitations_citationType: "source",
+      buildAll_fs_citationType: "source",
     },
   },
   {
     variantName: "fs_plain_inline",
     optionOverrides: {
-      addMerge_fsAllCitations_citationType: "fsPlainInline",
+      buildAll_fs_citationType: "fsPlainInline",
     },
   },
   {
     variantName: "fs_plain_source",
     optionOverrides: {
-      addMerge_fsAllCitations_citationType: "fsPlainSource",
+      buildAll_fs_citationType: "fsPlainSource",
     },
   },
 ];

@@ -562,9 +562,9 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
     if (saveUnitTestData) {
       // if saving unit test data we don't want to exclude any sources
       let testOptions = getDefaultOptions();
-      testOptions.addMerge_fsAllCitations_excludeRetiredSources = "never";
-      testOptions.addMerge_fsAllCitations_excludeNonFsSources = false;
-      testOptions.addMerge_fsAllCitations_excludeOtherRoleSources = false;
+      testOptions.buildAll_ancestry_excludeRetiredSources = "never";
+      testOptions.buildAll_ancestry_excludeNonFsSources = false;
+      testOptions.buildAll_ancestry_excludeOtherRoleSources = false;
       input.options = testOptions;
     }
 
@@ -617,7 +617,7 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
 
 async function ancestryGetAllCitationsForSavePersonData(data) {
   try {
-    if (!data.extractedData.sourceIds || data.extractedData.sourceIds.length <= 0) {
+    if (!data.extractedData.sources || data.extractedData.sources.length <= 0) {
       // no sources - nothing to do
       return { success: true };
     }
@@ -625,7 +625,7 @@ async function ancestryGetAllCitationsForSavePersonData(data) {
     let input = Object.assign({}, data);
     input.options = options;
     input.runDate = new Date();
-    input.citationType = options.addMerge_fsAllCitations_citationType;
+    input.citationType = options.buildAll_ancestry_citationType;
 
     displayBusyMessage("Getting sources...");
     let response = await ancestryGetAllCitations(input);
@@ -779,7 +779,7 @@ function addBuildAllCitationsMenuItem(menu, data, backFunction) {
       menu,
       "Build All Citations",
       function (element) {
-        let citationType = options.addMerge_fsAllCitations_citationType;
+        let citationType = options.buildAll_ancestry_citationType;
         ancestryBuildAllCitationsAction(data, citationType);
       },
       function () {

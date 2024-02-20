@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { options } from "./options_loader.mjs";
+import { updateOptionsToLatestVersion, options } from "./options_loader.mjs";
 import { getDefaultOptions } from "../../core/options/options_database.mjs";
 import { saveOptions } from "./options_storage.mjs";
 import { restoreOptionsGivenOptions } from "./options_save_restore.mjs";
@@ -130,7 +130,9 @@ function doLoadOptionsFromFile() {
                   //console.log("doLoadOptionsFromFile, loaded options are:");
                   //console.log(importedOptions);
 
-                  let mergedOptions = { ...options, ...importedOptions };
+                  // conversion should use current option values rather than defaults
+                  // for any options on in loaded file.
+                  let mergedOptions = updateOptionsToLatestVersion(importedOptions, options);
 
                   //console.log("doLoadOptionsFromFile, merged options are:");
                   //console.log(mergedOptions);

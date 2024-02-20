@@ -1134,6 +1134,18 @@ const tableSentenceOptionsGroup = {
 // Add/Merge options groups
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const buildAllGeneralOptionsGroup = {
+  category: "buildAll",
+  subcategory: "general",
+  tab: "buildAll",
+  subsection: "general",
+  options: [],
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Add/Merge options groups
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const addMergeGeneralOptionsGroup = {
   category: "addMerge",
   subcategory: "general",
@@ -1369,6 +1381,8 @@ registerSubheadingForOptions("table", "general", "table", "When using a table");
 registerSubheadingForOptions("table", "general", "list", "When using a list");
 registerSubheadingForOptions("table", "general", "sentence", "When using a sentence");
 
+registerSubsectionForOptions("buildAll", "general", "General", "There are currently no options shared across sites.");
+
 registerSubsectionForOptions("addMerge", "general", "General");
 registerSubsectionForOptions("addMerge", "addPerson", "Add Person");
 registerSubsectionForOptions("addMerge", "mergeEdit", "Merge/Edit");
@@ -1403,6 +1417,8 @@ registerOptionsGroup(tableGeneralOptionsGroup);
 registerOptionsGroup(tableTableOptionsGroup);
 registerOptionsGroup(tableListOptionsGroup);
 registerOptionsGroup(tableSentenceOptionsGroup);
+
+registerOptionsGroup(buildAllGeneralOptionsGroup);
 
 registerOptionsGroup(addMergeGeneralOptionsGroup);
 registerOptionsGroup(addMergeAddPersonOptionsGroup);

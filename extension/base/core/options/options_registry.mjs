@@ -44,6 +44,15 @@ var optionsRegistry = {
         "It is separate from the citation.",
     },
     {
+      name: "buildAll",
+      label: "Build All Citations",
+      subsections: [],
+      comment:
+        "These options apply to the Build All Citations action. " +
+        "Certain sites (e.g. FamilySearch and Ancestry) support Build All Citations when on a person profile. " +
+        "This will build a citation for each of the sources on that profile.",
+    },
+    {
       name: "addMerge",
       label: "Add/Merge",
       subsections: [],

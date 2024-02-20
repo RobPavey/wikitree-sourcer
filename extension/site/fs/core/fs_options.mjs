@@ -172,11 +172,11 @@ const citationOptionsGroup = {
   ],
 };
 
-const addMergeFsAllCitationsOptionsGroup = {
-  category: "addMerge",
-  subcategory: "fsAllCitations",
-  tab: "addMerge",
-  subsection: "fsAllCitations",
+const buildAllCitationsOptionsGroup = {
+  category: "buildAll",
+  subcategory: "fs",
+  tab: "buildAll",
+  subsection: "fs",
   options: [
     {
       optionName: "citationType",
@@ -190,7 +190,6 @@ const addMergeFsAllCitationsOptionsGroup = {
         { value: "fsPlainSource", text: "Source citation using text on FS Sources page" },
       ],
       defaultValue: "narrative",
-      comment: "NOTE: Some FamilySearch profiles have many incorrect sources - please check the generated citations.",
     },
     {
       optionName: "groupCitations",
@@ -240,10 +239,17 @@ registerOptionsGroup(citationOptionsGroup);
 registerSubsectionForOptions("citation", "fs", "FamilySearch");
 
 registerSubsectionForOptions(
+  "buildAll",
+  "fs",
+  "FamilySearch",
+  "NOTE: Some FamilySearch profiles have many incorrect sources - please check the generated citations."
+);
+registerOptionsGroup(buildAllCitationsOptionsGroup);
+
+// This is just for historical reasons and can be removed a few releases after 2.2.1
+registerSubsectionForOptions(
   "addMerge",
   "fsAllCitations",
   "FamilySearch Build All Citations",
-  'These options control the output of "Build All Citations" and also' +
-    ' "Save Person Data" when the "Include all source citations" option is enabled.'
+  'These options have moved to the "Build All Citations" tab.'
 );
-registerOptionsGroup(addMergeFsAllCitationsOptionsGroup);

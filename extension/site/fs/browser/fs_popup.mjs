@@ -211,9 +211,9 @@ async function fsBuildAllCitationsAction(data, citationType) {
     if (saveUnitTestData) {
       // if saving unit test data we don't want to exclude any sources
       let testOptions = getDefaultOptions();
-      testOptions.addMerge_fsAllCitations_excludeRetiredSources = "never";
-      testOptions.addMerge_fsAllCitations_excludeNonFsSources = false;
-      testOptions.addMerge_fsAllCitations_excludeOtherRoleSources = false;
+      testOptions.buildAll_fs_excludeRetiredSources = "never";
+      testOptions.buildAll_fs_excludeNonFsSources = false;
+      testOptions.buildAll_fs_excludeOtherRoleSources = false;
       input.options = testOptions;
     }
 
@@ -272,7 +272,7 @@ async function fsGetAllCitationsForSavePersonData(data) {
     let input = Object.assign({}, data);
     input.options = options;
     input.runDate = new Date();
-    input.citationType = options.addMerge_fsAllCitations_citationType;
+    input.citationType = options.buildAll_fs_citationType;
 
     displayBusyMessage("Getting sources...");
     let response = await fsGetAllCitations(input);
@@ -352,7 +352,7 @@ function addBuildAllCitationsMenuItem(menu, data, backFunction) {
       menu,
       "Build All Citations",
       function (element) {
-        let citationType = options.addMerge_fsAllCitations_citationType;
+        let citationType = options.buildAll_fs_citationType;
         fsBuildAllCitationsAction(data, citationType);
       },
       function () {

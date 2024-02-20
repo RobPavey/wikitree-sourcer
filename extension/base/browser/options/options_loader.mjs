@@ -162,6 +162,41 @@ function convertOptionsFrom6To7(loadedOptions) {
   return convertedOptions;
 }
 
+function convertOptionsFrom7To8(loadedOptions) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom7To8, before:");
+  console.log(loadedOptions);
+
+  // we want to move all options of the form "addMerge_fsAllCitations*"
+  // to "buildAll_fs_"
+
+  function moveOption(oldName, newName) {
+    convertedOptions[newName] = convertedOptions[oldName];
+    delete convertedOptions[oldName];
+  }
+
+  function moveOptionLeaf(oldLeafName, newLeafName) {
+    let oldName = "addMerge_fsAllCitations_" + oldLeafName;
+    let newName = "buildAll_fs_" + newLeafName;
+    moveOption(oldName, newName);
+  }
+
+  moveOptionLeaf("citationType", "citationType");
+  moveOptionLeaf("groupCitations", "groupCitations");
+  moveOptionLeaf("includeNotes", "includeNotes");
+  moveOptionLeaf("excludeNonFsSources", "excludeNonFsSources");
+  moveOptionLeaf("excludeOtherRoleSources", "excludeOtherRoleSources");
+  moveOptionLeaf("excludeRetiredSources", "excludeRetiredSources");
+
+  convertedOptions.options_version = 8;
+
+  console.log("convertOptionsFrom7To8, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
 function convertOptions(loadedOptions, defaultOptions) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
@@ -190,6 +225,9 @@ function convertOptions(loadedOptions, defaultOptions) {
   if (loadedVersion < 7) {
     loadedOptions = convertOptionsFrom6To7(loadedOptions);
   }
+  if (loadedVersion < 8) {
+    loadedOptions = convertOptionsFrom7To8(loadedOptions);
+  }
 
   return loadedOptions;
 }
@@ -209,11 +247,7 @@ function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
   return newOptions;
 }
 
-async function callFunctionWithStoredOptions(optionsFunction) {
-  let defaultOptions = getDefaultOptions();
-
-  let loadedOptions = await loadOptions();
-
+function updateOptionsToLatestVersion(loadedOptions, defaultOptions) {
   let optionsObject = undefined;
   if (loadedOptions) {
     if (!loadedOptions.options_version) {
@@ -230,7 +264,14 @@ async function callFunctionWithStoredOptions(optionsFunction) {
     optionsObject = defaultOptions;
   }
 
-  options = optionsObject;
+  return optionsObject;
+}
+
+async function callFunctionWithStoredOptions(optionsFunction) {
+  let loadedOptions = await loadOptions();
+
+  let defaultOptions = getDefaultOptions();
+  options = updateOptionsToLatestVersion(loadedOptions, defaultOptions);
 
   optionsFunction(options);
 }
@@ -239,4 +280,4 @@ function replaceCachedOptions(newOptions) {
   options = newOptions;
 }
 
-export { callFunctionWithStoredOptions, replaceCachedOptions, options };
+export { callFunctionWithStoredOptions, replaceCachedOptions, updateOptionsToLatestVersion, options };

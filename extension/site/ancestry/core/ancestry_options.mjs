@@ -141,6 +141,38 @@ const citationOptionsGroup = {
   ],
 };
 
+const buildAllCitationsOptionsGroup = {
+  category: "buildAll",
+  subcategory: "ancestry",
+  tab: "buildAll",
+  subsection: "ancestry",
+  options: [
+    {
+      optionName: "citationType",
+      type: "select",
+      label: "Type of citations to generate",
+      values: [
+        { value: "narrative", text: "Narrative plus inline citation" },
+        { value: "inline", text: "Inline citation" },
+        { value: "source", text: "Source citation" },
+      ],
+      defaultValue: "narrative",
+    },
+    {
+      optionName: "groupCitations",
+      type: "checkbox",
+      label: "Group inline citations by fact and merge narratives",
+      defaultValue: true,
+    },
+    {
+      optionName: "excludeOtherRoleSources",
+      type: "checkbox",
+      label: "Exclude sources where the source person is not a primary person for the event",
+      defaultValue: false,
+    },
+  ],
+};
+
 registerSubsectionForOptions("search", "ancestry", "Ancestry");
 registerSiteSearchPopupOptionsGroup("ancestry", 1, 1);
 registerSubheadingForOptions("search", "ancestry", "parameters", "Search Parameters");
@@ -148,3 +180,6 @@ registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "ancestry", "Ancestry");
 registerOptionsGroup(citationOptionsGroup);
+
+registerSubsectionForOptions("buildAll", "ancestry", "Ancestry");
+registerOptionsGroup(buildAllCitationsOptionsGroup);
