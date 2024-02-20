@@ -562,8 +562,6 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
     if (saveUnitTestData) {
       // if saving unit test data we don't want to exclude any sources
       let testOptions = getDefaultOptions();
-      testOptions.buildAll_ancestry_excludeRetiredSources = "never";
-      testOptions.buildAll_ancestry_excludeNonFsSources = false;
       testOptions.buildAll_ancestry_excludeOtherRoleSources = false;
       input.options = testOptions;
     }
@@ -631,7 +629,7 @@ async function ancestryGetAllCitationsForSavePersonData(data) {
     let response = await ancestryGetAllCitations(input);
 
     if (response.success) {
-      //console.log("ancestryGetAllCitations, response is");
+      //console.log("ancestryGetAllCitationsForSavePersonData, response is");
       //console.log(response);
 
       data.allCitationsString = response.citationsString;

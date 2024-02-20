@@ -36,134 +36,6 @@ import { generalizeData } from "./ancestry_generalize_data.mjs";
 import { buildCitation } from "./ancestry_build_citation.mjs";
 import { buildHouseholdTable } from "../../../base/core/table_builder.mjs";
 
-function inferEventDate(source) {
-  // there is no date, this can cause sort issues. Sometime we can infer one
-
-  if (source.notes && source.notes == "Source created by RecordSeek.com") {
-    if (source.citation) {
-      let title = source.citation.replace(/^"([^"]+)".*$/, "$1");
-      if (title && title != source.citation) {
-        // get any years in title
-        let years = title.match(/\d\d\d\d/);
-        if (years && years.length == 1) {
-          return years[0];
-        }
-      }
-    }
-  }
-
-  if (source.title) {
-    // get any years in title
-    let years = source.title.match(/\d\d\d\d/g);
-    if (years && years.length == 1) {
-      return years[0];
-    }
-  }
-
-  return "";
-}
-
-function filterAndEnhanceFsSourcesIntoSources(result, options) {
-  let sources = result.fsSources;
-
-  result.sources = [];
-
-  for (let source of sources) {
-    //console.log("FS source is:");
-    //console.log(source);
-
-    let sourceObj = {};
-
-    function addField(fieldName) {
-      if (source[fieldName]) {
-        sourceObj[fieldName] = source[fieldName];
-      }
-    }
-    addField("citation");
-    addField("title");
-    addField("id");
-    addField("notes");
-
-    if (source.uri && source.uri.uri) {
-      sourceObj.uri = source.uri.uri;
-
-      if (source.uriUpdatedOn) {
-        let date = new Date(source.uriUpdatedOn);
-        const options = { day: "numeric", month: "long", year: "numeric" };
-        sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
-      }
-    }
-
-    if (options.buildAll_ancestry_excludeNonFsSources) {
-      if (!sourceObj.uri) {
-        continue;
-      }
-      let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
-      if (validLinkIndex == -1) {
-        continue;
-      }
-    }
-
-    // ignore some useless sources
-    if (source.citation == "Ancestry Family Tree" && source.title == "Ancestry Family Trees" && !source.notes) {
-      continue;
-    }
-
-    if (source.event) {
-      if (source.event.sortKey) {
-        sourceObj.sortKey = source.event.sortKey;
-      }
-      if (source.event.sortYear) {
-        sourceObj.sortYear = source.event.sortYear;
-      }
-      if (source.event.displayDate) {
-        sourceObj.eventDate = source.event.displayDate;
-      }
-    }
-
-    if (!sourceObj.eventDate && !sourceObj.sortYear) {
-      const inferredEventDate = inferEventDate(source);
-      if (inferredEventDate) {
-        sourceObj.eventDate = inferredEventDate;
-      }
-    }
-
-    result.sources.push(sourceObj);
-  }
-}
-
-function buildFsPlainCitations(result, type, options) {
-  if (result.sources.length == 0) {
-    result.citationsString = "";
-    result.citationsStringType = type;
-    return;
-  }
-
-  sortSourcesUsingFsSortKeysAndFetchedRecords(result);
-
-  let citationsString = "";
-
-  for (let source of result.sources) {
-    if (type == "inline") {
-      if (citationsString) {
-        citationsString += "\n";
-      }
-      citationsString += buildRefForPlainCitation(source, false, options);
-      citationsString += "\n";
-    } else {
-      citationsString += "* ";
-      citationsString += getTextForPlainCitation(source, "source", false, options);
-      citationsString += "\n";
-    }
-  }
-
-  result.citationsString = citationsString;
-  result.citationsStringType = type;
-  result.citationCount = result.sources.length;
-
-  result.success = true;
-}
-
 function inferBestEventDateForCompare(gd) {
   let eventDate = "";
   if (gd) {
@@ -211,7 +83,7 @@ function inferBestEventDateForCompare(gd) {
   return eventDate;
 }
 
-// this can be used both for sorthing sources and facts
+// this can be used both for sorting sources and facts
 function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
   let recordTypeSortPriority = {};
   recordTypeSortPriority[RT.Birth] = 1;
@@ -373,177 +245,6 @@ function buildNarrativeForPlainCitation(source, options) {
   return narrative;
 }
 
-function getTextForPlainCitation(source, type, isSourcerStyle, options) {
-  function cleanText(text) {
-    if (text) {
-      text = text.replace(/\<\/?i\>/gi, "''");
-
-      if (type == "source") {
-        text = text.replace(/ *\n */g, "<br/>");
-        text = text.replace(/\s+/g, " ");
-      } else {
-        text = text.replace(/ *\n */g, "<br/>\n");
-      }
-
-      text = text.trim();
-
-      text = text.replace(/,$/g, "");
-
-      text = text.trim();
-    } else {
-      text = "";
-    }
-    return text;
-  }
-
-  function cleanTitle(text) {
-    if (text) {
-      // sometimes title has a newline after the person's name for no apparent reason
-      let titleText = text.replace(/\n/g, " ");
-      titleText = titleText.replace(/\s+/g, " ");
-      text = cleanText(titleText);
-    }
-    return text;
-  }
-
-  function cleanCitation(text) {
-    if (text) {
-      let titleText = text.replace(/\n/g, " ");
-      titleText = titleText.replace(/\s+/g, " ");
-      text = cleanText(titleText);
-    }
-    return text;
-  }
-
-  function cleanNotes(text) {
-    if (text) {
-      text = cleanText(text);
-
-      // crap that sometimes gets pasted in
-      text = text.replace(/[,\s\n]+save\s+cancel/gi, "");
-      text = text.replace(/\s+View\sblank\sform,?/gi, "");
-      text = text.replace(/\s+Add\salternate\sinformation,?/gi, "");
-      text = text.replace(/\s+Report\s+issue,?/gi, "");
-      text = text.replace(/SAVE\s+PRINT\s+SHARE[,.\s]/gi, "");
-      text = text.replace(/[\s\n]+VIEW[ ,]/gi, "");
-
-      text = text.replace(/ +/g, " ");
-      text = text.trim();
-    } else {
-      text = "";
-    }
-
-    return text;
-  }
-
-  function addSeparationWithinBody(nonNewlineSeparator) {
-    if (citationText) {
-      let addedSeparation = false;
-      if (isSourcerStyle) {
-        if (options.citation_general_addBreaksWithinBody) {
-          citationText += "<br/>";
-          addedSeparation = true;
-        }
-
-        if (type != "source" && options.citation_general_addNewlinesWithinBody) {
-          citationText += "\n";
-          addedSeparation = true;
-        }
-      }
-
-      if (!addedSeparation) {
-        citationText += nonNewlineSeparator;
-      }
-    }
-  }
-
-  let cleanTitleText = cleanTitle(source.title);
-  let cleanCitationText = cleanCitation(source.citation);
-
-  let includedTitle = false;
-  let includedCitation = false;
-  let includedNotes = false;
-
-  // If it is an FS Source then we only want the full FS citation and not the title.
-  const isFsSource = /^https?\:\/\/familysearch\.org\/ark\:\/\d+\/1\:1\:[A-Z0-1\-]+.*$/.test(source.uri);
-
-  let citationText = "";
-
-  if (isFsSource || cleanTitleText.includes(" in the ")) {
-    citationText += cleanCitationText;
-    includedCitation = true;
-  } else {
-    citationText += cleanTitleText;
-    includedTitle = true;
-
-    if (!citationText.includes(cleanCitationText)) {
-      addSeparationWithinBody(" ");
-      citationText += cleanCitationText;
-      includedCitation = true;
-    }
-  }
-
-  // somtimes the citation is just the uri, in this case it is better to put the title first
-  if (!citationText || citationText == source.uri) {
-    if (!includedTitle) {
-      citationText = cleanTitleText;
-      includedTitle = true;
-    }
-  }
-
-  // if there is no other text other than notes then put it before link
-  if (!citationText && !cleanTitleText && !cleanCitationText) {
-    citationText += cleanText(source.notes);
-    includedNotes = true;
-  }
-
-  if (source.uri && !citationText.includes(source.uri)) {
-    let tempUri = source.uri.replace(/^https?\:\/\/[^\/]+\//, "");
-    if (!citationText.includes(tempUri)) {
-      addSeparationWithinBody(" ");
-      if (source.uriUpdatedDate) {
-        citationText += "(" + source.uri + " : " + source.uriUpdatedDate + ")";
-      } else {
-        citationText += source.uri;
-      }
-    }
-  }
-
-  if (!isFsSource && !includedTitle && !citationText.includes(cleanTitleText)) {
-    addSeparationWithinBody(", ");
-    citationText += cleanTitleText;
-  }
-
-  if (!includedCitation && !citationText.includes(cleanCitationText)) {
-    addSeparationWithinBody(", ");
-    citationText += cleanCitationText;
-  }
-
-  if (source.notes && !includedNotes && options.buildAll_ancestry_includeNotes) {
-    // some notes are an automatic comment like "Source created by RecordSeek.com"
-    // Not useful to include that.
-    if (!source.notes.startsWith("Source created by ")) {
-      addSeparationWithinBody(", ");
-      citationText += " " + cleanNotes(source.notes);
-    }
-  }
-
-  return citationText;
-}
-
-function buildRefForPlainCitation(source, isSourcerStyle, options) {
-  let refString = "<ref>";
-  if (options.citation_general_addNewlinesWithinRefs) {
-    refString += "\n";
-  }
-  refString += getTextForPlainCitation(source, "inline", isSourcerStyle, options);
-  if (options.citation_general_addNewlinesWithinRefs) {
-    refString += "\n";
-  }
-  refString += "</ref>";
-  return refString;
-}
-
 function generateSourcerCitationsStringForFacts(result, type, options) {
   // this is only ever used for narrative or inline
   let citationsString = "";
@@ -602,20 +303,6 @@ function generateSourcerCitationsStringForFacts(result, type, options) {
       }
       citationCount += fact.sources.length;
       citationsString += "\n";
-    } else if (fact.sources.length == 1) {
-      let source = fact.sources[0];
-
-      if (citationsString) {
-        citationsString += "\n";
-      }
-
-      if (type == "narrative") {
-        citationsString += buildNarrativeForPlainCitation(source, options);
-      }
-      citationsString += buildRefForPlainCitation(source, true, options);
-
-      citationsString += "\n";
-      citationCount++;
     }
   }
 
@@ -629,9 +316,6 @@ function generateSourcerCitationsStringForTypeSource(result, options) {
   for (let source of result.sources) {
     if (source.citationObject) {
       citationsString += source.citationObject.citation;
-      citationsString += "\n";
-    } else {
-      citationsString += "* " + getTextForPlainCitation(source, "source", true, options);
       citationsString += "\n";
     }
   }
@@ -650,13 +334,6 @@ function generateSourcerCitationsStringForTypeInline(result, options) {
       }
       citationsString += source.citationObject.citation;
       citationsString += "\n";
-    } else {
-      if (citationsString) {
-        citationsString += "\n";
-      }
-
-      citationsString += buildRefForPlainCitation(source, true, options);
-      citationsString += "\n";
     }
   }
 
@@ -673,14 +350,6 @@ function generateSourcerCitationsStringForTypeNarrative(result, options) {
         citationsString += "\n";
       }
       citationsString += source.citationObject.citation;
-      citationsString += "\n";
-    } else {
-      if (citationsString) {
-        citationsString += "\n";
-      }
-
-      citationsString += buildNarrativeForPlainCitation(source, options);
-      citationsString += buildRefForPlainCitation(source, true, options);
       citationsString += "\n";
     }
   }
@@ -776,49 +445,6 @@ async function buildSourcerCitations(result, type, options) {
             newSources.push(source);
           }
         } else {
-          newSources.push(source);
-        }
-      }
-      result.sources = newSources;
-    }
-
-    if (options.buildAll_ancestry_excludeRetiredSources != "never") {
-      let newSources = [];
-      for (let source of result.sources) {
-        let removeSource = false;
-        let ed = source.extractedData;
-        // e.g. "Forward To Ark": "https://familysearch.org/ark:/61903/1:2:9HXH-3B3",
-        if (ed && ed.recordData && ed.recordData["Forward To Ark"]) {
-          if (options.buildAll_ancestry_excludeRetiredSources == "always") {
-            removeSource = true;
-          } else {
-            // the forward to Ark URL cannot be compared as it is a weird redirect using "/1:2:"
-            // but the current URL is store in either forwardPersonToArk or extData in this case.
-            let currentSourceUrl = ed.forwardPersonToArk;
-            if (!currentSourceUrl) {
-              if (ed.extData && ed.extData.startsWith("http")) {
-                currentSourceUrl = ed.extData;
-              }
-            }
-
-            if (currentSourceUrl) {
-              currentSourceUrl = currentSourceUrl.replace("www.familysearch.org", "familysearch.org");
-
-              //console.log("currentSourceUrl = " + currentSourceUrl);
-
-              for (let otherSource of result.sources) {
-                //console.log("otherSource.uri = " + otherSource.uri);
-                if (otherSource.uri == currentSourceUrl) {
-                  removeSource = true;
-                  //console.log("removing duplicate source");
-                  break;
-                }
-              }
-            }
-          }
-        }
-
-        if (!removeSource) {
           newSources.push(source);
         }
       }
