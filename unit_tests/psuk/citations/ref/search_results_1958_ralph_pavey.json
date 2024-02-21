@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Unclassified''':\n\"England and Wales, Index to wills and administrations (1996 to present)\"<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"England and Wales, Index to wills and administrations (1996 to present)\"<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Unclassified''':\n\"England and Wales, Index to wills and administrations (1996 to present)\"<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"England and Wales, Index to wills and administrations (1996 to present)\"<br/>\n[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Unclassified''': \"England and Wales, Index to wills and administrations (1996 to present)\"<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)",
+    "citation": "* '''Record''': \"England and Wales, Index to wills and administrations (1996 to present)\"<br/>[https://probatesearch.service.gov.uk/ Probate Search/Find A Will (UK)] (accessed 6 May 2021)",
     "type": "source"
   }
 }

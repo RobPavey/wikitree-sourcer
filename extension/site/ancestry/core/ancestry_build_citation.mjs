@@ -54,7 +54,7 @@ function getRefTitle(ed, gd) {
 
   let refTitle = gd.getRefTitle(ed.titleCollection, recordTypeToRefTitle);
 
-  if (refTitle && refTitle != "Unclassified") {
+  if (refTitle && refTitle != "Unclassified" && refTitle != "Record" && !refTitle.startsWith("Record of ")) {
     return refTitle;
   }
 
@@ -68,6 +68,10 @@ function getRefTitle(ed, gd) {
     if (Object.prototype.hasOwnProperty.call(rd, "Record Type")) {
       return rd["Record Type"];
     }
+  }
+
+  if (refTitle && refTitle != "Unclassified") {
+    return refTitle;
   }
 
   return "";
