@@ -3526,6 +3526,12 @@ class GeneralizedData {
       if (primaryPersonName) {
         refTitle += " " + primaryPersonName;
       }
+    } else if (refTitle == "Unclassified" || !refTitle) {
+      let fullName = this.inferFullName();
+      refTitle = "Record";
+      if (fullName) {
+        refTitle += " of " + fullName;
+      }
     }
 
     return refTitle;

@@ -215,6 +215,8 @@ const buildAllCitationsOptionsGroup = {
       label:
         "For Sourcer style citations, exclude sources where the source person is not a primary person for the event",
       defaultValue: false,
+      comment:
+        "Be careful with this option because sometimes the wrong person in a source is connected to the profile.",
     },
     {
       optionName: "excludeRetiredSources",
