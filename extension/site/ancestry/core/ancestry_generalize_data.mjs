@@ -2556,7 +2556,7 @@ function regeneralizeDataWithLinkedRecords(input) {
         }
       }
 
-      if (primaryLinkedRecord) {
+      if (primaryLinkedRecord && primaryLinkedRecord.extractedData) {
         //console.log("regeneralizeDataWithLinkedRecords, primaryLinkedRecord.extractedData is:");
         //console.log(primaryLinkedRecord.extractedData);
 

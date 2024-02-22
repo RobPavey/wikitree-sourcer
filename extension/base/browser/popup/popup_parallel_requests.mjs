@@ -182,7 +182,9 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       // if this request has had several retries already and the latest one was a 429
       // then wait an additional time befor queueing it
       if (matchingRequestState.retryCount > 1 && matchingRequestState.statusCode == 429) {
-        matchingRequestState.status = "waiting...";
+        if (matchingRequestState.status && !matchingRequestState.status.startsWith("waiting")) {
+          matchingRequestState.status = "waiting before " + matchingRequestState.status;
+        }
         displayStatusMessage(resolve);
         await doMonitoredSleep(queueOptions.additionalRetryWaitime);
       }
@@ -197,7 +199,9 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       }
       //console.log("responseArray.length = " + responseArray.length + ", numRecent429s = " + numRecent429s);
       if (numRecent429s >= 3) {
-        matchingRequestState.status = "waiting...";
+        if (matchingRequestState.status && !matchingRequestState.status.startsWith("waiting")) {
+          matchingRequestState.status = "waiting before " + matchingRequestState.status;
+        }
         displayStatusMessage(resolve);
         await doMonitoredSleep(queueOptions.additionalManyRecent429sWaitime);
       } else {
@@ -230,7 +234,36 @@ function displayStatusMessage(resolve) {
 
   let message2 = "";
   for (let requestState of requestsTracker.requestStates) {
-    message2 += "\n'" + requestState.request.name + "' " + requestState.status;
+    let name = requestState.request.name;
+    let status = requestState.status;
+
+    // if the name and status are too long to fit on a line try wrapping at space and indenting
+    // For an exact solution we could calculate the proportional width of the text
+    // See: https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript
+    // but that seems overkill.
+    const maxLength = 40;
+    const indentString = "\xa0\xa0\xa0\xa0";
+    if (name && status && name.length + status.length > maxLength) {
+      if (name.length > maxLength) {
+        let newName = "";
+        while (name.length > 45) {
+          let spaceIndex = name.lastIndexOf(" ", maxLength);
+          let cutIndex = 40;
+          if (spaceIndex != -1) {
+            cutIndex = spaceIndex;
+          }
+          newName += name.substring(0, cutIndex) + "\n";
+          if (spaceIndex != -1) {
+            cutIndex++; // move beyond the matched space
+          }
+          name = indentString + name.substring(cutIndex + 1);
+        }
+        name = newName + name;
+      }
+      message2 += "\n'" + name + "'\n" + indentString + status;
+    } else {
+      message2 += "\n'" + name + "' " + status;
+    }
   }
 
   displayBusyMessageWithSkipButton(baseMessage, message2, function () {
@@ -339,7 +372,6 @@ function handleRequestResponse(request, response, doRequest, resolve) {
     if (response.allowRetry && matchingRequestState.retryCount < 4) {
       //console.log("doing a retry");
       requestQueue.push(matchingRequestState.request);
-      matchingRequestState.status = "retry";
       matchingRequestState.retryCount++;
       matchingRequestState.status = "retry " + matchingRequestState.retryCount;
       if (response.statusCode) {
