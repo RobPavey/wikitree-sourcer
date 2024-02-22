@@ -125,7 +125,16 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
     //console.log(requests);
 
-    const displayMessage = "WikiTree Sourcer fetching linked records";
+    let displayMessage = "WikiTree Sourcer fetching linked records";
+    let ed = data.extractedData;
+    if (ed && ed.titleCollection) {
+      if (ed.titleName) {
+        displayMessage =
+          "Fetching linked records to complete citation for " + ed.titleName + " in " + ed.titleCollection;
+      } else {
+        displayMessage = "Fetching linked records to complete citation of " + ed.titleCollection;
+      }
+    }
     let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions, displayMessage);
 
     //console.log("getDataForLinkedRecords, returned from doRequestsInParallel, requestsResult is:");

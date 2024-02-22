@@ -267,12 +267,12 @@ async function terminateParallelRequests(resolve) {
     callbackInput.responses.push(requestState.response);
   }
 
+  // This removes the status message with the skip button.
+  displayBusyMessage("Finished fetch requests", "Processing results");
+
   await waitForAnyMonitoredSleepsToComplete();
 
   resetStaticCounts();
-
-  // This removes the status message with the skip button.
-  displayBusyMessage("Finished fetch requests", "Processing results");
 
   //console.log("About to call resolve in terminateParallelRequest, callbackInput is:");
   //console.log(callbackInput);
