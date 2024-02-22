@@ -182,8 +182,10 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       // if this request has had several retries already and the latest one was a 429
       // then wait an additional time befor queueing it
       if (matchingRequestState.retryCount > 1 && matchingRequestState.statusCode == 429) {
-        if (matchingRequestState.status && !matchingRequestState.status.startsWith("waiting")) {
+        if (matchingRequestState.status && matchingRequestState.status.startsWith("retry")) {
           matchingRequestState.status = "waiting before " + matchingRequestState.status;
+        } else {
+          matchingRequestState.status = "waiting";
         }
         displayStatusMessage(resolve);
         await doMonitoredSleep(queueOptions.additionalRetryWaitime);
@@ -199,8 +201,10 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       }
       //console.log("responseArray.length = " + responseArray.length + ", numRecent429s = " + numRecent429s);
       if (numRecent429s >= 3) {
-        if (matchingRequestState.status && !matchingRequestState.status.startsWith("waiting")) {
+        if (matchingRequestState.status && matchingRequestState.status.startsWith("retry")) {
           matchingRequestState.status = "waiting before " + matchingRequestState.status;
+        } else {
+          matchingRequestState.status = "waiting";
         }
         displayStatusMessage(resolve);
         await doMonitoredSleep(queueOptions.additionalManyRecent429sWaitime);
@@ -256,7 +260,7 @@ function displayStatusMessage(resolve) {
           if (spaceIndex != -1) {
             cutIndex++; // move beyond the matched space
           }
-          name = indentString + name.substring(cutIndex + 1);
+          name = indentString + name.substring(cutIndex);
         }
         name = newName + name;
       }
