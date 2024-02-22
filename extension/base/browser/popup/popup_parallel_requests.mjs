@@ -28,17 +28,6 @@ import {
   displayMessageWithIconAndWaitForContinue,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-var requestsTracker = {
-  requestStates: [],
-  expectedResponseCount: 0,
-  receivedResponseCount: 0,
-  failureCount: 0,
-  callbackFunction: undefined,
-  requestFunction: undefined,
-  requestFunctionName: "", // used in console error messages
-  displayMessage: "",
-};
-
 var monitoredSleepsInProgress = 0;
 
 function doUnmonitoredSleep(ms) {
@@ -74,6 +63,18 @@ async function waitForAnyMonitoredSleepsToComplete() {
   }
 }
 
+var requestsTracker = {
+  requestStates: [],
+  expectedResponseCount: 0,
+  receivedResponseCount: 0,
+  failureCount: 0,
+  callbackFunction: undefined,
+  requestFunction: undefined,
+  requestFunctionName: "", // used in console error messages
+  displayMessage: "",
+  parallelRequestsId: 0, // the ID of this call to doParallelRequests
+};
+
 function findRequestStateForRequest(request) {
   // find linkedRecord for this url
   let matchingRequestState = undefined;
@@ -96,6 +97,18 @@ var queueResponseTracker = {
   abortRequests: false,
   lastFewResponses: [],
 };
+
+function resetQueueResponseTracker() {
+  queueResponseTracker = {
+    totalSuccess: 0,
+    total429: 0,
+    totalOtherError: 0,
+    num429SinceSuccess: 0,
+    waitBetweenRequests: 200,
+    abortRequests: false,
+    lastFewResponses: [],
+  };
+}
 
 const defaultQueueOptions = {
   initialWaitBetweenRequests: 1,
@@ -163,7 +176,7 @@ async function monitorRequestQueue(doRequest, resolve, requestedQueueOptions) {
       let nextRequest = requestQueue.shift();
 
       let matchingRequestState = findRequestStateForRequest(nextRequest);
-      //console.log("matchingRequestState is:");
+      //console.log("monitorRequestQueue: matchingRequestState is:");
       //console.log(matchingRequestState);
 
       // if this request has had several retries already and the latest one was a 429
@@ -270,6 +283,12 @@ async function terminateParallelRequests(resolve) {
   // This removes the status message with the skip button.
   displayBusyMessage("Finished fetch requests", "Processing results");
 
+  // We wait for any timeouts that are outstanding since they can mess things up due
+  // to some weir conflict between timeouts and promises.
+  // We do not currently wait for any fetches that are outstanding. They are handled via the
+  // requestsTracker.parallelRequestsId. It is posible there could be a race condition when a
+  // fetch responded after we call reolve but before control returns to the caller but we haven't
+  // seen that. If it happens we should wait for all outstanding fetches here.
   await waitForAnyMonitoredSleepsToComplete();
 
   resetStaticCounts();
@@ -277,19 +296,27 @@ async function terminateParallelRequests(resolve) {
   //console.log("About to call resolve in terminateParallelRequest, callbackInput is:");
   //console.log(callbackInput);
   resolve(callbackInput);
-  //console.log("resolve has been called in terminateParallelRequests, time is: " + Date.now());
+  //console.log("======================== resolve has been called in terminateParallelRequests, time is: " + Date.now());
 }
 
 function handleRequestResponse(request, response, doRequest, resolve) {
   //console.log("received response in parallel_requests handleRequestResponse:");
   //console.log(response);
   //console.log(request);
+  //console.log("handleRequestResponse, queueResponseTracker is:");
+  //console.log(queueResponseTracker);
 
   if (queueResponseTracker.abortRequests) {
     return;
   }
 
   let matchingRequestState = findRequestStateForRequest(request);
+
+  if (!matchingRequestState || request.requestsTracker != requestsTracker.parallelRequestsId) {
+    // Because of BuildAllCitations, this could be a response from a previous
+    // set of parallel requests that was terminated via a skip or too many errors.
+    return;
+  }
 
   //console.log("in parallel_requests handleRequestResponse, matchingRequestState is:");
   //console.log(matchingRequestState);
@@ -382,11 +409,14 @@ function doRequestsInParallel(
   }
 
   resetStaticCounts();
+  resetQueueResponseTracker();
   requestsTracker.expectedResponseCount = requests.length;
   requestsTracker.displayMessage = displayMessage;
+  requestsTracker.parallelRequestsId++;
 
   requestsTracker.requestStates = [];
   for (let request of requests) {
+    request.requestsTracker = requestsTracker.parallelRequestsId;
     let requestState = {
       request: request,
       status: "queued...",
@@ -395,17 +425,25 @@ function doRequestsInParallel(
     requestsTracker.requestStates.push(requestState);
   }
 
+  //console.log("======================== doRequestsInParallel, creating promise, requestsTracker is:");
+  //console.log(requestsTracker);
+
   return new Promise((resolve, reject) => {
     try {
       async function doRequest(request) {
         try {
+          //console.log("doRequestsInParallel: calling requestFunction. request is:");
+          //console.log(request);
           let response = await requestFunction(request.input, function (status) {
             updateStatusForRequest(request, status, resolve);
           });
+          //console.log("doRequestsInParallel: requestFunction returned. response is:");
+          //console.log(response);
+
           handleRequestResponse(request, response, doRequest, resolve);
         } catch (error) {
-          console.log("doRequestsInParallel: caught error in request. Error is:");
-          console.log(error);
+          //console.log("doRequestsInParallel: caught error in request. Error is:");
+          //console.log(error);
           let response = { success: false, error: error };
           handleRequestResponse(request, response, doRequest, resolve);
         }
