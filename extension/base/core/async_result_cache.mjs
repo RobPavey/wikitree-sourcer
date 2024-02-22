@@ -63,13 +63,13 @@ async function getCache(cacheTag) {
   return cache;
 }
 
-async function setCache(cacheTag, cache) {
+async function setCache(cacheTag, contentsToSave) {
   //console.log("setCache, cache is:");
   //console.log(cache);
 
-  if (cacheTag && cache.contents) {
+  if (cacheTag && contentsToSave) {
     let items = {};
-    items[getLocalStorageKeyForAsyncCache(cacheTag)] = cache.contents;
+    items[getLocalStorageKeyForAsyncCache(cacheTag)] = contentsToSave;
     chrome.storage.local.set(items);
   }
 }
@@ -91,36 +91,58 @@ async function addCachedAsyncResult(cacheTag, key, result) {
   //console.log("addCachedResult, cacheTag = " + cacheTag + ", key = " + key + ", cacheContents is:");
   //console.log(cacheContents);
 
+  let contentsToSave = undefined;
+
   if (cacheContents && Array.isArray(cacheContents)) {
     // remove any items that have the same key
-    let timeNow = Date.now();
-    let prunedCache = [];
+    let newCache = [];
     for (let cacheEntry of cacheContents) {
       if (cacheEntry.key != key) {
-        if (timeNow - cacheEntry.timeStamp < cache.expireTime) {
-          prunedCache.push(cacheEntry);
-        }
+        newCache.push(cacheEntry);
+      }
+    }
+
+    let timeNow = Date.now();
+
+    newCache.push({ key: key, result: result, timeStamp: timeNow });
+
+    cache.contents = newCache;
+
+    // remove any items that have an expired date before saving
+    // NOTE: we do not prune the in-memory cache, just the one we write to local storage.
+    // The in memory one only stays around for the lifetime of the popup.
+    // The advantage of this is that if we were doing an operation that needs 200 fetches
+    // and the cache store 100 we would be missing the first 100 at the start of the repeat operation
+    // and if we set cache.contents to prunedContents here, as we filled in the first 100 the
+    // second 100 would be pruned out of the cache. So we would end up fetching all 200 again.
+
+    let prunedCache = [];
+    for (let cacheEntry of newCache) {
+      if (timeNow - cacheEntry.timeStamp < cache.expireTime) {
+        prunedCache.push(cacheEntry);
       }
     }
 
     //console.log("addCachedResult, cacheTag = " + cacheTag + ", key = " + key + ", prunedCache is:");
     //console.log(prunedCache);
 
-    if (prunedCache.length >= cache.maxLength) {
+    while (prunedCache.length >= cache.maxLength) {
       prunedCache.shift(); // remove the first element
     }
-    prunedCache.push({ key: key, result: result, timeStamp: Date.now() });
-    cache.contents = prunedCache;
+    contentsToSave = prunedCache;
   } else {
     cacheContents = [{ key: key, result: result, timeStamp: Date.now() }];
     cache.contents = cacheContents;
+    contentsToSave = cacheContents;
   }
 
-  setCache(cacheTag, cache);
+  if (contentsToSave) {
+    setCache(cacheTag, contentsToSave);
+  }
 }
 
 async function getCachedAsyncResult(cacheTag, key) {
-  //console.log("getCachedResult, cacheTag = " + cacheTag + ", key = " + key);
+  //console.log("getCachedAsyncResult, cacheTag = " + cacheTag + ", key = " + key);
   if (!cacheTag) {
     return undefined;
   }
@@ -133,25 +155,25 @@ async function getCachedAsyncResult(cacheTag, key) {
 
   let cacheContents = cache.contents;
   if (cacheContents && Array.isArray(cacheContents) && cacheContents.length > 0) {
-    //console.log("getCachedResult, cacheContents.length = " + cacheContents.length);
+    //console.log("getCachedAsyncResult, cacheContents.length = " + cacheContents.length);
 
-    //console.log("getCachedResult, caccacheContentshe is:");
+    //console.log("getCachedAsyncResult, cacheContents is:");
     //console.log(cacheContents);
 
     let timeNow = Date.now();
     for (let index = cacheContents.length - 1; index >= 0; index--) {
       let cacheEntry = cacheContents[index];
-      //console.log("getCachedResult, index = " + index + ", cacheEntry is:");
+      //console.log("getCachedAsyncResult, index = " + index + ", cacheEntry is:");
       //console.log(cacheEntry);
       if (cacheEntry.key == key && timeNow - cacheEntry.timeStamp < cache.expireTime) {
-        //console.log("getCachedResult, key = " + key + ", found in cache, cacheEntry is:");
+        //console.log("getCachedAsyncResult, key = " + key + ", found in cache, cacheEntry is:");
         //console.log(cacheEntry);
         return cacheEntry.result;
       }
     }
   }
 
-  //console.log("getCachedResult, key = " + key + ", not found in cache");
+  //console.log("getCachedAsyncResult, key = " + key + ", not found in cache");
   return undefined;
 }
 

@@ -24,21 +24,11 @@ SOFTWARE.
 
 import { extractRecord } from "../core/ancestry_extract_data.mjs";
 
-import { extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
-import { registerAsyncCacheTag } from "../../../base/core/async_result_cache.mjs";
+import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 import { getCachedAsyncResult } from "../../../base/core/async_result_cache.mjs";
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
-
-const oneHourInMs = 1000 * 60 * 60;
-registerAsyncCacheTag("AncestryFetchHousehold", 30, oneHourInMs);
-registerAsyncCacheTag("AncestryFetchChild", 10, oneHourInMs);
-registerAsyncCacheTag("AncestryFetchFather", 10, oneHourInMs);
-registerAsyncCacheTag("AncestryFetchMother", 10, oneHourInMs);
-registerAsyncCacheTag("AncestryFetchSiblings", 20, oneHourInMs);
-registerAsyncCacheTag("AncestryFetchSpouse", 10, oneHourInMs);
-registerAsyncCacheTag("AncestryFetchFullRecord", 10, oneHourInMs);
 
 function extractDataFromHtml(htmlText, recordUrl) {
   //console.log("extractDataFromHtml, recordUrl is: " + recordUrl);
@@ -74,10 +64,11 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
   let requests = [];
   let cachedResponses = [];
   for (let record of linkedRecords) {
-    let cachedResult = await getCachedAsyncResult(record.cacheTag, record.link);
+    let cachedResult = await getCachedAsyncResult("AncestryFetchRecord", record.link);
 
     if (cachedResult) {
-      let extractedData = extractDataFromHtml(cachedResult.htmlText, record.link);
+      //console.log("getDataForLinkedRecords: cached result found for: " + record.link);
+      let extractedData = cachedResult.extractedData;
       let cachedResponse = {
         name: record.name,
         link: record.link,
@@ -96,16 +87,16 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
   async function requestFunction(input, updateStatusFunction) {
     updateStatusFunction("fetching...");
     let newResponse = { success: false };
-    let response = await extractRecordHtmlFromUrl(input.link, input.cacheTag);
+    let fetchResult = await getExtractedDataFromRecordUrl(input.link);
 
-    if (response.success) {
-      let extractedData = extractDataFromHtml(response.htmlText, response.recordUrl);
-      newResponse.link = response.recordUrl;
+    if (fetchResult.success) {
+      let extractedData = fetchResult.extractedData;
+      newResponse.link = fetchResult.recordUrl;
       newResponse.extractedData = extractedData;
       newResponse.success = true;
     } else {
-      newResponse.allowRetry = response.allowRetry;
-      newResponse.statusCode = response.statusCode;
+      newResponse.allowRetry = fetchResult.allowRetry;
+      newResponse.statusCode = fetchResult.statusCode;
     }
     return newResponse;
   }
@@ -219,7 +210,7 @@ async function getDataForLinkedHouseholdRecords(data, processfunction) {
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.link, name: name, cacheTag: "AncestryFetchHousehold" });
+        linkedRecords.push({ link: member.link, name: name });
       }
     }
   }
@@ -248,7 +239,6 @@ async function processWithFetchedLinkData(data, processFunction) {
         linkedRecords.push({
           link: childLink,
           name: "Child",
-          cacheTag: "AncestryFetchChild",
         });
       }
     } else if (role == "Child") {
@@ -257,7 +247,6 @@ async function processWithFetchedLinkData(data, processFunction) {
         linkedRecords.push({
           link: fatherLink,
           name: "Father",
-          cacheTag: "AncestryFetchFather",
         });
       }
       let motherLink = linkData["Mother"];
@@ -265,7 +254,6 @@ async function processWithFetchedLinkData(data, processFunction) {
         linkedRecords.push({
           link: motherLink,
           name: "Mother",
-          cacheTag: "AncestryFetchMother",
         });
       }
     } else if (role == "Sibling") {
@@ -274,7 +262,6 @@ async function processWithFetchedLinkData(data, processFunction) {
         linkedRecords.push({
           link: childLink,
           name: "Siblings",
-          cacheTag: "AncestryFetchSiblings",
         });
       }
     } else if (role == "Spouse") {
@@ -283,7 +270,6 @@ async function processWithFetchedLinkData(data, processFunction) {
         linkedRecords.push({
           link: childLink,
           name: "Spouse",
-          cacheTag: "AncestryFetchSpouse",
         });
       }
     }
@@ -294,7 +280,6 @@ async function processWithFetchedLinkData(data, processFunction) {
         linkedRecords.push({
           link: primaryMember.link,
           name: "Primary person",
-          cacheTag: "AncestryFetchPrimary",
         });
       }
     }
@@ -332,7 +317,7 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction) {
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.link, name: name, cacheTag: "AncestryFetchHousehold" });
+        linkedRecords.push({ link: member.link, name: name });
       }
     }
   }
@@ -347,7 +332,6 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction) {
         linkedRecords.push({
           link: childLink,
           name: "Child",
-          cacheTag: "AncestryFetchChild",
         });
       }
     } else if (role == "Child") {
@@ -356,7 +340,6 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction) {
         linkedRecords.push({
           link: fatherLink,
           name: "Father",
-          cacheTag: "AncestryFetchFather",
         });
       }
       let motherLink = linkData["Mother"];
@@ -364,7 +347,6 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction) {
         linkedRecords.push({
           link: motherLink,
           name: "Mother",
-          cacheTag: "AncestryFetchMother",
         });
       }
     }

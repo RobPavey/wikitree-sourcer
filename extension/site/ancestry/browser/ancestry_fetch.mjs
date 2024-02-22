@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
 import {
   registerAsyncCacheTag,
   getCachedAsyncResult,
@@ -168,19 +167,14 @@ async function fetchAncestrySharingDataObj(ed) {
   return result;
 }
 
-async function fetchAncestryRecordPage(recordUrl, cacheTag) {
-  let result = { success: false, recordUrl: recordUrl, cacheTag: cacheTag };
+async function fetchAncestryRecordPage(recordUrl) {
+  let result = { success: false, recordUrl: recordUrl };
 
   if (!recordUrl) {
     return result;
   }
 
   try {
-    let cachedResult = await getCachedAsyncResult(cacheTag, recordUrl);
-    if (cachedResult) {
-      return cachedResult;
-    }
-
     let mode = "cors";
 
     let domain = recordUrl.replace(/https?\:\/\/[^\.]+\.([^\/]+)\/.*/, "$1");
@@ -249,8 +243,6 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
 
     //console.log("result is: ");
     //console.log(result);
-
-    addCachedAsyncResult(cacheTag, recordUrl, result);
   } catch (error) {
     console.log("WikiTree Sourcer:: fetchAncestryRecordPage, failed. Error message is: " + error.message);
   }
@@ -258,10 +250,10 @@ async function fetchAncestryRecordPage(recordUrl, cacheTag) {
   return result;
 }
 
-async function extractRecordHtmlFromUrl(recordUrl, cacheTag) {
+async function extractRecordHtmlFromUrl(recordUrl) {
   //console.log("extractRecordFromUrl, recordUrl is: " + recordUrl);
 
-  let result = await fetchAncestryRecordPage(recordUrl, cacheTag);
+  let result = await fetchAncestryRecordPage(recordUrl);
 
   //console.log("extractRecordFromUrl, sending response: ");
   //console.log(result);

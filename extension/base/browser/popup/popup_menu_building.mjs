@@ -1402,15 +1402,8 @@ async function displaySavedPersonData(data, backFunction) {
 }
 
 async function clearCachedFetchData() {
-  clearAsyncResultCache("AncestryFetchHousehold");
-  clearAsyncResultCache("AncestryFetchChild");
-  clearAsyncResultCache("AncestryFetchFather");
-  clearAsyncResultCache("AncestryFetchMother");
-  clearAsyncResultCache("AncestryFetchSiblings");
-  clearAsyncResultCache("AncestryFetchSpouse");
-  clearAsyncResultCache("AncestryFetchFullRecord");
+  clearAsyncResultCache("AncestryFetchRecord");
   clearAsyncResultCache("AncestryFetchSharingObj");
-  clearAsyncResultCache("AncestryFetchPersonSourceRecord");
 }
 
 async function clearLocalStorage() {

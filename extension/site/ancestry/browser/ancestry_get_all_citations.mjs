@@ -27,21 +27,13 @@ import { displayBusyMessage } from "/base/browser/popup/popup_menu_building.mjs"
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
-import { fetchAncestrySharingDataObj, extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
+import { fetchAncestrySharingDataObj } from "./ancestry_fetch.mjs";
+import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
 
 import { buildSourcerCitation, buildSourcerCitations } from "../core/ancestry_build_all_citations.mjs";
 import { generalizeData, regeneralizeDataWithLinkedRecords } from "../core/ancestry_generalize_data.mjs";
 
-import { registerAsyncCacheTag } from "../../../base/core/async_result_cache.mjs";
-
-import {
-  extractDataFromHtml,
-  getDataForLinkedHouseholdRecords,
-  processWithFetchedLinkData,
-  getDataForCitationAndHouseholdRecords,
-} from "./ancestry_popup_linked_records.mjs";
-
-registerAsyncCacheTag("AncestryFetchPersonSourceRecord", 30);
+import { getDataForLinkedHouseholdRecords, processWithFetchedLinkData } from "./ancestry_popup_linked_records.mjs";
 
 async function getSharingDataObj(source) {
   try {
@@ -113,7 +105,7 @@ async function getExtractedAndGeneralizedData(source) {
   let fetchResult = { success: false };
 
   if (uri) {
-    fetchResult = await extractRecordHtmlFromUrl(uri, "AncestryFetchPersonSourceRecord");
+    fetchResult = await getExtractedDataFromRecordUrl(uri);
     if (!fetchResult.success) {
       newResponse.allowRetry = response.allowRetry;
       newResponse.statusCode = response.statusCode;
@@ -126,10 +118,10 @@ async function getExtractedAndGeneralizedData(source) {
   //console.log("getExtractedAndGeneralizedData, fetchResult is:");
   //console.log(fetchResult);
 
-  let htmlText = undefined;
-  htmlText = fetchResult.htmlText;
+  //let htmlText = undefined;
+  //htmlText = fetchResult.htmlText;
 
-  let extractedData = extractDataFromHtml(htmlText, source.recordUrl);
+  let extractedData = fetchResult.extractedData;
   source.extractedData = extractedData;
 
   //console.log("getExtractedAndGeneralizedData: extractedData is:");

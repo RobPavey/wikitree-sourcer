@@ -36,6 +36,7 @@ import {
   displayBusyMessage,
   displayBusyMessageAfterDelay,
   displayMessageWithIcon,
+  displayMessageWithIconThenClosePopup,
   doAsyncActionWithCatch,
   keepPopupOpenForDebug,
   closePopup,
@@ -69,6 +70,8 @@ import {
   getDataForCitationAndHouseholdRecords,
 } from "./ancestry_popup_linked_records.mjs";
 
+import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
+
 import { parallelRequestsDisplayErrorsMessage } from "/base/browser/popup/popup_parallel_requests.mjs";
 
 import { RT } from "../../../base/core/record_type.mjs";
@@ -83,9 +86,7 @@ import {
 import { buildCitation } from "../core/ancestry_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
-import { fetchAncestrySharingDataObj, extractRecordHtmlFromUrl } from "./ancestry_fetch.mjs";
-
-import { registerAsyncCacheTag } from "../../../base/core/async_result_cache.mjs";
+import { fetchAncestrySharingDataObj } from "./ancestry_fetch.mjs";
 
 import { ancestryGetAllCitations } from "./ancestry_get_all_citations.mjs";
 
@@ -496,12 +497,11 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
 
   displayBusyMessageAfterDelay("WikiTree Sourcer fetching full record page ...\n(This might take several seconds)");
 
-  const cacheTag = "AncestryFetchFullRecord";
-  registerAsyncCacheTag(cacheTag);
-  let extractResult = await extractRecordHtmlFromUrl(recordUrl, cacheTag);
+  let extractResult = await getExtractedDataFromRecordUrl(recordUrl);
 
   if (extractResult.success) {
-    let extractedData = extractDataFromHtml(extractResult.htmlText, recordUrl);
+    let extractedData = extractResult.extractedData;
+
     if (originalExtractedData.personExtractedData) {
       extractedData.personExtractedData = originalExtractedData.personExtractedData;
     }
