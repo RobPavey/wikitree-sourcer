@@ -111,6 +111,9 @@ async function fetchAncestrySharingDataObjGivenIds(imageDbId, imageRecordId, rec
 
 async function fetchAncestrySharingDataObj(ed) {
   let result = { success: false, dataObj: undefined };
+  if (!ed) {
+    return result;
+  }
 
   const cacheTag = "AncestryFetchSharingObj";
   registerAsyncCacheTag(cacheTag, 30);

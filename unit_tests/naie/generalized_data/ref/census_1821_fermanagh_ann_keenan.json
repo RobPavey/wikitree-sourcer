@@ -13,7 +13,7 @@
     "forenames": "Ann"
   },
   "ageAtEvent": "92",
-  "relationshipToHead": "mother, widow",
+  "relationshipToHead": "mother",
   "householdArrayFields": [
     "name",
     "age",
@@ -42,7 +42,7 @@
     {
       "name": "Ann Keenan",
       "age": "92",
-      "relationship": "mother, widow",
+      "relationship": "mother",
       "occupation": "",
       "isSelected": true
     },

@@ -71,7 +71,6 @@ async function getExtractedDataFromRecordUrl(recordUrl) {
     let extractedData = extractDataFromHtml(extractResult.htmlText, recordUrl);
     addCachedAsyncResult(cacheTag, recordUrl, extractedData);
 
-    delete extractResult.htmlText;
     extractResult.extractedData = extractedData;
   }
 

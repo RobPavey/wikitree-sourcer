@@ -133,11 +133,18 @@ class TableBuilder {
       return "";
     }
 
+    function cleanColor(colorCode) {
+      if (colorCode) {
+        return colorCode.toUpperCase();
+      }
+      return colorCode;
+    }
+
     let optHeading = this.options.table_table_heading;
     let optSelected = this.options.table_table_selectedPerson;
-    let optHeadingColor = this.options.table_table_headingColor;
-    let optSelectedColor = this.options.table_table_selectedColor;
-    let optClosedColor = this.options.table_table_closedColor;
+    let optHeadingColor = cleanColor(this.options.table_table_headingColor);
+    let optSelectedColor = cleanColor(this.options.table_table_selectedColor);
+    let optClosedColor = cleanColor(this.options.table_table_closedColor);
 
     tableString += `{|`;
     if (this.options.table_table_border) {

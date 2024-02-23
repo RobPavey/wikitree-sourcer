@@ -316,6 +316,30 @@ const GD = {
       return exactValue;
     }
 
+    // From Ancestry (esp 1911 census) there can be values like:
+    //  "Sister In Law (Sister-in-law)"
+    //  "Sister In Law, Visitor (Visitor)"
+    let commaSplit = lc.split(",");
+    if (commaSplit.length > 1) {
+      for (let part of commaSplit) {
+        part = part.trim();
+        exactValue = exactMap[part];
+        if (exactValue) {
+          return exactValue;
+        }
+      }
+    }
+    let parenSplit = lc.split("(");
+    if (parenSplit.length > 1) {
+      for (let part of parenSplit) {
+        part = part.replace(")", "").trim();
+        exactValue = exactMap[part];
+        if (exactValue) {
+          return exactValue;
+        }
+      }
+    }
+
     let match = "";
     for (let fuzzy of fuzzyList) {
       if (fuzzy.starts) {

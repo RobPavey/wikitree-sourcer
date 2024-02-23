@@ -37,14 +37,19 @@ import { getDataForLinkedHouseholdRecords, processWithFetchedLinkData } from "./
 
 async function getSharingDataObj(source) {
   try {
-    let response = await fetchAncestrySharingDataObj(source.extractedData);
+    if (source.extractedData) {
+      let response = await fetchAncestrySharingDataObj(source.extractedData);
 
-    if (response.success) {
-      source.sharingDataObj = response.dataObj;
+      if (response.success) {
+        source.sharingDataObj = response.dataObj;
+      } else {
+        // It can fail even if there is an image URL, for example findagrave images:
+        // https://www.ancestry.com/discoveryui-content/view/2221897:60527
+        // This is not considered an error there just will be no sharing link
+      }
     } else {
-      // It can fail even if there is an image URL, for example findagrave images:
-      // https://www.ancestry.com/discoveryui-content/view/2221897:60527
-      // This is not considered an error there just will be no sharing link
+      console.log("getSharingDataObj, no extractedData. source is:");
+      console.log(source);
     }
   } catch (e) {
     console.log("getAncestrySharingDataObj caught exception on fetchAncestrySharingDataObj:");
@@ -91,6 +96,9 @@ async function updateDataUsingLinkedRecords(data) {
 
   processWithFetchedLinkData(data, updateWithLinkData);
 
+  console.log("updateDataUsingLinkedRecords, data is");
+  console.log(data);
+
   regeneralizeDataWithLinkedRecords(data);
 }
 
@@ -98,7 +106,7 @@ async function getExtractedAndGeneralizedData(source) {
   //console.log("getExtractedAndGeneralizedData, source is:");
   //console.log(source);
 
-  let newResponse = { success: true };
+  let newResponse = { success: false };
 
   let uri = source.recordUrl;
 
@@ -120,6 +128,8 @@ async function getExtractedAndGeneralizedData(source) {
 
   //let htmlText = undefined;
   //htmlText = fetchResult.htmlText;
+
+  source.htmlText = fetchResult.htmlText;
 
   let extractedData = fetchResult.extractedData;
   source.extractedData = extractedData;
@@ -214,15 +224,15 @@ async function getSourcerCitations(runDate, result, type, options) {
   result.failureCount += sharingRequestsResult.failureCount;
 
   // we now have the directly referenced source records extracted and generalized.
-  // For some record we need to get linked records.
+  // For some records we need to get linked records.
   for (let source of result.sources) {
     if (source.extractedData && source.generalizedData) {
       let data = { extractedData: source.extractedData, generalizedData: source.generalizedData };
 
-      //displayBusyMessage("Getting Sharing data");
-      //await getSharingDataObj(source);
       displayBusyMessage("Getting Linked records");
       await updateDataUsingLinkedRecords(data);
+
+      source.linkedRecords = data.linkedRecords; // only for unit test capture
 
       //console.log("getSourcerCitations: after updateDataUsingLinkedRecords, source is:");
       //console.log(source);

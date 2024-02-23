@@ -1684,4 +1684,5 @@ export {
   keepPopupOpenForDebug,
   saveUnitTestData,
   enableSaveUnitTestData,
+  clearCachedFetchData,
 };

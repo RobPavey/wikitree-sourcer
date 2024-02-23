@@ -67,8 +67,9 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     let cachedResult = await getCachedAsyncResult("AncestryFetchRecord", record.link);
 
     if (cachedResult) {
-      //console.log("getDataForLinkedRecords: cached result found for: " + record.link);
-      let extractedData = cachedResult.extractedData;
+      console.log("getDataForLinkedRecords: cached result found for: " + record.link);
+      console.log(cachedResult);
+      let extractedData = cachedResult;
       let cachedResponse = {
         name: record.name,
         link: record.link,
@@ -93,6 +94,7 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
       let extractedData = fetchResult.extractedData;
       newResponse.link = fetchResult.recordUrl;
       newResponse.extractedData = extractedData;
+      newResponse.htmlText = fetchResult.htmlText;
       newResponse.success = true;
     } else {
       newResponse.allowRetry = fetchResult.allowRetry;
@@ -169,6 +171,7 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
         let requestResponse = findRequestResponseByLink(link);
         if (requestResponse) {
           linkedRecord.extractedData = requestResponse.extractedData;
+          linkedRecord.htmlText = requestResponse.htmlText;
         }
       }
 
@@ -176,8 +179,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     }
 
     //keepPopupOpenForDebug();
-    //console.log("processInput is:");
-    //console.log(processInput);
+    console.log("getDataForLinkedRecords: processInput is:");
+    console.log(processInput);
     processFunction(processInput);
   } catch (error) {
     console.log("getDataForLinkedRecords, caught error in doRequestsInParallel, error is:");

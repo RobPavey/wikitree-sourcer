@@ -86,6 +86,14 @@ async function addCachedAsyncResult(cacheTag, key, result) {
     return;
   }
 
+  // This is a bit of a hack but when we save extractedData to the cache the property order
+  // changes. This is only an issue for recordData (households are an array)
+  // So we save the keys as a separate array
+  if (result.recordData) {
+    let keys = Object.keys(result.recordData);
+    result.recordDataKeys = keys;
+  }
+
   let cacheContents = cache.contents;
 
   //console.log("addCachedResult, cacheTag = " + cacheTag + ", key = " + key + ", cacheContents is:");
@@ -168,7 +176,21 @@ async function getCachedAsyncResult(cacheTag, key) {
       if (cacheEntry.key == key && timeNow - cacheEntry.timeStamp < cache.expireTime) {
         //console.log("getCachedAsyncResult, key = " + key + ", found in cache, cacheEntry is:");
         //console.log(cacheEntry);
-        return cacheEntry.result;
+
+        let result = cacheEntry.result;
+
+        // This is a bit of a hack but when we save extractedData to the cache the property order
+        // changes. This is only an issue for recordData (households are an array)
+        // So we save the keys as a separate array
+        if (result.recordData && result.recordDataKeys) {
+          let orderedRecordData = {};
+          for (let key of result.recordDataKeys) {
+            orderedRecordData[key] = result.recordData[key];
+          }
+          result.recordData = orderedRecordData;
+        }
+
+        return result;
       }
     }
   }

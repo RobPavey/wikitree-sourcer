@@ -27,11 +27,13 @@ import { registerTest } from "../test_utils/test_registry.mjs";
 import * as test_content_and_citation from "./ancestry_test_content_and_citation.mjs";
 import * as test_build_household_table from "./ancestry_test_build_household_table.mjs";
 import * as test_build_search_url from "./ancestry_test_build_search_url.mjs";
+import * as test_build_all_citations from "./ancestry_test_build_all_citations.mjs";
 
 async function runTests(testManager) {
   await test_content_and_citation.runTests(testManager);
   await test_build_household_table.runTests(testManager);
   await test_build_search_url.runTests(testManager);
+  await test_build_all_citations.runTests(testManager);
 }
 
 registerTest("ancestry", runTests);
