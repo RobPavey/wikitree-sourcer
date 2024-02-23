@@ -27,6 +27,8 @@ import { displayBusyMessage } from "/base/browser/popup/popup_menu_building.mjs"
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
+import { doesCitationWantHouseholdTable } from "/base/browser/popup/popup_citation.mjs";
+
 import { fetchAncestrySharingDataObj } from "./ancestry_fetch.mjs";
 import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
 
@@ -83,23 +85,23 @@ async function updateWithHouseholdData(data) {
   });
 }
 
-async function updateDataUsingLinkedRecords(data) {
+async function updateDataUsingLinkedRecords(data, citationType) {
   if (!data || !data.extractedData) {
     return;
   }
 
   await updateWithLinkData(data);
 
-  if (data.extractedData.household) {
+  if (doesCitationWantHouseholdTable(citationType, data.generalizedData)) {
     await updateWithHouseholdData(data);
   }
 
-  processWithFetchedLinkData(data, updateWithLinkData);
+  //console.log("updateDataUsingLinkedRecords, data is");
+  //console.log(data);
 
-  console.log("updateDataUsingLinkedRecords, data is");
-  console.log(data);
-
-  regeneralizeDataWithLinkedRecords(data);
+  if (data.linkedRecords) {
+    regeneralizeDataWithLinkedRecords(data);
+  }
 }
 
 async function getExtractedAndGeneralizedData(source) {
@@ -230,7 +232,7 @@ async function getSourcerCitations(runDate, result, type, options) {
       let data = { extractedData: source.extractedData, generalizedData: source.generalizedData };
 
       displayBusyMessage("Getting Linked records");
-      await updateDataUsingLinkedRecords(data);
+      await updateDataUsingLinkedRecords(data, type);
 
       source.linkedRecords = data.linkedRecords; // only for unit test capture
 
@@ -242,8 +244,8 @@ async function getSourcerCitations(runDate, result, type, options) {
     }
   }
 
-  console.log("getSourcerCitations: before buildSourcerCitations, result is:");
-  console.log(result);
+  //console.log("getSourcerCitations: before buildSourcerCitations, result is:");
+  //console.log(result);
 
   buildSourcerCitations(result, type, options);
 }
