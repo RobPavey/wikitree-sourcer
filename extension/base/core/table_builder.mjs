@@ -384,13 +384,11 @@ class TableBuilder {
 
     let lastPunctOpt = this.options.table_sentence_lastItemPunctuation;
 
-    let skipping = false;
+    let skippedSome = false;
     for (let personIndex = 0; personIndex < this.personArray.length; personIndex++) {
       let person = this.personArray[personIndex];
 
       if (person.includeInTable) {
-        skipping = false;
-
         if (person.isClosed) {
           sentenceString += "Closed Record";
         } else {
@@ -420,28 +418,38 @@ class TableBuilder {
             }
           }
         }
-      } else {
-        if (!skipping) {
-          sentenceString += " ...";
-        }
-        skipping = true;
-      }
 
-      if (!skipping) {
         if (personIndex == this.personArray.length - 2) {
-          // this is the punctuation before the final person
-          if (lastPunctOpt == "comma" || lastPunctOpt == "commaAnd") {
+          if (!skippedSome) {
+            // this is the punctuation before the final person
+            if (lastPunctOpt == "comma" || lastPunctOpt == "commaAnd") {
+              sentenceString += `,`;
+            }
+            if (lastPunctOpt == "and" || lastPunctOpt == "commaAnd") {
+              sentenceString += ` and`;
+            }
+          } else {
             sentenceString += `,`;
-          }
-          if (lastPunctOpt == "and" || lastPunctOpt == "commaAnd") {
-            sentenceString += ` and`;
           }
         } else if (personIndex == this.personArray.length - 1) {
           // this is the final person, no punctuation needed
         } else {
           sentenceString += `,`;
         }
+      } else {
+        skippedSome = true;
       }
+    }
+
+    if (skippedSome) {
+      if (sentenceString.endsWith(",")) {
+        sentenceString = sentenceString.substring(0, sentenceString.length - 1);
+      }
+      // add the "and others" part
+      if (lastPunctOpt == "commaAnd") {
+        sentenceString += `,`;
+      }
+      sentenceString += ` and others`;
     }
 
     sentenceString += ".";
