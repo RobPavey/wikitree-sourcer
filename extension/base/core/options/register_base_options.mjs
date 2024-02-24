@@ -881,6 +881,14 @@ const narrativeCensusOptionsGroup = {
   ],
 };
 
+const narrativePassengerListOptionsGroup = {
+  category: "narrative",
+  subcategory: "passengerList",
+  tab: "narrative",
+  subsection: "passengerList",
+  options: [narrativeIncludeAgeOption, narrativeAgeFormatOption],
+};
+
 const narrativeSlaveScheduleOptionsGroup = {
   category: "narrative",
   subcategory: "slaveSchedule",
@@ -940,6 +948,47 @@ const tableGeneralOptionsGroup = {
       type: "checkbox",
       label: "Include race for person if known",
       defaultValue: true,
+    },
+    {
+      optionName: "maxLimit",
+      type: "number",
+      label: "Maximum number of people to include in a table",
+      defaultValue: 20,
+    },
+    {
+      optionName: "limitStyleRelated",
+      type: "select",
+      label: "If the max is exceeded and selected person is related to the head",
+      values: [
+        { value: "related", text: "Include only people related to head (ignoring max limit)" },
+        {
+          value: "relatedPlus",
+          text: "Include only people related to head (ignoring max limit) plus others up to limit",
+        },
+        { value: "relatedCapped", text: "Include only people related to head (up to max limit)" },
+        {
+          value: "relatedPlusCapped",
+          text: "Include only people related to head (up to max limit) plus others up to limit",
+        },
+      ],
+      defaultValue: "relatedPlus",
+    },
+    {
+      optionName: "limitStyleUnrelated",
+      type: "select",
+      label: "If the max is exceeded and selected person is not related to the head",
+      values: [
+        { value: "headSelected", text: "Include the head plus selected person" },
+        {
+          value: "headSelectedPlusTwo",
+          text: "Include the head plus selected person plus the people just before and after selected",
+        },
+        {
+          value: "headSelectedCapped",
+          text: "Include the head plus selected person plus the people before and after up to limit",
+        },
+      ],
+      defaultValue: "headSelectedPlusTwo",
     },
   ],
 };
@@ -1411,6 +1460,7 @@ registerOptionsGroup(narrativeMarriageRegOptionsGroup);
 registerOptionsGroup(narrativeMarriageRegEvtOptionsGroup);
 registerOptionsGroup(narrativeMarriageRegRegOptionsGroup);
 registerOptionsGroup(narrativeObituaryOptionsGroup);
+registerOptionsGroup(narrativePassengerListOptionsGroup);
 registerOptionsGroup(narrativeSlaveScheduleOptionsGroup);
 
 registerOptionsGroup(tableGeneralOptionsGroup);

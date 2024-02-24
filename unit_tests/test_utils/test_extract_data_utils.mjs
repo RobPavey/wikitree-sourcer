@@ -125,11 +125,26 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       }
       const doc = dom.window.document;
 
+      function releaseJsdomMemory() {
+        if (dom.window) {
+          dom.window.close();
+        }
+        // This will only be defined if Node is run with the --expose-gc flag
+        if (global && global.gc) {
+          if (process.memoryUsage().heapUsed > 200000000) {
+            // memory use is above 200MB
+            global.gc();
+          }
+        }
+      }
+
       try {
         result = extractDataFunction(doc, testData.url);
+        releaseJsdomMemory();
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
+        releaseJsdomMemory();
         continue;
       }
     } else if (fetchObjPath) {

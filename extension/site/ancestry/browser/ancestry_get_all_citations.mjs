@@ -71,21 +71,25 @@ async function updateWithLinkData(data) {
   });
 }
 
-async function updateWithHouseholdData(data) {
+async function updateWithHouseholdData(data, options) {
   //console.log("updateWithHouseholdData, data is:");
   //console.log(data);
   return new Promise((resolve, reject) => {
     try {
-      getDataForLinkedHouseholdRecords(data, function (data) {
-        resolve(data);
-      });
+      getDataForLinkedHouseholdRecords(
+        data,
+        function (data) {
+          resolve(data);
+        },
+        options
+      );
     } catch (ex) {
       reject(ex);
     }
   });
 }
 
-async function updateDataUsingLinkedRecords(data, citationType) {
+async function updateDataUsingLinkedRecords(data, citationType, options) {
   if (!data || !data.extractedData) {
     return;
   }
@@ -93,7 +97,7 @@ async function updateDataUsingLinkedRecords(data, citationType) {
   await updateWithLinkData(data);
 
   if (doesCitationWantHouseholdTable(citationType, data.generalizedData)) {
-    await updateWithHouseholdData(data);
+    await updateWithHouseholdData(data, options);
   }
 
   //console.log("updateDataUsingLinkedRecords, data is");
@@ -232,7 +236,7 @@ async function getSourcerCitations(runDate, result, type, options) {
       let data = { extractedData: source.extractedData, generalizedData: source.generalizedData };
 
       displayBusyMessage("Getting Linked records");
-      await updateDataUsingLinkedRecords(data, type);
+      await updateDataUsingLinkedRecords(data, type, options);
 
       source.linkedRecords = data.linkedRecords; // only for unit test capture
 

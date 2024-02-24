@@ -35,6 +35,8 @@ import {
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { reportStringDiff } from "../test_utils/compare_result_utils.mjs";
 
+import { markHouseholdMembersToIncludeInTable } from "../../extension/base/core/table_builder.mjs";
+
 import {
   generalizeData,
   regeneralizeDataWithLinkedRecords,
@@ -46,30 +48,22 @@ import {
   buildSourcerCitations,
 } from "../../extension/site/ancestry/core/ancestry_build_all_citations.mjs";
 
-function testLinkedHouseholdRecords(source, savedData) {
+function testLinkedHouseholdRecords(source, savedData, options) {
+  let gd = source.generalizedData;
+
+  // check which members should be included due to max size
+  markHouseholdMembersToIncludeInTable(gd, options);
+
   let linkedRecords = [];
-  let headings = source.extractedData.household.headings;
-  for (let member of source.extractedData.household.members) {
-    if (member.recordId && member.link && source.extractedData.recordId != member.recordId) {
-      if (!member.isClosed) {
-        // waste of time fetching closed record pages
-        let name = member["Household Members"];
-        if (!name) {
-          name = member["Household Member(s)"];
-        }
-        if (!name) {
-          name = member["Name"];
-        }
-        if (!name && headings.length > 0) {
-          let nameHeading = headings[0];
-          if (nameHeading) {
-            name = member[nameHeading];
-          }
-        }
+  for (let member of gd.householdArray) {
+    if (member.uid && gd.recordId != member.uid) {
+      // waste of time fetching closed record pages
+      if (!member.isClosed && member.includeInTable) {
+        let name = member.name;
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.link, name: name });
+        linkedRecords.push({ link: member.uid, name: name });
       }
     }
   }
@@ -169,14 +163,29 @@ function extractDataFromHtml(htmlText, url) {
   }
   const doc = dom.window.document;
 
+  function releaseJsdomMemory() {
+    if (dom.window) {
+      dom.window.close();
+    }
+    // This will only be defined if Node is run with the --expose-gc flag
+    if (global && global.gc) {
+      if (process.memoryUsage().heapUsed > 200000000) {
+        // memory use is above 200MB
+        global.gc();
+      }
+    }
+  }
+
   let result = undefined;
   try {
     result = extractData(doc, url);
   } catch (e) {
     console.log("Error:", e.stack);
     logger.logError(testData, "Exception occurred");
+    releaseJsdomMemory();
     return undefined;
   }
+  releaseJsdomMemory();
   return result;
 }
 
@@ -193,7 +202,7 @@ async function testGetSourcerCitation(runDate, savedData, source, type, options)
   source.generalizedData = generalizeData({ extractedData: source.extractedData });
 
   if (source.extractedData.household) {
-    testLinkedHouseholdRecords(source, savedData);
+    testLinkedHouseholdRecords(source, savedData, options);
   }
   testFetchedLinkData(source, savedData);
 
@@ -373,17 +382,43 @@ async function runBuildAllCitationsTests(siteName, regressionData, testManager, 
   }
 }
 
+const standardOptions = {
+  citation_ancestry_dataStyle: "string",
+  table_general_autoGenerate: "afterRef",
+  table_table_fullWidth: true,
+};
+
 const regressionData = [
   {
-    // was causing a bug in mergeParents because one set of parents had father and mother and
-    // another had only mother
+    // The 1901 census has a huge number of scholars - and no head
+    caseName: "elizabeth_curl_1884_1956",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262559708914/facts",
+    userOptions: standardOptions,
+    optionVariants: [
+      {
+        variantName: "limitTables",
+        optionOverrides: {
+          table_general_limitStyleUnrelated: "headSelectedCapped",
+        },
+      },
+    ],
+  },
+
+  {
+    // Test case that case otherSourced and webLinks - though we ignore them
     caseName: "william_whiting_1864_1940",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262551329535/facts",
-    userOptions: {
-      citation_ancestry_dataStyle: "string",
-      table_general_autoGenerate: "afterRef",
-      table_table_fullWidth: true,
-    },
+    userOptions: standardOptions,
+    optionVariants: [
+      {
+        variantName: "limitTables",
+        optionOverrides: {
+          table_general_maxLimit: 7,
+          table_general_limitStyleRelated: "relatedPlusCapped",
+          table_general_limitStyleUnrelated: "headSelectedCapped",
+        },
+      },
+    ],
   },
 ];
 

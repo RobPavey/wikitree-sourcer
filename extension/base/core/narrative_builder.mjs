@@ -2260,6 +2260,7 @@ class NarrativeBuilder {
     let arrivalPlace = this.eventGd.arrivalPlace;
     let departureDate = this.eventGd.departureDate;
     let departurePlace = this.eventGd.departurePlace;
+    let ageAtEvent = this.eventGd.ageAtEvent;
 
     let isArrival = false;
     let isDeparture = false;
@@ -2272,7 +2273,9 @@ class NarrativeBuilder {
     }
 
     if (isArrival) {
-      this.narrative = this.getPersonNameOrPronoun() + " arrived";
+      this.narrative = this.getPersonNameOrPronoun();
+      this.addAgeForMainSentence(ageAtEvent);
+      this.narrative += " arrived";
 
       if (this.eventGd.shipName) {
         this.narrative += " on the ship " + this.eventGd.shipName;
@@ -2321,6 +2324,8 @@ class NarrativeBuilder {
         this.narrative += " " + this.getPlaceWithPreposition(eventPlace);
       }
     }
+
+    this.addAgeAsSeparateSentence(ageAtEvent);
   }
 
   buildNewspaperString() {

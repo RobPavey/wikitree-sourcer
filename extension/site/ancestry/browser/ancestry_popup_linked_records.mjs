@@ -30,6 +30,8 @@ import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_request
 import { getCachedAsyncResult } from "../../../base/core/async_result_cache.mjs";
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
+import { markHouseholdMembersToIncludeInTable } from "/base/core/table_builder.mjs";
+
 function extractDataFromHtml(htmlText, recordUrl) {
   //console.log("extractDataFromHtml, recordUrl is: " + recordUrl);
   //console.log("extractDataFromHtml, htmlText is: ");
@@ -179,8 +181,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     }
 
     //keepPopupOpenForDebug();
-    console.log("getDataForLinkedRecords: processInput is:");
-    console.log(processInput);
+    //console.log("getDataForLinkedRecords: processInput is:");
+    //console.log(processInput);
     processFunction(processInput);
   } catch (error) {
     console.log("getDataForLinkedRecords, caught error in doRequestsInParallel, error is:");
@@ -188,32 +190,25 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
   }
 }
 
-async function getDataForLinkedHouseholdRecords(data, processfunction) {
+async function getDataForLinkedHouseholdRecords(data, processfunction, options) {
   //console.log("getDataForLinkedHouseholdRecords. data is : ");
   //console.log(data);
+
+  let gd = data.generalizedData;
+
+  // check which members should be included due to max size
+  markHouseholdMembersToIncludeInTable(gd, options);
+
   let linkedRecords = [];
-  let headings = data.extractedData.household.headings;
-  for (let member of data.extractedData.household.members) {
-    if (member.recordId && member.link && data.extractedData.recordId != member.recordId) {
-      if (!member.isClosed) {
-        // waste of time fetching closed record pages
-        let name = member["Household Members"];
-        if (!name) {
-          name = member["Household Member(s)"];
-        }
-        if (!name) {
-          name = member["Name"];
-        }
-        if (!name && headings.length > 0) {
-          let nameHeading = headings[0];
-          if (nameHeading) {
-            name = member[nameHeading];
-          }
-        }
+  for (let member of gd.householdArray) {
+    if (member.uid && gd.recordId != member.uid) {
+      // waste of time fetching closed record pages
+      if (!member.isClosed && member.includeInTable) {
+        let name = member.name;
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.link, name: name });
+        linkedRecords.push({ link: member.uid, name: name });
       }
     }
   }
@@ -295,32 +290,25 @@ async function processWithFetchedLinkData(data, processFunction) {
   }
 }
 
-async function getDataForCitationAndHouseholdRecords(data, processfunction) {
+async function getDataForCitationAndHouseholdRecords(data, processfunction, options) {
   //console.log("getDataForLinkedHouseholdRecords. data is : ");
   //console.log(data);
+
+  let gd = data.generalizedData;
+
+  // check which members should be included due to max size
+  markHouseholdMembersToIncludeInTable(gd, options);
+
   let linkedRecords = [];
-  let headings = data.extractedData.household.headings;
-  for (let member of data.extractedData.household.members) {
-    if (member.recordId && member.link && data.extractedData.recordId != member.recordId) {
-      if (!member.isClosed) {
-        // waste of time fetching closed record pages
-        let name = member["Household Members"];
-        if (!name) {
-          name = member["Household Member(s)"];
-        }
-        if (!name) {
-          name = member["Name"];
-        }
-        if (!name && headings.length > 0) {
-          let nameHeading = headings[0];
-          if (nameHeading) {
-            name = member[nameHeading];
-          }
-        }
+  for (let member of gd.householdArray) {
+    if (member.uid && gd.recordId != member.uid) {
+      // waste of time fetching closed record pages
+      if (!member.isClosed && member.includeInTable) {
+        let name = member.name;
         if (!name) {
           name = "Unknown name";
         }
-        linkedRecords.push({ link: member.link, name: name });
+        linkedRecords.push({ link: member.uid, name: name });
       }
     }
   }

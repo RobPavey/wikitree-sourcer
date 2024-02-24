@@ -2008,8 +2008,8 @@ function generalizeDataGivenRecordType(ed, result) {
   } else if (result.recordType == RT.PassengerList) {
     let departureDate = getCleanValueForRecordDataList(ed, ["Departure Date", "Departure Year"], "date");
     let arrivalDate = getCleanValueForRecordDataList(ed, ["Arrival Date", "Arrival Year", "Arrival year"], "date");
-    let departurePlace = getCleanValueForRecordDataList(ed, ["Departure Place"]);
-    let arrivalPlace = getCleanValueForRecordDataList(ed, ["Arrival Place", "Arrival Country"]);
+    let departurePlace = getCleanValueForRecordDataList(ed, ["Departure Place", "Departure Port"]);
+    let arrivalPlace = getCleanValueForRecordDataList(ed, ["Arrival Place", "Arrival Port", "Arrival Country"]);
 
     result.setFieldIfValueExists("departureDate", departureDate);
     result.setFieldIfValueExists("departurePlace", departurePlace);
@@ -2030,7 +2030,7 @@ function generalizeDataGivenRecordType(ed, result) {
       result.setEventPlace(departurePlace);
     }
 
-    result.setFieldIfValueExists("shipName", getCleanValueForRecordDataList(ed, ["Ship"]));
+    result.setFieldIfValueExists("shipName", getCleanValueForRecordDataList(ed, ["Ship", "Vessel"]));
 
     result.setFieldIfValueExists(
       "ageAtEvent",

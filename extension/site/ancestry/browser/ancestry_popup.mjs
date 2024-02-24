@@ -264,7 +264,7 @@ async function ancestryBuildCitation(data) {
 
   // poss household
   if (doesCitationWantHouseholdTable(data.type, data.generalizedData)) {
-    getDataForCitationAndHouseholdRecords(data, ancestryBuildCitationWithLinkData);
+    getDataForCitationAndHouseholdRecords(data, ancestryBuildCitationWithLinkData, options);
   } else {
     processWithFetchedLinkData(data, ancestryBuildCitationWithLinkData);
   }
@@ -416,7 +416,7 @@ async function ancestryBuildHouseholdTable(data) {
   }
 
   // for Ancestry it is necessary to get extra info from linked records
-  getDataForLinkedHouseholdRecords(data, ancestryBuildHouseholdTableWithLinkedRecords);
+  getDataForLinkedHouseholdRecords(data, ancestryBuildHouseholdTableWithLinkedRecords, options);
 }
 
 async function ancestryBuildTreeTemplate(data) {
@@ -586,6 +586,8 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
       // if saving unit test data we don't want to exclude any sources
       let testOptions = getDefaultOptions();
       testOptions.buildAll_ancestry_excludeOtherRoleSources = false;
+      // also don't want to limit size of household tables as unit test options may set diff limits
+      testOptions.table_general_maxLimit = 1000;
       input.options = testOptions;
       clearCachedFetchData();
     }
