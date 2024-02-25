@@ -921,7 +921,7 @@ async function setupAncestryPopupMenu(extractedData) {
 
   if (!extractedData || !extractedData.pageType || extractedData.pageType == "unknown") {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
-    message += "\n\nIt looks like an Ancestry page but not a record, image or person page.";
+    message += "\n\nIt looks like an Ancestry page but not a record, image or person (facts) page.";
     let data = { extractedData: extractedData };
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;
