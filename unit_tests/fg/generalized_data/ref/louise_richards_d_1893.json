@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "22 May 1893"
+  },
+  "eventPlace": {
+    "placeString": "Bala Cynwyd, Montgomery County, Pennsylvania, USA",
+    "streetAddress": "West Laurel Hill Cemetery"
+  },
+  "name": {
+    "name": "Louise R Richards"
+  },
+  "lastNameAtDeath": "Richards",
+  "deathDate": {
+    "dateString": "22 May 1893"
+  },
+  "ageAtDeath": "50",
+  "birthDate": {
+    "dateString": "31 Jul 1842"
+  },
+  "hasValidData": true
+}
