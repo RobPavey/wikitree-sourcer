@@ -32,7 +32,12 @@ import { doesCitationWantHouseholdTable } from "/base/browser/popup/popup_citati
 import { fetchAncestrySharingDataObj } from "./ancestry_fetch.mjs";
 import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
 
-import { buildSourcerCitation, buildSourcerCitations } from "../core/ancestry_build_all_citations.mjs";
+import {
+  buildSourcerCitation,
+  buildSourcerCitations,
+  filterSourceIdsToSources,
+  setUrlStart,
+} from "../core/ancestry_build_all_citations.mjs";
 import { generalizeData, regeneralizeDataWithLinkedRecords } from "../core/ancestry_generalize_data.mjs";
 
 import { getDataForLinkedHouseholdRecords, processWithFetchedLinkData } from "./ancestry_popup_linked_records.mjs";
@@ -167,6 +172,7 @@ async function getSourcerCitations(runDate, result, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
+    result.errorMessage = "No sources for person";
     return;
   }
 
@@ -254,28 +260,10 @@ async function getSourcerCitations(runDate, result, type, options) {
   buildSourcerCitations(result, type, options);
 }
 
-function filterSourceIdsToSources(result, sourceIds, options) {
-  //console.log("filterSourceIdsToSources, result is:");
-  //console.log(result);
-  //console.log("filterSourceIdsToSources, sourceIds is:");
-  //console.log(sourceIds);
-
-  result.sources = [];
-
-  for (let sourceId of sourceIds) {
-    let recordUrl = result.urlStart + "/discoveryui-content/view/" + sourceId.recordId + ":" + sourceId.dbId;
-    let source = {
-      recordUrl: recordUrl,
-      title: sourceId.title,
-    };
-    result.sources.push(source);
-  }
-
-  //console.log("filterSourceIdsToSources end, result is:");
-  //console.log(result);
-}
-
 async function ancestryGetAllCitations(input) {
+  //console.log("ancestryGetAllCitations, input is:");
+  //console.log(input);
+
   let ed = input.extractedData;
   let options = input.options;
   let runDate = input.runDate;
@@ -288,20 +276,14 @@ async function ancestryGetAllCitations(input) {
     return result;
   }
 
-  // request permission if needed
-  // personUrl will be something like:
-  // https://www.ancestry.com/family-tree/person/tree/86808578/person/260180350040/facts
-  let personUrl = ed.url;
-  // we want a record URL like this:
-  // https://www.ancestry.com/discoveryui-content/view/7080503:8978
-  let urlStart = personUrl.replace(/^(https?\:\/\/[^\.\.]+\.ancestry\.[^\/]+)\/.*$/, "$1");
-  if (!urlStart || urlStart == personUrl) {
-    result.errorMessage = "Could not parse url: " + personUrl;
+  setUrlStart(ed, result);
+  if (result.errorMessage) {
     return result;
   }
+
   let firstSource = sourceIds[0];
-  let firstSourceRecordUrl = urlStart + "/discoveryui-content/view/" + firstSource.recordId + ":" + firstSource.dbId;
-  result.urlStart = urlStart;
+  let firstSourceRecordUrl =
+    result.urlStart + "/discoveryui-content/view/" + firstSource.recordId + ":" + firstSource.dbId;
   const checkPermissionsOptions = {
     reason: "In order to get all the source records the extension must request the data from the server.",
     needsPopupDisplayed: true,

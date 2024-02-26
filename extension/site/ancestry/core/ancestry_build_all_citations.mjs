@@ -390,6 +390,56 @@ function doesCitationWantHouseholdTable(citationType, generalizedData, options) 
 
   return false;
 }
+function setUrlStart(extractedData, result) {
+  // request permission if needed
+  // personUrl will be something like:
+  // https://www.ancestry.com/family-tree/person/tree/86808578/person/260180350040/facts
+  let personUrl = extractedData.url;
+  // we want a record URL like this:
+  // https://www.ancestry.com/discoveryui-content/view/7080503:8978
+  let urlStart = personUrl.replace(/^(https?\:\/\/[^\.\.]+\.ancestry\.[^\/]+)\/.*$/, "$1");
+  if (!urlStart || urlStart == personUrl) {
+    result.errorMessage = "Could not parse url: " + personUrl;
+    return result;
+  }
+  result.urlStart = urlStart;
+}
+
+function filterSourceIdsToSources(result, sourceIds, options) {
+  //console.log("filterSourceIdsToSources, result is:");
+  //console.log(result);
+  //console.log("filterSourceIdsToSources, sourceIds is:");
+  //console.log(sourceIds);
+
+  let uniqueSourceIds = [];
+  for (let sourceId of sourceIds) {
+    // check if this is already in uniqueSourceIds
+    let foundMatch = false;
+    for (let uniqueSourceId of uniqueSourceIds) {
+      if (sourceId.recordId == uniqueSourceId.recordId && sourceId.dbId == uniqueSourceId.dbId) {
+        foundMatch = true;
+        break;
+      }
+    }
+    if (!foundMatch) {
+      uniqueSourceIds.push(sourceId);
+    }
+  }
+
+  result.sources = [];
+
+  for (let sourceId of uniqueSourceIds) {
+    let recordUrl = result.urlStart + "/discoveryui-content/view/" + sourceId.recordId + ":" + sourceId.dbId;
+    let source = {
+      recordUrl: recordUrl,
+      title: sourceId.title,
+    };
+    result.sources.push(source);
+  }
+
+  //console.log("filterSourceIdsToSources end, result is:");
+  //console.log(result);
+}
 
 function buildSourcerCitation(runDate, source, type, options) {
   //console.log("buildSourcerCitation: source is:");
@@ -483,4 +533,4 @@ async function buildSourcerCitations(result, type, options) {
   }
 }
 
-export { buildSourcerCitation, buildSourcerCitations };
+export { buildSourcerCitation, buildSourcerCitations, filterSourceIdsToSources, setUrlStart };

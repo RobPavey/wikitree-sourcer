@@ -1484,6 +1484,11 @@ function handlePersonFacts(document, result) {
             let dbId = dbIdInput.value;
             let recordId = recordIdInput.value;
             if (dbId && recordId) {
+              // exclude "Ancestry Family Trees" sources
+              if (dbId == "1030") {
+                continue;
+              }
+
               let source = { dbId: dbId, recordId: recordId };
 
               if (titleInput) {

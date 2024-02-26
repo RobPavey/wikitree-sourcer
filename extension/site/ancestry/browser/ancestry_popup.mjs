@@ -622,6 +622,9 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
       // It can fail even if there is an image URL, for example findagrave images:
       // https://www.ancestry.com/discoveryui-content/view/2221897:60527
       // This is not considered an error there just will be no sharing link
+      console.log("ancestryBuildAllCitationsAction, failed response is");
+      console.log(response);
+
       const message = "An error occurred getting sources.";
       displayMessageWithIcon("warning", message, response.errorMessage);
     }

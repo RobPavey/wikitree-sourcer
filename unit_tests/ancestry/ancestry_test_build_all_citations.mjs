@@ -46,6 +46,8 @@ import { extractData } from "../../extension/site/ancestry/core/ancestry_extract
 import {
   buildSourcerCitation,
   buildSourcerCitations,
+  filterSourceIdsToSources,
+  setUrlStart,
 } from "../../extension/site/ancestry/core/ancestry_build_all_citations.mjs";
 
 function testLinkedHouseholdRecords(source, savedData, options) {
@@ -243,22 +245,12 @@ async function ancestryTestGetAllCitations(input) {
       return result;
     }
 
-    let urlStart = url.replace(/^(https?\:\/\/[^\.\.]+\.ancestry\.[^\/]+)\/.*$/, "$1");
-    if (!urlStart || urlStart == url) {
-      result.errorMessage = "Could not parse url: " + personUrl;
+    setUrlStart(savedData.extractedData, result);
+    if (result.errorMessage) {
       return result;
     }
 
-    result.sources = [];
-
-    for (let sourceId of sourceIds) {
-      let recordUrl = urlStart + "/discoveryui-content/view/" + sourceId.recordId + ":" + sourceId.dbId;
-      let source = {
-        recordUrl: recordUrl,
-        title: sourceId.title,
-      };
-      result.sources.push(source);
-    }
+    filterSourceIdsToSources(result, sourceIds, options);
 
     let citationType = options.buildAll_ancestry_citationType;
 
