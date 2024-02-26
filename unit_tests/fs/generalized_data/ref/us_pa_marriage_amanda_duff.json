@@ -1,0 +1,42 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Amanda J Duff",
+    "lastName": "Duff",
+    "forenames": "Amanda J"
+  },
+  "birthDate": {
+    "dateString": "15 August 1847",
+    "yearString": "1847"
+  },
+  "eventDate": {
+    "dateString": "02 Apr",
+    "yearString": "1889"
+  },
+  "eventPlace": {
+    "placeString": "Allegheny City, Pittsburgh, Allegheny, Pennsylvania, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "William James",
+        "lastName": "James",
+        "forenames": "William"
+      },
+      "marriageDate": {
+        "dateString": "02 Apr"
+      },
+      "marriagePlace": {
+        "placeString": "Allegheny City, Pittsburgh, Allegheny, Pennsylvania, United States"
+      }
+    }
+  ],
+  "marriageDate": "02 Apr",
+  "collectionData": {
+    "id": "1589502"
+  },
+  "hasValidData": true
+}

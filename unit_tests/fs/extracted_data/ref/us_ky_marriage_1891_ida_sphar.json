@@ -1,0 +1,43 @@
+{
+  "recordData": {
+    "Name": "Ida M Sphar",
+    "Birth Date": "1870",
+    "Age": "21",
+    "Marriage Date": "5 Jun 1891",
+    "Marriage Place": "Campbell, Kentucky, United States",
+    "Vis Status": "VISIBLE",
+    "System Of Record": "SLS"
+  },
+  "eventPlaceOriginal": "Campbell, Kentucky, United States",
+  "eventPlaceL2": "Campbell",
+  "fullName": "Ida M Sphar",
+  "surname": "Sphar",
+  "givenName": "Ida M",
+  "gender": "female",
+  "birthDateOriginal": "1870",
+  "age": "21",
+  "eventDateOriginal": "5 Jun 1891",
+  "eventDate": "5 Jun 1891",
+  "eventYear": "1891",
+  "eventPlace": "Campbell, Kentucky, United States",
+  "eventPlaceL1": "United States",
+  "factType": "Marriage",
+  "spouseFullName": "Oliver O Howard",
+  "spouseSurname": "Howard",
+  "spouseGivenName": "Oliver O",
+  "spouseAge": "21",
+  "extData": "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C9BX-SDLL\",\"FS_COLLECTION_ID\":\"1804888\",\"FS_FOLDER\":\"007719410\",\"EVENT_TYPE_ORIG\":\"Marriage\"}",
+  "referenceData": {
+    "filmNumber": "000459915",
+    "digitalFilmNumber": "007719410",
+    "imageNumber": "341"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QLW9-K1Z2",
+  "collectionTitle": "Kentucky, County Marriages, 1797-1954",
+  "fsCollectionId": "1804888",
+  "citation": "\"Kentucky, County Marriages, 1797-1954\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28C-26M3 : Sat Feb 24 01:53:28 UTC 2024), Entry for Oliver O Howard and Ida M Sphar, 5 Jun 1891.",
+  "sourceTitleForPerson": "Ida M Sphar, \"Kentucky, County Marriages, 1797-1954\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:Q28C-26MQ",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9BX-SDLL",
+  "pageType": "record"
+}

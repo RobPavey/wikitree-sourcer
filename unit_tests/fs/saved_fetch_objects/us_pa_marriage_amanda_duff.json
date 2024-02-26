@@ -1,0 +1,1633 @@
+{
+  "id" : "r_21973972589",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1696616649799,
+    "created" : 1696616649799
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MQH-ZRS1?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MQH-ZRS1?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MQH-ZRS1"
+    }
+  },
+  "description" : "#sd_p_13487729181",
+  "persons" : [ {
+    "id" : "p_13487729180",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "4ef69e7f-d966-4c0b-9971-44b3f35aebc0",
+        "attribution" : {
+          "modified" : 1696616649799,
+          "created" : 1696616649799
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "e6d63c4d-57f6-4fb9-babd-afaf84f668fc",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1697355812728,
+            "created" : 1697355812728
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VF9F-FG2?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MQH-ZRS1?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VF9F-FG2" ]
+    },
+    "names" : [ {
+      "id" : "72537811-d462-471a-b1f0-bd05e96bfc94",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1696616649799,
+        "created" : 1696616649799
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "William James",
+        "parts" : [ {
+          "id" : "593f1d8d-0586-4e26-9704-2141174c5b55",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William",
+          "fields" : [ {
+            "id" : "1259400f-62b2-4a2f-adac-915c5483fefd",
+            "attribution" : {
+              "modified" : 1696616649799,
+              "created" : 1696616649799
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "ada83990-20ae-4f7d-961d-33d392800b5d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "William"
+            }, {
+              "id" : "ada83990-20ae-4f7d-961d-33d392800b5d",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "William",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "1a5b12a6-1259-4b93-9d36-cd784a3a6007",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "James",
+          "fields" : [ {
+            "id" : "91aff478-462a-4fb3-8a93-9eb5e1ef1cf5",
+            "attribution" : {
+              "modified" : 1696616649799,
+              "created" : 1696616649799
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "c85f40dd-452d-42ec-bf75-c9254e9dd47b",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "James"
+            }, {
+              "id" : "c85f40dd-452d-42ec-bf75-c9254e9dd47b",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "James",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "ea0fa0f1-bfd1-4b8b-a58c-2e1035ddc876",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "af4976b0-96a0-40fd-8284-54cb07011ef7",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "William James"
+          }, {
+            "id" : "af4976b0-96a0-40fd-8284-54cb07011ef7",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "William James",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Widowed",
+      "fields" : [ {
+        "id" : "540141d3-92c5-4b9e-9458-5191f5d16f74",
+        "attribution" : {
+          "modified" : 1696616649799,
+          "created" : 1696616649799
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "edd45d9a-e673-46bf-8159-7d8cceef9827",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "W"
+        }, {
+          "id" : "edd45d9a-e673-46bf-8159-7d8cceef9827",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Widowed"
+        } ]
+      } ]
+    }, {
+      "id" : "028a9fec-a3b9-4bf4-bea8-230da521e4c1",
+      "attribution" : {
+        "modified" : 1696616649799,
+        "created" : 1696616649799
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "a43b229d-dfce-49e2-af08-451117f607c2",
+        "original" : "29 November 1848",
+        "formal" : "+1848-11-29",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "fields" : [ {
+          "id" : "84859135-3b09-4830-b59e-a1bfbaf3c64b",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "20b7e81d-3fb3-46dd-8748-16b9e18bc966",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1578417406757,
+              "created" : 1578417406757
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "29"
+          } ]
+        }, {
+          "id" : "3c9ada9d-83ef-44f2-ad19-c54dcc1f9205",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "ade5348e-1593-4472-9f5a-c877d09cb45c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1578417406757,
+              "created" : 1578417406757
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1848"
+          } ]
+        }, {
+          "id" : "2450d243-c6f2-4fae-b1ef-36b6d95d581f",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "5476d89b-7684-4c0a-9229-7a4da477587e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1578417406757,
+              "created" : 1578417406757
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "11"
+          } ]
+        }, {
+          "id" : "bc8194cc-4fc9-491c-a9ef-645ac0a32d82",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1578417406757,
+            "created" : 1578417406757
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "32928710-9962-4261-8d1b-2608bf9c52ea",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "29 11 1848"
+          }, {
+            "id" : "32928710-9962-4261-8d1b-2608bf9c52ea",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              },
+              "modified" : 1578417406757,
+              "created" : 1578417406757
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "29 November 1848",
+            "resource" : "+1848-11-29",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "ae9e2738-8249-4dd7-afe7-711f76ea70e7",
+        "original" : "Armstrong Co., Pa.",
+        "fields" : [ {
+          "id" : "a0ee5b87-b238-427f-9836-c5dc2a16692e",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "545192cf-1fe0-48b8-b4d8-7a4d0aab40d9",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "Armstrong Co., Pa."
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "59acb0e1-44ba-4273-8b74-e0338edce3cf",
+      "attribution" : {
+        "modified" : 1696616649799,
+        "created" : 1696616649799
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "fd1d0940-80f9-4b13-b527-91c055930626",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000004266929_00529_01018_0000021973972589_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "William James",
+      "gender" : "Male",
+      "birthDate" : "29 November 1848",
+      "birthPlace" : "Armstrong Co., Pa."
+    }
+  }, {
+    "id" : "p_13487729181",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "ba7f71dc-6e81-48d1-83d7-2daf93d5a486",
+        "attribution" : {
+          "modified" : 1696616649799,
+          "created" : 1696616649799
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "aa4089f6-fa03-408c-b582-5f42785e9a58",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1697355812728,
+            "created" : 1697355812728
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VF9F-FGL?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MQH-ZRS1?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGL" ]
+    },
+    "names" : [ {
+      "id" : "434accb7-5727-4683-8911-5d2d986e171f",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1696616649799,
+        "created" : 1696616649799
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Amanda J. Duff",
+        "parts" : [ {
+          "id" : "a6a61e27-3636-4bc1-805c-d5e0dc776839",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Amanda J.",
+          "fields" : [ {
+            "id" : "790dc94c-bece-4f28-a4e7-34700c3bdc20",
+            "attribution" : {
+              "modified" : 1696616649799,
+              "created" : 1696616649799
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "533668bd-d911-4e3d-8c35-572b7a655161",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Amanda J."
+            }, {
+              "id" : "533668bd-d911-4e3d-8c35-572b7a655161",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Amanda J.",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "86b64f44-dbd6-4fe6-b206-656cf3ee2fb4",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Duff",
+          "fields" : [ {
+            "id" : "161feaad-f6c4-42ef-9948-eeee837326a1",
+            "attribution" : {
+              "modified" : 1696616649799,
+              "created" : 1696616649799
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "3a4761c4-3ee2-4edf-9213-95bd98e1521e",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Duff"
+            }, {
+              "id" : "3a4761c4-3ee2-4edf-9213-95bd98e1521e",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Duff",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "60f07310-905a-4ebf-8fa3-37188ffa2e45",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "aeb6b7a1-37ce-4337-8e26-ee4f62b5f896",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Amanda J. Duff"
+          }, {
+            "id" : "aeb6b7a1-37ce-4337-8e26-ee4f62b5f896",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Amanda J. Duff",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Divorced",
+      "fields" : [ {
+        "id" : "d760f048-d8db-4622-9545-13970ac0d92c",
+        "attribution" : {
+          "modified" : 1696616649799,
+          "created" : 1696616649799
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "09865152-9088-4f29-adee-b5c20303eb21",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "SP_MARITAL_STATUS_ORIG",
+          "text" : "D"
+        }, {
+          "id" : "09865152-9088-4f29-adee-b5c20303eb21",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_MARITAL_STATUS",
+          "text" : "Divorced"
+        } ]
+      } ]
+    }, {
+      "id" : "553f9dda-6500-4c5d-ac27-1f6260356086",
+      "attribution" : {
+        "modified" : 1696616649799,
+        "created" : 1696616649799
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "6f941f6c-e4cd-463b-af44-0eb6d9126dd8",
+        "original" : "15 August 1847",
+        "formal" : "+1847-08-15",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "fields" : [ {
+          "id" : "ce5ae356-f4c7-4995-b63f-ac4f60d3c05f",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "69ace9a5-46a7-4443-8e32-5c40d7f11a10",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1578417406760,
+              "created" : 1578417406760
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_BIR_MONTH_ORIG",
+            "text" : "8"
+          } ]
+        }, {
+          "id" : "001754d3-ab65-403c-b374-0fdcaffdd5eb",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "e7c7007e-d9c9-4335-b362-4290e9a9d01a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1578417406760,
+              "created" : 1578417406760
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_BIR_DAY_ORIG",
+            "text" : "15"
+          } ]
+        }, {
+          "id" : "61fad6b4-63bb-44af-9415-44fecdf945c8",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1578417406760,
+            "created" : 1578417406760
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "32bec799-50b1-4e79-b0ff-c10df9039b78",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_BIR_DATE_ORIG",
+            "text" : "15 8 1847"
+          }, {
+            "id" : "32bec799-50b1-4e79-b0ff-c10df9039b78",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              },
+              "modified" : 1578417406760,
+              "created" : 1578417406760
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_BIR_DATE",
+            "text" : "15 August 1847",
+            "resource" : "+1847-08-15",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "5f6493d1-e2c2-4ff7-9afe-552808b3cb59",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "d8145682-428b-4e44-a17a-d2dcb42e482e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1578417406760,
+              "created" : 1578417406760
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_BIR_YEAR_ORIG",
+            "text" : "1847"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "ce8f5d9e-3865-4405-980e-ddb49a7941f8",
+        "original" : "Ohio",
+        "fields" : [ {
+          "id" : "937b1c3e-83bf-4069-aea9-38991587a733",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "b00eece6-a009-4ed2-91d5-862304a56c4a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_BIR_PLACE_ORIG",
+            "text" : "Ohio"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "59ad3252-215e-4e6b-9c42-7ebee46d1fcb",
+      "attribution" : {
+        "modified" : 1696616649799,
+        "created" : 1696616649799
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "daa34d97-810a-4360-98e0-bfcbeeb73036",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000004266929_00529_01018_0000021973972589_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Amanda J. Duff",
+      "gender" : "Female",
+      "birthDate" : "15 August 1847",
+      "birthPlace" : "Ohio"
+    }
+  }, {
+    "id" : "p_13487729182",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "b0ed02b4-5893-4bd2-b58a-ae63e9955c36",
+        "attribution" : {
+          "modified" : 1696616649799,
+          "created" : 1696616649799
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "9a1a16e0-9471-48a7-9716-9190d6126bcf",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1596550749162,
+            "created" : 1596550749162
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_PREV_HS_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VF9F-FGG?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MQH-ZRS1?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGG" ]
+    },
+    "names" : [ {
+      "id" : "21289a82-e1ca-40a6-bf65-ff69901fefc3",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1696616649799,
+        "created" : 1696616649799
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Robt. H. Scott",
+        "parts" : [ {
+          "id" : "e93176ca-e114-42b9-b358-d2b1e32a3331",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Robt. H.",
+          "fields" : [ {
+            "id" : "89f4cfd2-1cdc-4030-a14e-8ec084b73200",
+            "attribution" : {
+              "modified" : 1696616649799,
+              "created" : 1696616649799
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "0d7af8b8-966a-45ab-b7f7-a42d3c3627e2",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_PREV_HS_NAME_GN_ORIG",
+              "text" : "Robt. H."
+            }, {
+              "id" : "0d7af8b8-966a-45ab-b7f7-a42d3c3627e2",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_PREV_HS_NAME_GN",
+              "text" : "Robt. H.",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "c8929d87-fc88-4fc6-b75c-6d0248b374f9",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Scott",
+          "fields" : [ {
+            "id" : "b8ad765f-8736-40aa-982e-07b06f8a29f9",
+            "attribution" : {
+              "modified" : 1696616649799,
+              "created" : 1696616649799
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "89e2ec71-7242-4224-9cdb-eaf6c3860085",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_PREV_HS_NAME_SURN_ORIG",
+              "text" : "Scott"
+            }, {
+              "id" : "89e2ec71-7242-4224-9cdb-eaf6c3860085",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_PREV_HS_NAME_SURN",
+              "text" : "Scott",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "789edd7b-633e-4521-8701-a286dbcb90c7",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "6a64a8d6-ca7a-4a9d-af98-bb6a641806c2",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_PREV_HS_NAME_ORIG",
+            "text" : "Robt. H. Scott"
+          }, {
+            "id" : "6a64a8d6-ca7a-4a9d-af98-bb6a641806c2",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_PREV_HS_NAME",
+            "text" : "Robt. H. Scott",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "79cd7faf-fe54-475b-8564-a8fb6aa2a9a9",
+      "attribution" : {
+        "modified" : 1696616649799,
+        "created" : 1696616649799
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "01f7e9b0-2343-498d-8ed6-852c58352e1d",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000004266929_00529_01018_0000021973972589_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Robt. H. Scott",
+      "gender" : "Male"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "4d8d73dd-5593-4782-a1e7-ac08a66951fb",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_13487729180",
+      "resourceId" : "p_13487729180"
+    },
+    "person2" : {
+      "resource" : "#p_13487729181",
+      "resourceId" : "p_13487729181"
+    },
+    "facts" : [ {
+      "id" : "31fb41b0-8786-4e4f-95b3-24cb39428482",
+      "attribution" : {
+        "modified" : 1696616649799,
+        "created" : 1696616649799
+      },
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "id" : "0ac8913e-a8e4-4246-8aec-49be7afc9171",
+        "original" : "02 Apr",
+        "fields" : [ {
+          "id" : "39d0b5eb-4d96-4d69-ba3c-849486963f21",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "c01a0945-d41f-4b8d-996a-d23a4a7eda71",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "02"
+          } ]
+        }, {
+          "id" : "5f186063-ed45-4fa3-b9fe-1aaf79a6447d",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "ed98e9c5-ae96-49af-8854-a7692d7a007a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1578417406763,
+              "created" : 1578417406763
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1889"
+          } ]
+        }, {
+          "id" : "af5a5195-81a6-4e2e-8bc2-a79d332c9f27",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1578417406763,
+            "created" : 1578417406763
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "97723584-913b-4b95-a770-de11ac34cc75",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "02 Apr"
+          } ]
+        }, {
+          "id" : "f465a91c-09ba-4a4e-b9ad-faf62820e065",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "3f826e55-a14b-4a80-8feb-a7c0a32732cb",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Apr"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "723d1c4a-4a41-4cfa-b146-e216c14ee4c0",
+        "original" : "Allegheny, Pennsylvania, United States",
+        "description" : "#place_8531488",
+        "fields" : [ {
+          "id" : "f1dc0607-c239-4a09-a413-87cffc534128",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "5b2ae294-590f-470d-af98-7b4101ccfc6b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Pennsylvania"
+          }, {
+            "id" : "5b2ae294-590f-470d-af98-7b4101ccfc6b",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_STATE",
+            "text" : "Pennsylvania"
+          } ]
+        }, {
+          "id" : "92e8ee17-deb8-47b1-b6a6-1eadfd956541",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "59996375-4b94-41a7-a422-f5382c075879",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1708724513378,
+              "created" : 1708724513378
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Allegheny, Pennsylvania, United States",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "59996375-4b94-41a7-a422-f5382c075879",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1708724513378,
+              "created" : 1708724513378
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Allegheny City, Pittsburgh, Allegheny, Pennsylvania, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/8531488",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=DC&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "d095a25b-0562-449f-b593-c754948e76ee",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "f610f674-2860-4203-aa2a-2e8f781931c1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "1082b8b6-7497-43c4-93b6-195190e2a954",
+          "attribution" : {
+            "modified" : 1696616649799,
+            "created" : 1696616649799
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "bcc32138-82a3-46c8-9404-9cc45c4e316b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Allegheny"
+          }, {
+            "id" : "bcc32138-82a3-46c8-9404-9cc45c4e316b",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_COUNTY",
+            "text" : "Allegheny"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "93430f32-92a3-4178-a27b-14b75dc8f38c",
+        "attribution" : {
+          "modified" : 1696616649799,
+          "created" : 1696616649799
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "d8fbe8aa-50de-4773-8d17-9fe74e18dacc",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Marriage",
+          "resource" : "http://gedcomx.org/Marriage"
+        }, {
+          "id" : "d8fbe8aa-50de-4773-8d17-9fe74e18dacc",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Marriage",
+          "resource" : "http://gedcomx.org/Marriage"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "1c0c4dd0-cc43-4913-8e0e-ad3a8563c812",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_13487729182",
+      "resourceId" : "p_13487729182"
+    },
+    "person2" : {
+      "resource" : "#p_13487729181",
+      "resourceId" : "p_13487729181"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_21973972589",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MQH-ZRS1",
+    "componentOf" : {
+      "description" : "#sd_c_1589502",
+      "descriptionId" : "sd_c_1589502"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1696616649799,
+    "modified" : 1708728156682,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Allegheny, Pennsylvania, United States"
+      },
+      "temporal" : {
+        "original" : "2 Apr 1889"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "citations" : [ {
+      "value" : "\"Pennsylvania, County Marriages, 1885-1950\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VF9F-FG2 : Fri Feb 23 22:42:36 UTC 2024), Entry for William James and Amanda J. Duff, 02 Apr."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for William James and Amanda J. Duff, \"Pennsylvania, County Marriages, 1885-1950\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/118926939" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MQH-ZRS1" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1589502?arkName=1:2:9MQH-ZRS1"
+    }
+  }, {
+    "id" : "sd_c_1589502",
+    "about" : "https://www.familysearch.org/platform/records/collections/1589502",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223515624,
+    "modified" : 1696616649799,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Pennsylvania, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/10703580"
+      },
+      "temporal" : {
+        "original" : "1885/1950",
+        "formal" : "+1885/+1950"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Pennsylvania, County Marriages, 1885-1950"
+    }, {
+      "lang" : "zh",
+      "value" : "賓夕法尼亞州，郡級婚姻紀錄，1885 年 - 1950 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Pennsylvanie, mariages dans le comté, 1885-1950"
+    }, {
+      "lang" : "ru",
+      "value" : "Пенсильвания, записи о браках по округам, 1885-1950 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Pennsylvania, fylke Ekteskap, 1885-1950"
+    }, {
+      "lang" : "es",
+      "value" : "Pensilvania, Matrimonios del condado, 1885-1950"
+    }, {
+      "lang" : "mn",
+      "value" : "Пенсильвани муж улс, Тойргийн гэрлэлт, 1885-1950 он"
+    }, {
+      "lang" : "ko",
+      "value" : "펜실베이니아, 카운티 혼인, 1885-1950"
+    }, {
+      "lang" : "ja",
+      "value" : "ペンシルベニア州、郡での結婚、1885年-1950年"
+    }, {
+      "lang" : "it",
+      "value" : "Pennsylvania, Matrimoni nella contea, 1885-1950"
+    }, {
+      "lang" : "id",
+      "value" : "Pennsylvania, Pernikahan Wilayah, 1885-1950"
+    }, {
+      "lang" : "hu",
+      "value" : "Pennsylvania, Megyei házasságkötések, 1885-1950"
+    }, {
+      "lang" : "sk",
+      "value" : "Pensylvánia, krajské manželstvá, 1885 – 1950"
+    }, {
+      "lang" : "th",
+      "value" : "เพนซิลเวเนีย, การแต่งงานในเทศมณฑล, ปี 1885-1950"
+    }, {
+      "lang" : "to",
+      "value" : "Pennsylvania, Ngaahi Mali Fakavahefonua, 1885-1950"
+    }, {
+      "lang" : "bg",
+      "value" : "Пенсилвания, Бракове в окръга, 1885-1950"
+    }, {
+      "lang" : "km",
+      "value" : "ផេនស៊ីលវ៉ានី, អាពាហ៍ពិពាហ៍នៅខោនធី, ឆ្នាំ 1885-1950"
+    }, {
+      "lang" : "pl",
+      "value" : "Pensylwania, Śluby w hrabstwie, 1885–1950"
+    }, {
+      "lang" : "ro",
+      "value" : "Pennsylvania, Căsătorii din ținut, 1885-1950"
+    }, {
+      "lang" : "sv",
+      "value" : "Pennsylvania, vigslar efter län, 1885-1950"
+    }, {
+      "lang" : "sm",
+      "value" : "Pennsylvania, Kết Hôn Cấp Hạt, 1885-1950"
+    }, {
+      "lang" : "vi",
+      "value" : "Pennsylvania, Kết Hôn Cấp Hạt, 1885-1950"
+    }, {
+      "lang" : "sq",
+      "value" : "Pensilvani, Martesat e Qarqeve, 1885-1950"
+    }, {
+      "lang" : "pt",
+      "value" : "Pensilvânia, casamentos da comarca, 1885-1950"
+    }, {
+      "lang" : "de",
+      "value" : "Pennsylvania, County Marriages, 1885-1950"
+    }, {
+      "lang" : "uk",
+      "value" : "Пенсильванія, шлюби в округах, 1885–1950 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Pennsylvanija, okružni brakovi, 1885.-1950."
+    }, {
+      "lang" : "cs",
+      "value" : "Pensylvánie, krajské sňatky, 1885-1950"
+    }, {
+      "lang" : "nl",
+      "value" : "Pennsylvania, County Huwelijken, 1885-1950"
+    }, {
+      "lang" : "et",
+      "value" : "Pennsylvania, Maakonna Abielud, 1885–1950"
+    }, {
+      "lang" : "fj",
+      "value" : "Pennsylvania, Vakamau, 1885-1950"
+    }, {
+      "lang" : "fi",
+      "value" : "Pennsylvania, piirikunnan avioliitot, 1885-1950"
+    }, {
+      "lang" : "tl",
+      "value" : "Pennsylvania, Mga Kasal sa County, 1885-1950"
+    }, {
+      "lang" : "mg",
+      "value" : "Fanambadiana tany amin'ny Fivondronana, Pennsylvanie, 1885-1950"
+    }, {
+      "lang" : "ceb",
+      "value" : "Pennsylvania, Mga Kasal sa County, 1885-1950"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1589502" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:33SQ-GPXZ-9GJH",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:33SQ-GPXZ-9GJH" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1589502?arkName=3:1:33SQ-GPXZ-9GJH"
+    }
+  }, {
+    "id" : "sd_p_13487729180",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VF9F-FG2",
+    "componentOf" : {
+      "description" : "#src_r_21973972589",
+      "descriptionId" : "src_r_21973972589"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Pennsylvania, County Marriages, 1885-1950\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VF9F-FG2 : Fri Feb 23 22:42:36 UTC 2024), Entry for William James and Amanda J. Duff, 02 Apr."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "William James, \"Pennsylvania, County Marriages, 1885-1950\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "William James, \"Pennsylvania, County Marriages, 1885-1950\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VF9F-FG2" ]
+    }
+  }, {
+    "id" : "sd_p_13487729181",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGL",
+    "componentOf" : {
+      "description" : "#src_r_21973972589",
+      "descriptionId" : "src_r_21973972589"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Pennsylvania, County Marriages, 1885-1950\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VF9F-FG2 : Fri Feb 23 22:42:36 UTC 2024), Entry for William James and Amanda J. Duff, 02 Apr."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Amanda J. Duff, \"Pennsylvania, County Marriages, 1885-1950\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Amanda J. Duff, \"Pennsylvania, County Marriages, 1885-1950\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGL" ]
+    }
+  }, {
+    "id" : "sd_p_13487729182",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGG",
+    "componentOf" : {
+      "description" : "#src_r_21973972589",
+      "descriptionId" : "src_r_21973972589"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Pennsylvania, County Marriages, 1885-1950\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VF9F-FG2 : Fri Feb 23 22:42:36 UTC 2024), Entry for William James and Amanda J. Duff, 02 Apr."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Robt. H. Scott, \"Pennsylvania, County Marriages, 1885-1950\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Robt. H. Scott, \"Pennsylvania, County Marriages, 1885-1950\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGG" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_8531488",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/8531488" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "cdab2279-21c2-4ee4-a357-55d9104d7739",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "16ff0ee5-bee4-402e-93a0-f4b63be80e9e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "11"
+    } ]
+  }, {
+    "id" : "b7a4d193-509e-4edb-8c0d-b00c8c3c09f8",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "a11c2016-67e6-43e7-9758-91f3902f4aa7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "1bb86f04-7b6e-4113-8dce-1a7d62370ca9",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/PacketLtr",
+    "values" : [ {
+      "id" : "1c64b2c2-aa7b-4f1b-bf10-754a2cadcbcc",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PACKET_LTR",
+      "text" : "R"
+    } ]
+  }, {
+    "id" : "127ed82e-e6ec-4205-a641-034896dc8bd9",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "f7a45fef-b624-4479-8901-2f977d9c9c71",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-1942-21130-47318-41\",\"FS_DAS_VERIFY\":\"2015-11-30 00:00:00\",\"FS_IMAGE_ID\":\"/004266929/004266929_00529.jpg\",\"FS_IMAGE_NBR\":\"00529\",\"FS_UNIQUE_ID\":\"118926939\",\"FS_FOLDER_IMAGE_SEQ\":\"529\"}"
+    } ]
+  }, {
+    "id" : "c48a8424-5891-41fe-a69e-3dec907ee455",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "66333505-91ff-4df4-a903-1396d44ac178",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "cffa7b84-9952-4e32-ad41-b93abd559a1c",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/SourceComposite",
+    "values" : [ {
+      "id" : "6747a9ad-7fac-4742-8764-b039f1ba5651",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_COMPOSITE_ORIG",
+      "text" : "it2, 15226"
+    } ]
+  }, {
+    "id" : "d5102cfa-cbe8-49ba-b8b2-eaaacd32104d",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "ce11ef20-b5d7-4be3-b644-ea76c81769ae",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "289847"
+    } ]
+  }, {
+    "id" : "68cea68a-457e-41f5-bbd0-e22da0c6c6c3",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "646a31eb-420e-430d-87a2-28e1e4ae7557",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "No Traveler; 2020-01-06T09:30:58-0700; gilberts; 5744; TB; work.sg_1589502_dio864_b36492_202001031810; No Traveler"
+    } ]
+  }, {
+    "id" : "6fe0170f-4ef9-4804-b33f-80d53bb6c131",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "930b846d-b28c-42ca-abc1-ce25e517f325",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Pennsylvania County Marriages, 1885 - 1950 - Part One - UDE"
+    } ]
+  }, {
+    "id" : "fde0b653-f0f5-4327-99c4-b1d20c2ec77d",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "99665ae6-7aa6-4825-9b2b-6c0ab443745e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "329555bc-d552-4b33-82b0-4442a6a178ba",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/FilmNbr",
+    "values" : [ {
+      "id" : "7bf41ebc-96f2-45a0-9016-7de8f1579a36",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "000878581"
+    } ]
+  }, {
+    "id" : "aef695fd-25a9-4a1a-b56c-42ca8ec8956c",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/UdeBatchNbr",
+    "values" : [ {
+      "id" : "c7ae148a-6d26-4aa7-8dd9-953859ad158b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "M01417-0"
+    } ]
+  }, {
+    "id" : "2af35dc8-d12f-4bc0-99ae-21054ff82cf2",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/VisStatus",
+    "values" : [ {
+      "id" : "90db96dd-69cb-4e30-9fa2-4a7aed119902",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "id" : "35f50cc7-ba14-45c1-824a-95996a7687a1",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "c09b0810-f97c-4cb4-a985-6e7f87641f5c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "58194"
+    } ]
+  }, {
+    "id" : "d29bd6b8-4df8-4f97-b7e5-1d40766dd16c",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "decf4d0f-cb95-4cf5-8bc6-5215bcec12b0",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "09-0015"
+    } ]
+  }, {
+    "id" : "2ab4b36a-f223-40a8-8289-302dad313a32",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "7f796e37-8032-4225-8eba-dfdaa986cfe3",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1578417406816,
+        "created" : 1578417406816
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000004266929_00529_01018_0000021973972589"
+    } ]
+  }, {
+    "id" : "4c369be8-9d8a-46d9-bd44-307febad22ae",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "8da7dead-db4a-40d9-bd95-b6f075a96007",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "004266929_00529"
+    } ]
+  }, {
+    "id" : "33e2eb78-5271-40d6-936b-18c980fdf7a2",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "4157f30e-b510-4b2c-b5b1-05543d9e2516",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Allegheny, Pennsylvania, United States"
+    } ]
+  }, {
+    "id" : "9dec0663-99d1-4e9b-94f7-ae1c28cee6b4",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/RecordNbr",
+    "values" : [ {
+      "id" : "ab2311a1-b385-4f20-9577-c09b0d58b264",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "1018"
+    } ]
+  }, {
+    "id" : "d9a88423-c64d-48e0-ad64-888447c62234",
+    "attribution" : {
+      "modified" : 1696616649799,
+      "created" : 1696616649799
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "84dbe9f7-276b-4d65-bc27-606ef94b5aa0",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"FS_COLLECTION_ID\":\"1589502\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:33SQ-GPXZ-9GJH\",\"FS_FOLDER\":\"004266929\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "004266929"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "529"
+    } ]
+  } ],
+  "qualifiers" : [ {
+    "value" : "true",
+    "name" : "TreatmentWarnings"
+  } ]
+}

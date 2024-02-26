@@ -337,6 +337,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:27K9-9K9",
   },
   {
+    caseName: "us_ky_marriage_1891_ida_sphar",
+    url: "https://www.familysearch.org/ark:/61903/1:1:Q28C-26MQ",
+  },
+  {
     caseName: "us_ma_birth_1773_james_curtis",
     url: "https://www.familysearch.org/ark:/61903/1:1:F46D-1HS",
   },
@@ -405,6 +409,10 @@ const regressionData = [
   {
     caseName: "us_oh_death_1948_jacob_swartz",
     url: "https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B",
+  },
+  {
+    caseName: "us_pa_marriage_amanda_duff",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGL",
   },
   {
     caseName: "us_passport_1914_edward_baltzell",

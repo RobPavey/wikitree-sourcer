@@ -1,0 +1,1044 @@
+{
+  "id" : "r_102936149420",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1708676719522,
+    "created" : 1708676719522
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLW9-K1Z2?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLW9-K1Z2?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QLW9-K1Z2"
+    }
+  },
+  "description" : "#sd_p_102335141704",
+  "persons" : [ {
+    "id" : "p_102335141703",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "4c146cf3-3577-4d4a-bdcf-c604e7132380",
+        "attribution" : {
+          "modified" : 1708676719522,
+          "created" : 1708676719522
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "c839b1c5-fa51-4061-a921-2c2984580a70",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1708728973824,
+            "created" : 1708728973824
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/Q28C-26M3?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QLW9-K1Z2?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28C-26M3" ]
+    },
+    "names" : [ {
+      "id" : "2bbe75ee-968e-4e1c-88a1-79a42c208071",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Oliver O Howard",
+        "parts" : [ {
+          "id" : "1c9d084a-7d7d-41df-9c74-c729ab6d491f",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Howard",
+          "fields" : [ {
+            "id" : "b27b4b70-4c78-491c-b66e-1ce0d42aa44c",
+            "attribution" : {
+              "modified" : 1708676719522,
+              "created" : 1708676719522
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "72aa1f37-10f6-42e4-be4e-a5701077688c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Howard"
+            }, {
+              "id" : "72aa1f37-10f6-42e4-be4e-a5701077688c",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Howard"
+            } ]
+          } ]
+        }, {
+          "id" : "6a329465-a2c2-4795-bad0-107ad5425b60",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Oliver O",
+          "fields" : [ {
+            "id" : "8219cf83-c78c-4e0c-9adf-67cd1f9803db",
+            "attribution" : {
+              "modified" : 1708676719522,
+              "created" : 1708676719522
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "0bdbf869-fc34-4efc-be18-8fce729ae8c6",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Oliver O"
+            }, {
+              "id" : "0bdbf869-fc34-4efc-be18-8fce729ae8c6",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Oliver O"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "8fbf17d0-197d-46d4-b562-6a2302759842",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "6c83029d-f9c1-4a44-8de3-b1ca8aea4b96",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Oliver O Howard"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "5de3d7fa-f392-4eb5-8480-53bde1a78fb5",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "9404d64b-0d1b-444c-88d0-2f0c00b4fa9d",
+        "original" : "1870",
+        "fields" : [ {
+          "id" : "48e6f931-849a-46df-bf75-2becdaaba3eb",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://familysearch.org/types/fields/YearEst",
+          "values" : [ {
+            "id" : "1e0b4277-5c71-43f8-8507-30da917dc925",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1870"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "75413df4-868e-4af8-86a4-8479c9f50796",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://familysearch.org/types/facts/Unknown",
+      "place" : {
+        "id" : "b2792cfa-1114-4ef4-abbe-7ec21ff80f5e",
+        "original" : "Campbell",
+        "fields" : [ {
+          "id" : "50b2b59b-0a78-4811-96c3-3183aa9de37a",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "e08af6ad-9336-4a57-81ad-6a112d754f36",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Campbell"
+          } ]
+        }, {
+          "id" : "9f122ed6-6cd9-4eba-b3e7-ede26a26e1c5",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "322c3a0a-87d5-4cc0-b3d3-35b7807381d6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Kentucky"
+          } ]
+        } ]
+      },
+      "primary" : true
+    } ],
+    "fields" : [ {
+      "id" : "67bb4f76-de74-4d6d-a064-771b48bdce4c",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "3135f9a1-3b30-4cb6-8200-b2b1b4dc5e0c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "21"
+      }, {
+        "id" : "3135f9a1-3b30-4cb6-8200-b2b1b4dc5e0c",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "21"
+      } ],
+      "qualifiers" : [ {
+        "value" : "c1b8b9fa-2d3c-4468-9ac2-ca6274695c03",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "1f0c0d0e-e367-443b-bc8d-118bcf0a63a0",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "511740b2-2322-4f8e-b99f-014172722bfd",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000007719410_00341_00000_0000102936149420_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Oliver O Howard",
+      "gender" : "Male",
+      "birthDate" : "1870"
+    }
+  }, {
+    "id" : "p_102335141704",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "84cb166a-7028-408d-b8cd-ed3549c75d80",
+        "attribution" : {
+          "modified" : 1708676719522,
+          "created" : 1708676719522
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "e4a10286-9f85-45e8-97fc-ff1255326deb",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1708728973825,
+            "created" : 1708728973825
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/Q28C-26MQ?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QLW9-K1Z2?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28C-26MQ" ]
+    },
+    "names" : [ {
+      "id" : "8eb804f4-67ae-4cf5-81fa-9a343db71c9d",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Ida M Sphar",
+        "parts" : [ {
+          "id" : "c6c1491b-b53b-4b25-8431-9efa264a1e91",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Sphar",
+          "fields" : [ {
+            "id" : "7ac057b6-5549-437a-9d6f-197ffe09e215",
+            "attribution" : {
+              "modified" : 1708676719522,
+              "created" : 1708676719522
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "749c2472-63e3-46cf-8168-cbf98f1d0b0e",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Sphar"
+            }, {
+              "id" : "749c2472-63e3-46cf-8168-cbf98f1d0b0e",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Sphar"
+            } ]
+          } ]
+        }, {
+          "id" : "84e1c55f-33ae-48b1-a2a9-84596ec3c0d5",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Ida M",
+          "fields" : [ {
+            "id" : "2cadb9bd-c9a1-4134-8a29-a9223d6e1865",
+            "attribution" : {
+              "modified" : 1708676719522,
+              "created" : 1708676719522
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "2d35cd23-3061-4100-94c9-45e8732375ae",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Ida M"
+            }, {
+              "id" : "2d35cd23-3061-4100-94c9-45e8732375ae",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Ida M"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "a8241e04-9934-4f97-8928-775da9b850ad",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "db1f555c-fddd-4e59-9a31-fc7191a6f76a",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Ida M Sphar"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "07d5af92-49e0-4569-ac42-4e5143d89bd7",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "28f05dfc-4971-4784-bde2-e643346859af",
+        "original" : "1870",
+        "fields" : [ {
+          "id" : "ecfb61b6-def5-4c7b-8162-c4df4258d500",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://familysearch.org/types/fields/YearEst",
+          "values" : [ {
+            "id" : "f029e70e-bd09-42d1-9825-1d97654bdc99",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_BIR_YEAR_EST",
+            "text" : "1870"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "260e1ada-967d-4081-8b43-b4508fb41a9b",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "b5a8897b-71e1-4bfb-b2d7-0fc8fbda4d78",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SP_AGE_ORIG",
+        "text" : "21"
+      }, {
+        "id" : "b5a8897b-71e1-4bfb-b2d7-0fc8fbda4d78",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "SP_AGE",
+        "text" : "21"
+      } ],
+      "qualifiers" : [ {
+        "value" : "02c76b3d-6e06-4668-bd3d-4779a89cd9b1",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "6608d304-8515-4962-abb6-8ca74565e22c",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "598d4de5-bd43-4ed6-86d7-9ab23af33ae6",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000007719410_00341_00000_0000102936149420_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Ida M Sphar",
+      "gender" : "Female",
+      "birthDate" : "1870"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "b3d07ccc-dcb5-4914-abc3-44d141c3bf73",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_102335141703",
+      "resourceId" : "p_102335141703"
+    },
+    "person2" : {
+      "resource" : "#p_102335141704",
+      "resourceId" : "p_102335141704"
+    },
+    "facts" : [ {
+      "id" : "25f815d3-5eb9-4094-b68b-8d8ad61d2e5a",
+      "attribution" : {
+        "modified" : 1708676719522,
+        "created" : 1708676719522
+      },
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "id" : "ff4c2cdf-a4aa-4c85-9785-e66254ffa0b9",
+        "original" : "5 Jun 1891",
+        "formal" : "+1891-06-05",
+        "fields" : [ {
+          "id" : "aaaf95fe-1c43-476c-a0d7-5ed9c0fa8e36",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "b7716c45-5a19-424f-9c67-dd8b8fbf57e6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Jun"
+          } ]
+        }, {
+          "id" : "456192f2-efed-4b00-b243-44db42b3617c",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "dcbac3ac-f314-43f8-8285-6a8ce59e3c6d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "5 Jun 1891"
+          }, {
+            "id" : "dcbac3ac-f314-43f8-8285-6a8ce59e3c6d",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/1"
+              },
+              "modified" : 1526482039841,
+              "created" : 1526482039841
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "5 Jun 1891",
+            "resource" : "+1891-06-05",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "b597acf5-a12d-4ad5-bd66-578b94913309",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "3d34aea5-4f2b-424a-9103-64baac83895f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "5"
+          } ]
+        }, {
+          "id" : "a764dbbb-d8f9-43af-9413-6fbab080c168",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "8083f07f-8cd4-494d-be30-ed75e399b4e8",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1891"
+          }, {
+            "id" : "8083f07f-8cd4-494d-be30-ed75e399b4e8",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1891"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "3b16b2c3-513e-4c10-82f0-682f89d66a56",
+        "original" : "Campbell, Kentucky, United States",
+        "confidence" : "http://confidence/98",
+        "description" : "#place_394121",
+        "fields" : [ {
+          "id" : "4e2aba45-b476-440f-8a70-ad7c9e6d408f",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "519e0a66-6359-4e20-ad9e-9d0ec3831306",
+            "confidence" : "http://confidence/98",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Campbell, Kentucky, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/394121",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            }, {
+              "value" : "1011",
+              "name" : "StdQualifier"
+            }, {
+              "value" : "Campbell, Kentucky, United States",
+              "name" : "Context"
+            } ]
+          } ]
+        }, {
+          "id" : "d562e331-f56e-4aee-bd05-1e3172777f50",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "35660b4f-3753-41d6-919c-7745e03013cb",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "a62016d1-e0ca-4f2f-afba-1c7c1099cd99",
+          "attribution" : {
+            "modified" : 1708676719522,
+            "created" : 1708676719522
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "fd052a8f-e5a0-4c54-a55d-c7a02e0156ea",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Kentucky"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "8f57b720-82e0-4ada-ba21-1bc919f1c444",
+        "attribution" : {
+          "modified" : 1708676719522,
+          "created" : 1708676719522
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "68deb1f3-17b2-45b0-9581-9612e108102c",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Marriage",
+          "resource" : "http://gedcomx.org/Marriage"
+        } ]
+      } ]
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_102936149420",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:QLW9-K1Z2",
+    "componentOf" : {
+      "description" : "#sd_c_1804888",
+      "descriptionId" : "sd_c_1804888"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1708676719522,
+    "modified" : 1708739608844,
+    "coverage" : [ {
+      "spatial" : {
+        "id" : "b2792cfa-1114-4ef4-abbe-7ec21ff80f5e",
+        "original" : "Campbell"
+      },
+      "temporal" : {
+        "original" : "5 Jun 1891",
+        "formal" : "+1891-06-05"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "citations" : [ {
+      "value" : "\"Kentucky, County Marriages, 1797-1954\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28C-26M3 : Sat Feb 24 01:53:28 UTC 2024), Entry for Oliver O Howard and Ida M Sphar, 5 Jun 1891."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Oliver O Howard and Ida M Sphar, \"Kentucky, County Marriages, 1797-1954\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/13727363205" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QLW9-K1Z2" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1804888?arkName=1:2:QLW9-K1Z2"
+    }
+  }, {
+    "id" : "sd_c_1804888",
+    "about" : "https://www.familysearch.org/platform/records/collections/1804888",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223373027,
+    "modified" : 1708850311256,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Kentucky, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/354"
+      },
+      "temporal" : {
+        "original" : "1797/1954",
+        "formal" : "+1797/+1954"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Kentucky, County Marriages, 1797-1954"
+    }, {
+      "lang" : "zh",
+      "value" : "肯塔基州，郡結婚紀錄，1797 年 - 1954 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Kentucky, mariages par comté, 1797-1954"
+    }, {
+      "lang" : "ru",
+      "value" : "Кентукки, браки по округам, 1797-1954 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Kentucky, Vielser i fylket, 1797-1954"
+    }, {
+      "lang" : "es",
+      "value" : "Kentucky, Matrimonios del condado, 1797-1954"
+    }, {
+      "lang" : "mn",
+      "value" : "Кентаки муж улс, Тойрог дахь гэрлэлт, 1797-1954 он"
+    }, {
+      "lang" : "ko",
+      "value" : "켄터키, 카운티 혼인, 1797-1954"
+    }, {
+      "lang" : "it",
+      "value" : "Kentucky, Matrimoni, 1797-1954"
+    }, {
+      "lang" : "id",
+      "value" : "Kentucky, Pernikahan Wilayah, 1797-1954"
+    }, {
+      "lang" : "hu",
+      "value" : "Kentucky, egyei házasságok, 1797–1954"
+    }, {
+      "lang" : "sk",
+      "value" : "Kentucky, manželstvá v okrese, 1797 – 1954"
+    }, {
+      "lang" : "th",
+      "value" : "เคนทักกี, การแต่งงานในเทศมณฑล, ปี 1797-1954"
+    }, {
+      "lang" : "to",
+      "value" : "Kentucky, Ngaahi Mali 'i he Vahefonua, 1797-1954"
+    }, {
+      "lang" : "bg",
+      "value" : "Кентъки, Бракове в щата, 1797-1954"
+    }, {
+      "lang" : "km",
+      "value" : "ខាន់តាក់គី, អាពាហ៍ពិពាហ៍នៅខោនធី, ឆ្នាំ 1797-1954"
+    }, {
+      "lang" : "pl",
+      "value" : "Kentucky, Małżeństwa w hrabstwach, 1797-1954"
+    }, {
+      "lang" : "ro",
+      "value" : "Kentucky, căsătorii în ținut, 1797-1954"
+    }, {
+      "lang" : "sv",
+      "value" : "Kentucky, Länsvigslar, 1797-1954"
+    }, {
+      "lang" : "sm",
+      "value" : "Kentucky, Kết Hôn Trong Hạt, 1797-1954"
+    }, {
+      "lang" : "vi",
+      "value" : "Kentucky, Kết Hôn Trong Hạt, 1797-1954"
+    }, {
+      "lang" : "sq",
+      "value" : "Kentucky, Martesat e qarkut, 1797-1954"
+    }, {
+      "lang" : "pt",
+      "value" : "Kentucky, Casamentos do Condado, 1797-1954"
+    }, {
+      "lang" : "de",
+      "value" : "Kentucky, County Eheschließungen, 1797-1954"
+    }, {
+      "lang" : "uk",
+      "value" : "Кентуккі, шлюби в округах, 1797–1954 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Kentucky, okružni brakovi, 1797.-1954."
+    }, {
+      "lang" : "cs",
+      "value" : "Kentucky, Církevní sňatky, 1797-1954"
+    }, {
+      "lang" : "da",
+      "value" : "Kentucky, County Marriages, 1797-1954"
+    }, {
+      "lang" : "nl",
+      "value" : "Kentucky, county huwelijken, 1797-1954"
+    }, {
+      "lang" : "fj",
+      "value" : "Vakawati ena Yasayasa, Kentucky 1797-1954"
+    }, {
+      "lang" : "fi",
+      "value" : "Kentucky, kunnan avioliitot, 1797-1954"
+    }, {
+      "lang" : "tl",
+      "value" : "Kentucky, Mga Pagkakasal sa County, 1797-1954"
+    }, {
+      "lang" : "mg",
+      "value" : "Fanambadiana tao amin' ny faritra Kentucky, 1797-1954"
+    }, {
+      "lang" : "ceb",
+      "value" : "Kentucky, Mga kasal sa Lalawigan, 1797-1954"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1804888" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9BX-SDLL",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C9BX-SDLL" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1804888?arkName=3:1:3Q9M-C9BX-SDLL"
+    }
+  }, {
+    "id" : "sd_p_102335141703",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q28C-26M3",
+    "componentOf" : {
+      "description" : "#src_r_102936149420",
+      "descriptionId" : "src_r_102936149420"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Kentucky, County Marriages, 1797-1954\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28C-26M3 : Sat Feb 24 01:53:28 UTC 2024), Entry for Oliver O Howard and Ida M Sphar, 5 Jun 1891."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Oliver O Howard, \"Kentucky, County Marriages, 1797-1954\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Oliver O Howard, \"Kentucky, County Marriages, 1797-1954\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28C-26M3" ]
+    }
+  }, {
+    "id" : "sd_p_102335141704",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:Q28C-26MQ",
+    "componentOf" : {
+      "description" : "#src_r_102936149420",
+      "descriptionId" : "src_r_102936149420"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Kentucky, County Marriages, 1797-1954\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q28C-26M3 : Sat Feb 24 01:53:28 UTC 2024), Entry for Oliver O Howard and Ida M Sphar, 5 Jun 1891."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Ida M Sphar, \"Kentucky, County Marriages, 1797-1954\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Ida M Sphar, \"Kentucky, County Marriages, 1797-1954\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:Q28C-26MQ" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_394121",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/394121" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "cf57108e-71b7-4a66-bb11-394683424d50",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "cd222ee1-d238-4d5d-9ec3-3b271089583d",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C9BX-SDLL\",\"FS_COLLECTION_ID\":\"1804888\",\"FS_FOLDER\":\"007719410\",\"EVENT_TYPE_ORIG\":\"Marriage\"}"
+    } ]
+  }, {
+    "id" : "a463b353-5468-4e4d-b911-2c8b46544d7c",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "ec461e1d-a798-40b6-bc70-35dde347961a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Kentucky, United States"
+    } ]
+  }, {
+    "id" : "f737e2d5-f672-4e8d-991b-eb3716d1f39a",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "552524fd-7b2f-4330-8916-4fc443540f30",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "15-1474"
+    } ]
+  }, {
+    "id" : "734be067-f30c-415a-add5-725d2a415bb1",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "936af437-8668-44a4-a61c-5b917da4d5a3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-909-52622-11451-71\",\"FS_DAS_VERIFY\":\"2016-11-18 00:00:00\",\"EVENT_PLACE_PARENT_JUR\":\"354/1\",\"FS_IMAGE_ID\":\"007719410_00341\",\"FS_IMAGE_NBR\":\"00341\",\"FS_UNIQUE_ID\":\"13727363205\",\"FS_FOLDER_IMAGE_SEQ\":\"341\"}"
+    } ]
+  }, {
+    "id" : "fe92ad5d-ee90-448d-99c5-0147feb07652",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "25757115-0e88-4b1c-a59a-b9430c139e49",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "1fffde72-f6f3-4e0a-8afc-951f98b10426",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "8b2e121f-1c8b-4e66-82cd-ebfb137fab0e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "45025"
+    } ]
+  }, {
+    "id" : "df7e81cb-12f9-44ba-adf1-b56bc647f0f9",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "a2bd978c-707f-4b8a-b348-1beacb7b1ac1",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "007719410_00341"
+    } ]
+  }, {
+    "id" : "24802707-5d2c-4095-af83-25e7532b2026",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "c5496bf5-70cc-4158-ac1d-fb63bef136a4",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "15"
+    } ]
+  }, {
+    "id" : "e6a18d32-dfe3-452d-817f-efd57f55f448",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/FilmNbr",
+    "values" : [ {
+      "id" : "51a984f5-b081-41ef-ad81-783f7e2115c9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "000459915"
+    } ]
+  }, {
+    "id" : "3dc3f341-d20c-4874-a4b3-bedefa769b79",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "974f2347-8ca8-4385-b776-ef06b140a3d4",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "United States, State and County Marriages, 1750-1990 - FSI (Multicollection)"
+    } ]
+  }, {
+    "id" : "00c6eb53-9b24-43af-af2d-fc1396ba9477",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "2bf2a9b2-f7d3-4624-ab42-7d83cbd84505",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000007719410_00341_00000_0000102936149420"
+    } ]
+  }, {
+    "id" : "3c78a704-7472-4bab-a47c-908f6739ba19",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "f44cbe45-2b55-49a5-8c59-540e92693a99",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "d550fd12-1b13-4286-a624-2a12e8a2028d",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "d3c90830-dc6b-43b3-9339-71942f176bab",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "No Traveler; 2018-05-01T13:44:25-0600; nremmer; 3019; TB; work.dio262_kentucky; No Traveler"
+    } ]
+  }, {
+    "id" : "f6545ea3-203e-4d04-9c5d-72c3541551bd",
+    "attribution" : {
+      "modified" : 1708676719522,
+      "created" : 1708676719522
+    },
+    "type" : "http://familysearch.org/types/fields/VisStatus",
+    "values" : [ {
+      "id" : "79cb4b06-815e-439d-87b0-a6213e660a11",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007719410"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "341"
+    } ]
+  } ]
+}
