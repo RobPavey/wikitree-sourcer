@@ -124,6 +124,25 @@ function extractNameParts(ed, name, nameObj) {
   let firstNames = urlNameParts[0].replace("_", " ");
   let lastNames = urlNameParts[urlNameParts.length - 1].replace("_", " ");
 
+  // There are some cases where the URL doesn't contain all the name parts.
+  // For example: https://www.findagrave.com/memorial/91226577/l-rich
+  // The name on the page is: Louise R Richards
+  // In those cases just set full name.
+  // How to identify them though?
+  let basicPageNameParts = lcName.split(" ");
+  let matchedNameParts = 0;
+  for (let basicPageNamePart of basicPageNameParts) {
+    if (firstNames.includes(basicPageNamePart)) {
+      matchedNameParts++;
+    } else if (lastNames.includes(basicPageNamePart)) {
+      matchedNameParts++;
+    }
+  }
+  if (matchedNameParts < 2) {
+    nameObj.setFullName(name);
+    return;
+  }
+
   if (!lcName.startsWith(firstNames)) {
     // there must be a prefix
     let firstNamesIndex = lcName.indexOf(firstNames);

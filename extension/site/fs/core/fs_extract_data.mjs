@@ -2985,8 +2985,10 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
                 } else if (!thisPersonIsAPrincipal && !personIdWithRelatedFact) {
                   // We have a fact type but it is not for the person of interest
                   // This is the first such case we have found
-                  relatedPersonFactType = factType;
-                  personIdWithRelatedFact = person.id;
+                  if (factType != "Unknown") {
+                    relatedPersonFactType = factType;
+                    personIdWithRelatedFact = person.id;
+                  }
                 }
               }
             }
@@ -3053,9 +3055,14 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
                 }
               }
             } else if (!personIdWithRelatedFact) {
-              relatedPersonFactType = factType;
-              personIdWithRelatedFact = relationship.person1.resourceId;
-              personIdWithRelatedFact2 = relationship.person2.resourceId;
+              // Sometimes the related person should be ignored,
+              // for example in the case of us_ky_marriage_1891_ida_sphar where the
+              // repalted person is the spouse in a marriage
+              if (factType != "Unknown") {
+                relatedPersonFactType = factType;
+                personIdWithRelatedFact = relationship.person1.resourceId;
+                personIdWithRelatedFact2 = relationship.person2.resourceId;
+              }
             }
           } else if (fact.type) {
             // we already have a factType for the result and we have found a new fact
@@ -3099,15 +3106,21 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
               } else if (relationType.endsWith("/Couple")) {
                 // other person is spouse
                 // look for their name
-                let nameForm = getPrimaryNameForm(otherPerson);
-                if (nameForm) {
-                  result.spouseFullName = nameForm.fullText;
-                  if (nameForm.parts) {
-                    for (let part of nameForm.parts) {
-                      if (part.type.endsWith("Given")) {
-                        result.spouseGivenName = part.value;
-                      } else if (part.type.endsWith("Surname")) {
-                        result.spouseSurname = part.value;
+                // Note there is no fact associated with this relationship,
+                // occasionally a marriage might have a spouse plus a former
+                // spouse listed. In that case we would ignore this couple if we
+                // already have a spouse.
+                if (!result.spouseFullName) {
+                  let nameForm = getPrimaryNameForm(otherPerson);
+                  if (nameForm) {
+                    result.spouseFullName = nameForm.fullText;
+                    if (nameForm.parts) {
+                      for (let part of nameForm.parts) {
+                        if (part.type.endsWith("Given")) {
+                          result.spouseGivenName = part.value;
+                        } else if (part.type.endsWith("Surname")) {
+                          result.spouseSurname = part.value;
+                        }
                       }
                     }
                   }

@@ -1,0 +1,43 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Ida M Sphar",
+    "lastName": "Sphar",
+    "forenames": "Ida M"
+  },
+  "birthDate": {
+    "dateString": "1870"
+  },
+  "eventDate": {
+    "dateString": "5 Jun 1891",
+    "yearString": "1891"
+  },
+  "eventPlace": {
+    "placeString": "Campbell, Kentucky, United States"
+  },
+  "ageAtEvent": "21",
+  "spouses": [
+    {
+      "name": {
+        "name": "Oliver O Howard",
+        "lastName": "Howard",
+        "forenames": "Oliver O"
+      },
+      "age": "21",
+      "marriageDate": {
+        "dateString": "5 Jun 1891"
+      },
+      "marriagePlace": {
+        "placeString": "Campbell, Kentucky, United States"
+      }
+    }
+  ],
+  "marriageDate": "5 Jun 1891",
+  "collectionData": {
+    "id": "1804888"
+  },
+  "hasValidData": true
+}
