@@ -63,6 +63,8 @@ async function waitForAnyMonitoredSleepsToComplete() {
   }
 }
 
+const maxRetryCount = 4;
+
 var requestsTracker = {
   requestStates: [],
   expectedResponseCount: 0,
@@ -330,10 +332,10 @@ async function terminateParallelRequests(resolve) {
 
   resetStaticCounts();
 
-  //console.log("About to call resolve in terminateParallelRequest, callbackInput is:");
-  //console.log(callbackInput);
+  console.log("About to call resolve in terminateParallelRequest, callbackInput is:");
+  console.log(callbackInput);
   resolve(callbackInput);
-  //console.log("======================== resolve has been called in terminateParallelRequests, time is: " + Date.now());
+  console.log("======================== resolve has been called in terminateParallelRequests, time is: " + Date.now());
 }
 
 function handleRequestResponse(request, response, doRequest, resolve) {
@@ -373,7 +375,7 @@ function handleRequestResponse(request, response, doRequest, resolve) {
     //console.log(matchingRequestState);
 
     // see if we can retry
-    if (response.allowRetry && matchingRequestState.retryCount < 4) {
+    if (response.allowRetry && matchingRequestState.retryCount < maxRetryCount) {
       //console.log("doing a retry");
       requestQueue.push(matchingRequestState.request);
       matchingRequestState.retryCount++;
@@ -412,7 +414,7 @@ function handleRequestResponse(request, response, doRequest, resolve) {
     requestsTracker.receivedResponseCount == requestsTracker.expectedResponseCount ||
     queueResponseTracker.abortRequests
   ) {
-    //console.log("in parallel_requests handleRequestResponse, calling terminateParallelRequests");
+    console.log("in parallel_requests handleRequestResponse, calling terminateParallelRequests");
     terminateParallelRequests(resolve);
   }
 }
@@ -461,25 +463,25 @@ function doRequestsInParallel(
     requestsTracker.requestStates.push(requestState);
   }
 
-  //console.log("======================== doRequestsInParallel, creating promise, requestsTracker is:");
-  //console.log(requestsTracker);
+  console.log("======================== doRequestsInParallel, creating promise, requestsTracker is:");
+  console.log(requestsTracker);
 
   return new Promise((resolve, reject) => {
     try {
       async function doRequest(request) {
         try {
-          //console.log("doRequestsInParallel: calling requestFunction. request is:");
-          //console.log(request);
+          console.log("doRequestsInParallel: calling requestFunction. request is:");
+          console.log(request);
           let response = await requestFunction(request.input, function (status) {
             updateStatusForRequest(request, status, resolve);
           });
-          //console.log("doRequestsInParallel: requestFunction returned. response is:");
-          //console.log(response);
+          console.log("doRequestsInParallel: requestFunction returned. response is:");
+          console.log(response);
 
           handleRequestResponse(request, response, doRequest, resolve);
         } catch (error) {
-          //console.log("doRequestsInParallel: caught error in request. Error is:");
-          //console.log(error);
+          console.log("doRequestsInParallel: caught error in request. Error is:");
+          console.log(error);
           let response = { success: false, error: error };
           handleRequestResponse(request, response, doRequest, resolve);
         }

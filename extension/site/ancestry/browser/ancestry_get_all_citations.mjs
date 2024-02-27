@@ -24,7 +24,10 @@ SOFTWARE.
 
 import { displayBusyMessage } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
+import {
+  doRequestsInParallel,
+  parallelRequestsDisplayErrorsMessage,
+} from "/base/browser/popup/popup_parallel_requests.mjs";
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
 import { doesCitationWantHouseholdTable } from "/base/browser/popup/popup_citation.mjs";
@@ -77,8 +80,8 @@ async function updateWithLinkData(data) {
 }
 
 async function updateWithHouseholdData(data, options) {
-  //console.log("updateWithHouseholdData, data is:");
-  //console.log(data);
+  console.log("updateWithHouseholdData, data is:");
+  console.log(data);
   return new Promise((resolve, reject) => {
     try {
       getDataForLinkedHouseholdRecords(
@@ -99,16 +102,31 @@ async function updateDataUsingLinkedRecords(data, citationType, options) {
     return;
   }
 
+  console.log("updateDataUsingLinkedRecords, data is:");
+  console.log(data);
+  console.log("updateDataUsingLinkedRecords, data.failureCount = ", data.failureCount);
+  console.log("updateDataUsingLinkedRecords, data.linkedRecordFailureCount = ", data.linkedRecordFailureCount);
+
   await updateWithLinkData(data);
 
-  if (doesCitationWantHouseholdTable(citationType, data.generalizedData)) {
-    await updateWithHouseholdData(data, options);
+  if (data.linkedRecords && data.linkedRecords.length > 0) {
+    if (data.linkedRecordFailureCount > 0) {
+      // some of the linked records could not be retrieved.
+      await parallelRequestsDisplayErrorsMessage("fetching linked records");
+    }
   }
 
-  //console.log("updateDataUsingLinkedRecords, data is");
-  //console.log(data);
+  if (doesCitationWantHouseholdTable(citationType, data.generalizedData)) {
+    data.linkedRecordFailureCount = 0;
+    await updateWithHouseholdData(data, options);
 
-  if (data.linkedRecords) {
+    if (data.linkedRecordFailureCount > 0) {
+      // some of the linked records could not be retrieved.
+      await parallelRequestsDisplayErrorsMessage("fetching linked records for a household");
+    }
+  }
+
+  if (data.linkedRecords && data.linkedRecords.length > 0) {
     regeneralizeDataWithLinkedRecords(data);
   }
 }
@@ -166,8 +184,8 @@ async function getExtractedAndGeneralizedData(source) {
 }
 
 async function getSourcerCitations(runDate, result, type, options) {
-  //console.log("getSourcerCitations, result is:");
-  //console.log(result);
+  console.log("getSourcerCitations, result is:");
+  console.log(result);
 
   if (result.sources.length == 0) {
     result.citationsString = "";
@@ -210,15 +228,32 @@ async function getSourcerCitations(runDate, result, type, options) {
   //console.log("getSourcerCitations: after getExtractedAndGeneralizedData parallel, requestsResult is:");
   //console.log(requestsResult);
 
+  if (requestsResult.failureCount > 0) {
+    // some of the source records could not be retrieved.
+    await parallelRequestsDisplayErrorsMessage("getting sources for profile");
+  }
+
   result.failureCount = requestsResult.failureCount;
+  result.linkedRecordFailureCount = 0;
+
+  // Now that we have the generalizedData for each source go through and add a link to the personData
+  if (result.personGeneralizedData) {
+    for (let source of result.sources) {
+      if (source.generalizedData) {
+        source.generalizedData.personGeneralizedData = result.personGeneralizedData;
+      }
+    }
+  }
 
   let sharingRequests = [];
   for (let source of result.sources) {
-    let request = {
-      name: source.title,
-      input: source,
-    };
-    sharingRequests.push(request);
+    if (source.extractedData) {
+      let request = {
+        name: source.title,
+        input: source,
+      };
+      sharingRequests.push(request);
+    }
   }
   async function getSharingObjRequestFunction(input, updateStatusFunction) {
     updateStatusFunction("getting sharing link...");
@@ -233,6 +268,10 @@ async function getSourcerCitations(runDate, result, type, options) {
     queueOptions,
     sharingMessage
   );
+  if (sharingRequestsResult.failureCount > 0) {
+    // some of the source records could not be retrieved.
+    await parallelRequestsDisplayErrorsMessage("getting sharing links");
+  }
   result.failureCount += sharingRequestsResult.failureCount;
 
   // we now have the directly referenced source records extracted and generalized.
@@ -243,11 +282,17 @@ async function getSourcerCitations(runDate, result, type, options) {
 
       displayBusyMessage("Getting Linked records");
       await updateDataUsingLinkedRecords(data, type, options);
+      console.log("getSourcerCitations: after updateDataUsingLinkedRecords, data is:");
+      console.log(data);
 
       source.linkedRecords = data.linkedRecords; // only for unit test capture
 
-      //console.log("getSourcerCitations: after updateDataUsingLinkedRecords, source is:");
-      //console.log(source);
+      if (data.linkedRecordFailureCount) {
+        result.linkedRecordFailureCount += data.linkedRecordFailureCount;
+      }
+
+      console.log("getSourcerCitations: after updateDataUsingLinkedRecords, source is:");
+      console.log(source);
 
       displayBusyMessage("buildSourcerCitation");
       buildSourcerCitation(runDate, source, type, options);
@@ -261,14 +306,15 @@ async function getSourcerCitations(runDate, result, type, options) {
 }
 
 async function ancestryGetAllCitations(input) {
-  //console.log("ancestryGetAllCitations, input is:");
-  //console.log(input);
+  console.log("ancestryGetAllCitations, input is:");
+  console.log(input);
 
   let ed = input.extractedData;
+  let gd = input.generalizedData;
   let options = input.options;
   let runDate = input.runDate;
 
-  let result = { success: false };
+  let result = { success: false, personExtractedData: ed, personGeneralizedData: gd };
 
   let sourceIds = ed.sources;
   if (!sourceIds || sourceIds.length == 0) {

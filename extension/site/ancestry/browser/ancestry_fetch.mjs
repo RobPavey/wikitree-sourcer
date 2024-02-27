@@ -233,6 +233,14 @@ async function fetchAncestryRecordPage(recordUrl) {
       return result;
     }
 
+    // !!!!!!!!!!!!!!!!! TEMP HACK
+    //if (response.url) {
+    //  if (response.url.includes("22564932") || response.url.includes("8049710")) {
+    //    result.errorStatus = "test error";
+    //    return result;
+    //  }
+    //}
+
     // Examine the text in the response
     let data = await response.text();
 

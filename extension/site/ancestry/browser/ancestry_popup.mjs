@@ -615,8 +615,13 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
           writeToClipboard(response.citationsString, message, false, message2);
         }
       } else {
-        const message = "All sources were excluded due to option settings.";
-        displayMessageWithIconThenClosePopup("warning", message, "");
+        if (response.failureCount) {
+          const message = "No citations could be built due to errors getting sources.";
+          displayMessageWithIconThenClosePopup("warning", message, "");
+        } else {
+          const message = "All sources were excluded due to option settings.";
+          displayMessageWithIconThenClosePopup("warning", message, "");
+        }
       }
     } else {
       // It can fail even if there is an image URL, for example findagrave images:

@@ -191,7 +191,7 @@ function extractDataFromHtml(htmlText, url) {
   return result;
 }
 
-async function testGetSourcerCitation(runDate, savedData, source, type, options) {
+async function testGetSourcerCitation(runDate, savedData, gd, source, type, options) {
   let uri = source.recordUrl;
 
   source.htmlText = savedData.recordHtml[uri];
@@ -202,6 +202,7 @@ async function testGetSourcerCitation(runDate, savedData, source, type, options)
     return;
   }
   source.generalizedData = generalizeData({ extractedData: source.extractedData });
+  source.generalizedData.personGeneralizedData = gd;
 
   if (source.extractedData.household) {
     testLinkedHouseholdRecords(source, savedData, options);
@@ -222,8 +223,10 @@ async function testGetSourcerCitations(runDate, savedData, result, type, options
     return;
   }
 
+  let gd = generalizeData({ extractedData: savedData.extractedData });
+
   for (let source of result.sources) {
-    await testGetSourcerCitation(runDate, savedData, source, type, options);
+    await testGetSourcerCitation(runDate, savedData, gd, source, type, options);
   }
 
   buildSourcerCitations(result, type, options);
