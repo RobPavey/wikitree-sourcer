@@ -180,6 +180,21 @@ function inferBestEventDateForCompare(gd) {
       }
     }
 
+    if (gd.eventDate && gd.eventDate.quarter) {
+      // for comparison we should use the last day of the quarter because
+      // a birth date for a birth reg (for example) is guaranteed to be before the last
+      // day of the quarter but could be before OR after the first day of the quarter
+      let quarter = gd.eventDate.quarter;
+      if (quarter >= 1 && quarter <= 4) {
+        const endDays = ["31 Mar", "30 Jun", "30 Sep", "31 Dec"];
+        let dayMonth = endDays[quarter - 1];
+        let year = gd.eventDate.getYearString();
+        if (dayMonth && year) {
+          eventDate = dayMonth + " " + year;
+        }
+      }
+    }
+
     if (!eventDate) {
       if (gd.recordType == RT.Burial) {
         // The burial date will be after the death date, we are not currently considering
