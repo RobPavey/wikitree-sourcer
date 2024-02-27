@@ -51,6 +51,20 @@ function inferBestEventDateForCompare(gd) {
         eventDate = collection.dates.exactDate;
       }
     }
+    if (gd.eventDate && gd.eventDate.quarter) {
+      // for comparison we should use the last day of the quarter because
+      // a birth date for a birth reg (for example) is guaranteed to be before the last
+      // day of the quarter but could be before OR after the first day of the quarter
+      let quarter = gd.eventDate.quarter;
+      if (quarter >= 1 && quarter <= 4) {
+        const endDays = ["31 Mar", "30 Jun", "30 Sep", "31 Dec"];
+        let dayMonth = endDays[quarter - 1];
+        let year = gd.eventDate.getYearString();
+        if (dayMonth && year) {
+          eventDate = dayMonth + " " + year;
+        }
+      }
+    }
 
     if (!eventDate) {
       if (gd.recordType == RT.Burial) {
@@ -201,14 +215,14 @@ function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
   return result;
 }
 
-function sortSourcesUsingFsSortKeysAndFetchedRecords(result) {
+function sortSourcesUsingFetchedRecords(result) {
   function compareFunction(a, b) {
     return compareGdsAndSources(a.generalizedData, b.generalizedData, a, b);
   }
 
   // sort the sources
   result.sources.sort(compareFunction);
-  //console.log("sortSourcesUsingFsSortKeysAndFetchedRecords: sorted sources:");
+  //console.log("sortSourcesUsingFetchedRecords: sorted sources:");
   //console.log(result.sources);
 }
 
@@ -501,7 +515,7 @@ async function buildSourcerCitations(result, type, options) {
       result.sources = newSources;
     }
 
-    sortSourcesUsingFsSortKeysAndFetchedRecords(result);
+    sortSourcesUsingFetchedRecords(result);
 
     if (type == "source") {
       generateSourcerCitationsStringForTypeSource(result, options);
