@@ -23,13 +23,27 @@ SOFTWARE.
 */
 
 import { CD } from "./country_data.mjs";
-import { Role } from "./record_type.mjs";
+import { RT, RecordSubtype, Role } from "./record_type.mjs";
 import { DateUtils } from "./date_utils.mjs";
 
 import { NameObj, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
 import { getFieldsUsedInNarrative } from "./narrative_builder.mjs";
 
-function attemptToMergeSourceIntoPriorFact(source, result, type) {
+function canMergeDifferentTypes(recordTypeA, recordTypeB, subTypeA, subTypeB, options) {
+  if (recordTypeA == RT.Marriage || recordTypeA == RT.MarriageRegistration) {
+    if (!(recordTypeB == RT.Marriage || recordTypeB == RT.MarriageRegistration)) {
+      return false;
+    }
+
+    // they are both Marriage or MarriageRegistration
+    // Don't worry about dates at this point - just say if options allow these types to be merged
+    return options.buildAll_general_mergeMarriages;
+  }
+
+  return false;
+}
+
+function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
   //console.log("attemptToMergeSourceIntoPriorFact");
 
   function mergeDates(dateA, dateB) {
@@ -478,6 +492,48 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
     return { rejected: true, value: "" };
   }
 
+  function mergeRecordSubTypes(mergedGd, recordType, recordSubtype) {
+    //console.log("mergeRecordSubTypes:");
+    //console.log(mergedGd);
+    //console.log(recordType);
+    //console.log(recordSubtype);
+
+    if (!mergedGd.recordSubtype && !recordSubtype) {
+      // neither has a subtype - nothing to do
+      return undefined;
+    }
+
+    if (mergedGd.recordSubtype == recordSubtype) {
+      return recordSubtype;
+    }
+
+    // There are certain cases, like marriages, where there are special cases
+    if (mergedGd.recordType == RT.Marriage && recordType == RT.Marriage) {
+      // If one has no subtype, then get rid of subtype
+      if (!mergedGd.recordSubtype || !recordSubtype) {
+        return undefined;
+      }
+
+      // so, they both have subtypes and they are different, currently that must mean that
+      // they are Banns and MarriageOrBanns so, in that case we would return MarriageOrBanns
+      return RecordSubtype.MarriageOrBanns;
+    }
+
+    // if both have a record subtype at this point they must be different.
+    // Safest thing is not to merge them
+    if (mergedGd.recordSubtype && recordSubtype) {
+      return "nomatch";
+    }
+
+    // so only one has a subtype, return the subtype
+    if (mergedGd.recordSubtype) {
+      return mergedGd.recordSubtype;
+    }
+    if (recordSubtype) {
+      return recordSubtype;
+    }
+  }
+
   function mergeSimpleStrings(valueA, valueB) {
     //console.log("mergeSimpleStrings:");
     //console.log(valueA);
@@ -631,6 +687,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
   let gd = source.generalizedData;
 
   let recordType = gd.recordType;
+  let recordSubtype = gd.recordSubtype;
   let role = gd.role;
   let eventDate = gd.inferEventDate();
   let eventPlace = gd.inferEventPlace();
@@ -654,8 +711,15 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
 
       let mergedGd = priorFact.generalizedData;
 
-      if (recordType != mergedGd.recordType || role != mergedGd.role) {
+      if (role != mergedGd.role) {
         continue;
+      }
+
+      if (recordType != mergedGd.recordType) {
+        // add tests here to merge records of different types
+        if (!canMergeDifferentTypes(mergedGd.recordType, recordType, mergedGd.recordSubtype, recordSubtype, options)) {
+          continue;
+        }
       }
 
       let mergedDate = mergeDates(mergedGd.inferEventDate(), eventDate);
@@ -740,6 +804,11 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
         continue;
       }
 
+      let mergedRecordSubtype = mergeRecordSubTypes(mergedGd, recordType, recordSubtype);
+      if (mergedDeathDate == "nomatch") {
+        continue;
+      }
+
       //console.log("====== merge approved ======");
 
       // set merged properties
@@ -747,6 +816,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type) {
       mergedGd.name = mergedName;
       mergedGd.setEventPlace(mergedPlace);
       mergedGd.personGender = mergedGender;
+      mergedGd.recordSubtype = mergedRecordSubtype;
 
       mergedGd.age = mergedAge.value;
       if (mergedParents.value) {
@@ -802,7 +872,7 @@ function groupSourcesIntoFacts(result, type, options) {
 
   for (let source of result.sources) {
     if (source.generalizedData) {
-      let wasMerged = attemptToMergeSourceIntoPriorFact(source, result, type);
+      let wasMerged = attemptToMergeSourceIntoPriorFact(source, result, type, options);
       if (!wasMerged) {
         let newFact = { sources: [source] };
         newFact.generalizedData = source.generalizedData;

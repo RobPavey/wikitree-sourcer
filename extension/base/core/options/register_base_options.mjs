@@ -1188,7 +1188,15 @@ const buildAllGeneralOptionsGroup = {
   subcategory: "general",
   tab: "buildAll",
   subsection: "general",
-  options: [],
+  options: [
+    {
+      optionName: "mergeMarriages",
+      type: "checkbox",
+      label: "Merge Marriages, Marriage Banns and Marriage Registrations",
+      defaultValue: true,
+      unitTestValue: true,
+    },
+  ],
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

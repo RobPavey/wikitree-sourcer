@@ -385,6 +385,12 @@ const standardOptions = {
 
 const regressionData = [
   {
+    // There is a marriage and a marriage registration
+    caseName: "daniel_curl_1880_1901",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262155182365/facts",
+    userOptions: standardOptions,
+  },
+  {
     // The 1901 census has a huge number of scholars - and no head
     caseName: "elizabeth_curl_1884_1956",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262559708914/facts",
@@ -398,7 +404,12 @@ const regressionData = [
       },
     ],
   },
-
+  {
+    // There is a marriage and a marriage banns (subtype)
+    caseName: "henry_curl_1844_1894",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262155182358/facts",
+    userOptions: standardOptions,
+  },
   {
     // Test case that case otherSourced and webLinks - though we ignore them
     caseName: "william_whiting_1864_1940",
@@ -417,29 +428,9 @@ const regressionData = [
   },
 ];
 
-const optionVariants = [
-  {
-    variantName: "narrative",
-    optionOverrides: {
-      buildAll_ancestry_citationType: "narrative",
-    },
-  },
-  {
-    variantName: "inline",
-    optionOverrides: {
-      buildAll_ancestry_citationType: "inline",
-    },
-  },
-  {
-    variantName: "source",
-    optionOverrides: {
-      buildAll_ancestry_citationType: "source",
-    },
-  },
-];
-
 async function runTests(testManager) {
-  await runBuildAllCitationsTests("ancestry", regressionData, testManager, optionVariants);
+  // Not using last param as I don't want to use same variants for every test case
+  await runBuildAllCitationsTests("ancestry", regressionData, testManager, undefined);
 }
 
 export { runTests };

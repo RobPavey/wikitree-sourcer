@@ -46,6 +46,7 @@ const eventTypeStringToDataType = {
   Death: RT.Death,
   Marriage: RT.Marriage,
   "ægteskab(Marriage)": RT.Marriage,
+  "MarriageBanns(MarriageBann)": RT.Marriage,
   MarriageLicense: RT.Marriage,
   Census: RT.Census,
   ElectoralRegister: RT.ElectoralRegister,
@@ -442,11 +443,11 @@ function determineRecordType(extractedData) {
 
   if (eventTypeString) {
     eventTypeString = eventTypeString.replace(/\s/g, "");
-    let dataType = eventTypeStringToDataType[eventTypeString];
-    if (!dataType) {
-      console.log("determineRecordType: Unrecognised event type: " + eventTypeString);
+    let recordType = eventTypeStringToDataType[eventTypeString];
+    if (!recordType) {
+      console.log("determineRecordType: Unrecognised event or record type: " + eventTypeString);
     } else {
-      return dataType;
+      return recordType;
     }
   }
 
@@ -1466,7 +1467,7 @@ function generalizeDataGivenRecordType(ed, result) {
       }
     }
 
-    // check if the record subtype shoul be banns
+    // check if the record subtype should be banns
     if (ed.recordData && ed.recordData["Record Type"]) {
       let ancestryRecordType = ed.recordData["Record Type"];
       if (ancestryRecordType.includes("Marriage Banns") || ancestryRecordType.includes("Marriage Bann")) {
