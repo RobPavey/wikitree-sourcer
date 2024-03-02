@@ -214,7 +214,8 @@ async function getDataForLinkedHouseholdRecords(data, processfunction, options) 
   }
 
   if (linkedRecords.length > 0) {
-    //console.log("getDataForLinkedHouseholdRecords. calling getDataForLinkedRecords");
+    console.log("getDataForLinkedHouseholdRecords. calling getDataForLinkedRecords, linkedRecords is:");
+    console.log(linkedRecords);
     getDataForLinkedRecords(data, linkedRecords, processfunction);
   } else {
     //console.log("getDataForLinkedHouseholdRecords. calling processfunction directly");

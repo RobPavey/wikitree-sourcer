@@ -97,7 +97,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
     return "nomatch";
   }
 
-  function mergeDateObjs(dateObjA, dateObjB) {
+  function mergeDateObjs(dateObjA, dateObjB, recordTypeA, recordTypeB, recordSubtypeA, recordSubtypeB) {
     //console.log("mergeDateObjs:");
     //console.log(dateObjA);
     //console.log(dateObjB);
@@ -106,17 +106,115 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       if (!dateObjB) {
         return "";
       } else {
-        return dateObjB.getDateString();
+        return dateObjB;
       }
     } else if (!dateObjB) {
-      return dateObjA.getDateString();
+      return dateObjA;
     }
 
     if (dateObjA.qualifier != dateObjB.qualifier) {
+      // might be able to merge these
       return "nomatch";
     }
 
-    return mergeDates(dateObjB.getDateString(), dateObjB.getDateString());
+    // If either of the date are for a particular quarter then it require a different comparison
+    // which can also take into accoun the record types.
+    if (dateObjA.quarter || dateObjB.quarter) {
+      // one of them is a quarter date - could be a registration
+      if (dateObjA.quarter && dateObjB.quarter) {
+        // they are both quarter dates check if thay match
+        if (dateObjA.quarter == dateObjB.quarter && dateObjA.getYearString() == dateObjB.getYearString()) {
+          return dateObjA;
+        }
+      } else {
+        // only one is a quarter date
+        // A birth had to be registered with the register office within 42 days.
+        // The law required all marriages to be recorded in a civil register immediately after the ceremony.
+        // Because a death certificate was required for burial beginning in 1837,
+        // almost all deaths were registered.
+        // https://www.familysearch.org/en/wiki/England_Marriage_Records#:~:text=Civil%20Registration%20%2D%20After%201837,-Coverage%20and%20Compliance&text=By%201875%2C%20registration%20was%20mandatory,register%20immediately%20after%20the%20ceremony.
+
+        function checkQuarterData(quarterDateObj, otherDateObj, quarterRecordType, otherRecordType) {
+          let quarter = quarterDateObj.quarter;
+          const endDays = ["31 Mar", "30 Jun", "30 Sep", "31 Dec"];
+          let dayMonth = endDays[quarter - 1];
+          let year = quarterDateObj.getYearString();
+          let dateString = dayMonth + " " + year;
+          let parsedQuarterDate = DateUtils.parseDateString(dateString);
+          let parsedOtherDate = DateUtils.parseDateString(otherDateObj.getDateString());
+
+          let daysBetween = DateUtils.getDaysBetweenParsedDates(parsedOtherDate, parsedQuarterDate);
+
+          if (quarterRecordType == RT.MarriageRegistration || !quarterRecordType) {
+            if (otherRecordType == RT.Marriage || !otherRecordType) {
+              const longestQuarterInDays = 92;
+              const oneWeekLeeway = 7;
+              const maxDays = longestQuarterInDays + oneWeekLeeway;
+              if (daysBetween >= 0 && daysBetween <= maxDays) {
+                return otherDateObj;
+              }
+            }
+          }
+          return "nomatch";
+        }
+
+        if (dateObjA.quarter) {
+          return checkQuarterData(dateObjA, dateObjB, recordTypeA, recordTypeB);
+        } else {
+          return checkQuarterData(dateObjB, dateObjA, recordTypeB, recordTypeA);
+        }
+      }
+    }
+
+    let mergedDateString = mergeDates(dateObjA.getDateString(), dateObjB.getDateString());
+
+    if (mergedDateString != "nomatch") {
+      // we were able to merge them just based on the strings
+      let mergedDateObj = new DateObj();
+      mergedDateObj.dateString = mergedDateString;
+      return mergedDateObj;
+    }
+
+    // they don't match exactly for some record types (like marriage and marriage banns)
+    // that is OK.
+    let parsedDateA = DateUtils.parseDateString(dateObjA.getDateString());
+    let parsedDateB = DateUtils.parseDateString(dateObjB.getDateString());
+
+    let daysBetween = DateUtils.getDaysBetweenParsedDates(parsedDateA, parsedDateB);
+
+    if (recordTypeA && recordTypeB) {
+      if (recordTypeA == RT.Marriage && recordTypeB == RT.Marriage) {
+        if (recordSubtypeA == RecordSubtype.Banns || recordSubtypeA == RecordSubtype.MarriageOrBanns) {
+          if (recordSubtypeB == RecordSubtype.Banns || recordSubtypeB == RecordSubtype.MarriageOrBanns) {
+            // if they are within a month in either direction allow them and return later date
+            if (Math.abs(daysBetween) <= 31) {
+              if (daysBetween < 0) {
+                // b is earlier
+                return dateObjA;
+              } else {
+                return dateObjB;
+              }
+            }
+          } else {
+            // if A is a month or less before B allow it
+            if (daysBetween > 0 && daysBetween <= 31) {
+              return dateObjB;
+            }
+          }
+        } else if (recordSubtypeB == RecordSubtype.Banns || recordSubtypeB == RecordSubtype.MarriageOrBanns) {
+          // if B is a month or less before A allow it
+          if (daysBetween < 0 && daysBetween >= -31) {
+            return dateObjA;
+          }
+        } else {
+          // neither has a subtype
+          // However, sometimes a banns record is recorded as a marriage, should we allow for that?
+          // For now we do not.
+        }
+      }
+    }
+
+    return "nomatch";
   }
 
   function mergeNames(nameObjA, nameObjB) {
@@ -410,9 +508,16 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
         let cleanTermA = termA.trim().toLowerCase();
         let foundTermA = false;
         for (let termBIndex = termBStartIndex; termBIndex < termsB.length; termBIndex++) {
-          let cleanTermB = placeBTerms[termBIndex].trim().toLowerCase();
+          let cleanTermB = termsB[termBIndex].trim().toLowerCase();
           if (cleanTermA == cleanTermB) {
             termBStartIndex = termBIndex + 1;
+            foundTermA = true;
+            break;
+          }
+          // We would also like these to match:
+          // Wimbledon, Surrey, England.
+          // Holy Trinity and St Peter, South Wimbledon, Holy Trinity and St Peter, Surrey, England.
+          if (cleanTermB.startsWith(cleanTermA) || cleanTermB.endsWith(cleanTermA)) {
             foundTermA = true;
             break;
           }
@@ -434,6 +539,26 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       if (areAllTermsInOtherTerms(placeBTerms, placeATerms)) {
         return placeA;
       }
+    }
+
+    return undefined;
+  }
+
+  function specialCaseMergeEventPlaces(gdA, gdB) {
+    // certain record types can have a registration district
+    // it can be hard to match a district with a place name so we are forgiving
+    if (gdA.registrationDistrict) {
+      if (gdB.registrationDistrict) {
+        if (gdA.registrationDistrict == gdB.registrationDistrict) {
+          return gdA.inferEventPlace();
+        } else {
+          return undefined;
+        }
+      } else {
+        return gdB.inferEventPlace();
+      }
+    } else if (gdB.registrationDistrict) {
+      return gdA.inferEventPlace();
     }
 
     return undefined;
@@ -638,11 +763,19 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
 
       let mergedName = mergeNames(spouseA.name, spouseB.name);
       if (!mergedName) {
-        return "nomatch";
+        // if one record has an unnamed spouse then still match
+        // this is common for UK marriage registrations for example
+        if (!spouseA.name || !spouseA.name.name) {
+          mergedName = spouseB.name;
+        } else if (!spouseB.name || !spouseB.name.name) {
+          mergedName = spouseA.name;
+        } else {
+          return "nomatch";
+        }
       }
 
-      let mergedDate = mergeDateObjs(spouseA.marriageDate, spouseB.marriageDate);
-      if (mergedDate == "nomatch") {
+      let mergedDateObj = mergeDateObjs(spouseA.marriageDate, spouseB.marriageDate);
+      if (mergedDateObj == "nomatch") {
         return "nomatch";
       }
 
@@ -662,9 +795,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       if (mergedName) {
         mergedSpouse.name = mergedName;
       }
-      if (mergedDate) {
-        let mergedDateObj = new DateObj();
-        mergedDateObj.dateString = mergedDate;
+      if (mergedDateObj) {
         mergedSpouse.marriageDate = mergedDateObj;
       }
       if (mergedPlace) {
@@ -689,7 +820,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
   let recordType = gd.recordType;
   let recordSubtype = gd.recordSubtype;
   let role = gd.role;
-  let eventDate = gd.inferEventDate();
+  let eventDateObj = gd.inferEventDateObj();
   let eventPlace = gd.inferEventPlace();
   let nameObj = gd.name;
   let personGender = gd.inferPersonGender();
@@ -702,8 +833,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
   let registrationDistrict = gd.registrationDistrict;
   let primaryPersonNameObj = gd.primaryPerson ? gd.primaryPerson.name : "";
   let primaryPersonGender = gd.inferPrimaryPersonGender();
-  let primaryPersonBirthDate = gd.inferPrimaryPersonBirthDate();
-  let primaryPersonDeathDate = gd.inferPrimaryPersonDeathDate();
+  let primaryPersonBirthDateObj = gd.inferPrimaryPersonBirthDateObj();
+  let primaryPersonDeathDateObj = gd.inferPrimaryPersonDeathDateObj();
 
   for (let priorFact of result.facts) {
     if (priorFact.generalizedData) {
@@ -722,8 +853,15 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
         }
       }
 
-      let mergedDate = mergeDates(mergedGd.inferEventDate(), eventDate);
-      if (mergedDate == "nomatch") {
+      let mergedDateObj = mergeDateObjs(
+        mergedGd.inferEventDateObj(),
+        eventDateObj,
+        mergedGd.recordType,
+        recordType,
+        mergedGd.recordSubtype,
+        recordSubtype
+      );
+      if (mergedDateObj == "nomatch") {
         continue;
       }
 
@@ -734,7 +872,10 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
 
       let mergedPlace = mergePlaces(mergedGd.inferEventPlace(), eventPlace);
       if (mergedPlace === undefined) {
-        continue;
+        mergedPlace = specialCaseMergeEventPlaces(mergedGd, gd);
+        if (mergedPlace === undefined) {
+          continue;
+        }
       }
 
       let mergedGender = mergeGenders(mergedGd.personGender, personGender);
@@ -759,8 +900,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
 
       let mergedPrimaryPersonName = "";
       let mergedPrimaryPersonGender = "";
-      let mergedPrimaryPersonBirthDate = "";
-      let mergedPrimaryPersonDeathDate = "";
+      let mergedPrimaryPersonBirthDateObj = undefined;
+      let mergedPrimaryPersonDeathDateObj = undefined;
       if (role && role != Role.Primary && mergedGd.primaryPerson) {
         // there should be another person - check they match
         mergedPrimaryPersonName = mergeNames(mergedGd.primaryPerson.name, primaryPersonNameObj);
@@ -773,13 +914,19 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
           continue;
         }
 
-        mergedPrimaryPersonBirthDate = mergeDates(mergedGd.inferPrimaryPersonBirthDate(), primaryPersonBirthDate);
-        if (mergedPrimaryPersonBirthDate == "nomatch") {
+        mergedPrimaryPersonBirthDateObj = mergeDateObjs(
+          mergedGd.inferPrimaryPersonBirthDateObj(),
+          primaryPersonBirthDateObj
+        );
+        if (mergedPrimaryPersonBirthDateObj == "nomatch") {
           continue;
         }
 
-        mergedPrimaryPersonDeathDate = mergeDates(mergedGd.inferPrimaryPersonDeathDate(), primaryPersonDeathDate);
-        if (mergedPrimaryPersonDeathDate == "nomatch") {
+        mergedPrimaryPersonDeathDateObj = mergeDateObjs(
+          mergedGd.inferPrimaryPersonDeathDateObj(),
+          primaryPersonDeathDateObj
+        );
+        if (mergedPrimaryPersonDeathDateObj == "nomatch") {
           continue;
         }
       }
@@ -789,13 +936,13 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
         continue;
       }
 
-      let mergedBirthDate = mergeDateObjs(mergedGd.birthDate, birthDateObj);
-      if (mergedBirthDate == "nomatch") {
+      let mergedBirthDateObj = mergeDateObjs(mergedGd.birthDate, birthDateObj);
+      if (mergedBirthDateObj == "nomatch") {
         continue;
       }
 
-      let mergedDeathDate = mergeDateObjs(mergedGd.deathDate, deathDateObj);
-      if (mergedDeathDate == "nomatch") {
+      let mergedDeathDateObj = mergeDateObjs(mergedGd.deathDate, deathDateObj);
+      if (mergedDeathDateObj == "nomatch") {
         continue;
       }
 
@@ -805,14 +952,14 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       }
 
       let mergedRecordSubtype = mergeRecordSubTypes(mergedGd, recordType, recordSubtype);
-      if (mergedDeathDate == "nomatch") {
+      if (mergedRecordSubtype == "nomatch") {
         continue;
       }
 
       //console.log("====== merge approved ======");
 
       // set merged properties
-      mergedGd.setEventDate(mergedDate);
+      mergedGd.eventDate = mergedDateObj;
       mergedGd.name = mergedName;
       mergedGd.setEventPlace(mergedPlace);
       mergedGd.personGender = mergedGender;
@@ -826,15 +973,15 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
         mergedGd.spouses = mergedSpouses;
       }
       mergedGd.mothersMaidenName = mergedMmn;
-      mergedGd.setBirthDate(mergedBirthDate);
-      mergedGd.setDeathDate(mergedDeathDate);
+      mergedGd.birthDate = mergedBirthDateObj;
+      mergedGd.deathDate = mergedDeathDateObj;
       mergedGd.registrationDistrict = mergedDistrict;
 
       mergedGd.createPrimaryPersonIfNeeded();
       mergedGd.primaryPerson.name = mergedPrimaryPersonName;
       mergedGd.setPrimaryPersonGender(mergedPrimaryPersonGender);
-      mergedGd.setPrimaryPersonBirthDate(mergedPrimaryPersonBirthDate);
-      mergedGd.setPrimaryPersonDeathDate(mergedPrimaryPersonDeathDate);
+      mergedGd.primaryPerson.birthDate = mergedPrimaryPersonBirthDateObj;
+      mergedGd.primaryPerson.deathDate = mergedPrimaryPersonDeathDateObj;
 
       priorFact.sources.push(source);
       merged = true;

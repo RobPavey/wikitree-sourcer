@@ -385,7 +385,8 @@ const standardOptions = {
 
 const regressionData = [
   {
-    // There is a marriage and a marriage registration
+    // There is a marriage and a marriage registration, BUT one is "Daniel Carl" and one
+    // "Daniel Curl" so they do not merge
     caseName: "daniel_curl_1880_1901",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262155182365/facts",
     userOptions: standardOptions,
@@ -405,9 +406,22 @@ const regressionData = [
     ],
   },
   {
-    // There is a marriage and a marriage banns (subtype)
+    // There is a marriage and a marriage banns (subtype) with the same date
+    caseName: "frederick_pavey_1833_1909",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46561318514/facts",
+    userOptions: standardOptions,
+  },
+  {
+    // There is a marriage and a marriage banns (subtype) with the same date
     caseName: "henry_curl_1844_1894",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262155182358/facts",
+    userOptions: standardOptions,
+  },
+  {
+    // There is a marriage and two marriage banns but marriage is before banns
+    // according to FS it is actually a marriage notification
+    caseName: "william_chandler_1783_1842",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262552029306/facts",
     userOptions: standardOptions,
   },
   {

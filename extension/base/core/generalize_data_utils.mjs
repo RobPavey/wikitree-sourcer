@@ -269,6 +269,7 @@ const GD = {
       owner: "owner",
       patient: "patient",
       ptient: "patient",
+      pauper: "pauper",
       prisoner: "prisoner",
       prisnr: "prisoner",
       pupil: "pupil",
