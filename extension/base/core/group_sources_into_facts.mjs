@@ -906,6 +906,13 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
         // there should be another person - check they match
         mergedPrimaryPersonName = mergeNames(mergedGd.primaryPerson.name, primaryPersonNameObj);
         if (mergedPrimaryPersonName === undefined) {
+          if (!primaryPersonNameObj || !primaryPersonNameObj.name) {
+            if (mergedGd.primaryPerson.name && mergedGd.primaryPerson.name.name) {
+              mergedPrimaryPersonName = mergedGd.primaryPerson.name;
+            } else if (!mergedGd.primaryPerson.name || !mergedGd.primaryPerson.name.name) {
+              mergedPrimaryPersonName = mergedGd.primaryPerson.name;
+            }
+          }
           continue;
         }
 
