@@ -822,6 +822,14 @@ const CD = {
   },
 
   standardizePlaceName: function (place) {
+    if (!place) {
+      return place;
+    }
+
+    // first do some standard replacements
+    place = place.replace(/^St /g, "St. ");
+    place = place.replace(/\s+St /g, " St. ");
+
     let countryExtract = CD.extractCountryFromPlaceName(place);
     if (!countryExtract || !countryExtract.country) {
       return place;

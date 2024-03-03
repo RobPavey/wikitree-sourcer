@@ -412,6 +412,12 @@ const regressionData = [
     userOptions: standardOptions,
   },
   {
+    // There are four baptisms with various places and parent names
+    caseName: "harriet_chandler_1805_1885",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262561773370/facts",
+    userOptions: standardOptions,
+  },
+  {
     // There is a marriage and a marriage banns (subtype) with the same date
     caseName: "henry_curl_1844_1894",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262155182358/facts",
