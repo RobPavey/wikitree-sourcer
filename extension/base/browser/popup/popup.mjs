@@ -253,7 +253,7 @@ function determineSiteNameForTab(activeTab) {
     return false;
   }
 
-  console.log("WikiTree Sourcer: determineSiteNameForTab");
+  //console.log("WikiTree Sourcer: determineSiteNameForTab");
   let contentScripts = manifest.content_scripts;
 
   for (let contentScript of contentScripts) {

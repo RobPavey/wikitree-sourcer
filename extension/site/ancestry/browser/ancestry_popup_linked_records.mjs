@@ -69,8 +69,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     let cachedResult = await getCachedAsyncResult("AncestryFetchRecord", record.link);
 
     if (cachedResult) {
-      console.log("getDataForLinkedRecords: cached result found for: " + record.link);
-      console.log(cachedResult);
+      //console.log("getDataForLinkedRecords: cached result found for: " + record.link);
+      //console.log(cachedResult);
       let extractedData = cachedResult;
       let cachedResponse = {
         name: record.name,
@@ -113,8 +113,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     slowDownFromStartCount: 10,
     slowDownFromStartMult: 4,
   };
-  console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
-  console.log(requests);
+  //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
+  //console.log(requests);
 
   try {
     //console.log("getDataForLinkedRecords, about to call doRequestsInParallel, requests is:");
@@ -132,8 +132,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     }
     let requestsResult = await doRequestsInParallel(requests, requestFunction, queueOptions, displayMessage);
 
-    console.log("getDataForLinkedRecords, returned from doRequestsInParallel, requestsResult is:");
-    console.log(requestsResult);
+    //console.log("getDataForLinkedRecords, returned from doRequestsInParallel, requestsResult is:");
+    //console.log(requestsResult);
 
     function findCachedResponseByLink(link) {
       for (let cachedResponse of cachedResponses) {
@@ -181,8 +181,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     }
 
     //keepPopupOpenForDebug();
-    console.log("getDataForLinkedRecords: processInput is:");
-    console.log(processInput);
+    //console.log("getDataForLinkedRecords: processInput is:");
+    //console.log(processInput);
     processFunction(processInput);
   } catch (error) {
     console.log("getDataForLinkedRecords, caught error in doRequestsInParallel, error is:");
@@ -191,8 +191,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
 }
 
 async function getDataForLinkedHouseholdRecords(data, processfunction, options) {
-  console.log("getDataForLinkedHouseholdRecords. data is : ");
-  console.log(data);
+  //console.log("getDataForLinkedHouseholdRecords. data is : ");
+  //console.log(data);
 
   let gd = data.generalizedData;
 
@@ -214,8 +214,8 @@ async function getDataForLinkedHouseholdRecords(data, processfunction, options) 
   }
 
   if (linkedRecords.length > 0) {
-    console.log("getDataForLinkedHouseholdRecords. calling getDataForLinkedRecords, linkedRecords is:");
-    console.log(linkedRecords);
+    //console.log("getDataForLinkedHouseholdRecords. calling getDataForLinkedRecords, linkedRecords is:");
+    //console.log(linkedRecords);
     getDataForLinkedRecords(data, linkedRecords, processfunction);
   } else {
     //console.log("getDataForLinkedHouseholdRecords. calling processfunction directly");

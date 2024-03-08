@@ -59,7 +59,7 @@ async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
 
   let label2 = document.createElement("label");
   label2.innerText = "Review it below and press the 'Save to clipboard' button to save it to the clipboard.";
-  fragment.appendChild(label);
+  fragment.appendChild(label2);
 
   addBreak(fragment);
   addBreak(fragment);
@@ -107,7 +107,7 @@ async function userWriteToClipboard(text, objectName, internalSave = false, extr
     fragment.appendChild(br);
   }
 
-  // This is currently only used on Safari
+  // This is currently only used on Safari or if the generation takes a long time
 
   emptyMenu();
 

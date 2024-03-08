@@ -80,8 +80,8 @@ async function updateWithLinkData(data) {
 }
 
 async function updateWithHouseholdData(data, options) {
-  console.log("updateWithHouseholdData, data is:");
-  console.log(data);
+  //console.log("updateWithHouseholdData, data is:");
+  //console.log(data);
   return new Promise((resolve, reject) => {
     try {
       getDataForLinkedHouseholdRecords(
@@ -102,10 +102,10 @@ async function updateDataUsingLinkedRecords(data, citationType, options) {
     return;
   }
 
-  console.log("updateDataUsingLinkedRecords, data is:");
-  console.log(data);
-  console.log("updateDataUsingLinkedRecords, data.failureCount = ", data.failureCount);
-  console.log("updateDataUsingLinkedRecords, data.linkedRecordFailureCount = ", data.linkedRecordFailureCount);
+  //console.log("updateDataUsingLinkedRecords, data is:");
+  //console.log(data);
+  //console.log("updateDataUsingLinkedRecords, data.failureCount = ", data.failureCount);
+  //console.log("updateDataUsingLinkedRecords, data.linkedRecordFailureCount = ", data.linkedRecordFailureCount);
 
   await updateWithLinkData(data);
 
@@ -135,7 +135,7 @@ async function getExtractedAndGeneralizedData(source) {
   //console.log("getExtractedAndGeneralizedData, source is:");
   //console.log(source);
 
-  let newResponse = { success: false };
+  let response = { success: false };
 
   let uri = source.recordUrl;
 
@@ -144,12 +144,14 @@ async function getExtractedAndGeneralizedData(source) {
   if (uri) {
     fetchResult = await getExtractedDataFromRecordUrl(uri);
     if (!fetchResult.success) {
-      newResponse.allowRetry = response.allowRetry;
-      newResponse.statusCode = response.statusCode;
-      return newResponse;
+      console.log("getExtractedAndGeneralizedData, getExtractedDataFromRecordUrl failed, fetchResult is:");
+      console.log(fetchResult);
+      response.allowRetry = fetchResult.allowRetry;
+      response.statusCode = fetchResult.statusCode;
+      return response;
     }
   } else {
-    return newResponse;
+    return response;
   }
 
   //console.log("getExtractedAndGeneralizedData, fetchResult is:");
@@ -177,15 +179,15 @@ async function getExtractedAndGeneralizedData(source) {
     //console.log(source.generalizedData);
   }
 
-  newResponse.link = fetchResult.recordUrl;
-  newResponse.extractedData = extractedData;
-  newResponse.success = true;
-  return newResponse;
+  response.link = fetchResult.recordUrl;
+  response.extractedData = extractedData;
+  response.success = true;
+  return response;
 }
 
 async function getSourcerCitations(runDate, result, type, options) {
-  console.log("getSourcerCitations, result is:");
-  console.log(result);
+  //console.log("getSourcerCitations, result is:");
+  //console.log(result);
 
   if (result.sources.length == 0) {
     result.citationsString = "";
@@ -282,8 +284,8 @@ async function getSourcerCitations(runDate, result, type, options) {
 
       displayBusyMessage("Getting Linked records");
       await updateDataUsingLinkedRecords(data, type, options);
-      console.log("getSourcerCitations: after updateDataUsingLinkedRecords, data is:");
-      console.log(data);
+      //console.log("getSourcerCitations: after updateDataUsingLinkedRecords, data is:");
+      //console.log(data);
 
       source.linkedRecords = data.linkedRecords; // only for unit test capture
 
@@ -291,8 +293,8 @@ async function getSourcerCitations(runDate, result, type, options) {
         result.linkedRecordFailureCount += data.linkedRecordFailureCount;
       }
 
-      console.log("getSourcerCitations: after updateDataUsingLinkedRecords, source is:");
-      console.log(source);
+      //console.log("getSourcerCitations: after updateDataUsingLinkedRecords, source is:");
+      //console.log(source);
 
       displayBusyMessage("buildSourcerCitation");
       buildSourcerCitation(runDate, source, type, options);
@@ -306,8 +308,8 @@ async function getSourcerCitations(runDate, result, type, options) {
 }
 
 async function ancestryGetAllCitations(input) {
-  console.log("ancestryGetAllCitations, input is:");
-  console.log(input);
+  //console.log("ancestryGetAllCitations, input is:");
+  //console.log(input);
 
   let ed = input.extractedData;
   let gd = input.generalizedData;
