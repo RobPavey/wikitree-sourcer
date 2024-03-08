@@ -611,7 +611,6 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
           }
 
-          keepPopupOpenForDebug(); // Temporary!!!!
           writeToClipboard(response.citationsString, message, false, message2);
         }
       } else {
