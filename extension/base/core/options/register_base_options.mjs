@@ -1438,7 +1438,7 @@ registerSubheadingForOptions("table", "general", "table", "When using a table");
 registerSubheadingForOptions("table", "general", "list", "When using a list");
 registerSubheadingForOptions("table", "general", "sentence", "When using a sentence");
 
-registerSubsectionForOptions("buildAll", "general", "General", "There are currently no options shared across sites.");
+registerSubsectionForOptions("buildAll", "general", "General");
 
 registerSubsectionForOptions("addMerge", "general", "General");
 registerSubsectionForOptions("addMerge", "addPerson", "Add Person");
