@@ -51,8 +51,13 @@ function buildCoreCitation(data, gd, builder) {
   }
   builder.sourceTitle = sourceTitle;
 
-  let recordLink = "{{FindAGrave|" + data.memorialId + "}}";
-  builder.recordLinkOrTemplate = recordLink;
+  if (data.memorialId) {
+    let recordLink = "{{FindAGrave|" + data.memorialId + "}}";
+    builder.recordLinkOrTemplate = recordLink;
+  } else if (data.url) {
+    let recordLink = "[" + data.url + " FindAGrave Memorial]";
+    builder.recordLinkOrTemplate = recordLink;
+  }
 
   // The name string can contain italics
   let nameString = data.name;
