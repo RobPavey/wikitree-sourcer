@@ -938,11 +938,84 @@ class NameObj {
 
     let firstWord = StringUtils.getFirstWord(name);
 
-    const titles = ["mr", "mrs", "miss", "ms", "mx"];
+    const titles = [
+      "mr",
+      "mrs",
+      "miss",
+      "ms",
+      "mx",
+      "sir",
+      "dr",
+      // military
+      "master",
+      "captain",
+      "capt",
+      "lieutenant",
+      "lt",
+      "1lt",
+      "2lt",
+      "sergeant",
+      "sgt",
+      "sg",
+      "ssg",
+      "ssgt",
+      "tsgt",
+      "msgt",
+      "1sgt",
+      "1sg",
+      "2sgt",
+      "2sg",
+      "sfc",
+      "gysgt",
+      "cpl",
+      "lcpl",
+      "pfc",
+      "pv2",
+      "cwo",
+      "spc",
+      "spc2",
+      "spc3",
+      "spc4",
+      "airman",
+      "a1c",
+      "a2c",
+      "po1",
+      "po2",
+      "po3",
+      "cpo",
+      "admiral",
+      "general",
+      "ensign",
+      // religious
+      "brother",
+      "br",
+      "father",
+      "fa",
+    ];
+
+    const titlesThatAreNotPrefixes = ["mr", "mrs", "miss", "ms", "mx"];
+
     let lcFirstWord = firstWord.toLowerCase();
+    while (lcFirstWord.endsWith(".")) {
+      lcFirstWord = lcFirstWord.substring(0, lcFirstWord.length - 1);
+    }
+    lcFirstWord = lcFirstWord.replace(/\//g, "");
+
     if (titles.includes(lcFirstWord)) {
-      // remove the title
-      return StringUtils.getWordsAfterFirstWord(name);
+      // remove the title unless it would leave the name empty
+      let remainder = StringUtils.getWordsAfterFirstWord(name);
+      if (remainder) {
+        if (!titlesThatAreNotPrefixes.includes(lcFirstWord)) {
+          if (this.prefix) {
+            if (!this.prefix.includes(firstWord)) {
+              this.prefix += " " + firstWord;
+            }
+          } else {
+            this.prefix = firstWord;
+          }
+        }
+        return remainder;
+      }
     }
 
     return name;

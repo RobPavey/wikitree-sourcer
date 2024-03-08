@@ -3,11 +3,11 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Dr Terry Warren O'Neal Jr",
+    "name": "Terry Warren O'Neal Jr",
     "nicknames": "Pete",
+    "prefix": "Dr",
     "lastName": "O'Neal",
     "forenames": "Terry Warren",
-    "prefix": "Dr",
     "suffix": "Jr."
   },
   "birthDate": {
