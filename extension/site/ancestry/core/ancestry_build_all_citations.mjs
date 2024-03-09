@@ -411,7 +411,7 @@ function setUrlStart(extractedData, result) {
   let personUrl = extractedData.url;
   // we want a record URL like this:
   // https://www.ancestry.com/discoveryui-content/view/7080503:8978
-  let urlStart = personUrl.replace(/^(https?\:\/\/[^\.\.]+\.ancestry\.[^\/]+)\/.*$/, "$1");
+  let urlStart = personUrl.replace(/^(https?\:\/\/[^\.\.]+\.ancestry[^\.]*\.[^\/]+)\/.*$/, "$1");
   if (!urlStart || urlStart == personUrl) {
     result.errorMessage = "Could not parse url: " + personUrl;
     return result;
