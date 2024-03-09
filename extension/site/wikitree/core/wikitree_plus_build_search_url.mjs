@@ -64,9 +64,38 @@ function addToQueryString(queryString, fieldName, fieldValue) {
   return queryString;
 }
 
+function buildTemplateSearchUrl(input) {
+  let templateData = input.templateData;
+
+  var builder = new WikiTreePlusUriBuilder();
+
+  let query = 'TemplateText="' + templateData[0] + '"';
+
+  for (let index = 1; index < templateData.length; index++) {
+    query += ' OR TemplateText="' + templateData[index] + '"';
+  }
+
+  builder.addSearchParameter("Query", query);
+  builder.addSearchParameter("render", "1");
+
+  let url = builder.getUri();
+
+  //console.log("URL is " + url);
+
+  var result = {
+    url: url,
+  };
+
+  return result;
+}
+
 function buildSearchUrl(input) {
   //console.log("buildSearchData, input is:");
   //console.log(input);
+
+  if (input.templateData) {
+    return buildTemplateSearchUrl(input);
+  }
 
   const gd = input.generalizedData;
   const options = input.options;

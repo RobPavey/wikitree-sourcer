@@ -108,6 +108,21 @@ async function wikitreePlusSearch(generalizedData) {
   wikitreePlusDoSearch(input);
 }
 
+async function wikitreePlusSearchForTemplateData(templateData, additionalTemplateData) {
+  if (additionalTemplateData) {
+    for (let addition of additionalTemplateData) {
+      templateData.push(addition);
+    }
+  }
+  const input = {
+    typeOfSearch: "",
+    templateData: templateData,
+    options: options,
+  };
+
+  wikitreePlusDoSearch(input);
+}
+
 async function wikitreeSearchWithParameters(generalizedData, parameters) {
   const input = {
     typeOfSearch: "SpecifiedParameters",
@@ -142,10 +157,66 @@ function addWikitreeDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-function addWikitreeSearchWithParametersMenuItem(menu, data, backFunction) {
+function addWikitreeSearchUsingWtPlusMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search using WikiTree Plus", function (element) {
     wikitreePlusSearch(data.generalizedData);
   });
+}
+
+function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
+  let templateData = [];
+  let templateLinkedData = [];
+  let typeString = "record";
+  let ed = data.extractedData;
+  let gd = data.generalizedData;
+
+  // This code is site specific. It would be better in the site folders.
+  // One way to do that would bto add a "templateSearchData" member in generalizedData.
+  // Is that overkill?
+  if (gd.sourceOfData == "ancestry") {
+    if (ed.ancestryTemplate) {
+      let templateTerms = ed.ancestryTemplate.replace(/[{}|]/g, " ").trim();
+      templateData.push(templateTerms);
+    }
+
+    if (ed.titleCollection && ed.titleCollection.includes("Find a Grave")) {
+      if (ed.imageRecordId & ed.imageRecordId.includes("/memorial/")) {
+        let memorialId = ed.imageRecordId.replace(/^.*\/memorial\/([^\/]+)\/.*$/, "$1");
+        if (memorialId && memorialId != ed.imageRecordId) {
+          templateLinkedData.push("FindAGrave " + memorialId);
+        }
+      }
+    }
+
+    if (ed.household && ed.household.members) {
+      for (let member of ed.household.members) {
+        if (member.dbId && member.recordId) {
+          templateLinkedData.push("Ancestry Record " + member.dbId + " " + member.recordId);
+        }
+      }
+    }
+  } else if (gd.sourceOfData == "fg") {
+    if (ed.memorialId) {
+      templateData.push("FindAGrave " + ed.memorialId);
+    }
+  }
+
+  if (templateData.length > 0) {
+    const text = "Search for WikiTree profiles that may be referencing this " + typeString + " (BETA)";
+    addMenuItem(menu, text, function (element) {
+      wikitreePlusSearchForTemplateData(templateData);
+    });
+  }
+  if (templateLinkedData.length > 0) {
+    const text =
+      "Search for WikiTtree profiles that may be referencing this " + typeString + " or related records (BETA)";
+    addMenuItem(menu, text, function (element) {
+      wikitreePlusSearchForTemplateData(templateData, templateLinkedData);
+    });
+  }
+}
+
+function addWikitreeSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters", function (element) {
     setupWikitreeSearchWithParametersSubMenu(data, backFunction);
   });
@@ -163,6 +234,8 @@ async function setupWikitreeSearchSubMenu(data, backFunction) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
+  addWikitreeSearchUsingWtPlusMenuItem(menu, data, backToHereFunction);
+  addWikitreeSearchForUsageMenuItem(menu, data, backToHereFunction);
   addWikitreeSearchWithParametersMenuItem(menu, data, backToHereFunction);
 
   endMainMenu(menu);
