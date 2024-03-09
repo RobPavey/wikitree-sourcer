@@ -22,12 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GeneralizedData, GD, NameObj } from "../../../base/core/generalize_data_utils.mjs";
+import { GeneralizedData, GD, NameObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 function cleanFullName(name) {
+  if (!name) {
+    return name;
+  }
+
   // in irishg there are sometimes name like: "ISABELLA MC DONALD"
   let modifiedName = name.replace(/MC (\w)/, "MC$1");
 
@@ -248,15 +252,23 @@ function generalizeData(input) {
     let name1 = cleanFullName(ed.recordData["Party 1 Name"]);
     let name2 = cleanFullName(ed.recordData["Party 2 Name"]);
 
+    // These are only available when the imagae is not available
+    let age1 = ed.recordData["Party 1 Age"];
+    let age2 = ed.recordData["Party 2 Age"];
+
     // who should be considered the primary person?
     if (isName2Primary(ed, name1, name2)) {
       let temp = name1;
       name1 = name2;
       name2 = temp;
+      temp = age1;
+      age1 = age2;
+      age2 = temp;
     }
 
     if (name1) {
       result.setFullName(name1);
+      result.setAgeAtEvent(age1);
     }
 
     if (name2) {
@@ -269,6 +281,9 @@ function generalizeData(input) {
       let eventPlace = result.inferEventPlace();
       if (eventPlace) {
         spouse["marriagePlace"] = eventPlace;
+      }
+      if (age2) {
+        spouse.age = age2;
       }
 
       result.spouses = [spouse];

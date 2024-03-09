@@ -65,6 +65,7 @@ function extractData(document, url) {
     }
 
     if (isSimpleTable) {
+      let partyPrefix = "";
       for (let row of dataRows) {
         let labelNode = row.querySelector("th");
         let valueNodes = row.querySelectorAll("td");
@@ -76,6 +77,9 @@ function extractData(document, url) {
             if (label && value) {
               label = label.replace(/\s+/g, " ");
               value = value.replace(/\s+/g, " ");
+              if (partyPrefix && valueNodes.length == 1) {
+                label = partyPrefix + " " + label;
+              }
               result.recordData[label] = value;
 
               if (valueNodes.length == 2) {
@@ -99,6 +103,14 @@ function extractData(document, url) {
                 result.imageHref = link;
               }
             }
+          }
+        } else if (labelNode) {
+          let label = labelNode.textContent;
+          if (label && label.startsWith("Party") && row.classList.contains("even")) {
+            // this means that the following rows apply to party 1 or 2
+            partyPrefix = label;
+          } else {
+            partyPrefix = "";
           }
         }
       }

@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "eventPlace": {
+    "country": "Ireland"
+  },
+  "eventDate": {
+    "dateString": "31 October 1901"
+  },
+  "name": {
+    "name": "Thomas Goodwin"
+  },
+  "ageAtEvent": "21",
+  "spouses": [
+    {
+      "name": {
+        "name": "Mary Reidy"
+      },
+      "marriageDate": {
+        "dateString": "31 October 1901"
+      },
+      "marriagePlace": "Ireland",
+      "age": "20"
+    }
+  ],
+  "collectionData": {
+    "id": "civil-marriages",
+    "registrationId": "1669285"
+  },
+  "hasValidData": true
+}

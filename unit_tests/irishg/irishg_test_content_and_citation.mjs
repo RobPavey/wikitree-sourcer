@@ -103,6 +103,10 @@ const regressionData = [
     url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/4a18be3262887?b=https%3A%2F%2Fcivilrecords.irishgenealogy.ie%2Fchurchrecords%2Fcivil-perform-search.jsp%3Fnamefm%3D%26namel%3DMackey%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch",
   },
   {
+    caseName: "marriage_1901_thomas_goodwin_mary_reidy",
+    url: "https://civilrecords.irishgenealogy.ie/churchrecords/transcript-civil/66f26d1669285?b=https%3A%2F%2Fcivilrecords.irishgenealogy.ie%2Fchurchrecords%2Fdetails-civil%2F66f26d1669285",
+  },
+  {
     caseName: "marriage_1933_lena_oconnell_john_oconnor",
     url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/21f0721197204?b=https%3A%2F%2Fcivilrecords.irishgenealogy.ie%2Fchurchrecords%2Fcivil-perform-search.jsp%3Fnamefm%3DJohn%26namel%3DO%2527Connor%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch",
   },
