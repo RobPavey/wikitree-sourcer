@@ -809,7 +809,8 @@ const narrativeCensusOptionsGroup = {
           text: "<census/date part>, <name/pronoun>[ <agePart>][, <occupation>,] <was part> [<household part>] <in/on/at> <place>",
         },
       ],
-      defaultValue: "noComma",
+      defaultValue: "comma",
+      unitTestValue: "noComma",
     },
     {
       optionName: "censusDatePartFormat",
