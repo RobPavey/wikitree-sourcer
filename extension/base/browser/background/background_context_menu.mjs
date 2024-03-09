@@ -331,10 +331,19 @@ function openFamilySearchTemplate(tab, text) {
     }
   } else if (text.includes("FamilySearch Image")) {
     // {{FamilySearch Image|33S7-9BSH-9W9B}}
-    let id = text.replace(/\{\{FamilySearch Image\|([^}|]+)[^}]*\}\}/, "$1");
-    if (id && id != text) {
-      // https://www.familysearch.org/ark:/61903/3:1:33S7-9BSH-9W9B
-      link = "https://www.familysearch.org/ark:/61903/3:1:" + id;
+    if (/\{\{FamilySearch Image\|[^}|]+[^}|]*\}\}/.test(text)) {
+      let id = text.replace(/\{\{FamilySearch Image\|([^}|]+)[^}|]*\}\}/, "$1");
+      if (id && id != text) {
+        // https://www.familysearch.org/ark:/61903/3:1:33S7-9BSH-9W9B
+        link = "https://www.familysearch.org/ark:/61903/3:1:" + id;
+      }
+    } else if (/\{\{FamilySearch Image\|[^}|]+\|[^}|]+\}\}/.test(text)) {
+      let id = text.replace(/\{\{FamilySearch Image\|([^}|]+)[^}]*\}\}/, "$1");
+      let param3 = text.replace(/\{\{FamilySearch Image\|[^}|]+\|([^}]+)\}\}/, "$1");
+      if (id && id != text && param3 && param3 != text) {
+        // https://www.familysearch.org/ark:/61903/3:1:33S7-9BSH-9W9B
+        link = "https://www.familysearch.org/ark:/61903/3:" + param3 + ":" + id;
+      }
     }
   }
 

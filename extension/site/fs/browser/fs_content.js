@@ -306,7 +306,7 @@ function shouldUseFetch() {
   } else if (location.href.startsWith("https://www.familysearch.org/tree/person/sources/")) {
     useFetch = true;
   } else if (
-    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w\w\w\w\-\w\w\w&.*$/.test(
+    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:\d\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w\w\w\w\-\w\w\w&.*$/.test(
       location.href
     )
   ) {
@@ -314,7 +314,7 @@ function shouldUseFetch() {
     // https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9MR-NFZL?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVTHY-ZB3&action=view&groupId=TH-1971-27766-10578-99
     useFetch = true;
   } else if (
-    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w+\-\w+.*$/.test(
+    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:\d\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w+\-\w+.*$/.test(
       location.href
     )
   ) {
