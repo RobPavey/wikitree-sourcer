@@ -56,7 +56,7 @@ async function getExtractedDataFromRecordUrl(recordUrl) {
 
   let cachedExtractedData = await getCachedAsyncResult(cacheTag, recordUrl);
   if (cachedExtractedData) {
-    let result = { success: true, extractedData: cachedExtractedData };
+    let result = { success: true, recordUrl: recordUrl, extractedData: cachedExtractedData };
     //console.log("getExtractedDataFromRecordUrl: found cached result:");
     //console.log(result);
     return result;

@@ -27,7 +27,7 @@ import { extractRecord } from "../core/ancestry_extract_data.mjs";
 import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
 
 import { doRequestsInParallel } from "/base/browser/popup/popup_parallel_requests.mjs";
-import { getCachedAsyncResult } from "../../../base/core/async_result_cache.mjs";
+import { getCachedAsyncResult, registerAsyncCacheTag } from "../../../base/core/async_result_cache.mjs";
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
 import { markHouseholdMembersToIncludeInTable } from "/base/core/table_builder.mjs";
@@ -63,10 +63,16 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     }
   }
 
+  const cacheTag = "AncestryFetchRecord";
+  const oneDayInMs = 24 * 1000 * 60 * 60;
+  registerAsyncCacheTag(cacheTag, 100, oneDayInMs);
+
   let requests = [];
   let cachedResponses = [];
   for (let record of linkedRecords) {
-    let cachedResult = await getCachedAsyncResult("AncestryFetchRecord", record.link);
+    //console.log("getDataForLinkedRecords: checking for: " + record.link);
+
+    let cachedResult = await getCachedAsyncResult(cacheTag, record.link);
 
     if (cachedResult) {
       //console.log("getDataForLinkedRecords: cached result found for: " + record.link);
@@ -86,6 +92,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
       requests.push(request);
     }
   }
+  //console.log("getDataForLinkedRecords: cachedResponses: ");
+  //console.log(cachedResponses);
 
   async function requestFunction(input, updateStatusFunction) {
     updateStatusFunction("fetching...");
@@ -93,6 +101,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
     let fetchResult = await getExtractedDataFromRecordUrl(input.link);
 
     if (fetchResult.success) {
+      //console.log("requestFunction: fetchResult is: ");
+      //console.log(fetchResult);
       let extractedData = fetchResult.extractedData;
       newResponse.link = fetchResult.recordUrl;
       newResponse.extractedData = extractedData;
@@ -174,6 +184,8 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
         if (requestResponse) {
           linkedRecord.extractedData = requestResponse.extractedData;
           linkedRecord.htmlText = requestResponse.htmlText;
+        } else {
+          console.log("requestResponse not found for link: " + link);
         }
       }
 

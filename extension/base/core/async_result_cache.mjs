@@ -158,6 +158,7 @@ async function getCachedAsyncResult(cacheTag, key) {
   let cache = await getCache(cacheTag);
   //console.log(cache);
   if (!cache) {
+    console.log("getCachedAsyncResult, cache not found for cacheTag");
     return undefined;
   }
 
