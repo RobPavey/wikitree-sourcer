@@ -977,6 +977,10 @@ function extractData(document, url) {
       } else if (url.startsWith("https://www.familysearch.org/ark:/61903/3:1:")) {
         // e.g.: https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS4F-NQ21?view=explore&groupId=M9DG-2LY
         extractDataForImageInNewViewer(document, result);
+      } else if (url.startsWith("https://www.familysearch.org/ark:/61903/3:2:")) {
+        // e.g. https://www.familysearch.org/ark:/61903/3:2:77TV-BWKC?view=fullText&keywords=Johnson,William%20Johnson,William
+        // Not sure what the :2 means but treat as image for now
+        extractDataForImageInNewViewer(document, result);
       } else {
         console.log("page type is unknown but has a #main element");
         result.pageType = "unknown";
