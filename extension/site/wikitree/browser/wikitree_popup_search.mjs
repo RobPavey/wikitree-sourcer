@@ -208,7 +208,7 @@ function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
   }
   if (templateLinkedData.length > 0) {
     const text =
-      "Search for WikiTtree profiles that may be referencing this " + typeString + " or related records (BETA)";
+      "Search for WikiTree profiles that may be referencing this " + typeString + " or related records (BETA)";
     addMenuItem(menu, text, function (element) {
       wikitreePlusSearchForTemplateData(templateData, templateLinkedData);
     });
