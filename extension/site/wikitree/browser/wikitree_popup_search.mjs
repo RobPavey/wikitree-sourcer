@@ -175,15 +175,14 @@ function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
   // Is that overkill?
   if (gd.sourceOfData == "ancestry") {
     if (ed.ancestryTemplate) {
-      let templateTerms = ed.ancestryTemplate.replace(/[{}|]/g, " ").trim();
-      templateData.push(templateTerms);
+      templateData.push(ed.ancestryTemplate);
     }
 
     if (ed.titleCollection && ed.titleCollection.includes("Find a Grave")) {
       if (ed.imageRecordId & ed.imageRecordId.includes("/memorial/")) {
         let memorialId = ed.imageRecordId.replace(/^.*\/memorial\/([^\/]+)\/.*$/, "$1");
         if (memorialId && memorialId != ed.imageRecordId) {
-          templateLinkedData.push("FindAGrave " + memorialId);
+          templateLinkedData.push("{{FindAGrave|" + memorialId + "}}");
         }
       }
     }
@@ -191,13 +190,13 @@ function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
     if (ed.household && ed.household.members) {
       for (let member of ed.household.members) {
         if (member.dbId && member.recordId) {
-          templateLinkedData.push("Ancestry Record " + member.dbId + " " + member.recordId);
+          templateLinkedData.push("{{Ancestry Record|" + member.dbId + "|" + member.recordId + "}}");
         }
       }
     }
   } else if (gd.sourceOfData == "fg") {
     if (ed.memorialId) {
-      templateData.push("FindAGrave " + ed.memorialId);
+      templateData.push("{{FindAGrave|" + ed.memorialId + "}}");
     }
   }
 
