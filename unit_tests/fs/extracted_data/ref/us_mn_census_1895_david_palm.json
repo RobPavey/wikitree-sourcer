@@ -60,7 +60,8 @@
         "birthDateOriginal": "1855",
         "birthDate": "1855",
         "birthPlaceOriginal": "Sweden",
-        "age": "40y"
+        "age": "40y",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-C5B"
       },
       {
         "fullName": "Inga Palm",
@@ -70,7 +71,8 @@
         "birthDateOriginal": "1855",
         "birthDate": "1855",
         "birthPlaceOriginal": "Sweden",
-        "age": "40y"
+        "age": "40y",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-C51"
       },
       {
         "fullName": "Mary Palm",
@@ -80,7 +82,8 @@
         "birthDateOriginal": "1879",
         "birthDate": "1879",
         "birthPlaceOriginal": "Sweden",
-        "age": "16y"
+        "age": "16y",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-CRM"
       },
       {
         "fullName": "Willie Palm",
@@ -90,7 +93,8 @@
         "birthDateOriginal": "1883",
         "birthDate": "1883",
         "birthPlaceOriginal": "Minnesota",
-        "age": "12y"
+        "age": "12y",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-CR9"
       },
       {
         "fullName": "Sam Palm",
@@ -100,7 +104,8 @@
         "birthDateOriginal": "1885",
         "birthDate": "1885",
         "birthPlaceOriginal": "Minnesota",
-        "age": "10y"
+        "age": "10y",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-CRS"
       },
       {
         "isSelected": true,
@@ -111,7 +116,8 @@
         "birthDateOriginal": "1887",
         "birthDate": "1887",
         "birthPlaceOriginal": "Minnesota",
-        "age": "8y"
+        "age": "8y",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-CR3"
       },
       {
         "fullName": "Andrew Palm",
@@ -121,7 +127,8 @@
         "birthDateOriginal": "1890",
         "birthDate": "1890",
         "birthPlaceOriginal": "Minnesota",
-        "age": "5y"
+        "age": "5y",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-CRQ"
       },
       {
         "fullName": "Peter Palm",
@@ -131,7 +138,8 @@
         "birthDateOriginal": "1892",
         "birthDate": "1892",
         "birthPlaceOriginal": "Minnesota",
-        "age": "3y"
+        "age": "3y",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-CR7"
       },
       {
         "fullName": "Louis Palm",
@@ -141,7 +149,8 @@
         "birthDateOriginal": "1894",
         "birthDate": "1894",
         "birthPlaceOriginal": "Minnesota",
-        "age": "1y"
+        "age": "1y",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MQ6G-CRW"
       }
     ]
   },

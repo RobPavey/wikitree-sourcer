@@ -32,11 +32,13 @@
   "father": {
     "fullName": "Thomas Wyatt",
     "givenName": "Thomas",
-    "surname": "Wyatt"
+    "surname": "Wyatt",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:F3VH-9VK"
   },
   "mother": {
     "fullName": "Sarah",
-    "givenName": "Sarah"
+    "givenName": "Sarah",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:F3VH-9V2"
   },
   "referenceData": {
     "digitalFilmNumber": "004018913",

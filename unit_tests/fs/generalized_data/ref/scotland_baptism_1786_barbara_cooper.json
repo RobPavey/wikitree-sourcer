@@ -35,6 +35,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|XTTZ-SQT}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|XTTZ-SQY}}",
+    "{{FamilySearch Record|XTTZ-SQB}}"
+  ],
   "collectionData": {
     "id": "1771030"
   },

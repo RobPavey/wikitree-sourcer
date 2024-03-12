@@ -20,6 +20,9 @@
     "placeString": "Lubbock, Texas, United States"
   },
   "ageAtEvent": "27",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VYX9-KBH}}"
+  ],
   "collectionData": {
     "id": "2038378"
   },

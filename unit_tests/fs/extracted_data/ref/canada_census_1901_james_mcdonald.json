@@ -62,7 +62,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Married",
         "age": "45",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SX6"
       },
       {
         "fullName": "Catharine J Mcdonald",
@@ -75,7 +76,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Married",
         "age": "39",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SXX"
       },
       {
         "fullName": "Hattie Mcdonald",
@@ -88,7 +90,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Single",
         "age": "23",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SXF"
       },
       {
         "fullName": "Sarah M Mcdonald",
@@ -101,7 +104,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Single",
         "age": "20",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SXN"
       },
       {
         "fullName": "Ethel M Mcdonald",
@@ -114,7 +118,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Single",
         "age": "18",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SXJ"
       },
       {
         "fullName": "Violet E Mcdonald",
@@ -127,7 +132,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Single",
         "age": "15",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SXV"
       },
       {
         "fullName": "William A Mcdonald",
@@ -140,7 +146,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Single",
         "age": "14",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SXK"
       },
       {
         "fullName": "James L Mcdonald",
@@ -153,7 +160,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Single",
         "age": "10",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SX2"
       },
       {
         "fullName": "Raymond C Mcdonald",
@@ -166,7 +174,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Single",
         "age": "7",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SXL"
       },
       {
         "fullName": "Ross M Mcdonald",
@@ -179,7 +188,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Single",
         "age": "5",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SXG"
       },
       {
         "fullName": "Irvine C Mcdonald",
@@ -192,7 +202,8 @@
         "birthPlace": "Ontario",
         "maritalStatus": "Single",
         "age": "1",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:KHGF-SXP"
       }
     ]
   },

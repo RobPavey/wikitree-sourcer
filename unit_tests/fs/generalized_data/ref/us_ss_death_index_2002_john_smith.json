@@ -20,6 +20,9 @@
     "placeString": "Newton, Georgia"
   },
   "ageAtDeath": "72",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|J17L-RJH}}"
+  ],
   "collectionData": {
     "id": "1202535"
   },

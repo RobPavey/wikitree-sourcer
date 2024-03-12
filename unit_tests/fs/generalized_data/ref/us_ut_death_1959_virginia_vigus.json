@@ -49,6 +49,14 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QKDV-CZRZ}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-C9T2-WSNS-B}}",
+    "{{FamilySearch Record|QKDV-CZR8}}",
+    "{{FamilySearch Record|QKDV-CZRD}}"
+  ],
   "collectionData": {
     "id": "1747615"
   },

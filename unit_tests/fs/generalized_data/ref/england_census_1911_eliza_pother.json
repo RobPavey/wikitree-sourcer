@@ -93,6 +93,16 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|X75L-1V8}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|X75L-1VZ}}",
+    "{{FamilySearch Record|X75L-1V8}}",
+    "{{FamilySearch Record|X75L-1VD}}",
+    "{{FamilySearch Record|X75L-1V6}}",
+    "{{FamilySearch Record|X75L-1VX}}"
+  ],
   "collectionData": {
     "id": "1921547",
     "page": "1",

@@ -106,6 +106,18 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|6XVR-FRK3}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QHN-GQH7-T6ZP}}",
+    "{{FamilySearch Record|6XVR-FRK4}}",
+    "{{FamilySearch Record|6XVR-FRKQ}}",
+    "{{FamilySearch Record|6XVR-FRK3}}",
+    "{{FamilySearch Record|6XVR-FRK7}}",
+    "{{FamilySearch Record|6XVR-FRKW}}",
+    "{{FamilySearch Record|6XVR-FRKS}}"
+  ],
   "collectionData": {
     "id": "4464515",
     "page": "94"

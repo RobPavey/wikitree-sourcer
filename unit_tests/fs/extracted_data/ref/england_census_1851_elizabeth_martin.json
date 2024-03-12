@@ -68,7 +68,8 @@
         "maritalStatus": "Married",
         "occupation": "Joiner",
         "age": "999",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG5F-427"
       },
       {
         "isSelected": true,
@@ -82,7 +83,8 @@
         "birthPlace": "Liverpool, Lancashire",
         "maritalStatus": "Married",
         "age": "38",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG5F-42W"
       },
       {
         "fullName": "Jos Martin",
@@ -95,7 +97,8 @@
         "birthPlace": "Bolton, Lancashire",
         "maritalStatus": "Unmarried",
         "age": "12",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG5F-424"
       },
       {
         "fullName": "Matildia Martin",
@@ -108,7 +111,8 @@
         "birthPlace": "Liverpool, Lancashire",
         "maritalStatus": "Unmarried",
         "age": "10",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG5F-42H"
       },
       {
         "fullName": "Elizabeth Martin",
@@ -121,7 +125,8 @@
         "birthPlace": "Liverpool, Lancashire",
         "maritalStatus": "Unmarried",
         "age": "8",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG5F-42C"
       },
       {
         "fullName": "John Martin",
@@ -134,7 +139,8 @@
         "birthPlace": "Liverpool, Lancashire",
         "maritalStatus": "Unmarried",
         "age": "6",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG5F-42Z"
       },
       {
         "fullName": "Mary Elen Newton",
@@ -147,7 +153,8 @@
         "birthPlace": "Liverpool, Lancashire",
         "maritalStatus": "Unmarried",
         "age": "3",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG5F-428"
       },
       {
         "fullName": "Isaac Rinder Martin",
@@ -160,7 +167,8 @@
         "birthPlace": "Liverpool, Lancashire",
         "maritalStatus": "Unmarried",
         "age": "1",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG5F-42D"
       }
     ]
   },

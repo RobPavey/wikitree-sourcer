@@ -30,6 +30,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|J33C-SH7}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|J33C-SHW}}",
+    "{{FamilySearch Record|J33C-SH4}}"
+  ],
   "collectionData": {
     "id": "1473014"
   },

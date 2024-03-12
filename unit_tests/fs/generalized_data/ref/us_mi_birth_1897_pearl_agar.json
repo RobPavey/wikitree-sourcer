@@ -36,6 +36,14 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|NQXX-QLZ}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|S3HT-6737-3CW}}",
+    "{{FamilySearch Record|NQXX-QL8}}",
+    "{{FamilySearch Record|NQXX-QLD}}"
+  ],
   "collectionData": {
     "id": "1459684"
   },

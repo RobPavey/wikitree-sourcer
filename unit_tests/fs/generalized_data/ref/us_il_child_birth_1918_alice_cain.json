@@ -32,6 +32,12 @@
     "placeString": "Chicago, Cook, Illinois, United States"
   },
   "ageAtEvent": "22",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|N7S6-GJ7}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|N7S6-GJ3}}"
+  ],
   "collectionData": {
     "id": "1462519"
   },

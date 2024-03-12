@@ -70,7 +70,8 @@
         "birthYear": "1897",
         "birthPlaceOriginal": "Texas",
         "age": "43",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K438-8WS"
       },
       {
         "fullName": "Georgia Huffstetler",
@@ -83,7 +84,8 @@
         "birthYear": "1898",
         "birthPlaceOriginal": "Texas",
         "age": "42",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K438-8W3"
       },
       {
         "fullName": "Zola Huffstetler",
@@ -96,7 +98,8 @@
         "birthYear": "1924",
         "birthPlaceOriginal": "Texas",
         "age": "16",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K438-8WQ"
       },
       {
         "fullName": "Quincy Huffstetler",
@@ -109,7 +112,8 @@
         "birthYear": "1926",
         "birthPlaceOriginal": "Texas",
         "age": "14",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K438-8W7"
       },
       {
         "fullName": "Bettie Joe Huffstetler",
@@ -122,7 +126,8 @@
         "birthYear": "1934",
         "birthPlaceOriginal": "Texas",
         "age": "6",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K438-8WW"
       },
       {
         "fullName": "Billie Jean Huffstetler",
@@ -135,7 +140,8 @@
         "birthYear": "1934",
         "birthPlaceOriginal": "Texas",
         "age": "6",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K438-8W4"
       },
       {
         "fullName": "Garland Davis",
@@ -148,7 +154,8 @@
         "birthYear": "1921",
         "birthPlaceOriginal": "Texas",
         "age": "19",
-        "relationship": "Stepson"
+        "relationship": "Stepson",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K438-8WH"
       },
       {
         "fullName": "Reed Davis",
@@ -161,7 +168,8 @@
         "birthYear": "1930",
         "birthPlaceOriginal": "Texas",
         "age": "10",
-        "relationship": "Stepson"
+        "relationship": "Stepson",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K438-8WC"
       }
     ]
   },

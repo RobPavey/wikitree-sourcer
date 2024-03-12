@@ -119,6 +119,20 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|SG5F-42W}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-CSQ7-XSNM-K}}",
+    "{{FamilySearch Record|SG5F-427}}",
+    "{{FamilySearch Record|SG5F-42W}}",
+    "{{FamilySearch Record|SG5F-424}}",
+    "{{FamilySearch Record|SG5F-42H}}",
+    "{{FamilySearch Record|SG5F-42C}}",
+    "{{FamilySearch Record|SG5F-42Z}}",
+    "{{FamilySearch Record|SG5F-428}}",
+    "{{FamilySearch Record|SG5F-42D}}"
+  ],
   "collectionData": {
     "id": "2563939",
     "page": "53",

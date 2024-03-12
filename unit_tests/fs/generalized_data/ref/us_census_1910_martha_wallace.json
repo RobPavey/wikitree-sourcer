@@ -141,6 +141,21 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|MKW4-58H}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|33S7-9RV7-X7D}}",
+    "{{FamilySearch Record|MKW4-587}}",
+    "{{FamilySearch Record|MKW4-58W}}",
+    "{{FamilySearch Record|MKW4-584}}",
+    "{{FamilySearch Record|MKW4-58H}}",
+    "{{FamilySearch Record|MKW4-58C}}",
+    "{{FamilySearch Record|MKW4-58Z}}",
+    "{{FamilySearch Record|MKW4-588}}",
+    "{{FamilySearch Record|MKW4-58D}}",
+    "{{FamilySearch Record|MKW4-586}}"
+  ],
   "collectionData": {
     "id": "1727033"
   },

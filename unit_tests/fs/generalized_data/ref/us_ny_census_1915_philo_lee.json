@@ -99,6 +99,19 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|K9V2-YCS}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|K9V2-YHT}}",
+    "{{FamilySearch Record|K9V2-YHY}}",
+    "{{FamilySearch Record|K9V2-YHB}}",
+    "{{FamilySearch Record|K9V2-YH1}}",
+    "{{FamilySearch Record|K9V2-YCM}}",
+    "{{FamilySearch Record|K9V2-YC9}}",
+    "{{FamilySearch Record|K9V2-YCS}}",
+    "{{FamilySearch Record|K9V2-YC3}}"
+  ],
   "collectionData": {
     "id": "1937454",
     "page": "01"

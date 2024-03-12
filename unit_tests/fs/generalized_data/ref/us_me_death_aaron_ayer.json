@@ -20,6 +20,9 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|F486-K6R}}"
+  ],
   "collectionData": {
     "id": "1674914"
   },

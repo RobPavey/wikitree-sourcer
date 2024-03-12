@@ -20,12 +20,14 @@
   "father": {
     "fullName": "William Orchard",
     "givenName": "William",
-    "surname": "Orchard"
+    "surname": "Orchard",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:F4P5-QXW"
   },
   "mother": {
     "fullName": "Ann Orchard",
     "givenName": "Ann",
-    "surname": "Orchard"
+    "surname": "Orchard",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:F4P5-QX4"
   },
   "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Elk, Sanilac, Michigan\", \"EVENT_DATE_ALT_ORIG\": \"16 OCT 1885\", \"PR_SEX_CODE_ALT_ORIG\": \"F\"}",
   "referenceData": {

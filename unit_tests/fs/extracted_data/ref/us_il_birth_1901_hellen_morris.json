@@ -26,12 +26,14 @@
   "mother": {
     "fullName": "Helen Swift",
     "givenName": "Helen",
-    "surname": "Swift"
+    "surname": "Swift",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YHS"
   },
   "father": {
     "fullName": "Edward Morris",
     "givenName": "Edward",
-    "surname": "Morris"
+    "surname": "Morris",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YH9"
   },
   "extData": "{\"FS_COLLECTION_ID\":\"1462519\",\"FS_FOLDER\":\"100713512\"}",
   "referenceData": {

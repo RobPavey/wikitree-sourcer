@@ -52,6 +52,14 @@
     }
   ],
   "race": "White",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|X6KQ-53B}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|S3HY-63B7-YCY}}",
+    "{{FamilySearch Record|X6KQ-531}}",
+    "{{FamilySearch Record|X6KQ-5QM}}"
+  ],
   "collectionData": {
     "id": "1307272"
   },

@@ -31,6 +31,9 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|NN5C-1XR}}"
+  ],
   "collectionData": {
     "id": "1473015"
   },

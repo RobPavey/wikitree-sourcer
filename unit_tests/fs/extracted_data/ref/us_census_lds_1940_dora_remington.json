@@ -43,7 +43,8 @@
         "birthDate": "1900",
         "birthYear": "1900",
         "birthPlaceOriginal": "Tooele",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XN2"
       },
       {
         "fullName": "Irene E Remington",
@@ -54,7 +55,8 @@
         "birthDate": "1902",
         "birthYear": "1902",
         "birthPlaceOriginal": "Salt Lake",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2X2M"
       },
       {
         "fullName": "Irene Meyer Remington Mitchell",
@@ -65,7 +67,8 @@
         "birthDate": "1921",
         "birthYear": "1921",
         "birthPlaceOriginal": "Salt Lake",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XPZ"
       },
       {
         "fullName": "Bettie Lavon Remington",
@@ -76,7 +79,8 @@
         "birthDate": "1928",
         "birthYear": "1928",
         "birthPlaceOriginal": "Midvale",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2XT2"
       },
       {
         "fullName": "Ralph Lester Remington",
@@ -87,7 +91,8 @@
         "birthDate": "1931",
         "birthYear": "1931",
         "birthPlaceOriginal": "Midvale",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FMM"
       },
       {
         "isSelected": true,
@@ -99,7 +104,8 @@
         "birthDate": "1936",
         "birthYear": "1936",
         "birthPlaceOriginal": "Murray",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z"
       },
       {
         "fullName": "Elizabeth Remington",
@@ -110,7 +116,8 @@
         "birthDate": "1857",
         "birthYear": "1857",
         "birthPlaceOriginal": "Tooele",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2FW2"
       }
     ]
   },

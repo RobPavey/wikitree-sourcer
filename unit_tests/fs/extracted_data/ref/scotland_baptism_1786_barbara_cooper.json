@@ -24,12 +24,14 @@
   "father": {
     "fullName": "William Cooper",
     "givenName": "William",
-    "surname": "Cooper"
+    "surname": "Cooper",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQY"
   },
   "mother": {
     "fullName": "Barbara Cooper",
     "givenName": "Barbara",
-    "surname": "Cooper"
+    "surname": "Cooper",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQB"
   },
   "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \", LIBERTON, MIDLOTHIAN, SCOTLAND\", \"EVENT_DATE_ALT_ORIG\": \"06 Apr 1786\", \"PR_BIR_DATE_ALT_ORIG\": \"14 Mar 1786\", \"PR_SEX_CODE_ALT_ORIG\": \"F\", \"FS_FILM_NBR_ALT_ORIG\": \"1067783\"}",
   "fsCollectionId": "1771030",

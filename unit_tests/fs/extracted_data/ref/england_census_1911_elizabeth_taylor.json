@@ -71,7 +71,8 @@
         "birthPlaceOriginal": "Luxborough, Somersetshire",
         "birthPlace": "Luxborough, Somersetshire",
         "age": "70",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5P"
       },
       {
         "isSelected": true,
@@ -85,7 +86,8 @@
         "birthPlaceOriginal": "Withycombe, Somersetshire",
         "birthPlace": "Withycombe, Somersetshire",
         "age": "69",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:X7RW-H55"
       },
       {
         "fullName": "Edward Taylor",
@@ -97,7 +99,8 @@
         "birthYear": "1905",
         "birthPlaceOriginal": "Williton, Somersetshire",
         "birthPlace": "Williton, Somersetshire",
-        "age": "6"
+        "age": "6",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:X7RW-H5R"
       }
     ]
   },

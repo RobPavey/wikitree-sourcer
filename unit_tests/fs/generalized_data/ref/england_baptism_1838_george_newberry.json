@@ -24,6 +24,12 @@
   "eventPlace": {
     "placeString": "Carisbrooke, Hampshire, England, United Kingdom"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|J9VK-1JB}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|J9VK-1JY}}"
+  ],
   "collectionData": {
     "id": "1473014"
   },

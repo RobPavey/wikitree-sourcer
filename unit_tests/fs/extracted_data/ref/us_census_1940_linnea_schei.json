@@ -64,7 +64,8 @@
         "birthYear": "1905",
         "birthPlaceOriginal": "Michigan",
         "relationship": "Head",
-        "age": "35"
+        "age": "35",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K42R-1PZ"
       },
       {
         "isSelected": true,
@@ -78,7 +79,8 @@
         "birthYear": "1908",
         "birthPlaceOriginal": "Sweden",
         "relationship": "Wife",
-        "age": "32"
+        "age": "32",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K42T-S68"
       },
       {
         "fullName": "Carol Jean Schei",
@@ -91,7 +93,8 @@
         "birthYear": "1927",
         "birthPlaceOriginal": "Michigan",
         "relationship": "Daughter",
-        "age": "13"
+        "age": "13",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K42T-S6D"
       },
       {
         "fullName": "Clarice Ann Schei",
@@ -104,7 +107,8 @@
         "birthYear": "1932",
         "birthPlaceOriginal": "Michigan",
         "relationship": "Daughter",
-        "age": "8"
+        "age": "8",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K42T-S66"
       }
     ]
   },

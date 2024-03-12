@@ -16,11 +16,13 @@
   "eventPlaceL2": "Kent",
   "father": {
     "fullName": "Frank",
-    "givenName": "Frank"
+    "givenName": "Frank",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRD"
   },
   "mother": {
     "fullName": "Emma",
-    "givenName": "Emma"
+    "givenName": "Emma",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKTS"
   },
   "externalImageId": "GBPRS/CANT/B/96288131",
   "fsCollectionId": "2384987",

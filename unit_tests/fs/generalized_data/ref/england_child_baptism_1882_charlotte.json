@@ -23,6 +23,12 @@
   "eventPlace": {
     "placeString": "Enfield, Middlesex, England, United Kingdom"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|N1N6-6JS}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|N1N6-6JM}}"
+  ],
   "collectionData": {
     "id": "1473014"
   },

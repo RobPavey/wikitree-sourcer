@@ -28,6 +28,13 @@
     "placeString": "Cook, Illinois, United States"
   },
   "ageAtEvent": "41",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|N77T-TLS}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|S3HT-61DS-5H7}}",
+    "{{FamilySearch Record|N77T-TL9}}"
+  ],
   "collectionData": {
     "id": "1462519"
   },

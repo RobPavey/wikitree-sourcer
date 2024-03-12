@@ -67,6 +67,14 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VTMY-N3T}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QS7-L9MT-36RW}}",
+    "{{FamilySearch Record|VTMY-N3R}}",
+    "{{FamilySearch Record|VTMY-N3T}}"
+  ],
   "collectionData": {
     "id": "2000219"
   },

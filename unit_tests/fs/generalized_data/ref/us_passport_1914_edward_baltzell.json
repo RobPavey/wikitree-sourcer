@@ -20,6 +20,12 @@
     "yearString": "1914"
   },
   "ageAtEvent": "29",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QVJP-4T6V}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QSQ-G9X7-C97G-T}}"
+  ],
   "collectionData": {
     "id": "2185145"
   },

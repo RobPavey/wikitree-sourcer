@@ -23,6 +23,13 @@
   "eventPlace": {
     "placeString": "Rochester, Olmsted, Minnesota, United States"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|HX2Y-P1PZ}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|S3HT-67Q9-R1Z}}",
+    "{{FamilySearch Record|HX2Y-P16Z}}"
+  ],
   "collectionData": {
     "id": "3398461"
   },

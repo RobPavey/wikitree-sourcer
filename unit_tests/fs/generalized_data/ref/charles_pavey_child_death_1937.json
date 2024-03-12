@@ -27,6 +27,13 @@
   "eventPlace": {
     "placeString": "Anderson, Hamilton, Ohio"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|XZDY-NH9}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|33S7-9P2P-9D2F}}",
+    "{{FamilySearch Record|XZDY-NHM}}"
+  ],
   "collectionData": {
     "id": "1307272"
   },

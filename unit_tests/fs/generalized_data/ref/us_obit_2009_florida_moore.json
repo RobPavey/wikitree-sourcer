@@ -24,6 +24,13 @@
   "eventPlace": {
     "placeString": "Arkansas, United States"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QKLP-Y42H}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-CSZ8-Y9QH-J}}",
+    "{{FamilySearch Record|QKLP-Y424}}"
+  ],
   "collectionData": {
     "id": "2333694"
   },

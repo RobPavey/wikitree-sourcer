@@ -20,11 +20,13 @@
   "father": {
     "fullName": "William Curtis",
     "givenName": "William",
-    "surname": "Curtis"
+    "surname": "Curtis",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:F46D-1H3"
   },
   "mother": {
     "fullName": "Hannah",
-    "givenName": "Hannah"
+    "givenName": "Hannah",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:F46D-1HQ"
   },
   "fsCollectionId": "2061550",
   "referenceData": {

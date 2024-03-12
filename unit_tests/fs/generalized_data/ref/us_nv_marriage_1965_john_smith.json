@@ -26,6 +26,9 @@
     }
   ],
   "marriageDate": "30 Apr 1965",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VVVW-XS7}}"
+  ],
   "collectionData": {
     "id": "1949338",
     "page": "F09"

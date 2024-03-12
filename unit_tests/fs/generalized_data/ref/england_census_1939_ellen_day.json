@@ -55,6 +55,14 @@
     }
   ],
   "maritalStatus": "married",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|728V-TTT2}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|728V-TTPZ}}",
+    "{{FamilySearch Record|728V-TTT2}}",
+    "{{FamilySearch Record|72Q5-F66Z}}"
+  ],
   "collectionData": {
     "id": "2836130"
   },

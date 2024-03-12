@@ -26,6 +26,12 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|Q2R1-ZVMS}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|S3HT-XXX7-HZK}}"
+  ],
   "collectionData": {
     "id": "1726957"
   },

@@ -127,6 +127,20 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|K438-8WS}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QS7-L9MY-8D3G}}",
+    "{{FamilySearch Record|K438-8WS}}",
+    "{{FamilySearch Record|K438-8W3}}",
+    "{{FamilySearch Record|K438-8WQ}}",
+    "{{FamilySearch Record|K438-8W7}}",
+    "{{FamilySearch Record|K438-8WW}}",
+    "{{FamilySearch Record|K438-8W4}}",
+    "{{FamilySearch Record|K438-8WH}}",
+    "{{FamilySearch Record|K438-8WC}}"
+  ],
   "collectionData": {
     "id": "2000219"
   },

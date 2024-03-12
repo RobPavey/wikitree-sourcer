@@ -27,6 +27,12 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|FH24-9QT}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QSQ-G97M-59JG-T}}"
+  ],
   "collectionData": {
     "id": "2061550",
     "page": "590"

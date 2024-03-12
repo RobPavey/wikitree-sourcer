@@ -93,6 +93,17 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|6XPH-GLS7}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QHN-GQHW-QD49}}",
+    "{{FamilySearch Record|6XPH-GLSQ}}",
+    "{{FamilySearch Record|6XPH-GLS7}}",
+    "{{FamilySearch Record|6XPZ-SRQ1}}",
+    "{{FamilySearch Record|6XPZ-SR7M}}",
+    "{{FamilySearch Record|6XPZ-SR79}}"
+  ],
   "collectionData": {
     "id": "4464515",
     "page": "15"

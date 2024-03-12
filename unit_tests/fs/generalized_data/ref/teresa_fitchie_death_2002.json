@@ -19,6 +19,9 @@
   "eventPlace": {
     "placeString": "Canterbury, Kent, England, United Kingdom"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|CGGS-5YZM}}"
+  ],
   "collectionData": {
     "id": "3665073"
   },

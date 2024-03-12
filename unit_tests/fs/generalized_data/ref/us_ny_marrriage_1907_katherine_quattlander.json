@@ -52,6 +52,14 @@
     }
   },
   "marriageDate": "21 Feb 1907",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|Q2C2-Y95H}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-C95N-KSXZ-H}}",
+    "{{FamilySearch Record|Q2C2-Y95K}}",
+    "{{FamilySearch Record|Q2C2-Y9RS}}"
+  ],
   "collectionData": {
     "id": "2143225"
   },

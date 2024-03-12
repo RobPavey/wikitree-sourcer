@@ -18,11 +18,13 @@
   "father": {
     "fullName": "John Abberley",
     "givenName": "John",
-    "surname": "Abberley"
+    "surname": "Abberley",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QL3G-Z9ZV"
   },
   "mother": {
     "fullName": "Sarah",
-    "givenName": "Sarah"
+    "givenName": "Sarah",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QL3G-Z9ZP"
   },
   "referenceData": {
     "externalFilmNumber": "GBPRS/STAFF/BAP/874711",

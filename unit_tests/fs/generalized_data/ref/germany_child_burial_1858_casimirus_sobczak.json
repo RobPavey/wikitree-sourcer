@@ -24,6 +24,13 @@
   "eventPlace": {
     "placeString": "Posen, Preußen, Deutschland"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|6FCF-2JPT}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-CSXN-XK4F}}",
+    "{{FamilySearch Record|6FCF-2JP5}}"
+  ],
   "collectionData": {
     "id": "4116415",
     "page": "18"

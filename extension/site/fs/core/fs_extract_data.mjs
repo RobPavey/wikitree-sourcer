@@ -2569,6 +2569,12 @@ function addParentFromPerson(otherPerson, result) {
     }
   }
 
+  // get link to record for this person
+  let link = getRecordLinkFromPerson(otherPerson);
+  if (link) {
+    parent.link = link;
+  }
+
   if (otherPerson.gender) {
     if (otherPerson.gender.type.endsWith("/Male")) {
       // it is the father
@@ -2914,6 +2920,20 @@ function extractPersonDataFromFetch(document, dataObj, options) {
 
   result.pageType = "person";
   return result;
+}
+
+function getRecordLinkFromPerson(person) {
+  // get identifier (link to record for this person)
+  if (person.identifiers) {
+    let persistentIds = person.identifiers["http://gedcomx.org/Persistent"];
+    if (persistentIds) {
+      for (let id of persistentIds) {
+        if (id.includes("www.familysearch.org/ark:/")) {
+          return id;
+        }
+      }
+    }
+  }
 }
 
 function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
@@ -3277,6 +3297,12 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
             }
           }
 
+          // get link to record for this person
+          let link = getRecordLinkFromPerson(otherPerson);
+          if (link) {
+            result.relatedPersonLink = link;
+          }
+
           if (relatedPersonFactType == "Marriage") {
             let spouse = undefined;
 
@@ -3299,6 +3325,12 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
                     }
                   }
                 }
+              }
+
+              // get link to record for this person
+              let link = getRecordLinkFromPerson(spouse);
+              if (link) {
+                result.relatedPersonSpouseLink = link;
               }
             }
           }
@@ -3480,6 +3512,12 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
           SourceLineNbr: "lineNumber",
         };
         extractFields(member, person.fields, personFieldsMap);
+      }
+
+      // get link to record for this person
+      let link = getRecordLinkFromPerson(person);
+      if (link) {
+        member.link = link;
       }
 
       result.household.members.push(member);

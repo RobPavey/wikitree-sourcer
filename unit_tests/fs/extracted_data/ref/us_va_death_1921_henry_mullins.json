@@ -34,12 +34,14 @@
   "father": {
     "fullName": "Sheard Mullins",
     "givenName": "Sheard",
-    "surname": "Mullins"
+    "surname": "Mullins",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWY"
   },
   "mother": {
     "fullName": "Polly Roberts",
     "givenName": "Polly",
-    "surname": "Roberts"
+    "surname": "Roberts",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWB"
   },
   "externalImageId": "43004_162028006053_0100-00630.j2k",
   "fsCollectionId": "2377565",

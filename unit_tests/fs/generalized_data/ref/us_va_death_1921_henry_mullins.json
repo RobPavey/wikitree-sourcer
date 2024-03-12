@@ -41,6 +41,14 @@
     }
   },
   "race": "White",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QVR7-FDWT}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QS7-89GL-5LHG}}",
+    "{{FamilySearch Record|QVR7-FDWY}}",
+    "{{FamilySearch Record|QVR7-FDWB}}"
+  ],
   "collectionData": {
     "id": "2377565"
   },

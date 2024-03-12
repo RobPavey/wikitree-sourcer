@@ -60,7 +60,8 @@
         "birthYear": "1898",
         "maritalStatus": "Married",
         "occupation": "Nevedone Labr (Heavy Worker)",
-        "age": "41"
+        "age": "41",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:728V-TTPZ"
       },
       {
         "isSelected": true,
@@ -73,10 +74,12 @@
         "birthYear": "1899",
         "maritalStatus": "Married",
         "occupation": "Unpaid Domestic Duties",
-        "age": "40"
+        "age": "40",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:728V-TTT2"
       },
       {
-        "isClosed": true
+        "isClosed": true,
+        "link": "https://www.familysearch.org/ark:/61903/1:1:72Q5-F66Z"
       }
     ]
   },

@@ -26,6 +26,9 @@
     }
   ],
   "marriageDate": "22 Apr 1764",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|XTLR-ZX5}}"
+  ],
   "collectionData": {
     "id": "1771074"
   },

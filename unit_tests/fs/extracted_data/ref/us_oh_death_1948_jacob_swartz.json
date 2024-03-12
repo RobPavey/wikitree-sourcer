@@ -30,11 +30,13 @@
   "father": {
     "fullName": "Jacob Swartz",
     "givenName": "Jacob",
-    "surname": "Swartz"
+    "surname": "Swartz",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:X6KQ-531"
   },
   "mother": {
     "fullName": "Magdalena",
-    "givenName": "Magdalena"
+    "givenName": "Magdalena",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:X6KQ-5QM"
   },
   "referenceData": {
     "digitalFilmNumber": "004109115",

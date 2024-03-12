@@ -87,7 +87,8 @@
         "birthYear": "1820",
         "birthPlaceOriginal": "Lanarkshire",
         "age": "51",
-        "relationship": "HEAD"
+        "relationship": "HEAD",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBPV-BM1"
       },
       {
         "fullName": "Jane Mcc K Auld",
@@ -98,7 +99,8 @@
         "birthYear": "1823",
         "birthPlaceOriginal": "Stirlingshire",
         "age": "48",
-        "relationship": "WIFE"
+        "relationship": "WIFE",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBPV-B9M"
       },
       {
         "fullName": "Jane M K Auld",
@@ -110,7 +112,8 @@
         "birthYear": "1849",
         "birthPlaceOriginal": "Lanarkshire",
         "age": "22",
-        "relationship": "DAUGHTER"
+        "relationship": "DAUGHTER",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBPV-B99"
       },
       {
         "fullName": "Alexander K Auld",
@@ -122,7 +125,8 @@
         "birthYear": "1852",
         "birthPlaceOriginal": "Lanarkshire",
         "age": "19",
-        "relationship": "SON"
+        "relationship": "SON",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBPV-B9S"
       },
       {
         "fullName": "Grace J Auld",
@@ -133,7 +137,8 @@
         "birthYear": "1856",
         "birthPlaceOriginal": "Lanarkshire",
         "age": "15",
-        "relationship": "DAUGHTER"
+        "relationship": "DAUGHTER",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBPV-B93"
       },
       {
         "fullName": "William R Auld",
@@ -145,7 +150,8 @@
         "birthYear": "1857",
         "birthPlaceOriginal": "Lanarkshire",
         "age": "14",
-        "relationship": "SON"
+        "relationship": "SON",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBPV-B9Q"
       },
       {
         "fullName": "Margaret C Auld",
@@ -156,7 +162,8 @@
         "birthYear": "1865",
         "birthPlaceOriginal": "Renfrewshire",
         "age": "6",
-        "relationship": "DAUGHTER"
+        "relationship": "DAUGHTER",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBPV-B97"
       }
     ]
   },

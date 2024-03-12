@@ -10,6 +10,12 @@
   "eventPlace": {
     "placeString": "Boston, Suffolk, Massachusetts, United States"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|DDX3-TT6Z}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QS7-99DF-19RJ}}"
+  ],
   "collectionData": {
     "id": "2125599"
   },

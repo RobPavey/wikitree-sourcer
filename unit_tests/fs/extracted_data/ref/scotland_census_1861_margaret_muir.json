@@ -61,7 +61,8 @@
         "birthDateOriginal": "1829",
         "birthYear": "1829",
         "birthPlaceOriginal": "Renfrewshire",
-        "age": "32"
+        "age": "32",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG"
       },
       {
         "isSelected": true,
@@ -73,7 +74,8 @@
         "birthDateOriginal": "1828",
         "birthYear": "1828",
         "birthPlaceOriginal": "Lanarkshire",
-        "age": "33"
+        "age": "33",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPP"
       },
       {
         "fullName": "Agnes Muir",
@@ -85,7 +87,8 @@
         "birthDateOriginal": "1854",
         "birthYear": "1854",
         "birthPlaceOriginal": "Dunbartonshire",
-        "age": "7"
+        "age": "7",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB4X-MP5"
       },
       {
         "fullName": "James Muir",
@@ -97,7 +100,8 @@
         "birthDateOriginal": "1856",
         "birthYear": "1856",
         "birthPlaceOriginal": "Lanarkshire",
-        "age": "5"
+        "age": "5",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPR"
       },
       {
         "fullName": "William Muir",
@@ -108,7 +112,8 @@
         "birthDateOriginal": "1858",
         "birthYear": "1858",
         "birthPlaceOriginal": "Lanarkshire",
-        "age": "3"
+        "age": "3",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPT"
       },
       {
         "fullName": "Margaret Muir",
@@ -119,7 +124,8 @@
         "birthDateOriginal": "1860",
         "birthYear": "1860",
         "birthPlaceOriginal": "Lanarkshire",
-        "age": "1"
+        "age": "1",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB4X-MPY"
       }
     ]
   },

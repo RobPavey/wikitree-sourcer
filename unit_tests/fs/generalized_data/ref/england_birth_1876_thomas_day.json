@@ -38,6 +38,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|JWCM-S2G}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|JWCM-S2P}}",
+    "{{FamilySearch Record|JWCM-S25}}"
+  ],
   "collectionData": {
     "id": "1473014"
   },

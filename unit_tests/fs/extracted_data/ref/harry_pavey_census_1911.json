@@ -70,7 +70,8 @@
         "maritalStatus": "Married",
         "occupation": "PICTURE FRAME MAKER",
         "age": "58",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XWLP-S75"
       },
       {
         "fullName": "Amelia Pavey",
@@ -83,7 +84,8 @@
         "birthPlace": "London Camden Town, London",
         "maritalStatus": "Married",
         "age": "60",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XWLP-S7R"
       },
       {
         "fullName": "Harry Pavey",
@@ -97,7 +99,8 @@
         "maritalStatus": "Single",
         "occupation": "SHIPS STEWARD",
         "age": "33",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XWLP-S7T"
       },
       {
         "fullName": "Ralph Pavey",
@@ -111,7 +114,8 @@
         "maritalStatus": "Single",
         "occupation": "WHAREHOUSE ASSISTANT",
         "age": "19",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XWLP-S7Y"
       }
     ]
   },

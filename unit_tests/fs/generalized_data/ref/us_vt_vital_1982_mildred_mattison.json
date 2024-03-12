@@ -26,6 +26,12 @@
   "eventPlace": {
     "placeString": "Bennington, Bennington, Vermont, United States"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|KFP2-VSP}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QSQ-G97W-WNS}}"
+  ],
   "collectionData": {
     "id": "2075288"
   },

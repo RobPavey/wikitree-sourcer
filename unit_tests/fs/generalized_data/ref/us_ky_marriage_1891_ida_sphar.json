@@ -36,6 +36,12 @@
     }
   ],
   "marriageDate": "5 Jun 1891",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|Q28C-26MQ}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-C9BX-SDLL}}"
+  ],
   "collectionData": {
     "id": "1804888"
   },

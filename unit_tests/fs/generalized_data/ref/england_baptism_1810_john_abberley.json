@@ -29,6 +29,14 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QL3G-Z9Z6}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QS7-L96J-QQ5H}}",
+    "{{FamilySearch Record|QL3G-Z9ZV}}",
+    "{{FamilySearch Record|QL3G-Z9ZP}}"
+  ],
   "collectionData": {
     "id": "2364451"
   },

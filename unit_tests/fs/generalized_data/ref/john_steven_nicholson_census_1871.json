@@ -98,6 +98,18 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VBN2-36Z}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|939K-R33F-1R}}",
+    "{{FamilySearch Record|VBN2-367}}",
+    "{{FamilySearch Record|VBN2-36W}}",
+    "{{FamilySearch Record|VBN2-364}}",
+    "{{FamilySearch Record|VBN2-36H}}",
+    "{{FamilySearch Record|VBN2-36C}}",
+    "{{FamilySearch Record|VBN2-36Z}}"
+  ],
   "collectionData": {
     "id": "1538354"
   },

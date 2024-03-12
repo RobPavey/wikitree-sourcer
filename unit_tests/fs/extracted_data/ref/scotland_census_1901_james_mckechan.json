@@ -70,7 +70,8 @@
         "birthPlaceOriginal": "KILWINNING, AYRSHIRE",
         "birthPlace": "KILWINNING, AYRSHIRE",
         "age": "52",
-        "relationship": "HEAD"
+        "relationship": "HEAD",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7Y7S-3YMM"
       },
       {
         "fullName": "Mary McKechan",
@@ -83,7 +84,8 @@
         "birthPlaceOriginal": "KILWINNING, AYRSHIRE",
         "birthPlace": "KILWINNING, AYRSHIRE",
         "age": "52",
-        "relationship": "WIFE"
+        "relationship": "WIFE",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YQ1-8Y3Z"
       },
       {
         "fullName": "Rob McKechan",
@@ -97,7 +99,8 @@
         "birthPlaceOriginal": "STEVENSTON, AYRSHIRE",
         "birthPlace": "STEVENSTON, AYRSHIRE",
         "age": "19",
-        "relationship": "SON"
+        "relationship": "SON",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YQ1-8YW2"
       },
       {
         "fullName": "Alex McKechan",
@@ -111,7 +114,8 @@
         "birthPlaceOriginal": "STEVENSTON, AYRSHIRE",
         "birthPlace": "STEVENSTON, AYRSHIRE",
         "age": "15",
-        "relationship": "SON"
+        "relationship": "SON",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YQ1-8YZM"
       },
       {
         "fullName": "William McKechan",
@@ -125,7 +129,8 @@
         "birthPlaceOriginal": "AMERICA",
         "birthPlace": "AMERICA",
         "age": "13",
-        "relationship": "SON"
+        "relationship": "SON",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YQ1-8Y6Z"
       },
       {
         "fullName": "Mary McKechan",
@@ -139,7 +144,8 @@
         "birthPlaceOriginal": "STEVENSTON, AYRSHIRE",
         "birthPlace": "STEVENSTON, AYRSHIRE",
         "age": "10",
-        "relationship": "DAUGHTER"
+        "relationship": "DAUGHTER",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YQ1-8YN2"
       },
       {
         "fullName": "Jennie Sinclar",
@@ -152,7 +158,8 @@
         "birthPlaceOriginal": "COATBRIDGE, LANARKSHIRE, SCOTLAND",
         "birthPlace": "COATBRIDGE, LANARKSHIRE, SCOTLAND",
         "age": "26",
-        "relationship": "VISITOR"
+        "relationship": "VISITOR",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YQ1-8B6Z"
       },
       {
         "fullName": "Mary Sinclar",
@@ -164,7 +171,8 @@
         "birthPlaceOriginal": "IRVINE, AYRSHIRE",
         "birthPlace": "IRVINE, AYRSHIRE",
         "age": "0",
-        "relationship": "NULL"
+        "relationship": "NULL",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YQ1-8BN2"
       }
     ]
   },

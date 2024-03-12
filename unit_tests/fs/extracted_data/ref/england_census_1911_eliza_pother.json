@@ -70,7 +70,8 @@
         "birthPlaceOriginal": "Hindolvestone Nfk",
         "birthPlace": "Hindolvestone Nfk",
         "age": "74",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:X75L-1VZ"
       },
       {
         "isSelected": true,
@@ -84,7 +85,8 @@
         "birthPlaceOriginal": "Wood Norton Nfk",
         "birthPlace": "Wood Norton Nfk",
         "age": "46",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:X75L-1V8"
       },
       {
         "fullName": "John William Pother",
@@ -98,7 +100,8 @@
         "birthPlaceOriginal": "Bodham Nfk",
         "birthPlace": "Bodham Nfk",
         "age": "37",
-        "relationship": "Son-in-law"
+        "relationship": "Son-in-law",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:X75L-1VD"
       },
       {
         "fullName": "Leonard Mitchell",
@@ -111,7 +114,8 @@
         "birthPlaceOriginal": "Wood Norton Nfk",
         "birthPlace": "Wood Norton Nfk",
         "age": "13",
-        "relationship": "Grandson"
+        "relationship": "Grandson",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:X75L-1V6"
       },
       {
         "fullName": "Mark O Newman",
@@ -125,7 +129,8 @@
         "birthPlaceOriginal": "Sculthorpe Nfk",
         "birthPlace": "Sculthorpe Nfk",
         "age": "49",
-        "relationship": "Servant"
+        "relationship": "Servant",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:X75L-1VX"
       }
     ]
   },

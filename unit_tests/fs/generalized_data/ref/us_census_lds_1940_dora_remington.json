@@ -92,6 +92,19 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|8ZVW-2F3Z}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-C34G-L3ZM-7}}",
+    "{{FamilySearch Record|8ZVW-2XN2}}",
+    "{{FamilySearch Record|8ZVW-2X2M}}",
+    "{{FamilySearch Record|8ZVW-2XPZ}}",
+    "{{FamilySearch Record|8ZVW-2XT2}}",
+    "{{FamilySearch Record|8ZVW-2FMM}}",
+    "{{FamilySearch Record|8ZVW-2F3Z}}",
+    "{{FamilySearch Record|8ZVW-2FW2}}"
+  ],
   "collectionData": {
     "id": "3438701"
   },

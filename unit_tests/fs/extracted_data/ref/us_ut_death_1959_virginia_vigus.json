@@ -34,12 +34,14 @@
   "father": {
     "fullName": "Ward W Reynolds",
     "givenName": "Ward W",
-    "surname": "Reynolds"
+    "surname": "Reynolds",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZR8"
   },
   "mother": {
     "fullName": "Laverna Harris",
     "givenName": "Laverna",
-    "surname": "Harris"
+    "surname": "Harris",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QKDV-CZRD"
   },
   "fsCollectionId": "1747615",
   "referenceData": {

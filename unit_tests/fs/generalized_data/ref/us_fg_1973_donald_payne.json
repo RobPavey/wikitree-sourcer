@@ -21,6 +21,12 @@
   "eventPlace": {
     "placeString": "Woodstock, Windsor, Vermont, United States of America"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QVLL-6F6T}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FindAGrave|97671970}}"
+  ],
   "collectionData": {
     "id": "2221801"
   },

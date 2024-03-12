@@ -27,7 +27,8 @@
   "father": {
     "fullName": "Ebenezer George Fairchild",
     "givenName": "Ebenezer George",
-    "surname": "Fairchild"
+    "surname": "Fairchild",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZ1"
   },
   "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Saint Catherine, Liverpool, Lancashire, England\", \"EVENT_DATE_ALT_ORIG\": \"19 FEB 1902\", \"PR_AGE_ALT_ORIG\": \"32\", \"SP_AGE_ALT_ORIG\": \"28\"}",
   "referenceData": {

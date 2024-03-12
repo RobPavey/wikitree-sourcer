@@ -29,6 +29,12 @@
     }
   ],
   "marriageDate": "16 Abr 1928",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QVJ8-SFH9}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|939Z-RGVY-V}}"
+  ],
   "collectionData": {
     "id": "1682798",
     "volume": "Matrimonios 1921-1928, t. 30-36"

@@ -120,6 +120,18 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QYCX-NXN2}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|QYCX-NXZM}}",
+    "{{FamilySearch Record|QYCX-NXW2}}",
+    "{{FamilySearch Record|QYCX-NX6Z}}",
+    "{{FamilySearch Record|QYCX-NXN2}}",
+    "{{FamilySearch Record|QYCX-NX2M}}",
+    "{{FamilySearch Record|QYCX-NXPZ}}",
+    "{{FamilySearch Record|QYCX-NX3Z}}"
+  ],
   "collectionData": {
     "id": "2854327"
   },

@@ -23,12 +23,14 @@
   "father": {
     "fullName": "Fred Day",
     "givenName": "Fred",
-    "surname": "Day"
+    "surname": "Day",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:JWCM-S2P"
   },
   "mother": {
     "fullName": "Ann Christie Day",
     "givenName": "Ann Christie",
-    "surname": "Day"
+    "surname": "Day",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:JWCM-S25"
   },
   "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Manchester, Lancashire, England\", \"EVENT_DATE_ALT_ORIG\": \"13 AUG 1876\", \"PR_BIR_DATE_ALT_ORIG\": \"14 JUL 1876\", \"PR_SEX_CODE_ALT_ORIG\": \"M\"}",
   "fsCollectionId": "1473014",

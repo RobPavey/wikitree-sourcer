@@ -124,6 +124,19 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|7Y7S-3YMM}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|7Y7S-3YMM}}",
+    "{{FamilySearch Record|7YQ1-8Y3Z}}",
+    "{{FamilySearch Record|7YQ1-8YW2}}",
+    "{{FamilySearch Record|7YQ1-8YZM}}",
+    "{{FamilySearch Record|7YQ1-8Y6Z}}",
+    "{{FamilySearch Record|7YQ1-8YN2}}",
+    "{{FamilySearch Record|7YQ1-8B6Z}}",
+    "{{FamilySearch Record|7YQ1-8BN2}}"
+  ],
   "collectionData": {
     "id": "3212239",
     "page": "33",

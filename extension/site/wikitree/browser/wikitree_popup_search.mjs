@@ -170,6 +170,10 @@ function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
   let ed = data.extractedData;
   let gd = data.generalizedData;
 
+  if (gd.sourceType == "profile") {
+    typeString = "person";
+  }
+
   // This code is site specific. It would be better in the site folders.
   // One way to do that would bto add a "templateSearchData" member in generalizedData.
   // Is that overkill?
@@ -198,17 +202,27 @@ function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
     if (ed.memorialId) {
       templateData.push("{{FindAGrave|" + ed.memorialId + "}}");
     }
+  } else if (gd.sourceOfData == "fs") {
+    if (gd.wtSearchTemplates && gd.wtSearchTemplates.length) {
+      for (let template of gd.wtSearchTemplates) {
+        templateData.push(template);
+      }
+    }
+    if (gd.wtSearchTemplatesRelated && gd.wtSearchTemplatesRelated.length) {
+      for (let template of gd.wtSearchTemplatesRelated) {
+        templateLinkedData.push(template);
+      }
+    }
   }
 
   if (templateData.length > 0) {
-    const text = "Search for WikiTree profiles that may be referencing this " + typeString + " (BETA)";
+    const text = "Search for WikiTree profiles with a template referencing this " + typeString;
     addMenuItem(menu, text, function (element) {
       wikitreePlusSearchForTemplateData(templateData);
     });
   }
   if (templateLinkedData.length > 0) {
-    const text =
-      "Search for WikiTree profiles that may be referencing this " + typeString + " or related records (BETA)";
+    const text = "Search for WikiTree profiles with templates for this " + typeString + " or related records";
     addMenuItem(menu, text, function (element) {
       wikitreePlusSearchForTemplateData(templateData, templateLinkedData);
     });

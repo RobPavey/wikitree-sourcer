@@ -20,6 +20,9 @@
     "placeString": "Columbus, Bartholomew, Indiana"
   },
   "ageAtDeath": "83",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VMSB-3WR}}"
+  ],
   "collectionData": {
     "id": "1202535"
   },

@@ -46,6 +46,12 @@
     }
   },
   "marriageDate": "19 Feb 1902",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|NFFD-HZB}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|NFFD-HZ1}}"
+  ],
   "collectionData": {
     "id": "1473015"
   },

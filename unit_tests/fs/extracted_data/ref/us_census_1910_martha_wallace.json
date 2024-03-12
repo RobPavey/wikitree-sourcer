@@ -70,7 +70,8 @@
         "maritalStatus": "Married",
         "race": "White",
         "age": "64",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MKW4-587"
       },
       {
         "fullName": "Emma Wallace",
@@ -84,7 +85,8 @@
         "maritalStatus": "Married",
         "race": "White",
         "age": "44",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MKW4-58W"
       },
       {
         "fullName": "Ginnie Wallace",
@@ -98,7 +100,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "20",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MKW4-584"
       },
       {
         "isSelected": true,
@@ -113,7 +116,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "18",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MKW4-58H"
       },
       {
         "fullName": "Carry B Wallace",
@@ -127,7 +131,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "15",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MKW4-58C"
       },
       {
         "fullName": "Dolly Wallace",
@@ -141,7 +146,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "13",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MKW4-58Z"
       },
       {
         "fullName": "Pauline Wallace",
@@ -155,7 +161,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "9",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MKW4-588"
       },
       {
         "fullName": "Robert Wallace",
@@ -169,7 +176,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "6",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MKW4-58D"
       },
       {
         "fullName": "Robert S Wilson",
@@ -183,7 +191,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "25",
-        "relationship": "Hired man"
+        "relationship": "Hired man",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MKW4-586"
       }
     ]
   },

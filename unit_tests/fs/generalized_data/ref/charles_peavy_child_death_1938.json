@@ -27,6 +27,13 @@
   "eventPlace": {
     "placeString": "Hillsborough, Florida, United States"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|FPWZ-8BN}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|S3HY-6LC9-V9R}}",
+    "{{FamilySearch Record|FPWZ-8BF}}"
+  ],
   "collectionData": {
     "id": "1595003"
   },

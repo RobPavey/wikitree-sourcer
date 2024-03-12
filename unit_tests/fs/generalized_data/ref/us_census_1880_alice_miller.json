@@ -112,6 +112,18 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|MHSV-QLY}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|33S7-9YY2-3HVP}}",
+    "{{FamilySearch Record|MHSV-QLT}}",
+    "{{FamilySearch Record|MHSV-QLY}}",
+    "{{FamilySearch Record|MHSV-QLB}}",
+    "{{FamilySearch Record|MHSV-QL1}}",
+    "{{FamilySearch Record|MHSV-QGM}}",
+    "{{FamilySearch Record|MHSV-QG9}}"
+  ],
   "collectionData": {
     "id": "1417683",
     "volume": "1"

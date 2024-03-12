@@ -58,7 +58,8 @@
         "birthYear": "1859",
         "birthPlaceOriginal": "Co Antrim",
         "age": "52",
-        "relationship": "Head of Family"
+        "relationship": "Head of Family",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:QYCX-NXZM"
       },
       {
         "fullName": "Margaret Moore",
@@ -70,7 +71,8 @@
         "birthYear": "1852",
         "birthPlaceOriginal": "Belfast City",
         "age": "59",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:QYCX-NXW2"
       },
       {
         "fullName": "Henritta Moore",
@@ -83,7 +85,8 @@
         "birthYear": "1887",
         "birthPlaceOriginal": "Belfast",
         "age": "24",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:QYCX-NX6Z"
       },
       {
         "isSelected": true,
@@ -97,7 +100,8 @@
         "birthYear": "1888",
         "birthPlaceOriginal": "Belfast",
         "age": "23",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:QYCX-NXN2"
       },
       {
         "fullName": "Mary Jane Moore",
@@ -110,7 +114,8 @@
         "birthYear": "1890",
         "birthPlaceOriginal": "Belfast",
         "age": "21",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:QYCX-NX2M"
       },
       {
         "fullName": "Margaret Anne Moore",
@@ -123,7 +128,8 @@
         "birthYear": "1892",
         "birthPlaceOriginal": "Belfast",
         "age": "19",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:QYCX-NXPZ"
       },
       {
         "fullName": "Eliza Jane Smyth",
@@ -136,7 +142,8 @@
         "birthYear": "1850",
         "birthPlaceOriginal": "Belfast",
         "age": "61",
-        "relationship": "Sister in Law"
+        "relationship": "Sister in Law",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:QYCX-NX3Z"
       }
     ]
   },

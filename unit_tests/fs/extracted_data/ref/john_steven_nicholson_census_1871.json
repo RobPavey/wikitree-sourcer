@@ -58,7 +58,8 @@
         "maritalStatus": "Married",
         "occupation": "Flagger & Slater",
         "age": "40",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBN2-367"
       },
       {
         "fullName": "Jane Nicholson",
@@ -71,7 +72,8 @@
         "birthPlace": "Warrington, Lancashire",
         "maritalStatus": "Married",
         "age": "39",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBN2-36W"
       },
       {
         "fullName": "James Nicholson",
@@ -85,7 +87,8 @@
         "maritalStatus": "Unknown",
         "occupation": "Flagger & Slater",
         "age": "18",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBN2-364"
       },
       {
         "fullName": "William Nicholson",
@@ -98,7 +101,8 @@
         "birthPlace": "Warrington, Lancashire",
         "occupation": "Glass House Labourer",
         "age": "14",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBN2-36H"
       },
       {
         "fullName": "Ann Jane Nicholson",
@@ -111,7 +115,8 @@
         "birthPlace": "Warrington, Lancashire",
         "occupation": "Scholar",
         "age": "5",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBN2-36C"
       },
       {
         "isSelected": true,
@@ -122,7 +127,8 @@
         "birthPlaceOriginal": "Warrington, Lancashire",
         "birthPlace": "Warrington, Lancashire",
         "age": "0",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VBN2-36Z"
       }
     ]
   },

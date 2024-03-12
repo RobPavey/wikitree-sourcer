@@ -43,7 +43,8 @@
         "birthDate": "1912",
         "birthYear": "1912",
         "birthPlaceOriginal": "Aetna, Alberta, Canada",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:ZY42-DM3Z"
       },
       {
         "fullName": "Ethel Eyring Taylor",
@@ -54,7 +55,8 @@
         "birthDate": "1916",
         "birthYear": "1916",
         "birthPlaceOriginal": "Pima, Arizona",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:ZY42-DMW2"
       },
       {
         "fullName": "Janis Taylor",
@@ -65,7 +67,8 @@
         "birthDate": "1937",
         "birthYear": "1937",
         "birthPlaceOriginal": "Portland, Oregon",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:ZY42-D86Z"
       },
       {
         "isSelected": true,
@@ -77,7 +80,8 @@
         "birthDate": "1939",
         "birthYear": "1939",
         "birthPlaceOriginal": "Snow Flake, Arizona",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:ZY42-D8N2"
       },
       {
         "fullName": "Susan Taylor",
@@ -88,7 +92,8 @@
         "birthDate": "1941",
         "birthYear": "1941",
         "birthPlaceOriginal": "Snow Flake, Arizona",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:ZY42-D82M"
       },
       {
         "fullName": "Emily Kay Taylor",
@@ -99,7 +104,8 @@
         "birthDate": "1943",
         "birthYear": "1943",
         "birthPlaceOriginal": "Provo, Utah",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:ZY42-D8PZ"
       },
       {
         "fullName": "John Eyring Taylor",
@@ -110,7 +116,8 @@
         "birthDate": "1945",
         "birthYear": "1945",
         "birthPlaceOriginal": "Provo, Utah",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:ZY42-D8T2"
       },
       {
         "fullName": "Jeffery Maxwell Taylor",
@@ -121,7 +128,8 @@
         "birthDate": "1949",
         "birthYear": "1949",
         "birthPlaceOriginal": "Provo, Utah",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:ZY42-DDMM"
       }
     ]
   },

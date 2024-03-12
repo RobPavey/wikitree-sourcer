@@ -18,12 +18,14 @@
   "father": {
     "fullName": "Charles Ashworth",
     "givenName": "Charles",
-    "surname": "Ashworth"
+    "surname": "Ashworth",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QPRD-KN24"
   },
   "mother": {
     "fullName": "Mary Anne Ashworth",
     "givenName": "Mary Anne",
-    "surname": "Ashworth"
+    "surname": "Ashworth",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QPRD-KN2H"
   },
   "fsCollectionId": "2556014",
   "referenceData": {

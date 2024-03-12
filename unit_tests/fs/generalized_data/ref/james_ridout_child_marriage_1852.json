@@ -40,6 +40,14 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QJDC-577Y}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|939L-SL93-13}}",
+    "{{FamilySearch Record|QJDC-577T}}",
+    "{{FamilySearch Record|QJDC-577B}}"
+  ],
   "collectionData": {
     "id": "1910806"
   },

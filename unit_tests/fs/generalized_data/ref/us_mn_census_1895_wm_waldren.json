@@ -59,6 +59,16 @@
     }
   ],
   "race": "W",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|MQ67-PZS}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|S3HY-6889-T6P}}",
+    "{{FamilySearch Record|MQ67-PZS}}",
+    "{{FamilySearch Record|MQ67-PZ3}}",
+    "{{FamilySearch Record|MQ67-PZQ}}",
+    "{{FamilySearch Record|MQ67-PZ7}}"
+  ],
   "collectionData": {
     "id": "1503031"
   },

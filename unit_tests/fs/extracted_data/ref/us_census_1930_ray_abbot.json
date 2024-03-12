@@ -70,7 +70,8 @@
         "maritalStatus": "Married",
         "race": "White",
         "age": "57",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XMFP-N3X"
       },
       {
         "fullName": "Martha Abbott",
@@ -84,7 +85,8 @@
         "maritalStatus": "Married",
         "race": "White",
         "age": "55",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XMFP-N3F"
       },
       {
         "fullName": "Avery Abbott",
@@ -98,7 +100,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "22",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XMFP-N3N"
       },
       {
         "fullName": "Elmer Abbott",
@@ -112,7 +115,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "20",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XMFP-N3J"
       },
       {
         "fullName": "Lula Abbott",
@@ -126,7 +130,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "18",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XMFP-N3V"
       },
       {
         "fullName": "Anna Abbott",
@@ -140,7 +145,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "15",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XMFP-N3K"
       },
       {
         "isSelected": true,
@@ -155,7 +161,8 @@
         "maritalStatus": "Single",
         "race": "White",
         "age": "12",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XMFP-N32"
       }
     ]
   },

@@ -20,12 +20,14 @@
   "father": {
     "fullName": "Gordon Hardie",
     "givenName": "Gordon",
-    "surname": "Hardie"
+    "surname": "Hardie",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:XTXN-PTB"
   },
   "mother": {
     "fullName": "Mary Grant",
     "givenName": "Mary",
-    "surname": "Grant"
+    "surname": "Grant",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:XTXN-PT1"
   },
   "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Edinburgh, St George, Scotland\", \"EVENT_DATE_ALT_ORIG\": \"10 Jan 1881\", \"PR_SEX_CODE_ALT_ORIG\": \"M\"}",
   "referenceData": {

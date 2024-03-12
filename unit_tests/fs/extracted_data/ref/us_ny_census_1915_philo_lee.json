@@ -54,7 +54,8 @@
         "birthDateOriginal": "1867",
         "birthYear": "1867",
         "age": "48",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHT"
       },
       {
         "fullName": "Clelie Lee",
@@ -64,7 +65,8 @@
         "birthDateOriginal": "1870",
         "birthYear": "1870",
         "age": "45",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHY"
       },
       {
         "fullName": "Anna Lee",
@@ -74,7 +76,8 @@
         "birthDateOriginal": "1892",
         "birthYear": "1892",
         "age": "23",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K9V2-YHB"
       },
       {
         "fullName": "Carrie Lee",
@@ -84,7 +87,8 @@
         "birthDateOriginal": "1894",
         "birthYear": "1894",
         "age": "21",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K9V2-YH1"
       },
       {
         "fullName": "Marie Lee",
@@ -94,7 +98,8 @@
         "birthDateOriginal": "1896",
         "birthYear": "1896",
         "age": "19",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCM"
       },
       {
         "fullName": "Henrietta Lee",
@@ -104,7 +109,8 @@
         "birthDateOriginal": "1898",
         "birthYear": "1898",
         "age": "17",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K9V2-YC9"
       },
       {
         "isSelected": true,
@@ -115,7 +121,8 @@
         "birthDateOriginal": "1903",
         "birthYear": "1903",
         "age": "12",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCS"
       },
       {
         "fullName": "William Kirk",
@@ -125,7 +132,8 @@
         "birthDateOriginal": "1860",
         "birthYear": "1860",
         "age": "55",
-        "relationship": "Boarder"
+        "relationship": "Boarder",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:K9V2-YC3"
       }
     ]
   },

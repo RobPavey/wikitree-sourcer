@@ -21,12 +21,14 @@
   "father": {
     "fullName": "Alexander Hunter",
     "givenName": "Alexander",
-    "surname": "Hunter"
+    "surname": "Hunter",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:XBQC-X97"
   },
   "mother": {
     "fullName": "Ann Christie",
     "givenName": "Ann",
-    "surname": "Christie"
+    "surname": "Christie",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:XBQC-X9W"
   },
   "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"SAINT NICHOLAS,ABERDEEN,ABERDEEN,SCOTLAND\", \"EVENT_DATE_ALT_ORIG\": \"22 NOV 1854\", \"PR_BIR_DATE_ALT_ORIG\": \"01 SEP 1854\", \"PR_SEX_CODE_ALT_ORIG\": \"M\", \"FS_FILM_NBR_ALT_ORIG\": \"991204\"}",
   "fsCollectionId": "1771030",

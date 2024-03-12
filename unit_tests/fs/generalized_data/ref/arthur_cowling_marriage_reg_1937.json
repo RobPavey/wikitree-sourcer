@@ -32,6 +32,9 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QV8X-7L1V}}"
+  ],
   "collectionData": {
     "id": "2285732",
     "volume": "9D",

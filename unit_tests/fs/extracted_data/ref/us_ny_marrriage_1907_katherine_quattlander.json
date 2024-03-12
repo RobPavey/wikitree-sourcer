@@ -26,11 +26,13 @@
   "father": {
     "fullName": "John Quattlander",
     "givenName": "John",
-    "surname": "Quattlander"
+    "surname": "Quattlander",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:Q2C2-Y95K"
   },
   "mother": {
     "fullName": "Katharine",
-    "givenName": "Katharine"
+    "givenName": "Katharine",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:Q2C2-Y9RS"
   },
   "fsCollectionId": "2143225",
   "referenceData": {

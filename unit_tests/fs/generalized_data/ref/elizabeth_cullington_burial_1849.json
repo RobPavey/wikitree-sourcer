@@ -20,6 +20,12 @@
     "placeString": "Norwich, Norfolk, England"
   },
   "ageAtEvent": "5",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|27CB-J49}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|939F-RXKT-R}}"
+  ],
   "collectionData": {
     "id": "1823613"
   },

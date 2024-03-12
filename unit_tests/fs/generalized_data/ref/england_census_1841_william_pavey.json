@@ -124,6 +124,25 @@
       "birthPlace": "Devon"
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|MQTV-YYP}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-CS3H-D9KT-8}}",
+    "{{FamilySearch Record|MQTV-YYP}}",
+    "{{FamilySearch Record|MQTV-YY5}}",
+    "{{FamilySearch Record|MQTV-YYR}}",
+    "{{FamilySearch Record|MQTV-YYT}}",
+    "{{FamilySearch Record|MQTV-YYY}}",
+    "{{FamilySearch Record|MQTV-YYB}}",
+    "{{FamilySearch Record|MQTV-YY1}}",
+    "{{FamilySearch Record|MQTV-YBM}}",
+    "{{FamilySearch Record|MQTV-YB9}}",
+    "{{FamilySearch Record|MQTV-YBS}}",
+    "{{FamilySearch Record|MQTV-YB3}}",
+    "{{FamilySearch Record|MQTV-YBQ}}",
+    "{{FamilySearch Record|MQTV-YB7}}"
+  ],
   "collectionData": {
     "id": "1493745",
     "page": "37",

@@ -71,7 +71,8 @@
         "birthYear": "1904",
         "birthPlaceOriginal": "Mississippi",
         "age": "46 years",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:6XPH-GLSQ"
       },
       {
         "isSelected": true,
@@ -84,7 +85,8 @@
         "birthYear": "1905",
         "birthPlaceOriginal": "Louisiana",
         "age": "45 years",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:6XPH-GLS7"
       },
       {
         "fullName": "Erminie C Chambers",
@@ -96,7 +98,8 @@
         "birthYear": "1932",
         "birthPlaceOriginal": "Arkansas",
         "age": "18 years",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:6XPZ-SRQ1"
       },
       {
         "fullName": "Dunbar N Jr Chambers, Jr",
@@ -108,7 +111,8 @@
         "birthYear": "1935",
         "birthPlaceOriginal": "Louisiana",
         "age": "15 years",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:6XPZ-SR7M"
       },
       {
         "fullName": "John P Chambers",
@@ -120,7 +124,8 @@
         "birthYear": "1943",
         "birthPlaceOriginal": "Louisiana",
         "age": "7 years",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:6XPZ-SR79"
       }
     ]
   },

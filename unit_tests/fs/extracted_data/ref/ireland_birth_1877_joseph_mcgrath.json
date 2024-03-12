@@ -17,12 +17,14 @@
   "father": {
     "fullName": "John McGrath",
     "givenName": "John",
-    "surname": "McGrath"
+    "surname": "McGrath",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QPR9-YZHH"
   },
   "mother": {
     "fullName": "Isabella Devlin McGrath",
     "givenName": "Isabella",
-    "surname": "Devlin McGrath"
+    "surname": "Devlin McGrath",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QPR9-YZHC"
   },
   "fsCollectionId": "2659409",
   "referenceData": {

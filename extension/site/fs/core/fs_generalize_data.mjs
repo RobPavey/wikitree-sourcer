@@ -34,6 +34,12 @@ import { RT, Role, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 
+import {
+  buildFsRecordLinkOrTemplate,
+  buildFsImageLinkOrTemplate,
+  buildExternalLinkOrTemplate,
+} from "./fs_templates_and_links.mjs";
+
 const factTypeToRecordType = [
   {
     type: undefined,
@@ -876,6 +882,57 @@ function generalizeDataGivenRecordType(ed, result) {
   }
 }
 
+function addWtSearchTemplates(ed, result) {
+  let wtTemplates = [];
+  let wtTemplatesRelated = [];
+
+  function addLinkOrTemplate(templates, linkOrTemplate) {
+    if (linkOrTemplate && linkOrTemplate.startsWith("{{")) {
+      if (!templates.includes(linkOrTemplate)) {
+        templates.push(linkOrTemplate);
+      }
+    }
+  }
+
+  if (ed.pageType == "record") {
+    var recordUrl = ed.personRecordUrl;
+    if (!recordUrl) {
+      recordUrl = ed.url;
+    }
+    addLinkOrTemplate(wtTemplates, buildFsRecordLinkOrTemplate(recordUrl));
+
+    addLinkOrTemplate(wtTemplatesRelated, buildFsImageLinkOrTemplate(ed.fsImageUrl));
+  } else if (ed.pageType == "image") {
+    addLinkOrTemplate(wtTemplates, buildFsImageLinkOrTemplate(ed.url));
+  }
+
+  if (ed.digitalArtifact) {
+    addLinkOrTemplate(wtTemplatesRelated, buildExternalLinkOrTemplate(ed.digitalArtifact));
+  }
+
+  addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.relatedPersonLink));
+  addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.relatedPersonSpouseLink));
+  if (ed.father) {
+    addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.father.link));
+  }
+  if (ed.mother) {
+    addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(ed.mother.link));
+  }
+  if (ed.household && ed.household.members) {
+    for (let member of ed.household.members) {
+      addLinkOrTemplate(wtTemplatesRelated, buildFsRecordLinkOrTemplate(member.link));
+    }
+  }
+
+  // if there are templates add them to result
+  if (wtTemplates.length) {
+    result.wtSearchTemplates = wtTemplates;
+  }
+  if (wtTemplatesRelated.length) {
+    result.wtSearchTemplatesRelated = wtTemplatesRelated;
+  }
+}
+
 function generalizeDataForPerson(ed, result) {
   function setNameWithPossibleNicknames(dataObject, resultObject) {
     // because this is done when we have already set the name once already the handling of nicknames is
@@ -1169,6 +1226,9 @@ function generalizeData(input) {
       }
     }
   }
+
+  // Template search data
+  addWtSearchTemplates(ed, result);
 
   // Collection
   if (ed.fsCollectionId) {

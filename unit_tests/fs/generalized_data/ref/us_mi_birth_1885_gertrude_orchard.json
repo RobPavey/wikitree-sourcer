@@ -35,6 +35,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|F4P5-QX7}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|F4P5-QXW}}",
+    "{{FamilySearch Record|F4P5-QX4}}"
+  ],
   "collectionData": {
     "id": "1675348"
   },

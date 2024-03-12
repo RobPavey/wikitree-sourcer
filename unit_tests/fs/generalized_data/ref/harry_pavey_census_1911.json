@@ -88,6 +88,15 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|XWLP-S75}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|XWLP-S75}}",
+    "{{FamilySearch Record|XWLP-S7R}}",
+    "{{FamilySearch Record|XWLP-S7T}}",
+    "{{FamilySearch Record|XWLP-S7Y}}"
+  ],
   "collectionData": {
     "id": "1921547",
     "page": "1",

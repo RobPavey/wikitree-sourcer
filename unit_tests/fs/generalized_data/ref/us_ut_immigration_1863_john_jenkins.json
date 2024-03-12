@@ -21,6 +21,9 @@
   "eventPlace": {
     "placeString": "Deseret, United States"
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|Q234-5Z3C}}"
+  ],
   "collectionData": {
     "id": "2517340"
   },

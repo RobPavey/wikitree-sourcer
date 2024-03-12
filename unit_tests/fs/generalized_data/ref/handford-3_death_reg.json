@@ -25,6 +25,9 @@
   },
   "registrationDistrict": "Middlesbrough",
   "ageAtDeath": "69",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|2N1J-673}}"
+  ],
   "collectionData": {
     "id": "2285341",
     "volume": "9D",

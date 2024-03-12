@@ -71,7 +71,8 @@
         "maritalStatus": "Married",
         "occupation": "Farmer Of 123 Acres",
         "age": "56",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJX"
       },
       {
         "fullName": "Ann Swinton",
@@ -83,7 +84,8 @@
         "birthPlaceOriginal": "Whitley, Cheshire",
         "birthPlace": "Whitley, Cheshire",
         "age": "45",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJF"
       },
       {
         "fullName": "Thomas Swinton",
@@ -96,7 +98,8 @@
         "birthPlace": "Whitley, Cheshire",
         "maritalStatus": "Unmarried",
         "age": "22",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJN"
       },
       {
         "fullName": "John Swinton",
@@ -109,7 +112,8 @@
         "birthPlace": "Whitley, Cheshire",
         "maritalStatus": "Unmarried",
         "age": "20",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJJ"
       },
       {
         "fullName": "Joseph Swinton",
@@ -122,7 +126,8 @@
         "birthPlace": "Comberbach, Cheshire",
         "maritalStatus": "Unmarried",
         "age": "18",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJV"
       },
       {
         "fullName": "Ann Swinton",
@@ -134,7 +139,8 @@
         "birthPlaceOriginal": "Comberbach, Cheshire",
         "birthPlace": "Comberbach, Cheshire",
         "age": "10",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJK"
       },
       {
         "fullName": "Jane Swinton",
@@ -146,7 +152,8 @@
         "birthPlaceOriginal": "Marston, Cheshire",
         "birthPlace": "Marston, Cheshire",
         "age": "8",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJ2"
       },
       {
         "fullName": "Elizabeth Swinton",
@@ -158,7 +165,8 @@
         "birthPlaceOriginal": "Marston, Cheshire",
         "birthPlace": "Marston, Cheshire",
         "age": "6",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJL"
       },
       {
         "fullName": "John Collins",
@@ -171,7 +179,8 @@
         "birthPlace": "Ireland",
         "occupation": "Labourer",
         "age": "19",
-        "relationship": "Servant"
+        "relationship": "Servant",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJG"
       },
       {
         "fullName": "John Lane",
@@ -184,7 +193,8 @@
         "birthPlace": "Ireland",
         "occupation": "Labourer",
         "age": "54",
-        "relationship": "Servant"
+        "relationship": "Servant",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJP"
       },
       {
         "fullName": "Margaret Read",
@@ -196,7 +206,8 @@
         "birthPlaceOriginal": "Warrington, Lancashire",
         "birthPlace": "Warrington, Lancashire",
         "age": "5",
-        "relationship": "Niece"
+        "relationship": "Niece",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJ5"
       },
       {
         "fullName": "Katharine Carr",
@@ -208,7 +219,8 @@
         "birthPlaceOriginal": "Ireland",
         "birthPlace": "Ireland",
         "age": "22",
-        "relationship": "Servant"
+        "relationship": "Servant",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CJR"
       },
       {
         "fullName": "Mikel Gennings",
@@ -222,7 +234,8 @@
         "maritalStatus": "Married",
         "occupation": "Labourer",
         "age": "29",
-        "relationship": "Servant"
+        "relationship": "Servant",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:SG2X-CNT"
       }
     ]
   },

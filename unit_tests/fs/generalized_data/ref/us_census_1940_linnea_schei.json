@@ -87,6 +87,16 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|K42T-S68}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QS7-89M1-N7TS}}",
+    "{{FamilySearch Record|K42R-1PZ}}",
+    "{{FamilySearch Record|K42T-S68}}",
+    "{{FamilySearch Record|K42T-S6D}}",
+    "{{FamilySearch Record|K42T-S66}}"
+  ],
   "collectionData": {
     "id": "2000219"
   },

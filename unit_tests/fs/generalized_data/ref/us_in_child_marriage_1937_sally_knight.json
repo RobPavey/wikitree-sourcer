@@ -27,6 +27,13 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|27K9-9K9}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QS7-897W-Z461}}",
+    "{{FamilySearch Record|27K9-9V1}}"
+  ],
   "collectionData": {
     "id": "1410397"
   },

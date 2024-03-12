@@ -67,7 +67,8 @@
         "birthYear": "1913",
         "birthPlaceOriginal": "New Hampshire",
         "relationship": "Head",
-        "age": "27"
+        "age": "27",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VTMY-N3R"
       },
       {
         "isSelected": true,
@@ -82,7 +83,8 @@
         "birthYear": "1912",
         "birthPlaceOriginal": "New Hampshire",
         "relationship": "WIFE",
-        "age": "28"
+        "age": "28",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VTMY-N3T"
       }
     ]
   },

@@ -161,6 +161,25 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|SG2X-CJX}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-CSQ7-N377-W}}",
+    "{{FamilySearch Record|SG2X-CJX}}",
+    "{{FamilySearch Record|SG2X-CJF}}",
+    "{{FamilySearch Record|SG2X-CJN}}",
+    "{{FamilySearch Record|SG2X-CJJ}}",
+    "{{FamilySearch Record|SG2X-CJV}}",
+    "{{FamilySearch Record|SG2X-CJK}}",
+    "{{FamilySearch Record|SG2X-CJ2}}",
+    "{{FamilySearch Record|SG2X-CJL}}",
+    "{{FamilySearch Record|SG2X-CJG}}",
+    "{{FamilySearch Record|SG2X-CJP}}",
+    "{{FamilySearch Record|SG2X-CJ5}}",
+    "{{FamilySearch Record|SG2X-CJR}}",
+    "{{FamilySearch Record|SG2X-CNT}}"
+  ],
   "collectionData": {
     "id": "2563939",
     "page": "22",

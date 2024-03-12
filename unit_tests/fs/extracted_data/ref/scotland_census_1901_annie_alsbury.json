@@ -64,7 +64,8 @@
         "birthPlaceOriginal": "GRANTON, MIDLOTHIAN, SCOTLAND",
         "birthPlace": "GRANTON, MIDLOTHIAN, SCOTLAND",
         "age": "37",
-        "relationship": "HEAD"
+        "relationship": "HEAD",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YV4-FPT2"
       },
       {
         "isSelected": true,
@@ -78,7 +79,8 @@
         "birthPlaceOriginal": "DYSART, FIFESHIRE",
         "birthPlace": "DYSART, FIFESHIRE",
         "age": "36",
-        "relationship": "WIFE"
+        "relationship": "WIFE",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YN6-17PZ"
       },
       {
         "fullName": "Annie Alsbury",
@@ -91,7 +93,8 @@
         "birthPlaceOriginal": "AUSTRALIA QUEENSLAND",
         "birthPlace": "AUSTRALIA QUEENSLAND",
         "age": "10",
-        "relationship": "DAUGHTER"
+        "relationship": "DAUGHTER",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YN6-17T2"
       },
       {
         "fullName": "James Alsbury",
@@ -104,7 +107,8 @@
         "birthPlaceOriginal": "AUSTRALIA QUEENSLAND",
         "birthPlace": "AUSTRALIA QUEENSLAND",
         "age": "9",
-        "relationship": "SON"
+        "relationship": "SON",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YN6-1WMM"
       },
       {
         "fullName": "Isabella Alsbury",
@@ -117,7 +121,8 @@
         "birthPlaceOriginal": "AUSTRALIA QUEENSLAND",
         "birthPlace": "AUSTRALIA QUEENSLAND",
         "age": "7",
-        "relationship": "DAUGHTER"
+        "relationship": "DAUGHTER",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YN6-1W3Z"
       },
       {
         "fullName": "David Alsbury",
@@ -129,7 +134,8 @@
         "birthPlaceOriginal": "DYSART, FIFESHIRE",
         "birthPlace": "DYSART, FIFESHIRE",
         "age": "3",
-        "relationship": "SON"
+        "relationship": "SON",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YN6-1WW2"
       },
       {
         "fullName": "John Alsbury",
@@ -141,7 +147,8 @@
         "birthPlaceOriginal": "NO LEITH, MIDLOTHIAN, SCOTLAND",
         "birthPlace": "NO LEITH, MIDLOTHIAN, SCOTLAND",
         "age": "0",
-        "relationship": "SON"
+        "relationship": "SON",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:7YN6-1WZM"
       }
     ]
   },

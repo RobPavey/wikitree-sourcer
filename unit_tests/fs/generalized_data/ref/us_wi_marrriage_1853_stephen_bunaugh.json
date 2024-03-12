@@ -31,6 +31,9 @@
     }
   ],
   "marriageDate": "14 Dec 1853",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|XRP7-LN5}}"
+  ],
   "collectionData": {
     "id": "1708704"
   },

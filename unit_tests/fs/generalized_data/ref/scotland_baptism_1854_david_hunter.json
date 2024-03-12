@@ -35,6 +35,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|XBQC-X9Q}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|XBQC-X97}}",
+    "{{FamilySearch Record|XBQC-X9W}}"
+  ],
   "collectionData": {
     "id": "1771030"
   },

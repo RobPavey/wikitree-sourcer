@@ -71,7 +71,8 @@
         "maritalStatus": "Married",
         "occupation": "Picture Frame Maker Employing 1 Lad",
         "age": "38",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:Q277-QXTS"
       },
       {
         "isSelected": true,
@@ -85,7 +86,8 @@
         "birthPlace": "London, Middlesex, England",
         "maritalStatus": "Married",
         "age": "39",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:Q277-QXTG"
       },
       {
         "fullName": "Elizabeth Pavey",
@@ -99,7 +101,8 @@
         "maritalStatus": "Widow",
         "occupation": "Annuitant",
         "age": "78",
-        "relationship": "Mother"
+        "relationship": "Mother",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:Q277-QXYJ"
       },
       {
         "fullName": "Sidney H Harper",
@@ -113,7 +116,8 @@
         "maritalStatus": "Single",
         "occupation": "Picture Frame Maker",
         "age": "18",
-        "relationship": "Nephew"
+        "relationship": "Nephew",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:Q277-QXB8"
       }
     ]
   },

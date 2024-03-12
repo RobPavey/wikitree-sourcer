@@ -40,6 +40,14 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|FMN3-4Z6}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|9Q97-Y39L-C6M}}",
+    "{{FamilySearch Record|FMN3-4ZD}}",
+    "{{FamilySearch Record|FMN3-4ZC}}"
+  ],
   "collectionData": {
     "id": "1784216"
   },

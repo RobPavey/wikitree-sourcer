@@ -68,7 +68,8 @@
         "birthYear": "1849",
         "birthPlaceOriginal": "Swanage, Dorsetshire",
         "age": "62",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XWW2-PF1"
       },
       {
         "fullName": "Julia Augusta Delamotte",
@@ -80,7 +81,8 @@
         "birthYear": "1857",
         "birthPlaceOriginal": "Ipswich, Suffolk",
         "age": "54",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XWW2-PNM"
       },
       {
         "fullName": "Marjorie Glady Cobble Delamotte",
@@ -92,7 +94,8 @@
         "birthYear": "1887",
         "birthPlaceOriginal": "Staines, Middlesex",
         "age": "24",
-        "relationship": "Daughter"
+        "relationship": "Daughter",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XWW2-PN9"
       },
       {
         "fullName": "Frances Margaret Hawkers",
@@ -105,7 +108,8 @@
         "birthYear": "1881",
         "birthPlaceOriginal": "Worldham, Hampshire",
         "age": "30",
-        "relationship": "Servant"
+        "relationship": "Servant",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:XWW2-PNS"
       }
     ]
   },

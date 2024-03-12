@@ -17,11 +17,13 @@
   "father": {
     "fullName": "Joseph Rowlinson",
     "givenName": "Joseph",
-    "surname": "Rowlinson"
+    "surname": "Rowlinson",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:J33C-SHW"
   },
   "mother": {
     "fullName": "Ann",
-    "givenName": "Ann"
+    "givenName": "Ann",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:J33C-SH4"
   },
   "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"WARRINGTON,LANCASHIRE,ENGLAND\", \"EVENT_DATE_ALT_ORIG\": \"18 MAY 1834\", \"PR_SEX_CODE_ALT_ORIG\": \"F\", \"FS_FILM_NBR_ALT_ORIG\": \"494237\", \"FS_UDE_BATCH_NBR_ORIG\": \"C00797-8\"}",
   "referenceData": {

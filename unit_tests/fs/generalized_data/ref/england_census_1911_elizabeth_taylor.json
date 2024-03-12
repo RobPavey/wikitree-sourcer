@@ -76,6 +76,14 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|X7RW-H55}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|X7RW-H5P}}",
+    "{{FamilySearch Record|X7RW-H55}}",
+    "{{FamilySearch Record|X7RW-H5R}}"
+  ],
   "collectionData": {
     "id": "1921547",
     "page": "1",

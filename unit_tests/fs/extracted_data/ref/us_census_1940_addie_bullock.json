@@ -68,7 +68,8 @@
         "birthYear": "1909",
         "birthPlaceOriginal": "Mississippi",
         "relationship": "Head",
-        "age": "31"
+        "age": "31",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB3M-FG7"
       },
       {
         "fullName": "Hazel Bullock",
@@ -82,7 +83,8 @@
         "birthYear": "1928",
         "birthPlaceOriginal": "Mississippi",
         "relationship": "DAU",
-        "age": "12"
+        "age": "12",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB3M-FGW"
       },
       {
         "fullName": "Mavis Bullock",
@@ -96,7 +98,8 @@
         "birthYear": "1930",
         "birthPlaceOriginal": "Mississippi",
         "relationship": "Daughter",
-        "age": "10"
+        "age": "10",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB3M-FG4"
       },
       {
         "fullName": "Emma Gene Bullock",
@@ -110,7 +113,8 @@
         "birthYear": "1933",
         "birthPlaceOriginal": "Mississippi",
         "relationship": "Daughter",
-        "age": "7"
+        "age": "7",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB3M-FGH"
       },
       {
         "fullName": "Ivanora Bullock",
@@ -124,7 +128,8 @@
         "birthYear": "1935",
         "birthPlaceOriginal": "Mississippi",
         "relationship": "Daughter",
-        "age": "5"
+        "age": "5",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:VB3M-FGC"
       }
     ]
   },

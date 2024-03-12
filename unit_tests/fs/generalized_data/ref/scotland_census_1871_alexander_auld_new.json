@@ -94,6 +94,19 @@
     }
   ],
   "maritalStatus": "married",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VBPV-BM1}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|9398-6S9F-LY}}",
+    "{{FamilySearch Record|VBPV-BM1}}",
+    "{{FamilySearch Record|VBPV-B9M}}",
+    "{{FamilySearch Record|VBPV-B99}}",
+    "{{FamilySearch Record|VBPV-B9S}}",
+    "{{FamilySearch Record|VBPV-B93}}",
+    "{{FamilySearch Record|VBPV-B9Q}}",
+    "{{FamilySearch Record|VBPV-B97}}"
+  ],
   "collectionData": {
     "id": "2028678",
     "page": "2"

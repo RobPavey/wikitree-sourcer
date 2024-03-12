@@ -19,6 +19,12 @@
     "placeString": "Minstead, Hampshire, England, United Kingdom"
   },
   "ageAtEvent": "36",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QLYW-5F4G}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QSQ-G9ZW-BHCK}}"
+  ],
   "collectionData": {
     "id": "2640059"
   },

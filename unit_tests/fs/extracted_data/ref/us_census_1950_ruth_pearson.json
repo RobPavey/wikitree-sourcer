@@ -75,7 +75,8 @@
         "birthYear": "1903",
         "birthPlaceOriginal": "Illinois",
         "relationship": "Head",
-        "age": "47 years"
+        "age": "47 years",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:6X12-6VVQ"
       },
       {
         "isSelected": true,
@@ -88,7 +89,8 @@
         "birthYear": "1910",
         "birthPlaceOriginal": "Ill",
         "relationship": "Sister",
-        "age": "40 years"
+        "age": "40 years",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:6X12-6VV7"
       }
     ]
   },

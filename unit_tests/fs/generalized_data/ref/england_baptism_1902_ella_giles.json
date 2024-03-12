@@ -28,6 +28,14 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QGNK-BKRW}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|33S7-81LP-51M}}",
+    "{{FamilySearch Record|QGNK-BKRD}}",
+    "{{FamilySearch Record|QGNK-BKTS}}"
+  ],
   "collectionData": {
     "id": "2384987"
   },

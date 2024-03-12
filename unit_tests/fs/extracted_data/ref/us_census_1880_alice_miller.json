@@ -71,7 +71,8 @@
         "birthPlaceOriginal": "Indiana, United States",
         "birthPlace": "Indiana, United States",
         "age": "31",
-        "relationship": "Head"
+        "relationship": "Head",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MHSV-QLT"
       },
       {
         "isSelected": true,
@@ -87,7 +88,8 @@
         "birthPlaceOriginal": "Indiana, United States",
         "birthPlace": "Indiana, United States",
         "age": "25",
-        "relationship": "Wife"
+        "relationship": "Wife",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MHSV-QLY"
       },
       {
         "fullName": "Alonzo Miller",
@@ -101,7 +103,8 @@
         "birthPlaceOriginal": "Indiana, United States",
         "birthPlace": "Indiana, United States",
         "age": "8",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MHSV-QLB"
       },
       {
         "fullName": "Charley Miller",
@@ -115,7 +118,8 @@
         "birthPlaceOriginal": "Indiana, United States",
         "birthPlace": "Indiana, United States",
         "age": "6",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MHSV-QL1"
       },
       {
         "fullName": "James Miller",
@@ -129,7 +133,8 @@
         "birthPlaceOriginal": "Indiana, United States",
         "birthPlace": "Indiana, United States",
         "age": "4",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MHSV-QGM"
       },
       {
         "fullName": "Arnold Miller",
@@ -143,7 +148,8 @@
         "birthPlaceOriginal": "Indiana, United States",
         "birthPlace": "Indiana, United States",
         "age": "1",
-        "relationship": "Son"
+        "relationship": "Son",
+        "link": "https://www.familysearch.org/ark:/61903/1:1:MHSV-QG9"
       }
     ]
   },

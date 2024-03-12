@@ -38,6 +38,14 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QKDC-1YHM}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QSQ-G9LB-ZJGZ}}",
+    "{{FamilySearch Record|QKDC-1YH9}}",
+    "{{FamilySearch Record|QKDC-1YHS}}"
+  ],
   "collectionData": {
     "id": "1462519"
   },

@@ -19,12 +19,14 @@
   "father": {
     "fullName": "Robert Agar",
     "givenName": "Robert",
-    "surname": "Agar"
+    "surname": "Agar",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:NQXX-QL8"
   },
   "mother": {
     "fullName": "Mary Agar",
     "givenName": "Mary",
-    "surname": "Agar"
+    "surname": "Agar",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:NQXX-QLD"
   },
   "referenceData": {
     "digitalFilmNumber": "4207534",
