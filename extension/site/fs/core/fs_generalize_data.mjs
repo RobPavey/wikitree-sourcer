@@ -902,6 +902,13 @@ function addWtSearchTemplates(ed, result) {
     addLinkOrTemplate(wtTemplates, buildFsRecordLinkOrTemplate(recordUrl));
 
     addLinkOrTemplate(wtTemplatesRelated, buildFsImageLinkOrTemplate(ed.fsImageUrl));
+
+    if (ed.collectionTitle == "Find A Grave Index") {
+      let memorialId = ed.externalRecordId;
+      if (memorialId) {
+        addLinkOrTemplate(wtTemplates, "{{FindAGrave|" + memorialId + "}}");
+      }
+    }
   } else if (ed.pageType == "image") {
     addLinkOrTemplate(wtTemplates, buildFsImageLinkOrTemplate(ed.url));
   }

@@ -70,24 +70,34 @@ function buildTemplateSearchUrl(input) {
   var builder = new WikiTreePlusUriBuilder();
 
   let query = "";
-  for (let template of templateData) {
-    if (query) {
-      query += " OR ";
+  if (templateData) {
+    for (let template of templateData) {
+      if (query) {
+        query += " OR ";
+      }
+
+      // Example:
+      // For this template: "{{Ancestry Record|8860|1862697}}"
+      // TemplateText="Ancestry Record 8860 1862697"
+      //    sql="([Templates].[Template text].AsString Like '{{*Ancestry*Record*|*8860*|*1862697*}}')"
+
+      let simpleText = template.replace(/[{}| ]+/g, " ").trim();
+      let likeText = template.replace(/\s*\|\s*/g, "*|*");
+      likeText = likeText.replace(/{{\s*/g, "{{*");
+      likeText = likeText.replace(/\s*}}/g, "*}}");
+      likeText = likeText.replace(/\s+/g, "*");
+
+      query += 'TemplateText="' + simpleText + '"';
+      query += ` sql=\"([Templates].[Template text].AsString Like '` + likeText + `')"`;
+
+      if (/\{\{FindAGrave\|\d+\}\}/.test(template)) {
+        let memorialId = template.replace(/\{\{FindAGrave\|(\d+)\}\}/, "$1");
+        if (memorialId && memorialId != template) {
+          query += " OR ";
+          query += "FindAGrave=fgmem" + memorialId;
+        }
+      }
     }
-
-    // Example:
-    // For this template: "{{Ancestry Record|8860|1862697}}"
-    // TemplateText="Ancestry Record 8860 1862697"
-    //    sql="([Templates].[Template text].AsString Like '{{*Ancestry*Record*|*8860*|*1862697*}}')"
-
-    let simpleText = template.replace(/[{}| ]+/g, " ").trim();
-    let likeText = template.replace(/\s*\|\s*/g, "*|*");
-    likeText = likeText.replace(/{{\s*/g, "{{*");
-    likeText = likeText.replace(/\s*}}/g, "*}}");
-    likeText = likeText.replace(/\s+/g, "*");
-
-    query += 'TemplateText="' + simpleText + '"';
-    query += ` sql=\"([Templates].[Template text].AsString Like '` + likeText + `')"`;
   }
 
   builder.addSearchParameter("Query", query);

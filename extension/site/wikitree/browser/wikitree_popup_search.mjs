@@ -111,9 +111,12 @@ async function wikitreePlusSearch(generalizedData) {
 async function wikitreePlusSearchForTemplateData(templateData, additionalTemplateData) {
   if (additionalTemplateData) {
     for (let addition of additionalTemplateData) {
-      templateData.push(addition);
+      if (!templateData.includes(addition)) {
+        templateData.push(addition);
+      }
     }
   }
+
   const input = {
     typeOfSearch: "",
     templateData: templateData,
