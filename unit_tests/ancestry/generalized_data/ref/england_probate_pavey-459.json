@@ -18,6 +18,9 @@
     "placeString": "London, England"
   },
   "lastNameAtDeath": "Pavey",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1904|17893479}}"
+  ],
   "collectionData": {
     "id": "1904"
   },

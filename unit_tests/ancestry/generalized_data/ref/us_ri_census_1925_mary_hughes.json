@@ -59,6 +59,17 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=RICensus&indiv=try&h=2697246"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|4721|2697241}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|RICensus|2697241}}",
+    "{{Ancestry Record|RICensus|2697242}}",
+    "{{Ancestry Record|RICensus|2697243}}",
+    "{{Ancestry Record|RICensus|2697244}}",
+    "{{Ancestry Record|RICensus|2697245}}",
+    "{{Ancestry Record|RICensus|2697246}}"
+  ],
   "collectionData": {
     "id": "4721",
     "volume": "17",

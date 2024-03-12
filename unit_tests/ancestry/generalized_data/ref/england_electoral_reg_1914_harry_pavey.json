@@ -12,6 +12,9 @@
     "placeString": "110 Highgate hill, Islington North, Islington, England",
     "streetAddress": "110 Highgate hill"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1795|54921469}}"
+  ],
   "collectionData": {
     "id": "1795"
   },

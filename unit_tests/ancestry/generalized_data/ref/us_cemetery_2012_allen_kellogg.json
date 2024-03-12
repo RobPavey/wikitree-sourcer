@@ -16,6 +16,16 @@
     "dateString": "16 Nov"
   },
   "lastNameAtDeath": "Kellogg",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2190|500681718}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|2190|156217719}}",
+    "{{Ancestry Record|2190|226564839}}",
+    "{{Ancestry Record|2190|53399048}}",
+    "{{Ancestry Record|2190|232731355}}",
+    "{{Ancestry Record|2190|120258503}}"
+  ],
   "collectionData": {
     "id": "2190"
   },

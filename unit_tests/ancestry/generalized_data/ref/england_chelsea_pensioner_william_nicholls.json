@@ -14,6 +14,9 @@
   },
   "serviceNumber": "20529",
   "unit": "??furmae??",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61068|825575}}"
+  ],
   "collectionData": {
     "id": "61068"
   },

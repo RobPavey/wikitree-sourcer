@@ -27,6 +27,9 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1677|1382783}}"
+  ],
   "collectionData": {
     "id": "1677"
   },

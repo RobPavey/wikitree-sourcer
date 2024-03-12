@@ -82,6 +82,20 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8054&h=1085075&indiv=try"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8054|1085066}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|8054|1085067}}",
+    "{{Ancestry Record|8054|1085068}}",
+    "{{Ancestry Record|8054|1085069}}",
+    "{{Ancestry Record|8054|1085070}}",
+    "{{Ancestry Record|8054|1085071}}",
+    "{{Ancestry Record|8054|1085072}}",
+    "{{Ancestry Record|8054|1085073}}",
+    "{{Ancestry Record|8054|1085074}}",
+    "{{Ancestry Record|8054|1085075}}"
+  ],
   "collectionData": {
     "id": "8054",
     "familyNumber": "154"

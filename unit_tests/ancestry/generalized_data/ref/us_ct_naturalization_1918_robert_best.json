@@ -20,6 +20,12 @@
   },
   "arrivalDate": "22 Aug 1907",
   "arrivalPlace": "New York New York",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61195|75954}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|NaraNatsConnecticut|900075954}}"
+  ],
   "collectionData": {
     "id": "61195"
   },

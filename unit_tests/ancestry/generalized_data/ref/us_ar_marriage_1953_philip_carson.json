@@ -24,6 +24,12 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61775|1236093}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|ArkansasMarriages|91236093}}"
+  ],
   "collectionData": {
     "id": "61775"
   },

@@ -12,6 +12,9 @@
     "placeString": "Dix River Bapt Ch Cem, nr Lancaster, Garrard Co KY 72"
   },
   "lastNameAtDeath": "Kemper",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|4110|29540}}"
+  ],
   "collectionData": {
     "id": "4110"
   },

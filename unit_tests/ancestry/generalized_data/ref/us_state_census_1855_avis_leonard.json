@@ -60,6 +60,17 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=MACensus&indiv=try&h=2609999"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|4472|2609994}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|MACensus|2609994}}",
+    "{{Ancestry Record|MACensus|2609995}}",
+    "{{Ancestry Record|MACensus|2609996}}",
+    "{{Ancestry Record|MACensus|2609997}}",
+    "{{Ancestry Record|MACensus|2609998}}",
+    "{{Ancestry Record|MACensus|2609999}}"
+  ],
   "collectionData": {
     "id": "4472",
     "volume": "26"

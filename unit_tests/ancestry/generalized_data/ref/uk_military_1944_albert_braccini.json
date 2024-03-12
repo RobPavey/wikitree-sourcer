@@ -14,6 +14,9 @@
   "serviceNumber": "2756087",
   "rank": "Serjeant",
   "unit": "London Scottish (Donside)",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1604|84274}}"
+  ],
   "collectionData": {
     "id": "1604"
   },

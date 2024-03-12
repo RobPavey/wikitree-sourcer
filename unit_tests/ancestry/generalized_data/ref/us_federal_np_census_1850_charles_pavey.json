@@ -11,6 +11,9 @@
   "eventPlace": {
     "placeString": "Coldwater, Branch, Michigan, USA"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1276|4001446}}"
+  ],
   "collectionData": {
     "id": "1276"
   },

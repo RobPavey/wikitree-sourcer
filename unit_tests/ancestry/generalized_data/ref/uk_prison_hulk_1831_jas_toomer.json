@@ -12,6 +12,9 @@
     "placeString": "Portsmouth"
   },
   "ageAtEvent": "35",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1989|219120}}"
+  ],
   "collectionData": {
     "id": "1989"
   },

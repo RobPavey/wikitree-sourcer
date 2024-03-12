@@ -23,6 +23,9 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|General-9280|125735}}"
+  ],
   "collectionData": {
     "id": "General-9280"
   },

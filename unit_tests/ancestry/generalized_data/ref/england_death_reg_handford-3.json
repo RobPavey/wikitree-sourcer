@@ -18,6 +18,9 @@
   },
   "lastNameAtDeath": "Handford",
   "ageAtDeath": "69",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8914|14602608}}"
+  ],
   "collectionData": {
     "id": "8914",
     "volume": "9d",

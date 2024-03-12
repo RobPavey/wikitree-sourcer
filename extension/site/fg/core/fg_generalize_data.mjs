@@ -25,6 +25,32 @@ SOFTWARE.
 import { GeneralizedData } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
+function addWtSearchTemplates(ed, result) {
+  let wtTemplates = [];
+  let wtTemplatesRelated = [];
+
+  function addLinkOrTemplate(templates, linkOrTemplate) {
+    if (linkOrTemplate && linkOrTemplate.startsWith("{{")) {
+      if (!templates.includes(linkOrTemplate)) {
+        templates.push(linkOrTemplate);
+      }
+    }
+  }
+
+  if (ed.memorialId) {
+    const template = "{{FindAGrave|" + ed.memorialId + "}}";
+    addLinkOrTemplate(wtTemplates, template);
+  }
+
+  // if there are templates add them to result
+  if (wtTemplates.length) {
+    result.wtSearchTemplates = wtTemplates;
+  }
+  if (wtTemplatesRelated.length) {
+    result.wtSearchTemplatesRelated = wtTemplatesRelated;
+  }
+}
+
 function extractNicknames(name, nameObj) {
   // change non-standard "smart" quotes to quotes
   name = name.replace(/[“”]/g, '"');
@@ -271,6 +297,9 @@ function generalizeData(input) {
 
   result.setBirthDate(ed.birthDate);
   result.setBirthPlace(ed.birthPlace);
+
+  // Template search data
+  addWtSearchTemplates(ed, result);
 
   // should we use a collection to allow search for same record on Ancestry?
 

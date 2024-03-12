@@ -32,6 +32,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1351|2249655}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|bivri_EnglandBirth|152249655}}",
+    "{{Ancestry Record|bivri_EnglandBirth|302249655}}"
+  ],
   "collectionData": {
     "id": "1351"
   },

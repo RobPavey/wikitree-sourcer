@@ -29,5 +29,8 @@
   "birthPlace": {
     "placeString": "Union Township, Clermont County, Ohio, USA"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|142850482}}"
+  ],
   "hasValidData": true
 }

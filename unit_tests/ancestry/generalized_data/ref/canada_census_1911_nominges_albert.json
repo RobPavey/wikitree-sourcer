@@ -63,6 +63,17 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911Canada&indiv=try&h=442583"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8947|442578}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|1911Canada|442578}}",
+    "{{Ancestry Record|1911Canada|442579}}",
+    "{{Ancestry Record|1911Canada|442580}}",
+    "{{Ancestry Record|1911Canada|442581}}",
+    "{{Ancestry Record|1911Canada|442582}}",
+    "{{Ancestry Record|1911Canada|442583}}"
+  ],
   "collectionData": {
     "id": "8947",
     "district": "Gaspé",

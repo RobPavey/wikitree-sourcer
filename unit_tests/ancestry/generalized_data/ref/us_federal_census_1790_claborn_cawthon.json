@@ -13,6 +13,9 @@
   "eventDate": {
     "yearString": "1790"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2234|111792}}"
+  ],
   "collectionData": {
     "id": "2234",
     "county": "Franklin County"

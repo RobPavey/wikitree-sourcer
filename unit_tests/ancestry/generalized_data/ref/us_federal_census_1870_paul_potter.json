@@ -72,6 +72,19 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7163&h=12027029&indiv=try"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7163|10410782}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|7163|4680742}}",
+    "{{Ancestry Record|7163|7288333}}",
+    "{{Ancestry Record|7163|7288331}}",
+    "{{Ancestry Record|7163|7288330}}",
+    "{{Ancestry Record|7163|7288332}}",
+    "{{Ancestry Record|7163|12027028}}",
+    "{{Ancestry Record|7163|10410781}}",
+    "{{Ancestry Record|7163|12027029}}"
+  ],
   "collectionData": {
     "id": "7163"
   },

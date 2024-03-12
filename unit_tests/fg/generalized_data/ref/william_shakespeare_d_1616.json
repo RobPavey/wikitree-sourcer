@@ -27,5 +27,8 @@
   "birthPlace": {
     "placeString": "Stratford-upon-Avon, Stratford-on-Avon District, Warwickshire, England"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|87136641}}"
+  ],
   "hasValidData": true
 }

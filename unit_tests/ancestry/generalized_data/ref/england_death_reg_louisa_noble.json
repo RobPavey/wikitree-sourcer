@@ -22,6 +22,9 @@
   "birthDate": {
     "dateString": "23 Jul 1882"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7579|40560790}}"
+  ],
   "collectionData": {
     "id": "7579",
     "volume": "3c",

@@ -16,6 +16,14 @@
     "placeString": "Victoria, Australia"
   },
   "lastNameAtDeath": "Blood",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61650|1181988}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|61650|61181988}}",
+    "{{Ancestry Record|61650|76181988}}",
+    "{{Ancestry Record|61650|46181988}}"
+  ],
   "collectionData": {
     "id": "61650"
   },

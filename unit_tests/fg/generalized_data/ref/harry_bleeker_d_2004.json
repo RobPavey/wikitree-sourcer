@@ -29,5 +29,8 @@
   "birthPlace": {
     "placeString": "Kalamazoo, Kalamazoo County, Michigan, USA"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|60724641}}"
+  ],
   "hasValidData": true
 }

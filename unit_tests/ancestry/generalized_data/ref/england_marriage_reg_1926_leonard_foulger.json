@@ -27,6 +27,12 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8753|62060982}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|ONSmarriage1984|62041889}}"
+  ],
   "collectionData": {
     "id": "8753",
     "volume": "3a",

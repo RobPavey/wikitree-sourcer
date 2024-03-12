@@ -17,6 +17,12 @@
     }
   },
   "mothersMaidenName": "Folkes",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61648|250322}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|VictoriaBirthRecords|15250322}}"
+  ],
   "collectionData": {
     "id": "61648"
   },

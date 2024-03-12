@@ -16,6 +16,23 @@
     "dateIsNotGrantDate": true
   },
   "lastNameAtDeath": "Augesten",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|9069|7967038}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|9069|383020}}",
+    "{{Ancestry Record|9069|6921726}}",
+    "{{Ancestry Record|9069|7092075}}",
+    "{{Ancestry Record|9069|7267401}}",
+    "{{Ancestry Record|9069|7397224}}",
+    "{{Ancestry Record|9069|7532860}}",
+    "{{Ancestry Record|9069|7627974}}",
+    "{{Ancestry Record|9069|7725411}}",
+    "{{Ancestry Record|9069|7790312}}",
+    "{{Ancestry Record|9069|7855872}}",
+    "{{Ancestry Record|9069|7898003}}",
+    "{{Ancestry Record|9069|7940314}}"
+  ],
   "collectionData": {
     "id": "9069"
   },

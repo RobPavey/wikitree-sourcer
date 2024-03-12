@@ -65,6 +65,14 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|6598|7866657}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|6598|7866656}}",
+    "{{Ancestry Record|6598|7866658}}",
+    "{{Ancestry Record|6598|7866659}}"
+  ],
   "collectionData": {
     "id": "6598",
     "folio": "159",

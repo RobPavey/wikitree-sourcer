@@ -19,6 +19,9 @@
   "birthDate": {
     "dateString": "26 Sep 1888"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|5180|4405640}}"
+  ],
   "collectionData": {
     "id": "5180"
   },

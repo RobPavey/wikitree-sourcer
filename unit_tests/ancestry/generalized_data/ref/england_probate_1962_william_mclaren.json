@@ -18,6 +18,9 @@
     "placeString": "London, England"
   },
   "lastNameAtDeath": "McLaren",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1904|13762821}}"
+  ],
   "collectionData": {
     "id": "1904"
   },

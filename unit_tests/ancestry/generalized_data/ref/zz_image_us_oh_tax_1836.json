@@ -2,6 +2,9 @@
   "sourceType": "record",
   "recordType": "Tax",
   "sourceOfData": "ancestry",
+  "wtSearchTemplates": [
+    "{{Ancestry Image|60104|MM9.3.1_2FTH-267-11831-94311-26}}"
+  ],
   "collectionData": {
     "id": "60104"
   },

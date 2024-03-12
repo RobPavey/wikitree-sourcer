@@ -25,5 +25,8 @@
   "birthPlace": {
     "placeString": "Bargany, South Ayrshire, Scotland"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|140044048}}"
+  ],
   "hasValidData": true
 }

@@ -17,6 +17,9 @@
     "placeString": "Castle Rising, Norfolk, England"
   },
   "lastNameAtDeath": "Fawssett",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|5111|413359}}"
+  ],
   "collectionData": {
     "id": "5111"
   },

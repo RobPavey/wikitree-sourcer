@@ -78,6 +78,16 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7619|2477121}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|7619|2477119}}",
+    "{{Ancestry Record|7619|2477123}}",
+    "{{Ancestry Record|7619|2477125}}",
+    "{{Ancestry Record|7619|2477127}}",
+    "{{Ancestry Record|7619|2477129}}"
+  ],
   "collectionData": {
     "id": "7619",
     "page": "13",

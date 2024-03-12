@@ -16,6 +16,9 @@
   },
   "lastNameAtDeath": "Houston",
   "ageAtDeath": "39",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2534|6407416}}"
+  ],
   "collectionData": {
     "id": "2534",
     "volume": "2",

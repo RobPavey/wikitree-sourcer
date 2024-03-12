@@ -30,6 +30,9 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2495|46470693}}"
+  ],
   "collectionData": {
     "id": "2495"
   },

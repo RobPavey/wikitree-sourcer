@@ -58,6 +58,16 @@
       "birthPlace": "Kentucky"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7163|18923868}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|7163|18864837}}",
+    "{{Ancestry Record|7163|18923870}}",
+    "{{Ancestry Record|7163|18923869}}",
+    "{{Ancestry Record|7163|34124497}}",
+    "{{Ancestry Record|7163|34124496}}"
+  ],
   "collectionData": {
     "id": "7163"
   },

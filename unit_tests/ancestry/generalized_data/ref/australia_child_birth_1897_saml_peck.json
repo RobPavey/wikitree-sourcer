@@ -20,6 +20,13 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1778|150522689}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|AusBirthIndex|300522689}}",
+    "{{Ancestry Record|AusBirthIndex|522689}}"
+  ],
   "collectionData": {
     "id": "1778"
   },

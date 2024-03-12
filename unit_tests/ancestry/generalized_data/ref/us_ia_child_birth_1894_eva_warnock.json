@@ -16,6 +16,13 @@
     "qualifier": 2,
     "dateString": "1873"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61441|602090064}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|61441|452090064}}",
+    "{{Ancestry Record|61441|302090064}}"
+  ],
   "collectionData": {
     "id": "61441"
   },

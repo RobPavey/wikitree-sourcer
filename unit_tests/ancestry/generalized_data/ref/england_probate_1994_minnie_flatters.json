@@ -18,6 +18,9 @@
     "placeString": "Billinghay Lincolnshire"
   },
   "lastNameAtDeath": "Flatters",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1904|24194132}}"
+  ],
   "collectionData": {
     "id": "1904"
   },

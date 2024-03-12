@@ -17,6 +17,9 @@
   },
   "lastNameAtDeath": "Witter",
   "ageAtDeath": "71",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1671|2089834}}"
+  ],
   "collectionData": {
     "id": "1671"
   },

@@ -13,6 +13,13 @@
   },
   "personGender": "male",
   "lastNameAtBirth": "Pavey",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|9841|1071978}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|9841|1071977}}",
+    "{{Ancestry Record|9841|1071979}}"
+  ],
   "collectionData": {
     "id": "9841"
   },

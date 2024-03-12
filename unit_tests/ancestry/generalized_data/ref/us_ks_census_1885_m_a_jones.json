@@ -62,6 +62,16 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1088&h=187427&indiv=try"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1088|187423}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|1088|187422}}",
+    "{{Ancestry Record|1088|187424}}",
+    "{{Ancestry Record|1088|187425}}",
+    "{{Ancestry Record|1088|187426}}",
+    "{{Ancestry Record|1088|187427}}"
+  ],
   "collectionData": {
     "id": "1088",
     "familyNumber": "24"

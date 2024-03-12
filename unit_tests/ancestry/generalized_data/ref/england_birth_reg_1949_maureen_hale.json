@@ -20,6 +20,9 @@
   },
   "lastNameAtBirth": "Hale",
   "mothersMaidenName": "Burton",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8782|22191988}}"
+  ],
   "collectionData": {
     "id": "8782",
     "volume": "4a",

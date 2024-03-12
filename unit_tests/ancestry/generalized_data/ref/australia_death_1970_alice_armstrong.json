@@ -34,6 +34,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1779|1732471}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|AusDeathIndex|61732471}}",
+    "{{Ancestry Record|AusDeathIndex|76732471}}"
+  ],
   "collectionData": {
     "id": "1779"
   },

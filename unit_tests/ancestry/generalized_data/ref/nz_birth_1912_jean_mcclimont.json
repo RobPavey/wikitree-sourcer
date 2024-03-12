@@ -18,6 +18,9 @@
     "placeString": "Springburn, Canterbury, New Zealand"
   },
   "lastNameAtBirth": "McClimont",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8949|1158632}}"
+  ],
   "collectionData": {
     "id": "8949"
   },

@@ -28,5 +28,8 @@
   "birthPlace": {
     "placeString": "Middlesex, Middlesex County, Ontario, Canada"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|115176143}}"
+  ],
   "hasValidData": true
 }

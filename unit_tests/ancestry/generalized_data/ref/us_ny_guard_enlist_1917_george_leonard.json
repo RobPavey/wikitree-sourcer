@@ -16,6 +16,9 @@
     "placeString": "New York, USA"
   },
   "enlistmentDate": "26 Apr 1917",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2878|7162}}"
+  ],
   "collectionData": {
     "id": "2878"
   },

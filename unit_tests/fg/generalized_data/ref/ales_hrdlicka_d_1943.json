@@ -28,5 +28,8 @@
   "birthPlace": {
     "placeString": "Humpolec, Okres Klatovy, Plzeňský (Plzen), Czech Republic"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|202957947}}"
+  ],
   "hasValidData": true
 }

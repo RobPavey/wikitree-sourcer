@@ -18,6 +18,9 @@
     "placeString": "New York, USA"
   },
   "lastNameAtDeath": "Pearsall",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8800|10725078}}"
+  ],
   "collectionData": {
     "id": "8800"
   },

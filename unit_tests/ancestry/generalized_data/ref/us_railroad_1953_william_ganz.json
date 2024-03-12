@@ -18,6 +18,13 @@
   "birthPlace": {
     "placeString": "Oil City, Pennsylvania"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|6944|15511}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|6944|150015511}}",
+    "{{Ancestry Record|6944|300015511}}"
+  ],
   "collectionData": {
     "id": "6944"
   },

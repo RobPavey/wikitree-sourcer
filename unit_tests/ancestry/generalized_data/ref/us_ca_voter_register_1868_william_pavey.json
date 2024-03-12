@@ -15,6 +15,9 @@
     "placeString": "England"
   },
   "ageAtEvent": "38",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2221|6446850}}"
+  ],
   "collectionData": {
     "id": "2221"
   },

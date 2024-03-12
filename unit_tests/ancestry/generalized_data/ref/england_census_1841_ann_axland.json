@@ -37,6 +37,12 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1841&indiv=try&h=16161242"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8978|16161242}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|uki1841|16161242}}"
+  ],
   "collectionData": {
     "id": "8978",
     "page": "6",

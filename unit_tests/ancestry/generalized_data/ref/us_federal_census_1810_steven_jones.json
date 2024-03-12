@@ -8,6 +8,9 @@
   "eventDate": {
     "yearString": "1810"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7613|568306}}"
+  ],
   "collectionData": {
     "id": "7613"
   },

@@ -22,5 +22,8 @@
   "birthDate": {
     "dateString": "4 Oct 1860"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|81147520}}"
+  ],
   "hasValidData": true
 }

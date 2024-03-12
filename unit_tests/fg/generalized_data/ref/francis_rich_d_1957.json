@@ -24,5 +24,8 @@
   "birthPlace": {
     "placeString": "England"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|181842312}}"
+  ],
   "hasValidData": true
 }

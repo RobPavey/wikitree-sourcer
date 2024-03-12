@@ -17,6 +17,9 @@
   },
   "shipName": "Chariot of Fame",
   "ageAtEvent": "17",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8745|3941667}}"
+  ],
   "collectionData": {
     "id": "8745"
   },

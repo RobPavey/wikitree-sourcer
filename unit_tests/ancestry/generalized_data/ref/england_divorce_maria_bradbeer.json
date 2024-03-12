@@ -18,6 +18,12 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|divorcerecords|160744}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|divorcerecords|900160744}}"
+  ],
   "collectionData": {
     "id": "divorcerecords"
   },

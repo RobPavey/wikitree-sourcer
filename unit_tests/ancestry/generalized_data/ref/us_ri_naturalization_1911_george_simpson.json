@@ -20,6 +20,9 @@
   },
   "arrivalDate": "12 Feb 1891",
   "arrivalPlace": "New York City, New York",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61208|264074}}"
+  ],
   "collectionData": {
     "id": "61208"
   },

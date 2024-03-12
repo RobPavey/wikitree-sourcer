@@ -26,6 +26,12 @@
     }
   ],
   "lastNameAtDeath": "Wood",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61632|198847}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|61632|208116}}"
+  ],
   "collectionData": {
     "id": "61632"
   },

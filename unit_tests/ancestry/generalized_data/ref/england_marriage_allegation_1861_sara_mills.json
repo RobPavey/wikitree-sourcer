@@ -28,6 +28,9 @@
       "age": "21"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2056|688871}}"
+  ],
   "collectionData": {
     "id": "2056",
     "parish": "Bromley, St Leonard",

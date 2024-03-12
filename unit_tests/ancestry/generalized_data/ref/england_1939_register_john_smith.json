@@ -62,6 +62,18 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=10027091&indiv=try"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61596|10027090}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|61596|10027084}}",
+    "{{Ancestry Record|61596|10027085}}",
+    "{{Ancestry Record|61596|10027086}}",
+    "{{Ancestry Record|61596|10027087}}",
+    "{{Ancestry Record|61596|10027088}}",
+    "{{Ancestry Record|61596|10027089}}",
+    "{{Ancestry Record|61596|10027091}}"
+  ],
   "collectionData": {
     "id": "61596",
     "schedule": "126",

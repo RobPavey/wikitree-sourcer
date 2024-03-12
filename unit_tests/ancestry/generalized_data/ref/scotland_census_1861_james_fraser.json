@@ -75,6 +75,15 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1080|165755}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|1080|165756}}",
+    "{{Ancestry Record|1080|165757}}",
+    "{{Ancestry Record|1080|165758}}",
+    "{{Ancestry Record|1080|165759}}"
+  ],
   "collectionData": {
     "id": "1080",
     "county": "Lanarkshire"

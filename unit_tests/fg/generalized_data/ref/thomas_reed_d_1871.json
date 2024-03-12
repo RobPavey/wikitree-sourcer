@@ -27,5 +27,8 @@
   "birthPlace": {
     "placeString": "London Borough of Barnet, Greater London, England"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|195078570}}"
+  ],
   "hasValidData": true
 }

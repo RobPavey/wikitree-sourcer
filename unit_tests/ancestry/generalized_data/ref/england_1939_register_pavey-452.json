@@ -38,6 +38,12 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61596&h=7205481&indiv=try"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61596|7205480}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|61596|7205481}}"
+  ],
   "collectionData": {
     "id": "61596",
     "schedule": "176",

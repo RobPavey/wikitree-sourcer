@@ -19,6 +19,9 @@
   "eventPlace": {
     "placeString": "Lowville, Lewis, New York"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8940|93143}}"
+  ],
   "collectionData": {
     "id": "8940"
   },

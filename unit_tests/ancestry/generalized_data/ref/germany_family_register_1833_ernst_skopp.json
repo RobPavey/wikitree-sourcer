@@ -11,6 +11,14 @@
   "birthDate": {
     "dateString": "17 Nov 1833"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61311|2913}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|FrankenbergFamilySheets|1050002913}}",
+    "{{Ancestry Record|FrankenbergFamilySheets|900002913}}",
+    "{{Ancestry Record|FrankenbergFamilySheets|2914}}"
+  ],
   "collectionData": {
     "id": "61311"
   },

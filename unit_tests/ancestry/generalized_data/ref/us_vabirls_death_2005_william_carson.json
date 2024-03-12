@@ -18,6 +18,9 @@
   "enlistmentDate": "5 Jun 1947",
   "dischargeDate": "9 May 1949",
   "militaryBranch": "NAVY",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2441|1562948}}"
+  ],
   "collectionData": {
     "id": "2441",
     "page": "1"

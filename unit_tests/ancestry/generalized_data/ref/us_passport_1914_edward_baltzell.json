@@ -19,6 +19,12 @@
     "placeString": "Fox Chase, Philadelphia, Pennsylvania"
   },
   "ageAtEvent": "29",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1174|486408}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|1174|450486408}}"
+  ],
   "collectionData": {
     "id": "1174"
   },

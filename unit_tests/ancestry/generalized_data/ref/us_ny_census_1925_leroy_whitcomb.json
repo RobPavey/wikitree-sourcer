@@ -72,6 +72,16 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2704|24992583}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|2704|24992593}}",
+    "{{Ancestry Record|2704|24992585}}",
+    "{{Ancestry Record|2704|24992587}}",
+    "{{Ancestry Record|2704|24992588}}",
+    "{{Ancestry Record|2704|24992590}}"
+  ],
   "collectionData": {
     "id": "2704",
     "page": "21"

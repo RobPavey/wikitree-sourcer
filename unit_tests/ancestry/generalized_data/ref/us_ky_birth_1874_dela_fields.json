@@ -31,6 +31,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1213|69475}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|KYbirths|150069475}}",
+    "{{Ancestry Record|KYbirths|300069475}}"
+  ],
   "collectionData": {
     "id": "1213"
   },

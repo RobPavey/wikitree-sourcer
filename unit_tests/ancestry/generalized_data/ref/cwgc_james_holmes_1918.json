@@ -20,6 +20,9 @@
     "dateString": "15 Sep 1918"
   },
   "ageAtEvent": "34",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2706|66407}}"
+  ],
   "collectionData": {
     "id": "2706"
   },

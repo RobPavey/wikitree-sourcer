@@ -39,6 +39,9 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8510|17179}}"
+  ],
   "collectionData": {
     "id": "8510",
     "county": "Northumberland and Durham"

@@ -11,6 +11,9 @@
   "eventPlace": {
     "placeString": "Blue Hill, Hancock, Maine"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7734|132041}}"
+  ],
   "collectionData": {
     "id": "7734"
   },

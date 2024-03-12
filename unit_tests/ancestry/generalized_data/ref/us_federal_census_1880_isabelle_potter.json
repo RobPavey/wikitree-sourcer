@@ -83,6 +83,17 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|6742|10577665}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|6742|10577746}}",
+    "{{Ancestry Record|6742|15756440}}",
+    "{{Ancestry Record|6742|15756419}}",
+    "{{Ancestry Record|6742|41660766}}",
+    "{{Ancestry Record|6742|10577828}}",
+    "{{Ancestry Record|6742|10577867}}"
+  ],
   "collectionData": {
     "id": "6742"
   },

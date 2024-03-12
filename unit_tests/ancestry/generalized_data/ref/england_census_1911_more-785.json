@@ -58,6 +58,15 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=1911England&indiv=try&h=51207"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1911England|51208}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|1911England|51208}}",
+    "{{Ancestry Record|1911England|51209}}",
+    "{{Ancestry Record|1911England|51206}}",
+    "{{Ancestry Record|1911England|51207}}"
+  ],
   "collectionData": {
     "id": "2352",
     "piece": "789",

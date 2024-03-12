@@ -29,5 +29,8 @@
   "birthPlace": {
     "placeString": "Midlothian, Scotland"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|148814973}}"
+  ],
   "hasValidData": true
 }

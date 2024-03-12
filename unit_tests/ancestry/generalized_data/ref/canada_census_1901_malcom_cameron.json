@@ -74,6 +74,16 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8826|11429027}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|8826|11429028}}",
+    "{{Ancestry Record|8826|11429029}}",
+    "{{Ancestry Record|8826|11429030}}",
+    "{{Ancestry Record|8826|11429031}}",
+    "{{Ancestry Record|8826|11429032}}"
+  ],
   "collectionData": {
     "id": "8826",
     "district": "Yale and Cariboo",

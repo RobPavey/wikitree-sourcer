@@ -13,6 +13,9 @@
   },
   "ageAtEvent": "50",
   "nativePlace": "Poland",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|60711|3016}}"
+  ],
   "collectionData": {
     "id": "60711"
   },

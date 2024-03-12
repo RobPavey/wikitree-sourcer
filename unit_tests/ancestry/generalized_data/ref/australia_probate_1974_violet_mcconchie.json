@@ -16,6 +16,9 @@
   },
   "occupation": "Widow",
   "lastNameAtDeath": "McConchie",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61315|462110}}"
+  ],
   "collectionData": {
     "id": "61315"
   },

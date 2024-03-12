@@ -31,6 +31,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|62361|38163}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|62361|150038163}}",
+    "{{Ancestry Record|62361|300038163}}"
+  ],
   "collectionData": {
     "id": "62361"
   },

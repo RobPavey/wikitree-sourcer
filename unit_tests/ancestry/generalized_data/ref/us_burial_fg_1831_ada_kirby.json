@@ -18,6 +18,9 @@
     "placeString": "Providence, Providence County, Rhode Island, United States of America"
   },
   "lastNameAtDeath": "Kirby",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|60525|106712744}}"
+  ],
   "collectionData": {
     "id": "60525"
   },

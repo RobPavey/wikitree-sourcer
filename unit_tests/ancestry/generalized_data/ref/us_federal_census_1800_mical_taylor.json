@@ -11,6 +11,9 @@
   "eventPlace": {
     "placeString": "Cambridge, Middlesex, Massachusetts"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7590|169250}}"
+  ],
   "collectionData": {
     "id": "7590"
   },

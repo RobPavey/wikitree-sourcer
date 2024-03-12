@@ -17,6 +17,9 @@
   "eventPlace": {
     "placeString": "Buffalo, N Y"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61861|4102834}}"
+  ],
   "collectionData": {
     "id": "61861"
   },

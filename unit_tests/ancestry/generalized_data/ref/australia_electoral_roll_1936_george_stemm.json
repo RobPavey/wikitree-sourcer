@@ -12,6 +12,9 @@
   "eventPlace": {
     "placeString": "Chinchilla, Maranoa, Queensland, Australia"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1207|2135557}}"
+  ],
   "collectionData": {
     "id": "1207"
   },

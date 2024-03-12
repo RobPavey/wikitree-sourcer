@@ -18,6 +18,9 @@
     "placeString": "Limerick, Ireland"
   },
   "lastNameAtBirth": "Shaw",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2573|3027592}}"
+  ],
   "collectionData": {
     "id": "2573",
     "volume": "5",

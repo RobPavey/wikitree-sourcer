@@ -12,6 +12,9 @@
   "eventDate": {
     "yearString": "1782"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|3578|32837506}}"
+  ],
   "collectionData": {
     "id": "3578",
     "page": "18",

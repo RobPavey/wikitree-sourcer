@@ -21,6 +21,9 @@
   "dischargeDate": "16 Aug 1862",
   "rank": "Private",
   "militaryBranch": "Army",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61438|53309}}"
+  ],
   "collectionData": {
     "id": "61438"
   },

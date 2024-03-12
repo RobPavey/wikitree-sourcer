@@ -17,6 +17,9 @@
     "placeString": "Tamworth, Staffordshire, England"
   },
   "lastNameAtBirth": "Brain",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8912|33557671}}"
+  ],
   "collectionData": {
     "id": "8912",
     "volume": "6b",

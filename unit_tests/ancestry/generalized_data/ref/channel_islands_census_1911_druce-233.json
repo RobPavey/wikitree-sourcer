@@ -66,6 +66,16 @@
       "birthYear": "abt 1897"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2355|188915}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|2355|188910}}",
+    "{{Ancestry Record|2355|188911}}",
+    "{{Ancestry Record|2355|188912}}",
+    "{{Ancestry Record|2355|188913}}",
+    "{{Ancestry Record|2355|188914}}"
+  ],
   "collectionData": {
     "id": "2355",
     "piece": "34787",

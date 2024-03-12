@@ -24,6 +24,13 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7830|19685}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|pennchurch_ga|19685}}",
+    "{{Ancestry Record|pennchurch_ga|113500}}"
+  ],
   "collectionData": {
     "id": "7830"
   },

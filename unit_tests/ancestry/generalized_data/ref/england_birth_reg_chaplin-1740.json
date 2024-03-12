@@ -19,6 +19,9 @@
     "quarter": 3
   },
   "lastNameAtBirth": "Chaplin",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8912|37047757}}"
+  ],
   "collectionData": {
     "id": "8912",
     "volume": "1b",

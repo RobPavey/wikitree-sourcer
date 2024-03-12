@@ -12,6 +12,12 @@
     "name": "Miles Lumb"
   },
   "personGender": "male",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2256|604340115}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|2256|4340115}}"
+  ],
   "collectionData": {
     "id": "2256"
   },

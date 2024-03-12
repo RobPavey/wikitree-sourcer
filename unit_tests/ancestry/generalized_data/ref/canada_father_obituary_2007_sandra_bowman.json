@@ -13,6 +13,12 @@
   },
   "personGender": "female",
   "lastNameAtDeath": "Bowman",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|62226|686307572}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|62226|648692355}}"
+  ],
   "collectionData": {
     "id": "62226"
   },

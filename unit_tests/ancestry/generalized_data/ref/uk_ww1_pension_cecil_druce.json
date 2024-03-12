@@ -15,6 +15,9 @@
   "rank": "Pte",
   "unit": "Royal Irish Fusiliers",
   "nextOfKin": "Cecil Henry. Druce.<br/>Rosina Salmon Mother",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61588|21143847}}"
+  ],
   "collectionData": {
     "id": "61588"
   },

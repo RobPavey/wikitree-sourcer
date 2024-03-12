@@ -2,6 +2,9 @@
   "sourceType": "record",
   "recordType": "Probate",
   "sourceOfData": "ancestry",
+  "wtSearchTemplates": [
+    "{{Ancestry Image|9064|007593442_00286}}"
+  ],
   "collectionData": {
     "id": "9064"
   },

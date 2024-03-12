@@ -77,6 +77,19 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496827"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7572|26496682}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|uki1881|26496740}}",
+    "{{Ancestry Record|uki1881|26496682}}",
+    "{{Ancestry Record|uki1881|26496741}}",
+    "{{Ancestry Record|uki1881|26496791}}",
+    "{{Ancestry Record|uki1881|26496719}}",
+    "{{Ancestry Record|uki1881|26496605}}",
+    "{{Ancestry Record|uki1881|26496653}}",
+    "{{Ancestry Record|uki1881|26496827}}"
+  ],
   "collectionData": {
     "id": "7572",
     "page": "27",

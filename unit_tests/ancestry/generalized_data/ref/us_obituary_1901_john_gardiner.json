@@ -25,6 +25,9 @@
   },
   "lastNameAtDeath": "Gardner",
   "ageAtDeath": "40",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61843|982098692}}"
+  ],
   "collectionData": {
     "id": "61843"
   },

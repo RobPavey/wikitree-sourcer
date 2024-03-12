@@ -87,6 +87,17 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8991|8614064}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|8991|8614065}}",
+    "{{Ancestry Record|8991|8614066}}",
+    "{{Ancestry Record|8991|8614067}}",
+    "{{Ancestry Record|8991|8614068}}",
+    "{{Ancestry Record|8991|8614069}}",
+    "{{Ancestry Record|8991|8614070}}"
+  ],
   "collectionData": {
     "id": "8991",
     "enumerationDistrict": "14",

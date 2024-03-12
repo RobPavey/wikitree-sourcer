@@ -73,6 +73,19 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1891&indiv=try&h=11301724"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|6598|11301719}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|uki1891|11301717}}",
+    "{{Ancestry Record|uki1891|11301718}}",
+    "{{Ancestry Record|uki1891|11301719}}",
+    "{{Ancestry Record|uki1891|11301720}}",
+    "{{Ancestry Record|uki1891|11301721}}",
+    "{{Ancestry Record|uki1891|11301722}}",
+    "{{Ancestry Record|uki1891|11301723}}",
+    "{{Ancestry Record|uki1891|11301724}}"
+  ],
   "collectionData": {
     "id": "6598",
     "folio": "192",

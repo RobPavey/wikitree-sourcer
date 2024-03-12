@@ -49,6 +49,14 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1901wales&indiv=try&h=33333436"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7815|33333435}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|uki1901wales|33333434}}",
+    "{{Ancestry Record|uki1901wales|33333435}}",
+    "{{Ancestry Record|uki1901wales|33333436}}"
+  ],
   "collectionData": {
     "id": "7815",
     "page": "47",

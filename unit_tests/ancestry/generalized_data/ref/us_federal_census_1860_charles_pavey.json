@@ -51,6 +51,14 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=7667&h=10119826&indiv=try"
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7667|10119823}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|7667|10119824}}",
+    "{{Ancestry Record|7667|10119825}}",
+    "{{Ancestry Record|7667|10119826}}"
+  ],
   "collectionData": {
     "id": "7667",
     "familyNumber": "1984"

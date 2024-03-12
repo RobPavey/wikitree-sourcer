@@ -18,6 +18,13 @@
     "placeString": "Piqua, Miami County, Ohio, United States of America"
   },
   "lastNameAtDeath": "Miller",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|60525|83153657}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|60525|19043911}}",
+    "{{Ancestry Record|60525|183004220}}"
+  ],
   "collectionData": {
     "id": "60525"
   },

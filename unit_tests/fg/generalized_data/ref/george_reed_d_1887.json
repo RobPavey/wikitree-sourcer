@@ -25,5 +25,8 @@
   "birthPlace": {
     "placeString": "Chelsea Harbour, London Borough of Hammersmith and Fulham, Greater London, England"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|221989091}}"
+  ],
   "hasValidData": true
 }

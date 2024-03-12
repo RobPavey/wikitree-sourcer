@@ -16,6 +16,9 @@
     "placeString": "Raleigh"
   },
   "ageAtEvent": "7",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|4628|2074}}"
+  ],
   "collectionData": {
     "id": "4628"
   },

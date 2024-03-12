@@ -63,6 +63,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7619|4576313}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|7619|4576311}}",
+    "{{Ancestry Record|7619|4576312}}"
+  ],
   "collectionData": {
     "id": "7619",
     "page": "20",

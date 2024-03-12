@@ -27,6 +27,9 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8913|20507684}}"
+  ],
   "collectionData": {
     "id": "8913",
     "volume": "1a",

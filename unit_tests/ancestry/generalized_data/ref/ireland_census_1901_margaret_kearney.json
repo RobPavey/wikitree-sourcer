@@ -81,6 +81,17 @@
       "marriagePlace": {}
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|70667|10426199}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|70667|9407265}}",
+    "{{Ancestry Record|70667|11070666}}",
+    "{{Ancestry Record|70667|11815037}}",
+    "{{Ancestry Record|70667|12235314}}",
+    "{{Ancestry Record|70667|12667914}}",
+    "{{Ancestry Record|70667|12891304}}"
+  ],
   "collectionData": {
     "id": "70667"
   },

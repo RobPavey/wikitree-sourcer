@@ -12,6 +12,9 @@
     "dateIsNotGrantDate": true
   },
   "lastNameAtDeath": "Luckham",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2119|37801}}"
+  ],
   "collectionData": {
     "id": "2119"
   },

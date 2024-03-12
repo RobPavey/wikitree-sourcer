@@ -20,5 +20,8 @@
   "birthDate": {
     "dateString": "1888"
   },
+  "wtSearchTemplates": [
+    "{{FindAGrave|62103674}}"
+  ],
   "hasValidData": true
 }

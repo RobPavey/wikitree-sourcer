@@ -12,5 +12,8 @@
     "middleNames": "Lu---"
   },
   "lastNameAtDeath": "Sw---",
+  "wtSearchTemplates": [
+    "{{FindAGrave|55174407}}"
+  ],
   "hasValidData": true
 }

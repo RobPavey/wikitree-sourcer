@@ -27,6 +27,13 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61699|4177362}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|EssexBaptisms|19177362}}",
+    "{{Ancestry Record|EssexBaptisms|34177362}}"
+  ],
   "collectionData": {
     "id": "61699"
   },

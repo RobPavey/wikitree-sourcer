@@ -24,6 +24,12 @@
       }
     }
   ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61187|93209492}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|WiltshireEarlyParish|3209492}}"
+  ],
   "collectionData": {
     "id": "61187"
   },

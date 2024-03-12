@@ -19,6 +19,9 @@
     "placeString": "Newham, London, England"
   },
   "lastNameAtDeath": "McCarthy",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|70845|1712038}}"
+  ],
   "collectionData": {
     "id": "70845"
   },

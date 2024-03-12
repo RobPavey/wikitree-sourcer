@@ -971,6 +971,94 @@ const ancestryQuarterMonthNames = [
   },
 ];
 
+function addWtSearchTemplates(ed, result) {
+  let wtTemplates = [];
+  let wtTemplatesRelated = [];
+
+  function addLinkOrTemplate(templates, linkOrTemplate) {
+    if (linkOrTemplate && linkOrTemplate.startsWith("{{")) {
+      if (!templates.includes(linkOrTemplate)) {
+        templates.push(linkOrTemplate);
+      }
+    }
+  }
+
+  addLinkOrTemplate(wtTemplates, ed.ancestryTemplate);
+
+  if (ed.titleCollection && ed.titleCollection.includes("Find a Grave")) {
+    if (ed.imageRecordId & ed.imageRecordId.includes("/memorial/")) {
+      let memorialId = ed.imageRecordId.replace(/^.*\/memorial\/([^\/]+)\/.*$/, "$1");
+      if (memorialId && memorialId != ed.imageRecordId) {
+        addLinkOrTemplate(wtTemplatesRelated, "{{FindAGrave|" + memorialId + "}}");
+      }
+    }
+  }
+
+  if (ed.household && ed.household.members) {
+    for (let member of ed.household.members) {
+      if (member.dbId && member.recordId) {
+        const template = "{{Ancestry Record|" + member.dbId + "|" + member.recordId + "}}";
+        addLinkOrTemplate(wtTemplatesRelated, template);
+      }
+    }
+  }
+
+  if (ed.linkData) {
+    for (let linkKey in ed.linkData) {
+      const link = ed.linkData[linkKey];
+      if (link) {
+        // e.g.
+        // https://search.ancestry.com/cgi-bin/sse.dll?dbid=1938&h=9150077&indiv=try&viewrecord=1&r=an
+        // https://www.ancestry.com/discoveryui-content/view/19069234:1938
+        // https://www.ancestry.com/discoveryui-content/view/9150077:1938?ssrc=pt&tid=8793438&pid=282564262344
+        let dbId = "";
+        let recordId = "";
+        if (link.includes("discoveryui-content")) {
+          let dbIdMatch = link.replace(/^.*\/discoveryui-content\/view\/(\d+)\:(\d+).*$/, "$2");
+          let recordIdMatch = link.replace(/^.*\/discoveryui-content\/view\/(\d+)\:(\d+).*$/, "$1");
+
+          if (dbIdMatch && dbIdMatch != link && recordIdMatch && recordIdMatch != link) {
+            dbId = dbIdMatch;
+            recordId = recordIdMatch;
+          }
+        } else if (link.includes("cgi-bin/sse.dll")) {
+          if (/^.*[?&]dbid\=([\w\d]+)\&h\=(\d+).*$/.test(link)) {
+            let dbIdMatch = link.replace(/^.*[?&]dbid\=([\w\d]+)\&h\=(\d+).*$/, "$1");
+            let recordIdMatch = link.replace(/^.*[?&]dbid\=([\w\d]+)\&h\=(\d+).*$/, "$2");
+
+            if (dbIdMatch && dbIdMatch != link && recordIdMatch && recordIdMatch != link) {
+              dbId = dbIdMatch;
+              recordId = recordIdMatch;
+            }
+          } else if (/.*[?&]db\=[\w\d]+\&/.test(link)) {
+            // https://search.ancestry.com/cgi-bin/sse.dll?viewrecord=1&r=an&db=VictoriaBirthRecords&indiv=try&h=15250322
+            let dbIdMatch = link.replace(/^.*[?&]db\=([\w\d]+).*\&h\=(\d+).*$/, "$1");
+            let recordIdMatch = link.replace(/^.*[?&]db\=([\w\d]+).*\&h\=(\d+).*$/, "$2");
+
+            if (dbIdMatch && dbIdMatch != link && recordIdMatch && recordIdMatch != link) {
+              dbId = dbIdMatch;
+              recordId = recordIdMatch;
+            }
+          }
+        }
+
+        if (dbId && recordId) {
+          const template = "{{Ancestry Record|" + dbId + "|" + recordId + "}}";
+          addLinkOrTemplate(wtTemplatesRelated, template);
+        }
+      }
+    }
+  }
+
+  // if there are templates add them to result
+  if (wtTemplates.length) {
+    result.wtSearchTemplates = wtTemplates;
+  }
+  if (wtTemplatesRelated.length) {
+    result.wtSearchTemplatesRelated = wtTemplatesRelated;
+  }
+}
+
 function generalizeDataGivenRecordType(ed, result) {
   determineRoleGivenRecordType(ed, result);
 
@@ -2265,6 +2353,9 @@ function generalizeRecordData(input, result) {
 
     generalizeDataGivenRecordType(ed, result);
   }
+
+  // Template search data
+  addWtSearchTemplates(ed, result);
 
   // Collection
   if (ed.dbId) {

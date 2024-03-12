@@ -17,6 +17,9 @@
   },
   "schoolName": "Kern County Union High School",
   "ageAtEvent": "Abt 16",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1265|90610650}}"
+  ],
   "collectionData": {
     "id": "1265"
   },

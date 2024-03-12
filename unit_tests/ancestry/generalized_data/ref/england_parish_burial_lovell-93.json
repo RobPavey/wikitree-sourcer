@@ -16,6 +16,9 @@
   },
   "lastNameAtDeath": "Higham",
   "ageAtDeath": "80",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|9201|797866}}"
+  ],
   "collectionData": {
     "id": "9201"
   },

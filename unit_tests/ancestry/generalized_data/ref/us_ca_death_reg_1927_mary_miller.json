@@ -20,6 +20,9 @@
     "qualifier": 2,
     "dateString": "1856"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|5187|1511274}}"
+  ],
   "collectionData": {
     "id": "5187"
   },

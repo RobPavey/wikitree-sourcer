@@ -11,6 +11,9 @@
   "eventPlace": {
     "placeString": "Saybrook, Middlesex, Connecticut"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8058|1691734}}"
+  ],
   "collectionData": {
     "id": "8058"
   },

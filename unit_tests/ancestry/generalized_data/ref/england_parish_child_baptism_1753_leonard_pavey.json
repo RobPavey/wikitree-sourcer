@@ -2,6 +2,9 @@
   "sourceType": "record",
   "recordType": "Unclassified",
   "sourceOfData": "ancestry",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2243|151040635}}"
+  ],
   "collectionData": {
     "id": "2243"
   },

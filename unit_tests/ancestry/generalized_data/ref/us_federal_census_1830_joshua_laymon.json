@@ -11,6 +11,9 @@
   "eventPlace": {
     "placeString": "Pomfret, Chautauqua, New York"
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8058|1494711}}"
+  ],
   "collectionData": {
     "id": "8058"
   },

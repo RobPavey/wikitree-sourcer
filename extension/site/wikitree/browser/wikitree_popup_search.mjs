@@ -170,61 +170,22 @@ function addWikitreeSearchForUsageMenuItem(menu, data, backFunction) {
   let templateData = [];
   let templateLinkedData = [];
   let typeString = "record";
-  let ed = data.extractedData;
   let gd = data.generalizedData;
 
   if (gd.sourceType == "profile") {
     typeString = "person";
   }
 
-  // This code is site specific. It would be better in the site folders.
-  // One way to do that would bto add a "templateSearchData" member in generalizedData.
-  // Is that overkill?
-  if (gd.sourceOfData == "ancestry") {
-    if (ed.ancestryTemplate) {
-      templateData.push(ed.ancestryTemplate);
-    }
+  templateData = gd.wtSearchTemplates;
+  templateLinkedData = gd.wtSearchTemplatesRelated;
 
-    if (ed.titleCollection && ed.titleCollection.includes("Find a Grave")) {
-      if (ed.imageRecordId & ed.imageRecordId.includes("/memorial/")) {
-        let memorialId = ed.imageRecordId.replace(/^.*\/memorial\/([^\/]+)\/.*$/, "$1");
-        if (memorialId && memorialId != ed.imageRecordId) {
-          templateLinkedData.push("{{FindAGrave|" + memorialId + "}}");
-        }
-      }
-    }
-
-    if (ed.household && ed.household.members) {
-      for (let member of ed.household.members) {
-        if (member.dbId && member.recordId) {
-          templateLinkedData.push("{{Ancestry Record|" + member.dbId + "|" + member.recordId + "}}");
-        }
-      }
-    }
-  } else if (gd.sourceOfData == "fg") {
-    if (ed.memorialId) {
-      templateData.push("{{FindAGrave|" + ed.memorialId + "}}");
-    }
-  } else if (gd.sourceOfData == "fs") {
-    if (gd.wtSearchTemplates && gd.wtSearchTemplates.length) {
-      for (let template of gd.wtSearchTemplates) {
-        templateData.push(template);
-      }
-    }
-    if (gd.wtSearchTemplatesRelated && gd.wtSearchTemplatesRelated.length) {
-      for (let template of gd.wtSearchTemplatesRelated) {
-        templateLinkedData.push(template);
-      }
-    }
-  }
-
-  if (templateData.length > 0) {
+  if (templateData && templateData.length > 0) {
     const text = "Search for WikiTree profiles with a template referencing this " + typeString;
     addMenuItem(menu, text, function (element) {
       wikitreePlusSearchForTemplateData(templateData);
     });
   }
-  if (templateLinkedData.length > 0) {
+  if (templateLinkedData && templateLinkedData.length > 0) {
     const text = "Search for WikiTree profiles with templates for this " + typeString + " or related records";
     addMenuItem(menu, text, function (element) {
       wikitreePlusSearchForTemplateData(templateData, templateLinkedData);

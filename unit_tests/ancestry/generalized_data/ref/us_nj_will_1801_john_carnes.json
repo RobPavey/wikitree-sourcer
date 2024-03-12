@@ -20,6 +20,12 @@
     "placeString": "Mendham, Morris"
   },
   "lastNameAtDeath": "Carnes",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2793|401}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|2793|450000401}}"
+  ],
   "collectionData": {
     "id": "2793"
   },

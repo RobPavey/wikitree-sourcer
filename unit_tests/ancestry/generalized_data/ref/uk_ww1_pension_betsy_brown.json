@@ -13,6 +13,9 @@
     "placeString": "Ferryton Montrose. N. B"
   },
   "nextOfKin": "James. Brown<br/>Betsy Brown Widow<br/>John B. Brown Child<br/>Robert Stephen Brown Children<br/>James McPherson Children",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61588|111790356}}"
+  ],
   "collectionData": {
     "id": "61588"
   },

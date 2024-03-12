@@ -129,6 +129,24 @@
       }
     }
   },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7619|10856675}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|7619|10856672}}",
+    "{{Ancestry Record|7619|10856673}}",
+    "{{Ancestry Record|7619|10856674}}",
+    "{{Ancestry Record|7619|10856676}}",
+    "{{Ancestry Record|7619|10856677}}",
+    "{{Ancestry Record|7619|10856678}}",
+    "{{Ancestry Record|7619|10856679}}",
+    "{{Ancestry Record|7619|10856680}}",
+    "{{Ancestry Record|7619|10856681}}",
+    "{{Ancestry Record|7619|10856682}}",
+    "{{Ancestry Record|7619|10856683}}",
+    "{{Ancestry Record|7619|10856684}}",
+    "{{Ancestry Record|7619|10856685}}"
+  ],
   "collectionData": {
     "id": "7619",
     "page": "31",
