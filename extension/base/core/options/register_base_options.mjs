@@ -1082,6 +1082,17 @@ const tableTableOptionsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "horizPadChars",
+      type: "select",
+      label: "Extra horizontal spacing",
+      values: [
+        { value: "none", text: "None" },
+        { value: "nbsp", text: "&nbsp;" },
+        { value: "emsp", text: "&emsp;" },
+      ],
+      defaultValue: "none",
+    },
+    {
       optionName: "fullWidth",
       type: "checkbox",
       label: "Make table the full width of the biography area",
@@ -1129,6 +1140,35 @@ const tableListOptionsGroup = {
         { value: "indented2", text: "Twice indented lines (::)" },
       ],
       defaultValue: "indented2",
+    },
+    {
+      optionName: "selectedPerson",
+      type: "select",
+      label: "Selected person line",
+      values: [
+        { value: "plain", text: "No highlight for selected person" },
+        { value: "boldLine", text: "Selected person line in bold text" },
+        { value: "italicLine", text: "Selected person line in italic text" },
+        { value: "boldItalicLine", text: "Selected person line in bold italic text" },
+        { value: "boldName", text: "Selected person name in bold text" },
+        { value: "italicName", text: "Selected person name in italic text" },
+        { value: "boldItalicName", text: "Selected person name in bold italic text" },
+      ],
+      defaultValue: "plain",
+    },
+    {
+      optionName: "separator",
+      type: "select",
+      label: "Separator between fields",
+      values: [
+        { value: "space", text: "Single space" },
+        { value: "fourSpaces", text: "Four spaces (only shows as single space in read mode)" },
+        { value: "nbsp", text: "&nbsp;" },
+        { value: "nbsp2", text: "&nbsp;&nbsp;" },
+        { value: "emsp", text: "&emsp;" },
+        { value: "emsp2", text: "&emsp;&emsp;" },
+      ],
+      defaultValue: "fourSpaces",
     },
   ],
 };

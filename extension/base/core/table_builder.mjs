@@ -146,6 +146,17 @@ class TableBuilder {
     let optSelectedColor = cleanColor(this.options.table_table_selectedColor);
     let optClosedColor = cleanColor(this.options.table_table_closedColor);
 
+    let extraSpacing = "";
+    switch (this.options.table_table_horizPadChars) {
+      case "nbsp":
+        extraSpacing = "&nbsp;";
+        break;
+      case "emsp":
+        extraSpacing = "&emsp;";
+        break;
+    }
+    const columnSeparator = ` ` + extraSpacing + `||` + extraSpacing + ` `;
+
     tableString += `{|`;
     if (this.options.table_table_border) {
       tableString += ` border="1"`;
@@ -181,7 +192,7 @@ class TableBuilder {
             }
             firstCol = false;
           } else {
-            tableString += ` || `;
+            tableString += columnSeparator;
           }
           let title = this.getTitleForFieldName(fieldName);
           if (title) {
@@ -206,7 +217,7 @@ class TableBuilder {
                 tableString += `| ''Closed Record''`;
                 firstCol = false;
               } else {
-                tableString += ` || `;
+                tableString += columnSeparator;
               }
             }
           }
@@ -236,7 +247,7 @@ class TableBuilder {
                   tableString += `| `;
                 }
               } else {
-                tableString += ` || `;
+                tableString += columnSeparator;
               }
               let value = this.getFormattedValueForPerson(person, fieldName);
               if (value) {
@@ -274,7 +285,7 @@ class TableBuilder {
               if (firstCol) {
                 tableString += `| `;
               } else {
-                tableString += ` || `;
+                tableString += columnSeparator;
               }
               let value = "...";
               tableString += value;
@@ -300,6 +311,53 @@ class TableBuilder {
     }
 
     let type = this.options.table_list_type;
+
+    let selectedLineHighlight = "";
+    let selectedNameHighlight = "";
+    let selectedHighlight = this.options.table_list_selectedPerson;
+    switch (selectedHighlight) {
+      case "boldLine":
+        selectedLineHighlight = "'''";
+        break;
+      case "italicLine":
+        selectedLineHighlight = "''";
+        break;
+      case "boldItalicLine":
+        selectedLineHighlight = "'''''";
+        break;
+      case "boldName":
+        selectedNameHighlight = "'''";
+        break;
+      case "italicName":
+        selectedNameHighlight = "''";
+        break;
+      case "boldItalicName":
+        selectedNameHighlight = "'''''";
+        break;
+    }
+
+    let fieldSeparator = "    ";
+    let separatorOption = this.options.table_list_separator;
+    switch (separatorOption) {
+      case "space":
+        fieldSeparator = " ";
+        break;
+      case "fourSpaces":
+        fieldSeparator = "    ";
+        break;
+      case "nbsp":
+        fieldSeparator = "&nbsp;";
+        break;
+      case "nbsp2":
+        fieldSeparator = "&nbsp;&nbsp;";
+        break;
+      case "emsp":
+        fieldSeparator = "&emsp;";
+        break;
+      case "emsp2":
+        fieldSeparator = "&emsp;&emsp;";
+        break;
+    }
 
     function addLineStart() {
       if (listString) {
@@ -337,19 +395,31 @@ class TableBuilder {
         if (person.isClosed) {
           listString += "''Closed Record''";
         } else {
+          if (person.isSelected) {
+            listString += selectedLineHighlight;
+          }
           let firstCol = true;
           for (let fieldName of this.fieldNames) {
             if (this.includeFieldColumn(fieldName)) {
               if (firstCol) {
                 firstCol = false;
               } else {
-                listString += `    `;
+                listString += fieldSeparator;
               }
               let value = this.getFormattedValueForPerson(person, fieldName);
               if (value) {
+                if (person.isSelected && fieldName == "name") {
+                  listString += selectedNameHighlight;
+                }
                 listString += value;
+                if (person.isSelected && fieldName == "name") {
+                  listString += selectedNameHighlight;
+                }
               }
             }
+          }
+          if (person.isSelected) {
+            listString += selectedLineHighlight;
           }
         }
       } else {
