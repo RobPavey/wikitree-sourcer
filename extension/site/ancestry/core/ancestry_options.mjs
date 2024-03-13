@@ -181,5 +181,10 @@ registerOptionsGroup(searchOptionsGroup);
 registerSubsectionForOptions("citation", "ancestry", "Ancestry");
 registerOptionsGroup(citationOptionsGroup);
 
-registerSubsectionForOptions("buildAll", "ancestry", "Ancestry");
+registerSubsectionForOptions(
+  "buildAll",
+  "ancestry",
+  "Ancestry",
+  "NOTE: Some Ancestry profiles have many incorrect sources - please check the generated citations."
+);
 registerOptionsGroup(buildAllCitationsOptionsGroup);
