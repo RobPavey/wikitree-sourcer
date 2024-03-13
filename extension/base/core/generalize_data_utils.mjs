@@ -2449,6 +2449,70 @@ class GeneralizedData {
     return this.inferLastName();
   }
 
+  inferOtherLastNames(ignoreNames, options = undefined) {
+    // ignoreNames must include names such as lastNameAtBirth or lastNameAtDeath
+
+    let useHusbandsLastName = true;
+    if (options) {
+      if (options.addMerge_general_useHusbandsLastName == "never") {
+        useHusbandsLastName = false;
+      } else if (options.addMerge_general_useHusbandsLastName == "countrySpecific") {
+        useHusbandsLastName = false;
+        let countryList = this.inferCountries();
+        let numUsing = 0;
+        let numNotUsing = 0;
+        for (let countryName of countryList) {
+          if (CD.wifeChangesName(countryName)) {
+            numUsing++;
+          } else {
+            numNotUsing++;
+          }
+        }
+        if (numUsing > 0 && numNotUsing == 0) {
+          useHusbandsLastName = true;
+        } else if (numUsing > 0) {
+          let birthPlace = this.inferBirthPlace();
+          if (birthPlace) {
+            let country = CD.matchCountryFromPlaceName(birthPlace);
+            if (country) {
+              if (CD.wifeChangesName(country.stdName)) {
+                useHusbandsLastName = true;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    if (!useHusbandsLastName || this.personGender != "female") {
+      // currently the only way we get other last names is from husbands' names
+      return [];
+    }
+
+    function getSpouseLnab(spouse) {
+      if (spouse.lastNameAtBirth) {
+        return spouse.lastNameAtBirth;
+      }
+      if (spouse.name) {
+        return spouse.name.inferLastName();
+      }
+    }
+
+    let otherLastNames = [];
+
+    if (this.spouses) {
+      for (let spouse of this.spouses) {
+        let spouseLnab = getSpouseLnab(spouse);
+        if (spouseLnab) {
+          if (!ignoreNames.includes(spouseLnab) && !otherLastNames.includes(spouseLnab))
+            otherLastNames.push(spouseLnab);
+        }
+      }
+    }
+
+    return otherLastNames;
+  }
+
   inferPrefix() {
     let prefix = "";
 

@@ -548,6 +548,22 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
     result.cln = cln;
   }
 
+  let otherLastNamesArray = personGd.inferOtherLastNames([result.lnab, result.cln], options);
+  if (otherLastNamesArray.length) {
+    let otherLastNames = "";
+    for (let oln of otherLastNamesArray) {
+      if (oln) {
+        if (otherLastNames) {
+          otherLastNames += ", ";
+        }
+        otherLastNames += oln;
+      }
+    }
+    if (otherLastNames) {
+      result.otherLastNames = otherLastNames;
+    }
+  }
+
   result.birthDate = standardizeDate(personGd.inferBirthDate());
   result.birthDateStatus = qualifierToStatus(personGd.inferBirthDateQualifier());
   result.deathDate = standardizeDate(personGd.inferDeathDate());
