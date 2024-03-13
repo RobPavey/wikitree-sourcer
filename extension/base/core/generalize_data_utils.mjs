@@ -3380,6 +3380,10 @@ class GeneralizedData {
         defaultTitle: "Freemason Membership",
       },
       {
+        type: RT.FreedomOfCity,
+        defaultTitle: "Freedom of the City",
+      },
+      {
         type: RT.Directory,
         defaultTitle: "Directory",
         addYear: true,

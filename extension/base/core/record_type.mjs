@@ -50,6 +50,7 @@ const RT = {
   FreemasonMembership: `FreemasonMembership`,
   Directory: `Directory`,
   Employment: `Employment`,
+  FreedomOfCity: `FreedomOfCity`,
   WorkhouseRecord: `WorkhouseRecord`,
   CrewList: `CrewList`,
   PassengerList: `PassengerList`,

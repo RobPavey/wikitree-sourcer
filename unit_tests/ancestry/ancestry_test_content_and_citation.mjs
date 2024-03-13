@@ -535,6 +535,18 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/54921469:1795",
   },
   {
+    caseName: "england_electoral_reg_1914_harry_pavey",
+    url: "https://www.ancestry.com/discoveryui-content/view/54921469:1795",
+  },
+  {
+    caseName: "england_freedom_of_city_1810_francis_hatt",
+    url: "https://www.ancestry.com/discoveryui-content/view/768041:2052?ssrc=pt&tid=86808578&pid=260180350040",
+  },
+  {
+    caseName: "england_child_freedom_of_city_1810_stephen_hall",
+    url: "https://www.ancestry.com/discoveryui-content/view/150768041:2052",
+  },
+  {
     caseName: "england_marriage_agnes_longe",
     url: "https://search.ancestry.co.uk/cgi-bin/sse.dll?indiv=1&dbid=61187&h=93209492",
     optionVariants: [

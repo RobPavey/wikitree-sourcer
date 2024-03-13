@@ -2418,6 +2418,56 @@ class NarrativeBuilder {
     this.narrative += ".";
   }
 
+  buildFreedomOfCityString() {
+    let gd = this.eventGd;
+
+    let dateObj = gd.inferEventDateObj();
+    let place = gd.inferFullEventPlace();
+
+    let formattedDate = undefined;
+    if (dateObj) {
+      formattedDate = this.formatDateObj(dateObj, true);
+    }
+
+    let role = gd.role;
+    if (role && role != Role.Primary) {
+      let possessiveName = this.getPossessiveName();
+      const nameOrPronoun = this.getPersonNameOrPronoun(false, true);
+      let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
+
+      this.narrative += possessiveName + " " + relationship;
+      this.narrative += " was admitted into the Freedom of the City";
+
+      if (formattedDate) {
+        this.narrative += ". Either " + nameOrPronoun + " or " + possessiveName + " child was admitted";
+      }
+    } else {
+      const nameOrPronoun = this.getPersonNameOrPronoun(false, true);
+      this.narrative += nameOrPronoun;
+
+      if (gd.admissionDate) {
+        this.narrative += " was admitted into the Freedom of the City";
+
+        if (gd.parents && gd.parents.father) {
+          let possessive = this.getPossessiveName(true);
+          this.narrative += ". Either " + nameOrPronoun + " or " + possessive + " father was admitted";
+        }
+      } else {
+        this.narrative += " was mentioned in the Freedom of the City papers";
+      }
+    }
+
+    if (formattedDate) {
+      this.narrative += " " + formattedDate;
+    }
+
+    if (place) {
+      this.narrative += " " + this.getPlaceWithPreposition(place);
+    }
+
+    this.narrative += ".";
+  }
+
   buildDefaultString() {
     const narratives = [
       {
@@ -2626,6 +2676,11 @@ class NarrativeBuilder {
       }
       case RT.Encyclopedia: {
         this.buildFunction = this.buildEncyclopediaString;
+        this.optionsSubcategory = "encyclopedia";
+        break;
+      }
+      case RT.FreedomOfCity: {
+        this.buildFunction = this.buildFreedomOfCityString;
         this.optionsSubcategory = "encyclopedia";
         break;
       }

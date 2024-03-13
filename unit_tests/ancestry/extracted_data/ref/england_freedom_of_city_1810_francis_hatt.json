@@ -1,0 +1,26 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/768041:2052?ssrc=pt&tid=86808578&pid=260180350040",
+  "pageType": "record",
+  "dbId": "2052",
+  "recordId": "768041",
+  "ancestryTemplate": "{{Ancestry Record|2052|768041}}",
+  "domain": "com",
+  "titleName": "Francis Hatt",
+  "titleCollection": "London, England, Freedom of the City Admission Papers, 1681-1930",
+  "recordData": {
+    "Name": "Francis Hatt",
+    "Admission Date": "28 Nov 1810",
+    "Residence Place": "England",
+    "Father": "Stephen Hall"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=2052&h=150768041&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2052/images/32512_a064208-00829?pid=768041&treeid=86808578&personid=260180350040&usePUB=true&usePUBJs=true",
+  "imageDbId": "2052",
+  "imageRecordId": "32512_a064208-00829",
+  "sourceCitation": "London Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436",
+  "sourceInformation": "Ancestry.com. London, England, Freedom of the City Admission Papers, 1681-1930 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2010. Original data: Freedom admissions papers, 1681 – 1930. London, England: London Metropolitan Archives. Images produced by permission of London Metropolitan Archives (City of London Corporation). The City of London gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to London Metropolitan Archives, 40 Northampton Road, London EC1R 0HB via – www.cityoflondon.gov.uk/lma. Infringement of the above condition may result in legal action.",
+  "originalData": "Freedom admissions papers, 1681 – 1930. London, England: London Metropolitan Archives. Images produced by permission of London Metropolitan Archives (City of London Corporation). The City of London gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to London Metropolitan Archives, 40 Northampton Road, London EC1R 0HB via – www.cityoflondon.gov.uk/lma. Infringement of the above condition may result in legal action.",
+  "sourceDescription": "This database contains papers associated with application for \"Freemen\" status. Freeman are: a man who did not have to pay trade taxes and shared in the profits of his borough, a person free of feudal service who had served their apprenticeship and could trade in their own right, and anyone who was a member of a City Guild. Freemen admission papers often contain biographical details about the individual. Learn more..."
+}

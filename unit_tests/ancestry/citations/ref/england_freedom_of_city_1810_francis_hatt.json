@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Freedom of the City''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|768041}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Francis was admitted into the Freedom of the City. Either Francis or Francis's father was admitted on 28 November 1810 in England.<ref>\n'''Freedom of the City''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|768041}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Freedom of the City''': \"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>London Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>{{Ancestry Record|2052|768041}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Freedom of the City''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|768041}} (accessed 6 May 2021)<br/>\nName: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Francis was admitted into the Freedom of the City. Either Francis or Francis's father was admitted on 28 November 1810 in England.<ref>\n'''Freedom of the City''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|768041}} (accessed 6 May 2021)<br/>\nName: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Freedom of the City''': \"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>London Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>{{Ancestry Record|2052|768041}} (accessed 6 May 2021)<br/>Name: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Freedom of the City''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|768041}} (accessed 6 May 2021)<br/>\nName: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Francis was admitted into the Freedom of the City. Either Francis or Francis's father was admitted on 28 November 1810 in England.<ref>\n'''Freedom of the City''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|768041}} (accessed 6 May 2021)<br/>\nName: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Freedom of the City''': \"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>London Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>{{Ancestry Record|2052|768041}} (accessed 6 May 2021)<br/>Name: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Freedom of the City''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|768041}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Francis Hatt\n|-\n| Admission Date || 28 Nov 1810\n|-\n| Residence Place || England\n|-\n| Father || Stephen Hall\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Francis was admitted into the Freedom of the City. Either Francis or Francis's father was admitted on 28 November 1810 in England.<ref>\n'''Freedom of the City''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|768041}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Francis Hatt\n|-\n| Admission Date || 28 Nov 1810\n|-\n| Residence Place || England\n|-\n| Father || Stephen Hall\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Freedom of the City''': \"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>London Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>{{Ancestry Record|2052|768041}} (accessed 6 May 2021)<br/>Name: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"London, England, Freedom of the City Admission Papers, 1681-1930,\" database, ({{Ancestry Record|2052|768041}} : accessed 6 May 2021), Name Francis Hatt, Admission Date 28 Nov 1810, Residence Place England, Father Stephen Hall; citing London Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Francis was admitted into the Freedom of the City. Either Francis or Francis's father was admitted on 28 November 1810 in England.<ref>\"London, England, Freedom of the City Admission Papers, 1681-1930,\" database, ({{Ancestry Record|2052|768041}} : accessed 6 May 2021), Name Francis Hatt, Admission Date 28 Nov 1810, Residence Place England, Father Stephen Hall; citing London Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"London, England, Freedom of the City Admission Papers, 1681-1930,\" database, ({{Ancestry Record|2052|768041}} : accessed 6 May 2021), Name Francis Hatt, Admission Date 28 Nov 1810, Residence Place England, Father Stephen Hall; citing London Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Freedom of the City'':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\", database, \nLondon Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436, \n({{Ancestry Record|2052|768041}} : accessed 6 May 2021), \nName: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Francis was admitted into the Freedom of the City. Either Francis or Francis's father was admitted on 28 November 1810 in England.<ref>\n''Freedom of the City'':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\", database, \nLondon Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436, \n({{Ancestry Record|2052|768041}} : accessed 6 May 2021), \nName: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Freedom of the City'': \"London, England, Freedom of the City Admission Papers, 1681-1930\", database, London Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436, ({{Ancestry Record|2052|768041}} : accessed 6 May 2021), Name: Francis Hatt; Admission Date: 28 Nov 1810; Residence Place: England; Father: Stephen Hall.",
+    "type": "source"
+  }
+}

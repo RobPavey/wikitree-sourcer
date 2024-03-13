@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "FreedomOfCity",
+  "role": "Parent",
+  "primaryPerson": {
+    "name": {
+      "name": "Francis Hatt"
+    }
+  },
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Stephen Hall"
+  },
+  "personGender": "male",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2052|150768041}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|2052|768041}}"
+  ],
+  "collectionData": {
+    "id": "2052"
+  },
+  "hasValidData": true
+}

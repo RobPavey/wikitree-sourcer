@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Freedom of the City of child Francis Hatt''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Stephen's child was admitted into the Freedom of the City.<ref>\n'''Freedom of the City of child Francis Hatt''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Freedom of the City of child Francis Hatt''': \"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>London Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Freedom of the City of child Francis Hatt''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)<br/>\nName: Stephen Hall; Gender: Male; Child: Francis Hatt.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Stephen's child was admitted into the Freedom of the City.<ref>\n'''Freedom of the City of child Francis Hatt''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)<br/>\nName: Stephen Hall; Gender: Male; Child: Francis Hatt.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Freedom of the City of child Francis Hatt''': \"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>London Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)<br/>Name: Stephen Hall; Gender: Male; Child: Francis Hatt.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Freedom of the City of child Francis Hatt''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)<br/>\nName: Stephen Hall; Gender: Male; Child: Francis Hatt.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Stephen's child was admitted into the Freedom of the City.<ref>\n'''Freedom of the City of child Francis Hatt''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)<br/>\nName: Stephen Hall; Gender: Male; Child: Francis Hatt.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Freedom of the City of child Francis Hatt''': \"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>London Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)<br/>Name: Stephen Hall; Gender: Male; Child: Francis Hatt.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Freedom of the City of child Francis Hatt''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Stephen Hall\n|-\n| Gender || Male\n|-\n| Child || Francis Hatt\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Stephen's child was admitted into the Freedom of the City.<ref>\n'''Freedom of the City of child Francis Hatt''':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>\nLondon Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>\n{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Stephen Hall\n|-\n| Gender || Male\n|-\n| Child || Francis Hatt\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Freedom of the City of child Francis Hatt''': \"London, England, Freedom of the City Admission Papers, 1681-1930\"<br/>London Metropolitan Archive; Reference Number: COL/CHD/FR/02/1431-1436<br/>{{Ancestry Record|2052|150768041}} (accessed 6 May 2021)<br/>Name: Stephen Hall; Gender: Male; Child: Francis Hatt.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"London, England, Freedom of the City Admission Papers, 1681-1930,\" database, ({{Ancestry Record|2052|150768041}} : accessed 6 May 2021), Name Stephen Hall, Gender Male, Child Francis Hatt; citing London Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Stephen's child was admitted into the Freedom of the City.<ref>\"London, England, Freedom of the City Admission Papers, 1681-1930,\" database, ({{Ancestry Record|2052|150768041}} : accessed 6 May 2021), Name Stephen Hall, Gender Male, Child Francis Hatt; citing London Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"London, England, Freedom of the City Admission Papers, 1681-1930,\" database, ({{Ancestry Record|2052|150768041}} : accessed 6 May 2021), Name Stephen Hall, Gender Male, Child Francis Hatt; citing London Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Freedom of the City of child Francis Hatt'':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\", database, \nLondon Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436, \n({{Ancestry Record|2052|150768041}} : accessed 6 May 2021), \nName: Stephen Hall; Gender: Male; Child: Francis Hatt.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Stephen's child was admitted into the Freedom of the City.<ref>\n''Freedom of the City of child Francis Hatt'':\n\"London, England, Freedom of the City Admission Papers, 1681-1930\", database, \nLondon Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436, \n({{Ancestry Record|2052|150768041}} : accessed 6 May 2021), \nName: Stephen Hall; Gender: Male; Child: Francis Hatt.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Freedom of the City of child Francis Hatt'': \"London, England, Freedom of the City Admission Papers, 1681-1930\", database, London Metropolitan Archive, Reference Number COL/CHD/FR/02/1431-1436, ({{Ancestry Record|2052|150768041}} : accessed 6 May 2021), Name: Stephen Hall; Gender: Male; Child: Francis Hatt.",
+    "type": "source"
+  }
+}

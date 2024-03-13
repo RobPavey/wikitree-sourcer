@@ -268,6 +268,10 @@ function determineRecordType(extractedData) {
       matches: ["Workhouse Admission and Discharge Records"],
     },
     {
+      type: RT.FreedomOfCity,
+      matches: ["Freedom of the City"],
+    },
+    {
       type: RT.PassengerList,
       matches: [
         "Passenger List",
@@ -620,7 +624,7 @@ function determineRoleGivenRecordType(extractedData, result) {
   }
   // possibly any other type should go through here?
   // We could possibly test if recordData num properties is <= 4 or something like that
-  else if (recordType == RT.Unclassified || recordType == RT.Employment) {
+  else if (recordType == RT.Unclassified || recordType == RT.Employment || recordType == RT.FreedomOfCity) {
     let hasDateKey = testForWordsInRecordDataKeys(extractedData, ["Date", "Place"]);
     if (!hasDateKey) {
       if (extractedData.recordData["Child"]) {
@@ -2164,6 +2168,19 @@ function generalizeDataGivenRecordType(ed, result) {
     let nativePlace = getCleanValueForRecordDataList(ed, ["Native Place"]);
     if (nativePlace) {
       result.nativePlace = nativePlace;
+    }
+  } else if (result.recordType == RT.FreedomOfCity) {
+    result.setEventDate(getCleanValueForRecordDataList(ed, ["Admission Date", "Event Date", "Date"], "date"));
+    result.setEventPlace(getCleanValueForRecordDataList(ed, ["Residence Place"]));
+    result.setBirthDate(getCleanValueForRecordDataList(ed, ["Birth Date"], "date"));
+    result.setBirthPlace(getCleanValueForRecordDataList(ed, ["Birth Place"]));
+
+    result.setFieldIfValueExists("admissionDate", getCleanValueForRecordDataList(ed, ["Admission Date"], "date"));
+
+    let fatherName = getCleanRecordDataValue(ed, "Father");
+    if (fatherName) {
+      let father = result.addFather();
+      father.name.name = fatherName;
     }
   } else {
     // generic record type support
