@@ -176,7 +176,7 @@ class TableBuilder {
     let firstRow = true;
     if (optHeading != "none") {
       // heading row highlight
-      if (optHeading == "bgGreen" || optHeading == "bgGreenBoldCentered") {
+      if (optHeading == "bgGreen" || optHeading == "bgGreenBold" || optHeading == "bgGreenBoldCentered") {
         tableString += `|- bgcolor=` + optHeadingColor + `\n`;
       }
 
@@ -196,7 +196,11 @@ class TableBuilder {
           }
           let title = this.getTitleForFieldName(fieldName);
           if (title) {
-            tableString += title;
+            if (optHeading == "bold" || optHeading == "bgGreenBold") {
+              tableString += "'''" + title + "'''";
+            } else {
+              tableString += title;
+            }
           }
         }
       }

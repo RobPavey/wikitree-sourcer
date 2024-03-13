@@ -1012,6 +1012,11 @@ const tableTableOptionsGroup = {
           value: "bgGreen",
           text: "Heading row with *heading* background color",
         },
+        { value: "bold", text: "Heading row with bold text" },
+        {
+          value: "bgGreenBold",
+          text: "Heading row with *heading* background color and bold text",
+        },
         { value: "boldCentered", text: "Heading row with bold centered text" },
         {
           value: "bgGreenBoldCentered",
