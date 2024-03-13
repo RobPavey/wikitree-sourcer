@@ -252,7 +252,7 @@ function extractDataForImageInNewViewer(document, result) {
     for (let para of possibleNumImagesParas) {
       let text = para.textContent;
       //console.log("text = " + text);
-      if (text && /^\s*of\s+\d+\s*$/.test(text)) {
+      if (text && /^\s*of\s+[\d,]+\s*$/.test(text)) {
         //console.log("para match, text = " + text);
         totalImagesPara = para;
       }
@@ -313,8 +313,48 @@ function extractDataForImageInNewViewer(document, result) {
         if (text && href) {
           if (/^\s*\d+\s*$/.test(text)) {
             if (href.includes("imageGroupNumbers")) {
-              result.filmNumber = link.textContent.trim();
-              break;
+              if (!result.filmNumber) {
+                result.filmNumber = link.textContent.trim();
+              }
+            }
+          }
+
+          if (href.includes("?creator=")) {
+            result.creator = text;
+          }
+        }
+      }
+
+      // Look for FS citation
+      let possibleCitationHeadings = groupDataTab.querySelectorAll("p span span");
+      for (let span of possibleCitationHeadings) {
+        //console.log("span.textContent = " + span.textContent);
+        if (span.textContent == "Citation") {
+          let outerSpan = span.parentNode;
+          if (outerSpan) {
+            let para = outerSpan.parentNode;
+            if (para) {
+              let liNode = para.nextSibling;
+              if (liNode) {
+                let citationDiv = liNode.querySelector("span > span > div > div > div > div > div > div");
+                if (citationDiv && citationDiv.textContent) {
+                  result.citation = citationDiv.textContent;
+                }
+              }
+            }
+          }
+        } else if (span.textContent == "Volume") {
+          let outerSpan = span.parentNode;
+          if (outerSpan) {
+            let para = outerSpan.parentNode;
+            if (para) {
+              let liNode = para.nextSibling;
+              if (liNode) {
+                let volumeDiv = liNode.querySelector("span > span > div > div > div");
+                if (volumeDiv && volumeDiv.textContent) {
+                  result.volume = volumeDiv.textContent;
+                }
+              }
             }
           }
         }
@@ -953,6 +993,8 @@ function extractData(document, url) {
   if (mainContent) {
     let filmViewerNode = mainContent.querySelector("fs-film-viewer");
     if (filmViewerNode) {
+      //console.log("extractData, it is a film viewer page:");
+
       extractDataForImage(filmViewerNode, result);
       return result;
     } else if (url.startsWith("https://www.familysearch.org/tree/person/details/")) {
@@ -975,6 +1017,8 @@ function extractData(document, url) {
         extractDataForPersonPageFormat2(document, personId, result);
         return result;
       } else if (url.startsWith("https://www.familysearch.org/ark:/61903/3:1:")) {
+        //console.log("extractData, it is a new image page:");
+
         // e.g.: https://www.familysearch.org/ark:/61903/3:1:3Q9M-CS4F-NQ21?view=explore&groupId=M9DG-2LY
         extractDataForImageInNewViewer(document, result);
       } else if (url.startsWith("https://www.familysearch.org/ark:/61903/3:")) {

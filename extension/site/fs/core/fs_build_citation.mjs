@@ -31,6 +31,41 @@ import {
   buildExternalLinkOrTemplate,
 } from "./fs_templates_and_links.mjs";
 
+function getSourceTitleFromFsCitation(ed, options) {
+  //console.log("getSourceTitleFromFsCitation, ed is:");
+  //console.log(ed);
+
+  if (ed.citation) {
+    // citation string looks like this (for example):
+    /*
+    "England and Wales Census, 1841," database with images,
+    <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:MQTV-YB9 : 23 May 2019),
+    Isabella Pavey in household of William Pavey, East Stonehouse, Devon, England, United Kingdom;
+    from "1841 England, Scotland and Wales census," database and images,
+    <i>findmypast</i> (http://www.findmypast.com : n.d.);
+    citing PRO HO 107, The National Archives, Kew, Surrey.
+    */
+
+    // Another example:
+    // "Rutherford, Tennessee, United States records, Aug 5, 2018," images, FamilySearch (https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSG6-C58N?view=explore : Mar 12, 2024), image 49 of 1180; .
+
+    let citation = ed.citation;
+
+    let firstQuoteIndex = citation.indexOf('"');
+    if (firstQuoteIndex != -1) {
+      let secondQuoteIndex = citation.indexOf('"', firstQuoteIndex + 1);
+      if (secondQuoteIndex != -1) {
+        let title = citation.substring(firstQuoteIndex + 1, secondQuoteIndex);
+        if (title) {
+          return title;
+        }
+      }
+    }
+  }
+
+  return "";
+}
+
 function buildFsCitationDataString(ed) {
   if (ed.citation) {
     // citation string looks like this (for example):
@@ -343,6 +378,12 @@ function buildSourceReferenceFromFsCitation(ed, options) {
     // For FindAGrave index records we want to remove the link to avoid
     // Suggestion 571 "FindAGrave - Link without Grave ID"
     // We end up adding a proper FindAGrave template later
+
+    //console.log("buildSourceReferenceFromFsCitation, citation is:");
+    //console.log(ed.citation);
+
+    // "Rutherford, Tennessee, United States records, Aug 5, 2018," images, FamilySearch (https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSG6-C58N?view=explore : Mar 12, 2024), image 49 of 1180; .
+
     let citation = ed.citation;
     if (citation.includes("findagrave.com")) {
       // The citation can include somthing like:
@@ -379,9 +420,14 @@ function buildSourceReferenceFromFsCitation(ed, options) {
         refString = "citing " + refString;
       }
 
+      //console.log("buildSourceReferenceFromFsCitation, returning:");
+      //console.log(refString);
+
       return refString;
     }
   }
+
+  //console.log("buildSourceReferenceFromFsCitation, returning empty string");
 
   return "";
 }
@@ -444,6 +490,9 @@ function buildCoreCitation(ed, gd, builder) {
   }
 
   builder.sourceReference = buildSourceReference(ed, gd, builder.options);
+
+  //console.log("buildCoreCitation: builder is:");
+  //console.log(builder);
 }
 
 function getImageRefTitle(catalogRecordName, filmTitle) {
@@ -541,6 +590,20 @@ function buildImageCitation(ed, gd, builder) {
     builder.sourceTitle = ed.catalogRecordName;
   }
 
+  let citationTitle = getSourceTitleFromFsCitation(ed, builder.options);
+  if (citationTitle) {
+    // decide which to use
+    if (!builder.sourceTitle) {
+      builder.sourceTitle = citationTitle;
+    } else {
+      if (builder.sourceTitle.length > 80 || builder.sourceTitle.length < 10) {
+        if (citationTitle.length <= 80 && citationTitle.length >= 10) {
+          builder.sourceTitle = citationTitle;
+        }
+      }
+    }
+  }
+
   let imageLink = buildFsImageLinkOrTemplate(ed.url);
   builder.recordLinkOrTemplate = imageLink;
 
@@ -600,7 +663,7 @@ function buildImageCitation(ed, gd, builder) {
 
   builder.sourceReference = newSourceReference;
 
-  builder.meaningfulTitle = getImageRefTitle(ed.catalogRecordName, ed.filmTitle);
+  builder.meaningfulTitle = getImageRefTitle(ed.catalogRecordName, builder.sourceTitle);
 }
 
 function buildBookCitation(ed, gd, builder) {
