@@ -462,7 +462,7 @@ const DateUtils = {
     let parsedDate2 = DateUtils.parseDateString(dateString2);
 
     if (!parsedDate1.isValid || !parsedDate2.isValid) {
-      return 0;
+      return undefined;
     }
 
     // If one date is just a year and one is an exact day this can cause strange results
