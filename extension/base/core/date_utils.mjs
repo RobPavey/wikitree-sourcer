@@ -180,6 +180,7 @@ const DateUtils = {
     }
 
     // Did not match the common formats, try less common ones
+    // e.g. 12 September 1867
     if (/^\d\d? [a-zA-Z]+ \d\d\d\d$/.test(cleanString)) {
       let firstSpaceIndex = cleanString.indexOf(" ");
       let lastSpaceIndex = cleanString.lastIndexOf(" ");
@@ -214,6 +215,34 @@ const DateUtils = {
       let commaIndex = cleanString.indexOf(",");
       let monthString = cleanString.substring(0, firstSpaceIndex);
       let dayString = cleanString.substring(firstSpaceIndex + 1, commaIndex);
+      let yearString = cleanString.substring(lastSpaceIndex + 1);
+      let dayNum = parseInt(dayString);
+      if (isNaN(dayNum) || !dayNum) {
+        return result;
+      }
+      let yearNum = parseInt(yearString);
+      if (isNaN(yearNum) || !yearNum) {
+        return result;
+      }
+      let monthNum = DateUtils.monthStringToMonthNum(monthString);
+      if (monthNum == 0) {
+        return result;
+      }
+      result.dayNum = dayNum;
+      result.monthNum = monthNum;
+      result.yearNum = yearNum;
+      result.hasDay = true;
+      result.hasMonth = true;
+      result.isValid = true;
+      return result;
+    }
+
+    // I have seen a profile on FS with a death date of June 18 1910
+    if (/^[a-zA-Z]+ \d\d? \d\d\d\d$/.test(cleanString)) {
+      let firstSpaceIndex = cleanString.indexOf(" ");
+      let lastSpaceIndex = cleanString.lastIndexOf(" ");
+      let monthString = cleanString.substring(0, firstSpaceIndex);
+      let dayString = cleanString.substring(firstSpaceIndex + 1, lastSpaceIndex);
       let yearString = cleanString.substring(lastSpaceIndex + 1);
       let dayNum = parseInt(dayString);
       if (isNaN(dayNum) || !dayNum) {
