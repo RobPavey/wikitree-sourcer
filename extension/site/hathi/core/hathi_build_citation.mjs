@@ -63,7 +63,7 @@ function buildSourceTitle(ed, gd, builder) {
 
 function buildSourceReference(ed, gd, builder) {
   function addTerm(title, value) {
-    if (value.endsWith(".")) {
+    if (value && value.endsWith(".")) {
       value = value.substring(0, value.length - 1);
     }
 
