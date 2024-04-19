@@ -361,7 +361,15 @@ class TableBuilder {
       case "emsp2":
         fieldSeparator = "&emsp;&emsp;";
         break;
+      case "semicolonSpace":
+        fieldSeparator = "; ";
+        break;
+      case "commaSpace":
+        fieldSeparator = ", ";
+        break;
     }
+
+    let includeSeparatorForBlankValues = this.options.table_list_includeSeparatorForBlank;
 
     function addLineStart() {
       if (listString) {
@@ -404,20 +412,22 @@ class TableBuilder {
           }
           let firstCol = true;
           for (let fieldName of this.fieldNames) {
-            if (this.includeFieldColumn(fieldName)) {
-              if (firstCol) {
-                firstCol = false;
-              } else {
-                listString += fieldSeparator;
-              }
-              let value = this.getFormattedValueForPerson(person, fieldName);
-              if (value) {
-                if (person.isSelected && fieldName == "name") {
-                  listString += selectedNameHighlight;
+            let value = this.getFormattedValueForPerson(person, fieldName);
+            if (value || includeSeparatorForBlankValues) {
+              if (this.includeFieldColumn(fieldName)) {
+                if (firstCol) {
+                  firstCol = false;
+                } else {
+                  listString += fieldSeparator;
                 }
-                listString += value;
-                if (person.isSelected && fieldName == "name") {
-                  listString += selectedNameHighlight;
+                if (value) {
+                  if (person.isSelected && fieldName == "name") {
+                    listString += selectedNameHighlight;
+                  }
+                  listString += value;
+                  if (person.isSelected && fieldName == "name") {
+                    listString += selectedNameHighlight;
+                  }
                 }
               }
             }

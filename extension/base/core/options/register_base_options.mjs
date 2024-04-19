@@ -1172,8 +1172,16 @@ const tableListOptionsGroup = {
         { value: "nbsp2", text: "&nbsp;&nbsp;" },
         { value: "emsp", text: "&emsp;" },
         { value: "emsp2", text: "&emsp;&emsp;" },
+        { value: "semicolonSpace", text: "Semicolon plus space" },
+        { value: "commaSpace", text: "Comma plus space" },
       ],
       defaultValue: "fourSpaces",
+    },
+    {
+      optionName: "includeSeparatorForBlank",
+      type: "checkbox",
+      label: "Include separator even when field value is empty",
+      defaultValue: true,
     },
   ],
 };
