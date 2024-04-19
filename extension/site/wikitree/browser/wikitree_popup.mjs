@@ -500,7 +500,7 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
 
   let splitForenames = false;
   // If it is AddPerson then pageType will be "editFamily"
-  if (data.extractedData.hasMiddleNameFiel || data.extractedData.pageType != "editFamily") {
+  if (data.extractedData.hasMiddleNameField || data.extractedData.pageType != "editFamily") {
     const splitForenamesOpt = options.addMerge_general_splitForenames;
     if (splitForenamesOpt == "always") {
       splitForenames = true;
