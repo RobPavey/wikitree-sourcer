@@ -493,10 +493,14 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
   //console.log("getWikiTreeAddMergeData, personGd is: ");
   //console.log(personGd);
 
+  //console.log("getWikiTreeAddMergeData, data is: ");
+  //console.log(data);
+
   let result = {};
 
   let splitForenames = false;
-  if (data.extractedData.hasMiddleNameField) {
+  // If it is AddPerson then pageType will be "editFamily"
+  if (data.extractedData.hasMiddleNameFiel || data.extractedData.pageType != "editFamily") {
     const splitForenamesOpt = options.addMerge_general_splitForenames;
     if (splitForenamesOpt == "always") {
       splitForenames = true;
