@@ -1447,7 +1447,8 @@ function generalizeData(input) {
       break;
 
     case "opr_births":
-      setOprCommonFields(ed, result, ed.recordData["Birth Date"]);
+      let date = getCleanValueForRecordDataList(ed, ["Birth/Baptism Date", "Birth Date"]);
+      setOprCommonFields(ed, result, date);
       setParents(scotpRecordType, ed, result, "Parents/Other details");
       break;
 
