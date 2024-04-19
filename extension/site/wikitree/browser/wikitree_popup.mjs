@@ -1598,7 +1598,9 @@ async function doSetFieldsFromPersonData(tabId, wtPersonData) {
         }
         displayMessageWithIcon("warning", message);
       } else if (response.success) {
-        displayMessageWithIconThenClosePopup("check", "Fields updated");
+        // Used to display a message on success but that meant an extra click to close popup
+        //displayMessageWithIconThenClosePopup("check", "Fields updated");
+        closePopup();
       } else {
         let message = response.errorMessage;
         console.log(message);
@@ -1927,7 +1929,9 @@ async function doShowAdditionalFields(tabId) {
         // What to do in this case? Don't want to leave the "Initializing menu..." up.
         displayMessageWithIcon("warning", "doShowAdditionalFields failed");
       } else if (response.success) {
-        displayMessageWithIconThenClosePopup("check", "Fields shown");
+        // Used to display a message on success but that meant an extra click to close popup
+        //displayMessageWithIconThenClosePopup("check", "Fields shown");
+        closePopup();
       } else {
         let message = response.errorMessage;
         console.log(message);
