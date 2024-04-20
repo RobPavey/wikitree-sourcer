@@ -24,27 +24,27 @@
     "type": "source"
   },
   "dataStyle_record_list_inline": {
-    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nName: Sally Knight; Images Count: 1.\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nName: Sally Knight; Marriage Place (Original): Indiana; Images Count: 1.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_list_narrative": {
-    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nName: Sally Knight; Images Count: 1.\n</ref>",
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>\nName: Sally Knight; Marriage Place (Original): Indiana; Images Count: 1.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_list_source": {
-    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Name: Sally Knight; Images Count: 1.",
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Name: Sally Knight; Marriage Place (Original): Indiana; Images Count: 1.",
     "type": "source"
   },
   "dataStyle_record_table_inline": {
-    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470\n{| border=\"1\"\n| Name || Sally Knight\n|-\n| Images Count || 1\n|}\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470\n{| border=\"1\"\n| Name || Sally Knight\n|-\n| Marriage Place (Original) || Indiana\n|-\n| Images Count || 1\n|}\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_table_narrative": {
-    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470\n{| border=\"1\"\n| Name || Sally Knight\n|-\n| Images Count || 1\n|}\n</ref>",
+    "citation": "Sally's daughter Ethel D Blackshear married in Wayne, Indiana, United States.<ref>\n'''Marriage Registration of daughter Ethel D Blackshear''':\n\"Indiana Marriages, 1811-2019\"<br/>\nciting Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>\n{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470\n{| border=\"1\"\n| Name || Sally Knight\n|-\n| Marriage Place (Original) || Indiana\n|-\n| Images Count || 1\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_table_source": {
-    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Name: Sally Knight; Images Count: 1.",
+    "citation": "* '''Marriage Registration of daughter Ethel D Blackshear''': \"Indiana Marriages, 1811-2019\"<br/>citing Digital film/folder number: 007030260; FHL microfilm: 001846503<br/>{{FamilySearch Record|27K9-9K9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-897W-Z461}} Image number 00470<br/>Name: Sally Knight; Marriage Place (Original): Indiana; Images Count: 1.",
     "type": "source"
   },
   "dataStyle_record_fsCitation_inline": {

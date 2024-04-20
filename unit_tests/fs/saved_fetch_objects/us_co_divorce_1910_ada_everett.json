@@ -1,0 +1,1127 @@
+{
+  "id" : "r_106484858828",
+  "lang" : "en",
+  "attribution" : {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMMM-WYMG",
+      "resourceId" : "cis.user.MMMM-WYMG"
+    },
+    "modified" : 1540071643965,
+    "created" : 1540071643965,
+    "changeMessageResource" : "http://familysearch.org/types/reasons/127657",
+    "qualifiers" : [ {
+      "value" : "INGEST",
+      "name" : "http://familysearch.org/types/qualifiers/App"
+    } ]
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QTSS-PK5H?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QTSS-PK5H?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QTSS-PK5H"
+    }
+  },
+  "description" : "#sd_p_104891516508",
+  "persons" : [ {
+    "id" : "p_104891516508",
+    "attribution" : {
+      "modified" : 1701721197914,
+      "created" : 1701721197914
+    },
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QPTF-216V?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QTSS-PK5H?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPTF-216V" ]
+    },
+    "names" : [ {
+      "id" : "ecb15c4d-6a1c-48eb-a15c-91684007d44f",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1701721197914,
+        "created" : 1701721197914
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Ada M Everett",
+        "parts" : [ {
+          "id" : "b7c2a003-d142-4952-969c-2124597df94d",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Everett",
+          "fields" : [ {
+            "id" : "512ef804-5657-4612-9895-0335e989256f",
+            "attribution" : {
+              "modified" : 1700156652213,
+              "created" : 1700156652213
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "254447b7-23ce-42bf-adbd-c318094f723d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Everett"
+            }, {
+              "id" : "254447b7-23ce-42bf-adbd-c318094f723d",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Everett",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "7f86d5e5-87b8-42e1-a440-4eff54bfa103",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Ada M",
+          "fields" : [ {
+            "id" : "5c6ee330-907c-465e-b2bb-77f98bea3b05",
+            "attribution" : {
+              "modified" : 1700156652213,
+              "created" : 1700156652213
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "049d9927-9933-47e2-a1d4-20e40d6b2e9f",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Ada M"
+            }, {
+              "id" : "049d9927-9933-47e2-a1d4-20e40d6b2e9f",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Ada M",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "43b7e6e3-c3a2-4304-ade1-0916b711d4e3",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "7600176d-9fb3-4f4d-bf66-3ad387c8b8e5",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Ada M Everett"
+          }, {
+            "id" : "7600176d-9fb3-4f4d-bf66-3ad387c8b8e5",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Ada M Everett",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "81a30241-7ecd-48c5-8d89-476dfbb17c30",
+      "attribution" : {
+        "modified" : 1700156652213,
+        "created" : 1700156652213
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "701ed5ff-7eb5-4d39-908c-719fe7995a40",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000007192059_04127_00000_0000106484858828_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Ada M Everett"
+    }
+  }, {
+    "id" : "p_104891516509",
+    "attribution" : {
+      "modified" : 1701721197914,
+      "created" : 1701721197914
+    },
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QPTF-216K?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QTSS-PK5H?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPTF-216K" ]
+    },
+    "names" : [ {
+      "id" : "274a249c-425c-4f61-96b6-dac9fd158df1",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1701721197914,
+        "created" : 1701721197914
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Charles E Everett",
+        "parts" : [ {
+          "id" : "6dab7878-3d9c-4124-a4b1-2947df70ba6a",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Everett",
+          "fields" : [ {
+            "id" : "d6654d6a-3d15-489a-991f-4fd0bbab64d8",
+            "attribution" : {
+              "modified" : 1700156652213,
+              "created" : 1700156652213
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "9e682304-3074-4005-a2df-ac1ab1dd6955",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Everett"
+            }, {
+              "id" : "9e682304-3074-4005-a2df-ac1ab1dd6955",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Everett",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "ebb88c6f-cfd6-4f03-b5f9-f5c9406532ec",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Charles E",
+          "fields" : [ {
+            "id" : "e352a3cc-5fb9-4bf1-bff3-5950dace702c",
+            "attribution" : {
+              "modified" : 1700156652213,
+              "created" : 1700156652213
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "85b7612b-5f5d-4a6f-971a-4393d4ba9b62",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Charles E"
+            }, {
+              "id" : "85b7612b-5f5d-4a6f-971a-4393d4ba9b62",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Charles E",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "9fb7b47d-03df-4890-b9d4-77aedbbd6e3e",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "46c19805-79c2-459b-9c22-46e9d987dd00",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Charles E Everett"
+          }, {
+            "id" : "46c19805-79c2-459b-9c22-46e9d987dd00",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Charles E Everett",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "7b4dfdae-183e-4a45-82ba-e4226bde6ae6",
+      "attribution" : {
+        "modified" : 1700156652213,
+        "created" : 1700156652213
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "334c0a0d-bf0d-4fec-ae21-76c59fec436a",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000007192059_04127_00000_0000106484858828_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Charles E Everett"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "3e3cb063-86ad-4062-97ed-54ac2e4ccd47",
+    "attribution" : {
+      "modified" : 1701721197914,
+      "created" : 1701721197914
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_104891516508",
+      "resourceId" : "p_104891516508"
+    },
+    "person2" : {
+      "resource" : "#p_104891516509",
+      "resourceId" : "p_104891516509"
+    },
+    "facts" : [ {
+      "id" : "a891d1d2-6b2c-427f-b0d3-4c4caaaf6ae0",
+      "attribution" : {
+        "modified" : 1701721197914,
+        "created" : 1701721197914
+      },
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "id" : "597c1124-1d27-4fc2-bd2b-5f00daefe2c7",
+        "original" : "28 Sep 1881",
+        "formal" : "+1881-09-28",
+        "fields" : [ {
+          "id" : "fe31ec0d-9723-4a5a-868b-a3b9fe7e7951",
+          "attribution" : {
+            "modified" : 1700156652213,
+            "created" : 1700156652213
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "b070e833-683b-4cbf-b761-c2f4f3abda39",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_YEAR_ORIG",
+            "text" : "1881"
+          } ]
+        }, {
+          "id" : "22b5a2b5-12f1-49f4-9b1e-f9d99cc5a665",
+          "attribution" : {
+            "modified" : 1700156652213,
+            "created" : 1700156652213
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "ff35376a-4a98-4529-890d-ce15e04a698c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_MONTH_ORIG",
+            "text" : "Sep"
+          } ]
+        }, {
+          "id" : "358ddf86-07b0-4e8d-94e0-c8dc2eb7bf28",
+          "attribution" : {
+            "modified" : 1700156652213,
+            "created" : 1700156652213
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "9ef40ec9-6bc4-47e6-992d-1992dd520f5c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DAY_ORIG",
+            "text" : "28"
+          } ]
+        }, {
+          "id" : "3539dc08-eecb-409e-9fc1-d1765f4b5aca",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1553031602479,
+            "created" : 1553031602479
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "568c9d61-974b-450b-92ac-cfeb124366f4",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1553031602479,
+              "created" : 1553031602479
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "CP_MAR_DATE_ORIG",
+            "text" : "28 Sep 1881"
+          }, {
+            "id" : "568c9d61-974b-450b-92ac-cfeb124366f4",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1553031602479,
+              "created" : 1553031602479
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DATE",
+            "text" : "28 Sep 1881",
+            "resource" : "+1881-09-28",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "568c9d61-974b-450b-92ac-cfeb124366f4",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              },
+              "modified" : 1553031602479,
+              "created" : 1553031602479
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "CP_MAR_DATE",
+            "text" : "28 September 1881",
+            "resource" : "+1881-09-28",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "e6222396-bda1-4acb-8b69-3358dec7c69f",
+      "attribution" : {
+        "modified" : 1701721197914,
+        "created" : 1701721197914
+      },
+      "type" : "http://gedcomx.org/Divorce",
+      "date" : {
+        "id" : "1d6ef12e-61b5-4366-a19e-e60c212d4a8b",
+        "original" : "3 Oct 1910",
+        "formal" : "+1910-10-03",
+        "fields" : [ {
+          "id" : "26ac1e74-126b-40b1-be7f-e5b718887b85",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1553031602492,
+            "created" : 1553031602492
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "9720f10b-d98f-410d-9df4-516057cc8fb3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1553031602492,
+              "created" : 1553031602492
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "3 Oct 1910"
+          }, {
+            "id" : "9720f10b-d98f-410d-9df4-516057cc8fb3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1553031602492,
+              "created" : 1553031602492
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "3 Oct 1910",
+            "resource" : "+1910-10-03",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "9720f10b-d98f-410d-9df4-516057cc8fb3",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              },
+              "modified" : 1553031602492,
+              "created" : 1553031602492
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "3 October 1910",
+            "resource" : "+1910-10-03",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "c95bfa48-b2e9-48a2-8f02-b07ffe6087f3",
+          "attribution" : {
+            "modified" : 1700156652213,
+            "created" : 1700156652213
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "e9b7d0d0-24bf-486f-b9ee-ad4fe3705346",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "3"
+          } ]
+        }, {
+          "id" : "d7feeb5f-f64a-461e-baf3-3631d71982bc",
+          "attribution" : {
+            "modified" : 1700156652213,
+            "created" : 1700156652213
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "a97bfac1-9d68-40a0-92ac-8afbcc2c4bce",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Oct"
+          } ]
+        }, {
+          "id" : "4f05b2b7-edb0-43e9-a62d-feac3cd7ea02",
+          "attribution" : {
+            "modified" : 1700156652213,
+            "created" : 1700156652213
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "38500868-7d29-4c47-b9a7-7c8339da412e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1910"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "b3ae7f6f-0b4e-427e-b8a9-4d9ef0322648",
+        "original" : "Teller, Colorado, United States",
+        "description" : "#place_393586",
+        "fields" : [ {
+          "id" : "31712031-a514-43e0-bca2-5b87972d9c85",
+          "attribution" : {
+            "modified" : 1700156652213,
+            "created" : 1700156652213
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "e58ada09-aacc-48ed-87da-0c7797eb863c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Teller, Colorado, United States",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "e58ada09-aacc-48ed-87da-0c7797eb863c",
+            "confidence" : "http://confidence/94",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Teller, Colorado, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/393586"
+          } ]
+        }, {
+          "id" : "3d3a9ae4-94ff-4e81-ba96-baf6697daa56",
+          "attribution" : {
+            "modified" : 1700156652213,
+            "created" : 1700156652213
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "ec5b7668-148f-4a80-bc7b-e935588161f1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Teller"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "84d5e22f-006c-442d-aecf-7ecc3e3a7ba6",
+        "attribution" : {
+          "modified" : 1700156652213,
+          "created" : 1700156652213
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "bcb3000c-88c0-4711-8c3d-a815f708ff78",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Divorce",
+          "resource" : "http://gedcomx.org/Divorce"
+        }, {
+          "id" : "bcb3000c-88c0-4711-8c3d-a815f708ff78",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Divorce",
+          "resource" : "http://gedcomx.org/Divorce"
+        } ]
+      } ]
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_106484858828",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:QTSS-PK5H",
+    "componentOf" : {
+      "description" : "#sd_c_2043439",
+      "descriptionId" : "sd_c_2043439"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1540071643965,
+    "modified" : 1710108481876,
+    "coverage" : [ {
+      "spatial" : {
+        "id" : "b3ae7f6f-0b4e-427e-b8a9-4d9ef0322648",
+        "original" : "Teller, Colorado, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/393586"
+      },
+      "temporal" : {
+        "original" : "3 Oct 1910",
+        "formal" : "+1910-10-03"
+      },
+      "recordType" : "http://gedcomx.org/Legal"
+    } ],
+    "citations" : [ {
+      "value" : "\"Colorado Statewide Divorce Index, 1900-1939\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPTF-216V : Sun Mar 10 22:08:01 UTC 2024), Entry for Ada M Everett and Charles E Everett, 3 Oct 1910."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Ada M Everett, \"Colorado Statewide Divorce Index, 1900-1939\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QTSS-PK5H" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2043439?arkName=1:2:QTSS-PK5H"
+    }
+  }, {
+    "id" : "sd_c_2043439",
+    "about" : "https://www.familysearch.org/platform/records/collections/2043439",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223820312,
+    "modified" : 1700156652213,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Colorado, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/347"
+      },
+      "temporal" : {
+        "original" : "1900/1939",
+        "formal" : "+1900/+1939"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Colorado Statewide Divorce Index, 1900-1939"
+    }, {
+      "lang" : "zh",
+      "value" : "科羅拉多全州離婚索引，1900 年 - 1939 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Colorado, index des divorces de l'État, 1900-1939"
+    }, {
+      "lang" : "ru",
+      "value" : "Колорадо, указатель разводов штата, 1900-1939 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Colorado Skilsmisseindeks, hele staten, 1900-1939"
+    }, {
+      "lang" : "es",
+      "value" : "Índice de divorcio en todo el estado de Colorado, 1900-1939"
+    }, {
+      "lang" : "mn",
+      "value" : "Колорадо муж улсын гэр бүл салалтын индекс, 1900-1939"
+    }, {
+      "lang" : "ko",
+      "value" : "콜로라도 주 전체 이혼 색인, 1900-1939"
+    }, {
+      "lang" : "ja",
+      "value" : "コロラド州全体の離婚インデックス、1900年-1939年"
+    }, {
+      "lang" : "it",
+      "value" : "Indice dei divorzi dell'intero stato del Colorado, 1900-1939"
+    }, {
+      "lang" : "id",
+      "value" : "Indeks Perceraian di Seluruh Negara Bagian Colorado, 1900-1939"
+    }, {
+      "lang" : "hu",
+      "value" : "Colorado állami Válási jegyzék, 1900–1939"
+    }, {
+      "lang" : "sk",
+      "value" : "Colorado, celoštátny index rozvodovosti, 1900-1939"
+    }, {
+      "lang" : "th",
+      "value" : "ดัชนีการหย่าร้างทั่วรัฐโคโลราโด, ปี 1900-1939"
+    }, {
+      "lang" : "to",
+      "value" : "Fakahokohoko fakamotuʻalea ʻo e vete mali ʻi Kololato Fakavahelahi, 1900-1939"
+    }, {
+      "lang" : "bg",
+      "value" : "Списък с разводи в Колорадо, 1900–1939 г."
+    }, {
+      "lang" : "km",
+      "value" : "លិបិក្រមករណីលែងលះទូទាំងរដ្ឋខូឡូរ៉ាដូ, ឆ្នាំ 1900-1939"
+    }, {
+      "lang" : "pl",
+      "value" : "Indeks rozwodów stanu Kolorado, 1900–1939 r."
+    }, {
+      "lang" : "ro",
+      "value" : "Colorado, Indexul divorțurilor la nivel statal, 1900-1939"
+    }, {
+      "lang" : "sv",
+      "value" : "Colorado, Statsomfattande skilsmässoindex, 1900-1939"
+    }, {
+      "lang" : "sm",
+      "value" : "Chỉ Mục Ly Hôn Toàn Tiểu Bang Colorado, 1900-1939"
+    }, {
+      "lang" : "vi",
+      "value" : "Chỉ Mục Ly Hôn Toàn Tiểu Bang Colorado, 1900-1939"
+    }, {
+      "lang" : "sq",
+      "value" : "Indeksi Shtetëror i Divorceve në Kolorado, 1900-1939"
+    }, {
+      "lang" : "pt",
+      "value" : "Catálogo de Divórcio em Todo o Estado do Colorado, 1900-1939"
+    }, {
+      "lang" : "de",
+      "value" : "Colorado Statewide Scheidungsindex, 1900-1939"
+    }, {
+      "lang" : "uk",
+      "value" : "Колорадо, покажчик записів про розлучення, 1900–1939 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Colorado, indeks razvoda diljem zemlje, 1900.-1939."
+    }, {
+      "lang" : "cs",
+      "value" : "Rejstřík rozvodů ve státě Colorado, 1900-1939"
+    }, {
+      "lang" : "da",
+      "value" : "Skilsmisseindeks for staten Colorado, 1900-1939"
+    }, {
+      "lang" : "nl",
+      "value" : "Colorado Echtscheidingsindex voor de gehele staat, 1900-1939"
+    }, {
+      "lang" : "et",
+      "value" : "Colorado osariigi lahutuste indeks, 1900–1939"
+    }, {
+      "lang" : "fi",
+      "value" : "Coloradon osavaltion avioerohakemisto, 1900-1939"
+    }, {
+      "lang" : "tl",
+      "value" : "Index ng Diborsyo sa buong Estado ng Colorado, 1900-1939"
+    }, {
+      "lang" : "mg",
+      "value" : "Fisaraham-Panambadiana manerana ny Fanjakana Colorado, 1900-1939"
+    }, {
+      "lang" : "ceb",
+      "value" : "Indeks sa Diborsiyo sa Tibuok Estado sa Colorado, 1900-1939"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/2043439" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9WB-CGLL",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9WB-CGLL" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2043439?arkName=3:1:3QSQ-G9WB-CGLL"
+    }
+  }, {
+    "id" : "sd_p_104891516509",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QPTF-216K",
+    "componentOf" : {
+      "description" : "#src_r_106484858828",
+      "descriptionId" : "src_r_106484858828"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Colorado Statewide Divorce Index, 1900-1939\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPTF-216V : Sun Mar 10 22:08:01 UTC 2024), Entry for Ada M Everett and Charles E Everett, 3 Oct 1910."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Charles E Everett, \"Colorado Statewide Divorce Index, 1900-1939\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Charles E Everett, \"Colorado Statewide Divorce Index, 1900-1939\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPTF-216K" ]
+    }
+  }, {
+    "id" : "sd_p_104891516508",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QPTF-216V",
+    "componentOf" : {
+      "description" : "#src_r_106484858828",
+      "descriptionId" : "src_r_106484858828"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Colorado Statewide Divorce Index, 1900-1939\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPTF-216V : Sun Mar 10 22:08:01 UTC 2024), Entry for Ada M Everett and Charles E Everett, 3 Oct 1910."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Ada M Everett, \"Colorado Statewide Divorce Index, 1900-1939\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Ada M Everett, \"Colorado Statewide Divorce Index, 1900-1939\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPTF-216V" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_393586",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/393586" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "6485d80d-19ff-4a71-85fc-60761ffb9dc6",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "08a84bae-1e46-4463-ae5b-35bc4ab59b3e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "3d188fb7-440d-42a0-86d8-7812a1a98499",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "322d50c1-416b-4561-ae27-0bf307988e92",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "bf6f4a7e-8bfd-402d-9bbd-3d1a8ec6e836"
+    } ]
+  }, {
+    "id" : "fdf8cfad-96c5-4524-a567-9c47e06ec216",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/IdxProjectId",
+    "values" : [ {
+      "id" : "ef9837c6-29e1-4a75-8810-b1b38f5dfc2e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IDX_PROJECT_ID",
+      "text" : "6f6c3c28-07b9-4205-82b5-f315e01203d0"
+    } ]
+  }, {
+    "id" : "47b142f7-7dd1-45aa-99c1-378fe3c3bc9b",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "99fadca1-b9ca-436b-bd64-12d9f4d00e6c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "6"
+    } ]
+  }, {
+    "id" : "922f51a9-9a86-4a18-9f6b-897dae30e587",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "c7e3df5f-fb01-4a95-94ff-7f75bdfb3e21",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3QSQ-G9WB-CGLL\",\"FS_COLLECTION_ID\":\"2043439\"}"
+    } ]
+  }, {
+    "id" : "ffba3c55-da98-4d12-86fa-46ce97d55873",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "f4bb25c2-760c-4fb7-9783-59056734dcfe",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "17-1131; 2018-11-28T10:46:05-0700; fairchildbc; 3806; SB; IDX; Colorado, Statewide Divorce Index, 1900-1939 - FSI"
+    } ]
+  }, {
+    "id" : "d08f424c-ce2a-4972-bce9-86218d4aca48",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/VisStatus",
+    "values" : [ {
+      "id" : "09d0bdeb-9667-4c69-876b-e1ea0259fd9d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "id" : "d05d3851-f21b-47f9-ac3d-bdacee7b8d24",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/IdxTemplateId",
+    "values" : [ {
+      "id" : "47d92750-823a-4d35-8928-90460bf1f068",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IDX_TEMPLATE_ID",
+      "text" : "https://familysearch.org/service/indexing/template/templates/record.template.2516"
+    } ]
+  }, {
+    "id" : "6f454502-d097-436a-a818-f10a87e767b1",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "265ba5c1-e54f-44e6-a8fe-c561276bd6ce",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000007192059_04127_00000_0000106484858828"
+    } ]
+  }, {
+    "id" : "eb7847e8-fbb9-4fa3-9692-48f7a3d8c100",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/RecordNbr",
+    "values" : [ {
+      "id" : "2a0a1f63-c0ea-477a-8c29-c29b71855d5b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "0"
+    } ]
+  }, {
+    "id" : "ed7ebc2f-813c-43bb-b414-b8382ccbda53",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/SourceDocketNbr",
+    "values" : [ {
+      "id" : "bb98bca2-6edb-4d58-825f-48f3a6ebfad3",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_DOCKET_NBR_ORIG",
+      "text" : "2669"
+    }, {
+      "id" : "bb98bca2-6edb-4d58-825f-48f3a6ebfad3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_DOCKET_NBR",
+      "text" : "2669"
+    } ]
+  }, {
+    "id" : "94a79377-98f3-4850-b91f-63403d0f3f87",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "66257962-1054-4336-9c53-4266eb6b04ae",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "17-1131"
+    } ]
+  }, {
+    "id" : "a066a329-d5fe-4975-b67f-d3cbe97b547a",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "d55d0d26-497a-4a32-85eb-36b7b1f74727",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-1942-33249-20451-56\",\"FS_IMAGE_NBR\":\"04127\"}"
+    } ]
+  }, {
+    "id" : "47a276a2-fd6a-4f46-8030-bda3537a259a",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "c66307b7-ddf5-41c7-8b52-a2bc4fd6ff5e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "56cfa970-b5e5-4436-887a-d310bd7ec2de",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "085243e7-45e0-4bbc-928b-38b6930137a9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "true"
+    } ]
+  }, {
+    "id" : "c54ae52f-f799-4e8e-b27b-5b5b72084fcf",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "e67d145a-e3df-4269-afd1-a7aa29c13efd",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "47745"
+    } ]
+  }, {
+    "id" : "4edcc9b9-3680-473d-84c3-86df19d2136f",
+    "attribution" : {
+      "modified" : 1700156652213,
+      "created" : 1700156652213
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "9c2378b1-51bd-4044-9f23-3f3444a0c093",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Colorado, Statewide Divorce Index, 1900-1939 - FSI"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "007192059"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "4127"
+    } ]
+  } ],
+  "additionalAttribution" : [ {
+    "contributor" : {
+      "resource" : "https://www.familysearch.org/platform/users/agents/cis.user.MMM9-3VCH"
+    },
+    "modified" : 1539991163385,
+    "created" : 1539991163385,
+    "changeMessageResource" : "http://familysearch.org/types/reasons/127657"
+  } ]
+}

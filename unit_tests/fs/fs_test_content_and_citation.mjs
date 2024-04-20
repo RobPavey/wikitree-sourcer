@@ -309,6 +309,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:8ZVW-2F3Z",
   },
   {
+    caseName: "us_co_divorce_1910_ada_everett",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QPTF-216V",
+  },
+  {
     caseName: "us_ct_birth_1768_unknown_cornish",
     url: "https://www.familysearch.org/ark:/61903/1:1:QP7Z-TGYP",
   },

@@ -20,6 +20,23 @@
     "placeString": "Lubbock, Texas, United States"
   },
   "ageAtEvent": "27",
+  "spouses": [
+    {
+      "name": {
+        "name": "John T Pate",
+        "lastName": "Pate",
+        "forenames": "John T"
+      },
+      "age": "28",
+      "divorceDate": {
+        "dateString": "09 Jun 1976"
+      },
+      "divorcePlace": {
+        "placeString": "Lubbock, Texas, United States"
+      }
+    }
+  ],
+  "divorceDate": "09 Jun 1976",
   "wtSearchTemplates": [
     "{{FamilySearch Record|VYX9-KBH}}"
   ],

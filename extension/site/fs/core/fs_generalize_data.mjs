@@ -751,6 +751,86 @@ function generalizeDataGivenRecordType(ed, result) {
     }
 
     result.spouses.push(resultSpouse);
+  } else if (result.recordType == RT.Divorce) {
+    result.spouses = [];
+    let resultSpouse = {};
+
+    if (result.role != Role.Parent) {
+      if (ed.father) {
+        let father = result.addFather();
+        setFieldIfDefined(father.name, "name", ed.father.fullName);
+        setFieldIfDefined(father.name, "forenames", ed.father.givenName);
+        setFieldIfDefined(father.name, "lastName", ed.father.surname);
+        setFieldIfDefined(father.name, "prefix", ed.father.prefix);
+        setFieldIfDefined(father.name, "suffix", ed.father.suffix);
+      }
+      if (ed.mother) {
+        let mother = result.addMother();
+        setFieldIfDefined(mother.name, "name", ed.mother.fullName);
+        setFieldIfDefined(mother.name, "forenames", ed.mother.givenName);
+        setFieldIfDefined(mother.name, "lastName", ed.mother.surname);
+        setFieldIfDefined(mother.name, "prefix", ed.mother.prefix);
+        setFieldIfDefined(mother.name, "suffix", ed.mother.suffix);
+      }
+    }
+
+    if (ed.spouseFullName || ed.spouseSurname || ed.spouseGivenName) {
+      resultSpouse.name = new NameObj();
+
+      if (ed.spouseFullName) {
+        resultSpouse.name.name = ed.spouseFullName;
+      }
+      if (ed.spouseSurname) {
+        resultSpouse.name.lastName = ed.spouseSurname;
+      }
+      if (ed.spouseGivenName) {
+        resultSpouse.name.forenames = ed.spouseGivenName;
+      }
+      if (ed.spousePrefix) {
+        resultSpouse.name.prefix = ed.spousePrefix;
+      }
+      if (ed.spouseSuffix) {
+        resultSpouse.name.suffix = ed.spouseSuffix;
+      }
+      if (ed.spouseAge) {
+        resultSpouse.age = ed.spouseAge;
+      }
+    } else if (ed.relatedPersonSpouseFullName || ed.relatedPersonSpouseSurname || ed.relatedPersonSpouseGivenName) {
+      resultSpouse.name = new NameObj();
+      if (ed.relatedPersonSpouseFullName) {
+        resultSpouse.name.name = ed.relatedPersonSpouseFullName;
+      }
+      if (ed.relatedPersonSpouseSurname) {
+        resultSpouse.name.lastName = ed.relatedPersonSpouseSurname;
+      }
+      if (ed.relatedPersonSpouseGivenName) {
+        resultSpouse.name.forenames = ed.relatedPersonSpouseGivenName;
+      }
+    }
+    if (result.eventDate) {
+      resultSpouse.divorceDate = result.eventDate;
+    }
+    if (result.eventPlace) {
+      resultSpouse.divorcePlace = result.eventPlace;
+    }
+
+    // the marriage record can contain an actual Divorce date as well as the event date
+    // If so it is probably more accurate
+    if (ed.recordData["Divorce Date"] || ed.recordData["Divorce Date (Original)"] || ed.recordData["Divorce Year"]) {
+      let divorceDate = new DateObj();
+      let dateString = selectDate(ed.recordData["Divorce Date"], ed.recordData["Divorce Date (Original)"]);
+      if (dateString) {
+        divorceDate.dateString = dateString;
+        divorceDate.setDateAndQualifierFromString(dateString);
+      }
+      if (ed.recordData["Divorce Year"]) {
+        divorceDate.yearString = ed.recordData["Divorce Year"];
+      }
+      resultSpouse.divorceDate = divorceDate;
+      result.divorceDate = divorceDate.getDateString();
+    }
+
+    result.spouses.push(resultSpouse);
   } else if (result.recordType == RT.SlaveSchedule) {
     let freeOrEnslaved = ed.recordData["Flag Free Or Enslaved"];
     if (freeOrEnslaved == "Owner") {

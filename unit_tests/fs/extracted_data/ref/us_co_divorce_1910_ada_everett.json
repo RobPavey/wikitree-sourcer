@@ -1,0 +1,38 @@
+{
+  "recordData": {
+    "Name": "Ada M Everett",
+    "Marriage Date": "28 Sep 1881",
+    "Divorce Date": "3 Oct 1910",
+    "Divorce Place": "Teller, Colorado, United States",
+    "Vis Status": "VISIBLE",
+    "Record Nbr": "0",
+    "Source Docket Nbr": "2669",
+    "System Of Record": "SLS"
+  },
+  "fullName": "Ada M Everett",
+  "surname": "Everett",
+  "givenName": "Ada M",
+  "spouseFullName": "Charles E Everett",
+  "spouseSurname": "Everett",
+  "spouseGivenName": "Charles E",
+  "eventDateOriginal": "3 Oct 1910",
+  "eventDate": "3 Oct 1910",
+  "eventYear": "1910",
+  "eventPlaceOriginal": "Teller, Colorado, United States",
+  "eventPlace": "Teller, Colorado, United States",
+  "eventPlaceL2": "Teller",
+  "factType": "Divorce",
+  "extData": "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3QSQ-G9WB-CGLL\",\"FS_COLLECTION_ID\":\"2043439\"}",
+  "referenceData": {
+    "digitalFilmNumber": "007192059",
+    "imageNumber": "4127"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QTSS-PK5H",
+  "collectionTitle": "Colorado Statewide Divorce Index, 1900-1939",
+  "fsCollectionId": "2043439",
+  "citation": "\"Colorado Statewide Divorce Index, 1900-1939\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPTF-216V : Sun Mar 10 22:08:01 UTC 2024), Entry for Ada M Everett and Charles E Everett, 3 Oct 1910.",
+  "sourceTitleForPerson": "Ada M Everett, \"Colorado Statewide Divorce Index, 1900-1939\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QPTF-216V",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9WB-CGLL",
+  "pageType": "record"
+}

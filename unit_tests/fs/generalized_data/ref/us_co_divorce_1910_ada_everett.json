@@ -1,0 +1,43 @@
+{
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Ada M Everett",
+    "lastName": "Everett",
+    "forenames": "Ada M"
+  },
+  "eventDate": {
+    "dateString": "3 Oct 1910",
+    "yearString": "1910"
+  },
+  "eventPlace": {
+    "placeString": "Teller, Colorado, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Charles E Everett",
+        "lastName": "Everett",
+        "forenames": "Charles E"
+      },
+      "divorceDate": {
+        "dateString": "3 Oct 1910"
+      },
+      "divorcePlace": {
+        "placeString": "Teller, Colorado, United States"
+      }
+    }
+  ],
+  "divorceDate": "3 Oct 1910",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QPTF-216V}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QSQ-G9WB-CGLL}}"
+  ],
+  "collectionData": {
+    "id": "2043439"
+  },
+  "hasValidData": true
+}

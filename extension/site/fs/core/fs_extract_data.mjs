@@ -3075,12 +3075,10 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
     for (let relationship of relationships) {
       if (relationship.facts) {
         for (let fact of relationship.facts) {
-          if (fact.type && !result.factType) {
+          if (fact.primary && fact.type && !result.factType) {
             let factType = getFactType(fact);
 
-            if (fact.primary) {
-              setEventDateAndPlaceForFact(result, fact);
-            }
+            setEventDateAndPlaceForFact(result, fact);
 
             // if one of the people in this fact is the selected person
             if (relationship.person1.resourceId == personId || relationship.person2.resourceId == personId) {
@@ -3138,7 +3136,45 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
             // https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9?from=lynx1UIV8&treeref=L8PL-J4M
             // The main (primary) fact (MarriageRegistration) has no date. But there is a Marriage
             // fact with a date.
+            let factType = getFactType(fact);
+
             setDateAndPlaceForAdditionalFact(result, fact);
+
+            // if this is a marriage then add a spouse if possible
+            if (relationship.person1.resourceId == personId || relationship.person2.resourceId == personId) {
+              if (factType.startsWith("Marriage")) {
+                let otherPersonId = relationship.person2.resourceId;
+                if (relationship.person2.resourceId == personId) {
+                  otherPersonId = relationship.person1.resourceId;
+                }
+
+                let otherPerson = findPersonById(dataObj, otherPersonId);
+
+                if (otherPerson) {
+                  // look for their name
+                  let nameForm = getPrimaryNameForm(otherPerson);
+                  if (nameForm) {
+                    result.spouseFullName = nameForm.fullText;
+                    if (nameForm.parts) {
+                      for (let part of nameForm.parts) {
+                        if (part.type.endsWith("Given")) {
+                          result.spouseGivenName = part.value;
+                        } else if (part.type.endsWith("Surname")) {
+                          result.spouseSurname = part.value;
+                        }
+                      }
+                    }
+                  }
+
+                  if (otherPerson.fields) {
+                    const personFieldsMap = {
+                      Age: "spouseAge",
+                    };
+                    extractFields(result, otherPerson.fields, personFieldsMap);
+                  }
+                }
+              }
+            }
           }
         }
       }
