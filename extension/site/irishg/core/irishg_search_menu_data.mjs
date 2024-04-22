@@ -36,7 +36,7 @@ const subcategories = [
     text: "All records in lifetime",
     category: "civil",
     startYear: 1845,
-    endYear: 1972,
+    endYear: 1973,
   },
   {
     value: "civil_events",
@@ -45,7 +45,7 @@ const subcategories = [
     includeSpouses: true,
     includeMmn: true,
     startYear: 1845,
-    endYear: 1972,
+    endYear: 1973,
   },
   {
     value: "civil_births",
@@ -53,7 +53,7 @@ const subcategories = [
     category: "civil",
     includeMmn: true,
     startYear: 1864,
-    endYear: 1922,
+    endYear: 1923,
   },
   {
     value: "civil_marriages",
@@ -61,7 +61,7 @@ const subcategories = [
     category: "civil",
     includeSpouses: true,
     startYear: 1845,
-    endYear: 1947,
+    endYear: 1948,
   },
   {
     value: "civil_deaths",
@@ -69,7 +69,7 @@ const subcategories = [
     category: "civil",
     includeAgeAtDeath: true,
     startYear: 1871,
-    endYear: 1972,
+    endYear: 1973,
   },
 
   {

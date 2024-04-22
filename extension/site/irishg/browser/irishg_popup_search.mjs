@@ -42,7 +42,7 @@ import { options } from "/base/browser/options/options_loader.mjs";
 //   These will be included in future updates to the records available on the website.
 
 const irishgStartYear = 1520;
-const irishgEndYear = 1930;
+const irishgEndYear = 1973;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
