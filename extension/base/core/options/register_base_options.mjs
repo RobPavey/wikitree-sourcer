@@ -1244,11 +1244,22 @@ const buildAllGeneralOptionsGroup = {
   subsection: "general",
   options: [
     {
+      optionName: "mergeBirthsBaptisms",
+      type: "checkbox",
+      label: "Merge close Baptisms, Births and Birth Registrations",
+      defaultValue: false,
+    },
+    {
       optionName: "mergeMarriages",
       type: "checkbox",
       label: "Merge Marriages, Marriage Banns and Marriage Registrations",
       defaultValue: true,
-      unitTestValue: true,
+    },
+    {
+      optionName: "mergeDeathsBurials",
+      type: "checkbox",
+      label: "Merge Burials, Probates, Deaths and Death Registrations",
+      defaultValue: false,
     },
   ],
 };

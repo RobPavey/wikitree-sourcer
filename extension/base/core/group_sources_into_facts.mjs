@@ -30,17 +30,90 @@ import { NameObj, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
 import { getFieldsUsedInNarrative } from "./narrative_builder.mjs";
 
 function canMergeDifferentTypes(recordTypeA, recordTypeB, subTypeA, subTypeB, options) {
+  if (
+    recordTypeA == RT.Baptism ||
+    recordTypeA == RT.BirthOrBaptism ||
+    recordTypeA == RT.Birth ||
+    recordTypeA == RT.BirthRegistration
+  ) {
+    if (
+      !(
+        recordTypeB == RT.Baptism ||
+        recordTypeB == RT.BirthOrBaptism ||
+        recordTypeB == RT.Birth ||
+        recordTypeB == RT.BirthRegistration
+      )
+    ) {
+      return undefined;
+    }
+
+    // they are both Baptism, Birth or BirthRegistration
+    // Don't worry about dates at this point - just say if options allow these types to be merged
+    if (options.buildAll_general_mergeBirthsBaptisms) {
+      // can merge, decide which type to use
+      if (recordTypeA == RT.Baptism || recordTypeB == RT.Baptism) {
+        return RT.Baptism;
+      } else if (recordTypeA == RT.Birth || recordTypeB == RT.Birth) {
+        return RT.Birth;
+      } else if (recordTypeA == RT.BirthOrBaptism || recordTypeB == RT.BirthOrBaptism) {
+        return RT.BirthOrBaptism;
+      } else {
+        return RT.BirthRegistration;
+      }
+    }
+  }
+
   if (recordTypeA == RT.Marriage || recordTypeA == RT.MarriageRegistration) {
     if (!(recordTypeB == RT.Marriage || recordTypeB == RT.MarriageRegistration)) {
-      return false;
+      return undefined;
     }
 
     // they are both Marriage or MarriageRegistration
     // Don't worry about dates at this point - just say if options allow these types to be merged
-    return options.buildAll_general_mergeMarriages;
+    if (options.buildAll_general_mergeMarriages) {
+      // can merge, decide which type to use
+      if (recordTypeA == RT.Marriage || recordTypeB == RT.Marriage) {
+        return RT.Marriage;
+      } else {
+        return RT.MarriageRegistration;
+      }
+    }
   }
 
-  return false;
+  if (
+    recordTypeA == RT.Burial ||
+    recordTypeA == RT.Death ||
+    recordTypeA == RT.DeathRegistration ||
+    recordTypeA == RT.Probate
+  ) {
+    if (
+      !(
+        recordTypeB == RT.Burial ||
+        recordTypeB == RT.Death ||
+        recordTypeB == RT.DeathRegistration ||
+        recordTypeB == RT.Probate
+      )
+    ) {
+      return undefined;
+    }
+
+    // they are both Burial, Death or DeathRegistration
+    // Don't worry about dates at this point - just say if options allow these types to be merged
+    if (options.buildAll_general_mergeDeathsBurials) {
+      // can merge, decide which type to use
+      if (recordTypeA == RT.Burial || recordTypeB == RT.Burial) {
+        return RT.Burial;
+      } else if (recordTypeA == RT.Probate || recordTypeB == RT.Probate) {
+        return RT.Probate;
+      } else if (recordTypeA == RT.Death || recordTypeB == RT.Death) {
+        return RT.Death;
+      } else {
+        return RT.DeathRegistration;
+      }
+    }
+  }
+
+  return undefined;
 }
 
 function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
@@ -118,7 +191,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
     }
 
     // If either of the date are for a particular quarter then it require a different comparison
-    // which can also take into accoun the record types.
+    // which can also take into account the record types.
     if (dateObjA.quarter || dateObjB.quarter) {
       // one of them is a quarter date - could be a registration
       if (dateObjA.quarter && dateObjB.quarter) {
@@ -154,7 +227,40 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
                 return otherDateObj;
               }
             }
+          } else if (quarterRecordType == RT.BirthRegistration || !quarterRecordType) {
+            if (otherRecordType == RT.Birth || !otherRecordType) {
+              const longestQuarterInDays = 92;
+              const leeway = 42;
+              const maxDays = longestQuarterInDays + leeway;
+              if (daysBetween >= 0 && daysBetween <= maxDays) {
+                return otherDateObj;
+              }
+            } else if (otherRecordType == RT.Baptism || !otherRecordType) {
+              // for now just do the same for baptism, the baptism could be before or after the
+              // end of the quarter for the registration.
+              const longestQuarterInDays = 92;
+              const leeway = 42;
+              const maxDays = longestQuarterInDays + leeway;
+              if (daysBetween >= 0 && daysBetween <= maxDays) {
+                return otherDateObj;
+              }
+            }
+          } else if (quarterRecordType == RT.DeathRegistration || !quarterRecordType) {
+            if (
+              otherRecordType == RT.Burial ||
+              otherRecordType == RT.Death ||
+              otherRecordType == RT.Probate ||
+              !otherRecordType
+            ) {
+              const longestQuarterInDays = 92;
+              const oneWeekLeeway = 21;
+              const maxDays = longestQuarterInDays + oneWeekLeeway;
+              if (daysBetween >= 0 && daysBetween <= maxDays) {
+                return otherDateObj;
+              }
+            }
           }
+
           return "nomatch";
         }
 
@@ -846,9 +952,17 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
         continue;
       }
 
+      let mergedRecordType = mergedGd.recordType;
       if (recordType != mergedGd.recordType) {
         // add tests here to merge records of different types
-        if (!canMergeDifferentTypes(mergedGd.recordType, recordType, mergedGd.recordSubtype, recordSubtype, options)) {
+        mergedRecordType = canMergeDifferentTypes(
+          mergedGd.recordType,
+          recordType,
+          mergedGd.recordSubtype,
+          recordSubtype,
+          options
+        );
+        if (mergedRecordType === undefined) {
           continue;
         }
       }
@@ -966,6 +1080,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       //console.log("====== merge approved ======");
 
       // set merged properties
+      mergedGd.recordType = mergedRecordType;
       mergedGd.eventDate = mergedDateObj;
       mergedGd.name = mergedName;
       mergedGd.setEventPlace(mergedPlace);
