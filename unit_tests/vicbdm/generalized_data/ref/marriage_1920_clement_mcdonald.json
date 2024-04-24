@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "forenames": "Clement Courtney",
+    "lastName": "McDonald"
+  },
+  "eventDate": {
+    "yearString": "1920"
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Ruby Mary",
+        "lastName": "Nicholson"
+      },
+      "marriageDate": {
+        "yearString": "1920"
+      }
+    }
+  ],
+  "collectionData": {
+    "year": "1920",
+    "regNum": "5595"
+  },
+  "hasValidData": true
+}

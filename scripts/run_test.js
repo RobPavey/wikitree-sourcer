@@ -53,6 +53,7 @@ import "../unit_tests/ppnz/ppnz_test.mjs";
 import "../unit_tests/psuk/psuk_test.mjs";
 import "../unit_tests/scotp/scotp_test.mjs";
 import "../unit_tests/trove/trove_test.mjs";
+import "../unit_tests/vicbdm/vicbdm_test.mjs";
 import "../unit_tests/wiewaswie/wiewaswie_test.mjs";
 import "../unit_tests/wikipedia/wikipedia_test.mjs";
 import "../unit_tests/wikitree/wikitree_test.mjs";

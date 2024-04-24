@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nDeaths, Registration number 5240 / 1993<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nSusanne Mary Pavey death 1993, child of Lionel James Pavey & Margaret Rose Hirst, in Kyneton, Australia, mother's maiden name Hirst.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Susanne, child of Lionel James Pavey & Margaret Rose Hirst, died in 1993 in Kyneton, Australia.<ref>\n'''Death''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nDeaths, Registration number 5240 / 1993<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nSusanne Mary Pavey death 1993, child of Lionel James Pavey & Margaret Rose Hirst, in Kyneton, Australia, mother's maiden name Hirst.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>Deaths, Registration number 5240 / 1993<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>Susanne Mary Pavey death 1993, child of Lionel James Pavey & Margaret Rose Hirst, in Kyneton, Australia, mother's maiden name Hirst.",
+    "type": "source"
+  }
+}

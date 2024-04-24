@@ -1,0 +1,42 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "forenames": "Susanne Mary",
+    "lastName": "Pavey"
+  },
+  "eventDate": {
+    "yearString": "1993"
+  },
+  "eventPlace": {
+    "placeString": "Kyneton, Australia"
+  },
+  "lastNameAtDeath": "Pavey",
+  "mothersMaidenName": "Hirst",
+  "deathDate": {
+    "yearString": "1993"
+  },
+  "deathPlace": {
+    "placeString": "Kyneton, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Lionel James",
+        "lastName": "Pavey"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Margaret Rose",
+        "lastName": "Hirst"
+      }
+    }
+  },
+  "collectionData": {
+    "year": "1993",
+    "regNum": "5240"
+  },
+  "hasValidData": true
+}
