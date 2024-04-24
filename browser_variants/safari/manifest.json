@@ -209,6 +209,11 @@
       "js": ["base/browser/content/content_common.js", "site/trove/browser/trove_content.js"]
     },
     {
+      "matches": ["*://*.bdm.vic.gov.au/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/vicbdm/browser/vicbdm_content.js"]
+    },
+    {
       "matches": ["*://www.wiewaswie.nl/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/wiewaswie/browser/wiewaswie_content.js"]
@@ -378,6 +383,10 @@
     {
       "resources": ["site/trove/core/trove_extract_data.mjs"],
       "matches": ["*://trove.nla.gov.au/*"]
+    },
+    {
+      "resources": ["site/vicbdm/core/vicbdm_extract_data.mjs"],
+      "matches": ["*://*.bdm.vic.gov.au/*"]
     },
     {
       "resources": ["site/wiewaswie/core/wiewaswie_extract_data.mjs"],
