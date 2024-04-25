@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2024 Robert M Pavey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,11 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
-
-import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
+import { addMenuItem, closePopup, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
+
+import { registerSearchMenuItemFunction, openUrlInNewTab } from "/base/browser/popup/popup_search.mjs";
+
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
@@ -35,8 +37,44 @@ import { options } from "/base/browser/options/options_loader.mjs";
 async function vicbdmSearch(generalizedData) {
   const input = { generalizedData: generalizedData, options: options };
   doAsyncActionWithCatch("Victoria BDM (Aus) Search", input, async function () {
-    let loadedModule = await import(`../core/vicbdm_build_search_url.mjs`);
-    doSearch(loadedModule, input);
+    let loadedModule = await import(`../core/vicbdm_build_search_data.mjs`);
+    let buildResult = loadedModule.buildSearchData(input);
+
+    let fieldData = buildResult.fieldData;
+    let selectData = buildResult.selectData;
+
+    const checkPermissionsOptions = {
+      reason:
+        "To perform a search on WieWasWie a content script needs to be loaded on the www.wiewaswie.nl search page.",
+    };
+    let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
+    if (!allowed) {
+      closePopup();
+      return;
+    }
+
+    let searchUrl = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
+
+    try {
+      const vicbdmSearchData = {
+        timeStamp: Date.now(),
+        url: searchUrl,
+        fieldData: fieldData,
+        selectData: selectData,
+      };
+
+      // this stores the search data in local storage which is then picked up by the
+      // content script in the new tab/window
+      chrome.storage.local.set({ vicbdmSearchData: vicbdmSearchData }, function () {
+        //console.log('saved vicbdmSearchData, vicbdmSearchData is:');
+        //console.log(vicbdmSearchData);
+      });
+    } catch (ex) {
+      console.log("storeDataCache failed");
+    }
+
+    openUrlInNewTab(searchUrl);
+    closePopup();
   });
 }
 

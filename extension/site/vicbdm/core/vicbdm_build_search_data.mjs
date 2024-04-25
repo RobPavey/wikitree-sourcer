@@ -22,24 +22,45 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { VicbdmUriBuilder } from "./vicbdm_uri_builder.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { RC } from "../../../base/core/record_collections.mjs";
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
+function buildSearchData(input) {
+  const gd = input.generalizedData;
+  const typeOfSearch = input.typeOfSearch;
+  const searchParameters = input.searchParameters;
+  const options = input.options;
+  const runDate = input.runDate;
 
-  var builder = new VicbdmUriBuilder();
+  let fieldData = {};
+  let selectData = {};
 
-  // call methods on builder here
+  let forenames = gd.inferForenames();
+  if (forenames) {
+    fieldData["historicalSearch-name-firstGivenName"] = forenames;
+  }
 
-  const url = builder.getUri();
+  let lastName = gd.inferLastName();
+  if (lastName) {
+    fieldData["historicalSearch-name-familyName"] = lastName;
+  }
 
-  //console.log("URL is " + url);
+  fieldData["historicalSearch-events-birth"] = true;
+  fieldData["historicalSearch-events-death"] = true;
+  fieldData["historicalSearch-events-marriage"] = true;
+
+  fieldData["historicalSearch-yearRange-from"] = "1890";
+  fieldData["historicalSearch-yearRange-to"] = "1930";
+
+  //console.log("fieldData is:");
+  //console.log(fieldData);
 
   var result = {
-    url: url,
+    fieldData: fieldData,
+    selectData: selectData,
   };
 
   return result;
 }
 
-export { buildSearchUrl };
+export { buildSearchData };

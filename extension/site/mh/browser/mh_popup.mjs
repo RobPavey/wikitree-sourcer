@@ -31,7 +31,7 @@ import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 async function setupMhPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a MyHeritage page but not a record page or peson page.",
+    extractFailedMessage: "It looks like a MyHeritage page but not a record page or person page.",
     generalizeFailedMessage: "It looks like a MyHeritage page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
