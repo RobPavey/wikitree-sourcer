@@ -49,8 +49,16 @@ function buildSearchData(input) {
   fieldData["historicalSearch-events-death"] = true;
   fieldData["historicalSearch-events-marriage"] = true;
 
-  fieldData["historicalSearch-yearRange-from"] = "1890";
-  fieldData["historicalSearch-yearRange-to"] = "1930";
+  const maxLifespan = Number(options.search_general_maxLifespan);
+  let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
+  if (range) {
+    if (range.startYear) {
+      fieldData["historicalSearch-yearRange-from"] = range.startYear;
+    }
+    if (range.endYear) {
+      fieldData["historicalSearch-yearRange-to"] = range.endYear;
+    }
+  }
 
   //console.log("fieldData is:");
   //console.log(fieldData);

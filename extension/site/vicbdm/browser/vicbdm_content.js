@@ -41,18 +41,18 @@ const maxRetries = 20;
 var numRetries = 0;
 
 async function checkForPendingSearch() {
-  console.log("checkForPendingSearch: called");
-
-  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+  //console.log("checkForPendingSearch: called");
+  //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
     return;
   }
 
-  console.log("checkForPendingSearch: URL is");
-  console.log(document.URL);
+  //console.log("checkForPendingSearch: URL is");
+  //console.log(document.URL);
 
+  // Expect smoething like this:
   // https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa
 
   const startingSearchRegEx = /^https\:\/\/my\.rio\.bdm\.vic\.gov\.au\/efamily-history\/\-$/;
@@ -62,8 +62,9 @@ async function checkForPendingSearch() {
   let isStartingSearchPage = startingSearchRegEx.test(document.URL);
   let isMidSearchPage = midSearchRegEx.test(document.URL);
   let isReadySearchPage = readySearchRegEx.test(document.URL);
+
   if (isStartingSearchPage || isMidSearchPage || isReadySearchPage) {
-    console.log("checkForPendingSearch: URL matches");
+    //console.log("checkForPendingSearch: URL matches ready to fill form");
 
     let vicbdmSearchData = undefined;
     try {
@@ -73,8 +74,51 @@ async function checkForPendingSearch() {
     }
 
     if (vicbdmSearchData) {
-      console.log("checkForPendingSearch: got formValues:");
-      console.log(vicbdmSearchData);
+      // Modify the page to say it is a WikiTree Sourcer search
+      let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
+      console.log("menuBarElement is:");
+      console.log(menuBarElement);
+      if (menuBarElement) {
+        let sourcerFragment = menuBarElement.querySelector("span");
+        if (!sourcerFragment) {
+          let fragment = document.createDocumentFragment();
+
+          let pageTitle = document.createElement("div");
+          pageTitle.className = "pageTitle";
+          fragment.appendChild(pageTitle);
+
+          let container = document.createElement("div");
+          container.className = "container";
+          pageTitle.appendChild(container);
+
+          let h1 = document.createElement("h1");
+          container.appendChild(h1);
+
+          let span = document.createElement("span");
+          span.textContent = "WikiTree Sourcer search. Please wait for form to be populated and submitted...";
+          span.style.color = "white";
+          h1.appendChild(span);
+
+          menuBarElement.appendChild(fragment);
+        }
+      }
+
+      // if not ready to fill the form yet then wait
+      if (isStartingSearchPage || isMidSearchPage) {
+        //console.log("have search data but not on ready to search page yet, numRetries = " + numRetries);
+
+        if (numRetries < maxRetries) {
+          //console.log("setTimeout for retry");
+          numRetries++;
+          setTimeout(function () {
+            checkForPendingSearch();
+          }, 1000);
+        }
+        return;
+      }
+
+      //console.log("checkForPendingSearch: got formValues:");
+      //console.log(vicbdmSearchData);
 
       let searchUrl = vicbdmSearchData.url;
       let timeStamp = vicbdmSearchData.timeStamp;
@@ -101,6 +145,7 @@ async function checkForPendingSearch() {
 
         let formElement = document.querySelector("div.historical-search-criteria form");
         if (formElement) {
+          let searchTypeElement = document.querySelector("#historicalSearch-type0");
           for (var key in fieldData) {
             console.log("checkForPendingSearch: key is: " + key);
             if (key) {
@@ -113,52 +158,20 @@ async function checkForPendingSearch() {
                 if (inputType == "checkbox") {
                   console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.checked);
                   inputElement.checked = value;
+                  var event = new Event("change", { bubbles: true });
+                  inputElement.dispatchEvent(event);
                 } else {
                   console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
-                  //inputElement.value = value;
-                }
-
-                // we need to change the class list so that the page recognizes that we
-                // have entered data
-                // change from:
-                //  ng-pristine ng-valid ng-touched
-                // to:
-                //  ng-valid ng-dirty ng-touched
-                // use the classList API to remove and add classes
-                inputElement.classList.remove("ng-pristine");
-                inputElement.classList.remove("ng-untouched");
-
-                inputElement.classList.add("ng-dirty");
-                inputElement.classList.add("ng-touched");
-
-                console.log("input element is:");
-                console.log(inputElement);
-
-                let parentElement = inputElement.parentElement;
-                if (parentElement) {
-                  parentElement.classList.remove("ng-pristine");
-                  parentElement.classList.remove("ng-untouched");
-
-                  parentElement.classList.add("ng-dirty");
-                  parentElement.classList.add("ng-touched");
-
-                  console.log("parent element of input is:");
-                  console.log(parentElement);
-                }
-
-                var event = new Event("change", { bubbles: true });
-                inputElement.dispatchEvent(event);
-
-                if (inputType == "checkbox") {
-                  var event = new Event("input", { bubbles: true });
-                  inputElement.dispatchEvent(event);
-                } else {
-                  var event = new InputEvent("input", { bubbles: true });
-                  inputElement.dispatchEvent(event);
-
+                  // NOTE: this seems to fix the problem with Angular
+                  // https://stackoverflow.com/questions/50419013/how-to-make-the-a-input-field-dirty-through-javascript-of-a-angular-1-pag
+                  // https://stackoverflow.com/questions/60581285/execcommand-is-now-obsolete-whats-the-alternative
                   inputElement.focus();
                   document.execCommand("selectAll", false);
                   document.execCommand("insertText", false, value);
+                  if (searchTypeElement) {
+                    // need to move focus on to register change
+                    searchTypeElement.focus();
+                  }
                 }
               } else {
                 inputNotFound = true;
@@ -167,19 +180,7 @@ async function checkForPendingSearch() {
             }
           }
 
-          // historicalSearch-name-firstGivenName
-          // historicalSearch-name-firstGivenName
-
           if (!inputNotFound) {
-            formElement.classList.remove("ng-pristine");
-            formElement.classList.remove("ng-untouched");
-
-            formElement.classList.add("ng-dirty");
-            formElement.classList.add("ng-touched");
-
-            var formEvent = new Event("change");
-            formElement.dispatchEvent(formEvent);
-
             // try to submit form
             let searchButtonElement = document.querySelector("historical-search div.btnRow button.btn-primary");
             if (searchButtonElement) {
@@ -187,6 +188,12 @@ async function checkForPendingSearch() {
               // now click the button to do the search
               var event = new Event("click");
               searchButtonElement.dispatchEvent(event);
+
+              let sourcerFragment = menuBarElement.querySelector("span");
+              if (sourcerFragment) {
+                sourcerFragment.style.display = "none";
+              }
+
               submitted = true;
             }
           }
@@ -213,9 +220,9 @@ async function checkForPendingSearch() {
           }
         }
       } else {
-        // clear the search data
+        // timeStamp has expired clear the search data
         chrome.storage.local.set({ vicbdmSearchData: undefined }, function () {
-          //console.log("cleared wiewaswieSearchData");
+          console.log("cleared vicbdmSearchData");
         });
       }
     }
@@ -225,13 +232,6 @@ async function checkForPendingSearch() {
 async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
-
-  document.addEventListener("input", function () {
-    console.log("document got input event");
-  });
-  document.addEventListener("change", function () {
-    console.log("document got change event");
-  });
 
   siteContentInit(`vicbdm`, `site/vicbdm/core/vicbdm_extract_data.mjs`);
 }
