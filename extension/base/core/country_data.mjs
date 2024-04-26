@@ -32,6 +32,7 @@ const CountryData = [
     stdName: "England",
     matches: ["England", "England, United Kingdom", "England, UK", "England, U.K.", "Eng", "Eng English"],
     partOf: ["United Kingdom", "England and Wales"],
+    hasCounties: true,
     usesMiddleNames: true,
     wifeChangesName: true,
   },
@@ -39,6 +40,7 @@ const CountryData = [
     stdName: "Wales",
     matches: ["Wales", "Wales, United Kingdom", "Wales, UK", "Wales, U.K.", "Cymru"],
     partOf: ["United Kingdom", "England and Wales"],
+    hasCounties: true,
     usesMiddleNames: true,
     wifeChangesName: true,
   },
@@ -46,6 +48,7 @@ const CountryData = [
     stdName: "Scotland",
     matches: ["Scotland", "Scotland, United Kingdom", "Scotland, UK", "Scotland, U.K.", "Alba", "Sct", "Scot"],
     partOf: ["United Kingdom"],
+    hasCounties: true,
     usesMiddleNames: true,
     wifeChangesName: false, // historically they did not always
   },
@@ -111,17 +114,18 @@ const CountryData = [
   {
     stdName: "United Kingdom",
     matches: ["United Kingdom", "U.K.", "UK", "Great Britain"],
+    hasCounties: true,
     usesMiddleNames: true,
     wifeChangesName: true,
   }, // must come after ones it contains
 
-  { stdName: "Ireland", matches: ["Ireland", "Éire"], usesMiddleNames: true, wifeChangesName: true },
-  { stdName: "France", matches: ["France"] },
-  { stdName: "Germany", matches: ["Germany"] },
+  { stdName: "Ireland", matches: ["Ireland", "Éire"], hasCounties: true, usesMiddleNames: true, wifeChangesName: true },
+  { stdName: "France", matches: ["France"], hasStates: true },
+  { stdName: "Germany", matches: ["Germany"], hasStates: true },
   { stdName: "German Empire", matches: ["German Empire"] },
   { stdName: "Austria", matches: ["Austria"] },
   { stdName: "Italy", matches: ["Italy"] },
-  { stdName: "Netherlands", matches: ["Netherlands", "Nederland"] },
+  { stdName: "Netherlands", matches: ["Netherlands", "Nederland"], hasStates: true },
   { stdName: "Belgium", matches: ["Belgium"] },
   { stdName: "Luxembourg", matches: ["Luxembourg"] },
   {
@@ -602,6 +606,16 @@ const StateData = {
     { stdName: "West Virginia", matches: ["West Virginia"] },
     { stdName: "Wisconsin", matches: ["Wisconsin"] },
     { stdName: "Wyoming", matches: ["Wyoming"] },
+  ],
+  Australia: [
+    { stdName: "Australian Captital Territory", matches: ["Australian Captital Territory", "ACT", "A C T"] },
+    { stdName: "New South Wales", matches: ["New South Wales", "NSW", "N S W"] },
+    { stdName: "Northern Territory", matches: ["Northern Territory", "NT"] },
+    { stdName: "Queensland", matches: ["Queensland", "QLD", "Qld"] },
+    { stdName: "Victoria", matches: ["Victoria", "VIC", "Vic"] },
+    { stdName: "South Australia", matches: ["South Australia", "SA", "S Australia"] },
+    { stdName: "Western Australia", matches: ["Western Australia", "WA", "W Australia", "West Australia"] },
+    { stdName: "Tasmania", matches: ["Tasmania", "Tas", "TAS"] },
   ],
 };
 

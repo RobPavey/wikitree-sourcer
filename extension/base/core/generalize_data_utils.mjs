@@ -717,13 +717,14 @@ class PlaceObj {
       country = countryExtract.country;
       placeNameMinusCountry = countryExtract.remainder;
 
-      if (country.hasStates) {
-        return result;
-      }
-
       result.country = country.stdName;
     }
 
+    if (country && !country.hasStates && !country.hasCounties) {
+      return result;
+    }
+
+    // treat states and counties the same for now
     let placeNameMinusCounty = "";
 
     let possibleCountyName = undefined;
@@ -737,7 +738,12 @@ class PlaceObj {
 
     result.localPlace = placeNameMinusCountry;
     if (country) {
-      let stdCountyName = CD.standardizeCountyNameForCountry(possibleCountyName, country);
+      let stdCountyName = "";
+      if (country && country.hasStates) {
+        stdCountyName = CD.standardizeStateNameForCountry(possibleCountyName, country);
+      } else {
+        stdCountyName = CD.standardizeCountyNameForCountry(possibleCountyName, country);
+      }
       if (stdCountyName) {
         result.county = stdCountyName;
         result.localPlace = placeNameMinusCounty;
@@ -748,7 +754,11 @@ class PlaceObj {
           let possibleExtraCountyName = placeNameMinusCounty.substring(lastCommaIndex + 1).trim();
           if (possibleExtraCountyName) {
             let combinedName = possibleExtraCountyName + ", " + possibleCountyName;
-            stdCountyName = CD.standardizeCountyNameForCountry(combinedName, country);
+            if (country && country.hasStates) {
+              stdCountyName = CD.standardizeStateNameForCountry(combinedName, country);
+            } else {
+              stdCountyName = CD.standardizeCountyNameForCountry(combinedName, country);
+            }
             if (stdCountyName) {
               placeNameMinusCounty = placeNameMinusCounty.substring(0, lastCommaIndex).trim();
               result.county = stdCountyName;

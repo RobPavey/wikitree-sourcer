@@ -22,20 +22,53 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, closePopup, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import {
+  beginMainMenu,
+  endMainMenu,
+  addMenuItem,
+  addBackMenuItem,
+  doAsyncActionWithCatch,
+  closePopup,
+} from "/base/browser/popup/popup_menu_building.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-import { registerSearchMenuItemFunction, openUrlInNewTab } from "/base/browser/popup/popup_search.mjs";
+import {
+  registerSearchMenuItemFunction,
+  testFilterForDatesAndCountries,
+  openUrlInNewTab,
+} from "/base/browser/popup/popup_search.mjs";
+
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+
+function getSupportedDates() {
+  const recordStartYear = 1836;
+  const date = new Date();
+  const year = date.getFullYear();
+  const recordEndYear = year - 29;
+
+  let birthEndYear = year - 99;
+  let marriageEndYear = year - 59;
+  let deathEndYear = year - 29;
+
+  const dates = {
+    startYear: recordStartYear,
+    endYear: recordEndYear,
+    birthEndYear: birthEndYear,
+    marriageEndYear: marriageEndYear,
+    deathEndYear: deathEndYear,
+  };
+
+  return dates;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function vicbdmSearch(generalizedData) {
-  const input = { generalizedData: generalizedData, options: options };
+async function doVicbdmSearch(input) {
   doAsyncActionWithCatch("Victoria BDM (Aus) Search", input, async function () {
     let loadedModule = await import(`../core/vicbdm_build_search_data.mjs`);
     let buildResult = loadedModule.buildSearchData(input);
@@ -45,7 +78,7 @@ async function vicbdmSearch(generalizedData) {
 
     const checkPermissionsOptions = {
       reason:
-        "To perform a search on WieWasWie a content script needs to be loaded on the www.wiewaswie.nl search page.",
+        "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
     };
     let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
     if (!allowed) {
@@ -78,21 +111,154 @@ async function vicbdmSearch(generalizedData) {
   });
 }
 
+async function vicbdmSearch(generalizedData, typeOfSearch) {
+  const input = { generalizedData: generalizedData, typeOfSearch: typeOfSearch, options: options };
+  doVicbdmSearch(input);
+}
+
+async function vicbdmSearchWithParameters(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  doVicbdmSearch(input);
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addVicbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Victoria BDM (Aus)", function (element) {
-    vicbdmSearch(data.generalizedData);
+  const stdCountryName = "Australia";
+  const supportedDates = getSupportedDates();
+
+  if (filter) {
+    if (!testFilterForDatesAndCountries(filter, supportedDates.startYear, supportedDates.endYear, [stdCountryName])) {
+      return;
+    }
+  } else {
+    let maxLifespan = Number(options.search_general_maxLifespan);
+
+    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
+      supportedDates.startYear,
+      supportedDates.birthEndYear,
+      maxLifespan
+    );
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
+      supportedDates.startYear,
+      supportedDates.deathEndYear,
+      maxLifespan
+    );
+    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
+      supportedDates.startYear,
+      supportedDates.marriageEndYear,
+      maxLifespan
+    );
+
+    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
+      //console.log("addVicbdmDefaultSearchMenuItem: dates not in range");
+      return;
+    }
+
+    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
+      //console.log("addVicbdmDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
+      return;
+    }
+  }
+
+  addMenuItem(menu, "Search Victoria BDM (Aus)...", function (element) {
+    setupVicbdmSearchSubMenu(data, backFunction, filter);
   });
 
   return true;
 }
 
+function addVicbdmSearchBirthsMenuItem(menu, data, filter) {
+  if (!filter) {
+    const supportedDates = getSupportedDates();
+
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
+      supportedDates.startYear,
+      supportedDates.birthEndYear,
+      maxLifespan
+    );
+    if (!birthPossibleInRange) {
+      return;
+    }
+  }
+  addMenuItem(menu, "Search Victoria BDM Births", function (element) {
+    vicbdmSearch(data.generalizedData, "Births");
+  });
+}
+
+function addVicbdmSearchMarriagesMenuItem(menu, data, filter) {
+  if (!filter) {
+    const supportedDates = getSupportedDates();
+
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
+      supportedDates.startYear,
+      supportedDates.marriageEndYear,
+      maxLifespan
+    );
+    if (!marriagePossibleInRange) {
+      return;
+    }
+  }
+  addMenuItem(menu, "Search Victoria BDM Marriages", function (element) {
+    vicbdmSearch(data.generalizedData, "Marriages");
+  });
+}
+
+function addVicbdmSearchDeathsMenuItem(menu, data, filter) {
+  if (!filter) {
+    const supportedDates = getSupportedDates();
+
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
+      supportedDates.startYear,
+      supportedDates.deathEndYear,
+      maxLifespan
+    );
+    if (!deathPossibleInRange) {
+      return;
+    }
+  }
+  addMenuItem(menu, "Search Victoria BDM Deaths", function (element) {
+    vicbdmSearch(data.generalizedData, "Deaths");
+  });
+}
+
+function addVicbdmSearchWithParametersMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Search with specified parameters", function (element) {
+    setupVicbdmSearchWithParametersSubMenu(data, backFunction);
+  });
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupVicbdmSearchSubMenu(data, backFunction, filter) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  addVicbdmSearchBirthsMenuItem(menu, data, filter);
+  addVicbdmSearchMarriagesMenuItem(menu, data, filter);
+  addVicbdmSearchDeathsMenuItem(menu, data, filter);
+  addVicbdmSearchWithParametersMenuItem(menu, data, backFunction);
+
+  endMainMenu(menu);
+}
+
+async function setupVicbdmSearchWithParametersSubMenu(data, backFunction) {
+  let dataModule = await import(`../core/vicbdm_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.VicbdmData, vicbdmSearchWithParameters);
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites

@@ -25,29 +25,102 @@ SOFTWARE.
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 
+function addAppropriateSurname(gd, parameters, fieldData) {
+  let lastName = "";
+  let lastNamesArray = gd.inferPersonLastNamesArray(gd);
+  if (lastNamesArray.length > 0) {
+    if (lastNamesArray.length == 1) {
+      lastName = lastNamesArray[0];
+    } else if (lastNamesArray.length > parameters.lastNameIndex) {
+      lastName = lastNamesArray[parameters.lastNameIndex];
+    }
+  }
+  if (lastName) {
+    fieldData["historicalSearch-name-familyName"] = lastName;
+  }
+}
+
 function buildSearchData(input) {
   const gd = input.generalizedData;
   const typeOfSearch = input.typeOfSearch;
-  const searchParameters = input.searchParameters;
+  const parameters = input.searchParameters;
   const options = input.options;
   const runDate = input.runDate;
 
   let fieldData = {};
   let selectData = {};
 
-  let forenames = gd.inferForenames();
-  if (forenames) {
-    fieldData["historicalSearch-name-firstGivenName"] = forenames;
+  let givenNamesArray = [];
+
+  function addGivenNames(newNames) {
+    if (newNames) {
+      let newNamesArray = newNames.split(" ");
+      for (let newName of newNamesArray) {
+        newName = newName.trim();
+        if (!givenNamesArray.includes(newName)) {
+          givenNamesArray.push(newName);
+        }
+      }
+    }
   }
 
-  let lastName = gd.inferLastName();
-  if (lastName) {
-    fieldData["historicalSearch-name-familyName"] = lastName;
+  if (options.search_vicbdm_includeMiddleName) {
+    addGivenNames(gd.inferForenames());
+  } else {
+    addGivenNames(gd.inferFirstName());
   }
 
-  fieldData["historicalSearch-events-birth"] = true;
-  fieldData["historicalSearch-events-death"] = true;
-  fieldData["historicalSearch-events-marriage"] = true;
+  if (options.search_vicbdm_includePrefName) {
+    if (gd.name) {
+      addGivenNames(gd.name.prefNames);
+    }
+  }
+
+  if (options.search_vicbdm_includeNicknames) {
+    if (gd.name) {
+      addGivenNames(gd.name.nicknames);
+    }
+  }
+
+  if (givenNamesArray.length > 0) {
+    let givenNames = givenNamesArray.join(" ");
+    fieldData["historicalSearch-name-firstGivenName"] = givenNames;
+  }
+
+  if (parameters) {
+    addAppropriateSurname(gd, parameters, fieldData);
+  } else {
+    let lastName = gd.inferLastName();
+    if (typeOfSearch == "Births") {
+      lastName = gd.inferLastNameAtBirth();
+    } else if (typeOfSearch == "Deaths") {
+      lastName = gd.inferLastNameAtDeath();
+    }
+
+    if (lastName) {
+      fieldData["historicalSearch-name-familyName"] = lastName;
+    }
+  }
+
+  if (parameters) {
+    if (parameters.category == "Births" || parameters.category == "All") {
+      fieldData["historicalSearch-events-birth"] = true;
+    }
+    if (parameters.category == "Deaths" || parameters.category == "All") {
+      fieldData["historicalSearch-events-death"] = true;
+    }
+    if (parameters.category == "Marriages" || parameters.category == "All") {
+      fieldData["historicalSearch-events-marriage"] = true;
+    }
+  } else {
+    if (typeOfSearch == "Births") {
+      fieldData["historicalSearch-events-birth"] = true;
+    } else if (typeOfSearch == "Deaths") {
+      fieldData["historicalSearch-events-death"] = true;
+    } else if (typeOfSearch == "Marriages") {
+      fieldData["historicalSearch-events-marriage"] = true;
+    }
+  }
 
   const maxLifespan = Number(options.search_general_maxLifespan);
   let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
@@ -58,6 +131,15 @@ function buildSearchData(input) {
     if (range.endYear) {
       fieldData["historicalSearch-yearRange-to"] = range.endYear;
     }
+  }
+
+  function setAdditionalOption(key, value) {
+    fieldData["historicalSearch-additionalOptions"] = true;
+    fieldData[key] = value;
+  }
+
+  if (parameters && parameters.place != "<none>") {
+    setAdditionalOption("historicalSearch-additionalOptions-place", parameters.place);
   }
 
   //console.log("fieldData is:");

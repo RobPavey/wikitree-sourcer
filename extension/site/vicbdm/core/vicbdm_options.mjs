@@ -24,9 +24,82 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchOptionsGroup = {
+  category: "search",
+  subcategory: "vicbdm",
+  tab: "search",
+  subsection: "vicbdm",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "includeMiddleName",
+      type: "checkbox",
+      label: "Include middle name(s) in search",
+      defaultValue: true,
+    },
+    {
+      optionName: "includePrefName",
+      type: "checkbox",
+      label: "Include preferred name in search",
+      defaultValue: true,
+    },
+    {
+      optionName: "includeNicknames",
+      type: "checkbox",
+      label: "Include nicknames in search",
+      defaultValue: false,
+    },
+    {
+      optionName: "includeMaidenName",
+      type: "checkbox",
+      label: "Include matches with a memorial's maiden name in search",
+      defaultValue: true,
+    },
+    {
+      optionName: "includeCemeteryLocation",
+      type: "checkbox",
+      label: "Include death/profile location as cemetery location in search",
+      defaultValue: false,
+    },
+    {
+      optionName: "birthYearExactness",
+      type: "select",
+      label: "Search exactness to use for birth year",
+      values: [
+        { value: "none", text: "Do not specify a birth year" },
+        { value: "auto", text: "Set automatically based on source" },
+        { value: "exact", text: "Exact year only" },
+        { value: "1", text: "+/- 1 years" },
+        { value: "3", text: "+/- 3 years" },
+        { value: "5", text: "+/- 5 years" },
+        { value: "10", text: "+/- 10 years" },
+        { value: "25", text: "+/- 25 years" },
+      ],
+      defaultValue: "auto",
+    },
+    {
+      optionName: "deathYearExactness",
+      type: "select",
+      label: "Search exactness to use for death year",
+      values: [
+        { value: "none", text: "Do not specify a death year" },
+        { value: "auto", text: "Set automatically based on source" },
+        { value: "exact", text: "Exact year only" },
+        { value: "1", text: "+/- 1 years" },
+        { value: "3", text: "+/- 3 years" },
+        { value: "5", text: "+/- 5 years" },
+        { value: "10", text: "+/- 10 years" },
+        { value: "25", text: "+/- 25 years" },
+      ],
+      defaultValue: "auto",
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -38,6 +111,8 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "vicbdm", "Victoria BDM (Aus)");
 registerSiteSearchPopupOptionsGroup("vicbdm", 7, 7);
+registerSubheadingForOptions("search", "vicbdm", "parameters", "Search Parameters");
+registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "vicbdm", "Victoria BDM (Aus)");
 registerOptionsGroup(citationOptionsGroup);

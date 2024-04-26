@@ -37,6 +37,10 @@ const regressionData = [
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c653e7e4aba80ac31d82ee4?q=efamily&givenName=Ruby%20Jessie%20Bertha&familyName=NICHOLSON",
   },
   {
+    caseName: "death_1939_fanny_nicholson",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c6547444aba80ac31a8d8ff?q=efamily&givenName=Fanny&familyName=NICHOLSON",
+  },
+  {
     caseName: "death_1993_susanne_pavey",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c6540894aba80ac319fdbbb?q=efamily&givenName=Susanne%20Mary&familyName=PAVEY",
   },

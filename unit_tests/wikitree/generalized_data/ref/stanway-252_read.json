@@ -1,0 +1,66 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Frances",
+    "prefNames": "Fanny",
+    "otherLastNames": "Radcliffe",
+    "lastName": "Stanway"
+  },
+  "lastNameAtBirth": "Stanway",
+  "lastNameAtDeath": "Nicholson",
+  "mothersMaidenName": "Bailey",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "1861",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "1939",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Port Albert, Victoria, Australia"
+  },
+  "deathPlace": {
+    "placeString": "Clifton Hill, Victoria, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "George Stanway",
+        "lastName": "Stanway",
+        "forenames": "George"
+      },
+      "lastNameAtBirth": "Stanway",
+      "lastNameAtDeath": "Stanway"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Sarah",
+        "lastName": "Bailey",
+        "name": "Sarah Bailey"
+      },
+      "lastNameAtBirth": "Bailey",
+      "lastNameAtDeath": "Stanway"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Henry Nicholson",
+        "lastName": "Nicholson",
+        "forenames": "Henry"
+      },
+      "lastNameAtBirth": "Nicholson",
+      "lastNameAtDeath": "Nicholson",
+      "marriageDate": {
+        "dateString": "[date unknown]"
+      },
+      "marriagePlace": {
+        "placeString": "Unmarried"
+      }
+    }
+  ],
+  "hasValidData": true
+}

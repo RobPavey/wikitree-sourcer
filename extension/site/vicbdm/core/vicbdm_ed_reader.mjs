@@ -97,9 +97,13 @@ class VicbdmEdReader extends ExtractedDataReader {
         if (familyNameString || givenNamesString) {
           let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
 
+          // Sometimes the given names has a name in all caps, in examples I have seen it is actually
+          // the family name, so perhaps should check for that.
+          let cleanGivenNames = NameUtils.convertNameFromAllCapsToMixedCase(givenNamesString);
+
           let nameObj = new NameObj();
 
-          nameObj.setForenames(givenNamesString);
+          nameObj.setForenames(cleanGivenNames);
           nameObj.setLastName(cleanFamilyName);
 
           return nameObj;

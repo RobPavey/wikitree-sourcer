@@ -1,0 +1,41 @@
+{
+  "hasValidData": true,
+  "firstNames": "Frances",
+  "prefNames": "Fanny",
+  "middleNames": "",
+  "lnab": "Stanway",
+  "currentLastName": "Nicholson",
+  "mothersMaidenName": "Bailey",
+  "birthDate": "1861",
+  "birthDateStatus": "none",
+  "deathDate": "1939",
+  "deathDateStatus": "none",
+  "birthLocation": "Port Albert, Victoria, Australia",
+  "deathLocation": "Clifton Hill, Victoria, Australia",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Nicholson-7977",
+      "name": "Henry Nicholson",
+      "marriageString": "[date unknown] in Unmarried",
+      "marriageDate": "[date unknown]",
+      "marriagePlace": "Unmarried"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Stanway-252",
+  "currentTabText": "Fanny (Stanway) Nicholson's Profile",
+  "pageType": "read",
+  "wikiId": "Stanway-252",
+  "name": "Frances (Stanway) Nicholson",
+  "otherLastNames": "Radcliffe",
+  "parents": {
+    "father": {
+      "wikiId": "Stanway-251",
+      "name": "George Stanway"
+    },
+    "mother": {
+      "wikiId": "Bailey-22977",
+      "name": "Sarah (Bailey) Stanway"
+    }
+  }
+}

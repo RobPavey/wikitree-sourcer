@@ -1,0 +1,41 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "forenames": "Fanny",
+    "lastName": "Nicholson"
+  },
+  "eventDate": {
+    "yearString": "1939"
+  },
+  "eventPlace": {
+    "placeString": "CLIFTON HILL, Australia"
+  },
+  "lastNameAtDeath": "Nicholson",
+  "mothersMaidenName": "Baker",
+  "deathDate": {
+    "yearString": "1939"
+  },
+  "deathPlace": {
+    "placeString": "CLIFTON HILL, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Stanway George"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Sarah",
+        "lastName": "Baker"
+      }
+    }
+  },
+  "collectionData": {
+    "year": "1939",
+    "regNum": "10284"
+  },
+  "hasValidData": true
+}
