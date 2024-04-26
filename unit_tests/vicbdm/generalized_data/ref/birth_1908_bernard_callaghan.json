@@ -1,0 +1,41 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "forenames": "Bernard Jno",
+    "lastName": "Callaghan"
+  },
+  "eventDate": {
+    "yearString": "1908"
+  },
+  "eventPlace": {
+    "placeString": "CHILL, VIC, Australia"
+  },
+  "lastNameAtBirth": "Callaghan",
+  "mothersMaidenName": "Odonnell",
+  "birthDate": {
+    "yearString": "1908"
+  },
+  "birthPlace": {
+    "placeString": "CHILL, VIC, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Benjm Jno"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Ellen Mary",
+        "lastName": "Odonnell"
+      }
+    }
+  },
+  "collectionData": {
+    "year": "1908",
+    "regNum": "2249"
+  },
+  "hasValidData": true
+}

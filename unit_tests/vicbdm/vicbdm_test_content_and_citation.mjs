@@ -37,6 +37,13 @@ const regressionData = [
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c653e7e4aba80ac31d82ee4?q=efamily&givenName=Ruby%20Jessie%20Bertha&familyName=NICHOLSON",
   },
   {
+    // corresponding FMP record: https://www.findmypast.co.uk/transcript?id=ANZ%2FBMD%2FACTBIRT%2F1562899
+    // Which has expanded given names
+    // Also has VIC in place name (although it does not in search results list)
+    caseName: "birth_1908_bernard_callaghan",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c656aec4aba80ac3101e0f3?q=efamily&givenName=Bernard%20Jno&familyName=CALLAGHAN",
+  },
+  {
     caseName: "death_1939_fanny_nicholson",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c6547444aba80ac31a8d8ff?q=efamily&givenName=Fanny&familyName=NICHOLSON",
   },

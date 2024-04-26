@@ -1,0 +1,15 @@
+{
+  "url": "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c656aec4aba80ac3101e0f3?q=efamily&givenName=Bernard%20Jno&familyName=CALLAGHAN",
+  "success": true,
+  "title": "birth certificate",
+  "recordData": {
+    "Event": "births",
+    "Registration number": "2249 / 1908",
+    "Family name": "CALLAGHAN",
+    "Given name(s)": "Bernard Jno",
+    "Place of event": "CHILL, VIC, Australia",
+    "Mother's name": "<Unknown Family Name>, Ellen Mary",
+    "Mother's family name at birth": "ODONNELL",
+    "Father's Name": "<Unknown Family Name>, Benjm Jno"
+  }
+}

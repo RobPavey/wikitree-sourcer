@@ -30,8 +30,8 @@ import { buildCitation } from "../core/vicbdm_build_citation.mjs";
 async function setupVicbdmPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a Victoria BDM (Aus) page but not a record page.",
-    generalizeFailedMessage: "It looks like a Victoria BDM (Aus) page but does not contain the required data.",
+    extractFailedMessage: "It looks like a Victoria BDM page but not a record page.",
+    generalizeFailedMessage: "It looks like a Victoria BDM page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "vicbdm",
