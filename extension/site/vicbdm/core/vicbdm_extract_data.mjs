@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+var lastClickedRowData;
+
 function extractData(document, url) {
   var result = {};
 
@@ -74,6 +76,19 @@ function extractData(document, url) {
     }
   }
 
+  if (lastClickedRowData && result.recordData) {
+    // safety check that the clicked row data matches this record (in case they click multiple times quickly)
+    let edReg = result.recordData["Registration number"];
+    let crReg = lastClickedRowData["Reg. number"];
+    if (edReg && crReg) {
+      edReg = edReg.replace(/ +/g, "");
+      crReg = crReg.replace(/ +/g, "");
+      if (edReg == crReg) {
+        result.clickedRowData = lastClickedRowData;
+      }
+    }
+  }
+
   result.success = true;
 
   //console.log(result);
@@ -81,4 +96,10 @@ function extractData(document, url) {
   return result;
 }
 
-export { extractData };
+function setClickedRowData(rowData) {
+  // Called from content script when a row in the search results is clicked on
+  // This allows us to extract data that is only on the row and not on the record page.
+  lastClickedRowData = rowData;
+}
+
+export { extractData, setClickedRowData };

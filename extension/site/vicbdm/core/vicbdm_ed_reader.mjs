@@ -71,6 +71,13 @@ class VicbdmEdReader extends ExtractedDataReader {
     }
   }
 
+  getClickedRowDataValue(key) {
+    if (key && this.ed.clickedRowData) {
+      let rowData = this.ed.clickedRowData;
+      return rowData[key];
+    }
+  }
+
   makeNameObjFromFamilyNameAndGivenNames(familyNameString, givenNamesString) {
     if (familyNameString && givenNamesString) {
       let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
@@ -146,7 +153,6 @@ class VicbdmEdReader extends ExtractedDataReader {
     let placeString = this.getRecordDataValue("Place of event");
     if (placeString) {
       let convertedPlaceName = expandVictoriaAbbreviations(placeString);
-
       return this.makePlaceObjFromFullPlaceName(convertedPlaceName);
     }
 
@@ -192,13 +198,21 @@ class VicbdmEdReader extends ExtractedDataReader {
     if (this.recordType == RT.Birth) {
       return this.getEventDateObj();
     }
+
     return undefined;
   }
 
   getBirthPlaceObj() {
     if (this.recordType == RT.Birth) {
       return this.getEventPlaceObj();
+    } else if (this.recordType == RT.Death) {
+      let placeString = this.getClickedRowDataValue("Place of birth");
+      if (placeString) {
+        let convertedPlaceName = expandVictoriaAbbreviations(placeString);
+        return this.makePlaceObjFromFullPlaceName(convertedPlaceName);
+      }
     }
+
     return undefined;
   }
 
@@ -217,10 +231,24 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
+    if (this.recordType == RT.Death) {
+      let age = this.getClickedRowDataValue("Age at Death");
+      if (age) {
+        return age;
+      }
+    }
+
     return "";
   }
 
   getAgeAtDeath() {
+    if (this.recordType == RT.Death) {
+      let age = this.getClickedRowDataValue("Age at Death");
+      if (age) {
+        return age;
+      }
+    }
+
     return "";
   }
 
@@ -237,6 +265,15 @@ class VicbdmEdReader extends ExtractedDataReader {
       let spouseObj = this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, "");
       if (spouseObj) {
         return [spouseObj];
+      }
+    } else if (this.recordType == RT.Death) {
+      let spouseNameString = this.getClickedRowDataValue("Spouse at Death");
+      if (spouseNameString && spouseNameString != "<Unknown Family Name>") {
+        let spouseNameObj = this.makeNameObjFromFamilyNameCommaGivenNames(spouseNameString);
+        let spouseObj = this.makeSpouseObj(spouseNameObj);
+        if (spouseObj) {
+          return [spouseObj];
+        }
       }
     }
 
