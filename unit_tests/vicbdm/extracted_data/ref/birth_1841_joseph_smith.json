@@ -1,0 +1,15 @@
+{
+  "url": "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c6547cb4aba80ac31d06036?q=efamily&givenName=Joseph%20Thomas&familyName=SMITH",
+  "success": true,
+  "title": "birth certificate",
+  "recordData": {
+    "Event": "births",
+    "Registration number": "12496 / 1841",
+    "Family name": "SMITH",
+    "Given name(s)": "Joseph Thomas",
+    "Place of event": "SYDNEY NEW SOUTH WALES, Australia",
+    "Mother's name": "<Unknown Family Name>, Elizabeth",
+    "Mother's family name at birth": "UNKNOWN",
+    "Father's Name": "<Unknown Family Name>, SMITH Joseph"
+  }
+}

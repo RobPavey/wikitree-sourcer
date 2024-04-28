@@ -32,6 +32,11 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    // Has UNKNOWN as mmn and a birth place in New South Wales
+    caseName: "birth_1841_joseph_smith",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c6547cb4aba80ac31d06036?q=efamily&givenName=Joseph%20Thomas&familyName=SMITH",
+  },
+  {
     // corresponding WikiTree profile: https://www.wikitree.com/wiki/Nicholson-6779
     caseName: "birth_1896_ruby_nicholson",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c653e7e4aba80ac31d82ee4?q=efamily&givenName=Ruby%20Jessie%20Bertha&familyName=NICHOLSON",

@@ -1,0 +1,41 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "forenames": "Joseph Thomas",
+    "lastName": "Smith"
+  },
+  "eventDate": {
+    "yearString": "1841"
+  },
+  "eventPlace": {
+    "placeString": "SYDNEY NEW SOUTH WALES, Australia"
+  },
+  "lastNameAtBirth": "Smith",
+  "mothersMaidenName": "Unknown",
+  "birthDate": {
+    "yearString": "1841"
+  },
+  "birthPlace": {
+    "placeString": "SYDNEY NEW SOUTH WALES, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Smith Joseph"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Elizabeth",
+        "lastName": "Unknown"
+      }
+    }
+  },
+  "collectionData": {
+    "year": "1841",
+    "regNum": "12496"
+  },
+  "hasValidData": true
+}

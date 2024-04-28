@@ -421,7 +421,7 @@ function openSelectionText(info, tab) {
     // looks like a Wiki-Id.
     let wikiId = text.trim();
 
-    // Want something line this: https://www.wikitree.com/wiki/Pavey-451
+    // Want something like this: https://www.wikitree.com/wiki/Pavey-451
     let link = "https://www.wikitree.com/wiki/" + wikiId;
 
     callFunctionWithStoredOptions(function (options) {
