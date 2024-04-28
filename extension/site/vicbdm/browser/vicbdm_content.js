@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+var pendingSearchData;
+
 async function getPendingSearch() {
   //console.log("getPendingSearch");
   return new Promise((resolve, reject) => {
@@ -52,18 +54,12 @@ async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: URL is");
   //console.log(document.URL);
 
-  // Expect smoething like this:
-  // https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa
+  // Expect something like this:
+  // https://my.rio.bdm.vic.gov.au/efamily-history/-
 
   const startingSearchRegEx = /^https\:\/\/my\.rio\.bdm\.vic\.gov\.au\/efamily-history\/\-$/;
-  const midSearchRegEx = /^https\:\/\/my\.rio\.bdm\.vic\.gov\.au\/$/;
-  const readySearchRegEx = /^https\:\/\/my\.rio\.bdm\.vic\.gov\.au\/efamily-history\/\w\w\w\w\w\w+$/;
-
   let isStartingSearchPage = startingSearchRegEx.test(document.URL);
-  let isMidSearchPage = midSearchRegEx.test(document.URL);
-  let isReadySearchPage = readySearchRegEx.test(document.URL);
-
-  if (isStartingSearchPage || isMidSearchPage || isReadySearchPage) {
+  if (isStartingSearchPage) {
     //console.log("checkForPendingSearch: URL matches ready to fill form");
 
     let vicbdmSearchData = undefined;
@@ -72,6 +68,9 @@ async function checkForPendingSearch() {
     } catch (error) {
       console.log("checkForPendingSearch: getPendingSearch reject");
     }
+
+    //console.log("checkForPendingSearch: vicbdmSearchData is:");
+    //console.log(vicbdmSearchData);
 
     if (vicbdmSearchData) {
       // Modify the page to say it is a WikiTree Sourcer search
@@ -103,24 +102,9 @@ async function checkForPendingSearch() {
         }
       }
 
-      // if not ready to fill the form yet then wait
-      if (isStartingSearchPage || isMidSearchPage) {
-        //console.log("have search data but not on ready to search page yet, numRetries = " + numRetries);
-
-        if (numRetries < maxRetries) {
-          //console.log("setTimeout for retry");
-          numRetries++;
-          setTimeout(function () {
-            checkForPendingSearch();
-          }, 1000);
-        }
-        return;
-      }
-
       //console.log("checkForPendingSearch: got formValues:");
       //console.log(vicbdmSearchData);
 
-      let searchUrl = vicbdmSearchData.url;
       let timeStamp = vicbdmSearchData.timeStamp;
       let timeStampNow = Date.now();
       let timeSinceSearch = timeStampNow - timeStamp;
@@ -132,98 +116,103 @@ async function checkForPendingSearch() {
 
       // It can take a long time to populate the page with the input fields
       if (timeSinceSearch < 50000) {
-        let fieldData = vicbdmSearchData.fieldData;
+        pendingSearchData = vicbdmSearchData;
+      }
 
-        //console.log("checkForPendingSearch: fieldData is:");
-        //console.log(fieldData);
+      // clear the search data
+      chrome.storage.local.set({ vicbdmSearchData: undefined }, function () {
+        //console.log("cleared vicbdmSearchData");
+      });
+    }
+  }
+}
 
-        // Inputs have IDs like:
-        // #historicalSearch-name-familyName
+async function doPendingSearch() {
+  //console.log("doPendingSearch: called");
+  //console.log("doPendingSearch: URL is");
+  //console.log(document.URL);
 
-        let submitted = false;
-        let inputNotFound = false;
+  if (pendingSearchData) {
+    //console.log("checkForPendingSearch: URL matches ready to fill form");
 
-        let formElement = document.querySelector("div.historical-search-criteria form");
-        if (formElement) {
-          let searchTypeElement = document.querySelector("#historicalSearch-type0");
-          for (var key in fieldData) {
-            //console.log("checkForPendingSearch: key is: " + key);
-            if (key) {
-              let value = fieldData[key];
-              //console.log("checkForPendingSearch: value is: " + value);
+    //console.log("checkForPendingSearch: got formValues:");
+    //console.log(pendingSearchData);
 
-              let inputElement = formElement.querySelector("#" + key);
-              if (inputElement) {
-                let inputType = inputElement.getAttribute("type");
-                if (inputType == "checkbox") {
-                  //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.checked);
-                  inputElement.checked = value;
-                  var event = new Event("change", { bubbles: true });
-                  inputElement.dispatchEvent(event);
-                } else {
-                  //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
-                  // NOTE: this seems to fix the problem with Angular
-                  // https://stackoverflow.com/questions/50419013/how-to-make-the-a-input-field-dirty-through-javascript-of-a-angular-1-pag
-                  // https://stackoverflow.com/questions/60581285/execcommand-is-now-obsolete-whats-the-alternative
-                  inputElement.focus();
-                  document.execCommand("selectAll", false);
-                  document.execCommand("insertText", false, value);
-                  if (searchTypeElement) {
-                    // need to move focus on to register change
-                    searchTypeElement.focus();
-                  }
-                }
-              } else {
-                inputNotFound = true;
-                break;
+    let fieldData = pendingSearchData.fieldData;
+
+    //console.log("checkForPendingSearch: fieldData is:");
+    //console.log(fieldData);
+
+    // Inputs have IDs like:
+    // #historicalSearch-name-familyName
+
+    let submitted = false;
+    let inputNotFound = false;
+
+    let formElement = document.querySelector("div.historical-search-criteria form");
+    if (formElement) {
+      let searchTypeElement = document.querySelector("#historicalSearch-type0");
+      for (var key in fieldData) {
+        //console.log("checkForPendingSearch: key is: " + key);
+        if (key) {
+          let value = fieldData[key];
+          //console.log("checkForPendingSearch: value is: " + value);
+
+          let inputElement = formElement.querySelector("#" + key);
+          if (inputElement) {
+            let inputType = inputElement.getAttribute("type");
+            if (inputType == "checkbox") {
+              //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.checked);
+              inputElement.checked = value;
+              var event = new Event("change", { bubbles: true });
+              inputElement.dispatchEvent(event);
+            } else {
+              //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.value);
+              // NOTE: this seems to fix the problem with Angular
+              // https://stackoverflow.com/questions/50419013/how-to-make-the-a-input-field-dirty-through-javascript-of-a-angular-1-pag
+              // https://stackoverflow.com/questions/60581285/execcommand-is-now-obsolete-whats-the-alternative
+              inputElement.focus();
+              document.execCommand("selectAll", false);
+              document.execCommand("insertText", false, value);
+              if (searchTypeElement) {
+                // need to move focus on to register change
+                searchTypeElement.focus();
               }
             }
-          }
-
-          if (!inputNotFound) {
-            // try to submit form
-            let searchButtonElement = document.querySelector("historical-search div.btnRow button.btn-primary");
-            if (searchButtonElement) {
-              //console.log("about to click button");
-              // now click the button to do the search
-              var event = new Event("click");
-              searchButtonElement.dispatchEvent(event);
-
-              let sourcerFragment = menuBarElement.querySelector("span");
-              if (sourcerFragment) {
-                sourcerFragment.style.display = "none";
-              }
-
-              submitted = true;
-            }
-          }
-
-          if (submitted) {
-            // clear the search data
-            chrome.storage.local.set({ vicbdmSearchData: undefined }, function () {
-              //console.log("cleared vicbdmSearchData");
-            });
           } else {
-            //console.log("formElement not found");
+            inputNotFound = true;
+            break;
           }
         }
+      }
 
-        if (!submitted) {
-          //console.log("not submitted, numRetries = " + numRetries);
+      if (!inputNotFound) {
+        // try to submit form
+        let searchButtonElement = document.querySelector("historical-search div.btnRow button.btn-primary");
+        if (searchButtonElement) {
+          //console.log("about to click button");
+          // now click the button to do the search
+          var event = new Event("click");
+          searchButtonElement.dispatchEvent(event);
 
-          if (numRetries < maxRetries) {
-            //console.log("setTimeout for retry");
-            numRetries++;
-            setTimeout(function () {
-              checkForPendingSearch();
-            }, 1000);
-          }
+          submitted = true;
         }
-      } else {
-        // timeStamp has expired clear the search data
-        chrome.storage.local.set({ vicbdmSearchData: undefined }, function () {
-          //console.log("cleared vicbdmSearchData");
-        });
+      }
+    }
+
+    if (!submitted) {
+      console.log("not submitted");
+    }
+
+    // clear the pending data so that we don't use it again on refine search
+    pendingSearchData = undefined;
+
+    // Clear the message that we added to the menu bar
+    let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
+    if (menuBarElement) {
+      let sourcerFragment = menuBarElement.querySelector("span");
+      if (sourcerFragment) {
+        sourcerFragment.style.display = "none";
       }
     }
   }
@@ -329,6 +318,12 @@ function addMutationObserver() {
             if (addedNode.tagName.toLowerCase() == "search-results-page") {
               //console.log("search-results-page added");
               addSearchResultsListener();
+              break;
+            } else if (addedNode.tagName.toLowerCase() == "historical-search") {
+              //console.log("historical-search added");
+              if (pendingSearchData) {
+                doPendingSearch();
+              }
             }
           }
         }
@@ -342,7 +337,6 @@ function addMutationObserver() {
 }
 
 async function checkForSearchThenInit() {
-  // check for a pending search first, there is no need to do the site init if there is one
   checkForPendingSearch();
 
   addMutationObserver();
