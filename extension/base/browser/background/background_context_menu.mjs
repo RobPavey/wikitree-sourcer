@@ -406,10 +406,86 @@ function openTemplate(info, tab) {
   }
 }
 
+function openVicbdm(lcText, tab) {
+  //console.log("looks like Victorian BDM");
+  let num1 = lcText.replace(/^[^\d]*(\d+) ?\/ ?\d+.*$/, "$1");
+  let num2 = lcText.replace(/^.*[^\d]*\d+ ?\/ ?(\d+).*$/, "$1");
+  //console.log("num1 is '" + num1 + "'");
+  //console.log("num2 is '" + num2 + "'");
+
+  if (num1.length == 4 || num2.length == 4) {
+    let number1 = Number(num1);
+    let number2 = Number(num2);
+    let regYear = num2;
+    let regNum = num1;
+    if (!(num2.length == 4 && number2 > 1800 && number2 < 2050)) {
+      if (num1.length == 4 && number1 > 1800 && number1 < 2050) {
+        regYear = num1;
+        regNum = num2;
+      } else {
+        return false;
+      }
+    }
+
+    //console.log("regNum is '" + regNum + "'");
+    //console.log("regYear is '" + regYear + "'");
+
+    let fieldData = {};
+    fieldData["historicalSearch-events-registrationNumber-number"] = regNum;
+    fieldData["historicalSearch-events-registrationNumber-year"] = regYear;
+
+    // see if we can decide whether to search for births, deaths or marriages
+    // Exxample text:
+    // Victoria State Government, Registry of Births, Deaths and Marriages Victoria. Richard Goodall Elrington. Birth. Registration number 3218 / 1870. Father: Name. Mother: Name. District: Place. Link to search page
+    let birthOccurrences = (lcText.match(/birth/g) || []).length;
+    let deathOccurrences = (lcText.match(/death/g) || []).length;
+    let marriageOccurrences = (lcText.match(/marriage/g) || []).length;
+
+    if (birthOccurrences && birthOccurrences > deathOccurrences && birthOccurrences > marriageOccurrences) {
+      fieldData["historicalSearch-events-birth"] = true;
+    } else if (deathOccurrences && deathOccurrences > birthOccurrences && deathOccurrences > marriageOccurrences) {
+      fieldData["historicalSearch-events-death"] = true;
+    } else if (
+      marriageOccurrences &&
+      marriageOccurrences > birthOccurrences &&
+      marriageOccurrences > birthOccurrences
+    ) {
+      fieldData["historicalSearch-events-marriage"] = true;
+    }
+    try {
+      let link = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
+
+      const vicbdmSearchData = {
+        timeStamp: Date.now(),
+        url: link,
+        fieldData: fieldData,
+      };
+
+      // this stores the search data in local storage which is then picked up by the
+      // content script in the new tab/window
+      chrome.storage.local.set({ vicbdmSearchData: vicbdmSearchData }, function () {
+        //console.log('saved vicbdmSearchData, vicbdmSearchData is:');
+        //console.log(vicbdmSearchData);
+      });
+
+      callFunctionWithStoredOptions(function (options) {
+        openInNewTab(link, tab, options);
+      });
+
+      return true;
+    } catch (ex) {
+      console.log("storeDataCache failed");
+      console.log(ex);
+    }
+  }
+
+  return false;
+}
+
 function openSelectionText(info, tab) {
   let text = info.selectionText;
 
-  //console.log("openTemplate, text is: " + text);
+  //console.log("openSelectionText, text is: " + text);
 
   let templateStartIndex = text.indexOf("{{");
   if (templateStartIndex != -1) {
@@ -427,6 +503,15 @@ function openSelectionText(info, tab) {
     callFunctionWithStoredOptions(function (options) {
       openInNewTab(link, tab, options);
     });
+    return;
+  }
+
+  // check for Victorian BDM
+  let lcText = text.toLowerCase();
+  if (lcText.includes("victoria") && /\d+ ?\/ ?\d+/.test(lcText)) {
+    if (openVicbdm(lcText, tab)) {
+      return;
+    }
   }
 }
 

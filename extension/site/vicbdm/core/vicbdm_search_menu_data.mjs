@@ -103,6 +103,12 @@ const VicbdmData = {
 
     parameters.place = "<none>";
   },
+
+  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {},
+
+  updateParametersOnSubcategoryChange: function (generalizedData, parameters, options) {},
+
+  updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
 };
 
 export { VicbdmData };
