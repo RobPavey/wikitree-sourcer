@@ -1,7 +1,7 @@
 {
   "sourceOfData": "vicbdm",
   "sourceType": "record",
-  "recordType": "Death",
+  "recordType": "DeathRegistration",
   "name": {
     "forenames": "Fanny",
     "lastName": "Nicholson"
@@ -10,7 +10,7 @@
     "yearString": "1939"
   },
   "eventPlace": {
-    "placeString": "CLIFTON HILL, Australia"
+    "placeString": "Victoria, Australia"
   },
   "lastNameAtDeath": "Nicholson",
   "mothersMaidenName": "Baker",
@@ -18,12 +18,13 @@
     "yearString": "1939"
   },
   "deathPlace": {
-    "placeString": "CLIFTON HILL, Australia"
+    "placeString": "Victoria, Australia"
   },
   "parents": {
     "father": {
       "name": {
-        "forenames": "Stanway George"
+        "forenames": "George",
+        "lastName": "Stanway"
       }
     },
     "mother": {

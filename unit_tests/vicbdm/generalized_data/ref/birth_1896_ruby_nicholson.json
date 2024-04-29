@@ -1,7 +1,7 @@
 {
   "sourceOfData": "vicbdm",
   "sourceType": "record",
-  "recordType": "Birth",
+  "recordType": "BirthRegistration",
   "name": {
     "forenames": "Ruby Jessie Bertha",
     "lastName": "Nicholson"
@@ -10,7 +10,7 @@
     "yearString": "1896"
   },
   "eventPlace": {
-    "placeString": "CHILL, Australia"
+    "placeString": "Victoria, Australia"
   },
   "lastNameAtBirth": "Nicholson",
   "mothersMaidenName": "Stanway",
@@ -18,12 +18,13 @@
     "yearString": "1896"
   },
   "birthPlace": {
-    "placeString": "CHILL, Australia"
+    "placeString": "Victoria, Australia"
   },
   "parents": {
     "father": {
       "name": {
-        "forenames": "Henry"
+        "forenames": "Henry",
+        "lastName": "Nicholson"
       }
     },
     "mother": {

@@ -1,13 +1,16 @@
 {
   "sourceOfData": "vicbdm",
   "sourceType": "record",
-  "recordType": "Marriage",
+  "recordType": "MarriageRegistration",
   "name": {
     "forenames": "Clement Courtney",
     "lastName": "McDonald"
   },
   "eventDate": {
     "yearString": "1920"
+  },
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
   },
   "spouses": [
     {
@@ -17,6 +20,9 @@
       },
       "marriageDate": {
         "yearString": "1920"
+      },
+      "marriagePlace": {
+        "placeString": "Victoria, Australia"
       }
     }
   ],

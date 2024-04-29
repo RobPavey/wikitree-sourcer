@@ -10,26 +10,25 @@
     "yearString": "1841"
   },
   "eventPlace": {
-    "placeString": "SYDNEY NEW SOUTH WALES, Australia"
+    "placeString": "Sydney New South Wales, Australia"
   },
   "lastNameAtBirth": "Smith",
-  "mothersMaidenName": "Unknown",
   "birthDate": {
     "yearString": "1841"
   },
   "birthPlace": {
-    "placeString": "SYDNEY NEW SOUTH WALES, Australia"
+    "placeString": "Sydney New South Wales, Australia"
   },
   "parents": {
     "father": {
       "name": {
-        "forenames": "Smith Joseph"
+        "forenames": "Joseph",
+        "lastName": "Smith"
       }
     },
     "mother": {
       "name": {
-        "forenames": "Elizabeth",
-        "lastName": "Unknown"
+        "forenames": "Elizabeth"
       }
     }
   },

@@ -24,30 +24,30 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
-import { expandVictoriaAbbreviations } from "./vicbdm_place_abbreviations.mjs";
 
 class VicbdmEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
     if (ed.title) {
       if (ed.title == "birth certificate") {
-        this.recordType = RT.Birth;
+        this.isBirth = true;
       } else if (ed.title == "death certificate") {
-        this.recordType = RT.Death;
+        this.isDeath = true;
       } else if (ed.title == "marriage certificate") {
-        this.recordType = RT.Marriage;
+        this.isMarriage = true;
       }
     } else {
       let event = this.getRecordDataValue("Event");
       if (event) {
         if (event == "births") {
-          this.recordType = RT.Birth;
+          this.isBirth = true;
         } else if (event == "deaths") {
-          this.recordType = RT.Death;
+          this.isDeath = true;
         } else if (event == "marriages") {
-          this.recordType = RT.Marriage;
+          this.isMarriage = true;
         }
       }
     }
@@ -61,6 +61,32 @@ class VicbdmEdReader extends ExtractedDataReader {
           this.yearString = yearString;
           this.registrationNum = registrationNumber.substring(0, slashIndex).trim();
         }
+      }
+    }
+
+    this.isPreReg = false;
+    if (this.yearString) {
+      let yearNum = Number(this.yearString);
+      if (yearNum > 1800 && yearNum < 1853) {
+        this.isPreReg = true;
+      }
+    }
+
+    if (this.isPreReg) {
+      if (this.isBirth) {
+        this.recordType = RT.Birth;
+      } else if (this.isDeath) {
+        this.recordType = RT.Death;
+      } else if (this.isMarriage) {
+        this.recordType = RT.Marriage;
+      }
+    } else {
+      if (this.isBirth) {
+        this.recordType = RT.BirthRegistration;
+      } else if (this.isDeath) {
+        this.recordType = RT.DeathRegistration;
+      } else if (this.isMarriage) {
+        this.recordType = RT.MarriageRegistration;
       }
     }
   }
@@ -125,6 +151,35 @@ class VicbdmEdReader extends ExtractedDataReader {
 
         if (familyNameString == "<Unknown Family Name>") {
           familyNameString = "";
+          // Sometimes the familyNameString is something like:
+          //  "<Unknown Family Name>, STANWAY George"
+          let givenNamesArray = givenNamesString.split(" ");
+          let numUppercaseWordsAtStart = 0;
+          for (let givenName of givenNamesArray) {
+            if (StringUtils.isWordAllUpperCase(givenName)) {
+              numUppercaseWordsAtStart++;
+            } else {
+              break;
+            }
+          }
+          if (numUppercaseWordsAtStart) {
+            let newFamilyName = "";
+            for (let index = 0; index < numUppercaseWordsAtStart; index++) {
+              if (newFamilyName) {
+                newFamilyName += " ";
+              }
+              newFamilyName += givenNamesArray[index];
+            }
+            let newGivenNames = "";
+            for (let index = numUppercaseWordsAtStart; index < givenNamesArray.length; index++) {
+              if (newGivenNames) {
+                newGivenNames += " ";
+              }
+              newGivenNames += givenNamesArray[index];
+            }
+            familyNameString = newFamilyName;
+            givenNamesString = newGivenNames;
+          }
         }
         if (familyNameString || givenNamesString) {
           let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
@@ -177,17 +232,46 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getEventPlaceObj() {
+    /*
     let placeString = this.getRecordDataValue("Place of event");
     if (placeString) {
+
       let convertedPlaceName = expandVictoriaAbbreviations(placeString);
       return this.makePlaceObjFromFullPlaceName(convertedPlaceName);
     }
+    */
+    // Since we can't reliably interpret the place name abbreviations
+    // just use this:
 
-    return undefined;
+    // Sometimes the place might be outside of Victoria.
+    // e.g. test case birth_1841_joseph_smith has
+    //    "SYDNEY NEW SOUTH WALES, Australia"
+    // This might only be the case for records before civil registration started
+    // in 1853.
+    if (this.isPreReg) {
+      let placeString = this.getRecordDataValue("Place of event");
+      if (placeString) {
+        let usePlaceString = false;
+        let lcPlaceString = placeString.toLowerCase();
+        if (!lcPlaceString.includes("victoria") && !lcPlaceString.includes("vic,")) {
+          if (lcPlaceString.includes("new south wales") || lcPlaceString.includes("nsw")) {
+            usePlaceString = true;
+          }
+          if (lcPlaceString.includes("queensland") || lcPlaceString.includes("qld")) {
+            usePlaceString = true;
+          }
+        }
+        if (usePlaceString) {
+          let cleanPlaceName = StringUtils.toInitialCapsEachWord(placeString);
+          return this.makePlaceObjFromFullPlaceName(cleanPlaceName);
+        }
+      }
+    }
+    return this.makePlaceObjFromFullPlaceName("Victoria, Australia");
   }
 
   getLastNameAtBirth() {
-    if (this.recordType == RT.Birth) {
+    if (this.isBirth) {
       let nameObj = this.getNameObj();
       if (nameObj && nameObj.lastName) {
         return nameObj.lastName;
@@ -198,7 +282,7 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtDeath() {
-    if (this.recordType == RT.Death) {
+    if (this.isDeath) {
       let nameObj = this.getNameObj();
       if (nameObj && nameObj.lastName) {
         return nameObj.lastName;
@@ -211,7 +295,7 @@ class VicbdmEdReader extends ExtractedDataReader {
   getMothersMaidenName() {
     let mmn = this.getRecordDataValue("Mother's family name at birth");
 
-    if (mmn) {
+    if (mmn && mmn != "UNKNOWN") {
       let cleanMmn = NameUtils.convertNameFromAllCapsToMixedCase(mmn);
       if (cleanMmn) {
         return cleanMmn;
@@ -222,7 +306,7 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    if (this.recordType == RT.Birth) {
+    if (this.isBirth) {
       return this.getEventDateObj();
     }
 
@@ -230,13 +314,12 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getBirthPlaceObj() {
-    if (this.recordType == RT.Birth) {
+    if (this.isBirth) {
       return this.getEventPlaceObj();
-    } else if (this.recordType == RT.Death) {
+    } else if (this.isDeath) {
       let placeString = this.getClickedRowDataValue("Place of birth");
       if (placeString) {
-        let convertedPlaceName = expandVictoriaAbbreviations(placeString);
-        return this.makePlaceObjFromFullPlaceName(convertedPlaceName);
+        return this.makePlaceObjFromFullPlaceName(placeString);
       }
     }
 
@@ -244,21 +327,21 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getDeathDateObj() {
-    if (this.recordType == RT.Death) {
+    if (this.isDeath) {
       return this.getEventDateObj();
     }
     return undefined;
   }
 
   getDeathPlaceObj() {
-    if (this.recordType == RT.Death) {
+    if (this.isDeath) {
       return this.getEventPlaceObj();
     }
     return undefined;
   }
 
   getAgeAtEvent() {
-    if (this.recordType == RT.Death) {
+    if (this.isDeath) {
       let age = this.getClickedRowDataValue("Age at Death");
       if (age) {
         return age;
@@ -269,7 +352,7 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getAgeAtDeath() {
-    if (this.recordType == RT.Death) {
+    if (this.isDeath) {
       let age = this.getClickedRowDataValue("Age at Death");
       if (age) {
         return age;
@@ -280,7 +363,7 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
-    if (this.recordType == RT.Marriage) {
+    if (this.isMarriage) {
       let familyName = this.getRecordDataValue("Spouse's family name");
       let givenNames = this.getRecordDataValue("Spouse's given name(s)");
 
@@ -293,7 +376,7 @@ class VicbdmEdReader extends ExtractedDataReader {
       if (spouseObj) {
         return [spouseObj];
       }
-    } else if (this.recordType == RT.Death) {
+    } else if (this.isDeath) {
       let spouseNameString = this.getClickedRowDataValue("Spouse at Death");
       if (spouseNameString && spouseNameString != "<Unknown Family Name>") {
         let spouseNameObj = this.makeNameObjFromFamilyNameCommaGivenNames(spouseNameString);
@@ -312,6 +395,10 @@ class VicbdmEdReader extends ExtractedDataReader {
     let mothersNameLnab = this.getRecordDataValue("Mother's family name at birth");
     let fathersName = this.getRecordDataValue("Father's Name");
 
+    if (mothersNameLnab == "UNKNOWN") {
+      mothersNameLnab = "";
+    }
+
     if (mothersName || fathersName || mothersNameLnab) {
       let cleanMmn = NameUtils.convertNameFromAllCapsToMixedCase(mothersNameLnab);
 
@@ -323,7 +410,7 @@ class VicbdmEdReader extends ExtractedDataReader {
           parents.father.name = fatherNameObj;
         }
       }
-      if (mothersName || cleanMmn) {
+      if (mothersName) {
         let motherNameObj = this.makeNameObjFromFamilyNameCommaGivenNames(mothersName);
         if (motherNameObj) {
           if (cleanMmn) {
@@ -332,11 +419,23 @@ class VicbdmEdReader extends ExtractedDataReader {
           parents.mother = {};
           parents.mother.name = motherNameObj;
         }
-      } else {
+      } else if (cleanMmn) {
         let motherNameObj = this.makeNameObjFromForenamesAndLastName("", cleanMmn);
         if (motherNameObj) {
           parents.mother = {};
           parents.mother.name = motherNameObj;
+        }
+      }
+
+      if (this.isBirth && parents.father.name && !parents.father.name.lastName) {
+        // there is no last name for father.
+        // If there is a last name for mother this causes weird narratives
+        // so if so then use the primary (child) persons last name as father's last name
+        if (parents.mother.name && parents.mother.name.lastName) {
+          let primaryNameObj = this.getNameObj();
+          if (primaryNameObj && primaryNameObj.lastName) {
+            parents.father.name.lastName = primaryNameObj.lastName;
+          }
         }
       }
       return parents;
@@ -346,11 +445,11 @@ class VicbdmEdReader extends ExtractedDataReader {
 
   getCollectionData() {
     let id = "";
-    if (this.recordType == RT.Birth) {
+    if (this.isBirth) {
       id = "Births";
-    } else if (this.recordType == RT.Death) {
+    } else if (this.isDeath) {
       id = "Deaths";
-    } else if (this.recordType == RT.Marriage) {
+    } else if (this.isMarriage) {
       id = "Marriages";
     }
     let collectionData = { id: id, year: this.yearString, regNum: this.registrationNum };

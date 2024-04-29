@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nBirths, Registration number 2249 / 1908<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nBernard John Callaghan born in 1908, child of Benjamin John & Ellen Mary Odonnell, in CHILL, VIC, Australia.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\n, Registration number 2249 / 1908<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nBernard John Callaghan birth 1908 in Victoria, Australia, child of Benjamin John Callaghan & Ellen Mary Odonnell, mother's maiden name Odonnell.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Bernard, child of Benjamin John & Ellen Mary Odonnell, was born in 1908 in CHILL, VIC, Australia.<ref>\n'''Birth''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nBirths, Registration number 2249 / 1908<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nBernard John Callaghan born in 1908, child of Benjamin John & Ellen Mary Odonnell, in CHILL, VIC, Australia.\n</ref>",
+    "citation": "Bernard's birth was registered in 1908 in Victoria, Australia. They were the child of Benjamin John Callaghan & Ellen Mary Odonnell.<ref>\n'''Birth Registration''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\n, Registration number 2249 / 1908<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nBernard John Callaghan birth 1908 in Victoria, Australia, child of Benjamin John Callaghan & Ellen Mary Odonnell, mother's maiden name Odonnell.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth''': \"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>Births, Registration number 2249 / 1908<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>Bernard John Callaghan born in 1908, child of Benjamin John & Ellen Mary Odonnell, in CHILL, VIC, Australia.",
+    "citation": "* '''Birth Registration''': \"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>, Registration number 2249 / 1908<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>Bernard John Callaghan birth 1908 in Victoria, Australia, child of Benjamin John Callaghan & Ellen Mary Odonnell, mother's maiden name Odonnell.",
     "type": "source"
   }
 }

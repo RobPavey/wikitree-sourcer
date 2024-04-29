@@ -1,7 +1,7 @@
 {
   "sourceOfData": "vicbdm",
   "sourceType": "record",
-  "recordType": "Birth",
+  "recordType": "BirthRegistration",
   "name": {
     "forenames": "Bernard John",
     "lastName": "Callaghan"
@@ -10,7 +10,7 @@
     "yearString": "1908"
   },
   "eventPlace": {
-    "placeString": "CHILL, VIC, Australia"
+    "placeString": "Victoria, Australia"
   },
   "lastNameAtBirth": "Callaghan",
   "mothersMaidenName": "Odonnell",
@@ -18,12 +18,13 @@
     "yearString": "1908"
   },
   "birthPlace": {
-    "placeString": "CHILL, VIC, Australia"
+    "placeString": "Victoria, Australia"
   },
   "parents": {
     "father": {
       "name": {
-        "forenames": "Benjamin John"
+        "forenames": "Benjamin John",
+        "lastName": "Callaghan"
       }
     },
     "mother": {
