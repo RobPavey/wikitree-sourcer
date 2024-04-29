@@ -36,11 +36,11 @@ function buildSourceTitle(ed, gd, builder) {
 function buildSourceReference(ed, gd, builder) {
   let recordType = gd.recordType;
   builder.sourceReference = "";
-  if (recordType == RT.Birth) {
+  if (recordType == RT.Birth || recordType == RT.BirthRegistration) {
     builder.sourceReference += "Births";
-  } else if (recordType == RT.Death) {
+  } else if (recordType == RT.Death || recordType == RT.DeathRegistration) {
     builder.sourceReference += "Deaths";
-  } else if (recordType == RT.Marriage) {
+  } else if (recordType == RT.Marriage || recordType == RT.MarriageRegistration) {
     builder.sourceReference += "Marriages";
   }
 

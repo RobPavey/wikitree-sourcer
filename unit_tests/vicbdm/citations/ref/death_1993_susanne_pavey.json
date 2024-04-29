@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\n, Registration number 5240 / 1993<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nSusanne Mary Pavey death 1993 in Victoria, Australia.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nDeaths, Registration number 5240 / 1993<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nSusanne Mary Pavey death 1993 in Victoria, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Susanne's death was registered in 1993 in Victoria, Australia.<ref>\n'''Death Registration''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\n, Registration number 5240 / 1993<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nSusanne Mary Pavey death 1993 in Victoria, Australia.\n</ref>",
+    "citation": "Susanne's death was registered in 1993 in Victoria, Australia.<ref>\n'''Death Registration''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nDeaths, Registration number 5240 / 1993<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nSusanne Mary Pavey death 1993 in Victoria, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Registration''': \"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>, Registration number 5240 / 1993<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>Susanne Mary Pavey death 1993 in Victoria, Australia.",
+    "citation": "* '''Death Registration''': \"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>Deaths, Registration number 5240 / 1993<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>Susanne Mary Pavey death 1993 in Victoria, Australia.",
     "type": "source"
   }
 }
