@@ -22,8 +22,89 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
+
+function getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection) {
+  var fromYear = yearNum;
+  var toYear = yearNum;
+
+  if (sameCollection) {
+    wtsQualifier = dateQualifiers.EXACT;
+  }
+
+  switch (wtsQualifier) {
+    case dateQualifiers.NONE:
+      fromYear = yearNum - 2;
+      toYear = yearNum + 2;
+      break;
+    case dateQualifiers.EXACT:
+      fromYear = yearNum;
+      // add an extra year to toYear because registration date could be after birth date
+      toYear = yearNum + 1;
+      break;
+    case dateQualifiers.ABOUT:
+      fromYear = yearNum - 5;
+      toYear = yearNum + 5;
+      break;
+    case dateQualifiers.BEFORE:
+      fromYear = yearNum - 5;
+      toYear = yearNum;
+      break;
+    case dateQualifiers.AFTER:
+      fromYear = yearNum;
+      toYear = yearNum + 5;
+      break;
+  }
+
+  return { fromYear: fromYear.toString(), toYear: toYear.toString() };
+}
+
+function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection) {
+  if (!yearString || yearString == "") {
+    return null;
+  }
+
+  if (exactnessOption == "none") {
+    return null;
+  }
+
+  var yearNum = parseInt(yearString);
+
+  if (isNaN(yearNum) || yearNum < 500) {
+    return null;
+  }
+
+  if (exactnessOption == "auto") {
+    return getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection);
+  }
+
+  var fromYear = yearNum;
+  var toYear = yearNum;
+
+  let plusOrMinus = exactnessOption;
+  if (exactnessOption == "exact") {
+    plusOrMinus = 0;
+  }
+
+  if (!Number.isFinite(plusOrMinus)) {
+    // should never happen
+    plusOrMinus = parseInt(plusOrMinus);
+
+    if (isNaN(plusOrMinus) || plusOrMinus > 100 || plusOrMinus < -100) {
+      return null;
+    }
+  }
+
+  if (plusOrMinus != undefined) {
+    fromYear = fromYear - plusOrMinus;
+    toYear = toYear + plusOrMinus;
+  }
+
+  return { fromYear: fromYear.toString(), toYear: toYear.toString() };
+}
 
 function addAppropriateSurname(gd, parameters, fieldData) {
   let lastName = "";
@@ -40,12 +121,51 @@ function addAppropriateSurname(gd, parameters, fieldData) {
   }
 }
 
+function setYearRangeForYear(year, qualifier, exactness, fieldData) {
+  if (!year) {
+    return;
+  }
+
+  let yearRange = getDateRange(year, exactness, qualifier, false);
+
+  if (yearRange) {
+    if (yearRange.fromYear) {
+      fieldData["historicalSearch-yearRange-from"] = yearRange.fromYear;
+    }
+    if (yearRange.toYear) {
+      fieldData["historicalSearch-yearRange-to"] = yearRange.toYear;
+    }
+  }
+}
+
 function buildSearchData(input) {
   const gd = input.generalizedData;
   const typeOfSearch = input.typeOfSearch;
-  const parameters = input.searchParameters;
   const options = input.options;
   const runDate = input.runDate;
+
+  let sameCollection = false;
+  let parameters = undefined;
+  let vicbdmCollectionId = "";
+  let collection = undefined;
+
+  if (typeOfSearch == "SameCollection") {
+    if (gd.collectionData && gd.collectionData.id) {
+      vicbdmCollectionId = RC.mapCollectionId(
+        gd.sourceOfData,
+        gd.collectionData.id,
+        "vicbdm",
+        gd.inferEventCountry(),
+        gd.inferEventYear()
+      );
+      if (vicbdmCollectionId) {
+        collection = RC.findCollection("vicbdm", vicbdmCollectionId);
+        sameCollection = true;
+      }
+    }
+  } else if (typeOfSearch == "SpecifiedParameters") {
+    parameters = input.searchParameters;
+  }
 
   let fieldData = {};
   let selectData = {};
@@ -102,7 +222,19 @@ function buildSearchData(input) {
     }
   }
 
-  if (parameters) {
+  if (typeOfSearch == "SameCollection") {
+    if (vicbdmCollectionId) {
+      if (vicbdmCollectionId == "Births") {
+        fieldData["historicalSearch-events-birth"] = true;
+      }
+      if (vicbdmCollectionId == "Deaths") {
+        fieldData["historicalSearch-events-death"] = true;
+      }
+      if (vicbdmCollectionId == "Marriages") {
+        fieldData["historicalSearch-events-marriage"] = true;
+      }
+    }
+  } else if (parameters) {
     if (parameters.category == "Births" || parameters.category == "All") {
       fieldData["historicalSearch-events-birth"] = true;
     }
@@ -122,14 +254,62 @@ function buildSearchData(input) {
     }
   }
 
-  const maxLifespan = Number(options.search_general_maxLifespan);
-  let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
-  if (range) {
-    if (range.startYear) {
-      fieldData["historicalSearch-yearRange-from"] = range.startYear;
+  // date range
+  if (typeOfSearch == "SameCollection") {
+    let yearString = gd.inferEventYear();
+    if (yearString) {
+      fieldData["historicalSearch-yearRange-from"] = yearString;
+      fieldData["historicalSearch-yearRange-to"] = yearString;
     }
-    if (range.endYear) {
-      fieldData["historicalSearch-yearRange-to"] = range.endYear;
+  } else if (typeOfSearch == "Births" || (parameters && parameters.category == "Births")) {
+    let qualifier = gd.inferBirthDateQualifier();
+    let exactness = options.search_vicbdm_birthYearExactness;
+    setYearRangeForYear(gd.inferBirthYear(), qualifier, exactness, fieldData);
+  } else if (typeOfSearch == "Deaths" || (parameters && parameters.category == "Deaths")) {
+    let qualifier = gd.inferDeathDateQualifier();
+    let exactness = options.search_vicbdm_deathYearExactness;
+    setYearRangeForYear(gd.inferDeathYear(), qualifier, exactness, fieldData);
+  } else if (typeOfSearch == "Marriages" || (parameters && parameters.category == "Marriages")) {
+    const maxLifespan = Number(options.search_general_maxLifespan);
+    let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
+    if (range) {
+      if (range.startYear) {
+        let startNum = Number(range.startYear);
+        if (startNum) {
+          startNum += 14;
+          range.startYear = startNum.toString();
+        }
+        fieldData["historicalSearch-yearRange-from"] = range.startYear;
+      }
+      if (range.endYear) {
+        fieldData["historicalSearch-yearRange-to"] = range.endYear;
+      }
+    }
+  } else {
+    // all types?
+    const maxLifespan = Number(options.search_general_maxLifespan);
+    let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
+    if (range) {
+      if (range.startYear) {
+        fieldData["historicalSearch-yearRange-from"] = range.startYear;
+      }
+      if (range.endYear) {
+        fieldData["historicalSearch-yearRange-to"] = range.endYear;
+      }
+    }
+  }
+
+  // for same collection we can possibly set the registration number
+  if (typeOfSearch == "SameCollection" && gd.collectionData) {
+    let regNum = "";
+    if (gd.collectionData.registrationNumber) {
+      regNum = gd.collectionData.registrationNumber;
+    }
+    if (!regNum && gd.collectionData.referenceNumber) {
+      regNum = gd.collectionData.referenceNumber;
+    }
+    if (regNum) {
+      fieldData["historicalSearch-events-registrationNumber-number"] = regNum;
     }
   }
 

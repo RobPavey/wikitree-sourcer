@@ -27,6 +27,7 @@ import {
   endMainMenu,
   addMenuItem,
   addBackMenuItem,
+  addSameRecordMenuItem,
   doAsyncActionWithCatch,
   closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
@@ -175,6 +176,12 @@ function addVicbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
+function addVicbdmSameRecordMenuItem(menu, data) {
+  addSameRecordMenuItem(menu, data, "fmp", function (element) {
+    vicbdmSearch(data.generalizedData, "SameCollection");
+  });
+}
+
 function addVicbdmSearchBirthsMenuItem(menu, data, filter) {
   if (!filter) {
     const supportedDates = getSupportedDates();
@@ -247,6 +254,7 @@ async function setupVicbdmSearchSubMenu(data, backFunction, filter) {
 
   addBackMenuItem(menu, backFunction);
 
+  addVicbdmSameRecordMenuItem(menu, data);
   addVicbdmSearchBirthsMenuItem(menu, data, filter);
   addVicbdmSearchMarriagesMenuItem(menu, data, filter);
   addVicbdmSearchDeathsMenuItem(menu, data, filter);

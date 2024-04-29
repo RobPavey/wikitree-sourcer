@@ -50,6 +50,10 @@ const householdTableColumnsUsFederalPost1880 = [
 ];
 
 const RecordCollectionData = [
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+  // England and Wales
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
   // England & Wales BMD
   {
     wtsId: "EnglandAndWalesBirthReg",
@@ -1392,7 +1396,10 @@ const RecordCollectionData = [
     },
   },
 
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
   // Poland
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
   {
     wtsId: "PolandBirthReg",
     title: "Poland Registration Birth Index",
@@ -1487,6 +1494,72 @@ const RecordCollectionData = [
       wiewaswie: { id: "BS Overlijden" },
       openarch: { id: "BS Overlijden" },
       ancestry: { id: "61287" },
+    },
+  },
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Australia
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // Victoria BMD
+  {
+    wtsId: "VictoriaBirths",
+    title: "Victoria Birth Index",
+    country: "Australia",
+    isBirth: true,
+    sites: {
+      ancestry: {
+        id: "61648",
+        dates: { from: 1837, to: 1921 },
+      },
+      fmp: {
+        id: "Victoria Births",
+        dates: { from: 1836, to: 1913 },
+      },
+      vicbdm: {
+        id: "Births",
+        dates: { from: 1836, to: 1950 },
+      },
+    },
+  },
+  {
+    wtsId: "VictoriaDeaths",
+    title: "Victoria Death Index",
+    country: "Australia",
+    isBirth: true,
+    sites: {
+      ancestry: {
+        id: "61650",
+        dates: { from: 1840, to: 1991 },
+      },
+      fmp: {
+        id: "Victoria Deaths",
+        dates: { from: 1836, to: 1913 },
+      },
+      vicbdm: {
+        id: "Deaths",
+        dates: { from: 1836, to: 1950 },
+      },
+    },
+  },
+  {
+    wtsId: "VictoriaMarriages",
+    title: "Victoria Death Index",
+    country: "Australia",
+    isBirth: true,
+    sites: {
+      ancestry: {
+        id: "61649",
+        dates: { from: 1837, to: 1961 },
+      },
+      fmp: {
+        id: "Victoria Marriages 1836-1942",
+        dates: { from: 1836, to: 1942 },
+      },
+      vicbdm: {
+        id: "Marriages",
+        dates: { from: 1836, to: 1960 },
+      },
     },
   },
 ];

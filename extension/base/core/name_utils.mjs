@@ -24,6 +24,465 @@ SOFTWARE.
 
 import { StringUtils } from "./string_utils.mjs";
 
+const englishGivenNameAbbreviations = [
+  {
+    abbrev: "Abig",
+    full: "Abigail",
+  },
+  {
+    abbrev: "Abm",
+    full: "Abraham",
+  },
+  {
+    abbrev: "Abr",
+    full: "Abraham",
+  },
+  {
+    abbrev: "Agn",
+    full: "Agnes",
+  },
+  {
+    abbrev: "Alex",
+    full: "Alexander",
+  },
+  {
+    abbrev: "Alexr",
+    full: "Alexander",
+  },
+  {
+    abbrev: "Alf",
+    full: "Alfred",
+  },
+  {
+    abbrev: "Amb",
+    full: "Ambrose",
+  },
+  {
+    abbrev: "And",
+    full: "Andrew",
+  },
+  {
+    abbrev: "Ant",
+    full: "Anthony",
+  },
+  {
+    abbrev: "Art",
+    full: "Arthur",
+  },
+  {
+    abbrev: "Aug",
+    full: "Augustus",
+  },
+  {
+    abbrev: "Barb",
+    full: "Barbara",
+  },
+  {
+    abbrev: "Bart",
+    full: "Bartholomew",
+  },
+  {
+    abbrev: "Benj",
+    full: "Benjamin",
+  },
+  {
+    abbrev: "Brid",
+    full: "Bridget",
+  },
+  {
+    abbrev: "Cath",
+    full: "Catherine",
+  },
+  {
+    abbrev: "Chas",
+    full: "Charles",
+  },
+  {
+    abbrev: "Chr",
+    full: "Christian",
+  },
+  {
+    abbrev: "Clem",
+    full: "Clement",
+  },
+  {
+    abbrev: "Const",
+    full: "Constance",
+  },
+  {
+    abbrev: "Corn",
+    full: "Cornelius",
+  },
+  {
+    abbrev: "Danl",
+    full: "Daniel",
+  },
+  {
+    abbrev: "Dav",
+    full: "David",
+  },
+  {
+    abbrev: "Deb",
+    full: "Deborah",
+  },
+  {
+    abbrev: "Den",
+    full: "Dennis",
+  },
+  {
+    abbrev: "Doug",
+    full: "Douglas",
+  },
+  {
+    abbrev: "Dy",
+    full: "Dorothy",
+  },
+  {
+    abbrev: "Edm",
+    full: "Edmund",
+  },
+  {
+    abbrev: "Edr",
+    full: "Edward",
+  },
+  {
+    abbrev: "Edw",
+    full: "Edward",
+  },
+  {
+    abbrev: "Eliz",
+    full: "Elizabeth",
+  },
+  {
+    abbrev: "Elizth",
+    full: "Elizabeth",
+  },
+  {
+    abbrev: "Elnr",
+    full: "Eleanor",
+  },
+  {
+    abbrev: "Esth",
+    full: "Esther",
+  },
+  {
+    abbrev: "Ezek",
+    full: "Ezekiel",
+  },
+  {
+    abbrev: "Froo",
+    full: "Franco",
+  },
+  {
+    abbrev: "Fs",
+    full: "Francis",
+  },
+  {
+    abbrev: "Gab",
+    full: "Gabriel",
+  },
+  {
+    abbrev: "Geo",
+    full: "George",
+  },
+  {
+    abbrev: "Geof",
+    full: "Geoffrey",
+  },
+  {
+    abbrev: "Godf",
+    full: "Godfrey",
+  },
+  {
+    abbrev: "Greg",
+    full: "Gregory",
+  },
+  {
+    abbrev: "Gul",
+    full: "William",
+  },
+  {
+    abbrev: "Han",
+    full: "Hannah",
+  },
+  {
+    abbrev: "Hen",
+    full: "Henry",
+  },
+  {
+    abbrev: "Hel",
+    full: "Helen",
+  },
+  {
+    abbrev: "Herb",
+    full: "Herbert",
+  },
+  {
+    abbrev: "Hy",
+    full: "Henry",
+  },
+  {
+    abbrev: "Ioh",
+    full: "John",
+  },
+  {
+    abbrev: "Is",
+    full: "Isaac",
+  },
+  {
+    abbrev: "Isb",
+    full: "Isabel",
+  },
+  {
+    abbrev: "Jac",
+    full: "James",
+  },
+  {
+    abbrev: "Jas",
+    full: "James",
+  },
+  {
+    abbrev: "Jer",
+    full: "Jeremiah",
+  },
+  {
+    abbrev: "Jno",
+    full: "John",
+  },
+  {
+    abbrev: "Jon",
+    full: "Jonathan",
+  },
+  {
+    abbrev: "Jos",
+    full: "Joseph",
+  },
+  {
+    abbrev: "Josh",
+    full: "Joshua",
+  },
+  {
+    abbrev: "Josh",
+    full: "Josiah",
+  },
+  {
+    abbrev: "Jud",
+    full: "Judith",
+  },
+  {
+    abbrev: "Lau",
+    full: "Laurence",
+  },
+  {
+    abbrev: "Lawr",
+    full: "Lawrence",
+  },
+  {
+    abbrev: "Leon",
+    full: "Leonard",
+  },
+  {
+    abbrev: "Lyd",
+    full: "Lydia",
+  },
+  {
+    abbrev: "Margt",
+    full: "Margaret",
+  },
+  {
+    abbrev: "Math",
+    full: "Matthias",
+  },
+  {
+    abbrev: "Matt",
+    full: "Matthew",
+  },
+  {
+    abbrev: "Mau",
+    full: "Maurice",
+  },
+  {
+    abbrev: "Mich",
+    full: "Michael",
+  },
+  {
+    abbrev: "Micls",
+    full: "Michael",
+  },
+  {
+    abbrev: "Mix",
+    full: "Michael",
+  },
+  {
+    abbrev: "Mill",
+    full: "Millicent",
+  },
+  {
+    abbrev: "My",
+    full: "Mary",
+  },
+  {
+    abbrev: "Nath",
+    full: "Nathaniel",
+  },
+  {
+    abbrev: "Nich",
+    full: "Nicholas",
+  },
+  {
+    abbrev: "Nics",
+    full: "Nicholas",
+  },
+  {
+    abbrev: "Ol",
+    full: "Oliver",
+  },
+  {
+    abbrev: "Pat",
+    full: "Patrick",
+  },
+  {
+    abbrev: "Pen",
+    full: "Penelope",
+  },
+  {
+    abbrev: "Pet",
+    full: "Peter",
+  },
+  {
+    abbrev: "Phil",
+    full: "Philip",
+  },
+  {
+    abbrev: "Phin",
+    full: "Phineas",
+  },
+  {
+    abbrev: "Phyl",
+    full: "Phyllis",
+  },
+  {
+    abbrev: "Prisc",
+    full: "Priscilla",
+  },
+  {
+    abbrev: "Pru",
+    full: "Prudence",
+  },
+  {
+    abbrev: "Rach",
+    full: "Rachel",
+  },
+  {
+    abbrev: "Ray",
+    full: "Raymond",
+  },
+  {
+    abbrev: "Reb",
+    full: "Rebecca",
+  },
+  {
+    abbrev: "Reg",
+    full: "Reginald",
+  },
+  {
+    abbrev: "Ric",
+    full: "Richard",
+  },
+  {
+    abbrev: "Richd",
+    full: "Richard",
+  },
+  {
+    abbrev: "Robt",
+    full: "Robert",
+  },
+  {
+    abbrev: "Rog",
+    full: "Roger",
+  },
+  {
+    abbrev: "Saml",
+    full: "Samuel",
+  },
+  {
+    abbrev: "Sar",
+    full: "Sarah",
+  },
+  {
+    abbrev: "Silv",
+    full: "Sylvester",
+  },
+  {
+    abbrev: "Sim",
+    full: "Simon",
+  },
+  {
+    abbrev: "Sol",
+    full: "Solomon",
+  },
+  {
+    abbrev: "Ste",
+    full: "Stephen",
+  },
+  {
+    abbrev: "Susna",
+    full: "Susanna",
+  },
+  {
+    abbrev: "Theo",
+    full: "Theodore",
+  },
+  {
+    abbrev: "Thos",
+    full: "Thomas",
+  },
+  {
+    abbrev: "Tim",
+    full: "Timothy",
+  },
+  {
+    abbrev: "Urs",
+    full: "Ursula",
+  },
+  {
+    abbrev: "Val",
+    full: "Valentine",
+  },
+  {
+    abbrev: "Vinc",
+    full: "Vincent",
+  },
+  {
+    abbrev: "Walt",
+    full: "Walter",
+  },
+  {
+    abbrev: "Win",
+    full: "Winifred",
+  },
+  {
+    abbrev: "Wm",
+    full: "William",
+  },
+  {
+    abbrev: "Xpr",
+    full: "Christopher",
+  },
+  {
+    abbrev: "Xtian",
+    full: "Christian",
+  },
+  {
+    abbrev: "Xtopher",
+    full: "Christopher",
+  },
+  {
+    abbrev: "Zach",
+    full: "Zachariah",
+  },
+];
+
 const NameUtils = {
   convertNameFromAllCapsToMixedCase: function (string) {
     // Note: this is a complicated issue for names like:
@@ -192,6 +651,30 @@ const NameUtils = {
     } while (index != -1);
 
     return resultString;
+  },
+
+  convertEnglishGivenNameFromAbbrevationToFull: function (abbrev) {
+    if (!abbrev) {
+      return "";
+    }
+    for (let entry of englishGivenNameAbbreviations) {
+      if (abbrev == entry.abbrev) {
+        return entry.full;
+      }
+    }
+    return "";
+  },
+
+  convertEnglishGivenNameFromFullToAbbrevation: function (full) {
+    if (!full) {
+      return "";
+    }
+    for (let entry of englishGivenNameAbbreviations) {
+      if (full == entry.full) {
+        return entry.abbrev;
+      }
+    }
+    return "";
   },
 };
 

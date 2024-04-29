@@ -78,11 +78,36 @@ class VicbdmEdReader extends ExtractedDataReader {
     }
   }
 
+  expandGivenNameAbbreviations(givenNamesString) {
+    let newGivenNamesString = givenNamesString;
+    if (givenNamesString) {
+      let givenNamesArray = givenNamesString.split(" ");
+      let newGivenNamesArray = [];
+      for (let givenName of givenNamesArray) {
+        givenName = givenName.trim();
+
+        let full = NameUtils.convertEnglishGivenNameFromAbbrevationToFull(givenName);
+        if (full) {
+          givenName = full;
+        }
+
+        if (!newGivenNamesArray.includes(givenName)) {
+          newGivenNamesArray.push(givenName);
+        }
+      }
+      newGivenNamesString = newGivenNamesArray.join(" ");
+    }
+
+    return newGivenNamesString;
+  }
+
   makeNameObjFromFamilyNameAndGivenNames(familyNameString, givenNamesString) {
     if (familyNameString && givenNamesString) {
       let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
 
       let nameObj = new NameObj();
+
+      givenNamesString = this.expandGivenNameAbbreviations(givenNamesString);
 
       nameObj.setForenames(givenNamesString);
       nameObj.setLastName(cleanFamilyName);
@@ -107,6 +132,8 @@ class VicbdmEdReader extends ExtractedDataReader {
           // Sometimes the given names has a name in all caps, in examples I have seen it is actually
           // the family name, so perhaps should check for that.
           let cleanGivenNames = NameUtils.convertNameFromAllCapsToMixedCase(givenNamesString);
+
+          cleanGivenNames = this.expandGivenNameAbbreviations(cleanGivenNames);
 
           let nameObj = new NameObj();
 
@@ -318,7 +345,15 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
-    let collectionData = { year: this.yearString, regNum: this.registrationNum };
+    let id = "";
+    if (this.recordType == RT.Birth) {
+      id = "Births";
+    } else if (this.recordType == RT.Death) {
+      id = "Deaths";
+    } else if (this.recordType == RT.Marriage) {
+      id = "Marriages";
+    }
+    let collectionData = { id: id, year: this.yearString, regNum: this.registrationNum };
 
     return collectionData;
   }

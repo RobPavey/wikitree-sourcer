@@ -1069,7 +1069,7 @@ function generalizeDataGivenRecordType(ed, result) {
   determineRoleGivenRecordType(ed, result);
 
   if (result.recordType == RT.BirthRegistration) {
-    let birthDate = getCleanValueForRecordDataList(ed, ["Birth Date"], "date");
+    let birthDate = getCleanValueForRecordDataList(ed, ["Birth Date", "Birth Registration Date"], "date");
     if (birthDate) {
       result.setEventDate(birthDate);
       result.setBirthDate(birthDate);
@@ -2412,6 +2412,8 @@ function generalizeRecordData(input, result) {
       addRef("subDistrictNumber", getCleanRecordDataValue(ed, "Sub-District Number"));
       addRef("divisionNumber", getCleanRecordDataValue(ed, "Division Number"));
       addRef("familyNumber", getCleanRecordDataValue(ed, "Family Number"));
+      addRef("referenceNumber", getCleanRecordDataValue(ed, "Reference Number"));
+      addRef("registrationNumber", getCleanRecordDataValue(ed, "Registration Number"));
     }
   }
 }
