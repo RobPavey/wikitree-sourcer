@@ -5,6 +5,12 @@
   "name": {
     "name": "Alice Lloyd"
   },
+  "eventDate": {
+    "dateString": "1885"
+  },
+  "birthDate": {
+    "dateString": "1885"
+  },
   "eventPlace": {
     "placeString": "Victoria, Australia"
   },
@@ -24,7 +30,8 @@
     "{{Ancestry Record|VictoriaBirthRecords|15250322}}"
   ],
   "collectionData": {
-    "id": "61648"
+    "id": "61648",
+    "referenceNumber": "4275"
   },
   "hasValidData": true
 }

@@ -3,7 +3,7 @@
   "sourceType": "record",
   "recordType": "Birth",
   "name": {
-    "forenames": "Bernard Jno",
+    "forenames": "Bernard John",
     "lastName": "Callaghan"
   },
   "eventDate": {
@@ -23,7 +23,7 @@
   "parents": {
     "father": {
       "name": {
-        "forenames": "Benjm Jno"
+        "forenames": "Benjamin John"
       }
     },
     "mother": {
@@ -34,6 +34,7 @@
     }
   },
   "collectionData": {
+    "id": "Births",
     "year": "1908",
     "regNum": "2249"
   },

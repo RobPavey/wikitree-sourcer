@@ -86,6 +86,10 @@ const englishGivenNameAbbreviations = [
     full: "Benjamin",
   },
   {
+    abbrev: "Benjm",
+    full: "Benjamin",
+  },
+  {
     abbrev: "Brid",
     full: "Bridget",
   },

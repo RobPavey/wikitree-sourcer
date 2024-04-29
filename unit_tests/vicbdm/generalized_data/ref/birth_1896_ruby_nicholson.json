@@ -23,7 +23,7 @@
   "parents": {
     "father": {
       "name": {
-        "forenames": "Hy"
+        "forenames": "Henry"
       }
     },
     "mother": {
@@ -34,6 +34,7 @@
     }
   },
   "collectionData": {
+    "id": "Births",
     "year": "1896",
     "regNum": "18688"
   },
