@@ -39,9 +39,6 @@ async function getPendingSearch() {
   });
 }
 
-const maxRetries = 20;
-var numRetries = 0;
-
 async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: called");
   //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
