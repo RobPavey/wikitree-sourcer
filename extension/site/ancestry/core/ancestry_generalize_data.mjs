@@ -104,19 +104,20 @@ function determineRecordType(extractedData) {
   const titleMatches = [
     { type: RT.Baptism, matches: ["Christening Index"] },
     {
-      type: RT.Birth,
-      matches: ["Birth Index", "Births Index"],
-      requiredData: [["Birth Date"], ["Birth Place"]],
-    },
-    {
       type: RT.BirthRegistration,
       matches: ["Birth Index", "Births Index"],
       requiredData: [
         ["Birth Registration Place"],
+        ["Birth Registration Date"],
         ["Registration Date"],
         ["Registration Year"],
         ["Registration Place"],
       ],
+    },
+    {
+      type: RT.Birth,
+      matches: ["Birth Index", "Births Index"],
+      requiredData: [["Birth Date"], ["Birth Place"]],
     },
     {
       type: RT.Birth,
@@ -1078,7 +1079,20 @@ function generalizeDataGivenRecordType(ed, result) {
       result.birthDate = result.eventDate;
     }
 
-    let eventPlace = getCleanValueForRecordDataList(ed, ["Birth Registration Place", "Registration Place"]);
+    let birthPlace = getCleanValueForRecordDataList(ed, ["Birth Place"]);
+    if (birthPlace) {
+      let county = getCleanRecordDataValue(ed, "Inferred County");
+      if (county && !birthPlace.includes(county)) {
+        birthPlace += ", " + county;
+      }
+      result.setBirthPlace(birthPlace);
+    }
+
+    let eventPlace = getCleanValueForRecordDataList(ed, [
+      "Birth Registration Place",
+      "Registration Place",
+      "Birth Place",
+    ]);
     if (eventPlace) {
       let county = getCleanRecordDataValue(ed, "Inferred County");
       if (county && !eventPlace.includes(county)) {
@@ -1093,6 +1107,7 @@ function generalizeDataGivenRecordType(ed, result) {
       }
       result.setEventPlace(eventPlace);
     }
+
     result.lastNameAtBirth = result.inferLastName();
 
     buildParents(ed, result);

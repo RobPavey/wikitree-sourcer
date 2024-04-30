@@ -224,6 +224,11 @@ class VicbdmEdReader extends ExtractedDataReader {
     return this.makeNameObjFromFamilyNameAndGivenNames(familyName, givenNames);
   }
 
+  getGender() {
+    let givenNames = this.getRecordDataValue("Given name(s)");
+    return NameUtils.predictGenderFromGivenNames(givenNames);
+  }
+
   getEventDateObj() {
     if (this.yearString) {
       return this.makeDateObjFromYear(this.yearString);

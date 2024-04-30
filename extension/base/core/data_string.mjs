@@ -694,6 +694,16 @@ function getBirthRegistrationString(gd, options) {
 
     dataString += addRegistrationPlace(gd, options);
 
+    // sometimes there is a birth place that contains more info than the registration place
+    // e.g.: https://www.ancestry.com/discoveryui-content/view/3027592:2573
+    let birthPlace = gd.birthPlace;
+    if (birthPlace && birthPlace.placeString) {
+      let birthPlaceString = birthPlace.placeString;
+      if (!dataString.includes(birthPlaceString)) {
+        dataString += ", birth place " + birthPlaceString;
+      }
+    }
+
     if (gd.parents) {
       let fatherName = "";
       if (gd.parents.father && gd.parents.father.name) {

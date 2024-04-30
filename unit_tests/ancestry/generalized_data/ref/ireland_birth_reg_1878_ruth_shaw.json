@@ -1,6 +1,6 @@
 {
   "sourceType": "record",
-  "recordType": "Birth",
+  "recordType": "BirthRegistration",
   "sourceOfData": "ancestry",
   "name": {
     "name": "Ruth Gladdis Shaw"
@@ -15,7 +15,7 @@
     "placeString": "Limerick, Ireland"
   },
   "eventPlace": {
-    "placeString": "Limerick, Ireland"
+    "placeString": "Ireland"
   },
   "lastNameAtBirth": "Shaw",
   "wtSearchTemplates": [

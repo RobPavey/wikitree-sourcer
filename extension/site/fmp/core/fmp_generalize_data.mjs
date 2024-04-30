@@ -1089,17 +1089,79 @@ function generalizeData(input) {
     // parents may be recorded
     let fatherFirstName = getRecordDataValueForList(ed, ["Father's first name(s)", "Father's first name"]);
     let fatherLastName = getRecordDataValueForList(ed, ["Father's last name(s)", "Father's last name"]);
-    if (fatherFirstName || fatherLastName) {
+    let fatherName = getRecordDataValueForList(ed, ["Father's name(s)", "Father's name"]);
+    if (fatherFirstName || fatherLastName || fatherName) {
       let father = result.addFather();
-      father.name.setFirstNames(fatherFirstName);
-      father.name.setLastName(fatherLastName);
+      if (fatherName) {
+        if (!fatherFirstName && !fatherLastName) {
+          father.name.setFullName(fatherName);
+        } else {
+          // sometimes fatherName is the first names
+          // e.g.: https://www.findmypast.co.uk/transcript?id=ANZ%2FBMD%2FACTBIRT%2F469737
+          if (fatherFirstName && fatherLastName) {
+            let nameIsSame = fatherName == fatherFirstName + fatherLastName;
+            if (nameIsSame) {
+              father.name.setFirstNames(fatherFirstName);
+              father.name.setLastName(fatherLastName);
+            } else {
+              father.name.setFullName(fatherName);
+            }
+          } else {
+            // we have fatherName and one of the other two
+            if (fatherFirstName) {
+              father.name.setFirstNames(fatherFirstName);
+              father.name.setLastName(fatherName);
+            } else {
+              father.name.setFirstNames(fatherName);
+              father.name.setLastName(fatherLastName);
+            }
+          }
+        }
+      } else {
+        father.name.setFirstNames(fatherFirstName);
+        father.name.setLastName(fatherLastName);
+      }
     }
     let motherFirstName = getRecordDataValueForList(ed, ["Mother's first name(s)", "Mother's first name"]);
     let motherLastName = getRecordDataValueForList(ed, ["Mother's last name(s)", "Mother's last name"]);
-    if (motherFirstName || motherLastName) {
+    let motherName = getRecordDataValueForList(ed, ["Mother's name(s)", "Mother's name"]);
+    if (motherFirstName || motherLastName || motherName) {
       let mother = result.addMother();
-      mother.name.setFirstNames(motherFirstName);
-      mother.name.setLastName(motherLastName);
+      if (motherName) {
+        if (!motherFirstName && !motherLastName) {
+          mother.name.setFullName(motherName);
+        } else {
+          // sometimes motherName is the first names
+          // e.g.: https://www.findmypast.co.uk/transcript?id=ANZ%2FBMD%2FACTBIRT%2F469737
+          if (motherFirstName && motherLastName) {
+            let nameIsSame = motherName == motherFirstName + motherLastName;
+            if (nameIsSame) {
+              mother.name.setFirstNames(motherFirstName);
+              mother.name.setLastName(motherLastName);
+            } else {
+              mother.name.setFullName(motherName);
+            }
+          } else {
+            // we have motherName and one of the other two
+            if (motherFirstName) {
+              mother.name.setFirstNames(motherFirstName);
+              mother.name.setLastName(motherName);
+            } else {
+              // if the mother has a last name but the father does not then it is usually
+              // the maiden name
+              mother.name.setFirstNames(motherName);
+              if (fatherLastName) {
+                mother.name.setLastName(motherLastName);
+              } else {
+                result.mothersMaidenName = motherLastName;
+              }
+            }
+          }
+        }
+      } else {
+        mother.name.setFirstNames(motherFirstName);
+        mother.name.setLastName(motherLastName);
+      }
     }
 
     generalizeDataGivenRecordType(ed, result);

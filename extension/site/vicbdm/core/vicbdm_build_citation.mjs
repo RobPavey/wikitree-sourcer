@@ -47,7 +47,7 @@ function buildSourceReference(ed, gd, builder) {
   if (ed.recordData) {
     let registrationNumber = ed.recordData["Registration number"];
     if (registrationNumber) {
-      builder.sourceReference += ", Registration number " + registrationNumber;
+      builder.sourceReference += ", Registration number: " + registrationNumber;
     }
   }
 }

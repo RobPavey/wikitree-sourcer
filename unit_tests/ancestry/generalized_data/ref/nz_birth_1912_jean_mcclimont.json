@@ -1,6 +1,6 @@
 {
   "sourceType": "record",
-  "recordType": "Birth",
+  "recordType": "BirthRegistration",
   "sourceOfData": "ancestry",
   "name": {
     "name": "Jean Mary Agnes McClimont"
@@ -10,9 +10,6 @@
   },
   "birthDate": {
     "dateString": "Mar. 1912"
-  },
-  "birthPlace": {
-    "placeString": "Springburn, Canterbury, New Zealand"
   },
   "eventPlace": {
     "placeString": "Springburn, Canterbury, New Zealand"

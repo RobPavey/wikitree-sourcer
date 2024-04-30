@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nBirths, Registration number 12496 / 1841<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nJoseph Thomas Smith born in 1841, child of Joseph Smith & Elizabeth, in Sydney New South Wales, Australia.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nBirths, Registration number: 12496 / 1841<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nJoseph Thomas Smith born in 1841, child of Joseph Smith & Elizabeth, in Sydney New South Wales, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Joseph, child of Joseph Smith & Elizabeth, was born in 1841 in Sydney New South Wales, Australia.<ref>\n'''Birth''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nBirths, Registration number 12496 / 1841<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nJoseph Thomas Smith born in 1841, child of Joseph Smith & Elizabeth, in Sydney New South Wales, Australia.\n</ref>",
+    "citation": "Joseph, child of Joseph Smith & Elizabeth, was born in 1841 in Sydney New South Wales, Australia.<ref>\n'''Birth''':\n\"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>\nBirths, Registration number: 12496 / 1841<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>\nJoseph Thomas Smith born in 1841, child of Joseph Smith & Elizabeth, in Sydney New South Wales, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Birth''': \"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>Births, Registration number 12496 / 1841<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>Joseph Thomas Smith born in 1841, child of Joseph Smith & Elizabeth, in Sydney New South Wales, Australia.",
+    "citation": "* '''Birth''': \"Victoria State Government, Registry of Births, Deaths and Marriages Victoria\"<br/>Births, Registration number: 12496 / 1841<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to Search Page] (accessed 6 May 2021)<br/>Joseph Thomas Smith born in 1841, child of Joseph Smith & Elizabeth, in Sydney New South Wales, Australia.",
     "type": "source"
   }
 }
