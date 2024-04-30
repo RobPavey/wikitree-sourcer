@@ -768,7 +768,7 @@ class NarrativeBuilder {
       if (placeObj && placeObj.atSea) {
         let shipName = placeObj.shipName;
         if (shipName) {
-          this.narrative += 'aboard "' + shipName + '"';
+          this.narrative += ' aboard "' + shipName + '"';
         }
       }
     } else {
@@ -776,7 +776,7 @@ class NarrativeBuilder {
         let shipName = placeObj.shipName;
         let atSeaString = "at sea";
         if (shipName) {
-          placeatSeaStringString = 'at sea aboard "' + shipName + '"';
+          atSeaString = 'at sea aboard "' + shipName + '"';
         }
         this.narrative += " " + atSeaString;
       }
@@ -1117,6 +1117,7 @@ class NarrativeBuilder {
     }
     if (place) {
       this.narrative += " " + this.getPlaceWithPreposition(place);
+      this.addAtSea(place, gd.eventPlace);
     } else {
       let residencePlace = this.eventGd.inferResidencePlace();
       if (residencePlace) {

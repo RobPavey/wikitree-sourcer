@@ -24,7 +24,7 @@ SOFTWARE.
 
 // List published in this document:
 // https://fanningfamilyhistory.com/wp-content/uploads/eBook-Placenames-Abbreviations-13-June-2011.pdf
-const abbreviationTable = {
+const vicbdmPlaceAbbreviationTable = {
   "A P": "Albert Park",
   "A PARK": "Albert Park",
   "A PK": "Albert Park",
@@ -2425,4 +2425,4 @@ function expandVictoriaAbbreviations(placeString) {
   }
 }
 
-export { expandVictoriaAbbreviations };
+export { expandVictoriaAbbreviations, vicbdmPlaceAbbreviationTable };

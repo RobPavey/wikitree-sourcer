@@ -6,6 +6,7 @@
     "forenames": "Joseph Thomas",
     "lastName": "Smith"
   },
+  "personGender": "male",
   "eventDate": {
     "yearString": "1841"
   },

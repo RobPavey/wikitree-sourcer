@@ -6,6 +6,7 @@
     "forenames": "Fanny",
     "lastName": "Nicholson"
   },
+  "personGender": "female",
   "eventDate": {
     "yearString": "1939"
   },

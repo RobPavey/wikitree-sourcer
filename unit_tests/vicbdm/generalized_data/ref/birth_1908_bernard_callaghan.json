@@ -6,6 +6,7 @@
     "forenames": "Bernard John",
     "lastName": "Callaghan"
   },
+  "personGender": "male",
   "eventDate": {
     "yearString": "1908"
   },

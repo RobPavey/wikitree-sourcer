@@ -1,6 +1,6 @@
 // created from https://web.archive.org/web/20230328031046/https://bdmabbreviations.steveparker.id.au/
 
-const table = [
+const vicbdmPlaceAbbreviationTable2 = [
   {
     abbrev: "1 Mile Crk",
     name: "One Mile Creek",
@@ -30115,3 +30115,5 @@ const table = [
     notes: "Nariel Valley area. Births 1887 for Arnold (Higgins)",
   },
 ];
+
+export { vicbdmPlaceAbbreviationTable2 };

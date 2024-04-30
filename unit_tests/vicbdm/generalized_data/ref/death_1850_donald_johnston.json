@@ -6,6 +6,7 @@
     "forenames": "Donald",
     "lastName": "Johnston"
   },
+  "personGender": "male",
   "eventDate": {
     "yearString": "1850"
   },
@@ -23,18 +24,7 @@
     "placeString": "Hobsons Bay",
     "shipName": "Simlah"
   },
-  "parents": {
-    "father": {
-      "name": {
-        "forenames": "Unknown"
-      }
-    },
-    "mother": {
-      "name": {
-        "forenames": "Unknown"
-      }
-    }
-  },
+  "parents": {},
   "collectionData": {
     "id": "Deaths",
     "year": "1850",

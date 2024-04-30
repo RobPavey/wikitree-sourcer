@@ -149,9 +149,13 @@ class VicbdmEdReader extends ExtractedDataReader {
         let familyNameString = nameString.substring(0, commaIndex).trim();
         let givenNamesString = nameString.substring(commaIndex + 1).trim();
 
+        if (givenNamesString && givenNamesString.toLowerCase() == "unknown") {
+          givenNamesString = "";
+        }
+
         if (familyNameString == "<Unknown Family Name>") {
           familyNameString = "";
-          // Sometimes the familyNameString is something like:
+          // Sometimes the nameString is something like:
           //  "<Unknown Family Name>, STANWAY George"
           let givenNamesArray = givenNamesString.split(" ");
           let numUppercaseWordsAtStart = 0;
@@ -179,8 +183,14 @@ class VicbdmEdReader extends ExtractedDataReader {
             }
             familyNameString = newFamilyName;
             givenNamesString = newGivenNames;
+
+            // reheck given names
+            if (givenNamesString && givenNamesString.toLowerCase() == "unknown") {
+              givenNamesString = "";
+            }
           }
         }
+
         if (familyNameString || givenNamesString) {
           let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
 
