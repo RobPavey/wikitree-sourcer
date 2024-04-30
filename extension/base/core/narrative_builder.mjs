@@ -763,6 +763,26 @@ class NarrativeBuilder {
     }
   }
 
+  addAtSea(place, placeObj) {
+    if (place) {
+      if (placeObj && placeObj.atSea) {
+        let shipName = placeObj.shipName;
+        if (shipName) {
+          this.narrative += 'aboard "' + shipName + '"';
+        }
+      }
+    } else {
+      if (placeObj && placeObj.atSea) {
+        let shipName = placeObj.shipName;
+        let atSeaString = "at sea";
+        if (shipName) {
+          placeatSeaStringString = 'at sea aboard "' + shipName + '"';
+        }
+        this.narrative += " " + atSeaString;
+      }
+    }
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Functions to build narrative for each record type
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1065,6 +1085,8 @@ class NarrativeBuilder {
     if (place) {
       this.narrative += " " + this.getPlaceWithPreposition(place);
     }
+    this.addAtSea(place, gd.eventPlace);
+
     this.narrative += ".";
 
     this.addParentageAsSeparateSentence();

@@ -1533,7 +1533,7 @@ const RecordCollectionData = [
         dates: { from: 1840, to: 1991 },
       },
       fmp: {
-        id: "Victoria Deaths",
+        id: "Victoria Deaths 1836-1985",
         dates: { from: 1836, to: 1913 },
       },
       vicbdm: {

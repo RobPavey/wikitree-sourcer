@@ -1,0 +1,44 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "forenames": "Donald",
+    "lastName": "Johnston"
+  },
+  "eventDate": {
+    "yearString": "1850"
+  },
+  "eventPlace": {
+    "atSea": true,
+    "placeString": "Hobsons Bay",
+    "shipName": "Simlah"
+  },
+  "lastNameAtDeath": "Johnston",
+  "deathDate": {
+    "yearString": "1850"
+  },
+  "deathPlace": {
+    "atSea": true,
+    "placeString": "Hobsons Bay",
+    "shipName": "Simlah"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Unknown"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Unknown"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Deaths",
+    "year": "1850",
+    "regNum": "28180"
+  },
+  "hasValidData": true
+}
