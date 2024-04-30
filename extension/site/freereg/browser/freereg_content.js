@@ -108,8 +108,8 @@ async function checkForPendingSearch() {
       }
 
       // clear the search data
-      chrome.storage.local.set({ freeregSearchData: undefined }, function () {
-        //console.log('cleared freeregSearchData');
+      chrome.storage.local.remove(["freeregSearchData"], function () {
+        //console.log("cleared freeregSearchData");
       });
     }
   }

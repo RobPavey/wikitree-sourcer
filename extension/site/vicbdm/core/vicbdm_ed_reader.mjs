@@ -26,7 +26,7 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
-import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
+import { NameObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 
 class VicbdmEdReader extends ExtractedDataReader {
   constructor(ed) {
@@ -248,11 +248,11 @@ class VicbdmEdReader extends ExtractedDataReader {
     //    "SYDNEY NEW SOUTH WALES, Australia"
     // This might only be the case for records before civil registration started
     // in 1853.
-    if (this.isPreReg) {
-      let placeString = this.getRecordDataValue("Place of event");
-      if (placeString) {
+    let placeString = this.getRecordDataValue("Place of event");
+    if (placeString) {
+      let lcPlaceString = placeString.toLowerCase();
+      if (this.isPreReg) {
         let usePlaceString = false;
-        let lcPlaceString = placeString.toLowerCase();
         if (!lcPlaceString.includes("victoria") && !lcPlaceString.includes("vic,")) {
           if (lcPlaceString.includes("new south wales") || lcPlaceString.includes("nsw")) {
             usePlaceString = true;
@@ -264,6 +264,42 @@ class VicbdmEdReader extends ExtractedDataReader {
         if (usePlaceString) {
           let cleanPlaceName = StringUtils.toInitialCapsEachWord(placeString);
           return this.makePlaceObjFromFullPlaceName(cleanPlaceName);
+        }
+      }
+
+      // Events at sea after 1853 are OK as they will say
+      // "was registered in ???? in Victoria, Australia"
+      if (this.isPreReg) {
+        if (lcPlaceString.includes("at sea")) {
+          // Before 1853, if the ship name exists, then use it
+          // e.g.: 'City Of Karachi, At Sea On Board " City Of Karachi ", Australia'
+          // or: 'Unknown, At Sea On Board Ship " Unknown ",'
+          let placeObj = new PlaceObj();
+          placeObj.atSea = true;
+          let shipName = placeString.replace(/^([^,]+)\, At Sea.*$/, "$1");
+          if (shipName && shipName != placeString) {
+            shipName = shipName.trim();
+            if (shipName.toLowerCase() != "unknown") {
+              placeObj.shipName = shipName;
+            }
+          }
+          return placeObj;
+        } else if (lcPlaceString.includes("on board")) {
+          let placeObj = new PlaceObj();
+          placeObj.atSea = true;
+          let shipName = placeString.replace(/^([^,]+)\, ([\w\s]+) On Board.*$/, "$1");
+          if (shipName && shipName != placeString) {
+            let otherName = placeString.replace(/^([^,]+)\, ([\w\s]+) On Board.*$/, "$2");
+            if (otherName && otherName != placeString) {
+              shipName = shipName.trim();
+              otherName = otherName.trim();
+              if (shipName.toLowerCase() != "unknown") {
+                placeObj.placeString = otherName;
+                placeObj.shipName = shipName;
+              }
+            }
+          }
+          return placeObj;
         }
       }
     }

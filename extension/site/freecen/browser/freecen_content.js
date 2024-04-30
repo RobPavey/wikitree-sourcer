@@ -110,8 +110,8 @@ async function checkForPendingSearch() {
       }
 
       // clear the search data
-      chrome.storage.local.set({ freecenSearchData: undefined }, function () {
-        //console.log('cleared freecenSearchData');
+      chrome.storage.local.remove(["freecenSearchData"], function () {
+        //console.log("cleared freecenSearchData");
       });
     }
   }

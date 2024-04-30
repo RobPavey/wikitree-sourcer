@@ -160,9 +160,10 @@ async function checkForPendingSearchData() {
       }
 
       // clear the search data
-      chrome.storage.local.set({ wikitreeSearchData: undefined }, function () {
-        //console.log('cleared wikitreeSearchData');
+      chrome.storage.local.remove(["wikitreeSearchData"], function () {
+        //console.log("cleared wikitreeSearchData");
       });
+      // clear the search data
     }
   }
 }
@@ -197,7 +198,7 @@ async function checkForPendingMergeEditData() {
       //console.log("checkForPendingMergeEditData: timeSinceEvent is :" + timeSinceEvent);
 
       // clear the search data before doing the post
-      chrome.storage.local.set({ wikitreeMergeEditData: undefined }, function () {
+      chrome.storage.local.remove(["wikitreeMergeEditData"], function () {
         //console.log('cleared wikitreeMergeEditData');
 
         if (timeSinceEvent < 10000 && mergeUrl == document.URL) {

@@ -199,8 +199,8 @@ async function checkForPendingSearchData() {
       }
 
       // clear the search data
-      chrome.storage.local.set({ searchData: undefined }, function () {
-        //console.log('cleared searchData');
+      chrome.storage.local.remove(["searchData"], function () {
+        //console.log("cleared searchData");
       });
     }
   }

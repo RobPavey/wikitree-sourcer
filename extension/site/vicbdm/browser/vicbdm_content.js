@@ -117,7 +117,7 @@ async function checkForPendingSearch() {
       }
 
       // clear the search data
-      chrome.storage.local.set({ vicbdmSearchData: undefined }, function () {
+      chrome.storage.local.remove(["vicbdmSearchData"], function () {
         //console.log("cleared vicbdmSearchData");
       });
     }
