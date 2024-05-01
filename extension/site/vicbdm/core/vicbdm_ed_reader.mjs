@@ -431,6 +431,8 @@ class VicbdmEdReader extends ExtractedDataReader {
     if (this.isDeath) {
       let age = this.getClickedRowDataValue("Age at Death");
       if (age) {
+        // remove "Years" or "years" from end
+        age = age.replace(/\s+[Yy]ears$/, "");
         return age;
       }
     }
