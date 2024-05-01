@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "forenames": "John",
+    "lastName": "Brilant"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1852"
+  },
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Elizabeth Jane",
+        "lastName": "Smith"
+      },
+      "marriageDate": {
+        "yearString": "1852"
+      },
+      "marriagePlace": {
+        "placeString": "Victoria, Australia"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "Marriages",
+    "year": "1852",
+    "regNum": "45796"
+  },
+  "hasValidData": true
+}

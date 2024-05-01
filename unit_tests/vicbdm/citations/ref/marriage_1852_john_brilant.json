@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Victoria Registry of Births Deaths & Marriages\"<br/>\nVictoria Marriages Index; Registration number: 45796 / 1852<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nJohn BRILANT; Spouse: Elizabeth Jane SMITH; Year: 1852; Place: ALL SAINTS CHURCH PORTLAND, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John married Elizabeth Jane Smith in 1852 in Victoria, Australia.<ref>\n'''Marriage''':\n\"Victoria Registry of Births Deaths & Marriages\"<br/>\nVictoria Marriages Index; Registration number: 45796 / 1852<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nJohn BRILANT; Spouse: Elizabeth Jane SMITH; Year: 1852; Place: ALL SAINTS CHURCH PORTLAND, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Victoria Registry of Births Deaths & Marriages\"<br/>Victoria Marriages Index; Registration number: 45796 / 1852<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>John BRILANT; Spouse: Elizabeth Jane SMITH; Year: 1852; Place: ALL SAINTS CHURCH PORTLAND, Australia.",
+    "type": "source"
+  }
+}
