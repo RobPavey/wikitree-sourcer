@@ -407,11 +407,30 @@ function openTemplate(info, tab) {
 }
 
 function openVicbdm(lcText, tab) {
-  //console.log("looks like Victorian BDM");
-  let num1 = lcText.replace(/^[^\d]*(\d+) ?\/ ?\d+.*$/, "$1");
-  let num2 = lcText.replace(/^.*[^\d]*\d+ ?\/ ?(\d+).*$/, "$1");
+  //console.log("looks like Victorian BDM, lcText is:");
+  //console.log(lcText);
+
+  let startIndex = lcText.search(/\d+ ?\/ ?\d+/);
+  if (startIndex == -1) {
+    return false;
+  }
+  let refText = lcText.substring(startIndex);
+  let endIndex = refText.search(/[^\d\s\/]/);
+  if (endIndex == -1) {
+    endIndex = refText.length;
+  }
+  refText = refText.substring(0, endIndex);
+
+  //console.log("refText is '" + refText + "'");
+
+  let num1 = refText.replace(/^(\d+) ?\/ ?\d+$/, "$1");
+  let num2 = refText.replace(/^\d+ ?\/ ?(\d+)$/, "$1");
   //console.log("num1 is '" + num1 + "'");
   //console.log("num2 is '" + num2 + "'");
+
+  if (!num1 || !num2 || num1 == refText || num2 == refText) {
+    return false;
+  }
 
   if (num1.length == 4 || num2.length == 4) {
     let number1 = Number(num1);
