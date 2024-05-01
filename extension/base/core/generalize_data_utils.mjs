@@ -1310,6 +1310,31 @@ class NameObj {
     }
   }
 
+  inferForenamesPlusPreferredAndNicknames() {
+    let forenames = this.inferForenames();
+    let nameArray = [];
+    if (forenames) {
+      nameArray = forenames.split(" ");
+    }
+
+    function addName(name) {
+      if (name) {
+        let newNameArray = name.split(" ");
+        for (let newName of newNameArray) {
+          if (!nameArray.includes(newName)) {
+            nameArray.push(newName);
+          }
+        }
+      }
+    }
+
+    addName(this.prefName);
+    addName(this.prefNames);
+    addName(this.nicknames);
+
+    return nameArray.join(" ");
+  }
+
   inferPrefix() {
     if (this.prefix) {
       return this.prefix;

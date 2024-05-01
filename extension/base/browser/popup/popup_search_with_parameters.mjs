@@ -337,33 +337,36 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
         listElement.appendChild(label);
       }
     }
-  } else if (siteData.includeMmn && siteData.includeMmn(gd, parameters)) {
-    if (gd.parents && (gd.parents.father || gd.parents.mother)) {
-      if (gd.mothersMaidenName) {
-        let mmn = gd.mothersMaidenName;
-        if (parameters.mmn === undefined) {
-          parameters.mmn = true;
-        }
+  }
 
-        let checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.checked = parameters.mmn;
-        checkbox.addEventListener("change", function () {
-          if (this.checked) {
-            parameters.mmn = true;
-          } else {
-            parameters.mmn = false;
-          }
-          setupParametersElements(data, siteData, listElement, parameters);
-        });
-        let label = document.createElement("label");
-        label.className = "dialogInput";
-        label.appendChild(checkbox);
-        let labelText = "Mother's Maiden Name: " + mmn;
-
-        label.appendChild(document.createTextNode(labelText));
-        listElement.appendChild(label);
+  if (siteData.includeMmn && siteData.includeMmn(gd, parameters)) {
+    console.log("gd.mothersMaidenName is: " + gd.mothersMaidenName);
+    if (gd.mothersMaidenName) {
+      let mmn = gd.mothersMaidenName;
+      if (parameters.mmn === undefined) {
+        parameters.mmn = true;
       }
+
+      let checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = parameters.mmn;
+      checkbox.addEventListener("change", function () {
+        if (this.checked) {
+          parameters.mmn = true;
+        } else {
+          parameters.mmn = false;
+        }
+        setupParametersElements(data, siteData, listElement, parameters);
+      });
+      let br = document.createElement("br");
+      listElement.appendChild(br);
+      let label = document.createElement("label");
+      label.className = "dialogInput";
+      label.appendChild(checkbox);
+      let labelText = "Mother's Maiden Name: " + mmn;
+
+      label.appendChild(document.createTextNode(labelText));
+      listElement.appendChild(label);
     }
   }
 }

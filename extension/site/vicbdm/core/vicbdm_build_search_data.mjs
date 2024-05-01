@@ -112,8 +112,18 @@ function addAppropriateSurname(gd, parameters, fieldData) {
   if (lastNamesArray.length > 0) {
     if (lastNamesArray.length == 1) {
       lastName = lastNamesArray[0];
-    } else if (lastNamesArray.length > parameters.lastNameIndex) {
-      lastName = lastNamesArray[parameters.lastNameIndex];
+    } else if (lastNamesArray.length > 1) {
+      for (let possibleLastName of lastNamesArray) {
+        if (parameters["includeLastName_" + possibleLastName]) {
+          if (lastName) {
+            lastName += " ";
+          }
+          lastName += possibleLastName;
+        }
+      }
+      if (!lastName) {
+        lastName = lastNamesArray[0];
+      }
     }
   }
   if (lastName) {
@@ -210,7 +220,7 @@ function buildSearchData(input) {
   if (parameters) {
     addAppropriateSurname(gd, parameters, fieldData);
   } else {
-    let lastName = gd.inferLastName();
+    let lastName = gd.inferLastNames();
     if (typeOfSearch == "Births") {
       lastName = gd.inferLastNameAtBirth();
     } else if (typeOfSearch == "Deaths") {
@@ -320,6 +330,59 @@ function buildSearchData(input) {
 
   if (parameters && parameters.place != "<none>") {
     setAdditionalOption("historicalSearch-additionalOptions-place", parameters.place);
+  }
+
+  if (parameters && parameters.spouseIndex != -1 && parameters.spouseIndex < gd.spouses.length) {
+    let spouse = gd.spouses[parameters.spouseIndex];
+    if (spouse.name) {
+      let lastName = spouse.name.inferLastName();
+      let givenName = spouse.name.inferForenames();
+      if (lastName) {
+        setAdditionalOption("historicalSearch-additionalOptions-spouse-name-familyName", lastName);
+      }
+      if (givenName) {
+        setAdditionalOption("historicalSearch-additionalOptions-spouse-name-firstGivenName", givenName);
+      }
+    }
+  }
+
+  if (gd.parents) {
+    if (parameters && parameters.father && gd.parents.father && gd.parents.father.name) {
+      let givenName = gd.parents.father.name.inferForenames();
+      if (givenName) {
+        setAdditionalOption("historicalSearch-additionalOptions-father-name-firstGivenName", givenName);
+      }
+      if (parameters.category == "Deaths") {
+        let lastName = gd.parents.father.name.inferLastName();
+        if (lastName) {
+          setAdditionalOption("historicalSearch-additionalOptions-father-name-familyName", lastName);
+        }
+      }
+    }
+    if (parameters && parameters.mother && gd.parents.mother && gd.parents.mother.name) {
+      let givenName = gd.parents.mother.name.inferForenames();
+      if (givenName) {
+        setAdditionalOption("historicalSearch-additionalOptions-mother-name-firstGivenName", givenName);
+      }
+      if (parameters.category == "Deaths") {
+        let lastName = gd.parents.mother.name.inferLastName();
+        if (lastName) {
+          setAdditionalOption("historicalSearch-additionalOptions-mother-name-familyName", lastName);
+        }
+      }
+    }
+  }
+
+  if (gd.mothersMaidenName) {
+    let includeMmn = false;
+    if (parameters && parameters.mmn) {
+      includeMmn = true;
+    } else if (options.search_vicbdm_includeMmn && (typeOfSearch == "Births" || typeOfSearch == "Deaths")) {
+      includeMmn = true;
+    }
+    if (includeMmn) {
+      setAdditionalOption("historicalSearch-additionalOptions-mother-name-familyNameAtBirth", gd.mothersMaidenName);
+    }
   }
 
   //console.log("fieldData is:");

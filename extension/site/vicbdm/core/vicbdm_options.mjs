@@ -55,15 +55,9 @@ const searchOptionsGroup = {
       defaultValue: false,
     },
     {
-      optionName: "includeMaidenName",
+      optionName: "includeMmn",
       type: "checkbox",
-      label: "Include matches with a memorial's maiden name in search",
-      defaultValue: true,
-    },
-    {
-      optionName: "includeCemeteryLocation",
-      type: "checkbox",
-      label: "Include death/profile location as cemetery location in search",
+      label: "Include mother's maiden name in non-parameters Births/Deaths search",
       defaultValue: false,
     },
     {

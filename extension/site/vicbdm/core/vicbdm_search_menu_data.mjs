@@ -25,6 +25,7 @@ SOFTWARE.
 import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 import { vicbdmPlaceAbbreviationTable } from "./vicbdm_place_abbreviations.mjs";
 import { vicbdmPlaceAbbreviationTable2 } from "./vicbdm_place_abbreviations2.mjs";
+import { vicbdmPlaceVariations } from "./vicbdm_place_variations.mjs";
 
 function pushPlaceAbbreviations(placeName, values) {
   if (!placeName) {
@@ -43,7 +44,14 @@ function pushPlaceAbbreviations(placeName, values) {
 
   for (let row of vicbdmPlaceAbbreviationTable2) {
     if (row.name.toLowerCase() == lcPlaceName) {
-      abbrevs.push(row.abbrev);
+      abbrevs.push(row.abbrev.toUpperCase());
+    }
+  }
+
+  let variations = vicbdmPlaceVariations[lcPlaceName];
+  if (variations) {
+    for (let variation of variations) {
+      abbrevs.push(variation.toUpperCase());
     }
   }
 
@@ -59,8 +67,8 @@ function pushPlaceAbbreviations(placeName, values) {
 function buildSelectValuesForPlaces(placeNames) {
   let values = [];
 
-  console.log("buildSelectValuesForPlace: placeNames is:");
-  console.log(placeNames);
+  //console.log("buildSelectValuesForPlace: placeNames is:");
+  //console.log(placeNames);
 
   function addValue(valueString) {
     if (valueString) {
@@ -80,8 +88,8 @@ function buildSelectValuesForPlaces(placeNames) {
     place.placeString = placeName;
     let placeParts = place.separatePlaceIntoParts();
 
-    console.log("buildSelectValuesForPlace: placeParts is:");
-    console.log(placeParts);
+    //console.log("buildSelectValuesForPlace: placeParts is:");
+    //console.log(placeParts);
 
     if (placeParts.localPlace) {
       let localPlace = placeParts.localPlace;
@@ -93,8 +101,26 @@ function buildSelectValuesForPlaces(placeNames) {
     }
   }
 
-  console.log("buildSelectValuesForPlace: values is:");
-  console.log(values);
+  if (values.length > 2) {
+    // add wildcard
+    let wildcard = "/";
+    let addedValue = false;
+    for (let i = 1; i < values.length; i++) {
+      let value = values[i];
+      let text = value.value;
+      if (addedValue) {
+        wildcard += "|";
+      }
+      wildcard += text;
+      addedValue = true;
+    }
+    wildcard += "/";
+    let wildcardValue = { value: wildcard, text: "All of the above" };
+    values.push(wildcardValue);
+  }
+
+  //console.log("buildSelectValuesForPlace: values is:");
+  //console.log(values);
 
   return values;
 }
@@ -115,10 +141,72 @@ const VicbdmData = {
     return categories;
   },
 
+  includeLastNameSelector: function (generalizedData, parameters) {
+    // we can support multiple last names in search so do not use the default
+    return false;
+  },
+
+  includeSpouses: function (generalizedData, parameters) {
+    if (parameters.category == "Births") {
+      return false;
+    }
+
+    return true;
+  },
+
+  includeParents: function (generalizedData, parameters) {
+    if (parameters.category == "Births" || parameters.category == "Deaths") {
+      return true;
+    }
+    return false;
+  },
+
+  includeMmn: function (generalizedData, parameters) {
+    // including MMN when searching all three types will exclude all marriages
+    if (parameters.category == "Births" || parameters.category == "Deaths") {
+      return true;
+    }
+    return false;
+  },
+
   getAdditionalControls(generalizedData, parameters, options) {
     let controls = [];
 
-    let placeNames = generalizedData.inferPlaceNames();
+    // Last names
+    let lastNamesArray = generalizedData.inferPersonLastNamesArray(generalizedData);
+    if (lastNamesArray.length > 1) {
+      let lastNamesHeadingControl = {};
+      lastNamesHeadingControl.type = "heading";
+      lastNamesHeadingControl.label = "There are multiple last names, select which to use";
+      controls.push(lastNamesHeadingControl);
+
+      for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
+        let lastName = lastNamesArray[lastNameIndex];
+
+        let nameControl = {};
+        nameControl.elementId = "includeLastName_" + lastName;
+        nameControl.parameterName = "includeLastName_" + lastName;
+        nameControl.type = "checkbox";
+        nameControl.label = lastName;
+        controls.push(nameControl);
+      }
+    }
+
+    // place
+    let placeNames = [];
+    if (parameters.category == "All" || parameters.category == "Marriages") {
+      placeNames = generalizedData.inferPlaceNames();
+    } else if (parameters.category == "Births") {
+      let birthPlace = generalizedData.inferBirthPlace();
+      if (birthPlace) {
+        placeNames.push(birthPlace);
+      }
+    } else if (parameters.category == "Deaths") {
+      let deathPlace = generalizedData.inferDeathPlace();
+      if (deathPlace) {
+        placeNames.push(deathPlace);
+      }
+    }
     if (placeNames && placeNames.length > 0) {
       let placeControl = {};
       placeControl.elementId = "place";
@@ -133,12 +221,56 @@ const VicbdmData = {
   },
 
   setDefaultSearchParameters: function (generalizedData, parameters, options) {
-    parameters.category = "Births";
+    parameters.category = "All";
+
+    // Last names
+    let lastNamesArray = generalizedData.inferPersonLastNamesArray(generalizedData);
+    if (lastNamesArray.length > 1) {
+      for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
+        let lastName = lastNamesArray[lastNameIndex];
+
+        parameters["includeLastName_" + lastName] = true;
+      }
+    }
 
     parameters.place = "<none>";
   },
 
-  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {},
+  updateParametersOnCategoryChange: function (generalizedData, parameters, options) {
+    // Last names
+    let lastNamesArray = generalizedData.inferPersonLastNamesArray(generalizedData);
+    if (lastNamesArray.length > 1) {
+      // init all includes to false
+      for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
+        let lastName = lastNamesArray[lastNameIndex];
+        parameters["includeLastName_" + lastName] = false;
+      }
+
+      if (parameters.category == "Births") {
+        let lastName = generalizedData.inferLastNameAtBirth();
+        if (!lastName) {
+          lastName = lastNamesArray[0];
+        }
+        if (lastName) {
+          parameters["includeLastName_" + lastName] = true;
+        }
+      } else if (parameters.category == "Deaths") {
+        let lastName = generalizedData.inferLastNameAtDeath();
+        if (!lastName) {
+          lastName = lastNamesArray[lastNamesArray.length - 1];
+        }
+        if (lastName) {
+          parameters["includeLastName_" + lastName] = true;
+        }
+      } else {
+        for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
+          let lastName = lastNamesArray[lastNameIndex];
+
+          parameters["includeLastName_" + lastName] = true;
+        }
+      }
+    }
+  },
 
   updateParametersOnSubcategoryChange: function (generalizedData, parameters, options) {},
 
