@@ -255,7 +255,7 @@ async function updateGeneralizedDataUsingApiResponse(data) {
         forenames += apiInfo.middleName;
       }
       updateValueIfNeeded(person.name, "forenames", forenames);
-      if (apiInfo.prefName != forenames) {
+      if (apiInfo.prefName && apiInfo.prefName != forenames) {
         updateValueIfNeeded(person.name, "prefName", apiInfo.prefName);
       }
       updateValueIfNeeded(person.name, "nicknames", apiInfo.nicknames);
