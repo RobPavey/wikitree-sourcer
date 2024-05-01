@@ -30,7 +30,7 @@ const regressionData = [
     // has pref name
     caseName: "wikitree_stanway-252_read",
     inputPath: "wikitree/generalized_data/ref/stanway-252_read",
-    typeOfSearch: "SameCollection",
+    typeOfSearch: "Births",
   },
 ];
 

@@ -24,30 +24,34 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
+import { VicbdmEdReader } from "./vicbdm_ed_reader.mjs";
 
 function buildVicbdmUrl(ed, builder) {
   return "https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history";
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Victoria State Government, Registry of Births, Deaths and Marriages Victoria";
+  builder.sourceTitle += "Victoria Registry of Births Deaths & Marriages";
 }
 
 function buildSourceReference(ed, gd, builder) {
   let recordType = gd.recordType;
-  builder.sourceReference = "";
+  let typeText = "";
   if (recordType == RT.Birth || recordType == RT.BirthRegistration) {
-    builder.sourceReference += "Births";
+    typeText = "Births";
   } else if (recordType == RT.Death || recordType == RT.DeathRegistration) {
-    builder.sourceReference += "Deaths";
+    typeText = "Deaths";
   } else if (recordType == RT.Marriage || recordType == RT.MarriageRegistration) {
-    builder.sourceReference += "Marriages";
+    typeText = "Marriages";
+  }
+  if (typeText) {
+    builder.addSourceReferenceText("Victoria " + typeText + " Index");
   }
 
   if (ed.recordData) {
     let registrationNumber = ed.recordData["Registration number"];
     if (registrationNumber) {
-      builder.sourceReference += ", Registration number: " + registrationNumber;
+      builder.addSourceReferenceField("Registration number", registrationNumber);
     }
   }
 }
@@ -55,15 +59,47 @@ function buildSourceReference(ed, gd, builder) {
 function buildRecordLink(ed, gd, builder) {
   var vicbdmUrl = buildVicbdmUrl(ed, builder);
 
-  let recordLink = "[" + vicbdmUrl + " Link to Search Page]";
+  let recordLink = "[" + vicbdmUrl + " BDM Victoria]";
   builder.recordLinkOrTemplate = recordLink;
+}
+
+function buildDataString(ed, gd, builder) {
+  let edReader = new VicbdmEdReader(ed);
+
+  let dataString = "";
+
+  let name = edReader.getCitationName();
+  dataString = builder.addSingleValueToDataListString(dataString, name);
+
+  function addKeyValuePair(key, func) {
+    let value = edReader[func]();
+    dataString = builder.addKeyValuePairToDataListString(dataString, key, value);
+  }
+
+  addKeyValuePair("Spouse", "getCitationSpouse");
+  addKeyValuePair("Age", "getCitationAge");
+  addKeyValuePair("Year", "getCitationYear");
+  addKeyValuePair("Place", "getCitationPlace");
+  addKeyValuePair("Father", "getCitationFather");
+  addKeyValuePair("Mother", "getCitationMother");
+  addKeyValuePair("Mother's LNAB", "getCitationMotherLnab");
+  addKeyValuePair("Place of birth", "getCitationPlaceOfBirth");
+
+  if (dataString) {
+    if (!dataString.endsWith(".")) {
+      dataString += ".";
+    }
+    builder.dataString = dataString;
+  }
 }
 
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+
+  //builder.addStandardDataString(gd);
+  buildDataString(ed, gd, builder);
 }
 
 function buildCitation(input) {

@@ -142,7 +142,7 @@ class VicbdmEdReader extends ExtractedDataReader {
     }
   }
 
-  makeNameObjFromFamilyNameCommaGivenNames(nameString) {
+  getFamilyAndGivenNamesFromFamilyNameCommaGivenNames(nameString) {
     if (nameString) {
       let commaIndex = nameString.indexOf(",");
       if (commaIndex != -1) {
@@ -192,20 +192,56 @@ class VicbdmEdReader extends ExtractedDataReader {
         }
 
         if (familyNameString || givenNamesString) {
-          let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
+          return {
+            familyNameString: familyNameString,
+            givenNamesString: givenNamesString,
+          };
+        }
+      }
+    }
 
-          // Sometimes the given names has a name in all caps, in examples I have seen it is actually
-          // the family name, so perhaps should check for that.
-          let cleanGivenNames = NameUtils.convertNameFromAllCapsToMixedCase(givenNamesString);
+    return undefined;
+  }
 
-          cleanGivenNames = this.expandGivenNameAbbreviations(cleanGivenNames);
+  makeNameObjFromFamilyNameCommaGivenNames(nameString) {
+    if (nameString) {
+      let parts = this.getFamilyAndGivenNamesFromFamilyNameCommaGivenNames(nameString);
 
-          let nameObj = new NameObj();
+      if (parts) {
+        let familyNameString = parts.familyNameString;
+        let givenNamesString = parts.givenNamesString;
+        let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
 
-          nameObj.setForenames(cleanGivenNames);
-          nameObj.setLastName(cleanFamilyName);
+        // Sometimes the given names has a name in all caps, in examples I have seen it is actually
+        // the family name, so perhaps should check for that.
+        let cleanGivenNames = NameUtils.convertNameFromAllCapsToMixedCase(givenNamesString);
 
-          return nameObj;
+        cleanGivenNames = this.expandGivenNameAbbreviations(cleanGivenNames);
+
+        let nameObj = new NameObj();
+
+        nameObj.setForenames(cleanGivenNames);
+        nameObj.setLastName(cleanFamilyName);
+
+        return nameObj;
+      }
+    }
+  }
+
+  makeCitationNameFromFamilyNameCommaGivenNames(nameString) {
+    if (nameString) {
+      let parts = this.getFamilyAndGivenNamesFromFamilyNameCommaGivenNames(nameString);
+
+      if (parts) {
+        let familyNameString = parts.familyNameString;
+        let givenNamesString = parts.givenNamesString;
+
+        if (familyNameString && givenNamesString) {
+          return givenNamesString + " " + familyNameString;
+        } else if (givenNamesString) {
+          return givenNamesString;
+        } else if (familyNameString) {
+          return familyNameString;
         }
       }
     }
@@ -506,6 +542,90 @@ class VicbdmEdReader extends ExtractedDataReader {
     let collectionData = { id: id, year: this.yearString, regNum: this.registrationNum };
 
     return collectionData;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Functions to support build citation
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getCitationName() {
+    let familyName = this.getRecordDataValue("Family name");
+    let givenNames = this.getRecordDataValue("Given name(s)");
+
+    if (familyName && givenNames) {
+      return givenNames + " " + familyName;
+    } else if (givenNames) {
+      return givenNames;
+    } else if (familyName) {
+      return familyName;
+    }
+  }
+
+  getCitationSpouse() {
+    if (this.isDeath) {
+      let spouseName = this.getClickedRowDataValue("Spouse at Death");
+      return this.makeCitationNameFromFamilyNameCommaGivenNames(spouseName);
+    } else if (this.isMarriage) {
+      let familyName = this.getRecordDataValue("Spouse's family name");
+      let givenNames = this.getRecordDataValue("Spouse's given name(s)");
+
+      if (familyName && givenNames) {
+        return givenNames + " " + familyName;
+      } else if (givenNames) {
+        return givenNames;
+      } else if (familyName) {
+        return familyName;
+      }
+    }
+  }
+
+  getCitationFather() {
+    let fathersName = this.getRecordDataValue("Father's Name");
+    return this.makeCitationNameFromFamilyNameCommaGivenNames(fathersName);
+  }
+
+  getCitationMother() {
+    let mothersName = this.getRecordDataValue("Mother's name");
+    return this.makeCitationNameFromFamilyNameCommaGivenNames(mothersName);
+  }
+
+  getCitationMotherLnab() {
+    let mothersNameLnab = this.getRecordDataValue("Mother's family name at birth");
+    return mothersNameLnab;
+  }
+
+  getCitationYear() {
+    return this.yearString;
+  }
+
+  getCitationPlace() {
+    let placeString = this.getRecordDataValue("Place of event");
+
+    let clickedRowValue = "";
+    if (this.isBirth) {
+      clickedRowValue = this.getClickedRowDataValue("Place of birth");
+    } else if (this.Death) {
+      clickedRowValue = this.getClickedRowDataValue("Place of death");
+    }
+    if (clickedRowValue) {
+      placeString = clickedRowValue;
+    }
+
+    return placeString;
+  }
+
+  getCitationAge() {
+    if (this.isDeath) {
+      let age = this.getClickedRowDataValue("Age at Death");
+      return age;
+    }
+  }
+
+  getCitationPlaceOfBirth() {
+    if (!this.isBirth) {
+      let placeString = this.getClickedRowDataValue("Place of birth");
+      return placeString;
+    }
   }
 }
 

@@ -2,7 +2,10 @@
   "std": {
     "fieldData": {
       "historicalSearch-name-firstGivenName": "Frances Fanny",
-      "historicalSearch-name-familyName": "Stanway"
+      "historicalSearch-name-familyName": "Stanway",
+      "historicalSearch-events-birth": true,
+      "historicalSearch-yearRange-from": "1859",
+      "historicalSearch-yearRange-to": "1863"
     },
     "selectData": {}
   }

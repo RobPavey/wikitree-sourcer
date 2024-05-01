@@ -250,7 +250,7 @@ class CitationBuilder {
       valueSep = "";
     }
 
-    if (value && value != "-") {
+    if (key && value && value != "-") {
       value = value.trim();
       if (dataListString != "") {
         if (!dataListString.endsWith(itemSep) && !dataListString.endsWith(".")) {
