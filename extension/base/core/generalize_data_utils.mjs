@@ -1310,8 +1310,11 @@ class NameObj {
     }
   }
 
-  inferForenamesPlusPreferredAndNicknames() {
+  inferForenamesPlusPreferredAndNicknames(includeMiddleNames = true, includePrefName = true, includeNicknames = true) {
     let forenames = this.inferForenames();
+    if (!includeMiddleNames) {
+      forenames = this.inferFirstName();
+    }
     let nameArray = [];
     if (forenames) {
       nameArray = forenames.split(" ");
@@ -1328,9 +1331,13 @@ class NameObj {
       }
     }
 
-    addName(this.prefName);
-    addName(this.prefNames);
-    addName(this.nicknames);
+    if (includePrefName) {
+      addName(this.prefName);
+      addName(this.prefNames);
+    }
+    if (includeNicknames) {
+      addName(this.nicknames);
+    }
 
     return nameArray.join(" ");
   }

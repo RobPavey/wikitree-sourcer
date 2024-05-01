@@ -182,39 +182,16 @@ function buildSearchData(input) {
 
   let givenNamesArray = [];
 
-  function addGivenNames(newNames) {
-    if (newNames) {
-      let newNamesArray = newNames.split(" ");
-      for (let newName of newNamesArray) {
-        newName = newName.trim();
-        if (!givenNamesArray.includes(newName)) {
-          givenNamesArray.push(newName);
-        }
-      }
+  if (gd.name) {
+    let givenNames = gd.name.inferForenamesPlusPreferredAndNicknames(
+      options.search_vicbdm_includeMiddleName,
+      options.search_vicbdm_includePrefName,
+      options.search_vicbdm_includeNicknames
+    );
+
+    if (givenNames) {
+      fieldData["historicalSearch-name-firstGivenName"] = givenNames;
     }
-  }
-
-  if (options.search_vicbdm_includeMiddleName) {
-    addGivenNames(gd.inferForenames());
-  } else {
-    addGivenNames(gd.inferFirstName());
-  }
-
-  if (options.search_vicbdm_includePrefName) {
-    if (gd.name) {
-      addGivenNames(gd.name.prefNames);
-    }
-  }
-
-  if (options.search_vicbdm_includeNicknames) {
-    if (gd.name) {
-      addGivenNames(gd.name.nicknames);
-    }
-  }
-
-  if (givenNamesArray.length > 0) {
-    let givenNames = givenNamesArray.join(" ");
-    fieldData["historicalSearch-name-firstGivenName"] = givenNames;
   }
 
   if (parameters) {
@@ -265,20 +242,23 @@ function buildSearchData(input) {
   }
 
   // date range
-  if (typeOfSearch == "SameCollection") {
-    let yearString = gd.inferEventYear();
+  let birthYear = gd.inferBirthYear();
+  let deathYear = gd.inferDeathYear();
+  let eventYear = gd.inferEventYear();
+  if (typeOfSearch == "SameCollection" && eventYear) {
+    let yearString = eventYear;
     if (yearString) {
       fieldData["historicalSearch-yearRange-from"] = yearString;
       fieldData["historicalSearch-yearRange-to"] = yearString;
     }
-  } else if (typeOfSearch == "Births" || (parameters && parameters.category == "Births")) {
+  } else if (birthYear && (typeOfSearch == "Births" || (parameters && parameters.category == "Births"))) {
     let qualifier = gd.inferBirthDateQualifier();
     let exactness = options.search_vicbdm_birthYearExactness;
-    setYearRangeForYear(gd.inferBirthYear(), qualifier, exactness, fieldData);
-  } else if (typeOfSearch == "Deaths" || (parameters && parameters.category == "Deaths")) {
+    setYearRangeForYear(birthYear, qualifier, exactness, fieldData);
+  } else if (deathYear && (typeOfSearch == "Deaths" || (parameters && parameters.category == "Deaths"))) {
     let qualifier = gd.inferDeathDateQualifier();
     let exactness = options.search_vicbdm_deathYearExactness;
-    setYearRangeForYear(gd.inferDeathYear(), qualifier, exactness, fieldData);
+    setYearRangeForYear(deathYear, qualifier, exactness, fieldData);
   } else if (typeOfSearch == "Marriages" || (parameters && parameters.category == "Marriages")) {
     const maxLifespan = Number(options.search_general_maxLifespan);
     let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate);
@@ -333,24 +313,36 @@ function buildSearchData(input) {
   }
 
   if (parameters && parameters.spouseIndex != -1 && parameters.spouseIndex < gd.spouses.length) {
-    let spouse = gd.spouses[parameters.spouseIndex];
-    if (spouse.name) {
-      let lastName = spouse.name.inferLastName();
-      let givenName = spouse.name.inferForenames();
-      if (lastName) {
-        setAdditionalOption("historicalSearch-additionalOptions-spouse-name-familyName", lastName);
-      }
-      if (givenName) {
-        setAdditionalOption("historicalSearch-additionalOptions-spouse-name-firstGivenName", givenName);
+    if (parameters.category != "Births") {
+      let spouse = gd.spouses[parameters.spouseIndex];
+      if (spouse.name) {
+        let givenNames = spouse.father.name.inferForenamesPlusPreferredAndNicknames(
+          options.search_vicbdm_includeMiddleName,
+          options.search_vicbdm_includePrefName,
+          options.search_vicbdm_includeNicknames
+        );
+        if (givenNames) {
+          setAdditionalOption("historicalSearch-additionalOptions-spouse-name-firstGivenName", givenNames);
+        }
+
+        let lastName = spouse.name.inferLastName();
+        if (lastName) {
+          setAdditionalOption("historicalSearch-additionalOptions-spouse-name-familyName", lastName);
+        }
       }
     }
   }
 
   if (gd.parents) {
     if (parameters && parameters.father && gd.parents.father && gd.parents.father.name) {
-      let givenName = gd.parents.father.name.inferForenames();
-      if (givenName) {
-        setAdditionalOption("historicalSearch-additionalOptions-father-name-firstGivenName", givenName);
+      let givenNames = gd.parents.father.name.inferForenamesPlusPreferredAndNicknames(
+        options.search_vicbdm_includeMiddleName,
+        options.search_vicbdm_includePrefName,
+        options.search_vicbdm_includeNicknames
+      );
+
+      if (givenNames) {
+        setAdditionalOption("historicalSearch-additionalOptions-father-name-firstGivenName", givenNames);
       }
       if (parameters.category == "Deaths") {
         let lastName = gd.parents.father.name.inferLastName();
@@ -360,9 +352,13 @@ function buildSearchData(input) {
       }
     }
     if (parameters && parameters.mother && gd.parents.mother && gd.parents.mother.name) {
-      let givenName = gd.parents.mother.name.inferForenames();
-      if (givenName) {
-        setAdditionalOption("historicalSearch-additionalOptions-mother-name-firstGivenName", givenName);
+      let givenNames = gd.parents.mother.name.inferForenamesPlusPreferredAndNicknames(
+        options.search_vicbdm_includeMiddleName,
+        options.search_vicbdm_includePrefName,
+        options.search_vicbdm_includeNicknames
+      );
+      if (givenNames) {
+        setAdditionalOption("historicalSearch-additionalOptions-mother-name-firstGivenName", givenNames);
       }
       if (parameters.category == "Deaths") {
         let lastName = gd.parents.mother.name.inferLastName();

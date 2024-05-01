@@ -111,7 +111,7 @@ async function makeApiRequests(extractedData) {
     }
   } else {
     timeApiRequestMade = Date.now();
-    const fields = "Id,Gender,Name,FirstName,MiddleName,LastNameAtBirth,LastNameCurrent";
+    const fields = "Id,Gender,Name,FirstName,MiddleName,LastNameAtBirth,LastNameCurrent,RealName,Nicknames";
     wtApiGetRelatives(extractedData.wikiId, fields, true, false, false, true).then(
       function handleResolve(jsonData) {
         if (jsonData && jsonData.length > 0) {
@@ -158,6 +158,8 @@ function waitForAPIResponse() {
 
 async function updateGeneralizedDataUsingApiResponse(data) {
   function getApiPersonFromGetRelatives(wikiId) {
+    //console.log("getApiPersonFromGetRelatives, apiResponse is");
+    //console.log(apiResponse);
     let items = apiResponse[0].items;
     if (items && items.length) {
       for (let item of items) {
@@ -181,6 +183,8 @@ async function updateGeneralizedDataUsingApiResponse(data) {
               cln: spouse.LastNameCurrent,
               firstName: spouse.FirstName,
               middleName: spouse.MiddleName,
+              prefName: spouse.RealName,
+              nicknames: spouse.NickNames,
             };
           }
         }
@@ -200,6 +204,8 @@ async function updateGeneralizedDataUsingApiResponse(data) {
             cln: father.LastNameCurrent,
             firstName: father.FirstName,
             middleName: father.MiddleName,
+            prefName: father.RealName,
+            nicknames: father.NickNames,
           };
         }
       }
@@ -218,6 +224,8 @@ async function updateGeneralizedDataUsingApiResponse(data) {
             cln: mother.LastNameCurrent,
             firstName: mother.FirstName,
             middleName: mother.MiddleName,
+            prefName: mother.RealName,
+            nicknames: mother.NickNames,
           };
         }
       }
@@ -225,6 +233,8 @@ async function updateGeneralizedDataUsingApiResponse(data) {
   }
 
   function updatePersonWithApiInfo(person, apiInfo) {
+    //console.log("updatePersonWithApiInfo. apiInfo is:");
+    //console.log(apiInfo);
     function updateValueIfNeeded(object, fieldName, apiValue) {
       if (apiValue && object[fieldName] != apiValue) {
         console.log("Due to WikiTree API, changing " + fieldName + " from " + object[fieldName] + " to " + apiValue);
@@ -245,6 +255,10 @@ async function updateGeneralizedDataUsingApiResponse(data) {
         forenames += apiInfo.middleName;
       }
       updateValueIfNeeded(person.name, "forenames", forenames);
+      if (apiInfo.prefName != forenames) {
+        updateValueIfNeeded(person.name, "prefName", apiInfo.prefName);
+      }
+      updateValueIfNeeded(person.name, "nicknames", apiInfo.nicknames);
     }
   }
 
