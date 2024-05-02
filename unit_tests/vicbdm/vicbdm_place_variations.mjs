@@ -4,6 +4,7 @@ const vicbdmPlaceVariations = {
   alberton: ["Alburton"],
 };
 
+// proposed new format
 const places = [
   {
     name: "Coongulmerang",

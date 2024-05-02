@@ -144,11 +144,49 @@ function writeTableToFile(testManager, placeTable) {
   writeTestOutputTextFile(resultJsonString, "vicbdm", "buildOutput", testData, "", logger);
 }
 
+function writeReport(placeTable) {
+  let abbrevToPlace = {};
+
+  function addPlace(abbrev, place) {
+    let entry = abbrevToPlace[abbrev];
+    if (!entry) {
+      abbrevToPlace[abbrev] = [place];
+    } else {
+      if (!entry.includes(place)) {
+        entry.push(place);
+      }
+    }
+  }
+  for (let place of placeTable) {
+    for (let variation of place.variations) {
+      addPlace(variation.name, place);
+    }
+  }
+
+  console.log("abbrevToPlace is:");
+  console.log(abbrevToPlace);
+
+  let abbrevMostUsed = undefined;
+  let maxTimesUsed = 0;
+  for (let key of Object.keys(abbrevToPlace)) {
+    let entry = abbrevToPlace[key];
+    let numPlaces = entry.length;
+    if (numPlaces > maxTimesUsed) {
+      abbrevMostUsed = key;
+      maxTimesUsed = numPlaces;
+    }
+  }
+
+  console.log("The abbrevation used for the most places is: " + abbrevMostUsed + ", used " + maxTimesUsed + " times.");
+}
+
 async function build(testManager) {
   console.log("build place data");
 
   let placeTable = buildNewTable();
   writeTableToFile(testManager, placeTable);
+
+  writeReport(placeTable);
 }
 
 export { build };

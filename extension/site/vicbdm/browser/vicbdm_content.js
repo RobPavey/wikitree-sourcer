@@ -255,7 +255,7 @@ async function doPendingSearch() {
 }
 
 async function doPendingSearchFromDetailsPage() {
-  console.log("doPendingSearchFromDetailsPage");
+  //console.log("doPendingSearchFromDetailsPage");
 
   setSearchingBanner();
 
@@ -263,8 +263,8 @@ async function doPendingSearchFromDetailsPage() {
 
   // we have to go back to search results and then refine search
   let backButtonElement = document.querySelector("search-result-details div.btnRow button.btn-secondary");
-  console.log("backButtonElement is:");
-  console.log(backButtonElement);
+  //console.log("backButtonElement is:");
+  //console.log(backButtonElement);
   if (backButtonElement) {
     //console.log("about to click button");
     // click the button to go back to search results
@@ -276,15 +276,15 @@ async function doPendingSearchFromDetailsPage() {
 }
 
 async function doPendingSearchFromSearchResultsPage() {
-  console.log("doPendingSearchFromSearchResultsPage");
+  //console.log("doPendingSearchFromSearchResultsPage");
   setSearchingBanner();
   await sleep(10);
 
   // we have to refine search
   // we have to go back to search results and then refine search
   let refineButtonElement = document.querySelector("search-results-page div.btnRow button.btn-secondary");
-  console.log("refineButtonElement is:");
-  console.log(refineButtonElement);
+  //console.log("refineButtonElement is:");
+  //console.log(refineButtonElement);
   if (refineButtonElement) {
     //console.log("about to click button");
     // click the button to go back to search results
@@ -364,13 +364,13 @@ async function addSearchResultsListener() {
 }
 
 async function unregisterTabWithBackground() {
-  console.log("unregisterTabWithBackground");
+  //console.log("unregisterTabWithBackground");
 
   // send message to background script that we have a vicbdm tab open
   let unregisterResponse = await chrome.runtime.sendMessage({ type: "unregisterTab", siteName: "vicbdm" });
 
-  console.log("vicbdm, response from unregisterTab message");
-  console.log(unregisterResponse);
+  //console.log("vicbdm, response from unregisterTab message");
+  //console.log(unregisterResponse);
 
   if (chrome.runtime.lastError) {
     // possibly there is no background script loaded, this should never happen
@@ -383,18 +383,18 @@ async function registerTabWithBackground() {
   // send message to background script that we have a vicbdm tab open
   let registerResponse = await chrome.runtime.sendMessage({ type: "registerTab", siteName: "vicbdm" });
 
-  console.log("vicbdm, response from registerTab message");
-  console.log(registerResponse);
+  //console.log("vicbdm, response from registerTab message");
+  //console.log(registerResponse);
 
   if (chrome.runtime.lastError) {
     // possibly there is no background script loaded, this should never happen
     console.log("vicbdm: No response from background script, lastError message is:");
     console.log(chrome.runtime.lastError.message);
   } else {
-    console.log("addng event listener for unregister");
+    //console.log("addng event listener for unregister");
 
     window.addEventListener("pagehide", function () {
-      console.log("pagehide event");
+      //console.log("pagehide event");
       unregisterTabWithBackground();
     });
   }
@@ -456,9 +456,9 @@ function addMutationObserver() {
 
 function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    console.log("vicbdm: additionalMessageHandler, request is:");
-    console.log(request);
-    console.log("vicbdm: additionalMessageHandler, currentPageType is: " + currentPageType);
+    //console.log("vicbdm: additionalMessageHandler, request is:");
+    //console.log(request);
+    //console.log("vicbdm: additionalMessageHandler, currentPageType is: " + currentPageType);
 
     pendingSearchData = request.vicbdmSearchData;
 

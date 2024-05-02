@@ -31,7 +31,7 @@ import * as build_place_data from "./vicbdm_build_place_data.mjs";
 async function runTests(testManager) {
   await test_content_and_citation.runTests(testManager);
   await test_build_search_data.runTests(testManager);
-  await build_place_data.build(testManager);
+  //await build_place_data.build(testManager);
 }
 
 registerTest("vicbdm", runTests);

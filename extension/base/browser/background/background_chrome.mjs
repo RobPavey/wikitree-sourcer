@@ -56,8 +56,8 @@ function messageHandler(request, sender, sendResponse) {
   // Request should have these fields
   // type = the message type, a string that defines the action to be performed
 
-  console.log("background messageHandler, request is: ");
-  console.log(request);
+  //console.log("background messageHandler, request is: ");
+  //console.log(request);
 
   if (request.type == "contentLoaded") {
     //console.log("WikiTree Sourcer, background script, received contentLoaded message");

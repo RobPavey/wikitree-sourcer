@@ -1340,17 +1340,7 @@ async function resizeBackFunction(backFunction) {
   backFunction();
 }
 
-async function debugDisplayMenu(object, titleText, backFunction) {
-  // this switches the popup to display a different frame and populates the edit box
-
-  let displayString = JSON.stringify(object, null, 2); // 2 spaces of indentation
-
-  // Make the whole window wider (if not on iOS)
-  if (shouldPopupWindowResize) {
-    widthBeforeDebugDisplay = document.body.style.width;
-    document.body.style.width = "600px";
-  }
-
+async function displayTextMenu(titleText, displayString, backFunction) {
   let menu = beginMainMenu();
 
   let fragment = document.createDocumentFragment();
@@ -1373,6 +1363,20 @@ async function debugDisplayMenu(object, titleText, backFunction) {
 
   menu.list.appendChild(fragment);
   endMainMenu(menu);
+}
+
+async function debugDisplayMenu(object, titleText, backFunction) {
+  // this switches the popup to display a different frame and populates the edit box
+
+  let displayString = JSON.stringify(object, null, 2); // 2 spaces of indentation
+
+  // Make the whole window wider (if not on iOS)
+  if (shouldPopupWindowResize) {
+    widthBeforeDebugDisplay = document.body.style.width;
+    document.body.style.width = "600px";
+  }
+
+  displayTextMenu(titleText, displayString, backFunction);
 }
 
 function displayExtractedData(data, backFunction) {
@@ -1685,4 +1689,5 @@ export {
   saveUnitTestData,
   enableSaveUnitTestData,
   clearCachedFetchData,
+  displayTextMenu,
 };

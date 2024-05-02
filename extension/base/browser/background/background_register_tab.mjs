@@ -25,11 +25,7 @@ SOFTWARE.
 var siteRegistry = {};
 
 function handleRegisterTabMessage(request, sender, sendResponse) {
-  console.log("WikiTree Sourcer, background script, received registerTab message");
-
-  console.log(
-    "WikiTree Sourcer, background script, sender.tab.id is: " + sender.tab.id + ", siteName is: " + request.siteName
-  );
+  //console.log("handleRegisterTabMessage");
 
   let tab = sender.tab.id;
 
@@ -47,21 +43,17 @@ function handleRegisterTabMessage(request, sender, sendResponse) {
 
   siteRegistry[siteName] = tabList;
 
-  console.log("handleRegisterTabMessage, done, siteRegistry is:");
-  console.log(siteRegistry);
+  //console.log("handleRegisterTabMessage, done, siteRegistry is:");
+  //console.log(siteRegistry);
 
   let response = { success: true, tab: tab };
-  console.log("WikiTree Sourcer, background script, sending response to registerTab message:");
-  console.log(response);
+  //console.log("WikiTree Sourcer, background script, sending response to registerTab message:");
+  //console.log(response);
   sendResponse(response);
 }
 
 function handleUnregisterTabMessage(request, sender, sendResponse) {
-  console.log("WikiTree Sourcer, background script, received unregisterTab message");
-
-  console.log(
-    "WikiTree Sourcer, background script, sender.tab.id is: " + sender.tab.id + ", siteName is: " + request.siteName
-  );
+  //console.log("WikiTree Sourcer, background script, received unregisterTab message");
 
   let tab = sender.tab.id;
 
@@ -80,20 +72,20 @@ function handleUnregisterTabMessage(request, sender, sendResponse) {
 
   siteRegistry[siteName] = tabList;
 
-  console.log("handleUnregisterTabMessage, done, siteRegistry is:");
-  console.log(siteRegistry);
+  //console.log("handleUnregisterTabMessage, done, siteRegistry is:");
+  //console.log(siteRegistry);
 
   let response = { success: true, tab: tab };
-  console.log("WikiTree Sourcer, background script, sending response to registerTab message:");
-  console.log(response);
+  //console.log("WikiTree Sourcer, background script, sending response to registerTab message:");
+  //console.log(response);
   sendResponse(response);
 }
 
 function handleGetRegisteredTabMessage(request, sender, sendResponse) {
-  console.log("handleGetRegisteredTabMessage, siteName is: " + request.siteName);
+  //console.log("handleGetRegisteredTabMessage, siteName is: " + request.siteName);
 
-  console.log("handleGetRegisteredTabMessage, siteRegistry is:");
-  console.log(siteRegistry);
+  //console.log("handleGetRegisteredTabMessage, siteRegistry is:");
+  //console.log(siteRegistry);
 
   let siteName = request.siteName;
 
@@ -106,8 +98,8 @@ function handleGetRegisteredTabMessage(request, sender, sendResponse) {
     response = { success: true, tab: tab };
   }
 
-  console.log("WikiTree Sourcer, background script, sending response to getRegisteredTab message:");
-  console.log(response);
+  //console.log("WikiTree Sourcer, background script, sending response to getRegisteredTab message:");
+  //console.log(response);
   sendResponse(response);
 }
 
