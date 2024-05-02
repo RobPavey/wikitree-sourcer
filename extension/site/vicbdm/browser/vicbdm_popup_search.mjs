@@ -138,9 +138,9 @@ async function doVicbdmSearch(input) {
       selectData: selectData,
     };
 
-    doVicBdmSearchGivenSearchData(vicbdmSearchData, options);
+    let success = await doVicBdmSearchGivenSearchData(vicbdmSearchData, options);
 
-    //closePopup();
+    closePopup();
   });
 }
 

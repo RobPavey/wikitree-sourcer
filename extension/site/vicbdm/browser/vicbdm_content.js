@@ -184,6 +184,10 @@ async function doPendingSearch() {
     if (formElement) {
       let searchTypeElement = document.querySelector("#historicalSearch-type0");
       let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
+      if (searchTypeElement) {
+        // extra attempt to make sure changes get registered in angular model
+        searchTypeElement.focus();
+      }
 
       for (var key in fieldData) {
         //console.log("checkForPendingSearch: key is: " + key);
