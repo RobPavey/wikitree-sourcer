@@ -44,6 +44,8 @@ import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_sear
 
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
+import { doVicBdmSearchGivenSearchData } from "./vicbdm_common_search.mjs";
+
 function getSupportedDates() {
   const recordStartYear = 1836;
   const date = new Date();
@@ -136,33 +138,9 @@ async function doVicbdmSearch(input) {
       selectData: selectData,
     };
 
-    if (options.search_vicbdm_reuseExistingTab) {
-      // send message to background script that we have a vicbdm tab open
-      try {
-        let response = await chrome.runtime.sendMessage({ type: "getRegisteredTab", siteName: "vicbdm" });
-        // nothing to do, the message needs to send a response though to avoid console error message
-        //console.log("doVicbdmSearch, received response from getRegisteredTab message");
-        //console.log(response);
-        if (chrome.runtime.lastError) {
-          // possibly there is no background script loaded, this should never happen
-          console.log("doVicbdmSearch: No response from background script, lastError message is:");
-          console.log(chrome.runtime.lastError.message);
-        } else if (response.success && response.tab) {
-          let success = await doVicbdmSearchInExistingTab(response.tab, vicbdmSearchData);
-          if (success) {
-            return;
-          }
-        }
-      } catch (error) {
-        console.log("doVicbdmSearch: caught error on sendMessage:");
-        console.log(error);
-      }
-      doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData);
-    } else {
-      doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData);
-    }
+    doVicBdmSearchGivenSearchData(vicbdmSearchData, options);
 
-    closePopup();
+    //closePopup();
   });
 }
 

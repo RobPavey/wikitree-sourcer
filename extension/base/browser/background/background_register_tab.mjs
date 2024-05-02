@@ -103,4 +103,13 @@ function handleGetRegisteredTabMessage(request, sender, sendResponse) {
   sendResponse(response);
 }
 
-export { handleRegisterTabMessage, handleUnregisterTabMessage, handleGetRegisteredTabMessage };
+function getRegisteredTab(siteName) {
+  let tabList = siteRegistry[siteName];
+
+  if (tabList && tabList.length > 0) {
+    let tab = tabList[tabList.length - 1];
+    return tab;
+  }
+}
+
+export { handleRegisterTabMessage, handleUnregisterTabMessage, handleGetRegisteredTabMessage, getRegisteredTab };

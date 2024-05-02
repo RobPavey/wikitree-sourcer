@@ -337,6 +337,9 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
         listElement.appendChild(label);
       }
     }
+  } else {
+    parameters.father = false;
+    parameters.mother = false;
   }
 
   if (siteData.includeMmn && siteData.includeMmn(gd, parameters)) {
@@ -368,6 +371,8 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
       label.appendChild(document.createTextNode(labelText));
       listElement.appendChild(label);
     }
+  } else {
+    parameters.mmn = false;
   }
 }
 

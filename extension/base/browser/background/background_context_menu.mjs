@@ -23,6 +23,9 @@ SOFTWARE.
 */
 
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
+import { getRegisteredTab } from "./background_register_tab.mjs";
+
+import { doVicBdmSearchGivenSearchData } from "../../../site/vicbdm/browser/vicbdm_common_search.mjs";
 
 function openInNewTab(link, currentTab, options) {
   const tabOption = options.context_general_newTabPos;
@@ -406,7 +409,7 @@ function openTemplate(info, tab) {
   }
 }
 
-function openVicbdm(lcText, tab) {
+function openVicbdm(lcText, tab, options) {
   //console.log("looks like Victorian BDM, lcText is:");
   //console.log(lcText);
 
@@ -480,17 +483,9 @@ function openVicbdm(lcText, tab) {
         fieldData: fieldData,
       };
 
-      // this stores the search data in local storage which is then picked up by the
-      // content script in the new tab/window
-      chrome.storage.local.set({ vicbdmSearchData: vicbdmSearchData }, function () {
-        //console.log('saved vicbdmSearchData, vicbdmSearchData is:');
-        //console.log(vicbdmSearchData);
-      });
+      let existingTab = getRegisteredTab("vicbdm");
 
-      callFunctionWithStoredOptions(function (options) {
-        openInNewTab(link, tab, options);
-      });
-
+      doVicBdmSearchGivenSearchData(vicbdmSearchData, options, existingTab);
       return true;
     } catch (ex) {
       console.log("storeDataCache failed");
@@ -528,9 +523,10 @@ function openSelectionText(info, tab) {
   // check for Victorian BDM
   let lcText = text.toLowerCase();
   if (lcText.includes("victoria") && /\d+ ?\/ ?\d+/.test(lcText)) {
-    if (openVicbdm(lcText, tab)) {
-      return;
-    }
+    callFunctionWithStoredOptions(function (options) {
+      openVicbdm(lcText, tab, options);
+    });
+    return;
   }
 }
 

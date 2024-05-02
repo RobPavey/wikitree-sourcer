@@ -142,6 +142,10 @@ async function checkForPendingSearch() {
   }
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function clearSearchFields() {
   // try to submit form
   let clearButtonElement = document.querySelector("historical-search div.btnRow button.btn-secondary");
@@ -150,11 +154,8 @@ async function clearSearchFields() {
     // now click the button to do clear the search
     var event = new Event("click");
     clearButtonElement.dispatchEvent(event);
+    await sleep(50);
   }
-}
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function doPendingSearch() {
@@ -170,7 +171,7 @@ async function doPendingSearch() {
 
     let fieldData = pendingSearchData.fieldData;
 
-    //console.log("checkForPendingSearch: fieldData is:");
+    //console.log("doPendingSearch: fieldData is:");
     //console.log(fieldData);
 
     // Inputs have IDs like:
@@ -290,8 +291,12 @@ async function doPendingSearchFromSearchResultsPage() {
     // click the button to go back to search results
     var event = new Event("click");
     refineButtonElement.dispatchEvent(event);
+    /*
+      Don't actually need to do this because the mutation observer will do it
     await sleep(50);
+    clearSearchFields();
     doPendingSearch();
+    */
   }
 }
 
@@ -440,6 +445,7 @@ function addMutationObserver() {
               //console.log("historical-search added");
               registerTabWithBackground();
               if (pendingSearchData) {
+                clearSearchFields();
                 doPendingSearch();
               }
             }

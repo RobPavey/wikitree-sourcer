@@ -316,7 +316,7 @@ function buildSearchData(input) {
     if (parameters.category != "Births") {
       let spouse = gd.spouses[parameters.spouseIndex];
       if (spouse.name) {
-        let givenNames = spouse.father.name.inferForenamesPlusPreferredAndNicknames(
+        let givenNames = spouse.name.inferForenamesPlusPreferredAndNicknames(
           options.search_vicbdm_includeMiddleName,
           options.search_vicbdm_includePrefName,
           options.search_vicbdm_includeNicknames
