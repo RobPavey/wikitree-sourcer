@@ -23,9 +23,40 @@ SOFTWARE.
 */
 
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { addMenuItem } from "/base/browser/popup/popup_menu_building.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/vicbdm_generalize_data.mjs";
 import { buildCitation } from "../core/vicbdm_build_citation.mjs";
+import { VicbdmEdReader } from "../core/vicbdm_ed_reader.mjs";
+
+async function suggestPlaceNames(menu, data) {
+  let placeNamesModule = await import("../core/vicbdm_place_names.mjs");
+  if (!placeNamesModule) {
+    return;
+  }
+
+  let edReader = new VicbdmEdReader(data.extractedData);
+
+  let placeName = edReader.getCitationPlace();
+
+  console.log("suggestPlaceNames, placeName is:");
+  console.log(placeName);
+
+  let realNames = [];
+  if (placeName) {
+    const ausSuffix = ", Australia";
+    if (placeName.endsWith(ausSuffix)) {
+      placeName = placeName.substring(0, placeName.length - ausSuffix.length);
+      console.log("suggestPlaceNames, modified placeName is:");
+      console.log(placeName);
+    }
+
+    realNames = placeNamesModule.mapVicbdmPlaceNameToRealPlaceNames(placeName);
+  }
+
+  console.log("suggestPlaceNames, realNames is:");
+  console.log(realNames);
+}
 
 async function setupVicbdmPopupMenu(extractedData) {
   let input = {
@@ -36,6 +67,13 @@ async function setupVicbdmPopupMenu(extractedData) {
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "vicbdm",
   };
+
+  input.customMenuFunction = function (menu, data) {
+    addMenuItem(menu, "Suggest place names...", function (element) {
+      suggestPlaceNames(menu, data);
+    });
+  };
+
   setupSimplePopupMenu(input);
 }
 

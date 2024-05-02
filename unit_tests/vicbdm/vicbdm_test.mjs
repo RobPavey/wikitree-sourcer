@@ -26,10 +26,12 @@ import { registerTest } from "../test_utils/test_registry.mjs";
 
 import * as test_content_and_citation from "./vicbdm_test_content_and_citation.mjs";
 import * as test_build_search_data from "./vicbdm_test_build_search_data.mjs";
+import * as build_place_data from "./vicbdm_build_place_data.mjs";
 
 async function runTests(testManager) {
   await test_content_and_citation.runTests(testManager);
   await test_build_search_data.runTests(testManager);
+  await build_place_data.build(testManager);
 }
 
 registerTest("vicbdm", runTests);

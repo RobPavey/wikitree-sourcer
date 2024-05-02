@@ -23,37 +23,14 @@ SOFTWARE.
 */
 
 import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
-import { vicbdmPlaceAbbreviationTable } from "./vicbdm_place_abbreviations.mjs";
-import { vicbdmPlaceAbbreviationTable2 } from "./vicbdm_place_abbreviations2.mjs";
-import { vicbdmPlaceVariations } from "./vicbdm_place_variations.mjs";
+import { mapRealPlaceNameToVicBdmPlaceNames } from "./vicbdm_place_names.mjs";
 
 function pushPlaceAbbreviations(placeName, values) {
   if (!placeName) {
     return;
   }
 
-  let abbrevs = [];
-
-  let lcPlaceName = placeName.toLowerCase();
-  for (let key of Object.keys(vicbdmPlaceAbbreviationTable)) {
-    let value = vicbdmPlaceAbbreviationTable[key];
-    if (value && value.toLowerCase() == lcPlaceName) {
-      abbrevs.push(key);
-    }
-  }
-
-  for (let row of vicbdmPlaceAbbreviationTable2) {
-    if (row.name.toLowerCase() == lcPlaceName) {
-      abbrevs.push(row.abbrev.toUpperCase());
-    }
-  }
-
-  let variations = vicbdmPlaceVariations[lcPlaceName];
-  if (variations) {
-    for (let variation of variations) {
-      abbrevs.push(variation.toUpperCase());
-    }
-  }
+  let abbrevs = mapRealPlaceNameToVicBdmPlaceNames(placeName);
 
   for (let abbrev of abbrevs) {
     let lcAbbrev = abbrev.toLowerCase();
