@@ -25,6 +25,7 @@ SOFTWARE.
 import { setupContextMenu } from "./background_context_menu.mjs";
 import { handleExceptionMessage } from "./background_exception.mjs";
 import { handleContentLoadedMessage } from "./background_content_loaded.mjs";
+import { handleRegisterTabMessage, handleGetRegisteredTabMessage } from "./background_register_tab.mjs";
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 
 function setPopup(tab, popupPage) {
@@ -47,6 +48,12 @@ function messageHandler(request, sender, sendResponse) {
   if (request.type == "contentLoaded") {
     //console.log("WikiTree Sourcer, background script, received contentLoaded message");
     handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon);
+  } else if (request.type == "registerTab") {
+    //console.log("WikiTree Sourcer, background script, received registerTab message");
+    handleRegisterTabMessage(request, sender, sendResponse);
+  } else if (request.type == "getRegisteredTab") {
+    //console.log("WikiTree Sourcer, background script, received getRegisteredTab message");
+    handleGetRegisteredTabMessage(request, sender, sendResponse);
   } else if (request.type == "exception") {
     handleExceptionMessage(request, sendResponse);
 

@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 var pendingSearchData;
+var currentPageType;
 
 async function getPendingSearch() {
   //console.log("getPendingSearch");
@@ -37,6 +38,50 @@ async function getPendingSearch() {
       reject(ex);
     }
   });
+}
+
+function setSearchingBanner() {
+  // Modify the page to say it is a WikiTree Sourcer search
+  let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
+  //console.log("menuBarElement is:");
+  //console.log(menuBarElement);
+  if (menuBarElement) {
+    let sourcerFragment = menuBarElement.querySelector("span");
+    if (!sourcerFragment) {
+      let fragment = document.createDocumentFragment();
+
+      let pageTitle = document.createElement("div");
+      pageTitle.className = "pageTitle";
+      fragment.appendChild(pageTitle);
+
+      let container = document.createElement("div");
+      container.className = "container";
+      pageTitle.appendChild(container);
+
+      let h1 = document.createElement("h1");
+      container.appendChild(h1);
+
+      let span = document.createElement("span");
+      span.textContent = "WikiTree Sourcer search. Please wait for form to be populated and submitted...";
+      span.style.color = "white";
+      h1.appendChild(span);
+
+      menuBarElement.appendChild(fragment);
+    } else {
+      sourcerFragment.style.display = "block";
+    }
+  }
+}
+
+async function clearSearchingBanner() {
+  // Clear the message that we added to the menu bar
+  let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
+  if (menuBarElement) {
+    let sourcerFragment = menuBarElement.querySelector("span");
+    if (sourcerFragment) {
+      sourcerFragment.style.display = "none";
+    }
+  }
 }
 
 async function checkForPendingSearch() {
@@ -70,34 +115,7 @@ async function checkForPendingSearch() {
     //console.log(vicbdmSearchData);
 
     if (vicbdmSearchData) {
-      // Modify the page to say it is a WikiTree Sourcer search
-      let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
-      //console.log("menuBarElement is:");
-      //console.log(menuBarElement);
-      if (menuBarElement) {
-        let sourcerFragment = menuBarElement.querySelector("span");
-        if (!sourcerFragment) {
-          let fragment = document.createDocumentFragment();
-
-          let pageTitle = document.createElement("div");
-          pageTitle.className = "pageTitle";
-          fragment.appendChild(pageTitle);
-
-          let container = document.createElement("div");
-          container.className = "container";
-          pageTitle.appendChild(container);
-
-          let h1 = document.createElement("h1");
-          container.appendChild(h1);
-
-          let span = document.createElement("span");
-          span.textContent = "WikiTree Sourcer search. Please wait for form to be populated and submitted...";
-          span.style.color = "white";
-          h1.appendChild(span);
-
-          menuBarElement.appendChild(fragment);
-        }
-      }
+      setSearchingBanner();
 
       //console.log("checkForPendingSearch: got formValues:");
       //console.log(vicbdmSearchData);
@@ -122,6 +140,21 @@ async function checkForPendingSearch() {
       });
     }
   }
+}
+
+async function clearSearchFields() {
+  // try to submit form
+  let clearButtonElement = document.querySelector("historical-search div.btnRow button.btn-secondary");
+  if (clearButtonElement) {
+    //console.log("about to click clear button");
+    // now click the button to do clear the search
+    var event = new Event("click");
+    clearButtonElement.dispatchEvent(event);
+  }
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function doPendingSearch() {
@@ -149,6 +182,8 @@ async function doPendingSearch() {
     let formElement = document.querySelector("div.historical-search-criteria form");
     if (formElement) {
       let searchTypeElement = document.querySelector("#historicalSearch-type0");
+      let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
+
       for (var key in fieldData) {
         //console.log("checkForPendingSearch: key is: " + key);
         if (key) {
@@ -157,6 +192,8 @@ async function doPendingSearch() {
 
           let inputElement = formElement.querySelector("#" + key);
           if (inputElement) {
+            await sleep(10);
+
             let inputType = inputElement.getAttribute("type");
             if (inputType == "checkbox") {
               //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.checked);
@@ -171,9 +208,15 @@ async function doPendingSearch() {
               inputElement.focus();
               document.execCommand("selectAll", false);
               document.execCommand("insertText", false, value);
+              //document.execCommand("undo", false);
+              //document.execCommand("redo", false);
               if (searchTypeElement) {
-                // need to move focus on to register change
+                // need to move focus on to register change, want this to be at top
+                // of page so banner is visible
                 searchTypeElement.focus();
+              }
+              if (menuBarElement) {
+                menuBarElement.scrollIntoView();
               }
             }
           } else {
@@ -189,6 +232,8 @@ async function doPendingSearch() {
         if (searchButtonElement) {
           //console.log("about to click button");
           // now click the button to do the search
+          // We wait for a few milliseconds to ensure other events have been dispatched
+          await sleep(10);
           var event = new Event("click");
           searchButtonElement.dispatchEvent(event);
 
@@ -204,14 +249,49 @@ async function doPendingSearch() {
     // clear the pending data so that we don't use it again on refine search
     pendingSearchData = undefined;
 
-    // Clear the message that we added to the menu bar
-    let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
-    if (menuBarElement) {
-      let sourcerFragment = menuBarElement.querySelector("span");
-      if (sourcerFragment) {
-        sourcerFragment.style.display = "none";
-      }
-    }
+    await sleep(4000);
+    clearSearchingBanner();
+  }
+}
+
+async function doPendingSearchFromDetailsPage() {
+  console.log("doPendingSearchFromDetailsPage");
+
+  setSearchingBanner();
+
+  await sleep(10);
+
+  // we have to go back to search results and then refine search
+  let backButtonElement = document.querySelector("search-result-details div.btnRow button.btn-secondary");
+  console.log("backButtonElement is:");
+  console.log(backButtonElement);
+  if (backButtonElement) {
+    //console.log("about to click button");
+    // click the button to go back to search results
+    var event = new Event("click");
+    backButtonElement.dispatchEvent(event);
+    await sleep(50);
+    doPendingSearchFromSearchResultsPage();
+  }
+}
+
+async function doPendingSearchFromSearchResultsPage() {
+  console.log("doPendingSearchFromSearchResultsPage");
+  setSearchingBanner();
+  await sleep(10);
+
+  // we have to refine search
+  // we have to go back to search results and then refine search
+  let refineButtonElement = document.querySelector("search-results-page div.btnRow button.btn-secondary");
+  console.log("refineButtonElement is:");
+  console.log(refineButtonElement);
+  if (refineButtonElement) {
+    //console.log("about to click button");
+    // click the button to go back to search results
+    var event = new Event("click");
+    refineButtonElement.dispatchEvent(event);
+    await sleep(50);
+    doPendingSearch();
   }
 }
 
@@ -283,6 +363,20 @@ async function addSearchResultsListener() {
   });
 }
 
+function registerTabWithBackground() {
+  // send message to background script that we have a vicbdm tab open
+  chrome.runtime.sendMessage({ type: "registerTab", siteName: "vicbdm" }, function (response) {
+    // nothing to do, the message needs to send a response though to avoid console error message
+    console.log("vicbdm, received response from registerTab message");
+    console.log(response);
+    if (chrome.runtime.lastError) {
+      // possibly there is no background script loaded, this should never happen
+      console.log("vicbdm: No response from background script, lastError message is:");
+      console.log(chrome.runtime.lastError.message);
+    }
+  });
+}
+
 function addMutationObserver() {
   // the problem is that the page changes after the load event.
   // We need some way to get an event when angular changes the page?
@@ -312,12 +406,16 @@ function addMutationObserver() {
         //console.log(mutation);
         if (mutation.addedNodes && mutation.addedNodes.length > 0) {
           for (let addedNode of mutation.addedNodes) {
-            if (addedNode.tagName.toLowerCase() == "search-results-page") {
+            currentPageType = addedNode.tagName.toLowerCase();
+            if (currentPageType == "search-results-page") {
               //console.log("search-results-page added");
+              clearSearchingBanner();
+              registerTabWithBackground();
               addSearchResultsListener();
               break;
-            } else if (addedNode.tagName.toLowerCase() == "historical-search") {
+            } else if (currentPageType == "historical-search") {
               //console.log("historical-search added");
+              registerTabWithBackground();
               if (pendingSearchData) {
                 doPendingSearch();
               }
@@ -333,12 +431,44 @@ function addMutationObserver() {
   observer.observe(mainElement, config);
 }
 
+function additionalMessageHandler(request, sender, sendResponse) {
+  if (request.type == "doSearchInExistingTab") {
+    console.log("vicbdm: additionalMessageHandler, request is:");
+    console.log(request);
+    console.log("vicbdm: additionalMessageHandler, currentPageType is: " + currentPageType);
+
+    pendingSearchData = request.vicbdmSearchData;
+
+    if (currentPageType == "historical-search") {
+      clearSearchFields();
+      setSearchingBanner();
+
+      setTimeout(function () {
+        doPendingSearch();
+      }, 10);
+    } else if (currentPageType == "search-result-details") {
+      doPendingSearchFromDetailsPage();
+    } else if (currentPageType == "search-results-page") {
+      doPendingSearchFromSearchResultsPage();
+    }
+    sendResponse({ success: true });
+    return { wasHandled: true, returnValue: false };
+  }
+
+  return { wasHandled: false };
+}
+
 async function checkForSearchThenInit() {
   checkForPendingSearch();
 
   addMutationObserver();
 
-  siteContentInit(`vicbdm`, `site/vicbdm/core/vicbdm_extract_data.mjs`);
+  siteContentInit(
+    `vicbdm`,
+    `site/vicbdm/core/vicbdm_extract_data.mjs`,
+    undefined, // overrideExtractHandler
+    additionalMessageHandler
+  );
 }
 
 checkForSearchThenInit();

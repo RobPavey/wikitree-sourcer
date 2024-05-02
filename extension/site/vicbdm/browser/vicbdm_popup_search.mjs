@@ -69,6 +69,58 @@ function getSupportedDates() {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
+const useTabIfOpen = true;
+
+async function doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData) {
+  const checkPermissionsOptions = {
+    reason:
+      "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
+  };
+  let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
+  if (!allowed) {
+    closePopup();
+    return;
+  }
+
+  try {
+    // this stores the search data in local storage which is then picked up by the
+    // content script in the new tab/window
+    chrome.storage.local.set({ vicbdmSearchData: vicbdmSearchData }, function () {
+      //console.log('saved vicbdmSearchData, vicbdmSearchData is:');
+      //console.log(vicbdmSearchData);
+    });
+  } catch (ex) {
+    console.log("stoe of vicbdmSearchData failed");
+  }
+
+  openUrlInNewTab(searchUrl);
+}
+
+async function doVicbdmSearchInExistingTab(tabId, vicbdmSearchData) {
+  console.log("doVicbdmSearchInExistingTab: tabId is: " + tabId);
+
+  // make the tab active
+  chrome.tabs.update(tabId, { selected: true });
+
+  let response = await chrome.tabs.sendMessage(tabId, {
+    type: "doSearchInExistingTab",
+    vicbdmSearchData: vicbdmSearchData,
+  });
+
+  if (chrome.runtime.lastError) {
+    console.log("doVicbdmSearchInExistingTab failed, lastError is:");
+    console.log(lastError);
+  } else if (!response) {
+    console.log("doVicbdmSearchInExistingTab failed, null response");
+    console.log(message);
+  } else {
+    console.log("doVicbdmSearchInExistingTab message sent OK");
+    return true;
+  }
+
+  return false;
+}
+
 async function doVicbdmSearch(input) {
   doAsyncActionWithCatch("Victoria BDM (Aus) Search", input, async function () {
     let loadedModule = await import(`../core/vicbdm_build_search_data.mjs`);
@@ -77,37 +129,41 @@ async function doVicbdmSearch(input) {
     let fieldData = buildResult.fieldData;
     let selectData = buildResult.selectData;
 
-    const checkPermissionsOptions = {
-      reason:
-        "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
-    };
-    let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
-    if (!allowed) {
-      closePopup();
-      return;
-    }
-
     let searchUrl = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
 
-    try {
-      const vicbdmSearchData = {
-        timeStamp: Date.now(),
-        url: searchUrl,
-        fieldData: fieldData,
-        selectData: selectData,
-      };
+    const vicbdmSearchData = {
+      timeStamp: Date.now(),
+      url: searchUrl,
+      fieldData: fieldData,
+      selectData: selectData,
+    };
 
-      // this stores the search data in local storage which is then picked up by the
-      // content script in the new tab/window
-      chrome.storage.local.set({ vicbdmSearchData: vicbdmSearchData }, function () {
-        //console.log('saved vicbdmSearchData, vicbdmSearchData is:');
-        //console.log(vicbdmSearchData);
-      });
-    } catch (ex) {
-      console.log("storeDataCache failed");
+    if (useTabIfOpen) {
+      // send message to background script that we have a vicbdm tab open
+      try {
+        let response = await chrome.runtime.sendMessage({ type: "getRegisteredTab", siteName: "vicbdm" });
+        // nothing to do, the message needs to send a response though to avoid console error message
+        console.log("doVicbdmSearch, received response from getRegisteredTab message");
+        console.log(response);
+        if (chrome.runtime.lastError) {
+          // possibly there is no background script loaded, this should never happen
+          console.log("doVicbdmSearch: No response from background script, lastError message is:");
+          console.log(chrome.runtime.lastError.message);
+        } else if (response.success && response.tab) {
+          let success = await doVicbdmSearchInExistingTab(response.tab, vicbdmSearchData);
+          if (success) {
+            return;
+          }
+        }
+      } catch (error) {
+        console.log("doVicbdmSearch: Ncaught error on sendMessage:");
+        console.log(error);
+      }
+      doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData);
+    } else {
+      doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData);
     }
 
-    openUrlInNewTab(searchUrl);
     closePopup();
   });
 }

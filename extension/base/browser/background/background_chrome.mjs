@@ -25,6 +25,7 @@ SOFTWARE.
 import { setupContextMenu } from "./background_context_menu.mjs";
 import { handleExceptionMessage } from "./background_exception.mjs";
 import { handleContentLoadedMessage } from "./background_content_loaded.mjs";
+import { handleRegisterTabMessage, handleGetRegisteredTabMessage } from "./background_register_tab.mjs";
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 
 async function executeScript(tabId, script, callback) {
@@ -51,12 +52,18 @@ function messageHandler(request, sender, sendResponse) {
   // Request should have these fields
   // type = the message type, a string that defines the action to be performed
 
-  //console.log("background messageHandler, request is: ");
-  //console.log(request);
+  console.log("background messageHandler, request is: ");
+  console.log(request);
 
   if (request.type == "contentLoaded") {
     //console.log("WikiTree Sourcer, background script, received contentLoaded message");
     handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon);
+  } else if (request.type == "registerTab") {
+    //console.log("WikiTree Sourcer, background script, received registerTab message");
+    handleRegisterTabMessage(request, sender, sendResponse);
+  } else if (request.type == "getRegisteredTab") {
+    //console.log("WikiTree Sourcer, background script, received getRegisteredTab message");
+    handleGetRegisteredTabMessage(request, sender, sendResponse);
   } else if (request.type == "exception") {
     handleExceptionMessage(request, sendResponse);
 
