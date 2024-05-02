@@ -35,7 +35,53 @@ function handleRegisterTabMessage(request, sender, sendResponse) {
 
   let siteName = request.siteName;
 
-  siteRegistry[siteName] = tab;
+  let tabList = siteRegistry[siteName];
+
+  if (tabList === undefined) {
+    tabList = [];
+  }
+
+  if (!tabList.includes(tab)) {
+    tabList.push(tab);
+  }
+
+  siteRegistry[siteName] = tabList;
+
+  console.log("handleRegisterTabMessage, done, siteRegistry is:");
+  console.log(siteRegistry);
+
+  let response = { success: true, tab: tab };
+  console.log("WikiTree Sourcer, background script, sending response to registerTab message:");
+  console.log(response);
+  sendResponse(response);
+}
+
+function handleUnregisterTabMessage(request, sender, sendResponse) {
+  console.log("WikiTree Sourcer, background script, received unregisterTab message");
+
+  console.log(
+    "WikiTree Sourcer, background script, sender.tab.id is: " + sender.tab.id + ", siteName is: " + request.siteName
+  );
+
+  let tab = sender.tab.id;
+
+  let siteName = request.siteName;
+
+  let tabList = siteRegistry[siteName];
+
+  if (tabList === undefined) {
+    tabList = [];
+  }
+
+  let index = tabList.indexOf(tab);
+  if (index != -1) {
+    tabList.splice(index, 1);
+  }
+
+  siteRegistry[siteName] = tabList;
+
+  console.log("handleUnregisterTabMessage, done, siteRegistry is:");
+  console.log(siteRegistry);
 
   let response = { success: true, tab: tab };
   console.log("WikiTree Sourcer, background script, sending response to registerTab message:");
@@ -44,17 +90,19 @@ function handleRegisterTabMessage(request, sender, sendResponse) {
 }
 
 function handleGetRegisteredTabMessage(request, sender, sendResponse) {
-  console.log("WikiTree Sourcer, background script, received getRegisteredTab message");
+  console.log("handleGetRegisteredTabMessage, siteName is: " + request.siteName);
 
-  console.log("WikiTree Sourcer, background script, siteName is: " + request.siteName);
+  console.log("handleGetRegisteredTabMessage, siteRegistry is:");
+  console.log(siteRegistry);
 
   let siteName = request.siteName;
 
-  let tab = siteRegistry[siteName];
-
   let response = { success: false };
 
-  if (tab) {
+  let tabList = siteRegistry[siteName];
+
+  if (tabList && tabList.length > 0) {
+    let tab = tabList[tabList.length - 1];
     response = { success: true, tab: tab };
   }
 
@@ -63,4 +111,4 @@ function handleGetRegisteredTabMessage(request, sender, sendResponse) {
   sendResponse(response);
 }
 
-export { handleRegisterTabMessage, handleGetRegisteredTabMessage };
+export { handleRegisterTabMessage, handleUnregisterTabMessage, handleGetRegisteredTabMessage };

@@ -29,7 +29,23 @@ import {
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
 
-const searchOptionsGroup = {
+const searchBehaviorOptionsGroup = {
+  category: "search",
+  subcategory: "vicbdm",
+  tab: "search",
+  subsection: "vicbdm",
+  subheading: "behavior",
+  options: [
+    {
+      optionName: "reuseExistingTab",
+      type: "checkbox",
+      label: "Do search is existing BDM Victoria tab if present (faster)",
+      defaultValue: true,
+    },
+  ],
+};
+
+const searchParametersOptionsGroup = {
   category: "search",
   subcategory: "vicbdm",
   tab: "search",
@@ -105,8 +121,10 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "vicbdm", "Victoria BDM (Aus)");
 registerSiteSearchPopupOptionsGroup("vicbdm", 7, 7);
+registerSubheadingForOptions("search", "vicbdm", "behavior", "Search Behavior");
+registerOptionsGroup(searchBehaviorOptionsGroup);
 registerSubheadingForOptions("search", "vicbdm", "parameters", "Search Parameters");
-registerOptionsGroup(searchOptionsGroup);
+registerOptionsGroup(searchParametersOptionsGroup);
 
 registerSubsectionForOptions("citation", "vicbdm", "Victoria BDM (Aus)");
 registerOptionsGroup(citationOptionsGroup);

@@ -25,7 +25,11 @@ SOFTWARE.
 import { setupContextMenu } from "./background_context_menu.mjs";
 import { handleExceptionMessage } from "./background_exception.mjs";
 import { handleContentLoadedMessage } from "./background_content_loaded.mjs";
-import { handleRegisterTabMessage, handleGetRegisteredTabMessage } from "./background_register_tab.mjs";
+import {
+  handleRegisterTabMessage,
+  handleUnregisterTabMessage,
+  handleGetRegisteredTabMessage,
+} from "./background_register_tab.mjs";
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 
 async function executeScript(tabId, script, callback) {
@@ -61,6 +65,9 @@ function messageHandler(request, sender, sendResponse) {
   } else if (request.type == "registerTab") {
     //console.log("WikiTree Sourcer, background script, received registerTab message");
     handleRegisterTabMessage(request, sender, sendResponse);
+  } else if (request.type == "unregisterTab") {
+    console.log("WikiTree Sourcer, background script, received unregisterTab message");
+    handleUnregisterTabMessage(request, sender, sendResponse);
   } else if (request.type == "getRegisteredTab") {
     //console.log("WikiTree Sourcer, background script, received getRegisteredTab message");
     handleGetRegisteredTabMessage(request, sender, sendResponse);

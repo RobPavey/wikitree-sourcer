@@ -363,18 +363,41 @@ async function addSearchResultsListener() {
   });
 }
 
-function registerTabWithBackground() {
+async function unregisterTabWithBackground() {
+  console.log("unregisterTabWithBackground");
+
   // send message to background script that we have a vicbdm tab open
-  chrome.runtime.sendMessage({ type: "registerTab", siteName: "vicbdm" }, function (response) {
-    // nothing to do, the message needs to send a response though to avoid console error message
-    console.log("vicbdm, received response from registerTab message");
-    console.log(response);
-    if (chrome.runtime.lastError) {
-      // possibly there is no background script loaded, this should never happen
-      console.log("vicbdm: No response from background script, lastError message is:");
-      console.log(chrome.runtime.lastError.message);
-    }
-  });
+  let unregisterResponse = await chrome.runtime.sendMessage({ type: "unregisterTab", siteName: "vicbdm" });
+
+  console.log("vicbdm, response from unregisterTab message");
+  console.log(unregisterResponse);
+
+  if (chrome.runtime.lastError) {
+    // possibly there is no background script loaded, this should never happen
+    console.log("vicbdm: No response from background script, lastError message is:");
+    console.log(chrome.runtime.lastError.message);
+  }
+}
+
+async function registerTabWithBackground() {
+  // send message to background script that we have a vicbdm tab open
+  let registerResponse = await chrome.runtime.sendMessage({ type: "registerTab", siteName: "vicbdm" });
+
+  console.log("vicbdm, response from registerTab message");
+  console.log(registerResponse);
+
+  if (chrome.runtime.lastError) {
+    // possibly there is no background script loaded, this should never happen
+    console.log("vicbdm: No response from background script, lastError message is:");
+    console.log(chrome.runtime.lastError.message);
+  } else {
+    console.log("addng event listener for unregister");
+
+    window.addEventListener("pagehide", function () {
+      console.log("pagehide event");
+      unregisterTabWithBackground();
+    });
+  }
 }
 
 function addMutationObserver() {

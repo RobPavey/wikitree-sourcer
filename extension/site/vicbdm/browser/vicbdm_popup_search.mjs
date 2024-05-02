@@ -69,8 +69,6 @@ function getSupportedDates() {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-const useTabIfOpen = true;
-
 async function doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData) {
   const checkPermissionsOptions = {
     reason:
@@ -138,7 +136,7 @@ async function doVicbdmSearch(input) {
       selectData: selectData,
     };
 
-    if (useTabIfOpen) {
+    if (options.search_vicbdm_reuseExistingTab) {
       // send message to background script that we have a vicbdm tab open
       try {
         let response = await chrome.runtime.sendMessage({ type: "getRegisteredTab", siteName: "vicbdm" });
