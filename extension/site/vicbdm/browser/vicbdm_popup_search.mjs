@@ -90,14 +90,14 @@ async function doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData) {
       //console.log(vicbdmSearchData);
     });
   } catch (ex) {
-    console.log("stoe of vicbdmSearchData failed");
+    console.log("store of vicbdmSearchData failed");
   }
 
   openUrlInNewTab(searchUrl);
 }
 
 async function doVicbdmSearchInExistingTab(tabId, vicbdmSearchData) {
-  console.log("doVicbdmSearchInExistingTab: tabId is: " + tabId);
+  //console.log("doVicbdmSearchInExistingTab: tabId is: " + tabId);
 
   // make the tab active
   chrome.tabs.update(tabId, { selected: true });
@@ -108,13 +108,13 @@ async function doVicbdmSearchInExistingTab(tabId, vicbdmSearchData) {
   });
 
   if (chrome.runtime.lastError) {
-    console.log("doVicbdmSearchInExistingTab failed, lastError is:");
-    console.log(lastError);
+    //console.log("doVicbdmSearchInExistingTab failed, lastError is:");
+    //console.log(lastError);
   } else if (!response) {
-    console.log("doVicbdmSearchInExistingTab failed, null response");
-    console.log(message);
+    //console.log("doVicbdmSearchInExistingTab failed, null response");
+    //console.log(message);
   } else {
-    console.log("doVicbdmSearchInExistingTab message sent OK");
+    //console.log("doVicbdmSearchInExistingTab message sent OK");
     return true;
   }
 
@@ -143,8 +143,8 @@ async function doVicbdmSearch(input) {
       try {
         let response = await chrome.runtime.sendMessage({ type: "getRegisteredTab", siteName: "vicbdm" });
         // nothing to do, the message needs to send a response though to avoid console error message
-        console.log("doVicbdmSearch, received response from getRegisteredTab message");
-        console.log(response);
+        //console.log("doVicbdmSearch, received response from getRegisteredTab message");
+        //console.log(response);
         if (chrome.runtime.lastError) {
           // possibly there is no background script loaded, this should never happen
           console.log("doVicbdmSearch: No response from background script, lastError message is:");
@@ -156,7 +156,7 @@ async function doVicbdmSearch(input) {
           }
         }
       } catch (error) {
-        console.log("doVicbdmSearch: Ncaught error on sendMessage:");
+        console.log("doVicbdmSearch: caught error on sendMessage:");
         console.log(error);
       }
       doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData);
