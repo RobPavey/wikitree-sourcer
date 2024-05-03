@@ -124,7 +124,7 @@ async function requestPermissionsFromUser(permissions, options) {
         if (!requestResult) {
           displayMessageWithIcon("warning", "Permission request failed");
           resolve(false);
-        } else if (runtime.lastError) {
+        } else if (chrome.runtime.lastError) {
           displayMessageWithIcon("warning", "Permission request failed");
           resolve(false);
         } else {

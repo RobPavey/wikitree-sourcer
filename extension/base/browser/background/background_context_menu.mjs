@@ -24,20 +24,9 @@ SOFTWARE.
 
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 import { getRegisteredTab } from "./background_register_tab.mjs";
+import { openInNewTab } from "./background_common.mjs";
 
-import { doVicBdmSearchGivenSearchData } from "../../../site/vicbdm/browser/vicbdm_common_search.mjs";
-
-function openInNewTab(link, currentTab, options) {
-  const tabOption = options.context_general_newTabPos;
-
-  if (tabOption == "newWindow") {
-    chrome.windows.create({ url: link });
-  } else if (tabOption == "nextToRight") {
-    chrome.tabs.create({ url: link, index: currentTab.index + 1 });
-  } else {
-    chrome.tabs.create({ url: link });
-  }
-}
+import { doSearchGivenSearchData } from "./background_search.mjs";
 
 function openAncestryLink(tab, link, options) {
   // do not redirect sharing links when using library edition since that does not work
@@ -477,7 +466,7 @@ function openVicbdm(lcText, tab, options) {
     try {
       let link = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
 
-      const vicbdmSearchData = {
+      const searchData = {
         timeStamp: Date.now(),
         url: link,
         fieldData: fieldData,
@@ -485,7 +474,9 @@ function openVicbdm(lcText, tab, options) {
 
       let existingTab = getRegisteredTab("vicbdm");
 
-      doVicBdmSearchGivenSearchData(vicbdmSearchData, options, existingTab);
+      let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
+
+      doSearchGivenSearchData(searchData, tab, options, existingTab, reuseTabIfPossible);
       return true;
     } catch (ex) {
       console.log("storeDataCache failed");

@@ -44,8 +44,6 @@ import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_sear
 
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
-import { doVicBdmSearchGivenSearchData } from "./vicbdm_common_search.mjs";
-
 function getSupportedDates() {
   const recordStartYear = 1836;
   const date = new Date();
@@ -71,7 +69,7 @@ function getSupportedDates() {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData) {
+async function doVicbdmSearchInNewTab(searchUrl, searchData) {
   const checkPermissionsOptions = {
     reason:
       "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
@@ -85,18 +83,18 @@ async function doVicbdmSearchInNewTab(searchUrl, vicbdmSearchData) {
   try {
     // this stores the search data in local storage which is then picked up by the
     // content script in the new tab/window
-    chrome.storage.local.set({ vicbdmSearchData: vicbdmSearchData }, function () {
-      //console.log('saved vicbdmSearchData, vicbdmSearchData is:');
-      //console.log(vicbdmSearchData);
+    chrome.storage.local.set({ searchData: searchData }, function () {
+      //console.log('saved searchData, searchData is:');
+      //console.log(searchData);
     });
   } catch (ex) {
-    console.log("store of vicbdmSearchData failed");
+    console.log("store of searchData failed");
   }
 
   openUrlInNewTab(searchUrl);
 }
 
-async function doVicbdmSearchInExistingTab(tabId, vicbdmSearchData) {
+async function doVicbdmSearchInExistingTab(tabId, searchData) {
   //console.log("doVicbdmSearchInExistingTab: tabId is: " + tabId);
 
   // make the tab active
@@ -104,7 +102,7 @@ async function doVicbdmSearchInExistingTab(tabId, vicbdmSearchData) {
 
   let response = await chrome.tabs.sendMessage(tabId, {
     type: "doSearchInExistingTab",
-    vicbdmSearchData: vicbdmSearchData,
+    searchData: searchData,
   });
 
   if (chrome.runtime.lastError) {
@@ -131,15 +129,32 @@ async function doVicbdmSearch(input) {
 
     let searchUrl = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
 
-    const vicbdmSearchData = {
+    const checkPermissionsOptions = {
+      reason:
+        "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
+    };
+    let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
+    if (!allowed) {
+      closePopup();
+      return;
+    }
+
+    const searchData = {
       timeStamp: Date.now(),
       url: searchUrl,
       fieldData: fieldData,
       selectData: selectData,
     };
 
-    let success = await doVicBdmSearchGivenSearchData(vicbdmSearchData, options);
+    let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
 
+    // send message to background to do search so that we can close popup
+    chrome.runtime.sendMessage({
+      type: "doSearchWithSearchData",
+      siteName: "vicbdm",
+      searchData: searchData,
+      reuseTabIfPossible: reuseTabIfPossible,
+    });
     closePopup();
   });
 }

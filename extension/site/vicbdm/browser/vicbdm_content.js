@@ -26,12 +26,12 @@ var pendingSearchData;
 var currentPageType;
 
 async function getPendingSearch() {
-  //console.log("getPendingSearch");
+  console.log("getPendingSearch");
   return new Promise((resolve, reject) => {
     try {
-      chrome.storage.local.get(["vicbdmSearchData"], function (value) {
+      chrome.storage.local.get(["searchData"], function (value) {
         //console.log("getPendingSearch resolve");
-        resolve(value.vicbdmSearchData);
+        resolve(value.searchData);
       });
     } catch (ex) {
       console.log("getPendingSearch catch");
@@ -85,8 +85,8 @@ async function clearSearchingBanner() {
 }
 
 async function checkForPendingSearch() {
-  //console.log("checkForPendingSearch: called");
-  //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+  console.log("checkForPendingSearch: called");
+  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
@@ -104,23 +104,23 @@ async function checkForPendingSearch() {
   if (isStartingSearchPage) {
     //console.log("checkForPendingSearch: URL matches ready to fill form");
 
-    let vicbdmSearchData = undefined;
+    let searchData = undefined;
     try {
-      vicbdmSearchData = await getPendingSearch();
+      searchData = await getPendingSearch();
     } catch (error) {
       console.log("checkForPendingSearch: getPendingSearch reject");
     }
 
-    //console.log("checkForPendingSearch: vicbdmSearchData is:");
-    //console.log(vicbdmSearchData);
+    //console.log("checkForPendingSearch: searchData is:");
+    //console.log(searchData);
 
-    if (vicbdmSearchData) {
+    if (searchData) {
       setSearchingBanner();
 
       //console.log("checkForPendingSearch: got formValues:");
-      //console.log(vicbdmSearchData);
+      //console.log(searchData);
 
-      let timeStamp = vicbdmSearchData.timeStamp;
+      let timeStamp = searchData.timeStamp;
       let timeStampNow = Date.now();
       let timeSinceSearch = timeStampNow - timeStamp;
 
@@ -131,12 +131,12 @@ async function checkForPendingSearch() {
 
       // It can take a long time to populate the page with the input fields
       if (timeSinceSearch < 50000) {
-        pendingSearchData = vicbdmSearchData;
+        pendingSearchData = searchData;
       }
 
       // clear the search data
-      chrome.storage.local.remove(["vicbdmSearchData"], function () {
-        //console.log("cleared vicbdmSearchData");
+      chrome.storage.local.remove(["searchData"], function () {
+        //console.log("cleared searchData");
       });
     }
   }
@@ -159,15 +159,15 @@ async function clearSearchFields() {
 }
 
 async function doPendingSearch() {
-  //console.log("doPendingSearch: called");
-  //console.log("doPendingSearch: URL is");
-  //console.log(document.URL);
+  console.log("doPendingSearch: called");
+  console.log("doPendingSearch: URL is");
+  console.log(document.URL);
 
   if (pendingSearchData) {
     //console.log("checkForPendingSearch: URL matches ready to fill form");
 
-    //console.log("checkForPendingSearch: got formValues:");
-    //console.log(pendingSearchData);
+    console.log("checkForPendingSearch: got formValues:");
+    console.log(pendingSearchData);
 
     let fieldData = pendingSearchData.fieldData;
 
@@ -418,19 +418,27 @@ function addMutationObserver() {
   //  https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
   // Would have to observer an element that exists from the start - e.g. div.main
 
-  //console.log("addMutationObserver");
+  console.log("addMutationObserver");
 
   let mainElement = document.querySelector("div.main");
   if (!mainElement) {
+    console.log("addMutationObserver: mainElement not found. document is:");
+    console.log(document);
+
+    // this doesn't happen in Chrome but does in Firefox.
+    setTimeout(function () {
+      addMutationObserver();
+    }, 100);
+
     return;
   }
 
-  //console.log("addMutationObserver: main element found");
+  console.log("addMutationObserver: main element found");
 
   const callback = (mutationList, observer) => {
-    //console.log("Mutation observer callback, mutationList is:");
-    //console.log(mutationList);
-    //console.log(observer);
+    console.log("Mutation observer callback, mutationList is:");
+    console.log(mutationList);
+    console.log(observer);
 
     for (const mutation of mutationList) {
       if (mutation.type === "childList") {
@@ -466,11 +474,11 @@ function addMutationObserver() {
 
 function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    //console.log("vicbdm: additionalMessageHandler, request is:");
-    //console.log(request);
-    //console.log("vicbdm: additionalMessageHandler, currentPageType is: " + currentPageType);
+    console.log("vicbdm: additionalMessageHandler, request is:");
+    console.log(request);
+    console.log("vicbdm: additionalMessageHandler, currentPageType is: " + currentPageType);
 
-    pendingSearchData = request.vicbdmSearchData;
+    pendingSearchData = request.searchData;
 
     if (currentPageType == "historical-search") {
       clearSearchFields();

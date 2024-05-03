@@ -30,6 +30,7 @@ import {
   handleUnregisterTabMessage,
   handleGetRegisteredTabMessage,
 } from "./background_register_tab.mjs";
+import { handleDoSearchWithSearchDataMessage } from "./background_search.mjs";
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
 
 async function executeScript(tabId, script, callback) {
@@ -66,11 +67,14 @@ function messageHandler(request, sender, sendResponse) {
     //console.log("WikiTree Sourcer, background script, received registerTab message");
     handleRegisterTabMessage(request, sender, sendResponse);
   } else if (request.type == "unregisterTab") {
-    console.log("WikiTree Sourcer, background script, received unregisterTab message");
+    //console.log("WikiTree Sourcer, background script, received unregisterTab message");
     handleUnregisterTabMessage(request, sender, sendResponse);
   } else if (request.type == "getRegisteredTab") {
     //console.log("WikiTree Sourcer, background script, received getRegisteredTab message");
     handleGetRegisteredTabMessage(request, sender, sendResponse);
+  } else if (request.type == "doSearchWithSearchData") {
+    //console.log("WikiTree Sourcer, background script, received doSearchWithSearchData message");
+    handleDoSearchWithSearchDataMessage(request, sender, sendResponse);
   } else if (request.type == "exception") {
     handleExceptionMessage(request, sendResponse);
 
