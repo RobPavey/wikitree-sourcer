@@ -49,20 +49,25 @@ async function doSearchInExistingTab(tabId, searchData) {
   // make the tab active
   chrome.tabs.update(tabId, { active: true });
 
-  let response = await chrome.tabs.sendMessage(tabId, {
-    type: "doSearchInExistingTab",
-    searchData: searchData,
-  });
+  try {
+    let response = await chrome.tabs.sendMessage(tabId, {
+      type: "doSearchInExistingTab",
+      searchData: searchData,
+    });
 
-  if (chrome.runtime.lastError) {
-    console.log("doSearchInExistingTab failed, lastError is:");
-    console.log(lastError);
-  } else if (!response) {
-    console.log("doSearchInExistingTab failed, null response");
-    console.log(message);
-  } else {
-    console.log("doSearchInExistingTab message sent OK");
-    return true;
+    if (chrome.runtime.lastError) {
+      console.log("doSearchInExistingTab failed, lastError is:");
+      console.log(lastError);
+    } else if (!response) {
+      console.log("doSearchInExistingTab failed, null response");
+      console.log(message);
+    } else {
+      console.log("doSearchInExistingTab message sent OK");
+      return true;
+    }
+  } catch (error) {
+    console.log("caught error from sendMessage:");
+    console.log(error);
   }
 
   return false;

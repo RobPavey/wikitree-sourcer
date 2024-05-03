@@ -373,10 +373,14 @@ async function addSearchResultsListener() {
 }
 
 async function unregisterTabWithBackground() {
-  //console.log("unregisterTabWithBackground");
+  console.log("unregisterTabWithBackground");
 
   // send message to background script that we have a vicbdm tab open
-  let unregisterResponse = await chrome.runtime.sendMessage({ type: "unregisterTab", siteName: "vicbdm" });
+  let unregisterResponse = await chrome.runtime.sendMessage({
+    type: "unregisterTab",
+    siteName: "vicbdm",
+    tab: registeredTabId,
+  });
 
   //console.log("vicbdm, response from unregisterTab message");
   //console.log(unregisterResponse);
@@ -388,12 +392,20 @@ async function unregisterTabWithBackground() {
   }
 }
 
+var registeredTabId = undefined;
+
 async function registerTabWithBackground() {
   // send message to background script that we have a vicbdm tab open
   let registerResponse = await chrome.runtime.sendMessage({ type: "registerTab", siteName: "vicbdm" });
 
   //console.log("vicbdm, response from registerTab message");
   //console.log(registerResponse);
+
+  // we remember the tabId because in Firefox when we try to unregister
+  // the sender in the message receiver has no tab if the tab was closed already.
+  if (registerResponse && registerResponse.tab) {
+    registeredTabId = registerResponse.tab;
+  }
 
   if (chrome.runtime.lastError) {
     // possibly there is no background script loaded, this should never happen
@@ -403,7 +415,7 @@ async function registerTabWithBackground() {
     //console.log("addng event listener for unregister");
 
     window.addEventListener("pagehide", function () {
-      //console.log("pagehide event");
+      console.log("pagehide event");
       unregisterTabWithBackground();
     });
   }
