@@ -23,64 +23,7 @@ SOFTWARE.
 */
 
 import { setupContextMenu } from "./background_context_menu.mjs";
-import { handleExceptionMessage } from "./background_exception.mjs";
-import { handleContentLoadedMessage } from "./background_content_loaded.mjs";
-import {
-  handleRegisterTabMessage,
-  handleUnregisterTabMessage,
-  handleGetRegisteredTabMessage,
-} from "./background_register_tab.mjs";
-import { handleDoSearchWithSearchDataMessage } from "./background_search.mjs";
-import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
-
-function setPopup(tab, popupPage) {
-  //console.log("WikiTree Sourcer, background script (MV2), set popup on tab " + tab + " to: " + popupPage);
-  chrome.action.setPopup({ tabId: tab, popup: popupPage });
-}
-
-function setIcon(tab, iconPath) {
-  chrome.action.setIcon({ tabId: tab, path: iconPath });
-}
-
-// Listen for messages (from the popup script mostly)
-function messageHandler(request, sender, sendResponse) {
-  // Request should have these fields
-  // type = the message type, a string that defines the action to be performed
-
-  //console.log("background messageHandler, request is: ");
-  //console.log(request);
-
-  if (request.type == "contentLoaded") {
-    //console.log("WikiTree Sourcer, background script, received contentLoaded message");
-    handleContentLoadedMessage(request, sender, sendResponse, setPopup, setIcon);
-  } else if (request.type == "registerTab") {
-    //console.log("WikiTree Sourcer, background script, received registerTab message");
-    handleRegisterTabMessage(request, sender, sendResponse);
-  } else if (request.type == "unregisterTab") {
-    //console.log("WikiTree Sourcer, background script, received unregisterTab message");
-    handleUnregisterTabMessage(request, sender, sendResponse);
-  } else if (request.type == "getRegisteredTab") {
-    //console.log("WikiTree Sourcer, background script, received getRegisteredTab message");
-    handleGetRegisteredTabMessage(request, sender, sendResponse);
-  } else if (request.type == "doSearchWithSearchData") {
-    //console.log("WikiTree Sourcer, background script, received doSearchWithSearchData message");
-    handleDoSearchWithSearchDataMessage(request, sender, sendResponse);
-  } else if (request.type == "exception") {
-    handleExceptionMessage(request, sendResponse);
-
-    // we send an async response to confirm the tab was opened and updated
-    return true;
-  } else if (request.type == "getOptions") {
-    callFunctionWithStoredOptions(function (options) {
-      let response = { success: true, options: options };
-      sendResponse(response);
-    });
-    return true;
-  }
-  //else if (request.type == "updateContextMenu") {
-  //  modifyContextMenu(request.contentType);
-  //}
-}
+import { messageHandler } from "./background_common.mjs";
 
 chrome.runtime.onMessage.addListener(messageHandler);
 setupContextMenu();
