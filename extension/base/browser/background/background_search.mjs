@@ -44,7 +44,7 @@ async function doSearchInNewTab(searchData, currentTab, options) {
 }
 
 async function doSearchInExistingTab(tabId, searchData) {
-  console.log("doSearchInExistingTab: tabId is: " + tabId);
+  //console.log("doSearchInExistingTab: tabId is: " + tabId);
 
   // make the tab active
   chrome.tabs.update(tabId, { active: true });
@@ -62,7 +62,7 @@ async function doSearchInExistingTab(tabId, searchData) {
       console.log("doSearchInExistingTab failed, null response");
       console.log(message);
     } else {
-      console.log("doSearchInExistingTab message sent OK");
+      //console.log("doSearchInExistingTab message sent OK");
       return true;
     }
   } catch (error) {
@@ -78,6 +78,8 @@ async function doSearchGivenSearchData(searchData, activeTab, options, existingT
   console.log(reuseTabIfPossible);
   console.log("doSearchGivenSearchData. existingTab is:");
   console.log(existingTab);
+  console.log("doSearchGivenSearchData. searchData is:");
+  console.log(searchData);
 
   if (reuseTabIfPossible) {
     if (existingTab) {

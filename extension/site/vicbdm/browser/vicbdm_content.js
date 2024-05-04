@@ -181,12 +181,42 @@ async function doPendingSearch() {
     let inputNotFound = false;
 
     let formElement = document.querySelector("div.historical-search-criteria form");
+    //console.log("doPendingSearch: formElement is:");
+    //console.log(formElement);
     if (formElement) {
       let searchTypeElement = document.querySelector("#historicalSearch-type0");
       let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
+
+      //console.log("doPendingSearch: searchTypeElement is:");
+      //console.log(searchTypeElement);
+      //console.log("doPendingSearch: menuBarElement is:");
+      //console.log(menuBarElement);
+
       if (searchTypeElement) {
         // extra attempt to make sure changes get registered in angular model
         searchTypeElement.focus();
+      }
+
+      // because the additionalOptions checkbox affects which other fields are present it is best to do
+      // it forst. It was not a problem on Chrome but was in Safari. It seems that the order
+      // that the keys are iterated in is not consistent.
+
+      const additionalOptionsId = "historicalSearch-additionalOptions";
+      if (fieldData[additionalOptionsId]) {
+        let inputElement = formElement.querySelector("#" + additionalOptionsId);
+        if (inputElement) {
+          //console.log("doPendingSearch: inputElement is:");
+          //console.log(inputElement);
+          await sleep(10);
+          let inputType = inputElement.getAttribute("type");
+          if (inputType == "checkbox") {
+            //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.checked);
+            inputElement.checked = true;
+            var event = new Event("change", { bubbles: true });
+            inputElement.dispatchEvent(event);
+            await sleep(20);
+          }
+        }
       }
 
       for (var key in fieldData) {
@@ -196,6 +226,9 @@ async function doPendingSearch() {
           //console.log("checkForPendingSearch: value is: " + value);
 
           let inputElement = formElement.querySelector("#" + key);
+          //console.log("doPendingSearch: inputElement is:");
+          //console.log(inputElement);
+
           if (inputElement) {
             await sleep(10);
 
