@@ -102,7 +102,7 @@ function addMhSameRecordMenuItem(menu, data) {
 }
 
 function addMhSearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function (element) {
+  addMenuItem(menu, "Search a specific collection...", function (element) {
     setupSearchCollectionsSubMenu(data, "mh", mhSearchCollection, backFunction);
   });
 }
@@ -114,7 +114,7 @@ function addMhSearchTreeMenuItem(menu, data) {
 }
 
 function addMhSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function (element) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
     setupMhSearchWithParametersSubMenu(data, backFunction);
   });
 }

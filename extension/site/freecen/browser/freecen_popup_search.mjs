@@ -170,13 +170,13 @@ function addFreecenSameRecordMenuItem(menu, data) {
 }
 
 function addFreecenSearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function (element) {
+  addMenuItem(menu, "Search a specific collection...", function (element) {
     setupSearchCollectionsSubMenu(data, "freecen", freecenSearchCollection, backFunction);
   });
 }
 
 function addFreecenSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function (element) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
     setupFreecenSearchWithParametersSubMenu(data, backFunction);
   });
 }

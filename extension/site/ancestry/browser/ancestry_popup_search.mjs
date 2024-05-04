@@ -114,7 +114,7 @@ function addAncestrySameRecordMenuItem(menu, data) {
 }
 
 function addAncestrySearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function (element) {
+  addMenuItem(menu, "Search a specific collection...", function (element) {
     setupSearchCollectionsSubMenu(data, "ancestry", ancestrySearchCollection, backFunction);
   });
 }
@@ -126,7 +126,7 @@ function addAncestryTreesMenuItem(menu, data) {
 }
 
 function addAncestrySearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function (element) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
     setupAncestrySearchWithParametersSubMenu(data, backFunction);
   });
 }

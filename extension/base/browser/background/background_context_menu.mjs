@@ -402,86 +402,176 @@ function openVicbdm(lcText, tab, options) {
   //console.log("looks like Victorian BDM, lcText is:");
   //console.log(lcText);
 
-  let startIndex = lcText.search(/\d+ ?\/ ?\d+/);
-  if (startIndex == -1) {
-    return false;
-  }
-  let refText = lcText.substring(startIndex);
-  let endIndex = refText.search(/[^\d\s\/]/);
-  if (endIndex == -1) {
-    endIndex = refText.length;
-  }
-  refText = refText.substring(0, endIndex);
+  let regNum = "";
+  let regYear = "";
 
-  //console.log("refText is '" + refText + "'");
+  function lookForNormalNumSlashNum() {
+    let startIndex = lcText.search(/\d+ ?\/ ?\d+/);
+    //console.log("startIndex is: " + startIndex);
+    if (startIndex == -1) {
+      return false;
+    }
+    let refText = lcText.substring(startIndex);
+    let endIndex = refText.search(/[^\d\s\/]/);
+    //console.log("endIndex is: " + endIndex);
+    if (endIndex == -1) {
+      endIndex = refText.length;
+    }
+    refText = refText.substring(0, endIndex).trim();
 
-  let num1 = refText.replace(/^(\d+) ?\/ ?\d+$/, "$1");
-  let num2 = refText.replace(/^\d+ ?\/ ?(\d+)$/, "$1");
-  //console.log("num1 is '" + num1 + "'");
-  //console.log("num2 is '" + num2 + "'");
+    //console.log("refText is '" + refText + "'");
 
-  if (!num1 || !num2 || num1 == refText || num2 == refText) {
-    return false;
-  }
+    let num1 = refText.replace(/^(\d+) ?\/ ?\d+$/, "$1");
+    let num2 = refText.replace(/^\d+ ?\/ ?(\d+)$/, "$1");
+    //console.log("num1 is '" + num1 + "'");
+    //console.log("num2 is '" + num2 + "'");
 
-  if (num1.length == 4 || num2.length == 4) {
-    let number1 = Number(num1);
-    let number2 = Number(num2);
-    let regYear = num2;
-    let regNum = num1;
-    if (!(num2.length == 4 && number2 > 1800 && number2 < 2050)) {
-      if (num1.length == 4 && number1 > 1800 && number1 < 2050) {
-        regYear = num1;
-        regNum = num2;
-      } else {
-        return false;
+    if (!num1 || !num2 || num1 == refText || num2 == refText) {
+      return false;
+    }
+
+    if (num1.length == 4 || num2.length == 4) {
+      let number1 = Number(num1);
+      let number2 = Number(num2);
+      regYear = num2;
+      regNum = num1;
+      if (!(num2.length == 4 && number2 > 1800 && number2 < 2050)) {
+        if (num1.length == 4 && number1 > 1800 && number1 < 2050) {
+          regYear = num1;
+          regNum = num2;
+        }
       }
-    }
-
-    //console.log("regNum is '" + regNum + "'");
-    //console.log("regYear is '" + regYear + "'");
-
-    let fieldData = {};
-    fieldData["historicalSearch-events-registrationNumber-number"] = regNum;
-    fieldData["historicalSearch-events-registrationNumber-year"] = regYear;
-
-    // see if we can decide whether to search for births, deaths or marriages
-    // Exxample text:
-    // Victoria State Government, Registry of Births, Deaths and Marriages Victoria. Richard Goodall Elrington. Birth. Registration number 3218 / 1870. Father: Name. Mother: Name. District: Place. Link to search page
-    let birthOccurrences = (lcText.match(/birth/g) || []).length;
-    let deathOccurrences = (lcText.match(/death/g) || []).length;
-    let marriageOccurrences = (lcText.match(/marriage/g) || []).length;
-
-    if (birthOccurrences && birthOccurrences > deathOccurrences && birthOccurrences > marriageOccurrences) {
-      fieldData["historicalSearch-events-birth"] = true;
-    } else if (deathOccurrences && deathOccurrences > birthOccurrences && deathOccurrences > marriageOccurrences) {
-      fieldData["historicalSearch-events-death"] = true;
-    } else if (
-      marriageOccurrences &&
-      marriageOccurrences > birthOccurrences &&
-      marriageOccurrences > birthOccurrences
-    ) {
-      fieldData["historicalSearch-events-marriage"] = true;
-    }
-    try {
-      let link = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
-
-      const searchData = {
-        timeStamp: Date.now(),
-        url: link,
-        fieldData: fieldData,
-      };
-
-      let existingTab = getRegisteredTab("vicbdm");
-
-      let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
-
-      doSearchGivenSearchData(searchData, tab, options, existingTab, reuseTabIfPossible);
       return true;
-    } catch (ex) {
-      console.log("storeDataCache failed");
-      console.log(ex);
     }
+    return false;
+  }
+
+  function lookForSeparateYearAndRefNum() {
+    let regNumIndex = lcText.search(/reg[^\s:.]*[:.\s]*\d+/);
+    if (regNumIndex == -1) {
+      regNumIndex = lcText.search(/reg[^\s:.]*[:.\s]*num[^\s:.]*[:.\s]*\d+/);
+    }
+    if (regNumIndex == -1) {
+      regNumIndex = lcText.search(/ref[^\s:.]*[:.\s]*\d+/);
+    }
+    if (regNumIndex == -1) {
+      regNumIndex = lcText.search(/ref[^\s:.]*[:.\s]*num[^\s:.]*[:.\s]*\d+/);
+    }
+    if (regNumIndex == -1) {
+      return false;
+    }
+    let regNumPart = lcText.substring(regNumIndex);
+    let regNumStartIndex = regNumPart.search(/\d/);
+    if (regNumStartIndex == -1) {
+      return false;
+    }
+    regNumPart = regNumPart.substring(regNumStartIndex);
+    let regNumEndIndex = regNumPart.search(/[^\d]+/);
+    if (regNumEndIndex == -1) {
+      regNumEndIndex = regNumPart.length;
+    }
+    regNum = regNumPart.substring(0, regNumEndIndex);
+
+    // now try to find year
+    let regYearIndex = lcText.search(/reg[^\s:.]*[:.\s]*date[^\s:.]*[:.\s]*\d\d\d\d/);
+    if (regYearIndex == -1) {
+      regYearIndex = lcText.search(/reg[^\s:.]*[:.\s]*year[^\s:.]*[:.\s]*\d\d\d\d/);
+    }
+    if (regYearIndex == -1) {
+      regYearIndex = lcText.search(/year[:.\s]*[\sa-z]*\d\d\d\d/);
+    }
+
+    // try to find year in a narrative type string or data string
+    if (regYearIndex == -1) {
+      regYearIndex = lcText.search(/born[:.\s]*[\sa-z]*\d\d\d\d/);
+    }
+    if (regYearIndex == -1) {
+      regYearIndex = lcText.search(/birth[:.\s]*[\sa-z]*\d\d\d\d/);
+    }
+    if (regYearIndex == -1) {
+      regYearIndex = lcText.search(/died[:.\s]*[\sa-z]*\d\d\d\d/);
+    }
+    if (regYearIndex == -1) {
+      regYearIndex = lcText.search(/death[:.\s]*[\sa-z]*\d\d\d\d/);
+    }
+    if (regYearIndex == -1) {
+      regYearIndex = lcText.search(/married[:.\s]*[\sa-z]*\d\d\d\d/);
+    }
+    if (regYearIndex == -1) {
+      regYearIndex = lcText.search(/marriage[:.\s]*[\sa-z]*\d\d\d\d/);
+    }
+
+    if (regYearIndex == -1) {
+      return false;
+    }
+    let regYearPart = lcText.substring(regYearIndex);
+    let regYearStartIndex = regYearPart.search(/\d/);
+    if (regYearStartIndex == -1) {
+      return false;
+    }
+    regYearPart = regYearPart.substring(regYearStartIndex);
+    let regYearEndIndex = regYearPart.search(/[^\d]+/);
+    if (regYearEndIndex == -1) {
+      regYearEndIndex = regYearPart.length;
+    }
+    regYear = regYearPart.substring(0, regYearEndIndex);
+    return true;
+  }
+
+  let foundYearAndNum = lookForNormalNumSlashNum();
+
+  if (!foundYearAndNum) {
+    foundYearAndNum = lookForSeparateYearAndRefNum();
+  }
+
+  //console.log("regNum is '" + regNum + "'");
+  //console.log("regYear is '" + regYear + "'");
+
+  if (!foundYearAndNum) {
+    return false;
+  }
+
+  let fieldData = {};
+  fieldData["historicalSearch-events-registrationNumber-number"] = regNum;
+  fieldData["historicalSearch-events-registrationNumber-year"] = regYear;
+
+  // see if we can decide whether to search for births, deaths or marriages
+  // Exxample text:
+  // Victoria State Government, Registry of Births, Deaths and Marriages Victoria. Richard Goodall Elrington. Birth. Registration number 3218 / 1870. Father: Name. Mother: Name. District: Place. Link to search page
+  let birthOccurrences = (lcText.match(/birth/g) || []).length;
+  let deathOccurrences = (lcText.match(/death/g) || []).length;
+  let marriageOccurrences = (lcText.match(/marriage/g) || []).length;
+
+  //console.log("birthOccurrences is '" + birthOccurrences + "'");
+  //console.log("deathOccurrences is '" + deathOccurrences + "'");
+  //console.log("marriageOccurrences is '" + marriageOccurrences + "'");
+
+  if (birthOccurrences && birthOccurrences > deathOccurrences && birthOccurrences > marriageOccurrences) {
+    fieldData["historicalSearch-events-birth"] = true;
+  } else if (deathOccurrences && deathOccurrences > birthOccurrences && deathOccurrences > marriageOccurrences) {
+    fieldData["historicalSearch-events-death"] = true;
+  } else if (marriageOccurrences && marriageOccurrences > birthOccurrences && marriageOccurrences > birthOccurrences) {
+    fieldData["historicalSearch-events-marriage"] = true;
+  }
+
+  try {
+    let link = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
+
+    const searchData = {
+      timeStamp: Date.now(),
+      url: link,
+      fieldData: fieldData,
+    };
+
+    let existingTab = getRegisteredTab("vicbdm");
+
+    let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
+
+    doSearchGivenSearchData(searchData, tab, options, existingTab, reuseTabIfPossible);
+    return true;
+  } catch (ex) {
+    console.log("storeDataCache failed");
+    console.log(ex);
   }
 
   return false;
@@ -494,12 +584,13 @@ function openSelectionText(info, tab) {
 
   let templateStartIndex = text.indexOf("{{");
   if (templateStartIndex != -1) {
+    //console.log("contains a template");
     openTemplate(info, tab);
   }
 
   // not a template, could be a Wiki-Id
   if (/^\s*[^\-\[\]]+\-\d+\s*$/.test(text)) {
-    // looks like a Wiki-Id.
+    //console.log("looks like a Wiki-Id");
     let wikiId = text.trim();
 
     // Want something like this: https://www.wikitree.com/wiki/Pavey-451
@@ -513,7 +604,20 @@ function openSelectionText(info, tab) {
 
   // check for Victorian BDM
   let lcText = text.toLowerCase();
-  if (lcText.includes("victoria") && /\d+ ?\/ ?\d+/.test(lcText)) {
+  //console.log("lcText is:");
+  //console.log(lcText);
+
+  let includesNumber = /\d+ ?\/ ?\d+/.test(lcText);
+  if (!includesNumber) {
+    let includesReg = /reg[^\s:.]*[:.\s]*\d+/i.test(lcText);
+    let includesRegNum = /reg[^\s:.]*[:.\s]*num[^\s:.]*[:.\s]*\d+/i.test(lcText);
+    let includesRef = /ref[^\s:.]*[:.\s]*\d+/i.test(lcText);
+    let includesRefNum = /ref[^\s:.]*[:.\s]*num[^\s:.]*[:.\s]*\d+/i.test(lcText);
+    if (includesReg || includesRegNum || includesRef || includesRefNum) {
+    }
+  }
+
+  if (lcText.includes("vic")) {
     callFunctionWithStoredOptions(function (options) {
       openVicbdm(lcText, tab, options);
     });

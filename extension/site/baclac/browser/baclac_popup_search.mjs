@@ -161,13 +161,13 @@ function addBaclacSearchAllCollectionsMenuItem(menu, data) {
 }
 
 function addBaclacSearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function (element) {
+  addMenuItem(menu, "Search a specific collection...", function (element) {
     setupSearchCollectionsSubMenu(data, "baclac", baclacSearchCollection, backFunction);
   });
 }
 
 function addBaclacSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function (element) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
     setupBaclacSearchWithParametersSubMenu(data, backFunction);
   });
 }

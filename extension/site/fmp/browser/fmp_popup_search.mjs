@@ -113,7 +113,7 @@ function addFmpSameRecordMenuItem(menu, data) {
 }
 
 function addFmpSearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function (element) {
+  addMenuItem(menu, "Search a specific collection...", function (element) {
     setupSearchCollectionsSubMenu(data, "fmp", fmpSearchCollection, backFunction);
   });
 }
@@ -125,7 +125,7 @@ function addFmpSearchTreeMenuItem(menu, data) {
 }
 
 function addFmpSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function (element) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
     setupFmpSearchWithParametersSubMenu(data, backFunction);
   });
 }

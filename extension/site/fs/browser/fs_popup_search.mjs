@@ -109,7 +109,7 @@ function addFsSameRecordMenuItem(menu, data) {
 }
 
 function addFsSearchCollectionsMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search a specific collection", function (element) {
+  addMenuItem(menu, "Search a specific collection...", function (element) {
     setupSearchCollectionsSubMenu(data, "fs", familySearchSearchCollection, backFunction);
   });
 }
@@ -121,7 +121,7 @@ function addFsSearchTreeMenuItem(menu, data) {
 }
 
 function addFsSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function (element) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
     setupFsSearchWithParametersSubMenu(data, backFunction);
   });
 }

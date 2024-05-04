@@ -287,7 +287,7 @@ function addVicbdmSearchDeathsMenuItem(menu, data, filter) {
 }
 
 function addVicbdmSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function (element) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
     setupVicbdmSearchWithParametersSubMenu(data, backFunction);
   });
 }

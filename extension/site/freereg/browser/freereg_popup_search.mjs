@@ -224,7 +224,7 @@ function addFreeregSearchAllTypesMenuItem(menu, data, filter) {
 }
 
 function addFreeregSearchWithParametersMenuItem(menu, data, backFunction) {
-  addMenuItem(menu, "Search with specified parameters", function (element) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
     setupFreeregSearchWithParametersSubMenu(data, backFunction);
   });
 }
