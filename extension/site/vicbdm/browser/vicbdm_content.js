@@ -26,7 +26,7 @@ var pendingSearchData;
 var currentPageType;
 
 async function getPendingSearch() {
-  console.log("getPendingSearch");
+  //console.log("getPendingSearch");
   return new Promise((resolve, reject) => {
     try {
       chrome.storage.local.get(["searchData"], function (value) {
@@ -85,8 +85,8 @@ async function clearSearchingBanner() {
 }
 
 async function checkForPendingSearch() {
-  console.log("checkForPendingSearch: called");
-  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+  //console.log("checkForPendingSearch: called");
+  //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
@@ -159,15 +159,15 @@ async function clearSearchFields() {
 }
 
 async function doPendingSearch() {
-  console.log("doPendingSearch: called");
-  console.log("doPendingSearch: URL is");
-  console.log(document.URL);
+  //console.log("doPendingSearch: called");
+  //console.log("doPendingSearch: URL is");
+  //console.log(document.URL);
 
   if (pendingSearchData) {
     //console.log("checkForPendingSearch: URL matches ready to fill form");
 
-    console.log("checkForPendingSearch: got formValues:");
-    console.log(pendingSearchData);
+    //console.log("checkForPendingSearch: got formValues:");
+    //console.log(pendingSearchData);
 
     let fieldData = pendingSearchData.fieldData;
 
@@ -406,7 +406,7 @@ async function addSearchResultsListener() {
 }
 
 async function unregisterTabWithBackground() {
-  console.log("unregisterTabWithBackground");
+  //console.log("unregisterTabWithBackground");
 
   // send message to background script that we have a vicbdm tab open
   let unregisterResponse = await chrome.runtime.sendMessage({
@@ -448,7 +448,7 @@ async function registerTabWithBackground() {
     //console.log("addng event listener for unregister");
 
     window.addEventListener("pagehide", function () {
-      console.log("pagehide event");
+      //console.log("pagehide event");
       unregisterTabWithBackground();
     });
   }
@@ -463,12 +463,12 @@ function addMutationObserver() {
   //  https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
   // Would have to observer an element that exists from the start - e.g. div.main
 
-  console.log("addMutationObserver");
+  //console.log("addMutationObserver");
 
   let mainElement = document.querySelector("div.main");
   if (!mainElement) {
-    console.log("addMutationObserver: mainElement not found. document is:");
-    console.log(document);
+    //console.log("addMutationObserver: mainElement not found. document is:");
+    //console.log(document);
 
     // this doesn't happen in Chrome but does in Firefox.
     setTimeout(function () {
@@ -478,12 +478,12 @@ function addMutationObserver() {
     return;
   }
 
-  console.log("addMutationObserver: main element found");
+  //console.log("addMutationObserver: main element found");
 
   const callback = (mutationList, observer) => {
-    console.log("Mutation observer callback, mutationList is:");
-    console.log(mutationList);
-    console.log(observer);
+    //console.log("Mutation observer callback, mutationList is:");
+    //console.log(mutationList);
+    //console.log(observer);
 
     for (const mutation of mutationList) {
       if (mutation.type === "childList") {
@@ -519,9 +519,9 @@ function addMutationObserver() {
 
 function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    console.log("vicbdm: additionalMessageHandler, request is:");
-    console.log(request);
-    console.log("vicbdm: additionalMessageHandler, currentPageType is: " + currentPageType);
+    //console.log("vicbdm: additionalMessageHandler, request is:");
+    //console.log(request);
+    //console.log("vicbdm: additionalMessageHandler, currentPageType is: " + currentPageType);
 
     pendingSearchData = request.searchData;
 
