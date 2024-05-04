@@ -29,15 +29,11 @@ import { generalizeData } from "../core/vicbdm_generalize_data.mjs";
 import { buildCitation } from "../core/vicbdm_build_citation.mjs";
 import { VicbdmEdReader } from "../core/vicbdm_ed_reader.mjs";
 
-async function suggestPlaceNames(menu, data) {
+async function suggestPlaceNames(menu, data, placeName) {
   let placeNamesModule = await import("../core/vicbdm_place_names.mjs");
   if (!placeNamesModule) {
     return;
   }
-
-  let edReader = new VicbdmEdReader(data.extractedData);
-
-  let placeName = edReader.getCitationPlace();
 
   //console.log("suggestPlaceNames, placeName is:");
   //console.log(placeName);
@@ -65,6 +61,24 @@ async function suggestPlaceNames(menu, data) {
   displayTextMenu(titleText, displayString, backFunction);
 }
 
+function vicbdmCustomMenuFunction(menu, data) {
+  let edReader = new VicbdmEdReader(data.extractedData);
+  let placeName = edReader.getCitationPlace();
+  let birthPlaceName = edReader.getCitationPlaceOfBirth();
+
+  if (placeName) {
+    addMenuItem(menu, "Suggest event place names...", function (element) {
+      suggestPlaceNames(menu, data, placeName);
+    });
+  }
+
+  if (birthPlaceName && birthPlaceName != placeName) {
+    addMenuItem(menu, "Suggest birth place names...", function (element) {
+      suggestPlaceNames(menu, data, birthPlaceName);
+    });
+  }
+}
+
 async function setupVicbdmPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
@@ -75,11 +89,7 @@ async function setupVicbdmPopupMenu(extractedData) {
     siteNameToExcludeFromSearch: "vicbdm",
   };
 
-  input.customMenuFunction = function (menu, data) {
-    addMenuItem(menu, "Suggest place names...", function (element) {
-      suggestPlaceNames(menu, data);
-    });
-  };
+  input.customMenuFunction = vicbdmCustomMenuFunction;
 
   setupSimplePopupMenu(input);
 }

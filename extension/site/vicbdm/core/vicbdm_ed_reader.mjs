@@ -382,7 +382,7 @@ class VicbdmEdReader extends ExtractedDataReader {
   getMothersMaidenName() {
     let mmn = this.getRecordDataValue("Mother's family name at birth");
 
-    if (mmn && mmn != "UNKNOWN") {
+    if (mmn && mmn != "UNKNOWN" && mmn != "U") {
       let cleanMmn = NameUtils.convertNameFromAllCapsToMixedCase(mmn);
       if (cleanMmn) {
         return cleanMmn;
@@ -484,7 +484,7 @@ class VicbdmEdReader extends ExtractedDataReader {
     let mothersNameLnab = this.getRecordDataValue("Mother's family name at birth");
     let fathersName = this.getRecordDataValue("Father's Name");
 
-    if (mothersNameLnab == "UNKNOWN") {
+    if (mothersNameLnab == "UNKNOWN" || mothersNameLnab == "U") {
       mothersNameLnab = "";
     }
 

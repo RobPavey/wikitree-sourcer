@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Victoria Registry of Births Deaths & Marriages\"<br/>\nVictoria Deaths Index; Registration number: 327 / 1862<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nJames SMITH; Year: 1862; Father: James; Mother: Ann; Mother's LNAB: U.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James's death was registered in 1862 in Victoria, Australia. He was the son of James & Ann.<ref>\n'''Death Registration''':\n\"Victoria Registry of Births Deaths & Marriages\"<br/>\nVictoria Deaths Index; Registration number: 327 / 1862<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nJames SMITH; Year: 1862; Father: James; Mother: Ann; Mother's LNAB: U.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Victoria Registry of Births Deaths & Marriages\"<br/>Victoria Deaths Index; Registration number: 327 / 1862<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>James SMITH; Year: 1862; Father: James; Mother: Ann; Mother's LNAB: U.",
+    "type": "source"
+  }
+}

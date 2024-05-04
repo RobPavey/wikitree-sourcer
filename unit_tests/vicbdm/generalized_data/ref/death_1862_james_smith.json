@@ -1,0 +1,41 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "forenames": "James",
+    "lastName": "Smith"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1862"
+  },
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "lastNameAtDeath": "Smith",
+  "deathDate": {
+    "yearString": "1862"
+  },
+  "deathPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "James"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Ann"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Deaths",
+    "year": "1862",
+    "regNum": "327"
+  },
+  "hasValidData": true
+}

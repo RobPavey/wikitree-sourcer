@@ -755,6 +755,8 @@ const narrativeDeathRegRegOptionsGroup = {
       ],
       defaultValue: "oneSentence",
     },
+    getNarrativeIncludeParentageOption("inSeparateSentence"),
+    narrativeParentageFormatOption,
     narrativeIncludeMmnOption,
     narrativeRegistrationDistrictFormatOption,
   ],

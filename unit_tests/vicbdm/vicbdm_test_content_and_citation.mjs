@@ -54,6 +54,11 @@ const regressionData = [
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/662ed1b068d03925b30fc254/record/5c6547cb4aba80ac31d04156?q=efamily&givenName=Donald&familyName=JOHNSTON",
   },
   {
+    // MMN is "U"
+    caseName: "death_1862_james_smith",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/66355a8368d03925b31054d1/record/5c6537244aba80ac31c96f5a?q=efamily&givenName=James&familyName=SMITH",
+  },
+  {
     caseName: "death_1939_fanny_nicholson",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c6547444aba80ac31a8d8ff?q=efamily&givenName=Fanny&familyName=NICHOLSON",
   },
