@@ -297,6 +297,10 @@ function addVicbdmSearchWithParametersMenuItem(menu, data, backFunction) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupVicbdmSearchSubMenu(data, backFunction, filter) {
+  let backToHereFunction = function () {
+    setupVicbdmSearchSubMenu(data, backFunction, filter);
+  };
+
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -305,7 +309,7 @@ async function setupVicbdmSearchSubMenu(data, backFunction, filter) {
   addVicbdmSearchBirthsMenuItem(menu, data, filter);
   addVicbdmSearchMarriagesMenuItem(menu, data, filter);
   addVicbdmSearchDeathsMenuItem(menu, data, filter);
-  addVicbdmSearchWithParametersMenuItem(menu, data, backFunction);
+  addVicbdmSearchWithParametersMenuItem(menu, data, backToHereFunction);
 
   endMainMenu(menu);
 }
