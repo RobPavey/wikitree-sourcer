@@ -398,7 +398,7 @@ function openTemplate(info, tab) {
   }
 }
 
-function openVicbdm(lcText, tab, options) {
+async function openVicbdm(lcText, tab, options) {
   //console.log("looks like Victorian BDM, lcText is:");
   //console.log(lcText);
 
@@ -563,7 +563,7 @@ function openVicbdm(lcText, tab, options) {
       fieldData: fieldData,
     };
 
-    let existingTab = getRegisteredTab("vicbdm");
+    let existingTab = await getRegisteredTab("vicbdm");
 
     let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
 
@@ -606,16 +606,6 @@ function openSelectionText(info, tab) {
   let lcText = text.toLowerCase();
   //console.log("lcText is:");
   //console.log(lcText);
-
-  let includesNumber = /\d+ ?\/ ?\d+/.test(lcText);
-  if (!includesNumber) {
-    let includesReg = /reg[^\s:.]*[:.\s]*\d+/i.test(lcText);
-    let includesRegNum = /reg[^\s:.]*[:.\s]*num[^\s:.]*[:.\s]*\d+/i.test(lcText);
-    let includesRef = /ref[^\s:.]*[:.\s]*\d+/i.test(lcText);
-    let includesRefNum = /ref[^\s:.]*[:.\s]*num[^\s:.]*[:.\s]*\d+/i.test(lcText);
-    if (includesReg || includesRegNum || includesRef || includesRefNum) {
-    }
-  }
 
   if (lcText.includes("vic")) {
     callFunctionWithStoredOptions(function (options) {

@@ -22,10 +22,37 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-var siteRegistry = {};
+// NOTE: because service workers are non-persistent we can't store siteRegistry in a global var
+async function getSiteRegistry() {
+  let value = await chrome.storage.session.get(["backgroundTabIdRegistry"]);
 
-function handleRegisterTabMessage(request, sender, sendResponse) {
+  //console.log("getSiteRegistry, value is:");
+  //console.log(value);
+
+  if (!(value && value.backgroundTabIdRegistry)) {
+    return {};
+  }
+
+  //console.log("getSiteRegistry, value.backgroundTabIdRegistry is:");
+  //console.log(value.backgroundTabIdRegistry);
+
+  let siteRegistry = value.backgroundTabIdRegistry;
+
+  return siteRegistry;
+}
+
+async function setSiteRegistry(siteRegistry) {
+  //console.log("setSiteRegistry, siteRegistry is:");
+  //console.log(siteRegistry);
+
+  chrome.storage.session.set({ backgroundTabIdRegistry: siteRegistry });
+}
+
+async function handleRegisterTabMessage(request, sender, sendResponse) {
   //console.log("handleRegisterTabMessage");
+
+  let siteRegistry = await getSiteRegistry();
+
   //console.log("siteRegistry is:");
   //console.log(siteRegistry);
 
@@ -45,6 +72,8 @@ function handleRegisterTabMessage(request, sender, sendResponse) {
 
   siteRegistry[siteName] = tabList;
 
+  setSiteRegistry(siteRegistry);
+
   //console.log("handleRegisterTabMessage, done, siteRegistry is:");
   //console.log(siteRegistry);
 
@@ -54,12 +83,15 @@ function handleRegisterTabMessage(request, sender, sendResponse) {
   sendResponse(response);
 }
 
-function handleUnregisterTabMessage(request, sender, sendResponse) {
+async function handleUnregisterTabMessage(request, sender, sendResponse) {
   //console.log("handleUnregisterTabMessage, received unregisterTab message");
-  //console.log("siteRegistry is:");
-  //console.log(siteRegistry);
   //console.log("sender is:");
   //console.log(sender);
+
+  let siteRegistry = await getSiteRegistry();
+
+  //console.log("siteRegistry is:");
+  //console.log(siteRegistry);
 
   let tab = request.tab;
 
@@ -94,8 +126,10 @@ function handleUnregisterTabMessage(request, sender, sendResponse) {
   sendResponse(response);
 }
 
-function handleGetRegisteredTabMessage(request, sender, sendResponse) {
+async function handleGetRegisteredTabMessage(request, sender, sendResponse) {
   //console.log("handleGetRegisteredTabMessage, siteName is: " + request.siteName);
+
+  let siteRegistry = await getSiteRegistry();
 
   //console.log("handleGetRegisteredTabMessage, siteRegistry is:");
   //console.log(siteRegistry);
@@ -116,8 +150,16 @@ function handleGetRegisteredTabMessage(request, sender, sendResponse) {
   sendResponse(response);
 }
 
-function getRegisteredTab(siteName) {
+async function getRegisteredTab(siteName) {
+  let siteRegistry = await getSiteRegistry();
+
+  //console.log("getRegisteredTab, siteRegistry is:");
+  //console.log(siteRegistry);
+
   let tabList = siteRegistry[siteName];
+
+  //console.log("getRegisteredTab, tabList is:");
+  //console.log(tabList);
 
   if (tabList && tabList.length > 0) {
     let tab = tabList[tabList.length - 1];

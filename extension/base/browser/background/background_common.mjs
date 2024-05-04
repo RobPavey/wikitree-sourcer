@@ -54,15 +54,19 @@ function messageHandler(request, sender, sendResponse) {
   } else if (request.type == "registerTab") {
     //console.log("WikiTree Sourcer, background script, received registerTab message");
     handleRegisterTabMessage(request, sender, sendResponse);
+    return true;
   } else if (request.type == "unregisterTab") {
     //console.log("WikiTree Sourcer, background script, received unregisterTab message");
     handleUnregisterTabMessage(request, sender, sendResponse);
+    return true;
   } else if (request.type == "getRegisteredTab") {
     //console.log("WikiTree Sourcer, background script, received getRegisteredTab message");
     handleGetRegisteredTabMessage(request, sender, sendResponse);
+    return true;
   } else if (request.type == "doSearchWithSearchData") {
     //console.log("WikiTree Sourcer, background script, received doSearchWithSearchData message");
     handleDoSearchWithSearchDataMessage(request, sender, sendResponse);
+    return true;
   } else if (request.type == "exception") {
     handleExceptionMessage(request, sendResponse);
 

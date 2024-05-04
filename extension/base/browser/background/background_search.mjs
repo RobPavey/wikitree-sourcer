@@ -96,12 +96,12 @@ async function doSearchGivenSearchData(searchData, activeTab, options, existingT
   }
 }
 
-function handleDoSearchWithSearchDataMessage(request, sender, sendResponse) {
+async function handleDoSearchWithSearchDataMessage(request, sender, sendResponse) {
   let tab = sender.tab;
   let siteName = request.siteName;
   let searchData = request.searchData;
   let reuseTabIfPossible = request.reuseTabIfPossible;
-  let existingTabId = getRegisteredTab(siteName);
+  let existingTabId = await getRegisteredTab(siteName);
 
   callFunctionWithStoredOptions(function (options) {
     doSearchGivenSearchData(searchData, tab, options, existingTabId, reuseTabIfPossible);
