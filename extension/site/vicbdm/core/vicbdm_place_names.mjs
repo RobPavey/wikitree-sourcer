@@ -434,6 +434,9 @@ const placeNameData = [
       {
         name: "ARNH",
       },
+      {
+        name: "ALBURTON",
+      },
     ],
   },
   {
@@ -2677,6 +2680,9 @@ const placeNameData = [
       },
       {
         name: "CLIF HILL",
+      },
+      {
+        name: "CHILL",
       },
     ],
   },
@@ -21614,6 +21620,9 @@ const placeNameData = [
       {
         name: "CHIL",
       },
+      {
+        name: "CHILL",
+      },
     ],
   },
   {
@@ -40290,14 +40299,6 @@ const placeNameData = [
       },
     ],
   },
-  {
-    name: "alberton",
-    variations: [
-      {
-        name: "ALBURTON",
-      },
-    ],
-  },
 ];
 
 function mapRealPlaceNameToVicBdmPlaceNames(placeName) {
@@ -40315,29 +40316,6 @@ function mapRealPlaceNameToVicBdmPlaceNames(placeName) {
         }
       }
       break;
-    }
-  }
-
-  return abbrevs;
-
-  let lcPlaceName = placeName.toLowerCase();
-  for (let key of Object.keys(vicbdmPlaceAbbreviationTable)) {
-    let value = vicbdmPlaceAbbreviationTable[key];
-    if (value && value.toLowerCase() == lcPlaceName) {
-      abbrevs.push(key);
-    }
-  }
-
-  for (let row of vicbdmPlaceAbbreviationTable2) {
-    if (row.name.toLowerCase() == lcPlaceName) {
-      abbrevs.push(row.abbrev.toUpperCase());
-    }
-  }
-
-  let variations = vicbdmPlaceVariations[lcPlaceName];
-  if (variations) {
-    for (let variation of variations) {
-      abbrevs.push(variation.toUpperCase());
     }
   }
 
@@ -40365,32 +40343,6 @@ function mapVicbdmPlaceNameToRealPlaceNames(placeName) {
       if (variation.name == abbrev) {
         addFullName(place.name);
         break;
-      }
-    }
-  }
-
-  return fullNames;
-
-  let lcPlaceName = placeName.toLowerCase();
-
-  for (let key of Object.keys(vicbdmPlaceAbbreviationTable)) {
-    if (key.toLowerCase() == lcPlaceName) {
-      let value = vicbdmPlaceAbbreviationTable[key];
-      addFullName(value);
-    }
-  }
-
-  for (let row of vicbdmPlaceAbbreviationTable2) {
-    if (row.abbrev.toLowerCase() == lcPlaceName) {
-      addFullName(row.name);
-    }
-  }
-
-  for (let key of Object.keys(vicbdmPlaceVariations)) {
-    let variations = vicbdmPlaceVariations[key];
-    for (let variation of variations) {
-      if (variation.toLowerCase() == lcPlaceName) {
-        addFullName(key);
       }
     }
   }
