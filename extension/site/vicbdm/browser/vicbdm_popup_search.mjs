@@ -69,56 +69,6 @@ function getSupportedDates() {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function doVicbdmSearchInNewTab(searchUrl, searchData) {
-  const checkPermissionsOptions = {
-    reason:
-      "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
-  };
-  let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
-  if (!allowed) {
-    closePopup();
-    return;
-  }
-
-  try {
-    // this stores the search data in local storage which is then picked up by the
-    // content script in the new tab/window
-    chrome.storage.local.set({ searchData: searchData }, function () {
-      //console.log('saved searchData, searchData is:');
-      //console.log(searchData);
-    });
-  } catch (ex) {
-    console.log("store of searchData failed");
-  }
-
-  openUrlInNewTab(searchUrl);
-}
-
-async function doVicbdmSearchInExistingTab(tabId, searchData) {
-  //console.log("doVicbdmSearchInExistingTab: tabId is: " + tabId);
-
-  // make the tab active
-  chrome.tabs.update(tabId, { selected: true });
-
-  let response = await chrome.tabs.sendMessage(tabId, {
-    type: "doSearchInExistingTab",
-    searchData: searchData,
-  });
-
-  if (chrome.runtime.lastError) {
-    //console.log("doVicbdmSearchInExistingTab failed, lastError is:");
-    //console.log(lastError);
-  } else if (!response) {
-    //console.log("doVicbdmSearchInExistingTab failed, null response");
-    //console.log(message);
-  } else {
-    //console.log("doVicbdmSearchInExistingTab message sent OK");
-    return true;
-  }
-
-  return false;
-}
-
 async function doVicbdmSearch(input) {
   doAsyncActionWithCatch("Victoria BDM (Aus) Search", input, async function () {
     let loadedModule = await import(`../core/vicbdm_build_search_data.mjs`);
@@ -145,6 +95,9 @@ async function doVicbdmSearch(input) {
       fieldData: fieldData,
       selectData: selectData,
     };
+
+    //console.log("doVicbdmSearch, searchData is:");
+    //console.log(searchData);
 
     let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
 

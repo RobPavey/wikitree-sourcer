@@ -219,7 +219,7 @@ function retryMessageToBackground(siteName, prefersDark) {
   // Send the message a second time. Sometimes this is needed on Safari when the background script
   // has just started up. See notes in background_bootstrap.js
   // It is caused by a Safari bug with module type background scripts
-  // NOTE: this may not be required after swithing to MV3 on Safari.
+  // NOTE: this may not be required after switching to MV3 on Safari.
   chrome.runtime.sendMessage(
     { type: "contentLoaded", siteName: siteName, prefersDark: prefersDark },
     function (response) {
