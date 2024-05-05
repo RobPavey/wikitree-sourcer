@@ -132,7 +132,7 @@ function buildCoreCitation(ed, gd, builder) {
   } else {
     dataString += " ";
   }
-  if (options.citation_general_addNewlinesWithinBody) {
+  if (builder.type != "source" && options.citation_general_addNewlinesWithinBody) {
     dataString += "\n";
   }
 
