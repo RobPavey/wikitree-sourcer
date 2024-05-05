@@ -432,9 +432,9 @@ function setEventPlaceFromPlaceObj(result, eventPlaceObj) {
 
 function generalizeDataGivenRecordType(ed, result) {
   if (result.recordType == RT.BirthRegistration) {
-    let birthYear = getCleanRecordDataValue(ed, "Birth year");
-    let birthDate = getCleanRecordDataValue(ed, "Birth date");
-    let birthQuarter = getCleanRecordDataValue(ed, "Birth quarter");
+    let birthYear = getRecordDataValueForList(ed, ["Birth registration year", "Birth year"]);
+    let birthDate = getRecordDataValueForList(ed, ["Registration date", "Birth date"]);
+    let birthQuarter = getRecordDataValueForList(ed, ["Registration quarter", "Birth quarter"]);
     if (birthDate) {
       result.setBirthDate(birthDate);
       result.setEventDate(birthDate);
@@ -455,9 +455,9 @@ function generalizeDataGivenRecordType(ed, result) {
 
     result.lastNameAtBirth = result.inferLastName();
   } else if (result.recordType == RT.DeathRegistration) {
-    let deathDate = getCleanRecordDataValue(ed, "Death date");
-    let deathYear = getCleanRecordDataValue(ed, "Death year");
-    let deathQuarter = getCleanRecordDataValue(ed, "Death quarter");
+    let deathDate = getRecordDataValueForList(ed, ["Death date"]);
+    let deathYear = getRecordDataValueForList(ed, ["Death registration year", "Death year"]);
+    let deathQuarter = getRecordDataValueForList(ed, ["Registration quarter", "Death quarter"]);
     if (deathDate) {
       result.setDeathDate(deathDate);
       result.setEventDate(deathDate);
