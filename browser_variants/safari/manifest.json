@@ -19,7 +19,7 @@
     "*://*.ancestrylibrary.com.au/*"
   ],
   "background": {
-    "service_worker": "base/browser/background/background_mv3.mjs",
+    "scripts": ["base/browser/background/background_mv3.mjs"],
     "type": "module"
   },
   "action": {
