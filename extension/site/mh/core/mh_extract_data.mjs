@@ -351,6 +351,140 @@ function extractDataForFamilyTreeProfile(document, url, result) {
   return result;
 }
 
+function extractDataForFamilyTreeProfile2024(document, url, result) {
+  let profileContent = document.querySelector("div.person_profile_page");
+
+  result.pageType = "person";
+  let headerPersonInfoDiv = profileContent.querySelector("div.profile_page_header div.person_info");
+  if (!headerPersonInfoDiv) {
+    return result;
+  }
+
+  result.profileData = {};
+
+  let personNameSpan = headerPersonInfoDiv.querySelector("div.person_name span.name");
+  if (personNameSpan) {
+    let name = personNameSpan.textContent;
+    if (name) {
+      result.profileData.name = name;
+    }
+  }
+
+  let personDetailsDiv = headerPersonInfoDiv.querySelector("div.person_details");
+
+  let headingBirthEvent = personDetailsDiv.querySelector("div.birth.event");
+  if (headingBirthEvent) {
+    let dateDiv = headingBirthEvent.querySelector("div.date");
+    if (dateDiv) {
+      let date = dateDiv.textContent;
+      result.profileData.birthDate = date.trim();
+    }
+    let placeDiv = headingBirthEvent.querySelector("div.place");
+    if (placeDiv) {
+      let place = placeDiv.textContent;
+      result.profileData.birthPlace = place.trim();
+    }
+  }
+
+  let headingDeathEvent = personDetailsDiv.querySelector("div.death.event");
+  if (headingDeathEvent) {
+    let dateDiv = headingDeathEvent.querySelector("div.date");
+    if (dateDiv) {
+      let date = dateDiv.textContent;
+      // example "1912 (at age ~54)"
+      let age = "";
+      if (date.includes("(at age")) {
+        age = date.replace(/.* \(at age ([~\d\w]+)\)/, "$1");
+        date = date.replace(/(.*) \(at age [~\d\w]+\)/, "$1");
+      }
+
+      result.profileData.deathDate = date.trim();
+      if (age) {
+        result.ageAtDeath = age;
+      }
+    }
+    let placeDiv = headingDeathEvent.querySelector("div.place");
+    if (placeDiv) {
+      let place = placeDiv.textContent;
+      result.profileData.deathPlace = place.trim();
+    }
+  }
+
+  let immediateFamilyDiv = profileContent.querySelector("div.immediate_family");
+  if (immediateFamilyDiv) {
+    let relativeDivs = immediateFamilyDiv.querySelectorAll("div.family_relative");
+    for (let relativeDiv of relativeDivs) {
+      let nameDiv = relativeDiv.querySelector("div.relative_name");
+      let relationshipDiv = relativeDiv.querySelector("div.relative_relationship");
+      let yearsDiv = relativeDiv.querySelector("div.relative_years");
+      if (nameDiv && relationshipDiv) {
+        let name = nameDiv.textContent.trim();
+        let relationship = relationshipDiv.textContent.trim();
+        if (name && relationship) {
+          if (relationship.includes("father")) {
+            if (!result.profileData.parents) {
+              result.profileData.parents = {};
+            }
+            result.profileData.parents.father = name;
+          } else if (relationship.includes("mother")) {
+            if (!result.profileData.parents) {
+              result.profileData.parents = {};
+            }
+            result.profileData.parents.mother = name;
+          } else if (relationship.includes("husband") || relationship.includes("wife")) {
+            let spouse = { name: name };
+            if (!result.profileData.spouses) {
+              result.profileData.spouses = [];
+            }
+            result.profileData.spouses.push(spouse);
+          }
+        }
+      }
+    }
+  }
+
+  // go through events to try to find marriage dates
+  let factsDiv = profileContent.querySelector("div.profile_page_section.facts");
+  if (factsDiv) {
+    let factDivs = factsDiv.querySelectorAll("div.fact");
+    for (let factDiv of factDivs) {
+      let factNameDiv = factDiv.querySelector("div.fact_name");
+      if (factNameDiv) {
+        let factName = factNameDiv.textContent.trim();
+        if (factName.startsWith("Marriage")) {
+          let relativeNameDiv = factDiv.querySelector("div.relative_name");
+          let factDateDiv = factDiv.querySelector("div.fact_date");
+          let factPlaceDiv = factDiv.querySelector("div.fact_place");
+          if (relativeNameDiv) {
+            let name = relativeNameDiv.textContent.trim();
+            let spouse = undefined;
+            for (let resultsSpouse of result.profileData.spouses) {
+              if (resultsSpouse.name == name) {
+                spouse = resultsSpouse;
+                break;
+              }
+            }
+
+            if (spouse) {
+              let date = factDateDiv.textContent.trim();
+              let place = factPlaceDiv.textContent.trim();
+              if (date) {
+                spouse.marriageDate = date;
+              }
+              if (place) {
+                spouse.marriagePlace = place;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  result.success = true;
+  return result;
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -364,6 +498,10 @@ function extractData(document, url) {
     let profileContent = document.querySelector("#viewProfileContent");
     if (profileContent) {
       return extractDataForFamilyTreeProfile(document, url, result);
+    }
+    let profilePage = document.querySelector("div.person_profile_page");
+    if (profilePage) {
+      return extractDataForFamilyTreeProfile2024(document, url, result);
     }
     return result;
   }

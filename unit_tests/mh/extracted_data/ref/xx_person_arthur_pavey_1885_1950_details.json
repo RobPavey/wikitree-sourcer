@@ -1,0 +1,24 @@
+{
+  "url": "https://www.myheritage.com/profile-858706251-2000009/arthur-eli-pavey",
+  "success": true,
+  "pageType": "person",
+  "profileData": {
+    "name": "Arthur Eli Pavey",
+    "birthDate": "Jan 28 1885",
+    "birthPlace": "Pancras, London",
+    "deathDate": "Dec 17 1950",
+    "deathPlace": "Hamble, Hampshire, England",
+    "parents": {
+      "father": "Harry Alfred Pavey",
+      "mother": "Amelia Elizabeth Littlemore"
+    },
+    "spouses": [
+      {
+        "name": "Emmeline May Brain",
+        "marriageDate": "Apr 1913",
+        "marriagePlace": "Tamworth, Staffordshire"
+      }
+    ]
+  },
+  "ageAtDeath": "65"
+}

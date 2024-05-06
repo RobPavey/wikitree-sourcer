@@ -159,6 +159,11 @@ const regressionData = [
     url: "https://www.myheritage.com/person-1508888_451433851_451433851/charles-kimberlin#!info",
   },
   {
+    // person in my MH tree, saved with a newer format on 6 May 2024
+    caseName: "xx_person_arthur_pavey_1885_1950_details",
+    url: "https://www.myheritage.com/profile-858706251-2000009/arthur-eli-pavey",
+  },
+  {
     caseName: "xx_person_charles_kimberlin",
     url: "https://www.myheritage.com/research/record-1-451433851-1-508888/charles-kimberlin-in-myheritage-family-trees",
   },
