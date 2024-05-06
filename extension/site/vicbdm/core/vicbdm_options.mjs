@@ -137,7 +137,7 @@ const citationOptionsGroup = {
       values: [
         { value: "none", text: "No" },
         { value: "asBDMVictoria", text: 'As "BDM Victoria"' },
-        { value: "asLinkToSearchPage", text: "As 'Link to search page'" },
+        { value: "asLinkToSearchPage", text: 'As "Link to search page"' },
         { value: "inSourceTitle", text: "In source title" },
       ],
       defaultValue: "asBDMVictoria",

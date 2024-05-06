@@ -352,6 +352,36 @@ class VicbdmEdReader extends ExtractedDataReader {
           }
           return placeObj;
         }
+      } else {
+        // post 1853 we can still note that the event as at sea in the placeObj
+        if (lcPlaceString.includes("at sea")) {
+          let placeObj = new PlaceObj();
+          placeObj.placeString = "Victoria, Australia";
+          placeObj.atSea = true;
+          let shipName = placeString.replace(/^([^,]+)\, At Sea.*$/, "$1");
+          if (shipName && shipName != placeString) {
+            shipName = shipName.trim();
+            if (shipName.toLowerCase() != "unknown") {
+              placeObj.shipName = shipName;
+            }
+          }
+          return placeObj;
+        } else if (lcPlaceString.includes("on board")) {
+          let placeObj = new PlaceObj();
+          placeObj.placeString = "Victoria, Australia";
+          let shipName = placeString.replace(/^([^,]+)\, ([\w\s]+) On Board.*$/, "$1");
+          if (shipName && shipName != placeString) {
+            let otherName = placeString.replace(/^([^,]+)\, ([\w\s]+) On Board.*$/, "$2");
+            if (otherName && otherName != placeString) {
+              shipName = shipName.trim();
+              otherName = otherName.trim();
+              if (shipName.toLowerCase() != "unknown") {
+                placeObj.shipName = shipName;
+              }
+            }
+          }
+          return placeObj;
+        }
       }
     }
     return this.makePlaceObjFromFullPlaceName("Victoria, Australia");
@@ -611,6 +641,15 @@ class VicbdmEdReader extends ExtractedDataReader {
     }
     if (clickedRowValue) {
       placeString = clickedRowValue;
+    }
+
+    if (placeString) {
+      const addedEnding = ", Australia";
+      if (placeString.endsWith(addedEnding)) {
+        placeString = placeString.substring(0, placeString.length - addedEnding.length);
+      }
+
+      placeString = placeString.replace(/" ([^ "]+) "/, '"$1"');
     }
 
     return placeString;

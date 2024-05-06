@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Deaths Index; Registration number: 28180 / 1850<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nDonald JOHNSTON; Year: 1850; Place: Simlah, Hobsons Bay On Board \" Simlah \", Australia; Mother's LNAB: UNKNOWN.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Deaths Index; Registration number: 28180 / 1850<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nDonald JOHNSTON; Year: 1850; Place: Simlah, Hobsons Bay On Board \"Simlah\"; Mother's LNAB: UNKNOWN.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Donald died in 1850 in Hobsons Bay aboard \"Simlah\".<ref>\n'''Death''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Deaths Index; Registration number: 28180 / 1850<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nDonald JOHNSTON; Year: 1850; Place: Simlah, Hobsons Bay On Board \" Simlah \", Australia; Mother's LNAB: UNKNOWN.\n</ref>",
+    "citation": "Donald died in 1850 in Hobsons Bay aboard ''Simlah''.<ref>\n'''Death''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Deaths Index; Registration number: 28180 / 1850<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nDonald JOHNSTON; Year: 1850; Place: Simlah, Hobsons Bay On Board \"Simlah\"; Mother's LNAB: UNKNOWN.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"Victoria Registry of Births, Deaths & Marriages\"<br/>Victoria Deaths Index; Registration number: 28180 / 1850<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>Donald JOHNSTON; Year: 1850; Place: Simlah, Hobsons Bay On Board \" Simlah \", Australia; Mother's LNAB: UNKNOWN.",
+    "citation": "* '''Death''': \"Victoria Registry of Births, Deaths & Marriages\"<br/>Victoria Deaths Index; Registration number: 28180 / 1850<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>Donald JOHNSTON; Year: 1850; Place: Simlah, Hobsons Bay On Board \"Simlah\"; Mother's LNAB: UNKNOWN.",
     "type": "source"
   }
 }

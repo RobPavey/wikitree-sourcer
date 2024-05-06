@@ -763,23 +763,53 @@ class NarrativeBuilder {
     }
   }
 
-  addAtSea(place, placeObj) {
+  getAtSea(place, placeObj) {
     if (place) {
       if (placeObj && placeObj.atSea) {
         let shipName = placeObj.shipName;
         if (shipName) {
-          this.narrative += ' aboard "' + shipName + '"';
+          return " aboard ''" + shipName + "''";
         }
       }
     } else {
-      if (placeObj && placeObj.atSea) {
-        let shipName = placeObj.shipName;
-        let atSeaString = "at sea";
-        if (shipName) {
-          atSeaString = 'at sea aboard "' + shipName + '"';
+      if (placeObj) {
+        if (placeObj.atSea) {
+          let shipName = placeObj.shipName;
+          let atSeaString = "at sea";
+          if (shipName) {
+            atSeaString = "at sea aboard ''" + shipName + "''";
+          }
+          return " " + atSeaString;
+        } else {
+          let shipName = placeObj.shipName;
+          if (shipName) {
+            let atSeaString = "aboard //" + shipName + "''";
+            return " " + atSeaString;
+          }
         }
-        this.narrative += " " + atSeaString;
       }
+    }
+    return "";
+  }
+
+  addAtSea(place, placeObj) {
+    this.narrative += this.getAtSea(place, placeObj);
+  }
+
+  addAtSeaAsSeparateSentence(place, placeObj, typeString) {
+    let atSea = this.getAtSea(place, placeObj);
+
+    if (atSea) {
+      this.narrative += " " + this.getPersonNameOrPronoun();
+
+      const toPast = { birth: "was born", marriage: "married", death: "died" };
+
+      let pastTense = toPast[typeString];
+      if (!pastTense) {
+        pastTense = "was";
+      }
+
+      this.narrative += " " + pastTense + atSea + ".";
     }
   }
 
@@ -1037,6 +1067,7 @@ class NarrativeBuilder {
     this.addParentageAsSeparateSentence();
     this.addAgeAsSeparateSentence(ageAtEvent);
     this.addMmnAsSeparateSentence(this.eventGd.mothersMaidenName);
+    this.addAtSeaAsSeparateSentence("", gd.eventPlace, typeString);
   }
 
   buildBirthRegistrationString() {

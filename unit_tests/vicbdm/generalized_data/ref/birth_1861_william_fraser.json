@@ -1,0 +1,48 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "forenames": "William Holmes Alexander",
+    "lastName": "Fraser"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1861"
+  },
+  "eventPlace": {
+    "placeString": "Victoria, Australia",
+    "atSea": true,
+    "shipName": "Oithona"
+  },
+  "lastNameAtBirth": "Fraser",
+  "mothersMaidenName": "McQueen",
+  "birthDate": {
+    "yearString": "1861"
+  },
+  "birthPlace": {
+    "placeString": "Victoria, Australia",
+    "atSea": true,
+    "shipName": "Oithona"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Donald",
+        "lastName": "Fraser"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Catherine",
+        "lastName": "McQueen"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Births",
+    "year": "1861",
+    "regNum": "41"
+  },
+  "hasValidData": true
+}
