@@ -2830,7 +2830,7 @@ function extractPersonDataFromFetch(document, dataObj, options) {
 
           if (relationship.facts) {
             for (let fact of relationship.facts) {
-              if (fact.type == "http://gedcomx.org/Marriage") {
+              if (fact.type == "http://gedcomx.org/Marriage" || fact.type == "http://gedcomx.org/MarriageNotice") {
                 if (fact.date) {
                   if (fact.date.original) {
                     spouse.marriageDateOriginal = fact.date.original;
@@ -3285,7 +3285,8 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
           result.factType == "Birth" ||
           result.factType == "BirthRegistration" ||
           result.factType == "Death" ||
-          result.factType == "Marriage"
+          result.factType == "Marriage" ||
+          result.factType == "MarriageNotice"
         ) {
           // if one of the people in this fact is the selected person
           let otherPersonId = undefined;

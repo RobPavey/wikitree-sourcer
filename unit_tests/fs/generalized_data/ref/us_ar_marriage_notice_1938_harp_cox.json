@@ -1,0 +1,41 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Harp Cox",
+    "lastName": "Cox",
+    "forenames": "Harp"
+  },
+  "eventDate": {
+    "dateString": "23 Apr 1938",
+    "yearString": "1938"
+  },
+  "eventPlace": {
+    "placeString": "Baxter, Arkansas, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Ora Thacker",
+        "lastName": "Thacker",
+        "forenames": "Ora"
+      },
+      "marriageDate": {
+        "dateString": "23 Apr 1938",
+        "yearString": "1938"
+      },
+      "marriagePlace": {
+        "placeString": "Baxter, Arkansas, United States"
+      }
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VJTW-F19}}"
+  ],
+  "collectionData": {
+    "id": "1940215"
+  },
+  "hasValidData": true
+}

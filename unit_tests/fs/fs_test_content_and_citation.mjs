@@ -253,12 +253,16 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM",
   },
   {
-    caseName: "us_ca_death_1974_charles_barker",
-    url: "https://www.familysearch.org/ark:/61903/1:1:VPN6-4J4",
+    caseName: "us_ar_marriage_notice_1938_harp_cox",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VJTW-F19",
   },
   {
     caseName: "us_boston_tax_record_john_smith",
     url: "https://www.familysearch.org/ark:/61903/1:1:DDX3-TT6Z",
+  },
+  {
+    caseName: "us_ca_death_1974_charles_barker",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VPN6-4J4",
   },
   {
     caseName: "us_census_1880_alice_miller",
