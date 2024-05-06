@@ -427,6 +427,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGL",
   },
   {
+    caseName: "us_sd_census_1905_j_stoner",
+    url: "https://www.familysearch.org/ark:/61903/1:1:MMHS-3X7",
+  },
+  {
     caseName: "us_passport_1914_edward_baltzell",
     url: "https://www.familysearch.org/ark:/61903/1:1:QVJP-4T6V",
   },

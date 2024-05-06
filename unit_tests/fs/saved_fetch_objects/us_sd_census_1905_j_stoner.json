@@ -1,0 +1,964 @@
+{
+  "id" : "r_14029625",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1675533991554,
+    "created" : 1675533991554
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MMJC-VX7?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MMJC-VX7?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:MMJC-VX7"
+    }
+  },
+  "description" : "#sd_p_6537125",
+  "persons" : [ {
+    "id" : "p_6537125",
+    "attribution" : {
+      "modified" : 1675533991554,
+      "created" : 1675533991554
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "4f4178c2-6fd6-4ce2-bca5-8d00e848075f",
+        "attribution" : {
+          "modified" : 1675533991554,
+          "created" : 1675533991554
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "9c3cbbaf-187e-4ec0-ac4e-b6ca7934e45d",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "9c3cbbaf-187e-4ec0-ac4e-b6ca7934e45d",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1694549601265,
+            "created" : 1694549601265
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/MMHS-3X7?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/MMJC-VX7?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/607054962" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:MMHS-3X7" ]
+    },
+    "names" : [ {
+      "id" : "686e77f2-6844-468b-9d76-f1b6406bfdbe",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "J L Stoner",
+        "parts" : [ {
+          "id" : "d8809bb3-bc21-4d65-b2a2-5248f43ae08d",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "J L",
+          "fields" : [ {
+            "id" : "c914aa58-6667-4615-88b2-8a7e3c22c918",
+            "attribution" : {
+              "modified" : 1675533991554,
+              "created" : 1675533991554
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "21c10077-ad64-40cf-b42c-bfac1ff1c1ee",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "J L"
+            }, {
+              "id" : "21c10077-ad64-40cf-b42c-bfac1ff1c1ee",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "J L"
+            }, {
+              "id" : "21c10077-ad64-40cf-b42c-bfac1ff1c1ee",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "J L",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "32960b69-7613-4f8a-8036-1c2c69a19412",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Stoner",
+          "fields" : [ {
+            "id" : "b4ac4bc9-17e4-4c82-9553-f3602f329ae2",
+            "attribution" : {
+              "modified" : 1675533991554,
+              "created" : 1675533991554
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "a8f35e78-d3f6-4ffa-90e2-f77a06d45e40",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Stoner"
+            }, {
+              "id" : "a8f35e78-d3f6-4ffa-90e2-f77a06d45e40",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Stoner"
+            }, {
+              "id" : "a8f35e78-d3f6-4ffa-90e2-f77a06d45e40",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Stoner",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "14530bd3-8250-4175-b659-c4813fff5607",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "3ca8f1d8-1f4a-4aeb-9da9-511f8f6908bf",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "J L Stoner"
+          }, {
+            "id" : "3ca8f1d8-1f4a-4aeb-9da9-511f8f6908bf",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "J L Stoner",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "9c9f8aa1-700d-477c-8dee-e35eb2b0cc63",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "5c502fc1-b6dd-4820-9afb-7b934c7b75cd",
+        "original" : "Stewart Township, Tripp, South Dakota, United States",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+        "description" : "#place_4896444",
+        "fields" : [ {
+          "id" : "82c8fcc0-4ba9-44c9-ab55-80d4053c36c1",
+          "attribution" : {
+            "modified" : 1675533991554,
+            "created" : 1675533991554
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "54a74932-eda1-42b5-8b64-b4bc423b49a8",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "South Dakota, United States"
+          }, {
+            "id" : "54a74932-eda1-42b5-8b64-b4bc423b49a8",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Stewart Township, Tripp, South Dakota, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4896444",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "primary" : true
+    }, {
+      "id" : "b3193d7f-9922-41ed-8a16-fb7518207e24",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://gedcomx.org/MoveTo",
+      "date" : {
+        "id" : "70c010b5-60ad-425c-9b7b-dd1d42e1d5c2",
+        "original" : "1887",
+        "formal" : "+1887",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "fields" : [ {
+          "id" : "e090718d-a7c8-4aa4-bf6f-0df1b711ff97",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "42a9fbb6-d875-45cb-a43e-8b03289ade67",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_ARR_DATE_ORIG",
+            "text" : "1887"
+          }, {
+            "id" : "42a9fbb6-d875-45cb-a43e-8b03289ade67",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_ARR_DATE",
+            "text" : "1887",
+            "resource" : "+1887",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "f8429d85-f68d-4f65-aff1-f633d9411d4e",
+          "attribution" : {
+            "modified" : 1675533991554,
+            "created" : 1675533991554
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "3e8135d1-d420-4e6b-b0aa-9724595c4767",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_ARR_YEAR_ORIG",
+            "text" : "1887"
+          } ]
+        } ]
+      },
+      "primary" : false
+    }, {
+      "id" : "c1975b68-e3d9-495d-af1d-89cd3065c4c9",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "ccfcc8ec-81c8-4877-9bca-7b4517a0b0e5",
+        "original" : "1842",
+        "fields" : [ {
+          "id" : "8f95188b-4a83-42e5-bf75-a484577abb9a",
+          "attribution" : {
+            "modified" : 1675533991554,
+            "created" : 1675533991554
+          },
+          "type" : "http://familysearch.org/types/fields/YearEst",
+          "values" : [ {
+            "id" : "936560e9-be38-485f-aeee-0430be7966d0",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR_EST",
+            "text" : "1842"
+          } ]
+        }, {
+          "id" : "01cae2df-0e49-45be-a713-2acd3d8d0509",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "77ca5a2a-0ba8-4c7e-9a4a-bc07ac2863e7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1842",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "77ca5a2a-0ba8-4c7e-9a4a-bc07ac2863e7",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1842",
+            "resource" : "+1842",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "5c015b0b-088e-4eca-ab46-60b901b4dc9d",
+        "original" : "New York",
+        "fields" : [ {
+          "id" : "b7f9b078-ef8f-4522-aea5-17c271e81c38",
+          "attribution" : {
+            "modified" : 1675533991554,
+            "created" : 1675533991554
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "65a4dc7e-e693-4299-8691-6700b6c63255",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_PLACE_ORIG",
+            "text" : "New York"
+          } ]
+        } ]
+      }
+    }, {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "f5cd1e07-c9d8-4145-8860-92d64ff3c4cf",
+        "attribution" : {
+          "modified" : 1675533991554,
+          "created" : 1675533991554
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "52d331c7-4759-478f-b84d-e46f3a540c0a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "W"
+        }, {
+          "id" : "52d331c7-4759-478f-b84d-e46f3a540c0a",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_RACE_OR_COLOR",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Widowed",
+      "fields" : [ {
+        "id" : "3be67b1e-ca52-47ad-8e03-995804673efb",
+        "attribution" : {
+          "modified" : 1675533991554,
+          "created" : 1675533991554
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "bb588d95-2a73-4421-bedf-159e889ae39a",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "Widowed"
+        }, {
+          "id" : "bb588d95-2a73-4421-bedf-159e889ae39a",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Widowed",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/100845",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "38777358-223e-4bb3-a5b7-c114640d9417",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/AgeYears",
+      "values" : [ {
+        "id" : "4af054ab-30b1-4ce5-8e31-dae4a0def24e",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_YEARS_ORIG",
+        "text" : "63"
+      } ],
+      "qualifiers" : [ {
+        "value" : "74936c04-66bc-425d-bb2c-9b64d38dafeb",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "2387ea88-8186-4d13-aad8-a10a9726ee27",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "9d5712df-7cf5-4718-a89c-f68c21bb88ed",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "63"
+      }, {
+        "id" : "9d5712df-7cf5-4718-a89c-f68c21bb88ed",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "63 years",
+        "resource" : "P63Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
+      } ],
+      "qualifiers" : [ {
+        "value" : "74936c04-66bc-425d-bb2c-9b64d38dafeb",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "f32384ce-7e72-440d-9e16-f29cac85c84b",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/FilmNbr",
+      "values" : [ {
+        "id" : "b9ea5b7b-3e92-4cdf-bc3f-c2b9f8047a44",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_FILM_NBR",
+        "text" : "2281913"
+      } ]
+    }, {
+      "id" : "45ee4bcc-1daf-4455-95e9-548008620885",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/CntYearsInState",
+      "values" : [ {
+        "id" : "e2d5faae-8cca-441e-94a5-60bf551d9933",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_CNT_YEARS_IN_STATE_ORIG",
+        "text" : "18"
+      } ]
+    }, {
+      "id" : "86de7715-ecce-445c-a60a-d7cb961f3152",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/UdeBatchNbr",
+      "values" : [ {
+        "id" : "a0a029a8-b774-4eeb-bd70-6d6e60a6435b",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UDE_BATCH_NBR",
+        "text" : "N01194-3"
+      } ]
+    }, {
+      "id" : "96db722b-5565-4998-ab24-ddec7e26737a",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/PacketLtr",
+      "values" : [ {
+        "id" : "8cd4cce4-205b-4f48-bb03-540309346e82",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_PACKET_LTR",
+        "text" : "A"
+      } ]
+    }, {
+      "id" : "0170604a-9163-4678-ab95-af3a35b94f4e",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/RecordId",
+      "values" : [ {
+        "id" : "1fbde686-dd0c-465d-802e-2ee334a6e131",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_ID",
+        "text" : "004245279_02189"
+      } ]
+    }, {
+      "id" : "63271e8c-ddc4-4ce7-ac69-9aa7e1519705",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/FsUnsupported",
+      "values" : [ {
+        "id" : "25f4783d-3b60-4b65-9ec2-c27e767e7d16",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_UNSUPPORTED",
+        "text" : "{\"IMAGE_NBR\":\"2189\"}"
+      } ]
+    }, {
+      "id" : "81a982e3-1f96-46db-b732-7bc51a3e6a7a",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/RecordNbr",
+      "values" : [ {
+        "id" : "5c61dc91-f60a-4b51-b6b5-05adb7682421",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_RECORD_NBR",
+        "text" : "2189"
+      } ]
+    }, {
+      "id" : "f1b7f86e-f2e6-4f88-bdcf-499054eb95c8",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/SourceSheetNbr",
+      "values" : [ {
+        "id" : "b6ac39a9-f56d-42d1-a1c5-238241fda9c3",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SOURCE_SHEET_NBR_ORIG",
+        "text" : "282"
+      } ]
+    }, {
+      "id" : "3829eda3-59ea-4a71-95b5-8d318e57842d",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/FatherBirthPlace",
+      "values" : [ {
+        "id" : "63fd5413-e2db-4aa3-ac3d-95da558ebf0e",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_FTHR_BIR_PLACE_ORIG",
+        "text" : "New York"
+      } ]
+    }, {
+      "id" : "7f20ce77-1b20-493f-9ffc-caa1dbeca49b",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "efbf5009-c812-4d40-8ccb-b56a80e3fa50",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "004245279_02189_02189_000607054962"
+      } ]
+    }, {
+      "id" : "68ea9225-0961-4e2e-ae12-19267a055165",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/MotherBirthPlace",
+      "values" : [ {
+        "id" : "0ccf88f4-f26f-46c5-881d-154d2e5122f2",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_MTHR_BIR_PLACE_ORIG",
+        "text" : "New York"
+      } ]
+    }, {
+      "id" : "7544cea9-4035-4d5a-abe8-4272fe5f72a2",
+      "attribution" : {
+        "modified" : 1675533991554,
+        "created" : 1675533991554
+      },
+      "type" : "http://familysearch.org/types/fields/BatchId",
+      "values" : [ {
+        "id" : "130be3df-367c-45be-9a56-1f571702e321",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_BATCH_ID",
+        "text" : "532273"
+      } ]
+    } ],
+    "display" : {
+      "name" : "J L Stoner",
+      "gender" : "Male",
+      "birthDate" : "1842",
+      "birthPlace" : "New York"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_14029625",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:MMJC-VX7",
+    "componentOf" : {
+      "description" : "#sd_c_1477737",
+      "descriptionId" : "sd_c_1477737"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1675533991554,
+    "modified" : 1709833799914,
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "citations" : [ {
+      "value" : "\"South Dakota State Census, 1905\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:MMHS-3X7 : Thu Mar 07 17:49:59 UTC 2024), Entry for J L Stoner."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Household of J L Stoner, \"South Dakota State Census, 1905\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:MMJC-VX7" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1477737?arkName=1:2:MMJC-VX7"
+    }
+  }, {
+    "id" : "sd_c_1477737",
+    "about" : "https://www.familysearch.org/platform/records/collections/1477737",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223625682,
+    "modified" : 1675533991554,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "South Dakota, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/363"
+      },
+      "temporal" : {
+        "original" : "1905/1905",
+        "formal" : "+1905/+1905"
+      },
+      "recordType" : "http://gedcomx.org/Census"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "South Dakota State Census, 1905"
+    }, {
+      "lang" : "zh",
+      "value" : "南達科他州人口普查，1905 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Recensement de l’État du Dakota du Sud, 1905"
+    }, {
+      "lang" : "ru",
+      "value" : "Южная Дакота, перепись населения штата, 1905 г."
+    }, {
+      "lang" : "no",
+      "value" : "Folketellingen i delstaten Sør-Dakota, 1905"
+    }, {
+      "lang" : "es",
+      "value" : "Censo del Estado de Dakota del Sur, 1905"
+    }, {
+      "lang" : "mn",
+      "value" : "Өмнөд Дакота муж улсын хүн амын тооллого, 1905 он"
+    }, {
+      "lang" : "ko",
+      "value" : "사우스다코타 주 인구 조사, 1905"
+    }, {
+      "lang" : "ja",
+      "value" : "サウスダコタ州、国勢調査、1905年"
+    }, {
+      "lang" : "it",
+      "value" : "Censimento dello Stato del Dakota del Sud, 1905"
+    }, {
+      "lang" : "id",
+      "value" : "Sensus Negara Bagian Dakota Selatan, 1905"
+    }, {
+      "lang" : "hu",
+      "value" : "Dél-Dakota állami népszámlálás, 1905"
+    }, {
+      "lang" : "sk",
+      "value" : "Sčítanie ľudu štátu Južná Dakota, 1905"
+    }, {
+      "lang" : "th",
+      "value" : "สํามะโนประชากรรัฐเซาท์ดาโคตา, ปี 1905"
+    }, {
+      "lang" : "to",
+      "value" : "Ngaahi Tohi kakai ʻo e Siteiti Takouta Saute, 1905"
+    }, {
+      "lang" : "bg",
+      "value" : "Преброяване на населението в щата Южна Дакота, 1905"
+    }, {
+      "lang" : "km",
+      "value" : "ជំរឿនរបស់រដ្ឋដាខូតាខាងត្បូង, ឆ្នាំ 1905"
+    }, {
+      "lang" : "pl",
+      "value" : "Spis powszechny stanu Dakota Południowa z roku 1905"
+    }, {
+      "lang" : "ro",
+      "value" : "Recensământul statului Dakota de Sud, 1905"
+    }, {
+      "lang" : "sv",
+      "value" : "Folkräkningen i South Dakota, 1905"
+    }, {
+      "lang" : "sm",
+      "value" : "Điều Tra Dân Số Tiểu Bang South Dakota, năm 1905"
+    }, {
+      "lang" : "vi",
+      "value" : "Điều Tra Dân Số Tiểu Bang South Dakota, năm 1905"
+    }, {
+      "lang" : "sq",
+      "value" : "Regjistri i shtetit të Dakota e Jugut, 1905"
+    }, {
+      "lang" : "pt",
+      "value" : "Censo estadual de Dakota do Sul, 1905"
+    }, {
+      "lang" : "de",
+      "value" : "Volkszählung des Bundesstaates South Dakota, 1905"
+    }, {
+      "lang" : "uk",
+      "value" : "Південна Дакота, перепис населення, 1905 р."
+    }, {
+      "lang" : "hr",
+      "value" : "Popis stanovništva države Južne Dakote, 1905."
+    }, {
+      "lang" : "cs",
+      "value" : "Sčítání lidu v Jižní Dakotě, 1905"
+    }, {
+      "lang" : "da",
+      "value" : "South Dakota State folketælling, 1905"
+    }, {
+      "lang" : "nl",
+      "value" : "Volkstelling van staat South Dakota, 1905"
+    }, {
+      "lang" : "et",
+      "value" : "Lõuna-Dakota Osariigi Rahvaloendus, 1905"
+    }, {
+      "lang" : "fj",
+      "value" : "Wililewenivanua e South Dakota State, 1905"
+    }, {
+      "lang" : "fi",
+      "value" : "Etelä-Dakotan osavaltion väestönlaskenta, 1905"
+    }, {
+      "lang" : "tl",
+      "value" : "Census ng Estado ng South Dakota, 1905"
+    }, {
+      "lang" : "mg",
+      "value" : "Fanisam-bahoaka tany Dakota Atsimo, 1905"
+    }, {
+      "lang" : "ceb",
+      "value" : "Sensus sa Estado sa South Dakota, 1905"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1477737" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:S3HY-6Q29-1XR",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:S3HY-6Q29-1XR" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1477737?arkName=3:1:S3HY-6Q29-1XR"
+    }
+  }, {
+    "id" : "sd_p_6537125",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:MMHS-3X7",
+    "componentOf" : {
+      "description" : "#src_r_14029625",
+      "descriptionId" : "src_r_14029625"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"South Dakota State Census, 1905\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:MMHS-3X7 : Thu Mar 07 17:49:59 UTC 2024), Entry for J L Stoner."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "J L Stoner, \"South Dakota State Census, 1905\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "J L Stoner, \"South Dakota State Census, 1905\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/607054962" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:MMHS-3X7" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_4896444",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/4896444" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "29c82fb8-6554-4b43-acfa-de499b1b3e77",
+    "attribution" : {
+      "modified" : 1675533991554,
+      "created" : 1675533991554
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "3769dfad-1e83-4ca2-b14d-06711c49f5a1",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "South Dakota, United States"
+    } ]
+  }, {
+    "id" : "ddc7fc73-9bef-4f83-8e1b-61fe86bb01df",
+    "attribution" : {
+      "modified" : 1675533991554,
+      "created" : 1675533991554
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "97a30938-d102-4a0d-8427-3d9625eaed49",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "83e304a4-6c5b-4354-a467-1471527a994d",
+    "attribution" : {
+      "modified" : 1675533991554,
+      "created" : 1675533991554
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "d516edbc-03db-40fe-b342-cd38fed8b34b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "2"
+    } ]
+  }, {
+    "id" : "e010261d-4069-4126-8c1d-6937574f4d81",
+    "attribution" : {
+      "modified" : 1675533991554,
+      "created" : 1675533991554
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "5e50ed56-6084-4f3f-b800-2b4a6145e775",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "bc198422-cea4-406b-82fd-442d48439ffd",
+    "attribution" : {
+      "modified" : 1675533991554,
+      "created" : 1675533991554
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "786ebb6f-4564-46cd-a484-779f3570a3ca",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "4248"
+    } ]
+  }, {
+    "id" : "f27d38f0-0f5b-4ed8-be85-203ae34aaccb",
+    "attribution" : {
+      "modified" : 1675533991554,
+      "created" : 1675533991554
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "486fa7c0-855e-42ca-807f-017038d3c677",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "collection:00000000000000001141,easyId:607054962"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "004245279"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "2189"
+    } ]
+  } ]
+}

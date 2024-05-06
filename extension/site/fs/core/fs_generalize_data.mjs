@@ -1183,6 +1183,20 @@ function generalizeData(input) {
   result.setEventDate(eventDate);
   result.setEventYear(ed.eventYear);
 
+  if (!ed.eventDate && !ed.eventDateOriginal && !ed.eventYear) {
+    // this can happen for a census
+    // See: us_sd_census_1905_j_stoner
+    if (result.recordType == RT.Census) {
+      if (ed.collectionTitle && ed.collectionTitle.includes("Census")) {
+        let yearStrings = ed.collectionTitle.match(/\d\d\d\d/);
+        if (yearStrings.length == 1) {
+          let eventYear = yearStrings[0];
+          result.setEventYear(eventYear);
+        }
+      }
+    }
+  }
+
   let eventPlace = selectPlace(ed.eventPlace, ed.eventPlaceOriginal, isPerson);
 
   if (result.role && result.role != Role.Primary) {

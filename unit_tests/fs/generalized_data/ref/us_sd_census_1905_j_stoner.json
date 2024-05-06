@@ -1,0 +1,36 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "J L Stoner",
+    "lastName": "Stoner",
+    "forenames": "J L"
+  },
+  "birthDate": {
+    "dateString": "1842",
+    "yearString": "1842"
+  },
+  "birthPlace": {
+    "placeString": "New York"
+  },
+  "eventDate": {
+    "yearString": "1905"
+  },
+  "eventPlace": {
+    "placeString": "Stewart Township, Tripp, South Dakota, United States"
+  },
+  "ageAtEvent": "63",
+  "race": "White",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|MMHS-3X7}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|S3HY-6Q29-1XR}}"
+  ],
+  "collectionData": {
+    "id": "1477737"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nEntry for J L Stoner.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nEntry for J L Stoner.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>Entry for J L Stoner.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nJ L Stoner (63) in Stewart Township, Tripp, South Dakota, United States. Born in New York.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nJ L Stoner (63) in Stewart Township, Tripp, South Dakota, United States. Born in New York.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>J L Stoner (63) in Stewart Township, Tripp, South Dakota, United States. Born in New York.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nName: J L Stoner; Residence Place: Stewart Township, Tripp, South Dakota, United States; Move To Date: 1887; Birth Date: 1842; Birth Place: New York; Race: White; Marital Status: Widowed; Age Years: 63; Age: 63 years; Cnt Years In State: 18; Record Nbr: 2189; Father Birth Place: New York; Mother Birth Place: New York; System Of Record: SLS.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nName: J L Stoner; Residence Place: Stewart Township, Tripp, South Dakota, United States; Move To Date: 1887; Birth Date: 1842; Birth Place: New York; Race: White; Marital Status: Widowed; Age Years: 63; Age: 63 years; Cnt Years In State: 18; Record Nbr: 2189; Father Birth Place: New York; Mother Birth Place: New York; System Of Record: SLS.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>Name: J L Stoner; Residence Place: Stewart Township, Tripp, South Dakota, United States; Move To Date: 1887; Birth Date: 1842; Birth Place: New York; Race: White; Marital Status: Widowed; Age Years: 63; Age: 63 years; Cnt Years In State: 18; Record Nbr: 2189; Father Birth Place: New York; Mother Birth Place: New York; System Of Record: SLS.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}\n{| border=\"1\"\n| Name || J L Stoner\n|-\n| Residence Place || Stewart Township, Tripp, South Dakota, United States\n|-\n| Move To Date || 1887\n|-\n| Birth Date || 1842\n|-\n| Birth Place || New York\n|-\n| Race || White\n|-\n| Marital Status || Widowed\n|-\n| Age Years || 63\n|-\n| Age || 63 years\n|-\n| Cnt Years In State || 18\n|-\n| Record Nbr || 2189\n|-\n| Father Birth Place || New York\n|-\n| Mother Birth Place || New York\n|-\n| System Of Record || SLS\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}\n{| border=\"1\"\n| Name || J L Stoner\n|-\n| Residence Place || Stewart Township, Tripp, South Dakota, United States\n|-\n| Move To Date || 1887\n|-\n| Birth Date || 1842\n|-\n| Birth Place || New York\n|-\n| Race || White\n|-\n| Marital Status || Widowed\n|-\n| Age Years || 63\n|-\n| Age || 63 years\n|-\n| Cnt Years In State || 18\n|-\n| Record Nbr || 2189\n|-\n| Father Birth Place || New York\n|-\n| Mother Birth Place || New York\n|-\n| System Of Record || SLS\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>Name: J L Stoner; Residence Place: Stewart Township, Tripp, South Dakota, United States; Move To Date: 1887; Birth Date: 1842; Birth Place: New York; Race: White; Marital Status: Widowed; Age Years: 63; Age: 63 years; Cnt Years In State: 18; Record Nbr: 2189; Father Birth Place: New York; Mother Birth Place: New York; System Of Record: SLS.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nEntry for J L Stoner.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nEntry for J L Stoner.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>Entry for J L Stoner.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nJ L Stoner (63) in Stewart Township, Tripp, South Dakota, United States. Born in New York.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nJ L Stoner (63) in Stewart Township, Tripp, South Dakota, United States. Born in New York.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>J L Stoner (63) in Stewart Township, Tripp, South Dakota, United States. Born in New York.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nEntry for J L Stoner.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>\nEntry for J L Stoner.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}<br/>Entry for J L Stoner.",
+    "type": "source"
+  }
+}
