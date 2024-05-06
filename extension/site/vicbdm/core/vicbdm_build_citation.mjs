@@ -57,10 +57,28 @@ function buildSourceReference(ed, gd, builder) {
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var vicbdmUrl = buildVicbdmUrl(ed, builder);
+  let options = builder.getOptions();
 
-  let recordLink = "[" + vicbdmUrl + " BDM Victoria]";
-  builder.recordLinkOrTemplate = recordLink;
+  if (options.citation_vicbdm_includeLink == "none") {
+    return;
+  }
+
+  let vicbdmUrl = buildVicbdmUrl(ed, builder);
+
+  let recordLink = "";
+
+  if (options.citation_vicbdm_includeLink == "inSourceTitle") {
+    builder.putRecordLinkInTitle = true;
+    recordLink = vicbdmUrl;
+  } else if (options.citation_vicbdm_includeLink == "asBDMVictoria") {
+    recordLink = "[" + vicbdmUrl + " BDM Victoria]";
+  } else if (options.citation_vicbdm_includeLink == "asLinkToSearchPage") {
+    recordLink = "[" + vicbdmUrl + " Link to search page]";
+  }
+
+  if (recordLink) {
+    builder.recordLinkOrTemplate = recordLink;
+  }
 }
 
 function buildDataString(ed, gd, builder) {

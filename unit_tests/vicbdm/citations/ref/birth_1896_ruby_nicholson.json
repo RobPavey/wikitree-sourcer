@@ -10,5 +10,29 @@
   "std_source": {
     "citation": "* '''Birth Registration''': \"Victoria Registry of Births Deaths & Marriages\"<br/>Victoria Births Index; Registration number: 18688 / 1896<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>Ruby Jessie Bertha NICHOLSON; Year: 1896; Place: CHILL, Australia; Father: Hy; Mother: Fanny; Mother's LNAB: STANWAY.",
     "type": "source"
+  },
+  "ee_style_inline": {
+    "citation": "<ref>\"Victoria Registry of Births Deaths & Marriages,\" database, Victoria Births Index, Registration number 18688 / 1896, ([https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to search page] : accessed 6 May 2021), Ruby Jessie Bertha NICHOLSON, Year 1896, Place CHILL, Australia, Father Hy, Mother Fanny, Mother's LNAB STANWAY.</ref>",
+    "type": "inline"
+  },
+  "ee_style_narrative": {
+    "citation": "Ruby's birth was registered in 1896 in Victoria, Australia. She was the daughter of Henry Nicholson & Fanny Stanway.<ref>\"Victoria Registry of Births Deaths & Marriages,\" database, Victoria Births Index, Registration number 18688 / 1896, ([https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to search page] : accessed 6 May 2021), Ruby Jessie Bertha NICHOLSON, Year 1896, Place CHILL, Australia, Father Hy, Mother Fanny, Mother's LNAB STANWAY.</ref>",
+    "type": "narrative"
+  },
+  "ee_style_source": {
+    "citation": "* \"Victoria Registry of Births Deaths & Marriages,\" database, Victoria Births Index, Registration number 18688 / 1896, ([https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Link to search page] : accessed 6 May 2021), Ruby Jessie Bertha NICHOLSON, Year 1896, Place CHILL, Australia, Father Hy, Mother Fanny, Mother's LNAB STANWAY.",
+    "type": "source"
+  },
+  "bee_style_inline": {
+    "citation": "<ref>([https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Victoria Registry of Births Deaths & Marriages] : accessed 6 May 2021), Victoria Births Index, Registration number 18688 / 1896, Ruby Jessie Bertha NICHOLSON, Year 1896, Place CHILL, Australia, Father Hy, Mother Fanny, Mother's LNAB STANWAY.</ref>",
+    "type": "inline"
+  },
+  "bee_style_narrative": {
+    "citation": "Ruby's birth was registered in 1896 in Victoria, Australia. She was the daughter of Henry Nicholson & Fanny Stanway.<ref>([https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Victoria Registry of Births Deaths & Marriages] : accessed 6 May 2021), Victoria Births Index, Registration number 18688 / 1896, Ruby Jessie Bertha NICHOLSON, Year 1896, Place CHILL, Australia, Father Hy, Mother Fanny, Mother's LNAB STANWAY.</ref>",
+    "type": "narrative"
+  },
+  "bee_style_source": {
+    "citation": "* ([https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history Victoria Registry of Births Deaths & Marriages] : accessed 6 May 2021), Victoria Births Index, Registration number 18688 / 1896, Ruby Jessie Bertha NICHOLSON, Year 1896, Place CHILL, Australia, Father Hy, Mother Fanny, Mother's LNAB STANWAY.",
+    "type": "source"
   }
 }

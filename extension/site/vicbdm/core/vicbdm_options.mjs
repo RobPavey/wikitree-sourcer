@@ -116,7 +116,20 @@ const citationOptionsGroup = {
   subcategory: "vicbdm",
   tab: "citation",
   subsection: "vicbdm",
-  options: [],
+  options: [
+    {
+      optionName: "includeLink",
+      type: "select",
+      label: "Include link to BDM Victoria site",
+      values: [
+        { value: "none", text: "No" },
+        { value: "asBDMVictoria", text: 'As "BDM Victoria"' },
+        { value: "asLinkToSearchPage", text: "As 'Link to search page'" },
+        { value: "inSourceTitle", text: "In source title" },
+      ],
+      defaultValue: "asBDMVictoria",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "vicbdm", "Victoria BDM (Aus)");

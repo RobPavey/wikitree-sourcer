@@ -40,6 +40,37 @@ const regressionData = [
     // corresponding WikiTree profile: https://www.wikitree.com/wiki/Nicholson-6779
     caseName: "birth_1896_ruby_nicholson",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c653e7e4aba80ac31d82ee4?q=efamily&givenName=Ruby%20Jessie%20Bertha&familyName=NICHOLSON",
+    optionVariants: [
+      {
+        variantName: "ee_style",
+        optionOverrides: {
+          citation_general_meaningfulNames: "none",
+          citation_general_commaInsideQuotes: true,
+          citation_general_addEeItemType: true,
+          citation_general_addAccessedDate: "parenBeforeLink",
+          citation_general_sourceReferenceSeparator: "commaSpace",
+          citation_general_dataListSeparator: "commaSpace",
+          citation_general_addNewlinesWithinRefs: false,
+          citation_general_addNewlinesWithinBody: false,
+          citation_general_addBreaksWithinBody: false,
+          citation_vicbdm_includeLink: "asLinkToSearchPage",
+        },
+      },
+      {
+        variantName: "bee_style",
+        optionOverrides: {
+          citation_general_meaningfulNames: "none",
+          citation_general_commaInsideQuotes: true,
+          citation_general_addAccessedDate: "parenBeforeLink",
+          citation_general_sourceReferenceSeparator: "commaSpace",
+          citation_general_dataListSeparator: "commaSpace",
+          citation_general_addNewlinesWithinRefs: false,
+          citation_general_addNewlinesWithinBody: false,
+          citation_general_addBreaksWithinBody: false,
+          citation_vicbdm_includeLink: "inSourceTitle",
+        },
+      },
+    ],
   },
   {
     // corresponding FMP record: https://www.findmypast.co.uk/transcript?id=ANZ%2FBMD%2FACTBIRT%2F1562899
