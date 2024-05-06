@@ -118,6 +118,19 @@ const citationOptionsGroup = {
   subsection: "vicbdm",
   options: [
     {
+      optionName: "sourceTitleFormat",
+      type: "select",
+      label: "Source title",
+      values: [
+        { value: "vrbdm", text: "Victoria Registry of Births, Deaths & Marriages" },
+        { value: "vsgrbdmv", text: "Victoria State Government, Registry of Births, Deaths and Marriages Victoria" },
+        { value: "vsgrbdm", text: "Victoria State Government, Registry of Births, Deaths and Marriages" },
+        { value: "vbdm", text: "Victoria Births, Deaths & Marriages" },
+        { value: "bdmv", text: "Births, Deaths & Marriages Victoria" },
+      ],
+      defaultValue: "vrbdm",
+    },
+    {
       optionName: "includeLink",
       type: "select",
       label: "Include link to BDM Victoria site",

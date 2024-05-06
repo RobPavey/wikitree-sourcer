@@ -31,7 +31,25 @@ function buildVicbdmUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Victoria Registry of Births Deaths & Marriages";
+  let format = builder.options.citation_vicbdm_sourceTitleFormat;
+
+  switch (format) {
+    case "vrbdm":
+      builder.sourceTitle = "Victoria Registry of Births, Deaths & Marriages";
+      break;
+    case "vsgrbdmv":
+      builder.sourceTitle = "Victoria State Government, Registry of Births, Deaths and Marriages Victoria";
+      break;
+    case "vsgrbdm":
+      builder.sourceTitle = "Victoria State Government, Registry of Births, Deaths and Marriages";
+      break;
+    case "bdmv":
+      builder.sourceTitle = "Births, Deaths & Marriages Victoria";
+      break;
+    case "vbdm":
+      builder.sourceTitle = "Victoria Births, Deaths & Marriages";
+      break;
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {

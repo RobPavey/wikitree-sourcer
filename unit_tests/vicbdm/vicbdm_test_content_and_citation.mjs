@@ -54,6 +54,7 @@ const regressionData = [
           citation_general_addNewlinesWithinBody: false,
           citation_general_addBreaksWithinBody: false,
           citation_vicbdm_includeLink: "asLinkToSearchPage",
+          citation_vicbdm_sourceTitleFormat: "vsgrbdmv",
         },
       },
       {

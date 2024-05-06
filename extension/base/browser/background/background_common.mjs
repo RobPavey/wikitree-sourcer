@@ -30,6 +30,7 @@ import {
 } from "./background_register_tab.mjs";
 import { handleDoSearchWithSearchDataMessage } from "./background_search.mjs";
 import { callFunctionWithStoredOptions } from "../options/options_loader.mjs";
+import { handleExceptionMessage } from "./background_exception.mjs";
 
 function setPopup(tab, popupPage) {
   //console.log("WikiTree Sourcer, background script (MV3), set popup on tab " + tab + " to: " + popupPage);
