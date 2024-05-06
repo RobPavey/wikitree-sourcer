@@ -1,0 +1,33 @@
+{
+  "recordData": {
+    "Name": "Leland Churchill",
+    "Certificate Number": "89-09412",
+    "County": "Lane",
+    "Event County Orig": "Lane",
+    "Event Type": "Death",
+    "Unique Identifier Anc": "649386"
+  },
+  "eventDateOriginal": "21 May 1989",
+  "eventDate": "21 May 1989",
+  "eventYear": "1989",
+  "eventPlaceOriginal": "Lane, Oregon",
+  "eventPlace": "Lane, Oregon",
+  "fullName": "Leland Churchill",
+  "givenName": "Leland",
+  "surname": "Churchill",
+  "relationshipToFactPerson": "Spouse",
+  "relatedPersonFactType": "Death",
+  "relatedPersonFullName": "Maxine Velva Churchill",
+  "relatedPersonGivenName": "Maxine Velva",
+  "relatedPersonSurname": "Churchill",
+  "relatedPersonLink": "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBG",
+  "eventCounty": "Lane",
+  "eventState": "Oregon",
+  "collectionTitle": "Oregon Death Index, 1903-1998",
+  "fsCollectionId": "1946790",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9MSQ-DB97",
+  "citation": "\"Oregon Death Index, 1903-1998,\" , <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:VZ4P-PBP : 11 December 2014), Leland Churchill in entry for Maxine Velva Churchill, 21 May 1989; from \"Oregon, Death Index, 1898-2008,\" database and images, <i>Ancestry</i> (http://www.ancestry.com : 2000); citing Lane, Oregon, certificate number 89-09412, Oregon State Archives and Records Center, Salem.",
+  "sourceTitleForPerson": "Leland Churchill in entry for Maxine Velva Churchill, \"Oregon Death Index, 1903-1998\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBP",
+  "pageType": "record"
+}

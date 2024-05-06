@@ -2980,6 +2980,100 @@ function getRecordLinkFromPerson(person) {
   }
 }
 
+function setRelatedPersonInfoFromOtherPerson(
+  dataObj,
+  primaryPersonId,
+  otherPerson,
+  personIdWithRelatedFact,
+  personIdWithRelatedFact2,
+  relatedPersonFactType,
+  result
+) {
+  if (otherPerson) {
+    // look for their name
+    let nameForm = getPrimaryNameForm(otherPerson);
+    if (nameForm) {
+      result.relatedPersonFullName = nameForm.fullText;
+      if (nameForm.parts) {
+        for (let part of nameForm.parts) {
+          if (part.type.endsWith("Given")) {
+            result.relatedPersonGivenName = part.value;
+          } else if (part.type.endsWith("Surname")) {
+            result.relatedPersonSurname = part.value;
+          }
+        }
+      }
+    }
+
+    // get gender
+    if (otherPerson.gender) {
+      if (otherPerson.gender.type.endsWith("/Male")) {
+        result.relatedPersonGender = "male";
+      } else if (otherPerson.gender.type.endsWith("/Female")) {
+        result.relatedPersonGender = "female";
+      }
+    }
+
+    // get link to record for this person
+    let link = getRecordLinkFromPerson(otherPerson);
+    if (link) {
+      result.relatedPersonLink = link;
+    }
+
+    if (relatedPersonFactType == "Marriage") {
+      let spouse = undefined;
+
+      if (primaryPersonId == personIdWithRelatedFact && personIdWithRelatedFact2) {
+        spouse = findPersonById(dataObj, personIdWithRelatedFact2);
+      } else if (primaryPersonId == personIdWithRelatedFact2 && personIdWithRelatedFact) {
+        spouse = findPersonById(dataObj, personIdWithRelatedFact);
+      }
+
+      if (spouse) {
+        let nameForm = getPrimaryNameForm(spouse);
+        if (nameForm) {
+          result.relatedPersonSpouseFullName = nameForm.fullText;
+          if (nameForm.parts) {
+            for (let part of nameForm.parts) {
+              if (part.type.endsWith("Given")) {
+                result.relatedPersonSpouseGivenName = part.value;
+              } else if (part.type.endsWith("Surname")) {
+                result.relatedPersonSpouseSurname = part.value;
+              }
+            }
+          }
+        }
+
+        // get link to record for this person
+        let link = getRecordLinkFromPerson(spouse);
+        if (link) {
+          result.relatedPersonSpouseLink = link;
+        }
+      }
+    }
+
+    // If we could not get an event date we may be able to get a birth or death date
+    // from this related person. For example if this record is a child burial with no burial
+    // date for the child but does have a death dae for the child.
+    if (!result.eventDate && !result.eventDateOriginal) {
+      if (otherPerson.facts) {
+        for (let fact of otherPerson.facts) {
+          if (fact.type) {
+            let factType = getFactType(fact);
+            if (factType == "Birth") {
+              setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE", result, "relatedPersonBirthDate");
+              setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR", result, "relatedPersonBirthYear");
+            } else if (factType == "Death") {
+              setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE", result, "relatedPersonDeathDate");
+              setFieldFromDate(fact.date, "/Year", "PR_DEA_YEAR", result, "relatedPersonDeathYear");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
   usedLabelIds = {};
 
@@ -3052,7 +3146,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
                   relatedPersonFactType = undefined;
                 } else if (!thisPersonIsAPrincipal && !personIdWithRelatedFact) {
                   // We have a fact type but it is not for the person of interest
-                  // This is the first such case we have found
+                  // This happens for: us_or_spouse_death_1989_leland_churchill
                   if (factType != "Unknown") {
                     relatedPersonFactType = factType;
                     personIdWithRelatedFact = person.id;
@@ -3353,86 +3447,83 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
         let otherPerson = findPersonById(dataObj, primaryPersonId);
 
         if (otherPerson) {
-          // look for their name
-          let nameForm = getPrimaryNameForm(otherPerson);
-          if (nameForm) {
-            result.relatedPersonFullName = nameForm.fullText;
-            if (nameForm.parts) {
-              for (let part of nameForm.parts) {
-                if (part.type.endsWith("Given")) {
-                  result.relatedPersonGivenName = part.value;
-                } else if (part.type.endsWith("Surname")) {
-                  result.relatedPersonSurname = part.value;
-                }
-              }
-            }
-          }
+          setRelatedPersonInfoFromOtherPerson(
+            dataObj,
+            primaryPersonId,
+            otherPerson,
+            personIdWithRelatedFact,
+            personIdWithRelatedFact2,
+            relatedPersonFactType,
+            result
+          );
+        }
+      }
+    }
+  } else {
+    // no relationships
+    if (relatedPersonFactType || personIdWithRelatedFact) {
+      // this is weird we have a primary fact for a different person but no relationships
+      // This happens for: us_or_spouse_death_1989_leland_churchill
+      // In that case the person of record is the spouse of a person who died.
 
-          // get gender
-          if (otherPerson.gender) {
-            if (otherPerson.gender.type.endsWith("/Male")) {
-              result.relatedPersonGender = "male";
-            } else if (otherPerson.gender.type.endsWith("/Female")) {
-              result.relatedPersonGender = "female";
-            }
-          }
+      let person = findPersonById(dataObj, personId);
 
-          // get link to record for this person
-          let link = getRecordLinkFromPerson(otherPerson);
-          if (link) {
-            result.relatedPersonLink = link;
-          }
+      if (person) {
+        let relationshipToPerson = "";
 
-          if (relatedPersonFactType == "Marriage") {
-            let spouse = undefined;
-
-            if (primaryPersonId == personIdWithRelatedFact && personIdWithRelatedFact2) {
-              spouse = findPersonById(dataObj, personIdWithRelatedFact2);
-            } else if (primaryPersonId == personIdWithRelatedFact2 && personIdWithRelatedFact) {
-              spouse = findPersonById(dataObj, personIdWithRelatedFact);
-            }
-
-            if (spouse) {
-              let nameForm = getPrimaryNameForm(spouse);
-              if (nameForm) {
-                result.relatedPersonSpouseFullName = nameForm.fullText;
-                if (nameForm.parts) {
-                  for (let part of nameForm.parts) {
-                    if (part.type.endsWith("Given")) {
-                      result.relatedPersonSpouseGivenName = part.value;
-                    } else if (part.type.endsWith("Surname")) {
-                      result.relatedPersonSpouseSurname = part.value;
+        let names = person.names;
+        if (names) {
+          for (let name of names) {
+            let nameForms = name.nameForms;
+            for (let nameForm of nameForms) {
+              let parts = nameForm.parts;
+              if (parts) {
+                for (let part of parts) {
+                  let fields = part.fields;
+                  if (fields) {
+                    for (let field of fields) {
+                      let values = field.values;
+                      if (values) {
+                        for (let value of values) {
+                          let labelId = value.labelId;
+                          if (labelId) {
+                            if (labelId.startsWith("SPOUSE")) {
+                              relationshipToPerson = "Spouse";
+                              break;
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
               }
-
-              // get link to record for this person
-              let link = getRecordLinkFromPerson(spouse);
-              if (link) {
-                result.relatedPersonSpouseLink = link;
-              }
             }
           }
+        }
 
-          // If we could not get an event date we may be able to get a birth or death date
-          // from this related person. For example if this record is a child burial with no burial
-          // date for the child but does have a death dae for the child.
-          if (!result.eventDate && !result.eventDateOriginal) {
-            if (otherPerson.facts) {
-              for (let fact of otherPerson.facts) {
-                if (fact.type) {
-                  let factType = getFactType(fact);
-                  if (factType == "Birth") {
-                    setFieldFromDate(fact.date, "/Date", "PR_BIR_DATE", result, "relatedPersonBirthDate");
-                    setFieldFromDate(fact.date, "/Year", "PR_BIR_YEAR", result, "relatedPersonBirthYear");
-                  } else if (factType == "Death") {
-                    setFieldFromDate(fact.date, "/Date", "PR_DEA_DATE", result, "relatedPersonDeathDate");
-                    setFieldFromDate(fact.date, "/Year", "PR_DEA_YEAR", result, "relatedPersonDeathYear");
-                  }
-                }
-              }
+        if (relationshipToPerson) {
+          result.relationshipToFactPerson = relationshipToPerson;
+          result.relatedPersonFactType = relatedPersonFactType;
+
+          // see if we can figure out the other person
+          let persons = dataObj.persons;
+          if (persons && persons.length == 2) {
+            let otherPerson = undefined;
+            if (persons[0].id == personId) {
+              otherPerson = persons[1];
+            } else {
+              otherPerson = persons[0];
             }
+            setRelatedPersonInfoFromOtherPerson(
+              dataObj,
+              personId,
+              otherPerson,
+              undefined, //personIdWithRelatedFact,
+              undefined, //personIdWithRelatedFact2,
+              relatedPersonFactType,
+              result
+            );
           }
         }
       }

@@ -1,0 +1,35 @@
+{
+  "sourceType": "record",
+  "role": "Spouse",
+  "primaryPerson": {
+    "name": {
+      "name": "Maxine Velva Churchill",
+      "lastName": "Churchill",
+      "forenames": "Maxine Velva"
+    }
+  },
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Leland Churchill",
+    "lastName": "Churchill",
+    "forenames": "Leland"
+  },
+  "eventDate": {
+    "dateString": "21 May 1989",
+    "yearString": "1989"
+  },
+  "eventPlace": {
+    "placeString": "Lane, Oregon"
+  },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VZ4P-PBP}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|VZ4P-PBG}}"
+  ],
+  "collectionData": {
+    "id": "1946790"
+  },
+  "hasValidData": true
+}

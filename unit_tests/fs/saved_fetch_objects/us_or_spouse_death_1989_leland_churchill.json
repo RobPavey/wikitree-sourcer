@@ -1,0 +1,377 @@
+{
+  "id" : "r_21922189235",
+  "lang" : "en",
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MSQ-DB97?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MSQ-DB97?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MSQ-DB97"
+    }
+  },
+  "description" : "#sd_p_13371312563",
+  "persons" : [ {
+    "id" : "p_13371312562",
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VZ4P-PBG?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MSQ-DB97?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBG" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Maxine Velva Churchill",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Maxine Velva",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Maxine Velva"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Maxine Velva"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Churchill",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Churchill"
+            }, {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Churchill"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Maxine Velva Churchill"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "original" : "21 May 1989",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "21 May 1989"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "21 May 1989"
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1989"
+          } ]
+        } ]
+      },
+      "place" : {
+        "original" : "Lane, Oregon",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Lane, Oregon"
+          } ]
+        } ]
+      },
+      "primary" : true
+    }, {
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "original" : "01 Jul 1910",
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIRTH_DATE_ORIG",
+            "text" : "01 Jul 1910"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIRTH_DATE",
+            "text" : "01 Jul 1910"
+          } ]
+        } ]
+      }
+    } ]
+  }, {
+    "id" : "p_13371312563",
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VZ4P-PBP?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MSQ-DB97?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBP" ]
+    },
+    "names" : [ {
+      "type" : "http://gedcomx.org/BirthName",
+      "nameForms" : [ {
+        "fullText" : "Leland Churchill",
+        "parts" : [ {
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Leland",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SPOUSE_NAME_GN",
+              "text" : "Leland"
+            } ]
+          } ]
+        }, {
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Churchill",
+          "fields" : [ {
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SPOUSE_NAME_SURN",
+              "text" : "Churchill"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SPOUSE_NAME_ORIG",
+            "text" : "Leland"
+          }, {
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SPOUSE_NAME",
+            "text" : "Leland Churchill"
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "sd_c_1946790",
+    "about" : "https://www.familysearch.org/platform/records/collections/1946790",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223506787,
+    "modified" : 1658155773608,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Oregon, United States",
+        "description" : "#place_1-56"
+      },
+      "temporal" : {
+        "original" : "1903/1998",
+        "formal" : "1903/1998"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Oregon Death Index, 1903-1998"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1946790" ]
+    }
+  }, {
+    "id" : "src_r_21922189235",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MSQ-DB97",
+    "componentOf" : {
+      "description" : "#sd_c_1946790"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1383795758903,
+    "modified" : 1658155773608,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Lane, Oregon"
+      },
+      "temporal" : {
+        "original" : "21 May 1989"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Oregon Death Index, 1903-1998,\" , <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:9MSQ-DB97 : 11 December 2014), 21 May 1989; from \"Oregon, Death Index, 1898-2008,\" <i>Ancestry</i>; citing Lane, Oregon, certificate number 89-09412, Oregon State Archives and Records Center, Salem."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Maxine Velva Churchill, \"Oregon Death Index, 1903-1998\""
+    } ],
+    "identifiers" : {
+      "$" : [ "https://www.familysearch.org/platform/externalId/easy/1000914414162" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MSQ-DB97" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1946790?arkName=1:2:9MSQ-DB97"
+    }
+  }, {
+    "id" : "sd_p_13371312562",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBG",
+    "componentOf" : {
+      "description" : "#src_r_21922189235"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Oregon Death Index, 1903-1998,\" , <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:VZ4P-PBG : 11 December 2014), Maxine Velva Churchill, 21 May 1989; from \"Oregon, Death Index, 1898-2008,\" database and images, <i>Ancestry</i> (http://www.ancestry.com : 2000); citing Lane, Oregon, certificate number 89-09412, Oregon State Archives and Records Center, Salem."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Maxine Velva Churchill, \"Oregon Death Index, 1903-1998\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBG" ]
+    }
+  }, {
+    "id" : "sd_p_13371312563",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBP",
+    "componentOf" : {
+      "description" : "#src_r_21922189235"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Oregon Death Index, 1903-1998,\" , <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:VZ4P-PBP : 11 December 2014), Leland Churchill in entry for Maxine Velva Churchill, 21 May 1989; from \"Oregon, Death Index, 1898-2008,\" database and images, <i>Ancestry</i> (http://www.ancestry.com : 2000); citing Lane, Oregon, certificate number 89-09412, Oregon State Archives and Records Center, Salem."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Leland Churchill in entry for Maxine Velva Churchill, \"Oregon Death Index, 1903-1998\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBP" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_1-56",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/56?context=1" ]
+    }
+  } ],
+  "fields" : [ {
+    "type" : "http://familysearch.org/types/fields/UniqueIdentifier",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "UNIQUE_IDENTIFIER",
+      "text" : "1000914414162"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CertificateNumber",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "CERTIFICATE_NUMBER",
+      "text" : "89-09412"
+    } ]
+  }, {
+    "type" : "http://gedcomx.org/County",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "COUNTY",
+      "text" : "Lane"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventCounty",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EVENT_COUNTY",
+      "text" : "Lane"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventCountyOrig",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EVENT_COUNTY_ORIG",
+      "text" : "Lane"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventState",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EVENT_STATE",
+      "text" : "Oregon"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/EventType",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EVENT_TYPE",
+      "text" : "Death"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UniqueIdentifierAnc",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "UNIQUE_IDENTIFIER_ANC",
+      "text" : "649386"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SORT_KEY",
+      "text" : "1000914414162#12"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "1"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "5618"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  } ]
+}

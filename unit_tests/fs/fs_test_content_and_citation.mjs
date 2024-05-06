@@ -415,6 +415,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:X6KQ-53B",
   },
   {
+    caseName: "us_or_spouse_death_1989_leland_churchill",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VZ4P-PBP",
+  },
+  {
     caseName: "us_pa_marriage_amanda_duff",
     url: "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGL",
   },
