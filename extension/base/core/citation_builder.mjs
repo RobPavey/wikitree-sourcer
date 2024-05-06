@@ -95,9 +95,7 @@ class CitationBuilder {
   addBreakNewlineOrAlternatives(oldCitation, separatorChar = ",") {
     let citation = oldCitation;
 
-    if (citation.endsWith(separatorChar + " ")) {
-      citation = citation.substring(0, citation.length - 2).trim();
-    }
+    citation = citation.trim();
 
     if (citation.endsWith(";") || citation.endsWith(",") || citation.endsWith(".") || citation.endsWith("\n")) {
       citation = citation.substring(0, citation.length - 1).trim();
