@@ -113,8 +113,8 @@ async function doVicbdmSearch(input) {
         },
         function (response) {
           // We get a detailed response for debugging this
-          console.log("doSearchWithSearchData got response: ");
-          console.log(response);
+          //console.log("doSearchWithSearchData got response: ");
+          //console.log(response);
 
           // the message should only ever get a successful response but it could be delayed
           // if the background is asleep.
