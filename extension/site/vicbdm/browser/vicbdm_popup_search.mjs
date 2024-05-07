@@ -30,6 +30,7 @@ import {
   addSameRecordMenuItem,
   doAsyncActionWithCatch,
   closePopup,
+  displayUnexpectedErrorMessage,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
@@ -102,13 +103,37 @@ async function doVicbdmSearch(input) {
     let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
 
     // send message to background to do search so that we can close popup
-    chrome.runtime.sendMessage({
-      type: "doSearchWithSearchData",
-      siteName: "vicbdm",
-      searchData: searchData,
-      reuseTabIfPossible: reuseTabIfPossible,
-    });
-    closePopup();
+    try {
+      chrome.runtime.sendMessage(
+        {
+          type: "doSearchWithSearchData",
+          siteName: "vicbdm",
+          searchData: searchData,
+          reuseTabIfPossible: reuseTabIfPossible,
+        },
+        function (response) {
+          // We get a detailed response for debugging this
+          console.log("doSearchWithSearchData got response: ");
+          console.log(response);
+
+          // the message should only ever get a successful response but it could be delayed
+          // if the background is asleep.
+          if (chrome.runtime.lastError) {
+            const message = "Failed to open search page";
+            displayUnexpectedErrorMessage(message, chrome.runtime.lastError, true);
+          } else if (!response || !response.success) {
+            const message = "Failed to open search page";
+            displayUnexpectedErrorMessage(message, undefined, true);
+          } else {
+            // message was received OK
+            closePopup();
+          }
+        }
+      );
+    } catch (error) {
+      const message = "Failed to open search page";
+      displayUnexpectedErrorMessage(message, error, true);
+    }
   });
 }
 

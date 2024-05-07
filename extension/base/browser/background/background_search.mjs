@@ -106,6 +106,11 @@ async function handleDoSearchWithSearchDataMessage(request, sender, sendResponse
   callFunctionWithStoredOptions(function (options) {
     doSearchGivenSearchData(searchData, tab, options, existingTabId, reuseTabIfPossible);
   });
+
+  // the response lets the sender know that the background is awake and it can proceed
+  // (to close the popup for example)
+  let response = { success: true };
+  sendResponse(response);
 }
 
 export { handleDoSearchWithSearchDataMessage, doSearchGivenSearchData };
