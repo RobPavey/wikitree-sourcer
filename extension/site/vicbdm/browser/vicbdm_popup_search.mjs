@@ -119,11 +119,11 @@ async function doVicbdmSearch(input) {
           // the message should only ever get a successful response but it could be delayed
           // if the background is asleep.
           if (chrome.runtime.lastError) {
-            const message = "Failed to open search page";
+            const message = "Failed to open search page, runtime.lastError is set";
             displayUnexpectedErrorMessage(message, chrome.runtime.lastError, true);
           } else if (!response || !response.success) {
-            const message = "Failed to open search page";
-            displayUnexpectedErrorMessage(message, undefined, true);
+            const message = "Failed to open search page, no response or success=false";
+            displayUnexpectedErrorMessage(message, response, true);
           } else {
             // message was received OK
             closePopup();
@@ -131,7 +131,7 @@ async function doVicbdmSearch(input) {
         }
       );
     } catch (error) {
-      const message = "Failed to open search page";
+      const message = "Failed to open search page, caught exception";
       displayUnexpectedErrorMessage(message, error, true);
     }
   });
