@@ -60,7 +60,6 @@ async function doSearchInExistingTab(tabId, searchData) {
       console.log(lastError);
     } else if (!response) {
       console.log("doSearchInExistingTab failed, null response");
-      console.log(message);
     } else {
       //console.log("doSearchInExistingTab message sent OK");
       return true;
