@@ -28,6 +28,16 @@
         "forenames": "Matthew"
       },
       "age": "32",
+      "personGender": "male",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "Matthew Walling",
+            "forenames": "Matthew",
+            "lastName": "Walling"
+          }
+        }
+      },
       "marriageDate": {
         "dateString": "19 Feb 1902"
       },

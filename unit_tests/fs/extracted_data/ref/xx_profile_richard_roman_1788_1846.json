@@ -15,7 +15,8 @@
     {
       "fullName": "Sarah \"Sallie\" Evans",
       "givenName": "Sarah \"Sallie\"",
-      "surname": "Evans"
+      "surname": "Evans",
+      "gender": "female"
     }
   ],
   "father": {

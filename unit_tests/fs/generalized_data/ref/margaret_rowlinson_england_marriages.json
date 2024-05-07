@@ -22,6 +22,7 @@
         "lastName": "Walmsley",
         "forenames": "Joseph"
       },
+      "personGender": "male",
       "marriageDate": {
         "dateString": "28 Oct 1855",
         "yearString": "1855"

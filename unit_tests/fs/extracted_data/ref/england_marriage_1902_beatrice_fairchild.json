@@ -23,7 +23,14 @@
   "spouseFullName": "Matthew Walling",
   "spouseGivenName": "Matthew",
   "spouseSurname": "Walling",
+  "spouseGender": "male",
   "spouseAge": "32",
+  "spouseFather": {
+    "fullName": "Matthew Walling",
+    "givenName": "Matthew",
+    "surname": "Walling",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:NFFD-H89"
+  },
   "father": {
     "fullName": "Ebenezer George Fairchild",
     "givenName": "Ebenezer George",

@@ -27,6 +27,7 @@
         "forenames": "Oliver O"
       },
       "age": "21",
+      "personGender": "male",
       "marriageDate": {
         "dateString": "5 Jun 1891"
       },

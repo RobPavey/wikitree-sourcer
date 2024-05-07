@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nMarriages database, Saltash<br/>\n[https://www.cornwall-opc-database.org/search-database/marriages/ Cornwall OPC] (accessed 6 May 2021)<br/>\nDavid Farquharson Scott (22) marriage to Muriel May Gardner (19) on 29 Jun 1946 in Saltash, Cornwall, England.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nMarriages database, Saltash<br/>\n[https://www.cornwall-opc-database.org/search-database/marriages/ Cornwall OPC] (accessed 6 May 2021)<br/>\nDavid Farquharson Scott (22), child of David Farquharson (decd.), marriage to Muriel May Gardner (19) on 29 Jun 1946 in Saltash, Cornwall, England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "David (age 22), child of David Farquharson (decd.), married Muriel May Gardner (age 19) on 29 June 1946 in Saltash, Cornwall, England.<ref>\n'''Marriage''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nMarriages database, Saltash<br/>\n[https://www.cornwall-opc-database.org/search-database/marriages/ Cornwall OPC] (accessed 6 May 2021)<br/>\nDavid Farquharson Scott (22) marriage to Muriel May Gardner (19) on 29 Jun 1946 in Saltash, Cornwall, England.\n</ref>",
+    "citation": "David (age 22), child of David Farquharson (decd.), married Muriel May Gardner (age 19) on 29 June 1946 in Saltash, Cornwall, England.<ref>\n'''Marriage''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nMarriages database, Saltash<br/>\n[https://www.cornwall-opc-database.org/search-database/marriages/ Cornwall OPC] (accessed 6 May 2021)<br/>\nDavid Farquharson Scott (22), child of David Farquharson (decd.), marriage to Muriel May Gardner (19) on 29 Jun 1946 in Saltash, Cornwall, England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage''': \"Cornwall Online Parish Clerks Database\"<br/>Marriages database, Saltash<br/>[https://www.cornwall-opc-database.org/search-database/marriages/ Cornwall OPC] (accessed 6 May 2021)<br/>David Farquharson Scott (22) marriage to Muriel May Gardner (19) on 29 Jun 1946 in Saltash, Cornwall, England.",
+    "citation": "* '''Marriage''': \"Cornwall Online Parish Clerks Database\"<br/>Marriages database, Saltash<br/>[https://www.cornwall-opc-database.org/search-database/marriages/ Cornwall OPC] (accessed 6 May 2021)<br/>David Farquharson Scott (22), child of David Farquharson (decd.), marriage to Muriel May Gardner (19) on 29 Jun 1946 in Saltash, Cornwall, England.",
     "type": "source"
   }
 }

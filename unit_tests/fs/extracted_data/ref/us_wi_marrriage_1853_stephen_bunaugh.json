@@ -18,6 +18,7 @@
   "spouseFullName": "Susan B. Newbury",
   "spouseGivenName": "Susan B.",
   "spouseSurname": "Newbury",
+  "spouseGender": "female",
   "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Wheatland, Kenosha, Wisconsin\", \"EVENT_DATE_ALT_ORIG\": \"14 Dec 1853\"}",
   "fsCollectionId": "1708704",
   "referenceData": {

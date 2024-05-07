@@ -25,6 +25,7 @@
   "spouseFullName": "Oliver O Howard",
   "spouseSurname": "Howard",
   "spouseGivenName": "Oliver O",
+  "spouseGender": "male",
   "spouseAge": "21",
   "extData": "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C9BX-SDLL\",\"FS_COLLECTION_ID\":\"1804888\",\"FS_FOLDER\":\"007719410\",\"EVENT_TYPE_ORIG\":\"Marriage\"}",
   "referenceData": {

@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>\nHonora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>\nHonora Buckley (22), child of Michael Buckley & Bridget Buckley, marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>\nHonora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.\n</ref>",
+    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\n'''Marriage''':\n\"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>\n{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>\nHonora Buckley (22), child of Michael Buckley & Bridget Buckley, marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Marriage''': \"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>Honora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.",
+    "citation": "* '''Marriage''': \"Ontario, Canada, County Marriage Registers, 1858-1869\"<br/>{{Ancestry Record|8510|17179}} (accessed 6 May 2021)<br/>Honora Buckley (22), child of Michael Buckley & Bridget Buckley, marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"Ontario, Canada, County Marriage Registers, 1858-1869,\" database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Honora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.</ref>",
+    "citation": "<ref>\"Ontario, Canada, County Marriage Registers, 1858-1869,\" database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Honora Buckley (22), child of Michael Buckley & Bridget Buckley, marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\"Ontario, Canada, County Marriage Registers, 1858-1869,\" database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Honora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.</ref>",
+    "citation": "Honora (age 22), child of Michael Buckley & Bridget Buckley, married William Waller on 8 December 1859 in Northumberland and Durham.<ref>\"Ontario, Canada, County Marriage Registers, 1858-1869,\" database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Honora Buckley (22), child of Michael Buckley & Bridget Buckley, marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"Ontario, Canada, County Marriage Registers, 1858-1869,\" database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Honora Buckley (22) marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.",
+    "citation": "* \"Ontario, Canada, County Marriage Registers, 1858-1869,\" database, ({{Ancestry Record|8510|17179}} : accessed 6 May 2021), Honora Buckley (22), child of Michael Buckley & Bridget Buckley, marriage to William Waller on 8 Dec 1859 in Northumberland and Durham.",
     "type": "source"
   },
   "partial_ee_style_inline": {

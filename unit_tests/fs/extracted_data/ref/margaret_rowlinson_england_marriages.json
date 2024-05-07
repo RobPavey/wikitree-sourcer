@@ -17,6 +17,7 @@
   "spouseFullName": "Joseph Walmsley",
   "spouseGivenName": "Joseph",
   "spouseSurname": "Walmsley",
+  "spouseGender": "male",
   "extData": "{ \"EVENT_PLACE_ALT_ORIG\": \"Christ Church, Warrington, Lancashire, England\", \"EVENT_DATE_ALT_ORIG\": \"28 Oct 1855\"}",
   "referenceData": {
     "digitalFilmNumber": "004027888",

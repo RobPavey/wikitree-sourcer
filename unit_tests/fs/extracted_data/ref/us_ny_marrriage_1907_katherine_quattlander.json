@@ -22,7 +22,20 @@
   "spouseFullName": "Edward J Dehent",
   "spouseGivenName": "Edward J",
   "spouseSurname": "Dehent",
+  "spouseGender": "male",
   "spouseAge": "22",
+  "spouseFather": {
+    "fullName": "John De Hart",
+    "givenName": "John",
+    "surname": "De Hart",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:Q2C2-Y9PZ"
+  },
+  "spouseMother": {
+    "fullName": "Ella Hoyt",
+    "givenName": "Ella",
+    "surname": "Hoyt",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:Q2C2-Y9PG"
+  },
   "father": {
     "fullName": "John Quattlander",
     "givenName": "John",

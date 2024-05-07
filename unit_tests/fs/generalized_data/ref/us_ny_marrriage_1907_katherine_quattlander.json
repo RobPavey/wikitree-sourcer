@@ -28,6 +28,23 @@
         "forenames": "Edward J"
       },
       "age": "22",
+      "personGender": "male",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "John De Hart",
+            "forenames": "John",
+            "lastName": "De Hart"
+          }
+        },
+        "mother": {
+          "name": {
+            "name": "Ella Hoyt",
+            "forenames": "Ella",
+            "lastName": "Hoyt"
+          }
+        }
+      },
       "marriageDate": {
         "dateString": "21 Feb 1907"
       },

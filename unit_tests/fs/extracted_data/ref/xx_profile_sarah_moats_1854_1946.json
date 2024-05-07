@@ -16,7 +16,8 @@
     {
       "fullName": "William Smith",
       "givenName": "William",
-      "surname": "Smith"
+      "surname": "Smith",
+      "gender": "male"
     }
   ],
   "father": {

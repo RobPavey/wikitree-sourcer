@@ -2475,14 +2475,22 @@ function getNameForPersonObj(person, result) {
   }
 }
 
-function getGenderForPersonObj(person, result) {
+function extractGenderForPersonObj(person) {
   // get gender
   if (person.gender && person.gender.type) {
     if (person.gender.type.endsWith("/Male")) {
-      result.gender = "male";
+      return "male";
     } else if (person.gender.type.endsWith("/Female")) {
-      result.gender = "female";
+      return "female";
     }
+  }
+}
+
+function getGenderForPersonObj(person, result) {
+  // get gender
+  let gender = extractGenderForPersonObj(person);
+  if (gender) {
+    result.gender = gender;
   }
 }
 
@@ -2596,7 +2604,7 @@ function processPersonPageFactsForPersonObj(person, result) {
   }
 }
 
-function addParentFromPerson(otherPerson, result) {
+function addParentFromPerson(otherPerson, result, isSpouseParent = false) {
   // look for their name
   let parent = {};
   let nameForm = getPrimaryNameForm(otherPerson);
@@ -2622,9 +2630,17 @@ function addParentFromPerson(otherPerson, result) {
   if (otherPerson.gender) {
     if (otherPerson.gender.type.endsWith("/Male")) {
       // it is the father
-      result.father = parent;
+      if (isSpouseParent) {
+        result.spouseFather = parent;
+      } else {
+        result.father = parent;
+      }
     } else if (otherPerson.gender.type.endsWith("/Female")) {
-      result.mother = parent;
+      if (isSpouseParent) {
+        result.spouseMother = parent;
+      } else {
+        result.mother = parent;
+      }
     }
   }
 }
@@ -2827,6 +2843,7 @@ function extractPersonDataFromFetch(document, dataObj, options) {
         if (type == "http://gedcomx.org/Couple") {
           let spouse = {};
           getNameForPersonObj(otherPerson, spouse);
+          getGenderForPersonObj(otherPerson, spouse);
 
           if (relationship.facts) {
             for (let fact of relationship.facts) {
@@ -3160,6 +3177,8 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
     }
   }
 
+  let spousePersonId = undefined;
+
   let relationships = dataObj.relationships;
   if (relationships) {
     let personIdWithRelatedFact2 = undefined;
@@ -3191,6 +3210,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
                 let otherPerson = findPersonById(dataObj, otherPersonId);
 
                 if (otherPerson) {
+                  spousePersonId = otherPersonId;
                   // look for their name
                   let nameForm = getPrimaryNameForm(otherPerson);
                   if (nameForm) {
@@ -3206,6 +3226,11 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
                     }
                   }
 
+                  let spouseGender = extractGenderForPersonObj(otherPerson);
+                  if (spouseGender) {
+                    result.spouseGender = spouseGender;
+                  }
+
                   if (otherPerson.fields) {
                     const personFieldsMap = {
                       Age: "spouseAge",
@@ -3217,7 +3242,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
             } else if (!personIdWithRelatedFact) {
               // Sometimes the related person should be ignored,
               // for example in the case of us_ky_marriage_1891_ida_sphar where the
-              // repalted person is the spouse in a marriage
+              // related person is the spouse in a marriage
               if (factType != "Unknown") {
                 relatedPersonFactType = factType;
                 personIdWithRelatedFact = relationship.person1.resourceId;
@@ -3329,6 +3354,26 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
                     Age: "spouseAge",
                   };
                   extractFields(result, otherPerson.fields, personFieldsMap);
+                }
+              }
+            }
+          } else if (spousePersonId) {
+            // the other person could be a spouse parent
+            // if one of the people in this fact is the spouse
+            let otherPersonId = undefined;
+            if (relationship.person1.resourceId == spousePersonId) {
+              otherPersonId = relationship.person2.resourceId;
+            } else if (relationship.person2.resourceId == spousePersonId) {
+              otherPersonId = relationship.person1.resourceId;
+            }
+
+            if (otherPersonId) {
+              let relationType = relationship.type;
+              if (relationType.endsWith("/ParentChild")) {
+                // other person is either the spouse's father or mother
+                let otherPerson = findPersonById(dataObj, otherPersonId);
+                if (otherPerson) {
+                  addParentFromPerson(otherPerson, result, true);
                 }
               }
             }

@@ -407,6 +407,7 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:K9V2-YCS",
   },
   {
+    // has spouse's parents names
     caseName: "us_ny_marrriage_1907_katherine_quattlander",
     url: "https://www.familysearch.org/ark:/61903/1:1:Q2C2-Y95H",
   },

@@ -124,6 +124,33 @@ function getReferenceString(gd, options) {
   return dataString;
 }
 
+function getParentageString(fatherName, motherName, gender) {
+  let parentageString = "";
+
+  if (!fatherName && !motherName) {
+    return parentageString;
+  }
+
+  if (gender == "male") {
+    parentageString += ", son of";
+  } else if (gender == "female") {
+    parentageString += ", daughter of";
+  } else {
+    parentageString += ", child of";
+  }
+  if (fatherName) {
+    parentageString += " " + fatherName;
+  }
+  if (motherName) {
+    if (fatherName) {
+      parentageString += " &";
+    }
+    parentageString += " " + motherName;
+  }
+
+  return parentageString;
+}
+
 function getUkCensusString(gd, options) {
   let dataString = getFullName(gd);
 
@@ -546,32 +573,9 @@ function getUkRegistrationString(gd, options, type) {
     if (gd.mothersMaidenName) {
       dataString += ", mother's maiden name " + gd.mothersMaidenName;
     } else {
-      if (gd.parents) {
-        let fatherName = "";
-        if (gd.parents.father && gd.parents.father.name) {
-          fatherName = gd.parents.father.name.inferFullName();
-        }
-        let motherName = "";
-        if (gd.parents.mother && gd.parents.mother.name) {
-          motherName = gd.parents.mother.name.inferFullName();
-        }
-
-        if (gd.inferPersonGender() == "male") {
-          dataString += ", son of";
-        } else if (gd.inferPersonGender() == "female") {
-          dataString += ", daughter of";
-        } else {
-          dataString += ", child of";
-        }
-        if (fatherName) {
-          dataString += " " + fatherName;
-        }
-        if (motherName) {
-          if (fatherName) {
-            dataString += " &";
-          }
-          dataString += " " + motherName;
-        }
+      let parentNames = gd.inferParentNamesForDataString();
+      if (parentNames.fatherName || parentNames.motherName) {
+        dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
       }
     }
   } else if (type == "death") {
@@ -704,32 +708,9 @@ function getBirthRegistrationString(gd, options) {
       }
     }
 
-    if (gd.parents) {
-      let fatherName = "";
-      if (gd.parents.father && gd.parents.father.name) {
-        fatherName = gd.parents.father.name.inferFullName();
-      }
-      let motherName = "";
-      if (gd.parents.mother && gd.parents.mother.name) {
-        motherName = gd.parents.mother.name.inferFullName();
-      }
-
-      if (gd.inferPersonGender() == "male") {
-        dataString += ", son of";
-      } else if (gd.inferPersonGender() == "female") {
-        dataString += ", daughter of";
-      } else {
-        dataString += ", child of";
-      }
-      if (fatherName) {
-        dataString += " " + fatherName;
-      }
-      if (motherName) {
-        if (fatherName) {
-          dataString += " &";
-        }
-        dataString += " " + motherName;
-      }
+    let parentNames = gd.inferParentNamesForDataString();
+    if (parentNames.fatherName || parentNames.motherName) {
+      dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
     }
 
     if (gd.mothersMaidenName) {
@@ -865,22 +846,7 @@ function getBirthString(gd, options) {
 
     let parentNames = gd.inferParentNamesForDataString();
     if (parentNames.fatherName || parentNames.motherName) {
-      if (gd.inferPersonGender() == "male") {
-        dataString += ", son of ";
-      } else if (gd.inferPersonGender() == "female") {
-        dataString += ", daughter of ";
-      } else {
-        dataString += ", child of ";
-      }
-      if (parentNames.fatherName) {
-        dataString += parentNames.fatherName;
-      }
-      if (parentNames.motherName) {
-        if (parentNames.fatherName) {
-          dataString += " & ";
-        }
-        dataString += parentNames.motherName;
-      }
+      dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
       dataString += ",";
     }
   }
@@ -922,22 +888,7 @@ function getDeathString(gd, options) {
 
   let parentNames = gd.inferParentNamesForDataString();
   if (parentNames.fatherName || parentNames.motherName) {
-    if (gd.inferPersonGender() == "male") {
-      dataString += ", son of ";
-    } else if (gd.inferPersonGender() == "female") {
-      dataString += ", daughter of ";
-    } else {
-      dataString += ", child of ";
-    }
-    if (parentNames.fatherName) {
-      dataString += parentNames.fatherName;
-    }
-    if (parentNames.motherName) {
-      if (parentNames.fatherName) {
-        dataString += " & ";
-      }
-      dataString += parentNames.motherName;
-    }
+    dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
     dataString += ",";
   }
 
@@ -1010,22 +961,7 @@ function getBaptismString(gd, options) {
 
   let parentNames = gd.inferParentNamesForDataString();
   if (parentNames.fatherName || parentNames.motherName) {
-    if (gd.inferPersonGender() == "male") {
-      dataString += ", son of ";
-    } else if (gd.inferPersonGender() == "female") {
-      dataString += ", daughter of ";
-    } else {
-      dataString += ", child of ";
-    }
-    if (parentNames.fatherName) {
-      dataString += parentNames.fatherName;
-    }
-    if (parentNames.motherName) {
-      if (parentNames.fatherName) {
-        dataString += " & ";
-      }
-      dataString += parentNames.motherName;
-    }
+    dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
     if (place) {
       dataString += ",";
     }
@@ -1070,17 +1006,38 @@ function getMarriageString(gd, options) {
     if (age) {
       dataString += " (" + age + ")";
     }
+
+    let parentNames = gd.inferParentNamesForDataString();
+    if (parentNames.fatherName || parentNames.motherName) {
+      dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
+      dataString += ",";
+    }
   }
 
   dataString += " marriage";
 
   if (gd.spouses && gd.spouses.length == 1 && gd.spouses[0].name) {
-    let spouseName = gd.spouses[0].name.inferFullName();
+    let spouse = gd.spouses[0];
+    let spouseName = spouse.name.inferFullName();
     dataString += " to " + spouseName;
 
-    let spouseAge = cleanAge(gd.spouses[0].age);
+    let spouseAge = cleanAge(spouse.age);
     if (spouseAge) {
       dataString += " (" + spouseAge + ")";
+    }
+
+    if (spouse.parents) {
+      let fatherName = "";
+      if (spouse.parents.father && spouse.parents.father.name) {
+        fatherName = spouse.parents.father.name.inferFullName();
+      }
+      let motherName = "";
+      if (spouse.parents.mother && spouse.parents.mother.name) {
+        motherName = spouse.parents.mother.name.inferFullName();
+      }
+
+      dataString += getParentageString(fatherName, motherName, spouse.personGender);
+      dataString += ",";
     }
   }
 
@@ -1130,33 +1087,9 @@ function getBurialString(gd, options) {
       dataString += "'s " + getPrimaryPersonTermAndName(gd);
     }
   } else {
-    if (gd.parents) {
-      let fatherName = "";
-      if (gd.parents.father && gd.parents.father.name) {
-        fatherName = gd.parents.father.name.inferFullName();
-      }
-      let motherName = "";
-      if (gd.parents.mother && gd.parents.mother.name) {
-        motherName = gd.parents.mother.name.inferFullName();
-      }
-
-      if (gd.inferPersonGender() == "male") {
-        dataString += ", son of";
-      } else if (gd.inferPersonGender() == "female") {
-        dataString += ", daughter of";
-      } else {
-        dataString += ", child of";
-      }
-      if (fatherName) {
-        dataString += " " + fatherName;
-      }
-      if (motherName) {
-        if (fatherName) {
-          dataString += " &";
-        }
-        dataString += " " + motherName;
-      }
-
+    let parentNames = gd.inferParentNamesForDataString();
+    if (parentNames.fatherName || parentNames.motherName) {
+      dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
       dataString += ",";
     }
   }

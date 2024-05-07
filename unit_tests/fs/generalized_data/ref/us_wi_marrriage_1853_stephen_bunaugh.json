@@ -22,6 +22,7 @@
         "lastName": "Newbury",
         "forenames": "Susan B."
       },
+      "personGender": "female",
       "marriageDate": {
         "dateString": "14 Dec 1853"
       },

@@ -26,6 +26,7 @@
         "lastName": "James",
         "forenames": "William"
       },
+      "personGender": "male",
       "marriageDate": {
         "dateString": "02 Apr"
       },

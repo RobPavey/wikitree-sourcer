@@ -392,6 +392,14 @@ function setFieldIfDefined(targetObject, fieldName, value) {
   }
 }
 
+function setParentFields(gdParent, edParent) {
+  setFieldIfDefined(gdParent.name, "name", edParent.fullName);
+  setFieldIfDefined(gdParent.name, "forenames", edParent.givenName);
+  setFieldIfDefined(gdParent.name, "lastName", edParent.surname);
+  setFieldIfDefined(gdParent.name, "prefix", edParent.prefix);
+  setFieldIfDefined(gdParent.name, "suffix", edParent.suffix);
+}
+
 const quarterNames = [
   {
     name: "Jan-Feb-Mar",
@@ -566,19 +574,11 @@ function generalizeDataGivenRecordType(ed, result) {
     if (result.role != Role.Parent) {
       if (ed.father) {
         let father = result.addFather();
-        setFieldIfDefined(father.name, "name", ed.father.fullName);
-        setFieldIfDefined(father.name, "forenames", ed.father.givenName);
-        setFieldIfDefined(father.name, "lastName", ed.father.surname);
-        setFieldIfDefined(father.name, "prefix", ed.father.prefix);
-        setFieldIfDefined(father.name, "suffix", ed.father.suffix);
+        setParentFields(father, ed.father);
       }
       if (ed.mother) {
         let mother = result.addMother();
-        setFieldIfDefined(mother.name, "name", ed.mother.fullName);
-        setFieldIfDefined(mother.name, "forenames", ed.mother.givenName);
-        setFieldIfDefined(mother.name, "lastName", ed.mother.surname);
-        setFieldIfDefined(mother.name, "prefix", ed.mother.prefix);
-        setFieldIfDefined(mother.name, "suffix", ed.mother.suffix);
+        setParentFields(mother, ed.mother);
       }
 
       // spouse can be specified on a death record for example
@@ -615,19 +615,11 @@ function generalizeDataGivenRecordType(ed, result) {
     if (result.role != Role.Parent) {
       if (ed.father) {
         let father = result.addFather();
-        setFieldIfDefined(father.name, "name", ed.father.fullName);
-        setFieldIfDefined(father.name, "forenames", ed.father.givenName);
-        setFieldIfDefined(father.name, "lastName", ed.father.surname);
-        setFieldIfDefined(father.name, "prefix", ed.father.prefix);
-        setFieldIfDefined(father.name, "suffix", ed.father.suffix);
+        setParentFields(father, ed.father);
       }
       if (ed.mother) {
         let mother = result.addMother();
-        setFieldIfDefined(mother.name, "name", ed.mother.fullName);
-        setFieldIfDefined(mother.name, "forenames", ed.mother.givenName);
-        setFieldIfDefined(mother.name, "lastName", ed.mother.surname);
-        setFieldIfDefined(mother.name, "prefix", ed.mother.prefix);
-        setFieldIfDefined(mother.name, "suffix", ed.mother.suffix);
+        setParentFields(mother, ed.mother);
       }
     }
 
@@ -651,6 +643,24 @@ function generalizeDataGivenRecordType(ed, result) {
       }
       if (ed.spouseAge) {
         resultSpouse.age = ed.spouseAge;
+      }
+      if (ed.spouseGender) {
+        resultSpouse.personGender = ed.spouseGender;
+      }
+
+      if (ed.spouseFather) {
+        resultSpouse.parents = {};
+        resultSpouse.parents.father = {};
+        resultSpouse.parents.father.name = new NameObj();
+        setParentFields(resultSpouse.parents.father, ed.spouseFather);
+      }
+      if (ed.spouseMother) {
+        if (!resultSpouse.parents) {
+          resultSpouse.parents = {};
+        }
+        resultSpouse.parents.mother = {};
+        resultSpouse.parents.mother.name = new NameObj();
+        setParentFields(resultSpouse.parents.mother, ed.spouseMother);
       }
     } else if (ed.relatedPersonSpouseFullName || ed.relatedPersonSpouseSurname || ed.relatedPersonSpouseGivenName) {
       resultSpouse.name = new NameObj();
@@ -758,19 +768,11 @@ function generalizeDataGivenRecordType(ed, result) {
     if (result.role != Role.Parent) {
       if (ed.father) {
         let father = result.addFather();
-        setFieldIfDefined(father.name, "name", ed.father.fullName);
-        setFieldIfDefined(father.name, "forenames", ed.father.givenName);
-        setFieldIfDefined(father.name, "lastName", ed.father.surname);
-        setFieldIfDefined(father.name, "prefix", ed.father.prefix);
-        setFieldIfDefined(father.name, "suffix", ed.father.suffix);
+        setParentFields(father, ed.father);
       }
       if (ed.mother) {
         let mother = result.addMother();
-        setFieldIfDefined(mother.name, "name", ed.mother.fullName);
-        setFieldIfDefined(mother.name, "forenames", ed.mother.givenName);
-        setFieldIfDefined(mother.name, "lastName", ed.mother.surname);
-        setFieldIfDefined(mother.name, "prefix", ed.mother.prefix);
-        setFieldIfDefined(mother.name, "suffix", ed.mother.suffix);
+        setParentFields(mother, ed.mother);
       }
     }
 

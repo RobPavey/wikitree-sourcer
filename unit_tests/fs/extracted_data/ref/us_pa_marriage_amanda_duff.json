@@ -28,6 +28,7 @@
   "spouseFullName": "William James",
   "spouseGivenName": "William",
   "spouseSurname": "James",
+  "spouseGender": "male",
   "referenceData": {
     "packetLetter": "R",
     "filmNumber": "000878581",
