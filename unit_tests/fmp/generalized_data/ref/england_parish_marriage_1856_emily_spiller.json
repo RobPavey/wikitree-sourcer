@@ -39,7 +39,14 @@
         "placeString": "Kilmington, Devon, England"
       },
       "age": "23",
-      "fatherName": "James Trivet"
+      "parents": {
+        "father": {
+          "name": {
+            "firstNames": "James",
+            "lastName": "Trivet"
+          }
+        }
+      }
     }
   ],
   "collectionData": {

@@ -770,6 +770,20 @@ function getMarriageRegistrationString(gd, options) {
     } else {
       dataString += " " + getPrimaryPersonTermAndName(gd);
     }
+  } else {
+    if (gd.parents) {
+      let fatherName = "";
+      if (gd.parents.father && gd.parents.father.name) {
+        fatherName = gd.parents.father.name.inferFullName();
+      }
+      let motherName = "";
+      if (gd.parents.mother && gd.parents.mother.name) {
+        motherName = gd.parents.mother.name.inferFullName();
+      }
+
+      dataString += getParentageString(fatherName, motherName, gd.inferPersonGender());
+      dataString += ",";
+    }
   }
 
   dataString += " marriage";
@@ -783,6 +797,20 @@ function getMarriageRegistrationString(gd, options) {
       let spouseAge = cleanAge(spouse.age);
       if (spouseAge) {
         dataString += " (" + spouseAge + ")";
+      }
+
+      if (spouse.parents) {
+        let fatherName = "";
+        if (spouse.parents.father && spouse.parents.father.name) {
+          fatherName = spouse.parents.father.name.inferFullName();
+        }
+        let motherName = "";
+        if (spouse.parents.mother && spouse.parents.mother.name) {
+          motherName = spouse.parents.mother.name.inferFullName();
+        }
+
+        dataString += getParentageString(fatherName, motherName, spouse.personGender);
+        dataString += ",";
       }
     }
   }

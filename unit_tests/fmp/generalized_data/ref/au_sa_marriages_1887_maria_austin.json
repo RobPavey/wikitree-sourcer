@@ -39,7 +39,14 @@
         "country": "Australia",
         "placeString": "Res of Benjamin Whittenbury Athelstone, Norwood, South Australia, Australia"
       },
-      "fatherName": "Benjamin Whittenbury"
+      "parents": {
+        "father": {
+          "name": {
+            "firstNames": "Benjamin",
+            "lastName": "Whittenbury"
+          }
+        }
+      }
     }
   ],
   "collectionData": {

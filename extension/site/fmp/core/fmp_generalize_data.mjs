@@ -851,6 +851,14 @@ function generalizeDataGivenRecordType(ed, result) {
         spouse.age = spouseAge;
       }
 
+      function makeNameObjFromFirstAndLastNames(firstNames, lastName) {
+        let nameObj = new NameObj();
+        nameObj.setFirstNames(firstNames);
+        nameObj.setLastName(lastName);
+        return nameObj;
+      }
+
+      let spouseFatherNameObj = undefined;
       let spouseFatherFirstName = getRecordDataValueForList(ed, [
         "Spouse's father's first name(s)",
         "Spouse's father's first name",
@@ -860,19 +868,20 @@ function generalizeDataGivenRecordType(ed, result) {
         "Spouse's father's last name",
       ]);
       if (spouseFatherFirstName && spouseFatherLastName) {
-        spouse.fatherName = spouseFatherFirstName + " " + spouseFatherLastName;
+        spouseFatherNameObj = makeNameObjFromFirstAndLastNames(spouseFatherFirstName, spouseFatherLastName);
       } else {
         if (ed.personGender == "male") {
           if (brideFatherFirstName && brideFatherLastName) {
-            spouse.fatherName = brideFatherFirstName + " " + brideFatherLastName;
+            spouseFatherNameObj = makeNameObjFromFirstAndLastNames(brideFatherFirstName, brideFatherLastName);
           }
         } else {
           if (groomFatherFirstName && groomFatherLastName) {
-            spouse.fatherName = groomFatherFirstName + " " + groomFatherLastName;
+            spouseFatherNameObj = makeNameObjFromFirstAndLastNames(groomFatherFirstName, groomFatherLastName);
           }
         }
       }
 
+      let spouseMotherNameObj = undefined;
       let spouseMotherFirstName = getRecordDataValueForList(ed, [
         "Spouse's mother's first name(s)",
         "Spouse's mother's first name",
@@ -882,16 +891,26 @@ function generalizeDataGivenRecordType(ed, result) {
         "Spouse's mother's last name",
       ]);
       if (spouseMotherFirstName && spouseMotherLastName) {
-        spouse.motherName = spouseMotherFirstName + " " + spouseMotherLastName;
+        spouseMotherNameObj = makeNameObjFromFirstAndLastNames(spouseMotherFirstName, spouseMotherLastName);
       } else {
         if (ed.personGender == "male") {
           if (brideMotherFirstName && brideMotherLastName) {
-            spouse.motherName = brideMotherFirstName + " " + brideMotherLastName;
+            spouseMotherNameObj = makeNameObjFromFirstAndLastNames(brideMotherFirstName, brideMotherLastName);
           }
         } else {
           if (groomMotherFirstName && groomMotherLastName) {
-            spouse.motherName = groomMotherFirstName + " " + groomMotherLastName;
+            spouseMotherNameObj = makeNameObjFromFirstAndLastNames(groomMotherFirstName, groomMotherLastName);
           }
+        }
+      }
+
+      if (spouseFatherNameObj || spouseMotherNameObj) {
+        spouse.parents = {};
+        if (spouseFatherNameObj) {
+          spouse.parents.father = { name: spouseFatherNameObj };
+        }
+        if (spouseMotherNameObj) {
+          spouse.parents.mother = { name: spouseMotherNameObj };
         }
       }
 

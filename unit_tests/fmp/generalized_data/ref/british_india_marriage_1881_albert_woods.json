@@ -37,7 +37,14 @@
         "placeString": "Lahore, Bengal"
       },
       "age": "16",
-      "fatherName": "William Newberry"
+      "parents": {
+        "father": {
+          "name": {
+            "firstNames": "William",
+            "lastName": "Newberry"
+          }
+        }
+      }
     }
   ],
   "collectionData": {

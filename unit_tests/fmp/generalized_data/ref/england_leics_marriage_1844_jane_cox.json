@@ -39,7 +39,14 @@
         "placeString": "Leicestershire, England"
       },
       "age": "of Full Age",
-      "fatherName": "Thomas Burdett"
+      "parents": {
+        "father": {
+          "name": {
+            "firstNames": "Thomas",
+            "lastName": "Burdett"
+          }
+        }
+      }
     }
   ],
   "collectionData": {
