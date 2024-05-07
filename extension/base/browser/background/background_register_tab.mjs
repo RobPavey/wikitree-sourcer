@@ -117,6 +117,8 @@ async function handleUnregisterTabMessage(request, sender, sendResponse) {
 
   siteRegistry[siteName] = tabList;
 
+  setSiteRegistry(siteRegistry);
+
   //console.log("handleUnregisterTabMessage, done, siteRegistry is:");
   //console.log(siteRegistry);
 

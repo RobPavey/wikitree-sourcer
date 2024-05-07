@@ -103,6 +103,8 @@ async function handleDoSearchWithSearchDataMessage(request, sender, sendResponse
   let reuseTabIfPossible = request.reuseTabIfPossible;
   let existingTabId = await getRegisteredTab(siteName);
 
+  //console.log("handleDoSearchWithSearchDataMessage, existingTabId is : " + existingTabId);
+
   callFunctionWithStoredOptions(function (options) {
     doSearchGivenSearchData(searchData, tab, options, existingTabId, reuseTabIfPossible);
   });
