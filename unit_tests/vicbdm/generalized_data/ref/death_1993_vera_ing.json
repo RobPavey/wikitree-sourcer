@@ -1,0 +1,44 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "forenames": "Vera Minnie",
+    "lastName": "Ing"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1993"
+  },
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "lastNameAtDeath": "Ing",
+  "mothersMaidenName": "Smith",
+  "deathDate": {
+    "yearString": "1993"
+  },
+  "deathPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Henrico Antonio",
+        "lastName": "Iseppi"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Mary Anne",
+        "lastName": "Smith"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Deaths",
+    "year": "1993",
+    "regNum": "20774"
+  },
+  "hasValidData": true
+}

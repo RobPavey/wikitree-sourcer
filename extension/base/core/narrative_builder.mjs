@@ -914,6 +914,14 @@ class NarrativeBuilder {
       }
       if (spouse.personGender) {
         spouseGender = spouse.personGender;
+      } else {
+        if (this.eventGd.personGender) {
+          if (this.eventGd.personGender == "male") {
+            spouseGender = "female";
+          } else if (this.eventGd.personGender == "female") {
+            spouseGender = "male";
+          }
+        }
       }
     }
     const toPast = { birth: "was born", marriage: "married", death: "died" };
@@ -948,7 +956,17 @@ class NarrativeBuilder {
         }
 
         if (spouseName) {
-          this.narrative += " to " + spouseName;
+          if (typeString == "death") {
+            let spouseTerm = "spouse";
+            if (this.eventGd.personGender == "male") {
+              spouseTerm = "husband";
+            } else if (this.eventGd.personGender == "female") {
+              spouseTerm = "wife";
+            }
+            this.narrative += " (" + spouseTerm + " of " + spouseName + ")";
+          } else {
+            this.narrative += " to " + spouseName;
+          }
           this.addAgeForMainSentence(spouseAge);
         }
       } else {

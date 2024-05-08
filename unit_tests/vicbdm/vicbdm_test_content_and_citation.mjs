@@ -119,6 +119,10 @@ const regressionData = [
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c6540894aba80ac319fdbbb?q=efamily&givenName=Susanne%20Mary&familyName=PAVEY",
   },
   {
+    caseName: "death_1993_vera_ing",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/66355a8368d03925b31054d1/record/5c65459e4aba80ac312a46fb?q=efamily&givenName=Vera%20Minnie&familyName=ING",
+  },
+  {
     // Has place name
     caseName: "marriage_1852_john_brilant",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/662ed1b068d03925b30fc254/record/5c6553c84aba80ac31473b14?q=efamily&givenName=John&familyName=BRILANT",
