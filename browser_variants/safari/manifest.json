@@ -20,6 +20,7 @@
   ],
   "background": {
     "scripts": ["base/browser/background/background_mv3.mjs"],
+    "persistent": false,
     "type": "module"
   },
   "action": {
