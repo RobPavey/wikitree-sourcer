@@ -40347,6 +40347,8 @@ function mapVicbdmPlaceNameToRealPlaceNames(placeName) {
     }
   }
 
+  fullNames.sort();
+
   return fullNames;
 }
 
