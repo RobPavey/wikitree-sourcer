@@ -3,20 +3,20 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "forenames": "Bernard John",
-    "lastName": "Callaghan"
+    "forenames": "Reginald Francis",
+    "lastName": "Taylor"
   },
   "personGender": "male",
   "eventDate": {
-    "yearString": "1908"
+    "yearString": "1907"
   },
   "eventPlace": {
     "placeString": "Victoria, Australia"
   },
-  "lastNameAtBirth": "Callaghan",
-  "mothersMaidenName": "O'Donnell",
+  "lastNameAtBirth": "Taylor",
+  "mothersMaidenName": "Qualtrough",
   "birthDate": {
-    "yearString": "1908"
+    "yearString": "1907"
   },
   "birthPlace": {
     "placeString": "Victoria, Australia"
@@ -24,21 +24,21 @@
   "parents": {
     "father": {
       "name": {
-        "forenames": "Benjamin John",
-        "lastName": "Callaghan"
+        "forenames": "James",
+        "lastName": "Taylor"
       }
     },
     "mother": {
       "name": {
-        "forenames": "Ellen Mary",
-        "lastName": "O'Donnell"
+        "forenames": "Frances Emily",
+        "lastName": "Qualtrough"
       }
     }
   },
   "collectionData": {
     "id": "Births",
-    "year": "1908",
-    "regNum": "2249"
+    "year": "1907",
+    "regNum": "2284"
   },
   "hasValidData": true
 }

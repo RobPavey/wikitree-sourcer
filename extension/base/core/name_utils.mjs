@@ -8632,6 +8632,7 @@ const maleGivenNames = [
   "Ernesto",
   "Ernie",
   "Ernst",
+  "Ernt",
   "Errett",
   "Errol",
   "Ersel",
@@ -12126,6 +12127,8 @@ const maleGivenNames = [
   "Reese",
   "Reeves",
   "Refugio",
+  "Reg",
+  "Regd",
   "Reggie",
   "Reginal",
   "Reginald",
@@ -13769,6 +13772,10 @@ const englishGivenNameAbbreviations = [
     full: "Arthur",
   },
   {
+    abbrev: "Arth",
+    full: "Arthur",
+  },
+  {
     abbrev: "Aug",
     full: "Augustus",
   },
@@ -13857,6 +13864,10 @@ const englishGivenNameAbbreviations = [
     full: "Edward",
   },
   {
+    abbrev: "Ernt",
+    full: "Ernest",
+  },
+  {
     abbrev: "Eliz",
     full: "Elizabeth",
   },
@@ -13869,12 +13880,25 @@ const englishGivenNameAbbreviations = [
     full: "Eleanor",
   },
   {
+    abbrev: "Elzth",
+    full: "Elizabeth",
+  },
+  {
     abbrev: "Esth",
     full: "Esther",
   },
   {
     abbrev: "Ezek",
     full: "Ezekiel",
+  },
+  {
+    abbrev: "Fran",
+    male: "Francis",
+    female: "Frances",
+  },
+  {
+    abbrev: "Fredk",
+    full: "Frederick",
   },
   {
     abbrev: "Froo",
@@ -14093,6 +14117,10 @@ const englishGivenNameAbbreviations = [
     full: "Reginald",
   },
   {
+    abbrev: "Regd",
+    full: "Reginald",
+  },
+  {
     abbrev: "Ric",
     full: "Richard",
   },
@@ -14155,6 +14183,10 @@ const englishGivenNameAbbreviations = [
   {
     abbrev: "Val",
     full: "Valentine",
+  },
+  {
+    abbrev: "Vic",
+    full: "Victor",
   },
   {
     abbrev: "Vinc",
@@ -14223,8 +14255,55 @@ const NameUtils = {
       return true;
     }
 
-    function shouldUpperCaseAfterO(name) {
+    function shouldUpperCaseAfterOApostrophe(name) {
       return true;
+    }
+
+    function shouldUpperCaseAfterO(name) {
+      const oNames = [
+        "OBANNON",
+        "OBRANNIGAN",
+        "OBRIEN",
+        "OBRYANT",
+        "OCALLAGHAN",
+        "OCEALLAIGH",
+        "OCOLLINS",
+        "OCONNELL",
+        "OCONNER",
+        "ODEA",
+        "ODEANE",
+        "ODELL",
+        "ODONNELL",
+        "ODONOGHUE",
+        "ODONOHUE",
+        "ODWYER",
+        "ODUIBHIR",
+        "OFARRELL",
+        "OGRADY",
+        "OHARA",
+        "OHIGGINS",
+        "OKANE",
+        "OKEEFFE",
+        "OLEARY",
+        "OMALLEY",
+        "OMULLONY",
+        "ONEILL",
+        "ONEIL",
+        "OREGAN",
+        "OREILLY",
+        "OROURKE",
+        "OSHARKEY",
+        "OSHEA",
+        "OSULLIVAN",
+        "OTOOLE",
+        "OCLERY",
+      ];
+
+      let ucName = name.toUpperCase();
+      if (oNames.includes(ucName)) {
+        return true;
+      }
+      return false;
     }
 
     function shouldUpperCaseAfterApostrophe(name) {
@@ -14299,6 +14378,11 @@ const NameUtils = {
         resultString.substring(toUpperIndex + 1);
     }
 
+    function insertLetterAtIndex(index, letter) {
+      let newString = resultString.substring(0, index) + letter + resultString.substring(index);
+      resultString = newString;
+    }
+
     var index = 0;
     do {
       upperCaseLetterAtIndex(index);
@@ -14321,8 +14405,13 @@ const NameUtils = {
           upperCaseLetterAtIndex(index + 2);
         }
       } else if (word.startsWith("O'") && word.length > 2 && word[2] != " ") {
-        if (shouldUpperCaseAfterO(word)) {
+        if (shouldUpperCaseAfterOApostrophe(word)) {
           upperCaseLetterAtIndex(index + 2);
+        }
+      } else if (word.startsWith("O") && word.length > 2 && word[2] != " ") {
+        if (shouldUpperCaseAfterO(word)) {
+          upperCaseLetterAtIndex(index + 1);
+          insertLetterAtIndex(index + 1, "'");
         }
       } else if (word.includes("'") && word.length > 2 && word[2] != " ") {
         if (shouldUpperCaseAfterApostrophe(word)) {
@@ -14360,12 +14449,15 @@ const NameUtils = {
     return resultString;
   },
 
-  convertEnglishGivenNameFromAbbrevationToFull: function (abbrev) {
+  convertEnglishGivenNameFromAbbrevationToFull: function (abbrev, gender) {
     if (!abbrev) {
       return "";
     }
     for (let entry of englishGivenNameAbbreviations) {
       if (abbrev == entry.abbrev) {
+        if (gender && entry[gender]) {
+          return entry[gender];
+        }
         return entry.full;
       }
     }
@@ -14401,6 +14493,16 @@ const NameUtils = {
     }
 
     if (numMale == numFemale) {
+      if (numMale > 0) {
+        // if tied and there are names use gender of first given name
+        let givenName = givenNamesArray[0];
+        if (maleGivenNames.includes(givenName)) {
+          return "male";
+        }
+        if (femaleGivenNames.includes(givenName)) {
+          return "female";
+        }
+      }
       return "";
     }
 

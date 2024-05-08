@@ -37,6 +37,11 @@ const regressionData = [
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c6547cb4aba80ac31d06036?q=efamily&givenName=Joseph%20Thomas&familyName=SMITH",
   },
   {
+    // Father first name is "U"
+    caseName: "birth_1883_michael_smith",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/66355a8368d03925b31054d1/record/5c6543544aba80ac3177dae1?q=efamily&givenName=Michael%20Hennessy&familyName=SMITH",
+  },
+  {
     // At sea on board a ship
     caseName: "birth_1861_william_fraser",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/66355a8368d03925b31054d1/record/5c6546bd4aba80ac31806a71?q=efamily&givenName=William%20Holmes%20Alexander&familyName=FRASER",
@@ -77,6 +82,11 @@ const regressionData = [
         },
       },
     ],
+  },
+  {
+    // Has male and female person's called "Fran".
+    caseName: "birth_1907_regd_taylor",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/66355a8368d03925b31054d1/record/5c656f204aba80ac314e3946?q=efamily&givenName=Regd%20Fran&familyName=TAYLOR",
   },
   {
     // corresponding FMP record: https://www.findmypast.co.uk/transcript?id=ANZ%2FBMD%2FACTBIRT%2F1562899

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Births Index; Registration number: 2284 / 1907<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nRegd Fran TAYLOR; Year: 1907; Place: COLLINGWOOD, VIC; Father: Jas; Mother: Fran Emily; Mother's LNAB: QUALTROUGH.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Reginald's birth was registered in 1907 in Victoria, Australia. He was the son of James Taylor & Frances Emily Qualtrough.<ref>\n'''Birth Registration''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Births Index; Registration number: 2284 / 1907<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nRegd Fran TAYLOR; Year: 1907; Place: COLLINGWOOD, VIC; Father: Jas; Mother: Fran Emily; Mother's LNAB: QUALTROUGH.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Victoria Registry of Births, Deaths & Marriages\"<br/>Victoria Births Index; Registration number: 2284 / 1907<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>Regd Fran TAYLOR; Year: 1907; Place: COLLINGWOOD, VIC; Father: Jas; Mother: Fran Emily; Mother's LNAB: QUALTROUGH.",
+    "type": "source"
+  }
+}

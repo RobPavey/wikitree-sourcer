@@ -104,15 +104,22 @@ class VicbdmEdReader extends ExtractedDataReader {
     }
   }
 
-  expandGivenNameAbbreviations(givenNamesString) {
+  expandGivenNameAbbreviations(givenNamesString, impliedGender) {
     let newGivenNamesString = givenNamesString;
     if (givenNamesString) {
+      let gender = "";
+      if (impliedGender) {
+        gender = impliedGender;
+      } else {
+        gender = NameUtils.predictGenderFromGivenNames(givenNamesString);
+      }
+
       let givenNamesArray = givenNamesString.split(" ");
       let newGivenNamesArray = [];
       for (let givenName of givenNamesArray) {
         givenName = givenName.trim();
 
-        let full = NameUtils.convertEnglishGivenNameFromAbbrevationToFull(givenName);
+        let full = NameUtils.convertEnglishGivenNameFromAbbrevationToFull(givenName, gender);
         if (full) {
           givenName = full;
         }
@@ -127,13 +134,13 @@ class VicbdmEdReader extends ExtractedDataReader {
     return newGivenNamesString;
   }
 
-  makeNameObjFromFamilyNameAndGivenNames(familyNameString, givenNamesString) {
+  makeNameObjFromFamilyNameAndGivenNames(familyNameString, givenNamesString, impliedGender) {
     if (familyNameString && givenNamesString) {
       let cleanFamilyName = NameUtils.convertNameFromAllCapsToMixedCase(familyNameString);
 
       let nameObj = new NameObj();
 
-      givenNamesString = this.expandGivenNameAbbreviations(givenNamesString);
+      givenNamesString = this.expandGivenNameAbbreviations(givenNamesString, impliedGender);
 
       nameObj.setForenames(givenNamesString);
       nameObj.setLastName(cleanFamilyName);
@@ -149,8 +156,12 @@ class VicbdmEdReader extends ExtractedDataReader {
         let familyNameString = nameString.substring(0, commaIndex).trim();
         let givenNamesString = nameString.substring(commaIndex + 1).trim();
 
-        if (givenNamesString && givenNamesString.toLowerCase() == "unknown") {
-          givenNamesString = "";
+        if (givenNamesString) {
+          if (givenNamesString.toLowerCase() == "unknown") {
+            givenNamesString = "";
+          } else if (givenNamesString.toLowerCase() == "u") {
+            givenNamesString = "";
+          }
         }
 
         if (familyNameString == "<Unknown Family Name>") {
@@ -203,7 +214,7 @@ class VicbdmEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  makeNameObjFromFamilyNameCommaGivenNames(nameString) {
+  makeNameObjFromFamilyNameCommaGivenNames(nameString, impliedGender) {
     if (nameString) {
       let parts = this.getFamilyAndGivenNamesFromFamilyNameCommaGivenNames(nameString);
 
@@ -216,7 +227,7 @@ class VicbdmEdReader extends ExtractedDataReader {
         // the family name, so perhaps should check for that.
         let cleanGivenNames = NameUtils.convertNameFromAllCapsToMixedCase(givenNamesString);
 
-        cleanGivenNames = this.expandGivenNameAbbreviations(cleanGivenNames);
+        cleanGivenNames = this.expandGivenNameAbbreviations(cleanGivenNames, impliedGender);
 
         let nameObj = new NameObj();
 
@@ -266,7 +277,6 @@ class VicbdmEdReader extends ExtractedDataReader {
   getNameObj() {
     let familyName = this.getRecordDataValue("Family name");
     let givenNames = this.getRecordDataValue("Given name(s)");
-
     return this.makeNameObjFromFamilyNameAndGivenNames(familyName, givenNames);
   }
 
@@ -482,11 +492,18 @@ class VicbdmEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
+    let spouseImpliedGender = "";
+    let personGender = this.getGender();
+    if (personGender == "male") {
+      spouseImpliedGender = "female";
+    } else if (personGender == "female") {
+      spouseImpliedGender = "male";
+    }
     if (this.isMarriage) {
       let familyName = this.getRecordDataValue("Spouse's family name");
       let givenNames = this.getRecordDataValue("Spouse's given name(s)");
 
-      let spouseNameObj = this.makeNameObjFromFamilyNameAndGivenNames(familyName, givenNames);
+      let spouseNameObj = this.makeNameObjFromFamilyNameAndGivenNames(familyName, givenNames, spouseImpliedGender);
 
       let eventDateObj = this.getEventDateObj();
       let eventPlaceObj = this.getEventPlaceObj();
@@ -498,7 +515,7 @@ class VicbdmEdReader extends ExtractedDataReader {
     } else if (this.isDeath) {
       let spouseNameString = this.getClickedRowDataValue("Spouse at Death");
       if (spouseNameString && spouseNameString != "<Unknown Family Name>") {
-        let spouseNameObj = this.makeNameObjFromFamilyNameCommaGivenNames(spouseNameString);
+        let spouseNameObj = this.makeNameObjFromFamilyNameCommaGivenNames(spouseNameString, spouseImpliedGender);
         let spouseObj = this.makeSpouseObj(spouseNameObj);
         if (spouseObj) {
           return [spouseObj];
@@ -523,14 +540,14 @@ class VicbdmEdReader extends ExtractedDataReader {
 
       let parents = {};
       if (fathersName) {
-        let fatherNameObj = this.makeNameObjFromFamilyNameCommaGivenNames(fathersName);
+        let fatherNameObj = this.makeNameObjFromFamilyNameCommaGivenNames(fathersName, "male");
         if (fatherNameObj) {
           parents.father = {};
           parents.father.name = fatherNameObj;
         }
       }
       if (mothersName) {
-        let motherNameObj = this.makeNameObjFromFamilyNameCommaGivenNames(mothersName);
+        let motherNameObj = this.makeNameObjFromFamilyNameCommaGivenNames(mothersName, "female");
         if (motherNameObj) {
           if (cleanMmn) {
             motherNameObj.lastName = cleanMmn;

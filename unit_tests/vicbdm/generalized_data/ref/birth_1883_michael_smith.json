@@ -3,42 +3,36 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "forenames": "Bernard John",
-    "lastName": "Callaghan"
+    "forenames": "Michael Hennessy",
+    "lastName": "Smith"
   },
   "personGender": "male",
   "eventDate": {
-    "yearString": "1908"
+    "yearString": "1883"
   },
   "eventPlace": {
     "placeString": "Victoria, Australia"
   },
-  "lastNameAtBirth": "Callaghan",
-  "mothersMaidenName": "O'Donnell",
+  "lastNameAtBirth": "Smith",
+  "mothersMaidenName": "Smith",
   "birthDate": {
-    "yearString": "1908"
+    "yearString": "1883"
   },
   "birthPlace": {
     "placeString": "Victoria, Australia"
   },
   "parents": {
-    "father": {
-      "name": {
-        "forenames": "Benjamin John",
-        "lastName": "Callaghan"
-      }
-    },
     "mother": {
       "name": {
-        "forenames": "Ellen Mary",
-        "lastName": "O'Donnell"
+        "forenames": "Mary Ann",
+        "lastName": "Smith"
       }
     }
   },
   "collectionData": {
     "id": "Births",
-    "year": "1908",
-    "regNum": "2249"
+    "year": "1883",
+    "regNum": "8424"
   },
   "hasValidData": true
 }

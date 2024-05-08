@@ -147,7 +147,7 @@ function sleep(ms) {
 }
 
 async function clearSearchFields() {
-  // try to submit form
+  // try to clear form
   let clearButtonElement = document.querySelector("historical-search div.btnRow button.btn-secondary");
   if (clearButtonElement) {
     //console.log("about to click clear button");
@@ -164,6 +164,9 @@ async function doPendingSearch() {
   //console.log(document.URL);
 
   if (pendingSearchData) {
+    await sleep(20);
+    await clearSearchFields();
+
     //console.log("checkForPendingSearch: URL matches ready to fill form");
 
     //console.log("checkForPendingSearch: got formValues:");
@@ -328,12 +331,7 @@ async function doPendingSearchFromSearchResultsPage() {
     // click the button to go back to search results
     var event = new Event("click");
     refineButtonElement.dispatchEvent(event);
-    /*
-      Don't actually need to do this because the mutation observer will do it
-    await sleep(50);
-    clearSearchFields();
-    doPendingSearch();
-    */
+    // The mutationObserver will do the pending search when we get to the correct page
   }
 }
 
@@ -447,6 +445,10 @@ async function registerTabWithBackground() {
   } else {
     //console.log("addng event listener for unregister");
 
+    // NOTE: this listener does not get triggered on iOS when the X is pressed to close tab.
+    // It is a known bug and no workaround is known. Not unregistering the tab doesn't cause
+    // problems - an error is reported to console when it tries to reuse it but then it falls back
+    // to opening a new tab.
     window.addEventListener("pagehide", function () {
       //console.log("pagehide event");
       unregisterTabWithBackground();
@@ -502,7 +504,6 @@ function addMutationObserver() {
               //console.log("historical-search added");
               registerTabWithBackground();
               if (pendingSearchData) {
-                clearSearchFields();
                 doPendingSearch();
               }
             }
@@ -517,7 +518,7 @@ function addMutationObserver() {
   observer.observe(mainElement, config);
 }
 
-function additionalMessageHandler(request, sender, sendResponse) {
+async function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
     //console.log("vicbdm: additionalMessageHandler, request is:");
     //console.log(request);
@@ -526,12 +527,9 @@ function additionalMessageHandler(request, sender, sendResponse) {
     pendingSearchData = request.searchData;
 
     if (currentPageType == "historical-search") {
-      clearSearchFields();
       setSearchingBanner();
 
-      setTimeout(function () {
-        doPendingSearch();
-      }, 10);
+      doPendingSearch();
     } else if (currentPageType == "search-result-details") {
       doPendingSearchFromDetailsPage();
     } else if (currentPageType == "search-results-page") {
