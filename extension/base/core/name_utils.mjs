@@ -13744,6 +13744,10 @@ const englishGivenNameAbbreviations = [
     full: "Agnes",
   },
   {
+    abbrev: "Albt",
+    full: "Albert",
+  },
+  {
     abbrev: "Alex",
     full: "Alexander",
   },
@@ -13753,6 +13757,10 @@ const englishGivenNameAbbreviations = [
   },
   {
     abbrev: "Alf",
+    full: "Alfred",
+  },
+  {
+    abbrev: "Alfd",
     full: "Alfred",
   },
   {
@@ -13766,6 +13774,10 @@ const englishGivenNameAbbreviations = [
   {
     abbrev: "Ant",
     full: "Anthony",
+  },
+  {
+    abbrev: "Archd",
+    full: "Archibald",
   },
   {
     abbrev: "Art",
@@ -13824,6 +13836,10 @@ const englishGivenNameAbbreviations = [
     full: "Cornelius",
   },
   {
+    abbrev: "Ctin",
+    full: "Christine",
+  },
+  {
     abbrev: "Ctina",
     full: "Christina",
   },
@@ -13864,6 +13880,10 @@ const englishGivenNameAbbreviations = [
     full: "Edward",
   },
   {
+    abbrev: "Edwd",
+    full: "Edward",
+  },
+  {
     abbrev: "Ernt",
     full: "Ernest",
   },
@@ -13890,6 +13910,10 @@ const englishGivenNameAbbreviations = [
   {
     abbrev: "Ezek",
     full: "Ezekiel",
+  },
+  {
+    abbrev: "Flor",
+    full: "Florence",
   },
   {
     abbrev: "Fran",
@@ -14029,11 +14053,19 @@ const englishGivenNameAbbreviations = [
     full: "Matthew",
   },
   {
+    abbrev: "Matw",
+    full: "Matthew",
+  },
+  {
     abbrev: "Mau",
     full: "Maurice",
   },
   {
     abbrev: "Mich",
+    full: "Michael",
+  },
+  {
+    abbrev: "Michl",
     full: "Michael",
   },
   {
@@ -14070,6 +14102,11 @@ const englishGivenNameAbbreviations = [
   },
   {
     abbrev: "Pat",
+    male: "Patrick",
+    female: "Patricia",
+  },
+  {
+    abbrev: "Patk",
     full: "Patrick",
   },
   {
@@ -14186,7 +14223,8 @@ const englishGivenNameAbbreviations = [
   },
   {
     abbrev: "Vic",
-    full: "Victor",
+    male: "Victor",
+    female: "Victoria",
   },
   {
     abbrev: "Vinc",
@@ -14480,6 +14518,15 @@ const NameUtils = {
     if (!givenNames) {
       return "";
     }
+
+    let lcGivenNames = givenNames.toLowerCase();
+    if (lcGivenNames == "unnamed male") {
+      return "male";
+    }
+    if (lcGivenNames == "unnamed female") {
+      return "female";
+    }
+
     let numMale = 0;
     let numFemale = 0;
     let givenNamesArray = givenNames.split(" ");
