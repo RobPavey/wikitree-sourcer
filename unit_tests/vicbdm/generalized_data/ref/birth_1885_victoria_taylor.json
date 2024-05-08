@@ -1,0 +1,44 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "forenames": "Victoria Claribel Viola P P",
+    "lastName": "Taylor"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1885"
+  },
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "lastNameAtBirth": "Taylor",
+  "mothersMaidenName": "Manton",
+  "birthDate": {
+    "yearString": "1885"
+  },
+  "birthPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Frederick Rich",
+        "lastName": "Taylor"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Sarah Agnes",
+        "lastName": "Manton"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Births",
+    "year": "1885",
+    "regNum": "22546"
+  },
+  "hasValidData": true
+}

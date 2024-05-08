@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Births Index; Registration number: 22546 / 1885<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nVictoria Claribel Viola P P TAYLOR; Year: 1885; Place: WOOD; Father: Frederick Rich; Mother: Sarah Agnes; Mother's LNAB: MANTON.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Victoria's birth was registered in 1885 in Victoria, Australia. She was the daughter of Frederick Rich Taylor & Sarah Agnes Manton.<ref>\n'''Birth Registration''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Births Index; Registration number: 22546 / 1885<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nVictoria Claribel Viola P P TAYLOR; Year: 1885; Place: WOOD; Father: Frederick Rich; Mother: Sarah Agnes; Mother's LNAB: MANTON.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Victoria Registry of Births, Deaths & Marriages\"<br/>Victoria Births Index; Registration number: 22546 / 1885<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>Victoria Claribel Viola P P TAYLOR; Year: 1885; Place: WOOD; Father: Frederick Rich; Mother: Sarah Agnes; Mother's LNAB: MANTON.",
+    "type": "source"
+  }
+}

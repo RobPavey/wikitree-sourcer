@@ -124,7 +124,9 @@ class VicbdmEdReader extends ExtractedDataReader {
           givenName = full;
         }
 
-        if (!newGivenNamesArray.includes(givenName)) {
+        // remove duplicate given names but don't remove duplicate initials. E.g:
+        // "Victoria Claribel Viola P P"
+        if (givenName.length == 1 || !newGivenNamesArray.includes(givenName)) {
           newGivenNamesArray.push(givenName);
         }
       }

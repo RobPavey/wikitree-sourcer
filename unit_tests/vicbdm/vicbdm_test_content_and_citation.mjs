@@ -47,6 +47,11 @@ const regressionData = [
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/66355a8368d03925b31054d1/record/5c6546bd4aba80ac31806a71?q=efamily&givenName=William%20Holmes%20Alexander&familyName=FRASER",
   },
   {
+    // Many given names: Victoria Claribel Viola P P
+    caseName: "birth_1885_victoria_taylor",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/66355a8368d03925b31054d1/record/5c6545f24aba80ac3144087d?q=efamily&givenName=Victoria%20Claribel%20Viola%20P%20P&familyName=TAYLOR",
+  },
+  {
     // corresponding WikiTree profile: https://www.wikitree.com/wiki/Nicholson-6779
     caseName: "birth_1896_ruby_nicholson",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c653e7e4aba80ac31d82ee4?q=efamily&givenName=Ruby%20Jessie%20Bertha&familyName=NICHOLSON",
