@@ -23,32 +23,61 @@ SOFTWARE.
 */
 
 async function updatePage(request) {
+  //console.log("updatePage, request is");
+  //console.log(request);
+
   let message = request.message;
   let permissions = request.permissions;
 
+  let statusBoxElement = document.getElementById("statusBox");
+  let statusTextElement = document.getElementById("statusText");
+
+  if (statusBoxElement) {
+    //console.log("hiding status box");
+    statusBoxElement.style.display = "none";
+  }
+
   let descriptionElement = document.getElementById("description");
+
   if (descriptionElement) {
     descriptionElement.innerText = message;
   }
 
+  function displayStatusBox(message, color) {
+    statusTextElement.textContent = message;
+    statusBoxElement.style.display = "block";
+    statusBoxElement.classList.remove("green");
+    statusBoxElement.classList.remove("red");
+    if (color == "green") {
+      statusBoxElement.classList.add("green");
+    } else if (color == "red") {
+      statusBoxElement.classList.add("red");
+    }
+    statusBoxElement.style.display = "block";
+  }
+
   let requestButtonElement = document.getElementById("requestButton");
-  let requestResponseElement = document.getElementById("requestResponse");
-  if (requestButtonElement && requestResponseElement) {
+  if (requestButtonElement && statusBoxElement && statusTextElement) {
     requestButtonElement.onclick = async function (element) {
       try {
         let requestResult = await chrome.permissions.request(permissions);
         if (!requestResult) {
-          requestResponseElement.textContent = "Permission request failed. Request was denied.";
+          displayStatusBox("Permission request failed. Request was denied.");
         } else if (chrome.runtime.lastError) {
-          requestResponseElement.textContent = "Permission request failed. an error occurred.";
+          displayStatusBox("Permission request failed. An error occurred.", "red");
         } else {
-          requestResponseElement.textContent =
-            "Permission request succeeded. Return to what you were doing and it should now work.";
+          let message = "Permission request succeeded. Return to what you were doing and it should now work.";
+          message += "\nThis tab can be closed.";
+          displayStatusBox(message, "green");
         }
       } catch (error) {
         console.log("Exception caught during chrome.permissions.request.");
         console.log(error);
-        requestResponseElement.textContent = "Permission request failed. An exception occurred.";
+        let message = "Permission request failed. An exception occurred.";
+        if (error && error.message) {
+          message += "\n" + error.message;
+        }
+        displayStatusBox(message, "red");
       }
     };
   }
@@ -56,8 +85,8 @@ async function updatePage(request) {
 
 // Listen for messages
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  console.log("exception.js received a message. Request is:");
-  console.log(request);
+  //console.log("exception.js received a message. Request is:");
+  //console.log(request);
 
   if (request.type == "permissionsRequest") {
     sendResponse({ success: true }); // do this to let the caller we received message
@@ -66,4 +95,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
 });
 
-//console.log("exception.js loaded");
+//console.log("permissions_page.js loaded");
+
+// test
+//updatePage({ message: "Test message", permissions: { origins: ["*://*.bdm.vic.gov.au/*"] } });

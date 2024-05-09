@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../popup/popup.css" />
+    <link rel="stylesheet" href="permissions.css" />
     <title>WikiTree Sourcer error report</title>
     <link rel="icon" type="image/x-icon" href="/images/wikitree_sourcer16.png" />
   </head>
@@ -9,23 +9,19 @@
     <h2>WikiTree Sourcer Permissions Request</h2>
 
     <div id="requestReport">
-      <label>Additional permissions are needed to complete this operation. </label>
-    </div>
-    <br />
-    <br />
-
-    <label id="description"> Permissions required. </label>
-
-    <br />
-    <br />
-    <div class="flex-parent jc-center">
-      <button id="requestButton" class="dialogButton">Request the permissions</button>
+      <p>Additional permissions are needed to complete this operation.</p>
     </div>
 
-    <br />
-    <br />
+    <p id="description">Permissions required.</p>
+
     <div>
-      <label id="requestResponse"> </label>
+      <button id="requestButton" class="btn btn-primary">Request the permissions</button>
+    </div>
+
+    <br />
+
+    <div id="statusBox" class="status green">
+      <p id="statusText">Status box.</p>
     </div>
 
     <script type="module" src="permissions_page.mjs"></script>
