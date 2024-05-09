@@ -27,6 +27,7 @@ import { getRegisteredTab } from "./background_register_tab.mjs";
 import { openInNewTab } from "./background_common.mjs";
 
 import { doSearchGivenSearchData } from "./background_search.mjs";
+import { checkPermissionForSite } from "./background_permissions.mjs";
 
 function openAncestryLink(tab, link, options) {
   // do not redirect sharing links when using library edition since that does not work
@@ -566,6 +567,15 @@ async function openVicbdm(lcText, tab, options) {
     let existingTab = await getRegisteredTab("vicbdm");
 
     let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
+
+    const checkPermissionsOptions = {
+      reason:
+        "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
+    };
+    let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
+    if (!allowed) {
+      return false;
+    }
 
     doSearchGivenSearchData(searchData, tab, options, existingTab, reuseTabIfPossible);
     return true;

@@ -164,8 +164,9 @@ async function doPendingSearch() {
   //console.log(document.URL);
 
   if (pendingSearchData) {
-    await sleep(20);
+    await sleep(100);
     await clearSearchFields();
+    await sleep(20);
 
     //console.log("checkForPendingSearch: URL matches ready to fill form");
 
@@ -217,7 +218,7 @@ async function doPendingSearch() {
             inputElement.checked = true;
             var event = new Event("change", { bubbles: true });
             inputElement.dispatchEvent(event);
-            await sleep(20);
+            await sleep(50);
           }
         }
       }
@@ -233,11 +234,12 @@ async function doPendingSearch() {
           //console.log(inputElement);
 
           if (inputElement) {
-            await sleep(10);
+            await sleep(20);
 
             let inputType = inputElement.getAttribute("type");
             if (inputType == "checkbox") {
               //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.checked);
+              inputElement.focus();
               inputElement.checked = value;
               var event = new Event("change", { bubbles: true });
               inputElement.dispatchEvent(event);
@@ -249,16 +251,7 @@ async function doPendingSearch() {
               inputElement.focus();
               document.execCommand("selectAll", false);
               document.execCommand("insertText", false, value);
-              //document.execCommand("undo", false);
-              //document.execCommand("redo", false);
-              if (searchTypeElement) {
-                // need to move focus on to register change, want this to be at top
-                // of page so banner is visible
-                searchTypeElement.focus();
-              }
-              if (menuBarElement) {
-                menuBarElement.scrollIntoView();
-              }
+              await sleep(20);
             }
           } else {
             inputNotFound = true;
@@ -268,13 +261,16 @@ async function doPendingSearch() {
       }
 
       if (!inputNotFound) {
+        await sleep(10);
+
         // try to submit form
         let searchButtonElement = document.querySelector("historical-search div.btnRow button.btn-primary");
         if (searchButtonElement) {
           //console.log("about to click button");
           // now click the button to do the search
           // We wait for a few milliseconds to ensure other events have been dispatched
-          await sleep(10);
+          searchButtonElement.focus();
+          await sleep(30);
           var event = new Event("click");
           searchButtonElement.dispatchEvent(event);
 

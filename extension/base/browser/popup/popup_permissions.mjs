@@ -163,7 +163,7 @@ async function checkPermissionForSites(siteMatches, options) {
     return false;
   }
 
-  // request permission from Firefox
+  // request permission from browser
   return await requestPermissionsFromUser(permissions, options);
 }
 
