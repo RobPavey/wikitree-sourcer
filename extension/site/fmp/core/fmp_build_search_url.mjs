@@ -162,6 +162,10 @@ function buildSearchUrl(buildUrlInput) {
   let dataSetName = undefined;
   let parameters = undefined;
 
+  let eventYearRange = 2;
+  let birthYearRange = 2;
+  let deathYearRange = 2;
+
   if (buildUrlInput.typeOfSearch == "FamilyTree") {
     // tree search uses a different syntax
     return buildTreeSearchUrl(buildUrlInput);
@@ -179,6 +183,11 @@ function buildSearchUrl(buildUrlInput) {
         if (collection) {
           sameCollection = true;
           dataSetName = encodeDataSetName(collection.sites.fmp.id);
+          eventYearRange = 0;
+          deathYearRange = 0;
+          if (gd.recordType == RT.Birth || gd.recordType == RT.BirthRegistration) {
+            birthYearRange = 0;
+          }
         }
       }
     }
@@ -226,23 +235,23 @@ function buildSearchUrl(buildUrlInput) {
   if (collection && collection.isBirth) {
     // if we are searching a birth collection then the event date
     // is the date of birth and we don't want another date
-    builder.addEventYear(gd.inferBirthYear());
+    builder.addEventYear(gd.inferBirthYear(), eventYearRange);
   } else {
-    builder.addBirthYear(gd.inferBirthYear());
+    builder.addBirthYear(gd.inferBirthYear(), birthYearRange);
   }
 
   if (collection && collection.isDeath) {
     // if we are searching a death collection then the event date
     // is the date of death and we don't want another date
-    builder.addEventYear(gd.inferDeathYear());
+    builder.addEventYear(gd.inferDeathYear(), eventYearRange);
   } else {
-    builder.addDeathYear(gd.inferDeathYear());
+    builder.addDeathYear(gd.inferDeathYear(), deathYearRange);
   }
 
   if (sameCollection) {
     if (!collection.dates || !collection.dates.year) {
       // we don't want to add a date when searching collection that is already for a fixed date
-      builder.addEventYear(gd.inferEventYear());
+      builder.addEventYear(gd.inferEventYear(), eventYearRange);
     }
     builder.addEventQuarter(gd.inferEventQuarter());
   }
@@ -293,26 +302,43 @@ function buildSearchUrl(buildUrlInput) {
       isBaptism = true;
     }
 
+    let addedMotherLastName = false;
+    let fatherLastNamesUsed = "";
     if (gd.parents) {
       if (gd.parents.father && (!parameters || parameters.father)) {
         let fatherForenames = gd.parents.father.name.inferForenames();
         let fatherLastNames = gd.inferPersonLastNames(gd.parents.father);
         if (isBaptism) {
           fatherLastNames = undefined; // giving the father's last name on baptism causes search to fail
+        } else {
+          fatherLastNamesUsed = fatherLastNames;
         }
         builder.addFather(fatherForenames, fatherLastNames);
       }
       if (gd.parents.mother && (!parameters || parameters.mother)) {
         let motherForenames = gd.parents.mother.name.inferForenames();
-        let motherLastNames = undefined; // we don't want multiple names
+        let motherLastNames = gd.inferPersonLastNames(gd.parents.mother);
+        if (isBaptism) {
+          motherLastNames = undefined; // giving the mother's last name on baptism causes search to fail
+        } else if (fatherLastNamesUsed) {
+          motherLastNames = undefined; // we don't want multiple names
+        } else {
+          addedMotherLastName = true;
+        }
         builder.addMother(motherForenames, motherLastNames);
       }
     }
 
     // sometimes we just have the mother's maiden name and no mother
-    if (!gd.parents || !gd.parents.mother) {
-      if (gd.mothersMaidenName && (!parameters || parameters.mother)) {
-        builder.addMother("", gd.mothersMaidenName);
+    if (!gd.parents || !gd.parents.mother || !addedMotherLastName) {
+      if (gd.mothersMaidenName && sameCollection) {
+        // this is causing some issues. For example Littlemore-13 searching for a baptism
+        // There is no mother's maiden name on the baptism so there are no matches
+        // It would be better to have an option in parameters to use MMN
+        // If not parameters the should only include MMN if the collection says it accepts it.
+        if (!isBaptism) {
+          builder.addMother("", gd.mothersMaidenName);
+        }
       }
     }
   }

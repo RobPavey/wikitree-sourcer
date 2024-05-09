@@ -1,0 +1,8 @@
+{
+  "std": {
+    "url": "https://www.findmypast.co.uk/search/results?gender=male&firstname=James&firstname_variants=true&lastname=Smith&lastname_variants=true&yearofdeath=1862&yearofdeath_offset=2&keywordsplace=Victoria%2c%20Australia&keywordsplace_proximity=5&sourcecountry=australasia"
+  },
+  "same_collection": {
+    "url": "https://www.findmypast.co.uk/search/results?datasetname=victoria+deaths+1836-1985&gender=male&firstname=James&firstname_variants=true&lastname=Smith&lastname_variants=true&eventyear=1862&eventyear_offset=0&eventyear=1862&eventyear_offset=0&keywordsplace=Victoria%2c%20Australia&keywordsplace_proximity=5&_variants=true&_variants=true"
+  }
+}

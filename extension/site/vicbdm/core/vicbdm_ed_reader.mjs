@@ -590,7 +590,7 @@ class VicbdmEdReader extends ExtractedDataReader {
     } else if (this.isMarriage) {
       id = "Marriages";
     }
-    let collectionData = { id: id, year: this.yearString, regNum: this.registrationNum };
+    let collectionData = { id: id, year: this.yearString, registrationNumber: this.registrationNum };
 
     return collectionData;
   }

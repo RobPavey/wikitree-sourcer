@@ -1511,10 +1511,16 @@ const RecordCollectionData = [
       ancestry: {
         id: "61648",
         dates: { from: 1837, to: 1921 },
+        searchQueryFields: { registrationNumber: "f-SourceReferenceNumber" },
       },
       fmp: {
         id: "Victoria Births",
         dates: { from: 1836, to: 1913 },
+        // The father's last name is usually implied and will fail to match on FMP
+        searchQueryFields: {
+          district: "",
+          fatherLastName: "",
+        },
       },
       vicbdm: {
         id: "Births",
@@ -1526,15 +1532,24 @@ const RecordCollectionData = [
     wtsId: "VictoriaDeaths",
     title: "Victoria Death Index",
     country: "Australia",
-    isBirth: true,
+    isDeath: true,
     sites: {
       ancestry: {
         id: "61650",
         dates: { from: 1840, to: 1991 },
+        searchQueryFields: { registrationNumber: "f-SourceReferenceNumber" },
       },
       fmp: {
         id: "Victoria Deaths 1836-1985",
         dates: { from: 1836, to: 1913 },
+        // these fields are not supported in search of this collection
+        searchQueryFields: {
+          district: "",
+          fatherFirstName: "",
+          fatherLastName: "",
+          motherFirstName: "",
+          motherLastName: "useKeyword",
+        },
       },
       vicbdm: {
         id: "Deaths",
@@ -1546,15 +1561,23 @@ const RecordCollectionData = [
     wtsId: "VictoriaMarriages",
     title: "Victoria Death Index",
     country: "Australia",
-    isBirth: true,
+    isMarriage: true,
     sites: {
       ancestry: {
         id: "61649",
         dates: { from: 1837, to: 1961 },
+        searchQueryFields: { registrationNumber: "f-SourceReferenceNumber" },
       },
       fmp: {
         id: "Victoria Marriages 1836-1942",
         dates: { from: 1836, to: 1942 },
+        searchQueryFields: {
+          district: "",
+          fatherFirstName: "",
+          fatherLastName: "",
+          motherFirstName: "",
+          motherLastName: "useKeyword",
+        },
       },
       vicbdm: {
         id: "Marriages",

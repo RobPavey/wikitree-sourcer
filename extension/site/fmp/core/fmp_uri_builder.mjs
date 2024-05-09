@@ -74,6 +74,7 @@ class FmpUriBuilder {
     this.searchTermAdded = false;
     this.titleMap = new Map();
     this.options = options;
+    this.keywords = "";
   }
 
   getSearchQueryNameFromCollection(field, defaultName) {
@@ -118,6 +119,15 @@ class FmpUriBuilder {
     this.addSearchParameter("gender", gender);
   }
 
+  addToKeywords(value) {
+    if (value) {
+      if (this.keywords) {
+        this.keywords += " ";
+      }
+      this.keywords += value;
+    }
+  }
+
   addName(title, name, nameVariants = true) {
     if (name != undefined && name != "") {
       name = name.trim().replace(/\s+/g, "+");
@@ -130,9 +140,23 @@ class FmpUriBuilder {
     }
   }
 
+  addOptionalNameOrKeywords(stdFieldName, defaultQueryName, value, nameVariants = true) {
+    let queryName = this.getSearchQueryNameFromCollection(stdFieldName, defaultQueryName);
+
+    if (queryName == "useKeyword") {
+      this.addToKeywords(value);
+    } else {
+      this.addName(queryName, value, nameVariants);
+    }
+  }
+
   addYear(title, year, range = 2) {
     if (year != undefined && year != "") {
       this.addSearchParameter(title, year);
+
+      if (typeof range === "number") {
+        range = range.toString();
+      }
       this.addSearchParameter(title + "_offset", range);
     }
   }
@@ -161,16 +185,16 @@ class FmpUriBuilder {
     this.addSearchParameter(queryName, place);
   }
 
-  addBirthYear(year) {
-    this.addYear("yearofbirth", year);
+  addBirthYear(year, range = 2) {
+    this.addYear("yearofbirth", year, range);
   }
 
-  addDeathYear(year) {
-    this.addYear("yearofdeath", year);
+  addDeathYear(year, range = 2) {
+    this.addYear("yearofdeath", year, range);
   }
 
-  addEventYear(year) {
-    this.addYear("eventyear", year);
+  addEventYear(year, range = 2) {
+    this.addYear("eventyear", year, range);
   }
 
   addEventQuarter(quarter) {
@@ -180,13 +204,13 @@ class FmpUriBuilder {
   }
 
   addFather(forenames, lastName) {
-    this.addName("fatherfirstname", forenames);
-    this.addName("fatherlastname", lastName);
+    this.addOptionalNameOrKeywords("fatherFirstName", "fatherfirstname", forenames);
+    this.addOptionalNameOrKeywords("fatherLastName", "fatherlastname", lastName);
   }
 
   addMother(forenames, lastName) {
-    this.addName("motherfirstname", forenames);
-    this.addName("mothersmaidenname", lastName);
+    this.addOptionalNameOrKeywords("motherFirstName", "motherfirstname", forenames);
+    this.addOptionalNameOrKeywords("motherLastName", "mothersmaidenname", lastName);
   }
 
   addSpouse(forenames, lastName) {
@@ -229,7 +253,8 @@ class FmpUriBuilder {
   }
 
   addDistrict(district) {
-    this.addSearchParameter("district", district);
+    let queryName = this.getSearchQueryNameFromCollection("district", "district");
+    this.addSearchParameter(queryName, district);
   }
 
   addRegistrationDistrict(district) {
@@ -259,6 +284,10 @@ class FmpUriBuilder {
   }
 
   getUri() {
+    // add any keywords that have been accumulated
+    if (this.keywords) {
+      this.addSearchParameter("keywords", this.keywords);
+    }
     return this.uri;
   }
 }

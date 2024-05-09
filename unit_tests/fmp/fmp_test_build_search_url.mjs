@@ -143,6 +143,28 @@ const regressionData = [
       },
     ],
   },
+  {
+    // no mothers maiden name
+    caseName: "vicbdm_death_1862_james_smith",
+    inputPath: "vicbdm/generalized_data/ref/death_1862_james_smith",
+    optionVariants: [
+      {
+        variantName: "same_collection",
+        typeOfSearch: "SameCollection",
+      },
+    ],
+  },
+  {
+    // has mothers maiden name
+    caseName: "vicbdm_death_1939_fanny_nicholson",
+    inputPath: "vicbdm/generalized_data/ref/death_1939_fanny_nicholson",
+    optionVariants: [
+      {
+        variantName: "same_collection",
+        typeOfSearch: "SameCollection",
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {

@@ -23,8 +23,6 @@ SOFTWARE.
 */
 
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
-import { StringUtils } from "../../../base/core/string_utils.mjs";
-import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 
 function getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection) {
@@ -179,8 +177,6 @@ function buildSearchData(input) {
 
   let fieldData = {};
   let selectData = {};
-
-  let givenNamesArray = [];
 
   if (gd.name) {
     let givenNames = gd.name.inferForenamesPlusPreferredAndNicknames(

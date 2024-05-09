@@ -3,6 +3,6 @@
     "url": "https://www.findmypast.co.uk/search/results?gender=male&firstname=Harry+Alfred+George&firstname_variants=true&lastname=Pavey&lastname_variants=true&yearofbirth=1871&yearofbirth_offset=2&keywordsplace=Saint%20Pancras&keywordsplace_proximity=5&sourcecountry=great%20britain"
   },
   "same_collection": {
-    "url": "https://www.findmypast.co.uk/search/results?datasetname=england+%26+wales+births+1837-2006&gender=male&firstname=Harry+Alfred+George&firstname_variants=true&lastname=Pavey&lastname_variants=true&eventyear=1871&eventyear_offset=2&eventyear=1871&eventyear_offset=2&eventquarter=2&mothersmaidenname=Littlemore&mothersmaidenname_variants=true&district=Saint%20Pancras"
+    "url": "https://www.findmypast.co.uk/search/results?datasetname=england+%26+wales+births+1837-2006&gender=male&firstname=Harry+Alfred+George&firstname_variants=true&lastname=Pavey&lastname_variants=true&eventyear=1871&eventyear_offset=0&eventyear=1871&eventyear_offset=0&eventquarter=2&mothersmaidenname=Littlemore&mothersmaidenname_variants=true&district=Saint%20Pancras"
   }
 }
