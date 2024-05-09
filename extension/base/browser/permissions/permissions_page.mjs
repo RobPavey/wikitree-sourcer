@@ -69,6 +69,7 @@ async function updatePage(request) {
           let message = "Permission request succeeded. Return to what you were doing and it should now work.";
           message += "\nThis tab can be closed.";
           displayStatusBox(message, "green");
+          requestButtonElement.style.display = "none";
         }
       } catch (error) {
         console.log("Exception caught during chrome.permissions.request.");
