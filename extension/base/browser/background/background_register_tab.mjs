@@ -123,7 +123,7 @@ async function handleUnregisterTabMessage(request, sender, sendResponse) {
   //console.log(siteRegistry);
 
   let response = { success: true, tab: tab };
-  //console.log("WikiTree Sourcer, background script, sending response to registerTab message:");
+  //console.log("WikiTree Sourcer, background script, sending response to unregisterTab message:");
   //console.log(response);
   sendResponse(response);
 }
@@ -168,5 +168,41 @@ async function getRegisteredTab(siteName) {
     return tab;
   }
 }
+
+async function anyTabRemoved(tabId) {
+  // This is a fallback in case the tab doesn't manage to unregister itself.
+  // This can happen if the background is asleep when the tab is closed.
+
+  //console.log("anyTabRemoved");
+
+  //console.log("tabId is:");
+  //console.log(tabId);
+
+  let siteRegistry = await getSiteRegistry();
+
+  //console.log("siteRegistry is:");
+  //console.log(siteRegistry);
+
+  let foundTabInRegistry = false;
+
+  for (let siteName of Object.keys(siteRegistry)) {
+    let tabList = siteRegistry[siteName];
+    if (tabList && tabList.length > 0) {
+      let index = tabList.indexOf(tabId);
+      if (index != -1) {
+        tabList.splice(index, 1);
+        foundTabInRegistry = true;
+        siteRegistry[siteName] = tabList;
+      }
+    }
+  }
+
+  if (foundTabInRegistry) {
+    //console.log("anyTabRemoved, found tabId in site registry");
+    setSiteRegistry(siteRegistry);
+  }
+}
+
+chrome.tabs.onRemoved.addListener(anyTabRemoved);
 
 export { handleRegisterTabMessage, handleUnregisterTabMessage, handleGetRegisteredTabMessage, getRegisteredTab };
