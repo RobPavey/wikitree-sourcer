@@ -82,17 +82,29 @@ function buildSelectValuesForPlaces(placeNames) {
     // add wildcard
     let wildcard = "/";
     let addedValue = false;
+    let numAdded = 0;
+    let stringTooLong = false;
     for (let i = 1; i < values.length; i++) {
       let value = values[i];
       let text = value.value;
-      if (addedValue) {
-        wildcard += "|";
+      if (wildcard.length + 2 <= 100) {
+        if (addedValue) {
+          wildcard += "|";
+        }
+        wildcard += text;
+        addedValue = true;
+        numAdded++;
+      } else {
+        stringTooLong = true;
       }
-      wildcard += text;
-      addedValue = true;
     }
     wildcard += "/";
-    let wildcardValue = { value: wildcard, text: "All of the above" };
+    let label = "All of the above";
+    if (stringTooLong) {
+      label = "First " + numAdded + " of the above";
+    }
+
+    let wildcardValue = { value: wildcard, text: label };
     values.push(wildcardValue);
   }
 
