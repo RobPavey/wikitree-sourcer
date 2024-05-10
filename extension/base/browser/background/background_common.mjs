@@ -85,9 +85,7 @@ function messageHandler(request, sender, sendResponse) {
   //}
 }
 
-function openInNewTab(link, currentTab, options) {
-  const tabOption = options.context_general_newTabPos;
-
+function openInNewTab(link, currentTab, tabOption) {
   if (tabOption == "newWindow") {
     chrome.windows.create({ url: link });
   } else if (tabOption == "nextToRight" && currentTab) {

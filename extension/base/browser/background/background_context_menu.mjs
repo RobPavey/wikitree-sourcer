@@ -33,8 +33,9 @@ function openAncestryLink(tab, link, options) {
   // do not redirect sharing links when using library edition since that does not work
   if (link.includes("/sharing/") || link.includes("%2Fsharing%2F")) {
     let desiredDomain = options.search_ancestry_domain;
+    const tabOption = options.context_general_newTabPos;
     if (desiredDomain.includes("library")) {
-      openInNewTab(link, tab, options);
+      openInNewTab(link, tab, tabOption);
       return;
     }
   }
@@ -164,7 +165,8 @@ function openAncestryLink(tab, link, options) {
     }
   }
 
-  openInNewTab(link, tab, options);
+  const tabOption = options.context_general_newTabPos;
+  openInNewTab(link, tab, tabOption);
 }
 
 function openFmpLink(tab, link, options) {
@@ -201,7 +203,8 @@ function openFmpLink(tab, link, options) {
     }
   }
 
-  openInNewTab(link, tab, options);
+  const tabOption = options.context_general_newTabPos;
+  openInNewTab(link, tab, tabOption);
 }
 
 function openLink(info, tab) {
@@ -232,7 +235,8 @@ function openLink(info, tab) {
     } else {
       // open unchanged link
       callFunctionWithStoredOptions(function (options) {
-        openInNewTab(link, tab, options);
+        const tabOption = options.context_general_newTabPos;
+        openInNewTab(link, tab, tabOption);
       });
     }
   }
@@ -305,7 +309,8 @@ function openAncestryTemplate(tab, text, options) {
 
   if (link) {
     callFunctionWithStoredOptions(function (options) {
-      openInNewTab(link, tab, options);
+      const tabOption = options.context_general_newTabPos;
+      openInNewTab(link, tab, tabOption);
     });
   }
 }
@@ -342,7 +347,8 @@ function openFamilySearchTemplate(tab, text) {
 
   if (link) {
     callFunctionWithStoredOptions(function (options) {
-      openInNewTab(link, tab, options);
+      const tabOption = options.context_general_newTabPos;
+      openInNewTab(link, tab, tabOption);
     });
   }
 }
@@ -363,7 +369,8 @@ function openFindAGraveTemplate(tab, text) {
 
   if (link) {
     callFunctionWithStoredOptions(function (options) {
-      openInNewTab(link, tab, options);
+      const tabOption = options.context_general_newTabPos;
+      openInNewTab(link, tab, tabOption);
     });
   }
 }
@@ -394,7 +401,8 @@ function openTemplate(info, tab) {
   } else {
     // open unchanged link
     callFunctionWithStoredOptions(function (options) {
-      openInNewTab(text, tab, options);
+      const tabOption = options.context_general_newTabPos;
+      openInNewTab(text, tab, tabOption);
     });
   }
 }
@@ -607,7 +615,8 @@ function openSelectionText(info, tab) {
     let link = "https://www.wikitree.com/wiki/" + wikiId;
 
     callFunctionWithStoredOptions(function (options) {
-      openInNewTab(link, tab, options);
+      const tabOption = options.context_general_newTabPos;
+      openInNewTab(link, tab, tabOption);
     });
     return;
   }

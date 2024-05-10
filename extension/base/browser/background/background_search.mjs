@@ -40,7 +40,8 @@ async function doSearchInNewTab(searchData, currentTab, options) {
     console.log("store of searchData failed");
   }
 
-  openInNewTab(searchUrl, currentTab, options);
+  const tabOption = options.search_general_newTabPos;
+  openInNewTab(searchUrl, currentTab, tabOption);
 }
 
 async function doSearchInExistingTab(tabId, searchData) {
