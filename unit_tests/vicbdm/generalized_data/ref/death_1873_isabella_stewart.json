@@ -1,0 +1,44 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "forenames": "Isabella",
+    "lastName": "Stewart"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1873"
+  },
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "lastNameAtDeath": "Stewart",
+  "mothersMaidenName": "McLean",
+  "deathDate": {
+    "yearString": "1873"
+  },
+  "deathPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Charles",
+        "lastName": "Morison"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Margaret",
+        "lastName": "McLean"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Deaths",
+    "year": "1873",
+    "registrationNumber": "4171"
+  },
+  "hasValidData": true
+}

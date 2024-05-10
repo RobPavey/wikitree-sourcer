@@ -111,6 +111,30 @@ const regressionData = [
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/66355a8368d03925b31054d1/record/5c6537244aba80ac31c96f5a?q=efamily&givenName=James&familyName=SMITH",
   },
   {
+    // has last names of both parents
+    caseName: "death_1873_isabella_stewart",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/663d2066c4208225838536a8/record/5c6547bb4aba80ac31cb23d8?q=efamily&givenName=Isabella&familyName=STEWART",
+  },
+  {
+    // has last name of mother only
+    caseName: "death_1875_alexander_stewart",
+    url: "https://my.rio.bdm.vic.gov.au/efamily-history/663d2066c4208225838536a8/record/5c653cbb4aba80ac311d32a6?q=efamily&givenName=Alexander&familyName=STEWART",
+    optionVariants: [
+      {
+        variantName: "sentenceStructure_twoSentences",
+        optionOverrides: {
+          narrative_deathRegReg_sentenceStructure: "twoSentences",
+        },
+      },
+      {
+        variantName: "sentenceStructure_twoSentencesDate",
+        optionOverrides: {
+          narrative_deathRegReg_sentenceStructure: "twoSentencesDate",
+        },
+      },
+    ],
+  },
+  {
     caseName: "death_1939_fanny_nicholson",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/6627e4adc42082258383a0fa/record/5c6547444aba80ac31a8d8ff?q=efamily&givenName=Fanny&familyName=NICHOLSON",
   },

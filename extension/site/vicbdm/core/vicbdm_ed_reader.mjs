@@ -565,14 +565,16 @@ class VicbdmEdReader extends ExtractedDataReader {
         }
       }
 
-      if (this.isBirth && parents.father && parents.father.name && !parents.father.name.lastName) {
+      if (parents.father && parents.father.name && !parents.father.name.lastName) {
         // there is no last name for father but there is a given name
         // If there is a last name for mother this causes weird narratives
         // so if so then use the primary (child) persons last name as father's last name
         if (parents.mother && parents.mother.name && parents.mother.name.lastName) {
-          let primaryNameObj = this.getNameObj();
-          if (primaryNameObj && primaryNameObj.lastName) {
-            parents.father.name.lastName = primaryNameObj.lastName;
+          if (this.isBirth || this.getGender() == "male") {
+            let primaryNameObj = this.getNameObj();
+            if (primaryNameObj && primaryNameObj.lastName) {
+              parents.father.name.lastName = primaryNameObj.lastName;
+            }
           }
         }
       }

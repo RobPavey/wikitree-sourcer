@@ -1,0 +1,44 @@
+{
+  "sourceOfData": "vicbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "forenames": "Alexander",
+    "lastName": "Stewart"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1875"
+  },
+  "eventPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "lastNameAtDeath": "Stewart",
+  "mothersMaidenName": "Wilkinson",
+  "deathDate": {
+    "yearString": "1875"
+  },
+  "deathPlace": {
+    "placeString": "Victoria, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "John",
+        "lastName": "Stewart"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Margaret",
+        "lastName": "Wilkinson"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Deaths",
+    "year": "1875",
+    "registrationNumber": "15520"
+  },
+  "hasValidData": true
+}
