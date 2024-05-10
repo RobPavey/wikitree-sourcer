@@ -979,9 +979,27 @@ class NarrativeBuilder {
           this.addAgeForMainSentence(ageAtEvent);
         }
 
+        if (spouseName && typeString == "death") {
+          let spouseTerm = "spouse";
+          if (gd.personGender == "male") {
+            spouseTerm = "husband";
+          } else if (gd.personGender == "female") {
+            spouseTerm = "wife";
+          }
+          this.narrative += " (" + spouseTerm + " of " + spouseName + ")";
+          this.addAgeForMainSentence(spouseAge);
+        }
+
         this.narrative += " " + pastTense;
-        if (spouseName) {
-          this.narrative += " " + spouseName;
+
+        if (spouseName && typeString == "marriage") {
+          let spouseTerm = "spouse";
+          if (gd.personGender == "male") {
+            spouseTerm = "husband";
+          } else if (gd.personGender == "female") {
+            spouseTerm = "wife";
+          }
+          this.narrative += " (" + spouseTerm + " of " + spouseName + ")";
           this.addAgeForMainSentence(spouseAge);
         }
         let year = this.eventGd.inferEventYear();
@@ -999,7 +1017,7 @@ class NarrativeBuilder {
           }
         }
         this.narrative += ". ";
-        let pronoun = "Their";
+        let pronoun = this.getPossessivePronounInitialCaps();
         if (!spouseName) {
           if (this.eventGd.role && this.eventGd.primaryPerson) {
             pronoun = this.getPossessivePronounForGenderInitialCaps(this.eventGd.primaryPerson.gender);
