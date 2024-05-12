@@ -1328,19 +1328,20 @@ const addMergeAddPersonOptionsGroup = {
     {
       optionName: "includeCitation",
       type: "checkbox",
-      label: "Fill citation in appropriate field if filling from a citation",
+      label: 'Insert the citation text in the biography when doing "Set Fields from Citation Data"',
       defaultValue: false,
     },
     {
       optionName: "includeAllCitations",
       type: "checkbox",
-      label: "Include all source citations after doing Save Person Data on a person profile (if site supports it)",
+      label:
+        'Automatically do "Build All Citations" during "Save Person Data" (if site supports it) and include the citations in the biography when doing "Set Fields from Person Data"',
       defaultValue: false,
     },
     {
       optionName: "includeProfileLink",
       type: "checkbox",
-      label: "Add a link/template to the source profile in sources if filling from a profile",
+      label: 'Add a link/template referencing the source profile when doing "Set Fields from Person Data"',
       defaultValue: false,
     },
     {
@@ -1406,19 +1407,20 @@ const addMergeMergeEditOptionsGroup = {
     {
       optionName: "includeCitation",
       type: "checkbox",
-      label: "Put citation text in biography if merging from a citation.",
+      label: 'Insert the citation text in the biography when doing "Merge Edit from Citation Data"',
       defaultValue: false,
     },
     {
       optionName: "includeAllCitations",
       type: "checkbox",
-      label: "Include all source citations after doing Save Person Data on a person profile (if site supports it)",
+      label:
+        'Automatically do "Build All Citations" during "Save Person Data" (if site supports it) and include the citations in the biography when doing "Merge Edit from Person Data"',
       defaultValue: false,
     },
     {
       optionName: "includeProfileLink",
       type: "checkbox",
-      label: "Add a link/template to the biography if merging from a profile",
+      label: 'Add a link/template referencing the source profile when doing "Merge Edit from Person Data"',
       defaultValue: false,
     },
     {
