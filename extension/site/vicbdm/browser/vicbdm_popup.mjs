@@ -48,6 +48,8 @@ async function suggestPlaceNames(menu, data, placeName) {
     realNames = placeNamesModule.mapVicbdmPlaceNameToRealPlaceNames(placeName);
   }
 
+  realNames.sort();
+
   let displayString = "";
   for (let name of realNames) {
     displayString += name + "\n";
