@@ -152,18 +152,186 @@ async function clearSearchFields() {
   if (clearButtonElement) {
     //console.log("about to click clear button");
     // now click the button to do clear the search
+    clearButtonElement.focus();
     var event = new Event("click");
     clearButtonElement.dispatchEvent(event);
+    //console.log("clicked clear button");
     await sleep(50);
+    //console.log("done sleep after clear button");
   }
 }
 
+async function resendSearchMessage() {
+  console.log("resendSearchMessage");
+  // resend message to background to do search
+  try {
+    pendingSearchData.isRetry = true;
+    chrome.runtime.sendMessage(
+      {
+        type: "doSearchWithSearchData",
+        siteName: "vicbdm",
+        searchData: pendingSearchData,
+        reuseTabIfPossible: true,
+      },
+      function (response) {
+        // We get a detailed response for debugging this
+        console.log("resendSearchMessage: doSearchWithSearchData got response: ");
+        console.log(response);
+
+        // the message should only ever get a successful response but it could be delayed
+        // if the background is asleep.
+        if (chrome.runtime.lastError) {
+          const message = "resendSearchMessage: Failed to open search page, runtime.lastError is set";
+          console.log(message);
+        } else if (!response || !response.success) {
+          const message = "resendSearchMessage: Failed to open search page, no response or success=false";
+          console.log(message);
+        } else {
+          // message was received OK
+          console.log("resendSearchMessage: message was sent and recived OK");
+        }
+      }
+    );
+  } catch (error) {
+    const message = "resendSearchMessage: Failed to open search page, caught exception";
+    console.log(message);
+  }
+}
+
+var alertsObserver = undefined;
+
 async function doPendingSearch() {
+  //console.log("##############################################################################");
   //console.log("doPendingSearch: called");
   //console.log("doPendingSearch: URL is");
   //console.log(document.URL);
 
   if (pendingSearchData) {
+    let isRetry = pendingSearchData.isRetry;
+    let fieldData = pendingSearchData.fieldData;
+
+    //console.log("doPendingSearch: fieldData is:");
+    //console.log(fieldData);
+
+    let docHasFocus = document.hasFocus();
+    if (!docHasFocus) {
+      console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+      console.log("The document is not focused!");
+      console.log("This can happen if the Javascript console is open and focused.");
+      console.log("Because this web page uses Angular, filling out the form will not work");
+      console.log("Bif the console is focused.");
+      console.log("Please close the Javascript console");
+      console.log("or click on the document and try again.");
+      console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+      window.focus();
+      if (document.activeElement) {
+        document.activeElement.blur();
+      }
+
+      docHasFocus = document.hasFocus();
+      console.log("after window.focus() and activeElement.blur(): docHasFocus is");
+      console.log(docHasFocus);
+      activeElement = document.activeElement;
+      console.log("after window.focus() and activeElement.blur(): activeElement is");
+      console.log(activeElement);
+
+      if (!docHasFocus) {
+        // this is not going to work, try resending the message but this is also unlikely to work
+        if (!isRetry) {
+          resendSearchMessage();
+          return;
+        }
+      }
+    }
+
+    // Remove focus from any focused element, this probably isn't necesary except possibly
+    // when the document doesn't have focus (which is handled above)
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
+
+    if (!docHasFocus) {
+      console.log("doc is still not focused but continuing...");
+    }
+
+    // It is possible that not all of the required elements have been created yet
+    // Do a check here if not, wait and retry
+    async function areAllRequiredElementsPresent() {
+      let searchButtonElement = document.querySelector("historical-search div.btnRow button.btn-primary");
+      if (!searchButtonElement) {
+        console.log("areAllRequiredElementsPresent: searchButtonElement not found");
+        return false;
+      }
+
+      let clearButtonElement = document.querySelector("historical-search div.btnRow button.btn-secondary");
+      if (!clearButtonElement) {
+        console.log("areAllRequiredElementsPresent: clearButtonElement not found");
+        return false;
+      }
+
+      let searchTypeElement = document.querySelector("#historicalSearch-type0");
+      if (!searchTypeElement) {
+        console.log("areAllRequiredElementsPresent: searchTypeElement not found");
+        return false;
+      }
+
+      let formElement = document.querySelector("div.historical-search-criteria form");
+      if (!formElement) {
+        console.log("areAllRequiredElementsPresent: formElement not found");
+        return false;
+      }
+
+      const additionalOptionsId = "historicalSearch-additionalOptions";
+      const additionalOptionsElement = formElement.querySelector("#" + additionalOptionsId);
+      if (!additionalOptionsElement) {
+        console.log("areAllRequiredElementsPresent: additionalOptionsElement not found");
+        return false;
+      }
+
+      if (additionalOptionsElement && fieldData[additionalOptionsId]) {
+        //console.log("doPendingSearch: additionalOptionsElement is:");
+        //console.log(additionalOptionsElement);
+        await sleep(10);
+        let inputType = additionalOptionsElement.getAttribute("type");
+        if (inputType == "checkbox") {
+          additionalOptionsElement.focus();
+          additionalOptionsElement.checked = true;
+          var event = new Event("change", { bubbles: true });
+          additionalOptionsElement.dispatchEvent(event);
+          await sleep(50);
+        }
+      }
+
+      for (var key in fieldData) {
+        if (key) {
+          let inputElement = formElement.querySelector("#" + key);
+          if (!inputElement) {
+            console.log("areAllRequiredElementsPresent: formElement #" + key + " not found");
+            return false;
+          }
+        }
+      }
+
+      //console.log("areAllRequiredElementsPresent: returning true");
+      return true;
+    }
+
+    const maxTestElementRetries = 3;
+    let testElementRetries = 0;
+    let requiredElementsArePresent = await areAllRequiredElementsPresent();
+    while (testElementRetries < maxTestElementRetries && !requiredElementsArePresent) {
+      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+      console.log("requiredElementsArePresent is false, retrying, testElementRetries = " + testElementRetries);
+      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+      await sleep(100);
+      requiredElementsArePresent = await areAllRequiredElementsPresent();
+      testElementRetries++;
+    }
+    if (!requiredElementsArePresent) {
+      console.log("even after retries the required elements are not present.");
+    }
+
     await sleep(100);
     await clearSearchFields();
     await sleep(20);
@@ -173,16 +341,74 @@ async function doPendingSearch() {
     //console.log("checkForPendingSearch: got formValues:");
     //console.log(pendingSearchData);
 
-    let fieldData = pendingSearchData.fieldData;
-
-    //console.log("doPendingSearch: fieldData is:");
-    //console.log(fieldData);
-
     // Inputs have IDs like:
     // #historicalSearch-name-familyName
 
     let submitted = false;
     let inputNotFound = false;
+
+    let alertsElement = document.querySelector("historical-search alerts");
+    //console.log("alertsElement is:");
+    //console.log(alertsElement);
+    if (alertsElement) {
+      // this is because it will get cleared after submit
+      let lastPendingSearchData = pendingSearchData;
+      let hasTriggeredRetry = false;
+      const callback = (mutationList, observer) => {
+        //console.log("Mutation observer callback, mutationList is:");
+        //console.log(mutationList);
+        //console.log(observer);
+
+        for (const mutation of mutationList) {
+          if (mutation.type === "childList") {
+            //console.log("A child node has been added or removed to the alerts. mutation is:");
+            //console.log(mutation);
+            if (mutation.addedNodes && mutation.addedNodes.length > 0) {
+              for (let addedNode of mutation.addedNodes) {
+                let tagName = addedNode.tagName.toLowerCase();
+                if (tagName == "alert") {
+                  //console.log("alert added");
+                  let firstTextSpan = addedNode.querySelector("div.alert > span");
+                  if (firstTextSpan) {
+                    let text = firstTextSpan.textContent;
+                    //console.log("alert text is:");
+                    //console.log(text);
+
+                    if (text.startsWith("Please provide")) {
+                      console.log("An alert was added with 'Please provide' at the start");
+                      console.log("pendingSearchData is:");
+                      console.log(pendingSearchData);
+                      console.log("lastPendingSearchData is:");
+                      console.log(lastPendingSearchData);
+
+                      if (lastPendingSearchData && !pendingSearchData) {
+                        pendingSearchData = lastPendingSearchData;
+                      }
+                      if (pendingSearchData && !isRetry && !hasTriggeredRetry) {
+                        console.log("doing retry, about to call doPendingSearch");
+                        if (alertsObserver) {
+                          alertsObserver.disconnect();
+                          alertsObserver = undefined;
+                          console.log("disconnected alertsObserver");
+                        }
+                        hasTriggeredRetry = true;
+                        resendSearchMessage();
+                        return;
+                      }
+                    }
+                  }
+                  break;
+                }
+              }
+            }
+          }
+        }
+      };
+
+      alertsObserver = new MutationObserver(callback);
+      const config = { attributes: false, childList: true, subtree: false };
+      alertsObserver.observe(alertsElement, config);
+    }
 
     let formElement = document.querySelector("div.historical-search-criteria form");
     //console.log("doPendingSearch: formElement is:");
@@ -190,11 +416,14 @@ async function doPendingSearch() {
     if (formElement) {
       let searchTypeElement = document.querySelector("#historicalSearch-type0");
       let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
+      let searchButtonElement = document.querySelector("historical-search div.btnRow button.btn-primary");
 
       //console.log("doPendingSearch: searchTypeElement is:");
       //console.log(searchTypeElement);
       //console.log("doPendingSearch: menuBarElement is:");
       //console.log(menuBarElement);
+      //console.log("doPendingSearch: searchButtonElement is:");
+      //console.log(searchButtonElement);
 
       if (searchTypeElement) {
         // extra attempt to make sure changes get registered in angular model
@@ -209,11 +438,12 @@ async function doPendingSearch() {
       if (fieldData[additionalOptionsId]) {
         let inputElement = formElement.querySelector("#" + additionalOptionsId);
         if (inputElement) {
-          //console.log("doPendingSearch: inputElement is:");
+          //console.log("doPendingSearch: additionalOptionsId inputElement is:");
           //console.log(inputElement);
           await sleep(10);
           let inputType = inputElement.getAttribute("type");
           if (inputType == "checkbox") {
+            inputElement.focus();
             //console.log("checkForPendingSearch: inputElement found, existing value is: " + inputElement.checked);
             inputElement.checked = true;
             var event = new Event("change", { bubbles: true });
@@ -260,13 +490,24 @@ async function doPendingSearch() {
         }
       }
 
+      //console.log("inputNotFound is:");
+      //console.log(inputNotFound);
+
       if (!inputNotFound) {
-        await sleep(10);
+        // TEMP: wait to see if fields filled
+        //await sleep(30000);
+        await sleep(20);
 
         // try to submit form
-        let searchButtonElement = document.querySelector("historical-search div.btnRow button.btn-primary");
         if (searchButtonElement) {
           //console.log("about to click button");
+          docHasFocus = document.hasFocus();
+          //console.log("doPendingSearch: docHasFocus is");
+          //console.log(docHasFocus);
+          let activeElement = document.activeElement;
+          //console.log("doPendingSearch: activeElement is");
+          //console.log(activeElement);
+
           // now click the button to do the search
           // We wait for a few milliseconds to ensure other events have been dispatched
           searchButtonElement.focus();
@@ -281,6 +522,8 @@ async function doPendingSearch() {
 
     if (!submitted) {
       console.log("not submitted");
+    } else {
+      //console.log("submitted");
     }
 
     // clear the pending data so that we don't use it again on refine search
