@@ -221,6 +221,11 @@ const regressionData = [
     ],
   },
   {
+    // Hungarian. Has last name first in profile
+    caseName: "gzlh_57h_trnik_janos",
+    url: "https://www.familysearch.org/tree/person/details/GZLH-57H",
+  },
+  {
     // found a bug in mergeDates, has marriage sources with no date
     caseName: "k2b7_nsv_vinnie_shubert",
     url: "https://www.familysearch.org/tree/person/details/K2B7-NSV",

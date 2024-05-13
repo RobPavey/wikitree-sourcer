@@ -484,17 +484,24 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
 
   let citationText = "";
 
-  if (isFsSource || cleanTitleText.includes(" in the ")) {
-    citationText += cleanCitationText;
-    includedCitation = true;
-  } else {
-    citationText += cleanTitleText;
-    includedTitle = true;
-
-    if (!citationText.includes(cleanCitationText)) {
-      addSeparationWithinBody(" ");
+  if (cleanCitationText) {
+    if (isFsSource || cleanTitleText.includes(" in the ")) {
       citationText += cleanCitationText;
       includedCitation = true;
+    } else {
+      citationText += cleanTitleText;
+      includedTitle = true;
+
+      if (!citationText.includes(cleanCitationText)) {
+        addSeparationWithinBody(" ");
+        citationText += cleanCitationText;
+        includedCitation = true;
+      }
+    }
+  } else {
+    if (cleanTitleText) {
+      citationText += cleanTitleText;
+      includedTitle = true;
     }
   }
 
@@ -524,12 +531,12 @@ function getTextForPlainCitation(source, type, isSourcerStyle, options) {
     }
   }
 
-  if (!isFsSource && !includedTitle && !citationText.includes(cleanTitleText)) {
+  if (!isFsSource && !includedTitle && cleanTitleText && !citationText.includes(cleanTitleText)) {
     addSeparationWithinBody(", ");
     citationText += cleanTitleText;
   }
 
-  if (!includedCitation && !citationText.includes(cleanCitationText)) {
+  if (!includedCitation && cleanCitationText && !citationText.includes(cleanCitationText)) {
     addSeparationWithinBody(", ");
     citationText += cleanCitationText;
   }

@@ -1,0 +1,139 @@
+{
+  "fsSources": [
+    {
+      "id": "3HLS-KR5",
+      "title": "Szarvas evang. kereszteltek: Joannes Trnik, 1798",
+      "titleUserContributed": true,
+      "tombstoned": false,
+      "titleUpdatedBy": "cis.user.MMMQ-TFWC",
+      "titleSubmittedBy": "cis.user.MMMQ-TFWC",
+      "titleUpdatedOn": 1624406528314,
+      "citationUpdatedBy": "cis.user.MMMQ-TFWC",
+      "citationSubmittedBy": "cis.user.MMMQ-TFWC",
+      "citationUpdatedOn": 1624406528314,
+      "uri": {
+        "uri": "https://familysearch.org/ark:/61903/3:1:3Q9M-CSVH-P938-6"
+      },
+      "uriUpdatedBy": "cis.user.MMMQ-TFWC",
+      "uriSubmittedBy": "cis.user.MMMQ-TFWC",
+      "uriUpdatedOn": 1624406528314,
+      "notes": "Film # 008117780 126/428\n1798 junius 15\nJoannes\nJoannes Trnik\nHelena Kiedky\nGeorgius Duris\nMaria Medved",
+      "notesUpdatedBy": "cis.user.MMMQ-TFWC",
+      "notesSubmittedBy": "cis.user.MMMQ-TFWC",
+      "notesUpdatedOn": 1624406528314,
+      "updatedOn": 1624406574522,
+      "updatedBy": "cis.user.MMMQ-TFWC",
+      "submittedBy": "cis.user.MMMQ-TFWC",
+      "createdOn": 1624406528314,
+      "createdBy": "cis.user.MMMQ-TFWC",
+      "sourceType": "FSREADONLY",
+      "lang": "en",
+      "event": {
+        "originalDate": "1798",
+        "displayDate": "1798",
+        "eventDate": "+1798",
+        "sortYear": "1798",
+        "sortKey": "C17980000GC17989999"
+      },
+      "eventUserContributed": true,
+      "eventUpdatedBy": "cis.user.MMMQ-TFWC",
+      "eventSubmittedBy": "cis.user.MMMQ-TFWC",
+      "eventUpdatedOn": 1624406574522,
+      "maaiHintDismissed": false,
+      "maaiHDUpdatedBy": "cis.user.MMMQ-TFWC",
+      "maaiHDSubmittedBy": "cis.user.MMMQ-TFWC",
+      "maaiHDUpdatedOn": 1624406528314
+    }
+  ],
+  "sourceData": {
+    "https://familysearch.org/ark:/61903/3:1:3Q9M-CSVH-P938-6": {
+      "dataObj": {
+        "name": "008117780_00126",
+        "apid": "TH-909-70463-30043-56",
+        "childCount": 0,
+        "streamCount": 7,
+        "lastMod": 1676930354546,
+        "link": [
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56",
+            "rel": "node",
+            "type": "application/json"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/parents",
+            "rel": "parents",
+            "type": "application/json"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/deepzoomcloud/dz/v1/TH-909-70463-30043-56/image.xml",
+            "rel": "deepzoom",
+            "type": "application/xml"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/permission",
+            "rel": "permission",
+            "type": "application/json"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/name",
+            "rel": "name",
+            "type": "application/json"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/dist.jpg",
+            "rel": "stream-image-dist",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/thumb_16.jpg",
+            "rel": "stream-image-thumb_16",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/thumb_32.jpg",
+            "rel": "stream-image-thumb_32",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/thumb_64.jpg",
+            "rel": "stream-image-thumb_64",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/thumb_128.jpg",
+            "rel": "stream-image-thumb_128",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/thumb_p200.jpg",
+            "rel": "stream-image-thumb_p200",
+            "type": "image/jpeg"
+          },
+          {
+            "href": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/TH-909-70463-30043-56/artifactmetadata.xml",
+            "rel": "stream-meta-artifactmetadata",
+            "type": "application/xml"
+          }
+        ],
+        "templates": [
+          {
+            "name": "das-image",
+            "template": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/{id}/{image}"
+          },
+          {
+            "name": "dz-image",
+            "template": "https://sg30p0.familysearch.org/service/records/storage/deepzoomcloud/dz/v1/{id}/{image}"
+          },
+          {
+            "name": "external-das-image",
+            "template": "https://sg30p0.familysearch.org/service/records/storage/dascloud/das/v2/{id}/{image}"
+          },
+          {
+            "name": "external-dz-image",
+            "template": "https://sg30p0.familysearch.org/service/records/storage/deepzoomcloud/dz/v1/{id}/{image}"
+          }
+        ]
+      }
+    }
+  }
+}
