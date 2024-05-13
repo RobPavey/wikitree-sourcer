@@ -15,12 +15,25 @@
   },
   "lastNameAtDeath": "Stewart",
   "mothersMaidenName": "Wilkinson",
+  "birthPlace": {
+    "placeString": "CAMP"
+  },
   "deathDate": {
     "yearString": "1875"
   },
   "deathPlace": {
     "placeString": "Victoria, Australia"
   },
+  "ageAtEvent": "34",
+  "ageAtDeath": "34",
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Lilly",
+        "lastName": "McInnis"
+      }
+    }
+  ],
   "parents": {
     "father": {
       "name": {

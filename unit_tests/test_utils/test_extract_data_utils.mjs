@@ -180,6 +180,13 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       continue;
     }
 
+    // add any additional extracted data fields from the testData
+    // This is to test stuff that can be extracted in the real world but not from the saved page
+    // For example the clickedRowData in vicbdm
+    if (testData.extraExtractedDataFields) {
+      result = { ...result, ...testData.extraExtractedDataFields };
+    }
+
     let resultDir = "extracted_data";
 
     // write out result file.

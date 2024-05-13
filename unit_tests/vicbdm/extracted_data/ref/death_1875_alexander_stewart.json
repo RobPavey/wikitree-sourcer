@@ -10,5 +10,20 @@
     "Mother's name": "<Unknown Family Name>, Margaret",
     "Mother's family name at birth": "WILKINSON",
     "Father's Name": "<Unknown Family Name>, John"
+  },
+  "clickedRowData": {
+    "Family name": "STEWART",
+    "Given name(s)": "Alexander",
+    "Event": "Death",
+    "Mother's name / Spouse's name": "<Unknown Family Name>, Margaret",
+    "Mother's family name at birth": "WILKINSON",
+    "Father's name": "<Unknown Family Name>, John",
+    "Place of birth": "CAMP",
+    "Place of death": "",
+    "Spouse at Death": "MCINNIS, Lilly",
+    "Age at Death": "34",
+    "Reg. year": "1875",
+    "Reg. number": "15520/1875",
+    "In cart": ""
   }
 }

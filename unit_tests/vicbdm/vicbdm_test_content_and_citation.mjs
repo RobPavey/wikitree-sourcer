@@ -119,6 +119,23 @@ const regressionData = [
     // has last name of mother only
     caseName: "death_1875_alexander_stewart",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/663d2066c4208225838536a8/record/5c653cbb4aba80ac311d32a6?q=efamily&givenName=Alexander&familyName=STEWART",
+    extraExtractedDataFields: {
+      clickedRowData: {
+        "Family name": "STEWART",
+        "Given name(s)": "Alexander",
+        Event: "Death",
+        "Mother's name / Spouse's name": "<Unknown Family Name>, Margaret",
+        "Mother's family name at birth": "WILKINSON",
+        "Father's name": "<Unknown Family Name>, John",
+        "Place of birth": "CAMP",
+        "Place of death": "",
+        "Spouse at Death": "MCINNIS, Lilly",
+        "Age at Death": "34",
+        "Reg. year": "1875",
+        "Reg. number": "15520/1875",
+        "In cart": "",
+      },
+    },
     optionVariants: [
       {
         variantName: "sentenceStructure_twoSentences",
