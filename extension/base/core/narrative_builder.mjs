@@ -657,6 +657,60 @@ class NarrativeBuilder {
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Spouse of - as in a death reg
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  addSpouseOfPartForMainSentence(spouseName) {
+    if (!spouseName) {
+      return;
+    }
+
+    let gd = this.eventGd;
+
+    let spouseTerm = "spouse";
+    if (gd.personGender == "male") {
+      spouseTerm = "husband";
+    } else if (gd.personGender == "female") {
+      spouseTerm = "wife";
+    }
+
+    let spouseFormatOpt = this.getSubcatOption("spouseFormat");
+    if (spouseFormatOpt == "parensSpouse") {
+      this.narrative += " (" + spouseTerm + " of " + spouseName + ")";
+    } else if (spouseFormatOpt == "commasSpouse") {
+      if (!this.narrative.endsWith(",")) {
+        this.narrative += ",";
+      }
+      this.narrative += " " + spouseTerm + " of " + spouseName + ",";
+    }
+  }
+
+  addSpouseOfForMainSentence(spouseName) {
+    if (this.getSubcatOption("includeSpouse") == "inMainSentence") {
+      this.addSpouseOfPartForMainSentence(spouseName);
+    }
+  }
+
+  addSpouseOfAsSeparateSentence(spouseName) {
+    if (this.getSubcatOption("includeSpouse") == "inSeparateSentence") {
+      if (spouseName) {
+        this.narrative += " " + this.getPronounAndPastTenseInitialCaps();
+
+        let gd = this.eventGd;
+
+        let spouseTerm = "spouse";
+        if (gd.personGender == "male") {
+          spouseTerm = "husband";
+        } else if (gd.personGender == "female") {
+          spouseTerm = "wife";
+        }
+
+        this.narrative += " the " + spouseTerm + " of " + spouseName + ".";
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Occupation helpers
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -957,13 +1011,7 @@ class NarrativeBuilder {
 
         if (spouseName) {
           if (typeString == "death") {
-            let spouseTerm = "spouse";
-            if (this.eventGd.personGender == "male") {
-              spouseTerm = "husband";
-            } else if (this.eventGd.personGender == "female") {
-              spouseTerm = "wife";
-            }
-            this.narrative += " (" + spouseTerm + " of " + spouseName + ")";
+            this.addSpouseOfForMainSentence(spouseName);
           } else {
             this.narrative += " to " + spouseName;
           }
@@ -980,13 +1028,7 @@ class NarrativeBuilder {
         }
 
         if (spouseName && typeString == "death") {
-          let spouseTerm = "spouse";
-          if (gd.personGender == "male") {
-            spouseTerm = "husband";
-          } else if (gd.personGender == "female") {
-            spouseTerm = "wife";
-          }
-          this.narrative += " (" + spouseTerm + " of " + spouseName + ")";
+          this.addSpouseOfForMainSentence(spouseName);
           this.addAgeForMainSentence(spouseAge);
         }
 
@@ -1103,6 +1145,7 @@ class NarrativeBuilder {
     this.addParentageAsSeparateSentence();
     this.addAgeAsSeparateSentence(ageAtEvent);
     this.addMmnAsSeparateSentence(this.eventGd.mothersMaidenName);
+    this.addSpouseOfAsSeparateSentence(spouseName);
     this.addAtSeaAsSeparateSentence("", gd.eventPlace, typeString);
   }
 

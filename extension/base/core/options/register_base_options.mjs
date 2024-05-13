@@ -706,7 +706,32 @@ const narrativeDeathRegOptionsGroup = {
   subcategory: "deathReg", // abbreviated to keep storage size of options down
   tab: "narrative",
   subsection: "deathReg",
-  options: [narrativeRecordTypeNameOrPronounOption, narrativeIncludeAgeOption, narrativeAgeFormatOption],
+  options: [
+    narrativeRecordTypeNameOrPronounOption,
+    narrativeIncludeAgeOption,
+    narrativeAgeFormatOption,
+    {
+      optionName: "includeSpouse",
+      type: "select",
+      label: "Include spouse at death if known",
+      values: [
+        { value: "no", text: "No" },
+        { value: "inMainSentence", text: "In the main sentence" },
+        { value: "inSeparateSentence", text: "In a separate following sentence" },
+      ],
+      defaultValue: "inMainSentence",
+    },
+    {
+      optionName: "spouseFormat",
+      type: "select",
+      label: "Spouse format",
+      values: [
+        { value: "parensSpouse", text: "(<spouse/wife/husband> of <spouse name>)" },
+        { value: "commasSpouse", text: ", <spouse/wife/husband> of <spouse name>," },
+      ],
+      defaultValue: "parensSpouse",
+    },
+  ],
 };
 
 const narrativeDeathRegEvtOptionsGroup = {
