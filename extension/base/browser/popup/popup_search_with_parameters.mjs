@@ -338,8 +338,8 @@ function addParentCheckboxes(data, siteData, listElement, parameters) {
       }
     }
   } else {
-    parameters.father = false;
-    parameters.mother = false;
+    parameters.father = undefined;
+    parameters.mother = undefined;
   }
 
   if (siteData.includeMmn && siteData.includeMmn(gd, parameters)) {
