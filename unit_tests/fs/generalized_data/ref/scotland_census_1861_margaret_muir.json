@@ -13,18 +13,19 @@
     "yearString": "1828"
   },
   "birthPlace": {
-    "placeString": "Lanarkshire"
+    "placeString": "Glasgow, LANARKSHIRE"
   },
   "eventDate": {
     "dateString": "1861",
     "yearString": "1861"
   },
   "eventPlace": {
-    "placeString": "Partick, Lanarkshire, Scotland"
+    "placeString": "Govan, Lanarkshire, Scotland, United Kingdom"
   },
   "ageAtEvent": "33",
   "householdArrayFields": [
     "name",
+    "relationship",
     "maritalStatus",
     "gender",
     "age",
@@ -35,12 +36,13 @@
   "householdArray": [
     {
       "name": "William Muir",
+      "relationship": "head",
       "maritalStatus": "married",
       "gender": "male",
       "age": "32",
       "birthYear": "1829",
       "occupation": "Carter",
-      "birthPlace": "Renfrewshire"
+      "birthPlace": "Paisley, RENFREWSHIRE"
     },
     {
       "name": "Margaret Muir",
@@ -48,7 +50,7 @@
       "gender": "female",
       "age": "33",
       "birthYear": "1828",
-      "birthPlace": "Lanarkshire",
+      "birthPlace": "Glasgow, LANARKSHIRE",
       "isSelected": true
     },
     {
@@ -58,16 +60,17 @@
       "age": "7",
       "birthYear": "1854",
       "occupation": "Scholar",
-      "birthPlace": "Dunbartonshire"
+      "birthPlace": "?, DUNBARTONSHIRE"
     },
     {
       "name": "James Muir",
+      "relationship": "son",
       "maritalStatus": "single",
       "gender": "male",
       "age": "5",
       "birthYear": "1856",
       "occupation": "Scholar",
-      "birthPlace": "Lanarkshire"
+      "birthPlace": "Partick, LANARKSHIRE"
     },
     {
       "name": "William Muir",
@@ -75,7 +78,7 @@
       "gender": "male",
       "age": "3",
       "birthYear": "1858",
-      "birthPlace": "Lanarkshire"
+      "birthPlace": "Partick, LANARKSHIRE"
     },
     {
       "name": "Margaret Muir",
@@ -83,7 +86,7 @@
       "gender": "female",
       "age": "1",
       "birthYear": "1860",
-      "birthPlace": "Lanarkshire"
+      "birthPlace": "Partick, LANARKSHIRE"
     }
   ],
   "maritalStatus": "married",

@@ -73,6 +73,7 @@
     },
     "names" : [ {
       "id" : "ac553adf-46d0-4164-8c1a-e8388e884ae7",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
       "attribution" : {
         "modified" : 1701718688502,
         "created" : 1701718688502
@@ -82,29 +83,6 @@
       "nameForms" : [ {
         "fullText" : "William Muir",
         "parts" : [ {
-          "id" : "94ebfadf-012e-4df6-b144-5ba66bd7c0b8",
-          "type" : "http://gedcomx.org/Given",
-          "value" : "William",
-          "fields" : [ {
-            "id" : "ddbfcb75-df2b-4359-9ee3-2eafd7eed5ea",
-            "attribution" : {
-              "modified" : 1701718688502,
-              "created" : 1701718688502
-            },
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "22b97e43-4575-4d6f-ab9a-07ded4ade3c2",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "WILLIAM"
-            }, {
-              "id" : "22b97e43-4575-4d6f-ab9a-07ded4ade3c2",
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "William"
-            } ]
-          } ]
-        }, {
           "id" : "1627455c-9262-4112-81b7-fb76028299f0",
           "type" : "http://gedcomx.org/Surname",
           "value" : "Muir",
@@ -125,28 +103,102 @@
               "type" : "http://gedcomx.org/Interpreted",
               "labelId" : "PR_NAME_SURN",
               "text" : "Muir"
+            }, {
+              "id" : "d5777b6a-dccb-4ad2-b512-e4e6bdebfaee",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "94ebfadf-012e-4df6-b144-5ba66bd7c0b8",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William",
+          "fields" : [ {
+            "id" : "ddbfcb75-df2b-4359-9ee3-2eafd7eed5ea",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "22b97e43-4575-4d6f-ab9a-07ded4ade3c2",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "WILLIAM"
+            }, {
+              "id" : "22b97e43-4575-4d6f-ab9a-07ded4ade3c2",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "William"
+            }, {
+              "id" : "22b97e43-4575-4d6f-ab9a-07ded4ade3c2",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "William",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
             } ]
           } ]
         } ],
         "fields" : [ {
-          "id" : "a52f942d-91b4-4a11-a9b9-aca3dbcb7ab0",
+          "id" : "5cd7ed2a-7352-4cba-ac37-b6a2047f43ad",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
           },
           "type" : "http://gedcomx.org/Name",
           "values" : [ {
-            "id" : "32a460f0-2ed9-4c7b-9306-c0779e800139",
+            "id" : "a3b65c24-8030-47e8-ad2a-30110a81ea0f",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "WILLIAM MUIR"
+          }, {
+            "id" : "a3b65c24-8030-47e8-ad2a-30110a81ea0f",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "PR_NAME",
-            "text" : "William Muir"
+            "text" : "William Muir",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       } ]
     } ],
     "facts" : [ {
       "type" : "http://gedcomx.org/MaritalStatus",
-      "value" : "MARRIED",
+      "value" : "Married",
       "fields" : [ {
         "id" : "c72ee7b6-1118-4636-b892-0a9fa0d16112",
         "attribution" : {
@@ -159,6 +211,25 @@
           "type" : "http://gedcomx.org/Original",
           "labelId" : "PR_MARITAL_STATUS_ORIG",
           "text" : "MARRIED"
+        }, {
+          "id" : "00de71a7-f7d4-4a78-a7aa-5628a6e17d23",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Married",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103503",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
         } ]
       } ]
     }, {
@@ -191,8 +262,9 @@
         "fields" : [ {
           "id" : "10b49eb0-54d6-4f56-ba5c-a2f31158eed7",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
           },
           "type" : "http://gedcomx.org/Date",
           "values" : [ {
@@ -203,6 +275,22 @@
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "cff88821-4090-4c6e-aab6-634a31df7efa",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1861",
+            "resource" : "+1861",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
             } ]
           } ]
         }, {
@@ -222,7 +310,8 @@
       },
       "place" : {
         "id" : "9b26253d-ad85-40c2-a040-08b70f65b4b0",
-        "original" : "Partick, Lanarkshire, Scotland",
+        "original" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
+        "description" : "#place_10587203",
         "fields" : [ {
           "id" : "20f3b078-26ca-4e5b-abaa-0c4215e8488a",
           "attribution" : {
@@ -284,12 +373,37 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "6c35bb9e-5e16-4970-8094-506336231741",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Partick, Lanarkshire, Scotland",
+            "text" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "6c35bb9e-5e16-4970-8094-506336231741",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Govan, Lanarkshire, Scotland, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/10587203",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
             } ]
           } ]
         }, {
@@ -371,7 +485,39 @@
       "date" : {
         "id" : "91077986-17ab-4679-9f95-a9f9ebb4fb58",
         "original" : "1829",
+        "formal" : "+1829",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
         "fields" : [ {
+          "id" : "925b2c0d-2869-4ecf-9b04-091795974ab2",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "1c137979-4140-47d9-89a4-7aa7a159b0a6",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1829"
+          }, {
+            "id" : "1c137979-4140-47d9-89a4-7aa7a159b0a6",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1829",
+            "resource" : "+1829",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
           "id" : "3519a9fb-f72c-49d5-bbd5-f94ac7195dee",
           "attribution" : {
             "modified" : 1701718688502,
@@ -388,7 +534,7 @@
       },
       "place" : {
         "id" : "e81c7aa3-8b19-4a00-8bab-8ff59adfbb8d",
-        "original" : "Renfrewshire",
+        "original" : "Paisley, RENFREWSHIRE",
         "fields" : [ {
           "id" : "10e0f6b4-aa6a-4039-89f2-4c5c9913df51",
           "attribution" : {
@@ -398,9 +544,16 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "84a0e670-4da0-461a-b025-6b4b05a97500",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "PR_BIR_PLACE_ORIG",
-            "text" : "Renfrewshire",
+            "text" : "Paisley, RENFREWSHIRE",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
@@ -582,6 +735,24 @@
         "type" : "http://gedcomx.org/Interpreted",
         "labelId" : "PR_AGE",
         "text" : "32"
+      }, {
+        "id" : "0d124403-37fa-42bc-b4e0-d76b38ae5693",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "32 years",
+        "resource" : "P32Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
       } ],
       "qualifiers" : [ {
         "value" : "115c765b-91d0-4768-90cd-54faa4c821d1",
@@ -592,7 +763,7 @@
       "name" : "William Muir",
       "gender" : "Male",
       "birthDate" : "1829",
-      "birthPlace" : "Renfrewshire"
+      "birthPlace" : "Paisley, RENFREWSHIRE"
     }
   }, {
     "id" : "p_13808448713",
@@ -650,6 +821,7 @@
     },
     "names" : [ {
       "id" : "2c2e813b-ec29-4562-8a52-4a81e160a7c5",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
       "attribution" : {
         "modified" : 1701718688502,
         "created" : 1701718688502
@@ -659,29 +831,6 @@
       "nameForms" : [ {
         "fullText" : "Margaret Muir",
         "parts" : [ {
-          "id" : "95ed7eb7-198b-477f-847c-d5d6d6e1143b",
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Margaret",
-          "fields" : [ {
-            "id" : "02138ae4-fa66-4643-a0e0-7d1ed181bce4",
-            "attribution" : {
-              "modified" : 1701718688502,
-              "created" : 1701718688502
-            },
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "c7c21b55-cf66-48c6-8346-7a780f3c428c",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "MARGARET"
-            }, {
-              "id" : "c7c21b55-cf66-48c6-8346-7a780f3c428c",
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Margaret"
-            } ]
-          } ]
-        }, {
           "id" : "3ef3595f-b31e-483d-9271-312396d00ea5",
           "type" : "http://gedcomx.org/Surname",
           "value" : "Muir",
@@ -702,28 +851,102 @@
               "type" : "http://gedcomx.org/Interpreted",
               "labelId" : "PR_NAME_SURN",
               "text" : "Muir"
+            }, {
+              "id" : "57e84ea1-67f5-4a3e-9e78-a1a84a58a822",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "95ed7eb7-198b-477f-847c-d5d6d6e1143b",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Margaret",
+          "fields" : [ {
+            "id" : "02138ae4-fa66-4643-a0e0-7d1ed181bce4",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "c7c21b55-cf66-48c6-8346-7a780f3c428c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "MARGARET"
+            }, {
+              "id" : "c7c21b55-cf66-48c6-8346-7a780f3c428c",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Margaret"
+            }, {
+              "id" : "c7c21b55-cf66-48c6-8346-7a780f3c428c",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Margaret",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
             } ]
           } ]
         } ],
         "fields" : [ {
-          "id" : "3b9ffa78-1f32-4c95-9058-abf4984764db",
+          "id" : "293e03d1-ca8b-4dea-92e0-fad32696d958",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
           },
           "type" : "http://gedcomx.org/Name",
           "values" : [ {
-            "id" : "3b178039-4d48-4a52-a7d8-a9b06f5f947f",
+            "id" : "a723857a-f05d-4aa2-8a6e-8e0cc9e83d48",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "MARGARET MUIR"
+          }, {
+            "id" : "a723857a-f05d-4aa2-8a6e-8e0cc9e83d48",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "PR_NAME",
-            "text" : "Margaret Muir"
+            "text" : "Margaret Muir",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       } ]
     } ],
     "facts" : [ {
       "type" : "http://gedcomx.org/MaritalStatus",
-      "value" : "MARRIED",
+      "value" : "Married",
       "fields" : [ {
         "id" : "3ca7f336-1874-4208-8eed-cbbf37ab1686",
         "attribution" : {
@@ -736,6 +959,25 @@
           "type" : "http://gedcomx.org/Original",
           "labelId" : "PR_MARITAL_STATUS_ORIG",
           "text" : "MARRIED"
+        }, {
+          "id" : "2ead25b5-3df0-4199-8d02-04a520c39696",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Married",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103503",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
         } ]
       } ]
     }, {
@@ -751,8 +993,9 @@
         "fields" : [ {
           "id" : "82212e61-f4b4-4f53-8262-7e301ba4b404",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
           },
           "type" : "http://gedcomx.org/Date",
           "values" : [ {
@@ -763,6 +1006,22 @@
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "57e585a7-2d00-4400-b302-d5af9ddce2bc",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1861",
+            "resource" : "+1861",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
             } ]
           } ]
         }, {
@@ -782,7 +1041,7 @@
       },
       "place" : {
         "id" : "44773bbb-80d8-4255-a8e6-6a426ec061b8",
-        "original" : "Partick, Lanarkshire, Scotland",
+        "original" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
         "fields" : [ {
           "id" : "7b95678d-de4a-43b7-933b-db120cc64bcf",
           "attribution" : {
@@ -857,12 +1116,37 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "b717dd12-ef7f-4bdd-a523-d8afe9b1278c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Partick, Lanarkshire, Scotland",
+            "text" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "b717dd12-ef7f-4bdd-a523-d8afe9b1278c",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Govan, Lanarkshire, Scotland, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/10587203",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
             } ]
           } ]
         }, {
@@ -906,7 +1190,39 @@
       "date" : {
         "id" : "7c4f8fa6-2264-4a38-a88f-6b18045155d0",
         "original" : "1828",
+        "formal" : "+1828",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
         "fields" : [ {
+          "id" : "27ea833c-1a77-41a2-a500-b2d4b1639d7d",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "32aed4a8-72ee-409c-b9b9-a059029f1707",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1828"
+          }, {
+            "id" : "32aed4a8-72ee-409c-b9b9-a059029f1707",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1828",
+            "resource" : "+1828",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
           "id" : "3ccc69dd-cc15-4ec9-97b1-1cb7561ce372",
           "attribution" : {
             "modified" : 1701718688502,
@@ -923,7 +1239,7 @@
       },
       "place" : {
         "id" : "38400e80-cb30-4ccb-a745-c62f4b7e2e76",
-        "original" : "Lanarkshire",
+        "original" : "Glasgow, LANARKSHIRE",
         "fields" : [ {
           "id" : "9ac6bcc7-cba1-4c88-87cb-d8f862ec0e0e",
           "attribution" : {
@@ -959,9 +1275,16 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "5bc6dc48-a1e6-4b8d-9da4-ec85bfd86806",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "PR_BIR_PLACE_ORIG",
-            "text" : "Lanarkshire",
+            "text" : "Glasgow, LANARKSHIRE",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
@@ -1142,6 +1465,24 @@
         "type" : "http://gedcomx.org/Interpreted",
         "labelId" : "PR_AGE",
         "text" : "33"
+      }, {
+        "id" : "86436ffe-f325-4296-a111-236712604f4b",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "33 years",
+        "resource" : "P33Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
       } ],
       "qualifiers" : [ {
         "value" : "2e8a888e-bc2e-4963-8d69-a18d5d7ba4ed",
@@ -1152,7 +1493,7 @@
       "name" : "Margaret Muir",
       "gender" : "Female",
       "birthDate" : "1828",
-      "birthPlace" : "Lanarkshire"
+      "birthPlace" : "Glasgow, LANARKSHIRE"
     }
   }, {
     "id" : "p_13808448714",
@@ -1210,6 +1551,7 @@
     },
     "names" : [ {
       "id" : "7f49e44d-db51-40cc-beaf-5406c17426f9",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
       "attribution" : {
         "modified" : 1701718688502,
         "created" : 1701718688502
@@ -1219,29 +1561,6 @@
       "nameForms" : [ {
         "fullText" : "Agnes Muir",
         "parts" : [ {
-          "id" : "c221af43-9405-4198-b4c7-78c6a80a579f",
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Agnes",
-          "fields" : [ {
-            "id" : "3b0e47e4-6a3b-48e6-81a0-d73997357e80",
-            "attribution" : {
-              "modified" : 1701718688502,
-              "created" : 1701718688502
-            },
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "72a50b15-b93f-433c-b2a7-97938a1934bd",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "AGNES"
-            }, {
-              "id" : "72a50b15-b93f-433c-b2a7-97938a1934bd",
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Agnes"
-            } ]
-          } ]
-        }, {
           "id" : "707898cc-dab9-4860-a61a-14e55272acc0",
           "type" : "http://gedcomx.org/Surname",
           "value" : "Muir",
@@ -1262,28 +1581,102 @@
               "type" : "http://gedcomx.org/Interpreted",
               "labelId" : "PR_NAME_SURN",
               "text" : "Muir"
+            }, {
+              "id" : "f73f11a4-9e38-473c-bb38-19b113d3adee",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "c221af43-9405-4198-b4c7-78c6a80a579f",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Agnes",
+          "fields" : [ {
+            "id" : "3b0e47e4-6a3b-48e6-81a0-d73997357e80",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "72a50b15-b93f-433c-b2a7-97938a1934bd",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "AGNES"
+            }, {
+              "id" : "72a50b15-b93f-433c-b2a7-97938a1934bd",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Agnes"
+            }, {
+              "id" : "72a50b15-b93f-433c-b2a7-97938a1934bd",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Agnes",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
             } ]
           } ]
         } ],
         "fields" : [ {
-          "id" : "fcf26934-768d-4d4a-b1a9-8477f9a39c8c",
+          "id" : "3b0e13ce-7ae5-468e-bd4d-35fcd963cf81",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
           },
           "type" : "http://gedcomx.org/Name",
           "values" : [ {
-            "id" : "8ec57c33-26d6-4ec5-bd21-34e26394f5e3",
+            "id" : "0ccc3830-423f-493c-9186-1fbb447afd65",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "AGNES MUIR"
+          }, {
+            "id" : "0ccc3830-423f-493c-9186-1fbb447afd65",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "PR_NAME",
-            "text" : "Agnes Muir"
+            "text" : "Agnes Muir",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       } ]
     } ],
     "facts" : [ {
       "type" : "http://gedcomx.org/MaritalStatus",
-      "value" : "UNMARRIED",
+      "value" : "Single",
       "fields" : [ {
         "id" : "78392f5f-86b6-4654-8df5-b8966fa7fcee",
         "attribution" : {
@@ -1296,6 +1689,25 @@
           "type" : "http://gedcomx.org/Original",
           "labelId" : "PR_MARITAL_STATUS_ORIG",
           "text" : "UNMARRIED"
+        }, {
+          "id" : "37331fa1-4bf6-462f-8c6b-bfe8583be275",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Single",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103333",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
         } ]
       } ]
     }, {
@@ -1325,6 +1737,8 @@
       "date" : {
         "id" : "d363ce84-95a8-4136-b298-ed57a920a7ae",
         "original" : "1854",
+        "formal" : "+1854",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
         "fields" : [ {
           "id" : "2ec22945-d224-4a5d-b3c1-067445099ced",
           "attribution" : {
@@ -1338,11 +1752,41 @@
             "labelId" : "PR_BIR_YEAR_ORIG",
             "text" : "1854"
           } ]
+        }, {
+          "id" : "9cd35cdc-3f46-4405-a581-1eba4a3c5c49",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "ce0400bc-d41b-4dd3-81f7-c2a462ec4354",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1854"
+          }, {
+            "id" : "ce0400bc-d41b-4dd3-81f7-c2a462ec4354",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1854",
+            "resource" : "+1854",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
         } ]
       },
       "place" : {
         "id" : "a73f1cc2-d3ff-467b-b5d2-d7e77d701ff4",
-        "original" : "Dunbartonshire",
+        "original" : "?, DUNBARTONSHIRE",
         "fields" : [ {
           "id" : "4726590b-232f-47e7-a876-c0ffad0a8bc3",
           "attribution" : {
@@ -1365,9 +1809,16 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "cfb5b04f-f051-48c4-954b-2f2ebfdfc325",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "PR_BIR_PLACE_ORIG",
-            "text" : "Dunbartonshire",
+            "text" : "?, DUNBARTONSHIRE",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
@@ -1414,8 +1865,9 @@
         }, {
           "id" : "0bbfb1f4-a38c-476b-b972-e344fefff5f2",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
           },
           "type" : "http://gedcomx.org/Date",
           "values" : [ {
@@ -1427,12 +1879,28 @@
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
             } ]
+          }, {
+            "id" : "41f0865f-743d-4003-862e-7649dbd4ff67",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1861",
+            "resource" : "+1861",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       },
       "place" : {
         "id" : "b8fee18a-7c0e-4e32-9545-86d3a851f5cb",
-        "original" : "Partick, Lanarkshire, Scotland",
+        "original" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
         "fields" : [ {
           "id" : "526f8ec8-85cc-411e-a53e-ff8c86b8693b",
           "attribution" : {
@@ -1468,12 +1936,37 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "cbe81e55-e076-4761-b347-c75b3dea4389",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Partick, Lanarkshire, Scotland",
+            "text" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "cbe81e55-e076-4761-b347-c75b3dea4389",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Govan, Lanarkshire, Scotland, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/10587203",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
             } ]
           } ]
         }, {
@@ -1719,6 +2212,24 @@
         "type" : "http://gedcomx.org/Interpreted",
         "labelId" : "PR_AGE",
         "text" : "7"
+      }, {
+        "id" : "c0564436-a95e-4bb1-b224-2c713a8be3f8",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "7 years",
+        "resource" : "P7Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
       } ],
       "qualifiers" : [ {
         "value" : "36f67d18-f98e-4c18-968c-5942ca2f23d0",
@@ -1729,7 +2240,7 @@
       "name" : "Agnes Muir",
       "gender" : "Female",
       "birthDate" : "1854",
-      "birthPlace" : "Dunbartonshire"
+      "birthPlace" : "?, DUNBARTONSHIRE"
     }
   }, {
     "id" : "p_13808448715",
@@ -1787,6 +2298,7 @@
     },
     "names" : [ {
       "id" : "0427f371-682f-4950-90a9-8b6446767454",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
       "attribution" : {
         "modified" : 1701718688502,
         "created" : 1701718688502
@@ -1796,29 +2308,6 @@
       "nameForms" : [ {
         "fullText" : "James Muir",
         "parts" : [ {
-          "id" : "fd7b34a8-0138-470c-9043-c3054bcada0f",
-          "type" : "http://gedcomx.org/Given",
-          "value" : "James",
-          "fields" : [ {
-            "id" : "7b856525-f253-4d23-9306-e85aa063cedc",
-            "attribution" : {
-              "modified" : 1701718688502,
-              "created" : 1701718688502
-            },
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "4ad45f50-49c1-48af-bbb6-34b39f53cf28",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "JAMES"
-            }, {
-              "id" : "4ad45f50-49c1-48af-bbb6-34b39f53cf28",
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "James"
-            } ]
-          } ]
-        }, {
           "id" : "e702aa2e-d69d-45ca-995e-bcedc82f1b0e",
           "type" : "http://gedcomx.org/Surname",
           "value" : "Muir",
@@ -1839,28 +2328,102 @@
               "type" : "http://gedcomx.org/Interpreted",
               "labelId" : "PR_NAME_SURN",
               "text" : "Muir"
+            }, {
+              "id" : "fb5841f9-b3c3-48c3-b8b1-ceccdc9dd977",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "fd7b34a8-0138-470c-9043-c3054bcada0f",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "James",
+          "fields" : [ {
+            "id" : "7b856525-f253-4d23-9306-e85aa063cedc",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "4ad45f50-49c1-48af-bbb6-34b39f53cf28",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "JAMES"
+            }, {
+              "id" : "4ad45f50-49c1-48af-bbb6-34b39f53cf28",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "James"
+            }, {
+              "id" : "4ad45f50-49c1-48af-bbb6-34b39f53cf28",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "James",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
             } ]
           } ]
         } ],
         "fields" : [ {
-          "id" : "4c2d9aee-6663-4295-9980-8fa6b7a4eb3d",
+          "id" : "8f7e02af-695d-466f-ab64-743c5f8977f9",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
           },
           "type" : "http://gedcomx.org/Name",
           "values" : [ {
-            "id" : "433018a3-6105-4940-aabc-dafb3d4eab21",
+            "id" : "fa1e0fcb-d0ac-41c7-93a7-dde3cffcc5ee",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "JAMES MUIR"
+          }, {
+            "id" : "fa1e0fcb-d0ac-41c7-93a7-dde3cffcc5ee",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "PR_NAME",
-            "text" : "James Muir"
+            "text" : "James Muir",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       } ]
     } ],
     "facts" : [ {
       "type" : "http://gedcomx.org/MaritalStatus",
-      "value" : "UNMARRIED",
+      "value" : "Single",
       "fields" : [ {
         "id" : "65b968ef-8445-4110-b81f-2a0811e88117",
         "attribution" : {
@@ -1873,6 +2436,25 @@
           "type" : "http://gedcomx.org/Original",
           "labelId" : "PR_MARITAL_STATUS_ORIG",
           "text" : "UNMARRIED"
+        }, {
+          "id" : "b20afe65-0b8b-4511-9673-0a40ae693a59",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Single",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103333",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
         } ]
       } ]
     }, {
@@ -1902,6 +2484,8 @@
       "date" : {
         "id" : "4cb0038b-6447-4368-8c65-57baaf37da62",
         "original" : "1856",
+        "formal" : "+1856",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
         "fields" : [ {
           "id" : "9fb2df64-1f73-47e2-83d3-355e2400cf67",
           "attribution" : {
@@ -1915,11 +2499,41 @@
             "labelId" : "PR_BIR_YEAR_ORIG",
             "text" : "1856"
           } ]
+        }, {
+          "id" : "d470f078-16c6-4fc3-bb1e-a798783b8898",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "7385c9f5-9d4a-4ba5-a5c9-1fddf877e115",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1856"
+          }, {
+            "id" : "7385c9f5-9d4a-4ba5-a5c9-1fddf877e115",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1856",
+            "resource" : "+1856",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
         } ]
       },
       "place" : {
         "id" : "30a769eb-9422-497e-8cc3-a9c5a619c1df",
-        "original" : "Lanarkshire",
+        "original" : "Partick, LANARKSHIRE",
         "fields" : [ {
           "id" : "5266df5f-3237-47f2-aca7-8b760dd986bd",
           "attribution" : {
@@ -1929,9 +2543,16 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "42ae0f1e-362b-402a-a5be-8022b7f900c0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "PR_BIR_PLACE_ORIG",
-            "text" : "Lanarkshire",
+            "text" : "Partick, LANARKSHIRE",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
@@ -1991,8 +2612,9 @@
         }, {
           "id" : "9c84737d-2c1b-42aa-a1eb-f980700a169a",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
           },
           "type" : "http://gedcomx.org/Date",
           "values" : [ {
@@ -2004,12 +2626,28 @@
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
             } ]
+          }, {
+            "id" : "333cd4c9-a38f-4b38-8560-9833a4514b2f",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1861",
+            "resource" : "+1861",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       },
       "place" : {
         "id" : "777cb826-7eef-4034-962b-397c45bf2c1c",
-        "original" : "Partick, Lanarkshire, Scotland",
+        "original" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
         "fields" : [ {
           "id" : "f76e9eba-8530-42f1-8aeb-d24d092ee907",
           "attribution" : {
@@ -2045,12 +2683,37 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "688a7e4b-e207-4435-923d-3054474c92ec",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Partick, Lanarkshire, Scotland",
+            "text" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "688a7e4b-e207-4435-923d-3054474c92ec",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Govan, Lanarkshire, Scotland, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/10587203",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
             } ]
           } ]
         }, {
@@ -2296,6 +2959,24 @@
         "type" : "http://gedcomx.org/Interpreted",
         "labelId" : "PR_AGE",
         "text" : "5"
+      }, {
+        "id" : "1bc09ac8-da60-4395-a181-e7b32401e983",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "5 years",
+        "resource" : "P5Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
       } ],
       "qualifiers" : [ {
         "value" : "a866d80c-20eb-446f-996b-3b2813746651",
@@ -2306,7 +2987,7 @@
       "name" : "James Muir",
       "gender" : "Male",
       "birthDate" : "1856",
-      "birthPlace" : "Lanarkshire"
+      "birthPlace" : "Partick, LANARKSHIRE"
     }
   }, {
     "id" : "p_13808448716",
@@ -2364,6 +3045,7 @@
     },
     "names" : [ {
       "id" : "16c9124b-d1bd-4e42-bbac-fe285c8169e2",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
       "attribution" : {
         "modified" : 1701718688502,
         "created" : 1701718688502
@@ -2373,29 +3055,6 @@
       "nameForms" : [ {
         "fullText" : "William Muir",
         "parts" : [ {
-          "id" : "d628e2ab-68dc-43eb-98f8-943987ed5c09",
-          "type" : "http://gedcomx.org/Given",
-          "value" : "William",
-          "fields" : [ {
-            "id" : "b13cbad4-aab7-4af8-8b89-d023807c2ad7",
-            "attribution" : {
-              "modified" : 1701718688502,
-              "created" : 1701718688502
-            },
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "fa56db2b-8530-4856-b4ca-68f632650dfe",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "WILLIAM"
-            }, {
-              "id" : "fa56db2b-8530-4856-b4ca-68f632650dfe",
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "William"
-            } ]
-          } ]
-        }, {
           "id" : "c65e27e5-6482-49cc-99bc-2aaca7e39a22",
           "type" : "http://gedcomx.org/Surname",
           "value" : "Muir",
@@ -2416,28 +3075,102 @@
               "type" : "http://gedcomx.org/Interpreted",
               "labelId" : "PR_NAME_SURN",
               "text" : "Muir"
+            }, {
+              "id" : "690627fb-b52a-4e63-92b0-30e8c6d09bc7",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "d628e2ab-68dc-43eb-98f8-943987ed5c09",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "William",
+          "fields" : [ {
+            "id" : "b13cbad4-aab7-4af8-8b89-d023807c2ad7",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "fa56db2b-8530-4856-b4ca-68f632650dfe",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "WILLIAM"
+            }, {
+              "id" : "fa56db2b-8530-4856-b4ca-68f632650dfe",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "William"
+            }, {
+              "id" : "fa56db2b-8530-4856-b4ca-68f632650dfe",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "William",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
             } ]
           } ]
         } ],
         "fields" : [ {
-          "id" : "be1f9693-34e8-4545-a1c1-2c655393face",
+          "id" : "9776742c-dbca-41a7-956c-ce9c6ba5ef55",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
           },
           "type" : "http://gedcomx.org/Name",
           "values" : [ {
-            "id" : "92c65649-ad09-41bc-afa4-2839e64bffac",
+            "id" : "d4fc5fe2-701d-44e0-9744-1e130a75191d",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "WILLIAM MUIR"
+          }, {
+            "id" : "d4fc5fe2-701d-44e0-9744-1e130a75191d",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "PR_NAME",
-            "text" : "William Muir"
+            "text" : "William Muir",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       } ]
     } ],
     "facts" : [ {
       "type" : "http://gedcomx.org/MaritalStatus",
-      "value" : "UNMARRIED",
+      "value" : "Single",
       "fields" : [ {
         "id" : "16b8a516-f899-4173-853b-9f96c36c5ac0",
         "attribution" : {
@@ -2450,6 +3183,25 @@
           "type" : "http://gedcomx.org/Original",
           "labelId" : "PR_MARITAL_STATUS_ORIG",
           "text" : "UNMARRIED"
+        }, {
+          "id" : "4be9dda9-9145-4b4e-8915-d7dd3576cbdc",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Single",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103333",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
         } ]
       } ]
     }, {
@@ -2462,6 +3214,8 @@
       "date" : {
         "id" : "c9062e00-9a28-4e8b-ae80-0cfb389f3fc8",
         "original" : "1858",
+        "formal" : "+1858",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
         "fields" : [ {
           "id" : "69b8f237-c6a9-46c4-8cfa-866661021ecd",
           "attribution" : {
@@ -2475,11 +3229,41 @@
             "labelId" : "PR_BIR_YEAR_ORIG",
             "text" : "1858"
           } ]
+        }, {
+          "id" : "757c2bcf-32f5-479f-8961-90113f797324",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "b66e7c74-a0d3-4919-a0b8-182a1f664fc3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1858"
+          }, {
+            "id" : "b66e7c74-a0d3-4919-a0b8-182a1f664fc3",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1858",
+            "resource" : "+1858",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
         } ]
       },
       "place" : {
         "id" : "03d32a09-55f3-4659-95a0-8103e4719dbb",
-        "original" : "Lanarkshire",
+        "original" : "Partick, LANARKSHIRE",
         "fields" : [ {
           "id" : "8f683439-009f-4c40-85c6-14979d391ab4",
           "attribution" : {
@@ -2515,9 +3299,16 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "2f643e12-b5ac-4a27-a8be-f3673558dfa9",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "PR_BIR_PLACE_ORIG",
-            "text" : "Lanarkshire",
+            "text" : "Partick, LANARKSHIRE",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
@@ -2538,8 +3329,9 @@
         "fields" : [ {
           "id" : "0ca3e8a6-a0dc-419d-ba29-810ecda53fda",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
           },
           "type" : "http://gedcomx.org/Date",
           "values" : [ {
@@ -2550,6 +3342,22 @@
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "e980a1c0-4bd2-4974-8759-16dbb62b490c",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1861",
+            "resource" : "+1861",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
             } ]
           } ]
         }, {
@@ -2569,7 +3377,7 @@
       },
       "place" : {
         "id" : "6a3ef5c3-3f58-4906-91d8-702b7283b21e",
-        "original" : "Partick, Lanarkshire, Scotland",
+        "original" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
         "fields" : [ {
           "id" : "39b7b8b7-0501-4d2e-a1fb-eed5cc655d39",
           "attribution" : {
@@ -2657,12 +3465,37 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "ab1945be-8de1-48c0-a6ad-e7121c698ad9",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Partick, Lanarkshire, Scotland",
+            "text" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "ab1945be-8de1-48c0-a6ad-e7121c698ad9",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Govan, Lanarkshire, Scotland, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/10587203",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
             } ]
           } ]
         } ]
@@ -2856,6 +3689,24 @@
         "type" : "http://gedcomx.org/Interpreted",
         "labelId" : "PR_AGE",
         "text" : "3"
+      }, {
+        "id" : "741f4598-4765-415d-80e4-467b41ae30f2",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "3 years",
+        "resource" : "P3Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
       } ],
       "qualifiers" : [ {
         "value" : "f7eeb995-ddb3-41c4-b781-7a1e06429ba7",
@@ -2866,7 +3717,7 @@
       "name" : "William Muir",
       "gender" : "Male",
       "birthDate" : "1858",
-      "birthPlace" : "Lanarkshire"
+      "birthPlace" : "Partick, LANARKSHIRE"
     }
   }, {
     "id" : "p_13808448717",
@@ -2924,6 +3775,7 @@
     },
     "names" : [ {
       "id" : "da2f14d4-a9cd-45f1-8bce-5364845d0cf6",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
       "attribution" : {
         "modified" : 1701718688502,
         "created" : 1701718688502
@@ -2933,29 +3785,6 @@
       "nameForms" : [ {
         "fullText" : "Margaret Muir",
         "parts" : [ {
-          "id" : "40706de8-e609-4f5c-a644-8926f2229eb1",
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Margaret",
-          "fields" : [ {
-            "id" : "9db73ed3-1c7c-4b42-a8ad-b0596159bb04",
-            "attribution" : {
-              "modified" : 1701718688502,
-              "created" : 1701718688502
-            },
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "a08fab10-5cee-49be-89a3-985d8a15fc1c",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "MARGARET"
-            }, {
-              "id" : "a08fab10-5cee-49be-89a3-985d8a15fc1c",
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Margaret"
-            } ]
-          } ]
-        }, {
           "id" : "fbfebd44-ecb2-45b6-90bb-65658afd91f4",
           "type" : "http://gedcomx.org/Surname",
           "value" : "Muir",
@@ -2976,28 +3805,102 @@
               "type" : "http://gedcomx.org/Interpreted",
               "labelId" : "PR_NAME_SURN",
               "text" : "Muir"
+            }, {
+              "id" : "f1363570-384b-458f-a668-976c52649a3e",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Muir",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "40706de8-e609-4f5c-a644-8926f2229eb1",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Margaret",
+          "fields" : [ {
+            "id" : "9db73ed3-1c7c-4b42-a8ad-b0596159bb04",
+            "attribution" : {
+              "modified" : 1701718688502,
+              "created" : 1701718688502
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "a08fab10-5cee-49be-89a3-985d8a15fc1c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "MARGARET"
+            }, {
+              "id" : "a08fab10-5cee-49be-89a3-985d8a15fc1c",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Margaret"
+            }, {
+              "id" : "a08fab10-5cee-49be-89a3-985d8a15fc1c",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Margaret",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
             } ]
           } ]
         } ],
         "fields" : [ {
-          "id" : "5d99b9d1-c215-47b9-8b50-8c41df4b6373",
+          "id" : "3f520291-cb88-456f-a0fc-694eee7e265a",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
           },
           "type" : "http://gedcomx.org/Name",
           "values" : [ {
-            "id" : "d3903d7c-b715-42ec-9e48-790c3f76d5ec",
+            "id" : "3d1e220c-178b-43ad-a570-73be709e4212",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "MARGARET MUIR"
+          }, {
+            "id" : "3d1e220c-178b-43ad-a570-73be709e4212",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "PR_NAME",
-            "text" : "Margaret Muir"
+            "text" : "Margaret Muir",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       } ]
     } ],
     "facts" : [ {
       "type" : "http://gedcomx.org/MaritalStatus",
-      "value" : "UNMARRIED",
+      "value" : "Single",
       "fields" : [ {
         "id" : "8468aebf-ecfa-41bd-9946-82e0314a4189",
         "attribution" : {
@@ -3010,6 +3913,25 @@
           "type" : "http://gedcomx.org/Original",
           "labelId" : "PR_MARITAL_STATUS_ORIG",
           "text" : "UNMARRIED"
+        }, {
+          "id" : "2aa002df-3425-4547-89d6-6872d939e632",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Single",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103333",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
         } ]
       } ]
     }, {
@@ -3063,8 +3985,9 @@
         }, {
           "id" : "09241e7e-0fd5-4a65-9996-257c901b9101",
           "attribution" : {
-            "modified" : 1701718688502,
-            "created" : 1701718688502
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
           },
           "type" : "http://gedcomx.org/Date",
           "values" : [ {
@@ -3076,12 +3999,28 @@
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
             } ]
+          }, {
+            "id" : "2bca1698-3936-4586-9610-c7e14495ca57",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "1861",
+            "resource" : "+1861",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       },
       "place" : {
         "id" : "20108d52-2e87-4f4d-a598-7cfed9651d43",
-        "original" : "Partick, Lanarkshire, Scotland",
+        "original" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
         "fields" : [ {
           "id" : "d9138b35-b49c-48de-af7b-bb95fa2f7130",
           "attribution" : {
@@ -3169,12 +4108,37 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "96bbafaa-b8ce-49c7-b9c9-a9d90e343468",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_PLACE_ORIG",
-            "text" : "Partick, Lanarkshire, Scotland",
+            "text" : "Govan, PARTICK, Partick, Lanarkshire, Scotland",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "96bbafaa-b8ce-49c7-b9c9-a9d90e343468",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Govan, Lanarkshire, Scotland, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/10587203",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
             } ]
           } ]
         } ]
@@ -3205,7 +4169,39 @@
       "date" : {
         "id" : "de1a9ee6-3cdb-4836-9667-5e3dd3226123",
         "original" : "1860",
+        "formal" : "+1860",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
         "fields" : [ {
+          "id" : "e044ed39-4bbe-43e5-a121-d89d96ab5e82",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "8277babd-9441-45db-9145-72be654b4d27",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1860"
+          }, {
+            "id" : "8277babd-9441-45db-9145-72be654b4d27",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1860",
+            "resource" : "+1860",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
           "id" : "306302c0-4313-4d81-8e85-2b6b63cc3a07",
           "attribution" : {
             "modified" : 1701718688502,
@@ -3222,7 +4218,7 @@
       },
       "place" : {
         "id" : "98af2037-ec7e-4fa4-bac6-1c8be5b6dc4b",
-        "original" : "Lanarkshire",
+        "original" : "Partick, LANARKSHIRE",
         "fields" : [ {
           "id" : "501f595c-2859-4808-b706-4cb782ecfcd3",
           "attribution" : {
@@ -3245,9 +4241,16 @@
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
             "id" : "86c86662-89ea-4d56-bd30-a2fab1ef8535",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "PR_BIR_PLACE_ORIG",
-            "text" : "Lanarkshire",
+            "text" : "Partick, LANARKSHIRE",
             "qualifiers" : [ {
               "value" : "true",
               "name" : "http://familysearch.org/types/qualifiers/Preferred"
@@ -3416,6 +4419,24 @@
         "type" : "http://gedcomx.org/Interpreted",
         "labelId" : "PR_AGE",
         "text" : "1"
+      }, {
+        "id" : "75658a7b-e2ff-4903-a49d-39d6bc994455",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "1 years",
+        "resource" : "P1Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
       } ],
       "qualifiers" : [ {
         "value" : "ce47e241-8bcd-4573-bcc5-c00a453b4a84",
@@ -3426,7 +4447,7 @@
       "name" : "Margaret Muir",
       "gender" : "Female",
       "birthDate" : "1860",
-      "birthPlace" : "Lanarkshire"
+      "birthPlace" : "Partick, LANARKSHIRE"
     }
   } ],
   "relationships" : [ {
@@ -3445,21 +4466,6 @@
       "resourceId" : "p_13808448716"
     }
   }, {
-    "id" : "91812319-fbbf-4a37-9627-57c135afad3e",
-    "attribution" : {
-      "modified" : 1701718688502,
-      "created" : 1701718688502
-    },
-    "type" : "http://gedcomx.org/Couple",
-    "person1" : {
-      "resource" : "#p_13808448712",
-      "resourceId" : "p_13808448712"
-    },
-    "person2" : {
-      "resource" : "#p_13808448713",
-      "resourceId" : "p_13808448713"
-    }
-  }, {
     "id" : "eda47b21-c661-4d47-ba7b-9fa714744274",
     "attribution" : {
       "modified" : 1701718688502,
@@ -3475,19 +4481,19 @@
       "resourceId" : "p_13808448714"
     }
   }, {
-    "id" : "62164675-7f60-4605-81da-d776d079c3e9",
+    "id" : "91812319-fbbf-4a37-9627-57c135afad3e",
     "attribution" : {
       "modified" : 1701718688502,
       "created" : 1701718688502
     },
-    "type" : "http://gedcomx.org/ParentChild",
+    "type" : "http://gedcomx.org/Couple",
     "person1" : {
       "resource" : "#p_13808448712",
       "resourceId" : "p_13808448712"
     },
     "person2" : {
-      "resource" : "#p_13808448717",
-      "resourceId" : "p_13808448717"
+      "resource" : "#p_13808448713",
+      "resourceId" : "p_13808448713"
     }
   }, {
     "id" : "f5272ffa-bfe3-4aee-acf9-8d0cfa9e76ba",
@@ -3505,6 +4511,21 @@
       "resourceId" : "p_13808448715"
     }
   }, {
+    "id" : "62164675-7f60-4605-81da-d776d079c3e9",
+    "attribution" : {
+      "modified" : 1701718688502,
+      "created" : 1701718688502
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13808448712",
+      "resourceId" : "p_13808448712"
+    },
+    "person2" : {
+      "resource" : "#p_13808448717",
+      "resourceId" : "p_13808448717"
+    }
+  }, {
     "id" : "ae17a93f-650c-4f2d-b705-1aa0c6f265d3",
     "attribution" : {
       "modified" : 1701718688502,
@@ -3520,7 +4541,7 @@
       "resourceId" : "p_13808448715"
     }
   }, {
-    "id" : "697757cc-0cde-45c8-be08-aa4205da4aef",
+    "id" : "623d1cc5-0662-4b75-83c2-4b5dc80c667e",
     "attribution" : {
       "modified" : 1701718688502,
       "created" : 1701718688502
@@ -3531,8 +4552,8 @@
       "resourceId" : "p_13808448713"
     },
     "person2" : {
-      "resource" : "#p_13808448714",
-      "resourceId" : "p_13808448714"
+      "resource" : "#p_13808448717",
+      "resourceId" : "p_13808448717"
     }
   }, {
     "id" : "6c4c02a0-53f0-4dd5-9138-eb50c074c66d",
@@ -3550,7 +4571,7 @@
       "resourceId" : "p_13808448716"
     }
   }, {
-    "id" : "623d1cc5-0662-4b75-83c2-4b5dc80c667e",
+    "id" : "697757cc-0cde-45c8-be08-aa4205da4aef",
     "attribution" : {
       "modified" : 1701718688502,
       "created" : 1701718688502
@@ -3561,8 +4582,8 @@
       "resourceId" : "p_13808448713"
     },
     "person2" : {
-      "resource" : "#p_13808448717",
-      "resourceId" : "p_13808448717"
+      "resource" : "#p_13808448714",
+      "resourceId" : "p_13808448714"
     }
   } ],
   "sourceDescriptions" : [ {
@@ -3575,10 +4596,11 @@
     },
     "resourceType" : "http://gedcomx.org/Record",
     "created" : 1701718688502,
-    "modified" : 1701876403847,
+    "modified" : 1709965613986,
     "coverage" : [ {
       "spatial" : {
-        "original" : "Partick, Lanarkshire, Scotland"
+        "original" : "Govan, Lanarkshire, Scotland, United Kingdom",
+        "description" : "https://www.familysearch.org/platform/places/description/10587203"
       },
       "temporal" : {
         "original" : "1861",
@@ -3587,7 +4609,7 @@
       "recordType" : "http://gedcomx.org/Census"
     } ],
     "citations" : [ {
-      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Sat Mar 09 06:26:53 UTC 2024), Entry for William Muir and Margaret Muir, 1861."
     } ],
     "sources" : [ {
       "description" : "#sd_da1",
@@ -3612,7 +4634,7 @@
     "about" : "https://www.familysearch.org/platform/records/collections/2028677",
     "resourceType" : "http://gedcomx.org/Collection",
     "created" : 1382223614352,
-    "modified" : 1701718688502,
+    "modified" : 1715275586953,
     "coverage" : [ {
       "spatial" : {
         "original" : "Scotland",
@@ -3738,6 +4760,16 @@
     "mediaType" : "image/jpeg",
     "about" : "https://www.familysearch.org/ark:/61903/3:1:9398-Z21H-J",
     "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Govan, Lanarkshire, Scotland, United Kingdom",
+        "description" : "https://www.familysearch.org/platform/places/description/10587203"
+      },
+      "temporal" : {
+        "original" : "1861",
+        "formal" : "+1861-01-01T00:00:00Z/P11M30DT23H59M59S"
+      }
+    } ],
     "identifiers" : {
       "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:9398-Z21H-J" ]
     },
@@ -3764,9 +4796,13 @@
     },
     "resourceType" : "http://gedcomx.org/Person",
     "citations" : [ {
-      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Sat Mar 09 06:26:53 UTC 2024), Entry for William Muir and Margaret Muir, 1861."
     } ],
     "titles" : [ {
+      "lang" : "en",
+      "value" : "William Muir, \"Scotland Census, 1861\""
+    } ],
+    "descriptions" : [ {
       "lang" : "en",
       "value" : "William Muir, \"Scotland Census, 1861\""
     } ],
@@ -3783,9 +4819,13 @@
     },
     "resourceType" : "http://gedcomx.org/Person",
     "citations" : [ {
-      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Sat Mar 09 06:26:53 UTC 2024), Entry for William Muir and Margaret Muir, 1861."
     } ],
     "titles" : [ {
+      "lang" : "en",
+      "value" : "Margaret Muir, \"Scotland Census, 1861\""
+    } ],
+    "descriptions" : [ {
       "lang" : "en",
       "value" : "Margaret Muir, \"Scotland Census, 1861\""
     } ],
@@ -3802,9 +4842,13 @@
     },
     "resourceType" : "http://gedcomx.org/Person",
     "citations" : [ {
-      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Sat Mar 09 06:26:53 UTC 2024), Entry for William Muir and Margaret Muir, 1861."
     } ],
     "titles" : [ {
+      "lang" : "en",
+      "value" : "William Muir, \"Scotland Census, 1861\""
+    } ],
+    "descriptions" : [ {
       "lang" : "en",
       "value" : "William Muir, \"Scotland Census, 1861\""
     } ],
@@ -3821,9 +4865,13 @@
     },
     "resourceType" : "http://gedcomx.org/Person",
     "citations" : [ {
-      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Sat Mar 09 06:26:53 UTC 2024), Entry for William Muir and Margaret Muir, 1861."
     } ],
     "titles" : [ {
+      "lang" : "en",
+      "value" : "James Muir, \"Scotland Census, 1861\""
+    } ],
+    "descriptions" : [ {
       "lang" : "en",
       "value" : "James Muir, \"Scotland Census, 1861\""
     } ],
@@ -3840,9 +4888,13 @@
     },
     "resourceType" : "http://gedcomx.org/Person",
     "citations" : [ {
-      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Sat Mar 09 06:26:53 UTC 2024), Entry for William Muir and Margaret Muir, 1861."
     } ],
     "titles" : [ {
+      "lang" : "en",
+      "value" : "Margaret Muir, \"Scotland Census, 1861\""
+    } ],
+    "descriptions" : [ {
       "lang" : "en",
       "value" : "Margaret Muir, \"Scotland Census, 1861\""
     } ],
@@ -3859,15 +4911,25 @@
     },
     "resourceType" : "http://gedcomx.org/Person",
     "citations" : [ {
-      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Wed Dec 06 15:26:43 UTC 2023), Entry for William Muir and Margaret Muir, 1861."
+      "value" : "\"Scotland Census, 1861\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VB4X-MPG : Sat Mar 09 06:26:53 UTC 2024), Entry for William Muir and Margaret Muir, 1861."
     } ],
     "titles" : [ {
+      "lang" : "en",
+      "value" : "Agnes Muir, \"Scotland Census, 1861\""
+    } ],
+    "descriptions" : [ {
       "lang" : "en",
       "value" : "Agnes Muir, \"Scotland Census, 1861\""
     } ],
     "identifiers" : {
       "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1001063606686" ],
       "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VB4X-MP5" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_10587203",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/10587203" ]
     }
   } ],
   "fields" : [ {

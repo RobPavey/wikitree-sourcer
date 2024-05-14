@@ -1,0 +1,89 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Janet Runciman",
+    "lastName": "Runciman",
+    "forenames": "Janet"
+  },
+  "birthDate": {
+    "dateString": "1830",
+    "yearString": "1830"
+  },
+  "birthPlace": {
+    "placeString": "Oldhamstocks, HADDINGTONSHIRE (EAST LOTHIAN)"
+  },
+  "eventDate": {
+    "dateString": "1871",
+    "yearString": "1871"
+  },
+  "eventPlace": {
+    "placeString": "Dunbar, Dunbar, Haddingtonshire, Scotland, United Kingdom"
+  },
+  "ageAtEvent": "41",
+  "householdArrayFields": [
+    "name",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Alexander Runciman",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "41",
+      "birthYear": "1830",
+      "occupation": "Labourer",
+      "birthPlace": "Spott, HADDINGTONSHIRE (EAST LOTHIAN)"
+    },
+    {
+      "name": "Janet Runciman",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "41",
+      "birthYear": "1830",
+      "birthPlace": "Oldhamstocks, HADDINGTONSHIRE (EAST LOTHIAN)",
+      "isSelected": true
+    },
+    {
+      "name": "Robert Runciman",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "17",
+      "birthYear": "1854",
+      "occupation": "Labourer",
+      "birthPlace": "Oldhamstocks, HADDINGTONSHIRE (EAST LOTHIAN)"
+    },
+    {
+      "name": "Janet Fairbairn Runciman",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "15",
+      "birthYear": "1856",
+      "occupation": "Servant",
+      "birthPlace": "Dunbar, HADDINGTONSHIRE (EAST LOTHIAN)"
+    }
+  ],
+  "maritalStatus": "married",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VBGD-YPR}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|9398-69SJ-T}}",
+    "{{FamilySearch Record|VBGD-YP5}}",
+    "{{FamilySearch Record|VBGD-YPR}}",
+    "{{FamilySearch Record|VBGD-YPT}}",
+    "{{FamilySearch Record|VBGD-YPY}}"
+  ],
+  "collectionData": {
+    "id": "2028678",
+    "page": "18"
+  },
+  "hasValidData": true
+}

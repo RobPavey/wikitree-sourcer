@@ -233,6 +233,11 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VBPV-BM1?from=lynx1UIV8&treeref=MSGJ-7PP",
   },
   {
+    // Having problems getting the relationship to head
+    caseName: "scotland_census_1871_janet_runciman",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VBGD-YPR",
+  },
+  {
     caseName: "scotland_census_1901_annie_alsbury",
     url: "https://www.familysearch.org/ark:/61903/1:1:7YN6-17PZ",
   },

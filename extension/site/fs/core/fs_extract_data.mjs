@@ -2318,6 +2318,35 @@ function extractFields(result, fields, map) {
             usedLabelIds[resultProperty] = labelId;
           }
         }
+      } else {
+        // It could be a weird case like this that happens in Scotland census e.g.:
+        //  https://www.familysearch.org/ark:/61903/1:1:VB4X-MPP
+        // "type" : "http://familysearch.org/types/fields/FsUnsupported",
+        // "values" : [ {
+        //   "id" : "1bfd7293-ccfb-43ed-a83a-ded6936ff9de",
+        //   "type" : "http://gedcomx.org/Interpreted",
+        //   "labelId" : "FS_UNSUPPORTED",
+        //   "text" : "{\"RELATIONSHIP\":\"HEAD\"}"
+        // }
+        if (fieldType == "FsUnsupported") {
+          for (let value of field.values) {
+            const labelId = value.labelId;
+            if (labelId == "FS_UNSUPPORTED") {
+              let text = value.text;
+              if (text.startsWith("{")) {
+                let textObj = JSON.parse(text);
+                if (textObj) {
+                  for (let key of Object.keys(textObj)) {
+                    let resultProperty = map[key];
+                    if (resultProperty && !result[resultProperty]) {
+                      result[resultProperty] = textObj[key];
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -3725,10 +3754,26 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
           RelationshipToHead: "relationship",
           RelationshipToOwner: "relationship", // only for slaves
           Relationship: "relationship",
+          RELATIONSHIP: "relationship",
           SourceSheetNbr: "sheetNumber",
           SourceLineNbr: "lineNumber",
         };
         extractFields(member, person.fields, personFieldsMap);
+      }
+
+      // If we don't have a relationship for this member we may be able to work one out from
+      // the relationships in the data.
+      // Example: https://www.familysearch.org/ark:/61903/1:1:7Y7S-3YMM
+      if (!member.relationship) {
+        // This can a weird situation where the head of household is not known. Like the example
+        // above. In this case FS just displays the relationship to the selected person.
+        // However, we want a relationship to head.
+        // So first we have to infer the head person from the relationships.
+        // One could assume that the father or the husband or the mother is going to be the head.
+        // But sometimes a widowed parent is living with a family.
+        // Then we would have to work out the relationships between the head and each person even
+        // though the data may only have the releationship between the selected erson and that person.
+        // It is doable in simple cases. But may not be worth the effort.
       }
 
       // get link to record for this person
