@@ -89,14 +89,20 @@ function onInstalledHandler(details) {
     return;
   }
 
-  reloadContentScripts();
+  // give time for background to be ready for the messages from the content scripts
+  setTimeout(function () {
+    reloadContentScripts();
+  }, 50);
 }
 
 function onEnabledHandler(extensionInfo) {
   //console.log("WikiTree Sourcer (Chrome): Enable detected. Installing content script in all tabs.");
   //console.log(extensionInfo);
 
-  reloadContentScripts();
+  // give time for background to be ready for the messages from the content scripts
+  setTimeout(function () {
+    reloadContentScripts();
+  }, 50);
 }
 
 chrome.runtime.onMessage.addListener(messageHandler);

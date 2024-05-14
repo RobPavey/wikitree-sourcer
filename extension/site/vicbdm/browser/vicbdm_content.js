@@ -666,32 +666,42 @@ var registeredTabId = undefined;
 
 async function registerTabWithBackground() {
   // send message to background script that we have a vicbdm tab open
-  let registerResponse = await chrome.runtime.sendMessage({ type: "registerTab", siteName: "vicbdm" });
+  // This can fail with the error:
+  //  Uncaught (in promise) Error: Extension context invalidated.
+  // if the extension has been updated. So we do a try/catch
+  try {
+    let registerResponse = await chrome.runtime.sendMessage({ type: "registerTab", siteName: "vicbdm" });
 
-  //console.log("vicbdm, response from registerTab message");
-  //console.log(registerResponse);
+    //console.log("vicbdm, response from registerTab message");
+    //console.log(registerResponse);
 
-  // we remember the tabId because in Firefox when we try to unregister
-  // the sender in the message receiver has no tab if the tab was closed already.
-  if (registerResponse && registerResponse.tab) {
-    registeredTabId = registerResponse.tab;
-  }
+    // we remember the tabId because in Firefox when we try to unregister
+    // the sender in the message receiver has no tab if the tab was closed already.
+    if (registerResponse && registerResponse.tab) {
+      registeredTabId = registerResponse.tab;
+    }
 
-  if (chrome.runtime.lastError) {
+    if (chrome.runtime.lastError) {
+      // possibly there is no background script loaded, this should never happen
+      console.log("vicbdm: No response from background script, lastError message is:");
+      console.log(chrome.runtime.lastError.message);
+    } else {
+      //console.log("addng event listener for unregister");
+
+      // NOTE: this listener does not get triggered on iOS when the X is pressed to close tab.
+      // It is a known bug and no workaround is known. Not unregistering the tab doesn't cause
+      // problems - an error is reported to console when it tries to reuse it but then it falls back
+      // to opening a new tab.
+      window.addEventListener("pagehide", function () {
+        //console.log("pagehide event");
+        unregisterTabWithBackground();
+      });
+    }
+  } catch (error) {
     // possibly there is no background script loaded, this should never happen
-    console.log("vicbdm: No response from background script, lastError message is:");
-    console.log(chrome.runtime.lastError.message);
-  } else {
-    //console.log("addng event listener for unregister");
-
-    // NOTE: this listener does not get triggered on iOS when the X is pressed to close tab.
-    // It is a known bug and no workaround is known. Not unregistering the tab doesn't cause
-    // problems - an error is reported to console when it tries to reuse it but then it falls back
-    // to opening a new tab.
-    window.addEventListener("pagehide", function () {
-      //console.log("pagehide event");
-      unregisterTabWithBackground();
-    });
+    // Could also be that the extension was just reloaded/updated
+    console.log("vicbdm: No response from background script, error is:");
+    console.log(error);
   }
 }
 
