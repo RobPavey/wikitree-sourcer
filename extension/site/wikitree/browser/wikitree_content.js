@@ -459,10 +459,17 @@ function setEditFamilyFields(personData) {
     setValue("#mBioWithoutSources", "notes");
     setValue("#mSources", "sources");
   } else {
+    /*
+    // I used to only force advanced mode to on if I had something to put in the box.
+    // but there were a lot of reports of people using the default option settinnsg where
+    // Set fields will have nothing there. But the the user pasts in the result of build all
+    // citations with narratives into the Sources box which causes errors.
     let needAdvancedMode = false;
     if (personData.notes || personData.sources) {
       needAdvancedMode = true;
     }
+    */
+    let needAdvancedMode = true;
 
     if (needAdvancedMode) {
       let advancedSourcesNode = document.querySelector("#useAdvancedSources");
