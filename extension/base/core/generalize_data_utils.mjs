@@ -1354,9 +1354,35 @@ class NameObj {
     }
 
     if (this.lastName && this.name && !this.name.endsWith(this.lastName)) {
-      let index = this.name.indexOf(this.lastName);
-      if (index != -1) {
-        return this.name.substring(index + this.lastName.length).trim();
+      // it is possible that this.name includes a suffix. But it is also possible that
+      // this.name isn in the form "last-name first-name" like this Hungarian FS profile:
+      // https://www.familysearch.org/tree/person/details/GZLH-57H
+
+      let lastNameIndex = this.name.indexOf(this.lastName);
+      if (lastNameIndex != -1) {
+        let textAfterLastName = this.name.substring(lastNameIndex + this.lastName.length).trim();
+        if (textAfterLastName) {
+          let forenames = this.inferForenames();
+          if (forenames) {
+            let forenamesIndex = this.name.indexOf(forenames);
+            if (forenamesIndex == -1 && this.firstName) {
+              forenamesIndex = this.name.indexOf(this.firstName);
+            }
+            if (forenamesIndex == -1 && this.firstNames) {
+              forenamesIndex = this.name.indexOf(this.firstNames);
+            }
+            if (forenamesIndex == -1 && this.forenames) {
+              forenamesIndex = this.name.indexOf(this.forenames);
+            }
+
+            if (forenamesIndex != -1 && forenamesIndex < lastNameIndex) {
+              let suffix = this.name.substring(lastNameIndex + this.lastName.length).trim();
+              if (suffix && !forenames.includes(suffix)) {
+                return suffix;
+              }
+            }
+          }
+        }
       }
     }
   }
