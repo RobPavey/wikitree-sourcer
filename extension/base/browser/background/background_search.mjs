@@ -112,6 +112,9 @@ async function handleDoSearchWithSearchDataMessage(request, sender, sendResponse
   // the response lets the sender know that the background is awake and it can proceed
   // (to close the popup for example)
   let response = { success: true };
+
+  //console.log("handleDoSearchWithSearchDataMessage, response is : " + response);
+
   sendResponse(response);
 }
 

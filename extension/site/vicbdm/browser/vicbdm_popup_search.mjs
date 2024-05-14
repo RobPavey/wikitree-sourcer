@@ -121,8 +121,15 @@ async function doVicbdmSearch(input) {
           if (chrome.runtime.lastError) {
             const message = "Failed to open search page, runtime.lastError is set";
             displayUnexpectedErrorMessage(message, chrome.runtime.lastError, true);
-          } else if (!response || !response.success) {
-            const message = "Failed to open search page, no response or success=false";
+          } else if (!response) {
+            // I'm getting this on Safari but it may be doe to dev environment
+            // If I run from xcode it works OK. It I then close Safari, reopen
+            // it doesn't seem to start the background script and I get this error.
+            let message = "Failed to open search page, no response from background script.";
+            message += "\nTry disabling and re-enabling the WikiTree Sourcer extension.";
+            displayUnexpectedErrorMessage(message, undefined, false);
+          } else if (!response.success) {
+            const message = "Failed to open search page, success=false";
             displayUnexpectedErrorMessage(message, response, true);
           } else {
             // message was received OK

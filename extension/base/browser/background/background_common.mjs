@@ -41,6 +41,14 @@ function setIcon(tab, iconPath) {
   chrome.action.setIcon({ tabId: tab, path: iconPath });
 }
 
+async function handleGetPlatformInfoMessage(request, sendResponse) {
+  let platformInfo = await chrome.runtime.getPlatformInfo();
+  //console.log("platformInfo is:");
+  //console.log(platformInfo);
+  let response = { success: true, platformInfo: platformInfo };
+  sendResponse(response);
+}
+
 // Listen for messages (from the popup script mostly)
 function messageHandler(request, sender, sendResponse) {
   // Request should have these fields
@@ -78,6 +86,9 @@ function messageHandler(request, sender, sendResponse) {
       let response = { success: true, options: options };
       sendResponse(response);
     });
+    return true;
+  } else if (request.type == "getPlatformInfo") {
+    handleGetPlatformInfoMessage(request, sendResponse);
     return true;
   }
   //else if (request.type == "updateContextMenu") {

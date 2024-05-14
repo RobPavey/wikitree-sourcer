@@ -212,35 +212,51 @@ async function doPendingSearch() {
 
     //console.log("doPendingSearch: fieldData is:");
     //console.log(fieldData);
+    //console.log("doPendingSearch: isRetry is");
+    //console.log(isRetry);
 
     let docHasFocus = document.hasFocus();
     if (!docHasFocus) {
-      console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-      console.log("The document is not focused!");
-      console.log("This can happen if the Javascript console is open and focused.");
-      console.log("Because this web page uses Angular, filling out the form will not work");
-      console.log("Bif the console is focused.");
-      console.log("Please close the Javascript console");
-      console.log("or click on the document and try again.");
-      console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
-      window.focus();
-      if (document.activeElement) {
-        document.activeElement.blur();
+      // send message to background script to get platformInfo
+      let isIos = false;
+      let getPlatformInfoResponse = await chrome.runtime.sendMessage({
+        type: "getPlatformInfo",
+      });
+      if (getPlatformInfoResponse && getPlatformInfoResponse.success) {
+        if (getPlatformInfoResponse.platformInfo && getPlatformInfoResponse.platformInfo.os == "ios") {
+          isIos = true;
+          //console.log("platform is iOS");
+        }
       }
 
-      docHasFocus = document.hasFocus();
-      console.log("after window.focus() and activeElement.blur(): docHasFocus is");
-      console.log(docHasFocus);
-      activeElement = document.activeElement;
-      console.log("after window.focus() and activeElement.blur(): activeElement is");
-      console.log(activeElement);
+      if (!isIos) {
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        console.log("The document is not focused!");
+        console.log("This can happen if the Javascript console is open and focused.");
+        console.log("Because this web page uses Angular, filling out the form will not work");
+        console.log("if the console is focused.");
+        console.log("Please close the Javascript console");
+        console.log("or click on the document and try again.");
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-      if (!docHasFocus) {
-        // this is not going to work, try resending the message but this is also unlikely to work
-        if (!isRetry) {
-          resendSearchMessage();
-          return;
+        window.focus();
+        if (document.activeElement) {
+          document.activeElement.blur();
+        }
+
+        docHasFocus = document.hasFocus();
+        console.log("after window.focus() and activeElement.blur(): docHasFocus is");
+        console.log(docHasFocus);
+        activeElement = document.activeElement;
+        console.log("after window.focus() and activeElement.blur(): activeElement is");
+        console.log(activeElement);
+
+        if (!docHasFocus) {
+          // this is not going to work, try resending the message but this is also unlikely to work
+          if (!isRetry) {
+            resendSearchMessage();
+            return;
+          }
         }
       }
     }
@@ -705,6 +721,15 @@ async function registerTabWithBackground() {
   }
 }
 
+async function registerTabThenCallDoPendingSearch() {
+  // we need to await here, because of retries we need to be sure that this tab is
+  // registered before doing the pending search
+  await registerTabWithBackground();
+  if (pendingSearchData) {
+    doPendingSearch();
+  }
+}
+
 function addMutationObserver() {
   // the problem is that the page changes after the load event.
   // We need some way to get an event when angular changes the page?
@@ -751,10 +776,7 @@ function addMutationObserver() {
               break;
             } else if (currentPageType == "historical-search") {
               //console.log("historical-search added");
-              registerTabWithBackground();
-              if (pendingSearchData) {
-                doPendingSearch();
-              }
+              registerTabThenCallDoPendingSearch();
             }
           }
         }
