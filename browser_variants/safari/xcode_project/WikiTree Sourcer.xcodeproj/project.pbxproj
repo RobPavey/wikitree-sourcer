@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B881A2C62BF6836A00815650 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B881A2C52BF6836A00815650 /* manifest.json */; };
+		B881A2CC2BF8075B00815650 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B881A2CB2BF8075B00815650 /* manifest.json */; };
 		B881D544270E748700F218CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D543270E748700F218CF /* AppDelegate.swift */; };
 		B881D546270E748700F218CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881D545270E748700F218CF /* SceneDelegate.swift */; };
 		B881D549270E748700F218CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B881D547270E748700F218CF /* LaunchScreen.storyboard */; };
@@ -33,10 +35,6 @@
 		B89CDDB4271756F600ADA220 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B89CDD94271756F500ADA220 /* images */; };
 		B89CDDB5271756F600ADA220 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B89CDD94271756F500ADA220 /* images */; };
 		B89CDDB6271756F600ADA220 /* images in Resources */ = {isa = PBXBuildFile; fileRef = B89CDD94271756F500ADA220 /* images */; };
-		B8B9A78027F63672008D90DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B8B9A77F27F63672008D90DE /* manifest.json */; };
-		B8B9A78127F63672008D90DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B8B9A77F27F63672008D90DE /* manifest.json */; };
-		B8B9A78227F63672008D90DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B8B9A77F27F63672008D90DE /* manifest.json */; };
-		B8B9A78327F63672008D90DE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B8B9A77F27F63672008D90DE /* manifest.json */; };
 		B8E484AA28026B5D0027CE35 /* base in Resources */ = {isa = PBXBuildFile; fileRef = B8E484A928026B5D0027CE35 /* base */; };
 		B8E484AB28026B5D0027CE35 /* base in Resources */ = {isa = PBXBuildFile; fileRef = B8E484A928026B5D0027CE35 /* base */; };
 		B8E484AC28026B5D0027CE35 /* base in Resources */ = {isa = PBXBuildFile; fileRef = B8E484A928026B5D0027CE35 /* base */; };
@@ -90,6 +88,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B881A2C52BF6836A00815650 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = ../../../macos/manifest.json; sourceTree = "<group>"; };
+		B881A2CB2BF8075B00815650 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = ../../../ios/manifest.json; sourceTree = "<group>"; };
 		B881D534270E748400F218CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
 		B881D535270E748400F218CF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B881D536270E748400F218CF /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 		B881D56E270E748700F218CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B881D56F270E748700F218CF /* WikiTree Sourcer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WikiTree Sourcer.entitlements"; sourceTree = "<group>"; };
 		B89CDD94271756F500ADA220 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../../../../extension/images; sourceTree = "<group>"; };
-		B8B9A77F27F63672008D90DE /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = ../../manifest.json; sourceTree = "<group>"; };
 		B8E484A928026B5D0027CE35 /* base */ = {isa = PBXFileReference; lastKnownFileType = folder; name = base; path = ../../../../extension/base; sourceTree = "<group>"; };
 		B8E484AE28026B830027CE35 /* site */ = {isa = PBXFileReference; lastKnownFileType = folder; name = site; path = ../../../../extension/site; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +150,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B881A2C42BF6834300815650 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B881A2C52BF6836A00815650 /* manifest.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B881A2CA2BF8073100815650 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B881A2CB2BF8075B00815650 /* manifest.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B881D52C270E748400F218CF = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +246,7 @@
 		B881D563270E748700F218CF /* iOS (Extension) */ = {
 			isa = PBXGroup;
 			children = (
+				B881A2CA2BF8073100815650 /* Resources */,
 				B881D564270E748700F218CF /* Info.plist */,
 			);
 			path = "iOS (Extension)";
@@ -239,6 +255,7 @@
 		B881D56D270E748700F218CF /* macOS (Extension) */ = {
 			isa = PBXGroup;
 			children = (
+				B881A2C42BF6834300815650 /* Resources */,
 				B881D56E270E748700F218CF /* Info.plist */,
 				B881D56F270E748700F218CF /* WikiTree Sourcer.entitlements */,
 			);
@@ -251,7 +268,6 @@
 				B8E484AE28026B830027CE35 /* site */,
 				B8E484A928026B5D0027CE35 /* base */,
 				B89CDD94271756F500ADA220 /* images */,
-				B8B9A77F27F63672008D90DE /* manifest.json */,
 			);
 			name = Resources;
 			path = "Shared (Extension)";
@@ -385,7 +401,6 @@
 				B881D572270E748700F218CF /* Icon.png in Resources */,
 				B881D549270E748700F218CF /* LaunchScreen.storyboard in Resources */,
 				B881D570270E748700F218CF /* Main.html in Resources */,
-				B8B9A78027F63672008D90DE /* manifest.json in Resources */,
 				B8E484AA28026B5D0027CE35 /* base in Resources */,
 				B881D576270E748700F218CF /* Script.js in Resources */,
 				B881D57A270E748700F218CF /* Assets.xcassets in Resources */,
@@ -406,7 +421,6 @@
 				B881D573270E748700F218CF /* Icon.png in Resources */,
 				B881D575270E748700F218CF /* Style.css in Resources */,
 				B881D558270E748700F218CF /* Main.storyboard in Resources */,
-				B8B9A78127F63672008D90DE /* manifest.json in Resources */,
 				B881D577270E748700F218CF /* Script.js in Resources */,
 				B881D57B270E748700F218CF /* Assets.xcassets in Resources */,
 				B881D571270E748700F218CF /* Main.html in Resources */,
@@ -417,7 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8B9A78227F63672008D90DE /* manifest.json in Resources */,
+				B881A2CC2BF8075B00815650 /* manifest.json in Resources */,
 				B8E484B128026B830027CE35 /* site in Resources */,
 				B89CDDB5271756F600ADA220 /* images in Resources */,
 				B8E484AC28026B5D0027CE35 /* base in Resources */,
@@ -428,8 +442,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8B9A78327F63672008D90DE /* manifest.json in Resources */,
 				B8E484B228026B830027CE35 /* site in Resources */,
+				B881A2C62BF6836A00815650 /* manifest.json in Resources */,
 				B89CDDB6271756F600ADA220 /* images in Resources */,
 				B8E484AD28026B5D0027CE35 /* base in Resources */,
 			);

@@ -70,7 +70,7 @@ function getSupportedDates() {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function doVicbdmSearch(input) {
+async function doVicbdmSearch(input, isRetry = false) {
   doAsyncActionWithCatch("Victoria BDM (Aus) Search", input, async function () {
     let loadedModule = await import(`../core/vicbdm_build_search_data.mjs`);
     let buildResult = loadedModule.buildSearchData(input);
@@ -122,12 +122,22 @@ async function doVicbdmSearch(input) {
             const message = "Failed to open search page, runtime.lastError is set";
             displayUnexpectedErrorMessage(message, chrome.runtime.lastError, true);
           } else if (!response) {
-            // I'm getting this on Safari but it may be doe to dev environment
+            // I'm getting this on Safari but it may be due to dev environment
             // If I run from xcode it works OK. It I then close Safari, reopen
             // it doesn't seem to start the background script and I get this error.
-            let message = "Failed to open search page, no response from background script.";
-            message += "\nTry disabling and re-enabling the WikiTree Sourcer extension.";
-            displayUnexpectedErrorMessage(message, undefined, false);
+            // I changes Safari macOS back to using service_worker in the manifest and
+            // that seemed to fix that. I still see it in iOS (simulator) though. It seems
+            // to happen when the background has been unloaded and doig the search again
+            // immediately after seems to fix it. So adding a timeout and retry here
+            if (isRetry) {
+              let message = "Failed to open search page, no response from background script.";
+              message += "\nTry disabling and re-enabling the WikiTree Sourcer extension.";
+              displayUnexpectedErrorMessage(message, undefined, false);
+            } else {
+              setTimeout(function () {
+                doVicbdmSearch(input, true);
+              }, 100);
+            }
           } else if (!response.success) {
             const message = "Failed to open search page, success=false";
             displayUnexpectedErrorMessage(message, response, true);
