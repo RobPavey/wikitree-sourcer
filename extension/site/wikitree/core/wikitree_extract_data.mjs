@@ -798,7 +798,17 @@ function extractDataForEditFamily(document, result) {
     if (currentTab) {
       if (currentTab.id == "basicDataTab") {
         result.editFamilyTypeStep = "basicData";
+      } else if (currentTab.id == "validationTab") {
+        result.editFamilyTypeStep = "validation";
+      } else if (currentTab.id == "potentialMatchesTab") {
+        result.editFamilyTypeStep = "potentialMatches";
+      } else if (currentTab.id == "connectionsTab") {
+        result.editFamilyTypeStep = "connections";
+      } else if (currentTab.id == "sourcesTab") {
+        result.editFamilyTypeStep = "sources";
       }
+    } else {
+      result.editFamilyTypeStep = "action";
     }
   } else {
     result.editFamilyType = "oneStage";

@@ -4192,6 +4192,10 @@ class GeneralizedData {
           }
         }
       }
+    } else {
+      // we have no country information for the person so they could have lived anywhere
+      //console.log("didPersonLiveInCountryList: no countries, returining true");
+      return true;
     }
 
     return false;

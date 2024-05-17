@@ -108,15 +108,20 @@ function testFilterForDatesAndCountries(filter, startYear, endYear, countryArray
 
   if (filter.filterByCountry) {
     let countryMatch = false;
-    for (let country of filter.countryArray) {
-      for (let targetCountry of countryArray) {
-        if (country == targetCountry || CD.isPartOf(country, targetCountry)) {
-          countryMatch = true;
+    if (filter.countryArray.length == 0) {
+      // if the page has no country it should match all countries rather than none
+      countryMatch = true;
+    } else {
+      for (let country of filter.countryArray) {
+        for (let targetCountry of countryArray) {
+          if (country == targetCountry || CD.isPartOf(country, targetCountry)) {
+            countryMatch = true;
+            break;
+          }
+        }
+        if (countryMatch) {
           break;
         }
-      }
-      if (countryMatch) {
-        break;
       }
     }
     if (!countryMatch) {

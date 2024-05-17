@@ -2286,6 +2286,16 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
     return;
   }
 
+  if (extractedData.pageType == "editFamily") {
+    if (extractedData.editFamilyType == "steps" && extractedData.editFamilyTypeStep == "action") {
+      let message = "WikiTree Sourcer can't extract useful data from this page.";
+      message += "\n\nPlease continue to the next page if adding a person.";
+      let data = { extractedData: extractedData };
+      buildMinimalMenuWithMessage(message, data, backFunction);
+      return;
+    }
+  }
+
   makeApiRequests(extractedData);
 
   // get generalized data
