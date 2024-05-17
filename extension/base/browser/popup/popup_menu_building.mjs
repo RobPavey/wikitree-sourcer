@@ -31,6 +31,8 @@ import { openOrShowOptionsPage } from "/base/browser/common/browser_compat.mjs";
 
 import { clearCitation } from "/base/browser/popup/popup_citation.mjs";
 
+import { addShowCitationAssistantMenuItem } from "/base/browser/popup/popup_menu_blocks.mjs";
+
 /**
  * Temporary workaround for secondary monitors on MacOS where redraws don't happen
  * @See https://bugs.chromium.org/p/chromium/issues/detail?id=971701
@@ -1290,6 +1292,7 @@ function addBuildCitationMenuItem(
 
 function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, regeneralizeFunction, userInputFunction) {
   if (data.extractedData.pageType && data.extractedData.pageType != "record") {
+    addShowCitationAssistantMenuItem(menu);
     return;
   }
 

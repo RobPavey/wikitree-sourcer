@@ -41,7 +41,11 @@ import {
   saveUnitTestData,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
+import {
+  addStandardMenuEnd,
+  addShowCitationAssistantMenuItem,
+  buildMinimalMenuWithMessage,
+} from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
@@ -475,6 +479,9 @@ async function setupFsPopupMenu(extractedData) {
     addBuildFsTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "book") {
     addBuildBookCitationMenuItems(menu, data);
+  } else {
+    addMenuDivider(menu);
+    addShowCitationAssistantMenuItem(menu);
   }
 
   addStandardMenuEnd(menu, data, backFunction);

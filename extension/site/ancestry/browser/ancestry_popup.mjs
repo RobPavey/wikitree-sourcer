@@ -47,7 +47,11 @@ import { isFirefox } from "/base/browser/common/browser_check.mjs";
 
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
 
-import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
+import {
+  addStandardMenuEnd,
+  addShowCitationAssistantMenuItem,
+  buildMinimalMenuWithMessage,
+} from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 
@@ -899,6 +903,9 @@ async function setupAncestryPopupMenuWithLinkData(data) {
     addAncestryGoToFullImageMenuItem(menu, data);
   } else if (extractedData.pageType == "treeMedia") {
     addBuildAncestryTreeMediaTemplateMenuItem(menu, data);
+  } else {
+    addMenuDivider(menu);
+    addShowCitationAssistantMenuItem(menu);
   }
 
   addStandardMenuEnd(menu, data, backFunction);

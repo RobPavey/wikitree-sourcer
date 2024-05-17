@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import {
+  addMenuItem,
   addItalicMessageMenuItem,
   addHelpMenuItem,
   addBuyMeACoffeeMenuItem,
@@ -44,12 +45,49 @@ function addStandardMenuEnd(menu, data, backFunction) {
   endMainMenu(menu);
 }
 
+async function openUserCitationTab() {
+  const url = chrome.runtime.getURL("/base/browser/user_citation/user_citation.html");
+
+  let views = chrome.extension.getViews({
+    type: "tab",
+  });
+
+  let existingTab = undefined;
+  for (let view of views) {
+    if (view.document.documentURI == url) {
+      let tab = await view.chrome.tabs.getCurrent();
+      existingTab = tab;
+    }
+  }
+
+  if (existingTab) {
+    chrome.tabs.update(existingTab.id, { active: true });
+    chrome.windows.update(existingTab.windowId, { focused: true });
+  } else {
+    chrome.tabs.create({ url: url });
+  }
+
+  // popup will close automatically if new tab created or tab exists in same window
+  // but it tab esists in a different window on another screen for example we still
+  // want to close the popup.
+  closePopup();
+}
+
+function addShowCitationAssistantMenuItem(menu) {
+  addMenuItem(menu, "Show Citation Assistant", function (element) {
+    openUserCitationTab();
+  });
+}
+
 function buildMinimalMenuWithMessage(message, data, backFunction) {
   let menu = beginMainMenu();
 
   addItalicMessageMenuItem(menu, message);
 
+  addMenuDivider(menu);
+  addShowCitationAssistantMenuItem(menu);
+
   addStandardMenuEnd(menu, data, backFunction);
 }
 
-export { addStandardMenuEnd, buildMinimalMenuWithMessage };
+export { addStandardMenuEnd, addShowCitationAssistantMenuItem, buildMinimalMenuWithMessage };

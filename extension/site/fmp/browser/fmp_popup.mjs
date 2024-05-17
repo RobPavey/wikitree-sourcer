@@ -33,7 +33,11 @@ import {
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
+import {
+  addStandardMenuEnd,
+  addShowCitationAssistantMenuItem,
+  buildMinimalMenuWithMessage,
+} from "/base/browser/popup/popup_menu_blocks.mjs";
 
 import {
   clearCitation,
@@ -205,6 +209,9 @@ async function setupFmpPopupMenu(extractedData) {
     await addSearchMenus(menu, data, backFunction, "fmp");
     addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data);
+  } else {
+    addMenuDivider(menu);
+    addShowCitationAssistantMenuItem(menu);
   }
 
   addStandardMenuEnd(menu, data, backFunction);
