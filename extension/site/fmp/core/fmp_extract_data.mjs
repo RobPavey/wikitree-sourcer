@@ -834,22 +834,24 @@ function extractStyle1TranscriptionData(document, result) {
 
   // Header
   let headingNode = headerContentNode.querySelector("div > h1");
-  result.heading = cleanText(headingNode.textContent);
+  if (headingNode) {
+    result.heading = cleanText(headingNode.textContent);
 
-  let childDivNodeList = headerContentNode.querySelectorAll(":scope div:nth-child(2) > div");
-  if (childDivNodeList.length > 0) {
-    result.collection = "";
-    for (let divNode of childDivNodeList) {
-      let text = divNode.textContent;
-      if (text && !result.collection) {
-        // Sometimes there are extra div elements with text like
-        // "Actions for this transcript".
-        // This only seems to happen in narrow browser windows (seen on Firefox and Vivaldi).
-        const lcText = text.toLowerCase();
-        if (!lcText.includes("actions for")) {
-          result.collection = cleanText(text);
+    // Collection, this is a tricky one to get. It can behave differently in a narrow browser window.
+    let siblingNode = headingNode.nextElementSibling;
+    while (siblingNode) {
+      if (siblingNode.tagName.toLowerCase() == "div") {
+        let childDiv = siblingNode.querySelector("div");
+        if (childDiv && siblingNode.textContent) {
+          let text = siblingNode.textContent.trim();
+          const lcText = text.toLowerCase();
+          if (!lcText.includes("actions for")) {
+            result.collection = cleanText(text);
+            break;
+          }
         }
       }
+      siblingNode = siblingNode.nextElementSibling;
     }
   }
 
