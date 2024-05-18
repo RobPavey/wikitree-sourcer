@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 var pendingSearchData;
-var currentPageType;
 
 async function getPendingSearch() {
   //console.log("getPendingSearch");
@@ -767,7 +766,7 @@ function addMutationObserver() {
         //console.log(mutation);
         if (mutation.addedNodes && mutation.addedNodes.length > 0) {
           for (let addedNode of mutation.addedNodes) {
-            currentPageType = addedNode.tagName.toLowerCase();
+            let currentPageType = addedNode.tagName.toLowerCase();
             if (currentPageType == "search-results-page") {
               //console.log("search-results-page added");
               clearSearchingBanner();
@@ -793,19 +792,29 @@ async function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
     //console.log("vicbdm: additionalMessageHandler, request is:");
     //console.log(request);
-    //console.log("vicbdm: additionalMessageHandler, currentPageType is: " + currentPageType);
 
     pendingSearchData = request.searchData;
 
-    if (currentPageType == "historical-search") {
+    // we originally stored the currentPageType in a global var but that could get
+    // lost if the content script got unloaded somehow (being defensive here) so work it out
+    // here;
+
+    let mainElement = document.querySelector("div.main");
+    if (!mainElement) {
+      sendResponse({ success: false });
+      return { wasHandled: true };
+    }
+
+    if (mainElement.querySelector("historical-search")) {
       setSearchingBanner();
 
       doPendingSearch();
-    } else if (currentPageType == "search-result-details") {
+    } else if (mainElement.querySelector("search-result-details")) {
       doPendingSearchFromDetailsPage();
-    } else if (currentPageType == "search-results-page") {
+    } else if (mainElement.querySelector("search-results-page")) {
       doPendingSearchFromSearchResultsPage();
     }
+
     sendResponse({ success: true });
     return { wasHandled: true, returnValue: false };
   }
