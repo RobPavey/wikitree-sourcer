@@ -466,8 +466,8 @@ function extractDataForFamilyTreeProfile2024(document, url, result) {
             }
 
             if (spouse) {
-              let date = factDateDiv.textContent.trim();
-              let place = factPlaceDiv.textContent.trim();
+              let date = factDateDiv ? factDateDiv.textContent.trim() : "";
+              let place = factPlaceDiv ? factPlaceDiv.textContent.trim() : "";
               if (date) {
                 spouse.marriageDate = date;
               }
