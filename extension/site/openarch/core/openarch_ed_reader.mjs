@@ -221,19 +221,19 @@ class OpenarchEdReader extends ExtractedDataReader {
           finalLastName = "";
         }
 
-        if (patronym && patronym != []) {
-          if (finalLastName) {
-            finalLastName = patronym + " " + finalLastName;
-          } else {
-            finalLastName = patronym;
-          }
-        }
-
         if (lastNamePrefix && lastNamePrefix != []) {
           if (finalLastName) {
             finalLastName = lastNamePrefix + " " + finalLastName;
           } else {
             finalLastName = lastNamePrefix;
+          }
+        }
+
+        if (patronym && patronym != []) {
+          if (finalLastName) {
+            finalLastName = patronym + " " + finalLastName;
+          } else {
+            finalLastName = patronym;
           }
         }
 
