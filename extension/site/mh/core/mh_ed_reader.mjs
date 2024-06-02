@@ -644,9 +644,9 @@ class MhEdReader extends ExtractedDataReader {
       }
 
       if (!person.age && (birthDateValue || (mainValue && mainValue["Birth"]))) {
-        if (birthDateValue.value) {
+        if (birthDateValue && birthDateValue.value) {
           person.birthDateString = birthDateValue.value;
-        } else if (birthDateValue.dateString) {
+        } else if (birthDateValue && birthDateValue.dateString) {
           person.birthDateString = birthDateValue.dateString;
         } else if (mainValue && mainValue["Birth"]) {
           person.birthDateString = mainValue["Birth"];

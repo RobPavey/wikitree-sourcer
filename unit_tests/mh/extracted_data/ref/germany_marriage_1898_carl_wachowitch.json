@@ -1,0 +1,57 @@
+{
+  "url": "https://www.myheritage.com/research/record-20726-371828/carl-wachowitz-and-caroline-friederike-born-bannach-in-germany-north-rhine-westphalia-munster-detmold-arnsberg-marriages",
+  "success": true,
+  "collectionTitle": "Germany, North Rhine-Westphalia - Münster, Detmold, and Arnsberg Marriages, 1874-1899",
+  "pageType": "record",
+  "recordTitle": "Carl Wachowitz & Caroline Friederike (born Bannach)",
+  "recordData": {
+    "person-events.marriage": {
+      "label": "Marriage",
+      "dateString": "Mar 12 1898",
+      "placeString": "Altenbochum, North Rhine-Westphalia, Germany"
+    },
+    "person-canonical-events.name-as-groom": {
+      "label": "Groom",
+      "Name": "Carl Wachowitz",
+      "Birth": "Wilmsdor",
+      "Father": "Jacob Wachowitz",
+      "Mother": "Sophie"
+    },
+    "person-relatives.spouse.name-as-bride": {
+      "label": "Bride",
+      "Name": "Caroline Friederike",
+      "Birth": "Rettkowen",
+      "Father": "Carl Bannach",
+      "Mother": "Elisabeth"
+    },
+    "witness-multitable": {
+      "label": "Witness",
+      "Name": "Gustav Seusitz",
+      "Birth": "Circa 1873",
+      "Age": "25"
+    },
+    "witness2-multitable": {
+      "label": "Witness",
+      "Name": "Johann Pukropski",
+      "Birth": "Circa 1872",
+      "Age": "26"
+    },
+    "custom_9": {
+      "label": "Certificate #",
+      "value": "43"
+    },
+    "custom_10": {
+      "label": "Registry office",
+      "value": "Bochum II Süd"
+    },
+    "custom_11": {
+      "label": "Administrative district",
+      "value": "Bochum"
+    },
+    "custom_12": {
+      "label": "District",
+      "value": "Arnsberg"
+    }
+  },
+  "recordSections": {}
+}

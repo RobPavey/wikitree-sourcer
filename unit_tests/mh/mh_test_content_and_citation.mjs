@@ -100,6 +100,10 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-20397-2372852/robert-moore-in-france-paris-census",
   },
   {
+    caseName: "germany_marriage_1898_carl_wachowitch",
+    url: "https://www.myheritage.com/research/record-20726-371828/carl-wachowitz-and-caroline-friederike-born-bannach-in-germany-north-rhine-westphalia-munster-detmold-arnsberg-marriages",
+  },
+  {
     caseName: "jamaica_church_1867_james_johnson",
     url: "https://www.myheritage.com/research/record-30261-278584/james-johnson-in-jamaica-church-of-england-parish-register-transcripts",
   },
