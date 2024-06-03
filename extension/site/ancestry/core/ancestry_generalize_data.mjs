@@ -71,6 +71,10 @@ const recordTypeByFields = [
   },
   {
     type: RT.Marriage,
+    labels: ["Affidavit or License Date", "License Place", "Spouse"],
+  },
+  {
+    type: RT.Marriage,
     labels: ["Allegation Date", "Marriage License Place", "Spouse"],
   },
   { type: RT.Marriage, labels: ["License Date", "License Place", "Spouse"] },
@@ -617,6 +621,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       "Marriage Date",
       "Marriage Banns Date",
       "Allegation Date",
+      "Affidavit or License Date",
       "Marriage Year",
       "Marriage Banns Year",
       "Allegation Year",
@@ -1499,6 +1504,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "License Date",
           "Event Date",
           "Allegation Date",
+          "Affidavit or License Date",
           "Translated Marriage Date",
           "Marriage Year",
           "Marriage Date on Image",

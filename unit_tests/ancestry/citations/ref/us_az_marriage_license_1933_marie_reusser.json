@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Marie married Ellis E. Royat on 9 October 1943 in Maricopa, Arizona, USA.<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)<br/>\nMarie Reusser marriage to Ellis E. Royat on 9 Oct 1943 in Maricopa, Arizona, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Marie married Ellis E. Royat on 9 October 1943 in Maricopa, Arizona, USA.<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)<br/>\nMarie Reusser marriage to Ellis E. Royat on 9 Oct 1943 in Maricopa, Arizona, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)<br/>Marie Reusser marriage to Ellis E. Royat on 9 Oct 1943 in Maricopa, Arizona, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)<br/>\nName: Marie Reusser; Gender: Female; Affidavit or License Age: 21; Affidavit or License Date: 9 Oct 1943; License Place: Maricopa, Arizona, USA; Spouse: Ellis E. Royat; Description: Marriage Affidavits, 1943.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Marie married Ellis E. Royat on 9 October 1943 in Maricopa, Arizona, USA.<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)<br/>\nName: Marie Reusser; Gender: Female; Affidavit or License Age: 21; Affidavit or License Date: 9 Oct 1943; License Place: Maricopa, Arizona, USA; Spouse: Ellis E. Royat; Description: Marriage Affidavits, 1943.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)<br/>Name: Marie Reusser; Gender: Female; Affidavit or License Age: 21; Affidavit or License Date: 9 Oct 1943; License Place: Maricopa, Arizona, USA; Spouse: Ellis E. Royat; Description: Marriage Affidavits, 1943.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Marie Reusser\n|-\n| Gender || Female\n|-\n| Affidavit or License Age || 21\n|-\n| Affidavit or License Date || 9 Oct 1943\n|-\n| License Place || Maricopa, Arizona, USA\n|-\n| Spouse || Ellis E. Royat\n|-\n| Description || Marriage Affidavits, 1943\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Marie married Ellis E. Royat on 9 October 1943 in Maricopa, Arizona, USA.<ref>\n'''Marriage''':\n\"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>\n{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Marie Reusser\n|-\n| Gender || Female\n|-\n| Affidavit or License Age || 21\n|-\n| Affidavit or License Date || 9 Oct 1943\n|-\n| License Place || Maricopa, Arizona, USA\n|-\n| Spouse || Ellis E. Royat\n|-\n| Description || Marriage Affidavits, 1943\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Arizona, U.S., County Marriage Records, 1865-1972\"<br/>{{Ancestry Record|60873|900142519}} (accessed 6 May 2021)<br/>Name: Marie Reusser; Gender: Female; Affidavit or License Age: 21; Affidavit or License Date: 9 Oct 1943; License Place: Maricopa, Arizona, USA; Spouse: Ellis E. Royat; Description: Marriage Affidavits, 1943.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Arizona, U.S., County Marriage Records, 1865-1972,\" database, ({{Ancestry Record|60873|900142519}} : accessed 6 May 2021), Marie Reusser marriage to Ellis E. Royat on 9 Oct 1943 in Maricopa, Arizona, USA.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Marie married Ellis E. Royat on 9 October 1943 in Maricopa, Arizona, USA.<ref>\"Arizona, U.S., County Marriage Records, 1865-1972,\" database, ({{Ancestry Record|60873|900142519}} : accessed 6 May 2021), Marie Reusser marriage to Ellis E. Royat on 9 Oct 1943 in Maricopa, Arizona, USA.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Arizona, U.S., County Marriage Records, 1865-1972,\" database, ({{Ancestry Record|60873|900142519}} : accessed 6 May 2021), Marie Reusser marriage to Ellis E. Royat on 9 Oct 1943 in Maricopa, Arizona, USA.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage'':\n\"Arizona, U.S., County Marriage Records, 1865-1972\", database, \n({{Ancestry Record|60873|900142519}} : accessed 6 May 2021), \nName: Marie Reusser; Gender: Female; Affidavit or License Age: 21; Affidavit or License Date: 9 Oct 1943; License Place: Maricopa, Arizona, USA; Spouse: Ellis E. Royat; Description: Marriage Affidavits, 1943.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Marie married Ellis E. Royat on 9 October 1943 in Maricopa, Arizona, USA.<ref>\n''Marriage'':\n\"Arizona, U.S., County Marriage Records, 1865-1972\", database, \n({{Ancestry Record|60873|900142519}} : accessed 6 May 2021), \nName: Marie Reusser; Gender: Female; Affidavit or License Age: 21; Affidavit or License Date: 9 Oct 1943; License Place: Maricopa, Arizona, USA; Spouse: Ellis E. Royat; Description: Marriage Affidavits, 1943.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage'': \"Arizona, U.S., County Marriage Records, 1865-1972\", database, ({{Ancestry Record|60873|900142519}} : accessed 6 May 2021), Name: Marie Reusser; Gender: Female; Affidavit or License Age: 21; Affidavit or License Date: 9 Oct 1943; License Place: Maricopa, Arizona, USA; Spouse: Ellis E. Royat; Description: Marriage Affidavits, 1943.",
+    "type": "source"
+  }
+}

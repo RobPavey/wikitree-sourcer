@@ -781,6 +781,10 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61775&h=1236093",
   },
   {
+    caseName: "us_az_marriage_license_1933_marie_reusser",
+    url: "https://www.ancestry.com/discoveryui-content/view/900142519:60873",
+  },
+  {
     caseName: "us_burial_fg_1831_ada_kirby",
     url: "https://www.ancestry.co.uk/discoveryui-content/view/106712744:60525",
   },

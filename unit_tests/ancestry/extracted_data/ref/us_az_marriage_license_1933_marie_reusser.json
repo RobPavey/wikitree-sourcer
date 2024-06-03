@@ -1,0 +1,27 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/900142519:60873",
+  "pageType": "record",
+  "dbId": "60873",
+  "recordId": "900142519",
+  "ancestryTemplate": "{{Ancestry Record|60873|900142519}}",
+  "domain": "com",
+  "titleName": "Marie Reusser",
+  "titleCollection": "Arizona, U.S., County Marriage Records, 1865-1972",
+  "recordData": {
+    "Name": "Marie Reusser",
+    "Gender": "Female",
+    "Affidavit or License Age": "21",
+    "Affidavit or License Date": "9 Oct 1943",
+    "License Place": "Maricopa, Arizona, USA",
+    "Spouse": "Ellis E. Royat",
+    "Description": "Marriage Affidavits, 1943"
+  },
+  "linkData": {
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=60873&h=142519&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/60873/images/40657_541952-01097?pid=900142519&usePUB=true&usePUBJs=true",
+  "imageDbId": "60873",
+  "imageRecordId": "40657_541952-01097",
+  "sourceInformation": "Ancestry.com. Arizona, U.S., County Marriage Records, 1865-1972 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2016. Original data: County Marriage Records. Arizona History and Archives Division, Phoenix, Arizona.",
+  "sourceDescription": "This collection includes various types of marriage records from counties in Arizona. Learn more..."
+}

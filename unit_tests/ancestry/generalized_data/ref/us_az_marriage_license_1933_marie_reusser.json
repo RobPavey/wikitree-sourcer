@@ -1,0 +1,39 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Marie Reusser"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "9 Oct 1943"
+  },
+  "eventPlace": {
+    "placeString": "Maricopa, Arizona, USA"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Ellis E. Royat"
+      },
+      "marriageDate": {
+        "dateString": "9 Oct 1943"
+      },
+      "marriagePlace": {
+        "placeString": "Maricopa, Arizona, USA"
+      }
+    }
+  ],
+  "lastNameAtDeath": "Royat",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|60873|900142519}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|60873|142519}}"
+  ],
+  "collectionData": {
+    "id": "60873"
+  },
+  "hasValidData": true
+}
