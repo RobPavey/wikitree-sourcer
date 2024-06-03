@@ -1,0 +1,57 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "name": "Carl Wachowitz"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "12 Mar 1898"
+  },
+  "eventPlace": {
+    "placeString": "Altenbochum, North Rhine-Westphalia, Germany"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Caroline Friederike"
+      },
+      "marriageDate": {
+        "dateString": "12 Mar 1898"
+      },
+      "marriagePlace": {
+        "placeString": "Altenbochum, North Rhine-Westphalia, Germany"
+      },
+      "personGender": "female",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "Carl Bannach"
+          }
+        },
+        "mother": {
+          "name": {
+            "name": "Elisabeth"
+          }
+        }
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Jacob Wachowitz"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Sophie"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "20726"
+  },
+  "hasValidData": true
+}
