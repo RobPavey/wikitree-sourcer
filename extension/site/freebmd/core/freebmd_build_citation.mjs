@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 //import { FBMD } from "./freebmd_utils.mjs";
 
 function buildFreebmdUrl(ed, builder) {
@@ -54,7 +55,7 @@ function getCorrectlyCasedName(name, options) {
   if (options.citation_freebmd_changeNamesToInitialCaps) {
     // the option says "Change any person and place names in all caps to initial caps"
     if (StringUtils.isWordAllUpperCase(name)) {
-      name = StringUtils.toInitialCaps(name);
+      name = NameUtils.convertNameFromAllCapsToMixedCase(name);
     }
   }
   return name;
@@ -64,7 +65,7 @@ function getCorrectlyCasedNames(name, options) {
   if (options.citation_freebmd_changeNamesToInitialCaps) {
     // the option says "Change any person and place names in all caps to initial caps"
     if (StringUtils.isWordAllUpperCase(name)) {
-      name = StringUtils.toInitialCapsEachWord(name, true);
+      name = NameUtils.convertNameFromAllCapsToMixedCase(name);
     }
   }
   return name;

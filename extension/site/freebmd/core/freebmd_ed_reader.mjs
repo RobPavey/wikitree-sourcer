@@ -24,6 +24,8 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 function freebmdQuarterToGdQuarter(quarter) {
   let string = quarter.toLowerCase();
@@ -58,6 +60,14 @@ class FreebmdEdReader extends ExtractedDataReader {
     }
   }
 
+  getCorrectlyCasedSurname() {
+    let surname = this.ed.surname;
+    if (StringUtils.isWordAllUpperCase(surname)) {
+      surname = NameUtils.convertNameFromAllCapsToMixedCase(surname);
+    }
+    return surname;
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -70,7 +80,7 @@ class FreebmdEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    return this.makeNameObjFromForenamesAndLastName(this.ed.givenNames, this.ed.surname);
+    return this.makeNameObjFromForenamesAndLastName(this.ed.givenNames, this.getCorrectlyCasedSurname());
   }
 
   getEventDateObj() {
@@ -79,14 +89,14 @@ class FreebmdEdReader extends ExtractedDataReader {
 
   getLastNameAtBirth() {
     if (this.ed.eventType == "birth") {
-      return this.ed.surname;
+      return this.getCorrectlyCasedSurname();
     }
     return "";
   }
 
   getLastNameAtDeath() {
     if (this.ed.eventType == "death") {
-      return this.ed.surname;
+      return this.getCorrectlyCasedSurname();
     }
     return "";
   }
