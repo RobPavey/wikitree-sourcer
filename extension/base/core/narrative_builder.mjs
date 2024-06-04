@@ -107,7 +107,7 @@ class NarrativeBuilder {
         ", Guernsey, Channel Islands",
         ", Guernsey, Channel Islands, United Kingdom",
       ],
-      [", United Kingdom", "UK"], // must come after the above countires that make up the UK
+      [", United Kingdom", "UK"], // must come after the above countries that make up the UK
       [", Ireland"],
       [", United States", ", United States of America", ", USA"],
       [", Canada"],

@@ -70,10 +70,10 @@ async function troveSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const stdCountryName = "Australia";
+  const stdCountryNames = ["Australia", "Colony of Victoria"];
 
   if (filter) {
-    if (!testFilterForDatesAndCountries(filter, troveStartYear, troveEndYear, [stdCountryName])) {
+    if (!testFilterForDatesAndCountries(filter, troveStartYear, troveEndYear, stdCountryNames)) {
       return;
     }
   } else {
@@ -99,7 +99,7 @@ function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
       return;
     }
 
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
+    if (!data.generalizedData.didPersonLiveInCountryList(stdCountryNames)) {
       //console.log("addTroveDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
       return;
     }

@@ -288,6 +288,8 @@ const CountryData = [
   { stdName: "New Zealand", matches: ["New Zealand"], usesMiddleNames: true, wifeChangesName: true },
   { stdName: "American Samoa", matches: ["American Samoa"] },
   { stdName: "Papua New Guinea", matches: ["Papua New Guinea"] },
+  { stdName: "Colony of Victoria", matches: ["Colony of Victoria"], partOf: ["Australia"] },
+  { stdName: "New South Wales", matches: ["New South Wales"] },
 
   // North Africa
   { stdName: "Algeria", matches: ["Algeria"] },

@@ -174,11 +174,11 @@ async function vicbdmSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addVicbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const stdCountryName = "Australia";
+  const stdCountryNames = ["Australia", "Colony of Victoria"];
   const supportedDates = getSupportedDates();
 
   if (filter) {
-    if (!testFilterForDatesAndCountries(filter, supportedDates.startYear, supportedDates.endYear, [stdCountryName])) {
+    if (!testFilterForDatesAndCountries(filter, supportedDates.startYear, supportedDates.endYear, stdCountryNames)) {
       return;
     }
   } else {
@@ -205,7 +205,7 @@ function addVicbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
       return;
     }
 
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
+    if (!data.generalizedData.didPersonLiveInCountryList(stdCountryNames)) {
       //console.log("addVicbdmDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
       return;
     }
