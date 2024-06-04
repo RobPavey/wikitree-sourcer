@@ -430,8 +430,12 @@ async function openVicbdm(lcText, tab, options) {
 
     //console.log("refText is '" + refText + "'");
 
-    let num1 = refText.replace(/^(\d+) ?\/ ?\d+$/, "$1");
-    let num2 = refText.replace(/^\d+ ?\/ ?(\d+)$/, "$1");
+    // Note: there could be an extra number on end. e.g.:
+    // victoria (australia) death 1972/29190 79y
+    // refText is '1972/29190 79'
+
+    let num1 = refText.replace(/^(\d+) ?\/ ?\d+\s*\d*$/, "$1");
+    let num2 = refText.replace(/^\d+ ?\/ ?(\d+)\s*\d*$/, "$1");
     //console.log("num1 is '" + num1 + "'");
     //console.log("num2 is '" + num2 + "'");
 
@@ -448,6 +452,61 @@ async function openVicbdm(lcText, tab, options) {
         if (num1.length == 4 && number1 > 1800 && number1 < 2050) {
           regYear = num1;
           regNum = num2;
+        }
+      }
+      return true;
+    }
+    return false;
+  }
+
+  function lookForOtherNumSepNum() {
+    // Examples:
+    // Victorian marriage registration 1873,03483,F,Grant,Annie,Box,Alfred John,Edinburgh, 1873,03483,M,Box,Alfred John,Grant,Annie,Gloucestershire,
+    // Victorian death registration 1909,09716,,Box,Annie Cooper,Grant George,Beaton Jane,Melbourne East,60,
+    // Victorian birth registration 1876: 00759,,Smith,Walter,Cornelius,Osullivan Johanna,Br Ea,
+    // Victorian death registration 1876: 00493,,Smith,Walter,Cornelius,Osullivan Johanna,,24D,birth(Gren)
+
+    let startIndex = lcText.search(/registration \d+\s*[:,]\s*\d+/);
+    //console.log("startIndex is: " + startIndex);
+    if (startIndex == -1) {
+      return false;
+    }
+    let refText = lcText.substring(startIndex);
+    let numStartIndex = refText.search(/\d/);
+    if (numStartIndex == -1) {
+      return false;
+    }
+    refText = refText.substring(numStartIndex);
+
+    let endIndex = refText.search(/[^\d\s:,]/);
+    //console.log("endIndex is: " + endIndex);
+    if (endIndex == -1) {
+      endIndex = refText.length;
+    }
+    refText = refText.substring(0, endIndex).trim();
+
+    // refText should now contain the year number, a separator and ref number
+
+    //console.log("refText is '" + refText + "'");
+
+    let num1 = refText.replace(/^[:,\s]*(\d+)\s*[:,]\s*\d+[:,\s]*$/, "$1");
+    let num2 = refText.replace(/^[:,\s]*\d+\s*[:,]\s*(\d+)$/, "$1");
+    //console.log("num1 is '" + num1 + "'");
+    //console.log("num2 is '" + num2 + "'");
+
+    if (!num1 || !num2 || num1 == refText || num2 == refText) {
+      return false;
+    }
+
+    if (num1.length == 4 || num2.length == 4) {
+      let number1 = Number(num1);
+      let number2 = Number(num2);
+      regYear = num1;
+      regNum = num2;
+      if (!(num1.length == 4 && number1 > 1800 && number1 < 2050)) {
+        if (num2.length == 4 && number2 > 1800 && number2 < 2050) {
+          regYear = num2;
+          regNum = num1;
         }
       }
       return true;
@@ -528,6 +587,10 @@ async function openVicbdm(lcText, tab, options) {
   }
 
   let foundYearAndNum = lookForNormalNumSlashNum();
+
+  if (!foundYearAndNum) {
+    foundYearAndNum = lookForOtherNumSepNum();
+  }
 
   if (!foundYearAndNum) {
     foundYearAndNum = lookForSeparateYearAndRefNum();
