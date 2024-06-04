@@ -32,6 +32,10 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "hms_warspite_1884",
+    url: "https://en.wikipedia.org/wiki/HMS_Warspite_(1884)",
+  },
+  {
     caseName: "world_war_i",
     url: "https://en.wikipedia.org/wiki/World_War_I",
     optionVariants: [

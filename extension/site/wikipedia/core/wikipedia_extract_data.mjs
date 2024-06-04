@@ -38,14 +38,27 @@ function extractData(document, url) {
   }
   */
 
-  const firstHeadingSpan = document.querySelector("#firstHeading > span");
-  if (!firstHeadingSpan) {
+  const firstHeading = document.querySelector("#firstHeading");
+  if (!firstHeading) {
     return result;
   }
 
-  let heading = firstHeadingSpan.textContent;
-  if (heading) {
-    result.title = heading.trim();
+  const firstHeadingSpan = firstHeading.querySelector("#firstHeading > span");
+  if (firstHeadingSpan) {
+    let heading = firstHeadingSpan.textContent;
+    if (heading) {
+      result.title = heading.trim();
+    }
+  } else {
+    const firstHeading = document.querySelector("#firstHeading");
+    if (!firstHeading) {
+      return result;
+    }
+
+    let heading = firstHeading.textContent;
+    if (heading) {
+      result.title = heading.trim();
+    }
   }
 
   const permalinkElement = document.querySelector("#t-permalink > a");

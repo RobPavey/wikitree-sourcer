@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"HMS Warspite (1884)\"<br/>\n[https://en.wikipedia.org/w/index.php?title=HMS_Warspite_(1884)&oldid=1092880447 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in a Wikipedia entry.<ref>\n'''Wikipedia entry''':\nWikipedia contributors, \"HMS Warspite (1884)\"<br/>\n[https://en.wikipedia.org/w/index.php?title=HMS_Warspite_(1884)&oldid=1092880447 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Wikipedia entry''': Wikipedia contributors, \"HMS Warspite (1884)\"<br/>[https://en.wikipedia.org/w/index.php?title=HMS_Warspite_(1884)&oldid=1092880447 ''Wikipedia, The Free Encyclopedia''] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}
