@@ -1570,6 +1570,19 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
     }
   }
 
+  // I used to only force advanced mode to on if I had something to put in the box.
+  // but there were a lot of reports of people using the default option settings where
+  // Set fields will have nothing there. But then the user pastes in the result of build all
+  // citations with narratives into the Sources box which causes errors.
+  // So now the new option forceAdvancedSourcing defaults to true, but the user can turn it off.
+  if (options.addMerge_addPerson_forceAdvancedSourcing) {
+    result.useAdvancedSourcingMode = true;
+  } else if (result.notes || result.sources) {
+    result.useAdvancedSourcingMode = true;
+  } else {
+    result.useAdvancedSourcingMode = false;
+  }
+
   // change explanation
   let fromString = "";
   if (citationObject) {

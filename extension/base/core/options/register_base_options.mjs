@@ -1354,7 +1354,7 @@ const addMergeAddPersonOptionsGroup = {
       optionName: "includeCitation",
       type: "checkbox",
       label: 'Insert the citation text in the biography when doing "Set Fields from Citation Data"',
-      defaultValue: false,
+      defaultValue: true,
     },
     {
       optionName: "includeAllCitations",
@@ -1373,7 +1373,7 @@ const addMergeAddPersonOptionsGroup = {
       optionName: "addDiedYoung",
       type: "checkbox",
       label: "Include Died Young sticker if person died aged 15 or less and no known spouse",
-      defaultValue: false,
+      defaultValue: true,
     },
     {
       optionName: "diedYoungImage",
@@ -1400,25 +1400,31 @@ const addMergeAddPersonOptionsGroup = {
           text: "Yes, with parent info based on all available information",
         },
       ],
-      defaultValue: "none",
+      defaultValue: "fromBoth",
     },
     {
       optionName: "includeLinks",
       type: "checkbox",
       label: "Include WikiTree person link for parents in birth/parentage if available",
-      defaultValue: false,
+      defaultValue: true,
     },
     {
       optionName: "includeMarriageLines",
       type: "checkbox",
       label: "Include a line in bio for each known marriage (if not already including narratives or inline citations)",
-      defaultValue: false,
+      defaultValue: true,
     },
     {
       optionName: "includeDeathLine",
       type: "checkbox",
       label: "Include a line in bio for any known death info (if not already including narratives or inline citations)",
-      defaultValue: false,
+      defaultValue: true,
+    },
+    {
+      optionName: "forceAdvancedSourcing",
+      type: "checkbox",
+      label: 'Always put Add Person final page in "Advanced Sourcing" mode, even if nothing generated for biography',
+      defaultValue: true,
     },
   ],
 };
@@ -1433,7 +1439,7 @@ const addMergeMergeEditOptionsGroup = {
       optionName: "includeCitation",
       type: "checkbox",
       label: 'Insert the citation text in the biography when doing "Merge Edit from Citation Data"',
-      defaultValue: false,
+      defaultValue: true,
     },
     {
       optionName: "includeAllCitations",
