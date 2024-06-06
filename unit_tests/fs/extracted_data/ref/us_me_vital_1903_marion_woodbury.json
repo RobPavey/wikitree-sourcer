@@ -1,0 +1,52 @@
+{
+  "recordData": {
+    "Name": "Marion Woodbury",
+    "Birth Date": "09 Feb 1903",
+    "Birth Place": "Winthrop, Maine, Maine, United States",
+    "Source Volume Nbr": "Witham - Woodsum",
+    "Record Nbr": "2902",
+    "System Of Record": "SLS"
+  },
+  "fullName": "Marion Woodbury",
+  "surname": "Woodbury",
+  "givenName": "Marion",
+  "gender": "female",
+  "factType": "Birth",
+  "eventDateOriginal": "09 Feb 1903",
+  "eventDate": "9 Feb 1903",
+  "eventYear": "1903",
+  "eventPlaceOriginal": "Winthrop, Maine, Maine, United States",
+  "eventPlace": "Maine, Caribou, Aroostook, Maine, United States",
+  "eventPlaceL1": "United States",
+  "birthDateOriginal": "09 Feb 1903",
+  "birthDate": "9 Feb 1903",
+  "birthYear": "1903",
+  "mother": {
+    "fullName": "Bertha Miller",
+    "surname": "Miller",
+    "givenName": "Bertha",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:KC67-F1T"
+  },
+  "father": {
+    "fullName": "Geo H Woodbury",
+    "surname": "Woodbury",
+    "givenName": "Geo H",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:KC67-F1R"
+  },
+  "referenceData": {
+    "filmNumber": "10065",
+    "packetLetter": "A",
+    "indexingBatchNumber": "I11420-7",
+    "digitalFilmNumber": "004703991",
+    "imageNumber": "2902"
+  },
+  "extData": "{\"FS_COLLECTION_ID\":\"1803978\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:939K-RR9F-MJ\",\"FOLDER\":\"004703991\"}",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9MF1-HRWC",
+  "collectionTitle": "Maine Vital Records, 1670-1921",
+  "fsCollectionId": "1803978",
+  "citation": "\"Maine Vital Records, 1670-1921\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y : Fri Mar 08 09:01:08 UTC 2024), Entry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.",
+  "sourceTitleForPerson": "Marion Woodbury, \"Maine Vital Records, 1670-1921\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:939K-RR9F-MJ",
+  "pageType": "record"
+}

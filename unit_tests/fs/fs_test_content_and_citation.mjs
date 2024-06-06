@@ -372,6 +372,11 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:2HVK-YCQ",
   },
   {
+    // Gets wrong verion of place name
+    caseName: "us_me_vital_1903_marion_woodbury",
+    url: "https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y",
+  },
+  {
     caseName: "us_mi_birth_1885_gertrude_orchard",
     url: "https://www.familysearch.org/ark:/61903/1:1:F4P5-QX7",
   },

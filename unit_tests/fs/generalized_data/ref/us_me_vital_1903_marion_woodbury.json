@@ -1,0 +1,50 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Marion Woodbury",
+    "lastName": "Woodbury",
+    "forenames": "Marion"
+  },
+  "birthDate": {
+    "dateString": "9 Feb 1903",
+    "yearString": "1903"
+  },
+  "eventDate": {
+    "dateString": "9 Feb 1903",
+    "yearString": "1903"
+  },
+  "eventPlace": {
+    "placeString": "Maine, Caribou, Aroostook, Maine, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Geo H Woodbury",
+        "forenames": "Geo H",
+        "lastName": "Woodbury"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Bertha Miller",
+        "forenames": "Bertha",
+        "lastName": "Miller"
+      }
+    }
+  },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|KC67-F1Y}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|939K-RR9F-MJ}}",
+    "{{FamilySearch Record|KC67-F1R}}",
+    "{{FamilySearch Record|KC67-F1T}}"
+  ],
+  "collectionData": {
+    "id": "1803978"
+  },
+  "hasValidData": true
+}

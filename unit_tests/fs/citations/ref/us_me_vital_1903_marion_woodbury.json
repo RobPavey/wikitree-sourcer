@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nEntry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Maine, Caribou, Aroostook, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nEntry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}<br/>Entry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nMarion Woodbury born on 9 Feb 1903, daughter of Geo H Woodbury & Bertha Miller, in Maine, Caribou, Aroostook, Maine, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Maine, Caribou, Aroostook, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nMarion Woodbury born on 9 Feb 1903, daughter of Geo H Woodbury & Bertha Miller, in Maine, Caribou, Aroostook, Maine, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}<br/>Marion Woodbury born on 9 Feb 1903, daughter of Geo H Woodbury & Bertha Miller, in Maine, Caribou, Aroostook, Maine, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nName: Marion Woodbury; Birth Date: 09 Feb 1903; Birth Place: Winthrop, Maine, Maine, United States; Source Volume Nbr: Witham - Woodsum; Record Nbr: 2902; System Of Record: SLS.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Maine, Caribou, Aroostook, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nName: Marion Woodbury; Birth Date: 09 Feb 1903; Birth Place: Winthrop, Maine, Maine, United States; Source Volume Nbr: Witham - Woodsum; Record Nbr: 2902; System Of Record: SLS.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}<br/>Name: Marion Woodbury; Birth Date: 09 Feb 1903; Birth Place: Winthrop, Maine, Maine, United States; Source Volume Nbr: Witham - Woodsum; Record Nbr: 2902; System Of Record: SLS.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}\n{| border=\"1\"\n| Name || Marion Woodbury\n|-\n| Birth Date || 09 Feb 1903\n|-\n| Birth Place || Winthrop, Maine, Maine, United States\n|-\n| Source Volume Nbr || Witham - Woodsum\n|-\n| Record Nbr || 2902\n|-\n| System Of Record || SLS\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Maine, Caribou, Aroostook, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}\n{| border=\"1\"\n| Name || Marion Woodbury\n|-\n| Birth Date || 09 Feb 1903\n|-\n| Birth Place || Winthrop, Maine, Maine, United States\n|-\n| Source Volume Nbr || Witham - Woodsum\n|-\n| Record Nbr || 2902\n|-\n| System Of Record || SLS\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}<br/>Name: Marion Woodbury; Birth Date: 09 Feb 1903; Birth Place: Winthrop, Maine, Maine, United States; Source Volume Nbr: Witham - Woodsum; Record Nbr: 2902; System Of Record: SLS.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nEntry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Maine, Caribou, Aroostook, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nEntry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}<br/>Entry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Maine, Caribou, Aroostook, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nMarion Woodbury born on 9 Feb 1903, daughter of Geo H Woodbury & Bertha Miller, in Maine, Caribou, Aroostook, Maine, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Maine, Caribou, Aroostook, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nMarion Woodbury born on 9 Feb 1903, daughter of Geo H Woodbury & Bertha Miller, in Maine, Caribou, Aroostook, Maine, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}<br/>Marion Woodbury born on 9 Feb 1903, daughter of Geo H Woodbury & Bertha Miller, in Maine, Caribou, Aroostook, Maine, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nEntry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Maine, Caribou, Aroostook, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}<br/>\nEntry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}<br/>Entry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903.",
+    "type": "source"
+  }
+}

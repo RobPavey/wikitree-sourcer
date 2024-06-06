@@ -1218,7 +1218,13 @@ function setOriginalAndNormalizedField(valueContainer, result, resultFieldName) 
   setFieldFromNormalizedValue(valueContainer, result, resultFieldName);
 }
 
-function getPlaceValueFromPlace(place, fieldTypeEnding, labelId) {
+function getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) {
+  if (docHints) {
+    if (labelId == "EVENT_PLACE" && docHints.eventPlace) {
+      return docHints.eventPlace;
+    }
+  }
+
   if (place.values) {
     if (labelId) {
       for (let value of place.values) {
@@ -1268,16 +1274,16 @@ function cleanPlaceString(value) {
   return value;
 }
 
-function getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId) {
-  let value = getPlaceValueFromPlace(place, fieldTypeEnding, labelId);
+function getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) {
+  let value = getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints);
   if (value) {
     value = cleanPlaceString(value);
   }
   return value;
 }
 
-function setFieldFromPlace(place, fieldTypeEnding, labelId, result, resultFieldName) {
-  let value = getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId);
+function setFieldFromPlace(place, fieldTypeEnding, labelId, result, resultFieldName, docHints) {
+  let value = getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints);
   if (value) {
     result[resultFieldName] = value;
   }
@@ -2213,7 +2219,7 @@ function getFactTypeFromRecordType(recordType) {
   return factType;
 }
 
-function setEventDateAndPlaceForFact(result, fact) {
+function setEventDateAndPlaceForFact(result, fact, docHints) {
   if (fact.date) {
     if (fact.date.original) {
       result.eventDateOriginal = fact.date.original;
@@ -2225,7 +2231,7 @@ function setEventDateAndPlaceForFact(result, fact) {
     if (fact.place.original) {
       result.eventPlaceOriginal = fact.place.original;
     }
-    setFieldFromPlace(fact.place, "", "EVENT_PLACE", result, "eventPlace");
+    setFieldFromPlace(fact.place, "", "EVENT_PLACE", result, "eventPlace", docHints);
     setFieldFromPlace(fact.place, "/RegistrationDistrict", "", result, "registrationDistrict");
     setFieldFromPlace(fact.place, "", "EVENT_PLACE_LEVEL_3", result, "eventPlaceL3");
     setFieldFromPlace(fact.place, "/County", "EVENT_PLACE_LEVEL_2", result, "eventPlaceL2");
@@ -3120,6 +3126,33 @@ function setRelatedPersonInfoFromOtherPerson(
   }
 }
 
+function extractHintsFromRecordRocument(document) {
+  if (!document) {
+    return undefined;
+  }
+
+  let mainContentElement = document.querySelector("#main");
+  if (!mainContentElement) {
+    return undefined;
+  }
+
+  let eventPlaceButton = mainContentElement.querySelector("button[data-testid='editExpander-EVENT_PLACE'");
+  if (!eventPlaceButton) {
+    return undefined;
+  }
+
+  let eventPlace = eventPlaceButton.textContent;
+  if (!eventPlace) {
+    return undefined;
+  }
+
+  let docHints = {
+    eventPlace: eventPlace,
+  };
+
+  return docHints;
+}
+
 function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
   usedLabelIds = {};
 
@@ -3134,6 +3167,12 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
   if (fetchType == "person") {
     return extractPersonDataFromFetch(document, dataObj, options);
   }
+
+  // There seem to be somethings that cannot be determined solely from the fect data,
+  // if we have the document as well we can try to use that to get the correct values from the
+  // fetch data.
+  // An example is the event place for https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y
+  let docHints = extractHintsFromRecordRocument(document);
 
   // there could be many people in this data, the description is one way to find out which
   // is the one that is being focused on
@@ -3182,7 +3221,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
             let factType = getFactType(fact);
 
             if (fact.primary) {
-              setEventDateAndPlaceForFact(result, fact);
+              setEventDateAndPlaceForFact(result, fact, docHints);
 
               if (person.principal) {
                 if (person.id == personId) {

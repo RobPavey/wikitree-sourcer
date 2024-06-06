@@ -1,0 +1,1354 @@
+{
+  "id" : "r_22258228689",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1697726026433,
+    "created" : 1697726026433
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MF1-HRWC?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MF1-HRWC?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MF1-HRWC"
+    }
+  },
+  "description" : "#sd_p_14080379397",
+  "persons" : [ {
+    "id" : "p_14080379397",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "d49e176b-eeaf-4898-b9e6-dd263c1caba8",
+        "attribution" : {
+          "modified" : 1697726026433,
+          "created" : 1697726026433
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "29eb0e20-3313-4e83-ab8b-b14dfc04172b",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "29eb0e20-3313-4e83-ab8b-b14dfc04172b",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1698736040535,
+            "created" : 1698736040535
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/KC67-F1Y?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MF1-HRWC?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y" ]
+    },
+    "names" : [ {
+      "id" : "bd9d7d79-3c5c-4795-bb3a-0d1b43823bf2",
+      "attribution" : {
+        "modified" : 1697726026433,
+        "created" : 1697726026433
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Marion Woodbury",
+        "parts" : [ {
+          "id" : "3323316e-2872-4907-b3fd-98ee35a4cd27",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Woodbury",
+          "fields" : [ {
+            "id" : "43da6392-53e8-4f48-9d4a-106831661fae",
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "165d5fb3-8a33-4a0d-ba28-894e75dc2aaa",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/ChildSurnameGeneration?version=1.3"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Woodbury",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/treatments/ChildSurnameGeneration?proof=CALCULATED_SURNAME",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "b81416bf-c3f0-43f9-acc1-12f1831706a8",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Marion",
+          "fields" : [ {
+            "id" : "21c1eedc-fd00-43cd-9904-18c5ca448547",
+            "attribution" : {
+              "modified" : 1697726026433,
+              "created" : 1697726026433
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "d3185cee-3400-49b5-bf3f-f1cb99a04cfd",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Marion"
+            }, {
+              "id" : "d3185cee-3400-49b5-bf3f-f1cb99a04cfd",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Marion"
+            }, {
+              "id" : "d3185cee-3400-49b5-bf3f-f1cb99a04cfd",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Marion",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:F&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "e34164f3-ebc2-45ae-a628-6070ff53200a",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "3d7e25af-b57f-4e49-8c8c-5b9b3ad95ca4",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Marion"
+          }, {
+            "id" : "3d7e25af-b57f-4e49-8c8c-5b9b3ad95ca4",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/ChildSurnameGeneration?version=1.3"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Marion Woodbury",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/treatments/ChildSurnameGeneration?proof=CALCULATED_SURNAME",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "9b04986c-abad-484b-af23-6acc31430d1d",
+      "attribution" : {
+        "modified" : 1697726026433,
+        "created" : 1697726026433
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "d2a98b99-c9d8-491a-ac41-a5d8a384fc82",
+        "original" : "09 Feb 1903",
+        "fields" : [ {
+          "id" : "0cd7b908-e617-4516-a040-2242a185be85",
+          "attribution" : {
+            "modified" : 1697726026433,
+            "created" : 1697726026433
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "78c881cf-297f-48d6-a3d8-9d2f16054771",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "9"
+          } ]
+        }, {
+          "id" : "155a6b75-5035-4ea2-b40c-291f31e3945e",
+          "attribution" : {
+            "modified" : 1697726026433,
+            "created" : 1697726026433
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "58ac9a92-3c45-45f1-9b33-652a2fc3f983",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Feb"
+          } ]
+        }, {
+          "id" : "07be7dbe-8a9a-4761-9918-9955073d8066",
+          "attribution" : {
+            "modified" : 1697726026433,
+            "created" : 1697726026433
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "bada7c48-cc5a-44a6-a69d-6d7007d5a328",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1903"
+          }, {
+            "id" : "bada7c48-cc5a-44a6-a69d-6d7007d5a328",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1903"
+          } ]
+        }, {
+          "id" : "75bf0860-4638-408f-b86d-07c1d8b247a7",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "f1223640-1e6f-4e22-b25c-022094e7943b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "9 Feb 1903"
+          }, {
+            "id" : "f1223640-1e6f-4e22-b25c-022094e7943b",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "09 Feb 1903",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "f1223640-1e6f-4e22-b25c-022094e7943b",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "9 February 1903",
+            "resource" : "+1903-02-09",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "d5ac84df-52e8-4600-bb83-c01fd217828c",
+        "original" : "Winthrop, Maine, Maine, United States",
+        "description" : "#place_8291187",
+        "fields" : [ {
+          "id" : "56fe97f3-ac1b-4720-bf58-712ad7d3a845",
+          "attribution" : {
+            "modified" : 1697726026433,
+            "created" : 1697726026433
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "372645e5-02f6-4c09-9a58-7c3ab5145aad",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Winthrop, Maine, Maine, United States",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "372645e5-02f6-4c09-9a58-7c3ab5145aad",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Maine, Caribou, Aroostook, Maine, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/8291187",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=DC,TC&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          }, {
+            "id" : "372645e5-02f6-4c09-9a58-7c3ab5145aad",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Winthrop, Kennebec, Maine, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/4274097",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=DC,TC&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "a032cb03-9e6f-4567-87ce-2ca4c7be26d1",
+          "attribution" : {
+            "modified" : 1697726026433,
+            "created" : 1697726026433
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "48128bc9-6c2f-4ef8-85b6-77ef49a369c8",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Maine"
+          } ]
+        }, {
+          "id" : "ff79ce09-c4f8-4580-b0e4-40e46253656d",
+          "attribution" : {
+            "modified" : 1697726026433,
+            "created" : 1697726026433
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "f2cfbd4b-a17d-4ffc-b728-3ca6cba990e1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "52bd1c23-ea12-4910-89dc-d4a8e821612d",
+          "attribution" : {
+            "modified" : 1697726026433,
+            "created" : 1697726026433
+          },
+          "type" : "http://gedcomx.org/City",
+          "values" : [ {
+            "id" : "45c0ab89-8aeb-436d-8c58-4dc51fbe6748",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_ORIG",
+            "text" : "Winthrop"
+          } ]
+        }, {
+          "id" : "9b2a015b-9437-411b-86b0-1942683f713e",
+          "attribution" : {
+            "modified" : 1697726026433,
+            "created" : 1697726026433
+          },
+          "type" : "http://familysearch.org/types/fields/StateOrCountry",
+          "values" : [ {
+            "id" : "9938a45e-d189-49a7-82cd-d8a1ca19fc35",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_COUNTRY_ORIG",
+            "text" : "Maine"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "72cda238-8a35-4085-b76c-ac9deca16eb9",
+        "attribution" : {
+          "modified" : 1697726026433,
+          "created" : 1697726026433
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "e1206c45-cf45-4fe7-89fd-ce700c7a3c0e",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Birth",
+          "resource" : "http://gedcomx.org/Birth"
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "d801bc90-b778-4484-92f8-27021c61ae22",
+      "attribution" : {
+        "modified" : 1697726026433,
+        "created" : 1697726026433
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "a59d1175-2ef0-4aba-be21-fd8f3444bb8d",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000000_004703991_02902_000_001352560155_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Marion Woodbury",
+      "gender" : "Female",
+      "birthDate" : "09 Feb 1903",
+      "birthPlace" : "Winthrop, Maine, Maine, United States"
+    }
+  }, {
+    "id" : "p_14080379395",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "bdfa3970-6326-4688-9bd3-9e7e7531d83f",
+        "attribution" : {
+          "modified" : 1697726026433,
+          "created" : 1697726026433
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "512de558-7d9e-45af-8e5f-33e642b13ded",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1698736040536,
+            "created" : 1698736040536
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/KC67-F1R?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MF1-HRWC?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KC67-F1R" ]
+    },
+    "names" : [ {
+      "id" : "06bce778-f843-4723-baba-79b34642540c",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1697726026433,
+        "created" : 1697726026433
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Geo H Woodbury",
+        "parts" : [ {
+          "id" : "aa2e2591-6422-4e24-a97f-f3c9f8fbdf2f",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Woodbury",
+          "fields" : [ {
+            "id" : "c7ae6158-1f72-452f-aaae-5b3ca6e5b7c4",
+            "attribution" : {
+              "modified" : 1697726026433,
+              "created" : 1697726026433
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "e64baaaa-fc1d-4c2c-afb0-cf5ccfc373f1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Woodbury"
+            }, {
+              "id" : "e64baaaa-fc1d-4c2c-afb0-cf5ccfc373f1",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Woodbury"
+            }, {
+              "id" : "e64baaaa-fc1d-4c2c-afb0-cf5ccfc373f1",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Woodbury",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "3e750c9e-4fe6-4b75-9215-1c44d04b0b22",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Geo H",
+          "fields" : [ {
+            "id" : "7cfff49b-7ab5-4809-89b5-449a6444bd26",
+            "attribution" : {
+              "modified" : 1697726026433,
+              "created" : 1697726026433
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "978ce78d-2e6a-4a8c-b552-194e2e2d70c7",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Geo H"
+            }, {
+              "id" : "978ce78d-2e6a-4a8c-b552-194e2e2d70c7",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Geo H"
+            }, {
+              "id" : "978ce78d-2e6a-4a8c-b552-194e2e2d70c7",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Geo H",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "921cd029-33bd-4baa-aac5-b922678bedb7",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "0f45824f-a783-4be6-a07b-69ed2db36b7a",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "Geo H Woodbury"
+          }, {
+            "id" : "0f45824f-a783-4be6-a07b-69ed2db36b7a",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Geo H Woodbury",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "f0dc5be9-13c0-40e6-9d25-7c50bc1cb6b6",
+      "attribution" : {
+        "modified" : 1697726026433,
+        "created" : 1697726026433
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "b2b9d09b-9a52-449d-bd43-1fded1611859",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000000_004703991_02902_000_001352560155_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Geo H Woodbury",
+      "gender" : "Male"
+    }
+  }, {
+    "id" : "p_14080379396",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "fbaa2857-4bca-4fb6-8eae-2733976dbea9",
+        "attribution" : {
+          "modified" : 1697726026433,
+          "created" : 1697726026433
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "8711a8fe-9c35-4eed-a762-a786d45a07f6",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1698736040536,
+            "created" : 1698736040536
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/KC67-F1T?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MF1-HRWC?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KC67-F1T" ]
+    },
+    "names" : [ {
+      "id" : "60c99bb8-5328-4e5a-826a-625d15b59d8a",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1697726026433,
+        "created" : 1697726026433
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Bertha Miller",
+        "parts" : [ {
+          "id" : "f08ae2d5-4e48-4432-805d-e3b521325d9c",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Miller",
+          "fields" : [ {
+            "id" : "a6363c18-ae4f-48ff-9e47-4ee2f1b3ae75",
+            "attribution" : {
+              "modified" : 1697726026433,
+              "created" : 1697726026433
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "f89b2022-d4cd-42e3-91eb-dba8bcd0c54d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Miller"
+            }, {
+              "id" : "f89b2022-d4cd-42e3-91eb-dba8bcd0c54d",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Miller"
+            }, {
+              "id" : "f89b2022-d4cd-42e3-91eb-dba8bcd0c54d",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Miller",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "1af99e2f-c57f-400a-892f-495b613d4ec6",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Bertha",
+          "fields" : [ {
+            "id" : "5cc644cf-e879-4266-ac85-6727ea1ee439",
+            "attribution" : {
+              "modified" : 1697726026433,
+              "created" : 1697726026433
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "c9720363-47ed-444d-b110-4d896db179e1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Bertha"
+            }, {
+              "id" : "c9720363-47ed-444d-b110-4d896db179e1",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Bertha"
+            }, {
+              "id" : "c9720363-47ed-444d-b110-4d896db179e1",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Bertha",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "02a1bc85-011a-426b-8a0d-0c3d7450153b",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "baa9b5b0-85d5-4fc2-8ddb-8e8fce15cd0c",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "Bertha Miller"
+          }, {
+            "id" : "baa9b5b0-85d5-4fc2-8ddb-8e8fce15cd0c",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Bertha Miller",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "9fa94897-d80a-41ac-9d58-594640548a50",
+      "attribution" : {
+        "modified" : 1697726026433,
+        "created" : 1697726026433
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "d950b4ec-4eb8-42b2-a413-c0adf167b86a",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000000_004703991_02902_000_001352560155_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Bertha Miller",
+      "gender" : "Female"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "2626e78d-2e8e-4b2c-a248-c663e46331aa",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_14080379395",
+      "resourceId" : "p_14080379395"
+    },
+    "person2" : {
+      "resource" : "#p_14080379396",
+      "resourceId" : "p_14080379396"
+    }
+  }, {
+    "id" : "4adf7aa0-3631-4bf0-a495-a4bb4dab0723",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14080379396",
+      "resourceId" : "p_14080379396"
+    },
+    "person2" : {
+      "resource" : "#p_14080379397",
+      "resourceId" : "p_14080379397"
+    }
+  }, {
+    "id" : "bcd364a5-7190-4ce8-a8ea-2e4e5188c076",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_14080379395",
+      "resourceId" : "p_14080379395"
+    },
+    "person2" : {
+      "resource" : "#p_14080379397",
+      "resourceId" : "p_14080379397"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_22258228689",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MF1-HRWC",
+    "componentOf" : {
+      "description" : "#sd_c_1803978",
+      "descriptionId" : "sd_c_1803978"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1697726026433,
+    "modified" : 1709888468789,
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Maine Vital Records, 1670-1921\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y : Fri Mar 08 09:01:08 UTC 2024), Entry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Marion Woodbury, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1352560155" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MF1-HRWC" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1803978?arkName=1:2:9MF1-HRWC"
+    }
+  }, {
+    "id" : "sd_c_1803978",
+    "about" : "https://www.familysearch.org/platform/records/collections/1803978",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223390113,
+    "modified" : 1717040987350,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Maine, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/11850289"
+      },
+      "temporal" : {
+        "original" : "1670/1907",
+        "formal" : "+1670/+1907"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Maine Vital Records, 1670-1921"
+    }, {
+      "lang" : "zh",
+      "value" : "緬因州人口動態紀錄，1670 年 - 1921 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Maine, registres d'état civil, 1670-1921"
+    }, {
+      "lang" : "ru",
+      "value" : "Мэн, записи актов гражданского состояния, 1670-1921 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Maine Vitale opptegnelser, 1670-1921"
+    }, {
+      "lang" : "es",
+      "value" : "Maine Vital Records, 1670-1921"
+    }, {
+      "lang" : "mn",
+      "value" : "Мейн муж улсын чухал бүртгэл, 1670-1921 он"
+    }, {
+      "lang" : "ko",
+      "value" : "메인 인구 동태 기록, 1670-1921"
+    }, {
+      "lang" : "it",
+      "value" : "Documenti vitali del Maine, 1670-1921"
+    }, {
+      "lang" : "id",
+      "value" : "Catatan Vital Maine, 1670-1921"
+    }, {
+      "lang" : "hu",
+      "value" : "Maine Vital Records, 1670–1921"
+    }, {
+      "lang" : "sk",
+      "value" : "Maine, Matričné záznamy, 1670 – 1921"
+    }, {
+      "lang" : "th",
+      "value" : "บันทึกสําคัญรัฐเมน, ปี 1670-1921"
+    }, {
+      "lang" : "to",
+      "value" : "Ngaahi Lekooti Mahuʻinga ʻo Meini, 1670-1921"
+    }, {
+      "lang" : "bg",
+      "value" : "Мейни, Документи по гражданско състояние, 1670-1921"
+    }, {
+      "lang" : "km",
+      "value" : "កំណត់ត្រាទីបញ្ចុះសពអតីតយុទ្ធជន, ឆ្នាំ 1670-1921"
+    }, {
+      "lang" : "pl",
+      "value" : "Księgi stanu cywilnego w Maine, 1670-1921"
+    }, {
+      "lang" : "ro",
+      "value" : "Maine, înregistrări esențiale, 1670-1921"
+    }, {
+      "lang" : "sv",
+      "value" : "Maine Befolkningsuppteckningar, 1670-1921"
+    }, {
+      "lang" : "sm",
+      "value" : "Hồ Sơ Dân Sự của Maine, 1670-1921"
+    }, {
+      "lang" : "vi",
+      "value" : "Hồ Sơ Dân Sự của Maine, 1670-1921"
+    }, {
+      "lang" : "sq",
+      "value" : "Maine Regjistrimet vitale, 1670-1921"
+    }, {
+      "lang" : "pt",
+      "value" : "Maine, Registros Vitais, 1670-1921"
+    }, {
+      "lang" : "de",
+      "value" : "Maine Einbürgerungsaufzeichnungen, 1670-1921"
+    }, {
+      "lang" : "uk",
+      "value" : "Мен, записи цивільного стану, 1670–1921 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Maine, vitalni zapisi, 1670. – 1921."
+    }, {
+      "lang" : "cs",
+      "value" : "Maine, matriční záznamy, 1670-1921"
+    }, {
+      "lang" : "da",
+      "value" : "Maine Vital Records, 1670-1921"
+    }, {
+      "lang" : "nl",
+      "value" : "Maine 'Vital Records', 1670-1921"
+    }, {
+      "lang" : "et",
+      "value" : "Maine'i olulised kirjed, 1670–1921"
+    }, {
+      "lang" : "fj",
+      "value" : "iVolatukutuku Bibi e Maine, 1670-1921"
+    }, {
+      "lang" : "fi",
+      "value" : "Maine tärkeät asiakirjat, 1670-1921"
+    }, {
+      "lang" : "tl",
+      "value" : "Mga Mahahalagang Record ng Maine, 1670-1921"
+    }, {
+      "lang" : "mg",
+      "value" : "Rakitsoratra momba ny sata sosial, Maine 1670-1921"
+    }, {
+      "lang" : "ceb",
+      "value" : "Mga Importanteng Rekord sa Maine, 1670-1921"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1803978" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:939K-RR9F-MJ",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "title:United States, Maine",
+        "description" : "https://www.familysearch.org/platform/places/description/333"
+      },
+      "temporal" : {
+        "original" : "title:1892-1907",
+        "formal" : "+1892-01-01T00:00:00Z/+1907-12-31T23:59:59Z"
+      }
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:939K-RR9F-MJ" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1803978?arkName=3:1:939K-RR9F-MJ"
+    }
+  }, {
+    "id" : "sd_p_14080379396",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:KC67-F1T",
+    "componentOf" : {
+      "description" : "#src_r_22258228689",
+      "descriptionId" : "src_r_22258228689"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Maine Vital Records, 1670-1921\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y : Fri Mar 08 09:01:08 UTC 2024), Entry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Bertha Miller, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Bertha Miller, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KC67-F1T" ]
+    }
+  }, {
+    "id" : "sd_p_14080379395",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:KC67-F1R",
+    "componentOf" : {
+      "description" : "#src_r_22258228689",
+      "descriptionId" : "src_r_22258228689"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Maine Vital Records, 1670-1921\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y : Fri Mar 08 09:01:08 UTC 2024), Entry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Geo H Woodbury, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Geo H Woodbury, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KC67-F1R" ]
+    }
+  }, {
+    "id" : "sd_p_14080379397",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y",
+    "componentOf" : {
+      "description" : "#src_r_22258228689",
+      "descriptionId" : "src_r_22258228689"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Maine Vital Records, 1670-1921\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y : Fri Mar 08 09:01:08 UTC 2024), Entry for Marion Woodbury and Geo H Woodbury, 09 Feb 1903."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Marion Woodbury, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Marion Woodbury, \"Maine Vital Records, 1670-1921\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_8291187",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/8291187" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "af5873f0-2052-4b35-b7d2-e8b5faab5590",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "64790f1e-7b3a-46a7-bb92-a2203b1c8f02",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000000_004703991_02902_000_001352560155"
+    } ]
+  }, {
+    "id" : "b8f94a37-e3c0-49f1-80f0-bdfe55357736",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/FilmNbr",
+    "values" : [ {
+      "id" : "907cf6fb-a355-458c-8b3a-fe0794819dc7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_FILM_NBR",
+      "text" : "10065"
+    } ]
+  }, {
+    "id" : "c85e2c67-e07e-47c2-9972-ba407b65cce7",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/SourceVolumeNbr",
+    "values" : [ {
+      "id" : "0408dd3e-6b9c-4190-a8ce-9a45df00eab8",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_VOLUME_NBR_ORIG",
+      "text" : "Witham - Woodsum"
+    } ]
+  }, {
+    "id" : "1ea4df5a-a993-4ddf-9d4c-8ad1d3eb6210",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "af1f525a-4cd4-4f58-8b32-8227951589d7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "5"
+    } ]
+  }, {
+    "id" : "1dae304b-614b-4511-8dae-d71d2ce0c715",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "bacd05a9-32c1-4031-9ae0-bfc4734a3a66",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "10-0106"
+    } ]
+  }, {
+    "id" : "20688252-1928-4ffc-9ad3-f3b881592baf",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "8ad67db6-1c42-4e6f-b3a1-d9fe9355ebc5",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"EVENT_PLACE_LEVEL_2_TYPE\":\"State\",\"IMAGE_ID\":\"/004703991/004703991_02902.jpg\",\"FS_IMS_IMAGE_ID\":\"004703991_02902\",\"FS_EASY_IMAGE_ID\":\"004703991_02902\",\"IMAGE_NBR\":\"02902\",\"EVENT_PLACE_LEVEL_1_TYPE\":\"Country\",\"EVENT_PLACE_LEVEL_4_TYPE\":\"City\",\"IMAGE_APID\":\"TH-1-17875-40517-31\",\"EVENT_PLACE_LEVEL_3_TYPE\":\"County\",\"DASVERIFY\":\"26-DEC-13\",\"UNIQUE_IDENTIFIER\":\"1352560155\",\"FOLDER_IMAGE_SEQ\":\"2902\"}"
+    } ]
+  }, {
+    "id" : "e0bec4f3-5793-4f21-91d6-892b8d608be8",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "bd0861b7-8190-49ee-a818-636d84d433f7",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "f5f00524-4bd7-445c-a7cb-1171d76ff244",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "91ca939f-73a8-411a-a053-1cd46bad8fb3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "10-0106; 2012-09-19 13:19:34; dbjdbj"
+    } ]
+  }, {
+    "id" : "f24e4257-5b10-4dc0-8e98-f4d96c260692",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "0f17684c-f452-4223-901a-5f69b1975ac3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Maine, United States"
+    } ]
+  }, {
+    "id" : "c50d259d-8003-48e3-9a01-73de3c9caa05",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "8bffcedd-fe7d-43aa-b5c4-bf2e6cc341db",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "34634252-944e-4b62-a32d-57c124d7f879",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/PacketLtr",
+    "values" : [ {
+      "id" : "fced8b04-814f-4b1e-840c-eb40b2ae41a6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PACKET_LTR",
+      "text" : "A"
+    } ]
+  }, {
+    "id" : "0cbfcbcf-7137-4fd1-9e02-c6b045877c2b",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "f2b8304b-f0b3-48ad-b006-b5bd646a291e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "635900"
+    } ]
+  }, {
+    "id" : "37365a14-21c3-4fbc-b567-93628d3d62f5",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "9c5485c8-4370-4b0e-83f9-3bc5e9c0993e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "22844"
+    } ]
+  }, {
+    "id" : "a2cbfa2f-f8f5-4c1e-9bb5-68327245b105",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "4c829314-56e8-42c7-ba11-8e9e5851cc02",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "004703991_02902"
+    } ]
+  }, {
+    "id" : "4ca718c2-603b-4b02-a5b9-f7bb41c21376",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/RecordNbr",
+    "values" : [ {
+      "id" : "cbbbacb0-644e-404d-9565-851bf2e169b2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "2902"
+    } ]
+  }, {
+    "id" : "582d5e96-3740-42ac-9aed-935c02090ac7",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/UdeBatchNbr",
+    "values" : [ {
+      "id" : "58901174-1ac9-43c6-a6e9-7cd874bf1050",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UDE_BATCH_NBR",
+      "text" : "I11420-7"
+    } ]
+  }, {
+    "id" : "56e863e9-33c9-4e80-b555-a924f6306895",
+    "attribution" : {
+      "modified" : 1697726026433,
+      "created" : 1697726026433
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "7aa36e0b-982d-4ba5-beb0-65704a5e09fd",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"FS_COLLECTION_ID\":\"1803978\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:939K-RR9F-MJ\",\"FOLDER\":\"004703991\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "004703991"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "2902"
+    } ]
+  } ]
+}
