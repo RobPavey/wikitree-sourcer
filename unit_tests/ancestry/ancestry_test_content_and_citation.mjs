@@ -911,6 +911,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/106947163:62308?_phsrc=Vww4195&_phstart=successSource&gsln=Pavey&ml_rpos=1&queryId=a49f2cd14190e5fbda1183dad6292633",
   },
   {
+    caseName: "us_federal_census_mort_1850_mcgee",
+    url: "https://www.ancestry.com/discoveryui-content/view/2152201:8756",
+  },
+  {
     caseName: "us_federal_np_census_1850_charles_pavey",
     url: "https://www.ancestry.com/discoveryui-content/view/4001446:1276",
   },

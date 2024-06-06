@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>\nNational Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>\n{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "I died (age 29) in March 1850.<ref>\n'''Death''':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>\nNational Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>\n{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death''': \"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>National Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>\nNational Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>\n{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)<br/>\nI N McGee death Mar 1850 (age 29). Cause of death: Fever.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "I died (age 29) in March 1850.<ref>\n'''Death''':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>\nNational Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>\n{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)<br/>\nI N McGee death Mar 1850 (age 29). Cause of death: Fever.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death''': \"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>National Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)<br/>I N McGee death Mar 1850 (age 29). Cause of death: Fever.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>\nNational Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>\n{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)<br/>\nName: I N McGee [J N McGee]; Gender: Male; Slave: Free; Marital Status: Married; Estimated Birth Year: abt 1821; Birth Place: North Carolina, USA; Age: 29; Death Date: Mar 1850; Cause of Death: Fever; Census year: 1850; Census Place: Haywood, North Carolina, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "I died (age 29) in March 1850.<ref>\n'''Death''':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>\nNational Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>\n{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)<br/>\nName: I N McGee [J N McGee]; Gender: Male; Slave: Free; Marital Status: Married; Estimated Birth Year: abt 1821; Birth Place: North Carolina, USA; Age: 29; Death Date: Mar 1850; Cause of Death: Fever; Census year: 1850; Census Place: Haywood, North Carolina, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death''': \"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>National Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)<br/>Name: I N McGee [J N McGee]; Gender: Male; Slave: Free; Marital Status: Married; Estimated Birth Year: abt 1821; Birth Place: North Carolina, USA; Age: 29; Death Date: Mar 1850; Cause of Death: Fever; Census year: 1850; Census Place: Haywood, North Carolina, USA.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>\nNational Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>\n{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || I N McGee [J N McGee]\n|-\n| Gender || Male\n|-\n| Slave || Free\n|-\n| Marital Status || Married\n|-\n| Estimated Birth Year || abt 1821\n|-\n| Birth Place || North Carolina, USA\n|-\n| Age || 29\n|-\n| Death Date || Mar 1850\n|-\n| Cause of Death || Fever\n|-\n| Census year || 1850\n|-\n| Census Place || Haywood, North Carolina, USA\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "I died (age 29) in March 1850.<ref>\n'''Death''':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>\nNational Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>\n{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || I N McGee [J N McGee]\n|-\n| Gender || Male\n|-\n| Slave || Free\n|-\n| Marital Status || Married\n|-\n| Estimated Birth Year || abt 1821\n|-\n| Birth Place || North Carolina, USA\n|-\n| Age || 29\n|-\n| Death Date || Mar 1850\n|-\n| Cause of Death || Fever\n|-\n| Census year || 1850\n|-\n| Census Place || Haywood, North Carolina, USA\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death''': \"U.S., Federal Census Mortality Schedules, 1850-1885\"<br/>National Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333; Line: 20<br/>{{Ancestry Record|8756|2152201}} (accessed 6 May 2021)<br/>Name: I N McGee [J N McGee]; Gender: Male; Slave: Free; Marital Status: Married; Estimated Birth Year: abt 1821; Birth Place: North Carolina, USA; Age: 29; Death Date: Mar 1850; Cause of Death: Fever; Census year: 1850; Census Place: Haywood, North Carolina, USA.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Federal Census Mortality Schedules, 1850-1885,\" database, ({{Ancestry Record|8756|2152201}} : accessed 6 May 2021), I N McGee death Mar 1850 (age 29). Cause of death: Fever; citing National Archives and Records Administration (NARA), Washington, D.C., Non-population Census Schedules for North Carolina, 1850-1880 Mortality and Manufacturing, Archive Collection M1805, Archive Roll Number 1, Census Year 1850, Census Place Haywood, North Carolina, Page 333, Line 20.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "I died (age 29) in March 1850.<ref>\"U.S., Federal Census Mortality Schedules, 1850-1885,\" database, ({{Ancestry Record|8756|2152201}} : accessed 6 May 2021), I N McGee death Mar 1850 (age 29). Cause of death: Fever; citing National Archives and Records Administration (NARA), Washington, D.C., Non-population Census Schedules for North Carolina, 1850-1880 Mortality and Manufacturing, Archive Collection M1805, Archive Roll Number 1, Census Year 1850, Census Place Haywood, North Carolina, Page 333, Line 20.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Federal Census Mortality Schedules, 1850-1885,\" database, ({{Ancestry Record|8756|2152201}} : accessed 6 May 2021), I N McGee death Mar 1850 (age 29). Cause of death: Fever; citing National Archives and Records Administration (NARA), Washington, D.C., Non-population Census Schedules for North Carolina, 1850-1880 Mortality and Manufacturing, Archive Collection M1805, Archive Roll Number 1, Census Year 1850, Census Place Haywood, North Carolina, Page 333, Line 20.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death'':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\", database, \nNational Archives and Records Administration (NARA), Washington, D.C., Non-population Census Schedules for North Carolina, 1850-1880 Mortality and Manufacturing, Archive Collection M1805, Archive Roll Number 1, Census Year 1850, Census Place Haywood, North Carolina, Page 333, Line 20, \n({{Ancestry Record|8756|2152201}} : accessed 6 May 2021), \nName: I N McGee [J N McGee]; Gender: Male; Slave: Free; Marital Status: Married; Estimated Birth Year: abt 1821; Birth Place: North Carolina, USA; Age: 29; Death Date: Mar 1850; Cause of Death: Fever; Census year: 1850; Census Place: Haywood, North Carolina, USA.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "I died (age 29) in March 1850.<ref>\n''Death'':\n\"U.S., Federal Census Mortality Schedules, 1850-1885\", database, \nNational Archives and Records Administration (NARA), Washington, D.C., Non-population Census Schedules for North Carolina, 1850-1880 Mortality and Manufacturing, Archive Collection M1805, Archive Roll Number 1, Census Year 1850, Census Place Haywood, North Carolina, Page 333, Line 20, \n({{Ancestry Record|8756|2152201}} : accessed 6 May 2021), \nName: I N McGee [J N McGee]; Gender: Male; Slave: Free; Marital Status: Married; Estimated Birth Year: abt 1821; Birth Place: North Carolina, USA; Age: 29; Death Date: Mar 1850; Cause of Death: Fever; Census year: 1850; Census Place: Haywood, North Carolina, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death'': \"U.S., Federal Census Mortality Schedules, 1850-1885\", database, National Archives and Records Administration (NARA), Washington, D.C., Non-population Census Schedules for North Carolina, 1850-1880 Mortality and Manufacturing, Archive Collection M1805, Archive Roll Number 1, Census Year 1850, Census Place Haywood, North Carolina, Page 333, Line 20, ({{Ancestry Record|8756|2152201}} : accessed 6 May 2021), Name: I N McGee [J N McGee]; Gender: Male; Slave: Free; Marital Status: Married; Estimated Birth Year: abt 1821; Birth Place: North Carolina, USA; Age: 29; Death Date: Mar 1850; Cause of Death: Fever; Census year: 1850; Census Place: Haywood, North Carolina, USA.",
+    "type": "source"
+  }
+}

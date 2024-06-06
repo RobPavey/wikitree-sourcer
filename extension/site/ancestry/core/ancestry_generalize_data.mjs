@@ -111,6 +111,7 @@ const recordTypeByFields = [
 
 function determineRecordType(extractedData) {
   const titleMatches = [
+    { type: RT.Death, matches: ["Federal Census Mortality Schedules"] },
     { type: RT.Baptism, matches: ["Christening Index"] },
     {
       type: RT.BirthRegistration,

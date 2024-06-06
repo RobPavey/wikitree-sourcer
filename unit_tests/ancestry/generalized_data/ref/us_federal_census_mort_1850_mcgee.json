@@ -1,0 +1,25 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "I N McGee"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "Mar 1850"
+  },
+  "deathDate": {
+    "dateString": "Mar 1850"
+  },
+  "lastNameAtDeath": "McGee",
+  "ageAtDeath": "29",
+  "causeOfDeath": "Fever",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8756|2152201}}"
+  ],
+  "collectionData": {
+    "id": "8756"
+  },
+  "hasValidData": true
+}

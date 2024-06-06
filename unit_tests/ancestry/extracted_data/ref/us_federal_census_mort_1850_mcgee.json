@@ -1,0 +1,30 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/2152201:8756",
+  "pageType": "record",
+  "dbId": "8756",
+  "recordId": "2152201",
+  "ancestryTemplate": "{{Ancestry Record|8756|2152201}}",
+  "domain": "com",
+  "titleName": "I N McGee",
+  "titleCollection": "U.S., Federal Census Mortality Schedules, 1850-1885",
+  "recordData": {
+    "Name": "I N McGee [J N McGee]",
+    "Gender": "Male",
+    "Slave": "Free",
+    "Marital Status": "Married",
+    "Estimated Birth Year": "abt 1821",
+    "Birth Place": "North Carolina, USA",
+    "Age": "29",
+    "Death Date": "Mar 1850",
+    "Cause of Death": "Fever",
+    "Census year": "1850",
+    "Census Place": "Haywood, North Carolina, USA",
+    "Line": "20"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8756/images/NCM1805_1-0168?pid=2152201&usePUB=true&usePUBJs=true",
+  "imageDbId": "8756",
+  "imageRecordId": "NCM1805_1-0168",
+  "sourceCitation": "National Archives and Records Administration (NARA); Washington, D.C.; Non-population Census Schedules for North Carolina, 1850-1880: Mortality and Manufacturing; Archive Collection: M1805; Archive Roll Number: 1; Census Year: 1850; Census Place: Haywood, North Carolina; Page: 333",
+  "sourceInformation": "Ancestry.com. U.S., Federal Census Mortality Schedules, 1850-1885 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2010. A portion of this collection was indexed by Ancestry World Archives Project contributors. Original data: View Complete List of Sources.",
+  "sourceDescription": "This database is an index to the Mortality Schedules of the United States Federal Censuses for 1850-1880. Each of the U.S. Federal Censuses from 1850-1880 included a mortality schedule enumerating the individuals who had died in the year previous to the census year. In addition, each individual is linked to the census image on which they appear. Learn more..."
+}
