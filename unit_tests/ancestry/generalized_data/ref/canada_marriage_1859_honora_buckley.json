@@ -39,6 +39,9 @@
       }
     }
   ],
+  "birthPlace": {
+    "placeString": "Ireland"
+  },
   "wtSearchTemplates": [
     "{{Ancestry Record|8510|17179}}"
   ],

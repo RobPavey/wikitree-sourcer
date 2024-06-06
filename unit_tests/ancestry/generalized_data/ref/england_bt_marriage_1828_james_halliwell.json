@@ -25,6 +25,9 @@
       }
     }
   ],
+  "birthPlace": {
+    "placeString": "of Grappenhall"
+  },
   "wtSearchTemplates": [
     "{{Ancestry Record|60496|3995291}}"
   ],

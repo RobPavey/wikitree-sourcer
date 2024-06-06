@@ -458,9 +458,26 @@ function determineRecordType(extractedData) {
   }
 
   if (eventTypeString) {
-    eventTypeString = eventTypeString.replace(/\s/g, "");
-    let recordType = eventTypeStringToDataType[eventTypeString];
+    let noSpaceEventTypeString = eventTypeString.replace(/\s/g, "");
+    let recordType = eventTypeStringToDataType[noSpaceEventTypeString];
     if (!recordType) {
+      // for French records there are two languages. E.g.: "Mariage (Marriage)"
+      let openParenIndex = noSpaceEventTypeString.indexOf("(");
+      let closeParenIndex = noSpaceEventTypeString.indexOf(")");
+      if (openParenIndex != -1 && closeParenIndex != -1 && openParenIndex < closeParenIndex) {
+        let firstTypeString = noSpaceEventTypeString.substring(0, openParenIndex);
+        let secondTypeString = noSpaceEventTypeString.substring(openParenIndex + 1, closeParenIndex);
+
+        recordType = eventTypeStringToDataType[firstTypeString];
+        if (recordType) {
+          return recordType;
+        }
+
+        recordType = eventTypeStringToDataType[secondTypeString];
+        if (recordType) {
+          return recordType;
+        }
+      }
       console.log("determineRecordType: Unrecognised event or record type: " + eventTypeString);
     } else {
       return recordType;
@@ -1602,6 +1619,11 @@ function generalizeDataGivenRecordType(ed, result) {
         result.recordSubtype = RecordSubtype.Banns;
       }
     }
+
+    // some marriage records have a birth date and or place
+    // e.g.: https://www.ancestry.com/discoveryui-content/view/5534132:62011
+    result.setBirthDate(getCleanRecordDataValue(ed, "Birth Date", "date"));
+    result.setBirthPlace(getCleanValueForRecordDataList(ed, ["Birth Place"]));
   } else if (result.recordType == RT.MarriageRegistration) {
     result.setEventDate(
       getCleanValueForRecordDataList(

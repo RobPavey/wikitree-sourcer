@@ -1,0 +1,59 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Leo Fuchs"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "28 Aug 1882"
+  },
+  "eventPlace": {
+    "placeString": "Kruth, France"
+  },
+  "ageAtEvent": "27",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Anton Fuchs"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Agathe Bitterly"
+      }
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Anna Marie Nilly"
+      },
+      "marriageDate": {
+        "dateString": "28 Aug 1882"
+      },
+      "marriagePlace": {
+        "placeString": "Kruth, France"
+      }
+    }
+  ],
+  "birthDate": {
+    "dateString": "11 Apr 1855"
+  },
+  "birthPlace": {
+    "placeString": "Kruth"
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|62011|5534132}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|62011|110534132}}",
+    "{{Ancestry Record|62011|125534132}}",
+    "{{Ancestry Record|62011|95534132}}"
+  ],
+  "collectionData": {
+    "id": "62011"
+  },
+  "hasValidData": true
+}

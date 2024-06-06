@@ -24,6 +24,10 @@
       }
     }
   ],
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1907"
+  },
   "wtSearchTemplates": [
     "{{Ancestry Record|61775|1236093}}"
   ],

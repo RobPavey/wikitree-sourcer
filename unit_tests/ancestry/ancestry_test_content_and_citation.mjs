@@ -692,6 +692,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/37801:2119",
   },
   {
+    caseName: "france_marriage_1882_leo_fuchs",
+    url: "https://www.ancestry.com/discoveryui-content/view/5534132:62011",
+  },
+  {
     caseName: "germany_baptism_1840_johanna_hartmann",
     url: "https://www.ancestry.com/discoveryui-content/view/68166661:9866",
   },

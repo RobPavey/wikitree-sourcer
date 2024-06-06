@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>\nArchives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>\n{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Leo (age 27), son of Anton Fuchs & Agathe Bitterly, married Anna Marie Nilly on 28 August 1882 in Kruth, France.<ref>\n'''Marriage''':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>\nArchives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>\n{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>Archives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>\nArchives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>\n{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)<br/>\nLeo Fuchs (27), son of Anton Fuchs & Agathe Bitterly, marriage to Anna Marie Nilly on 28 Aug 1882 in Kruth, France.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Leo (age 27), son of Anton Fuchs & Agathe Bitterly, married Anna Marie Nilly on 28 August 1882 in Kruth, France.<ref>\n'''Marriage''':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>\nArchives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>\n{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)<br/>\nLeo Fuchs (27), son of Anton Fuchs & Agathe Bitterly, marriage to Anna Marie Nilly on 28 Aug 1882 in Kruth, France.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>Archives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)<br/>Leo Fuchs (27), son of Anton Fuchs & Agathe Bitterly, marriage to Anna Marie Nilly on 28 Aug 1882 in Kruth, France.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>\nArchives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>\n{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)<br/>\nName: Leo Fuchs; Gender: Männlich (Male); Marriage Age: 27; Record Type: Mariage (Marriage); Birth Date: 11 avr. 1855 (11 Apr 1855); Birth Place: Kruth; Marriage Date: 28 août 1882 (28 Aug 1882); Marriage Place: Kruth, France; Father: Anton Fuchs; Mother: Agathe Bitterly; Spouse: Anna Marie Nilly; Entry Number: 11.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Leo (age 27), son of Anton Fuchs & Agathe Bitterly, married Anna Marie Nilly on 28 August 1882 in Kruth, France.<ref>\n'''Marriage''':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>\nArchives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>\n{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)<br/>\nName: Leo Fuchs; Gender: Männlich (Male); Marriage Age: 27; Record Type: Mariage (Marriage); Birth Date: 11 avr. 1855 (11 Apr 1855); Birth Place: Kruth; Marriage Date: 28 août 1882 (28 Aug 1882); Marriage Place: Kruth, France; Father: Anton Fuchs; Mother: Agathe Bitterly; Spouse: Anna Marie Nilly; Entry Number: 11.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>Archives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)<br/>Name: Leo Fuchs; Gender: Männlich (Male); Marriage Age: 27; Record Type: Mariage (Marriage); Birth Date: 11 avr. 1855 (11 Apr 1855); Birth Place: Kruth; Marriage Date: 28 août 1882 (28 Aug 1882); Marriage Place: Kruth, France; Father: Anton Fuchs; Mother: Agathe Bitterly; Spouse: Anna Marie Nilly; Entry Number: 11.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>\nArchives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>\n{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leo Fuchs\n|-\n| Gender || Männlich (Male)\n|-\n| Marriage Age || 27\n|-\n| Record Type || Mariage (Marriage)\n|-\n| Birth Date || 11 avr. 1855 (11 Apr 1855)\n|-\n| Birth Place || Kruth\n|-\n| Marriage Date || 28 août 1882 (28 Aug 1882)\n|-\n| Marriage Place || Kruth, France\n|-\n| Father || Anton Fuchs\n|-\n| Mother || Agathe Bitterly\n|-\n| Spouse || Anna Marie Nilly\n|-\n| Entry Number || 11\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Leo (age 27), son of Anton Fuchs & Agathe Bitterly, married Anna Marie Nilly on 28 August 1882 in Kruth, France.<ref>\n'''Marriage''':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>\nArchives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>\n{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Leo Fuchs\n|-\n| Gender || Männlich (Male)\n|-\n| Marriage Age || 27\n|-\n| Record Type || Mariage (Marriage)\n|-\n| Birth Date || 11 avr. 1855 (11 Apr 1855)\n|-\n| Birth Place || Kruth\n|-\n| Marriage Date || 28 août 1882 (28 Aug 1882)\n|-\n| Marriage Place || Kruth, France\n|-\n| Father || Anton Fuchs\n|-\n| Mother || Agathe Bitterly\n|-\n| Spouse || Anna Marie Nilly\n|-\n| Entry Number || 11\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\"<br/>Archives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892<br/>{{Ancestry Record|62011|5534132}} (accessed 6 May 2021)<br/>Name: Leo Fuchs; Gender: Männlich (Male); Marriage Age: 27; Record Type: Mariage (Marriage); Birth Date: 11 avr. 1855 (11 Apr 1855); Birth Place: Kruth; Marriage Date: 28 août 1882 (28 Aug 1882); Marriage Place: Kruth, France; Father: Anton Fuchs; Mother: Agathe Bitterly; Spouse: Anna Marie Nilly; Entry Number: 11.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927,\" database, ({{Ancestry Record|62011|5534132}} : accessed 6 May 2021), Leo Fuchs (27), son of Anton Fuchs & Agathe Bitterly, marriage to Anna Marie Nilly on 28 Aug 1882 in Kruth, France; citing Archives départementales du Haut-Rhin, Colmar, France, Etat Civil 1793-1892.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Leo (age 27), son of Anton Fuchs & Agathe Bitterly, married Anna Marie Nilly on 28 August 1882 in Kruth, France.<ref>\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927,\" database, ({{Ancestry Record|62011|5534132}} : accessed 6 May 2021), Leo Fuchs (27), son of Anton Fuchs & Agathe Bitterly, marriage to Anna Marie Nilly on 28 Aug 1882 in Kruth, France; citing Archives départementales du Haut-Rhin, Colmar, France, Etat Civil 1793-1892.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927,\" database, ({{Ancestry Record|62011|5534132}} : accessed 6 May 2021), Leo Fuchs (27), son of Anton Fuchs & Agathe Bitterly, marriage to Anna Marie Nilly on 28 Aug 1882 in Kruth, France; citing Archives départementales du Haut-Rhin, Colmar, France, Etat Civil 1793-1892.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage'':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\", database, \nArchives départementales du Haut-Rhin, Colmar, France, Etat Civil 1793-1892, \n({{Ancestry Record|62011|5534132}} : accessed 6 May 2021), \nName: Leo Fuchs; Gender: Männlich (Male); Marriage Age: 27; Record Type: Mariage (Marriage); Birth Date: 11 avr. 1855 (11 Apr 1855); Birth Place: Kruth; Marriage Date: 28 août 1882 (28 Aug 1882); Marriage Place: Kruth, France; Father: Anton Fuchs; Mother: Agathe Bitterly; Spouse: Anna Marie Nilly; Entry Number: 11.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Leo (age 27), son of Anton Fuchs & Agathe Bitterly, married Anna Marie Nilly on 28 August 1882 in Kruth, France.<ref>\n''Marriage'':\n\"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\", database, \nArchives départementales du Haut-Rhin, Colmar, France, Etat Civil 1793-1892, \n({{Ancestry Record|62011|5534132}} : accessed 6 May 2021), \nName: Leo Fuchs; Gender: Männlich (Male); Marriage Age: 27; Record Type: Mariage (Marriage); Birth Date: 11 avr. 1855 (11 Apr 1855); Birth Place: Kruth; Marriage Date: 28 août 1882 (28 Aug 1882); Marriage Place: Kruth, France; Father: Anton Fuchs; Mother: Agathe Bitterly; Spouse: Anna Marie Nilly; Entry Number: 11.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage'': \"Haut Rhin, France, Births, Marriages, and Deaths 1504-1927\", database, Archives départementales du Haut-Rhin, Colmar, France, Etat Civil 1793-1892, ({{Ancestry Record|62011|5534132}} : accessed 6 May 2021), Name: Leo Fuchs; Gender: Männlich (Male); Marriage Age: 27; Record Type: Mariage (Marriage); Birth Date: 11 avr. 1855 (11 Apr 1855); Birth Place: Kruth; Marriage Date: 28 août 1882 (28 Aug 1882); Marriage Place: Kruth, France; Father: Anton Fuchs; Mother: Agathe Bitterly; Spouse: Anna Marie Nilly; Entry Number: 11.",
+    "type": "source"
+  }
+}

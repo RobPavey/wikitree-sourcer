@@ -1,0 +1,36 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/5534132:62011",
+  "pageType": "record",
+  "dbId": "62011",
+  "recordId": "5534132",
+  "ancestryTemplate": "{{Ancestry Record|62011|5534132}}",
+  "domain": "com",
+  "titleName": "Leo Fuchs",
+  "titleCollection": "Haut Rhin, France, Births, Marriages, and Deaths 1504-1927",
+  "recordData": {
+    "Name": "Leo Fuchs",
+    "Gender": "Männlich (Male)",
+    "Marriage Age": "27",
+    "Record Type": "Mariage (Marriage)",
+    "Birth Date": "11 avr. 1855 (11 Apr 1855)",
+    "Birth Place": "Kruth",
+    "Marriage Date": "28 août 1882 (28 Aug 1882)",
+    "Marriage Place": "Kruth, France",
+    "Father": "Anton Fuchs",
+    "Mother": "Agathe Bitterly",
+    "Spouse": "Anna Marie Nilly",
+    "Entry Number": "11"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62011&h=110534132&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62011&h=125534132&indiv=try&viewrecord=1&r=an",
+    "Spouse": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=62011&h=95534132&indiv=try&viewrecord=1&r=an"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/62011/images/62011_b959211-01126?pid=5534132&usePUB=true&usePUBJs=true",
+  "imageDbId": "62011",
+  "imageRecordId": "62011_b959211-01126",
+  "sourceCitation": "Archives départementales du Haut-Rhin; Colmar, France; Etat Civil 1793-1892",
+  "sourceInformation": "Ancestry.com. Haut Rhin, France, Births, Marriages, and Deaths 1504-1927 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2021. Original data: Haut Rhin, France, Births, Marriages, and Deaths 1504-1927.",
+  "originalData": "Haut Rhin, France, Births, Marriages, and Deaths 1504-1927.",
+  "sourceDescription": "This collection contains civil registries of births, marriages, and deaths between 1504 and 1927 from Haut Rhin, France. Learn more..."
+}
