@@ -26,11 +26,7 @@ import { addMenuItemWithSubMenu, doAsyncActionWithCatch } from "/base/browser/po
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -70,39 +66,15 @@ async function troveSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const stdCountryNames = ["Australia", "Colony of Victoria"];
+  const siteConstraints = {
+    startYear: troveStartYear,
+    endYear: troveEndYear,
+    dateTestType: "bmd",
+    countryList: ["Australia", "Colony of Victoria"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, troveStartYear, troveEndYear, stdCountryNames)) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      troveStartYear,
-      troveEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      troveStartYear,
-      troveEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      troveStartYear,
-      troveEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addTroveDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList(stdCountryNames)) {
-      //console.log("addTroveDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItemWithSubMenu(

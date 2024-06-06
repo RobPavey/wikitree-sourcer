@@ -24,11 +24,7 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
@@ -63,39 +59,15 @@ function addNaieDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addNaieDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "Ireland";
+  const siteConstraints = {
+    startYear: naieStartYear,
+    endYear: naieEndYear,
+    dateTestType: "bmd",
+    countryList: ["Ireland"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, naieStartYear, naieEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      naieStartYear,
-      naieEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      naieStartYear,
-      naieEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      naieStartYear,
-      naieEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addNaieDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addNaieDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search National Archives of Ireland Census...", function (element) {

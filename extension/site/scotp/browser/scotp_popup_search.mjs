@@ -27,9 +27,8 @@ import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_sear
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 import {
-  doSearch,
   registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
+  shouldShowSiteSearch,
   openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 
@@ -107,37 +106,15 @@ function addScotpDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addScotpDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, scotpStartYear, scotpEndYear, ["Scotland"])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      scotpStartYear,
-      scotpEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      scotpStartYear,
-      scotpEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      scotpStartYear,
-      scotpEndYear,
-      maxLifespan
-    );
+  const siteConstraints = {
+    startYear: scotpStartYear,
+    endYear: scotpEndYear,
+    dateTestType: "bmd",
+    countryList: ["Scotland"],
+  };
 
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addScotpDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList(["Scotland"])) {
-      //console.log("addScotpDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search ScotlandsPeople...", function (element) {

@@ -25,11 +25,7 @@ SOFTWARE.
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -60,31 +56,15 @@ async function genetekaSearch(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addGenetekaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, START_YEAR, END_YEAR, COUNTRY_NAMES)) {
-      return;
-    }
-  } else {
-    const maxLifespan = Number(options.search_general_maxLifespan);
-    const birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      START_YEAR,
-      END_YEAR,
-      maxLifespan
-    );
-    const deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(START_YEAR, END_YEAR, maxLifespan);
-    const marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      START_YEAR,
-      END_YEAR,
-      maxLifespan
-    );
+  const siteConstraints = {
+    startYear: START_YEAR,
+    endYear: END_YEAR,
+    dateTestType: "bmd",
+    countryList: COUNTRY_NAMES,
+  };
 
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList(COUNTRY_NAMES)) {
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search Geneteka...", () => setupGenetekaSearchSubMenu(data, backFunction));

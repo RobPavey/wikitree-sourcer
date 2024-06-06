@@ -4176,7 +4176,7 @@ class GeneralizedData {
     return age;
   }
 
-  didPersonLiveInCountryList(searchCountryArray) {
+  didPersonLiveInCountryList(searchCountryArray, treatNoCountryAsAllCountries = true) {
     let countryArray = this.inferCountries();
 
     //console.log("didPersonLiveInCountryList: searchCountryArray is: ");
@@ -4194,8 +4194,8 @@ class GeneralizedData {
       }
     } else {
       // we have no country information for the person so they could have lived anywhere
-      //console.log("didPersonLiveInCountryList: no countries, returining true");
-      return true;
+      //console.log("didPersonLiveInCountryList: no countries, returning true");
+      return treatNoCountryAsAllCountries;
     }
 
     return false;

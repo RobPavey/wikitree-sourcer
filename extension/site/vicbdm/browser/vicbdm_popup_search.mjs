@@ -35,11 +35,7 @@ import {
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-import {
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-  openUrlInNewTab,
-} from "/base/browser/popup/popup_search.mjs";
+import { registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
@@ -174,41 +170,17 @@ async function vicbdmSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addVicbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const stdCountryNames = ["Australia", "Colony of Victoria"];
   const supportedDates = getSupportedDates();
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, supportedDates.startYear, supportedDates.endYear, stdCountryNames)) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
+  const siteConstraints = {
+    startYear: supportedDates.startYear,
+    endYear: supportedDates.endYear,
+    dateTestType: "bmd",
+    countryList: ["Australia", "Colony of Victoria"],
+  };
 
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      supportedDates.startYear,
-      supportedDates.birthEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      supportedDates.startYear,
-      supportedDates.deathEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      supportedDates.startYear,
-      supportedDates.marriageEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addVicbdmDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList(stdCountryNames)) {
-      //console.log("addVicbdmDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search Victoria BDM (Aus)...", function (element) {

@@ -24,11 +24,7 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -58,20 +54,17 @@ async function cwgcSearch(generalizedData, typeOfSearch) {
 function addCwgcDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addCwgcDefaultSearchMenuItem, data is:");
   //console.log(data);
-  /*
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, cwgcStartYear, cwgcEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(cwgcStartYear, cwgcEndYear);
 
-    if (!deathPossibleInRange) {
-      //console.log("addCwgcDefaultSearchMenuItem: dates not in range");
-      return;
-    }
+  const siteConstraints = {
+    startYear: cwgcStartYear,
+    endYear: cwgcEndYear,
+    dateTestType: "died",
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
-*/
+
   addMenuItem(menu, "Search Commonwealth War Graves Commission", function (element) {
     cwgcSearch(data.generalizedData);
   });

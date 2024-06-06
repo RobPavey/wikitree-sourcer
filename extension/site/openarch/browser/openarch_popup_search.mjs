@@ -33,11 +33,7 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -78,39 +74,15 @@ function addOpenarchDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addOpenarchDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "Netherlands";
+  const siteConstraints = {
+    startYear: openarchStartYear,
+    endYear: openarchEndYear,
+    dateTestType: "bmd",
+    countryList: ["Netherlands"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, openarchStartYear, openarchEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      openarchStartYear,
-      openarchEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      openarchStartYear,
-      openarchEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      openarchStartYear,
-      openarchEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addOpenarchDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addOpenarchDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItemWithSubMenu(

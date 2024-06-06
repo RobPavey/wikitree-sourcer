@@ -33,11 +33,8 @@ import {
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
+import { options } from "/base/browser/options/options_loader.mjs";
 
 import { CD } from "/base/core/country_data.mjs";
 import { RT } from "/base/core/record_type.mjs";
@@ -59,31 +56,6 @@ function deathYearInGroRange(data) {
   // currently starts at 1837 and there is a gap from 1958-1983
   let deathYear = data.generalizedData.inferDeathYear();
   return deathYear && deathYear >= groStartYear;
-}
-
-function countryHasGroCoverage(data) {
-  let countryArray = data.generalizedData.inferCountries();
-
-  if (countryArray.length > 0) {
-    for (let country of countryArray) {
-      if (
-        country == "England" ||
-        country == "Wales" ||
-        country == "England and Wales" ||
-        CD.isPartOf(country, "England and Wales")
-      ) {
-        return true;
-      }
-      if (country == "United Kingdom") {
-        // Some Ancestry death registrations have a place like: Hoxne, Suffolk, United Kingdom
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  return true; // country unknown
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -172,18 +144,15 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
 }
 
 function addGroDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, groStartYear, groEndYear, ["England and Wales"])) {
-      return;
-    }
-  } else {
-    if (!birthYearInGroRange(data) && !deathYearInGroRange(data)) {
-      return false;
-    }
+  const siteConstraints = {
+    startYear: groStartYear,
+    endYear: groEndYear,
+    countryList: ["England and Wales"],
+    exactCountryList: ["United Kingdom"],
+  };
 
-    if (!countryHasGroCoverage(data)) {
-      return false;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search GRO (UK)...", function (element) {

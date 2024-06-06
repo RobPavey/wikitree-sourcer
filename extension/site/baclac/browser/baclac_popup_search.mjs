@@ -35,11 +35,7 @@ import {
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -93,39 +89,15 @@ function addBaclacDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addBaclacDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "Canada";
+  const siteConstraints = {
+    startYear: baclacStartYear,
+    endYear: baclacEndYear,
+    dateTestType: "bmd",
+    countryList: ["Canada"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, baclacStartYear, baclacEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      baclacStartYear,
-      baclacEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      baclacStartYear,
-      baclacEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      baclacStartYear,
-      baclacEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addBaclacDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addBaclacDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItemWithSubMenu(

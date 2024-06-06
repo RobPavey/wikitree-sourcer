@@ -24,11 +24,7 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -55,39 +51,15 @@ function addNliDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addNliDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "Ireland";
+  const siteConstraints = {
+    startYear: nliStartYear,
+    endYear: nliEndYear,
+    dateTestType: "bmd",
+    countryList: ["Ireland"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, nliStartYear, nliEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      nliStartYear,
-      nliEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      nliStartYear,
-      nliEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      nliStartYear,
-      nliEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addNliDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addNliDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search National Library of Ireland Registers...", function (element) {

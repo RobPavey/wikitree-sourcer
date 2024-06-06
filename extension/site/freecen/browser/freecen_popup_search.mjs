@@ -37,7 +37,7 @@ import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_sear
 
 import {
   registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
+  shouldShowSiteSearch,
   openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 
@@ -127,21 +127,15 @@ async function freecenSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFreecenDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, 1841, 1911, ["United Kingdom"])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    if (!data.generalizedData.couldPersonHaveLivedInDateRange(1841, 1911, maxLifespan)) {
-      //console.log("addFreecenDefaultSearchMenuItem: couldPersonHaveLivedInDateRange returned false");
-      return false;
-    }
+  const siteConstraints = {
+    startYear: 1841,
+    endYear: 1911,
+    dateTestType: "lived",
+    countryList: ["United Kingdom"],
+  };
 
-    if (!data.generalizedData.didPersonLiveInCountryList(["United Kingdom"])) {
-      //console.log("addFreecenDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return false;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItemWithSubMenu(

@@ -34,7 +34,7 @@ import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_sear
 
 import {
   registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
+  shouldShowSiteSearch,
   openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 
@@ -115,37 +115,15 @@ function addFreeregDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addFreeregDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, freeregStartYear, undefined, ["United Kingdom"])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      freeregStartYear,
-      undefined,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      freeregStartYear,
-      undefined,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      freeregStartYear,
-      undefined,
-      maxLifespan
-    );
+  const siteConstraints = {
+    startYear: freeregStartYear,
+    endYear: undefined,
+    dateTestType: "bmd",
+    countryList: ["United Kingdom"],
+  };
 
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addFreeregDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList(["United Kingdom"])) {
-      //console.log("addFreeregDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search FreeReg (UK)...", function (element) {

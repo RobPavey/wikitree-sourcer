@@ -26,11 +26,7 @@ import { addMenuItemWithSubMenu, doAsyncActionWithCatch } from "/base/browser/po
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -71,39 +67,15 @@ function addPpnzDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addPpnzDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "New Zealand";
+  const siteConstraints = {
+    startYear: ppnzStartYear,
+    endYear: ppnzEndYear,
+    dateTestType: "bmd",
+    countryList: ["New Zealand"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, ppnzStartYear, ppnzEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      ppnzStartYear,
-      ppnzEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      ppnzStartYear,
-      ppnzEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      ppnzStartYear,
-      ppnzEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addPpnzDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addPpnzDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItemWithSubMenu(

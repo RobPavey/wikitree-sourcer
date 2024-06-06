@@ -31,11 +31,7 @@ import {
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -66,37 +62,15 @@ function addFreebmdDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addFreebmdDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, freebmdStartYear, freebmdEndYear, ["England and Wales"])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      freebmdStartYear,
-      freebmdEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      freebmdStartYear,
-      freebmdEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      freebmdStartYear,
-      freebmdEndYear,
-      maxLifespan
-    );
+  const siteConstraints = {
+    startYear: freebmdStartYear,
+    endYear: freebmdEndYear,
+    dateTestType: "bmd",
+    countryList: ["England and Wales"],
+  };
 
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addFreebmdDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList(["England and Wales"])) {
-      //console.log("addFreebmdDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search FreeBMD (UK)...", function (element) {

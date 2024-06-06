@@ -93,7 +93,11 @@ async function doSearch(loadedModule, input) {
   closePopup();
 }
 
-function testFilterForDatesAndCountries(filter, startYear, endYear, countryArray) {
+function testFilterForDatesAndCountries(filter, siteConstraints) {
+  let siteStartYear = siteConstraints.startYear;
+  let siteEndYear = siteConstraints.endYear;
+  let siteCountryList = siteConstraints.countryList;
+
   //console.log("testFilterForDatesAndCountries, startYear is: " + startYear + ", endYear is: " + endYear);
   //console.log("testFilterForDatesAndCountries, filter is: ");
   //console.log(filter);
@@ -101,19 +105,19 @@ function testFilterForDatesAndCountries(filter, startYear, endYear, countryArray
   //console.log(countryArray);
 
   if (filter.filterByDate) {
-    if ((endYear && filter.startYear > endYear) || (startYear && filter.endYear < startYear)) {
+    if ((siteEndYear && filter.startYear > siteEndYear) || (siteStartYear && filter.endYear < siteStartYear)) {
       return false;
     }
   }
 
-  if (filter.filterByCountry) {
+  if (filter.filterByCountry && siteCountryList && siteCountryList.length > 0) {
     let countryMatch = false;
     if (filter.countryArray.length == 0) {
-      // if the page has no country it should match all countries rather than none
+      // if the filter has no country it should match all countries rather than none
       countryMatch = true;
     } else {
       for (let country of filter.countryArray) {
-        for (let targetCountry of countryArray) {
+        for (let targetCountry of siteCountryList) {
           if (country == targetCountry || CD.isPartOf(country, targetCountry)) {
             countryMatch = true;
             break;
@@ -130,6 +134,88 @@ function testFilterForDatesAndCountries(filter, startYear, endYear, countryArray
   }
 
   //console.log("testFilterForDatesAndCountries, returning true");
+
+  return true;
+}
+
+function testGeneralizedDataForDatesAndCountries(gd, siteConstraints) {
+  let siteStartYear = siteConstraints.startYear;
+  let siteEndYear = siteConstraints.endYear;
+  let siteCountryList = siteConstraints.countryList;
+  let siteExactCountryList = siteConstraints.exactCountryList;
+  let dateTestType = siteConstraints.dateTestType;
+
+  let filterByDate = options.search_general_filterMainMenuByDate;
+  let filterByCountries = options.search_general_filterMainMenuByCountries;
+
+  if (filterByDate) {
+    let maxLifespan = Number(options.search_general_maxLifespan);
+
+    if (dateTestType == "bmd") {
+      let birthPossibleInRange = gd.couldPersonHaveBeenBornInDateRange(siteStartYear, siteEndYear, maxLifespan);
+      let deathPossibleInRange = gd.couldPersonHaveDiedInDateRange(siteStartYear, siteEndYear, maxLifespan);
+      let marriagePossibleInRange = gd.couldPersonHaveMarriedInDateRange(siteStartYear, siteEndYear, maxLifespan);
+
+      if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
+        return false;
+      }
+    } else if (dateTestType == "bd") {
+      let birthPossibleInRange = gd.couldPersonHaveBeenBornInDateRange(siteStartYear, siteEndYear, maxLifespan);
+      let deathPossibleInRange = gd.couldPersonHaveDiedInDateRange(siteStartYear, siteEndYear, maxLifespan);
+
+      if (!(birthPossibleInRange || deathPossibleInRange)) {
+        return false;
+      }
+    } else if (dateTestType == "died") {
+      if (!gd.couldPersonHaveDiedInDateRange(siteStartYear, siteEndYear, maxLifespan)) {
+        return false;
+      }
+    } else if (dateTestType == "lived") {
+      if (!gd.couldPersonHaveLivedInDateRange(siteStartYear, siteEndYear, maxLifespan)) {
+        return false;
+      }
+    }
+  }
+
+  if (filterByCountries && siteCountryList && siteCountryList.length > 0) {
+    if (siteExactCountryList && siteExactCountryList.length > 0) {
+      let countryArray = gd.inferCountries();
+
+      if (countryArray.length > 0) {
+        for (let country of countryArray) {
+          for (let siteExactCountry of siteExactCountryList) {
+            if (country == siteExactCountry) {
+              // For example, for GRO:
+              // Some Ancestry death registrations have a place like: Hoxne, Suffolk, United Kingdom
+              // We want that to match, but do not want Scotland to match, which is part of United Kingdom
+              return true;
+            }
+          }
+        }
+      }
+    }
+
+    let treatNoCountryAsAllCountries = options.search_general_treatNoCountryAsAllCountries;
+
+    if (!gd.didPersonLiveInCountryList(siteCountryList, treatNoCountryAsAllCountries)) {
+      //console.log("testGeneralizedDataForDatesAndCountries: didPersonLiveInCountryList returned false");
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function shouldShowSiteSearch(gd, filter, siteConstraints) {
+  if (filter) {
+    if (!testFilterForDatesAndCountries(filter, siteConstraints)) {
+      return false;
+    }
+  } else {
+    if (!testGeneralizedDataForDatesAndCountries(gd, siteConstraints)) {
+      return false;
+    }
+  }
 
   return true;
 }
@@ -505,4 +591,12 @@ function registerSearchMenuItemFunction(siteName, siteTitle, menuItemFunction) {
   });
 }
 
-export { openUrlInNewTab, doSearch, addSearchMenus, registerSearchMenuItemFunction, testFilterForDatesAndCountries };
+export {
+  openUrlInNewTab,
+  doSearch,
+  addSearchMenus,
+  registerSearchMenuItemFunction,
+  testFilterForDatesAndCountries,
+  testGeneralizedDataForDatesAndCountries,
+  shouldShowSiteSearch,
+};

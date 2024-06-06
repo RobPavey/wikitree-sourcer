@@ -24,11 +24,7 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -55,39 +51,15 @@ function addOpccornDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addOpccornDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "England and Wales";
+  const siteConstraints = {
+    startYear: opccornStartYear,
+    endYear: opccornEndYear,
+    dateTestType: "bmd",
+    countryList: ["England and Wales"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, opccornStartYear, opccornEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      opccornStartYear,
-      opccornEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      opccornStartYear,
-      opccornEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      opccornStartYear,
-      opccornEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addOpccornDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addOpccornDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search Cornwall OPC", function (element) {

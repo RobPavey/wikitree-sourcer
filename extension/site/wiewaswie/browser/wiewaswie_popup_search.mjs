@@ -35,7 +35,7 @@ import {
 
 import {
   registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
+  shouldShowSiteSearch,
   openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
@@ -120,39 +120,15 @@ function addWiewaswieDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addWiewaswieDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "Netherlands";
+  const siteConstraints = {
+    startYear: wiewaswieStartYear,
+    endYear: wiewaswieEndYear,
+    dateTestType: "bmd",
+    countryList: ["Netherlands"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, wiewaswieStartYear, wiewaswieEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
-      wiewaswieStartYear,
-      wiewaswieEndYear,
-      maxLifespan
-    );
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
-      wiewaswieStartYear,
-      wiewaswieEndYear,
-      maxLifespan
-    );
-    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
-      wiewaswieStartYear,
-      wiewaswieEndYear,
-      maxLifespan
-    );
-
-    if (!(birthPossibleInRange || deathPossibleInRange || marriagePossibleInRange)) {
-      //console.log("addWiewaswieDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addWiewaswieDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItemWithSubMenu(

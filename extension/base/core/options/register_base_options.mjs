@@ -56,6 +56,25 @@ const searchOptionsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "filterMainMenuByDate",
+      type: "checkbox",
+      label: "On the main popup filter the search menu items by date",
+      defaultValue: true,
+    },
+    {
+      optionName: "filterMainMenuByCountries",
+      type: "checkbox",
+      label: "On the main popup filter the search menu items by countries",
+      defaultValue: true,
+    },
+    {
+      optionName: "treatNoCountryAsAllCountries",
+      type: "checkbox",
+      label:
+        "On the main popup when filtering the search menu items by countries and no country known show all countries",
+      defaultValue: true,
+    },
+    {
       optionName: "popup_maxSearchItemsInTopMenu",
       type: "number",
       label: "Maximum number of search menu items to show on top-level popup (0 means just show search submenu)",

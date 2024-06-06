@@ -25,9 +25,8 @@ SOFTWARE.
 import { addMenuItem, doAsyncActionWithCatch, closePopup } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
-  doSearch,
   registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
+  shouldShowSiteSearch,
   openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 
@@ -91,24 +90,15 @@ function addPsukDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addPsukDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const stdCountryName = "England and Wales";
+  const siteConstraints = {
+    startYear: psukStartYear,
+    endYear: psukEndYear,
+    dateTestType: "died",
+    countryList: ["England and Wales"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, psukStartYear, psukEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(psukStartYear, psukEndYear);
-
-    if (!deathPossibleInRange) {
-      //console.log("addPsukDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addPsukDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search Probate Search/Find A Will (UK)", function (element) {

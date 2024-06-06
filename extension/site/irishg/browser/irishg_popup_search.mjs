@@ -26,11 +26,7 @@ import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_m
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
-import {
-  doSearch,
-  registerSearchMenuItemFunction,
-  testFilterForDatesAndCountries,
-} from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -70,29 +66,15 @@ async function irishgSearch(generalizedData, parameters) {
 // might be like ScotP - with a default menu that is like "Search with Specific Parameters"
 
 function addIrishgDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const stdCountryName = "Ireland";
+  const siteConstraints = {
+    startYear: irishgStartYear,
+    endYear: irishgEndYear,
+    dateTestType: "lived",
+    countryList: ["Ireland"],
+  };
 
-  if (filter) {
-    if (!testFilterForDatesAndCountries(filter, irishgStartYear, irishgEndYear, [stdCountryName])) {
-      return;
-    }
-  } else {
-    let maxLifespan = Number(options.search_general_maxLifespan);
-    let possibleInRange = data.generalizedData.couldPersonHaveLivedInDateRange(
-      irishgStartYear,
-      irishgEndYear,
-      maxLifespan
-    );
-
-    if (!possibleInRange) {
-      //console.log("addIrishgDefaultSearchMenuItem: dates not in range");
-      return;
-    }
-
-    if (!data.generalizedData.didPersonLiveInCountryList([stdCountryName])) {
-      //console.log("addIrishgDefaultSearchMenuItem: didPersonLiveInCountryList returned false");
-      return;
-    }
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
   }
 
   addMenuItem(menu, "Search IrishGenealogy.ie...", function (element) {
