@@ -820,7 +820,7 @@ function setCollectionReferenceData(scotpRecordType, ed, result) {
 
 function setStatutoryCommonFields(ed, result) {
   result.setEventYear(ed.recordData["Year"]);
-  result.setFieldIfValueExists("registrationDistrict", ed.recordData["RD Name"]);
+  result.setFieldIfValueExists("registrationDistrict", standardizePlaceName(ed.recordData["RD Name"]));
 
   result.eventPlace = buildPlaceWithStatutoryDistrictName(ed, ed.recordData["RD Name"], ed.recordData["Year"]);
 }

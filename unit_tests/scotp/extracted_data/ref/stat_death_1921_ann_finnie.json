@@ -1,0 +1,31 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results/56547769866620c0ed0937",
+  "success": true,
+  "isRowSelected": true,
+  "numResultsOnPage": 1,
+  "recordData": {
+    "Surname": "FINNIE",
+    "Forename": "ANN",
+    "Age at death": "77",
+    "Mother's Maiden Name": "BROWN",
+    "Gender": "F",
+    "Year": "1921",
+    "Ref": "701/61",
+    "RD Name": "WEST CALDER"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/buy-credits?destination=/record-results/56547769866620c0ed0937&get-referer=1&nojs=",
+  "pageHeader": "Statutory registers - Deaths",
+  "searchCriteria": {
+    "Surname": "Finnie",
+    "Surname options": "Phonetic match",
+    "Forename": "Ann",
+    "Forename options": "Phonetic match",
+    "Gender": "Female",
+    "Age range": "from 77 to 77",
+    "Year of birth": "1845",
+    "+/-": "1",
+    "County/city/minor records": "ALL"
+  },
+  "recordGroup": "statutory_records",
+  "recordType": "stat_deaths"
+}

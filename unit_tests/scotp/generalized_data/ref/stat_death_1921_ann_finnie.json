@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Finnie",
+    "forenames": "Ann"
+  },
+  "eventDate": {
+    "yearString": "1921"
+  },
+  "registrationDistrict": "West Calder",
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Midlothian",
+    "placeString": "West Calder, Midlothian, Scotland"
+  },
+  "lastNameAtDeath": "Finnie",
+  "mothersMaidenName": "Brown",
+  "ageAtDeath": "77",
+  "deathPlace": {
+    "country": "Scotland",
+    "county": "Midlothian",
+    "placeString": "West Calder, Midlothian, Scotland"
+  },
+  "deathDate": {
+    "yearString": "1921"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 701/61<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Ann's death (age 77) was registered in 1921 in the West Calder district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 701/61<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 701/61<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 701/61<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nAnn Finnie death registered 1921 in West Calder (age 77, mother's maiden name Brown).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Ann's death (age 77) was registered in 1921 in the West Calder district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 701/61<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nAnn Finnie death registered 1921 in West Calder (age 77, mother's maiden name Brown).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 701/61<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Ann Finnie death registered 1921 in West Calder (age 77, mother's maiden name Brown).",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 701/61<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FINNIE; Forename: ANN; Age at death: 77; Mother's Maiden Name: BROWN; Gender: F; Year: 1921; RD Name: WEST CALDER.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Ann's death (age 77) was registered in 1921 in the West Calder district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 701/61<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FINNIE; Forename: ANN; Age at death: 77; Mother's Maiden Name: BROWN; Gender: F; Year: 1921; RD Name: WEST CALDER.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 701/61<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FINNIE; Forename: ANN; Age at death: 77; Mother's Maiden Name: BROWN; Gender: F; Year: 1921; RD Name: WEST CALDER.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 701/61<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FINNIE\n|-\n| Forename || ANN\n|-\n| Age at death || 77\n|-\n| Mother's Maiden Name || BROWN\n|-\n| Gender || F\n|-\n| Year || 1921\n|-\n| RD Name || WEST CALDER\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Ann's death (age 77) was registered in 1921 in the West Calder district.<ref>\n'''Death Registration''':\n\"Statutory Register of Deaths\"<br/>\nNational Records of Scotland, Ref: 701/61<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FINNIE\n|-\n| Forename || ANN\n|-\n| Age at death || 77\n|-\n| Mother's Maiden Name || BROWN\n|-\n| Gender || F\n|-\n| Year || 1921\n|-\n| RD Name || WEST CALDER\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death Registration''': \"Statutory Register of Deaths\"<br/>National Records of Scotland, Ref: 701/61<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FINNIE; Forename: ANN; Age at death: 77; Mother's Maiden Name: BROWN; Gender: F; Year: 1921; RD Name: WEST CALDER.",
+    "type": "source"
+  }
+}
