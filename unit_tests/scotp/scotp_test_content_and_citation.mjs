@@ -370,6 +370,13 @@ const regressionData = [
     url: "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   },
   {
+    // Was causing issues where reg district WEST CALDER was left upper case
+    // It turns out that the page normally has it in mixed case but it is displayed as all upper case
+    // This was an exception.
+    caseName: "stat_death_1921_ann_finnie",
+    url: "https://www.scotlandspeople.gov.uk/record-results/56547769866620c0ed0937",
+  },
+  {
     // service returns
     // https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=statutory&dl_rec=statutory-deaths&surname=Thomson&surname_so=exact&forename=James&forename_so=exact&other_surname_so=exact&mmsurname_so=exact&from_year=1917&to_year=1917&age_from=19&age_to=21&birth_year_range=1&county=MINOR%20RECORDS&record_type=stat_deaths
     caseName: "stat_death_1917_james_thomson",
