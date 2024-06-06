@@ -1035,13 +1035,7 @@ class NarrativeBuilder {
         this.narrative += " " + pastTense;
 
         if (spouseName && typeString == "marriage") {
-          let spouseTerm = "spouse";
-          if (gd.personGender == "male") {
-            spouseTerm = "husband";
-          } else if (gd.personGender == "female") {
-            spouseTerm = "wife";
-          }
-          this.narrative += " (" + spouseTerm + " of " + spouseName + ")";
+          this.narrative += " " + spouseName;
           this.addAgeForMainSentence(spouseAge);
         }
         let year = this.eventGd.inferEventYear();
