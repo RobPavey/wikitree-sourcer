@@ -52,26 +52,26 @@ const searchOptionsGroup = {
     {
       optionName: "popup_showSameSite",
       type: "checkbox",
-      label: "On the popup show a search menu item for the site that you are currently on",
+      label: "On the popup, show a search menu item for the site that you are currently on",
       defaultValue: true,
     },
     {
       optionName: "filterMainMenuByDate",
       type: "checkbox",
-      label: "On the main popup filter the search menu items by date",
+      label: "On the top-level popup, filter the search menu items by date",
       defaultValue: true,
     },
     {
       optionName: "filterMainMenuByCountries",
       type: "checkbox",
-      label: "On the main popup filter the search menu items by countries",
+      label: "On the top-level popup, filter the search menu items by countries",
       defaultValue: true,
     },
     {
       optionName: "treatNoCountryAsAllCountries",
       type: "checkbox",
       label:
-        "On the main popup when filtering the search menu items by countries and no country known show all countries",
+        "On the top-level popup, when filtering the search menu items by countries and no country known, show all countries",
       defaultValue: true,
     },
     {
