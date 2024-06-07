@@ -120,6 +120,12 @@ function addFsSearchTreeMenuItem(menu, data) {
   });
 }
 
+function addFsSearchFullTextMenuItem(menu, data) {
+  addMenuItem(menu, "Search full text", function (element) {
+    familySearchSearch(data.generalizedData, "FullText");
+  });
+}
+
 function addFsSearchWithParametersMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search with specified parameters...", function (element) {
     setupFsSearchWithParametersSubMenu(data, backFunction);
@@ -140,6 +146,7 @@ async function setupFamilySearchSearchSubMenu(data, backFunction) {
   addFsSameRecordMenuItem(menu, data);
   addFsSearchCollectionsMenuItem(menu, data, backToHereFunction);
   addFsSearchTreeMenuItem(menu, data);
+  addFsSearchFullTextMenuItem(menu, data);
   addFsSearchWithParametersMenuItem(menu, data, backToHereFunction);
 
   endMainMenu(menu);
@@ -343,27 +350,6 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
   menu.list.appendChild(button);
 
   endMainMenu(menu);
-}
-
-function addFamilySearchImageBuildCitationMenuItems(menu, data) {
-  addMenuItemWithSubtitle(
-    menu,
-    "Build Inline Image Citation",
-    function (element) {
-      data.type = "inline";
-      familySearchBuildCitation(data);
-    },
-    "It is recommended to Build Inline Citation on the Record Page instead if one exists."
-  );
-  addMenuItemWithSubtitle(
-    menu,
-    "Build Source Image Citation",
-    function (element) {
-      data.type = "source";
-      familySearchBuildCitation(data);
-    },
-    "It is recommended to Build Source Citation on the Record Page instead if one exists."
-  );
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

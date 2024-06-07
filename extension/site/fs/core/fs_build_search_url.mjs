@@ -139,196 +139,203 @@ function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection)
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
+  let typeOfSearch = buildUrlInput.typeOfSearch;
 
   //console.log("buildSearchUrl, generalizedData is ");
   //console.log(gd);
 
   let searchType = "record";
-  if (buildUrlInput.typeOfSearch == "FamilyTree") {
+  if (typeOfSearch == "FamilyTree") {
     searchType = "tree";
+  } else if (typeOfSearch == "FullText") {
+    searchType = "fullText";
   }
   var builder = new FsUriBuilder(searchType);
 
-  let sameCollection = false;
-  let parameters = undefined;
-  let collection = undefined;
+  if (typeOfSearch == "FullText") {
+    builder.addFullName(gd.inferFullName());
+  } else {
+    let sameCollection = false;
+    let parameters = undefined;
+    let collection = undefined;
 
-  if (buildUrlInput.typeOfSearch == "SameCollection") {
-    if (gd.collectionData && gd.collectionData.id) {
-      let fsCollectionId = RC.mapCollectionId(
-        gd.sourceOfData,
-        gd.collectionData.id,
-        "fs",
-        gd.inferEventCountry(),
-        gd.inferEventYear()
-      );
-      if (fsCollectionId) {
-        collection = RC.findCollection("fs", fsCollectionId);
-        builder.addCollection(fsCollectionId);
-        sameCollection = true;
-      }
-    }
-  } else if (buildUrlInput.typeOfSearch == "SpecifiedCollection") {
-    let searchParams = buildUrlInput.searchParameters;
-    if (searchParams.collectionWtsId) {
-      collection = RC.findCollectionByWtsId(searchParams.collectionWtsId);
-      if (collection) {
-        let fsCollectionId = collection.sites["fs"].id;
-        builder.addCollection(fsCollectionId);
-      }
-    }
-  } else if (buildUrlInput.typeOfSearch == "SpecifiedParameters") {
-    parameters = buildUrlInput.searchParameters;
-  }
-
-  if (gd.inferPersonGender() && shouldAddSearchTerm(collection, "gender", true)) {
-    builder.addGender(gd.inferPersonGender());
-  }
-
-  let forenames = gd.inferForenames();
-  let lastNamesArray = gd.inferLastNamesArrayGivenParametersAndCollection(parameters, collection);
-  if (lastNamesArray.length > 0) {
-    for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
-      if (!parameters || lastNamesArray.length == 1 || parameters.lastNames[lastNameIndex]) {
-        builder.addName(forenames, lastNamesArray[lastNameIndex]);
-      }
-    }
-  }
-
-  let birthDateQualifier = gd.inferBirthDateQualifier();
-  if (sameCollection && gd.recordType == RT.Census) {
-    // although birth dates in censuses are inaccurate, if searching for the same record they should be close
-    // so remove the ABOUT
-    birthDateQualifier = dateQualifiers.NONE;
-  }
-
-  let birthYearRangeRange = getDateRange(
-    gd.inferBirthYear(),
-    options.search_fs_birthYearExactness,
-    birthDateQualifier,
-    sameCollection
-  );
-  builder.addBirth(birthYearRangeRange, gd.inferBirthPlace());
-  let deathYearRangeRange = getDateRange(
-    gd.inferDeathYear(),
-    options.search_fs_deathYearExactness,
-    gd.inferDeathDateQualifier(),
-    sameCollection
-  );
-  builder.addDeath(deathYearRangeRange, gd.inferDeathPlace());
-
-  if (gd.parents && gd.parents.father && gd.parents.father.name) {
-    // for now we don't include the father unless it is a specified parameter
-    if ((parameters && parameters.father) || sameCollection) {
-      let father = gd.parents.father;
-      builder.addFather(father.name.inferForenames(), father.name.inferLastName());
-    }
-  }
-
-  if (gd.parents && gd.parents.mother && gd.parents.mother.name) {
-    // for now we don't include the mother unless it is a specified parameter
-    if ((parameters && parameters.mother) || sameCollection) {
-      let mother = gd.parents.mother;
-      builder.addMother(mother.name.inferForenames(), mother.name.inferLastName());
-    }
-  }
-
-  if (gd.spouses) {
-    for (let spouseIndex = 0; spouseIndex < gd.spouses.length; ++spouseIndex) {
-      let spouse = gd.spouses[spouseIndex];
-
-      if (parameters && !parameters.spouses[spouseIndex]) {
-        continue;
-      }
-
-      if (spouse.marriageDate || spouse.marriagePlace) {
-        let marriageYear = "";
-        let marriagePlace = "";
-        if (spouse.marriageDate) {
-          marriageYear = spouse.marriageDate.getYearString();
+    if (buildUrlInput.typeOfSearch == "SameCollection") {
+      if (gd.collectionData && gd.collectionData.id) {
+        let fsCollectionId = RC.mapCollectionId(
+          gd.sourceOfData,
+          gd.collectionData.id,
+          "fs",
+          gd.inferEventCountry(),
+          gd.inferEventYear()
+        );
+        if (fsCollectionId) {
+          collection = RC.findCollection("fs", fsCollectionId);
+          builder.addCollection(fsCollectionId);
+          sameCollection = true;
         }
-        if (spouse.marriagePlace) {
-          marriagePlace = spouse.marriagePlace.placeString;
+      }
+    } else if (typeOfSearch == "SpecifiedCollection") {
+      let searchParams = buildUrlInput.searchParameters;
+      if (searchParams.collectionWtsId) {
+        collection = RC.findCollectionByWtsId(searchParams.collectionWtsId);
+        if (collection) {
+          let fsCollectionId = collection.sites["fs"].id;
+          builder.addCollection(fsCollectionId);
+        }
+      }
+    } else if (typeOfSearch == "SpecifiedParameters") {
+      parameters = buildUrlInput.searchParameters;
+    }
+
+    if (gd.inferPersonGender() && shouldAddSearchTerm(collection, "gender", true)) {
+      builder.addGender(gd.inferPersonGender());
+    }
+
+    let forenames = gd.inferForenames();
+    let lastNamesArray = gd.inferLastNamesArrayGivenParametersAndCollection(parameters, collection);
+    if (lastNamesArray.length > 0) {
+      for (let lastNameIndex = 0; lastNameIndex < lastNamesArray.length; ++lastNameIndex) {
+        if (!parameters || lastNamesArray.length == 1 || parameters.lastNames[lastNameIndex]) {
+          builder.addName(forenames, lastNamesArray[lastNameIndex]);
+        }
+      }
+    }
+
+    let birthDateQualifier = gd.inferBirthDateQualifier();
+    if (sameCollection && gd.recordType == RT.Census) {
+      // although birth dates in censuses are inaccurate, if searching for the same record they should be close
+      // so remove the ABOUT
+      birthDateQualifier = dateQualifiers.NONE;
+    }
+
+    let birthYearRangeRange = getDateRange(
+      gd.inferBirthYear(),
+      options.search_fs_birthYearExactness,
+      birthDateQualifier,
+      sameCollection
+    );
+    builder.addBirth(birthYearRangeRange, gd.inferBirthPlace());
+    let deathYearRangeRange = getDateRange(
+      gd.inferDeathYear(),
+      options.search_fs_deathYearExactness,
+      gd.inferDeathDateQualifier(),
+      sameCollection
+    );
+    builder.addDeath(deathYearRangeRange, gd.inferDeathPlace());
+
+    if (gd.parents && gd.parents.father && gd.parents.father.name) {
+      // for now we don't include the father unless it is a specified parameter
+      if ((parameters && parameters.father) || sameCollection) {
+        let father = gd.parents.father;
+        builder.addFather(father.name.inferForenames(), father.name.inferLastName());
+      }
+    }
+
+    if (gd.parents && gd.parents.mother && gd.parents.mother.name) {
+      // for now we don't include the mother unless it is a specified parameter
+      if ((parameters && parameters.mother) || sameCollection) {
+        let mother = gd.parents.mother;
+        builder.addMother(mother.name.inferForenames(), mother.name.inferLastName());
+      }
+    }
+
+    if (gd.spouses) {
+      for (let spouseIndex = 0; spouseIndex < gd.spouses.length; ++spouseIndex) {
+        let spouse = gd.spouses[spouseIndex];
+
+        if (parameters && !parameters.spouses[spouseIndex]) {
+          continue;
         }
 
-        let marriageYearRange = getDateRange(
-          marriageYear,
-          options.search_fs_marriageYearExactness,
+        if (spouse.marriageDate || spouse.marriagePlace) {
+          let marriageYear = "";
+          let marriagePlace = "";
+          if (spouse.marriageDate) {
+            marriageYear = spouse.marriageDate.getYearString();
+          }
+          if (spouse.marriagePlace) {
+            marriagePlace = spouse.marriagePlace.placeString;
+          }
+
+          let marriageYearRange = getDateRange(
+            marriageYear,
+            options.search_fs_marriageYearExactness,
+            dateQualifiers.NONE,
+            sameCollection
+          );
+          builder.addMarriage(marriageYearRange, marriagePlace);
+        }
+
+        if (spouse.name) {
+          // if searching for a census record do not add the surname of the spouse
+          // since, if it is a wife their last name will no be different
+          let spouseLastName = spouse.name.inferLastName();
+          if (gd.inferPersonGender() == "male") {
+            if (sameCollection) {
+              if (gd.recordType == RT.Census) {
+                spouseLastName = "";
+              }
+            } else if (collection && !collection.isMarriage) {
+              spouseLastName = "";
+            }
+          }
+          builder.addSpouse(spouse.name.inferForenames(), spouseLastName);
+        }
+      }
+    }
+
+    if (gd.recordType == RT.Census) {
+      if (gd.eventPlace || gd.eventDate) {
+        let residenceYearRange = getDateRange(
+          gd.inferEventYear(),
+          options.search_fs_residenceYearExactness,
           dateQualifiers.NONE,
           sameCollection
         );
-        builder.addMarriage(marriageYearRange, marriagePlace);
-      }
-
-      if (spouse.name) {
-        // if searching for a census record do not add the surname of the spouse
-        // since, if it is a wife their last name will no be different
-        let spouseLastName = spouse.name.inferLastName();
-        if (gd.inferPersonGender() == "male") {
-          if (sameCollection) {
-            if (gd.recordType == RT.Census) {
-              spouseLastName = "";
-            }
-          } else if (collection && !collection.isMarriage) {
-            spouseLastName = "";
-          }
-        }
-        builder.addSpouse(spouse.name.inferForenames(), spouseLastName);
+        builder.addResidence(residenceYearRange, gd.inferEventPlace());
       }
     }
-  }
 
-  if (gd.recordType == RT.Census) {
-    if (gd.eventPlace || gd.eventDate) {
-      let residenceYearRange = getDateRange(
-        gd.inferEventYear(),
-        options.search_fs_residenceYearExactness,
-        dateQualifiers.NONE,
-        sameCollection
-      );
-      builder.addResidence(residenceYearRange, gd.inferEventPlace());
-    }
-  }
-
-  // Note that adding multiple countries like England & Wales sometimes gets no results
-  // For example in England and Wales Birth Index. So if there is a collection then do not add
-  // countries at all since all collections tend to be specific to a country (or a few)
-  if (!collection && searchType != "tree") {
-    let countryArray = gd.inferCountries();
-    if (countryArray.length == 1) {
-      let fsCountry = adaptCountryForFamilySearch(countryArray[0]);
-      builder.addCountry(fsCountry);
-    } else if (countryArray.length > 1) {
-      // FS no longer supports more than one country to focus on, so we have to decide which one to
-      // use.
-      let haveAddedCountry = false;
-      if (gd.sourceType == "record") {
-        if (gd.collectionData && gd.collectionData.id) {
-          let collection = RC.findCollection(gd.sourceOfData, gd.collectionData.id);
-          if (collection && collection.country) {
-            let fsCountry = adaptCountryForFamilySearch(collection.country);
-            if (fsCountry) {
-              builder.addCountry(fsCountry);
-              haveAddedCountry = true;
-            }
-          }
-        }
-      }
-      if (!haveAddedCountry) {
+    // Note that adding multiple countries like England & Wales sometimes gets no results
+    // For example in England and Wales Birth Index. So if there is a collection then do not add
+    // countries at all since all collections tend to be specific to a country (or a few)
+    if (!collection && searchType != "tree") {
+      let countryArray = gd.inferCountries();
+      if (countryArray.length == 1) {
         let fsCountry = adaptCountryForFamilySearch(countryArray[0]);
         builder.addCountry(fsCountry);
+      } else if (countryArray.length > 1) {
+        // FS no longer supports more than one country to focus on, so we have to decide which one to
+        // use.
+        let haveAddedCountry = false;
+        if (gd.sourceType == "record") {
+          if (gd.collectionData && gd.collectionData.id) {
+            let collection = RC.findCollection(gd.sourceOfData, gd.collectionData.id);
+            if (collection && collection.country) {
+              let fsCountry = adaptCountryForFamilySearch(collection.country);
+              if (fsCountry) {
+                builder.addCountry(fsCountry);
+                haveAddedCountry = true;
+              }
+            }
+          }
+        }
+        if (!haveAddedCountry) {
+          let fsCountry = adaptCountryForFamilySearch(countryArray[0]);
+          builder.addCountry(fsCountry);
+        }
       }
     }
-  }
 
-  if (parameters && parameters.type != "all") {
-    builder.addRecordType(parameters.type);
-  }
+    if (parameters && parameters.type != "all") {
+      builder.addRecordType(parameters.type);
+    }
 
-  if (buildUrlInput.typeOfSearch == "SameCollection") {
-    if (collection) {
-      builder.addMaritalStatus(gd.maritalStatus);
-      builder.addRelationship(gd.relationshipToHead);
+    if (typeOfSearch == "SameCollection") {
+      if (collection) {
+        builder.addMaritalStatus(gd.maritalStatus);
+        builder.addRelationship(gd.relationshipToHead);
+      }
     }
   }
 

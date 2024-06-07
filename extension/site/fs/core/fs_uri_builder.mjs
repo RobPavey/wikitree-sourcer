@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 // Example FamilySearch search string:
@@ -67,6 +66,8 @@ class FsUriBuilder {
   constructor(type) {
     if (type == "tree") {
       this.uri = "https://www.familysearch.org/search/tree/results?count=20";
+    } else if (type == "fullText") {
+      this.uri = "https://www.familysearch.org/search/full-text/results?count=20";
     } else {
       this.uri = "https://www.familysearch.org/search/record/results?count=20";
     }
@@ -284,6 +285,13 @@ class FsUriBuilder {
         this.addSearchParameter("q.relationshipToHead", supRel);
         return;
       }
+    }
+  }
+
+  addFullName(fullName) {
+    // used in  full-text search
+    if (fullName != undefined && fullName != "") {
+      this.addSearchParameter("q.fullName", StringUtils.removeExtendedAsciiCharacters(fullName));
     }
   }
 
