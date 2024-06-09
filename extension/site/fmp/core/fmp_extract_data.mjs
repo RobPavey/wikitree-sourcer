@@ -856,6 +856,10 @@ function extractStyle1TranscriptionData(document, result) {
   }
 
   let placeNode = headerContentNode.querySelector("div > span");
+  if (!placeNode) {
+    // if browser window is very narrow the HTML layout changes
+    placeNode = headerContentNode.querySelector("div > p");
+  }
   if (placeNode) {
     result.place = cleanText(placeNode.textContent);
   }
