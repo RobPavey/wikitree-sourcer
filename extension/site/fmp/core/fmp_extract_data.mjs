@@ -856,7 +856,9 @@ function extractStyle1TranscriptionData(document, result) {
   }
 
   let placeNode = headerContentNode.querySelector("div > span");
-  result.place = cleanText(placeNode.textContent);
+  if (placeNode) {
+    result.place = cleanText(placeNode.textContent);
+  }
 
   // Attempt to get gender from table heading
   if (transcriptTableHeadingNode) {

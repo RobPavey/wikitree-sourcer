@@ -82,6 +82,10 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=BMD%2FD%2F1914%2F1%2FAZ%2F000845%2F005",
   },
   {
+    caseName: "denmark_baptism_1860_albertine_soberg",
+    url: "https://www.findmypast.co.uk/transcript?id=R_970243014",
+  },
+  {
     caseName: "devon_baptisms_pavey-342",
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FB%2F31077260%2F1",
   },

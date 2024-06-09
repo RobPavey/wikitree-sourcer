@@ -328,7 +328,7 @@ function buildMainPlaceObj(ed) {
   placeObj.state = getCleanRecordDataValue(ed, "State");
   placeObj.county = getCleanRecordDataValue(ed, "County");
   placeObj.parish = getCleanRecordDataValue(ed, "Parish");
-  placeObj.place = getRecordDataValueForList(ed, ["Place", "Marriage place", "Burial place"]);
+  placeObj.place = getRecordDataValueForList(ed, ["Place", "Marriage place", "Burial place", "Baptism place"]);
   placeObj.streetAddress = getCleanRecordDataValue(ed, "Address");
   placeObj.fullAddress = getCleanRecordDataValue(ed, "Full address");
 
@@ -984,7 +984,7 @@ function generalizeDataGivenRecordType(ed, result) {
 
     let eventPlace = getRecordDataValueForList(ed, ["Registry", "Probate registry"]);
     if (eventPlace) {
-      if (eventPlace.placeString != eventPlace) {
+      if (!result.eventPlace || result.eventPlace.placeString != eventPlace) {
         result.setEventPlace(eventPlace);
       }
     }

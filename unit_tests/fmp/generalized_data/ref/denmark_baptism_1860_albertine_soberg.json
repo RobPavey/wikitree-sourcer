@@ -1,0 +1,37 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Soberg",
+    "forenames": "Albertine Wilhelmine"
+  },
+  "eventPlace": {
+    "country": "Denmark",
+    "placeString": "Domsognet, Aarhus, Aarhus, Denmark"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "firstNames": "Soren",
+        "lastName": "Petersen Soberg"
+      }
+    },
+    "mother": {
+      "name": {
+        "firstNames": "Thora Johanne Frederikke",
+        "lastName": "Schubart"
+      }
+    }
+  },
+  "eventDate": {
+    "dateString": "16 Sep 1860",
+    "yearString": "1860"
+  },
+  "lastNameAtBirth": "Soberg",
+  "collectionData": {
+    "id": "Denmark Baptisms 1618-1923"
+  },
+  "hasValidData": true
+}
