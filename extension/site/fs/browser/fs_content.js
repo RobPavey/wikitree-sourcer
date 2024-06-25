@@ -23,7 +23,13 @@ SOFTWARE.
 */
 
 async function doFetch() {
-  //console.log('doFetch, document.location is: ' + document.location);
+  //console.log("doFetch, document.location is: " + document.location);
+
+  let fssessionid = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("fssessionid="))
+    ?.split("=")[1];
+  //console.log("doFetch, fssessionid: " + fssessionid);
 
   let fetchType = "record";
 
@@ -150,6 +156,7 @@ async function doFetch() {
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
+    authorization: "Bearer " + fssessionid,
   };
 
   let fetchOptions = {
@@ -197,7 +204,7 @@ async function doFetch() {
       dataObj: dataObj,
     };
 
-    return { success: true, dataObjects: dataObjects, fetchType: fetchType };
+    return { success: true, dataObjects: dataObjects, fetchType: fetchType, sessionId: fssessionid };
   } catch (error) {
     console.log("fetch failed, error is:");
     console.log(error);
@@ -207,7 +214,7 @@ async function doFetch() {
   }
 }
 
-async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, options, sendResponse) {
+async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, sessionId, options, sendResponse) {
   //console.log('extractDataFromFetchAndRespond entered');
 
   if (!isLoadedExtractDataModuleReady) {
@@ -222,7 +229,7 @@ async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, 
       loadExtractDataModuleRetries++;
       console.log("extractDataFromFetchAndRespond. Retry number: ", loadExtractDataModuleRetries);
       setTimeout(function () {
-        extractDataFromFetchAndRespond(document, dataObjects, options, sendResponse);
+        extractDataFromFetchAndRespond(document, dataObjects, fetchType, sessionId, options, sendResponse);
       }, loadModuleTimeout);
       return true;
     } else {
@@ -236,7 +243,14 @@ async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, 
   }
 
   // Extract the data.
-  let extractedData = loadedExtractDataModule.extractDataFromFetch(document, "", dataObjects, fetchType, options);
+  let extractedData = loadedExtractDataModule.extractDataFromFetch(
+    document,
+    "",
+    dataObjects,
+    fetchType,
+    sessionId,
+    options
+  );
 
   // respond with the type of content and the extracted data
   sendResponse({
@@ -251,7 +265,14 @@ async function doFetchAndSendResponse(sendResponse, options) {
 
   if (result.success) {
     // Extract the data.
-    extractDataFromFetchAndRespond(document, result.dataObjects, result.fetchType, options, sendResponse);
+    extractDataFromFetchAndRespond(
+      document,
+      result.dataObjects,
+      result.fetchType,
+      result.sessionId,
+      options,
+      sendResponse
+    );
   } else {
     if (result.errorCondition == "NotJSON") {
       // This is normal for some pages that could be records but are not.

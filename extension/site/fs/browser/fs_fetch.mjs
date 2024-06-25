@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-async function fetchFsSourcesJson(sourceIdList) {
+async function fetchFsSourcesJson(sourceIdList, sessionId) {
+  //console.log("fetchFsSourcesJson, sessionId is: " + sessionId);
+
   if (!sourceIdList || sourceIdList.length == 0) {
     return { success: false };
   }
@@ -51,6 +53,7 @@ async function fetchFsSourcesJson(sourceIdList) {
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
+    authorization: "Bearer " + sessionId,
   };
 
   let fetchOptions = {
@@ -74,7 +77,7 @@ async function fetchFsSourcesJson(sourceIdList) {
 
     // On Firefox it may return zero any time you use "no-cors"
     if (response.status !== 200) {
-      console.log("Looks like there was a problem. Status Code: " + response.status);
+      console.log("fetchFsSourcesJson: Looks like there was a problem. Status Code: " + response.status);
       return {
         success: false,
         errorCondition: "FetchError",
@@ -111,8 +114,9 @@ async function fetchFsSourcesJson(sourceIdList) {
   return { success: false };
 }
 
-async function fetchRecord(fetchUrl) {
+async function fetchRecord(fetchUrl, sessionId) {
   //console.log("fetchRecord, fetchUrl is: " + fetchUrl);
+  //console.log("fetchRecord, sessionId is: " + sessionId);
 
   if (!fetchUrl.includes("familysearch.org/")) {
     return { success: false };
@@ -129,6 +133,7 @@ async function fetchRecord(fetchUrl) {
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
+    authorization: "Bearer " + sessionId,
   };
 
   let fetchOptions = {
@@ -146,7 +151,7 @@ async function fetchRecord(fetchUrl) {
     //console.log("doFetch, response.status is: " + response.status);
 
     if (response.status !== 200) {
-      console.log("Looks like there was a problem. Status Code: " + response.status);
+      console.log("fetchRecord: Looks like there was a problem. Status Code: " + response.status);
       return {
         success: false,
         errorCondition: "FetchError",

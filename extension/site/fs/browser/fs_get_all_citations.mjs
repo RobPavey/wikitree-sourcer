@@ -35,18 +35,18 @@ import {
   buildFsPlainCitations,
 } from "../core/fs_build_all_citations.mjs";
 
-async function getSourcerCitation(runDate, source, type, options, updateStatusFunction) {
+async function getSourcerCitation(runDate, source, type, sessionId, options, updateStatusFunction) {
   let uri = source.uri;
 
   let fetchResult = { success: false };
 
   if (uri) {
-    fetchResult = await fetchRecord(uri);
+    fetchResult = await fetchRecord(uri, sessionId);
     let retryCount = 0;
     while (!fetchResult.success && fetchResult.allowRetry && retryCount < 3) {
       retryCount++;
       updateStatusFunction("retry " + retryCount);
-      fetchResult = await fetchRecord(uri);
+      fetchResult = await fetchRecord(uri, sessionId);
     }
   }
 
@@ -61,7 +61,7 @@ async function getSourcerCitation(runDate, source, type, options, updateStatusFu
   buildSourcerCitation(runDate, sourceDataObjects, source, type, options);
 }
 
-async function getSourcerCitations(runDate, result, type, options) {
+async function getSourcerCitations(runDate, result, type, sessionId, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
@@ -80,7 +80,7 @@ async function getSourcerCitations(runDate, result, type, options) {
   async function requestFunction(input, updateStatusFunction) {
     updateStatusFunction("fetching...");
     let newResponse = { success: true };
-    await getSourcerCitation(runDate, input, type, options, updateStatusFunction);
+    await getSourcerCitation(runDate, input, type, sessionId, options, updateStatusFunction);
     return newResponse;
   }
 
@@ -101,6 +101,7 @@ async function fsGetAllCitations(input) {
   let ed = input.extractedData;
   let options = input.options;
   let runDate = input.runDate;
+  let sessionId = ed.sessionId;
 
   let result = { success: false };
 
@@ -118,7 +119,7 @@ async function fsGetAllCitations(input) {
   while (retryCount < 3 && !sourcesObj.success && sourcesObj.allowRetry) {
     retryCount++;
     displayBusyMessage("Getting sources, retry " + retryCount + " ...");
-    sourcesObj = await fetchFsSourcesJson(ed.sourceIds);
+    sourcesObj = await fetchFsSourcesJson(ed.sourceIds, sessionId);
   }
 
   if (sourcesObj.success) {
@@ -139,7 +140,7 @@ async function fsGetAllCitations(input) {
         case "narrative":
         case "inline":
         case "source":
-          await getSourcerCitations(runDate, result, citationType, options);
+          await getSourcerCitations(runDate, result, citationType, sessionId, options);
           break;
       }
     } catch (error) {

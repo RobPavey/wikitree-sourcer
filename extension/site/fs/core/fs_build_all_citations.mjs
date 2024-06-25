@@ -742,8 +742,9 @@ function doesCitationWantHouseholdTable(citationType, generalizedData, options) 
 function buildSourcerCitation(runDate, sourceDataObjects, source, type, options) {
   if (sourceDataObjects) {
     source.dataObjects = sourceDataObjects;
+    let sessionId = "";
 
-    let extractedData = extractDataFromFetch(undefined, "", source.dataObjects, "record", options);
+    let extractedData = extractDataFromFetch(undefined, "", source.dataObjects, "record", sessionId, options);
     if (extractedData && extractedData.pageType) {
       source.extractedData = extractedData;
 

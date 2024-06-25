@@ -73,7 +73,7 @@ function extractData(document, url) {
   return result;
 }
 
-function extractDataFromFetch(document, url, dataObjects, options) {
+function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, options) {
   let result = {};
 
   let dataObj = dataObjects.dataObj;

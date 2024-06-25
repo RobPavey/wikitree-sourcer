@@ -981,6 +981,19 @@ function extractData(document, url) {
 
   var result = {};
 
+  if (document) {
+    let cookies = document.cookie;
+    if (cookies) {
+      let fssessionid = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("fssessionid="))
+        ?.split("=")[1];
+      if (fssessionid) {
+        result.sessionId = fssessionid;
+      }
+    }
+  }
+
   result.url = url;
 
   // first determine what kind of page we are in.
@@ -2824,13 +2837,7 @@ function identifyPreferredParents(document, parentPairs) {
   }
 }
 
-function extractPersonDataFromFetch(document, dataObj, options) {
-  let result = {};
-
-  if (document) {
-    result.url = document.URL;
-  }
-
+function extractPersonDataFromFetch(result, document, dataObj, options) {
   // there could be many people in this data, the description is one way to find out which
   // is the one that is being focused on
   let description = dataObj.description;
@@ -2874,53 +2881,54 @@ function extractPersonDataFromFetch(document, dataObj, options) {
 
       if (otherPersonId) {
         let otherPerson = findPersonById(dataObj, otherPersonId);
+        if (otherPerson) {
+          if (type == "http://gedcomx.org/Couple") {
+            let spouse = {};
+            getNameForPersonObj(otherPerson, spouse);
+            getGenderForPersonObj(otherPerson, spouse);
 
-        if (type == "http://gedcomx.org/Couple") {
-          let spouse = {};
-          getNameForPersonObj(otherPerson, spouse);
-          getGenderForPersonObj(otherPerson, spouse);
-
-          if (relationship.facts) {
-            for (let fact of relationship.facts) {
-              if (fact.type == "http://gedcomx.org/Marriage" || fact.type == "http://gedcomx.org/MarriageNotice") {
-                if (fact.date) {
-                  if (fact.date.original) {
-                    spouse.marriageDateOriginal = fact.date.original;
-                  }
-                  if (fact.date.normalized) {
-                    for (let normDate of fact.date.normalized) {
-                      if (normDate.value && normDate.lang == "en") {
-                        spouse.marriageDate = normDate.value;
-                        break;
+            if (relationship.facts) {
+              for (let fact of relationship.facts) {
+                if (fact.type == "http://gedcomx.org/Marriage" || fact.type == "http://gedcomx.org/MarriageNotice") {
+                  if (fact.date) {
+                    if (fact.date.original) {
+                      spouse.marriageDateOriginal = fact.date.original;
+                    }
+                    if (fact.date.normalized) {
+                      for (let normDate of fact.date.normalized) {
+                        if (normDate.value && normDate.lang == "en") {
+                          spouse.marriageDate = normDate.value;
+                          break;
+                        }
                       }
                     }
                   }
-                }
-                if (fact.place) {
-                  if (fact.place.original) {
-                    spouse.marriagePlaceOriginal = fact.place.original;
-                  }
-                  if (fact.place.normalized) {
-                    for (let normPlace of fact.place.normalized) {
-                      if (normPlace.value && normPlace.lang == "en") {
-                        spouse.marriagePlace = normPlace.value;
-                        break;
+                  if (fact.place) {
+                    if (fact.place.original) {
+                      spouse.marriagePlaceOriginal = fact.place.original;
+                    }
+                    if (fact.place.normalized) {
+                      for (let normPlace of fact.place.normalized) {
+                        if (normPlace.value && normPlace.lang == "en") {
+                          spouse.marriagePlace = normPlace.value;
+                          break;
+                        }
                       }
                     }
                   }
                 }
               }
             }
-          }
 
-          if (!result.spouses) {
-            result.spouses = [];
-          }
-          result.spouses.push(spouse);
-        } else if (type == "http://gedcomx.org/ParentChild") {
-          if (relationship.person2.resourceId == personId) {
-            // this person is the child
-            addParentFromRelationship(relationship, person, otherPerson, parentRelationships);
+            if (!result.spouses) {
+              result.spouses = [];
+            }
+            result.spouses.push(spouse);
+          } else if (type == "http://gedcomx.org/ParentChild") {
+            if (relationship.person2.resourceId == personId) {
+              // this person is the child
+              addParentFromRelationship(relationship, person, otherPerson, parentRelationships);
+            }
           }
         }
       }
@@ -3153,10 +3161,16 @@ function extractHintsFromRecordRocument(document) {
   return docHints;
 }
 
-function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
+function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, options) {
+  //console.log("extractDataFromFetch: sessionId = " + sessionId);
+
   usedLabelIds = {};
 
   let result = {};
+
+  if (sessionId) {
+    result.sessionId = sessionId;
+  }
 
   let dataObj = dataObjects.dataObj;
 
@@ -3165,7 +3179,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, options) {
   }
 
   if (fetchType == "person") {
-    return extractPersonDataFromFetch(document, dataObj, options);
+    return extractPersonDataFromFetch(result, document, dataObj, options);
   }
 
   // There seem to be somethings that cannot be determined solely from the fect data,
