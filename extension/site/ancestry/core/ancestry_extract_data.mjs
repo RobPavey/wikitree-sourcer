@@ -1309,7 +1309,7 @@ function parseHtmlEscapeCodes(str) {
 // Gets this response:
 // {"pid":"12992988602","gname":"Fannie L.","sname":"(Kemper) Money Barber","isLiving":false}
 // The pid can be compared with the pid of the page to make sure it is the right person.
-function handlePersonFacts(document, result) {
+function handlePersonFactsPreJune2024(document, result) {
   let personCardContainer = document.querySelector("#personCardContainer");
   if (personCardContainer) {
     // There is no way that I have found to find the given name and surname separated in the
@@ -1556,6 +1556,322 @@ function handlePersonFacts(document, result) {
   // #family46552199474 > div.noTopSpacing.userCard.userCardSize2 > div.userCardContent.textWrap > h4
 
   //console.log("handleFactEdit, recordUrl is: " + result.recordUrl);
+}
+
+function handlePersonFactsJune2024(document, result) {
+  let personCardContainer = document.querySelector("#personCardContainer");
+  if (personCardContainer) {
+    // There is no way that I have found to find the given name and surname separated in the
+    // HTML elements. But it can be found in a script.
+    let scriptElements = personCardContainer.querySelectorAll("script");
+    for (let scriptElement of scriptElements) {
+      let text = scriptElement.textContent;
+      let fullNameIndex = text.indexOf("fullName:");
+      if (fullNameIndex != -1) {
+        let endIndex = text.indexOf("}", fullNameIndex);
+        if (endIndex != -1) {
+          let fullNameText = text.substring(fullNameIndex, endIndex);
+          let givenName = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$1");
+          let surname = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$2");
+          if (givenName && givenName != fullNameText) {
+            result.givenName = parseHtmlEscapeCodes(givenName);
+          }
+          if (surname && surname != fullNameText) {
+            result.surname = parseHtmlEscapeCodes(surname);
+          }
+        }
+      }
+    }
+
+    let userCardTitle = personCardContainer.querySelector(".userCardTitle");
+    if (userCardTitle) {
+      let fullName = userCardTitle.textContent;
+      if (fullName) {
+        result.titleName = fullName;
+      }
+    }
+
+    let userCardEvents = personCardContainer.querySelector(".userCardEvents");
+    if (userCardEvents) {
+      let birthDateSpan = userCardEvents.querySelector("span.birthDate");
+      if (birthDateSpan) {
+        result.birthDate = birthDateSpan.textContent;
+      }
+      let birthPlaceSpan = userCardEvents.querySelector("span.birthPlace");
+      if (birthPlaceSpan && birthPlaceSpan.textContent) {
+        result.birthPlace = cleanPlaceName(birthPlaceSpan.textContent);
+      }
+
+      let deathDateSpan = userCardEvents.querySelector("span.deathDate");
+      if (deathDateSpan) {
+        result.deathDate = deathDateSpan.textContent;
+      }
+      let deathPlaceSpan = userCardEvents.querySelector("span.deathPlace");
+      if (deathPlaceSpan && deathPlaceSpan.textContent) {
+        result.deathPlace = cleanPlaceName(deathPlaceSpan.textContent);
+      }
+    }
+  }
+
+  let researchListFacts = document.querySelector("#researchListFacts");
+  if (researchListFacts) {
+    let factList = researchListFacts.querySelectorAll("li.researchListItem");
+    for (let fact of factList) {
+      let titleHeading = fact.querySelector("h3.userCardTitle");
+      if (!titleHeading) {
+        continue;
+      }
+
+      let title = "";
+      for (let childNode of titleHeading.childNodes) {
+        // 3 is Node.TEXT_NODE
+        if (childNode.nodeType === 3) {
+          title += childNode.textContent;
+        }
+      }
+
+      if (!title) {
+        continue;
+      }
+      title = title.trim();
+      let lcTitle = title.toLowerCase();
+
+      if (lcTitle == "gender") {
+        let valueNode = fact.querySelector("h4");
+        if (valueNode) {
+          let gender = valueNode.textContent;
+          if (gender) {
+            result.gender = gender;
+          }
+        }
+      } else if (lcTitle == "marriage") {
+        let factContentDiv = fact.querySelector("div.userCard > div.userCardContent");
+        let factItemDateSpan = factContentDiv.querySelector("span.factItemDate");
+        let factItemLocationSpan = factContentDiv.querySelector("span.factItemLocation");
+        let marriage = {};
+        if (factItemDateSpan) {
+          let date = factItemDateSpan.textContent;
+          if (date) {
+            marriage.date = date;
+          }
+        }
+        if (factItemLocationSpan) {
+          let place = factItemLocationSpan.textContent;
+          if (place) {
+            marriage.place = cleanPlaceName(place);
+          }
+        }
+        let spouseNode = factContentDiv.querySelector("div.userCard > div.userCardContent > h4.userCardTitle");
+        if (spouseNode) {
+          let spouseLinkNode = spouseNode.querySelector("a");
+          if (spouseLinkNode) {
+            let spouseName = spouseLinkNode.textContent;
+            if (spouseName) {
+              marriage.spouseName = spouseName;
+            }
+          }
+        }
+
+        // add the marriage
+        if (!result.marriages) {
+          result.marriages = [];
+        }
+        result.marriages.push(marriage);
+      }
+    }
+  }
+
+  let familySection = document.querySelector("#familySection");
+  if (familySection) {
+    // there can be multiple research lists but parents should always be first one
+    let parentResearchList = familySection.querySelector("ul.researchList");
+
+    let parentItems = parentResearchList.querySelectorAll("li.researchListItem");
+
+    if (parentItems.length == 2) {
+      let fatherItem = parentItems[0];
+      let fatherTitle = fatherItem.querySelector("h4.userCardTitle");
+      if (fatherTitle && fatherTitle.textContent != "Unknown father") {
+        result.fatherName = fatherTitle.textContent;
+      }
+
+      let motherItem = parentItems[1];
+      let motherTitle = motherItem.querySelector("h4.userCardTitle");
+      if (motherTitle && motherTitle.textContent != "Unknown mother") {
+        result.motherName = motherTitle.textContent;
+      }
+    }
+  }
+
+  // Get the list of sources
+  let sourcesSection = document.querySelector("#sourcesSection");
+  if (sourcesSection) {
+    let conBody = sourcesSection.querySelector("div > div.conBody");
+    if (!conBody) {
+      // On iPhone15 sim there is no extra div
+      conBody = sourcesSection.querySelector("div.conBody");
+    }
+    if (conBody) {
+      let researchListHeadings = conBody.querySelectorAll("h3");
+      let researchLists = conBody.querySelectorAll("ul.researchList");
+
+      let ancestrySourcesList = undefined;
+      let otherSourcesList = undefined;
+      let webLinksList = undefined;
+      if (researchListHeadings.length == researchLists.length) {
+        for (let index = 0; index < researchLists.length; index++) {
+          let heading = researchListHeadings[index];
+          let list = researchLists[index];
+          let lcHeading = "";
+          if (heading && heading.textContent) {
+            lcHeading = heading.textContent.toLowerCase();
+          }
+          let type = undefined;
+          if (list.classList.contains("researchListWebLinks")) {
+            type = "webLinks";
+          } else if (lcHeading == "ancestry sources") {
+            type = "ancestrySources";
+          } else if (lcHeading == "other sources") {
+            type = "otherSources";
+          } else if (lcHeading == "web links") {
+            type = "webLinks";
+          }
+
+          if (type == "ancestrySources") {
+            ancestrySourcesList = list;
+          } else if (type == "otherSources") {
+            otherSourcesList = list;
+          } else if (type == "webLinks") {
+            webLinksList = list;
+          }
+        }
+      }
+
+      if (ancestrySourcesList) {
+        let researchListItems = ancestrySourcesList.querySelectorAll("li.researchListItem");
+        if (researchListItems.length > 0) {
+          result.sources = [];
+          for (let researchListItem of researchListItems) {
+            let dbId = "";
+            let recordId = "";
+            let title = "";
+
+            let cardDiv = researchListItem.querySelector("div.card");
+            if (cardDiv) {
+              for (let className of cardDiv.classList) {
+                if (className.startsWith("record_")) {
+                  let classNameDbId = className.replace(/^record_([^_]+)_(\d+)$/, "$1");
+                  let classNameRecordId = className.replace(/^record_([^_]+)_(\d+)$/, "$2");
+                  if (
+                    classNameDbId &&
+                    classNameRecordId &&
+                    classNameDbId != className &&
+                    classNameRecordId != className
+                  ) {
+                    dbId = classNameDbId;
+                    recordId = classNameRecordId;
+                    break;
+                  }
+                }
+              }
+
+              let titleHeading = researchListItem.querySelector("div > h4");
+              if (titleHeading) {
+                title = titleHeading.textContent;
+              }
+            }
+
+            if (dbId && recordId) {
+              // exclude "Ancestry Family Trees" sources
+              if (dbId == "1030") {
+                continue;
+              }
+
+              let source = { dbId: dbId, recordId: recordId };
+
+              if (title) {
+                title = title.replace("&amp;", "&");
+                title = title.trim();
+                source.title = title;
+              }
+
+              result.sources.push(source);
+            }
+          }
+        }
+      }
+
+      if (otherSourcesList) {
+        let researchListItems = otherSourcesList.querySelectorAll("li.researchListItem");
+        if (researchListItems.length > 0) {
+          result.otherSources = [];
+          for (let researchListItem of researchListItems) {
+            let titleInput = researchListItem.querySelector("input.title");
+            let viewRecordLinkInput = researchListItem.querySelector("input.viewRecordLink");
+
+            if (titleInput && viewRecordLinkInput) {
+              let title = titleInput.value;
+              let viewRecordLink = viewRecordLinkInput.value;
+              if (title && viewRecordLink) {
+                title = title.replace("&amp;", "&");
+                title = title.trim();
+
+                let source = { title: title, viewRecordLink: viewRecordLink };
+                result.otherSources.push(source);
+              }
+            }
+          }
+        }
+      }
+
+      if (webLinksList) {
+        let researchListItems = webLinksList.querySelectorAll("li.researchListItem");
+        if (researchListItems.length > 0) {
+          result.webLinks = [];
+          for (let researchListItem of researchListItems) {
+            let titleElement = researchListItem.querySelector("h4.webLinkTitle");
+            let webLinkElement = researchListItem.querySelector("p.webLinkHref > a");
+
+            if (titleElement && webLinkElement) {
+              let title = titleElement.textContent;
+              let webLink = webLinkElement.getAttribute("href");
+              if (title && webLink) {
+                title = title.replace("&amp;", "&");
+                title = title.trim();
+
+                let source = { title: title, webLink: webLink };
+                result.webLinks.push(source);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // #family46552199474 > div.noTopSpacing.userCard.userCardSize2 > div.userCardContent.textWrap > h4
+
+  //console.log("handleFactEdit, recordUrl is: " + result.recordUrl);
+}
+
+function handlePersonFacts(document, result) {
+  // The format changed in June 2024.
+  // There may be no reason to keep the old code around but it keeps the unit tests working and
+  // the old format could come back (seems unlikely)
+
+  // Some checks to see which format to use.
+  let format = "june2024";
+
+  let sourcesSection = document.querySelector("section.factsSectionSources");
+  if (sourcesSection) {
+    format = "preJune2024";
+  }
+
+  if (format == "preJune2024") {
+    handlePersonFactsPreJune2024(document, result);
+  } else {
+    handlePersonFactsJune2024(document, result);
+  }
 }
 
 // Used by background for extracting a referenced record

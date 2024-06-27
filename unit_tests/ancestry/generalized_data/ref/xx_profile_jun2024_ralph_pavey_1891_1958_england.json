@@ -1,0 +1,59 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Ralph Edgar Pavey",
+    "lastName": "Pavey",
+    "forenames": "Ralph Edgar"
+  },
+  "birthDate": {
+    "dateString": "9 JUL 1891"
+  },
+  "birthPlace": {
+    "placeString": "Kentish Town, London, England"
+  },
+  "deathDate": {
+    "dateString": "8 SEP 1958"
+  },
+  "deathPlace": {
+    "placeString": "Marylebone, London, England"
+  },
+  "personGender": "male",
+  "spouses": [
+    {
+      "name": {
+        "name": "Clara Ethel Risley"
+      },
+      "marriageDate": {
+        "dateString": "15 Feb 1914"
+      },
+      "marriagePlace": {
+        "placeString": "Holy Trinity, Lambeth, England"
+      }
+    },
+    {
+      "name": {
+        "name": "Elsie Sarah Chambers"
+      },
+      "marriageDate": {
+        "dateString": "Sep 1944"
+      },
+      "marriagePlace": {
+        "placeString": "Hendon, Middlesex"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Harry Alfred Pavey"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Amelia Elizabeth Littlemore"
+      }
+    }
+  },
+  "hasValidData": true
+}

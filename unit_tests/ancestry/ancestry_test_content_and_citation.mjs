@@ -1218,6 +1218,15 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/11748183/person/12992988602/facts",
   },
   {
+    caseName: "xx_profile_jun2024_ralph_pavey_1891_1958_england",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
+  },
+  {
+    // June 2024 format. Had Other Sources and Web Links. Has suffix.
+    caseName: "xx_profile_leonard_pavey_iv_1700_1783_england",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46591661544/facts",
+  },
+  {
     caseName: "xx_profile_ralph_pavey_1891_1958_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },

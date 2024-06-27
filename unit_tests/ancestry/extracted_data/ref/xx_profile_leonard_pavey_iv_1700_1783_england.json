@@ -1,0 +1,61 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/86808578/person/46591661544/facts",
+  "pageType": "personFacts",
+  "givenName": "Leonard",
+  "surname": "Pavey",
+  "titleName": "Leonard Pavey IV",
+  "birthDate": "1700",
+  "birthPlace": "Yarcombe, Devon, England",
+  "deathDate": "1783",
+  "deathPlace": "Stockland, Devon, England",
+  "gender": "Male",
+  "marriages": [
+    {
+      "date": "30 May 1727",
+      "place": "Stockland, Devon, England",
+      "spouseName": "Ann Hearn"
+    }
+  ],
+  "fatherName": "Leonard Pavey Junr",
+  "motherName": "Elizabeth Phippen",
+  "sources": [
+    {
+      "dbId": "2448",
+      "recordId": "111093",
+      "title": "Dorset, England, Quarter Sessions Order Books, 1625-1905"
+    },
+    {
+      "dbId": "2448",
+      "recordId": "111133",
+      "title": "Dorset, England, Quarter Sessions Order Books, 1625-1905"
+    },
+    {
+      "dbId": "2448",
+      "recordId": "111209",
+      "title": "Dorset, England, Quarter Sessions Order Books, 1625-1905"
+    },
+    {
+      "dbId": "2448",
+      "recordId": "111241",
+      "title": "Dorset, England, Quarter Sessions Order Books, 1625-1905"
+    },
+    {
+      "dbId": "2448",
+      "recordId": "111399",
+      "title": "Dorset, England, Quarter Sessions Order Books, 1625-1905"
+    },
+    {
+      "dbId": "9841",
+      "recordId": "173229490",
+      "title": "England, Select Births and Christenings, 1538-1975"
+    },
+    {
+      "dbId": "9841",
+      "recordId": "173229450",
+      "title": "England, Select Births and Christenings, 1538-1975"
+    }
+  ],
+  "otherSources": [],
+  "webLinks": [],
+  "ancestryTemplate": "{{Ancestry Tree|86808578|46591661544}}"
+}

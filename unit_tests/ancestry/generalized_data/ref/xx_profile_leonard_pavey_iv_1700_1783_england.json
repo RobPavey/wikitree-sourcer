@@ -1,0 +1,48 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Leonard Pavey IV",
+    "lastName": "Pavey",
+    "forenames": "Leonard"
+  },
+  "birthDate": {
+    "dateString": "1700"
+  },
+  "birthPlace": {
+    "placeString": "Yarcombe, Devon, England"
+  },
+  "deathDate": {
+    "dateString": "1783"
+  },
+  "deathPlace": {
+    "placeString": "Stockland, Devon, England"
+  },
+  "personGender": "male",
+  "spouses": [
+    {
+      "name": {
+        "name": "Ann Hearn"
+      },
+      "marriageDate": {
+        "dateString": "30 May 1727"
+      },
+      "marriagePlace": {
+        "placeString": "Stockland, Devon, England"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Leonard Pavey Junr"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Elizabeth Phippen"
+      }
+    }
+  },
+  "hasValidData": true
+}
