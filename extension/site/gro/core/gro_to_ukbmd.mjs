@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { isValidUkbmdDistrictName } from "./gro_ukbmd_districts.mjs";
+import { isValidUkbmdDistrictName, getDisambigatedDistrictName } from "./gro_ukbmd_districts.mjs";
 
 // NOTE: Broken UKBMD links on WikiTree can be found with this search:
 // https://plus.wikitree.com/default.htm?report=err6&Query=ukbmd+&MaxErrors=1000&ErrorID=965
@@ -32,7 +32,7 @@ import { isValidUkbmdDistrictName } from "./gro_ukbmd_districts.mjs";
 // UPDATE: In 2.1.3 (Jan 2024) I added a full list of UKBMD district names and no longer
 // create a link if it is not in that list. So Sourcer should no longer create broken links.
 
-function getUkbmdDistrictPageUrl(district) {
+function getUkbmdDistrictPageUrl(district, volume, year) {
   // https://www.ukbmd.org.uk/reg/districts/st%20pancras.html
 
   const overrides = {
@@ -175,7 +175,6 @@ function getUkbmdDistrictPageUrl(district) {
     "richmond union yorks": "richmond2",
     "richmond union yorkshire": "richmond2",
     "richmond yorkshire": "richmond2",
-    richmond: "richmond2",
     rochester: "medway", // depends on date but only example seen was before 1941
     "romsey and mitchelmersh": "romsey",
     rotherfield: "uckfield",
@@ -247,7 +246,6 @@ function getUkbmdDistrictPageUrl(district) {
     "westminster st james": "st james westminster",
     "whitchurch and overton": "whitchurch1",
     "whitchurch hants": "whitchurch1",
-    whitchurch: "whitchurch2",
     "wigan wigan": "wigan", // typo in transcription?
     "wigton cumberland": "wigton",
     "wimborne and cranborne": "wimborne",
@@ -274,11 +272,14 @@ function getUkbmdDistrictPageUrl(district) {
     "nthmbld central": "northumberland central",
   };
 
-  const ambiguousNames = [
-    "newcastle", // could be in staffs or northumberland
-    "newport", // could be in shrops or monmouthshire
-    "wellington", // could be in shrops or somerset
-  ];
+  const ambiguousNames = {
+    bootle: ["bootle1", "bootle2"], // could be in cumberland or lancs/merseyside
+    newcastle: ["newcastle in emlyn", "newcastle upon tyne"], // could be in staffs or northumberland
+    newport: ["newport1", "newport2", "newport pagnell"], // could be in shrops or monmouthshire
+    richmond: ["richmond1", "richmond2"], // could be in surrey or yorkshire
+    wellington: ["wellington1", "wellington2"], // could be in shrops or somerset
+    whitchurch: ["whitchurch1", "whitchurch2"], // could be in hampshire or shropshire
+  };
 
   // don't need to include county names on their own as that is checked for
   const districtNamesWithCounty = [
@@ -367,13 +368,16 @@ function getUkbmdDistrictPageUrl(district) {
     " yorks",
   ];
 
-  function isAmbiguous(name) {
-    for (let ambiguousName of ambiguousNames) {
-      if (name == ambiguousName) {
-        return true;
-      }
+  function disambiguateName(districtName, volume, year) {
+    let possibleResolutions = ambiguousNames[districtName];
+    if (!possibleResolutions) {
+      return districtName;
     }
-    return false;
+
+    // it is ambiguous, try to use valome and year to disambiguate
+    let newName = getDisambigatedDistrictName(possibleResolutions, volume, year);
+
+    return newName;
   }
 
   function isDistrictThatEndsWithCountyName(name) {
@@ -386,7 +390,8 @@ function getUkbmdDistrictPageUrl(district) {
 
   var districtName = district.toLowerCase().trim();
 
-  if (isAmbiguous(districtName)) {
+  districtName = disambiguateName(districtName, volume, year);
+  if (!districtName) {
     return "";
   }
 
@@ -414,7 +419,8 @@ function getUkbmdDistrictPageUrl(district) {
   districtName = districtName.replace(/^the\swhole\sof\sthe\s/, "").trim();
   districtName = districtName.replace(/^the\s/, "").trim();
 
-  if (isAmbiguous(districtName)) {
+  districtName = disambiguateName(districtName, volume, year);
+  if (!districtName) {
     return "";
   }
 

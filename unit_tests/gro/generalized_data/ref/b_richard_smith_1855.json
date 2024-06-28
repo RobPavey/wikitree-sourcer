@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1855",
+    "quarter": 2
+  },
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Richard Thomas"
+  },
+  "lastNameAtBirth": "Smith",
+  "birthDate": {
+    "yearString": "1855",
+    "quarter": 2
+  },
+  "mothersMaidenName": "Jenkins",
+  "personGender": "male",
+  "registrationDistrict": "Newport",
+  "collectionData": {
+    "id": "births",
+    "volume": "11A",
+    "page": "167"
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1839",
+    "quarter": 1
+  },
+  "name": {
+    "lastName": "Smith"
+  },
+  "lastNameAtDeath": "Smith",
+  "deathDate": {
+    "yearString": "1839",
+    "quarter": 1
+  },
+  "personGender": "male",
+  "registrationDistrict": "Newport Salop & Staffordshire",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "18",
+    "page": "100"
+  },
+  "hasValidData": true
+}

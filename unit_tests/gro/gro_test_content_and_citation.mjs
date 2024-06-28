@@ -72,6 +72,10 @@ const regressionData = [
     caseName: "b_horace_matthews_1896",
   },
   {
+    // Ambiguous district name "whitchurch"
+    caseName: "b_james_rampton_1850",
+  },
+  {
     caseName: "b_leonard_king_1914",
   },
   {
@@ -130,10 +134,18 @@ const regressionData = [
     caseName: "b_pavey-452",
   },
   {
+    // Ambiguous district: Newport
+    caseName: "b_richard_smith_1855",
+  },
+  {
     caseName: "b_robert_slade_1853",
   },
   {
     caseName: "b_st_george_tick_1901",
+  },
+  {
+    // Ambiguous district: Newport
+    caseName: "b_thomas_smith_1838",
   },
   {
     caseName: "b_william_cox_1867",

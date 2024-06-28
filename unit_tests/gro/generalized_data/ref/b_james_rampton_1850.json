@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "eventDate": {
+    "yearString": "1850",
+    "quarter": 4
+  },
+  "name": {
+    "lastName": "Rampton",
+    "forenames": "James"
+  },
+  "lastNameAtBirth": "Rampton",
+  "birthDate": {
+    "yearString": "1850",
+    "quarter": 4
+  },
+  "mothersMaidenName": "Butler",
+  "personGender": "male",
+  "registrationDistrict": "Whitchurch",
+  "collectionData": {
+    "id": "births",
+    "volume": "07",
+    "page": "266"
+  },
+  "hasValidData": true
+}

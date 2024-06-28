@@ -282,7 +282,7 @@ async function buildCoreCitation(ed, runDate, builder) {
   let districtNameForOutput = getRegistrationDistrict(ed, options);
   if (districtNameForOutput) {
     if (options.citation_gro_useDistrictUrl) {
-      let url = getUkbmdDistrictPageUrl(ed.registrationDistrict);
+      let url = getUkbmdDistrictPageUrl(ed.registrationDistrict, ed.referenceVolume, ed.eventYear);
       if (url) {
         dataString += "[" + url + " " + districtNameForOutput + "]";
       } else {
