@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_record_string_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>\nAaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>\nDr Aaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_string_narrative": {
-    "citation": "Aaron died in Buxton, York, Maine, United States.<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>\nAaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.\n</ref>",
+    "citation": "Aaron died in Buxton, York, Maine, United States.<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>\nDr Aaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_string_source": {
-    "citation": "* '''Death''': \"Maine Deaths and Burials, 1841-1910\"<br/>citing Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>Aaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.",
+    "citation": "* '''Death''': \"Maine Deaths and Burials, 1841-1910\"<br/>citing Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>Dr Aaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.",
     "type": "source"
   },
   "dataStyle_record_list_inline": {
@@ -72,15 +72,15 @@
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>\nAaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>\nDr Aaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.\n</ref>",
     "type": "inline"
   },
   "dataStyle_fsShort_string_narrative": {
-    "citation": "Aaron died in Buxton, York, Maine, United States.<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>\nAaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.\n</ref>",
+    "citation": "Aaron died in Buxton, York, Maine, United States.<ref>\n'''Death''':\n\"Maine Deaths and Burials, 1841-1910\"<br/>\nciting Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>\n{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>\nDr Aaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_fsShort_string_source": {
-    "citation": "* '''Death''': \"Maine Deaths and Burials, 1841-1910\"<br/>citing Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>Aaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.",
+    "citation": "* '''Death''': \"Maine Deaths and Burials, 1841-1910\"<br/>citing Digital film/folder number: 007592510; FHL microfilm: 10594; Record number: 3632; Packet letter: A<br/>{{FamilySearch Record|F486-K6R}} (accessed 6 May 2021)<br/>Dr Aaron Ayer death, husband of Ruth, in Buxton, York, Maine, United States.",
     "type": "source"
   },
   "dataStyle_fsLong_fsCitation_inline": {

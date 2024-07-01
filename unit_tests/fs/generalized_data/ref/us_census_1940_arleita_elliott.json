@@ -61,7 +61,8 @@
   "spouses": [
     {
       "name": {
-        "name": "Charles W Elliott, Jr"
+        "name": "Charles W Elliott",
+        "suffix": "Jr"
       },
       "marriageDate": {},
       "marriagePlace": {}

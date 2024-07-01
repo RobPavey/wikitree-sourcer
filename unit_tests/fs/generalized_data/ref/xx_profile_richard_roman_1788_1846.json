@@ -3,10 +3,10 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Richard Roman Sr",
+    "name": "Richard Roman",
+    "suffix": "Sr",
     "lastName": "Roman",
-    "forenames": "Richard",
-    "suffix": "Sr"
+    "forenames": "Richard"
   },
   "birthDate": {
     "dateString": "1788"

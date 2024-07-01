@@ -4,7 +4,8 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Philo Lee, Jr",
+    "name": "Philo Lee",
+    "suffix": "Jr",
     "lastName": "Lee",
     "forenames": "Philo"
   },

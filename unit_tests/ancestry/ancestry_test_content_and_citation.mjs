@@ -1218,6 +1218,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/11748183/person/12992988602/facts",
   },
   {
+    // Has suffix and father has suffix
+    caseName: "xx_profile_joseph_sheffey_1881_1959_us",
+    url: "https://www.ancestry.com/family-tree/person/tree/74248219/person/48290959228/facts",
+  },
+  {
     caseName: "xx_profile_jun2024_ralph_pavey_1891_1958_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },

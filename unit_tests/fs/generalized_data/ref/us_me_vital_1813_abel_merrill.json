@@ -13,7 +13,8 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Abel Merrill Jr",
+    "name": "Abel Merrill",
+    "suffix": "Jr",
     "lastName": "Merrill",
     "forenames": "Abel"
   },

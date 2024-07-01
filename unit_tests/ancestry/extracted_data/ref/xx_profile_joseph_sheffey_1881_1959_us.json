@@ -1,0 +1,141 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/74248219/person/48290959228/facts",
+  "pageType": "personFacts",
+  "givenName": "Joseph Christopher",
+  "surname": "Sheffey",
+  "titleName": "Joseph Christopher Sheffey Sr",
+  "birthDate": "25 SEP 1881",
+  "birthPlace": "Wytheville Town, Wythe, Virginia, USA",
+  "deathDate": "8 FEB 1959",
+  "deathPlace": "Wytheville Town, Wythe, Virginia, USA",
+  "gender": "Male",
+  "marriages": [
+    {
+      "date": "13 Nov 1904",
+      "place": "Wythe County Virginia, USA",
+      "spouseName": "Nannie E Buford"
+    }
+  ],
+  "fatherName": "Daniel Henry Sheffey Jr",
+  "motherName": "Jane A White",
+  "sources": [
+    {
+      "dbId": "7602",
+      "recordId": "72573850",
+      "title": "1900 United States Federal Census"
+    },
+    {
+      "dbId": "7884",
+      "recordId": "29632619",
+      "title": "1910 United States Federal Census"
+    },
+    {
+      "dbId": "6061",
+      "recordId": "101057833",
+      "title": "1920 United States Federal Census"
+    },
+    {
+      "dbId": "2442",
+      "recordId": "132863405",
+      "title": "1940 United States Federal Census"
+    },
+    {
+      "dbId": "61788",
+      "recordId": "1350384614",
+      "title": "New York, New York, Index to Marriage Licenses, 1908-1910, 1938-1940"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "582745550",
+      "title": "U.S. City Directories, 1821-1989"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "594315850",
+      "title": "U.S. City Directories, 1821-1989"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "1266973430",
+      "title": "U.S. City Directories, 1821-1989"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "588142596",
+      "title": "U.S. City Directories, 1822-1995"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "581193642",
+      "title": "U.S. City Directories, 1822-1995"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "573705898",
+      "title": "U.S. City Directories, 1822-1995"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "594307576",
+      "title": "U.S. City Directories, 1822-1995"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "596099758",
+      "title": "U.S. City Directories, 1822-1995"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "586854151",
+      "title": "U.S. City Directories, 1822-1995"
+    },
+    {
+      "dbId": "2469",
+      "recordId": "596106403",
+      "title": "U.S. City Directories, 1822-1995"
+    },
+    {
+      "dbId": "2190",
+      "recordId": "260811984",
+      "title": "U.S., Cemetery and Funeral Home Collection, 1847-Current"
+    },
+    {
+      "dbId": "60901",
+      "recordId": "2965834",
+      "title": "U.S., Social Security Applications and Claims Index, 1936-2007"
+    },
+    {
+      "dbId": "6482",
+      "recordId": "22014075",
+      "title": "U.S., World War I Draft Registration Cards, 1917-1918"
+    },
+    {
+      "dbId": "9277",
+      "recordId": "23269853",
+      "title": "Virginia, Birth Records, 1864-1999"
+    },
+    {
+      "dbId": "9278",
+      "recordId": "1283197",
+      "title": "Virginia, Death Records, 1912-2014"
+    },
+    {
+      "dbId": "9278",
+      "recordId": "3536414",
+      "title": "Virginia, Death Records, 1912-2014"
+    },
+    {
+      "dbId": "9280",
+      "recordId": "2212043",
+      "title": "Virginia, Divorce Records, 1918-2014"
+    },
+    {
+      "dbId": "60214",
+      "recordId": "1739905",
+      "title": "Virginia, Select Marriages, 1785-1940"
+    }
+  ],
+  "otherSources": [],
+  "webLinks": [],
+  "ancestryTemplate": "{{Ancestry Tree|74248219|48290959228}}"
+}

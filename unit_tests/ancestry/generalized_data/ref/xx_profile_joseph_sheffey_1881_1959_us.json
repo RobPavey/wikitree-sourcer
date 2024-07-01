@@ -1,0 +1,50 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Joseph Christopher Sheffey",
+    "suffix": "Sr",
+    "lastName": "Sheffey",
+    "forenames": "Joseph Christopher"
+  },
+  "birthDate": {
+    "dateString": "25 SEP 1881"
+  },
+  "birthPlace": {
+    "placeString": "Wytheville Town, Wythe, Virginia, USA"
+  },
+  "deathDate": {
+    "dateString": "8 FEB 1959"
+  },
+  "deathPlace": {
+    "placeString": "Wytheville Town, Wythe, Virginia, USA"
+  },
+  "personGender": "male",
+  "spouses": [
+    {
+      "name": {
+        "name": "Nannie E Buford"
+      },
+      "marriageDate": {
+        "dateString": "13 Nov 1904"
+      },
+      "marriagePlace": {
+        "placeString": "Wythe County Virginia, USA"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Daniel Henry Sheffey",
+        "suffix": "Jr"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Jane A White"
+      }
+    }
+  },
+  "hasValidData": true
+}

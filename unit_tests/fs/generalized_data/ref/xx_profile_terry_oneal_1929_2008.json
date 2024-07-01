@@ -3,12 +3,12 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Terry Warren O'Neal Jr",
+    "name": "Terry Warren O'Neal",
     "nicknames": "Pete",
     "prefix": "Dr",
+    "suffix": "Jr",
     "lastName": "O'Neal",
-    "forenames": "Terry Warren",
-    "suffix": "Jr."
+    "forenames": "Terry Warren"
   },
   "birthDate": {
     "dateString": "9 August 1929"

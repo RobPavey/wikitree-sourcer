@@ -597,10 +597,10 @@ function generalizeDataGivenRecordType(ed, result) {
           resultSpouse.name.forenames = ed.spouseGivenName;
         }
         if (ed.spousePrefix) {
-          resultSpouse.name.prefix = ed.spousePrefix;
+          resultSpouse.name.setPrefix(ed.spousePrefix);
         }
         if (ed.spouseSuffix) {
-          resultSpouse.name.suffix = ed.spouseSuffix;
+          resultSpouse.name.setSuffix(ed.spouseSuffix);
         }
         if (ed.spouseAge) {
           resultSpouse.age = ed.spouseAge;
@@ -636,10 +636,10 @@ function generalizeDataGivenRecordType(ed, result) {
         resultSpouse.name.forenames = ed.spouseGivenName;
       }
       if (ed.spousePrefix) {
-        resultSpouse.name.prefix = ed.spousePrefix;
+        resultSpouse.name.setPrefix(ed.spousePrefix);
       }
       if (ed.spouseSuffix) {
-        resultSpouse.name.suffix = ed.spouseSuffix;
+        resultSpouse.name.setSuffix(ed.spouseSuffix);
       }
       if (ed.spouseAge) {
         resultSpouse.age = ed.spouseAge;
@@ -730,10 +730,10 @@ function generalizeDataGivenRecordType(ed, result) {
         resultSpouse.name.forenames = ed.spouseGivenName;
       }
       if (ed.spousePrefix) {
-        resultSpouse.name.prefix = ed.spousePrefix;
+        resultSpouse.name.setPrefix(ed.spousePrefix);
       }
       if (ed.spouseSuffix) {
-        resultSpouse.name.suffix = ed.spouseSuffix;
+        resultSpouse.name.setSuffix(ed.spouseSuffix);
       }
       if (ed.spouseAge) {
         resultSpouse.age = ed.spouseAge;
@@ -789,10 +789,10 @@ function generalizeDataGivenRecordType(ed, result) {
         resultSpouse.name.forenames = ed.spouseGivenName;
       }
       if (ed.spousePrefix) {
-        resultSpouse.name.prefix = ed.spousePrefix;
+        resultSpouse.name.setPrefix(ed.spousePrefix);
       }
       if (ed.spouseSuffix) {
-        resultSpouse.name.suffix = ed.spouseSuffix;
+        resultSpouse.name.setSuffix(ed.spouseSuffix);
       }
       if (ed.spouseAge) {
         resultSpouse.age = ed.spouseAge;
@@ -1038,10 +1038,10 @@ function generalizeDataForPerson(ed, result) {
       resultObject.name.setForenames(dataObject.givenName);
     }
     if (dataObject.prefix) {
-      resultObject.name.prefix = dataObject.prefix;
+      resultObject.name.setPrefix(dataObject.prefix);
     }
     if (dataObject.suffix) {
-      resultObject.name.suffix = dataObject.suffix;
+      resultObject.name.setSuffix(dataObject.suffix);
     }
 
     // restore the nicknames
@@ -1061,10 +1061,10 @@ function generalizeDataForPerson(ed, result) {
       resultObject.name.forenames = dataObject.givenName;
     }
     if (dataObject.prefix) {
-      resultObject.name.prefix = dataObject.prefix;
+      resultObject.name.setPrefix(dataObject.prefix);
     }
     if (dataObject.suffix) {
-      resultObject.name.suffix = dataObject.suffix;
+      resultObject.name.setSuffix(dataObject.suffix);
     }
   }
 

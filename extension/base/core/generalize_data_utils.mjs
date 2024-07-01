@@ -1031,6 +1031,75 @@ class NameObj {
     return name;
   }
 
+  removeSuffix(name, isFull = false) {
+    if (!name) {
+      return "";
+    }
+
+    let wordCount = StringUtils.countWords(name);
+
+    if (isFull) {
+      if (wordCount < 3) {
+        return name;
+      }
+    } else {
+      if (wordCount < 2) {
+        return name;
+      }
+    }
+
+    let lastWord = StringUtils.getLastWord(name);
+
+    const suffixes = [
+      "jr",
+      "sr",
+      "iii",
+      "bt",
+      "esq",
+      "kg",
+      "kb",
+      "gcb",
+      "kcb",
+      "cb",
+      "gcie",
+      "kcie",
+      "cie",
+      "gcmg",
+      "kcmg",
+      "cmg",
+    ];
+
+    let lcLastWord = lastWord.toLowerCase();
+    while (lcLastWord.endsWith(".")) {
+      lcLastWord = lcLastWord.substring(0, lcLastWord.length - 1);
+    }
+    lcLastWord = lcLastWord.replace(/\//g, "");
+
+    if (suffixes.includes(lcLastWord)) {
+      // remove the title unless it would leave the name empty
+      let remainder = StringUtils.getWordsBeforeLastWord(name);
+
+      // Sometime there is a trailing comma, e.g.: "Charles W Elliott, Jr
+      if (remainder) {
+        remainder = remainder.replace(/\,\s*$/, "");
+      }
+
+      if (remainder) {
+        if (this.suffix) {
+          if (!this.suffix.includes(lastWord)) {
+            this.suffix = lastWord + " " + this.suffix;
+          }
+        } else {
+          this.suffix = lastWord;
+        }
+        // call recursively in case there are more suffixes
+        return this.removeSuffix(remainder, isFull);
+      }
+    }
+
+    return name;
+  }
+
   moveNicknamesFromNameString(nameString) {
     let newString = nameString;
     // if the nameString contain a name in quotes then it is a nickname
@@ -1087,6 +1156,7 @@ class NameObj {
       this.name = this.cleanName(name);
       this.name = this.moveNicknamesFromNameString(this.name);
       this.name = this.removeTitle(this.name, true);
+      this.name = this.removeSuffix(this.name, true);
     }
   }
 
@@ -1133,6 +1203,20 @@ class NameObj {
     }
   }
 
+  setPrefix(prefix) {
+    let cleanPrefix = this.cleanName(prefix);
+    if (cleanPrefix) {
+      this.prefix = cleanPrefix;
+    }
+  }
+
+  setSuffix(suffix) {
+    let cleanSuffix = this.cleanName(suffix);
+    if (cleanSuffix) {
+      this.suffix = cleanSuffix;
+    }
+  }
+
   getMiddleName() {
     if (this.middleName) {
       return this.middleName;
@@ -1158,36 +1242,49 @@ class NameObj {
   }
 
   inferFullName() {
+    let fullName = "";
+
     if (this.name) {
-      return this.name;
+      fullName = this.name;
+    } else {
+      if (this.middleName || this.firstName || this.middleNames || this.firstNames || this.forenames || this.lastName) {
+        let name = "";
+        if (this.forenames) {
+          name = this.forenames;
+        } else {
+          if (this.firstNames) {
+            name = this.firstNames;
+          } else if (this.firstName) {
+            name = this.firstName;
+          }
+
+          if (this.middleNames) {
+            name += " " + this.middleNames;
+          } else if (this.middleName) {
+            name += " " + this.middleName;
+          }
+        }
+
+        if (this.lastName) {
+          if (name) {
+            name += " ";
+          }
+          name += this.lastName;
+        }
+        fullName = name;
+      }
     }
 
-    if (this.middleName || this.firstName || this.middleNames || this.firstNames || this.forenames || this.lastName) {
-      let name = "";
-      if (this.forenames) {
-        name = this.forenames;
-      } else {
-        if (this.firstNames) {
-          name = this.firstNames;
-        } else if (this.firstName) {
-          name = this.firstName;
-        }
-
-        if (this.middleNames) {
-          name += " " + this.middleNames;
-        } else if (this.middleName) {
-          name += " " + this.middleName;
-        }
+    if (fullName) {
+      if (this.prefix) {
+        fullName = this.prefix + " " + fullName;
       }
-
-      if (this.lastName) {
-        if (name) {
-          name += " ";
-        }
-        name += this.lastName;
+      if (this.suffix) {
+        fullName = fullName + " " + this.suffix;
       }
-      return name;
     }
+
+    return fullName;
   }
 
   inferLastName() {
@@ -1355,7 +1452,7 @@ class NameObj {
 
     if (this.lastName && this.name && !this.name.endsWith(this.lastName)) {
       // it is possible that this.name includes a suffix. But it is also possible that
-      // this.name isn in the form "last-name first-name" like this Hungarian FS profile:
+      // this.name isn't in the form "last-name first-name" like this Hungarian FS profile:
       // https://www.familysearch.org/tree/person/details/GZLH-57H
 
       let lastNameIndex = this.name.indexOf(this.lastName);
