@@ -197,6 +197,24 @@ function convertOptionsFrom7To8(loadedOptions) {
   return convertedOptions;
 }
 
+function convertOptionsFrom8To9(loadedOptions) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom8To9, before:");
+  console.log(loadedOptions);
+
+  convertedOptions["search_wikitree_birthLocationExactness"] = convertedOptions["search_wikitree_locationExactness"];
+  convertedOptions["search_wikitree_deathLocationExactness"] = convertedOptions["search_wikitree_locationExactness"];
+  delete convertedOptions["search_wikitree_locationExactness"];
+
+  convertedOptions.options_version = 8;
+
+  console.log("convertOptionsFrom8To9, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
 function convertOptions(loadedOptions, defaultOptions) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
@@ -227,6 +245,9 @@ function convertOptions(loadedOptions, defaultOptions) {
   }
   if (loadedVersion < 8) {
     loadedOptions = convertOptionsFrom7To8(loadedOptions);
+  }
+  if (loadedVersion < 9) {
+    loadedOptions = convertOptionsFrom8To9(loadedOptions);
   }
 
   return loadedOptions;

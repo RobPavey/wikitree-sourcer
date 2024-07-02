@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { DateUtils } from "./date_utils.mjs";
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Country data
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -244,6 +246,7 @@ const CountryData = [
     hasStates: true,
     usesMiddleNames: true,
     wifeChangesName: true,
+    validDateRange: { startYear: 1776 },
   },
   {
     stdName: "Canada",
@@ -913,6 +916,33 @@ const CD = {
       }
     }
     return false;
+  },
+
+  isCountryNameValidForDate: function (countryName, dateString) {
+    let stdName = CD.standardizeCountryName(countryName);
+
+    let parsedDate = DateUtils.parseDateString(dateString);
+
+    if (!parsedDate.isValid || !parsedDate.yearNum) {
+      return true;
+    }
+
+    let yearNum = parsedDate.yearNum;
+
+    for (let country of CountryData) {
+      if (country.stdName == stdName) {
+        if (country.validDateRange) {
+          if (country.validDateRange.startYear && country.validDateRange.startYear > yearNum) {
+            return false;
+          }
+          if (country.validDateRange.endYear && country.validDateRange.endYear < yearNum) {
+            return false;
+          }
+        }
+        break;
+      }
+    }
+    return true;
   },
 };
 

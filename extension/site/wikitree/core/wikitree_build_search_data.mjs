@@ -24,8 +24,10 @@ SOFTWARE.
 
 import { CD } from "../../../base/core/country_data.mjs";
 
-function modifyLocationForSearch(location, options) {
-  let exactness = options.search_wikitree_locationExactness;
+function modifyLocationForSearch(type, location, dateString, options) {
+  // type should be "birth" or "death"
+  let exactnessOptionName = "search_wikitree_" + type + "LocationExactness";
+  let exactness = options[exactnessOptionName];
 
   if (exactness == "none") {
     return "";
@@ -33,6 +35,20 @@ function modifyLocationForSearch(location, options) {
 
   if (!location) {
     return "";
+  }
+
+  if (options.search_wikitree_removeInvalidCountryName) {
+    let countryExtract = CD.extractCountryFromPlaceName(location);
+    if (countryExtract) {
+      let isValidForDate = CD.isCountryNameValidForDate(countryExtract.country.stdName, dateString);
+      if (!isValidForDate) {
+        if (exactness == "full") {
+          return countryExtract.remainder;
+        } else {
+          return "";
+        }
+      }
+    }
   }
 
   if (exactness == "full") {
@@ -82,12 +98,38 @@ function buildSearchData(input) {
 
   let birthDate = gd.inferBirthDate();
   if (birthDate) {
-    fieldData.simpleNameFields["wpBirthDate"] = birthDate;
+    let includeBirthDate = false;
+    if (parameters) {
+      if (parameters.includeBirthDate) {
+        includeBirthDate = true;
+      }
+    } else {
+      if (options.search_wikitree_includeBirthDate) {
+        includeBirthDate = true;
+      }
+    }
+
+    if (includeBirthDate) {
+      fieldData.simpleNameFields["wpBirthDate"] = birthDate;
+    }
   }
 
   let deathDate = gd.inferDeathDate();
   if (deathDate) {
-    fieldData.simpleNameFields["wpDeathDate"] = deathDate;
+    let includeDeathDate = false;
+    if (parameters) {
+      if (parameters.includeDeathDate) {
+        includeDeathDate = true;
+      }
+    } else {
+      if (options.search_wikitree_includeDeathDate) {
+        includeDeathDate = true;
+      }
+    }
+
+    if (includeDeathDate) {
+      fieldData.simpleNameFields["wpDeathDate"] = deathDate;
+    }
   }
 
   let birthPlace = "";
@@ -96,7 +138,7 @@ function buildSearchData(input) {
       birthPlace = parameters.birthPlace;
     }
   } else {
-    birthPlace = modifyLocationForSearch(gd.inferBirthPlace(), options);
+    birthPlace = modifyLocationForSearch("birth", gd.inferBirthPlace(), birthDate, options);
   }
   if (birthPlace) {
     fieldData.simpleNameFields["birth_location"] = birthPlace;
@@ -108,7 +150,7 @@ function buildSearchData(input) {
       deathPlace = parameters.deathPlace;
     }
   } else {
-    deathPlace = modifyLocationForSearch(gd.inferDeathPlace(), options);
+    deathPlace = modifyLocationForSearch("death", gd.inferDeathPlace(), deathDate, options);
   }
   if (deathPlace) {
     fieldData.simpleNameFields["death_location"] = deathPlace;
@@ -116,7 +158,7 @@ function buildSearchData(input) {
 
   let parents = gd.parents;
   if (parents) {
-    if (!parameters || parameters.father) {
+    if ((!parameters && options["search_wikitree_includeFatherName"]) || parameters.father) {
       let father = parents.father;
       if (father && father.name) {
         let firstName = father.name.inferFirstName();
@@ -129,7 +171,7 @@ function buildSearchData(input) {
         }
       }
     }
-    if (!parameters || parameters.mother) {
+    if ((!parameters && options["search_wikitree_includeMotherName"]) || parameters.mother) {
       let mother = parents.mother;
       if (mother && mother.name) {
         let firstName = mother.name.inferFirstName();

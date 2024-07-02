@@ -48,26 +48,44 @@ function buildSelectValuesForPlace(placeString, countries) {
   let placeParts = place.separatePlaceIntoParts();
 
   if (placeParts.localPlace && placeParts.county && placeParts.country) {
+    if (placeParts.state) {
+      addValue(placeParts.localPlace + ", " + placeParts.state + ", " + placeParts.county + ", " + placeParts.country);
+    }
     addValue(placeParts.localPlace + ", " + placeParts.county + ", " + placeParts.country);
   }
 
   if (placeParts.localPlace && placeParts.county) {
+    if (placeParts.state) {
+      addValue(placeParts.localPlace + ", " + placeParts.state + ", " + placeParts.county);
+    }
     addValue(placeParts.localPlace + ", " + placeParts.county);
   }
 
   if (placeParts.localPlace && placeParts.country) {
+    if (placeParts.state) {
+      addValue(placeParts.localPlace + ", " + placeParts.state + ", " + placeParts.country);
+    }
     addValue(placeParts.localPlace + ", " + placeParts.country);
   }
 
   if (placeParts.county && placeParts.country) {
+    if (placeParts.state) {
+      addValue(placeParts.county + ", " + placeParts.state + ", " + placeParts.country);
+    }
     addValue(placeParts.county + ", " + placeParts.country);
   }
 
   if (placeParts.localPlace) {
+    if (placeParts.state) {
+      addValue(placeParts.localPlace + ", " + placeParts.state);
+    }
     addValue(placeParts.localPlace);
   }
 
   if (placeParts.county) {
+    if (placeParts.state) {
+      addValue(placeParts.county + ", " + placeParts.state);
+    }
     addValue(placeParts.county);
   }
 
@@ -126,6 +144,26 @@ const WikitreeData = {
   getAdditionalControls(generalizedData, parameters, options) {
     let controls = [];
 
+    let birthDate = generalizedData.inferBirthDate();
+    if (birthDate) {
+      let birthDateControl = {};
+      birthDateControl.elementId = "birthDate";
+      birthDateControl.parameterName = "includeBirthDate";
+      birthDateControl.type = "checkbox";
+      birthDateControl.label = "Include birth date of " + birthDate;
+      controls.push(birthDateControl);
+    }
+
+    let deathDate = generalizedData.inferDeathDate();
+    if (deathDate) {
+      let deathDateControl = {};
+      deathDateControl.elementId = "deathDate";
+      deathDateControl.parameterName = "includeDeathDate";
+      deathDateControl.type = "checkbox";
+      deathDateControl.label = "Include death date of " + deathDate;
+      controls.push(deathDateControl);
+    }
+
     let countries = generalizedData.inferCountries();
 
     let birthPlace = generalizedData.inferBirthPlace();
@@ -154,6 +192,9 @@ const WikitreeData = {
 
   setDefaultSearchParameters: function (generalizedData, parameters, options) {
     parameters.category = "wikitree_person_search";
+
+    parameters.includeBirthDate = true;
+    parameters.includeDeathDate = true;
 
     let birthPlace = generalizedData.inferBirthPlace();
     if (birthPlace) {
