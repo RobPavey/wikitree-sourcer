@@ -231,6 +231,7 @@ const referenceKeys = [
   ["reel number"],
   ["fhl film number"],
   ["schedule", "schedule number", "household schedule number"],
+  ["parish number"],
   ["household number"],
   ["sub schedule number", "sub-schedule number"],
   ["registration district number"],
@@ -341,7 +342,7 @@ function addReferenceDataToSourceReference(ed, builder, options) {
                 endIndex = lcSourceReference.length;
               }
               let matchValue = lcSourceReference.substring(valIndex, endIndex).trim();
-              if (matchValue == value) {
+              if (matchValue == value.toLowerCase()) {
                 alreadyInSourceReference = true;
                 break;
               }

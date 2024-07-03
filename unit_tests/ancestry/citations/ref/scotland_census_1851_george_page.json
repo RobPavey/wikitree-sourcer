@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1851 census George (age 23), Hand Loom Weaver Linen, was the son of Thomas Page in Dunshelt, Dunshelt, Auchtermuchty, Fife.<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1851 Census''': \"1851 Scotland Census\"<br/>Parish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)<br/>\nGeorge Page (23) son, Hand Loom Weaver Linen, in household of Thomas Page (69) in Dunshelt, Dunshelt, Auchtermuchty, Fife. Born in Abdie, fife.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1851 census George (age 23), Hand Loom Weaver Linen, was the son of Thomas Page in Dunshelt, Dunshelt, Auchtermuchty, Fife.<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)<br/>\nGeorge Page (23) son, Hand Loom Weaver Linen, in household of Thomas Page (69) in Dunshelt, Dunshelt, Auchtermuchty, Fife. Born in Abdie, fife.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1851 Census''': \"1851 Scotland Census\"<br/>Parish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)<br/>George Page (23) son, Hand Loom Weaver Linen, in household of Thomas Page (69) in Dunshelt, Dunshelt, Auchtermuchty, Fife. Born in Abdie, fife.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)<br/>\nName: George Page; Age: 23; Estimated Birth Year: abt 1828; Relationship: Son; Father: Thomas Page; Gender: Male; Where born: Abdie, fife; Civil parish: Auchtermuchty; Town: Dunshelt; County: Fife; Address: Dunshelt; Occupation: Hand Loom Weaver Linen; ED: 2; <br/>Household Members (Name) Age Relationship:<br/>Thomas Page 69 Head<br/>Grace Page 39 Daughter<br/>George Page 23 Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1851 census George (age 23), Hand Loom Weaver Linen, was the son of Thomas Page in Dunshelt, Dunshelt, Auchtermuchty, Fife.<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)<br/>\nName: George Page; Age: 23; Estimated Birth Year: abt 1828; Relationship: Son; Father: Thomas Page; Gender: Male; Where born: Abdie, fife; Civil parish: Auchtermuchty; Town: Dunshelt; County: Fife; Address: Dunshelt; Occupation: Hand Loom Weaver Linen; ED: 2; <br/>Household Members (Name) Age Relationship:<br/>Thomas Page 69 Head<br/>Grace Page 39 Daughter<br/>George Page 23 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1851 Census''': \"1851 Scotland Census\"<br/>Parish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)<br/>Name: George Page; Age: 23; Estimated Birth Year: abt 1828; Relationship: Son; Father: Thomas Page; Gender: Male; Where born: Abdie, fife; Civil parish: Auchtermuchty; Town: Dunshelt; County: Fife; Address: Dunshelt; Occupation: Hand Loom Weaver Linen; ED: 2; <br/>Household Members (Name) Age Relationship:<br/>Thomas Page 69 Head<br/>Grace Page 39 Daughter<br/>George Page 23 Son.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || George Page\n|-\n| Age || 23\n|-\n| Estimated Birth Year || abt 1828\n|-\n| Relationship || Son\n|-\n| Father || Thomas Page\n|-\n| Gender || Male\n|-\n| Where born || Abdie, fife\n|-\n| Civil parish || Auchtermuchty\n|-\n| Town || Dunshelt\n|-\n| County || Fife\n|-\n| Address || Dunshelt\n|-\n| Occupation || Hand Loom Weaver Linen\n|-\n| ED || 2\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || Thomas Page 69 Head<br/>Grace Page 39 Daughter<br/>George Page 23 Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1851 census George (age 23), Hand Loom Weaver Linen, was the son of Thomas Page in Dunshelt, Dunshelt, Auchtermuchty, Fife.<ref>\n'''1851 Census''':\n\"1851 Scotland Census\"<br/>\nParish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>\n{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || George Page\n|-\n| Age || 23\n|-\n| Estimated Birth Year || abt 1828\n|-\n| Relationship || Son\n|-\n| Father || Thomas Page\n|-\n| Gender || Male\n|-\n| Where born || Abdie, fife\n|-\n| Civil parish || Auchtermuchty\n|-\n| Town || Dunshelt\n|-\n| County || Fife\n|-\n| Address || Dunshelt\n|-\n| Occupation || Hand Loom Weaver Linen\n|-\n| ED || 2\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || Thomas Page 69 Head<br/>Grace Page 39 Daughter<br/>George Page 23 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1851 Census''': \"1851 Scotland Census\"<br/>Parish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851; Parish Number: 406; Household schedule number: 12<br/>{{Ancestry Record|1076|1085977}} (accessed 6 May 2021)<br/>Name: George Page; Age: 23; Estimated Birth Year: abt 1828; Relationship: Son; Father: Thomas Page; Gender: Male; Where born: Abdie, fife; Civil parish: Auchtermuchty; Town: Dunshelt; County: Fife; Address: Dunshelt; Occupation: Hand Loom Weaver Linen; ED: 2; <br/>Household Members (Name) Age Relationship:<br/>Thomas Page 69 Head<br/>Grace Page 39 Daughter<br/>George Page 23 Son.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1851 Scotland Census,\" database, ({{Ancestry Record|1076|1085977}} : accessed 6 May 2021), George Page (23) son, Hand Loom Weaver Linen, in household of Thomas Page (69) in Dunshelt, Dunshelt, Auchtermuchty, Fife. Born in Abdie, fife; citing Parish Auchtermuchty, ED 2, Page 3, Line 6, Roll CSSCT1851_84, Year 1851, Parish Number 406, Household schedule number 12.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1851 census George (age 23), Hand Loom Weaver Linen, was the son of Thomas Page in Dunshelt, Dunshelt, Auchtermuchty, Fife.<ref>\"1851 Scotland Census,\" database, ({{Ancestry Record|1076|1085977}} : accessed 6 May 2021), George Page (23) son, Hand Loom Weaver Linen, in household of Thomas Page (69) in Dunshelt, Dunshelt, Auchtermuchty, Fife. Born in Abdie, fife; citing Parish Auchtermuchty, ED 2, Page 3, Line 6, Roll CSSCT1851_84, Year 1851, Parish Number 406, Household schedule number 12.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1851 Scotland Census,\" database, ({{Ancestry Record|1076|1085977}} : accessed 6 May 2021), George Page (23) son, Hand Loom Weaver Linen, in household of Thomas Page (69) in Dunshelt, Dunshelt, Auchtermuchty, Fife. Born in Abdie, fife; citing Parish Auchtermuchty, ED 2, Page 3, Line 6, Roll CSSCT1851_84, Year 1851, Parish Number 406, Household schedule number 12.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1851 Census'':\n\"1851 Scotland Census\", database, \nParish Auchtermuchty, ED 2, Page 3, Line 6, Roll CSSCT1851_84, Year 1851, Parish Number 406, Household schedule number 12, \n({{Ancestry Record|1076|1085977}} : accessed 6 May 2021), \nName: George Page; Age: 23; Estimated Birth Year: abt 1828; Relationship: Son; Father: Thomas Page; Gender: Male; Where born: Abdie, fife; Civil parish: Auchtermuchty; Town: Dunshelt; County: Fife; Address: Dunshelt; Occupation: Hand Loom Weaver Linen; ED: 2; Household Members (Name) Age Relationship: Thomas Page 69 Head, Grace Page 39 Daughter, George Page 23 Son.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1851 census George (age 23), Hand Loom Weaver Linen, was the son of Thomas Page in Dunshelt, Dunshelt, Auchtermuchty, Fife.<ref>\n''1851 Census'':\n\"1851 Scotland Census\", database, \nParish Auchtermuchty, ED 2, Page 3, Line 6, Roll CSSCT1851_84, Year 1851, Parish Number 406, Household schedule number 12, \n({{Ancestry Record|1076|1085977}} : accessed 6 May 2021), \nName: George Page; Age: 23; Estimated Birth Year: abt 1828; Relationship: Son; Father: Thomas Page; Gender: Male; Where born: Abdie, fife; Civil parish: Auchtermuchty; Town: Dunshelt; County: Fife; Address: Dunshelt; Occupation: Hand Loom Weaver Linen; ED: 2; Household Members (Name) Age Relationship: Thomas Page 69 Head, Grace Page 39 Daughter, George Page 23 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1851 Census'': \"1851 Scotland Census\", database, Parish Auchtermuchty, ED 2, Page 3, Line 6, Roll CSSCT1851_84, Year 1851, Parish Number 406, Household schedule number 12, ({{Ancestry Record|1076|1085977}} : accessed 6 May 2021), Name: George Page; Age: 23; Estimated Birth Year: abt 1828; Relationship: Son; Father: Thomas Page; Gender: Male; Where born: Abdie, fife; Civil parish: Auchtermuchty; Town: Dunshelt; County: Fife; Address: Dunshelt; Occupation: Hand Loom Weaver Linen; ED: 2; Household Members (Name) Age Relationship: Thomas Page 69 Head, Grace Page 39 Daughter, George Page 23 Son.",
+    "type": "source"
+  }
+}

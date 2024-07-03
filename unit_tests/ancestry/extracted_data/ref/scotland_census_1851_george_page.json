@@ -1,0 +1,68 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/1085977:1076",
+  "pageType": "record",
+  "dbId": "1076",
+  "recordId": "1085977",
+  "ancestryTemplate": "{{Ancestry Record|1076|1085977}}",
+  "domain": "com",
+  "titleName": "George Page",
+  "titleCollection": "1851 Scotland Census",
+  "recordData": {
+    "Name": "George Page",
+    "Age": "23",
+    "Estimated Birth Year": "abt 1828",
+    "Relationship": "Son",
+    "Father": "Thomas Page",
+    "Gender": "Male",
+    "Where born": "Abdie, fife",
+    "Parish Number": "406",
+    "Civil parish": "Auchtermuchty",
+    "Town": "Dunshelt",
+    "County": "Fife",
+    "Address": "Dunshelt",
+    "Occupation": "Hand Loom Weaver Linen",
+    "ED": "2",
+    "Page": "3",
+    "Household schedule number": "12",
+    "Line": "6",
+    "Roll": "CSSCT1851_84",
+    "Household Members (Name)<br/>Age<br/>Relationship": "Thomas Page 69 Head<br/>Grace Page 39 Daughter<br/>George Page 23 Son"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1076&h=1085975&indiv=try&viewrecord=1&r=an"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "Thomas Page",
+        "dbId": "1076",
+        "recordId": "1085975",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1076&h=1085975&indiv=try",
+        "Age": "69",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "Grace Page",
+        "dbId": "1076",
+        "recordId": "1085976",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1076&h=1085976&indiv=try",
+        "Age": "39",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "George Page",
+        "Age": "23",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "sourceCitation": "Parish: Auchtermuchty; ED: 2; Page: 3; Line: 6; Roll: CSSCT1851_84; Year: 1851",
+  "sourceInformation": "Ancestry.com. 1851 Scotland Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2006. Original data: Scotland. 1851 Scotland Census. Reels 1-217. General Register Office for Scotland, Edinburgh, Scotland.",
+  "originalData": "Scotland. 1851 Scotland Census. Reels 1-217. General Register Office for Scotland, Edinburgh, Scotland.",
+  "sourceDescription": "The 1851 Census for Scotland was taken on the night of 30/31 March 1851. The following information was requested: place, name, relationship to head of family, marital status, age, gender, profession, birthplace, and whether blind, deaf, and dumb. Learn more..."
+}

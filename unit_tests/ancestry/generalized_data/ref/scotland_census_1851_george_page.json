@@ -1,0 +1,69 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "George Page"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "county": "Fife",
+    "placeString": "Dunshelt, Dunshelt, Auchtermuchty, Fife",
+    "streetAddress": "Dunshelt"
+  },
+  "birthDate": {
+    "yearString": "1828",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Abdie, fife"
+  },
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "occupation": "Hand Loom Weaver Linen",
+  "ageAtEvent": "23",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Thomas Page",
+      "age": "69",
+      "relationship": "head",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1076&h=1085975&indiv=try"
+    },
+    {
+      "name": "Grace Page",
+      "age": "39",
+      "relationship": "daughter",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1076&h=1085976&indiv=try"
+    },
+    {
+      "name": "George Page",
+      "age": "23",
+      "relationship": "son",
+      "isSelected": true,
+      "gender": "male",
+      "occupation": "Hand Loom Weaver Linen",
+      "birthPlace": "Abdie, fife",
+      "birthYear": "abt 1828"
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1076|1085977}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|1076|1085975}}",
+    "{{Ancestry Record|1076|1085976}}"
+  ],
+  "collectionData": {
+    "id": "1076",
+    "page": "3",
+    "county": "Fife"
+  },
+  "hasValidData": true
+}

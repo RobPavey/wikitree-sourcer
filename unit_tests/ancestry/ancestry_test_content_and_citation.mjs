@@ -724,6 +724,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/14121139:60143",
   },
   {
+    caseName: "scotland_census_1851_george_page",
+    url: "https://www.ancestry.com/discoveryui-content/view/1085977:1076",
+  },
+  {
     caseName: "scotland_census_1861_james_fraser",
     url: "https://www.ancestry.com/discoveryui-content/view/165755:1080?_phsrc=AhC28&_phstart=successSource&gsfn=James&gsln=Fraser&ml_rpos=1&queryId=ac9ef1c2767e23287bf156e33da8ee3c",
   },
