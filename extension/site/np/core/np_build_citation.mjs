@@ -25,8 +25,16 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildCoreCitation(ed, gd, builder) {
-  builder.sourceTitle = "Newspapers.com";
   let options = builder.getOptions();
+
+  builder.sourceTitle = "Newspapers.com";
+  if (ed.articleTitle && options.citation_np_includeTitle) {
+    let title = ed.articleTitle;
+    if (!title.startsWith("Article clipped from")) {
+      builder.sourceTitle = '"' + title + '" Newspapers.com';
+      builder.putSourceTitleInQuotes = false;
+    }
+  }
 
   builder.databaseHasImages = true;
 

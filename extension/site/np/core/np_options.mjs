@@ -50,6 +50,12 @@ const citationOptionsGroup = {
       label: "Include newspaper location in citation",
       defaultValue: true,
     },
+    {
+      optionName: "includeTitle",
+      type: "checkbox",
+      label: "Include article/clipping title in citation",
+      defaultValue: true,
+    },
   ],
 };
 

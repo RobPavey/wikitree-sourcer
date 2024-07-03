@@ -32,7 +32,7 @@ function cleanText(inputText) {
   return text;
 }
 
-function extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode) {
+function extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode, titleNode) {
   if (publisherNode && locationNode && dateNode && pageNode) {
     result.newspaperTitle = publisherNode.textContent;
     result.location = locationNode.textContent;
@@ -52,6 +52,13 @@ function extractFromNeededNodes(result, publisherNode, locationNode, dateNode, p
     if (result.location && result.location.indexOf("•") != -1) {
       let index = result.location.indexOf("•");
       result.location = result.location.substring(0, index).trim();
+    }
+
+    if (titleNode) {
+      let title = titleNode.textContent.trim();
+      if (title) {
+        result.articleTitle = title;
+      }
     }
 
     result.success = true;
@@ -93,7 +100,8 @@ function extractData(document, url) {
         let locationNode = aNode.querySelector("p");
         let dateNode = aNode.querySelector("time");
         let pageNode = aNode.querySelector("span");
-        extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode);
+        let titleNode = mainContentNode.querySelector("h1");
+        extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode, titleNode);
       }
 
       // backup code in case layout changes again, this uses class names, which didn't used to
@@ -106,8 +114,9 @@ function extractData(document, url) {
           let locationNode = aNode.querySelector("[class*='PublicationInfo_Location']");
           let dateNode = aNode.querySelector("time");
           let pageNode = aNode.querySelector("[class*='PublicationInfo_Page']");
+          let titleNode = mainContentNode.querySelector("h1");
 
-          extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode);
+          extractFromNeededNodes(result, publisherNode, locationNode, dateNode, pageNode, titleNode);
         }
       }
     }

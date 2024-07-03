@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1913 Newspaper''':\n\"Newspapers.com\"<br/>\nThe Tamworth Herald, etc. (Tamworth, Staffordshire, England) Sat, Jun 21, 1913, page 5<br/>\n{{Newspapers.com|111121391}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1913 Newspaper''':\n\"Wedding of Emmeline Brain and Arthur Pavey\" Newspapers.com<br/>\nThe Tamworth Herald, etc. (Tamworth, Staffordshire, England) Sat, Jun 21, 1913, page 5<br/>\n{{Newspapers.com|111121391}} (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the The Tamworth Herald, etc. on 21 June 1913 in Tamworth, Staffordshire, England.<ref>\n'''1913 Newspaper''':\n\"Newspapers.com\"<br/>\nThe Tamworth Herald, etc. (Tamworth, Staffordshire, England) Sat, Jun 21, 1913, page 5<br/>\n{{Newspapers.com|111121391}} (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the The Tamworth Herald, etc. on 21 June 1913 in Tamworth, Staffordshire, England.<ref>\n'''1913 Newspaper''':\n\"Wedding of Emmeline Brain and Arthur Pavey\" Newspapers.com<br/>\nThe Tamworth Herald, etc. (Tamworth, Staffordshire, England) Sat, Jun 21, 1913, page 5<br/>\n{{Newspapers.com|111121391}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1913 Newspaper''': \"Newspapers.com\"<br/>The Tamworth Herald, etc. (Tamworth, Staffordshire, England) Sat, Jun 21, 1913, page 5<br/>{{Newspapers.com|111121391}} (accessed 6 May 2021)",
+    "citation": "* '''1913 Newspaper''': \"Wedding of Emmeline Brain and Arthur Pavey\" Newspapers.com<br/>The Tamworth Herald, etc. (Tamworth, Staffordshire, England) Sat, Jun 21, 1913, page 5<br/>{{Newspapers.com|111121391}} (accessed 6 May 2021)",
     "type": "source"
   }
 }
