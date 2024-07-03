@@ -342,7 +342,11 @@ const CountryData = [
   { stdName: "Tanzania", matches: ["Tanzania"] },
 
   // Southern Africa
-  { stdName: "South Africa", matches: ["South Africa"] },
+  {
+    stdName: "South Africa",
+    matches: ["South Africa", "Republic of South Africa", "Republiek van Suid Afrika", "Suid Afrika"],
+    validDateRange: { startYear: 1961 },
+  },
   { stdName: "Zimbabwe", matches: ["Zimbabwe"] },
   { stdName: "Angola", matches: ["Angola"] },
   { stdName: "Zambia", matches: ["Zambia"] },
@@ -353,6 +357,92 @@ const CountryData = [
   { stdName: "Lesotho", matches: ["Lesotho"] },
   { stdName: "Eswatini", matches: ["Eswatini", "Swaziland"] },
   { stdName: "Madagascar", matches: ["Madagascar"] },
+
+  // South Africa predecessors and colonies
+  // See: https://www.wikitree.com/wiki/Project:South_African_Roots/Sources2
+  {
+    stdName: "Cabo de Goede Hoop",
+    matches: ["Cabo de Goede Hoop", "de Caep de Goede Hoop"],
+    validDateRanges: [
+      { startYear: 1652, endYear: 1795 },
+      { startYear: 1803, endYear: 17918065 },
+    ],
+  },
+  {
+    stdName: "Cape of Good Hope Colony",
+    matches: ["Cape of Good Hope Colony", "Cape of Good Hope"],
+    validDateRange: { startYear: 1795, endYear: 1803 },
+  },
+  {
+    stdName: "Cape Colony",
+    matches: ["Cape Colony", "Kaapkolonie"],
+    validDateRange: { startYear: 1806, endYear: 1910 },
+  },
+  {
+    stdName: "Zululand",
+    matches: ["Zululand", "Zoeloeland"],
+    validDateRange: { startYear: 1816, endYear: 1897 },
+  },
+  {
+    stdName: "Republic of the Port of Natal",
+    matches: ["Republic of the Port of Natal", "Republiek van Port Natal"],
+    validDateRange: { startYear: 1838, endYear: 1839 },
+  },
+  {
+    stdName: "Natalia Republic",
+    matches: ["Natalia Republic", "Natalia Republiek"],
+    validDateRange: { startYear: 1839, endYear: 1843 },
+  },
+  {
+    stdName: "Natal Colony",
+    matches: ["Natal Colony", "Natal Kolonie"],
+    validDateRange: { startYear: 1843, endYear: 1856 },
+  },
+  {
+    stdName: "Natal",
+    matches: ["Natal", "Natal Kolonie"],
+    validDateRange: { startYear: 1843, endYear: 1856 },
+  },
+  {
+    stdName: "Transvaal Republic",
+    matches: ["Transvaal Republic", "Transvaal Republiek"],
+    validDateRange: { startYear: 1844, endYear: 1852 },
+  },
+  {
+    stdName: "Zuid-Afrikaansche Republic",
+    matches: ["Zuid-Afrikaansche Republic", "Zuid-Afrikaansche Republiek"],
+    validDateRange: { startYear: 1852, endYear: 1902 },
+  },
+  {
+    stdName: "Transvaal Colony",
+    matches: ["Transvaal Colony", "Transvaalse Kolonie"],
+    validDateRange: { startYear: 1902, endYear: 1910 },
+  },
+  {
+    stdName: "Transoranje",
+    matches: ["Transoranje"],
+    validDateRange: { startYear: 1848, endYear: 1852 },
+  },
+  {
+    stdName: "Oranje Vrijstaat",
+    matches: ["Oranje Vrijstaat"],
+    validDateRange: { startYear: 1852, endYear: 1900 },
+  },
+  {
+    stdName: "Oranjerivierkolonie",
+    matches: ["Oranjerivierkolonie"],
+    validDateRange: { startYear: 1900, endYear: 1902 },
+  },
+  {
+    stdName: "Oranje Unie",
+    matches: ["Oranje Unie"],
+    validDateRange: { startYear: 1902, endYear: 1910 },
+  },
+  {
+    stdName: "Union of South Africa",
+    matches: ["Union of South Africa", "Unie van Suid Afrika"],
+    validDateRange: { startYear: 1910, endYear: 1961 },
+  },
 ];
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -621,6 +711,17 @@ const StateData = {
     { stdName: "South Australia", matches: ["South Australia", "SA", "S Australia"] },
     { stdName: "Western Australia", matches: ["Western Australia", "WA", "W Australia", "West Australia"] },
     { stdName: "Tasmania", matches: ["Tasmania", "Tas", "TAS"] },
+  ],
+  "South Africa": [
+    { stdName: "Western Cape", matches: ["Western Cape", "Wes-Kaap"] },
+    { stdName: "Eastern Cape,", matches: ["Eastern Cape", "Oos-Kaap"] },
+    { stdName: "Northern Cape,", matches: ["Northern Cape", "Noord-Kaap"] },
+    { stdName: "KwaZulu-Natal,", matches: ["KwaZulu-Natal"] },
+    { stdName: "Limpopo,", matches: ["Limpopo"] },
+    { stdName: "Gauteng,", matches: ["Gauteng"] },
+    { stdName: "North West,", matches: ["North West", "Noord-Wes"] },
+    { stdName: "Mpumalanga,", matches: ["Mpumalanga"] },
+    { stdName: "Free State,", matches: ["Free State", "Vrystaat"] },
   ],
 };
 
