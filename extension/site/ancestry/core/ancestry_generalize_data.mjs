@@ -201,7 +201,7 @@ function determineRecordType(extractedData) {
     {
       type: RT.Burial,
       matches: ["Historical Cemetery Commission Index", "Headstone Transcriptions", "Cemetery", "Funeral"],
-      requiredData: [["Burial Place"]],
+      requiredData: [["Burial Place"], ["Burial Location"]],
     },
     {
       type: RT.Death,
@@ -312,6 +312,7 @@ function determineRecordType(extractedData) {
         "World War I",
         "War Graves",
         "U.S., Department of Veterans Affairs BIRLS Death File",
+        "Veteran Compensation",
         "UK, Army Registers of Soldiers' Effects",
         "Soldier Grave Registrations",
         "Military Service",
