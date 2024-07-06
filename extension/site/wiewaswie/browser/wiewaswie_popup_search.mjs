@@ -46,6 +46,21 @@ import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mj
 const wiewaswieStartYear = 1000; // I have seem lots of dates like 1039 and some of 1000
 const wiewaswieEndYear = 2040;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: wiewaswieStartYear,
+    endYear: wiewaswieEndYear,
+    dateTestType: "bmd",
+    countryList: ["Netherlands"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -117,20 +132,6 @@ async function wiewaswieSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addWiewaswieDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addWiewaswieDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const siteConstraints = {
-    startYear: wiewaswieStartYear,
-    endYear: wiewaswieEndYear,
-    dateTestType: "bmd",
-    countryList: ["Netherlands"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItemWithSubMenu(
     menu,
     "Search WieWasWie (NL)",
@@ -187,4 +188,9 @@ async function setupWiewaswieSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("wiewaswie", "WieWasWie (NL)", addWiewaswieDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "wiewaswie",
+  "WieWasWie (NL)",
+  addWiewaswieDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

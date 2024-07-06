@@ -35,6 +35,21 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const troveStartYear = 1803;
 const troveEndYear = 2100; // up to present day
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: troveStartYear,
+    endYear: troveEndYear,
+    dateTestType: "bmd",
+    countryList: ["Australia", "Colony of Victoria"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -66,17 +81,6 @@ async function troveSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addTroveDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const siteConstraints = {
-    startYear: troveStartYear,
-    endYear: troveEndYear,
-    dateTestType: "bmd",
-    countryList: ["Australia", "Colony of Victoria"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItemWithSubMenu(
     menu,
     "Search Trove (Aus)",
@@ -103,4 +107,4 @@ async function setupTroveSearchSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("trove", "Trove (Aus)", addTroveDefaultSearchMenuItem);
+registerSearchMenuItemFunction("trove", "Trove (Aus)", addTroveDefaultSearchMenuItem, shouldShowSearchMenuItem);

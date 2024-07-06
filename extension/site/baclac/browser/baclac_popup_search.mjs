@@ -42,6 +42,24 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const baclacStartYear = 1800;
 const baclacEndYear = 1992;
 
+function shouldShowSearchMenuItem(data, filter) {
+  //console.log("shouldShowSearchMenuItem, data is:");
+  //console.log(data);
+
+  const siteConstraints = {
+    startYear: baclacStartYear,
+    endYear: baclacEndYear,
+    dateTestType: "bmd",
+    countryList: ["Canada"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -173,4 +191,9 @@ async function setupBaclacSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("baclac", "Library and Archives Canada", addBaclacDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "baclac",
+  "Library and Archives Canada",
+  addBaclacDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

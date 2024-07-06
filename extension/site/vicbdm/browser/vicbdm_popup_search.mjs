@@ -62,6 +62,23 @@ function getSupportedDates() {
   return dates;
 }
 
+function shouldShowSearchMenuItem(data, filter) {
+  const supportedDates = getSupportedDates();
+
+  const siteConstraints = {
+    startYear: supportedDates.startYear,
+    endYear: supportedDates.endYear,
+    dateTestType: "bmd",
+    countryList: ["Australia", "Colony of Victoria"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -170,19 +187,6 @@ async function vicbdmSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addVicbdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const supportedDates = getSupportedDates();
-
-  const siteConstraints = {
-    startYear: supportedDates.startYear,
-    endYear: supportedDates.endYear,
-    dateTestType: "bmd",
-    countryList: ["Australia", "Colony of Victoria"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search Victoria BDM (Aus)...", function (element) {
     setupVicbdmSearchSubMenu(data, backFunction, filter);
   });
@@ -290,4 +294,9 @@ async function setupVicbdmSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("vicbdm", "Victoria BDM (Aus)", addVicbdmDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "vicbdm",
+  "Victoria BDM (Aus)",
+  addVicbdmDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

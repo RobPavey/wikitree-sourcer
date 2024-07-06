@@ -28,6 +28,24 @@ import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/po
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
+const examplesiteStartYear = 1800;
+const examplesiteEndYear = 2000;
+
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: examplesiteStartYear,
+    endYear: examplesiteEndYear,
+    dateTestType: "bmd",
+    countryList: [],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -60,4 +78,9 @@ function addExamplesiteDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("examplesite", "ExampleSite", addExamplesiteDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "examplesite",
+  "ExampleSite",
+  addExamplesiteDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

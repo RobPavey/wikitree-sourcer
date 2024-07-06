@@ -31,6 +31,21 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const opccornStartYear = 1500;
 const opccornEndYear = 2100;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: opccornStartYear,
+    endYear: opccornEndYear,
+    dateTestType: "bmd",
+    countryList: ["England and Wales"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -48,20 +63,6 @@ async function opccornSearch(generalizedData, typeOfSearch) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addOpccornDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addOpccornDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const siteConstraints = {
-    startYear: opccornStartYear,
-    endYear: opccornEndYear,
-    dateTestType: "bmd",
-    countryList: ["England and Wales"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search Cornwall OPC", function (element) {
     opccornSearch(data.generalizedData, "PersonSearch");
   });
@@ -73,4 +74,4 @@ function addOpccornDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("opccorn", "Cornwall OPC", addOpccornDefaultSearchMenuItem);
+registerSearchMenuItemFunction("opccorn", "Cornwall OPC", addOpccornDefaultSearchMenuItem, shouldShowSearchMenuItem);

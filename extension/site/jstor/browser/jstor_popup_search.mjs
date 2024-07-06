@@ -60,4 +60,4 @@ function addJstorDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("jstor", "JSTOR", addJstorDefaultSearchMenuItem);
+registerSearchMenuItemFunction("jstor", "JSTOR", addJstorDefaultSearchMenuItem, undefined);

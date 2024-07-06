@@ -98,11 +98,10 @@ function testFilterForDatesAndCountries(filter, siteConstraints) {
   let siteEndYear = siteConstraints.endYear;
   let siteCountryList = siteConstraints.countryList;
 
-  //console.log("testFilterForDatesAndCountries, startYear is: " + startYear + ", endYear is: " + endYear);
+  //console.log("testFilterForDatesAndCountries, siteConstraints is:");
+  //console.log(siteConstraints);
   //console.log("testFilterForDatesAndCountries, filter is: ");
   //console.log(filter);
-  //console.log("testFilterForDatesAndCountries, countryArray is: ");
-  //console.log(countryArray);
 
   if (filter.filterByDate) {
     if ((siteEndYear && filter.startYear > siteEndYear) || (siteStartYear && filter.endYear < siteStartYear)) {
@@ -222,26 +221,44 @@ function shouldShowSiteSearch(gd, filter, siteConstraints) {
 
 var registeredSearchMenuItemFunctions = [];
 
-function buildSortedMenuItemFunctions(optionName) {
+function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOptionName, data, filter, excludeSite) {
+  let result = {
+    functionList: [],
+    numSitesExcludedByFilter: 0,
+    numSitesExcludedByPriority: 0,
+    numSitesExcludedBySiteName: 0,
+  };
+
   let functionList = [];
 
   for (let registeredFunction of registeredSearchMenuItemFunctions) {
     let siteName = registeredFunction.siteName;
+
+    if (!options.search_general_popup_showSameSite && siteName == excludeSite) {
+      result.numSitesExcludedBySiteName++;
+      continue;
+    }
+
+    if (registeredFunction.shouldShowFunction && !registeredFunction.shouldShowFunction(data, filter)) {
+      result.numSitesExcludedByFilter++;
+      continue;
+    }
+
     let menuItemFunction = registeredFunction.menuItemFunction;
-    let fullOptionName = "search_" + siteName + "_" + optionName;
-    let optionValue = options[fullOptionName];
+    let fullPriorityOptionName = "search_" + siteName + "_" + priorityOptionName;
+    let priorityOptionValue = options[fullPriorityOptionName];
 
     //console.log("buildSortedMenuItemFunctions: fullOptionName is: " + fullOptionName + ", optionValue is: " + optionValue);
 
     let priority = 0;
 
-    if (typeof optionValue === "undefined") {
+    if (typeof priorityOptionValue === "undefined") {
       console.log("buildSortedMenuItemFunctions: missing option value for: " + fullOptionName);
       priority = 10000; // don't exclude it - put at end of list
     } else {
-      let optionNumber = parseInt(optionValue);
-      if (optionNumber != NaN) {
-        priority = optionNumber;
+      let priorityOptionNumber = parseInt(priorityOptionValue);
+      if (priorityOptionNumber != NaN) {
+        priority = priorityOptionNumber;
       }
     }
 
@@ -250,13 +267,17 @@ function buildSortedMenuItemFunctions(optionName) {
         siteName: siteName,
         menuItemFunction: menuItemFunction,
         priority: priority,
+        alphaSortKey: registeredFunction.siteTitle,
       });
+    } else {
+      result.numSitesExcludedByPriority++;
     }
   }
 
   let sortedList = functionList.sort(function (a, b) {
     if (a.priority == b.priority) {
-      return 0;
+      // if priority is same then sort alphabetically by site title
+      return a.alphaSortKey.localeCompare(b.alphaSortKey);
     }
     if (a.priority < b.priority) {
       return -1;
@@ -264,15 +285,44 @@ function buildSortedMenuItemFunctions(optionName) {
     return +1;
   });
 
-  return sortedList;
+  if (maxItems != -1 && sortedList.length > maxItems) {
+    // there is a max number of items. Prune the list.
+    sortedList = sortedList.slice(0, maxItems);
+  }
+
+  let fullSortAlphaOptionName = "search_general_" + sortAlphaOptionName;
+  let sortAlphaOptionValue = options[fullSortAlphaOptionName];
+
+  if (sortAlphaOptionValue) {
+    sortedList = sortedList.sort(function (a, b) {
+      return a.alphaSortKey.localeCompare(b.alphaSortKey);
+    });
+  }
+
+  result.functionList = sortedList;
+  return result;
 }
 
-function buildTopLevelMenuItemFunctions() {
-  return buildSortedMenuItemFunctions("popup_priorityOnTopMenu");
+function buildTopLevelMenuItemFunctions(maxItems, data, excludeSite) {
+  return buildSortedMenuItemFunctions(
+    maxItems,
+    "popup_priorityOnTopMenu",
+    "popup_sortAlphaInTopMenu",
+    data,
+    undefined,
+    excludeSite
+  );
 }
 
-function buildSubMenuItemFunctions() {
-  return buildSortedMenuItemFunctions("popup_priorityOnSubMenu");
+function buildSubMenuItemFunctions(data, filter, excludeSite) {
+  return buildSortedMenuItemFunctions(
+    -1,
+    "popup_priorityOnSubMenu",
+    "popup_sortAlphaInSubmenu",
+    data,
+    filter,
+    excludeSite
+  );
 }
 
 function addSearchFilterMenuItem(menu, filter, numSitesExcludedByPriority, backFunction) {
@@ -495,35 +545,23 @@ function setupSearchMenuItemFilterSubmenu(filter, numSitesExcludedByPriority, ba
   endMainMenu(menu);
 }
 
-function setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList, excludeSite) {
-  //console.log("setupAllSitesSubmenu called, subMenuFunctionList.length = " + subMenuFunctionList.length);
+function setupAllSitesSubmenu(data, filter, backFunction, excludeSite) {
+  let subMenuFunctions = buildSubMenuItemFunctions(data, filter, excludeSite);
+  let subMenuFunctionList = subMenuFunctions.functionList;
+
   let backToHereFunction = function () {
-    setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList, excludeSite);
+    setupAllSitesSubmenu(data, filter, backFunction, excludeSite);
   };
 
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
-  let numSitesExcludedByPriority = 0;
-  for (let registeredFunction of registeredSearchMenuItemFunctions) {
-    let siteName = registeredFunction.siteName;
-    let priorityOptionName = "search_" + siteName + "_popup_priorityOnSubMenu";
+  addSearchFilterMenuItem(menu, filter, subMenuFunctions.numSitesExcludedByPriority, backToHereFunction);
 
-    //console.log("setupAllSitesSubmenu, options[" + priorityOptionName + "] = " + options[priorityOptionName]);
-    if (options[priorityOptionName] <= 0) {
-      numSitesExcludedByPriority++;
-      //console.log("setupAllSitesSubmenu, incremented numSitesExcludedByPriority. Now: " + numSitesExcludedByPriority);
-    }
-  }
-
-  addSearchFilterMenuItem(menu, filter, numSitesExcludedByPriority, backToHereFunction);
-
+  // add the search menu items for each site in list
   for (let registeredFunction of subMenuFunctionList) {
-    let siteName = registeredFunction.siteName;
     let menuItemFunction = registeredFunction.menuItemFunction;
-    if (options.search_general_popup_showSameSite || siteName != excludeSite) {
-      menuItemFunction(menu, data, backToHereFunction, filter);
-    }
+    menuItemFunction(menu, data, backToHereFunction);
   }
 
   endMainMenu(menu);
@@ -535,23 +573,15 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
   let itemsAdded = 0;
   let maxItems = options.search_general_popup_maxSearchItemsInTopMenu;
 
-  let topMenuFunctionList = buildTopLevelMenuItemFunctions();
+  let topMenuFunctions = buildTopLevelMenuItemFunctions(maxItems, data, excludeSite);
+  let topMenuFunctionList = topMenuFunctions.functionList;
 
   // Note: we use the last param to exclude searching the same site
   // that we are searching from. But that is controlled by an option also.
   if (maxItems > 0) {
     for (let registeredFunction of topMenuFunctionList) {
-      let siteName = registeredFunction.siteName;
       let menuItemFunction = registeredFunction.menuItemFunction;
-      if (options.search_general_popup_showSameSite || siteName != excludeSite) {
-        let addedItem = menuItemFunction(menu, data, backFunction);
-        if (addedItem) {
-          itemsAdded++;
-          if (itemsAdded >= maxItems) {
-            break;
-          }
-        }
-      }
+      menuItemFunction(menu, data, backFunction);
     }
   }
 
@@ -568,26 +598,27 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
     countryArray: gd.inferCountries(),
   };
 
-  let subMenuFunctionList = buildSubMenuItemFunctions();
-
   let subMenuText = "Show All Search Sites...";
   if (maxItems <= 0) {
     subMenuText = "Search...";
   }
 
-  if (itemsAdded < registeredSearchMenuItemFunctions.length) {
+  // If the top level menu is showing every single search site option then there is no need for
+  // a submenu
+  if (topMenuFunctionList.length < registeredSearchMenuItemFunctions.length) {
     // add the "All search sites.." submenu item
     addMenuItem(menu, subMenuText, function (element) {
-      setupAllSitesSubmenu(data, filter, backFunction, subMenuFunctionList, excludeSite);
+      setupAllSitesSubmenu(data, filter, backFunction, excludeSite);
     });
   }
 }
 
-function registerSearchMenuItemFunction(siteName, siteTitle, menuItemFunction) {
+function registerSearchMenuItemFunction(siteName, siteTitle, menuItemFunction, shouldShowFunction) {
   registeredSearchMenuItemFunctions.push({
     siteName: siteName,
     siteTitle: siteTitle,
     menuItemFunction: menuItemFunction,
+    shouldShowFunction: shouldShowFunction,
   });
 }
 

@@ -227,4 +227,4 @@ async function setupWikitreeSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("wikitree", "WikiTree", addWikitreeDefaultSearchMenuItem);
+registerSearchMenuItemFunction("wikitree", "WikiTree", addWikitreeDefaultSearchMenuItem, undefined);

@@ -31,6 +31,20 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const cwgcStartYear = 1914;
 const cwgcEndYear = 1947;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: cwgcStartYear,
+    endYear: cwgcEndYear,
+    dateTestType: "died",
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -55,16 +69,6 @@ function addCwgcDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addCwgcDefaultSearchMenuItem, data is:");
   //console.log(data);
 
-  const siteConstraints = {
-    startYear: cwgcStartYear,
-    endYear: cwgcEndYear,
-    dateTestType: "died",
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search Commonwealth War Graves Commission", function (element) {
     cwgcSearch(data.generalizedData);
   });
@@ -80,4 +84,9 @@ function addCwgcDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("cwgc", "Commonwealth War Graves Commission", addCwgcDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "cwgc",
+  "Commonwealth War Graves Commission",
+  addCwgcDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

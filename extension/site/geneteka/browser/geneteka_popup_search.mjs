@@ -34,6 +34,21 @@ const END_YEAR = 1950;
 
 const COUNTRY_NAMES = ["Poland", "Ukraine", "Lithuania", "Belarus", "Galicia"];
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: START_YEAR,
+    endYear: END_YEAR,
+    dateTestType: "bmd",
+    countryList: COUNTRY_NAMES,
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -56,17 +71,6 @@ async function genetekaSearch(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addGenetekaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const siteConstraints = {
-    startYear: START_YEAR,
-    endYear: END_YEAR,
-    dateTestType: "bmd",
-    countryList: COUNTRY_NAMES,
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search Geneteka...", () => setupGenetekaSearchSubMenu(data, backFunction));
 
   return true;
@@ -85,4 +89,4 @@ async function setupGenetekaSearchSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("geneteka", "Geneteka", addGenetekaDefaultSearchMenuItem);
+registerSearchMenuItemFunction("geneteka", "Geneteka", addGenetekaDefaultSearchMenuItem, shouldShowSearchMenuItem);

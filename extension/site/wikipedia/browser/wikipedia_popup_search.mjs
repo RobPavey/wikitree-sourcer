@@ -45,9 +45,6 @@ async function wikipediaSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addWikipediaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addWikipediaDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
   addMenuItem(menu, "Search Wikipedia", function (element) {
     wikipediaSearch(data.generalizedData);
   });
@@ -63,4 +60,4 @@ function addWikipediaDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("wikipedia", "Wikipedia", addWikipediaDefaultSearchMenuItem);
+registerSearchMenuItemFunction("wikipedia", "Wikipedia", addWikipediaDefaultSearchMenuItem, undefined);

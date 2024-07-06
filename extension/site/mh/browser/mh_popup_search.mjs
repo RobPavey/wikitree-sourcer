@@ -148,4 +148,4 @@ async function setupMhSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("mh", "MyHeritage", addMhDefaultSearchMenuItem);
+registerSearchMenuItemFunction("mh", "MyHeritage", addMhDefaultSearchMenuItem, undefined);

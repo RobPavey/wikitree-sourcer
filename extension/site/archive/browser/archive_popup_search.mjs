@@ -60,4 +60,4 @@ function addArchiveDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("archive", "Internet Archive", addArchiveDefaultSearchMenuItem);
+registerSearchMenuItemFunction("archive", "Internet Archive", addArchiveDefaultSearchMenuItem, undefined);

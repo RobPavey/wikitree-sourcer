@@ -44,6 +44,21 @@ import {
 import { options } from "/base/browser/options/options_loader.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: 1841,
+    endYear: 1911,
+    dateTestType: "lived",
+    countryList: ["United Kingdom"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -127,17 +142,6 @@ async function freecenSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFreecenDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const siteConstraints = {
-    startYear: 1841,
-    endYear: 1911,
-    dateTestType: "lived",
-    countryList: ["United Kingdom"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItemWithSubMenu(
     menu,
     "Search FreeCen (UK)",
@@ -203,4 +207,4 @@ async function setupFreecenSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("freecen", "FreeCen (UK)", addFreecenDefaultSearchMenuItem);
+registerSearchMenuItemFunction("freecen", "FreeCen (UK)", addFreecenDefaultSearchMenuItem, shouldShowSearchMenuItem);

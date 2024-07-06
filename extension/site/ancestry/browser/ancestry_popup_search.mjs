@@ -39,6 +39,16 @@ import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/po
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
+function shouldShowSearchMenuItem(data, filter) {
+  if (options.search_ancestry_domain == "none") {
+    return false;
+  }
+  if (!hasBirthOrDeathYear(data)) {
+    return false;
+  }
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -88,12 +98,6 @@ async function ancestrySearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addAncestryDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  if (options.search_ancestry_domain == "none") {
-    return false;
-  }
-  if (!hasBirthOrDeathYear(data)) {
-    return false;
-  }
   addMenuItemWithSubMenu(
     menu,
     "Search Ancestry",
@@ -160,4 +164,4 @@ async function setupAncestrySearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("ancestry", "Ancestry", addAncestryDefaultSearchMenuItem);
+registerSearchMenuItemFunction("ancestry", "Ancestry", addAncestryDefaultSearchMenuItem, shouldShowSearchMenuItem);

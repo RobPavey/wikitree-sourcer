@@ -69,4 +69,4 @@ function addBgDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("bg", "Billion Graves", addBgDefaultSearchMenuItem);
+registerSearchMenuItemFunction("bg", "Billion Graves", addBgDefaultSearchMenuItem, undefined);

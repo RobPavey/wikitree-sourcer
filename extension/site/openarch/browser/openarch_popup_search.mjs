@@ -40,6 +40,21 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const openarchStartYear = 1000;
 const openarchEndYear = 2023;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: openarchStartYear,
+    endYear: openarchEndYear,
+    dateTestType: "bmd",
+    countryList: ["Netherlands"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -71,20 +86,6 @@ async function openarchSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addOpenarchDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addOpenarchDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const siteConstraints = {
-    startYear: openarchStartYear,
-    endYear: openarchEndYear,
-    dateTestType: "bmd",
-    countryList: ["Netherlands"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItemWithSubMenu(
     menu,
     "Search Open Archives (NL)",
@@ -141,4 +142,9 @@ async function setupOpenarchSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("openarch", "Open Archives (NL)", addOpenarchDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "openarch",
+  "Open Archives (NL)",
+  addOpenarchDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

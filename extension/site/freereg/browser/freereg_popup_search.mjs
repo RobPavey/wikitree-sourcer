@@ -43,6 +43,21 @@ import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mj
 
 const freeregStartYear = 1538;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: freeregStartYear,
+    endYear: undefined,
+    dateTestType: "bmd",
+    countryList: ["United Kingdom"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -112,20 +127,6 @@ async function freeregSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFreeregDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addFreeregDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const siteConstraints = {
-    startYear: freeregStartYear,
-    endYear: undefined,
-    dateTestType: "bmd",
-    countryList: ["United Kingdom"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search FreeReg (UK)...", function (element) {
     setupFreeregSearchSubMenu(data, backFunction, filter);
   });
@@ -237,4 +238,4 @@ async function setupFreeregSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("freereg", "FreeReg (UK)", addFreeregDefaultSearchMenuItem);
+registerSearchMenuItemFunction("freereg", "FreeReg (UK)", addFreeregDefaultSearchMenuItem, shouldShowSearchMenuItem);

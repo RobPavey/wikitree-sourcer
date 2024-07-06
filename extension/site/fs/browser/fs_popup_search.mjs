@@ -38,6 +38,13 @@ import {
 import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
+function shouldShowSearchMenuItem(data, filter) {
+  if (!hasBirthOrDeathYear(data)) {
+    return false;
+  }
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -86,9 +93,6 @@ async function familySearchSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFamilySearchDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  if (!hasBirthOrDeathYear(data)) {
-    return false;
-  }
   addMenuItemWithSubMenu(
     menu,
     "Search FamilySearch",
@@ -356,4 +360,4 @@ function setupFsSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("fs", "FamilySearch", addFamilySearchDefaultSearchMenuItem);
+registerSearchMenuItemFunction("fs", "FamilySearch", addFamilySearchDefaultSearchMenuItem, shouldShowSearchMenuItem);

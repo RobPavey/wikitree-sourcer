@@ -46,6 +46,21 @@ const groEndYear = 2021;
 // Helper functions
 //////////////////////////////////////////////////////////////////////////////////////////
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: groStartYear,
+    endYear: groEndYear,
+    countryList: ["England and Wales"],
+    exactCountryList: ["United Kingdom"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 function birthYearInGroRange(data) {
   // currently starts at 1837 and there is a gap from 1935-1983
   let birthYear = data.generalizedData.inferBirthYear();
@@ -144,17 +159,6 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
 }
 
 function addGroDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const siteConstraints = {
-    startYear: groStartYear,
-    endYear: groEndYear,
-    countryList: ["England and Wales"],
-    exactCountryList: ["United Kingdom"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search GRO (UK)...", function (element) {
     setupGroSearchSubMenu(data, backFunction, filter);
   });
@@ -214,4 +218,4 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("gro", "GRO (UK)", addGroDefaultSearchMenuItem);
+registerSearchMenuItemFunction("gro", "GRO (UK)", addGroDefaultSearchMenuItem, shouldShowSearchMenuItem);

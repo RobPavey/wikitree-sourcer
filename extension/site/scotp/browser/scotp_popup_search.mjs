@@ -38,6 +38,21 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const scotpStartYear = 1000;
 const scotpEndYear = 2500;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: scotpStartYear,
+    endYear: scotpEndYear,
+    dateTestType: "bmd",
+    countryList: ["Scotland"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -103,20 +118,6 @@ async function scotpSearch(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addScotpDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addScotpDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const siteConstraints = {
-    startYear: scotpStartYear,
-    endYear: scotpEndYear,
-    dateTestType: "bmd",
-    countryList: ["Scotland"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search ScotlandsPeople...", function (element) {
     setupScotpSearchSubMenu(data, backFunction);
   });
@@ -137,4 +138,4 @@ async function setupScotpSearchSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("scotp", "ScotlandsPeople", addScotpDefaultSearchMenuItem);
+registerSearchMenuItemFunction("scotp", "ScotlandsPeople", addScotpDefaultSearchMenuItem, shouldShowSearchMenuItem);

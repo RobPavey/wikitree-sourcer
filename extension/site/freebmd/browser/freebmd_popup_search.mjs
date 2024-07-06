@@ -38,6 +38,21 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const freebmdStartYear = 1837;
 const freebmdEndYear = 1992;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: freebmdStartYear,
+    endYear: freebmdEndYear,
+    dateTestType: "bmd",
+    countryList: ["England and Wales"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -61,17 +76,6 @@ async function freebmdSearch(generalizedData, typeOfSearch) {
 function addFreebmdDefaultSearchMenuItem(menu, data, backFunction, filter) {
   //console.log("addFreebmdDefaultSearchMenuItem, data is:");
   //console.log(data);
-
-  const siteConstraints = {
-    startYear: freebmdStartYear,
-    endYear: freebmdEndYear,
-    dateTestType: "bmd",
-    countryList: ["England and Wales"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
 
   addMenuItem(menu, "Search FreeBMD (UK)...", function (element) {
     setupFreebmdSearchSubMenu(data, backFunction, filter);
@@ -158,4 +162,4 @@ async function setupFreebmdSearchSubMenu(data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("freebmd", "FreeBMD (UK)", addFreebmdDefaultSearchMenuItem);
+registerSearchMenuItemFunction("freebmd", "FreeBMD (UK)", addFreebmdDefaultSearchMenuItem, shouldShowSearchMenuItem);

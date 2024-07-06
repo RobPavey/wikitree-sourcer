@@ -81,6 +81,18 @@ const searchOptionsGroup = {
       defaultValue: 16,
     },
     {
+      optionName: "popup_sortAlphaInTopMenu",
+      type: "checkbox",
+      label: "On the top-level popup, sort search menu items alphabetically (still use priority to prune list)",
+      defaultValue: false,
+    },
+    {
+      optionName: "popup_sortAlphaInSubmenu",
+      type: "checkbox",
+      label: "On the search submenu, sort search menu items alphabetically rather than by priority",
+      defaultValue: false,
+    },
+    {
       optionName: "maxLifespan",
       type: "number",
       label: "Maximum lifespan to consider when building search date/age ranges",

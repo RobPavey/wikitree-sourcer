@@ -38,6 +38,16 @@ import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_sear
 import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
+function shouldShowSearchMenuItem(data, filter) {
+  if (options.search_fmp_domain == "none") {
+    return false;
+  }
+  if (!hasBirthOrDeathYear(data)) {
+    return false;
+  }
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -86,12 +96,6 @@ async function fmpSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addFmpDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  if (options.search_fmp_domain == "none") {
-    return 0;
-  }
-  if (!hasBirthOrDeathYear(data)) {
-    return 0;
-  }
   addMenuItemWithSubMenu(
     menu,
     "Search FindMyPast",
@@ -159,4 +163,4 @@ async function setupFmpSearchWithParametersSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("fmp", "FindMyPast", addFmpDefaultSearchMenuItem);
+registerSearchMenuItemFunction("fmp", "FindMyPast", addFmpDefaultSearchMenuItem, shouldShowSearchMenuItem);

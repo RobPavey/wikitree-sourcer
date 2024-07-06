@@ -31,6 +31,21 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const nliStartYear = 1740;
 const nliEndYear = 1880;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: nliStartYear,
+    endYear: nliEndYear,
+    dateTestType: "bmd",
+    countryList: ["Ireland"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -48,20 +63,6 @@ async function nliSearch(generalizedData, typeOfSearch) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addNliDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addNliDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const siteConstraints = {
-    startYear: nliStartYear,
-    endYear: nliEndYear,
-    dateTestType: "bmd",
-    countryList: ["Ireland"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search National Library of Ireland Registers...", function (element) {
     nliSearch(data.generalizedData, "SameCollection");
   });
@@ -77,4 +78,9 @@ function addNliDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("nli", "National Library of Ireland", addNliDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "nli",
+  "National Library of Ireland",
+  addNliDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

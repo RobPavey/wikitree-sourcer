@@ -33,6 +33,21 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const naieStartYear = 1837;
 const naieEndYear = 1992;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: naieStartYear,
+    endYear: naieEndYear,
+    dateTestType: "bmd",
+    countryList: ["Ireland"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -56,20 +71,6 @@ async function naieSearch(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addNaieDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addNaieDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const siteConstraints = {
-    startYear: naieStartYear,
-    endYear: naieEndYear,
-    dateTestType: "bmd",
-    countryList: ["Ireland"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search National Archives of Ireland Census...", function (element) {
     setupNaieSearchSubMenu(data, backFunction, filter);
   });
@@ -90,4 +91,9 @@ async function setupNaieSearchSubMenu(data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("naie", "National Archives of Ireland", addNaieDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "naie",
+  "National Archives of Ireland",
+  addNaieDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

@@ -36,6 +36,21 @@ import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mj
 const psukStartYear = 1858;
 const psukEndYear = 2100;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: psukStartYear,
+    endYear: psukEndYear,
+    dateTestType: "died",
+    countryList: ["England and Wales"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -87,20 +102,6 @@ async function psukSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addPsukDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addPsukDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const siteConstraints = {
-    startYear: psukStartYear,
-    endYear: psukEndYear,
-    dateTestType: "died",
-    countryList: ["England and Wales"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search Probate Search/Find A Will (UK)", function (element) {
     psukSearch(data.generalizedData);
   });
@@ -116,4 +117,9 @@ function addPsukDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("psuk", "Probate Search/Find A Will (UK)", addPsukDefaultSearchMenuItem);
+registerSearchMenuItemFunction(
+  "psuk",
+  "Probate Search/Find A Will (UK)",
+  addPsukDefaultSearchMenuItem,
+  shouldShowSearchMenuItem
+);

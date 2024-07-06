@@ -66,4 +66,4 @@ function addNpDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("np", "Newspapers.com", addNpDefaultSearchMenuItem);
+registerSearchMenuItemFunction("np", "Newspapers.com", addNpDefaultSearchMenuItem, undefined);

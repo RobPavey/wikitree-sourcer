@@ -40,6 +40,21 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const irishgStartYear = 1520;
 const irishgEndYear = 1973;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: irishgStartYear,
+    endYear: irishgEndYear,
+    dateTestType: "lived",
+    countryList: ["Ireland"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -66,17 +81,6 @@ async function irishgSearch(generalizedData, parameters) {
 // might be like ScotP - with a default menu that is like "Search with Specific Parameters"
 
 function addIrishgDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const siteConstraints = {
-    startYear: irishgStartYear,
-    endYear: irishgEndYear,
-    dateTestType: "lived",
-    countryList: ["Ireland"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItem(menu, "Search IrishGenealogy.ie...", function (element) {
     setupIrishgSearchSubMenu(data, backFunction, filter);
   });
@@ -97,4 +101,4 @@ async function setupIrishgSearchSubMenu(data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("irishg", "IrishGenealogy.ie", addIrishgDefaultSearchMenuItem);
+registerSearchMenuItemFunction("irishg", "IrishGenealogy.ie", addIrishgDefaultSearchMenuItem, shouldShowSearchMenuItem);

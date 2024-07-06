@@ -33,6 +33,21 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const ppnzStartYear = 1839;
 const ppnzEndYear = 1979;
 
+function shouldShowSearchMenuItem(data, filter) {
+  const siteConstraints = {
+    startYear: ppnzStartYear,
+    endYear: ppnzEndYear,
+    dateTestType: "bmd",
+    countryList: ["New Zealand"],
+  };
+
+  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
+    return false;
+  }
+
+  return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -64,20 +79,6 @@ async function ppnzSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addPpnzDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  //console.log("addPpnzDefaultSearchMenuItem, data is:");
-  //console.log(data);
-
-  const siteConstraints = {
-    startYear: ppnzStartYear,
-    endYear: ppnzEndYear,
-    dateTestType: "bmd",
-    countryList: ["New Zealand"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
-
   addMenuItemWithSubMenu(
     menu,
     "Search Papers Past (NZ)",
@@ -106,4 +107,4 @@ async function setupPpnzSearchSubMenu(data, backFunction) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction("ppnz", "Papers Past (NZ)", addPpnzDefaultSearchMenuItem);
+registerSearchMenuItemFunction("ppnz", "Papers Past (NZ)", addPpnzDefaultSearchMenuItem, shouldShowSearchMenuItem);
