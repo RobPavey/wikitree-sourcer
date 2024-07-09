@@ -570,7 +570,6 @@ function setupAllSitesSubmenu(data, filter, backFunction, excludeSite) {
 async function addSearchMenus(menu, data, backFunction, excludeSite) {
   await restorePopupSearchFilterState();
 
-  let itemsAdded = 0;
   let maxItems = options.search_general_popup_maxSearchItemsInTopMenu;
 
   let topMenuFunctions = buildTopLevelMenuItemFunctions(maxItems, data, excludeSite);

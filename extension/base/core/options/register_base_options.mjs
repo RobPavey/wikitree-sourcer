@@ -78,7 +78,13 @@ const searchOptionsGroup = {
       optionName: "popup_maxSearchItemsInTopMenu",
       type: "number",
       label: "Maximum number of search menu items to show on top-level popup (0 means just show search submenu)",
-      defaultValue: 16,
+      defaultValue: 18,
+    },
+    {
+      optionName: "popup_maxTotalItemsInTopMenu",
+      type: "number",
+      label: "Maximum number of  menu items to show on top-level popup (search menu items will be removed if needed)",
+      defaultValue: 22,
     },
     {
       optionName: "popup_sortAlphaInTopMenu",
@@ -91,6 +97,22 @@ const searchOptionsGroup = {
       type: "checkbox",
       label: "On the search submenu, sort search menu items alphabetically rather than by priority",
       defaultValue: false,
+    },
+    {
+      optionName: "popup_searchMenuItemsLocation",
+      type: "select",
+      label: "Place the search menu items",
+      values: [
+        {
+          value: "before",
+          text: "Before the other site specific actions",
+        },
+        {
+          value: "after",
+          text: "After the other site specific actions",
+        },
+      ],
+      defaultValue: "before",
     },
     {
       optionName: "maxLifespan",

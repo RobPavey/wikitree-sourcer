@@ -562,7 +562,171 @@ function beginMainMenu() {
 }
 
 function endMainMenu(menu) {
-  document.getElementById("menu").appendChild(menu.fragment);
+  let menuElement = document.getElementById("menu");
+  if (!menuElement || !menu.fragment || !menu.list) {
+    return;
+  }
+
+  // by default the Search menu items will be first and the total menu length could be over limit.
+  let ulElement = menu.list;
+
+  // minus one because there is a title.
+  let numListElements = ulElement.childElementCount - 1;
+
+  if (numListElements == 0) {
+    return;
+  }
+
+  // check if this is the top-level menu. We only want to restrict size in that case.
+  // We don't currently have a flag for this. So check for the presence of the edit citation
+  // menu item.
+  let editCitationElement = undefined;
+  for (let listItem of ulElement.children) {
+    let firstButton = listItem.querySelector("button.menuButton");
+    if (!firstButton) {
+      continue;
+    }
+    let title = firstButton.textContent;
+    if (title.startsWith("Edit Citation...")) {
+      editCitationElement = listItem;
+    }
+  }
+  let isTopLevelMenu = editCitationElement ? true : false;
+
+  // We only want to prune or reorder the search menu items on the main menu
+  // strangely, when on an unrecognized site, options is undefined
+  if (isTopLevelMenu && options) {
+    let maxItems = Number(options.search_general_popup_maxTotalItemsInTopMenu);
+
+    let searchLocation = options.search_general_popup_searchMenuItemsLocation;
+
+    if (numListElements > maxItems || searchLocation == "after") {
+      // count the search menu items
+      let numSearchMenuItems = 0;
+      let hasShowAll = false;
+      let hasOnlySearchSubmenu = false;
+      for (let listItem of ulElement.children) {
+        let firstButton = listItem.querySelector("button.menuButton");
+        if (!firstButton) {
+          continue;
+        }
+        let title = firstButton.textContent;
+        if (title.startsWith("Search ")) {
+          numSearchMenuItems++;
+        }
+        if (title.startsWith("Show All Search Sites")) {
+          hasShowAll = true;
+        }
+        if (title.startsWith("Search...")) {
+          hasOnlySearchSubmenu = true;
+        }
+      }
+
+      //console.log("numSearchMenuItems = " + numSearchMenuItems);
+      //console.log("hasShowAll = " + hasShowAll);
+      //console.log("hasOnlySearchSubmenu = " + hasOnlySearchSubmenu);
+
+      if (hasOnlySearchSubmenu && numSearchMenuItems > 0) {
+        return; // should never happen
+      }
+
+      if (searchLocation == "after") {
+        // remove all the search elements from the array
+        let removedElements = [];
+        let copyOfChildren = [...ulElement.children];
+        for (let listItem of copyOfChildren) {
+          let firstButton = listItem.querySelector("button.menuButton");
+          if (!firstButton) {
+            continue;
+          }
+
+          let title = firstButton.textContent;
+          if (
+            title.startsWith("Search ") ||
+            title.startsWith("Show All Search Sites") ||
+            title.startsWith("Search...")
+          ) {
+            removedElements.push(listItem);
+            ulElement.removeChild(listItem);
+          }
+        }
+
+        let numSearchSiteItemsToAdd = numSearchMenuItems;
+        if (numListElements > maxItems) {
+          // we want to remove some search elements
+          let searchItemsToRemove = numListElements - maxItems;
+          if (searchItemsToRemove >= numSearchSiteItemsToAdd) {
+            numSearchSiteItemsToAdd = 0;
+          } else {
+            numSearchSiteItemsToAdd -= searchItemsToRemove;
+          }
+        }
+
+        //console.log("numSearchSiteItemsToAdd = " + numSearchSiteItemsToAdd);
+
+        let isFirstSearchElement = true;
+        for (let searchItem of removedElements) {
+          if (isFirstSearchElement) {
+            if (!searchItem.classList.contains("dividerAbove")) {
+              searchItem.classList.add("dividerAbove");
+            }
+            isFirstSearchElement = false;
+          }
+          let firstButton = searchItem.querySelector("button.menuButton");
+          if (!firstButton) {
+            continue;
+          }
+
+          let title = firstButton.textContent;
+
+          let addItem = true;
+          if (title.startsWith("Search ")) {
+            if (numSearchSiteItemsToAdd > 0) {
+              numSearchSiteItemsToAdd--;
+            } else {
+              addItem = false;
+            }
+          }
+
+          if (addItem) {
+            ulElement.insertBefore(searchItem, editCitationElement);
+          }
+        }
+      } else {
+        // search menu items are vefore the other site specific menu action items
+        // so we don't need to move anything. Just remove extra search menu items.
+        let numSearchSiteItemsToAdd = numSearchMenuItems;
+        if (numListElements > maxItems) {
+          // we want to remove some search elements
+          let searchItemsToRemove = numListElements - maxItems;
+          if (searchItemsToRemove >= numSearchSiteItemsToAdd) {
+            numSearchSiteItemsToAdd = 0;
+          } else {
+            numSearchSiteItemsToAdd -= searchItemsToRemove;
+          }
+        }
+
+        let copyOfChildren = [...ulElement.children];
+        for (let listItem of copyOfChildren) {
+          let firstButton = listItem.querySelector("button.menuButton");
+          if (!firstButton) {
+            continue;
+          }
+
+          let title = firstButton.textContent;
+          if (title.startsWith("Search ")) {
+            if (numSearchSiteItemsToAdd > 0) {
+              numSearchSiteItemsToAdd--;
+            } else {
+              ulElement.removeChild(listItem);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  menuElement.appendChild(menu.fragment);
 }
 
 function addMenuDivider(menu) {
