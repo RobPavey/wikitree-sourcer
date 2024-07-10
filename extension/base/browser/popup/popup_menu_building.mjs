@@ -1392,6 +1392,58 @@ function setupBuildCitationSubMenu(
   endMainMenu(menu);
 }
 
+function setupOtherBuildCitationItemsSubMenu(
+  data,
+  manualClassification,
+  buildFunction,
+  type,
+  backFunction,
+  regeneralizeFunction,
+  userInputFunction
+) {
+  let menu = beginMainMenu();
+  addBackMenuItem(menu, backFunction);
+
+  if (type != "inline") {
+    addBuildCitationMenuItem(
+      menu,
+      data,
+      manualClassification,
+      buildFunction,
+      "inline",
+      backFunction,
+      regeneralizeFunction,
+      userInputFunction
+    );
+  }
+  if (type != "narrative") {
+    addBuildCitationMenuItem(
+      menu,
+      data,
+      manualClassification,
+      buildFunction,
+      "narrative",
+      backFunction,
+      regeneralizeFunction,
+      userInputFunction
+    );
+  }
+  if (type != "source") {
+    addBuildCitationMenuItem(
+      menu,
+      data,
+      manualClassification,
+      buildFunction,
+      "source",
+      backFunction,
+      regeneralizeFunction,
+      userInputFunction
+    );
+  }
+
+  endMainMenu(menu);
+}
+
 function addBuildCitationMenuItem(
   menu,
   data,
@@ -1400,7 +1452,8 @@ function addBuildCitationMenuItem(
   type,
   backFunction,
   regeneralizeFunction,
-  userInputFunction
+  userInputFunction,
+  othersOnSubmenu = false
 ) {
   let suffix = "";
   if (regeneralizeFunction) {
@@ -1435,23 +1488,43 @@ function addBuildCitationMenuItem(
   let input = Object.assign({}, data);
   input.type = type;
 
-  if (suffix) {
-    addMenuItem(menu, menuText, function (element) {
-      setupBuildCitationSubMenu(
-        input,
-        manualClassification,
-        buildFunction,
-        backFunction,
-        regeneralizeFunction,
-        userInputFunction
-      );
-    });
+  let rightArrowClickFunction = function (element) {
+    setupOtherBuildCitationItemsSubMenu(
+      data,
+      manualClassification,
+      buildFunction,
+      type,
+      backFunction,
+      regeneralizeFunction,
+      userInputFunction
+    );
+  };
+
+  let suffixClickFunction = function (element) {
+    setupBuildCitationSubMenu(
+      input,
+      manualClassification,
+      buildFunction,
+      backFunction,
+      regeneralizeFunction,
+      userInputFunction
+    );
+  };
+
+  let simpleBuildClickFunction = function (element) {
+    displayBusyMessage("Building citation...");
+    buildFunction(input);
+  };
+
+  let mainClickFunction = suffix ? suffixClickFunction : simpleBuildClickFunction;
+
+  if (othersOnSubmenu) {
+    addMenuItemWithSubMenu(menu, menuText, mainClickFunction, rightArrowClickFunction);
   } else {
-    addMenuItem(menu, menuText, function (element) {
-      displayBusyMessage("Building citation...");
-      buildFunction(input);
-    });
+    addMenuItem(menu, menuText, mainClickFunction);
   }
+
+  addMenuItemWithSubMenu;
 }
 
 function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, regeneralizeFunction, userInputFunction) {
@@ -1462,36 +1535,28 @@ function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, rege
 
   let manualClassification = isManualClassificationNeeded(data);
 
-  addBuildCitationMenuItem(
-    menu,
-    data,
-    manualClassification,
-    buildFunction,
-    "inline",
-    backFunction,
-    regeneralizeFunction,
-    userInputFunction
-  );
-  addBuildCitationMenuItem(
-    menu,
-    data,
-    manualClassification,
-    buildFunction,
-    "narrative",
-    backFunction,
-    regeneralizeFunction,
-    userInputFunction
-  );
-  addBuildCitationMenuItem(
-    menu,
-    data,
-    manualClassification,
-    buildFunction,
-    "source",
-    backFunction,
-    regeneralizeFunction,
-    userInputFunction
-  );
+  let othersOnSubmenu = false;
+  let menuItemsOption = options.citation_general_popupCitationMenuItems;
+  if (menuItemsOption != "all") {
+    othersOnSubmenu = true;
+  }
+
+  let typeStrings = ["inline", "narrative", "source"];
+  for (let typeString of typeStrings) {
+    if (menuItemsOption == "all" || menuItemsOption == typeString) {
+      addBuildCitationMenuItem(
+        menu,
+        data,
+        manualClassification,
+        buildFunction,
+        typeString,
+        backFunction,
+        regeneralizeFunction,
+        userInputFunction,
+        othersOnSubmenu
+      );
+    }
+  }
 }
 
 // Global to remember the popup menu width before EditCitation

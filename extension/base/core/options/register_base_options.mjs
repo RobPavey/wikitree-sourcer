@@ -127,11 +127,34 @@ const searchOptionsGroup = {
 // Citation options groups, General
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const citationOptionsGroup = {
+const citationPopupOptionsGroup = {
   category: "citation",
   subcategory: "general",
   tab: "citation",
   subsection: "general",
+  subheading: "popup",
+  options: [
+    {
+      optionName: "popupCitationMenuItems",
+      type: "select",
+      label: 'Organize "Build Citation" menu items as',
+      values: [
+        { value: "all", text: "Three separate menu items at top-level" },
+        { value: "inline", text: '"Build Inline Citation" at top-level and others on submenu' },
+        { value: "narrative", text: '"Build Narrative with Citation" at top-level and others on submenu' },
+        { value: "source", text: '"Build Source Citation" at top-level and others on submenu' },
+      ],
+      defaultValue: "all",
+    },
+  ],
+};
+
+const citationStyleOptionsGroup = {
+  category: "citation",
+  subcategory: "general",
+  tab: "citation",
+  subsection: "general",
+  subheading: "style",
   options: [
     {
       optionName: "meaningfulNames",
@@ -1559,6 +1582,9 @@ const contextGeneralOptionsGroup = {
 registerSubsectionForOptions("search", "general", "General");
 
 registerSubsectionForOptions("citation", "general", "General");
+registerSubheadingForOptions("citation", "general", "popup", "Popup Menu");
+registerSubheadingForOptions("citation", "general", "style", "Citation Style");
+
 registerSubsectionForOptions("citation", "userCitation", "Citation Assistant");
 
 registerSubsectionForOptions("narrative", "general", "General");
@@ -1600,7 +1626,8 @@ registerSubsectionForOptions("addMerge", "mergeEdit", "Merge/Edit");
 registerSubsectionForOptions("context", "general", "General");
 
 registerOptionsGroup(searchOptionsGroup);
-registerOptionsGroup(citationOptionsGroup);
+registerOptionsGroup(citationPopupOptionsGroup);
+registerOptionsGroup(citationStyleOptionsGroup);
 registerOptionsGroup(userCitationOptionsGroup);
 
 registerOptionsGroup(narrativeOptionsGroup);
