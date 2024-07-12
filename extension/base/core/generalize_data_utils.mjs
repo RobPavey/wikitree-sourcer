@@ -997,10 +997,24 @@ class NameObj {
       "general",
       "ensign",
       // religious
+      "abbess",
+      "abbot",
+      "archbishop",
+      "archdeacon",
+      "bishop",
       "brother",
       "br",
+      "deacon",
       "father",
       "fa",
+      "fr",
+      "mother",
+      "novice",
+      "patriarch",
+      "rev",
+      "reverend",
+      "sister",
+      "sr",
     ];
 
     const titlesThatAreNotPrefixes = ["mr", "mrs", "miss", "ms", "mx"];

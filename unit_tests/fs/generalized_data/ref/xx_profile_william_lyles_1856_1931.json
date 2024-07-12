@@ -3,10 +3,10 @@
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
-    "name": "Rev William Oscar Lyles",
+    "name": "William Oscar Lyles",
+    "prefix": "Rev",
     "lastName": "Lyles",
-    "forenames": "William Oscar",
-    "prefix": "Rev"
+    "forenames": "William Oscar"
   },
   "birthDate": {
     "dateString": "8 February 1856"
