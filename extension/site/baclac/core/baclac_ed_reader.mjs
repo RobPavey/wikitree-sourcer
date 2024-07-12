@@ -187,9 +187,11 @@ class BaclacEdReader extends ExtractedDataReader {
     if (!this.typeData) {
       let foundIn = this.getRecordDataValue("Found in");
       if (foundIn) {
-        for (let type in typeData) {
+        for (let typeKey in typeData) {
+          let type = typeData[typeKey];
           if (type.foundIn == foundIn) {
             this.typeData = type;
+            break;
           }
         }
       }
