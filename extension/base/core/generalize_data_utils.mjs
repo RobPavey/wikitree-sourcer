@@ -996,6 +996,7 @@ class NameObj {
       "admiral",
       "general",
       "ensign",
+      "rfmn", // rifleman
       // religious
       "abbess",
       "abbot",
