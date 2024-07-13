@@ -1,0 +1,144 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01052377002789",
+  "success": true,
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "1875 census for 1660P Strinda",
+    "Census districts summary",
+    "004",
+    "0044 Teslimyhr",
+    "003 Jakob Pedersen"
+  ],
+  "collectionHeading": "Census district: 004",
+  "heading": "Person: \n\t\t\t\t\t003 Jakob Pedersen",
+  "recordData": {
+    "Household no.": "01",
+    "Person no.": "003",
+    "Family position": "s",
+    "Gender": "m",
+    "Date of birth": "1870",
+    "Place of birth": "Lade Strinden",
+    "Residential status": "b"
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "personName": "001 Peder Jakobsen",
+          "H.no.": "01",
+          "Age/born": "1837",
+          "Place of birth": "Klæbo",
+          "Residential status": "b",
+          "Family position": "hf",
+          "Marital status": "g",
+          "Occupation": "Gaardeier og Gaardbruger"
+        },
+        {
+          "personName": "002 Anne Martha Sivertsdatter",
+          "H.no.": "01",
+          "Age/born": "1843",
+          "Place of birth": "Lade Strinden",
+          "Residential status": "b",
+          "Family position": "Kone",
+          "Marital status": "g"
+        },
+        {
+          "current": true,
+          "personName": "003 Jakob Pedersen",
+          "H.no.": "01",
+          "Age/born": "1870",
+          "Place of birth": "Lade Strinden",
+          "Residential status": "b",
+          "Family position": "s"
+        },
+        {
+          "personName": "004 Sivert Pedersen",
+          "H.no.": "01",
+          "Age/born": "1872",
+          "Place of birth": "Lade Strinden",
+          "Residential status": "b",
+          "Family position": "s"
+        },
+        {
+          "personName": "005 Ole Pedersen",
+          "H.no.": "01",
+          "Age/born": "1875",
+          "Place of birth": "Lade Strinden",
+          "Residential status": "b",
+          "Family position": "s"
+        },
+        {
+          "personName": "006 Gusta Marie Pedersdatter",
+          "H.no.": "01",
+          "Age/born": "1867",
+          "Place of birth": "Lade Strinden",
+          "Residential status": "b",
+          "Family position": "d"
+        },
+        {
+          "personName": "007 Ingeborg Jakobsdatter",
+          "H.no.": "01",
+          "Age/born": "1829",
+          "Place of birth": "Klæbo",
+          "Residential status": "b",
+          "Family position": "Tjener",
+          "Occupation": "Tjenestepige"
+        },
+        {
+          "personName": "008 Guru?? Haftorsdatter",
+          "H.no.": "01",
+          "Age/born": "1794",
+          "Place of birth": "Klæbo",
+          "Residential status": "b",
+          "Family position": "Moder til Husfaderen",
+          "Marital status": "e",
+          "Occupation": "Forsørges af Sønnen"
+        },
+        {
+          "personName": "009 Anders Mikkelsen",
+          "H.no.": "02",
+          "Age/born": "1818",
+          "Place of birth": "Throndhjem",
+          "Residential status": "b",
+          "Family position": "Logerende",
+          "Marital status": "g",
+          "Occupation": "Almindeligt Tømmermandsarbeide"
+        },
+        {
+          "personName": "010 Ingeborg Petersdatter",
+          "H.no.": "02",
+          "Age/born": "1805",
+          "Place of birth": "Throndhjem",
+          "Residential status": "b",
+          "Family position": "hans Kone",
+          "Marital status": "g"
+        },
+        {
+          "personName": "011 Lars Olsen Granaas",
+          "H.no.": "03",
+          "Age/born": "1831",
+          "Place of birth": "Lade Strind",
+          "Residential status": "b",
+          "Family position": "Logerende",
+          "Marital status": "ug",
+          "Occupation": "Dagarbeider"
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01052377002789",
+  "sourceInformation": "1875 census for 1660P Strinda",
+  "sourceData": {
+    "County": "Sør-Trøndelag",
+    "Municipality (1947)": "Malvik, Strinda",
+    "Geographic area": "Strinda parish\n\t\t\t\t\t\t\t\t\tMalvik local parish\n\t\t\t\t\t\t\t\t\tLade (Strinda, Moholt) local parish\n\t\t\t\t\t\t\t\t\tBratsberg local parish\n\t\t\t\t\t\t\t\t\tHavstein chapel parish",
+    "Start year": "1875",
+    "End year": "1875",
+    "Løpenr/Bnr": "167, 169b2"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/267/pg00000000517413",
+  "success": true,
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Church book from Nannestad parish 1840-1850 (0238P)",
+    "Burials",
+    "Ingeborg Jacobsd"
+  ],
+  "collectionHeading": "Burials: 1840-09-20",
+  "heading": "Person: Ingeborg Jacobsd",
+  "recordData": {
+    "Serial no.": "1",
+    "Roll": "avdød",
+    "Given name": "Ingeborg",
+    "Last name": "Jacobsd",
+    "Gender": "k",
+    "Position": "Lægdslem",
+    "Residence": "Økeren",
+    "Age": "50",
+    "Birth year": "1790 (calculated)",
+    "Date of death": "09-13"
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Persons involved",
+      "people": [
+        {
+          "current": true,
+          "personName": "Serial no. 1",
+          "Roll": "avdød",
+          "Name": "Ingeborg Jacobsd",
+          "Position": "Lægdslem",
+          "Birth year": "1790 (calculated)",
+          "Residence": "Økeren"
+        }
+      ]
+    },
+    {
+      "panelTitle": "Burials",
+      "Year": "1840",
+      "Page": "227",
+      "Serial no.": "14",
+      "Burial date": "09-20"
+    }
+  ],
+  "permanentId": "pg00000000517413",
+  "sourceInformation": "Church book from Nannestad parish 1840-1850 (0238P)",
+  "sourceData": {
+    "County": "Akershus",
+    "Municipality (1947)": "Nannestad",
+    "Geographic area": "Nannestad parish\n\t\t\t\t\t\t\t\t\tNannestad local parish\n\t\t\t\t\t\t\t\t\tHolter local parish\n\t\t\t\t\t\t\t\t\tBjørke local parish",
+    "Start year": "1840",
+    "End year": "1850",
+    "Page": "227",
+    "Serial no.": "14",
+    "Deceased and buried": "Jahn Thomas Lind",
+    "Born and baptised": "AMF - Ancestry, MyHeritage and FamilySearch",
+    "Married": "AMF - Ancestry, MyHeritage and FamilySearch"
+  }
+}

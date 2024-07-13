@@ -57,6 +57,7 @@ import "../unit_tests/vicbdm/vicbdm_test.mjs";
 import "../unit_tests/wiewaswie/wiewaswie_test.mjs";
 import "../unit_tests/wikipedia/wikipedia_test.mjs";
 import "../unit_tests/wikitree/wikitree_test.mjs";
+import "../unit_tests/noda/noda_test.mjs";
 
 function testSuiteEnabled(parameters, testSuiteName) {
   return parameters.testSuiteName == "" || parameters.testSuiteName == testSuiteName;

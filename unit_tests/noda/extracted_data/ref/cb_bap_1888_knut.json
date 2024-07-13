@@ -1,0 +1,65 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/255/pd00000017246548",
+  "success": true,
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Church book from Voss parish, Voss local parish 1886-1899 (1235P)",
+    "Births and baptisms",
+    "Knut"
+  ],
+  "collectionHeading": "Births and baptisms: 1888-04-22",
+  "heading": "Person: Knut",
+  "recordData": {
+    "Serial no.": "1",
+    "Role": "barn",
+    "Given name": "Knut",
+    "Gender": "m",
+    "Date of birth": "03-04"
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Persons involved",
+      "people": [
+        {
+          "current": true,
+          "personName": "Serial no. 1",
+          "Role": "barn",
+          "Name": "Knut"
+        },
+        {
+          "personName": "Serial no. 2",
+          "Role": "far",
+          "Name": "Lars Knutsen",
+          "Birth year": "1858"
+        },
+        {
+          "personName": "Serial no. 3",
+          "Role": "mor",
+          "Name": "Martha Pedersdtr.",
+          "Birth year": "1859",
+          "Birth place": "Vongen"
+        }
+      ]
+    },
+    {
+      "panelTitle": "Births and baptisms",
+      "Page": "29",
+      "Serial no.": "25",
+      "Year": "1888",
+      "Baptism date": "04-22"
+    }
+  ],
+  "permanentId": "pd00000017246548",
+  "sourceInformation": "Church book from Voss parish, Voss local parish 1886-1899 (1235P)",
+  "sourceData": {
+    "County": "Hordaland",
+    "Municipality (1947)": "Voss",
+    "Geographic area": "Voss parish\n\t\t\t\t\t\t\t\t\tVoss local parish",
+    "Start year": "1886",
+    "End year": "1899",
+    "Page": "29",
+    "Serial no.": "25",
+    "Born and baptised": "AMF - Ancestry, MyHeritage and FamilySearch"
+  }
+}
