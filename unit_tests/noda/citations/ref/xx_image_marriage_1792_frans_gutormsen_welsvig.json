@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://media.digitalarkivet.no/view/15957/43 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://media.digitalarkivet.no/view/15957/43 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://media.digitalarkivet.no/view/15957/43 Digitalarkivet Record] (accessed 6 May 2021)<br/>Unknown.",
+    "type": "source"
+  }
+}

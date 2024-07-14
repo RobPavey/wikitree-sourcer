@@ -1,6 +1,8 @@
 {
   "url": "https://www.digitalarkivet.no/en/census/person/pf01052377002789",
   "success": true,
+  "lang": "en",
+  "pageType": "record",
   "breadcrumbs": [
     "Home",
     "Find source",
@@ -10,8 +12,24 @@
     "0044 Teslimyhr",
     "003 Jakob Pedersen"
   ],
-  "collectionHeading": "Census district: 004",
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 004",
+      "collectionNameParts": [
+        "Census district:",
+        "004"
+      ]
+    },
+    {
+      "collectionHeading": "Rural residence: 0044 Teslimyhr",
+      "collectionNameParts": [
+        "Rural residence:",
+        "0044 Teslimyhr"
+      ]
+    }
+  ],
   "heading": "Person: \n\t\t\t\t\t003 Jakob Pedersen",
+  "imageLink": "https://media.digitalarkivet.no/ft20110216170517",
   "recordData": {
     "Household no.": "01",
     "Person no.": "003",
@@ -29,7 +47,11 @@
       "panelTitle": "Residents",
       "people": [
         {
-          "personName": "001 Peder Jakobsen",
+          "personLabel": "001",
+          "personNameParts": [
+            "Peder Jakobsen"
+          ],
+          "personHeading": "001 Peder Jakobsen",
           "H.no.": "01",
           "Age/born": "1837",
           "Place of birth": "Klæbo",
@@ -39,7 +61,11 @@
           "Occupation": "Gaardeier og Gaardbruger"
         },
         {
-          "personName": "002 Anne Martha Sivertsdatter",
+          "personLabel": "002",
+          "personNameParts": [
+            "Anne Martha Sivertsdatter"
+          ],
+          "personHeading": "002 Anne Martha Sivertsdatter",
           "H.no.": "01",
           "Age/born": "1843",
           "Place of birth": "Lade Strinden",
@@ -49,7 +75,11 @@
         },
         {
           "current": true,
-          "personName": "003 Jakob Pedersen",
+          "personLabel": "003",
+          "personNameParts": [
+            "Jakob Pedersen"
+          ],
+          "personHeading": "003 Jakob Pedersen",
           "H.no.": "01",
           "Age/born": "1870",
           "Place of birth": "Lade Strinden",
@@ -57,7 +87,11 @@
           "Family position": "s"
         },
         {
-          "personName": "004 Sivert Pedersen",
+          "personLabel": "004",
+          "personNameParts": [
+            "Sivert Pedersen"
+          ],
+          "personHeading": "004 Sivert Pedersen",
           "H.no.": "01",
           "Age/born": "1872",
           "Place of birth": "Lade Strinden",
@@ -65,7 +99,11 @@
           "Family position": "s"
         },
         {
-          "personName": "005 Ole Pedersen",
+          "personLabel": "005",
+          "personNameParts": [
+            "Ole Pedersen"
+          ],
+          "personHeading": "005 Ole Pedersen",
           "H.no.": "01",
           "Age/born": "1875",
           "Place of birth": "Lade Strinden",
@@ -73,7 +111,11 @@
           "Family position": "s"
         },
         {
-          "personName": "006 Gusta Marie Pedersdatter",
+          "personLabel": "006",
+          "personNameParts": [
+            "Gusta Marie Pedersdatter"
+          ],
+          "personHeading": "006 Gusta Marie Pedersdatter",
           "H.no.": "01",
           "Age/born": "1867",
           "Place of birth": "Lade Strinden",
@@ -81,7 +123,11 @@
           "Family position": "d"
         },
         {
-          "personName": "007 Ingeborg Jakobsdatter",
+          "personLabel": "007",
+          "personNameParts": [
+            "Ingeborg Jakobsdatter"
+          ],
+          "personHeading": "007 Ingeborg Jakobsdatter",
           "H.no.": "01",
           "Age/born": "1829",
           "Place of birth": "Klæbo",
@@ -90,7 +136,11 @@
           "Occupation": "Tjenestepige"
         },
         {
-          "personName": "008 Guru?? Haftorsdatter",
+          "personLabel": "008",
+          "personNameParts": [
+            "Guru?? Haftorsdatter"
+          ],
+          "personHeading": "008 Guru?? Haftorsdatter",
           "H.no.": "01",
           "Age/born": "1794",
           "Place of birth": "Klæbo",
@@ -100,7 +150,11 @@
           "Occupation": "Forsørges af Sønnen"
         },
         {
-          "personName": "009 Anders Mikkelsen",
+          "personLabel": "009",
+          "personNameParts": [
+            "Anders Mikkelsen"
+          ],
+          "personHeading": "009 Anders Mikkelsen",
           "H.no.": "02",
           "Age/born": "1818",
           "Place of birth": "Throndhjem",
@@ -110,7 +164,11 @@
           "Occupation": "Almindeligt Tømmermandsarbeide"
         },
         {
-          "personName": "010 Ingeborg Petersdatter",
+          "personLabel": "010",
+          "personNameParts": [
+            "Ingeborg Petersdatter"
+          ],
+          "personHeading": "010 Ingeborg Petersdatter",
           "H.no.": "02",
           "Age/born": "1805",
           "Place of birth": "Throndhjem",
@@ -119,7 +177,11 @@
           "Marital status": "g"
         },
         {
-          "personName": "011 Lars Olsen Granaas",
+          "personLabel": "011",
+          "personNameParts": [
+            "Lars Olsen Granaas"
+          ],
+          "personHeading": "011 Lars Olsen Granaas",
           "H.no.": "03",
           "Age/born": "1831",
           "Place of birth": "Lade Strind",

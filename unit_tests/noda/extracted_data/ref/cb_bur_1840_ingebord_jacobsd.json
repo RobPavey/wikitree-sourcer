@@ -1,6 +1,8 @@
 {
   "url": "https://www.digitalarkivet.no/en/view/267/pg00000000517413",
   "success": true,
+  "lang": "en",
+  "pageType": "record",
   "breadcrumbs": [
     "Home",
     "Find source",
@@ -8,8 +10,17 @@
     "Burials",
     "Ingeborg Jacobsd"
   ],
-  "collectionHeading": "Burials: 1840-09-20",
+  "collectionParts": [
+    {
+      "collectionHeading": "Burials: 1840-09-20",
+      "collectionNameParts": [
+        "Burials:",
+        "1840-09-20"
+      ]
+    }
+  ],
   "heading": "Person: Ingeborg Jacobsd",
+  "imageLink": "https://media.digitalarkivet.no/kb20060307030393",
   "recordData": {
     "Serial no.": "1",
     "Roll": "avdød",
@@ -28,7 +39,11 @@
       "people": [
         {
           "current": true,
-          "personName": "Serial no. 1",
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "1"
+          ],
+          "personHeading": "Serial no. 1",
           "Roll": "avdød",
           "Name": "Ingeborg Jacobsd",
           "Position": "Lægdslem",

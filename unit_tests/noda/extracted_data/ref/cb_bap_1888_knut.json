@@ -1,6 +1,8 @@
 {
   "url": "https://www.digitalarkivet.no/en/view/255/pd00000017246548",
   "success": true,
+  "lang": "en",
+  "pageType": "record",
   "breadcrumbs": [
     "Home",
     "Find source",
@@ -8,8 +10,17 @@
     "Births and baptisms",
     "Knut"
   ],
-  "collectionHeading": "Births and baptisms: 1888-04-22",
+  "collectionParts": [
+    {
+      "collectionHeading": "Births and baptisms: 1888-04-22",
+      "collectionNameParts": [
+        "Births and baptisms:",
+        "1888-04-22"
+      ]
+    }
+  ],
   "heading": "Person: Knut",
+  "imageLink": "https://media.digitalarkivet.no/kb20050822020030",
   "recordData": {
     "Serial no.": "1",
     "Role": "barn",
@@ -23,18 +34,30 @@
       "people": [
         {
           "current": true,
-          "personName": "Serial no. 1",
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "1"
+          ],
+          "personHeading": "Serial no. 1",
           "Role": "barn",
           "Name": "Knut"
         },
         {
-          "personName": "Serial no. 2",
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "2"
+          ],
+          "personHeading": "Serial no. 2",
           "Role": "far",
           "Name": "Lars Knutsen",
           "Birth year": "1858"
         },
         {
-          "personName": "Serial no. 3",
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "3"
+          ],
+          "personHeading": "Serial no. 3",
           "Role": "mor",
           "Name": "Martha Pedersdtr.",
           "Birth year": "1859",

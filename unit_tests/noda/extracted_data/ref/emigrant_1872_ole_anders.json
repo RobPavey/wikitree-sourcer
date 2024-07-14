@@ -1,6 +1,8 @@
 {
   "url": "https://www.digitalarkivet.no/en/view/8/pe00000000917949",
   "success": true,
+  "lang": "en",
+  "pageType": "record",
   "breadcrumbs": [
     "Home",
     "Find source",
@@ -8,7 +10,15 @@
     "Emigration",
     "Ole Anders"
   ],
-  "collectionHeading": "Emigration: 1872",
+  "collectionParts": [
+    {
+      "collectionHeading": "Emigration: 1872",
+      "collectionNameParts": [
+        "Emigration:",
+        "1872"
+      ]
+    }
+  ],
   "heading": "Person: Ole Anders",
   "recordData": {
     "Given name": "Ole",
@@ -32,7 +42,11 @@
       "people": [
         {
           "current": true,
-          "personName": "Name Ole Anders.",
+          "personLabel": "Name",
+          "personNameParts": [
+            "Ole Anders."
+          ],
+          "personHeading": "Name Ole Anders.",
           "Age": "54",
           "Position": "g Arb",
           "Residence": "Christiania",

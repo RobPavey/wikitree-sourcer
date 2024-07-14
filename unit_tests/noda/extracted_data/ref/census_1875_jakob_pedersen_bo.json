@@ -1,0 +1,206 @@
+{
+  "url": "https://www.digitalarkivet.no/census/person/pf01052377002789",
+  "success": true,
+  "lang": "no",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Hjem",
+    "Finn kilde",
+    "Folketelling 1875 for 1660P Strinda prestegjeld",
+    "Tellingskretsoversikt",
+    "004",
+    "0044 Teslimyhr",
+    "003 Jakob Pedersen"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Tellingskrets: 004",
+      "collectionNameParts": [
+        "Tellingskrets:",
+        "004"
+      ]
+    },
+    {
+      "collectionHeading": "Bosted land: 0044 Teslimyhr",
+      "collectionNameParts": [
+        "Bosted land:",
+        "0044 Teslimyhr"
+      ]
+    }
+  ],
+  "heading": "Person: \n\t\t\t\t\t003 Jakob Pedersen",
+  "imageLink": "https://media.digitalarkivet.no/ft20110216170517",
+  "recordData": {
+    "Husholdningsnr": "01",
+    "Personnr": "003",
+    "Familiestilling": "s",
+    "Kjønn": "m",
+    "Fødselsdato": "1870",
+    "Fødested": "Lade Strinden",
+    "Bostatus": "b"
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Mer informasjon"
+    },
+    {
+      "panelTitle": "Beboere",
+      "people": [
+        {
+          "personLabel": "001",
+          "personNameParts": [
+            "Peder Jakobsen"
+          ],
+          "personHeading": "001 Peder Jakobsen",
+          "H.nr": "01",
+          "Alder/født": "1837",
+          "Fødested": "Klæbo",
+          "Bostatus": "b",
+          "Familiestilling": "hf",
+          "Sivilstand": "g",
+          "Yrke": "Gaardeier og Gaardbruger"
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Anne Martha Sivertsdatter"
+          ],
+          "personHeading": "002 Anne Martha Sivertsdatter",
+          "H.nr": "01",
+          "Alder/født": "1843",
+          "Fødested": "Lade Strinden",
+          "Bostatus": "b",
+          "Familiestilling": "Kone",
+          "Sivilstand": "g"
+        },
+        {
+          "current": true,
+          "personLabel": "003",
+          "personNameParts": [
+            "Jakob Pedersen"
+          ],
+          "personHeading": "003 Jakob Pedersen",
+          "H.nr": "01",
+          "Alder/født": "1870",
+          "Fødested": "Lade Strinden",
+          "Bostatus": "b",
+          "Familiestilling": "s"
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Sivert Pedersen"
+          ],
+          "personHeading": "004 Sivert Pedersen",
+          "H.nr": "01",
+          "Alder/født": "1872",
+          "Fødested": "Lade Strinden",
+          "Bostatus": "b",
+          "Familiestilling": "s"
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Ole Pedersen"
+          ],
+          "personHeading": "005 Ole Pedersen",
+          "H.nr": "01",
+          "Alder/født": "1875",
+          "Fødested": "Lade Strinden",
+          "Bostatus": "b",
+          "Familiestilling": "s"
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Gusta Marie Pedersdatter"
+          ],
+          "personHeading": "006 Gusta Marie Pedersdatter",
+          "H.nr": "01",
+          "Alder/født": "1867",
+          "Fødested": "Lade Strinden",
+          "Bostatus": "b",
+          "Familiestilling": "d"
+        },
+        {
+          "personLabel": "007",
+          "personNameParts": [
+            "Ingeborg Jakobsdatter"
+          ],
+          "personHeading": "007 Ingeborg Jakobsdatter",
+          "H.nr": "01",
+          "Alder/født": "1829",
+          "Fødested": "Klæbo",
+          "Bostatus": "b",
+          "Familiestilling": "Tjener",
+          "Yrke": "Tjenestepige"
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Guru?? Haftorsdatter"
+          ],
+          "personHeading": "008 Guru?? Haftorsdatter",
+          "H.nr": "01",
+          "Alder/født": "1794",
+          "Fødested": "Klæbo",
+          "Bostatus": "b",
+          "Familiestilling": "Moder til Husfaderen",
+          "Sivilstand": "e",
+          "Yrke": "Forsørges af Sønnen"
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Anders Mikkelsen"
+          ],
+          "personHeading": "009 Anders Mikkelsen",
+          "H.nr": "02",
+          "Alder/født": "1818",
+          "Fødested": "Throndhjem",
+          "Bostatus": "b",
+          "Familiestilling": "Logerende",
+          "Sivilstand": "g",
+          "Yrke": "Almindeligt Tømmermandsarbeide"
+        },
+        {
+          "personLabel": "010",
+          "personNameParts": [
+            "Ingeborg Petersdatter"
+          ],
+          "personHeading": "010 Ingeborg Petersdatter",
+          "H.nr": "02",
+          "Alder/født": "1805",
+          "Fødested": "Throndhjem",
+          "Bostatus": "b",
+          "Familiestilling": "hans Kone",
+          "Sivilstand": "g"
+        },
+        {
+          "personLabel": "011",
+          "personNameParts": [
+            "Lars Olsen Granaas"
+          ],
+          "personHeading": "011 Lars Olsen Granaas",
+          "H.nr": "03",
+          "Alder/født": "1831",
+          "Fødested": "Lade Strind",
+          "Bostatus": "b",
+          "Familiestilling": "Logerende",
+          "Sivilstand": "ug",
+          "Yrke": "Dagarbeider"
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01052377002789",
+  "sourceInformation": "Folketelling 1875 for 1660P Strinda prestegjeld",
+  "sourceData": {
+    "Fylke": "Sør-Trøndelag",
+    "Kommune (1947)": "Malvik, Strinda",
+    "Geografisk område": "Strinda prgj.\n\t\t\t\t\t\t\t\t\tMalvik sokn\n\t\t\t\t\t\t\t\t\tLade (Strinda, Moholt) sokn\n\t\t\t\t\t\t\t\t\tBratsberg sokn\n\t\t\t\t\t\t\t\t\tHavstein kap.sokn",
+    "Startår": "1875",
+    "Sluttår": "1875",
+    "Løpenr/Bnr": "167, 169b2"
+  }
+}

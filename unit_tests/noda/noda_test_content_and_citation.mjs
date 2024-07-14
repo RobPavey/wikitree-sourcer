@@ -44,8 +44,29 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/census/person/pf01052377002789",
   },
   {
+    // language: Bokmal
+    caseName: "census_1875_jakob_pedersen_bo",
+    url: "https://www.digitalarkivet.no/census/person/pf01052377002789",
+  },
+  {
+    // Language: Nynorsk
+    caseName: "census_1875_jakob_pedersen_nn",
+    url: "https://www.digitalarkivet.no/nn/census/person/pf01052377002789",
+  },
+  {
     caseName: "emigrant_1872_ole_anders",
     url: "https://www.digitalarkivet.no/en/view/8/pe00000000917949",
+  },
+
+  // images
+  {
+    caseName: "xx_image_cb_bap_1888_knut",
+    url: "https://media.digitalarkivet.no/view/1953/30",
+  },
+  {
+    // this one has no transcription
+    caseName: "xx_image_marriage_1792_frans_gutormsen_welsvig",
+    url: "https://media.digitalarkivet.no/view/15957/43",
   },
 ];
 

@@ -22,6 +22,34 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function extractDataForImage(document, url, result) {
+  let viewerContainer = document.querySelector("div.main-container-viewer");
+
+  if (!viewerContainer) {
+    return;
+  }
+
+  result.success = true;
+  result.pageType = "image";
+
+  let breadcrumbs = viewerContainer.querySelectorAll("nav.breadcrumb-container li");
+  if (breadcrumbs.length) {
+    result.breadcrumbs = [];
+    for (let breadcrumb of breadcrumbs) {
+      let value = breadcrumb.textContent.trim();
+      result.breadcrumbs.push(value);
+    }
+  }
+
+  let fileTitleSpan = viewerContainer.querySelector("#file-title-text");
+  if (fileTitleSpan) {
+    let fileTitle = fileTitleSpan.textContent.trim();
+    if (fileTitle) {
+      result.fileTitle = fileTitle;
+    }
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -30,13 +58,25 @@ function extractData(document, url) {
   }
   result.success = false;
 
+  let lang = document.documentElement.lang;
+  if (lang) {
+    result.lang = lang;
+  }
+
   let article = document.querySelector("article");
   if (!article) {
+    // could be an image
+    let viewerContainer = document.querySelector("div.main-container-viewer");
+    if (viewerContainer) {
+      extractDataForImage(document, url, result);
+    }
     return result;
   }
 
+  result.pageType = "record";
+
   let breadcrumbs = document.querySelectorAll("div.breadcrumbs li");
-  if (breadcrumbs) {
+  if (breadcrumbs.length) {
     result.breadcrumbs = [];
     for (let breadcrumb of breadcrumbs) {
       let value = breadcrumb.textContent.trim();
@@ -44,12 +84,43 @@ function extractData(document, url) {
     }
   }
 
-  let h4Element = article.querySelector("div.data-view > div.info > div > h4");
-  if (h4Element) {
-    let heading = h4Element.textContent;
-    if (heading) {
-      heading = heading.replace(/\s+/g, " ");
-      result.collectionHeading = heading.trim();
+  let h4Elements = article.querySelectorAll("div.data-view > div.info > div > h4");
+  if (h4Elements.length) {
+    result.collectionParts = [];
+    for (let h4Element of h4Elements) {
+      let collectionPart = {};
+      result.collectionParts.push(collectionPart);
+      let heading = h4Element.textContent;
+      if (heading) {
+        heading = heading.replace(/\s+/g, " ");
+        collectionPart.collectionHeading = heading.trim();
+      }
+
+      collectionPart.collectionNameParts = [];
+      for (let childNode of h4Element.childNodes) {
+        if (childNode.nodeType === 3) {
+          let text = childNode.textContent.trim();
+          if (text) {
+            text = text.replace(/\s+/g, " ");
+
+            collectionPart.collectionNameParts.push(text);
+          }
+        }
+      }
+
+      let collectionLinkElement = h4Element.querySelector("a");
+      if (collectionLinkElement) {
+        for (let childNode of collectionLinkElement.childNodes) {
+          if (childNode.nodeType === 3) {
+            let text = childNode.textContent.trim();
+            if (text) {
+              text = text.replace(/\s+/g, " ");
+
+              collectionPart.collectionNameParts.push(text);
+            }
+          }
+        }
+      }
     }
   }
 
@@ -58,6 +129,14 @@ function extractData(document, url) {
     let heading = headingElement.textContent;
     if (heading) {
       result.heading = heading.trim();
+    }
+
+    let imageLinkElement = headingElement.nextElementSibling;
+    if (imageLinkElement) {
+      let imageLink = imageLinkElement.getAttribute("href");
+      if (imageLink) {
+        result.imageLink = imageLink;
+      }
     }
   }
 
@@ -73,13 +152,11 @@ function extractData(document, url) {
   function extractLabelValuePairs(dataObject, rows) {
     for (let dataRow of rows) {
       let rowDivs = dataRow.querySelectorAll("div");
-      console.log("rowDivs.length = " + rowDivs.length);
       if (rowDivs.length == 2) {
         let labelDiv = rowDivs[0];
         let valueDiv = rowDivs[1];
         let label = cleanLabel(labelDiv.textContent);
         let value = valueDiv.textContent.trim();
-        console.log("label = " + label + ", value = " + value);
         if (label && value) {
           if (value != "-") {
             dataObject[label] = value;
@@ -107,7 +184,6 @@ function extractData(document, url) {
         } else {
           let panelGroups = row.querySelectorAll("div.panel-group");
           if (panelGroups.length) {
-            console.log("row has panel groups: " + panelGroups.length);
             for (let panelGroup of panelGroups) {
               let panelData = {};
               result.panelGroups.push(panelData);
@@ -133,10 +209,30 @@ function extractData(document, url) {
 
                   let personHeadingElement = person.querySelector("h4");
                   if (personHeadingElement) {
-                    let personName = personHeadingElement.textContent.trim();
-                    if (personName) {
-                      personName = personName.replace(/\s+/g, " ");
-                      personData.personName = personName;
+                    let personLinkElement = personHeadingElement.querySelector("a");
+                    if (personLinkElement) {
+                      let personLabelElement = personLinkElement.querySelector("span");
+                      if (personLabelElement) {
+                        let personLabel = personLabelElement.textContent.trim();
+                        if (personLabel) {
+                          personData.personLabel = personLabel;
+                        }
+                      }
+                      personData.personNameParts = [];
+                      for (let childNode of personLinkElement.childNodes) {
+                        if (childNode.nodeType === 3) {
+                          let text = childNode.textContent.trim();
+                          if (text) {
+                            personData.personNameParts.push(text);
+                          }
+                        }
+                      }
+                    }
+
+                    let personHeading = personHeadingElement.textContent.trim();
+                    if (personHeading) {
+                      personHeading = personHeading.replace(/\s+/g, " ");
+                      personData.personHeading = personHeading;
                     }
                   }
 
@@ -161,7 +257,6 @@ function extractData(document, url) {
               }
             }
           } else {
-            console.log("row has no panel groups");
             // this is the main row
             let dataRows = row.querySelectorAll("div.row div.row");
             extractLabelValuePairs(result.recordData, dataRows);
