@@ -22,6 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// see this WikiTree page:
+// https://www.wikitree.com/wiki/Space:Norway_Project_-_Source_Citation_Format
+
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildNodaUrl(ed, builder) {

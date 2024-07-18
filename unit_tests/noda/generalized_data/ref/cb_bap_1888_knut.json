@@ -1,6 +1,19 @@
 {
   "sourceOfData": "noda",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Baptism",
+  "name": {
+    "forenames": "Knut"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "22 Apr 1888"
+  },
+  "eventPlace": {
+    "placeString": "Voss, Hordaland, Norway",
+    "parish": "Voss",
+    "county": "Hordaland",
+    "country": "Norway"
+  },
   "hasValidData": true
 }

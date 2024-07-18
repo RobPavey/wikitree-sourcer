@@ -1,6 +1,6 @@
 {
-    "sourceOfData": "noda",
-    "sourceType": "record",
-    "recordType": "Unclassified",
-    "hasValidData": true
-  }
+  "sourceOfData": "noda",
+  "sourceType": "image",
+  "recordType": "Unclassified",
+  "hasValidData": true
+}

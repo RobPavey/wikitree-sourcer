@@ -20,18 +20,42 @@
     }
   ],
   "heading": "Person: Ingeborg Jacobsd",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Ingeborg Jacobsd"
+  ],
   "imageLink": "https://media.digitalarkivet.no/kb20060307030393",
   "recordData": {
-    "Serial no.": "1",
-    "Roll": "avdød",
-    "Given name": "Ingeborg",
-    "Last name": "Jacobsd",
-    "Gender": "k",
-    "Position": "Lægdslem",
-    "Residence": "Økeren",
-    "Age": "50",
-    "Birth year": "1790 (calculated)",
-    "Date of death": "09-13"
+    "Serial no.": {
+      "textString": "1"
+    },
+    "Roll": {
+      "textString": "avdød"
+    },
+    "Given name": {
+      "textString": "Ingeborg"
+    },
+    "Last name": {
+      "textString": "Jacobsd"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Position": {
+      "textString": "Lægdslem"
+    },
+    "Residence": {
+      "textString": "Økeren"
+    },
+    "Age": {
+      "textString": "50"
+    },
+    "Birth year": {
+      "textString": "1790 (calculated)"
+    },
+    "Date of death": {
+      "textString": "09-13"
+    }
   },
   "panelGroups": [
     {
@@ -54,24 +78,58 @@
     },
     {
       "panelTitle": "Burials",
-      "Year": "1840",
-      "Page": "227",
-      "Serial no.": "14",
-      "Burial date": "09-20"
+      "Year": {
+        "textString": "1840"
+      },
+      "Page": {
+        "textString": "227"
+      },
+      "Serial no.": {
+        "textString": "14"
+      },
+      "Burial date": {
+        "textString": "09-20"
+      }
     }
   ],
   "permanentId": "pg00000000517413",
   "sourceInformation": "Church book from Nannestad parish 1840-1850 (0238P)",
   "sourceData": {
-    "County": "Akershus",
-    "Municipality (1947)": "Nannestad",
-    "Geographic area": "Nannestad parish\n\t\t\t\t\t\t\t\t\tNannestad local parish\n\t\t\t\t\t\t\t\t\tHolter local parish\n\t\t\t\t\t\t\t\t\tBjørke local parish",
-    "Start year": "1840",
-    "End year": "1850",
-    "Page": "227",
-    "Serial no.": "14",
-    "Deceased and buried": "Jahn Thomas Lind",
-    "Born and baptised": "AMF - Ancestry, MyHeritage and FamilySearch",
-    "Married": "AMF - Ancestry, MyHeritage and FamilySearch"
+    "County": {
+      "textString": "Akershus"
+    },
+    "Municipality (1947)": {
+      "textString": "Nannestad"
+    },
+    "Geographic area": {
+      "textString": "Nannestad parish Nannestad local parish Holter local parish Bjørke local parish",
+      "textParts": [
+        "Nannestad parish",
+        "Nannestad local parish",
+        "Holter local parish",
+        "Bjørke local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1840"
+    },
+    "End year": {
+      "textString": "1850"
+    },
+    "Page": {
+      "textString": "227"
+    },
+    "Serial no.": {
+      "textString": "14"
+    },
+    "Deceased and buried": {
+      "textString": "Jahn Thomas Lind"
+    },
+    "Born and baptised": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    },
+    "Married": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    }
   }
 }

@@ -30,7 +30,7 @@ import { buildCitation } from "../core/noda_build_citation.mjs";
 async function setupNodaPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a Digitalarkivet page but not a record page.",
+    extractFailedMessage: "It looks like a Digitalarkivet page but not a record or image page.",
     generalizeFailedMessage: "It looks like a Digitalarkivet page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,

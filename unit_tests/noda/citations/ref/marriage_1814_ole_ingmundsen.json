@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Ole Ingmundsen''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/327/pv00000001749450 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Ingmundsen.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ole was in a record.<ref>\n'''Record of Ole Ingmundsen''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/327/pv00000001749450 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Ingmundsen.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Ole Ingmundsen''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/view/327/pv00000001749450 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Ingmundsen.",
+    "type": "source"
+  }
+}

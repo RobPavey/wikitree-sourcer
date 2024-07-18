@@ -1,6 +1,13 @@
 {
   "sourceOfData": "noda",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Census",
+  "name": {
+    "name": "Jakob Pedersen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1875"
+  },
   "hasValidData": true
 }

@@ -28,16 +28,37 @@
       ]
     }
   ],
-  "heading": "Person: \n\t\t\t\t\t003 Jakob Pedersen",
+  "heading": "Person: 003 Jakob Pedersen",
+  "headingSpanParts": [
+    "Person:",
+    "003"
+  ],
+  "headingTextParts": [
+    "Jakob Pedersen"
+  ],
   "imageLink": "https://media.digitalarkivet.no/ft20110216170517",
   "recordData": {
-    "Hushaldnr": "01",
-    "Personnr": "003",
-    "Familiestilling": "s",
-    "Kjønn": "m",
-    "Fødselsdato": "1870",
-    "Fødestad": "Lade Strinden",
-    "Bustatus": "b"
+    "Hushaldnr": {
+      "textString": "01"
+    },
+    "Personnr": {
+      "textString": "003"
+    },
+    "Familiestilling": {
+      "textString": "s"
+    },
+    "Kjønn": {
+      "textString": "m"
+    },
+    "Fødselsdato": {
+      "textString": "1870"
+    },
+    "Fødestad": {
+      "textString": "Lade Strinden"
+    },
+    "Bustatus": {
+      "textString": "b"
+    }
   },
   "panelGroups": [
     {
@@ -196,11 +217,30 @@
   "permanentId": "pf01052377002789",
   "sourceInformation": "Folketeljing 1875 for 1660P Strinda prestegjeld",
   "sourceData": {
-    "Fylke": "Sør-Trøndelag",
-    "Kommune (1947)": "Malvik, Strinda",
-    "Geografisk område": "Strinda prgj\n\t\t\t\t\t\t\t\t\tMalvik sokn\n\t\t\t\t\t\t\t\t\tLade (Strinda, Moholt) sokn\n\t\t\t\t\t\t\t\t\tBratsberg sokn\n\t\t\t\t\t\t\t\t\tHavstein kap.sokn",
-    "Startår": "1875",
-    "Sluttår": "1875",
-    "Løpenr/Bnr": "167, 169b2"
+    "Fylke": {
+      "textString": "Sør-Trøndelag"
+    },
+    "Kommune (1947)": {
+      "textString": "Malvik, Strinda"
+    },
+    "Geografisk område": {
+      "textString": "Strinda prgj Malvik sokn Lade (Strinda, Moholt) sokn Bratsberg sokn Havstein kap.sokn",
+      "textParts": [
+        "Strinda prgj",
+        "Malvik sokn",
+        "Lade (Strinda, Moholt) sokn",
+        "Bratsberg sokn",
+        "Havstein kap.sokn"
+      ]
+    },
+    "Startår": {
+      "textString": "1875"
+    },
+    "Sluttår": {
+      "textString": "1875"
+    },
+    "Løpenr/Bnr": {
+      "textString": "167, 169b2"
+    }
   }
 }

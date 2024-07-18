@@ -1,6 +1,14 @@
 {
   "sourceOfData": "noda",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Jacobsd",
+    "forenames": "Ingeborg"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "20 Sep 1840"
+  },
   "hasValidData": true
 }

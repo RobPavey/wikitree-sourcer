@@ -1,6 +1,14 @@
 {
   "sourceOfData": "noda",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Emigration",
+  "name": {
+    "lastName": "Anders",
+    "forenames": "Ole"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "25 Apr 1872"
+  },
   "hasValidData": true
 }

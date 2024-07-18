@@ -20,18 +20,44 @@
     }
   ],
   "heading": "Person: Ole Anders",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Ole Anders"
+  ],
   "recordData": {
-    "Given name": "Ole",
-    "Last name": "Anders.",
-    "Gender": "m",
-    "Age": "54",
-    "Residence": "Christiania",
-    "Position": "g Arb",
-    "Date of emigration": "1872-04-25",
-    "Date of contract": "1872-04-22",
-    "Destination": "Duluth",
-    "Ship": "Kong Sverre",
-    "Agent": "D. N. Ud. Sl."
+    "Given name": {
+      "textString": "Ole"
+    },
+    "Last name": {
+      "textString": "Anders."
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Age": {
+      "textString": "54"
+    },
+    "Residence": {
+      "textString": "Christiania"
+    },
+    "Position": {
+      "textString": "g Arb"
+    },
+    "Date of emigration": {
+      "textString": "1872-04-25"
+    },
+    "Date of contract": {
+      "textString": "1872-04-22"
+    },
+    "Destination": {
+      "textString": "Duluth"
+    },
+    "Ship": {
+      "textString": "Kong Sverre"
+    },
+    "Agent": {
+      "textString": "D. N. Ud. Sl."
+    }
   },
   "panelGroups": [
     {
@@ -58,20 +84,40 @@
     },
     {
       "panelTitle": "Emigration",
-      "Protocol reference": "5",
-      "Page": "53",
-      "Year": "1872"
+      "Protocol reference": {
+        "textString": "5"
+      },
+      "Page": {
+        "textString": "53"
+      },
+      "Year": {
+        "textString": "1872"
+      }
     }
   ],
   "permanentId": "pe00000000917949",
   "sourceInformation": "Emigrants from Kristiania 1871-1930, edited version",
   "sourceData": {
-    "County": "Oslo",
-    "Municipality (1947)": "Oslo",
-    "Geographic area": "Kristiania muni.",
-    "Start year": "1871",
-    "End year": "1930",
-    "Page": "53",
-    "Protocol reference": "5"
+    "County": {
+      "textString": "Oslo"
+    },
+    "Municipality (1947)": {
+      "textString": "Oslo"
+    },
+    "Geographic area": {
+      "textString": "Kristiania muni."
+    },
+    "Start year": {
+      "textString": "1871"
+    },
+    "End year": {
+      "textString": "1930"
+    },
+    "Page": {
+      "textString": "53"
+    },
+    "Protocol reference": {
+      "textString": "5"
+    }
   }
 }

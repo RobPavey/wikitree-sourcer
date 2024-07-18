@@ -20,13 +20,27 @@
     }
   ],
   "heading": "Person: Knut",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Knut"
+  ],
   "imageLink": "https://media.digitalarkivet.no/kb20050822020030",
   "recordData": {
-    "Serial no.": "1",
-    "Role": "barn",
-    "Given name": "Knut",
-    "Gender": "m",
-    "Date of birth": "03-04"
+    "Serial no.": {
+      "textString": "1"
+    },
+    "Role": {
+      "textString": "barn"
+    },
+    "Given name": {
+      "textString": "Knut"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Date of birth": {
+      "textString": "03-04"
+    }
   },
   "panelGroups": [
     {
@@ -67,22 +81,50 @@
     },
     {
       "panelTitle": "Births and baptisms",
-      "Page": "29",
-      "Serial no.": "25",
-      "Year": "1888",
-      "Baptism date": "04-22"
+      "Page": {
+        "textString": "29"
+      },
+      "Serial no.": {
+        "textString": "25"
+      },
+      "Year": {
+        "textString": "1888"
+      },
+      "Baptism date": {
+        "textString": "04-22"
+      }
     }
   ],
   "permanentId": "pd00000017246548",
   "sourceInformation": "Church book from Voss parish, Voss local parish 1886-1899 (1235P)",
   "sourceData": {
-    "County": "Hordaland",
-    "Municipality (1947)": "Voss",
-    "Geographic area": "Voss parish\n\t\t\t\t\t\t\t\t\tVoss local parish",
-    "Start year": "1886",
-    "End year": "1899",
-    "Page": "29",
-    "Serial no.": "25",
-    "Born and baptised": "AMF - Ancestry, MyHeritage and FamilySearch"
+    "County": {
+      "textString": "Hordaland"
+    },
+    "Municipality (1947)": {
+      "textString": "Voss"
+    },
+    "Geographic area": {
+      "textString": "Voss parish Voss local parish",
+      "textParts": [
+        "Voss parish",
+        "Voss local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1886"
+    },
+    "End year": {
+      "textString": "1899"
+    },
+    "Page": {
+      "textString": "29"
+    },
+    "Serial no.": {
+      "textString": "25"
+    },
+    "Born and baptised": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    }
   }
 }

@@ -128,7 +128,28 @@ function extractData(document, url) {
   if (headingElement) {
     let heading = headingElement.textContent;
     if (heading) {
-      result.heading = heading.trim();
+      // This is the full heading text
+      heading = heading.trim().replace(/\s+/g, " ");
+      result.heading = heading;
+    }
+
+    // also get the parts of the heading test, usially this is two spans and a text node
+    let headingLabelElements = headingElement.querySelectorAll("span");
+    result.headingSpanParts = [];
+    for (let headingLabelElement of headingLabelElements) {
+      let headingLabel = headingLabelElement.textContent.trim();
+      if (headingLabel) {
+        result.headingSpanParts.push(headingLabel);
+      }
+    }
+    result.headingTextParts = [];
+    for (let childNode of headingElement.childNodes) {
+      if (childNode.nodeType === 3) {
+        let text = childNode.textContent.trim();
+        if (text) {
+          result.headingTextParts.push(text);
+        }
+      }
     }
 
     let imageLinkElement = headingElement.nextElementSibling;
@@ -155,11 +176,32 @@ function extractData(document, url) {
       if (rowDivs.length == 2) {
         let labelDiv = rowDivs[0];
         let valueDiv = rowDivs[1];
-        let label = cleanLabel(labelDiv.textContent);
-        let value = valueDiv.textContent.trim();
-        if (label && value) {
-          if (value != "-") {
-            dataObject[label] = value;
+        if (labelDiv && valueDiv) {
+          let label = cleanLabel(labelDiv.textContent);
+          let value = valueDiv.textContent.trim();
+          if (label && value) {
+            if (value != "-") {
+              let valueObj = {};
+              dataObject[label] = valueObj;
+              value = value.replace(/\s+/g, " ");
+              valueObj.textString = value;
+
+              let childNodes = valueDiv.childNodes;
+              if (childNodes && childNodes.length > 1) {
+                let textParts = [];
+                for (let childNode of childNodes) {
+                  if (childNode.nodeType === 3) {
+                    let text = childNode.textContent.trim();
+                    if (text) {
+                      textParts.push(text);
+                    }
+                  }
+                }
+                if (textParts.length > 1) {
+                  valueObj.textParts = textParts;
+                }
+              }
+            }
           }
         }
       }

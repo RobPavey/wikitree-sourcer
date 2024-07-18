@@ -1,0 +1,143 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/327/pv00000001749450",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Church book from Eidsberg parish 1814-1832 (0125P)",
+    "Marriages",
+    "Ole Ingmundsen"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Marriages: 1814-07-26",
+      "collectionNameParts": [
+        "Marriages:",
+        "1814-07-26"
+      ]
+    }
+  ],
+  "heading": "Person: Ole Ingmundsen",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Ole Ingmundsen"
+  ],
+  "recordData": {
+    "Serial no.": {
+      "textString": "1"
+    },
+    "Role": {
+      "textString": "brudgom"
+    },
+    "Given name": {
+      "textString": "Ole"
+    },
+    "Last name": {
+      "textString": "Ingmundsen"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Position": {
+      "textString": "Enkemand"
+    },
+    "Residence": {
+      "textString": "Hemmerige"
+    },
+    "Birth year": {
+      "textString": "1760"
+    },
+    "Age": {
+      "textString": "54 a"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Persons involved",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "1"
+          ],
+          "personHeading": "Serial no. 1",
+          "Role": "brudgom",
+          "Name": "Ole Ingmundsen",
+          "Position": "Enkemand",
+          "Birth year": "1760",
+          "Residence": "Hemmerige"
+        },
+        {
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "2"
+          ],
+          "personHeading": "Serial no. 2",
+          "Role": "brur",
+          "Name": "Sedsel Erichsd.",
+          "Position": "Enken",
+          "Birth year": "1772",
+          "Residence": "Torper Pl."
+        }
+      ]
+    },
+    {
+      "panelTitle": "Marriages",
+      "Page": {
+        "textString": "192a"
+      },
+      "Serial no.": {
+        "textString": "6"
+      },
+      "Year": {
+        "textString": "1814"
+      },
+      "Marriage date": {
+        "textString": "07-26"
+      }
+    }
+  ],
+  "permanentId": "pv00000001749450",
+  "sourceInformation": "Church book from Eidsberg parish 1814-1832 (0125P)",
+  "sourceData": {
+    "County": {
+      "textString": "Østfold"
+    },
+    "Municipality (1947)": {
+      "textString": "Eidsberg, Mysen"
+    },
+    "Geographic area": {
+      "textString": "Eidsberg parish Eidsberg local parish Hærland local parish Trømborg local parish",
+      "textParts": [
+        "Eidsberg parish",
+        "Eidsberg local parish",
+        "Hærland local parish",
+        "Trømborg local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1814"
+    },
+    "End year": {
+      "textString": "1832"
+    },
+    "Page": {
+      "textString": "192a"
+    },
+    "Serial no.": {
+      "textString": "6"
+    },
+    "Married": {
+      "textString": "The Regional State Archives in Bergen"
+    },
+    "Deceased and buried": {
+      "textString": "The Regional State Archives in Bergen"
+    },
+    "Born and baptised": {
+      "textString": "The Regional State Archives in Bergen"
+    }
+  }
+}

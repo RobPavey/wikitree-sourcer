@@ -24,19 +24,19 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction } from "/base/browser/popup/popup_search.mjs";
+import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const nodaStartYear = 1800;
-const nodaEndYear = 2000;
+const nodaStartYear = 1600;
+const nodaEndYear = 2020;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
     startYear: nodaStartYear,
     endYear: nodaEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["Norway"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
@@ -52,7 +52,7 @@ function shouldShowSearchMenuItem(data, filter) {
 
 async function nodaSearch(generalizedData) {
   const input = { generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("Digitalarkivet Search", input, async function () {
+  doAsyncActionWithCatch("Digitalarkivet (Norway) Search", input, async function () {
     let loadedModule = await import(`../core/noda_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
@@ -63,7 +63,7 @@ async function nodaSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addNodaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Digitalarkivet", function (element) {
+  addMenuItem(menu, "Search Digitalarkivet (Norway)", function (element) {
     nodaSearch(data.generalizedData);
   });
 
@@ -78,9 +78,4 @@ function addNodaDefaultSearchMenuItem(menu, data, backFunction, filter) {
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "noda",
-  "Digitalarkivet",
-  addNodaDefaultSearchMenuItem,
-  shouldShowSearchMenuItem
-);
+registerSearchMenuItemFunction("noda", "Digitalarkivet", addNodaDefaultSearchMenuItem, shouldShowSearchMenuItem);

@@ -28,16 +28,37 @@
       ]
     }
   ],
-  "heading": "Person: \n\t\t\t\t\t003 Jakob Pedersen",
+  "heading": "Person: 003 Jakob Pedersen",
+  "headingSpanParts": [
+    "Person:",
+    "003"
+  ],
+  "headingTextParts": [
+    "Jakob Pedersen"
+  ],
   "imageLink": "https://media.digitalarkivet.no/ft20110216170517",
   "recordData": {
-    "Household no.": "01",
-    "Person no.": "003",
-    "Family position": "s",
-    "Gender": "m",
-    "Date of birth": "1870",
-    "Place of birth": "Lade Strinden",
-    "Residential status": "b"
+    "Household no.": {
+      "textString": "01"
+    },
+    "Person no.": {
+      "textString": "003"
+    },
+    "Family position": {
+      "textString": "s"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Date of birth": {
+      "textString": "1870"
+    },
+    "Place of birth": {
+      "textString": "Lade Strinden"
+    },
+    "Residential status": {
+      "textString": "b"
+    }
   },
   "panelGroups": [
     {
@@ -196,11 +217,30 @@
   "permanentId": "pf01052377002789",
   "sourceInformation": "1875 census for 1660P Strinda",
   "sourceData": {
-    "County": "Sør-Trøndelag",
-    "Municipality (1947)": "Malvik, Strinda",
-    "Geographic area": "Strinda parish\n\t\t\t\t\t\t\t\t\tMalvik local parish\n\t\t\t\t\t\t\t\t\tLade (Strinda, Moholt) local parish\n\t\t\t\t\t\t\t\t\tBratsberg local parish\n\t\t\t\t\t\t\t\t\tHavstein chapel parish",
-    "Start year": "1875",
-    "End year": "1875",
-    "Løpenr/Bnr": "167, 169b2"
+    "County": {
+      "textString": "Sør-Trøndelag"
+    },
+    "Municipality (1947)": {
+      "textString": "Malvik, Strinda"
+    },
+    "Geographic area": {
+      "textString": "Strinda parish Malvik local parish Lade (Strinda, Moholt) local parish Bratsberg local parish Havstein chapel parish",
+      "textParts": [
+        "Strinda parish",
+        "Malvik local parish",
+        "Lade (Strinda, Moholt) local parish",
+        "Bratsberg local parish",
+        "Havstein chapel parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1875"
+    },
+    "End year": {
+      "textString": "1875"
+    },
+    "Løpenr/Bnr": {
+      "textString": "167, 169b2"
+    }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Ingmundsen",
+    "forenames": "Ole"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "26 Jul 1814"
+  },
+  "eventPlace": {
+    "placeString": "Eidsberg, Østfold, Norway",
+    "parish": "Eidsberg",
+    "county": "Østfold",
+    "country": "Norway"
+  },
+  "hasValidData": true
+}
