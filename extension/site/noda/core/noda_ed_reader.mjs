@@ -76,6 +76,11 @@ const fieldLabels = {
     bo: ["Alder"],
     nn: ["Alder"],
   },
+  ageBorn: {
+    en: ["Age/born"],
+    bo: ["Alder/født"],
+    nn: ["Alder/fødd"],
+  },
   baptismDate: {
     en: ["Baptism date"],
     bo: ["Dåpsdato"],
@@ -125,6 +130,11 @@ const fieldLabels = {
     en: ["Date of emigration"],
     bo: ["Utreisedato"],
     nn: ["Utreisedato"],
+  },
+  familyPosition: {
+    en: ["Family position"],
+    bo: ["Familiestilling"],
+    nn: ["Familiestilling"],
   },
   gender: {
     en: ["Gender"],
@@ -176,6 +186,11 @@ const fieldLabels = {
     bo: ["Personnr"],
     nn: ["Personnr"],
   },
+  residentialStatus: {
+    en: ["Residential status"],
+    bo: ["Bostatus"],
+    nn: ["Bustatus"],
+  },
   role: {
     en: ["Role"],
     bo: ["Rolle"],
@@ -212,12 +227,45 @@ const panelTitles = {
 };
 
 const genderValues = {
-  m: "male",
-  k: "female",
+  m: "male", // mann = man
+  k: "female", // kvinne = woman
 };
 
 const maritalStatusValues = {
-  g: "married",
+  g: "married", // gift = married
+  ug: "single", // ugift = single
+  e: "widow", // enke/enkemann = widow/widower
+  s: "separated", // separert = separated
+  f: "divorced", // fraskilt = divorced
+};
+
+// converts the relationship to head
+// See: https://homepages.rootsweb.com/~norway/census_abbreviations.html
+const familyPositionValues = {
+  hf: "head", // house father or husband
+  hm: "wife", // house mother or wife
+  hp: "head", // (selv) hovedperson = head of household
+  hovedperson: "head", // (selv) hovedperson = head of household
+  selv: "head", // (selv) hovedperson = head of household
+  hu: "wife", // hustru = wife
+  hustru: "wife", // hustru = wife
+  Kone: "wife",
+  s: "son",
+  d: "daughter",
+  tj: "servant", // tjenestetyende
+  Tjener: "servant",
+  "Moder til Husfaderen": "mother",
+  Logerende: "lodger",
+  fl: "lodger", // losjerende, hørende til familien = lodger, related to the family
+  el: "lodger", // enslig losjerende = single lodger, not related to the family
+  b: "visitor", // besøkende = visitor
+  "hans Kone": "hisWife",
+};
+
+const residentialStatusValues = {
+  b: "resides permanently",
+  mt: "resides temporarily",
+  f: "temporarily absent",
 };
 
 class NodaEdReader extends ExtractedDataReader {
@@ -899,7 +947,37 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
-    return undefined;
+    let people = this.getFirstPeopleArray();
+    if (!people) {
+      return;
+    }
+
+    if (this.recordType == RT.Marriage) {
+      const brideRole = "brur";
+      const groomRole = "brudgom";
+      let primaryRole = this.getRecordDataValue("role");
+      if (!primaryRole) {
+        let primaryPerson = this.getPrimaryPerson();
+        if (primaryPerson) {
+          primaryRole = this.getPersonDataValue(primaryPerson, "role");
+        }
+      }
+
+      if (primaryRole == brideRole || primaryRole == groomRole) {
+        for (let person of people) {
+          let role = this.getPersonDataValue(person, "role");
+          if ((role == brideRole || role == groomRole) && role != primaryRole) {
+            let name = this.getPersonDataValue(person, "name");
+            if (name) {
+              let spouseObj = this.makeSpouseObj(name);
+              if (spouseObj) {
+                return [spouseObj];
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   getParents() {
@@ -930,7 +1008,115 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getHousehold() {
-    return undefined;
+    if (this.recordType != RT.Census) {
+      return;
+    }
+
+    let people = this.getFirstPeopleArray();
+    if (!people) {
+      return;
+    }
+
+    const possibleHeadings = [
+      "name",
+      "age",
+      "birthDate",
+      "birthPlace",
+      "residentialStatus",
+      "familyPosition",
+      "maritalStatus",
+      "occupation",
+    ];
+
+    let headingsUsed = [];
+
+    function setMemberField(member, heading, value) {
+      if (member && heading && value) {
+        member[heading] = value;
+
+        if (!headingsUsed.includes(heading)) {
+          headingsUsed.push(heading);
+        }
+      }
+    }
+
+    let householdArray = [];
+    for (let person of people) {
+      let householdMember = {};
+
+      if (person.personNameParts && person.personNameParts.length == 1) {
+        let name = person.personNameParts[0];
+        if (name) {
+          householdMember.name = name.trim();
+        }
+      }
+
+      if (!householdMember.name) {
+        continue;
+      }
+
+      let ageBorn = this.getPersonDataValue(person, "ageBorn");
+      if (ageBorn.length == 4) {
+        // birthYear
+        setMemberField(householdMember, "birthDate", ageBorn);
+      } else if (ageBorn.length <= 2) {
+        setMemberField(householdMember, "age", ageBorn);
+      }
+
+      let birthPlace = this.getPersonDataValue(person, "birthPlace");
+      setMemberField(householdMember, "birthPlace", birthPlace);
+
+      let residentialStatusString = this.getPersonDataValue(person, "residentialStatus");
+      if (residentialStatusString) {
+        let residentialStatus = residentialStatusValues[residentialStatusString];
+        if (residentialStatus) {
+          setMemberField(householdMember, "residentialStatus", residentialStatus);
+        } else {
+          setMemberField(householdMember, "residentialStatus", residentialStatusString);
+        }
+      }
+
+      let familyPosition = this.getPersonDataValue(person, "familyPosition");
+      if (familyPosition) {
+        let relationToHead = familyPositionValues[familyPosition];
+        if (relationToHead) {
+          if (relationToHead == "hisWife") {
+            // this means the wife of the previous person
+            // for now just set it to "wife"
+            relationToHead = "wife";
+          }
+          setMemberField(householdMember, "relationToHead", relationToHead);
+        } else {
+          setMemberField(householdMember, "relationToHead", familyPosition);
+        }
+      }
+
+      let maritalStatusString = this.getPersonDataValue(person, "maritalStatus");
+      if (maritalStatusString) {
+        let maritalStatus = maritalStatusValues[maritalStatusString];
+        if (maritalStatus) {
+          setMemberField(householdMember, "maritalStatus", maritalStatus);
+        } else {
+          setMemberField(householdMember, "maritalStatus", maritalStatusString);
+        }
+      }
+
+      let occupation = this.getPersonDataValue(person, "occupation");
+      setMemberField(householdMember, "occupation", occupation);
+
+      let isSelected = person.current;
+      if (isSelected) {
+        householdMember.isSelected = isSelected;
+      }
+      householdArray.push(householdMember);
+    }
+
+    let result = {};
+    result.members = householdArray;
+
+    result.fields = headingsUsed;
+
+    return result;
   }
 
   getCollectionData() {

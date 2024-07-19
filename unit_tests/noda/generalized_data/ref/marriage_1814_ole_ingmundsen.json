@@ -20,5 +20,10 @@
     "yearString": "1760"
   },
   "ageAtEvent": "54",
+  "spouses": [
+    {
+      "name": "Sedsel Erichsd."
+    }
+  ],
   "hasValidData": true
 }

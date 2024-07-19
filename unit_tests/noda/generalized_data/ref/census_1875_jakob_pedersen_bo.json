@@ -15,5 +15,105 @@
   "birthPlace": {
     "placeString": "Lade Strinden"
   },
+  "householdArrayFields": [
+    "birthDate",
+    "birthPlace",
+    "residentialStatus",
+    "relationToHead",
+    "maritalStatus",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Peder Jakobsen",
+      "birthDate": "1837",
+      "birthPlace": "Klæbo",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "head",
+      "maritalStatus": "married",
+      "occupation": "Gaardeier og Gaardbruger"
+    },
+    {
+      "name": "Anne Martha Sivertsdatter",
+      "birthDate": "1843",
+      "birthPlace": "Lade Strinden",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "wife",
+      "maritalStatus": "married"
+    },
+    {
+      "name": "Jakob Pedersen",
+      "birthDate": "1870",
+      "birthPlace": "Lade Strinden",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "son",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Sivert Pedersen",
+      "birthDate": "1872",
+      "birthPlace": "Lade Strinden",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "son"
+    },
+    {
+      "name": "Ole Pedersen",
+      "birthDate": "1875",
+      "birthPlace": "Lade Strinden",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "son"
+    },
+    {
+      "name": "Gusta Marie Pedersdatter",
+      "birthDate": "1867",
+      "birthPlace": "Lade Strinden",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "daughter"
+    },
+    {
+      "name": "Ingeborg Jakobsdatter",
+      "birthDate": "1829",
+      "birthPlace": "Klæbo",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "servant",
+      "occupation": "Tjenestepige"
+    },
+    {
+      "name": "Guru?? Haftorsdatter",
+      "birthDate": "1794",
+      "birthPlace": "Klæbo",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "mother",
+      "maritalStatus": "widow",
+      "occupation": "Forsørges af Sønnen"
+    },
+    {
+      "name": "Anders Mikkelsen",
+      "birthDate": "1818",
+      "birthPlace": "Throndhjem",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "lodger",
+      "maritalStatus": "married",
+      "occupation": "Almindeligt Tømmermandsarbeide"
+    },
+    {
+      "name": "Ingeborg Petersdatter",
+      "birthDate": "1805",
+      "birthPlace": "Throndhjem",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "wife",
+      "maritalStatus": "married"
+    },
+    {
+      "name": "Lars Olsen Granaas",
+      "birthDate": "1831",
+      "birthPlace": "Lade Strind",
+      "residentialStatus": "resides permanently",
+      "relationToHead": "lodger",
+      "maritalStatus": "single",
+      "occupation": "Dagarbeider"
+    }
+  ],
   "hasValidData": true
 }
