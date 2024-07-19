@@ -73,13 +73,27 @@
             "Peder Jakobsen"
           ],
           "personHeading": "001 Peder Jakobsen",
-          "H.no.": "01",
-          "Age/born": "1837",
-          "Place of birth": "Klæbo",
-          "Residential status": "b",
-          "Family position": "hf",
-          "Marital status": "g",
-          "Occupation": "Gaardeier og Gaardbruger"
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1837"
+          },
+          "Place of birth": {
+            "textString": "Klæbo"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "hf"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Gaardeier og Gaardbruger"
+          }
         },
         {
           "personLabel": "002",
@@ -87,12 +101,24 @@
             "Anne Martha Sivertsdatter"
           ],
           "personHeading": "002 Anne Martha Sivertsdatter",
-          "H.no.": "01",
-          "Age/born": "1843",
-          "Place of birth": "Lade Strinden",
-          "Residential status": "b",
-          "Family position": "Kone",
-          "Marital status": "g"
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1843"
+          },
+          "Place of birth": {
+            "textString": "Lade Strinden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
         },
         {
           "current": true,
@@ -101,11 +127,21 @@
             "Jakob Pedersen"
           ],
           "personHeading": "003 Jakob Pedersen",
-          "H.no.": "01",
-          "Age/born": "1870",
-          "Place of birth": "Lade Strinden",
-          "Residential status": "b",
-          "Family position": "s"
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1870"
+          },
+          "Place of birth": {
+            "textString": "Lade Strinden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          }
         },
         {
           "personLabel": "004",
@@ -113,11 +149,21 @@
             "Sivert Pedersen"
           ],
           "personHeading": "004 Sivert Pedersen",
-          "H.no.": "01",
-          "Age/born": "1872",
-          "Place of birth": "Lade Strinden",
-          "Residential status": "b",
-          "Family position": "s"
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1872"
+          },
+          "Place of birth": {
+            "textString": "Lade Strinden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          }
         },
         {
           "personLabel": "005",
@@ -125,11 +171,21 @@
             "Ole Pedersen"
           ],
           "personHeading": "005 Ole Pedersen",
-          "H.no.": "01",
-          "Age/born": "1875",
-          "Place of birth": "Lade Strinden",
-          "Residential status": "b",
-          "Family position": "s"
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1875"
+          },
+          "Place of birth": {
+            "textString": "Lade Strinden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          }
         },
         {
           "personLabel": "006",
@@ -137,11 +193,21 @@
             "Gusta Marie Pedersdatter"
           ],
           "personHeading": "006 Gusta Marie Pedersdatter",
-          "H.no.": "01",
-          "Age/born": "1867",
-          "Place of birth": "Lade Strinden",
-          "Residential status": "b",
-          "Family position": "d"
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1867"
+          },
+          "Place of birth": {
+            "textString": "Lade Strinden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "d"
+          }
         },
         {
           "personLabel": "007",
@@ -149,12 +215,24 @@
             "Ingeborg Jakobsdatter"
           ],
           "personHeading": "007 Ingeborg Jakobsdatter",
-          "H.no.": "01",
-          "Age/born": "1829",
-          "Place of birth": "Klæbo",
-          "Residential status": "b",
-          "Family position": "Tjener",
-          "Occupation": "Tjenestepige"
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1829"
+          },
+          "Place of birth": {
+            "textString": "Klæbo"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "Tjener"
+          },
+          "Occupation": {
+            "textString": "Tjenestepige"
+          }
         },
         {
           "personLabel": "008",
@@ -162,13 +240,27 @@
             "Guru?? Haftorsdatter"
           ],
           "personHeading": "008 Guru?? Haftorsdatter",
-          "H.no.": "01",
-          "Age/born": "1794",
-          "Place of birth": "Klæbo",
-          "Residential status": "b",
-          "Family position": "Moder til Husfaderen",
-          "Marital status": "e",
-          "Occupation": "Forsørges af Sønnen"
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1794"
+          },
+          "Place of birth": {
+            "textString": "Klæbo"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "Moder til Husfaderen"
+          },
+          "Marital status": {
+            "textString": "e"
+          },
+          "Occupation": {
+            "textString": "Forsørges af Sønnen"
+          }
         },
         {
           "personLabel": "009",
@@ -176,13 +268,27 @@
             "Anders Mikkelsen"
           ],
           "personHeading": "009 Anders Mikkelsen",
-          "H.no.": "02",
-          "Age/born": "1818",
-          "Place of birth": "Throndhjem",
-          "Residential status": "b",
-          "Family position": "Logerende",
-          "Marital status": "g",
-          "Occupation": "Almindeligt Tømmermandsarbeide"
+          "H.no.": {
+            "textString": "02"
+          },
+          "Age/born": {
+            "textString": "1818"
+          },
+          "Place of birth": {
+            "textString": "Throndhjem"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "Logerende"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Almindeligt Tømmermandsarbeide"
+          }
         },
         {
           "personLabel": "010",
@@ -190,12 +296,24 @@
             "Ingeborg Petersdatter"
           ],
           "personHeading": "010 Ingeborg Petersdatter",
-          "H.no.": "02",
-          "Age/born": "1805",
-          "Place of birth": "Throndhjem",
-          "Residential status": "b",
-          "Family position": "hans Kone",
-          "Marital status": "g"
+          "H.no.": {
+            "textString": "02"
+          },
+          "Age/born": {
+            "textString": "1805"
+          },
+          "Place of birth": {
+            "textString": "Throndhjem"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "hans Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
         },
         {
           "personLabel": "011",
@@ -203,13 +321,27 @@
             "Lars Olsen Granaas"
           ],
           "personHeading": "011 Lars Olsen Granaas",
-          "H.no.": "03",
-          "Age/born": "1831",
-          "Place of birth": "Lade Strind",
-          "Residential status": "b",
-          "Family position": "Logerende",
-          "Marital status": "ug",
-          "Occupation": "Dagarbeider"
+          "H.no.": {
+            "textString": "03"
+          },
+          "Age/born": {
+            "textString": "1831"
+          },
+          "Place of birth": {
+            "textString": "Lade Strind"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "Logerende"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Dagarbeider"
+          }
         }
       ]
     }

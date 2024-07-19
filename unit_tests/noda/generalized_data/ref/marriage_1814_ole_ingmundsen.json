@@ -16,5 +16,9 @@
     "county": "Østfold",
     "country": "Norway"
   },
+  "birthDate": {
+    "yearString": "1760"
+  },
+  "ageAtEvent": "54",
   "hasValidData": true
 }

@@ -10,5 +10,13 @@
   "eventDate": {
     "dateString": "20 Sep 1840"
   },
+  "birthDate": {
+    "yearString": "1790",
+    "qualifier": 2
+  },
+  "deathDate": {
+    "dateString": "13 Sep 1840"
+  },
+  "ageAtEvent": "50",
   "hasValidData": true
 }

@@ -73,12 +73,24 @@
             "Ole Anders."
           ],
           "personHeading": "Name Ole Anders.",
-          "Age": "54",
-          "Position": "g Arb",
-          "Residence": "Christiania",
-          "Date of emigration": "1872-04-25",
-          "Destination": "Duluth",
-          "Ship": "Kong Sverre"
+          "Age": {
+            "textString": "54"
+          },
+          "Position": {
+            "textString": "g Arb"
+          },
+          "Residence": {
+            "textString": "Christiania"
+          },
+          "Date of emigration": {
+            "textString": "1872-04-25"
+          },
+          "Destination": {
+            "textString": "Duluth"
+          },
+          "Ship": {
+            "textString": "Kong Sverre"
+          }
         }
       ]
     },

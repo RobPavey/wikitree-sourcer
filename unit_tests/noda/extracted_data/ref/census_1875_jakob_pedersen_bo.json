@@ -73,13 +73,27 @@
             "Peder Jakobsen"
           ],
           "personHeading": "001 Peder Jakobsen",
-          "H.nr": "01",
-          "Alder/født": "1837",
-          "Fødested": "Klæbo",
-          "Bostatus": "b",
-          "Familiestilling": "hf",
-          "Sivilstand": "g",
-          "Yrke": "Gaardeier og Gaardbruger"
+          "H.nr": {
+            "textString": "01"
+          },
+          "Alder/født": {
+            "textString": "1837"
+          },
+          "Fødested": {
+            "textString": "Klæbo"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "hf"
+          },
+          "Sivilstand": {
+            "textString": "g"
+          },
+          "Yrke": {
+            "textString": "Gaardeier og Gaardbruger"
+          }
         },
         {
           "personLabel": "002",
@@ -87,12 +101,24 @@
             "Anne Martha Sivertsdatter"
           ],
           "personHeading": "002 Anne Martha Sivertsdatter",
-          "H.nr": "01",
-          "Alder/født": "1843",
-          "Fødested": "Lade Strinden",
-          "Bostatus": "b",
-          "Familiestilling": "Kone",
-          "Sivilstand": "g"
+          "H.nr": {
+            "textString": "01"
+          },
+          "Alder/født": {
+            "textString": "1843"
+          },
+          "Fødested": {
+            "textString": "Lade Strinden"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "Kone"
+          },
+          "Sivilstand": {
+            "textString": "g"
+          }
         },
         {
           "current": true,
@@ -101,11 +127,21 @@
             "Jakob Pedersen"
           ],
           "personHeading": "003 Jakob Pedersen",
-          "H.nr": "01",
-          "Alder/født": "1870",
-          "Fødested": "Lade Strinden",
-          "Bostatus": "b",
-          "Familiestilling": "s"
+          "H.nr": {
+            "textString": "01"
+          },
+          "Alder/født": {
+            "textString": "1870"
+          },
+          "Fødested": {
+            "textString": "Lade Strinden"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "s"
+          }
         },
         {
           "personLabel": "004",
@@ -113,11 +149,21 @@
             "Sivert Pedersen"
           ],
           "personHeading": "004 Sivert Pedersen",
-          "H.nr": "01",
-          "Alder/født": "1872",
-          "Fødested": "Lade Strinden",
-          "Bostatus": "b",
-          "Familiestilling": "s"
+          "H.nr": {
+            "textString": "01"
+          },
+          "Alder/født": {
+            "textString": "1872"
+          },
+          "Fødested": {
+            "textString": "Lade Strinden"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "s"
+          }
         },
         {
           "personLabel": "005",
@@ -125,11 +171,21 @@
             "Ole Pedersen"
           ],
           "personHeading": "005 Ole Pedersen",
-          "H.nr": "01",
-          "Alder/født": "1875",
-          "Fødested": "Lade Strinden",
-          "Bostatus": "b",
-          "Familiestilling": "s"
+          "H.nr": {
+            "textString": "01"
+          },
+          "Alder/født": {
+            "textString": "1875"
+          },
+          "Fødested": {
+            "textString": "Lade Strinden"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "s"
+          }
         },
         {
           "personLabel": "006",
@@ -137,11 +193,21 @@
             "Gusta Marie Pedersdatter"
           ],
           "personHeading": "006 Gusta Marie Pedersdatter",
-          "H.nr": "01",
-          "Alder/født": "1867",
-          "Fødested": "Lade Strinden",
-          "Bostatus": "b",
-          "Familiestilling": "d"
+          "H.nr": {
+            "textString": "01"
+          },
+          "Alder/født": {
+            "textString": "1867"
+          },
+          "Fødested": {
+            "textString": "Lade Strinden"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "d"
+          }
         },
         {
           "personLabel": "007",
@@ -149,12 +215,24 @@
             "Ingeborg Jakobsdatter"
           ],
           "personHeading": "007 Ingeborg Jakobsdatter",
-          "H.nr": "01",
-          "Alder/født": "1829",
-          "Fødested": "Klæbo",
-          "Bostatus": "b",
-          "Familiestilling": "Tjener",
-          "Yrke": "Tjenestepige"
+          "H.nr": {
+            "textString": "01"
+          },
+          "Alder/født": {
+            "textString": "1829"
+          },
+          "Fødested": {
+            "textString": "Klæbo"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "Tjener"
+          },
+          "Yrke": {
+            "textString": "Tjenestepige"
+          }
         },
         {
           "personLabel": "008",
@@ -162,13 +240,27 @@
             "Guru?? Haftorsdatter"
           ],
           "personHeading": "008 Guru?? Haftorsdatter",
-          "H.nr": "01",
-          "Alder/født": "1794",
-          "Fødested": "Klæbo",
-          "Bostatus": "b",
-          "Familiestilling": "Moder til Husfaderen",
-          "Sivilstand": "e",
-          "Yrke": "Forsørges af Sønnen"
+          "H.nr": {
+            "textString": "01"
+          },
+          "Alder/født": {
+            "textString": "1794"
+          },
+          "Fødested": {
+            "textString": "Klæbo"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "Moder til Husfaderen"
+          },
+          "Sivilstand": {
+            "textString": "e"
+          },
+          "Yrke": {
+            "textString": "Forsørges af Sønnen"
+          }
         },
         {
           "personLabel": "009",
@@ -176,13 +268,27 @@
             "Anders Mikkelsen"
           ],
           "personHeading": "009 Anders Mikkelsen",
-          "H.nr": "02",
-          "Alder/født": "1818",
-          "Fødested": "Throndhjem",
-          "Bostatus": "b",
-          "Familiestilling": "Logerende",
-          "Sivilstand": "g",
-          "Yrke": "Almindeligt Tømmermandsarbeide"
+          "H.nr": {
+            "textString": "02"
+          },
+          "Alder/født": {
+            "textString": "1818"
+          },
+          "Fødested": {
+            "textString": "Throndhjem"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "Logerende"
+          },
+          "Sivilstand": {
+            "textString": "g"
+          },
+          "Yrke": {
+            "textString": "Almindeligt Tømmermandsarbeide"
+          }
         },
         {
           "personLabel": "010",
@@ -190,12 +296,24 @@
             "Ingeborg Petersdatter"
           ],
           "personHeading": "010 Ingeborg Petersdatter",
-          "H.nr": "02",
-          "Alder/født": "1805",
-          "Fødested": "Throndhjem",
-          "Bostatus": "b",
-          "Familiestilling": "hans Kone",
-          "Sivilstand": "g"
+          "H.nr": {
+            "textString": "02"
+          },
+          "Alder/født": {
+            "textString": "1805"
+          },
+          "Fødested": {
+            "textString": "Throndhjem"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "hans Kone"
+          },
+          "Sivilstand": {
+            "textString": "g"
+          }
         },
         {
           "personLabel": "011",
@@ -203,13 +321,27 @@
             "Lars Olsen Granaas"
           ],
           "personHeading": "011 Lars Olsen Granaas",
-          "H.nr": "03",
-          "Alder/født": "1831",
-          "Fødested": "Lade Strind",
-          "Bostatus": "b",
-          "Familiestilling": "Logerende",
-          "Sivilstand": "ug",
-          "Yrke": "Dagarbeider"
+          "H.nr": {
+            "textString": "03"
+          },
+          "Alder/født": {
+            "textString": "1831"
+          },
+          "Fødested": {
+            "textString": "Lade Strind"
+          },
+          "Bostatus": {
+            "textString": "b"
+          },
+          "Familiestilling": {
+            "textString": "Logerende"
+          },
+          "Sivilstand": {
+            "textString": "ug"
+          },
+          "Yrke": {
+            "textString": "Dagarbeider"
+          }
         }
       ]
     }

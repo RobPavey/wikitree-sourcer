@@ -9,5 +9,11 @@
   "eventDate": {
     "yearString": "1875"
   },
+  "birthDate": {
+    "yearString": "1870"
+  },
+  "birthPlace": {
+    "placeString": "Lade Strinden"
+  },
   "hasValidData": true
 }

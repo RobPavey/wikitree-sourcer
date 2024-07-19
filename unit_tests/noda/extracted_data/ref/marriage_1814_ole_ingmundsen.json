@@ -64,11 +64,21 @@
             "1"
           ],
           "personHeading": "Serial no. 1",
-          "Role": "brudgom",
-          "Name": "Ole Ingmundsen",
-          "Position": "Enkemand",
-          "Birth year": "1760",
-          "Residence": "Hemmerige"
+          "Role": {
+            "textString": "brudgom"
+          },
+          "Name": {
+            "textString": "Ole Ingmundsen"
+          },
+          "Position": {
+            "textString": "Enkemand"
+          },
+          "Birth year": {
+            "textString": "1760"
+          },
+          "Residence": {
+            "textString": "Hemmerige"
+          }
         },
         {
           "personLabel": "Serial no.",
@@ -76,11 +86,21 @@
             "2"
           ],
           "personHeading": "Serial no. 2",
-          "Role": "brur",
-          "Name": "Sedsel Erichsd.",
-          "Position": "Enken",
-          "Birth year": "1772",
-          "Residence": "Torper Pl."
+          "Role": {
+            "textString": "brur"
+          },
+          "Name": {
+            "textString": "Sedsel Erichsd."
+          },
+          "Position": {
+            "textString": "Enken"
+          },
+          "Birth year": {
+            "textString": "1772"
+          },
+          "Residence": {
+            "textString": "Torper Pl."
+          }
         }
       ]
     },

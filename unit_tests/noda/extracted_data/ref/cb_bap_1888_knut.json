@@ -53,8 +53,12 @@
             "1"
           ],
           "personHeading": "Serial no. 1",
-          "Role": "barn",
-          "Name": "Knut"
+          "Role": {
+            "textString": "barn"
+          },
+          "Name": {
+            "textString": "Knut"
+          }
         },
         {
           "personLabel": "Serial no.",
@@ -62,9 +66,15 @@
             "2"
           ],
           "personHeading": "Serial no. 2",
-          "Role": "far",
-          "Name": "Lars Knutsen",
-          "Birth year": "1858"
+          "Role": {
+            "textString": "far"
+          },
+          "Name": {
+            "textString": "Lars Knutsen"
+          },
+          "Birth year": {
+            "textString": "1858"
+          }
         },
         {
           "personLabel": "Serial no.",
@@ -72,10 +82,18 @@
             "3"
           ],
           "personHeading": "Serial no. 3",
-          "Role": "mor",
-          "Name": "Martha Pedersdtr.",
-          "Birth year": "1859",
-          "Birth place": "Vongen"
+          "Role": {
+            "textString": "mor"
+          },
+          "Name": {
+            "textString": "Martha Pedersdtr."
+          },
+          "Birth year": {
+            "textString": "1859"
+          },
+          "Birth place": {
+            "textString": "Vongen"
+          }
         }
       ]
     },

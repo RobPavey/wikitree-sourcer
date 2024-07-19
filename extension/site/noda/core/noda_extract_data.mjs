@@ -170,6 +170,35 @@ function extractData(document, url) {
     }
     return label;
   }
+
+  function extractValueObj(valueDiv) {
+    let valueObj = undefined;
+    let value = valueDiv.textContent.trim();
+    if (value != "-") {
+      valueObj = {};
+      value = value.replace(/\s+/g, " ");
+      valueObj.textString = value;
+
+      let childNodes = valueDiv.childNodes;
+      if (childNodes && childNodes.length > 1) {
+        let textParts = [];
+        for (let childNode of childNodes) {
+          if (childNode.nodeType === 3) {
+            let text = childNode.textContent.trim();
+            if (text) {
+              textParts.push(text);
+            }
+          }
+        }
+        if (textParts.length > 1) {
+          valueObj.textParts = textParts;
+        }
+      }
+    }
+
+    return valueObj;
+  }
+
   function extractLabelValuePairs(dataObject, rows) {
     for (let dataRow of rows) {
       let rowDivs = dataRow.querySelectorAll("div");
@@ -178,30 +207,9 @@ function extractData(document, url) {
         let valueDiv = rowDivs[1];
         if (labelDiv && valueDiv) {
           let label = cleanLabel(labelDiv.textContent);
-          let value = valueDiv.textContent.trim();
-          if (label && value) {
-            if (value != "-") {
-              let valueObj = {};
-              dataObject[label] = valueObj;
-              value = value.replace(/\s+/g, " ");
-              valueObj.textString = value;
-
-              let childNodes = valueDiv.childNodes;
-              if (childNodes && childNodes.length > 1) {
-                let textParts = [];
-                for (let childNode of childNodes) {
-                  if (childNode.nodeType === 3) {
-                    let text = childNode.textContent.trim();
-                    if (text) {
-                      textParts.push(text);
-                    }
-                  }
-                }
-                if (textParts.length > 1) {
-                  valueObj.textParts = textParts;
-                }
-              }
-            }
+          let valueObj = extractValueObj(valueDiv);
+          if (label && valueObj) {
+            dataObject[label] = valueObj;
           }
         }
       }
@@ -278,14 +286,17 @@ function extractData(document, url) {
                     }
                   }
 
+                  let panelDataRows = panelGroup.querySelectorAll("div.panel-body > div.row > div > div.row");
+                  extractLabelValuePairs(panelData, panelDataRows);
+
                   let dataDivs = person.querySelectorAll("div.row > div > div.row > div");
                   let lastLabel = "";
                   for (let dataDiv of dataDivs) {
                     if (dataDiv.classList.contains("ssp-semibold")) {
                       if (lastLabel) {
-                        let value = dataDiv.textContent.trim();
-                        if (value && value != "-") {
-                          personData[lastLabel] = value;
+                        let valueObj = extractValueObj(dataDiv);
+                        if (valueObj) {
+                          personData[lastLabel] = valueObj;
                         }
                       }
                     } else {

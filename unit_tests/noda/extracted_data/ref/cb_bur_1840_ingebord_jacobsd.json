@@ -68,11 +68,21 @@
             "1"
           ],
           "personHeading": "Serial no. 1",
-          "Roll": "avdød",
-          "Name": "Ingeborg Jacobsd",
-          "Position": "Lægdslem",
-          "Birth year": "1790 (calculated)",
-          "Residence": "Økeren"
+          "Roll": {
+            "textString": "avdød"
+          },
+          "Name": {
+            "textString": "Ingeborg Jacobsd"
+          },
+          "Position": {
+            "textString": "Lægdslem"
+          },
+          "Birth year": {
+            "textString": "1790 (calculated)"
+          },
+          "Residence": {
+            "textString": "Økeren"
+          }
         }
       ]
     },

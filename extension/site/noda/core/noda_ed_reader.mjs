@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
-import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
+import { NameObj, DateObj, PlaceObj, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 var eventTypes = [
@@ -71,65 +71,125 @@ var eventTypes = [
 ];
 
 const fieldLabels = {
+  age: {
+    en: ["Age"],
+    bo: ["Alder"],
+    nn: ["Alder"],
+  },
   baptismDate: {
-    en: "Baptism date",
-    bo: "Dåpsdato",
-    nn: "Dåpsdato",
+    en: ["Baptism date"],
+    bo: ["Dåpsdato"],
+    nn: ["Dåpsdato"],
   },
   baptismPlace: {
-    en: "Baptism place",
-    bo: "Dåpssted",
-    nn: "Dåpsstad",
+    en: ["Baptism place"],
+    bo: ["Dåpssted"],
+    nn: ["Dåpsstad"],
+  },
+  birthDate: {
+    en: ["Date of birth", "Birth date"],
+    bo: ["Fødselsdato"],
+    nn: ["Fødselsdato"],
+  },
+  birthYear: {
+    en: ["Birth year", "Year of birth"],
+    bo: ["Fødselsår"],
+    nn: ["Fødselsår"],
+  },
+  birthPlace: {
+    en: ["Birth place", "Place of birth"],
+    bo: ["Fødested"],
+    nn: ["Fødestad"],
   },
   burialDate: {
-    en: "Burial date",
-    bo: "Begravelsesdato",
-    nn: "Gravferdsdato",
+    en: ["Burial date"],
+    bo: ["Begravelsesdato"],
+    nn: ["Gravferdsdato"],
   },
   county: {
-    en: "County",
-    bo: "Fylke",
-    nn: "Fylke",
+    en: ["County"],
+    bo: ["Fylke"],
+    nn: ["Fylke"],
+  },
+  deathDate: {
+    en: ["Date of death", "Death date"],
+    bo: ["Dødsdato"],
+    nn: ["Dødsdato"],
+  },
+  deathYear: {
+    en: ["Death year", "Year of death"],
+    bo: ["Dødsår"],
+    nn: ["Dødsår"],
   },
   emigrationDate: {
-    en: "Date of emigration",
-    bo: "Utreisedato",
-    nn: "Utreisedato",
+    en: ["Date of emigration"],
+    bo: ["Utreisedato"],
+    nn: ["Utreisedato"],
   },
   gender: {
-    en: "Gender",
-    bo: "Kjønn",
-    nn: "Kjønn",
+    en: ["Gender"],
+    bo: ["Kjønn"],
+    nn: ["Kjønn"],
   },
   givenName: {
-    en: "Given name",
-    bo: "Fornavn",
-    nn: "Førenamn",
+    en: ["Given name"],
+    bo: ["Fornavn"],
+    nn: ["Førenamn"],
   },
   lastName: {
-    en: "Last name",
-    bo: "Etternavn",
-    nn: "Etternamn",
+    en: ["Last name"],
+    bo: ["Etternavn"],
+    nn: ["Etternamn"],
+  },
+  maritalStatus: {
+    en: ["Marital status"],
+    bo: ["Sivilstand"],
+    nn: ["Sivilstand"],
   },
   marriageDate: {
-    en: "Marriage date",
-    bo: "Vielsesdato",
-    nn: "Vigselsdato",
+    en: ["Marriage date"],
+    bo: ["Vielsesdato"],
+    nn: ["Vigselsdato"],
   },
   marriagePlace: {
-    en: "Marriage place",
-    bo: "Vielsessted",
-    nn: "Vigselsstad",
+    en: ["Marriage place"],
+    bo: ["Vielsessted"],
+    nn: ["Vigselsstad"],
+  },
+  name: {
+    en: ["Name"],
+    bo: ["Navn"],
+    nn: ["Namn"],
+  },
+  occupation: {
+    en: ["Occupation"],
+    bo: ["Yrke"],
+    nn: ["Yrke"],
   },
   parishChurch: {
-    en: "Parish/Church",
-    bo: "Sogn/kirke",
-    nn: "Sokn/kyrkje",
+    en: ["Parish/Church"],
+    bo: ["Sogn/kirke"],
+    nn: ["Sokn/kyrkje"],
+  },
+  personNumber: {
+    en: ["Person no."],
+    bo: ["Personnr"],
+    nn: ["Personnr"],
+  },
+  role: {
+    en: ["Role"],
+    bo: ["Rolle"],
+    nn: ["Rolle"],
+  },
+  serialNumber: {
+    en: ["Serial no."],
+    bo: ["Løpenr"],
+    nn: ["Løpenr"],
   },
   year: {
-    en: "Year",
-    bo: "År",
-    nn: "År",
+    en: ["Year"],
+    bo: ["År"],
+    nn: ["År"],
   },
 };
 
@@ -154,6 +214,10 @@ const panelTitles = {
 const genderValues = {
   m: "male",
   k: "female",
+};
+
+const maritalStatusValues = {
+  g: "married",
 };
 
 class NodaEdReader extends ExtractedDataReader {
@@ -371,39 +435,62 @@ class NodaEdReader extends ExtractedDataReader {
     return "";
   }
 
-  getFieldLabel(fieldLabelCode) {
+  getFieldLabels(fieldLabelCode) {
     if (!fieldLabelCode) {
-      return "";
+      return undefined;
     }
     let lang = this.urlLang;
     if (!lang) {
-      return "";
+      return undefined;
     }
 
     let fieldLabelRecord = fieldLabels[fieldLabelCode];
     if (fieldLabelRecord) {
       return fieldLabelRecord[lang];
     }
-    return "";
+    return undefined;
   }
 
-  getPanelDataValueObj(panelTitleKey, fieldLabelKey) {
-    let fieldLabel = this.getFieldLabel(fieldLabelKey);
+  getValueObjUsingFieldLabels(data, fieldLabels) {
+    if (!fieldLabels) {
+      return undefined;
+    }
+    for (let fieldLabel of fieldLabels) {
+      let value = data[fieldLabel];
+      if (value) {
+        return value;
+      }
+    }
+  }
+
+  getPanel(panelTitleKey) {
     let panelName = this.getPanelTitle(panelTitleKey);
-    if (!fieldLabel || !panelName) {
+    if (!panelName) {
       return undefined;
     }
     let panelGroups = this.ed.panelGroups;
     if (panelGroups) {
       for (let group of panelGroups) {
         if (group.panelTitle == panelName) {
-          let valueObj = group[fieldLabel];
-          if (valueObj) {
-            return valueObj;
-          }
-          break;
+          return group;
         }
       }
+    }
+    return undefined;
+  }
+
+  getPanelDataValueObj(panelTitleKey, fieldLabelKey) {
+    let panel = this.getPanel(panelTitleKey);
+    if (!panel) {
+      return undefined;
+    }
+    let fieldLabels = this.getFieldLabels(fieldLabelKey);
+    if (!fieldLabels) {
+      return undefined;
+    }
+    let valueObj = this.getValueObjUsingFieldLabels(panel, fieldLabels);
+    if (valueObj) {
+      return valueObj;
     }
     return undefined;
   }
@@ -417,10 +504,10 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getRecordDataValueObj(fieldLabelKey) {
-    let fieldLabel = this.getFieldLabel(fieldLabelKey);
-    if (fieldLabel) {
+    let fieldLabels = this.getFieldLabels(fieldLabelKey);
+    if (fieldLabels) {
       if (this.ed.recordData) {
-        let valueObj = this.ed.recordData[fieldLabel];
+        let valueObj = this.getValueObjUsingFieldLabels(this.ed.recordData, fieldLabels);
         if (valueObj) {
           return valueObj;
         }
@@ -438,10 +525,10 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getSourceDataValueObj(fieldLabelKey) {
-    let fieldLabel = this.getFieldLabel(fieldLabelKey);
-    if (fieldLabel) {
+    let fieldLabels = this.getFieldLabels(fieldLabelKey);
+    if (fieldLabels) {
       if (this.ed.sourceData) {
-        let valueObj = this.ed.sourceData[fieldLabel];
+        let valueObj = this.getValueObjUsingFieldLabels(this.ed.sourceData, fieldLabels);
         if (valueObj) {
           return valueObj;
         }
@@ -456,6 +543,83 @@ class NodaEdReader extends ExtractedDataReader {
       return valueObj.textString;
     }
     return "";
+  }
+
+  getPersonDataValueObj(person, fieldLabelKey) {
+    let fieldLabels = this.getFieldLabels(fieldLabelKey);
+    if (fieldLabels) {
+      if (person) {
+        let valueObj = this.getValueObjUsingFieldLabels(person, fieldLabels);
+        if (valueObj) {
+          return valueObj;
+        }
+      }
+    }
+    return undefined;
+  }
+
+  getPersonDataValue(person, fieldLabelKey) {
+    let valueObj = this.getPersonDataValueObj(person, fieldLabelKey);
+    if (valueObj && valueObj.textString) {
+      return valueObj.textString;
+    }
+    return "";
+  }
+
+  getPeopleArrayByPanelTitle(panelTitleKey) {
+    let panel = this.getPanel(panelTitleKey);
+    if (!panel) {
+      return undefined;
+    }
+
+    return panel.people;
+  }
+
+  getFirstPeopleArray() {
+    let panelGroups = this.ed.panelGroups;
+    if (panelGroups) {
+      for (let group of panelGroups) {
+        if (group.people) {
+          return group.people;
+        }
+      }
+    }
+    return undefined;
+  }
+
+  getPrimaryPerson() {
+    let people = this.getFirstPeopleArray();
+    if (!people || people.length == 0) {
+      return undefined;
+    }
+
+    if (people.length == 1) {
+      return people[0];
+    }
+
+    let serialNumber = this.getRecordDataValue("serialNumber");
+
+    if (serialNumber) {
+      for (let person of people) {
+        if (person.personNameParts && person.personNameParts.length == 1) {
+          if (person.personNameParts[0] == serialNumber) {
+            return person;
+          }
+        }
+      }
+    }
+
+    let personNumber = this.getRecordDataValue("personNumber");
+
+    if (personNumber) {
+      for (let person of people) {
+        if (person.personLabel && person.personLabel == personNumber) {
+          return person;
+        }
+      }
+    }
+
+    return undefined;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -570,15 +734,113 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    return undefined;
+    let dateString = this.getRecordDataValue("birthDate");
+    let yearString = this.getRecordDataValue("birthYear");
+
+    const calculatedSuffixes = {
+      en: " (calculated)",
+      bo: " (beregnet)",
+      nn: " (berekna)",
+    };
+
+    const calcString = calculatedSuffixes[this.urlLang];
+    let isDateCalculated = false;
+    if (yearString && yearString.endsWith(calcString)) {
+      yearString = yearString.substring(0, yearString.length - calcString.length);
+      isDateCalculated = true;
+    }
+
+    let dateObj = undefined;
+
+    if (dateString && yearString) {
+      dateObj = this.makeDateObjFromYearAndMmDd(yearString, dateString);
+    } else if (dateString) {
+      let parts = dateString.split("-");
+      if (parts.length == 1 && dateString.length == 4) {
+        dateObj = this.makeDateObjFromYear(dateString);
+      } else if (parts.length == 3) {
+        dateObj = this.makeDateObjFromYyyymmddDate(dateString, "-");
+      } else if (parts.length == 2 && dateString.length == 5) {
+        // it looks like we have just the month and day for the birth year and no year
+        if (this.recordType == RT.Baptism || this.recordType == RT.BirthOrBaptism) {
+          let eventDateObj = this.getEventDateObj();
+          if (eventDateObj) {
+            yearString = eventDateObj.getYearString();
+            if (yearString) {
+              dateObj = this.makeDateObjFromYearAndMmDd(yearString, dateString);
+            }
+          }
+        }
+      }
+    } else if (yearString) {
+      dateObj = this.makeDateObjFromYear(yearString);
+    }
+
+    if (dateObj && isDateCalculated) {
+      dateObj.qualifier = dateQualifiers.ABOUT;
+    }
+
+    return dateObj;
   }
 
   getBirthPlaceObj() {
+    let placeString = this.getRecordDataValue("birthPlace");
+
+    if (placeString) {
+      return this.makePlaceObjFromFullPlaceName(placeString);
+    }
+
     return undefined;
   }
 
   getDeathDateObj() {
-    return undefined;
+    let dateString = this.getRecordDataValue("deathDate");
+    let yearString = this.getRecordDataValue("deathYear");
+
+    const calculatedSuffixes = {
+      en: " (calculated)",
+      bo: " (beregnet)",
+      nn: " (berekna)",
+    };
+
+    const calcString = calculatedSuffixes[this.urlLang];
+    let isDateCalculated = false;
+    if (yearString && yearString.endsWith(calcString)) {
+      yearString = yearString.substring(0, yearString.length - calcString.length);
+      isDateCalculated = true;
+    }
+
+    let dateObj = undefined;
+
+    if (dateString && yearString) {
+      dateObj = this.makeDateObjFromYearAndMmDd(yearString, dateString);
+    } else if (dateString) {
+      let parts = dateString.split("-");
+      if (parts.length == 1 && dateString.length == 4) {
+        dateObj = this.makeDateObjFromYear(dateString);
+      } else if (parts.length == 3) {
+        dateObj = this.makeDateObjFromYyyymmddDate(dateString, "-");
+      } else if (parts.length == 2 && dateString.length == 5) {
+        // it looks like we have just the month and day for the birth year and no year
+        if (this.recordType == RT.Burial) {
+          let eventDateObj = this.getEventDateObj();
+          if (eventDateObj) {
+            yearString = eventDateObj.getYearString();
+            if (yearString) {
+              dateObj = this.makeDateObjFromYearAndMmDd(yearString, dateString);
+            }
+          }
+        }
+      }
+    } else if (yearString) {
+      dateObj = this.makeDateObjFromYear(yearString);
+    }
+
+    if (dateObj && isDateCalculated) {
+      dateObj.qualifier = dateQualifiers.ABOUT;
+    }
+
+    return dateObj;
   }
 
   getDeathPlaceObj() {
@@ -586,6 +848,18 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
+    let ageString = this.getRecordDataValue("age");
+
+    if (ageString) {
+      if (!/^\d+$/.test(ageString)) {
+        // it is not just digits
+        if (ageString.endsWith(" a")) {
+          ageString = ageString.substring(0, ageString.length - 2);
+        }
+      }
+      return ageString;
+    }
+
     return "";
   }
 
@@ -602,10 +876,25 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getMaritalStatus() {
+    let statusString = this.getRecordDataValue("maritalStatus");
+
+    if (statusString) {
+      let status = maritalStatusValues[statusString];
+      if (status) {
+        return status;
+      }
+    }
+
     return "";
   }
 
   getOccupation() {
+    let occupationString = this.getRecordDataValue("occupation");
+
+    if (occupationString) {
+      return occupationString;
+    }
+
     return "";
   }
 
@@ -614,7 +903,30 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getParents() {
-    return undefined;
+    let people = this.getFirstPeopleArray();
+    if (!people) {
+      return;
+    }
+
+    let fatherNameString = "";
+    let motherNameString = "";
+
+    for (let person of people) {
+      let role = this.getPersonDataValue(person, "role");
+      if (role == "far") {
+        let name = this.getPersonDataValue(person, "name");
+        if (name) {
+          fatherNameString = name;
+        }
+      } else if (role == "mor") {
+        let name = this.getPersonDataValue(person, "name");
+        if (name) {
+          motherNameString = name;
+        }
+      }
+    }
+
+    return this.makeParentsFromFullNames(fatherNameString, motherNameString);
   }
 
   getHousehold() {

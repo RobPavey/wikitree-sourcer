@@ -15,5 +15,20 @@
     "county": "Hordaland",
     "country": "Norway"
   },
+  "birthDate": {
+    "dateString": "4 Mar 1888"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Lars Knutsen"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Martha Pedersdtr"
+      }
+    }
+  },
   "hasValidData": true
 }
