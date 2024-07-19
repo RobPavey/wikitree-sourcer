@@ -76,9 +76,14 @@ class TableBuilder {
       profession: "Profession",
       employer: "Employer",
       birthPlace: "Birth Place",
+      residentialStatus: "Residential Status",
     };
 
-    return titles[fieldName];
+    let title = titles[fieldName];
+    if (title) {
+      return title;
+    }
+    return fieldName;
   }
 
   getFormattedValueForPerson(person, fieldName) {

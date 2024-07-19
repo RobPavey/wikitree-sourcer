@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Jacobsd burial (died on 13 Sep 1840 at age 50) on 20 Sep 1840.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "Ingeborg (age 50) died on 13 September 1840 and was buried on 20 September 1840.<ref>\n'''Burial''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Jacobsd burial (died on 13 Sep 1840 at age 50) on 20 Sep 1840.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>Unknown.",
+    "citation": "* '''Burial''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ingeborg Jacobsd burial (died on 13 Sep 1840 at age 50) on 20 Sep 1840.",
     "type": "source"
   }
 }

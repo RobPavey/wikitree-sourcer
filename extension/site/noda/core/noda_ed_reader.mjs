@@ -1047,13 +1047,48 @@ class NodaEdReader extends ExtractedDataReader {
       if (person.personNameParts && person.personNameParts.length == 1) {
         let name = person.personNameParts[0];
         if (name) {
-          householdMember.name = name.trim();
+          setMemberField(householdMember, "name", name.trim());
         }
       }
 
       if (!householdMember.name) {
         continue;
       }
+
+      // for 1875 census the order of columns is:
+      // Household number, person number, name, Usual residence, dif structure, gender, familyPosition,
+      //   marital status, occupation, birthYear, birthPlace, nationality, religion, insave/deaf/blind
+      // Some of those do not seem to be transcribed, so our order should be:
+      //   familyPosition, marital status, occupation, age/born, birthPlace
+      // See: https://www.familysearch.org/en/wiki/Norway_Census,_1875_-_FamilySearch_Historical_Records
+
+      let familyPosition = this.getPersonDataValue(person, "familyPosition");
+      if (familyPosition) {
+        let relationToHead = familyPositionValues[familyPosition];
+        if (relationToHead) {
+          if (relationToHead == "hisWife") {
+            // this means the wife of the previous person
+            // for now just set it to "wife"
+            relationToHead = "wife";
+          }
+          setMemberField(householdMember, "relationship", relationToHead);
+        } else {
+          setMemberField(householdMember, "relationship", familyPosition);
+        }
+      }
+
+      let maritalStatusString = this.getPersonDataValue(person, "maritalStatus");
+      if (maritalStatusString) {
+        let maritalStatus = maritalStatusValues[maritalStatusString];
+        if (maritalStatus) {
+          setMemberField(householdMember, "maritalStatus", maritalStatus);
+        } else {
+          setMemberField(householdMember, "maritalStatus", maritalStatusString);
+        }
+      }
+
+      let occupation = this.getPersonDataValue(person, "occupation");
+      setMemberField(householdMember, "occupation", occupation);
 
       let ageBorn = this.getPersonDataValue(person, "ageBorn");
       if (ageBorn.length == 4) {
@@ -1075,34 +1110,6 @@ class NodaEdReader extends ExtractedDataReader {
           setMemberField(householdMember, "residentialStatus", residentialStatusString);
         }
       }
-
-      let familyPosition = this.getPersonDataValue(person, "familyPosition");
-      if (familyPosition) {
-        let relationToHead = familyPositionValues[familyPosition];
-        if (relationToHead) {
-          if (relationToHead == "hisWife") {
-            // this means the wife of the previous person
-            // for now just set it to "wife"
-            relationToHead = "wife";
-          }
-          setMemberField(householdMember, "relationToHead", relationToHead);
-        } else {
-          setMemberField(householdMember, "relationToHead", familyPosition);
-        }
-      }
-
-      let maritalStatusString = this.getPersonDataValue(person, "maritalStatus");
-      if (maritalStatusString) {
-        let maritalStatus = maritalStatusValues[maritalStatusString];
-        if (maritalStatus) {
-          setMemberField(householdMember, "maritalStatus", maritalStatus);
-        } else {
-          setMemberField(householdMember, "maritalStatus", maritalStatusString);
-        }
-      }
-
-      let occupation = this.getPersonDataValue(person, "occupation");
-      setMemberField(householdMember, "occupation", occupation);
 
       let isSelected = person.current;
       if (isSelected) {

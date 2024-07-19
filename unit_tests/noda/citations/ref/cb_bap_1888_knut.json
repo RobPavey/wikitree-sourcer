@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/255/pd00000017246548 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/255/pd00000017246548 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nKnut baptism on 22 Apr 1888 (born 4 Mar 1888), son of Lars Knutsen & Martha Pedersdtr, in Voss, Hordaland, Norway.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/255/pd00000017246548 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "Knut, son of Lars Knutsen & Martha Pedersdtr, was born on 4 March 1888 and baptised on 22 April 1888 in Voss, Hordaland, Norway.<ref>\n'''Baptism''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/255/pd00000017246548 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nKnut baptism on 22 Apr 1888 (born 4 Mar 1888), son of Lars Knutsen & Martha Pedersdtr, in Voss, Hordaland, Norway.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/view/255/pd00000017246548 Digitalarkivet Record] (accessed 6 May 2021)<br/>Unknown.",
+    "citation": "* '''Baptism''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/view/255/pd00000017246548 Digitalarkivet Record] (accessed 6 May 2021)<br/>Knut baptism on 22 Apr 1888 (born 4 Mar 1888), son of Lars Knutsen & Martha Pedersdtr, in Voss, Hordaland, Norway.",
     "type": "source"
   }
 }

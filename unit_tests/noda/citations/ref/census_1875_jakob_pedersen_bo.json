@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/census/person/pf01052377002789 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "<ref>\n'''1875 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/census/person/pf01052377002789 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nJakob Pedersen. Born in Lade Strinden.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/census/person/pf01052377002789 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "Jakob was in a record in 1875.<ref>\n'''1875 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/census/person/pf01052377002789 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nJakob Pedersen. Born in Lade Strinden.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/census/person/pf01052377002789 Digitalarkivet Record] (accessed 6 May 2021)<br/>Unknown.",
+    "citation": "* '''1875 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/census/person/pf01052377002789 Digitalarkivet Record] (accessed 6 May 2021)<br/>Jakob Pedersen. Born in Lade Strinden.",
     "type": "source"
   }
 }

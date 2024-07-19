@@ -16,103 +16,104 @@
     "placeString": "Lade Strinden"
   },
   "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "occupation",
     "birthDate",
     "birthPlace",
-    "residentialStatus",
-    "relationToHead",
-    "maritalStatus",
-    "occupation"
+    "residentialStatus"
   ],
   "householdArray": [
     {
       "name": "Peder Jakobsen",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Gaardeier og Gaardbruger",
       "birthDate": "1837",
       "birthPlace": "Klæbo",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "head",
-      "maritalStatus": "married",
-      "occupation": "Gaardeier og Gaardbruger"
+      "residentialStatus": "resides permanently"
     },
     {
       "name": "Anne Martha Sivertsdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
       "birthDate": "1843",
       "birthPlace": "Lade Strinden",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "wife",
-      "maritalStatus": "married"
+      "residentialStatus": "resides permanently"
     },
     {
       "name": "Jakob Pedersen",
+      "relationship": "son",
       "birthDate": "1870",
       "birthPlace": "Lade Strinden",
       "residentialStatus": "resides permanently",
-      "relationToHead": "son",
       "isSelected": true,
       "gender": "male"
     },
     {
       "name": "Sivert Pedersen",
+      "relationship": "son",
       "birthDate": "1872",
       "birthPlace": "Lade Strinden",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "son"
+      "residentialStatus": "resides permanently"
     },
     {
       "name": "Ole Pedersen",
+      "relationship": "son",
       "birthDate": "1875",
       "birthPlace": "Lade Strinden",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "son"
+      "residentialStatus": "resides permanently"
     },
     {
       "name": "Gusta Marie Pedersdatter",
+      "relationship": "daughter",
       "birthDate": "1867",
       "birthPlace": "Lade Strinden",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "daughter"
+      "residentialStatus": "resides permanently"
     },
     {
       "name": "Ingeborg Jakobsdatter",
+      "relationship": "servant",
+      "occupation": "Tjenestepige",
       "birthDate": "1829",
       "birthPlace": "Klæbo",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "servant",
-      "occupation": "Tjenestepige"
+      "residentialStatus": "resides permanently"
     },
     {
       "name": "Guru?? Haftorsdatter",
+      "relationship": "mother",
+      "maritalStatus": "widow",
+      "occupation": "Forsørges af Sønnen",
       "birthDate": "1794",
       "birthPlace": "Klæbo",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "mother",
-      "maritalStatus": "widow",
-      "occupation": "Forsørges af Sønnen"
+      "residentialStatus": "resides permanently"
     },
     {
       "name": "Anders Mikkelsen",
+      "relationship": "lodger",
+      "maritalStatus": "married",
+      "occupation": "Almindeligt Tømmermandsarbeide",
       "birthDate": "1818",
       "birthPlace": "Throndhjem",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "lodger",
-      "maritalStatus": "married",
-      "occupation": "Almindeligt Tømmermandsarbeide"
+      "residentialStatus": "resides permanently"
     },
     {
       "name": "Ingeborg Petersdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
       "birthDate": "1805",
       "birthPlace": "Throndhjem",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "wife",
-      "maritalStatus": "married"
+      "residentialStatus": "resides permanently"
     },
     {
       "name": "Lars Olsen Granaas",
+      "relationship": "lodger",
+      "maritalStatus": "single",
+      "occupation": "Dagarbeider",
       "birthDate": "1831",
       "birthPlace": "Lade Strind",
-      "residentialStatus": "resides permanently",
-      "relationToHead": "lodger",
-      "maritalStatus": "single",
-      "occupation": "Dagarbeider"
+      "residentialStatus": "resides permanently"
     }
   ],
   "hasValidData": true
