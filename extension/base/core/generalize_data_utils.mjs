@@ -2613,6 +2613,14 @@ class GeneralizedData {
                 }
               }
             }
+          } else {
+            if (!lastMarriageDate) {
+              lastSpouseLastName = getSpouseLnab(spouse);
+            }
+          }
+        } else {
+          if (!lastMarriageDate) {
+            lastSpouseLastName = getSpouseLnab(spouse);
           }
         }
       }
