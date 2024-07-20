@@ -1,0 +1,365 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01037045214297",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "1900 census for Kristiania",
+    "Census districts summary",
+    "481",
+    "0019 Christiansandsgade 10",
+    "06",
+    "005 Ole Anders"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 481",
+      "collectionNameParts": [
+        "Census district:",
+        "481"
+      ]
+    },
+    {
+      "collectionHeading": "Urban residence: 0019 Christiansandsgade 10",
+      "collectionNameParts": [
+        "Urban residence:",
+        "0019 Christiansandsgade 10"
+      ]
+    },
+    {
+      "collectionHeading": "Apartment: 06",
+      "collectionNameParts": [
+        "Apartment:",
+        "06"
+      ]
+    }
+  ],
+  "heading": "Person: 005 Ole Anders",
+  "headingSpanParts": [
+    "Person:",
+    "005"
+  ],
+  "headingTextParts": [
+    "Ole Anders"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/ft20090901390187",
+  "recordData": {
+    "Household no.": {
+      "textString": "01"
+    },
+    "Person no.": {
+      "textString": "005"
+    },
+    "Family position": {
+      "textString": "hf"
+    },
+    "Marital status": {
+      "textString": "g"
+    },
+    "Occupation": {
+      "textString": "Intet Arbeide Fattigunderstøttelse"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Date of birth": {
+      "textString": "1821"
+    },
+    "Place of birth": {
+      "textString": "Hølland %Maridalen%"
+    },
+    "Residential status": {
+      "textString": "b"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information",
+      "Religious community": {
+        "textString": "s"
+      },
+      "Citizenship": {
+        "textString": "n"
+      }
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "personLabel": "001",
+          "personNameParts": [
+            "Martin Olsen"
+          ],
+          "personHeading": "001 Martin Olsen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1871"
+          },
+          "Place of birth": {
+            "textString": "Kristiania"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "%hf% %fl%"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Teglværksarbeider Havnø Verk"
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Martinius Olsen"
+          ],
+          "personHeading": "002 Martinius Olsen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1885"
+          },
+          "Place of birth": {
+            "textString": "Maridalen"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Intet Arbeide"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Johannes Olsen"
+          ],
+          "personHeading": "003 Johannes Olsen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1879"
+          },
+          "Place of birth": {
+            "textString": "Maridalen"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Opslager Hovedgjerban."
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Olaf Olsen"
+          ],
+          "personHeading": "004 Olaf Olsen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1874"
+          },
+          "Place of birth": {
+            "textString": "Maridalen"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Dagarbeider Hovedgjernban."
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "005",
+          "personNameParts": [
+            "Ole  Anders"
+          ],
+          "personHeading": "005 Ole Anders",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1821"
+          },
+          "Place of birth": {
+            "textString": "Hølland %Maridalen%"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "hf"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Intet Arbeide Fattigunderstøttelse"
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Oskar Olsen"
+          ],
+          "personHeading": "006 Oskar Olsen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1896"
+          },
+          "Place of birth": {
+            "textString": "Kristiania %Maridalen%"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Intet Arbeide"
+          }
+        },
+        {
+          "personLabel": "007",
+          "personNameParts": [
+            "Marie Olsen"
+          ],
+          "personHeading": "007 Marie Olsen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1861"
+          },
+          "Place of birth": {
+            "textString": "Maridalen"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "hm"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "husgjerning Intet Arbeide"
+          }
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Mathea Andersen"
+          ],
+          "personHeading": "008 Mathea Andersen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1838"
+          },
+          "Place of birth": {
+            "textString": "Maridalen"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "hm"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "husgjerning Intet Arbeide"
+          }
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Margit Olsen"
+          ],
+          "personHeading": "009 Margit Olsen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1891"
+          },
+          "Place of birth": {
+            "textString": "Kristiania"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "d"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Intet Arbeide"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01037045214297",
+  "sourceInformation": "1900 census for Kristiania",
+  "sourceData": {
+    "County": {
+      "textString": "Oslo"
+    },
+    "Municipality (1947)": {
+      "textString": "Oslo"
+    },
+    "Geographic area": {
+      "textString": "Kristiania muni."
+    },
+    "Start year": {
+      "textString": "1900"
+    },
+    "End year": {
+      "textString": "1900"
+    }
+  }
+}

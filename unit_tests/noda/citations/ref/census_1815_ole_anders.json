@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Census Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders.* (2).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ole was in a record in Census.<ref>\n'''Census Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders.* (2).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Census Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Anders.* (2).",
+    "type": "source"
+  }
+}

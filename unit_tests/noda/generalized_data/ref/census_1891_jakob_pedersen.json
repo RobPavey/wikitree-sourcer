@@ -1,0 +1,92 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Jakob Pedersen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1891"
+  },
+  "birthDate": {
+    "yearString": "1871"
+  },
+  "birthPlace": {
+    "placeString": "Sør-Audnedal (Undal)"
+  },
+  "maritalStatus": "single",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "birthDate",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Pedr  Abrahamsen.",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "birthDate": "1833",
+      "birthPlace": "Sør-Audnedal (Undal)"
+    },
+    {
+      "name": "Jahanne  Tobiasdattr.",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "birthDate": "1837",
+      "birthPlace": "Sør-Audnedal (Undal)"
+    },
+    {
+      "name": "Ole  Pedersen.",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "birthDate": "1867",
+      "birthPlace": "Sør-Audnedal (Undal)"
+    },
+    {
+      "name": "Peder  Pedersen",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "birthDate": "1870",
+      "birthPlace": "Sør-Audnedal (Undal)"
+    },
+    {
+      "name": "Jakob  Pedersen.",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "birthDate": "1871",
+      "birthPlace": "Sør-Audnedal (Undal)",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Gustav  Pedersen.",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "birthDate": "1874",
+      "birthPlace": "Sør-Audnedal (Undal)"
+    },
+    {
+      "name": "Berte Marie  Pedersdatter.",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "birthDate": "1865",
+      "birthPlace": "Sør-Audnedal (Undal)"
+    },
+    {
+      "name": "Karl  Pedersen.",
+      "relationship": "son",
+      "birthDate": "1878",
+      "birthPlace": "Sør-Audnedal (Undal)"
+    },
+    {
+      "name": "Ludvig  Pedersen",
+      "relationship": "son",
+      "birthDate": "1882",
+      "birthPlace": "Sør-Audnedal (Undal)"
+    }
+  ],
+  "hasValidData": true
+}

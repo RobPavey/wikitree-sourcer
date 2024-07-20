@@ -1,0 +1,115 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Ole Anders"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1900"
+  },
+  "birthDate": {
+    "yearString": "1821"
+  },
+  "birthPlace": {
+    "placeString": "Hølland %Maridalen%"
+  },
+  "maritalStatus": "married",
+  "occupation": "Intet Arbeide Fattigunderstøttelse",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "occupation",
+    "birthDate",
+    "birthPlace",
+    "residentialStatus"
+  ],
+  "householdArray": [
+    {
+      "name": "Martin Olsen",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Teglværksarbeider Havnø Verk",
+      "birthDate": "1871",
+      "birthPlace": "Kristiania",
+      "residentialStatus": "resides permanently"
+    },
+    {
+      "name": "Martinius Olsen",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "occupation": "Intet Arbeide",
+      "birthDate": "1885",
+      "birthPlace": "Maridalen",
+      "residentialStatus": "resides permanently"
+    },
+    {
+      "name": "Johannes Olsen",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "occupation": "Opslager Hovedgjerban.",
+      "birthDate": "1879",
+      "birthPlace": "Maridalen",
+      "residentialStatus": "resides permanently"
+    },
+    {
+      "name": "Olaf Olsen",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "occupation": "Dagarbeider Hovedgjernban.",
+      "birthDate": "1874",
+      "birthPlace": "Maridalen",
+      "residentialStatus": "resides permanently"
+    },
+    {
+      "name": "Ole  Anders",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Intet Arbeide Fattigunderstøttelse",
+      "birthDate": "1821",
+      "birthPlace": "Hølland %Maridalen%",
+      "residentialStatus": "resides permanently",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Oskar Olsen",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "occupation": "Intet Arbeide",
+      "birthDate": "1896",
+      "birthPlace": "Kristiania %Maridalen%",
+      "residentialStatus": "resides permanently"
+    },
+    {
+      "name": "Marie Olsen",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "occupation": "husgjerning Intet Arbeide",
+      "birthDate": "1861",
+      "birthPlace": "Maridalen",
+      "residentialStatus": "resides permanently"
+    },
+    {
+      "name": "Mathea Andersen",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "occupation": "husgjerning Intet Arbeide",
+      "birthDate": "1838",
+      "birthPlace": "Maridalen",
+      "residentialStatus": "resides permanently"
+    },
+    {
+      "name": "Margit Olsen",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "occupation": "Intet Arbeide",
+      "birthDate": "1891",
+      "birthPlace": "Kristiania",
+      "residentialStatus": "resides permanently"
+    }
+  ],
+  "hasValidData": true
+}

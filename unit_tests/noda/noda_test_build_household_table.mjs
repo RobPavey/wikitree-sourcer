@@ -28,10 +28,19 @@ import { runBuildHouseholdTableTests } from "../test_utils/test_build_household_
 
 const regressionData = [
   {
+    caseName: "census_1815_ole_anders",
+  },
+  {
     caseName: "census_1875_jakob_pedersen",
   },
   {
     caseName: "census_1875_jakob_pedersen_bo",
+  },
+  {
+    caseName: "census_1891_jakob_pedersen",
+  },
+  {
+    caseName: "census_1900_ole_anders",
   },
 ];
 

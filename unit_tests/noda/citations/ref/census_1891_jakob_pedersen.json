@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1891 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01052903004507 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nJakob Pedersen, single. Born in Sør-Audnedal (Undal).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jakob was in a record in 1891.<ref>\n'''1891 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01052903004507 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nJakob Pedersen, single. Born in Sør-Audnedal (Undal).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1891 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/census/person/pf01052903004507 Digitalarkivet Record] (accessed 6 May 2021)<br/>Jakob Pedersen, single. Born in Sør-Audnedal (Undal).",
+    "type": "source"
+  }
+}

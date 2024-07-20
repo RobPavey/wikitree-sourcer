@@ -1,0 +1,289 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01052903004507",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "1891 census for 1029 Sør-Audnedal",
+    "Census districts summary",
+    "012 [Mangler kretsnavn]",
+    "017",
+    "005 Jakob Pedersen."
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 012 [Mangler kretsnavn]",
+      "collectionNameParts": [
+        "Census district:",
+        "012 [Mangler kretsnavn]"
+      ]
+    },
+    {
+      "collectionHeading": "Rural residence: 017",
+      "collectionNameParts": [
+        "Rural residence:",
+        "017"
+      ]
+    }
+  ],
+  "heading": "Person: 005 Jakob Pedersen.",
+  "headingSpanParts": [
+    "Person:",
+    "005"
+  ],
+  "headingTextParts": [
+    "Jakob Pedersen."
+  ],
+  "imageLink": "https://media.digitalarkivet.no/ft10061102172634",
+  "recordData": {
+    "Household no.": {
+      "textString": "000"
+    },
+    "Person no.": {
+      "textString": "005"
+    },
+    "Family position": {
+      "textString": "Søn, Logerende hørende til Familien"
+    },
+    "Marital status": {
+      "textString": "ug"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Date of birth": {
+      "textString": "1871"
+    },
+    "Place of birth": {
+      "textString": "Sør-Audnedal (Undal)"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "personLabel": "001",
+          "personNameParts": [
+            "Pedr  Abrahamsen."
+          ],
+          "personHeading": "001 Pedr Abrahamsen.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1833"
+          },
+          "Place of birth": {
+            "textString": "Sør-Audnedal (Undal)"
+          },
+          "Family position": {
+            "textString": "Familiens overhode"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Jahanne  Tobiasdattr."
+          ],
+          "personHeading": "002 Jahanne Tobiasdattr.",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1837"
+          },
+          "Place of birth": {
+            "textString": "Sør-Audnedal (Undal)"
+          },
+          "Family position": {
+            "textString": "Hustru"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Ole  Pedersen."
+          ],
+          "personHeading": "003 Ole Pedersen.",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1867"
+          },
+          "Place of birth": {
+            "textString": "Sør-Audnedal (Undal)"
+          },
+          "Family position": {
+            "textString": "Søn, Logerende hørende til Familien"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Peder  Pedersen"
+          ],
+          "personHeading": "004 Peder Pedersen",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1870"
+          },
+          "Place of birth": {
+            "textString": "Sør-Audnedal (Undal)"
+          },
+          "Family position": {
+            "textString": "Søn"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "005",
+          "personNameParts": [
+            "Jakob  Pedersen."
+          ],
+          "personHeading": "005 Jakob Pedersen.",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1871"
+          },
+          "Place of birth": {
+            "textString": "Sør-Audnedal (Undal)"
+          },
+          "Family position": {
+            "textString": "Søn, Logerende hørende til Familien"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Gustav  Pedersen."
+          ],
+          "personHeading": "006 Gustav Pedersen.",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1874"
+          },
+          "Place of birth": {
+            "textString": "Sør-Audnedal (Undal)"
+          },
+          "Family position": {
+            "textString": "Søn"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "007",
+          "personNameParts": [
+            "Berte Marie  Pedersdatter."
+          ],
+          "personHeading": "007 Berte Marie Pedersdatter.",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1865"
+          },
+          "Place of birth": {
+            "textString": "Sør-Audnedal (Undal)"
+          },
+          "Family position": {
+            "textString": "Datter"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Karl  Pedersen."
+          ],
+          "personHeading": "008 Karl Pedersen.",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1878"
+          },
+          "Place of birth": {
+            "textString": "Sør-Audnedal (Undal)"
+          },
+          "Family position": {
+            "textString": "Søn"
+          }
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Ludvig  Pedersen"
+          ],
+          "personHeading": "009 Ludvig Pedersen",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1882"
+          },
+          "Place of birth": {
+            "textString": "Sør-Audnedal (Undal)"
+          },
+          "Family position": {
+            "textString": "Søn"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01052903004507",
+  "sourceInformation": "1891 census for 1029 Sør-Audnedal",
+  "sourceData": {
+    "County": {
+      "textString": "Vest-Agder"
+    },
+    "Municipality (1947)": {
+      "textString": "Spangereid, Sør-Audnedal"
+    },
+    "Geographic area": {
+      "textString": "Sør-Audnedal muni. Mandal bailiwick",
+      "textParts": [
+        "Sør-Audnedal muni.",
+        "Mandal bailiwick"
+      ]
+    },
+    "Start year": {
+      "textString": "1891"
+    },
+    "End year": {
+      "textString": "1891"
+    }
+  }
+}

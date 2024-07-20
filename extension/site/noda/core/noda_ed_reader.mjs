@@ -246,20 +246,23 @@ const familyPositionValues = {
   hm: "wife", // house mother or wife
   hp: "head", // (selv) hovedperson = head of household
   hovedperson: "head", // (selv) hovedperson = head of household
+  "familiens overhode": "head", // The head of the family
   selv: "head", // (selv) hovedperson = head of household
   hu: "wife", // hustru = wife
   hustru: "wife", // hustru = wife
-  Kone: "wife",
+  kone: "wife",
   s: "son",
+  søn: "son",
   d: "daughter",
+  datter: "daughter",
   tj: "servant", // tjenestetyende
-  Tjener: "servant",
-  "Moder til Husfaderen": "mother",
-  Logerende: "lodger",
+  tjener: "servant",
+  "moder til husfaderen": "mother",
+  logerende: "lodger",
   fl: "lodger", // losjerende, hørende til familien = lodger, related to the family
   el: "lodger", // enslig losjerende = single lodger, not related to the family
   b: "visitor", // besøkende = visitor
-  "hans Kone": "hisWife",
+  "hans kone": "hisWife",
 };
 
 const residentialStatusValues = {
@@ -1064,6 +1067,21 @@ class NodaEdReader extends ExtractedDataReader {
 
       let familyPosition = this.getPersonDataValue(person, "familyPosition");
       if (familyPosition) {
+        familyPosition = familyPosition.toLowerCase();
+        let parts = familyPosition.split(",");
+        if (parts && parts.length > 1 && parts[0]) {
+          familyPosition = parts[0].trim();
+        }
+        // sometimes it has percent signs,
+        let percentParts = familyPosition.split("%");
+        for (let percentPart of percentParts) {
+          let familyPositionString = percentPart.trim();
+          if (familyPositionString) {
+            familyPosition = familyPositionString;
+            break;
+          }
+        }
+
         let relationToHead = familyPositionValues[familyPosition];
         if (relationToHead) {
           if (relationToHead == "hisWife") {

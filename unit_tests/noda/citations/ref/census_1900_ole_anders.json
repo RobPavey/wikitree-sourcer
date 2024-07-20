@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1900 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01037045214297 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders, married, Intet Arbeide Fattigunderstøttelse,. Born in Hølland %Maridalen%.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ole was in a record in 1900.<ref>\n'''1900 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01037045214297 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders, married, Intet Arbeide Fattigunderstøttelse,. Born in Hølland %Maridalen%.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1900 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/census/person/pf01037045214297 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Anders, married, Intet Arbeide Fattigunderstøttelse,. Born in Hølland %Maridalen%.",
+    "type": "source"
+  }
+}

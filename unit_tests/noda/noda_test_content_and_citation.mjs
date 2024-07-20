@@ -40,6 +40,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/view/267/pg00000000517413",
   },
   {
+    caseName: "census_1815_ole_anders",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01051099000750",
+  },
+  {
     caseName: "census_1875_jakob_pedersen",
     url: "https://www.digitalarkivet.no/en/census/person/pf01052377002789",
   },
@@ -52,6 +56,14 @@ const regressionData = [
     // Language: Nynorsk
     caseName: "census_1875_jakob_pedersen_nn",
     url: "https://www.digitalarkivet.no/nn/census/person/pf01052377002789",
+  },
+  {
+    caseName: "census_1891_jakob_pedersen",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01052903004507",
+  },
+  {
+    caseName: "census_1900_ole_anders",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01037045214297",
   },
   {
     caseName: "emigrant_1872_ole_anders",
