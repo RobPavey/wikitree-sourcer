@@ -7,7 +7,13 @@
   },
   "personGender": "male",
   "eventDate": {
-    "yearString": "Census"
+    "yearString": "1815"
+  },
+  "eventPlace": {
+    "placeString": "Fiøsne, Luster, Sogn og Fjordane, Norway",
+    "parish": "Luster",
+    "county": "Sogn og Fjordane",
+    "country": "Norway"
   },
   "ageAtEvent": "2",
   "householdArrayFields": [

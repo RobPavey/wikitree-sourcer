@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/327/pv00000001749450 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Ingmundsen (54) marriage to  on 26 Jul 1814 in Eidsberg, Østfold, Norway.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Church book from Eidsberg parish 1814-1832 (0125P)\"<br/>\nMarriages: 1814-07-26; Page: 192a; Serial no.: 6<br/>\n[https://www.digitalarkivet.no/en/view/327/pv00000001749450 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Ingmundsen (54) marriage to  on 26 Jul 1814 in Eidsberg, Østfold, Norway.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Ole (age 54) married on 26 July 1814 in Eidsberg, Østfold, Norway.<ref>\n'''Marriage''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/327/pv00000001749450 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Ingmundsen (54) marriage to  on 26 Jul 1814 in Eidsberg, Østfold, Norway.\n</ref>",
+    "citation": "Ole (age 54) married on 26 July 1814 in Eidsberg, Østfold, Norway.<ref>\n'''Marriage''':\n\"Church book from Eidsberg parish 1814-1832 (0125P)\"<br/>\nMarriages: 1814-07-26; Page: 192a; Serial no.: 6<br/>\n[https://www.digitalarkivet.no/en/view/327/pv00000001749450 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Ingmundsen (54) marriage to  on 26 Jul 1814 in Eidsberg, Østfold, Norway.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/view/327/pv00000001749450 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Ingmundsen (54) marriage to  on 26 Jul 1814 in Eidsberg, Østfold, Norway.",
+    "citation": "* '''Marriage''': \"Church book from Eidsberg parish 1814-1832 (0125P)\"<br/>Marriages: 1814-07-26; Page: 192a; Serial no.: 6<br/>[https://www.digitalarkivet.no/en/view/327/pv00000001749450 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Ingmundsen (54) marriage to  on 26 Jul 1814 in Eidsberg, Østfold, Norway.",
     "type": "source"
   }
 }

@@ -26,24 +26,42 @@ SOFTWARE.
 // https://www.wikitree.com/wiki/Space:Norway_Project_-_Source_Citation_Format
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { NodaEdReader } from "./noda_ed_reader.mjs";
 
 function buildNodaUrl(ed, builder) {
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  if (ed.sourceInformation) {
+    builder.sourceTitle += ed.sourceInformation;
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  let edReader = new NodaEdReader(ed);
+  edReader.addSourceReferenceToCitationBuilder(builder);
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var nodaUrl = buildNodaUrl(ed, builder);
+  if (ed.pageType == "record") {
+    var nodaUrl = buildNodaUrl(ed, builder);
 
-  let recordLink = "[" + nodaUrl + " Digitalarkivet Record]";
-  builder.recordLinkOrTemplate = recordLink;
+    let recordLink = "[" + nodaUrl + " Digitalarkivet Record]";
+    builder.recordLinkOrTemplate = recordLink;
+
+    let imageLinkUrl = ed.imageLink;
+    if (imageLinkUrl) {
+      let imageLink = "[" + imageLinkUrl + " Digitalarkivet Image]";
+      builder.imageLink = imageLink;
+    }
+  } else if (ed.pageType == "image") {
+    var nodaUrl = buildNodaUrl(ed, builder);
+
+    let imageLink = "[" + nodaUrl + " Digitalarkivet Image]";
+    // add as record link so an accessed date is added
+    builder.recordLinkOrTemplate = imageLink;
+  }
 }
 
 function buildCoreCitation(ed, gd, builder) {

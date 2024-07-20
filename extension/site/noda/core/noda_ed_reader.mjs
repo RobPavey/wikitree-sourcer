@@ -176,6 +176,16 @@ const fieldLabels = {
     bo: ["Yrke"],
     nn: ["Yrke"],
   },
+  page: {
+    en: ["Page"],
+    bo: ["Side"],
+    nn: ["Side"],
+  },
+  parish: {
+    en: ["Parish"],
+    bo: ["Prestegjeld"],
+    nn: ["Prestegjeld"],
+  },
   parishChurch: {
     en: ["Parish/Church"],
     bo: ["Sogn/kirke"],
@@ -219,10 +229,38 @@ const panelTitles = {
     bo: "Begravde",
     nn: "Gravlagde",
   },
+  Emigration: {
+    en: "Emigration",
+    bo: "Emigrasjon",
+    nn: "Emigrasjon",
+  },
   Marriages: {
     en: "Marriages",
     bo: "Viede",
     nn: "Vigde",
+  },
+};
+
+const collectionPartHeadings = {
+  Apartment: {
+    en: "Apartment",
+    bo: "Husvære",
+    nn: "Husvære",
+  },
+  "Census district": {
+    en: "Census district",
+    bo: "Teljingskrets",
+    nn: "Teljingskrets",
+  },
+  "Rural residence": {
+    en: "Rural residence",
+    bo: "Bosted land",
+    nn: "Bustad land",
+  },
+  "Urban residence": {
+    en: "Urban residence",
+    bo: "Bosted by",
+    nn: "Bustad by",
   },
 };
 
@@ -351,13 +389,89 @@ class NodaEdReader extends ExtractedDataReader {
     }
   }
 
-  makePlaceObjFromRecordPanelAndSourceData(recordDataKey, panelTitleKey, panelDataKey) {
-    let recordDataPlace = this.getRecordDataValue(recordDataKey);
-    let panelPlace = this.getPanelDataValue(panelTitleKey, panelDataKey);
-    if (!panelPlace) {
-      panelPlace = this.getPanelDataValue(panelTitleKey, "parishChurch");
+  getPartsFromCensusSourceInfo() {
+    let parts = {
+      year: "",
+      parish: "",
+    };
+
+    if (!this.ed.sourceInformation) {
+      return parts;
     }
 
+    let lang = this.urlLang;
+    if (!lang) {
+      return parts;
+    }
+
+    const dateCensusForRegexes = {
+      en: /^(\d+) census for (.*)$/,
+      bo: /^(\d+) folketelling for (.*)$/,
+      nn: /^(\d+) folketeljing for (.*)$/,
+    };
+    const censusDateForRegexes = {
+      en: /^Census (\d+) for (.*)$/,
+      bo: /^Folketelling (\d+) for (.*)$/,
+      nn: /^Folketeljing (\d+) for (.*)$/,
+    };
+    const parishWords = {
+      en: "parish",
+      bo: "prestegjeld",
+      nn: "prestegjeld",
+    };
+
+    let dateCensusForRegex = dateCensusForRegexes[lang];
+    let censusDateForRegex = censusDateForRegexes[lang];
+    let parishWord = parishWords[lang];
+
+    let sourceInfo = this.ed.sourceInformation;
+    let regex = undefined;
+    if (dateCensusForRegex.test(sourceInfo)) {
+      regex = dateCensusForRegex;
+    } else if (censusDateForRegex.test(sourceInfo)) {
+      regex = censusDateForRegex;
+    }
+
+    if (!regex) {
+      return parts;
+    }
+
+    let yearString = sourceInfo.replace(regex, "$1");
+    let parishString = sourceInfo.replace(regex, "$2");
+
+    if (!yearString || !parishString || yearString == sourceInfo || parishString == sourceInfo) {
+      return parts;
+    }
+
+    parts.year = yearString;
+
+    if (parishString.endsWith(parishWord)) {
+      parishString = parishString.substring(0, parishString.length - parishWord.length);
+      parishString = parishString.trim();
+    }
+
+    function removeLeadingNumber(string) {
+      if (string) {
+        string = string.replace(/^\d[^\s]*/, "");
+        string = string.trim();
+      }
+      return string;
+    }
+
+    parishString = removeLeadingNumber(parishString);
+
+    parts.parish = parishString;
+
+    return parts;
+  }
+
+  getParishNameFromSourceInformationForCensus() {
+    let parts = this.getPartsFromCensusSourceInfo();
+
+    return parts.parish;
+  }
+
+  getParishNameFromSourceInformationForChurchBook() {
     let sourceInfoParishName = "";
 
     const sourceInfoPrefixes = {
@@ -378,7 +492,9 @@ class NodaEdReader extends ExtractedDataReader {
 
     if (sourceInformation) {
       if (sourceInfoPrefix) {
-        sourceInformation = sourceInformation.substring(sourceInfoPrefix.length);
+        if (sourceInformation.startsWith(sourceInfoPrefix)) {
+          sourceInformation = sourceInformation.substring(sourceInfoPrefix.length);
+        }
       }
       let parts = sourceInformation.split(" ");
       if (parts.length) {
@@ -401,11 +517,68 @@ class NodaEdReader extends ExtractedDataReader {
       }
     }
 
+    return sourceInfoParishName;
+  }
+
+  getParishNameFromSourceInformationForEmigration() {
+    let sourceInfoParishName = "";
+
+    const sourceInfoPrefixes = {
+      en: "Emigrants from ",
+      bo: "Emigranter over ",
+      nn: "Emigranter over ",
+    };
+
+    const parishWords = {
+      en: "parish",
+      bo: "prestegjeld",
+      nn: "prestegjeld",
+    };
+
+    let sourceInfoPrefix = sourceInfoPrefixes[this.urlLang];
+    let sourceInformation = this.ed.sourceInformation;
+
+    if (sourceInformation) {
+      if (sourceInfoPrefix) {
+        if (sourceInformation.startsWith(sourceInfoPrefix)) {
+          sourceInformation = sourceInformation.substring(sourceInfoPrefix.length);
+        }
+      }
+      let parts = sourceInformation.split(" ");
+      if (parts.length) {
+        for (let partIndex = 0; partIndex < parts.length; partIndex++) {
+          if (/^\d+/.test(parts[partIndex])) {
+            break;
+          }
+          if (sourceInfoParishName) {
+            sourceInfoParishName += " ";
+          }
+          sourceInfoParishName += parts[partIndex];
+        }
+      }
+    }
+
+    return sourceInfoParishName;
+  }
+
+  getParishNameFromSourceInformation() {
+    if (this.recordType == RT.Census) {
+      return this.getParishNameFromSourceInformationForCensus();
+    } else if (this.recordType == RT.Emigration) {
+      return this.getParishNameFromSourceInformationForEmigration();
+    } else {
+      return this.getParishNameFromSourceInformationForChurchBook();
+    }
+  }
+
+  makePlaceObjFromLocalPlaceNameAndSourceData(localPlaceName) {
+    let sourceInfoParishName = this.getParishNameFromSourceInformation();
+
     let countyName = this.getSourceDataValue("county");
 
     let fullPlaceName = "";
-    if (panelPlace) {
-      fullPlaceName = panelPlace;
+    if (localPlaceName) {
+      fullPlaceName = localPlaceName;
     }
 
     if (sourceInfoParishName && !fullPlaceName.includes(sourceInfoParishName)) {
@@ -439,6 +612,56 @@ class NodaEdReader extends ExtractedDataReader {
     }
 
     return placeObj;
+  }
+
+  makePlaceObjFromRecordPanelAndSourceData(recordDataKey, panelTitleKey, panelDataKey) {
+    let recordDataPlace = this.getRecordDataValue(recordDataKey);
+    let panelPlace = this.getPanelDataValue(panelTitleKey, panelDataKey);
+    if (!panelPlace) {
+      panelPlace = this.getPanelDataValue(panelTitleKey, "parishChurch");
+    }
+
+    return this.makePlaceObjFromLocalPlaceNameAndSourceData(panelPlace);
+  }
+
+  makePlaceObjForCensus() {
+    let collectionParts = this.ed.collectionParts;
+    function removeLeadingNumber(string) {
+      if (string) {
+        string = string.replace(/^\d[^\s]*/, "");
+        string = string.trim();
+      }
+      return string;
+    }
+
+    function getCollectionPart(edReader, collectionPartHeadingKey) {
+      let collectionPartHeading = edReader.getCollectionPartHeading(collectionPartHeadingKey);
+      if (collectionPartHeading) {
+        for (let collectionPart of collectionParts) {
+          if (collectionPart.collectionNameParts && collectionPart.collectionNameParts.length == 2) {
+            if (collectionPart.collectionNameParts[0] == collectionPartHeading) {
+              return collectionPart.collectionNameParts[1];
+            }
+          }
+        }
+      }
+    }
+    let apartment = getCollectionPart(this, "Apartment");
+    let urbanResidence = removeLeadingNumber(getCollectionPart(this, "Urban residence"));
+    let ruralResidence = removeLeadingNumber(getCollectionPart(this, "Rural residence"));
+
+    let placeName = "";
+
+    if (urbanResidence) {
+      if (apartment) {
+        placeName += apartment + " ";
+      }
+      placeName += urbanResidence;
+    } else if (ruralResidence) {
+      placeName += ruralResidence;
+    }
+
+    return this.makePlaceObjFromLocalPlaceNameAndSourceData(placeName);
   }
 
   parseUrl() {
@@ -482,6 +705,19 @@ class NodaEdReader extends ExtractedDataReader {
     let panelTitleRecord = panelTitles[panelTitleKey];
     if (panelTitleRecord) {
       return panelTitleRecord[lang];
+    }
+    return "";
+  }
+
+  getCollectionPartHeading(collectionPartHeadingKeyKey) {
+    let lang = this.urlLang;
+    if (!lang) {
+      return "";
+    }
+
+    let collectionPartHeadingRecord = collectionPartHeadings[collectionPartHeadingKeyKey];
+    if (collectionPartHeadingRecord) {
+      return collectionPartHeadingRecord[lang];
     }
     return "";
   }
@@ -737,25 +973,9 @@ class NodaEdReader extends ExtractedDataReader {
         return this.makeDateObjFromYyyymmddDate(dateString, "-");
       }
     } else if (this.recordType == RT.Census) {
-      // this is the part that comes before the year
-      const sourceInfoPrefixes = {
-        en: "",
-        bo: "Folketelling ",
-        nn: "Folketeljing ",
-      };
-
-      let sourceInfoPrefix = sourceInfoPrefixes[this.urlLang];
-      let sourceInformation = this.ed.sourceInformation;
-
-      if (sourceInformation) {
-        if (sourceInfoPrefix) {
-          sourceInformation = sourceInformation.substring(sourceInfoPrefix.length);
-        }
-        let parts = sourceInformation.split(" ");
-        if (parts.length) {
-          let yearString = parts[0];
-          return this.makeDateObjFromYear(yearString);
-        }
+      let parts = this.getPartsFromCensusSourceInfo();
+      if (parts.year) {
+        return this.makeDateObjFromYear(parts.year);
       }
     }
 
@@ -767,6 +987,12 @@ class NodaEdReader extends ExtractedDataReader {
       return this.makePlaceObjFromRecordPanelAndSourceData("", "Births and baptisms", "baptismPlace");
     } else if (this.recordType == RT.Marriage) {
       return this.makePlaceObjFromRecordPanelAndSourceData("", "Marriages", "marriagePlace");
+    } else if (this.recordType == RT.Burial) {
+      return this.makePlaceObjFromRecordPanelAndSourceData("", "Burials", "marriagePlace");
+    } else if (this.recordType == RT.Emigration) {
+      return this.makePlaceObjFromRecordPanelAndSourceData("", "Emigration", "parish");
+    } else if (this.recordType == RT.Census) {
+      return this.makePlaceObjForCensus();
     }
 
     return undefined;
@@ -1146,6 +1372,33 @@ class NodaEdReader extends ExtractedDataReader {
 
   getCollectionData() {
     return undefined;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Functions to support build citation
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  addSourceReferenceToCitationBuilder(builder) {
+    // This part is available on scanned image:
+    // Norderhov kirkebøker, SAKO/A-237/F/Fa/L0010: Ministerialbok nr. 10, 1837-1847, s. 113
+    // For the same record the info on the transcription is:
+    // Church book from Norderhov parish 1837-1847 (0613Q)  << This is the Source Title
+    // Births and baptisms: 1843-12-10, Parish/Church: -, Page: 113, Serial no.: 244
+    let ed = this.ed;
+
+    if (ed.pageType == "image") {
+      if (ed.fileTitle) {
+        builder.sourceReference = ed.fileTitle;
+      }
+    } else if (ed.pageType == "record") {
+      if (ed.collectionParts) {
+        for (let collectionPart of ed.collectionParts) {
+          builder.addSourceReferenceText(collectionPart.collectionHeading);
+        }
+      }
+      builder.addSourceReferenceField("Page", this.getSourceDataValue("page"));
+      builder.addSourceReferenceField("Serial no.", this.getSourceDataValue("serialNumber"));
+    }
   }
 }
 

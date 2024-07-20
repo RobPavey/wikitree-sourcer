@@ -9,6 +9,12 @@
   "eventDate": {
     "yearString": "1891"
   },
+  "eventPlace": {
+    "placeString": "Sør-Audnedal, Vest-Agder, Norway",
+    "parish": "Sør-Audnedal",
+    "county": "Vest-Agder",
+    "country": "Norway"
+  },
   "birthDate": {
     "yearString": "1871"
   },

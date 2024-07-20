@@ -10,6 +10,12 @@
   "eventDate": {
     "dateString": "20 Sep 1840"
   },
+  "eventPlace": {
+    "placeString": "Nannestad, Akershus, Norway",
+    "parish": "Nannestad",
+    "county": "Akershus",
+    "country": "Norway"
+  },
   "birthDate": {
     "yearString": "1790",
     "qualifier": 2

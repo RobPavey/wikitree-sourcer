@@ -10,6 +10,12 @@
   "eventDate": {
     "dateString": "25 Apr 1872"
   },
+  "eventPlace": {
+    "placeString": "Kristiania, Oslo, Norway",
+    "parish": "Kristiania",
+    "county": "Oslo",
+    "country": "Norway"
+  },
   "ageAtEvent": "54",
   "hasValidData": true
 }

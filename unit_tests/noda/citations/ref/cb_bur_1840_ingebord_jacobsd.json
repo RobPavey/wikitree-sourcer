@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Jacobsd burial (died on 13 Sep 1840 at age 50) on 20 Sep 1840.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"Church book from Nannestad parish 1840-1850 (0238P)\"<br/>\nBurials: 1840-09-20; Page: 227; Serial no.: 14<br/>\n[https://media.digitalarkivet.no/kb20060307030393 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Jacobsd burial (died on 13 Sep 1840 at age 50) on 20 Sep 1840 in Nannestad, Akershus, Norway.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Ingeborg (age 50) died on 13 September 1840 and was buried on 20 September 1840.<ref>\n'''Burial''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Jacobsd burial (died on 13 Sep 1840 at age 50) on 20 Sep 1840.\n</ref>",
+    "citation": "Ingeborg (age 50) died on 13 September 1840 and was buried on 20 September 1840 in Nannestad, Akershus, Norway.<ref>\n'''Burial''':\n\"Church book from Nannestad parish 1840-1850 (0238P)\"<br/>\nBurials: 1840-09-20; Page: 227; Serial no.: 14<br/>\n[https://media.digitalarkivet.no/kb20060307030393 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Jacobsd burial (died on 13 Sep 1840 at age 50) on 20 Sep 1840 in Nannestad, Akershus, Norway.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Burial''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ingeborg Jacobsd burial (died on 13 Sep 1840 at age 50) on 20 Sep 1840.",
+    "citation": "* '''Burial''': \"Church book from Nannestad parish 1840-1850 (0238P)\"<br/>Burials: 1840-09-20; Page: 227; Serial no.: 14<br/>[https://media.digitalarkivet.no/kb20060307030393 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/267/pg00000000517413 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ingeborg Jacobsd burial (died on 13 Sep 1840 at age 50) on 20 Sep 1840 in Nannestad, Akershus, Norway.",
     "type": "source"
   }
 }

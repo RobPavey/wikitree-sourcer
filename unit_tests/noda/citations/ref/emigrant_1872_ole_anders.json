@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record of Ole Anders''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/8/pe00000000917949 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders on 25 Apr 1872.\n</ref>",
+    "citation": "<ref>\n'''Record of Ole Anders''':\n\"Emigrants from Kristiania 1871-1930, edited version\"<br/>\nEmigration: 1872; Page: 53<br/>\n[https://www.digitalarkivet.no/en/view/8/pe00000000917949 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders on 25 Apr 1872 in Kristiania, Oslo, Norway.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Ole emigrated on 25 April 1872.<ref>\n'''Record of Ole Anders''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/view/8/pe00000000917949 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders on 25 Apr 1872.\n</ref>",
+    "citation": "Ole emigrated on 25 April 1872 in Kristiania, Oslo, Norway.<ref>\n'''Record of Ole Anders''':\n\"Emigrants from Kristiania 1871-1930, edited version\"<br/>\nEmigration: 1872; Page: 53<br/>\n[https://www.digitalarkivet.no/en/view/8/pe00000000917949 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders on 25 Apr 1872 in Kristiania, Oslo, Norway.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record of Ole Anders''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/view/8/pe00000000917949 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Anders on 25 Apr 1872.",
+    "citation": "* '''Record of Ole Anders''': \"Emigrants from Kristiania 1871-1930, edited version\"<br/>Emigration: 1872; Page: 53<br/>[https://www.digitalarkivet.no/en/view/8/pe00000000917949 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Anders on 25 Apr 1872 in Kristiania, Oslo, Norway.",
     "type": "source"
   }
 }

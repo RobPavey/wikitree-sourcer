@@ -102,6 +102,10 @@ function extractData(document, url) {
           let text = childNode.textContent.trim();
           if (text) {
             text = text.replace(/\s+/g, " ");
+            text = text.trim();
+            if (text.endsWith(":")) {
+              text = text.substring(0, text.length - 1);
+            }
 
             collectionPart.collectionNameParts.push(text);
           }
@@ -133,7 +137,7 @@ function extractData(document, url) {
       result.heading = heading;
     }
 
-    // also get the parts of the heading test, usially this is two spans and a text node
+    // also get the parts of the heading text, usially this is two spans and a text node
     let headingLabelElements = headingElement.querySelectorAll("span");
     result.headingSpanParts = [];
     for (let headingLabelElement of headingLabelElements) {

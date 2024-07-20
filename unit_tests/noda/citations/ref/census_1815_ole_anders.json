@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Census Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders.* (2).\n</ref>",
+    "citation": "<ref>\n'''1815 Census''':\n\"Census 1815 for Luster\"<br/>\nCensus district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders.* (2) in Fiøsne, Luster, Sogn og Fjordane, Norway.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Ole was in a record in Census.<ref>\n'''Census Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders.* (2).\n</ref>",
+    "citation": "In the 1815 census Ole (age 2) was in Fiøsne, Luster, Sogn og Fjordane, Norway.<ref>\n'''1815 Census''':\n\"Census 1815 for Luster\"<br/>\nCensus district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders.* (2) in Fiøsne, Luster, Sogn og Fjordane, Norway.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Census Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Anders.* (2).",
+    "citation": "* '''1815 Census''': \"Census 1815 for Luster\"<br/>Census district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Anders.* (2) in Fiøsne, Luster, Sogn og Fjordane, Norway.",
     "type": "source"
   }
 }

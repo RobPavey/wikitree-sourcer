@@ -9,6 +9,12 @@
   "eventDate": {
     "yearString": "1900"
   },
+  "eventPlace": {
+    "placeString": "06 Christiansandsgade 10, Kristiania, Oslo, Norway",
+    "parish": "Kristiania",
+    "county": "Oslo",
+    "country": "Norway"
+  },
   "birthDate": {
     "yearString": "1821"
   },
