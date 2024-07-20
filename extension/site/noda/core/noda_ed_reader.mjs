@@ -293,6 +293,7 @@ const familyPositionValues = {
   søn: "son",
   d: "daughter",
   datter: "daughter",
+  børn: "child",
   tj: "servant", // tjenestetyende
   tjener: "servant",
   "moder til husfaderen": "mother",
@@ -909,6 +910,42 @@ class NodaEdReader extends ExtractedDataReader {
     return undefined;
   }
 
+  getRelationshipToHeadForPerson(person) {
+    if (person) {
+      let familyPosition = this.getPersonDataValue(person, "familyPosition");
+      if (familyPosition) {
+        familyPosition = familyPosition.toLowerCase();
+        let parts = familyPosition.split(",");
+        if (parts && parts.length > 1 && parts[0]) {
+          familyPosition = parts[0].trim();
+        }
+        // sometimes it has percent signs,
+        let percentParts = familyPosition.split("%");
+        for (let percentPart of percentParts) {
+          let familyPositionString = percentPart.trim();
+          if (familyPositionString) {
+            familyPosition = familyPositionString;
+            break;
+          }
+        }
+
+        let relationToHead = familyPositionValues[familyPosition];
+        if (relationToHead) {
+          if (relationToHead == "hisWife") {
+            // this means the wife of the previous person
+            // for now just set it to "wife"
+            relationToHead = "wife";
+          }
+          return relationToHead;
+        } else {
+          return familyPosition;
+        }
+      }
+    }
+
+    return "";
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1149,6 +1186,11 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getRelationshipToHead() {
+    if (this.recordType == RT.Census) {
+      let person = this.getPrimaryPerson();
+      return this.getRelationshipToHeadForPerson(person);
+    }
+
     return "";
   }
 
@@ -1291,34 +1333,9 @@ class NodaEdReader extends ExtractedDataReader {
       //   familyPosition, marital status, occupation, age/born, birthPlace
       // See: https://www.familysearch.org/en/wiki/Norway_Census,_1875_-_FamilySearch_Historical_Records
 
-      let familyPosition = this.getPersonDataValue(person, "familyPosition");
-      if (familyPosition) {
-        familyPosition = familyPosition.toLowerCase();
-        let parts = familyPosition.split(",");
-        if (parts && parts.length > 1 && parts[0]) {
-          familyPosition = parts[0].trim();
-        }
-        // sometimes it has percent signs,
-        let percentParts = familyPosition.split("%");
-        for (let percentPart of percentParts) {
-          let familyPositionString = percentPart.trim();
-          if (familyPositionString) {
-            familyPosition = familyPositionString;
-            break;
-          }
-        }
-
-        let relationToHead = familyPositionValues[familyPosition];
-        if (relationToHead) {
-          if (relationToHead == "hisWife") {
-            // this means the wife of the previous person
-            // for now just set it to "wife"
-            relationToHead = "wife";
-          }
-          setMemberField(householdMember, "relationship", relationToHead);
-        } else {
-          setMemberField(householdMember, "relationship", familyPosition);
-        }
+      let relationToHead = this.getRelationshipToHeadForPerson(person);
+      if (relationToHead) {
+        setMemberField(householdMember, "relationship", relationToHead);
       }
 
       let maritalStatusString = this.getPersonDataValue(person, "maritalStatus");

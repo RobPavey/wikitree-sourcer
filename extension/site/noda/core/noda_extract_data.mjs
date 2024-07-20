@@ -151,6 +151,7 @@ function extractData(document, url) {
       if (childNode.nodeType === 3) {
         let text = childNode.textContent.trim();
         if (text) {
+          text = text.replace(/\s+/g, " ");
           result.headingTextParts.push(text);
         }
       }
@@ -190,6 +191,7 @@ function extractData(document, url) {
           if (childNode.nodeType === 3) {
             let text = childNode.textContent.trim();
             if (text) {
+              text = text.replace(/\s+/g, " ");
               textParts.push(text);
             }
           }
@@ -277,6 +279,7 @@ function extractData(document, url) {
                         if (childNode.nodeType === 3) {
                           let text = childNode.textContent.trim();
                           if (text) {
+                            text = text.replace(/\s+/g, " ");
                             personData.personNameParts.push(text);
                           }
                         }

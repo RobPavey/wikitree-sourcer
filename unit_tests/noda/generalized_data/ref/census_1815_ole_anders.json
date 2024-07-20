@@ -16,6 +16,7 @@
     "country": "Norway"
   },
   "ageAtEvent": "2",
+  "relationshipToHead": "child",
   "householdArrayFields": [
     "name",
     "maritalStatus",
@@ -25,241 +26,241 @@
   ],
   "householdArray": [
     {
-      "name": "Christopher  Thomasen",
+      "name": "Christopher Thomasen",
       "maritalStatus": "married",
       "occupation": "Gaardbruger",
       "age": "50"
     },
     {
-      "name": "Kistine  Hendriksd.",
+      "name": "Kistine Hendriksd.",
       "relationship": "wife",
       "maritalStatus": "married",
       "age": "42"
     },
     {
-      "name": "Susanna  Eriksd.",
+      "name": "Susanna Eriksd.",
       "relationship": "steddatter",
       "age": "15"
     },
     {
-      "name": "Mari  Christophersd.",
-      "relationship": "børn",
+      "name": "Mari Christophersd.",
+      "relationship": "child",
       "age": "6"
     },
     {
-      "name": "Malena  Christophersd.",
-      "relationship": "børn",
+      "name": "Malena Christophersd.",
+      "relationship": "child",
       "age": "3"
     },
     {
-      "name": "Erik  Nielsen",
+      "name": "Erik Nielsen",
       "occupation": "Tiener",
       "age": "40"
     },
     {
-      "name": "Anders  Eriksen",
+      "name": "Anders Eriksen",
       "occupation": "Tiener",
       "age": "18"
     },
     {
-      "name": "Lars  Olsen",
+      "name": "Lars Olsen",
       "occupation": "Tiener",
       "age": "17"
     },
     {
-      "name": "Inga  Lassed.",
+      "name": "Inga Lassed.",
       "occupation": "Tienestepige",
       "age": "30"
     },
     {
-      "name": "Johanna  Ellevsd.",
+      "name": "Johanna Ellevsd.",
       "occupation": "Tienestepige",
       "age": "33"
     },
     {
-      "name": "Thomas  Olsen",
+      "name": "Thomas Olsen",
       "maritalStatus": "married",
       "occupation": "Huusmand",
       "age": "54"
     },
     {
-      "name": "Synneva  Olsd.",
+      "name": "Synneva Olsd.",
       "relationship": "wife",
       "maritalStatus": "married",
       "age": "54"
     },
     {
-      "name": "Jacob  Thomasen",
-      "relationship": "børn",
+      "name": "Jacob Thomasen",
+      "relationship": "child",
       "occupation": "Tiener",
       "age": "20"
     },
     {
-      "name": "Ole  Thomasen",
-      "relationship": "børn",
+      "name": "Ole Thomasen",
+      "relationship": "child",
       "occupation": "Tiener",
       "age": "18"
     },
     {
-      "name": "Torbiørn  Thomasen",
-      "relationship": "børn",
+      "name": "Torbiørn Thomasen",
+      "relationship": "child",
       "age": "15"
     },
     {
-      "name": "Niels  Johannessen",
+      "name": "Niels Johannessen",
       "maritalStatus": "married",
       "occupation": "Huusmand",
       "age": "36"
     },
     {
-      "name": "Groe  Johannesd.",
+      "name": "Groe Johannesd.",
       "relationship": "wife",
       "maritalStatus": "married",
       "age": "30"
     },
     {
-      "name": "Johannes  Niels.*",
-      "relationship": "børn",
+      "name": "Johannes Niels.*",
+      "relationship": "child",
       "age": "6"
     },
     {
-      "name": "Cecilia  Nielsd.*",
-      "relationship": "børn",
+      "name": "Cecilia Nielsd.*",
+      "relationship": "child",
       "age": "1"
     },
     {
-      "name": "Anders  Johannessen",
+      "name": "Anders Johannessen",
       "maritalStatus": "married",
       "occupation": "Huusmand",
       "age": "40"
     },
     {
-      "name": "Kristi  Knudsd.",
+      "name": "Kristi Knudsd.",
       "relationship": "wife",
       "maritalStatus": "married",
       "age": "53"
     },
     {
-      "name": "Johannes  Anders.*",
-      "relationship": "børn",
+      "name": "Johannes Anders.*",
+      "relationship": "child",
       "age": "10"
     },
     {
-      "name": "Ragnilda  Andersd.*",
-      "relationship": "børn",
+      "name": "Ragnilda Andersd.*",
+      "relationship": "child",
       "age": "15"
     },
     {
-      "name": "Anders  Olsen",
+      "name": "Anders Olsen",
       "maritalStatus": "married",
       "occupation": "Gaardbruger",
       "age": "34"
     },
     {
-      "name": "Kari  Arnesd.",
+      "name": "Kari Arnesd.",
       "relationship": "wife",
       "maritalStatus": "married",
       "age": "23"
     },
     {
-      "name": "Berte  Andersd.",
-      "relationship": "børn",
+      "name": "Berte Andersd.",
+      "relationship": "child",
       "age": "13"
     },
     {
-      "name": "Ole  Anders.*",
-      "relationship": "børn",
+      "name": "Ole Anders.*",
+      "relationship": "child",
       "age": "2",
       "isSelected": true,
       "gender": "male"
     },
     {
-      "name": "Steinor  Andersd.*",
-      "relationship": "børn",
+      "name": "Steinor Andersd.*",
+      "relationship": "child",
       "age": "1"
     },
     {
-      "name": "Elias  Olsen",
+      "name": "Elias Olsen",
       "occupation": "Dagarbeider",
       "age": "29"
     },
     {
-      "name": "Kisti  Olsd.",
+      "name": "Kisti Olsd.",
       "occupation": "Tiener",
       "age": "27"
     },
     {
-      "name": "Siur  Olsen",
+      "name": "Siur Olsen",
       "occupation": "Tiener",
       "age": "23"
     },
     {
-      "name": "Christopher  Christens.",
+      "name": "Christopher Christens.",
       "occupation": "Tiener",
       "age": "17"
     },
     {
-      "name": "Inga  Pedersd.",
+      "name": "Inga Pedersd.",
       "occupation": "Tiener",
       "age": "26"
     },
     {
-      "name": "Christen  Pedersen",
+      "name": "Christen Pedersen",
       "occupation": "Tiener",
       "age": "14"
     },
     {
-      "name": "Anders  Olsen",
+      "name": "Anders Olsen",
       "maritalStatus": "married",
       "occupation": "Huusmand",
       "age": "69"
     },
     {
-      "name": "Clara  Larsd.",
+      "name": "Clara Larsd.",
       "relationship": "wife",
       "maritalStatus": "married",
       "age": "57"
     },
     {
-      "name": "Ole  Iversen",
+      "name": "Ole Iversen",
       "occupation": "Tiener",
       "age": "17"
     },
     {
-      "name": "Ole  Monsen",
+      "name": "Ole Monsen",
       "maritalStatus": "married",
       "occupation": "Huusmand",
       "age": "67"
     },
     {
-      "name": "Kari  Larsd.",
+      "name": "Kari Larsd.",
       "relationship": "wife",
       "maritalStatus": "married",
       "age": "60"
     },
     {
-      "name": "Lars  Olsen",
+      "name": "Lars Olsen",
       "age": "17"
     },
     {
-      "name": "Anna  Olsd.",
+      "name": "Anna Olsd.",
       "occupation": "Tienestepige",
       "age": "20"
     },
     {
-      "name": "Peder  Johanness.",
+      "name": "Peder Johanness.",
       "maritalStatus": "married",
       "occupation": "Huusmand",
       "age": "37"
     },
     {
-      "name": "Mari  Hansd.",
+      "name": "Mari Hansd.",
       "relationship": "wife",
       "maritalStatus": "married",
       "age": "47"
     },
     {
-      "name": "Hans  Pedersen",
+      "name": "Hans Pedersen",
       "relationship": "son",
       "age": "10"
     }

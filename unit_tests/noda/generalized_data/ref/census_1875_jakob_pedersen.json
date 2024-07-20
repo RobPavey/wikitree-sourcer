@@ -21,6 +21,7 @@
   "birthPlace": {
     "placeString": "Lade Strinden"
   },
+  "relationshipToHead": "son",
   "householdArrayFields": [
     "name",
     "relationship",
@@ -122,5 +123,17 @@
       "residentialStatus": "resides permanently"
     }
   ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Peder Jakobsen"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Anne Martha Sivertsdatter"
+      }
+    }
+  },
   "hasValidData": true
 }

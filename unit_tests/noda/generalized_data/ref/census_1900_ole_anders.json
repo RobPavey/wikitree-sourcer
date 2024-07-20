@@ -21,6 +21,7 @@
   "birthPlace": {
     "placeString": "Hølland %Maridalen%"
   },
+  "relationshipToHead": "head",
   "maritalStatus": "married",
   "occupation": "Intet Arbeide Fattigunderstøttelse",
   "householdArrayFields": [
@@ -70,7 +71,7 @@
       "residentialStatus": "resides permanently"
     },
     {
-      "name": "Ole  Anders",
+      "name": "Ole Anders",
       "relationship": "head",
       "maritalStatus": "married",
       "occupation": "Intet Arbeide Fattigunderstøttelse",

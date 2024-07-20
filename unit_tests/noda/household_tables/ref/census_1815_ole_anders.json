@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Status || Occupation || Age || Relation\n|-\n| ... || ... || ... || ... || ...\n|-\n| Berte  Andersd. ||  ||  || 13 || Børn\n|-\n| '''Ole  Anders.*''' ||  ||  || '''2''' || '''Børn'''\n|-\n| Steinor  Andersd.* ||  ||  || 1 || Børn\n|-\n| ... || ... || ... || ... || ...\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Status || Occupation || Age || Relation\n|-\n| ... || ... || ... || ... || ...\n|-\n| Berte Andersd. ||  ||  || 13 || Child\n|-\n| '''Ole Anders.*''' ||  ||  || '''2''' || '''Child'''\n|-\n| Steinor Andersd.* ||  ||  || 1 || Child\n|-\n| ... || ... || ... || ... || ...\n|}"
   }
 }
