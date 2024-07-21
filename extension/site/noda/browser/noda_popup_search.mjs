@@ -28,7 +28,7 @@ import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const nodaStartYear = 1600;
+const nodaStartYear = 1200;
 const nodaEndYear = 2020;
 
 function shouldShowSearchMenuItem(data, filter) {

@@ -24,9 +24,17 @@ SOFTWARE.
 
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
+// Example search:
+// https://www.digitalarkivet.no/en/search/persons/advanced?
+//  from=1885&to=1978&firstname=Johanna&lastname=Johansdatter&genders%5B%5D=k
+//  &birth_year_from=1885&birth_year_to=1887&birth_date=06-10
+//  &birth_place=S%C3%B8r-Tr%C3%B8ndelag%2C+Norway&domicile=
+//  &position=&event_year_from=&event_year_to=&event_date=
+//  &related_first_name=&related_last_name=&related_birth_year=
+
 class NodaUriBuilder {
   constructor() {
-    this.uri = "https://www.noda.org.uk/cgi/search.pl";
+    this.uri = "https://www.digitalarkivet.no/en/search/persons/advanced";
     this.searchTermAdded = false;
   }
 
@@ -41,6 +49,9 @@ class NodaUriBuilder {
       this.uri = this.uri.concat("&", string);
     }
   }
+
+  // https://www.digitalarkivet.no/en/search/persons/advanced?birth_year_from=1886&birth_year_to=1886&firstname=Johanna&lastname=Johansdatter%20Wiggen%20Ingdal%20Johansen&from=1886&to=1974
+  // &genders%5B%5D=k
 
   addSearchParameter(parameter, value) {
     if (value == undefined || value == "") {
@@ -57,44 +68,52 @@ class NodaUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
-  }
-
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
   addStartYear(string) {
-    this.addSearchParameter("start", string);
+    this.addSearchParameter("from", string);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("end", string);
+    this.addSearchParameter("to", string);
   }
 
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
+  addLastName(string) {
+    this.addSearchParameter("lastname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
+  addFirstName(string) {
+    this.addSearchParameter("firstname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addGender(string) {
+    let gender = "";
+    if (string == "male") {
+      gender = "m";
+    } else {
+      gender = "k";
+    }
+    this.addSearchParameter("genders%5B%5D", StringUtils.removeExtendedAsciiCharacters(gender));
+  }
+
+  addBirthDate(year, month, day) {
+    if (year) {
+      this.addSearchParameter("birth_year_from", StringUtils.removeExtendedAsciiCharacters(year));
+      this.addSearchParameter("birth_year_to", StringUtils.removeExtendedAsciiCharacters(year));
+    }
+    if (month && day) {
+      this.addSearchParameter("birth_date", month + "-" + day);
+    }
+  }
+
+  addBirthPlace(string) {
+    this.addSearchParameter("birth_place", StringUtils.removeExtendedAsciiCharacters(string));
+  }
+
+  addRelatedLastName(string) {
+    this.addSearchParameter("related_last_name", StringUtils.removeExtendedAsciiCharacters(string));
+  }
+
+  addRelatedFirstName(string) {
+    this.addSearchParameter("related_first_name", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   getUri() {
