@@ -22,7 +22,9 @@
   "ageAtEvent": "54",
   "spouses": [
     {
-      "name": "Sedsel Erichsd."
+      "name": {
+        "name": "Sedsel Erichsd"
+      }
     }
   ],
   "hasValidData": true

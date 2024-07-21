@@ -1528,7 +1528,8 @@ function addBuildCitationMenuItem(
 }
 
 function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, regeneralizeFunction, userInputFunction) {
-  if (data.extractedData.pageType && data.extractedData.pageType != "record") {
+  let ed = data.extractedData;
+  if (ed.pageType && !(ed.pageType == "record" || ed.pageType == "image")) {
     addShowCitationAssistantMenuItem(menu);
     return;
   }
@@ -1542,6 +1543,9 @@ function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, rege
   }
 
   let typeStrings = ["inline", "narrative", "source"];
+  if (ed.pageType == "image") {
+    typeStrings = ["inline", "source"];
+  }
   for (let typeString of typeStrings) {
     if (menuItemsOption == "all" || menuItemsOption == typeString) {
       addBuildCitationMenuItem(
@@ -1556,6 +1560,12 @@ function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, rege
         othersOnSubmenu
       );
     }
+  }
+
+  if (ed.pageType == "image") {
+    // Images typically do not have a lot of info for a citation
+    // so show citation assistant as well.
+    addShowCitationAssistantMenuItem(menu);
   }
 }
 

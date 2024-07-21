@@ -29,6 +29,11 @@ import { buildCitation } from "../core/noda_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 async function setupNodaPopupMenu(extractedData) {
+  let doNotIncludeSearch = false;
+  if (extractedData.pageType != "record") {
+    doNotIncludeSearch = true;
+  }
+
   let input = {
     extractedData: extractedData,
     extractFailedMessage: "It looks like a Digitalarkivet page but not a record or image page.",
@@ -37,6 +42,7 @@ async function setupNodaPopupMenu(extractedData) {
     buildCitationFunction: buildCitation,
     buildHouseholdTableFunction: buildHouseholdTable,
     siteNameToExcludeFromSearch: "noda",
+    doNotIncludeSearch: doNotIncludeSearch,
   };
   setupSimplePopupMenu(input);
 }

@@ -318,22 +318,40 @@ class NodaEdReader extends ExtractedDataReader {
 
     // determine record type and role
     let recordType = RT.Unclassified;
-    for (let eventType of eventTypes) {
-      for (let crumb of this.ed.breadcrumbs) {
-        if (crumb == eventType.breadcrumbText[this.urlLang]) {
-          recordType = eventType.recordType;
+    if (ed.pageType == "record") {
+      for (let eventType of eventTypes) {
+        for (let crumb of this.ed.breadcrumbs) {
+          if (crumb == eventType.breadcrumbText[this.urlLang]) {
+            recordType = eventType.recordType;
+            break;
+          }
+        }
+        if (recordType != RT.Unclassified) {
           break;
         }
       }
-      if (recordType != RT.Unclassified) {
-        break;
-      }
-    }
 
-    if (recordType == RT.BirthOrBaptism) {
-      let baptismDate = this.getPanelDataValue("Births and baptisms", "baptismDate");
-      if (baptismDate) {
-        recordType = RT.Baptism;
+      if (recordType == RT.BirthOrBaptism) {
+        let baptismDate = this.getPanelDataValue("Births and baptisms", "baptismDate");
+        if (baptismDate) {
+          recordType = RT.Baptism;
+        }
+      }
+    } else if (ed.pageType == "image") {
+      if (ed.fileTitle) {
+        // Examples:
+        // "RA, Folketelling 1891 for 1029 Sør-Audnedal herred, 1891, s. 5602"
+        //    Census 1891
+        // "Voss sokneprestembete, SAB/A-79001/H/Hab: Klokkerbok nr. C 1, 1886-1899, s. 29"
+        //    sokneprestembete = parish priest
+        // "Ministerialprotokoller, klokkerbøker og fødselsregistre - Møre og Romsdal, SAT/A-1454/511/L0137: Ministerialbok nr. 511A04, 1787-1816, s. 41Ministerialprotokoller, klokkerbøker og fødselsregistre - Møre og Romsdal, SAT/A-1454/511/L0137: Ministerialbok nr. 511A04, 1787-1816, s. 41"
+        //    Clock book and birth registers
+        // "Nannestad prestekontor Kirkebøker, SAO/A-10414a/F/Fa/L0010: Ministerialbok nr. I 10, 1840-1850, s. 227"
+        //    A burial in Nannestad parish. Nothing in title says burial - just church book.
+        let lcTitle = ed.fileTitle.toLowerCase();
+        if (lcTitle.includes("folketelling")) {
+          recordType = RT.Census;
+        }
       }
     }
 
@@ -967,17 +985,19 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let givenName = this.getRecordDataValue("givenName");
-    let lastName = this.getRecordDataValue("lastName");
-    if (givenName || lastName) {
-      return this.makeNameObjFromForenamesAndLastName(givenName, lastName);
-    }
+    if (this.ed.pageType == "record") {
+      let givenName = this.getRecordDataValue("givenName");
+      let lastName = this.getRecordDataValue("lastName");
+      if (givenName || lastName) {
+        return this.makeNameObjFromForenamesAndLastName(givenName, lastName);
+      }
 
-    if (this.recordType == RT.Census) {
-      if (this.ed.headingTextParts.length == 1) {
-        let fullName = this.ed.headingTextParts[0];
-        if (fullName) {
-          return this.makeNameObjFromFullName(fullName);
+      if (this.recordType == RT.Census) {
+        if (this.ed.headingTextParts && this.ed.headingTextParts.length == 1) {
+          let fullName = this.ed.headingTextParts[0];
+          if (fullName) {
+            return this.makeNameObjFromFullName(fullName);
+          }
         }
       }
     }
@@ -1240,9 +1260,12 @@ class NodaEdReader extends ExtractedDataReader {
           if ((role == brideRole || role == groomRole) && role != primaryRole) {
             let name = this.getPersonDataValue(person, "name");
             if (name) {
-              let spouseObj = this.makeSpouseObj(name);
-              if (spouseObj) {
-                return [spouseObj];
+              let nameObj = this.makeNameObjFromFullName(name);
+              if (nameObj) {
+                let spouseObj = this.makeSpouseObj(nameObj);
+                if (spouseObj) {
+                  return [spouseObj];
+                }
               }
             }
           }
