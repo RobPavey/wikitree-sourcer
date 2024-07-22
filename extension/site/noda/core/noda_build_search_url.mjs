@@ -39,7 +39,16 @@ function buildSearchUrl(buildUrlInput) {
   builder.addFirstName(forenames);
 
   let lastName = gd.inferLastNames();
-  builder.addLastName(lastName);
+  if (lastName) {
+    let lastNameParts = lastName.split(" ");
+    if (lastNameParts.length > 0) {
+      let lastNames = lastNameParts[0];
+      for (let index = 1; index < lastNameParts.length; index++) {
+        lastNames += " | " + lastNameParts[index];
+      }
+      builder.addLastName(lastNames);
+    }
+  }
 
   let gender = gd.personGender;
   builder.addGender(gender);
@@ -47,8 +56,11 @@ function buildSearchUrl(buildUrlInput) {
   let birthYear = gd.inferBirthYear();
   builder.addBirthDate(birthYear);
 
+  /*
+  Don't add birth place by default
   let birthPlace = gd.inferBirthPlace();
   builder.addBirthPlace(birthPlace);
+  */
 
   const url = builder.getUri();
 
