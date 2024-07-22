@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "2.3.8",
+  "version": "2.4.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": ["storage", "contextMenus"],
   "host_permissions": [
@@ -81,6 +81,11 @@
       "matches": ["*://*.cwgc.org/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/cwgc/browser/cwgc_content.js"]
+    },
+    {
+      "matches": ["*://*.digitalarkivet.no/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/noda/browser/noda_content.js"]
     },
     {
       "matches": [
@@ -284,6 +289,10 @@
     {
       "resources": ["site/cwgc/core/cwgc_extract_data.mjs"],
       "matches": ["*://*.cwgc.org/*"]
+    },
+    {
+      "resources": ["site/noda/core/noda_extract_data.mjs"],
+      "matches": ["*://*.digitalarkivet.no/*"]
     },
     {
       "resources": ["site/fg/core/fg_extract_data.mjs"],
