@@ -1,0 +1,160 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Carl Fredrik Motzfeldt"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1865"
+  },
+  "eventPlace": {
+    "placeString": "Munkegaden, Trondheim, Sør-Trøndelag, Norway",
+    "parish": "Trondheim",
+    "county": "Sør-Trøndelag",
+    "country": "Norway"
+  },
+  "birthPlace": {
+    "placeString": "Rygge"
+  },
+  "ageAtEvent": "58",
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "occupation": "Stiftamtmand",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "occupation",
+    "age",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Carl Fredrik Motzfeldt",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Stiftamtmand",
+      "age": "58",
+      "birthPlace": "Rygge",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Emilie Marie Erneste Motzfeldt",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "51",
+      "birthPlace": "Oslo"
+    },
+    {
+      "name": "Peter Motzfeldt",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "age": "23",
+      "birthPlace": "Aker"
+    },
+    {
+      "name": "Anna Pauline Motzfeldt",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "age": "21",
+      "birthPlace": "Oslo"
+    },
+    {
+      "name": "Ludvig Emil Motzfeldt",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "age": "19",
+      "birthPlace": "Christiania"
+    },
+    {
+      "name": "Georg Frithiof Motzfeldt",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "age": "14",
+      "birthPlace": "Oslo"
+    },
+    {
+      "name": "Arthur Motzfeldt",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "age": "11",
+      "birthPlace": "Tromsø"
+    },
+    {
+      "name": "Marit Olsdatter Mjøen",
+      "maritalStatus": "single",
+      "occupation": "Tjenestepige",
+      "age": "42",
+      "birthPlace": "Opdal"
+    },
+    {
+      "name": "Anne Johanne Skjelstad",
+      "maritalStatus": "single",
+      "occupation": "Tjenestepige",
+      "age": "21",
+      "birthPlace": "Levanger"
+    },
+    {
+      "name": "Christian Due",
+      "maritalStatus": "married",
+      "occupation": "Indrullerings chef",
+      "age": "60",
+      "birthPlace": "Trondhjem"
+    },
+    {
+      "name": "Kirstine Marie Due",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "56",
+      "birthPlace": "Porsgrund"
+    },
+    {
+      "name": "Hanna Due",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "age": "30",
+      "birthPlace": "Tromsøe"
+    },
+    {
+      "name": "Marie Regine Lyng",
+      "maritalStatus": "single",
+      "occupation": "Tjenestepige",
+      "age": "27",
+      "birthPlace": "Trondhjem"
+    },
+    {
+      "name": "Ingebrigt Petersen",
+      "maritalStatus": "widow",
+      "occupation": "Vagtmester",
+      "age": "48",
+      "birthPlace": "Østerdalen"
+    },
+    {
+      "name": "Johanne Christine Petersen",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "age": "16",
+      "birthPlace": "Trondhjem"
+    },
+    {
+      "name": "Johan Adolf Petersen",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "age": "14",
+      "birthPlace": "Trondhjem"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Emilie Marie Erneste Motzfeldt"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "hasValidData": true
+}

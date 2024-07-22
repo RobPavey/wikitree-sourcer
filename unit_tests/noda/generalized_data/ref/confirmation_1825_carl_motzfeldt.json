@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Confirmation",
+  "name": {
+    "lastName": "Motzfeldt",
+    "forenames": "Carl Frederik"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "10 Apr 1825"
+  },
+  "eventPlace": {
+    "placeString": "Oslo Domkirke, Oslo, Norway",
+    "county": "Oslo",
+    "country": "Norway"
+  },
+  "birthDate": {
+    "yearString": "1808",
+    "qualifier": 2
+  },
+  "ageAtEvent": "16 3/4",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Caro von Motzfeldt"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Frederikke Elisabeth født Wessel"
+      }
+    }
+  },
+  "hasValidData": true
+}

@@ -19,14 +19,15 @@
   "relationshipToHead": "child",
   "householdArrayFields": [
     "name",
+    "relationship",
     "maritalStatus",
     "occupation",
-    "age",
-    "relationship"
+    "age"
   ],
   "householdArray": [
     {
       "name": "Christopher Thomasen",
+      "relationship": "head",
       "maritalStatus": "married",
       "occupation": "Gaardbruger",
       "age": "50"

@@ -44,6 +44,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/census/person/pf01051099000750",
   },
   {
+    caseName: "census_1865_carl_motzfeldt",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01038310006925",
+  },
+  {
     caseName: "census_1875_jakob_pedersen",
     url: "https://www.digitalarkivet.no/en/census/person/pf01052377002789",
   },
@@ -66,12 +70,20 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/census/person/pf01037045214297",
   },
   {
+    caseName: "confirmation_1825_carl_motzfeldt",
+    url: "https://www.digitalarkivet.no/en/view/279/pk00000002723491",
+  },
+  {
     caseName: "emigrant_1872_ole_anders",
     url: "https://www.digitalarkivet.no/en/view/8/pe00000000917949",
   },
   {
     caseName: "marriage_1814_ole_ingmundsen",
     url: "https://www.digitalarkivet.no/en/view/327/pv00000001749450",
+  },
+  {
+    caseName: "probate_1879_kari_nilsdtr",
+    url: "https://www.digitalarkivet.no/en/view/27/pa00000000013016",
   },
 
   // images

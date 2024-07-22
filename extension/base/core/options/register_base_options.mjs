@@ -682,6 +682,46 @@ const narrativeBirthOrBaptismOptionsGroup = {
   options: [narrativeRecordTypeNameOrPronounOption, narrativeIncludeParentageOption, narrativeParentageFormatOption],
 };
 
+const narrativeConfirmationOptionsGroup = {
+  category: "narrative",
+  subcategory: "confirmation",
+  tab: "narrative",
+  subsection: "confirmation",
+  options: [
+    narrativeRecordTypeNameOrPronounOption,
+    {
+      optionName: "sentenceStructure",
+      type: "select",
+      label: "Sentence structure",
+      values: [
+        {
+          value: "parentsBornAndConf",
+          text: "<name/pronoun>[<parentage>] was[ born on <date> and] confirmed on <date> in <place>.",
+        },
+        {
+          value: "parentsBornSemiConf",
+          text: "<name/pronoun>[<parentage>] was[ born on <date>;] confirmed on <date> in <place>.",
+        },
+      ],
+      defaultValue: "parentsBornAndConf",
+    },
+    narrativeIncludeParentageOption,
+    narrativeParentageFormatOption,
+    {
+      optionName: "includeBirthDate",
+      type: "checkbox",
+      label: "Include birth date if known",
+      defaultValue: true,
+    },
+    {
+      optionName: "includeDeathDate",
+      type: "checkbox",
+      label: "Include death date if known",
+      defaultValue: true,
+    },
+  ],
+};
+
 const narrativeMarriageOptionsGroup = {
   category: "narrative",
   subcategory: "marriage",
@@ -1596,6 +1636,7 @@ registerSubheadingForOptions("narrative", "birthReg", "evt", "When date and plac
 registerSubheadingForOptions("narrative", "birthReg", "reg", "When date and place are for registration, not birth");
 registerSubsectionForOptions("narrative", "burial", "Burial");
 registerSubsectionForOptions("narrative", "census", "Census");
+registerSubsectionForOptions("narrative", "confirmation", "Confirmation");
 registerSubsectionForOptions("narrative", "death", "Death");
 registerSubsectionForOptions("narrative", "deathReg", "Death Registration");
 registerSubheadingForOptions("narrative", "deathReg", "evt", "When date and place are for death event");
@@ -1639,6 +1680,7 @@ registerOptionsGroup(narrativeBirthRegEvtOptionsGroup);
 registerOptionsGroup(narrativeBirthRegRegOptionsGroup);
 registerOptionsGroup(narrativeBurialOptionsGroup);
 registerOptionsGroup(narrativeCensusOptionsGroup);
+registerOptionsGroup(narrativeConfirmationOptionsGroup);
 registerOptionsGroup(narrativeDeathOptionsGroup);
 registerOptionsGroup(narrativeDeathRegOptionsGroup);
 registerOptionsGroup(narrativeDeathRegEvtOptionsGroup);

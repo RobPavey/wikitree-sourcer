@@ -31,6 +31,9 @@ const regressionData = [
     caseName: "census_1815_ole_anders",
   },
   {
+    caseName: "census_1865_carl_motzfeldt",
+  },
+  {
     caseName: "census_1875_jakob_pedersen",
   },
   {

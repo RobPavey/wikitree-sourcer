@@ -1,0 +1,102 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/27/pa00000000013016",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Probate register for Nordhordland judicial district 1702-1857",
+    "Probate",
+    "Kari Nilsdtr"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Probate: 1829-1833",
+      "collectionNameParts": [
+        "Probate",
+        "1829-1833"
+      ]
+    }
+  ],
+  "heading": "Person: Kari Nilsdtr",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Kari Nilsdtr"
+  ],
+  "recordData": {
+    "Given name": {
+      "textString": "Kari"
+    },
+    "Last name": {
+      "textString": "Nilsdtr"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Role": {
+      "textString": "person"
+    },
+    "Residence": {
+      "textString": "Grøttveit"
+    },
+    "Skipreide (smaller judicial area)": {
+      "textString": "Alenfit"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Person",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "Name",
+          "personNameParts": [
+            "Kari Nilsdtr"
+          ],
+          "personHeading": "Name Kari Nilsdtr",
+          "Role": {
+            "textString": "person"
+          },
+          "Residence": {
+            "textString": "Grøttveit"
+          }
+        }
+      ]
+    },
+    {
+      "panelTitle": "Probate",
+      "Year": {
+        "textString": "1829-1833"
+      },
+      "Protocol reference": {
+        "textString": "18"
+      },
+      "Page": {
+        "textString": "608b"
+      }
+    }
+  ],
+  "permanentId": "pa00000000013016",
+  "sourceInformation": "Probate register for Nordhordland judicial district 1702-1857",
+  "sourceData": {
+    "County": {
+      "textString": "Hordaland, Sogn og Fjordane"
+    },
+    "Municipality (1947)": {
+      "textString": "Askøy, Fana, Fjell, Gulen, Hamre, Haus, Herdla, Hosanger, Lindås, Manger, Sund"
+    },
+    "Geographic area": {
+      "textString": "Nordhordland jud. dist."
+    },
+    "Start year": {
+      "textString": "1702"
+    },
+    "End year": {
+      "textString": "1857"
+    }
+  }
+}

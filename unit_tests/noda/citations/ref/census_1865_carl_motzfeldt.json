@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1865 Census''':\n\"1865 census for Trondheim\"<br/>\nCensus district: 000; Urban residence: 0478 Munkegaden; Farm no.: 23<br/>\n[https://media.digitalarkivet.no/ft20090804341004 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/census/person/pf01038310006925 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nCarl Fredrik Motzfeldt (58), married, Stiftamtmand, head of household in Munkegaden, Trondheim, Sør-Trøndelag, Norway. Born in Rygge.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1865 census Carl (age 58), Stiftamtmand, was the married head of household in Munkegaden, Trondheim, Sør-Trøndelag, Norway.<ref>\n'''1865 Census''':\n\"1865 census for Trondheim\"<br/>\nCensus district: 000; Urban residence: 0478 Munkegaden; Farm no.: 23<br/>\n[https://media.digitalarkivet.no/ft20090804341004 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/census/person/pf01038310006925 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nCarl Fredrik Motzfeldt (58), married, Stiftamtmand, head of household in Munkegaden, Trondheim, Sør-Trøndelag, Norway. Born in Rygge.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1865 Census''': \"1865 census for Trondheim\"<br/>Census district: 000; Urban residence: 0478 Munkegaden; Farm no.: 23<br/>[https://media.digitalarkivet.no/ft20090804341004 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/census/person/pf01038310006925 Digitalarkivet Record] (accessed 6 May 2021)<br/>Carl Fredrik Motzfeldt (58), married, Stiftamtmand, head of household in Munkegaden, Trondheim, Sør-Trøndelag, Norway. Born in Rygge.",
+    "type": "source"
+  }
+}

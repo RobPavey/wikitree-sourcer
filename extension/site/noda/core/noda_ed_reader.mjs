@@ -53,6 +53,14 @@ var eventTypes = [
     },
   },
   {
+    recordType: RT.Confirmation,
+    breadcrumbText: {
+      en: "Confirmations",
+      bo: "Konfirmerte",
+      nn: "Konfirmerte",
+    },
+  },
+  {
     recordType: RT.Emigration,
     breadcrumbText: {
       en: "Emigration",
@@ -66,6 +74,14 @@ var eventTypes = [
       en: "Marriages",
       bo: "Viede",
       nn: "Viede",
+    },
+  },
+  {
+    recordType: RT.Probate,
+    breadcrumbText: {
+      en: "Probate",
+      bo: "Skifteforretning",
+      nn: "Skifteforretning",
     },
   },
 ];
@@ -111,6 +127,11 @@ const fieldLabels = {
     bo: ["Begravelsesdato"],
     nn: ["Gravferdsdato"],
   },
+  confirmationDate: {
+    en: ["Confirmation date"],
+    bo: ["Konfirmasjonsdato"],
+    nn: ["Konfirmasjonsdato"],
+  },
   county: {
     en: ["County"],
     bo: ["Fylke"],
@@ -136,6 +157,16 @@ const fieldLabels = {
     bo: ["Familiestilling"],
     nn: ["Familiestilling"],
   },
+  farmNumber: {
+    en: ["Gårdens nr."],
+    bo: ["Gårdens nr."],
+    nn: ["Gardens nr."],
+  },
+  floor: {
+    en: ["Floor"],
+    bo: ["Etasje"],
+    nn: ["Etasje"],
+  },
   gender: {
     en: ["Gender"],
     bo: ["Kjønn"],
@@ -150,6 +181,11 @@ const fieldLabels = {
     en: ["Last name"],
     bo: ["Etternavn"],
     nn: ["Etternamn"],
+  },
+  location: {
+    en: ["Location"],
+    bo: ["Plassering"],
+    nn: ["Plassering"],
   },
   maritalStatus: {
     en: ["Marital status"],
@@ -196,13 +232,23 @@ const fieldLabels = {
     bo: ["Personnr"],
     nn: ["Personnr"],
   },
+  probateDate: {
+    en: ["Date of probate"],
+    bo: ["Skifteregistreringdato"],
+    nn: ["Skifteregistreringdato"],
+  },
   residentialStatus: {
     en: ["Residential status"],
     bo: ["Bostatus"],
     nn: ["Bustatus"],
   },
+  residence: {
+    en: ["Residence"],
+    bo: ["Bosted"],
+    nn: ["Bustad"],
+  },
   role: {
-    en: ["Role"],
+    en: ["Role", "Roll"],
     bo: ["Rolle"],
     nn: ["Rolle"],
   },
@@ -210,6 +256,11 @@ const fieldLabels = {
     en: ["Serial no."],
     bo: ["Løpenr"],
     nn: ["Løpenr"],
+  },
+  smallerJudicialArea: {
+    en: ["Skipreide (smaller judicial area)"],
+    bo: ["Skipreide"],
+    nn: ["Skipreide"],
   },
   year: {
     en: ["Year"],
@@ -229,6 +280,11 @@ const panelTitles = {
     bo: "Begravde",
     nn: "Gravlagde",
   },
+  Confirmations: {
+    en: "Confirmations",
+    bo: "Konfirmerte",
+    nn: "Konfirmerte",
+  },
   Emigration: {
     en: "Emigration",
     bo: "Emigrasjon",
@@ -238,6 +294,11 @@ const panelTitles = {
     en: "Marriages",
     bo: "Viede",
     nn: "Vigde",
+  },
+  Probate: {
+    en: "Probate",
+    bo: "Skifteforretning",
+    nn: "Skifteforretning",
   },
 };
 
@@ -296,6 +357,7 @@ const familyPositionValues = {
   børn: "child",
   tj: "servant", // tjenestetyende
   tjener: "servant",
+  tjenestepige: "maid",
   "moder til husfaderen": "mother",
   logerende: "lodger",
   fl: "lodger", // losjerende, hørende til familien = lodger, related to the family
@@ -400,11 +462,55 @@ class NodaEdReader extends ExtractedDataReader {
     }
   }
 
+  makeDateObjFromExtendedDate(dateString) {
+    // An extended date string can look like this:
+    // 1st Søndag efter Paaske 1825 [1825-04-10]
+    if (/.* \[\d\d\d\d\-\d\d\-\d\d\]$/.test(dateString)) {
+      let yyyymmddDateString = dateString.replace(/.* \[(\d\d\d\d\-\d\d\-\d\d)\]$/, "$1");
+      return this.makeDateObjFromYyyymmddDate(yyyymmddDateString, "-");
+    }
+  }
+
   makeDateObjFromPanelDataYearAndMmDd(panelTitleKey, panelDataKey) {
     let mmDdString = this.getPanelDataValue(panelTitleKey, panelDataKey);
     let yearString = this.getPanelDataValue(panelTitleKey, "year");
     if (mmDdString && yearString) {
       return this.makeDateObjFromYearAndMmDd(yearString, mmDdString);
+    }
+  }
+
+  makeDateObjFromPanelDataExtendedDate(panelTitleKey, panelDataKey) {
+    let dateString = this.getPanelDataValue(panelTitleKey, panelDataKey);
+    let yearString = this.getPanelDataValue(panelTitleKey, "year");
+    if (dateString) {
+      return this.makeDateObjFromExtendedDate(dateString);
+    }
+  }
+
+  makeDateObjFromPanelDataYearRangeAndDateString(panelTitleKey, panelDataKey) {
+    let dateString = this.getPanelDataValue(panelTitleKey, panelDataKey);
+    let yearString = this.getPanelDataValue(panelTitleKey, "year");
+
+    let mmDdString = "";
+    if (dateString) {
+      if (/^\d\d\d\d\-\d\d\-\d\d$/.test(dateString)) {
+        return this.makeDateObjFromYyyymmddDate(dateString, "-");
+      }
+      if (/^\d\d\-\d\d$/.test(dateString)) {
+        mmDdString = dateString;
+      }
+    }
+    if (mmDdString && yearString) {
+      return this.makeDateObjFromYearAndMmDd(yearString, mmDdString);
+    }
+
+    if (yearString) {
+      if (/^\d\d\d\d$/.test(yearString)) {
+        return this.makeDateObjFromYear(yearString);
+      }
+      if (/^\d\d\d\d\-\d\d\d\d$/.test(yearString)) {
+        return this.makeDateObjFromYear(yearString);
+      }
     }
   }
 
@@ -607,7 +713,7 @@ class NodaEdReader extends ExtractedDataReader {
       fullPlaceName += sourceInfoParishName;
     }
 
-    if (countyName && !fullPlaceName.includes(countyName)) {
+    if (countyName && !fullPlaceName.includes(countyName + ",")) {
       if (fullPlaceName) {
         fullPlaceName += ", ";
       }
@@ -640,7 +746,12 @@ class NodaEdReader extends ExtractedDataReader {
       panelPlace = this.getPanelDataValue(panelTitleKey, "parishChurch");
     }
 
-    return this.makePlaceObjFromLocalPlaceNameAndSourceData(panelPlace);
+    let place = panelPlace;
+    if (recordDataPlace && !panelPlace) {
+      place = recordDataPlace;
+    }
+
+    return this.makePlaceObjFromLocalPlaceNameAndSourceData(place);
   }
 
   makePlaceObjForCensus() {
@@ -958,6 +1069,12 @@ class NodaEdReader extends ExtractedDataReader {
         } else {
           return familyPosition;
         }
+      } else {
+        // sometimes the head has a blank family position
+        // e.g.: https://www.digitalarkivet.no/en/census/person/pf01038310006925
+        if (person.personLabel == "001") {
+          return "head";
+        }
       }
     }
 
@@ -1024,6 +1141,10 @@ class NodaEdReader extends ExtractedDataReader {
       return this.makeDateObjFromPanelDataYearAndMmDd("Burials", "burialDate");
     } else if (this.recordType == RT.Marriage) {
       return this.makeDateObjFromPanelDataYearAndMmDd("Marriages", "marriageDate");
+    } else if (this.recordType == RT.Confirmation) {
+      return this.makeDateObjFromPanelDataExtendedDate("Confirmations", "confirmationDate");
+    } else if (this.recordType == RT.Probate) {
+      return this.makeDateObjFromPanelDataYearRangeAndDateString("Probate", "probateDate");
     } else if (this.recordType == RT.Emigration) {
       let dateString = this.getRecordDataValue("emigrationDate");
       if (dateString) {
@@ -1046,6 +1167,10 @@ class NodaEdReader extends ExtractedDataReader {
       return this.makePlaceObjFromRecordPanelAndSourceData("", "Marriages", "marriagePlace");
     } else if (this.recordType == RT.Burial) {
       return this.makePlaceObjFromRecordPanelAndSourceData("", "Burials", "marriagePlace");
+    } else if (this.recordType == RT.Confirmation) {
+      return this.makePlaceObjFromRecordPanelAndSourceData("", "Confirmations", "parishChurch");
+    } else if (this.recordType == RT.Probate) {
+      return this.makePlaceObjFromRecordPanelAndSourceData("smallerJudicialArea", "", "");
     } else if (this.recordType == RT.Emigration) {
       return this.makePlaceObjFromRecordPanelAndSourceData("", "Emigration", "parish");
     } else if (this.recordType == RT.Census) {
@@ -1283,17 +1408,52 @@ class NodaEdReader extends ExtractedDataReader {
     let fatherNameString = "";
     let motherNameString = "";
 
-    for (let person of people) {
-      let role = this.getPersonDataValue(person, "role");
-      if (role == "far") {
-        let name = this.getPersonDataValue(person, "name");
-        if (name) {
-          fatherNameString = name;
+    if (this.recordType == RT.Marriage) {
+      const brideRole = "brur";
+      const groomRole = "brudgom";
+      let primaryRole = this.getRecordDataValue("role");
+      if (!primaryRole) {
+        let primaryPerson = this.getPrimaryPerson();
+        if (primaryPerson) {
+          primaryRole = this.getPersonDataValue(primaryPerson, "role");
         }
-      } else if (role == "mor") {
-        let name = this.getPersonDataValue(person, "name");
-        if (name) {
-          motherNameString = name;
+      }
+
+      if (primaryRole == brideRole || primaryRole == groomRole) {
+        for (let person of people) {
+          let role = this.getPersonDataValue(person, "role");
+          if (
+            (role == "brudgommens far" && primaryRole == groomRole) ||
+            (role == "bruras far" && primaryRole == brideRole)
+          ) {
+            let name = this.getPersonDataValue(person, "name");
+            if (name) {
+              fatherNameString = name;
+            }
+          } else if (
+            (role == "brudgommens mor" && primaryRole == groomRole) ||
+            (role == "bruras mor" && primaryRole == brideRole)
+          ) {
+            let name = this.getPersonDataValue(person, "name");
+            if (name) {
+              motherNameString = name;
+            }
+          }
+        }
+      }
+    } else {
+      for (let person of people) {
+        let role = this.getPersonDataValue(person, "role");
+        if (role == "far") {
+          let name = this.getPersonDataValue(person, "name");
+          if (name) {
+            fatherNameString = name;
+          }
+        } else if (role == "mor") {
+          let name = this.getPersonDataValue(person, "name");
+          if (name) {
+            motherNameString = name;
+          }
         }
       }
     }
@@ -1414,6 +1574,18 @@ class NodaEdReader extends ExtractedDataReader {
     return undefined;
   }
 
+  setCustomFields(gd) {
+    if (this.recordType == RT.Probate) {
+      let residence = this.getRecordDataValue("residence");
+      if (residence) {
+        let placeObj = this.makePlaceObjFromFullPlaceName(residence);
+        if (placeObj) {
+          gd.residencePlace = placeObj;
+        }
+      }
+    }
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Functions to support build citation
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1438,6 +1610,9 @@ class NodaEdReader extends ExtractedDataReader {
       }
       builder.addSourceReferenceField("Page", this.getSourceDataValue("page"));
       builder.addSourceReferenceField("Serial no.", this.getSourceDataValue("serialNumber"));
+      builder.addSourceReferenceField("Farm no.", this.getSourceDataValue("farmNumber"));
+      builder.addSourceReferenceField("Location", this.getSourceDataValue("location"));
+      builder.addSourceReferenceField("Floor", this.getSourceDataValue("floor"));
     }
   }
 }

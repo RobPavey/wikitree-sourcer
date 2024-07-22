@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Probate",
+  "name": {
+    "lastName": "Nilsdtr",
+    "forenames": "Kari"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1829-1833"
+  },
+  "eventPlace": {
+    "placeString": "Alenfit, Hordaland, Sogn og Fjordane, Norway",
+    "county": "Hordaland, Sogn og Fjordane",
+    "country": "Norway"
+  },
+  "residencePlace": {
+    "placeString": "Grøttveit"
+  },
+  "hasValidData": true
+}

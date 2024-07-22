@@ -1,0 +1,451 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01038310006925",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "1865 census for Trondheim",
+    "Census districts summary",
+    "000",
+    "0478 Munkegaden",
+    "001 Carl Fredrik Motzfeldt"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 000",
+      "collectionNameParts": [
+        "Census district",
+        "000"
+      ]
+    },
+    {
+      "collectionHeading": "Urban residence: 0478 Munkegaden",
+      "collectionNameParts": [
+        "Urban residence",
+        "0478 Munkegaden"
+      ]
+    }
+  ],
+  "heading": "Person: 001 Carl Fredrik Motzfeldt",
+  "headingSpanParts": [
+    "Person:",
+    "001"
+  ],
+  "headingTextParts": [
+    "Carl Fredrik Motzfeldt"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/ft20090804341004",
+  "recordData": {
+    "Household no.": {
+      "textString": "01"
+    },
+    "Person no.": {
+      "textString": "001"
+    },
+    "Marital status": {
+      "textString": "g"
+    },
+    "Occupation": {
+      "textString": "Stiftamtmand"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Age": {
+      "textString": "58"
+    },
+    "Date of birth": {
+      "textString": "1808 (calculated)"
+    },
+    "Place of birth": {
+      "textString": "Rygge"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "001",
+          "personNameParts": [
+            "Carl Fredrik Motzfeldt"
+          ],
+          "personHeading": "001 Carl Fredrik Motzfeldt",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "58"
+          },
+          "Place of birth": {
+            "textString": "Rygge"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Stiftamtmand"
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Emilie Marie Erneste Motzfeldt"
+          ],
+          "personHeading": "002 Emilie Marie Erneste Motzfeldt",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "51"
+          },
+          "Place of birth": {
+            "textString": "Oslo"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Peter Motzfeldt"
+          ],
+          "personHeading": "003 Peter Motzfeldt",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "23"
+          },
+          "Place of birth": {
+            "textString": "Aker"
+          },
+          "Family position": {
+            "textString": "Søn"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Anna Pauline Motzfeldt"
+          ],
+          "personHeading": "004 Anna Pauline Motzfeldt",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "21"
+          },
+          "Place of birth": {
+            "textString": "Oslo"
+          },
+          "Family position": {
+            "textString": "Datter"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Ludvig Emil Motzfeldt"
+          ],
+          "personHeading": "005 Ludvig Emil Motzfeldt",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "19"
+          },
+          "Place of birth": {
+            "textString": "Christiania"
+          },
+          "Family position": {
+            "textString": "Søn"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Georg Frithiof Motzfeldt"
+          ],
+          "personHeading": "006 Georg Frithiof Motzfeldt",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "14"
+          },
+          "Place of birth": {
+            "textString": "Oslo"
+          },
+          "Family position": {
+            "textString": "Søn"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "007",
+          "personNameParts": [
+            "Arthur Motzfeldt"
+          ],
+          "personHeading": "007 Arthur Motzfeldt",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "11"
+          },
+          "Place of birth": {
+            "textString": "Tromsø"
+          },
+          "Family position": {
+            "textString": "Søn"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Marit Olsdatter Mjøen"
+          ],
+          "personHeading": "008 Marit Olsdatter Mjøen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "42"
+          },
+          "Place of birth": {
+            "textString": "Opdal"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Tjenestepige"
+          }
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Anne Johanne Skjelstad"
+          ],
+          "personHeading": "009 Anne Johanne Skjelstad",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "21"
+          },
+          "Place of birth": {
+            "textString": "Levanger"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Tjenestepige"
+          }
+        },
+        {
+          "personLabel": "010",
+          "personNameParts": [
+            "Christian Due"
+          ],
+          "personHeading": "010 Christian Due",
+          "H.no.": {
+            "textString": "02"
+          },
+          "Age/born": {
+            "textString": "60"
+          },
+          "Place of birth": {
+            "textString": "Trondhjem"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Indrullerings chef"
+          }
+        },
+        {
+          "personLabel": "011",
+          "personNameParts": [
+            "Kirstine Marie Due"
+          ],
+          "personHeading": "011 Kirstine Marie Due",
+          "H.no.": {
+            "textString": "02"
+          },
+          "Age/born": {
+            "textString": "56"
+          },
+          "Place of birth": {
+            "textString": "Porsgrund"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "012",
+          "personNameParts": [
+            "Hanna Due"
+          ],
+          "personHeading": "012 Hanna Due",
+          "H.no.": {
+            "textString": "02"
+          },
+          "Age/born": {
+            "textString": "30"
+          },
+          "Place of birth": {
+            "textString": "Tromsøe"
+          },
+          "Family position": {
+            "textString": "Datter"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "013",
+          "personNameParts": [
+            "Marie Regine Lyng"
+          ],
+          "personHeading": "013 Marie Regine Lyng",
+          "H.no.": {
+            "textString": "02"
+          },
+          "Age/born": {
+            "textString": "27"
+          },
+          "Place of birth": {
+            "textString": "Trondhjem"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Tjenestepige"
+          }
+        },
+        {
+          "personLabel": "014",
+          "personNameParts": [
+            "Ingebrigt Petersen"
+          ],
+          "personHeading": "014 Ingebrigt Petersen",
+          "H.no.": {
+            "textString": "03"
+          },
+          "Age/born": {
+            "textString": "48"
+          },
+          "Place of birth": {
+            "textString": "Østerdalen"
+          },
+          "Marital status": {
+            "textString": "e"
+          },
+          "Occupation": {
+            "textString": "Vagtmester"
+          }
+        },
+        {
+          "personLabel": "015",
+          "personNameParts": [
+            "Johanne Christine Petersen"
+          ],
+          "personHeading": "015 Johanne Christine Petersen",
+          "H.no.": {
+            "textString": "03"
+          },
+          "Age/born": {
+            "textString": "16"
+          },
+          "Place of birth": {
+            "textString": "Trondhjem"
+          },
+          "Family position": {
+            "textString": "Datter"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        },
+        {
+          "personLabel": "016",
+          "personNameParts": [
+            "Johan Adolf Petersen"
+          ],
+          "personHeading": "016 Johan Adolf Petersen",
+          "H.no.": {
+            "textString": "03"
+          },
+          "Age/born": {
+            "textString": "14"
+          },
+          "Place of birth": {
+            "textString": "Trondhjem"
+          },
+          "Family position": {
+            "textString": "Søn"
+          },
+          "Marital status": {
+            "textString": "ug"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01038310006925",
+  "sourceInformation": "1865 census for Trondheim",
+  "sourceData": {
+    "County": {
+      "textString": "Sør-Trøndelag"
+    },
+    "Municipality (1947)": {
+      "textString": "Trondheim"
+    },
+    "Geographic area": {
+      "textString": "Trondheim muni."
+    },
+    "Start year": {
+      "textString": "1865"
+    },
+    "End year": {
+      "textString": "1865"
+    },
+    "Gårdens nr.": {
+      "textString": "23"
+    }
+  }
+}

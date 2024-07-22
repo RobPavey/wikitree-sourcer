@@ -1,0 +1,178 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/279/pk00000002723491",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Church book from Oslo Domkirke / Vår Frelsers menighet parish 1824-1830 (0301M12)",
+    "Confirmations",
+    "Carl Frederik Motzfeldt"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Confirmations: 1825-1st Søndag efter Paaske 1825 [1825-04-10]",
+      "collectionNameParts": [
+        "Confirmations",
+        "1825-1st Søndag efter Paaske 1825 [1825-04-10]"
+      ]
+    }
+  ],
+  "heading": "Person: Carl Frederik Motzfeldt",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Carl Frederik Motzfeldt"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/kb20061005040311",
+  "recordData": {
+    "Serial no.": {
+      "textString": "1"
+    },
+    "Roll": {
+      "textString": "konfirmant"
+    },
+    "Given name": {
+      "textString": "Carl Frederik"
+    },
+    "Last name": {
+      "textString": "Motzfeldt"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Age": {
+      "textString": "16 3/4"
+    },
+    "Birth year": {
+      "textString": "1808 (calculated)"
+    },
+    "Baptised": {
+      "textString": "1808-06-07 i Rygge Kirke"
+    },
+    "Vaccinated": {
+      "textString": "Vaccineret efter Attest af Assessor og Vaccinateur Eleieson under 04-19 1821"
+    },
+    "Grade": {
+      "textString": "Alt udmærket godt"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Persons involved",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "1"
+          ],
+          "personHeading": "Serial no. 1",
+          "Roll": {
+            "textString": "konfirmant"
+          },
+          "Name": {
+            "textString": "Carl Frederik Motzfeldt"
+          },
+          "Birth year": {
+            "textString": "1808 (calculated)"
+          }
+        },
+        {
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "2"
+          ],
+          "personHeading": "Serial no. 2",
+          "Roll": {
+            "textString": "far"
+          },
+          "Name": {
+            "textString": "Caro von Motzfeldt"
+          },
+          "Position": {
+            "textString": "Generalmajor"
+          }
+        },
+        {
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "3"
+          ],
+          "personHeading": "Serial no. 3",
+          "Roll": {
+            "textString": "mor"
+          },
+          "Name": {
+            "textString": "Frederikke Elisabeth født Wessel"
+          },
+          "Position": {
+            "textString": "Frue"
+          }
+        }
+      ]
+    },
+    {
+      "panelTitle": "Confirmations",
+      "Page": {
+        "textString": "606-607"
+      },
+      "Serial no.": {
+        "textString": "1"
+      },
+      "Year": {
+        "textString": "1825"
+      },
+      "Parish/Church": {
+        "textString": "Oslo Domkirke"
+      },
+      "Confirmation date": {
+        "textString": "1st Søndag efter Paaske 1825 [1825-04-10]"
+      },
+      "Remarks": {
+        "textString": "Faderen død."
+      }
+    }
+  ],
+  "permanentId": "pk00000002723491",
+  "sourceInformation": "Church book from Oslo Domkirke / Vår Frelsers menighet parish 1824-1830 (0301M12)",
+  "sourceData": {
+    "County": {
+      "textString": "Oslo"
+    },
+    "Municipality (1947)": {
+      "textString": "Oslo"
+    },
+    "Geographic area": {
+      "textString": "Oslo Domkirke / Vår Frelsers congr. Oslo city",
+      "textParts": [
+        "Oslo Domkirke / Vår Frelsers congr.",
+        "Oslo city"
+      ]
+    },
+    "Start year": {
+      "textString": "1824"
+    },
+    "End year": {
+      "textString": "1830"
+    },
+    "Parish/Church": {
+      "textString": "Oslo Domkirke"
+    },
+    "Page": {
+      "textString": "606-607"
+    },
+    "Serial no.": {
+      "textString": "1"
+    },
+    "Born and baptised": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    },
+    "Confirmation": {
+      "textString": "Slekt og Data Oslo/Akershus-KROA"
+    },
+    "Married": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    }
+  }
+}

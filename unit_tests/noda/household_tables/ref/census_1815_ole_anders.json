@@ -1,5 +1,5 @@
 {
   "std": {
-    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Status || Occupation || Age || Relation\n|-\n| ... || ... || ... || ... || ...\n|-\n| Berte Andersd. ||  ||  || 13 || Child\n|-\n| '''Ole Anders.*''' ||  ||  || '''2''' || '''Child'''\n|-\n| Steinor Andersd.* ||  ||  || 1 || Child\n|-\n| ... || ... || ... || ... || ...\n|}"
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Occupation || Age\n|-\n| Christopher Thomasen || Head || Married || Gaardbruger || 50\n|-\n| ... || ... || ... || ... || ...\n|-\n| Berte Andersd. || Child ||  ||  || 13\n|-\n| '''Ole Anders.*''' || '''Child''' ||  ||  || '''2'''\n|-\n| Steinor Andersd.* || Child ||  ||  || 1\n|-\n| ... || ... || ... || ... || ...\n|}"
   }
 }

@@ -353,6 +353,14 @@ class ExtractedDataReader {
     }
   }
 
+  makeDateObjFromYearRange(yearString) {
+    if (yearString) {
+      let dateObj = new DateObj();
+      dateObj.yearString = yearString;
+      return dateObj;
+    }
+  }
+
   makeDateObjFromYearAndQuarter(yearString, quarterNum) {
     if (yearString) {
       let dateObj = new DateObj();

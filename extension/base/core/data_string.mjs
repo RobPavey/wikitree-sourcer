@@ -1008,6 +1008,44 @@ function getBaptismString(gd, options) {
   return dataString;
 }
 
+function getConfirmationString(gd, options) {
+  let dataString = getFullName(gd);
+
+  if (gd.role && gd.role != Role.Primary) {
+    dataString += "'s " + getPrimaryPersonTermAndName(gd);
+  }
+
+  dataString += " confirmation";
+
+  let date = gd.inferEventDateObj();
+  if (date) {
+    dataString += " " + getDateWithPreposition(date);
+  }
+
+  if (gd.birthDate) {
+    let birthDate = gd.inferBirthDateObj();
+    if (birthDate) {
+      dataString += " (born " + cleanDateObj(birthDate) + ")";
+    }
+  }
+
+  let place = gd.inferFullEventPlace();
+
+  let parentNames = gd.inferParentNamesForDataString();
+  if (parentNames.fatherName || parentNames.motherName) {
+    dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
+    if (place) {
+      dataString += ",";
+    }
+  }
+
+  if (place) {
+    dataString += " " + getPlaceWithPreposition(place);
+  }
+
+  return dataString;
+}
+
 function getMarriageString(gd, options) {
   let dataString = "";
 
@@ -1450,6 +1488,10 @@ const DataString = {
       }
       case RT.Baptism: {
         dataString = getBaptismString(gd, options);
+        break;
+      }
+      case RT.Confirmation: {
+        dataString = getConfirmationString(gd, options);
         break;
       }
       case RT.Marriage: {

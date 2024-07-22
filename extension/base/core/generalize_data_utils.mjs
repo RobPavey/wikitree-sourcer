@@ -3773,6 +3773,10 @@ class GeneralizedData {
         subtypes: [{ title: "Church Member Registration", subtype: RecordSubtype.MemberRegistration }],
       },
       {
+        type: RT.Confirmation,
+        defaultTitle: "Confirmation",
+      },
+      {
         type: RT.GovernmentRecord,
         defaultTitle: "Government Record",
       },

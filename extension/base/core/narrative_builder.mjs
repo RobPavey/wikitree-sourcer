@@ -1283,6 +1283,44 @@ class NarrativeBuilder {
     this.addParentageAsSeparateSentence();
   }
 
+  buildConfirmationString() {
+    let gd = this.eventGd;
+    let dateObj = gd.inferEventDateObj();
+    let place = gd.inferFullEventPlace();
+
+    let baptisedString = "confirmed";
+
+    if (gd.role && gd.role != Role.Primary) {
+      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+    } else {
+      this.narrative += this.getPersonNameOrPronoun();
+      this.addParentageForMainSentence();
+    }
+    this.narrative += " was ";
+
+    if (gd.birthDate && this.options.narrative_baptism_includeBirthDate) {
+      this.narrative += "born " + this.formatDateObj(gd.birthDate, true);
+      if (this.options.narrative_baptism_sentenceStructure == "parentsBornAndBap") {
+        this.narrative += " and ";
+      } else {
+        this.narrative += "; ";
+      }
+    }
+
+    this.narrative += baptisedString;
+
+    if (dateObj) {
+      this.narrative += " " + this.formatDateObj(dateObj, true);
+    }
+    if (place) {
+      this.narrative += " " + this.getPlaceWithPreposition(place);
+    }
+
+    this.narrative += ".";
+
+    this.addParentageAsSeparateSentence();
+  }
+
   buildMarriageString() {
     let gd = this.eventGd;
     let dateObj = this.eventGd.inferEventDateObj();
@@ -2716,6 +2754,11 @@ class NarrativeBuilder {
       case RT.Baptism: {
         this.buildFunction = this.buildBaptismString;
         this.optionsSubcategory = "baptism";
+        break;
+      }
+      case RT.Confirmation: {
+        this.buildFunction = this.buildConfirmationString;
+        this.optionsSubcategory = "confirmation";
         break;
       }
       case RT.Marriage: {
