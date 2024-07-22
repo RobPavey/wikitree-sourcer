@@ -342,7 +342,9 @@ function extractData(document, url) {
     extractLabelValuePairs(result.sourceData, dataRows);
   }
 
-  result.success = true;
+  if (result.heading && result.recordData) {
+    result.success = true;
+  }
 
   //console.log(result);
 

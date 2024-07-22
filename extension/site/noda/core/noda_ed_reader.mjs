@@ -35,6 +35,7 @@ var eventTypes = [
       bo: "Fødte og døpte",
       nn: "Fødde og døypte",
     },
+    panelTitleKey: "Births and baptisms",
   },
   {
     recordType: RT.Burial,
@@ -43,6 +44,7 @@ var eventTypes = [
       bo: "Begravde",
       nn: "Gravlagde",
     },
+    panelTitleKey: "Burials",
   },
   {
     recordType: RT.Census,
@@ -51,6 +53,7 @@ var eventTypes = [
       bo: "Tellingskretsoversikt",
       nn: "Teljingskretsoversikt",
     },
+    panelTitleKey: "",
   },
   {
     recordType: RT.Confirmation,
@@ -59,6 +62,16 @@ var eventTypes = [
       bo: "Konfirmerte",
       nn: "Konfirmerte",
     },
+    panelTitleKey: "Confirmations",
+  },
+  {
+    recordType: RT.Death,
+    breadcrumbText: {
+      en: "Reported death",
+      bo: "Dødsfall",
+      nn: "Dødsfall",
+    },
+    panelTitleKey: "Reported death",
   },
   {
     recordType: RT.Emigration,
@@ -67,6 +80,7 @@ var eventTypes = [
       bo: "Emigrasjon",
       nn: "Emigrasjon",
     },
+    panelTitleKey: "Emigration",
   },
   {
     recordType: RT.Marriage,
@@ -75,6 +89,7 @@ var eventTypes = [
       bo: "Viede",
       nn: "Viede",
     },
+    panelTitleKey: "Marriages",
   },
   {
     recordType: RT.Probate,
@@ -83,6 +98,7 @@ var eventTypes = [
       bo: "Skifteforretning",
       nn: "Skifteforretning",
     },
+    panelTitleKey: "Probate",
   },
 ];
 
@@ -141,6 +157,11 @@ const fieldLabels = {
     en: ["Date of death", "Death date"],
     bo: ["Dødsdato"],
     nn: ["Dødsdato"],
+  },
+  deathPlace: {
+    en: ["Death place", "Place of death"],
+    bo: ["Dødssted"],
+    nn: ["Dødsstad"],
   },
   deathYear: {
     en: ["Death year", "Year of death"],
@@ -389,6 +410,7 @@ class NodaEdReader extends ExtractedDataReader {
           }
         }
         if (recordType != RT.Unclassified) {
+          this.eventType = eventType;
           break;
         }
       }
@@ -476,6 +498,20 @@ class NodaEdReader extends ExtractedDataReader {
     let yearString = this.getPanelDataValue(panelTitleKey, "year");
     if (mmDdString && yearString) {
       return this.makeDateObjFromYearAndMmDd(yearString, mmDdString);
+    }
+  }
+
+  makeDateObjFromExpectedPanelDataYearAndMmDd() {
+    let eventType = this.eventType;
+    if (eventType) {
+      let panelTitleKey = eventType.panelTitleKey;
+      let panelDataKey = eventType.datePanelDataKey;
+
+      let mmDdString = this.getPanelDataValue(panelTitleKey, panelDataKey);
+      let yearString = this.getPanelDataValue(panelTitleKey, "year");
+      if (mmDdString && yearString) {
+        return this.makeDateObjFromYearAndMmDd(yearString, mmDdString);
+      }
     }
   }
 
@@ -599,10 +635,10 @@ class NodaEdReader extends ExtractedDataReader {
   getParishNameFromSourceInformationForChurchBook() {
     let sourceInfoParishName = "";
 
-    const sourceInfoPrefixes = {
-      en: "Church book from ",
-      bo: "Ministerialbok for ",
-      nn: "Ministerialbok for ",
+    const sourceInfoPrefixesPerLang = {
+      en: ["Church book from ", "Parish register from ", "Parish register (copy) from "],
+      bo: ["Ministerialbok for ", "Klokkerbok for "],
+      nn: ["Ministerialbok for ", "Klokkarbok for "],
     };
 
     const parishWords = {
@@ -611,14 +647,17 @@ class NodaEdReader extends ExtractedDataReader {
       nn: "prestegjeld",
     };
 
-    let sourceInfoPrefix = sourceInfoPrefixes[this.urlLang];
+    let sourceInfoPrefixes = sourceInfoPrefixesPerLang[this.urlLang];
     let parishWord = parishWords[this.urlLang];
     let sourceInformation = this.ed.sourceInformation;
 
     if (sourceInformation) {
-      if (sourceInfoPrefix) {
-        if (sourceInformation.startsWith(sourceInfoPrefix)) {
-          sourceInformation = sourceInformation.substring(sourceInfoPrefix.length);
+      if (sourceInfoPrefixes) {
+        for (let sourceInfoPrefix of sourceInfoPrefixes) {
+          if (sourceInformation.startsWith(sourceInfoPrefix)) {
+            sourceInformation = sourceInformation.substring(sourceInfoPrefix.length);
+            break;
+          }
         }
       }
       let parts = sourceInformation.split(" ");
@@ -1155,6 +1194,8 @@ class NodaEdReader extends ExtractedDataReader {
       if (parts.year) {
         return this.makeDateObjFromYear(parts.year);
       }
+    } else {
+      return this.makeDateObjFromExpectedPanelDataYearAndMmDd();
     }
 
     return undefined;
@@ -1303,6 +1344,12 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getDeathPlaceObj() {
+    let placeString = this.getRecordDataValue("deathPlace");
+
+    if (placeString) {
+      return this.makePlaceObjFromFullPlaceName(placeString);
+    }
+
     return undefined;
   }
 
