@@ -31,6 +31,7 @@ import {
   addMenuDivider,
   beginMainMenu,
   endMainMenu,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addEditCitationMenuItem } from "/base/browser/popup/popup_citation.mjs";
@@ -68,7 +69,7 @@ async function openUserCitationTab() {
   }
 
   // popup will close automatically if new tab created or tab exists in same window
-  // but it tab esists in a different window on another screen for example we still
+  // but if tab exists in a different window on another screen for example we still
   // want to close the popup.
   closePopup();
 }
