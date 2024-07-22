@@ -279,6 +279,19 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
         }
       }
     }
+
+    if (!value) {
+      // try the documentRecordData
+      if (ed.documentRecordData) {
+        for (let key of keyArray) {
+          value = ed.documentRecordData[key];
+          if (value) {
+            break;
+          }
+        }
+      }
+    }
+
     if (value) {
       if (dataString != "") {
         dataString += " ";
@@ -327,6 +340,9 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
 
   // not a special case, just add everything that could be part of reference
   addValue("District", ed.registrationDistrict);
+
+  addRecordDataValue("Enumeration District", ["Enumeration District"]);
+
   if (refData) {
     addValue("Volume", refData.sourceVolume);
     addValue("Piece/Folio", refData.sourcePieceFolio);

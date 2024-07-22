@@ -4011,6 +4011,29 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
         }
       }
     }
+
+    // Sometime there are things displayed on the page that are not easy to extract from the dataObj
+    // For example the Enumeration District in the US 1950 census
+    if (document) {
+      let table = document.querySelector("div.cellCss_crzk1zr > table.tableCss_tobv3gy");
+      if (table) {
+        let rows = table.querySelectorAll("tr");
+        if (rows.length) {
+          result.documentRecordData = {};
+          for (let row of rows) {
+            let th = row.querySelector("th");
+            let td = row.querySelector("td");
+            if (th && td) {
+              let key = th.textContent.trim();
+              let value = td.textContent.trim();
+              if (key && value) {
+                result.documentRecordData[key] = value;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   processImageLinks(document, result, options);
