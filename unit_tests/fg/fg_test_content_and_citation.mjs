@@ -130,6 +130,11 @@ const regressionData = [
     url: "https://www.findagrave.com/memorial/15373507/capt_john-smith",
   },
   {
+    // New format for "sponsored" memorials
+    caseName: "rutherford_hatcher_d_1958",
+    url: "https://www.findagrave.com/memorial/5135503/rutherford_b_hatcher",
+  },
+  {
     // cremation. Still has a "BURIAL" field.
     caseName: "shirley_adam_d_2015",
     url: "https://www.findagrave.com/memorial/158706349/shirley-beveridge-adam",

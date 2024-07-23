@@ -89,12 +89,12 @@ function extractData(document, url) {
     result.nameHtml = cleanText(html);
   }
 
-  let memEvents = document.querySelector("div.section-bio-cover dl.mem-events");
+  let memEvents = document.querySelector("dl.mem-events");
   //console.log("memEvents is: ");
   //console.log(memEvents);
   if (!memEvents) {
     // old page format
-    memEvents = document.querySelector("div.section-bio-cover table.mem-events");
+    memEvents = document.querySelector("table.mem-events");
   }
 
   if (!memEvents) {

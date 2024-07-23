@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\nFind a Grave<br/>\n[https://www.findagrave.com/memorial/5135503/rutherford_b_hatcher FindAGrave Memorial] (accessed 6 May 2021)<br/>\nMemorial page for Rutherford B. Hatcher.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\nFind a Grave<br/>\n[https://www.findagrave.com/memorial/5135503/rutherford_b_hatcher FindAGrave Memorial] (accessed 6 May 2021)<br/>\nMemorial page for Rutherford B. Hatcher.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': Find a Grave<br/>[https://www.findagrave.com/memorial/5135503/rutherford_b_hatcher FindAGrave Memorial] (accessed 6 May 2021)<br/>Memorial page for Rutherford B. Hatcher.",
+    "type": "source"
+  }
+}
