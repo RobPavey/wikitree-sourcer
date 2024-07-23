@@ -62,6 +62,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/nn/census/person/pf01052377002789",
   },
   {
+    caseName: "census_1875_nils_stenersen",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01052251002682",
+  },
+  {
     caseName: "census_1891_jakob_pedersen",
     url: "https://www.digitalarkivet.no/en/census/person/pf01052903004507",
   },

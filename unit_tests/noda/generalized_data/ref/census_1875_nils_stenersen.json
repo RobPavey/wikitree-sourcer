@@ -1,0 +1,62 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Nils Stenersen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1875"
+  },
+  "eventPlace": {
+    "placeString": "Hjelmelandsvaag, Rogaland, Norway",
+    "parish": "Hjelmeland",
+    "county": "Rogaland",
+    "country": "Norway"
+  },
+  "birthDate": {
+    "yearString": "1837"
+  },
+  "birthPlace": {
+    "placeString": "Hjelmeland"
+  },
+  "relationshipToHead": "son",
+  "maritalStatus": "single",
+  "occupation": "Skomager",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "occupation",
+    "birthDate",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Anna Nilsdatter",
+      "relationship": "wife",
+      "maritalStatus": "widow",
+      "occupation": "Strandsidder, forsørges af Sønnen",
+      "birthDate": "1804",
+      "birthPlace": "Suldal"
+    },
+    {
+      "name": "Nils Stenersen %Nilsen%",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "occupation": "Skomager",
+      "birthDate": "1837",
+      "birthPlace": "Hjelmeland",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Stener Olsen",
+      "relationship": "ds",
+      "birthDate": "1863",
+      "birthPlace": "H."
+    }
+  ],
+  "hasValidData": true
+}

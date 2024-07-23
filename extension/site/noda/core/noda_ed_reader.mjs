@@ -1106,6 +1106,15 @@ class NodaEdReader extends ExtractedDataReader {
           }
           return relationToHead;
         } else {
+          // simple lookup failed, sometimes the familyPosition value is a combination
+          // e.g. "hp hf"
+          let parts = familyPosition.split(" ");
+          for (let part of parts) {
+            relationToHead = familyPositionValues[part];
+            if (relationToHead) {
+              return relationToHead;
+            }
+          }
           return familyPosition;
         }
       } else {
@@ -1144,6 +1153,30 @@ class NodaEdReader extends ExtractedDataReader {
     if (this.ed.pageType == "record") {
       let givenName = this.getRecordDataValue("givenName");
       let lastName = this.getRecordDataValue("lastName");
+
+      // names can have other versions in percent signs. e.g.:
+      // Nils Stenersen %Nilsen%
+
+      function cleanName(nameString) {
+        if (nameString) {
+          nameString = nameString.trim();
+          if (nameString.includes("%")) {
+            let nameParts = nameString.split("%");
+            if (nameParts.length == 2) {
+              nameString = nameParts[0].trim();
+            } else if (nameParts.length == 3) {
+              if (!nameParts[2].trim()) {
+                nameString = nameParts[0].trim();
+              }
+            }
+          }
+        }
+        return nameString;
+      }
+
+      givenName = cleanName(givenName);
+      lastName = cleanName(lastName);
+
       if (givenName || lastName) {
         return this.makeNameObjFromForenamesAndLastName(givenName, lastName);
       }
@@ -1152,6 +1185,7 @@ class NodaEdReader extends ExtractedDataReader {
         if (this.ed.headingTextParts && this.ed.headingTextParts.length == 1) {
           let fullName = this.ed.headingTextParts[0];
           if (fullName) {
+            fullName = cleanName(fullName);
             return this.makeNameObjFromFullName(fullName);
           }
         }

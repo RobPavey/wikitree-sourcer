@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1875 Census''':\n\"1875 census for 1133P Hjelmeland\"<br/>\nCensus district: 006; Rural residence: 0034 Hjelmelandsvaag<br/>\n[https://media.digitalarkivet.no/ft20110118670177 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/census/person/pf01052251002682 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nNils Stenersen, single son, Skomager, in household of Anna Nilsdatter in Hjelmelandsvaag, Rogaland, Norway. Born in Hjelmeland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1875 census Nils, Skomager, was the single son of Anna Nilsdatter in Hjelmelandsvaag, Rogaland, Norway.<ref>\n'''1875 Census''':\n\"1875 census for 1133P Hjelmeland\"<br/>\nCensus district: 006; Rural residence: 0034 Hjelmelandsvaag<br/>\n[https://media.digitalarkivet.no/ft20110118670177 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/census/person/pf01052251002682 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nNils Stenersen, single son, Skomager, in household of Anna Nilsdatter in Hjelmelandsvaag, Rogaland, Norway. Born in Hjelmeland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1875 Census''': \"1875 census for 1133P Hjelmeland\"<br/>Census district: 006; Rural residence: 0034 Hjelmelandsvaag<br/>[https://media.digitalarkivet.no/ft20110118670177 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/census/person/pf01052251002682 Digitalarkivet Record] (accessed 6 May 2021)<br/>Nils Stenersen, single son, Skomager, in household of Anna Nilsdatter in Hjelmelandsvaag, Rogaland, Norway. Born in Hjelmeland.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01052251002682",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "1875 census for 1133P Hjelmeland",
+    "Census districts summary",
+    "006",
+    "0034 Hjelmelandsvaag",
+    "002 Nils Stenersen %Nilsen%"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 006",
+      "collectionNameParts": [
+        "Census district",
+        "006"
+      ]
+    },
+    {
+      "collectionHeading": "Rural residence: 0034 Hjelmelandsvaag",
+      "collectionNameParts": [
+        "Rural residence",
+        "0034 Hjelmelandsvaag"
+      ]
+    }
+  ],
+  "heading": "Person: 002 Nils Stenersen %Nilsen%",
+  "headingSpanParts": [
+    "Person:",
+    "002"
+  ],
+  "headingTextParts": [
+    "Nils Stenersen %Nilsen%"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/ft20110118670177",
+  "recordData": {
+    "Household no.": {
+      "textString": "01"
+    },
+    "Person no.": {
+      "textString": "002"
+    },
+    "Family position": {
+      "textString": "hendes s"
+    },
+    "Marital status": {
+      "textString": "ug"
+    },
+    "Occupation": {
+      "textString": "Skomager"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Date of birth": {
+      "textString": "1837"
+    },
+    "Place of birth": {
+      "textString": "Hjelmeland"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "personLabel": "001",
+          "personNameParts": [
+            "Anna Nilsdatter"
+          ],
+          "personHeading": "001 Anna Nilsdatter",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1804"
+          },
+          "Place of birth": {
+            "textString": "Suldal"
+          },
+          "Family position": {
+            "textString": "hm"
+          },
+          "Marital status": {
+            "textString": "e"
+          },
+          "Occupation": {
+            "textString": "Strandsidder, forsørges af Sønnen"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "002",
+          "personNameParts": [
+            "Nils Stenersen %Nilsen%"
+          ],
+          "personHeading": "002 Nils Stenersen %Nilsen%",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1837"
+          },
+          "Place of birth": {
+            "textString": "Hjelmeland"
+          },
+          "Family position": {
+            "textString": "hendes s"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Skomager"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Stener Olsen"
+          ],
+          "personHeading": "003 Stener Olsen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1863"
+          },
+          "Place of birth": {
+            "textString": "H."
+          },
+          "Family position": {
+            "textString": "ds"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01052251002682",
+  "sourceInformation": "1875 census for 1133P Hjelmeland",
+  "sourceData": {
+    "County": {
+      "textString": "Rogaland"
+    },
+    "Municipality (1947)": {
+      "textString": "Fister, Hjelmeland, Årdal"
+    },
+    "Geographic area": {
+      "textString": "Hjelmeland parish Hjelmeland local parish Årdal local parish Fister local parish",
+      "textParts": [
+        "Hjelmeland parish",
+        "Hjelmeland local parish",
+        "Årdal local parish",
+        "Fister local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1875"
+    },
+    "End year": {
+      "textString": "1875"
+    },
+    "Løpenr/Bnr": {
+      "textString": "146e, 149"
+    }
+  }
+}
