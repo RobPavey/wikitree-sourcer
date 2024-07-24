@@ -1,6 +1,20 @@
 {
   "url": "https://www.findagrave.com/memorial/5135503/rutherford_b_hatcher",
-  "success": false,
+  "success": true,
   "name": "Rutherford B. Hatcher",
-  "nameHtml": "Rutherford B. Hatcher"
+  "nameHtml": "Rutherford B. Hatcher",
+  "birthDate": "9 Mar 1879",
+  "birthPlace": "USA",
+  "ageAtDeath": "79",
+  "deathDate": "30 Mar 1958",
+  "deathPlace": "USA",
+  "cemeteryName": "Mount Vernon Cemetery",
+  "cemeteryCity": "Miles Crossroads",
+  "cemeteryCounty": "Clay County",
+  "cemeteryState": "Tennessee",
+  "cemeteryCountry": "USA",
+  "cemeteryFullAddress": "Miles Crossroads, Clay County, Tennessee, USA",
+  "memorialId": "5135503",
+  "citation": "Find a Grave, database and images (https://www.findagrave.com/memorial/5135503/rutherford_b-hatcher: accessed July 23, 2024), memorial page for Rutherford B. Hatcher (9 Mar 1879-30 Mar 1958), Find a Grave Memorial ID 5135503, citing Mount Vernon Cemetery, Miles Crossroads, Clay County, Tennessee, USA; Maintained by County line #1 (contributor 49644086).",
+  "hasImage": true
 }

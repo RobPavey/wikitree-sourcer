@@ -1,3 +1,33 @@
 {
-  "sourceOfData": "fg"
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "30 Mar 1958"
+  },
+  "eventPlace": {
+    "placeString": "Miles Crossroads, Clay County, Tennessee, USA",
+    "streetAddress": "Mount Vernon Cemetery"
+  },
+  "name": {
+    "name": "Rutherford B Hatcher"
+  },
+  "lastNameAtDeath": "Hatcher",
+  "deathDate": {
+    "dateString": "30 Mar 1958"
+  },
+  "deathPlace": {
+    "placeString": "USA"
+  },
+  "ageAtDeath": "79",
+  "birthDate": {
+    "dateString": "9 Mar 1879"
+  },
+  "birthPlace": {
+    "placeString": "USA"
+  },
+  "wtSearchTemplates": [
+    "{{FindAGrave|5135503}}"
+  ],
+  "hasValidData": true
 }
