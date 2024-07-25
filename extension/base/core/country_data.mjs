@@ -158,16 +158,16 @@ const CountryData = [
   { stdName: "Czechia", matches: ["Czechia"], partOf: ["Czechoslovakia"] },
   { stdName: "Slovakia", matches: ["Slovakia"], partOf: ["Czechoslovakia"] },
 
-  { stdName: "Hungary", matches: ["Hungary"] },
-  { stdName: "Romania", matches: ["Romania"] },
+  { stdName: "Hungary", matches: ["Hungary", "Magyarország"] },
+  { stdName: "Romania", matches: ["Romania", "România", "Dacia"] },
   { stdName: "Bulgaria", matches: ["Bulgaria", "България"] },
   { stdName: "Poland", matches: ["Poland", "Polska"] },
   { stdName: "Ukraine", matches: ["Ukraine", "Україна"] },
   { stdName: "Belarus", matches: ["Belarus", "Беларусь"] },
-  { stdName: "Moldova", matches: ["Moldova"] },
+  { stdName: "Moldova", matches: ["Moldova", "Republic of Moldova"] },
 
   { stdName: "Lithuania", matches: ["Lithuania", "Lietuva"] },
-  { stdName: "Latvia", matches: ["Latvia"] },
+  { stdName: "Latvia", matches: ["Latvia", "Latvija", "Republic of Latvia", "Latvijas Republika"] },
   { stdName: "Estonia", matches: ["Estonia", "Eesti"] },
 
   { stdName: "Yugoslavia", matches: ["Yugoslavia"] },
