@@ -1,0 +1,157 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/255/pd00000033830720",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Church book from Steigen parish, Steigen local parish 1887-1905 (1848P)",
+    "Births and baptisms",
+    "Ludvig Fremmerlid"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Births and baptisms: 1900-08-05",
+      "collectionNameParts": [
+        "Births and baptisms",
+        "1900-08-05"
+      ]
+    }
+  ],
+  "heading": "Person: Ludvig Fremmerlid",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Ludvig Fremmerlid"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/kb20070213660378",
+  "recordData": {
+    "Serial no.": {
+      "textString": "2"
+    },
+    "Role": {
+      "textString": "far"
+    },
+    "Given name": {
+      "textString": "Ludvig"
+    },
+    "Last name": {
+      "textString": "Fremmerlid"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Birth year": {
+      "textString": "1857"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Persons involved",
+      "people": [
+        {
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "1"
+          ],
+          "personHeading": "Serial no. 1",
+          "Role": {
+            "textString": "barn"
+          },
+          "Name": {
+            "textString": "Conrad Theodor"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "2"
+          ],
+          "personHeading": "Serial no. 2",
+          "Role": {
+            "textString": "far"
+          },
+          "Name": {
+            "textString": "Ludvig Fremmerlid"
+          },
+          "Birth year": {
+            "textString": "1857"
+          }
+        },
+        {
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "3"
+          ],
+          "personHeading": "Serial no. 3",
+          "Role": {
+            "textString": "mor"
+          },
+          "Name": {
+            "textString": "Marta Amalie Halvorsen"
+          },
+          "Birth year": {
+            "textString": "1871"
+          },
+          "Residence": {
+            "textString": "Bogøen"
+          }
+        }
+      ]
+    },
+    {
+      "panelTitle": "Births and baptisms",
+      "Page": {
+        "textString": "79"
+      },
+      "Serial no.": {
+        "textString": "21"
+      },
+      "Year": {
+        "textString": "1900"
+      },
+      "Baptism date": {
+        "textString": "08-05"
+      }
+    }
+  ],
+  "permanentId": "pd00000033830720",
+  "sourceInformation": "Church book from Steigen parish, Steigen local parish 1887-1905 (1848P)",
+  "sourceData": {
+    "County": {
+      "textString": "Nordland"
+    },
+    "Municipality (1947)": {
+      "textString": "Steigen"
+    },
+    "Geographic area": {
+      "textString": "Steigen parish Steigen local parish",
+      "textParts": [
+        "Steigen parish",
+        "Steigen local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1887"
+    },
+    "End year": {
+      "textString": "1905"
+    },
+    "Page": {
+      "textString": "79"
+    },
+    "Serial no.": {
+      "textString": "21"
+    },
+    "Deceased and buried": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    },
+    "Born and baptised": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    },
+    "Married": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    }
+  }
+}

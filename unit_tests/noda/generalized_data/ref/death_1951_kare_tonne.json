@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Tønne",
+    "forenames": "Kåre"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "placeString": "Sparbu, Hele Norge, Norway",
+    "county": "Hele Norge",
+    "country": "Norway"
+  },
+  "deathDate": {
+    "dateString": "5 Jan 1951"
+  },
+  "deathPlace": {
+    "placeString": "Sparbu, Hele Norge, Norway",
+    "county": "Hele Norge",
+    "country": "Norway"
+  },
+  "ageAtEvent": "32",
+  "hasValidData": true
+}

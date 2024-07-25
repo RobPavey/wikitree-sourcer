@@ -1,0 +1,89 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/387/pc00000001290505",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Deaths 1951-2014",
+    "Surrounding area in the source",
+    "Kåre Tønne"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Surrounding area in the source: 1951-01-05",
+      "collectionNameParts": [
+        "Surrounding area in the source",
+        "1951-01-05"
+      ]
+    }
+  ],
+  "heading": "Person: Kåre Tønne",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Kåre Tønne"
+  ],
+  "recordData": {
+    "Given name": {
+      "textString": "Kåre"
+    },
+    "Surname": {
+      "textString": "Tønne"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Age": {
+      "textString": "32"
+    },
+    "Year of birth": {
+      "textString": "1918"
+    },
+    "Date of birth": {
+      "textString": "06--"
+    },
+    "Date of death": {
+      "textString": "1951-01-05"
+    },
+    "Municipality number": {
+      "textString": "1731"
+    },
+    "Municipality": {
+      "textString": "Sparbu"
+    },
+    "Death municipality number": {
+      "textString": "1731"
+    },
+    "Death municipality": {
+      "textString": "Sparbu"
+    },
+    "Deviation birth": {
+      "textString": "Mulig avvik i dager"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Surrounding area in the source",
+      "Date": {
+        "textString": "1951-01-05"
+      }
+    }
+  ],
+  "permanentId": "pc00000001290505",
+  "sourceInformation": "Deaths 1951-2014",
+  "sourceData": {
+    "County": {
+      "textString": "Hele Norge"
+    },
+    "Municipality (1947)": {
+      "textString": "Hele Norge"
+    },
+    "Start year": {
+      "textString": "1951"
+    },
+    "End year": {
+      "textString": "2014"
+    }
+  }
+}

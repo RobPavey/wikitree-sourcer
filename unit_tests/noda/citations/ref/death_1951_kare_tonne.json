@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Deaths 1951-2014\"<br/>\nSurrounding area in the source: 1951-01-05<br/>\n[https://www.digitalarkivet.no/en/view/387/pc00000001290505 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nKåre Tønne death 5 Jan 1951 in Sparbu, Hele Norge, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Kåre died (age 32) on 5 January 1951 in Sparbu, Hele Norge, Norway.<ref>\n'''Death''':\n\"Deaths 1951-2014\"<br/>\nSurrounding area in the source: 1951-01-05<br/>\n[https://www.digitalarkivet.no/en/view/387/pc00000001290505 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nKåre Tønne death 5 Jan 1951 in Sparbu, Hele Norge, Norway.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Deaths 1951-2014\"<br/>Surrounding area in the source: 1951-01-05<br/>[https://www.digitalarkivet.no/en/view/387/pc00000001290505 Digitalarkivet Record] (accessed 6 May 2021)<br/>Kåre Tønne death 5 Jan 1951 in Sparbu, Hele Norge, Norway.",
+    "type": "source"
+  }
+}

@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { GeneralizedData, GD, dateQualifiers, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
+import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
 
 function determineRecordType(extractedData) {
   const eventTypeMatches = {
@@ -718,7 +719,7 @@ function generalizeDataGivenRecordType(ed, result) {
       }
 
       // We can also determine parents and spouse in some cases
-      result.addSpouseOrParentsForSelectedHouseholdMember();
+      addSpouseOrParentsForSelectedHouseholdMember(result);
 
       if (result.spouses && result.spouses.length == 1) {
         let marriageYear = getRecordDataValueForList(ed, ["Marriage year"]);

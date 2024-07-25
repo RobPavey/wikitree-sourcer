@@ -905,8 +905,13 @@ function getDeathString(gd, options) {
     dataString += " " + cleanDateObj(deathDate);
   }
 
-  if (gd.birthDate && gd.birthDate.dateString && gd.birthDate.dateString.length > 4) {
-    dataString += " (born " + gd.birthDate.dateString + ")";
+  let birthDateObj = gd.birthDate;
+  if (gd.role && gd.role != Role.Primary) {
+    birthDateObj = gd.inferPrimaryPersonBirthDateObj();
+  }
+
+  if (birthDateObj && birthDateObj.dateString && birthDateObj.dateString.length > 4) {
+    dataString += " (born " + birthDateObj.dateString + ")";
   } else {
     let age = cleanAge(gd.ageAtDeath);
     if (age) {
@@ -978,11 +983,13 @@ function getBaptismString(gd, options) {
     dataString += " " + getDateWithPreposition(date);
   }
 
-  if (gd.birthDate) {
-    let birthDate = gd.inferBirthDateObj();
-    if (birthDate) {
-      dataString += " (born " + cleanDateObj(birthDate) + ")";
-    }
+  let birthDateObj = gd.birthDate;
+  if (gd.role && gd.role != Role.Primary) {
+    birthDateObj = gd.inferPrimaryPersonBirthDateObj();
+  }
+
+  if (birthDateObj) {
+    dataString += " (born " + cleanDateObj(birthDateObj) + ")";
   }
 
   let place = gd.inferFullEventPlace();
@@ -1022,11 +1029,13 @@ function getConfirmationString(gd, options) {
     dataString += " " + getDateWithPreposition(date);
   }
 
-  if (gd.birthDate) {
-    let birthDate = gd.inferBirthDateObj();
-    if (birthDate) {
-      dataString += " (born " + cleanDateObj(birthDate) + ")";
-    }
+  let birthDateObj = gd.birthDate;
+  if (gd.role && gd.role != Role.Primary) {
+    birthDateObj = gd.inferPrimaryPersonBirthDateObj();
+  }
+
+  if (birthDateObj) {
+    dataString += " (born " + cleanDateObj(birthDateObj) + ")";
   }
 
   let place = gd.inferFullEventPlace();
@@ -1195,16 +1204,21 @@ function getBurialString(gd, options) {
 
   // Include the birth date if known, but try to exclude it if it is just a year estimated (by transcriber)
   // from the age.
-  if (gd.birthDate) {
+  let birthDateObj = gd.birthDate;
+  if (gd.role && gd.role != Role.Primary) {
+    birthDateObj = gd.inferPrimaryPersonBirthDateObj();
+  }
+
+  if (birthDateObj) {
     let includeBirthDate = true;
     if (age) {
-      if (!gd.birthDate.dateString) {
+      if (!birthDateObj.dateString) {
         // only a year
         includeBirthDate = false;
-      } else if (gd.birthDate.dateString == gd.birthDate.yearString) {
+      } else if (birthDateObj.dateString == birthDateObj.yearString) {
         // only a year
         includeBirthDate = false;
-      } else if (gd.birthDate.dateString.length <= 4) {
+      } else if (birthDateObj.dateString.length <= 4) {
         // only a year
         includeBirthDate = false;
       }
@@ -1213,7 +1227,7 @@ function getBurialString(gd, options) {
     }
 
     if (includeBirthDate) {
-      dataString += ". Born " + getDateWithPreposition(gd.birthDate);
+      dataString += ". Born " + getDateWithPreposition(birthDateObj);
     }
   }
 

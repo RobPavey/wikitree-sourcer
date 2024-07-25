@@ -25,6 +25,7 @@ SOFTWARE.
 import { GeneralizedData, GD } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
+import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
 
 function buildHouseholdArray(headings, members, result) {
   const stdFieldNames = [
@@ -137,7 +138,7 @@ function buildHouseholdArray(headings, members, result) {
   }
 
   // We can also determine parents and spouse in some cases
-  result.addSpouseOrParentsForSelectedHouseholdMember();
+  addSpouseOrParentsForSelectedHouseholdMember(result);
 }
 
 function setYearAndPlace(ed, result) {

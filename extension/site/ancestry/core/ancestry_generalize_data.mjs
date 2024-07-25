@@ -32,6 +32,7 @@ import {
 } from "../../../base/core/generalize_data_utils.mjs";
 import { RC } from "../../../base/core/record_collections.mjs";
 import { RT, RecordSubtype, Role } from "../../../base/core/record_type.mjs";
+import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
 
 function cleanName(name) {
   // currently all cleaning we need is done in generalize_data_utils
@@ -1487,7 +1488,7 @@ function generalizeDataGivenRecordType(ed, result) {
       // We can also determine parents and spouse in some cases
       // Note: This is a bit limited for Ancestry because we do not do the deep dive of fetching other
       // records unless we are building a household table.
-      result.addSpouseOrParentsForSelectedHouseholdMember();
+      addSpouseOrParentsForSelectedHouseholdMember(result);
     }
   } else if (result.recordType == RT.NonpopulationCensus) {
     result.setEventDate(getCleanValueForRecordDataList(ed, ["Enumeration Date"], "date"));

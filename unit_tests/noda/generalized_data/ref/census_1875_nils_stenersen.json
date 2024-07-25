@@ -53,10 +53,17 @@
     },
     {
       "name": "Stener Olsen",
-      "relationship": "ds",
+      "relationship": "grandson",
       "birthDate": "1863",
       "birthPlace": "H."
     }
   ],
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Anna Nilsdatter"
+      }
+    }
+  },
   "hasValidData": true
 }

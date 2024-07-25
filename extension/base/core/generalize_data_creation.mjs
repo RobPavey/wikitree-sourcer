@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { GeneralizedData, GD } from "./generalize_data_utils.mjs";
+import { addSpouseOrParentsForSelectedHouseholdMember } from "./structured_household.mjs";
 
 function commonGeneralizeData(sourceOfData, edReader) {
   let result = new GeneralizedData();
@@ -48,6 +49,7 @@ function commonGeneralizeData(sourceOfData, edReader) {
 
   setField("recordType", edReader.recordType);
   setField("recordSubtype", edReader.recordSubtype);
+  setField("role", edReader.role);
 
   setField("name", edReader.getNameObj());
   setStandardizedField("personGender", edReader.getGender(), GD.standardizeGender);
@@ -85,10 +87,11 @@ function commonGeneralizeData(sourceOfData, edReader) {
 
   setField("spouses", edReader.getSpouses());
   setField("parents", edReader.getParents());
+  setField("primaryPerson", edReader.getPrimaryPerson());
 
   result.setHousehold(edReader.getHousehold());
   // We can also determine parents and spouse from household table in some cases
-  result.addSpouseOrParentsForSelectedHouseholdMember();
+  addSpouseOrParentsForSelectedHouseholdMember(result);
 
   setField("collectionData", edReader.getCollectionData());
 

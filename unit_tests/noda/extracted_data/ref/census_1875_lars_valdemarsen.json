@@ -1,0 +1,496 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01052316000226",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "1875 Census for 1438P Bremanger",
+    "Census districts summary",
+    "001*",
+    "014* Frøjen nedre",
+    "001 Lars Valdemarsen"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 001*",
+      "collectionNameParts": [
+        "Census district",
+        "001*"
+      ]
+    },
+    {
+      "collectionHeading": "Rural residence: 014* Frøjen nedre",
+      "collectionNameParts": [
+        "Rural residence",
+        "014* Frøjen nedre"
+      ]
+    }
+  ],
+  "heading": "Person: 001 Lars Valdemarsen",
+  "headingSpanParts": [
+    "Person:",
+    "001"
+  ],
+  "headingTextParts": [
+    "Lars Valdemarsen"
+  ],
+  "recordData": {
+    "Household no.": {
+      "textString": "1"
+    },
+    "Person no.": {
+      "textString": "001"
+    },
+    "Family position": {
+      "textString": "Husfader"
+    },
+    "Marital status": {
+      "textString": "g"
+    },
+    "Occupation": {
+      "textString": "Gaardbr. Selveier, Fisker"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Date of birth": {
+      "textString": "1824"
+    },
+    "Place of birth": {
+      "textString": "Bremanger Prgj."
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "001",
+          "personNameParts": [
+            "Lars Valdemarsen"
+          ],
+          "personHeading": "001 Lars Valdemarsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1824"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Husfader"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Gaardbr. Selveier, Fisker"
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Anne Andersdatter"
+          ],
+          "personHeading": "002 Anne Andersdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1833"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "hans Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Ludvik Larssen"
+          ],
+          "personHeading": "003 Ludvik Larssen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1865"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Søn"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Johan Larssen"
+          ],
+          "personHeading": "004 Johan Larssen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1871"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Søn"
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Anne Larsdatter"
+          ],
+          "personHeading": "005 Anne Larsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1858"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Datter"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Tjenestepige"
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Orline Larsdatter"
+          ],
+          "personHeading": "006 Orline Larsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1860"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Datter"
+          }
+        },
+        {
+          "personLabel": "007",
+          "personNameParts": [
+            "Valborg Larsdatter"
+          ],
+          "personHeading": "007 Valborg Larsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1863"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Datter"
+          }
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Inger Larsdatter"
+          ],
+          "personHeading": "008 Inger Larsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1868"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Datter"
+          }
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Kristen Valdemarsen"
+          ],
+          "personHeading": "009 Kristen Valdemarsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1827"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Husfader"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Inderst, Fisker"
+          }
+        },
+        {
+          "personLabel": "010",
+          "personNameParts": [
+            "Pernille Andersdatter"
+          ],
+          "personHeading": "010 Pernille Andersdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1838"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "hans Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "011",
+          "personNameParts": [
+            "Ole Jørgensen"
+          ],
+          "personHeading": "011 Ole Jørgensen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1841"
+          },
+          "Place of birth": {
+            "textString": "Eids Pr og Sogn"
+          },
+          "Family position": {
+            "textString": "Husfader"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Gaardbr. Selveier, Bygningsmand"
+          }
+        },
+        {
+          "personLabel": "012",
+          "personNameParts": [
+            "Malene Olsdatter"
+          ],
+          "personHeading": "012 Malene Olsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1842"
+          },
+          "Place of birth": {
+            "textString": "Eids Pr og Stareims Sogn"
+          },
+          "Family position": {
+            "textString": "hans Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "013",
+          "personNameParts": [
+            "Jørgen Olsen"
+          ],
+          "personHeading": "013 Jørgen Olsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1864"
+          },
+          "Place of birth": {
+            "textString": "Eids Pr og Sogn"
+          },
+          "Family position": {
+            "textString": "Deres Søn"
+          }
+        },
+        {
+          "personLabel": "014",
+          "personNameParts": [
+            "Oline Olsdatter"
+          ],
+          "personHeading": "014 Oline Olsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1867"
+          },
+          "Place of birth": {
+            "textString": "Eids Pr og Sogn"
+          },
+          "Family position": {
+            "textString": "Deres Datter"
+          }
+        },
+        {
+          "personLabel": "015",
+          "personNameParts": [
+            "Johanne Olsdatter"
+          ],
+          "personHeading": "015 Johanne Olsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1869"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Datter"
+          }
+        },
+        {
+          "personLabel": "016",
+          "personNameParts": [
+            "Karoline Olsdatter"
+          ],
+          "personHeading": "016 Karoline Olsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1871"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Datter"
+          }
+        },
+        {
+          "personLabel": "017",
+          "personNameParts": [
+            "Marie Olsdatter"
+          ],
+          "personHeading": "017 Marie Olsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1872"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Datter"
+          }
+        },
+        {
+          "personLabel": "018",
+          "personNameParts": [
+            "Samueline Olsdatter"
+          ],
+          "personHeading": "018 Samueline Olsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1874"
+          },
+          "Place of birth": {
+            "textString": "Bremanger Prgj."
+          },
+          "Family position": {
+            "textString": "Deres Datter"
+          }
+        },
+        {
+          "personLabel": "019",
+          "personNameParts": [
+            "Kristiane Knutsdatter"
+          ],
+          "personHeading": "019 Kristiane Knutsdatter",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1863"
+          },
+          "Place of birth": {
+            "textString": "Eids Pr og Sogn"
+          },
+          "Family position": {
+            "textString": "Tjenestepige"
+          },
+          "Occupation": {
+            "textString": "Tjenestepige"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01052316000226",
+  "sourceInformation": "1875 Census for 1438P Bremanger",
+  "sourceData": {
+    "County": {
+      "textString": "Sogn og Fjordane"
+    },
+    "Municipality (1947)": {
+      "textString": "Bremanger"
+    },
+    "Geographic area": {
+      "textString": "Bremanger parish Bremanger local parish",
+      "textParts": [
+        "Bremanger parish",
+        "Bremanger local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1875"
+    },
+    "End year": {
+      "textString": "1875"
+    }
+  }
+}

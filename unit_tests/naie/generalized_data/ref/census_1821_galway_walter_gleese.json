@@ -84,6 +84,13 @@
       "occupation": "A Strolling Beggar"
     }
   ],
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Margaret Gleese"
+      }
+    }
+  },
   "spouses": [
     {
       "name": {
@@ -93,12 +100,5 @@
       "marriagePlace": {}
     }
   ],
-  "parents": {
-    "mother": {
-      "name": {
-        "name": "Margaret Gleese"
-      }
-    }
-  },
   "hasValidData": true
 }

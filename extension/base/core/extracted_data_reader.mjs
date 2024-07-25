@@ -158,6 +158,10 @@ class ExtractedDataReader {
     return undefined;
   }
 
+  getPrimaryPerson() {
+    return undefined;
+  }
+
   getHousehold() {
     return undefined;
   }

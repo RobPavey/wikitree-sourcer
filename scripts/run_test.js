@@ -46,6 +46,7 @@ import "../unit_tests/jstor/jstor_test.mjs";
 import "../unit_tests/mh/mh_test.mjs";
 import "../unit_tests/naie/naie_test.mjs";
 import "../unit_tests/nli/nli_test.mjs";
+import "../unit_tests/noda/noda_test.mjs";
 import "../unit_tests/np/np_test.mjs";
 import "../unit_tests/opccorn/opccorn_test.mjs";
 import "../unit_tests/openarch/openarch_test.mjs";
@@ -57,7 +58,6 @@ import "../unit_tests/vicbdm/vicbdm_test.mjs";
 import "../unit_tests/wiewaswie/wiewaswie_test.mjs";
 import "../unit_tests/wikipedia/wikipedia_test.mjs";
 import "../unit_tests/wikitree/wikitree_test.mjs";
-import "../unit_tests/noda/noda_test.mjs";
 
 function testSuiteEnabled(parameters, testSuiteName) {
   return parameters.testSuiteName == "" || parameters.testSuiteName == testSuiteName;

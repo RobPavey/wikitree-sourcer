@@ -29,6 +29,7 @@ import { StringUtils } from "./string_utils.mjs";
 import { DateUtils } from "./date_utils.mjs";
 import { getChildTerm, getPrimaryPersonChildTerm } from "./narrative_or_sentence_utils.mjs";
 import { RC } from "./record_collections.mjs";
+import { buildStructuredHousehold } from "./structured_household.mjs";
 
 class NarrativeBuilder {
   constructor(options) {
@@ -1244,16 +1245,18 @@ class NarrativeBuilder {
       baptisedString = "baptized";
     }
 
+    let birthDate = gd.birthDate;
     if (gd.role && gd.role != Role.Primary) {
       this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+      birthDate = gd.inferPrimaryPersonBirthDateObj();
     } else {
       this.narrative += this.getPersonNameOrPronoun();
       this.addParentageForMainSentence();
     }
     this.narrative += " was ";
 
-    if (gd.birthDate && this.options.narrative_baptism_includeBirthDate) {
-      this.narrative += "born " + this.formatDateObj(gd.birthDate, true);
+    if (birthDate && this.options.narrative_baptism_includeBirthDate) {
+      this.narrative += "born " + this.formatDateObj(birthDate, true);
       if (this.options.narrative_baptism_sentenceStructure == "parentsBornAndBap") {
         this.narrative += " and ";
       } else {
@@ -1290,17 +1293,19 @@ class NarrativeBuilder {
 
     let baptisedString = "confirmed";
 
+    let birthDate = gd.birthDate;
     if (gd.role && gd.role != Role.Primary) {
       this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+      birthDate = gd.inferPrimaryPersonBirthDateObj();
     } else {
       this.narrative += this.getPersonNameOrPronoun();
       this.addParentageForMainSentence();
     }
     this.narrative += " was ";
 
-    if (gd.birthDate && this.options.narrative_baptism_includeBirthDate) {
-      this.narrative += "born " + this.formatDateObj(gd.birthDate, true);
-      if (this.options.narrative_baptism_sentenceStructure == "parentsBornAndBap") {
+    if (birthDate && this.options.narrative_confirmation_includeBirthDate) {
+      this.narrative += "born " + this.formatDateObj(birthDate, true);
+      if (this.options.narrative_confirmation_sentenceStructure == "parentsBornAndConf") {
         this.narrative += " and ";
       } else {
         this.narrative += "; ";
@@ -1593,6 +1598,8 @@ class NarrativeBuilder {
     let options = this.options;
     let builder = this;
     let collection = this.getCollection();
+
+    let structuredHousehold = buildStructuredHousehold(gd);
 
     function getHeadOfHouseholdMemberIfNotSelected(household) {
       let hasRelationships = false;

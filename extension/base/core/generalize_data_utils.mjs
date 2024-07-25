@@ -154,6 +154,7 @@ const GD = {
       dau: "daughter",
       d: "daughter",
       "farmers daughter": "daughter",
+
       // step children
       stepdaughter: "stepdaughter",
       "step-daughter": "stepdaughter",
@@ -175,6 +176,7 @@ const GD = {
       "step-child": "stepchild",
       "step child": "stepchild",
       stepchild: "stepchild",
+
       // in-law children
       "daughter-in-law": "daughter-in-law",
       "dau-in-law": "daughter-in-law",
@@ -193,14 +195,18 @@ const GD = {
       grandson: "grandson",
       grnson: "grandson",
       "step-grandson": "step-grandson",
+      "step-grandchild": "step-grandchild",
+
       // parents
       father: "father",
       mother: "mother",
+
       // in-law parents
       "father-in-law": "father-in-law",
       "fa-law": "father-in-law",
       "mother-in-law": "mother-in-law",
       "ma-law": "mother-in-law",
+
       // step parents
       stepfather: "stepfather",
       "step-father": "stepfather",
@@ -212,6 +218,7 @@ const GD = {
       stpmum: "stepmother",
       stepma: "stepmother",
       stpma: "stepmother",
+
       // grandparents
       grandfather: "grandfather",
       "grand father": "grandfather",
@@ -240,6 +247,7 @@ const GD = {
       stepsister: "stepsister",
       "step-sister": "stepsister",
       stpsis: "stepsister",
+
       // other family
       aunt: "aunt",
       cousin: "cousin",
@@ -250,6 +258,7 @@ const GD = {
       niece: "niece",
       nephew: "nephew",
       uncle: "uncle",
+
       // other relationships
       apprentice: "apprentice",
       appren: "apprentice",
@@ -262,6 +271,7 @@ const GD = {
       "hired man": "hired man",
       inmate: "inmate",
       lodger: "lodger",
+      maid: "maid",
       mistress: "mistress",
       mstres: "mistress",
       "nurse child": "nurse child",
@@ -290,10 +300,13 @@ const GD = {
       "wife's daughter": "wife's daughter",
       "wife's dau": "wife's daughter",
       wifdau: "wife's daughter",
+      "wife's father": "wife's father",
+      "wif-fa": "wife's father",
       "wife's mother": "wife's mother",
       "wif-ma": "wife's mother",
       "wife's son": "wife's son",
       wifson: "wife's son",
+      "wife's child": "wife's child",
     };
 
     // allows for transcription errors also (like "Mead" for head)
@@ -380,6 +393,116 @@ const GD = {
     console.log("standardizeRelationshipToHead: unrecognized: " + lc);
 
     return lc;
+  },
+
+  getStandardizedRelationshipMeaning(relationshipToHead) {
+    const relationshipMap = {
+      head: {},
+      husband: { impliedGender: "male" },
+      wife: { impliedGender: "female" },
+
+      // children
+      son: { impliedGender: "male" },
+      daughter: { impliedGender: "female" },
+
+      // step children
+      stepson: { impliedGender: "male" },
+      stepdaughter: { impliedGender: "female" },
+      stepchild: {},
+
+      "wife's son": { impliedGender: "male" },
+      "wife's daughter": { impliedGender: "female" },
+      "wife's child": {},
+
+      // in-law children
+      "son-in-law": { impliedGender: "male" },
+      "daughter-in-law": { impliedGender: "female" },
+
+      // grandchildren
+      grandson: { impliedGender: "male" },
+      granddaughter: { impliedGender: "female" },
+      grandchild: {},
+
+      // step grandchildren
+      "step-grandson": { impliedGender: "male" },
+      "step-granddaughter": { impliedGender: "female" },
+      "step-grandchild": {},
+
+      // parents
+      father: { impliedGender: "male" },
+      mother: { impliedGender: "female" },
+
+      // in-law parents
+      "father-in-law": { impliedGender: "male" },
+      "mother-in-law": { impliedGender: "female" },
+
+      "wife's father": { impliedGender: "male" },
+      "wife's mother": { impliedGender: "female" },
+
+      // step parents
+      stepfather: { impliedGender: "male" },
+      stepmother: { impliedGender: "female" },
+
+      // grandparents
+      grandfather: { impliedGender: "male" },
+      grandmother: { impliedGender: "female" },
+
+      // siblings
+      brother: { impliedGender: "male" },
+      sister: { impliedGender: "female" },
+
+      "brother-in-law": { impliedGender: "male" },
+      "sister-in-law": { impliedGender: "female" },
+
+      "half brother": { impliedGender: "male" },
+      "half sister": { impliedGender: "female" },
+
+      stepbrother: { impliedGender: "male" },
+      stepsister: { impliedGender: "female" },
+
+      // other family
+      uncle: { impliedGender: "male" },
+      aunt: { impliedGender: "female" },
+
+      cousin: {},
+
+      "great uncle": { impliedGender: "male" },
+      "great aunt": { impliedGender: "female" },
+
+      nephew: { impliedGender: "male" },
+      niece: { impliedGender: "female" },
+
+      // other relationships
+      apprentice: { nonFamily: true },
+      assistant: { nonFamily: true },
+      boarder: { nonFamily: true },
+      lodger: { nonFamily: true },
+
+      governess: { nonFamily: true, impliedGender: "female" },
+      "hired man": { nonFamily: true, impliedGender: "male" },
+      inmate: { nonFamily: true },
+      mistress: { nonFamily: true, impliedGender: "female" },
+      "nurse child": { nonFamily: true },
+      owner: { nonFamily: true },
+      patient: { nonFamily: true },
+      pauper: { nonFamily: true },
+      prisoner: { nonFamily: true },
+      pupil: { nonFamily: true },
+      relative: { nonFamily: true },
+      scholar: { nonFamily: true },
+      servant: { nonFamily: true },
+      maid: { nonFamily: true, impliedGender: "female" },
+      slave: { nonFamily: true },
+      stranger: { nonFamily: true },
+      traveller: { nonFamily: true },
+      visitor: { nonFamily: true },
+    };
+
+    let meaning = relationshipMap[relationshipToHead];
+    if (!meaning) {
+      meaning = {};
+    }
+    return meaning;
   },
 
   standardizeOccupation: function (string) {
@@ -2103,6 +2226,23 @@ class GeneralizedData {
   addSpouseOrParentsForSelectedHouseholdMember() {
     let members = this.householdArray;
     if (!members || members.length <= 1) {
+      return;
+    }
+
+    let structuredHousehold = GD.buildStructuredHousehold(this);
+
+    // if there is more than one head or more than one wife then do nothing.
+    // Example: Norway: https://www.digitalarkivet.no/en/census/person/pf01052316000238
+    let headCount = 0;
+    let wifeCount = 0;
+    for (let member of members) {
+      if (member.relationship == "head") {
+        headCount++;
+      } else if (member.relationship == "wife") {
+        wifeCount++;
+      }
+    }
+    if (headCount > 1 || wifeCount > 1) {
       return;
     }
 

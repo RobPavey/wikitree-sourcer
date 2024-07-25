@@ -57,6 +57,13 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=8767&h=5941798&indiv=try&viewrecord=1&r=an"
     }
   ],
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Susanha Lago"
+      }
+    }
+  },
   "wtSearchTemplates": [
     "{{Ancestry Record|8767|5941797}}"
   ],

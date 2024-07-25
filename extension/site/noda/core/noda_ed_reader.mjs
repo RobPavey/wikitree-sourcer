@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { RT } from "../../../base/core/record_type.mjs";
+import { RT, Role } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameObj, DateObj, PlaceObj, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
@@ -36,6 +36,7 @@ var eventTypes = [
       nn: "Fødde og døypte",
     },
     panelTitleKey: "Births and baptisms",
+    primaryRole: Role.Child,
   },
   {
     recordType: RT.Burial,
@@ -63,6 +64,15 @@ var eventTypes = [
       nn: "Konfirmerte",
     },
     panelTitleKey: "Confirmations",
+  },
+  {
+    recordType: RT.Death,
+    breadcrumbText: {
+      en: "Deaths 1951-2014",
+      bo: "Døde 1951-2014",
+      nn: "Døde 1951-2014",
+    },
+    panelTitleKey: "",
   },
   {
     recordType: RT.Death,
@@ -158,6 +168,11 @@ const fieldLabels = {
     bo: ["Dødsdato"],
     nn: ["Dødsdato"],
   },
+  deathMunicipality: {
+    en: ["Death municipality"],
+    bo: ["Dødskommune", "dødskommune"],
+    nn: ["dodskommune", "Dodskommune"],
+  },
   deathPlace: {
     en: ["Death place", "Place of death"],
     bo: ["Dødssted"],
@@ -199,7 +214,7 @@ const fieldLabels = {
     nn: ["Førenamn"],
   },
   lastName: {
-    en: ["Last name"],
+    en: ["Last name", "Surname"],
     bo: ["Etternavn"],
     nn: ["Etternamn"],
   },
@@ -222,6 +237,11 @@ const fieldLabels = {
     en: ["Marriage place"],
     bo: ["Vielsessted"],
     nn: ["Vigselsstad"],
+  },
+  municipality: {
+    en: ["Municipality"],
+    bo: ["Bostedskommune"],
+    nn: ["Kommune"],
   },
   name: {
     en: ["Name"],
@@ -362,29 +382,75 @@ const maritalStatusValues = {
 // converts the relationship to head
 // See: https://homepages.rootsweb.com/~norway/census_abbreviations.html
 const familyPositionValues = {
-  hf: "head", // house father or husband
-  hm: "wife", // house mother or wife
-  hp: "head", // (selv) hovedperson = head of household
-  hovedperson: "head", // (selv) hovedperson = head of household
-  "familiens overhode": "head", // The head of the family
-  selv: "head", // (selv) hovedperson = head of household
-  hu: "wife", // hustru = wife
-  hustru: "wife", // hustru = wife
-  kone: "wife",
-  s: "son",
-  søn: "son",
-  d: "daughter",
-  datter: "daughter",
-  børn: "child",
-  tj: "servant", // tjenestetyende
-  tjener: "servant",
-  tjenestepige: "maid",
-  "moder til husfaderen": "mother",
-  logerende: "lodger",
-  fl: "lodger", // losjerende, hørende til familien = lodger, related to the family
-  el: "lodger", // enslig losjerende = single lodger, not related to the family
-  b: "visitor", // besøkende = visitor
-  "hans kone": "hisWife",
+  hf: { standardRelationship: "head", isHouseholdHead: true }, // house father or husband
+  husfader: { standardRelationship: "head", isHouseholdHead: true }, // house father or husband
+  hp: { standardRelationship: "head", isHouseholdHead: true }, // (selv) hovedperson = head of household
+  selv: { standardRelationship: "head", isHouseholdHead: true }, // (selv) hovedperson = head of household
+  hovedperson: { standardRelationship: "head", isHouseholdHead: true }, // (selv) hovedperson = head of household
+  "familiens overhode": { standardRelationship: "head", isHouseholdHead: true }, // The head of the family
+
+  hm: { standardRelationship: "wife" }, // house mother or wife
+  hu: { standardRelationship: "wife" }, // hustru = wife
+  hustru: { standardRelationship: "wife" }, // hustru = wife
+  kone: { standardRelationship: "wife" },
+  "hans kone": { standardRelationship: "wife", isPositionSensitive: true },
+
+  s: { standardRelationship: "son" },
+  søn: { standardRelationship: "son" },
+  sønn: { standardRelationship: "son" },
+  d: { standardRelationship: "daughter" },
+  datter: { standardRelationship: "daughter" },
+  børn: { standardRelationship: "child" },
+  "deres s": { standardRelationship: "son", isPositionSensitive: true }, // their son
+  "deres søn": { standardRelationship: "son", isPositionSensitive: true }, // their son
+  "deres d": { standardRelationship: "daughter", isPositionSensitive: true }, // their daughter
+  "deres datter": { standardRelationship: "daughter", isPositionSensitive: true }, // their daughter
+  hs: { standardRelationship: "son", isPositionSensitive: true }, // her son
+  "h s": { standardRelationship: "son", isPositionSensitive: true }, // her son
+  "hendes s": { standardRelationship: "son", isPositionSensitive: true }, // her son
+  "hendes søn": { standardRelationship: "son", isPositionSensitive: true }, // her son
+  hd: { standardRelationship: "daughter", isPositionSensitive: true }, // her daughter
+  "h d": { standardRelationship: "daughter", isPositionSensitive: true }, // her daughter
+  "hendes d": { standardRelationship: "daughter", isPositionSensitive: true }, // her daughter
+  "hendes datter": { standardRelationship: "daughter", isPositionSensitive: true }, // her daughter
+
+  stedsøn: { standardRelationship: "stepson" }, // step son
+  steddatter: { standardRelationship: "stepdaughter" }, // step daughter
+
+  ss: { standardRelationship: "grandson" }, // son's son
+  "s s": { standardRelationship: "grandson" }, // son's son
+  "s søn": { standardRelationship: "grandson" }, // son's son
+  sønnesøn: { standardRelationship: "grandson" }, // son's son
+  sønnesønn: { standardRelationship: "grandson" }, // son's son
+  "sønns søn": { standardRelationship: "grandson" }, // son's son
+  "sønns sønn": { standardRelationship: "grandson" }, // son's son
+
+  sd: { standardRelationship: "granddaughter" }, // son's daughter
+  "s d": { standardRelationship: "granddaughter" }, // son's daughter
+  "s datter": { standardRelationship: "granddaughter" }, // son's daughter
+  sønnedatter: { standardRelationship: "granddaughter" }, // son's daughter
+  "sønns datter": { standardRelationship: "granddaughter" }, // son's daughter
+
+  ds: { standardRelationship: "grandson" }, // daughter's son
+  "d s": { standardRelationship: "grandson" }, // daughter's son
+  "d søn": { standardRelationship: "grandson" }, // daughter's son
+  "datters s": { standardRelationship: "grandson" }, // daughter's son
+  "datters søn": { standardRelationship: "grandson" }, // daughter's son
+  "datters sønn": { standardRelationship: "grandson" }, // daughter's son
+
+  dd: { standardRelationship: "granddaughter" }, // daughter's daughter
+  "d d": { standardRelationship: "granddaughter" }, // daughter's daughter
+  "datters d": { standardRelationship: "granddaughter" }, // daughter's daughter
+  "d datter": { standardRelationship: "granddaughter" }, // daughter's daughter
+
+  tj: { standardRelationship: "servant" }, // tjenestetyende
+  tjener: { standardRelationship: "servant" },
+  tjenestepige: { standardRelationship: "maid" },
+  "moder til husfaderen": { standardRelationship: "mother" },
+  logerende: { standardRelationship: "lodger" },
+  fl: { standardRelationship: "lodger" }, // losjerende, hørende til familien = lodger, related to the family
+  el: { standardRelationship: "lodger" }, // enslig losjerende = single lodger, not related to the family
+  b: { standardRelationship: "visitor" }, // besøkende = visitor
 };
 
 const residentialStatusValues = {
@@ -392,6 +458,29 @@ const residentialStatusValues = {
   mt: "resides temporarily",
   f: "temporarily absent",
 };
+
+const roleToGdRole = {
+  far: Role.Parent,
+  mor: Role.Parent,
+  barn: Role.Child,
+};
+
+function cleanName(nameString) {
+  if (nameString) {
+    nameString = nameString.trim();
+    if (nameString.includes("%")) {
+      let nameParts = nameString.split("%");
+      if (nameParts.length == 2) {
+        nameString = nameParts[0].trim();
+      } else if (nameParts.length == 3) {
+        if (!nameParts[2].trim()) {
+          nameString = nameParts[0].trim();
+        }
+      }
+    }
+  }
+  return nameString;
+}
 
 class NodaEdReader extends ExtractedDataReader {
   constructor(ed) {
@@ -419,6 +508,16 @@ class NodaEdReader extends ExtractedDataReader {
         let baptismDate = this.getPanelDataValue("Births and baptisms", "baptismDate");
         if (baptismDate) {
           recordType = RT.Baptism;
+        }
+      }
+
+      let recordRole = this.getRecordDataValue("role");
+      if (recordRole) {
+        let role = roleToGdRole[recordRole];
+        if (role) {
+          if (this.eventType && this.eventType.primaryRole != role) {
+            this.role = role;
+          }
         }
       }
     } else if (ed.pageType == "image") {
@@ -566,14 +665,14 @@ class NodaEdReader extends ExtractedDataReader {
     }
 
     const dateCensusForRegexes = {
-      en: /^(\d+) census for (.*)$/,
-      bo: /^(\d+) folketelling for (.*)$/,
-      nn: /^(\d+) folketeljing for (.*)$/,
+      en: /^(\d+) census for (.*)$/i,
+      bo: /^(\d+) folketelling for (.*)$/i,
+      nn: /^(\d+) folketeljing for (.*)$/i,
     };
     const censusDateForRegexes = {
-      en: /^Census (\d+) for (.*)$/,
-      bo: /^Folketelling (\d+) for (.*)$/,
-      nn: /^Folketeljing (\d+) for (.*)$/,
+      en: /^Census (\d+) for (.*)$/i,
+      bo: /^Folketelling (\d+) for (.*)$/i,
+      nn: /^Folketeljing (\d+) for (.*)$/i,
     };
     const parishWords = {
       en: "parish",
@@ -1043,7 +1142,7 @@ class NodaEdReader extends ExtractedDataReader {
     return undefined;
   }
 
-  getPrimaryPerson() {
+  getSelectedPerson() {
     let people = this.getFirstPeopleArray();
     if (!people || people.length == 0) {
       return undefined;
@@ -1078,6 +1177,40 @@ class NodaEdReader extends ExtractedDataReader {
     return undefined;
   }
 
+  getSelectedPersonRole() {
+    let selectedPersonRole = this.getRecordDataValue("role");
+    if (!selectedPersonRole) {
+      let selectedPerson = this.getSelectedPerson();
+      if (selectedPerson) {
+        selectedPersonRole = this.getPersonDataValue(selectedPerson, "role");
+      }
+    }
+    return selectedPersonRole;
+  }
+
+  getFirstPrimaryRolePerson(primaryRole) {
+    let people = this.getFirstPeopleArray();
+    if (!people || people.length == 0) {
+      return undefined;
+    }
+
+    if (people.length == 1) {
+      return people[0];
+    }
+
+    for (let person of people) {
+      let role = this.getRecordDataValue("role");
+      if (role) {
+        let gdRole = roleToGdRole[role];
+        if (gdRole && gdRole == primaryRole) {
+          return person;
+        }
+      }
+    }
+
+    return people[0];
+  }
+
   getRelationshipToHeadForPerson(person) {
     if (person) {
       let familyPosition = this.getPersonDataValue(person, "familyPosition");
@@ -1099,11 +1232,6 @@ class NodaEdReader extends ExtractedDataReader {
 
         let relationToHead = familyPositionValues[familyPosition];
         if (relationToHead) {
-          if (relationToHead == "hisWife") {
-            // this means the wife of the previous person
-            // for now just set it to "wife"
-            relationToHead = "wife";
-          }
           return relationToHead;
         } else {
           // simple lookup failed, sometimes the familyPosition value is a combination
@@ -1115,13 +1243,13 @@ class NodaEdReader extends ExtractedDataReader {
               return relationToHead;
             }
           }
-          return familyPosition;
+          return { unrecognizedRelationship: familyPosition };
         }
       } else {
         // sometimes the head has a blank family position
         // e.g.: https://www.digitalarkivet.no/en/census/person/pf01038310006925
         if (person.personLabel == "001") {
-          return "head";
+          return { standardRelationship: "head", impliedByPosition: true };
         }
       }
     }
@@ -1156,23 +1284,6 @@ class NodaEdReader extends ExtractedDataReader {
 
       // names can have other versions in percent signs. e.g.:
       // Nils Stenersen %Nilsen%
-
-      function cleanName(nameString) {
-        if (nameString) {
-          nameString = nameString.trim();
-          if (nameString.includes("%")) {
-            let nameParts = nameString.split("%");
-            if (nameParts.length == 2) {
-              nameString = nameParts[0].trim();
-            } else if (nameParts.length == 3) {
-              if (!nameParts[2].trim()) {
-                nameString = nameParts[0].trim();
-              }
-            }
-          }
-        }
-        return nameString;
-      }
 
       givenName = cleanName(givenName);
       lastName = cleanName(lastName);
@@ -1246,6 +1357,8 @@ class NodaEdReader extends ExtractedDataReader {
       return this.makePlaceObjFromRecordPanelAndSourceData("", "Confirmations", "parishChurch");
     } else if (this.recordType == RT.Probate) {
       return this.makePlaceObjFromRecordPanelAndSourceData("smallerJudicialArea", "", "");
+    } else if (this.recordType == RT.Death) {
+      return this.makePlaceObjFromRecordPanelAndSourceData("municipality", "", "");
     } else if (this.recordType == RT.Emigration) {
       return this.makePlaceObjFromRecordPanelAndSourceData("", "Emigration", "parish");
     } else if (this.recordType == RT.Census) {
@@ -1380,6 +1493,17 @@ class NodaEdReader extends ExtractedDataReader {
   getDeathPlaceObj() {
     let placeString = this.getRecordDataValue("deathPlace");
 
+    if (!placeString) {
+      placeString = this.getRecordDataValue("deathMunicipality");
+      if (placeString) {
+        // add on the county etc
+        let placeObj = this.makePlaceObjFromRecordPanelAndSourceData("deathMunicipality", "", "");
+        if (placeObj) {
+          return placeObj;
+        }
+      }
+    }
+
     if (placeString) {
       return this.makePlaceObjFromFullPlaceName(placeString);
     }
@@ -1413,8 +1537,16 @@ class NodaEdReader extends ExtractedDataReader {
 
   getRelationshipToHead() {
     if (this.recordType == RT.Census) {
-      let person = this.getPrimaryPerson();
-      return this.getRelationshipToHeadForPerson(person);
+      let person = this.getSelectedPerson();
+      let relationshipToHeadObj = this.getRelationshipToHeadForPerson(person);
+      if (relationshipToHeadObj) {
+        if (relationshipToHeadObj.standardRelationship) {
+          return relationshipToHeadObj.standardRelationship;
+        }
+        if (relationshipToHeadObj.unrecognizedRelationship) {
+          return relationshipToHeadObj.unrecognizedRelationship;
+        }
+      }
     }
 
     return "";
@@ -1452,18 +1584,11 @@ class NodaEdReader extends ExtractedDataReader {
     if (this.recordType == RT.Marriage) {
       const brideRole = "brur";
       const groomRole = "brudgom";
-      let primaryRole = this.getRecordDataValue("role");
-      if (!primaryRole) {
-        let primaryPerson = this.getPrimaryPerson();
-        if (primaryPerson) {
-          primaryRole = this.getPersonDataValue(primaryPerson, "role");
-        }
-      }
-
-      if (primaryRole == brideRole || primaryRole == groomRole) {
+      let selectedPersonRole = this.getSelectedPersonRole();
+      if (selectedPersonRole == brideRole || selectedPersonRole == groomRole) {
         for (let person of people) {
           let role = this.getPersonDataValue(person, "role");
-          if ((role == brideRole || role == groomRole) && role != primaryRole) {
+          if ((role == brideRole || role == groomRole) && role != selectedPersonRole) {
             let name = this.getPersonDataValue(person, "name");
             if (name) {
               let nameObj = this.makeNameObjFromFullName(name);
@@ -1477,10 +1602,52 @@ class NodaEdReader extends ExtractedDataReader {
           }
         }
       }
+    } else {
+      if (this.role) {
+        // if this is the father in the baptism then the spouse would be the mother or vice versa
+        const fatherRole = "far";
+        const motherRole = "mor";
+
+        let spouseRole = "";
+        let selectedPersonRole = this.getSelectedPersonRole();
+        if (selectedPersonRole == fatherRole) {
+          spouseRole = motherRole;
+        } else if (selectedPersonRole == motherRole) {
+          spouseRole = fatherRole;
+        }
+
+        if (spouseRole) {
+          let people = this.getFirstPeopleArray();
+          if (!people || people.length == 0) {
+            return undefined;
+          }
+
+          for (let person of people) {
+            let role = this.getPersonDataValue(person, "role");
+            if (role && role == spouseRole) {
+              let name = this.getPersonDataValue(person, "name");
+              if (name) {
+                let nameObj = this.makeNameObjFromFullName(name);
+                if (nameObj) {
+                  let spouseObj = this.makeSpouseObj(nameObj);
+                  if (spouseObj) {
+                    return [spouseObj];
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 
   getParents() {
+    if (this.role) {
+      // for now, if this is not the primary person for the event, do not try to figure out parents.
+      return undefined;
+    }
+
     let people = this.getFirstPeopleArray();
     if (!people) {
       return;
@@ -1492,28 +1659,22 @@ class NodaEdReader extends ExtractedDataReader {
     if (this.recordType == RT.Marriage) {
       const brideRole = "brur";
       const groomRole = "brudgom";
-      let primaryRole = this.getRecordDataValue("role");
-      if (!primaryRole) {
-        let primaryPerson = this.getPrimaryPerson();
-        if (primaryPerson) {
-          primaryRole = this.getPersonDataValue(primaryPerson, "role");
-        }
-      }
+      let selectedPersonRole = this.getSelectedPersonRole();
 
-      if (primaryRole == brideRole || primaryRole == groomRole) {
+      if (selectedPersonRole == brideRole || selectedPersonRole == groomRole) {
         for (let person of people) {
           let role = this.getPersonDataValue(person, "role");
           if (
-            (role == "brudgommens far" && primaryRole == groomRole) ||
-            (role == "bruras far" && primaryRole == brideRole)
+            (role == "brudgommens far" && selectedPersonRole == groomRole) ||
+            (role == "bruras far" && selectedPersonRole == brideRole)
           ) {
             let name = this.getPersonDataValue(person, "name");
             if (name) {
               fatherNameString = name;
             }
           } else if (
-            (role == "brudgommens mor" && primaryRole == groomRole) ||
-            (role == "bruras mor" && primaryRole == brideRole)
+            (role == "brudgommens mor" && selectedPersonRole == groomRole) ||
+            (role == "bruras mor" && selectedPersonRole == brideRole)
           ) {
             let name = this.getPersonDataValue(person, "name");
             if (name) {
@@ -1540,6 +1701,63 @@ class NodaEdReader extends ExtractedDataReader {
     }
 
     return this.makeParentsFromFullNames(fatherNameString, motherNameString);
+  }
+
+  getPrimaryPerson() {
+    if (!this.role) {
+      return undefined;
+    }
+
+    // The "primary person" for the generalized data is the person who has the primary role
+    // in the event. I.e. the child being baptized.
+    let person = undefined;
+
+    if (this.eventType) {
+      let primaryRole = this.eventType.primaryRole;
+      if (primaryRole) {
+        if (primaryRole == this.role) {
+          return undefined;
+        }
+
+        // find person with role
+        person = this.getFirstPrimaryRolePerson(primaryRole);
+      }
+    }
+
+    if (!person) {
+      let people = this.getFirstPeopleArray();
+      if (people && people.length > 0) {
+        person = people[0];
+      }
+    }
+
+    if (person) {
+      let primaryPerson = {};
+      let fullName = this.getPersonDataValue(person, "name");
+      if (fullName) {
+        let nameObj = this.makeNameObjFromFullName(cleanName(fullName));
+        if (nameObj) {
+          primaryPerson.name = nameObj;
+        }
+      } else {
+        let givenName = this.getPersonDataValue(person, "givenName");
+        let lastName = this.getPersonDataValue(person, "lastName");
+
+        // names can have other versions in percent signs. e.g.:
+        // Nils Stenersen %Nilsen%
+
+        givenName = cleanName(givenName);
+        lastName = cleanName(lastName);
+
+        if (givenName || lastName) {
+          let nameObj = this.makeNameObjFromForenamesAndLastName(givenName, lastName);
+          if (nameObj) {
+            primaryPerson.name = nameObj;
+          }
+        }
+      }
+      return primaryPerson;
+    }
   }
 
   getHousehold() {
@@ -1597,8 +1815,14 @@ class NodaEdReader extends ExtractedDataReader {
       //   familyPosition, marital status, occupation, age/born, birthPlace
       // See: https://www.familysearch.org/en/wiki/Norway_Census,_1875_-_FamilySearch_Historical_Records
 
-      let relationToHead = this.getRelationshipToHeadForPerson(person);
-      if (relationToHead) {
+      let relationToHeadObj = this.getRelationshipToHeadForPerson(person);
+      let relationToHead = "";
+      if (relationToHeadObj) {
+        if (relationToHeadObj.standardRelationship) {
+          relationToHead = relationToHeadObj.standardRelationship;
+        } else if (relationToHeadObj.unrecognizedRelationship) {
+          relationToHead = relationToHeadObj.unrecognizedRelationship;
+        }
         setMemberField(householdMember, "relationship", relationToHead);
       }
 

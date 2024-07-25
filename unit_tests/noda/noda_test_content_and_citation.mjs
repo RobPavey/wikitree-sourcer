@@ -40,6 +40,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/view/267/pg00000000517413",
   },
   {
+    caseName: "cb_child_bap_ludvig_fremmerlid",
+    url: "https://www.digitalarkivet.no/en/view/255/pd00000033830720",
+  },
+  {
     caseName: "census_1815_ole_anders",
     url: "https://www.digitalarkivet.no/en/census/person/pf01051099000750",
   },
@@ -62,6 +66,12 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/nn/census/person/pf01052377002789",
   },
   {
+    // was not getting event date because of a case difference:
+    // "1875 Census for 1438P Bremanger" rather than "1875 census for 1660P Strinda"
+    caseName: "census_1875_lars_valdemarsen",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01052316000226",
+  },
+  {
     caseName: "census_1875_nils_stenersen",
     url: "https://www.digitalarkivet.no/en/census/person/pf01052251002682",
   },
@@ -76,6 +86,10 @@ const regressionData = [
   {
     caseName: "confirmation_1825_carl_motzfeldt",
     url: "https://www.digitalarkivet.no/en/view/279/pk00000002723491",
+  },
+  {
+    caseName: "death_1951_kare_tonne",
+    url: "https://www.digitalarkivet.no/en/view/387/pc00000001290505",
   },
   {
     caseName: "emigrant_1872_ole_anders",

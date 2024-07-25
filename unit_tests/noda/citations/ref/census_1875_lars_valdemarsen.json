@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1875 Census''':\n\"1875 Census for 1438P Bremanger\"<br/>\nCensus district: 001*; Rural residence: 014* Frøjen nedre<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01052316000226 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nLars Valdemarsen, married, Gaardbr. Selveier, Fisker, head of household in Frøjen nedre, Bremanger, Sogn og Fjordane, Norway. Born in Bremanger Prgj..\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1875 census Lars, Gaardbr. Selveier, Fisker, was the married head of household in Frøjen nedre, Bremanger, Sogn og Fjordane, Norway.<ref>\n'''1875 Census''':\n\"1875 Census for 1438P Bremanger\"<br/>\nCensus district: 001*; Rural residence: 014* Frøjen nedre<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01052316000226 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nLars Valdemarsen, married, Gaardbr. Selveier, Fisker, head of household in Frøjen nedre, Bremanger, Sogn og Fjordane, Norway. Born in Bremanger Prgj..\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1875 Census''': \"1875 Census for 1438P Bremanger\"<br/>Census district: 001*; Rural residence: 014* Frøjen nedre<br/>[https://www.digitalarkivet.no/en/census/person/pf01052316000226 Digitalarkivet Record] (accessed 6 May 2021)<br/>Lars Valdemarsen, married, Gaardbr. Selveier, Fisker, head of household in Frøjen nedre, Bremanger, Sogn og Fjordane, Norway. Born in Bremanger Prgj..",
+    "type": "source"
+  }
+}

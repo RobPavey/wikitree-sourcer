@@ -145,6 +145,18 @@
       "birthPlace": "Essex, England"
     }
   ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Michael Flaningan"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Julia Flaningan"
+      }
+    }
+  },
   "collectionData": {
     "id": "1851 England, Wales & Scotland Census",
     "page": "9",

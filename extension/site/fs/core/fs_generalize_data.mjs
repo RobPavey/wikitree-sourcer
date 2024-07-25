@@ -33,6 +33,7 @@ import {
 import { RT, Role, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
+import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
 
 import {
   buildFsRecordLinkOrTemplate,
@@ -1315,7 +1316,7 @@ function generalizeData(input) {
 
   if (ed.household && ed.household.members) {
     // We can also determine parents and spouse in some cases
-    result.addSpouseOrParentsForSelectedHouseholdMember();
+    addSpouseOrParentsForSelectedHouseholdMember(result);
 
     if (result.spouses && result.spouses.length == 1) {
       let yearsMarried = ed.recordData["Cnt Years Married"];
