@@ -82,7 +82,7 @@
     {
       "name": "Ingeborg Jakobsdatter",
       "relationship": "servant",
-      "occupation": "Tjenestepige",
+      "occupation": "Maid",
       "birthDate": "1829",
       "birthPlace": "Klæbo",
       "residentialStatus": "resides permanently"
@@ -117,7 +117,7 @@
       "name": "Lars Olsen Granaas",
       "relationship": "lodger",
       "maritalStatus": "single",
-      "occupation": "Dagarbeider",
+      "occupation": "Day laborer",
       "birthDate": "1831",
       "birthPlace": "Lade Strind",
       "residentialStatus": "resides permanently"

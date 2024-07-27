@@ -55,17 +55,17 @@
     },
     {
       "name": "Erik Nielsen",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "40"
     },
     {
       "name": "Anders Eriksen",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "18"
     },
     {
       "name": "Lars Olsen",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "17"
     },
     {
@@ -81,7 +81,7 @@
     {
       "name": "Thomas Olsen",
       "maritalStatus": "married",
-      "occupation": "Huusmand",
+      "occupation": "Householder",
       "age": "54",
       "relationship": "head"
     },
@@ -94,13 +94,13 @@
     {
       "name": "Jacob Thomasen",
       "relationship": "child",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "20"
     },
     {
       "name": "Ole Thomasen",
       "relationship": "child",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "18"
     },
     {
@@ -111,7 +111,7 @@
     {
       "name": "Niels Johannessen",
       "maritalStatus": "married",
-      "occupation": "Huusmand",
+      "occupation": "Householder",
       "age": "36",
       "relationship": "head"
     },
@@ -134,7 +134,7 @@
     {
       "name": "Anders Johannessen",
       "maritalStatus": "married",
-      "occupation": "Huusmand",
+      "occupation": "Householder",
       "age": "40",
       "relationship": "head"
     },
@@ -186,38 +186,38 @@
     },
     {
       "name": "Elias Olsen",
-      "occupation": "Dagarbeider",
+      "occupation": "Day laborer",
       "age": "29"
     },
     {
       "name": "Kisti Olsdatter",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "27"
     },
     {
       "name": "Siur Olsen",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "23"
     },
     {
       "name": "Christopher Christens",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "17"
     },
     {
       "name": "Inga Pedersdatter",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "26"
     },
     {
       "name": "Christen Pedersen",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "14"
     },
     {
       "name": "Anders Olsen",
       "maritalStatus": "married",
-      "occupation": "Huusmand",
+      "occupation": "Householder",
       "age": "69",
       "relationship": "head"
     },
@@ -229,13 +229,13 @@
     },
     {
       "name": "Ole Iversen",
-      "occupation": "Tiener",
+      "occupation": "Teenager",
       "age": "17"
     },
     {
       "name": "Ole Monsen",
       "maritalStatus": "married",
-      "occupation": "Huusmand",
+      "occupation": "Householder",
       "age": "67",
       "relationship": "head"
     },
@@ -257,7 +257,7 @@
     {
       "name": "Peder Johanness",
       "maritalStatus": "married",
-      "occupation": "Huusmand",
+      "occupation": "Householder",
       "age": "37",
       "relationship": "head"
     },

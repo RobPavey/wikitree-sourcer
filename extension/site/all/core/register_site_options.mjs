@@ -32,6 +32,7 @@ import "../../ancestry/core/ancestry_options.mjs";
 import "../../bg/core/bg_options.mjs";
 import "../../opccorn/core/opccorn_options.mjs";
 import "../../cwgc/core/cwgc_options.mjs";
+import "../../noda/core/noda_options.mjs"; // "Digitalarkivet"
 import "../../fmp/core/fmp_options.mjs";
 import "../../fs/core/fs_options.mjs";
 import "../../fg/core/fg_options.mjs";
@@ -59,4 +60,3 @@ import "../../vicbdm/core/vicbdm_options.mjs";
 import "../../wiewaswie/core/wiewaswie_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
-import "../../noda/core/noda_options.mjs";

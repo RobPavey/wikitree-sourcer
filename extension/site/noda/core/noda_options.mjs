@@ -36,8 +36,8 @@ const citationOptionsGroup = {
   options: [],
 };
 
-registerSubsectionForOptions("search", "noda", "Digitalarkivet");
+registerSubsectionForOptions("search", "noda", "Digitalarkivet (Norway)");
 registerSiteSearchPopupOptionsGroup("noda", 7, 7);
 
-registerSubsectionForOptions("citation", "noda", "Digitalarkivet");
+registerSubsectionForOptions("citation", "noda", "Digitalarkivet (Norway)");
 registerOptionsGroup(citationOptionsGroup);

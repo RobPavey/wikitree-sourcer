@@ -32,6 +32,7 @@ import "/site/archive/browser/archive_popup_search.mjs";
 import "/site/baclac/browser/baclac_popup_search.mjs";
 import "/site/bg/browser/bg_popup_search.mjs";
 import "/site/cwgc/browser/cwgc_popup_search.mjs";
+import "/site/noda/browser/noda_popup_search.mjs"; // "Digitalarkivet"
 import "/site/fmp/browser/fmp_popup_search.mjs";
 import "/site/fs/browser/fs_popup_search.mjs";
 import "/site/fg/browser/fg_popup_search.mjs";
@@ -58,4 +59,3 @@ import "/site/vicbdm/browser/vicbdm_popup_search.mjs";
 import "/site/wiewaswie/browser/wiewaswie_popup_search.mjs";
 import "/site/wikitree/browser/wikitree_popup_search.mjs";
 import "/site/wikipedia/browser/wikipedia_popup_search.mjs";
-import "/site/noda/browser/noda_popup_search.mjs";

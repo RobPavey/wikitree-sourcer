@@ -374,10 +374,27 @@ const genderValues = {
 
 const maritalStatusValues = {
   g: "married", // gift = married
+  gift: "married", // gift = married
   ug: "single", // ugift = single
+  ugift: "single", // ugift = single
   e: "widow", // enke/enkemann = widow/widower
+  enke: "widow", // enke/enkemann = widow/widower
+  enkemann: "widower", // enke/enkemann = widow/widower
   s: "separated", // separert = separated
+  separert: "separated", // separert = separated
   f: "divorced", // fraskilt = divorced
+  fraskilt: "divorced", // fraskilt = divorced
+};
+
+const commonOccupationValues = {
+  barn: "Child",
+  kone: "Wife",
+  huusmand: "Householder",
+  tiener: "Teenager",
+
+  dagarbeider: "Day laborer",
+  sømand: "Sailor",
+  tjenestepige: "Maid",
 };
 
 // converts the relationship to head
@@ -1603,7 +1620,7 @@ class NodaEdReader extends ExtractedDataReader {
     let statusString = this.getRecordDataValue("maritalStatus");
 
     if (statusString) {
-      let status = maritalStatusValues[statusString];
+      let status = maritalStatusValues[statusString.toLowerCase()];
       if (status) {
         return status;
       }
@@ -1616,6 +1633,10 @@ class NodaEdReader extends ExtractedDataReader {
     let occupationString = this.getRecordDataValue("occupation");
 
     if (occupationString) {
+      let translatedOccupation = commonOccupationValues[occupationString.toLowerCase()];
+      if (translatedOccupation) {
+        occupationString = translatedOccupation;
+      }
       return occupationString;
     }
 
@@ -1875,7 +1896,7 @@ class NodaEdReader extends ExtractedDataReader {
 
       let maritalStatusString = this.getPersonDataValue(person, "maritalStatus");
       if (maritalStatusString) {
-        let maritalStatus = maritalStatusValues[maritalStatusString];
+        let maritalStatus = maritalStatusValues[maritalStatusString.toLowerCase()];
         if (maritalStatus) {
           setMemberField(householdMember, "maritalStatus", maritalStatus);
         } else {
@@ -1884,6 +1905,12 @@ class NodaEdReader extends ExtractedDataReader {
       }
 
       let occupation = this.getPersonDataValue(person, "occupation");
+      if (occupation) {
+        let translatedOccupation = commonOccupationValues[occupation.toLowerCase()];
+        if (translatedOccupation) {
+          occupation = translatedOccupation;
+        }
+      }
       setMemberField(householdMember, "occupation", occupation);
 
       let ageBorn = this.getPersonDataValue(person, "ageBorn");
@@ -1919,7 +1946,7 @@ class NodaEdReader extends ExtractedDataReader {
     for (let memberIndex = 0; memberIndex < householdArray.length; memberIndex++) {
       let member = householdArray[memberIndex];
       if (!member.relationship) {
-        if (member.occupation == "Huusmand") {
+        if (member.occupation == "Householder") {
           member.relationship = "head";
         } else if (memberIndex < householdArray.length - 2) {
           let nextMember = householdArray[memberIndex + 1];
