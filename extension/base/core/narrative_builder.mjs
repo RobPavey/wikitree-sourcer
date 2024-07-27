@@ -1600,6 +1600,27 @@ class NarrativeBuilder {
     let collection = this.getCollection();
 
     let structuredHousehold = buildStructuredHousehold(gd);
+    let selectedStructuredMember = undefined;
+    let relatedToPerson = undefined;
+    if (structuredHousehold) {
+      selectedStructuredMember = structuredHousehold.selectedMember;
+      if (selectedStructuredMember.relationTo) {
+        relatedToPerson = selectedStructuredMember.relationTo;
+      } else if (
+        structuredHousehold.head &&
+        structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
+      ) {
+        // sometimes this is a pauper and the "head" is also a pauper
+        // maybe some relationships are not valid to be head
+        // for now just check if they are the same
+        if (
+          selectedStructuredMember.gdMember.relationship &&
+          selectedStructuredMember.gdMember.relationship != structuredHousehold.head.gdMember.relationship
+        ) {
+          relatedToPerson = structuredHousehold.head;
+        }
+      }
+    }
 
     function getHeadOfHouseholdMemberIfNotSelected(household) {
       let hasRelationships = false;
@@ -1670,7 +1691,7 @@ class NarrativeBuilder {
         }
         if (date) {
           let dateString = builder.formatDate(date, true);
-          // want to start with an upper cae letter
+          // want to start with an upper case letter
           if (dateString && dateString.length > 1) {
             dateString = dateString[0].toUpperCase() + dateString.substring(1);
           }
@@ -1683,37 +1704,78 @@ class NarrativeBuilder {
     function getHouseholdPart() {
       let result = "";
       if (options.narrative_census_householdPartFormat == "relationship") {
+        let headName = getHeadOfHouseholdNameIfNotSelected(gd.householdArray);
+        if (relatedToPerson) {
+          headName = relatedToPerson.gdMember.name;
+        }
+
+        let relationshipToString = "";
+        if (relationship) {
+          if (relationship == "head") {
+            relationshipToString = "head of household";
+          } else if (relationship == "wife") {
+            if (selectedStructuredMember && selectedStructuredMember.husband) {
+              relationshipToString = "wife of " + selectedStructuredMember.husband.gdMember.name;
+            }
+          } else if (relationship == "son" || relationship == "daughter") {
+            if (selectedStructuredMember && selectedStructuredMember.father) {
+              relationshipToString = relationship + " of " + selectedStructuredMember.father.gdMember.name;
+              // We could add mother also but there is no guarantee that she is the
+              // mother - she could be a later wife
+            } else if (selectedStructuredMember && selectedStructuredMember.mother) {
+              relationshipToString = relationship + " of " + selectedStructuredMember.mother.gdMember.name;
+            }
+          }
+
+          if (!relationshipToString) {
+            if (headName) {
+              relationshipToString = relationship + " of " + headName;
+            } else {
+              relationshipToString = relationship;
+            }
+          }
+        }
+
         if (relationship && maritalStatus) {
           if (relationship.includes("head")) {
-            result += " the " + maritalStatus + " head of household";
+            result += " the " + maritalStatus + " " + relationshipToString;
           } else {
-            let headName = getHeadOfHouseholdNameIfNotSelected(gd.householdArray);
-            if (headName) {
-              if (relationship.includes("wife")) {
-                result += " the " + relationship + " of " + headName;
-              } else {
-                result += " the " + maritalStatus + " " + relationship + " of " + headName;
-              }
+            let article = headName ? "the" : "a";
+            if (relationship == "wife") {
+              result += " " + article + " " + relationshipToString;
             } else {
-              result += " a " + maritalStatus + " " + relationship;
+              result += " " + article + " " + maritalStatus + " " + relationshipToString;
             }
           }
         } else if (relationship) {
-          if (relationship.includes("head")) {
-            result += " the head of household";
+          if (headName || relationship == "head") {
+            result += " the " + relationshipToString;
           } else {
-            let headName = getHeadOfHouseholdNameIfNotSelected(gd.householdArray);
-            if (headName) {
-              result += " the " + relationship + " of " + headName;
-            } else {
-              result += " a " + relationship;
-            }
+            // "was the scholar at ..." does not sound right
+            result += " a " + relationshipToString;
           }
         } else if (maritalStatus) {
           result += " recorded as " + maritalStatus;
         }
       } else {
         let listParts = [];
+        let startIndex = 0;
+        let endIndex = structuredHousehold.members.length - 1;
+        if (selectedStructuredMember) {
+          if (relatedToPerson) {
+            startIndex = relatedToPerson.personIndex;
+          } else if (selectedStructuredMember.lastHead) {
+            startIndex = selectedStructuredMember.lastHead.personIndex;
+          }
+
+          for (let memberIndex = selectedStructuredMember.personIndex + 1; memberIndex <= endIndex; memberIndex++) {
+            let member = structuredHousehold.members[memberIndex];
+            if (member.isHead) {
+              endIndex = memberIndex - 1;
+              break;
+            }
+          }
+        }
 
         if (relationship && gd.householdArray) {
           let hasWife = false;
@@ -1732,7 +1794,8 @@ class NarrativeBuilder {
           if (relationship.includes("head") || relationship == "wife") {
             isHeadOrWife = true;
 
-            for (let member of gd.householdArray) {
+            for (let memberIndex = startIndex; memberIndex <= endIndex; memberIndex++) {
+              let member = gd.householdArray[memberIndex];
               if (member.isSelected) continue;
               let thisMemberIsHead = false;
               if ((member.relationship && member.relationship.includes("head")) || member == headMember) {
@@ -1779,31 +1842,33 @@ class NarrativeBuilder {
               }
             }
           } else if (relationship == "son" || relationship == "daughter") {
-            for (let member of gd.householdArray) {
-              if (member.isSelected) continue;
-              let thisMemberIsHead = false;
-              if ((member.relationship && member.relationship.includes("head")) || member == headMember) {
-                thisMemberIsHead = true;
+            let children = undefined;
+            if (selectedStructuredMember.father) {
+              hasFather = true;
+              children = selectedStructuredMember.father.children;
+            }
+            if (selectedStructuredMember.mother) {
+              hasMother = true;
+              if (!children) {
+                children = selectedStructuredMember.mother.children;
               }
+            }
 
-              if (thisMemberIsHead) {
-                if (member.gender == "male") {
-                  hasFather = true;
-                } else if (member.gender == "female") {
-                  hasMother = true;
+            if (children) {
+              for (let child of children) {
+                let member = child.gdMember;
+                if (!member.isSelected) {
+                  siblingCount++;
+                  if (member.relationship == "son") {
+                    if (!firstSiblingType) {
+                      firstSiblingType = "brother";
+                    }
+                  } else if (member.relationship == "daughter") {
+                    if (!firstSiblingType) {
+                      firstSiblingType = "sister";
+                    }
+                  }
                 }
-              } else if (member.relationship == "wife") {
-                hasMother = true;
-              } else if (member.relationship == "son") {
-                if (!firstSiblingType) {
-                  firstSiblingType = "brother";
-                }
-                siblingCount++;
-              } else if (member.relationship == "daughter") {
-                if (!firstSiblingType) {
-                  firstSiblingType = "sister";
-                }
-                siblingCount++;
               }
             }
           }

@@ -28,6 +28,7 @@ import { RT, Role, RecordSubtype } from "./record_type.mjs";
 import { RC } from "./record_collections.mjs";
 import { DateUtils } from "./date_utils.mjs";
 import { StringUtils } from "./string_utils.mjs";
+import { buildStructuredHousehold } from "./structured_household.mjs";
 import {
   getPrimaryPersonChildTerm,
   getPrimaryPersonSpouseTerm,
@@ -154,6 +155,29 @@ function getParentageString(fatherName, motherName, gender) {
 function getUkCensusString(gd, options) {
   let dataString = getFullName(gd);
 
+  let structuredHousehold = buildStructuredHousehold(gd);
+  let selectedStructuredMember = undefined;
+  let relatedToPerson = undefined;
+  if (structuredHousehold) {
+    selectedStructuredMember = structuredHousehold.selectedMember;
+    if (selectedStructuredMember.relationTo) {
+      relatedToPerson = selectedStructuredMember.relationTo;
+    } else if (
+      structuredHousehold.head &&
+      structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
+    ) {
+      // sometimes this is a pauper and the "head" is also a pauper
+      // maybe some relationships are not valid to be head
+      // for now just check if they are the same
+      if (
+        selectedStructuredMember.gdMember.relationship &&
+        selectedStructuredMember.gdMember.relationship != structuredHousehold.head.gdMember.relationship
+      ) {
+        relatedToPerson = structuredHousehold.head;
+      }
+    }
+  }
+
   let age = cleanAge(gd.ageAtEvent);
   let maritalStatus = gd.maritalStatus;
   let relationshipToHead = gd.relationshipToHead;
@@ -210,7 +234,12 @@ function getUkCensusString(gd, options) {
     }
 
     if (gd.householdArray && gd.householdArray.length > 0) {
-      let headIndex = getHeadOfHouseholdIndex(gd.householdArray);
+      let headIndex = 0;
+      if (relatedToPerson) {
+        headIndex = relatedToPerson.personIndex;
+      } else {
+        headIndex = getHeadOfHouseholdIndex(gd.householdArray);
+      }
       let headName = gd.householdArray[headIndex].name;
       let headAge = cleanAge(gd.householdArray[headIndex].age);
 
@@ -333,6 +362,29 @@ function getHeadOfHouseholdIndex(householdArray) {
 function getOtherCensusString(gd, options) {
   let dataString = getFullName(gd);
 
+  let structuredHousehold = buildStructuredHousehold(gd);
+  let selectedStructuredMember = undefined;
+  let relatedToPerson = undefined;
+  if (structuredHousehold) {
+    selectedStructuredMember = structuredHousehold.selectedMember;
+    if (selectedStructuredMember.relationTo) {
+      relatedToPerson = selectedStructuredMember.relationTo;
+    } else if (
+      structuredHousehold.head &&
+      structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
+    ) {
+      // sometimes this is a pauper and the "head" is also a pauper
+      // maybe some relationships are not valid to be head
+      // for now just check if they are the same
+      if (
+        selectedStructuredMember.gdMember.relationship &&
+        selectedStructuredMember.gdMember.relationship != structuredHousehold.head.gdMember.relationship
+      ) {
+        relatedToPerson = structuredHousehold.head;
+      }
+    }
+  }
+
   let age = cleanAge(gd.ageAtEvent);
   let maritalStatus = gd.maritalStatus;
   let relationshipToHead = gd.relationshipToHead;
@@ -374,7 +426,12 @@ function getOtherCensusString(gd, options) {
     }
 
     if (gd.householdArray && gd.householdArray.length > 0) {
-      let headIndex = getHeadOfHouseholdIndex(gd.householdArray);
+      let headIndex = 0;
+      if (relatedToPerson) {
+        headIndex = relatedToPerson.personIndex;
+      } else {
+        headIndex = getHeadOfHouseholdIndex(gd.householdArray);
+      }
       let headName = gd.householdArray[headIndex].name;
       let headAge = cleanAge(gd.householdArray[headIndex].age);
 

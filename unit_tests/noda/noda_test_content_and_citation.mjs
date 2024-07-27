@@ -46,10 +46,28 @@ const regressionData = [
   {
     caseName: "census_1815_ole_anders",
     url: "https://www.digitalarkivet.no/en/census/person/pf01051099000750",
+    optionVariants: [
+      {
+        variantName: "describeHousehold",
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_census_householdPartFormat: "withFamily",
+        },
+      },
+    ],
   },
   {
     caseName: "census_1865_carl_motzfeldt",
     url: "https://www.digitalarkivet.no/en/census/person/pf01038310006925",
+    optionVariants: [
+      {
+        variantName: "describeHousehold",
+        thisTypeOnly: "narrative",
+        optionOverrides: {
+          narrative_census_householdPartFormat: "withFamily",
+        },
+      },
+    ],
   },
   {
     caseName: "census_1875_jakob_pedersen",
@@ -64,6 +82,11 @@ const regressionData = [
     // Language: Nynorsk
     caseName: "census_1875_jakob_pedersen_nn",
     url: "https://www.digitalarkivet.no/nn/census/person/pf01052377002789",
+  },
+  {
+    // Son of 3rd Husfader in list
+    caseName: "census_1875_jorgen_olsen",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01052316000238",
   },
   {
     // was not getting event date because of a case difference:

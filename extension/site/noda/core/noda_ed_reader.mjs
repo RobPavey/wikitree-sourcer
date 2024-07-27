@@ -26,6 +26,7 @@ import { RT, Role } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameObj, DateObj, PlaceObj, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { GD } from "../../../base/core/generalize_data_utils.mjs";
 
 var eventTypes = [
   {
@@ -477,6 +478,21 @@ function cleanName(nameString) {
           nameString = nameParts[0].trim();
         }
       }
+    }
+
+    if (nameString.endsWith("sd.")) {
+      // can be abbrevation for "sdatter"
+      nameString = nameString.replace(/sd\.$/, "sdatter");
+    } else if (nameString.endsWith("sd.*")) {
+      // can be abbrevation for "sdatter"
+      nameString = nameString.replace(/sd\.\*$/, "sdatter");
+    } else if (nameString.endsWith("s.*")) {
+      // can be abbrevation for "sen"
+      nameString = nameString.replace(/s\.\*$/, "sen");
+    }
+
+    while (nameString.endsWith(".")) {
+      nameString = nameString.substring(0, nameString.length - 1).trim();
     }
   }
   return nameString;
@@ -1212,6 +1228,27 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getRelationshipToHeadForPerson(person) {
+    let edReader = this;
+
+    function modifyWithGender(relationship) {
+      if (relationship.standardRelationship == "child") {
+        let gender = "";
+        if (person.current) {
+          gender = edReader.getGender();
+        }
+        // could check if last name ends with datter
+        if (gender) {
+          if (gender == "male") {
+            return { standardRelationship: "son" };
+          } else if (gender == "female") {
+            return { standardRelationship: "daughter" };
+          }
+        }
+      }
+
+      return relationship;
+    }
+
     if (person) {
       let familyPosition = this.getPersonDataValue(person, "familyPosition");
       if (familyPosition) {
@@ -1232,7 +1269,7 @@ class NodaEdReader extends ExtractedDataReader {
 
         let relationToHead = familyPositionValues[familyPosition];
         if (relationToHead) {
-          return relationToHead;
+          return modifyWithGender(relationToHead);
         } else {
           // simple lookup failed, sometimes the familyPosition value is a combination
           // e.g. "hp hf"
@@ -1240,7 +1277,7 @@ class NodaEdReader extends ExtractedDataReader {
           for (let part of parts) {
             relationToHead = familyPositionValues[part];
             if (relationToHead) {
-              return relationToHead;
+              return modifyWithGender(relationToHead);
             }
           }
           return { unrecognizedRelationship: familyPosition };
@@ -1312,6 +1349,16 @@ class NodaEdReader extends ExtractedDataReader {
       let gender = genderValues[genderValue];
       if (gender) {
         return gender;
+      }
+    } else {
+      let nameObj = this.getNameObj();
+      if (nameObj) {
+        let lastName = nameObj.inferLastName();
+        if (lastName) {
+          if (lastName.endsWith("datter") || lastName.endsWith("dattr")) {
+            return "female";
+          }
+        }
       }
     }
 
@@ -1800,7 +1847,7 @@ class NodaEdReader extends ExtractedDataReader {
       if (person.personNameParts && person.personNameParts.length == 1) {
         let name = person.personNameParts[0];
         if (name) {
-          setMemberField(householdMember, "name", name.trim());
+          setMemberField(householdMember, "name", cleanName(name));
         }
       }
 
@@ -1865,6 +1912,26 @@ class NodaEdReader extends ExtractedDataReader {
         householdMember.isSelected = isSelected;
       }
       householdArray.push(householdMember);
+    }
+
+    // sometimes the head of household has a blank familyPosition. If such a person is followed by
+    // someone with a family relationship then
+    for (let memberIndex = 0; memberIndex < householdArray.length; memberIndex++) {
+      let member = householdArray[memberIndex];
+      if (!member.relationship) {
+        if (member.occupation == "Huusmand") {
+          member.relationship = "head";
+        } else if (memberIndex < householdArray.length - 2) {
+          let nextMember = householdArray[memberIndex + 1];
+          if (nextMember.relationship) {
+            let relationShipMeaning = GD.getStandardizedRelationshipMeaning(nextMember.relationship);
+
+            if (!relationShipMeaning.nonFamily) {
+              member.relationship = "head";
+            }
+          }
+        }
+      }
     }
 
     let result = {};

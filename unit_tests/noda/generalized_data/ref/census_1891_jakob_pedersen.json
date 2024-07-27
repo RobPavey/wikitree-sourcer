@@ -32,21 +32,21 @@
   ],
   "householdArray": [
     {
-      "name": "Pedr Abrahamsen.",
+      "name": "Pedr Abrahamsen",
       "relationship": "head",
       "maritalStatus": "married",
       "birthDate": "1833",
       "birthPlace": "Sør-Audnedal (Undal)"
     },
     {
-      "name": "Jahanne Tobiasdattr.",
+      "name": "Jahanne Tobiasdattr",
       "relationship": "wife",
       "maritalStatus": "married",
       "birthDate": "1837",
       "birthPlace": "Sør-Audnedal (Undal)"
     },
     {
-      "name": "Ole Pedersen.",
+      "name": "Ole Pedersen",
       "relationship": "son",
       "maritalStatus": "single",
       "birthDate": "1867",
@@ -60,7 +60,7 @@
       "birthPlace": "Sør-Audnedal (Undal)"
     },
     {
-      "name": "Jakob Pedersen.",
+      "name": "Jakob Pedersen",
       "relationship": "son",
       "maritalStatus": "single",
       "birthDate": "1871",
@@ -69,21 +69,21 @@
       "gender": "male"
     },
     {
-      "name": "Gustav Pedersen.",
+      "name": "Gustav Pedersen",
       "relationship": "son",
       "maritalStatus": "single",
       "birthDate": "1874",
       "birthPlace": "Sør-Audnedal (Undal)"
     },
     {
-      "name": "Berte Marie Pedersdatter.",
+      "name": "Berte Marie Pedersdatter",
       "relationship": "daughter",
       "maritalStatus": "single",
       "birthDate": "1865",
       "birthPlace": "Sør-Audnedal (Undal)"
     },
     {
-      "name": "Karl Pedersen.",
+      "name": "Karl Pedersen",
       "relationship": "son",
       "birthDate": "1878",
       "birthPlace": "Sør-Audnedal (Undal)"

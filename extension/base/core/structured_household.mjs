@@ -48,6 +48,7 @@ class StructuredHousehold {
 
     let household = {};
     household.members = [];
+    household.head = undefined;
 
     let lastHead = undefined;
     let lastWifeOfHead = undefined;
@@ -81,11 +82,25 @@ class StructuredHousehold {
       }
     }
 
+    function setHead(householdMember) {
+      lastHead = householdMember;
+      householdMember.isHead = true;
+      numPeopleSinceHead = 0;
+      if (!household.head) {
+        household.head = householdMember;
+      }
+    }
+
+    let personIndex = 0;
     for (let member of this.members) {
       let householdMember = {};
       household.members.push(householdMember);
       householdMember.gdMember = member;
       householdMember.gender = member.gender;
+      householdMember.personIndex = personIndex;
+      if (lastHead) {
+        householdMember.lastHead = lastHead;
+      }
 
       let relMeaning = GD.getStandardizedRelationshipMeaning(member.relationship);
 
@@ -99,8 +114,7 @@ class StructuredHousehold {
 
       let relationship = member.relationship;
       if (relationship == "head") {
-        lastHead = householdMember;
-        numPeopleSinceHead = 0;
+        setHead(householdMember);
       } else if (relationship == "wife") {
         confirmGender(householdMember, "female");
         if (lastHead && numPeopleSinceHead == 1) {
@@ -108,53 +122,72 @@ class StructuredHousehold {
           lastHead.wife = householdMember;
           householdMember.husband = lastHead;
           confirmGender(lastHead, "male");
+          householdMember.relationTo = lastHead;
         } else {
           if (numPeopleSinceHead == 0) {
             // this is the first person in household
-            lastHead = householdMember;
+            setHead(householdMember);
           } else {
             // could be the wife of a son
             if (lastHouseholdMember.gdMember.relationship == "son") {
               lastHouseholdMember.wife = householdMember;
               householdMember.husband = lastHouseholdMember;
+              householdMember.relationTo = lastHouseholdMember;
             }
           }
         }
       } else if (relationship == "husband") {
         if (numPeopleSinceHead == 0) {
           // this is the first person in household
-          lastHead = householdMember;
+          setHead(householdMember);
         } else {
           // could be the husband of a daughter
           if (lastHouseholdMember.gdMember.relationship == "daughter") {
             lastHouseholdMember.wife = householdMember;
             householdMember.husband = lastHouseholdMember;
+            householdMember.relationTo = lastHouseholdMember;
           }
         }
       } else if (relationship == "son") {
         confirmGender(householdMember, "male");
         addChildOfLastHead(householdMember);
+        householdMember.relationTo = lastHead;
       } else if (relationship == "daughter") {
         confirmGender(householdMember, "female");
         addChildOfLastHead(householdMember);
+        householdMember.relationTo = lastHead;
+      } else if (relationship == "child") {
+        addChildOfLastHead(householdMember);
+        householdMember.relationTo = lastHead;
       } else if (relationship == "father") {
         confirmGender(householdMember, "male");
         addChildOfHouseholdMember(householdMember, lastHead);
+        householdMember.relationTo = lastHead;
       } else if (relationship == "mother") {
         confirmGender(householdMember, "female");
         addChildOfHouseholdMember(householdMember, lastHead);
+        householdMember.relationTo = lastHead;
       } else if (relationship == "father-in-law") {
         confirmGender(householdMember, "male");
         addChildOfHouseholdMember(householdMember, lastWifeOfHead);
+        householdMember.relationTo = lastHead;
       } else if (relationship == "mother-in-law") {
         confirmGender(householdMember, "female");
         addChildOfHouseholdMember(householdMember, lastWifeOfHead);
+        householdMember.relationTo = lastHead;
       } else if (relationship == "wife's son") {
         confirmGender(householdMember, "male");
         addChildOfHouseholdMember(lastWifeOfHead, householdMember);
+        householdMember.relationTo = lastHead;
       } else if (relationship == "wife's daughter") {
         confirmGender(householdMember, "female");
         addChildOfHouseholdMember(lastWifeOfHead, householdMember);
+        householdMember.relationTo = lastHead;
+      } else if (!relationship) {
+        // this can mean head if it is the first person
+        if (personIndex == 0) {
+          setHead(householdMember);
+        }
       } else {
         if (relMeaning.nonFamily) {
           // this could be a boarder with a wife and children
@@ -174,14 +207,15 @@ class StructuredHousehold {
             lastWifeOfHead = householdMember;
             lastHead.wife = householdMember;
             householdMember.husband = lastHead;
+            householdMember.relationTo = lastHead;
           } else {
-            lastHead = householdMember;
-            numPeopleSinceHead = 0;
+            setHead(householdMember);
           }
         }
       }
 
       numPeopleSinceHead++;
+      personIndex++;
       lastHouseholdMember = householdMember;
     }
 

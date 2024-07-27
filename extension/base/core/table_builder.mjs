@@ -26,6 +26,7 @@ import { RC } from "./record_collections.mjs";
 import { RT } from "./record_type.mjs";
 import { StringUtils } from "./string_utils.mjs";
 import { CD } from "./country_data.mjs";
+import { buildStructuredHousehold } from "./structured_household.mjs";
 
 class TableBuilder {
   constructor(gd, options) {
@@ -677,8 +678,10 @@ function buildHouseholdTable(input) {
 }
 
 function markHouseholdMembersToIncludeInTable(generalizedData, options) {
-  // Given generalized data with a household table, return an array of indices into the table.
-  // This will include an index of -1 for rows that should be included as blank rows.
+  // Given generalized data with a household table, set an includeInTable flag for the
+  // members to include.
+  // As well as for building the table itself it is used in advance to know what people
+  // to fetch extra data for.
   if (!generalizedData) {
     return;
   }
@@ -696,6 +699,23 @@ function markHouseholdMembersToIncludeInTable(generalizedData, options) {
     return;
   }
 
+  let startIndex = 0;
+  let structuredHousehold = buildStructuredHousehold(generalizedData);
+  if (structuredHousehold) {
+    let structuredMember = structuredHousehold.selectedMember;
+    if (structuredMember && structuredMember.relationTo) {
+      let relatedToPerson = structuredMember.relationTo;
+      if (relatedToPerson.personIndex) {
+        startIndex = relatedToPerson.personIndex;
+      }
+    } else if (structuredMember.lastHead) {
+      let previousHead = structuredMember.lastHead;
+      if (previousHead.personIndex) {
+        startIndex = previousHead.personIndex;
+      }
+    }
+  }
+
   const relatedRelationships = [
     "head",
     "husband",
@@ -703,6 +723,7 @@ function markHouseholdMembersToIncludeInTable(generalizedData, options) {
     // children
     "son",
     "daughter",
+    "child",
     // step children
     "stepdaughter",
     "stepson",
@@ -760,7 +781,8 @@ function markHouseholdMembersToIncludeInTable(generalizedData, options) {
     // go through once looking for relations
     let selectedMemberReached = false;
     let lastMemberAdded = undefined;
-    for (let member of members) {
+    for (let memberIndex = startIndex; memberIndex < members.length; memberIndex++) {
+      let member = members[memberIndex];
       if (relatedRelationships.includes(member.relationship)) {
         if (limitStyle == "related" || limitStyle == "relatedPlus" || numIncluded < maxLimit) {
           member.includeInTable = true;
@@ -769,6 +791,11 @@ function markHouseholdMembersToIncludeInTable(generalizedData, options) {
           if (member.isSelected) {
             selectedMemberReached = true;
           }
+        }
+      } else {
+        if (lastMemberAdded && selectedMemberReached) {
+          // we have added some but have now found an non-relatd member - break
+          break;
         }
       }
     }
@@ -785,21 +812,26 @@ function markHouseholdMembersToIncludeInTable(generalizedData, options) {
 
     if ((limitStyle == "relatedPlus" || limitStyle == "relatedPlusCapped") && numIncluded < maxLimit) {
       // if there is space add non-related
-      for (let member of members) {
+      let includedANonFamily = false;
+      for (let memberIndex = startIndex; memberIndex < members.length; memberIndex++) {
+        let member = members[memberIndex];
         if (!relatedRelationships.includes(member.relationship)) {
           if (numIncluded < maxLimit) {
             member.includeInTable = true;
             numIncluded++;
+            includedANonFamily = true;
           } else {
             break;
           }
+        } else if (includedANonFamily) {
+          break;
         }
       }
     }
   } else {
     // selected member is not related, always include head (if present) and selected person
     let selectedPersonIndex = -1;
-    for (let memberIndex = 0; memberIndex < members.length; memberIndex++) {
+    for (let memberIndex = startIndex; memberIndex < members.length; memberIndex++) {
       let member = members[memberIndex];
       if (member.isSelected || member.relationship == "head") {
         member.includeInTable = true;

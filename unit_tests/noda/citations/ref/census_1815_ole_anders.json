@@ -1,14 +1,18 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1815 Census''':\n\"Census 1815 for Luster\"<br/>\nCensus district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders.* (2) child in household of Christopher Thomasen (50) in Fiøsne, Luster, Sogn og Fjordane, Norway.\n</ref>",
+    "citation": "<ref>\n'''1815 Census''':\n\"Census 1815 for Luster\"<br/>\nCensus district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Andersen (2) son in household of Anders Olsen (34) in Fiøsne, Luster, Sogn og Fjordane, Norway.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1815 census Ole (age 2) was the child of Christopher Thomasen in Fiøsne, Luster, Sogn og Fjordane, Norway.<ref>\n'''1815 Census''':\n\"Census 1815 for Luster\"<br/>\nCensus district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Anders.* (2) child in household of Christopher Thomasen (50) in Fiøsne, Luster, Sogn og Fjordane, Norway.\n</ref>",
+    "citation": "In the 1815 census Ole (age 2) was the son of Anders Olsen in Fiøsne, Luster, Sogn og Fjordane, Norway.<ref>\n'''1815 Census''':\n\"Census 1815 for Luster\"<br/>\nCensus district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Andersen (2) son in household of Anders Olsen (34) in Fiøsne, Luster, Sogn og Fjordane, Norway.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1815 Census''': \"Census 1815 for Luster\"<br/>Census district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Anders.* (2) child in household of Christopher Thomasen (50) in Fiøsne, Luster, Sogn og Fjordane, Norway.",
+    "citation": "* '''1815 Census''': \"Census 1815 for Luster\"<br/>Census district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ole Andersen (2) son in household of Anders Olsen (34) in Fiøsne, Luster, Sogn og Fjordane, Norway.",
     "type": "source"
+  },
+  "describeHousehold_narrative": {
+    "citation": "In the 1815 census Ole (age 2) was with his parents and 2 siblings in Fiøsne, Luster, Sogn og Fjordane, Norway.<ref>\n'''1815 Census''':\n\"Census 1815 for Luster\"<br/>\nCensus district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden; Rural residence: 006* Fiøsne<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051099000750 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nOle Andersen (2) son in household of Anders Olsen (34) in Fiøsne, Luster, Sogn og Fjordane, Norway.\n</ref>",
+    "type": "narrative"
   }
 }

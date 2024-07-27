@@ -102,7 +102,8 @@
       "maritalStatus": "married",
       "occupation": "Indrullerings chef",
       "age": "60",
-      "birthPlace": "Trondhjem"
+      "birthPlace": "Trondhjem",
+      "relationship": "head"
     },
     {
       "name": "Kirstine Marie Due",
@@ -130,7 +131,8 @@
       "maritalStatus": "widow",
       "occupation": "Vagtmester",
       "age": "48",
-      "birthPlace": "Østerdalen"
+      "birthPlace": "Østerdalen",
+      "relationship": "head"
     },
     {
       "name": "Johanne Christine Petersen",

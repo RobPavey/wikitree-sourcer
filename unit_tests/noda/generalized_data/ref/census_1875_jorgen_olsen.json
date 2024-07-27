@@ -1,0 +1,176 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Jørgen Olsen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1875"
+  },
+  "eventPlace": {
+    "placeString": "Frøjen nedre, Bremanger, Sogn og Fjordane, Norway",
+    "parish": "Bremanger",
+    "county": "Sogn og Fjordane",
+    "country": "Norway"
+  },
+  "birthDate": {
+    "yearString": "1864"
+  },
+  "birthPlace": {
+    "placeString": "Eids Pr og Sogn"
+  },
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "occupation",
+    "birthDate",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Lars Valdemarsen",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Gaardbr. Selveier, Fisker",
+      "birthDate": "1824",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Anne Andersdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "birthDate": "1833",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Ludvik Larssen",
+      "relationship": "son",
+      "birthDate": "1865",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Johan Larssen",
+      "relationship": "son",
+      "birthDate": "1871",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Anne Larsdatter",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "occupation": "Tjenestepige",
+      "birthDate": "1858",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Orline Larsdatter",
+      "relationship": "daughter",
+      "birthDate": "1860",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Valborg Larsdatter",
+      "relationship": "daughter",
+      "birthDate": "1863",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Inger Larsdatter",
+      "relationship": "daughter",
+      "birthDate": "1868",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Kristen Valdemarsen",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Inderst, Fisker",
+      "birthDate": "1827",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Pernille Andersdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "birthDate": "1838",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Ole Jørgensen",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Gaardbr. Selveier, Bygningsmand",
+      "birthDate": "1841",
+      "birthPlace": "Eids Pr og Sogn"
+    },
+    {
+      "name": "Malene Olsdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "birthDate": "1842",
+      "birthPlace": "Eids Pr og Stareims Sogn"
+    },
+    {
+      "name": "Jørgen Olsen",
+      "relationship": "son",
+      "birthDate": "1864",
+      "birthPlace": "Eids Pr og Sogn",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Oline Olsdatter",
+      "relationship": "daughter",
+      "birthDate": "1867",
+      "birthPlace": "Eids Pr og Sogn"
+    },
+    {
+      "name": "Johanne Olsdatter",
+      "relationship": "daughter",
+      "birthDate": "1869",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Karoline Olsdatter",
+      "relationship": "daughter",
+      "birthDate": "1871",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Marie Olsdatter",
+      "relationship": "daughter",
+      "birthDate": "1872",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Samueline Olsdatter",
+      "relationship": "daughter",
+      "birthDate": "1874",
+      "birthPlace": "Bremanger Prgj."
+    },
+    {
+      "name": "Kristiane Knutsdatter",
+      "relationship": "maid",
+      "occupation": "Tjenestepige",
+      "birthDate": "1863",
+      "birthPlace": "Eids Pr og Sogn"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Ole Jørgensen"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Malene Olsdatter"
+      }
+    }
+  },
+  "hasValidData": true
+}

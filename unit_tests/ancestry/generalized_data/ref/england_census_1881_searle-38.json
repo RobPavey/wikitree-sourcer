@@ -77,6 +77,15 @@
       "uid": "https://search.ancestry.com/cgi-bin/sse.dll?db=uki1881&indiv=try&h=26496827"
     }
   ],
+  "spouses": [
+    {
+      "name": {
+        "name": "John Risbry"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
   "wtSearchTemplates": [
     "{{Ancestry Record|7572|26496682}}"
   ],
