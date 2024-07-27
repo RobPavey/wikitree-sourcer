@@ -1,0 +1,848 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01051099000750",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Census 1815 for Luster",
+    "Census districts summary",
+    "002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden",
+    "006* Fiøsne",
+    "027 Ole Anders.*"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden",
+      "collectionNameParts": [
+        "Census district",
+        "002* Dale Sogn paa den sydlige Side af Fiorden og Fortuns Sogn unden"
+      ]
+    },
+    {
+      "collectionHeading": "Rural residence: 006* Fiøsne",
+      "collectionNameParts": [
+        "Rural residence",
+        "006* Fiøsne"
+      ]
+    }
+  ],
+  "heading": "Person: 027 Ole Anders.*",
+  "headingSpanParts": [
+    "Person:",
+    "027"
+  ],
+  "headingTextParts": [
+    "Ole Anders.*"
+  ],
+  "recordData": {
+    "Household no.": {
+      "textString": "1"
+    },
+    "Person no.": {
+      "textString": "027"
+    },
+    "Family position": {
+      "textString": "Børn"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Age": {
+      "textString": "2"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "personLabel": "001",
+          "personNameParts": [
+            "Christopher Thomasen"
+          ],
+          "personHeading": "001 Christopher Thomasen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "50"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Gaardbruger"
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Kistine Hendriksd."
+          ],
+          "personHeading": "002 Kistine Hendriksd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "42"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Susanna Eriksd."
+          ],
+          "personHeading": "003 Susanna Eriksd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "15"
+          },
+          "Family position": {
+            "textString": "Steddatter"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Mari Christophersd."
+          ],
+          "personHeading": "004 Mari Christophersd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "6"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Malena Christophersd."
+          ],
+          "personHeading": "005 Malena Christophersd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "3"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Erik Nielsen"
+          ],
+          "personHeading": "006 Erik Nielsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "40"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "007",
+          "personNameParts": [
+            "Anders Eriksen"
+          ],
+          "personHeading": "007 Anders Eriksen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "18"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Lars Olsen"
+          ],
+          "personHeading": "008 Lars Olsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "17"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Inga Lassed."
+          ],
+          "personHeading": "009 Inga Lassed.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "30"
+          },
+          "Occupation": {
+            "textString": "Tienestepige"
+          }
+        },
+        {
+          "personLabel": "010",
+          "personNameParts": [
+            "Johanna Ellevsd."
+          ],
+          "personHeading": "010 Johanna Ellevsd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "33"
+          },
+          "Occupation": {
+            "textString": "Tienestepige"
+          }
+        },
+        {
+          "personLabel": "011",
+          "personNameParts": [
+            "Thomas Olsen"
+          ],
+          "personHeading": "011 Thomas Olsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "54"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Huusmand"
+          }
+        },
+        {
+          "personLabel": "012",
+          "personNameParts": [
+            "Synneva Olsd."
+          ],
+          "personHeading": "012 Synneva Olsd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "54"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "013",
+          "personNameParts": [
+            "Jacob Thomasen"
+          ],
+          "personHeading": "013 Jacob Thomasen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "20"
+          },
+          "Family position": {
+            "textString": "Børn"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "014",
+          "personNameParts": [
+            "Ole Thomasen"
+          ],
+          "personHeading": "014 Ole Thomasen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "18"
+          },
+          "Family position": {
+            "textString": "Børn"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "015",
+          "personNameParts": [
+            "Torbiørn Thomasen"
+          ],
+          "personHeading": "015 Torbiørn Thomasen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "15"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "personLabel": "016",
+          "personNameParts": [
+            "Niels Johannessen"
+          ],
+          "personHeading": "016 Niels Johannessen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "36"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Huusmand"
+          }
+        },
+        {
+          "personLabel": "017",
+          "personNameParts": [
+            "Groe Johannesd."
+          ],
+          "personHeading": "017 Groe Johannesd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "30"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "018",
+          "personNameParts": [
+            "Johannes Niels.*"
+          ],
+          "personHeading": "018 Johannes Niels.*",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "6"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "personLabel": "019",
+          "personNameParts": [
+            "Cecilia Nielsd.*"
+          ],
+          "personHeading": "019 Cecilia Nielsd.*",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "personLabel": "020",
+          "personNameParts": [
+            "Anders Johannessen"
+          ],
+          "personHeading": "020 Anders Johannessen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "40"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Huusmand"
+          }
+        },
+        {
+          "personLabel": "021",
+          "personNameParts": [
+            "Kristi Knudsd."
+          ],
+          "personHeading": "021 Kristi Knudsd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "53"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "022",
+          "personNameParts": [
+            "Johannes Anders.*"
+          ],
+          "personHeading": "022 Johannes Anders.*",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "10"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "personLabel": "023",
+          "personNameParts": [
+            "Ragnilda Andersd.*"
+          ],
+          "personHeading": "023 Ragnilda Andersd.*",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "15"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "personLabel": "024",
+          "personNameParts": [
+            "Anders Olsen"
+          ],
+          "personHeading": "024 Anders Olsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "34"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Gaardbruger"
+          }
+        },
+        {
+          "personLabel": "025",
+          "personNameParts": [
+            "Kari Arnesd."
+          ],
+          "personHeading": "025 Kari Arnesd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "23"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "026",
+          "personNameParts": [
+            "Berte Andersd."
+          ],
+          "personHeading": "026 Berte Andersd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "13"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "027",
+          "personNameParts": [
+            "Ole Anders.*"
+          ],
+          "personHeading": "027 Ole Anders.*",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "2"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "personLabel": "028",
+          "personNameParts": [
+            "Steinor Andersd.*"
+          ],
+          "personHeading": "028 Steinor Andersd.*",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "1"
+          },
+          "Family position": {
+            "textString": "Børn"
+          }
+        },
+        {
+          "personLabel": "029",
+          "personNameParts": [
+            "Elias Olsen"
+          ],
+          "personHeading": "029 Elias Olsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "29"
+          },
+          "Occupation": {
+            "textString": "Dagarbeider"
+          }
+        },
+        {
+          "personLabel": "030",
+          "personNameParts": [
+            "Kisti Olsd."
+          ],
+          "personHeading": "030 Kisti Olsd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "27"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "031",
+          "personNameParts": [
+            "Siur Olsen"
+          ],
+          "personHeading": "031 Siur Olsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "23"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "032",
+          "personNameParts": [
+            "Christopher Christens."
+          ],
+          "personHeading": "032 Christopher Christens.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "17"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "033",
+          "personNameParts": [
+            "Inga Pedersd."
+          ],
+          "personHeading": "033 Inga Pedersd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "26"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "034",
+          "personNameParts": [
+            "Christen Pedersen"
+          ],
+          "personHeading": "034 Christen Pedersen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "14"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "035",
+          "personNameParts": [
+            "Anders Olsen"
+          ],
+          "personHeading": "035 Anders Olsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "69"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Huusmand"
+          }
+        },
+        {
+          "personLabel": "036",
+          "personNameParts": [
+            "Clara Larsd."
+          ],
+          "personHeading": "036 Clara Larsd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "57"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "037",
+          "personNameParts": [
+            "Ole Iversen"
+          ],
+          "personHeading": "037 Ole Iversen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "17"
+          },
+          "Occupation": {
+            "textString": "Tiener"
+          }
+        },
+        {
+          "personLabel": "038",
+          "personNameParts": [
+            "Ole Monsen"
+          ],
+          "personHeading": "038 Ole Monsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "67"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Huusmand"
+          }
+        },
+        {
+          "personLabel": "039",
+          "personNameParts": [
+            "Kari Larsd."
+          ],
+          "personHeading": "039 Kari Larsd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "60"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "040",
+          "personNameParts": [
+            "Lars Olsen"
+          ],
+          "personHeading": "040 Lars Olsen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "17"
+          }
+        },
+        {
+          "personLabel": "041",
+          "personNameParts": [
+            "Anna Olsd."
+          ],
+          "personHeading": "041 Anna Olsd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "20"
+          },
+          "Occupation": {
+            "textString": "Tienestepige"
+          }
+        },
+        {
+          "personLabel": "042",
+          "personNameParts": [
+            "Peder Johanness."
+          ],
+          "personHeading": "042 Peder Johanness.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "37"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Huusmand"
+          }
+        },
+        {
+          "personLabel": "043",
+          "personNameParts": [
+            "Mari Hansd."
+          ],
+          "personHeading": "043 Mari Hansd.",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "47"
+          },
+          "Family position": {
+            "textString": "Kone"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "044",
+          "personNameParts": [
+            "Hans Pedersen"
+          ],
+          "personHeading": "044 Hans Pedersen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "10"
+          },
+          "Family position": {
+            "textString": "Søn"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01051099000750",
+  "sourceInformation": "Census 1815 for Luster",
+  "sourceData": {
+    "County": {
+      "textString": "Sogn og Fjordane"
+    },
+    "Municipality (1947)": {
+      "textString": "Luster"
+    },
+    "Geographic area": {
+      "textString": "Luster parish Fortun local parish Dale local parish Gaupne local parish Nes local parish",
+      "textParts": [
+        "Luster parish",
+        "Fortun local parish",
+        "Dale local parish",
+        "Gaupne local parish",
+        "Nes local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1815"
+    },
+    "End year": {
+      "textString": "1815"
+    }
+  }
+}

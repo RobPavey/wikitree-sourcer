@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism of child Conrad Theodor''':\n\"Church book from Steigen parish, Steigen local parish 1887-1905 (1848P)\"<br/>\nBirths and baptisms: 1900-08-05; Page: 79; Serial no.: 21<br/>\n[https://media.digitalarkivet.no/kb20070213660378 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/255/pd00000033830720 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nLudvig Fremmerlid's child Conrad Theodor baptism on 5 Aug 1900 in Steigen, Nordland, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ludvig's child Conrad Theodor was baptised on 5 August 1900 in Steigen, Nordland, Norway.<ref>\n'''Baptism of child Conrad Theodor''':\n\"Church book from Steigen parish, Steigen local parish 1887-1905 (1848P)\"<br/>\nBirths and baptisms: 1900-08-05; Page: 79; Serial no.: 21<br/>\n[https://media.digitalarkivet.no/kb20070213660378 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/255/pd00000033830720 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nLudvig Fremmerlid's child Conrad Theodor baptism on 5 Aug 1900 in Steigen, Nordland, Norway.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism of child Conrad Theodor''': \"Church book from Steigen parish, Steigen local parish 1887-1905 (1848P)\"<br/>Births and baptisms: 1900-08-05; Page: 79; Serial no.: 21<br/>[https://media.digitalarkivet.no/kb20070213660378 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/255/pd00000033830720 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ludvig Fremmerlid's child Conrad Theodor baptism on 5 Aug 1900 in Steigen, Nordland, Norway.",
+    "type": "source"
+  }
+}

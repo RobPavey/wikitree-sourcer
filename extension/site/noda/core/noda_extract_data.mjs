@@ -50,6 +50,199 @@ function extractDataForImage(document, url, result) {
   }
 }
 
+function cleanLabel(label) {
+  if (label) {
+    label = label.trim();
+    if (label.endsWith(":")) {
+      label = label.substring(0, label.length - 1);
+    }
+  }
+  return label;
+}
+
+function extractValueObj(valueDiv) {
+  let valueObj = undefined;
+  let value = valueDiv.textContent.trim();
+  if (value != "-") {
+    valueObj = {};
+    value = value.replace(/\s+/g, " ");
+    valueObj.textString = value.trim();
+
+    let childNodes = valueDiv.childNodes;
+    if (childNodes && childNodes.length > 1) {
+      let textParts = [];
+      for (let childNode of childNodes) {
+        if (childNode.nodeType === 3) {
+          let text = childNode.textContent.trim();
+          if (text) {
+            text = text.replace(/\s+/g, " ");
+            textParts.push(text);
+          }
+        }
+      }
+      if (textParts.length > 1) {
+        valueObj.textParts = textParts;
+      }
+    }
+  }
+
+  return valueObj;
+}
+
+function extractLabelValuePairs(dataObject, rows) {
+  for (let dataRow of rows) {
+    let rowDivs = dataRow.querySelectorAll("div");
+    if (rowDivs.length == 2) {
+      let labelDiv = rowDivs[0];
+      let valueDiv = rowDivs[1];
+      if (labelDiv && valueDiv) {
+        let label = cleanLabel(labelDiv.textContent);
+        let valueObj = extractValueObj(valueDiv);
+        if (label && valueObj) {
+          dataObject[label] = valueObj;
+        }
+      }
+    }
+  }
+}
+
+function extractPeopleFromDataItems(panelData, panelGroup, dataItems) {
+  // it is a list of people in list view
+  panelData.people = [];
+  for (let person of dataItems) {
+    let personData = {};
+    panelData.people.push(personData);
+    if (person.classList.contains("current")) {
+      personData.current = true;
+    }
+
+    let personHeadingElement = person.querySelector("h4");
+    if (personHeadingElement) {
+      let personLinkElement = personHeadingElement.querySelector("a");
+      if (personLinkElement) {
+        let personLabelElement = personLinkElement.querySelector("span");
+        if (personLabelElement) {
+          let personLabel = personLabelElement.textContent.trim();
+          if (personLabel) {
+            personData.personLabel = personLabel;
+          }
+        }
+        personData.personNameParts = [];
+        for (let childNode of personLinkElement.childNodes) {
+          if (childNode.nodeType === 3) {
+            let text = childNode.textContent.trim();
+            if (text) {
+              text = text.replace(/\s+/g, " ");
+              personData.personNameParts.push(text);
+            }
+          }
+        }
+      }
+
+      let personHeading = personHeadingElement.textContent.trim();
+      if (personHeading) {
+        personHeading = personHeading.replace(/\s+/g, " ");
+        personData.personHeading = personHeading;
+      }
+    }
+
+    let dataDivs = person.querySelectorAll("div.row > div > div.row > div");
+    let lastLabel = "";
+    for (let dataDiv of dataDivs) {
+      if (dataDiv.classList.contains("ssp-semibold")) {
+        if (lastLabel) {
+          let valueObj = extractValueObj(dataDiv);
+          if (valueObj) {
+            personData[lastLabel] = valueObj;
+          }
+        }
+      } else {
+        lastLabel = cleanLabel(dataDiv.textContent);
+      }
+    }
+  }
+}
+
+function extractPeopleFromTable(panelData, panelGroup) {
+  // it is a list of people in list view
+  panelData.people = [];
+
+  // There are two tables the first is hidden and only contains headings
+  let tableWithHeadings = panelGroup.querySelector("div.panel-body > div > div[aria-hidden=true] > table.table");
+  let tableWithRows = panelGroup.querySelector("div.panel-body > div > table.table");
+
+  let headings = tableWithHeadings.querySelectorAll("thead th");
+  let rows = tableWithRows.querySelectorAll("tbody tr.data-item");
+
+  let heading0 = "";
+  if (headings.length > 0) {
+    heading0 = headings[0].textContent.trim();
+  }
+
+  console.log("headings.length = " + headings.length);
+  console.log("rows.length = " + rows.length);
+
+  for (let row of rows) {
+    let columns = row.querySelectorAll("td");
+    if (columns.length != headings.length) {
+      return;
+    }
+
+    let personData = {};
+    panelData.people.push(personData);
+    if (row.classList.contains("current")) {
+      personData.current = true;
+    }
+
+    let personLinkElement = columns[0].querySelector("a");
+    if (personLinkElement) {
+      let personHeading = "";
+      let personLabelElement = personLinkElement.querySelector("span");
+      if (heading0) {
+        personData.personLabel = heading0;
+        personHeading += heading0;
+      } else if (personLabelElement) {
+        let personLabel = personLabelElement.textContent.trim();
+        if (personLabel) {
+          personData.personLabel = personLabel;
+          personHeading += personLabel;
+        }
+      }
+      personData.personNameParts = [];
+      for (let childNode of personLinkElement.childNodes) {
+        if (childNode.nodeType === 3) {
+          let text = childNode.textContent.trim();
+          if (text) {
+            text = text.replace(/\s+/g, " ");
+            personData.personNameParts.push(text);
+            personHeading += " " + text;
+          }
+        }
+      }
+      if (personHeading) {
+        personData.personHeading = personHeading;
+      }
+    }
+
+    for (let columnIndex = 1; columnIndex < columns.length; columnIndex++) {
+      let column = columns[columnIndex];
+      let heading = headings[columnIndex];
+
+      if (heading && column) {
+        let label = cleanLabel(heading.textContent);
+        let value = column.textContent;
+
+        if (label && value) {
+          value = value.replace(/\s+/g, " ").trim();
+          if (value && value != "-") {
+            personData[label] = { textString: value };
+          }
+        }
+      }
+    }
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -166,62 +359,6 @@ function extractData(document, url) {
     }
   }
 
-  function cleanLabel(label) {
-    if (label) {
-      label = label.trim();
-      if (label.endsWith(":")) {
-        label = label.substring(0, label.length - 1);
-      }
-    }
-    return label;
-  }
-
-  function extractValueObj(valueDiv) {
-    let valueObj = undefined;
-    let value = valueDiv.textContent.trim();
-    if (value != "-") {
-      valueObj = {};
-      value = value.replace(/\s+/g, " ");
-      valueObj.textString = value;
-
-      let childNodes = valueDiv.childNodes;
-      if (childNodes && childNodes.length > 1) {
-        let textParts = [];
-        for (let childNode of childNodes) {
-          if (childNode.nodeType === 3) {
-            let text = childNode.textContent.trim();
-            if (text) {
-              text = text.replace(/\s+/g, " ");
-              textParts.push(text);
-            }
-          }
-        }
-        if (textParts.length > 1) {
-          valueObj.textParts = textParts;
-        }
-      }
-    }
-
-    return valueObj;
-  }
-
-  function extractLabelValuePairs(dataObject, rows) {
-    for (let dataRow of rows) {
-      let rowDivs = dataRow.querySelectorAll("div");
-      if (rowDivs.length == 2) {
-        let labelDiv = rowDivs[0];
-        let valueDiv = rowDivs[1];
-        if (labelDiv && valueDiv) {
-          let label = cleanLabel(labelDiv.textContent);
-          let valueObj = extractValueObj(valueDiv);
-          if (label && valueObj) {
-            dataObject[label] = valueObj;
-          }
-        }
-      }
-    }
-  }
-
   let leftViewColumn = article.querySelector("div.data-view div.left-view-column");
   let rightViewColumn = article.querySelector("div.data-view div.right-view-column");
 
@@ -253,64 +390,14 @@ function extractData(document, url) {
 
               // it could be a row with a single set of data or a list of people
               let dataItems = panelGroup.querySelectorAll("div.panel-body div.data-item");
+              // There are two tables the first is hidden and only contains headings
+              let panelTable = panelGroup.querySelector("div.panel-body table.table");
               if (dataItems.length) {
                 // it is a list of people
-                panelData.people = [];
-                for (let person of dataItems) {
-                  let personData = {};
-                  panelData.people.push(personData);
-                  if (person.classList.contains("current")) {
-                    personData.current = true;
-                  }
-
-                  let personHeadingElement = person.querySelector("h4");
-                  if (personHeadingElement) {
-                    let personLinkElement = personHeadingElement.querySelector("a");
-                    if (personLinkElement) {
-                      let personLabelElement = personLinkElement.querySelector("span");
-                      if (personLabelElement) {
-                        let personLabel = personLabelElement.textContent.trim();
-                        if (personLabel) {
-                          personData.personLabel = personLabel;
-                        }
-                      }
-                      personData.personNameParts = [];
-                      for (let childNode of personLinkElement.childNodes) {
-                        if (childNode.nodeType === 3) {
-                          let text = childNode.textContent.trim();
-                          if (text) {
-                            text = text.replace(/\s+/g, " ");
-                            personData.personNameParts.push(text);
-                          }
-                        }
-                      }
-                    }
-
-                    let personHeading = personHeadingElement.textContent.trim();
-                    if (personHeading) {
-                      personHeading = personHeading.replace(/\s+/g, " ");
-                      personData.personHeading = personHeading;
-                    }
-                  }
-
-                  let panelDataRows = panelGroup.querySelectorAll("div.panel-body > div.row > div > div.row");
-                  extractLabelValuePairs(panelData, panelDataRows);
-
-                  let dataDivs = person.querySelectorAll("div.row > div > div.row > div");
-                  let lastLabel = "";
-                  for (let dataDiv of dataDivs) {
-                    if (dataDiv.classList.contains("ssp-semibold")) {
-                      if (lastLabel) {
-                        let valueObj = extractValueObj(dataDiv);
-                        if (valueObj) {
-                          personData[lastLabel] = valueObj;
-                        }
-                      }
-                    } else {
-                      lastLabel = cleanLabel(dataDiv.textContent);
-                    }
-                  }
-                }
+                extractPeopleFromDataItems(panelData, panelGroup, dataItems);
+              } else if (panelTable) {
+                // it is a table of people
+                extractPeopleFromTable(panelData, panelGroup);
               } else {
                 let panelDataRows = panelGroup.querySelectorAll("div.panel-body > div.row > div > div.row");
                 extractLabelValuePairs(panelData, panelDataRows);

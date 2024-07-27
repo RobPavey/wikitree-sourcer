@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "role": "Parent",
+  "name": {
+    "lastName": "Fremmerlid",
+    "forenames": "Ludvig"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "5 Aug 1900"
+  },
+  "eventPlace": {
+    "placeString": "Steigen, Nordland, Norway",
+    "parish": "Steigen",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "birthDate": {
+    "yearString": "1857"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Marta Amalie Halvorsen"
+      }
+    }
+  ],
+  "primaryPerson": {
+    "name": {
+      "name": "Conrad Theodor"
+    }
+  },
+  "hasValidData": true
+}

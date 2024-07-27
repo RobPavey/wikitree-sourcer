@@ -44,6 +44,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/view/255/pd00000033830720",
   },
   {
+    caseName: "cb_child_bap_ludvig_fremmerlid_table",
+    url: "https://www.digitalarkivet.no/en/view/255/pd00000033830720",
+  },
+  {
     caseName: "census_1815_ole_anders",
     url: "https://www.digitalarkivet.no/en/census/person/pf01051099000750",
     optionVariants: [
@@ -55,6 +59,10 @@ const regressionData = [
         },
       },
     ],
+  },
+  {
+    caseName: "census_1815_ole_anders_table",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01051099000750",
   },
   {
     caseName: "census_1865_carl_motzfeldt",

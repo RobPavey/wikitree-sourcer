@@ -1,0 +1,289 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Ole Andersen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1815"
+  },
+  "eventPlace": {
+    "placeString": "Fiøsne, Luster, Sogn og Fjordane, Norway",
+    "parish": "Luster",
+    "county": "Sogn og Fjordane",
+    "country": "Norway"
+  },
+  "ageAtEvent": "2",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "occupation",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Christopher Thomasen",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Gaardbruger",
+      "age": "50"
+    },
+    {
+      "name": "Kistine Hendriksdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "42"
+    },
+    {
+      "name": "Susanna Eriksdatter",
+      "relationship": "stepdaughter",
+      "age": "15"
+    },
+    {
+      "name": "Mari Christophersdatter",
+      "relationship": "child",
+      "age": "6"
+    },
+    {
+      "name": "Malena Christophersdatter",
+      "relationship": "child",
+      "age": "3"
+    },
+    {
+      "name": "Erik Nielsen",
+      "occupation": "Teenager",
+      "age": "40"
+    },
+    {
+      "name": "Anders Eriksen",
+      "occupation": "Teenager",
+      "age": "18"
+    },
+    {
+      "name": "Lars Olsen",
+      "occupation": "Teenager",
+      "age": "17"
+    },
+    {
+      "name": "Inga Lassed",
+      "occupation": "Tienestepige",
+      "age": "30"
+    },
+    {
+      "name": "Johanna Ellevsdatter",
+      "occupation": "Tienestepige",
+      "age": "33"
+    },
+    {
+      "name": "Thomas Olsen",
+      "maritalStatus": "married",
+      "occupation": "Householder",
+      "age": "54",
+      "relationship": "head"
+    },
+    {
+      "name": "Synneva Olsdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "54"
+    },
+    {
+      "name": "Jacob Thomasen",
+      "relationship": "child",
+      "occupation": "Teenager",
+      "age": "20"
+    },
+    {
+      "name": "Ole Thomasen",
+      "relationship": "child",
+      "occupation": "Teenager",
+      "age": "18"
+    },
+    {
+      "name": "Torbiørn Thomasen",
+      "relationship": "child",
+      "age": "15"
+    },
+    {
+      "name": "Niels Johannessen",
+      "maritalStatus": "married",
+      "occupation": "Householder",
+      "age": "36",
+      "relationship": "head"
+    },
+    {
+      "name": "Groe Johannesdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "30"
+    },
+    {
+      "name": "Johannes Nielsen",
+      "relationship": "child",
+      "age": "6"
+    },
+    {
+      "name": "Cecilia Nielsdatter",
+      "relationship": "child",
+      "age": "1"
+    },
+    {
+      "name": "Anders Johannessen",
+      "maritalStatus": "married",
+      "occupation": "Householder",
+      "age": "40",
+      "relationship": "head"
+    },
+    {
+      "name": "Kristi Knudsdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "53"
+    },
+    {
+      "name": "Johannes Andersen",
+      "relationship": "child",
+      "age": "10"
+    },
+    {
+      "name": "Ragnilda Andersdatter",
+      "relationship": "child",
+      "age": "15"
+    },
+    {
+      "name": "Anders Olsen",
+      "maritalStatus": "married",
+      "occupation": "Gaardbruger",
+      "age": "34",
+      "relationship": "head"
+    },
+    {
+      "name": "Kari Arnesdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "23"
+    },
+    {
+      "name": "Berte Andersdatter",
+      "relationship": "child",
+      "age": "13"
+    },
+    {
+      "name": "Ole Andersen",
+      "relationship": "son",
+      "age": "2",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Steinor Andersdatter",
+      "relationship": "child",
+      "age": "1"
+    },
+    {
+      "name": "Elias Olsen",
+      "occupation": "Day laborer",
+      "age": "29"
+    },
+    {
+      "name": "Kisti Olsdatter",
+      "occupation": "Teenager",
+      "age": "27"
+    },
+    {
+      "name": "Siur Olsen",
+      "occupation": "Teenager",
+      "age": "23"
+    },
+    {
+      "name": "Christopher Christens",
+      "occupation": "Teenager",
+      "age": "17"
+    },
+    {
+      "name": "Inga Pedersdatter",
+      "occupation": "Teenager",
+      "age": "26"
+    },
+    {
+      "name": "Christen Pedersen",
+      "occupation": "Teenager",
+      "age": "14"
+    },
+    {
+      "name": "Anders Olsen",
+      "maritalStatus": "married",
+      "occupation": "Householder",
+      "age": "69",
+      "relationship": "head"
+    },
+    {
+      "name": "Clara Larsdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "57"
+    },
+    {
+      "name": "Ole Iversen",
+      "occupation": "Teenager",
+      "age": "17"
+    },
+    {
+      "name": "Ole Monsen",
+      "maritalStatus": "married",
+      "occupation": "Householder",
+      "age": "67",
+      "relationship": "head"
+    },
+    {
+      "name": "Kari Larsdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "60"
+    },
+    {
+      "name": "Lars Olsen",
+      "age": "17"
+    },
+    {
+      "name": "Anna Olsdatter",
+      "occupation": "Tienestepige",
+      "age": "20"
+    },
+    {
+      "name": "Peder Johanness",
+      "maritalStatus": "married",
+      "occupation": "Householder",
+      "age": "37",
+      "relationship": "head"
+    },
+    {
+      "name": "Mari Hansdatter",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "age": "47"
+    },
+    {
+      "name": "Hans Pedersen",
+      "relationship": "son",
+      "age": "10"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Anders Olsen"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Kari Arnesdatter"
+      }
+    }
+  },
+  "hasValidData": true
+}
