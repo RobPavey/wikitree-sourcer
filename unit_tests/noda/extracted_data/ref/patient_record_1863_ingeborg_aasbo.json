@@ -1,0 +1,108 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/20/pc00000000192712",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Patients at Reknes pleiestiftelse in Molde 1839-1877",
+    "Surrounding area in the source",
+    "Ingeborg Thoresdtr. Aasbø"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Surrounding area in the source: 11",
+      "collectionNameParts": [
+        "Surrounding area in the source",
+        "11"
+      ]
+    }
+  ],
+  "heading": "Person: Ingeborg Thoresdtr. Aasbø",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Ingeborg Thoresdtr. Aasbø"
+  ],
+  "recordData": {
+    "Given name": {
+      "textString": "Ingeborg"
+    },
+    "Last name": {
+      "textString": "Thoresdtr. Aasbø"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Birth place": {
+      "textString": "Stangvig, Halse sogn."
+    },
+    "Age": {
+      "textString": "20"
+    },
+    "Registered": {
+      "textString": "1863-02-04"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Patients",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "Given name",
+          "personNameParts": [
+            "Ingeborg"
+          ],
+          "personHeading": "Given name Ingeborg",
+          "Last name": {
+            "textString": "Thoresdtr. Aasbø"
+          },
+          "Age": {
+            "textString": "20"
+          },
+          "Registered": {
+            "textString": "1863-02-04"
+          }
+        }
+      ]
+    },
+    {
+      "panelTitle": "Surrounding area in the source",
+      "Serial number": {
+        "textString": "11"
+      },
+      "Institution": {
+        "textString": "Reknæs kur"
+      },
+      "Protocol reference": {
+        "textString": "Reknæs VI C 5 Pasientjourn"
+      }
+    }
+  ],
+  "permanentId": "pc00000000192712",
+  "sourceInformation": "Patients at Reknes pleiestiftelse in Molde 1839-1877",
+  "sourceData": {
+    "County": {
+      "textString": "Møre og Romsdal"
+    },
+    "Municipality (1947)": {
+      "textString": "Molde"
+    },
+    "Geographic area": {
+      "textString": "Molde muni."
+    },
+    "Start year": {
+      "textString": "1839"
+    },
+    "End year": {
+      "textString": "1877"
+    },
+    "Serial number": {
+      "textString": "11"
+    },
+    "Institution": {
+      "textString": "Reknæs kur"
+    }
+  }
+}

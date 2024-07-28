@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Thoresdtr Aasbø",
+    "forenames": "Ingeborg"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "4 Feb 1863"
+  },
+  "birthPlace": {
+    "placeString": "Stangvig, Halse sogn."
+  },
+  "ageAtEvent": "20",
+  "hasValidData": true
+}

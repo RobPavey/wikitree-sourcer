@@ -154,6 +154,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/view/327/pv00000001749450",
   },
   {
+    caseName: "patient_record_1863_ingeborg_aasbo",
+    url: "https://www.digitalarkivet.no/en/view/20/pc00000000192712",
+  },
+  {
     caseName: "probate_1879_kari_nilsdtr",
     url: "https://www.digitalarkivet.no/en/view/27/pa00000000013016",
   },

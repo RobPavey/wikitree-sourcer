@@ -113,6 +113,22 @@ var eventTypes = [
   },
 ];
 
+const defaultEventType = {
+  recordType: RT.Unclassified,
+  eventDate: [
+    {
+      type: "yyyyMmDd",
+      section: "record",
+      keys: ["registered"],
+    },
+    {
+      type: "yearAndMmDd",
+      section: "panel",
+      keys: ["date"],
+    },
+  ],
+};
+
 const fieldLabels = {
   age: {
     en: ["Age"],
@@ -278,6 +294,11 @@ const fieldLabels = {
     en: ["Date of probate"],
     bo: ["Skifteregistreringdato"],
     nn: ["Skifteregistreringdato"],
+  },
+  registered: {
+    en: ["Registered"],
+    bo: ["Innskrevet"],
+    nn: ["Innskriven"],
   },
   residentialStatus: {
     en: ["Residential status"],
@@ -537,6 +558,10 @@ class NodaEdReader extends ExtractedDataReader {
         }
       }
 
+      if (recordType == RT.Unclassified) {
+        this.eventType = defaultEventType;
+      }
+
       if (recordType == RT.BirthOrBaptism) {
         let baptismDate = this.getPanelDataValue("Births and baptisms", "baptismDate");
         if (baptismDate) {
@@ -633,23 +658,53 @@ class NodaEdReader extends ExtractedDataReader {
     }
   }
 
-  makeDateObjFromExpectedPanelDataYearAndMmDd() {
+  makeDateObjFromDateAccessors(dateType) {
     let eventType = this.eventType;
     if (eventType) {
-      let panelTitleKey = eventType.panelTitleKey;
-      let panelDataKey = eventType.datePanelDataKey;
+      let dateAccessorArray = eventType[dateType];
+      if (!dateAccessorArray) {
+        return undefined;
+      }
 
-      let mmDdString = this.getPanelDataValue(panelTitleKey, panelDataKey);
-      let yearString = this.getPanelDataValue(panelTitleKey, "year");
-      if (mmDdString && yearString) {
-        return this.makeDateObjFromYearAndMmDd(yearString, mmDdString);
+      let panelTitleKey = eventType.panelTitleKey;
+
+      for (let dateAccessor of dateAccessorArray) {
+        if (!dateAccessor.keys || !dateAccessor.section) {
+          continue;
+        }
+
+        if (dateAccessor.type == "yearAndMmDd") {
+          let mmDdString = this.getDataValueWithAccessor(dateAccessor, panelTitleKey);
+          let yearString = this.getPanelDataValue(panelTitleKey, "year");
+          if (mmDdString && yearString) {
+            let dateObj = this.makeDateObjFromYearAndMmDd(yearString, mmDdString);
+            if (dateObj) {
+              return dateObj;
+            }
+          }
+        } else if (dateAccessor.type == "yyyyMmDd") {
+          let yyyymmddDateString = this.getDataValueWithAccessor(dateAccessor, panelTitleKey);
+          if (yyyymmddDateString) {
+            let dateObj = this.makeDateObjFromYyyymmddDate(yyyymmddDateString, "-");
+            if (dateObj) {
+              return dateObj;
+            }
+          }
+        } else if (dateAccessor.type == "extendedDate") {
+          let dateString = this.getDataValueWithAccessor(dateAccessor, panelTitleKey);
+          if (dateString) {
+            let dateObj = this.makeDateObjFromExtendedDate(dateString);
+            if (dateObj) {
+              return dateObj;
+            }
+          }
+        }
       }
     }
   }
 
   makeDateObjFromPanelDataExtendedDate(panelTitleKey, panelDataKey) {
     let dateString = this.getPanelDataValue(panelTitleKey, panelDataKey);
-    let yearString = this.getPanelDataValue(panelTitleKey, "year");
     if (dateString) {
       return this.makeDateObjFromExtendedDate(dateString);
     }
@@ -1091,6 +1146,16 @@ class NodaEdReader extends ExtractedDataReader {
     return "";
   }
 
+  getPanelDataValueForKeyList(panelTitleKey, labelKeys) {
+    for (let fieldLabelKey of labelKeys) {
+      let valueObj = this.getPanelDataValueObj(panelTitleKey, fieldLabelKey);
+      if (valueObj && valueObj.textString) {
+        return valueObj.textString;
+      }
+    }
+    return "";
+  }
+
   getRecordDataValueObj(fieldLabelKey) {
     let fieldLabels = this.getFieldLabels(fieldLabelKey);
     if (fieldLabels) {
@@ -1104,8 +1169,26 @@ class NodaEdReader extends ExtractedDataReader {
     return undefined;
   }
 
+  getRecordDataValueObjForKeyList(fieldLabelKeys) {
+    for (let fieldLabelKey of fieldLabelKeys) {
+      let valueObj = this.getRecordDataValueObj(fieldLabelKey);
+      if (valueObj) {
+        return valueObj;
+      }
+    }
+    return undefined;
+  }
+
   getRecordDataValue(fieldLabelKey) {
     let valueObj = this.getRecordDataValueObj(fieldLabelKey);
+    if (valueObj && valueObj.textString) {
+      return valueObj.textString;
+    }
+    return "";
+  }
+
+  getRecordDataValueForKeyList(fieldLabelKeys) {
+    let valueObj = this.getRecordDataValueObjForKeyList(fieldLabelKeys);
     if (valueObj && valueObj.textString) {
       return valueObj.textString;
     }
@@ -1131,6 +1214,16 @@ class NodaEdReader extends ExtractedDataReader {
       return valueObj.textString;
     }
     return "";
+  }
+
+  getDataValueWithAccessor(accessor, panelTitleKey = "") {
+    let value = "";
+    if (accessor.section == "panel") {
+      value = this.getPanelDataValueForKeyList(panelTitleKey, accessor.keys);
+    } else if (accessor.section == "record") {
+      value = this.getRecordDataValueForKeyList(accessor.keys);
+    }
+    return value;
   }
 
   getPersonDataValueObj(person, fieldLabelKey) {
@@ -1404,7 +1497,7 @@ class NodaEdReader extends ExtractedDataReader {
         return this.makeDateObjFromYear(parts.year);
       }
     } else {
-      return this.makeDateObjFromExpectedPanelDataYearAndMmDd();
+      return this.makeDateObjFromDateAccessors("eventDate");
     }
 
     return undefined;

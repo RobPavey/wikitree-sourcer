@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Ingeborg Thoresdtr Aasbø''':\n\"Patients at Reknes pleiestiftelse in Molde 1839-1877\"<br/>\nSurrounding area in the source: 11<br/>\n[https://www.digitalarkivet.no/en/view/20/pc00000000192712 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Thoresdtr Aasbø on 4 Feb 1863.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ingeborg was in a record on 4 February 1863.<ref>\n'''Record of Ingeborg Thoresdtr Aasbø''':\n\"Patients at Reknes pleiestiftelse in Molde 1839-1877\"<br/>\nSurrounding area in the source: 11<br/>\n[https://www.digitalarkivet.no/en/view/20/pc00000000192712 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nIngeborg Thoresdtr Aasbø on 4 Feb 1863.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Ingeborg Thoresdtr Aasbø''': \"Patients at Reknes pleiestiftelse in Molde 1839-1877\"<br/>Surrounding area in the source: 11<br/>[https://www.digitalarkivet.no/en/view/20/pc00000000192712 Digitalarkivet Record] (accessed 6 May 2021)<br/>Ingeborg Thoresdtr Aasbø on 4 Feb 1863.",
+    "type": "source"
+  }
+}
