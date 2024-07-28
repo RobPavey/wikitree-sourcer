@@ -33,7 +33,29 @@ const citationOptionsGroup = {
   subcategory: "noda",
   tab: "citation",
   subsection: "noda",
-  options: [],
+  options: [
+    {
+      optionName: "linkFormat",
+      type: "select",
+      label: "Link format",
+      values: [
+        { value: "simple", text: "As external link" },
+        {
+          value: "withPermanentId",
+          text: "As external link with permanent ID",
+        },
+        { value: "visible", text: "As a visible URL" },
+      ],
+      defaultValue: "withPermanentId",
+      unitTestValue: "simple",
+    },
+    {
+      optionName: "includeImageLink",
+      type: "checkbox",
+      label: "For a record citation, include a link to the original image if available",
+      defaultValue: true,
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "noda", "Digitalarkivet (Norway)");

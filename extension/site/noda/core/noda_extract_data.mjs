@@ -179,9 +179,6 @@ function extractPeopleFromTable(panelData, panelGroup) {
     heading0 = headings[0].textContent.trim();
   }
 
-  console.log("headings.length = " + headings.length);
-  console.log("rows.length = " + rows.length);
-
   for (let row of rows) {
     let columns = row.querySelectorAll("td");
     if (columns.length != headings.length) {

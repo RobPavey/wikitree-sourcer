@@ -34,6 +34,29 @@ const regressionData = [
   {
     caseName: "cb_bap_1888_knut",
     url: "https://www.digitalarkivet.no/en/view/255/pd00000017246548",
+    optionVariants: [
+      {
+        variantName: "linksWithPermanentId",
+        thisTypeOnly: "inline",
+        optionOverrides: {
+          citation_noda_linkFormat: "withPermanentId",
+        },
+      },
+      {
+        variantName: "visibleLinks",
+        thisTypeOnly: "inline",
+        optionOverrides: {
+          citation_noda_linkFormat: "visible",
+        },
+      },
+      {
+        variantName: "noImageLink",
+        thisTypeOnly: "inline",
+        optionOverrides: {
+          citation_noda_includeImageLink: false,
+        },
+      },
+    ],
   },
   {
     caseName: "cb_bur_1840_ingebord_jacobsd",

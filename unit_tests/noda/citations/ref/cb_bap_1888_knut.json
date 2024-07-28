@@ -10,5 +10,17 @@
   "std_source": {
     "citation": "* '''Baptism''': \"Church book from Voss parish, Voss local parish 1886-1899 (1235P)\"<br/>Births and baptisms: 1888-04-22; Page: 29; Serial no.: 25<br/>[https://media.digitalarkivet.no/kb20050822020030 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/255/pd00000017246548 Digitalarkivet Record] (accessed 6 May 2021)<br/>Knut baptism on 22 Apr 1888 (born 4 Mar 1888), son of Lars Knutsen & Martha Pedersdtr, in Voss, Hordaland, Norway.",
     "type": "source"
+  },
+  "linksWithPermanentId_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Church book from Voss parish, Voss local parish 1886-1899 (1235P)\"<br/>\nBirths and baptisms: 1888-04-22; Page: 29; Serial no.: 25<br/>\nDigitalarkivet Image: [https://media.digitalarkivet.no/kb20050822020030 kb20050822020030] - Digitalarkivet Record: [https://www.digitalarkivet.no/en/view/255/pd00000017246548 pd00000017246548] (accessed 6 May 2021)<br/>\nKnut baptism on 22 Apr 1888 (born 4 Mar 1888), son of Lars Knutsen & Martha Pedersdtr, in Voss, Hordaland, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "visibleLinks_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Church book from Voss parish, Voss local parish 1886-1899 (1235P)\"<br/>\nBirths and baptisms: 1888-04-22; Page: 29; Serial no.: 25<br/>\nDigitalarkivet Image: https://media.digitalarkivet.no/kb20050822020030 - Digitalarkivet Record: https://www.digitalarkivet.no/en/view/255/pd00000017246548 (accessed 6 May 2021)<br/>\nKnut baptism on 22 Apr 1888 (born 4 Mar 1888), son of Lars Knutsen & Martha Pedersdtr, in Voss, Hordaland, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "noImageLink_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Church book from Voss parish, Voss local parish 1886-1899 (1235P)\"<br/>\nBirths and baptisms: 1888-04-22; Page: 29; Serial no.: 25<br/>\n[https://www.digitalarkivet.no/en/view/255/pd00000017246548 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nKnut baptism on 22 Apr 1888 (born 4 Mar 1888), son of Lars Knutsen & Martha Pedersdtr, in Voss, Hordaland, Norway.\n</ref>",
+    "type": "inline"
   }
 }

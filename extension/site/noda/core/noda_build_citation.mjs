@@ -44,21 +44,46 @@ function buildSourceReference(ed, gd, builder) {
 }
 
 function buildRecordLink(ed, gd, builder) {
+  let permanentId = ed.permanentId;
+  let options = builder.getOptions();
+
+  function buildLinkText(url, id, typeText) {
+    let linkText = "";
+    let linkFormat = options.citation_noda_linkFormat;
+
+    if (linkFormat == "visible") {
+      linkText = "Digitalarkivet " + typeText + ": " + url;
+    } else if (linkFormat == "withPermanentId" && id) {
+      linkText = "Digitalarkivet " + typeText + ": " + "[" + url + " " + id + "]";
+    } else {
+      linkText = "[" + url + " Digitalarkivet " + typeText + "]";
+    }
+    return linkText;
+  }
+
   if (ed.pageType == "record") {
     var nodaUrl = buildNodaUrl(ed, builder);
 
-    let recordLink = "[" + nodaUrl + " Digitalarkivet Record]";
+    let recordLink = buildLinkText(nodaUrl, permanentId, "Record");
     builder.recordLinkOrTemplate = recordLink;
 
-    let imageLinkUrl = ed.imageLink;
-    if (imageLinkUrl) {
-      let imageLink = "[" + imageLinkUrl + " Digitalarkivet Image]";
-      builder.imageLink = imageLink;
+    let includeImageLink = options.citation_noda_includeImageLink;
+
+    if (includeImageLink) {
+      let imageLinkUrl = ed.imageLink;
+      if (imageLinkUrl) {
+        let imagePermanentId = imageLinkUrl.replace(/.*\/([a-z0-9]+)$/, "$1");
+        if (!imagePermanentId || imagePermanentId == imageLinkUrl) {
+          imagePermanentId = "";
+        }
+        let imageLink = buildLinkText(imageLinkUrl, imagePermanentId, "Image");
+        builder.imageLink = imageLink;
+      }
     }
   } else if (ed.pageType == "image") {
     var nodaUrl = buildNodaUrl(ed, builder);
 
-    let imageLink = "[" + nodaUrl + " Digitalarkivet Image]";
+    let imageLink = buildLinkText(nodaUrl, permanentId, "Image");
     // add as record link so an accessed date is added
     builder.recordLinkOrTemplate = imageLink;
   }
