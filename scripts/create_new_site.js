@@ -243,7 +243,7 @@ function updateRegisterSiteOptions(siteName) {
 
 function updateRunTest(siteName) {
   const path = "scripts/run_test.js";
-  const lineToAdd = '"siteName",\n';
+  const lineToAdd = '  "' + siteName + '",\n';
 
   // read file
   let text = readFile(path);
