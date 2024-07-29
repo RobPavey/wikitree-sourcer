@@ -22,42 +22,43 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { testRegistry } from "../unit_tests/test_utils/test_registry.mjs";
 import { getUnitTestOptions } from "../extension/base/core/options/options_database.mjs";
 
 // Register all test modules, this is the order that they will be run in
-import "../unit_tests/ancestry/ancestry_test.mjs";
-import "../unit_tests/archive/archive_test.mjs";
-import "../unit_tests/baclac/baclac_test.mjs";
-import "../unit_tests/bg/bg_test.mjs";
-import "../unit_tests/cwgc/cwgc_test.mjs";
-import "../unit_tests/fg/fg_test.mjs";
-import "../unit_tests/fmp/fmp_test.mjs";
-import "../unit_tests/freebmd/freebmd_test.mjs";
-import "../unit_tests/freecen/freecen_test.mjs";
-import "../unit_tests/freereg/freereg_test.mjs";
-import "../unit_tests/fs/fs_test.mjs";
-import "../unit_tests/gbooks/gbooks_test.mjs";
-import "../unit_tests/geneteka/geneteka_test.mjs";
-import "../unit_tests/gro/gro_test.mjs";
-import "../unit_tests/hathi/hathi_test.mjs";
-import "../unit_tests/irishg/irishg_test.mjs";
-import "../unit_tests/jstor/jstor_test.mjs";
-import "../unit_tests/mh/mh_test.mjs";
-import "../unit_tests/naie/naie_test.mjs";
-import "../unit_tests/nli/nli_test.mjs";
-import "../unit_tests/noda/noda_test.mjs";
-import "../unit_tests/np/np_test.mjs";
-import "../unit_tests/opccorn/opccorn_test.mjs";
-import "../unit_tests/openarch/openarch_test.mjs";
-import "../unit_tests/ppnz/ppnz_test.mjs";
-import "../unit_tests/psuk/psuk_test.mjs";
-import "../unit_tests/scotp/scotp_test.mjs";
-import "../unit_tests/trove/trove_test.mjs";
-import "../unit_tests/vicbdm/vicbdm_test.mjs";
-import "../unit_tests/wiewaswie/wiewaswie_test.mjs";
-import "../unit_tests/wikipedia/wikipedia_test.mjs";
-import "../unit_tests/wikitree/wikitree_test.mjs";
+const siteNames = [
+  "ancestry",
+  "archive",
+  "baclac",
+  "bg",
+  "cwgc",
+  "fg",
+  "fmp",
+  "freebmd",
+  "freecen",
+  "freereg",
+  "fs",
+  "gbooks",
+  "geneteka",
+  "gro",
+  "hathi",
+  "irishg",
+  "jstor",
+  "mh",
+  "naie",
+  "nli",
+  "noda",
+  "np",
+  "opccorn",
+  "openarch",
+  "ppnz",
+  "psuk",
+  "scotp",
+  "trove",
+  "vicbdm",
+  "wiewaswie",
+  "wikipedia",
+  "wikitree",
+];
 
 function testSuiteEnabled(parameters, testSuiteName) {
   return parameters.testSuiteName == "" || parameters.testSuiteName == testSuiteName;
@@ -95,10 +96,13 @@ async function runTests() {
     results: results,
   };
 
-  // go through all the registered tests and run the tests if enabled
-  for (let siteTest of testRegistry) {
-    if (testSuiteEnabled(parameters, siteTest.siteName)) {
-      await siteTest.testFunction(testManager);
+  for (let siteName of siteNames) {
+    if (testSuiteEnabled(parameters, siteName)) {
+      let testFileName = "../unit_tests/" + siteName + "/" + siteName + "_test.mjs";
+      let testModule = await import(testFileName);
+      if (testModule) {
+        await testModule.runTests(testManager);
+      }
     }
   }
 

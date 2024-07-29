@@ -243,7 +243,7 @@ function updateRegisterSiteOptions(siteName) {
 
 function updateRunTest(siteName) {
   const path = "scripts/run_test.js";
-  const lineToAdd = '\nimport "../unit_tests/' + siteName + "/" + siteName + '_test.mjs";';
+  const lineToAdd = '"siteName",\n';
 
   // read file
   let text = readFile(path);
@@ -256,26 +256,23 @@ function updateRunTest(siteName) {
     return false;
   }
 
-  // find last of the import lines
-  let importLineIndex = text.indexOf('import "../unit_tests/');
+  // find start of the siteNames array
+  let siteNamesIndex = text.indexOf("const siteNames = [");
   //let endIndex = text.search(/import \"\.\.\/unit_tests\//);
-  if (importLineIndex == -1) {
-    console.log("cannot find import line in " + path);
+  if (siteNamesIndex == -1) {
+    console.log("cannot find siteNames line in " + path);
     return false;
   }
 
-  let endOfLine = -1;
-  while (importLineIndex != -1) {
-    endOfLine = text.indexOf("\n", importLineIndex);
-    if (endOfLine == -1) {
-      console.log("cannot find newline on end of import line in " + path);
-      return false;
-    }
+  // find the end of the siteNames array
+  let endOfArrayIndex = text.indexOf("];", siteNamesIndex);
 
-    importLineIndex = text.indexOf('import "../unit_tests/', endOfLine);
+  if (endOfArrayIndex == -1) {
+    console.log("cannot find end of siteNames array " + path);
+    return false;
   }
 
-  const indexToAddLine = endOfLine;
+  const indexToAddLine = endOfArrayIndex;
 
   const textBefore = text.substring(0, indexToAddLine);
   const textAfter = text.substring(indexToAddLine);

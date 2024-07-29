@@ -22,8 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { registerTest } from "../test_utils/test_registry.mjs";
-
 import * as test_content_and_citation from "./freecen_test_content_and_citation.mjs";
 import * as test_build_household_table from "./freecen_test_build_household_table.mjs";
 import * as test_build_search_url from "./freecen_test_build_search_url.mjs";
@@ -33,7 +31,5 @@ async function runTests(testManager) {
   await test_build_household_table.runTests(testManager);
   await test_build_search_url.runTests(testManager);
 }
-
-registerTest("freecen", runTests);
 
 export { runTests };

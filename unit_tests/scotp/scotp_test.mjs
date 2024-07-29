@@ -22,8 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { registerTest } from "../test_utils/test_registry.mjs";
-
 import * as test_content_and_citation from "./scotp_test_content_and_citation.mjs";
 import * as test_build_search_url from "./scotp_test_build_search_url.mjs";
 
@@ -31,7 +29,5 @@ async function runTests(options, testResults) {
   await test_content_and_citation.runTests(options, testResults);
   await test_build_search_url.runTests(options, testResults);
 }
-
-registerTest("scotp", runTests);
 
 export { runTests };
