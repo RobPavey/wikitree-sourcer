@@ -37,6 +37,8 @@ var eventTypes = [
       nn: "Fødde og døypte",
     },
     panelTitleKey: "Births and baptisms",
+    eventDate: [{ type: "yearAndMmDd", section: "panel", keys: ["baptismDate"] }],
+    eventPlace: [{ section: "panel", keys: ["baptismPlace"] }],
     primaryRole: Role.Child,
   },
   {
@@ -47,6 +49,8 @@ var eventTypes = [
       nn: "Gravlagde",
     },
     panelTitleKey: "Burials",
+    eventDate: [{ type: "yearAndMmDd", section: "panel", keys: ["burialDate"] }],
+    eventPlace: [{ section: "panel", keys: [] }],
   },
   {
     recordType: RT.Census,
@@ -65,6 +69,8 @@ var eventTypes = [
       nn: "Konfirmerte",
     },
     panelTitleKey: "Confirmations",
+    eventDate: [{ type: "extendedDate", section: "panel", keys: ["confirmationDate"] }],
+    eventPlace: [{ section: "panel", keys: ["parishChurch"] }],
   },
   {
     recordType: RT.Death,
@@ -74,6 +80,7 @@ var eventTypes = [
       nn: "Døde 1951-2014",
     },
     panelTitleKey: "",
+    eventPlace: [{ section: "record", keys: ["municipality"] }],
   },
   {
     recordType: RT.Death,
@@ -92,6 +99,8 @@ var eventTypes = [
       nn: "Emigrasjon",
     },
     panelTitleKey: "Emigration",
+    eventDate: [{ type: "yyyyMmDd", section: "record", keys: ["emigrationDate"] }],
+    eventPlace: [{ section: "panel", keys: ["parish"] }],
   },
   {
     recordType: RT.Marriage,
@@ -101,6 +110,20 @@ var eventTypes = [
       nn: "Viede",
     },
     panelTitleKey: "Marriages",
+    eventDate: [{ type: "yearAndMmDd", section: "panel", keys: ["marriageDate"] }],
+    eventPlace: [{ section: "panel", keys: ["marriagePlace"] }],
+  },
+  {
+    recordType: RT.MedicalPatient,
+    breadcrumbText: {
+      en: "Patients at ",
+      bo: "Pasienter ved ",
+      nn: "Pasientar ved ",
+      matchType: "startsWith",
+    },
+    panelTitleKey: "Year/index",
+    eventDate: [{ type: "yyyyMmDd", section: "record", keys: ["registered"] }],
+    eventPlace: [{ section: "panel", keys: ["institution"] }],
   },
   {
     recordType: RT.Probate,
@@ -110,6 +133,8 @@ var eventTypes = [
       nn: "Skifteforretning",
     },
     panelTitleKey: "Probate",
+    eventDate: [{ type: "yearRangeAndDate", section: "panel", keys: ["probateDate"] }],
+    eventPlace: [{ section: "record", keys: ["smallerJudicialArea"] }],
   },
 ];
 
@@ -127,6 +152,7 @@ const defaultEventType = {
       keys: ["date"],
     },
   ],
+  eventPlace: [],
 };
 
 const fieldLabels = {
@@ -230,10 +256,20 @@ const fieldLabels = {
     bo: ["Fornavn"],
     nn: ["Førenamn"],
   },
+  institution: {
+    en: ["Institution"],
+    bo: ["Institusjon"],
+    nn: ["Institusjon"],
+  },
   lastName: {
     en: ["Last name", "Surname"],
     bo: ["Etternavn"],
     nn: ["Etternamn"],
+  },
+  localParish: {
+    en: ["Local parish"],
+    bo: ["Sokn"],
+    nn: ["Sokn"],
   },
   location: {
     en: ["Location"],
@@ -334,34 +370,39 @@ const fieldLabels = {
 
 const panelTitles = {
   "Births and baptisms": {
-    en: "Births and baptisms",
-    bo: "Fødte og døpte",
-    nn: "Fødde og døypte",
+    en: ["Births and baptisms"],
+    bo: ["Fødte og døpte"],
+    nn: ["Fødde og døypte"],
   },
   Burials: {
-    en: "Burials",
-    bo: "Begravde",
-    nn: "Gravlagde",
+    en: ["Burials"],
+    bo: ["Begravde"],
+    nn: ["Gravlagde"],
   },
   Confirmations: {
-    en: "Confirmations",
-    bo: "Konfirmerte",
-    nn: "Konfirmerte",
+    en: ["Confirmations"],
+    bo: ["Konfirmerte"],
+    nn: ["Konfirmerte"],
   },
   Emigration: {
-    en: "Emigration",
-    bo: "Emigrasjon",
-    nn: "Emigrasjon",
+    en: ["Emigration"],
+    bo: ["Emigrasjon"],
+    nn: ["Emigrasjon"],
   },
   Marriages: {
-    en: "Marriages",
-    bo: "Viede",
-    nn: "Vigde",
+    en: ["Marriages"],
+    bo: ["Viede"],
+    nn: ["Vigde"],
   },
   Probate: {
-    en: "Probate",
-    bo: "Skifteforretning",
-    nn: "Skifteforretning",
+    en: ["Probate"],
+    bo: ["Skifteforretning"],
+    nn: ["Skifteforretning"],
+  },
+  "Year/index": {
+    en: ["Year/index", "Surrounding area in the source"],
+    bo: ["År/løpenr"],
+    nn: ["År/løpenr", ""],
   },
 };
 
@@ -547,7 +588,21 @@ class NodaEdReader extends ExtractedDataReader {
     if (ed.pageType == "record") {
       for (let eventType of eventTypes) {
         for (let crumb of this.ed.breadcrumbs) {
-          if (crumb == eventType.breadcrumbText[this.urlLang]) {
+          let matchString = eventType.breadcrumbText[this.urlLang];
+          let matchType = eventType.breadcrumbText.matchType;
+          let isMatch = false;
+
+          if (matchType == "startsWith") {
+            isMatch = crumb.startsWith(matchString);
+          } else if (matchType == "endsWith") {
+            isMatch = crumb.endsWith(matchString);
+          } else if (matchType == "includes") {
+            isMatch = crumb.includes(matchString);
+          } else {
+            isMatch = crumb == matchString;
+          }
+
+          if (isMatch) {
             recordType = eventType.recordType;
             break;
           }
@@ -698,6 +753,13 @@ class NodaEdReader extends ExtractedDataReader {
               return dateObj;
             }
           }
+        } else if (dateAccessor.type == "yearRangeAndDate") {
+          let dateString = this.getDataValueWithAccessor(dateAccessor, panelTitleKey);
+          let yearString = this.getPanelDataValue(panelTitleKey, "year");
+          let dateObj = this.makeDateObjFromYearRangeAndDateString(yearString, dateString);
+          if (dateObj) {
+            return dateObj;
+          }
         }
       }
     }
@@ -710,10 +772,7 @@ class NodaEdReader extends ExtractedDataReader {
     }
   }
 
-  makeDateObjFromPanelDataYearRangeAndDateString(panelTitleKey, panelDataKey) {
-    let dateString = this.getPanelDataValue(panelTitleKey, panelDataKey);
-    let yearString = this.getPanelDataValue(panelTitleKey, "year");
-
+  makeDateObjFromYearRangeAndDateString(yearString, dateString) {
     let mmDdString = "";
     if (dateString) {
       if (/^\d\d\d\d\-\d\d\-\d\d$/.test(dateString)) {
@@ -735,6 +794,12 @@ class NodaEdReader extends ExtractedDataReader {
         return this.makeDateObjFromYear(yearString);
       }
     }
+  }
+
+  makeDateObjFromPanelDataYearRangeAndDateString(panelTitleKey, panelDataKey) {
+    let dateString = this.getPanelDataValue(panelTitleKey, panelDataKey);
+    let yearString = this.getPanelDataValue(panelTitleKey, "year");
+    return this.makeDateObjFromYearRangeAndDateString(yearString, dateString);
   }
 
   getPartsFromCensusSourceInfo() {
@@ -1020,6 +1085,34 @@ class NodaEdReader extends ExtractedDataReader {
     return this.makePlaceObjFromLocalPlaceNameAndSourceData(placeName);
   }
 
+  makePlaceObjFromAccessors(placeType) {
+    let eventType = this.eventType;
+    if (eventType) {
+      let panelTitleKey = eventType.panelTitleKey;
+      let place = "";
+
+      let accessorArray = eventType[placeType];
+      if (accessorArray) {
+        for (let accessor of accessorArray) {
+          if (!accessor.keys || !accessor.section) {
+            continue;
+          }
+
+          place = this.getDataValueWithAccessor(accessor, panelTitleKey);
+          if (place) {
+            break;
+          }
+        }
+      }
+
+      if (!place) {
+        place = this.getPanelDataValue(panelTitleKey, "parishChurch");
+      }
+
+      return this.makePlaceObjFromLocalPlaceNameAndSourceData(place);
+    }
+  }
+
   parseUrl() {
     let url = this.ed.url;
 
@@ -1052,17 +1145,17 @@ class NodaEdReader extends ExtractedDataReader {
     }
   }
 
-  getPanelTitle(panelTitleKey) {
+  getPanelTitleList(panelTitleKey) {
     let lang = this.urlLang;
     if (!lang) {
-      return "";
+      return [];
     }
 
     let panelTitleRecord = panelTitles[panelTitleKey];
     if (panelTitleRecord) {
       return panelTitleRecord[lang];
     }
-    return "";
+    return [];
   }
 
   getCollectionPartHeading(collectionPartHeadingKeyKey) {
@@ -1107,14 +1200,14 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getPanel(panelTitleKey) {
-    let panelName = this.getPanelTitle(panelTitleKey);
-    if (!panelName) {
+    let panelNames = this.getPanelTitleList(panelTitleKey);
+    if (!panelNames || panelNames.length == 0) {
       return undefined;
     }
     let panelGroups = this.ed.panelGroups;
     if (panelGroups) {
       for (let group of panelGroups) {
-        if (group.panelTitle == panelName) {
+        if (panelNames.includes(group.panelTitle)) {
           return group;
         }
       }
@@ -1476,22 +1569,7 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    if (this.recordType == RT.Baptism) {
-      return this.makeDateObjFromPanelDataYearAndMmDd("Births and baptisms", "baptismDate");
-    } else if (this.recordType == RT.Burial) {
-      return this.makeDateObjFromPanelDataYearAndMmDd("Burials", "burialDate");
-    } else if (this.recordType == RT.Marriage) {
-      return this.makeDateObjFromPanelDataYearAndMmDd("Marriages", "marriageDate");
-    } else if (this.recordType == RT.Confirmation) {
-      return this.makeDateObjFromPanelDataExtendedDate("Confirmations", "confirmationDate");
-    } else if (this.recordType == RT.Probate) {
-      return this.makeDateObjFromPanelDataYearRangeAndDateString("Probate", "probateDate");
-    } else if (this.recordType == RT.Emigration) {
-      let dateString = this.getRecordDataValue("emigrationDate");
-      if (dateString) {
-        return this.makeDateObjFromYyyymmddDate(dateString, "-");
-      }
-    } else if (this.recordType == RT.Census) {
+    if (this.recordType == RT.Census) {
       let parts = this.getPartsFromCensusSourceInfo();
       if (parts.year) {
         return this.makeDateObjFromYear(parts.year);
@@ -1504,22 +1582,10 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getEventPlaceObj() {
-    if (this.recordType == RT.Baptism) {
-      return this.makePlaceObjFromRecordPanelAndSourceData("", "Births and baptisms", "baptismPlace");
-    } else if (this.recordType == RT.Marriage) {
-      return this.makePlaceObjFromRecordPanelAndSourceData("", "Marriages", "marriagePlace");
-    } else if (this.recordType == RT.Burial) {
-      return this.makePlaceObjFromRecordPanelAndSourceData("", "Burials", "marriagePlace");
-    } else if (this.recordType == RT.Confirmation) {
-      return this.makePlaceObjFromRecordPanelAndSourceData("", "Confirmations", "parishChurch");
-    } else if (this.recordType == RT.Probate) {
-      return this.makePlaceObjFromRecordPanelAndSourceData("smallerJudicialArea", "", "");
-    } else if (this.recordType == RT.Death) {
-      return this.makePlaceObjFromRecordPanelAndSourceData("municipality", "", "");
-    } else if (this.recordType == RT.Emigration) {
-      return this.makePlaceObjFromRecordPanelAndSourceData("", "Emigration", "parish");
-    } else if (this.recordType == RT.Census) {
+    if (this.recordType == RT.Census) {
       return this.makePlaceObjForCensus();
+    } else {
+      return this.makePlaceObjFromAccessors("eventPlace");
     }
 
     return undefined;

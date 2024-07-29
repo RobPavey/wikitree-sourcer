@@ -1,7 +1,7 @@
 {
   "sourceOfData": "noda",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "MedicalPatient",
   "name": {
     "lastName": "Thoresdtr Aasbø",
     "forenames": "Ingeborg"
@@ -9,6 +9,11 @@
   "personGender": "female",
   "eventDate": {
     "dateString": "4 Feb 1863"
+  },
+  "eventPlace": {
+    "placeString": "Reknæs kur, Møre og Romsdal, Norway",
+    "county": "Møre og Romsdal",
+    "country": "Norway"
   },
   "birthPlace": {
     "placeString": "Stangvig, Halse sogn."
