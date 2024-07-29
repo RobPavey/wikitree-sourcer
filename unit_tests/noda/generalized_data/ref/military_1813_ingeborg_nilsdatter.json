@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Military",
+  "name": {
+    "lastName": "Nilsdatter",
+    "forenames": "Ingeborg"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1813"
+  },
+  "eventPlace": {
+    "placeString": "Nordland, Norway",
+    "county": "Nordland",
+    "country": "Norway"
+  },
+  "hasValidData": true
+}

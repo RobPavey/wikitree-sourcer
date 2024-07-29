@@ -28,7 +28,40 @@ import { NameObj, DateObj, PlaceObj, dateQualifiers } from "../../../base/core/g
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { GD } from "../../../base/core/generalize_data_utils.mjs";
 
-var eventTypes = [
+const defaultEventDateAccessor = [
+  {
+    type: "yyyyMmDd",
+    section: "record",
+    keys: ["date", "registered"],
+  },
+  {
+    type: "yearAndMmDd",
+    section: "panel",
+    keys: ["date"],
+  },
+  {
+    type: "yyyyMmDd",
+    section: "panel",
+    keys: ["date"],
+  },
+  {
+    type: "year",
+    section: "record",
+    keys: ["year"],
+  },
+  {
+    type: "year",
+    section: "panel",
+    keys: ["year"],
+  },
+  {
+    type: "year",
+    section: "panel",
+    keys: ["dateEnrolled"],
+  },
+];
+
+const eventTypes = [
   {
     recordType: RT.BirthOrBaptism,
     breadcrumbText: {
@@ -126,6 +159,17 @@ var eventTypes = [
     eventPlace: [{ section: "panel", keys: ["institution"] }],
   },
   {
+    recordType: RT.Military,
+    breadcrumbText: {
+      en: "Military rolls",
+      bo: "Innrulleringsmanntall",
+      nn: "Innrulleringsmanntal",
+      matchType: "includes",
+    },
+    panelTitleKey: "defaultPanelTitle",
+    eventDate: defaultEventDateAccessor,
+  },
+  {
     recordType: RT.Probate,
     breadcrumbText: {
       en: "Probate",
@@ -136,22 +180,23 @@ var eventTypes = [
     eventDate: [{ type: "yearRangeAndDate", section: "panel", keys: ["probateDate"] }],
     eventPlace: [{ section: "record", keys: ["smallerJudicialArea"] }],
   },
+  {
+    recordType: RT.SchoolRecords,
+    breadcrumbText: {
+      en: "Pupils at ",
+      bo: "Elever ved ",
+      nn: "Elevar ved ",
+      matchType: "startsWith",
+    },
+    panelTitleKey: "defaultPanelTitle",
+    eventDate: defaultEventDateAccessor,
+  },
 ];
 
 const defaultEventType = {
   recordType: RT.Unclassified,
-  eventDate: [
-    {
-      type: "yyyyMmDd",
-      section: "record",
-      keys: ["registered"],
-    },
-    {
-      type: "yearAndMmDd",
-      section: "panel",
-      keys: ["date"],
-    },
-  ],
+  panelTitleKey: "defaultPanelTitle",
+  eventDate: defaultEventDateAccessor,
   eventPlace: [],
 };
 
@@ -205,6 +250,16 @@ const fieldLabels = {
     en: ["County"],
     bo: ["Fylke"],
     nn: ["Fylke"],
+  },
+  date: {
+    en: ["Date"],
+    bo: ["Dato"],
+    nn: ["Dato"],
+  },
+  dateEnrolled: {
+    en: ["Date (enrolled)"],
+    bo: ["Dato (innmeldt/start)"],
+    nn: ["Dato (innmeld/start)"],
   },
   deathDate: {
     en: ["Date of death", "Death date"],
@@ -403,6 +458,11 @@ const panelTitles = {
     en: ["Year/index", "Surrounding area in the source"],
     bo: ["År/løpenr"],
     nn: ["År/løpenr", ""],
+  },
+  defaultPanelTitle: {
+    en: ["Surrounding area in the source", ""],
+    bo: ["Overområde i kilden", ""],
+    nn: ["Overområde i kjelda", ""],
   },
 };
 
@@ -624,12 +684,14 @@ class NodaEdReader extends ExtractedDataReader {
         }
       }
 
-      let recordRole = this.getRecordDataValue("role");
-      if (recordRole) {
-        let role = roleToGdRole[recordRole];
-        if (role) {
-          if (this.eventType && this.eventType.primaryRole != role) {
-            this.role = role;
+      if (recordType != RT.Unclassified) {
+        let recordRole = this.getRecordDataValue("role");
+        if (recordRole) {
+          let role = roleToGdRole[recordRole];
+          if (role) {
+            if (this.eventType && this.eventType.primaryRole != role) {
+              this.role = role;
+            }
           }
         }
       }
@@ -759,6 +821,14 @@ class NodaEdReader extends ExtractedDataReader {
           let dateObj = this.makeDateObjFromYearRangeAndDateString(yearString, dateString);
           if (dateObj) {
             return dateObj;
+          }
+        } else if (dateAccessor.type == "year") {
+          let yearString = this.getDataValueWithAccessor(dateAccessor, panelTitleKey);
+          if (yearString) {
+            let dateObj = this.makeDateObjFromYear(yearString);
+            if (dateObj) {
+              return dateObj;
+            }
           }
         }
       }
@@ -945,12 +1015,6 @@ class NodaEdReader extends ExtractedDataReader {
       nn: "Emigranter over ",
     };
 
-    const parishWords = {
-      en: "parish",
-      bo: "prestegjeld",
-      nn: "prestegjeld",
-    };
-
     let sourceInfoPrefix = sourceInfoPrefixes[this.urlLang];
     let sourceInformation = this.ed.sourceInformation;
 
@@ -977,6 +1041,94 @@ class NodaEdReader extends ExtractedDataReader {
     return sourceInfoParishName;
   }
 
+  getLocalNameFromSourceInformationForMedicalPatient() {
+    let sourceInfoParishName = "";
+
+    const sourceInfoPrefixes = {
+      en: "Patients at ",
+      bo: "Pasienter på ",
+      nn: "Pasientar på ",
+    };
+
+    const inWords = {
+      en: "in",
+      bo: "i",
+      nn: "i",
+    };
+
+    let sourceInfoPrefix = sourceInfoPrefixes[this.urlLang];
+    let inWord = inWords[this.urlLang];
+    let sourceInformation = this.ed.sourceInformation;
+
+    if (sourceInformation) {
+      if (sourceInfoPrefix) {
+        if (sourceInformation.startsWith(sourceInfoPrefix)) {
+          sourceInformation = sourceInformation.substring(sourceInfoPrefix.length);
+        }
+      }
+      let parts = sourceInformation.split(" ");
+      if (parts.length) {
+        for (let partIndex = 0; partIndex < parts.length; partIndex++) {
+          if (/^\d+/.test(parts[partIndex])) {
+            break;
+          }
+          if (parts[partIndex] == inWord) {
+            break;
+          }
+          if (sourceInfoParishName) {
+            sourceInfoParishName += " ";
+          }
+          sourceInfoParishName += parts[partIndex];
+        }
+      }
+    }
+
+    return sourceInfoParishName;
+  }
+
+  getLocalNameFromSourceInformationForSchoolRecords() {
+    let sourceInfoLocalName = "";
+
+    const sourceInfoPrefixes = {
+      en: "Pupils at ",
+      bo: "Elever ved ",
+      nn: "Elevar ved ",
+    };
+
+    let sourceInfoPrefix = sourceInfoPrefixes[this.urlLang];
+    let sourceInformation = this.ed.sourceInformation;
+
+    if (sourceInformation) {
+      if (sourceInfoPrefix) {
+        if (sourceInformation.startsWith(sourceInfoPrefix)) {
+          sourceInformation = sourceInformation.substring(sourceInfoPrefix.length);
+        }
+      }
+      let parts = sourceInformation.split(" ");
+      if (parts.length) {
+        for (let partIndex = 0; partIndex < parts.length; partIndex++) {
+          if (/^\d+/.test(parts[partIndex])) {
+            break;
+          }
+          if (sourceInfoLocalName) {
+            sourceInfoLocalName += " ";
+          }
+          sourceInfoLocalName += parts[partIndex];
+        }
+      }
+    }
+
+    return sourceInfoLocalName;
+  }
+
+  getLocalNameFromSourceInformation() {
+    if (this.recordType == RT.MedicalPatient) {
+      return this.getLocalNameFromSourceInformationForMedicalPatient();
+    } else if (this.recordType == RT.SchoolRecords) {
+      return this.getLocalNameFromSourceInformationForSchoolRecords();
+    }
+  }
+
   getParishNameFromSourceInformation() {
     if (this.recordType == RT.Census) {
       return this.getParishNameFromSourceInformationForCensus();
@@ -988,6 +1140,8 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   makePlaceObjFromLocalPlaceNameAndSourceData(localPlaceName) {
+    let sourceInfoLocalhName = this.getLocalNameFromSourceInformation();
+
     let sourceInfoParishName = this.getParishNameFromSourceInformation();
 
     let countyName = this.getSourceDataValue("county");
@@ -995,6 +1149,13 @@ class NodaEdReader extends ExtractedDataReader {
     let fullPlaceName = "";
     if (localPlaceName) {
       fullPlaceName = localPlaceName;
+    }
+
+    if (sourceInfoLocalhName && !fullPlaceName.includes(sourceInfoLocalhName)) {
+      if (fullPlaceName) {
+        fullPlaceName += ", ";
+      }
+      fullPlaceName += sourceInfoLocalhName;
     }
 
     if (sourceInfoParishName && !fullPlaceName.includes(sourceInfoParishName)) {
@@ -1210,6 +1371,10 @@ class NodaEdReader extends ExtractedDataReader {
         if (panelNames.includes(group.panelTitle)) {
           return group;
         }
+      }
+      // no panel with matching title, just try the last panel
+      if (panelGroups.length > 0) {
+        return panelGroups[panelGroups.length - 1];
       }
     }
     return undefined;

@@ -1,0 +1,303 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/44/pp00000000222888",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Fylkesmannen i Nordland, Militærvesen, Military rolls, no. 24: Vågan, 1806-1836",
+    "Surrounding area in the source",
+    "Enke Enke etter Jossophs Gabrielssøn Ingeborg Nilsdatter"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Surrounding area in the source: 1813",
+      "collectionNameParts": [
+        "Surrounding area in the source",
+        "1813"
+      ]
+    }
+  ],
+  "heading": "Person: Enke Enke etter Jossophs Gabrielssøn Ingeborg Nilsdatter",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Enke Enke etter Jossophs Gabrielssøn Ingeborg Nilsdatter"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/ru20111215608548",
+  "recordData": {
+    "Given name": {
+      "textString": "Ingeborg"
+    },
+    "Last name": {
+      "textString": "Nilsdatter"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Position": {
+      "textString": "Enke Enke etter Jossophs Gabrielssøn"
+    },
+    "Farm": {
+      "textString": "Qvantios"
+    },
+    "Roll": {
+      "textString": "person"
+    },
+    "Farm no.": {
+      "textString": "30"
+    },
+    "Farm tax": {
+      "textString": "18 mk"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Persons",
+      "people": [
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222879"
+          ],
+          "personHeading": "Id pp00000000222879",
+          "Name": {
+            "textString": "Christen Tostenssøn"
+          },
+          "Position": {
+            "textString": "Oppsitter"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          },
+          "Age": {
+            "textString": "68"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222880"
+          ],
+          "personHeading": "Id pp00000000222880",
+          "Name": {
+            "textString": "Tosten Hanssøn"
+          },
+          "Position": {
+            "textString": "Fostersønn"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          },
+          "Age": {
+            "textString": "18"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222881"
+          ],
+          "personHeading": "Id pp00000000222881",
+          "Name": {
+            "textString": "Jon Paulssøn"
+          },
+          "Position": {
+            "textString": "Fostersønn"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          },
+          "Age": {
+            "textString": "14"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222882"
+          ],
+          "personHeading": "Id pp00000000222882",
+          "Name": {
+            "textString": "Andrias Arnssøn"
+          },
+          "Position": {
+            "textString": "Fostersønn"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          },
+          "Age": {
+            "textString": "10"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222883"
+          ],
+          "personHeading": "Id pp00000000222883",
+          "Position": {
+            "textString": "Oppsitter Marcus Erlanssøns part"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222884"
+          ],
+          "personHeading": "Id pp00000000222884",
+          "Position": {
+            "textString": "Øde Oppsitter Jessop Tostenssøn part"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222885"
+          ],
+          "personHeading": "Id pp00000000222885",
+          "Name": {
+            "textString": "Cornellius Michelssøn"
+          },
+          "Position": {
+            "textString": "Oppsitter"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          },
+          "Age": {
+            "textString": "48"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222886"
+          ],
+          "personHeading": "Id pp00000000222886",
+          "Name": {
+            "textString": "Bernt Corneliussøn"
+          },
+          "Position": {
+            "textString": "Sønn"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          },
+          "Age": {
+            "textString": "24"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222887"
+          ],
+          "personHeading": "Id pp00000000222887",
+          "Name": {
+            "textString": "Nils Cornelliussøn"
+          },
+          "Position": {
+            "textString": "Sønn"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          },
+          "Age": {
+            "textString": "12"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222888"
+          ],
+          "personHeading": "Id pp00000000222888",
+          "Name": {
+            "textString": "Ingeborg Nilsdatter"
+          },
+          "Position": {
+            "textString": "Enke Enke etter Jossophs Gabrielssøn"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222889"
+          ],
+          "personHeading": "Id pp00000000222889",
+          "Name": {
+            "textString": "Ole Larssøn"
+          },
+          "Position": {
+            "textString": "Dreng"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          },
+          "Age": {
+            "textString": "43"
+          }
+        },
+        {
+          "personLabel": "Id",
+          "personNameParts": [
+            "pp00000000222890"
+          ],
+          "personHeading": "Id pp00000000222890",
+          "Name": {
+            "textString": "Arn Baajessøn"
+          },
+          "Position": {
+            "textString": "Fostersønn"
+          },
+          "Farm": {
+            "textString": "Qvantios"
+          },
+          "Age": {
+            "textString": "18"
+          }
+        }
+      ]
+    },
+    {
+      "panelTitle": "Surrounding area in the source",
+      "Year": {
+        "textString": "1813"
+      },
+      "Quarter-county (Fjerding)": {
+        "textString": "Waagen"
+      }
+    }
+  ],
+  "permanentId": "pp00000000222888",
+  "sourceInformation": "Fylkesmannen i Nordland, Militærvesen, Military rolls, no. 24: Vågan, 1806-1836",
+  "sourceData": {
+    "County": {
+      "textString": "Nordland"
+    },
+    "Municipality (1947)": {
+      "textString": "Svolvær, Vågan"
+    },
+    "Start year": {
+      "textString": "1806"
+    },
+    "End year": {
+      "textString": "1836"
+    }
+  }
+}
