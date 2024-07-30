@@ -873,6 +873,11 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getPartsFromCensusSourceInfo() {
+    // Example sourceInformation strings:
+    // Census 1815 for Luster
+    // Municipal Census 1912 for Bergen
+    // 1865 census for Trondheim
+
     let parts = {
       year: "",
       parish: "",
@@ -897,6 +902,11 @@ class NodaEdReader extends ExtractedDataReader {
       bo: /^Folketelling (\d+) for (.*)$/i,
       nn: /^Folketeljing (\d+) for (.*)$/i,
     };
+    const typeCensusDateForRegexes = {
+      en: /^\w+ Census (\d+) for (.*)$/i,
+      bo: /^\w+ Folketelling (\d+) for (.*)$/i,
+      nn: /^\w+ Folketeljing (\d+) for (.*)$/i,
+    };
     const parishWords = {
       en: "parish",
       bo: "prestegjeld",
@@ -905,6 +915,7 @@ class NodaEdReader extends ExtractedDataReader {
 
     let dateCensusForRegex = dateCensusForRegexes[lang];
     let censusDateForRegex = censusDateForRegexes[lang];
+    let typeCensusDateForRegex = typeCensusDateForRegexes[lang];
     let parishWord = parishWords[lang];
 
     let sourceInfo = this.ed.sourceInformation;
@@ -913,6 +924,8 @@ class NodaEdReader extends ExtractedDataReader {
       regex = dateCensusForRegex;
     } else if (censusDateForRegex.test(sourceInfo)) {
       regex = censusDateForRegex;
+    } else if (typeCensusDateForRegex.test(sourceInfo)) {
+      regex = typeCensusDateForRegex;
     }
 
     if (!regex) {
