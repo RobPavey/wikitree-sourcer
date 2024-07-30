@@ -1521,6 +1521,11 @@ function getDefaultString(gd, options) {
     dataString += " " + getPlaceWithPreposition(place);
   }
 
+  if (dataString == "Unknown") {
+    // the only thing is the unknown name - no use for anything.
+    dataString = "";
+  }
+
   return dataString;
 }
 

@@ -174,6 +174,29 @@ const regressionData = [
   {
     caseName: "xx_image_cb_bap_1888_knut",
     url: "https://media.digitalarkivet.no/view/1953/30",
+    optionVariants: [
+      {
+        variantName: "linksWithPermanentId",
+        thisTypeOnly: "inline",
+        optionOverrides: {
+          citation_noda_linkFormat: "withPermanentId",
+        },
+      },
+      {
+        variantName: "visibleLinks",
+        thisTypeOnly: "inline",
+        optionOverrides: {
+          citation_noda_linkFormat: "visible",
+        },
+      },
+      {
+        variantName: "noImageLink",
+        thisTypeOnly: "inline",
+        optionOverrides: {
+          citation_noda_includeImageLink: false,
+        },
+      },
+    ],
   },
   {
     // this one has no transcription

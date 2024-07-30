@@ -83,9 +83,18 @@ function buildRecordLink(ed, gd, builder) {
   } else if (ed.pageType == "image") {
     var nodaUrl = buildNodaUrl(ed, builder);
 
-    let imageLink = buildLinkText(nodaUrl, permanentId, "Image");
-    // add as record link so an accessed date is added
-    builder.recordLinkOrTemplate = imageLink;
+    if (nodaUrl) {
+      if (!permanentId) {
+        // try using breadcrumbs
+        if (ed.breadcrumbs && ed.breadcrumbs.length > 0) {
+          permanentId = ed.breadcrumbs[breadcrumbs.length - 1];
+        }
+      }
+
+      let imageLink = buildLinkText(nodaUrl, permanentId, "Image");
+      // add as record link so an accessed date is added
+      builder.recordLinkOrTemplate = imageLink;
+    }
   }
 }
 

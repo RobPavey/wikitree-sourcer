@@ -41,6 +41,14 @@ function extractDataForImage(document, url, result) {
     }
   }
 
+  let permanentIdInput = document.querySelector("#permanent_image_id");
+  if (permanentIdInput) {
+    let permanentId = permanentIdInput.value;
+    if (permanentId) {
+      result.permanentId = permanentId;
+    }
+  }
+
   let fileTitleSpan = viewerContainer.querySelector("#file-title-text");
   if (fileTitleSpan) {
     let fileTitle = fileTitleSpan.textContent.trim();
