@@ -91,6 +91,10 @@ function buildRecordLink(ed, gd, builder) {
         }
       }
 
+      if (permanentId) {
+        nodaUrl = "https://www.digitalarkivet.no/" + permanentId;
+      }
+
       let imageLink = buildLinkText(nodaUrl, permanentId, "Image");
       // add as record link so an accessed date is added
       builder.recordLinkOrTemplate = imageLink;
