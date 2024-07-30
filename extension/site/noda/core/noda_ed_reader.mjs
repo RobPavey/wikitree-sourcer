@@ -2175,17 +2175,6 @@ class NodaEdReader extends ExtractedDataReader {
       return;
     }
 
-    const possibleHeadings = [
-      "name",
-      "age",
-      "birthDate",
-      "birthPlace",
-      "residentialStatus",
-      "familyPosition",
-      "maritalStatus",
-      "occupation",
-    ];
-
     let headingsUsed = [];
 
     function setMemberField(member, heading, value) {
@@ -2251,7 +2240,12 @@ class NodaEdReader extends ExtractedDataReader {
       setMemberField(householdMember, "occupation", occupation);
 
       let ageBorn = this.getPersonDataValue(person, "ageBorn");
-      if (ageBorn.length == 4) {
+      if (ageBorn.length == 10) {
+        // full birth date
+        let dateObj = this.makeDateObjFromYyyymmddDate(ageBorn, "-");
+        let dateString = dateObj.getDateString();
+        setMemberField(householdMember, "birthDate", dateString);
+      } else if (ageBorn.length == 4) {
         // birthYear
         setMemberField(householdMember, "birthDate", ageBorn);
       } else if (ageBorn.length <= 2) {

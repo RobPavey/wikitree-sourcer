@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1912 Census''':\n\"Municipal Census 1912 for Bergen\"<br/>\nCensus district: 001*; Urban residence: 10347* Tyskesmuget 10 1.etage<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01105551064459 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nAlfhild Constanse Jamne, Butikjomfru, in Tyskesmuget 10 1.etage, Bergen, Bergen, Norway. Born in Bergen.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1912 census Alfhild, Butikjomfru, was in Tyskesmuget 10 1.etage, Bergen, Bergen, Norway.<ref>\n'''1912 Census''':\n\"Municipal Census 1912 for Bergen\"<br/>\nCensus district: 001*; Urban residence: 10347* Tyskesmuget 10 1.etage<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01105551064459 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nAlfhild Constanse Jamne, Butikjomfru, in Tyskesmuget 10 1.etage, Bergen, Bergen, Norway. Born in Bergen.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1912 Census''': \"Municipal Census 1912 for Bergen\"<br/>Census district: 001*; Urban residence: 10347* Tyskesmuget 10 1.etage<br/>[https://www.digitalarkivet.no/en/census/person/pf01105551064459 Digitalarkivet Record] (accessed 6 May 2021)<br/>Alfhild Constanse Jamne, Butikjomfru, in Tyskesmuget 10 1.etage, Bergen, Bergen, Norway. Born in Bergen.",
+    "type": "source"
+  }
+}

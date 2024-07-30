@@ -272,7 +272,7 @@ class ExtractedDataReader {
     }
   }
 
-  makeDateObjFromYyyymmddDate(yyyymmddDate, separator) {
+  makeDateObjFromYyyymmddDate(yyyymmddDate, separator = "-") {
     if (yyyymmddDate) {
       let parts = yyyymmddDate.split(separator);
       if (parts.length != 3) {

@@ -1,0 +1,281 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01105551064459",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Municipal Census 1912 for Bergen",
+    "Census districts summary",
+    "001*",
+    "10347* Tyskesmuget 10 1.etage",
+    "007 Alfhild Constanse Jamne"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 001*",
+      "collectionNameParts": [
+        "Census district",
+        "001*"
+      ]
+    },
+    {
+      "collectionHeading": "Urban residence: 10347* Tyskesmuget 10 1.etage",
+      "collectionNameParts": [
+        "Urban residence",
+        "10347* Tyskesmuget 10 1.etage"
+      ]
+    }
+  ],
+  "heading": "Person: 007 Alfhild Constanse Jamne",
+  "headingSpanParts": [
+    "Person:",
+    "007"
+  ],
+  "headingTextParts": [
+    "Alfhild Constanse Jamne"
+  ],
+  "recordData": {
+    "Household no.": {
+      "textString": "000"
+    },
+    "Person no.": {
+      "textString": "007"
+    },
+    "Marital status": {
+      "textString": "u"
+    },
+    "Occupation": {
+      "textString": "Butikjomfru"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Date of birth": {
+      "textString": "1895-11-17"
+    },
+    "Place of birth": {
+      "textString": "Bergen"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "personLabel": "001",
+          "personNameParts": [
+            "Ole Knudsen Jamne"
+          ],
+          "personHeading": "001 Ole Knudsen Jamne",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1865-02-15"
+          },
+          "Place of birth": {
+            "textString": "Vaksdal"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Løsarbeider"
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Alida Dorothea Berntine Jamne"
+          ],
+          "personHeading": "002 Alida Dorothea Berntine Jamne",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1861-09-12"
+          },
+          "Place of birth": {
+            "textString": "Laxevaag"
+          },
+          "Marital status": {
+            "textString": "g"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Ole Johan Jamne"
+          ],
+          "personHeading": "003 Ole Johan Jamne",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1887-03-29"
+          },
+          "Place of birth": {
+            "textString": "Bergen"
+          },
+          "Marital status": {
+            "textString": "u"
+          },
+          "Occupation": {
+            "textString": "3dje Maskinist"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Knut Jamne"
+          ],
+          "personHeading": "004 Knut Jamne",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1888-09-09"
+          },
+          "Place of birth": {
+            "textString": "Bergen"
+          },
+          "Marital status": {
+            "textString": "u"
+          },
+          "Occupation": {
+            "textString": "Skipperelev"
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Borghild Sofia Katharina Jamne"
+          ],
+          "personHeading": "005 Borghild Sofia Katharina Jamne",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1890-10-03"
+          },
+          "Place of birth": {
+            "textString": "Bergen"
+          },
+          "Marital status": {
+            "textString": "u"
+          },
+          "Occupation": {
+            "textString": "Syerske"
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Arthur Martin Jamne"
+          ],
+          "personHeading": "006 Arthur Martin Jamne",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1892-11-21"
+          },
+          "Place of birth": {
+            "textString": "Bergen"
+          },
+          "Marital status": {
+            "textString": "u"
+          },
+          "Occupation": {
+            "textString": "Stuert"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "007",
+          "personNameParts": [
+            "Alfhild Constanse Jamne"
+          ],
+          "personHeading": "007 Alfhild Constanse Jamne",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1895-11-17"
+          },
+          "Place of birth": {
+            "textString": "Bergen"
+          },
+          "Marital status": {
+            "textString": "u"
+          },
+          "Occupation": {
+            "textString": "Butikjomfru"
+          }
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Konrad Jamne"
+          ],
+          "personHeading": "008 Konrad Jamne",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1898-06-25"
+          },
+          "Place of birth": {
+            "textString": "Bergen"
+          },
+          "Marital status": {
+            "textString": "u"
+          }
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Sigurd Johannes Jamne"
+          ],
+          "personHeading": "009 Sigurd Johannes Jamne",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "1900-08-06"
+          },
+          "Place of birth": {
+            "textString": "Bergen"
+          },
+          "Marital status": {
+            "textString": "u"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01105551064459",
+  "sourceInformation": "Municipal Census 1912 for Bergen",
+  "sourceData": {
+    "County": {
+      "textString": "Bergen"
+    },
+    "Municipality (1947)": {
+      "textString": "Bergen"
+    },
+    "Geographic area": {
+      "textString": "Bergen muni."
+    },
+    "Start year": {
+      "textString": "1912"
+    },
+    "End year": {
+      "textString": "1912"
+    }
+  }
+}

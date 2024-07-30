@@ -1,0 +1,99 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Alfhild Constanse Jamne"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1912"
+  },
+  "eventPlace": {
+    "placeString": "Tyskesmuget 10 1.etage, Bergen, Bergen, Norway",
+    "parish": "Bergen",
+    "county": "Bergen",
+    "country": "Norway"
+  },
+  "birthDate": {
+    "dateString": "17 Nov 1895"
+  },
+  "birthPlace": {
+    "placeString": "Bergen"
+  },
+  "occupation": "Butikjomfru",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "occupation",
+    "birthDate",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Ole Knudsen Jamne",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Løsarbeider",
+      "birthDate": "15 Feb 1865",
+      "birthPlace": "Vaksdal"
+    },
+    {
+      "name": "Alida Dorothea Berntine Jamne",
+      "maritalStatus": "married",
+      "birthDate": "12 Sep 1861",
+      "birthPlace": "Laxevaag"
+    },
+    {
+      "name": "Ole Johan Jamne",
+      "maritalStatus": "u",
+      "occupation": "3dje Maskinist",
+      "birthDate": "29 Mar 1887",
+      "birthPlace": "Bergen"
+    },
+    {
+      "name": "Knut Jamne",
+      "maritalStatus": "u",
+      "occupation": "Skipperelev",
+      "birthDate": "9 Sep 1888",
+      "birthPlace": "Bergen"
+    },
+    {
+      "name": "Borghild Sofia Katharina Jamne",
+      "maritalStatus": "u",
+      "occupation": "Syerske",
+      "birthDate": "3 Oct 1890",
+      "birthPlace": "Bergen"
+    },
+    {
+      "name": "Arthur Martin Jamne",
+      "maritalStatus": "u",
+      "occupation": "Stuert",
+      "birthDate": "21 Nov 1892",
+      "birthPlace": "Bergen"
+    },
+    {
+      "name": "Alfhild Constanse Jamne",
+      "maritalStatus": "u",
+      "occupation": "Butikjomfru",
+      "birthDate": "17 Nov 1895",
+      "birthPlace": "Bergen",
+      "isSelected": true,
+      "gender": "female"
+    },
+    {
+      "name": "Konrad Jamne",
+      "maritalStatus": "u",
+      "birthDate": "25 Jun 1898",
+      "birthPlace": "Bergen"
+    },
+    {
+      "name": "Sigurd Johannes Jamne",
+      "maritalStatus": "u",
+      "birthDate": "6 Aug 1900",
+      "birthPlace": "Bergen"
+    }
+  ],
+  "hasValidData": true
+}
