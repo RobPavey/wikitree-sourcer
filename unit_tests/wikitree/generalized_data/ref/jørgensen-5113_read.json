@@ -1,0 +1,82 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Jørgen",
+    "lastName": "Jørgensen"
+  },
+  "lastNameAtBirth": "Jørgensen",
+  "lastNameAtDeath": "Jørgensen",
+  "mothersMaidenName": "Pedersdatter",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "1680",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "1724",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Drangedal, Telemark, Norge"
+  },
+  "deathPlace": {
+    "placeString": "Baksaas, Holla, Telemark, Norge"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Jørgen Jørgensen",
+        "lastName": "Jørgensen",
+        "forenames": "Jørgen"
+      },
+      "lastNameAtBirth": "Jørgensen",
+      "lastNameAtDeath": "Jørgensen"
+    },
+    "mother": {
+      "name": {
+        "name": "Karen Pedersdatter",
+        "lastName": "Pedersdatter",
+        "forenames": "Karen"
+      },
+      "lastNameAtBirth": "Pedersdatter",
+      "lastNameAtDeath": "Pedersdatter"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Karen Tygesdatter",
+        "lastName": "Tygesdatter",
+        "forenames": "Karen"
+      },
+      "lastNameAtBirth": "Tygesdatter",
+      "lastNameAtDeath": "Tygesdatter",
+      "marriageDate": {
+        "dateString": "19 Sep 1706"
+      },
+      "marriagePlace": {
+        "placeString": "Drangedal, Telemark, Norge"
+      }
+    },
+    {
+      "name": {
+        "name": "Gunhild Torsdatter",
+        "lastName": "Torsdatter",
+        "forenames": "Gunhild"
+      },
+      "lastNameAtBirth": "Torsdatter",
+      "lastNameAtDeath": "Torsdatter"
+    },
+    {
+      "name": {
+        "name": "Anne Tollefsdatter",
+        "lastName": "Tollefsdatter",
+        "forenames": "Anne"
+      },
+      "lastNameAtBirth": "Tollefsdatter",
+      "lastNameAtDeath": "Tollefsdatter"
+    }
+  ],
+  "hasValidData": true
+}

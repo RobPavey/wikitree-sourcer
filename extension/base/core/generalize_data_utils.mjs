@@ -4337,7 +4337,7 @@ class GeneralizedData {
     return true; // if we don't know the birth or death year then it could be in range
   }
 
-  inferPossibleLifeYearRange(maxLifespan = possibleLifeSpan, runDate = undefined) {
+  inferPossibleLifeYearRange(maxLifespan = possibleLifeSpan, runDate = undefined, exactness = 0) {
     let birthYear = this.inferBirthYear();
     let deathYear = this.inferDeathYear();
     let eventYear = this.inferEventYear();
@@ -4352,30 +4352,38 @@ class GeneralizedData {
     let deathYearNum = DateUtils.getYearNumFromYearString(deathYear);
     let eventYearNum = DateUtils.getYearNumFromYearString(eventYear);
 
-    let range = {
-      startYear: undefined,
-      endYear: undefined,
-    };
+    let startYearNum = 0;
+    let endYearNum = 0;
 
     if (birthYearNum) {
-      range.startYear = birthYearNum;
+      startYearNum = birthYearNum;
 
       if (deathYearNum) {
-        range.endYear = deathYearNum;
+        endYearNum = deathYearNum;
       } else {
-        range.endYear = birthYearNum + maxLifespan;
+        endYearNum = birthYearNum + maxLifespan;
       }
     } else if (deathYearNum && deathYearNum > maxLifespan) {
-      range.startYear = deathYearNum - maxLifespan;
-      range.endYear = deathYearNum;
+      startYearNum = deathYearNum - maxLifespan;
+      endYearNum = deathYearNum;
     } else if (eventYearNum) {
-      range.startYear = eventYearNum - maxLifespan;
-      range.endYear = eventYearNum + maxLifespan;
+      startYearNum = eventYearNum - maxLifespan;
+      endYearNum = eventYearNum + maxLifespan;
     }
 
-    if (range.endYear > currentYear) {
-      range.endYear = currentYear;
+    startYearNum -= exactness;
+    endYearNum += exactness;
+
+    if (endYearNum > currentYear) {
+      endYearNum = currentYear;
     }
+
+    let range = {
+      startYearNum: startYearNum,
+      endYearNum: endYearNum,
+      startYear: startYearNum.toString(),
+      endYear: endYearNum.toString(),
+    };
 
     return range;
   }

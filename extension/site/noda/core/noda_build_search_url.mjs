@@ -22,19 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { NodaUriBuilder } from "./noda_uri_builder.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
+  let options = buildUrlInput.options;
 
   var builder = new NodaUriBuilder();
 
   // call methods on builder here
-
-  let dateRange = gd.inferPossibleLifeYearRange();
-  builder.addStartYear(dateRange.startYear);
-  builder.addEndYear(dateRange.endYear);
-
   let forenames = gd.inferForenames();
   builder.addFirstName(forenames);
 
@@ -53,8 +50,54 @@ function buildSearchUrl(buildUrlInput) {
   let gender = gd.personGender;
   builder.addGender(gender);
 
-  let birthYear = gd.inferBirthYear();
-  builder.addBirthDate(birthYear);
+  let sourcePeriodOption = options.search_noda_includeSourcePeriod;
+  let sourcePeriodExactness = options.search_noda_sourcePeriodExactness;
+  let birthYearExactness = options.search_noda_birthYearExactness;
+  let useExactBirthYear = options.search_noda_useExactBirthDate;
+
+  let birthDate = gd.inferBirthDate();
+
+  let useBirth = false;
+  if (birthDate && birthYearExactness != "none") {
+    useBirth = true;
+  }
+
+  if (sourcePeriodOption == "always" || (sourcePeriodOption == "ifNoBirth" && !useBirth)) {
+    let exactness = sourcePeriodExactness;
+    if (exactness == "exact") {
+      exactness = 0;
+    } else {
+      exactness = Number(exactness);
+    }
+    let dateRange = gd.inferPossibleLifeYearRange(undefined, undefined, exactness);
+    builder.addStartYear(dateRange.startYear);
+    builder.addEndYear(dateRange.endYear);
+  }
+
+  if (useBirth) {
+    let parsedDate = DateUtils.parseDateString(birthDate);
+    if (parsedDate && parsedDate.hasMonth && useExactBirthYear) {
+      builder.addBirthDate(parsedDate.yearNum, parsedDate.monthNum, parsedDate.dayNum);
+    } else {
+      let exactness = birthYearExactness;
+      if (exactness == "exact") {
+        exactness = 0;
+      } else {
+        exactness = Number(exactness);
+      }
+      let birthYear = gd.inferBirthYear();
+      let yearNum = Number(birthYear);
+      if (yearNum && !isNaN(yearNum)) {
+        if (!isNaN(yearNum)) {
+          let startYear = yearNum - exactness;
+          let endYear = yearNum + exactness;
+          builder.addBirthYearRange(startYear, endYear);
+        } else {
+          builder.addBirthDate(birthYear);
+        }
+      }
+    }
+  }
 
   /*
   Don't add birth place by default

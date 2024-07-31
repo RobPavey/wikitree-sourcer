@@ -1,0 +1,11 @@
+{
+  "std": {
+    "url": "https://www.digitalarkivet.no/en/search/persons/advanced?firstname=J%C3%B8rgen&lastname=J%C3%B8rgensen&genders%5B%5D=m&birth_year_from=1678&birth_year_to=1682"
+  },
+  "exactBirthDate": {
+    "url": "https://www.digitalarkivet.no/en/search/persons/advanced?firstname=J%C3%B8rgen&lastname=J%C3%B8rgensen&genders%5B%5D=m&birth_year_from=1680&birth_year_to=1680"
+  },
+  "exactSourcePeriod": {
+    "url": "https://www.digitalarkivet.no/en/search/persons/advanced?firstname=J%C3%B8rgen&lastname=J%C3%B8rgensen&genders%5B%5D=m&from=1680&to=1724&birth_year_from=1678&birth_year_to=1682"
+  }
+}

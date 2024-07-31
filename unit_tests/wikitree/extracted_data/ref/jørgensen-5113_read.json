@@ -1,0 +1,50 @@
+{
+  "hasValidData": true,
+  "firstNames": "Jørgen",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Jørgensen",
+  "currentLastName": "Jørgensen",
+  "mothersMaidenName": "Pedersdatter",
+  "birthDate": "1680",
+  "birthDateStatus": "about",
+  "deathDate": "1724",
+  "deathDateStatus": "none",
+  "birthLocation": "Drangedal, Telemark, Norge",
+  "deathLocation": "Baksaas, Holla, Telemark, Norge",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Tygesdatter-65",
+      "name": "Karen Tygesdatter",
+      "marriageString": "19 Sep 1706 in Drangedal, Telemark, Norge",
+      "marriageDate": "19 Sep 1706",
+      "marriagePlace": "Drangedal, Telemark, Norge"
+    },
+    {
+      "wikiId": "Torsdatter-363",
+      "name": "Gunhild Torsdatter",
+      "marriageString": "about 1714 [location unknown]"
+    },
+    {
+      "wikiId": "Tollefsdatter-285",
+      "name": "Anne Tollefsdatter",
+      "marriageString": "about 1717 [location unknown]"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/J%C3%B8rgensen-5113",
+  "currentTabText": "Jørgen Jørgensen's Profile",
+  "pageType": "read",
+  "wikiId": "Jørgensen-5113",
+  "name": "Jørgen Jørgensen",
+  "parents": {
+    "father": {
+      "wikiId": "J%C3%B8rgensen-4994",
+      "name": "Jørgen Jørgensen"
+    },
+    "mother": {
+      "wikiId": "Pedersdatter-6010",
+      "name": "Karen Pedersdatter"
+    }
+  }
+}

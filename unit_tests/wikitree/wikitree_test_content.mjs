@@ -79,6 +79,10 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Connors-569",
   },
   {
+    caseName: "jørgensen-5113_read",
+    url: "https://www.wikitree.com/wiki/J%C3%B8rgensen-5113",
+  },
+  {
     caseName: "kimberlin-117_logged_out",
     url: "https://www.wikitree.com/wiki/Kimberlin-117",
   },

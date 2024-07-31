@@ -91,29 +91,34 @@ class NodaUriBuilder {
     } else {
       gender = "k";
     }
-    this.addSearchParameter("genders%5B%5D", StringUtils.removeExtendedAsciiCharacters(gender));
+    this.addSearchParameter("genders%5B%5D", gender);
   }
 
   addBirthDate(year, month, day) {
     if (year) {
-      this.addSearchParameter("birth_year_from", StringUtils.removeExtendedAsciiCharacters(year));
-      this.addSearchParameter("birth_year_to", StringUtils.removeExtendedAsciiCharacters(year));
+      this.addSearchParameter("birth_year_from", year);
+      this.addSearchParameter("birth_year_to", year);
     }
     if (month && day) {
       this.addSearchParameter("birth_date", month + "-" + day);
     }
   }
 
+  addBirthYearRange(startYear, endYear) {
+    this.addSearchParameter("birth_year_from", startYear);
+    this.addSearchParameter("birth_year_to", endYear);
+  }
+
   addBirthPlace(string) {
-    this.addSearchParameter("birth_place", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("birth_place", string);
   }
 
   addRelatedLastName(string) {
-    this.addSearchParameter("related_last_name", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("related_last_name", string);
   }
 
   addRelatedFirstName(string) {
-    this.addSearchParameter("related_first_name", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("related_first_name", string);
   }
 
   getUri() {

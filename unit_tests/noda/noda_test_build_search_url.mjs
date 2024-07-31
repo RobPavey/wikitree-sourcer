@@ -26,13 +26,26 @@ import { buildSearchUrl } from "../../extension/site/noda/core/noda_build_search
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+    caseName: "wikitree_norway_jørgensen-5113",
+    inputPath: "wikitree/generalized_data/ref/jørgensen-5113_read",
+    typeOfSearch: "",
+    optionVariants: [
+      {
+        variantName: "exactBirthDate",
+        optionOverrides: {
+          search_noda_birthYearExactness: "exact",
+        },
+      },
+      {
+        variantName: "exactSourcePeriod",
+        optionOverrides: {
+          search_noda_includeSourcePeriod: "always",
+          search_noda_sourcePeriodExactness: "exact",
+        },
+      },
+    ],
   },
-  */
 ];
 
 async function runTests(testManager) {
