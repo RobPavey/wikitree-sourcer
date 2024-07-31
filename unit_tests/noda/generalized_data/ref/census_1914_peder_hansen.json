@@ -1,0 +1,76 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Peder Hansen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1914"
+  },
+  "eventPlace": {
+    "placeString": "001* Bjerget 1, Moss city, Østfold, Norway",
+    "parish": "Moss city",
+    "county": "Østfold",
+    "country": "Norway"
+  },
+  "birthDate": {
+    "dateString": "14 Feb 1852"
+  },
+  "birthPlace": {
+    "placeString": "Rygge"
+  },
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "occupation": "Arbeider",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "occupation",
+    "birthDate",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Peder Hansen",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "occupation": "Arbeider",
+      "birthDate": "14 Feb 1852",
+      "birthPlace": "Rygge",
+      "isSelected": true,
+      "gender": "male"
+    },
+    {
+      "name": "Josefine Mathilde Hansen",
+      "maritalStatus": "married",
+      "occupation": "Hustru",
+      "birthDate": "8 Feb 1854",
+      "birthPlace": "Moss"
+    },
+    {
+      "name": "Hendrik Pedersen",
+      "maritalStatus": "single",
+      "occupation": "Arbeider",
+      "birthDate": "10 Dec 1886",
+      "birthPlace": "Moss"
+    },
+    {
+      "name": "Emanuel Pedersen",
+      "maritalStatus": "single",
+      "occupation": "Fjærfabrikarbeider",
+      "birthDate": "25 Sep 1897",
+      "birthPlace": "Moss"
+    },
+    {
+      "name": "Marie Magdah Pedersen",
+      "maritalStatus": "single",
+      "occupation": "Pige",
+      "birthDate": "15 Sep 1895",
+      "birthPlace": "Moss"
+    }
+  ],
+  "hasValidData": true
+}

@@ -95,32 +95,6 @@
       "birthDate": "1794",
       "birthPlace": "Klæbo",
       "residentialStatus": "resides permanently"
-    },
-    {
-      "name": "Anders Mikkelsen",
-      "relationship": "lodger",
-      "maritalStatus": "married",
-      "occupation": "Almindeligt Tømmermandsarbeide",
-      "birthDate": "1818",
-      "birthPlace": "Throndhjem",
-      "residentialStatus": "resides permanently"
-    },
-    {
-      "name": "Ingeborg Petersdatter",
-      "relationship": "wife",
-      "maritalStatus": "married",
-      "birthDate": "1805",
-      "birthPlace": "Throndhjem",
-      "residentialStatus": "resides permanently"
-    },
-    {
-      "name": "Lars Olsen Granaas",
-      "relationship": "lodger",
-      "maritalStatus": "single",
-      "occupation": "Day laborer",
-      "birthDate": "1831",
-      "birthPlace": "Lade Strind",
-      "residentialStatus": "resides permanently"
     }
   ],
   "parents": {

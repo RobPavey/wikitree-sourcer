@@ -311,6 +311,11 @@ const fieldLabels = {
     bo: ["Fornavn"],
     nn: ["Førenamn"],
   },
+  hNo: {
+    en: ["H.no."],
+    bo: ["H.nr"],
+    nn: ["FørH.H.nr"],
+  },
   institution: {
     en: ["Institution"],
     bo: ["Institusjon"],
@@ -755,6 +760,38 @@ class NodaEdReader extends ExtractedDataReader {
         dateObj.dateString = dateString;
         return dateObj;
       }
+    }
+  }
+
+  makeDateObjFromFullDate(dateString) {
+    // Handles date of multiple forms:
+    // 1852-02-14
+    // 14.02.1852
+    // 1852
+    if (!dateString) {
+      return;
+    }
+
+    dateString = dateString.trim();
+
+    if (/^\d\d\d\d\-\d\d\-\d\d$/.test(dateString)) {
+      return this.makeDateObjFromYyyymmddDate(dateString, "-");
+    }
+
+    if (/^\d\d\d\d\.\d\d\.\d\d$/.test(dateString)) {
+      return this.makeDateObjFromYyyymmddDate(dateString, ".");
+    }
+
+    if (/^\d\d\-\d\d\-\d\d\d\d$/.test(dateString)) {
+      return this.makeDateObjFromDdmmyyyyDate(dateString, "-");
+    }
+
+    if (/^\d\d\.\d\d\.\d\d\d\d$/.test(dateString)) {
+      return this.makeDateObjFromDdmmyyyyDate(dateString, ".");
+    }
+
+    if (/^\d\d\d\d$/.test(dateString)) {
+      return this.makeDateObjFromYear(dateString);
     }
   }
 
@@ -1804,11 +1841,7 @@ class NodaEdReader extends ExtractedDataReader {
       dateObj = this.makeDateObjFromYearAndMmDd(yearString, dateString);
     } else if (dateString) {
       let parts = dateString.split("-");
-      if (parts.length == 1 && dateString.length == 4) {
-        dateObj = this.makeDateObjFromYear(dateString);
-      } else if (parts.length == 3) {
-        dateObj = this.makeDateObjFromYyyymmddDate(dateString, "-");
-      } else if (parts.length == 2 && dateString.length == 5) {
+      if (parts.length == 2 && dateString.length == 5) {
         // it looks like we have just the month and day for the birth year and no year
         if (this.recordType == RT.Baptism || this.recordType == RT.BirthOrBaptism) {
           let eventDateObj = this.getEventDateObj();
@@ -1819,6 +1852,9 @@ class NodaEdReader extends ExtractedDataReader {
             }
           }
         }
+      } else {
+        // try other formats (e.g. with - or . separator and different orders)
+        dateObj = this.makeDateObjFromFullDate(dateString);
       }
     } else if (yearString) {
       dateObj = this.makeDateObjFromYear(yearString);
@@ -2242,9 +2278,11 @@ class NodaEdReader extends ExtractedDataReader {
       let ageBorn = this.getPersonDataValue(person, "ageBorn");
       if (ageBorn.length == 10) {
         // full birth date
-        let dateObj = this.makeDateObjFromYyyymmddDate(ageBorn, "-");
-        let dateString = dateObj.getDateString();
-        setMemberField(householdMember, "birthDate", dateString);
+        let dateObj = this.makeDateObjFromFullDate(ageBorn);
+        if (dateObj) {
+          let dateString = dateObj.getDateString();
+          setMemberField(householdMember, "birthDate", dateString);
+        }
       } else if (ageBorn.length == 4) {
         // birthYear
         setMemberField(householdMember, "birthDate", ageBorn);
@@ -2265,11 +2303,56 @@ class NodaEdReader extends ExtractedDataReader {
         }
       }
 
+      let householdNumber = this.getPersonDataValue(person, "hNo");
+      if (householdNumber) {
+        householdMember.householdNumber = householdNumber;
+      }
+
       let isSelected = person.current;
       if (isSelected) {
         householdMember.isSelected = isSelected;
       }
       householdArray.push(householdMember);
+    }
+
+    // If there are multiple households with different household numbers then filter to just
+    // the household with the selected person in it
+    let selectedHouseholdNumber = "";
+    let numHouseholds = 0;
+    let lastHouseholdNumber = "";
+    for (let householdMember of householdArray) {
+      let isZeroHouseholdNumber = /^0+$/.test(householdMember.householdNumber);
+      if (householdMember.householdNumber) {
+        if (householdMember.householdNumber != lastHouseholdNumber && !isZeroHouseholdNumber) {
+          numHouseholds++;
+          lastHouseholdNumber = householdMember.householdNumber;
+        }
+      }
+      if (householdMember.isSelected) {
+        selectedHouseholdNumber = householdMember.householdNumber;
+      }
+    }
+    if (numHouseholds > 1 && selectedHouseholdNumber) {
+      let newHouseholdArray = [];
+      let currentHouseholdNumber = "";
+      for (let householdMember of householdArray) {
+        let isZeroHouseholdNumber = /^0+$/.test(householdMember.householdNumber);
+        if (householdMember.householdNumber) {
+          if (householdMember.householdNumber == selectedHouseholdNumber && !isZeroHouseholdNumber) {
+            newHouseholdArray.push(householdMember);
+            currentHouseholdNumber = householdMember.householdNumber;
+          } else {
+            // a zero household number can mean part of the previous household
+            if (isZeroHouseholdNumber && currentHouseholdNumber == selectedHouseholdNumber) {
+              newHouseholdArray.push(householdMember);
+            }
+          }
+        }
+      }
+      householdArray = newHouseholdArray;
+    }
+    for (let householdMember of householdArray) {
+      delete householdMember.householdNumber;
     }
 
     // sometimes the head of household has a blank familyPosition. If such a person is followed by

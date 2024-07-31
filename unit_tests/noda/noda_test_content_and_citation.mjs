@@ -142,6 +142,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/census/person/pf01105551064459",
   },
   {
+    caseName: "census_1914_peder_hansen",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01049501000001",
+  },
+  {
     caseName: "confirmation_1825_carl_motzfeldt",
     url: "https://www.digitalarkivet.no/en/view/279/pk00000002723491",
   },

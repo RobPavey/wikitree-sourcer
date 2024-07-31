@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1914 Census''':\n\"Census 1914 for Moss city\"<br/>\nCensus district: 001 Moss; Urban residence: 001* Bjerget 1; Apartment: 001*; Floor: 1<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01049501000001 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nPeder Hansen, married, Arbeider, head of household at 001* Bjerget 1, Moss city, Østfold, Norway. Born in Rygge.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1914 census Peder, Arbeider, was the married head of household at 001* Bjerget 1, Moss city, Østfold, Norway.<ref>\n'''1914 Census''':\n\"Census 1914 for Moss city\"<br/>\nCensus district: 001 Moss; Urban residence: 001* Bjerget 1; Apartment: 001*; Floor: 1<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01049501000001 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nPeder Hansen, married, Arbeider, head of household at 001* Bjerget 1, Moss city, Østfold, Norway. Born in Rygge.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1914 Census''': \"Census 1914 for Moss city\"<br/>Census district: 001 Moss; Urban residence: 001* Bjerget 1; Apartment: 001*; Floor: 1<br/>[https://www.digitalarkivet.no/en/census/person/pf01049501000001 Digitalarkivet Record] (accessed 6 May 2021)<br/>Peder Hansen, married, Arbeider, head of household at 001* Bjerget 1, Moss city, Østfold, Norway. Born in Rygge.",
+    "type": "source"
+  }
+}

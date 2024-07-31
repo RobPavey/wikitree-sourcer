@@ -1,0 +1,213 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01049501000001",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Census 1914 for Moss city",
+    "Census districts summary",
+    "001 Moss",
+    "001* Bjerget 1",
+    "001*",
+    "001 Peder Hansen"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 001 Moss",
+      "collectionNameParts": [
+        "Census district",
+        "001 Moss"
+      ]
+    },
+    {
+      "collectionHeading": "Urban residence: 001* Bjerget 1",
+      "collectionNameParts": [
+        "Urban residence",
+        "001* Bjerget 1"
+      ]
+    },
+    {
+      "collectionHeading": "Apartment: 001*",
+      "collectionNameParts": [
+        "Apartment",
+        "001*"
+      ]
+    }
+  ],
+  "heading": "Person: 001 Peder Hansen",
+  "headingSpanParts": [
+    "Person:",
+    "001"
+  ],
+  "headingTextParts": [
+    "Peder Hansen"
+  ],
+  "recordData": {
+    "Household no.": {
+      "textString": "1"
+    },
+    "Person no.": {
+      "textString": "001"
+    },
+    "Marital status": {
+      "textString": "g"
+    },
+    "Occupation": {
+      "textString": "Arbeider"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Date of birth": {
+      "textString": "14.02.1852"
+    },
+    "Place of birth": {
+      "textString": "Rygge"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "001",
+          "personNameParts": [
+            "Peder Hansen"
+          ],
+          "personHeading": "001 Peder Hansen",
+          "H.no.": {
+            "textString": "1"
+          },
+          "Age/born": {
+            "textString": "14.02.1852"
+          },
+          "Place of birth": {
+            "textString": "Rygge"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Arbeider"
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Josefine Mathilde Hansen"
+          ],
+          "personHeading": "002 Josefine Mathilde Hansen",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "08.02.1854"
+          },
+          "Place of birth": {
+            "textString": "Moss"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Hustru"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Hendrik Pedersen"
+          ],
+          "personHeading": "003 Hendrik Pedersen",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "10.12.1886"
+          },
+          "Place of birth": {
+            "textString": "Moss"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Arbeider"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Emanuel Pedersen"
+          ],
+          "personHeading": "004 Emanuel Pedersen",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "25.09.1897"
+          },
+          "Place of birth": {
+            "textString": "Moss"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Fjærfabrikarbeider"
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Marie Magdah Pedersen"
+          ],
+          "personHeading": "005 Marie Magdah Pedersen",
+          "H.no.": {
+            "textString": "000"
+          },
+          "Age/born": {
+            "textString": "15.09.1895"
+          },
+          "Place of birth": {
+            "textString": "Moss"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Pige"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01049501000001",
+  "sourceInformation": "Census 1914 for Moss city",
+  "sourceData": {
+    "County": {
+      "textString": "Østfold"
+    },
+    "Municipality (1947)": {
+      "textString": "Moss"
+    },
+    "Geographic area": {
+      "textString": "Moss muni."
+    },
+    "Start year": {
+      "textString": "1914"
+    },
+    "End year": {
+      "textString": "1914"
+    },
+    "Floor": {
+      "textString": "1"
+    }
+  }
+}

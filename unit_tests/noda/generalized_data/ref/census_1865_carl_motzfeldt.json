@@ -96,57 +96,6 @@
       "occupation": "Maid",
       "age": "21",
       "birthPlace": "Levanger"
-    },
-    {
-      "name": "Christian Due",
-      "maritalStatus": "married",
-      "occupation": "Indrullerings chef",
-      "age": "60",
-      "birthPlace": "Trondhjem",
-      "relationship": "head"
-    },
-    {
-      "name": "Kirstine Marie Due",
-      "relationship": "wife",
-      "maritalStatus": "married",
-      "age": "56",
-      "birthPlace": "Porsgrund"
-    },
-    {
-      "name": "Hanna Due",
-      "relationship": "daughter",
-      "maritalStatus": "single",
-      "age": "30",
-      "birthPlace": "Tromsøe"
-    },
-    {
-      "name": "Marie Regine Lyng",
-      "maritalStatus": "single",
-      "occupation": "Maid",
-      "age": "27",
-      "birthPlace": "Trondhjem"
-    },
-    {
-      "name": "Ingebrigt Petersen",
-      "maritalStatus": "widow",
-      "occupation": "Vagtmester",
-      "age": "48",
-      "birthPlace": "Østerdalen",
-      "relationship": "head"
-    },
-    {
-      "name": "Johanne Christine Petersen",
-      "relationship": "daughter",
-      "maritalStatus": "single",
-      "age": "16",
-      "birthPlace": "Trondhjem"
-    },
-    {
-      "name": "Johan Adolf Petersen",
-      "relationship": "son",
-      "maritalStatus": "single",
-      "age": "14",
-      "birthPlace": "Trondhjem"
     }
   ],
   "spouses": [

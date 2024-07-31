@@ -77,11 +77,11 @@ class NodaUriBuilder {
   }
 
   addLastName(string) {
-    this.addSearchParameter("lastname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("lastname", string);
   }
 
   addFirstName(string) {
-    this.addSearchParameter("firstname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("firstname", string);
   }
 
   addGender(string) {
