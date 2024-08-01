@@ -1002,6 +1002,43 @@ class PlaceObj {
     // would only work if spaces/commas were consistent
     return "";
   }
+
+  inferPlaceString() {
+    if (this.placeString) {
+      return this.placeString;
+    }
+
+    function addTerm(term) {
+      if (term) {
+        if (placeString) {
+          placeString += ", ";
+        }
+        placeString += term;
+      }
+    }
+    let placeString = "";
+    addTerm(this.county);
+    addTerm(this.country);
+    return placeString;
+  }
+
+  inferFullPlaceString() {
+    let place = this.inferPlaceString();
+    let streetAddress = this.streetAddress;
+    if (streetAddress && place) {
+      // sometimes we have something like this (from FMP for example)
+      // "placeString": "3, Brown Street, Leigh, Lancashire, England"
+      // "streetAddress": "3 Brown Street"
+      // e.g. : https://www.findmypast.co.uk/transcript?id=GBC/1921/RG15/18439/0547/07&expand=true
+      const streetLc = streetAddress.toLowerCase().replace(/\,/g, "");
+      const placeLc = place.toLowerCase().replace(/\,/g, "");
+      if (!placeLc.startsWith(streetLc)) {
+        place = streetAddress + ", " + place;
+      }
+    }
+
+    return place;
+  }
 }
 
 class NameObj {
@@ -2972,20 +3009,29 @@ class GeneralizedData {
     }
   }
 
-  inferBirthPlace() {
+  inferBirthPlaceObj() {
     if (this.birthPlace) {
-      return this.birthPlace.placeString;
+      return this.birthPlace;
     } else if (this.recordType == RT.BirthRegistration) {
       // An eventPlace can contain the county/country so is prefered to a registrationDistrict
       if (this.eventPlace) {
-        return this.eventPlace.placeString;
+        return this.eventPlace;
       } else if (this.registrationDistrict) {
-        return this.registrationDistrict;
+        let placeObj = new PlaceObj();
+        placeObj.placeString = this.registrationDistrict;
+        return placeObj;
       }
     } else if (this.recordType == RT.Baptism || this.recordType == RT.Birth) {
       if (this.eventPlace && !this.role) {
-        return this.eventPlace.placeString;
+        return this.eventPlace;
       }
+    }
+  }
+
+  inferBirthPlace() {
+    let placeObj = this.inferBirthPlaceObj();
+    if (placeObj) {
+      return placeObj.placeString;
     }
   }
 
@@ -3043,16 +3089,25 @@ class GeneralizedData {
     return this.inferCountryFromPlaceNames(placeNames);
   }
 
-  inferDeathPlace() {
+  inferDeathPlaceObj() {
     if (this.deathPlace) {
-      return this.deathPlace.placeString;
+      return this.deathPlace;
     } else if (this.recordType == RT.Death || this.recordType == RT.DeathRegistration) {
       // An eventPlace can contain the county/country so is prefered to a registrationDistrict
       if (this.eventPlace && !this.role) {
-        return this.eventPlace.placeString;
+        return this.eventPlace;
       } else if (this.registrationDistrict) {
-        return this.registrationDistrict;
+        let placeObj = new PlaceObj();
+        placeObj.placeString = this.registrationDistrict;
+        return placeObj;
       }
+    }
+  }
+
+  inferDeathPlace() {
+    let placeObj = this.inferDeathPlaceObj();
+    if (placeObj) {
+      return placeObj.placeString;
     }
   }
 
@@ -3098,6 +3153,12 @@ class GeneralizedData {
     }
 
     return this.inferCountryFromPlaceNames(placeNames);
+  }
+
+  inferResidencePlaceObj() {
+    if (this.residencePlace) {
+      return this.residencePlace;
+    }
   }
 
   inferResidencePlace() {
@@ -3168,44 +3229,21 @@ class GeneralizedData {
     }
   }
 
+  inferEventPlaceObj() {
+    if (this.eventPlace) {
+      return this.eventPlace;
+    }
+  }
+
   inferEventPlace() {
     if (this.eventPlace) {
-      if (this.eventPlace.placeString) {
-        return this.eventPlace.placeString;
-      }
-
-      function addTerm(term) {
-        if (term) {
-          if (placeString) {
-            placeString += ", ";
-          }
-          placeString += term;
-        }
-      }
-      let placeString = "";
-      addTerm(this.eventPlace.county);
-      addTerm(this.eventPlace.country);
-      return placeString;
+      return this.eventPlace.inferPlaceString();
     }
   }
 
   inferFullEventPlace() {
     if (this.eventPlace) {
-      let place = this.eventPlace.placeString;
-      let streetAddress = this.eventPlace.streetAddress;
-      if (streetAddress && place) {
-        // sometimes we have something like this (from FMP for example)
-        // "placeString": "3, Brown Street, Leigh, Lancashire, England"
-        // "streetAddress": "3 Brown Street"
-        // e.g. : https://www.findmypast.co.uk/transcript?id=GBC/1921/RG15/18439/0547/07&expand=true
-        const streetLc = streetAddress.toLowerCase().replace(/\,/g, "");
-        const placeLc = place.toLowerCase().replace(/\,/g, "");
-        if (!placeLc.startsWith(streetLc)) {
-          place = streetAddress + ", " + place;
-        }
-      }
-
-      return place;
+      return this.eventPlace.inferFullPlaceString();
     }
   }
 
@@ -4371,18 +4409,21 @@ class GeneralizedData {
       endYearNum = eventYearNum + maxLifespan;
     }
 
-    startYearNum -= exactness;
-    endYearNum += exactness;
+    if (startYearNum) {
+      startYearNum -= exactness;
+    }
+
+    if (endYearNum) {
+      endYearNum += exactness;
+    }
 
     if (endYearNum > currentYear) {
       endYearNum = currentYear;
     }
 
     let range = {
-      startYearNum: startYearNum,
-      endYearNum: endYearNum,
-      startYear: startYearNum.toString(),
-      endYear: endYearNum.toString(),
+      startYear: startYearNum,
+      endYear: endYearNum,
     };
 
     return range;

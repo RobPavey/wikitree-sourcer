@@ -30,10 +30,12 @@ const minTroveYear = 1803;
 const maxTroveYear = 2100;
 
 function constrainYear(yearNum) {
-  if (yearNum < minTroveYear) {
-    yearNum = minTroveYear;
-  } else if (yearNum > maxTroveYear) {
-    yearNum = maxTroveYear;
+  if (yearNum) {
+    if (yearNum < minTroveYear) {
+      yearNum = minTroveYear;
+    } else if (yearNum > maxTroveYear) {
+      yearNum = maxTroveYear;
+    }
   }
   return yearNum;
 }

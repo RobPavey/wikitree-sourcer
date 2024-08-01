@@ -309,9 +309,13 @@ const StringUtils = {
     return "a";
   },
 
-  getPrepositionForPlaceString: function (placeString) {
+  getPrepositionForPlaceString: function (placeString, prepositionHint = "") {
     if (!placeString) {
       return "";
+    }
+
+    if (prepositionHint) {
+      return prepositionHint;
     }
 
     let firstChar = placeString[0];
@@ -351,6 +355,28 @@ const StringUtils = {
           preposition = "on";
         } else if (atEndings.includes(lastWord)) {
           preposition = "at";
+        } else if (/^\d+/.test(lastWord)) {
+          // In much of Europe the house number comes after the street name
+          // the last work of the first part is a number. So it could be
+          // "district 15" in which case we would want to use "in" but it could be
+          // "reichstrasse 125" in which case we want to use "at"
+          const inPlaces = ["district", "ward", "township", "precinct", "zone"];
+          let lcFirstPart = firstPart.toLowerCase();
+          let parts = lcFirstPart.split(" ");
+          let isLargerPlace = false;
+          // note we avoid the last part which will be the number
+          for (let partIndex = 0; partIndex < parts.length - 1; partIndex++) {
+            let part = parts[partIndex];
+            if (inPlaces.includes(part)) {
+              isLargerPlace = true;
+              break;
+            }
+          }
+          if (isLargerPlace) {
+            preposition = "in";
+          } else {
+            preposition = "at";
+          }
         }
       }
       return preposition;
