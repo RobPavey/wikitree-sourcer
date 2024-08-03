@@ -364,6 +364,33 @@ function extractData(document, url) {
     }
   }
 
+  // check if the page represents a residence rather than a person
+  if (!result.heading) {
+    return result;
+  }
+  if (result.headingSpanParts && result.headingSpanParts.length) {
+    let startOfHeading = result.headingSpanParts[0];
+    const invalidHeadingParts = [
+      // en
+      "Census district:",
+      "Urban residence:",
+      "Rural residence:",
+
+      // bo
+      "Tellingskrets:",
+      "Bosted by:",
+      "Bosted land:",
+
+      // nn
+      "Teljingskrets:",
+      "Bustad by:",
+      "Bustad land:",
+    ];
+    if (invalidHeadingParts.includes(startOfHeading)) {
+      return result;
+    }
+  }
+
   let leftViewColumn = article.querySelector("div.data-view div.left-view-column");
   let rightViewColumn = article.querySelector("div.data-view div.right-view-column");
 
@@ -432,6 +459,16 @@ function extractData(document, url) {
     result.sourceData = {};
     let dataRows = rightViewColumn.querySelectorAll("div.row");
     extractLabelValuePairs(result.sourceData, dataRows);
+  }
+
+  // another way to reject non-person records is from the permanentId
+  // All person records seem to start with p
+  if (!result.permanentId || result.permanentId.length < 1) {
+    return result;
+  }
+  let idStart = result.permanentId[0];
+  if (idStart != "p") {
+    return result;
   }
 
   if (result.heading && result.recordData) {
