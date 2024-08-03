@@ -10,10 +10,12 @@
     "yearString": "1875"
   },
   "eventPlace": {
-    "placeString": "Frøjen nedre, Bremanger, Sogn og Fjordane, Norway",
+    "placeString": "Bremanger, Sogn og Fjordane, Norway",
     "parish": "Bremanger",
     "county": "Sogn og Fjordane",
-    "country": "Norway"
+    "country": "Norway",
+    "streetAddress": "Frøjen nedre",
+    "prepositionHint": "at"
   },
   "birthDate": {
     "yearString": "1864"

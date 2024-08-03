@@ -908,6 +908,24 @@ function buildEventPlace(ed, result, includeResidence) {
     residence = getCleanValueForRecordDataList(ed, ["Residence", "Residence Place", homeString, homeString2]);
   }
 
+  if (streetAddress) {
+    let houseNumberAndStreet = "";
+    if (houseNumber && !streetAddress.startsWith(houseNumber)) {
+      houseNumberAndStreet += houseNumber + " ";
+    }
+    houseNumberAndStreet += streetAddress;
+    if (houseNumberAndStreet != town) {
+      streetAddress = houseNumberAndStreet;
+    } else {
+      streetAddress = "";
+    }
+  }
+  if (residence) {
+    if (residence == town) {
+      placeString = "";
+    }
+  }
+
   let placeString = "";
   if (residence && residence.includes(",")) {
     // for example in US state census Residence is the full address. It is in UK 1891 census too
@@ -915,9 +933,6 @@ function buildEventPlace(ed, result, includeResidence) {
     placeString += residence;
   } else {
     if (streetAddress) {
-      if (houseNumber && !streetAddress.startsWith(houseNumber)) {
-        placeString += houseNumber + " ";
-      }
       placeString += streetAddress;
     } else if (residence) {
       placeString += residence;
@@ -962,11 +977,7 @@ function buildEventPlace(ed, result, includeResidence) {
   result.setEventPlace(placeString);
 
   if (streetAddress) {
-    if (houseNumber && !streetAddress.startsWith(houseNumber)) {
-      result.eventPlace.streetAddress = houseNumber + " " + streetAddress;
-    } else {
-      result.eventPlace.streetAddress = streetAddress;
-    }
+    result.eventPlace.streetAddress = streetAddress;
   }
 }
 

@@ -349,7 +349,20 @@ const StringUtils = {
           "av",
           "av.",
         ];
-        const atEndings = ["workhouse", "house", "manor", "farm", "church", "hospital", "apartments", "apts", "apts."];
+        const atEndings = [
+          "workhouse",
+          "house",
+          "manor",
+          "farm",
+          "church",
+          "churchyard",
+          "hospital",
+          "apartments",
+          "apts",
+          "apts.",
+          "cemetery",
+          "graveyard",
+        ];
         lastWord = lastWord.toLowerCase();
         if (onEndings.includes(lastWord)) {
           preposition = "on";

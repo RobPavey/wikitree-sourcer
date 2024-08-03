@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Ruth (age 0) was buried on 3 December 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Ruth (age 0) was buried on 3 December 1860 at Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nRuth Fraser burial (died age 0) on 3 Dec 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nRuth Fraser burial (died age 0) on 3 Dec 1860 at Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Ruth (age 0) was buried on 3 December 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nRuth Fraser burial (died age 0) on 3 Dec 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.\n</ref>",
+    "citation": "Ruth (age 0) was buried on 3 December 1860 at Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nRuth Fraser burial (died age 0) on 3 Dec 1860 at Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Burial''': \"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>National Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Ruth Fraser burial (died age 0) on 3 Dec 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.",
+    "citation": "* '''Burial''': \"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>National Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Ruth Fraser burial (died age 0) on 3 Dec 1860 at Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Ruth (age 0) was buried on 3 December 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: RUTH; Gender: Female; Age: 0; Burial Date: 3/12/1860; Event: Lair; Parish: Glasgow, Old Dalbeth Cemetery.\n</ref>",
+    "citation": "Ruth (age 0) was buried on 3 December 1860 at Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: RUTH; Gender: Female; Age: 0; Burial Date: 3/12/1860; Event: Lair; Parish: Glasgow, Old Dalbeth Cemetery.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Ruth (age 0) was buried on 3 December 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || RUTH\n|-\n| Gender || Female\n|-\n| Age || 0\n|-\n| Death Date || \n|-\n| Burial Date || 3/12/1860\n|-\n| Event || Lair\n|-\n| Parish || Glasgow, Old Dalbeth Cemetery\n|}\n</ref>",
+    "citation": "Ruth (age 0) was buried on 3 December 1860 at Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || RUTH\n|-\n| Gender || Female\n|-\n| Age || 0\n|-\n| Death Date || \n|-\n| Burial Date || 3/12/1860\n|-\n| Event || Lair\n|-\n| Parish || Glasgow, Old Dalbeth Cemetery\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

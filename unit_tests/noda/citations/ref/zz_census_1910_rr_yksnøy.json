@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1910 Census''':\n\"1910 census for Volda\"<br/>\nCensus district: 001 Yksnøen<br/>\n[https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nYksnøy in Volda, Møre og Romsdal, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1910 census Yksnøy was in Volda, Møre og Romsdal, Norway.<ref>\n'''1910 Census''':\n\"1910 census for Volda\"<br/>\nCensus district: 001 Yksnøen<br/>\n[https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nYksnøy in Volda, Møre og Romsdal, Norway.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1910 Census''': \"1910 census for Volda\"<br/>Census district: 001 Yksnøen<br/>[https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002 Digitalarkivet Record] (accessed 6 May 2021)<br/>Yksnøy in Volda, Møre og Romsdal, Norway.",
+    "type": "source"
+  }
+}

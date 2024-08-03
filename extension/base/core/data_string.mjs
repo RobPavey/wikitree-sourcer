@@ -23,18 +23,16 @@ SOFTWARE.
 */
 
 import { CD } from "./country_data.mjs";
-import { DateObj } from "./generalize_data_utils.mjs";
+import { DateObj, PlaceObj } from "./generalize_data_utils.mjs";
 import { RT, Role, RecordSubtype } from "./record_type.mjs";
 import { RC } from "./record_collections.mjs";
 import { DateUtils } from "./date_utils.mjs";
-import { StringUtils } from "./string_utils.mjs";
 import { buildStructuredHousehold } from "./structured_household.mjs";
 import {
   getPrimaryPersonChildTerm,
   getPrimaryPersonSpouseTerm,
   getPrimaryPersonTermAndName,
 } from "./narrative_or_sentence_utils.mjs";
-import { GroUriBuilder } from "../../site/gro/core/gro_uri_builder.mjs";
 
 function getQuarterName(quarterNumber) {
   const quarterNames = ["Jan-Feb-Mar", "Apr-May-Jun", "Jul-Aug-Sep", "Oct-Nov-Dec"];
@@ -45,9 +43,41 @@ function getQuarterName(quarterNumber) {
   return "";
 }
 
-function getPlaceWithPreposition(placeString) {
-  let preposition = StringUtils.getPrepositionForPlaceString(placeString);
-  return preposition + " " + placeString;
+function getPlaceWithPrepositionFromPlaceObj(placeObj, placeString = "", isFullPlaceString = false) {
+  if (placeObj) {
+    let preposition = placeObj.getPreposition(isFullPlaceString, placeString);
+
+    if (!placeString) {
+      placeString = placeObj.inferPlaceString();
+    }
+
+    if (placeString) {
+      if (preposition) {
+        return preposition + " " + placeString;
+      } else {
+        return placeString;
+      }
+    }
+  }
+  return "";
+}
+
+function getPlaceWithPreposition(placeString, prepositionHint = "") {
+  let placeObj = new PlaceObj();
+  placeObj.placeString = placeString;
+  placeObj.prepositionHint = prepositionHint;
+  return getPlaceWithPrepositionFromPlaceObj(placeObj);
+}
+
+function getFullPlaceTermWithPreposition(placeObj) {
+  if (placeObj) {
+    let placeString = placeObj.inferFullPlaceString();
+    let placeWithPreposition = getPlaceWithPrepositionFromPlaceObj(placeObj, placeString, true);
+    if (placeWithPreposition) {
+      return " " + placeWithPreposition;
+    }
+  }
+  return "";
 }
 
 function cleanDateObj(dateObj) {
@@ -160,20 +190,22 @@ function getUkCensusString(gd, options) {
   let relatedToPerson = undefined;
   if (structuredHousehold) {
     selectedStructuredMember = structuredHousehold.selectedMember;
-    if (selectedStructuredMember.relationTo) {
-      relatedToPerson = selectedStructuredMember.relationTo;
-    } else if (
-      structuredHousehold.head &&
-      structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
-    ) {
-      // sometimes this is a pauper and the "head" is also a pauper
-      // maybe some relationships are not valid to be head
-      // for now just check if they are the same
-      if (
-        selectedStructuredMember.gdMember.relationship &&
-        selectedStructuredMember.gdMember.relationship != structuredHousehold.head.gdMember.relationship
+    if (selectedStructuredMember) {
+      if (selectedStructuredMember.relationTo) {
+        relatedToPerson = selectedStructuredMember.relationTo;
+      } else if (
+        structuredHousehold.head &&
+        structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
       ) {
-        relatedToPerson = structuredHousehold.head;
+        // sometimes this is a pauper and the "head" is also a pauper
+        // maybe some relationships are not valid to be head
+        // for now just check if they are the same
+        if (
+          selectedStructuredMember.gdMember.relationship &&
+          selectedStructuredMember.gdMember.relationship != structuredHousehold.head.gdMember.relationship
+        ) {
+          relatedToPerson = structuredHousehold.head;
+        }
       }
     }
   }
@@ -259,7 +291,7 @@ function getUkCensusString(gd, options) {
     if (!gd.registrationDistrict) {
       // this can happen for 1911 ceneus on Ancestry which just has a number for district
       if (gd.eventPlace && gd.eventPlace.placeString) {
-        dataString += " " + getPlaceWithPreposition(gd.eventPlace.placeString);
+        dataString += getFullPlaceTermWithPreposition(gd.eventPlace);
       }
     } else {
       let addedPlace = false;
@@ -336,12 +368,7 @@ function get1939RegisterString(gd, options) {
     dataString += ", " + occupation + ",";
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    // Note we used to always use "at" which may be correct for Ancestry and FMP but FS doesn't have
-    // house number/name.
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   return dataString;
 }
@@ -367,20 +394,22 @@ function getOtherCensusString(gd, options) {
   let relatedToPerson = undefined;
   if (structuredHousehold) {
     selectedStructuredMember = structuredHousehold.selectedMember;
-    if (selectedStructuredMember.relationTo) {
-      relatedToPerson = selectedStructuredMember.relationTo;
-    } else if (
-      structuredHousehold.head &&
-      structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
-    ) {
-      // sometimes this is a pauper and the "head" is also a pauper
-      // maybe some relationships are not valid to be head
-      // for now just check if they are the same
-      if (
-        selectedStructuredMember.gdMember.relationship &&
-        selectedStructuredMember.gdMember.relationship != structuredHousehold.head.gdMember.relationship
+    if (selectedStructuredMember) {
+      if (selectedStructuredMember.relationTo) {
+        relatedToPerson = selectedStructuredMember.relationTo;
+      } else if (
+        structuredHousehold.head &&
+        structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
       ) {
-        relatedToPerson = structuredHousehold.head;
+        // sometimes this is a pauper and the "head" is also a pauper
+        // maybe some relationships are not valid to be head
+        // for now just check if they are the same
+        if (
+          selectedStructuredMember.gdMember.relationship &&
+          selectedStructuredMember.gdMember.relationship != structuredHousehold.head.gdMember.relationship
+        ) {
+          relatedToPerson = structuredHousehold.head;
+        }
       }
     }
   }
@@ -453,10 +482,7 @@ function getOtherCensusString(gd, options) {
     }
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   let birthPlace = gd.inferBirthPlace();
   if (birthPlace) {
@@ -521,10 +547,7 @@ function getPopulationRegisterString(gd, options) {
     }
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   let birthDateObj = gd.birthDate;
   let birthPlace = gd.inferBirthPlace();
@@ -576,10 +599,7 @@ function getSlaveScheduleString(gd, options) {
     dataString += " " + getDateWithPreposition(eventDateObj);
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   return dataString;
 }
@@ -936,10 +956,9 @@ function getBirthString(gd, options) {
     }
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  } else if (dataString.endsWith(",")) {
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
+
+  if (dataString.endsWith(",")) {
     dataString = dataString.substring(0, dataString.length - 1);
   }
 
@@ -1059,9 +1078,7 @@ function getBaptismString(gd, options) {
     }
   }
 
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   // sometimes a baptism has a death date. (e.g. germany_baptism_1840_johanna_hartmann)
   let deathDate = gd.inferDeathDateObj();
@@ -1105,9 +1122,7 @@ function getConfirmationString(gd, options) {
     }
   }
 
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   return dataString;
 }
@@ -1192,10 +1207,7 @@ function getMarriageString(gd, options) {
     }
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   return dataString;
 }
@@ -1250,10 +1262,7 @@ function getBurialString(gd, options) {
     dataString += " " + getDateWithPreposition(burialDate);
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   if (gd.causeOfDeath) {
     dataString += ". Cause of death: " + gd.causeOfDeath;
@@ -1310,10 +1319,7 @@ function getCremationString(gd, options) {
     dataString += " " + getDateWithPreposition(cremationDate);
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   return dataString;
 }
@@ -1327,10 +1333,7 @@ function getProbateString(gd, options) {
     dataString += " " + getDateWithPreposition(date);
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   let deathDate = gd.inferDeathDateObj();
   if (deathDate) {
@@ -1500,10 +1503,7 @@ function getDivorceString(gd, options) {
     dataString += " " + getDateWithPreposition(date);
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   return dataString;
 }
@@ -1516,10 +1516,7 @@ function getDefaultString(gd, options) {
     dataString += " " + getDateWithPreposition(date);
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
-  }
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
 
   if (dataString == "Unknown") {
     // the only thing is the unknown name - no use for anything.

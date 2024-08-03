@@ -10,10 +10,12 @@
     "yearString": "1914"
   },
   "eventPlace": {
-    "placeString": "001* Bjerget 1, Moss city, Østfold, Norway",
+    "placeString": "Moss city, Østfold, Norway",
     "parish": "Moss city",
     "county": "Østfold",
-    "country": "Norway"
+    "country": "Norway",
+    "streetAddress": "001* Bjerget 1",
+    "prepositionHint": "at"
   },
   "birthDate": {
     "dateString": "14 Feb 1852"

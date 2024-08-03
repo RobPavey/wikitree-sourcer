@@ -10,10 +10,12 @@
     "yearString": "1875"
   },
   "eventPlace": {
-    "placeString": "Hjelmelandsvaag, Rogaland, Norway",
+    "placeString": "Hjelmeland, Rogaland, Norway",
     "parish": "Hjelmeland",
     "county": "Rogaland",
-    "country": "Norway"
+    "country": "Norway",
+    "streetAddress": "Hjelmelandsvaag",
+    "prepositionHint": "at"
   },
   "birthDate": {
     "yearString": "1837"

@@ -330,8 +330,16 @@ function buildMainPlaceObj(ed) {
   placeObj.county = getCleanRecordDataValue(ed, "County");
   placeObj.parish = getCleanRecordDataValue(ed, "Parish");
   placeObj.place = getRecordDataValueForList(ed, ["Place", "Marriage place", "Burial place", "Baptism place"]);
-  placeObj.streetAddress = getCleanRecordDataValue(ed, "Address");
   placeObj.fullAddress = getCleanRecordDataValue(ed, "Full address");
+
+  // setting street address will trigger the place preposition "at" so don't set it
+  // unless we really have a street address
+  let streetAddress = getCleanRecordDataValue(ed, "Address");
+  if (streetAddress) {
+    if (streetAddress != placeObj.parish && streetAddress != placeObj.place) {
+      placeObj.streetAddress = streetAddress;
+    }
+  }
 
   // some less common ones
   placeObj.residence = getRecordDataValueForList(ed, ["Residence", "Residence town"]);

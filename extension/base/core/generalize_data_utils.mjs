@@ -1039,6 +1039,125 @@ class PlaceObj {
 
     return place;
   }
+
+  getPreposition(isForFullPlaceIncludingStreetAddress = false, placeStringOverride = "") {
+    let prepositionHint = this.prepositionHint;
+    if (prepositionHint) {
+      return prepositionHint;
+    }
+
+    let placeString = this.placeString;
+    if (placeStringOverride) {
+      placeString = placeStringOverride;
+    }
+    if (!placeString) {
+      return "";
+    }
+
+    let lcPlaceString = placeString.toLowerCase();
+
+    function getFirstPartOfPlaceString(string) {
+      let firstPart = string;
+      let firstCommaIndex = string.indexOf(",");
+      if (firstCommaIndex != -1) {
+        firstPart = string.substring(0, firstCommaIndex);
+      }
+      return firstPart;
+    }
+
+    const onEndings = [
+      "street",
+      "st",
+      "st.",
+      "road",
+      "rd",
+      "rd.",
+      "lane",
+      "ln",
+      "ln.",
+      "avenue",
+      "ave",
+      "ave.",
+      "av",
+      "av.",
+    ];
+
+    if (this.streetAddress && isForFullPlaceIncludingStreetAddress) {
+      let preposition = "at";
+      let lcStreetAddress = this.streetAddress.toLowerCase();
+      let firstChar = placeString[0];
+      if (firstChar >= "0" && firstChar <= "9") {
+        return preposition;
+      }
+
+      let firstPartOfStreetAddress = getFirstPartOfPlaceString(lcStreetAddress);
+      let wordCount = StringUtils.countWords(firstPartOfStreetAddress);
+      if (wordCount > 1) {
+        let lastWord = StringUtils.getLastWord(firstPartOfStreetAddress);
+        if (onEndings.includes(lastWord)) {
+          preposition = "on";
+        }
+      }
+
+      return preposition;
+    }
+
+    let firstChar = placeString[0];
+    if (firstChar >= "0" && firstChar <= "9") {
+      return "at";
+    } else {
+      // if it is a town we want "in" but if it is a house or building then we want "at"
+      // so we get last word or first part and compare it to a set of strings
+      let preposition = "in";
+      let firstPart = getFirstPartOfPlaceString(lcPlaceString);
+      let wordCount = StringUtils.countWords(firstPart);
+      if (wordCount > 1) {
+        let lastWord = StringUtils.getLastWord(firstPart);
+        const atEndings = [
+          "workhouse",
+          "house",
+          "manor",
+          "farm",
+          "church",
+          "churchyard",
+          "hospital",
+          "apartments",
+          "apts",
+          "apts.",
+          "cemetery",
+          "graveyard",
+        ];
+        if (onEndings.includes(lastWord)) {
+          preposition = "on";
+        } else if (atEndings.includes(lastWord)) {
+          preposition = "at";
+        } else if (/^\d+/.test(lastWord)) {
+          // In much of Europe the house number comes after the street name
+          // the last work of the first part is a number. So it could be
+          // "district 15" in which case we would want to use "in" but it could be
+          // "reichstrasse 125" in which case we want to use "at"
+          const inPlaces = ["district", "ward", "township", "precinct", "zone"];
+          let lcFirstPart = firstPart.toLowerCase();
+          let parts = lcFirstPart.split(" ");
+          let isLargerPlace = false;
+          // note we avoid the last part which will be the number
+          for (let partIndex = 0; partIndex < parts.length - 1; partIndex++) {
+            let part = parts[partIndex];
+            if (inPlaces.includes(part)) {
+              isLargerPlace = true;
+              break;
+            }
+          }
+          if (isLargerPlace) {
+            preposition = "in";
+          } else {
+            preposition = "at";
+          }
+        }
+      }
+      return preposition;
+    }
+  }
 }
 
 class NameObj {

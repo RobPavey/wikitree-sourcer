@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Josephine died on 11 July 2006 and was buried in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)<br/>\nJosephine Ann Miller burial (died on 11 Jul 2006) in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)<br/>\nJosephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Josephine died on 11 July 2006 and was buried in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)<br/>\nJosephine Ann Miller burial (died on 11 Jul 2006) in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925.\n</ref>",
+    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)<br/>\nJosephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Burial''': \"U.S., Find a Grave® Index, 1600s-Current\"<br/>{{FindAGrave|18816950}}<br/>{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)<br/>Josephine Ann Miller burial (died on 11 Jul 2006) in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925.",
+    "citation": "* '''Burial''': \"U.S., Find a Grave® Index, 1600s-Current\"<br/>{{FindAGrave|18816950}}<br/>{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)<br/>Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Josephine died on 11 July 2006 and was buried in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)<br/>\nName: Josephine Ann Miller; Maiden Name: Keogh; Birth Date: 2 Jun 1925; Birth Place: Bradford, Miami County, Ohio, United States of America; Death Date: 11 Jul 2006; Death Place: Miamisburg, Montgomery County, Ohio, United States of America; Cemetery: Forest Hill Cemetery; Burial or Cremation Place: Piqua, Miami County, Ohio, United States of America; Has Bio?: N; Spouse: Marion Leroy Miller; Children: Joseph Paul Miller.\n</ref>",
+    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)<br/>\nName: Josephine Ann Miller; Maiden Name: Keogh; Birth Date: 2 Jun 1925; Birth Place: Bradford, Miami County, Ohio, United States of America; Death Date: 11 Jul 2006; Death Place: Miamisburg, Montgomery County, Ohio, United States of America; Cemetery: Forest Hill Cemetery; Burial or Cremation Place: Piqua, Miami County, Ohio, United States of America; Has Bio?: N; Spouse: Marion Leroy Miller; Children: Joseph Paul Miller.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Josephine died on 11 July 2006 and was buried in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Josephine Ann Miller\n|-\n| Maiden Name || Keogh\n|-\n| Birth Date || 2 Jun 1925\n|-\n| Birth Place || Bradford, Miami County, Ohio, United States of America\n|-\n| Death Date || 11 Jul 2006\n|-\n| Death Place || Miamisburg, Montgomery County, Ohio, United States of America\n|-\n| Cemetery || Forest Hill Cemetery\n|-\n| Burial or Cremation Place || Piqua, Miami County, Ohio, United States of America\n|-\n| Has Bio? || N\n|-\n| Spouse || Marion Leroy Miller\n|-\n| Children || Joseph Paul Miller\n|}\n</ref>",
+    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n'''Burial''':\n\"U.S., Find a Grave® Index, 1600s-Current\"<br/>\n{{FindAGrave|18816950}}<br/>\n{{Ancestry Record|60525|83153657}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Josephine Ann Miller\n|-\n| Maiden Name || Keogh\n|-\n| Birth Date || 2 Jun 1925\n|-\n| Birth Place || Bradford, Miami County, Ohio, United States of America\n|-\n| Death Date || 11 Jul 2006\n|-\n| Death Place || Miamisburg, Montgomery County, Ohio, United States of America\n|-\n| Cemetery || Forest Hill Cemetery\n|-\n| Burial or Cremation Place || Piqua, Miami County, Ohio, United States of America\n|-\n| Has Bio? || N\n|-\n| Spouse || Marion Leroy Miller\n|-\n| Children || Joseph Paul Miller\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}</ref>",
+    "citation": "<ref>\"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Josephine died on 11 July 2006 and was buried in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}</ref>",
+    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}",
+    "citation": "* \"U.S., Find a Grave® Index, 1600s-Current,\" database, ({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), Josephine Ann Miller burial (died on 11 Jul 2006) at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America. Born on 2 Jun 1925; citing {{FindAGrave|18816950}}",
     "type": "source"
   },
   "partial_ee_style_inline": {
@@ -64,7 +64,7 @@
     "type": "inline"
   },
   "partial_ee_style_narrative": {
-    "citation": "Josephine died on 11 July 2006 and was buried in Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n''Burial'':\n\"U.S., Find a Grave® Index, 1600s-Current\", database, \n{{FindAGrave|18816950}}, \n({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), \nName: Josephine Ann Miller; Maiden Name: Keogh; Birth Date: 2 Jun 1925; Birth Place: Bradford, Miami County, Ohio, United States of America; Death Date: 11 Jul 2006; Death Place: Miamisburg, Montgomery County, Ohio, United States of America; Cemetery: Forest Hill Cemetery; Burial or Cremation Place: Piqua, Miami County, Ohio, United States of America; Has Bio?: N; Spouse: Marion Leroy Miller; Children: Joseph Paul Miller.\n</ref>",
+    "citation": "Josephine died on 11 July 2006 and was buried at Forest Hill Cemetery, Piqua, Miami County, Ohio, United States of America.<ref>\n''Burial'':\n\"U.S., Find a Grave® Index, 1600s-Current\", database, \n{{FindAGrave|18816950}}, \n({{Ancestry Record|60525|83153657}} : accessed 6 May 2021), \nName: Josephine Ann Miller; Maiden Name: Keogh; Birth Date: 2 Jun 1925; Birth Place: Bradford, Miami County, Ohio, United States of America; Death Date: 11 Jul 2006; Death Place: Miamisburg, Montgomery County, Ohio, United States of America; Cemetery: Forest Hill Cemetery; Burial or Cremation Place: Piqua, Miami County, Ohio, United States of America; Has Bio?: N; Spouse: Marion Leroy Miller; Children: Joseph Paul Miller.\n</ref>",
     "type": "narrative"
   },
   "partial_ee_style_source": {

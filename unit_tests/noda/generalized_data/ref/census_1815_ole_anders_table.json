@@ -10,10 +10,12 @@
     "yearString": "1815"
   },
   "eventPlace": {
-    "placeString": "Fiøsne, Luster, Sogn og Fjordane, Norway",
+    "placeString": "Luster, Sogn og Fjordane, Norway",
     "parish": "Luster",
     "county": "Sogn og Fjordane",
-    "country": "Norway"
+    "country": "Norway",
+    "streetAddress": "Fiøsne",
+    "prepositionHint": "at"
   },
   "ageAtEvent": "2",
   "relationshipToHead": "son",

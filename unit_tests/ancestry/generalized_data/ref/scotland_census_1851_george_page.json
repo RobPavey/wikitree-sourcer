@@ -8,8 +8,7 @@
   "personGender": "male",
   "eventPlace": {
     "county": "Fife",
-    "placeString": "Dunshelt, Dunshelt, Auchtermuchty, Fife",
-    "streetAddress": "Dunshelt"
+    "placeString": "Dunshelt, Auchtermuchty, Fife"
   },
   "birthDate": {
     "yearString": "1828",

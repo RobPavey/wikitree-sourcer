@@ -1248,6 +1248,14 @@ function generalizeData(input) {
 
   result.setEventPlace(cleanPlace(eventPlace));
 
+  // sometimes there is a street address in document data
+  if (result.eventPlace && ed.documentRecordData && ed.documentRecordData["Address"]) {
+    let streetAddress = ed.documentRecordData["Address"];
+    if (!(eventPlace && eventPlace.includes(streetAddress))) {
+      result.eventPlace.streetAddress = streetAddress;
+    }
+  }
+
   let residencePlace = ed.residence;
   if (!residencePlace && ed.recordData && ed.recordData["Note Res Place"]) {
     // sometimes this is a field that is not on the residence fact

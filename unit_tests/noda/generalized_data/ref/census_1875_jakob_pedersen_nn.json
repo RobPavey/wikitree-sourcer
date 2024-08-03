@@ -10,10 +10,12 @@
     "yearString": "1875"
   },
   "eventPlace": {
-    "placeString": "Teslimyhr, Strinda, Sør-Trøndelag, Norway",
+    "placeString": "Strinda, Sør-Trøndelag, Norway",
     "parish": "Strinda",
     "county": "Sør-Trøndelag",
-    "country": "Norway"
+    "country": "Norway",
+    "streetAddress": "Teslimyhr",
+    "prepositionHint": "at"
   },
   "birthDate": {
     "yearString": "1870"

@@ -10,10 +10,12 @@
     "yearString": "1912"
   },
   "eventPlace": {
-    "placeString": "Tyskesmuget 10 1.etage, Bergen, Bergen, Norway",
+    "placeString": "Bergen, Bergen, Norway",
     "parish": "Bergen",
     "county": "Bergen",
-    "country": "Norway"
+    "country": "Norway",
+    "streetAddress": "Tyskesmuget 10 1.etage",
+    "prepositionHint": "at"
   },
   "birthDate": {
     "dateString": "17 Nov 1895"

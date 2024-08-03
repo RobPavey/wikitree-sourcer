@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Helen died or was buried on 11 July 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland.<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Helen died or was buried on 11 July 1842 at St Margaret's United Secession, Dunfermline, Fife, Scotland.<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nHelen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever.\n</ref>",
+    "citation": "<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nHelen Fraser death or burial on 11 Jul 1842 at St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Helen died or was buried on 11 July 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland.<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nHelen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever.\n</ref>",
+    "citation": "Helen died or was buried on 11 July 1842 at St Margaret's United Secession, Dunfermline, Fife, Scotland.<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nHelen Fraser death or burial on 11 Jul 1842 at St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Death or Burial''': \"Other Church Registers - Deaths and Burials\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Helen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever.",
+    "citation": "* '''Death or Burial''': \"Other Church Registers - Deaths and Burials\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Helen Fraser death or burial on 11 Jul 1842 at St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Helen died or was buried on 11 July 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland.<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: HELEN; Date: 11/JULY/1842; Parish/Congregation Name: DUNFERMLINE - ST MARGARET'S UNITED SECESSION; Cause of Death: RHEUMATIC FEVER.\n</ref>",
+    "citation": "Helen died or was buried on 11 July 1842 at St Margaret's United Secession, Dunfermline, Fife, Scotland.<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: HELEN; Date: 11/JULY/1842; Parish/Congregation Name: DUNFERMLINE - ST MARGARET'S UNITED SECESSION; Cause of Death: RHEUMATIC FEVER.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Helen died or was buried on 11 July 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland.<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || HELEN\n|-\n| Date || 11/JULY/1842\n|-\n| Parish/Congregation Name || DUNFERMLINE - ST MARGARET'S UNITED SECESSION\n|-\n| Cause of Death || RHEUMATIC FEVER\n|}\n</ref>",
+    "citation": "Helen died or was buried on 11 July 1842 at St Margaret's United Secession, Dunfermline, Fife, Scotland.<ref>\n'''Death or Burial''':\n\"Other Church Registers - Deaths and Burials\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || HELEN\n|-\n| Date || 11/JULY/1842\n|-\n| Parish/Congregation Name || DUNFERMLINE - ST MARGARET'S UNITED SECESSION\n|-\n| Cause of Death || RHEUMATIC FEVER\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

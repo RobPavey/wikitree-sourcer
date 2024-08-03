@@ -138,6 +138,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/census/person/pf01037045214297",
   },
   {
+    caseName: "census_1910_anna_nikolaidatter",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01036754000004",
+  },
+  {
     caseName: "census_1912_alfhild_jamne",
     url: "https://www.digitalarkivet.no/en/census/person/pf01105551064459",
   },
@@ -206,6 +210,13 @@ const regressionData = [
     // this one has no transcription
     caseName: "xx_image_marriage_1792_frans_gutormsen_welsvig",
     url: "https://media.digitalarkivet.no/view/15957/43",
+  },
+
+  // residence pages - should not create citation but should not crash
+  {
+    // this one has no transcription
+    caseName: "zz_census_1910_rr_yksnøy",
+    url: "https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002",
   },
 ];
 

@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { RT, RecordSubtype } from "./record_type.mjs";
-import { GeneralizedData, DateObj } from "./generalize_data_utils.mjs";
+import { GeneralizedData, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
 import { Role } from "./record_type.mjs";
 import { StringUtils } from "./string_utils.mjs";
 import { DateUtils } from "./date_utils.mjs";
@@ -233,13 +233,10 @@ class NarrativeBuilder {
   }
 
   getPlaceWithPreposition(placeString, prepositionHint = "") {
-    if (!placeString) {
-      return placeString;
-    }
-
-    placeString = this.improveAndAbbreviatePlaceString(placeString);
-    let preposition = StringUtils.getPrepositionForPlaceString(placeString, prepositionHint);
-    return preposition + " " + placeString;
+    let placeObj = new PlaceObj();
+    placeObj.placeString = placeString;
+    placeObj.prepositionHint = prepositionHint;
+    return this.getPlaceWithPrepositionFromPlaceObj(placeObj);
   }
 
   getPlaceWithPrepositionFromPlaceObj(placeObj) {
@@ -247,22 +244,41 @@ class NarrativeBuilder {
       return "";
     }
 
-    let prepositionHint = placeObj.prepositionHint;
-
-    if (!prepositionHint) {
-      if (placeObj.streetAddress) {
-        prepositionHint = "at";
-      }
+    let placeString = placeObj.inferPlaceString();
+    if (!placeString) {
+      return "";
     }
-    return this.getPlaceWithPreposition(placeObj.placeString, prepositionHint);
+
+    let improvedPlaceString = this.improveAndAbbreviatePlaceString(placeString);
+
+    let preposition = placeObj.getPreposition(false, improvedPlaceString);
+
+    if (preposition) {
+      return preposition + " " + improvedPlaceString;
+    } else {
+      return improvedPlaceString;
+    }
   }
 
   getFullPlaceWithPrepositionFromPlaceObj(placeObj) {
     if (!placeObj) {
       return "";
     }
-    let fullPlaceString = placeObj.inferFullPlaceString();
-    return this.getPlaceWithPreposition(fullPlaceString, placeObj.prepositionHint);
+
+    let placeString = placeObj.inferFullPlaceString();
+    if (!placeString) {
+      return "";
+    }
+
+    let improvedPlaceString = this.improveAndAbbreviatePlaceString(placeString);
+
+    let preposition = placeObj.getPreposition(true, improvedPlaceString);
+
+    if (preposition) {
+      return preposition + " " + improvedPlaceString;
+    } else {
+      return improvedPlaceString;
+    }
   }
 
   addPlaceWithPreposition(placeObj) {
@@ -1642,20 +1658,22 @@ class NarrativeBuilder {
     let relatedToPerson = undefined;
     if (structuredHousehold) {
       selectedStructuredMember = structuredHousehold.selectedMember;
-      if (selectedStructuredMember.relationTo) {
-        relatedToPerson = selectedStructuredMember.relationTo;
-      } else if (
-        structuredHousehold.head &&
-        structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
-      ) {
-        // sometimes this is a pauper and the "head" is also a pauper
-        // maybe some relationships are not valid to be head
-        // for now just check if they are the same
-        if (
-          selectedStructuredMember.gdMember.relationship &&
-          selectedStructuredMember.gdMember.relationship != structuredHousehold.head.gdMember.relationship
+      if (selectedStructuredMember) {
+        if (selectedStructuredMember.relationTo) {
+          relatedToPerson = selectedStructuredMember.relationTo;
+        } else if (
+          structuredHousehold.head &&
+          structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
         ) {
-          relatedToPerson = structuredHousehold.head;
+          // sometimes this is a pauper and the "head" is also a pauper
+          // maybe some relationships are not valid to be head
+          // for now just check if they are the same
+          if (
+            selectedStructuredMember.gdMember.relationship &&
+            selectedStructuredMember.gdMember.relationship != structuredHousehold.head.gdMember.relationship
+          ) {
+            relatedToPerson = structuredHousehold.head;
+          }
         }
       }
     }
@@ -1881,11 +1899,11 @@ class NarrativeBuilder {
             }
           } else if (relationship == "son" || relationship == "daughter") {
             let children = undefined;
-            if (selectedStructuredMember.father) {
+            if (selectedStructuredMember && selectedStructuredMember.father) {
               hasFather = true;
               children = selectedStructuredMember.father.children;
             }
-            if (selectedStructuredMember.mother) {
+            if (selectedStructuredMember && selectedStructuredMember.mother) {
               hasMother = true;
               if (!children) {
                 children = selectedStructuredMember.mother.children;

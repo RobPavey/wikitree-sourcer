@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "John married Margaret Kay on 21 May 1840 in Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "John married Margaret Kay on 21 May 1840 at Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Cunningham Erskine marriage to Margaret Kay on 21 May 1840 in Leith Relief, Midlothian, Scotland.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Cunningham Erskine marriage to Margaret Kay on 21 May 1840 at Leith Relief, Midlothian, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "John married Margaret Kay on 21 May 1840 in Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Cunningham Erskine marriage to Margaret Kay on 21 May 1840 in Leith Relief, Midlothian, Scotland.\n</ref>",
+    "citation": "John married Margaret Kay on 21 May 1840 at Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Cunningham Erskine marriage to Margaret Kay on 21 May 1840 at Leith Relief, Midlothian, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Marriage''': \"Other Church Registers - Marriages\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>John Cunningham Erskine marriage to Margaret Kay on 21 May 1840 in Leith Relief, Midlothian, Scotland.",
+    "citation": "* '''Marriage''': \"Other Church Registers - Marriages\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>John Cunningham Erskine marriage to Margaret Kay on 21 May 1840 at Leith Relief, Midlothian, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "John married Margaret Kay on 21 May 1840 in Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: ERSKINE; Forename: JOHN CUNNINGHAM; Spouse Surname: KAY; Spouse Forename: MARGARET; Marriage Date: 21/MAY/1840; Parish/Congregation Name: LEITH RELIEF.\n</ref>",
+    "citation": "John married Margaret Kay on 21 May 1840 at Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: ERSKINE; Forename: JOHN CUNNINGHAM; Spouse Surname: KAY; Spouse Forename: MARGARET; Marriage Date: 21/MAY/1840; Parish/Congregation Name: LEITH RELIEF.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "John married Margaret Kay on 21 May 1840 in Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || ERSKINE\n|-\n| Forename || JOHN CUNNINGHAM\n|-\n| Spouse Surname || KAY\n|-\n| Spouse Forename || MARGARET\n|-\n| Marriage Date || 21/MAY/1840\n|-\n| Parish/Congregation Name || LEITH RELIEF\n|}\n</ref>",
+    "citation": "John married Margaret Kay on 21 May 1840 at Leith Relief, Midlothian, Scotland.<ref>\n'''Marriage''':\n\"Other Church Registers - Marriages\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || ERSKINE\n|-\n| Forename || JOHN CUNNINGHAM\n|-\n| Spouse Surname || KAY\n|-\n| Spouse Forename || MARGARET\n|-\n| Marriage Date || 21/MAY/1840\n|-\n| Parish/Congregation Name || LEITH RELIEF\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

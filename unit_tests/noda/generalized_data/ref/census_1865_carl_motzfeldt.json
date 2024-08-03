@@ -10,10 +10,12 @@
     "yearString": "1865"
   },
   "eventPlace": {
-    "placeString": "Munkegaden, Trondheim, Sør-Trøndelag, Norway",
+    "placeString": "Trondheim, Sør-Trøndelag, Norway",
     "parish": "Trondheim",
     "county": "Sør-Trøndelag",
-    "country": "Norway"
+    "country": "Norway",
+    "streetAddress": "Munkegaden",
+    "prepositionHint": "at"
   },
   "birthPlace": {
     "placeString": "Rygge"

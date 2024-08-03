@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Davidem married Elisabeth McGregor on or after 29 November 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Davidem married Elisabeth McGregor on or after 29 November 1922 at St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nDavidem Baird marriage to Elisabeth McGregor on or after 29 Nov 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nDavidem Baird marriage to Elisabeth McGregor on or after 29 Nov 1922 at St Margaret's, Airdrie, Lanarkshire, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Davidem married Elisabeth McGregor on or after 29 November 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nDavidem Baird marriage to Elisabeth McGregor on or after 29 Nov 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.\n</ref>",
+    "citation": "Davidem married Elisabeth McGregor on or after 29 November 1922 at St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nDavidem Baird marriage to Elisabeth McGregor on or after 29 Nov 1922 at St Margaret's, Airdrie, Lanarkshire, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Marriage''': \"Catholic Parish Registers - Marriages\"<br/>National Records of Scotland, Parish: Airdrie, St Margaret's<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Davidem Baird marriage to Elisabeth McGregor on or after 29 Nov 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.",
+    "citation": "* '''Marriage''': \"Catholic Parish Registers - Marriages\"<br/>National Records of Scotland, Parish: Airdrie, St Margaret's<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Davidem Baird marriage to Elisabeth McGregor on or after 29 Nov 1922 at St Margaret's, Airdrie, Lanarkshire, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Davidem married Elisabeth McGregor on or after 29 November 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BAIRD; Forename: DAVIDEM; Spouse Surname: MCGREGOR; Spouse Forename: ELISABETH; Date: 29/11/1922; Parish: Airdrie, St Margaret's.\n</ref>",
+    "citation": "Davidem married Elisabeth McGregor on or after 29 November 1922 at St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: BAIRD; Forename: DAVIDEM; Spouse Surname: MCGREGOR; Spouse Forename: ELISABETH; Date: 29/11/1922; Parish: Airdrie, St Margaret's.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Davidem married Elisabeth McGregor on or after 29 November 1922 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BAIRD\n|-\n| Forename || DAVIDEM\n|-\n| Spouse Surname || MCGREGOR\n|-\n| Spouse Forename || ELISABETH\n|-\n| Date || 29/11/1922\n|-\n| Parish || Airdrie, St Margaret's\n|}\n</ref>",
+    "citation": "Davidem married Elisabeth McGregor on or after 29 November 1922 at St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Marriage''':\n\"Catholic Parish Registers - Marriages\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || BAIRD\n|-\n| Forename || DAVIDEM\n|-\n| Spouse Surname || MCGREGOR\n|-\n| Spouse Forename || ELISABETH\n|-\n| Date || 29/11/1922\n|-\n| Parish || Airdrie, St Margaret's\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

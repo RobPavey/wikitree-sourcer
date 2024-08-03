@@ -924,10 +924,13 @@ function getBirthLine(personGd) {
     birthDateString = personGd.getNarrativeDateFormat(birthDateObj, format, highlight, true);
   }
 
-  let birthPlace = personGd.inferBirthPlace();
-  if (birthPlace) {
-    let preposition = StringUtils.getPrepositionForPlaceString(birthPlace);
-    birthPlace = preposition + " " + birthPlace;
+  let birthPlaceObj = personGd.inferBirthPlaceObj();
+  if (birthPlaceObj) {
+    let birthPlace = personGd.inferBirthPlace();
+    if (birthPlace) {
+      let preposition = birthPlaceObj.getPreposition();
+      birthPlace = preposition + " " + birthPlace;
+    }
   }
 
   let parentNames = personGd.inferParentNamesForDataString();
@@ -986,7 +989,7 @@ function getMarriageLines(personGd, nameOrPronoun) {
     let marriagePlaceString = "";
     let marriagePlaceObj = spouse.marriagePlace;
     if (marriagePlaceObj && marriagePlaceObj.placeString) {
-      let preposition = StringUtils.getPrepositionForPlaceString(marriagePlaceObj.placeString);
+      let preposition = marriagePlaceObj.getPreposition();
       marriagePlaceString = preposition + " " + marriagePlaceObj.placeString;
     }
 
@@ -1017,9 +1020,10 @@ function getDeathLine(personGd, nameOrPronoun) {
     deathDateString = personGd.getNarrativeDateFormat(deathDateObj, format, highlight, true);
   }
 
+  let deathPlaceObj = personGd.inferDeathPlaceObj();
   let deathPlace = personGd.inferDeathPlace();
-  if (deathPlace) {
-    let preposition = StringUtils.getPrepositionForPlaceString(deathPlace);
+  if (deathPlaceObj && deathPlace) {
+    let preposition = deathPlaceObj.getPreposition();
     deathPlace = preposition + " " + deathPlace;
   }
 
@@ -1463,9 +1467,10 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
       birthDateString = personGd.getNarrativeDateFormat(birthDateObj, format, highlight, true);
     }
 
+    let birthPlaceObj = personGd.inferBirthPlaceObj();
     let birthPlace = personGd.inferBirthPlace();
-    if (birthPlace) {
-      let preposition = StringUtils.getPrepositionForPlaceString(birthPlace);
+    if (birthPlaceObj && birthPlace) {
+      let preposition = birthPlaceObj.getPreposition();
       birthPlace = preposition + " " + birthPlace;
     }
 

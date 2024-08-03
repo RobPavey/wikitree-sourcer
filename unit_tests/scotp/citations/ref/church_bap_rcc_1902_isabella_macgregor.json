@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Isabella, daughter of Alexander MacGregor & Mary Ellen McGuldrick, was born on 1 July 1902 and baptised on 6 July 1902 in St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Isabella, daughter of Alexander MacGregor & Mary Ellen McGuldrick, was born on 1 July 1902 and baptised on 6 July 1902 at St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nIsabella MacGregor baptism on 6 Jul 1902 (born 1 Jul 1902), daughter of Alexander MacGregor & Mary Ellen McGuldrick, in St Mirin's, Paisley, Renfrewshire, Scotland.\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nIsabella MacGregor baptism on 6 Jul 1902 (born 1 Jul 1902), daughter of Alexander MacGregor & Mary Ellen McGuldrick, at St Mirin's, Paisley, Renfrewshire, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Isabella, daughter of Alexander MacGregor & Mary Ellen McGuldrick, was born on 1 July 1902 and baptised on 6 July 1902 in St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nIsabella MacGregor baptism on 6 Jul 1902 (born 1 Jul 1902), daughter of Alexander MacGregor & Mary Ellen McGuldrick, in St Mirin's, Paisley, Renfrewshire, Scotland.\n</ref>",
+    "citation": "Isabella, daughter of Alexander MacGregor & Mary Ellen McGuldrick, was born on 1 July 1902 and baptised on 6 July 1902 at St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nIsabella MacGregor baptism on 6 Jul 1902 (born 1 Jul 1902), daughter of Alexander MacGregor & Mary Ellen McGuldrick, at St Mirin's, Paisley, Renfrewshire, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Baptism''': \"Catholic Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish: Paisley, St Mirin's<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Isabella MacGregor baptism on 6 Jul 1902 (born 1 Jul 1902), daughter of Alexander MacGregor & Mary Ellen McGuldrick, in St Mirin's, Paisley, Renfrewshire, Scotland.",
+    "citation": "* '''Baptism''': \"Catholic Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish: Paisley, St Mirin's<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Isabella MacGregor baptism on 6 Jul 1902 (born 1 Jul 1902), daughter of Alexander MacGregor & Mary Ellen McGuldrick, at St Mirin's, Paisley, Renfrewshire, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Isabella, daughter of Alexander MacGregor & Mary Ellen McGuldrick, was born on 1 July 1902 and baptised on 6 July 1902 in St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: MACGREGOR; Forename: ISABELLA; Parents/Other Details: ALEXANDER MACGREGOR/MARY ELLEN MCGULDRICK; Gender: Female; Birth Date: 1/7/1902; Baptism Date: 6/7/1902; Parish: Paisley, St Mirin's.\n</ref>",
+    "citation": "Isabella, daughter of Alexander MacGregor & Mary Ellen McGuldrick, was born on 1 July 1902 and baptised on 6 July 1902 at St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: MACGREGOR; Forename: ISABELLA; Parents/Other Details: ALEXANDER MACGREGOR/MARY ELLEN MCGULDRICK; Gender: Female; Birth Date: 1/7/1902; Baptism Date: 6/7/1902; Parish: Paisley, St Mirin's.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Isabella, daughter of Alexander MacGregor & Mary Ellen McGuldrick, was born on 1 July 1902 and baptised on 6 July 1902 in St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || MACGREGOR\n|-\n| Forename || ISABELLA\n|-\n| Parents/Other Details || ALEXANDER MACGREGOR/MARY ELLEN MCGULDRICK\n|-\n| Gender || Female\n|-\n| Birth Date || 1/7/1902\n|-\n| Baptism Date || 6/7/1902\n|-\n| Parish || Paisley, St Mirin's\n|}\n</ref>",
+    "citation": "Isabella, daughter of Alexander MacGregor & Mary Ellen McGuldrick, was born on 1 July 1902 and baptised on 6 July 1902 at St Mirin's, Paisley, Renfrewshire, Scotland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish: Paisley, St Mirin's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || MACGREGOR\n|-\n| Forename || ISABELLA\n|-\n| Parents/Other Details || ALEXANDER MACGREGOR/MARY ELLEN MCGULDRICK\n|-\n| Gender || Female\n|-\n| Birth Date || 1/7/1902\n|-\n| Baptism Date || 6/7/1902\n|-\n| Parish || Paisley, St Mirin's\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

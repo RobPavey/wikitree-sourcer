@@ -1189,7 +1189,7 @@ class NodaEdReader extends ExtractedDataReader {
     }
   }
 
-  makePlaceObjFromLocalPlaceNameAndSourceData(localPlaceName) {
+  makePlaceObjFromLocalPlaceNameAndSourceData(localPlaceName, isStreetAddress = false) {
     let sourceInfoLocalhName = this.getLocalNameFromSourceInformation();
 
     let sourceInfoParishName = this.getParishNameFromSourceInformation();
@@ -1197,7 +1197,7 @@ class NodaEdReader extends ExtractedDataReader {
     let countyName = this.getSourceDataValue("county");
 
     let fullPlaceName = "";
-    if (localPlaceName) {
+    if (localPlaceName && !isStreetAddress) {
       fullPlaceName = localPlaceName;
     }
 
@@ -1236,6 +1236,11 @@ class NodaEdReader extends ExtractedDataReader {
         placeObj.county = countyName;
       }
       placeObj.country = "Norway";
+
+      if (localPlaceName && isStreetAddress) {
+        placeObj.streetAddress = localPlaceName;
+        placeObj.prepositionHint = "at";
+      }
     }
 
     return placeObj;
@@ -1282,18 +1287,18 @@ class NodaEdReader extends ExtractedDataReader {
     let urbanResidence = removeLeadingNumber(getCollectionPart(this, "Urban residence"));
     let ruralResidence = removeLeadingNumber(getCollectionPart(this, "Rural residence"));
 
-    let placeName = "";
+    let localAddress = "";
 
     if (urbanResidence) {
       if (apartment) {
-        placeName += apartment + " ";
+        localAddress += apartment + " ";
       }
-      placeName += urbanResidence;
+      localAddress += urbanResidence;
     } else if (ruralResidence) {
-      placeName += ruralResidence;
+      localAddress += ruralResidence;
     }
 
-    return this.makePlaceObjFromLocalPlaceNameAndSourceData(placeName);
+    return this.makePlaceObjFromLocalPlaceNameAndSourceData(localAddress, true);
   }
 
   makePlaceObjFromAccessors(placeType) {

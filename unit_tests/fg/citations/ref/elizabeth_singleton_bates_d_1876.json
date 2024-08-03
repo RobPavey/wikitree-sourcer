@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Elizabeth was mentioned on a memorial in Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "citation": "Elizabeth was mentioned on a memorial at Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
@@ -16,7 +16,7 @@
     "type": "inline"
   },
   "accessedDate_none_narrative": {
-    "citation": "Elizabeth was mentioned on a memorial in Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}}<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "citation": "Elizabeth was mentioned on a memorial at Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}}<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
     "type": "narrative"
   },
   "accessedDate_none_source": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "accessedDate_parenAfterLink_narrative": {
-    "citation": "Elizabeth was mentioned on a memorial in Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "citation": "Elizabeth was mentioned on a memorial at Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n{{FindAGrave|45398821}} (accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
     "type": "narrative"
   },
   "accessedDate_parenAfterLink_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "accessedDate_parenBeforeLink_narrative": {
-    "citation": "Elizabeth was mentioned on a memorial in Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n({{FindAGrave|45398821}} : accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
+    "citation": "Elizabeth was mentioned on a memorial at Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA with a death date of 1876.<ref>\n'''Memorial''':\nFind a Grave (has image)<br/>\n({{FindAGrave|45398821}} : accessed 6 May 2021)<br/>\nMemorial page for Elizabeth ''Singleton'' Bates (1834-1876), citing Shelby Center Cemetery, Shelby Center, Orleans County, New York, USA; Maintained by Carol Chambers (contributor 47061054).\n</ref>",
     "type": "narrative"
   },
   "accessedDate_parenBeforeLink_source": {

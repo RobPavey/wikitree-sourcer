@@ -1,0 +1,282 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01036754000004",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "1910 census for Volda",
+    "Census districts summary",
+    "001 Yksnøen",
+    "0001 Yksnøy",
+    "002 Anna Nikolaidatter"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 001 Yksnøen",
+      "collectionNameParts": [
+        "Census district",
+        "001 Yksnøen"
+      ]
+    },
+    {
+      "collectionHeading": "Rural residence: 0001 Yksnøy",
+      "collectionNameParts": [
+        "Rural residence",
+        "0001 Yksnøy"
+      ]
+    }
+  ],
+  "heading": "Person: 002 Anna Nikolaidatter",
+  "headingSpanParts": [
+    "Person:",
+    "002"
+  ],
+  "headingTextParts": [
+    "Anna Nikolaidatter"
+  ],
+  "recordData": {
+    "Household no.": {
+      "textString": "01"
+    },
+    "Person no.": {
+      "textString": "002"
+    },
+    "Family position": {
+      "textString": "hm"
+    },
+    "Marital status": {
+      "textString": "g"
+    },
+    "Occupation": {
+      "textString": "Gaardmandskone"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Date of birth": {
+      "textString": "1864-11-28"
+    },
+    "Place of birth": {
+      "textString": "Volden"
+    },
+    "Residential status": {
+      "textString": "b"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information",
+      "Religious community": {
+        "textString": "s"
+      },
+      "Citizenship": {
+        "textString": "n"
+      }
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "personLabel": "001",
+          "personNameParts": [
+            "Knut Knutsen"
+          ],
+          "personHeading": "001 Knut Knutsen",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1874-12-30"
+          },
+          "Place of birth": {
+            "textString": "Volden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "hf"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Gaarbruger og Stenarbeider arbeidende i st. Havnevæsen"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "002",
+          "personNameParts": [
+            "Anna Nikolaidatter"
+          ],
+          "personHeading": "002 Anna Nikolaidatter",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1864-11-28"
+          },
+          "Place of birth": {
+            "textString": "Volden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "hm"
+          },
+          "Marital status": {
+            "textString": "g"
+          },
+          "Occupation": {
+            "textString": "Gaardmandskone"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Nikolai Knutsøn"
+          ],
+          "personHeading": "003 Nikolai Knutsøn",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1896-06-26"
+          },
+          "Place of birth": {
+            "textString": "Volden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Gaardsarbeider"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Sisilia Knutsdatter"
+          ],
+          "personHeading": "004 Sisilia Knutsdatter",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1898-11-16"
+          },
+          "Place of birth": {
+            "textString": "Volden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "d"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Gaardsarbeider"
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Knut Knutsøn"
+          ],
+          "personHeading": "005 Knut Knutsøn",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1903-07-14"
+          },
+          "Place of birth": {
+            "textString": "Volden"
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "hjelper sine søskender"
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Sverre Knutsøn"
+          ],
+          "personHeading": "006 Sverre Knutsøn",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1905-10-23"
+          },
+          "Place of birth": {
+            "textString": "Herø Søndm."
+          },
+          "Residential status": {
+            "textString": "b"
+          },
+          "Family position": {
+            "textString": "s"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "søn"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01036754000004",
+  "sourceInformation": "1910 census for Volda",
+  "sourceData": {
+    "County": {
+      "textString": "Møre og Romsdal"
+    },
+    "Municipality (1947)": {
+      "textString": "Dalsfjord, Volda"
+    },
+    "Geographic area": {
+      "textString": "Volda muni. Sunnmøre bailiwick",
+      "textParts": [
+        "Volda muni.",
+        "Sunnmøre bailiwick"
+      ]
+    },
+    "Start year": {
+      "textString": "1910"
+    },
+    "End year": {
+      "textString": "1910"
+    },
+    "Matr.nr/Gnr": {
+      "textString": "1"
+    },
+    "Løpenr/Bnr": {
+      "textString": "1"
+    }
+  }
+}

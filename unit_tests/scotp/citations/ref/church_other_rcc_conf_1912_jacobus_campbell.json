@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Jacobus was recorded in a church event on 9 October 1912 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Other Church Event''':\n\"Catholic Parish Registers - Other Events\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Jacobus was recorded in a church event on 9 October 1912 at St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Other Church Event''':\n\"Catholic Parish Registers - Other Events\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -16,7 +16,7 @@
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Jacobus was recorded in a church event on 9 October 1912 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Other Church Event''':\n\"Catholic Parish Registers - Other Events\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: CAMPBELL; Forename: JACOBUS; Gender: Male; Event: Confirmation; Event Date: 9/10/1912; Parish: Airdrie, St Margaret's; County/City: Lanark.\n</ref>",
+    "citation": "Jacobus was recorded in a church event on 9 October 1912 at St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Other Church Event''':\n\"Catholic Parish Registers - Other Events\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: CAMPBELL; Forename: JACOBUS; Gender: Male; Event: Confirmation; Event Date: 9/10/1912; Parish: Airdrie, St Margaret's; County/City: Lanark.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "Jacobus was recorded in a church event on 9 October 1912 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Other Church Event''':\n\"Catholic Parish Registers - Other Events\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: CAMPBELL; Forename: JACOBUS; Gender: Male; Event: Confirmation; Event Date: 9/10/1912; Parish: Airdrie, St Margaret's; County/City: Lanark.\n</ref>",
+    "citation": "Jacobus was recorded in a church event on 9 October 1912 at St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Other Church Event''':\n\"Catholic Parish Registers - Other Events\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: CAMPBELL; Forename: JACOBUS; Gender: Male; Event: Confirmation; Event Date: 9/10/1912; Parish: Airdrie, St Margaret's; County/City: Lanark.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "Jacobus was recorded in a church event on 9 October 1912 in St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Other Church Event''':\n\"Catholic Parish Registers - Other Events\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || CAMPBELL\n|-\n| Forename || JACOBUS\n|-\n| Gender || Male\n|-\n| Event || Confirmation\n|-\n| Event Date || 9/10/1912\n|-\n| Parish || Airdrie, St Margaret's\n|-\n| County/City || Lanark\n|}\n</ref>",
+    "citation": "Jacobus was recorded in a church event on 9 October 1912 at St Margaret's, Airdrie, Lanarkshire, Scotland.<ref>\n'''Other Church Event''':\n\"Catholic Parish Registers - Other Events\"<br/>\nNational Records of Scotland, Parish: Airdrie, St Margaret's<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || CAMPBELL\n|-\n| Forename || JACOBUS\n|-\n| Gender || Male\n|-\n| Event || Confirmation\n|-\n| Event Date || 9/10/1912\n|-\n| Parish || Airdrie, St Margaret's\n|-\n| County/City || Lanark\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

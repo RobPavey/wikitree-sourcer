@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1881 census Robert (age 38) was in Cluden Cottages, Irongray, Kircudbright, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1881 census Robert (age 38) was at Cluden Cottages, Irongray, Kircudbright, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nRobert Duncan (38) in Irongray, Kircudbright, Scotland. Born in Carlaverock, Dumfries, Scotland.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nRobert Duncan (38) at Cluden Cottages, Irongray, Kircudbright, Scotland. Born in Carlaverock, Dumfries, Scotland.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "In the 1881 census Robert (age 38) was in Cluden Cottages, Irongray, Kircudbright, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nRobert Duncan (38) in Irongray, Kircudbright, Scotland. Born in Carlaverock, Dumfries, Scotland.\n</ref>",
+    "citation": "In the 1881 census Robert (age 38) was at Cluden Cottages, Irongray, Kircudbright, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nRobert Duncan (38) at Cluden Cottages, Irongray, Kircudbright, Scotland. Born in Carlaverock, Dumfries, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 816525<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Robert Duncan (38) in Irongray, Kircudbright, Scotland. Born in Carlaverock, Dumfries, Scotland.",
+    "citation": "* '''1881 Census''': \"Scotland Census, 1881 (LDS)\"<br/>National Records of Scotland, Ref: 816525<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Robert Duncan (38) at Cluden Cottages, Irongray, Kircudbright, Scotland. Born in Carlaverock, Dumfries, Scotland.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "In the 1881 census Robert (age 38) was in Cluden Cottages, Irongray, Kircudbright, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: DUNCAN; Forename: Robert; Year: 1881; Gender: M; Age at census: 38; Address: Dwelling: Cluden Cottages; Census Place: Irongray, Kircudbright, Scotland; Birth Place: Carlaverock, Dumfries, Scotland.\n</ref>",
+    "citation": "In the 1881 census Robert (age 38) was at Cluden Cottages, Irongray, Kircudbright, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: DUNCAN; Forename: Robert; Year: 1881; Gender: M; Age at census: 38; Address: Dwelling: Cluden Cottages; Census Place: Irongray, Kircudbright, Scotland; Birth Place: Carlaverock, Dumfries, Scotland.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "In the 1881 census Robert (age 38) was in Cluden Cottages, Irongray, Kircudbright, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || DUNCAN\n|-\n| Forename || Robert\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age at census || 38\n|-\n| Address || Dwelling: Cluden Cottages\n|-\n| Census Place || Irongray, Kircudbright, Scotland\n|-\n| Birth Place || Carlaverock, Dumfries, Scotland\n|}\n</ref>",
+    "citation": "In the 1881 census Robert (age 38) was at Cluden Cottages, Irongray, Kircudbright, Scotland.<ref>\n'''1881 Census''':\n\"Scotland Census, 1881 (LDS)\"<br/>\nNational Records of Scotland, Ref: 816525<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || DUNCAN\n|-\n| Forename || Robert\n|-\n| Year || 1881\n|-\n| Gender || M\n|-\n| Age at census || 38\n|-\n| Address || Dwelling: Cluden Cottages\n|-\n| Census Place || Irongray, Kircudbright, Scotland\n|-\n| Birth Place || Carlaverock, Dumfries, Scotland\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
