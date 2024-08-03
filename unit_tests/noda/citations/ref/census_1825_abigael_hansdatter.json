@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1825 Census''':\n\"1825 Census for Skien parish\"<br/>\nCensus district: 000; Urban residence: 0198 !!<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051200001576 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nAbigael Hansdatter (41), Maid, in Skien, Telemark, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1825 census Abigael (age 41), Maid, was in Skien, Telemark, Norway.<ref>\n'''1825 Census''':\n\"1825 Census for Skien parish\"<br/>\nCensus district: 000; Urban residence: 0198 !!<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01051200001576 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nAbigael Hansdatter (41), Maid, in Skien, Telemark, Norway.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1825 Census''': \"1825 Census for Skien parish\"<br/>Census district: 000; Urban residence: 0198 !!<br/>[https://www.digitalarkivet.no/en/census/person/pf01051200001576 Digitalarkivet Record] (accessed 6 May 2021)<br/>Abigael Hansdatter (41), Maid, in Skien, Telemark, Norway.",
+    "type": "source"
+  }
+}

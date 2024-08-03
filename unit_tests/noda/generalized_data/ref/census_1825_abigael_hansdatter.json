@@ -1,0 +1,89 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Abigael Hansdatter"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1825"
+  },
+  "eventPlace": {
+    "placeString": "Skien, Telemark, Norway",
+    "parish": "Skien",
+    "county": "Telemark",
+    "country": "Norway"
+  },
+  "ageAtEvent": "41",
+  "occupation": "Maid",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "occupation",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Hedevig Altenburg",
+      "relationship": "head",
+      "occupation": "Kjøbmandsenke",
+      "age": "63"
+    },
+    {
+      "name": "Christine Altenburg*",
+      "occupation": "ældste Datter",
+      "age": "27"
+    },
+    {
+      "name": "Mariken Altenburg*",
+      "occupation": "anden Datter*",
+      "age": "26"
+    },
+    {
+      "name": "Mari Myhre",
+      "occupation": "Fosterdatter",
+      "age": "12"
+    },
+    {
+      "name": "Jørgen Zachariassen",
+      "occupation": "Handelsbetjent"
+    },
+    {
+      "name": "Mariken Bomhoff",
+      "occupation": "Huusjomfru"
+    },
+    {
+      "name": "Kirstine Catarine Plov",
+      "occupation": "Hendes Slegtning",
+      "age": "65"
+    },
+    {
+      "name": "Christian Pedersen",
+      "occupation": "Brændevinsbrænder",
+      "age": "35"
+    },
+    {
+      "name": "Halvor Olsen",
+      "occupation": "Gaardskarl"
+    },
+    {
+      "name": "Abigael Hansdatter",
+      "occupation": "Maid",
+      "age": "41",
+      "isSelected": true,
+      "gender": "female"
+    },
+    {
+      "name": "Kirsten Madsdatter",
+      "occupation": "Tjenestepige*",
+      "age": "22"
+    },
+    {
+      "name": "Marthe Christophersdatter*",
+      "occupation": "Tjenestepige*",
+      "age": "16"
+    }
+  ],
+  "hasValidData": true
+}

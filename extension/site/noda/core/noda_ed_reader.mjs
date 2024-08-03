@@ -1262,7 +1262,6 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   makePlaceObjForCensus() {
-    let collectionParts = this.ed.collectionParts;
     function removeLeadingNumber(string) {
       if (string) {
         string = string.replace(/^\d[^\s]*/, "");
@@ -1271,31 +1270,41 @@ class NodaEdReader extends ExtractedDataReader {
       return string;
     }
 
-    function getCollectionPart(edReader, collectionPartHeadingKey) {
-      let collectionPartHeading = edReader.getCollectionPartHeading(collectionPartHeadingKey);
-      if (collectionPartHeading) {
-        for (let collectionPart of collectionParts) {
-          if (collectionPart.collectionNameParts && collectionPart.collectionNameParts.length == 2) {
-            if (collectionPart.collectionNameParts[0] == collectionPartHeading) {
-              return collectionPart.collectionNameParts[1];
-            }
-          }
+    function cleanRuralResidence(string) {
+      string = removeLeadingNumber(string);
+      if (string) {
+        if (string.includes("!!")) {
+          return "";
         }
       }
+      return string;
     }
-    let apartment = getCollectionPart(this, "Apartment");
-    let urbanResidence = removeLeadingNumber(getCollectionPart(this, "Urban residence"));
-    let ruralResidence = removeLeadingNumber(getCollectionPart(this, "Rural residence"));
+
+    function cleanUrbanResidence(string) {
+      string = removeLeadingNumber(string);
+      if (string) {
+        if (string.includes("!!")) {
+          return "";
+        }
+      }
+      return string;
+    }
+
+    let urbanResidence = this.getCollectionPart("Urban residence");
+    let ruralResidence = this.getCollectionPart("Rural residence");
 
     let localAddress = "";
 
     if (urbanResidence) {
-      if (apartment) {
-        localAddress += apartment + " ";
+      let cleanedUrbanResidence = cleanUrbanResidence(urbanResidence);
+      if (cleanedUrbanResidence) {
+        localAddress += cleanedUrbanResidence;
       }
-      localAddress += urbanResidence;
     } else if (ruralResidence) {
-      localAddress += ruralResidence;
+      let cleanedRuralResidence = cleanRuralResidence(ruralResidence);
+      if (cleanedRuralResidence) {
+        localAddress += cleanedRuralResidence;
+      }
     }
 
     return this.makePlaceObjFromLocalPlaceNameAndSourceData(localAddress, true);
@@ -1385,6 +1394,21 @@ class NodaEdReader extends ExtractedDataReader {
       return collectionPartHeadingRecord[lang];
     }
     return "";
+  }
+
+  getCollectionPart(collectionPartHeadingKey) {
+    let collectionParts = this.ed.collectionParts;
+
+    let collectionPartHeading = this.getCollectionPartHeading(collectionPartHeadingKey);
+    if (collectionPartHeading) {
+      for (let collectionPart of collectionParts) {
+        if (collectionPart.collectionNameParts && collectionPart.collectionNameParts.length == 2) {
+          if (collectionPart.collectionNameParts[0] == collectionPartHeading) {
+            return collectionPart.collectionNameParts[1];
+          }
+        }
+      }
+    }
   }
 
   getFieldLabels(fieldLabelCode) {
@@ -2421,16 +2445,18 @@ class NodaEdReader extends ExtractedDataReader {
         builder.sourceReference = ed.fileTitle;
       }
     } else if (ed.pageType == "record") {
+      function addField(label, value) {
+        builder.addSourceReferenceField(label, value);
+      }
+
       if (ed.collectionParts) {
         for (let collectionPart of ed.collectionParts) {
           builder.addSourceReferenceText(collectionPart.collectionHeading);
         }
       }
-      builder.addSourceReferenceField("Page", this.getSourceDataValue("page"));
-      builder.addSourceReferenceField("Serial no.", this.getSourceDataValue("serialNumber"));
-      builder.addSourceReferenceField("Farm no.", this.getSourceDataValue("farmNumber"));
-      builder.addSourceReferenceField("Location", this.getSourceDataValue("location"));
-      builder.addSourceReferenceField("Floor", this.getSourceDataValue("floor"));
+
+      addField("Page", this.getSourceDataValue("page"));
+      addField("Serial no.", this.getSourceDataValue("serialNumber"));
     }
   }
 }

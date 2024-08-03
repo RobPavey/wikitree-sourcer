@@ -1,0 +1,291 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01051200001576",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "1825 Census for Skien parish",
+    "Census districts summary",
+    "000",
+    "0198 !!",
+    "010 Abigael Hansdatter"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 000",
+      "collectionNameParts": [
+        "Census district",
+        "000"
+      ]
+    },
+    {
+      "collectionHeading": "Urban residence: 0198 !!",
+      "collectionNameParts": [
+        "Urban residence",
+        "0198 !!"
+      ]
+    }
+  ],
+  "heading": "Person: 010 Abigael Hansdatter",
+  "headingSpanParts": [
+    "Person:",
+    "010"
+  ],
+  "headingTextParts": [
+    "Abigael Hansdatter"
+  ],
+  "recordData": {
+    "Household no.": {
+      "textString": "00"
+    },
+    "Person no.": {
+      "textString": "010"
+    },
+    "Occupation": {
+      "textString": "Tjenestepige"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Age": {
+      "textString": "41"
+    },
+    "Date of birth": {
+      "textString": "1784 (calculated)"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "personLabel": "001",
+          "personNameParts": [
+            "Hedevig Altenburg"
+          ],
+          "personHeading": "001 Hedevig Altenburg",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "63"
+          },
+          "Occupation": {
+            "textString": "Kjøbmandsenke"
+          }
+        },
+        {
+          "personLabel": "002",
+          "personNameParts": [
+            "Christine Altenburg*"
+          ],
+          "personHeading": "002 Christine Altenburg*",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "27"
+          },
+          "Occupation": {
+            "textString": "ældste Datter"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Mariken Altenburg*"
+          ],
+          "personHeading": "003 Mariken Altenburg*",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "26"
+          },
+          "Occupation": {
+            "textString": "anden Datter*"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Mari Myhre"
+          ],
+          "personHeading": "004 Mari Myhre",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "12"
+          },
+          "Occupation": {
+            "textString": "Fosterdatter"
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Jørgen Zachariassen"
+          ],
+          "personHeading": "005 Jørgen Zachariassen",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "20 1/4"
+          },
+          "Occupation": {
+            "textString": "Handelsbetjent"
+          }
+        },
+        {
+          "personLabel": "006",
+          "personNameParts": [
+            "Mariken Bomhoff"
+          ],
+          "personHeading": "006 Mariken Bomhoff",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "20 1/4"
+          },
+          "Occupation": {
+            "textString": "Huusjomfru"
+          }
+        },
+        {
+          "personLabel": "007",
+          "personNameParts": [
+            "Kirstine Catarine Plov"
+          ],
+          "personHeading": "007 Kirstine Catarine Plov",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "65"
+          },
+          "Occupation": {
+            "textString": "Hendes Slegtning"
+          }
+        },
+        {
+          "personLabel": "008",
+          "personNameParts": [
+            "Christian Pedersen"
+          ],
+          "personHeading": "008 Christian Pedersen",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "35"
+          },
+          "Occupation": {
+            "textString": "Brændevinsbrænder"
+          }
+        },
+        {
+          "personLabel": "009",
+          "personNameParts": [
+            "Halvor Olsen"
+          ],
+          "personHeading": "009 Halvor Olsen",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "20 1/4"
+          },
+          "Occupation": {
+            "textString": "Gaardskarl"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "010",
+          "personNameParts": [
+            "Abigael Hansdatter"
+          ],
+          "personHeading": "010 Abigael Hansdatter",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "41"
+          },
+          "Occupation": {
+            "textString": "Tjenestepige"
+          }
+        },
+        {
+          "personLabel": "011",
+          "personNameParts": [
+            "Kirsten Madsdatter"
+          ],
+          "personHeading": "011 Kirsten Madsdatter",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "22"
+          },
+          "Occupation": {
+            "textString": "Tjenestepige*"
+          }
+        },
+        {
+          "personLabel": "012",
+          "personNameParts": [
+            "Marthe Christophersdatter*"
+          ],
+          "personHeading": "012 Marthe Christophersdatter*",
+          "H.no.": {
+            "textString": "00"
+          },
+          "Age/born": {
+            "textString": "16"
+          },
+          "Occupation": {
+            "textString": "Tjenestepige*"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01051200001576",
+  "sourceInformation": "1825 Census for Skien parish",
+  "sourceData": {
+    "County": {
+      "textString": "Telemark"
+    },
+    "Municipality (1947)": {
+      "textString": "Skien"
+    },
+    "Geographic area": {
+      "textString": "Skien parish Skien local parish",
+      "textParts": [
+        "Skien parish",
+        "Skien local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1825"
+    },
+    "End year": {
+      "textString": "1825"
+    },
+    "District": {
+      "textString": "30te Rode i Byen"
+    },
+    "Gårdens nr.": {
+      "textString": "20"
+    }
+  }
+}
