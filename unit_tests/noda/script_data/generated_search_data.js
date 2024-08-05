@@ -199,11 +199,6 @@ const collections = [
     "category": "mt"
   },
   {
-    "value": "sc_kb",
-    "text": "Church books/Parish registers",
-    "category": "kb"
-  },
-  {
     "value": "lt_dp",
     "text": "Born and baptised",
     "category": "kb"
@@ -469,11 +464,6 @@ const collections = [
     "category": "kb"
   },
   {
-    "value": "sc_em",
-    "text": "Emigration records",
-    "category": "em"
-  },
-  {
     "value": "st_EMIP",
     "text": "Emigration register",
     "category": "em"
@@ -497,11 +487,6 @@ const collections = [
     "value": "st_PALI",
     "text": "List of ship passengers",
     "category": "em"
-  },
-  {
-    "value": "sc_sk",
-    "text": "Probate records",
-    "category": "sk"
   },
   {
     "value": "st_SKIK",
@@ -589,11 +574,6 @@ const collections = [
     "category": "sk"
   },
   {
-    "value": "sc_ru",
-    "text": "Seamen rolls and military rolls",
-    "category": "ru"
-  },
-  {
     "value": "st_RULL",
     "text": "Roll",
     "category": "ru"
@@ -674,11 +654,6 @@ const collections = [
     "category": "ru"
   },
   {
-    "value": "sc_el",
-    "text": "School records",
-    "category": "el"
-  },
-  {
     "value": "st_ELEV",
     "text": "Pupil register",
     "category": "el"
@@ -687,11 +662,6 @@ const collections = [
     "value": "st_KARA",
     "text": "School grade register",
     "category": "el"
-  },
-  {
-    "value": "sc_hm",
-    "text": "Health care records",
-    "category": "hm"
   },
   {
     "value": "st_PAPR",
@@ -707,11 +677,6 @@ const collections = [
     "value": "st_VALI",
     "text": "Vaccination records",
     "category": "hm"
-  },
-  {
-    "value": "sc_fv",
-    "text": "Poverty matters",
-    "category": "fv"
   },
   {
     "value": "st_FATL",
@@ -737,11 +702,6 @@ const collections = [
     "value": "st_FVDV",
     "text": "Miscellaneous poverty matters",
     "category": "fv"
-  },
-  {
-    "value": "sc_rs",
-    "text": "Accounts and tax lists",
-    "category": "rs"
   },
   {
     "value": "st_LERE",
@@ -834,11 +794,6 @@ const collections = [
     "category": "rs"
   },
   {
-    "value": "sc_tl",
-    "text": "Deed registration records",
-    "category": "tl"
-  },
-  {
     "value": "st_PREG",
     "text": "Mortgage register",
     "category": "tl"
@@ -852,11 +807,6 @@ const collections = [
     "value": "st_UTSK",
     "text": "Register of land consolidation (utskiftningsregister)",
     "category": "tl"
-  },
-  {
-    "value": "sc_ma",
-    "text": "Landed property tax records",
-    "category": "ma"
   },
   {
     "value": "st_MATR",
@@ -874,19 +824,9 @@ const collections = [
     "category": "ma"
   },
   {
-    "value": "sc_as",
-    "text": "Insurance records",
-    "category": "as"
-  },
-  {
     "value": "st_BRTA",
     "text": "Fire assessment documents",
     "category": "as"
-  },
-  {
-    "value": "sc_rg",
-    "text": "Legal proceedings and sanctions",
-    "category": "rg"
   },
   {
     "value": "st_TBOK",
@@ -1014,11 +954,6 @@ const collections = [
     "category": "rg"
   },
   {
-    "value": "sc_ga",
-    "text": "Clerical archives",
-    "category": "ga"
-  },
-  {
     "value": "st_EKTE",
     "text": "Marriage licences",
     "category": "ga"
@@ -1049,11 +984,6 @@ const collections = [
     "category": "ga"
   },
   {
-    "value": "sc_sm",
-    "text": "Transport records",
-    "category": "sm"
-  },
-  {
     "value": "st_SMPR",
     "text": "Driving licence records",
     "category": "sm"
@@ -1077,11 +1007,6 @@ const collections = [
     "value": "st_SKSS",
     "text": "Shuttle",
     "category": "sm"
-  },
-  {
-    "value": "sc_db",
-    "text": "Miscellaneous sources",
-    "category": "db"
   },
   {
     "value": "st_FULL",

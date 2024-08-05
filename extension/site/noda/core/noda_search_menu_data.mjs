@@ -23,46 +23,35 @@ SOFTWARE.
 */
 
 import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
+import { getRegions, getCounties, getPlaces } from "./noda_places.mjs";
 
-function buildSelectValuesForPlaces(generalizedData) {
+function buildSelectValuesForRegionsCountiesOrPlaces(valueArray) {
   let values = [];
 
-  function addValue(valueString) {
-    if (valueString) {
-      let value = { value: valueString, text: valueString };
-      if (!values.some((entry) => entry.value === valueString)) {
-        values.push(value);
+  function addValue(value, text) {
+    if (value && text) {
+      let valueObj = { value: value, text: text };
+      if (!values.some((entry) => entry.value === value)) {
+        values.push(valueObj);
       }
     }
   }
 
-  addValue("<none>");
+  addValue("all", "All");
 
-  let placeNames = generalizedData.inferPlaceNames();
-  for (let placeName of placeNames) {
-    let place = new PlaceObj();
-    place.placeString = placeName;
-    let placeParts = place.separatePlaceIntoParts();
+  for (let valueObj of valueArray) {
+    addValue(valueObj.code, valueObj.name);
+  }
 
-    if (placeParts.localPlace) {
-      let localPlace = placeParts.localPlace;
-      const commaIndex = localPlace.indexOf(",");
-      if (commaIndex != -1) {
-        localPlace = localPlace.substring(0, commaIndex).trim();
-      }
-      addValue(localPlace);
+  // sort alphabetically
+  let sortedList = values.sort(function (a, b) {
+    if (a.text < b.text) {
+      return -1;
     }
-  }
+    return +1;
+  });
 
-  if (generalizedData.collectionData) {
-    addValue(generalizedData.collectionData.documentPlace);
-    addValue(generalizedData.collectionData.place);
-  }
-
-  //console.log("buildSelectValuesForPlace: values is:");
-  //console.log(values);
-
-  return values;
+  return sortedList;
 }
 
 const categories = [
@@ -264,11 +253,6 @@ const collections = [
     value: "jt_42",
     text: "Uncategorised male censuses",
     category: "mt",
-  },
-  {
-    value: "sc_kb",
-    text: "Church books/Parish registers",
-    category: "kb",
   },
   {
     value: "lt_dp",
@@ -536,11 +520,6 @@ const collections = [
     category: "kb",
   },
   {
-    value: "sc_em",
-    text: "Emigration records",
-    category: "em",
-  },
-  {
     value: "st_EMIP",
     text: "Emigration register",
     category: "em",
@@ -564,11 +543,6 @@ const collections = [
     value: "st_PALI",
     text: "List of ship passengers",
     category: "em",
-  },
-  {
-    value: "sc_sk",
-    text: "Probate records",
-    category: "sk",
   },
   {
     value: "st_SKIK",
@@ -656,11 +630,6 @@ const collections = [
     category: "sk",
   },
   {
-    value: "sc_ru",
-    text: "Seamen rolls and military rolls",
-    category: "ru",
-  },
-  {
     value: "st_RULL",
     text: "Roll",
     category: "ru",
@@ -741,11 +710,6 @@ const collections = [
     category: "ru",
   },
   {
-    value: "sc_el",
-    text: "School records",
-    category: "el",
-  },
-  {
     value: "st_ELEV",
     text: "Pupil register",
     category: "el",
@@ -754,11 +718,6 @@ const collections = [
     value: "st_KARA",
     text: "School grade register",
     category: "el",
-  },
-  {
-    value: "sc_hm",
-    text: "Health care records",
-    category: "hm",
   },
   {
     value: "st_PAPR",
@@ -774,11 +733,6 @@ const collections = [
     value: "st_VALI",
     text: "Vaccination records",
     category: "hm",
-  },
-  {
-    value: "sc_fv",
-    text: "Poverty matters",
-    category: "fv",
   },
   {
     value: "st_FATL",
@@ -804,11 +758,6 @@ const collections = [
     value: "st_FVDV",
     text: "Miscellaneous poverty matters",
     category: "fv",
-  },
-  {
-    value: "sc_rs",
-    text: "Accounts and tax lists",
-    category: "rs",
   },
   {
     value: "st_LERE",
@@ -901,11 +850,6 @@ const collections = [
     category: "rs",
   },
   {
-    value: "sc_tl",
-    text: "Deed registration records",
-    category: "tl",
-  },
-  {
     value: "st_PREG",
     text: "Mortgage register",
     category: "tl",
@@ -919,11 +863,6 @@ const collections = [
     value: "st_UTSK",
     text: "Register of land consolidation (utskiftningsregister)",
     category: "tl",
-  },
-  {
-    value: "sc_ma",
-    text: "Landed property tax records",
-    category: "ma",
   },
   {
     value: "st_MATR",
@@ -941,19 +880,9 @@ const collections = [
     category: "ma",
   },
   {
-    value: "sc_as",
-    text: "Insurance records",
-    category: "as",
-  },
-  {
     value: "st_BRTA",
     text: "Fire assessment documents",
     category: "as",
-  },
-  {
-    value: "sc_rg",
-    text: "Legal proceedings and sanctions",
-    category: "rg",
   },
   {
     value: "st_TBOK",
@@ -1081,11 +1010,6 @@ const collections = [
     category: "rg",
   },
   {
-    value: "sc_ga",
-    text: "Clerical archives",
-    category: "ga",
-  },
-  {
     value: "st_EKTE",
     text: "Marriage licences",
     category: "ga",
@@ -1116,11 +1040,6 @@ const collections = [
     category: "ga",
   },
   {
-    value: "sc_sm",
-    text: "Transport records",
-    category: "sm",
-  },
-  {
     value: "st_SMPR",
     text: "Driving licence records",
     category: "sm",
@@ -1144,11 +1063,6 @@ const collections = [
     value: "st_SKSS",
     text: "Shuttle",
     category: "sm",
-  },
-  {
-    value: "sc_db",
-    text: "Miscellaneous sources",
-    category: "db",
   },
   {
     value: "st_FULL",
@@ -1462,14 +1376,69 @@ const NodaData = {
   getAdditionalControls(generalizedData, parameters, options) {
     let controls = [];
 
-    let placeValues = buildSelectValuesForPlaces(generalizedData);
+    console.log("getAdditionalControls, parameters = ");
+    console.log(parameters);
 
+    // source period ?
+
+    // place
+
+    // role?
+
+    // birth year?
+
+    // birth place ?
+
+    // family position and marital status ?
+
+    // event date?
+
+    // related person
+
+    // place
+    function updateOnPlaceChangeFunction(parameterName, parameters, options) {
+      if (parameterName == "region") {
+        parameters.county = "all";
+        parameters.place = "all";
+      } else if (parameterName == "county") {
+        parameters.place = "all";
+      }
+    }
+
+    let regions = getRegions();
+    let regionValues = buildSelectValuesForRegionsCountiesOrPlaces(regions);
+    if (regionValues && regionValues.length > 0) {
+      let placeControl = {};
+      placeControl.elementId = "region";
+      placeControl.parameterName = "region";
+      placeControl.type = "select";
+      placeControl.label = "Region";
+      placeControl.values = regionValues;
+      placeControl.updateOnChangeFunction = updateOnPlaceChangeFunction;
+      controls.push(placeControl);
+    }
+
+    let counties = getCounties(parameters.region);
+    let countyValues = buildSelectValuesForRegionsCountiesOrPlaces(counties);
+    if (countyValues && countyValues.length > 0) {
+      let placeControl = {};
+      placeControl.elementId = "county";
+      placeControl.parameterName = "county";
+      placeControl.type = "select";
+      placeControl.label = "County";
+      placeControl.values = countyValues;
+      placeControl.updateOnChangeFunction = updateOnPlaceChangeFunction;
+      controls.push(placeControl);
+    }
+
+    let places = getPlaces(parameters.region, parameters.county);
+    let placeValues = buildSelectValuesForRegionsCountiesOrPlaces(places);
     if (placeValues && placeValues.length > 0) {
       let placeControl = {};
       placeControl.elementId = "place";
       placeControl.parameterName = "place";
       placeControl.type = "select";
-      placeControl.label = "Place to use in search";
+      placeControl.label = "Place";
       placeControl.values = placeValues;
       controls.push(placeControl);
     }
@@ -1478,7 +1447,9 @@ const NodaData = {
   },
 
   setDefaultSearchParameters: function (generalizedData, parameters, options) {
-    parameters.place = "<none>";
+    parameters.region = "all";
+    parameters.county = "all";
+    parameters.place = "all";
   },
 
   updateParametersOnCategoryChange: function (generalizedData, parameters, options) {
@@ -1487,6 +1458,8 @@ const NodaData = {
       parameters.collection = collections[0].value;
     }
   },
+
+  updateParametersOnCollectionChange: function (generalizedData, parameters, options) {},
 };
 
 export { NodaData };

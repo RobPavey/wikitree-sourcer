@@ -402,6 +402,10 @@ async function createSearchData() {
     }
 
     for (let collectionListItem of collectionListItems) {
+      if (collectionListItem.classList.contains("select-all")) {
+        continue;
+      }
+
       let input = collectionListItem.querySelector("label > input");
       let span = collectionListItem.querySelector("label > span");
       if (!input) {

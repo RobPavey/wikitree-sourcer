@@ -3842,6 +3842,7 @@ function lookupPlaceObj(placeObj) {
     for (let region of regions) {
       for (let county of region.counties) {
         if (county.name == countyName) {
+          result.region = region;
           result.county = county;
           for (let place of county.places) {
             if (place.name == placeName) {
@@ -3860,6 +3861,8 @@ function lookupPlaceObj(placeObj) {
       for (let county of region.counties) {
         for (let place of county.places) {
           if (place.name == placeName) {
+            result.region = region;
+            result.county = county;
             result.place = place;
             break;
           }
@@ -3874,4 +3877,36 @@ function lookupPlaceObj(placeObj) {
   return result;
 }
 
-export { lookupPlaceObj };
+function getRegions() {
+  return regions;
+}
+
+function getCounties(regionCode) {
+  let counties = [];
+  for (let region of regions) {
+    if (regionCode == "all" || region.code == regionCode) {
+      for (let county of region.counties) {
+        counties.push(county);
+      }
+    }
+  }
+  return counties;
+}
+
+function getPlaces(regionCode, countyCode) {
+  let places = [];
+  for (let region of regions) {
+    if (regionCode == "all" || region.code == regionCode) {
+      for (let county of region.counties) {
+        if (countyCode == "all" || county.code == countyCode) {
+          for (let place of county.places) {
+            places.push(place);
+          }
+        }
+      }
+    }
+  }
+  return places;
+}
+
+export { lookupPlaceObj, getRegions, getCounties, getPlaces };

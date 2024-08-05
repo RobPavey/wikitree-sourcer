@@ -113,6 +113,11 @@ class NodaUriBuilder {
     this.addSearchParameter("birth_place", string);
   }
 
+  addRole(string) {
+    // &roles%5B%5D=barn
+    this.addSearchParameter("roles[]", string);
+  }
+
   addRelatedPerson(firstName, lastName, role, birthYear) {
     // &related_first_name=Lars&related_last_name=Knutsen&related_birth_year=&related_roles%5B%5D=far
     this.addSearchParameter("related_first_name", firstName);
@@ -135,14 +140,18 @@ class NodaUriBuilder {
     // input string is something like "lt_dp" and we want to add something like
     // "&lt%5B%5D=dp" to URL
     let parts = string.split("_");
-    if (parts.length != 2) {
-      return;
+    if (parts.length == 2) {
+      let parameter = parts[0] + "[]";
+      let value = parts[1];
+
+      this.addSearchParameter(parameter, value);
+    } else if (parts.length == 1) {
+      // this is a category rather than a collection. We want something like
+      //&sc%5B%5D=kb
+      let parameter = "sc[]";
+      let value = parts[0];
+      this.addSearchParameter(parameter, value);
     }
-
-    let parameter = parts[0] + "[]";
-    let value = parts[1];
-
-    this.addSearchParameter(parameter, value);
   }
 
   addPlace(placeCode) {
@@ -153,6 +162,12 @@ class NodaUriBuilder {
     // &c%5B%5D=12
     this.addSearchParameter("c[]", countyCode);
   }
+
+  addRegion(regionCode) {
+    // &r%5B%5D=2
+    this.addSearchParameter("r[]", regionCode);
+  }
+
   getUri() {
     return this.uri;
   }

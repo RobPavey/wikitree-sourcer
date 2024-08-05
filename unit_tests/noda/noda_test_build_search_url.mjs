@@ -55,6 +55,27 @@ const regressionData = [
         variantName: "sameCollection",
         typeOfSearch: "SameCollection",
       },
+      {
+        variantName: "specifiedParametersCategory",
+        typeOfSearch: "SpecifiedParameters",
+        searchParameters: {
+          category: "kb",
+        },
+      },
+      {
+        variantName: "specifiedParametersRegion",
+        typeOfSearch: "SpecifiedParameters",
+        searchParameters: {
+          region: "3",
+        },
+      },
+      {
+        variantName: "specifiedParametersPlace",
+        typeOfSearch: "SpecifiedParameters",
+        searchParameters: {
+          place: "0124",
+        },
+      },
     ],
   },
 ];

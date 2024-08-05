@@ -59,6 +59,20 @@ function addEventPlace(builder, gd) {
   }
 }
 
+function addEventDate(builder, gd) {
+  // add event date if known
+  let eventDateObj = gd.inferEventDateObj();
+  if (eventDateObj) {
+    let dateString = eventDateObj.getDateString();
+    if (dateString) {
+      let parsedDate = DateUtils.parseDateString(dateString);
+      if (parsedDate.isValid) {
+        builder.addEventDate(parsedDate.yearNum, parsedDate.monthNum, parsedDate.dayNum);
+      }
+    }
+  }
+}
+
 function addRelatedPerson(builder, gd) {
   // add a related person if known
   let addedRelatedPerson = false;
@@ -77,9 +91,9 @@ function addRelatedPerson(builder, gd) {
     if (spouse.name) {
       let firstName = spouse.name.inferForenames();
       let lastName = spouse.name.inferLastName();
-      if (this.personGender == "male") {
+      if (gd.personGender == "male") {
         builder.addRelatedPerson(firstName, lastName, "brud");
-      } else if (this.personGender == "female") {
+      } else if (gd.personGender == "female") {
         builder.addRelatedPerson(firstName, lastName, "brudgom");
       }
     }
@@ -95,14 +109,19 @@ function addRelatedPerson(builder, gd) {
   }
 }
 
-function buildSearchUrl(buildUrlInput) {
-  const gd = buildUrlInput.generalizedData;
-  let options = buildUrlInput.options;
-  let typeOfSearch = buildUrlInput.typeOfSearch;
+function addRole(builder, gd) {
+  if (gd.role && gd.role != Role.Primary) {
+    if (gd.role == Role.Parent) {
+      if (gd.personGender == "male") {
+        builder.addRole("far");
+      } else if (gd.personGender == "female") {
+        builder.addRole("mor");
+      }
+    }
+  }
+}
 
-  var builder = new NodaUriBuilder();
-
-  // call methods on builder here
+function addNames(builder, gd) {
   let forenames = gd.inferForenames();
   builder.addFirstName(forenames);
 
@@ -117,6 +136,61 @@ function buildSearchUrl(buildUrlInput) {
       builder.addLastName(lastNames);
     }
   }
+}
+
+function addSourcePeriod(builder, gd, options) {
+  let sourcePeriodExactness = options.search_noda_sourcePeriodExactness;
+
+  let exactness = sourcePeriodExactness;
+  if (exactness == "exact") {
+    exactness = 0;
+  } else {
+    exactness = Number(exactness);
+  }
+  let dateRange = gd.inferPossibleLifeYearRange(undefined, undefined, exactness);
+  builder.addStartYear(dateRange.startYear);
+  builder.addEndYear(dateRange.endYear);
+}
+
+function addBirth(builder, gd, options) {
+  let birthYearExactness = options.search_noda_birthYearExactness;
+  let useExactBirthYear = options.search_noda_useExactBirthDate;
+
+  let birthDate = gd.inferBirthDate();
+  let parsedDate = DateUtils.parseDateString(birthDate);
+  if (parsedDate && parsedDate.hasMonth && useExactBirthYear) {
+    builder.addBirthDate(parsedDate.yearNum, parsedDate.monthNum, parsedDate.dayNum);
+  } else {
+    let exactness = birthYearExactness;
+    if (exactness == "exact") {
+      exactness = 0;
+    } else {
+      exactness = Number(exactness);
+    }
+    let birthYear = gd.inferBirthYear();
+    let yearNum = Number(birthYear);
+    if (yearNum && !isNaN(yearNum)) {
+      if (!isNaN(yearNum)) {
+        let startYear = yearNum - exactness;
+        let endYear = yearNum + exactness;
+        builder.addBirthYearRange(startYear, endYear);
+      } else {
+        builder.addBirthDate(birthYear);
+      }
+    }
+  }
+}
+
+function buildSearchUrl(buildUrlInput) {
+  const gd = buildUrlInput.generalizedData;
+  let options = buildUrlInput.options;
+  let typeOfSearch = buildUrlInput.typeOfSearch;
+
+  var builder = new NodaUriBuilder();
+
+  // call methods on builder here
+
+  addNames(builder, gd);
 
   let gender = gd.personGender;
   builder.addGender(gender);
@@ -151,12 +225,15 @@ function buildSearchUrl(buildUrlInput) {
     }
   } else if (typeOfSearch == "SpecifiedParameters") {
     parameters = buildUrlInput.searchParameters;
+    if (parameters.collection && parameters.collection != "all") {
+      builder.addCategory(parameters.collection);
+    } else if (parameters.category && parameters.category != "all") {
+      builder.addCategory(parameters.category);
+    }
   }
 
   let sourcePeriodOption = options.search_noda_includeSourcePeriod;
-  let sourcePeriodExactness = options.search_noda_sourcePeriodExactness;
   let birthYearExactness = options.search_noda_birthYearExactness;
-  let useExactBirthYear = options.search_noda_useExactBirthDate;
 
   let birthDate = gd.inferBirthDate();
 
@@ -166,60 +243,28 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   if (sourcePeriodOption == "always" || (sourcePeriodOption == "ifNoBirth" && !useBirth)) {
-    let exactness = sourcePeriodExactness;
-    if (exactness == "exact") {
-      exactness = 0;
-    } else {
-      exactness = Number(exactness);
-    }
-    let dateRange = gd.inferPossibleLifeYearRange(undefined, undefined, exactness);
-    builder.addStartYear(dateRange.startYear);
-    builder.addEndYear(dateRange.endYear);
+    addSourcePeriod(builder, gd, options);
   }
 
   if (useBirth) {
-    let parsedDate = DateUtils.parseDateString(birthDate);
-    if (parsedDate && parsedDate.hasMonth && useExactBirthYear) {
-      builder.addBirthDate(parsedDate.yearNum, parsedDate.monthNum, parsedDate.dayNum);
-    } else {
-      let exactness = birthYearExactness;
-      if (exactness == "exact") {
-        exactness = 0;
-      } else {
-        exactness = Number(exactness);
-      }
-      let birthYear = gd.inferBirthYear();
-      let yearNum = Number(birthYear);
-      if (yearNum && !isNaN(yearNum)) {
-        if (!isNaN(yearNum)) {
-          let startYear = yearNum - exactness;
-          let endYear = yearNum + exactness;
-          builder.addBirthYearRange(startYear, endYear);
-        } else {
-          builder.addBirthDate(birthYear);
-        }
-      }
-    }
+    addBirth(builder, gd, options);
   }
 
   if (sameCollection) {
     // add a place if known
     addEventPlace(builder, gd);
-
-    // add event date if known
-    let eventDateObj = gd.inferEventDateObj();
-    if (eventDateObj) {
-      let dateString = eventDateObj.getDateString();
-      if (dateString) {
-        let parsedDate = DateUtils.parseDateString(dateString);
-        if (parsedDate.isValid) {
-          builder.addEventDate(parsedDate.yearNum, parsedDate.monthNum, parsedDate.dayNum);
-        }
-      }
-    }
-
+    addEventDate(builder, gd);
     // add a related person if known
     addRelatedPerson(builder, gd);
+    addRole(builder, gd);
+  } else if (parameters) {
+    if (parameters.place && parameters.place != "all") {
+      builder.addPlace(parameters.place);
+    } else if (parameters.county && parameters.county != "all") {
+      builder.addCounty(parameters.county);
+    } else if (parameters.region && parameters.region != "all") {
+      builder.addRegion(parameters.region);
+    }
   }
 
   /*
