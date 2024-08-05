@@ -73,6 +73,7 @@ const eventTypes = [
     eventDate: [{ type: "yearAndMmDd", section: "panel", keys: ["baptismDate"] }],
     eventPlace: [{ section: "panel", keys: ["baptismPlace"] }],
     primaryRole: Role.Child,
+    collectionId: "lt_dp",
   },
   {
     recordType: RT.Burial,
@@ -2413,7 +2414,18 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
-    return undefined;
+    let collectionId = "";
+    if (this.eventType && this.eventType.collectionId) {
+      collectionId = this.eventType.collectionId;
+    }
+
+    if (collectionId) {
+      let collectionData = {
+        id: collectionId,
+      };
+
+      return collectionData;
+    }
   }
 
   setCustomFields(gd) {

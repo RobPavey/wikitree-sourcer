@@ -1,0 +1,27 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/51567:1345?tid=&pid=&queryId=624e4f97-6cdd-4d62-abb4-cf826c2718f9&_phsrc=Zqm11463&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "1345",
+  "recordId": "51567",
+  "ancestryTemplate": "{{Ancestry Record|1345|51567}}",
+  "domain": "com",
+  "titleName": "Knud",
+  "titleCollection": "Norway, Births and Christenings, 1648-1903",
+  "recordData": {
+    "Name": "Knud",
+    "Gender": "Male",
+    "Christening Age": "0",
+    "Birth Date": "31. jan 1889 (31 Jan 1889)",
+    "Christening Date": "24. feb 1889 (24 Feb 1889)",
+    "Christening Place": "Voss, Hordaland, Norway",
+    "Father": "Lars Knudsen",
+    "Mother": "Martha Knudsdr"
+  },
+  "linkData": {
+    "Father": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1345&h=150051567&indiv=try&viewrecord=1&r=an",
+    "Mother": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=1345&h=300051567&indiv=try&viewrecord=1&r=an"
+  },
+  "sourceInformation": "Ancestry.com. Norway, Births and Christenings, 1648-1903 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2008. Original data: Genealogical Society of Utah. Western Europe Vital Records Index. Salt Lake City, Utah: Intellectual Reserve, copyright 2000. Used by permission.",
+  "originalData": "Genealogical Society of Utah. Western Europe Vital Records Index. Salt Lake City, Utah: Intellectual Reserve, copyright 2000. Used by permission.",
+  "sourceDescription": "This database contains information extracted from birth and christening records from selected localities in Norway. Learn more..."
+}

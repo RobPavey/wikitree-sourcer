@@ -254,7 +254,10 @@ function setNames(ed, result) {
   extractNameParts(ed, fullName, nameObj);
 
   if (!maidenName) {
-    result.lastNameAtDeath = result.inferLastName();
+    let lastName = result.inferLastName();
+    if (lastName) {
+      result.lastNameAtDeath = lastName;
+    }
   } else {
     result.lastNameAtBirth = maidenName;
     if (result.name.lastName) {

@@ -1,0 +1,8 @@
+{
+  "std": {
+    "url": "https://www.digitalarkivet.no/en/search/persons/advanced?firstname=Knud&genders%5B%5D=m&birth_year_from=1889&birth_year_to=1889&birth_date=1-31"
+  },
+  "sameCollection": {
+    "url": "https://www.digitalarkivet.no/en/search/persons/advanced?firstname=Knud&genders%5B%5D=m&lt[]=dp&birth_year_from=1889&birth_year_to=1889&birth_date=1-31&m[]=1235&event_year_from=1889&event_year_to=1889&event_date=2-24&related_first_name=Lars&related_last_name=Knudsen&related_roles[]=far"
+  }
+}

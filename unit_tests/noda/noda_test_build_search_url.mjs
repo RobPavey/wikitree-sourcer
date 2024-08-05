@@ -46,6 +46,17 @@ const regressionData = [
       },
     ],
   },
+  {
+    caseName: "ancestry_norway_baptism_1889_knud",
+    inputPath: "ancestry/generalized_data/ref/norway_baptism_1889_knud",
+    typeOfSearch: "",
+    optionVariants: [
+      {
+        variantName: "sameCollection",
+        typeOfSearch: "SameCollection",
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {

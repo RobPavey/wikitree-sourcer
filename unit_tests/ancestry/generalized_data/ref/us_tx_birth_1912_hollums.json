@@ -3,7 +3,8 @@
   "recordType": "Birth",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "Hollums"
+    "name": "Hollums",
+    "lastName": "Hollums"
   },
   "personGender": "male",
   "eventDate": {

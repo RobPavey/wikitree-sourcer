@@ -113,14 +113,46 @@ class NodaUriBuilder {
     this.addSearchParameter("birth_place", string);
   }
 
-  addRelatedLastName(string) {
-    this.addSearchParameter("related_last_name", string);
+  addRelatedPerson(firstName, lastName, role, birthYear) {
+    // &related_first_name=Lars&related_last_name=Knutsen&related_birth_year=&related_roles%5B%5D=far
+    this.addSearchParameter("related_first_name", firstName);
+    this.addSearchParameter("related_last_name", lastName);
+    this.addSearchParameter("related_birth_year", birthYear);
+    this.addSearchParameter("related_roles[]", role);
   }
 
-  addRelatedFirstName(string) {
-    this.addSearchParameter("related_first_name", string);
+  addEventDate(year, month, day) {
+    if (year) {
+      this.addSearchParameter("event_year_from", year);
+      this.addSearchParameter("event_year_to", year);
+    }
+    if (month && day) {
+      this.addSearchParameter("event_date", month + "-" + day);
+    }
   }
 
+  addCategory(string) {
+    // input string is something like "lt_dp" and we want to add something like
+    // "&lt%5B%5D=dp" to URL
+    let parts = string.split("_");
+    if (parts.length != 2) {
+      return;
+    }
+
+    let parameter = parts[0] + "[]";
+    let value = parts[1];
+
+    this.addSearchParameter(parameter, value);
+  }
+
+  addPlace(placeCode) {
+    this.addSearchParameter("m[]", placeCode);
+  }
+
+  addCounty(countyCode) {
+    // &c%5B%5D=12
+    this.addSearchParameter("c[]", countyCode);
+  }
   getUri() {
     return this.uri;
   }

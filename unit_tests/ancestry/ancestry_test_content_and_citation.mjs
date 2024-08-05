@@ -716,6 +716,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/6407416:2534",
   },
   {
+    caseName: "norway_baptism_1889_knud",
+    url: "https://www.ancestry.com/discoveryui-content/view/51567:1345?tid=&pid=&queryId=624e4f97-6cdd-4d62-abb4-cf826c2718f9&_phsrc=Zqm11463&_phstart=successSource",
+  },
+  {
     caseName: "nz_birth_1912_jean_mcclimont",
     url: "https://www.ancestry.com.au/discoveryui-content/view/1158632:8949",
   },

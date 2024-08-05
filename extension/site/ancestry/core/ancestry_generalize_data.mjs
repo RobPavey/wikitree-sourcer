@@ -33,6 +33,7 @@ import {
 import { RC } from "../../../base/core/record_collections.mjs";
 import { RT, RecordSubtype, Role } from "../../../base/core/record_type.mjs";
 import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 function cleanName(name) {
   // currently all cleaning we need is done in generalize_data_utils
@@ -80,6 +81,7 @@ const recordTypeByFields = [
   },
   { type: RT.Marriage, labels: ["License Date", "License Place", "Spouse"] },
   { type: RT.Baptism, labels: ["Baptism Date", "Baptism Place"] },
+  { type: RT.Baptism, labels: ["Christening Date", "Christening Place"] },
   { type: RT.Burial, labels: ["Burial Date", "Burial Place"] },
   { type: RT.Burial, labels: ["Burial Year", "Burial Place"] },
   { type: RT.Burial, labels: ["Death Date", "Burial Place"] },
@@ -137,7 +139,7 @@ function determineRecordType(extractedData) {
     {
       type: RT.Baptism,
       matches: ["Births and Christenings", "Births and Baptisms", "Church of England Baptisms", "Baptism Index"],
-      requiredData: [["Baptism Date"]],
+      requiredData: [["Baptism Date"], ["Christening Date"]],
     },
     {
       type: RT.Birth,
@@ -2331,6 +2333,42 @@ function generalizeDataGivenRecordType(ed, result) {
     let ageAtEvent = getCleanValueForRecordDataList(ed, ["Age", "Departure Age", "Arrival Age", "Examination Age"]);
     if (ageAtEvent) {
       result.ageAtEvent = ageAtEvent;
+    }
+  }
+
+  if (result.name && result.name.name && !result.name.lastName) {
+    // Check for a single word name. We may need to use knowledge of record type to
+    // determine whether it is a first name or last name
+    let numWordsInName = StringUtils.countWords(result.name.name);
+    if (numWordsInName == 1) {
+      // It is s single word name. GD assumes that this is first name
+      // But sometimes a birth is registered with just the last name if the child has
+      // not been named yet
+      let nameString = result.name.name;
+      let shouldBeLastName = false;
+      if (result.recordType == RT.Birth) {
+        if (result.parents) {
+          if (result.parents.father && result.parents.father.name) {
+            let fatherLastName = result.parents.father.name.inferLastName();
+            if (fatherLastName == nameString) {
+              shouldBeLastName = true;
+            }
+          }
+          if (!shouldBeLastName && result.parents.mother && result.parents.mother.name) {
+            let motherLastName = result.parents.mother.name.inferLastName();
+            if (motherLastName == nameString) {
+              shouldBeLastName = true;
+            }
+          }
+        }
+        if (shouldBeLastName) {
+          result.lastNameAtBirth = nameString;
+        }
+      }
+
+      if (shouldBeLastName) {
+        result.name.lastName = nameString;
+      }
     }
   }
 }

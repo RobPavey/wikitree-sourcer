@@ -23,11 +23,82 @@ SOFTWARE.
 */
 
 import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { RC } from "../../../base/core/record_collections.mjs";
+import { RT, Role } from "../../../base/core/record_type.mjs";
+
 import { NodaUriBuilder } from "./noda_uri_builder.mjs";
+import { lookupPlaceObj } from "./noda_places.mjs";
+
+function addEventPlace(builder, gd) {
+  // add a place if known
+  // https://www.digitalarkivet.no/en/search/persons/advanced?
+  // from=1766&to=2010
+  // &sc%5B%5D=kb
+  // &c%5B%5D=12
+  // &firstname=Knut&lastname=
+  // &genders%5B%5D=m
+  // &birth_year_from=&birth_year_to=&birth_date=&birth_place=
+  // &domicile=&position=
+  // &event_year_from=1888&event_year_to=1888&event_date=4-22
+  // &related_first_name=Lars&related_last_name=Knutsen&related_birth_year=&related_roles%5B%5D=far&related_roles%5B%5D=mor&sort=rel
+  let eventPlaceObj = gd.inferEventPlaceObj();
+  if (!eventPlaceObj) {
+    return;
+  }
+
+  let placeData = lookupPlaceObj(gd.inferEventPlaceObj());
+
+  if (placeData.place) {
+    builder.addPlace(placeData.place.code);
+    return;
+  }
+
+  if (placeData.county) {
+    builder.addCounty(placeData.county.code);
+    return;
+  }
+}
+
+function addRelatedPerson(builder, gd) {
+  // add a related person if known
+  let addedRelatedPerson = false;
+  if (gd.parents) {
+    let parentNames = gd.inferParentForenamesAndLastName();
+    if (parentNames.fatherForenames && parentNames.fatherLastName) {
+      builder.addRelatedPerson(parentNames.fatherForenames, parentNames.fatherLastName, "far");
+      addedRelatedPerson = true;
+    } else if (parentNames.motherForenames && parentNames.motherLastName) {
+      builder.addRelatedPerson(parentNames.motherForenames, parentNames.motherLastName, "mor");
+      addedRelatedPerson = true;
+    }
+  }
+  if (!addedRelatedPerson && gd.spouses && gd.spouses.length == 1) {
+    let spouse = gd.spouses[0];
+    if (spouse.name) {
+      let firstName = spouse.name.inferForenames();
+      let lastName = spouse.name.inferLastName();
+      if (this.personGender == "male") {
+        builder.addRelatedPerson(firstName, lastName, "brud");
+      } else if (this.personGender == "female") {
+        builder.addRelatedPerson(firstName, lastName, "brudgom");
+      }
+    }
+  }
+
+  if (gd.role && gd.role != Role.Primary && gd.primaryPerson) {
+    let relatedPerson = gd.primaryPerson;
+    if (gd.role == Role.Parent) {
+      let firstName = relatedPerson.name.inferForenames();
+      let lastName = relatedPerson.name.inferLastName();
+      builder.addRelatedPerson(firstName, lastName, "barn");
+    }
+  }
+}
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   let options = buildUrlInput.options;
+  let typeOfSearch = buildUrlInput.typeOfSearch;
 
   var builder = new NodaUriBuilder();
 
@@ -49,6 +120,38 @@ function buildSearchUrl(buildUrlInput) {
 
   let gender = gd.personGender;
   builder.addGender(gender);
+
+  let sameCollection = false;
+  let parameters = undefined;
+  let collection = undefined;
+
+  if (typeOfSearch == "SameCollection") {
+    if (gd.collectionData && gd.collectionData.id) {
+      let nodaCollectionId = RC.mapCollectionId(
+        gd.sourceOfData,
+        gd.collectionData.id,
+        "noda",
+        gd.inferEventCountry(),
+        gd.inferEventYear()
+      );
+      if (nodaCollectionId) {
+        collection = RC.findCollection("fs", nodaCollectionId);
+        builder.addCategory(nodaCollectionId);
+        sameCollection = true;
+      }
+    }
+  } else if (typeOfSearch == "SpecifiedCollection") {
+    let searchParams = buildUrlInput.searchParameters;
+    if (searchParams.collectionWtsId) {
+      collection = RC.findCollectionByWtsId(searchParams.collectionWtsId);
+      if (collection) {
+        let nodaCollectionId = collection.sites["noda"].id;
+        builder.addCategory(nodaCollectionId);
+      }
+    }
+  } else if (typeOfSearch == "SpecifiedParameters") {
+    parameters = buildUrlInput.searchParameters;
+  }
 
   let sourcePeriodOption = options.search_noda_includeSourcePeriod;
   let sourcePeriodExactness = options.search_noda_sourcePeriodExactness;
@@ -97,6 +200,26 @@ function buildSearchUrl(buildUrlInput) {
         }
       }
     }
+  }
+
+  if (sameCollection) {
+    // add a place if known
+    addEventPlace(builder, gd);
+
+    // add event date if known
+    let eventDateObj = gd.inferEventDateObj();
+    if (eventDateObj) {
+      let dateString = eventDateObj.getDateString();
+      if (dateString) {
+        let parsedDate = DateUtils.parseDateString(dateString);
+        if (parsedDate.isValid) {
+          builder.addEventDate(parsedDate.yearNum, parsedDate.monthNum, parsedDate.dayNum);
+        }
+      }
+    }
+
+    // add a related person if known
+    addRelatedPerson(builder, gd);
   }
 
   /*

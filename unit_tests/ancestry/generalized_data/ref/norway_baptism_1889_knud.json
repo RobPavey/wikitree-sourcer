@@ -1,0 +1,46 @@
+{
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Knud"
+  },
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "31 Jan 1889"
+  },
+  "eventDate": {
+    "dateString": "24 Feb 1889"
+  },
+  "eventPlace": {
+    "placeString": "Voss, Hordaland, Norway"
+  },
+  "birthPlace": {
+    "placeString": "Voss, Hordaland, Norway"
+  },
+  "lastNameAtBirth": "",
+  "ageAtEvent": "0",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Lars Knudsen"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Martha Knudsdr"
+      }
+    }
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|1345|51567}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|1345|150051567}}",
+    "{{Ancestry Record|1345|300051567}}"
+  ],
+  "collectionData": {
+    "id": "1345"
+  },
+  "hasValidData": true
+}

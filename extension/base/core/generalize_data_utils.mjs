@@ -1589,7 +1589,15 @@ class NameObj {
       if (this.forenames && this.forenames == this.name) {
         return ""; // full name is just forenames, no last name known
       }
-      return StringUtils.getLastWord(this.name);
+      let numWordsInName = StringUtils.countWords(this.name);
+      if (numWordsInName > 1) {
+        return StringUtils.getLastWord(this.name);
+      }
+      // it is a single word name. Should it be considered first or last?
+      // it may depend on the country or the event type, for now we consider it a
+      // first name as in a baptism like this:
+      // https://www.ancestry.com/discoveryui-content/view/51567:1345
+      return "";
     }
   }
 
@@ -1607,7 +1615,16 @@ class NameObj {
       if (this.lastName && this.lastName == this.name) {
         return ""; // full name is just last name, no forenames known
       }
-      return StringUtils.getFirstWord(this.name);
+
+      let numWordsInName = StringUtils.countWords(this.name);
+      if (numWordsInName > 1) {
+        return StringUtils.getFirstWord(this.name);
+      }
+      // it is a single word name. Should it be considered first or last?
+      // it may depend on the country or the event type, for now we consider it a
+      // first name as in a baptism like this:
+      // https://www.ancestry.com/discoveryui-content/view/51567:1345
+      return this.name;
     }
   }
 
@@ -1697,7 +1714,15 @@ class NameObj {
       if (this.lastName && this.lastName == this.name) {
         return ""; // full name is just last name, no forenames known
       }
-      return StringUtils.getWordsBeforeLastWord(this.name);
+      let numWordsInName = StringUtils.countWords(this.name);
+      if (numWordsInName > 1) {
+        return StringUtils.getWordsBeforeLastWord(this.name);
+      }
+      // it is a single word name. Should it be considered first or last?
+      // it may depend on the country or the event type, for now we consider it a
+      // first name as in a baptism like this:
+      // https://www.ancestry.com/discoveryui-content/view/51567:1345
+      return this.name;
     }
   }
 
@@ -2797,7 +2822,7 @@ class GeneralizedData {
     let lastName = "";
 
     if (this.name) {
-      return this.name.inferLastName();
+      return this.name.inferLastName(this);
     }
 
     if (this.lastNameAtBirth) {

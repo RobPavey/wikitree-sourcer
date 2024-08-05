@@ -1498,6 +1498,31 @@ const RecordCollectionData = [
   },
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Norway
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  {
+    wtsId: "NorwayChurchRecords",
+    title: "Norway, Church Books",
+    country: "Norway",
+    sites: {
+      noda: { id: "sc_kb", dates: { from: 1600, to: 2000 } },
+      fs: { id: "4237104", dates: { from: 1815, to: 1930 } },
+      ancestry: { id: "60606", dates: { from: 1812, to: 1938 } },
+    },
+  },
+  {
+    wtsId: "NorwayBirthsAndBaptisms",
+    title: "Norway, Births and Baptisms",
+    country: "Norway",
+    sites: {
+      noda: { id: "lt_dp", dates: { from: 1600, to: 2000 } },
+      fs: { id: "1467014", dates: { from: 1634, to: 1927 } },
+      ancestry: { id: "1345", dates: { from: 1648, to: 1903 } },
+    },
+  },
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////
   // Australia
   ///////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -22,9 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import {
+  addMenuItem,
+  addMenuItemWithSubMenu,
+  doAsyncActionWithCatch,
+  addBackMenuItem,
+  addSameRecordMenuItem,
+  beginMainMenu,
+  endMainMenu,
+  setupSearchCollectionsSubMenu,
+} from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -50,12 +60,39 @@ function shouldShowSearchMenuItem(data, filter) {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function nodaSearch(generalizedData) {
-  const input = { generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("Digitalarkivet (Norway) Search", input, async function () {
+async function doNodaSearch(input) {
+  doAsyncActionWithCatch("Search Digitalarkivet (Norway) Search", input, async function () {
     let loadedModule = await import(`../core/noda_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
+}
+
+async function nodaSearch(generalizedData, typeOfSearch) {
+  const input = { typeOfSearch: typeOfSearch, generalizedData: generalizedData, options: options };
+  doNodaSearch(input);
+}
+
+async function nodaSearchSearchCollection(generalizedData, collectionWtsId) {
+  let searchParams = {
+    collectionWtsId: collectionWtsId,
+  };
+  const input = {
+    typeOfSearch: "SpecifiedCollection",
+    searchParameters: searchParams,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  doNodaSearch(input);
+}
+
+async function nodaSearchWithParameters(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  doNodaSearch(input);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -63,16 +100,58 @@ async function nodaSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addNodaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Digitalarkivet (Norway)", function (element) {
-    nodaSearch(data.generalizedData);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search Digitalarkivet (Norway)",
+    function (element) {
+      nodaSearch(data.generalizedData, "");
+    },
+    function () {
+      setupNodaSearchSubMenu(data, backFunction, filter);
+    }
+  );
 
   return true;
+}
+
+function addNodaSameRecordMenuItem(menu, data) {
+  let added = addSameRecordMenuItem(menu, data, "noda", function (element) {
+    nodaSearch(data.generalizedData, "SameCollection");
+  });
+}
+
+function addNodaSearchCollectionsMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Search a specific collection...", function (element) {
+    setupSearchCollectionsSubMenu(data, "noda", nodaSearchSearchCollection, backFunction);
+  });
+}
+
+function addNodaSearchWithParametersMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
+    setupNodaSearchWithParametersSubMenu(data, backFunction);
+  });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupNodaSearchSubMenu(data, backFunction, filter) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  addNodaSameRecordMenuItem(menu, data, filter);
+  addNodaSearchCollectionsMenuItem(menu, data, backFunction);
+  addNodaSearchWithParametersMenuItem(menu, data, backFunction);
+
+  endMainMenu(menu);
+}
+
+async function setupNodaSearchWithParametersSubMenu(data, backFunction) {
+  let dataModule = await import(`../core/noda_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.OpenarchData, nodaSearchWithParameters);
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites

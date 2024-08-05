@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Norway, Births and Christenings, 1648-1903\"<br/>\nOriginal data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>\n{{Ancestry Record|1345|51567}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Knud, son of Lars Knudsen & Martha Knudsdr, was born on 31 January 1889 and baptised on 24 February 1889 in Voss, Hordaland, Norway.<ref>\n'''Baptism''':\n\"Norway, Births and Christenings, 1648-1903\"<br/>\nOriginal data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>\n{{Ancestry Record|1345|51567}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Baptism''': \"Norway, Births and Christenings, 1648-1903\"<br/>Original data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>{{Ancestry Record|1345|51567}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Norway, Births and Christenings, 1648-1903\"<br/>\nOriginal data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>\n{{Ancestry Record|1345|51567}} (accessed 6 May 2021)<br/>\nKnud baptism on 24 Feb 1889 (born 31 Jan 1889), son of Lars Knudsen & Martha Knudsdr, in Voss, Hordaland, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Knud, son of Lars Knudsen & Martha Knudsdr, was born on 31 January 1889 and baptised on 24 February 1889 in Voss, Hordaland, Norway.<ref>\n'''Baptism''':\n\"Norway, Births and Christenings, 1648-1903\"<br/>\nOriginal data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>\n{{Ancestry Record|1345|51567}} (accessed 6 May 2021)<br/>\nKnud baptism on 24 Feb 1889 (born 31 Jan 1889), son of Lars Knudsen & Martha Knudsdr, in Voss, Hordaland, Norway.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Baptism''': \"Norway, Births and Christenings, 1648-1903\"<br/>Original data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>{{Ancestry Record|1345|51567}} (accessed 6 May 2021)<br/>Knud baptism on 24 Feb 1889 (born 31 Jan 1889), son of Lars Knudsen & Martha Knudsdr, in Voss, Hordaland, Norway.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Norway, Births and Christenings, 1648-1903\"<br/>\nOriginal data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>\n{{Ancestry Record|1345|51567}} (accessed 6 May 2021)<br/>\nName: Knud; Gender: Male; Christening Age: 0; Birth Date: 31. jan 1889 (31 Jan 1889); Christening Date: 24. feb 1889 (24 Feb 1889); Christening Place: Voss, Hordaland, Norway; Father: Lars Knudsen; Mother: Martha Knudsdr.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Knud, son of Lars Knudsen & Martha Knudsdr, was born on 31 January 1889 and baptised on 24 February 1889 in Voss, Hordaland, Norway.<ref>\n'''Baptism''':\n\"Norway, Births and Christenings, 1648-1903\"<br/>\nOriginal data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>\n{{Ancestry Record|1345|51567}} (accessed 6 May 2021)<br/>\nName: Knud; Gender: Male; Christening Age: 0; Birth Date: 31. jan 1889 (31 Jan 1889); Christening Date: 24. feb 1889 (24 Feb 1889); Christening Place: Voss, Hordaland, Norway; Father: Lars Knudsen; Mother: Martha Knudsdr.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Baptism''': \"Norway, Births and Christenings, 1648-1903\"<br/>Original data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>{{Ancestry Record|1345|51567}} (accessed 6 May 2021)<br/>Name: Knud; Gender: Male; Christening Age: 0; Birth Date: 31. jan 1889 (31 Jan 1889); Christening Date: 24. feb 1889 (24 Feb 1889); Christening Place: Voss, Hordaland, Norway; Father: Lars Knudsen; Mother: Martha Knudsdr.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Norway, Births and Christenings, 1648-1903\"<br/>\nOriginal data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>\n{{Ancestry Record|1345|51567}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Knud\n|-\n| Gender || Male\n|-\n| Christening Age || 0\n|-\n| Birth Date || 31. jan 1889 (31 Jan 1889)\n|-\n| Christening Date || 24. feb 1889 (24 Feb 1889)\n|-\n| Christening Place || Voss, Hordaland, Norway\n|-\n| Father || Lars Knudsen\n|-\n| Mother || Martha Knudsdr\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Knud, son of Lars Knudsen & Martha Knudsdr, was born on 31 January 1889 and baptised on 24 February 1889 in Voss, Hordaland, Norway.<ref>\n'''Baptism''':\n\"Norway, Births and Christenings, 1648-1903\"<br/>\nOriginal data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>\n{{Ancestry Record|1345|51567}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Knud\n|-\n| Gender || Male\n|-\n| Christening Age || 0\n|-\n| Birth Date || 31. jan 1889 (31 Jan 1889)\n|-\n| Christening Date || 24. feb 1889 (24 Feb 1889)\n|-\n| Christening Place || Voss, Hordaland, Norway\n|-\n| Father || Lars Knudsen\n|-\n| Mother || Martha Knudsdr\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Baptism''': \"Norway, Births and Christenings, 1648-1903\"<br/>Original data: Genealogical Society of Utah. Western Europe Vital Records Index<br/>{{Ancestry Record|1345|51567}} (accessed 6 May 2021)<br/>Name: Knud; Gender: Male; Christening Age: 0; Birth Date: 31. jan 1889 (31 Jan 1889); Christening Date: 24. feb 1889 (24 Feb 1889); Christening Place: Voss, Hordaland, Norway; Father: Lars Knudsen; Mother: Martha Knudsdr.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Norway, Births and Christenings, 1648-1903,\" database, ({{Ancestry Record|1345|51567}} : accessed 6 May 2021), Knud baptism on 24 Feb 1889 (born 31 Jan 1889), son of Lars Knudsen & Martha Knudsdr, in Voss, Hordaland, Norway; citing Original data Genealogical Society of Utah. Western Europe Vital Records Index.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Knud, son of Lars Knudsen & Martha Knudsdr, was born on 31 January 1889 and baptised on 24 February 1889 in Voss, Hordaland, Norway.<ref>\"Norway, Births and Christenings, 1648-1903,\" database, ({{Ancestry Record|1345|51567}} : accessed 6 May 2021), Knud baptism on 24 Feb 1889 (born 31 Jan 1889), son of Lars Knudsen & Martha Knudsdr, in Voss, Hordaland, Norway; citing Original data Genealogical Society of Utah. Western Europe Vital Records Index.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Norway, Births and Christenings, 1648-1903,\" database, ({{Ancestry Record|1345|51567}} : accessed 6 May 2021), Knud baptism on 24 Feb 1889 (born 31 Jan 1889), son of Lars Knudsen & Martha Knudsdr, in Voss, Hordaland, Norway; citing Original data Genealogical Society of Utah. Western Europe Vital Records Index.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Baptism'':\n\"Norway, Births and Christenings, 1648-1903\", database, \nOriginal data Genealogical Society of Utah. Western Europe Vital Records Index, \n({{Ancestry Record|1345|51567}} : accessed 6 May 2021), \nName: Knud; Gender: Male; Christening Age: 0; Birth Date: 31. jan 1889 (31 Jan 1889); Christening Date: 24. feb 1889 (24 Feb 1889); Christening Place: Voss, Hordaland, Norway; Father: Lars Knudsen; Mother: Martha Knudsdr.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Knud, son of Lars Knudsen & Martha Knudsdr, was born on 31 January 1889 and baptised on 24 February 1889 in Voss, Hordaland, Norway.<ref>\n''Baptism'':\n\"Norway, Births and Christenings, 1648-1903\", database, \nOriginal data Genealogical Society of Utah. Western Europe Vital Records Index, \n({{Ancestry Record|1345|51567}} : accessed 6 May 2021), \nName: Knud; Gender: Male; Christening Age: 0; Birth Date: 31. jan 1889 (31 Jan 1889); Christening Date: 24. feb 1889 (24 Feb 1889); Christening Place: Voss, Hordaland, Norway; Father: Lars Knudsen; Mother: Martha Knudsdr.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Baptism'': \"Norway, Births and Christenings, 1648-1903\", database, Original data Genealogical Society of Utah. Western Europe Vital Records Index, ({{Ancestry Record|1345|51567}} : accessed 6 May 2021), Name: Knud; Gender: Male; Christening Age: 0; Birth Date: 31. jan 1889 (31 Jan 1889); Christening Date: 24. feb 1889 (24 Feb 1889); Christening Place: Voss, Hordaland, Norway; Father: Lars Knudsen; Mother: Martha Knudsdr.",
+    "type": "source"
+  }
+}

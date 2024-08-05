@@ -199,6 +199,8 @@ function buildSearchUrl(buildUrlInput) {
           builder.addName(forenames, lastNamesArray[lastNameIndex]);
         }
       }
+    } else {
+      builder.addName(forenames, "");
     }
 
     let birthDateQualifier = gd.inferBirthDateQualifier();
