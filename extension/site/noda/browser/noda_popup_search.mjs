@@ -150,7 +150,7 @@ async function setupNodaSearchSubMenu(data, backFunction, filter) {
 
 async function setupNodaSearchWithParametersSubMenu(data, backFunction) {
   let dataModule = await import(`../core/noda_search_menu_data.mjs`);
-  setupSearchWithParametersSubMenu(data, backFunction, dataModule.OpenarchData, nodaSearchWithParameters);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.NodaData, nodaSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
