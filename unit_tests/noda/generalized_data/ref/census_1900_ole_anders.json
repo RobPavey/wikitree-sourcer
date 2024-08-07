@@ -120,5 +120,8 @@
       "residentialStatus": "resides permanently"
     }
   ],
+  "collectionData": {
+    "id": "jt_2"
+  },
   "hasValidData": true
 }

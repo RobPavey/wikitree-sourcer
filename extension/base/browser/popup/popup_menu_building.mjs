@@ -1845,6 +1845,23 @@ function addSameRecordMenuItem(menu, data, siteName, searchFunction, equivSiteNa
   return false;
 }
 
+function addSameEventMenuItem(menu, data, searchFunction, subtitle = "") {
+  let gd = data.generalizedData;
+
+  if (gd.sourceType == "record") {
+    let eventDateObj = gd.inferEventDateObj();
+    if (eventDateObj) {
+      if (subtitle) {
+        addMenuItemWithSubtitle(menu, "Search for the same event", searchFunction, subtitle);
+      } else {
+        addMenuItem(menu, "Search for the same event", searchFunction);
+      }
+      return true;
+    }
+  }
+  return false;
+}
+
 // This flag indicates whether the popup should resize after the initial setup -
 // e.g. for EditCitation.
 // The only case where it should NOT resize currebt is on iOS.
@@ -1896,6 +1913,7 @@ function setPopupMenuWidth() {
 export {
   addBuildCitationMenuItems,
   addSameRecordMenuItem,
+  addSameEventMenuItem,
   setPopupMenuWidth,
   setupSearchCollectionsSubMenu,
   hasBirthOrDeathYear,

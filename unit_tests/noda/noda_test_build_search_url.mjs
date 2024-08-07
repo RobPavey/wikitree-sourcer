@@ -78,6 +78,17 @@ const regressionData = [
       },
     ],
   },
+  {
+    caseName: "ancestry_norway_census_1875_helene_larssen",
+    inputPath: "ancestry/generalized_data/ref/norway_census_1875_helene_larssen",
+    typeOfSearch: "",
+    optionVariants: [
+      {
+        variantName: "sameCollection",
+        typeOfSearch: "SameCollection",
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {

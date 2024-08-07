@@ -720,6 +720,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/51567:1345?tid=&pid=&queryId=624e4f97-6cdd-4d62-abb4-cf826c2718f9&_phsrc=Zqm11463&_phstart=successSource",
   },
   {
+    caseName: "norway_census_1875_helene_larssen",
+    url: "https://www.ancestry.com/discoveryui-content/view/113403:61751?tid=&pid=&queryid=4e71d902-2efe-454d-97cb-fdfea8e24a9c&_phsrc=Zqm11476&_phstart=successSource",
+  },
+  {
     caseName: "nz_birth_1912_jean_mcclimont",
     url: "https://www.ancestry.com.au/discoveryui-content/view/1158632:8949",
   },

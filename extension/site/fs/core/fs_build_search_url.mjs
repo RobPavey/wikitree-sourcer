@@ -150,18 +150,20 @@ function buildSearchUrl(buildUrlInput) {
   } else if (typeOfSearch == "FullText") {
     searchType = "fullText";
   }
-  var builder = new FsUriBuilder(searchType);
+  var builder = undefined;
 
   if (typeOfSearch == "FullText") {
+    var builder = new FsUriBuilder(searchType);
     builder.addFullName(gd.inferFullName());
   } else {
     let sameCollection = false;
     let parameters = undefined;
     let collection = undefined;
+    let fsCollectionId = undefined;
 
     if (buildUrlInput.typeOfSearch == "SameCollection") {
       if (gd.collectionData && gd.collectionData.id) {
-        let fsCollectionId = RC.mapCollectionId(
+        fsCollectionId = RC.mapCollectionId(
           gd.sourceOfData,
           gd.collectionData.id,
           "fs",
@@ -170,7 +172,6 @@ function buildSearchUrl(buildUrlInput) {
         );
         if (fsCollectionId) {
           collection = RC.findCollection("fs", fsCollectionId);
-          builder.addCollection(fsCollectionId);
           sameCollection = true;
         }
       }
@@ -179,13 +180,14 @@ function buildSearchUrl(buildUrlInput) {
       if (searchParams.collectionWtsId) {
         collection = RC.findCollectionByWtsId(searchParams.collectionWtsId);
         if (collection) {
-          let fsCollectionId = collection.sites["fs"].id;
-          builder.addCollection(fsCollectionId);
+          fsCollectionId = collection.sites["fs"].id;
         }
       }
     } else if (typeOfSearch == "SpecifiedParameters") {
       parameters = buildUrlInput.searchParameters;
     }
+
+    builder = new FsUriBuilder(searchType, fsCollectionId);
 
     if (gd.inferPersonGender() && shouldAddSearchTerm(collection, "gender", true)) {
       builder.addGender(gd.inferPersonGender());

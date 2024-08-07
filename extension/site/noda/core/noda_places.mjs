@@ -3830,10 +3830,18 @@ function lookupPlaceObj(placeObj) {
 
   // see if we can get the parish or town name
   let placeName = "";
+  let placeNameParts = undefined;
   if (placeParts.localPlace) {
     // seperate by commas
     let localPlaceParts = placeParts.localPlace.split(",");
     placeName = localPlaceParts[localPlaceParts.length - 1].trim();
+
+    // coming from Ancestry there could be a placeName like
+    // "Vestby/Vestby, Garder Og Såner"
+    let parts = placeParts.localPlace.split("/");
+    if (parts.length > 1) {
+      placeNameParts = parts;
+    }
   }
 
   let result = {};
@@ -3848,6 +3856,13 @@ function lookupPlaceObj(placeObj) {
             if (place.name == placeName) {
               result.place = place;
               break;
+            } else if (placeNameParts) {
+              for (let placeNamePart of placeNameParts) {
+                if (place.name == placeNamePart) {
+                  result.place = place;
+                  break;
+                }
+              }
             }
           }
           break;

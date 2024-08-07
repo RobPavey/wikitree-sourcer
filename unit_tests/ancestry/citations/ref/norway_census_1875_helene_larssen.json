@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1875 Census''':\n\"1875 Norway Census\"<br/>\nRiksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>\n{{Ancestry Record|61751|113403}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1875 census Helene (age 5) was the daughter of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway).<ref>\n'''1875 Census''':\n\"1875 Norway Census\"<br/>\nRiksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>\n{{Ancestry Record|61751|113403}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1875 Census''': \"1875 Norway Census\"<br/>Riksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>{{Ancestry Record|61751|113403}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1875 Census''':\n\"1875 Norway Census\"<br/>\nRiksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>\n{{Ancestry Record|61751|113403}} (accessed 6 May 2021)<br/>\nHelene Larssen (5) daughter in household of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway). Born in Vestby Prgj..\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1875 census Helene (age 5) was the daughter of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway).<ref>\n'''1875 Census''':\n\"1875 Norway Census\"<br/>\nRiksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>\n{{Ancestry Record|61751|113403}} (accessed 6 May 2021)<br/>\nHelene Larssen (5) daughter in household of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway). Born in Vestby Prgj..\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1875 Census''': \"1875 Norway Census\"<br/>Riksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>{{Ancestry Record|61751|113403}} (accessed 6 May 2021)<br/>Helene Larssen (5) daughter in household of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway). Born in Vestby Prgj..",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1875 Census''':\n\"1875 Norway Census\"<br/>\nRiksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>\n{{Ancestry Record|61751|113403}} (accessed 6 May 2021)<br/>\nName: Helene Larssen; Gender: Kvinnelig; Age: 5; Birth Date: 1870; Birth Place: Vestby Prgj.; Census year: 1875; City: Haugen; Municipality: Vestby/Vestby, Garder Og SÃ¥ner; County: Akershus; Country: Norge (Norway); Relation to Head: Datter (Daughter); Counting District Number: 003; Counting District: Tannumbygden Og Galbybygden; <br/>Household Members (Relation to Head):<br/>Husfader (Head)<br/>Hustru (Wife)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Tjenestegutt (Servant)<br/>Tjenestepige (Maid)<br/>Tjenestepige (Maid)<br/>Legslem; Description: Rural.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1875 census Helene (age 5) was the daughter of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway).<ref>\n'''1875 Census''':\n\"1875 Norway Census\"<br/>\nRiksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>\n{{Ancestry Record|61751|113403}} (accessed 6 May 2021)<br/>\nName: Helene Larssen; Gender: Kvinnelig; Age: 5; Birth Date: 1870; Birth Place: Vestby Prgj.; Census year: 1875; City: Haugen; Municipality: Vestby/Vestby, Garder Og SÃ¥ner; County: Akershus; Country: Norge (Norway); Relation to Head: Datter (Daughter); Counting District Number: 003; Counting District: Tannumbygden Og Galbybygden; <br/>Household Members (Relation to Head):<br/>Husfader (Head)<br/>Hustru (Wife)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Tjenestegutt (Servant)<br/>Tjenestepige (Maid)<br/>Tjenestepige (Maid)<br/>Legslem; Description: Rural.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1875 Census''': \"1875 Norway Census\"<br/>Riksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>{{Ancestry Record|61751|113403}} (accessed 6 May 2021)<br/>Name: Helene Larssen; Gender: Kvinnelig; Age: 5; Birth Date: 1870; Birth Place: Vestby Prgj.; Census year: 1875; City: Haugen; Municipality: Vestby/Vestby, Garder Og SÃ¥ner; County: Akershus; Country: Norge (Norway); Relation to Head: Datter (Daughter); Counting District Number: 003; Counting District: Tannumbygden Og Galbybygden; <br/>Household Members (Relation to Head):<br/>Husfader (Head)<br/>Hustru (Wife)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Tjenestegutt (Servant)<br/>Tjenestepige (Maid)<br/>Tjenestepige (Maid)<br/>Legslem; Description: Rural.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1875 Census''':\n\"1875 Norway Census\"<br/>\nRiksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>\n{{Ancestry Record|61751|113403}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Helene Larssen\n|-\n| Gender || Kvinnelig\n|-\n| Age || 5\n|-\n| Birth Date || 1870\n|-\n| Birth Place || Vestby Prgj.\n|-\n| Census year || 1875\n|-\n| City || Haugen\n|-\n| Municipality || Vestby/Vestby, Garder Og SÃ¥ner\n|-\n| County || Akershus\n|-\n| Country || Norge (Norway)\n|-\n| Relation to Head || Datter (Daughter)\n|-\n| Counting District Number || 003\n|-\n| Counting District || Tannumbygden Og Galbybygden\n|-\n| Household Members (Relation to Head) || Husfader (Head)<br/>Hustru (Wife)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Tjenestegutt (Servant)<br/>Tjenestepige (Maid)<br/>Tjenestepige (Maid)<br/>Legslem\n|-\n| Description || Rural\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1875 census Helene (age 5) was the daughter of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway).<ref>\n'''1875 Census''':\n\"1875 Norway Census\"<br/>\nRiksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>\n{{Ancestry Record|61751|113403}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Helene Larssen\n|-\n| Gender || Kvinnelig\n|-\n| Age || 5\n|-\n| Birth Date || 1870\n|-\n| Birth Place || Vestby Prgj.\n|-\n| Census year || 1875\n|-\n| City || Haugen\n|-\n| Municipality || Vestby/Vestby, Garder Og SÃ¥ner\n|-\n| County || Akershus\n|-\n| Country || Norge (Norway)\n|-\n| Relation to Head || Datter (Daughter)\n|-\n| Counting District Number || 003\n|-\n| Counting District || Tannumbygden Og Galbybygden\n|-\n| Household Members (Relation to Head) || Husfader (Head)<br/>Hustru (Wife)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Tjenestegutt (Servant)<br/>Tjenestepige (Maid)<br/>Tjenestepige (Maid)<br/>Legslem\n|-\n| Description || Rural\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1875 Census''': \"1875 Norway Census\"<br/>Riksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census<br/>{{Ancestry Record|61751|113403}} (accessed 6 May 2021)<br/>Name: Helene Larssen; Gender: Kvinnelig; Age: 5; Birth Date: 1870; Birth Place: Vestby Prgj.; Census year: 1875; City: Haugen; Municipality: Vestby/Vestby, Garder Og SÃ¥ner; County: Akershus; Country: Norge (Norway); Relation to Head: Datter (Daughter); Counting District Number: 003; Counting District: Tannumbygden Og Galbybygden; <br/>Household Members (Relation to Head):<br/>Husfader (Head)<br/>Hustru (Wife)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Tjenestegutt (Servant)<br/>Tjenestepige (Maid)<br/>Tjenestepige (Maid)<br/>Legslem; Description: Rural.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1875 Norway Census,\" database, ({{Ancestry Record|61751|113403}} : accessed 6 May 2021), Helene Larssen (5) daughter in household of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway). Born in Vestby Prgj.; citing Riksarkivet the National Archives of Norway, Norge, Norway, 1875 Norge Folketelling, 1875 Norway Census.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1875 census Helene (age 5) was the daughter of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway).<ref>\"1875 Norway Census,\" database, ({{Ancestry Record|61751|113403}} : accessed 6 May 2021), Helene Larssen (5) daughter in household of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway). Born in Vestby Prgj.; citing Riksarkivet the National Archives of Norway, Norge, Norway, 1875 Norge Folketelling, 1875 Norway Census.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1875 Norway Census,\" database, ({{Ancestry Record|61751|113403}} : accessed 6 May 2021), Helene Larssen (5) daughter in household of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway). Born in Vestby Prgj.; citing Riksarkivet the National Archives of Norway, Norge, Norway, 1875 Norge Folketelling, 1875 Norway Census.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1875 Census'':\n\"1875 Norway Census\", database, \nRiksarkivet the National Archives of Norway, Norge, Norway, 1875 Norge Folketelling, 1875 Norway Census, \n({{Ancestry Record|61751|113403}} : accessed 6 May 2021), \nName: Helene Larssen; Gender: Kvinnelig; Age: 5; Birth Date: 1870; Birth Place: Vestby Prgj.; Census year: 1875; City: Haugen; Municipality: Vestby/Vestby, Garder Og SÃ¥ner; County: Akershus; Country: Norge (Norway); Relation to Head: Datter (Daughter); Counting District Number: 003; Counting District: Tannumbygden Og Galbybygden; Household Members (Relation to Head): Husfader (Head), Hustru (Wife), SÃ¸nn (Son), Datter (Daughter), SÃ¸nn (Son), Datter (Daughter), SÃ¸nn (Son), Tjenestegutt (Servant), Tjenestepige (Maid), Tjenestepige (Maid), Legslem; Description: Rural.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1875 census Helene (age 5) was the daughter of Husfader (Head) in Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway).<ref>\n''1875 Census'':\n\"1875 Norway Census\", database, \nRiksarkivet the National Archives of Norway, Norge, Norway, 1875 Norge Folketelling, 1875 Norway Census, \n({{Ancestry Record|61751|113403}} : accessed 6 May 2021), \nName: Helene Larssen; Gender: Kvinnelig; Age: 5; Birth Date: 1870; Birth Place: Vestby Prgj.; Census year: 1875; City: Haugen; Municipality: Vestby/Vestby, Garder Og SÃ¥ner; County: Akershus; Country: Norge (Norway); Relation to Head: Datter (Daughter); Counting District Number: 003; Counting District: Tannumbygden Og Galbybygden; Household Members (Relation to Head): Husfader (Head), Hustru (Wife), SÃ¸nn (Son), Datter (Daughter), SÃ¸nn (Son), Datter (Daughter), SÃ¸nn (Son), Tjenestegutt (Servant), Tjenestepige (Maid), Tjenestepige (Maid), Legslem; Description: Rural.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1875 Census'': \"1875 Norway Census\", database, Riksarkivet the National Archives of Norway, Norge, Norway, 1875 Norge Folketelling, 1875 Norway Census, ({{Ancestry Record|61751|113403}} : accessed 6 May 2021), Name: Helene Larssen; Gender: Kvinnelig; Age: 5; Birth Date: 1870; Birth Place: Vestby Prgj.; Census year: 1875; City: Haugen; Municipality: Vestby/Vestby, Garder Og SÃ¥ner; County: Akershus; Country: Norge (Norway); Relation to Head: Datter (Daughter); Counting District Number: 003; Counting District: Tannumbygden Og Galbybygden; Household Members (Relation to Head): Husfader (Head), Hustru (Wife), SÃ¸nn (Son), Datter (Daughter), SÃ¸nn (Son), Datter (Daughter), SÃ¸nn (Son), Tjenestegutt (Servant), Tjenestepige (Maid), Tjenestepige (Maid), Legslem; Description: Rural.",
+    "type": "source"
+  }
+}

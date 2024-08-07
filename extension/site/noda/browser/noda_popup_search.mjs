@@ -28,6 +28,7 @@ import {
   doAsyncActionWithCatch,
   addBackMenuItem,
   addSameRecordMenuItem,
+  addSameEventMenuItem,
   beginMainMenu,
   endMainMenu,
   setupSearchCollectionsSubMenu,
@@ -120,6 +121,12 @@ function addNodaSameRecordMenuItem(menu, data) {
   });
 }
 
+function addNodaSameEventMenuItem(menu, data) {
+  let added = addSameEventMenuItem(menu, data, function (element) {
+    nodaSearch(data.generalizedData, "SameEvent");
+  });
+}
+
 function addNodaSearchCollectionsMenuItem(menu, data, backFunction) {
   addMenuItem(menu, "Search a specific collection...", function (element) {
     setupSearchCollectionsSubMenu(data, "noda", nodaSearchSearchCollection, backFunction);
@@ -142,6 +149,7 @@ async function setupNodaSearchSubMenu(data, backFunction, filter) {
   addBackMenuItem(menu, backFunction);
 
   addNodaSameRecordMenuItem(menu, data, filter);
+  addNodaSameEventMenuItem(menu, data);
   addNodaSearchCollectionsMenuItem(menu, data, backFunction);
   addNodaSearchWithParametersMenuItem(menu, data, backFunction);
 

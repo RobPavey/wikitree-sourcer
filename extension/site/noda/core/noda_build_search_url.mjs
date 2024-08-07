@@ -48,14 +48,16 @@ function addEventPlace(builder, gd) {
 
   let placeData = lookupPlaceObj(gd.inferEventPlaceObj());
 
-  if (placeData.place) {
-    builder.addPlace(placeData.place.code);
-    return;
-  }
+  if (placeData) {
+    if (placeData.place) {
+      builder.addPlace(placeData.place.code);
+      return;
+    }
 
-  if (placeData.county) {
-    builder.addCounty(placeData.county.code);
-    return;
+    if (placeData.county) {
+      builder.addCounty(placeData.county.code);
+      return;
+    }
   }
 }
 
@@ -196,6 +198,7 @@ function buildSearchUrl(buildUrlInput) {
   builder.addGender(gender);
 
   let sameCollection = false;
+  let sameEvent = false;
   let parameters = undefined;
   let collection = undefined;
 
@@ -214,6 +217,8 @@ function buildSearchUrl(buildUrlInput) {
         sameCollection = true;
       }
     }
+  } else if (typeOfSearch == "SameEvent") {
+    sameEvent = true;
   } else if (typeOfSearch == "SpecifiedCollection") {
     let searchParams = buildUrlInput.searchParameters;
     if (searchParams.collectionWtsId) {
@@ -250,7 +255,7 @@ function buildSearchUrl(buildUrlInput) {
     addBirth(builder, gd, options);
   }
 
-  if (sameCollection) {
+  if (sameCollection || sameEvent) {
     // add a place if known
     addEventPlace(builder, gd);
     addEventDate(builder, gd);

@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { RT, Role } from "../../../base/core/record_type.mjs";
+import { RC } from "../../../base/core/record_collections.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameObj, DateObj, PlaceObj, dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
@@ -2417,6 +2418,23 @@ class NodaEdReader extends ExtractedDataReader {
     let collectionId = "";
     if (this.eventType && this.eventType.collectionId) {
       collectionId = this.eventType.collectionId;
+    } else {
+      if (this.recordType == RT.Census) {
+        let eventDateObj = this.getEventDateObj();
+        if (eventDateObj) {
+          let year = eventDateObj.getYearString();
+          if (year) {
+            const wtsCollectionId = "NorwayCensus" + year;
+            let collection = RC.findCollectionByWtsId(wtsCollectionId);
+            if (collection) {
+              let site = collection.sites.noda;
+              if (site) {
+                collectionId = site.id;
+              }
+            }
+          }
+        }
+      }
     }
 
     if (collectionId) {

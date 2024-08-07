@@ -1,0 +1,8 @@
+{
+  "std": {
+    "url": "https://www.digitalarkivet.no/en/search/persons/advanced?firstname=Helene&lastname=Larssen&genders%5B%5D=k&birth_year_from=1868&birth_year_to=1872"
+  },
+  "sameCollection": {
+    "url": "https://www.digitalarkivet.no/en/search/persons/advanced?firstname=Helene&lastname=Larssen&genders%5B%5D=k&jt[]=5&birth_year_from=1868&birth_year_to=1872&m[]=0211&event_year_from=1875&event_year_to=1875"
+  }
+}

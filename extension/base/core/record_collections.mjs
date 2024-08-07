@@ -1522,6 +1522,184 @@ const RecordCollectionData = [
     },
   },
 
+  // Censuses
+  {
+    wtsId: "NorwayCensus1769",
+    title: "Norway Census, 1769",
+    country: "Norway",
+    dates: { from: 1769, to: 1769 },
+    sites: {
+      noda: { id: "jt_14" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1801",
+    title: "Norway Census, 1801",
+    country: "Norway",
+    dates: { from: 1801, to: 1801 },
+    sites: {
+      noda: { id: "jt_13" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1815",
+    title: "Norway Census, 1815",
+    country: "Norway",
+    dates: { from: 1815, to: 1815 },
+    sites: {
+      noda: { id: "jt_12" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1825",
+    title: "Norway Census, 1825",
+    country: "Norway",
+    dates: { from: 1825, to: 1825 },
+    sites: {
+      noda: { id: "jt_11" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1835",
+    title: "Norway Census, 1835",
+    country: "Norway",
+    dates: { from: 1835, to: 1835 },
+    sites: {
+      noda: { id: "jt_10" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1845",
+    title: "Norway Census, 1845",
+    country: "Norway",
+    dates: { from: 1845, to: 1845 },
+    sites: {
+      noda: { id: "jt_9" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1855",
+    title: "Norway Census, 1855",
+    country: "Norway",
+    dates: { from: 1855, to: 1855 },
+    sites: {
+      noda: { id: "jt_8" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1865",
+    title: "Norway Census, 1865",
+    country: "Norway",
+    dates: { from: 1865, to: 1865 },
+    sites: {
+      noda: { id: "jt_7" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1870",
+    title: "Norway Census, 1870",
+    country: "Norway",
+    dates: { from: 1870, to: 1870 },
+    sites: {
+      noda: { id: "jt_6" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1875",
+    title: "Norway Census, 1875",
+    country: "Norway",
+    dates: { from: 1875, to: 1875 },
+    sites: {
+      noda: { id: "jt_5" },
+      fs: { id: "1529106", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "61751" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1885",
+    title: "Norway Census, 1885",
+    country: "Norway",
+    dates: { from: 1885, to: 1885 },
+    sites: {
+      noda: { id: "jt_4" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1891",
+    title: "Norway Census, 1891",
+    country: "Norway",
+    dates: { from: 1891, to: 1891 },
+    sites: {
+      noda: { id: "jt_3" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1900",
+    title: "Norway Census, 1900",
+    country: "Norway",
+    dates: { from: 1900, to: 1900 },
+    sites: {
+      noda: { id: "jt_2" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1910",
+    title: "Norway Census, 1910",
+    country: "Norway",
+    dates: { from: 1910, to: 1910 },
+    sites: {
+      noda: { id: "jt_19" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1920",
+    title: "Norway Census, 1920",
+    country: "Norway",
+    dates: { from: 1920, to: 1920 },
+    sites: {
+      noda: { id: "jt_18" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+  {
+    wtsId: "NorwayCensus1960",
+    title: "Norway Census, 1960",
+    country: "Norway",
+    dates: { from: 1960, to: 1960 },
+    sites: {
+      noda: { id: "jt_436" },
+      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "" },
+    },
+  },
+
   ///////////////////////////////////////////////////////////////////////////////////////////////////////
   // Australia
   ///////////////////////////////////////////////////////////////////////////////////////////////////////

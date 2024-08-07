@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { RC } from "../../../base/core/record_collections.mjs";
 
 // Example FamilySearch search string:
 // https://www.familysearch.org/search/record/results
@@ -63,7 +64,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 // &m.defaultFacets=on&m.queryRequireDefault=on&m.facetNestCollectionInCategory=on&count=20&offset=0
 
 class FsUriBuilder {
-  constructor(type) {
+  constructor(type, fsCollectionId) {
     if (type == "tree") {
       this.uri = "https://www.familysearch.org/search/tree/results?count=20";
     } else if (type == "fullText") {
@@ -73,6 +74,22 @@ class FsUriBuilder {
     }
     this.searchTermAdded = true;
     this.titleMap = new Map();
+
+    if (fsCollectionId) {
+      this.collection = RC.findCollection("fs", fsCollectionId);
+      this.addCollection(fsCollectionId);
+    }
+  }
+
+  getSearchQueryNameFromCollection(field, defaultName) {
+    if (this.collection && this.collection.sites.fs.searchQueryFields) {
+      let name = this.collection.sites.fs.searchQueryFields[field];
+      if (name || name === "") {
+        return name;
+      }
+    }
+
+    return defaultName;
   }
 
   addSearchTerm(string) {
@@ -279,11 +296,15 @@ class FsUriBuilder {
     if (!relationship) {
       return;
     }
-    let lcRelationship = relationship.toLowerCase();
-    for (let supRel of supportedRelationships) {
-      if (lcRelationship == supRel.toLowerCase()) {
-        this.addSearchParameter("q.relationshipToHead", supRel);
-        return;
+    let queryName = this.getSearchQueryNameFromCollection("relationshipToHead", "q.relationshipToHead");
+
+    if (queryName) {
+      let lcRelationship = relationship.toLowerCase();
+      for (let supRel of supportedRelationships) {
+        if (lcRelationship == supRel.toLowerCase()) {
+          this.addSearchParameter(queryName, supRel);
+          return;
+        }
       }
     }
   }

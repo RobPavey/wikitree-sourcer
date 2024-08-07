@@ -149,7 +149,7 @@ const CountryData = [
 
   { stdName: "Sweden", matches: ["Sweden", "Sverige"] },
   { stdName: "Denmark", matches: ["Denmark"] },
-  { stdName: "Norway", matches: ["Norway", "Norge"], hasCounties: true },
+  { stdName: "Norway", matches: ["Norway", "Norge", "Norge (Norway)"], hasCounties: true },
   { stdName: "Finland", matches: ["Finland", "Suomi"] },
   { stdName: "Iceland", matches: ["Iceland", "Ísland"] },
   { stdName: "Greenland", matches: ["Greenland", "Kalaallit Nunaat"] },

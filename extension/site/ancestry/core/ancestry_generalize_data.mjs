@@ -788,6 +788,52 @@ function cleanDateString(dateString) {
   return newString;
 }
 
+function possiblyChooseUserCorrectedValue(ed, fieldName, value, type = "") {
+  let bracketIndex = value.indexOf("[");
+  if (bracketIndex == -1) {
+    return value;
+  }
+
+  let mainValue = value.substring(0, bracketIndex).trim();
+  let userCorrectionsString = value.substring(bracketIndex).trim();
+  let userCorrections = userCorrectionsString.split("] [");
+  // clean up
+  for (let index = 0; index < userCorrections.length; index++) {
+    userCorrections[index] = userCorrections[index].trim();
+    if (userCorrections[index].startsWith("[")) {
+      userCorrections[index] = userCorrections[index].substring(1);
+    }
+    if (userCorrections[index].endsWith("]")) {
+      userCorrections[index] = userCorrections[index].substring(0, userCorrections[index].length - 1);
+    }
+    userCorrections[index] = userCorrections[index].trim();
+  }
+
+  let newValue = mainValue;
+
+  // now consider if any of the corrections are an improvement
+  if (fieldName == "Name") {
+    // Norway example, mainValue is missing surname:
+    // "Thekla Marie [Thekla Marie Høegh]"
+    // less useful example:
+    // "Jas Willson [James] [James Wilson] [Wilson]"
+
+    // We could have an option to chose a rule for how to pick a correction
+    //  For example always use the correction if it is longer that main value
+    // Or there could be a popup that prompts the user o pick (but when)
+
+    // For now only chose a correction if it is adding something to the end
+    // this helps with records from Norway where they often only have the forenames in the main value
+    for (let userCorrection of userCorrections) {
+      if (userCorrection.startsWith(newValue)) {
+        newValue = userCorrection;
+      }
+    }
+  }
+
+  return newValue;
+}
+
 function getCleanRecordDataValue(ed, fieldName, type = "") {
   if (!ed.recordData) {
     return "";
@@ -799,11 +845,8 @@ function getCleanRecordDataValue(ed, fieldName, type = "") {
   }
 
   // sometimes there are values in square brackets after the first value
-  // these make it hard to parse dates, placses names etc so remove them
-  let bracketIndex = value.indexOf("[");
-  if (bracketIndex != -1) {
-    value = value.substring(0, bracketIndex).trim();
-  }
+  // these make it hard to parse dates, places names etc so remove them
+  value = possiblyChooseUserCorrectedValue(ed, fieldName, value, type);
 
   // sometimes places have commas with no space after them
   value = value.replace(/\,([^\s])/g, ", $1");
@@ -882,7 +925,7 @@ function buildEventPlace(ed, result, includeResidence) {
   let state = getCleanValueForRecordDataList(ed, ["State", "Province"]);
   let county = getCleanValueForRecordDataList(ed, ["County/Island", "County", "County or Borough"]);
   let civilParish = getCleanValueForRecordDataList(ed, ["Civil Parish", "Civil parish", "Parish"]);
-  let town = getCleanValueForRecordDataList(ed, ["Town", "Ward or Division/Constituency", "Locality"]);
+  let town = getCleanValueForRecordDataList(ed, ["Town", "Ward or Division/Constituency", "Locality", "Municipality"]);
   let streetAddress = getCleanValueForRecordDataList(ed, ["Street Address", "Address"]);
   let houseNumber = getCleanValueForRecordDataList(ed, ["House Number"]);
   let residence = "";
@@ -2384,11 +2427,10 @@ function generalizeRecordData(input, result) {
   result.sourceOfData = "ancestry";
 
   // from an Ancestry record we often do not have the name broken down into parts.
-  let fullName = ed.titleName;
-  if (!fullName && ed.recordData) {
-    fullName = getCleanRecordDataValue(ed, "Name");
+  let fullName = getCleanRecordDataValue(ed, "Name");
+  if (!fullName) {
+    fullName = ed.titleName;
   }
-
   result.setFullName(cleanName(fullName));
 
   if (!fullName && ed.recordData) {

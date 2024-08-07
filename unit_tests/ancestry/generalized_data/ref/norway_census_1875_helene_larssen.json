@@ -1,0 +1,95 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Helene Larssen"
+  },
+  "eventPlace": {
+    "country": "Norge (Norway)",
+    "county": "Akershus",
+    "placeString": "Vestby/Vestby, Garder Og SÃ¥ner, Akershus, Norge (Norway)"
+  },
+  "birthPlace": {
+    "placeString": "Vestby Prgj."
+  },
+  "eventDate": {
+    "yearString": "1875"
+  },
+  "ageAtEvent": "5",
+  "relationshipToHead": "daughter",
+  "householdArrayFields": [
+    "name"
+  ],
+  "householdArray": [
+    {
+      "name": "Husfader (Head)",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113398&indiv=try"
+    },
+    {
+      "name": "Hustru (Wife)",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113399&indiv=try"
+    },
+    {
+      "name": "SÃ¸nn (Son)",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113400&indiv=try"
+    },
+    {
+      "name": "Datter (Daughter)",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113401&indiv=try"
+    },
+    {
+      "name": "SÃ¸nn (Son)",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113402&indiv=try"
+    },
+    {
+      "name": "Datter (Daughter)",
+      "isSelected": true,
+      "age": "5",
+      "relationship": "daughter",
+      "gender": "",
+      "birthDate": "1870",
+      "birthPlace": "Vestby Prgj."
+    },
+    {
+      "name": "SÃ¸nn (Son)",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113404&indiv=try"
+    },
+    {
+      "name": "Tjenestegutt (Servant)",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113405&indiv=try"
+    },
+    {
+      "name": "Tjenestepige (Maid)",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113406&indiv=try"
+    },
+    {
+      "name": "Tjenestepige (Maid)",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113407&indiv=try"
+    },
+    {
+      "name": "Legslem",
+      "uid": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113408&indiv=try"
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61751|113403}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|61751|113398}}",
+    "{{Ancestry Record|61751|113399}}",
+    "{{Ancestry Record|61751|113400}}",
+    "{{Ancestry Record|61751|113401}}",
+    "{{Ancestry Record|61751|113402}}",
+    "{{Ancestry Record|61751|113404}}",
+    "{{Ancestry Record|61751|113405}}",
+    "{{Ancestry Record|61751|113406}}",
+    "{{Ancestry Record|61751|113407}}",
+    "{{Ancestry Record|61751|113408}}"
+  ],
+  "collectionData": {
+    "id": "61751",
+    "county": "Akershus"
+  },
+  "hasValidData": true
+}

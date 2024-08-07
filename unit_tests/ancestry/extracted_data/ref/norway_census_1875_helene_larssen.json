@@ -1,0 +1,104 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/113403:61751?tid=&pid=&queryid=4e71d902-2efe-454d-97cb-fdfea8e24a9c&_phsrc=Zqm11476&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "61751",
+  "recordId": "113403",
+  "ancestryTemplate": "{{Ancestry Record|61751|113403}}",
+  "domain": "com",
+  "titleName": "Helene Larssen",
+  "titleCollection": "1875 Norway Census",
+  "recordData": {
+    "Name": "Helene Larssen",
+    "Gender": "Kvinnelig",
+    "Age": "5",
+    "Birth Date": "1870",
+    "Birth Place": "Vestby Prgj.",
+    "Census year": "1875",
+    "City": "Haugen",
+    "Municipality": "Vestby/Vestby, Garder Og SÃ¥ner",
+    "County": "Akershus",
+    "Country": "Norge (Norway)",
+    "Relation to Head": "Datter (Daughter)",
+    "Counting District Number": "003",
+    "Counting District": "Tannumbygden Og Galbybygden",
+    "Household Members (Relation to Head)": "Husfader (Head)<br/>Hustru (Wife)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Datter (Daughter)<br/>SÃ¸nn (Son)<br/>Tjenestegutt (Servant)<br/>Tjenestepige (Maid)<br/>Tjenestepige (Maid)<br/>Legslem",
+    "Description": "Rural"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Relation to Head)"
+    ],
+    "members": [
+      {
+        "Household Members (Relation to Head)": "Husfader (Head)",
+        "dbId": "61751",
+        "recordId": "113398",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113398&indiv=try"
+      },
+      {
+        "Household Members (Relation to Head)": "Hustru (Wife)",
+        "dbId": "61751",
+        "recordId": "113399",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113399&indiv=try"
+      },
+      {
+        "Household Members (Relation to Head)": "SÃ¸nn (Son)",
+        "dbId": "61751",
+        "recordId": "113400",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113400&indiv=try"
+      },
+      {
+        "Household Members (Relation to Head)": "Datter (Daughter)",
+        "dbId": "61751",
+        "recordId": "113401",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113401&indiv=try"
+      },
+      {
+        "Household Members (Relation to Head)": "SÃ¸nn (Son)",
+        "dbId": "61751",
+        "recordId": "113402",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113402&indiv=try"
+      },
+      {
+        "Household Members (Relation to Head)": "Datter (Daughter)"
+      },
+      {
+        "Household Members (Relation to Head)": "SÃ¸nn (Son)",
+        "dbId": "61751",
+        "recordId": "113404",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113404&indiv=try"
+      },
+      {
+        "Household Members (Relation to Head)": "Tjenestegutt (Servant)",
+        "dbId": "61751",
+        "recordId": "113405",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113405&indiv=try"
+      },
+      {
+        "Household Members (Relation to Head)": "Tjenestepige (Maid)",
+        "dbId": "61751",
+        "recordId": "113406",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113406&indiv=try"
+      },
+      {
+        "Household Members (Relation to Head)": "Tjenestepige (Maid)",
+        "dbId": "61751",
+        "recordId": "113407",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113407&indiv=try"
+      },
+      {
+        "Household Members (Relation to Head)": "Legslem",
+        "dbId": "61751",
+        "recordId": "113408",
+        "link": "https://search.ancestry.com/cgi-bin/sse.dll?dbid=61751&h=113408&indiv=try"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/61751/images/ft20110104310941?pid=113403&usePUB=true&_phsrc=Zqm11476&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "61751",
+  "imageRecordId": "ft20110104310941",
+  "sourceCitation": "Riksarkivet: the National Archives of Norway; Norge; Norway; 1875 Norge Folketelling; 1875 Norway Census",
+  "sourceInformation": "Ancestry.com. 1875 Norway Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2020. Original data: 1875 Norge Folketelling, Arkivverket, Norge.",
+  "originalData": "1875 Norge Folketelling, Arkivverket, Norge.",
+  "sourceDescription": "This collection comprises records from the 1875 Norway census. Learn more..."
+}
