@@ -30,6 +30,12 @@ import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
+//////////////////
+// NOTE: I resaved some page files on 7 Aug 2024.
+// In the resaved files the extended ASCII characters are not handled correctly
+// They are getting loaded as charset Windows-1252 documents
+//////////////////
+
 const regressionData = [
   {
     // has extensded ASCII characters

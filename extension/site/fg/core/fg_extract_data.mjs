@@ -61,6 +61,45 @@ function extractInscription(result, document) {
   }
 }
 
+function checkIfHasGravePhoto(document) {
+  let photoCarouselDiv = document.querySelector("#photo-carousel");
+
+  if (!photoCarouselDiv) {
+    // this is an old format page (probably from unit tests)
+    // so use old test
+    const mainPhoto = document.querySelector("#main-photo");
+    if (mainPhoto) {
+      return true;
+    }
+  } else {
+    let photoFooters = photoCarouselDiv.querySelectorAll("div.carousel-item div.carousel-footer");
+    for (let photoFooter of photoFooters) {
+      let paras = photoFooter.querySelectorAll("p");
+      for (let para of paras) {
+        let text = para.textContent;
+        if (text == "Photo type: Grave") {
+          return true;
+        }
+      }
+    }
+  }
+
+  // alternate way
+  const scriptElements = document.querySelectorAll("script");
+  for (let scriptElement of scriptElements) {
+    let text = scriptElement.text;
+    if (text) {
+      if (text.includes("var findagrave = {")) {
+        if (text.includes('intermentHasPhoto: "true",')) {
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
+}
+
 function extractData(document, url) {
   var result = {};
   result.url = url;
@@ -87,6 +126,11 @@ function extractData(document, url) {
     }
     result.name = cleanText(text);
     result.nameHtml = cleanText(html);
+    // look for prefix
+    let prefixNode = nameNode.querySelector("span.prefix");
+    if (prefixNode && prefixNode.textContent) {
+      result.namePrefix = prefixNode.textContent;
+    }
   }
 
   let memEvents = document.querySelector("dl.mem-events");
@@ -151,8 +195,8 @@ function extractData(document, url) {
   setFromLabelWithId(result, document, "#citationInfo", "citation");
 
   // check to see if there is an image
-  const mainPhoto = document.querySelector("#main-photo");
-  if (mainPhoto) {
+  let hasGravePhoto = checkIfHasGravePhoto(document);
+  if (hasGravePhoto) {
     result.hasImage = true;
   } else {
     result.hasImage = false;

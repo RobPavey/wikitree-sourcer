@@ -253,6 +253,16 @@ function setNames(ed, result) {
   // Now use the URL to identify what the remaining parts of the name are
   extractNameParts(ed, fullName, nameObj);
 
+  if (ed.namePrefix) {
+    if (nameObj.prefix) {
+      if (!nameObj.prefix.includes(ed.namePrefix)) {
+        nameObj.prefix = ed.namePrefix + " " + nameObj.prefix;
+      }
+    } else {
+      nameObj.prefix = ed.namePrefix;
+    }
+  }
+
   if (!maidenName) {
     let lastName = result.inferLastName();
     if (lastName) {
