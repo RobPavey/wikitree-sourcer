@@ -703,15 +703,17 @@ function markHouseholdMembersToIncludeInTable(generalizedData, options) {
   let structuredHousehold = buildStructuredHousehold(generalizedData);
   if (structuredHousehold) {
     let structuredMember = structuredHousehold.selectedMember;
-    if (structuredMember && structuredMember.relationTo) {
-      let relatedToPerson = structuredMember.relationTo;
-      if (relatedToPerson.personIndex) {
-        startIndex = relatedToPerson.personIndex;
-      }
-    } else if (structuredMember.lastHead) {
-      let previousHead = structuredMember.lastHead;
-      if (previousHead.personIndex) {
-        startIndex = previousHead.personIndex;
+    if (structuredMember) {
+      if (structuredMember.relationTo) {
+        let relatedToPerson = structuredMember.relationTo;
+        if (relatedToPerson.personIndex) {
+          startIndex = relatedToPerson.personIndex;
+        }
+      } else if (structuredMember.lastHead) {
+        let previousHead = structuredMember.lastHead;
+        if (previousHead.personIndex) {
+          startIndex = previousHead.personIndex;
+        }
       }
     }
   }
