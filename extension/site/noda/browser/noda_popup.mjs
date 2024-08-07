@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
-import { generalizeData } from "../core/noda_generalize_data.mjs";
+import { generalizeData, regeneralizeData } from "../core/noda_generalize_data.mjs";
 import { buildCitation } from "../core/noda_build_citation.mjs";
 import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
@@ -39,6 +39,7 @@ async function setupNodaPopupMenu(extractedData) {
     extractFailedMessage: "It looks like a Digitalarkivet page but not a record or image page.",
     generalizeFailedMessage: "It looks like a Digitalarkivet page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
+    regeneralizeFunction: regeneralizeData,
     buildCitationFunction: buildCitation,
     buildHouseholdTableFunction: buildHouseholdTable,
     siteNameToExcludeFromSearch: "noda",

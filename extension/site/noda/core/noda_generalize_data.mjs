@@ -31,4 +31,8 @@ function generalizeData(input) {
   return commonGeneralizeData("noda", edReader);
 }
 
-export { generalizeData };
+function regeneralizeData(ed, gd) {
+  return gd;
+}
+
+export { generalizeData, regeneralizeData };

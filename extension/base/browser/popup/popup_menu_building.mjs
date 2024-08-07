@@ -974,7 +974,11 @@ function isManualClassificationNeeded(data) {
       if (options.citation_fs_dataStyle == "string") {
         result.isRecordTypeNeeded = true;
       }
-    } else if (data.generalizedData.sourceOfData == "openarch" || data.generalizedData.sourceOfData == "wiwwaswie") {
+    } else if (
+      data.generalizedData.sourceOfData == "openarch" ||
+      data.generalizedData.sourceOfData == "wiewaswie" ||
+      data.generalizedData.sourceOfData == "noda"
+    ) {
       result.isRecordTypeNeeded = true;
     }
   }
