@@ -1519,6 +1519,7 @@ const RecordCollectionData = [
       noda: { id: "lt_dp", dates: { from: 1600, to: 2000 } },
       fs: { id: "1467014", dates: { from: 1634, to: 1927 } },
       ancestry: { id: "1345", dates: { from: 1648, to: 1903 } },
+      fmp: { id: "Norway Baptisms 1634-1927", dates: { from: 1634, to: 1927 } },
     },
   },
 
@@ -1541,8 +1542,8 @@ const RecordCollectionData = [
     dates: { from: 1801, to: 1801 },
     sites: {
       noda: { id: "jt_13" },
-      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
-      ancestry: { id: "" },
+      fs: { id: "3733603", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "61749" },
     },
   },
   {
@@ -1607,8 +1608,8 @@ const RecordCollectionData = [
     dates: { from: 1865, to: 1865 },
     sites: {
       noda: { id: "jt_7" },
-      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
-      ancestry: { id: "" },
+      fs: { id: "3756102", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "61753" },
     },
   },
   {
@@ -1618,8 +1619,8 @@ const RecordCollectionData = [
     dates: { from: 1870, to: 1870 },
     sites: {
       noda: { id: "jt_6" },
-      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
-      ancestry: { id: "" },
+      fs: { id: "4135961", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "62015" },
     },
   },
   {
@@ -1651,8 +1652,8 @@ const RecordCollectionData = [
     dates: { from: 1891, to: 1891 },
     sites: {
       noda: { id: "jt_3" },
-      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
-      ancestry: { id: "" },
+      fs: { id: "4067726", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "60603" },
     },
   },
   {
@@ -1662,8 +1663,8 @@ const RecordCollectionData = [
     dates: { from: 1900, to: 1900 },
     sites: {
       noda: { id: "jt_2" },
-      fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
-      ancestry: { id: "" },
+      fs: { id: "3744863", searchQueryFields: { relationshipToHead: "" } },
+      ancestry: { id: "60604" },
     },
   },
   {
@@ -1674,7 +1675,7 @@ const RecordCollectionData = [
     sites: {
       noda: { id: "jt_19" },
       fs: { id: "", searchQueryFields: { relationshipToHead: "" } },
-      ancestry: { id: "" },
+      ancestry: { id: "60605" },
     },
   },
   {

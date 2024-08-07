@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
-import { getRegions, getCounties, getPlaces } from "./noda_places.mjs";
+import { getRegions, getCounties, getPlaces, lookupPlaceObj } from "./noda_places.mjs";
 
 function buildSelectValuesForRegionsCountiesOrPlaces(valueArray) {
   let values = [];
@@ -39,19 +39,64 @@ function buildSelectValuesForRegionsCountiesOrPlaces(valueArray) {
 
   addValue("all", "All");
 
-  for (let valueObj of valueArray) {
-    addValue(valueObj.code, valueObj.name);
-  }
-
-  // sort alphabetically
-  let sortedList = values.sort(function (a, b) {
-    if (a.text < b.text) {
+  // sort values alphabetically by text before adding
+  let sortedValueArray = valueArray.sort(function (a, b) {
+    if (a.name < b.name) {
       return -1;
     }
     return +1;
   });
 
-  return sortedList;
+  for (let valueObj of sortedValueArray) {
+    addValue(valueObj.code, valueObj.name);
+  }
+
+  return values;
+}
+
+function buildSelectValuesForRelatedPeople(gd) {
+  let values = [];
+
+  function addValue(value, text) {
+    if (value && text) {
+      let valueObj = { value: value, text: text };
+      if (!values.some((entry) => entry.value === value)) {
+        values.push(valueObj);
+      }
+    }
+  }
+
+  function addPerson(nameObj, role, roleText) {
+    if (!nameObj) {
+      return;
+    }
+    let forenames = nameObj.inferForenames();
+    let lastName = nameObj.inferLastName();
+    if (!forenames) {
+      forenames = "";
+    }
+    if (!lastName) {
+      forenames = "";
+    }
+    if (forenames || lastName) {
+      let text = forenames + " " + lastName + " (" + roleText + ")";
+      let value = forenames + "|" + lastName + "|" + role;
+      addValue(value, text);
+    }
+  }
+
+  addValue("none", "None");
+
+  if (gd.parents) {
+    if (gd.parents.father) {
+      addPerson(gd.parents.father.name, "far", "Father");
+    }
+    if (gd.parents.mother) {
+      addPerson(gd.parents.mother.name, "mor", "Mother");
+    }
+  }
+
+  return values;
 }
 
 const categories = [
@@ -1381,8 +1426,6 @@ const NodaData = {
 
     // source period ?
 
-    // place
-
     // role?
 
     // birth year?
@@ -1392,8 +1435,6 @@ const NodaData = {
     // family position and marital status ?
 
     // event date?
-
-    // related person
 
     // place
     function updateOnPlaceChangeFunction(parameterName, parameters, options) {
@@ -1443,6 +1484,19 @@ const NodaData = {
       controls.push(placeControl);
     }
 
+    // related person
+
+    let relatedPersonValues = buildSelectValuesForRelatedPeople(generalizedData);
+    if (relatedPersonValues && relatedPersonValues.length > 1) {
+      let relatedPersonControl = {};
+      relatedPersonControl.elementId = "relatedPerson";
+      relatedPersonControl.parameterName = "relatedPerson";
+      relatedPersonControl.type = "select";
+      relatedPersonControl.label = "Related person";
+      relatedPersonControl.values = relatedPersonValues;
+      controls.push(relatedPersonControl);
+    }
+
     return controls;
   },
 
@@ -1450,6 +1504,20 @@ const NodaData = {
     parameters.region = "all";
     parameters.county = "all";
     parameters.place = "all";
+    parameters.relatedPerson = "none";
+
+    let placeParts = lookupPlaceObj(generalizedData.inferEventPlaceObj());
+    if (placeParts) {
+      if (placeParts.region) {
+        parameters.region = placeParts.region.code;
+      }
+      if (placeParts.county) {
+        parameters.county = placeParts.county.code;
+      }
+      if (placeParts.place) {
+        parameters.place = placeParts.place.code;
+      }
+    }
   },
 
   updateParametersOnCategoryChange: function (generalizedData, parameters, options) {

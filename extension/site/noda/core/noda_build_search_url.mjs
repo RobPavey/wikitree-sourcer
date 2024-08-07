@@ -235,6 +235,23 @@ function buildSearchUrl(buildUrlInput) {
     } else if (parameters.category && parameters.category != "all") {
       builder.addCategory(parameters.category);
     }
+
+    if (parameters.relatedPerson) {
+      let parts = parameters.relatedPerson.split("|");
+      let forenames = "";
+      let lastName = "";
+      let role = "";
+      if (parts.length > 0) {
+        forenames = parts[0];
+        if (parts.length > 1) {
+          lastName = parts[1];
+          if (parts.length > 2) {
+            role = parts[2];
+          }
+        }
+      }
+      builder.addRelatedPerson(forenames, lastName, role);
+    }
   }
 
   let sourcePeriodOption = options.search_noda_includeSourcePeriod;
