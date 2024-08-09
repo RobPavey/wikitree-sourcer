@@ -102,20 +102,20 @@ const GD = {
     // calling this.
 
     // Norway
-    if (lc == "mannlig" || lc == "m" || lc == "mann" || lc == "mann (male)" || lc == "mannlig (male)") {
+    if (lc == "mannlig" || lc == "m" || lc == "mann") {
       return "male";
     }
-    if (lc == "kvinnelig" || lc == "k" || lc == "kvin" || lc == "kvin (female)" || lc == "kvinnelig (female)") {
+    if (lc == "kvinnelig" || lc == "k" || lc == "kvin") {
       return "female";
     }
 
-    // change for english gender in parens
+    // check for english gender in parens
     let plc = lc.replace(/\w+\s+\((\w+)\)\s*/, "$1");
     if (plc && plc != lc) {
-      if (plc == "male" || plc == "m" || plc == "m (male)") {
+      if (plc == "male" || plc == "m") {
         return "male";
       }
-      if (plc == "female" || plc == "f" || plc == "f (female)") {
+      if (plc == "female" || plc == "f") {
         return "female";
       }
     }
@@ -128,31 +128,51 @@ const GD = {
       return "";
     }
     let lc = string.toLowerCase();
-    if (lc == "married" || lc == "m" || lc.startsWith("mar")) {
-      return "married";
+
+    function standardizeLc(lc) {
+      if (lc == "married" || lc == "m" || lc.startsWith("mar")) {
+        return "married";
+      }
+      if (
+        lc == "single" ||
+        lc == "s" ||
+        lc == "unmarried" ||
+        lc == "u" ||
+        lc.startsWith("unm") ||
+        lc.startsWith("sin") ||
+        lc.startsWith("nev")
+      ) {
+        return "single";
+      }
+      if (lc == "widowed" || lc == "w" || lc == "wd" || lc.startsWith("wid")) {
+        return "widowed";
+      }
+      if (lc == "divorced" || lc == "d" || lc.startsWith("div")) {
+        return "divorced";
+      }
+      if (lc == "separated" || lc.startsWith("sep")) {
+        return "separated";
+      }
+
+      return "";
     }
-    if (
-      lc == "single" ||
-      lc == "s" ||
-      lc == "unmarried" ||
-      lc == "u" ||
-      lc.startsWith("unm") ||
-      lc.startsWith("sin") ||
-      lc.startsWith("nev")
-    ) {
-      return "single";
+
+    let status = standardizeLc(lc);
+    if (status) {
+      return status;
     }
-    if (lc == "widowed" || lc == "w" || lc == "wd" || lc.startsWith("wid")) {
-      return "widowed";
+
+    // check for english status in parens, this is common for non-english language records on Ancestry
+    let plc = lc.replace(/\w+\s+\((\w+)\)\s*/, "$1");
+    if (plc && plc != lc) {
+      let status = standardizeLc(plc);
+      if (status) {
+        return status;
+      }
     }
-    if (lc == "divorced" || lc == "d" || lc.startsWith("div")) {
-      return "divorced";
-    }
-    if (lc == "separated" || lc.startsWith("sep")) {
-      return "separated";
-    }
+
     // Note that "-" is turned into "", this is typical on some site for young children
-    return "";
+    return status;
   },
 
   standardizeRelationshipToHead: function (string) {
