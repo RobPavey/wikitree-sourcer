@@ -158,6 +158,11 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/view/279/pk00000002723491",
   },
   {
+    // no gender
+    caseName: "confirmation_1865_mathias_skrede",
+    url: "https://www.digitalarkivet.no/en/view/279/pk00000000751877",
+  },
+  {
     caseName: "death_1951_kare_tonne",
     url: "https://www.digitalarkivet.no/en/view/387/pc00000001290505",
   },

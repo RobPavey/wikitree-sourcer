@@ -5,6 +5,7 @@
   "name": {
     "name": "Helene Larssen"
   },
+  "personGender": "female",
   "eventPlace": {
     "country": "Norge (Norway)",
     "county": "Akershus",
@@ -47,7 +48,7 @@
       "isSelected": true,
       "age": "5",
       "relationship": "daughter",
-      "gender": "",
+      "gender": "female",
       "birthDate": "1870",
       "birthPlace": "Vestby Prgj."
     },

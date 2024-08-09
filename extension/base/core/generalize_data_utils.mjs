@@ -97,6 +97,29 @@ const GD = {
     if (lc.startsWith("f")) {
       return "female";
     }
+
+    // language variants, we could check country but there is no guarantee that caller has set country before
+    // calling this.
+
+    // Norway
+    if (lc == "mannlig" || lc == "m" || lc == "mann" || lc == "mann (male)" || lc == "mannlig (male)") {
+      return "male";
+    }
+    if (lc == "kvinnelig" || lc == "k" || lc == "kvin" || lc == "kvin (female)" || lc == "kvinnelig (female)") {
+      return "female";
+    }
+
+    // change for english gender in parens
+    let plc = lc.replace(/\w+\s+\((\w+)\)\s*/, "$1");
+    if (plc && plc != lc) {
+      if (plc == "male" || plc == "m" || plc == "m (male)") {
+        return "male";
+      }
+      if (plc == "female" || plc == "f" || plc == "f (female)") {
+        return "female";
+      }
+    }
+
     return "";
   },
 

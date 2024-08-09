@@ -89,6 +89,11 @@ const regressionData = [
       },
     ],
   },
+  {
+    caseName: "noda_confirmation_1865_mathias_skrede",
+    inputPath: "noda/generalized_data/ref/confirmation_1865_mathias_skrede",
+    typeOfSearch: "",
+  },
 ];
 
 async function runTests(testManager) {

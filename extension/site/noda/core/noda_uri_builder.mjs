@@ -88,7 +88,7 @@ class NodaUriBuilder {
     let gender = "";
     if (string == "male") {
       gender = "m";
-    } else {
+    } else if (string == "female") {
       gender = "k";
     }
     this.addSearchParameter("genders%5B%5D", gender);

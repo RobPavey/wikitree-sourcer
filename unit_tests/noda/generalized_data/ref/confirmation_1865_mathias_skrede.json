@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Confirmation",
+  "name": {
+    "lastName": "Bottolfsen Skrede",
+    "forenames": "Mathias Christian"
+  },
+  "eventPlace": {
+    "placeString": "Hornindal, Sogn og Fjordane, Norway",
+    "parish": "Hornindal",
+    "county": "Sogn og Fjordane",
+    "country": "Norway"
+  },
+  "hasValidData": true
+}

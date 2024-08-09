@@ -1,0 +1,115 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/279/pk00000000751877",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Church book from Hornindal parish 1837-1866 (1444Q)",
+    "Confirmations",
+    "Mathias Christian Bottolfsen Skrede"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Confirmations: 1865-10-15",
+      "collectionNameParts": [
+        "Confirmations",
+        "1865-10-15"
+      ]
+    }
+  ],
+  "heading": "Person: Mathias Christian Bottolfsen Skrede",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Mathias Christian Bottolfsen Skrede"
+  ],
+  "recordData": {
+    "Serial no.": {
+      "textString": "1"
+    },
+    "Roll": {
+      "textString": "konfirmant"
+    },
+    "Given name": {
+      "textString": "Mathias Christian"
+    },
+    "Last name": {
+      "textString": "Bottolfsen Skrede"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Persons involved",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "1"
+          ],
+          "personHeading": "Serial no. 1",
+          "Roll": {
+            "textString": "konfirmant"
+          },
+          "Name": {
+            "textString": "Mathias Christian Bottolfsen Skrede"
+          }
+        }
+      ]
+    },
+    {
+      "panelTitle": "Confirmations",
+      "Page": {
+        "textString": "399"
+      },
+      "Serial no.": {
+        "textString": "16"
+      },
+      "Year": {
+        "textString": "1865"
+      },
+      "Confirmation date": {
+        "textString": "10-15"
+      }
+    }
+  ],
+  "permanentId": "pk00000000751877",
+  "sourceInformation": "Church book from Hornindal parish 1837-1866 (1444Q)",
+  "sourceData": {
+    "County": {
+      "textString": "Sogn og Fjordane"
+    },
+    "Municipality (1947)": {
+      "textString": "Hornindal"
+    },
+    "Geographic area": {
+      "textString": "Eid parish Hornindal local parish",
+      "textParts": [
+        "Eid parish",
+        "Hornindal local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1837"
+    },
+    "End year": {
+      "textString": "1866"
+    },
+    "Page": {
+      "textString": "399"
+    },
+    "Serial no.": {
+      "textString": "16"
+    },
+    "Born and baptised": {
+      "textString": "Bergesen and Stensen"
+    },
+    "Confirmation": {
+      "textString": "Bergesen and Stensen"
+    },
+    "Married": {
+      "textString": "Bergesen and Stensen"
+    }
+  }
+}

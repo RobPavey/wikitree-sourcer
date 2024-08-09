@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Confirmation''':\n\"Church book from Hornindal parish 1837-1866 (1444Q)\"<br/>\nConfirmations: 1865-10-15; Page: 399; Serial no.: 16<br/>\n[https://www.digitalarkivet.no/en/view/279/pk00000000751877 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nMathias Christian Bottolfsen Skrede confirmation in Hornindal, Sogn og Fjordane, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mathias was confirmed in Hornindal, Sogn og Fjordane, Norway.<ref>\n'''Confirmation''':\n\"Church book from Hornindal parish 1837-1866 (1444Q)\"<br/>\nConfirmations: 1865-10-15; Page: 399; Serial no.: 16<br/>\n[https://www.digitalarkivet.no/en/view/279/pk00000000751877 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nMathias Christian Bottolfsen Skrede confirmation in Hornindal, Sogn og Fjordane, Norway.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Confirmation''': \"Church book from Hornindal parish 1837-1866 (1444Q)\"<br/>Confirmations: 1865-10-15; Page: 399; Serial no.: 16<br/>[https://www.digitalarkivet.no/en/view/279/pk00000000751877 Digitalarkivet Record] (accessed 6 May 2021)<br/>Mathias Christian Bottolfsen Skrede confirmation in Hornindal, Sogn og Fjordane, Norway.",
+    "type": "source"
+  }
+}
