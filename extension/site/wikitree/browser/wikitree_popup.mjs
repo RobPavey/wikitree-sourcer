@@ -924,9 +924,10 @@ function getBirthLine(personGd) {
     birthDateString = personGd.getNarrativeDateFormat(birthDateObj, format, highlight, true);
   }
 
+  let birthPlace = "";
   let birthPlaceObj = personGd.inferBirthPlaceObj();
   if (birthPlaceObj) {
-    let birthPlace = personGd.inferBirthPlace();
+    birthPlace = personGd.inferBirthPlace();
     if (birthPlace) {
       let preposition = birthPlaceObj.getPreposition();
       birthPlace = preposition + " " + birthPlace;
