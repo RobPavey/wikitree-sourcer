@@ -34,13 +34,10 @@ import {
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
-import { options } from "/base/browser/options/options_loader.mjs";
-
-import { CD } from "/base/core/country_data.mjs";
 import { RT } from "/base/core/record_type.mjs";
 
 const groStartYear = 1837;
-const groEndYear = 2021;
+const groEndYear = 2022;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Helper functions
@@ -111,7 +108,7 @@ function addGroSearchBirthsMenuItem(menu, data, filter) {
     groSearch(data.generalizedData, "births");
   };
 
-  const menuItemText = "Search GRO Births (1837-1934, 1984-2021)";
+  const menuItemText = "Search GRO Births (1837-1934, 1984-2022)";
   let year = data.generalizedData.inferBirthYear();
   let subtitle = "";
 
@@ -139,7 +136,7 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
     groSearch(data.generalizedData, "deaths");
   };
 
-  const menuItemText = "Search GRO Deaths (1837-1957, 1984-2021)";
+  const menuItemText = "Search GRO Deaths (1837-1957, 1984-2022)";
   let year = data.generalizedData.inferDeathYear();
   let subtitle = "";
 
