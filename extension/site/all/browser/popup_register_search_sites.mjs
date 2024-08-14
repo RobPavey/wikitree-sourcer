@@ -59,3 +59,4 @@ import "/site/vicbdm/browser/vicbdm_popup_search.mjs";
 import "/site/wiewaswie/browser/wiewaswie_popup_search.mjs";
 import "/site/wikitree/browser/wikitree_popup_search.mjs";
 import "/site/wikipedia/browser/wikipedia_popup_search.mjs";
+import "/site/npa/browser/npa_popup_search.mjs";

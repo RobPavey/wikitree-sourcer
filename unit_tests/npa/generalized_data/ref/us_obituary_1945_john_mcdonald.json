@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "npa",
+  "sourceType": "record",
+  "recordType": "Newspaper",
+  "eventDate": {
+    "dateString": "02 Aug 1945"
+  },
+  "newspaperName": "Graettinger Times",
+  "hasValidData": true
+}
