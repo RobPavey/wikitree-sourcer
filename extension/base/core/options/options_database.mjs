@@ -22,19 +22,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { optionsRegistry } from "./options_registry.mjs";
+import { internalOptionsRegistry, finalizeRegistry } from "./options_registry.mjs";
 import "./register_base_options.mjs";
-import { importSiteOptions } from "../../../site/all/core/register_site_options.mjs";
+import { registerSiteOptions } from "../../../site/all/core/register_site_options.mjs";
 
 async function getOptionsRegistry() {
-  await importSiteOptions();
-  return optionsRegistry;
+  await registerSiteOptions();
+  finalizeRegistry();
+  return internalOptionsRegistry;
 }
 
 async function getDefaultOptions() {
   // build the options structure from the optionsRegistry
 
-  await importSiteOptions();
+  let optionsRegistry = await getOptionsRegistry();
 
   let defaultOptions = {};
 
@@ -49,14 +50,11 @@ async function getDefaultOptions() {
     }
   }
 
-  console.log("getDefaultOptions: ");
-  console.log(defaultOptions);
-
   return defaultOptions;
 }
 
 async function getUnitTestOptions() {
-  await importSiteOptions();
+  let optionsRegistry = await getOptionsRegistry();
 
   // build the options structure from the optionsRegistry
 
@@ -78,9 +76,6 @@ async function getUnitTestOptions() {
       unitTestOptions[fullOptionName] = value;
     }
   }
-
-  console.log("getUnitTestOptions: ");
-  console.log(unitTestOptions);
 
   return unitTestOptions;
 }

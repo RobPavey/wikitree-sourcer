@@ -30,86 +30,10 @@ import { siteNames } from "./site_names.mjs";
 // Therefore this list is ordered by the visible string in the options dropdown
 // rather than by sitename.
 
-/*
-import "../../ancestry/core/ancestry_options.mjs";
-import "../../bg/core/bg_options.mjs";
-import "../../opccorn/core/opccorn_options.mjs";
-import "../../cwgc/core/cwgc_options.mjs";
-import "../../noda/core/noda_options.mjs"; // "Digitalarkivet"
-import "../../fmp/core/fmp_options.mjs";
-import "../../fs/core/fs_options.mjs";
-import "../../fg/core/fg_options.mjs";
-import "../../freebmd/core/freebmd_options.mjs";
-import "../../freecen/core/freecen_options.mjs";
-import "../../freereg/core/freereg_options.mjs";
-import "../../geneteka/core/geneteka_options.mjs";
-import "../../gro/core/gro_options.mjs";
-import "../../gbooks/core/gbooks_options.mjs";
-import "../../hathi/core/hathi_options.mjs";
-import "../../archive/core/archive_options.mjs";
-import "../../irishg/core/irishg_options.mjs";
-import "../../jstor/core/jstor_options.mjs";
-import "../../baclac/core/baclac_options.mjs";
-import "../../mh/core/mh_options.mjs";
-import "../../naie/core/naie_options.mjs";
-import "../../nli/core/nli_options.mjs";
-import "../../np/core/np_options.mjs";
-import "../../openarch/core/openarch_options.mjs";
-import "../../ppnz/core/ppnz_options.mjs";
-import "../../psuk/core/psuk_options.mjs";
-import "../../scotp/core/scotp_options.mjs";
-import "../../trove/core/trove_options.mjs";
-import "../../vicbdm/core/vicbdm_options.mjs";
-import "../../wiewaswie/core/wiewaswie_options.mjs";
-import "../../wikitree/core/wikitree_options.mjs";
-import "../../wikipedia/core/wikipedia_options.mjs";
-import "../../npa/core/npa_options.mjs";
-*/
-
-// in theory we could get all the site name by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
-/*
-const siteNames = [
-  "ancestry",
-  "bg",
-  "opccorn",
-  "cwgc",
-  "noda", // "Digitalarkivet"
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "archive",
-  "irishg",
-  "jstor",
-  "baclac",
-  "mh",
-  "naie",
-  "nli",
-  "np",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "npa",
-];
-*/
-
 var areSiteOptionsRegistered = false;
-async function importSiteOptions() {
+async function registerSiteOptions() {
   if (areSiteOptionsRegistered) {
-    //return;
+    return;
   }
   for (let siteName of siteNames) {
     let pathName = "../../" + siteName + "/core/" + siteName + "_options.mjs";
@@ -123,4 +47,4 @@ async function importSiteOptions() {
   areSiteOptionsRegistered = true;
 }
 
-export { importSiteOptions };
+export { registerSiteOptions };

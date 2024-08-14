@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-var optionsRegistry = {
+var internalOptionsRegistry = {
   tabs: [
     { name: "search", label: "Search", subsections: [] },
     { name: "citation", label: "Citation", subsections: [] },
@@ -77,7 +77,7 @@ function registerSubsectionForOptions(tabName, name, label, comment) {
   //console.log("registerSubsectionForOptions: tabName is: " + tabName + ", name is: " + name + ", label is: " + label);
 
   let tab = undefined;
-  for (let thisTab of optionsRegistry.tabs) {
+  for (let thisTab of internalOptionsRegistry.tabs) {
     if (thisTab.name == tabName) {
       tab = thisTab;
     }
@@ -106,7 +106,7 @@ function registerSubheadingForOptions(tabName, subsectionName, name, label) {
   //console.log("registerSubheadingForOptions: tabName is: " + tabName + ", name is: " + name + ", label is: " + label);
 
   let tab = undefined;
-  for (let thisTab of optionsRegistry.tabs) {
+  for (let thisTab of internalOptionsRegistry.tabs) {
     if (thisTab.name == tabName) {
       tab = thisTab;
     }
@@ -141,7 +141,7 @@ function registerSubheadingForOptions(tabName, subsectionName, name, label) {
 }
 
 function registerOptionsGroup(optionsGroup) {
-  optionsRegistry.optionsGroups.push(optionsGroup);
+  internalOptionsRegistry.optionsGroups.push(optionsGroup);
 }
 
 function registerSiteSearchPopupOptionsGroup(siteName, topMenuPriority, subMenuPriority) {
@@ -172,10 +172,29 @@ function registerSiteSearchPopupOptionsGroup(siteName, topMenuPriority, subMenuP
   registerOptionsGroup(optionsGroup);
 }
 
+function finalizeRegistry() {
+  // sort the lists that should be alphabetically sorted
+
+  function compareFunction(a, b) {
+    if (a.label < b.label) {
+      return -1;
+    } else if (a.label > b.label) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+  for (let tab of internalOptionsRegistry.tabs) {
+    tab.subsections.sort(compareFunction);
+  }
+}
+
 export {
   registerOptionsGroup,
   registerSubsectionForOptions,
   registerSubheadingForOptions,
   registerSiteSearchPopupOptionsGroup,
-  optionsRegistry,
+  internalOptionsRegistry,
+  finalizeRegistry,
 };

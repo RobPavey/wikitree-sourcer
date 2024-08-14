@@ -24,12 +24,15 @@ SOFTWARE.
 
 // in theory we could get all the site names by looking in the sites directory
 // but the code to do that would be different for in the extension/browser and in node.js
+
+// The order should not matter since user facing lists are sorted
+
 const siteNames = [
   "ancestry",
+  "archive",
+  "baclac",
   "bg",
-  "opccorn",
   "cwgc",
-  "noda", // "Digitalarkivet"
   "fmp",
   "fs",
   "fg",
@@ -40,14 +43,15 @@ const siteNames = [
   "gro",
   "gbooks",
   "hathi",
-  "archive",
   "irishg",
   "jstor",
-  "baclac",
   "mh",
   "naie",
   "nli",
+  "noda",
+  "npa",
   "np",
+  "opccorn",
   "openarch",
   "ppnz",
   "psuk",
@@ -57,7 +61,6 @@ const siteNames = [
   "wiewaswie",
   "wikitree",
   "wikipedia",
-  "npa",
 ];
 
 export { siteNames };

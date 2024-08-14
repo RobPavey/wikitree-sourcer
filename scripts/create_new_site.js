@@ -201,7 +201,10 @@ function createSiteFilesFromTemplates(parameters) {
   return true;
 }
 
-function addLineToFile(path, lineToAdd) {
+function updateSiteNamesFile(siteName) {
+  const path = "extension/site/all/core/site_name.mjs";
+  const lineToAdd = '  "' + siteName + '",';
+
   // read file
   let text = readFile(path);
   if (!text) {
@@ -213,32 +216,24 @@ function addLineToFile(path, lineToAdd) {
     return false;
   }
 
-  if (!text.endsWith("\n")) {
-    text += "\n";
+  let closeParenIndex = text.indexOf("];");
+  if (closeParenIndex == -1) {
+    // array not found
+    return false;
   }
 
-  text += lineToAdd + "\n";
+  let textBeforeInsert = text.substring(0, closeParenIndex);
+  let textAfterInsert = text.substring(closeParenIndex);
+  let textToInsert = lineToAdd + "\n";
+
+  let newText = textBeforeInsert + textToInsert + textAfterInsert;
 
   // write site file
-  if (!writeFile(path, text)) {
+  if (!writeFile(path, newText)) {
     return false;
   }
 
   return true;
-}
-
-function updatePopupRegisterSearchSites(siteName) {
-  const path = "extension/site/all/browser/popup_register_search_sites.mjs";
-  const lineToAdd = 'import "/site/' + siteName + "/browser/" + siteName + '_popup_search.mjs";';
-
-  return addLineToFile(path, lineToAdd);
-}
-
-function updateRegisterSiteOptions(siteName) {
-  const path = "extension/site/all/core/register_site_options.mjs";
-  const lineToAdd = 'import "../../' + siteName + "/core/" + siteName + '_options.mjs";';
-
-  return addLineToFile(path, lineToAdd);
 }
 
 function updateRunTest(siteName) {
@@ -330,8 +325,7 @@ async function createNewSite() {
     return;
   }
 
-  updatePopupRegisterSearchSites(parameters.siteName);
-  updateRegisterSiteOptions(parameters.siteName);
+  updateSiteNamesFile(parameters.siteName);
   updateRunTest(parameters.siteName);
 }
 
