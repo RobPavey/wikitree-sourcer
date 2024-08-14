@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1945 Newspaper''':\n\"NewspapersArchive.com\"<br/>\nGraettinger Times (Graettinger, Iowa, USA) Thu, Aug 02, 1945, Page 1<br/>\n[https://newspaperarchive.com/obituary-clipping-aug-02-1945-4075995/ NewspaperArchive Clipping] (accessed 6 May 2021)<br/>\nUnknown on 2 Aug 1945.\n</ref>",
+    "citation": "<ref>\n'''1945 Newspaper''':\n\"NewspapersArchive.com\"<br/>\nGraettinger Times (Graettinger, Iowa, USA) Thu, Aug 02, 1945, Page 1<br/>\n[https://newspaperarchive.com/obituary-clipping-aug-02-1945-4075995/ NewspaperArchive Clipping] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the Graettinger Times on 2 August 1945.<ref>\n'''1945 Newspaper''':\n\"NewspapersArchive.com\"<br/>\nGraettinger Times (Graettinger, Iowa, USA) Thu, Aug 02, 1945, Page 1<br/>\n[https://newspaperarchive.com/obituary-clipping-aug-02-1945-4075995/ NewspaperArchive Clipping] (accessed 6 May 2021)<br/>\nUnknown on 2 Aug 1945.\n</ref>",
+    "citation": "This person was mentioned in the Graettinger Times on 2 August 1945.<ref>\n'''1945 Newspaper''':\n\"NewspapersArchive.com\"<br/>\nGraettinger Times (Graettinger, Iowa, USA) Thu, Aug 02, 1945, Page 1<br/>\n[https://newspaperarchive.com/obituary-clipping-aug-02-1945-4075995/ NewspaperArchive Clipping] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1945 Newspaper''': \"NewspapersArchive.com\"<br/>Graettinger Times (Graettinger, Iowa, USA) Thu, Aug 02, 1945, Page 1<br/>[https://newspaperarchive.com/obituary-clipping-aug-02-1945-4075995/ NewspaperArchive Clipping] (accessed 6 May 2021)<br/>Unknown on 2 Aug 1945.",
+    "citation": "* '''1945 Newspaper''': \"NewspapersArchive.com\"<br/>Graettinger Times (Graettinger, Iowa, USA) Thu, Aug 02, 1945, Page 1<br/>[https://newspaperarchive.com/obituary-clipping-aug-02-1945-4075995/ NewspaperArchive Clipping] (accessed 6 May 2021)",
     "type": "source"
   }
 }

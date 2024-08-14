@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "2.4.3",
+  "version": "2.5.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": ["storage", "contextMenus", "scripting", "management"],
   "host_permissions": [
@@ -51,6 +51,7 @@
     "*://*.myheritage.com/*",
     "*://www.census.nationalarchives.ie/*",
     "*://*.nli.ie/*",
+    "*://*.newspaperarchive.com/*",
     "*://*.newspapers.com/*",
     "*://*.openarchieven.nl/*",
     "*://paperspast.natlib.govt.nz/*",
@@ -225,6 +226,11 @@
       "matches": ["*://*.nli.ie/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/nli/browser/nli_content.js"]
+    },
+    {
+      "matches": ["*://*.newspaperarchive.com/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/npa/browser/npa_content.js"]
     },
     {
       "matches": ["*://*.newspapers.com/*"],
@@ -404,6 +410,10 @@
     {
       "resources": ["site/nli/core/nli_extract_data.mjs"],
       "matches": ["*://*.nli.ie/*"]
+    },
+    {
+      "resources": ["site/npa/core/npa_extract_data.mjs"],
+      "matches": ["*://*.newspaperarchive.com/*"]
     },
     {
       "resources": ["site/np/core/np_extract_data.mjs"],
