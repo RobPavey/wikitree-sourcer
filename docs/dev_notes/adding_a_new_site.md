@@ -49,10 +49,9 @@ In the core folder:
 
 ### It adds imports in the extension/site/all folder
 
-The only javascript code in the extension that has to be modified for each site added is in the extension/site/all folder. You just need to add one import line to each of these files:
+The only javascript code in the extension that has to be modified for each site added is in the extension/site/all folder. You just need to add one import line to this file:
 
-- `extension/site/all/browser/popup_register_search_sites.mjs`
-- `extension/site/all/core/register_site_options.mjs`
+- `extension/site/all/core/site_names.mjs`
 
 ### It creates the unit tests site folder
 
