@@ -34,7 +34,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class NpaUriBuilder {
   constructor() {
-    this.uri = "https://www.npa.org.uk/cgi/search.pl";
+    this.uri = "https://newspaperarchive.com/tags/";
     this.searchTermAdded = false;
   }
 
@@ -65,44 +65,25 @@ class NpaUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addLastName(string) {
+    this.addSearchParameter("pl", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
+  addForenames(string) {
+    this.addSearchParameter("pf", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {
-    this.addSearchParameter("start", string);
+    this.addSearchParameter("ndt", "bd");
+    this.addSearchParameter("py", string);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("end", string);
+    this.addSearchParameter("pey", string);
   }
 
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addCountryIndex(string) {
+    this.addSearchParameter("pci", string);
   }
 
   getUri() {

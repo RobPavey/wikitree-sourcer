@@ -26,13 +26,14 @@ import { buildSearchUrl } from "../../extension/site/npa/core/npa_build_search_u
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "england_marriage_reg_handford-3_sc",
+    caseName: "ancestry_england_marriage_reg_handford-3",
     inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
   },
-  */
+  {
+    caseName: "wikitree_pavey-451",
+    inputPath: "wikitree/generalized_data/ref/pavey-451_read",
+  },
 ];
 
 async function runTests(testManager) {
