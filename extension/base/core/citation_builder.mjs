@@ -566,6 +566,23 @@ class CitationBuilder {
 
     return citation;
   }
+
+  getCitationObject(generalizedData, url) {
+    let citationString = this.getCitationString();
+
+    //console.log(fullCitation);
+
+    var citationObject = {
+      citation: citationString,
+      type: this.type,
+      generalizedData: generalizedData,
+      sourceReference: this.sourceReference,
+      sourceTitle: this.sourceTitle,
+      url: url,
+    };
+
+    return citationObject;
+  }
 }
 
 function simpleBuildCitationWrapper(input, buildCoreCitation, refTitleOverrideFunction) {
@@ -595,14 +612,7 @@ function simpleBuildCitationWrapper(input, buildCoreCitation, refTitleOverrideFu
   }
 
   // now the builder is setup, use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
+  let citationObject = builder.getCitationObject(gd, ed.url);
 
   return citationObject;
 }

@@ -23,9 +23,7 @@ SOFTWARE.
 */
 
 import { CwgcUriBuilder } from "./cwgc_uri_builder.mjs";
-import { RC } from "../../../base/core/record_collections.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
-import { optionsRegistry } from "../../../base/core/options/options_registry.mjs";
 
 function addNumToYearString(yearString, num) {
   let yearNum = DateUtils.getYearNumFromYearString(yearString);

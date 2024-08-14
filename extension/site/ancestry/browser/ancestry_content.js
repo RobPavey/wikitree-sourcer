@@ -22,7 +22,52 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`ancestry`, `site/ancestry/core/ancestry_extract_data.mjs`);
+function setFields(fieldData) {
+  console.log("setFields, fieldData is:");
+  console.log(fieldData);
+
+  function setValue(nodeSelector, fieldName) {
+    if (fieldData[fieldName]) {
+      let node = document.querySelector(nodeSelector);
+      if (node) {
+        node.value = fieldData[fieldName];
+      }
+    }
+  }
+
+  function setRadio(radioName, fieldName) {
+    let value = fieldData[fieldName];
+    if (value) {
+      let nodeSelector = "input[name=" + radioName + "][value=" + value + "]";
+      let node = document.querySelector(nodeSelector);
+      if (node) {
+        node.checked = value;
+      }
+    }
+  }
+
+  // The fields in Step 1
+  setValue("#citationTitle", "detail");
+  setValue("#citationDate", "date");
+  setValue("#citationHRef", "webAddress");
+}
+
+function additionalMessageHandler(request, sender, sendResponse) {
+  if (request.type == "setFields") {
+    setFields(request.fieldData);
+    sendResponse({ success: true });
+    return { wasHandled: true, returnValue: false };
+  }
+
+  return { wasHandled: false };
+}
+
+siteContentInit(
+  `ancestry`,
+  `site/ancestry/core/ancestry_extract_data.mjs`,
+  undefined, // overrideExtractHandler
+  additionalMessageHandler
+);
 
 ////////////////////////////////////////////////////////////////////////////////
 // All code below this is for editing the citation on an image page

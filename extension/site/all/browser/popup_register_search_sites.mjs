@@ -22,11 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { siteNames } from "../core/site_names.mjs";
+
 // Importing each of these site modules causes them to register their search menu items
 
 // We have options to control which search items appear in the menu and in which order
 // so the order of imports here does not affect that - unless two sites have the same
 // priority set, in that case the order of import would probably control their order
+/*
 import "/site/ancestry/browser/ancestry_popup_search.mjs";
 import "/site/archive/browser/archive_popup_search.mjs";
 import "/site/baclac/browser/baclac_popup_search.mjs";
@@ -60,3 +63,53 @@ import "/site/wiewaswie/browser/wiewaswie_popup_search.mjs";
 import "/site/wikitree/browser/wikitree_popup_search.mjs";
 import "/site/wikipedia/browser/wikipedia_popup_search.mjs";
 import "/site/npa/browser/npa_popup_search.mjs";
+*/
+
+// in theory we could get all the site name by looking in the sites directory
+// but the code to do that would be different for in the extension/browser and in node.js
+/*
+const siteNames = [
+  "ancestry",
+  "bg",
+  "opccorn",
+  "cwgc",
+  "noda", // "Digitalarkivet"
+  "fmp",
+  "fs",
+  "fg",
+  "freebmd",
+  "freecen",
+  "freereg",
+  "geneteka",
+  "gro",
+  "gbooks",
+  "hathi",
+  "archive",
+  "irishg",
+  "jstor",
+  "baclac",
+  "mh",
+  "naie",
+  "nli",
+  "np",
+  "openarch",
+  "ppnz",
+  "psuk",
+  "scotp",
+  "trove",
+  "vicbdm",
+  "wiewaswie",
+  "wikitree",
+  "wikipedia",
+  "npa",
+];
+*/
+
+async function importOptions() {
+  for (let siteName of siteNames) {
+    let pathName = "/site/" + siteName + "/browser/" + siteName + "_popup_search.mjs";
+    let module = await import(pathName);
+  }
+}
+
+await importOptions();

@@ -45,8 +45,9 @@ function isSafariOnMacOs() {
   return false;
 }
 
-function resetOptions() {
-  restoreOptionsGivenOptions(getDefaultOptions());
+async function resetOptions() {
+  let defaultOptions = await getDefaultOptions();
+  await restoreOptionsGivenOptions(defaultOptions);
   saveOptions(options);
 
   let dialogElement = document.getElementById("dialog");
@@ -138,7 +139,7 @@ function doLoadOptionsFromFile() {
                   //console.log(mergedOptions);
 
                   try {
-                    restoreOptionsGivenOptions(mergedOptions);
+                    await restoreOptionsGivenOptions(mergedOptions);
                     saveOptions(mergedOptions);
 
                     let dialogElement = document.getElementById("dialog");

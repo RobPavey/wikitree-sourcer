@@ -90,7 +90,7 @@ async function runTests() {
     }
   }
 
-  let options = getUnitTestOptions();
+  let options = await getUnitTestOptions();
   let testManager = {
     parameters: parameters,
     options: options,

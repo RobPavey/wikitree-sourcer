@@ -156,7 +156,16 @@ async function runBuildCitationTests(siteName, functions, regressionData, testMa
 
           let name = baseName + citationType;
           input.type = citationType;
-          result[name] = await buildCitationFunction(input);
+          let citationObject = await buildCitationFunction(input);
+
+          // for legacy reasons and because we don't want to save generalized data twice we
+          // remove some stuff from the citation object
+          delete citationObject.generalizedData;
+          delete citationObject.sourceReference;
+          delete citationObject.sourceTitle;
+          delete citationObject.url;
+
+          result[name] = citationObject;
         } catch (e) {
           console.log("Error:", e.stack);
           logger.logError(testData, "Exception occurred");

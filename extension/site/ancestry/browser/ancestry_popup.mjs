@@ -43,6 +43,15 @@ import {
   saveUnitTestData,
   clearCachedFetchData,
 } from "/base/browser/popup/popup_menu_building.mjs";
+
+import {
+  convertTimestampDiffToText,
+  getPersonDataSubtitleText,
+  getCitationObjectSubtitleText,
+} from "/base/browser/popup/popup_utils.mjs";
+import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
+import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
+
 import { isFirefox } from "/base/browser/common/browser_check.mjs";
 
 import { checkPermissionForSiteFromUrl } from "/base/browser/popup/popup_permissions.mjs";
@@ -81,6 +90,8 @@ import { getExtractedDataFromRecordUrl } from "./ancestry_url_to_ed.mjs";
 import { parallelRequestsDisplayErrorsMessage } from "/base/browser/popup/popup_parallel_requests.mjs";
 
 import { RT } from "../../../base/core/record_type.mjs";
+
+import { GeneralizedData } from "/base/core/generalize_data_utils.mjs";
 
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
@@ -244,7 +255,6 @@ async function ancestryBuildCitationWithLinkData(data) {
     };
 
     const citationObject = buildCitation(input);
-    citationObject.generalizedData = data.generalizedData;
     saveCitation(citationObject);
   });
 }
@@ -588,7 +598,7 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
 
     if (saveUnitTestData) {
       // if saving unit test data we don't want to exclude any sources
-      let testOptions = getDefaultOptions();
+      let testOptions = await getDefaultOptions();
       testOptions.buildAll_ancestry_excludeOtherRoleSources = false;
       // also don't want to limit size of household tables as unit test options may set diff limits
       testOptions.table_general_maxLimit = 1000;
@@ -680,6 +690,71 @@ async function ancestryGetAllCitationsForSavePersonData(data) {
     console.log("ancestryGetAllCitationsForSavePersonData caught exception on ancestryGetAllCitations:");
     console.log(e);
     return { success: false, errorMessage: e.message };
+  }
+}
+
+async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citationObject, backFunction) {
+  displayBusyMessage("Setting fields ...");
+
+  let ed = data.extractedData;
+  let pageType = pageType;
+
+  let fieldData = {};
+
+  if (citationObject) {
+    let gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
+
+    if ((pageType = "createCitation")) {
+      fieldData.detail = citationObject.sourceReference;
+      fieldData.webAddress = citationObject.url;
+      if (gd) {
+        fieldData.date = gd.inferEventDate();
+      }
+    } else if ((pageType = "createSource")) {
+    } else if ((pageType = "createRepository")) {
+    }
+  } else if (personData) {
+    let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+  }
+
+  // send a message to content script
+  try {
+    //console.log("doSetFieldsFromPersonData");
+    //console.log(tabId);
+    //console.log(wtPersonData);
+
+    chrome.tabs.sendMessage(tabId, { type: "setFields", fieldData: fieldData }, function (response) {
+      displayBusyMessage("Setting fields ...");
+
+      //console.log("doSetFieldsFromPersonData, chrome.runtime.lastError is:");
+      //console.log(chrome.runtime.lastError);
+      //console.log("doSetFieldsFromPersonData, response is:");
+      //console.log(response);
+
+      // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
+      if (chrome.runtime.lastError || !response) {
+        // possibly there is no content script loaded, this could be an error that should be reported
+        // By testing edge cases I have found the if you reload the page and immediately click the
+        // extension button sometimes this will happen. Presumably because the content script
+        // just got unloaded prior to the reload but we got here because the popup had not been reset.
+        // In this case we are seeing the response being undefined.
+        // What to do in this case? Don't want to leave the "Initializing menu..." up.
+        let message = "doSetFieldsFromPersonData failed";
+        if (chrome.runtime.lastError && chrome.runtime.lastError.message) {
+          message += ": " + chrome.runtime.lastError.message;
+        }
+        displayMessageWithIcon("warning", message);
+      } else if (response.success) {
+        // Used to display a message on success but that meant an extra click to close popup
+        //displayMessageWithIconThenClosePopup("check", "Fields updated");
+        closePopup();
+      } else {
+        let message = response.errorMessage;
+        console.log(message);
+      }
+    });
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -832,6 +907,73 @@ function addBuildAllCitationsSubmenuMenuItem(menu, data, text, citationType) {
   }
 }
 
+async function addFillCreateCitationFromPersonDataMenuItem(menu, data, tabId, backFunction) {
+  let personData = await getLatestPersonData();
+  if (!personData) {
+    return; // no saved data, do not add menu item
+  }
+
+  let personDataTimeText = convertTimestampDiffToText(personData.timeStamp);
+  if (!personDataTimeText) {
+    return;
+  }
+
+  if (personData.generalizedData) {
+    let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+    personData.generalizedData = gd;
+    let menuText = "Set Fields from Person Data for:";
+    let subtitleText = getPersonDataSubtitleText(gd, personDataTimeText);
+
+    addMenuItemWithSubtitle(
+      menu,
+      menuText,
+      function (element) {
+        setFieldsFromPersonDataOrCitation(data, personData, tabId, null, backFunction);
+      },
+      subtitleText
+    );
+  }
+}
+
+async function addFillCreateCitationFromCitationMenuItem(menu, data, tabId, backFunction) {
+  let storedObject = await getLatestCitation();
+  if (!storedObject) {
+    return; // no saved data, do not add menu item
+  }
+
+  let citationObject = storedObject.latestCitation;
+  if (!citationObject) {
+    return;
+  }
+
+  let citationTimeText = convertTimestampDiffToText(citationObject.timeStamp);
+  if (!citationTimeText) {
+    return;
+  }
+
+  if (citationObject && citationObject.generalizedData) {
+    let gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
+    let personData = { extractedData: citationObject.extractedData, generalizedData: gd };
+
+    let menuText = "Set Fields from Citation Data for:";
+    let subtitleText = getCitationObjectSubtitleText(gd, citationTimeText);
+
+    addMenuItemWithSubtitle(
+      menu,
+      menuText,
+      function (element) {
+        setFieldsFromPersonDataOrCitation(data, personData, tabId, citationObject, backFunction);
+      },
+      subtitleText
+    );
+  }
+}
+
+async function addFillCreateCitationMenuItems(menu, data, tabId, backFunction) {
+  await addFillCreateCitationFromPersonDataMenuItem(menu, data, tabId, backFunction);
+  await addFillCreateCitationFromCitationMenuItem(menu, data, tabId, backFunction);
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -854,7 +996,7 @@ function setupBuildAllCitationsSubMenu(data, backFunction) {
 
 // Common function used by both the normal path and the path taken for an unclassified
 // non-primary record.
-async function setupAncestryPopupMenuWithLinkData(data) {
+async function setupAncestryPopupMenuWithLinkData(data, tabId) {
   // if there are linked records then try to determine record type
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
@@ -868,7 +1010,7 @@ async function setupAncestryPopupMenuWithLinkData(data) {
   let extractedData = data.extractedData;
 
   let backFunction = function () {
-    setupAncestryPopupMenuWithLinkData(data);
+    setupAncestryPopupMenuWithLinkData(data, tabId);
   };
 
   let menu = beginMainMenu();
@@ -903,6 +1045,12 @@ async function setupAncestryPopupMenuWithLinkData(data) {
     addAncestryGoToFullImageMenuItem(menu, data);
   } else if (extractedData.pageType == "treeMedia") {
     addBuildAncestryTreeMediaTemplateMenuItem(menu, data);
+  } else if (
+    extractedData.pageType == "createCitation" ||
+    extractedData.pageType == "createSource" ||
+    extractedData.pageType == "createRepository"
+  ) {
+    await addFillCreateCitationMenuItems(menu, data, tabId, backFunction);
   } else {
     addMenuDivider(menu);
     addShowCitationAssistantMenuItem(menu);
@@ -915,11 +1063,11 @@ async function setupAncestryPopupMenuWithLinkData(data) {
 // If this is something like the parent record for a baptism then it may not be classifiable.
 // e.g. https://www.ancestry.com/discoveryui-content/view/151040635:2243
 // But extracting the linked record (child in this example) gets enough data to classify it.
-async function useLinkedRecordsToDetermineType(data) {
+async function useLinkedRecordsToDetermineType(data, tabId) {
   processWithFetchedLinkData(data, setupAncestryPopupMenuWithLinkData);
 }
 
-async function setupAncestryPopupMenu(extractedData) {
+async function setupAncestryPopupMenu(extractedData, tabId) {
   //console.log("setupAncestryPopupMenu: extractedData is:");
   //console.log(extractedData);
 
@@ -930,7 +1078,7 @@ async function setupAncestryPopupMenu(extractedData) {
   }
 
   let backFunction = function () {
-    setupAncestryPopupMenu(extractedData);
+    setupAncestryPopupMenu(extractedData, tabId);
   };
 
   if (!extractedData || !extractedData.pageType || extractedData.pageType == "unknown") {
@@ -964,9 +1112,9 @@ async function setupAncestryPopupMenu(extractedData) {
 
   if (generalizedData.sourceType == "record" && generalizedData.recordType == RT.Unclassified && generalizedData.role) {
     // use linked record to try to determine record type
-    useLinkedRecordsToDetermineType(data);
+    useLinkedRecordsToDetermineType(data, tabId);
   } else {
-    setupAncestryPopupMenuWithLinkData(data);
+    setupAncestryPopupMenuWithLinkData(data, tabId);
   }
 }
 

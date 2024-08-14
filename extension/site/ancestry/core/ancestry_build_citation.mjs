@@ -759,13 +759,8 @@ function buildCitation(input) {
     buildSharingPageCitation(ed, options, builder);
   }
 
-  // now the builder is setup use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
+  // now the builder is setup use it to build the citation object
+  let citationObject = builder.getCitationObject(gd, ed.url);
 
   return citationObject;
 }

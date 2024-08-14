@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { optionsRegistry } from "../../core/options/options_database.mjs";
+import { getOptionsRegistry } from "../../core/options/options_database.mjs";
 import { restoreOptions, saveOptionsFromPage } from "./options_save_restore.mjs";
 import { openDialog } from "./options_dialog.mjs";
 import { restoreOptionsUiStateAndSetState, updateAndSaveOptionsUiState } from "./options_ui_state.mjs";
 
 // keeps track of the elements for tabs an subsections
 var tabElements = {};
+
+var optionsRegistry = undefined;
 
 function setActiveTab(tabName) {
   //console.log("setActiveTab called: tabName is: " + tabName);
@@ -141,7 +143,7 @@ function getRegistrySubheading(tabName, subsectionName, subheadingName) {
   console.log("getRegistrySubheading: not found: " + tabName + ", " + subsectionName + ", " + subheadingName);
 }
 
-function buildPage() {
+async function buildPage() {
   // these refer to names in the .html. These elements could be constructed programatically but
   // are not yet for historical reasons
   const tabMapping = {
@@ -162,6 +164,8 @@ function buildPage() {
       buttonElement: "context-tab",
     },
   };
+
+  optionsRegistry = await getOptionsRegistry();
 
   tabElements = {};
   for (let tab in tabMapping) {

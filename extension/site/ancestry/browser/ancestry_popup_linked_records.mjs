@@ -235,7 +235,7 @@ async function getDataForLinkedHouseholdRecords(data, processfunction, options) 
   }
 }
 
-async function processWithFetchedLinkData(data, processFunction) {
+async function processWithFetchedLinkData(data, processFunction, tabId) {
   let linkData = data.extractedData.linkData;
 
   let role = data.generalizedData.role;
@@ -299,7 +299,7 @@ async function processWithFetchedLinkData(data, processFunction) {
   if (linkedRecords.length > 0) {
     getDataForLinkedRecords(data, linkedRecords, processFunction);
   } else {
-    processFunction(data);
+    processFunction(data, tabId);
   }
 }
 

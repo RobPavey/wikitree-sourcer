@@ -291,7 +291,7 @@ function updateOptionsToLatestVersion(loadedOptions, defaultOptions) {
 async function callFunctionWithStoredOptions(optionsFunction) {
   let loadedOptions = await loadOptions();
 
-  let defaultOptions = getDefaultOptions();
+  let defaultOptions = await getDefaultOptions();
   options = updateOptionsToLatestVersion(loadedOptions, defaultOptions);
 
   optionsFunction(options);

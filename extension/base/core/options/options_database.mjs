@@ -24,10 +24,17 @@ SOFTWARE.
 
 import { optionsRegistry } from "./options_registry.mjs";
 import "./register_base_options.mjs";
-import "../../../site/all/core/register_site_options.mjs";
+import { importSiteOptions } from "../../../site/all/core/register_site_options.mjs";
 
-function getDefaultOptions() {
+async function getOptionsRegistry() {
+  await importSiteOptions();
+  return optionsRegistry;
+}
+
+async function getDefaultOptions() {
   // build the options structure from the optionsRegistry
+
+  await importSiteOptions();
 
   let defaultOptions = {};
 
@@ -42,10 +49,15 @@ function getDefaultOptions() {
     }
   }
 
+  console.log("getDefaultOptions: ");
+  console.log(defaultOptions);
+
   return defaultOptions;
 }
 
-function getUnitTestOptions() {
+async function getUnitTestOptions() {
+  await importSiteOptions();
+
   // build the options structure from the optionsRegistry
 
   let unitTestOptions = {};
@@ -67,7 +79,10 @@ function getUnitTestOptions() {
     }
   }
 
+  console.log("getUnitTestOptions: ");
+  console.log(unitTestOptions);
+
   return unitTestOptions;
 }
 
-export { getDefaultOptions, getUnitTestOptions, optionsRegistry };
+export { getDefaultOptions, getUnitTestOptions, getOptionsRegistry };

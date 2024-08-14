@@ -25,6 +25,8 @@ SOFTWARE.
 import { options } from "/base/browser/options/options_loader.mjs";
 import { RC } from "/base/core/record_collections.mjs";
 import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
+import { getLatestCitation } from "/base/browser/popup/popup_citation.mjs";
+
 import { clearAsyncResultCache } from "/base/core/async_result_cache.mjs";
 import { isSafari } from "/base/browser/common/browser_check.mjs";
 import { openOrShowOptionsPage } from "/base/browser/common/browser_compat.mjs";
@@ -1642,12 +1644,29 @@ function displayGeneralizedData(data, backFunction) {
 async function displaySavedPersonData(data, backFunction) {
   let personData = await getLatestPersonData();
   if (!personData) {
-    return; // no saved data, do do anything
+    return; // no saved data, do not do anything
   }
 
   if (personData) {
     console.log(personData);
     debugDisplayMenu(personData, "Saved Person Data", backFunction);
+  }
+}
+
+async function displaySavedCitationObject(data, backFunction) {
+  let storedObject = await getLatestCitation();
+  if (!storedObject) {
+    return; // no saved data, do not do anything
+  }
+
+  let citationObject = storedObject.latestCitation;
+  if (!citationObject) {
+    return;
+  }
+
+  if (citationObject) {
+    console.log(citationObject);
+    debugDisplayMenu(citationObject, "Saved Citation Object", backFunction);
   }
 }
 
@@ -1689,6 +1708,10 @@ function setupDebugSubmenuMenu(data, backFunction) {
 
     addMenuItem(menu, "Show saved person data", function (element) {
       displaySavedPersonData(data, toHereBackFunction);
+    });
+
+    addMenuItem(menu, "Show saved citation object", function (element) {
+      displaySavedCitationObject(data, toHereBackFunction);
     });
   }
 

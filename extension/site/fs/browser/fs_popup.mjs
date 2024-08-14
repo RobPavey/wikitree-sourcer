@@ -214,7 +214,7 @@ async function fsBuildAllCitationsAction(data, citationType) {
 
     if (saveUnitTestData) {
       // if saving unit test data we don't want to exclude any sources
-      let testOptions = getDefaultOptions();
+      let testOptions = await getDefaultOptions();
       testOptions.buildAll_fs_excludeRetiredSources = "never";
       testOptions.buildAll_fs_excludeNonFsSources = false;
       testOptions.buildAll_fs_excludeOtherRoleSources = false;

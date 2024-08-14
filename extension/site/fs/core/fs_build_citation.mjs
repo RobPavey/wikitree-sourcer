@@ -749,15 +749,8 @@ function buildCitation(input) {
     buildBookCitation(ed, gd, builder);
   }
 
-  // now the builder is setup use it to build the citation text
-  let fullCitation = builder.getCitationString();
-
-  //console.log(fullCitation);
-
-  var citationObject = {
-    citation: fullCitation,
-    type: type,
-  };
+  // now the builder is setup use it to build the citation object
+  let citationObject = builder.getCitationObject(gd, ed.url);
 
   return citationObject;
 }

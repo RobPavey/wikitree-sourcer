@@ -23,12 +23,13 @@ SOFTWARE.
 */
 
 import { callFunctionWithStoredOptions, replaceCachedOptions, options } from "./options_loader.mjs";
-import { optionsRegistry } from "../../core/options/options_database.mjs";
+import { getOptionsRegistry } from "../../core/options/options_database.mjs";
 import { getDefaultOptions } from "../../core/options/options_database.mjs";
 import { saveOptions } from "./options_storage.mjs";
 
-function restoreOptionsGivenOptions(inputOptions) {
+async function restoreOptionsGivenOptions(inputOptions) {
   replaceCachedOptions(inputOptions);
+  let optionsRegistry = await getOptionsRegistry();
   for (let optionsGroup of optionsRegistry.optionsGroups) {
     let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 
@@ -54,15 +55,17 @@ function restoreOptionsGivenOptions(inputOptions) {
 // stored in chrome.storage.
 function restoreOptions() {
   // get the values from the stored user options
-  callFunctionWithStoredOptions(function (storedOptions) {
-    restoreOptionsGivenOptions(storedOptions);
+  callFunctionWithStoredOptions(async function (storedOptions) {
+    await restoreOptionsGivenOptions(storedOptions);
   });
 }
 
 async function saveOptionsFromPage() {
   // get the values from the options page
 
-  let pageOptions = getDefaultOptions();
+  let pageOptions = await getDefaultOptions();
+  let optionsRegistry = await getOptionsRegistry();
+
   for (let optionsGroup of optionsRegistry.optionsGroups) {
     let optionNamePrefix = optionsGroup.category + "_" + optionsGroup.subcategory + "_";
 

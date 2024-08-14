@@ -1135,6 +1135,12 @@ function detectPageType(document, result, url) {
     result.sharingType = "v2";
   } else if (url.includes("/media/") && url.includes("/tree/")) {
     result.pageType = "treeMedia";
+  } else if (url.includes("/person/") && url.includes("/citation/create")) {
+    result.pageType = "createCitation";
+  } else if (url.includes("/person/") && url.includes("/source/create")) {
+    result.pageType = "createSource";
+  } else if (url.includes("/person/") && url.includes("/repository/create")) {
+    result.pageType = "createRepository";
   } else {
     result.pageType = "unknown";
   }

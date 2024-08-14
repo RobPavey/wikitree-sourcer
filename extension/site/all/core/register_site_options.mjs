@@ -22,12 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { siteNames } from "./site_names.mjs";
 // Importing each of these site modules causes them to register their options
 
 // Currently the order that they are imported is the order that they appear in the
 // options page subsection drop down
-// Therefore this list is orderd by the visible string in the options dropdown
+// Therefore this list is ordered by the visible string in the options dropdown
 // rather than by sitename.
+
+/*
 import "../../ancestry/core/ancestry_options.mjs";
 import "../../bg/core/bg_options.mjs";
 import "../../opccorn/core/opccorn_options.mjs";
@@ -61,3 +64,63 @@ import "../../wiewaswie/core/wiewaswie_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
 import "../../npa/core/npa_options.mjs";
+*/
+
+// in theory we could get all the site name by looking in the sites directory
+// but the code to do that would be different for in the extension/browser and in node.js
+/*
+const siteNames = [
+  "ancestry",
+  "bg",
+  "opccorn",
+  "cwgc",
+  "noda", // "Digitalarkivet"
+  "fmp",
+  "fs",
+  "fg",
+  "freebmd",
+  "freecen",
+  "freereg",
+  "geneteka",
+  "gro",
+  "gbooks",
+  "hathi",
+  "archive",
+  "irishg",
+  "jstor",
+  "baclac",
+  "mh",
+  "naie",
+  "nli",
+  "np",
+  "openarch",
+  "ppnz",
+  "psuk",
+  "scotp",
+  "trove",
+  "vicbdm",
+  "wiewaswie",
+  "wikitree",
+  "wikipedia",
+  "npa",
+];
+*/
+
+var areSiteOptionsRegistered = false;
+async function importSiteOptions() {
+  if (areSiteOptionsRegistered) {
+    //return;
+  }
+  for (let siteName of siteNames) {
+    let pathName = "../../" + siteName + "/core/" + siteName + "_options.mjs";
+    try {
+      let module = await import(pathName);
+    } catch (error) {
+      console.log("importOptions: error importing options for " + siteName);
+    }
+  }
+
+  areSiteOptionsRegistered = true;
+}
+
+export { importSiteOptions };
