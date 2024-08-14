@@ -202,7 +202,7 @@ function createSiteFilesFromTemplates(parameters) {
 }
 
 function updateSiteNamesFile(siteName) {
-  const path = "extension/site/all/core/site_name.mjs";
+  const path = "extension/site/all/core/site_names.mjs";
   const lineToAdd = '  "' + siteName + '",';
 
   // read file
