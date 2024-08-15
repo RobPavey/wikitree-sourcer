@@ -46,10 +46,19 @@ function setFields(fieldData) {
     }
   }
 
-  // The fields in Step 1
-  setValue("#citationTitle", "detail");
-  setValue("#citationDate", "date");
-  setValue("#citationHRef", "webAddress");
+  if (fieldData.pageType == "createCitation") {
+    setValue("#citationTitle", "detail");
+    setValue("#citationDate", "date");
+    setValue("#citationHRef", "webAddress");
+  } else if (fieldData.pageType == "createSource") {
+    //setValue("#citationTitle", "detail");
+  } else if (fieldData.pageType == "createRepository") {
+    setValue("#RepositoryName", "repositoryName");
+    setValue("#RepositoryAddress", "address");
+    setValue("#RepositoryPhone", "phoneNumber");
+    setValue("#RepositoryEmail", "email");
+    setValue("#RepositoryNote", "note");
+  }
 }
 
 function additionalMessageHandler(request, sender, sendResponse) {

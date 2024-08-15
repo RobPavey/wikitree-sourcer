@@ -93,6 +93,8 @@ import { RT } from "../../../base/core/record_type.mjs";
 
 import { GeneralizedData } from "/base/core/generalize_data_utils.mjs";
 
+import { getSiteDataForSite } from "/base/core/site_registry.mjs";
+
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 
 import {
@@ -697,21 +699,38 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
   displayBusyMessage("Setting fields ...");
 
   let ed = data.extractedData;
-  let pageType = pageType;
+  let pageType = ed.pageType;
 
-  let fieldData = {};
+  let fieldData = {
+    pageType: pageType,
+  };
 
   if (citationObject) {
     let gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
+    let otherSiteData = undefined;
 
-    if ((pageType = "createCitation")) {
+    if (gd) {
+      otherSiteData = await getSiteDataForSite(gd.sourceOfData);
+    }
+
+    if (pageType == "createCitation") {
       fieldData.detail = citationObject.sourceReference;
       fieldData.webAddress = citationObject.url;
       if (gd) {
         fieldData.date = gd.inferEventDate();
       }
-    } else if ((pageType = "createSource")) {
-    } else if ((pageType = "createRepository")) {
+    } else if (pageType == "createSource") {
+      if (otherSiteData) {
+        fieldData.repositoryName = otherSiteData.repositoryName;
+      }
+    } else if (pageType == "createRepository") {
+      if (otherSiteData) {
+        fieldData.repositoryName = otherSiteData.repositoryName;
+        fieldData.address = otherSiteData.address;
+        fieldData.phoneNumber = otherSiteData.usPhoneNumber;
+        fieldData.email = otherSiteData.email;
+        fieldData.note = "Base URL in U.S. is " + otherSiteData.baseUrl;
+      }
     }
   } else if (personData) {
     let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
