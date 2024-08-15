@@ -25,7 +25,7 @@ SOFTWARE.
 import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
-  repositoryName: "UK General Registry Office Online Indexes",
+  repositoryName: "UK General Registry Office",
   usPhoneNumber: "",
   email: "",
   address: "",

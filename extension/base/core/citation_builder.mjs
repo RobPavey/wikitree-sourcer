@@ -179,7 +179,7 @@ class CitationBuilder {
     this.sourceReference += value;
   }
 
-  addStandardDataString(gd) {
+  getStandardDataString(gd) {
     let input = {
       generalizedData: gd,
       options: this.options,
@@ -196,6 +196,13 @@ class CitationBuilder {
       if (!dataString.endsWith(".")) {
         dataString += ".";
       }
+      return dataString;
+    }
+  }
+
+  addStandardDataString(gd) {
+    let dataString = this.getStandardDataString(gd);
+    if (dataString) {
       this.dataString = dataString;
     }
   }
@@ -572,12 +579,17 @@ class CitationBuilder {
 
     //console.log(fullCitation);
 
+    let standardDataString = this.getStandardDataString(generalizedData);
+
     var citationObject = {
       citation: citationString,
       type: this.type,
       generalizedData: generalizedData,
       sourceReference: this.sourceReference,
       sourceTitle: this.sourceTitle,
+      sourceNameWithinRepository: this.sourceNameWithinRepository,
+      referenceWithinRepository: this.referenceWithinRepository,
+      standardDataString: standardDataString,
       url: url,
     };
 

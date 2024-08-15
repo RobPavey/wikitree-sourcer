@@ -26,6 +26,44 @@ function setFields(fieldData) {
   console.log("setFields, fieldData is:");
   console.log(fieldData);
 
+  function setSourceSelect(sourceName) {
+    if (!sourceName) {
+      return;
+    }
+    let selectNode = document.querySelector("#sourceSelect");
+    if (!selectNode) {
+      return;
+    }
+
+    let optionNodes = selectNode.querySelectorAll("option");
+    for (let optionNode of optionNodes) {
+      let optionText = optionNode.textContent.trim();
+      if (optionText == sourceName) {
+        selectNode.value = optionNode.value;
+        return;
+      }
+    }
+  }
+
+  function setRepositorySelect(repositoryName) {
+    if (!repositoryName) {
+      return;
+    }
+    let selectNode = document.querySelector("#repositorySelect");
+    if (!selectNode) {
+      return;
+    }
+
+    let optionNodes = selectNode.querySelectorAll("option");
+    for (let optionNode of optionNodes) {
+      let optionText = optionNode.textContent.trim();
+      if (optionText == repositoryName) {
+        selectNode.value = optionNode.value;
+        return;
+      }
+    }
+  }
+
   function setValue(nodeSelector, fieldName) {
     if (fieldData[fieldName]) {
       let node = document.querySelector(nodeSelector);
@@ -35,23 +73,16 @@ function setFields(fieldData) {
     }
   }
 
-  function setRadio(radioName, fieldName) {
-    let value = fieldData[fieldName];
-    if (value) {
-      let nodeSelector = "input[name=" + radioName + "][value=" + value + "]";
-      let node = document.querySelector(nodeSelector);
-      if (node) {
-        node.checked = value;
-      }
-    }
-  }
-
   if (fieldData.pageType == "createCitation") {
+    setSourceSelect(fieldData.sourceName);
     setValue("#citationTitle", "detail");
     setValue("#citationDate", "date");
+    setValue("#citationText", "text");
+    setValue("#citationNotes", "otherInfo");
     setValue("#citationHRef", "webAddress");
   } else if (fieldData.pageType == "createSource") {
-    //setValue("#citationTitle", "detail");
+    setValue("#SourceTitle", "sourceName");
+    setRepositorySelect(fieldData.repositoryName);
   } else if (fieldData.pageType == "createRepository") {
     setValue("#RepositoryName", "repositoryName");
     setValue("#RepositoryAddress", "address");

@@ -194,6 +194,27 @@ function getRegistrationDistrict(ed, options) {
   return getCorrectlyCasedNames(ed.registrationDistrict, options);
 }
 
+function getReferenceString(ed) {
+  let referenceString = "";
+  if (ed.referenceVolume != undefined && ed.referenceVolume != "") {
+    referenceString += "Volume " + ed.referenceVolume;
+    if (ed.referencePage != undefined && ed.referencePage != "") {
+      referenceString += " Page " + ed.referencePage;
+    }
+  } else if (ed.referenceRegister != undefined && ed.referenceRegister != "") {
+    referenceString += "Reg " + ed.referenceRegister;
+  }
+
+  if (ed.entryNumber != undefined && ed.entryNumber != "") {
+    if (referenceString) {
+      referenceString += " ";
+    }
+    referenceString += "Entry Number " + ed.entryNumber;
+  }
+
+  return referenceString;
+}
+
 async function buildCoreCitation(ed, runDate, builder) {
   // This is what the England Project Orphan Trail Citation Templates look like (except they have no newlines):
   //
@@ -299,22 +320,26 @@ async function buildCoreCitation(ed, runDate, builder) {
     dataString += " (" + ed.registrationDistrictCode + ")";
   }
 
-  if (ed.referenceVolume != undefined && ed.referenceVolume != "") {
-    dataString += " Volume " + ed.referenceVolume;
-    if (ed.referencePage != undefined && ed.referencePage != "") {
-      dataString += " Page " + ed.referencePage;
-    }
-  } else if (ed.referenceRegister != undefined && ed.referenceRegister != "") {
-    dataString += " Reg " + ed.referenceRegister;
-  }
-
-  if (ed.entryNumber != undefined && ed.entryNumber != "") {
-    dataString += " Entry Number " + ed.entryNumber;
+  let referenceString = getReferenceString(ed);
+  if (referenceString) {
+    dataString += " " + referenceString;
   }
 
   dataString += ".";
 
   builder.dataString = dataString;
+
+  // add the name of the source within the repository if this is different from the sourceTitle
+  if (ed.eventType == "birth") {
+    builder.sourceNameWithinRepository = "GRO Online Indexes - Birth";
+  } else if (ed.eventType == "death") {
+    builder.sourceNameWithinRepository = "GRO Online Indexes - Death";
+  }
+  // we don't always set the sourceReference for GRO because it is part of the dataString in the England project standard layout
+  // but we may need it if adding a source citation on a different site
+  if (referenceString) {
+    builder.referenceWithinRepository = referenceString;
+  }
 }
 
 function getRefTitle(ed, gd) {

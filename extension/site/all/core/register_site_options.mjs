@@ -41,6 +41,7 @@ async function registerSiteOptions() {
       let module = await import(pathName);
     } catch (error) {
       console.log("importOptions: error importing options for " + siteName);
+      console.log(error);
     }
   }
 

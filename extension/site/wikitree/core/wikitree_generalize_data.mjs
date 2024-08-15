@@ -328,6 +328,7 @@ function generalizeData(input) {
 
   result.hasValidData = true;
 
+  result.personRepoRef = ed.wikiId;
   //console.log(result);
 
   return result;

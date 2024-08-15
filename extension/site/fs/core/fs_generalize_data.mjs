@@ -1375,6 +1375,10 @@ function generalizeData(input) {
     }
   }
 
+  if (result.sourceType == "profile") {
+    result.personRepoRef = ed.personId;
+  }
+
   result.hasValidData = true;
 
   //console.log("End of FamilySearch generalizeData, result is:");

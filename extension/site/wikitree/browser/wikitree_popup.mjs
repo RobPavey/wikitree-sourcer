@@ -38,6 +38,8 @@ import {
   closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
+import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
+
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 import {
   convertTimestampDiffToText,
@@ -2271,6 +2273,7 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   } else if (extractedData.pageType == "read" || extractedData.pageType == "private") {
     addMenuDivider(menu);
     await addMergeEditMenuItem(menu, data, tabId, backFunction);
+    addSavePersonDataMenuItem(menu, data);
   }
 
   addStandardMenuEnd(menu, data, backFunction);

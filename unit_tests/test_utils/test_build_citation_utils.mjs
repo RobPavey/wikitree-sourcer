@@ -164,6 +164,9 @@ async function runBuildCitationTests(siteName, functions, regressionData, testMa
           delete citationObject.sourceReference;
           delete citationObject.sourceTitle;
           delete citationObject.url;
+          delete citationObject.sourceNameWithinRepository;
+          delete citationObject.standardDataString;
+          delete citationObject.referenceWithinRepository;
 
           result[name] = citationObject;
         } catch (e) {

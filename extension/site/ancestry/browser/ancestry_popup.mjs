@@ -705,35 +705,129 @@ async function setFieldsFromPersonDataOrCitation(data, personData, tabId, citati
     pageType: pageType,
   };
 
-  if (citationObject) {
-    let gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
-    let otherSiteData = undefined;
+  function getSourceNameForCitation(gd, otherSiteData) {
+    // a source name like "Devon Baptisms" is not unique, ther could be
+    // collections like that on multiple repositories
 
-    if (gd) {
-      otherSiteData = await getSiteDataForSite(gd.sourceOfData);
+    if (!citationObject.sourceTitle && !citationObject.sourceNameWithinRepository) {
+      return "";
     }
 
-    if (pageType == "createCitation") {
-      fieldData.detail = citationObject.sourceReference;
+    if (!otherSiteData) {
+      return citationObject.sourceTitle;
+    }
+
+    let repositoryName = otherSiteData.repositoryName;
+    if (!repositoryName) {
+      return citationObject.sourceTitle;
+    }
+
+    if (!citationObject.sourceNameWithinRepository && citationObject.sourceTitle.includes(repositoryName)) {
+      return citationObject.sourceTitle;
+    }
+
+    let sourceName = citationObject.sourceNameWithinRepository;
+    if (!sourceName) {
+      sourceName = citationObject.sourceTitle;
+    }
+
+    return sourceName + " at " + repositoryName;
+  }
+
+  function getSourceNameForPersonData(gd, otherSiteData) {
+    if (!otherSiteData) {
+      return "";
+    }
+
+    let repositoryName = otherSiteData.repositoryName;
+    let repositorySourceName = otherSiteData.personDataSourceName;
+
+    if (repositorySourceName) {
+      return repositorySourceName;
+    }
+
+    if (repositoryName) {
+      return repositoryName;
+    }
+
+    return "";
+  }
+
+  function getSourceName(gd, otherSiteData) {
+    if (citationObject) {
+      return getSourceNameForCitation(gd, otherSiteData);
+    } else if (personData) {
+      return getSourceNameForPersonData(gd, otherSiteData);
+    }
+  }
+
+  let gd = undefined;
+  if (citationObject) {
+    gd = GeneralizedData.createFromPlainObject(citationObject.generalizedData);
+  } else if (personData) {
+    gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+  }
+  let otherSiteData = undefined;
+  if (gd) {
+    otherSiteData = await getSiteDataForSite(gd.sourceOfData);
+  }
+
+  if (pageType == "createCitation") {
+    fieldData.sourceName = getSourceName(gd, otherSiteData);
+    // details is a required field, of there is no sourceReference then the site's buildCitation must
+    // provide a referenceWithinRepository
+    if (citationObject) {
+      if (citationObject.sourceReference) {
+        fieldData.detail = citationObject.sourceReference;
+      } else {
+        fieldData.detail = citationObject.referenceWithinRepository;
+      }
+      fieldData.otherInfo = citationObject.standardDataString;
       fieldData.webAddress = citationObject.url;
       if (gd) {
         fieldData.date = gd.inferEventDate();
       }
-    } else if (pageType == "createSource") {
-      if (otherSiteData) {
-        fieldData.repositoryName = otherSiteData.repositoryName;
+    } else if (personData && gd) {
+      if (gd.personRepoRef) {
+        fieldData.detail = gd.personRepoRef;
       }
-    } else if (pageType == "createRepository") {
-      if (otherSiteData) {
-        fieldData.repositoryName = otherSiteData.repositoryName;
-        fieldData.address = otherSiteData.address;
-        fieldData.phoneNumber = otherSiteData.usPhoneNumber;
-        fieldData.email = otherSiteData.email;
-        fieldData.note = "Base URL in U.S. is " + otherSiteData.baseUrl;
+      let ed = personData.extractedData;
+      if (ed) {
+        if (ed.url) {
+          fieldData.webAddress = ed.url;
+        }
       }
+      // generate some text showing name, birth data and death date
+      let text = "";
+      text += gd.inferFullName();
+      let birthDate = gd.inferBirthDate();
+      let deathDate = gd.inferDeathDate();
+      if (birthDate || deathDate) {
+        text += " (";
+        if (birthDate) {
+          text += birthDate;
+        }
+        text += " - ";
+        if (deathDate) {
+          text += deathDate;
+        }
+        text += ")";
+      }
+      fieldData.text = text;
     }
-  } else if (personData) {
-    let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+  } else if (pageType == "createSource") {
+    fieldData.sourceName = getSourceName(gd, otherSiteData);
+    if (otherSiteData) {
+      fieldData.repositoryName = otherSiteData.repositoryName;
+    }
+  } else if (pageType == "createRepository") {
+    if (otherSiteData) {
+      fieldData.repositoryName = otherSiteData.repositoryName;
+      fieldData.address = otherSiteData.address;
+      fieldData.phoneNumber = otherSiteData.usPhoneNumber;
+      fieldData.email = otherSiteData.email;
+      fieldData.note = "Base URL is " + otherSiteData.baseUrl;
+    }
   }
 
   // send a message to content script

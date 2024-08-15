@@ -30,6 +30,7 @@ const siteData = {
   email: "nasupport@familysearch.org",
   address: "FamilySearch Library, 35 North West Temple Street, Salt Lake City, Utah 84150",
   baseUrl: "https://www.familysearch.org/",
+  personDataSourceName: "The FamilySearch Family Tree",
 };
 
 function register() {

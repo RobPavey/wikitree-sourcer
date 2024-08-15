@@ -30,6 +30,7 @@ const siteData = {
   email: "",
   address: "",
   baseUrl: "https://www.wikitree.com/",
+  personDataSourceName: "The WikiTree Family Tree",
 };
 
 function register() {
