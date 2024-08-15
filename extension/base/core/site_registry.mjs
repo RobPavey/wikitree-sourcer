@@ -22,6 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// The site registry stores data about each site.
+// This avoids storing this info in the generalized data when it is the same
+// for any citation or saved person data for this site.
+// In the generalizedData objest there is a sourceOfData field which is the siteName
+// This registry allows you to call getSiteDataForSite with the siteName and
+// get more info about the site. This was initially added so that we can create
+// a repository on Ancestry and fill out the fields in the form.
+
 import { registerSiteData } from "../../site/all/core/register_site_data.mjs";
 
 var siteRegistry = {};
@@ -29,8 +37,8 @@ var siteRegistry = {};
 var areSitesRegistered = false;
 
 function registerSite(siteName, siteData) {
-  console.log("registerSite: siteData is:");
-  console.log(siteData);
+  //console.log("registerSite: siteData is:");
+  //console.log(siteData);
 
   siteRegistry[siteName] = siteData;
 }
@@ -40,8 +48,8 @@ async function getSiteDataForSite(siteName) {
 
   areSitesRegistered = true;
 
-  console.log("getSiteDataForSite: siteRegistry is:");
-  console.log(siteRegistry);
+  //console.log("getSiteDataForSite: siteRegistry is:");
+  //console.log(siteRegistry);
 
   return siteRegistry[siteName];
 }
