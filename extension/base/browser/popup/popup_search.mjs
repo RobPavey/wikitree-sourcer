@@ -253,7 +253,7 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
     let priority = 0;
 
     if (typeof priorityOptionValue === "undefined") {
-      console.log("buildSortedMenuItemFunctions: missing option value for: " + fullOptionName);
+      console.log("buildSortedMenuItemFunctions: missing option value for: " + fullPriorityOptionName);
       priority = 10000; // don't exclude it - put at end of list
     } else {
       let priorityOptionNumber = parseInt(priorityOptionValue);

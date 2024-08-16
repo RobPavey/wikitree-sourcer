@@ -22,30 +22,49 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { siteNames } from "./site_names.mjs";
+// We tried making these dynamic imports using the siteNames list
+// But dynamic imports throw an error when used from a service worker
+
 // Importing each of these site modules causes them to register their options
+// The order of these lines does not matter since the options streen sorts them
+// by label.
+import "../../ancestry/core/ancestry_options.mjs";
+import "../../archive/core/archive_options.mjs";
+import "../../baclac/core/baclac_options.mjs";
+import "../../bg/core/bg_options.mjs";
+import "../../cwgc/core/cwgc_options.mjs";
+import "../../fmp/core/fmp_options.mjs";
+import "../../fs/core/fs_options.mjs";
+import "../../fg/core/fg_options.mjs";
+import "../../freebmd/core/freebmd_options.mjs";
+import "../../freecen/core/freecen_options.mjs";
+import "../../freereg/core/freereg_options.mjs";
+import "../../geneteka/core/geneteka_options.mjs";
+import "../../gro/core/gro_options.mjs";
+import "../../gbooks/core/gbooks_options.mjs";
+import "../../hathi/core/hathi_options.mjs";
+import "../../irishg/core/irishg_options.mjs";
+import "../../jstor/core/jstor_options.mjs";
+import "../../mh/core/mh_options.mjs";
+import "../../naie/core/naie_options.mjs";
+import "../../nli/core/nli_options.mjs";
+import "../../noda/core/noda_options.mjs";
+import "../../np/core/np_options.mjs";
+import "../../npa/core/npa_options.mjs";
+import "../../opccorn/core/opccorn_options.mjs";
+import "../../openarch/core/openarch_options.mjs";
+import "../../ppnz/core/ppnz_options.mjs";
+import "../../psuk/core/psuk_options.mjs";
+import "../../scotp/core/scotp_options.mjs";
+import "../../trove/core/trove_options.mjs";
+import "../../vicbdm/core/vicbdm_options.mjs";
+import "../../wiewaswie/core/wiewaswie_options.mjs";
+import "../../wikitree/core/wikitree_options.mjs";
+import "../../wikipedia/core/wikipedia_options.mjs";
 
-// Currently the order that they are imported is the order that they appear in the
-// options page subsection drop down
-// Therefore this list is ordered by the visible string in the options dropdown
-// rather than by sitename.
-
-var areSiteOptionsRegistered = false;
 async function registerSiteOptions() {
-  if (areSiteOptionsRegistered) {
-    return;
-  }
-  for (let siteName of siteNames) {
-    let pathName = "../../" + siteName + "/core/" + siteName + "_options.mjs";
-    try {
-      let module = await import(pathName);
-    } catch (error) {
-      console.log("importOptions: error importing options for " + siteName);
-      console.log(error);
-    }
-  }
-
-  areSiteOptionsRegistered = true;
+  // Do nothing. This function was added when trying to do dynamic imports
+  // no it doesn't need to do anything.
 }
 
 export { registerSiteOptions };
