@@ -202,6 +202,31 @@ function createSiteFilesFromTemplates(parameters) {
   return true;
 }
 
+function addLineToFile(path, lineToAdd) {
+  // read file
+  let text = readFile(path);
+  if (!text) {
+    return false;
+  }
+  if (text.indexOf(lineToAdd) != -1) {
+    // already there
+    return false;
+  }
+
+  if (!text.endsWith("\n")) {
+    text += "\n";
+  }
+
+  text += lineToAdd + "\n";
+
+  // write site file
+  if (!writeFile(path, text)) {
+    return false;
+  }
+
+  return true;
+}
+
 function updateSiteNamesFile(siteName) {
   const path = "extension/site/all/core/site_names.mjs";
   const lineToAdd = '  "' + siteName + '",';
@@ -235,6 +260,13 @@ function updateSiteNamesFile(siteName) {
   }
 
   return true;
+}
+
+function updateRegisterSiteOptions(siteName) {
+  const path = "extension/site/all/core/register_site_options.mjs";
+  const lineToAdd = 'import "../../' + siteName + "/core/" + siteName + '_options.mjs";';
+
+  return addLineToFile(path, lineToAdd);
 }
 
 function updateRunTest(siteName) {
@@ -327,6 +359,7 @@ async function createNewSite() {
   }
 
   updateSiteNamesFile(parameters.siteName);
+  updateRegisterSiteOptions(parameters.siteName);
   updateRunTest(parameters.siteName);
 }
 

@@ -22,8 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// We tried making these dynamic imports using the siteNames list
-// But dynamic imports throw an error when used from a service worker
+// We tried making these dynamic imports using the siteNames list.
+// But dynamic imports throw an error when used from a service worker.
+// The options are used in the background script - there is a "getOptions"
+// message that can be sent to the background from a content script.
 
 // Importing each of these site modules causes them to register their options
 // The order of these lines does not matter since the options streen sorts them
@@ -61,10 +63,3 @@ import "../../vicbdm/core/vicbdm_options.mjs";
 import "../../wiewaswie/core/wiewaswie_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
-
-async function registerSiteOptions() {
-  // Do nothing. This function was added when trying to do dynamic imports
-  // no it doesn't need to do anything.
-}
-
-export { registerSiteOptions };

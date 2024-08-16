@@ -24,10 +24,9 @@ SOFTWARE.
 
 import { internalOptionsRegistry, finalizeRegistry } from "./options_registry.mjs";
 import "./register_base_options.mjs";
-import { registerSiteOptions } from "../../../site/all/core/register_site_options.mjs";
+import "../../../site/all/core/register_site_options.mjs";
 
 async function getOptionsRegistry() {
-  await registerSiteOptions();
   finalizeRegistry();
   return internalOptionsRegistry;
 }
