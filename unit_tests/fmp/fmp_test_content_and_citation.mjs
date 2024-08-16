@@ -439,6 +439,16 @@ const regressionData = [
     caseName: "xx_person_reginald_pavey_birth_place_only",
     url: "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1850399906/profile",
   },
+
+  // Shared image pages - newspaper clippings
+  {
+    caseName: "yy_image_share_surrey_advertiser_1914",
+    url: "https://www.findmypast.co.uk/image-share/1eb2fb56-2ecd-4144-b0b6-08888276e66d",
+  },
+  {
+    caseName: "yy_image_share_tonbridge_free_press_1888",
+    url: "https://www.findmypast.co.uk/image-share/4c43efd4-39a6-4fe3-ad59-b866e43c61d4?showBreadcrumbs=true&parentId=32f4ea54-74b5-4ba6-9997-2a392921fe60&route=image_share",
+  },
 ];
 
 const optionVariants = [

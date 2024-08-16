@@ -134,7 +134,12 @@ function buildDataString(ed, gd, dataStyle, builder) {
 
   // I don't think this will ever happen
   if (!recordData) {
-    dataString = ed.heading + " in " + ed.place;
+    if (ed.heading) {
+      dataString = ed.heading;
+      if (ed.place) {
+        dataString += " in " + ed.place;
+      }
+    }
     return dataString;
   }
 
@@ -242,7 +247,32 @@ function buildSourceReference(ed, builder) {
   addTerm("District reference", districtReference);
 }
 
+function buildShareImageCitation(ed, gd, builder) {
+  const options = builder.getOptions();
+
+  if (ed.heading) {
+    builder.sourceTitle = ed.heading;
+  } else {
+    builder.sourceTitle = "Findmypast";
+  }
+
+  builder.sourceReference = ed.detailText;
+
+  if (ed.url) {
+    builder.recordLinkOrTemplate = "[" + ed.url + " FindMyPast Share Image]";
+  }
+
+  if (ed.description) {
+    builder.dataString = ed.description;
+  }
+}
+
 function buildCoreCitation(ed, gd, builder) {
+  if (ed.urlImageShareId) {
+    buildShareImageCitation(ed, gd, builder);
+    return;
+  }
+
   const options = builder.getOptions();
 
   builder.includeSubscriptionRequired = options.citation_fmp_subscriptionRequired;

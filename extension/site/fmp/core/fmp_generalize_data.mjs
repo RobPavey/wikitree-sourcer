@@ -1059,6 +1059,34 @@ function generalizeProfileData(ed, result) {
   result.hasValidData = true;
 }
 
+function generalizeShareImageData(ed, result) {
+  let detailText = ed.detailText;
+  if (!detailText) {
+    return;
+  }
+
+  result.recordType = RT.Newspaper;
+
+  function getDetailTextPart(regex, replaceString) {
+    let value = detailText.replace(regex, replaceString);
+    if (value == detailText) {
+      value = "";
+    }
+    return value;
+  }
+
+  // Typical detailText is something like:
+  // "Page 1, Surrey Advertiser, 19 September 1914, Guildford, Surrey, England."
+  let regexWithPage = /^Page ([\d\w]+), ([^,]+), ([^,]+), ([^\.]+\.)$/i;
+  if (regexWithPage.test(detailText)) {
+    result.newspaperName = getDetailTextPart(regexWithPage, "$2");
+    result.setEventDate(getDetailTextPart(regexWithPage, "$3"));
+    result.setEventPlace(getDetailTextPart(regexWithPage, "$4"));
+
+    result.hasValidData = true;
+  }
+}
+
 // This function generalizes the data (ed) extracted from the web page.
 // We know what fields can be there. And we know the ones we want in generalizedData.
 function generalizeData(input) {
@@ -1078,6 +1106,10 @@ function generalizeData(input) {
     // continue
   } else if (ed.urlProfileId) {
     generalizeProfileData(ed, result);
+    return result;
+  } else if (ed.urlImageShareId) {
+    // shared image - probably a newspaper clipping
+    generalizeShareImageData(ed, result);
     return result;
   }
 

@@ -12,27 +12,27 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Record of John Kimberlin''':\n[https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)<br/>\nundefined in undefined.\n</ref>",
+    "citation": "<ref>\n'''Record of John Kimberlin''':\n[https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "John was in a record.<ref>\n'''Record of John Kimberlin''':\n[https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)<br/>\nundefined in undefined.\n</ref>",
+    "citation": "John was in a record.<ref>\n'''Record of John Kimberlin''':\n[https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Record of John Kimberlin''': [https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)<br/>undefined in undefined.",
+    "citation": "* '''Record of John Kimberlin''': [https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_list_inline": {
-    "citation": "<ref>\n'''Record of John Kimberlin''':\n[https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)<br/>\nundefined in undefined.\n</ref>",
+    "citation": "<ref>\n'''Record of John Kimberlin''':\n[https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "John was in a record.<ref>\n'''Record of John Kimberlin''':\n[https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)<br/>\nundefined in undefined.\n</ref>",
+    "citation": "John was in a record.<ref>\n'''Record of John Kimberlin''':\n[https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
-    "citation": "* '''Record of John Kimberlin''': [https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)<br/>undefined in undefined.",
+    "citation": "* '''Record of John Kimberlin''': [https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_table_inline": {
@@ -44,7 +44,7 @@
     "type": "narrative"
   },
   "dataStyle_table_source": {
-    "citation": "* '''Record of John Kimberlin''': [https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)<br/>undefined in undefined.",
+    "citation": "* '''Record of John Kimberlin''': [https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964933/profile FindMyPast Transcription] (accessed 6 May 2021)",
     "type": "source"
   }
 }

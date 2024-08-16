@@ -91,10 +91,17 @@ function extractUrlInfo(result, url) {
   if (queryIndex == -1) {
     // could be a tree like:
     // https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181965009/profile
+    // Or a shared clipping like:
+    // https://www.findmypast.co.uk/image-share/1eb2fb56-2ecd-4144-b0b6-08888276e66d
     if (/\#\/trees\/[a-f0-9\-]+\/[0-9]+\/profile/.test(remainder)) {
       result.urlPath = remainder;
       result.urlTreeId = remainder.replace(/\#\/trees\/([a-f0-9\-]+)\/[0-9]+\/profile/i, "$1");
       result.urlProfileId = remainder.replace(/\#\/trees\/[a-f0-9\-]+\/([0-9]+)\/profile/i, "$1");
+      return true;
+    } else if (/^image-share\/[a-f0-9\-]+$/i.test(remainder)) {
+      // it is an image share
+      result.urlPath = remainder;
+      result.urlImageShareId = remainder.replace(/^image-share\/([a-f0-9\-]+).*$/i, "$1");
       return true;
     }
     return false;
@@ -107,6 +114,10 @@ function extractUrlInfo(result, url) {
   if (remainder.startsWith("search-family-tree")) {
     result.urlTreeId = result.urlParameters.replace(/.*id=([a-f0-9\-]+).*/i, "$1");
     result.urlProfileId = result.urlParameters.replace(/.*ref=([a-f0-9\-]+).*/i, "$1");
+  } else if (/^image-share\/[a-f0-9\-]+/i.test(remainder)) {
+    // it is an image share
+    result.urlPath = remainder;
+    result.urlImageShareId = remainder.replace(/^image-share\/([a-f0-9\-]+).*$/i, "$1");
   }
 
   return true;
@@ -1049,6 +1060,49 @@ function extractStyle2TranscriptionData(document, result) {
   //console.log(result);
 }
 
+function extractImageShareData(document, result) {
+  // the class names seem generated and may not be consistent
+  // the attribute data-testid seems useful.
+
+  let mainNode = document.querySelector("#main");
+  if (!mainNode) {
+    return;
+  }
+
+  let h1Node = mainNode.querySelector("h1");
+  if (!h1Node) {
+    return;
+  }
+
+  // Note that the heading can be edited so not always going to be same format or contain same info
+  result.heading = cleanText(h1Node.textContent);
+
+  let pictureNode = mainNode.querySelector("div a div picture");
+  if (pictureNode) {
+    let parentNode = pictureNode.parentElement;
+    if (parentNode) {
+      let paraNode = parentNode.querySelector("p");
+      if (paraNode) {
+        result.detailText = cleanText(paraNode.textContent);
+      }
+    }
+  }
+
+  // we want to get the description that can be added by the user.
+  let contentNode = mainNode.querySelector("#content");
+  if (contentNode) {
+    let descriptionPara = contentNode.querySelector("p");
+    if (descriptionPara) {
+      result.description = cleanText(descriptionPara.textContent);
+    }
+  }
+
+  result.success = true;
+
+  //console.log("result of extractData on FMP");
+  //console.log(result);
+}
+
 function extractData(document, url) {
   var result = {
     success: false,
@@ -1089,6 +1143,9 @@ function extractData(document, url) {
     } else {
       extractProfileData(document, result);
     }
+  } else if (result.urlImageShareId) {
+    // it is a shared image
+    extractImageShareData(document, result);
   } else {
     //console.log("FMP extractData, urlPath doesn't look like a valid page");
     isValidPath = false;

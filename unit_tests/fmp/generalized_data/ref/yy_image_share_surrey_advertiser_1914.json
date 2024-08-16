@@ -1,0 +1,11 @@
+{
+  "recordType": "Newspaper",
+  "newspaperName": "Surrey Advertiser",
+  "eventDate": {
+    "dateString": "19 September 1914"
+  },
+  "eventPlace": {
+    "placeString": "Guildford, Surrey, England."
+  },
+  "hasValidData": true
+}

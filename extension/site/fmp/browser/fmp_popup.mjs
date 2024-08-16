@@ -167,8 +167,9 @@ async function setupFmpPopupMenu(extractedData) {
   let isTranscript = extractedData.urlPath == "transcript";
   let isRecord = extractedData.urlPath == "record";
   let isProfile = extractedData.urlProfileId && extractedData.urlProfileId.length > 0;
+  let isImageShare = extractedData.urlImageShareId && extractedData.urlImageShareId.length > 0;
 
-  if (!extractedData || (!isTranscript && !isRecord && !isProfile) || !extractedData.success) {
+  if (!extractedData || (!isTranscript && !isRecord && !isProfile && !isImageShare) || !extractedData.success) {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
     message +=
       "\n\nIt looks like FindMyPast page but not a transcript or a record/image with a parent id nor a person profile on the Overview tab.";
@@ -209,6 +210,10 @@ async function setupFmpPopupMenu(extractedData) {
     await addSearchMenus(menu, data, backFunction, "fmp");
     addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data);
+  } else if (isImageShare) {
+    // do async prefetches
+    loadDataCache();
+    addBuildCitationMenuItems(menu, data, fmpBuildCitation, backFunction, generalizeDataGivenRecordType);
   } else {
     addMenuDivider(menu);
     addShowCitationAssistantMenuItem(menu);
