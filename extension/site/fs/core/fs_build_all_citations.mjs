@@ -79,7 +79,7 @@ function getDateString(date) {
     "December",
   ];
 
-  const dateString = "" + date.getDate() + " " + monthStrings[date.getMonth()] + " " + date.getFullYear();
+  const dateString = "" + date.getUTCDate() + " " + monthStrings[date.getUTCMonth()] + " " + date.getUTCFullYear();
 
   return dateString;
 }
@@ -110,6 +110,8 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
 
       if (source.uriUpdatedOn) {
         let date = new Date(source.uriUpdatedOn);
+        const options = { day: "numeric", month: "long", year: "numeric" };
+        //sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
         sourceObj.uriUpdatedDate = getDateString(date);
       }
     }
