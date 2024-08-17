@@ -3174,8 +3174,10 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
 
   let dataObj = dataObjects.dataObj;
 
-  if (document) {
-    result.url = document.URL;
+  if (!url) {
+    if (document) {
+      result.url = document.URL;
+    }
   }
 
   if (fetchType == "person") {
