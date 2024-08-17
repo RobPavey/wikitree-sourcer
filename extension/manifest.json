@@ -20,6 +20,7 @@
     "*://*.ancestrylibrary.com.au/*",
     "*://archive.org/*",
     "*://*.bac-lac.gc.ca/*",
+    "*://*.bdmhistoricalrecords.dia.govt.nz/*",
     "*://*.billiongraves.com/*",
     "*://*.cornwall-opc-database.org/*",
     "*://*.cwgc.org/*",
@@ -109,6 +110,11 @@
       "matches": ["*://*.bac-lac.gc.ca/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/baclac/browser/baclac_content.js"]
+    },
+    {
+      "matches": ["*://*.bdmhistoricalrecords.dia.govt.nz/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/nzbdm/browser/nzbdm_content.js"]
     },
     {
       "matches": ["*://*.billiongraves.com/*"],
@@ -318,6 +324,10 @@
     {
       "resources": ["site/baclac/core/baclac_extract_data.mjs"],
       "matches": ["*://*.bac-lac.gc.ca/*"]
+    },
+    {
+      "resources": ["site/nzbdm/core/nzbdm_extract_data.mjs"],
+      "matches": ["*://*.bdmhistoricalrecords.dia.govt.nz/*"]
     },
     {
       "resources": ["site/bg/core/bg_extract_data.mjs"],

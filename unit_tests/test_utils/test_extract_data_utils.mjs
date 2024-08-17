@@ -70,6 +70,11 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       let testPageFile = "./unit_tests/" + siteName + "/saved_pages/" + testData.caseName + ".html";
       if (fs.existsSync(testPageFile)) {
         pageFile = testPageFile;
+      } else {
+        testPageFile = "./unit_tests/" + siteName + "/saved_pages/" + testData.caseName + ".htm";
+        if (fs.existsSync(testPageFile)) {
+          pageFile = testPageFile;
+        }
       }
     }
 

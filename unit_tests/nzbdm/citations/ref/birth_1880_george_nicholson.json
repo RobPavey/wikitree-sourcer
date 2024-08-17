@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dBirthSearch%26recordsPP%3d30#SearchResults New Zealand BDM Record] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dBirthSearch%26recordsPP%3d30#SearchResults New Zealand BDM Record] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dBirthSearch%26recordsPP%3d30#SearchResults New Zealand BDM Record] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}
