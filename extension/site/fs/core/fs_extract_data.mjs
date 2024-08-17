@@ -3174,6 +3174,13 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
 
   let dataObj = dataObjects.dataObj;
 
+  // This is messy. I previously just checked if a document existed and if so saved the URL.
+  // That caused problems in the rare cases in the unit tests where there is bot a fetch object
+  // and a saved page (document). It was saving a local file path URL to the ref files which
+  // meant that the unit tests faled on a different machine. In this case the url is passed in
+  // by the unit tests. So if there is a url then do not use the document url.
+  // We could probably do "result.url = url" instead but that would mean needing to update
+  // all the unit test ref files so don't do that for now.
   if (!url) {
     if (document) {
       result.url = document.URL;
