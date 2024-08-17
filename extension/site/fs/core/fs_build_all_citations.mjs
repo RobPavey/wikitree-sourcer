@@ -63,6 +63,27 @@ function inferEventDate(source) {
   return "";
 }
 
+function getDateString(date) {
+  const monthStrings = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const dateString = "" + date.getDate() + " " + monthStrings[date.getMonth()] + " " + date.getFullYear();
+
+  return dateString;
+}
+
 function filterAndEnhanceFsSourcesIntoSources(result, options) {
   let sources = result.fsSources;
 
@@ -89,8 +110,7 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
 
       if (source.uriUpdatedOn) {
         let date = new Date(source.uriUpdatedOn);
-        const options = { day: "numeric", month: "long", year: "numeric" };
-        sourceObj.uriUpdatedDate = date.toLocaleDateString("en-GB", options);
+        sourceObj.uriUpdatedDate = getDateString(date);
       }
     }
 
