@@ -1619,15 +1619,15 @@ const contextGeneralOptionsGroup = {
 // Register the groups
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-registerSubsectionForOptions("search", "general", "General");
+registerSubsectionForOptions("search", "general", "General", "", 1);
 
-registerSubsectionForOptions("citation", "general", "General");
+registerSubsectionForOptions("citation", "general", "General", "", 1);
 registerSubheadingForOptions("citation", "general", "popup", "Popup Menu");
 registerSubheadingForOptions("citation", "general", "style", "Citation Style");
 
-registerSubsectionForOptions("citation", "userCitation", "Citation Assistant");
+registerSubsectionForOptions("citation", "userCitation", "Citation Assistant", "", 2);
 
-registerSubsectionForOptions("narrative", "general", "General");
+registerSubsectionForOptions("narrative", "general", "General", "", 1);
 registerSubsectionForOptions("narrative", "baptism", "Baptism");
 registerSubsectionForOptions("narrative", "birth", "Birth");
 registerSubsectionForOptions("narrative", "birthOrBaptism", "Birth or Baptism");
@@ -1653,18 +1653,18 @@ registerSubheadingForOptions(
 registerSubsectionForOptions("narrative", "obituary", "Obituary");
 registerSubsectionForOptions("narrative", "slaveSchedule", "Slave Schedule");
 
-registerSubsectionForOptions("table", "general", "General");
+registerSubsectionForOptions("table", "general", "General", "", 1);
 registerSubheadingForOptions("table", "general", "table", "When using a table");
 registerSubheadingForOptions("table", "general", "list", "When using a list");
 registerSubheadingForOptions("table", "general", "sentence", "When using a sentence");
 
-registerSubsectionForOptions("buildAll", "general", "General");
+registerSubsectionForOptions("buildAll", "general", "General", "", 1);
 
-registerSubsectionForOptions("addMerge", "general", "General");
-registerSubsectionForOptions("addMerge", "addPerson", "Add Person");
-registerSubsectionForOptions("addMerge", "mergeEdit", "Merge/Edit");
+registerSubsectionForOptions("addMerge", "general", "General", "", 1);
+registerSubsectionForOptions("addMerge", "addPerson", "Add Person", "", 2);
+registerSubsectionForOptions("addMerge", "mergeEdit", "Merge/Edit", "", 3);
 
-registerSubsectionForOptions("context", "general", "General");
+registerSubsectionForOptions("context", "general", "General", "", 1);
 
 registerOptionsGroup(searchOptionsGroup);
 registerOptionsGroup(citationPopupOptionsGroup);

@@ -73,7 +73,7 @@ var internalOptionsRegistry = {
   optionsGroups: [],
 };
 
-function registerSubsectionForOptions(tabName, name, label, comment) {
+function registerSubsectionForOptions(tabName, name, label, comment, sortPriority) {
   //console.log("registerSubsectionForOptions: tabName is: " + tabName + ", name is: " + name + ", label is: " + label);
 
   let tab = undefined;
@@ -98,7 +98,7 @@ function registerSubsectionForOptions(tabName, name, label, comment) {
       return;
     }
 
-    tab.subsections.push({ name: name, label: label, comment: comment, subheadings: [] });
+    tab.subsections.push({ name: name, label: label, comment: comment, sortPriority: sortPriority, subheadings: [] });
   }
 }
 
@@ -176,6 +176,24 @@ function finalizeRegistry() {
   // sort the lists that should be alphabetically sorted
 
   function compareFunction(a, b) {
+    // So that subsections like "General" come before the others we have a sort priority
+    if (a.sortPriority || b.sortPriority) {
+      if (a.sortPriority && b.sortPriority) {
+        if (a.sortPriority < b.sortPriority) {
+          return -1;
+        } else if (a.sortPriority > b.sortPriority) {
+          return 1;
+        } else {
+          return 0;
+        }
+      } else if (a.sortPriority) {
+        return -1;
+      } else if (b.sortPriority) {
+        return 1;
+      }
+    }
+
+    // Sort others alphabetically
     if (a.label < b.label) {
       return -1;
     } else if (a.label > b.label) {
