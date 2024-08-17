@@ -194,6 +194,9 @@ function readRefTextFile(initText, siteName, dataDir, testData, variantName, log
   var refText;
   try {
     refText = fs.readFileSync(refPath, "utf8");
+    // attempt to fix issues with \r\n line endings in Windows
+    refText = refText.replace(/\r\n/, "\n");
+    refText = refText.replace(/\r/, "\n");
   } catch (e) {
     //console.log('Error:', e.stack);
     console.log("Creating ref file: " + refPath);
