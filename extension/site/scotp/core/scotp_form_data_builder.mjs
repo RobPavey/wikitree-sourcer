@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { ScotpRecordType, SpField } from "./scotp_record_type.mjs";
 import { getPlaceSearchTerms } from "./scotp_place_search_terms.mjs";
 
