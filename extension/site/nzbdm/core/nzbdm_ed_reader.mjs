@@ -28,6 +28,14 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 class NzbdmEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+
+    if (ed.recordType == "Birth Search") {
+      this.recordType = RT.BirthRegistration;
+    } else if (ed.recordType == "Death Search") {
+      this.recordType = RT.DeathRegistration;
+    } else if (ed.recordType == "Marriage Search") {
+      this.recordType = RT.MarriageRegistration;
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,6 +47,10 @@ class NzbdmEdReader extends ExtractedDataReader {
       return false; //the extract failed, GeneralizedData is not even normally called in this case
     }
 
+    if (!this.ed.recordData) {
+      return false;
+    }
+
     return true;
   }
 
@@ -47,14 +59,47 @@ class NzbdmEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    return undefined;
+    let givenNames = "";
+    let familyName = "";
+
+    if (this.recordType == RT.MarriageRegistration) {
+      givenNames = this.ed.recordData["Bride's GivenName(s)"];
+      familyName = this.ed.recordData["Bride's Family Name"];
+    } else {
+      givenNames = this.ed.recordData["Given Name(s)"];
+      familyName = this.ed.recordData["Family Name"];
+    }
+
+    if (givenNames == "NR") {
+      givenNames = "";
+    }
+    if (familyName == "NR") {
+      familyName = "";
+    }
+
+    return this.makeNameObjFromForenamesAndLastName(givenNames, familyName);
   }
 
   getGender() {
+    if (this.recordType == RT.MarriageRegistration) {
+      return "female";
+    }
     return "";
   }
 
   getEventDateObj() {
+    // this is in format year/regNum. e.g. "1884/14727"
+    let registrationString = this.ed.recordData["Registration Number"];
+
+    let parts = registrationString.split("/");
+    if (parts.length != 2) {
+      return undefined;
+    }
+
+    let yearString = parts[0];
+    if (yearString) {
+      return this.makeDateObjFromYear(yearString);
+    }
     return undefined;
   }
 
@@ -63,18 +108,29 @@ class NzbdmEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtBirth() {
+    if (this.recordType == RT.BirthRegistration) {
+      let familyName = this.ed.recordData["Family Name"];
+      return familyName;
+    }
     return "";
   }
 
   getLastNameAtDeath() {
-    return "";
-  }
-
-  getMothersMaidenName() {
+    if (this.recordType == RT.DeathRegistration) {
+      let familyName = this.ed.recordData["Family Name"];
+      return familyName;
+    }
     return "";
   }
 
   getBirthDateObj() {
+    if (this.recordType == RT.DeathRegistration) {
+      let dobAge = this.ed.recordData["Date of Birth/Age at Death"];
+      if (/^\d+ \w+ \d\d\d\d$/.test(dobAge)) {
+        // it is a date of birth
+        return this.makeDateObjFromDateString(dobAge);
+      }
+    }
     return undefined;
   }
 
@@ -91,6 +147,14 @@ class NzbdmEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
+    if (this.recordType == RT.DeathRegistration) {
+      let dobAge = this.ed.recordData["Date of Birth/Age at Death"];
+      if (!/^\d+ \w+ \d\d\d\d$/.test(dobAge)) {
+        // it is an age
+        return dobAge;
+      }
+    }
+
     return "";
   }
 
@@ -98,31 +162,59 @@ class NzbdmEdReader extends ExtractedDataReader {
     return "";
   }
 
-  getRegistrationDistrict() {
-    return "";
-  }
-
-  getRelationshipToHead() {
-    return "";
-  }
-
-  getMaritalStatus() {
-    return "";
-  }
-
-  getOccupation() {
-    return "";
-  }
-
   getSpouses() {
+    if (this.recordType == RT.MarriageRegistration) {
+      let groomGivenNames = this.ed.recordData["Groom's GivenName(s)"];
+      let groomFamilyName = this.ed.recordData["Groom's Family Name"];
+      let spouseNameObj = this.makeNameObjFromForenamesAndLastName(groomGivenNames, groomFamilyName);
+      if (spouseNameObj) {
+        let spouse = { name: spouseNameObj };
+        spouse.personGender = "male";
+        let marriageDateObj = this.getEventDateObj();
+        if (marriageDateObj) {
+          spouse.marriageDate = marriageDateObj;
+        }
+        return [spouse];
+      }
+    }
+
     return undefined;
   }
 
   getParents() {
-    return undefined;
-  }
+    if (this.recordType == RT.BirthRegistration) {
+      let familyName = this.ed.recordData["Family Name"];
+      let motherGivenNames = this.ed.recordData["Mother's GivenName(s)"];
+      let fatherGivenNames = this.ed.recordData["Father's GivenName(s)"];
+      if (motherGivenNames == "NR") {
+        motherGivenNames = "";
+      }
+      if (fatherGivenNames == "NR") {
+        fatherGivenNames = "";
+      }
+      let fatherNameObj = undefined;
+      let motherNameObj = undefined;
 
-  getHousehold() {
+      if (fatherGivenNames) {
+        fatherNameObj = this.makeNameObjFromForenamesAndLastName(fatherGivenNames, familyName);
+      }
+
+      if (motherGivenNames) {
+        motherNameObj = this.makeNameObjFromForenamesAndLastName(motherGivenNames, familyName);
+      }
+
+      if (fatherNameObj || motherNameObj) {
+        let parents = {};
+        if (fatherNameObj) {
+          parents.father = { name: fatherNameObj };
+        }
+        if (motherNameObj) {
+          parents.mother = { name: motherNameObj };
+        }
+        return parents;
+      }
+    }
+
     return undefined;
   }
 

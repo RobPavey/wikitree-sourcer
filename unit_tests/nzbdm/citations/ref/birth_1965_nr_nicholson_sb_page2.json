@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nBirth Registration Number: 1965/90830<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNicholson birth 1965, child of Eric Gordon Nicholson & Gail Elizabeth Nicholson.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Nicholson's birth was registered in 1965. They were the child of Eric Gordon Nicholson & Gail Elizabeth Nicholson.<ref>\n'''Birth Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nBirth Registration Number: 1965/90830<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNicholson birth 1965, child of Eric Gordon Nicholson & Gail Elizabeth Nicholson.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Birth Registration Number: 1965/90830<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Nicholson birth 1965, child of Eric Gordon Nicholson & Gail Elizabeth Nicholson.",
+    "type": "source"
+  }
+}

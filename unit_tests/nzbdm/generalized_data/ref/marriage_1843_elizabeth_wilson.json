@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "nzbdm",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "Elizabeth"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1843"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "McKenny",
+        "forenames": "Robert"
+      },
+      "personGender": "male",
+      "marriageDate": {
+        "yearString": "1843"
+      }
+    }
+  ],
+  "hasValidData": true
+}

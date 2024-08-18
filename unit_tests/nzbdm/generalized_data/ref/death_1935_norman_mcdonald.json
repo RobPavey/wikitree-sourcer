@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "nzbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "McDonald",
+    "forenames": "Norman"
+  },
+  "eventDate": {
+    "yearString": "1935"
+  },
+  "lastNameAtDeath": "McDonald",
+  "ageAtEvent": "83Y",
+  "hasValidData": true
+}

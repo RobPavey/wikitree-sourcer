@@ -21,25 +21,34 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-
+import { RT } from "../../../base/core/record_type.mjs";
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildNzbdmUrl(ed, builder) {
-  return ed.url;
-}
-
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle += "New Zealand Births, Deaths & Marriages Online";
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  if (ed.recordData) {
+    let registrationNumber = ed.recordData["Registration Number"];
+    if (registrationNumber) {
+      let type = "";
+      if (gd.recordType == RT.BirthRegistration) {
+        type = "Birth ";
+      } else if (gd.recordType == RT.DeathRegistration) {
+        type = "Death ";
+      } else if (gd.recordType == RT.MarriageRegistration) {
+        type = "Marriage ";
+      }
+      builder.sourceReference = type + "Registration Number: " + registrationNumber;
+    }
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var nzbdmUrl = buildNzbdmUrl(ed, builder);
+  var nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search";
 
-  let recordLink = "[" + nzbdmUrl + " New Zealand BDM Record]";
+  let recordLink = "[" + nzbdmUrl + " New Zealand BDM Online]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

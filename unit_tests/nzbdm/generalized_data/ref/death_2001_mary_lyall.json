@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "nzbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Lyall",
+    "forenames": "Mary Jane Boyd Mcdonald"
+  },
+  "eventDate": {
+    "yearString": "2001"
+  },
+  "lastNameAtDeath": "Lyall",
+  "birthDate": {
+    "dateString": "13 December 1914"
+  },
+  "hasValidData": true
+}

@@ -2,12 +2,13 @@
   "url": "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FbirthSelect.m%3Fpage%3D2#matches",
   "success": true,
   "recordType": "Birth Search",
+  "isRowSelected": true,
   "recordData": {
-    "Registration Number": "1936/54676",
+    "Registration Number": "1965/90830",
     "Family Name": "Nicholson",
-    "Given Name(s)": "Trevor Joseph",
-    "Mother's GivenName(s)": "Kathleen",
-    "Father's GivenName(s)": "NR",
-    "Still Birth": "-"
+    "Given Name(s)": "NR",
+    "Mother's GivenName(s)": "Gail Elizabeth",
+    "Father's GivenName(s)": "Eric Gordon",
+    "Still Birth": "S"
   }
 }

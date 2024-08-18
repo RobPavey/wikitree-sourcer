@@ -1,6 +1,28 @@
 {
   "sourceOfData": "nzbdm",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Nicholson",
+    "forenames": "George James"
+  },
+  "eventDate": {
+    "yearString": "1884"
+  },
+  "lastNameAtBirth": "Nicholson",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Nicholson",
+        "forenames": "Charles"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Nicholson",
+        "forenames": "Mary Ann"
+      }
+    }
+  },
   "hasValidData": true
 }

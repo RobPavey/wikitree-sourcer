@@ -39,6 +39,26 @@ const regressionData = [
     caseName: "birth_1936_trevor_nicholson_page2",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FbirthSelect.m%3Fpage%3D2#matches",
   },
+  {
+    caseName: "birth_1965_nr_nicholson_sb_page2",
+    url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FbirthSelect.m%3Fpage%3D2#matches",
+  },
+  {
+    caseName: "death_1935_norman_mcdonald",
+    url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dDeathSearch%26recordsPP%3d30#SearchResults",
+  },
+  {
+    caseName: "death_2001_mary_lyall",
+    url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dDeathSearch%26recordsPP%3d30#SearchResults",
+  },
+  {
+    caseName: "marriage_1843_elizabeth_wilson",
+    url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dMarriageSearch%26recordsPP%3d30#SearchResults",
+  },
+  {
+    caseName: "marriage_1947_ngaio_wilson",
+    url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dMarriageSearch%26recordsPP%3d30#SearchResults",
+  },
 ];
 
 async function runTests(testManager) {

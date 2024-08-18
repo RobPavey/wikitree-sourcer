@@ -50,17 +50,17 @@ function getClickedRow() {
 }
 
 function addClickedRowListener() {
-  console.log("addClickedRowListener");
+  //console.log("addClickedRowListener");
 
   const elResultsTable = document.querySelector("div.ke_search_results table tbody");
-  console.log("addClickedRowListener: elResultsTable is");
-  console.log(elResultsTable);
+  //console.log("addClickedRowListener: elResultsTable is");
+  //console.log(elResultsTable);
 
   if (elResultsTable && !elResultsTable.hasAttribute("listenerOnClick")) {
     elResultsTable.setAttribute("listenerOnClick", "true");
     elResultsTable.addEventListener("click", function (ev) {
-      console.log("clickedRowListener: ev is");
-      console.log(ev);
+      //console.log("clickedRowListener: ev is");
+      //console.log(ev);
 
       // clear existing selected row if any
       let selectedRow = getClickedRow();
@@ -71,8 +71,8 @@ function addClickedRowListener() {
       // check this is a result row and not the heading
       selectedRow = ev.target;
       if (selectedRow) {
-        console.log("clickedRowListener: selectedRow is ");
-        console.log(selectedRow);
+        //console.log("clickedRowListener: selectedRow is ");
+        //console.log(selectedRow);
 
         selectedRow = selectedRow.closest("tr");
         if (selectedRow) {

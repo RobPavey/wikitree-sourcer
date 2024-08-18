@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1947/12896<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNgaio Wilson marriage to Platon Mackris-Berdebes in 1947.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ngaio's marriage to Platon Mackris-Berdebes was registered in 1947.<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1947/12896<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNgaio Wilson marriage to Platon Mackris-Berdebes in 1947.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Marriage Registration Number: 1947/12896<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Ngaio Wilson marriage to Platon Mackris-Berdebes in 1947.",
+    "type": "source"
+  }
+}

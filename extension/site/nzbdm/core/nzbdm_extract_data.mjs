@@ -22,6 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function getSelectedRow(document) {
+  const highlightStyle = "font-weight: bold; font-style: italic";
+  const elResultsTable = document.querySelector("div.ke_search_results table tbody");
+  if (elResultsTable) {
+    const selectedRow = elResultsTable.querySelector("tr[style='" + highlightStyle + "']");
+    return selectedRow;
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -30,7 +39,19 @@ function extractData(document, url) {
   }
   result.success = false;
 
+  // to get the type of record look at the heading like "Birth Search"
+  let header = document.querySelector("#Header");
+  if (header) {
+    result.recordType = header.textContent.trim();
+  } else {
+    header = document.querySelector("div.contentWrapper > h1");
+    if (header) {
+      result.recordType = header.textContent.trim();
+    }
+  }
+
   let searchResultsDiv = document.querySelector("div.ke_search_results");
+
   if (!searchResultsDiv) {
     return result;
   }
@@ -42,8 +63,14 @@ function extractData(document, url) {
     return result;
   }
 
-  // for now always use the first result
+  // by default we use the first row as the record to extract
   let selectedResultRow = resultRows[0];
+  // but if there is a user selected row we use that row
+  let userSelectedRowElement = getSelectedRow(document);
+  if (userSelectedRowElement) {
+    selectedResultRow = userSelectedRowElement;
+    result.isRowSelected = true;
+  }
 
   let headingFields = headingRow.querySelectorAll("th");
   let resultFields = selectedResultRow.querySelectorAll("td");

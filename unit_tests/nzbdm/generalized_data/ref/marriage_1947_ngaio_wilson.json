@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "nzbdm",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "Ngaio"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1947"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Mackris-Berdebes",
+        "forenames": "Platon"
+      },
+      "personGender": "male",
+      "marriageDate": {
+        "yearString": "1947"
+      }
+    }
+  ],
+  "hasValidData": true
+}

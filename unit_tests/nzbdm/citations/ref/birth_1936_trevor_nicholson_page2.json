@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FbirthSelect.m%3Fpage%3D2#matches New Zealand BDM Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nBirth Registration Number: 1936/54676<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nTrevor Joseph Nicholson birth 1936, child of Kathleen Nicholson.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FbirthSelect.m%3Fpage%3D2#matches New Zealand BDM Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "Trevor's birth was registered in 1936. They were the child of Kathleen Nicholson.<ref>\n'''Birth Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nBirth Registration Number: 1936/54676<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nTrevor Joseph Nicholson birth 1936, child of Kathleen Nicholson.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FbirthSelect.m%3Fpage%3D2#matches New Zealand BDM Record] (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Birth Registration Number: 1936/54676<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Trevor Joseph Nicholson birth 1936, child of Kathleen Nicholson.",
     "type": "source"
   }
 }

@@ -3,18 +3,23 @@
   "sourceType": "record",
   "recordType": "BirthRegistration",
   "name": {
-    "lastName": "Nicholson",
-    "forenames": "Trevor Joseph"
+    "lastName": "Nicholson"
   },
   "eventDate": {
-    "yearString": "1936"
+    "yearString": "1965"
   },
   "lastNameAtBirth": "Nicholson",
   "parents": {
+    "father": {
+      "name": {
+        "lastName": "Nicholson",
+        "forenames": "Eric Gordon"
+      }
+    },
     "mother": {
       "name": {
         "lastName": "Nicholson",
-        "forenames": "Kathleen"
+        "forenames": "Gail Elizabeth"
       }
     }
   },
