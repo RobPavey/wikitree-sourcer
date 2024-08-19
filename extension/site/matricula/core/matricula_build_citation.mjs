@@ -35,15 +35,14 @@ function buildSourceTitle(ed, gd, builder) {
     title += ", " + components[i];
   }
 
-  if (ed.page) {
-    title += ", Seite " + ed.page;
-  }
-
   builder.sourceTitle += title.substring(2);
 }
 
 function buildSourceReference(ed, gd, builder) {
-  // builder.sourceReference = "Put Source Reference here";
+  builder.sourceReference = ed.book;
+  if (ed.page) {
+    builder.sourceReference += ", Page " + ed.page;
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
@@ -60,8 +59,15 @@ function buildCoreCitation(ed, gd, builder) {
   builder.addStandardDataString(gd);
 }
 
+function customRecordTypeFunction(ed, gd) {
+  if (ed.type_set) {
+    return ed.type_set;
+  }
+  return "Churchbook";
+}
+
 function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
+  return simpleBuildCitationWrapper(input, buildCoreCitation, customRecordTypeFunction);
 }
 
 export { buildCitation };

@@ -43,7 +43,43 @@ function extractData(document, url) {
     components[i] = components[i].trim().replace("  ", " ");
   }
 
-  result.path_components = components;
+  result.path_components = components.slice(1, components.length);
+  let book = components[0];
+
+  if (book.includes("_")) {
+    book = book.replace("_", ", Section ");
+  }
+
+  result.book = book;
+  const book_title = components[0].split("-")[0].trim();
+
+  let type_set = "";
+
+  if (book_title.includes("Tauf")) {
+    type_set += ", Baptism";
+  }
+  if (book_title.includes("Trauu")) {
+    type_set += ", Marriage";
+  }
+  if (book_title.includes("Sterbe") || book_title.includes("Tod")) {
+    type_set += ", Death";
+  }
+  if (book_title.includes("Erstkommunion")) {
+    type_set += ", First Communion";
+  }
+  if (book_title.includes("Firmung")) {
+    type_set += ", Confirmation (Firmung)";
+  }
+  if (book_title.includes("Historische Notizen")) {
+    type_set += ", Historic Notes";
+  }
+  if (book_title.includes("Register")) {
+    type_set += ", Name Register";
+  }
+
+  if (type_set) {
+    result.type_set = type_set.substring(2);
+  }
 
   const url_split = url.split("/");
   const last_component = url_split[url_split.length - 1];

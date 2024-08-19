@@ -38,12 +38,40 @@ const regressionData = [
   },
   */
   {
-    caseName: "aachen_hlkreuz",
+    caseName: "aachen_hlkreuz_kb530_12",
     url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-hl-kreuz/KB+530_2/?pg=12",
   },
   {
-    caseName: "wien_01_st_peter",
+    caseName: "wien_01_st_peter_01-01_19",
     url: "https://data.matricula-online.eu/de/oesterreich/wien/01-st-peter/01-01/?pg=19",
+  },
+  {
+    caseName: "aachen_st_nikolaus_kb036_1",
+    url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+036/?pg=1",
+  },
+  {
+    caseName: "aachen_st_nikolaus_kb483_6",
+    url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+483/?pg=6",
+  },
+  {
+    caseName: "aachen_st_nikolaus_kb485_7",
+    url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+485/?pg=7",
+  },
+  {
+    caseName: "aachen_st_nikolaus_kb037_2",
+    url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_5/?pg=2",
+  },
+  {
+    caseName: "aachen_st_peter_kb582_7",
+    url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-peter/KB+582_6/?pg=7",
+  },
+  {
+    caseName: "aachen_st_nikolaus_kb037_8",
+    url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_9/?pg=8",
+  },
+  {
+    caseName: "aachen_st_nikolaus_kb475_7",
+    url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+475_7/?pg=7",
   },
 ];
 
