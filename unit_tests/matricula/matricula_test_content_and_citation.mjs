@@ -73,6 +73,10 @@ const regressionData = [
     caseName: "aachen_st_nikolaus_kb475_7",
     url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+475_7/?pg=7",
   },
+  {
+    caseName: "luxemburg_asselborn_kb12_13",
+    url: "https://data.matricula-online.eu/de/LU/luxemburg/asselborn/KB-12/?pg=13",
+  },
 ];
 
 async function runTests(testManager) {

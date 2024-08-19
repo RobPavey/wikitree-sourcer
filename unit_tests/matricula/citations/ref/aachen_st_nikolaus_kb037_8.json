@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Historic Notes''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nHistorische Notizen - KB 037, Section 9, Page 8<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_9/?pg=8 Matricula Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Notes''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nHistorische Notizen - KB 037, Section 9, Page 8<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_9/?pg=8 Matricula Record] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Historic Notes''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nHistorische Notizen - KB 037, Section 9, Page 8<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_9/?pg=8 Matricula Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Notes''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nHistorische Notizen - KB 037, Section 9, Page 8<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_9/?pg=8 Matricula Record] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Historic Notes''': \"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>Historische Notizen - KB 037, Section 9, Page 8<br/>[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_9/?pg=8 Matricula Record] (accessed 6 May 2021)",
+    "citation": "* '''Notes''': \"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>Historische Notizen - KB 037, Section 9, Page 8<br/>[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_9/?pg=8 Matricula Record] (accessed 6 May 2021)",
     "type": "source"
   }
 }

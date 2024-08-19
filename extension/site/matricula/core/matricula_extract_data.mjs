@@ -51,29 +51,34 @@ function extractData(document, url) {
   }
 
   result.book = book;
-  const book_title = components[0].split("-")[0].trim();
+  const book_title = components[0].split("-")[0].trim().toLowerCase();
 
   let type_set = "";
 
-  if (book_title.includes("Tauf")) {
+  if (book_title.includes("tauf")) {
     type_set += ", Baptism";
   }
-  if (book_title.includes("Trauu")) {
+  if (book_title.includes("trauu") || book_title.includes("heirat")) {
     type_set += ", Marriage";
   }
-  if (book_title.includes("Sterbe") || book_title.includes("Tod")) {
+  if (
+    book_title.includes("sterbe") ||
+    book_title.includes("tod") ||
+    book_title.includes("begräbnis") ||
+    book_title.includes("begraben")
+  ) {
     type_set += ", Death";
   }
-  if (book_title.includes("Erstkommunion")) {
+  if (book_title.includes("erstkommunion")) {
     type_set += ", First Communion";
   }
-  if (book_title.includes("Firmung")) {
+  if (book_title.includes("firmung")) {
     type_set += ", Confirmation (Firmung)";
   }
-  if (book_title.includes("Historische Notizen")) {
-    type_set += ", Historic Notes";
+  if (book_title.includes("notizen")) {
+    type_set += ", Notes";
   }
-  if (book_title.includes("Register")) {
+  if (book_title.includes("register")) {
     type_set += ", Name Register";
   }
 
