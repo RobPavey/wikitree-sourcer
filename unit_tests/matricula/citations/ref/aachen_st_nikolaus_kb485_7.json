@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nSterbefälle - KB 485, Page 7<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+485/?pg=7 Matricula Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nSterbefälle - KB 485, Page 7<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+485/?pg=7 Matricula Image] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Death''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nSterbefälle - KB 485, Page 7<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+485/?pg=7 Matricula Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Death''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nSterbefälle - KB 485, Page 7<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+485/?pg=7 Matricula Image] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>Sterbefälle - KB 485, Page 7<br/>[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+485/?pg=7 Matricula Record] (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>Sterbefälle - KB 485, Page 7<br/>[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+485/?pg=7 Matricula Image] (accessed 6 May 2021)",
     "type": "source"
   }
 }

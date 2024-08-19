@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nTaufen - KB 036, Page 1<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+036/?pg=1 Matricula Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nTaufen - KB 036, Page 1<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+036/?pg=1 Matricula Image] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Baptism''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nTaufen - KB 036, Page 1<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+036/?pg=1 Matricula Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Baptism''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nTaufen - KB 036, Page 1<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+036/?pg=1 Matricula Image] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Baptism''': \"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>Taufen - KB 036, Page 1<br/>[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+036/?pg=1 Matricula Record] (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>Taufen - KB 036, Page 1<br/>[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+036/?pg=1 Matricula Image] (accessed 6 May 2021)",
     "type": "source"
   }
 }

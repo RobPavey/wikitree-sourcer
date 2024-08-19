@@ -48,7 +48,7 @@ function buildSourceReference(ed, gd, builder) {
 function buildRecordLink(ed, gd, builder) {
   var matriculaUrl = buildMatriculaUrl(ed, builder);
 
-  let recordLink = "[" + matriculaUrl + " Matricula Record]";
+  let recordLink = "[" + matriculaUrl + " Matricula Image]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
