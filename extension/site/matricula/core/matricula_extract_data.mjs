@@ -30,6 +30,12 @@ function extractData(document, url) {
   }
   result.success = false;
 
+  // Pages without a document (e.g. parish descriptions) are currently not supported
+  const image_view = document.querySelector("div[id='document']");
+  if (image_view == null) {
+    return result;
+  }
+
   const title = document.querySelector("title").text;
   const components = title.split("|");
 
