@@ -41,6 +41,10 @@ const regressionData = [
     caseName: "aachen_hlkreuz",
     url: "https://data.matricula-online.eu/de/deutschland/aachen/aachen-hl-kreuz/KB+530_2/?pg=12",
   },
+  {
+    caseName: "wien_01_st_peter",
+    url: "https://data.matricula-online.eu/de/oesterreich/wien/01-st-peter/01-01/?pg=19",
+  },
 ];
 
 async function runTests(testManager) {
