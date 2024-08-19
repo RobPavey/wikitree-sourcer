@@ -60,6 +60,7 @@ const siteNames = [
   "wikitree",
   "npa",
   "nzbdm",
+  "matricula",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

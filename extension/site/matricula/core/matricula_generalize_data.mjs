@@ -22,47 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
+import { MatriculaEdReader } from "./matricula_ed_reader.mjs";
 
-// The order should not matter since user facing lists are sorted
+// This function generalizes the data extracted from the page content.
+function generalizeData(input) {
+  let edReader = new MatriculaEdReader(input.extractedData);
+  return commonGeneralizeData("matricula", edReader);
+}
 
-const siteNames = [
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "nzbdm",
-  "matricula",
-];
-
-export { siteNames };
+export { generalizeData };

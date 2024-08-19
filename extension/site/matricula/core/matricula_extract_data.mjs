@@ -22,47 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+function extractData(document, url) {
+  var result = {};
 
-// The order should not matter since user facing lists are sorted
+  if (url) {
+    result.url = url;
+  }
+  result.success = false;
 
-const siteNames = [
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "nzbdm",
-  "matricula",
-];
+  const title = document.querySelector("title").text;
+  const components = title.split("|");
 
-export { siteNames };
+  for (let i = 0; i < components.length; i++) {
+    components[i] = components[i].trim().replace("  ", " ");
+  }
+
+  result.path_components = components;
+
+  const url_split = url.split("/");
+  const last_component = url_split[url_split.length - 1];
+  if (last_component.substring(0, 4) == "?pg=") {
+    result.page = last_component.substring(4).split("&")[0];
+  }
+
+  result.success = true;
+
+  return result;
+}
+
+export { extractData };

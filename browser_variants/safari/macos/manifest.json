@@ -16,7 +16,8 @@
     "*://*.ancestrylibrary.com/*",
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
-    "*://*.ancestrylibrary.com.au/*"
+    "*://*.ancestrylibrary.com.au/*",
+    "*://data.matricula-online.eu/*"
   ],
   "background": {
     "service_worker": "base/browser/background/background_mv3.mjs",
@@ -232,6 +233,11 @@
       "matches": ["*://*.wikipedia.org/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/wikipedia/browser/wikipedia_content.js"]
+    },
+    {
+      "matches": ["*://data.matricula-online.eu/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/wikipedia/browser/wikipedia_content.js"]
     }
   ],
   "options_ui": {
@@ -413,6 +419,10 @@
     {
       "resources": ["site/wikipedia/core/wikipedia_extract_data.mjs"],
       "matches": ["*://*.wikipedia.org/*"]
+    },
+    {
+      "resources": ["site/matricula/core/matricula_extract_data.mjs"],
+      "matches": ["*://data.matricula-online.eu/*"]
     }
   ],
   "browser_specific_settings": {
