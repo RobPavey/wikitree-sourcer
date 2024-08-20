@@ -75,7 +75,7 @@ function extractData(document, url) {
   if (book_title.includes("firmung")) {
     type_set += ", Confirmation (Firmung)";
   }
-  if (book_title.includes("notizen")) {
+  if (book_title.includes("notizen") || book_title.includes("anmerkung")) {
     type_set += ", Notes";
   }
   if (book_title.includes("register")) {
