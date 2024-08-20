@@ -78,7 +78,7 @@ function extractData(document, url) {
   if (book_title.includes("notizen") || book_title.includes("anmerkung")) {
     type_set += ", Notes";
   }
-  if (book_title.includes("register")) {
+  if (book_title.includes("register") || book_title.includes("index")) {
     type_set += ", Name Register";
   }
 
