@@ -24,12 +24,16 @@ SOFTWARE.
 
 import { MatriculaUriBuilder } from "./matricula_uri_builder.mjs";
 
+const DIOCESE_NAME_LIST = [];
+
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
 
   var builder = new MatriculaUriBuilder();
 
-  // call methods on builder here
+  if (buildUrlInput.place) {
+    builder.addLocationName(buildUrlInput.place);
+  }
 
   const url = builder.getUri();
 

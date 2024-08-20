@@ -30,8 +30,8 @@ import { buildCitation } from "../core/matricula_build_citation.mjs";
 async function setupMatriculaPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a Matricula (Europe) page but not a record page.",
-    generalizeFailedMessage: "It looks like a Matricula (Europe) page but does not contain the required data.",
+    extractFailedMessage: "It looks like a Matricula page but not a record page.",
+    generalizeFailedMessage: "It looks like a Matricula page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "matricula",

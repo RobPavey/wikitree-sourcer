@@ -36,8 +36,8 @@ const citationOptionsGroup = {
   options: [],
 };
 
-// registerSubsectionForOptions("search", "matricula", "Matricula (Europe)");
-// registerSiteSearchPopupOptionsGroup("matricula", 7, 7);
+registerSubsectionForOptions("search", "matricula", "Matricula");
+registerSiteSearchPopupOptionsGroup("matricula", 7, 7);
 
-registerSubsectionForOptions("citation", "matricula", "Matricula (Europe)");
+registerSubsectionForOptions("citation", "matricula", "Matricula");
 registerOptionsGroup(citationOptionsGroup);

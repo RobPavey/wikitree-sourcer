@@ -26,20 +26,9 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class MatriculaUriBuilder {
   constructor() {
-    this.uri = "https://data.matricula-online.eu";
+    // https://data.matricula-online.eu/de/suchen/?place=loc&diocese=76&date_range=1500%2C2000
+    this.uri = "https://data.matricula-online.eu/de/suchen/";
     this.searchTermAdded = false;
-  }
-
-  addSearchTerm(string) {
-    if (string == undefined || string == "") {
-      return;
-    }
-    if (!this.searchTermAdded) {
-      this.uri = this.uri.concat("?", string);
-      this.searchTermAdded = true;
-    } else {
-      this.uri = this.uri.concat("&", string);
-    }
   }
 
   addSearchParameter(parameter, value) {
@@ -57,44 +46,16 @@ class MatriculaUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addLocationName(location) {
+    this.addSearchParameter("place", location);
   }
 
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
+  addDiocese(diocese) {
+    this.addSearchParameter("diocese", diocese);
   }
 
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
-
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addDateRange(from, to) {
+    this.addSearchParameter("date_range", from + "%2C" + to);
   }
 
   getUri() {
