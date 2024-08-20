@@ -43,7 +43,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: matriculaStartYear,
     endYear: matriculaEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["Germany", "Austria", "Poland", "Serbia", "Luxembourg", "Bosnia", "Slovenia", "Italy"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
@@ -83,13 +83,17 @@ function extractPlaceStrings(ed, gd) {
   let placeObj = gd.inferBirthPlaceObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
-    locations.push({ descriptor: "Birth", place: placeParts.localPlace });
+    if (placeParts && placeParts.localPlace) {
+      locations.push({ descriptor: "Birth", place: placeParts.localPlace });
+    }
   }
 
   placeObj = gd.inferResidencePlaceObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
-    locations.push({ descriptor: "Residence", place: placeParts.localPlace });
+    if (placeParts && placeParts.localPlace) {
+      locations.push({ descriptor: "Residence", place: placeParts.localPlace });
+    }
   }
 
   // from inferPlaceNames()
@@ -112,14 +116,18 @@ function extractPlaceStrings(ed, gd) {
   placeObj = gd.inferDeathPlaceObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
-    locations.push({ descriptor: "Death", place: placeParts.localPlace });
+    if (placeParts && placeParts.localPlace) {
+      locations.push({ descriptor: "Death", place: placeParts.localPlace });
+    }
   }
 
   if (!locations) {
     placeObj = gd.inferEventPlaceObj();
     if (placeObj) {
       let placeParts = placeObj.separatePlaceIntoParts();
-      locations.push({ descriptor: "Event", place: placeParts.localPlace });
+      if (placeParts && placeParts.localPlace) {
+        locations.push({ descriptor: "Event", place: placeParts.localPlace });
+      }
     }
   }
 
