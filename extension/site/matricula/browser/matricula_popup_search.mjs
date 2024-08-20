@@ -66,9 +66,10 @@ async function matriculaSearch(generalizedData) {
 }
 
 async function matriculaLocationSearch(searchParameters) {
+  const input = { searchParameters: searchParameters };
   doAsyncActionWithCatch("Matricula Search", input, async function () {
     let loadedModule = await import(`../core/matricula_build_search_url.mjs`);
-    doSearch(loadedModule, searchParameters);
+    doSearch(loadedModule, input);
   });
 }
 
