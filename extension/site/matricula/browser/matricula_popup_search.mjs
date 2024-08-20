@@ -92,6 +92,23 @@ function extractPlaceStrings(ed, gd) {
     locations.push({ descriptor: "Residence", place: placeParts.localPlace });
   }
 
+  // from inferPlaceNames()
+  // add marriage places
+  if (gd.sourceType == "profile" && gd.spouses) {
+    for (let spouse of gd.spouses) {
+      if (spouse.marriagePlace && spouse.marriagePlace.placeString) {
+        locations.push({ descriptor: "Marriage", place: spouse.marriagePlace.placeString });
+      }
+    }
+  }
+  // Marriage records on FS are not included in above, but we can work around this issue
+  else if (gd.sourceType == "record" && gd.recordType.toLowerCase() == "marriage") {
+    const place = gd.eventPlace.placeString;
+    if (place) {
+      locations.push({ descriptor: "Marriage", place: place });
+    }
+  }
+
   placeObj = gd.inferDeathPlaceObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
