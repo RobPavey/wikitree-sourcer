@@ -77,41 +77,7 @@ async function matriculaLocationSearch(place) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addMatriculaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  // addMenuItem(menu, "Search Matricula", function (element) {
-  //   matriculaSearch(data.generalizedData);
-  // });
-  addMenuItemWithSubMenu(
-    menu,
-    "Search Matricula",
-    function (element) {
-      matriculaSearch(data.generalizedData, "");
-    },
-    function () {
-      setupMatriculaSearchSubMenu(data, backFunction, filter);
-    }
-  );
-
-  return true;
-}
-
-function addMatriculaLocationSearch(menu, data, backFunction, item) {
-  var fragments = item.place.split(",");
-
-  for (let i = 0; i < 3; i++) {
-    let part = fragments[i];
-    if (!part || fragments.indexOf(part) != i) {
-      continue;
-    }
-    part = part.trim();
-    addMenuItem(menu, "Search for " + item.descriptor + " (" + part + ")", function (element) {
-      matriculaLocationSearch(part);
-    });
-  }
-}
-
-async function setupMatriculaSearchSubMenu(data, backFunction, filter) {
-  let ed = data.extractedData;
+function extractPlaceStrings(ed) {
   let locations = [];
 
   if (ed.birthLocation) {
@@ -144,6 +110,53 @@ async function setupMatriculaSearchSubMenu(data, backFunction, filter) {
     locations.push({ descriptor: "Death", place: ed.deathPlace });
   }
 
+  return locations;
+}
+
+function addMatriculaDefaultSearchMenuItem(menu, data, backFunction, filter) {
+  const locations = extractPlaceStrings(data.extractedData);
+
+  // Display the submenu only when there are locations which we have extracted
+  if (locations.length > 0) {
+    addMenuItemWithSubMenu(
+      menu,
+      "Search Matricula",
+      function (element) {
+        matriculaSearch(data.generalizedData, "");
+      },
+      function () {
+        setupMatriculaSearchSubMenu(data, backFunction, filter, locations);
+      }
+    );
+  } else {
+    addMenuItem(menu, "Search Matricula", function (element) {
+      matriculaSearch(data.generalizedData, "");
+    });
+  }
+
+  return true;
+}
+
+function addMatriculaLocationSearch(menu, data, backFunction, item) {
+  var fragments = item.place.split(",");
+
+  for (let i = 0; i < 3; i++) {
+    let part = fragments[i];
+    if (!part || fragments.indexOf(part) != i) {
+      continue;
+    }
+    part = part.trim();
+    addMenuItem(menu, "Search for " + item.descriptor + " (" + part + ")", function (element) {
+      matriculaLocationSearch(part);
+    });
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Submenus
+//////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupMatriculaSearchSubMenu(data, backFunction, filter, locations) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -158,10 +171,6 @@ async function setupMatriculaSearchSubMenu(data, backFunction, filter) {
 
   endMainMenu(menu);
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Submenus
-//////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
