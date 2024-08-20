@@ -39,10 +39,8 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.book;
-  if (ed.page) {
-    builder.sourceReference += ", Page " + ed.page;
-  }
+  builder.addSourceReferenceText(ed.book);
+  builder.addSourceReferenceField("Page", ed.page);
 }
 
 function buildRecordLink(ed, gd, builder) {

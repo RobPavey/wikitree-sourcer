@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Matricula Online, Österreich, Wien/Niederösterreich (Osten): Rk. Erzdiözese Wien, 01., St. Peter\"<br/>\nTaufbuch - 01-01, Page 19<br/>\n[https://data.matricula-online.eu/de/oesterreich/wien/01-st-peter/01-01/?pg=19 Matricula Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Matricula Online, Österreich, Wien/Niederösterreich (Osten): Rk. Erzdiözese Wien, 01., St. Peter\"<br/>\nTaufbuch - 01-01; Page: 19<br/>\n[https://data.matricula-online.eu/de/oesterreich/wien/01-st-peter/01-01/?pg=19 Matricula Image] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Baptism''':\n\"Matricula Online, Österreich, Wien/Niederösterreich (Osten): Rk. Erzdiözese Wien, 01., St. Peter\"<br/>\nTaufbuch - 01-01, Page 19<br/>\n[https://data.matricula-online.eu/de/oesterreich/wien/01-st-peter/01-01/?pg=19 Matricula Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Baptism''':\n\"Matricula Online, Österreich, Wien/Niederösterreich (Osten): Rk. Erzdiözese Wien, 01., St. Peter\"<br/>\nTaufbuch - 01-01; Page: 19<br/>\n[https://data.matricula-online.eu/de/oesterreich/wien/01-st-peter/01-01/?pg=19 Matricula Image] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Baptism''': \"Matricula Online, Österreich, Wien/Niederösterreich (Osten): Rk. Erzdiözese Wien, 01., St. Peter\"<br/>Taufbuch - 01-01, Page 19<br/>[https://data.matricula-online.eu/de/oesterreich/wien/01-st-peter/01-01/?pg=19 Matricula Image] (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"Matricula Online, Österreich, Wien/Niederösterreich (Osten): Rk. Erzdiözese Wien, 01., St. Peter\"<br/>Taufbuch - 01-01; Page: 19<br/>[https://data.matricula-online.eu/de/oesterreich/wien/01-st-peter/01-01/?pg=19 Matricula Image] (accessed 6 May 2021)",
     "type": "source"
   }
 }
