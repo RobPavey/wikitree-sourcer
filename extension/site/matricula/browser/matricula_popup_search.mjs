@@ -98,10 +98,12 @@ function extractPlaceStrings(ed, gd) {
     locations.push({ descriptor: "Death", place: placeParts.localPlace });
   }
 
-  placeObj = gd.inferEventPlaceObj();
-  if (placeObj) {
-    let placeParts = placeObj.separatePlaceIntoParts();
-    locations.push({ descriptor: "Event", place: placeParts.localPlace });
+  if (!locations) {
+    placeObj = gd.inferEventPlaceObj();
+    if (placeObj) {
+      let placeParts = placeObj.separatePlaceIntoParts();
+      locations.push({ descriptor: "Event", place: placeParts.localPlace });
+    }
   }
 
   return locations;
