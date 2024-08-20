@@ -27,7 +27,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 class MatriculaUriBuilder {
   constructor() {
     // https://data.matricula-online.eu/de/suchen/?place=loc&diocese=76&date_range=1500%2C2000
-    this.uri = "https://data.matricula-online.eu/de/suchen/";
+    this.uri = "https://data.matricula-online.eu/en/suchen/";
     this.searchTermAdded = false;
   }
 
