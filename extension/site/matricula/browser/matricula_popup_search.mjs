@@ -168,13 +168,11 @@ async function setupMatriculaSearchSubMenu(data, backFunction, filter, locations
   addBackMenuItem(menu, backFunction);
 
   if (locations) {
-    for (let i = 0; i < locations.length; i++) {
-      addMenuItem(menu, "Search for " + locations[i].descriptor, function () {
-        setupMatriculaLocationSubmenuLayer2(data, backFunction, locations[i]);
+    for (let location of locations) {
+      addMenuItem(menu, "Search for " + location.descriptor, function () {
+        setupMatriculaLocationSubmenuLayer2(data, backFunction, location);
       });
     }
-  } else {
-    // TODO: add note that no places could be found
   }
 
   endMainMenu(menu);

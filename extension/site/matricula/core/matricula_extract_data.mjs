@@ -39,8 +39,8 @@ function extractData(document, url) {
   const title = document.querySelector("title").text;
   const components = title.split("|");
 
-  for (let component of components) {
-    components[i] = component.trim().replace(/\s+/g, " ");
+  for (let i = 0; i < components.length; i++) {
+    components[i] = components[i].trim().replace(/\s+/g, " ");
   }
 
   result.pathComponents = components.slice(1, components.length);
