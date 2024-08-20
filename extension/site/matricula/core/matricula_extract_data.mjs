@@ -89,11 +89,14 @@ function extractData(document, url) {
   if (book_title.includes("register") || book_title.includes("index")) {
     type_set += ", Name Register";
   }
-  if (book_title.includes("Umschlag")) {
+  if (book_title.includes("umschlag")) {
     type_set += ", Envelope";
   }
-  if (book_title.includes("Familie")) {
+  if (book_title.includes("familie")) {
     type_set += ", Family Book";
+  }
+  if (book_title.includes("grundbuch")) {
+    type_set += ", Land Register";
   }
   if (book_title.includes("lose blätter")) {
     if (type_set) {
