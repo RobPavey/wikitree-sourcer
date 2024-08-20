@@ -32,7 +32,7 @@ function extractData(document, url) {
 
   // Pages without a document (e.g. parish descriptions) are currently not supported
   const image_view = document.querySelector("div[id='document']");
-  if (image_view == null) {
+  if (!image_view) {
     return result;
   }
 

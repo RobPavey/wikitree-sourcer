@@ -43,7 +43,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: matriculaStartYear,
     endYear: matriculaEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["Germany", "Austria", "Poland", "Serbia", "Luxembourg", "Bosnia", "Slovenia", "Italy"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
@@ -83,13 +83,17 @@ function extractPlaceStrings(ed, gd) {
   let placeObj = gd.inferBirthPlaceObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
-    locations.push({ descriptor: "Birth", place: placeParts.localPlace });
+    if (placeParts && placeParts.localPlace) {
+      locations.push({ descriptor: "Birth", place: placeParts.localPlace });
+    }
   }
 
   placeObj = gd.inferResidencePlaceObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
-    locations.push({ descriptor: "Residence", place: placeParts.localPlace });
+    if (placeParts && placeParts.localPlace) {
+      locations.push({ descriptor: "Residence", place: placeParts.localPlace });
+    }
   }
 
   // from inferPlaceNames()
@@ -112,14 +116,18 @@ function extractPlaceStrings(ed, gd) {
   placeObj = gd.inferDeathPlaceObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
-    locations.push({ descriptor: "Death", place: placeParts.localPlace });
+    if (placeParts && placeParts.localPlace) {
+      locations.push({ descriptor: "Death", place: placeParts.localPlace });
+    }
   }
 
   if (!locations) {
     placeObj = gd.inferEventPlaceObj();
     if (placeObj) {
       let placeParts = placeObj.separatePlaceIntoParts();
-      locations.push({ descriptor: "Event", place: placeParts.localPlace });
+      if (placeParts && placeParts.localPlace) {
+        locations.push({ descriptor: "Event", place: placeParts.localPlace });
+      }
     }
   }
 
@@ -150,7 +158,27 @@ function addMatriculaDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-function addMatriculaLocationSearch(data, backFunction, item) {
+//////////////////////////////////////////////////////////////////////////////////////////
+// Submenus
+//////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupMatriculaSearchSubMenu(data, backFunction, filter, locations) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  if (locations) {
+    for (let location of locations) {
+      addMenuItem(menu, "Search for " + location.descriptor, function () {
+        setupMatriculaLocationSubmenuLayer2(data, backFunction, location);
+      });
+    }
+  }
+
+  endMainMenu(menu);
+}
+
+function setupMatriculaLocationSubmenuLayer2(data, backFunction, item) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -166,33 +194,6 @@ function addMatriculaLocationSearch(data, backFunction, item) {
     addMenuItem(menu, part, function (element) {
       matriculaLocationSearch({ place: part });
     });
-  }
-
-  endMainMenu(menu);
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Submenus
-//////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupMatriculaSearchSubMenu(data, backFunction, filter, locations) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  if (locations) {
-    for (let i = 0; i < locations.length; i++) {
-      addMenuItemWithSubMenu(
-        menu,
-        "Search for " + locations[i].descriptor,
-        function (element) {},
-        function () {
-          addMatriculaLocationSearch(data, backFunction, locations[i]);
-        }
-      );
-    }
-  } else {
-    // TODO: add note that no places could be found
   }
 
   endMainMenu(menu);
