@@ -22,47 +22,45 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
-// The order should not matter since user facing lists are sorted
+class MatriculaUriBuilder {
+  constructor() {
+    // https://data.matricula-online.eu/de/suchen/?place=loc&diocese=76&date_range=1500%2C2000
+    this.uri = "https://data.matricula-online.eu/en/suchen/";
+    this.searchTermAdded = false;
+  }
 
-const siteNames = [
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "nzbdm",
-  "matricula",
-];
+  addSearchParameter(parameter, value) {
+    if (value == undefined || value == "") {
+      return;
+    }
 
-export { siteNames };
+    const encodedValue = encodeURIComponent(value);
+
+    if (!this.searchTermAdded) {
+      this.uri = this.uri.concat("?", parameter, "=", encodedValue);
+      this.searchTermAdded = true;
+    } else {
+      this.uri = this.uri.concat("&", parameter, "=", encodedValue);
+    }
+  }
+
+  addLocationName(location) {
+    this.addSearchParameter("place", location);
+  }
+
+  addDiocese(diocese) {
+    this.addSearchParameter("diocese", diocese);
+  }
+
+  addDateRange(from, to) {
+    this.addSearchParameter("date_range", from + "%2C" + to);
+  }
+
+  getUri() {
+    return this.uri;
+  }
+}
+
+export { MatriculaUriBuilder };

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''First Communion''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nErstkommunionen - KB 037, Section 5, Page 2<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_5/?pg=2 Matricula Image] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''First Communion''':\n\"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>\nErstkommunionen - KB 037, Section 5, Page 2<br/>\n[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_5/?pg=2 Matricula Image] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''First Communion''': \"Matricula Online, Deutschland, Aachen, rk. Bistum, Aachen St. Nikolaus\"<br/>Erstkommunionen - KB 037, Section 5, Page 2<br/>[https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_5/?pg=2 Matricula Image] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

@@ -61,7 +61,8 @@
     "*://trove.nla.gov.au/*",
     "*://*.bdm.vic.gov.au/*",
     "*://www.wiewaswie.nl/*",
-    "*://*.wikipedia.org/*"
+    "*://*.wikipedia.org/*",
+    "*://data.matricula-online.eu/*"
   ],
   "background": {
     "service_worker": "base/browser/background/background_chrome.mjs",
@@ -282,6 +283,11 @@
       "matches": ["*://*.wikipedia.org/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/wikipedia/browser/wikipedia_content.js"]
+    },
+    {
+      "matches": ["*://data.matricula-online.eu/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/matricula/browser/matricula_content.js"]
     }
   ],
   "options_ui": {
@@ -460,6 +466,10 @@
     {
       "resources": ["site/wikipedia/core/wikipedia_extract_data.mjs"],
       "matches": ["*://*.wikipedia.org/*"]
+    },
+    {
+      "resources": ["site/matricula/core/matricula_extract_data.mjs"],
+      "matches": ["*://data.matricula-online.eu/*"]
     }
   ],
   "manifest_version": 3

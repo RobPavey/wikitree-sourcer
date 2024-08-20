@@ -22,47 +22,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { MatriculaUriBuilder } from "./matricula_uri_builder.mjs";
 
-// The order should not matter since user facing lists are sorted
+const DIOCESE_NAME_LIST = [];
 
-const siteNames = [
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "nzbdm",
-  "matricula",
-];
+function buildSearchUrl(buildUrlInput) {
+  const gd = buildUrlInput.generalizedData;
 
-export { siteNames };
+  var builder = new MatriculaUriBuilder();
+
+  if (buildUrlInput.searchParameters.place) {
+    builder.addLocationName(buildUrlInput.searchParameters.place);
+  }
+
+  const url = builder.getUri();
+
+  //console.log("URL is " + url);
+
+  var result = {
+    url: url,
+  };
+
+  return result;
+}
+
+export { buildSearchUrl };
