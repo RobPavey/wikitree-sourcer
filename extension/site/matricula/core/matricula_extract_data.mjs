@@ -32,15 +32,15 @@ function extractData(document, url) {
 
   // Pages without a document (e.g. parish descriptions) are currently not supported
   const image_view = document.querySelector("div[id='document']");
-  if (image_view == null) {
+  if (!image_view) {
     return result;
   }
 
   const title = document.querySelector("title").text;
   const components = title.split("|");
 
-  for (let i = 0; i < components.length; i++) {
-    components[i] = components[i].trim().replace(/\s+/g, " ");
+  for (let component of components) {
+    components[i] = component.trim().replace(/\s+/g, " ");
   }
 
   result.pathComponents = components.slice(1, components.length);

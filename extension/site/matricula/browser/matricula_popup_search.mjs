@@ -158,7 +158,29 @@ function addMatriculaDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-function addMatriculaLocationSearch(data, backFunction, item) {
+//////////////////////////////////////////////////////////////////////////////////////////
+// Submenus
+//////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupMatriculaSearchSubMenu(data, backFunction, filter, locations) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  if (locations) {
+    for (let i = 0; i < locations.length; i++) {
+      addMenuItem(menu, "Search for " + locations[i].descriptor, function () {
+        setupMatriculaLocationSubmenuLayer2(data, backFunction, locations[i]);
+      });
+    }
+  } else {
+    // TODO: add note that no places could be found
+  }
+
+  endMainMenu(menu);
+}
+
+function setupMatriculaLocationSubmenuLayer2(data, backFunction, item) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -174,33 +196,6 @@ function addMatriculaLocationSearch(data, backFunction, item) {
     addMenuItem(menu, part, function (element) {
       matriculaLocationSearch({ place: part });
     });
-  }
-
-  endMainMenu(menu);
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-// Submenus
-//////////////////////////////////////////////////////////////////////////////////////////
-
-async function setupMatriculaSearchSubMenu(data, backFunction, filter, locations) {
-  let menu = beginMainMenu();
-
-  addBackMenuItem(menu, backFunction);
-
-  if (locations) {
-    for (let i = 0; i < locations.length; i++) {
-      addMenuItemWithSubMenu(
-        menu,
-        "Search for " + locations[i].descriptor,
-        function (element) {},
-        function () {
-          addMatriculaLocationSearch(data, backFunction, locations[i]);
-        }
-      );
-    }
-  } else {
-    // TODO: add note that no places could be found
   }
 
   endMainMenu(menu);
