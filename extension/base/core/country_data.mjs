@@ -123,9 +123,9 @@ const CountryData = [
 
   { stdName: "Ireland", matches: ["Ireland", "Éire"], hasCounties: true, usesMiddleNames: true, wifeChangesName: true },
   { stdName: "France", matches: ["France"], hasStates: true },
-  { stdName: "Germany", matches: ["Germany"], hasStates: true },
+  { stdName: "Germany", matches: ["Germany", "Deutschland"], hasStates: true },
   { stdName: "German Empire", matches: ["German Empire"] },
-  { stdName: "Austria", matches: ["Austria"] },
+  { stdName: "Austria", matches: ["Austria", "Österreich"] },
   { stdName: "Italy", matches: ["Italy"] },
   { stdName: "Netherlands", matches: ["Netherlands", "Nederland"], hasStates: true },
   { stdName: "Belgium", matches: ["Belgium"] },
