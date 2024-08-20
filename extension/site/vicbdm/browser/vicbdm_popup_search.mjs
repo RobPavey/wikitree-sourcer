@@ -30,12 +30,15 @@ import {
   addSameRecordMenuItem,
   doAsyncActionWithCatch,
   closePopup,
-  displayUnexpectedErrorMessage,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-import { registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
+import {
+  registerSearchMenuItemFunction,
+  shouldShowSiteSearch,
+  doBackgroundSearchWithSearchData,
+} from "/base/browser/popup/popup_search.mjs";
 
 import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
@@ -88,11 +91,6 @@ async function doVicbdmSearch(input, isRetry = false) {
     let loadedModule = await import(`../core/vicbdm_build_search_data.mjs`);
     let buildResult = loadedModule.buildSearchData(input);
 
-    let fieldData = buildResult.fieldData;
-    let selectData = buildResult.selectData;
-
-    let searchUrl = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
-
     const checkPermissionsOptions = {
       reason:
         "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
@@ -105,9 +103,9 @@ async function doVicbdmSearch(input, isRetry = false) {
 
     const searchData = {
       timeStamp: Date.now(),
-      url: searchUrl,
-      fieldData: fieldData,
-      selectData: selectData,
+      url: "https://my.rio.bdm.vic.gov.au/efamily-history/-",
+      fieldData: buildResult.fieldData,
+      selectData: buildResult.selectData,
     };
 
     //console.log("doVicbdmSearch, searchData is:");
@@ -115,55 +113,7 @@ async function doVicbdmSearch(input, isRetry = false) {
 
     let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
 
-    // send message to background to do search so that we can close popup
-    try {
-      chrome.runtime.sendMessage(
-        {
-          type: "doSearchWithSearchData",
-          siteName: "vicbdm",
-          searchData: searchData,
-          reuseTabIfPossible: reuseTabIfPossible,
-        },
-        function (response) {
-          // We get a detailed response for debugging this
-          //console.log("doSearchWithSearchData got response: ");
-          //console.log(response);
-
-          // the message should only ever get a successful response but it could be delayed
-          // if the background is asleep.
-          if (chrome.runtime.lastError) {
-            const message = "Failed to open search page, runtime.lastError is set";
-            displayUnexpectedErrorMessage(message, chrome.runtime.lastError, true);
-          } else if (!response) {
-            // I'm getting this on Safari but it may be due to dev environment
-            // If I run from xcode it works OK. It I then close Safari, reopen
-            // it doesn't seem to start the background script and I get this error.
-            // I changes Safari macOS back to using service_worker in the manifest and
-            // that seemed to fix that. I still see it in iOS (simulator) though. It seems
-            // to happen when the background has been unloaded and doig the search again
-            // immediately after seems to fix it. So adding a timeout and retry here
-            if (isRetry) {
-              let message = "Failed to open search page, no response from background script.";
-              message += "\nTry disabling and re-enabling the WikiTree Sourcer extension.";
-              displayUnexpectedErrorMessage(message, undefined, false);
-            } else {
-              setTimeout(function () {
-                doVicbdmSearch(input, true);
-              }, 100);
-            }
-          } else if (!response.success) {
-            const message = "Failed to open search page, success=false";
-            displayUnexpectedErrorMessage(message, response, true);
-          } else {
-            // message was received OK
-            closePopup();
-          }
-        }
-      );
-    } catch (error) {
-      const message = "Failed to open search page, caught exception";
-      displayUnexpectedErrorMessage(message, error, true);
-    }
+    doBackgroundSearchWithSearchData("vicbdm", searchData, reuseTabIfPossible);
   });
 }
 

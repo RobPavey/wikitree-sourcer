@@ -31,6 +31,7 @@ import {
   addBreak,
   closePopup,
   keepPopupOpen,
+  displayUnexpectedErrorMessage,
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { CD } from "/base/core/country_data.mjs";
 import { getLocalStorageItem } from "/base/browser/common/browser_compat.mjs";
@@ -621,9 +622,62 @@ function registerSearchMenuItemFunction(siteName, siteTitle, menuItemFunction, s
   });
 }
 
+function doBackgroundSearchWithSearchData(siteName, searchData, reuseTabIfPossible, isRetry = false) {
+  // Note that this requires the site to register the tab in order for reusing the tab
+  try {
+    chrome.runtime.sendMessage(
+      {
+        type: "doSearchWithSearchData",
+        siteName: siteName,
+        searchData: searchData,
+        reuseTabIfPossible: reuseTabIfPossible,
+      },
+      function (response) {
+        // We get a detailed response for debugging this
+        //console.log("doSearchWithSearchData got response: ");
+        //console.log(response);
+
+        // the message should only ever get a successful response but it could be delayed
+        // if the background is asleep.
+        if (chrome.runtime.lastError) {
+          const message = "Failed to open search page, runtime.lastError is set";
+          displayUnexpectedErrorMessage(message, chrome.runtime.lastError, true);
+        } else if (!response) {
+          // I'm getting this on Safari but it may be due to dev environment
+          // If I run from xcode it works OK. It I then close Safari, reopen
+          // it doesn't seem to start the background script and I get this error.
+          // I changes Safari macOS back to using service_worker in the manifest and
+          // that seemed to fix that. I still see it in iOS (simulator) though. It seems
+          // to happen when the background has been unloaded and doig the search again
+          // immediately after seems to fix it. So adding a timeout and retry here
+          if (isRetry) {
+            let message = "Failed to open search page, no response from background script.";
+            message += "\nTry disabling and re-enabling the WikiTree Sourcer extension.";
+            displayUnexpectedErrorMessage(message, undefined, false);
+          } else {
+            setTimeout(function () {
+              doBackgroundSearchWithSearchData(siteName, searchData, reuseTabIfPossible, true);
+            }, 100);
+          }
+        } else if (!response.success) {
+          const message = "Failed to open search page, success=false";
+          displayUnexpectedErrorMessage(message, response, true);
+        } else {
+          // message was received OK
+          closePopup();
+        }
+      }
+    );
+  } catch (error) {
+    const message = "Failed to open search page, caught exception";
+    displayUnexpectedErrorMessage(message, error, true);
+  }
+}
+
 export {
   openUrlInNewTab,
   doSearch,
+  doBackgroundSearchWithSearchData,
   addSearchMenus,
   registerSearchMenuItemFunction,
   testFilterForDatesAndCountries,

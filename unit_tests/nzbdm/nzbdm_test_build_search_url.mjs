@@ -22,21 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { buildSearchUrl } from "../../extension/site/nzbdm/core/nzbdm_build_search_url.mjs";
+import { buildSearchData } from "../../extension/site/nzbdm/core/nzbdm_build_search_data.mjs";
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+    caseName: "wikitree_smith-241018_read",
+    inputPath: "wikitree/generalized_data/ref/smith-241018_read",
+    typeOfSearch: "Marriages",
   },
-  */
 ];
 
 async function runTests(testManager) {
-  await runBuildSearchUrlTests("nzbdm", buildSearchUrl, regressionData, testManager);
+  await runBuildSearchUrlTests("nzbdm", buildSearchData, regressionData, testManager);
 }
 
 export { runTests };

@@ -1,0 +1,66 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Leonard",
+    "middleNames": "Charles",
+    "lastName": "Smith"
+  },
+  "lastNameAtBirth": "Smith",
+  "lastNameAtDeath": "Smith",
+  "mothersMaidenName": "Lilley",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "6 Feb 1896",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "3 May 1971",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Mount Grey, Canterbury, New Zealand"
+  },
+  "deathPlace": {
+    "placeString": "Canterbury, New Zealand"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Charles Edwin Smith",
+        "lastName": "Smith",
+        "forenames": "Charles Edwin"
+      },
+      "lastNameAtBirth": "Smith",
+      "lastNameAtDeath": "Smith"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Lucy",
+        "lastName": "Lilley",
+        "name": "Lucy Lilley"
+      },
+      "lastNameAtBirth": "Lilley",
+      "lastNameAtDeath": "Smith"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Olive Annie",
+        "lastName": "Lang",
+        "name": "Olive Annie Lang"
+      },
+      "lastNameAtBirth": "Lang",
+      "lastNameAtDeath": "Smith",
+      "marriageDate": {
+        "dateString": "about 1917"
+      },
+      "marriagePlace": {
+        "placeString": "New Zealand"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Smith-241018"
+}

@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Leonard",
+  "prefNames": "",
+  "middleNames": "Charles",
+  "lnab": "Smith",
+  "currentLastName": "Smith",
+  "mothersMaidenName": "Lilley",
+  "birthDate": "6 Feb 1896",
+  "birthDateStatus": "none",
+  "deathDate": "3 May 1971",
+  "deathDateStatus": "none",
+  "birthLocation": "Mount Grey, Canterbury, New Zealand",
+  "deathLocation": "Canterbury, New Zealand",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Lang-6278",
+      "name": "Olive Annie (Lang) Smith",
+      "marriageString": "about 1917 in New Zealand",
+      "marriageDate": "about 1917",
+      "marriagePlace": "New Zealand"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Smith-241018",
+  "currentTabText": "Leonard Smith's Profile",
+  "pageType": "read",
+  "wikiId": "Smith-241018",
+  "name": "Leonard Charles Smith",
+  "parents": {
+    "father": {
+      "wikiId": "Smith-86124",
+      "name": "Charles Edwin Smith"
+    },
+    "mother": {
+      "wikiId": "Lilley-2306",
+      "name": "Lucy (Lilley) Smith"
+    }
+  }
+}
