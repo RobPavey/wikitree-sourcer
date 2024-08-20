@@ -26,13 +26,13 @@ import { buildSearchUrl } from "../../extension/site/matricula/core/matricula_bu
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+    caseName: "ancestry_germany_baptism_1840_johanna_hartmann",
+    inputPath: "ancestry/generalized_data/ref/germany_baptism_1840_johanna_hartmann",
+    searchParameters: {
+      place: "foo",
+    },
   },
-  */
 ];
 
 async function runTests(testManager) {

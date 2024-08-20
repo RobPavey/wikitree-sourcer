@@ -31,8 +31,8 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new MatriculaUriBuilder();
 
-  if (buildUrlInput.place) {
-    builder.addLocationName(buildUrlInput.place);
+  if (buildUrlInput.searchParameters.place) {
+    builder.addLocationName(buildUrlInput.searchParameters.place);
   }
 
   const url = builder.getUri();

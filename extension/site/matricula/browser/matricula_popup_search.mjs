@@ -65,11 +65,10 @@ async function matriculaSearch(generalizedData) {
   });
 }
 
-async function matriculaLocationSearch(place) {
-  const input = { place: place };
+async function matriculaLocationSearch(searchParameters) {
   doAsyncActionWithCatch("Matricula Search", input, async function () {
     let loadedModule = await import(`../core/matricula_build_search_url.mjs`);
-    doSearch(loadedModule, input);
+    doSearch(loadedModule, searchParameters);
   });
 }
 
@@ -164,7 +163,7 @@ function addMatriculaLocationSearch(data, backFunction, item) {
     }
     part = part.trim();
     addMenuItem(menu, part, function (element) {
-      matriculaLocationSearch(part);
+      matriculaLocationSearch({ place: part });
     });
   }
 
