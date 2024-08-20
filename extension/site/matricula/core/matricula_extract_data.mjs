@@ -77,7 +77,7 @@ function extractData(document, url) {
   ) {
     type_set += ", Death";
   }
-  if (book_title.includes("erstkommunion")) {
+  if (book_title.includes("kommunion")) {
     type_set += ", First Communion";
   }
   if (book_title.includes("firmung")) {
