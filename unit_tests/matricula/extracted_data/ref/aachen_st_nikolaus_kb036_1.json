@@ -1,13 +1,13 @@
 {
   "url": "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+036/?pg=1",
   "success": true,
-  "path_components": [
+  "pathComponents": [
     "Aachen St. Nikolaus",
     "Aachen, rk. Bistum",
     "Deutschland",
     "Matricula Online"
   ],
   "book": "Taufen - KB 036",
-  "type_set": "Baptism",
+  "typeSet": "Baptism",
   "page": "1"
 }

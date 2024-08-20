@@ -1,13 +1,13 @@
 {
   "url": "https://data.matricula-online.eu/de/deutschland/aachen/aachen-hl-kreuz/KB+530_2/?pg=12",
   "success": true,
-  "path_components": [
+  "pathComponents": [
     "Aachen Hl. Kreuz",
     "Aachen, rk. Bistum",
     "Deutschland",
     "Matricula Online"
   ],
   "book": "Taufen - KB 530, Section 2",
-  "type_set": "Baptism",
+  "typeSet": "Baptism",
   "page": "12"
 }

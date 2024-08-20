@@ -1,13 +1,13 @@
 {
   "url": "https://data.matricula-online.eu/de/oesterreich/wien/01-st-peter/01-01/?pg=19",
   "success": true,
-  "path_components": [
+  "pathComponents": [
     "01., St. Peter",
     "Wien/Niederösterreich (Osten): Rk. Erzdiözese Wien",
     "Österreich",
     "Matricula Online"
   ],
   "book": "Taufbuch - 01-01",
-  "type_set": "Baptism",
+  "typeSet": "Baptism",
   "page": "19"
 }

@@ -1,13 +1,13 @@
 {
   "url": "https://data.matricula-online.eu/de/deutschland/aachen/aachen-st-nikolaus/KB+037_9/?pg=8",
   "success": true,
-  "path_components": [
+  "pathComponents": [
     "Aachen St. Nikolaus",
     "Aachen, rk. Bistum",
     "Deutschland",
     "Matricula Online"
   ],
   "book": "Historische Notizen - KB 037, Section 9",
-  "type_set": "Notes",
+  "typeSet": "Notes",
   "page": "8"
 }
