@@ -55,17 +55,25 @@ function extractData(document, url) {
 
   let type_set = "";
 
+  if (book_title.includes("geburt")) {
+    type_set += ", Birth";
+  }
   if (book_title.includes("tauf")) {
     type_set += ", Baptism";
   }
-  if (book_title.includes("trauu") || book_title.includes("heirat")) {
+  if (book_title.includes("trauu") || book_title.includes("heirat") || book_title.includes("eheschließung")) {
     type_set += ", Marriage";
+  }
+  if (book_title.includes("verlobung")) {
+    type_set += ", Engagement";
   }
   if (
     book_title.includes("sterbe") ||
     book_title.includes("tod") ||
+    book_title.includes("tot") ||
     book_title.includes("begräbnis") ||
-    book_title.includes("begraben")
+    book_title.includes("begraben") ||
+    book_title.includes("beeerdigung")
   ) {
     type_set += ", Death";
   }
@@ -80,6 +88,19 @@ function extractData(document, url) {
   }
   if (book_title.includes("register") || book_title.includes("index")) {
     type_set += ", Name Register";
+  }
+  if (book_title.includes("Umschlag")) {
+    type_set += ", Envelope";
+  }
+  if (book_title.includes("Familie")) {
+    type_set += ", Family Book";
+  }
+  if (book_title.includes("lose blätter")) {
+    if (type_set) {
+      type_set += ", Loose Sheets";
+    } else {
+      type_set += ", Loose Sheets (Church Records)";
+    }
   }
 
   if (type_set) {
