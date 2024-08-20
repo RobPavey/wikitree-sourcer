@@ -24,6 +24,7 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
