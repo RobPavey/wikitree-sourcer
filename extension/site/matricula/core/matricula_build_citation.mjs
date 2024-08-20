@@ -30,7 +30,7 @@ function buildMatriculaUrl(ed, builder) {
 
 function buildSourceTitle(ed, gd, builder) {
   let title = "";
-  const components = ed.path_components;
+  const components = ed.pathComponents;
   for (let i = components.length - 1; i >= 0; i--) {
     title += ", " + components[i];
   }
@@ -60,8 +60,8 @@ function buildCoreCitation(ed, gd, builder) {
 }
 
 function customRecordTypeFunction(ed, gd) {
-  if (ed.type_set) {
-    return ed.type_set;
+  if (ed.typeSet) {
+    return ed.typeSet;
   }
   return "Churchbook";
 }

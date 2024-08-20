@@ -43,7 +43,7 @@ function extractData(document, url) {
     components[i] = components[i].trim().replace("  ", " ");
   }
 
-  result.path_components = components.slice(1, components.length);
+  result.pathComponents = components.slice(1, components.length);
   let book = components[0];
 
   if (book.includes("_")) {
@@ -51,69 +51,70 @@ function extractData(document, url) {
   }
 
   result.book = book;
-  const book_title = components[0].split("-")[0].trim().toLowerCase();
+  const bookTitle = components[0].split("-")[0].trim().toLowerCase();
 
-  let type_set = "";
+  let typeSet = "";
 
-  if (book_title.includes("geburt")) {
-    type_set += ", Birth";
+  if (bookTitle.includes("geburt")) {
+    typeSet += ", Birth";
   }
-  if (book_title.includes("tauf")) {
-    type_set += ", Baptism";
+  if (bookTitle.includes("tauf")) {
+    typeSet += ", Baptism";
   }
-  if (book_title.includes("trauu") || book_title.includes("heirat") || book_title.includes("eheschließung")) {
-    type_set += ", Marriage";
+  if (bookTitle.includes("trauu") || bookTitle.includes("heirat") || bookTitle.includes("eheschließung")) {
+    typeSet += ", Marriage";
   }
-  if (book_title.includes("verlobung")) {
-    type_set += ", Engagement";
+  if (bookTitle.includes("verlobung")) {
+    typeSet += ", Engagement";
   }
   if (
-    book_title.includes("sterbe") ||
-    book_title.includes("tod") ||
-    book_title.includes("tot") ||
-    book_title.includes("begräbnis") ||
-    book_title.includes("begraben") ||
-    book_title.includes("beeerdigung")
+    bookTitle.includes("sterbe") ||
+    bookTitle.includes("tod") ||
+    bookTitle.includes("tot") ||
+    bookTitle.includes("begräbnis") ||
+    bookTitle.includes("begraben") ||
+    bookTitle.includes("beeerdigung")
   ) {
-    type_set += ", Death";
+    typeSet += ", Death";
   }
-  if (book_title.includes("kommunion")) {
-    type_set += ", First Communion";
+  if (bookTitle.includes("kommunion")) {
+    typeSet += ", First Communion";
   }
-  if (book_title.includes("firmung")) {
-    type_set += ", Confirmation (Firmung)";
+  if (bookTitle.includes("firmung")) {
+    typeSet += ", Confirmation (Firmung)";
   }
-  if (book_title.includes("notizen") || book_title.includes("anmerkung")) {
-    type_set += ", Notes";
+  if (bookTitle.includes("notizen") || bookTitle.includes("anmerkung")) {
+    typeSet += ", Notes";
   }
-  if (book_title.includes("register") || book_title.includes("index")) {
-    type_set += ", Name Register";
+  if (bookTitle.includes("register") || bookTitle.includes("index")) {
+    typeSet += ", Name Register";
   }
-  if (book_title.includes("umschlag")) {
-    type_set += ", Envelope";
+  if (bookTitle.includes("umschlag")) {
+    typeSet += ", Envelope";
   }
-  if (book_title.includes("familie")) {
-    type_set += ", Family Book";
+  if (bookTitle.includes("familie")) {
+    typeSet += ", Family Book";
   }
-  if (book_title.includes("grundbuch")) {
-    type_set += ", Land Register";
+  if (bookTitle.includes("grundbuch")) {
+    typeSet += ", Land Register";
   }
-  if (book_title.includes("lose blätter")) {
-    if (type_set) {
-      type_set += ", Loose Sheets";
+  if (bookTitle.includes("lose blätter")) {
+    if (typeSet) {
+      typeSet += ", Loose Sheets";
     } else {
-      type_set += ", Loose Sheets (Church Records)";
+      typeSet += ", Loose Sheets (Church Records)";
     }
   }
 
-  if (type_set) {
-    result.type_set = type_set.substring(2);
+  if (typeSet) {
+    // Remove the first ', '
+    result.typeSet = typeSet.substring(2);
   }
 
-  const url_split = url.split("/");
-  const last_component = url_split[url_split.length - 1];
-  if (last_component.substring(0, 4) == "?pg=") {
-    result.page = last_component.substring(4).split("&")[0];
+  const urlSplit = url.split("/");
+  const lastComponent = urlSplit[urlSplit.length - 1];
+  if (lastComponent.substring(0, 4) == "?pg=") {
+    result.page = lastComponent.substring(4).split("&")[0];
   }
 
   result.success = true;
