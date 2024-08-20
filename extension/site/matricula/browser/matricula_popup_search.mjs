@@ -137,7 +137,11 @@ function addMatriculaDefaultSearchMenuItem(menu, data, backFunction, filter) {
   return true;
 }
 
-function addMatriculaLocationSearch(menu, data, backFunction, item) {
+function addMatriculaLocationSearch(data, backFunction, item) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
   var fragments = item.place.split(",");
 
   for (let i = 0; i < 3; i++) {
@@ -146,10 +150,12 @@ function addMatriculaLocationSearch(menu, data, backFunction, item) {
       continue;
     }
     part = part.trim();
-    addMenuItem(menu, "Search for " + item.descriptor + " (" + part + ")", function (element) {
+    addMenuItem(menu, part, function (element) {
       matriculaLocationSearch(part);
     });
   }
+
+  endMainMenu(menu);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -163,7 +169,14 @@ async function setupMatriculaSearchSubMenu(data, backFunction, filter, locations
 
   if (locations) {
     for (let i = 0; i < locations.length; i++) {
-      addMatriculaLocationSearch(menu, data, backFunction, locations[i]);
+      addMenuItemWithSubMenu(
+        menu,
+        "Search for " + locations[i].descriptor,
+        function (element) {},
+        function () {
+          addMatriculaLocationSearch(data, backFunction, locations[i]);
+        }
+      );
     }
   } else {
     // TODO: add note that no places could be found
