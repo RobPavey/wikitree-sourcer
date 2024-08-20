@@ -77,44 +77,38 @@ async function matriculaLocationSearch(place) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function extractPlaceStrings(ed) {
+function extractPlaceStrings(ed, gd) {
   let locations = [];
 
-  if (ed.birthLocation) {
-    locations.push({ descriptor: "Birth", place: ed.birthLocation });
-  } else if (ed.birthPlace) {
-    locations.push({ descriptor: "Birth", place: ed.birthPlace });
+  let placeObj = gd.inferBirthPlaceObj();
+  if (placeObj) {
+    let placeParts = placeObj.separatePlaceIntoParts();
+    locations.push({ descriptor: "Birth", place: placeParts.localPlace });
   }
-  if (ed.spouses) {
-    const spouses = ed.spouses;
-    for (let i = 0; i < spouses.length; i++) {
-      const spouse = spouses[i];
 
-      if (spouse.marriagePlace) {
-        locations.push({ descriptor: "Marriage", place: spouse.marriagePlace });
-      }
-    }
-  } else if (ed.marriages) {
-    const spouses = ed.marriages;
-    for (let i = 0; i < spouses.length; i++) {
-      const spouse = spouses[i];
-
-      if (spouse.marriagePlace) {
-        locations.push({ descriptor: "Marriage", place: spouse.marriagePlace });
-      }
-    }
+  placeObj = gd.inferResidencePlaceObj();
+  if (placeObj) {
+    let placeParts = placeObj.separatePlaceIntoParts();
+    locations.push({ descriptor: "Residence", place: placeParts.localPlace });
   }
-  if (ed.deathLocation) {
-    locations.push({ descriptor: "Death", place: ed.deathLocation });
-  } else if (ed.deathPlace) {
-    locations.push({ descriptor: "Death", place: ed.deathPlace });
+
+  placeObj = gd.inferDeathPlaceObj();
+  if (placeObj) {
+    let placeParts = placeObj.separatePlaceIntoParts();
+    locations.push({ descriptor: "Death", place: placeParts.localPlace });
+  }
+
+  placeObj = gd.inferEventPlaceObj();
+  if (placeObj) {
+    let placeParts = placeObj.separatePlaceIntoParts();
+    locations.push({ descriptor: "Event", place: placeParts.localPlace });
   }
 
   return locations;
 }
 
 function addMatriculaDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  const locations = extractPlaceStrings(data.extractedData);
+  const locations = extractPlaceStrings(data.extractedData, data.generalizedData);
 
   // Display the submenu only when there are locations which we have extracted
   if (locations.length > 0) {

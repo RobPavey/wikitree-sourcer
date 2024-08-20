@@ -43,7 +43,7 @@ class MatriculaEdReader extends ExtractedDataReader {
   }
 
   getSourceType() {
-    return "churchbook";
+    return "image";
   }
 
   getNameObj() {

@@ -40,7 +40,7 @@ function extractData(document, url) {
   const components = title.split("|");
 
   for (let i = 0; i < components.length; i++) {
-    components[i] = components[i].trim().replace("  ", " ");
+    components[i] = components[i].trim().replace(/\s+/g, " ");
   }
 
   result.pathComponents = components.slice(1, components.length);

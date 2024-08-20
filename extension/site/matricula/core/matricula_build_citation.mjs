@@ -59,7 +59,7 @@ function buildCoreCitation(ed, gd, builder) {
   builder.addStandardDataString(gd);
 }
 
-function customRecordTypeFunction(ed, gd) {
+function customLableFunction(ed, gd) {
   if (ed.typeSet) {
     return ed.typeSet;
   }
@@ -67,7 +67,7 @@ function customRecordTypeFunction(ed, gd) {
 }
 
 function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation, customRecordTypeFunction);
+  return simpleBuildCitationWrapper(input, buildCoreCitation, customLableFunction);
 }
 
 export { buildCitation };
