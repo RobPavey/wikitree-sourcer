@@ -30,17 +30,24 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
-    return result;
+  let pathComponents = [];
+
+  const title = document.querySelector("div[class='dvbreadcrumb']");
+  const fragments = title.querySelectorAll("span");
+
+  for (let fragment of fragments) {
+    const link = fragment.querySelector("a");
+    if (link) {
+      const text = link.text;
+      if (text && text != "Alle Archive in ARCHION") {
+        pathComponents.push(text);
+      }
+    }
   }
-  */
+
+  result.pathComponents = pathComponents;
 
   result.success = true;
-
-  //console.log(result);
 
   return result;
 }
