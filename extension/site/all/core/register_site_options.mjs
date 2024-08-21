@@ -65,3 +65,4 @@ import "../../wikitree/core/wikitree_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
 import "../../nzbdm/core/nzbdm_options.mjs";
 import "../../matricula/core/matricula_options.mjs";
+import "../../archion/core/archion_options.mjs";

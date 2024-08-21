@@ -61,6 +61,7 @@ const siteNames = [
   "npa",
   "nzbdm",
   "matricula",
+  "archion",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

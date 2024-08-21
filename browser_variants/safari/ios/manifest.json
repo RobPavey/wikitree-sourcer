@@ -17,6 +17,7 @@
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
+    "*://www.archion.de/*",
     "*://data.matricula-online.eu/*"
   ],
   "background": {
@@ -57,6 +58,11 @@
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
+    },
+    {
+      "matches": ["*://www.archion.de/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/archion/browser/archive_content.js"]
     },
     {
       "matches": ["*://archive.org/*"],
@@ -280,6 +286,10 @@
         "*://*.ancestrylibrary.ca/*",
         "*://*.ancestrylibrary.com.au/*"
       ]
+    },
+    {
+      "resources": ["site/archion/core/archive_extract_data.mjs"],
+      "matches": ["*://www.archion.de/*"]
     },
     {
       "resources": ["site/archive/core/archive_extract_data.mjs"],

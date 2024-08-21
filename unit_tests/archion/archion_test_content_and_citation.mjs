@@ -22,48 +22,30 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { extractData } from "../../extension/site/archion/core/archion_extract_data.mjs";
+import { generalizeData } from "../../extension/site/archion/core/archion_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/archion/core/archion_build_citation.mjs";
 
-// The order should not matter since user facing lists are sorted
+import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
-const siteNames = [
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "nzbdm",
-  "matricula",
-  "archion",
+const regressionData = [
+  /*
+  {
+    caseName: "b_1902_calvert_florence",
+    url: "https://www.archion.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+  },
+  */
 ];
 
-export { siteNames };
+async function runTests(testManager) {
+  await runExtractDataTests("archion", extractData, regressionData, testManager);
+
+  await runGeneralizeDataTests("archion", generalizeData, regressionData, testManager);
+
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("archion", functions, regressionData, testManager);
+}
+
+export { runTests };

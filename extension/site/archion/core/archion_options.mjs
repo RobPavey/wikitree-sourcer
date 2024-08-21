@@ -22,48 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import {
+  registerSubsectionForOptions,
+  registerOptionsGroup,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
 
-// The order should not matter since user facing lists are sorted
+const citationOptionsGroup = {
+  category: "citation",
+  subcategory: "archion",
+  tab: "citation",
+  subsection: "archion",
+  options: [],
+};
 
-const siteNames = [
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "nzbdm",
-  "matricula",
-  "archion",
-];
+registerSubsectionForOptions("search", "archion", "Archion");
+registerSiteSearchPopupOptionsGroup("archion", 7, 7);
 
-export { siteNames };
+registerSubsectionForOptions("citation", "archion", "Archion");
+registerOptionsGroup(citationOptionsGroup);
