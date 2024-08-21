@@ -407,7 +407,7 @@ function openTemplate(info, tab) {
   }
 }
 
-async function openVicbdm(lcText, tab, options) {
+function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
   //console.log("looks like Victorian BDM, lcText is:");
   //console.log(lcText);
 
@@ -446,8 +446,13 @@ async function openVicbdm(lcText, tab, options) {
     if (num1.length == 4 || num2.length == 4) {
       let number1 = Number(num1);
       let number2 = Number(num2);
-      regYear = num2;
-      regNum = num1;
+      if (defaultToYearFirst) {
+        regYear = num1;
+        regNum = num2;
+      } else {
+        regYear = num2;
+        regNum = num1;
+      }
       if (!(num2.length == 4 && number2 > 1800 && number2 < 2050)) {
         if (num1.length == 4 && number1 > 1800 && number1 < 2050) {
           regYear = num1;
@@ -600,8 +605,24 @@ async function openVicbdm(lcText, tab, options) {
   //console.log("regYear is '" + regYear + "'");
 
   if (!foundYearAndNum) {
-    return false;
+    return undefined;
   }
+
+  return { regYear: regYear, regNum: regNum };
+}
+
+function buildVicbdmSearchData(lcText) {
+  //console.log("looks like Victorian BDM, lcText is:");
+  //console.log(lcText);
+
+  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, false);
+
+  if (!yearAndNum) {
+    return undefined;
+  }
+
+  let regNum = yearAndNum.regNum;
+  let regYear = yearAndNum.regYear;
 
   let fieldData = {};
   fieldData["historicalSearch-events-registrationNumber-number"] = regNum;
@@ -622,19 +643,23 @@ async function openVicbdm(lcText, tab, options) {
     fieldData["historicalSearch-events-birth"] = true;
   } else if (deathOccurrences && deathOccurrences > birthOccurrences && deathOccurrences > marriageOccurrences) {
     fieldData["historicalSearch-events-death"] = true;
-  } else if (marriageOccurrences && marriageOccurrences > birthOccurrences && marriageOccurrences > birthOccurrences) {
+  } else if (marriageOccurrences && marriageOccurrences > birthOccurrences && marriageOccurrences > deathOccurrences) {
     fieldData["historicalSearch-events-marriage"] = true;
   }
 
+  let link = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
+
+  const searchData = {
+    timeStamp: Date.now(),
+    url: link,
+    fieldData: fieldData,
+  };
+
+  return searchData;
+}
+
+async function openVicbdmGivenSearchData(tab, options, searchData) {
   try {
-    let link = "https://my.rio.bdm.vic.gov.au/efamily-history/-";
-
-    const searchData = {
-      timeStamp: Date.now(),
-      url: link,
-      fieldData: fieldData,
-    };
-
     let existingTab = await getRegisteredTab("vicbdm");
 
     let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
@@ -651,7 +676,94 @@ async function openVicbdm(lcText, tab, options) {
     doSearchGivenSearchData(searchData, tab, options, existingTab, reuseTabIfPossible);
     return true;
   } catch (ex) {
-    console.log("storeDataCache failed");
+    console.log("openVicbdmGivenSearchData failed");
+    console.log(ex);
+  }
+
+  return false;
+}
+
+function buildNzbdmSearchData(lcText) {
+  //console.log("could be NZ BDM, lcText is:");
+  //console.log(lcText);
+
+  // To be NZ BDM we need some identifiers
+  if (!(lcText.includes("nz") || lcText.includes("new zealand"))) {
+    return undefined;
+  }
+
+  if (
+    !(lcText.includes("bdm") || lcText.includes("birth") || lcText.includes("death") || lcText.includes("marriage"))
+  ) {
+    return undefined;
+  }
+
+  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, true);
+
+  if (!yearAndNum) {
+    return undefined;
+  }
+
+  let regNum = yearAndNum.regNum;
+  let regYear = yearAndNum.regYear;
+
+  let fieldData = {};
+  fieldData["natno"] = regYear + "/" + regNum;
+
+  // see if we can decide whether to search for births, deaths or marriages
+  // Exxample text:
+  // Victoria State Government, Registry of Births, Deaths and Marriages Victoria. Richard Goodall Elrington. Birth. Registration number 3218 / 1870. Father: Name. Mother: Name. District: Place. Link to search page
+  let birthOccurrences = (lcText.match(/birth/g) || []).length;
+  let deathOccurrences = (lcText.match(/death/g) || []).length;
+  let marriageOccurrences = (lcText.match(/marriage/g) || []).length;
+
+  //console.log("birthOccurrences is '" + birthOccurrences + "'");
+  //console.log("deathOccurrences is '" + deathOccurrences + "'");
+  //console.log("marriageOccurrences is '" + marriageOccurrences + "'");
+
+  let link = "https://www.bdmhistoricalrecords.dia.govt.nz/search/search?path=%2FqueryEntry.m%3Ftype%3D";
+
+  if (birthOccurrences && birthOccurrences > deathOccurrences && birthOccurrences > marriageOccurrences) {
+    link += "births";
+  } else if (deathOccurrences && deathOccurrences > birthOccurrences && deathOccurrences > marriageOccurrences) {
+    link += "deaths";
+  } else if (marriageOccurrences && marriageOccurrences > birthOccurrences && marriageOccurrences > deathOccurrences) {
+    link += "marriages";
+  } else {
+    return undefined;
+  }
+
+  const searchData = {
+    timeStamp: Date.now(),
+    url: link,
+    fieldData: fieldData,
+  };
+
+  return searchData;
+}
+
+async function openNzbdmGivenSearchData(tab, options, searchData) {
+  //console.log("openNzbdmGivenSearchData, searchData is:");
+  //console.log(searchData);
+
+  try {
+    let existingTab = await getRegisteredTab("vicbdm");
+
+    let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
+
+    const checkPermissionsOptions = {
+      reason:
+        "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
+    };
+    let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
+    if (!allowed) {
+      return false;
+    }
+
+    doSearchGivenSearchData(searchData, tab, options, existingTab, reuseTabIfPossible);
+    return true;
+  } catch (ex) {
+    console.log("openNzbdmGivenSearchData failed");
     console.log(ex);
   }
 
@@ -690,8 +802,19 @@ function openSelectionText(info, tab) {
   //console.log(lcText);
 
   if (lcText.includes("vic")) {
+    let searchData = buildVicbdmSearchData(lcText);
+    if (searchData) {
+      callFunctionWithStoredOptions(function (options) {
+        openVicbdmGivenSearchData(tab, options, searchData);
+      });
+      return;
+    }
+  }
+
+  let searchData = buildNzbdmSearchData(lcText);
+  if (searchData) {
     callFunctionWithStoredOptions(function (options) {
-      openVicbdm(lcText, tab, options);
+      openNzbdmGivenSearchData(tab, options, searchData);
     });
     return;
   }
