@@ -91,7 +91,13 @@ function constrainDate(date, allowedDateRange) {
 function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
   const maxLifespan = Number(options.search_general_maxLifespan);
 
-  const exactness = 2;
+  let exactness = 2;
+  const exactnessOption = options.search_nzbdm_dateExactness;
+  if (exactnessOption == "exact") {
+    exactness = 0;
+  } else if (/^\d+$/.test(exactnessOption)) {
+    exactness = Number(exactnessOption);
+  }
 
   let fromDate = { day: 1, month: 1, year: 1840 };
   let toDate = { day: 31, month: 12, year: 2023 };

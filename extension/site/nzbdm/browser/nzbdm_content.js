@@ -182,23 +182,30 @@ async function getPendingSearch() {
 
 function setSearchingBanner() {
   // Modify the page to say it is a WikiTree Sourcer search
-  let headerGapElement = document.querySelector("#headerGap");
-  if (headerGapElement) {
+  let headerWrapperElement = document.querySelector("#headerWrapper");
+  if (headerWrapperElement) {
+    let fragment = document.createDocumentFragment();
+
+    let pageTitle = document.createElement("div");
+    fragment.appendChild(pageTitle);
+
+    let container = document.createElement("div");
+    pageTitle.appendChild(container);
+
+    let h1 = document.createElement("h1");
+    container.appendChild(h1);
+
     let span = document.createElement("span");
     span.textContent = "WikiTree Sourcer search. Please wait for form to be populated and submitted...";
-    span.style.color = "white";
-    headerGapElement.appendChild(span);
-  }
-}
+    span.style.color = "green";
+    h1.appendChild(span);
 
-async function clearSearchingBanner() {
-  // Clear the message that we added to the menu bar
-  let menuBarElement = document.querySelector("bdm-header > div.bdm-header > div.desktop-empty-menu-bar");
-  if (menuBarElement) {
-    let sourcerFragment = menuBarElement.querySelector("span");
-    if (sourcerFragment) {
-      sourcerFragment.style.display = "none";
-    }
+    headerWrapperElement.appendChild(fragment);
+
+    //let navWrapperElement = document.querySelector("div.navWrapper");
+    //navWrapperElement.style.display = "none";
+    //let endWrapperElement = document.querySelector("div.endWrapper");
+    //endWrapperElement.style.display = "none";
   }
 }
 
@@ -225,18 +232,18 @@ async function doPendingSearch() {
     if (formElement) {
       let searchButtonElement = formElement.querySelector("a.ke_end_button");
 
-      console.log("doPendingSearch: searchButtonElement is:");
-      console.log(searchButtonElement);
+      //console.log("doPendingSearch: searchButtonElement is:");
+      //console.log(searchButtonElement);
 
       for (var key in fieldData) {
-        console.log("checkForPendingSearch: key is: " + key);
+        //console.log("checkForPendingSearch: key is: " + key);
         if (key) {
           let value = fieldData[key];
-          console.log("checkForPendingSearch: value is: " + value);
+          //console.log("checkForPendingSearch: value is: " + value);
 
           let inputElement = formElement.querySelector("input[name='" + key + "']");
-          console.log("doPendingSearch: inputElement is:");
-          console.log(inputElement);
+          //console.log("doPendingSearch: inputElement is:");
+          //console.log(inputElement);
 
           if (inputElement) {
             inputElement.value = value;
@@ -251,13 +258,11 @@ async function doPendingSearch() {
       //console.log(inputNotFound);
 
       if (!inputNotFound) {
-        // TEMP: wait to see if fields filled
-        //await sleep(30000);
         await sleep(20);
 
         // try to submit form
         if (searchButtonElement) {
-          console.log("about to click button");
+          //console.log("about to click button");
           docHasFocus = document.hasFocus();
           //console.log("doPendingSearch: docHasFocus is");
           //console.log(docHasFocus);
@@ -281,15 +286,12 @@ async function doPendingSearch() {
 
     // clear the pending data so that we don't use it again on refine search
     pendingSearchData = undefined;
-
-    await sleep(4000);
-    clearSearchingBanner();
   }
 }
 
 async function checkForPendingSearch() {
-  console.log("checkForPendingSearch: called");
-  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+  //console.log("checkForPendingSearch: called");
+  //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
@@ -297,16 +299,13 @@ async function checkForPendingSearch() {
     //return;
   }
 
-  console.log("checkForPendingSearch: URL is");
-  console.log(document.URL);
-
-  // Expect something like this:
-  // https://my.rio.bdm.vic.gov.au/efamily-history/-
+  //console.log("checkForPendingSearch: URL is");
+  //console.log(document.URL);
 
   const startingSearchRegEx = /^https\:\/\/www.bdmhistoricalrecords.dia.govt.nz\/search\/search\?.*$/;
   let isStartingSearchPage = startingSearchRegEx.test(document.URL);
   if (isStartingSearchPage) {
-    console.log("checkForPendingSearch: URL matches ready to fill form");
+    //console.log("checkForPendingSearch: URL matches ready to fill form");
 
     let searchData = undefined;
     try {
@@ -315,22 +314,22 @@ async function checkForPendingSearch() {
       console.log("checkForPendingSearch: getPendingSearch reject");
     }
 
-    console.log("checkForPendingSearch: searchData is:");
-    console.log(searchData);
+    //console.log("checkForPendingSearch: searchData is:");
+    //console.log(searchData);
 
     if (searchData) {
       setSearchingBanner();
 
-      console.log("checkForPendingSearch: got formValues:");
-      console.log(searchData);
+      //console.log("checkForPendingSearch: got formValues:");
+      //console.log(searchData);
 
       let timeStamp = searchData.timeStamp;
       let timeStampNow = Date.now();
       let timeSinceSearch = timeStampNow - timeStamp;
 
-      console.log("checkForPendingSearch: timeStamp is: " + timeStamp);
-      console.log("checkForPendingSearch: timeStampNow is: " + timeStampNow);
-      console.log("checkForPendingSearch: timeSinceSearch is: " + timeSinceSearch);
+      //console.log("checkForPendingSearch: timeStamp is: " + timeStamp);
+      //console.log("checkForPendingSearch: timeStampNow is: " + timeStampNow);
+      //console.log("checkForPendingSearch: timeSinceSearch is: " + timeSinceSearch);
 
       // It can take a long time to populate the page with the input fields
       if (timeSinceSearch < 50000) {
@@ -352,10 +351,10 @@ async function checkForPendingSearch() {
 
 async function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    console.log("nzbdm: additionalMessageHandler, request is:");
-    console.log(request);
-    console.log("nzbdm: additionalMessageHandler, document.URL is:");
-    console.log(document.URL);
+    //console.log("nzbdm: additionalMessageHandler, request is:");
+    //console.log(request);
+    //console.log("nzbdm: additionalMessageHandler, document.URL is:");
+    //console.log(document.URL);
 
     let canReusePage = false;
     if (document.URL == request.searchData.url) {
@@ -388,8 +387,8 @@ async function additionalMessageHandler(request, sender, sendResponse) {
         // this stores the search data in local storage which is then picked up by the
         // content script in the new tab/window
         await chrome.storage.local.set({ searchData: request.searchData }, function () {
-          console.log("saved request.searchData, request.searchData is:");
-          console.log(request.searchData);
+          //console.log("saved request.searchData, request.searchData is:");
+          //console.log(request.searchData);
         });
       } catch (ex) {
         console.log("store of searchData failed");

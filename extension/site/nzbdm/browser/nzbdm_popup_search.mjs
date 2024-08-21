@@ -95,7 +95,7 @@ async function nzbdmSearch(generalizedData, typeOfSearch) {
     //console.log("doVicbdmSearch, searchData is:");
     //console.log(searchData);
 
-    let reuseTabIfPossible = true; // options.search_nzbdm_reuseExistingTab;
+    let reuseTabIfPossible = options.search_nzbdm_reuseExistingTab;
 
     doBackgroundSearchWithSearchData("nzbdm", searchData, reuseTabIfPossible);
   });

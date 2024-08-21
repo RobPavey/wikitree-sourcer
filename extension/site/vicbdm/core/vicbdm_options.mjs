@@ -39,7 +39,7 @@ const searchBehaviorOptionsGroup = {
     {
       optionName: "reuseExistingTab",
       type: "checkbox",
-      label: "Do search is existing BDM Victoria tab if present (faster)",
+      label: "Do search in existing BDM Victoria tab if present (faster)",
       defaultValue: true,
     },
   ],
