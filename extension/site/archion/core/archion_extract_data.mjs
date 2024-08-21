@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractPageIdFromDocument(uid, document, url) {
+function extractPageDataFromDocument(uid, document, url) {
   let result = {};
 
   let fetch_result = fetch(
@@ -57,43 +57,10 @@ function extractPageIdFromDocument(uid, document, url) {
       const page_index = page_select.querySelector("option[selected]");
       const page = pages[page_index.value];
       result.pageId = page.id;
-      // alert(JSON.stringify(page, null, 2));
+      result.page = page_index + 1;
     });
 
-  return result.pageId;
-}
-
-function extractPermalinkForPage(uid, pageId, document, url) {
-  const permalinkBaseUrl = extractPermalinkBaseUrl(url);
-
-  let response = fetch(permalinkBaseUrl, {
-    headers: {
-      accept: "*/*",
-      "accept-language": "en-US,en;q=0.9",
-      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-      "sec-ch-ua": '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
-      "sec-ch-ua-mobile": "?0",
-      "sec-ch-ua-platform": '"Windows"',
-      "sec-fetch-dest": "empty",
-      "sec-fetch-mode": "cors",
-      "sec-fetch-site": "same-origin",
-      "x-requested-with": "XMLHttpRequest",
-    },
-    referrer: url,
-    referrerPolicy: "strict-origin-when-cross-origin",
-    body: "uid=" + uid + "&type=churchRegister&pageId=" + pageId,
-    method: "POST",
-    mode: "cors",
-    credentials: "include",
-  });
-  response
-    .then((x) => x.text())
-    .then((text) => {
-      const start = text.indexOf("<p><a href=");
-      const end = text.indexOf("</a></p>");
-      const section = text.substring(start, end);
-      alert(section.split(">")[2].split("<")[0]);
-    });
+  return result;
 }
 
 async function extractPermalinkBaseUrl(url) {
@@ -148,10 +115,13 @@ function extractData(document, url) {
     if (link) {
       const text = link.text;
       if (text && text != "Alle Archive in ARCHION") {
-        pathComponents.push(text);
+        pathComponents.push(text.trim().replace(/\s+/g, " "));
       }
     }
   }
+
+  result.pathComponents = pathComponents.slice(0, -1);
+  result.book = pathComponents[pathComponents.length - 1];
 
   const perma_link_button = document.querySelector("span[class='addlink']");
   if (perma_link_button && url && url.includes("churchRegister")) {
@@ -159,11 +129,18 @@ function extractData(document, url) {
     const parts = url.split("/");
     const uid = parts[parts.length - 1].split("?")[0];
 
-    result.pageId = extractPageIdFromDocument(uid, document, url);
-    result.permalink = extractPermalinkForPage(uid, result.pageId, document, url);
+    result.uid = uid;
+    result.pageData = extractPageDataFromDocument(uid, document, url);
+    result.permalinkBase = extractPermalinkBaseUrl(url);
+  } else {
+    const page_select = document.querySelector("select");
+    if (page_select) {
+      const page_index = page_select.querySelector("option[selected]");
+      result.pageData = {
+        page: page_index + 1,
+      };
+    }
   }
-
-  result.pathComponents = pathComponents;
 
   result.success = true;
 

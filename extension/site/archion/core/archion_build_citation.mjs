@@ -24,22 +24,66 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
+function generatePermalinkForPage(uid, pageId, permalinkBase, url) {
+  const permalinkBaseUrl = extractPermalinkBaseUrl(url);
+
+  let response = fetch(permalinkBaseUrl, {
+    headers: {
+      accept: "*/*",
+      "accept-language": "en-US,en;q=0.9",
+      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+      "sec-ch-ua": '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": '"Windows"',
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "x-requested-with": "XMLHttpRequest",
+    },
+    referrer: url,
+    referrerPolicy: "strict-origin-when-cross-origin",
+    body: "uid=" + uid + "&type=churchRegister&pageId=" + pageId,
+    method: "POST",
+    mode: "cors",
+    credentials: "include",
+  });
+  response
+    .then((x) => x.text())
+    .then((text) => {
+      const start = text.indexOf("<p><a href=");
+      const end = text.indexOf("</a></p>");
+      const section = text.substring(start, end);
+      alert(section.split(">")[2].split("<")[0]);
+    });
+}
+
 function buildArchionUrl(ed, builder) {
+  if (ed.uid && ed.pageId && ed.permalinkBase && ed.url && false) {
+    // TODO: can we cache the perma-link?
+    return generatePermalinkForPage(ed.uid, ed.pageId, ed.permalinkBase, ed.url);
+  }
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  let title = "";
+  for (let part of ed.pathComponents) {
+    title += ", " + part;
+  }
+  builder.sourceTitle += title.substring(2);
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.addSourceReferenceText(ed.book);
+  if (ed.pageData) {
+    builder.addSourceReferenceField("Page", ed.pageData.page);
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
   var archionUrl = buildArchionUrl(ed, builder);
 
-  let recordLink = "[" + archionUrl + " Archion Record]";
+  let recordLink = "[" + archionUrl + " Archion Image]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
