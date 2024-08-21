@@ -356,54 +356,22 @@ async function additionalMessageHandler(request, sender, sendResponse) {
     //console.log("nzbdm: additionalMessageHandler, document.URL is:");
     //console.log(document.URL);
 
-    let canReusePage = false;
-    if (document.URL == request.searchData.url) {
-      canReusePage = true;
-    } else {
-      let formElement = document.querySelector("#inputForm");
-      //console.log("doPendingSearch: formElement is:");
-      //console.log(formElement);
-      if (formElement) {
-        let foundElements = true;
+    // We could try to check if this is the correct type of page (Births, Deaths etc)
+    // and clear the fields and refill them. But it is simpley to just load the desired URL
+    // into this existing tab.
 
-        let fieldData = request.searchData.fieldData;
-        for (let key in fieldData) {
-          if (key) {
-            let inputElement = formElement.querySelector("input[name='" + key + "']");
-            if (!inputElement) {
-              foundElements = false;
-              break;
-            }
-          }
-        }
-        if (foundElements) {
-          canReusePage = true;
-        }
-      }
+    try {
+      // this stores the search data in local storage which is then picked up by the
+      // content script in the new tab/window
+      await chrome.storage.local.set({ searchData: request.searchData }, function () {
+        //console.log("saved request.searchData, request.searchData is:");
+        //console.log(request.searchData);
+      });
+    } catch (ex) {
+      console.log("store of searchData failed");
     }
 
-    if (!canReusePage) {
-      try {
-        // this stores the search data in local storage which is then picked up by the
-        // content script in the new tab/window
-        await chrome.storage.local.set({ searchData: request.searchData }, function () {
-          //console.log("saved request.searchData, request.searchData is:");
-          //console.log(request.searchData);
-        });
-      } catch (ex) {
-        console.log("store of searchData failed");
-      }
-
-      window.open(request.searchData.url, "_self");
-      sendResponse({ success: true });
-      return { wasHandled: true, returnValue: false };
-    }
-
-    pendingSearchData = request.searchData;
-
-    setSearchingBanner();
-    doPendingSearch();
-
+    window.open(request.searchData.url, "_self");
     sendResponse({ success: true });
     return { wasHandled: true, returnValue: false };
   }

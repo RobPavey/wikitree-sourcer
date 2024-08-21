@@ -90,9 +90,10 @@ async function nzbdmSearch(generalizedData, typeOfSearch) {
       url: searchUrl,
       fieldData: buildResult.fieldData,
       selectData: buildResult.selectData,
+      searchType: typeOfSearch,
     };
 
-    //console.log("doVicbdmSearch, searchData is:");
+    //console.log("nzbdmSearch, searchData is:");
     //console.log(searchData);
 
     let reuseTabIfPossible = options.search_nzbdm_reuseExistingTab;
