@@ -201,11 +201,6 @@ function setSearchingBanner() {
     h1.appendChild(span);
 
     headerWrapperElement.appendChild(fragment);
-
-    //let navWrapperElement = document.querySelector("div.navWrapper");
-    //navWrapperElement.style.display = "none";
-    //let endWrapperElement = document.querySelector("div.endWrapper");
-    //endWrapperElement.style.display = "none";
   }
 }
 
@@ -391,7 +386,6 @@ async function checkForSearchThenInit() {
   );
 
   addClickedRowListener();
-  // doHighlightForRefQuery();
 
   // probably should be done only for search window, maybe from check for pending search
   registerTabWithBackground();
