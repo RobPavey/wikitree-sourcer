@@ -104,7 +104,7 @@ class NzbdmEdReader extends ExtractedDataReader {
   }
 
   getEventPlaceObj() {
-    return undefined;
+    return this.makePlaceObjFromCountryName("New Zealand");
   }
 
   getLastNameAtBirth() {
@@ -135,6 +135,9 @@ class NzbdmEdReader extends ExtractedDataReader {
   }
 
   getBirthPlaceObj() {
+    if (this.recordType == RT.BirthRegistration) {
+      return this.makePlaceObjFromCountryName("New Zealand");
+    }
     return undefined;
   }
 
@@ -143,6 +146,10 @@ class NzbdmEdReader extends ExtractedDataReader {
   }
 
   getDeathPlaceObj() {
+    if (this.recordType == RT.DeathRegistration) {
+      return this.makePlaceObjFromCountryName("New Zealand");
+    }
+
     return undefined;
   }
 

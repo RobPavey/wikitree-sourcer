@@ -9,7 +9,13 @@
   "eventDate": {
     "yearString": "1935"
   },
+  "eventPlace": {
+    "country": "New Zealand"
+  },
   "lastNameAtDeath": "McDonald",
+  "deathPlace": {
+    "country": "New Zealand"
+  },
   "ageAtEvent": "83Y",
   "hasValidData": true
 }

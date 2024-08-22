@@ -728,6 +728,10 @@ const regressionData = [
     url: "https://www.ancestry.com.au/discoveryui-content/view/1158632:8949",
   },
   {
+    caseName: "nz_death_1907_charles_nicholson",
+    url: "https://www.ancestry.com/discoveryui-content/view/335664:8952",
+  },
+  {
     caseName: "scotland_birth_1842_christian_mcleod",
     url: "https://www.ancestry.com/discoveryui-content/view/14121139:60143",
   },

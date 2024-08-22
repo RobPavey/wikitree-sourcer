@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1843/655<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nElizabeth Wilson marriage to Robert McKenny in 1843.\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1843/655<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nElizabeth Wilson marriage to Robert McKenny in 1843 in New Zealand.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Elizabeth's marriage to Robert McKenny was registered in 1843.<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1843/655<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nElizabeth Wilson marriage to Robert McKenny in 1843.\n</ref>",
+    "citation": "Elizabeth's marriage to Robert McKenny was registered in 1843 in New Zealand.<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1843/655<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nElizabeth Wilson marriage to Robert McKenny in 1843 in New Zealand.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Marriage Registration Number: 1843/655<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Elizabeth Wilson marriage to Robert McKenny in 1843.",
+    "citation": "* '''Marriage Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Marriage Registration Number: 1843/655<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Elizabeth Wilson marriage to Robert McKenny in 1843 in New Zealand.",
     "type": "source"
   }
 }

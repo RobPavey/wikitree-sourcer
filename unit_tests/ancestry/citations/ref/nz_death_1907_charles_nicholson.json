@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"New Zealand, Death Index, 1848-1966\"<br/>\nNew Zealand, Death Index, 1848-1966<br/>\n{{Ancestry Record|8952|335664}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Charles's death was registered in the Oct-Nov-Dec quarter of 1907 in Auckland, Auckland, New Zealand.<ref>\n'''Death Registration''':\n\"New Zealand, Death Index, 1848-1966\"<br/>\nNew Zealand, Death Index, 1848-1966<br/>\n{{Ancestry Record|8952|335664}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Death Registration''': \"New Zealand, Death Index, 1848-1966\"<br/>New Zealand, Death Index, 1848-1966<br/>{{Ancestry Record|8952|335664}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"New Zealand, Death Index, 1848-1966\"<br/>\nNew Zealand, Death Index, 1848-1966<br/>\n{{Ancestry Record|8952|335664}} (accessed 6 May 2021)<br/>\nCharles Allen Nicholson death 1907 in Auckland, Auckland, New Zealand.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Charles's death was registered in the Oct-Nov-Dec quarter of 1907 in Auckland, Auckland, New Zealand.<ref>\n'''Death Registration''':\n\"New Zealand, Death Index, 1848-1966\"<br/>\nNew Zealand, Death Index, 1848-1966<br/>\n{{Ancestry Record|8952|335664}} (accessed 6 May 2021)<br/>\nCharles Allen Nicholson death 1907 in Auckland, Auckland, New Zealand.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Death Registration''': \"New Zealand, Death Index, 1848-1966\"<br/>New Zealand, Death Index, 1848-1966<br/>{{Ancestry Record|8952|335664}} (accessed 6 May 2021)<br/>Charles Allen Nicholson death 1907 in Auckland, Auckland, New Zealand.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"New Zealand, Death Index, 1848-1966\"<br/>\nNew Zealand, Death Index, 1848-1966<br/>\n{{Ancestry Record|8952|335664}} (accessed 6 May 2021)<br/>\nName: Charles Allen Nicholson; Death Date: 1907 Oct-Nov-Dec; Registration Place: Auckland, Auckland, New Zealand; Folio Number: 2450.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Charles's death was registered in the Oct-Nov-Dec quarter of 1907 in Auckland, Auckland, New Zealand.<ref>\n'''Death Registration''':\n\"New Zealand, Death Index, 1848-1966\"<br/>\nNew Zealand, Death Index, 1848-1966<br/>\n{{Ancestry Record|8952|335664}} (accessed 6 May 2021)<br/>\nName: Charles Allen Nicholson; Death Date: 1907 Oct-Nov-Dec; Registration Place: Auckland, Auckland, New Zealand; Folio Number: 2450.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Death Registration''': \"New Zealand, Death Index, 1848-1966\"<br/>New Zealand, Death Index, 1848-1966<br/>{{Ancestry Record|8952|335664}} (accessed 6 May 2021)<br/>Name: Charles Allen Nicholson; Death Date: 1907 Oct-Nov-Dec; Registration Place: Auckland, Auckland, New Zealand; Folio Number: 2450.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"New Zealand, Death Index, 1848-1966\"<br/>\nNew Zealand, Death Index, 1848-1966<br/>\n{{Ancestry Record|8952|335664}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Charles Allen Nicholson\n|-\n| Death Date || 1907 Oct-Nov-Dec\n|-\n| Registration Place || Auckland, Auckland, New Zealand\n|-\n| Folio Number || 2450\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Charles's death was registered in the Oct-Nov-Dec quarter of 1907 in Auckland, Auckland, New Zealand.<ref>\n'''Death Registration''':\n\"New Zealand, Death Index, 1848-1966\"<br/>\nNew Zealand, Death Index, 1848-1966<br/>\n{{Ancestry Record|8952|335664}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Charles Allen Nicholson\n|-\n| Death Date || 1907 Oct-Nov-Dec\n|-\n| Registration Place || Auckland, Auckland, New Zealand\n|-\n| Folio Number || 2450\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Death Registration''': \"New Zealand, Death Index, 1848-1966\"<br/>New Zealand, Death Index, 1848-1966<br/>{{Ancestry Record|8952|335664}} (accessed 6 May 2021)<br/>Name: Charles Allen Nicholson; Death Date: 1907 Oct-Nov-Dec; Registration Place: Auckland, Auckland, New Zealand; Folio Number: 2450.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"New Zealand, Death Index, 1848-1966,\" database, ({{Ancestry Record|8952|335664}} : accessed 6 May 2021), Charles Allen Nicholson death 1907 in Auckland, Auckland, New Zealand; citing New Zealand, Death Index, 1848-1966.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Charles's death was registered in the Oct-Nov-Dec quarter of 1907 in Auckland, Auckland, New Zealand.<ref>\"New Zealand, Death Index, 1848-1966,\" database, ({{Ancestry Record|8952|335664}} : accessed 6 May 2021), Charles Allen Nicholson death 1907 in Auckland, Auckland, New Zealand; citing New Zealand, Death Index, 1848-1966.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"New Zealand, Death Index, 1848-1966,\" database, ({{Ancestry Record|8952|335664}} : accessed 6 May 2021), Charles Allen Nicholson death 1907 in Auckland, Auckland, New Zealand; citing New Zealand, Death Index, 1848-1966.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Death Registration'':\n\"New Zealand, Death Index, 1848-1966\", database, \nNew Zealand, Death Index, 1848-1966, \n({{Ancestry Record|8952|335664}} : accessed 6 May 2021), \nName: Charles Allen Nicholson; Death Date: 1907 Oct-Nov-Dec; Registration Place: Auckland, Auckland, New Zealand; Folio Number: 2450.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Charles's death was registered in the Oct-Nov-Dec quarter of 1907 in Auckland, Auckland, New Zealand.<ref>\n''Death Registration'':\n\"New Zealand, Death Index, 1848-1966\", database, \nNew Zealand, Death Index, 1848-1966, \n({{Ancestry Record|8952|335664}} : accessed 6 May 2021), \nName: Charles Allen Nicholson; Death Date: 1907 Oct-Nov-Dec; Registration Place: Auckland, Auckland, New Zealand; Folio Number: 2450.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Death Registration'': \"New Zealand, Death Index, 1848-1966\", database, New Zealand, Death Index, 1848-1966, ({{Ancestry Record|8952|335664}} : accessed 6 May 2021), Name: Charles Allen Nicholson; Death Date: 1907 Oct-Nov-Dec; Registration Place: Auckland, Auckland, New Zealand; Folio Number: 2450.",
+    "type": "source"
+  }
+}

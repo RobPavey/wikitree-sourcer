@@ -6,10 +6,12 @@
     "name": "Ruth Gladdis Shaw"
   },
   "eventDate": {
-    "dateString": "1878"
+    "dateString": "1878",
+    "quarter": 2
   },
   "birthDate": {
-    "dateString": "1878"
+    "dateString": "1878",
+    "quarter": 2
   },
   "birthPlace": {
     "placeString": "Limerick, Ireland"

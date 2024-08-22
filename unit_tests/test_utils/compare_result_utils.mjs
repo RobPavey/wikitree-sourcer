@@ -34,15 +34,30 @@ function isObject(object) {
 }
 
 function deepObjectEquals(object1, object2) {
-  const keys1 = Object.keys(object1);
-  const keys2 = Object.keys(object2);
+  let keys1 = Object.keys(object1);
+  let keys2 = Object.keys(object2);
+
+  // remove any keys that are undefined
+  for (let key of keys1) {
+    if (object1[key] === undefined) {
+      delete object1[key];
+    }
+  }
+  for (let key of keys2) {
+    if (object2[key] === undefined) {
+      delete object2[key];
+    }
+  }
+
+  keys1 = Object.keys(object1);
+  keys2 = Object.keys(object2);
 
   if (keys1.length !== keys2.length) {
     let failedCompare = false;
 
     let outputHeading = false;
     for (let key of keys1) {
-      if (!keys2.includes(key) && object1[key] !== undefined) {
+      if (!keys2.includes(key)) {
         if (!failedCompare) {
           failedCompare = true;
           console.log(
@@ -58,7 +73,7 @@ function deepObjectEquals(object1, object2) {
     }
     outputHeading = false;
     for (let key of keys2) {
-      if (!keys1.includes(key) && object2[key] !== undefined) {
+      if (!keys1.includes(key)) {
         if (!failedCompare) {
           failedCompare = true;
           console.log(

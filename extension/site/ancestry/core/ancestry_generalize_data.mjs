@@ -764,6 +764,17 @@ function cleanDateString(dateString) {
     return newString;
   }
 
+  if (/^\w\w\w \d\d\d\d$/.test(newString)) {
+    // This could be "Mar 1912"
+    return newString;
+  }
+
+  if (/^\w\w\w\. \d\d\d\d$/.test(newString)) {
+    // This could be "Mar. 1912"
+    // we want to remove period
+    return newString.replace(/\./g, "");
+  }
+
   let openParenIndex = newString.indexOf("(");
   if (openParenIndex != -1) {
     // there is an open parentheses
@@ -900,6 +911,134 @@ function testForRecordDataKey(ed, testKeys) {
   }
 
   return false;
+}
+
+function setDateFromAncestryDateFields(ed, result, dateTypesToSet, dateFields, yearFields, quarterFields) {
+  let wasDateSet = false;
+
+  function setDate(dateString) {
+    if (dateString) {
+      wasDateSet = true;
+      for (let dateType of dateTypesToSet) {
+        if (dateType == "birth") {
+          result.setBirthDate(dateString);
+        } else if (dateType == "death") {
+          result.setDeathDate(dateString);
+        } else if (dateType == "event") {
+          result.setEventDate(dateString);
+        }
+      }
+    }
+  }
+
+  function setYear(dateString) {
+    if (dateString) {
+      wasDateSet = true;
+      for (let dateType of dateTypesToSet) {
+        if (dateType == "birth") {
+          result.setBirthYear(dateString);
+        } else if (dateType == "death") {
+          result.setDeathYear(dateString);
+        } else if (dateType == "event") {
+          result.setEventYear(dateString);
+        }
+      }
+    }
+  }
+
+  function setQuarter(dateString) {
+    if (dateString) {
+      for (let dateType of dateTypesToSet) {
+        if (dateType == "birth") {
+          result.setBirthQuarter(dateString);
+        } else if (dateType == "death") {
+          result.setDeathQuarter(dateString);
+        } else if ((dateType = "event")) {
+          result.setEventQuarter(dateString);
+        }
+      }
+    }
+  }
+
+  let dateString = "";
+  if (dateFields) {
+    dateString = getCleanValueForRecordDataList(ed, dateFields, "date");
+  }
+
+  if (dateString) {
+    // special case, date could be of form "1933 Jan-Feb-Mar"
+    // e.g. https://www.ancestry.com/discoveryui-content/view/6407416:2534
+    if (/^\d\d\d\d +\w\w\w\-\w\w\w\-\w\w\w$/.test(dateString)) {
+      let yearString = dateString.replace(/^(\d\d\d\d) +\w\w\w\-\w\w\w\-\w\w\w$/, "$1");
+      let ancestryQuarter = dateString.replace(/^\d\d\d\d +(\w\w\w\-\w\w\w\-\w\w\w)$/, "$1");
+      if (yearString && yearString != dateString && ancestryQuarter && ancestryQuarter != dateString) {
+        let quarter = -1;
+        for (let quarterName of ancestryQuarterNames) {
+          if (ancestryQuarter == quarterName.name) {
+            quarter = quarterName.value;
+            break;
+          }
+        }
+        if (quarter != -1) {
+          setYear(yearString);
+          setQuarter(quarter);
+        }
+      }
+    } else {
+      setDate(dateString);
+    }
+  } else if (yearFields) {
+    let yearString = getCleanValueForRecordDataList(ed, yearFields);
+    if (yearString) {
+      setYear(yearString);
+    }
+  }
+
+  let ancestryQuarter = 0;
+  if (quarterFields) {
+    ancestryQuarter = getCleanValueForRecordDataList(ed, quarterFields);
+  }
+  if (ancestryQuarter) {
+    let quarter = -1;
+    for (let quarterName of ancestryQuarterNames) {
+      if (ancestryQuarter == quarterName.name) {
+        quarter = quarterName.value;
+        break;
+      }
+    }
+    if (quarter != -1) {
+      setQuarter(quarter);
+
+      if (/^\w\w\w\.? \d\d\d\d$/.test(dateString)) {
+        let yearString = dateString.replace(/^\w\w\w\.? (\d\d\d\d)$/, "$1");
+
+        if (yearString && yearString != dateString) {
+          setDate(yearString);
+        }
+      }
+    }
+  } else if (dateString) {
+    if (/^\w\w\w\.? \d\d\d\d$/.test(dateString)) {
+      let yearString = dateString.replace(/^\w\w\w\.? (\d\d\d\d)$/, "$1");
+      let ancestryQuarter = dateString.replace(/^(\w\w\w)\.? \d\d\d\d$/, "$1");
+
+      if (yearString && yearString != dateString && ancestryQuarter && ancestryQuarter != dateString) {
+        let quarter = -1;
+        for (let quarterName of ancestryQuarterMonthNames) {
+          if (ancestryQuarter == quarterName.name) {
+            quarter = quarterName.value;
+            break;
+          }
+        }
+        if (quarter != -1) {
+          setDate(yearString);
+          setQuarter(quarter);
+        }
+      }
+    }
+  }
+
+  return wasDateSet;
 }
 
 function buildParents(ed, result) {
@@ -1156,11 +1295,10 @@ function generalizeDataGivenRecordType(ed, result) {
   determineRoleGivenRecordType(ed, result);
 
   if (result.recordType == RT.BirthRegistration) {
-    let birthDate = getCleanValueForRecordDataList(ed, ["Birth Date", "Birth Registration Date"], "date");
-    if (birthDate) {
-      result.setEventDate(birthDate);
-      result.setBirthDate(birthDate);
-    } else if (result.eventDate) {
+    const dateFields = ["Birth Date", "Birth Registration Date"];
+    const yearFields = ["Birth Registration Year"];
+    const quarterFields = ["Birth Registration Quarter", "Birth Quarter"];
+    if (!setDateFromAncestryDateFields(ed, result, ["event", "birth"], dateFields, yearFields, quarterFields)) {
       // result.eventDate may be set from "Registration Year"
       result.birthDate = result.eventDate;
     }
@@ -1198,11 +1336,8 @@ function generalizeDataGivenRecordType(ed, result) {
 
     buildParents(ed, result);
   } else if (result.recordType == RT.Birth) {
-    let birthDate = getCleanRecordDataValue(ed, "Birth Date", "date");
-    if (birthDate) {
-      result.setEventDate(birthDate);
-      result.setBirthDate(birthDate);
-    }
+    const dateFields = ["Birth Date"];
+    setDateFromAncestryDateFields(ed, result, ["event", "birth"], dateFields);
 
     let eventPlace = getCleanValueForRecordDataList(ed, ["Birth Place", "Birthplace", "Registration Place"]);
     if (eventPlace) {
@@ -1234,15 +1369,10 @@ function generalizeDataGivenRecordType(ed, result) {
       result.mothersMaidenName = mmn;
     }
   } else if (result.recordType == RT.DeathRegistration) {
-    let deathDate = getCleanValueForRecordDataList(
-      ed,
-      ["Death Date", "Death Registration Date", "Death Registration Year"],
-      "date"
-    );
-    if (deathDate) {
-      result.setEventDate(deathDate);
-      result.setDeathDate(deathDate);
-    } else if (result.eventDate) {
+    const dateFields = ["Death Date", "Death Registration Date"];
+    const yearFields = ["Death Registration Year"];
+    const quarterFields = ["Death Quarter"];
+    if (!setDateFromAncestryDateFields(ed, result, ["event", "death"], dateFields, yearFields, quarterFields)) {
       // result.eventDate may be set from "Registration Year"
       result.deathDate = result.eventDate;
     }
@@ -1684,19 +1814,10 @@ function generalizeDataGivenRecordType(ed, result) {
     result.setBirthDate(getCleanRecordDataValue(ed, "Birth Date", "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, ["Birth Place"]));
   } else if (result.recordType == RT.MarriageRegistration) {
-    result.setEventDate(
-      getCleanValueForRecordDataList(
-        ed,
-        [
-          "Marriage Registration Date",
-          "Marriage Registration Year",
-          "Marriage Date",
-          "Marriage License Date",
-          "Marriage Year",
-        ],
-        "date"
-      )
-    );
+    const dateFields = ["Marriage Registration Date", "Marriage Date", "Marriage License Date"];
+    const yearFields = ["Marriage Registration Year", "Marriage Year"];
+    const quarterFields = ["Marriage Registration Quarter", "Marriage Quarter"];
+    setDateFromAncestryDateFields(ed, result, ["event", "marriage"], dateFields, yearFields, quarterFields);
 
     let marriageRegistrationPlace = getCleanValueForRecordDataList(ed, [
       "Marriage Registration Place",
@@ -2445,71 +2566,14 @@ function generalizeRecordData(input, result) {
     result.setEventCountry(getCleanRecordDataValue(ed, "Country"));
     result.setEventCounty(getCleanValueForRecordDataList(ed, ["County", "Inferred County"]));
 
-    let registrationDate = getCleanValueForRecordDataList(ed, ["Registration Date", "Date of Registration"], "date");
-    if (registrationDate) {
-      // special case, date could be of form "1933 Jan-Feb-Mar"
-      // e.g. https://www.ancestry.com/discoveryui-content/view/6407416:2534
-      if (/^\d\d\d\d +\w\w\w\-\w\w\w\-\w\w\w$/.test(registrationDate)) {
-        let yearString = registrationDate.replace(/^(\d\d\d\d) +\w\w\w\-\w\w\w\-\w\w\w$/, "$1");
-        let ancestryQuarter = registrationDate.replace(/^\d\d\d\d +(\w\w\w\-\w\w\w\-\w\w\w)$/, "$1");
-        if (yearString && yearString != registrationDate && ancestryQuarter && ancestryQuarter != registrationDate) {
-          let quarter = -1;
-          for (let quarterName of ancestryQuarterNames) {
-            if (ancestryQuarter == quarterName.name) {
-              quarter = quarterName.value;
-              break;
-            }
-          }
-          if (quarter != -1) {
-            result.setEventYear(yearString);
-            result.setEventQuarter(quarter);
-          }
-        }
-      } else {
-        result.setEventDate(registrationDate);
-      }
-    } else {
-      let registrationYear = getCleanRecordDataValue(ed, "Registration Year");
-      if (registrationYear) {
-        result.setEventYear(registrationYear);
-      }
-    }
+    const regDateFields = ["Registration Date", "Date of Registration"];
+    const regYearFields = ["Registration Year"];
+    const regQuarterFields = ["Registration Quarter", "Quarter of the Year"];
+    setDateFromAncestryDateFields(ed, result, ["event"], regDateFields, regYearFields, regQuarterFields);
 
     let registrationDistrict = getCleanValueForRecordDataList(ed, ["Registration District", "Registration district"]);
     if (registrationDistrict) {
       result.registrationDistrict = registrationDistrict;
-    }
-
-    let ancestryQuarter = getCleanValueForRecordDataList(ed, ["Registration Quarter", "Quarter of the Year"]);
-    if (ancestryQuarter) {
-      let quarter = -1;
-      for (let quarterName of ancestryQuarterNames) {
-        if (ancestryQuarter == quarterName.name) {
-          quarter = quarterName.value;
-          break;
-        }
-      }
-      if (quarter != -1) {
-        result.setEventQuarter(quarter);
-      }
-    } else if (registrationDate) {
-      if (/^\w\w\w \d\d\d\d$/.test(registrationDate)) {
-        let yearString = registrationDate.replace(/^\w\w\w (\d\d\d\d)$/, "$1");
-        let ancestryQuarter = registrationDate.replace(/^(\w\w\w) \d\d\d\d$/, "$1");
-
-        if (yearString && yearString != registrationDate && ancestryQuarter && ancestryQuarter != registrationDate) {
-          let quarter = -1;
-          for (let quarterName of ancestryQuarterMonthNames) {
-            if (ancestryQuarter == quarterName.name) {
-              quarter = quarterName.value;
-              break;
-            }
-          }
-          if (quarter != -1) {
-            result.setEventQuarter(quarter);
-          }
-        }
-      }
     }
 
     generalizeDataGivenRecordType(ed, result);

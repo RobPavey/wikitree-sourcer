@@ -1,0 +1,28 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Charles Allen Nicholson"
+  },
+  "eventDate": {
+    "yearString": "1907",
+    "quarter": 4
+  },
+  "deathDate": {
+    "yearString": "1907",
+    "quarter": 4
+  },
+  "registrationDistrict": "Auckland",
+  "eventPlace": {
+    "placeString": "Auckland, Auckland, New Zealand"
+  },
+  "lastNameAtDeath": "Nicholson",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8952|335664}}"
+  ],
+  "collectionData": {
+    "id": "8952"
+  },
+  "hasValidData": true
+}

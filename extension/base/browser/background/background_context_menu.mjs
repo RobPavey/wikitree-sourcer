@@ -408,7 +408,7 @@ function openTemplate(info, tab) {
 }
 
 function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
-  //console.log("looks like Victorian BDM, lcText is:");
+  //console.log("extractYearAndRegistrationNumberFromText, lcText is:");
   //console.log(lcText);
 
   let regNum = "";
@@ -722,13 +722,17 @@ function buildNzbdmSearchData(lcText) {
   //console.log("marriageOccurrences is '" + marriageOccurrences + "'");
 
   let link = "https://www.bdmhistoricalrecords.dia.govt.nz/search/search?path=%2FqueryEntry.m%3Ftype%3D";
+  let searchType = "";
 
   if (birthOccurrences && birthOccurrences > deathOccurrences && birthOccurrences > marriageOccurrences) {
     link += "births";
+    searchType = "Births";
   } else if (deathOccurrences && deathOccurrences > birthOccurrences && deathOccurrences > marriageOccurrences) {
     link += "deaths";
+    searchType = "Deaths";
   } else if (marriageOccurrences && marriageOccurrences > birthOccurrences && marriageOccurrences > deathOccurrences) {
     link += "marriages";
+    searchType = "Marriages";
   } else {
     return undefined;
   }
@@ -737,6 +741,7 @@ function buildNzbdmSearchData(lcText) {
     timeStamp: Date.now(),
     url: link,
     fieldData: fieldData,
+    searchType: searchType,
   };
 
   return searchData;
@@ -747,15 +752,15 @@ async function openNzbdmGivenSearchData(tab, options, searchData) {
   //console.log(searchData);
 
   try {
-    let existingTab = await getRegisteredTab("vicbdm");
+    let existingTab = await getRegisteredTab("nzbdm");
 
-    let reuseTabIfPossible = options.search_vicbdm_reuseExistingTab;
+    let reuseTabIfPossible = options.search_nzbdm_reuseExistingTab;
 
     const checkPermissionsOptions = {
       reason:
-        "To perform a search on Victoria BDM a content script needs to be loaded on the bdm.vic.gov.au search page.",
+        "To perform a search on NZ BDM a content script needs to be loaded on the bdmhistoricalrecords.dia.govt.nz search page.",
     };
-    let allowed = await checkPermissionForSite("*://*.bdm.vic.gov.au/*", checkPermissionsOptions);
+    let allowed = await checkPermissionForSite("*://*.bdmhistoricalrecords.dia.govt.nz/*", checkPermissionsOptions);
     if (!allowed) {
       return false;
     }
@@ -796,11 +801,11 @@ function openSelectionText(info, tab) {
     return;
   }
 
-  // check for Victorian BDM
   let lcText = text.toLowerCase();
   //console.log("lcText is:");
   //console.log(lcText);
 
+  // check for Victorian BDM
   if (lcText.includes("vic")) {
     let searchData = buildVicbdmSearchData(lcText);
     if (searchData) {
@@ -811,6 +816,7 @@ function openSelectionText(info, tab) {
     }
   }
 
+  // check for New Zealand BDM
   let searchData = buildNzbdmSearchData(lcText);
   if (searchData) {
     callFunctionWithStoredOptions(function (options) {

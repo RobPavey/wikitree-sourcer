@@ -31,6 +31,22 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/smith-241018_read",
     typeOfSearch: "Marriages",
   },
+  {
+    caseName: "ancestry_nz_birth_1912_jean_mcclimont",
+    inputPath: "ancestry/generalized_data/ref/nz_birth_1912_jean_mcclimont",
+    typeOfSearch: "Births",
+  },
+  {
+    caseName: "ancestry_nz_death_1907_charles_nicholson",
+    inputPath: "ancestry/generalized_data/ref/nz_death_1907_charles_nicholson",
+    typeOfSearch: "Deaths",
+    optionVariants: [
+      {
+        variantName: "births",
+        typeOfSearch: "Births",
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {

@@ -1,0 +1,20 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/335664:8952",
+  "pageType": "record",
+  "dbId": "8952",
+  "recordId": "335664",
+  "ancestryTemplate": "{{Ancestry Record|8952|335664}}",
+  "domain": "com",
+  "titleName": "Charles Allen Nicholson",
+  "titleCollection": "New Zealand, Death Index, 1848-1966",
+  "recordData": {
+    "Name": "Charles Allen Nicholson",
+    "Death Date": "1907 Oct-Nov-Dec",
+    "Registration Place": "Auckland, Auckland, New Zealand",
+    "Folio Number": "2450"
+  },
+  "sourceCitation": "New Zealand, Death Index, 1848-1966",
+  "sourceInformation": "Ancestry.com. New Zealand, Death Index, 1848-1966 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: New Zealand Death Indexes.",
+  "originalData": "New Zealand Death Indexes.",
+  "sourceDescription": "You’ll find name, quarter, and district in this government index of New Zealand deaths, 1848–1966. Learn more..."
+}
