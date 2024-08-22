@@ -39,6 +39,25 @@ function extractData(document, url) {
   }
   result.success = false;
 
+  let headingText = "";
+
+  let headingSpan = document.querySelector("#contentpanel > h2 > span");
+  if (headingSpan) {
+    headingText = headingSpan.textContent.trim();
+  }
+
+  if (!headingText) {
+    headingSpan = document.querySelector("#scrollablecontent > h2 > span");
+    if (headingSpan) {
+      headingText = headingSpan.textContent.trim();
+    }
+  }
+
+  if (headingText) {
+    let headingParts = headingText.split(" ");
+    result.resultsType = headingParts[0];
+  }
+
   const form = document.querySelector("#form");
   if (!form) {
     return result;

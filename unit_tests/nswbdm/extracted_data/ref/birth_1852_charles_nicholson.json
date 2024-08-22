@@ -1,6 +1,7 @@
 {
   "url": "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3",
   "success": true,
+  "resultsType": "Births",
   "recordData": {
     "Father's Given name(s)": "CHARLES",
     "Mother's Given name(s)": "ELIZABETH A",
