@@ -47,7 +47,7 @@ function title2type(title) {
   if (title.includes("kommunikant") || title.includes("abendmahl")) {
     result += ", Communion";
   }
-  if (title.includes("konfirmand") || title.includes("konfirmant")) {
+  if (title.includes("konfirmand") || title.includes("konfirmant") || title.includes("konfirmation")) {
     result += ", Confirmand";
   }
 

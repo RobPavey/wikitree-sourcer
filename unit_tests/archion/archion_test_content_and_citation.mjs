@@ -36,6 +36,16 @@ const regressionData = [
     url: "https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12",
     extraExtractedDataFields: { permalink: "https://www.archion.de/p/d9576172e0/" },
   },
+  {
+    caseName: "bayern_nuernberg_st_georg_abendmahl_1805_1829_62",
+    url: "https://www.archion.de/de/viewer/churchRegister/206087?cHash=aff50530463bc8410b40548c54f17aff",
+    extraExtractedDataFields: { permalink: "https://www.archion.de/p/86eed83835/" },
+  },
+  {
+    caseName: "bayern_nuernberg_st_georg_konfirmationen_1925_1951_8",
+    url: "https://www.archion.de/de/viewer/churchRegister/366328?cHash=990aef2a0aab4cd5211f5013bf1721c6",
+    extraExtractedDataFields: { permalink: "https://www.archion.de/p/0252a09d0d/" },
+  },
 ];
 
 async function runTests(testManager) {
