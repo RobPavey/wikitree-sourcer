@@ -83,7 +83,7 @@ const citationOptionsGroup = {
       values: [
         { value: "nzbdmo", text: "New Zealand Births, Deaths & Marriages Online" },
         { value: "nzbdmdo", text: "New Zealand Births, Deaths and Marriages - Online" },
-        { value: "bdmonzdia", text: "Births, Deaths & Marriages Online. New Zealand Department of Internal Affairs" },
+        { value: "bdmonzdia", text: "Births, Deaths & Marriages Online, New Zealand Department of Internal Affairs" },
       ],
       defaultValue: "nzbdmo",
     },

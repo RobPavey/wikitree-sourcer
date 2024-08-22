@@ -12,27 +12,27 @@
     "type": "source"
   },
   "ee_style_inline": {
-    "citation": "<ref>\"Births, Deaths & Marriages Online. New Zealand Department of Internal Affairs,\" database, Birth Registration Number: 1884/14727, ([https://www.bdmhistoricalrecords.dia.govt.nz/ Link to search page] : accessed 6 May 2021), George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.</ref>",
+    "citation": "<ref>\"Births, Deaths & Marriages Online, New Zealand Department of Internal Affairs,\" database, Birth Registration Number: 1884/14727, ([https://www.bdmhistoricalrecords.dia.govt.nz/ Link to search page] : accessed 6 May 2021), George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.</ref>",
     "type": "inline"
   },
   "ee_style_narrative": {
-    "citation": "George's birth was registered in 1884 in New Zealand. They were the child of Charles Nicholson & Mary Ann Nicholson.<ref>\"Births, Deaths & Marriages Online. New Zealand Department of Internal Affairs,\" database, Birth Registration Number: 1884/14727, ([https://www.bdmhistoricalrecords.dia.govt.nz/ Link to search page] : accessed 6 May 2021), George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.</ref>",
+    "citation": "George's birth was registered in 1884 in New Zealand. They were the child of Charles Nicholson & Mary Ann Nicholson.<ref>\"Births, Deaths & Marriages Online, New Zealand Department of Internal Affairs,\" database, Birth Registration Number: 1884/14727, ([https://www.bdmhistoricalrecords.dia.govt.nz/ Link to search page] : accessed 6 May 2021), George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.</ref>",
     "type": "narrative"
   },
   "ee_style_source": {
-    "citation": "* \"Births, Deaths & Marriages Online. New Zealand Department of Internal Affairs,\" database, Birth Registration Number: 1884/14727, ([https://www.bdmhistoricalrecords.dia.govt.nz/ Link to search page] : accessed 6 May 2021), George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.",
+    "citation": "* \"Births, Deaths & Marriages Online, New Zealand Department of Internal Affairs,\" database, Birth Registration Number: 1884/14727, ([https://www.bdmhistoricalrecords.dia.govt.nz/ Link to search page] : accessed 6 May 2021), George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.",
     "type": "source"
   },
   "bee_style_inline": {
-    "citation": "<ref>([https://www.bdmhistoricalrecords.dia.govt.nz/search?path=%2FqueryEntry.m%3Ftype%3Dbirths New Zealand Births, Deaths & Marriages Online] : accessed 6 May 2021), Birth Registration Number: 1884/14727, George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.</ref>",
+    "citation": "<ref>([https://www.bdmhistoricalrecords.dia.govt.nz/search/search?path=%2FqueryEntry.m%3Ftype%3Dbirths New Zealand Births, Deaths & Marriages Online] : accessed 6 May 2021), Birth Registration Number: 1884/14727, George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.</ref>",
     "type": "inline"
   },
   "bee_style_narrative": {
-    "citation": "George's birth was registered in 1884 in New Zealand. They were the child of Charles Nicholson & Mary Ann Nicholson.<ref>([https://www.bdmhistoricalrecords.dia.govt.nz/search?path=%2FqueryEntry.m%3Ftype%3Dbirths New Zealand Births, Deaths & Marriages Online] : accessed 6 May 2021), Birth Registration Number: 1884/14727, George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.</ref>",
+    "citation": "George's birth was registered in 1884 in New Zealand. They were the child of Charles Nicholson & Mary Ann Nicholson.<ref>([https://www.bdmhistoricalrecords.dia.govt.nz/search/search?path=%2FqueryEntry.m%3Ftype%3Dbirths New Zealand Births, Deaths & Marriages Online] : accessed 6 May 2021), Birth Registration Number: 1884/14727, George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.</ref>",
     "type": "narrative"
   },
   "bee_style_source": {
-    "citation": "* ([https://www.bdmhistoricalrecords.dia.govt.nz/search?path=%2FqueryEntry.m%3Ftype%3Dbirths New Zealand Births, Deaths & Marriages Online] : accessed 6 May 2021), Birth Registration Number: 1884/14727, George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.",
+    "citation": "* ([https://www.bdmhistoricalrecords.dia.govt.nz/search/search?path=%2FqueryEntry.m%3Ftype%3Dbirths New Zealand Births, Deaths & Marriages Online] : accessed 6 May 2021), Birth Registration Number: 1884/14727, George James Nicholson birth 1884 in New Zealand, child of Charles Nicholson & Mary Ann Nicholson.",
     "type": "source"
   }
 }

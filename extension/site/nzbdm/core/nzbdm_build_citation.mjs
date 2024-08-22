@@ -35,7 +35,7 @@ function buildSourceTitle(ed, gd, builder) {
       builder.sourceTitle = "New Zealand Births, Deaths and Marriages - Online";
       break;
     case "bdmonzdia":
-      builder.sourceTitle = "Births, Deaths & Marriages Online. New Zealand Department of Internal Affairs";
+      builder.sourceTitle = "Births, Deaths & Marriages Online, New Zealand Department of Internal Affairs";
       break;
   }
 }
