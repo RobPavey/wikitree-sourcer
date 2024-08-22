@@ -69,6 +69,11 @@
       "js": ["base/browser/content/content_common.js", "site/baclac/browser/baclac_content.js"]
     },
     {
+      "matches": ["*://*.bdm.nsw.gov.au/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/nswbdm/browser/nswbdm_content.js"]
+    },
+    {
       "matches": ["*://*.bdmhistoricalrecords.dia.govt.nz/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/nzbdm/browser/nzbdm_content.js"]
@@ -294,6 +299,10 @@
     {
       "resources": ["site/baclac/core/baclac_extract_data.mjs"],
       "matches": ["*://*.bac-lac.gc.ca/*"]
+    },
+    {
+      "resources": ["site/nzbdm/core/nswbdm_extract_data.mjs"],
+      "matches": ["*://*.bdm.nsw.gov.au/*"]
     },
     {
       "resources": ["site/nzbdm/core/nzbdm_extract_data.mjs"],
