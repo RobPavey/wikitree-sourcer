@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Aschaffenburg, Amorbach\"<br/>\nBestattungen 1862 - 1964<br/>\n[https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12 Archion Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Aschaffenburg, Amorbach\"<br/>\nBestattungen 1862 - 1964<br/>\n[https://www.archion.de/p/d9576172e0/ Archion Image] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Death''':\n\"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Aschaffenburg, Amorbach\"<br/>\nBestattungen 1862 - 1964<br/>\n[https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12 Archion Image] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Death''':\n\"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Aschaffenburg, Amorbach\"<br/>\nBestattungen 1862 - 1964<br/>\n[https://www.archion.de/p/d9576172e0/ Archion Image] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Aschaffenburg, Amorbach\"<br/>Bestattungen 1862 - 1964<br/>[https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12 Archion Image] (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"Bayern, Landeskirchliches Archiv der Evangelisch-Lutherischen Kirche in Bayern, Dekanat Aschaffenburg, Amorbach\"<br/>Bestattungen 1862 - 1964<br/>[https://www.archion.de/p/d9576172e0/ Archion Image] (accessed 6 May 2021)",
     "type": "source"
   }
 }
