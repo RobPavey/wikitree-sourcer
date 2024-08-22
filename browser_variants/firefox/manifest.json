@@ -20,6 +20,7 @@
     "*://*.ancestrylibrary.com.au/*",
     "*://archive.org/*",
     "*://*.bac-lac.gc.ca/*",
+    "*://*.bdmhistoricalrecords.dia.govt.nz/*",
     "*://*.billiongraves.com/*",
     "*://*.cornwall-opc-database.org/*",
     "*://*.cwgc.org/*",
@@ -48,6 +49,7 @@
     "*://*.hathitrust.org/*",
     "*://*.irishgenealogy.ie/*",
     "*://*.jstor.org/*",
+    "*://data.matricula-online.eu/*",
     "*://*.myheritage.com/*",
     "*://www.census.nationalarchives.ie/*",
     "*://*.nli.ie/*",
@@ -61,8 +63,7 @@
     "*://trove.nla.gov.au/*",
     "*://*.bdm.vic.gov.au/*",
     "*://www.wiewaswie.nl/*",
-    "*://*.wikipedia.org/*",
-    "*://data.matricula-online.eu/*"
+    "*://*.wikipedia.org/*"
   ],
   "background": {
     "scripts": ["base/browser/background/background_mv3.mjs"],
@@ -111,6 +112,11 @@
       "matches": ["*://*.bac-lac.gc.ca/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/baclac/browser/baclac_content.js"]
+    },
+    {
+      "matches": ["*://*.bdmhistoricalrecords.dia.govt.nz/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/nzbdm/browser/nzbdm_content.js"]
     },
     {
       "matches": ["*://*.billiongraves.com/*"],
@@ -215,6 +221,11 @@
       "js": ["base/browser/content/content_common.js", "site/jstor/browser/jstor_content.js"]
     },
     {
+      "matches": ["*://data.matricula-online.eu/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/wikipedia/browser/wikipedia_content.js"]
+    },
+    {
       "matches": ["*://*.myheritage.com/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/mh/browser/mh_content.js"]
@@ -278,11 +289,6 @@
       "matches": ["*://*.wikipedia.org/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/wikipedia/browser/wikipedia_content.js"]
-    },
-    {
-      "matches": ["*://data.matricula-online.eu/*"],
-      "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/wikipedia/browser/wikipedia_content.js"]
     }
   ],
   "options_ui": {
@@ -332,6 +338,10 @@
     {
       "resources": ["site/baclac/core/baclac_extract_data.mjs"],
       "matches": ["*://*.bac-lac.gc.ca/*"]
+    },
+    {
+      "resources": ["site/nzbdm/core/nzbdm_extract_data.mjs"],
+      "matches": ["*://*.bdmhistoricalrecords.dia.govt.nz/*"]
     },
     {
       "resources": ["site/bg/core/bg_extract_data.mjs"],
@@ -414,6 +424,10 @@
       "matches": ["*://*.jstor.org/*"]
     },
     {
+      "resources": ["site/matricula/core/matricula_extract_data.mjs"],
+      "matches": ["*://data.matricula-online.eu/*"]
+    },
+    {
       "resources": ["site/mh/core/mh_extract_data.mjs"],
       "matches": ["*://*.myheritage.com/*"]
     },
@@ -464,10 +478,6 @@
     {
       "resources": ["site/wikipedia/core/wikipedia_extract_data.mjs"],
       "matches": ["*://*.wikipedia.org/*"]
-    },
-    {
-      "resources": ["site/matricula/core/matricula_extract_data.mjs"],
-      "matches": ["*://data.matricula-online.eu/*"]
     }
   ],
   "browser_specific_settings": {
