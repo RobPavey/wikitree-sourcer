@@ -61,6 +61,7 @@ const searchOptionsGroup = {
         },
         { value: "ancestrylibrary.ca", text: "ancestrylibrary.ca" },
         { value: "ancestrylibrary.com.au", text: "ancestrylibrary.com.au" },
+        { value: "ancestryheritagequest.com", text: "ancestryheritagequest.com" },
       ],
       defaultValue: "ancestry.com",
     },

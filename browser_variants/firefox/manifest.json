@@ -18,6 +18,7 @@
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
+    "*://*.ancestryheritagequest.com/*",
     "*://archive.org/*",
     "*://*.bac-lac.gc.ca/*",
     "*://*.bdmhistoricalrecords.dia.govt.nz/*",
@@ -98,7 +99,8 @@
         "*://*.ancestrylibrary.com/*",
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
-        "*://*.ancestrylibrary.com.au/*"
+        "*://*.ancestrylibrary.com.au/*",
+        "*://*.ancestryheritagequest.com/*"
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
@@ -328,7 +330,8 @@
         "*://*.ancestrylibrary.com/*",
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
-        "*://*.ancestrylibrary.com.au/*"
+        "*://*.ancestrylibrary.com.au/*",
+        "*://*.ancestryheritagequest.com/*"
       ]
     },
     {

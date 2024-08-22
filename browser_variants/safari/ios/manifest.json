@@ -16,7 +16,8 @@
     "*://*.ancestrylibrary.com/*",
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
-    "*://*.ancestrylibrary.com.au/*"
+    "*://*.ancestrylibrary.com.au/*",
+    "*://*.ancestryheritagequest.com/*"
   ],
   "background": {
     "scripts": ["base/browser/background/background_mv3.mjs"],
@@ -52,7 +53,8 @@
         "*://*.ancestrylibrary.com/*",
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
-        "*://*.ancestrylibrary.com.au/*"
+        "*://*.ancestrylibrary.com.au/*",
+        "*://*.ancestryheritagequest.com/*"
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
@@ -282,7 +284,8 @@
         "*://*.ancestrylibrary.com/*",
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
-        "*://*.ancestrylibrary.com.au/*"
+        "*://*.ancestrylibrary.com.au/*",
+        "*://*.ancestryheritagequest.com/*"
       ]
     },
     {
