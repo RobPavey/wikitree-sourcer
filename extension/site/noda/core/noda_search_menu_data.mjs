@@ -1517,6 +1517,53 @@ const NodaData = {
       if (placeParts.place) {
         parameters.place = placeParts.place.code;
       }
+    } else {
+      // no event place? could be a profile with multiple places
+      let placePartsArray = [];
+      function addPlaceParts(placeParts) {
+        if (placeParts) {
+          placePartsArray.push(placeParts);
+        }
+      }
+      addPlaceParts(lookupPlaceObj(generalizedData.inferBirthPlaceObj()));
+      addPlaceParts(lookupPlaceObj(generalizedData.inferDeathPlaceObj()));
+      for (let spouse of generalizedData.spouses) {
+        if (spouse.marriagePlace) {
+          addPlaceParts(lookupPlaceObj(spouse.marriagePlace));
+        }
+      }
+
+      let possibleParameters = {
+        region: "",
+        county: "",
+        place: "",
+      };
+
+      function checkPart(partsObj, key) {
+        if (partsObj[key]) {
+          if (!possibleParameters[key]) {
+            possibleParameters[key] = partsObj[key].code;
+          } else if (partsObj[key].code != possibleParameters[key]) {
+            possibleParameters[key] = "multiple";
+          }
+        }
+      }
+
+      function setPart(key) {
+        if (possibleParameters[key] && possibleParameters[key] != "multiple") {
+          parameters[key] = possibleParameters[key];
+        }
+      }
+
+      for (let partsObj of placePartsArray) {
+        checkPart(partsObj, "region");
+        checkPart(partsObj, "county");
+        checkPart(partsObj, "place");
+      }
+
+      setPart("region");
+      setPart("county");
+      setPart("place");
     }
   },
 
