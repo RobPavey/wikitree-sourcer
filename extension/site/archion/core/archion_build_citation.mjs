@@ -58,9 +58,9 @@ function generatePermalinkForPage(uid, pageId, permalinkBase, url) {
 }
 
 function buildArchionUrl(ed, builder) {
-  if (ed.uid && ed.pageId && ed.permalinkBase && ed.url && false) {
-    // TODO: can we cache the perma-link?
-    return generatePermalinkForPage(ed.uid, ed.pageId, ed.permalinkBase, ed.url);
+  // alert(ed.permalink);
+  if (ed.permalink && ed.permalink != "<<NOT YET GENERATED>>") {
+    return ed.permalink;
   }
   return ed.url;
 }

@@ -33,7 +33,8 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 const regressionData = [
   {
     caseName: "bayern_aschaffenburg_amorbach_bestattungen_1862_1964_20",
-    url: "https://www.archion.de/p/d9576172e0/",
+    url: "https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12",
+    // "https://www.archion.de/p/d9576172e0/",
   },
 ];
 

@@ -1,5 +1,5 @@
 {
-  "url": "https://www.archion.de/p/d9576172e0/",
+  "url": "https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12",
   "success": true,
   "pathComponents": [
     "Bayern",
@@ -7,5 +7,7 @@
     "Dekanat Aschaffenburg",
     "Amorbach"
   ],
-  "book": "Bestattungen 1862 - 1964"
+  "book": "Bestattungen 1862 - 1964",
+  "uid": "290910",
+  "permalink": "<<NOT YET GENERATED>>"
 }
