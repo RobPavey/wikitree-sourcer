@@ -31,12 +31,18 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.nswbdm.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "birth_1852_charles_nicholson",
+    url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3",
   },
-  */
+  {
+    caseName: "death_1888_francis_nicholdson",
+    url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?24",
+  },
+  {
+    caseName: "marriage_1873_stephen_mccready",
+    url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?32",
+  },
 ];
 
 async function runTests(testManager) {

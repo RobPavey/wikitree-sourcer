@@ -22,6 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function getSelectedRow(document) {
+  const highlightStyle = "font-weight: bold; font-style: italic";
+  const elResultsTable = document.querySelector("#form div.table-row");
+  if (elResultsTable) {
+    const selectedRow = elResultsTable.querySelector("div.detail-columns[style='" + highlightStyle + "']");
+    return selectedRow;
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -30,13 +39,70 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
+  const form = document.querySelector("#form");
+  if (!form) {
     return result;
   }
-  */
+
+  const rowDivs = form.querySelectorAll("div.table-row > div.even,.odd");
+  if (rowDivs.length < 1) {
+    return result;
+  }
+
+  let selectedRow = getSelectedRow(document);
+  if (!selectedRow) {
+    selectedRow = rowDivs[0];
+  }
+
+  let colDivs = selectedRow.querySelectorAll("div.detail-columns > div");
+  if (colDivs.length < 1) {
+    return result;
+  }
+
+  result.recordData = {};
+
+  for (let colDiv of colDivs) {
+    let lastNameSpan = colDiv.querySelector("span.ds-lastname");
+    if (lastNameSpan) {
+      // this is the column with the first and last name (which are actually reversed)
+      // This column only exists on births and deaths
+      result.firstName = lastNameSpan.textContent.trim();
+      let firstNameSpan = colDiv.querySelector("span.ds-firstname");
+      if (firstNameSpan) {
+        result.lastName = firstNameSpan.textContent.trim();
+      }
+    } else {
+      let spans = colDiv.querySelectorAll("span");
+      if (spans.length == 1) {
+        let tagDiv = colDiv.querySelector("div.tag");
+        let span = colDiv.querySelector("span");
+        if (tagDiv && span) {
+          let key = tagDiv.textContent.trim();
+          let value = span.textContent.trim();
+          if (key && value) {
+            result.recordData[key] = value;
+          }
+        }
+      } else if (spans.length > 1) {
+        // this is the registration number
+        let tagDiv = colDiv.querySelector("div.tag");
+        let tagString = tagDiv.textContent.trim();
+        let tagStringLc = tagString.toLowerCase();
+        if (tagStringLc == "registration number") {
+          let registrationNumberParts = [];
+          for (let span of spans) {
+            let value = span.textContent.trim();
+            if (value) {
+              registrationNumberParts.push(value);
+            }
+          }
+          if (registrationNumberParts.length) {
+            result.registrationNumberParts = registrationNumberParts;
+          }
+        }
+      }
+    }
+  }
 
   result.success = true;
 

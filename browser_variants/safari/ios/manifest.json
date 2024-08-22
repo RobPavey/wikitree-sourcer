@@ -302,7 +302,7 @@
       "matches": ["*://*.bac-lac.gc.ca/*"]
     },
     {
-      "resources": ["site/nzbdm/core/nswbdm_extract_data.mjs"],
+      "resources": ["site/nswbdm/core/nswbdm_extract_data.mjs"],
       "matches": ["*://*.bdm.nsw.gov.au/*"]
     },
     {
