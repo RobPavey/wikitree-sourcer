@@ -22,6 +22,61 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function title2type(title) {
+  title = title.toLowerCase();
+  let result = "";
+
+  if (title.includes("tauf")) {
+    result += ", Christening";
+  }
+  if (title.includes("trau") || title.includes("heirat")) {
+    result += ", Marriage";
+  }
+  if (title.includes("proklamation")) {
+    result += ", Proclamation";
+  }
+  if (
+    title.includes("tod") ||
+    title.includes("tot") ||
+    title.includes("bestattung") ||
+    title.includes("begraben") ||
+    title.includes("begräbnis")
+  ) {
+    result += ", Death";
+  }
+  if (title.includes("kommunikant") || title.includes("abendmahl")) {
+    result += ", Communion";
+  }
+  if (title.includes("konfirmand") || title.includes("konfirmant")) {
+    result += ", Confirmand";
+  }
+
+  if (title.includes("verschmähung")) {
+    result += ", Disdain";
+  }
+  if (title.includes("versagung")) {
+    result += ", Refusal";
+  }
+
+  if (title.includes("eintritt")) {
+    result += ", Church entry";
+  }
+  if (title.includes("austritt")) {
+    result += ", Church withdrawal";
+  }
+
+  if (title.includes("familie")) {
+    result += ", Family Register";
+  } else if (title.includes("register") || title.includes("index")) {
+    result += ", Name Register";
+  }
+
+  if (result) {
+    return result.substring(2);
+  }
+  return "Churchbook";
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -47,6 +102,7 @@ function extractData(document, url) {
 
   result.pathComponents = pathComponents.slice(0, -1);
   result.book = pathComponents[pathComponents.length - 1];
+  result.bookType = title2type(result.book);
 
   const pageSelect = document.querySelector("select");
   if (pageSelect) {
@@ -56,15 +112,15 @@ function extractData(document, url) {
     };
   }
 
-  // https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12
+  // https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12 [get 290910]
   if (url[url.length - 1] == "/") {
     url = url.substring(0, url.length - 1);
   }
   const parts = url.split("/");
   const uid = parts[parts.length - 1].split("?")[0];
-
   result.uid = uid;
 
+  // Only if the page has a permalink button, we can generate a permalink
   const permaLinkButton = document.querySelector("span[class='addlink']");
   if (permaLinkButton && url && url.includes("churchRegister")) {
     result.permalink = "<<NOT YET GENERATED>>";

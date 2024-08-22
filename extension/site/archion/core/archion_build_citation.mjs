@@ -94,8 +94,15 @@ function buildCoreCitation(ed, gd, builder) {
   builder.addStandardDataString(gd);
 }
 
+function customLableFunction(ed, gd) {
+  if (ed.bookType) {
+    return ed.bookType;
+  }
+  return "Churchbook";
+}
+
 function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
+  return simpleBuildCitationWrapper(input, buildCoreCitation, customLableFunction);
 }
 
 export { buildCitation };
