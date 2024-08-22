@@ -99,6 +99,17 @@ const citationOptionsGroup = {
       ],
       defaultValue: "asNzBdmOnline",
     },
+    {
+      optionName: "linkFormat",
+      type: "select",
+      label: "Build link URL as",
+      values: [
+        { value: "top", text: "Link to BDM home page" },
+        { value: "search", text: "Link to BDM search page" },
+        { value: "searchOfType", text: "Link to BDM search page of type" },
+      ],
+      defaultValue: "search",
+    },
   ],
 };
 

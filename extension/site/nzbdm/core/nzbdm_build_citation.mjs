@@ -58,9 +58,29 @@ function buildSourceReference(ed, gd, builder) {
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search";
-
   let options = builder.getOptions();
+  let linkFormatOption = options.citation_nzbdm_linkFormat;
+
+  var nzbdmUrl = "";
+  if (linkFormatOption == "top") {
+    nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/";
+  } else if (linkFormatOption == "search") {
+    nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search";
+  } else if (linkFormatOption == "searchOfType") {
+    nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search/search";
+    let type = "";
+    if (gd.recordType == RT.BirthRegistration) {
+      nzbdmUrl += "?path=%2FqueryEntry.m%3Ftype%3Dbirths";
+    } else if (gd.recordType == RT.DeathRegistration) {
+      nzbdmUrl += "?path=%2FqueryEntry.m%3Ftype%3Ddeaths";
+    } else if (gd.recordType == RT.MarriageRegistration) {
+      nzbdmUrl += "?path=%2FqueryEntry.m%3Ftype%3Dmarriages";
+    }
+  }
+  if (!nzbdmUrl) {
+    return;
+  }
+
   let linkOption = options.citation_nzbdm_includeLink;
 
   if (linkOption == "none") {

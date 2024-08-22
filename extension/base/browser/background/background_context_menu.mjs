@@ -688,7 +688,7 @@ function buildNzbdmSearchData(lcText) {
   //console.log(lcText);
 
   // To be NZ BDM we need some identifiers
-  if (!(lcText.includes("nz") || lcText.includes("new zealand"))) {
+  if (!(lcText.includes("nz") || lcText.includes("n.z.") || lcText.includes("new zealand"))) {
     return undefined;
   }
 
