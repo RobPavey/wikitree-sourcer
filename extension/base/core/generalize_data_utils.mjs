@@ -2132,6 +2132,13 @@ class GeneralizedData {
     }
   }
 
+  setBirthQuarter(value) {
+    if (typeof value !== "undefined") {
+      this.createEventDateIfNeeded();
+      this.birthDate.quarter = value;
+    }
+  }
+
   setBirthDateFromYearMonthDay(year, month, day) {
     let dateString = DateUtils.getDateStringFromYearMonthDay(year, month, day);
 
@@ -2171,6 +2178,13 @@ class GeneralizedData {
     if (this.isUsableDateString(string)) {
       this.createDeathDateIfNeeded();
       this.deathDate.setDateAndQualifierFromString(string, true);
+    }
+  }
+
+  setDeathQuarter(value) {
+    if (typeof value !== "undefined") {
+      this.createEventDateIfNeeded();
+      this.deathDate.quarter = value;
     }
   }
 

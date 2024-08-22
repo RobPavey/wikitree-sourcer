@@ -34,14 +34,14 @@ import { DateUtils } from "../../../base/core/date_utils.mjs";
 // Search To Date must not be later than 19/08/1949.
 
 const birthsDateRange = {
-  from: { day: 31, month: 12, year: 1839 },
+  from: { day: 1, month: 1, year: 1840 },
   to: { day: 19, month: 8, year: 1974 },
 };
 const deathsDateRange = {
-  from: { day: 31, month: 12, year: 1839 },
+  from: { day: 1, month: 1, year: 1840 },
 };
 const marriagesDateRange = {
-  from: { day: 31, month: 12, year: 1839 },
+  from: { day: 1, month: 1, year: 1840 },
   to: { day: 19, month: 8, year: 1949 },
 };
 
@@ -136,8 +136,12 @@ function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
   if (!usedDateString) {
     let range = gd.inferPossibleLifeYearRange(maxLifespan, runDate, exactness);
 
-    fromDate = { day: 1, month: 1, year: range.startYear };
-    toDate = { day: 31, month: 12, year: range.endYear };
+    if (range.startYear) {
+      fromDate = { day: 1, month: 1, year: range.startYear };
+    }
+    if (range.endYear) {
+      toDate = { day: 31, month: 12, year: range.endYear };
+    }
   }
 
   fromDate = constrainDate(fromDate, allowedDateRange);

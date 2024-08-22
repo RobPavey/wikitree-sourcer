@@ -6,10 +6,12 @@
     "name": "Jean Mary Agnes McClimont"
   },
   "eventDate": {
-    "dateString": "Mar. 1912"
+    "dateString": "1912",
+    "quarter": 1
   },
   "birthDate": {
-    "dateString": "Mar. 1912"
+    "dateString": "1912",
+    "quarter": 1
   },
   "eventPlace": {
     "placeString": "Springburn, Canterbury, New Zealand"

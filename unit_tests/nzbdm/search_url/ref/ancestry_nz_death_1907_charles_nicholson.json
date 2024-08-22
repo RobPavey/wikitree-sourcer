@@ -1,0 +1,18 @@
+{
+  "std": {
+    "fieldData": {
+      "dsur": "Nicholson",
+      "dfirst": "Charles Allen",
+      "ddate_lower": "1/1/1905",
+      "ddate_upper": "31/12/1909"
+    }
+  },
+  "births": {
+    "fieldData": {
+      "csur": "Nicholson",
+      "cfirst": "Charles Allen",
+      "cdate_lower": "1/1/1840",
+      "cdate_upper": "31/12/1909"
+    }
+  }
+}

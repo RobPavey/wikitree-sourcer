@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 2001/23986<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nMary Jane Boyd Mcdonald Lyall death 2001.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 2001/23986<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nMary Jane Boyd Mcdonald Lyall death 2001 in New Zealand.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Mary's death was registered in 2001.<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 2001/23986<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nMary Jane Boyd Mcdonald Lyall death 2001.\n</ref>",
+    "citation": "Mary's death was registered in 2001 in New Zealand.<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 2001/23986<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nMary Jane Boyd Mcdonald Lyall death 2001 in New Zealand.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Death Registration Number: 2001/23986<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Mary Jane Boyd Mcdonald Lyall death 2001.",
+    "citation": "* '''Death Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Death Registration Number: 2001/23986<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Mary Jane Boyd Mcdonald Lyall death 2001 in New Zealand.",
     "type": "source"
   }
 }

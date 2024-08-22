@@ -9,9 +9,15 @@
   "eventDate": {
     "yearString": "2001"
   },
+  "eventPlace": {
+    "country": "New Zealand"
+  },
   "lastNameAtDeath": "Lyall",
   "birthDate": {
     "dateString": "13 December 1914"
+  },
+  "deathPlace": {
+    "country": "New Zealand"
   },
   "hasValidData": true
 }

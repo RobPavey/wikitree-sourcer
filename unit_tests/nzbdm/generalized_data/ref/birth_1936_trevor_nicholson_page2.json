@@ -9,7 +9,13 @@
   "eventDate": {
     "yearString": "1936"
   },
+  "eventPlace": {
+    "country": "New Zealand"
+  },
   "lastNameAtBirth": "Nicholson",
+  "birthPlace": {
+    "country": "New Zealand"
+  },
   "parents": {
     "mother": {
       "name": {

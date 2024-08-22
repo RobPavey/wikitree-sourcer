@@ -364,6 +364,40 @@ const DateUtils = {
       return result;
     }
 
+    // Sometimes we can get a date like: 1907 Oct-Nov-Dec
+    // e.g.: https://www.ancestry.com/discoveryui-content/view/335664:8952
+    // Typically this is removed in generatized data but just in case:
+    if (/^\d\d\d\d\s+\w\w\w\-\w\w\w\-\w\w\w$/.test(cleanString)) {
+      let dateParts = cleanString.split(" ");
+      if (dateParts.length != 2) {
+        return result;
+      }
+
+      let yearString = dateParts[0].trim();
+      let quarterString = dateParts[1].trim();
+      let quarterParts = quarterString.split("-");
+      if (quarterParts.length != 3) {
+        return result;
+      }
+      let monthNum = DateUtils.monthStringToMonthNum(quarterParts[0]);
+      if (isNaN(monthNum) || !monthNum || monthNum < 1 || monthNum > 12) {
+        return result;
+      }
+
+      let yearNum = parseInt(yearString);
+      if (isNaN(yearNum) || !yearNum) {
+        return result;
+      }
+
+      result.dayNum = 0;
+      result.monthNum = monthNum;
+      result.yearNum = yearNum;
+      result.hasDay = false;
+      result.hasMonth = true;
+      result.isValid = true;
+      return result;
+    }
+
     console.log("Unusual date format: " + cleanString);
 
     return result;
