@@ -34,6 +34,38 @@ const regressionData = [
   {
     caseName: "birth_1880_george_nicholson",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dBirthSearch%26recordsPP%3d30#SearchResults",
+    optionVariants: [
+      {
+        variantName: "ee_style",
+        optionOverrides: {
+          citation_general_meaningfulNames: "none",
+          citation_general_commaInsideQuotes: true,
+          citation_general_addEeItemType: true,
+          citation_general_addAccessedDate: "parenBeforeLink",
+          citation_general_sourceReferenceSeparator: "commaSpace",
+          citation_general_dataListSeparator: "commaSpace",
+          citation_general_addNewlinesWithinRefs: false,
+          citation_general_addNewlinesWithinBody: false,
+          citation_general_addBreaksWithinBody: false,
+          citation_nzbdm_includeLink: "asLinkToSearchPage",
+          citation_nzbdm_sourceTitleFormat: "bdmonzdia",
+        },
+      },
+      {
+        variantName: "bee_style",
+        optionOverrides: {
+          citation_general_meaningfulNames: "none",
+          citation_general_commaInsideQuotes: true,
+          citation_general_addAccessedDate: "parenBeforeLink",
+          citation_general_sourceReferenceSeparator: "commaSpace",
+          citation_general_dataListSeparator: "commaSpace",
+          citation_general_addNewlinesWithinRefs: false,
+          citation_general_addNewlinesWithinBody: false,
+          citation_general_addBreaksWithinBody: false,
+          citation_nzbdm_includeLink: "inSourceTitle",
+        },
+      },
+    ],
   },
   {
     caseName: "birth_1936_trevor_nicholson_page2",

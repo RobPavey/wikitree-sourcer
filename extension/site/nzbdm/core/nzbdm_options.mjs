@@ -75,7 +75,31 @@ const citationOptionsGroup = {
   subcategory: "nzbdm",
   tab: "citation",
   subsection: "nzbdm",
-  options: [],
+  options: [
+    {
+      optionName: "sourceTitleFormat",
+      type: "select",
+      label: "Source title",
+      values: [
+        { value: "nzbdmo", text: "New Zealand Births, Deaths & Marriages Online" },
+        { value: "nzbdmdo", text: "New Zealand Births, Deaths and Marriages - Online" },
+        { value: "bdmonzdia", text: "Births, Deaths & Marriages Online. New Zealand Department of Internal Affairs" },
+      ],
+      defaultValue: "nzbdmo",
+    },
+    {
+      optionName: "includeLink",
+      type: "select",
+      label: "Include link to NZ BDM site",
+      values: [
+        { value: "none", text: "No" },
+        { value: "asNzBdmOnline", text: 'As "New Zealand BDM Online"' },
+        { value: "asLinkToSearchPage", text: 'As "Link to search page"' },
+        { value: "inSourceTitle", text: "In source title" },
+      ],
+      defaultValue: "asNzBdmOnline",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "nzbdm", "New Zealand BDM");

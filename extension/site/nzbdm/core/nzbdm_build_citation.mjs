@@ -25,7 +25,19 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "New Zealand Births, Deaths & Marriages Online";
+  let format = builder.options.citation_nzbdm_sourceTitleFormat;
+
+  switch (format) {
+    case "nzbdmo":
+      builder.sourceTitle = "New Zealand Births, Deaths & Marriages Online";
+      break;
+    case "nzbdmdo":
+      builder.sourceTitle = "New Zealand Births, Deaths and Marriages - Online";
+      break;
+    case "bdmonzdia":
+      builder.sourceTitle = "Births, Deaths & Marriages Online. New Zealand Department of Internal Affairs";
+      break;
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
@@ -48,8 +60,27 @@ function buildSourceReference(ed, gd, builder) {
 function buildRecordLink(ed, gd, builder) {
   var nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search";
 
-  let recordLink = "[" + nzbdmUrl + " New Zealand BDM Online]";
-  builder.recordLinkOrTemplate = recordLink;
+  let options = builder.getOptions();
+  let linkOption = options.citation_nzbdm_includeLink;
+
+  if (linkOption == "none") {
+    return;
+  }
+
+  let recordLink = "";
+
+  if (linkOption == "inSourceTitle") {
+    builder.putRecordLinkInTitle = true;
+    recordLink = nzbdmUrl;
+  } else if (linkOption == "asNzBdmOnline") {
+    recordLink = "[" + nzbdmUrl + " New Zealand BDM Online]";
+  } else if (linkOption == "asLinkToSearchPage") {
+    recordLink = "[" + nzbdmUrl + " Link to search page]";
+  }
+
+  if (recordLink) {
+    builder.recordLinkOrTemplate = recordLink;
+  }
 }
 
 function buildCoreCitation(ed, gd, builder) {

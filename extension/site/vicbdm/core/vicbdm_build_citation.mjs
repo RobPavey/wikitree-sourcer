@@ -76,8 +76,9 @@ function buildSourceReference(ed, gd, builder) {
 
 function buildRecordLink(ed, gd, builder) {
   let options = builder.getOptions();
+  let linkOption = options.citation_vicbdm_includeLink;
 
-  if (options.citation_vicbdm_includeLink == "none") {
+  if (linkOption == "none") {
     return;
   }
 
@@ -85,12 +86,12 @@ function buildRecordLink(ed, gd, builder) {
 
   let recordLink = "";
 
-  if (options.citation_vicbdm_includeLink == "inSourceTitle") {
+  if (linkOption == "inSourceTitle") {
     builder.putRecordLinkInTitle = true;
     recordLink = vicbdmUrl;
-  } else if (options.citation_vicbdm_includeLink == "asBDMVictoria") {
+  } else if (linkOption == "asBDMVictoria") {
     recordLink = "[" + vicbdmUrl + " BDM Victoria]";
-  } else if (options.citation_vicbdm_includeLink == "asLinkToSearchPage") {
+  } else if (linkOption == "asLinkToSearchPage") {
     recordLink = "[" + vicbdmUrl + " Link to search page]";
   }
 
