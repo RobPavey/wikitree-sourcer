@@ -50,7 +50,7 @@ async function bgSearch(generalizedData, typeOfSearch) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addBgDefaultSearchMenuItem(menu, data, backFunction, filter) {
+function addBgDefaultSearchMenuItem(menu, data, backFunction) {
   //console.log("addBgDefaultSearchMenuItem, data is:");
   //console.log(data);
 

@@ -235,12 +235,16 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
   for (let registeredFunction of registeredSearchMenuItemFunctions) {
     let siteName = registeredFunction.siteName;
 
+    //console.log("buildSortedMenuItemFunctions: siteName = " + siteName);
+
     if (!options.search_general_popup_showSameSite && siteName == excludeSite) {
+      //console.log("buildSortedMenuItemFunctions: excluded by site name");
       result.numSitesExcludedBySiteName++;
       continue;
     }
 
     if (registeredFunction.shouldShowFunction && !registeredFunction.shouldShowFunction(data, filter)) {
+      //console.log("buildSortedMenuItemFunctions: excluded by filter");
       result.numSitesExcludedByFilter++;
       continue;
     }
@@ -249,7 +253,14 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
     let fullPriorityOptionName = "search_" + siteName + "_" + priorityOptionName;
     let priorityOptionValue = options[fullPriorityOptionName];
 
-    //console.log("buildSortedMenuItemFunctions: fullOptionName is: " + fullOptionName + ", optionValue is: " + optionValue);
+    /*
+    console.log(
+      "buildSortedMenuItemFunctions: fullPriorityOptionName is: " +
+        fullPriorityOptionName +
+        ", priorityOptionValue is: " +
+        priorityOptionValue
+    );
+    */
 
     let priority = 0;
 
@@ -264,6 +275,8 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
     }
 
     if (priority > 0) {
+      //console.log("buildSortedMenuItemFunctions: pushing functionList");
+
       functionList.push({
         siteName: siteName,
         menuItemFunction: menuItemFunction,
@@ -272,6 +285,7 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
       });
     } else {
       result.numSitesExcludedByPriority++;
+      //console.log("buildSortedMenuItemFunctions: excluded by priority");
     }
   }
 
@@ -550,6 +564,9 @@ function setupAllSitesSubmenu(data, filter, backFunction, excludeSite) {
   let subMenuFunctions = buildSubMenuItemFunctions(data, filter, excludeSite);
   let subMenuFunctionList = subMenuFunctions.functionList;
 
+  //console.log("setupAllSitesSubmenu, subMenuFunctions is:");
+  //console.log(subMenuFunctions);
+
   let backToHereFunction = function () {
     setupAllSitesSubmenu(data, filter, backFunction, excludeSite);
   };
@@ -561,8 +578,10 @@ function setupAllSitesSubmenu(data, filter, backFunction, excludeSite) {
 
   // add the search menu items for each site in list
   for (let registeredFunction of subMenuFunctionList) {
+    //console.log("registeredFunction is:");
+    //console.log(registeredFunction);
     let menuItemFunction = registeredFunction.menuItemFunction;
-    menuItemFunction(menu, data, backToHereFunction);
+    menuItemFunction(menu, data, backToHereFunction, filter);
   }
 
   endMainMenu(menu);
@@ -614,6 +633,7 @@ async function addSearchMenus(menu, data, backFunction, excludeSite) {
 }
 
 function registerSearchMenuItemFunction(siteName, siteTitle, menuItemFunction, shouldShowFunction) {
+  //console.log("registerSearchMenuItemFunction, siteName = " + siteName);
   registeredSearchMenuItemFunctions.push({
     siteName: siteName,
     siteTitle: siteTitle,

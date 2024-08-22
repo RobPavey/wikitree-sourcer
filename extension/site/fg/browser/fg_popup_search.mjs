@@ -50,7 +50,7 @@ async function fgSearch(generalizedData, typeOfSearch) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addFgDefaultSearchMenuItem(menu, data, backFunction, filter) {
+function addFgDefaultSearchMenuItem(menu, data, backFunction) {
   //console.log("addFgDefaultSearchMenuItem, data is:");
   //console.log(data);
 
