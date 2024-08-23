@@ -1,6 +1,33 @@
 {
   "sourceOfData": "nswbdm",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Nicholson",
+    "forenames": "Charles"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1852"
+  },
+  "eventPlace": {
+    "placeString": "New South Wales, Australia"
+  },
+  "lastNameAtBirth": "Nicholson",
+  "registrationDistrict": "CA",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Nicholson",
+        "forenames": "Charles"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Nicholson",
+        "forenames": "Elizabeth A"
+      }
+    }
+  },
   "hasValidData": true
 }

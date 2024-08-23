@@ -36,7 +36,7 @@ const regressionData = [
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3",
   },
   {
-    caseName: "death_1888_francis_nicholdson",
+    caseName: "death_1888_francis_nicholson",
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?24",
   },
   {

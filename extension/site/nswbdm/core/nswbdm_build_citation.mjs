@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { RT } from "../../../base/core/record_type.mjs";
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildNswbdmUrl(ed, builder) {
@@ -29,11 +30,31 @@ function buildNswbdmUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle += "New South Wales Births, Deaths and Marriages";
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  if (ed.recordData) {
+    let registrationNumberParts = ed.registrationNumberParts;
+    if (registrationNumberParts && registrationNumberParts.length >= 2) {
+      let type = "";
+      if (gd.recordType == RT.BirthRegistration) {
+        type = "Birth ";
+      } else if (gd.recordType == RT.DeathRegistration) {
+        type = "Death ";
+      } else if (gd.recordType == RT.MarriageRegistration) {
+        type = "Marriage ";
+      }
+      let registrationString = registrationNumberParts[0] + "/" + registrationNumberParts[1];
+      if (registrationNumberParts.length >= 3) {
+        registrationString += " " + registrationNumberParts[2];
+      }
+      if (registrationNumberParts.length >= 4) {
+        registrationString += " " + registrationNumberParts[3];
+      }
+      builder.sourceReference = type + "Registration Number: " + registrationString;
+    }
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {

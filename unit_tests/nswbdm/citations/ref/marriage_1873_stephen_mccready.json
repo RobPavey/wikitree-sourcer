@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?32 New South Wales BDM (Aus) Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nMarriage Registration Number: 113/1873<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?32 New South Wales BDM (Aus) Record] (accessed 6 May 2021)<br/>\nMcCready marriage to Agnes O'Brien in 1873 in New South Wales, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?32 New South Wales BDM (Aus) Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "McCready's marriage to Agnes O'Brien was registered in 1873 in New South Wales, Australia.<ref>\n'''Marriage Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nMarriage Registration Number: 113/1873<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?32 New South Wales BDM (Aus) Record] (accessed 6 May 2021)<br/>\nMcCready marriage to Agnes O'Brien in 1873 in New South Wales, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?32 New South Wales BDM (Aus) Record] (accessed 6 May 2021)",
+    "citation": "* '''Marriage Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Marriage Registration Number: 113/1873<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?32 New South Wales BDM (Aus) Record] (accessed 6 May 2021)<br/>McCready marriage to Agnes O'Brien in 1873 in New South Wales, Australia.",
     "type": "source"
   }
 }

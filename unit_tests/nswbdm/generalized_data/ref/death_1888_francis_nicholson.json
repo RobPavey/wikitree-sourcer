@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "nswbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Nicholson",
+    "forenames": "Francis"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1888"
+  },
+  "eventPlace": {
+    "placeString": "New South Wales, Australia"
+  },
+  "lastNameAtDeath": "Nicholson",
+  "ageAtDeath": "77 years",
+  "registrationDistrict": "Parramatta",
+  "hasValidData": true
+}

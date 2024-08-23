@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3 New South Wales BDM (Aus) Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 120/1852 V1852120 38<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3 New South Wales BDM (Aus) Record] (accessed 6 May 2021)<br/>\nCharles Nicholson birth 1852 in New South Wales, Australia, son of Charles Nicholson & Elizabeth A Nicholson.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3 New South Wales BDM (Aus) Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "Charles's birth was registered in 1852 in New South Wales, Australia. He was the son of Charles Nicholson & Elizabeth A Nicholson.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 120/1852 V1852120 38<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3 New South Wales BDM (Aus) Record] (accessed 6 May 2021)<br/>\nCharles Nicholson birth 1852 in New South Wales, Australia, son of Charles Nicholson & Elizabeth A Nicholson.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3 New South Wales BDM (Aus) Record] (accessed 6 May 2021)",
+    "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 120/1852 V1852120 38<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3 New South Wales BDM (Aus) Record] (accessed 6 May 2021)<br/>Charles Nicholson birth 1852 in New South Wales, Australia, son of Charles Nicholson & Elizabeth A Nicholson.",
     "type": "source"
   }
 }
