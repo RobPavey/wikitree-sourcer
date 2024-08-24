@@ -46,25 +46,25 @@ function unHighlightRow(selectedRow) {
 }
 
 function getClickedRow() {
-  const elResultsTable = document.querySelector("#form");
-  if (elResultsTable) {
-    const selectedRow = elResultsTable.querySelector("div.detail-columns[style='" + highlightStyle + "']");
+  const formElement = document.querySelector("#form");
+  if (formElement) {
+    const selectedRow = formElement.querySelector("div.detail-columns[style='" + highlightStyle + "']");
     return selectedRow;
   }
 }
 
 function addClickedRowListener() {
-  console.log("addClickedRowListener");
+  //console.log("addClickedRowListener");
 
-  const elResultsTable = document.querySelector("#form");
-  console.log("addClickedRowListener: elResultsTable is");
-  console.log(elResultsTable);
+  const formElement = document.querySelector("#form");
+  //console.log("addClickedRowListener: formElement is");
+  //console.log(formElement);
 
-  if (elResultsTable && !elResultsTable.hasAttribute("listenerOnClick")) {
-    elResultsTable.setAttribute("listenerOnClick", "true");
-    elResultsTable.addEventListener("click", function (ev) {
-      console.log("clickedRowListener: ev is");
-      console.log(ev);
+  if (formElement && !formElement.hasAttribute("listenerOnClick")) {
+    formElement.setAttribute("listenerOnClick", "true");
+    formElement.addEventListener("click", function (ev) {
+      //console.log("clickedRowListener: ev is");
+      //console.log(ev);
 
       // clear existing selected row if any
       let selectedRow = getClickedRow();
@@ -75,8 +75,8 @@ function addClickedRowListener() {
       // check this is a result row and not the heading
       selectedRow = ev.target;
       if (selectedRow) {
-        console.log("clickedRowListener: selectedRow is ");
-        console.log(selectedRow);
+        //console.log("clickedRowListener: selectedRow is ");
+        //console.log(selectedRow);
 
         selectedRow = selectedRow.closest("div.detail-columns");
         if (selectedRow) {
@@ -177,8 +177,9 @@ async function getPendingSearch() {
 
 function setSearchingBanner() {
   // Modify the page to say it is a WikiTree Sourcer search
-  let headerWrapperElement = document.querySelector("#headerWrapper");
-  if (headerWrapperElement) {
+  let mainElement = document.querySelector("#main");
+  let containerElement = document.querySelector("#main > div.container");
+  if (mainElement && containerElement) {
     let fragment = document.createDocumentFragment();
 
     let pageTitle = document.createElement("div");
@@ -195,7 +196,7 @@ function setSearchingBanner() {
     span.style.color = "green";
     h1.appendChild(span);
 
-    headerWrapperElement.appendChild(fragment);
+    mainElement.insertBefore(fragment, containerElement);
   }
 }
 
@@ -213,30 +214,39 @@ async function doPendingSearch() {
     let submitted = false;
     let inputNotFound = false;
 
-    let isRetry = pendingSearchData.isRetry;
+    let baseName = pendingSearchData.baseName;
     let fieldData = pendingSearchData.fieldData;
 
-    let formElement = document.querySelector("#inputForm");
+    let formElement = document.querySelector("#form");
     //console.log("doPendingSearch: formElement is:");
     //console.log(formElement);
     if (formElement) {
-      let searchButtonElement = formElement.querySelector("a.ke_end_button");
+      let searchButtonElement = formElement.querySelector("input.primary");
 
       //console.log("doPendingSearch: searchButtonElement is:");
       //console.log(searchButtonElement);
 
       for (var key in fieldData) {
         //console.log("checkForPendingSearch: key is: " + key);
+
+        // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:
+        // dateOfEvent:switchGroup:range:dateFrom:day
+
         if (key) {
           let value = fieldData[key];
           //console.log("checkForPendingSearch: value is: " + value);
 
-          let inputElement = formElement.querySelector("input[name='" + key + "']");
+          let name = baseName + key;
+          let inputElement = formElement.querySelector("input[name='" + name + "']");
           //console.log("doPendingSearch: inputElement is:");
           //console.log(inputElement);
 
           if (inputElement) {
-            inputElement.value = value;
+            // just setting the value sometimes does not seem to register with the form
+            inputElement.focus();
+            document.execCommand("selectAll", false);
+            document.execCommand("insertText", false, value);
+            await sleep(20);
           } else {
             inputNotFound = true;
             break;
@@ -253,15 +263,10 @@ async function doPendingSearch() {
         // try to submit form
         if (searchButtonElement) {
           //console.log("about to click button");
-          docHasFocus = document.hasFocus();
-          //console.log("doPendingSearch: docHasFocus is");
-          //console.log(docHasFocus);
-          let activeElement = document.activeElement;
-          //console.log("doPendingSearch: activeElement is");
-          //console.log(activeElement);
 
           // now submit the form to do the search
-          formElement.submit();
+          sleep(1000);
+          searchButtonElement.click();
 
           submitted = true;
         }
@@ -292,7 +297,7 @@ async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: URL is");
   //console.log(document.URL);
 
-  const startingSearchRegEx = /^https\:\/\/www.bdmhistoricalrecords.dia.govt.nz\/search\/search\?.*$/;
+  const startingSearchRegEx = /^https\:\/\/familyhistory\.bdm\.nsw\.gov\.au\/lifelink\/familyhistory\/search\/.*$/;
   let isStartingSearchPage = startingSearchRegEx.test(document.URL);
   if (isStartingSearchPage) {
     //console.log("checkForPendingSearch: URL matches ready to fill form");

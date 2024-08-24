@@ -23,32 +23,35 @@ SOFTWARE.
 */
 
 import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 // Births:
-// Search From Date must be later than 31/12/1839.
-// Search To Date must not be later than 19/08/1974.
+// Earliest record seems to be about 1788.
+// Search To Date must not be later than 100 years ago.
 // Deaths:
-// Search From Date must be later than 31/12/1839.
+// Earliest record seems to be about 1787.
+// Search From Date must be later than 1994. Maybe 30 years ago.
 // Marriages:
-// Search From Date must be later than 31/12/1839.
-// Search To Date must not be later than 19/08/1949.
+// Earliest record seems to be about 1787.
+// Search To Date must not be later than 1974. Maybe 50 years ago.
 
 const birthsDateRange = {
-  from: { day: 1, month: 1, year: 1840 },
-  to: { day: 19, month: 8, year: 1974 },
+  from: { day: 1, month: 1, year: 1787 },
+  toYearsAgo: 100,
 };
 const deathsDateRange = {
-  from: { day: 1, month: 1, year: 1840 },
+  from: { day: 1, month: 1, year: 1787 },
+  toYearsAgo: 30,
 };
 const marriagesDateRange = {
-  from: { day: 1, month: 1, year: 1840 },
-  to: { day: 19, month: 8, year: 1949 },
+  from: { day: 1, month: 1, year: 1787 },
+  toYearsAgo: 50,
 };
 
-function constrainDate(date, allowedDateRange) {
+function constrainDate(date, allowedDateRange, runDate) {
   if (allowedDateRange) {
     let from = allowedDateRange.from;
-    let to = allowedDateRange.to;
+    let toYearsAgo = allowedDateRange.toYearsAgo;
 
     if (from) {
       if (date.year < from.year) {
@@ -67,18 +70,22 @@ function constrainDate(date, allowedDateRange) {
       }
     }
 
-    if (to) {
-      if (date.year > to.year) {
-        date.year = to.year;
-        date.month = to.month;
-        date.day = to.day;
-      } else if (date.year == to.year) {
-        if (date.month > to.month) {
-          date.month = to.month;
-          date.day = to.day;
-        } else if (date.month == to.month) {
-          if (date.day > to.day) {
-            date.day = to.day;
+    if (toYearsAgo && runDate) {
+      let endDate = runDate;
+      endDate.setFullYear(endDate.getFullYear() - toYearsAgo);
+      endDate.setDate(endDate.getDate() - 1);
+
+      if (date.year > endDate.getFullYear()) {
+        date.year = endDate.getFullYear();
+        date.month = endDate.getMonth();
+        date.day = endDate.getDate();
+      } else if (date.year == endDate.getFullYear()) {
+        if (date.month > endDate.getMonth()) {
+          date.month = endDate.getMonth();
+          date.day = endDate.getDate();
+        } else if (date.month == endDate.getMonth()) {
+          if (date.day > endDate.getDate()) {
+            date.day = endDate.getDate();
           }
         }
       }
@@ -88,19 +95,19 @@ function constrainDate(date, allowedDateRange) {
   return date;
 }
 
-function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
+function addDateRange(gd, fieldData, dateString, runDate, options, allowedDateRange) {
   const maxLifespan = Number(options.search_general_maxLifespan);
 
   let exactness = 2;
-  const exactnessOption = options.search_nzbdm_dateExactness;
+  const exactnessOption = options.search_nswbdm_dateExactness;
   if (exactnessOption == "exact") {
     exactness = 0;
   } else if (/^\d+$/.test(exactnessOption)) {
     exactness = Number(exactnessOption);
   }
 
-  let fromDate = { day: 1, month: 1, year: 1840 };
-  let toDate = { day: 31, month: 12, year: 2023 };
+  let fromDate = { day: 1, month: 1, year: 1877 };
+  let toDate = { day: 31, month: 12, year: 1974 };
 
   let usedDateString = false;
   if (dateString) {
@@ -144,16 +151,41 @@ function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
     }
   }
 
-  fromDate = constrainDate(fromDate, allowedDateRange);
-  toDate = constrainDate(toDate, allowedDateRange);
+  fromDate = constrainDate(fromDate, allowedDateRange, runDate);
+  toDate = constrainDate(toDate, allowedDateRange, runDate);
 
-  function makeDateString(date) {
-    return date.day.toString() + "/" + date.month.toString() + "/" + date.year.toString();
+  fieldData["dateOfEvent:switchGroup:range:dateFrom:day"] = fromDate.day;
+  fieldData["dateOfEvent:switchGroup:range:dateFrom:month"] = fromDate.month;
+  fieldData["dateOfEvent:switchGroup:range:dateFrom:year"] = fromDate.year;
+
+  fieldData["dateOfEvent:switchGroup:range:dateTo:day"] = toDate.day;
+  fieldData["dateOfEvent:switchGroup:range:dateTo:month"] = toDate.month;
+  fieldData["dateOfEvent:switchGroup:range:dateTo:year"] = toDate.year;
+}
+
+function addParentGivenNames(gd, fieldData) {
+  if (gd.parents) {
+    if (gd.parents.father && gd.parents.father.name) {
+      let fatherFirstName = gd.parents.father.name.inferFirstName();
+      if (fatherFirstName) {
+        fieldData["fatherGivenName:edit"] = fatherFirstName;
+      }
+      let fatherOtherGivenNames = gd.parents.father.name.inferMiddleNames();
+      if (fatherOtherGivenNames) {
+        fieldData["fatherOtherNames:edit"] = fatherOtherGivenNames;
+      }
+    }
+    if (gd.parents.mother && gd.parents.mother.name) {
+      let motherFirstName = gd.parents.mother.name.inferFirstName();
+      if (motherFirstName) {
+        fieldData["motherGivenName:edit"] = motherFirstName;
+      }
+      let motherOtherGivenNames = gd.parents.mother.name.inferMiddleNames();
+      if (motherOtherGivenNames) {
+        fieldData["motherOtherNames:edit"] = motherOtherGivenNames;
+      }
+    }
   }
-
-  let fromDateString = makeDateString(fromDate);
-  let toDateString = makeDateString(toDate);
-  return { fromDate: fromDateString, toDate: toDateString };
 }
 
 function buildSearchData(input) {
@@ -165,63 +197,98 @@ function buildSearchData(input) {
   const typeOfSearch = input.typeOfSearch;
   const runDate = input.runDate;
 
-  // searchSwitch:birthContainer:idSearchMode:edit
-
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:subjectName:familyName:edit
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:subjectName:givenName:edit
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:subjectName:otherNames:edit
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:fatherGivenName:edit
-
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:dateOfEvent:range:edit
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:dateOfEvent:switchGroup:range:dateFrom:day
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:dateOfEvent:switchGroup:range:dateFrom:month
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:dateOfEvent:switchGroup:range:dateFrom:year
-  //
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:dateOfEvent:switchGroup:range:dateTo:day
-
-  // Reg num:
-  // searchSwitch:birthContainer:birthIdSearchSwitch:birthIdSearchContainer:regNumber:regNumber
-
   let fieldData = {};
 
-  let forenames = gd.inferForenames();
+  let firstName = gd.inferFirstName();
+  let otherGivenNames = gd.inferMiddleNames();
   let lastName = gd.inferLastName();
 
-  if (typeOfSearch == "Births") {
-    fieldData.csur = lastName;
-    fieldData.cfirst = forenames;
-
-    let parentNames = gd.inferParentForenamesAndLastName();
-    if (parentNames.motherForenames) {
-      fieldData.mfirst = parentNames.motherForenames;
-    }
-
-    let dateRange = addDateRange(gd, gd.inferBirthDate(), runDate, options, birthsDateRange);
-    fieldData.cdate_lower = dateRange.fromDate;
-    fieldData.cdate_upper = dateRange.toDate;
-  } else if (typeOfSearch == "Deaths") {
-    fieldData.dsur = lastName;
-    fieldData.dfirst = forenames;
-    let dateRange = addDateRange(gd, gd.inferDeathDate(), runDate, options, deathsDateRange);
-    fieldData.ddate_lower = dateRange.fromDate;
-    fieldData.ddate_upper = dateRange.toDate;
-  } else {
-    if (gd.personGender == "male") {
-      fieldData.bgsur = lastName;
-      fieldData.bgfirst = forenames;
+  let gender = gd.personGender;
+  if (!gender) {
+    let predictedGender = NameUtils.predictGenderFromGivenNames(firstName);
+    if (predictedGender) {
+      gender = predictedGender;
     } else {
-      fieldData.brsur = lastName;
-      fieldData.brfirst = forenames;
+      predictedGender = NameUtils.predictGenderFromGivenNames(otherGivenNames);
+      if (predictedGender) {
+        gender = predictedGender;
+      } else {
+        gender = male;
+      }
     }
-    let dateRange = addDateRange(gd, "", runDate, options, marriagesDateRange);
-    fieldData.wdate_lower = dateRange.fromDate;
-    fieldData.wdate_upper = dateRange.toDate;
+  }
+
+  let baseName = "";
+  if (typeOfSearch == "Births") {
+    baseName = "searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:";
+
+    fieldData["subjectName:familyName:edit"] = lastName;
+    fieldData["subjectName:givenName:edit"] = firstName;
+    fieldData["subjectName:otherNames:edit"] = otherGivenNames;
+
+    addParentGivenNames(gd, fieldData);
+
+    addDateRange(gd, fieldData, gd.inferBirthDate(), runDate, options, birthsDateRange);
+  } else if (typeOfSearch == "Deaths") {
+    baseName = "searchSwitch:deathContainer:deathIdSearchSwitch:deathNameSearchContainer:";
+
+    fieldData["subjectName:familyName:edit"] = lastName;
+    fieldData["subjectName:givenName:edit"] = firstName;
+    fieldData["subjectName:otherNames:edit"] = otherGivenNames;
+
+    addParentGivenNames(gd, fieldData);
+
+    addDateRange(gd, fieldData, gd.inferDeathDate(), runDate, options, deathsDateRange);
+  } else {
+    baseName = "searchSwitch:marriageContainer:marriageIdSearchSwitch:marriageNameSearchContainer:";
+
+    if (gender == "male") {
+      fieldData["groomName:familyName:edit"] = lastName;
+      fieldData["groomName:givenName:edit"] = firstName;
+      fieldData["groomName:otherNames:edit"] = otherGivenNames;
+    } else {
+      fieldData["brideName:familyName:edit"] = lastName;
+      fieldData["brideName:givenName:edit"] = firstName;
+      fieldData["brideName:otherNames:edit"] = otherGivenNames;
+    }
+
+    if (gd.spouses && gd.spouses.length > 0) {
+      let spouse = gd.spouses[0];
+      if (spouse.name) {
+        let spouseLastName = spouse.name.inferLastName();
+        if (spouseLastName) {
+          if (gender == "male") {
+            fieldData["brideName:familyName:edit"] = spouseLastName;
+          } else {
+            fieldData["groomName:familyName:edit"] = spouseLastName;
+          }
+        }
+        let spouseFirstName = spouse.name.inferFirstName();
+        if (spouseFirstName) {
+          if (gender == "male") {
+            fieldData["brideName:givenName:edit"] = spouseFirstName;
+          } else {
+            fieldData["groomName:givenName:edit"] = spouseFirstName;
+          }
+        }
+        let spouseOtherGivenNames = spouse.name.inferMiddleNames();
+        if (spouseOtherGivenNames) {
+          if (gender == "male") {
+            fieldData["brideName:otherNames:edit"] = spouseOtherGivenNames;
+          } else {
+            fieldData["groomName:otherNames:edit"] = spouseFirstName;
+          }
+        }
+      }
+    }
+    addDateRange(gd, fieldData, "", runDate, options, marriagesDateRange);
   }
 
   //console.log("fieldData is:");
   //console.log(fieldData);
 
   var result = {
+    baseName: baseName,
     fieldData: fieldData,
   };
 
