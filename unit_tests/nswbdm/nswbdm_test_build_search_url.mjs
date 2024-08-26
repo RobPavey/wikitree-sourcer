@@ -36,6 +36,16 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/winbush-11_read",
     typeOfSearch: "Births",
   },
+  {
+    caseName: "wikitree_smith-57461_read_death",
+    inputPath: "wikitree/generalized_data/ref/smith-57461_read",
+    typeOfSearch: "Deaths",
+  },
+  {
+    caseName: "wikitree_smith-57461_read_marriage",
+    inputPath: "wikitree/generalized_data/ref/smith-57461_read",
+    typeOfSearch: "Marriages",
+  },
 ];
 
 async function runTests(testManager) {

@@ -49,6 +49,11 @@ const marriagesDateRange = {
 };
 
 function constrainDate(date, allowedDateRange, runDate) {
+  //console.log("constrainDate: runDate is:");
+  //console.log(runDate);
+  //console.log("constrainDate: date is:");
+  //console.log(date);
+
   if (allowedDateRange) {
     let from = allowedDateRange.from;
     let toYearsAgo = allowedDateRange.toYearsAgo;
@@ -71,7 +76,7 @@ function constrainDate(date, allowedDateRange, runDate) {
     }
 
     if (toYearsAgo && runDate) {
-      let endDate = runDate;
+      let endDate = new Date(runDate);
       endDate.setFullYear(endDate.getFullYear() - toYearsAgo);
       endDate.setDate(endDate.getDate() - 1);
 
@@ -96,6 +101,9 @@ function constrainDate(date, allowedDateRange, runDate) {
 }
 
 function addDateRange(gd, fieldData, dateString, runDate, options, allowedDateRange) {
+  //console.log("addDateRange: allowedDateRange is:");
+  //console.log(allowedDateRange);
+
   const maxLifespan = Number(options.search_general_maxLifespan);
 
   let exactness = 2;

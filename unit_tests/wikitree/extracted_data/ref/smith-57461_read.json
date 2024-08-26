@@ -1,0 +1,38 @@
+{
+  "hasValidData": true,
+  "firstNames": "Grace",
+  "prefNames": "",
+  "middleNames": "Edna",
+  "lnab": "Smith",
+  "currentLastName": "Smith",
+  "mothersMaidenName": "Jurd",
+  "birthDate": "29 Jun 1908",
+  "birthDateStatus": "none",
+  "deathDate": "26 Aug 2004",
+  "deathDateStatus": "none",
+  "birthLocation": "Gosford, New South Wales, Australia",
+  "deathLocation": "New Lambton, New South Wales, Australia",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Cummins-531",
+      "name": "James Patrick Cummins",
+      "marriageString": "[date unknown] [location unknown]"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Smith-57461",
+  "currentTabText": "Grace Smith's Profile",
+  "pageType": "read",
+  "wikiId": "Smith-57461",
+  "name": "Grace Edna Smith",
+  "parents": {
+    "father": {
+      "wikiId": "Smith-57458",
+      "name": "John Patrick Smith"
+    },
+    "mother": {
+      "wikiId": "Jurd-189",
+      "name": "Frances Amelia Jurd"
+    }
+  }
+}

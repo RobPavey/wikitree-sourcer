@@ -66,6 +66,7 @@ async function nswbdmSearch(generalizedData, typeOfSearch) {
     typeOfSearch: typeOfSearch,
     generalizedData: generalizedData,
     options: options,
+    runDate: new Date(),
   };
   doAsyncActionWithCatch("New South Wales BDM (Aus) Search", input, async function () {
     let loadedModule = await import(`../core/nswbdm_build_search_data.mjs`);
