@@ -24,27 +24,46 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { NswbdmEdReader } from "./nswbdm_ed_reader.mjs";
 
-function buildNswbdmUrl(ed, builder) {
-  return ed.url;
+function buildNswbdmUrl(ed, gd, builder) {
+  var nswbdmUrl = "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/";
+  if (gd.recordType == RT.BirthRegistration) {
+    nswbdmUrl += "births";
+  } else if (gd.recordType == RT.DeathRegistration) {
+    nswbdmUrl += "deaths";
+  } else if (gd.recordType == RT.MarriageRegistration) {
+    nswbdmUrl += "marriages";
+  }
+  return nswbdmUrl;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "New South Wales Births, Deaths and Marriages";
+  let format = builder.options.citation_nswbdm_sourceTitleFormat;
+
+  switch (format) {
+    case "nswbdm":
+      builder.sourceTitle = "New South Wales Births, Deaths and Marriages";
+      break;
+    case "nswgrbdm":
+      builder.sourceTitle = "NSW Government. Registry of Births, Deaths and Marriages";
+      break;
+  }
 }
 
-function buildSourceReference(ed, gd, builder) {
+function buildSourceReference(ed, gd, builder, edReader) {
   if (ed.recordData) {
     let registrationNumberParts = ed.registrationNumberParts;
     if (registrationNumberParts && registrationNumberParts.length >= 2) {
       let type = "";
       if (gd.recordType == RT.BirthRegistration) {
-        type = "Birth ";
+        type = "Birth";
       } else if (gd.recordType == RT.DeathRegistration) {
-        type = "Death ";
+        type = "Death";
       } else if (gd.recordType == RT.MarriageRegistration) {
-        type = "Marriage ";
+        type = "Marriage";
       }
+      builder.addSourceReferenceText(type);
       let registrationString = registrationNumberParts[0] + "/" + registrationNumberParts[1];
       if (registrationNumberParts.length >= 3) {
         registrationString += " " + registrationNumberParts[2];
@@ -52,21 +71,58 @@ function buildSourceReference(ed, gd, builder) {
       if (registrationNumberParts.length >= 4) {
         registrationString += " " + registrationNumberParts[3];
       }
-      builder.sourceReference = type + "Registration Number: " + registrationString;
+      builder.addSourceReferenceField("Registration Number", registrationString);
+    }
+
+    let district = edReader.getCitationDistrict();
+    if (district) {
+      builder.addSourceReferenceField("District", district);
     }
   }
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var nswbdmUrl = buildNswbdmUrl(ed, builder);
+  var nswbdmUrl = buildNswbdmUrl(ed, gd, builder);
 
-  let recordLink = "[" + nswbdmUrl + " New South Wales BDM (Aus) Record]";
-  builder.recordLinkOrTemplate = recordLink;
+  let options = builder.getOptions();
+  let linkOption = options.citation_nswbdm_includeLink;
+
+  if (linkOption == "none") {
+    return;
+  }
+
+  let recordLink = "";
+
+  if (linkOption == "inSourceTitle") {
+    builder.putRecordLinkInTitle = true;
+    recordLink = nswbdmUrl;
+  } else if (linkOption == "asNswBdm") {
+    recordLink = "[" + nswbdmUrl + " NSW BDM]";
+  } else if (linkOption == "asTypeSearchPage") {
+    let type = "";
+    if (gd.recordType == RT.BirthRegistration) {
+      type = "Births";
+    } else if (gd.recordType == RT.DeathRegistration) {
+      type = "Deaths";
+    } else if (gd.recordType == RT.MarriageRegistration) {
+      type = "Marriages";
+    }
+
+    if (type) {
+      recordLink = "[" + nswbdmUrl + " " + type + " search page]";
+    }
+  }
+
+  if (recordLink) {
+    builder.recordLinkOrTemplate = recordLink;
+  }
 }
 
 function buildCoreCitation(ed, gd, builder) {
+  let edReader = new NswbdmEdReader(ed);
+
   buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
+  buildSourceReference(ed, gd, builder, edReader);
   buildRecordLink(ed, gd, builder);
   builder.addStandardDataString(gd);
 }

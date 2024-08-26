@@ -26,6 +26,7 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { convertDistrictCodeToName } from "./nswbdm_district_codes.mjs";
 
 function cleanNameString(nameString) {
   return NameUtils.convertNameFromAllCapsToMixedCase(nameString);
@@ -244,6 +245,23 @@ class NswbdmEdReader extends ExtractedDataReader {
 
   getCollectionData() {
     return undefined;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Functions to support build citation
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getCitationDistrict() {
+    let district = this.getRecordDataValue("District");
+
+    let convertedDistrict = convertDistrictCodeToName(district);
+    if (convertedDistrict) {
+      district = district + " (" + convertedDistrict + ")";
+    } else {
+      district = StringUtils.toInitialCapsEachWord(district);
+    }
+
+    return district;
   }
 }
 

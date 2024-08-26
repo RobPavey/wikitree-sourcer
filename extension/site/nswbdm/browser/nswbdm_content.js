@@ -94,19 +94,19 @@ function addClickedRowListener() {
 async function unregisterTabWithBackground() {
   //console.log("unregisterTabWithBackground");
 
-  // send message to background script that we have a nzbdm tab open
+  // send message to background script that we have a nswbdm tab open
   let unregisterResponse = await chrome.runtime.sendMessage({
     type: "unregisterTab",
-    siteName: "nzbdm",
+    siteName: "nswbdm",
     tab: registeredTabId,
   });
 
-  //console.log("nzbdm, response from unregisterTab message");
+  //console.log("nswbdm, response from unregisterTab message");
   //console.log(unregisterResponse);
 
   if (chrome.runtime.lastError) {
     // possibly there is no background script loaded, this should never happen
-    console.log("nzbdm: No response from background script, lastError message is:");
+    console.log("nswbdm: No response from background script, lastError message is:");
     console.log(chrome.runtime.lastError.message);
   }
 }
@@ -114,14 +114,14 @@ async function unregisterTabWithBackground() {
 var registeredTabId = undefined;
 
 async function registerTabWithBackground() {
-  // send message to background script that we have a nzbdm tab open
+  // send message to background script that we have a nswbdm tab open
   // This can fail with the error:
   //  Uncaught (in promise) Error: Extension context invalidated.
   // if the extension has been updated. So we do a try/catch
   try {
-    let registerResponse = await chrome.runtime.sendMessage({ type: "registerTab", siteName: "nzbdm" });
+    let registerResponse = await chrome.runtime.sendMessage({ type: "registerTab", siteName: "nswbdm" });
 
-    //console.log("nzbdm, response from registerTab message");
+    //console.log("nswbdm, response from registerTab message");
     //console.log(registerResponse);
 
     // we remember the tabId because in Firefox when we try to unregister
@@ -132,7 +132,7 @@ async function registerTabWithBackground() {
 
     if (chrome.runtime.lastError) {
       // possibly there is no background script loaded, this should never happen
-      console.log("nzbdm: No response from background script, lastError message is:");
+      console.log("nswbdm: No response from background script, lastError message is:");
       console.log(chrome.runtime.lastError.message);
     } else {
       //console.log("addng event listener for unregister");
@@ -149,7 +149,7 @@ async function registerTabWithBackground() {
   } catch (error) {
     // possibly there is no background script loaded, this should never happen
     // Could also be that the extension was just reloaded/updated
-    console.log("nzbdm: No response from background script, error is:");
+    console.log("nswbdm: No response from background script, error is:");
     console.log(error);
   }
 }
@@ -346,9 +346,9 @@ async function checkForPendingSearch() {
 
 async function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    //console.log("nzbdm: additionalMessageHandler, request is:");
+    //console.log("nswbdm: additionalMessageHandler, request is:");
     //console.log(request);
-    //console.log("nzbdm: additionalMessageHandler, document.URL is:");
+    //console.log("nswbdm: additionalMessageHandler, document.URL is:");
     //console.log(document.URL);
 
     // We could try to check if this is the correct type of page (Births, Deaths etc)

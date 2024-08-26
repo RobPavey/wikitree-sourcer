@@ -24,20 +24,89 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchBehaviorOptionsGroup = {
+  category: "search",
+  subcategory: "nswbdm",
+  tab: "search",
+  subsection: "nswbdm",
+  subheading: "behavior",
+  options: [
+    {
+      optionName: "reuseExistingTab",
+      type: "checkbox",
+      label: "Do search in existing NSW BDM tab if present",
+      defaultValue: false,
+    },
+  ],
+};
+
+const searchParametersOptionsGroup = {
+  category: "search",
+  subcategory: "nswbdm",
+  tab: "search",
+  subsection: "nswbdm",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "dateExactness",
+      type: "select",
+      label: "Search exactness to use for the search from/to dates",
+      values: [
+        { value: "exact", text: "Exact year only" },
+        { value: "1", text: "+/- 1 years" },
+        { value: "2", text: "+/- 2 years" },
+        { value: "3", text: "+/- 3 years" },
+        { value: "5", text: "+/- 5 years" },
+        { value: "10", text: "+/- 10 years" },
+        { value: "25", text: "+/- 25 years" },
+      ],
+      defaultValue: "2",
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
   subcategory: "nswbdm",
   tab: "citation",
   subsection: "nswbdm",
-  options: [],
+  options: [
+    {
+      optionName: "sourceTitleFormat",
+      type: "select",
+      label: "Source title",
+      values: [
+        { value: "nswbdm", text: "New South Wales Births, Deaths and Marriages" },
+        { value: "nswgrbdm", text: "NSW Government. Registry of Births, Deaths and Marriages" },
+      ],
+      defaultValue: "nswbdm",
+    },
+    {
+      optionName: "includeLink",
+      type: "select",
+      label: "Include link to NSW BDM site",
+      values: [
+        { value: "none", text: "No" },
+        { value: "asNswBdm", text: 'As "NSW BDM"' },
+        { value: "asTypeSearchPage", text: 'As "<type> search page"' },
+        { value: "inSourceTitle", text: "In source title" },
+      ],
+      defaultValue: "asTypeSearchPage",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "nswbdm", "New South Wales BDM (Aus)");
 registerSiteSearchPopupOptionsGroup("nswbdm", 7, 7);
+registerSubheadingForOptions("search", "nswbdm", "behavior", "Search Behavior");
+registerOptionsGroup(searchBehaviorOptionsGroup);
+registerSubheadingForOptions("search", "nswbdm", "parameters", "Search Parameters");
+registerOptionsGroup(searchParametersOptionsGroup);
 
 registerSubsectionForOptions("citation", "nswbdm", "New South Wales BDM (Aus)");
 registerOptionsGroup(citationOptionsGroup);
