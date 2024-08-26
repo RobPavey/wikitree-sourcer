@@ -40,6 +40,12 @@ const regressionData = [
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?24",
   },
   {
+    // has a post-1974 district number
+    // has hyphen in last name
+    caseName: "death_1981_ian_mclaurin_smith",
+    url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?62",
+  },
+  {
     caseName: "marriage_1873_stephen_mccready",
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?32",
   },

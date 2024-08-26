@@ -202,6 +202,7 @@ function buildSearchData(input) {
   let firstName = gd.inferFirstName();
   let otherGivenNames = gd.inferMiddleNames();
   let lastName = gd.inferLastName();
+  let lastNameAtDeath = gd.inferLastNameAtDeath();
 
   let gender = gd.personGender;
   if (!gender) {
@@ -232,7 +233,11 @@ function buildSearchData(input) {
   } else if (typeOfSearch == "Deaths") {
     baseName = "searchSwitch:deathContainer:deathIdSearchSwitch:deathNameSearchContainer:";
 
-    fieldData["subjectName:familyName:edit"] = lastName;
+    if (lastNameAtDeath) {
+      fieldData["subjectName:familyName:edit"] = lastNameAtDeath;
+    } else {
+      fieldData["subjectName:familyName:edit"] = lastName;
+    }
     fieldData["subjectName:givenName:edit"] = firstName;
     fieldData["subjectName:otherNames:edit"] = otherGivenNames;
 

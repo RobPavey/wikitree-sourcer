@@ -536,6 +536,10 @@ function convertDistrictCodeToName(code) {
     return earlyDistrict;
   }
 
+  if (/^\d\d\d$/.test(code)) {
+    code = "L" + code;
+  }
+
   let lateDistrict = lateDistrictCodes[code];
   if (lateDistrict) {
     return lateDistrict;

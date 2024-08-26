@@ -209,6 +209,8 @@ async function doPendingSearch() {
   //console.log("doPendingSearch: called");
   //console.log("doPendingSearch: URL is");
   //console.log(document.URL);
+  console.log("doPendingSearch: pendingSearchData is");
+  console.log(pendingSearchData);
 
   if (pendingSearchData) {
     let submitted = false;
@@ -221,25 +223,44 @@ async function doPendingSearch() {
     //console.log("doPendingSearch: formElement is:");
     //console.log(formElement);
     if (formElement) {
-      let searchButtonElement = formElement.querySelector("input.primary");
+      if (pendingSearchData.isRegNumSearch) {
+        // we need to switch the select to search by reg number,
+        // this will change the layout of the page
+        let selectName = "";
+        if (pendingSearchData.searchType == "Births") {
+          selectName = "searchSwitch:birthContainer:idSearchMode:edit";
+        } else if (pendingSearchData.searchType == "Deaths") {
+          selectName = "searchSwitch:deathContainer:idSearchMode:edit";
+        } else if (pendingSearchData.searchType == "Marriages") {
+          selectName = "searchSwitch:marriageContainer:idSearchMode:edit";
+        }
 
-      //console.log("doPendingSearch: searchButtonElement is:");
-      //console.log(searchButtonElement);
+        if (selectName) {
+          let selectElement = formElement.querySelector("select[name='" + selectName + "']");
+          if (selectElement) {
+            selectElement.value = "Yes";
+            var event = new Event("change", { bubbles: true });
+            selectElement.dispatchEvent(event);
+            // 100 is too short from tests
+            await sleep(500);
+          }
+        }
+      }
 
       for (var key in fieldData) {
-        //console.log("checkForPendingSearch: key is: " + key);
-
-        // searchSwitch:birthContainer:birthIdSearchSwitch:birthNameSearchContainer:
-        // dateOfEvent:switchGroup:range:dateFrom:day
+        console.log("doPendingSearch: key is: " + key);
 
         if (key) {
           let value = fieldData[key];
-          //console.log("checkForPendingSearch: value is: " + value);
+          console.log("doPendingSearch: value is: " + value);
 
           let name = baseName + key;
+
+          console.log("doPendingSearch: name is: " + name);
+
           let inputElement = formElement.querySelector("input[name='" + name + "']");
-          //console.log("doPendingSearch: inputElement is:");
-          //console.log(inputElement);
+          console.log("doPendingSearch: inputElement is:");
+          console.log(inputElement);
 
           if (inputElement) {
             // just setting the value sometimes does not seem to register with the form
@@ -254,18 +275,22 @@ async function doPendingSearch() {
         }
       }
 
-      //console.log("inputNotFound is:");
-      //console.log(inputNotFound);
+      console.log("inputNotFound is:");
+      console.log(inputNotFound);
 
       if (!inputNotFound) {
-        await sleep(20);
+        await sleep(100);
+
+        let searchButtonElement = formElement.querySelector("input.primary");
+
+        //console.log("doPendingSearch: searchButtonElement is:");
+        //console.log(searchButtonElement);
 
         // try to submit form
         if (searchButtonElement) {
           //console.log("about to click button");
 
           // now submit the form to do the search
-          sleep(1000);
           searchButtonElement.click();
 
           submitted = true;

@@ -775,6 +775,101 @@ async function openNzbdmGivenSearchData(tab, options, searchData) {
   return false;
 }
 
+function buildNswbdmSearchData(lcText) {
+  // To be NSW BDM we need some identifiers
+  if (!(lcText.includes("nsw") || lcText.includes("n.s.w.") || lcText.includes("new south wales"))) {
+    return undefined;
+  }
+
+  if (
+    !(lcText.includes("bdm") || lcText.includes("birth") || lcText.includes("death") || lcText.includes("marriage"))
+  ) {
+    return undefined;
+  }
+
+  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, false);
+
+  if (!yearAndNum) {
+    return undefined;
+  }
+
+  let regNum = yearAndNum.regNum;
+  let regYear = yearAndNum.regYear;
+
+  // see if we can decide whether to search for births, deaths or marriages
+  // Exxample text:
+  // Victoria State Government, Registry of Births, Deaths and Marriages Victoria. Richard Goodall Elrington. Birth. Registration number 3218 / 1870. Father: Name. Mother: Name. District: Place. Link to search page
+  let birthOccurrences = (lcText.match(/birth/g) || []).length;
+  let deathOccurrences = (lcText.match(/death/g) || []).length;
+  let marriageOccurrences = (lcText.match(/marriage/g) || []).length;
+
+  //console.log("birthOccurrences is '" + birthOccurrences + "'");
+  //console.log("deathOccurrences is '" + deathOccurrences + "'");
+  //console.log("marriageOccurrences is '" + marriageOccurrences + "'");
+
+  let link = "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/";
+  let searchType = "";
+
+  let baseName = "";
+  if (birthOccurrences && birthOccurrences > deathOccurrences && birthOccurrences > marriageOccurrences) {
+    link += "births";
+    searchType = "Births";
+    baseName = "searchSwitch:birthContainer:birthIdSearchSwitch:birthIdSearchContainer:";
+  } else if (deathOccurrences && deathOccurrences > birthOccurrences && deathOccurrences > marriageOccurrences) {
+    link += "deaths";
+    searchType = "Deaths";
+    baseName = "searchSwitch:deathContainer:deathIdSearchSwitch:deathIdSearchContainer:";
+  } else if (marriageOccurrences && marriageOccurrences > birthOccurrences && marriageOccurrences > deathOccurrences) {
+    link += "marriages";
+    searchType = "Marriages";
+    baseName = "searchSwitch:marriageContainer:marriageIdSearchSwitch:marriageIdSearchContainer:";
+  } else {
+    return undefined;
+  }
+
+  let fieldData = {};
+  fieldData["regNumber:regNumber"] = regNum;
+  fieldData["regNumber:regYear"] = regYear;
+
+  const searchData = {
+    timeStamp: Date.now(),
+    url: link,
+    baseName: baseName,
+    fieldData: fieldData,
+    searchType: searchType,
+    isRegNumSearch: true,
+  };
+
+  return searchData;
+}
+
+async function openNswbdmGivenSearchData(tab, options, searchData) {
+  console.log("openNswbdmGivenSearchData, searchData is:");
+  console.log(searchData);
+
+  try {
+    let existingTab = await getRegisteredTab("nswbdm");
+
+    let reuseTabIfPossible = options.search_nswbdm_reuseExistingTab;
+
+    const checkPermissionsOptions = {
+      reason: "To perform a search on NSW BDM a content script needs to be loaded on the bdm.nsw.gov.au search page.",
+    };
+    let allowed = await checkPermissionForSite("*://*.bdm.nsw.gov.au/*", checkPermissionsOptions);
+    if (!allowed) {
+      return false;
+    }
+
+    doSearchGivenSearchData(searchData, tab, options, existingTab, reuseTabIfPossible);
+    return true;
+  } catch (ex) {
+    console.log("openNswbdmGivenSearchData failed");
+    console.log(ex);
+  }
+
+  return false;
+}
+
 function openSelectionText(info, tab) {
   let text = info.selectionText;
 
@@ -821,6 +916,15 @@ function openSelectionText(info, tab) {
   if (searchData) {
     callFunctionWithStoredOptions(function (options) {
       openNzbdmGivenSearchData(tab, options, searchData);
+    });
+    return;
+  }
+
+  // check for New South Wales BDM
+  searchData = buildNswbdmSearchData(lcText);
+  if (searchData) {
+    callFunctionWithStoredOptions(function (options) {
+      openNswbdmGivenSearchData(tab, options, searchData);
     });
     return;
   }

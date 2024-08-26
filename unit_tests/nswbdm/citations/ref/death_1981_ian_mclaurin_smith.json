@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath; Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith death 1989 in New South Wales, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ian's death was registered in 1989 in New South Wales, Australia.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath; Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith death 1989 in New South Wales, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death; Registration Number: 108710/1989; District: 120 (Grafton)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>Ian McLaurin-Smith death 1989 in New South Wales, Australia.",
+    "type": "source"
+  }
+}
