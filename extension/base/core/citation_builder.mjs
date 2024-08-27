@@ -429,10 +429,8 @@ class CitationBuilder {
       citation += this.sharingLinkOrTemplate;
       if (this.recordLinkOrTemplate) {
         if (subReqString) {
-          citation += " (free access)<br/>";
-          if (this.type != "source" && options.citation_general_addNewlinesWithinBody) {
-            citation += "\n";
-          }
+          citation += " (free access)";
+          citation = this.addBreakNewlineOrAlternatives(citation);
         } else {
           citation += " - "; // separate the two links with a hyphen for space
         }
