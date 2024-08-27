@@ -15,5 +15,17 @@
   },
   "lastNameAtDeath": "McLaurin-Smith",
   "registrationDistrict": "120",
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Robert"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Mary"
+      }
+    }
+  },
   "hasValidData": true
 }

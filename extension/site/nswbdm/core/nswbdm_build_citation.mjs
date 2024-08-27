@@ -76,6 +76,13 @@ function buildSourceReference(ed, gd, builder, edReader) {
 
     let district = edReader.getCitationDistrict();
     if (district) {
+      if (gd.recordType == RT.DeathRegistration) {
+        let deathPlace = edReader.getCitationDeathPlaceIfDifferentToDistrict();
+        if (deathPlace) {
+          district += " (died in " + deathPlace + ")";
+        }
+      }
+
       builder.addSourceReferenceField("District", district);
     }
   }

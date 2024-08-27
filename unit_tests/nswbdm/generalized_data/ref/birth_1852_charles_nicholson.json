@@ -18,13 +18,11 @@
   "parents": {
     "father": {
       "name": {
-        "lastName": "Nicholson",
         "forenames": "Charles"
       }
     },
     "mother": {
       "name": {
-        "lastName": "Nicholson",
         "forenames": "Elizabeth A"
       }
     }

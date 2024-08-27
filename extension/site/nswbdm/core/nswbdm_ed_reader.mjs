@@ -49,9 +49,21 @@ class NswbdmEdReader extends ExtractedDataReader {
   // Helper functions
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  getRecordDataField(keys) {
+    for (let key of keys) {
+      let lcKey = key.toLowerCase();
+      for (let rdKey in this.ed.recordData) {
+        let lcRdKey = rdKey.toLowerCase();
+        if (lcKey == lcRdKey) {
+          return this.ed.recordData[rdKey];
+        }
+      }
+    }
+  }
+
   getGivenNames() {
     if (this.recordType == RT.MarriageRegistration) {
-      return cleanNameString(this.ed.recordData["Groom's GivenName(s)"]);
+      return cleanNameString(this.getRecordDataField(["Groom's GivenName(s)"]));
     } else {
       return cleanNameString(this.ed.firstName);
     }
@@ -59,7 +71,7 @@ class NswbdmEdReader extends ExtractedDataReader {
 
   getLastName() {
     if (this.recordType == RT.MarriageRegistration) {
-      return cleanNameString(this.ed.recordData["Groom's Family Name"]);
+      return cleanNameString(this.getRecordDataField(["Groom's Family Name"]));
     } else {
       return cleanNameString(this.ed.lastName);
     }
@@ -146,6 +158,20 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getDeathPlaceObj() {
+    if (this.recordType == RT.DeathRegistration) {
+      let placeString = "";
+      let motherGivenNames = this.getRecordDataField(["Mother's Given name(s)"]);
+      if (motherGivenNames && motherGivenNames.startsWith("DIED ")) {
+        placeString = motherGivenNames.substring(5).trim();
+      }
+
+      if (placeString) {
+        placeString = StringUtils.toInitialCapsEachWord(placeString);
+        //placeString += ", New South Wales, Australia";
+        return this.makePlaceObjFromFullPlaceName(placeString);
+      }
+    }
+
     return undefined;
   }
 
@@ -156,7 +182,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   getAgeAtDeath() {
     if (this.recordType == RT.DeathRegistration) {
       // "Father's Given Name(s)": "AGE 77 YEARS",
-      let possibleAgeString = this.ed.recordData["Father's Given Name(s)"];
+      let possibleAgeString = this.getRecordDataField(["Father's Given Name(s)"]);
       if (possibleAgeString) {
         if (possibleAgeString.startsWith("AGE ")) {
           return possibleAgeString.substring(4).toLowerCase().trim();
@@ -168,7 +194,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getRegistrationDistrict() {
-    let districtString = this.ed.recordData["District"];
+    let districtString = this.getRecordDataField(["District"]);
 
     if (districtString) {
       if (districtString.length <= 3) {
@@ -183,8 +209,8 @@ class NswbdmEdReader extends ExtractedDataReader {
 
   getSpouses() {
     if (this.recordType == RT.MarriageRegistration) {
-      let brideGivenNames = cleanNameString(this.ed.recordData["Bride's Given Name(s)"]);
-      let brideFamilyName = cleanNameString(this.ed.recordData["Bride's Family Name(s)"]);
+      let brideGivenNames = cleanNameString(this.getRecordDataField(["Bride's Given Name(s)"]));
+      let brideFamilyName = cleanNameString(this.getRecordDataField(["Bride's Family Name(s)"]));
       let spouseNameObj = this.makeNameObjFromForenamesAndLastName(brideGivenNames, brideFamilyName);
       if (spouseNameObj) {
         let spouse = { name: spouseNameObj };
@@ -202,9 +228,10 @@ class NswbdmEdReader extends ExtractedDataReader {
 
   getParents() {
     if (this.recordType == RT.BirthRegistration || this.recordType == RT.DeathRegistration) {
-      let familyName = this.getLastName();
-      let motherGivenNames = this.ed.recordData["Mother's Given name(s)"];
-      let fatherGivenNames = this.ed.recordData["Father's Given name(s)"];
+      //let familyName = this.getLastName();
+      let familyName = "";
+      let motherGivenNames = this.getRecordDataField(["Mother's Given name(s)"]);
+      let fatherGivenNames = this.getRecordDataField(["Father's Given name(s)"]);
 
       if (this.recordType == RT.DeathRegistration) {
         if (motherGivenNames && motherGivenNames.startsWith("DIED ")) {
@@ -252,7 +279,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   getCitationDistrict() {
-    let district = this.getRecordDataValue("District");
+    let district = this.getRecordDataField(["District"]);
 
     let convertedDistrict = convertDistrictCodeToName(district);
     if (convertedDistrict) {
@@ -262,6 +289,27 @@ class NswbdmEdReader extends ExtractedDataReader {
     }
 
     return district;
+  }
+
+  getCitationDeathPlaceIfDifferentToDistrict() {
+    if (this.recordType == RT.DeathRegistration) {
+      let placeString = "";
+      let motherGivenNames = this.getRecordDataField(["Mother's Given name(s)"]);
+      let district = this.getRecordDataField(["District"]);
+
+      if (motherGivenNames && motherGivenNames.startsWith("DIED ")) {
+        placeString = motherGivenNames.substring(5).trim();
+      }
+
+      if (placeString && placeString != district) {
+        placeString = StringUtils.toInitialCapsEachWord(placeString);
+
+        let citationDistrict = this.getCitationDistrict();
+        if (placeString != citationDistrict) {
+          return placeString;
+        }
+      }
+    }
   }
 }
 

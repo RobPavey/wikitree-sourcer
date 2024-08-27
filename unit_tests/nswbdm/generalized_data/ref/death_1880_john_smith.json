@@ -3,21 +3,27 @@
   "sourceType": "record",
   "recordType": "DeathRegistration",
   "name": {
-    "lastName": "Nicholson",
-    "forenames": "Francis"
+    "lastName": "Smith",
+    "forenames": "John"
   },
   "personGender": "male",
   "eventDate": {
-    "yearString": "1888"
+    "yearString": "1880"
   },
   "eventPlace": {
     "placeString": "New South Wales, Australia"
   },
-  "lastNameAtDeath": "Nicholson",
+  "lastNameAtDeath": "Smith",
   "deathPlace": {
-    "placeString": "Parramatta"
+    "placeString": "Singleton"
   },
-  "ageAtDeath": "77 years",
-  "registrationDistrict": "Parramatta",
+  "registrationDistrict": "Patricks Plain",
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "James"
+      }
+    }
+  },
   "hasValidData": true
 }
