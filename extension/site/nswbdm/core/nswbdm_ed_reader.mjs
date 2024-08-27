@@ -65,7 +65,11 @@ class NswbdmEdReader extends ExtractedDataReader {
     if (this.recordType == RT.MarriageRegistration) {
       return cleanNameString(this.getRecordDataField(["Groom's GivenName(s)"]));
     } else {
-      return cleanNameString(this.ed.firstName);
+      let firstName = this.ed.firstName;
+      if (firstName == "MALE" || firstName == "FEMALE") {
+        return "";
+      }
+      return cleanNameString(firstName);
     }
   }
 
@@ -104,6 +108,13 @@ class NswbdmEdReader extends ExtractedDataReader {
   getGender() {
     if (this.recordType == RT.MarriageRegistration) {
       return "male";
+    }
+
+    let firstName = this.ed.firstName;
+    if (firstName == "MALE") {
+      return "male";
+    } else if (firstName == "FEMALE") {
+      return "female";
     }
 
     return NameUtils.predictGenderFromGivenNames(this.getGivenNames());
