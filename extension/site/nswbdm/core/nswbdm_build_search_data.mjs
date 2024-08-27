@@ -108,7 +108,7 @@ function addDateRange(gd, fieldData, dateString, runDate, options, allowedDateRa
 
   let exactness = 2;
   const exactnessOption = options.search_nswbdm_dateExactness;
-  if (exactnessOption == "exact") {
+  if (exactnessOption == "exactYear" || exactnessOption == "exactDate") {
     exactness = 0;
   } else if (/^\d+$/.test(exactnessOption)) {
     exactness = Number(exactnessOption);
@@ -142,6 +142,22 @@ function addDateRange(gd, fieldData, dateString, runDate, options, allowedDateRa
         toMonth = 12;
       }
       let toYear = parsedDate.yearNum + exactness;
+
+      if (exactnessOption == "exactDate") {
+        if (parsedDate.hasDay && toDay == fromDay) {
+          // we can't set the to and from dates to exactly the same day
+          if (toDay == lastDayOfMonth[parsedDate.monthNum - 1]) {
+            fromDay -= 1;
+          } else {
+            toDay += 1;
+          }
+        }
+      } else if (exactnessOption == "exactYear") {
+        fromDay = 1;
+        fromMonth = 1;
+        toDay = 31;
+        toMonth = 12;
+      }
 
       fromDate = { day: fromDay, month: fromMonth, year: fromYear };
       toDate = { day: toDay, month: toMonth, year: toYear };

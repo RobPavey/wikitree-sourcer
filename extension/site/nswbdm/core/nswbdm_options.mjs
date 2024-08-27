@@ -57,7 +57,8 @@ const searchParametersOptionsGroup = {
       type: "select",
       label: "Search exactness to use for the search from/to dates",
       values: [
-        { value: "exact", text: "Exact year only" },
+        { value: "exactDate", text: "Exact date" },
+        { value: "exactYear", text: "Exact year" },
         { value: "1", text: "+/- 1 years" },
         { value: "2", text: "+/- 2 years" },
         { value: "3", text: "+/- 3 years" },
