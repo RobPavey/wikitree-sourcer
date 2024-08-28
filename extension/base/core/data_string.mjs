@@ -825,6 +825,11 @@ function getDeathRegistrationString(gd, options) {
 
   dataString += addRegistrationPlace(gd, options);
 
+  let parentNames = gd.inferParentNamesForDataString();
+  if (parentNames.fatherName || parentNames.motherName) {
+    dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
+  }
+
   return dataString;
 }
 
