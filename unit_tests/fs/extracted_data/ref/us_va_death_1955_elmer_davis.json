@@ -1,0 +1,58 @@
+{
+  "recordData": {
+    "Name": "Elmer Lawrence Davis",
+    "Race": "White",
+    "Death Registration Date": "03 Feb 1955",
+    "Death Date": "06 Jan 1955",
+    "Death Place": ", Grayson, Virginia, United States",
+    "Birth Date": "12 Apr 1910",
+    "Age": "44",
+    "Record Nbr": "1744",
+    "System Of Record": "SLS"
+  },
+  "fullName": "Elmer Lawrence Davis",
+  "surname": "Davis",
+  "givenName": "Elmer Lawrence",
+  "gender": "male",
+  "factType": "DeathRegistration",
+  "eventDateOriginal": "03 Feb 1955",
+  "eventDate": "3 Feb 1955",
+  "eventYear": "1955",
+  "deathDateOriginal": "06 Jan 1955",
+  "deathDate": "6 Jan 1955",
+  "deathYear": "1955",
+  "deathMonth": "Jan",
+  "birthDateOriginal": "12 Apr 1910",
+  "birthDate": "12 Apr 1910",
+  "birthYear": "1910",
+  "age": "44",
+  "mother": {
+    "fullName": "Willie Parcell",
+    "surname": "Parcell",
+    "givenName": "Willie",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QK"
+  },
+  "spouseFullName": "Evie Brunk Davis",
+  "spouseSurname": "Davis",
+  "spouseGivenName": "Evie Brunk",
+  "father": {
+    "fullName": "Emmett Davis",
+    "surname": "Davis",
+    "givenName": "Emmett",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QV"
+  },
+  "extData": "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C95D-78NZ\",\"FS_COLLECTION_ID\":\"2377565\",\"FS_FOLDER\":\"100936704\"}",
+  "referenceData": {
+    "sourceRegNbr": "380",
+    "digitalFilmNumber": "100936704",
+    "imageNumber": "65"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:Q244-F1YB",
+  "collectionTitle": "Virginia, Death Certificates, 1912-1987",
+  "fsCollectionId": "2377565",
+  "citation": "\"Virginia, Death Certificates, 1912-1987\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ : Fri Feb 23 23:43:13 UTC 2024), Entry for Elmer Lawrence Davis and Emmett Davis, 03 Feb 1955.",
+  "sourceTitleForPerson": "Elmer Lawrence Davis, \"Virginia, Death Certificates, 1912-1987\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C95D-78NZ",
+  "pageType": "record"
+}

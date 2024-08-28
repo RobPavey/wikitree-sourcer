@@ -1,0 +1,62 @@
+{
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Elmer Lawrence Davis",
+    "lastName": "Davis",
+    "forenames": "Elmer Lawrence"
+  },
+  "birthDate": {
+    "dateString": "12 Apr 1910",
+    "yearString": "1910"
+  },
+  "deathDate": {
+    "dateString": "6 Jan 1955",
+    "yearString": "1955"
+  },
+  "eventDate": {
+    "dateString": "3 Feb 1955",
+    "yearString": "1955"
+  },
+  "ageAtDeath": "44",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Emmett Davis",
+        "forenames": "Emmett",
+        "lastName": "Davis"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Willie Parcell",
+        "forenames": "Willie",
+        "lastName": "Parcell"
+      }
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Evie Brunk Davis",
+        "lastName": "Davis",
+        "forenames": "Evie Brunk"
+      }
+    }
+  ],
+  "race": "White",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QVRD-74QJ}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-C95D-78NZ}}",
+    "{{FamilySearch Record|QVRD-74QV}}",
+    "{{FamilySearch Record|QVRD-74QK}}"
+  ],
+  "collectionData": {
+    "id": "2377565"
+  },
+  "hasValidData": true
+}

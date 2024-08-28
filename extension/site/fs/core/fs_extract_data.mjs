@@ -3401,6 +3401,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
           result.factType == "Birth" ||
           result.factType == "BirthRegistration" ||
           result.factType == "Death" ||
+          result.factType == "DeathRegistration" ||
           result.factType == "Marriage" ||
           result.factType == "MarriageNotice"
         ) {

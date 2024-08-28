@@ -33,6 +33,18 @@
   "deathDate": "28 Mar 1982",
   "deathYear": "1982",
   "deathMonth": "3",
+  "father": {
+    "fullName": "William M Crosier",
+    "givenName": "William M",
+    "surname": "Crosier",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:KFP2-VS5"
+  },
+  "mother": {
+    "fullName": "Mary L Flynn",
+    "givenName": "Mary L",
+    "surname": "Flynn",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSR"
+  },
   "referenceData": {
     "externalFilmNumber": "31394_203756",
     "externalPublicationTitle": "Vermont Death Records, 1909-2008",

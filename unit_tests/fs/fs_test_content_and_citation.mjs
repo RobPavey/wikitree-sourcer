@@ -481,6 +481,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWT",
   },
   {
+    caseName: "us_va_death_1955_elmer_davis",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ",
+  },
+  {
     caseName: "us_vt_vital_1982_mildred_mattison",
     url: "https://www.familysearch.org/ark:/61903/1:1:KFP2-VSP",
   },
