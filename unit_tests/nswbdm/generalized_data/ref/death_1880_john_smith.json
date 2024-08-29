@@ -25,5 +25,10 @@
       }
     }
   },
+  "collectionData": {
+    "id": "Deaths",
+    "registrationNumber": "9530",
+    "year": "1880"
+  },
   "hasValidData": true
 }

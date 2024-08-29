@@ -27,5 +27,10 @@
       }
     }
   },
+  "collectionData": {
+    "id": "Deaths",
+    "registrationNumber": "108710",
+    "year": "1989"
+  },
   "hasValidData": true
 }

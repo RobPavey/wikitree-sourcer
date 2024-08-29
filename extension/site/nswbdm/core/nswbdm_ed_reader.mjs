@@ -38,10 +38,13 @@ class NswbdmEdReader extends ExtractedDataReader {
 
     if (ed.resultsType == "Births") {
       this.recordType = RT.BirthRegistration;
+      this.isBirth = true;
     } else if (ed.resultsType == "Deaths") {
       this.recordType = RT.DeathRegistration;
+      this.isDeath = true;
     } else if (ed.resultsType == "Marriages") {
       this.recordType = RT.MarriageRegistration;
+      this.isMarriage = true;
     }
   }
 
@@ -67,7 +70,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getGivenNames() {
-    if (this.recordType == RT.MarriageRegistration) {
+    if (this.isMarriage) {
       return cleanNameString(this.getRecordDataFieldWithListNoCase(["Groom's Given Name(s)"]));
     } else {
       let firstName = this.ed.firstName;
@@ -79,7 +82,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getLastName() {
-    if (this.recordType == RT.MarriageRegistration) {
+    if (this.isMarriage) {
       return cleanNameString(this.getRecordDataFieldWithListNoCase(["Groom's Family Name"]));
     } else {
       return cleanNameString(this.ed.lastName);
@@ -111,7 +114,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getGender() {
-    if (this.recordType == RT.MarriageRegistration) {
+    if (this.isMarriage) {
       return "male";
     }
 
@@ -144,14 +147,14 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtBirth() {
-    if (this.recordType == RT.BirthRegistration) {
+    if (this.isBirth) {
       return this.getLastName();
     }
     return "";
   }
 
   getLastNameAtDeath() {
-    if (this.recordType == RT.DeathRegistration) {
+    if (this.isDeath) {
       return this.getLastName();
     }
     return "";
@@ -174,7 +177,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getDeathPlaceObj() {
-    if (this.recordType == RT.DeathRegistration) {
+    if (this.isDeath) {
       let placeString = "";
       let motherGivenNames = this.getRecordDataFieldWithListNoCase(["Mother's Given name(s)"]);
       if (motherGivenNames && motherGivenNames.startsWith("DIED ")) {
@@ -196,7 +199,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getAgeAtDeath() {
-    if (this.recordType == RT.DeathRegistration) {
+    if (this.isDeath) {
       // "Father's Given Name(s)": "AGE 77 YEARS",
       let possibleAgeString = this.getRecordDataFieldWithListNoCase(["Father's Given Name(s)"]);
       if (possibleAgeString) {
@@ -224,7 +227,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
-    if (this.recordType == RT.MarriageRegistration) {
+    if (this.isMarriage) {
       let brideGivenNames = cleanNameString(this.getRecordDataFieldWithListNoCase(["Bride's Given Name(s)"]));
       let brideFamilyName = cleanNameString(this.getRecordDataFieldWithListNoCase(["Bride's Family Name(s)"]));
       let spouseNameObj = this.makeNameObjFromForenamesAndLastName(brideGivenNames, brideFamilyName);
@@ -243,13 +246,13 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getParents() {
-    if (this.recordType == RT.BirthRegistration || this.recordType == RT.DeathRegistration) {
+    if (this.isBirth || this.isDeath) {
       //let familyName = this.getLastName();
       let familyName = "";
       let motherGivenNames = this.getRecordDataFieldWithListNoCase(["Mother's Given name(s)"]);
       let fatherGivenNames = this.getRecordDataFieldWithListNoCase(["Father's Given name(s)"]);
 
-      if (this.recordType == RT.DeathRegistration) {
+      if (this.isDeath) {
         if (motherGivenNames && motherGivenNames.startsWith("DIED ")) {
           motherGivenNames = "";
         }
@@ -287,7 +290,23 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getCollectionData() {
-    return undefined;
+    let id = "";
+    if (this.isBirth) {
+      id = "Births";
+    } else if (this.isDeath) {
+      id = "Deaths";
+    } else if (this.isMarriage) {
+      id = "Marriages";
+    }
+    let collectionData = { id: id };
+
+    let registrationNumberParts = this.ed.registrationNumberParts;
+    if (registrationNumberParts && registrationNumberParts.length >= 2) {
+      collectionData.registrationNumber = registrationNumberParts[0];
+      collectionData.year = registrationNumberParts[1];
+    }
+
+    return collectionData;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -308,7 +327,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getCitationDeathPlaceIfDifferentToDistrict() {
-    if (this.recordType == RT.DeathRegistration) {
+    if (this.isDeath) {
       let placeString = "";
       let motherGivenNames = this.getRecordDataFieldWithListNoCase(["Mother's Given name(s)"]);
       let district = this.getRecordDataFieldWithListNoCase(["District"]);

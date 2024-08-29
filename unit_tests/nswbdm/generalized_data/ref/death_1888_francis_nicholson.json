@@ -19,5 +19,10 @@
   },
   "ageAtDeath": "77 years",
   "registrationDistrict": "Parramatta",
+  "collectionData": {
+    "id": "Deaths",
+    "registrationNumber": "8616",
+    "year": "1888"
+  },
   "hasValidData": true
 }

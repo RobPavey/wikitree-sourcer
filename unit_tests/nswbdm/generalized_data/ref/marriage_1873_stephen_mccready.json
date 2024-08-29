@@ -26,5 +26,10 @@
       }
     }
   ],
+  "collectionData": {
+    "id": "Marriages",
+    "registrationNumber": "113",
+    "year": "1873"
+  },
   "hasValidData": true
 }

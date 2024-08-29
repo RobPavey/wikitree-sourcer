@@ -27,5 +27,10 @@
       }
     }
   },
+  "collectionData": {
+    "id": "Births",
+    "registrationNumber": "120",
+    "year": "1852"
+  },
   "hasValidData": true
 }
