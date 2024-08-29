@@ -49,12 +49,17 @@ class NswbdmEdReader extends ExtractedDataReader {
   // Helper functions
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  getRecordDataField(keys) {
+  getRecordDataFieldWithListNoCase(keys) {
     for (let key of keys) {
       let lcKey = key.toLowerCase();
+      let lcNsKey = lcKey.replace(/\s+/g, "");
       for (let rdKey in this.ed.recordData) {
         let lcRdKey = rdKey.toLowerCase();
         if (lcKey == lcRdKey) {
+          return this.ed.recordData[rdKey];
+        }
+        let lcRdNsKey = lcRdKey.replace(/\s+/g, "");
+        if (lcNsKey == lcRdNsKey) {
           return this.ed.recordData[rdKey];
         }
       }
@@ -63,10 +68,10 @@ class NswbdmEdReader extends ExtractedDataReader {
 
   getGivenNames() {
     if (this.recordType == RT.MarriageRegistration) {
-      return cleanNameString(this.getRecordDataField(["Groom's GivenName(s)"]));
+      return cleanNameString(this.getRecordDataFieldWithListNoCase(["Groom's Given Name(s)"]));
     } else {
       let firstName = this.ed.firstName;
-      if (firstName == "MALE" || firstName == "FEMALE") {
+      if (firstName == "MALE" || firstName == "FEMALE" || firstName == "UNNAMED") {
         return "";
       }
       return cleanNameString(firstName);
@@ -75,7 +80,7 @@ class NswbdmEdReader extends ExtractedDataReader {
 
   getLastName() {
     if (this.recordType == RT.MarriageRegistration) {
-      return cleanNameString(this.getRecordDataField(["Groom's Family Name"]));
+      return cleanNameString(this.getRecordDataFieldWithListNoCase(["Groom's Family Name"]));
     } else {
       return cleanNameString(this.ed.lastName);
     }
@@ -171,7 +176,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   getDeathPlaceObj() {
     if (this.recordType == RT.DeathRegistration) {
       let placeString = "";
-      let motherGivenNames = this.getRecordDataField(["Mother's Given name(s)"]);
+      let motherGivenNames = this.getRecordDataFieldWithListNoCase(["Mother's Given name(s)"]);
       if (motherGivenNames && motherGivenNames.startsWith("DIED ")) {
         placeString = motherGivenNames.substring(5).trim();
       }
@@ -193,7 +198,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   getAgeAtDeath() {
     if (this.recordType == RT.DeathRegistration) {
       // "Father's Given Name(s)": "AGE 77 YEARS",
-      let possibleAgeString = this.getRecordDataField(["Father's Given Name(s)"]);
+      let possibleAgeString = this.getRecordDataFieldWithListNoCase(["Father's Given Name(s)"]);
       if (possibleAgeString) {
         if (possibleAgeString.startsWith("AGE ")) {
           return possibleAgeString.substring(4).toLowerCase().trim();
@@ -205,7 +210,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   }
 
   getRegistrationDistrict() {
-    let districtString = this.getRecordDataField(["District"]);
+    let districtString = this.getRecordDataFieldWithListNoCase(["District"]);
 
     if (districtString) {
       if (districtString.length <= 3) {
@@ -220,8 +225,8 @@ class NswbdmEdReader extends ExtractedDataReader {
 
   getSpouses() {
     if (this.recordType == RT.MarriageRegistration) {
-      let brideGivenNames = cleanNameString(this.getRecordDataField(["Bride's Given Name(s)"]));
-      let brideFamilyName = cleanNameString(this.getRecordDataField(["Bride's Family Name(s)"]));
+      let brideGivenNames = cleanNameString(this.getRecordDataFieldWithListNoCase(["Bride's Given Name(s)"]));
+      let brideFamilyName = cleanNameString(this.getRecordDataFieldWithListNoCase(["Bride's Family Name(s)"]));
       let spouseNameObj = this.makeNameObjFromForenamesAndLastName(brideGivenNames, brideFamilyName);
       if (spouseNameObj) {
         let spouse = { name: spouseNameObj };
@@ -241,8 +246,8 @@ class NswbdmEdReader extends ExtractedDataReader {
     if (this.recordType == RT.BirthRegistration || this.recordType == RT.DeathRegistration) {
       //let familyName = this.getLastName();
       let familyName = "";
-      let motherGivenNames = this.getRecordDataField(["Mother's Given name(s)"]);
-      let fatherGivenNames = this.getRecordDataField(["Father's Given name(s)"]);
+      let motherGivenNames = this.getRecordDataFieldWithListNoCase(["Mother's Given name(s)"]);
+      let fatherGivenNames = this.getRecordDataFieldWithListNoCase(["Father's Given name(s)"]);
 
       if (this.recordType == RT.DeathRegistration) {
         if (motherGivenNames && motherGivenNames.startsWith("DIED ")) {
@@ -290,7 +295,7 @@ class NswbdmEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   getCitationDistrict() {
-    let district = this.getRecordDataField(["District"]);
+    let district = this.getRecordDataFieldWithListNoCase(["District"]);
 
     let convertedDistrict = convertDistrictCodeToName(district);
     if (convertedDistrict) {
@@ -305,8 +310,8 @@ class NswbdmEdReader extends ExtractedDataReader {
   getCitationDeathPlaceIfDifferentToDistrict() {
     if (this.recordType == RT.DeathRegistration) {
       let placeString = "";
-      let motherGivenNames = this.getRecordDataField(["Mother's Given name(s)"]);
-      let district = this.getRecordDataField(["District"]);
+      let motherGivenNames = this.getRecordDataFieldWithListNoCase(["Mother's Given name(s)"]);
+      let district = this.getRecordDataFieldWithListNoCase(["District"]);
 
       if (motherGivenNames && motherGivenNames.startsWith("DIED ")) {
         placeString = motherGivenNames.substring(5).trim();

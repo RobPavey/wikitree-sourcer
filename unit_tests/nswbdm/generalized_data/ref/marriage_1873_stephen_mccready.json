@@ -3,7 +3,8 @@
   "sourceType": "record",
   "recordType": "MarriageRegistration",
   "name": {
-    "lastName": "McCready"
+    "lastName": "McCready",
+    "forenames": "Stephen"
   },
   "personGender": "male",
   "eventDate": {
