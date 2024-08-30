@@ -47,7 +47,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: nswbdmStartYear,
     endYear: nswbdmEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["Australia", "Colony of New South Wales"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {

@@ -63,7 +63,6 @@ function buildSourceReference(ed, gd, builder, edReader) {
       } else if (gd.recordType == RT.MarriageRegistration) {
         type = "Marriage";
       }
-      builder.addSourceReferenceText(type);
       let registrationString = registrationNumberParts[0] + "/" + registrationNumberParts[1];
       if (registrationNumberParts.length >= 3) {
         registrationString += " " + registrationNumberParts[2];
@@ -71,7 +70,7 @@ function buildSourceReference(ed, gd, builder, edReader) {
       if (registrationNumberParts.length >= 4) {
         registrationString += " " + registrationNumberParts[3];
       }
-      builder.addSourceReferenceField("Registration Number", registrationString);
+      builder.addSourceReferenceField(type + " Registration Number", registrationString);
     }
 
     let district = edReader.getCitationDistrict();

@@ -114,7 +114,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "nzbdm", "New Zealand BDM");
-registerSiteSearchPopupOptionsGroup("nzbdm", 7, 7);
+registerSiteSearchPopupOptionsGroup("nzbdm", 4, 4);
 registerSubheadingForOptions("search", "nzbdm", "behavior", "Search Behavior");
 registerOptionsGroup(searchBehaviorOptionsGroup);
 registerSubheadingForOptions("search", "nzbdm", "parameters", "Search Parameters");

@@ -166,6 +166,14 @@ class NzbdmEdReader extends ExtractedDataReader {
   }
 
   getAgeAtDeath() {
+    if (this.recordType == RT.DeathRegistration) {
+      let dobAge = this.ed.recordData["Date of Birth/Age at Death"];
+      if (!/^\d+ \w+ \d\d\d\d$/.test(dobAge)) {
+        // it is an age
+        return dobAge;
+      }
+    }
+
     return "";
   }
 

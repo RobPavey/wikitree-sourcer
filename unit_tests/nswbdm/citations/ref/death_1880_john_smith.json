@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath; Registration Number: 9530/1880; District: Patricks Plain (died in Singleton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nJohn Smith death 1880 in New South Wales, Australia, son of James.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 9530/1880; District: Patricks Plain (died in Singleton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nJohn Smith death 1880 in New South Wales, Australia, son of James.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "John's death was registered in 1880 in New South Wales, Australia. He was the son of James.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath; Registration Number: 9530/1880; District: Patricks Plain (died in Singleton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nJohn Smith death 1880 in New South Wales, Australia, son of James.\n</ref>",
+    "citation": "John's death was registered in 1880 in New South Wales, Australia. He was the son of James.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 9530/1880; District: Patricks Plain (died in Singleton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nJohn Smith death 1880 in New South Wales, Australia, son of James.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death; Registration Number: 9530/1880; District: Patricks Plain (died in Singleton)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>John Smith death 1880 in New South Wales, Australia, son of James.",
+    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 9530/1880; District: Patricks Plain (died in Singleton)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>John Smith death 1880 in New South Wales, Australia, son of James.",
     "type": "source"
   }
 }
