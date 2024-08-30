@@ -233,11 +233,15 @@ function openLink(info, tab) {
         openFmpLink(tab, link, options);
       });
     } else {
-      // open unchanged link
-      callFunctionWithStoredOptions(function (options) {
-        const tabOption = options.context_general_newTabPos;
-        openInNewTab(link, tab, tabOption);
-      });
+      let openedAsText = openSelectionPlainText(link, tab);
+
+      if (!openedAsText) {
+        // open unchanged link
+        callFunctionWithStoredOptions(function (options) {
+          const tabOption = options.context_general_newTabPos;
+          openInNewTab(link, tab, tabOption);
+        });
+      }
     }
   }
 }
@@ -803,6 +807,10 @@ function buildNswbdmSearchData(lcText) {
   let deathOccurrences = (lcText.match(/death/g) || []).length;
   let marriageOccurrences = (lcText.match(/marriage/g) || []).length;
 
+  birthOccurrences += (lcText.match(/born/g) || []).length;
+  deathOccurrences += (lcText.match(/died/g) || []).length;
+  marriageOccurrences += (lcText.match(/married/g) || []).length;
+
   //console.log("birthOccurrences is '" + birthOccurrences + "'");
   //console.log("deathOccurrences is '" + deathOccurrences + "'");
   //console.log("marriageOccurrences is '" + marriageOccurrences + "'");
@@ -844,8 +852,8 @@ function buildNswbdmSearchData(lcText) {
 }
 
 async function openNswbdmGivenSearchData(tab, options, searchData) {
-  console.log("openNswbdmGivenSearchData, searchData is:");
-  console.log(searchData);
+  //console.log("openNswbdmGivenSearchData, searchData is:");
+  //console.log(searchData);
 
   try {
     let existingTab = await getRegisteredTab("nswbdm");
@@ -870,15 +878,14 @@ async function openNswbdmGivenSearchData(tab, options, searchData) {
   return false;
 }
 
-function openSelectionText(info, tab) {
-  let text = info.selectionText;
-
+function openSelectionPlainText(text, tab) {
   //console.log("openSelectionText, text is: " + text);
 
   let templateStartIndex = text.indexOf("{{");
   if (templateStartIndex != -1) {
     //console.log("contains a template");
     openTemplate(info, tab);
+    return true;
   }
 
   // not a template, could be a Wiki-Id
@@ -893,23 +900,12 @@ function openSelectionText(info, tab) {
       const tabOption = options.context_general_newTabPos;
       openInNewTab(link, tab, tabOption);
     });
-    return;
+    return true;
   }
 
   let lcText = text.toLowerCase();
   //console.log("lcText is:");
   //console.log(lcText);
-
-  // check for Victorian BDM
-  if (lcText.includes("vic")) {
-    let searchData = buildVicbdmSearchData(lcText);
-    if (searchData) {
-      callFunctionWithStoredOptions(function (options) {
-        openVicbdmGivenSearchData(tab, options, searchData);
-      });
-      return;
-    }
-  }
 
   // check for New Zealand BDM
   let searchData = buildNzbdmSearchData(lcText);
@@ -917,7 +913,7 @@ function openSelectionText(info, tab) {
     callFunctionWithStoredOptions(function (options) {
       openNzbdmGivenSearchData(tab, options, searchData);
     });
-    return;
+    return true;
   }
 
   // check for New South Wales BDM
@@ -926,8 +922,28 @@ function openSelectionText(info, tab) {
     callFunctionWithStoredOptions(function (options) {
       openNswbdmGivenSearchData(tab, options, searchData);
     });
-    return;
+    return true;
   }
+
+  // check for Victorian BDM (do this last because another site ctation might have the given name
+  // Victoria in it).
+  if (lcText.includes("vic")) {
+    let searchData = buildVicbdmSearchData(lcText);
+    if (searchData) {
+      callFunctionWithStoredOptions(function (options) {
+        openVicbdmGivenSearchData(tab, options, searchData);
+      });
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function openSelectionText(info, tab) {
+  let text = info.selectionText;
+
+  return openSelectionPlainText(text, tab);
 }
 
 function contextClick(info, tab) {
