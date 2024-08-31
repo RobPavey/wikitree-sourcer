@@ -220,6 +220,8 @@ function openLink(info, tab) {
   // When saved:
   // linkUrl: "https://ancestry.prf.hn/click/camref:1011l4xx5/type:cpc/destination:https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=7619&h=4576311"
 
+  //console.log("openLink, info is: ");
+  //console.log(info);
   let link = info.linkUrl;
   if (link) {
     //console.log("openLink, orig link is: " + link);
@@ -233,7 +235,7 @@ function openLink(info, tab) {
         openFmpLink(tab, link, options);
       });
     } else {
-      let openedAsText = openSelectionPlainText(link, tab);
+      let openedAsText = openSelectionPlainText(info.selectionText, tab);
 
       if (!openedAsText) {
         // open unchanged link
@@ -411,12 +413,58 @@ function openTemplate(info, tab) {
   }
 }
 
-function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
+function extractYearAndRegistrationNumberFromText(lcText, extractInput) {
+  let defaultToYearFirst = extractInput.defaultToYearFirst;
+  let startYear = extractInput.startYear;
+
   //console.log("extractYearAndRegistrationNumberFromText, lcText is:");
   //console.log(lcText);
 
   let regNum = "";
   let regYear = "";
+
+  function handleTwoExtractedNumbers(num1, num2) {
+    //console.log("num1 is '" + num1 + "'");
+    //console.log("num2 is '" + num2 + "'");
+
+    if (!num1 || !num2 || num1 == lcText || num2 == lcText) {
+      return false;
+    }
+
+    if (num1.length == 4 || num2.length == 4) {
+      let number1 = Number(num1);
+      let number2 = Number(num2);
+      if (defaultToYearFirst) {
+        regYear = num1;
+        regNum = num2;
+      } else {
+        regYear = num2;
+        regNum = num1;
+      }
+      if (!(num2.length == 4 && number2 >= startYear && number2 < 2050)) {
+        if (num1.length == 4 && number1 >= startYear && number1 < 2050) {
+          regYear = num1;
+          regNum = num2;
+        }
+      }
+      return true;
+    }
+    return false;
+  }
+
+  function lookForWellSeparatedNumSlashNum() {
+    //console.log("lcText is '" + lcText + "'");
+
+    const regex = /(?:^.*[^\d\/]|^)(\d+)\s?\/\s?(\d+)(?:[^\d\/].*$|$)/;
+    if (!regex.test(lcText)) {
+      return false;
+    }
+
+    let num1 = lcText.replace(regex, "$1");
+    let num2 = lcText.replace(regex, "$2");
+
+    return handleTwoExtractedNumbers(num1, num2);
+  }
 
   function lookForNormalNumSlashNum() {
     let startIndex = lcText.search(/\d+ ?\/ ?\d+/);
@@ -440,32 +488,8 @@ function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
 
     let num1 = refText.replace(/^(\d+) ?\/ ?\d+\s*\d*$/, "$1");
     let num2 = refText.replace(/^\d+ ?\/ ?(\d+)\s*\d*$/, "$1");
-    //console.log("num1 is '" + num1 + "'");
-    //console.log("num2 is '" + num2 + "'");
 
-    if (!num1 || !num2 || num1 == refText || num2 == refText) {
-      return false;
-    }
-
-    if (num1.length == 4 || num2.length == 4) {
-      let number1 = Number(num1);
-      let number2 = Number(num2);
-      if (defaultToYearFirst) {
-        regYear = num1;
-        regNum = num2;
-      } else {
-        regYear = num2;
-        regNum = num1;
-      }
-      if (!(num2.length == 4 && number2 > 1800 && number2 < 2050)) {
-        if (num1.length == 4 && number1 > 1800 && number1 < 2050) {
-          regYear = num1;
-          regNum = num2;
-        }
-      }
-      return true;
-    }
-    return false;
+    return handleTwoExtractedNumbers(num1, num2);
   }
 
   function lookForOtherNumSepNum() {
@@ -500,27 +524,8 @@ function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
 
     let num1 = refText.replace(/^[:,\s]*(\d+)\s*[:,]\s*\d+[:,\s]*$/, "$1");
     let num2 = refText.replace(/^[:,\s]*\d+\s*[:,]\s*(\d+)$/, "$1");
-    //console.log("num1 is '" + num1 + "'");
-    //console.log("num2 is '" + num2 + "'");
 
-    if (!num1 || !num2 || num1 == refText || num2 == refText) {
-      return false;
-    }
-
-    if (num1.length == 4 || num2.length == 4) {
-      let number1 = Number(num1);
-      let number2 = Number(num2);
-      regYear = num1;
-      regNum = num2;
-      if (!(num1.length == 4 && number1 > 1800 && number1 < 2050)) {
-        if (num2.length == 4 && number2 > 1800 && number2 < 2050) {
-          regYear = num2;
-          regNum = num1;
-        }
-      }
-      return true;
-    }
-    return false;
+    return handleTwoExtractedNumbers(num1, num2);
   }
 
   function lookForSeparateYearAndRefNum() {
@@ -595,7 +600,11 @@ function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
     return true;
   }
 
-  let foundYearAndNum = lookForNormalNumSlashNum();
+  let foundYearAndNum = lookForWellSeparatedNumSlashNum();
+
+  if (!foundYearAndNum) {
+    foundYearAndNum = lookForNormalNumSlashNum();
+  }
 
   if (!foundYearAndNum) {
     foundYearAndNum = lookForOtherNumSepNum();
@@ -619,7 +628,11 @@ function buildVicbdmSearchData(lcText) {
   //console.log("looks like Victorian BDM, lcText is:");
   //console.log(lcText);
 
-  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, false);
+  const extractInput = {
+    defaultToYearFirst: false,
+    startYear: 1800,
+  };
+  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, extractInput);
 
   if (!yearAndNum) {
     return undefined;
@@ -702,7 +715,11 @@ function buildNzbdmSearchData(lcText) {
     return undefined;
   }
 
-  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, true);
+  const extractInput = {
+    defaultToYearFirst: true,
+    startYear: 1800,
+  };
+  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, extractInput);
 
   if (!yearAndNum) {
     return undefined;
@@ -791,7 +808,12 @@ function buildNswbdmSearchData(lcText) {
     return undefined;
   }
 
-  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, false);
+  const extractInput = {
+    defaultToYearFirst: false,
+    startYear: 1700,
+  };
+
+  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, extractInput);
 
   if (!yearAndNum) {
     return undefined;
