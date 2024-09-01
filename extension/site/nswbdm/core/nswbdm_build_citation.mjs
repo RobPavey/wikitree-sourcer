@@ -52,6 +52,8 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder, edReader) {
+  let options = builder.getOptions();
+
   if (ed.recordData) {
     let registrationNumberParts = ed.registrationNumberParts;
     if (registrationNumberParts && registrationNumberParts.length >= 2) {
@@ -73,16 +75,14 @@ function buildSourceReference(ed, gd, builder, edReader) {
       builder.addSourceReferenceField(type + " Registration Number", registrationString);
     }
 
-    let district = edReader.getCitationDistrict();
-    if (district) {
-      if (gd.recordType == RT.DeathRegistration) {
-        let deathPlace = edReader.getCitationDeathPlaceIfDifferentToDistrict();
-        if (deathPlace) {
-          district += " (died in " + deathPlace + ")";
-        }
-      }
+    let dataStyleOption = options.citation_nswbdm_dataStyle;
 
-      builder.addSourceReferenceField("District", district);
+    if (dataStyleOption == "sentence") {
+      // the sentence will not display the district
+      let district = edReader.getCitationDistrictPlusPossibleDeathPlace();
+      if (district) {
+        builder.addSourceReferenceField("District", district);
+      }
     }
   }
 }
@@ -124,13 +124,60 @@ function buildRecordLink(ed, gd, builder) {
   }
 }
 
+function buildCuratedListDataString(ed, gd, builder) {
+  let edReader = new NswbdmEdReader(ed);
+
+  const fields = [
+    { key: "", value: edReader.getCitationName() },
+    { key: "Father's Given Name(s)", value: edReader.getCitationFatherGivenNames() },
+    { key: "Mother's Given Name(s)", value: edReader.getCitationMotherGivenNames() },
+    { key: "Age at Death", value: edReader.getCitationAgeAtDeath() },
+    { key: "District", value: edReader.getCitationDistrictPlusPossibleDeathPlace() },
+  ];
+
+  builder.addListDataString(fields);
+}
+
+function buildOriginalListDataString(ed, gd, builder) {
+  const fieldsToExclude = ["Event", "Registration number"];
+
+  let nameString = "";
+  if (ed.lastName) {
+    nameString += ed.lastName;
+  }
+  if (ed.firstName) {
+    if (nameString) {
+      nameString += " ";
+    }
+    nameString += ed.firstName;
+  }
+  if (nameString) {
+    builder.dataString = builder.addSingleValueToDataListString(nameString);
+  }
+
+  builder.addListDataStringFromRecordData(ed.recordData, fieldsToExclude);
+}
+
+function buildDataString(ed, gd, builder) {
+  let options = builder.getOptions();
+  let dataStyleOption = options.citation_nswbdm_dataStyle;
+
+  if (dataStyleOption == "listCurated") {
+    buildCuratedListDataString(ed, gd, builder);
+  } else if (dataStyleOption == "sentence") {
+    builder.addStandardDataString(gd);
+  } else if (dataStyleOption == "listOriginal") {
+    buildOriginalListDataString(ed, gd, builder);
+  }
+}
+
 function buildCoreCitation(ed, gd, builder) {
   let edReader = new NswbdmEdReader(ed);
 
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder, edReader);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  buildDataString(ed, gd, builder);
 }
 
 function buildCitation(input) {

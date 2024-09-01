@@ -10,5 +10,41 @@
   "std_source": {
     "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 120/1852 V1852120 38; District: CA (Sydney, St Phillip's)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>Charles Nicholson birth 1852 in New South Wales, Australia, son of Charles & Elizabeth A.",
     "type": "source"
+  },
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 120/1852 V1852120 38<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Charles's birth was registered in 1852 in New South Wales, Australia. He was the son of Charles & Elizabeth A.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 120/1852 V1852120 38<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 120/1852 V1852120 38<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_listCurated_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 120/1852 V1852120 38<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nCharles Nicholson; Father's Given Name(s): Charles; Mother's Given Name(s): Elizabeth A; District: CA (Sydney, St Phillip's).\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_listCurated_narrative": {
+    "citation": "Charles's birth was registered in 1852 in New South Wales, Australia. He was the son of Charles & Elizabeth A.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 120/1852 V1852120 38<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nCharles Nicholson; Father's Given Name(s): Charles; Mother's Given Name(s): Elizabeth A; District: CA (Sydney, St Phillip's).\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_listCurated_source": {
+    "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 120/1852 V1852120 38<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>Charles Nicholson; Father's Given Name(s): Charles; Mother's Given Name(s): Elizabeth A; District: CA (Sydney, St Phillip's).",
+    "type": "source"
+  },
+  "dataStyle_listOriginal_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 120/1852 V1852120 38<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nNICHOLSON CHARLES; Father's Given name(s): CHARLES; Mother's Given name(s): ELIZABETH A; District: CA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_listOriginal_narrative": {
+    "citation": "Charles's birth was registered in 1852 in New South Wales, Australia. He was the son of Charles & Elizabeth A.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 120/1852 V1852120 38<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nNICHOLSON CHARLES; Father's Given name(s): CHARLES; Mother's Given name(s): ELIZABETH A; District: CA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_listOriginal_source": {
+    "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 120/1852 V1852120 38<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>NICHOLSON CHARLES; Father's Given name(s): CHARLES; Mother's Given name(s): ELIZABETH A; District: CA.",
+    "type": "source"
   }
 }

@@ -207,6 +207,45 @@ class CitationBuilder {
     }
   }
 
+  addListDataString(fields) {
+    let dataString = this.dataString;
+
+    for (let field of fields) {
+      if (field.key) {
+        dataString = this.addKeyValuePairToDataListString(dataString, field.key, field.value);
+      } else {
+        dataString = this.addSingleValueToDataListString(dataString, field.value);
+      }
+    }
+
+    if (dataString) {
+      if (!dataString.endsWith(".")) {
+        dataString += ".";
+      }
+      this.dataString = dataString;
+    }
+  }
+
+  addListDataStringFromRecordData(recordData, fieldsToExclude) {
+    let dataString = this.dataString;
+
+    for (let key in recordData) {
+      if (!fieldsToExclude.includes(key)) {
+        let value = recordData[key];
+        if (value) {
+          dataString = this.addKeyValuePairToDataListString(dataString, key, value);
+        }
+      }
+    }
+
+    if (dataString) {
+      if (!dataString.endsWith(".")) {
+        dataString += ".";
+      }
+      this.dataString = dataString;
+    }
+  }
+
   addNarrative(gd, dataCache, options) {
     // eventually these should come from the dataCache
     // The problem is how to be sure we get a valid match from the data cache?

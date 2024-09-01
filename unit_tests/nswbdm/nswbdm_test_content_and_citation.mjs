@@ -34,6 +34,26 @@ const regressionData = [
   {
     caseName: "birth_1852_charles_nicholson",
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?3",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
   {
     // has a death place different to district
@@ -49,10 +69,50 @@ const regressionData = [
     // has hyphen in last name
     caseName: "death_1981_ian_mclaurin_smith",
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?62",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
   {
     caseName: "marriage_1873_stephen_mccready",
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?32",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
 ];
 

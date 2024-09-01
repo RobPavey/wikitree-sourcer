@@ -76,6 +76,26 @@ const regressionData = [
   {
     caseName: "birth_1965_nr_nicholson_sb_page2",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FbirthSelect.m%3Fpage%3D2#matches",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
   {
     caseName: "death_1935_norman_mcdonald",
@@ -84,6 +104,26 @@ const regressionData = [
   {
     caseName: "death_2001_mary_lyall",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dDeathSearch%26recordsPP%3d30#SearchResults",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
   {
     caseName: "marriage_1843_elizabeth_wilson",
@@ -92,6 +132,26 @@ const regressionData = [
   {
     caseName: "marriage_1947_ngaio_wilson",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dMarriageSearch%26recordsPP%3d30#SearchResults",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
 ];
 

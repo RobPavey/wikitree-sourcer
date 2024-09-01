@@ -313,6 +313,24 @@ class NswbdmEdReader extends ExtractedDataReader {
   // Functions to support build citation
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  getCitationName() {
+    let nameObj = this.getNameObj();
+    if (nameObj) {
+      let name = nameObj.inferFullName();
+      if (name) {
+        let spouses = this.getSpouses();
+        if (spouses && spouses.length == 1 && spouses[0].name) {
+          let spouseName = spouses[0].name.inferFullName();
+          if (spouseName) {
+            name = name + " and " + spouseName;
+          }
+        }
+        return name;
+      }
+    }
+    return "";
+  }
+
   getCitationDistrict() {
     let district = this.getRecordDataFieldWithListNoCase(["District"]);
 
@@ -345,6 +363,38 @@ class NswbdmEdReader extends ExtractedDataReader {
         }
       }
     }
+  }
+
+  getCitationDistrictPlusPossibleDeathPlace() {
+    let district = this.getCitationDistrict();
+    if (district) {
+      if (this.recordType == RT.DeathRegistration) {
+        let deathPlace = this.getCitationDeathPlaceIfDifferentToDistrict();
+        if (deathPlace) {
+          district += " (died in " + deathPlace + ")";
+        }
+      }
+    }
+
+    return district;
+  }
+
+  getCitationMotherGivenNames() {
+    let parents = this.getParents();
+    if (parents && parents.mother && parents.mother.name) {
+      return parents.mother.name.forenames;
+    }
+  }
+
+  getCitationFatherGivenNames() {
+    let parents = this.getParents();
+    if (parents && parents.father && parents.father.name) {
+      return parents.father.name.forenames;
+    }
+  }
+
+  getCitationAgeAtDeath() {
+    return this.getAgeAtDeath();
   }
 }
 

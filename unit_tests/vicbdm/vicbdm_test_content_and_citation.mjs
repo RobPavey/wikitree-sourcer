@@ -45,6 +45,26 @@ const regressionData = [
     // At sea on board a ship
     caseName: "birth_1861_william_fraser",
     url: "https://my.rio.bdm.vic.gov.au/efamily-history/66355a8368d03925b31054d1/record/5c6546bd4aba80ac31806a71?q=efamily&givenName=William%20Holmes%20Alexander&familyName=FRASER",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_vicbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_sentence",
+        optionOverrides: {
+          citation_vicbdm_dataStyle: "sentence",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_vicbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
   {
     // Many given names: Victoria Claribel Viola P P

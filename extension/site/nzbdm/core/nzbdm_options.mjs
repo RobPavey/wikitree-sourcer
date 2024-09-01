@@ -110,6 +110,21 @@ const citationOptionsGroup = {
       ],
       defaultValue: "search",
     },
+    {
+      optionName: "dataStyle",
+      type: "select",
+      label: "Include record data as",
+      values: [
+        { value: "none", text: "Do not include data" },
+        { value: "sentence", text: "Standard Sourcer sentence for the record type" },
+        { value: "listCurated", text: "List of field names/values cleaned up and curated" },
+        {
+          value: "listOriginal",
+          text: "List of field names/values as shown on page (excluding ones used in source reference)",
+        },
+      ],
+      defaultValue: "sentence",
+    },
   ],
 };
 

@@ -23,6 +23,7 @@ SOFTWARE.
 */
 import { RT } from "../../../base/core/record_type.mjs";
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { NzbdmEdReader } from "./nzbdm_ed_reader.mjs";
 
 function buildSourceTitle(ed, gd, builder) {
   let format = builder.options.citation_nzbdm_sourceTitleFormat;
@@ -103,11 +104,46 @@ function buildRecordLink(ed, gd, builder) {
   }
 }
 
+function buildCuratedListDataString(ed, gd, builder) {
+  let edReader = new NzbdmEdReader(ed);
+
+  let isStillBirth = ed.recordData["Still Birth"];
+
+  const fields = [
+    { key: "", value: edReader.getCitationName() },
+    { key: "Mother's Given Name(s)", value: edReader.getCitationMotherGivenNames() },
+    { key: "Father's Given Name(s)", value: edReader.getCitationFatherGivenNames() },
+    { key: "", value: isStillBirth ? "Still Birth" : "" },
+    { key: "Age at Death", value: edReader.getCitationAgeAtDeath() },
+    { key: "Date of Birth", value: edReader.getCitationDateOfBirth() },
+  ];
+
+  builder.addListDataString(fields);
+}
+
+function buildOriginalListDataString(ed, gd, builder) {
+  const fieldsToExclude = ["Registration Number"];
+  builder.addListDataStringFromRecordData(ed.recordData, fieldsToExclude);
+}
+
+function buildDataString(ed, gd, builder) {
+  let options = builder.getOptions();
+  let dataStyleOption = options.citation_nzbdm_dataStyle;
+
+  if (dataStyleOption == "listCurated") {
+    buildCuratedListDataString(ed, gd, builder);
+  } else if (dataStyleOption == "sentence") {
+    builder.addStandardDataString(gd);
+  } else if (dataStyleOption == "listOriginal") {
+    buildOriginalListDataString(ed, gd, builder);
+  }
+}
+
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  buildDataString(ed, gd, builder);
 }
 
 function buildCitation(input) {
