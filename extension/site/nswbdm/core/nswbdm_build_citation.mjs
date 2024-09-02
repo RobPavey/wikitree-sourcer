@@ -129,10 +129,10 @@ function buildCuratedListDataString(ed, gd, builder) {
 
   const fields = [
     { key: "", value: edReader.getCitationName() },
-    { key: "Father's Given Name(s)", value: edReader.getCitationFatherGivenNames() },
-    { key: "Mother's Given Name(s)", value: edReader.getCitationMotherGivenNames() },
-    { key: "Age at Death", value: edReader.getCitationAgeAtDeath() },
     { key: "District", value: edReader.getCitationDistrictPlusPossibleDeathPlace() },
+    { key: "Father", value: edReader.getCitationFatherGivenNames() },
+    { key: "Mother", value: edReader.getCitationMotherGivenNames() },
+    { key: "Age", value: edReader.getCitationAgeAtDeath() },
   ];
 
   builder.addListDataString(fields);
@@ -172,6 +172,10 @@ function buildDataString(ed, gd, builder) {
 }
 
 function buildCoreCitation(ed, gd, builder) {
+  // See this FSP for suggestions from Australia project:
+  // https://www.wikitree.com/wiki/Space:Sources_and_Citations_-_New_South_Wales
+  // The Curated List option aims to conform with this
+
   let edReader = new NswbdmEdReader(ed);
 
   buildSourceTitle(ed, gd, builder);

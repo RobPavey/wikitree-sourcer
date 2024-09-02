@@ -322,7 +322,7 @@ class NswbdmEdReader extends ExtractedDataReader {
         if (spouses && spouses.length == 1 && spouses[0].name) {
           let spouseName = spouses[0].name.inferFullName();
           if (spouseName) {
-            name = name + " and " + spouseName;
+            name = name + " & " + spouseName;
           }
         }
         return name;
