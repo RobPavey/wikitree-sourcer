@@ -52,8 +52,6 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder, edReader) {
-  let options = builder.getOptions();
-
   if (ed.recordData) {
     let registrationNumberParts = ed.registrationNumberParts;
     if (registrationNumberParts && registrationNumberParts.length >= 2) {
@@ -75,14 +73,9 @@ function buildSourceReference(ed, gd, builder, edReader) {
       builder.addSourceReferenceField(type + " Registration Number", registrationString);
     }
 
-    let dataStyleOption = options.citation_nswbdm_dataStyle;
-
-    if (dataStyleOption == "sentence") {
-      // the sentence will not display the district
-      let district = edReader.getCitationDistrictPlusPossibleDeathPlace();
-      if (district) {
-        builder.addSourceReferenceField("District", district);
-      }
+    let district = edReader.getCitationDistrictPlusPossibleDeathPlace();
+    if (district) {
+      builder.addSourceReferenceField("District", district);
     }
   }
 }
@@ -129,7 +122,6 @@ function buildCuratedListDataString(ed, gd, builder) {
 
   const fields = [
     { key: "", value: edReader.getCitationName() },
-    { key: "District", value: edReader.getCitationDistrictPlusPossibleDeathPlace() },
     { key: "Father", value: edReader.getCitationFatherGivenNames() },
     { key: "Mother", value: edReader.getCitationMotherGivenNames() },
     { key: "Age", value: edReader.getCitationAgeAtDeath() },
@@ -139,7 +131,7 @@ function buildCuratedListDataString(ed, gd, builder) {
 }
 
 function buildOriginalListDataString(ed, gd, builder) {
-  const fieldsToExclude = ["Event", "Registration number"];
+  const fieldsToExclude = ["Event", "Registration number", "District"];
 
   let nameString = "";
   if (ed.lastName) {
