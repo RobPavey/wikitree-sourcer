@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "nswbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "McLaurin-Smith",
+    "forenames": "Ian"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1989"
+  },
+  "eventPlace": {
+    "placeString": "New South Wales, Australia"
+  },
+  "lastNameAtDeath": "McLaurin-Smith",
+  "registrationDistrict": "120",
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Robert"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Mary"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Deaths",
+    "registrationNumber": "108710",
+    "year": "1989"
+  },
+  "hasValidData": true
+}

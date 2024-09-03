@@ -718,7 +718,7 @@ async function checkForPendingSearch() {
   let isAdvancedSearch = false;
   let isSearchResults = false;
   let storageName = "";
-  if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/advanced-search/")) {
+  if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/search-records/")) {
     isAdvancedSearch = true;
     storageName = "scotpSearchData";
   } else if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/record-results/")) {

@@ -1,0 +1,1498 @@
+{
+  "id" : "r_102236201938",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1708673341984,
+    "created" : 1708673341984
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q244-F1YB?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q244-F1YB?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:Q244-F1YB"
+    }
+  },
+  "description" : "#sd_p_101219361437",
+  "persons" : [ {
+    "id" : "p_101219361437",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "578a589c-b94b-46cc-8595-e0b3880eca24",
+        "attribution" : {
+          "modified" : 1708673341984,
+          "created" : 1708673341984
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "5ef64787-442f-47da-a7d6-6947d656c1f8",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "M"
+        }, {
+          "id" : "5ef64787-442f-47da-a7d6-6947d656c1f8",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1708707661552,
+            "created" : 1708707661552
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QVRD-74QJ?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q244-F1YB?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ" ]
+    },
+    "names" : [ {
+      "id" : "560381a2-9633-4bbb-9a82-a6db07750f17",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Elmer Lawrence Davis",
+        "parts" : [ {
+          "id" : "8e4c8e78-77ce-4a41-be24-df2ea60d4a76",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Davis",
+          "fields" : [ {
+            "id" : "42583185-f82b-4cb0-965f-5695e50a1c14",
+            "attribution" : {
+              "modified" : 1708673341984,
+              "created" : 1708673341984
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "578bcad1-c027-4a94-b3ee-85c12ef7f672",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Davis"
+            }, {
+              "id" : "578bcad1-c027-4a94-b3ee-85c12ef7f672",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Davis"
+            } ]
+          } ]
+        }, {
+          "id" : "cca216e1-f3d0-4c36-a83a-dce2a9af35b9",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Elmer Lawrence",
+          "fields" : [ {
+            "id" : "2d8050a5-3e3a-48b3-bc90-985d3c7b2d5e",
+            "attribution" : {
+              "modified" : 1708673341984,
+              "created" : 1708673341984
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "8d0b7599-0a75-4a7d-83c7-d41f2a257f71",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Elmer Lawrence"
+            }, {
+              "id" : "8d0b7599-0a75-4a7d-83c7-d41f2a257f71",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Elmer Lawrence"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "0002a524-1a53-469d-9879-867c8a6b4133",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "25cab5d4-3f32-4062-975a-2e78915d9ee8",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Elmer Lawrence Davis"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Race",
+      "value" : "White",
+      "fields" : [ {
+        "id" : "b8e675eb-e54c-42cf-a1b7-cfcb2c01e8a7",
+        "attribution" : {
+          "modified" : 1708673341984,
+          "created" : 1708673341984
+        },
+        "type" : "http://gedcomx.org/Race",
+        "values" : [ {
+          "id" : "67d57324-af8a-4b99-8f10-96006ec0a76d",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RACE_OR_COLOR_ORIG",
+          "text" : "White"
+        }, {
+          "id" : "67d57324-af8a-4b99-8f10-96006ec0a76d",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_RACE_OR_COLOR",
+          "text" : "White"
+        } ]
+      } ]
+    }, {
+      "id" : "44952f85-94ee-4ad7-ac1a-a338e762741d",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://familysearch.org/types/facts/DeathRegistration",
+      "date" : {
+        "id" : "aefb5f56-cb5c-42b8-946e-4f64b0025f28",
+        "original" : "03 Feb 1955",
+        "fields" : [ {
+          "id" : "164f105f-a9fe-4c39-a0d5-b3e9a62b9127",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "7e7d4409-4f55-4aa0-a15a-82da6493611e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "03 Feb 1955",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "bbe97fca-3de7-4bda-adf0-e5f23171e6f8",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "63a567a2-fc10-48a5-b110-85520f989b52",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1955"
+          } ]
+        }, {
+          "id" : "29212d7f-795f-42eb-9659-f5d17493ced6",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "43d7278d-b7a7-4775-a66b-387f092e8916",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Feb"
+          } ]
+        }, {
+          "id" : "2bbcd97d-5cec-4348-9f5d-a1051116be51",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "658c324b-8df9-4bf4-848f-a58bc5660ebc",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "3"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "4386230e-bc54-4047-9ca2-19592e1f0d8a",
+        "attribution" : {
+          "modified" : 1708673341984,
+          "created" : 1708673341984
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "31f07615-46f0-47ea-a386-ee6347d69a12",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Death Registration",
+          "resource" : "http://familysearch.org/types/facts/DeathRegistration"
+        } ]
+      } ]
+    }, {
+      "id" : "d7fba8c4-e5f1-4473-865d-9eb5cefc9ccc",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "id" : "96852938-fd37-4d99-9f35-1615d8b4a022",
+        "original" : "06 Jan 1955",
+        "fields" : [ {
+          "id" : "6292cb04-c3f6-4528-84e4-eb908d090818",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "1033209c-acaa-47ac-ab93-3e3eaaa58242",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_MONTH_ORIG",
+            "text" : "Jan"
+          } ]
+        }, {
+          "id" : "02607429-d192-43ad-bc5f-f3d40059530e",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "1a90b353-813f-49a7-bc1f-82bc343da9e1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_DAY_ORIG",
+            "text" : "6"
+          } ]
+        }, {
+          "id" : "e91c4660-8130-421c-aa5c-96a00ae36710",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "50a603b5-0306-41ee-b33e-fd8bd0c6ae75",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_YEAR_ORIG",
+            "text" : "1955"
+          }, {
+            "id" : "50a603b5-0306-41ee-b33e-fd8bd0c6ae75",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_YEAR",
+            "text" : "1955"
+          } ]
+        }, {
+          "id" : "89c4ac77-9d52-4ad2-a00c-83c8f0bcc2c6",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "8af87e05-7847-42d2-81f8-2896b7ac9654",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_DATE_ORIG",
+            "text" : "6 Jan 1955"
+          }, {
+            "id" : "8af87e05-7847-42d2-81f8-2896b7ac9654",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_DATE",
+            "text" : "06 Jan 1955",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "85c2d7e8-4738-40db-84e8-7547bc5c6579",
+        "original" : ", Grayson, Virginia, United States",
+        "fields" : [ {
+          "id" : "3e74c373-0eba-42e8-99f7-602d4abbfc6b",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "17d935a8-8f40-4c0e-9e4c-1ea5942ebd5c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_COUNTY_ORIG",
+            "text" : "Grayson County"
+          }, {
+            "id" : "17d935a8-8f40-4c0e-9e4c-1ea5942ebd5c",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_COUNTY",
+            "text" : "Grayson"
+          } ]
+        }, {
+          "id" : "0372c233-d054-40b1-b215-f2c433918ed8",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "4effbc28-e893-406d-8a5f-d86b1f3f7b2d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_STATE_ORIG",
+            "text" : "Virginia"
+          } ]
+        }, {
+          "id" : "f166e66b-7ff9-433b-8e61-169b9dafc3d0",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "b3ff471c-5578-4792-bdf9-0c51e6b74cdb",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_PLACE_ORIG",
+            "text" : ", Grayson, Virginia, United States",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "669204f2-d039-4a6b-a14d-c57d2f558f40",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://familysearch.org/types/fields/StateOrCountry",
+          "values" : [ {
+            "id" : "aee9a8e9-1fbc-4cb7-9783-212392c24ef0",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_STATE_COUNTRY_ORIG",
+            "text" : "Virginia"
+          } ]
+        }, {
+          "id" : "e58fafc4-c4e4-4a3a-af27-a1a8ce21f64c",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "f052cb50-3323-4e2a-ad26-67fc784bbcc3",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        } ]
+      },
+      "primary" : false
+    }, {
+      "id" : "f7232c13-7344-4abe-b9f5-543afd1f4da4",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "858d9d6c-ef70-4e2f-9a38-fd121629a3cf",
+        "original" : "12 Apr 1910",
+        "fields" : [ {
+          "id" : "4ac7874c-07f4-42ed-95d1-7951e8c87f55",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "12738498-fe4e-43b6-b8c7-03c304833294",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "12 Apr 1910",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "12738498-fe4e-43b6-b8c7-03c304833294",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "12 Apr 1910"
+          } ]
+        }, {
+          "id" : "83721f5d-9769-4b06-8e7e-10b547388577",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "6bce3360-ac9a-4ee9-912c-078f366b6e9c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1910"
+          }, {
+            "id" : "6bce3360-ac9a-4ee9-912c-078f366b6e9c",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_YEAR",
+            "text" : "1910"
+          } ]
+        }, {
+          "id" : "aab96c23-5959-468e-a388-95d633454772",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "a4843f05-4cdd-424f-ac99-ed4f52b5b270",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "Apr"
+          } ]
+        }, {
+          "id" : "67e167ec-b3dc-4022-a96d-2f9ef0051f15",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "13933a5a-9d9e-4a9f-bb6d-4b35dd22d13d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "12"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "8567110a-88aa-4043-9013-824bdc6d3898",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "bf3b3f78-22cb-4d4d-9738-c7ad5da7c844",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_100936704_00065_00000_0012364080944_000"
+      } ]
+    }, {
+      "id" : "9acc5c3d-3d33-40be-80c3-77e5ad228fc1",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "ac35f2d4-1f94-41e5-898a-7c60bfa853fa",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "44"
+      }, {
+        "id" : "ac35f2d4-1f94-41e5-898a-7c60bfa853fa",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "44"
+      } ],
+      "qualifiers" : [ {
+        "value" : "0d85a0a0-6435-4308-b3e9-398c87c8a75a",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Elmer Lawrence Davis",
+      "gender" : "Male",
+      "birthDate" : "12 Apr 1910",
+      "deathDate" : "06 Jan 1955",
+      "deathPlace" : ", Grayson, Virginia, United States"
+    }
+  }, {
+    "id" : "p_101219361438",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "3be30fbe-e846-47bb-b85e-0eff586747de",
+        "attribution" : {
+          "modified" : 1708673341984,
+          "created" : 1708673341984
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "83355cef-dad2-4c17-84bc-05c57427d2c5",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1708707661553,
+            "created" : 1708707661553
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QVRD-74QV?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q244-F1YB?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QV" ]
+    },
+    "names" : [ {
+      "id" : "7f8b02e1-1f3e-45e6-bda3-e02d5318a93a",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Emmett Davis",
+        "parts" : [ {
+          "id" : "3500bb01-315c-4aa9-bfed-950b5d0b363e",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Davis",
+          "fields" : [ {
+            "id" : "365089ff-9d39-4b35-aeaa-8010ba9b16d4",
+            "attribution" : {
+              "modified" : 1708673341984,
+              "created" : 1708673341984
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "3619dacf-6456-43cc-a451-c7fc31d75f19",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Davis"
+            }, {
+              "id" : "3619dacf-6456-43cc-a451-c7fc31d75f19",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Davis"
+            } ]
+          } ]
+        }, {
+          "id" : "cae11051-3f6b-460c-b431-167d3dd66853",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Emmett",
+          "fields" : [ {
+            "id" : "f899d3dc-06cd-4840-a776-b6e01318eea4",
+            "attribution" : {
+              "modified" : 1708673341984,
+              "created" : 1708673341984
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "38fdf459-4c14-44c8-baf1-a15faa41d175",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Emmett"
+            }, {
+              "id" : "38fdf459-4c14-44c8-baf1-a15faa41d175",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Emmett"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "252b8164-2774-4f01-b6c5-7b9b85f5b081",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "974c265a-545d-41ca-8fb4-86fda46bc794",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Emmett Davis"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "985a6aae-0aef-43cf-91e3-bf048e0dc86f",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "40558312-28f6-4978-a4c5-1ce08a1e77b6",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_100936704_00065_00000_0012364080944_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Emmett Davis",
+      "gender" : "Male"
+    }
+  }, {
+    "id" : "p_101219361439",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "30344864-3c15-412f-b299-5e1ded923631",
+        "attribution" : {
+          "modified" : 1708673341984,
+          "created" : 1708673341984
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "15fd6e54-9b7e-4f92-92ba-82a87f2725f8",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1708707661553,
+            "created" : 1708707661553
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QVRD-74QK?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q244-F1YB?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QK" ]
+    },
+    "names" : [ {
+      "id" : "3217e59f-6dfb-420c-934d-3eb98cdcbc28",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Willie Parcell",
+        "parts" : [ {
+          "id" : "fb358de4-5a2c-4238-b391-eae031b225a3",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Parcell",
+          "fields" : [ {
+            "id" : "e7026624-a604-4687-b445-eabc3b28b6bf",
+            "attribution" : {
+              "modified" : 1708673341984,
+              "created" : 1708673341984
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "e408de47-0b24-4243-86ae-063718861618",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Parcell"
+            }, {
+              "id" : "e408de47-0b24-4243-86ae-063718861618",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Parcell"
+            } ]
+          } ]
+        }, {
+          "id" : "5b9f25e5-d167-4bcc-ab34-c01712aaf598",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Willie",
+          "fields" : [ {
+            "id" : "80260e61-14bd-4b5f-8357-23812b00a7cb",
+            "attribution" : {
+              "modified" : 1708673341984,
+              "created" : 1708673341984
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "f6c91e52-eca7-44da-a7e8-ffae18abaffc",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Willie"
+            }, {
+              "id" : "f6c91e52-eca7-44da-a7e8-ffae18abaffc",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Willie"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "0d5a46d9-95bc-46a5-a017-fc860e0e07ce",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "f13df4ff-920a-4901-966b-562b321bf990",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Willie Parcell"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "75d09cce-1d62-422c-9309-fd609594b66e",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "1e434271-3603-4759-8764-df3c7c223cd3",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_100936704_00065_00000_0012364080944_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Willie Parcell",
+      "gender" : "Female"
+    }
+  }, {
+    "id" : "p_101219361440",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "19386f34-0947-421a-ac06-50778bbe8a2b",
+        "attribution" : {
+          "modified" : 1708673341984,
+          "created" : 1708673341984
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "76743961-865d-4634-94c6-624ee6963fc3",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1708707661553,
+            "created" : 1708707661553
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QVRD-74Q2?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/Q244-F1YB?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRD-74Q2" ]
+    },
+    "names" : [ {
+      "id" : "1133fe82-142f-4b24-bc3c-c5c14c660b7a",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Evie Brunk Davis",
+        "parts" : [ {
+          "id" : "e6cdc169-4633-4734-9ae3-60ebf4e61cc5",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Davis",
+          "fields" : [ {
+            "id" : "63112af3-aae2-4601-8256-4ef1e722d1f4",
+            "attribution" : {
+              "modified" : 1708673341984,
+              "created" : 1708673341984
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "ef67d57b-b960-4ff0-b873-9f31ac2b5606",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Davis"
+            }, {
+              "id" : "ef67d57b-b960-4ff0-b873-9f31ac2b5606",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Davis"
+            } ]
+          } ]
+        }, {
+          "id" : "b8f99500-7bee-4b11-a5dd-c064d62179c3",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Evie Brunk",
+          "fields" : [ {
+            "id" : "358b6df7-28c6-4e66-9955-ce0f604daf65",
+            "attribution" : {
+              "modified" : 1708673341984,
+              "created" : 1708673341984
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "2f90ed2c-cc36-4064-8b38-f88220770460",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Evie Brunk"
+            }, {
+              "id" : "2f90ed2c-cc36-4064-8b38-f88220770460",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Evie Brunk"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "58b32a3c-8c7f-4ce7-b8e7-095dbc2bbd94",
+          "attribution" : {
+            "modified" : 1708673341984,
+            "created" : 1708673341984
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "48d5370f-3f7e-48b2-8774-8e57bb9c9c7e",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Evie Brunk Davis"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "4e7c0a7d-db1f-41e4-9303-bf5187afd3e1",
+      "attribution" : {
+        "modified" : 1708673341984,
+        "created" : 1708673341984
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "5bcaeea4-024d-4995-8f55-6c0ec8cf12ec",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "000000000_100936704_00065_00000_0012364080944_003"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Evie Brunk Davis",
+      "gender" : "Female"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "54240760-ec00-474a-9297-dabe9ec9a384",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_101219361439",
+      "resourceId" : "p_101219361439"
+    },
+    "person2" : {
+      "resource" : "#p_101219361437",
+      "resourceId" : "p_101219361437"
+    }
+  }, {
+    "id" : "321816d7-d8ef-4de4-8065-31213e9c13b4",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_101219361438",
+      "resourceId" : "p_101219361438"
+    },
+    "person2" : {
+      "resource" : "#p_101219361439",
+      "resourceId" : "p_101219361439"
+    }
+  }, {
+    "id" : "119e2d47-4aec-46b3-ac02-5d15c28cb9f2",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_101219361437",
+      "resourceId" : "p_101219361437"
+    },
+    "person2" : {
+      "resource" : "#p_101219361440",
+      "resourceId" : "p_101219361440"
+    }
+  }, {
+    "id" : "9f5f2d7d-1ab8-4761-b3fc-1a8aa80cb121",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_101219361438",
+      "resourceId" : "p_101219361438"
+    },
+    "person2" : {
+      "resource" : "#p_101219361437",
+      "resourceId" : "p_101219361437"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_102236201938",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:Q244-F1YB",
+    "componentOf" : {
+      "description" : "#sd_c_2377565",
+      "descriptionId" : "sd_c_2377565"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1708673341984,
+    "modified" : 1708731793467,
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Virginia, Death Certificates, 1912-1987\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ : Fri Feb 23 23:43:13 UTC 2024), Entry for Elmer Lawrence Davis and Emmett Davis, 03 Feb 1955."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Elmer Lawrence Davis, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/12364080944" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:Q244-F1YB" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2377565?arkName=1:2:Q244-F1YB"
+    }
+  }, {
+    "id" : "sd_c_2377565",
+    "about" : "https://www.familysearch.org/platform/records/collections/2377565",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1418915977498,
+    "modified" : 1720797736955,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Virginia, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/10703974"
+      },
+      "temporal" : {
+        "original" : "1912/1987",
+        "formal" : "+1912/+1987"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Virginia, Death Certificates, 1912-1987"
+    }, {
+      "lang" : "zh",
+      "value" : "維吉尼亞州，死亡證明，1912 年至 1987 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Virginie, Certificats de décès, 1912-1987"
+    }, {
+      "lang" : "ru",
+      "value" : "Вирджиния, свидетельства о смерти, 1912-1987 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Virginia, Dødsattester, 1912-1987"
+    }, {
+      "lang" : "es",
+      "value" : "Certificados de defunción, Virginia, 1912-1987"
+    }, {
+      "lang" : "mn",
+      "value" : "Виржиниа муж улс, Нас барсны гэрчилгээ, 1912-1987 он"
+    }, {
+      "lang" : "ko",
+      "value" : "버지니아, 사망 증명서, 1912-1987"
+    }, {
+      "lang" : "ja",
+      "value" : "バージニア州、死亡証明書、1912年-1987年"
+    }, {
+      "lang" : "it",
+      "value" : "Virginia, Certificati di decesso, 1912-1987"
+    }, {
+      "lang" : "id",
+      "value" : "Virginia, Akta Kematian, 1912-1987"
+    }, {
+      "lang" : "hu",
+      "value" : "Virginia, Halotti anyakönyvi kivonatok, 1912–1987"
+    }, {
+      "lang" : "sk",
+      "value" : "Virginia, úmrtné listy, 1912 – 1987"
+    }, {
+      "lang" : "th",
+      "value" : "เวอร์จิเนีย, มรณบัตร, ปี 1912-1987"
+    }, {
+      "lang" : "to",
+      "value" : "Virginia, Tohi Fakamoʻoni Pekia, 1912-1987"
+    }, {
+      "lang" : "bg",
+      "value" : "Вирджиния, Смъртни актове, 1912-1987"
+    }, {
+      "lang" : "km",
+      "value" : "វើជីនៀ, សំបុត្រមរណភាព, ឆ្នាំ 1912-1987"
+    }, {
+      "lang" : "pl",
+      "value" : "Virginia, Akty zgonu, 1912-1987"
+    }, {
+      "lang" : "ro",
+      "value" : "Virginia, Certificate de deces, 1912-1987"
+    }, {
+      "lang" : "sv",
+      "value" : "Virginia, dödsattest, 1912-1987"
+    }, {
+      "lang" : "sm",
+      "value" : "Virginia, Giấy Chứng Tử, 1912-1987"
+    }, {
+      "lang" : "vi",
+      "value" : "Virginia, Giấy Chứng Tử, 1912-1987"
+    }, {
+      "lang" : "sq",
+      "value" : "Virxhinia, Çertifikatat e Vdekjes, 1912-1987"
+    }, {
+      "lang" : "pt",
+      "value" : "Virgínia, certidões de óbito, 1912-1987"
+    }, {
+      "lang" : "de",
+      "value" : "Virginia, Sterbeurkunden, 1912-1987"
+    }, {
+      "lang" : "uk",
+      "value" : "Вірджинія, свідоцтва про смерті, 1912–1987 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Virginija, Smrtni listovi, 1912.-1987."
+    }, {
+      "lang" : "cs",
+      "value" : "Virginia, Úmrtní listy, 1912–1987"
+    }, {
+      "lang" : "da",
+      "value" : "Virginia, dødsattester, 1912-1987"
+    }, {
+      "lang" : "nl",
+      "value" : "Virginia, Overlijdensakten, 1912-1987"
+    }, {
+      "lang" : "et",
+      "value" : "Virginia, Surmatunnistused, 1912–1987"
+    }, {
+      "lang" : "fj",
+      "value" : "Virginia, Sitivikiti ni Mate, 1912-1987"
+    }, {
+      "lang" : "fi",
+      "value" : "Kuolintodistukset Virginiassa 1912–1987"
+    }, {
+      "lang" : "tl",
+      "value" : "Virginia, Mga Sertipiko ng Kamatayan, 1912-1987"
+    }, {
+      "lang" : "mg",
+      "value" : "Taratasy fanamarinana fahafatesana Virginia, 1912-1987"
+    }, {
+      "lang" : "ceb",
+      "value" : "Virginia, Mga Sertipiko sa Kamatayon, 1912-1987"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/2377565" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C95D-78NZ",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "title:United States, Virginia",
+        "description" : "https://www.familysearch.org/platform/places/description/360"
+      },
+      "temporal" : {
+        "original" : "Jan 1954",
+        "formal" : "+1954-01-01T00:00:00Z/+1954-01-31T23:59:59Z"
+      }
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-C95D-78NZ" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2377565?arkName=3:1:3Q9M-C95D-78NZ"
+    }
+  }, {
+    "id" : "sd_p_101219361439",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QK",
+    "componentOf" : {
+      "description" : "#src_r_102236201938",
+      "descriptionId" : "src_r_102236201938"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Virginia, Death Certificates, 1912-1987\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ : Fri Feb 23 23:43:13 UTC 2024), Entry for Elmer Lawrence Davis and Emmett Davis, 03 Feb 1955."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Willie Parcell, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Willie Parcell, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QK" ]
+    }
+  }, {
+    "id" : "sd_p_101219361437",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ",
+    "componentOf" : {
+      "description" : "#src_r_102236201938",
+      "descriptionId" : "src_r_102236201938"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Virginia, Death Certificates, 1912-1987\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ : Fri Feb 23 23:43:13 UTC 2024), Entry for Elmer Lawrence Davis and Emmett Davis, 03 Feb 1955."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Elmer Lawrence Davis, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Elmer Lawrence Davis, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ" ]
+    }
+  }, {
+    "id" : "sd_p_101219361440",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVRD-74Q2",
+    "componentOf" : {
+      "description" : "#src_r_102236201938",
+      "descriptionId" : "src_r_102236201938"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Virginia, Death Certificates, 1912-1987\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ : Fri Feb 23 23:43:13 UTC 2024), Entry for Elmer Lawrence Davis and Emmett Davis, 03 Feb 1955."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Evie Brunk Davis, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Evie Brunk Davis, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRD-74Q2" ]
+    }
+  }, {
+    "id" : "sd_p_101219361438",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QV",
+    "componentOf" : {
+      "description" : "#src_r_102236201938",
+      "descriptionId" : "src_r_102236201938"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Virginia, Death Certificates, 1912-1987\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ : Fri Feb 23 23:43:13 UTC 2024), Entry for Elmer Lawrence Davis and Emmett Davis, 03 Feb 1955."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Emmett Davis, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Emmett Davis, \"Virginia, Death Certificates, 1912-1987\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QV" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "c9405429-7f6d-45df-b82d-1362585883dc",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "9ddc8b3a-3cae-4a15-88c2-cc38858cd716",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "14-0822"
+    } ]
+  }, {
+    "id" : "95f779e4-c704-4ff4-8fdb-66850f31e6d8",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "cbdc2d0a-b0cf-49d6-a70e-d5ede25a6271",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "26377"
+    } ]
+  }, {
+    "id" : "e7555c39-6ef1-4c1f-a641-002c8820b04c",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "12497e0b-bc23-478b-a931-9a4db9984836",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C95D-78NZ\",\"FS_COLLECTION_ID\":\"2377565\",\"FS_FOLDER\":\"100936704\"}"
+    } ]
+  }, {
+    "id" : "9c3dc3ee-ff7c-4244-8b8a-069c36244712",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "4b9f610d-571e-47c6-949c-be4ad7350728",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "Virginia, Death Records, 1913-1954-FSI/DB"
+    } ]
+  }, {
+    "id" : "2756c552-3edc-4647-bd27-22be8dac445f",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "a5625b37-bde5-4b34-92b7-199707346352",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "100936704_00065"
+    } ]
+  }, {
+    "id" : "3b4eda11-eb50-4962-a7f3-68129a7e8003",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "01e25688-e688-447d-9889-574887d5549c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "000000000_100936704_00065_00000_0012364080944"
+    } ]
+  }, {
+    "id" : "1b978e6b-6add-4410-baa9-901d04ef5bdb",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/ExtImageId",
+    "values" : [ {
+      "id" : "91380415-935a-4089-b913-7d271e7bac7a",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_IMAGE_ID_ORIG",
+      "text" : "43006_162028006072_0225-00064.j2k"
+    } ]
+  }, {
+    "id" : "22725b03-0e47-429d-94f3-5a8211fc8b20",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "3d5cb557-4acd-4f82-81fb-05763fc5440f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "8"
+    } ]
+  }, {
+    "id" : "b36f5d37-1bc1-40ee-8b79-0f12dcbb7a1f",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "8f8c7c3d-feb7-4b02-b726-0696d7642b0c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "14-0822: null - Virginia, Death Records, 1913-1954-FSI/DB: cartertp1"
+    } ]
+  }, {
+    "id" : "356104fa-1e35-48f0-9739-a10e702e6da6",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "2b64a2c3-da80-410d-935f-365d1abd8be6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "5a4ccbb2-16b1-4ef7-87fb-d001480e14c2",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/RecordNbr",
+    "values" : [ {
+      "id" : "3c86a7e4-499b-4729-bbd7-8ef302bd1342",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_NBR",
+      "text" : "1744"
+    } ]
+  }, {
+    "id" : "6ab76271-c09d-48ce-8e4d-10d70e8d0138",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "e5d4f728-929c-4264-b29b-0597c255a667",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-909-48965-10390-0\",\"EVENT_PLACE_LEVEL_2_TYPE\":\"State\",\"FS_DAS_VERIFY\":\"22-DEC-14\",\"FS_IMS_IMAGE_ID\":\"100936704_00065\",\"FS_IMAGE_ID\":\"/100936704/100936704_00065.jpg\",\"FS_IMAGE_NBR\":\"00065\",\"EVENT_PLACE_LEVEL_1_TYPE\":\"Country\",\"EVENT_PLACE_LEVEL_4_TYPE\":\"City\",\"FS_UNIQUE_ID\":\"12364080944\",\"EVENT_PLACE_LEVEL_3_TYPE\":\"County\",\"FS_FOLDER_IMAGE_SEQ\":\"65\"}"
+    } ]
+  }, {
+    "id" : "3b54ca38-bcdf-41b1-bd55-5dd9d65e8fe7",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "980a86d9-1b94-474e-a7c2-34482ef69106",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "7fef4775-aedc-4daf-a075-e087a09b0257",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "e9c73d79-dd5d-43fc-89e6-17da96276527",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Virginia, United States"
+    } ]
+  }, {
+    "id" : "ce7358f3-ae7c-40e3-928f-c5ca38f7a7d6",
+    "attribution" : {
+      "modified" : 1708673341984,
+      "created" : 1708673341984
+    },
+    "type" : "http://familysearch.org/types/fields/SourceRegNbr",
+    "values" : [ {
+      "id" : "63a57d9c-3923-42bb-959a-f6eb6583a7a4",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_REG_NBR_ORIG",
+      "text" : "380"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "100936704"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "65"
+    } ]
+  } ]
+}

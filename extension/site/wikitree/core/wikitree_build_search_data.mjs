@@ -158,7 +158,16 @@ function buildSearchData(input) {
 
   let parents = gd.parents;
   if (parents) {
-    if ((!parameters && options["search_wikitree_includeFatherName"]) || parameters.father) {
+    let includeFatherName = false;
+    let includeMotherName = false;
+    if (parameters) {
+      includeFatherName = parameters.father;
+      includeMotherName = parameters.mother;
+    } else {
+      includeFatherName = options["search_wikitree_includeFatherName"];
+      includeMotherName = options["search_wikitree_includeMotherName"];
+    }
+    if (includeFatherName) {
       let father = parents.father;
       if (father && father.name) {
         let firstName = father.name.inferFirstName();
@@ -171,7 +180,7 @@ function buildSearchData(input) {
         }
       }
     }
-    if ((!parameters && options["search_wikitree_includeMotherName"]) || parameters.mother) {
+    if (includeMotherName) {
       let mother = parents.mother;
       if (mother && mother.name) {
         let firstName = mother.name.inferFirstName();

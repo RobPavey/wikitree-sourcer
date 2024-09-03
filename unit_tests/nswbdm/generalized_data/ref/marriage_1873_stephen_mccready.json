@@ -1,0 +1,35 @@
+{
+  "sourceOfData": "nswbdm",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "McCready",
+    "forenames": "Stephen"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1873"
+  },
+  "eventPlace": {
+    "placeString": "New South Wales, Australia"
+  },
+  "registrationDistrict": "Sydney",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "O'Brien",
+        "forenames": "Agnes"
+      },
+      "personGender": "female",
+      "marriageDate": {
+        "yearString": "1873"
+      }
+    }
+  ],
+  "collectionData": {
+    "id": "Marriages",
+    "registrationNumber": "113",
+    "year": "1873"
+  },
+  "hasValidData": true
+}

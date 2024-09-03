@@ -1705,12 +1705,126 @@ const RecordCollectionData = [
   // Australia
   ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  // Australia BMD
+  {
+    wtsId: "AustraliaBirths",
+    title: "Australia Birth Index",
+    country: "Australia",
+    isBirth: true,
+    sites: {
+      ancestry: {
+        id: "1778",
+        dates: { from: 1788, to: 1922 },
+        searchQueryFields: { registrationNumber: "f-SourceCaseNumber" },
+      },
+    },
+  },
+  {
+    wtsId: "AustraliaDeaths",
+    title: "Australia Death Index",
+    country: "Australia",
+    isDeath: true,
+    sites: {
+      ancestry: {
+        id: "1779",
+        dates: { from: 1787, to: 1985 },
+        searchQueryFields: { registrationNumber: "f-SourceCertificateNumber" },
+      },
+    },
+  },
+  {
+    wtsId: "AustraliaMarriages",
+    title: "Australia Marriage Index",
+    country: "Australia",
+    isMarriage: true,
+    sites: {
+      ancestry: {
+        id: "1780",
+        dates: { from: 1788, to: 1950 },
+        searchQueryFields: { registrationNumber: "f-SourceCertificateNumber" },
+      },
+    },
+  },
+
+  // New South Wales BMD
+  {
+    wtsId: "NswBirths",
+    title: "New South Wales Birth Index",
+    country: "Australia",
+    isBirth: true,
+    partOf: ["AustraliaBirths"],
+    sites: {
+      fmp: {
+        id: "Victoria Births",
+        dates: { from: 1836, to: 1913 },
+        // The father's last name is usually implied and will fail to match on FMP
+        searchQueryFields: {
+          district: "",
+          fatherLastName: "",
+        },
+      },
+      nswbdm: {
+        id: "Births",
+        dates: { from: 1787, to: 1930 },
+      },
+    },
+  },
+  {
+    wtsId: "NswDeaths",
+    title: "New South Wales Death Index",
+    country: "Australia",
+    isDeath: true,
+    partOf: ["AustraliaDeaths"],
+    sites: {
+      fmp: {
+        id: "New South Wales Deaths 1788-1945",
+        dates: { from: 1788, to: 1980 },
+        // these fields are not supported in search of this collection
+        searchQueryFields: {
+          district: "",
+          fatherFirstName: "",
+          fatherLastName: "",
+          motherFirstName: "",
+        },
+      },
+      nswbdm: {
+        id: "Deaths",
+        dates: { from: 1787, to: 2000 },
+      },
+    },
+  },
+  {
+    wtsId: "NswMarriages",
+    title: "New South Wales Marriage Index",
+    country: "Australia",
+    isMarriage: true,
+    partOf: ["AustraliaMarriages"],
+    sites: {
+      fmp: {
+        id: "New South Wales Marriages 1788-1945",
+        dates: { from: 1788, to: 1945 },
+        searchQueryFields: {
+          district: "",
+          fatherFirstName: "",
+          fatherLastName: "",
+          motherFirstName: "",
+          motherLastName: "",
+        },
+      },
+      nswbdm: {
+        id: "Marriages",
+        dates: { from: 1787, to: 1980 },
+      },
+    },
+  },
+
   // Victoria BMD
   {
     wtsId: "VictoriaBirths",
     title: "Victoria Birth Index",
     country: "Australia",
     isBirth: true,
+    partOf: ["AustraliaBirths"],
     sites: {
       ancestry: {
         id: "61648",
@@ -1737,6 +1851,7 @@ const RecordCollectionData = [
     title: "Victoria Death Index",
     country: "Australia",
     isDeath: true,
+    partOf: ["AustraliaDeaths"],
     sites: {
       ancestry: {
         id: "61650",
@@ -1763,9 +1878,10 @@ const RecordCollectionData = [
   },
   {
     wtsId: "VictoriaMarriages",
-    title: "Victoria Death Index",
+    title: "Victoria Marriage Index",
     country: "Australia",
     isMarriage: true,
+    partOf: ["AustraliaMarriages"],
     sites: {
       ancestry: {
         id: "61649",

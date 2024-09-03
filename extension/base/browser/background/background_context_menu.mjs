@@ -220,6 +220,8 @@ function openLink(info, tab) {
   // When saved:
   // linkUrl: "https://ancestry.prf.hn/click/camref:1011l4xx5/type:cpc/destination:https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=7619&h=4576311"
 
+  //console.log("openLink, info is: ");
+  //console.log(info);
   let link = info.linkUrl;
   if (link) {
     //console.log("openLink, orig link is: " + link);
@@ -233,11 +235,15 @@ function openLink(info, tab) {
         openFmpLink(tab, link, options);
       });
     } else {
-      // open unchanged link
-      callFunctionWithStoredOptions(function (options) {
-        const tabOption = options.context_general_newTabPos;
-        openInNewTab(link, tab, tabOption);
-      });
+      let openedAsText = openSelectionPlainText(info.selectionText, tab);
+
+      if (!openedAsText) {
+        // open unchanged link
+        callFunctionWithStoredOptions(function (options) {
+          const tabOption = options.context_general_newTabPos;
+          openInNewTab(link, tab, tabOption);
+        });
+      }
     }
   }
 }
@@ -407,12 +413,58 @@ function openTemplate(info, tab) {
   }
 }
 
-function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
+function extractYearAndRegistrationNumberFromText(lcText, extractInput) {
+  let defaultToYearFirst = extractInput.defaultToYearFirst;
+  let startYear = extractInput.startYear;
+
   //console.log("extractYearAndRegistrationNumberFromText, lcText is:");
   //console.log(lcText);
 
   let regNum = "";
   let regYear = "";
+
+  function handleTwoExtractedNumbers(num1, num2) {
+    //console.log("num1 is '" + num1 + "'");
+    //console.log("num2 is '" + num2 + "'");
+
+    if (!num1 || !num2 || num1 == lcText || num2 == lcText) {
+      return false;
+    }
+
+    if (num1.length == 4 || num2.length == 4) {
+      let number1 = Number(num1);
+      let number2 = Number(num2);
+      if (defaultToYearFirst) {
+        regYear = num1;
+        regNum = num2;
+      } else {
+        regYear = num2;
+        regNum = num1;
+      }
+      if (!(num2.length == 4 && number2 >= startYear && number2 < 2050)) {
+        if (num1.length == 4 && number1 >= startYear && number1 < 2050) {
+          regYear = num1;
+          regNum = num2;
+        }
+      }
+      return true;
+    }
+    return false;
+  }
+
+  function lookForWellSeparatedNumSlashNum() {
+    //console.log("lcText is '" + lcText + "'");
+
+    const regex = /(?:^.*[^\d\/]|^)(\d+)\s?\/\s?(\d+)(?:[^\d\/].*$|$)/;
+    if (!regex.test(lcText)) {
+      return false;
+    }
+
+    let num1 = lcText.replace(regex, "$1");
+    let num2 = lcText.replace(regex, "$2");
+
+    return handleTwoExtractedNumbers(num1, num2);
+  }
 
   function lookForNormalNumSlashNum() {
     let startIndex = lcText.search(/\d+ ?\/ ?\d+/);
@@ -436,32 +488,8 @@ function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
 
     let num1 = refText.replace(/^(\d+) ?\/ ?\d+\s*\d*$/, "$1");
     let num2 = refText.replace(/^\d+ ?\/ ?(\d+)\s*\d*$/, "$1");
-    //console.log("num1 is '" + num1 + "'");
-    //console.log("num2 is '" + num2 + "'");
 
-    if (!num1 || !num2 || num1 == refText || num2 == refText) {
-      return false;
-    }
-
-    if (num1.length == 4 || num2.length == 4) {
-      let number1 = Number(num1);
-      let number2 = Number(num2);
-      if (defaultToYearFirst) {
-        regYear = num1;
-        regNum = num2;
-      } else {
-        regYear = num2;
-        regNum = num1;
-      }
-      if (!(num2.length == 4 && number2 > 1800 && number2 < 2050)) {
-        if (num1.length == 4 && number1 > 1800 && number1 < 2050) {
-          regYear = num1;
-          regNum = num2;
-        }
-      }
-      return true;
-    }
-    return false;
+    return handleTwoExtractedNumbers(num1, num2);
   }
 
   function lookForOtherNumSepNum() {
@@ -496,27 +524,8 @@ function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
 
     let num1 = refText.replace(/^[:,\s]*(\d+)\s*[:,]\s*\d+[:,\s]*$/, "$1");
     let num2 = refText.replace(/^[:,\s]*\d+\s*[:,]\s*(\d+)$/, "$1");
-    //console.log("num1 is '" + num1 + "'");
-    //console.log("num2 is '" + num2 + "'");
 
-    if (!num1 || !num2 || num1 == refText || num2 == refText) {
-      return false;
-    }
-
-    if (num1.length == 4 || num2.length == 4) {
-      let number1 = Number(num1);
-      let number2 = Number(num2);
-      regYear = num1;
-      regNum = num2;
-      if (!(num1.length == 4 && number1 > 1800 && number1 < 2050)) {
-        if (num2.length == 4 && number2 > 1800 && number2 < 2050) {
-          regYear = num2;
-          regNum = num1;
-        }
-      }
-      return true;
-    }
-    return false;
+    return handleTwoExtractedNumbers(num1, num2);
   }
 
   function lookForSeparateYearAndRefNum() {
@@ -591,7 +600,11 @@ function extractYearAndRegistrationNumberFromText(lcText, defaultToYearFirst) {
     return true;
   }
 
-  let foundYearAndNum = lookForNormalNumSlashNum();
+  let foundYearAndNum = lookForWellSeparatedNumSlashNum();
+
+  if (!foundYearAndNum) {
+    foundYearAndNum = lookForNormalNumSlashNum();
+  }
 
   if (!foundYearAndNum) {
     foundYearAndNum = lookForOtherNumSepNum();
@@ -615,7 +628,11 @@ function buildVicbdmSearchData(lcText) {
   //console.log("looks like Victorian BDM, lcText is:");
   //console.log(lcText);
 
-  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, false);
+  const extractInput = {
+    defaultToYearFirst: false,
+    startYear: 1800,
+  };
+  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, extractInput);
 
   if (!yearAndNum) {
     return undefined;
@@ -688,7 +705,7 @@ function buildNzbdmSearchData(lcText) {
   //console.log(lcText);
 
   // To be NZ BDM we need some identifiers
-  if (!(lcText.includes("nz") || lcText.includes("new zealand"))) {
+  if (!(lcText.includes("nz") || lcText.includes("n.z.") || lcText.includes("new zealand"))) {
     return undefined;
   }
 
@@ -698,7 +715,11 @@ function buildNzbdmSearchData(lcText) {
     return undefined;
   }
 
-  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, true);
+  const extractInput = {
+    defaultToYearFirst: true,
+    startYear: 1800,
+  };
+  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, extractInput);
 
   if (!yearAndNum) {
     return undefined;
@@ -775,15 +796,118 @@ async function openNzbdmGivenSearchData(tab, options, searchData) {
   return false;
 }
 
-function openSelectionText(info, tab) {
-  let text = info.selectionText;
+function buildNswbdmSearchData(lcText) {
+  // To be NSW BDM we need some identifiers
+  if (!(lcText.includes("nsw") || lcText.includes("n.s.w.") || lcText.includes("new south wales"))) {
+    return undefined;
+  }
 
+  if (
+    !(lcText.includes("bdm") || lcText.includes("birth") || lcText.includes("death") || lcText.includes("marriage"))
+  ) {
+    return undefined;
+  }
+
+  const extractInput = {
+    defaultToYearFirst: false,
+    startYear: 1700,
+  };
+
+  let yearAndNum = extractYearAndRegistrationNumberFromText(lcText, extractInput);
+
+  if (!yearAndNum) {
+    return undefined;
+  }
+
+  let regNum = yearAndNum.regNum;
+  let regYear = yearAndNum.regYear;
+
+  // see if we can decide whether to search for births, deaths or marriages
+  // Exxample text:
+  // Victoria State Government, Registry of Births, Deaths and Marriages Victoria. Richard Goodall Elrington. Birth. Registration number 3218 / 1870. Father: Name. Mother: Name. District: Place. Link to search page
+  let birthOccurrences = (lcText.match(/birth/g) || []).length;
+  let deathOccurrences = (lcText.match(/death/g) || []).length;
+  let marriageOccurrences = (lcText.match(/marriage/g) || []).length;
+
+  birthOccurrences += (lcText.match(/born/g) || []).length;
+  deathOccurrences += (lcText.match(/died/g) || []).length;
+  marriageOccurrences += (lcText.match(/married/g) || []).length;
+
+  //console.log("birthOccurrences is '" + birthOccurrences + "'");
+  //console.log("deathOccurrences is '" + deathOccurrences + "'");
+  //console.log("marriageOccurrences is '" + marriageOccurrences + "'");
+
+  let link = "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/";
+  let searchType = "";
+
+  let baseName = "";
+  if (birthOccurrences && birthOccurrences > deathOccurrences && birthOccurrences > marriageOccurrences) {
+    link += "births";
+    searchType = "Births";
+    baseName = "searchSwitch:birthContainer:birthIdSearchSwitch:birthIdSearchContainer:";
+  } else if (deathOccurrences && deathOccurrences > birthOccurrences && deathOccurrences > marriageOccurrences) {
+    link += "deaths";
+    searchType = "Deaths";
+    baseName = "searchSwitch:deathContainer:deathIdSearchSwitch:deathIdSearchContainer:";
+  } else if (marriageOccurrences && marriageOccurrences > birthOccurrences && marriageOccurrences > deathOccurrences) {
+    link += "marriages";
+    searchType = "Marriages";
+    baseName = "searchSwitch:marriageContainer:marriageIdSearchSwitch:marriageIdSearchContainer:";
+  } else {
+    return undefined;
+  }
+
+  let fieldData = {};
+  fieldData["regNumber:regNumber"] = regNum;
+  fieldData["regNumber:regYear"] = regYear;
+
+  const searchData = {
+    timeStamp: Date.now(),
+    url: link,
+    baseName: baseName,
+    fieldData: fieldData,
+    searchType: searchType,
+    isRegNumSearch: true,
+  };
+
+  return searchData;
+}
+
+async function openNswbdmGivenSearchData(tab, options, searchData) {
+  //console.log("openNswbdmGivenSearchData, searchData is:");
+  //console.log(searchData);
+
+  try {
+    let existingTab = await getRegisteredTab("nswbdm");
+
+    let reuseTabIfPossible = options.search_nswbdm_reuseExistingTab;
+
+    const checkPermissionsOptions = {
+      reason: "To perform a search on NSW BDM a content script needs to be loaded on the bdm.nsw.gov.au search page.",
+    };
+    let allowed = await checkPermissionForSite("*://*.bdm.nsw.gov.au/*", checkPermissionsOptions);
+    if (!allowed) {
+      return false;
+    }
+
+    doSearchGivenSearchData(searchData, tab, options, existingTab, reuseTabIfPossible);
+    return true;
+  } catch (ex) {
+    console.log("openNswbdmGivenSearchData failed");
+    console.log(ex);
+  }
+
+  return false;
+}
+
+function openSelectionPlainText(text, tab) {
   //console.log("openSelectionText, text is: " + text);
 
   let templateStartIndex = text.indexOf("{{");
   if (templateStartIndex != -1) {
     //console.log("contains a template");
     openTemplate(info, tab);
+    return true;
   }
 
   // not a template, could be a Wiki-Id
@@ -798,23 +922,12 @@ function openSelectionText(info, tab) {
       const tabOption = options.context_general_newTabPos;
       openInNewTab(link, tab, tabOption);
     });
-    return;
+    return true;
   }
 
   let lcText = text.toLowerCase();
   //console.log("lcText is:");
   //console.log(lcText);
-
-  // check for Victorian BDM
-  if (lcText.includes("vic")) {
-    let searchData = buildVicbdmSearchData(lcText);
-    if (searchData) {
-      callFunctionWithStoredOptions(function (options) {
-        openVicbdmGivenSearchData(tab, options, searchData);
-      });
-      return;
-    }
-  }
 
   // check for New Zealand BDM
   let searchData = buildNzbdmSearchData(lcText);
@@ -822,8 +935,37 @@ function openSelectionText(info, tab) {
     callFunctionWithStoredOptions(function (options) {
       openNzbdmGivenSearchData(tab, options, searchData);
     });
-    return;
+    return true;
   }
+
+  // check for New South Wales BDM
+  searchData = buildNswbdmSearchData(lcText);
+  if (searchData) {
+    callFunctionWithStoredOptions(function (options) {
+      openNswbdmGivenSearchData(tab, options, searchData);
+    });
+    return true;
+  }
+
+  // check for Victorian BDM (do this last because another site ctation might have the given name
+  // Victoria in it).
+  if (lcText.includes("vic")) {
+    let searchData = buildVicbdmSearchData(lcText);
+    if (searchData) {
+      callFunctionWithStoredOptions(function (options) {
+        openVicbdmGivenSearchData(tab, options, searchData);
+      });
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function openSelectionText(info, tab) {
+  let text = info.selectionText;
+
+  return openSelectionPlainText(text, tab);
 }
 
 function contextClick(info, tab) {

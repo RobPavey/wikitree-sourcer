@@ -23,9 +23,22 @@ SOFTWARE.
 */
 import { RT } from "../../../base/core/record_type.mjs";
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { NzbdmEdReader } from "./nzbdm_ed_reader.mjs";
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "New Zealand Births, Deaths & Marriages Online";
+  let format = builder.options.citation_nzbdm_sourceTitleFormat;
+
+  switch (format) {
+    case "nzbdmo":
+      builder.sourceTitle = "New Zealand Births, Deaths & Marriages Online";
+      break;
+    case "nzbdmdo":
+      builder.sourceTitle = "New Zealand Births, Deaths and Marriages - Online";
+      break;
+    case "bdmonzdia":
+      builder.sourceTitle = "Births, Deaths & Marriages Online, New Zealand Department of Internal Affairs";
+      break;
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
@@ -46,17 +59,91 @@ function buildSourceReference(ed, gd, builder) {
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search";
+  let options = builder.getOptions();
+  let linkFormatOption = options.citation_nzbdm_linkFormat;
 
-  let recordLink = "[" + nzbdmUrl + " New Zealand BDM Online]";
-  builder.recordLinkOrTemplate = recordLink;
+  var nzbdmUrl = "";
+  if (linkFormatOption == "top") {
+    nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/";
+  } else if (linkFormatOption == "search") {
+    nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search";
+  } else if (linkFormatOption == "searchOfType") {
+    nzbdmUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search/search";
+    let type = "";
+    if (gd.recordType == RT.BirthRegistration) {
+      nzbdmUrl += "?path=%2FqueryEntry.m%3Ftype%3Dbirths";
+    } else if (gd.recordType == RT.DeathRegistration) {
+      nzbdmUrl += "?path=%2FqueryEntry.m%3Ftype%3Ddeaths";
+    } else if (gd.recordType == RT.MarriageRegistration) {
+      nzbdmUrl += "?path=%2FqueryEntry.m%3Ftype%3Dmarriages";
+    }
+  }
+  if (!nzbdmUrl) {
+    return;
+  }
+
+  let linkOption = options.citation_nzbdm_includeLink;
+
+  if (linkOption == "none") {
+    return;
+  }
+
+  let recordLink = "";
+
+  if (linkOption == "inSourceTitle") {
+    builder.putRecordLinkInTitle = true;
+    recordLink = nzbdmUrl;
+  } else if (linkOption == "asNzBdmOnline") {
+    recordLink = "[" + nzbdmUrl + " New Zealand BDM Online]";
+  } else if (linkOption == "asLinkToSearchPage") {
+    recordLink = "[" + nzbdmUrl + " Link to search page]";
+  }
+
+  if (recordLink) {
+    builder.recordLinkOrTemplate = recordLink;
+  }
+}
+
+function buildCuratedListDataString(ed, gd, builder) {
+  let edReader = new NzbdmEdReader(ed);
+
+  let isStillBirth = ed.recordData["Still Birth"];
+
+  const fields = [
+    { key: "", value: edReader.getCitationName() },
+    { key: "Mother's Given Name(s)", value: edReader.getCitationMotherGivenNames() },
+    { key: "Father's Given Name(s)", value: edReader.getCitationFatherGivenNames() },
+    { key: "", value: isStillBirth ? "Still Birth" : "" },
+    { key: "Age at Death", value: edReader.getCitationAgeAtDeath() },
+    { key: "Date of Birth", value: edReader.getCitationDateOfBirth() },
+  ];
+
+  builder.addListDataString(fields);
+}
+
+function buildOriginalListDataString(ed, gd, builder) {
+  const fieldsToExclude = ["Registration Number"];
+  builder.addListDataStringFromRecordData(ed.recordData, fieldsToExclude);
+}
+
+function buildDataString(ed, gd, builder) {
+  let options = builder.getOptions();
+  let dataStyleOption = options.citation_nzbdm_dataStyle;
+
+  if (dataStyleOption == "listCurated") {
+    buildCuratedListDataString(ed, gd, builder);
+  } else if (dataStyleOption == "sentence") {
+    builder.addStandardDataString(gd);
+  } else if (dataStyleOption == "listOriginal") {
+    buildOriginalListDataString(ed, gd, builder);
+  }
 }
 
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  buildDataString(ed, gd, builder);
 }
 
 function buildCitation(input) {

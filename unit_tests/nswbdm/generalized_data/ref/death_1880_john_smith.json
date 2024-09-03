@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "nswbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1880"
+  },
+  "eventPlace": {
+    "placeString": "New South Wales, Australia"
+  },
+  "lastNameAtDeath": "Smith",
+  "deathPlace": {
+    "placeString": "Singleton"
+  },
+  "registrationDistrict": "Patricks Plain",
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "James"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Deaths",
+    "registrationNumber": "9530",
+    "year": "1880"
+  },
+  "hasValidData": true
+}

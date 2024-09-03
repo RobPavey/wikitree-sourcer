@@ -147,6 +147,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:2DCB-21Q",
   },
   {
+    caseName: "england_marriage_1861_caroline_strugnell",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG",
+  },
+  {
     caseName: "england_marriage_1902_beatrice_fairchild",
     url: "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZB",
   },
@@ -479,6 +483,10 @@ const regressionData = [
   {
     caseName: "us_va_death_1921_henry_mullins",
     url: "https://www.familysearch.org/ark:/61903/1:1:QVR7-FDWT",
+  },
+  {
+    caseName: "us_va_death_1955_elmer_davis",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QVRD-74QJ",
   },
   {
     caseName: "us_vt_vital_1982_mildred_mattison",

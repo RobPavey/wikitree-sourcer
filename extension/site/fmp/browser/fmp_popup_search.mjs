@@ -95,7 +95,7 @@ async function fmpSearchWithParameters(generalizedData, parameters) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addFmpDefaultSearchMenuItem(menu, data, backFunction, filter) {
+function addFmpDefaultSearchMenuItem(menu, data, backFunction) {
   addMenuItemWithSubMenu(
     menu,
     "Search FindMyPast",

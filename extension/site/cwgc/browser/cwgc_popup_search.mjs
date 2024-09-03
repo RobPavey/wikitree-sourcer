@@ -65,7 +65,7 @@ async function cwgcSearch(generalizedData, typeOfSearch) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addCwgcDefaultSearchMenuItem(menu, data, backFunction, filter) {
+function addCwgcDefaultSearchMenuItem(menu, data, backFunction) {
   //console.log("addCwgcDefaultSearchMenuItem, data is:");
   //console.log(data);
 

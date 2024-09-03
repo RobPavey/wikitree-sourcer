@@ -61,6 +61,7 @@ const siteNames = [
   "npa",
   "nzbdm",
   "matricula",
+  "nswbdm",
   "archion",
 ];
 

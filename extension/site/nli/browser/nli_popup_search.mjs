@@ -63,7 +63,7 @@ async function nliSearch(generalizedData, typeOfSearch) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addNliDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search National Library of Ireland Registers...", function (element) {
+  addMenuItem(menu, "Search National Library of Ireland Registers", function (element) {
     nliSearch(data.generalizedData, "SameCollection");
   });
 

@@ -14458,7 +14458,10 @@ const NameUtils = {
             upperCaseLetterAtIndex(index + quoteIndex + 1);
           }
         }
-      } else if (word.includes("-") && word.length > 2 && word[2] != " ") {
+      }
+
+      // these can be in addition to changing the start of the word
+      if (word.includes("-") && word.length > 2 && word[2] != " ") {
         if (shouldUpperCaseAfterHyphen(word)) {
           let quoteIndex = word.indexOf("-");
           while ((quoteIndex != -1) & (quoteIndex < word.length - 1)) {

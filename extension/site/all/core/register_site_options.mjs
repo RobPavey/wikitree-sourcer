@@ -31,6 +31,7 @@ SOFTWARE.
 // The order of these lines does not matter since the options streen sorts them
 // by label.
 import "../../ancestry/core/ancestry_options.mjs";
+import "../../archion/core/archion_options.mjs";
 import "../../archive/core/archive_options.mjs";
 import "../../baclac/core/baclac_options.mjs";
 import "../../bg/core/bg_options.mjs";
@@ -47,12 +48,15 @@ import "../../gbooks/core/gbooks_options.mjs";
 import "../../hathi/core/hathi_options.mjs";
 import "../../irishg/core/irishg_options.mjs";
 import "../../jstor/core/jstor_options.mjs";
+import "../../matricula/core/matricula_options.mjs";
 import "../../mh/core/mh_options.mjs";
 import "../../naie/core/naie_options.mjs";
 import "../../nli/core/nli_options.mjs";
 import "../../noda/core/noda_options.mjs";
 import "../../np/core/np_options.mjs";
 import "../../npa/core/npa_options.mjs";
+import "../../nswbdm/core/nswbdm_options.mjs";
+import "../../nzbdm/core/nzbdm_options.mjs";
 import "../../opccorn/core/opccorn_options.mjs";
 import "../../openarch/core/openarch_options.mjs";
 import "../../ppnz/core/ppnz_options.mjs";
@@ -63,6 +67,3 @@ import "../../vicbdm/core/vicbdm_options.mjs";
 import "../../wiewaswie/core/wiewaswie_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
-import "../../nzbdm/core/nzbdm_options.mjs";
-import "../../matricula/core/matricula_options.mjs";
-import "../../archion/core/archion_options.mjs";

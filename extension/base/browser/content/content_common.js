@@ -37,11 +37,14 @@ var isLoadedExtractDataModuleLoading = false;
 var loadedExtractDataModule;
 var loadedExtractDataModuleFailed = false;
 var loadExtractDataModuleRetries = 0;
+var extractDataAndRespondRetries = 0;
 
 // These could be const but that causes a syntax error if this content script gets reloaded again
 // in the same page. This can happen on Safari at least.
-var maxLoadModuleRetries = 3;
-var loadModuleTimeout = 100;
+var maxLoadModuleRetries = 4;
+var maxExtractDataAndRespondRetries = 3;
+var loadModuleWaitTimeout = 100;
+var loadModuleRetryTimeout = 200;
 
 // these are duplicates of functions used in the popup code
 function getBrowserName() {
@@ -124,16 +127,33 @@ async function loadExtractDataModule(modulePath) {
       // This can happen in the case of a FreeCen search for example, we are in the middle of loading
       // the extract data module and we do a form.submit which switched to another page, killing this script.
       // That has happened in Firefox at least and in that case the error object was undefined.
-      if (e) {
-        let message = "Error when attempting a dynamic import of the extract data module in a content script.\n";
-        message +=
-          "This may occur in versions of Firefox prior to Firefox 89 and possibly in versions of Safari prior to version 15.\n";
-        message +=
-          "If you get this message it may indicate that the WikiTree Sourcer extension does not work in your browser.";
 
-        openExceptionPageForContentScript(message, modulePath, e, false);
+      // I have had some reports of this exception occuring in Firefox and the exception is "TypeError"
+      // and the message is something like:
+      // "error loading dynamically imported module: moz-extension://56237436-bc30-47ed-b1f4-8b006c9cc8ad/site/wikitree/core/wikitree_extract_data.mjs"
+      // I can reproduce this in Firefox when I explcitly enable the permissions for wikitree.com
+      // (so content script loads on page load) and then load this page:
+      //  https://apps.wikitree.com/apps/straub620/wt_search.php?first_name=Florian&last_name=Straub
+      // I might have to try multiple times to get the error.
+      // So I added a retry and that seems to fix the issue.
+      if (loadExtractDataModuleRetries < maxLoadModuleRetries) {
+        loadExtractDataModuleRetries++;
+        isLoadedExtractDataModuleLoading = false;
+        setTimeout(function () {
+          loadExtractDataModule(modulePath);
+        }, loadModuleRetryTimeout);
+      } else {
+        if (e) {
+          let message = "Error when attempting a dynamic import of the extract data module in a content script.\n";
+          message +=
+            "This may occur in versions of Firefox prior to Firefox 89 and possibly in versions of Safari prior to version 15.\n";
+          message +=
+            "If you get this message it may indicate that the WikiTree Sourcer extension does not work in your browser.";
+
+          openExceptionPageForContentScript(message, modulePath, e, false);
+        }
+        loadedExtractDataModuleFailed = true;
       }
-      loadedExtractDataModuleFailed = true;
     }
   } else if (isLoadedExtractDataModuleLoading) {
     console.log("WikiTree Sourcer: loadExtractDataModule. Currently loading. relative path is: ", modulePath);
@@ -160,12 +180,12 @@ function extractDataAndRespond(document, url, contentType, sendResponse, siteSpe
       });
     } else if (isLoadedExtractDataModuleLoading) {
       // dependencies not ready, wait a few milliseconds and try again
-      if (loadExtractDataModuleRetries < maxLoadModuleRetries) {
-        loadExtractDataModuleRetries++;
-        console.log("extractDataAndRespond. Retry number: ", loadExtractDataModuleRetries);
+      if (extractDataAndRespondRetries < maxExtractDataAndRespondRetries) {
+        extractDataAndRespondRetries++;
+        console.log("extractDataAndRespond. Retry number: ", extractDataAndRespondRetries);
         setTimeout(function () {
           extractDataAndRespond(document, url, contentType, sendResponse);
-        }, loadModuleTimeout);
+        }, loadModuleWaitTimeout);
         return true;
       } else {
         console.log("extractDataAndRespond. Too many retries");

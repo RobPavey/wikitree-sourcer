@@ -26,11 +26,29 @@
   "eventPlace": {
     "placeString": "Bennington, Bennington, Vermont, United States"
   },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William M Crosier",
+        "forenames": "William M",
+        "lastName": "Crosier"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary L Flynn",
+        "forenames": "Mary L",
+        "lastName": "Flynn"
+      }
+    }
+  },
   "wtSearchTemplates": [
     "{{FamilySearch Record|KFP2-VSP}}"
   ],
   "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3QSQ-G97W-WNS}}"
+    "{{FamilySearch Image|3QSQ-G97W-WNS}}",
+    "{{FamilySearch Record|KFP2-VS5}}",
+    "{{FamilySearch Record|KFP2-VSR}}"
   ],
   "collectionData": {
     "id": "2075288"

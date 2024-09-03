@@ -1,0 +1,60 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Grace",
+    "middleNames": "Edna",
+    "lastName": "Smith"
+  },
+  "lastNameAtBirth": "Smith",
+  "lastNameAtDeath": "Smith",
+  "mothersMaidenName": "Jurd",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "29 Jun 1908",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "26 Aug 2004",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Gosford, New South Wales, Australia"
+  },
+  "deathPlace": {
+    "placeString": "New Lambton, New South Wales, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Patrick Smith",
+        "lastName": "Smith",
+        "forenames": "John Patrick"
+      },
+      "lastNameAtBirth": "Smith",
+      "lastNameAtDeath": "Smith"
+    },
+    "mother": {
+      "name": {
+        "name": "Frances Amelia Jurd",
+        "lastName": "Jurd",
+        "forenames": "Frances Amelia"
+      },
+      "lastNameAtBirth": "Jurd",
+      "lastNameAtDeath": "Jurd"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "James Patrick Cummins",
+        "lastName": "Cummins",
+        "forenames": "James Patrick"
+      },
+      "lastNameAtBirth": "Cummins",
+      "lastNameAtDeath": "Cummins"
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Smith-57461"
+}

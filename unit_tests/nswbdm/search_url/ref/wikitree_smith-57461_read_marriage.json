@@ -1,0 +1,19 @@
+{
+  "std": {
+    "baseName": "searchSwitch:marriageContainer:marriageIdSearchSwitch:marriageNameSearchContainer:",
+    "fieldData": {
+      "brideName:familyName:edit": "Smith",
+      "brideName:givenName:edit": "Grace",
+      "brideName:otherNames:edit": "Edna",
+      "groomName:familyName:edit": "Cummins",
+      "groomName:givenName:edit": "James",
+      "groomName:otherNames:edit": "James",
+      "dateOfEvent:switchGroup:range:dateFrom:day": 1,
+      "dateOfEvent:switchGroup:range:dateFrom:month": 1,
+      "dateOfEvent:switchGroup:range:dateFrom:year": 1906,
+      "dateOfEvent:switchGroup:range:dateTo:day": 30,
+      "dateOfEvent:switchGroup:range:dateTo:month": 10,
+      "dateOfEvent:switchGroup:range:dateTo:year": 1973
+    }
+  }
+}

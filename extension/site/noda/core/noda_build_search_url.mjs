@@ -236,7 +236,7 @@ function buildSearchUrl(buildUrlInput) {
       builder.addCategory(parameters.category);
     }
 
-    if (parameters.relatedPerson) {
+    if (parameters.relatedPerson && parameters.relatedPerson != "none") {
       let parts = parameters.relatedPerson.split("|");
       let forenames = "";
       let lastName = "";

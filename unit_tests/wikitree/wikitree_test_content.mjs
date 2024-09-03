@@ -145,6 +145,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Peffers-436",
   },
   {
+    // Birth and death in NSW Aus. Death 2004
+    caseName: "smith-57461_read",
+    url: "https://www.wikitree.com/wiki/Smith-57461",
+  },
+  {
     caseName: "smith-241018_read",
     url: "https://www.wikitree.com/wiki/Smith-241018",
   },

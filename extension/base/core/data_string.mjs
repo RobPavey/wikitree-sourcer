@@ -825,6 +825,19 @@ function getDeathRegistrationString(gd, options) {
 
   dataString += addRegistrationPlace(gd, options);
 
+  let birthDateObj = gd.birthDate;
+  if (birthDateObj) {
+    let birthDateString = birthDateObj.getDateString();
+    if (birthDateString) {
+      dataString += " (born " + birthDateString + ")";
+    }
+  }
+
+  let parentNames = gd.inferParentNamesForDataString();
+  if (parentNames.fatherName || parentNames.motherName) {
+    dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
+  }
+
   return dataString;
 }
 

@@ -75,11 +75,61 @@ const citationOptionsGroup = {
   subcategory: "nzbdm",
   tab: "citation",
   subsection: "nzbdm",
-  options: [],
+  options: [
+    {
+      optionName: "sourceTitleFormat",
+      type: "select",
+      label: "Source title",
+      values: [
+        { value: "nzbdmo", text: "New Zealand Births, Deaths & Marriages Online" },
+        { value: "nzbdmdo", text: "New Zealand Births, Deaths and Marriages - Online" },
+        { value: "bdmonzdia", text: "Births, Deaths & Marriages Online, New Zealand Department of Internal Affairs" },
+      ],
+      defaultValue: "nzbdmo",
+    },
+    {
+      optionName: "includeLink",
+      type: "select",
+      label: "Include link to NZ BDM site",
+      values: [
+        { value: "none", text: "No" },
+        { value: "asNzBdmOnline", text: 'As "New Zealand BDM Online"' },
+        { value: "asLinkToSearchPage", text: 'As "Link to search page"' },
+        { value: "inSourceTitle", text: "In source title" },
+      ],
+      defaultValue: "asNzBdmOnline",
+    },
+    {
+      optionName: "linkFormat",
+      type: "select",
+      label: "Build link URL as",
+      values: [
+        { value: "top", text: "Link to BDM home page" },
+        { value: "search", text: "Link to BDM search page" },
+        { value: "searchOfType", text: "Link to BDM search page of type" },
+      ],
+      defaultValue: "search",
+    },
+    {
+      optionName: "dataStyle",
+      type: "select",
+      label: "Include record data as",
+      values: [
+        { value: "none", text: "Do not include data" },
+        { value: "sentence", text: "Standard Sourcer sentence for the record type" },
+        { value: "listCurated", text: "List of field names/values cleaned up and curated" },
+        {
+          value: "listOriginal",
+          text: "List of field names/values as shown on page (excluding ones used in source reference)",
+        },
+      ],
+      defaultValue: "sentence",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "nzbdm", "New Zealand BDM");
-registerSiteSearchPopupOptionsGroup("nzbdm", 7, 7);
+registerSiteSearchPopupOptionsGroup("nzbdm", 4, 4);
 registerSubheadingForOptions("search", "nzbdm", "behavior", "Search Behavior");
 registerOptionsGroup(searchBehaviorOptionsGroup);
 registerSubheadingForOptions("search", "nzbdm", "parameters", "Search Parameters");

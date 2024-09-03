@@ -131,7 +131,7 @@ async function wiewaswieSearchWithParameters(generalizedData, parameters) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addWiewaswieDefaultSearchMenuItem(menu, data, backFunction, filter) {
+function addWiewaswieDefaultSearchMenuItem(menu, data, backFunction) {
   addMenuItemWithSubMenu(
     menu,
     "Search WieWasWie (NL)",
@@ -139,7 +139,7 @@ function addWiewaswieDefaultSearchMenuItem(menu, data, backFunction, filter) {
       wiewaswieSearch(data.generalizedData, "");
     },
     function () {
-      setupWiewaswieSearchSubMenu(data, backFunction, filter);
+      setupWiewaswieSearchSubMenu(data, backFunction);
     }
   );
 
@@ -168,12 +168,12 @@ function addWiewaswieSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupWiewaswieSearchSubMenu(data, backFunction, filter) {
+async function setupWiewaswieSearchSubMenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
 
-  addWiewaswieSameRecordMenuItem(menu, data, filter);
+  addWiewaswieSameRecordMenuItem(menu, data);
   addWiewaswieSearchWithParametersMenuItem(menu, data, backFunction);
 
   endMainMenu(menu);

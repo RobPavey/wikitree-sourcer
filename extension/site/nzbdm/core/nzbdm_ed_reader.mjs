@@ -166,6 +166,14 @@ class NzbdmEdReader extends ExtractedDataReader {
   }
 
   getAgeAtDeath() {
+    if (this.recordType == RT.DeathRegistration) {
+      let dobAge = this.ed.recordData["Date of Birth/Age at Death"];
+      if (!/^\d+ \w+ \d\d\d\d$/.test(dobAge)) {
+        // it is an age
+        return dobAge;
+      }
+    }
+
     return "";
   }
 
@@ -227,6 +235,56 @@ class NzbdmEdReader extends ExtractedDataReader {
 
   getCollectionData() {
     return undefined;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Functions to support build citation
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  getCitationName() {
+    let nameObj = this.getNameObj();
+    if (nameObj) {
+      let name = nameObj.inferFullName();
+      if (name) {
+        let spouses = this.getSpouses();
+        if (spouses && spouses.length == 1 && spouses[0].name) {
+          let spouseName = spouses[0].name.inferFullName();
+          if (spouseName) {
+            name = name + " and " + spouseName;
+          }
+        }
+        return name;
+      }
+    }
+
+    return "";
+  }
+
+  getCitationMotherGivenNames() {
+    let motherGivenNames = this.ed.recordData["Mother's GivenName(s)"];
+    if (motherGivenNames == "NR") {
+      motherGivenNames = "";
+    }
+    return motherGivenNames;
+  }
+
+  getCitationFatherGivenNames() {
+    let fatherGivenNames = this.ed.recordData["Father's GivenName(s)"];
+    if (fatherGivenNames == "NR") {
+      fatherGivenNames = "";
+    }
+    return fatherGivenNames;
+  }
+
+  getCitationAgeAtDeath() {
+    return this.getAgeAtDeath();
+  }
+
+  getCitationDateOfBirth() {
+    let birthDateObj = this.getBirthDateObj();
+    if (birthDateObj) {
+      return birthDateObj.getDateString();
+    }
   }
 }
 

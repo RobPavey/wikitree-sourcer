@@ -97,7 +97,7 @@ async function ancestrySearchWithParameters(generalizedData, parameters) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addAncestryDefaultSearchMenuItem(menu, data, backFunction, filter) {
+function addAncestryDefaultSearchMenuItem(menu, data, backFunction) {
   addMenuItemWithSubMenu(
     menu,
     "Search Ancestry",

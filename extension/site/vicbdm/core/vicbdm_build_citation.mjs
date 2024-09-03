@@ -76,8 +76,9 @@ function buildSourceReference(ed, gd, builder) {
 
 function buildRecordLink(ed, gd, builder) {
   let options = builder.getOptions();
+  let linkOption = options.citation_vicbdm_includeLink;
 
-  if (options.citation_vicbdm_includeLink == "none") {
+  if (linkOption == "none") {
     return;
   }
 
@@ -85,12 +86,12 @@ function buildRecordLink(ed, gd, builder) {
 
   let recordLink = "";
 
-  if (options.citation_vicbdm_includeLink == "inSourceTitle") {
+  if (linkOption == "inSourceTitle") {
     builder.putRecordLinkInTitle = true;
     recordLink = vicbdmUrl;
-  } else if (options.citation_vicbdm_includeLink == "asBDMVictoria") {
+  } else if (linkOption == "asBDMVictoria") {
     recordLink = "[" + vicbdmUrl + " BDM Victoria]";
-  } else if (options.citation_vicbdm_includeLink == "asLinkToSearchPage") {
+  } else if (linkOption == "asLinkToSearchPage") {
     recordLink = "[" + vicbdmUrl + " Link to search page]";
   }
 
@@ -99,33 +100,39 @@ function buildRecordLink(ed, gd, builder) {
   }
 }
 
-function buildDataString(ed, gd, builder) {
+function buildCuratedListDataString(ed, gd, builder) {
   let edReader = new VicbdmEdReader(ed);
 
-  let dataString = "";
+  const fields = [
+    { key: "", value: edReader.getCitationName() },
+    { key: "Spouse", value: edReader.getCitationSpouse() },
+    { key: "Age", value: edReader.getCitationAge() },
+    { key: "Year", value: edReader.getCitationYear() },
+    { key: "Place", value: edReader.getCitationPlace() },
+    { key: "Father", value: edReader.getCitationFather() },
+    { key: "Mother", value: edReader.getCitationMother() },
+    { key: "Mother's LNAB", value: edReader.getCitationMotherLnab() },
+    { key: "Place of birth", value: edReader.getCitationPlaceOfBirth() },
+  ];
 
-  let name = edReader.getCitationName();
-  dataString = builder.addSingleValueToDataListString(dataString, name);
+  builder.addListDataString(fields);
+}
 
-  function addKeyValuePair(key, func) {
-    let value = edReader[func]();
-    dataString = builder.addKeyValuePairToDataListString(dataString, key, value);
-  }
+function buildOriginalListDataString(ed, gd, builder) {
+  const fieldsToExclude = ["Event", "Registration number"];
+  builder.addListDataStringFromRecordData(ed.recordData, fieldsToExclude);
+}
 
-  addKeyValuePair("Spouse", "getCitationSpouse");
-  addKeyValuePair("Age", "getCitationAge");
-  addKeyValuePair("Year", "getCitationYear");
-  addKeyValuePair("Place", "getCitationPlace");
-  addKeyValuePair("Father", "getCitationFather");
-  addKeyValuePair("Mother", "getCitationMother");
-  addKeyValuePair("Mother's LNAB", "getCitationMotherLnab");
-  addKeyValuePair("Place of birth", "getCitationPlaceOfBirth");
+function buildDataString(ed, gd, builder) {
+  let options = builder.getOptions();
+  let dataStyleOption = options.citation_vicbdm_dataStyle;
 
-  if (dataString) {
-    if (!dataString.endsWith(".")) {
-      dataString += ".";
-    }
-    builder.dataString = dataString;
+  if (dataStyleOption == "listCurated") {
+    buildCuratedListDataString(ed, gd, builder);
+  } else if (dataStyleOption == "sentence") {
+    builder.addStandardDataString(gd);
+  } else if (dataStyleOption == "listOriginal") {
+    buildOriginalListDataString(ed, gd, builder);
   }
 }
 

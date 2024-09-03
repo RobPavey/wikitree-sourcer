@@ -34,6 +34,40 @@ const regressionData = [
   {
     caseName: "birth_1880_george_nicholson",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dBirthSearch%26recordsPP%3d30#SearchResults",
+    optionVariants: [
+      {
+        variantName: "ee_style",
+        optionOverrides: {
+          citation_general_meaningfulNames: "none",
+          citation_general_commaInsideQuotes: true,
+          citation_general_addEeItemType: true,
+          citation_general_addAccessedDate: "parenBeforeLink",
+          citation_general_sourceReferenceSeparator: "commaSpace",
+          citation_general_dataListSeparator: "commaSpace",
+          citation_general_addNewlinesWithinRefs: false,
+          citation_general_addNewlinesWithinBody: false,
+          citation_general_addBreaksWithinBody: false,
+          citation_nzbdm_includeLink: "asLinkToSearchPage",
+          citation_nzbdm_linkFormat: "top",
+          citation_nzbdm_sourceTitleFormat: "bdmonzdia",
+        },
+      },
+      {
+        variantName: "bee_style",
+        optionOverrides: {
+          citation_general_meaningfulNames: "none",
+          citation_general_commaInsideQuotes: true,
+          citation_general_addAccessedDate: "parenBeforeLink",
+          citation_general_sourceReferenceSeparator: "commaSpace",
+          citation_general_dataListSeparator: "commaSpace",
+          citation_general_addNewlinesWithinRefs: false,
+          citation_general_addNewlinesWithinBody: false,
+          citation_general_addBreaksWithinBody: false,
+          citation_nzbdm_includeLink: "inSourceTitle",
+          citation_nzbdm_linkFormat: "searchOfType",
+        },
+      },
+    ],
   },
   {
     caseName: "birth_1936_trevor_nicholson_page2",
@@ -42,6 +76,26 @@ const regressionData = [
   {
     caseName: "birth_1965_nr_nicholson_sb_page2",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=%2FbirthSelect.m%3Fpage%3D2#matches",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
   {
     caseName: "death_1935_norman_mcdonald",
@@ -50,6 +104,26 @@ const regressionData = [
   {
     caseName: "death_2001_mary_lyall",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dDeathSearch%26recordsPP%3d30#SearchResults",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
   {
     caseName: "marriage_1843_elizabeth_wilson",
@@ -58,6 +132,26 @@ const regressionData = [
   {
     caseName: "marriage_1947_ngaio_wilson",
     url: "https://www.bdmhistoricalrecords.dia.govt.nz/Search/Search?Path=querySubmit.m%3fReportName%3dMarriageSearch%26recordsPP%3d30#SearchResults",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nzbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
   },
 ];
 

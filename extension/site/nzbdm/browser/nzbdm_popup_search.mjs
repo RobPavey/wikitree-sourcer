@@ -47,7 +47,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: nzbdmStartYear,
     endYear: nzbdmEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["New Zealand"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {

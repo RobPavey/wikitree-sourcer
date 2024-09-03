@@ -43,9 +43,6 @@ const baclacStartYear = 1800;
 const baclacEndYear = 1992;
 
 function shouldShowSearchMenuItem(data, filter) {
-  //console.log("shouldShowSearchMenuItem, data is:");
-  //console.log(data);
-
   const siteConstraints = {
     startYear: baclacStartYear,
     endYear: baclacEndYear,
@@ -103,20 +100,9 @@ async function baclacSearchWithParameters(generalizedData, parameters) {
 // Menu items
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function addBaclacDefaultSearchMenuItem(menu, data, backFunction, filter) {
+function addBaclacDefaultSearchMenuItem(menu, data, backFunction) {
   //console.log("addBaclacDefaultSearchMenuItem, data is:");
   //console.log(data);
-
-  const siteConstraints = {
-    startYear: baclacStartYear,
-    endYear: baclacEndYear,
-    dateTestType: "bmd",
-    countryList: ["Canada"],
-  };
-
-  if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
-    return false;
-  }
 
   addMenuItemWithSubMenu(
     menu,
@@ -125,7 +111,7 @@ function addBaclacDefaultSearchMenuItem(menu, data, backFunction, filter) {
       baclacSearch(data.generalizedData, "Census");
     },
     function () {
-      setupBaclacSearchSubMenu(data, backFunction, filter);
+      setupBaclacSearchSubMenu(data, backFunction);
     }
   );
 
@@ -166,7 +152,7 @@ function addBaclacSearchWithParametersMenuItem(menu, data, backFunction) {
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function setupBaclacSearchSubMenu(data, backFunction, filter) {
+async function setupBaclacSearchSubMenu(data, backFunction) {
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);

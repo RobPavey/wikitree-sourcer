@@ -1,0 +1,2107 @@
+{
+  "id" : "r_175854968163",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1697469456518,
+    "created" : 1697469456518
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:H9W5-T1S3?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:H9W5-T1S3?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:H9W5-T1S3"
+    }
+  },
+  "description" : "#sd_p_296325337642",
+  "persons" : [ {
+    "id" : "p_296325337642",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6NX6-GFQG?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/H9W5-T1S3?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG" ]
+    },
+    "names" : [ {
+      "id" : "68f9b9ce-85ac-4967-a247-b3ec2dbfca18",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Caroline Strugnell",
+        "parts" : [ {
+          "id" : "0d867006-2465-407b-8d63-2db274f3b063",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Caroline",
+          "fields" : [ {
+            "id" : "5846c4b8-dbbd-425e-ae93-3b7b67907df0",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "99b911ef-f51d-4f47-93ba-199c0f607d98",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Caroline"
+            }, {
+              "id" : "99b911ef-f51d-4f47-93ba-199c0f607d98",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Caroline",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "525f0bb4-9f8d-428c-bb01-9e4faaeaa419",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Strugnell",
+          "fields" : [ {
+            "id" : "b21b6432-2244-400c-a139-927a3f55cf55",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "40fd0700-4141-47c1-920d-e19ccb030c5c",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Strugnell"
+            }, {
+              "id" : "40fd0700-4141-47c1-920d-e19ccb030c5c",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Strugnell",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "372c534a-8588-4bfc-8e65-6ee783b81db3",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "03b483e6-161d-4d0d-8ac5-7fee471d83d7",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Caroline Strugnell"
+          }, {
+            "id" : "03b483e6-161d-4d0d-8ac5-7fee471d83d7",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Caroline Strugnell",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Religion",
+      "value" : "Anglican",
+      "fields" : [ {
+        "id" : "0699b927-8c86-4322-b25e-2305287634c7",
+        "attribution" : {
+          "modified" : 1697469456518,
+          "created" : 1697469456518
+        },
+        "type" : "http://gedcomx.org/Religion",
+        "values" : [ {
+          "id" : "fb827375-2ee2-4548-9904-c03699f77782",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_RELIGION_ORIG",
+          "text" : "Anglican"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Single",
+      "fields" : [ {
+        "id" : "1dc4021e-1b0a-4bbb-8766-87173cc03af7",
+        "attribution" : {
+          "modified" : 1697469456518,
+          "created" : 1697469456518
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "b976cab5-431f-4779-8703-47ec33a3f00c",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MARITAL_STATUS_ORIG",
+          "text" : "Spinster"
+        }, {
+          "id" : "b976cab5-431f-4779-8703-47ec33a3f00c",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MARITAL_STATUS",
+          "text" : "Single",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103333",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
+        } ]
+      } ]
+    }, {
+      "id" : "d93800fc-0d36-492a-a7e7-c23f15b7bd9b",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "7a377fd4-ee40-401f-9b13-90e96921355f",
+        "original" : "Fareham",
+        "fields" : [ {
+          "id" : "38722d32-2838-4d86-88d7-531769763dc8",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "73b2b335-7c53-47c2-8f61-581dd928e11f",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_RES_PLACE_ORIG",
+            "text" : "Fareham"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "4540e73e-3680-40fa-b7fc-b2312ff71185",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "4bc152fa-b7ef-420d-8528-bef2917141af",
+        "original" : "1826",
+        "formal" : "+1826",
+        "fields" : [ {
+          "id" : "31ba03f6-e223-4438-a535-e9c5024e1901",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1660669232809,
+            "created" : 1660669232809
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "decd7586-3dc7-4a39-9416-6423dc592774",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1660669232809,
+              "created" : 1660669232809
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "1826"
+          }, {
+            "id" : "decd7586-3dc7-4a39-9416-6423dc592774",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1660669232809,
+              "created" : 1660669232809
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1826",
+            "resource" : "+1826",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "decd7586-3dc7-4a39-9416-6423dc592774",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              },
+              "modified" : 1660669232809,
+              "created" : 1660669232809
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "1826",
+            "resource" : "+1826",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "a01d82c0-d32d-4c8d-aeb9-025e1ad9f57c",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "e4884371-5577-4ddf-a662-e4b0cdf18667",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1826"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "b53f4827-73f5-4b44-b482-7df9554a7bd9",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "6c93c32d-03c8-4354-9728-0daff46991ae",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "35"
+      }, {
+        "id" : "6c93c32d-03c8-4354-9728-0daff46991ae",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "PR_AGE",
+        "text" : "35 years",
+        "resource" : "P35Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
+      } ],
+      "qualifiers" : [ {
+        "value" : "58c74d49-871e-4884-b3a2-2cdc0d333c10",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "92adcaa0-eb1f-4321-a337-5d79e4d5eab7",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "7f272e33-df2b-436c-8583-4fc4d8cadbac",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000008061860_00447_00000_0000175854968163_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Caroline Strugnell",
+      "birthDate" : "1826"
+    }
+  }, {
+    "id" : "p_296325337643",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "28df04aa-9509-4099-97ce-80033d2843ef",
+        "attribution" : {
+          "modified" : 1697469456518,
+          "created" : 1697469456518
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "d6110650-e6e2-49cc-82b7-dcd438d95ea0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1660669232853,
+            "created" : 1660669232853
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6NX6-GFQP?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/H9W5-T1S3?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQP" ]
+    },
+    "names" : [ {
+      "id" : "453fcd5c-85d7-4eca-a750-2f6a9ce42ef3",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Isaac Chapman Strugnell",
+        "parts" : [ {
+          "id" : "903cc5e6-b4b1-43eb-be19-a3763087f3eb",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Isaac Chapman",
+          "fields" : [ {
+            "id" : "a76a1071-bb65-4dfd-a750-49fd47462cfa",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "9a35cd60-da66-45d8-869a-470886750a6e",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Isaac Chapman"
+            }, {
+              "id" : "9a35cd60-da66-45d8-869a-470886750a6e",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Isaac Chapman",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "a6204270-c629-4709-ad29-18b9915d7c6c",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Strugnell",
+          "fields" : [ {
+            "id" : "f218ce15-6fcd-4a54-b7ea-bfef3e157178",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "c5a660fe-5c29-4ea7-b000-254ff2d365bd",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Strugnell"
+            }, {
+              "id" : "c5a660fe-5c29-4ea7-b000-254ff2d365bd",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Strugnell",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "0616ec97-0a8e-4011-9fa8-ec5d8939d219",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "0ad5a3bc-8651-4a5c-9012-19004ae74aac",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "Isaac Chapman Strugnell"
+          }, {
+            "id" : "0ad5a3bc-8651-4a5c-9012-19004ae74aac",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Isaac Chapman Strugnell",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Occupation",
+      "value" : "Candle Manufacturer",
+      "fields" : [ {
+        "id" : "7ee12220-5d66-4e81-a178-bfaf6ccdbde8",
+        "attribution" : {
+          "modified" : 1697469456518,
+          "created" : 1697469456518
+        },
+        "type" : "http://gedcomx.org/Occupation",
+        "values" : [ {
+          "id" : "49d37b37-e1d0-4ba7-b9e2-ae3f1a3ac11e",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_FTHR_OCCUPATION_OCCUPATION_ORIG",
+          "text" : "Candle Manufacturer"
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "bb7cff8c-3b39-4fa1-80f7-4af8cf3fa1cb",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "cec38019-7dfe-418c-a945-6c3a155f16ae",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000008061860_00447_00000_0000175854968163_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Isaac Chapman Strugnell",
+      "gender" : "Male"
+    }
+  }, {
+    "id" : "p_296325337644",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6NX6-GFQ5?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/H9W5-T1S3?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQ5" ]
+    },
+    "names" : [ {
+      "id" : "cbf0db21-b652-4a15-b1d7-bd16eb672fd3",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "James Edward Hunt",
+        "parts" : [ {
+          "id" : "a9dc2d76-261e-40f3-995e-3c75dc30a2af",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "James Edward",
+          "fields" : [ {
+            "id" : "a5078f72-41e6-442a-9183-ebe212865c11",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "e83fc8db-ae57-4541-8615-3726d5c38f24",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "James Edward"
+            }, {
+              "id" : "e83fc8db-ae57-4541-8615-3726d5c38f24",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "James Edward",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "5727cb60-6949-4c22-90e6-3b014d020f51",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Hunt",
+          "fields" : [ {
+            "id" : "b684f8ba-abda-4c87-b853-795ec289ac3c",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "3657de07-5919-4c50-989e-14a6903169ff",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Hunt"
+            }, {
+              "id" : "3657de07-5919-4c50-989e-14a6903169ff",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Hunt",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "6b7b03f6-5d9c-4265-abf3-6c3b2ac9dfd6",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "6980130c-dd07-4aa2-9c9f-6f139c7672ea",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "James Edward Hunt"
+          }, {
+            "id" : "6980130c-dd07-4aa2-9c9f-6f139c7672ea",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "James Edward Hunt",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Occupation",
+      "value" : "Grocer",
+      "fields" : [ {
+        "id" : "9e23b4c7-ee96-460b-9099-56906212090f",
+        "attribution" : {
+          "modified" : 1697469456518,
+          "created" : 1697469456518
+        },
+        "type" : "http://gedcomx.org/Occupation",
+        "values" : [ {
+          "id" : "fe4dd993-55a8-4250-b328-98cdd22c3862",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "SP_OCCUPATION_OCCUPATION_ORIG",
+          "text" : "Grocer"
+        } ]
+      } ]
+    }, {
+      "type" : "http://gedcomx.org/MaritalStatus",
+      "value" : "Single",
+      "fields" : [ {
+        "id" : "bf571b04-a279-41d1-be11-a2c9e3a0581e",
+        "attribution" : {
+          "modified" : 1697469456518,
+          "created" : 1697469456518
+        },
+        "type" : "http://gedcomx.org/MaritalStatus",
+        "values" : [ {
+          "id" : "081c472e-f021-4079-9b11-62b3ac3b08cc",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "SP_MARITAL_STATUS_ORIG",
+          "text" : "Bachelor"
+        }, {
+          "id" : "081c472e-f021-4079-9b11-62b3ac3b08cc",
+          "lang" : "en",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/MaritalStatus?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_MARITAL_STATUS",
+          "text" : "Single",
+          "resource" : "http://ws.cv.standards.service.prod.us-east-1.prod.fslocal.org:80/cv/terms/103333",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
+        } ]
+      } ]
+    }, {
+      "id" : "e94a1620-d471-40f2-b631-fb2d18ce848a",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/Residence",
+      "place" : {
+        "id" : "5a5e25c8-f23d-4b92-b359-f014699f52f4",
+        "original" : "61 Grundy St, Poflar",
+        "fields" : [ {
+          "id" : "c2d2900d-467f-4f78-845e-59762de0cf64",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "9e881ff9-89f8-485b-a643-d163e0310620",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_RES_PLACE_ORIG",
+            "text" : "61 Grundy St, Poflar"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "2bdf7210-3954-4ac4-9b92-0cda401030c0",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "32acc0b3-cd6d-4fe8-ad82-c699188bd541",
+        "original" : "1832",
+        "formal" : "+1832",
+        "fields" : [ {
+          "id" : "1616dc3b-c790-4e0c-ab9b-5b4100924290",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "7beafbbd-82a4-45a3-a71d-ffda01bec6bf",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_BIR_YEAR_ORIG",
+            "text" : "1832"
+          } ]
+        }, {
+          "id" : "5efe062d-ca6b-467e-b02b-b64966fa14ce",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1660669232811,
+            "created" : 1660669232811
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "763e5432-0496-417c-af1d-a5659f31cd82",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1660669232811,
+              "created" : 1660669232811
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_BIR_DATE_ORIG",
+            "text" : "1832"
+          }, {
+            "id" : "763e5432-0496-417c-af1d-a5659f31cd82",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1660669232811,
+              "created" : 1660669232811
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_BIR_DATE",
+            "text" : "1832",
+            "resource" : "+1832",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "763e5432-0496-417c-af1d-a5659f31cd82",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              },
+              "modified" : 1660669232811,
+              "created" : 1660669232811
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_BIR_DATE",
+            "text" : "1832",
+            "resource" : "+1832",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "428d6988-c605-41f8-91a5-e7a388e9394a",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "08767879-bc41-4e31-b1ad-0d3614eca449",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SP_AGE_ORIG",
+        "text" : "29"
+      }, {
+        "id" : "08767879-bc41-4e31-b1ad-0d3614eca449",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "attribution" : {
+          "contributor" : {
+            "resource" : "http://familysearch.org/treatments/sls/Age?version=1.3.3"
+          },
+          "modified" : 1709677827599,
+          "created" : 1709677827599
+        },
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "SP_AGE",
+        "text" : "29 years",
+        "resource" : "P29Y",
+        "qualifiers" : [ {
+          "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=AG:PY&fieldScorerVersion=1.0.0",
+          "name" : "StdQualifier"
+        } ]
+      } ],
+      "qualifiers" : [ {
+        "value" : "350014c4-ae3f-4b85-92a1-38f571ea3075",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "4a000506-37ef-4c73-b692-1930505f20a0",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "1eb3215c-1a07-495f-97b0-a38a225bcd28",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000008061860_00447_00000_0000175854968163_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "James Edward Hunt",
+      "birthDate" : "1832"
+    }
+  }, {
+    "id" : "p_296325337645",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "84bc739b-f032-4248-839d-a77b9e1aa315",
+        "attribution" : {
+          "modified" : 1697469456518,
+          "created" : 1697469456518
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "727b9307-3a0c-420c-9075-cbc3f1a01357",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1660669232853,
+            "created" : 1660669232853
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6NX6-GFQR?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/H9W5-T1S3?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQR" ]
+    },
+    "names" : [ {
+      "id" : "9510c4f5-9c39-4049-bb51-1b8088b97f66",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "David Hunt",
+        "parts" : [ {
+          "id" : "9a0bbece-d1d8-4bda-9a78-5aa29ec54633",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "David",
+          "fields" : [ {
+            "id" : "ad1bb562-5588-4318-9bc6-51c9681a9808",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "97632c50-88c2-4412-b065-9f02e7586f46",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_FTHR_NAME_GN_ORIG",
+              "text" : "David"
+            }, {
+              "id" : "97632c50-88c2-4412-b065-9f02e7586f46",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_FTHR_NAME_GN",
+              "text" : "David",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "4d58bd0b-4c6b-48e0-8e27-d209ae3595a1",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Hunt",
+          "fields" : [ {
+            "id" : "4cc89e88-7c8c-42cf-9c7b-5706e644fb14",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "a30bf5f2-80b6-437a-a925-8c7bfc0ce027",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_FTHR_NAME_SURN_ORIG",
+              "text" : "Hunt"
+            }, {
+              "id" : "a30bf5f2-80b6-437a-a925-8c7bfc0ce027",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_FTHR_NAME_SURN",
+              "text" : "Hunt",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "9e8abc87-e173-4fe4-85a6-425b5db6f515",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "aa195498-313b-4179-b062-7d70bf3a4a13",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_FTHR_NAME_ORIG",
+            "text" : "David Hunt"
+          }, {
+            "id" : "aa195498-313b-4179-b062-7d70bf3a4a13",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_FTHR_NAME",
+            "text" : "David Hunt",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "type" : "http://gedcomx.org/Occupation",
+      "value" : "Gardener",
+      "fields" : [ {
+        "id" : "d6ef7ac2-64cd-434f-833e-5a66ad2b8d3f",
+        "attribution" : {
+          "modified" : 1697469456518,
+          "created" : 1697469456518
+        },
+        "type" : "http://gedcomx.org/Occupation",
+        "values" : [ {
+          "id" : "5baaa434-d566-4eb2-b980-d0b697f4070d",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "SP_FTHR_OCCUPATION_OCCUPATION_ORIG",
+          "text" : "Gardener"
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "0ca17465-e5cf-48fc-b636-61acc5e09f1c",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "b9c43300-1ef4-4538-a24d-3c3c887ff530",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000008061860_00447_00000_0000175854968163_003"
+      } ]
+    } ],
+    "display" : {
+      "name" : "David Hunt",
+      "gender" : "Male"
+    }
+  }, {
+    "id" : "p_296325337646",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6NX6-GFQT?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/H9W5-T1S3?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQT" ]
+    },
+    "names" : [ {
+      "id" : "aca9f175-b134-4697-b088-68b630106dfa",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "parts" : [ {
+          "id" : "ff563a03-7c71-44d2-8cec-a585066de037",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Jane",
+          "fields" : [ {
+            "id" : "4d67a1eb-dca4-428e-ae0a-23a8500a1c59",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "5156cb09-f097-4b23-baad-dc1229d7525b",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1660669232841,
+                "created" : 1660669232841
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "WITNESS_2_NAME_GN",
+              "text" : "Jane"
+            } ]
+          } ]
+        }, {
+          "id" : "f93f5f17-23d8-4419-8a26-239146d54fa7",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Strugnell",
+          "fields" : [ {
+            "id" : "e382d6d7-758e-4737-bc9d-1393138870fd",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "e43caaf7-2cf9-4304-9485-cca101bed2c1",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1660669232841,
+                "created" : 1660669232841
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "WITNESS_2_NAME_SURN",
+              "text" : "Strugnell"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "f17f3d5b-149c-4f50-bae5-00dda785c972",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "ba88da04-abb4-4bc5-9cf9-b7685dea37a9",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000008061860_00447_00000_0000175854968163_004"
+      } ]
+    }, {
+      "id" : "a1bcdce1-28df-4e23-ace1-bde4f7ba0043",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/Role",
+      "values" : [ {
+        "id" : "70ac65ea-ead2-42de-a0c8-0083668eb80c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "ROLE_ORIG",
+        "text" : "WITNESS_2"
+      }, {
+        "id" : "70ac65ea-ead2-42de-a0c8-0083668eb80c",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "ROLE",
+        "text" : "WITNESS_2"
+      } ]
+    } ],
+    "display" : { }
+  }, {
+    "id" : "p_296325337647",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6NX6-GFQY?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/H9W5-T1S3?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQY" ]
+    },
+    "names" : [ {
+      "id" : "8cd5d934-b4af-4216-9462-28c08e311d05",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "parts" : [ {
+          "id" : "16df6eee-c632-46a6-a560-72bf81ebec7c",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Strugnell",
+          "fields" : [ {
+            "id" : "b29a1b7e-5991-42d9-959f-712ce82a6fa4",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "855765b6-27bd-4dbf-93ea-9bc8fe5ffd98",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1660669232847,
+                "created" : 1660669232847
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "WITNESS_NAME_SURN",
+              "text" : "Strugnell"
+            } ]
+          } ]
+        }, {
+          "id" : "4468de5f-7459-40c3-84ad-22d9a50b2b51",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "T C",
+          "fields" : [ {
+            "id" : "85c433a2-bffe-45cc-b559-08498635636f",
+            "attribution" : {
+              "modified" : 1697469456518,
+              "created" : 1697469456518
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "9141db5d-c8e5-4165-98dc-9fb9dba27df4",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1660669232847,
+                "created" : 1660669232847
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "WITNESS_NAME_GN",
+              "text" : "T C"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "bfae51d5-fa53-47eb-b546-d36068feee5e",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/Role",
+      "values" : [ {
+        "id" : "16153b63-a2fd-4a00-8361-e54e8b40c17c",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "ROLE_ORIG",
+        "text" : "WITNESS"
+      }, {
+        "id" : "16153b63-a2fd-4a00-8361-e54e8b40c17c",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "ROLE",
+        "text" : "WITNESS"
+      } ]
+    }, {
+      "id" : "8aec0d91-fa21-4852-ac26-6c36ef8bf304",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "281217ea-9448-4950-9bf4-78bfb4a02ba4",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000008061860_00447_00000_0000175854968163_005"
+      } ]
+    } ],
+    "display" : { }
+  } ],
+  "relationships" : [ {
+    "id" : "69ef9444-570b-4ae1-9938-e9b905cc7dfd",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_296325337642",
+      "resourceId" : "p_296325337642"
+    },
+    "person2" : {
+      "resource" : "#p_296325337644",
+      "resourceId" : "p_296325337644"
+    },
+    "facts" : [ {
+      "id" : "121c0da9-28fc-421a-b800-f1ed788fee7d",
+      "attribution" : {
+        "modified" : 1697469456518,
+        "created" : 1697469456518
+      },
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "id" : "c653e2a7-4bef-4692-8378-fb156c334507",
+        "original" : "14 January 1861",
+        "formal" : "+1861-01-14",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "fields" : [ {
+          "id" : "5f1f4685-3957-44b8-8832-8b862b74d619",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1660669232813,
+            "created" : 1660669232813
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "078ee55c-a55c-4419-b666-0691247eb44c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "14 Jan 1861"
+          }, {
+            "id" : "078ee55c-a55c-4419-b666-0691247eb44c",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              },
+              "modified" : 1660669232813,
+              "created" : 1660669232813
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "14 January 1861",
+            "resource" : "+1861-01-14",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "674e99c1-6163-4f43-a866-c893ef8b9558",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "b1ebb308-238c-4db4-8451-92ec230ef889",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1660669232813,
+              "created" : 1660669232813
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DAY",
+            "text" : "14"
+          } ]
+        }, {
+          "id" : "5e2f04b6-a708-406a-9c02-2287a0ffacbd",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "14fdf285-eb7a-4138-83ee-daf459a96249",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1660669232813,
+              "created" : 1660669232813
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_MONTH",
+            "text" : "1"
+          } ]
+        }, {
+          "id" : "25e78312-856a-423c-ba27-2f8fb3c5d05b",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "fe7f4fb1-62b7-4626-be94-06f6562b1ec1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatment/ver/2"
+              },
+              "modified" : 1660669232813,
+              "created" : 1660669232813
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1861"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "bec396c0-a8fc-44e8-ac98-38ab68f5747d",
+        "original" : "St Peter St Paul And St Andrew's Cathedral, Peterborough, Northamptonshire, England, United Kingdom",
+        "confidence" : "http://confidence/78",
+        "description" : "#place_11011365",
+        "fields" : [ {
+          "id" : "0867c6a3-d6f4-4251-97c9-f2dd7142e1d4",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "84767722-6c6d-458f-85c2-450f8aa7fddd",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "England"
+          } ]
+        }, {
+          "id" : "5902d3c8-6255-4235-874d-4dbb5cfd7a86",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "887f7c8c-a3ce-4633-95da-2df1d3770ba5",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Hampshire"
+          } ]
+        }, {
+          "id" : "bddc4442-9941-4f3f-9bbc-a40eb65bd1f2",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://familysearch.org/types/fields/CityOrTown",
+          "values" : [ {
+            "id" : "7d7b27ec-062a-46a3-8af0-652099253a13",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_CITY_TOWN_ORIG",
+            "text" : "Fareham"
+          } ]
+        }, {
+          "id" : "50c08f75-86db-4b0d-aa93-1df506386816",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "27b07890-6fbe-4f16-8670-f5af517ad076",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "SS Peter & Paul, Fareham, Hampshire, England"
+          }, {
+            "id" : "27b07890-6fbe-4f16-8670-f5af517ad076",
+            "confidence" : "http://confidence/78",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1660669232876,
+              "created" : 1660669232876
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "St Peter St Paul And St Andrew's Cathedral, Peterborough, Northamptonshire, England, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/11011365",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            }, {
+              "value" : "920, 913, 910, 915, 918",
+              "name" : "StdQualifier"
+            } ]
+          }, {
+            "id" : "27b07890-6fbe-4f16-8670-f5af517ad076",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Fareham, Hampshire, England, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/3041245",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "0006e7f4-ab44-4a0c-93db-5804d89e87a5",
+          "attribution" : {
+            "modified" : 1697469456518,
+            "created" : 1697469456518
+          },
+          "type" : "http://gedcomx.org/Parish",
+          "values" : [ {
+            "id" : "fb8f5930-268f-4d29-ae72-5cf1a971ff56",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PARISH_ORIG",
+            "text" : "SS Peter & Paul"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "19d3a322-65ee-4849-a5a0-ad4bca837e90",
+        "attribution" : {
+          "modified" : 1697469456518,
+          "created" : 1697469456518
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "dfb53126-454d-4a79-936b-19452409c8b7",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Marriage",
+          "resource" : "http://gedcomx.org/Marriage"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "0376d3bd-b41c-44ee-90fa-8ef8941706e5",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_296325337643",
+      "resourceId" : "p_296325337643"
+    },
+    "person2" : {
+      "resource" : "#p_296325337642",
+      "resourceId" : "p_296325337642"
+    }
+  }, {
+    "id" : "02d34392-31c3-42a2-b30f-e19846ffd058",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_296325337645",
+      "resourceId" : "p_296325337645"
+    },
+    "person2" : {
+      "resource" : "#p_296325337644",
+      "resourceId" : "p_296325337644"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_175854968163",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:H9W5-T1S3",
+    "componentOf" : {
+      "description" : "#sd_c_4469394",
+      "descriptionId" : "sd_c_4469394"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1697469456518,
+    "modified" : 1709993166912,
+    "coverage" : [ {
+      "spatial" : {
+        "id" : "bec396c0-a8fc-44e8-ac98-38ab68f5747d",
+        "original" : "St Peter St Paul And St Andrew's Cathedral, Peterborough, Northamptonshire, England, United Kingdom",
+        "description" : "https://www.familysearch.org/platform/places/description/11011365"
+      },
+      "temporal" : {
+        "original" : "14 January 1861",
+        "formal" : "+1861-01-14"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "citations" : [ {
+      "value" : "\"England, Hampshire, Portsmouth, Marriages, 1537-1930\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG : Sat Mar 09 14:06:06 UTC 2024), Entry for Caroline Strugnell and Isaac Chapman Strugnell, 14 January 1861."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Caroline Strugnell, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/15001074886846" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:H9W5-T1S3" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/4469394?arkName=1:2:H9W5-T1S3"
+    }
+  }, {
+    "id" : "sd_c_4469394",
+    "about" : "https://www.familysearch.org/platform/records/collections/4469394",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1660160563777,
+    "modified" : 1721975502869,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Portsmouth, Hampshire, England, United Kingdom",
+        "description" : "https://www.familysearch.org/platform/places/description/10606160"
+      },
+      "temporal" : {
+        "original" : "1537/1930",
+        "formal" : "+1537/+1930"
+      },
+      "recordType" : "http://gedcomx.org/Marriage"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "England, Hampshire, Portsmouth, Marriages, 1537-1930"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/4469394" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSFT-R9Y5-N",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "title:England, Hampshire, Fareham",
+        "description" : "https://www.familysearch.org/platform/places/description/3041245"
+      },
+      "temporal" : {
+        "original" : "1754-1876",
+        "formal" : "+1754-01-01T00:00:00Z/+1876-12-31T23:59:59Z"
+      }
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSFT-R9Y5-N" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/4469394?arkName=3:1:3Q9M-CSFT-R9Y5-N"
+    }
+  }, {
+    "id" : "sd_p_296325337642",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG",
+    "componentOf" : {
+      "description" : "#src_r_175854968163",
+      "descriptionId" : "src_r_175854968163"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England, Hampshire, Portsmouth, Marriages, 1537-1930\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG : Sat Mar 09 14:06:06 UTC 2024), Entry for Caroline Strugnell and Isaac Chapman Strugnell, 14 January 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Caroline Strugnell, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Caroline Strugnell, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG" ]
+    }
+  }, {
+    "id" : "sd_p_296325337643",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQP",
+    "componentOf" : {
+      "description" : "#src_r_175854968163",
+      "descriptionId" : "src_r_175854968163"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England, Hampshire, Portsmouth, Marriages, 1537-1930\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG : Sat Mar 09 14:06:06 UTC 2024), Entry for Caroline Strugnell and Isaac Chapman Strugnell, 14 January 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Isaac Chapman Strugnell, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Isaac Chapman Strugnell, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQP" ]
+    }
+  }, {
+    "id" : "sd_p_296325337646",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQT",
+    "componentOf" : {
+      "description" : "#src_r_175854968163",
+      "descriptionId" : "src_r_175854968163"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England, Hampshire, Portsmouth, Marriages, 1537-1930\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG : Sat Mar 09 14:06:06 UTC 2024), Entry for Caroline Strugnell and Isaac Chapman Strugnell, 14 January 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "<Unknown>, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "<Unknown>, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQT" ]
+    }
+  }, {
+    "id" : "sd_p_296325337645",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQR",
+    "componentOf" : {
+      "description" : "#src_r_175854968163",
+      "descriptionId" : "src_r_175854968163"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England, Hampshire, Portsmouth, Marriages, 1537-1930\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG : Sat Mar 09 14:06:06 UTC 2024), Entry for Caroline Strugnell and Isaac Chapman Strugnell, 14 January 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "David Hunt, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "David Hunt, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQR" ]
+    }
+  }, {
+    "id" : "sd_p_296325337644",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQ5",
+    "componentOf" : {
+      "description" : "#src_r_175854968163",
+      "descriptionId" : "src_r_175854968163"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England, Hampshire, Portsmouth, Marriages, 1537-1930\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG : Sat Mar 09 14:06:06 UTC 2024), Entry for Caroline Strugnell and Isaac Chapman Strugnell, 14 January 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "James Edward Hunt, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "James Edward Hunt, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQ5" ]
+    }
+  }, {
+    "id" : "sd_p_296325337647",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQY",
+    "componentOf" : {
+      "description" : "#src_r_175854968163",
+      "descriptionId" : "src_r_175854968163"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England, Hampshire, Portsmouth, Marriages, 1537-1930\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG : Sat Mar 09 14:06:06 UTC 2024), Entry for Caroline Strugnell and Isaac Chapman Strugnell, 14 January 1861."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "<Unknown>, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "<Unknown>, \"England, Hampshire, Portsmouth, Marriages, 1537-1930\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQY" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_11011365",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/11011365" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "86aa40de-6b43-40f6-8a69-9c189ef5e049",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/ExtRecordId",
+    "values" : [ {
+      "id" : "b8d4e327-c8ad-4b1d-846d-ddeda3bfc9d6",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_RECORD_ID_ORIG",
+      "text" : "GBPRS/PORTSMOUTH/MAR/00070107/2"
+    } ]
+  }, {
+    "id" : "0a9c3b5e-fa61-4239-abf8-0a8db8526676",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+    "values" : [ {
+      "id" : "003da387-f204-4064-8d98-d0a1217a94f2",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_PAGE_NBR_ORIG",
+      "text" : "247"
+    } ]
+  }, {
+    "id" : "b304fc2c-80fc-4110-9a37-debea732f590",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "abedde2c-75af-474b-b26e-68ef8c18de6e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "91725ae1-fd49-4668-816a-ba18b872c8f4",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "1e2490b3-6505-485e-b947-fcaabeb7ffd2",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1660669232876,
+        "created" : 1660669232876
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000008061860_00447_00000_0000175854968163"
+    } ]
+  }, {
+    "id" : "0c80c06a-ad81-4787-b2e6-a9e78412e710",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/SourceRecordType",
+    "values" : [ {
+      "id" : "478eb020-d03d-4e35-a3ab-3228beb09a3f",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_RECORD_TYPE_ORIG",
+      "text" : "Marriages"
+    } ]
+  }, {
+    "id" : "2db02f2e-34e3-418a-bf18-28c223cc1d1a",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "ccbc51a3-88ff-4ecb-955c-dcb00433d4f8",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "2"
+    } ]
+  }, {
+    "id" : "7dba76f4-97b8-4bfb-a360-3e66a5293d12",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "d88ec8fa-d4f6-49ef-8a70-472060af16e1",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "b01ee876-3cf4-41ff-af3d-50a911e3c221",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "4a4c9f3e-8f60-4720-9cc9-b1003281f04e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "22-0294; 2022-08-16; dbjdbj; England, Hampshire, Portsmouth, Marriages, 1537-1930 - FMP 3rd Party"
+    } ]
+  }, {
+    "id" : "51f71c97-8dac-4e37-842a-9c64490e0a44",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "f96fc415-3bce-4ffe-9c14-44c6a88d9ac9",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"event_year\": \"1861\", \"keywords_place\": \"Hampshire,England,Portsmouth,Fareham\", \"year_of_marriage\": \"1861\"}"
+    }, {
+      "id" : "f96fc415-3bce-4ffe-9c14-44c6a88d9ac9",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{\"SOURCE_PUB_YEAR_RANGE_ORIG\":\"1837-1861\",\"FS_COLLECTION_ID\":\"4469394\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-CSFT-R9Y5-N\",\"EXT_IMAGE_REFERENCE_ORIG\":\"S2/GBPRS/PORTSMOUTH/008061860/00447\"}"
+    } ]
+  }, {
+    "id" : "1d53b674-2413-4820-8e72-1236184fb23b",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/SourceReference",
+    "values" : [ {
+      "id" : "7fc68f64-67d6-4f18-8e2d-907752a8d9b7",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_REFERENCE_ORIG",
+      "text" : "CHU 43/1C/6"
+    } ]
+  }, {
+    "id" : "2e5bb833-376f-419e-a88b-32d66b5e2645",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/FsModelVer",
+    "values" : [ {
+      "id" : "3aa64198-2b1d-4d3f-9bb3-425716958fd3",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_MODEL_VER",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "7a070e5a-0c1f-4a96-9feb-6c57409c0c53",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "88f9d21e-fc75-4778-9ad0-f2aed45156a6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "22-0294"
+    } ]
+  }, {
+    "id" : "e5b6600d-3be3-45ed-9a9c-c38eb356514e",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "28ce9710-492a-4108-8eff-7a5af007c633",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-909-68305-52036-7\",\"FS_IMAGE_NBR\":\"00447\",\"FS_UNIQUE_ID\":\"15001074886846\"}"
+    } ]
+  }, {
+    "id" : "6bd38f09-2da9-4b07-af95-7ff4bd62b7dd",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/ExtRepositoryName",
+    "values" : [ {
+      "id" : "c3608f24-e82b-4eed-ada2-595a9b929b91",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_REPOSITORY_NAME_ORIG",
+      "text" : "Portsmouth History Centre"
+    } ]
+  }, {
+    "id" : "49267836-133a-40ae-a67b-7098418a14f4",
+    "attribution" : {
+      "modified" : 1697469456518,
+      "created" : 1697469456518
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "f2150e92-bb16-4250-8030-7c9828b51c4f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "69826"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "008061860"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "447"
+    } ]
+  } ]
+}

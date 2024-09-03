@@ -80,7 +80,7 @@ async function scotpSearch(generalizedData, parameters) {
     let searchData = loadedModule.buildSearchData(input);
     let formData = searchData.formData;
 
-    const searchUrl = "https://www.scotlandspeople.gov.uk/advanced-search/" + formData.urlPart;
+    const searchUrl = "https://www.scotlandspeople.gov.uk/search-records/" + formData.urlPart;
     try {
       const scotpSearchData = {
         timeStamp: Date.now(),

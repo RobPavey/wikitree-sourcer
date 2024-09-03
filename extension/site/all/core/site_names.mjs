@@ -29,6 +29,7 @@ SOFTWARE.
 
 const siteNames = [
   "ancestry",
+  "archion",
   "archive",
   "baclac",
   "bg",
@@ -45,12 +46,15 @@ const siteNames = [
   "hathi",
   "irishg",
   "jstor",
+  "matricula",
   "mh",
   "naie",
   "nli",
   "noda",
   "npa",
   "np",
+  "nswbdm",
+  "nzbdm",
   "opccorn",
   "openarch",
   "ppnz",
@@ -61,9 +65,6 @@ const siteNames = [
   "wiewaswie",
   "wikitree",
   "wikipedia",
-  "nzbdm",
-  "matricula",
-  "archion",
 ];
 
 export { siteNames };

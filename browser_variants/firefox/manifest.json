@@ -18,9 +18,11 @@
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
+    "*://*.ancestryheritagequest.com/*",
     "*://www.archion.de/*",
     "*://archive.org/*",
     "*://*.bac-lac.gc.ca/*",
+    "*://*.bdm.nsw.gov.au/*",
     "*://*.bdmhistoricalrecords.dia.govt.nz/*",
     "*://*.billiongraves.com/*",
     "*://*.cornwall-opc-database.org/*",
@@ -99,7 +101,8 @@
         "*://*.ancestrylibrary.com/*",
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
-        "*://*.ancestrylibrary.com.au/*"
+        "*://*.ancestrylibrary.com.au/*",
+        "*://*.ancestryheritagequest.com/*"
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
@@ -118,6 +121,11 @@
       "matches": ["*://*.bac-lac.gc.ca/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/baclac/browser/baclac_content.js"]
+    },
+    {
+      "matches": ["*://*.bdm.nsw.gov.au/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/nswbdm/browser/nswbdm_content.js"]
     },
     {
       "matches": ["*://*.bdmhistoricalrecords.dia.govt.nz/*"],
@@ -229,7 +237,7 @@
     {
       "matches": ["*://data.matricula-online.eu/*"],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/wikipedia/browser/wikipedia_content.js"]
+      "js": ["base/browser/content/content_common.js", "site/matricula/browser/matricula_content.js"]
     },
     {
       "matches": ["*://*.myheritage.com/*"],
@@ -334,7 +342,8 @@
         "*://*.ancestrylibrary.com/*",
         "*://*.ancestrylibraryedition.co.uk/*",
         "*://*.ancestrylibrary.ca/*",
-        "*://*.ancestrylibrary.com.au/*"
+        "*://*.ancestrylibrary.com.au/*",
+        "*://*.ancestryheritagequest.com/*"
       ]
     },
     {
@@ -348,6 +357,10 @@
     {
       "resources": ["site/baclac/core/baclac_extract_data.mjs"],
       "matches": ["*://*.bac-lac.gc.ca/*"]
+    },
+    {
+      "resources": ["site/nswbdm/core/nswbdm_extract_data.mjs"],
+      "matches": ["*://*.bdm.nsw.gov.au/*"]
     },
     {
       "resources": ["site/nzbdm/core/nzbdm_extract_data.mjs"],

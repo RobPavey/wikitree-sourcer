@@ -10,5 +10,41 @@
   "std_source": {
     "citation": "* '''Marriage Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Marriage Registration Number: 1947/12896<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Ngaio Wilson marriage to Platon Mackris-Berdebes in 1947 in New Zealand.",
     "type": "source"
+  },
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1947/12896<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Ngaio's marriage to Platon Mackris-Berdebes was registered in 1947 in New Zealand.<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1947/12896<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Marriage Registration Number: 1947/12896<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_listCurated_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1947/12896<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNgaio Wilson and Platon Mackris-Berdebes.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_listCurated_narrative": {
+    "citation": "Ngaio's marriage to Platon Mackris-Berdebes was registered in 1947 in New Zealand.<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1947/12896<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNgaio Wilson and Platon Mackris-Berdebes.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_listCurated_source": {
+    "citation": "* '''Marriage Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Marriage Registration Number: 1947/12896<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Ngaio Wilson and Platon Mackris-Berdebes.",
+    "type": "source"
+  },
+  "dataStyle_listOriginal_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1947/12896<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nBride's GivenName(s): Ngaio; Bride's Family Name: Wilson; Groom's GivenName(s): Platon; Groom's Family Name: Mackris-Berdebes.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_listOriginal_narrative": {
+    "citation": "Ngaio's marriage to Platon Mackris-Berdebes was registered in 1947 in New Zealand.<ref>\n'''Marriage Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nMarriage Registration Number: 1947/12896<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nBride's GivenName(s): Ngaio; Bride's Family Name: Wilson; Groom's GivenName(s): Platon; Groom's Family Name: Mackris-Berdebes.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_listOriginal_source": {
+    "citation": "* '''Marriage Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Marriage Registration Number: 1947/12896<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Bride's GivenName(s): Ngaio; Bride's Family Name: Wilson; Groom's GivenName(s): Platon; Groom's Family Name: Mackris-Berdebes.",
+    "type": "source"
   }
 }

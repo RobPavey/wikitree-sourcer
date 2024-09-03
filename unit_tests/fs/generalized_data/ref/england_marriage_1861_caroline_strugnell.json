@@ -1,0 +1,69 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Caroline Strugnell",
+    "lastName": "Strugnell",
+    "forenames": "Caroline"
+  },
+  "birthDate": {
+    "dateString": "1826",
+    "yearString": "1826"
+  },
+  "eventDate": {
+    "dateString": "14 January 1861",
+    "yearString": "1861"
+  },
+  "eventPlace": {
+    "placeString": "Fareham, Hampshire, England, United Kingdom"
+  },
+  "ageAtEvent": "35",
+  "spouses": [
+    {
+      "name": {
+        "name": "James Edward Hunt",
+        "lastName": "Hunt",
+        "forenames": "James Edward"
+      },
+      "age": "29",
+      "parents": {
+        "father": {
+          "name": {
+            "name": "David Hunt",
+            "forenames": "David",
+            "lastName": "Hunt"
+          }
+        }
+      },
+      "marriageDate": {
+        "dateString": "14 January 1861"
+      },
+      "marriagePlace": {
+        "placeString": "Fareham, Hampshire, England, United Kingdom"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Isaac Chapman Strugnell",
+        "forenames": "Isaac Chapman",
+        "lastName": "Strugnell"
+      }
+    }
+  },
+  "marriageDate": "14 January 1861",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|6NX6-GFQG}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-CSFT-R9Y5-N}}",
+    "{{FamilySearch Record|6NX6-GFQP}}"
+  ],
+  "collectionData": {
+    "id": "4469394",
+    "page": "247"
+  },
+  "hasValidData": true
+}
