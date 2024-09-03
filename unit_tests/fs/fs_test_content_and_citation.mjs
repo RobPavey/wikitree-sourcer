@@ -147,6 +147,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:2DCB-21Q",
   },
   {
+    caseName: "england_marriage_1861_caroline_strugnell",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6NX6-GFQG",
+  },
+  {
     caseName: "england_marriage_1902_beatrice_fairchild",
     url: "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZB",
   },

@@ -3282,7 +3282,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
           if (fact.primary && fact.type && !result.factType) {
             let factType = getFactType(fact);
 
-            setEventDateAndPlaceForFact(result, fact);
+            setEventDateAndPlaceForFact(result, fact, docHints);
 
             // if one of the people in this fact is the selected person
             if (relationship.person1.resourceId == personId || relationship.person2.resourceId == personId) {
@@ -4035,9 +4035,24 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
             let td = row.querySelector("td");
             if (th && td) {
               let key = th.textContent.trim();
-              let value = td.textContent.trim();
-              if (key && value) {
-                result.documentRecordData[key] = value;
+              if (key) {
+                // if there is a button there may be a list.
+                let button = td.querySelector("button");
+                if (button) {
+                  // there is a list - use just the first (selected) one.
+                  let firstItemPara = button.querySelector("p");
+                  if (firstItemPara) {
+                    let value = firstItemPara.textContent.trim();
+                    if (value) {
+                      result.documentRecordData[key] = value;
+                    }
+                  }
+                } else {
+                  let value = td.textContent.trim();
+                  if (value) {
+                    result.documentRecordData[key] = value;
+                  }
+                }
               }
             }
           }
