@@ -43,11 +43,15 @@ const siteNames = [
   "hathi",
   "irishg",
   "jstor",
+  "matricula",
   "mh",
   "naie",
+  "nswbdm",
   "nli",
   "noda",
   "np",
+  "npa",
+  "nzbdm",
   "opccorn",
   "openarch",
   "ppnz",
@@ -58,10 +62,6 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
-  "npa",
-  "nzbdm",
-  "matricula",
-  "nswbdm",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
