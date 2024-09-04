@@ -14477,7 +14477,7 @@ const NameUtils = {
             quoteIndex = word.indexOf("/", quoteIndex + 1);
           }
         }
-      } else if (word.startsWith("(") && word[1] != " ") {
+      } else if (word.startsWith("(") && word.length > 1 && word[1] != " ") {
         upperCaseLetterAtIndex(index + 1);
       }
 

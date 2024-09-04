@@ -1195,31 +1195,24 @@ function setWillsAndTestamentsRecordSubtype(ed, result) {
 
 function setRefPartsOfOtherDetails(result, otherDetailsSuffix, prefix, refKey) {
   let remainder = otherDetailsSuffix;
-  let numIndex = remainder.search(/\d/);
-  if (numIndex != -1) {
-    let spaceIndex = remainder.search(/\s/);
-    if (spaceIndex == -1) {
-      spaceIndex = remainder.length;
-    }
-    let number1 = remainder.substring(numIndex, spaceIndex);
-    if (number1) {
-      result.tempCollectionData[refKey] = number1;
-    }
 
-    let parenIndex = remainder.indexOf("(");
-    if (parenIndex != -1) {
-      remainder = remainder.substring(parenIndex + 1);
-      let closeParenIndex = remainder.indexOf(")");
-      if (closeParenIndex != -1) {
-        remainder = remainder.substring(0, closeParenIndex);
-        if (remainder.startsWith(prefix)) {
-          let number2 = remainder.substring(2);
-          if (number2 != number1) {
-            result.tempCollectionData[refKey + "2"] = number2;
-          }
-        }
-      }
+  // e.g. "FR 186" or "FR186"
+  const regex1String = "^\\s*" + prefix + "\\s?(\\d+)\\s*$";
+  const regex1 = new RegExp(regex1String);
+  // e.g. "FR 186 (FR186)" or "FR186 (FR186)"
+  const regex2String = "^\\s*" + prefix + "\\s?(\\d+)\\s+\\(" + prefix + "(\\d+)\\)\\s*$";
+  const regex2 = new RegExp(regex2String);
+
+  if (regex2.test(remainder)) {
+    let number1 = remainder.replace(regex2, "$1");
+    let number2 = remainder.replace(regex2, "$2");
+    result.tempCollectionData[refKey] = number1;
+    if (number2 != number1) {
+      result.tempCollectionData[refKey + "2"] = number2;
     }
+  } else if (regex1.test(remainder)) {
+    let number1 = remainder.replace(regex1, "$1");
+    result.tempCollectionData[refKey] = number1;
   }
 }
 
@@ -1265,7 +1258,7 @@ function setParents(scotpRecordType, ed, result, dataKey) {
   }
 
   // filter the reference ed off the end of the string
-  let frameNumberIndex = parentsDetails.search(/\s+FR\d/);
+  let frameNumberIndex = parentsDetails.search(/\s+FR\s?\d/);
   if (frameNumberIndex != -1) {
     let remainder = parentsDetails.substring(frameNumberIndex).trim();
     parentsDetails = parentsDetails.substring(0, frameNumberIndex);
@@ -1475,7 +1468,7 @@ function generalizeData(input) {
           // See Pollock-1150
           // We want to keep that name as we don't know which is actually the last name
           // Possibly Robertson is her maiden name?
-          let frameNumberIndex = remainder.search(/FR\d/);
+          let frameNumberIndex = remainder.search(/FR\s?\d/);
           if (frameNumberIndex != -1 && frameNumberIndex > 1) {
             let extraName = remainder.substring(1, frameNumberIndex).trim();
             if (extraName) {
@@ -1490,7 +1483,7 @@ function generalizeData(input) {
 
         // look for a film reel number on end of Spouse Name field
         if (remainder) {
-          let frameNumberIndex = remainder.search(/FR\d/);
+          let frameNumberIndex = remainder.search(/FR\s?\d/);
           if (frameNumberIndex != -1) {
             remainder = remainder.substring(frameNumberIndex).trim();
             setRefPartsOfOtherDetails(result, remainder, "FR", "frameNumber");

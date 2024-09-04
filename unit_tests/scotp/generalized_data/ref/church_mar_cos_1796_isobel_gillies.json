@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Gillies",
+    "forenames": "Isobel"
+  },
+  "eventDate": {
+    "dateString": "10 December 1796"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Ayrshire",
+    "placeString": "Beith, Ayrshire, Scotland"
+  },
+  "recordSubtype": "MarriageOrBanns",
+  "spouses": [
+    {
+      "name": {
+        "name": "Peter Campbell"
+      },
+      "marriageDate": {
+        "dateString": "10 December 1796"
+      },
+      "marriagePlace": {
+        "country": "Scotland",
+        "county": "Ayrshire",
+        "placeString": "Beith, Ayrshire, Scotland"
+      }
+    }
+  ],
+  "collectionData": {
+    "frameNumber": "186"
+  },
+  "hasValidData": true
+}
