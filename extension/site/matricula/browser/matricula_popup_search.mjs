@@ -107,9 +107,12 @@ function extractPlaceStrings(ed, gd) {
   }
   // Marriage records on FS are not included in above, but we can work around this issue
   else if (gd.sourceType == "record" && gd.recordType.toLowerCase() == "marriage") {
-    const place = gd.eventPlace.placeString;
-    if (place) {
-      locations.push({ descriptor: "Marriage", place: place });
+    placeObj = gd.inferEventPlaceObj();
+    if (placeObj) {
+      const place = placeObj.placeString;
+      if (place) {
+        locations.push({ descriptor: "Marriage", place: place });
+      }
     }
   }
 
