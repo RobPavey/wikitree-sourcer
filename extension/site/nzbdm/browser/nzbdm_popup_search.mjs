@@ -39,8 +39,8 @@ import {
 import { options } from "/base/browser/options/options_loader.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
-const nzbdmStartYear = 1839;
-const nzbdmEndYear = 2000;
+const nzbdmStartYear = 1848;
+const nzbdmEndYear = 2025;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
@@ -66,6 +66,7 @@ async function nzbdmSearch(generalizedData, typeOfSearch) {
     typeOfSearch: typeOfSearch,
     generalizedData: generalizedData,
     options: options,
+    runDate: new Date(),
   };
   doAsyncActionWithCatch("New Zealand BDM Search", input, async function () {
     let loadedModule = await import(`../core/nzbdm_build_search_data.mjs`);
