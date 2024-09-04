@@ -1244,6 +1244,12 @@ function generalizeData(input) {
       }
       eventPlace += ed.eventCountry;
     }
+
+    if (!eventPlace) {
+      if (ed.documentRecordData) {
+        eventPlace = ed.documentRecordData["Event Place"];
+      }
+    }
   }
 
   result.setEventPlace(cleanPlace(eventPlace));

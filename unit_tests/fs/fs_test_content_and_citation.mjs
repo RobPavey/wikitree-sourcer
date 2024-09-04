@@ -442,6 +442,11 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGL",
   },
   {
+    // has saved document as well, was not getting event place
+    caseName: "us_pa_marriage_1858_henry_ruby",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5",
+  },
+  {
     caseName: "us_sd_census_1905_j_stoner",
     url: "https://www.familysearch.org/ark:/61903/1:1:MMHS-3X7",
   },

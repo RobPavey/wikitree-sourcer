@@ -2276,10 +2276,18 @@ function setDateAndPlaceForAdditionalFact(result, fact) {
     let place = getCleanPlaceValueFromPlace(fact.place, "", "EVENT_PLACE");
     if (place) {
       result.recordData[prefix + " Place"] = place;
+      if (!result.eventPlace) {
+        // sometimes the person facts do not have the event place
+        result.eventPlace = place;
+      }
     }
 
     if (fact.place.original && fact.place.original != place) {
       result.recordData[prefix + " Place (Original)"] = fact.place.original;
+      if (!result.eventPlaceOriginal) {
+        // sometimes the person facts do not have the event place
+        result.eventPlaceOriginal = place;
+      }
     }
   }
 }
@@ -3255,7 +3263,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
                 } else if (!thisPersonIsAPrincipal && !personIdWithRelatedFact) {
                   // We have a fact type but it is not for the person of interest
                   // This happens for: us_or_spouse_death_1989_leland_churchill
-                  if (factType != "Unknown") {
+                  if (factType != "Unknown" && !factType.endsWith("Unknown")) {
                     relatedPersonFactType = factType;
                     personIdWithRelatedFact = person.id;
                   }
@@ -3334,7 +3342,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
               // Sometimes the related person should be ignored,
               // for example in the case of us_ky_marriage_1891_ida_sphar where the
               // related person is the spouse in a marriage
-              if (factType != "Unknown") {
+              if (factType != "Unknown" && !factType.endsWith("Unknown")) {
                 relatedPersonFactType = factType;
                 personIdWithRelatedFact = relationship.person1.resourceId;
                 personIdWithRelatedFact2 = relationship.person2.resourceId;
