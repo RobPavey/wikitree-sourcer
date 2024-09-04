@@ -134,8 +134,8 @@ async function setupArchionPopupMenu(extractedData) {
 
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a Archion page but not a record page.",
-    generalizeFailedMessage: "It looks like a Archion page but does not contain the required data.",
+    extractFailedMessage: "It looks like an Archion page but not a record page.",
+    generalizeFailedMessage: "It looks like an Archion page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "archion",

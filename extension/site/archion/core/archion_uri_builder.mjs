@@ -26,7 +26,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class ArchionUriBuilder {
   constructor() {
-    this.uri = "https://www.archion.org.uk/cgi/search.pl";
+    this.uri = "https://www.archion.de/de/suche";
     this.searchTermAdded = false;
   }
 
