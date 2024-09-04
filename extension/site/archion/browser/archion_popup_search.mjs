@@ -36,7 +36,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: archionStartYear,
     endYear: archionEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["Germany", "Poland", "Luxembourg", "Austria", "Italy", "Ukraine"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
