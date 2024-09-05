@@ -181,6 +181,11 @@
       "js": ["base/browser/content/content_common.js", "site/jstor/browser/jstor_content.js"]
     },
     {
+      "matches": ["*://librariestas.ent.sirsidynix.net.au/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/taslib/browser/taslib_content.js"]
+    },
+    {
       "matches": ["*://data.matricula-online.eu/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/matricula/browser/matricula_content.js"]
@@ -387,6 +392,10 @@
     {
       "resources": ["site/jstor/core/jstor_extract_data.mjs"],
       "matches": ["*://*.jstor.org/*"]
+    },
+    {
+      "resources": ["site/taslib/core/taslib_extract_data.mjs"],
+      "matches": ["*://librariestas.ent.sirsidynix.net.au/*"]
     },
     {
       "resources": ["site/matricula/core/matricula_extract_data.mjs"],

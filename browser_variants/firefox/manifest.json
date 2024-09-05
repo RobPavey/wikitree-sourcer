@@ -51,6 +51,7 @@
     "*://*.hathitrust.org/*",
     "*://*.irishgenealogy.ie/*",
     "*://*.jstor.org/*",
+    "*://librariestas.ent.sirsidynix.net.au/*",
     "*://data.matricula-online.eu/*",
     "*://*.myheritage.com/*",
     "*://www.census.nationalarchives.ie/*",
@@ -227,6 +228,11 @@
       "matches": ["*://*.jstor.org/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/jstor/browser/jstor_content.js"]
+    },
+    {
+      "matches": ["*://librariestas.ent.sirsidynix.net.au/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/taslib/browser/taslib_content.js"]
     },
     {
       "matches": ["*://data.matricula-online.eu/*"],
@@ -435,6 +441,10 @@
     {
       "resources": ["site/jstor/core/jstor_extract_data.mjs"],
       "matches": ["*://*.jstor.org/*"]
+    },
+    {
+      "resources": ["site/taslib/core/taslib_extract_data.mjs"],
+      "matches": ["*://librariestas.ent.sirsidynix.net.au/*"]
     },
     {
       "resources": ["site/matricula/core/matricula_extract_data.mjs"],
