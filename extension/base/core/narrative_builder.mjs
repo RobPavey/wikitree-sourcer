@@ -1495,7 +1495,11 @@ class NarrativeBuilder {
       this.narrative += " was buried";
     }
 
-    this.addFullPlaceWithPreposition(placeObj);
+    if (placeObj) {
+      this.addFullPlaceWithPreposition(placeObj);
+    } else if (gd.registrationDistrict) {
+      this.narrative += ". Registration district was " + gd.registrationDistrict;
+    }
     this.narrative += ".";
 
     this.addAgeAsSeparateSentence(age);

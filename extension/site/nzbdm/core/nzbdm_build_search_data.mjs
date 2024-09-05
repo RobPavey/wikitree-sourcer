@@ -68,20 +68,13 @@ function constrainDate(date, runDate, allowedDateRange) {
     }
 
     if (!to) {
-      console.log("no to");
-      console.log("runDate is:");
-      console.log(runDate);
       if (runDate) {
         let endDate = new Date(runDate);
         const oneDayOffset = 24 * 60 * 60 * 1000;
         endDate.setTime(endDate.getTime() - oneDayOffset);
-        console.log("endDate is:");
-        console.log(endDate);
 
         // note that getMonth returns a zero-based number
         to = { day: endDate.getDate(), month: endDate.getMonth() + 1, year: endDate.getFullYear() };
-        console.log("to is:");
-        console.log(to);
       }
     }
 
