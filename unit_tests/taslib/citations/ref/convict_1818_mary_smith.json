@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania Name Index\"<br/>\nRecord ID: NAME_INDEXES:1435652<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1435652 Libraries Tasmania Permalink] (accessed 6 May 2021)<br/>\nMary Smith.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mary was transported.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania Name Index\"<br/>\nRecord ID: NAME_INDEXES:1435652<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1435652 Libraries Tasmania Permalink] (accessed 6 May 2021)<br/>\nMary Smith.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Convict Transportation''': \"Libraries Tasmania Name Index\"<br/>Record ID: NAME_INDEXES:1435652<br/>[https://libraries.tas.gov.au/Record/NamesIndex/1435652 Libraries Tasmania Permalink] (accessed 6 May 2021)<br/>Mary Smith.",
+    "type": "source"
+  }
+}

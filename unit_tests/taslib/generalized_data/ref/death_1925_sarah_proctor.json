@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Proctor",
+    "forenames": "Sarah Jane"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "15 Mar 1925"
+  },
+  "eventPlace": {
+    "placeString": "Lilydale"
+  },
+  "lastNameAtDeath": "Proctor",
+  "deathDate": {
+    "dateString": "15 Mar 1925"
+  },
+  "hasValidData": true
+}

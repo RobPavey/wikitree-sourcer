@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Jones",
+    "forenames": "Mary"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "18 May 1838"
+  },
+  "ageAtEvent": "75",
+  "registrationDistrict": "Hobart",
+  "hasValidData": true
+}

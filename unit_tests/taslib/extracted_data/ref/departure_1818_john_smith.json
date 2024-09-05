@@ -1,0 +1,15 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=Mary&qu=Smith&qf=PUBDATE%09Year%091799-1843%091799-1843&qf=PUBDATE%09Year%091817-1822%091817-1822&qf=PUBDATE%09Year%091818%091818#",
+  "success": true,
+  "recordData": {
+    "Name": "Smith, John",
+    "Record Type": "Departures",
+    "Rank": "Seaman",
+    "Departure date": "18 May 1818",
+    "Departure port": "Hobart",
+    "Ship": "Elizabeth and Mary",
+    "Bound to": "Macquarie Island",
+    "Record ID": "NAME_INDEXES:610151"
+  },
+  "permalink": "https://libraries.tas.gov.au/Record/NamesIndex/610151"
+}

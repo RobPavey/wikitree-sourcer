@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Bassett",
+    "forenames": "Sarah"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "13 Apr 1842"
+  },
+  "ageAtEvent": "21",
+  "registrationDistrict": "Hobart",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Monk",
+        "forenames": "James"
+      },
+      "gender": "Male",
+      "age": "26"
+    }
+  ],
+  "hasValidData": true
+}

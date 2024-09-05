@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "lastName": "Archdall",
+    "forenames": ""
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "Apr 1846"
+  },
+  "lastNameAtBirth": "Archdall",
+  "birthDate": {
+    "dateString": "Apr 1846"
+  },
+  "registrationDistrict": "Launceston",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Archdall",
+        "forenames": "Henry"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Archdall",
+        "forenames": "Abigail"
+      }
+    }
+  },
+  "hasValidData": true
+}

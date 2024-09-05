@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Libraries Tasmania Name Index\"<br/>\nRecord ID: NAME_INDEXES:2027577<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/2027577 Libraries Tasmania Permalink] (accessed 6 May 2021)<br/>\nSarah Jane Proctor death 15 Mar 1925 in Lilydale.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Sarah died on 15 March 1925 in Lilydale.<ref>\n'''Death''':\n\"Libraries Tasmania Name Index\"<br/>\nRecord ID: NAME_INDEXES:2027577<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/2027577 Libraries Tasmania Permalink] (accessed 6 May 2021)<br/>\nSarah Jane Proctor death 15 Mar 1925 in Lilydale.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Libraries Tasmania Name Index\"<br/>Record ID: NAME_INDEXES:2027577<br/>[https://libraries.tas.gov.au/Record/NamesIndex/2027577 Libraries Tasmania Permalink] (accessed 6 May 2021)<br/>Sarah Jane Proctor death 15 Mar 1925 in Lilydale.",
+    "type": "source"
+  }
+}

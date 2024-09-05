@@ -1,0 +1,10 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "PassengerList",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "hasValidData": true
+}

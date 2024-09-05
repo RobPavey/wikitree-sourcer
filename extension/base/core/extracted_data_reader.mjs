@@ -201,6 +201,20 @@ class ExtractedDataReader {
     }
   }
 
+  makeNameObjFromLastNameCommaForenames(nameString) {
+    if (nameString) {
+      let commaIndex = nameString.indexOf(",");
+      if (commaIndex != -1) {
+        let lastName = nameString.substring(0, commaIndex).trim();
+        let forenames = nameString.substring(commaIndex + 1).trim();
+        let nameObj = new NameObj();
+        nameObj.setLastName(lastName);
+        nameObj.setForenames(forenames);
+        return nameObj;
+      }
+    }
+  }
+
   makeDateObjFromDateString(dateString) {
     if (dateString) {
       let dateObj = new DateObj();

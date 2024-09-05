@@ -1,0 +1,22 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=Benjamin&qu=Harmstrong&qu=Mary&qu=Sangwell",
+  "success": true,
+  "recordData": {
+    "Name": "Harmstrong, Benjamin",
+    "Record Type": "Marriages",
+    "Gender": "Male",
+    "Age": "Adult",
+    "Spouse": "Sangwell, Mary",
+    "Gender2": "Female",
+    "Age2": "Minor",
+    "Date of marriage": "31 Aug 1857",
+    "Registered": "Hobart",
+    "Registration year": "1857",
+    "Record ID": "NAME_INDEXES:855669",
+    "Resource": "https://libraries.tas.gov.au/Digital/RGD37-1-16p186j2k"
+  },
+  "permalink": "https://libraries.tas.gov.au/Record/NamesIndex/855669",
+  "resourceId": "RGD37-1-16",
+  "pageNumber": "186",
+  "resourcePermalink": "https://libraries.tas.gov.au/Digital/RGD37-1-16/RGD37-1-16P186"
+}
