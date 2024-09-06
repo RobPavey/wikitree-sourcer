@@ -235,7 +235,7 @@ function openLink(info, tab) {
         openFmpLink(tab, link, options);
       });
     } else {
-      let openedAsText = openSelectionPlainText(info.selectionText, tab);
+      let openedAsText = openSelectionPlainText(info, tab);
 
       if (!openedAsText) {
         // open unchanged link
@@ -900,7 +900,9 @@ async function openNswbdmGivenSearchData(tab, options, searchData) {
   return false;
 }
 
-function openSelectionPlainText(text, tab) {
+function openSelectionPlainText(info, tab) {
+  let text = info.selectionText;
+
   //console.log("openSelectionText, text is: " + text);
 
   let templateStartIndex = text.indexOf("{{");
@@ -963,9 +965,7 @@ function openSelectionPlainText(text, tab) {
 }
 
 function openSelectionText(info, tab) {
-  let text = info.selectionText;
-
-  return openSelectionPlainText(text, tab);
+  return openSelectionPlainText(info, tab);
 }
 
 function contextClick(info, tab) {
