@@ -98,7 +98,7 @@ function getPartsFromOtherRecords(ed) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Libraries Tasmania Name Index";
+  builder.sourceTitle += "Libraries Tasmania, Names Index";
 }
 
 function buildSourceReference(ed, gd, builder) {
@@ -123,6 +123,7 @@ function buildSourceReference(ed, gd, builder) {
     }
   } else {
     builder.addSourceReferenceField("Record ID", ed.recordData["Record ID"]);
+    builder.addSourceReferenceField("File number", ed.recordData["File number"]);
   }
 }
 

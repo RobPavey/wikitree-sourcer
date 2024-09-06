@@ -63,7 +63,7 @@ async function taslibSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addTaslibDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Libraries Tasmania Name Index", function (element) {
+  addMenuItem(menu, "Search Libraries Tasmania, Names Index", function (element) {
     taslibSearch(data.generalizedData);
   });
 
