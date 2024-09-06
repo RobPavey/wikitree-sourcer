@@ -116,6 +116,14 @@ class TaslibEdReader extends ExtractedDataReader {
       placeString = this.ed.recordData["Where born"];
     } else if (this.recordType == RT.Death) {
       placeString = this.ed.recordData["Where died"];
+    } else if (this.recordType == RT.Marriage) {
+      placeString = this.ed.recordData["Where married"];
+    }
+
+    // possibly separate out street address if present
+
+    if (placeString && !placeString.includes("Tasmania") && !placeString.includes("Australia")) {
+      placeString += ", Tasmania, Australia";
     }
 
     return this.makePlaceObjFromFullPlaceName(placeString);

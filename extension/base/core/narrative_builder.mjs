@@ -293,6 +293,22 @@ class NarrativeBuilder {
     }
   }
 
+  addEventPlaceWithPrepositionOrRd(gd, useFullPlace = true, placeObj) {
+    if (!placeObj) {
+      placeObj = gd.inferEventPlaceObj();
+    }
+
+    if (placeObj) {
+      if (useFullPlace) {
+        this.addFullPlaceWithPreposition(placeObj);
+      } else {
+        this.addPlaceWithPreposition(placeObj);
+      }
+    } else if (gd.registrationDistrict) {
+      this.narrative += ". Registration district was " + gd.registrationDistrict;
+    }
+  }
+
   addDateWithPreposition(dateObj) {
     if (dateObj) {
       let formattedDate = this.formatDateObj(dateObj, true);
@@ -1257,7 +1273,7 @@ class NarrativeBuilder {
     this.narrative += " was born"; // "was" is OK because we never use "They" at start
 
     this.addDateWithPreposition(dateObj);
-    this.addPlaceWithPreposition(placeObj);
+    this.addEventPlaceWithPrepositionOrRd(gd, false, placeObj);
     this.addAtSea(placeObj, gd.eventPlace);
 
     this.narrative += ".";
@@ -1457,8 +1473,6 @@ class NarrativeBuilder {
     let burialDateObj = gd.eventDate;
     let deathDateObj = gd.deathDate;
 
-    let placeObj = gd.inferEventPlaceObj();
-
     if (gd.role && gd.role != Role.Primary) {
       this.narrative += this.getPossessiveNamePlusPrimaryPerson();
       deathDateObj = gd.inferPrimaryPersonDeathDateObj();
@@ -1495,11 +1509,8 @@ class NarrativeBuilder {
       this.narrative += " was buried";
     }
 
-    if (placeObj) {
-      this.addFullPlaceWithPreposition(placeObj);
-    } else if (gd.registrationDistrict) {
-      this.narrative += ". Registration district was " + gd.registrationDistrict;
-    }
+    this.addEventPlaceWithPrepositionOrRd(gd);
+
     this.narrative += ".";
 
     this.addAgeAsSeparateSentence(age);

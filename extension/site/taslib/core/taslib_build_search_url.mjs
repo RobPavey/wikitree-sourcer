@@ -31,6 +31,11 @@ function buildSearchUrl(buildUrlInput) {
 
   // call methods on builder here
 
+  builder.addName(gd.inferFullName());
+
+  let dateRange = gd.inferPossibleLifeYearRange();
+  builder.addYearRange(dateRange.startYear.toString(), dateRange.endYear.toString());
+
   const url = builder.getUri();
 
   //console.log("URL is " + url);

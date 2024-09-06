@@ -29,14 +29,14 @@ import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "
 import { options } from "/base/browser/options/options_loader.mjs";
 
 const taslibStartYear = 1800;
-const taslibEndYear = 2000;
+const taslibEndYear = 1990;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
     startYear: taslibStartYear,
     endYear: taslibEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["Australia"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
@@ -52,7 +52,7 @@ function shouldShowSearchMenuItem(data, filter) {
 
 async function taslibSearch(generalizedData) {
   const input = { generalizedData: generalizedData, options: options };
-  doAsyncActionWithCatch("Libraries Tasmania Search", input, async function () {
+  doAsyncActionWithCatch("Libraries Tasmania Name Index Search", input, async function () {
     let loadedModule = await import(`../core/taslib_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
@@ -63,7 +63,7 @@ async function taslibSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addTaslibDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Libraries Tasmania", function (element) {
+  addMenuItem(menu, "Search Libraries Tasmania Name Index", function (element) {
     taslibSearch(data.generalizedData);
   });
 

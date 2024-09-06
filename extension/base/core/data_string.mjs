@@ -80,17 +80,20 @@ function getFullPlaceTermWithPreposition(placeObj) {
   return "";
 }
 
-function getEventPlaceTermWithPrepositionOrRd(gd) {
+function addEventPlaceTermWithPrepositionOrRd(dataString, gd) {
   let placeTerm = getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
   if (placeTerm) {
-    return placeTerm;
+    return dataString + placeTerm;
   }
 
   if (gd.registrationDistrict) {
-    return ". Registration district " + gd.registrationDistrict;
+    if (!dataString.endsWith(".") && !dataString.endsWith(",")) {
+      dataString += ".";
+    }
+    return dataString + " Registration district " + gd.registrationDistrict;
   }
 
-  return "";
+  return dataString;
 }
 
 function cleanDateObj(dateObj) {
@@ -982,7 +985,7 @@ function getBirthString(gd, options) {
     }
   }
 
-  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
+  dataString = addEventPlaceTermWithPrepositionOrRd(dataString, gd);
 
   if (dataString.endsWith(",")) {
     dataString = dataString.substring(0, dataString.length - 1);
@@ -1288,7 +1291,7 @@ function getBurialString(gd, options) {
     dataString += " " + getDateWithPreposition(burialDate);
   }
 
-  dataString += getEventPlaceTermWithPrepositionOrRd(gd);
+  dataString = addEventPlaceTermWithPrepositionOrRd(dataString, gd);
 
   if (gd.causeOfDeath) {
     dataString += ". Cause of death: " + gd.causeOfDeath;
