@@ -47,6 +47,31 @@ function getPartsFromResource(ed) {
         return result;
       }
     }
+    // For something like a will the resource href will be something like:
+    // "https://libraries.tas.gov.au/Digital/AD960-1-103-47182"
+    // and there is a separate permalink for each page, for example:
+    // "https://libraries.tas.gov.au/Digital/AD960-1-103/AD960-1-103-47182_1"
+    const regex2 = /^https\:\/\/libraries\.tas\.gov\.au\/Digital\/([A-Z0-9\-]+)$/;
+    if (regex2.test(resourceUrl)) {
+      let id = resourceUrl.replace(regex2, "$1");
+      if (id && id != resourceUrl) {
+        result.id = id;
+        if (result.text) {
+          let textId = result.text;
+          let spaceIndex = result.text.indexOf(" ");
+          if (spaceIndex != -1) {
+            textId = result.text.substring(0, spaceIndex);
+            if (id.startsWith(textId) && id.length > textId.length) {
+              result.permalink = "https://libraries.tas.gov.au/Digital/" + textId + "/" + id;
+            }
+          }
+        }
+        if (!result.permalink) {
+          result.permalink = resourceUrl;
+        }
+        return result;
+      }
+    }
   }
 }
 

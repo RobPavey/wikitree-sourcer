@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Will",
+  "name": {
+    "lastName": "Grice",
+    "forenames": "Clarence Vernon"
+  },
+  "eventDate": {
+    "dateString": "1963"
+  },
+  "hasValidData": true
+}

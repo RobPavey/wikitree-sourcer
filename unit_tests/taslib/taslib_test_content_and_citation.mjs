@@ -75,6 +75,10 @@ const regressionData = [
     caseName: "marriage_1857_benjamin_harmstrong",
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=Benjamin&qu=Harmstrong&qu=Mary&qu=Sangwell",
   },
+  {
+    caseName: "will_1963_clarence_grice",
+    url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DClarence+Vernon+Grice&qf=PUBDATE%09Year%091950-1963%091950-1963",
+  },
 ];
 
 async function runTests(testManager) {

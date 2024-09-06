@@ -48,6 +48,8 @@ class TaslibEdReader extends ExtractedDataReader {
         this.recordType = RT.PassengerList;
       } else if (edType == "Divorces") {
         this.recordType = RT.Divorce;
+      } else if (edType == "Wills") {
+        this.recordType = RT.Will;
       }
     }
   }
@@ -118,7 +120,9 @@ class TaslibEdReader extends ExtractedDataReader {
       dateString = this.ed.recordData["Date of marriage"];
     } else if (this.recordType == RT.Burial) {
       dateString = this.ed.recordData["Date of burial"];
-    } else if (this.recordType == RT.Divorce) {
+    }
+
+    if (!dateString) {
       dateString = this.ed.recordData["Year"];
     }
 
