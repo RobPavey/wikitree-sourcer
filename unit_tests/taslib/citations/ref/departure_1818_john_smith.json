@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Passenger List''':\n\"Libraries Tasmania Name Index\"<br/>\nRecord ID: NAME_INDEXES:610151<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/610151 Libraries Tasmania Permalink] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
+    "citation": "<ref>\n'''Passenger List''':\n\"Libraries Tasmania Name Index\"<br/>\nRecord ID: NAME_INDEXES:610151<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/610151 Record Permalink] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "John was a passenger<ref>\n'''Passenger List''':\n\"Libraries Tasmania Name Index\"<br/>\nRecord ID: NAME_INDEXES:610151<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/610151 Libraries Tasmania Permalink] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
+    "citation": "John was a passenger<ref>\n'''Passenger List''':\n\"Libraries Tasmania Name Index\"<br/>\nRecord ID: NAME_INDEXES:610151<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/610151 Record Permalink] (accessed 6 May 2021)<br/>\nJohn Smith.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Passenger List''': \"Libraries Tasmania Name Index\"<br/>Record ID: NAME_INDEXES:610151<br/>[https://libraries.tas.gov.au/Record/NamesIndex/610151 Libraries Tasmania Permalink] (accessed 6 May 2021)<br/>John Smith.",
+    "citation": "* '''Passenger List''': \"Libraries Tasmania Name Index\"<br/>Record ID: NAME_INDEXES:610151<br/>[https://libraries.tas.gov.au/Record/NamesIndex/610151 Record Permalink] (accessed 6 May 2021)<br/>John Smith.",
     "type": "source"
   }
 }

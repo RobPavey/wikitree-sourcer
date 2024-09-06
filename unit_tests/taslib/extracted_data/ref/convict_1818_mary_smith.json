@@ -8,7 +8,9 @@
     "Remarks": "To NSW per Friendship",
     "Index number": "65790",
     "Record ID": "NAME_INDEXES:1435652",
-    "Other Records": "https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111"
-  },
-  "permalink": "https://libraries.tas.gov.au/Record/NamesIndex/1435652"
+    "Other Records": {
+      "link": "https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111",
+      "text": "CON13/1/1 Page 139"
+    }
+  }
 }

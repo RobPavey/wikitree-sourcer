@@ -64,6 +64,10 @@ const regressionData = [
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=Mary&qu=Smith&qf=PUBDATE%09Year%091799-1843%091799-1843&qf=PUBDATE%09Year%091817-1822%091817-1822&qf=PUBDATE%09Year%091818%091818#",
   },
   {
+    caseName: "divorce_1950_clarence_grice",
+    url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DClarence%20Vernon%20Grice&qf=PUBDATE%09Year%091890-1962%091890-1962",
+  },
+  {
     caseName: "marriage_1842_sarah_bassett",
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:829392/one",
   },

@@ -10,10 +10,9 @@
     "Registered": "Hobart",
     "Registration year": "1874",
     "Record ID": "NAME_INDEXES:1151285",
-    "Resource": "https://libraries.tas.gov.au/Digital/RGD35-1-8p232j2k"
-  },
-  "permalink": "https://libraries.tas.gov.au/Record/NamesIndex/1151285",
-  "resourceId": "RGD35-1-8",
-  "pageNumber": "232",
-  "resourcePermalink": "https://libraries.tas.gov.au/Digital/RGD35-1-8/RGD35-1-8P232"
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD35-1-8p232j2k",
+      "text": "RGD35/1/8 no 2014"
+    }
+  }
 }

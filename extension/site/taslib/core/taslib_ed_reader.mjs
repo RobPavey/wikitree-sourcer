@@ -46,6 +46,8 @@ class TaslibEdReader extends ExtractedDataReader {
         this.recordType = RT.ConvictTransportation;
       } else if (edType == "Departures") {
         this.recordType = RT.PassengerList;
+      } else if (edType == "Divorces") {
+        this.recordType = RT.Divorce;
       }
     }
   }
@@ -75,7 +77,18 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let nameObj = this.makeNameObjFromLastNameCommaForenames(this.ed.recordData["Name"]);
+    let name1 = this.ed.recordData["Name"];
+
+    if (this.recordType == RT.Divorce) {
+      //   "Name": "Grice, Clarence Vernon - Petitioner",
+      //   "Name2": "Grice, Kathleen Elizabeth - Respondent",
+      const petitionerSuffix = " - Petitioner";
+      if (name1.endsWith(petitionerSuffix)) {
+        name1 = name1.substring(0, name1.length - petitionerSuffix.length);
+      }
+    }
+
+    let nameObj = this.makeNameObjFromLastNameCommaForenames(name1);
     if (nameObj && nameObj.forenames == "Given Name Not Recorded") {
       nameObj.forenames = "";
     }
@@ -105,6 +118,8 @@ class TaslibEdReader extends ExtractedDataReader {
       dateString = this.ed.recordData["Date of marriage"];
     } else if (this.recordType == RT.Burial) {
       dateString = this.ed.recordData["Date of burial"];
+    } else if (this.recordType == RT.Divorce) {
+      dateString = this.ed.recordData["Year"];
     }
 
     return this.makeDateObjFromDateString(dateString);
@@ -222,6 +237,24 @@ class TaslibEdReader extends ExtractedDataReader {
           name: spouseNameObj,
           gender: spouseGender,
           age: spouseAge,
+        };
+        let spouses = [spouse];
+        return spouses;
+      }
+    } else if (this.recordType == RT.Divorce) {
+      //   "Name": "Grice, Clarence Vernon - Petitioner",
+      //   "Name2": "Grice, Kathleen Elizabeth - Respondent",
+
+      let name2 = this.ed.recordData["Name2"];
+
+      const responentSuffix = " - Respondent";
+      if (name2 && name2.endsWith(responentSuffix)) {
+        name2 = name2.substring(0, name2.length - responentSuffix.length);
+      }
+      let spouseNameObj = this.makeNameObjFromLastNameCommaForenames(name2);
+      if (spouseNameObj) {
+        let spouse = {
+          name: spouseNameObj,
         };
         let spouses = [spouse];
         return spouses;

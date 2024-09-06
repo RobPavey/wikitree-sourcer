@@ -76,49 +76,26 @@ function extractData(document, url) {
 
   for (let row of detailCellRows) {
     let labelDiv = row.querySelector("div.displayElementLabel");
-    let valueDiv = row.querySelector("div.displayElementText");
-    let imageLink = row.querySelector("div.displayElementText-wrap > a.preservicaItem");
+    let valueDivs = row.querySelectorAll("div.displayElementText");
+    let wrapValueDiv = row.querySelector("div.displayElementText-wrap");
 
     if (labelDiv) {
       let label = labelDiv.textContent.trim();
 
       if (label) {
-        if (valueDiv) {
-          addRecordData(label, valueDiv.textContent.trim());
-        } else if (imageLink) {
-          addRecordData(label, imageLink.getAttribute("href"));
+        if (valueDivs.length) {
+          for (let valueDiv of valueDivs) {
+            addRecordData(label, valueDiv.textContent.trim());
+          }
+        } else if (wrapValueDiv) {
+          let wrap = {};
+          let imageLink = wrapValueDiv.querySelector("a.preservicaItem");
+          if (imageLink) {
+            wrap.link = imageLink.getAttribute("href");
+          }
+          wrap.text = wrapValueDiv.textContent.trim();
+          addRecordData(label, wrap);
         }
-      }
-    }
-  }
-
-  let recordId = result.recordData["Record ID"];
-  if (recordId) {
-    // A recordId like: "NAME_INDEXES:2055407" should generate a permalink like"
-    // https://libraries.tas.gov.au/Record/NamesIndex/2055407
-    let nameIndexRegEx = /^NAME_INDEXES\:(\d+)$/;
-    if (nameIndexRegEx.test(recordId)) {
-      let permaLinkNumber = recordId.replace(nameIndexRegEx, "$1");
-      if (permaLinkNumber && permaLinkNumber != recordId) {
-        result.permalink = "https://libraries.tas.gov.au/Record/NamesIndex/" + permaLinkNumber;
-      }
-    }
-  }
-
-  let resourceUrl = result.recordData["Resource"];
-  if (resourceUrl) {
-    // we want a permalink.
-    // Example URL from href: "https://libraries.tas.gov.au/Digital/RGD37-1-16p186j2"
-    // Example permalink: "https://libraries.tas.gov.au/Digital/RGD37-1-16/RGD37-1-16P186"
-    const regex = /^https\:\/\/libraries\.tas\.gov\.au\/Digital\/([A-Z0-9\-]+)p(\d+).*$/;
-    if (regex.test(resourceUrl)) {
-      let resourceId = resourceUrl.replace(regex, "$1");
-      let pageNum = resourceUrl.replace(regex, "$2");
-      if (resourceId && resourceId != resourceUrl && pageNum && pageNum != resourceUrl) {
-        result.resourceId = resourceId;
-        result.pageNumber = pageNum;
-        result.resourcePermalink =
-          "https://libraries.tas.gov.au/Digital/" + resourceId + "/" + resourceId + "P" + pageNum;
       }
     }
   }

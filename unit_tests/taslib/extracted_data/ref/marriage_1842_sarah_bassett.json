@@ -13,10 +13,9 @@
     "Registered": "Hobart",
     "Registration year": "1842",
     "Record ID": "NAME_INDEXES:829392",
-    "Resource": "https://libraries.tas.gov.au/Digital/RGD37-1-2p398j2k"
-  },
-  "permalink": "https://libraries.tas.gov.au/Record/NamesIndex/829392",
-  "resourceId": "RGD37-1-2",
-  "pageNumber": "398",
-  "resourcePermalink": "https://libraries.tas.gov.au/Digital/RGD37-1-2/RGD37-1-2P398"
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD37-1-2p398j2k",
+      "text": "RGD37/1/2 no 1750"
+    }
+  }
 }

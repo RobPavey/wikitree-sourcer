@@ -24,8 +24,52 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildTaslibUrl(ed, builder) {
-  return ed.permalink;
+function getPartsFromResource(ed) {
+  let resourceWrap = ed.recordData["Resource"];
+  if (resourceWrap) {
+    let result = { text: resourceWrap.text };
+
+    let resourceUrl = resourceWrap.link;
+    // we want a permalink.
+    // Example URL from href: "https://libraries.tas.gov.au/Digital/RGD37-1-16p186j2"
+    // Example permalink: "https://libraries.tas.gov.au/Digital/RGD37-1-16/RGD37-1-16P186"
+    const regex = /^https\:\/\/libraries\.tas\.gov\.au\/Digital\/([A-Z0-9\-]+)p(\d+).*$/;
+    if (regex.test(resourceUrl)) {
+      let id = resourceUrl.replace(regex, "$1");
+      let pageNum = resourceUrl.replace(regex, "$2");
+      if (id && id != resourceUrl && pageNum && pageNum != resourceUrl) {
+        if (id.endsWith("-")) {
+          id = id.substring(0, id.length - 1);
+        }
+        result.id = id;
+        result.pageNum = pageNum;
+        result.permalink = "https://libraries.tas.gov.au/Digital/" + id + "/" + id + "-P" + pageNum;
+        return result;
+      }
+    }
+  }
+}
+
+function getPartsFromOtherRecords(ed) {
+  let wrap = ed.recordData["Other Records"];
+  if (wrap) {
+    let result = { text: wrap.text };
+
+    let url = wrap.link;
+    // we want a permalink.
+    // Example URL from href: "https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111"
+    const regex = /^https\:\/\/libraries\.tas\.gov\.au\/Digital\/([A-Z0-9\-]+)\/([A-Z0-9\-]+)P(\d+)$/;
+    if (regex.test(url)) {
+      let id = url.replace(regex, "$1");
+      let pageNum = url.replace(regex, "$3");
+      if (id && id != url && pageNum && pageNum != url) {
+        result.id = id;
+        result.pageNum = pageNum;
+        result.permalink = url;
+        return result;
+      }
+    }
+  }
 }
 
 function buildSourceTitle(ed, gd, builder) {
@@ -33,27 +77,55 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
-  if (ed.resourceId) {
+  let resourceParts = getPartsFromResource(ed);
+  let otherRecordsParts = getPartsFromOtherRecords(ed);
+
+  if (resourceParts && (resourceParts.text || resourceParts.id)) {
     builder.addSourceReferenceText("Tasmanian Archives");
-    builder.addSourceReferenceField("Resource ID", ed.resourceId);
-    builder.addSourceReferenceField("Page", ed.pageNumber);
+    if (resourceParts.text) {
+      builder.addSourceReferenceField("Resource ID", resourceParts.text);
+    } else {
+      builder.addSourceReferenceField("Resource ID", resourceParts.id);
+      builder.addSourceReferenceField("Page", resourceParts.pageNum);
+    }
+  } else if (otherRecordsParts && (otherRecordsParts.text || otherRecordsParts.id)) {
+    builder.addSourceReferenceText("Tasmanian Archives");
+    if (otherRecordsParts.text) {
+      builder.addSourceReferenceField("Other Records ID", otherRecordsParts.text);
+    } else {
+      builder.addSourceReferenceField("Other Records ID", otherRecordsParts.id);
+      builder.addSourceReferenceField("Page", otherRecordsParts.pageNum);
+    }
   } else {
     builder.addSourceReferenceField("Record ID", ed.recordData["Record ID"]);
   }
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var taslibUrl = buildTaslibUrl(ed, builder);
-  if (taslibUrl) {
-    let recordLink = "[" + taslibUrl + " Libraries Tasmania Permalink]";
-    builder.recordLinkOrTemplate = recordLink;
+  let recordId = ed.recordData["Record ID"];
+  if (recordId) {
+    // A recordId like: "NAME_INDEXES:2055407" should generate a permalink like"
+    // https://libraries.tas.gov.au/Record/NamesIndex/2055407
+    let nameIndexRegEx = /^NAME_INDEXES\:(\d+)$/;
+    if (nameIndexRegEx.test(recordId)) {
+      let permaLinkNumber = recordId.replace(nameIndexRegEx, "$1");
+      if (permaLinkNumber && permaLinkNumber != recordId) {
+        let permalink = "https://libraries.tas.gov.au/Record/NamesIndex/" + permaLinkNumber;
+        let recordLink = "[" + permalink + " Record Permalink]";
+        builder.recordLinkOrTemplate = recordLink;
+      }
+    }
   }
 }
 
 function buildImageLink(ed, gd, builder) {
-  if (ed.resourcePermalink) {
-    let link = ed.resourcePermalink;
-    builder.imageLink = "[" + link + " Image Permalink]";
+  let resourceParts = getPartsFromResource(ed);
+  let otherRecordsParts = getPartsFromOtherRecords(ed);
+
+  if (resourceParts && resourceParts.permalink) {
+    builder.imageLink = "[" + resourceParts.permalink + " Image Permalink]";
+  } else if (otherRecordsParts && otherRecordsParts.permalink) {
+    builder.imageLink = "[" + otherRecordsParts.permalink + " Other Record Permalink]";
   }
 }
 

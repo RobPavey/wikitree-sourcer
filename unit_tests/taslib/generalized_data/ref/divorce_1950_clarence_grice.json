@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "name": {
+    "lastName": "Grice",
+    "forenames": "Clarence Vernon"
+  },
+  "eventDate": {
+    "dateString": "1950"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Grice",
+        "forenames": "Kathleen Elizabeth"
+      }
+    }
+  ],
+  "hasValidData": true
+}
