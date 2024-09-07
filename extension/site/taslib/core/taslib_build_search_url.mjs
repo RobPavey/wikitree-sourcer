@@ -26,6 +26,7 @@ import { TaslibUriBuilder } from "./taslib_uri_builder.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
+  const options = buildUrlInput.options;
 
   var builder = new TaslibUriBuilder();
 
@@ -33,7 +34,16 @@ function buildSearchUrl(buildUrlInput) {
 
   builder.addName(gd.inferFullName());
 
-  let dateRange = gd.inferPossibleLifeYearRange();
+  let exactness = 2;
+  const exactnessOption = options.search_nzbdm_dateExactness;
+  if (exactnessOption == "exact") {
+    exactness = 0;
+  } else if (/^\d+$/.test(exactnessOption)) {
+    exactness = Number(exactnessOption);
+  }
+  let maxLifespan = Number(options.search_general_maxLifespan);
+  let dateRange = gd.inferPossibleLifeYearRange(maxLifespan, new Date(), exactness);
+
   builder.addYearRange(dateRange.startYear.toString(), dateRange.endYear.toString());
 
   const url = builder.getUri();

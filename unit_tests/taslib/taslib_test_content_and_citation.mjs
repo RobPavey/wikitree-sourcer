@@ -32,6 +32,10 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "arrival_1840_william_taylor",
+    url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1575259/one?qu=Taylor&qf=NI_INDEX%09Record+type%09Arrivals%09Arrivals&qf=NI_NAME_FACET%09Name%09Taylor%2C+William%09Taylor%2C+William&qf=PUBDATE%09Year%091840-1842%091840-1842&qf=PUBDATE%09Year%091840%091840",
+  },
+  {
     caseName: "birth_1846_nr_archdall",
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1106997/one?qu=Henry&qu=Abigail&qu=Archdall&qf=NI_INDEX%09Record+type%09Births%09Births&qf=PUBDATE%09Year%091846%091846",
   },
@@ -46,6 +50,10 @@ const regressionData = [
   {
     caseName: "burial_1835_mary_jones",
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=Mary&qu=Jones&qf=NI_INDEX%09Record+type%09Deaths%09Deaths&qf=PUBDATE%09Year%091833-1852%091833-1852#",
+  },
+  {
+    caseName: "census_1848_john_smith",
+    url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DJohn+Smith&qf=NI_INDEX%09Record+type%09Census%09Census",
   },
   {
     caseName: "convict_1818_mary_smith",

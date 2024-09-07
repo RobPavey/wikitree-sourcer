@@ -1,13 +1,10 @@
 {
   "sourceOfData": "taslib",
   "sourceType": "record",
-  "recordType": "Will",
+  "recordType": "Unclassified",
   "name": {
-    "lastName": "Grice",
-    "forenames": "Clarence Vernon"
-  },
-  "eventDate": {
-    "dateString": "1963"
+    "lastName": "Taylor",
+    "forenames": "William"
   },
   "eventPlace": {
     "placeString": "Tasmania, Australia"

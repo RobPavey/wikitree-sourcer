@@ -10,6 +10,9 @@
   "eventDate": {
     "dateString": "18 May 1838"
   },
+  "eventPlace": {
+    "placeString": "Hobart, Tasmania, Australia"
+  },
   "ageAtEvent": "75",
   "registrationDistrict": "Hobart",
   "hasValidData": true

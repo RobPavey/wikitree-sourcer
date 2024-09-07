@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Other Records ID: CON13/1/1 Page 139<br/>\n[https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111 Other Record Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1435652 Record Permalink] (accessed 6 May 2021)<br/>\nMary Smith.\n</ref>",
+    "citation": "<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Other Records ID: CON13/1/1 Page 139<br/>\n[https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111 Other Record Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1435652 Record Permalink] (accessed 6 May 2021)<br/>\nMary Smith in Tasmania, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Mary was transported.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Other Records ID: CON13/1/1 Page 139<br/>\n[https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111 Other Record Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1435652 Record Permalink] (accessed 6 May 2021)<br/>\nMary Smith.\n</ref>",
+    "citation": "Mary was transported in Tasmania, Australia.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Other Records ID: CON13/1/1 Page 139<br/>\n[https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111 Other Record Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1435652 Record Permalink] (accessed 6 May 2021)<br/>\nMary Smith in Tasmania, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Convict Transportation''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Other Records ID: CON13/1/1 Page 139<br/>[https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111 Other Record Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1435652 Record Permalink] (accessed 6 May 2021)<br/>Mary Smith.",
+    "citation": "* '''Convict Transportation''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Other Records ID: CON13/1/1 Page 139<br/>[https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111 Other Record Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1435652 Record Permalink] (accessed 6 May 2021)<br/>Mary Smith in Tasmania, Australia.",
     "type": "source"
   }
 }

@@ -1,13 +1,16 @@
 {
   "sourceOfData": "taslib",
   "sourceType": "record",
-  "recordType": "PassengerList",
+  "recordType": "Census",
   "name": {
     "lastName": "Smith",
     "forenames": "John"
   },
+  "eventDate": {
+    "dateString": "1848"
+  },
   "eventPlace": {
-    "placeString": "Tasmania, Australia"
+    "placeString": "Launceston, Tasmania, Australia"
   },
   "hasValidData": true
 }

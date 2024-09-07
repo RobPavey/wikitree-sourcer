@@ -9,6 +9,9 @@
   "eventDate": {
     "dateString": "1950"
   },
+  "eventPlace": {
+    "placeString": "Tasmania, Australia"
+  },
   "spouses": [
     {
       "name": {

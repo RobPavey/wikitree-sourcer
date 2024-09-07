@@ -6,5 +6,8 @@
     "lastName": "Smith",
     "forenames": "Mary"
   },
+  "eventPlace": {
+    "placeString": "Tasmania, Australia"
+  },
   "hasValidData": true
 }

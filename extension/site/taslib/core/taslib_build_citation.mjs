@@ -61,9 +61,12 @@ function getPartsFromResource(ed) {
           let spaceIndex = result.text.indexOf(" ");
           if (spaceIndex != -1) {
             textId = result.text.substring(0, spaceIndex);
-            if (id.startsWith(textId) && id.length > textId.length) {
-              result.permalink = "https://libraries.tas.gov.au/Digital/" + textId + "/" + id;
-            }
+          }
+          // the text ID can have / characters in - they should be - chars in permalink
+          textId = textId.replace(/\//g, "-");
+
+          if (id.startsWith(textId) && id.length > textId.length) {
+            result.permalink = "https://libraries.tas.gov.au/Digital/" + textId + "/" + id;
           }
         }
         if (!result.permalink) {
@@ -109,6 +112,14 @@ function buildSourceReference(ed, gd, builder) {
     builder.addSourceReferenceText("Tasmanian Archives");
     if (resourceParts.text) {
       builder.addSourceReferenceField("Resource ID", resourceParts.text);
+      let fileNumber = ed.recordData["File number"];
+      let page = ed.recordData["Page"];
+      if (fileNumber && !resourceParts.text.includes(fileNumber)) {
+        builder.addSourceReferenceField("File number", fileNumber);
+      }
+      if (page && !resourceParts.text.includes(page)) {
+        builder.addSourceReferenceField("Page", page);
+      }
     } else {
       builder.addSourceReferenceField("Resource ID", resourceParts.id);
       builder.addSourceReferenceField("Page", resourceParts.pageNum);
@@ -124,6 +135,7 @@ function buildSourceReference(ed, gd, builder) {
   } else {
     builder.addSourceReferenceField("Record ID", ed.recordData["Record ID"]);
     builder.addSourceReferenceField("File number", ed.recordData["File number"]);
+    builder.addSourceReferenceField("Page", ed.recordData["Page"]);
   }
 }
 

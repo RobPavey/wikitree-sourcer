@@ -10,6 +10,9 @@
   "eventDate": {
     "dateString": "13 Apr 1842"
   },
+  "eventPlace": {
+    "placeString": "Hobart, Tasmania, Australia"
+  },
   "ageAtEvent": "21",
   "registrationDistrict": "Hobart",
   "spouses": [

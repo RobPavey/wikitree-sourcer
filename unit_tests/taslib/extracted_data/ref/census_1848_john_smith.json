@@ -1,0 +1,17 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DJohn+Smith&qf=NI_INDEX%09Record+type%09Census%09Census",
+  "success": true,
+  "recordData": {
+    "Name": "Smith, John",
+    "Record Type": "Census",
+    "Under 14": "No",
+    "Year": "1848",
+    "Census district": "Launceston",
+    "Page": "476",
+    "Record ID": "NAME_INDEXES:484501",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/CEN1-1-97-476",
+      "text": "CEN1/1/97"
+    }
+  }
+}

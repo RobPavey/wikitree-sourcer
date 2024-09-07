@@ -29,9 +29,25 @@ class TaslibEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
+    // See this page for information on the records in the names index:
+    // https://libraries.tas.gov.au/tasmanian-archives/records-included-in-the-names-index/
+    // This FamilySearch pages also has useful info:
+    // https://www.familysearch.org/en/wiki/Tasmania_Civil_Registration
+
     if (ed.recordData) {
       let edType = ed.recordData["Record Type"];
       if (edType == "Births") {
+        // either a birth registration or a baptism, the fields don't tell us because
+        // baptism records in the index still have "Registered" for the place and "Registration year"
+        // for the baptism place.
+        // 1839 has birth regs and baptisms
+        //  Baptism: https://libraries.tas.gov.au/Record/NamesIndex/1087028
+        //  Birth Reg: https://libraries.tas.gov.au/Record/NamesIndex/992027
+        // Earliest birth reg
+        // Latest baptism
+        // So if registration year is prior to 1839 it is a Baptism.
+        // Otherwise it could be a birth registration or baptism.
+        let registrationYear = ed.recordData["Registration year"];
         this.recordType = RT.Birth;
       } else if (edType == "Deaths") {
         let dateOfBurial = ed.recordData["Date of burial"];
@@ -42,6 +58,8 @@ class TaslibEdReader extends ExtractedDataReader {
         }
       } else if (edType == "Marriages") {
         this.recordType = RT.Marriage;
+      } else if (edType == "Census") {
+        this.recordType = RT.Census;
       } else if (edType == "Convicts") {
         this.recordType = RT.ConvictTransportation;
       } else if (edType == "Departures") {
@@ -137,12 +155,21 @@ class TaslibEdReader extends ExtractedDataReader {
       placeString = this.ed.recordData["Where died"];
     } else if (this.recordType == RT.Marriage) {
       placeString = this.ed.recordData["Where married"];
+    } else if (this.recordType == RT.Census) {
+      placeString = this.ed.recordData["Census district"];
     }
 
     // possibly separate out street address if present
 
     if (placeString && !placeString.includes("Tasmania") && !placeString.includes("Australia")) {
       placeString += ", Tasmania, Australia";
+    } else if (!placeString) {
+      let registrationPlace = this.ed.recordData["Registered"];
+      if (registrationPlace) {
+        placeString = registrationPlace + ", Tasmania, Australia";
+      } else {
+        placeString = "Tasmania, Australia";
+      }
     }
 
     return this.makePlaceObjFromFullPlaceName(placeString);

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of William Taylor''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CSO92/1/5 p. 39<br/>\n[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>\nWilliam Taylor in Tasmania, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "William was in a record in Tasmania, Australia.<ref>\n'''Record of William Taylor''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CSO92/1/5 p. 39<br/>\n[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>\nWilliam Taylor in Tasmania, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of William Taylor''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: CSO92/1/5 p. 39<br/>[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>William Taylor in Tasmania, Australia.",
+    "type": "source"
+  }
+}

@@ -24,9 +24,35 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchParametersOptionsGroup = {
+  category: "search",
+  subcategory: "taslib",
+  tab: "search",
+  subsection: "taslib",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "dateExactness",
+      type: "select",
+      label: "Search exactness to use for the search from/to dates",
+      values: [
+        { value: "exact", text: "Exact year only" },
+        { value: "1", text: "+/- 1 years" },
+        { value: "2", text: "+/- 2 years" },
+        { value: "3", text: "+/- 3 years" },
+        { value: "5", text: "+/- 5 years" },
+        { value: "10", text: "+/- 10 years" },
+        { value: "25", text: "+/- 25 years" },
+      ],
+      defaultValue: "2",
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -38,6 +64,8 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "taslib", "Libraries Tasmania");
 registerSiteSearchPopupOptionsGroup("taslib", 7, 7);
+registerSubheadingForOptions("search", "taslib", "parameters", "Search Parameters");
+registerOptionsGroup(searchParametersOptionsGroup);
 
 registerSubsectionForOptions("citation", "taslib", "Libraries Tasmania");
 registerOptionsGroup(citationOptionsGroup);

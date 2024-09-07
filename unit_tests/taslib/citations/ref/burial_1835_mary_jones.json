@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD34/1/1 no 5325<br/>\n[https://libraries.tas.gov.au/Digital/RGD34-1-1/RGD34-1-1-P229 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1180923 Record Permalink] (accessed 6 May 2021)<br/>\nMary Jones burial (died age 75) on 18 May 1838. Registration district Hobart.\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD34/1/1 no 5325<br/>\n[https://libraries.tas.gov.au/Digital/RGD34-1-1/RGD34-1-1-P229 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1180923 Record Permalink] (accessed 6 May 2021)<br/>\nMary Jones burial (died age 75) on 18 May 1838 in Hobart, Tasmania, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Mary (age 75) was buried on 18 May 1838. Registration district was Hobart.<ref>\n'''Burial''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD34/1/1 no 5325<br/>\n[https://libraries.tas.gov.au/Digital/RGD34-1-1/RGD34-1-1-P229 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1180923 Record Permalink] (accessed 6 May 2021)<br/>\nMary Jones burial (died age 75) on 18 May 1838. Registration district Hobart.\n</ref>",
+    "citation": "Mary (age 75) was buried on 18 May 1838 in Hobart, Tasmania, Australia.<ref>\n'''Burial''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD34/1/1 no 5325<br/>\n[https://libraries.tas.gov.au/Digital/RGD34-1-1/RGD34-1-1-P229 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1180923 Record Permalink] (accessed 6 May 2021)<br/>\nMary Jones burial (died age 75) on 18 May 1838 in Hobart, Tasmania, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Burial''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: RGD34/1/1 no 5325<br/>[https://libraries.tas.gov.au/Digital/RGD34-1-1/RGD34-1-1-P229 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1180923 Record Permalink] (accessed 6 May 2021)<br/>Mary Jones burial (died age 75) on 18 May 1838. Registration district Hobart.",
+    "citation": "* '''Burial''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: RGD34/1/1 no 5325<br/>[https://libraries.tas.gov.au/Digital/RGD34-1-1/RGD34-1-1-P229 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1180923 Record Permalink] (accessed 6 May 2021)<br/>Mary Jones burial (died age 75) on 18 May 1838 in Hobart, Tasmania, Australia.",
     "type": "source"
   }
 }
