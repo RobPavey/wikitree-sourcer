@@ -1828,7 +1828,7 @@ class NarrativeBuilder {
         } else if (maritalStatus) {
           result += " recorded as " + maritalStatus;
         }
-      } else {
+      } else if (structuredHousehold) {
         let listParts = [];
         let startIndex = 0;
         let endIndex = structuredHousehold.members.length - 1;
