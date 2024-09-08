@@ -59,12 +59,12 @@ const siteNames = [
   "ppnz",
   "psuk",
   "scotp",
+  "taslib",
   "trove",
   "vicbdm",
   "wiewaswie",
   "wikitree",
   "wikipedia",
-  "taslib",
 ];
 
 export { siteNames };

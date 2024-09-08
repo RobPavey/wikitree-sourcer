@@ -6,8 +6,15 @@
     "lastName": "Smith",
     "forenames": "John"
   },
+  "eventDate": {
+    "dateString": "18 May 1818"
+  },
   "eventPlace": {
     "placeString": "Tasmania, Australia"
   },
+  "arrivalPlace": "Macquarie Island",
+  "departureDate": "18 May 1818",
+  "departurePlace": "Hobart",
+  "shipName": "Elizabeth and Mary",
   "hasValidData": true
 }

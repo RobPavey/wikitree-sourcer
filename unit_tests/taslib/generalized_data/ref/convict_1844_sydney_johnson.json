@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "ConvictTransportation",
+  "name": {
+    "lastName": "Johnson",
+    "forenames": "Sydney"
+  },
+  "eventDate": {
+    "dateString": "25 Apr 1844"
+  },
+  "eventPlace": {
+    "placeString": "Tasmania, Australia"
+  },
+  "departureDate": "25 Apr 1844",
+  "departurePlace": "London",
+  "shipName": "Maria Somes (1)",
+  "hasValidData": true
+}

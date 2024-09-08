@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Inquest''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: SC195/1/16 (Inquest 1340)<br/>\n[https://libraries.tas.gov.au/Digital/SC195-1-16/SC195-1-16-1340 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1366607 Record Permalink] (accessed 6 May 2021)<br/>\nJames Wilson on 13 Oct 1845 in Tasmania, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James was the subject of an inquest on 13 October 1845 in Tasmania, Australia.<ref>\n'''Inquest''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: SC195/1/16 (Inquest 1340)<br/>\n[https://libraries.tas.gov.au/Digital/SC195-1-16/SC195-1-16-1340 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1366607 Record Permalink] (accessed 6 May 2021)<br/>\nJames Wilson on 13 Oct 1845 in Tasmania, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Inquest''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: SC195/1/16 (Inquest 1340)<br/>[https://libraries.tas.gov.au/Digital/SC195-1-16/SC195-1-16-1340 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1366607 Record Permalink] (accessed 6 May 2021)<br/>James Wilson on 13 Oct 1845 in Tasmania, Australia.",
+    "type": "source"
+  }
+}

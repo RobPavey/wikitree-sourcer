@@ -2648,6 +2648,10 @@ class NarrativeBuilder {
       if (departureDate) {
         this.narrative += " " + this.formatDate(departureDate, true);
       }
+
+      if (arrivalPlace) {
+        this.narrative += " bound to " + arrivalPlace;
+      }
     } else {
       this.narrative = this.getPersonNameOrPronoun() + " was a passenger";
 
@@ -2662,6 +2666,7 @@ class NarrativeBuilder {
       this.addFullPlaceWithPreposition(eventPlaceObj);
     }
 
+    this.narrative += ".";
     this.addAgeAsSeparateSentence(ageAtEvent);
   }
 
@@ -2838,6 +2843,7 @@ class NarrativeBuilder {
       { recordType: RT.Heraldry, string: "was in a heraldic record" },
       { recordType: RT.GovernmentDocument, string: "was in a government document" },
       { recordType: RT.Diary, string: "was in a diary entry" },
+      { recordType: RT.Inquest, string: "was the subject of an inquest" },
     ];
 
     let gd = this.eventGd;

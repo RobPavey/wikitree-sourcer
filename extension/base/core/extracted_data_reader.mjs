@@ -150,6 +150,26 @@ class ExtractedDataReader {
     return "";
   }
 
+  getArrivalDate() {
+    return "";
+  }
+
+  getArrivalPlace() {
+    return "";
+  }
+
+  getDepartureDate() {
+    return "";
+  }
+
+  getDeparturePlace() {
+    return "";
+  }
+
+  getShipName() {
+    return "";
+  }
+
   getSpouses() {
     return undefined;
   }

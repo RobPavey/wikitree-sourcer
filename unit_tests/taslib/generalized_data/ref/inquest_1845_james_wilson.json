@@ -1,14 +1,17 @@
 {
   "sourceOfData": "taslib",
   "sourceType": "record",
-  "recordType": "ConvictTransportation",
+  "recordType": "Inquest",
   "name": {
-    "lastName": "Smith",
-    "forenames": "Mary"
+    "lastName": "Wilson",
+    "forenames": "James"
+  },
+  "eventDate": {
+    "dateString": "13 Oct 1845"
   },
   "eventPlace": {
     "placeString": "Tasmania, Australia"
   },
-  "shipName": "Duke of Wellington",
+  "ageAtEvent": "23",
   "hasValidData": true
 }

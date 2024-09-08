@@ -60,6 +60,10 @@ const regressionData = [
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=Mary&qu=Smith&qf=PUBDATE%09Year%091799-1843%091799-1843&qf=PUBDATE%09Year%091817-1822%091817-1822&qf=PUBDATE%09Year%091818%091818#",
   },
   {
+    caseName: "convict_1844_sydney_johnson",
+    url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1798382/one?qu=NI_INDEX%3D%22Convicts%22&qu=Sydney&qu=Johnson",
+  },
+  {
     caseName: "death_1874_sarah_proctor",
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1151285/one?qu=Sarah&qu=Proctor&qf=NI_INDEX%09Record+type%09Deaths%09Deaths&qf=PUBDATE%09Year%091874%091874",
   },
@@ -74,6 +78,10 @@ const regressionData = [
   {
     caseName: "divorce_1950_clarence_grice",
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DClarence%20Vernon%20Grice&qf=PUBDATE%09Year%091890-1962%091890-1962",
+  },
+  {
+    caseName: "inquest_1845_james_wilson",
+    url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1366607/one?qu=James&qu=Wilson&qf=NI_INDEX%09Record+type%09Inquests%09Inquests&qf=NI_NAME_FACET%09Name%09Wilson%2C+James%09Wilson%2C+James&qf=PUBDATE%09Year%091845%091845",
   },
   {
     caseName: "marriage_1842_sarah_bassett",

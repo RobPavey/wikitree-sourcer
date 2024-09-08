@@ -57,12 +57,12 @@ const siteNames = [
   "ppnz",
   "psuk",
   "scotp",
+  "taslib",
   "trove",
   "vicbdm",
   "wiewaswie",
   "wikipedia",
   "wikitree",
-  "taslib",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

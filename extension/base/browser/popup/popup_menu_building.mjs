@@ -1236,6 +1236,7 @@ function setupBuildCitationSubMenu(
     GovernmentDocument: `Government Document`,
     Heraldry: `Heraldic Record`,
     Immigration: `Immigration`,
+    Inquest: `Inquest`,
     LandTax: `Land Tax`,
     LandPetition: `Land Petition`,
     LandGrant: `Land Grant`,

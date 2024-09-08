@@ -85,6 +85,13 @@ function commonGeneralizeData(sourceOfData, edReader) {
   setField("militaryBranch", edReader.getMilitaryBranch());
   setField("militaryRegiment", edReader.getMilitaryRegiment());
 
+  // passenger list, arrival/departure  fields
+  setField("arrivalDate", edReader.getArrivalDate());
+  setField("arrivalPlace", edReader.getArrivalPlace());
+  setField("departureDate", edReader.getDepartureDate());
+  setField("departurePlace", edReader.getDeparturePlace());
+  setField("shipName", edReader.getShipName());
+
   setField("spouses", edReader.getSpouses());
   setField("parents", edReader.getParents());
   setField("primaryPerson", edReader.getPrimaryPerson());

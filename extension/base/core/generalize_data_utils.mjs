@@ -3965,6 +3965,10 @@ class GeneralizedData {
         defaultTitle: "Death or Burial",
       },
       {
+        type: RT.Inquest,
+        defaultTitle: "Inquest",
+      },
+      {
         type: RT.Census,
         defaultTitle: "Census",
         addYear: true,

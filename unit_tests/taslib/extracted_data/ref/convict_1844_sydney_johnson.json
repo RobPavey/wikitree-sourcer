@@ -1,0 +1,30 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1798382/one?qu=NI_INDEX%3D%22Convicts%22&qu=Sydney&qu=Johnson",
+  "success": true,
+  "recordData": {
+    "Name": "Johnson, Sydney",
+    "Record Type": "Convicts",
+    "Departure date": "25 Apr 1844",
+    "Departure port": "London",
+    "Ship": "Maria Somes (1)",
+    "Voyage number": "236",
+    "Index number": "35875",
+    "Record ID": "NAME_INDEXES:1798382",
+    "Appropriation List": {
+      "link": "https://libraries.tas.gov.au/Digital/CON27-1-10/CON27-1-10P216",
+      "text": "CON27/1/10"
+    },
+    "Conduct Record": {
+      "link": "https://libraries.tas.gov.au/Digital/CON33-1-57/CON33-1-57P111",
+      "text": "CON33/1/57"
+    },
+    "Description List": {
+      "link": "http://search.archives.tas.gov.au/default.aspx?detail=1&type=I&id=CON18/1/42",
+      "text": "CON18/1/42"
+    },
+    "Indent": {
+      "link": "https://libraries.tas.gov.au/Digital/CON14-1-22/CON14-1-22P158",
+      "text": "CON14/1/22 Pages 154-155"
+    }
+  }
+}

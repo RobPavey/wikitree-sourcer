@@ -26,6 +26,136 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 
+const eventTypes = [
+  {
+    taslibRecordType: "Arrivals",
+    recordType: RT.PassengerList,
+    eventDateKeys: ["Arrival date"],
+  },
+  {
+    // either a birth registration or a baptism, the fields don't tell us because
+    // baptism records in the index still have "Registered" for the place and "Registration year"
+    // for the baptism place.
+    // 1839 has birth regs and baptisms
+    //  Baptism: https://libraries.tas.gov.au/Record/NamesIndex/1087028
+    //  Birth Reg: https://libraries.tas.gov.au/Record/NamesIndex/992027
+    // Earliest birth reg was Devember 1838.
+    // Latest baptism
+    // So if registration year is prior to Dec 1838 it is a Baptism.
+    // Otherwise it could be a birth registration or baptism.
+
+    taslibRecordType: "Births",
+    endYear: 1839,
+    recordType: RT.Baptism,
+  },
+  {
+    taslibRecordType: "Births",
+    startYear: 1838,
+    recordType: RT.BirthOrBaptism,
+  },
+  {
+    taslibRecordType: "Census",
+    recordType: RT.Census,
+    eventPlaceKeys: ["Census district"],
+  },
+  {
+    taslibRecordType: "Colonial Secretary correspondence",
+    recordType: RT.GovernmentDocument,
+    eventDateKeys: ["Document date"],
+  },
+  {
+    taslibRecordType: "Convicts",
+    recordType: RT.ConvictTransportation,
+    eventDateKeys: ["Arrival date", "Departure date"],
+  },
+  {
+    taslibRecordType: "Deaths",
+    hasFields: [["Date of burial"]],
+    recordType: RT.Burial,
+    eventDateKeys: ["Date of burial"],
+  },
+  {
+    taslibRecordType: "Deaths",
+    recordType: RT.Death,
+    eventPlaceKeys: ["Where died"],
+  },
+  {
+    taslibRecordType: "Departures",
+    recordType: RT.PassengerList,
+    eventDateKeys: ["Departure date"],
+  },
+  {
+    taslibRecordType: "Divorces",
+    recordType: RT.Divorce,
+  },
+  {
+    taslibRecordType: "Immigration",
+    recordType: RT.Immigration,
+    eventDateKeys: ["Document date"],
+  },
+  {
+    taslibRecordType: "Inquests",
+    recordType: RT.Inquest,
+    eventDateKeys: ["Date of inquest"],
+  },
+  {
+    taslibRecordType: "Marriages",
+    recordType: RT.Marriage,
+    eventDateKeys: ["Date of marriage"],
+    eventPlaceKeys: ["Where married"],
+  },
+  {
+    taslibRecordType: "Wills",
+    recordType: RT.Will,
+  },
+];
+
+function findEventType(ed) {
+  let yearString = ed.recordData["Registration year"];
+  if (!yearString) {
+    yearString = ed.recordData["Year"];
+  }
+
+  let yearNum = undefined;
+  if (yearString && /^\d\d\d\d$/.test(yearString)) {
+    yearNum = Number(yearString);
+  }
+
+  let taslibRecordType = ed.recordData["Record Type"];
+  for (let eventType of eventTypes) {
+    if (eventType.taslibRecordType == taslibRecordType) {
+      if (eventType.endYear && yearNum && yearNum > eventType.endYear) {
+        continue;
+      }
+      if (eventType.startYear && yearNum && yearNum < eventType.startYear) {
+        continue;
+      }
+      if (eventType.hasFields) {
+        let matched = false;
+        for (let fieldSet of eventType.hasFields) {
+          let fieldSetMatched = true;
+          for (let field of fieldSet) {
+            if (!ed.recordData[field]) {
+              fieldSetMatched = false;
+              break;
+            }
+          }
+          if (fieldSetMatched) {
+            matched = true;
+            break;
+          }
+        }
+        if (!matched) {
+          continue;
+        }
+      }
+
+      // not excluded by conditions
+      return eventType;
+    }
+  }
+}
+
 class TaslibEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
@@ -36,43 +166,20 @@ class TaslibEdReader extends ExtractedDataReader {
     // https://www.familysearch.org/en/wiki/Tasmania_Civil_Registration
 
     if (ed.recordData) {
-      let edType = ed.recordData["Record Type"];
-      if (edType == "Births") {
-        // either a birth registration or a baptism, the fields don't tell us because
-        // baptism records in the index still have "Registered" for the place and "Registration year"
-        // for the baptism place.
-        // 1839 has birth regs and baptisms
-        //  Baptism: https://libraries.tas.gov.au/Record/NamesIndex/1087028
-        //  Birth Reg: https://libraries.tas.gov.au/Record/NamesIndex/992027
-        // Earliest birth reg was Devember 1838.
-        // Latest baptism
-        // So if registration year is prior to Dec 1838 it is a Baptism.
-        // Otherwise it could be a birth registration or baptism.
-        let registrationYear = ed.recordData["Registration year"];
-        if (registrationYear && /^\d\d\d\d$/.test(registrationYear) && Number(registrationYear) < 1838) {
-          this.recordType = RT.Baptism;
-        } else {
-          this.recordType = RT.BirthOrBaptism;
+      this.eventType = findEventType(ed);
+      if (this.eventType) {
+        this.recordType = this.eventType.recordType;
+      }
+    }
+  }
+
+  getRecordDataValue(keys) {
+    if (this.ed.recordData) {
+      for (let key of keys) {
+        let value = this.ed.recordData[key];
+        if (value) {
+          return value;
         }
-      } else if (edType == "Deaths") {
-        let dateOfBurial = ed.recordData["Date of burial"];
-        if (dateOfBurial) {
-          this.recordType = RT.Burial;
-        } else {
-          this.recordType = RT.Death;
-        }
-      } else if (edType == "Marriages") {
-        this.recordType = RT.Marriage;
-      } else if (edType == "Census") {
-        this.recordType = RT.Census;
-      } else if (edType == "Convicts") {
-        this.recordType = RT.ConvictTransportation;
-      } else if (edType == "Departures") {
-        this.recordType = RT.PassengerList;
-      } else if (edType == "Divorces") {
-        this.recordType = RT.Divorce;
-      } else if (edType == "Wills") {
-        this.recordType = RT.Will;
       }
     }
   }
@@ -178,10 +285,8 @@ class TaslibEdReader extends ExtractedDataReader {
     let dateString = "";
     let isRegistrationDate = false;
 
-    if (this.recordType == RT.Marriage) {
-      dateString = this.ed.recordData["Date of marriage"];
-    } else if (this.recordType == RT.Burial) {
-      dateString = this.ed.recordData["Date of burial"];
+    if (this.eventType && this.eventType.eventDateKeys) {
+      dateString = this.getRecordDataValue(this.eventType.eventDateKeys);
     }
 
     if (!dateString) {
@@ -204,14 +309,8 @@ class TaslibEdReader extends ExtractedDataReader {
     }
 
     if (!placeString) {
-      if (this.recordType == RT.Birth) {
-        placeString = this.ed.recordData["Where born"];
-      } else if (this.recordType == RT.Death) {
-        placeString = this.ed.recordData["Where died"];
-      } else if (this.recordType == RT.Marriage) {
-        placeString = this.ed.recordData["Where married"];
-      } else if (this.recordType == RT.Census) {
-        placeString = this.ed.recordData["Census district"];
+      if (this.eventType && this.eventType.eventPlaceKeys) {
+        placeString = this.getRecordDataValue(this.eventType.eventPlaceKeys);
       }
     }
 
@@ -293,6 +392,42 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getOccupation() {
+    return "";
+  }
+
+  getArrivalDate() {
+    if (this.recordType == RT.PassengerList || this.recordType == RT.ConvictTransportation) {
+      return this.ed.recordData["Arrival date"];
+    }
+    return "";
+  }
+
+  getArrivalPlace() {
+    if (this.recordType == RT.PassengerList || this.recordType == RT.ConvictTransportation) {
+      return this.ed.recordData["Bound to"];
+    }
+    return "";
+  }
+
+  getDepartureDate() {
+    if (this.recordType == RT.PassengerList || this.recordType == RT.ConvictTransportation) {
+      return this.ed.recordData["Departure date"];
+    }
+
+    return "";
+  }
+
+  getDeparturePlace() {
+    if (this.recordType == RT.PassengerList || this.recordType == RT.ConvictTransportation) {
+      return this.ed.recordData["Departure port"];
+    }
+    return "";
+  }
+
+  getShipName() {
+    if (this.recordType == RT.PassengerList || this.recordType == RT.ConvictTransportation) {
+      return this.ed.recordData["Ship"];
+    }
     return "";
   }
 

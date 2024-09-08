@@ -91,6 +91,7 @@ const RT = {
   Encyclopedia: `Encyclopedia`,
   Book: `Book`,
   Journal: `Journal`,
+  Inquest: `Inquest`,
 };
 
 const RecordSubtype = {
