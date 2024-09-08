@@ -7,10 +7,12 @@
     "forenames": "John"
   },
   "eventDate": {
-    "dateString": "1848"
+    "dateString": "1848",
+    "isRegistrationDate": true
   },
   "eventPlace": {
-    "placeString": "Launceston, Tasmania, Australia"
+    "placeString": "Launceston, Tasmania, Australia",
+    "originalPlaceString": "Launceston"
   },
   "hasValidData": true
 }

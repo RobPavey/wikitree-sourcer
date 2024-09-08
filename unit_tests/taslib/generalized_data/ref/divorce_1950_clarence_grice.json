@@ -7,7 +7,8 @@
     "forenames": "Clarence Vernon"
   },
   "eventDate": {
-    "dateString": "1950"
+    "dateString": "1950",
+    "isRegistrationDate": true
   },
   "eventPlace": {
     "placeString": "Tasmania, Australia"

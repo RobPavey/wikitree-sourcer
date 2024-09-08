@@ -998,10 +998,12 @@ function getDeathString(gd, options) {
   let dataString = getFullName(gd);
 
   let deathDate = gd.inferDeathDateObj();
+  let placeObj = gd.inferDeathPlaceObj();
 
   if (gd.role && gd.role != Role.Primary) {
     dataString += " in death record for " + getPrimaryPersonTermAndName(gd);
     deathDate = gd.inferEventDateObj();
+    placeObj = gd.inferEventPlaceObj();
   } else {
     dataString += " death";
   }
@@ -1049,9 +1051,11 @@ function getDeathString(gd, options) {
     }
   }
 
-  let place = gd.inferFullEventPlace();
-  if (place) {
-    dataString += " " + getPlaceWithPreposition(place);
+  if (placeObj) {
+    let place = placeObj.inferFullPlaceString();
+    if (place) {
+      dataString += " " + getPlaceWithPreposition(place);
+    }
   } else {
     let residencePlace = gd.inferResidencePlace();
     if (residencePlace) {

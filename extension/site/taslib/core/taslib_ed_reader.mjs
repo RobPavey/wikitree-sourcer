@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
 
 class TaslibEdReader extends ExtractedDataReader {
   constructor(ed) {
@@ -43,12 +44,16 @@ class TaslibEdReader extends ExtractedDataReader {
         // 1839 has birth regs and baptisms
         //  Baptism: https://libraries.tas.gov.au/Record/NamesIndex/1087028
         //  Birth Reg: https://libraries.tas.gov.au/Record/NamesIndex/992027
-        // Earliest birth reg
+        // Earliest birth reg was Devember 1838.
         // Latest baptism
-        // So if registration year is prior to 1839 it is a Baptism.
+        // So if registration year is prior to Dec 1838 it is a Baptism.
         // Otherwise it could be a birth registration or baptism.
         let registrationYear = ed.recordData["Registration year"];
-        this.recordType = RT.Birth;
+        if (registrationYear && /^\d\d\d\d$/.test(registrationYear) && Number(registrationYear) < 1838) {
+          this.recordType = RT.Baptism;
+        } else {
+          this.recordType = RT.BirthOrBaptism;
+        }
       } else if (edType == "Deaths") {
         let dateOfBurial = ed.recordData["Date of burial"];
         if (dateOfBurial) {
@@ -70,6 +75,44 @@ class TaslibEdReader extends ExtractedDataReader {
         this.recordType = RT.Will;
       }
     }
+  }
+
+  makeDateObjFromTaslibDateString(dateString, isRegistrationDate) {
+    let dateObj = this.makeDateObjFromDateString(dateString);
+
+    if (dateObj && isRegistrationDate) {
+      dateObj.isRegistrationDate = isRegistrationDate;
+    }
+
+    return dateObj;
+  }
+
+  makePlaceObjFromTaslibPlaceName(placeString, isRegistrationPlace) {
+    // possibly separate out street address if present
+
+    let placeObj = new PlaceObj();
+
+    let fullPlaceString = placeString;
+
+    if (fullPlaceString) {
+      if (!fullPlaceString.includes("Tasmania") && !fullPlaceString.includes("Australia")) {
+        fullPlaceString += ", Tasmania, Australia";
+      }
+    } else {
+      fullPlaceString = "Tasmania, Australia";
+    }
+
+    placeObj.placeString = fullPlaceString;
+
+    if (placeString) {
+      placeObj.originalPlaceString = placeString;
+    }
+
+    if (isRegistrationPlace) {
+      placeObj.isRegistrationPlace = true;
+    }
+
+    return placeObj;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,54 +172,54 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
+    // for some events there is a date that overrides the "Registration year" or "Year"
+    // For baptism or BirthOrBaptism the even is the baptism or registration so birth date
+    // is not used as event date. But for a marriage the marriage date is used as event date.
     let dateString = "";
-    if (this.recordType == RT.Birth) {
-      dateString = this.ed.recordData["Date of birth"];
-    } else if (this.recordType == RT.Death) {
-      dateString = this.ed.recordData["Date of death"];
-    } else if (this.recordType == RT.Marriage) {
+    let isRegistrationDate = false;
+
+    if (this.recordType == RT.Marriage) {
       dateString = this.ed.recordData["Date of marriage"];
     } else if (this.recordType == RT.Burial) {
       dateString = this.ed.recordData["Date of burial"];
     }
 
     if (!dateString) {
+      dateString = this.ed.recordData["Registration year"];
+      isRegistrationDate = true;
+    }
+
+    if (!dateString) {
       dateString = this.ed.recordData["Year"];
     }
 
-    return this.makeDateObjFromDateString(dateString);
+    return this.makeDateObjFromTaslibDateString(dateString, isRegistrationDate);
   }
 
   getEventPlaceObj() {
-    let placeString = "";
-    if (this.recordType == RT.Birth) {
-      placeString = this.ed.recordData["Where born"];
-    } else if (this.recordType == RT.Death) {
-      placeString = this.ed.recordData["Where died"];
-    } else if (this.recordType == RT.Marriage) {
-      placeString = this.ed.recordData["Where married"];
-    } else if (this.recordType == RT.Census) {
-      placeString = this.ed.recordData["Census district"];
+    let placeString = this.ed.recordData["Registered"];
+    let isRegistrationPlace = false;
+    if (placeString) {
+      isRegistrationPlace = true;
     }
 
-    // possibly separate out street address if present
-
-    if (placeString && !placeString.includes("Tasmania") && !placeString.includes("Australia")) {
-      placeString += ", Tasmania, Australia";
-    } else if (!placeString) {
-      let registrationPlace = this.ed.recordData["Registered"];
-      if (registrationPlace) {
-        placeString = registrationPlace + ", Tasmania, Australia";
-      } else {
-        placeString = "Tasmania, Australia";
+    if (!placeString) {
+      if (this.recordType == RT.Birth) {
+        placeString = this.ed.recordData["Where born"];
+      } else if (this.recordType == RT.Death) {
+        placeString = this.ed.recordData["Where died"];
+      } else if (this.recordType == RT.Marriage) {
+        placeString = this.ed.recordData["Where married"];
+      } else if (this.recordType == RT.Census) {
+        placeString = this.ed.recordData["Census district"];
       }
     }
 
-    return this.makePlaceObjFromFullPlaceName(placeString);
+    return this.makePlaceObjFromTaslibPlaceName(placeString, isRegistrationPlace);
   }
 
   getLastNameAtBirth() {
-    if (this.recordType == RT.Birth) {
+    if (this.recordType == RT.BirthOrBaptism || this.recordType == RT.Baptism) {
       let nameObj = this.getNameObj();
       if (nameObj && nameObj.lastName) {
         return nameObj.lastName;
@@ -186,7 +229,7 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtDeath() {
-    if (this.recordType == RT.Death) {
+    if (this.recordType == RT.Death || this.recordType == RT.Burial) {
       let nameObj = this.getNameObj();
       if (nameObj && nameObj.lastName) {
         return nameObj.lastName;
@@ -200,31 +243,27 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    if (this.recordType == RT.Birth) {
-      return this.getEventDateObj();
-    }
-    return undefined;
+    let dateString = this.ed.recordData["Date of birth"];
+    return this.makeDateObjFromDateString(dateString);
   }
 
   getBirthPlaceObj() {
-    return undefined;
+    let placeString = this.ed.recordData["Where born"];
+    if (placeString) {
+      return this.makePlaceObjFromTaslibPlaceName(placeString);
+    }
   }
 
   getDeathDateObj() {
-    if (this.recordType == RT.Death) {
-      return this.getEventDateObj();
-    }
-
-    if (this.recordType == RT.Burial) {
-      let dateString = this.ed.recordData["Date of death"];
-      return this.makeDateObjFromDateString(dateString);
-    }
-
-    return undefined;
+    let dateString = this.ed.recordData["Date of death"];
+    return this.makeDateObjFromDateString(dateString);
   }
 
   getDeathPlaceObj() {
-    return undefined;
+    let placeString = this.ed.recordData["Where died"];
+    if (placeString) {
+      return this.makePlaceObjFromTaslibPlaceName(placeString);
+    }
   }
 
   getAgeAtEvent() {
@@ -264,11 +303,18 @@ class TaslibEdReader extends ExtractedDataReader {
         let spouseNameObj = this.makeNameObjFromLastNameCommaForenames(spouseName);
         let spouseAge = this.ed.recordData["Age2"];
         let spouseGender = this.ed.recordData["Gender2"];
+
         let spouse = {
           name: spouseNameObj,
           gender: spouseGender,
           age: spouseAge,
         };
+
+        let marriageDate = this.ed.recordData["Date of marriage"];
+        if (marriageDate) {
+          spouse.marriageDate = this.makeDateObjFromTaslibDateString(marriageDate);
+        }
+
         let spouses = [spouse];
         return spouses;
       }

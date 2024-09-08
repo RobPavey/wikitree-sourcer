@@ -8,14 +8,20 @@
   },
   "personGender": "female",
   "eventDate": {
-    "dateString": "15 Mar 1925"
+    "dateString": "1925",
+    "isRegistrationDate": true
   },
   "eventPlace": {
-    "placeString": "Lilydale, Tasmania, Australia"
+    "placeString": "Lilydale, Tasmania, Australia",
+    "originalPlaceString": "Lilydale"
   },
   "lastNameAtDeath": "Proctor",
   "deathDate": {
     "dateString": "15 Mar 1925"
+  },
+  "deathPlace": {
+    "placeString": "Lilydale, Tasmania, Australia",
+    "originalPlaceString": "Lilydale"
   },
   "hasValidData": true
 }

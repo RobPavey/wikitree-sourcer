@@ -11,7 +11,9 @@
     "dateString": "13 Apr 1842"
   },
   "eventPlace": {
-    "placeString": "Hobart, Tasmania, Australia"
+    "placeString": "Hobart, Tasmania, Australia",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
   },
   "ageAtEvent": "21",
   "registrationDistrict": "Hobart",
@@ -22,7 +24,10 @@
         "forenames": "James"
       },
       "gender": "Male",
-      "age": "26"
+      "age": "26",
+      "marriageDate": {
+        "dateString": "13 Apr 1842"
+      }
     }
   ],
   "hasValidData": true

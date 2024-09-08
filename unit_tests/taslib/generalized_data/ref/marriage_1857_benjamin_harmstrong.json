@@ -11,7 +11,9 @@
     "dateString": "31 Aug 1857"
   },
   "eventPlace": {
-    "placeString": "Hobart, Tasmania, Australia"
+    "placeString": "Hobart, Tasmania, Australia",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
   },
   "ageAtEvent": "Adult",
   "registrationDistrict": "Hobart",
@@ -22,7 +24,10 @@
         "forenames": "Mary"
       },
       "gender": "Female",
-      "age": "Minor"
+      "age": "Minor",
+      "marriageDate": {
+        "dateString": "31 Aug 1857"
+      }
     }
   ],
   "hasValidData": true

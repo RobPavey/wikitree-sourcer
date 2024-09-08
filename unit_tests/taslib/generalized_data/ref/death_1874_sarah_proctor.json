@@ -8,10 +8,13 @@
   },
   "personGender": "female",
   "eventDate": {
-    "dateString": "30 Apr 1874"
+    "dateString": "1874",
+    "isRegistrationDate": true
   },
   "eventPlace": {
-    "placeString": "Hobart, Tasmania, Australia"
+    "placeString": "Hobart, Tasmania, Australia",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
   },
   "lastNameAtDeath": "Proctor",
   "deathDate": {

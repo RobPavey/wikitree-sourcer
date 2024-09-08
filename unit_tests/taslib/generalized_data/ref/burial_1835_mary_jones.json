@@ -11,8 +11,11 @@
     "dateString": "18 May 1838"
   },
   "eventPlace": {
-    "placeString": "Hobart, Tasmania, Australia"
+    "placeString": "Hobart, Tasmania, Australia",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
   },
+  "lastNameAtDeath": "Jones",
   "ageAtEvent": "75",
   "registrationDistrict": "Hobart",
   "hasValidData": true

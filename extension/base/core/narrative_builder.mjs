@@ -1632,9 +1632,27 @@ class NarrativeBuilder {
 
   buildBirthOrBaptismString() {
     // This can happen in Ancestry, especially for child births or baptisms
+    // Can also happen in BDM indexes (e.g. Tasmania) where the index doesn't say if it is
+    // a birth registration or a baptism
     let gd = this.eventGd;
-    let dateObj = gd.inferEventDateObj();
-    let placeObj = gd.inferEventPlaceObj();
+    let eventDateObj = gd.inferEventDateObj();
+    let eventPlaceObj = gd.inferEventPlaceObj();
+    let birthDateObj = gd.inferBirthDateObj();
+    let birthPlaceObj = gd.inferBirthPlaceObj();
+
+    let hasDifferentBirthDate = false;
+    if (gd.birthDate && eventDateObj && eventDateObj.getDateString() != birthDateObj.getDateString()) {
+      hasDifferentBirthDate = true;
+    }
+
+    let hasDifferentBirthPlace = false;
+    if (
+      gd.birthPlace &&
+      eventPlaceObj &&
+      eventPlaceObj.inferFullPlaceString() != birthPlaceObj.inferFullPlaceString()
+    ) {
+      hasDifferentBirthPlace = true;
+    }
 
     let baptisedString = "baptised";
     if (this.options.narrative_general_spelling == "en_us") {
@@ -1647,10 +1665,41 @@ class NarrativeBuilder {
       this.narrative += this.getPersonNameOrPronoun();
       this.addParentageForMainSentence();
     }
-    this.narrative += " was born or " + baptisedString;
 
-    this.addDateWithPreposition(dateObj);
-    this.addFullPlaceWithPreposition(placeObj);
+    if (hasDifferentBirthDate) {
+      this.narrative += " was born";
+      this.addDateWithPreposition(birthDateObj);
+      this.narrative += " and " + baptisedString + " or registered";
+      this.addDateWithPreposition(eventDateObj);
+      if (hasDifferentBirthPlace) {
+        this.addFullPlaceWithPreposition(eventPlaceObj);
+        this.narrative += " (born";
+        if (birthPlaceObj.originalPlaceString) {
+          this.narrative += " " + this.getPlaceWithPreposition(birthPlaceObj.originalPlaceString);
+        } else {
+          this.addFullPlaceWithPreposition(birthPlaceObj);
+        }
+        this.narrative += ")";
+      } else if (eventPlaceObj) {
+        this.addFullPlaceWithPreposition(eventPlaceObj);
+      } else if (birthPlaceObj) {
+        this.narrative += ", born";
+        this.addFullPlaceWithPreposition(birthPlaceObj);
+      }
+    } else {
+      this.narrative += " was born or " + baptisedString;
+      this.addDateWithPreposition(eventDateObj);
+      if (hasDifferentBirthPlace) {
+        this.addFullPlaceWithPreposition(eventPlaceObj);
+        this.narrative += " (born";
+        this.addFullPlaceWithPreposition(birthPlaceObj);
+        this.narrative += ")";
+      } else if (eventPlaceObj) {
+        this.addFullPlaceWithPreposition(eventPlaceObj);
+      } else if (birthPlaceObj) {
+        this.addFullPlaceWithPreposition(birthPlaceObj);
+      }
+    }
 
     // sometimes a baptism has a death date. (e.g. germany_baptism_1840_johanna_hartmann)
     if (gd.deathDate) {

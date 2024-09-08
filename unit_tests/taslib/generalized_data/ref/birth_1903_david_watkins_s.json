@@ -1,21 +1,26 @@
 {
   "sourceOfData": "taslib",
   "sourceType": "record",
-  "recordType": "Birth",
+  "recordType": "BirthOrBaptism",
   "name": {
     "lastName": "Watkins",
     "forenames": "Hedley David"
   },
   "personGender": "male",
   "eventDate": {
-    "dateString": "03 Dec 1903"
+    "dateString": "1903",
+    "isRegistrationDate": true
   },
   "eventPlace": {
-    "placeString": "32 French St, Launceston, Tasmania, Australia"
+    "placeString": "Tasmania, Australia"
   },
   "lastNameAtBirth": "Watkins",
   "birthDate": {
     "dateString": "03 Dec 1903"
+  },
+  "birthPlace": {
+    "placeString": "32 French St, Launceston, Tasmania, Australia",
+    "originalPlaceString": "32 French St, Launceston"
   },
   "parents": {
     "father": {
