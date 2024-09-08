@@ -33,6 +33,11 @@ const eventTypes = [
     eventDateKeys: ["Arrival date"],
   },
   {
+    taslibRecordType: "Bankruptcy",
+    recordType: RT.LegalRecord,
+    eventDateKeys: ["Bankruptcy date"],
+  },
+  {
     // either a birth registration or a baptism, the fields don't tell us because
     // baptism records in the index still have "Registered" for the place and "Registration year"
     // for the baptism place.
@@ -69,6 +74,11 @@ const eventTypes = [
     eventDateKeys: ["Arrival date", "Departure date"],
   },
   {
+    taslibRecordType: "Court",
+    recordType: RT.LegalRecord,
+    eventDateKeys: ["Trial date"],
+  },
+  {
     taslibRecordType: "Deaths",
     hasFields: [["Date of burial"]],
     recordType: RT.Burial,
@@ -89,6 +99,24 @@ const eventTypes = [
     recordType: RT.Divorce,
   },
   {
+    taslibRecordType: "Education",
+    recordType: RT.SchoolRecords,
+    eventDateKeys: ["Admission dates"],
+    eventPlaceKeys: ["Property"],
+  },
+  {
+    taslibRecordType: "Employment",
+    recordType: RT.Employment,
+    eventDateKeys: ["Employment dates"],
+    eventPlaceKeys: ["Property"],
+  },
+  {
+    taslibRecordType: "Health & Welfare",
+    recordType: RT.MedicalPatient,
+    eventDateKeys: ["Admission dates"],
+    eventPlaceKeys: ["Property"],
+  },
+  {
     taslibRecordType: "Immigration",
     recordType: RT.Immigration,
     eventDateKeys: ["Document date"],
@@ -99,14 +127,33 @@ const eventTypes = [
     eventDateKeys: ["Date of inquest"],
   },
   {
+    taslibRecordType: "Land",
+    recordType: RT.LandTax,
+    eventDateKeys: ["Date"],
+    eventPlaceKeys: ["Location"],
+  },
+  {
     taslibRecordType: "Marriages",
     recordType: RT.Marriage,
     eventDateKeys: ["Date of marriage"],
     eventPlaceKeys: ["Where married"],
   },
   {
+    taslibRecordType: "Marriage Permissions",
+    recordType: RT.Marriage,
+    eventDateKeys: ["Permission date"],
+  },
+  {
+    taslibRecordType: "Prisoners",
+    recordType: RT.CriminalRegister,
+  },
+  {
     taslibRecordType: "Wills",
     recordType: RT.Will,
+  },
+  {
+    taslibRecordType: "World War 1 Soldiers & Nurses",
+    recordType: RT.Military,
   },
 ];
 
@@ -392,7 +439,7 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getOccupation() {
-    return "";
+    return this.ed.recordData["Occupation"];
   }
 
   getArrivalDate() {
@@ -434,6 +481,9 @@ class TaslibEdReader extends ExtractedDataReader {
   getSpouses() {
     if (this.recordType == RT.Marriage) {
       let spouseName = this.ed.recordData["Spouse"];
+      if (!spouseName) {
+        spouseName = this.ed.recordData["Marriage to"];
+      }
       if (spouseName) {
         let spouseNameObj = this.makeNameObjFromLastNameCommaForenames(spouseName);
         let spouseAge = this.ed.recordData["Age2"];
