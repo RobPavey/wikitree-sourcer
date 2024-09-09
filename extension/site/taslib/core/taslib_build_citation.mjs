@@ -24,6 +24,9 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
+const referenceFields = ["File number", "Page", "Voyage number", "Index number"];
+const additionalFieldsToIgnoreInDataList = ["Record ID", "Resource"];
+
 function getPartsFromResource(ed) {
   let resourceWrap = ed.recordData["Resource"];
   if (resourceWrap) {
@@ -105,10 +108,14 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
+  let options = builder.getOptions();
+  let dataStyleOption = options.citation_taslib_dataStyle;
+  if (dataStyleOption == "listNoRef") {
+    return;
+  }
+
   let resourceParts = getPartsFromResource(ed);
   let otherRecordsParts = getPartsFromOtherRecords(ed);
-
-  const referenceFields = ["File number", "Page", "Voyage number", "Index number"];
 
   if (resourceParts && (resourceParts.text || resourceParts.id)) {
     builder.addSourceReferenceText("Tasmanian Archives");
@@ -168,12 +175,65 @@ function buildImageLink(ed, gd, builder) {
   }
 }
 
+function buildListDataString(ed, gd, builder) {
+  const fieldsToExclude = referenceFields.concat(additionalFieldsToIgnoreInDataList);
+
+  let newRecordData = {};
+  for (let key in ed.recordData) {
+    let value = ed.recordData[key];
+    if (value) {
+      if (typeof value === "string" || value instanceof String) {
+        newRecordData[key] = value;
+      } else {
+        if (value.text) {
+          newRecordData[key] = value.text;
+        }
+      }
+    }
+  }
+
+  builder.addListDataStringFromRecordData(newRecordData, fieldsToExclude);
+}
+
+function buildListDataStringNoRef(ed, gd, builder) {
+  const fieldsToExclude = additionalFieldsToIgnoreInDataList;
+
+  let newRecordData = {};
+  for (let key in ed.recordData) {
+    let value = ed.recordData[key];
+    if (value) {
+      if (typeof value === "string" || value instanceof String) {
+        newRecordData[key] = value;
+      } else {
+        if (value.text) {
+          newRecordData[key] = value.text;
+        }
+      }
+    }
+  }
+
+  builder.addListDataStringFromRecordData(newRecordData, []);
+}
+
+function buildDataString(ed, gd, builder) {
+  let options = builder.getOptions();
+  let dataStyleOption = options.citation_taslib_dataStyle;
+
+  if (dataStyleOption == "list") {
+    buildListDataString(ed, gd, builder);
+  } else if (dataStyleOption == "sentence") {
+    builder.addStandardDataString(gd);
+  } else if (dataStyleOption == "listNoRef") {
+    buildListDataStringNoRef(ed, gd, builder);
+  }
+}
+
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
   buildImageLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  buildDataString(ed, gd, builder);
 }
 
 function buildCitation(input) {

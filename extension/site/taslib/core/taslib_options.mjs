@@ -59,7 +59,23 @@ const citationOptionsGroup = {
   subcategory: "taslib",
   tab: "citation",
   subsection: "taslib",
-  options: [],
+  options: [
+    {
+      optionName: "dataStyle",
+      type: "select",
+      label: "Include record data as",
+      values: [
+        { value: "none", text: "Do not include data" },
+        { value: "sentence", text: "Standard Sourcer sentence for the record type" },
+        { value: "list", text: "List of field names/values from record (excluding ones used in source reference)" },
+        {
+          value: "listNoRef",
+          text: "List of field names/values as shown from record (no Source Reference)",
+        },
+      ],
+      defaultValue: "sentence",
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "taslib", "Libraries Tasmania");

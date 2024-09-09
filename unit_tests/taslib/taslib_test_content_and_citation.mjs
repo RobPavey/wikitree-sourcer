@@ -34,6 +34,47 @@ const regressionData = [
   {
     caseName: "arrival_1840_william_taylor",
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1575259/one?qu=Taylor&qf=NI_INDEX%09Record+type%09Arrivals%09Arrivals&qf=NI_NAME_FACET%09Name%09Taylor%2C+William%09Taylor%2C+William&qf=PUBDATE%09Year%091840-1842%091840-1842&qf=PUBDATE%09Year%091840%091840",
+    optionVariants: [
+      {
+        variantName: "ee_style",
+        optionOverrides: {
+          citation_general_meaningfulNames: "none",
+          citation_general_commaInsideQuotes: true,
+          citation_general_addEeItemType: true,
+          citation_general_addAccessedDate: "parenBeforeLink",
+          citation_general_sourceReferenceSeparator: "commaSpace",
+          citation_general_dataListSeparator: "commaSpace",
+          citation_general_addNewlinesWithinRefs: false,
+          citation_general_addNewlinesWithinBody: false,
+          citation_general_addBreaksWithinBody: false,
+        },
+      },
+      {
+        variantName: "bee_style",
+        optionOverrides: {
+          citation_general_meaningfulNames: "none",
+          citation_general_commaInsideQuotes: true,
+          citation_general_addAccessedDate: "parenBeforeLink",
+          citation_general_sourceReferenceSeparator: "commaSpace",
+          citation_general_dataListSeparator: "commaSpace",
+          citation_general_addNewlinesWithinRefs: false,
+          citation_general_addNewlinesWithinBody: false,
+          citation_general_addBreaksWithinBody: false,
+        },
+      },
+      {
+        variantName: "dataList",
+        optionOverrides: {
+          citation_taslib_dataStyle: "list",
+        },
+      },
+      {
+        variantName: "dataListNoRef",
+        optionOverrides: {
+          citation_taslib_dataStyle: "listNoRef",
+        },
+      },
+    ],
   },
   {
     caseName: "birth_1846_nr_archdall",
@@ -62,6 +103,20 @@ const regressionData = [
   {
     caseName: "convict_1844_sydney_johnson",
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1798382/one?qu=NI_INDEX%3D%22Convicts%22&qu=Sydney&qu=Johnson",
+    optionVariants: [
+      {
+        variantName: "dataList",
+        optionOverrides: {
+          citation_taslib_dataStyle: "list",
+        },
+      },
+      {
+        variantName: "dataListNoRef",
+        optionOverrides: {
+          citation_taslib_dataStyle: "listNoRef",
+        },
+      },
+    ],
   },
   {
     caseName: "death_1874_sarah_proctor",
