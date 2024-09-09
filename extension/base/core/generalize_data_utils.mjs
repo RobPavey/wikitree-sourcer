@@ -1860,6 +1860,7 @@ class GeneralizedData {
     // birthDate: a DateObj object
     // deathDate: a DateObj object
     // eventDate: a DateObj object
+    // residenceDate: a DateObj object
     // ageAtEvent: a string
     // ageAtDeath: a string
     // lastNameAtBirth: string
@@ -1920,7 +1921,7 @@ class GeneralizedData {
     let classObj = new GeneralizedData();
     const keys = Object.keys(obj);
     for (let key of keys) {
-      if (key == "eventDate" || key == "birthDate" || key == "deathDate") {
+      if (key == "eventDate" || key == "birthDate" || key == "deathDate" || key == "residenceDate") {
         classObj[key] = DateObj.createFromPlainObject(obj[key]);
       } else if (key == "name") {
         classObj[key] = NameObj.createFromPlainObject(obj[key]);
@@ -2252,6 +2253,19 @@ class GeneralizedData {
     if (value) {
       this.createEventPlaceIfNeeded();
       this.eventPlace.county = value;
+    }
+  }
+
+  createResidenceDateIfNeeded() {
+    if (!this.residenceDate) {
+      this.residenceDate = new DateObj();
+    }
+  }
+
+  setResidenceDate(value) {
+    if (value) {
+      this.createResidenceDateIfNeeded();
+      this.residenceDate.dateString = value;
     }
   }
 
@@ -3354,6 +3368,18 @@ class GeneralizedData {
     }
 
     return this.inferCountryFromPlaceNames(placeNames);
+  }
+
+  inferResidenceDateObj() {
+    if (this.residenceDate) {
+      return this.residenceDate;
+    }
+  }
+
+  inferResidenceDate() {
+    if (this.residenceDate) {
+      return this.residenceDate.getDateString();
+    }
   }
 
   inferResidencePlaceObj() {

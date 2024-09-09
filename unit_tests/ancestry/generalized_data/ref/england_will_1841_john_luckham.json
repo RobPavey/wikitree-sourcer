@@ -5,6 +5,9 @@
   "name": {
     "name": "John Luckham"
   },
+  "residenceDate": {
+    "dateString": "1841"
+  },
   "residencePlace": {
     "placeString": "Broadway, Dorset, England"
   },

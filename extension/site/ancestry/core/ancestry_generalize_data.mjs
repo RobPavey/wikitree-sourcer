@@ -2045,6 +2045,7 @@ function generalizeDataGivenRecordType(ed, result) {
     let deathDate = getCleanRecordDataValue(ed, "Death Date", "date");
     result.setDeathDate(deathDate);
     result.setDeathYear(getCleanRecordDataValue(ed, "Death Year"));
+    result.setResidenceDate(getCleanRecordDataValue(ed, "Residence Date", "date"));
     result.setResidencePlace(getCleanRecordDataValue(ed, "Residence Place"));
 
     let probateGrantDate = getCleanValueForRecordDataList(
@@ -2057,9 +2058,11 @@ function generalizeDataGivenRecordType(ed, result) {
     if (probateGrantDate) {
       result.setEventDate(probateGrantDate);
       result.setTypeSpecficDataValue("willDate", willDate);
+    } else if (willDate) {
+      result.setTypeSpecficDataValue("dateIsWrittenDate", true);
+      result.setEventDate(willDate);
     } else {
       result.setTypeSpecficDataValue("dateIsNotGrantDate", true);
-      result.setEventDate(willDate);
     }
     result.setEventYear(getCleanRecordDataValue(ed, "Probate Year"));
 

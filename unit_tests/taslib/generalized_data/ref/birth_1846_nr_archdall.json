@@ -4,7 +4,8 @@
   "recordType": "BirthOrBaptism",
   "name": {
     "lastName": "Archdall",
-    "forenames": ""
+    "forenames": "",
+    "narrativeName": "Unnamed Archdall"
   },
   "personGender": "female",
   "eventDate": {

@@ -330,6 +330,13 @@ class NarrativeBuilder {
     let result = { isValid: false };
     result.isPronoun = false;
 
+    // the gd name can have a narrative override name, for example "Unnamed Smith".
+    if (gd.name && gd.name.narrativeName) {
+      result.nameOrPronoun = gd.name.narrativeName;
+      result.isValid = true;
+      return result;
+    }
+
     function tryFirstName() {
       let name = gd.inferFirstName();
       if (name) {
@@ -2318,9 +2325,9 @@ class NarrativeBuilder {
 
     let possessiveName = this.getPossessiveName();
 
-    let dateIsNotGrantDate = false;
-    if (gd.getTypeSpecficDataValue("dateIsNotGrantDate")) {
-      dateIsNotGrantDate = true;
+    let dateIsWrittenDate = false;
+    if (gd.getTypeSpecficDataValue("dateIsWrittenDate")) {
+      dateIsWrittenDate = true;
     }
 
     if (deathDateObj && eventDateObj) {
@@ -2332,7 +2339,7 @@ class NarrativeBuilder {
       } else if (residencePlaceObj) {
         this.narrative += " residing " + this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj);
       }
-      if (dateIsNotGrantDate) {
+      if (dateIsWrittenDate) {
         this.narrative += " and " + pronoun + " estate was in the probate process";
       } else {
         this.narrative += " and " + pronoun + " estate passed probate";
@@ -2348,8 +2355,8 @@ class NarrativeBuilder {
         this.narrative += " residing " + this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj);
       }
     } else if (eventDateObj) {
-      if (dateIsNotGrantDate) {
-        this.narrative += possessiveName + " estate was in the probate process";
+      if (dateIsWrittenDate) {
+        this.narrative += possessiveName + " will was written";
       } else {
         this.narrative += possessiveName + " estate passed probate";
       }
@@ -2447,6 +2454,8 @@ class NarrativeBuilder {
     let deathDateObj = gd.inferDeathDateObj();
     let placeObj = gd.inferEventPlaceObj();
     let residencePlaceObj = gd.inferResidencePlaceObj();
+    let residenceDateObj = gd.inferResidenceDateObj();
+    let typeSpecificData = gd.typeSpecificData;
 
     let possessiveName = this.getPossessiveName();
 
@@ -2488,19 +2497,49 @@ class NarrativeBuilder {
         this.addFullPlaceWithPreposition(placeObj);
       }
     } else {
-      if (role && role != Role.Primary) {
-        if (role == Role.Witness) {
-          this.narrative = this.getPersonNameOrPronoun() + " witnessed a will that passed probate";
-        } else {
-          let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
-          this.narrative = possessiveName + " " + relationship + "'s will passed probate";
+      let hasOnlyResidenceDate = !dateObj && residenceDateObj ? true : false;
+      let hasOnlyResidencePlace = !dateObj && residenceDateObj ? true : false;
+      let text = "passed probate or was recorded";
+      if (typeSpecificData) {
+        if (!hasOnlyResidenceDate) {
+          if (typeSpecificData.dateIsWrittenDate) {
+            text = "written";
+          } else if (typeSpecificData.willDate) {
+            text = "written on " + typeSpecificData.willDate + " and passed probate";
+          }
         }
-      } else {
-        this.narrative = possessiveName + " will passed probate";
+      } else if (hasOnlyResidenceDate) {
+        text = "was recorded";
       }
 
-      this.addDateWithPreposition(dateObj);
-      this.addFullPlaceWithPreposition(placeObj);
+      if (role && role != Role.Primary) {
+        if (role == Role.Witness) {
+          this.narrative = this.getPersonNameOrPronoun() + " witnessed a will that " + text;
+        } else {
+          let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
+          this.narrative = possessiveName + " " + relationship + "'s will " + text;
+        }
+      } else {
+        this.narrative = possessiveName + " will " + text;
+      }
+
+      if (hasOnlyResidenceDate && hasOnlyResidencePlace) {
+        this.narrative += ". Residence";
+        this.addDateWithPreposition(residenceDateObj);
+        this.addFullPlaceWithPreposition(residencePlaceObj);
+      } else {
+        if (dateObj) {
+          this.addDateWithPreposition(dateObj);
+        } else if (residenceDateObj) {
+          this.addDateWithPreposition(residenceDateObj);
+        }
+
+        if (placeObj) {
+          this.addFullPlaceWithPreposition(placeObj);
+        } else {
+          this.addFullPlaceWithPreposition(residencePlaceObj);
+        }
+      }
     }
 
     this.narrative += ".";

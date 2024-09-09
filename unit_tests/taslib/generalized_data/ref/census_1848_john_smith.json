@@ -7,8 +7,7 @@
     "forenames": "John"
   },
   "eventDate": {
-    "dateString": "1848",
-    "isRegistrationDate": true
+    "dateString": "1848"
   },
   "eventPlace": {
     "placeString": "Launceston, Tasmania, Australia",

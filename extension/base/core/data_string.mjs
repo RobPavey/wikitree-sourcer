@@ -938,6 +938,9 @@ function getMarriageRegistrationString(gd, options) {
 function getBirthString(gd, options) {
   let dataString = "";
 
+  let eventDateObj = gd.inferEventDateObj();
+  let birthDateObj = gd.inferBirthDateObj();
+
   if (gd.role && gd.role != Role.Primary) {
     if (gd.role == Role.Parent) {
       let primaryPersonName = gd.inferPrimaryPersonFullName();
@@ -960,22 +963,33 @@ function getBirthString(gd, options) {
       dataString += getFullName(gd) + " in record of birth of " + getPrimaryPersonTermAndName(gd);
     }
 
-    let date = gd.inferEventDateObj();
-    if (date) {
-      dataString += " " + getDateWithPreposition(date);
+    if (eventDateObj) {
+      dataString += " " + getDateWithPreposition(eventDateObj);
     }
   } else {
     dataString += getFullName(gd);
 
-    if (gd.recordType == RT.Birth) {
-      dataString += " born";
-    } else {
-      dataString += " born or baptised";
+    let twoDates = false;
+    if (eventDateObj && birthDateObj && eventDateObj.getDateString() != birthDateObj.getDateString()) {
+      twoDates = true;
     }
 
-    let date = gd.inferEventDateObj();
-    if (date) {
-      dataString += " " + getDateWithPreposition(date);
+    if (gd.recordType == RT.Birth) {
+      dataString += " born";
+      if (birthDateObj) {
+        dataString += " " + getDateWithPreposition(birthDateObj);
+      } else if (eventDateObj) {
+        dataString += " " + getDateWithPreposition(eventDateObj);
+      }
+    } else {
+      if (twoDates) {
+        dataString += " born";
+        dataString += " " + getDateWithPreposition(birthDateObj);
+        dataString += " and baptised or registered " + getDateWithPreposition(eventDateObj);
+      } else {
+        dataString += " born or baptised";
+        dataString += " " + getDateWithPreposition(eventDateObj);
+      }
     }
 
     let parentNames = gd.inferParentNamesForDataString();
@@ -985,7 +999,28 @@ function getBirthString(gd, options) {
     }
   }
 
-  dataString = addEventPlaceTermWithPrepositionOrRd(dataString, gd);
+  let useBirthPlace = false;
+  if (!gd.role || gd.role == Role.Primary) {
+    if (gd.recordType == RT.Birth && gd.inferBirthPlaceObj()) {
+      // Sometimes the eventplace is a more comlete version of birthplace.
+      // E.g. https://www.familysearch.org/ark:/61903/1:1:FXX1-Q87
+      let birthPlace = gd.inferBirthPlace();
+      let eventPlace = gd.inferEventPlace();
+      if (eventPlace) {
+        if (!eventPlace.startsWith(birthPlace)) {
+          useBirthPlace = true;
+        }
+      } else {
+        useBirthPlace = true;
+      }
+    }
+  }
+
+  if (useBirthPlace) {
+    dataString += getFullPlaceTermWithPreposition(gd.inferBirthPlaceObj());
+  } else if (gd.inferEventPlaceObj()) {
+    dataString = addEventPlaceTermWithPrepositionOrRd(dataString, gd);
+  }
 
   if (dataString.endsWith(",")) {
     dataString = dataString.substring(0, dataString.length - 1);

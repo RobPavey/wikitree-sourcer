@@ -108,17 +108,17 @@ function buildSourceReference(ed, gd, builder) {
   let resourceParts = getPartsFromResource(ed);
   let otherRecordsParts = getPartsFromOtherRecords(ed);
 
+  const referenceFields = ["File number", "Page", "Voyage number", "Index number"];
+
   if (resourceParts && (resourceParts.text || resourceParts.id)) {
     builder.addSourceReferenceText("Tasmanian Archives");
     if (resourceParts.text) {
       builder.addSourceReferenceField("Resource ID", resourceParts.text);
-      let fileNumber = ed.recordData["File number"];
-      let page = ed.recordData["Page"];
-      if (fileNumber && !resourceParts.text.includes(fileNumber)) {
-        builder.addSourceReferenceField("File number", fileNumber);
-      }
-      if (page && !resourceParts.text.includes(page)) {
-        builder.addSourceReferenceField("Page", page);
+      for (let referenceField of referenceFields) {
+        let value = ed.recordData[referenceField];
+        if (value && !resourceParts.text.includes(value)) {
+          builder.addSourceReferenceField(referenceField, value);
+        }
       }
     } else {
       builder.addSourceReferenceField("Resource ID", resourceParts.id);
@@ -134,8 +134,9 @@ function buildSourceReference(ed, gd, builder) {
     }
   } else {
     builder.addSourceReferenceField("Record ID", ed.recordData["Record ID"]);
-    builder.addSourceReferenceField("File number", ed.recordData["File number"]);
-    builder.addSourceReferenceField("Page", ed.recordData["Page"]);
+    for (let referenceField of referenceFields) {
+      builder.addSourceReferenceField(referenceField, ed.recordData[referenceField]);
+    }
   }
 }
 

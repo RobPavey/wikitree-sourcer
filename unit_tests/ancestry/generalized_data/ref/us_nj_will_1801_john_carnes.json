@@ -6,6 +6,9 @@
     "name": "John Carnes"
   },
   "personGender": "male",
+  "residenceDate": {
+    "dateString": "1801"
+  },
   "residencePlace": {
     "placeString": "New Jersey, USA"
   },

@@ -308,6 +308,11 @@ class TaslibEdReader extends ExtractedDataReader {
     let nameObj = this.makeNameObjFromLastNameCommaForenames(name1);
     if (nameObj && nameObj.forenames == "Given Name Not Recorded") {
       nameObj.forenames = "";
+      if (this.recordType == RT.BirthOrBaptism) {
+        if (nameObj.lastName) {
+          nameObj.narrativeName = "Unnamed " + nameObj.lastName;
+        }
+      }
     }
     return nameObj;
   }
@@ -338,7 +343,9 @@ class TaslibEdReader extends ExtractedDataReader {
 
     if (!dateString) {
       dateString = this.ed.recordData["Registration year"];
-      isRegistrationDate = true;
+      if (dateString) {
+        isRegistrationDate = true;
+      }
     }
 
     if (!dateString) {

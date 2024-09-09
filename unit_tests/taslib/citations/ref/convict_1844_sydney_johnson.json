@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nSydney Johnson on 25 Apr 1844 in Tasmania, Australia.\n</ref>",
+    "citation": "<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nSydney Johnson on 25 Apr 1844 in Tasmania, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Sydney was transported on 25 April 1844 in Tasmania, Australia.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nSydney Johnson on 25 Apr 1844 in Tasmania, Australia.\n</ref>",
+    "citation": "Sydney was transported on 25 April 1844 in Tasmania, Australia.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nSydney Johnson on 25 Apr 1844 in Tasmania, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Convict Transportation''': \"Libraries Tasmania, Names Index\"<br/>Record ID: NAME_INDEXES:1798382<br/>[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>Sydney Johnson on 25 Apr 1844 in Tasmania, Australia.",
+    "citation": "* '''Convict Transportation''': \"Libraries Tasmania, Names Index\"<br/>Record ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>Sydney Johnson on 25 Apr 1844 in Tasmania, Australia.",
     "type": "source"
   }
 }
