@@ -185,8 +185,11 @@ const factTypeToRecordType = [
   },
   {
     type: "SocialProgramCorrespondence",
-    defaultRT: RT.Birth,
-    recordDataMatches: [{ recordType: RT.Death, matches: ["Death Date"] }],
+    defaultRT: RT.SocialSecurity,
+    recordDataMatches: [
+      { recordType: RT.Death, matches: ["Death Date"] },
+      { recordType: RT.Birth, matches: ["Birth Date"] },
+    ],
   },
 ];
 
@@ -1217,6 +1220,16 @@ function generalizeData(input) {
       let birthYear = ed.relatedPersonBirthYear;
       result.setPrimaryPersonBirthDate(birthDate);
       result.setPrimaryPersonBirthYear(birthYear);
+    } else {
+      // might as well store all possible ones
+      let birthDate = selectDate(ed.relatedPersonBirthDate, ed.relatedPersonBirthDateOriginal);
+      let birthYear = ed.relatedPersonBirthYear;
+      result.setPrimaryPersonBirthDate(birthDate);
+      result.setPrimaryPersonBirthYear(birthYear);
+      let deathDate = selectDate(ed.relatedPersonDeathDate, ed.relatedPersonDeathDateOriginal);
+      let deathYear = ed.relatedPersonDeathYear;
+      result.setPrimaryPersonDeathDate(deathDate);
+      result.setPrimaryPersonDeathYear(deathYear);
     }
   }
 
@@ -1267,15 +1280,26 @@ function generalizeData(input) {
     // sometimes this is a field that is not on the residence fact
     residencePlace = ed.recordData["Note Res Place"];
   }
+  if (!residencePlace && ed.recordData && ed.recordData["Previous Residence Place"]) {
+    // sometimes this is a field that is not on the residence fact
+    residencePlace = ed.recordData["Previous Residence Place"];
+  }
+
   if (residencePlace && result.eventPlace) {
     // at least in 1841 census this is the stree address
     result.eventPlace.streetAddress = cleanPlace(residencePlace);
+  } else if (residencePlace) {
+    result.setResidencePlace(cleanPlace(residencePlace));
   }
 
   if (result.eventPlace) {
     // there is an event place. But sometimes this isn't really the event place
     // For example for US SS Death Index it is the last residence place
-    if (ed.collectionTitle == "United States Social Security Death Index") {
+    if (
+      ed.collectionTitle == "United States Social Security Death Index" ||
+      ed.collectionTitle == "United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007" ||
+      ed.factType == "SocialProgramCorrespondence"
+    ) {
       result.residencePlace = result.eventPlace;
       delete result.eventPlace;
     }

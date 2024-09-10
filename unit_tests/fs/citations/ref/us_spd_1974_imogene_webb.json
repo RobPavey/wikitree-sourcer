@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb, .\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Imogene died (age 85) on 12 April 1999 residing in Bolingbrook, Will, Illinois, United States.<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb, .\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Death''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>Imogene Webb, .",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb death 12 Apr 1999 (born 20 May 1913) residing in Bolingbrook, Will, Illinois, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Imogene died (age 85) on 12 April 1999 residing in Bolingbrook, Will, Illinois, United States.<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb death 12 Apr 1999 (born 20 May 1913) residing in Bolingbrook, Will, Illinois, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Death''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>Imogene Webb death 12 Apr 1999 (born 20 May 1913) residing in Bolingbrook, Will, Illinois, United States.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nName: Imogene Webb; Social Program Correspondence: Social Program Correspondence; Birth Date: 20 May 1913; Birth Place: Memphis Scot*, Missouri, United States; Death Date: 12 Apr 1999; Previous Residence Place: Bolingbrook, Will, Illinois, United States; Social Program Application Date: 15 Dec 1974; Social Program Claim Date: 29 Apr 1975.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Imogene died (age 85) on 12 April 1999 residing in Bolingbrook, Will, Illinois, United States.<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nName: Imogene Webb; Social Program Correspondence: Social Program Correspondence; Birth Date: 20 May 1913; Birth Place: Memphis Scot*, Missouri, United States; Death Date: 12 Apr 1999; Previous Residence Place: Bolingbrook, Will, Illinois, United States; Social Program Application Date: 15 Dec 1974; Social Program Claim Date: 29 Apr 1975.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Death''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>Name: Imogene Webb; Social Program Correspondence: Social Program Correspondence; Birth Date: 20 May 1913; Birth Place: Memphis Scot*, Missouri, United States; Death Date: 12 Apr 1999; Previous Residence Place: Bolingbrook, Will, Illinois, United States; Social Program Application Date: 15 Dec 1974; Social Program Claim Date: 29 Apr 1975.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Imogene Webb\n|-\n| Social Program Correspondence || Social Program Correspondence\n|-\n| Birth Date || 20 May 1913\n|-\n| Birth Place || Memphis Scot*, Missouri, United States\n|-\n| Death Date || 12 Apr 1999\n|-\n| Previous Residence Place || Bolingbrook, Will, Illinois, United States\n|-\n| Social Program Application Date || 15 Dec 1974\n|-\n| Social Program Claim Date || 29 Apr 1975\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Imogene died (age 85) on 12 April 1999 residing in Bolingbrook, Will, Illinois, United States.<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Imogene Webb\n|-\n| Social Program Correspondence || Social Program Correspondence\n|-\n| Birth Date || 20 May 1913\n|-\n| Birth Place || Memphis Scot*, Missouri, United States\n|-\n| Death Date || 12 Apr 1999\n|-\n| Previous Residence Place || Bolingbrook, Will, Illinois, United States\n|-\n| Social Program Application Date || 15 Dec 1974\n|-\n| Social Program Claim Date || 29 Apr 1975\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Death''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>Name: Imogene Webb; Social Program Correspondence: Social Program Correspondence; Birth Date: 20 May 1913; Birth Place: Memphis Scot*, Missouri, United States; Death Date: 12 Apr 1999; Previous Residence Place: Bolingbrook, Will, Illinois, United States; Social Program Application Date: 15 Dec 1974; Social Program Claim Date: 29 Apr 1975.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb, .\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Imogene died (age 85) on 12 April 1999 residing in Bolingbrook, Will, Illinois, United States.<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb, .\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Death''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>Imogene Webb, .",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Imogene died (age 85) on 12 April 1999 residing in Bolingbrook, Will, Illinois, United States.<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Death''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb death 12 Apr 1999 (born 20 May 1913) residing in Bolingbrook, Will, Illinois, United States.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Imogene died (age 85) on 12 April 1999 residing in Bolingbrook, Will, Illinois, United States.<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb death 12 Apr 1999 (born 20 May 1913) residing in Bolingbrook, Will, Illinois, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Death''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>Imogene Webb death 12 Apr 1999 (born 20 May 1913) residing in Bolingbrook, Will, Illinois, United States.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb, .\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Imogene died (age 85) on 12 April 1999 residing in Bolingbrook, Will, Illinois, United States.<ref>\n'''Death''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>\nImogene Webb, .\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Death''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12JP}} (accessed 6 May 2021)<br/>Imogene Webb, .",
+    "type": "source"
+  }
+}

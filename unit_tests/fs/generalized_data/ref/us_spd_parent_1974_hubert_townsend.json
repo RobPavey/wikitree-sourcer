@@ -1,0 +1,38 @@
+{
+  "sourceType": "record",
+  "role": "Parent",
+  "primaryPerson": {
+    "name": {
+      "name": "Imogene Webb",
+      "lastName": "Webb",
+      "forenames": "Imogene"
+    },
+    "gender": "female",
+    "birthDate": {
+      "dateString": "20 May 1913",
+      "yearString": "1913"
+    },
+    "deathDate": {
+      "dateString": "12 Apr 1999",
+      "yearString": "1999"
+    }
+  },
+  "recordType": "SocialSecurity",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Hubert A Townsend",
+    "lastName": "Townsend",
+    "forenames": "Hubert A"
+  },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|6KW3-12J5}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|6KW3-12JP}}"
+  ],
+  "collectionData": {
+    "id": "5000016"
+  },
+  "hasValidData": true
+}

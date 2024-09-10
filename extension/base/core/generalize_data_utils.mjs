@@ -4115,7 +4115,7 @@ class GeneralizedData {
       },
       {
         type: RT.SocialSecurity,
-        defaultTitle: "Social Security",
+        defaultTitle: "Social Security record",
         addYear: true,
       },
       {

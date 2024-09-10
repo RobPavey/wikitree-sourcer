@@ -115,6 +115,7 @@ function removeUnwantedKeysForDataString(keys, recordData) {
     "Ppq Id",
     "Record Group",
     "Sort Key",
+    "Source Ssn",
   ];
   function isKeyWanted(key) {
     for (let match of exactMatchesToExclude) {

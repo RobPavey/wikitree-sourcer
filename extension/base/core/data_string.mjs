@@ -620,6 +620,23 @@ function getSlaveScheduleString(gd, options) {
   return dataString;
 }
 
+function getSocialSecurityString(gd, options) {
+  let dataString = getFullName(gd);
+
+  let deathDate = gd.inferDeathDateObj();
+  let placeObj = gd.inferDeathPlaceObj();
+
+  if (gd.role && gd.role != Role.Primary) {
+    dataString += " in Social Security record for " + getPrimaryPersonTermAndName(gd);
+    deathDate = gd.inferEventDateObj();
+    placeObj = gd.inferEventPlaceObj();
+  } else {
+    dataString += " Social Security record";
+  }
+
+  return dataString;
+}
+
 function getUkRegistrationString(gd, options, type) {
   let dataString = getFullName(gd);
   dataString += " " + type;
@@ -1670,6 +1687,10 @@ const DataString = {
       }
       case RT.SlaveSchedule: {
         dataString = getSlaveScheduleString(gd, options);
+        break;
+      }
+      case RT.SocialSecurity: {
+        dataString = getSocialSecurityString(gd, options);
         break;
       }
     }
