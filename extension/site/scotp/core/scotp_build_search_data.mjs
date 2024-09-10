@@ -426,7 +426,7 @@ function setAge(gd, scotpRecordType, parameters, options, builder) {
 function setNames(gd, scotpRecordType, parameters, options, builder) {
   if (scotpRecordType == "coa") {
     let fullName = gd.inferFullName();
-    builder.addFullName(fullName, "soundex");
+    builder.addFullName(fullName, "fuzzy");
   } else {
     let lastName = "";
     let lastNamesArray = gd.inferPersonLastNamesArray(gd);
@@ -438,14 +438,12 @@ function setNames(gd, scotpRecordType, parameters, options, builder) {
       }
     }
     if (lastName) {
-      let searchOption = options.search_scotp_surnameSoundex ? "soundex" : "exact";
-      builder.addSurname(lastName, searchOption);
+      builder.addSurname(lastName, options.search_scotp_surnameSearchOption);
     }
 
     let forename = gd.inferForenames();
     if (forename) {
-      let searchOption = options.search_scotp_forenameSoundex ? "soundex" : "exact";
-      builder.addForename(forename, searchOption);
+      builder.addForename(forename, options.search_scotp_forenameSearchOption);
     }
   }
 }
@@ -600,7 +598,7 @@ function setPlace(gd, scotpRecordType, parameters, options, builder, dates) {
 
 function setParents(gd, scotpRecordType, parameters, options, builder) {
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.parents)) {
-    let searchOption = options.search_scotp_parentNameSoundex ? "soundex" : "exact";
+    let searchOption = options.search_scotp_parentNameSearchOption;
 
     let parentNames = gd.inferParentNamesForDataString();
     if (parameters.father) {
@@ -612,7 +610,7 @@ function setParents(gd, scotpRecordType, parameters, options, builder) {
   }
 
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.mmn)) {
-    let searchOption = options.search_scotp_parentNameSoundex ? "soundex" : "exact";
+    let searchOption = options.search_scotp_parentNameSearchOption;
 
     let mmn = gd.mothersMaidenName;
     if (mmn && parameters.mmn) {
@@ -641,12 +639,12 @@ function setSpouse(gd, scotpRecordType, parameters, options, builder) {
     let forename = spouseName.inferFirstName();
 
     if (lastName) {
-      let searchOption = options.search_scotp_surnameSoundex ? "soundex" : "exact";
+      let searchOption = options.search_scotp_surnameSearchOption;
       builder.addSpouseSurname(lastName, searchOption);
     }
 
     if (forename) {
-      let searchOption = options.search_scotp_forenameSoundex ? "soundex" : "exact";
+      let searchOption = options.search_scotp_forenameSearchOption;
       builder.addSpouseForename(forename, searchOption);
     }
 
@@ -654,7 +652,7 @@ function setSpouse(gd, scotpRecordType, parameters, options, builder) {
     let fullName = spouseName.inferFullName();
 
     if (fullName) {
-      let searchOption = options.search_scotp_surnameSoundex ? "soundex" : "exact";
+      let searchOption = options.search_scotp_surnameSearchOption;
       builder.addSpouseFullName(fullName, searchOption);
     }
   }
@@ -666,7 +664,7 @@ function setOtherPerson(gd, scotpRecordType, parameters, options, builder) {
   }
 
   if (parameters.otherPerson) {
-    builder.addOtherPersonForename(parameters.otherPerson, "soundex");
+    builder.addOtherPersonForename(parameters.otherPerson, "fuzzy");
   }
 }
 

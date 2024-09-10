@@ -21,17 +21,17 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "text",
-          "value": "Christian Johns"
+          "value": "Christian Johnston"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-sex-f",
@@ -66,17 +66,17 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "text",
-          "value": "Christian Johns"
+          "value": "Christian Johnston"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-sex-2",
@@ -91,7 +91,7 @@
         {
           "fieldKey": "edit-search-params-nrs-spsurname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-spforename",
@@ -101,7 +101,7 @@
         {
           "fieldKey": "edit-search-params-nrs-spforename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         }
       ]
     },
@@ -131,7 +131,7 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
@@ -141,7 +141,7 @@
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         }
       ]
     },
