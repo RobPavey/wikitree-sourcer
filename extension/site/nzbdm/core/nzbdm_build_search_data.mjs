@@ -194,6 +194,10 @@ function buildSearchData(input) {
     fieldData.cdate_lower = dateRange.fromDate;
     fieldData.cdate_upper = dateRange.toDate;
   } else if (typeOfSearch == "Deaths") {
+    let lastNameAtDeath = gd.inferLastNameAtDeath();
+    if (lastNameAtDeath) {
+      lastName = lastNameAtDeath;
+    }
     fieldData.dsur = lastName;
     fieldData.dfirst = forenames;
     let dateRange = addDateRange(gd, gd.inferDeathDate(), runDate, options, deathsDateRange);
