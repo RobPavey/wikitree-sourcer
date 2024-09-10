@@ -22,7 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import {
+  addBackMenuItem,
+  addMenuItem,
+  addMenuItemWithSubMenu,
+  beginMainMenu,
+  endMainMenu,
+  doAsyncActionWithCatch,
+} from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
@@ -50,8 +57,8 @@ function shouldShowSearchMenuItem(data, filter) {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function taslibSearch(generalizedData) {
-  const input = { generalizedData: generalizedData, options: options };
+async function taslibSearch(generalizedData, typeOfSearch) {
+  const input = { generalizedData: generalizedData, typeOfSearch: typeOfSearch, options: options };
   doAsyncActionWithCatch("Libraries Tasmania Name Index Search", input, async function () {
     let loadedModule = await import(`../core/taslib_build_search_url.mjs`);
     doSearch(loadedModule, input);
@@ -63,16 +70,86 @@ async function taslibSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addTaslibDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Libraries Tasmania, Names Index", function (element) {
-    taslibSearch(data.generalizedData);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search Libraries Tasmania, Names Index",
+    function (element) {
+      taslibSearch(data.generalizedData);
+    },
+    function () {
+      setupTaslibSearchSubMenu(data, backFunction, filter);
+    }
+  );
 
   return true;
+}
+
+function addTaslibSearchBirthsMenuItem(menu, data, filter) {
+  if (!filter) {
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let birthPossibleInRange = data.generalizedData.couldPersonHaveBeenBornInDateRange(
+      taslibStartYear,
+      taslibEndYear,
+      maxLifespan
+    );
+    if (!birthPossibleInRange) {
+      return;
+    }
+  }
+  addMenuItem(menu, "Search Libraries Tasmania, Names Index Births", function (element) {
+    taslibSearch(data.generalizedData, "Births");
+  });
+}
+
+function addTaslibSearchMarriagesMenuItem(menu, data, filter) {
+  if (!filter) {
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let marriagePossibleInRange = data.generalizedData.couldPersonHaveMarriedInDateRange(
+      taslibStartYear,
+      taslibEndYear,
+      maxLifespan
+    );
+    if (!marriagePossibleInRange) {
+      return;
+    }
+  }
+  addMenuItem(menu, "Search Libraries Tasmania, Names Index Marriages", function (element) {
+    taslibSearch(data.generalizedData, "Marriages");
+  });
+}
+
+function addTaslibSearchDeathsMenuItem(menu, data, filter) {
+  if (!filter) {
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
+      taslibStartYear,
+      taslibEndYear,
+      maxLifespan
+    );
+    if (!deathPossibleInRange) {
+      return;
+    }
+  }
+  addMenuItem(menu, "Search Libraries Tasmania, Names Index Deaths", function (element) {
+    taslibSearch(data.generalizedData, "Deaths");
+  });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupTaslibSearchSubMenu(data, backFunction, filter) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  addTaslibSearchBirthsMenuItem(menu, data, filter);
+  addTaslibSearchDeathsMenuItem(menu, data, filter);
+  addTaslibSearchMarriagesMenuItem(menu, data, filter);
+
+  endMainMenu(menu);
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites

@@ -109,20 +109,10 @@ class TaslibUriBuilder {
     }
   }
 
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addRecordType(type) {
+    // &qf=NI_INDEX%09Record+type%09Births%09Births
+    let string = "NI_INDEX%09Record+type%09" + type + "%09" + type;
+    this.addQfParameter(string);
   }
 
   getUri() {

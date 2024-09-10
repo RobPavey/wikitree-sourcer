@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "Amelia"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1829",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "New Norfolk, Tasmania, Australia",
+    "originalPlaceString": "New Norfolk",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtBirth": "Wilson",
+  "birthDate": {
+    "dateString": "15 Feb 1822"
+  },
+  "registrationDistrict": "New Norfolk",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Wilson",
+        "forenames": "William"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Wilson",
+        "forenames": "Grace"
+      }
+    }
+  },
+  "hasValidData": true
+}

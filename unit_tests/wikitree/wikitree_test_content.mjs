@@ -175,6 +175,11 @@ const regressionData = [
     caseName: "van_der_beek-406_read",
     url: "https://www.wikitree.com/wiki/Van_der_Beek-406",
   },
+  {
+    // To test search on taslib
+    caseName: "whish-wilson-24_read",
+    url: "https://www.wikitree.com/wiki/Whish-Wilson-24",
+  },
 ];
 
 async function runTests(testManager) {

@@ -26,13 +26,27 @@ import { TaslibUriBuilder } from "./taslib_uri_builder.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
+  const typeOfSearch = buildUrlInput.typeOfSearch;
   const options = buildUrlInput.options;
 
   var builder = new TaslibUriBuilder();
 
   // call methods on builder here
 
-  builder.addName(gd.inferFullName());
+  let name = gd.inferFullName();
+  if (typeOfSearch == "Deaths") {
+    let lnad = gd.inferLastNameAtDeath(options);
+    if (lnad) {
+      let givenNames = gd.inferForenames();
+      if (givenNames) {
+        name = givenNames + " " + lnad;
+      } else {
+        name = lnad;
+      }
+    }
+  }
+
+  builder.addName(name);
 
   let exactness = 2;
   const exactnessOption = options.search_nzbdm_dateExactness;
@@ -41,10 +55,40 @@ function buildSearchUrl(buildUrlInput) {
   } else if (/^\d+$/.test(exactnessOption)) {
     exactness = Number(exactnessOption);
   }
+
   let maxLifespan = Number(options.search_general_maxLifespan);
   let dateRange = gd.inferPossibleLifeYearRange(maxLifespan, new Date(), exactness);
 
+  if (typeOfSearch == "Births") {
+    let yearString = gd.inferBirthYear();
+    if (yearString) {
+      let yearNum = Number(yearString);
+      if (!isNaN(yearNum) && yearNum > 1000) {
+        dateRange = { startYear: yearNum - exactness, endYear: yearNum + exactness };
+      }
+    }
+  } else if (typeOfSearch == "Deaths") {
+    let yearString = gd.inferDeathYear();
+    if (yearString) {
+      let yearNum = Number(yearString);
+      if (!isNaN(yearNum) && yearNum > 1000) {
+        dateRange = { startYear: yearNum - exactness, endYear: yearNum + exactness };
+      }
+    }
+  } else if (typeOfSearch == "Marriages") {
+    if (dateRange && dateRange.startYear) {
+      const minMarriageAge = 14;
+      if (!(dateRange.endYear && dateRange.endYear - dateRange.startYear < minMarriageAge)) {
+        dateRange.startYear += minMarriageAge;
+      }
+    }
+  }
+
   builder.addYearRange(dateRange.startYear.toString(), dateRange.endYear.toString());
+
+  if (typeOfSearch) {
+    builder.addRecordType(typeOfSearch);
+  }
 
   const url = builder.getUri();
 

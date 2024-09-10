@@ -77,6 +77,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "baptism_1829_amelia_wilson",
+    url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DAmelia%20Wilson&qf=PUBDATE%09Year%091820-1824%091820-1824&qf=NI_INDEX%09Record+type%09Births%09Births",
+  },
+  {
     caseName: "birth_1846_nr_archdall",
     url: "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1106997/one?qu=Henry&qu=Abigail&qu=Archdall&qf=NI_INDEX%09Record+type%09Births%09Births&qf=PUBDATE%09Year%091846%091846",
   },

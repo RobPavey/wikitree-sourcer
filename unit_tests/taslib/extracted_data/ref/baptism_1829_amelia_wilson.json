@@ -1,0 +1,19 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DAmelia%20Wilson&qf=PUBDATE%09Year%091820-1824%091820-1824&qf=NI_INDEX%09Record+type%09Births%09Births",
+  "success": true,
+  "recordData": {
+    "Name": "Wilson, Amelia",
+    "Record Type": "Births",
+    "Gender": "Female",
+    "Father": "Wilson, William",
+    "Mother": "Wilson, Grace",
+    "Date of birth": "15 Feb 1822",
+    "Registered": "New Norfolk",
+    "Registration year": "1829",
+    "Record ID": "NAME_INDEXES:1080884",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD32-1-1-P177",
+      "text": "RGD32/1/1/ no 3239"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Cosmo",
+  "prefNames": "",
+  "middleNames": "McCashion Colquhoun",
+  "lnab": "Whish-Wilson",
+  "currentLastName": "Whish-Wilson",
+  "mothersMaidenName": "Falconer",
+  "birthDate": "22 Jul 1890",
+  "birthDateStatus": "none",
+  "deathDate": "15 Aug 1969",
+  "deathDateStatus": "none",
+  "birthLocation": "Launceston, Tasmania , Australia",
+  "deathLocation": "Tasmania, Australia",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Crole-79",
+      "name": "Helena Mary (Crole) Whish-Wilson",
+      "marriageString": "4 Sep 1918 in Trowutta, Tasmania, Australia",
+      "marriageDate": "4 Sep 1918",
+      "marriagePlace": "Trowutta, Tasmania, Australia"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Whish-Wilson-24",
+  "currentTabText": "Cosmo Whish-Wilson's Profile",
+  "pageType": "read",
+  "wikiId": "Whish-Wilson-24",
+  "name": "Cosmo McCashion Colquhoun Whish-Wilson",
+  "parents": {
+    "father": {
+      "wikiId": "Whish-Wilson-4",
+      "name": "Francis John Everett Tennant Colquhoun Whish-Wilson"
+    },
+    "mother": {
+      "wikiId": "Falconer-301",
+      "name": "Mary (Falconer) Whish-Wilson"
+    }
+  }
+}
