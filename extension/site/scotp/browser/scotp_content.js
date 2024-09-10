@@ -308,6 +308,9 @@ function legacyUrlQueryToFormData(urlQuery) {
   let formData = {};
   formData.fields = [];
 
+  //console.log("legacyUrlQueryToFormData, urlQuery is:");
+  //console.log(urlQuery);
+
   // https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=O'CONNOR&forename=BARTLEY&year%5B0%5D=1871&sex=M&age_from=28&age_to=28&county=Shipping&rd_real_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY&rd_display_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY_SHIPPING%20-%20MERCHANT%20NAVY&rdno%5B0%5D=%20&ref=903%2FS%201%2F%2016
 
   let recordType = urlQuery.record_type;
@@ -353,6 +356,10 @@ function legacyUrlQueryToFormData(urlQuery) {
   };
 
   let urlPart = recordTypeToUrlPart[recordType];
+
+  //console.log("legacyUrlQueryToFormData, urlPart is:");
+  //console.log(urlPart);
+
   if (!urlPart) {
     return formData;
   }
@@ -655,6 +662,9 @@ function sendFormDataToSearchPage(path, formData) {
     formData: formData,
   };
 
+  //console.log("sendFormDataToSearchPage, scotpSearchData is:");
+  //console.log(scotpSearchData);
+
   // this stores the search data in local storage which is then picked up by the
   // content script in the new tab/window
   chrome.storage.local.set({ scotpSearchData: scotpSearchData }, async function () {
@@ -679,7 +689,7 @@ function doLegacySearch() {
 
   if (formData && formData.fields && formData.fields.length > 0) {
     hideElementsDuringSearch();
-    const searchUrl = "https://www.scotlandspeople.gov.uk/advanced-search/" + formData.urlPart;
+    const searchUrl = "https://www.scotlandspeople.gov.uk/search-records/" + formData.urlPart;
     sendFormDataToSearchPage(searchUrl, formData);
   }
 }
@@ -692,11 +702,7 @@ async function checkForPendingSearch() {
     if (lcUrl.includes("search_type=people")) {
       let isLegacy = false;
       if (lcUrl.includes("/record-results?")) {
-        // an old saved search URL, just in case they start working again check for 404 error
-        const errorBlock = document.getElementById("block-404pagenotfoundblock");
-        if (errorBlock) {
-          isLegacy = true;
-        }
+        isLegacy = true;
       } else if (lcUrl.includes("/advanced-search?")) {
         // a modified old search URL
         isLegacy = true;
