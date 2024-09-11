@@ -1,36 +1,36 @@
 {
   "sourceOfData": "nswbdm",
   "sourceType": "record",
-  "recordType": "Baptism",
+  "recordType": "BirthRegistration",
   "name": {
-    "lastName": "Nicholson",
-    "forenames": "Charles"
+    "lastName": "Smith",
+    "forenames": "Frederick W"
   },
   "personGender": "male",
   "eventDate": {
-    "yearString": "1852"
+    "yearString": "1911"
   },
   "eventPlace": {
     "placeString": "New South Wales, Australia"
   },
-  "lastNameAtBirth": "Nicholson",
-  "registrationDistrict": "CA",
+  "lastNameAtBirth": "Smith",
+  "registrationDistrict": "Granville",
   "parents": {
     "father": {
       "name": {
-        "forenames": "Charles"
+        "forenames": "Frederick J"
       }
     },
     "mother": {
       "name": {
-        "forenames": "Elizabeth A"
+        "forenames": "Jessie W"
       }
     }
   },
   "collectionData": {
     "id": "Births",
-    "registrationNumber": "120",
-    "year": "1852"
+    "registrationNumber": "4307",
+    "year": "1911"
   },
   "hasValidData": true
 }

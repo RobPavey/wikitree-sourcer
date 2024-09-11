@@ -27,7 +27,11 @@ import { GeneralizedData, DateObj, PlaceObj } from "./generalize_data_utils.mjs"
 import { Role } from "./record_type.mjs";
 import { StringUtils } from "./string_utils.mjs";
 import { DateUtils } from "./date_utils.mjs";
-import { getChildTerm, getPrimaryPersonChildTerm } from "./narrative_or_sentence_utils.mjs";
+import {
+  getChildTerm,
+  getPrimaryPersonChildTerm,
+  isRegistrationEventDateTheRegistrationDate,
+} from "./narrative_or_sentence_utils.mjs";
 import { RC } from "./record_collections.mjs";
 import { buildStructuredHousehold } from "./structured_household.mjs";
 
@@ -990,26 +994,30 @@ class NarrativeBuilder {
 
     this.optionsSubcategory = typeString + "Reg";
 
-    // Note - we may need a better way to distinguish between the date being the birth/marriage/death date and
-    // it being the registration date/quarter.
-    // It might require either a separate record type or a flag in the GD
-    let isDateTheRegistrationDate = false;
+    let isDateTheRegistrationDate = isRegistrationEventDateTheRegistrationDate(gd);
+
     let hasAdditionalDate = false;
-    if (registrationDistrict && (gd.isRecordInCountry("United Kingdom") || !eventPlaceObj)) {
-      isDateTheRegistrationDate = true;
-    } else if ((quarter || year == dateString) && year) {
-      isDateTheRegistrationDate = true;
-    } else if (dateString) {
-      // there could be two different dates, e.g. one for birth and one for registration
+    if (isDateTheRegistrationDate) {
       if (typeString == "birth") {
+        let eventDateString = gd.inferEventDate();
         let birthDateString = gd.inferBirthDate();
         if (gd.role && gd.role != Role.Primary) {
           if (gd.primaryPerson && gd.primaryPerson.birthDate) {
             birthDateString = gd.primaryPerson.birthDate.getDateString();
           }
         }
-        if (birthDateString != dateString) {
-          isDateTheRegistrationDate = true;
+        if (birthDateString != eventDateString) {
+          hasAdditionalDate = true;
+        }
+      } else if (typeString == "death") {
+        let eventDateString = gd.inferEventDate();
+        let deathDateString = gd.inferDeathDate();
+        if (gd.role && gd.role != Role.Primary) {
+          if (gd.primaryPerson && gd.primaryPerson.deathDate) {
+            deathDateString = gd.primaryPerson.deathDate.getDateString();
+          }
+        }
+        if (deathDateString != eventDateString) {
           hasAdditionalDate = true;
         }
       }
@@ -1098,6 +1106,11 @@ class NarrativeBuilder {
             if (birthDateObj) {
               this.narrative += " (" + this.formatDateObj(birthDateObj, true) + ")";
             }
+          } else if (typeString == "death") {
+            let deathDateObj = gd.inferBirthDateObj();
+            if (deathDateObj) {
+              this.narrative += " (" + this.formatDateObj(deathDateObj, true) + ")";
+            }
           }
         }
         const mmn = gd.mothersMaidenName;
@@ -1137,7 +1150,9 @@ class NarrativeBuilder {
           this.addAgeForMainSentence(spouseAge);
         }
         let year = gd.inferEventYear();
-        if (year) {
+        if (dateString != year && !quarter) {
+          this.narrative += " " + this.formatDateObj(dateObj, true);
+        } else if (year) {
           if (quarter == "Jan-Feb-Mar") {
             let yearNum = DateUtils.getYearNumFromYearString(year);
             if (yearNum) {
@@ -1171,7 +1186,7 @@ class NarrativeBuilder {
         if (quarter) {
           this.narrative += " in the " + quarter + " quarter of " + this.highlightDate(year);
         } else {
-          this.narrative += " in " + this.highlightDate(year);
+          this.narrative += " " + this.formatDateObj(dateObj, true);
         }
       }
     } else {

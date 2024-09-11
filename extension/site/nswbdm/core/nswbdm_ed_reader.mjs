@@ -36,14 +36,43 @@ class NswbdmEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
+    let yearString = "";
+    let isEarlyChurchRecord = false;
+    // this is in format year/regNum. e.g. "1884/14727"
+    let registrationNumberParts = this.ed.registrationNumberParts;
+    if (registrationNumberParts && registrationNumberParts.length >= 2) {
+      yearString = registrationNumberParts[1];
+      if (yearString) {
+        let yearNum = Number(yearString);
+        if (yearNum && !isNaN(yearNum)) {
+          if (yearNum < 1856) {
+            isEarlyChurchRecord = true;
+          }
+        }
+      }
+    }
+
     if (ed.resultsType == "Births") {
-      this.recordType = RT.BirthRegistration;
+      // could be baptism
+      if (isEarlyChurchRecord) {
+        this.recordType = RT.Baptism;
+      } else {
+        this.recordType = RT.BirthRegistration;
+      }
       this.isBirth = true;
     } else if (ed.resultsType == "Deaths") {
-      this.recordType = RT.DeathRegistration;
+      if (isEarlyChurchRecord) {
+        this.recordType = RT.Burial;
+      } else {
+        this.recordType = RT.DeathRegistration;
+      }
       this.isDeath = true;
     } else if (ed.resultsType == "Marriages") {
-      this.recordType = RT.MarriageRegistration;
+      if (isEarlyChurchRecord) {
+        this.recordType = RT.Marriage;
+      } else {
+        this.recordType = RT.MarriageRegistration;
+      }
       this.isMarriage = true;
     }
   }

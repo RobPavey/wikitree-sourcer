@@ -56,6 +56,30 @@ const regressionData = [
     ],
   },
   {
+    caseName: "birth_1911_frederick_smith",
+    url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?4",
+    optionVariants: [
+      {
+        variantName: "dataStyle_none",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "none",
+        },
+      },
+      {
+        variantName: "dataStyle_listCurated",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listCurated",
+        },
+      },
+      {
+        variantName: "dataStyle_listOriginal",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listOriginal",
+        },
+      },
+    ],
+  },
+  {
     // has a death place different to district
     caseName: "death_1880_john_smith",
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?6",

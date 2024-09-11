@@ -32,6 +32,7 @@ import {
   getPrimaryPersonChildTerm,
   getPrimaryPersonSpouseTerm,
   getPrimaryPersonTermAndName,
+  isRegistrationEventDateTheRegistrationDate,
 } from "./narrative_or_sentence_utils.mjs";
 
 function getQuarterName(quarterNumber) {
@@ -771,6 +772,8 @@ function getBirthRegistrationString(gd, options) {
 
   let dataString = "";
 
+  let isDateTheRegistrationDate = isRegistrationEventDateTheRegistrationDate(gd);
+
   // generic birth registration
   if (gd.role && gd.role != Role.Primary) {
     if (gd.role == Role.Parent) {
@@ -799,7 +802,11 @@ function getBirthRegistrationString(gd, options) {
     dataString += addRegistrationPlace(gd, options);
   } else {
     dataString = getFullName(gd);
+
     dataString += " birth";
+    if (isDateTheRegistrationDate) {
+      dataString += " registered";
+    }
 
     let birthDate = gd.inferBirthDate();
     if (birthDate) {
@@ -836,6 +843,8 @@ function getDeathRegistrationString(gd, options) {
     return getUkRegistrationString(gd, options, "death");
   }
 
+  let isDateTheRegistrationDate = isRegistrationEventDateTheRegistrationDate(gd);
+
   let deathDate = gd.inferDeathDateObj();
 
   // generic death registration
@@ -845,6 +854,9 @@ function getDeathRegistrationString(gd, options) {
     deathDate = gd.inferEventDateObj();
   } else {
     dataString += " death";
+    if (isDateTheRegistrationDate) {
+      dataString += " registered";
+    }
   }
 
   if (deathDate) {

@@ -24,15 +24,15 @@
     "type": "source"
   },
   "dataStyle_sentence_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Births Index; Registration number: 41 / 1861<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nWilliam Holmes Alexander Fraser birth 1861 in Victoria, Australia, son of Donald Fraser & Catherine McQueen, mother's maiden name McQueen.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Births Index; Registration number: 41 / 1861<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nWilliam Holmes Alexander Fraser birth registered 1861 in Victoria, Australia, son of Donald Fraser & Catherine McQueen, mother's maiden name McQueen.\n</ref>",
     "type": "inline"
   },
   "dataStyle_sentence_narrative": {
-    "citation": "William's birth was registered in 1861 in Victoria, Australia. He was the son of Donald Fraser & Catherine McQueen. William was born at sea aboard ''Oithona''.<ref>\n'''Birth Registration''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Births Index; Registration number: 41 / 1861<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nWilliam Holmes Alexander Fraser birth 1861 in Victoria, Australia, son of Donald Fraser & Catherine McQueen, mother's maiden name McQueen.\n</ref>",
+    "citation": "William's birth was registered in 1861 in Victoria, Australia. He was the son of Donald Fraser & Catherine McQueen. William was born at sea aboard ''Oithona''.<ref>\n'''Birth Registration''':\n\"Victoria Registry of Births, Deaths & Marriages\"<br/>\nVictoria Births Index; Registration number: 41 / 1861<br/>\n[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>\nWilliam Holmes Alexander Fraser birth registered 1861 in Victoria, Australia, son of Donald Fraser & Catherine McQueen, mother's maiden name McQueen.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_sentence_source": {
-    "citation": "* '''Birth Registration''': \"Victoria Registry of Births, Deaths & Marriages\"<br/>Victoria Births Index; Registration number: 41 / 1861<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>William Holmes Alexander Fraser birth 1861 in Victoria, Australia, son of Donald Fraser & Catherine McQueen, mother's maiden name McQueen.",
+    "citation": "* '''Birth Registration''': \"Victoria Registry of Births, Deaths & Marriages\"<br/>Victoria Births Index; Registration number: 41 / 1861<br/>[https://www.bdm.vic.gov.au/research-and-family-history/search-your-family-history BDM Victoria] (accessed 6 May 2021)<br/>William Holmes Alexander Fraser birth registered 1861 in Victoria, Australia, son of Donald Fraser & Catherine McQueen, mother's maiden name McQueen.",
     "type": "source"
   },
   "dataStyle_listOriginal_inline": {

@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { RT, Role, RecordSubtype } from "./record_type.mjs";
+
 function getChildTerm(gender) {
   if (!gender) {
     return "child";
@@ -87,6 +89,57 @@ function getPrimaryPersonTermAndName(gd) {
   return string;
 }
 
+function isRegistrationEventDateTheRegistrationDate(gd) {
+  let eventDateObj = gd.inferEventDateObj();
+  if (eventDateObj) {
+    if (eventDateObj.isRegistrationDate !== undefined) {
+      return eventDateObj.isRegistrationDate;
+    }
+  }
+
+  let quarter = gd.inferEventQuarter();
+
+  let year = gd.inferEventYear();
+  let dateString = gd.inferEventDate();
+  let registrationDistrict = gd.registrationDistrict;
+  let eventPlaceObj = gd.inferEventPlaceObj();
+
+  // Note - we may need a better way to distinguish between the date being the birth/marriage/death date and
+  // it being the registration date/quarter.
+  // It might require either a separate record type or a flag in the GD
+  let isDateTheRegistrationDate = false;
+  if (registrationDistrict && (gd.isRecordInCountry("United Kingdom") || !eventPlaceObj)) {
+    isDateTheRegistrationDate = true;
+  } else if ((quarter || year == dateString) && year) {
+    isDateTheRegistrationDate = true;
+  } else if (dateString) {
+    // there could be two different dates, e.g. one for birth and one for registration
+    if (gd.recordType == RT.BirthRegistration) {
+      let birthDateString = gd.inferBirthDate();
+      if (gd.role && gd.role != Role.Primary) {
+        if (gd.primaryPerson && gd.primaryPerson.birthDate) {
+          birthDateString = gd.primaryPerson.birthDate.getDateString();
+        }
+      }
+      if (birthDateString != dateString) {
+        isDateTheRegistrationDate = true;
+      }
+    } else if (gd.recordType == RT.DeathRegistration) {
+      let deathDateString = gd.inferDeathDate();
+      if (gd.role && gd.role != Role.Primary) {
+        if (gd.primaryPerson && gd.primaryPerson.deathDate) {
+          deathDateString = gd.primaryPerson.deathDate.getDateString();
+        }
+      }
+      if (deathDateString != dateString) {
+        isDateTheRegistrationDate = true;
+      }
+    }
+  }
+
+  return isDateTheRegistrationDate;
+}
+
 export {
   getChildTerm,
   getPrimaryPersonChildTerm,
@@ -95,4 +148,5 @@ export {
   getSpouseTerm,
   getPrimaryPersonSpouseTerm,
   getPrimaryPersonTermAndName,
+  isRegistrationEventDateTheRegistrationDate,
 };

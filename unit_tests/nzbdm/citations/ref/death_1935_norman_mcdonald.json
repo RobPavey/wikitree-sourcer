@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 1935/13523<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNorman McDonald death 1935 (age 83y) in New Zealand.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 1935/13523<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNorman McDonald death registered 1935 (age 83y) in New Zealand.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Norman's death (age 83Y) was registered in 1935 in New Zealand.<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 1935/13523<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNorman McDonald death 1935 (age 83y) in New Zealand.\n</ref>",
+    "citation": "Norman's death (age 83Y) was registered in 1935 in New Zealand.<ref>\n'''Death Registration''':\n\"New Zealand Births, Deaths & Marriages Online\"<br/>\nDeath Registration Number: 1935/13523<br/>\n[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>\nNorman McDonald death registered 1935 (age 83y) in New Zealand.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Death Registration Number: 1935/13523<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Norman McDonald death 1935 (age 83y) in New Zealand.",
+    "citation": "* '''Death Registration''': \"New Zealand Births, Deaths & Marriages Online\"<br/>Death Registration Number: 1935/13523<br/>[https://www.bdmhistoricalrecords.dia.govt.nz/search New Zealand BDM Online] (accessed 6 May 2021)<br/>Norman McDonald death registered 1935 (age 83y) in New Zealand.",
     "type": "source"
   }
 }
