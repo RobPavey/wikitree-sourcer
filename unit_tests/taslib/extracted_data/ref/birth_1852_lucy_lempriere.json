@@ -1,0 +1,19 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qf=NI_INDEX%09Record+type%09Births%09Births&qf=PUBDATE%09Year%091823-1851%091823-1851&qf=PUBDATE%09Year%091837-1840%091837-1840&qf=PUBDATE%09Year%091838%091838&qu=Lempriere%2C&qu=Lucy&qu=Maria#",
+  "success": true,
+  "recordData": {
+    "Name": "Lempriere, Lucy Maria",
+    "Record Type": "Births",
+    "Gender": "Female",
+    "Father": "Lempriere, Thomas James",
+    "Mother": "Smith, Charlotte",
+    "Date of birth": "30 Mar 1838",
+    "Registered": "Hobart",
+    "Registration year": "1852",
+    "Record ID": "NAME_INDEXES:956244",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD33-1-4-p479j2k",
+      "text": "RGD33/1/4/ no 1475"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD33/1/1/ no 77<br/>\n[https://libraries.tas.gov.au/Digital/RGD33-1-1/RGD33-1-1-P260 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1066519 Record Permalink] (accessed 6 May 2021)<br/>\nClara Lucas birth registered 1839 (born 22 Feb 1835) in Hobart, Tasmania, Australia, daughter of James Lucas & Naomi Walton.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Clara's birth on 22 February 1835 was registered in 1839 in Hobart, Tasmania, Australia. She was the daughter of James Lucas & Naomi Walton.<ref>\n'''Birth Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD33/1/1/ no 77<br/>\n[https://libraries.tas.gov.au/Digital/RGD33-1-1/RGD33-1-1-P260 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1066519 Record Permalink] (accessed 6 May 2021)<br/>\nClara Lucas birth registered 1839 (born 22 Feb 1835) in Hobart, Tasmania, Australia, daughter of James Lucas & Naomi Walton.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: RGD33/1/1/ no 77<br/>[https://libraries.tas.gov.au/Digital/RGD33-1-1/RGD33-1-1-P260 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1066519 Record Permalink] (accessed 6 May 2021)<br/>Clara Lucas birth registered 1839 (born 22 Feb 1835) in Hobart, Tasmania, Australia, daughter of James Lucas & Naomi Walton.",
+    "type": "source"
+  }
+}

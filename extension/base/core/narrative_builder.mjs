@@ -1104,12 +1104,12 @@ class NarrativeBuilder {
           if (typeString == "birth") {
             let birthDateObj = gd.inferBirthDateObj();
             if (birthDateObj) {
-              this.narrative += " (" + this.formatDateObj(birthDateObj, true) + ")";
+              this.narrative += " " + this.formatDateObj(birthDateObj, true);
             }
           } else if (typeString == "death") {
-            let deathDateObj = gd.inferBirthDateObj();
+            let deathDateObj = gd.inferDeathDateObj();
             if (deathDateObj) {
-              this.narrative += " (" + this.formatDateObj(deathDateObj, true) + ")";
+              this.narrative += " " + this.formatDateObj(deathDateObj, true);
             }
           }
         }
@@ -1186,7 +1186,29 @@ class NarrativeBuilder {
         if (quarter) {
           this.narrative += " in the " + quarter + " quarter of " + this.highlightDate(year);
         } else {
-          this.narrative += " " + this.formatDateObj(dateObj, true);
+          // if the event date is just a subset of the birth or death date then leave it out
+          let eventDateString = gd.inferEventDate();
+          if (typeString == "birth") {
+            let birthDateString = gd.inferBirthDate();
+            if (
+              !hasAdditionalDate ||
+              !birthDateString ||
+              !(eventDateString && birthDateString.endsWith(eventDateString))
+            ) {
+              this.narrative += " " + this.formatDateObj(dateObj, true);
+            }
+          } else if (typeString == "death") {
+            let deathDateString = gd.inferDeathDate();
+            if (
+              !hasAdditionalDate ||
+              !deathDateString ||
+              !(eventDateString && deathDateString.endsWith(eventDateString))
+            ) {
+              this.narrative += " " + this.formatDateObj(dateObj, true);
+            }
+          } else {
+            this.narrative += " " + this.formatDateObj(dateObj, true);
+          }
         }
       }
     } else {

@@ -1,7 +1,7 @@
 {
   "sourceOfData": "taslib",
   "sourceType": "record",
-  "recordType": "BirthOrBaptism",
+  "recordType": "BirthRegistration",
   "name": {
     "lastName": "Watkins",
     "forenames": "Hedley David"

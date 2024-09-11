@@ -38,25 +38,38 @@ const eventTypes = [
     eventDateKeys: ["Bankruptcy date"],
   },
   {
-    // either a birth registration or a baptism, the fields don't tell us because
-    // baptism records in the index still have "Registered" for the place and "Registration year"
-    // for the baptism place.
-    // 1839 has birth regs and baptisms
-    //  Baptism: https://libraries.tas.gov.au/Record/NamesIndex/1087028
-    //  Birth Reg: https://libraries.tas.gov.au/Record/NamesIndex/992027
-    // Earliest birth reg was Devember 1838.
-    // Latest baptism
-    // So if registration year is prior to Dec 1838 it is a Baptism.
-    // Otherwise it could be a birth registration or baptism.
-
+    // If there is an image (resource ID) then we can distinguish between Baptisms and Registrations
     taslibRecordType: "Births",
-    endYear: 1839,
+    resourceStart: "RGD32/1/",
     recordType: RT.Baptism,
+    isBirth: true,
+  },
+  {
+    // If there is an image (resource ID) then we can distinguish between Baptisms and Registrations
+    taslibRecordType: "Births",
+    resourceStart: "RGD33/1/",
+    recordType: RT.BirthRegistration,
+    isBirth: true,
+  },
+  {
+    // This probably never happens but if there is no image and it is before
+    // civil registration started in December 1838 then call it a Baptism.
+    taslibRecordType: "Births",
+    endYear: 1838,
+    recordType: RT.Baptism,
+    isBirth: true,
   },
   {
     taslibRecordType: "Births",
-    startYear: 1838,
+    startYear: 1839,
+    recordType: RT.BirthRegistration,
+    isBirth: true,
+  },
+  {
+    // fallback for a birth in 1838 with no resource (may never happen)
+    taslibRecordType: "Births",
     recordType: RT.BirthOrBaptism,
+    isBirth: true,
   },
   {
     taslibRecordType: "Census",
@@ -83,11 +96,34 @@ const eventTypes = [
     hasFields: [["Date of burial"]],
     recordType: RT.Burial,
     eventDateKeys: ["Date of burial"],
+    isDeath: true,
   },
   {
     taslibRecordType: "Deaths",
-    recordType: RT.Death,
+    resourceStart: "RGD34/1/",
+    recordType: RT.Burial,
+    isDeath: true,
+  },
+  {
+    taslibRecordType: "Deaths",
+    resourceStart: "RGD35/1/",
+    recordType: RT.DeathRegistration,
     eventPlaceKeys: ["Where died"],
+    isDeath: true,
+  },
+  {
+    taslibRecordType: "Deaths",
+    startYear: 1839,
+    hasFields: [["Where died"]],
+    recordType: RT.DeathRegistration,
+    eventPlaceKeys: ["Where died"],
+    isDeath: true,
+  },
+  {
+    taslibRecordType: "Deaths",
+    recordType: RT.DeathOrBurial,
+    eventPlaceKeys: ["Where died"],
+    isDeath: true,
   },
   {
     taslibRecordType: "Departures",
@@ -168,9 +204,20 @@ function findEventType(ed) {
     yearNum = Number(yearString);
   }
 
+  let resourceText = "";
+  let resourceWrap = ed.recordData["Resource"];
+  if (resourceWrap) {
+    resourceText = resourceWrap.text;
+  }
+
   let taslibRecordType = ed.recordData["Record Type"];
   for (let eventType of eventTypes) {
     if (eventType.taslibRecordType == taslibRecordType) {
+      if (eventType.resourceStart) {
+        if (!resourceText || !resourceText.startsWith(eventType.resourceStart)) {
+          continue;
+        }
+      }
       if (eventType.endYear && yearNum && yearNum > eventType.endYear) {
         continue;
       }
@@ -308,7 +355,7 @@ class TaslibEdReader extends ExtractedDataReader {
     let nameObj = this.makeNameObjFromLastNameCommaForenames(name1);
     if (nameObj && nameObj.forenames == "Given Name Not Recorded") {
       nameObj.forenames = "";
-      if (this.recordType == RT.BirthOrBaptism) {
+      if (this.recordType == RT.BirthOrBaptism || this.recordType == RT.BirthRegistration) {
         if (nameObj.lastName) {
           nameObj.narrativeName = "Unnamed " + nameObj.lastName;
         }
@@ -372,7 +419,7 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtBirth() {
-    if (this.recordType == RT.BirthOrBaptism || this.recordType == RT.Baptism) {
+    if (this.eventType && this.eventType.isBirth) {
       let nameObj = this.getNameObj();
       if (nameObj && nameObj.lastName) {
         return nameObj.lastName;
@@ -382,7 +429,7 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtDeath() {
-    if (this.recordType == RT.Death || this.recordType == RT.Burial) {
+    if (this.eventType && this.eventType.isDeath) {
       let nameObj = this.getNameObj();
       if (nameObj && nameObj.lastName) {
         return nameObj.lastName;
@@ -426,7 +473,7 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getAgeAtDeath() {
-    if (this.recordType == RT.Death) {
+    if (this.eventType && this.eventType.isDeath) {
       return this.getAgeAtEvent();
     }
 

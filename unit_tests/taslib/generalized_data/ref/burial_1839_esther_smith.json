@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Esther"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "30 Jun 1839"
+  },
+  "eventPlace": {
+    "placeString": "Sorell, Tasmania, Australia",
+    "originalPlaceString": "Sorell",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtDeath": "Smith",
+  "ageAtEvent": "25",
+  "ageAtDeath": "25",
+  "registrationDistrict": "Sorell",
+  "hasValidData": true
+}

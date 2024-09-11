@@ -803,14 +803,27 @@ function getBirthRegistrationString(gd, options) {
   } else {
     dataString = getFullName(gd);
 
-    dataString += " birth";
-    if (isDateTheRegistrationDate) {
-      dataString += " registered";
-    }
-
     let birthDate = gd.inferBirthDate();
-    if (birthDate) {
-      dataString += " " + birthDate;
+    let eventDate = gd.inferEventDate();
+    if (isDateTheRegistrationDate) {
+      if (birthDate && birthDate != eventDate && birthDate.endsWith(eventDate)) {
+        dataString += " birth";
+        dataString += " " + birthDate;
+        dataString += " registered"; // because place is registration place
+      } else {
+        dataString += " birth registered";
+        dataString += " " + eventDate;
+        if (birthDate && birthDate != eventDate) {
+          dataString += " (born " + birthDate + ")";
+        }
+      }
+    } else {
+      dataString += " birth";
+      if (birthDate) {
+        dataString += " " + birthDate;
+      } else {
+        dataString += " " + eventDate;
+      }
     }
 
     dataString += addRegistrationPlace(gd, options);
@@ -852,35 +865,66 @@ function getDeathRegistrationString(gd, options) {
   if (gd.role && gd.role != Role.Primary) {
     dataString += " in death record for " + getPrimaryPersonTermAndName(gd);
     deathDate = gd.inferEventDateObj();
-  } else {
-    dataString += " death";
-    if (isDateTheRegistrationDate) {
-      dataString += " registered";
+
+    if (deathDate) {
+      dataString += " " + cleanDateObj(deathDate);
     }
-  }
+  } else {
+    let deathDateString = cleanDateObj(deathDate);
+    let eventDateString = cleanDateObj(gd.inferEventDateObj());
+    let age = cleanAge(gd.ageAtDeath);
 
-  if (deathDate) {
-    dataString += " " + cleanDateObj(deathDate);
-  }
-
-  let age = cleanAge(gd.ageAtDeath);
-  if (age) {
-    dataString += " (age " + age + ")";
+    if (isDateTheRegistrationDate) {
+      if (deathDateString && deathDateString != eventDateString && deathDateString.endsWith(eventDateString)) {
+        dataString += " death";
+        dataString += " " + deathDateString;
+        if (age) {
+          dataString += " (age " + age + ")";
+        }
+        dataString += " registered"; // because place is registration place
+      } else {
+        dataString += " death registered";
+        dataString += " " + eventDateString;
+        if (deathDateString && deathDateString != eventDateString) {
+          if (age) {
+            dataString += " (died " + deathDateString + ", age " + age + ")";
+          } else {
+            dataString += " (died " + deathDateString + ")";
+          }
+        } else {
+          if (age) {
+            dataString += " (age " + age + ")";
+          }
+        }
+      }
+    } else {
+      dataString += " death";
+      if (deathDateString) {
+        dataString += " " + deathDateString;
+      } else {
+        dataString += " " + eventDateString;
+      }
+      if (age) {
+        dataString += " (age " + age + ")";
+      }
+    }
   }
 
   dataString += addRegistrationPlace(gd, options);
 
-  let birthDateObj = gd.birthDate;
-  if (birthDateObj) {
-    let birthDateString = birthDateObj.getDateString();
-    if (birthDateString) {
-      dataString += " (born " + birthDateString + ")";
+  if (!(gd.role && gd.role != Role.Primary)) {
+    let birthDateObj = gd.birthDate;
+    if (birthDateObj) {
+      let birthDateString = birthDateObj.getDateString();
+      if (birthDateString) {
+        dataString += " (born " + birthDateString + ")";
+      }
     }
-  }
 
-  let parentNames = gd.inferParentNamesForDataString();
-  if (parentNames.fatherName || parentNames.motherName) {
-    dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
+    let parentNames = gd.inferParentNamesForDataString();
+    if (parentNames.fatherName || parentNames.motherName) {
+      dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
+    }
   }
 
   return dataString;

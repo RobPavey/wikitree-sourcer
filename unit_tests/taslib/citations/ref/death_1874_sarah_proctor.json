@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD35/1/8 no 2014<br/>\n[https://libraries.tas.gov.au/Digital/RGD35-1-8/RGD35-1-8-P232 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1151285 Record Permalink] (accessed 6 May 2021)<br/>\nSarah Proctor death 30 Apr 1874 (age 87) in Hobart, Tasmania, Australia.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD35/1/8 no 2014<br/>\n[https://libraries.tas.gov.au/Digital/RGD35-1-8/RGD35-1-8-P232 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1151285 Record Permalink] (accessed 6 May 2021)<br/>\nSarah Proctor death 30 Apr 1874 (age 87) registered in Hobart, Tasmania, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Sarah died (age 87) on 30 April 1874 in Hobart, Tasmania, Australia.<ref>\n'''Death''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD35/1/8 no 2014<br/>\n[https://libraries.tas.gov.au/Digital/RGD35-1-8/RGD35-1-8-P232 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1151285 Record Permalink] (accessed 6 May 2021)<br/>\nSarah Proctor death 30 Apr 1874 (age 87) in Hobart, Tasmania, Australia.\n</ref>",
+    "citation": "Sarah's death (age 87) on 30 April 1874 was registered in Hobart, Tasmania, Australia.<ref>\n'''Death Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD35/1/8 no 2014<br/>\n[https://libraries.tas.gov.au/Digital/RGD35-1-8/RGD35-1-8-P232 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1151285 Record Permalink] (accessed 6 May 2021)<br/>\nSarah Proctor death 30 Apr 1874 (age 87) registered in Hobart, Tasmania, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: RGD35/1/8 no 2014<br/>[https://libraries.tas.gov.au/Digital/RGD35-1-8/RGD35-1-8-P232 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1151285 Record Permalink] (accessed 6 May 2021)<br/>Sarah Proctor death 30 Apr 1874 (age 87) in Hobart, Tasmania, Australia.",
+    "citation": "* '''Death Registration''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: RGD35/1/8 no 2014<br/>[https://libraries.tas.gov.au/Digital/RGD35-1-8/RGD35-1-8-P232 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1151285 Record Permalink] (accessed 6 May 2021)<br/>Sarah Proctor death 30 Apr 1874 (age 87) registered in Hobart, Tasmania, Australia.",
     "type": "source"
   }
 }

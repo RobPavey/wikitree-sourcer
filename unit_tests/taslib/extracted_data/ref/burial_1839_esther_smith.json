@@ -1,0 +1,18 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=Mary&qu=Jones&qf=NI_INDEX%09Record+type%09Deaths%09Deaths&qf=PUBDATE%09Year%091833-1852%091833-1852#",
+  "success": true,
+  "recordData": {
+    "Name": "Smith, Esther",
+    "Record Type": "Deaths",
+    "Gender": "Female",
+    "Age": "25",
+    "Date of burial": "30 Jun 1839",
+    "Registered": "Sorell",
+    "Registration year": "1839",
+    "Record ID": "NAME_INDEXES:1181578",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD34-1-2p014j2k",
+      "text": "RGD34/1/2 no 270"
+    }
+  }
+}

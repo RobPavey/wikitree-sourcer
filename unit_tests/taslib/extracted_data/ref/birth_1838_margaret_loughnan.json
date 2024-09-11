@@ -1,0 +1,19 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1106997/one?qu=Henry&qu=Abigail&qu=Archdall&qf=NI_INDEX%09Record+type%09Births%09Births&qf=PUBDATE%09Year%091846%091846",
+  "success": true,
+  "recordData": {
+    "Name": "Loughnan, Margaret Isabella",
+    "Record Type": "Births",
+    "Gender": "Female",
+    "Father": "Loughnan, John Michael",
+    "Mother": "Ness, Marion",
+    "Date of birth": "15 Nov 1838",
+    "Registered": "Hobart",
+    "Registration year": "1838",
+    "Record ID": "NAME_INDEXES:1066454",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD33-1-1-p253j2k",
+      "text": "RGD33/1/1/ no 11"
+    }
+  }
+}

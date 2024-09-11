@@ -17,6 +17,7 @@
   },
   "lastNameAtDeath": "Jones",
   "ageAtEvent": "75",
+  "ageAtDeath": "75",
   "registrationDistrict": "Hobart",
   "hasValidData": true
 }

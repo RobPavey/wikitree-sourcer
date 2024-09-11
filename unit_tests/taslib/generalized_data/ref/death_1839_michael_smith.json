@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Michael"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1839",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "Launceston, Tasmania, Australia",
+    "originalPlaceString": "Launceston",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtDeath": "Smith",
+  "deathDate": {
+    "dateString": "08 Oct 1839"
+  },
+  "ageAtEvent": "48",
+  "ageAtDeath": "48",
+  "registrationDistrict": "Launceston",
+  "hasValidData": true
+}

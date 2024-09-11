@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Dixon",
+    "forenames": "Amy"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1839",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "New Norfolk, Tasmania, Australia",
+    "originalPlaceString": "New Norfolk",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtBirth": "Dixon",
+  "birthDate": {
+    "dateString": "03 Dec 1838"
+  },
+  "registrationDistrict": "New Norfolk",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Dixon",
+        "forenames": "William Henry"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Sarah",
+        "forenames": "Christian"
+      }
+    }
+  },
+  "hasValidData": true
+}

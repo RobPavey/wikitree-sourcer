@@ -1,7 +1,7 @@
 {
   "sourceOfData": "taslib",
   "sourceType": "record",
-  "recordType": "Death",
+  "recordType": "DeathRegistration",
   "name": {
     "lastName": "Proctor",
     "forenames": "Sarah"

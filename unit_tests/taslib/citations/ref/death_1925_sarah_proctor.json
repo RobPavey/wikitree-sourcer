@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:2027577; File number: 1248<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/2027577 Record Permalink] (accessed 6 May 2021)<br/>\nSarah Jane Proctor death 15 Mar 1925 in Lilydale, Tasmania, Australia.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:2027577; File number: 1248<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/2027577 Record Permalink] (accessed 6 May 2021)<br/>\nSarah Jane Proctor death 15 Mar 1925 registered in Lilydale, Tasmania, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Sarah died on 15 March 1925 in Lilydale, Tasmania, Australia.<ref>\n'''Death''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:2027577; File number: 1248<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/2027577 Record Permalink] (accessed 6 May 2021)<br/>\nSarah Jane Proctor death 15 Mar 1925 in Lilydale, Tasmania, Australia.\n</ref>",
+    "citation": "Sarah's death on 15 March 1925 was registered in Lilydale, Tasmania, Australia.<ref>\n'''Death Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:2027577; File number: 1248<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/2027577 Record Permalink] (accessed 6 May 2021)<br/>\nSarah Jane Proctor death 15 Mar 1925 registered in Lilydale, Tasmania, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"Libraries Tasmania, Names Index\"<br/>Record ID: NAME_INDEXES:2027577; File number: 1248<br/>[https://libraries.tas.gov.au/Record/NamesIndex/2027577 Record Permalink] (accessed 6 May 2021)<br/>Sarah Jane Proctor death 15 Mar 1925 in Lilydale, Tasmania, Australia.",
+    "citation": "* '''Death Registration''': \"Libraries Tasmania, Names Index\"<br/>Record ID: NAME_INDEXES:2027577; File number: 1248<br/>[https://libraries.tas.gov.au/Record/NamesIndex/2027577 Record Permalink] (accessed 6 May 2021)<br/>Sarah Jane Proctor death 15 Mar 1925 registered in Lilydale, Tasmania, Australia.",
     "type": "source"
   }
 }
