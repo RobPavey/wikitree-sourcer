@@ -40,14 +40,14 @@ const eventTypes = [
   {
     // If there is an image (resource ID) then we can distinguish between Baptisms and Registrations
     taslibRecordType: "Births",
-    resourceStart: "RGD32/1/",
+    resourceStart: "RGD32/",
     recordType: RT.Baptism,
     isBirth: true,
   },
   {
     // If there is an image (resource ID) then we can distinguish between Baptisms and Registrations
     taslibRecordType: "Births",
-    resourceStart: "RGD33/1/",
+    resourceStart: "RGD33/",
     recordType: RT.BirthRegistration,
     isBirth: true,
   },
@@ -100,13 +100,13 @@ const eventTypes = [
   },
   {
     taslibRecordType: "Deaths",
-    resourceStart: "RGD34/1/",
+    resourceStart: "RGD34/",
     recordType: RT.Burial,
     isDeath: true,
   },
   {
     taslibRecordType: "Deaths",
-    resourceStart: "RGD35/1/",
+    resourceStart: "RGD35/",
     recordType: RT.DeathRegistration,
     eventPlaceKeys: ["Where died"],
     isDeath: true,
@@ -169,15 +169,60 @@ const eventTypes = [
     eventPlaceKeys: ["Location"],
   },
   {
+    // Example: https://libraries.tas.gov.au/Record/NamesIndex/828880
     taslibRecordType: "Marriages",
+    resourceStart: "RGD37/",
+    recordType: RT.MarriageRegistration,
+    eventDateKeys: ["Date of marriage"],
+    eventPlaceKeys: ["Where married"],
+    isMarriage: true,
+  },
+  {
+    // example: https://libraries.tas.gov.au/Record/NamesIndex/823181
+    taslibRecordType: "Marriages",
+    resourceStart: "RGD36/",
     recordType: RT.Marriage,
     eventDateKeys: ["Date of marriage"],
     eventPlaceKeys: ["Where married"],
+    isMarriage: true,
+  },
+  {
+    // Marriage certificate:
+    // example: https://libraries.tas.gov.au/Record/NamesIndex/1582665
+    // 1878: https://libraries.tas.gov.au/Record/NamesIndex/1585978
+    taslibRecordType: "Marriages",
+    resourceStart: "RGD1/",
+    recordType: RT.Marriage,
+    eventDateKeys: ["Date of marriage"],
+    eventPlaceKeys: ["Where married"],
+    isMarriage: true,
+  },
+  {
+    // No resource, post 1839
+    // Probably a marriage registration
+    // e.g. https://libraries.tas.gov.au/Record/NamesIndex/1962296
+    taslibRecordType: "Marriages",
+    startYear: 1839,
+    recordType: RT.MarriageRegistration,
+    eventDateKeys: ["Date of marriage"],
+    eventPlaceKeys: ["Where married"],
+    isMarriage: true,
+  },
+  {
+    // No resource, pre or in 1839
+    // Probably a marriage
+    // May never happen
+    taslibRecordType: "Marriages",
+    recordType: RT.MarriageRegistration,
+    eventDateKeys: ["Date of marriage"],
+    eventPlaceKeys: ["Where married"],
+    isMarriage: true,
   },
   {
     taslibRecordType: "Marriage Permissions",
     recordType: RT.Marriage,
     eventDateKeys: ["Permission date"],
+    isMarriage: true,
   },
   {
     taslibRecordType: "Prisoners",
@@ -533,7 +578,7 @@ class TaslibEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
-    if (this.recordType == RT.Marriage) {
+    if (this.eventType && this.eventType.isMarriage) {
       let spouseName = this.ed.recordData["Spouse"];
       if (!spouseName) {
         spouseName = this.ed.recordData["Marriage to"];

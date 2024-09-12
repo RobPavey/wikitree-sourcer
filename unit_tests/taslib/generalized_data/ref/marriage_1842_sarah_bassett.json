@@ -1,7 +1,7 @@
 {
   "sourceOfData": "taslib",
   "sourceType": "record",
-  "recordType": "Marriage",
+  "recordType": "MarriageRegistration",
   "name": {
     "lastName": "Bassett",
     "forenames": "Sarah"
