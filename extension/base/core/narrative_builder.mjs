@@ -2864,6 +2864,68 @@ class NarrativeBuilder {
     this.narrative += ".";
   }
 
+  buildConvictTransportationString() {
+    let gd = this.eventGd;
+
+    let dateObj = gd.inferEventDateObj();
+    let placeObj = gd.inferEventPlaceObj();
+
+    let formattedDate = undefined;
+    if (dateObj) {
+      formattedDate = this.formatDateObj(dateObj, true);
+    }
+
+    let role = gd.role;
+    if (role && role != Role.Primary) {
+      let possessiveName = this.getPossessiveName();
+      let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
+
+      this.narrative += possessiveName + " " + relationship;
+    } else {
+      const nameOrPronoun = this.getPersonNameOrPronoun(false, true);
+      this.narrative += nameOrPronoun;
+    }
+
+    if (gd.convictionDate || gd.convictionPlace) {
+      this.narrative += " was convicted";
+      if (gd.convictionDate) {
+        this.narrative += " " + this.formatDate(gd.convictionDate, true);
+      }
+      if (gd.convictionPlace) {
+        this.narrative += " " + this.getPlaceWithPreposition(gd.convictionPlace);
+      }
+
+      if (gd.sentence) {
+        this.narrative += " and sentenced to " + gd.sentence + " transportation";
+      }
+
+      if (gd.transitDate) {
+        this.narrative += " and transported " + this.formatDate(gd.transitDate, true);
+      }
+    } else {
+      this.narrative += " was transported";
+      if (formattedDate) {
+        this.narrative += " " + formattedDate;
+      }
+    }
+
+    if (gd.departurePlace) {
+      this.narrative += " from " + gd.departurePlace;
+    }
+
+    if (gd.arrivalPlace) {
+      this.narrative += " to " + gd.arrivalPlace;
+    } else if (placeObj && placeObj.inferPlaceString() != gd.convictionPlace) {
+      this.narrative += " to " + placeObj.inferPlaceString();
+    }
+
+    if (gd.shipName) {
+      this.narrative += " on the ship ''" + gd.shipName + "''";
+    }
+
+    this.narrative += ".";
+  }
+
   buildDefaultString() {
     const narratives = [
       {
@@ -3077,6 +3139,11 @@ class NarrativeBuilder {
       case RT.FreedomOfCity: {
         this.buildFunction = this.buildFreedomOfCityString;
         this.optionsSubcategory = "encyclopedia";
+        break;
+      }
+      case RT.ConvictTransportation: {
+        this.buildFunction = this.buildConvictTransportationString;
+        this.optionsSubcategory = "convictTransportaion";
         break;
       }
     }

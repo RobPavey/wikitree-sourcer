@@ -1531,6 +1531,30 @@ class MhEdReader extends ExtractedDataReader {
     addStringField(this, "unit", ["unit", "unit / ship", "military unit"]);
     addStringField(this, "service", ["service"]);
     addStringField(this, "serviceNumber", ["service #"]);
+
+    addStringField(this, "shipName", ["ship"]);
+    addStringField(this, "sentence", ["sentence"]);
+
+    if (this.recordType == RT.ConvictTransportation) {
+      let conviction = this.getRecordDataValue(["conviction"]);
+      if (conviction) {
+        if (conviction.dateString) {
+          gd.convictionDate = conviction.dateString;
+        }
+        if (conviction.placeString) {
+          gd.convictionPlace = conviction.placeString;
+        }
+      }
+      let transit = this.getRecordDataValue(["transit"]);
+      if (transit) {
+        if (transit.dateString) {
+          gd.transitDate = transit.dateString;
+        }
+        if (transit.placeString) {
+          gd.transitPlace = transit.placeString;
+        }
+      }
+    }
   }
 
   getCollectionData() {

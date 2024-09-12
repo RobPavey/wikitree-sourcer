@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { DataString } from "../../../base/core/data_string.mjs";
 
 const referenceFields = ["File number", "Page", "Voyage number", "Index number"];
 const additionalFieldsToIgnoreInDataList = ["Record ID", "Resource"];
@@ -215,6 +216,26 @@ function buildListDataStringNoRef(ed, gd, builder) {
   builder.addListDataStringFromRecordData(newRecordData, []);
 }
 
+function buildSentenceDataString(ed, gd, builder) {
+  let input = {
+    generalizedData: gd,
+    options: builder.options,
+  };
+  let dataString = DataString.buildDataString(input);
+
+  if (!dataString) {
+    buildListDataString(ed, gd, builder);
+    return;
+  }
+
+  if (dataString) {
+    if (!dataString.endsWith(".")) {
+      dataString += ".";
+    }
+    builder.dataString = dataString;
+  }
+}
+
 function buildDataString(ed, gd, builder) {
   let options = builder.getOptions();
   let dataStyleOption = options.citation_taslib_dataStyle;
@@ -222,7 +243,7 @@ function buildDataString(ed, gd, builder) {
   if (dataStyleOption == "list") {
     buildListDataString(ed, gd, builder);
   } else if (dataStyleOption == "sentence") {
-    builder.addStandardDataString(gd);
+    buildSentenceDataString(ed, gd, builder);
   } else if (dataStyleOption == "listNoRef") {
     buildListDataStringNoRef(ed, gd, builder);
   }

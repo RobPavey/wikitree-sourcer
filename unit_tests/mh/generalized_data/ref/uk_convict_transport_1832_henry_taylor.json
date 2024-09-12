@@ -14,5 +14,10 @@
   "collectionData": {
     "id": "20146"
   },
+  "shipName": "Georgiana",
+  "sentence": "14 years",
+  "convictionDate": "July 26 1832",
+  "convictionPlace": "Suffolk Assizes, Suffolk, England",
+  "transitDate": "Sep 28 1832",
   "hasValidData": true
 }

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nSydney Johnson on 25 Apr 1844 in Tasmania, Australia.\n</ref>",
+    "citation": "<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nName: Johnson, Sydney; Record Type: Convicts; Departure date: 25 Apr 1844; Departure port: London; Ship: Maria Somes (1); Appropriation List: CON27/1/10; Conduct Record: CON33/1/57; Description List: CON18/1/42; Indent: CON14/1/22 Pages 154-155.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Sydney was transported on 25 April 1844 in Tasmania, Australia.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nSydney Johnson on 25 Apr 1844 in Tasmania, Australia.\n</ref>",
+    "citation": "Sydney was transported on 25 April 1844 from London to Tasmania, Australia on the ship ''Maria Somes (1)''.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nName: Johnson, Sydney; Record Type: Convicts; Departure date: 25 Apr 1844; Departure port: London; Ship: Maria Somes (1); Appropriation List: CON27/1/10; Conduct Record: CON33/1/57; Description List: CON18/1/42; Indent: CON14/1/22 Pages 154-155.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Convict Transportation''': \"Libraries Tasmania, Names Index\"<br/>Record ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>Sydney Johnson on 25 Apr 1844 in Tasmania, Australia.",
+    "citation": "* '''Convict Transportation''': \"Libraries Tasmania, Names Index\"<br/>Record ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>Name: Johnson, Sydney; Record Type: Convicts; Departure date: 25 Apr 1844; Departure port: London; Ship: Maria Somes (1); Appropriation List: CON27/1/10; Conduct Record: CON33/1/57; Description List: CON18/1/42; Indent: CON14/1/22 Pages 154-155.",
     "type": "source"
   },
   "dataList_inline": {
@@ -16,7 +16,7 @@
     "type": "inline"
   },
   "dataList_narrative": {
-    "citation": "Sydney was transported on 25 April 1844 in Tasmania, Australia.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nName: Johnson, Sydney; Record Type: Convicts; Departure date: 25 Apr 1844; Departure port: London; Ship: Maria Somes (1); Appropriation List: CON27/1/10; Conduct Record: CON33/1/57; Description List: CON18/1/42; Indent: CON14/1/22 Pages 154-155.\n</ref>",
+    "citation": "Sydney was transported on 25 April 1844 from London to Tasmania, Australia on the ship ''Maria Somes (1)''.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1798382; Voyage number: 236; Index number: 35875<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nName: Johnson, Sydney; Record Type: Convicts; Departure date: 25 Apr 1844; Departure port: London; Ship: Maria Somes (1); Appropriation List: CON27/1/10; Conduct Record: CON33/1/57; Description List: CON18/1/42; Indent: CON14/1/22 Pages 154-155.\n</ref>",
     "type": "narrative"
   },
   "dataList_source": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataListNoRef_narrative": {
-    "citation": "Sydney was transported on 25 April 1844 in Tasmania, Australia.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nName: Johnson, Sydney; Record Type: Convicts; Departure date: 25 Apr 1844; Departure port: London; Ship: Maria Somes (1); Voyage number: 236; Index number: 35875; Record ID: NAME_INDEXES:1798382; Appropriation List: CON27/1/10; Conduct Record: CON33/1/57; Description List: CON18/1/42; Indent: CON14/1/22 Pages 154-155.\n</ref>",
+    "citation": "Sydney was transported on 25 April 1844 from London to Tasmania, Australia on the ship ''Maria Somes (1)''.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1798382 Record Permalink] (accessed 6 May 2021)<br/>\nName: Johnson, Sydney; Record Type: Convicts; Departure date: 25 Apr 1844; Departure port: London; Ship: Maria Somes (1); Voyage number: 236; Index number: 35875; Record ID: NAME_INDEXES:1798382; Appropriation List: CON27/1/10; Conduct Record: CON33/1/57; Description List: CON18/1/42; Indent: CON14/1/22 Pages 154-155.\n</ref>",
     "type": "narrative"
   },
   "dataListNoRef_source": {
