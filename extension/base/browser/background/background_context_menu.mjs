@@ -29,6 +29,8 @@ import { openInNewTab } from "./background_common.mjs";
 import { doSearchGivenSearchData } from "./background_search.mjs";
 import { checkPermissionForSite } from "./background_permissions.mjs";
 
+import { buildScotlandsPeopleContextSearchData } from "../../../site/scotp/core/scotp_context_menu.mjs";
+
 function openAncestryLink(tab, link, options) {
   // do not redirect sharing links when using library edition since that does not work
   if (link.includes("/sharing/") || link.includes("%2Fsharing%2F")) {
@@ -732,8 +734,6 @@ function buildNzbdmSearchData(lcText) {
   fieldData["natno"] = regYear + "/" + regNum;
 
   // see if we can decide whether to search for births, deaths or marriages
-  // Exxample text:
-  // Victoria State Government, Registry of Births, Deaths and Marriages Victoria. Richard Goodall Elrington. Birth. Registration number 3218 / 1870. Father: Name. Mother: Name. District: Place. Link to search page
   let birthOccurrences = (lcText.match(/birth/g) || []).length;
   let deathOccurrences = (lcText.match(/death/g) || []).length;
   let marriageOccurrences = (lcText.match(/marriage/g) || []).length;
@@ -823,8 +823,6 @@ function buildNswbdmSearchData(lcText) {
   let regYear = yearAndNum.regYear;
 
   // see if we can decide whether to search for births, deaths or marriages
-  // Exxample text:
-  // Victoria State Government, Registry of Births, Deaths and Marriages Victoria. Richard Goodall Elrington. Birth. Registration number 3218 / 1870. Father: Name. Mother: Name. District: Place. Link to search page
   let birthOccurrences = (lcText.match(/birth/g) || []).length;
   let deathOccurrences = (lcText.match(/death/g) || []).length;
   let marriageOccurrences = (lcText.match(/marriage/g) || []).length;
@@ -900,6 +898,57 @@ async function openNswbdmGivenSearchData(tab, options, searchData) {
   return false;
 }
 
+async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
+  //console.log("openScotlandsPeopleGivenSearchData, searchData is:");
+  //console.log(searchData);
+
+  try {
+    const checkPermissionsOptions = {
+      reason: "Sourcer needs to load a content script on the Scotlands People site to complete the search",
+    };
+    let allowed = await checkPermissionForSite("https://www.scotlandspeople.gov.uk/*", checkPermissionsOptions);
+    if (!allowed) {
+      return false;
+    }
+
+    let formData = searchData.formData;
+    let refineData = searchData.refineData;
+
+    const searchUrl = "https://www.scotlandspeople.gov.uk/search-records/" + formData.urlPart;
+    const scotpSearchData = {
+      timeStamp: Date.now(),
+      url: searchUrl,
+      formData: searchData.formData,
+    };
+
+    try {
+      // this stores the search data in local storage which is then picked up by the
+      // content script in the new tab/window
+      await chrome.storage.local.set({ scotpSearchData: scotpSearchData });
+
+      if (refineData && refineData.fields.length > 0) {
+        const scotpSearchRefineData = {
+          timeStamp: Date.now(),
+          url: searchUrl,
+          formData: refineData,
+        };
+        await chrome.storage.local.set({ scotpSearchRefineData: scotpSearchRefineData });
+      }
+    } catch (ex) {
+      console.log("store of searchData failed");
+    }
+
+    const tabOption = options.search_general_newTabPos;
+    openInNewTab(searchUrl, tab, tabOption);
+    return true;
+  } catch (ex) {
+    console.log("openScotlandsPeopleGivenSearchData failed");
+    console.log(ex);
+  }
+
+  return false;
+}
+
 function openSelectionPlainText(info, tab) {
   let text = info.selectionText;
 
@@ -945,6 +994,17 @@ function openSelectionPlainText(info, tab) {
   if (searchData) {
     callFunctionWithStoredOptions(function (options) {
       openNswbdmGivenSearchData(tab, options, searchData);
+    });
+    return true;
+  }
+
+  // check for Scotlands People
+  searchData = buildScotlandsPeopleContextSearchData(lcText);
+  //console.log("buildScotlandsPeopleContextSearchData returned:");
+  //console.log(searchData);
+  if (searchData) {
+    callFunctionWithStoredOptions(function (options) {
+      openScotlandsPeopleGivenSearchData(tab, options, searchData);
     });
     return true;
   }

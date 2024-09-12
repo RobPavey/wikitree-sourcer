@@ -685,4 +685,4 @@ const ScotpRecordType = {
   },
 };
 
-export { ScotpRecordType, SpField, SpFeature, SpEventClass };
+export { scotpRecordTypes, ScotpRecordType, SpField, SpFeature, SpEventClass };
