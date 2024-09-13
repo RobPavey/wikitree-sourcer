@@ -38,7 +38,11 @@ import { reportStringDiff } from "../test_utils/compare_result_utils.mjs";
 
 // Note the text is what comes through from the context selection text - it has newlines removed already.
 
+// in same order as scotpRecordTypes
 const regressionData = [
+  ////////////////////////////////////////////////////////////////////////////////
+  // opr_birth
+  ////////////////////////////////////////////////////////////////////////////////
   {
     caseName: "sourcer_opr_birth_default",
     text: `Birth or Baptism: "Church of Scotland: Old Parish Registers - Births and Baptisms" National Records of Scotland, Parish Number: 382/ ; Ref: 20 9 ScotlandsPeople Search (accessed 23 June 2022) Peter Connan born or baptised on 1 Jun 1823, son of James Connan & Mary McGregor, in Monzie, Perthshire, Scotland.`,
@@ -66,6 +70,27 @@ const regressionData = [
   {
     caseName: "scotproj_opr_birth_edit",
     text: `<ref name="OPR William 1">Govan Parish, Church of Scotland, "Old Parish Registers Births and Baptisms" database, National Records of Scotland, ([https://www.scotlandspeople.gov.uk ScotlandsPeople] : accessed 29 May 2024), William Walker birth or baptism 23 Jan 1808, son of Hugh Walker and Ann Young,  citing Ref 20 / 211.</ref>`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // census
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_census_default",
+    text: `In the 1851 census, Donald (age 11) was in Portnahaven, Argyll, Scotland.<ref>'''1851 Census''': "Scotland Census, 1851", National Records of Scotland, Ref: 547/ 1/ 35, [https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 13 September 2024), Surname MCKAY, Forename DONALD, Year 1851, Gender M, Age at Census 11, RD Name Portnahaven, County / City Argyll.</ref>`,
+  },
+  {
+    // edit mode
+    caseName: "sourcer_census_database_no_accessed",
+    text: `In the 1851 census, Donald (age 13) was in Lairg, Sutherland, Scotland.<ref>'''1851 Census''': "Scotland Census, 1851", database, National Records of Scotland, Ref: 053/ 1/ 6, [https://www.scotlandspeople.gov.uk/ ScotlandsPeople], Donald McKay (13) in Lairg registration district in Sutherland, Scotland.</ref>`,
+  },
+  {
+    caseName: "sourcer_census_database_citing",
+    text: `1851 Census: "Scotland Census, 1851", database, National Records of Scotland, ScotlandsPeople, Donald McKay (13) in Lairg registration district in Sutherland, Scotland; citing Ref: 053/ 1/ 6.`,
+  },
+  {
+    caseName: "scotproj_census",
+    text: `"Scottish Census Returns - 1911" database, National Records of Scotland, ScotlandsPeople (accessed 29 May 2024), Ella W. McMillan, female, age at census 2, Greenock West, Renfrew; citing Reference Number: 564/2 25/ 7.`,
   },
 ];
 

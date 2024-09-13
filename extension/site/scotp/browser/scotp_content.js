@@ -112,6 +112,74 @@ function getClickedRow() {
   }
 }
 
+async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
+  //console.log("doHighlightForRefNumber, refValue = " + refValue + " recordType = " + recordType);
+
+  // work out what key to look for
+  let refKey = getRefRecordKey(recordType);
+  if (!refKey) {
+    return;
+  }
+
+  //console.log("doHighlightForRefNumber, refKey = " + refKey);
+
+  let resultsTable = document.querySelector("table.results-table");
+  if (!resultsTable) {
+    //console.log("doHighlightForRefNumber, table.table not found");
+    return;
+  }
+  let headerRow = resultsTable.querySelector("thead > tr");
+  if (!headerRow) {
+    //console.log("doHighlightForRefNumber, thead > tr not found");
+    return;
+  }
+  let headerCells = headerRow.querySelectorAll("th");
+
+  // find the refKey in the header cells to get the right column index
+  let refKeyColumnIndex = -1;
+  for (let index = 0; index < headerCells.length; index++) {
+    let headerCell = headerCells[index];
+    let text = headerCell.textContent;
+    if (text && text.trim() == refKey) {
+      refKeyColumnIndex = index;
+      break;
+    }
+  }
+
+  //console.log("doHighlightForRefNumber, refKeyColumnIndex = " + refKeyColumnIndex);
+
+  if (refKeyColumnIndex == -1) {
+    return;
+  }
+
+  let rowElements = resultsTable.querySelectorAll("tbody > tr");
+  for (let index = 0; index < rowElements.length; index++) {
+    let rowElement = rowElements[index];
+
+    let rowCells = rowElement.querySelectorAll("td");
+    if (rowCells.length > refKeyColumnIndex) {
+      let rowCell = rowCells[refKeyColumnIndex];
+      let rowDataElement = rowCell.querySelector("div.table-row-cell-data");
+      if (rowDataElement) {
+        let text = rowDataElement.textContent;
+        if (text) {
+          text = text.trim();
+          text = text.replace(/\s+/g, " "); // remove double spaces
+          if (isFromUrl) {
+            text = encodeURIComponent(text);
+          }
+          //console.log("doHighlightForRefNumber: text = '" + text + "', refValue = '" + refValue + "'");
+          if (text == refValue) {
+            // we have found the row to highlight
+            highlightRow(rowElement);
+            return;
+          }
+        }
+      }
+    }
+  }
+}
+
 async function doHighlightForRefQuery() {
   let url = location.href;
 
@@ -129,99 +197,124 @@ async function doHighlightForRefQuery() {
     if (!refValue) {
       return;
     }
+  } else {
+    return;
+  }
 
-    //console.log("doHighlightForRefQuery: refValue = " + refValue);
-
-    // extract the record_type from url
-    const rt1Query = "&record_type=";
-    let rtIndex = url.indexOf(rt1Query);
+  // extract the record_type from url
+  const rt1Query = "&record_type=";
+  let rtIndex = url.indexOf(rt1Query);
+  if (rtIndex != -1) {
+    rtIndex += rt1Query.length;
+  } else {
+    const rt2Query = "&record_type%5B0%5D=";
+    rtIndex = url.indexOf(rt2Query);
     if (rtIndex != -1) {
-      rtIndex += rt1Query.length;
+      rtIndex += rt2Query.length;
     } else {
-      const rt2Query = "&record_type%5B0%5D=";
-      rtIndex = url.indexOf(rt2Query);
-      if (rtIndex != -1) {
-        rtIndex += rt2Query.length;
-      } else {
+      return;
+    }
+  }
+  ampIndex = url.indexOf("&", rtIndex);
+  if (ampIndex == -1) {
+    ampIndex = url.length;
+  }
+  let recordType = url.substring(rtIndex, ampIndex);
+
+  doHighlightForRefNumber(refValue, recordType, true);
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function doHighlightForRefNumData() {
+  // should only do this when the search is completed
+
+  //console.log("doHighlightForRefNumData: document.URL is : " + document.URL);
+
+  let isAdvancedSearch = false;
+  let isSearchResults = false;
+  if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/search-records/")) {
+    isAdvancedSearch = true;
+  } else if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/record-results/")) {
+    isSearchResults = true;
+  }
+
+  let storageName = "scotpSearchRefNumData";
+
+  if (isSearchResults) {
+    //console.log("doHighlightForRefNumData: URL matches");
+
+    // check logged in
+    const loginElement = document.querySelector("div.log-in");
+    if (loginElement) {
+      //console.log("doHighlightForRefNumData: returning because not logged in");
+      return;
+    }
+
+    let searchData = await getPendingSearch(storageName, false);
+    //console.log("doHighlightForRefNumData: got searchData:");
+    //console.log(searchData);
+
+    if (searchData) {
+      if (searchData.hasRefineData && !loadedRefineData) {
+        // wait to be called again when the results are refined
+        //console.log("doHighlightForRefNumData: returning because waiting for refine data");
         return;
       }
-    }
-    ampIndex = url.indexOf("&", rtIndex);
-    if (ampIndex == -1) {
-      ampIndex = url.length;
-    }
-    let recordType = url.substring(rtIndex, ampIndex);
 
-    // work out what key to look for
-    let refKey = getRefRecordKey(recordType);
-    if (!refKey) {
-      return;
-    }
+      let searchUrl = searchData.url;
+      let timeStamp = searchData.timeStamp;
+      let timeStampNow = Date.now();
+      let timeSinceSearch = timeStampNow - timeStamp;
 
-    let resultsTableWrapper = document.querySelector("div.results-table-wrapper");
-    if (!resultsTableWrapper) {
-      return;
-    }
-    let resultsTable = resultsTableWrapper.querySelector("table.table");
-    if (!resultsTable) {
-      return;
-    }
-    let headerRow = resultsTable.querySelector("thead > tr");
-    if (!headerRow) {
-      return;
-    }
-    let headerCells = headerRow.querySelectorAll("th");
+      //console.log("doHighlightForRefNumData: searchUrl is : '" + searchUrl + "'");
+      //console.log("doHighlightForRefNumData: document.URL is : '" + document.URL + "'");
+      //console.log("doHighlightForRefNumData: timeStamp is :" + timeStamp);
+      //console.log("doHighlightForRefNumData: timeStampNow is :" + timeStampNow);
+      //console.log("doHighlightForRefNumData: timeSinceSearch is :" + timeSinceSearch);
 
-    // find the refKey in the header cells to get the right column index
-    let refKeyColumnIndex = -1;
-    for (let index = 0; index < headerCells.length; index++) {
-      let headerCell = headerCells[index];
-      let text = headerCell.textContent;
-      if (text && text.trim() == refKey) {
-        refKeyColumnIndex = index;
-        break;
-      }
-    }
-    if (refKeyColumnIndex == -1) {
-      return;
-    }
-
-    let rowElements = resultsTable.querySelectorAll("tbody > tr");
-    for (let index = 0; index < rowElements.length; index++) {
-      let rowElement = rowElements[index];
-
-      let rowCells = rowElement.querySelectorAll("td");
-      if (rowCells.length > refKeyColumnIndex) {
-        let rowCell = rowCells[refKeyColumnIndex];
-        let rowDataElement = rowCell.querySelector("div.table-cell-data");
-        if (rowDataElement) {
-          let text = rowDataElement.textContent;
-          if (text) {
-            text = text.trim();
-            text = text.replace(/\s+/g, " "); // remove double spaces
-            text = encodeURIComponent(text);
-            //console.log("doHighlightForRefQuery: text = '" + text + "', refValue = '" + refValue + "'");
-            if (text == refValue) {
-              // we have found the row to highlight
-              highlightRow(rowElement);
-              return;
-            }
-          }
-        }
+      if (timeSinceSearch < 10000 && (isSearchResults || searchUrl == document.URL)) {
+        // we are doing a search
+        // wait a bit for search to complete
+        await sleep(400);
+        doHighlightForRefNumber(searchData.refNum, searchData.recordType, false);
+        clearPendingSearch(storageName);
       }
     }
   }
 }
 
-async function getPendingSearch(storageName) {
+async function getPendingSearch(storageName, removeAfterRead = true) {
   return new Promise((resolve, reject) => {
     try {
       chrome.storage.local.get([storageName], function (value) {
-        // clear the search data
-        chrome.storage.local.remove([storageName], function () {
-          //console.log('cleared scotpSearchData');
+        //console.log("read storage: " + storageName + ", value is:");
+        //console.log(value[storageName]);
+        if (removeAfterRead) {
+          // clear the search data
+          chrome.storage.local.remove([storageName], function () {
+            //console.log("cleared storage: " + storageName);
+            resolve(value[storageName]);
+          });
+        } else {
           resolve(value[storageName]);
-        });
+        }
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
+async function clearPendingSearch(storageName) {
+  return new Promise((resolve, reject) => {
+    try {
+      // clear the search data
+      chrome.storage.local.remove([storageName], function () {
+        //console.log('cleared scotpSearchData');
+        resolve();
       });
     } catch (ex) {
       reject(ex);
@@ -694,6 +787,8 @@ function doLegacySearch() {
   }
 }
 
+var loadedRefineData = false;
+
 async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
 
@@ -742,6 +837,10 @@ async function checkForPendingSearch() {
     }
 
     let searchData = await getPendingSearch(storageName);
+
+    if (storageName == "scotpSearchRefineData") {
+      loadedRefineData = true;
+    }
 
     if (searchData) {
       //console.log("checkForPendingSearch: got searchData:");
@@ -875,6 +974,7 @@ async function checkForSearchThenInit() {
 
   addClickedRowListener();
   doHighlightForRefQuery();
+  doHighlightForRefNumData();
 }
 
 checkForSearchThenInit();

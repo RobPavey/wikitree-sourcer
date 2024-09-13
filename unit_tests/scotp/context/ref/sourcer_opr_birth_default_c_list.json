@@ -23,6 +23,11 @@
         "value": "exact"
       },
       {
+        "fieldKey": "edit-search-params-nrs-sex-m",
+        "type": "radio",
+        "value": true
+      },
+      {
         "fieldKey": "edit-search-params-nrs-year-field-year-from",
         "type": "text",
         "value": "1823"
@@ -57,5 +62,7 @@
         "value": "exact"
       }
     ]
-  }
+  },
+  "refNum": "20/9",
+  "recordType": "opr_births"
 }

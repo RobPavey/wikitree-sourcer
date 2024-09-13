@@ -913,12 +913,14 @@ async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
 
     let formData = searchData.formData;
     let refineData = searchData.refineData;
+    let refNum = searchData.refNum;
+    let recordType = searchData.recordType;
 
     const searchUrl = "https://www.scotlandspeople.gov.uk/search-records/" + formData.urlPart;
     const scotpSearchData = {
       timeStamp: Date.now(),
       url: searchUrl,
-      formData: searchData.formData,
+      formData: formData,
     };
 
     try {
@@ -926,6 +928,7 @@ async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
       // content script in the new tab/window
       await chrome.storage.local.set({ scotpSearchData: scotpSearchData });
 
+      let hasRefineData = false;
       if (refineData && refineData.fields.length > 0) {
         const scotpSearchRefineData = {
           timeStamp: Date.now(),
@@ -933,6 +936,18 @@ async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
           formData: refineData,
         };
         await chrome.storage.local.set({ scotpSearchRefineData: scotpSearchRefineData });
+        hasRefineData = true;
+      }
+
+      if (refNum) {
+        const scotpSearchRefNumData = {
+          timeStamp: Date.now(),
+          url: searchUrl,
+          hasRefineData: hasRefineData,
+          refNum: refNum,
+          recordType: recordType,
+        };
+        await chrome.storage.local.set({ scotpSearchRefNumData: scotpSearchRefNumData });
       }
     } catch (ex) {
       console.log("store of searchData failed");
@@ -952,7 +967,7 @@ async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
 function openSelectionPlainText(info, tab) {
   let text = info.selectionText;
 
-  console.log("openSelectionText, text is: " + text);
+  //console.log("openSelectionText, text is: " + text);
 
   let templateStartIndex = text.indexOf("{{");
   if (templateStartIndex != -1) {
