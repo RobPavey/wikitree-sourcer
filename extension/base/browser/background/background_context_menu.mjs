@@ -952,7 +952,7 @@ async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
 function openSelectionPlainText(info, tab) {
   let text = info.selectionText;
 
-  //console.log("openSelectionText, text is: " + text);
+  console.log("openSelectionText, text is: " + text);
 
   let templateStartIndex = text.indexOf("{{");
   if (templateStartIndex != -1) {

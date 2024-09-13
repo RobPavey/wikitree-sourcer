@@ -42,7 +42,7 @@ const citationPatterns = [
   {
     // Example: Sourcer Default
     // "church of scotland: old parish registers - births and baptisms" national records of scotland, parish number: 382/ ; ref: 20 9 scotlandspeople search (accessed 23 june 2022) peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland.
-    regex: /^"([^"]+)",? (.*),? scotlandspeople search \(accessed [^\)]+\),? (.*)$/,
+    regex: /^"([^"]+)",? (.*),? scotlandspeople (?:search )?\(accessed [^\)]+\),? (.*)$/,
     paramKeys: ["sourceTitle", "sourceReference", "dataString"],
   },
   {
@@ -220,6 +220,11 @@ function parseUsingPattern(parsedCitation) {
     let resultString = "$" + resultIndex;
     let value = text.replace(pattern.regex, resultString);
     if (key && value && value != text) {
+      value = value.trim();
+      if (value.endsWith(".") || value.endsWith(",")) {
+        value = value.substring(0, value.length - 1);
+      }
+      value = value.trim();
       parsedCitation[key] = value;
     }
   }
@@ -227,6 +232,17 @@ function parseUsingPattern(parsedCitation) {
 
 function setName(data, scotpRecordType, builder) {
   let name = data.name;
+  let surname = data.surname;
+  let forename = data.forename;
+  if (surname || forename) {
+    if (forename) {
+      builder.addForename(forename, "exact");
+    }
+    if (surname) {
+      builder.addSurname(surname, "exact");
+    }
+    return;
+  }
 
   if (!name) {
     return;
@@ -312,9 +328,86 @@ function addDataToBuilder(parsedCitation, data, builder) {
   setParents(data, parsedCitation.scotpRecordType, builder);
 }
 
-function parseSemiColonColonDataList(dataString, parsedCitation, builder) {
+function addListValueToData(label, value, parsedCitation, data) {
+  function getYearFromDate(dateString) {
+    const ddmmyyyyRegex = /(\d\d)?\/(\d\d)?\/(\d\d\d\d)/;
+
+    if (ddmmyyyyRegex.test(dateString)) {
+      let year = dateString.replace(ddmmyyyyRegex, "$3");
+      if (year) {
+        return year;
+      }
+    }
+
+    return "";
+  }
+
+  if (label == "surname") {
+    data.surname = value;
+  } else if (label == "forename") {
+    data.forename = value;
+  } else if (label == "gender") {
+    if (value == "m" || value == "male") {
+      data.gender = "male";
+    } else if (value == "f" || value == "female") {
+      data.gender = "female";
+    }
+  } else if (label == "parents/other details") {
+    let parents = value.split("/");
+    if (parents.length == 2) {
+      data.fatherName = parents[0].trim();
+      data.motherName = parents[1].trim();
+    }
+  } else if (label == "birth date") {
+    let eventClass = ScotpRecordType.getEventClass(parsedCitation.scotpRecordType);
+    if (eventClass == SpEventClass.birth) {
+      let year = getYearFromDate(value);
+      if (year) {
+        data.eventDate = year;
+      }
+    }
+  } else if (label == "parish") {
+  }
+}
+
+function parseSemiColonColonDataList(dataString, parsedCitation, data) {
   let items = dataString.split(";");
   for (let item of items) {
+    let parts = item.split(":");
+    if (parts.length == 2) {
+      let label = parts[0].trim();
+      let value = parts[1].trim();
+      addListValueToData(label, value, parsedCitation, data);
+    }
+  }
+}
+
+function parseCommaColonDataList(dataString, parsedCitation, data) {
+  let items = dataString.split(",");
+  for (let item of items) {
+    let parts = item.split(":");
+    if (parts.length == 2) {
+      let label = parts[0].trim();
+      let value = parts[1].trim();
+      addListValueToData(label, value, parsedCitation, data);
+    }
+  }
+}
+
+function parseCommaOnlyDataList(dataString, parsedCitation, data) {
+  const possibleLabels = ["surname", "forename", "parents/other details", "gender", "birth date", "parish"];
+
+  let items = dataString.split(",");
+  for (let item of items) {
+    let field = item.trim();
+    for (let possibleLabel of possibleLabels) {
+      if (field.startsWith(possibleLabel)) {
+        let label = possibleLabel;
+        let value = field.substring(possibleLabel.length + 1).trim();
+        addListValueToData(label, value, parsedCitation, data);
+        break;
+      }
+    }
   }
 }
 
@@ -327,11 +420,15 @@ function parseDataList(dataString, parsedCitation, builder) {
   // surname: connan, forename: peter, parents/other details: james connan/mary mcgregor, gender: m, birth date: 01/06/1823, parish: monzie.
   // Comma only example:
   // surname connan, forename peter, parents/other details james connan/mary mcgregor, gender m, birth date 01/06/1823, parish monzie.
-  let semicolons = dataString.match(";");
-  let colons = dataString.match(":");
-  let commas = dataString.match(",");
+  let semicolons = dataString.match(/;/g);
+  let colons = dataString.match(/:/g);
 
-  if (semicolons.length && colons.length && semicolons.length == colons.length) {
+  if (semicolons && semicolons.length && colons && colons.length && semicolons.length == colons.length - 1) {
+    parseSemiColonColonDataList(dataString, parsedCitation, data);
+  } else if (colons && colons.length) {
+    parseCommaColonDataList(dataString, parsedCitation, data);
+  } else {
+    parseCommaOnlyDataList(dataString, parsedCitation, data);
   }
 
   addDataToBuilder(parsedCitation, data, builder);
