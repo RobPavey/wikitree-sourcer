@@ -137,8 +137,8 @@ function extractDbAndRecordId(result, url) {
       }
     }
   } else if (url.includes("discoveryui-content")) {
-    let rec = url.replace(/.*\/discoveryui-content\/view\/([^:]+)\:.*/, "$1");
-    let db = url.replace(/.*\/discoveryui-content\/view\/[^:]+\:(\d+).*/, "$1");
+    let rec = url.replace(/.*\/discoveryui-content\/view\/([^:]+)(?:\:|%3A).*/i, "$1");
+    let db = url.replace(/.*\/discoveryui-content\/view\/[^:]+(?:\:|%3A)(\d+).*/i, "$1");
     if (db != "" && db != url && rec != "" && rec != url) {
       dbId = db;
       recordId = rec;
