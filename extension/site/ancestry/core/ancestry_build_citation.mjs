@@ -544,11 +544,15 @@ function buildAncestryRecordTemplate(ed, options) {
     }
   }
 
-  if (domainParam) {
-    return "{{Ancestry Record|" + ed.dbId + "|" + ed.recordId + "|" + domainParam + "}}";
+  if (ed.dbId && ed.recordId) {
+    if (domainParam) {
+      return "{{Ancestry Record|" + ed.dbId + "|" + ed.recordId + "|" + domainParam + "}}";
+    }
+
+    return "{{Ancestry Record|" + ed.dbId + "|" + ed.recordId + "}}";
   }
 
-  return "{{Ancestry Record|" + ed.dbId + "|" + ed.recordId + "}}";
+  return "[" + ed.url + " Ancestry Record]";
 }
 
 function buildAncestryImageTemplate(ed, options) {
