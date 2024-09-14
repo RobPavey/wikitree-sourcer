@@ -174,6 +174,16 @@ async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
             highlightRow(rowElement);
             return;
           }
+          // there could be a difference in spaces
+          if (!isFromUrl) {
+            let cleanRefValue = refValue.replace(/\s*\/\s*/g, "/");
+            let cleanText = text.replace(/\s*\/\s*/g, "/");
+            if (cleanText == cleanRefValue) {
+              // we have found the row to highlight
+              highlightRow(rowElement);
+              return;
+            }
+          }
         }
       }
     }

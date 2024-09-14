@@ -967,7 +967,7 @@ async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
 function openSelectionPlainText(info, tab) {
   let text = info.selectionText;
 
-  //console.log("openSelectionText, text is: " + text);
+  console.log("openSelectionText, text is: " + text);
 
   let templateStartIndex = text.indexOf("{{");
   if (templateStartIndex != -1) {
@@ -1015,8 +1015,8 @@ function openSelectionPlainText(info, tab) {
 
   // check for Scotlands People
   searchData = buildScotlandsPeopleContextSearchData(lcText);
-  //console.log("buildScotlandsPeopleContextSearchData returned:");
-  //console.log(searchData);
+  console.log("buildScotlandsPeopleContextSearchData returned:");
+  console.log(searchData);
   if (searchData) {
     callFunctionWithStoredOptions(function (options) {
       openScotlandsPeopleGivenSearchData(tab, options, searchData);

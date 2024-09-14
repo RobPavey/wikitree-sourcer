@@ -41,6 +41,18 @@ import { reportStringDiff } from "../test_utils/compare_result_utils.mjs";
 // in same order as scotpRecordTypes
 const regressionData = [
   ////////////////////////////////////////////////////////////////////////////////
+  // stat_births
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_stat_births_edit_no_data",
+    text: `<ref> '''Birth Registration''': "Statutory Register of Births"<br/> National Records of Scotland, Ref: 685/1/462<br/> [https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021) </ref>`,
+  },
+  {
+    caseName: "sourcer_stat_births_edit_citing",
+    text: `Helen's birth was registered in 1888 in the Anderston district.<ref>'''Birth Registration''': "Statutory Register of Births", database, National Records of Scotland, [https://www.scotlandspeople.gov.uk/ ScotlandsPeople], Helen McCall A'Hara birth registered 1888 in Anderston, mother's maiden name McCall; citing Ref: 644/10/356.</ref>`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
   // opr_birth
   ////////////////////////////////////////////////////////////////////////////////
   {

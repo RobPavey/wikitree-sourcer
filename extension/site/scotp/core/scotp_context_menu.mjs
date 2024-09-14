@@ -38,27 +38,31 @@ import { ScotpFormDataBuilder } from "./scotp_form_data_builder.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
+// NOTE: still some inconsistencies in how I test for the optional accessed date
+
 const citationPatterns = [
   {
     // Example: Sourcer different order due to "Place the source reference data" option
     // "scotland census, 1851", database, national records of scotland, scotlandspeople, donald mckay (13) in lairg registration district in sutherland, scotland; citing ref: 053/ 1/ 6.
     regex:
-      /^"([^"]+)",?(?: database)?,? (.*),? ?\(?scotlandspeople(?: search)? ?\(?(?:accessed [^\)]+\))?,? (.*);? citing (.*)$/,
+      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?scotlandspeople(?: search)? ?\(?(?:accessed [^\)]+\))?,? (.*);? citing (.*)$/,
     paramKeys: ["sourceTitle", "database", "dataString", "sourceReference"],
   },
   {
     // Example: Sourcer different order due to "Place the source reference data" option
     // Edit mode
     // "church of scotland: old parish registers - births and baptisms", database, national records of scotland, ([https://www.scotlandspeople.gov.uk/ scotlandspeople] : accessed 23 june 2022), peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland; citing parish number 382/ , ref 20 9.
+    // "Statutory Register of Births", database, National Records of Scotland, [https://www.scotlandspeople.gov.uk/ ScotlandsPeople], Helen McCall A'Hara birth registered 1888 in Anderston, mother's maiden name McCall; citing Ref: 644/10/356.
+    // "Church of Scotland: Old Parish Registers - Births and Baptisms", database, National Records of Scotland, ([https://www.scotlandspeople.gov.uk/ ScotlandsPeople] : accessed 23 June 2022), Peter Connan born or baptised on 1 Jun 1823, son of James Connan & Mary McGregor, in Monzie, Perthshire, Scotland; citing Parish Number 382/ , Ref 20 9.
     regex:
-      /^"([^"]+)",?(?: database)?,? (.*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\] \: accessed [^\)]+\),? (.*);? citing (.*)$/,
+      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: \:? ?\(?accessed [^\)]+\),|,) (.*);? citing (.*)$/,
     paramKeys: ["sourceTitle", "database", "dataString", "sourceReference"],
   },
   {
     // Example: Sourcer Default order
     // This handles all three values of the "Add an accessed date to citation" option
     // "church of scotland: old parish registers - births and baptisms" national records of scotland, parish number: 382/ ; ref: 20 9 scotlandspeople search (accessed 23 june 2022) peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland.
-    regex: /^"([^"]+)",?(?: database)?,? (.*),? ?\(?scotlandspeople(?: search)? ?\(?(?:accessed [^\)]+\))?,? (.*)$/,
+    regex: /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?scotlandspeople(?: search)? ?\(?(?:accessed [^\)]+\))?,? (.*)$/,
     paramKeys: ["sourceTitle", "sourceReference", "dataString"],
   },
   {
@@ -66,7 +70,7 @@ const citationPatterns = [
     // "scotland census, 1851", national records of scotland, ref: 547/ 1/ 35, [https://www.scotlandspeople.gov.uk/ scotlandspeople] (accessed 13 september 2024), surname mckay, forename donald, year 1851, gender m, age at census 11, rd name portnahaven, county / city argyll.
     // "scotland census, 1851", database, national records of scotland, ref: 053/ 1/ 6, [https://www.scotlandspeople.gov.uk/ scotlandspeople], donald mckay (13) in lairg registration district in sutherland, scotland.
     regex:
-      /^"([^"]+)",?(?: database)?,? (.*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\],? ?\(?(?:accessed [^\)]+\))?,? (.*)$/,
+      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\],? ?\(?(?:accessed [^\)]+\))?,? (.*)$/,
     paramKeys: ["sourceTitle", "sourceReference", "dataString"],
   },
   {
@@ -74,14 +78,14 @@ const citationPatterns = [
     // Sometimes they have the parish or country name before the source citation
     // govan parish, church of scotland, "old parish registers births and baptisms" database, national records of scotland, (scotlandspeople : accessed 29 may 2024), william walker birth or baptism 23 jan 1808, son of hugh walker and ann young, citing ref 20 / 211.
     regex:
-      /^(.*) "([^"]+)",?(?: database)?,? ?(.*),? \(? ?scotlandspeople(?: search)? : accessed [^\)]+\),? (.*) citing (.*)$/,
+      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(? ?scotlandspeople(?: search)? : accessed [^\)]+\),? (.*) citing (.*)$/,
     paramKeys: ["parish", "sourceTitle", "database", "dataString", "sourceReference"],
   },
   {
     // Example: Scotland Project edit mode
     // govan parish, church of scotland, "old parish registers births and baptisms" database, national records of scotland, ([https://www.scotlandspeople.gov.uk scotlandspeople] : accessed 29 may 2024), william walker birth or baptism 23 jan 1808, son of hugh walker and ann young, citing ref 20 / 211.
     regex:
-      /^(.*) "([^"]+)",?(?: database)?,? ?(.*),? \(?\[https\:\/\/www\.scotlandspeople\.gov\.uk scotlandspeople(?: search)?\] : accessed [^\)]+\),? (.*) citing (.*)$/,
+      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(?\[https\:\/\/www\.scotlandspeople\.gov\.uk scotlandspeople(?: search)?\] : accessed [^\)]+\),? (.*) citing (.*)$/,
     paramKeys: ["parish", "sourceTitle", "database", "dataString", "sourceReference"],
   },
 ];
@@ -371,7 +375,14 @@ const scotlandProjectTitles = [
 ];
 
 const dataStringSentencePatterns = {
-  stat_births: [],
+  stat_births: [
+    {
+      // Example: Sourcer Default
+      // Helen McCall A'Hara birth registered 1888 in Anderston, mother's maiden name McCall
+      regex: /^(.*) birth registered ([0-9]+) in (.*), mother's maiden name (.*)$/,
+      paramKeys: ["name", "eventDate", "rdName", "mmn"],
+    },
+  ],
   stat_marriages: [],
   stat_divorces: [],
   stat_deaths: [],
@@ -616,6 +627,13 @@ function setParents(data, parsedCitation, builder) {
     }
     if (data.motherName) {
       builder.addParentName(data.motherName, searchOption);
+    }
+  }
+
+  if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.mmn)) {
+    let mmn = data.mmn;
+    if (mmn) {
+      builder.addMothersMaidenName(mmn, searchOption);
     }
   }
 }
@@ -907,6 +925,12 @@ function parseDataString(parsedCitation, builder) {
     return;
   }
 
+  dataString = dataString.trim();
+  if (dataString.endsWith(";")) {
+    // this can happen if there is a "; citing " after data string
+    dataString = dataString.substring(0, dataString.length - 1);
+  }
+
   function cleanDataValue(value) {
     value = value.trim();
     if (value.endsWith(".")) {
@@ -914,6 +938,10 @@ function parseDataString(parsedCitation, builder) {
     }
     value = value.trim();
     if (value.endsWith(",")) {
+      value = value.substring(0, value.length - 1);
+    }
+    value = value.trim();
+    if (value.endsWith(";")) {
       value = value.substring(0, value.length - 1);
     }
     value = value.trim();
@@ -956,8 +984,12 @@ function parseDataString(parsedCitation, builder) {
 }
 
 function buildScotlandsPeopleContextSearchData(lcText) {
+  console.log("buildScotlandsPeopleContextSearchData, lcText is:");
+  console.log(lcText);
+
   // To be Scotlands People we need some identifiers
   if (!(lcText.includes("scotlandspeople") || lcText.includes("scotlands people"))) {
+    console.log("buildScotlandsPeopleContextSearchData, no scotlandspeople found");
     return undefined;
   }
 
@@ -965,10 +997,8 @@ function buildScotlandsPeopleContextSearchData(lcText) {
     lcText: lcText,
   };
 
-  //console.log("buildScotlandsPeopleContextSearchData, lcText is:");
-  //console.log(lcText);
-
   if (!cleanCitation(parsedCitation)) {
+    console.log("buildScotlandsPeopleContextSearchData, could not clean");
     return undefined;
   }
 
@@ -988,11 +1018,13 @@ function buildScotlandsPeopleContextSearchData(lcText) {
   //console.log(parsedCitation);
 
   if (!parsedCitation.sourceTitle) {
+    console.log("buildScotlandsPeopleContextSearchData, no sourceTitle");
     return undefined;
   }
 
   let scotpRecordType = getScotpRecordTypeFromSourceTitle(parsedCitation.sourceTitle);
   if (!scotpRecordType) {
+    console.log("buildScotlandsPeopleContextSearchData, no scotpRecordType");
     return undefined;
   }
 
@@ -1032,6 +1064,9 @@ function buildScotlandsPeopleContextSearchData(lcText) {
       searchData.recordType = parsedCitation.scotpRecordType;
     }
   }
+
+  console.log("buildScotlandsPeopleContextSearchData, returning, searchData is:");
+  console.log(searchData);
 
   return searchData;
 }
