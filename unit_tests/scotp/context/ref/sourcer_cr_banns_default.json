@@ -1,11 +1,11 @@
 {
   "formData": {
-    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "urlPart": "church-registers/church-banns-marriages/cr-banns",
     "fields": [
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "peter"
+        "value": "james ronald"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,61 +15,46 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "connan"
+        "value": "mcgregor"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "so",
         "value": "exact"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-sex-m",
-        "type": "radio",
-        "value": true
       },
       {
         "fieldKey": "edit-search-params-nrs-year-field-year-from",
         "type": "text",
-        "value": "1823"
+        "value": "1941"
       },
       {
         "fieldKey": "edit-search-params-nrs-year-field-year-to",
         "type": "text",
-        "value": "1823"
+        "value": "1941"
       },
       {
-        "fieldKey": "edit-search-params-nrs-rd-name",
-        "type": "multipleSelect",
-        "values": [
-          "MONZIE_MONZIE (PERTH)"
-        ]
+        "fieldKey": "edit-search-params-nrs-spouse-forename",
+        "type": "text",
+        "value": "ruth margaret"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spouse-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spouse-surname",
+        "type": "text",
+        "value": "gauld"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spouse-surname",
+        "type": "so",
+        "value": "exact"
       }
     ]
   },
   "refineData": {
-    "fields": [
-      {
-        "fieldKey": "edit-search-params-nrs-parent-one",
-        "type": "text",
-        "value": "james connan"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-parent-one",
-        "type": "so",
-        "value": "exact"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-parent-two",
-        "type": "text",
-        "value": "mary mcgregor"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-parent-two",
-        "type": "so",
-        "value": "exact"
-      }
-    ]
-  },
-  "refNum": "20/9",
-  "recordType": "opr_births"
+    "fields": []
+  }
 }

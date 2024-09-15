@@ -41,6 +41,25 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 // NOTE: All patterns try to handle the optional accessed date in all three options
 // This non-capturing group should match all possibilities
 // (?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )
+const reParish = /(.*),? ?/;
+const reSourceTitle = /"([^"]+)",?/;
+const reDatabaseLiteral = /(?: database with images| database)?,? ?/;
+const reWebsiteCreatorOwner = /([^(\[]*),? ?/;
+const reSourceRef = /([^(]*),? ?/;
+const reLinkStart =
+  /\(?(?:scotlandspeople \(https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/;
+const reLinkStartEdit = /\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/;
+const reLinkEnd = /(?: ?\((?:image )?accessed [^\)]+\),? ?| ?\: ?(?:image )?accessed [^\)]+\),? ?| |,|, )/;
+const reDataString = /(.*)/;
+const reCitingSourceRef = /;? citing (.*)/;
+
+const reb =
+  /^(.*),? ?"([^"]+)",?(?: database)?,? ?([^(\[]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/;
+const rec =
+  /^(.*) "([^"]+)",?(?: database)?,? ?([^(\[]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/;
+const rel =
+  /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(? ?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )?(.*) citing (.*)$/;
+
 const citationPatterns = [
   {
     // Example: Sourcer different order due to "Place the source reference data" option
@@ -49,7 +68,16 @@ const citationPatterns = [
     // "Statutory Registers - Deaths" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024) John Stewart, age 47, Male, 1908, Paisley; citing Reference Number: 573 / 1 / 160.
     regex:
       /^"([^"]+)",?(?: database)?,? ([^(\[]*),? ?\(?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/,
-    paramKeys: ["sourceTitle", "database", "dataString", "sourceReference"],
+    paramKeys: ["sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
+    reParts: [
+      reSourceTitle,
+      reDatabaseLiteral,
+      reWebsiteCreatorOwner,
+      reLinkStart,
+      reLinkEnd,
+      reDataString,
+      reCitingSourceRef,
+    ],
   },
   {
     // Example: Sourcer different order due to "Place the source reference data" option
@@ -59,15 +87,26 @@ const citationPatterns = [
     // "Church of Scotland: Old Parish Registers - Births and Baptisms", database, National Records of Scotland, ([https://www.scotlandspeople.gov.uk/ ScotlandsPeople] : accessed 23 June 2022), Peter Connan born or baptised on 1 Jun 1823, son of James Connan & Mary McGregor, in Monzie, Perthshire, Scotland; citing Parish Number 382/ , Ref 20 9.
     regex:
       /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/,
-    paramKeys: ["sourceTitle", "database", "dataString", "sourceReference"],
+    paramKeys: ["sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
+    reParts: [
+      reSourceTitle,
+      reDatabaseLiteral,
+      reWebsiteCreatorOwner,
+      reLinkStartEdit,
+      reLinkEnd,
+      reDataString,
+      reCitingSourceRef,
+    ],
   },
   {
     // Example: Sourcer Default order
     // This handles all three values of the "Add an accessed date to citation" option
     // "church of scotland: old parish registers - births and baptisms" national records of scotland, parish number: 382/ ; ref: 20 9 scotlandspeople search (accessed 23 june 2022) peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland.
+    // "Statutory Register of Divorces" National Records of Scotland, Court Code: 9772; Serial Number: 1421 ScotlandsPeople Margaret Thomso O'Connor divorce from McClounie in 2010 in Hamilton, Scotland.
     regex:
       /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*)$/,
     paramKeys: ["sourceTitle", "sourceReference", "dataString"],
+    reParts: [reSourceTitle, reDatabaseLiteral, reSourceRef, reLinkStart, reLinkEnd, reDataString],
   },
   {
     // Example: Sourcer Default order, edit mode
@@ -76,6 +115,7 @@ const citationPatterns = [
     regex:
       /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*)$/,
     paramKeys: ["sourceTitle", "sourceReference", "dataString"],
+    reParts: [reSourceTitle, reDatabaseLiteral, reSourceRef, reLinkStartEdit, reLinkEnd, reDataString],
   },
   {
     // Example: Scotland Project
@@ -84,14 +124,43 @@ const citationPatterns = [
     // Scotland, "Statutory Registers - Marriages" database, National Records of Scotland, (ScotlandsPeople :accessed 15 Nov 2023), Euphemia Lamont, and John McBride, 1856, Greenock Old or West; citing Reference Number: 564 / 3 / 44.
     regex:
       /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(? ?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )?(.*) citing (.*)$/,
-    paramKeys: ["parish", "sourceTitle", "database", "dataString", "sourceReference"],
+    paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
+    reParts: [
+      reParish,
+      reSourceTitle,
+      reDatabaseLiteral,
+      reWebsiteCreatorOwner,
+      reLinkStart,
+      reLinkEnd,
+      reDataString,
+      reCitingSourceRef,
+    ],
+  },
+  {
+    // Example: Scotland Project, no citing
+    // Sometimes they have the parish or country name before the source citation
+    // St John's, Port Glasgow, "Catholic Registers Births and Baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk : accessed 21 Feb 2021), William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.
+    regex:
+      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(? ?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )?(.*) citing (.*)$/,
+    paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
+    reParts: [reParish, reSourceTitle, reDatabaseLiteral, reWebsiteCreatorOwner, reLinkStart, reLinkEnd, reDataString],
   },
   {
     // Example: Scotland Project edit mode
     // govan parish, church of scotland, "old parish registers births and baptisms" database, national records of scotland, ([https://www.scotlandspeople.gov.uk scotlandspeople] : accessed 29 may 2024), william walker birth or baptism 23 jan 1808, son of hugh walker and ann young, citing ref 20 / 211.
     regex:
       /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(?\[https\:\/\/www\.scotlandspeople\.gov\.uk scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*) citing (.*)$/,
-    paramKeys: ["parish", "sourceTitle", "database", "dataString", "sourceReference"],
+    paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
+    reParts: [
+      reParish,
+      reSourceTitle,
+      reDatabaseLiteral,
+      reWebsiteCreatorOwner,
+      reLinkStartEdit,
+      reLinkEnd,
+      reDataString,
+      reCitingSourceRef,
+    ],
   },
 ];
 
@@ -100,140 +169,140 @@ const citationPatterns = [
 const defaultSourcerTitles = [
   {
     recordType: "stat_births",
-    title: "Statutory Register of Births",
+    titles: ["Statutory Register of Births"],
   },
   {
     recordType: "stat_marriages",
-    title: "Statutory Register of Marriages",
+    titles: ["Statutory Register of Marriages"],
   },
   {
     recordType: "stat_divorces",
-    title: "Statutory Register of Divorces",
+    titles: ["Statutory Register of Divorces"],
   },
   {
     recordType: "stat_deaths",
-    title: "Statutory Register of Deaths",
+    titles: ["Statutory Register of Deaths"],
   },
   {
     recordType: "stat_civilpartnerships",
-    title: "Statutory Register of Civil Partnerships",
+    titles: ["Statutory Register of Civil Partnerships"],
   },
   {
     recordType: "stat_dissolutions",
-    title: "Statutory Register of Dissolutions",
+    titles: ["Statutory Register of Dissolutions"],
   },
   {
     recordType: "opr_births",
-    title: "Church of Scotland: Old Parish Registers - Births and Baptisms",
+    titles: ["Church of Scotland: Old Parish Registers - Births and Baptisms"],
   },
   {
     recordType: "opr_marriages",
-    title: "Church of Scotland: Old Parish Registers - Banns and Marriages",
+    titles: ["Church of Scotland: Old Parish Registers - Banns and Marriages"],
   },
   {
     recordType: "opr_deaths",
-    title: "Church of Scotland: Old Parish Registers - Deaths and Burials",
+    titles: ["Church of Scotland: Old Parish Registers - Deaths and Burials"],
   },
   {
     recordType: "cr_baptisms",
-    title: "Catholic Parish Registers - Births and Baptisms",
+    titles: ["Catholic Parish Registers - Births and Baptisms"],
   },
   {
     recordType: "cr_banns",
-    title: "Catholic Parish Registers - Marriages",
+    titles: ["Catholic Parish Registers - Marriages"],
   },
   {
     recordType: "cr_burials",
-    title: "Catholic Parish Registers - Deaths, Burials and Funerals",
+    titles: ["Catholic Parish Registers - Deaths, Burials and Funerals"],
   },
   {
     recordType: "cr_other",
-    title: "Catholic Parish Registers - Other Events",
+    titles: ["Catholic Parish Registers - Other Events"],
   },
   {
     recordType: "ch3_baptisms",
-    title: "Other Church Registers - Births and Baptisms",
+    titles: ["Other Church Registers - Births and Baptisms"],
   },
   {
     recordType: "ch3_banns",
-    title: "Other Church Registers - Marriages",
+    titles: ["Other Church Registers - Marriages"],
   },
   {
     recordType: "ch3_burials",
-    title: "Other Church Registers - Deaths and Burials",
+    titles: ["Other Church Registers - Deaths and Burials"],
   },
   {
     recordType: "ch3_other",
-    title: "Other Church Registers - Other Events",
+    titles: ["Other Church Registers - Other Events"],
   },
 
   {
     recordType: "census",
-    title: "Scotland Census, 1841",
+    titles: ["Scotland Census, 1841"],
   },
   {
     recordType: "census",
-    title: "Scotland Census, 1851",
+    titles: ["Scotland Census, 1851"],
   },
   {
     recordType: "census",
-    title: "Scotland Census, 1861",
+    titles: ["Scotland Census, 1861"],
   },
   {
     recordType: "census",
-    title: "Scotland Census, 1871",
+    titles: ["Scotland Census, 1871"],
   },
   {
     recordType: "census",
-    title: "Scotland Census, 1881",
+    titles: ["Scotland Census, 1881"],
   },
   {
     recordType: "census",
-    title: "Scotland Census, 1891",
+    titles: ["Scotland Census, 1891"],
   },
   {
     recordType: "census",
-    title: "Scotland Census, 1901",
+    titles: ["Scotland Census, 1901"],
   },
   {
     recordType: "census",
-    title: "Scotland Census, 1911",
+    titles: ["Scotland Census, 1911"],
   },
   {
     recordType: "census",
-    title: "Scotland Census, 1921",
+    titles: ["Scotland Census, 1921"],
   },
   {
     recordType: "census_lds",
-    title: "Scotland Census, 1881 (LDS)",
+    titles: ["Scotland Census, 1881 (LDS)"],
   },
   {
     recordType: "vr",
-    title: "Valuation Rolls",
+    titles: ["Valuation Rolls"],
   },
   {
     recordType: "wills",
-    title: "Wills and Testaments",
+    titles: ["Wills and Testaments"],
   },
   {
     recordType: "coa",
-    title: "Public Register of All Arms and Bearings",
+    titles: ["Public Register of All Arms and Bearings"],
   },
   {
     recordType: "soldiers_wills",
-    title: "Soldiers' and Airmen's Wills",
+    titles: ["Soldiers' and Airmen's Wills"],
   },
   {
     recordType: "military_tribunals",
-    title: "Military Service Appeal Tribunals",
+    titles: ["Military Service Appeal Tribunals"],
   },
   {
     recordType: "hie",
-    title: "Highland and Island Emigration Society records",
+    titles: ["Highland and Island Emigration Society records"],
   },
   {
     recordType: "prison_records",
-    title: "Prison Registers",
+    titles: ["Prison Registers"],
   },
 ];
 
@@ -242,140 +311,140 @@ const defaultSourcerTitles = [
 const scotlandProjectTitles = [
   {
     recordType: "stat_births",
-    title: "Statutory Registers - Births",
+    titles: ["Statutory Registers - Births"],
   },
   {
     recordType: "stat_marriages",
-    title: "Statutory Registers - Marriages",
+    titles: ["Statutory Registers - Marriages"],
   },
   {
     recordType: "stat_divorces",
-    title: "Statutory Register - Divorces",
+    titles: ["Statutory Register - Divorces"],
   },
   {
     recordType: "stat_deaths",
-    title: "Statutory Registers - Deaths",
+    titles: ["Statutory Registers - Deaths"],
   },
   {
     recordType: "stat_civilpartnerships",
-    title: "Statutory Registers - Civil Partnerships",
+    titles: ["Statutory Registers - Civil Partnerships"],
   },
   {
     recordType: "stat_dissolutions",
-    title: "Statutory Registers - Dissolutions",
+    titles: ["Statutory Registers - Dissolutions"],
   },
   {
     recordType: "opr_births",
-    title: "Old Parish Registers Births and Baptisms",
+    titles: ["Old Parish Registers Births and Baptisms"],
   },
   {
     recordType: "opr_marriages",
-    title: "Old Parish Registers Banns and Marriages",
+    titles: ["Old Parish Registers Banns and Marriages"],
   },
   {
     recordType: "opr_deaths",
-    title: "Old Parish Registers Death and Burials",
+    titles: ["Old Parish Registers Death and Burials"],
   },
   {
     recordType: "cr_baptisms",
-    title: "Catholic Registers Births and Baptisms",
+    titles: ["Catholic Registers Births and Baptisms"],
   },
   {
     recordType: "cr_banns",
-    title: "Catholic Registers Marriages",
+    titles: ["Catholic Registers Marriages", "Catholic Registers Banns and Marriages"],
   },
   {
     recordType: "cr_burials",
-    title: "Catholic Registers Deaths, Burials and Funerals",
+    titles: ["Catholic Registers Deaths, Burials and Funerals"],
   },
   {
     recordType: "cr_other",
-    title: "Catholic Registers Other Events",
+    titles: ["Catholic Registers Other Events"],
   },
   {
     recordType: "ch3_baptisms",
-    title: "Church Registers - Other Church Registers Baptisms",
+    titles: ["Church Registers - Other Church Registers Baptisms"],
   },
   {
     recordType: "ch3_banns",
-    title: "Church Registers - Other Church Registers Marriages",
+    titles: ["Church Registers - Other Church Registers Marriages"],
   },
   {
     recordType: "ch3_burials",
-    title: "Church Registers - Other Church Registers Burials",
+    titles: ["Church Registers - Other Church Registers Burials"],
   },
   {
     recordType: "ch3_other",
-    title: "Church Registers - Other Church Registers Other Events", // ??
+    titles: ["Church Registers - Other Church Registers Other Events"], // ??
   },
 
   {
     recordType: "census",
-    title: "Scottish Census Returns - 1841",
+    titles: ["Scottish Census Returns - 1841"],
   },
   {
     recordType: "census",
-    title: "Scottish Census Returns - 1851",
+    titles: ["Scottish Census Returns - 1851"],
   },
   {
     recordType: "census",
-    title: "Scottish Census Returns - 1861",
+    titles: ["Scottish Census Returns - 1861"],
   },
   {
     recordType: "census",
-    title: "Scottish Census Returns - 1871",
+    titles: ["Scottish Census Returns - 1871"],
   },
   {
     recordType: "census",
-    title: "Scottish Census Returns - 1881",
+    titles: ["Scottish Census Returns - 1881"],
   },
   {
     recordType: "census",
-    title: "Scottish Census Returns - 1891",
+    titles: ["Scottish Census Returns - 1891"],
   },
   {
     recordType: "census",
-    title: "Scottish Census Returns - 1901",
+    titles: ["Scottish Census Returns - 1901"],
   },
   {
     recordType: "census",
-    title: "Scottish Census Returns - 1911",
+    titles: ["Scottish Census Returns - 1911"],
   },
   {
     recordType: "census",
-    title: "Scottish Census Returns - 1921",
+    titles: ["Scottish Census Returns - 1921"],
   },
   {
     recordType: "census_lds",
-    title: "Census 1881 (LDS)",
+    titles: ["Census 1881 (LDS)"],
   },
   {
     recordType: "vr",
-    title: "Valuation Rolls",
+    titles: ["Valuation Rolls"],
   },
   {
     recordType: "wills",
-    title: "Wills and Testaments",
+    titles: ["Wills and Testaments"],
   },
   {
     recordType: "coa",
-    title: "Public Register of All Arms and Bearings",
+    titles: ["Public Register of All Arms and Bearings"],
   },
   {
     recordType: "soldiers_wills",
-    title: "Soldiers' and Airmen's Wills",
+    titles: ["Soldiers' and Airmen's Wills"],
   },
   {
     recordType: "military_tribunals",
-    title: "Military Service Appeal Tribunals",
+    titles: ["Military Service Appeal Tribunals"],
   },
   {
     recordType: "hie",
-    title: "Highland and Island Emigration Society records",
+    titles: ["Highland and Island Emigration Society records"],
   },
   {
     recordType: "prison_records",
-    title: "Prison registers",
+    titles: ["Prison registers"],
   },
 ];
 
@@ -430,8 +499,22 @@ const dataStringSentencePatterns = {
       paramKeys: ["name", "age", "gender", "eventDate", "rdName"],
     },
   ],
-  stat_civilpartnerships: [],
-  stat_dissolutions: [],
+  stat_civilpartnerships: [
+    {
+      // Sourcer generated. Example:
+      // Abigail Alice Walker marriage to Morera-Pallares registered 2021 in Rosskeen
+      regex: /^(.*) marriage to (.+) registered (\d\d\d\d) in ([^;]+).*$/,
+      paramKeys: ["name", "spouseName", "eventDate", "rdName"],
+    },
+  ],
+  stat_dissolutions: [
+    {
+      // Sourcer generated. Example:
+      // Seonaid MacNeil Wilson divorce from MacIntosh in 2013 in Perth, Scotland
+      regex: /^(.*) divorce from (.+) in (\d\d\d\d) in ([^;]+).*$/,
+      paramKeys: ["name", "spouseLastName", "eventDate", "court"],
+    },
+  ],
   opr_births: [
     {
       // Example: Sourcer Default
@@ -463,12 +546,97 @@ const dataStringSentencePatterns = {
       paramKeys: ["name", "eventDate"],
     },
   ],
-  opr_marriages: [],
-  opr_deaths: [],
-  cr_baptisms: [],
-  cr_banns: [],
-  cr_burials: [],
-  cr_other: [],
+  opr_marriages: [
+    {
+      // Example: Sourcer Default
+      // Christane McGregor marriage to Robert Wright on or after 2 Jul 1668 in Buchanan, Stirlingshire, Scotland.
+      // Note: in the section (?:on or after |on |in ), "on or after " needs to come before "on "
+      regex: /^(.*) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
+    },
+  ],
+  opr_deaths: [
+    {
+      // Example: Sourcer Default, age, one parent
+      // John Gibson, son of James Galloway Gibson, death or burial (died age 0) on 24 May 1839 in Glasgow, Lanarkshire, Scotland
+      regex:
+        /^(.*), (?:son|daughter|child) of (.*), death or burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "parentName", "age", "eventDate", "eventPlace"],
+    },
+    {
+      // Example: Sourcer Default, one parent
+      // Elizabeth Campbell, daughter of Colny Campbell, death or burial on 8 Mar 1647 in Dumbarton, Dunbartonshire, Scotland.
+      regex:
+        /^(.*), (?:son|daughter|child) of (.*), death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "parentName", "eventDate", "eventPlace"],
+    },
+    {
+      // Example: Sourcer Default, age no parent
+      // John Burns death or burial (died age 96) on 26 Feb 1839 in Glasgow, Lanarkshire, Scotland
+      regex: /^(.*) death or burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "age", "eventDate", "eventPlace"],
+    },
+    {
+      // Example: Sourcer Default, no parent
+      // James Fraser death or burial on 16 Aug 1685 in Aberdeen, Aberdeenshire, Scotland
+      regex: /^(.*) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "eventDate", "eventPlace"],
+    },
+    {
+      // Example: Scotland Project
+      // death of John Burns, 3 March 1839
+      regex: /^death of (.*), ([0-9a-z ]+).*$/,
+      paramKeys: ["name", "eventDate"],
+    },
+  ],
+  cr_baptisms: [
+    {
+      // Example: Sourcer Default
+      // Agnes White baptism on 29 Mar 1839 (born 24 Jan 1839), daughter of Alexander White & Saragh McDonnol, in St Mirin's, Paisley, Renfrewshire, Scotland
+      regex:
+        /^(.*) baptism (?:on |in )?([0-9a-z ]+) \(born (.*)\), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+),? (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "eventDate", "birthDate", "fatherName", "motherName", "eventPlace"],
+    },
+    {
+      // Example: Sourcer Default no dob
+      // Agnes White baptism on 29 Mar 1839, daughter of Alexander White & Saragh McDonnol, in St Mirin's, Paisley, Renfrewshire, Scotland
+      regex:
+        /^(.*) baptism (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+),? (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "eventDate", "fatherName", "motherName", "eventPlace"],
+    },
+    {
+      // Example: Scotland Project
+      // William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.
+      regex:
+        /^(.*), birth ([0-9a-z ]+) and baptism ([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+)$/,
+      paramKeys: ["name", "birthDate", "eventDate", "fatherName", "motherName"],
+    },
+  ],
+  cr_banns: [
+    {
+      // Example: Sourcer Default
+      // James Ronald McGregor marriage to Ruth Margaret Gauld on or after 26 Nov 1941 in St Mary's with St Peter's, Aberdeen, Aberdeenshire, Scotland.
+      regex: /^(.*) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
+    },
+    {
+      // Example: Scotland Project
+      // marriage or banns for Michael McBride and Mary McSloy, 21 Jul 1862
+      regex: /^marriage or banns for (.*) and (.*), ([0-9a-z ]+).*$/,
+      paramKeys: ["name", "spouseName", "eventDate"],
+    },
+  ],
+  cr_burials: [
+    {
+      // Example: Sourcer Default, age
+      // Ruth Fraser burial (died age 0) on 3 Dec 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland
+      regex: /^(.*) burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "age", "eventDate", "eventPlace"],
+    },
+  ],
+  cr_other: [
+    // Sourcer uses data list
+  ],
   ch3_baptisms: [],
   ch3_banns: [],
   ch3_burials: [],
@@ -506,8 +674,10 @@ const dataStringSentencePatterns = {
 function getScotpRecordTypeFromSourceTitle(sourceTitle) {
   // first check default Sourcer titles
   for (let defaultSourcerTitle of defaultSourcerTitles) {
-    if (sourceTitle == defaultSourcerTitle.title.toLowerCase()) {
-      return defaultSourcerTitle.recordType;
+    for (let title of defaultSourcerTitle.titles) {
+      if (sourceTitle == title.toLowerCase()) {
+        return defaultSourcerTitle.recordType;
+      }
     }
   }
 
@@ -523,9 +693,11 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
   }
 
   for (let scotlandProjectTitle of scotlandProjectTitles) {
-    let lcTitle = scotlandProjectTitle.title.toLowerCase();
-    if (sourceTitle == lcTitle) {
-      return scotlandProjectTitle.recordType;
+    for (let title of scotlandProjectTitle.titles) {
+      let lcTitle = title.toLowerCase();
+      if (sourceTitle == lcTitle) {
+        return scotlandProjectTitle.recordType;
+      }
     }
   }
 
@@ -587,12 +759,28 @@ function cleanCitation(parsedCitation) {
   return true;
 }
 
+function getRegexForPattern(pattern) {
+  if (pattern.reParts) {
+    let regexSource = /^/.source;
+    for (let i = 0; i < pattern.reParts.length; i++) {
+      regexSource += pattern.reParts[i].source;
+    }
+    regexSource += /$/.source;
+    let regex = new RegExp(regexSource, "");
+    return regex;
+  } else {
+    return pattern.regex;
+  }
+}
+
 function findMatchingCitationPattern(parsedCitation) {
   let text = parsedCitation.cleanText;
 
   for (let index = 0; index < citationPatterns.length; index++) {
     let pattern = citationPatterns[index];
-    if (pattern.regex.test(text)) {
+    let regex = getRegexForPattern(pattern);
+
+    if (regex.test(text)) {
       parsedCitation.matchingPattern = pattern;
       return true;
     }
@@ -608,7 +796,8 @@ function parseUsingPattern(parsedCitation) {
     let key = pattern.paramKeys[i];
     let resultIndex = i + 1;
     let resultString = "$" + resultIndex;
-    let value = text.replace(pattern.regex, resultString);
+    let regex = getRegexForPattern(pattern);
+    let value = text.replace(regex, resultString);
     if (key && value && value != text) {
       value = value.trim();
       if (value.endsWith(".") || value.endsWith(",")) {
@@ -660,6 +849,8 @@ function setName(data, parsedCitation, builder) {
     builder.addSurname(lastName, "exact");
   } else {
     // there is only one name, use may depend on record type
+    // for now assume it is surname
+    builder.addSurname(name, "exact");
   }
 }
 
@@ -744,6 +935,14 @@ function setDates(data, parsedCitation, builder) {
       if (year && year != sourceTitle) {
         eventDate = year;
       }
+    }
+  }
+
+  if (scotpRecordType == "cr_baptisms") {
+    // search actually works off birthDate rather than baptism date
+    if (birthDate) {
+      eventDate = birthDate;
+      birthDate = "";
     }
   }
 
@@ -893,6 +1092,14 @@ function addListValueToData(label, value, parsedCitation, data) {
       }
     }
 
+    const yyyyRegex = /(\d\d\d\d)/;
+    if (yyyyRegex.test(dateString)) {
+      let year = dateString.replace(ddmmyyyyRegex, "$1");
+      if (year) {
+        return year;
+      }
+    }
+
     return "";
   }
 
@@ -916,14 +1123,20 @@ function addListValueToData(label, value, parsedCitation, data) {
         data.eventDate = year;
       }
     }
+  } else if (label == "event date") {
+    let year = getYearFromDate(value);
+    if (year) {
+      data.eventDate = year;
+    }
   } else if (label == "parish") {
+    data.parish = value;
   } else if (label == "year") {
     data.year = value;
   } else if (label == "age at census") {
     data.age = value;
   } else if (label == "rd name") {
     data.rdName = value;
-  } else if (label == "county / city") {
+  } else if (label == "county / city" || label == "county/city") {
     data.countyCity = value;
   }
 }
@@ -1134,6 +1347,9 @@ function buildScotlandsPeopleContextSearchData(lcText) {
     const regexes = [
       /^.*reference number:? ([a-z0-9 \/]+).*$/,
       /^.*reference:? ([a-z0-9 \/]+).*$/,
+      /^.*ref number:? ([a-z0-9 \/]+).*$/,
+      /^.*ref num:? ([a-z0-9 \/]+).*$/,
+      /^.*ref no:? ([a-z0-9 \/]+).*$/,
       /^.*ref:? ([a-z0-9 \/]+).*$/,
     ];
 
@@ -1149,15 +1365,17 @@ function buildScotlandsPeopleContextSearchData(lcText) {
     }
 
     // another way is to look for what this record type would use.
-    let refName = ScotpRecordType.getRecordKey(scotpRecordType, "ref");
-    if (refName) {
-      let lcRefName = refName.toLowerCase();
-      let index = sourceReference.indexOf(lcRefName);
-      if (index != -1) {
-        let remainder = sourceReference.substring(index + lcRefName.length);
-        let num = remainder.replace(/^:? ([a-z0-9 \/]+).*$/, "$1");
-        if (num && num != remainder) {
-          refNum = num;
+    if (!refNum) {
+      let refName = ScotpRecordType.getRecordKey(scotpRecordType, "ref");
+      if (refName) {
+        let lcRefName = refName.toLowerCase();
+        let index = sourceReference.indexOf(lcRefName);
+        if (index != -1) {
+          let remainder = sourceReference.substring(index + lcRefName.length);
+          let num = remainder.replace(/^:? ([a-z0-9 \/]+).*$/, "$1");
+          if (num && num != remainder) {
+            refNum = num;
+          }
         }
       }
     }

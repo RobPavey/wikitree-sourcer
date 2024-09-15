@@ -90,7 +90,24 @@ const regressionData = [
   },
 
   ////////////////////////////////////////////////////////////////////////////////
-  // opr_birth
+  // stat_civilpartnerships
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_stat_civ_part_default",
+    text: `Abigail's marriage to Morera-Pallares was registered in 2021 in the Rosskeen district.<ref> '''Marriage Registration''': "Statutory Register of Civil Partnerships"<br/> National Records of Scotland<br/> [https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/> Abigail Alice Walker marriage to Morera-Pallares registered 2021 in Rosskeen<br/> citing Ref: 195. </ref>`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // stat_dissolutions
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_stat_civ_diss_default",
+    text: `Seonaid was divorced from MacIntosh in 2013 in Perth, Scotland.<ref> '''Divorce''': "Statutory Register of Dissolutions"<br/> National Records of Scotland<br/> [https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/> Seonaid MacNeil Wilson divorce from MacIntosh in 2013 in Perth, Scotland<br/> citing Court Code: 9853; Serial Number: 35. </ref>
+    `,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // opr_births
   ////////////////////////////////////////////////////////////////////////////////
   {
     caseName: "sourcer_opr_birth_default",
@@ -119,6 +136,74 @@ const regressionData = [
   {
     caseName: "scotproj_opr_birth_edit",
     text: `<ref name="OPR William 1">Govan Parish, Church of Scotland, "Old Parish Registers Births and Baptisms" database, National Records of Scotland, ([https://www.scotlandspeople.gov.uk ScotlandsPeople] : accessed 29 May 2024), William Walker birth or baptism 23 Jan 1808, son of Hugh Walker and Ann Young,  citing Ref 20 / 211.</ref>`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // opr_marriages
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_opr_marriage_default",
+    text: `Marriage: "Church of Scotland: Old Parish Registers - Banns and Marriages" National Records of Scotland, Parish Number: 474/ ; Ref: 20 27 ScotlandsPeople Search (accessed 23 June 2022) Christane McGregor marriage to Robert Wright on or after 2 Jul 1668 in Buchanan, Stirlingshire, Scotland.`,
+  },
+  {
+    caseName: "sourcer_opr_marriage_surname_only",
+    text: `Marriage: "Church of Scotland: Old Parish Registers - Banns and Marriages" National Records of Scotland ScotlandsPeople McBain marriage to Anne Richart on or after 16 Sep 1797 in Cromarty, Ross & Cromarty, Scotland citing Parish Number: 061; Ref: 10/370.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // opr_deaths
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_opr_death_default",
+    text: `Death or Burial: "Church of Scotland: Old Parish Registers - Deaths and Burials" National Records of Scotland, Parish Number: 496/ ; Ref: 50 16 ScotlandsPeople Search (accessed 23 June 2022) Elizabeth Campbell, daughter of Colny Campbell, death or burial on 8 Mar 1647 in Dumbarton, Dunbartonshire, Scotland.`,
+  },
+  {
+    caseName: "sourcer_opr_death_default_edit_age_0",
+    text: `John (age 0), son of James Galloway Gibson, died or was buried on 24 May 1839 in Glasgow, Lanarkshire, Scotland.<ref> '''Death or Burial''': "Church of Scotland: Old Parish Registers - Deaths and Burials"<br/> National Records of Scotland<br/> [https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/> John Gibson, son of James Galloway Gibson, death or burial (died age 0) on 24 May 1839 in Glasgow, Lanarkshire, Scotland<br/> citing Parish Number: 644/1; Ref: 550/172. </ref>`,
+  },
+  {
+    caseName: "scotproj_opr_death",
+    text: `Glasgow Parish, Church of Scotland, "Old Parish Registers Death and Burials" database with images, National Records of Scotland, (ScotlandsPeople : image accessed 29 May 2024), death of John Burns, 3 March 1839, citing Ref No: 550 / 160.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // cr_baptisms
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_cr_baptism_default",
+    text: `Baptism: "Catholic Parish Registers - Births and Baptisms" National Records of Scotland, Parish: Paisley, St Mirin's ScotlandsPeople Search (accessed 23 June 2022) Agnes White baptism on 29 Mar 1839 (born 24 Jan 1839), daughter of Alexander White & Saragh McDonnol, in St Mirin's, Paisley, Renfrewshire, Scotland.`,
+  },
+  {
+    caseName: "scotproj_cr_baptism",
+    text: `St John's, Port Glasgow, "Catholic Registers Births and Baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk : accessed 21 Feb 2021), William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // cr_banns
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_cr_banns_default",
+    text: `Marriage: "Catholic Parish Registers - Marriages" National Records of Scotland, Parish: Aberdeen, St Mary's with St Peter's ScotlandsPeople Search (accessed 23 June 2022) James Ronald McGregor marriage to Ruth Margaret Gauld on or after 26 Nov 1941 in St Mary's with St Peter's, Aberdeen, Aberdeenshire, Scotland.`,
+  },
+  {
+    caseName: "scotproj_cr_banns",
+    text: `St John's, Port Glasgow, "Catholic Registers Banns and Marriages " database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk : accessed 29 May 2024), marriage or banns for Michael McBride and Mary McSloy, 21 Jul 1862, citing reference number: MP 9 1 4 1 69.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // cr_burials
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_cr_burial_default",
+    text: `Burial: "Catholic Parish Registers - Deaths, Burials and Funerals" National Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery ScotlandsPeople Search (accessed 23 June 2022) Ruth Fraser burial (died age 0) on 3 Dec 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // cr_other
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_cr_other_default",
+    text: `Barbara was recorded in a church event in 1855 at St Mary's, Eskadale, Inverness-shire, Scotland.<ref> '''Other Church Event''': "Catholic Parish Registers - Other Events"<br/> National Records of Scotland<br/> [https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/> Surname: FRASER; Forename: BARBARA; Gender: Female; Event: Communicant; Event Date: 1855; Parish: Eskadale, St Mary's; County/City: Inverness<br/> citing Parish: Eskadale, St Mary's. </ref>`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

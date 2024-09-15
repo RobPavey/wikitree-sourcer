@@ -50,8 +50,8 @@ function getRefRecordKey(recordType) {
     stat_marriages: { ref: "Ref" },
     stat_divorces: { ref: "Serial Number" },
     stat_deaths: { ref: "Ref" },
-    civilpartnership: { ref: "RD/EntryNumber" },
-    dissolutions: { ref: "Serial Number" },
+    stat_civilpartnerships: { ref: "Ref" },
+    stat_dissolutions: { ref: "Serial Number" },
     ///////////////////// Church Registers ///////////////////////
     opr_births: { ref: "Ref" },
     opr_marriages: { ref: "Ref" },
@@ -178,6 +178,16 @@ async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
           if (!isFromUrl) {
             let cleanRefValue = refValue.replace(/\s*\/\s*/g, "/");
             let cleanText = text.replace(/\s*\/\s*/g, "/");
+            if (cleanText == cleanRefValue) {
+              // we have found the row to highlight
+              highlightRow(rowElement);
+              return;
+            }
+
+            // On some old Sourcer sitations we have some thing like "20 27" when what is actually
+            // displayed in the search results is "20 / 27"
+            cleanRefValue = refValue.replace(/\s*\/\s*/g, " ");
+            cleanText = text.replace(/\s*\/\s*/g, " ");
             if (cleanText == cleanRefValue) {
               // we have found the row to highlight
               highlightRow(rowElement);

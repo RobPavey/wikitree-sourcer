@@ -1,0 +1,52 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-other/cr-other",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "barbara"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "fraser"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-2",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1855"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1855"
+      },
+      {
+        "fieldKey": "edit-search-params-str-parish-congregation",
+        "type": "multipleSelect",
+        "values": [
+          "MP|21|ESKADALE, ST MARY'S"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  }
+}

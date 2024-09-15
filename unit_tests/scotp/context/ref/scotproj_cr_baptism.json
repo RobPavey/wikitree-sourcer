@@ -1,11 +1,11 @@
 {
   "formData": {
-    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "urlPart": "church-registers/church-births-baptisms/cr-baptisms",
     "fields": [
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "peter"
+        "value": "william"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "connan"
+        "value": "mcatasny"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -23,26 +23,14 @@
         "value": "exact"
       },
       {
-        "fieldKey": "edit-search-params-nrs-sex-m",
-        "type": "radio",
-        "value": true
-      },
-      {
         "fieldKey": "edit-search-params-nrs-year-field-year-from",
         "type": "text",
-        "value": "1823"
+        "value": "1867"
       },
       {
         "fieldKey": "edit-search-params-nrs-year-field-year-to",
         "type": "text",
-        "value": "1823"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-rd-name",
-        "type": "multipleSelect",
-        "values": [
-          "MONZIE_MONZIE (PERTH)"
-        ]
+        "value": "1867"
       }
     ]
   },
@@ -51,7 +39,7 @@
       {
         "fieldKey": "edit-search-params-nrs-parent-one",
         "type": "text",
-        "value": "james connan"
+        "value": "william mcatasny"
       },
       {
         "fieldKey": "edit-search-params-nrs-parent-one",
@@ -61,7 +49,7 @@
       {
         "fieldKey": "edit-search-params-nrs-parent-two",
         "type": "text",
-        "value": "mary mcgregor"
+        "value": "margaret mcilveny"
       },
       {
         "fieldKey": "edit-search-params-nrs-parent-two",
@@ -69,7 +57,5 @@
         "value": "exact"
       }
     ]
-  },
-  "refNum": "20/9",
-  "recordType": "opr_births"
+  }
 }

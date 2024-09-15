@@ -173,7 +173,7 @@ const scotpRecordTypes = {
     dates: { from: 2005, to: 0 },
     eventClass: "marriage",
     recordKeys: {
-      ref: "RD/EntryNumber",
+      ref: "Ref",
       rdName: "RD Name",
       spouseSurname: "Partner Surname",
     },

@@ -36,6 +36,13 @@
         "fieldKey": "edit-search-params-nrs-year-field-year-to",
         "type": "text",
         "value": "1823"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-rd-name",
+        "type": "multipleSelect",
+        "values": [
+          "MONZIE_MONZIE (PERTH)"
+        ]
       }
     ]
   },

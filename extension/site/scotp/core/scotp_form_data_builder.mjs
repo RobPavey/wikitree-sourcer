@@ -175,8 +175,18 @@ class ScotpFormDataBuilder {
   }
 
   addAgeRange(from, to) {
-    this.addTextField("edit-search-params-hss-age-age-from", from);
-    this.addTextField("edit-search-params-hss-age-age-to", to);
+    // goes in refine data now (at least it does for cr_burials)
+    const recordTypesUsingRefine = ["cr_burials"];
+    const addToRefine = recordTypesUsingRefine.includes(this.recordType);
+
+    // there is a different id when in refine
+    if (addToRefine) {
+      this.addTextField("edit-search-params-nrs-age-age-from", from, addToRefine);
+      this.addTextField("edit-search-params-nrs-age-age-to", to, addToRefine);
+    } else {
+      this.addTextField("edit-search-params-hss-age-age-from", from, addToRefine);
+      this.addTextField("edit-search-params-hss-age-age-to", to, addToRefine);
+    }
   }
 
   addAge(age) {

@@ -1,0 +1,52 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-dissolutions",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "seonaid macneil"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "wilson"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-dissolution-year-year-from",
+        "type": "text",
+        "value": "2013"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-dissolution-year-year-to",
+        "type": "text",
+        "value": "2013"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-ptsurname",
+        "type": "text",
+        "value": "macintosh"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-ptsurname",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "35",
+  "recordType": "stat_dissolutions"
+}
