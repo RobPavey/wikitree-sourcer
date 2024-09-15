@@ -194,8 +194,10 @@ class ScotpFormDataBuilder {
       sex = useNumber ? "2" : "f";
     }
 
-    let fieldId = "edit-search-params-nrs-sex-" + sex;
-    this.addRadioButtonField(fieldId, true);
+    if (sex) {
+      let fieldId = "edit-search-params-nrs-sex-" + sex;
+      this.addRadioButtonField(fieldId, true);
+    }
   }
 
   addParentName(string, searchOption) {

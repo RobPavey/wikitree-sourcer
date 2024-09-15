@@ -1,0 +1,52 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-divorces",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "margaret thomso"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "o'connor"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-divorce-year-year-from",
+        "type": "text",
+        "value": "2010"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-divorce-year-year-to",
+        "type": "text",
+        "value": "2010"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "text",
+        "value": "mcclounie"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "1421",
+  "recordType": "stat_divorces"
+}

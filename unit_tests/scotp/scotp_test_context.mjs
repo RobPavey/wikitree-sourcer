@@ -51,6 +51,43 @@ const regressionData = [
     caseName: "sourcer_stat_births_edit_citing",
     text: `Helen's birth was registered in 1888 in the Anderston district.<ref>'''Birth Registration''': "Statutory Register of Births", database, National Records of Scotland, [https://www.scotlandspeople.gov.uk/ ScotlandsPeople], Helen McCall A'Hara birth registered 1888 in Anderston, mother's maiden name McCall; citing Ref: 644/10/356.</ref>`,
   },
+  {
+    caseName: "scotproj_stat_births",
+    text: `Scotland, "Statutory Registers - Births" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024), James Menzies Wood, mother's MS Wright, M, 1872, Blythswood; citing Reference Number: 644 / 6 / 92.
+    `,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // stat_marriages
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_stat_marriages_default",
+    text: `Euphemia's marriage to John McBride was registered in 1856 in the Greenock Old or West district.<ref> '''Marriage Registration''': "Statutory Register of Marriages"<br/> National Records of Scotland, Ref: 564/3/44<br/> [https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/> Euphemia Lamont marriage to John McBride registered 1856 in Greenock Old or West. </ref>`,
+  },
+  {
+    caseName: "scotproj_stat_marriages",
+    text: `Scotland, "Statutory Registers - Marriages" database, National Records of Scotland, (ScotlandsPeople :accessed 15 Nov 2023), Euphemia Lamont, and John McBride, 1856, Greenock Old or West; citing Reference Number: 564 / 3 / 44.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // stat_divorces
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_stat_divorces_default",
+    text: `Divorce: "Statutory Register of Divorces" National Records of Scotland, Court Code: 9772; Serial Number: 1421 ScotlandsPeople Margaret Thomso O'Connor divorce from McClounie in 2010 in Hamilton, Scotland.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // stat_deaths
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_stat_deaths_default",
+    text: `Death Registration: "Statutory Register of Deaths" National Records of Scotland, Ref: 603/213 ScotlandsPeople Catherine Aagesen death registered 1976 in Glasgow, Martha St (age 85, mother's maiden name McFee).`,
+  },
+  {
+    caseName: "scotproj_stat_deaths",
+    text: `"Statutory Registers - Deaths" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024) John Stewart, age 47, Male, 1908, Paisley; citing Reference Number: 573 / 1 / 160.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // opr_birth

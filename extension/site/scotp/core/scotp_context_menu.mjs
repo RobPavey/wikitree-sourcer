@@ -38,14 +38,17 @@ import { ScotpFormDataBuilder } from "./scotp_form_data_builder.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
-// NOTE: still some inconsistencies in how I test for the optional accessed date
-
+// NOTE: All patterns try to handle the optional accessed date in all three options
+// This non-capturing group should match all possibilities
+// (?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )
 const citationPatterns = [
   {
     // Example: Sourcer different order due to "Place the source reference data" option
     // "scotland census, 1851", database, national records of scotland, scotlandspeople, donald mckay (13) in lairg registration district in sutherland, scotland; citing ref: 053/ 1/ 6.
+    // Another example fro Scotland project:
+    // "Statutory Registers - Deaths" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024) John Stewart, age 47, Male, 1908, Paisley; citing Reference Number: 573 / 1 / 160.
     regex:
-      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?scotlandspeople(?: search)? ?\(?(?:accessed [^\)]+\))?,? (.*);? citing (.*)$/,
+      /^"([^"]+)",?(?: database)?,? ([^(\[]*),? ?\(?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/,
     paramKeys: ["sourceTitle", "database", "dataString", "sourceReference"],
   },
   {
@@ -55,14 +58,15 @@ const citationPatterns = [
     // "Statutory Register of Births", database, National Records of Scotland, [https://www.scotlandspeople.gov.uk/ ScotlandsPeople], Helen McCall A'Hara birth registered 1888 in Anderston, mother's maiden name McCall; citing Ref: 644/10/356.
     // "Church of Scotland: Old Parish Registers - Births and Baptisms", database, National Records of Scotland, ([https://www.scotlandspeople.gov.uk/ ScotlandsPeople] : accessed 23 June 2022), Peter Connan born or baptised on 1 Jun 1823, son of James Connan & Mary McGregor, in Monzie, Perthshire, Scotland; citing Parish Number 382/ , Ref 20 9.
     regex:
-      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: \:? ?\(?accessed [^\)]+\),|,) (.*);? citing (.*)$/,
+      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/,
     paramKeys: ["sourceTitle", "database", "dataString", "sourceReference"],
   },
   {
     // Example: Sourcer Default order
     // This handles all three values of the "Add an accessed date to citation" option
     // "church of scotland: old parish registers - births and baptisms" national records of scotland, parish number: 382/ ; ref: 20 9 scotlandspeople search (accessed 23 june 2022) peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland.
-    regex: /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?scotlandspeople(?: search)? ?\(?(?:accessed [^\)]+\))?,? (.*)$/,
+    regex:
+      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*)$/,
     paramKeys: ["sourceTitle", "sourceReference", "dataString"],
   },
   {
@@ -70,22 +74,23 @@ const citationPatterns = [
     // "scotland census, 1851", national records of scotland, ref: 547/ 1/ 35, [https://www.scotlandspeople.gov.uk/ scotlandspeople] (accessed 13 september 2024), surname mckay, forename donald, year 1851, gender m, age at census 11, rd name portnahaven, county / city argyll.
     // "scotland census, 1851", database, national records of scotland, ref: 053/ 1/ 6, [https://www.scotlandspeople.gov.uk/ scotlandspeople], donald mckay (13) in lairg registration district in sutherland, scotland.
     regex:
-      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\],? ?\(?(?:accessed [^\)]+\))?,? (.*)$/,
+      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*)$/,
     paramKeys: ["sourceTitle", "sourceReference", "dataString"],
   },
   {
     // Example: Scotland Project
     // Sometimes they have the parish or country name before the source citation
     // govan parish, church of scotland, "old parish registers births and baptisms" database, national records of scotland, (scotlandspeople : accessed 29 may 2024), william walker birth or baptism 23 jan 1808, son of hugh walker and ann young, citing ref 20 / 211.
+    // Scotland, "Statutory Registers - Marriages" database, National Records of Scotland, (ScotlandsPeople :accessed 15 Nov 2023), Euphemia Lamont, and John McBride, 1856, Greenock Old or West; citing Reference Number: 564 / 3 / 44.
     regex:
-      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(? ?scotlandspeople(?: search)? : accessed [^\)]+\),? (.*) citing (.*)$/,
+      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(? ?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )?(.*) citing (.*)$/,
     paramKeys: ["parish", "sourceTitle", "database", "dataString", "sourceReference"],
   },
   {
     // Example: Scotland Project edit mode
     // govan parish, church of scotland, "old parish registers births and baptisms" database, national records of scotland, ([https://www.scotlandspeople.gov.uk scotlandspeople] : accessed 29 may 2024), william walker birth or baptism 23 jan 1808, son of hugh walker and ann young, citing ref 20 / 211.
     regex:
-      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(?\[https\:\/\/www\.scotlandspeople\.gov\.uk scotlandspeople(?: search)?\] : accessed [^\)]+\),? (.*) citing (.*)$/,
+      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(?\[https\:\/\/www\.scotlandspeople\.gov\.uk scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*) citing (.*)$/,
     paramKeys: ["parish", "sourceTitle", "database", "dataString", "sourceReference"],
   },
 ];
@@ -377,15 +382,54 @@ const scotlandProjectTitles = [
 const dataStringSentencePatterns = {
   stat_births: [
     {
-      // Example: Sourcer Default
+      // Sourcer generated. Example:
       // Helen McCall A'Hara birth registered 1888 in Anderston, mother's maiden name McCall
       regex: /^(.*) birth registered ([0-9]+) in (.*), mother's maiden name (.*)$/,
       paramKeys: ["name", "eventDate", "rdName", "mmn"],
     },
+    {
+      // Scotland Project. Example:
+      // James Menzies Wood, mother's MS Wright, M, 1872, Blythswood
+      regex: /^(.*), mother's ms ([^,]+), (m|f), (\d\d\d\d), ([^;]+).*$/,
+      paramKeys: ["name", "mmn", "gender", "eventDate", "rdName"],
+    },
   ],
-  stat_marriages: [],
-  stat_divorces: [],
-  stat_deaths: [],
+  stat_marriages: [
+    {
+      // Sourcer generated. Example:
+      // Euphemia Lamont marriage to John McBride registered 1856 in Greenock Old or West.
+      regex: /^(.*) marriage to (.+) registered (\d\d\d\d) in ([^;]+).*$/,
+      paramKeys: ["name", "spouseName", "eventDate", "rdName"],
+    },
+    {
+      // Scotland Project. Example:
+      // Euphemia Lamont, and John McBride, 1856, Greenock Old or West
+      regex: /^(.*),? and (.+), (\d\d\d\d), ([^;]+).*$/,
+      paramKeys: ["name", "spouseName", "eventDate", "rdName"],
+    },
+  ],
+  stat_divorces: [
+    {
+      // Sourcer generated. Example:
+      // Margaret Thomso O'Connor divorce from McClounie in 2010 in Hamilton, Scotland.
+      regex: /^(.*) divorce from (.+) in (\d\d\d\d) in ([^;]+).*$/,
+      paramKeys: ["name", "spouseLastName", "eventDate", "court"],
+    },
+  ],
+  stat_deaths: [
+    {
+      // Sourcer generated. Example:
+      // Catherine Aagesen death registered 1976 in Glasgow, Martha St (age 85, mother's maiden name McFee).
+      regex: /^(.*) death registered (\d\d\d\d) in ([^\(;]+)\(age ([^,]+), mother's maiden name ([^\)]+)\).*$/,
+      paramKeys: ["name", "eventDate", "rdName", "age", "mmn"],
+    },
+    {
+      // Scotland Project. Example:
+      // John Stewart, age 47, Male, 1908, Paisley
+      regex: /^(.*), age ([^,]+), (male|female|m|f), (\d\d\d\d), (.*)$/,
+      paramKeys: ["name", "age", "gender", "eventDate", "rdName"],
+    },
+  ],
   stat_civilpartnerships: [],
   stat_dissolutions: [],
   opr_births: [
@@ -546,7 +590,8 @@ function cleanCitation(parsedCitation) {
 function findMatchingCitationPattern(parsedCitation) {
   let text = parsedCitation.cleanText;
 
-  for (let pattern of citationPatterns) {
+  for (let index = 0; index < citationPatterns.length; index++) {
+    let pattern = citationPatterns[index];
     if (pattern.regex.test(text)) {
       parsedCitation.matchingPattern = pattern;
       return true;
@@ -634,6 +679,46 @@ function setParents(data, parsedCitation, builder) {
     let mmn = data.mmn;
     if (mmn) {
       builder.addMothersMaidenName(mmn, searchOption);
+    }
+  }
+}
+
+function setSpouse(data, parsedCitation, builder) {
+  let scotpRecordType = parsedCitation.scotpRecordType;
+
+  if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.spouse)) {
+    let spouseName = data.spouseName;
+    const searchOption = "exact";
+
+    if (spouseName) {
+      let numWordsInName = StringUtils.countWords(spouseName);
+      if (numWordsInName > 1) {
+        let forenames = StringUtils.getWordsBeforeLastWord(spouseName);
+        let lastName = StringUtils.getLastWord(spouseName);
+
+        if (forenames && forenames.endsWith(".")) {
+          forenames = forenames.substring(0, forenames.length - 1);
+        }
+
+        if (forenames) {
+          builder.addSpouseForename(forenames, searchOption);
+        }
+
+        if (lastName) {
+          builder.addSpouseSurname(lastName, searchOption);
+        }
+      } else {
+        // there is only one name, use may depend on record type
+      }
+
+      // some record types use full name instead of separate names
+      let fullName = spouseName;
+
+      if (fullName) {
+        builder.addSpouseFullName(fullName, searchOption);
+      }
+    } else if (data.spouseLastName) {
+      builder.addSpouseSurname(data.spouseLastName, searchOption);
     }
   }
 }
@@ -776,7 +861,14 @@ function setGender(data, parsedCitation, builder) {
   }
 
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.gender)) {
-    builder.addGender(data.gender);
+    let gender = data.gender;
+    if (gender == "m") {
+      gender = "male";
+    } else if (gender == "f") {
+      gender = "female";
+    }
+
+    builder.addGender(gender);
   }
 }
 
@@ -786,6 +878,7 @@ function addDataToBuilder(parsedCitation, data, builder) {
   setAge(data, parsedCitation, builder);
   setDates(data, parsedCitation, builder);
   setParents(data, parsedCitation, builder);
+  setSpouse(data, parsedCitation, builder);
   setPlace(data, parsedCitation, builder);
 }
 
@@ -808,11 +901,7 @@ function addListValueToData(label, value, parsedCitation, data) {
   } else if (label == "forename") {
     data.forename = value;
   } else if (label == "gender") {
-    if (value == "m" || value == "male") {
-      data.gender = "male";
-    } else if (value == "f" || value == "female") {
-      data.gender = "female";
-    }
+    data.gender = value;
   } else if (label == "parents/other details") {
     let parents = value.split("/");
     if (parents.length == 2) {
@@ -1055,6 +1144,20 @@ function buildScotlandsPeopleContextSearchData(lcText) {
         if (num && num != sourceReference) {
           refNum = num;
           break;
+        }
+      }
+    }
+
+    // another way is to look for what this record type would use.
+    let refName = ScotpRecordType.getRecordKey(scotpRecordType, "ref");
+    if (refName) {
+      let lcRefName = refName.toLowerCase();
+      let index = sourceReference.indexOf(lcRefName);
+      if (index != -1) {
+        let remainder = sourceReference.substring(index + lcRefName.length);
+        let num = remainder.replace(/^:? ([a-z0-9 \/]+).*$/, "$1");
+        if (num && num != remainder) {
+          refNum = num;
         }
       }
     }
