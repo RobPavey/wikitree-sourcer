@@ -928,7 +928,6 @@ async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
       // content script in the new tab/window
       await chrome.storage.local.set({ scotpSearchData: scotpSearchData });
 
-      let hasRefineData = false;
       if (refineData && refineData.fields.length > 0) {
         const scotpSearchRefineData = {
           timeStamp: Date.now(),
@@ -936,14 +935,12 @@ async function openScotlandsPeopleGivenSearchData(tab, options, searchData) {
           formData: refineData,
         };
         await chrome.storage.local.set({ scotpSearchRefineData: scotpSearchRefineData });
-        hasRefineData = true;
       }
 
       if (refNum) {
         const scotpSearchRefNumData = {
           timeStamp: Date.now(),
           url: searchUrl,
-          hasRefineData: hasRefineData,
           refNum: refNum,
           recordType: recordType,
         };

@@ -278,9 +278,11 @@ async function doHighlightForRefNumData() {
     //console.log(searchData);
 
     if (searchData) {
-      if (searchData.hasRefineData && !loadedRefineData) {
-        // wait to be called again when the results are refined
-        //console.log("doHighlightForRefNumData: returning because waiting for refine data");
+      // If we found a pending search and submitted form then we will get called again
+      // when the search results of the form come up.
+      if (doingFormSubmit) {
+        // wait to be called again when the results are available
+        //console.log("doHighlightForRefNumData: returning because waiting for form submit");
         return;
       }
 
@@ -295,10 +297,9 @@ async function doHighlightForRefNumData() {
       //console.log("doHighlightForRefNumData: timeStampNow is :" + timeStampNow);
       //console.log("doHighlightForRefNumData: timeSinceSearch is :" + timeSinceSearch);
 
-      if (timeSinceSearch < 10000 && (isSearchResults || searchUrl == document.URL)) {
-        // we are doing a search
-        // wait a bit for search to complete
-        await sleep(400);
+      if (timeSinceSearch < 30000 && (isSearchResults || searchUrl == document.URL)) {
+        // wait a  short time in case table not fully populated
+        await sleep(200);
         doHighlightForRefNumber(searchData.refNum, searchData.recordType, false);
         clearPendingSearch(storageName);
       }
@@ -807,7 +808,7 @@ function doLegacySearch() {
   }
 }
 
-var loadedRefineData = false;
+var doingFormSubmit = false;
 
 async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
@@ -857,10 +858,6 @@ async function checkForPendingSearch() {
     }
 
     let searchData = await getPendingSearch(storageName);
-
-    if (storageName == "scotpSearchRefineData") {
-      loadedRefineData = true;
-    }
 
     if (searchData) {
       //console.log("checkForPendingSearch: got searchData:");
@@ -979,6 +976,7 @@ async function checkForPendingSearch() {
           //console.log("checkForPendingSearch: found formElement:");
           //console.log(formElement);
           // now submit the form to do the search
+          doingFormSubmit = true;
           formElement.submit();
         }
       }
