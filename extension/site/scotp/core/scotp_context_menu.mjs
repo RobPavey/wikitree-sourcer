@@ -545,6 +545,12 @@ const dataStringSentencePatterns = {
       regex: /^(.*) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+).*$/,
       paramKeys: ["name", "eventDate"],
     },
+    {
+      // Example: Found
+      // William Cairns, parents: David Cairns and Margaret Wakinshaw, 8 Sep 1822, Tranent
+      regex: /^(.*), parents:? (.+) and (.+), ([0-9a-z ]+), (.*)$/,
+      paramKeys: ["name", "fatherName", "motherName", "eventDate"],
+    },
   ],
   opr_marriages: [
     {
@@ -552,6 +558,12 @@ const dataStringSentencePatterns = {
       // Christane McGregor marriage to Robert Wright on or after 2 Jul 1668 in Buchanan, Stirlingshire, Scotland.
       // Note: in the section (?:on or after |on |in ), "on or after " needs to come before "on "
       regex: /^(.*) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
+    },
+    {
+      // Example: Found case
+      // David Cairns and Mary Chambers, 6 Dec 1820, Tranent
+      regex: /^(.*) and (.*), ([0-9a-z ]+), (.*)$/,
       paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
     },
   ],
@@ -635,12 +647,49 @@ const dataStringSentencePatterns = {
     },
   ],
   cr_other: [
-    // Sourcer uses data list
+    // Sourcer uses data list for this
   ],
-  ch3_baptisms: [],
-  ch3_banns: [],
-  ch3_burials: [],
-  ch3_other: [],
+  ch3_baptisms: [
+    {
+      // Example: Sourcer Default
+      // Peter Connor baptism on 16 Mar 1854 (born 23 Feb 1854), child of Peter Conner & Jean Sneddon, in Wellwynd Associate, Airdrie, Lanarkshire, Scotland
+      regex:
+        /^(.*) baptism (?:on |in )?([0-9a-z ]+) \(born (.*)\), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+),? (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "eventDate", "birthDate", "fatherName", "motherName", "eventPlace"],
+    },
+    {
+      // Example: Scotland Project
+      // John Rutherford, birth 28 August 1848, baptism 20 November 1850, son of George Rutherford and Isabella Waldie, Parish/Congregation Hawick Free
+      regex:
+        /^(.*), birth ([0-9a-z ]+)(?: and|,) baptism ([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+), (.+)$/,
+      paramKeys: ["name", "birthDate", "eventDate", "fatherName", "motherName", "eventPlace"],
+    },
+  ],
+  ch3_banns: [
+    {
+      // Example: Sourcer Default
+      // John Kay marriage to Hannah Butler Dewar on 3 Jul 1849 in Scotland
+      regex: /^(.*) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
+    },
+  ],
+  ch3_burials: [
+    {
+      // Example: Sourcer Default
+      // Helen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever
+      regex: /^(.*) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)\. Cause of death: (.+)$/,
+      paramKeys: ["name", "eventDate", "eventPlace", "causeOfDeath"],
+    },
+    {
+      // Example: Sourcer Default, no cause of death
+      // Helen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland.
+      regex: /^(.*) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
+      paramKeys: ["name", "eventDate", "eventPlace"],
+    },
+  ],
+  ch3_other: [
+    // Sourcer used list form
+  ],
   census: [
     {
       // Example: Scotland Project
@@ -938,7 +987,7 @@ function setDates(data, parsedCitation, builder) {
     }
   }
 
-  if (scotpRecordType == "cr_baptisms") {
+  if (scotpRecordType == "cr_baptisms" || scotpRecordType == "ch3_baptisms") {
     // search actually works off birthDate rather than baptism date
     if (birthDate) {
       eventDate = birthDate;

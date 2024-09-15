@@ -1,0 +1,52 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-banns-marriages/opr-marriages",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "david"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "cairns"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1820"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1820"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-motherspousename",
+        "type": "text",
+        "value": "mary chambers"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-motherspousename",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "70 105",
+  "recordType": "opr_marriages"
+}

@@ -1,0 +1,50 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-banns-marriages/ch3-banns",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "john"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "kay"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1849"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1849"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spouse-name",
+        "type": "text",
+        "value": "hannah butler dewar"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spouse-name",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  }
+}

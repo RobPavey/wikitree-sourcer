@@ -137,6 +137,11 @@ const regressionData = [
     caseName: "scotproj_opr_birth_edit",
     text: `<ref name="OPR William 1">Govan Parish, Church of Scotland, "Old Parish Registers Births and Baptisms" database, National Records of Scotland, ([https://www.scotlandspeople.gov.uk ScotlandsPeople] : accessed 29 May 2024), William Walker birth or baptism 23 Jan 1808, son of Hugh Walker and Ann Young,  citing Ref 20 / 211.</ref>`,
   },
+  {
+    // found on: https://www.wikitree.com/wiki/Cairns-117 (15 Sep 2024)
+    caseName: "found_opr_birth_1",
+    text: `"Church of Scotland: Old Parish Registers - Births and baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 23 Mar 2023), William Cairns, parents: David Cairns and Margaret Wakinshaw, 8 Sep 1822, Tranent; citing Parish Number 722, Reference Number: 70 42.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // opr_marriages
@@ -148,6 +153,11 @@ const regressionData = [
   {
     caseName: "sourcer_opr_marriage_surname_only",
     text: `Marriage: "Church of Scotland: Old Parish Registers - Banns and Marriages" National Records of Scotland ScotlandsPeople McBain marriage to Anne Richart on or after 16 Sep 1797 in Cromarty, Ross & Cromarty, Scotland citing Parish Number: 061; Ref: 10/370.`,
+  },
+  {
+    // found on: https://www.wikitree.com/wiki/Cairns-117 (15 Sep 2024)
+    caseName: "found_opr_marriage_1",
+    text: `"Church of Scotland: Old Parish Registers - Banns and Marriages" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 23 Mar 2023), David Cairns and Mary Chambers, 6 Dec 1820, Tranent; citing Parish Number 722, Reference Number: 70 105.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -204,6 +214,42 @@ const regressionData = [
   {
     caseName: "sourcer_cr_other_default",
     text: `Barbara was recorded in a church event in 1855 at St Mary's, Eskadale, Inverness-shire, Scotland.<ref> '''Other Church Event''': "Catholic Parish Registers - Other Events"<br/> National Records of Scotland<br/> [https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/> Surname: FRASER; Forename: BARBARA; Gender: Female; Event: Communicant; Event Date: 1855; Parish: Eskadale, St Mary's; County/City: Inverness<br/> citing Parish: Eskadale, St Mary's. </ref>`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // ch3_baptisms
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_ch3_baptism_default",
+    text: `Baptism: "Other Church Registers - Births and Baptisms" National Records of Scotland ScotlandsPeople Search (accessed 23 June 2022) Peter Connor baptism on 16 Mar 1854 (born 23 Feb 1854), child of Peter Conner & Jean Sneddon, in Wellwynd Associate, Airdrie, Lanarkshire, Scotland.`,
+  },
+  {
+    caseName: "scotproj_ch3_baptism",
+    text: `"Church Registers - Other Church Registers Baptisms" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024), John Rutherford, birth 28 August 1848, baptism 20 November 1850, son of George Rutherford and Isabella Waldie, Parish/Congregation Hawick Free.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // ch3_banns
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_ch3_banns_default",
+    text: `Marriage: "Other Church Registers - Marriages" National Records of Scotland ScotlandsPeople Search (accessed 23 June 2022) John Kay marriage to Hannah Butler Dewar on 3 Jul 1849 in Scotland.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // ch3_burials
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_ch3_burial_default",
+    text: `Death or Burial: "Other Church Registers - Deaths and Burials" National Records of Scotland ScotlandsPeople Search (accessed 23 June 2022) Helen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // ch3_other
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_ch3_other_default",
+    text: `'''Other Church Event''': "Other Church Registers - Other Events"<br/> National Records of Scotland<br/> [https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/> Surname: MATHER; Forename: CATHERINE; Event/Description: COMMUNION ROLL; Date of Event: OCTOBER/1837; Parish/Congregation Name: DUNBAR UNITED PRESBYTERIAN. </ref>`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
