@@ -68,6 +68,18 @@ class FreebmdEdReader extends ExtractedDataReader {
     return surname;
   }
 
+  getCorrectlyCasedGivenNames() {
+    let givenNames = this.ed.givenNames;
+    givenNames = NameUtils.convertNameFromAllCapsToMixedCase(givenNames);
+    return givenNames;
+  }
+
+  getCorrectlyCasedRegistrationDistrict() {
+    let rd = this.ed.registrationDistrict;
+    rd = NameUtils.convertNameFromAllCapsToMixedCase(rd);
+    return rd;
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -80,7 +92,10 @@ class FreebmdEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    return this.makeNameObjFromForenamesAndLastName(this.ed.givenNames, this.getCorrectlyCasedSurname());
+    return this.makeNameObjFromForenamesAndLastName(
+      this.getCorrectlyCasedGivenNames(),
+      this.getCorrectlyCasedSurname()
+    );
   }
 
   getEventDateObj() {
@@ -141,7 +156,7 @@ class FreebmdEdReader extends ExtractedDataReader {
   }
 
   getRegistrationDistrict() {
-    return this.ed.registrationDistrict;
+    return this.getCorrectlyCasedRegistrationDistrict();
   }
 
   getSpouses() {

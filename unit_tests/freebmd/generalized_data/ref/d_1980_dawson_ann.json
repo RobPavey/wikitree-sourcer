@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "freebmd",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Watson",
+    "forenames": "Ann Dawson"
+  },
+  "eventDate": {
+    "yearString": "1980",
+    "quarter": 1
+  },
+  "lastNameAtDeath": "Watson",
+  "birthDate": {
+    "dateString": "06 SE 1904"
+  },
+  "deathDate": {
+    "yearString": "1980",
+    "quarter": 1
+  },
+  "registrationDistrict": "Congleton/C",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "35",
+    "page": "0550"
+  },
+  "hasValidData": true
+}
