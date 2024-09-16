@@ -92,6 +92,11 @@ const regressionData = [
     caseName: "scotproj_stat_deaths_corrected",
     text: `Scotland, "Statutory Registers - Deaths," database with images, (ScotlandsPeople : viewed 28 July 2024), image, citing Joseph Sloy, 12 September 2028, corrected entry, West District, Greenock, Renfrewshire, p. 159, item 475, reference number 564/2 475`,
   },
+  {
+    // Found on https://www.wikitree.com/wiki/Rendall-372   (16 Spe 2024)
+    caseName: "found_stat_deaths_1",
+    text: `"Statutory Register of Deaths," database National Records of Scotland (ScotlandsPeople : accessed 24 January 2024) Joan Rendall OR Cooper death registered 1935 in George Square (age 64) citing Ref 685/5/217.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_civilpartnerships
@@ -149,6 +154,12 @@ const regressionData = [
     // found on: https://www.wikitree.com/wiki/Cairns-117 (15 Sep 2024)
     caseName: "found_opr_birth_1",
     text: `"Church of Scotland: Old Parish Registers - Births and baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 23 Mar 2023), William Cairns, parents: David Cairns and Margaret Wakinshaw, 8 Sep 1822, Tranent; citing Parish Number 722, Reference Number: 70 42.`,
+  },
+  {
+    // found on: https://www.wikitree.com/wiki/Wilson-6934 (16 Sep 2024)
+    // had comma after label,  "[database online]"
+    caseName: "found_opr_birth_2",
+    text: `Baptism, "Church of Scotland: Old Parish Registers - Births & Baptisms" [database online], National Records of Scotland, Scotlandspeople, (https://www.scotlandspeople.gov.uk/: accessed 13 May 2024), Willliam Wilson, Parents: James Wilson & Agnes Christie. 1 April 1711, Wemyss, Fife; citing Parish: 459, Reference Number: 20/182.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

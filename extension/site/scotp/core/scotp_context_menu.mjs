@@ -43,23 +43,16 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 // (?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )
 const reParish = /(.*),? ?/;
 const reSourceTitle = /"([^"]+)",?/;
-const reDatabaseLiteral = /(?: database with images| database)?,? ?/;
+const reDatabaseLiteral = /(?: database with images| database| \[?database online\]?)?,? ?/;
 const reWebsiteCreatorOwner = /([^(\[]*),? ?/;
 const reSourceRef = /([^(]*),? ?/;
 const reLinkStart =
-  /\(?(?:scotlandspeople \(https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/;
+  /\(?(?:scotlandspeople,? \(?https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/;
 const reLinkStartEdit = /\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/;
 const reLinkEnd =
   /(?: ?\((?:image )?(?:accessed|viewed) [^\)]+\),? ?| ?\: ?(?:image )?(?:accessed|viewed) [^\)]+\),? ?| |,|, )/;
 const reDataString = /(.*)/;
 const reCitingSourceRef = /;? citing (.*)/;
-
-const reb =
-  /^(.*),? ?"([^"]+)",?(?: database)?,? ?([^(\[]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/;
-const rec =
-  /^(.*) "([^"]+)",?(?: database)?,? ?([^(\[]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/;
-const rel =
-  /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(? ?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )?(.*) citing (.*)$/;
 
 const citationPatterns = [
   {
@@ -449,6 +442,116 @@ const scotlandProjectTitles = [
   },
 ];
 
+// No need to lower case these - that is done in compare
+// These are in same order as scotpRecordTypes
+const otherFoundTitles = [
+  {
+    recordType: "stat_births",
+    titles: [],
+  },
+  {
+    recordType: "stat_marriages",
+    titles: [],
+  },
+  {
+    recordType: "stat_divorces",
+    titles: [],
+  },
+  {
+    recordType: "stat_deaths",
+    titles: [],
+  },
+  {
+    recordType: "stat_civilpartnerships",
+    titles: [],
+  },
+  {
+    recordType: "stat_dissolutions",
+    titles: [],
+  },
+  {
+    recordType: "opr_births",
+    titles: ["Church of Scotland: Old Parish Registers - Births & Baptisms"],
+  },
+  {
+    recordType: "opr_marriages",
+    titles: ["Church of Scotland: Old Parish Registers Banns and Marriages"],
+  },
+  {
+    recordType: "opr_deaths",
+    titles: ["Church of Scotland: Old Parish Registers Death and Burials"],
+  },
+  {
+    recordType: "cr_baptisms",
+    titles: [],
+  },
+  {
+    recordType: "cr_banns",
+    titles: [],
+  },
+  {
+    recordType: "cr_burials",
+    titles: [],
+  },
+  {
+    recordType: "cr_other",
+    titles: [],
+  },
+  {
+    recordType: "ch3_baptisms",
+    titles: [],
+  },
+  {
+    recordType: "ch3_banns",
+    titles: [],
+  },
+  {
+    recordType: "ch3_burials",
+    titles: [],
+  },
+  {
+    recordType: "ch3_other",
+    titles: [], // ??
+  },
+
+  {
+    recordType: "census",
+    titles: [],
+  },
+  {
+    recordType: "census_lds",
+    titles: [],
+  },
+  {
+    recordType: "vr",
+    titles: [],
+  },
+  {
+    recordType: "wills",
+    titles: [],
+  },
+  {
+    recordType: "coa",
+    titles: [],
+  },
+  {
+    recordType: "soldiers_wills",
+    titles: [],
+  },
+  {
+    recordType: "military_tribunals",
+    titles: [],
+  },
+  {
+    recordType: "hie",
+    titles: [],
+  },
+  {
+    recordType: "prison_records",
+    titles: [],
+  },
+];
+
 const dataStringSentencePatterns = {
   stat_births: [
     {
@@ -510,6 +613,12 @@ const dataStringSentencePatterns = {
       // Joseph Sloy, 12 September 2028, corrected entry, West District, Greenock, Renfrewshire, p. 159, item 475, reference number 564/2 475
       regex: /^([^,]+), ([0-9a-z ]+), (.*)$/,
       paramKeys: ["name", "eventDate", "rdName"],
+    },
+    {
+      // Found Example: https://www.wikitree.com/wiki/Rendall-372
+      // Joan Rendall OR Cooper death registered 1935 in George Square (age 64)
+      regex: /^(.*) death registered (\d\d\d\d) in (.*) \(age ([^\)]+)\).*$/,
+      paramKeys: ["name", "eventDate", "rdName", "age"],
     },
   ],
   stat_civilpartnerships: [
@@ -582,7 +691,8 @@ const dataStringSentencePatterns = {
     {
       // Example: Found
       // William Cairns, parents: David Cairns and Margaret Wakinshaw, 8 Sep 1822, Tranent
-      regex: /^(.*), parents:? (.+) and (.+), ([0-9a-z ]+), (.*)$/,
+      // willliam wilson, parents: james wilson & agnes christie. 1 april 1711, wemyss, fife
+      regex: /^(.*), parents:? ([^,\.]+) (?:and|&) ([^,\.]+)(?:,|\.) ([0-9a-z ]+), (.*)$/,
       paramKeys: ["name", "fatherName", "motherName", "eventDate"],
     },
   ],
@@ -864,6 +974,15 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
       let lcTitle = title.toLowerCase();
       if (sourceTitle == lcTitle) {
         return scotlandProjectTitle.recordType;
+      }
+    }
+  }
+
+  for (let otherFoundTitle of otherFoundTitles) {
+    for (let title of otherFoundTitle.titles) {
+      let lcTitle = title.toLowerCase();
+      if (sourceTitle == lcTitle) {
+        return otherFoundTitle.recordType;
       }
     }
   }
