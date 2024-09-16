@@ -49,7 +49,8 @@ const reSourceRef = /([^(]*),? ?/;
 const reLinkStart =
   /\(?(?:scotlandspeople \(https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/;
 const reLinkStartEdit = /\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/;
-const reLinkEnd = /(?: ?\((?:image )?accessed [^\)]+\),? ?| ?\: ?(?:image )?accessed [^\)]+\),? ?| |,|, )/;
+const reLinkEnd =
+  /(?: ?\((?:image )?(?:accessed|viewed) [^\)]+\),? ?| ?\: ?(?:image )?(?:accessed|viewed) [^\)]+\),? ?| |,|, )/;
 const reDataString = /(.*)/;
 const reCitingSourceRef = /;? citing (.*)/;
 
@@ -498,6 +499,18 @@ const dataStringSentencePatterns = {
       regex: /^(.*), age ([^,]+), (male|female|m|f), (\d\d\d\d), (.*)$/,
       paramKeys: ["name", "age", "gender", "eventDate", "rdName"],
     },
+    {
+      // Scotland Project. Example:
+      // John Stewart, age 47, Male, 1908, Paisley
+      regex: /^(.*), age ([^,]+), (male|female|m|f), (\d\d\d\d), (.*)$/,
+      paramKeys: ["name", "age", "gender", "eventDate", "rdName"],
+    },
+    {
+      // Scotland Project. Example of a corrected entry where data and source ref are mushed together
+      // Joseph Sloy, 12 September 2028, corrected entry, West District, Greenock, Renfrewshire, p. 159, item 475, reference number 564/2 475
+      regex: /^([^,]+), ([0-9a-z ]+), (.*)$/,
+      paramKeys: ["name", "eventDate", "rdName"],
+    },
   ],
   stat_civilpartnerships: [
     {
@@ -520,14 +533,21 @@ const dataStringSentencePatterns = {
       // Example: Sourcer Default
       // peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland.
       regex:
-        /^(.*) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+),? (?:in|at|on) (.*)$/,
+        /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+),? (?:in|at|on) (.*)$/,
       paramKeys: ["name", "eventDate", "fatherName", "motherName", "eventPlace"],
     },
     {
       // Example: Scotland Project
       // william walker birth or baptism 23 jan 1808, son of hugh walker and ann young
       regex:
-        /^(.*) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+).*$/,
+        /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+).*$/,
+      paramKeys: ["name", "eventDate", "fatherName", "motherName"],
+    },
+    {
+      // Example: Scotland Project
+      // william walker birth 23 jan 1808, son of hugh walker and ann young
+      regex:
+        /^([^,;:]+) (?:birth|baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+).*$/,
       paramKeys: ["name", "eventDate", "fatherName", "motherName"],
     },
     {
@@ -535,14 +555,28 @@ const dataStringSentencePatterns = {
       // One parent
       // william walker birth or baptism 23 jan 1808, son of hugh walker
       regex:
-        /^(.*) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+).*$/,
+        /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+).*$/,
+      paramKeys: ["name", "eventDate", "fatherName"],
+    },
+    {
+      // Example: Scotland Project
+      // One parent
+      // william walker birth or baptism 23 jan 1808, son of hugh walker
+      regex: /^([^,;:]+) (?:birth|baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+).*$/,
       paramKeys: ["name", "eventDate", "fatherName"],
     },
     {
       // Example: Scotland Project
       // No parents
       // william walker birth or baptism 23 jan 1808
-      regex: /^(.*) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+).*$/,
+      regex: /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+).*$/,
+      paramKeys: ["name", "eventDate"],
+    },
+    {
+      // Example: Scotland Project
+      // No parents
+      // william walker birth or baptism 23 jan 1808
+      regex: /^([^,;:]+) (?:birth|baptism) (?:on |in )?([0-9a-z ]+).*$/,
       paramKeys: ["name", "eventDate"],
     },
     {
@@ -559,6 +593,24 @@ const dataStringSentencePatterns = {
       // Note: in the section (?:on or after |on |in ), "on or after " needs to come before "on "
       regex: /^(.*) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/,
       paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
+    },
+    {
+      // Example: Scotland Project
+      // marriage or banns for James Bell and Elizabeth Arrott 30 Apr 1719
+      regex: /^marriage or banns for ([^0-9]+) (?:and|&) ([^0-9]+) ([0-9a-z ]+).*$/,
+      paramKeys: ["name", "spouseName", "eventDate"],
+    },
+    {
+      // Example: Scotland Project (after reading image)
+      // banns for James Bell and Elizabeth Arrott 30 Apr 1719
+      regex: /^banns for ([^0-9]+) (?:and|&) ([^0-9]+) ([0-9a-z ]+).*$/,
+      paramKeys: ["name", "spouseName", "eventDate"],
+    },
+    {
+      // Example: Scotland Project (after reading image)
+      // marriage of James Bell and Elizabeth Arrott 30 Apr 1719
+      regex: /^marriage of ([^0-9]+) (?:and|&) ([^0-9]+) ([0-9a-z ]+).*$/,
+      paramKeys: ["name", "spouseName", "eventDate"],
     },
     {
       // Example: Found case
@@ -717,6 +769,12 @@ const dataStringSentencePatterns = {
       regex: /^(.*) \(([^,]+)\) (?:in|on|at) (.*)$/,
       paramKeys: ["name", "age", "eventPlace"],
     },
+    {
+      // Example: Sourcer Default
+      // John Stewart, male, age at census 20, Dwelling: 2 Blair Street, Galston, birth place: Galston, Ayr
+      regex: /^([^,]+), (?:female|male), age at census ([^,]+), (.*)$/,
+      paramKeys: ["name", "age", "eventPlace"],
+    },
   ],
   vr: [
     {
@@ -771,6 +829,12 @@ const dataStringSentencePatterns = {
   ],
   prison_records: [
     // Sourcer uses data list
+    {
+      // Example: Scotland Project
+      // Duncan Robertson admitted to prison in 1848, age 16
+      regex: /^(.+) admitted to prison in (\d\d\d\d), age ([^,]+).*$/,
+      paramKeys: ["name", "eventDate", "age"],
+    },
   ],
 };
 
@@ -1373,20 +1437,8 @@ function parseDataList(dataString, parsedCitation, builder) {
   return true;
 }
 
-function parseDataString(parsedCitation, builder) {
-  // first need to determine if it is a sentence or a list
-
-  let dataString = parsedCitation.dataString;
-
-  if (!dataString) {
-    return;
-  }
-
-  dataString = dataString.trim();
-  if (dataString.endsWith(";")) {
-    // this can happen if there is a "; citing " after data string
-    dataString = dataString.substring(0, dataString.length - 1);
-  }
+function parseDataSentence(dataString, parsedCitation, builder) {
+  let data = {};
 
   function cleanDataValue(value) {
     value = value.trim();
@@ -1404,8 +1456,6 @@ function parseDataString(parsedCitation, builder) {
     value = value.trim();
     return value;
   }
-
-  let data = {};
 
   let matchedPattern = false;
   let patterns = dataStringSentencePatterns[parsedCitation.scotpRecordType];
@@ -1429,13 +1479,56 @@ function parseDataString(parsedCitation, builder) {
 
   if (matchedPattern) {
     addDataToBuilder(parsedCitation, data, builder);
-    return;
+    return true;
   }
 
-  // no matched sentence pattern, try a list
-  if (dataString.includes("surname") || dataString.includes("full name")) {
-    if (parseDataList(dataString, parsedCitation, builder)) {
+  return false;
+}
+
+function parseDataString(parsedCitation, builder) {
+  // first need to determine if it is a sentence or a list
+
+  let dataString = parsedCitation.dataString;
+
+  if (dataString) {
+    dataString = dataString.trim();
+    if (dataString.endsWith(";")) {
+      // this can happen if there is a "; citing " after data string
+      dataString = dataString.substring(0, dataString.length - 1);
+    }
+
+    if (parseDataSentence(dataString, parsedCitation, builder)) {
       return;
+    }
+
+    // no matched sentence pattern, try a list
+    if (dataString.includes("surname") || dataString.includes("full name")) {
+      if (parseDataList(dataString, parsedCitation, builder)) {
+        return;
+      }
+    }
+  }
+
+  // sometimes the data got put in the SourceReference e.g. scotproj_stat_deaths_corrected
+  // in that case though it still doesn't find any results as it seems a made up case with a date
+  // of 2028
+  dataString = parsedCitation.sourceReference;
+  if (dataString) {
+    dataString = dataString.trim();
+    if (dataString.endsWith(";")) {
+      // this can happen if there is a "; citing " after data string
+      dataString = dataString.substring(0, dataString.length - 1);
+    }
+
+    if (parseDataSentence(dataString, parsedCitation, builder)) {
+      return;
+    }
+
+    // no matched sentence pattern, try a list
+    if (dataString.includes("surname") || dataString.includes("full name")) {
+      if (parseDataList(dataString, parsedCitation, builder)) {
+        return;
+      }
     }
   }
 }

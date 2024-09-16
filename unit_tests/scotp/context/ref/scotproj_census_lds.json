@@ -1,0 +1,47 @@
+{
+  "formData": {
+    "urlPart": "census-returns/census",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-given-name",
+        "type": "text",
+        "value": "john"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-given-name",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "stewart"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-from",
+        "type": "text",
+        "value": "20"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-to",
+        "type": "text",
+        "value": "20"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1881-lds",
+        "type": "checkbox",
+        "value": true
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "431519",
+  "recordType": "census_lds"
+}

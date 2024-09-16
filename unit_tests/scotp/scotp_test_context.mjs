@@ -88,6 +88,10 @@ const regressionData = [
     caseName: "scotproj_stat_deaths",
     text: `"Statutory Registers - Deaths" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024) John Stewart, age 47, Male, 1908, Paisley; citing Reference Number: 573 / 1 / 160.`,
   },
+  {
+    caseName: "scotproj_stat_deaths_corrected",
+    text: `Scotland, "Statutory Registers - Deaths," database with images, (ScotlandsPeople : viewed 28 July 2024), image, citing Joseph Sloy, 12 September 2028, corrected entry, West District, Greenock, Renfrewshire, p. 159, item 475, reference number 564/2 475`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_civilpartnerships
@@ -136,6 +140,10 @@ const regressionData = [
   {
     caseName: "scotproj_opr_birth_edit",
     text: `<ref name="OPR William 1">Govan Parish, Church of Scotland, "Old Parish Registers Births and Baptisms" database, National Records of Scotland, ([https://www.scotlandspeople.gov.uk ScotlandsPeople] : accessed 29 May 2024), William Walker birth or baptism 23 Jan 1808, son of Hugh Walker and Ann Young,  citing Ref 20 / 211.</ref>`,
+  },
+  {
+    caseName: "scotproj_opr_birth_image",
+    text: `Govan Parish, Church of Scotland, "Old Parish Registers Births and Baptisms" database with images, National Records of Scotland, (ScotlandsPeople : image accessed 29 May 2024), William Walker birth 23 Jan 1808, son of Hugh Walker and Ann Young, citing Ref 20 / 211.`,
   },
   {
     // found on: https://www.wikitree.com/wiki/Cairns-117 (15 Sep 2024)
@@ -280,6 +288,10 @@ const regressionData = [
     caseName: "sourcer_census_lds_default",
     text: `1881 Census: "Scotland Census, 1881 (LDS)" National Records of Scotland ScotlandsPeople Christina Clark Or Pocock (24) at 27 Marshall St, Edinburgh Buccleuch, Edinburgh, Scotland. Born in Turriff, Banff, Scotland citing Ref: 721059.`,
   },
+  {
+    caseName: "scotproj_census_lds",
+    text: `"Census 1881 (LDS)" database, National Records of Scotland, ScotlandsPeople (accessed 29 May 2024), John Stewart, male, age at census 20, Dwelling: 2 Blair Street, Galston, birth place: Galston, Ayr; citing Source: FHL Film 0203597 GRO Ref Volume 593 Enum Dist 10 Page 2, Reference Number: 431519.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // vr
@@ -344,6 +356,10 @@ const regressionData = [
   ////////////////////////////////////////////////////////////////////////////////
   // prison_records
   ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "scotproj_prison_records",
+    text: `Edinburgh Prison, "Prison registers," ScotlandsPeople, database, (https://scotlandspeople.co.uk : accessed 4 August 2024), citing Duncan Robertson admitted to prison in 1848, age 16.`,
+  },
 ];
 
 function testEnabled(parameters, testName) {
