@@ -1,0 +1,30 @@
+{
+  "formData": {
+    "urlPart": "poor-relief/hie",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forenames",
+        "type": "text",
+        "value": "marion"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forenames",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "fraser"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  }
+}

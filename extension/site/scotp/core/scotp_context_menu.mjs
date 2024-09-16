@@ -710,14 +710,68 @@ const dataStringSentencePatterns = {
       paramKeys: ["name", "age", "eventPlace"],
     },
   ],
-  census_lds: [],
-  vr: [],
-  wills: [],
-  coa: [],
-  soldiers_wills: [],
-  military_tribunals: [],
-  hie: [],
-  prison_records: [],
+  census_lds: [
+    {
+      // Example: Sourcer Default
+      // Christina Clark Or Pocock (24) at 27 Marshall St, Edinburgh Buccleuch, Edinburgh, Scotland. Born in Turriff, Banff, Scotland
+      regex: /^(.*) \(([^,]+)\) (?:in|on|at) (.*)$/,
+      paramKeys: ["name", "age", "eventPlace"],
+    },
+  ],
+  vr: [
+    {
+      // Example: Sourcer Default
+      // W J Fraser in 1855 at House No 83 Union Street in the parish of Aberdeen, Scotland
+      regex: /^(.*) (?:in|on) (\d\d\d\d) (?:in|on|at) (.*)$/,
+      paramKeys: ["name", "eventDate", "eventPlace"],
+    },
+  ],
+  wills: [
+    {
+      // Example: Sourcer Default
+      // confirmation of will or testament of robert faireis at dumfries commissary court on 19 oct 1624
+      // Confirmation of inventory for Agnes Fraser at Glasgow Sheriff Court on 18 Apr 1910
+      regex:
+        /^confirmation of (?:will or testament of |will of |inventory for |probate of will of )(.*) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+)$/,
+      paramKeys: ["name", "eventPlace", "eventDate"],
+    },
+    {
+      // Example: Sourcer Default
+      // Confirmation of will of Adelaide Fraser at Inverness Sheriff Court on 2 Feb 1906. Died 2 Jul 1905.
+      regex:
+        /^confirmation of (?:will or testament of |will of |inventory for |probate of will of )(.*) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+)\. died ([0-9a-z ]+)$/,
+      paramKeys: ["name", "eventPlace", "eventDate", "deathDate"],
+    },
+    {
+      // Example: Sourcer Default
+      // Confirmation of inventory for Jane Peffers at Edinburgh Sheriff Court on 25 Jun 1921 (original confirmation on 14 Jun 1921).
+      regex:
+        /^confirmation of (?:will or testament of |will of |inventory for )(.*) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+) \(original confirmation (?:in|on) ([0-9a-z ]+)\).*$/,
+      paramKeys: ["name", "eventPlace", "eventDate", "originalConfDate"],
+    },
+    {
+      // Example: Sourcer Default
+      // Confirmation of inventory for Jane Peffers at Edinburgh Sheriff Court on 25 Jun 1921 (original confirmation on 14 Jun 1921). Died 6 Apr 1921.
+      regex:
+        /^confirmation of (?:will or testament of |will of |inventory for )(.*) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+) \(original confirmation (?:in|on) ([0-9a-z ]+)\)\. died ([0-9a-z ]+)$/,
+      paramKeys: ["name", "eventPlace", "eventDate", "originalConfDate", "deathDate"],
+    },
+  ],
+  coa: [
+    // Sourcer uses data list
+  ],
+  soldiers_wills: [
+    // Sourcer uses data list
+  ],
+  military_tribunals: [
+    // Sourcer uses data list
+  ],
+  hie: [
+    // Sourcer uses data list
+  ],
+  prison_records: [
+    // Sourcer uses data list
+  ],
 };
 
 function getScotpRecordTypeFromSourceTitle(sourceTitle) {
@@ -881,12 +935,49 @@ function setName(data, parsedCitation, builder) {
   }
 
   if (scotpRecordType == "coa") {
-    builder.addFullName(name, "exact");
+    builder.addFullName(name, "fuzzy");
     return;
   }
 
   let numWordsInName = StringUtils.countWords(name);
   if (numWordsInName > 1) {
+    if (numWordsInName > 2 && name.includes(" or ")) {
+      // this handles the cases like "Christina Clark Or Pocock"
+      let nameParts = name.split(" ");
+      let newNameParts = [];
+      for (let i = 0; i < nameParts.length; i++) {
+        let namePart = nameParts[i];
+        if (i < nameParts.length - 2 && nameParts[i + 1] == "or") {
+          let newNamePart = nameParts[i] + " or " + nameParts[i + 2];
+          newNameParts.push(newNamePart);
+          i += 2;
+        } else {
+          newNameParts.push(namePart);
+        }
+      }
+
+      if (newNameParts.length > 1) {
+        let forenames = newNameParts[0];
+        let lastName = newNameParts[newNameParts.length - 1];
+
+        if (newNameParts.length > 2) {
+          for (let i = 1; i < newNameParts.length - 1; i++) {
+            forenames += " " + newNameParts[i];
+          }
+        }
+
+        if (forenames && forenames.endsWith(".")) {
+          forenames = forenames.substring(0, forenames.length - 1);
+        }
+
+        builder.addForename(forenames, "exact");
+        builder.addSurname(lastName, "exact");
+        return;
+      } else {
+        builder.addSurname(newNameParts[0], "exact");
+        return;
+      }
+    }
     let forenames = StringUtils.getWordsBeforeLastWord(name);
     let lastName = StringUtils.getLastWord(name);
 
@@ -992,6 +1083,15 @@ function setDates(data, parsedCitation, builder) {
     if (birthDate) {
       eventDate = birthDate;
       birthDate = "";
+    }
+  }
+
+  // For coa it could be of the form 27/11/1899
+  const ddmmyyyRegex = /\d\d\/\d\d\/(\d\d\d\d)/;
+  if (ddmmyyyRegex.test(eventDate)) {
+    let year = eventDate.replace(ddmmyyyRegex, "$1");
+    if (year && year != eventDate) {
+      eventDate = year;
     }
   }
 
@@ -1154,8 +1254,10 @@ function addListValueToData(label, value, parsedCitation, data) {
 
   if (label == "surname") {
     data.surname = value;
-  } else if (label == "forename") {
+  } else if (label == "forename" || label == "forenames") {
     data.forename = value;
+  } else if (label == "full name") {
+    data.name = value;
   } else if (label == "gender") {
     data.gender = value;
   } else if (label == "parents/other details") {
@@ -1172,20 +1274,24 @@ function addListValueToData(label, value, parsedCitation, data) {
         data.eventDate = year;
       }
     }
-  } else if (label == "event date") {
+  } else if (label == "event date" || label == "date of appeal" || label == "departure date") {
     let year = getYearFromDate(value);
     if (year) {
       data.eventDate = year;
     }
   } else if (label == "parish") {
     data.parish = value;
-  } else if (label == "year") {
+  } else if (label == "court") {
+    data.court = value;
+  } else if (label == "year" || label == "year admitted") {
+    data.year = value;
+  } else if (label == "grant year") {
     data.year = value;
   } else if (label == "age at census") {
     data.age = value;
   } else if (label == "rd name") {
     data.rdName = value;
-  } else if (label == "county / city" || label == "county/city") {
+  } else if (label == "county / city" || label == "county/city" || "county") {
     data.countyCity = value;
   }
 }
@@ -1327,7 +1433,7 @@ function parseDataString(parsedCitation, builder) {
   }
 
   // no matched sentence pattern, try a list
-  if (dataString.includes("surname")) {
+  if (dataString.includes("surname") || dataString.includes("full name")) {
     if (parseDataList(dataString, parsedCitation, builder)) {
       return;
     }
@@ -1335,12 +1441,12 @@ function parseDataString(parsedCitation, builder) {
 }
 
 function buildScotlandsPeopleContextSearchData(lcText) {
-  console.log("buildScotlandsPeopleContextSearchData, lcText is:");
-  console.log(lcText);
+  //console.log("buildScotlandsPeopleContextSearchData, lcText is:");
+  //console.log(lcText);
 
   // To be Scotlands People we need some identifiers
   if (!(lcText.includes("scotlandspeople") || lcText.includes("scotlands people"))) {
-    console.log("buildScotlandsPeopleContextSearchData, no scotlandspeople found");
+    //console.log("buildScotlandsPeopleContextSearchData, no scotlandspeople found");
     return undefined;
   }
 
@@ -1435,8 +1541,8 @@ function buildScotlandsPeopleContextSearchData(lcText) {
     }
   }
 
-  console.log("buildScotlandsPeopleContextSearchData, returning, searchData is:");
-  console.log(searchData);
+  //console.log("buildScotlandsPeopleContextSearchData, returning, searchData is:");
+  //console.log(searchData);
 
   return searchData;
 }

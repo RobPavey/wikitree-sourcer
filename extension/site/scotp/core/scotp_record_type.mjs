@@ -570,6 +570,9 @@ const scotpRecordTypes = {
     recordKeys: { county: "County" },
     search: { gender: false, rd: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
+    searchFields: {
+      forename: "edit-search-params-nrs-forenames",
+    },
     searchStdText: "&dl_cat=poor-relief&dl_rec=poor-relief-hie&record_type=hie",
     searchUrl: "poor-relief/hie",
     sourcerRecordType: RT.Immigration,

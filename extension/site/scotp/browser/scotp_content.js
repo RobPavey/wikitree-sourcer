@@ -60,9 +60,9 @@ function getRefRecordKey(recordType) {
     census: { ref: "Ref" },
     census_lds: { ref: "Ref" },
     ///////////////////// Valuation Rolls ///////////////////////
-    valuation_rolls: { ref: "Reference Number" },
+    vr: { ref: "Reference Number" },
     ///////////////////// Legal ///////////////////////
-    wills_testaments: { ref: "Reference Number" },
+    wills: { ref: "Reference Number" },
     coa: { ref: "Record Number" },
   };
 
@@ -163,7 +163,9 @@ async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
       if (rowDataElement) {
         let text = rowDataElement.textContent;
         if (text) {
-          text = text.trim();
+          refValue = refValue.toLowerCase();
+          text = text.trim().toLowerCase();
+
           text = text.replace(/\s+/g, " "); // remove double spaces
           if (isFromUrl) {
             text = encodeURIComponent(text);
@@ -188,6 +190,16 @@ async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
             // displayed in the search results is "20 / 27"
             cleanRefValue = refValue.replace(/\s*\/\s*/g, " ");
             cleanText = text.replace(/\s*\/\s*/g, " ");
+            if (cleanText == cleanRefValue) {
+              // we have found the row to highlight
+              highlightRow(rowElement);
+              return;
+            }
+
+            // On some cases like valuation rolls we can have refValue = "VR008600001" and
+            // text = "VR008600001-"
+            cleanRefValue = cleanRefValue.replace(/^(.*)\-$/, "$1");
+            cleanText = cleanText.replace(/^(.*)\-$/, "$1");
             if (cleanText == cleanRefValue) {
               // we have found the row to highlight
               highlightRow(rowElement);

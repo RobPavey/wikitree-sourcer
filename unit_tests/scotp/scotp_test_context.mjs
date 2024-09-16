@@ -272,6 +272,78 @@ const regressionData = [
     caseName: "scotproj_census",
     text: `"Scottish Census Returns - 1911" database, National Records of Scotland, ScotlandsPeople (accessed 29 May 2024), Ella W. McMillan, female, age at census 2, Greenock West, Renfrew; citing Reference Number: 564/2 25/ 7.`,
   },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // census_lds
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_census_lds_default",
+    text: `1881 Census: "Scotland Census, 1881 (LDS)" National Records of Scotland ScotlandsPeople Christina Clark Or Pocock (24) at 27 Marshall St, Edinburgh Buccleuch, Edinburgh, Scotland. Born in Turriff, Banff, Scotland citing Ref: 721059.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // vr
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_vr_default",
+    text: `* '''Valuation Roll''': "Valuation Rolls"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/>W J Fraser in 1855 at House No 83 Union Street in the parish of Aberdeen, Scotland<br/>citing Reference Number: VR008600001-.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // wills
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_wills_default",
+    text: `Will or Testament: "Wills and Testaments" National Records of Scotland, Reference Number: CC5/6/1 ScotlandsPeople Search (accessed 23 June 2022) Confirmation of will or testament of Robert Faireis at Dumfries Commissary Court on 19 Oct 1624.`,
+  },
+  {
+    caseName: "sourcer_wills_with_death_date",
+    text: `Will or Testament: "Wills and Testaments" National Records of Scotland, Reference Number: SC29/44/48 ScotlandsPeople Search (accessed 23 June 2022) Confirmation of will of Adelaide Fraser at Inverness Sheriff Court on 2 Feb 1906. Died 2 Jul 1905.`,
+  },
+  {
+    caseName: "sourcer_wills_inventory",
+    text: `Inventory Confirmation: "Wills and Testaments" National Records of Scotland, Reference Number: SC36/48/224 ScotlandsPeople Search (accessed 23 June 2022) Confirmation of inventory for Agnes Fraser at Glasgow Sheriff Court on 18 Apr 1910.`,
+  },
+  {
+    caseName: "sourcer_wills_inventory_death_date",
+    text: `Inventory Confirmation: "Wills and Testaments" National Records of Scotland, Reference Number: SC36/48/224 ScotlandsPeople Search (accessed 23 June 2022) Confirmation of inventory for Agnes Fraser at Glasgow Sheriff Court on 18 Apr 1910. Died 27 Dec 1909.`,
+  },
+  {
+    caseName: "sourcer_wills_additional_inventory",
+    text: `Additional Inventory Confirmation: "Wills and Testaments" National Records of Scotland, Reference Number: SC70/1/665 ScotlandsPeople Search (accessed 23 June 2022) Confirmation of inventory for Jane Peffers at Edinburgh Sheriff Court on 25 Jun 1921 (original confirmation on 14 Jun 1921).`,
+  },
+  {
+    caseName: "sourcer_wills_additional_inventory_death_date",
+    text: `Additional Inventory Confirmation: "Wills and Testaments" National Records of Scotland, Reference Number: SC70/1/665 ScotlandsPeople Search (accessed 23 June 2022) Confirmation of inventory for Jane Peffers at Edinburgh Sheriff Court on 25 Jun 1921 (original confirmation on 14 Jun 1921). Died 6 Apr 1921.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // coa
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_coa_default",
+    text: `Alexander was in a heraldic record on 27 November 1899.<ref> '''Heraldic Record''': "Public Register of All Arms and Bearings"<br/> National Records of Scotland<br/> [https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/> Full Name: Alexander Edmund Fraser of the Foreign Office, London; Grant year: 27/11/1899<br/> citing Volume: 15; Record Number: 69. </ref>`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // soldiers_wills
+  ////////////////////////////////////////////////////////////////////////////////
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // military_tribunals
+  ////////////////////////////////////////////////////////////////////////////////
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // hie
+  ////////////////////////////////////////////////////////////////////////////////
+  {
+    caseName: "sourcer_hie_default",
+    text: `* '''Immigration''': "Highland and Island Emigration Society records"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople]<br/>Surname: FRASER; Forenames: MARION; Shipname: ONTARIO; Departure Date: 03/08/1852; Departure Port: LIVERPOOL; Arrival Port: SYDNEY; Residence: IDINBAIN; County: INVERNESS.`,
+  },
+
+  ////////////////////////////////////////////////////////////////////////////////
+  // prison_records
+  ////////////////////////////////////////////////////////////////////////////////
 ];
 
 function testEnabled(parameters, testName) {
