@@ -146,6 +146,12 @@ const citationPopupOptionsGroup = {
       ],
       defaultValue: "all",
     },
+    {
+      optionName: "addShortcuts",
+      type: "checkbox",
+      label: "Add keyboard shortcuts to Build Citation menu items",
+      defaultValue: false,
+    },
   ],
 };
 
