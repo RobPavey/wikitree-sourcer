@@ -1,0 +1,42 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/164568404/person/162379710099/facts",
+  "pageType": "personFacts",
+  "titleName": "Clement Cecil Smith",
+  "birthDate": "1883",
+  "birthPlace": "Auckland, New Zealand",
+  "deathDate": "22 MAR 1957",
+  "deathPlace": "Napier, Hawke's Bay, New Zealand",
+  "marriages": [
+    {
+      "date": "1909",
+      "place": "New Zealand",
+      "spouseName": "Agnes Elizabeth Davidson"
+    }
+  ],
+  "fatherName": "John Francis Smith",
+  "motherName": "Ellen Fletcher",
+  "sources": [
+    {
+      "dbId": "8949",
+      "recordId": "396199",
+      "title": "New Zealand, Birth Index, 1840-1950"
+    },
+    {
+      "dbId": "60547",
+      "recordId": "561867",
+      "title": "New Zealand, Cemetery Records, 1800-2007"
+    },
+    {
+      "dbId": "8952",
+      "recordId": "1265887",
+      "title": "New Zealand, Death Index, 1848-1966"
+    },
+    {
+      "dbId": "8950",
+      "recordId": "978563",
+      "title": "New Zealand, Marriage Index, 1840-1937"
+    }
+  ],
+  "gender": "male",
+  "ancestryTemplate": "{{Ancestry Tree|164568404|162379710099}}"
+}

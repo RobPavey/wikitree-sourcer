@@ -1229,6 +1229,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/260052341589/facts",
   },
   {
+    // Has name and gender hidden
+    caseName: "xx_profile_clement_smith_1883_1957_nz",
+    url: "https://www.ancestry.com/family-tree/person/tree/164568404/person/162379710099/facts",
+  },
+  {
     // Has middle initial and multiple last names
     caseName: "xx_profile_fannie_kemper_1859_1933_us",
     url: "https://www.ancestry.com/family-tree/person/tree/11748183/person/12992988602/facts",

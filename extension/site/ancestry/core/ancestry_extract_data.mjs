@@ -1878,6 +1878,37 @@ function handlePersonFacts(document, result) {
   } else {
     handlePersonFactsJune2024(document, result);
   }
+
+  // if there is no gender they may have the filter set to hide the name and gender
+  // try to get gender from scripts
+  if (!result.gender) {
+    let scriptElements = document.querySelectorAll("#personCardContainer > script");
+    for (let scriptElement of scriptElements) {
+      let scriptText = scriptElement.innerHTML;
+      if (scriptText && scriptText.includes("var PersonCard = ")) {
+        const genderLabel = "gender:";
+        let genderIndex = scriptText.indexOf(genderLabel);
+        if (genderIndex != -1) {
+          let quoteIndex = scriptText.indexOf("'", genderIndex + genderLabel.length);
+          if (quoteIndex != -1) {
+            let endQuoteIndex = scriptText.indexOf("'", quoteIndex + 1);
+            if (endQuoteIndex != -1) {
+              let genderText = scriptText.substring(quoteIndex + 1, endQuoteIndex);
+              if (genderText) {
+                if (genderText == "Male") {
+                  result.gender = "male";
+                  break;
+                } else if (genderText == "Female") {
+                  result.gender = "female";
+                  break;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // Used by background for extracting a referenced record
