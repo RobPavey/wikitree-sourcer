@@ -72,6 +72,8 @@ function buildHouseholdArray(headings, members, result) {
       let combinedBirthPlace = "";
       let birthPlace = member["Birthplace"];
       if (birthPlace) {
+        // replace something like "Co Kerry" with "County Kerry"
+        birthPlace = birthPlace.replace(/^Co /, "County ");
         householdMember.birthPlace = birthPlace;
       }
 
