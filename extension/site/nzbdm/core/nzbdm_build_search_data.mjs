@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 // Births:
 // Search From Date must be later than 31/12/1839.
@@ -181,6 +182,11 @@ function buildSearchData(input) {
   let forenames = gd.inferForenames();
   let lastName = gd.inferLastName();
 
+  let gender = gd.personGender;
+  if (!gender) {
+    gender = NameUtils.predictGenderFromGivenNames(forenames);
+  }
+
   if (typeOfSearch == "Births") {
     fieldData.csur = lastName;
     fieldData.cfirst = forenames;
@@ -204,10 +210,11 @@ function buildSearchData(input) {
     fieldData.ddate_lower = dateRange.fromDate;
     fieldData.ddate_upper = dateRange.toDate;
   } else {
-    if (gd.personGender == "male") {
+    if (gender == "male") {
       fieldData.bgsur = lastName;
       fieldData.bgfirst = forenames;
     } else {
+      // if no gender it may get these the wrong way around, we are already trying gender prediction
       fieldData.brsur = lastName;
       fieldData.brfirst = forenames;
     }
