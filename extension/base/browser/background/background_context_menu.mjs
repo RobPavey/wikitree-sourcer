@@ -1011,9 +1011,11 @@ function openSelectionPlainText(info, tab) {
   }
 
   // check for Scotlands People
-  searchData = buildScotlandsPeopleContextSearchData(lcText);
-  console.log("buildScotlandsPeopleContextSearchData returned:");
-  console.log(searchData);
+  let scotpResult = buildScotlandsPeopleContextSearchData(lcText);
+  if (scotpResult.messages) {
+    console.log(scotpResult.messages);
+  }
+  searchData = scotpResult.searchData;
   if (searchData) {
     callFunctionWithStoredOptions(function (options) {
       openScotlandsPeopleGivenSearchData(tab, options, searchData);

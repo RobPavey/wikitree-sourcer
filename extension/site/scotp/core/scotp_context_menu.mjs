@@ -38,6 +38,15 @@ import { ScotpFormDataBuilder } from "./scotp_form_data_builder.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
+var messages = "";
+
+function logMessage(message) {
+  if (messages) {
+    messages += "\n";
+  }
+  messages += message;
+}
+
 // NOTE: All patterns try to handle the optional accessed date in all three options
 // This non-capturing group should match all possibilities
 // (?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )
@@ -47,7 +56,7 @@ const reDatabaseLiteral = /(?: database with images| database| \[?database onlin
 const reWebsiteCreatorOwner = /([^(\[]*),? ?/;
 const reSourceRef = /([^(]*),? ?/;
 const reLinkStart =
-  /\(?(?:scotlandspeople,? \(?https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/;
+  /\(?(?:scotlandspeople,? \(?https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/;
 const reLinkStartEdit = /\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/;
 const reLinkEnd =
   /(?: ?\((?:image )?(?:accessed|viewed) [^\)]+\),? ?| ?\: ?(?:image )?(?:accessed|viewed) [^\)]+\),? ?| |,|, )/;
@@ -56,31 +65,10 @@ const reCitingSourceRef = /;? citing (.*)/;
 
 const citationPatterns = [
   {
-    // Example: Sourcer different order due to "Place the source reference data" option
-    // "scotland census, 1851", database, national records of scotland, scotlandspeople, donald mckay (13) in lairg registration district in sutherland, scotland; citing ref: 053/ 1/ 6.
-    // Another example fro Scotland project:
-    // "Statutory Registers - Deaths" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024) John Stewart, age 47, Male, 1908, Paisley; citing Reference Number: 573 / 1 / 160.
-    regex:
-      /^"([^"]+)",?(?: database)?,? ([^(\[]*),? ?\(?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/,
-    paramKeys: ["sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
-    reParts: [
-      reSourceTitle,
-      reDatabaseLiteral,
-      reWebsiteCreatorOwner,
-      reLinkStart,
-      reLinkEnd,
-      reDataString,
-      reCitingSourceRef,
-    ],
-  },
-  {
-    // Example: Sourcer different order due to "Place the source reference data" option
-    // Edit mode
     // "church of scotland: old parish registers - births and baptisms", database, national records of scotland, ([https://www.scotlandspeople.gov.uk/ scotlandspeople] : accessed 23 june 2022), peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland; citing parish number 382/ , ref 20 9.
     // "Statutory Register of Births", database, National Records of Scotland, [https://www.scotlandspeople.gov.uk/ ScotlandsPeople], Helen McCall A'Hara birth registered 1888 in Anderston, mother's maiden name McCall; citing Ref: 644/10/356.
     // "Church of Scotland: Old Parish Registers - Births and Baptisms", database, National Records of Scotland, ([https://www.scotlandspeople.gov.uk/ ScotlandsPeople] : accessed 23 June 2022), Peter Connan born or baptised on 1 Jun 1823, son of James Connan & Mary McGregor, in Monzie, Perthshire, Scotland; citing Parish Number 382/ , Ref 20 9.
-    regex:
-      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*);? citing (.*)$/,
+    name: "Edit mode: Sourcer style, source reference at end",
     paramKeys: ["sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
     reParts: [
       reSourceTitle,
@@ -93,31 +81,40 @@ const citationPatterns = [
     ],
   },
   {
-    // Example: Sourcer Default order
-    // This handles all three values of the "Add an accessed date to citation" option
-    // "church of scotland: old parish registers - births and baptisms" national records of scotland, parish number: 382/ ; ref: 20 9 scotlandspeople search (accessed 23 june 2022) peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland.
-    // "Statutory Register of Divorces" National Records of Scotland, Court Code: 9772; Serial Number: 1421 ScotlandsPeople Margaret Thomso O'Connor divorce from McClounie in 2010 in Hamilton, Scotland.
-    regex:
-      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*)$/,
-    paramKeys: ["sourceTitle", "sourceReference", "dataString"],
-    reParts: [reSourceTitle, reDatabaseLiteral, reSourceRef, reLinkStart, reLinkEnd, reDataString],
-  },
-  {
-    // Example: Sourcer Default order, edit mode
     // "scotland census, 1851", national records of scotland, ref: 547/ 1/ 35, [https://www.scotlandspeople.gov.uk/ scotlandspeople] (accessed 13 september 2024), surname mckay, forename donald, year 1851, gender m, age at census 11, rd name portnahaven, county / city argyll.
     // "scotland census, 1851", database, national records of scotland, ref: 053/ 1/ 6, [https://www.scotlandspeople.gov.uk/ scotlandspeople], donald mckay (13) in lairg registration district in sutherland, scotland.
-    regex:
-      /^"([^"]+)",?(?: database)?,? ([^(]*),? ?\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*)$/,
+    name: "Edit mode: Sourcer style, source reference in default place",
     paramKeys: ["sourceTitle", "sourceReference", "dataString"],
     reParts: [reSourceTitle, reDatabaseLiteral, reSourceRef, reLinkStartEdit, reLinkEnd, reDataString],
   },
   {
-    // Example: Scotland Project
+    // "scotland census, 1851", database, national records of scotland, scotlandspeople, donald mckay (13) in lairg registration district in sutherland, scotland; citing ref: 053/ 1/ 6.
+    // Another example from Scotland project:
+    // "Statutory Registers - Deaths" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024) John Stewart, age 47, Male, 1908, Paisley; citing Reference Number: 573 / 1 / 160.
+    name: "Sourcer style, source reference at end",
+    paramKeys: ["sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
+    reParts: [
+      reSourceTitle,
+      reDatabaseLiteral,
+      reWebsiteCreatorOwner,
+      reLinkStart,
+      reLinkEnd,
+      reDataString,
+      reCitingSourceRef,
+    ],
+  },
+  {
+    // "church of scotland: old parish registers - births and baptisms" national records of scotland, parish number: 382/ ; ref: 20 9 scotlandspeople search (accessed 23 june 2022) peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland.
+    // "Statutory Register of Divorces" National Records of Scotland, Court Code: 9772; Serial Number: 1421 ScotlandsPeople Margaret Thomso O'Connor divorce from McClounie in 2010 in Hamilton, Scotland.
+    name: "Sourcer style, source reference in default place",
+    paramKeys: ["sourceTitle", "sourceReference", "dataString"],
+    reParts: [reSourceTitle, reDatabaseLiteral, reSourceRef, reLinkStart, reLinkEnd, reDataString],
+  },
+  {
     // Sometimes they have the parish or country name before the source citation
     // govan parish, church of scotland, "old parish registers births and baptisms" database, national records of scotland, (scotlandspeople : accessed 29 may 2024), william walker birth or baptism 23 jan 1808, son of hugh walker and ann young, citing ref 20 / 211.
     // Scotland, "Statutory Registers - Marriages" database, National Records of Scotland, (ScotlandsPeople :accessed 15 Nov 2023), Euphemia Lamont, and John McBride, 1856, Greenock Old or West; citing Reference Number: 564 / 3 / 44.
-    regex:
-      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(? ?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )?(.*) citing (.*)$/,
+    name: "Scotland Project style with parish/place before source title",
     paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
     reParts: [
       reParish,
@@ -131,19 +128,15 @@ const citationPatterns = [
     ],
   },
   {
-    // Example: Scotland Project, no citing
-    // Sometimes they have the parish or country name before the source citation
     // St John's, Port Glasgow, "Catholic Registers Births and Baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk : accessed 21 Feb 2021), William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.
-    regex:
-      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(? ?scotlandspeople(?: search)?(?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )?(.*) citing (.*)$/,
-    paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
+    name: "Scotland Project style with parish/place before source title, no source reference",
+    paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString"],
     reParts: [reParish, reSourceTitle, reDatabaseLiteral, reWebsiteCreatorOwner, reLinkStart, reLinkEnd, reDataString],
   },
   {
     // Example: Scotland Project edit mode
     // govan parish, church of scotland, "old parish registers births and baptisms" database, national records of scotland, ([https://www.scotlandspeople.gov.uk scotlandspeople] : accessed 29 may 2024), william walker birth or baptism 23 jan 1808, son of hugh walker and ann young, citing ref 20 / 211.
-    regex:
-      /^(.*) "([^"]+)",?(?: database)?,? ?([^(]*),? \(?\[https\:\/\/www\.scotlandspeople\.gov\.uk scotlandspeople(?: search)?\](?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )(.*) citing (.*)$/,
+    name: "Edit mode: Scotland Project style with parish/place before source title",
     paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
     reParts: [
       reParish,
@@ -155,6 +148,34 @@ const citationPatterns = [
       reDataString,
       reCitingSourceRef,
     ],
+  },
+];
+
+const partialCitationPatterns = [
+  {
+    name: "Edit mode: Sourcer style or Scotland Project style with source reference at end",
+    paramKeys: ["websiteCreatorOwner", "dataString", "sourceReference"],
+    reParts: [reDatabaseLiteral, reWebsiteCreatorOwner, reLinkStartEdit, reLinkEnd, reDataString, reCitingSourceRef],
+  },
+  {
+    name: "Edit mode: Sourcer style, with source reference in default place",
+    paramKeys: ["sourceReference", "dataString"],
+    reParts: [reDatabaseLiteral, reSourceRef, reLinkStartEdit, reLinkEnd, reDataString],
+  },
+  {
+    name: "Sourcer style or Scotland Project style with source reference at end",
+    paramKeys: ["websiteCreatorOwner", "dataString", "sourceReference"],
+    reParts: [reDatabaseLiteral, reWebsiteCreatorOwner, reLinkStart, reLinkEnd, reDataString, reCitingSourceRef],
+  },
+  {
+    name: "Sourcer style, with source reference in default place",
+    paramKeys: ["sourceReference", "dataString"],
+    reParts: [reDatabaseLiteral, reSourceRef, reLinkStart, reLinkEnd, reDataString],
+  },
+  {
+    name: "Scotland Project style with no source reference",
+    paramKeys: ["websiteCreatorOwner", "dataString"],
+    reParts: [reDatabaseLiteral, reWebsiteCreatorOwner, reLinkStart, reLinkEnd, reDataString],
   },
 ];
 
@@ -231,6 +252,12 @@ const defaultSourcerTitles = [
   },
 
   {
+    // this must come before other census patterns because we use "includes"
+    recordType: "census_lds",
+    titles: ["Scotland Census, 1881 (LDS)"],
+  },
+
+  {
     recordType: "census",
     titles: ["Scotland Census, 1841"],
   },
@@ -265,10 +292,6 @@ const defaultSourcerTitles = [
   {
     recordType: "census",
     titles: ["Scotland Census, 1921"],
-  },
-  {
-    recordType: "census_lds",
-    titles: ["Scotland Census, 1881 (LDS)"],
   },
   {
     recordType: "vr",
@@ -373,6 +396,10 @@ const scotlandProjectTitles = [
   },
 
   {
+    recordType: "census_lds",
+    titles: ["Census 1881 (LDS)"],
+  },
+  {
     recordType: "census",
     titles: ["Scottish Census Returns - 1841"],
   },
@@ -407,10 +434,6 @@ const scotlandProjectTitles = [
   {
     recordType: "census",
     titles: ["Scottish Census Returns - 1921"],
-  },
-  {
-    recordType: "census_lds",
-    titles: ["Census 1881 (LDS)"],
   },
   {
     recordType: "vr",
@@ -471,15 +494,27 @@ const otherFoundTitles = [
   },
   {
     recordType: "opr_births",
-    titles: ["Church of Scotland: Old Parish Registers - Births & Baptisms"],
+    titles: [
+      "Church of Scotland: Old Parish Registers Births and Baptisms",
+      "Church of Scotland: Old Parish Registers Births & Baptisms",
+      "Church of Scotland: Old Parish Registers - Births & Baptisms",
+    ],
   },
   {
     recordType: "opr_marriages",
-    titles: ["Church of Scotland: Old Parish Registers Banns and Marriages"],
+    titles: [
+      "Church of Scotland: Old Parish Registers Banns and Marriages",
+      "Church of Scotland: Old Parish Registers Banns & Marriages",
+      "Church of Scotland: Old Parish Registers - Banns & Marriages",
+    ],
   },
   {
     recordType: "opr_deaths",
-    titles: ["Church of Scotland: Old Parish Registers Death and Burials"],
+    titles: [
+      "Church of Scotland: Old Parish Registers Death and Burials",
+      "Church of Scotland: Old Parish Registers Death & Burials",
+      "Church of Scotland: Old Parish Registers - Death & Burials",
+    ],
   },
   {
     recordType: "cr_baptisms",
@@ -515,11 +550,11 @@ const otherFoundTitles = [
   },
 
   {
-    recordType: "census",
+    recordType: "census_lds",
     titles: [],
   },
   {
-    recordType: "census_lds",
+    recordType: "census",
     titles: [],
   },
   {
@@ -595,6 +630,12 @@ const dataStringSentencePatterns = {
       // Catherine Aagesen death registered 1976 in Glasgow, Martha St (age 85, mother's maiden name McFee).
       regex: /^(.*) death registered (\d\d\d\d) in ([^\(;]+)\(age ([^,]+), mother's maiden name ([^\)]+)\).*$/,
       paramKeys: ["name", "eventDate", "rdName", "age", "mmn"],
+    },
+    {
+      // Example: Found on Stirling-727
+      // Archibald Stirling, male, age 54, date 1869, dwelling in West Kilbride, Ayrshire, Scotland
+      regex: /^(.*), (male|female), age ([^,]+), date ([0-9a-z ]+),? dwelling in (.*)$/,
+      paramKeys: ["name", "gender", "age", "eventDate", "eventPlace"],
     },
     {
       // Scotland Project. Example:
@@ -952,7 +993,8 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
   // first check default Sourcer titles
   for (let defaultSourcerTitle of defaultSourcerTitles) {
     for (let title of defaultSourcerTitle.titles) {
-      if (sourceTitle == title.toLowerCase()) {
+      const lcTitle = title.toLowerCase();
+      if (sourceTitle.includes(lcTitle)) {
         return defaultSourcerTitle.recordType;
       }
     }
@@ -963,7 +1005,7 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
     const nrsTitle = recordType.collectionNrsTitle;
     if (nrsTitle) {
       let lcNrsTitle = nrsTitle.toLowerCase();
-      if (sourceTitle == lcNrsTitle) {
+      if (sourceTitle.includes(lcNrsTitle)) {
         return recordTypeKey;
       }
     }
@@ -972,7 +1014,7 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
   for (let scotlandProjectTitle of scotlandProjectTitles) {
     for (let title of scotlandProjectTitle.titles) {
       let lcTitle = title.toLowerCase();
-      if (sourceTitle == lcTitle) {
+      if (sourceTitle.includes(lcTitle)) {
         return scotlandProjectTitle.recordType;
       }
     }
@@ -981,7 +1023,7 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
   for (let otherFoundTitle of otherFoundTitles) {
     for (let title of otherFoundTitle.titles) {
       let lcTitle = title.toLowerCase();
-      if (sourceTitle == lcTitle) {
+      if (sourceTitle.includes(lcTitle)) {
         return otherFoundTitle.recordType;
       }
     }
@@ -1008,14 +1050,17 @@ function cleanCitation(parsedCitation) {
   if (startRefIndex != -1) {
     let startRefs = lcText.match(/\<\s*ref(?: name ?= ?"[^"]+" ?)? ?\>/);
     if (!startRefs || startRefs.length != 1) {
+      logMessage("Found <ref> but there is more than one.");
       return false;
     }
     let endRefs = lcText.match(/\<\s*\/\s*ref\s*\>/);
     if (!endRefs || endRefs.length != 1) {
+      logMessage("Found </ref> but there is more than one.");
       return false;
     }
     let endRefIndex = lcText.search(/\<\s*\/\s*ref\s*\>/);
     if (endRefIndex == -1) {
+      logMessage("Found <ref> but no matching </ref>. (search failed).");
       return false;
     }
     lcText = lcText.substring(startRefIndex, endRefIndex);
@@ -1038,6 +1083,7 @@ function cleanCitation(parsedCitation) {
     if (labelText && labelText != lcText && remainderText && remainderText != lcText) {
       parsedCitation.labelText = labelText;
       lcText = remainderText.trim();
+      logMessage("Found label: '" + labelText + "', removed during cleanCitation.");
     }
   }
 
@@ -1075,9 +1121,107 @@ function findMatchingCitationPattern(parsedCitation) {
   return false;
 }
 
+function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation) {
+  let text = parsedCitation.cleanText;
+
+  function foundMatch(recordType, title, matchIndex) {
+    parsedCitation.sourceTitle = title;
+    let remainder = text.substring(matchIndex + title.length);
+    while (remainder.startsWith('"') || remainder.startsWith(",") || remainder.startsWith(" ")) {
+      remainder = remainder.substring(1);
+    }
+    // partial patterns expect a space at start
+    parsedCitation.partialText = " " + remainder;
+    parsedCitation.scotpRecordType = recordType;
+  }
+
+  function checkMatch(recordType, title) {
+    let lcTitle = title.toLowerCase();
+    let sourceTitleIndex = text.indexOf(lcTitle);
+    if (sourceTitleIndex != -1) {
+      foundMatch(recordType, title, sourceTitleIndex);
+      return true;
+    }
+    return false;
+  }
+
+  // first check default Sourcer titles
+  for (let defaultSourcerTitle of defaultSourcerTitles) {
+    for (let title of defaultSourcerTitle.titles) {
+      if (checkMatch(defaultSourcerTitle.recordType, title)) {
+        return true;
+      }
+    }
+  }
+
+  for (let recordTypeKey in scotpRecordTypes) {
+    let recordType = scotpRecordTypes[recordTypeKey];
+    const nrsTitle = recordType.collectionNrsTitle;
+    if (nrsTitle) {
+      if (checkMatch(recordTypeKey, nrsTitle)) {
+        return true;
+      }
+    }
+  }
+
+  for (let scotlandProjectTitle of scotlandProjectTitles) {
+    for (let title of scotlandProjectTitle.titles) {
+      if (checkMatch(scotlandProjectTitle.recordType, title)) {
+        return true;
+      }
+    }
+  }
+
+  for (let otherFoundTitle of otherFoundTitles) {
+    for (let title of otherFoundTitle.titles) {
+      if (checkMatch(otherFoundTitle.recordType, title)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+function findMatchingPartialCitationPattern(parsedCitation) {
+  let text = parsedCitation.partialText;
+
+  for (let index = 0; index < partialCitationPatterns.length; index++) {
+    let pattern = partialCitationPatterns[index];
+    let regex = getRegexForPattern(pattern);
+
+    if (regex.test(text)) {
+      parsedCitation.matchingPartialPattern = pattern;
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function parseUsingPattern(parsedCitation) {
   let pattern = parsedCitation.matchingPattern;
   let text = parsedCitation.cleanText;
+  for (let i = 0; i < pattern.paramKeys.length; i++) {
+    let key = pattern.paramKeys[i];
+    let resultIndex = i + 1;
+    let resultString = "$" + resultIndex;
+    let regex = getRegexForPattern(pattern);
+    let value = text.replace(regex, resultString);
+    if (key && value && value != text) {
+      value = value.trim();
+      if (value.endsWith(".") || value.endsWith(",")) {
+        value = value.substring(0, value.length - 1);
+      }
+      value = value.trim();
+      parsedCitation[key] = value;
+    }
+  }
+}
+
+function parseUsingPartialPattern(parsedCitation) {
+  let pattern = parsedCitation.matchingPartialPattern;
+  let text = parsedCitation.partialText;
   for (let i = 0; i < pattern.paramKeys.length; i++) {
     let key = pattern.paramKeys[i];
     let resultIndex = i + 1;
@@ -1551,6 +1695,11 @@ function parseDataList(dataString, parsedCitation, builder) {
     parseCommaOnlyDataList(dataString, parsedCitation, data);
   }
 
+  logMessage("Parsed data string as a list. Data is:");
+  for (let key in data) {
+    logMessage("  " + key + ": " + data[key]);
+  }
+
   addDataToBuilder(parsedCitation, data, builder);
 
   return true;
@@ -1577,6 +1726,7 @@ function parseDataSentence(dataString, parsedCitation, builder) {
   }
 
   let matchedPattern = false;
+  let matchingPattern = "";
   let patterns = dataStringSentencePatterns[parsedCitation.scotpRecordType];
   if (patterns) {
     for (let pattern of patterns) {
@@ -1591,12 +1741,20 @@ function parseDataSentence(dataString, parsedCitation, builder) {
           }
         }
         matchedPattern = true;
+        matchingPattern = pattern;
         break;
       }
     }
   }
 
   if (matchedPattern) {
+    logMessage("Parsed data string as a sentence. Pattern used was:");
+    logMessage(matchingPattern.regex.source);
+    logMessage("Data is:");
+    for (let key in data) {
+      logMessage("  " + key + ": " + data[key]);
+    }
+
     addDataToBuilder(parsedCitation, data, builder);
     return true;
   }
@@ -1616,6 +1774,8 @@ function parseDataString(parsedCitation, builder) {
       dataString = dataString.substring(0, dataString.length - 1);
     }
 
+    logMessage("Data string is :\n----------------\n" + dataString + "\n----------------");
+
     if (parseDataSentence(dataString, parsedCitation, builder)) {
       return;
     }
@@ -1626,6 +1786,8 @@ function parseDataString(parsedCitation, builder) {
         return;
       }
     }
+
+    logMessage("Data string does not look like a valid sentence or list.");
   }
 
   // sometimes the data got put in the SourceReference e.g. scotproj_stat_deaths_corrected
@@ -1653,13 +1815,15 @@ function parseDataString(parsedCitation, builder) {
 }
 
 function buildScotlandsPeopleContextSearchData(lcText) {
+  messages = ""; // reset messages
+
   //console.log("buildScotlandsPeopleContextSearchData, lcText is:");
   //console.log(lcText);
 
   // To be Scotlands People we need some identifiers
   if (!(lcText.includes("scotlandspeople") || lcText.includes("scotlands people"))) {
     //console.log("buildScotlandsPeopleContextSearchData, no scotlandspeople found");
-    return undefined;
+    return { messages: messages };
   }
 
   let parsedCitation = {
@@ -1667,9 +1831,10 @@ function buildScotlandsPeopleContextSearchData(lcText) {
   };
 
   if (!cleanCitation(parsedCitation)) {
-    console.log("buildScotlandsPeopleContextSearchData, could not clean");
-    return undefined;
+    logMessage("Could not clean citation.");
+    return { messages: messages };
   }
+  logMessage("Clean citation is :\n----------------\n" + parsedCitation.cleanText + "\n----------------");
 
   //console.log("buildScotlandsPeopleContextSearchData, after cleanCitation, parsedCitation is:");
   //console.log(parsedCitation);
@@ -1680,29 +1845,54 @@ function buildScotlandsPeopleContextSearchData(lcText) {
   //console.log(parsedCitation);
 
   if (foundPattern) {
+    logMessage("Found matching citation pattern. Pattern name is: " + parsedCitation.matchingPattern.name);
+
     parseUsingPattern(parsedCitation);
+    if (!parsedCitation.sourceTitle) {
+      logMessage("After parsing using pattern the soutrce title is empty.");
+      return { messages: messages };
+    }
+
+    logMessage("Source Title is : " + parsedCitation.sourceTitle);
+
+    let scotpRecordType = getScotpRecordTypeFromSourceTitle(parsedCitation.sourceTitle);
+    if (!scotpRecordType) {
+      logMessage("Source title not recognized. Will try a partial match.");
+    } else {
+      parsedCitation.scotpRecordType = scotpRecordType;
+    }
+    logMessage("Identified ScotP record type as : " + parsedCitation.scotpRecordType);
+  } else {
+    logMessage("Could not find a matching citation pattern.");
   }
 
-  //("buildScotlandsPeopleContextSearchData, after parseUsingPattern, parsedCitation is:");
-  //console.log(parsedCitation);
+  if (!parsedCitation.scotpRecordType) {
+    logMessage("Trying for a partial citation pattern match.");
 
-  if (!parsedCitation.sourceTitle) {
-    console.log("buildScotlandsPeopleContextSearchData, no sourceTitle");
-    return undefined;
+    if (!getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation)) {
+      logMessage("Could not find any known source title text.");
+      return { messages: messages };
+    }
+
+    logMessage("Source Title is : " + parsedCitation.sourceTitle);
+    logMessage(
+      "Partial citation remaining is :\n----------------\n" + parsedCitation.partialText + "\n----------------"
+    );
+
+    let foundPartialPattern = findMatchingPartialCitationPattern(parsedCitation);
+    if (foundPartialPattern) {
+      logMessage(
+        "Found matching partial citation pattern. Pattern name is: " + parsedCitation.matchingPartialPattern.name
+      );
+      logMessage("Identified ScotP record type as : " + parsedCitation.scotpRecordType);
+      parseUsingPartialPattern(parsedCitation);
+    } else {
+      logMessage("Could not find a matching partial citation pattern.");
+      return { messages: messages };
+    }
   }
 
-  let scotpRecordType = getScotpRecordTypeFromSourceTitle(parsedCitation.sourceTitle);
-  if (!scotpRecordType) {
-    console.log("buildScotlandsPeopleContextSearchData, no scotpRecordType");
-    return undefined;
-  }
-
-  //console.log("buildScotlandsPeopleContextSearchData, after getScotpRecordTypeFromSourceTitle, scotpRecordType is:");
-  //console.log(scotpRecordType);
-
-  parsedCitation.scotpRecordType = scotpRecordType;
-
-  var builder = new ScotpFormDataBuilder(scotpRecordType);
+  var builder = new ScotpFormDataBuilder(parsedCitation.scotpRecordType);
 
   parseDataString(parsedCitation, builder);
 
@@ -1711,6 +1901,8 @@ function buildScotlandsPeopleContextSearchData(lcText) {
   // See if we can extract a reference number from sourceReference
   if (searchData && parsedCitation.sourceReference) {
     let sourceReference = parsedCitation.sourceReference;
+    logMessage("Source reference is : " + sourceReference);
+
     const regexes = [
       /^.*reference number:? ([a-z0-9 \/]+).*$/,
       /^.*reference:? ([a-z0-9 \/]+).*$/,
@@ -1733,7 +1925,7 @@ function buildScotlandsPeopleContextSearchData(lcText) {
 
     // another way is to look for what this record type would use.
     if (!refNum) {
-      let refName = ScotpRecordType.getRecordKey(scotpRecordType, "ref");
+      let refName = ScotpRecordType.getRecordKey(parsedCitation.scotpRecordType, "ref");
       if (refName) {
         let lcRefName = refName.toLowerCase();
         let index = sourceReference.indexOf(lcRefName);
@@ -1748,15 +1940,19 @@ function buildScotlandsPeopleContextSearchData(lcText) {
     }
 
     if (refNum) {
+      logMessage("Ref number is : " + refNum);
+
       searchData.refNum = refNum;
       searchData.recordType = parsedCitation.scotpRecordType;
+    } else {
+      logMessage("No ref number found in source reference");
     }
   }
 
   //console.log("buildScotlandsPeopleContextSearchData, returning, searchData is:");
   //console.log(searchData);
 
-  return searchData;
+  return { messages: messages, searchData, searchData };
 }
 
 export { buildScotlandsPeopleContextSearchData };

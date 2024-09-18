@@ -93,9 +93,21 @@ const regressionData = [
     text: `Scotland, "Statutory Registers - Deaths," database with images, (ScotlandsPeople : viewed 28 July 2024), image, citing Joseph Sloy, 12 September 2028, corrected entry, West District, Greenock, Renfrewshire, p. 159, item 475, reference number 564/2 475`,
   },
   {
-    // Found on https://www.wikitree.com/wiki/Rendall-372   (16 Spe 2024)
+    // Found on https://www.wikitree.com/wiki/Rendall-372   (16 Sep 2024)
     caseName: "found_stat_deaths_1",
     text: `"Statutory Register of Deaths," database National Records of Scotland (ScotlandsPeople : accessed 24 January 2024) Joan Rendall OR Cooper death registered 1935 in George Square (age 64) citing Ref 685/5/217.`,
+  },
+  {
+    // Found on https://www.wikitree.com/wiki/Stirling-727   (18 Sep 2024)
+    // No quotes around source title, partial match on source title.
+    caseName: "found_stat_deaths_2",
+    text: `Scottish Statutory registers - Deaths, database, National Records of Scotland (ScotlandsPeople : accessed 8 September 2024), Archibald Stirling, male, age 54, date 1869, dwelling in West Kilbride, Ayrshire, Scotland; citing reference number 620/ 5.`,
+  },
+  {
+    // Variation of above - put source title in quotes.
+    // Source title is not an exact match.
+    caseName: "found_stat_deaths_3",
+    text: `"Scottish Statutory registers - Deaths", database, National Records of Scotland (ScotlandsPeople : accessed 8 September 2024), Archibald Stirling, male, age 54, date 1869, dwelling in West Kilbride, Ayrshire, Scotland; citing reference number 620/ 5.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -411,17 +423,18 @@ async function runContextTests(siteName, regressionData, testManager, optionVari
 
     let lcText = inputText.toLowerCase();
 
-    let result = "";
+    let scotpResult = {};
 
     try {
-      result = buildScotlandsPeopleContextSearchData(lcText);
+      scotpResult = buildScotlandsPeopleContextSearchData(lcText);
     } catch (e) {
       console.log("Error:", e.stack);
       logger.logError(testData, "Exception occurred");
     }
 
-    if (!result) {
-      result = { success: false };
+    let result = { success: false };
+    if (scotpResult && scotpResult.searchData) {
+      result = scotpResult.searchData;
     }
 
     let resultDir = "context";
