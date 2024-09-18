@@ -2180,6 +2180,21 @@ function generalizeDataGivenRecordType(ed, result) {
       }
     }
   } else if (result.recordType == RT.Military) {
+    // check if there is a record subtype that we can use
+
+    if (ed.titleCollection) {
+      if (ed.titleCollection.includes("World War I Draft Registration")) {
+        result.recordSubtype = RecordSubtype.WWIDraftRegistration;
+      } else if (
+        ed.titleCollection.includes("World War II Draft Cards") ||
+        ed.titleCollection.includes("World War II Draft Registration")
+      ) {
+        result.recordSubtype = RecordSubtype.WWIIDraftRegistration;
+      } else if (ed.titleCollection.includes("World War II Allied Prisoners of War")) {
+        result.recordSubtype = RecordSubtype.WWIIPrisonerOfWar;
+      }
+    }
+
     result.setEventDate(
       getCleanValueForRecordDataList(
         ed,
@@ -2597,6 +2612,10 @@ function generalizeRecordData(input, result) {
     result.collectionData = {
       id: collectionId,
     };
+
+    if (ed.titleCollection) {
+      result.collectionData.collectionTitle = ed.titleCollection;
+    }
 
     if (ed.recordData) {
       function addRef(key, value) {

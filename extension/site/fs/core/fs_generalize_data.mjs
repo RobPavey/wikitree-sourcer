@@ -305,11 +305,21 @@ function determineRecordType(extractedData) {
 }
 
 function determineRecordSubtype(recordType, extractedData) {
+  let collectionTitle = extractedData.collectionTitle;
+
   if (recordType == RT.Census) {
-    let collectionTitle = extractedData.collectionTitle;
     if (collectionTitle) {
       if (collectionTitle.includes("Church Census Records") && collectionTitle.includes("Latter-day Saints")) {
         return RecordSubtype.LdsCensus;
+      }
+    }
+  } else if (recordType == RT.Military) {
+    if (collectionTitle) {
+      if (collectionTitle.includes("World War I Draft Registration")) {
+        return RecordSubtype.WWIDraftRegistration;
+      }
+      if (collectionTitle.includes("World War II Draft Registration")) {
+        return RecordSubtype.WWIIDraftRegistration;
       }
     }
   }
@@ -1377,6 +1387,10 @@ function generalizeData(input) {
     result.collectionData = {
       id: ed.fsCollectionId,
     };
+
+    if (ed.collectionTitle) {
+      result.collectionData.collectionTitle = ed.collectionTitle;
+    }
 
     if (ed.referenceData) {
       let refData = ed.referenceData;

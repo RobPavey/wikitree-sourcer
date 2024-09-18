@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "George was in a military record on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)\n</ref>",
+    "citation": "George was in a military record (New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917) on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -16,7 +16,7 @@
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "George was in a military record on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)<br/>\nName: George M Leonard; Birth Date: abt 1892; Birth Place: Buffalo, New York; Enlistment Date: 26 Apr 1917; Age at enlistment: 25; Enlistment Place: New York, USA.\n</ref>",
+    "citation": "George was in a military record (New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917) on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)<br/>\nName: George M Leonard; Birth Date: abt 1892; Birth Place: Buffalo, New York; Enlistment Date: 26 Apr 1917; Age at enlistment: 25; Enlistment Place: New York, USA.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "George was in a military record on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)<br/>\nName: George M Leonard; Birth Date: abt 1892; Birth Place: Buffalo, New York; Enlistment Date: 26 Apr 1917; Age at enlistment: 25; Enlistment Place: New York, USA.\n</ref>",
+    "citation": "George was in a military record (New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917) on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)<br/>\nName: George M Leonard; Birth Date: abt 1892; Birth Place: Buffalo, New York; Enlistment Date: 26 Apr 1917; Age at enlistment: 25; Enlistment Place: New York, USA.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "George was in a military record on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || George M Leonard\n|-\n| Birth Date || abt 1892\n|-\n| Birth Place || Buffalo, New York\n|-\n| Enlistment Date || 26 Apr 1917\n|-\n| Age at enlistment || 25\n|-\n| Enlistment Place || New York, USA\n|}\n</ref>",
+    "citation": "George was in a military record (New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917) on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || George M Leonard\n|-\n| Birth Date || abt 1892\n|-\n| Birth Place || Buffalo, New York\n|-\n| Enlistment Date || 26 Apr 1917\n|-\n| Age at enlistment || 25\n|-\n| Enlistment Place || New York, USA\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
@@ -52,7 +52,7 @@
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "George was in a military record on 26 April 1917 in New York, USA.<ref>\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917,\" database, ({{Ancestry Record|2878|7162}} : accessed 6 May 2021), Name George M Leonard, Birth Date abt 1892, Birth Place Buffalo, New York, Enlistment Date 26 Apr 1917, Age at enlistment 25, Enlistment Place New York, USA; citing Original data 1889-1917 74th Inf enlistment cards, WW1, Span-Am. New York State Military Museum, Saratoga Springs, New York.</ref>",
+    "citation": "George was in a military record (New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917) on 26 April 1917 in New York, USA.<ref>\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917,\" database, ({{Ancestry Record|2878|7162}} : accessed 6 May 2021), Name George M Leonard, Birth Date abt 1892, Birth Place Buffalo, New York, Enlistment Date 26 Apr 1917, Age at enlistment 25, Enlistment Place New York, USA; citing Original data 1889-1917 74th Inf enlistment cards, WW1, Span-Am. New York State Military Museum, Saratoga Springs, New York.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
@@ -64,7 +64,7 @@
     "type": "inline"
   },
   "partial_ee_style_narrative": {
-    "citation": "George was in a military record on 26 April 1917 in New York, USA.<ref>\n''Military'':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\", database, \nOriginal data 1889-1917 74th Inf enlistment cards, WW1, Span-Am. New York State Military Museum, Saratoga Springs, New York, \n({{Ancestry Record|2878|7162}} : accessed 6 May 2021), \nName: George M Leonard; Birth Date: abt 1892; Birth Place: Buffalo, New York; Enlistment Date: 26 Apr 1917; Age at enlistment: 25; Enlistment Place: New York, USA.\n</ref>",
+    "citation": "George was in a military record (New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917) on 26 April 1917 in New York, USA.<ref>\n''Military'':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\", database, \nOriginal data 1889-1917 74th Inf enlistment cards, WW1, Span-Am. New York State Military Museum, Saratoga Springs, New York, \n({{Ancestry Record|2878|7162}} : accessed 6 May 2021), \nName: George M Leonard; Birth Date: abt 1892; Birth Place: Buffalo, New York; Enlistment Date: 26 Apr 1917; Age at enlistment: 25; Enlistment Place: New York, USA.\n</ref>",
     "type": "narrative"
   },
   "partial_ee_style_source": {

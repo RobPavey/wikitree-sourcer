@@ -748,6 +748,10 @@ const regressionData = [
     url: "https://www.ancestry.co.uk/discoveryui-content/view/1712038:70845?ssrc=pt&tid=172368945&pid=392239251049",
   },
   {
+    caseName: "uk_military_1942_john_smith",
+    url: "https://www.ancestry.com/discoveryui-content/view/1053823:61642?tid=&pid=&queryid=672bfe1c-dd04-4414-b8c6-b84ef6a7c0ca&_phsrc=Zqm11613&_phstart=successSource",
+  },
+  {
     caseName: "uk_military_1944_albert_braccini",
     url: "https://www.ancestry.com/discoveryui-content/view/84274:1604?ssrc=pt&tid=180461776&pid=202343229183",
   },

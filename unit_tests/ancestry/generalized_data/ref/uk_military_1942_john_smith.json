@@ -1,0 +1,22 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "John M M Smith"
+  },
+  "recordSubtype": "WWIIPrisonerOfWar",
+  "eventDate": {
+    "dateString": "15 Feb 1942"
+  },
+  "serviceNumber": "1105142",
+  "rank": "Gnr",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61642|1053823}}"
+  ],
+  "collectionData": {
+    "id": "61642",
+    "collectionTitle": "UK, World War II Allied Prisoners of War, 1939-1945"
+  },
+  "hasValidData": true
+}

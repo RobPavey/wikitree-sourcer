@@ -2643,7 +2643,27 @@ class NarrativeBuilder {
         }
       }
     } else {
-      this.narrative += " was in a military record";
+      let addedCustomNarrative = false;
+      if (gd.recordSubtype) {
+        if (gd.recordSubtype == RecordSubtype.WWIDraftRegistration) {
+          this.narrative += " registered for the World War I draft";
+          addedCustomNarrative = true;
+        } else if (gd.recordSubtype == RecordSubtype.WWIIDraftRegistration) {
+          this.narrative += " registered for the World War II draft";
+          addedCustomNarrative = true;
+        } else if (gd.recordSubtype == RecordSubtype.WWIIPrisonerOfWar) {
+          this.narrative += " was a prisoner of war in World War II";
+          addedCustomNarrative = true;
+        }
+      }
+
+      if (!addedCustomNarrative) {
+        this.narrative += " was in a military record";
+        if (gd.collectionData && gd.collectionData.collectionTitle) {
+          let title = gd.collectionData.collectionTitle;
+          this.narrative += " (" + title + ")";
+        }
+      }
       if (eventDate) {
         this.narrative += " " + this.formatDate(eventDate, true);
       }

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>\nThe National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>\n{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "John was a prisoner of war in World War II on 15 February 1942. Their service number was 1105142.<ref>\n'''Military''':\n\"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>\nThe National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>\n{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Military''': \"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>The National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>\nThe National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>\n{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)<br/>\nName: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "John was a prisoner of war in World War II on 15 February 1942. Their service number was 1105142.<ref>\n'''Military''':\n\"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>\nThe National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>\n{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)<br/>\nName: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Military''': \"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>The National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)<br/>Name: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>\nThe National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>\n{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)<br/>\nName: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "John was a prisoner of war in World War II on 15 February 1942. Their service number was 1105142.<ref>\n'''Military''':\n\"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>\nThe National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>\n{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)<br/>\nName: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Military''': \"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>The National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)<br/>Name: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Military''':\n\"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>\nThe National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>\n{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John M. M. Smith [J. McF McK Smith]\n|-\n| Rank || Gnr\n|-\n| Military Date || 15 Feb 1942\n|-\n| Service Branch || A\n|-\n| Service Number || 1105142\n|-\n| Description || 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "John was a prisoner of war in World War II on 15 February 1942. Their service number was 1105142.<ref>\n'''Military''':\n\"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>\nThe National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>\n{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || John M. M. Smith [J. McF McK Smith]\n|-\n| Rank || Gnr\n|-\n| Military Date || 15 Feb 1942\n|-\n| Service Branch || A\n|-\n| Service Number || 1105142\n|-\n| Description || 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Military''': \"UK, World War II Allied Prisoners of War, 1939-1945\"<br/>The National Archives; Kew, London, England; WO 392 POW Lists 1943-1945; Reference Number: WO 392/26<br/>{{Ancestry Record|61642|1053823}} (accessed 6 May 2021)<br/>Name: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"UK, World War II Allied Prisoners of War, 1939-1945,\" database, ({{Ancestry Record|61642|1053823}} : accessed 6 May 2021), Name John M. M. Smith [J. McF McK Smith], Rank Gnr, Military Date 15 Feb 1942, Service Branch A, Service Number 1105142, Description 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z; citing The National Archives, Kew, London, England, WO 392 POW Lists 1943-1945, Reference Number WO 392/26.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "John was a prisoner of war in World War II on 15 February 1942. Their service number was 1105142.<ref>\"UK, World War II Allied Prisoners of War, 1939-1945,\" database, ({{Ancestry Record|61642|1053823}} : accessed 6 May 2021), Name John M. M. Smith [J. McF McK Smith], Rank Gnr, Military Date 15 Feb 1942, Service Branch A, Service Number 1105142, Description 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z; citing The National Archives, Kew, London, England, WO 392 POW Lists 1943-1945, Reference Number WO 392/26.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"UK, World War II Allied Prisoners of War, 1939-1945,\" database, ({{Ancestry Record|61642|1053823}} : accessed 6 May 2021), Name John M. M. Smith [J. McF McK Smith], Rank Gnr, Military Date 15 Feb 1942, Service Branch A, Service Number 1105142, Description 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z; citing The National Archives, Kew, London, England, WO 392 POW Lists 1943-1945, Reference Number WO 392/26.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Military'':\n\"UK, World War II Allied Prisoners of War, 1939-1945\", database, \nThe National Archives, Kew, London, England, WO 392 POW Lists 1943-1945, Reference Number WO 392/26, \n({{Ancestry Record|61642|1053823}} : accessed 6 May 2021), \nName: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "John was a prisoner of war in World War II on 15 February 1942. Their service number was 1105142.<ref>\n''Military'':\n\"UK, World War II Allied Prisoners of War, 1939-1945\", database, \nThe National Archives, Kew, London, England, WO 392 POW Lists 1943-1945, Reference Number WO 392/26, \n({{Ancestry Record|61642|1053823}} : accessed 6 May 2021), \nName: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Military'': \"UK, World War II Allied Prisoners of War, 1939-1945\", database, The National Archives, Kew, London, England, WO 392 POW Lists 1943-1945, Reference Number WO 392/26, ({{Ancestry Record|61642|1053823}} : accessed 6 May 2021), Name: John M. M. Smith [J. McF McK Smith]; Rank: Gnr; Military Date: 15 Feb 1942; Service Branch: A; Service Number: 1105142; Description: 26: British Prisoners of War Held in Japan or Japanese-Occupied Territory: R - Z.",
+    "type": "source"
+  }
+}
