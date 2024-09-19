@@ -5,7 +5,7 @@
       {
         "fieldKey": "edit-search-params-nrs-given-name",
         "type": "text",
-        "value": "john"
+        "value": "John"
       },
       {
         "fieldKey": "edit-search-params-nrs-given-name",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "stewart"
+        "value": "Stewart"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",

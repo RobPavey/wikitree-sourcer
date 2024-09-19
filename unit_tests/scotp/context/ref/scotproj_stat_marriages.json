@@ -5,7 +5,7 @@
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "euphemia"
+        "value": "Euphemia"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "lamont"
+        "value": "Lamont"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -35,7 +35,7 @@
       {
         "fieldKey": "edit-search-params-nrs-spforename",
         "type": "text",
-        "value": "john"
+        "value": "John"
       },
       {
         "fieldKey": "edit-search-params-nrs-spforename",
@@ -45,7 +45,7 @@
       {
         "fieldKey": "edit-search-params-nrs-spsurname",
         "type": "text",
-        "value": "mcbride"
+        "value": "McBride"
       },
       {
         "fieldKey": "edit-search-params-nrs-spsurname",

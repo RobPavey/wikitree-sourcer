@@ -5,7 +5,7 @@
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "agnes"
+        "value": "Agnes"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "white"
+        "value": "White"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -39,7 +39,7 @@
       {
         "fieldKey": "edit-search-params-nrs-parent-one",
         "type": "text",
-        "value": "alexander white"
+        "value": "Alexander White"
       },
       {
         "fieldKey": "edit-search-params-nrs-parent-one",
@@ -49,7 +49,7 @@
       {
         "fieldKey": "edit-search-params-nrs-parent-two",
         "type": "text",
-        "value": "saragh mcdonnol"
+        "value": "Saragh McDonnol"
       },
       {
         "fieldKey": "edit-search-params-nrs-parent-two",

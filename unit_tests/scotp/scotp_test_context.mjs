@@ -427,12 +427,10 @@ async function runContextTests(siteName, regressionData, testManager, optionVari
       continue;
     }
 
-    let lcText = inputText.toLowerCase();
-
     let scotpResult = {};
 
     try {
-      scotpResult = buildScotlandsPeopleContextSearchData(lcText);
+      scotpResult = buildScotlandsPeopleContextSearchData(inputText);
     } catch (e) {
       console.log("Error:", e.stack);
       logger.logError(testData, "Exception occurred");

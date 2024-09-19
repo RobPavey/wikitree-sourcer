@@ -5,7 +5,7 @@
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "william"
+        "value": "William"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "cairns"
+        "value": "Cairns"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -39,7 +39,7 @@
       {
         "fieldKey": "edit-search-params-nrs-parent-one",
         "type": "text",
-        "value": "david cairns"
+        "value": "David Cairns"
       },
       {
         "fieldKey": "edit-search-params-nrs-parent-one",
@@ -49,7 +49,7 @@
       {
         "fieldKey": "edit-search-params-nrs-parent-two",
         "type": "text",
-        "value": "margaret wakinshaw"
+        "value": "Margaret Wakinshaw"
       },
       {
         "fieldKey": "edit-search-params-nrs-parent-two",

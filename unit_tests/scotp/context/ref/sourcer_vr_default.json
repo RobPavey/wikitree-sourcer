@@ -5,7 +5,7 @@
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "w j"
+        "value": "W J"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "fraser"
+        "value": "Fraser"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -32,6 +32,6 @@
   "refineData": {
     "fields": []
   },
-  "refNum": "vr008600001",
+  "refNum": "VR008600001",
   "recordType": "vr"
 }

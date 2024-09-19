@@ -1011,7 +1011,7 @@ function openSelectionPlainText(info, tab) {
   }
 
   // check for Scotlands People
-  let scotpResult = buildScotlandsPeopleContextSearchData(lcText);
+  let scotpResult = buildScotlandsPeopleContextSearchData(text);
   if (scotpResult.messages) {
     console.log(scotpResult.messages);
   }

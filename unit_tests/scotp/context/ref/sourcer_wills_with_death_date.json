@@ -5,7 +5,7 @@
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "adelaide"
+        "value": "Adelaide"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "fraser"
+        "value": "Fraser"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -37,6 +37,6 @@
   "refineData": {
     "fields": []
   },
-  "refNum": "sc29/44/48",
+  "refNum": "SC29/44/48",
   "recordType": "wills"
 }

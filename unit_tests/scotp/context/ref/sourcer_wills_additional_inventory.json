@@ -5,7 +5,7 @@
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "jane"
+        "value": "Jane"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "peffers"
+        "value": "Peffers"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -37,6 +37,6 @@
   "refineData": {
     "fields": []
   },
-  "refNum": "sc70/1/665",
+  "refNum": "SC70/1/665",
   "recordType": "wills"
 }

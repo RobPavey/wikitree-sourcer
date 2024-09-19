@@ -5,7 +5,7 @@
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "michael"
+        "value": "Michael"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "mcbride"
+        "value": "McBride"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -35,7 +35,7 @@
       {
         "fieldKey": "edit-search-params-nrs-spouse-forename",
         "type": "text",
-        "value": "mary"
+        "value": "Mary"
       },
       {
         "fieldKey": "edit-search-params-nrs-spouse-forename",
@@ -45,7 +45,7 @@
       {
         "fieldKey": "edit-search-params-nrs-spouse-surname",
         "type": "text",
-        "value": "mcsloy"
+        "value": "McSloy"
       },
       {
         "fieldKey": "edit-search-params-nrs-spouse-surname",
@@ -57,6 +57,6 @@
   "refineData": {
     "fields": []
   },
-  "refNum": "mp 9 1 4 1 69",
+  "refNum": "MP 9 1 4 1 69",
   "recordType": "cr_banns"
 }
