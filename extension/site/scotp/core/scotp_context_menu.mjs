@@ -51,15 +51,15 @@ function logMessage(message) {
 // This non-capturing group should match all possibilities
 // (?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )
 const reParish = /(.*),? ?/;
-const reSourceTitle = /"([^"]+)",?/;
+const reSourceTitle = /["'“‘]([^"'”’]+)["'”’],?/;
 const reDatabaseLiteral = /(?: database with images| database| \[?database online\]?)?,? ?/;
 const reWebsiteCreatorOwner = /([^(\[]*),? ?/;
 const reSourceRef = /([^(]*),? ?/;
 const reLinkStart =
-  /\(?(?:scotlandspeople,? \(?https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/;
-const reLinkStartEdit = /\(?\[https\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/;
+  /\(?(?:scotlandspeople,?\.? \(?https?\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/;
+const reLinkStartEdit = /\(?\[https?\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/;
 const reLinkEnd =
-  /(?: ?\((?:image )?(?:accessed|viewed) [^\)]+\),? ?| ?\: ?(?:image )?(?:accessed|viewed) [^\)]+\),? ?| |,|, )/;
+  /(?: ?\((?:image )?(?:accessed|viewed) [^\)]+\),? ?| ?\: ?(?:image )?(?:accessed|viewed) [^\)]+\),? ?| |,|, )(?:image,? ?)?/;
 const reDataString = /(.*)/;
 const reCitingSourceRef = /;? citing (.*)/;
 
@@ -149,9 +149,22 @@ const citationPatterns = [
       reCitingSourceRef,
     ],
   },
+  {
+    // “Statutory Marriages 1855–2013,” database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 1 Feb 2024), image, marriage registration, James Lamont and Jane O'Neill nee Letson, married 1905, Parish of Govan, County of Lanark; citing Statutory Registers no. 646 / 2 / 372.
+    name: "Non-standard: Sourcer style (but no website creator/owner), source reference at end",
+    paramKeys: ["sourceTitle", "dataString", "sourceReference"],
+    reParts: [reSourceTitle, reDatabaseLiteral, reLinkStart, reLinkEnd, reDataString, reCitingSourceRef],
+  },
 ];
 
 const partialCitationPatterns = [
+  /*
+  {
+    name: "Non-standard: Sourcer style (but no website creator/owner), source reference at end",
+    paramKeys: ["dataString", "sourceReference"],
+    reParts: [reDatabaseLiteral, reLinkStart, reLinkEnd, reDataString, reCitingSourceRef],
+  },
+  */
   {
     name: "Edit mode: Sourcer style or Scotland Project style with source reference at end",
     paramKeys: ["websiteCreatorOwner", "dataString", "sourceReference"],
@@ -474,7 +487,8 @@ const otherFoundTitles = [
   },
   {
     recordType: "stat_marriages",
-    titles: [],
+    titles: ["Statutory Marriages"],
+    reTitles: [/Statutory Marriages \d\d\d\d(?: ?– ?| ?\- ?| to )\d\d\d\d/i],
   },
   {
     recordType: "stat_divorces",
@@ -593,14 +607,14 @@ const dataStringSentencePatterns = {
       // Sourcer generated. Example:
       // Helen McCall A'Hara birth registered 1888 in Anderston, mother's maiden name McCall
       name: "Sourcer format",
-      regex: /^(.*) birth registered ([0-9]+) in (.*), mother's maiden name (.*)$/i,
+      regex: /^(.+) birth registered ([0-9]+) in (.*), mother's maiden name (.*)$/i,
       paramKeys: ["name", "eventDate", "rdName", "mmn"],
     },
     {
       // Scotland Project. Example:
       // James Menzies Wood, mother's MS Wright, M, 1872, Blythswood
       name: "Scotland Project format",
-      regex: /^(.*), mother's ms ([^,]+), (m|f), (\d\d\d\d), ([^;]+).*$/i,
+      regex: /^(.+), mother's ms ([^,]+), (m|f), (\d\d\d\d), ([^;]+).*$/i,
       paramKeys: ["name", "mmn", "gender", "eventDate", "rdName"],
     },
   ],
@@ -609,14 +623,26 @@ const dataStringSentencePatterns = {
       // Sourcer generated. Example:
       // Euphemia Lamont marriage to John McBride registered 1856 in Greenock Old or West.
       name: "Sourcer format",
-      regex: /^(.*) marriage to (.+) registered (\d\d\d\d) in ([^;]+).*$/i,
+      regex: /^(.+) marriage to (.+) registered (\d\d\d\d) in ([^;]+).*$/i,
       paramKeys: ["name", "spouseName", "eventDate", "rdName"],
     },
     {
       // Scotland Project. Example:
       // Euphemia Lamont, and John McBride, 1856, Greenock Old or West
       name: "Scotland Project format",
-      regex: /^(.*),? and (.+), (\d\d\d\d), ([^;]+).*$/i,
+      regex: /^(.+),? (?:and|&|\/) (.+), (\d\d\d\d), ([^;]+).*$/i,
+      paramKeys: ["name", "spouseName", "eventDate", "rdName"],
+    },
+    {
+      // Found case
+      // Duncan Urquhart & Christina Coventry, 1860
+      regex: /^(.+),? (?:and|&|\/) (.+), (\d\d\d\d).*$/i,
+      paramKeys: ["name", "spouseName", "eventDate"],
+    },
+    {
+      // Found case
+      // marriage registration, James Lamont and Jane O'Neill nee Letson, married 1905, Parish of Govan, County of Lanark
+      regex: /^marriage registration,? (.+),? (?:and|&|\/) (.+), married (\d\d\d\d),? (.+)$/i,
       paramKeys: ["name", "spouseName", "eventDate", "rdName"],
     },
   ],
@@ -625,7 +651,7 @@ const dataStringSentencePatterns = {
       // Sourcer generated. Example:
       // Margaret Thomso O'Connor divorce from McClounie in 2010 in Hamilton, Scotland.
       name: "Sourcer format",
-      regex: /^(.*) divorce from (.+) in (\d\d\d\d) in ([^;]+).*$/i,
+      regex: /^(.+) divorce from (.+) in (\d\d\d\d) in ([^;]+).*$/i,
       paramKeys: ["name", "spouseLastName", "eventDate", "court"],
     },
   ],
@@ -634,21 +660,21 @@ const dataStringSentencePatterns = {
       // Sourcer generated. Example:
       // Catherine Aagesen death registered 1976 in Glasgow, Martha St (age 85, mother's maiden name McFee).
       name: "Sourcer format",
-      regex: /^(.*) death registered (\d\d\d\d) in ([^\(;]+)\(age ([^,]+), mother's maiden name ([^\)]+)\).*$/i,
+      regex: /^(.+) death registered (\d\d\d\d) in ([^\(;]+)\(age ([^,]+), mother's maiden name ([^\)]+)\).*$/i,
       paramKeys: ["name", "eventDate", "rdName", "age", "mmn"],
     },
     {
       // Example: Found on Stirling-727
       // Archibald Stirling, male, age 54, date 1869, dwelling in West Kilbride, Ayrshire, Scotland
       name: "Non-standard format",
-      regex: /^(.*), (male|female), age ([^,]+), date ([0-9a-z ]+),? dwelling in (.*)$/i,
+      regex: /^(.+), (male|female), age ([^,]+), date ([0-9a-z ]+),? dwelling in (.*)$/i,
       paramKeys: ["name", "gender", "age", "eventDate", "eventPlace"],
     },
     {
       // Scotland Project. Example:
       // John Stewart, age 47, Male, 1908, Paisley
       name: "Scotland Project format",
-      regex: /^(.*), age ([^,]+), (male|female|m|f), (\d\d\d\d), (.*)$/i,
+      regex: /^(.+), age ([^,]+), (male|female|m|f), (\d\d\d\d), (.*)$/i,
       paramKeys: ["name", "age", "gender", "eventDate", "rdName"],
     },
     {
@@ -662,7 +688,7 @@ const dataStringSentencePatterns = {
       // Found Example: https://www.wikitree.com/wiki/Rendall-372
       // Joan Rendall OR Cooper death registered 1935 in George Square (age 64)
       name: "Non-standard format",
-      regex: /^(.*) death registered (\d\d\d\d) in (.*) \(age ([^\)]+)\).*$/i,
+      regex: /^(.+) death registered (\d\d\d\d) in (.*) \(age ([^\)]+)\).*$/i,
       paramKeys: ["name", "eventDate", "rdName", "age"],
     },
   ],
@@ -671,7 +697,7 @@ const dataStringSentencePatterns = {
       // Sourcer generated. Example:
       // Abigail Alice Walker marriage to Morera-Pallares registered 2021 in Rosskeen
       name: "Sourcer format",
-      regex: /^(.*) marriage to (.+) registered (\d\d\d\d) in ([^;]+).*$/i,
+      regex: /^(.+) marriage to (.+) registered (\d\d\d\d) in ([^;]+).*$/i,
       paramKeys: ["name", "spouseName", "eventDate", "rdName"],
     },
   ],
@@ -680,7 +706,7 @@ const dataStringSentencePatterns = {
       // Sourcer generated. Example:
       // Seonaid MacNeil Wilson divorce from MacIntosh in 2013 in Perth, Scotland
       name: "Sourcer format",
-      regex: /^(.*) divorce from (.+) in (\d\d\d\d) in ([^;]+).*$/i,
+      regex: /^(.+) divorce from (.+) in (\d\d\d\d) in ([^;]+).*$/i,
       paramKeys: ["name", "spouseLastName", "eventDate", "court"],
     },
   ],
@@ -690,7 +716,7 @@ const dataStringSentencePatterns = {
       // peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland.
       name: "Sourcer format",
       regex:
-        /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
+        /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "eventDate", "fatherName", "motherName", "eventPlace"],
     },
     {
@@ -698,7 +724,7 @@ const dataStringSentencePatterns = {
       // william walker birth or baptism 23 jan 1808, son of hugh walker and ann young
       name: "Scotland Project format",
       regex:
-        /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+).*$/i,
+        /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+).*$/i,
       paramKeys: ["name", "eventDate", "fatherName", "motherName"],
     },
     {
@@ -706,7 +732,7 @@ const dataStringSentencePatterns = {
       // william walker birth 23 jan 1808, son of hugh walker and ann young
       name: "Scotland Project format",
       regex:
-        /^([^,;:]+) (?:birth|baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+).*$/i,
+        /^([^,;:]+) (?:birth|baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+).*$/i,
       paramKeys: ["name", "eventDate", "fatherName", "motherName"],
     },
     {
@@ -746,8 +772,9 @@ const dataStringSentencePatterns = {
       // Example: Found
       // William Cairns, parents: David Cairns and Margaret Wakinshaw, 8 Sep 1822, Tranent
       // willliam wilson, parents: james wilson & agnes christie. 1 april 1711, wemyss, fife
+      // Robert Lewis Balfour Stevenson, parents: Thomas Stevenson/Margaret Isabella Balfour, 13 Nov 1850, Edinburgh
       name: "Non-standard format",
-      regex: /^(.*), parents:? ([^,\.]+) (?:and|&) ([^,\.]+)(?:,|\.) ([0-9a-z ]+), (.*)$/i,
+      regex: /^(.+),? parents:? ([^,\.]+)(?: and |&|\/)([^,\.]+)(?:,|\.) ([0-9a-z ]+), (.*)$/i,
       paramKeys: ["name", "fatherName", "motherName", "eventDate"],
     },
   ],
@@ -757,35 +784,35 @@ const dataStringSentencePatterns = {
       // Christane McGregor marriage to Robert Wright on or after 2 Jul 1668 in Buchanan, Stirlingshire, Scotland.
       // Note: in the section (?:on or after |on |in ), "on or after " needs to come before "on "
       name: "Sourcer format",
-      regex: /^(.*) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
+      regex: /^(.+) marriage to (.+) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
     },
     {
       // Example: Scotland Project
       // marriage or banns for James Bell and Elizabeth Arrott 30 Apr 1719
       name: "Scotland Project format",
-      regex: /^marriage or banns for ([^0-9]+) (?:and|&) ([^0-9]+) ([0-9a-z ]+).*$/i,
+      regex: /^marriage or banns for ([^0-9]+)(?: and | ?& ?| ?\/ ?)([^0-9]+) ([0-9a-z ]+).*$/i,
       paramKeys: ["name", "spouseName", "eventDate"],
     },
     {
       // Example: Scotland Project (after reading image)
       // banns for James Bell and Elizabeth Arrott 30 Apr 1719
       name: "Scotland Project format",
-      regex: /^banns for ([^0-9]+) (?:and|&) ([^0-9]+) ([0-9a-z ]+).*$/i,
+      regex: /^banns for ([^0-9]+)(?: and | ?& ?| ?\/ ?)([^0-9]+) ([0-9a-z ]+).*$/i,
       paramKeys: ["name", "spouseName", "eventDate"],
     },
     {
       // Example: Scotland Project (after reading image)
       // marriage of James Bell and Elizabeth Arrott 30 Apr 1719
       name: "Scotland Project format",
-      regex: /^marriage of ([^0-9]+) (?:and|&) ([^0-9]+) ([0-9a-z ]+).*$/i,
+      regex: /^marriage of ([^0-9]+)(?: and | ?& ?| ?\/ ?)([^0-9]+) ([0-9a-z ]+).*$/i,
       paramKeys: ["name", "spouseName", "eventDate"],
     },
     {
       // Example: Found case
       // David Cairns and Mary Chambers, 6 Dec 1820, Tranent
       name: "Non-standard format",
-      regex: /^(.*) and (.*), ([0-9a-z ]+), (.*)$/i,
+      regex: /^(.+)(?: and | ?& ?| ?\/ ?)(.*), ([0-9a-z ]+), (.*)$/i,
       paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
     },
   ],
@@ -795,7 +822,7 @@ const dataStringSentencePatterns = {
       // John Gibson, son of James Galloway Gibson, death or burial (died age 0) on 24 May 1839 in Glasgow, Lanarkshire, Scotland
       name: "Sourcer format",
       regex:
-        /^(.*), (?:son|daughter|child) of (.*), death or burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
+        /^(.+), (?:son|daughter|child) of (.*), death or burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "parentName", "age", "eventDate", "eventPlace"],
     },
     {
@@ -803,28 +830,28 @@ const dataStringSentencePatterns = {
       // Elizabeth Campbell, daughter of Colny Campbell, death or burial on 8 Mar 1647 in Dumbarton, Dunbartonshire, Scotland.
       name: "Sourcer format",
       regex:
-        /^(.*), (?:son|daughter|child) of (.*), death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
+        /^(.+), (?:son|daughter|child) of (.*), death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "parentName", "eventDate", "eventPlace"],
     },
     {
       // Example: Sourcer Default, age no parent
       // John Burns death or burial (died age 96) on 26 Feb 1839 in Glasgow, Lanarkshire, Scotland
       name: "Sourcer format",
-      regex: /^(.*) death or burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
+      regex: /^(.+) death or burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "age", "eventDate", "eventPlace"],
     },
     {
       // Example: Sourcer Default, no parent
       // James Fraser death or burial on 16 Aug 1685 in Aberdeen, Aberdeenshire, Scotland
       name: "Sourcer format",
-      regex: /^(.*) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
+      regex: /^(.+) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "eventDate", "eventPlace"],
     },
     {
       // Example: Scotland Project
       // death of John Burns, 3 March 1839
       name: "Scotland Project format",
-      regex: /^death of (.*), ([0-9a-z ]+).*$/i,
+      regex: /^death of (.+), ([0-9a-z ]+).*$/i,
       paramKeys: ["name", "eventDate"],
     },
   ],
@@ -834,7 +861,7 @@ const dataStringSentencePatterns = {
       // Agnes White baptism on 29 Mar 1839 (born 24 Jan 1839), daughter of Alexander White & Saragh McDonnol, in St Mirin's, Paisley, Renfrewshire, Scotland
       name: "Sourcer format",
       regex:
-        /^(.*) baptism (?:on |in )?([0-9a-z ]+) \(born (.*)\), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
+        /^(.+) baptism (?:on |in )?([0-9a-z ]+) \(born (.*)\), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "eventDate", "birthDate", "fatherName", "motherName", "eventPlace"],
     },
     {
@@ -842,7 +869,7 @@ const dataStringSentencePatterns = {
       // Agnes White baptism on 29 Mar 1839, daughter of Alexander White & Saragh McDonnol, in St Mirin's, Paisley, Renfrewshire, Scotland
       name: "Sourcer format",
       regex:
-        /^(.*) baptism (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
+        /^(.+) baptism (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "eventDate", "fatherName", "motherName", "eventPlace"],
     },
     {
@@ -850,7 +877,7 @@ const dataStringSentencePatterns = {
       // William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.
       name: "Scotland Project format",
       regex:
-        /^(.*), birth ([0-9a-z ]+) and baptism ([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+)$/i,
+        /^(.+), birth ([0-9a-z ]+) and baptism ([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+)$/i,
       paramKeys: ["name", "birthDate", "eventDate", "fatherName", "motherName"],
     },
   ],
@@ -859,14 +886,14 @@ const dataStringSentencePatterns = {
       // Example: Sourcer Default
       // James Ronald McGregor marriage to Ruth Margaret Gauld on or after 26 Nov 1941 in St Mary's with St Peter's, Aberdeen, Aberdeenshire, Scotland.
       name: "Sourcer format",
-      regex: /^(.*) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
+      regex: /^(.+) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
     },
     {
       // Example: Scotland Project
       // marriage or banns for Michael McBride and Mary McSloy, 21 Jul 1862
       name: "Scotland Project format",
-      regex: /^marriage or banns for (.*) and (.*), ([0-9a-z ]+).*$/i,
+      regex: /^marriage or banns for (.+)(?: and | ?& ?| ?\/ ?)(.+), ([0-9a-z ]+).*$/i,
       paramKeys: ["name", "spouseName", "eventDate"],
     },
   ],
@@ -875,7 +902,7 @@ const dataStringSentencePatterns = {
       // Example: Sourcer Default, age
       // Ruth Fraser burial (died age 0) on 3 Dec 1860 in Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland
       name: "Sourcer format",
-      regex: /^(.*) burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
+      regex: /^(.+) burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "age", "eventDate", "eventPlace"],
     },
   ],
@@ -888,7 +915,7 @@ const dataStringSentencePatterns = {
       // Peter Connor baptism on 16 Mar 1854 (born 23 Feb 1854), child of Peter Conner & Jean Sneddon, in Wellwynd Associate, Airdrie, Lanarkshire, Scotland
       name: "Sourcer format",
       regex:
-        /^(.*) baptism (?:on |in )?([0-9a-z ]+) \(born (.*)\), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
+        /^(.+) baptism (?:on |in )?([0-9a-z ]+) \(born (.*)\), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "eventDate", "birthDate", "fatherName", "motherName", "eventPlace"],
     },
     {
@@ -896,7 +923,7 @@ const dataStringSentencePatterns = {
       // John Rutherford, birth 28 August 1848, baptism 20 November 1850, son of George Rutherford and Isabella Waldie, Parish/Congregation Hawick Free
       name: "Scotland Project format",
       regex:
-        /^(.*), birth ([0-9a-z ]+)(?: and|,) baptism ([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+) (?:&|and) ([0-9a-z ]+), (.+)$/i,
+        /^(.+), birth ([0-9a-z ]+)(?: and|,) baptism ([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+), (.+)$/i,
       paramKeys: ["name", "birthDate", "eventDate", "fatherName", "motherName", "eventPlace"],
     },
   ],
@@ -905,7 +932,7 @@ const dataStringSentencePatterns = {
       // Example: Sourcer Default
       // John Kay marriage to Hannah Butler Dewar on 3 Jul 1849 in Scotland
       name: "Sourcer format",
-      regex: /^(.*) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
+      regex: /^(.+) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
     },
   ],
@@ -914,14 +941,14 @@ const dataStringSentencePatterns = {
       // Example: Sourcer Default
       // Helen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever
       name: "Sourcer format",
-      regex: /^(.*) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)\. Cause of death: (.+)$/i,
+      regex: /^(.+) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)\. Cause of death: (.+)$/i,
       paramKeys: ["name", "eventDate", "eventPlace", "causeOfDeath"],
     },
     {
       // Example: Sourcer Default, no cause of death
       // Helen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland.
       name: "Sourcer format",
-      regex: /^(.*) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
+      regex: /^(.+) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
       paramKeys: ["name", "eventDate", "eventPlace"],
     },
   ],
@@ -933,21 +960,21 @@ const dataStringSentencePatterns = {
       // Example: Scotland Project
       // Ella W. McMillan, female, age at census 2, Greenock West, Renfrew;
       name: "Scotland Project format",
-      regex: /^(.*), (male|female), age at census ([^,]+), (.*)$/i,
+      regex: /^(.+), (male|female), age at census ([^,]+), (.*)$/i,
       paramKeys: ["name", "gender", "age", "eventPlace"],
     },
     {
       // Example: Sourcer Default with registration district
       // James Fraser (31) in Milton registration district in Lanarkshire, Scotland.
       name: "Sourcer format",
-      regex: /^(.*) \(([^\)]+)\) in (.*) registration district in (.*)$/i,
+      regex: /^(.+) \(([^\)]+)\) in (.*) registration district in (.*)$/i,
       paramKeys: ["name", "age", "rdName", "countyCity"],
     },
     {
       // Example: Sourcer Default, no registration (may never generate this)
       // James Fraser (31) in Milton registration district in Lanarkshire, Scotland.
       name: "Sourcer format",
-      regex: /^(.*) \(([^\)]+)\) in (.*)$/i,
+      regex: /^(.+) \(([^\)]+)\) in (.*)$/i,
       paramKeys: ["name", "age", "eventPlace"],
     },
   ],
@@ -956,7 +983,7 @@ const dataStringSentencePatterns = {
       // Example: Sourcer Default
       // Christina Clark Or Pocock (24) at 27 Marshall St, Edinburgh Buccleuch, Edinburgh, Scotland. Born in Turriff, Banff, Scotland
       name: "Sourcer format",
-      regex: /^(.*) \(([^,]+)\) (?:in|on|at) (.*)$/i,
+      regex: /^(.+) \(([^,]+)\) (?:in|on|at) (.*)$/i,
       paramKeys: ["name", "age", "eventPlace"],
     },
     {
@@ -972,7 +999,7 @@ const dataStringSentencePatterns = {
       // Example: Sourcer Default
       // W J Fraser in 1855 at House No 83 Union Street in the parish of Aberdeen, Scotland
       name: "Sourcer format",
-      regex: /^(.*) (?:in|on) (\d\d\d\d) (?:in|on|at) (.*)$/i,
+      regex: /^(.+) (?:in|on) (\d\d\d\d) (?:in|on|at) (.*)$/i,
       paramKeys: ["name", "eventDate", "eventPlace"],
     },
   ],
@@ -983,7 +1010,7 @@ const dataStringSentencePatterns = {
       // Confirmation of inventory for Agnes Fraser at Glasgow Sheriff Court on 18 Apr 1910
       name: "Sourcer format",
       regex:
-        /^confirmation of (?:will or testament of |will of |inventory for |probate of will of )(.*) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+)$/i,
+        /^confirmation of (?:will or testament of |will of |inventory for |probate of will of )(.+) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+)$/i,
       paramKeys: ["name", "eventPlace", "eventDate"],
     },
     {
@@ -991,7 +1018,7 @@ const dataStringSentencePatterns = {
       // Confirmation of will of Adelaide Fraser at Inverness Sheriff Court on 2 Feb 1906. Died 2 Jul 1905.
       name: "Sourcer format",
       regex:
-        /^confirmation of (?:will or testament of |will of |inventory for |probate of will of )(.*) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+)\. died ([0-9a-z ]+)$/i,
+        /^confirmation of (?:will or testament of |will of |inventory for |probate of will of )(.+) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+)\. died ([0-9a-z ]+)$/i,
       paramKeys: ["name", "eventPlace", "eventDate", "deathDate"],
     },
     {
@@ -999,7 +1026,7 @@ const dataStringSentencePatterns = {
       // Confirmation of inventory for Jane Peffers at Edinburgh Sheriff Court on 25 Jun 1921 (original confirmation on 14 Jun 1921).
       name: "Sourcer format",
       regex:
-        /^confirmation of (?:will or testament of |will of |inventory for )(.*) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+) \(original confirmation (?:in|on) ([0-9a-z ]+)\).*$/i,
+        /^confirmation of (?:will or testament of |will of |inventory for )(.*) (?:in|on|at) (.+) (?:in|on) ([0-9a-z ]+) \(original confirmation (?:in|on) ([0-9a-z ]+)\).*$/i,
       paramKeys: ["name", "eventPlace", "eventDate", "originalConfDate"],
     },
     {
@@ -1007,7 +1034,7 @@ const dataStringSentencePatterns = {
       // Confirmation of inventory for Jane Peffers at Edinburgh Sheriff Court on 25 Jun 1921 (original confirmation on 14 Jun 1921). Died 6 Apr 1921.
       name: "Sourcer format",
       regex:
-        /^confirmation of (?:will or testament of |will of |inventory for )(.*) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+) \(original confirmation (?:in|on) ([0-9a-z ]+)\)\. died ([0-9a-z ]+)$/i,
+        /^confirmation of (?:will or testament of |will of |inventory for )(.*) (?:in|on|at) (.+) (?:in|on) ([0-9a-z ]+) \(original confirmation (?:in|on) ([0-9a-z ]+)\)\. died ([0-9a-z ]+)$/i,
       paramKeys: ["name", "eventPlace", "eventDate", "originalConfDate", "deathDate"],
     },
   ],
@@ -1038,16 +1065,33 @@ const dataStringSentencePatterns = {
 function getScotpRecordTypeFromSourceTitle(sourceTitle) {
   let lcSourceTitle = sourceTitle.toLowerCase();
 
-  // first check default Sourcer titles
-  for (let defaultSourcerTitle of defaultSourcerTitles) {
-    for (let title of defaultSourcerTitle.titles) {
-      const lcTitle = title.toLowerCase();
-      if (lcSourceTitle.includes(lcTitle)) {
-        return defaultSourcerTitle.recordType;
+  function findMatchingTitle(titleObjects) {
+    for (let titleObject of titleObjects) {
+      if (titleObject.reTitles) {
+        for (let reTitle of titleObject.reTitles) {
+          if (reTitle.test(sourceTitle)) {
+            return titleObject.recordType;
+          }
+        }
+      }
+      if (titleObject.titles) {
+        for (let title of titleObject.titles) {
+          const lcTitle = title.toLowerCase();
+          if (lcSourceTitle.includes(lcTitle)) {
+            return titleObject.recordType;
+          }
+        }
       }
     }
   }
 
+  // first check default Sourcer titles
+  let matchingTitleObj = findMatchingTitle(defaultSourcerTitles);
+  if (matchingTitleObj) {
+    return matchingTitleObj.recordType;
+  }
+
+  // next check the NRS titles. Sourcer can optionally use these
   for (let recordTypeKey in scotpRecordTypes) {
     let recordType = scotpRecordTypes[recordTypeKey];
     const nrsTitle = recordType.collectionNrsTitle;
@@ -1059,22 +1103,16 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
     }
   }
 
-  for (let scotlandProjectTitle of scotlandProjectTitles) {
-    for (let title of scotlandProjectTitle.titles) {
-      let lcTitle = title.toLowerCase();
-      if (lcSourceTitle.includes(lcTitle)) {
-        return scotlandProjectTitle.recordType;
-      }
-    }
+  // Check Scotland Project titles
+  matchingTitleObj = findMatchingTitle(scotlandProjectTitles);
+  if (matchingTitleObj) {
+    return matchingTitleObj.recordType;
   }
 
-  for (let otherFoundTitle of otherFoundTitles) {
-    for (let title of otherFoundTitle.titles) {
-      let lcTitle = title.toLowerCase();
-      if (lcSourceTitle.includes(lcTitle)) {
-        return otherFoundTitle.recordType;
-      }
-    }
+  // Check other found titles
+  matchingTitleObj = findMatchingTitle(otherFoundTitles);
+  if (matchingTitleObj) {
+    return matchingTitleObj.recordType;
   }
 
   return "";
@@ -1182,6 +1220,28 @@ function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation) {
   function foundMatch(recordType, title, matchIndex) {
     parsedCitation.sourceTitle = title;
     let remainder = text.substring(matchIndex + title.length);
+    let beforeTitle = text.substring(0, matchIndex);
+    let quotesBeforeTitle = beforeTitle.match(/["'“‘]/);
+    function isOdd(num) {
+      return num % 2;
+    }
+    if (quotesBeforeTitle && isOdd(quotesBeforeTitle.length)) {
+      // if there is a matching quote in remainder then remove up to (and including) it
+      const startQuoteToEndQuote = {
+        '"': `"`,
+        "'": `'`,
+        "“": `”`,
+        "‘": `’`,
+      };
+      let lastQuoteBeforeTitle = quotesBeforeTitle[quotesBeforeTitle.length - 1];
+      let matchingEndQuote = startQuoteToEndQuote[lastQuoteBeforeTitle];
+      if (matchingEndQuote) {
+        let quoteIndex = remainder.indexOf(matchingEndQuote);
+        if (quoteIndex != -1) {
+          remainder = remainder.substring(quoteIndex + 1);
+        }
+      }
+    }
     while (remainder.startsWith('"') || remainder.startsWith(",") || remainder.startsWith(" ")) {
       remainder = remainder.substring(1);
     }
@@ -1254,6 +1314,17 @@ function findMatchingPartialCitationPattern(parsedCitation) {
   return false;
 }
 
+function cleanCitationValue(value) {
+  value = value.trim();
+  while (value.endsWith(".") || value.endsWith(",")) {
+    value = value.substring(0, value.length - 1).trim();
+  }
+  while (value.startsWith(".") || value.startsWith(",")) {
+    value = value.substring(1).trim();
+  }
+  return value;
+}
+
 function parseUsingPattern(parsedCitation) {
   let pattern = parsedCitation.matchingPattern;
   let text = parsedCitation.cleanText;
@@ -1264,12 +1335,7 @@ function parseUsingPattern(parsedCitation) {
     let regex = getRegexForPattern(pattern);
     let value = text.replace(regex, resultString);
     if (key && value && value != text) {
-      value = value.trim();
-      if (value.endsWith(".") || value.endsWith(",")) {
-        value = value.substring(0, value.length - 1);
-      }
-      value = value.trim();
-      parsedCitation[key] = value;
+      parsedCitation[key] = cleanCitationValue(value);
     }
   }
 }
@@ -1284,12 +1350,7 @@ function parseUsingPartialPattern(parsedCitation) {
     let regex = getRegexForPattern(pattern);
     let value = text.replace(regex, resultString);
     if (key && value && value != text) {
-      value = value.trim();
-      if (value.endsWith(".") || value.endsWith(",")) {
-        value = value.substring(0, value.length - 1);
-      }
-      value = value.trim();
-      parsedCitation[key] = value;
+      parsedCitation[key] = cleanCitationValue(value);
     }
   }
 }
@@ -1307,6 +1368,11 @@ function setName(data, parsedCitation, builder) {
       builder.addForename(forename, "exact");
     }
     if (surname) {
+      // check for nee or née in name
+      let neeIndex = surname.search(/(nee|née)/);
+      if (neeIndex != -1) {
+        surname = surname.substring(0, neeIndex).trim();
+      }
       builder.addSurname(surname, "exact");
     }
     return;
@@ -1314,6 +1380,12 @@ function setName(data, parsedCitation, builder) {
 
   if (!name) {
     return;
+  }
+
+  // check for nee or née in name
+  let neeIndex = name.search(/(nee|née)/);
+  if (neeIndex != -1) {
+    name = name.substring(0, neeIndex).trim();
   }
 
   if (scotpRecordType == "coa") {
@@ -1404,6 +1476,11 @@ function setSpouse(data, parsedCitation, builder) {
     const searchOption = "exact";
 
     if (spouseName) {
+      let neeIndex = spouseName.search(/(nee|née)/);
+      if (neeIndex != -1) {
+        spouseName = spouseName.substring(0, neeIndex).trim();
+      }
+
       let numWordsInName = StringUtils.countWords(spouseName);
       if (numWordsInName > 1) {
         let forenames = StringUtils.getWordsBeforeLastWord(spouseName);
@@ -1677,6 +1754,8 @@ function addListValueToData(label, value, parsedCitation, data) {
     data.rdName = value;
   } else if (lcLabel == "county / city" || lcLabel == "county/city" || "county") {
     data.countyCity = value;
+  } else if (lcLabel == "ref") {
+    data.ref = value;
   }
 }
 
@@ -1760,6 +1839,8 @@ function parseDataList(dataString, parsedCitation, builder) {
 
   addDataToBuilder(parsedCitation, data, builder);
 
+  parsedCitation.data = data;
+
   return true;
 }
 
@@ -1815,6 +1896,8 @@ function parseDataSentence(dataString, parsedCitation, builder) {
     }
 
     addDataToBuilder(parsedCitation, data, builder);
+    parsedCitation.data = data;
+
     return true;
   }
 
@@ -1872,6 +1955,99 @@ function parseDataString(parsedCitation, builder) {
       }
     }
   }
+}
+
+function extractReferenceNumber(parsedCitation) {
+  let refNum = "";
+
+  const standardRegexes = [
+    /^.*reference number[\.,:]? ([a-z0-9 \/]+).*$/i,
+    /^.*reference[\.,:]? ([a-z0-9 \/]+).*$/i,
+    /^.*ref number[\.,:]? ([a-z0-9 \/]+).*$/i,
+    /^.*ref num[\.,:]? ([a-z0-9 \/]+).*$/i,
+    /^.*ref no[\.,:]? ([a-z0-9 \/]+).*$/i,
+    /^.*ref[\.,:]? ([a-z0-9 \/]+).*$/i,
+  ];
+
+  const nonStandardRegexes = [/^.*Statutory Registers no[\.,:]? ([a-z0-9 \/]+).*$/i];
+
+  function extractFromTextString(text, regexes) {
+    for (let regex of regexes) {
+      if (regex.test(text)) {
+        let num = text.replace(regex, "$1");
+        if (num && num != text) {
+          refNum = num;
+          break;
+        }
+      }
+    }
+
+    // another way is to look for what this record type would use.
+    if (!refNum) {
+      let refName = ScotpRecordType.getRecordKey(parsedCitation.scotpRecordType, "ref");
+      if (refName) {
+        let lcRefName = refName.toLowerCase();
+        let lcSourceReference = text.toLowerCase();
+        let index = lcSourceReference.indexOf(lcRefName);
+        if (index != -1) {
+          let remainder = lcSourceReference.substring(index + lcRefName.length);
+          let num = remainder.replace(/^:? ([a-z0-9 \/]+).*$/, "$1");
+          if (num && num != remainder) {
+            refNum = num;
+          }
+        }
+      }
+    }
+  }
+
+  // See if we can extract a reference number from sourceReference
+  if (parsedCitation.sourceReference) {
+    let sourceReference = parsedCitation.sourceReference;
+    logMessage("Source reference is : " + sourceReference);
+
+    extractFromTextString(sourceReference, standardRegexes);
+
+    if (!refNum) {
+      logMessage("No ref number found in source reference");
+    }
+  }
+
+  if (!refNum) {
+    // either there is no source reference or it doesn't contain a ref num
+    // It is possible that it is in the data if the data string was a list
+    if (parsedCitation.data) {
+      let dataRef = parsedCitation.data.ref;
+      if (dataRef) {
+        refNum = dataRef;
+      }
+    }
+  }
+
+  if (!refNum) {
+    // check the data string for a refNum, it could have been parsed as a sentence but have
+    // been put in the place name
+    if (parsedCitation.dataString) {
+      extractFromTextString(parsedCitation.dataString, standardRegexes);
+    }
+  }
+
+  // if still nothing try non-standard labels
+  if (!refNum) {
+    if (parsedCitation.dataString) {
+      extractFromTextString(parsedCitation.sourceReference, nonStandardRegexes);
+      if (refNum) {
+        logMessage("Found ref num using non-standard label");
+      }
+    }
+  }
+  if (!refNum) {
+    if (parsedCitation.dataString) {
+      extractFromTextString(parsedCitation.dataString, nonStandardRegexes);
+      logMessage("Found ref num in data string using non-standard label");
+    }
+  }
+
+  return refNum;
 }
 
 function buildScotlandsPeopleContextSearchData(text) {
@@ -1961,56 +2137,14 @@ function buildScotlandsPeopleContextSearchData(text) {
 
   let searchData = builder.getFormData();
 
-  // See if we can extract a reference number from sourceReference
-  if (searchData && parsedCitation.sourceReference) {
-    let sourceReference = parsedCitation.sourceReference;
-    logMessage("Source reference is : " + sourceReference);
+  let refNum = extractReferenceNumber(parsedCitation);
+  if (refNum) {
+    logMessage("Ref number is : " + refNum);
 
-    const regexes = [
-      /^.*reference number:? ([a-z0-9 \/]+).*$/i,
-      /^.*reference:? ([a-z0-9 \/]+).*$/i,
-      /^.*ref number:? ([a-z0-9 \/]+).*$/i,
-      /^.*ref num:? ([a-z0-9 \/]+).*$/i,
-      /^.*ref no:? ([a-z0-9 \/]+).*$/i,
-      /^.*ref:? ([a-z0-9 \/]+).*$/i,
-    ];
-
-    let refNum = "";
-    for (let regex of regexes) {
-      if (regex.test(sourceReference)) {
-        let num = sourceReference.replace(regex, "$1");
-        if (num && num != sourceReference) {
-          refNum = num;
-          break;
-        }
-      }
-    }
-
-    // another way is to look for what this record type would use.
-    if (!refNum) {
-      let refName = ScotpRecordType.getRecordKey(parsedCitation.scotpRecordType, "ref");
-      if (refName) {
-        let lcRefName = refName.toLowerCase();
-        let lcSourceReference = sourceReference.toLowerCase();
-        let index = lcSourceReference.indexOf(lcRefName);
-        if (index != -1) {
-          let remainder = lcSourceReference.substring(index + lcRefName.length);
-          let num = remainder.replace(/^:? ([a-z0-9 \/]+).*$/, "$1");
-          if (num && num != remainder) {
-            refNum = num;
-          }
-        }
-      }
-    }
-
-    if (refNum) {
-      logMessage("Ref number is : " + refNum);
-
-      searchData.refNum = refNum;
-      searchData.recordType = parsedCitation.scotpRecordType;
-    } else {
-      logMessage("No ref number found in source reference");
-    }
+    searchData.refNum = refNum;
+    searchData.recordType = parsedCitation.scotpRecordType;
+  } else {
+    logMessage("No ref number found");
   }
 
   //console.log("buildScotlandsPeopleContextSearchData, returning, searchData is:");

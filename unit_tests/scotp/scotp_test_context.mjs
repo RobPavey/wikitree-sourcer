@@ -56,6 +56,12 @@ const regressionData = [
     text: `Scotland, "Statutory Registers - Births" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024), James Menzies Wood, mother's MS Wright, M, 1872, Blythswood; citing Reference Number: 644 / 6 / 92.
     `,
   },
+  {
+    // Found on https://www.wikitree.com/wiki/Cheyne-996
+    // Uses data list bu the first field (Surename) was getting a period on start.
+    caseName: "found_stat_births_1",
+    text: `BIRTH: Scotland: Statutory Registers - Births database, National Records of Scotland, Scotlandspeople (https://www.scotlandspeople.gov.uk/: accessed 23 Sep 2023). Surname: CHEYNE, Forename: GLADYS, Mother's Maiden Name: blank, Gender: F, Year: 1928, Ref: 221 / 4, RD Name: METHLICK.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_marriages
@@ -67,6 +73,11 @@ const regressionData = [
   {
     caseName: "scotproj_stat_marriages",
     text: `Scotland, "Statutory Registers - Marriages" database, National Records of Scotland, (ScotlandsPeople :accessed 15 Nov 2023), Euphemia Lamont, and John McBride, 1856, Greenock Old or West; citing Reference Number: 564 / 3 / 44.`,
+  },
+  {
+    // Like sourcer but has source ref at end but no website creator/owner
+    caseName: "found_stat_marriages_1",
+    text: `“Statutory Marriages 1855–2013,” database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 1 Feb 2024), image, marriage registration, James Lamont and Jane O'Neill nee Letson, married 1905, Parish of Govan, County of Lanark; citing Statutory Registers no. 646 / 2 / 372.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -108,6 +119,12 @@ const regressionData = [
     // Source title is not an exact match.
     caseName: "found_stat_deaths_3",
     text: `"Scottish Statutory registers - Deaths", database, National Records of Scotland (ScotlandsPeople : accessed 8 September 2024), Archibald Stirling, male, age 54, date 1869, dwelling in West Kilbride, Ayrshire, Scotland; citing reference number 620/ 5.`,
+  },
+  {
+    // Found on https://www.wikitree.com/wiki/Cheyne-996 (19 Sep 2024)
+    // Source title is not in quotes. Ref num is in data list
+    caseName: "found_stat_deaths_4",
+    text: `DEATH: Scotland: Statutory Registers - Deaths database, National Records of Scotland, Scotlandspeople (https://www.scotlandspeople.gov.uk/: accessed 23 Sep 2023), Surname: CHEYNE, Forename: GLADYS, Age at death: 79, Mother's Maiden Name: BISSET, Gender: F, Year: 2008, Ref: 301 / 779, RD Name: ABERDEEN.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -178,6 +195,12 @@ const regressionData = [
     // No ScotlandsPeople before the bare link.
     caseName: "found_opr_birth_3",
     text: `Birth or Baptism: "Church of Scotland: Old Parish Registers - Births and Baptisms," database, National Records of Scotland, https://www.scotlandspeople.gov.uk/ (accessed 6 December 2022), Marie Douglas-hamilto born or baptised on 30 Apr 1657, daughter of William Duke Of Hamilton Douglas-hamilton Anne Duchess Of Ha, in Hamilton, Lanarkshire, Scotland; citing Parish Number 647, Ref 10/53.`,
+  },
+  {
+    // found on: https://www.wikitree.com/wiki/Stevenson-999 (19 Sep 2024)
+    // Data string format is a bit different
+    caseName: "found_opr_birth_4",
+    text: `"Church of Scotland: Old Parish Registers - Births and baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 22 Dec 2021), Robert Lewis Balfour Stevenson, parents: Thomas Stevenson/Margaret Isabella Balfour, 13 Nov 1850, Edinburgh; citing Parish Number 685/1, Reference Number: 600 207.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,67 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-marriages",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "James"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Lamont"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1905"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1905"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "text",
+        "value": "Jane"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "text",
+        "value": "O'Neill"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": []
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "646 / 2 / 372",
+  "recordType": "stat_marriages"
+}
