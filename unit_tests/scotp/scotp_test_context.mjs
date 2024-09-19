@@ -173,6 +173,12 @@ const regressionData = [
     caseName: "found_opr_birth_2",
     text: `Baptism, "Church of Scotland: Old Parish Registers - Births & Baptisms" [database online], National Records of Scotland, Scotlandspeople, (https://www.scotlandspeople.gov.uk/: accessed 13 May 2024), Willliam Wilson, Parents: James Wilson & Agnes Christie. 1 April 1711, Wemyss, Fife; citing Parish: 459, Reference Number: 20/182.`,
   },
+  {
+    // found on: https://www.wikitree.com/wiki/Douglas-1386 (18 Sep 2024)
+    // No ScotlandsPeople before the bare link.
+    caseName: "found_opr_birth_3",
+    text: `Birth or Baptism: "Church of Scotland: Old Parish Registers - Births and Baptisms," database, National Records of Scotland, https://www.scotlandspeople.gov.uk/ (accessed 6 December 2022), Marie Douglas-hamilto born or baptised on 30 Apr 1657, daughter of William Duke Of Hamilton Douglas-hamilton Anne Duchess Of Ha, in Hamilton, Lanarkshire, Scotland; citing Parish Number 647, Ref 10/53.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // opr_marriages
