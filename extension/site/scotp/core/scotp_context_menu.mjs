@@ -1233,13 +1233,42 @@ function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation) {
     return false;
   }
 
-  // first check default Sourcer titles
-  for (let defaultSourcerTitle of defaultSourcerTitles) {
-    for (let title of defaultSourcerTitle.titles) {
-      if (checkMatch(defaultSourcerTitle.recordType, title)) {
+  function checkReMatch(recordType, reTitle) {
+    let sourceTitleIndex = lcText.search(reTitle);
+    if (sourceTitleIndex != -1) {
+      let matches = lcText.match(reTitle);
+      if (matches && matches.length > 0) {
+        let title = matches[0];
+        foundMatch(recordType, title, sourceTitleIndex);
         return true;
       }
     }
+    return false;
+  }
+
+  function checkTitleObjects(titleObjects) {
+    for (let titleObject of titleObjects) {
+      if (titleObject.reTitles) {
+        for (let reTitle of titleObject.reTitles) {
+          if (checkReMatch(titleObject.recordType, reTitle)) {
+            return true;
+          }
+        }
+      }
+      if (titleObject.titles) {
+        for (let title of titleObject.titles) {
+          if (checkMatch(titleObject.recordType, title)) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  // first check default Sourcer titles
+  if (checkTitleObjects(defaultSourcerTitles)) {
+    return true;
   }
 
   for (let recordTypeKey in scotpRecordTypes) {
@@ -1252,20 +1281,12 @@ function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation) {
     }
   }
 
-  for (let scotlandProjectTitle of scotlandProjectTitles) {
-    for (let title of scotlandProjectTitle.titles) {
-      if (checkMatch(scotlandProjectTitle.recordType, title)) {
-        return true;
-      }
-    }
+  if (checkTitleObjects(scotlandProjectTitles)) {
+    return true;
   }
 
-  for (let otherFoundTitle of otherFoundTitles) {
-    for (let title of otherFoundTitle.titles) {
-      if (checkMatch(otherFoundTitle.recordType, title)) {
-        return true;
-      }
-    }
+  if (checkTitleObjects(otherFoundTitles)) {
+    return true;
   }
 
   return false;
