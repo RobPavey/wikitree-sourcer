@@ -173,6 +173,7 @@ async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
           //console.log("doHighlightForRefNumber: text = '" + text + "', refValue = '" + refValue + "'");
           if (text == refValue) {
             // we have found the row to highlight
+            //console.log("doHighlightForRefNumber: found match, highlighting row");
             highlightRow(rowElement);
             return;
           }
@@ -180,8 +181,10 @@ async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
           if (!isFromUrl) {
             let cleanRefValue = refValue.replace(/\s*\/\s*/g, "/");
             let cleanText = text.replace(/\s*\/\s*/g, "/");
+            //console.log("doHighlightForRefNumber: cleanText = '" + cleanText + "', cleanRefValue = '" + cleanRefValue + "'");
             if (cleanText == cleanRefValue) {
               // we have found the row to highlight
+              //console.log("doHighlightForRefNumber: found match, highlighting row");
               highlightRow(rowElement);
               return;
             }
@@ -190,8 +193,10 @@ async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
             // displayed in the search results is "20 / 27"
             cleanRefValue = refValue.replace(/\s*\/\s*/g, " ");
             cleanText = text.replace(/\s*\/\s*/g, " ");
+            //console.log("doHighlightForRefNumber: cleanText = '" + cleanText + "', cleanRefValue = '" + cleanRefValue + "'");
             if (cleanText == cleanRefValue) {
               // we have found the row to highlight
+              //console.log("doHighlightForRefNumber: found match, highlighting row");
               highlightRow(rowElement);
               return;
             }
@@ -200,8 +205,10 @@ async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
             // text = "VR008600001-"
             cleanRefValue = cleanRefValue.replace(/^(.*)\-$/, "$1");
             cleanText = cleanText.replace(/^(.*)\-$/, "$1");
+            //console.log("doHighlightForRefNumber: cleanText = '" + cleanText + "', cleanRefValue = '" + cleanRefValue + "'");
             if (cleanText == cleanRefValue) {
               // we have found the row to highlight
+              //console.log("doHighlightForRefNumber: found match, highlighting row");
               highlightRow(rowElement);
               return;
             }

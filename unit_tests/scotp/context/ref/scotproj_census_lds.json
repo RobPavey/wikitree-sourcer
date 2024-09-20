@@ -23,6 +23,11 @@
         "value": "exact"
       },
       {
+        "fieldKey": "edit-search-params-nrs-sex-m",
+        "type": "radio",
+        "value": true
+      },
+      {
         "fieldKey": "edit-search-params-hss-age-age-from",
         "type": "text",
         "value": "20"
