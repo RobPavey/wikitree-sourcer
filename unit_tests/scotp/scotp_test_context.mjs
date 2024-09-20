@@ -75,7 +75,9 @@ const regressionData = [
     text: `Scotland, "Statutory Registers - Marriages" database, National Records of Scotland, (ScotlandsPeople :accessed 15 Nov 2023), Euphemia Lamont, and John McBride, 1856, Greenock Old or West; citing Reference Number: 564 / 3 / 44.`,
   },
   {
+    // Found on https://www.wikitree.com/wiki/Letson-487
     // Like sourcer but has source ref at end but no website creator/owner
+    // Has curly quotes
     caseName: "found_stat_marriages_1",
     text: `“Statutory Marriages 1855–2013,” database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 1 Feb 2024), image, marriage registration, James Lamont and Jane O'Neill nee Letson, married 1905, Parish of Govan, County of Lanark; citing Statutory Registers no. 646 / 2 / 372.`,
   },

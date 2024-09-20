@@ -50,65 +50,70 @@ function logMessage(message) {
 // NOTE: All patterns try to handle the optional accessed date in all three options
 // This non-capturing group should match all possibilities
 // (?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )
-const reParish = /(.*),? ?/;
-const reSourceTitle = /["'“‘]([^"'”’]+)["'”’],?/;
-const reDatabaseLiteral = /(?: database with images| database| \[?database online\]?)?,? ?/;
-const reWebsiteCreatorOwner = /([^(\[]*),? ?/;
-const reSourceRef = /([^(]*),? ?/;
-const reLinkStart =
-  /\(?(?:scotlandspeople,?\.? \(?https?\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/;
-const reLinkStartEdit = /\(?\[https?\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/;
-const reLinkEnd =
-  /(?: ?\((?:image )?(?:accessed|viewed) [^\)]+\),? ?| ?\: ?(?:image )?(?:accessed|viewed) [^\)]+\),? ?| |,|, )(?:image,? ?)?/;
-const reDataString = /(.*)/;
-const reCitingSourceRef = /;? citing (.*)/;
-
+const cpParish = {
+  regex: /(.*),? ?/,
+  paramKeys: ["parish"],
+};
+const cpTitle = {
+  regex: /["'“‘]([^"'”’]+)["'”’],?/,
+  paramKeys: ["sourceTitle"],
+};
+const cpDb = {
+  regex: /(?: database with images| database| \[?database online\]?)?,? ?/,
+};
+const cpOwner = {
+  regex: /([^(\[]*),? ?/,
+  paramKeys: ["websiteCreatorOwner"],
+};
+const cpRef = {
+  regex: /([^(]*),? ?/,
+  paramKeys: ["sourceReference"],
+};
+const cpLinkA = {
+  regex:
+    /\(?(?:scotlandspeople,?\.? \(?https?\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/,
+};
+const cpLinkAEdit = {
+  regex: /\(?\[https?\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/,
+};
+const cpLinkB = {
+  regex:
+    /(?: ?\((?:image )?(?:accessed|viewed) [^\)]+\),? ?| ?\: ?(?:image )?(?:accessed|viewed) [^\)]+\),? ?| |,|, )(?:image,? ?)?/,
+};
+const cpData = {
+  regex: /(.*)/,
+  paramKeys: ["dataString"],
+};
+const cpCitingRef = {
+  regex: /;? citing (.*)/,
+  paramKeys: ["sourceReference"],
+};
 const citationPatterns = [
   {
     // "church of scotland: old parish registers - births and baptisms", database, national records of scotland, ([https://www.scotlandspeople.gov.uk/ scotlandspeople] : accessed 23 june 2022), peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland; citing parish number 382/ , ref 20 9.
     // "Statutory Register of Births", database, National Records of Scotland, [https://www.scotlandspeople.gov.uk/ ScotlandsPeople], Helen McCall A'Hara birth registered 1888 in Anderston, mother's maiden name McCall; citing Ref: 644/10/356.
     // "Church of Scotland: Old Parish Registers - Births and Baptisms", database, National Records of Scotland, ([https://www.scotlandspeople.gov.uk/ ScotlandsPeople] : accessed 23 June 2022), Peter Connan born or baptised on 1 Jun 1823, son of James Connan & Mary McGregor, in Monzie, Perthshire, Scotland; citing Parish Number 382/ , Ref 20 9.
     name: "Edit mode: Sourcer style, source reference at end",
-    paramKeys: ["sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
-    reParts: [
-      reSourceTitle,
-      reDatabaseLiteral,
-      reWebsiteCreatorOwner,
-      reLinkStartEdit,
-      reLinkEnd,
-      reDataString,
-      reCitingSourceRef,
-    ],
+    parts: [cpTitle, cpDb, cpOwner, cpLinkAEdit, cpLinkB, cpData, cpCitingRef],
   },
   {
     // "scotland census, 1851", national records of scotland, ref: 547/ 1/ 35, [https://www.scotlandspeople.gov.uk/ scotlandspeople] (accessed 13 september 2024), surname mckay, forename donald, year 1851, gender m, age at census 11, rd name portnahaven, county / city argyll.
     // "scotland census, 1851", database, national records of scotland, ref: 053/ 1/ 6, [https://www.scotlandspeople.gov.uk/ scotlandspeople], donald mckay (13) in lairg registration district in sutherland, scotland.
     name: "Edit mode: Sourcer style, source reference in default place",
-    paramKeys: ["sourceTitle", "sourceReference", "dataString"],
-    reParts: [reSourceTitle, reDatabaseLiteral, reSourceRef, reLinkStartEdit, reLinkEnd, reDataString],
+    parts: [cpTitle, cpDb, cpRef, cpLinkAEdit, cpLinkB, cpData],
   },
   {
     // "scotland census, 1851", database, national records of scotland, scotlandspeople, donald mckay (13) in lairg registration district in sutherland, scotland; citing ref: 053/ 1/ 6.
     // Another example from Scotland project:
     // "Statutory Registers - Deaths" database, National Records of Scotland, (ScotlandsPeople : accessed 29 May 2024) John Stewart, age 47, Male, 1908, Paisley; citing Reference Number: 573 / 1 / 160.
     name: "Sourcer style, source reference at end",
-    paramKeys: ["sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
-    reParts: [
-      reSourceTitle,
-      reDatabaseLiteral,
-      reWebsiteCreatorOwner,
-      reLinkStart,
-      reLinkEnd,
-      reDataString,
-      reCitingSourceRef,
-    ],
+    parts: [cpTitle, cpDb, cpOwner, cpLinkA, cpLinkB, cpData, cpCitingRef],
   },
   {
     // "church of scotland: old parish registers - births and baptisms" national records of scotland, parish number: 382/ ; ref: 20 9 scotlandspeople search (accessed 23 june 2022) peter connan born or baptised on 1 jun 1823, son of james connan & mary mcgregor, in monzie, perthshire, scotland.
     // "Statutory Register of Divorces" National Records of Scotland, Court Code: 9772; Serial Number: 1421 ScotlandsPeople Margaret Thomso O'Connor divorce from McClounie in 2010 in Hamilton, Scotland.
     name: "Sourcer style, source reference in default place",
-    paramKeys: ["sourceTitle", "sourceReference", "dataString"],
-    reParts: [reSourceTitle, reDatabaseLiteral, reSourceRef, reLinkStart, reLinkEnd, reDataString],
+    parts: [cpTitle, cpDb, cpRef, cpLinkA, cpLinkB, cpData],
   },
   {
     // Sometimes they have the parish or country name before the source citation
@@ -116,79 +121,47 @@ const citationPatterns = [
     // Scotland, "Statutory Registers - Marriages" database, National Records of Scotland, (ScotlandsPeople :accessed 15 Nov 2023), Euphemia Lamont, and John McBride, 1856, Greenock Old or West; citing Reference Number: 564 / 3 / 44.
     name: "Scotland Project style with parish/place before source title",
     paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
-    reParts: [
-      reParish,
-      reSourceTitle,
-      reDatabaseLiteral,
-      reWebsiteCreatorOwner,
-      reLinkStart,
-      reLinkEnd,
-      reDataString,
-      reCitingSourceRef,
-    ],
+    parts: [cpParish, cpTitle, cpDb, cpOwner, cpLinkA, cpLinkB, cpData, cpCitingRef],
   },
   {
     // St John's, Port Glasgow, "Catholic Registers Births and Baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk : accessed 21 Feb 2021), William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.
     name: "Scotland Project style with parish/place before source title, no source reference",
     paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString"],
-    reParts: [reParish, reSourceTitle, reDatabaseLiteral, reWebsiteCreatorOwner, reLinkStart, reLinkEnd, reDataString],
+    parts: [cpParish, cpTitle, cpDb, cpOwner, cpLinkA, cpLinkB, cpData],
   },
   {
     // Example: Scotland Project edit mode
     // govan parish, church of scotland, "old parish registers births and baptisms" database, national records of scotland, ([https://www.scotlandspeople.gov.uk scotlandspeople] : accessed 29 may 2024), william walker birth or baptism 23 jan 1808, son of hugh walker and ann young, citing ref 20 / 211.
     name: "Edit mode: Scotland Project style with parish/place before source title",
-    paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
-    reParts: [
-      reParish,
-      reSourceTitle,
-      reDatabaseLiteral,
-      reWebsiteCreatorOwner,
-      reLinkStartEdit,
-      reLinkEnd,
-      reDataString,
-      reCitingSourceRef,
-    ],
+    parts: [cpParish, cpTitle, cpDb, cpOwner, cpLinkAEdit, cpLinkB, cpData, cpCitingRef],
   },
   {
     // “Statutory Marriages 1855–2013,” database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 1 Feb 2024), image, marriage registration, James Lamont and Jane O'Neill nee Letson, married 1905, Parish of Govan, County of Lanark; citing Statutory Registers no. 646 / 2 / 372.
     name: "Non-standard: Sourcer style (but no website creator/owner), source reference at end",
-    paramKeys: ["sourceTitle", "dataString", "sourceReference"],
-    reParts: [reSourceTitle, reDatabaseLiteral, reLinkStart, reLinkEnd, reDataString, reCitingSourceRef],
+    parts: [cpTitle, cpDb, cpLinkA, cpLinkB, cpData, cpCitingRef],
   },
 ];
 
 const partialCitationPatterns = [
-  /*
-  {
-    name: "Non-standard: Sourcer style (but no website creator/owner), source reference at end",
-    paramKeys: ["dataString", "sourceReference"],
-    reParts: [reDatabaseLiteral, reLinkStart, reLinkEnd, reDataString, reCitingSourceRef],
-  },
-  */
   {
     name: "Edit mode: Sourcer style or Scotland Project style with source reference at end",
-    paramKeys: ["websiteCreatorOwner", "dataString", "sourceReference"],
-    reParts: [reDatabaseLiteral, reWebsiteCreatorOwner, reLinkStartEdit, reLinkEnd, reDataString, reCitingSourceRef],
+    parts: [cpDb, cpOwner, cpLinkAEdit, cpLinkB, cpData, cpCitingRef],
   },
   {
     name: "Edit mode: Sourcer style, with source reference in default place",
-    paramKeys: ["sourceReference", "dataString"],
-    reParts: [reDatabaseLiteral, reSourceRef, reLinkStartEdit, reLinkEnd, reDataString],
+    parts: [cpDb, cpRef, cpLinkAEdit, cpLinkB, cpData],
   },
   {
     name: "Sourcer style or Scotland Project style with source reference at end",
-    paramKeys: ["websiteCreatorOwner", "dataString", "sourceReference"],
-    reParts: [reDatabaseLiteral, reWebsiteCreatorOwner, reLinkStart, reLinkEnd, reDataString, reCitingSourceRef],
+    parts: [cpDb, cpOwner, cpLinkA, cpLinkB, cpData, cpCitingRef],
   },
   {
     name: "Sourcer style, with source reference in default place",
-    paramKeys: ["sourceReference", "dataString"],
-    reParts: [reDatabaseLiteral, reSourceRef, reLinkStart, reLinkEnd, reDataString],
+    parts: [cpDb, cpRef, cpLinkA, cpLinkB, cpData],
   },
   {
     name: "Scotland Project style with no source reference",
-    paramKeys: ["websiteCreatorOwner", "dataString"],
-    reParts: [reDatabaseLiteral, reWebsiteCreatorOwner, reLinkStart, reLinkEnd, reDataString],
+    parts: [cpDb, cpOwner, cpLinkA, cpLinkB, cpData],
   },
 ];
 
@@ -1070,7 +1043,7 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
       if (titleObject.reTitles) {
         for (let reTitle of titleObject.reTitles) {
           if (reTitle.test(sourceTitle)) {
-            return titleObject.recordType;
+            return titleObject;
           }
         }
       }
@@ -1078,7 +1051,7 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
         for (let title of titleObject.titles) {
           const lcTitle = title.toLowerCase();
           if (lcSourceTitle.includes(lcTitle)) {
-            return titleObject.recordType;
+            return titleObject;
           }
         }
       }
@@ -1184,10 +1157,10 @@ function cleanCitation(parsedCitation) {
 }
 
 function getRegexForPattern(pattern) {
-  if (pattern.reParts) {
+  if (pattern.parts) {
     let regexSource = /^/.source;
-    for (let i = 0; i < pattern.reParts.length; i++) {
-      regexSource += pattern.reParts[i].source;
+    for (let i = 0; i < pattern.parts.length; i++) {
+      regexSource += pattern.parts[i].regex.source;
     }
     regexSource += /$/.source;
     let regex = new RegExp(regexSource, "i");
@@ -1325,34 +1298,34 @@ function cleanCitationValue(value) {
   return value;
 }
 
+function parseTextUsingPatternParts(pattern, objectToFill, textToParse) {
+  let paramIndex = 0;
+  for (let part of pattern.parts) {
+    if (part.paramKeys) {
+      for (let key of part.paramKeys) {
+        let resultIndex = paramIndex + 1;
+        paramIndex++;
+        let resultString = "$" + resultIndex;
+        let regex = getRegexForPattern(pattern);
+        let value = textToParse.replace(regex, resultString);
+        if (key && value && value != textToParse) {
+          objectToFill[key] = cleanCitationValue(value);
+        }
+      }
+    }
+  }
+}
+
 function parseUsingPattern(parsedCitation) {
   let pattern = parsedCitation.matchingPattern;
   let text = parsedCitation.cleanText;
-  for (let i = 0; i < pattern.paramKeys.length; i++) {
-    let key = pattern.paramKeys[i];
-    let resultIndex = i + 1;
-    let resultString = "$" + resultIndex;
-    let regex = getRegexForPattern(pattern);
-    let value = text.replace(regex, resultString);
-    if (key && value && value != text) {
-      parsedCitation[key] = cleanCitationValue(value);
-    }
-  }
+  parseTextUsingPatternParts(pattern, parsedCitation, text);
 }
 
 function parseUsingPartialPattern(parsedCitation) {
   let pattern = parsedCitation.matchingPartialPattern;
   let text = parsedCitation.partialText;
-  for (let i = 0; i < pattern.paramKeys.length; i++) {
-    let key = pattern.paramKeys[i];
-    let resultIndex = i + 1;
-    let resultString = "$" + resultIndex;
-    let regex = getRegexForPattern(pattern);
-    let value = text.replace(regex, resultString);
-    if (key && value && value != text) {
-      parsedCitation[key] = cleanCitationValue(value);
-    }
-  }
+  parseTextUsingPatternParts(pattern, parsedCitation, text);
 }
 
 function setName(data, parsedCitation, builder) {
