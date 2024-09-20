@@ -212,6 +212,15 @@ async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
               highlightRow(rowElement);
               return;
             }
+
+            // sometimes the ref includes extra info like the parish number. e.g.
+            // refVal = "685/3 160/127" and text = "160/127"
+            if (cleanRefValue.endsWith(cleanText)) {
+              // we have found the row to highlight
+              //console.log("doHighlightForRefNumber: found match, highlighting row");
+              highlightRow(rowElement);
+              return;
+            }
           }
         }
       }

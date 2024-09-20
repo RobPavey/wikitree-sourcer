@@ -221,6 +221,11 @@ const regressionData = [
     caseName: "found_opr_marriage_1",
     text: `"Church of Scotland: Old Parish Registers - Banns and Marriages" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 23 Mar 2023), David Cairns and Mary Chambers, 6 Dec 1820, Tranent; citing Parish Number 722, Reference Number: 70 105.`,
   },
+  {
+    // found on: https://www.wikitree.com/wiki/Craw-590 (15 Sep 2024)
+    caseName: "found_opr_marriage_2",
+    text: `Marriages (OPR) Scotland. Canongate, Edinburgh. 29 August 1795. CRAW Arthur and HASTIE, Jean. 685/ 3 160/ 127. http://www.scotlandspeople.gov.uk : last accessed 9 June 2024.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // opr_deaths
@@ -333,6 +338,11 @@ const regressionData = [
   {
     caseName: "scotproj_census",
     text: `"Scottish Census Returns - 1911" database, National Records of Scotland, ScotlandsPeople (accessed 29 May 2024), Ella W. McMillan, female, age at census 2, Greenock West, Renfrew; citing Reference Number: 564/2 25/ 7.`,
+  },
+  {
+    // census without date in census
+    caseName: "found_census_1",
+    text: `”Census Returns” National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/ : accessed 8 May 2021) 1901 Lydia O’Hara (Census 647/1112)`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

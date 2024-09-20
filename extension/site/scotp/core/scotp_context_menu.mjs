@@ -71,14 +71,25 @@ const cpRef = {
 };
 const cpLinkA = {
   regex:
-    /\(?(?:scotlandspeople,?\.? \(?https?\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|https\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/,
+    /\(?(?:scotlandspeople,?\.? \(?https?\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|https?\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/,
 };
 const cpLinkAEdit = {
   regex: /\(?\[https?\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/,
 };
 const cpLinkB = {
   regex:
-    /(?: ?\((?:image )?(?:accessed|viewed) [^\)]+\),? ?| ?\: ?(?:image )?(?:accessed|viewed) [^\)]+\),? ?| |,|, )(?:image,? ?)?/,
+    /(?: ?\((?:image )?(?:last )?(?:accessed|viewed) [^\)]+\),? ?| ?\: ?(?:image )?(?:last )?(?:accessed|viewed) [^\)]+\),? ?| |,|, )(?:image,? ?)?/,
+};
+const cpLinkANoParens = {
+  regex:
+    /(?:scotlandspeople,?\.? https?\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|https?\:\/\/www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/,
+};
+const cpLinkAEditNoParens = {
+  regex: /\[https?\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/,
+};
+const cpLinkBNoParens = {
+  regex:
+    /(?: ?(?:\: ?)?(?:image )?(?:last )?(?:accessed|viewed) [^\.,]+.?,? ?| ?\: ?(?:image )?(?:last )?(?:accessed|viewed) [^\.,]+\)\.?,? ?| |,|, )(?:image,? ?)?/,
 };
 const cpData = {
   regex: /(.*)/,
@@ -143,6 +154,11 @@ const citationPatterns = [
 ];
 
 const partialCitationPatterns = [
+  {
+    // Canongate, Edinburgh. 29 August 1795. CRAW Arthur and HASTIE, Jean. 685/ 3 160/ 127. http://www.scotlandspeople.gov.uk : last accessed 9 June 2024.
+    name: "Non-standard: Source Title not in quotes and non-standard. Colon in weird place",
+    parts: [cpData, cpLinkANoParens, cpLinkBNoParens],
+  },
   {
     name: "Edit mode: Sourcer style or Scotland Project style with source reference at end",
     parts: [cpDb, cpOwner, cpLinkAEdit, cpLinkB, cpData, cpCitingRef],
@@ -493,6 +509,7 @@ const otherFoundTitles = [
       "Church of Scotland: Old Parish Registers Banns and Marriages",
       "Church of Scotland: Old Parish Registers Banns & Marriages",
       "Church of Scotland: Old Parish Registers - Banns & Marriages",
+      "Marriages (OPR) Scotland",
     ],
   },
   {
@@ -603,6 +620,10 @@ const spEventPlace = {
   regex: /(?:, in |, at |, on | in | at | on |, |,| )(.+)/,
   paramKeys: ["eventPlace"],
 };
+const spEventPlaceNoWs = {
+  regex: /(.+)/,
+  paramKeys: ["eventPlace"],
+};
 const spRdName = {
   // has an optional "in" on start but often it has to be called as a separate part
   // to avoid ambiguity
@@ -667,6 +688,16 @@ const spWill = {
 const spOrigConfDate = {
   regex: /,? \(original confirmation (?:in|on) (\d?\d [a-z]+ \d\d\d\d|\d\d\d\d)\)/,
   paramKeys: ["originalConfDate"],
+};
+const spNameAndSpouseSurnameFirst = {
+  // CRAW Arthur and HASTIE, Jean
+  // have to allow for commas
+  regex: /([^0-9]+),? (?:and|&|\/) ([^0-9]+)/,
+  paramKeys: ["nameSurnameFirst", "spouseNameSurnameFirst"],
+};
+const spRefNum = {
+  regex: /(?:, |,| )([0-9 \/]+)/,
+  paramKeys: ["ref"],
 };
 
 // the "parts" member is an array, each member can be either a part object, a string or a RegExp
@@ -956,6 +987,11 @@ const dataStringSentencePatterns = {
       // David Cairns and Mary Chambers, 6 Dec 1820
       name: "Non-standard format, name and spouse, date, no place",
       parts: [spNameAndSpouse, spEventDate],
+    },
+    {
+      // Canongate, Edinburgh. 29 August 1795. CRAW Arthur and HASTIE, Jean. 685/ 3 160/ 127
+      name: "Extremely non-standard format, name and spouse, date, no place",
+      parts: [spEventPlaceNoWs, /\./, spEventDate, /\./, spNameAndSpouseSurnameFirst, /\./, spRefNum],
     },
   ],
   opr_deaths: [
@@ -1579,6 +1615,90 @@ function parseUsingPartialPattern(parsedCitation) {
   parseTextUsingPatternParts(pattern, parsedCitation, text, cleanCitationValue);
 }
 
+function setNameFromNameWithSurnameFirst(data, parsedCitation, builder, isSpouse) {
+  let scotpRecordType = parsedCitation.scotpRecordType;
+
+  let name = data.nameSurnameFirst;
+  let forenameParam = ScotpRecordType.getSearchField(scotpRecordType, SpField.forename);
+  if (isSpouse) {
+    name = data.spouseNameSurnameFirst;
+    forenameParam = ScotpRecordType.getSearchField(scotpRecordType, SpField.spouseForename);
+  }
+  // this is a really wierd format like "CRAW Arthur" or "HASTIE, Jean"
+  // if there is a comma the use that to separate surname from first name
+  // else use case
+  let commaIndex = name.indexOf(",");
+  let surname = "";
+  let forename = "";
+  if (commaIndex != -1) {
+    surname = name.substring(0, commaIndex).trim();
+    forename = name.substring(commaIndex + 1).trim();
+  } else {
+    // we will consider the surname all the parts up to the last all upper case word
+    // and the rest the forename
+    let parts = name.split(" ");
+    let forenamePartIndex = 0;
+    for (let part of parts) {
+      if (StringUtils.isAllUppercase(part)) {
+        forenamePartIndex++;
+      }
+    }
+
+    if (forenamePartIndex > 0) {
+      surname = parts[0];
+      for (let partIndex = 1; partIndex < forenamePartIndex; partIndex++) {
+        surname += " " + parts[partIndex];
+      }
+    }
+    if (forenamePartIndex < parts.length) {
+      forename = parts[forenamePartIndex];
+      for (let partIndex = forenamePartIndex + 1; partIndex < parts.length; partIndex++) {
+        forename += " " + parts[partIndex];
+      }
+    }
+  }
+
+  if (forenameParam) {
+    if (forename) {
+      if (forename.endsWith(".")) {
+        forename = forename.substring(0, forename.length - 1);
+      }
+      if (isSpouse) {
+        builder.addSpouseForename(forename, "exact");
+      } else {
+        builder.addForename(forename, "exact");
+      }
+    }
+    if (surname) {
+      if (isSpouse) {
+        builder.addSpouseSurname(surname, "exact");
+      } else {
+        builder.addSurname(surname, "exact");
+      }
+    }
+  } else {
+    // use full name
+    let fullNameParam = ScotpRecordType.getSearchField(scotpRecordType, SpField.fullName);
+    if (isSpouse) {
+      fullNameParam = ScotpRecordType.getSearchField(scotpRecordType, SpField.spouseFullName);
+    }
+    if (fullNameParam) {
+      let fullName = forename;
+      if (surname) {
+        if (fullName) {
+          fullName += " ";
+        }
+        fullName += surname;
+      }
+      if (isSpouse) {
+        builder.addSpouseFullName(fullName, "exact");
+      } else {
+        builder.addSFullName(fullName, "exact");
+      }
+    }
+  }
+}
+
 function setName(data, parsedCitation, builder) {
   let scotpRecordType = parsedCitation.scotpRecordType;
   let name = data.name;
@@ -1603,6 +1723,11 @@ function setName(data, parsedCitation, builder) {
   }
 
   if (!name) {
+    if (!data.nameSurnameFirst) {
+      return;
+    }
+
+    setNameFromNameWithSurnameFirst(data, parsedCitation, builder, false);
     return;
   }
 
@@ -1733,6 +1858,8 @@ function setSpouse(data, parsedCitation, builder) {
       }
     } else if (data.spouseLastName) {
       builder.addSpouseSurname(data.spouseLastName, searchOption);
+    } else if (data.spouseNameSurnameFirst) {
+      setNameFromNameWithSurnameFirst(data, parsedCitation, builder, true);
     }
   }
 }
@@ -2214,6 +2341,10 @@ function extractReferenceNumber(parsedCitation) {
   const nonStandardRegexes = [/^.*Statutory Registers no[\.,:]? ([a-z0-9 \/]+).*$/i];
 
   function extractFromTextString(text, regexes) {
+    if (!text) {
+      return;
+    }
+
     for (let regex of regexes) {
       if (regex.test(text)) {
         let num = text.replace(regex, "$1");
