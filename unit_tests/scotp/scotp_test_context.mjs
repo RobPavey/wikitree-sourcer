@@ -81,6 +81,12 @@ const regressionData = [
     caseName: "found_stat_marriages_1",
     text: `“Statutory Marriages 1855–2013,” database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 1 Feb 2024), image, marriage registration, James Lamont and Jane O'Neill nee Letson, married 1905, Parish of Govan, County of Lanark; citing Statutory Registers no. 646 / 2 / 372.`,
   },
+  {
+    // Found on: https://www.wikitree.com/wiki/Forrest-4887
+    // List form with spouse
+    caseName: "found_stat_marriages_2",
+    text: `MARRIAGE #1: Scotland: Statutory Registers - Marriages database, National Records of Scotland, Scotlandspeople (https://www.scotlandspeople.gov.uk/ : accessed 28 Jun 2024). Surname: FORREST, Forename: MARGARET, Spouse surname: FINNIE, Spouse forename: GEORGE, Date: 1920, Ref: 628 / 46, RD Name: CAMBUSNETHAN.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_divorces
@@ -127,6 +133,12 @@ const regressionData = [
     // Source title is not in quotes. Ref num is in data list
     caseName: "found_stat_deaths_4",
     text: `DEATH: Scotland: Statutory Registers - Deaths database, National Records of Scotland, Scotlandspeople (https://www.scotlandspeople.gov.uk/: accessed 23 Sep 2023), Surname: CHEYNE, Forename: GLADYS, Age at death: 79, Mother's Maiden Name: BISSET, Gender: F, Year: 2008, Ref: 301 / 779, RD Name: ABERDEEN.`,
+  },
+  {
+    // Found on https://www.wikitree.com/wiki/Letson-487 (20 Sep 2024)
+    // Source title was not recognized
+    caseName: "found_stat_deaths_5",
+    text: `“Statutory Deaths 1855–2013,” database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 2 Feb 2024), image, death registration, Jane Lamont, 1924, 44, District of Paisley, County of Renfrew; citing Statutory Registers no. 573 / 1 / 1441. Mother's maiden name: BELL (Baird)`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -242,6 +254,10 @@ const regressionData = [
     caseName: "scotproj_opr_death",
     text: `Glasgow Parish, Church of Scotland, "Old Parish Registers Death and Burials" database with images, National Records of Scotland, (ScotlandsPeople : image accessed 29 May 2024), death of John Burns, 3 March 1839, citing Ref No: 550 / 160.`,
   },
+  {
+    caseName: "found_opr_death_1",
+    text: `"Church of Scotland: Old Parish Registers - Burials" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 01 Jun 2021), Jonet Scott, December 1568/69, Perth; citing Parish Number 387, Reference Number: 10 289.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // cr_baptisms
@@ -340,9 +356,13 @@ const regressionData = [
     text: `"Scottish Census Returns - 1911" database, National Records of Scotland, ScotlandsPeople (accessed 29 May 2024), Ella W. McMillan, female, age at census 2, Greenock West, Renfrew; citing Reference Number: 564/2 25/ 7.`,
   },
   {
-    // census without date in census
+    // census without date in source title
     caseName: "found_census_1",
     text: `”Census Returns” National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/ : accessed 8 May 2021) 1901 Lydia O’Hara (Census 647/1112)`,
+  },
+  {
+    caseName: "found_census_2",
+    text: `"1921 Census of Scotland", database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 1 Feb 2024), Jane Lamont (Census 573/1 90/ 6), Copyright National Records of Scotland. Image generated on 4 Feb 2024 20:09`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

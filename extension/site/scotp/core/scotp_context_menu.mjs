@@ -55,7 +55,7 @@ const cpParish = {
   paramKeys: ["parish"],
 };
 const cpTitle = {
-  regex: /["'“‘]([^"'”’]+)["'”’],?/,
+  regex: /["']([^"']+)["'”’],?/,
   paramKeys: ["sourceTitle"],
 };
 const cpDb = {
@@ -472,7 +472,8 @@ const scotlandProjectTitles = [
 const otherFoundTitles = [
   {
     recordType: "stat_births",
-    titles: [],
+    titles: ["Statutory Births"],
+    reTitles: [/Statutory Births \d\d\d\d(?: ?– ?| ?\- ?| to )\d\d\d\d/i],
   },
   {
     recordType: "stat_marriages",
@@ -485,7 +486,8 @@ const otherFoundTitles = [
   },
   {
     recordType: "stat_deaths",
-    titles: [],
+    titles: ["Statutory Deaths"],
+    reTitles: [/Statutory Deaths \d\d\d\d(?: ?– ?| ?\- ?| to )\d\d\d\d/i],
   },
   {
     recordType: "stat_civilpartnerships",
@@ -501,6 +503,7 @@ const otherFoundTitles = [
       "Church of Scotland: Old Parish Registers Births and Baptisms",
       "Church of Scotland: Old Parish Registers Births & Baptisms",
       "Church of Scotland: Old Parish Registers - Births & Baptisms",
+      "Births (OPR) Scotland",
     ],
   },
   {
@@ -514,10 +517,9 @@ const otherFoundTitles = [
   },
   {
     recordType: "opr_deaths",
-    titles: [
-      "Church of Scotland: Old Parish Registers Death and Burials",
-      "Church of Scotland: Old Parish Registers Death & Burials",
-      "Church of Scotland: Old Parish Registers - Death & Burials",
+    titles: ["Deaths (OPR) Scotland"],
+    reTitles: [
+      /(?:Church of Scotland:? )?Old Parish Registers(?: - | )(?:Deaths? (?:and|&) Burials?|Deaths?|Burials?)/i,
     ],
   },
   {
@@ -560,6 +562,7 @@ const otherFoundTitles = [
   {
     recordType: "census",
     titles: [],
+    reTitles: [/\d\d\d\d Census of Scotland/i],
   },
   {
     recordType: "vr",
@@ -613,7 +616,13 @@ const spEventYear = {
   paramKeys: ["eventDate"],
 };
 const spEventDate = {
-  regex: /(?:, on or after| on or after|, in |, on | in | on |, |\. |,|\.| )(\d?\d [a-z]+ \d\d\d\d|\d\d\d\d)/,
+  // allows for double dating being added by user i.e. \d\d\d\d(?:\/\d\d?)
+  regex:
+    /(?:, on or after| on or after|, in |, on | in | on |, |\. |,|\.| )(\d?\d [a-z]+ \d\d\d\d(?:\/\d\d?)?|[a-z]+ \d\d\d\d(?:\/\d\d?)?|\d\d\d\d(?:\/\d\d?)?)/,
+  paramKeys: ["eventDate"],
+};
+const spEventDateNoWs = {
+  regex: /(\d?\d [a-z]+ \d\d\d\d|\d\d\d\d)/,
   paramKeys: ["eventDate"],
 };
 const spEventPlace = {
@@ -803,6 +812,11 @@ const dataStringSentencePatterns = {
       parts: [spName, /,/, spEventDate, /,/, spRdName],
       //regex: /^([^,]+), ([0-9a-z ]+), (.*)$/i,
       paramKeys: ["name", "eventDate", "rdName"],
+    },
+    {
+      // death registration, Jane Lamont, 1924, 44, District of Paisley, County of Renfrew
+      name: "Non-standard format",
+      parts: [/death registration,? /, spName, /,/, spEventDate, /,/, spAgeNoLabelOrWs, /,/, spEventPlace],
     },
   ],
   stat_civilpartnerships: [
@@ -1034,6 +1048,11 @@ const dataStringSentencePatterns = {
       //regex: /^death of (.+), ([0-9a-z ]+).*$/i,
       paramKeys: ["name", "eventDate"],
     },
+    {
+      // Jonet Scott, December 1568/69, Perth
+      name: "Non-standard format, just name and date and death with no labels",
+      parts: [spName, /,/, spEventDate, /,/, spEventPlace],
+    },
   ],
   cr_baptisms: [
     {
@@ -1151,6 +1170,11 @@ const dataStringSentencePatterns = {
   ],
   census: [
     {
+      // Jane Lamont (Census 573/1 90/ 6), Copyright National Records of Scotland. Image generated on 4 Feb 2024 20:09
+      name: "Non-standard format, just name and refNum",
+      parts: [spName, / \(?Census/, spRefNum, /\).*/],
+    },
+    {
       // Example: Scotland Project
       // Ella W. McMillan, female, age at census 2, Greenock West, Renfrew;
       name: "Scotland Project format",
@@ -1173,6 +1197,11 @@ const dataStringSentencePatterns = {
       parts: [spName, /,? \(/, spAgeNoLabelOrWs, /\)/, spEventPlace],
       //regex: /^(.+) \(([^\)]+)\) in (.*)$/i,
       paramKeys: ["name", "age", "eventPlace"],
+    },
+    {
+      // 1901 Lydia O'Hara (Census 647/1112)
+      name: "Non-standard format, census year in dataString",
+      parts: [spEventDateNoWs, spName, / \(?Census/, spRefNum, /\)/],
     },
   ],
   census_lds: [
@@ -1365,6 +1394,10 @@ function cleanCitation(parsedCitation) {
   text = text.replace(/<\s*br\s*\/ *> */g, ", ");
   text = text.replace(/ *\n\ */g, ", ");
 
+  // replace curly (a.k.a. smart) quotes with regular ones
+  text = text.replace(/[“”]/g, '"');
+  text = text.replace(/[‘’]/g, "'");
+
   // replace any multiple white space chars with one space
   text = text.replace(/\s+/g, " ");
 
@@ -1460,7 +1493,7 @@ function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation) {
     parsedCitation.sourceTitle = title;
     let remainder = text.substring(matchIndex + title.length);
     let beforeTitle = text.substring(0, matchIndex);
-    let quotesBeforeTitle = beforeTitle.match(/["'“‘]/);
+    let quotesBeforeTitle = beforeTitle.match(/["']/);
     function isOdd(num) {
       return num % 2;
     }
@@ -1469,8 +1502,6 @@ function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation) {
       const startQuoteToEndQuote = {
         '"': `"`,
         "'": `'`,
-        "“": `”`,
-        "‘": `’`,
       };
       let lastQuoteBeforeTitle = quotesBeforeTitle[quotesBeforeTitle.length - 1];
       let matchingEndQuote = startQuoteToEndQuote[lastQuoteBeforeTitle];
@@ -1699,17 +1730,27 @@ function setNameFromNameWithSurnameFirst(data, parsedCitation, builder, isSpouse
   }
 }
 
-function setName(data, parsedCitation, builder) {
+function setNameFromSeparateForenameAndSurname(data, parsedCitation, builder, isSpouse) {
   let scotpRecordType = parsedCitation.scotpRecordType;
-  let name = data.name;
+
   let surname = data.surname;
   let forename = data.forename;
+
+  if (isSpouse) {
+    surname = data.spouseSurname;
+    forename = data.spouseForename;
+  }
+
   if (surname || forename) {
     if (forename) {
       if (forename.endsWith(".")) {
         forename = forename.substring(0, forename.length - 1);
       }
-      builder.addForename(forename, "exact");
+      if (isSpouse) {
+        builder.addSpouseForename(forename, "exact");
+      } else {
+        builder.addForename(forename, "exact");
+      }
     }
     if (surname) {
       // check for nee or née in name
@@ -1717,8 +1758,22 @@ function setName(data, parsedCitation, builder) {
       if (neeIndex != -1) {
         surname = surname.substring(0, neeIndex).trim();
       }
-      builder.addSurname(surname, "exact");
+      if (isSpouse) {
+        builder.addSpouseSurname(surname, "exact");
+      } else {
+        builder.addSurname(surname, "exact");
+      }
     }
+    return true;
+  }
+
+  return false;
+}
+
+function setName(data, parsedCitation, builder) {
+  let scotpRecordType = parsedCitation.scotpRecordType;
+  let name = data.name;
+  if (setNameFromSeparateForenameAndSurname(data, parsedCitation, builder, false)) {
     return;
   }
 
@@ -1821,6 +1876,10 @@ function setSpouse(data, parsedCitation, builder) {
   let scotpRecordType = parsedCitation.scotpRecordType;
 
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.spouse)) {
+    if (setNameFromSeparateForenameAndSurname(data, parsedCitation, builder, true)) {
+      return;
+    }
+
     let spouseName = data.spouseName;
     const searchOption = "exact";
 
@@ -1905,6 +1964,16 @@ function setDates(data, parsedCitation, builder) {
     }
   }
 
+  let isDoubleDated = false;
+
+  // The user could have inserted double dating in the date. E.g. 1568/69 or 1568/9
+  const doubleDataRegEx = /(\d\d\d\d)\/(\d\d?)$/;
+  if (doubleDataRegEx.test(eventDate)) {
+    // could do some extra tests but for now just set flag and remove last part
+    isDoubleDated = true;
+    eventDate = eventDate.replace(doubleDataRegEx, "$1");
+  }
+
   let parsedDate = DateUtils.parseDateString(eventDate);
 
   if (!parsedDate.isValid || !parsedDate.yearNum) {
@@ -1933,7 +2002,12 @@ function setDates(data, parsedCitation, builder) {
   }
 
   builder.addStartYear(yearString);
-  builder.addEndYear(yearString);
+  if (isDoubleDated) {
+    let endYearNum = parsedDate.yearNum + 1;
+    builder.addEndYear(endYearNum.toString());
+  } else {
+    builder.addEndYear(yearString);
+  }
 
   // in some cases the search allows the birth date - e.g. searching stat deaths
   if (birthDate && ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.birthYear)) {
@@ -2070,6 +2144,10 @@ function addListValueToData(label, value, parsedCitation, data) {
     data.forename = value;
   } else if (lcLabel == "full name") {
     data.name = value;
+  } else if (lcLabel == "spouse forename" || lcLabel == "spouse forenames") {
+    data.spouseForename = value;
+  } else if (lcLabel == "spouse surname") {
+    data.spouseSurname = value;
   } else if (lcLabel == "gender") {
     data.gender = value;
   } else if (lcLabel == "parents/other details") {

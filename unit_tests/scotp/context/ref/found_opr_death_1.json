@@ -1,11 +1,11 @@
 {
   "formData": {
-    "urlPart": "census-returns/census",
+    "urlPart": "church-registers/church-deaths-burials/opr-deaths",
     "fields": [
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "Lydia"
+        "value": "Jonet"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "O'Hara"
+        "value": "Scott"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -23,15 +23,20 @@
         "value": "exact"
       },
       {
-        "fieldKey": "edit-search-params-nrs-census-year-1901",
-        "type": "checkbox",
-        "value": true
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1568"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1569"
       }
     ]
   },
   "refineData": {
     "fields": []
   },
-  "refNum": "647/1112",
-  "recordType": "census"
+  "refNum": "10 289",
+  "recordType": "opr_deaths"
 }
