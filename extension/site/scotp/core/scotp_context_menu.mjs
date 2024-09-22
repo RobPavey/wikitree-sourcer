@@ -136,13 +136,11 @@ const citationPatterns = [
     // govan parish, church of scotland, "old parish registers births and baptisms" database, national records of scotland, (scotlandspeople : accessed 29 may 2024), william walker birth or baptism 23 jan 1808, son of hugh walker and ann young, citing ref 20 / 211.
     // Scotland, "Statutory Registers - Marriages" database, National Records of Scotland, (ScotlandsPeople :accessed 15 Nov 2023), Euphemia Lamont, and John McBride, 1856, Greenock Old or West; citing Reference Number: 564 / 3 / 44.
     name: "Scotland Project style with parish/place before source title",
-    paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString", "sourceReference"],
     parts: [cpParish, cpTitle, cpDb, cpOwner, cpLinkA, cpLinkB, cpData, cpCitingRef],
   },
   {
     // St John's, Port Glasgow, "Catholic Registers Births and Baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk : accessed 21 Feb 2021), William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.
     name: "Scotland Project style with parish/place before source title, no source reference",
-    paramKeys: ["parish", "sourceTitle", "websiteCreatorOwner", "dataString"],
     parts: [cpParish, cpTitle, cpDb, cpOwner, cpLinkA, cpLinkB, cpData],
   },
   {
@@ -724,6 +722,10 @@ const spOrigConfDate = {
   regex: /,? \(original confirmation (?:in|on) (\d?\d [a-z]+ \d\d\d\d|\d\d\d\d)\)/,
   paramKeys: ["originalConfDate"],
 };
+const spCauseOfDeath = {
+  regex: /,? cause of death:? .*/,
+  paramKeys: ["causeOfDeath"],
+};
 const spNameSurnameFirst = {
   // "CRAW Arthur" or "HASTIE, Jean"
   // have to allow for commas
@@ -804,32 +806,24 @@ const dataStringSentencePatterns = {
       // Euphemia Lamont marriage to John McBride registered 1856 in Greenock Old or West.
       name: "Sourcer format",
       parts: [spName, " marriage to ", spSpouse, " registered", spEventYear, spRdName],
-      //regex: /^(.+) marriage to (.+) registered (\d\d\d\d) in ([^;]+).*$/i,
-      paramKeys: ["name", "spouseName", "eventDate", "rdName"],
     },
     {
       // Found case
       // marriage registration, James Lamont and Jane O'Neill nee Letson, married 1905, Parish of Govan, County of Lanark
       name: "non-standard format",
       parts: [/marriage registration,? /, spNameAndSpouse, /,? married/, spEventYear, spRdName],
-      //regex: /^marriage registration,? (.+),? (?:and|&|\/) (.+), married (\d\d\d\d),? (.+)$/i,
-      paramKeys: ["name", "spouseName", "eventDate", "rdName"],
     },
     {
       // Scotland Project. Example:
       // Euphemia Lamont, and John McBride, 1856, Greenock Old or West
       name: "Scotland Project format",
       parts: [spNameAndSpouse, spEventYear, spRdName],
-      //regex: /^(.+),? (?:and|&|\/) (.+), (\d\d\d\d), ([^;]+).*$/i,
-      paramKeys: ["name", "spouseName", "eventDate", "rdName"],
     },
     {
       // Found case
       // Duncan Urquhart & Christina Coventry, 1860
       name: "Non-standard format, names and date only",
       parts: [spNameAndSpouse, spEventYear],
-      //regex: /^(.+),? (?:and|&|\/) (.+), (\d\d\d\d).*$/i,
-      paramKeys: ["name", "spouseName", "eventDate"],
     },
     {
       // Found case
@@ -870,8 +864,6 @@ const dataStringSentencePatterns = {
       // Margaret Thomso O'Connor divorce from McClounie in 2010 in Hamilton, Scotland.
       name: "Sourcer format",
       parts: [spName, " divorce from", spSpouseLastName, " in", spEventYear, spCourt],
-      //regex: /^(.+) divorce from (.+) in (\d\d\d\d) in ([^;]+).*$/i,
-      paramKeys: ["name", "spouseLastName", "eventDate", "court"],
     },
     {
       // Scotland Project. Assumed:
@@ -886,32 +878,24 @@ const dataStringSentencePatterns = {
       // Catherine Aagesen death registered 1976 in Glasgow, Martha St (age 85, mother's maiden name McFee).
       name: "Sourcer format",
       parts: [spName, " death registered", spEventYear, spRdName, / \(/, spAgeNoWs, spMmn, /\)/],
-      //regex: /^(.+) death registered (\d\d\d\d) in ([^\(;]+)\(age ([^,]+), mother's maiden name ([^\)]+)\).*$/i,
-      paramKeys: ["name", "eventDate", "rdName", "age", "mmn"],
     },
     {
       // Example: Found on Stirling-727
       // Archibald Stirling, male, age 54, date 1869, dwelling in West Kilbride, Ayrshire, Scotland
       name: "Non-standard format",
       parts: [spName, spGender, spAge, /,? date/, spEventYear, /,? dwelling in/, spEventPlace],
-      //regex: /^(.+), (male|female), age ([^,]+), date ([0-9a-z ]+),? dwelling in (.*)$/i,
-      paramKeys: ["name", "gender", "age", "eventDate", "eventPlace"],
     },
     {
       // Scotland Project. Example:
       // John Stewart, age 47, Male, 1908, Paisley
       name: "Scotland Project format",
       parts: [spName, spAge, spGender, spEventYear, spRdName],
-      //regex: /^(.+), age ([^,]+), (male|female|m|f), (\d\d\d\d), (.*)$/i,
-      paramKeys: ["name", "age", "gender", "eventDate", "rdName"],
     },
     {
       // Found Example: https://www.wikitree.com/wiki/Rendall-372
       // Joan Rendall OR Cooper death registered 1935 in George Square (age 64)
       name: "Non-standard format",
       parts: [spName, " death registered", spEventYear, spRdName, spAge],
-      regex: /^(.+) death registered (\d\d\d\d) in (.*) \(age ([^\)]+)\).*$/i,
-      paramKeys: ["name", "eventDate", "rdName", "age"],
     },
     {
       // Scotland Project. Example of a corrected entry where data and source ref are mushed together
@@ -958,8 +942,6 @@ const dataStringSentencePatterns = {
       // Abigail Alice Walker marriage to Morera-Pallares registered 2021 in Rosskeen
       name: "Sourcer format",
       parts: [spName, " marriage to", spSpouse, / registered/, spEventYear, spRdName],
-      //regex: /^(.+) marriage to (.+) registered (\d\d\d\d) in ([^;]+).*$/i,
-      paramKeys: ["name", "spouseName", "eventDate", "rdName"],
     },
     {
       // Assumed: Abigail Alice Walker marriage to Morera-Pallares, 2021, Rosskeen
@@ -973,8 +955,6 @@ const dataStringSentencePatterns = {
       // Seonaid MacNeil Wilson divorce from MacIntosh in 2013 in Perth, Scotland
       name: "Sourcer format",
       parts: [spName, " divorce from", spSpouseLastName, / in/, spEventYear, / in/, spCourt],
-      //regex: /^(.+) divorce from (.+) in (\d\d\d\d) in ([^;]+).*$/i,
-      paramKeys: ["name", "spouseLastName", "eventDate", "court"],
     },
     {
       // Scotland Project. Assumed:
@@ -997,24 +977,18 @@ const dataStringSentencePatterns = {
         /(?:,? in|,? at|,? on)/,
         spEventPlace,
       ],
-      //regex: /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "eventDate", "fatherName", "motherName", "eventPlace"],
     },
     {
       // Example: Scotland Project
       // william walker birth or baptism 23 jan 1808, son of hugh walker and ann young
       name: "Scotland Project format",
       parts: [spName, /(?:born or baptised|birth or baptism)/, spEventDate, spChildOfTwoParents],
-      //regex: /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "eventDate", "fatherName", "motherName"],
     },
     {
       // Example: Scotland Project
       // william walker birth 23 jan 1808, son of hugh walker and ann young
       name: "Scotland Project format",
       parts: [spName, /(?:birth|baptism)/, spEventDate, spChildOfTwoParents],
-      //regex: /^([^,;:]+) (?:birth|baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "eventDate", "fatherName", "motherName"],
     },
     {
       // Example: Scotland Project
@@ -1029,8 +1003,6 @@ const dataStringSentencePatterns = {
         /(?:,? in|,? at|,? on)/,
         spEventPlace,
       ],
-      //regex: /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "eventDate", "fatherName"],
     },
     {
       // Example: Scotland Project
@@ -1038,8 +1010,6 @@ const dataStringSentencePatterns = {
       // william walker birth or baptism 23 jan 1808, son of hugh walker
       name: "Scotland Project format, one parent",
       parts: [spName, /(?:born or baptised|birth or baptism)/, spEventDate, spChildOfOneParent],
-      //regex: /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "eventDate", "fatherName"],
     },
     {
       // Example: Scotland Project
@@ -1047,8 +1017,6 @@ const dataStringSentencePatterns = {
       // william walker birth or baptism 23 jan 1808, son of hugh walker
       name: "Scotland Project format, viewed image, one parent",
       parts: [spName, /(?:birth|baptism)/, spEventDate, spChildOfOneParent],
-      //regex: /^([^,;:]+) (?:birth|baptism) (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "eventDate", "fatherName"],
     },
     {
       // Example: Scotland Project
@@ -1056,15 +1024,11 @@ const dataStringSentencePatterns = {
       // william walker birth or baptism 23 jan 1808
       name: "Scotland Project format, no parents",
       parts: [spName, /(?:born or baptised|birth or baptism)/, spEventDate],
-      //regex: /^([^,;:]+) (?:born or baptised|birth or baptism) (?:on |in )?([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "eventDate"],
     },
     {
       // william walker birth or baptism 23 jan 1808
       name: "Scotland Project format, viewed image, no parents",
       parts: [spName, /(?:birth|baptism)/, spEventDate],
-      //regex: /^([^,;:]+) (?:birth|baptism) (?:on |in )?([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "eventDate"],
     },
     {
       // Example: Found
@@ -1073,8 +1037,6 @@ const dataStringSentencePatterns = {
       // Robert Lewis Balfour Stevenson, parents: Thomas Stevenson/Margaret Isabella Balfour, 13 Nov 1850, Edinburgh
       name: "Non-standard format, 'parents' in string, with place",
       parts: [spName, /,? parents:?/, spTwoParents, /(?:,|\.)/, spEventDate, spEventPlace],
-      //regex: /^(.+),? parents:? ([^,\.]+)(?: and |&|\/)([^,\.]+)(?:,|\.) ([0-9a-z ]+), (.*)$/i,
-      paramKeys: ["name", "fatherName", "motherName", "eventDate"],
     },
     {
       // Example: Found
@@ -1083,8 +1045,6 @@ const dataStringSentencePatterns = {
       // Robert Lewis Balfour Stevenson, parents: Thomas Stevenson/Margaret Isabella Balfour, 13 Nov 1850, Edinburgh
       name: "Non-standard format, 'parents' in string, no place",
       parts: [spName, /,? parents:?/, spTwoParents, /(?:,|\.)/, spEventDate],
-      //regex: /^(.+),? parents:? ([^,\.]+)(?: and |&|\/)([^,\.]+)(?:,|\.) ([0-9a-z ]+), (.*)$/i,
-      paramKeys: ["name", "fatherName", "motherName", "eventDate"],
     },
   ],
   opr_marriages: [
@@ -1094,16 +1054,12 @@ const dataStringSentencePatterns = {
       // Note: in the section (?:on or after |on |in ), "on or after " needs to come before "on "
       name: "Sourcer format",
       parts: [spName, / marriage to/, spSpouse, / (?:on or after|on|in)/, spEventDate, spEventPlace],
-      //regex: /^(.+) marriage to (.+) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
     },
     {
       // Example: Scotland Project
       // marriage or banns for James Bell and Elizabeth Arrott 30 Apr 1719
       name: "Scotland Project format, 'marriage or banns'",
       parts: [/marriage or banns for /, spNameAndSpouse, spEventDate, spEventPlace],
-      //regex: /^marriage or banns for ([^0-9]+)(?: and | ?& ?| ?\/ ?)([^0-9]+) ([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "spouseName", "eventDate"],
     },
     {
       name: "Scotland Project format, (after reading image), 'banns', with place",
@@ -1114,32 +1070,24 @@ const dataStringSentencePatterns = {
       // banns for James Bell and Elizabeth Arrott 30 Apr 1719
       name: "Scotland Project format, (after reading image), 'banns', no place",
       parts: [/banns for /, spNameAndSpouse, spEventDate],
-      //regex: /^banns for ([^0-9]+)(?: and | ?& ?| ?\/ ?)([^0-9]+) ([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "spouseName", "eventDate"],
     },
     {
       // Example: Scotland Project (after reading image)
       // marriage of James Bell and Elizabeth Arrott 30 Apr 1719, Glasgow
       name: "Scotland Project format, (after reading image), 'marriage', with place",
       parts: [/marriage of /, spNameAndSpouse, spEventDate, spEventPlace],
-      //regex: /^marriage of ([^0-9]+)(?: and | ?& ?| ?\/ ?)([^0-9]+) ([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "spouseName", "eventDate"],
     },
     {
       // Example: Scotland Project (after reading image)
       // marriage of James Bell and Elizabeth Arrott 30 Apr 1719
       name: "Scotland Project format, (after reading image), 'marriage', no place",
       parts: [/marriage of /, spNameAndSpouse, spEventDate],
-      //regex: /^marriage of ([^0-9]+)(?: and | ?& ?| ?\/ ?)([^0-9]+) ([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "spouseName", "eventDate"],
     },
     {
       // Example: Found case
       // David Cairns and Mary Chambers, 6 Dec 1820, Tranent
       name: "Non-standard format, name and spouse, date, place",
       parts: [spNameAndSpouse, spEventDate, spEventPlace],
-      //regex: /^(.+)(?: and | ?& ?| ?\/ ?)(.*), ([0-9a-z ]+), (.*)$/i,
-      paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
     },
     {
       // Example: Invented case
@@ -1159,39 +1107,29 @@ const dataStringSentencePatterns = {
       // John Gibson, son of James Galloway Gibson, death or burial (died age 0) on 24 May 1839 in Glasgow, Lanarkshire, Scotland
       name: "Sourcer format, one parent and age at death",
       parts: [spName, spChildOfOneParent, /,? death or burial \(died/, spAge, /\)/, spEventDate, spEventPlace],
-      //regex: /^(.+), (?:son|daughter|child) of (.*), death or burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "parentName", "age", "eventDate", "eventPlace"],
     },
     {
       // Example: Sourcer Default, one parent
       // Elizabeth Campbell, daughter of Colny Campbell, death or burial on 8 Mar 1647 in Dumbarton, Dunbartonshire, Scotland.
       name: "Sourcer format, one parent, no age",
       parts: [spName, spChildOfOneParent, /,? death or burial/, spEventDate, spEventPlace],
-      //regex: /^(.+), (?:son|daughter|child) of (.*), death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "parentName", "eventDate", "eventPlace"],
     },
     {
       // Example: Sourcer Default, age no parent
       // John Burns death or burial (died age 96) on 26 Feb 1839 in Glasgow, Lanarkshire, Scotland
       name: "Sourcer format, age, no parent",
       parts: [spName, /,? death or burial \(died/, spAge, /\)/, spEventDate, spEventPlace],
-      //regex: /^(.+) death or burial \(died age ([^\)]+)\) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "age", "eventDate", "eventPlace"],
     },
     {
       // Example: Sourcer Default, no parent
       // James Fraser death or burial on 16 Aug 1685 in Aberdeen, Aberdeenshire, Scotland
       name: "Sourcer format, no parent or age",
       parts: [spName, /,? death or burial/, spEventDate, spEventPlace],
-      //regex: /^(.+) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "eventDate", "eventPlace"],
     },
     {
       // death of John Burns, 3 March 1839
       name: "Scotland Project format, just name and date",
       parts: ["death of ", spName, spEventDate],
-      //regex: /^death of (.+), ([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "eventDate"],
     },
     {
       // Jonet Scott, December 1568/69, Perth
@@ -1205,16 +1143,12 @@ const dataStringSentencePatterns = {
       // Agnes White baptism on 29 Mar 1839 (born 24 Jan 1839), daughter of Alexander White & Saragh McDonnol, in St Mirin's, Paisley, Renfrewshire, Scotland
       name: "Sourcer format, with parents and DOB",
       parts: [spName, / baptism/, spEventDate, spBirthDate, spChildOfTwoParents, spEventPlace],
-      //regex: /^(.+) baptism (?:on |in )?([0-9a-z ]+) \(born (.*)\), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "eventDate", "birthDate", "fatherName", "motherName", "eventPlace"],
     },
     {
       // Example: Sourcer Default no dob
       // Agnes White baptism on 29 Mar 1839, daughter of Alexander White & Saragh McDonnol, in St Mirin's, Paisley, Renfrewshire, Scotland
       name: "Sourcer format, with parents, no DOB",
       parts: [spName, / baptism/, spEventDate, spChildOfTwoParents, spEventPlace],
-      //regex: /^(.+) baptism (?:on |in )?([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "eventDate", "fatherName", "motherName", "eventPlace"],
     },
     {
       // Example: Scotland Project
@@ -1227,8 +1161,6 @@ const dataStringSentencePatterns = {
       // William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.
       name: "Scotland Project format, birth and baptism dates, parents, no place",
       parts: [spName, spBirthDate, / and baptism/, spEventDate, spChildOfTwoParents],
-      //regex: /^(.+), birth ([0-9a-z ]+) and baptism ([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+)$/i,
-      paramKeys: ["name", "birthDate", "eventDate", "fatherName", "motherName"],
     },
   ],
   cr_banns: [
@@ -1237,8 +1169,6 @@ const dataStringSentencePatterns = {
       // James Ronald McGregor marriage to Ruth Margaret Gauld on or after 26 Nov 1941 in St Mary's with St Peter's, Aberdeen, Aberdeenshire, Scotland.
       name: "Sourcer format",
       parts: [spName, / marriage to/, spSpouse, /(?: on or after| on| in)/, spEventDate, spEventPlace],
-      //regex: /^(.+) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
     },
     {
       // marriage or banns for Michael McBride and Mary McSloy, 21 Jul 1862
@@ -1249,8 +1179,6 @@ const dataStringSentencePatterns = {
       // marriage or banns for Michael McBride and Mary McSloy, 21 Jul 1862
       name: "Scotland Project format, no place",
       parts: [/marriage or banns for /, spNameAndSpouse, spEventDate],
-      //regex: /^marriage or banns for (.+)(?: and | ?& ?| ?\/ ?)(.+), ([0-9a-z ]+).*$/i,
-      paramKeys: ["name", "spouseName", "eventDate"],
     },
   ],
   cr_burials: [
@@ -1270,16 +1198,12 @@ const dataStringSentencePatterns = {
       // Peter Connor baptism on 16 Mar 1854 (born 23 Feb 1854), child of Peter Conner & Jean Sneddon, in Wellwynd Associate, Airdrie, Lanarkshire, Scotland
       name: "Sourcer format",
       parts: [spName, /,? baptism/, spEventDate, spBirthDate, spChildOfTwoParents, spEventPlace],
-      //regex: /^(.+) baptism (?:on |in )?([0-9a-z ]+) \(born (.*)\), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+),? (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "eventDate", "birthDate", "fatherName", "motherName", "eventPlace"],
     },
     {
       // Example: Scotland Project
       // John Rutherford, birth 28 August 1848, baptism 20 November 1850, son of George Rutherford and Isabella Waldie, Parish/Congregation Hawick Free
       name: "Scotland Project format",
       parts: [spName, spBirthDate, /(?: and|,) baptism/, spEventDate, spChildOfTwoParents, /,/, spEventPlace],
-      //regex: /^(.+), birth ([0-9a-z ]+)(?: and|,) baptism ([0-9a-z ]+), (?:son|daughter|child) of ([0-9a-z ]+)(?: and | ?& ?| ?\/ ?)([0-9a-z ]+), (.+)$/i,
-      paramKeys: ["name", "birthDate", "eventDate", "fatherName", "motherName", "eventPlace"],
     },
   ],
   ch3_banns: [
@@ -1288,8 +1212,6 @@ const dataStringSentencePatterns = {
       // John Kay marriage to Hannah Butler Dewar on 3 Jul 1849 in Scotland
       name: "Sourcer format, with place",
       parts: [spName, / marriage to/, spSpouse, /(?: on or after| on| in)/, spEventDate, spEventPlace],
-      regex: /^(.+) marriage to (.*) (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "spouseName", "eventDate", "eventPlace"],
     },
   ],
   ch3_burials: [
@@ -1297,15 +1219,13 @@ const dataStringSentencePatterns = {
       // Example: Sourcer Default
       // Helen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland. Cause of death: Rheumatic Fever
       name: "Sourcer format",
-      regex: /^(.+) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)\. Cause of death: (.+)$/i,
-      paramKeys: ["name", "eventDate", "eventPlace", "causeOfDeath"],
+      parts: [spName, / death or burial/, spEventDate, spEventPlace, /\./, spCauseOfDeath],
     },
     {
       // Example: Sourcer Default, no cause of death
       // Helen Fraser death or burial on 11 Jul 1842 in St Margaret's United Secession, Dunfermline, Fife, Scotland.
       name: "Sourcer format",
-      regex: /^(.+) death or burial (?:on or after |on |in )([0-9a-z ]+) (?:in|at|on) (.*)$/i,
-      paramKeys: ["name", "eventDate", "eventPlace"],
+      parts: [spName, / death or burial/, spEventDate, spEventPlace],
     },
   ],
   ch3_other: [
@@ -1322,24 +1242,18 @@ const dataStringSentencePatterns = {
       // Ella W. McMillan, female, age at census 2, Greenock West, Renfrew;
       name: "Scotland Project format",
       parts: [spName, spGender, /,? age at census/, spAgeNoLabel, ",", spRdName],
-      //regex: /^(.+), (male|female), age at census ([^,]+), (.*)$/i,
-      paramKeys: ["name", "gender", "age", "eventPlace"],
     },
     {
       // Example: Sourcer Default with registration district
       // James Fraser (31) in Milton registration district in Lanarkshire, Scotland.
       name: "Sourcer format",
       parts: [spName, /,? \(/, spAgeNoLabelOrWs, /\)/, spRdName, " registration district", spCountyCity],
-      //regex: /^(.+) \(([^\)]+)\) in (.*) registration district in (.*)$/i,
-      paramKeys: ["name", "age", "rdName", "countyCity"],
     },
     {
       // Example: Sourcer Default, no registration (may never generate this)
       // James Fraser (31) in Milton registration district in Lanarkshire, Scotland.
       name: "Sourcer format, no RD",
       parts: [spName, /,? \(/, spAgeNoLabelOrWs, /\)/, spEventPlace],
-      //regex: /^(.+) \(([^\)]+)\) in (.*)$/i,
-      paramKeys: ["name", "age", "eventPlace"],
     },
     {
       // 1901 Lydia O'Hara (Census 647/1112)
@@ -1353,16 +1267,12 @@ const dataStringSentencePatterns = {
       // Christina Clark Or Pocock (24) at 27 Marshall St, Edinburgh Buccleuch, Edinburgh, Scotland. Born in Turriff, Banff, Scotland
       name: "Sourcer format",
       parts: [spName, /,? \(/, spAgeNoLabelOrWs, /\)/, spEventPlace, spBirthPlace],
-      //regex: /^(.+) \(([^,]+)\) (?:in|on|at) (.*)$/i,
-      paramKeys: ["name", "age", "eventPlace"],
     },
     {
       // Example: Sourcer Default
       // John Stewart, male, age at census 20, Dwelling: 2 Blair Street, Galston, birth place: Galston, Ayr
       name: "Scotland Project format",
       parts: [spName, spGender, /,? age at census/, spAgeNoLabel, ",", spEventPlace, spBirthPlace],
-      //regex: /^([^,]+), (?:female|male), age at census ([^,]+), (.*)$/i,
-      paramKeys: ["name", "age", "eventPlace"],
     },
   ],
   vr: [
@@ -1371,8 +1281,6 @@ const dataStringSentencePatterns = {
       // W J Fraser in 1855 at House No 83 Union Street in the parish of Aberdeen, Scotland
       name: "Sourcer format",
       parts: [spName, / (?:in|on)/, spEventYear, spEventPlace],
-      //regex: /^(.+) (?:in|on) (\d\d\d\d) (?:in|on|at) (.*)$/i,
-      paramKeys: ["name", "eventDate", "eventPlace"],
     },
   ],
   wills: [
@@ -1382,8 +1290,6 @@ const dataStringSentencePatterns = {
       // Confirmation of inventory for Agnes Fraser at Glasgow Sheriff Court on 18 Apr 1910
       name: "Sourcer format",
       parts: [/confirmation of /, spWill, spName, / (?:in|on|at)/, spEventPlace, / (?:in|on)/, spEventDate],
-      //regex: /^confirmation of (?:will or testament of |will of |inventory for |probate of will of )(.+) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+)$/i,
-      paramKeys: ["name", "eventPlace", "eventDate"],
     },
     {
       // Example: Sourcer Default
@@ -1400,8 +1306,6 @@ const dataStringSentencePatterns = {
         /\. died/,
         spAgeNoLabel,
       ],
-      //regex: /^confirmation of (?:will or testament of |will of |inventory for |probate of will of )(.+) (?:in|on|at) (.*) (?:in|on) ([0-9a-z ]+)\. died ([0-9a-z ]+)$/i,
-      paramKeys: ["name", "eventPlace", "eventDate", "deathDate"],
     },
     {
       // Example: Sourcer Default
@@ -1417,8 +1321,6 @@ const dataStringSentencePatterns = {
         spEventDate,
         spOrigConfDate,
       ],
-      //regex: /^confirmation of (?:will or testament of |will of |inventory for )(.*) (?:in|on|at) (.+) (?:in|on) ([0-9a-z ]+) \(original confirmation (?:in|on) ([0-9a-z ]+)\).*$/i,
-      paramKeys: ["name", "eventPlace", "eventDate", "originalConfDate"],
     },
     {
       // Example: Sourcer Default
@@ -1471,8 +1373,6 @@ const dataStringSentencePatterns = {
       // Duncan Robertson admitted to prison in 1848, age 16
       name: "Scotland Project format",
       parts: [spName, /,? admitted to prison/, spEventYear, spAge],
-      regex: /^(.+) admitted to prison in (\d\d\d\d), age ([^,]+).*$/i,
-      paramKeys: ["name", "eventDate", "age"],
     },
   ],
 };
@@ -1828,8 +1728,8 @@ function cleanCitationValue(value) {
   return value;
 }
 
-function parseTextUsingPatternParts(pattern, objectToFill, textToParse, cleanValueFunc) {
-  let regex = getRegexForPattern(pattern);
+function parseTextUsingPatternParts(pattern, objectToFill, textToParse, cleanValueFunc, allowAnythingOnEnd) {
+  let regex = getRegexForPattern(pattern, allowAnythingOnEnd);
   let paramIndex = 0;
   for (let part of pattern.parts) {
     if (part.paramKeys) {
@@ -2549,23 +2449,7 @@ function parseDataSentence(dataString, parsedCitation, builder, allowAnythingOnE
       if (pattern.parts) {
         let regex = getRegexForPattern(pattern, allowAnythingOnEnd);
         if (regex.test(dataString)) {
-          parseTextUsingPatternParts(pattern, data, dataString, cleanDataValue);
-          matchedPattern = true;
-          matchingPattern = pattern;
-          break;
-        }
-      }
-      if (pattern.regex) {
-        if (pattern.regex.test(dataString)) {
-          for (let i = 0; i < pattern.paramKeys.length; i++) {
-            let key = pattern.paramKeys[i];
-            let resultIndex = i + 1;
-            let resultString = "$" + resultIndex;
-            let value = dataString.replace(pattern.regex, resultString);
-            if (key && value && value != dataString) {
-              data[key] = cleanDataValue(value);
-            }
-          }
+          parseTextUsingPatternParts(pattern, data, dataString, cleanDataValue, allowAnythingOnEnd);
           matchedPattern = true;
           matchingPattern = pattern;
           break;
