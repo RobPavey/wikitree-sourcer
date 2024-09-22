@@ -526,12 +526,21 @@ const otherFoundTitles = [
   },
   {
     recordType: "opr_births",
-    reTitles: [/Church of Scotland ?[:-]? Old Parish Registers ?[:-] Births (?:and|&) Baptisms/i],
+    reTitles: [
+      /Church of Scotland ?[:-]? Old Parish Registers ?[:-] Births (?:and|&) Baptisms/i,
+      /Old Parish Registers ?[:-] Births (?:and|&) Baptisms/i,
+      /OPR Baptisms? index(?:es)?/i,
+      /OPR Births? index(?:es)?/i,
+    ],
     titles: ["Births (OPR) Scotland"],
   },
   {
     recordType: "opr_marriages",
-    reTitles: [/Church of Scotland ?[:-]? Old Parish Registers ?[:-] Banns (?:and|&) Marriages/i],
+    reTitles: [
+      /Church of Scotland ?[:-]? Old Parish Registers ?[:-] Banns (?:and|&) Marriages/i,
+      /Old Parish Registers ?[:-] Banns (?:and|&) Marriages/i,
+      /OPR Marriages? index(?:es)?/i,
+    ],
     titles: ["Marriages (OPR) Scotland"],
   },
   {
@@ -539,6 +548,8 @@ const otherFoundTitles = [
     titles: ["Deaths (OPR) Scotland"],
     reTitles: [
       /(?:Church of Scotland:? )?Old Parish Registers(?: - | )(?:Deaths? (?:and|&) Burials?|Deaths?|Burials?)/i,
+      /OPR Deaths? index(?:es)?/i,
+      /OPR Burials? index(?:es)?/i,
     ],
   },
   {
@@ -1610,8 +1621,13 @@ function findMatchingCitationPattern(parsedCitation) {
   return false;
 }
 
-function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation) {
+function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation, combineLabel = false) {
   let text = parsedCitation.cleanText;
+
+  // in some cases where there is a colon in the title part of the title can be put in the label
+  if (combineLabel && parsedCitation.labelText) {
+    text = parsedCitation.labelText + ": " + text.trim();
+  }
   let lcText = text.toLowerCase();
 
   function foundMatch(recordType, title, matchIndex) {
@@ -2838,8 +2854,11 @@ function buildScotlandsPeopleContextSearchData(text) {
     logMessage("Trying for a partial citation pattern match.");
 
     if (!getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation)) {
-      logMessage("Could not find any known source title text.");
-      return { messages: messages };
+      logMessage("Trying again including label text.");
+      if (!getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation, true)) {
+        logMessage("Could not find any known source title text.");
+        return { messages: messages };
+      }
     }
 
     logMessage("Source Title is : " + parsedCitation.sourceTitle);

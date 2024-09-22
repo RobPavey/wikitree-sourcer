@@ -115,6 +115,11 @@ class ScotpFormDataBuilder {
     let surnameParam = ScotpRecordType.getSearchField(this.recordType, SpField.spouseSurname);
 
     if (surnameParam) {
+      let surnameLengthLimit = ScotpRecordType.getNameSearchLimit(this.recordType, "surname");
+      if (string.length > surnameLengthLimit) {
+        string = string.substring(0, surnameLengthLimit);
+      }
+
       this.addTextField(surnameParam, string);
       this.addSearchOption(surnameParam, searchOption);
     }
@@ -124,6 +129,11 @@ class ScotpFormDataBuilder {
     let forenameParam = ScotpRecordType.getSearchField(this.recordType, SpField.spouseForename);
 
     if (forenameParam) {
+      let forenameLengthLimit = ScotpRecordType.getNameSearchLimit(this.recordType, "forename");
+      if (string.length > forenameLengthLimit) {
+        string = string.substring(0, forenameLengthLimit);
+      }
+
       this.addTextField(forenameParam, string);
       this.addSearchOption(forenameParam, searchOption);
     }

@@ -290,6 +290,7 @@ async function doHighlightForRefNumData() {
   }
 
   let storageName = "scotpSearchRefNumData";
+  let expiryTime = 30000;
 
   if (isSearchResults) {
     //console.log("doHighlightForRefNumData: URL matches");
@@ -304,6 +305,13 @@ async function doHighlightForRefNumData() {
     let searchData = await getPendingSearch(storageName, false);
     //console.log("doHighlightForRefNumData: got searchData:");
     //console.log(searchData);
+
+    if (!searchData) {
+      // look for refine data
+      storageName = "scotpSearchRefNumDataForRefine";
+      searchData = await getPendingSearch(storageName, false);
+      expiryTime = 1000 * 60 * 60 * 24;
+    }
 
     if (searchData) {
       // If we found a pending search and submitted form then we will get called again
@@ -325,11 +333,19 @@ async function doHighlightForRefNumData() {
       //console.log("doHighlightForRefNumData: timeStampNow is :" + timeStampNow);
       //console.log("doHighlightForRefNumData: timeSinceSearch is :" + timeSinceSearch);
 
-      if (timeSinceSearch < 30000 && (isSearchResults || searchUrl == document.URL)) {
+      if (timeSinceSearch < expiryTime && (isSearchResults || searchUrl == document.URL)) {
         // wait a  short time in case table not fully populated
         await sleep(200);
         doHighlightForRefNumber(searchData.refNum, searchData.recordType, false);
-        clearPendingSearch(storageName);
+
+        if (storageName == "scotpSearchRefNumData") {
+          clearPendingSearch(storageName);
+
+          // if the search is not specific there may be several pages of results
+          // and the highlt may not be visible. So Save off the ref num search and recheck
+          // on further results
+          safeRefNumSearchDataForUserRefineSearches(searchData);
+        }
       }
     }
   }
@@ -363,6 +379,20 @@ async function clearPendingSearch(storageName) {
       // clear the search data
       chrome.storage.local.remove([storageName], function () {
         //console.log('cleared scotpSearchData');
+        resolve();
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
+async function safeRefNumSearchDataForUserRefineSearches(searchData) {
+  return new Promise((resolve, reject) => {
+    try {
+      // save the search data
+      chrome.storage.local.set({ scotpSearchRefNumDataForRefine: searchData }, function () {
+        console.log("saved scotpSearchRefNumDataForRefine");
         resolve();
       });
     } catch (ex) {
@@ -840,6 +870,11 @@ var doingFormSubmit = false;
 
 async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
+
+  if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/search-records/")) {
+    // found an initial search so clear the ref num refine data
+    clearPendingSearch("scotpSearchRefNumDataForRefine");
+  }
 
   if (document.URL) {
     let lcUrl = document.URL.toLowerCase();
