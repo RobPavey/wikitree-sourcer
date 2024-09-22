@@ -58,9 +58,45 @@ const regressionData = [
   },
   {
     // Found on https://www.wikitree.com/wiki/Cheyne-996
-    // Uses data list bu the first field (Surename) was getting a period on start.
+    // Uses data list but the first field (Surename) was getting a period on start.
     caseName: "found_stat_births_1",
     text: `BIRTH: Scotland: Statutory Registers - Births database, National Records of Scotland, Scotlandspeople (https://www.scotlandspeople.gov.uk/: accessed 23 Sep 2023). Surname: CHEYNE, Forename: GLADYS, Mother's Maiden Name: blank, Gender: F, Year: 1928, Ref: 221 / 4, RD Name: METHLICK.`,
+  },
+  {
+    // Found on https://www.wikitree.com/wiki/Jack-604
+    // Pretty minimal
+    caseName: "found_stat_births_2",
+    text: `Scotlands People; https://www.scotlandspeople.gov.uk/; Statutory Registers-Births, 1892; Dunnet 036/ 8`,
+  },
+  {
+    // Found
+    caseName: "found_stat_births_3",
+    text: `"Scotland Statutory Registers - Births" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/ : accessed 31 Dec 2023), Annie Dunlop Climie, 1906, Riccarton; Reference Number: 611 / 1 / 87.`,
+  },
+  {
+    // Found on https://www.wikitree.com/wiki/McLean-9879
+    caseName: "found_stat_births_4",
+    text: `“Statutory Register of Births” database, National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/: accessed 21 Oct 2023), Name: Jessie Grosart McLean; Dugald McLean and Jessie Young Lamb; 24 Sep 1891; Lochgoilhead; Parish Number: 527; Reference Number: 1/4.`,
+  },
+  {
+    // Found on https://www.wikitree.com/wiki/McDermott-2577
+    // Has a semi-colon rather than a colon after the label
+    // Has extra stuff on end
+    caseName: "found_stat_births_5",
+    text: `"Birth of Hugh Patrick Mcdermott, 1906"; "Statutory Registers: Births" database, National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/: accessed 9 Jan 2022), Cramond; citing: Year 1906, Reference number 679/ 13. View Index Entry`,
+  },
+  {
+    // Found on https://www.wikitree.com/wiki/McDermott-2577
+    // Fixed to have a colon after the label
+    // Has extra stuff on end
+    caseName: "found_stat_births_6",
+    text: `"Birth of Hugh Patrick Mcdermott, 1906": "Statutory Registers: Births" database, National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/: accessed 9 Jan 2022), Cramond; citing: Year 1906, Reference number 679/ 13. View Index Entry`,
+  },
+  {
+    // Found on https://www.wikitree.com/wiki/McDermott-2577
+    // Fixed to have a colon after the label and removed extra stuff on end
+    caseName: "found_stat_births_7",
+    text: `"Birth of Hugh Patrick Mcdermott, 1906": "Statutory Registers: Births" database, National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/: accessed 9 Jan 2022), Cramond; citing: Year 1906, Reference number 679/ 13.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -86,6 +122,30 @@ const regressionData = [
     // List form with spouse
     caseName: "found_stat_marriages_2",
     text: `MARRIAGE #1: Scotland: Statutory Registers - Marriages database, National Records of Scotland, Scotlandspeople (https://www.scotlandspeople.gov.uk/ : accessed 28 Jun 2024). Surname: FORREST, Forename: MARGARET, Spouse surname: FINNIE, Spouse forename: GEORGE, Date: 1920, Ref: 628 / 46, RD Name: CAMBUSNETHAN.`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Watt-1472
+    // Minimal form
+    caseName: "found_stat_marriages_3",
+    text: `ScotlandsPeople Statutory registers - Marriages. WATT, ALEXANDER & NICOLL, ISABELLA, year: 1863, 322/ 2 Tealing`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/McLean-9879
+    // Minimal form
+    caseName: "found_stat_marriages_4",
+    text: `“Statutory Register of Marriages” database, National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/: accessed 28 Aug 2023), William MacAlpine Hyslop and Jennie Johnstone; 9 Jun 1936; Barrhill; Parish Number: 582/2, Reference Number: 4.`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Fairley-567
+    // Example with the inline ref numbers at start
+    caseName: "found_stat_marriages_5",
+    text: `↑ 2.0 2.1 Marriage Registration: "Statutory Register of Marriages" National Records of Scotland (ScotlandsPeople : accessed 13 July 2023) Rose Ann Fairley marriage to Thomas Telfer Miller registered 1933 in Blythswood. citing Ref 644/10/2036.`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Surtees-361
+    // Example with extra information added to end.
+    caseName: "found_stat_marriages_6",
+    text: `↑ Marriage Registration: "Statutory Register of Marriages" National Records of Scotland, Ref: 098/A/213 ScotlandsPeople (accessed 7 January 2024) George Clark Surtees marriage to Mary Fraser registered 1938 in Inverness. Certificate viewed 7 Jan 2024`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -139,6 +199,11 @@ const regressionData = [
     // Source title was not recognized
     caseName: "found_stat_deaths_5",
     text: `“Statutory Deaths 1855–2013,” database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 2 Feb 2024), image, death registration, Jane Lamont, 1924, 44, District of Paisley, County of Renfrew; citing Statutory Registers no. 573 / 1 / 1441. Mother's maiden name: BELL (Baird)`,
+  },
+  {
+    // Found on https://www.wikitree.com/wiki/McLean-9879 (21 Sep 2024)
+    caseName: "found_stat_deaths_6",
+    text: `“Statutory Register of Deaths” database, National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/: accessed 18 Sep 2023), Jenny Grosart Hyslop, 22 Sep 1970; Barrhill; Parish Number: 594, Reference Number: 93.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -411,6 +476,10 @@ const regressionData = [
   {
     caseName: "sourcer_wills_additional_inventory_death_date",
     text: `Additional Inventory Confirmation: "Wills and Testaments" National Records of Scotland, Reference Number: SC70/1/665 ScotlandsPeople Search (accessed 23 June 2022) Confirmation of inventory for Jane Peffers at Edinburgh Sheriff Court on 25 Jun 1921 (original confirmation on 14 Jun 1921). Died 6 Apr 1921.`,
+  },
+  {
+    caseName: "found_wills_1",
+    text: `↑ Index of wills and testaments; Hamilton, James; 16/6/1576; Duke of Chastelherault, Earl of Arran; Testament Testamentar and Inventory; Edinburgh Commissary Court; CC8/8/4; from www.scotlandspeople.gov.uk`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

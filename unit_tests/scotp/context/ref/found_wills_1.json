@@ -1,0 +1,42 @@
+{
+  "formData": {
+    "urlPart": "legal-records/wills",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "James"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Hamilton"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-year-from",
+        "type": "text",
+        "value": "1576"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-year-to",
+        "type": "text",
+        "value": "1576"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "CC8/8/4",
+  "recordType": "wills"
+}
