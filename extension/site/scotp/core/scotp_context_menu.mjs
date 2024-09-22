@@ -73,7 +73,7 @@ const cpRef = {
 };
 const cpLinkA = {
   regex:
-    /\(?(?:scotlandspeople,?\.? \(?(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/,
+    /\(?(?:scotlandspeople,?\.? \(?(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople \(digital database\)|scotlandspeople)/,
 };
 const cpLinkAEdit = {
   regex: /\(?\[https?\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/,
@@ -84,7 +84,7 @@ const cpLinkB = {
 };
 const cpLinkANoParens = {
   regex:
-    /(?:scotlandspeople,?\.? (?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople)/,
+    /(?:scotlandspeople,?\.? (?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople \(digital database\)|scotlandspeople)/,
 };
 const cpLinkAEditNoParens = {
   regex: /\[https?\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/,
@@ -153,6 +153,11 @@ const citationPatterns = [
     // “Statutory Marriages 1855–2013,” database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 1 Feb 2024), image, marriage registration, James Lamont and Jane O'Neill nee Letson, married 1905, Parish of Govan, County of Lanark; citing Statutory Registers no. 646 / 2 / 372.
     name: "Non-standard: Sourcer style (but no website creator/owner), source reference at end",
     parts: [cpTitle, cpDb, cpLinkA, cpLinkB, cpData, cpCitingRef],
+  },
+  {
+    // ↑ "Statutory Register of Marriages", National Records of Scotland, Ref: 335/7. ScotlandsPeople (digital database) Accessed 25 Apr 2023 John Alexander Algie marriage to Penelope Anders[on] Monro registered 1924 in Blairgowrie.
+    name: "Non-standard: Source Title not in quotes and non-standard. No colon before accessed",
+    parts: [cpTitle, cpDb, cpOwner, cpRef, cpLinkANoParens, cpLinkBNoParens, cpData],
   },
 ];
 
@@ -746,6 +751,10 @@ const spRefCode = {
   regex: /(?:, |,| )([0-9a-z \/]+)/,
   paramKeys: ["ref"],
 };
+const spParishNum = {
+  regex: /(?:, |,| )([0-9 \/]+)/,
+  paramKeys: ["parishNum"],
+};
 
 // the "parts" member is an array, each member can be either a part object, a string or a RegExp
 const dataStringSentencePatterns = {
@@ -848,7 +857,9 @@ const dataStringSentencePatterns = {
         spEventDate,
         /;/,
         spRdName,
-        /; Parish Number: [\d\/]+, Reference Number:/,
+        /; Parish Number:/,
+        spParishNum,
+        /, Reference Number:/,
         spRefNum,
       ],
     },
@@ -922,7 +933,9 @@ const dataStringSentencePatterns = {
         spEventDate,
         /[,;]/,
         spRdName,
-        /; Parish Number: \d+[;,] Reference Number:/,
+        /; Parish Number:/,
+        spParishNum,
+        /, Reference Number:/,
         spRefNum,
       ],
     },
@@ -1464,6 +1477,7 @@ function cleanCitation(parsedCitation) {
   // take the user back to the inline citation
   if (text.startsWith("↑")) {
     text = text.substring(1);
+    text = text.trim();
   }
 
   // there can also be numbers on the start if they selext too much that are the links back
@@ -1758,6 +1772,43 @@ function parseUsingPartialPattern(parsedCitation) {
   parseTextUsingPatternParts(pattern, parsedCitation, text, cleanCitationValue);
 }
 
+function removeBracketedSectionFromEnd(text) {
+  // e.g. Penelope Anders[on]
+  const regex = /^(.*)\[[^\]]+\]$/;
+  if (regex.test(text)) {
+    text = text.replace(regex, "$1");
+  }
+  return text;
+}
+
+function cleanForename(text) {
+  if (!text) {
+    return text;
+  }
+
+  // Penelope Anders[on]
+  text = removeBracketedSectionFromEnd(text);
+
+  if (text.endsWith(".")) {
+    text = text.substring(0, text.length - 1);
+  }
+
+  return text;
+}
+
+function cleanSurname(text) {
+  if (!text) {
+    return text;
+  }
+  text = removeBracketedSectionFromEnd(text);
+
+  return text;
+}
+
+function cleanFullName(text) {
+  return text;
+}
+
 function setNameFromNameWithSurnameFirst(data, parsedCitation, builder, isSpouse) {
   let scotpRecordType = parsedCitation.scotpRecordType;
 
@@ -1803,9 +1854,7 @@ function setNameFromNameWithSurnameFirst(data, parsedCitation, builder, isSpouse
 
   if (forenameParam) {
     if (forename) {
-      if (forename.endsWith(".")) {
-        forename = forename.substring(0, forename.length - 1);
-      }
+      forename = cleanForename(forename);
       if (isSpouse) {
         builder.addSpouseForename(forename, "exact");
       } else {
@@ -1813,6 +1862,7 @@ function setNameFromNameWithSurnameFirst(data, parsedCitation, builder, isSpouse
       }
     }
     if (surname) {
+      surname = cleanSurname(surname);
       if (isSpouse) {
         builder.addSpouseSurname(surname, "exact");
       } else {
@@ -1833,6 +1883,7 @@ function setNameFromNameWithSurnameFirst(data, parsedCitation, builder, isSpouse
         }
         fullName += surname;
       }
+      fullName = cleanFullName(fullName);
       if (isSpouse) {
         builder.addSpouseFullName(fullName, "exact");
       } else {
@@ -1855,9 +1906,7 @@ function setNameFromSeparateForenameAndSurname(data, parsedCitation, builder, is
 
   if (surname || forename) {
     if (forename) {
-      if (forename.endsWith(".")) {
-        forename = forename.substring(0, forename.length - 1);
-      }
+      forename = cleanForename(forename);
       if (isSpouse) {
         builder.addSpouseForename(forename, "exact");
       } else {
@@ -1870,6 +1919,8 @@ function setNameFromSeparateForenameAndSurname(data, parsedCitation, builder, is
       if (neeIndex != -1) {
         surname = surname.substring(0, neeIndex).trim();
       }
+      surname = cleanSurname(surname);
+
       if (isSpouse) {
         builder.addSpouseSurname(surname, "exact");
       } else {
@@ -1936,30 +1987,29 @@ function setName(data, parsedCitation, builder) {
           }
         }
 
-        if (forenames && forenames.endsWith(".")) {
-          forenames = forenames.substring(0, forenames.length - 1);
-        }
+        forenames = cleanForename(forenames);
+        lastName = cleanSurname(lastName);
 
         builder.addForename(forenames, "exact");
         builder.addSurname(lastName, "exact");
         return;
       } else {
-        builder.addSurname(newNameParts[0], "exact");
+        builder.addSurname(cleanSurname(newNameParts[0]), "exact");
         return;
       }
     }
     let forenames = StringUtils.getWordsBeforeLastWord(name);
     let lastName = StringUtils.getLastWord(name);
 
-    if (forenames && forenames.endsWith(".")) {
-      forenames = forenames.substring(0, forenames.length - 1);
-    }
+    forenames = cleanForename(forenames);
+    lastName = cleanSurname(lastName);
 
     builder.addForename(forenames, "exact");
     builder.addSurname(lastName, "exact");
   } else {
     // there is only one name, use may depend on record type
     // for now assume it is surname
+    name = cleanSurname(name);
     builder.addSurname(name, "exact");
   }
 }
@@ -2006,15 +2056,13 @@ function setSpouse(data, parsedCitation, builder) {
         let forenames = StringUtils.getWordsBeforeLastWord(spouseName);
         let lastName = StringUtils.getLastWord(spouseName);
 
-        if (forenames && forenames.endsWith(".")) {
-          forenames = forenames.substring(0, forenames.length - 1);
-        }
-
         if (forenames) {
+          forenames = cleanForename(forenames);
           builder.addSpouseForename(forenames, searchOption);
         }
 
         if (lastName) {
+          lastName = cleanSurname(lastName);
           builder.addSpouseSurname(lastName, searchOption);
         }
       } else {
@@ -2025,10 +2073,12 @@ function setSpouse(data, parsedCitation, builder) {
       let fullName = spouseName;
 
       if (fullName) {
+        fullName = cleanFullName(fullName);
         builder.addSpouseFullName(fullName, searchOption);
       }
     } else if (data.spouseLastName) {
-      builder.addSpouseSurname(data.spouseLastName, searchOption);
+      let lastName = cleanSurname(data.spouseLastName);
+      builder.addSpouseSurname(lastName, searchOption);
     } else if (data.spouseNameSurnameFirst) {
       setNameFromNameWithSurnameFirst(data, parsedCitation, builder, true);
     }
@@ -2247,6 +2297,11 @@ function checkForMissingDataNotInDataString(parsedCitation, data) {
         data.year = text.replace(testForYear, "$1");
       }
     }
+  }
+
+  if (!data.name || (!data.eventDate && !data.year)) {
+    // could try to get data from the WikiTree profile that they clicked from
+    // either using extract or the WikiTree API.
   }
 }
 
@@ -2510,7 +2565,17 @@ function cleanDataString(dataString) {
     dataString = dataString.replace(testForPunctuationOnEnd, "$1");
   }
 
-  const testForPunctuationOnStart = /^[\s\.,;]+(.*)/;
+  const testForPunctuationOnStart = /^[\s\.,;:]+(.*)/;
+  if (testForPunctuationOnStart.test(dataString)) {
+    dataString = dataString.replace(testForPunctuationOnStart, "$1");
+  }
+
+  const testForAccessedOnStart = /^(?:image )?(?:last )?(?:accessed|viewed)(?: : |:| )\d\d? [a-z]+ \d\d\d\d ?(.*)/i;
+  if (testForAccessedOnStart.test(dataString)) {
+    dataString = dataString.replace(testForAccessedOnStart, "$1");
+  }
+
+  // recheck for punctuation on start
   if (testForPunctuationOnStart.test(dataString)) {
     dataString = dataString.replace(testForPunctuationOnStart, "$1");
   }
@@ -2573,7 +2638,7 @@ function parseDataString(parsedCitation, builder) {
 function extractReferenceNumber(parsedCitation) {
   let refNum = "";
 
-  const standardRegexes = [
+  const standardRefNumRegexes = [
     /^.*reference number[\.,:]? ([a-z0-9 \/]+).*$/i,
     /^.*reference[\.,:]? ([a-z0-9 \/]+).*$/i,
     /^.*ref number[\.,:]? ([a-z0-9 \/]+).*$/i,
@@ -2582,85 +2647,128 @@ function extractReferenceNumber(parsedCitation) {
     /^.*ref[\.,:]? ([a-z0-9 \/]+).*$/i,
   ];
 
-  const nonStandardRegexes = [/^.*Statutory Registers no[\.,:]? ([a-z0-9 \/]+).*$/i];
+  const nonStandardRefNumRegexes = [/^.*Statutory Registers no[\.,:]? ([a-z0-9 \/]+).*$/i];
 
-  function extractFromTextString(text, regexes) {
+  function extractFromTextString(text, regexes, rtKey) {
     if (!text) {
-      return;
+      return "";
     }
 
     for (let regex of regexes) {
       if (regex.test(text)) {
         let num = text.replace(regex, "$1");
         if (num && num != text) {
-          refNum = num;
-          break;
+          return num;
         }
       }
     }
 
     // another way is to look for what this record type would use.
-    if (!refNum) {
-      let refName = ScotpRecordType.getRecordKey(parsedCitation.scotpRecordType, "ref");
-      if (refName) {
-        let lcRefName = refName.toLowerCase();
-        let lcSourceReference = text.toLowerCase();
-        let index = lcSourceReference.indexOf(lcRefName);
-        if (index != -1) {
-          let remainder = lcSourceReference.substring(index + lcRefName.length);
-          let num = remainder.replace(/^:? ([a-z0-9 \/]+).*$/, "$1");
-          if (num && num != remainder) {
-            refNum = num;
-          }
+    let refName = ScotpRecordType.getRecordKey(parsedCitation.scotpRecordType, rtKey);
+    if (refName) {
+      let lcRefName = refName.toLowerCase();
+      let lcSourceReference = text.toLowerCase();
+      let index = lcSourceReference.indexOf(lcRefName);
+      if (index != -1) {
+        let remainder = lcSourceReference.substring(index + lcRefName.length);
+        let num = remainder.replace(/^:? ([a-z0-9 \/]+).*$/, "$1");
+        if (num && num != remainder) {
+          return num;
         }
       }
     }
+
+    return "";
   }
 
-  // See if we can extract a reference number from sourceReference
-  if (parsedCitation.sourceReference) {
-    let sourceReference = parsedCitation.sourceReference;
-    logMessage("Source reference is : " + sourceReference);
+  function extractFromSourceRefDataStringOrData(standardRegexes, nonStandardRegexes, dataKey, rtKey) {
+    // See if we can extract a reference number from sourceReference
+    if (parsedCitation.sourceReference) {
+      let sourceReference = parsedCitation.sourceReference;
+      let result = extractFromTextString(sourceReference, standardRegexes, rtKey);
 
-    extractFromTextString(sourceReference, standardRegexes);
-
-    if (!refNum) {
-      logMessage("No ref number found in source reference");
-    }
-  }
-
-  if (!refNum) {
-    // either there is no source reference or it doesn't contain a ref num
-    // It is possible that it is in the data if the data string was a list
-    if (parsedCitation.data) {
-      let dataRef = parsedCitation.data.ref;
-      if (dataRef) {
-        refNum = dataRef;
+      if (result) {
+        logMessage("  found in source reference");
+        return result;
       }
     }
-  }
 
-  if (!refNum) {
+    // either there is no source reference or it doesn't contain a ref num
+    // It is possible that it is in the data if the data string was a list
+    if (parsedCitation.data && dataKey) {
+      let dataRef = parsedCitation.data[dataKey];
+      if (dataRef) {
+        logMessage("  found in data extracted from dataString via pattern");
+        return dataRef;
+      }
+    }
+
     // check the data string for a refNum, it could have been parsed as a sentence but have
     // been put in the place name
     if (parsedCitation.dataString) {
-      extractFromTextString(parsedCitation.dataString, standardRegexes);
-    }
-  }
-
-  // if still nothing try non-standard labels
-  if (!refNum) {
-    if (parsedCitation.dataString) {
-      extractFromTextString(parsedCitation.sourceReference, nonStandardRegexes);
-      if (refNum) {
-        logMessage("Found ref num using non-standard label");
+      let result = extractFromTextString(parsedCitation.dataString, standardRegexes, rtKey);
+      if (result) {
+        logMessage("  found in data string");
+        return result;
       }
     }
-  }
-  if (!refNum) {
+
+    // if still nothing try non-standard labels
     if (parsedCitation.dataString) {
-      extractFromTextString(parsedCitation.dataString, nonStandardRegexes);
-      logMessage("Found ref num in data string using non-standard label");
+      let result = extractFromTextString(parsedCitation.sourceReference, nonStandardRegexes, rtKey);
+      if (result) {
+        logMessage("  found using non-standard label");
+        return result;
+      }
+    }
+
+    if (parsedCitation.dataString) {
+      let result = extractFromTextString(parsedCitation.dataString, nonStandardRegexes, rtKey);
+      if (result) {
+        logMessage("  found in data string using non-standard label");
+        return result;
+      }
+    }
+
+    return "";
+  }
+
+  logMessage("Search for ref num...");
+  refNum = extractFromSourceRefDataStringOrData(standardRefNumRegexes, nonStandardRefNumRegexes, "ref", "ref");
+
+  if (refNum) {
+    refNum = refNum.trim();
+
+    // we have a ref num but sometimes there is also a parish number and that has been left
+    // out of the ref num.
+    // e.g.: Parish Number: 582/2, Reference Number: 4.
+    // This should set refNum to 582/2/4
+    // This is only the case for a few record types. For OPR types
+    // The psrish num is a separate column in the search results
+
+    const spRt = parsedCitation.scotpRecordType;
+    if (spRt == "stat_births" || spRt == "stat_marriages" || spRt == "stat_deaths") {
+      const standardParishRegexes = [/^.*parish number[\.,:]? ([0-9 \/]+).*$/i, /^.*parish[\.,:]? ([0-9 \/]+).*$/i];
+
+      const nonStandardParishRegexes = [];
+
+      let parishNum = extractFromSourceRefDataStringOrData(
+        standardParishRegexes,
+        nonStandardParishRegexes,
+        "parishNum",
+        ""
+      );
+
+      parishNum = parishNum.trim();
+
+      if (parishNum) {
+        let compactRefNum = refNum.replace(/ ?\/ ?/g, "/");
+        let compactParishNum = parishNum.replace(/ ?\/ ?/g, "/");
+
+        if (!compactRefNum.includes(compactParishNum)) {
+          refNum = parishNum + " " + refNum;
+        }
+      }
     }
   }
 

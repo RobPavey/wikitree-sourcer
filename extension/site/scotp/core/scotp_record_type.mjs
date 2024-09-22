@@ -682,7 +682,7 @@ const ScotpRecordType = {
     return getValueWithDefault(recordType, "recordKeys", fieldName, defaultValue);
   },
 
-  getNameSearchLimitForSoundex: function (recordType, nameType) {
+  getNameSearchLimit: function (recordType, nameType) {
     let defaultValue = getDefaultValue("searchNameLimits", nameType);
     return getValueWithDefault(recordType, "searchNameLimits", nameType, defaultValue);
   },

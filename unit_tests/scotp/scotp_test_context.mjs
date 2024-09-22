@@ -147,6 +147,12 @@ const regressionData = [
     caseName: "found_stat_marriages_6",
     text: `↑ Marriage Registration: "Statutory Register of Marriages" National Records of Scotland, Ref: 098/A/213 ScotlandsPeople (accessed 7 January 2024) George Clark Surtees marriage to Mary Fraser registered 1938 in Inverness. Certificate viewed 7 Jan 2024`,
   },
+  {
+    // Found on: https://www.wikitree.com/wiki/Algie-124
+    // No link but accessed date
+    caseName: "found_stat_marriages_7",
+    text: `↑ "Statutory Register of Marriages", National Records of Scotland, Ref: 335/7. ScotlandsPeople (digital database) Accessed 25 Apr 2023 John Alexander Algie marriage to Penelope Anders[on] Monro registered 1924 in Blairgowrie.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_divorces

@@ -84,11 +84,9 @@ class ScotpFormDataBuilder {
   addSurname(string, searchOption) {
     let fieldName = ScotpRecordType.getSearchField(this.recordType, "surname");
     if (fieldName) {
-      if (searchOption == "soundex") {
-        let surnameLengthLimit = ScotpRecordType.getNameSearchLimitForSoundex(this.recordType, "surname");
-        if (string.length > surnameLengthLimit) {
-          string = string.substring(0, surnameLengthLimit);
-        }
+      let surnameLengthLimit = ScotpRecordType.getNameSearchLimit(this.recordType, "surname");
+      if (string.length > surnameLengthLimit) {
+        string = string.substring(0, surnameLengthLimit);
       }
 
       this.addTextField(fieldName, string);
@@ -99,11 +97,9 @@ class ScotpFormDataBuilder {
   addForename(string, searchOption) {
     let forenameParam = ScotpRecordType.getSearchField(this.recordType, SpField.forename);
 
-    if (searchOption == "soundex") {
-      let forenameLengthLimit = ScotpRecordType.getNameSearchLimitForSoundex(this.recordType, "forename");
-      if (string.length > forenameLengthLimit) {
-        string = string.substring(0, forenameLengthLimit);
-      }
+    let forenameLengthLimit = ScotpRecordType.getNameSearchLimit(this.recordType, "forename");
+    if (string.length > forenameLengthLimit) {
+      string = string.substring(0, forenameLengthLimit);
     }
 
     this.addTextField(forenameParam, string);
