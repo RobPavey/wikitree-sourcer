@@ -98,6 +98,11 @@ const regressionData = [
     caseName: "found_stat_births_7",
     text: `"Birth of Hugh Patrick Mcdermott, 1906": "Statutory Registers: Births" database, National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/: accessed 9 Jan 2022), Cramond; citing: Year 1906, Reference number 679/ 13.`,
   },
+  {
+    // Found on https://www.wikitree.com/wiki/Hamilton-38176
+    caseName: "found_stat_births_8",
+    text: `↑ "Scotland Statutory Birth Records", Scotlandspeople, database online, (https://www.scotlandspeople.gov.uk: accessed 5 September 2024), Robert Hamilton, Mother's maiden name Jeffrey, 17 June 1862, Carluke, Lanarkshire, Scotland, United Kingdom: Parish: 629/142.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_marriages
@@ -211,6 +216,11 @@ const regressionData = [
     caseName: "found_stat_deaths_6",
     text: `“Statutory Register of Deaths” database, National Records of Scotland, Scotlands People (https://www.scotlandspeople.gov.uk/: accessed 18 Sep 2023), Jenny Grosart Hyslop, 22 Sep 1970; Barrhill; Parish Number: 594, Reference Number: 93.`,
   },
+  {
+    // Found on https://www.wikitree.com/wiki/Cathie-115 (22 Sep 2024)
+    caseName: "found_stat_deaths_7",
+    text: `↑ Death: "1952 CATHIE, CHARLES SKEOCH (Statutory registers Deaths 577 / 1 / 70)" database, National Records of Scotland, ScotlandsPeople https://www.scotlandspeople.gov.uk/ Accessed 7 Apr 2024.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_civilpartnerships
@@ -286,6 +296,12 @@ const regressionData = [
     // Data string format is a bit different
     caseName: "found_opr_birth_4",
     text: `"Church of Scotland: Old Parish Registers - Births and baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 22 Dec 2021), Robert Lewis Balfour Stevenson, parents: Thomas Stevenson/Margaret Isabella Balfour, 13 Nov 1850, Edinburgh; citing Parish Number 685/1, Reference Number: 600 207.`,
+  },
+  {
+    // found on: https://www.wikitree.com/wiki/Stewart-30741 (22 Sep 2024)
+    // Mismated quotes - the opening quote is missing
+    caseName: "found_opr_birth_5",
+    text: `Old Parish Registers - Births", National Records of Scotland database Scotlands People, William, lawful son of parents William Stewart / Isobel Dow. Parish: Clunie, 1817, citing Reference No. 339 10/357. see also Source batch 7628136 serial sheet 19 LDS`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

@@ -37,6 +37,7 @@ import { scotpRecordTypes, ScotpRecordType, SpEventClass, SpFeature, SpField } f
 import { ScotpFormDataBuilder } from "./scotp_form_data_builder.mjs";
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { getPlaceSearchTerms } from "./scotp_place_search_terms.mjs";
 
 var messages = "";
 
@@ -73,7 +74,7 @@ const cpRef = {
 };
 const cpLinkA = {
   regex:
-    /\(?(?:scotlandspeople,?\.? \(?(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople \(digital database\)|scotlandspeople)/,
+    /\(?(?:scotlandspeople,?\.? \(?(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|(?:https?\:\/\/)?www\.scotlandspeople\.gov\.uk[^\: ]*|scotlandspeople search|scotlandspeople \(?(?:digital database|database online|database)\)?|scotlandspeople)/,
 };
 const cpLinkAEdit = {
   regex: /\(?\[https?\:\/\/www\.scotlandspeople\.gov\.uk.* scotlandspeople(?: search)?\]/,
@@ -101,7 +102,7 @@ const cpData = {
   paramKeys: ["dataString"],
 };
 const cpCitingRef = {
-  regex: /;? citing(?: |: | - )(.*)/,
+  regex: /[;,]? ?citing(?: |: | - )(.*)/,
   paramKeys: ["sourceReference"],
 };
 const citationPatterns = [
@@ -489,46 +490,56 @@ const otherFoundTitles = [
   {
     recordType: "stat_births",
     titles: ["Statutory Births"],
-    reTitles: [/Statutory Births \d\d\d\d(?: ?- ?| ?\- ?| to )\d\d\d\d/i, /Statutory Registers ?[-:] ?Births/i],
+    reTitles: [
+      /(?:Scotland )?Statutory Births?(?: Records?| Index(?:es))/i,
+      /Statutory(?: Registers? ?(?:of|:|-)?)? ?Births(?: \d\d\d\d(?: ?- ?| ?: ?| to )present)?/i,
+    ],
   },
   {
     recordType: "stat_marriages",
     titles: ["Statutory Marriages"],
-    reTitles: [/Statutory Marriages \d\d\d\d(?: ?- ?| ?\- ?| to )\d\d\d\d/i, /Statutory Registers ?[-:] ?Marriages/i],
+    reTitles: [
+      /(?:Scotland )?Statutory Marriages?(?: Records?| Index(?:es))/i,
+      /Statutory(?: Registers? ?(?:of|:|-)?)? ?Marriages(?: \d\d\d\d(?: ?- ?| ?: ?| to )present)?/i,
+    ],
   },
   {
     recordType: "stat_divorces",
     titles: ["Statutory Divorces", "Statutory Registers: Divorces"],
-    reTitles: [/Statutory Divorces \d\d\d\d(?: ?- ?| ?\- ?| to )\d\d\d\d/i, /Statutory Registers ?[-:] ?Divorces/i],
+    reTitles: [
+      /(?:Scotland )?Statutory Divorces?(?: Records?| Index(?:es))/i,
+      /Statutory(?: Registers? ?(?:of|:|-)?)? ?Divorces(?: \d\d\d\d(?: ?- ?| ?: ?| to )present)?/i,
+    ],
   },
   {
     recordType: "stat_deaths",
     titles: ["Statutory Deaths", "Statutory Registers: Deaths"],
-    reTitles: [/Statutory Deaths \d\d\d\d(?: ?- ?| ?\- ?| to )\d\d\d\d/i, /Statutory Registers ?[-:] ?Deaths/i],
+    reTitles: [
+      /(?:Scotland )?Statutory Deaths?(?: Records?| Index(?:es))/i,
+      /Statutory(?: Registers? ?(?:of|:|-)?)? ?Deaths(?: \d\d\d\d(?: ?- ?| ?: ?| to )present)?/i,
+    ],
   },
   {
     recordType: "stat_civilpartnerships",
     titles: ["Statutory Civil Partnerships"],
     reTitles: [
-      /Statutory Civil Partnerships \d\d\d\d(?: ?- ?| ?\- ?| to )\d\d\d\d/i,
-      /Statutory Registers ?[-:] ?Civil Partnerships/i,
+      /(?:Scotland )?Statutory Civil Partnerships?(?: Records?| Index(?:es))/i,
+      /Statutory(?: Registers? ?(?:of|:|-)?)? ?(?:Civil )?Partnerships(?: \d\d\d\d(?: ?- ?| ?: ?| to )present)?/i,
     ],
   },
   {
     recordType: "stat_dissolutions",
     titles: ["Statutory Civil Dissolutions", "Statutory Dissolutions"],
     reTitles: [
-      /Statutory Civil Dissolutions \d\d\d\d(?: ?- ?| ?\- ?| to )\d\d\d\d/i,
-      /Statutory Dissolutions \d\d\d\d(?: ?- ?| ?\- ?| to )\d\d\d\d/i,
-      /Statutory Registers ?[-:] ?Civil Dissolutions/i,
-      /Statutory Registers ?[-:] ?Dissolutions/i,
+      /(?:Scotland )?Statutory Civil Dissolutions?(?: Records?| Index(?:es))/i,
+      /Statutory(?: Registers? ?(?:of|:|-)?)? ?(?:Civil )?Dissolutions(?: \d\d\d\d(?: ?- ?| ?: ?| to )present)?/i,
     ],
   },
   {
     recordType: "opr_births",
     reTitles: [
       /Church of Scotland ?[:-]? Old Parish Registers ?[:-] Births (?:and|&) Baptisms/i,
-      /Old Parish Registers ?[:-] Births (?:and|&) Baptisms/i,
+      /Old Parish Registers ?[:-] ?Births(?: ?(?:and|&) ?Baptisms)?/i,
       /OPR Baptisms? index(?:es)?/i,
       /OPR Births? index(?:es)?/i,
     ],
@@ -669,6 +680,10 @@ const spEventPlaceNoWs = {
   regex: /(.+)/,
   paramKeys: ["eventPlace"],
 };
+const spNameOrPlaceNoWs = {
+  regex: /([^;:]+)/,
+  paramKeys: ["nameOrPlace"],
+};
 const spRdName = {
   // has an optional "in" on start but often it has to be called as a separate part
   // to avoid ambiguity
@@ -678,6 +693,10 @@ const spRdName = {
 const spRdNameNoWs = {
   regex: /([^;0-9]+)/,
   paramKeys: ["rdName"],
+};
+const spParishName = {
+  regex: /(?:, in | in |, |,| )([^;0-9]+)/,
+  paramKeys: ["parish"],
 };
 const spCourt = {
   regex: /(?:, in | in |, |,| )([a-z&\(\) ,]+)/,
@@ -712,7 +731,7 @@ const spAgeNoLabelOrWs = {
   paramKeys: ["age"],
 };
 const spChildOfTwoParents = {
-  regex: /(?:, |,| )(?:son|daughter|child) of ([^,&0-9]+)(?: and | ?& ?| ?\/ ?)([^,&0-9]+)/,
+  regex: /(?:, |,| )(?:lawful )?(?:son|daughter|child) of (?:parents )?([^,&0-9]+)(?: and | ?& ?| ?\/ ?)([^,&0-9]+)/,
   paramKeys: ["fatherName", "motherName"],
 };
 const spChildOfOneParent = {
@@ -809,15 +828,31 @@ const dataStringSentencePatterns = {
       parts: [spName, spEventDate, spRdName, /; Reference Number:/, spRefNum],
     },
     {
+      // Robert Hamilton, Mother's maiden name Jeffrey, 17 June 1862, Carluke, Lanarkshire, Scotland, United Kingdom: Parish: 629/142
+      name: "Non-standard format: name, mmn, date, RD name, parish",
+      parts: [spName, spMmn, spEventDate, spRdName, /[,:]? parish:/, spParishNum],
+    },
+    {
+      // Robert Hamilton, Mother's maiden name Jeffrey, 17 June 1862, Carluke, Lanarkshire, Scotland, United Kingdom: Ref: 629/142
+      name: "Non-standard format: name, mmn, date, RD name, ref",
+      parts: [spName, spMmn, spEventDate, spRdName, /[,:]? ref:/, spRefNum],
+    },
+    {
       // 1892; Dunnet 036/ 8
       name: "Non-standard format: date, RD name, ref",
       parts: [spEventDateNoWs, /;/, spRdName, spRefNum],
     },
     {
+      // Made up example: e.g.
+      // 10 July 1867
+      name: "Non-standard format: date only",
+      parts: [spEventDateNoWs],
+    },
+    {
       // Cramond
       // In this example the name of the person is in the label at start
-      name: "Non-standard format: date, RD name, ref",
-      parts: [spRdNameNoWs],
+      name: "Non-standard format: Name or RD name only",
+      parts: [spNameOrPlaceNoWs],
     },
   ],
   stat_marriages: [
@@ -955,6 +990,16 @@ const dataStringSentencePatterns = {
       parts: [spName, spEventDate, spRdName, /; Reference Number:/, spRefNum],
     },
     {
+      // Robert Hamilton, Mother's maiden name Jeffrey, 5 September 1889, Penicuik, Midlothian, Parish: 629/142
+      name: "Non-standard format: name, mmn, date, RD name, parish",
+      parts: [spName, spMmn, spEventDate, spRdName, /[,:]? parish:/, spParishNum],
+    },
+    {
+      // Robert Hamilton, Mother's maiden name Jeffrey, 5 September 1889, Penicuik, Midlothian, Ref: 629/142
+      name: "Non-standard format: name, mmn, date, RD name, ref",
+      parts: [spName, spMmn, spEventDate, spRdName, /[,:]? ref:/, spRefNum],
+    },
+    {
       // 1960; Dunnet 036/ 5
       name: "Non-standard format: date, RD name, ref",
       parts: [spEventDateNoWs, /;/, spRdName, spRefNum],
@@ -1069,6 +1114,12 @@ const dataStringSentencePatterns = {
       // Robert Lewis Balfour Stevenson, parents: Thomas Stevenson/Margaret Isabella Balfour, 13 Nov 1850, Edinburgh
       name: "Non-standard format, 'parents' in string, no place",
       parts: [spName, /,? parents:?/, spTwoParents, /(?:,|\.)/, spEventDate],
+    },
+    {
+      // Example: Found
+      // William, lawful son of parents William Stewart / Isobel Dow. Parish: Clunie, 1817
+      name: "Non-standard format, name, parents, parish, date",
+      parts: [spName, spChildOfTwoParents, /.? parish:?/, spParishName, spEventDate],
     },
   ],
   opr_marriages: [
@@ -1401,7 +1452,8 @@ const dataStringSentencePatterns = {
   ],
 };
 
-function getScotpRecordTypeFromSourceTitle(sourceTitle) {
+function getScotpRecordTypeFromSourceTitle(parsedCitation) {
+  let sourceTitle = parsedCitation.sourceTitle;
   let lcSourceTitle = sourceTitle.toLowerCase();
 
   function findMatchingTitle(titleObjects) {
@@ -1409,6 +1461,14 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
       if (titleObject.reTitles) {
         for (let reTitle of titleObject.reTitles) {
           if (reTitle.test(sourceTitle)) {
+            let startIndex = lcSourceTitle.search(reTitle);
+            if (startIndex > 0) {
+              let beforeTitle = sourceTitle.substring(0, startIndex).trim();
+              if (beforeTitle) {
+                parsedCitation.textBeforeMatchedTitleInSourceTitle = beforeTitle;
+              }
+            }
+
             return titleObject;
           }
         }
@@ -1417,6 +1477,14 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
         for (let title of titleObject.titles) {
           const lcTitle = title.toLowerCase();
           if (lcSourceTitle.includes(lcTitle)) {
+            let startIndex = lcSourceTitle.indexOf(lcTitle);
+            if (startIndex > 0) {
+              let beforeTitle = sourceTitle.substring(0, startIndex).trim();
+              if (beforeTitle) {
+                parsedCitation.textBeforeMatchedTitleInSourceTitle = beforeTitle;
+              }
+            }
+
             return titleObject;
           }
         }
@@ -1455,6 +1523,10 @@ function getScotpRecordTypeFromSourceTitle(sourceTitle) {
   }
 
   return "";
+}
+
+function isOdd(num) {
+  return num % 2;
 }
 
 function isLabelTextPlausible(text, beMoreStrict) {
@@ -1576,6 +1648,15 @@ function cleanCitation(parsedCitation) {
     }
   }
 
+  // check for mismatched quotes
+  let doubleQuoteMatches = text.match(/"/g);
+  if (doubleQuoteMatches) {
+    if (isOdd(doubleQuoteMatches.length)) {
+      logMessage("Found odd number of double quotes (" + doubleQuoteMatches.length + "). Adding a quote at the start.");
+      text = '"' + text;
+    }
+  }
+
   parsedCitation.cleanText = text;
   return true;
 }
@@ -1635,9 +1716,6 @@ function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation, combineLab
     let remainder = text.substring(matchIndex + title.length);
     let beforeTitle = text.substring(0, matchIndex);
     let quotesBeforeTitle = beforeTitle.match(/["']/);
-    function isOdd(num) {
-      return num % 2;
-    }
     if (quotesBeforeTitle && isOdd(quotesBeforeTitle.length)) {
       // if there is a matching quote in remainder then remove up to (and including) it
       const startQuoteToEndQuote = {
@@ -2025,8 +2103,14 @@ function setName(data, parsedCitation, builder) {
   } else {
     // there is only one name, use may depend on record type
     // for now assume it is surname
-    name = cleanSurname(name);
-    builder.addSurname(name, "exact");
+    let eventClass = ScotpRecordType.getEventClass(scotpRecordType);
+    if (eventClass == "birth") {
+      name = cleanForename(name);
+      builder.addForename(name, "exact");
+    } else {
+      name = cleanSurname(name);
+      builder.addSurname(name, "exact");
+    }
   }
 }
 
@@ -2083,6 +2167,8 @@ function setSpouse(data, parsedCitation, builder) {
         }
       } else {
         // there is only one name, use may depend on record type
+        spouseName = cleanSurname(spouseName);
+        builder.addSurname(spouseName, "exact");
       }
 
       // some record types use full name instead of separate names
@@ -2283,9 +2369,14 @@ function setGender(data, parsedCitation, builder) {
 }
 
 function checkForMissingDataNotInDataString(parsedCitation, data) {
+  let beforeText = parsedCitation.textBeforeTitleInPartialMatch;
+  if (!beforeText) {
+    beforeText = parsedCitation.textBeforeMatchedTitleInSourceTitle;
+  }
+
   if (!data.name) {
-    if (parsedCitation.textBeforeTitleInPartialMatch) {
-      let text = parsedCitation.textBeforeTitleInPartialMatch;
+    if (beforeText) {
+      let text = beforeText;
       const testForOf = /^(.*) of ([^,:;\(\)]+).*$/;
       if (testForOf.test(text)) {
         let possName = text.replace(testForOf, "$2");
@@ -2306,8 +2397,8 @@ function checkForMissingDataNotInDataString(parsedCitation, data) {
   }
 
   if (!data.eventDate && !data.year) {
-    if (parsedCitation.textBeforeTitleInPartialMatch) {
-      let text = parsedCitation.textBeforeTitleInPartialMatch;
+    if (beforeText) {
+      let text = beforeText;
       const testForYear = /^.*(\d\d\d\d).*$/;
       if (testForYear.test(text)) {
         data.year = text.replace(testForYear, "$1");
@@ -2321,8 +2412,58 @@ function checkForMissingDataNotInDataString(parsedCitation, data) {
   }
 }
 
+function disambiguateDataFields(parsedCitation, data) {
+  let scotpRecordType = parsedCitation.scotpRecordType;
+
+  let classOfRecord = "";
+  if (scotpRecordType.startsWith("stat_")) {
+    classOfRecord = "statutory";
+  } else if (scotpRecordType.startsWith("opr_")) {
+    classOfRecord = "opr";
+  } else if (scotpRecordType.startsWith("cr_")) {
+    classOfRecord = "rc";
+  } else if (scotpRecordType.startsWith("ch3_")) {
+    classOfRecord = "other";
+  }
+
+  let hasName = data.name || data.surname || data.forename;
+  let hasPlace = data.eventPlace || data.rdName || data.countyCity;
+
+  let doneNameOrPlace = false;
+  if (data.nameOrPlace) {
+    if (hasName && !hasPlace) {
+      if (classOfRecord == "statutory") {
+        data.rdName = data.nameOrPlace;
+      } else {
+        data.eventPlace = data.nameOrPlace;
+      }
+      doneNameOrPlace = true;
+    } else if (!hasName && hasPlace) {
+      data.name = data.nameOrPlace;
+      doneNameOrPlace = true;
+    }
+
+    // could try to determine whether the string is a valid rdName or eventPlace or name
+    if (!doneNameOrPlace) {
+      if (classOfRecord) {
+        const searchTerms = getPlaceSearchTerms(data.nameOrPlace, classOfRecord, false);
+        if (searchTerms && Array.isArray(searchTerms) && searchTerms.length > 0) {
+          if (classOfRecord == "statutory") {
+            data.rdName = data.nameOrPlace;
+          } else {
+            data.eventPlace = data.nameOrPlace;
+          }
+        }
+      }
+    }
+  }
+}
+
 function addDataToBuilder(parsedCitation, data, builder) {
   checkForMissingDataNotInDataString(parsedCitation, data);
+
+  // sometimes we have fields like "nameOrPlace"
+  disambiguateDataFields(parsedCitation, data);
 
   setName(data, parsedCitation, builder);
   setGender(data, parsedCitation, builder);
@@ -2553,7 +2694,9 @@ function parseDataSentence(dataString, parsedCitation, builder, allowAnythingOnE
   return false;
 }
 
-function cleanDataString(dataString) {
+function cleanDataString(parsedCitation) {
+  let dataString = parsedCitation.dataString;
+
   if (!dataString) {
     return dataString;
   }
@@ -2585,15 +2728,43 @@ function cleanDataString(dataString) {
   if (testForPunctuationOnStart.test(dataString)) {
     dataString = dataString.replace(testForPunctuationOnStart, "$1");
   }
+  const possibleStartJunkRegexes = [
+    /^(?:image )?(?:last )?(?:accessed|viewed)(?: : |:| )\d\d? [a-z]+ \d\d\d\d ?(.*)/i,
+    /^National Records of Scotland ?(.*)/i,
+    /^database ?(.*)/i,
+    /^Scotlands People ?(.*)/i,
+    /^ScotlandsPeople ?(.*)/i,
+  ];
 
-  const testForAccessedOnStart = /^(?:image )?(?:last )?(?:accessed|viewed)(?: : |:| )\d\d? [a-z]+ \d\d\d\d ?(.*)/i;
-  if (testForAccessedOnStart.test(dataString)) {
-    dataString = dataString.replace(testForAccessedOnStart, "$1");
+  let foundMatch = true;
+  while (foundMatch) {
+    foundMatch = false;
+    for (let regex of possibleStartJunkRegexes) {
+      if (regex.test(dataString)) {
+        foundMatch = true;
+
+        dataString = dataString.replace(regex, "$1");
+
+        // recheck for punctuation on start
+        if (testForPunctuationOnStart.test(dataString)) {
+          dataString = dataString.replace(testForPunctuationOnStart, "$1");
+        }
+        break;
+      }
+    }
   }
 
-  // recheck for punctuation on start
-  if (testForPunctuationOnStart.test(dataString)) {
-    dataString = dataString.replace(testForPunctuationOnStart, "$1");
+  // check for "citing" in the data string
+  const testForCiting = /^(.*)[;,] ?citing (.*)$/i;
+  if (testForCiting.test(dataString)) {
+    let possibleSourceRef = dataString.replace(testForCiting, "$2");
+    if (!parsedCitation.sourceReference) {
+      parsedCitation.sourceReference = possibleSourceRef;
+    } else {
+      parsedCitation.sourceReference += ", " + possibleSourceRef;
+    }
+    dataString = dataString.replace(testForCiting, "$1");
+    logMessage("Found 'citing' in data string, moved text after that to source reference");
   }
 
   return dataString;
@@ -2602,10 +2773,10 @@ function cleanDataString(dataString) {
 function parseDataString(parsedCitation, builder) {
   // first need to determine if it is a sentence or a list
 
-  let dataString = cleanDataString(parsedCitation.dataString);
+  let dataString = cleanDataString(parsedCitation);
 
   if (dataString) {
-    logMessage("Data string is :\n----------------\n" + dataString + "\n----------------");
+    logMessage("Clean data string is :\n----------------\n" + dataString + "\n----------------");
 
     if (parseDataSentence(dataString, parsedCitation, builder)) {
       return;
@@ -2648,6 +2819,12 @@ function parseDataString(parsedCitation, builder) {
         return;
       }
     }
+
+    // not parsed as a sentence or a list - could still be some missing data in
+    // other strings.
+    let data = {};
+    addDataToBuilder(parsedCitation, data, builder);
+    parsedCitation.data = data;
   }
 }
 
@@ -2656,6 +2833,7 @@ function extractReferenceNumber(parsedCitation) {
 
   const standardRefNumRegexes = [
     /^.*reference number[\.,:]? ([a-z0-9 \/]+).*$/i,
+    /^.*reference no\.?[,:]? ([a-z0-9 \/]+).*$/i,
     /^.*reference[\.,:]? ([a-z0-9 \/]+).*$/i,
     /^.*ref number[\.,:]? ([a-z0-9 \/]+).*$/i,
     /^.*ref num[\.,:]? ([a-z0-9 \/]+).*$/i,
@@ -2833,13 +3011,16 @@ function buildScotlandsPeopleContextSearchData(text) {
       return { messages: messages };
     }
     logMessage("   Label is : " + parsedCitation.labelText);
+    if (parsedCitation.textBeforeMatchedTitleInSourceTitle) {
+      logMessage("   Text before title is : " + parsedCitation.textBeforeMatchedTitleInSourceTitle);
+    }
     logMessage("   Source Reference is : " + parsedCitation.sourceReference);
     logMessage("   Source Title is : " + parsedCitation.sourceTitle);
     logMessage("   Website Creator/Owner is : " + parsedCitation.websiteCreatorOwner);
     logMessage("   Parish is : " + parsedCitation.parish);
     logMessage("   Data string is : " + parsedCitation.dataString);
 
-    let scotpRecordType = getScotpRecordTypeFromSourceTitle(parsedCitation.sourceTitle);
+    let scotpRecordType = getScotpRecordTypeFromSourceTitle(parsedCitation);
     if (!scotpRecordType) {
       logMessage("Source title not recognized. Will try a partial match.");
     } else {

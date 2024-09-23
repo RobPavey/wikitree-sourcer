@@ -1,11 +1,11 @@
 {
   "formData": {
-    "urlPart": "statutory-records/stat-civilpartnerships",
+    "urlPart": "statutory-records/stat-births",
     "fields": [
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "Abigail Alice"
+        "value": "Robert"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "Walker"
+        "value": "Hamilton"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -25,35 +25,31 @@
       {
         "fieldKey": "edit-search-params-nrs-search-year-year-from",
         "type": "text",
-        "value": "2021"
+        "value": "1862"
       },
       {
         "fieldKey": "edit-search-params-nrs-search-year-year-to",
         "type": "text",
-        "value": "2021"
+        "value": "1862"
       },
       {
-        "fieldKey": "edit-search-params-nrs-surname",
+        "fieldKey": "edit-search-params-nrs-mmsurname",
         "type": "text",
-        "value": "Morera-Pallares"
+        "value": "Jeffrey"
       },
       {
-        "fieldKey": "edit-search-params-nrs-surname",
+        "fieldKey": "edit-search-params-nrs-mmsurname",
         "type": "so",
         "value": "exact"
       },
       {
         "fieldKey": "edit-search-params-str-district",
         "type": "multipleSelect",
-        "values": [
-          "ROSSKEEN|HIGHLAND (ROSSKEEN)_ROSSKEEN"
-        ]
+        "values": []
       }
     ]
   },
   "refineData": {
     "fields": []
-  },
-  "refNum": "195",
-  "recordType": "stat_civilpartnerships"
+  }
 }
