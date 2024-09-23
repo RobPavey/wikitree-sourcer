@@ -234,6 +234,10 @@ function setDataFromTable(ed, result) {
     if (!countryExtract) {
       birthPlace += ", Ireland";
     }
+
+    // replace something like "Co Kerry" with "County Kerry"
+    birthPlace = birthPlace.replace(/^Co /, "County ");
+
     result.setBirthPlace(birthPlace);
   }
 
