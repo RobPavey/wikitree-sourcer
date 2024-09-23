@@ -1261,6 +1261,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },
   {
+    // Changed format in September 2024
+    caseName: "xx_profile_ralph_pavey_1891_1958_england_Sep2024",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
+  },
+  {
     caseName: "xx_profile_william_no_last_name",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262544635265/facts",
   },

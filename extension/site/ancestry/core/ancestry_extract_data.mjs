@@ -1644,6 +1644,10 @@ function handlePersonFactsJune2024(document, result) {
 
       if (lcTitle == "gender") {
         let valueNode = fact.querySelector("h4");
+        // In September 2024 this change from an h4 to a para
+        if (!valueNode) {
+          valueNode = fact.querySelector("p.userCardSubTitle");
+        }
         if (valueNode) {
           let gender = valueNode.textContent;
           if (gender) {
@@ -1782,6 +1786,10 @@ function handlePersonFactsJune2024(document, result) {
               }
 
               let titleHeading = researchListItem.querySelector("div > h4");
+              if (!titleHeading) {
+                // changed to p in Sep 2024
+                titleHeading = researchListItem.querySelector("div > p");
+              }
               if (titleHeading) {
                 title = titleHeading.textContent;
               }
