@@ -1,0 +1,49 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-deaths",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Mary"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Alexander"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1862"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1862"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "OLD MONKLAND (EASTERN DISTRICT)|OLD MONKLAND (MIDDLE DISTRICT)|COATBRIDGE OR OLD MONKLAND|OLD MONKLAND (WESTERN DISTRICT)|OLD MONKLAND OR COATBRIDGE_OLD MONKLAND"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "652/2 293",
+  "recordType": "stat_deaths"
+}

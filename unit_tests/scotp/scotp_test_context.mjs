@@ -103,6 +103,11 @@ const regressionData = [
     caseName: "found_stat_births_8",
     text: `↑ "Scotland Statutory Birth Records", Scotlandspeople, database online, (https://www.scotlandspeople.gov.uk: accessed 5 September 2024), Robert Hamilton, Mother's maiden name Jeffrey, 17 June 1862, Carluke, Lanarkshire, Scotland, United Kingdom: Parish: 629/142.`,
   },
+  {
+    // Found on https://www.wikitree.com/wiki/Alexander-13866 (22 Sep 2024)
+    caseName: "found_stat_births_9",
+    text: `↑ "Statutory Registers - Births" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 1 June 2023), John Turner, parent: Barr, 12 January 1863, Bridgeton; Reference Number: 644/3 92.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_marriages
@@ -157,6 +162,12 @@ const regressionData = [
     // No link but accessed date
     caseName: "found_stat_marriages_7",
     text: `↑ "Statutory Register of Marriages", National Records of Scotland, Ref: 335/7. ScotlandsPeople (digital database) Accessed 25 Apr 2023 John Alexander Algie marriage to Penelope Anders[on] Monro registered 1924 in Blairgowrie.`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/McKinley-8
+    // Entire citing is ref num
+    caseName: "found_stat_marriages_8",
+    text: `Statutory Register of Marriages, database: National Records of Scotland; ScotlandsPeople : [ https://www.scotlandspeople.gov.uk/record-results/1990049175663e75e216334 ]: accessed 10 May 2024; Mary Deans marriage to John McKinlay registered 1862 in Old Cumnock; citing 610/19.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -220,6 +231,16 @@ const regressionData = [
     // Found on https://www.wikitree.com/wiki/Cathie-115 (22 Sep 2024)
     caseName: "found_stat_deaths_7",
     text: `↑ Death: "1952 CATHIE, CHARLES SKEOCH (Statutory registers Deaths 577 / 1 / 70)" database, National Records of Scotland, ScotlandsPeople https://www.scotlandspeople.gov.uk/ Accessed 7 Apr 2024.`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Alexander-13866 (22 Sep 2024)
+    caseName: "found_stat_deaths_8",
+    text: `↑ "Statutory Registers - Deaths" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 30 May 2023), Jean Turner; spouse: John Turner; parents: Robert Barr and Agnes Reid; 8 March 1863; Reference Number: 644/3 243.`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Alexander-13866 (22 Sep 2024)
+    caseName: "found_stat_deaths_9",
+    text: `↑ "Statutory Registers - Deaths" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 1 June 2023), Mary Alexander parent: Gray, 18 October 1862, Old Monkland; Reference Number: 652/2 293.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -356,6 +377,11 @@ const regressionData = [
   {
     caseName: "scotproj_cr_baptism",
     text: `St John's, Port Glasgow, "Catholic Registers Births and Baptisms" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk : accessed 21 Feb 2021), William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.`,
+  },
+  {
+    // found on: https://www.wikitree.com/wiki/McKinley-8 (22 Sep 2024)
+    caseName: "found_cr_baptism_1",
+    text: `Church of Scotland Catholic Registers - Births and baptisms database: National Records of Scotland, ScotlandsPeople [ https://www.scotlandspeople.gov.uk/ ]: accessed 10 May 2024; John McKinley, parents: James McKinley/Bridget Wallace, Birth Date: 4 Nov 1841, Airdrie; citing St Margaret’s Parish, Baptism Date: 5 May, 1841.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

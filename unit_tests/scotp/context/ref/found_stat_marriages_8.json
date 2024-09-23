@@ -1,0 +1,69 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-marriages",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Mary"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Deans"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1862"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1862"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "text",
+        "value": "John"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "text",
+        "value": "McKinlay"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "EAST AYRSHIRE (OLD CUMNOCK)|EAST AYRSHIRE|OLD CUMNOCK_OLD CUMNOCK"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "610/19",
+  "recordType": "stat_marriages"
+}

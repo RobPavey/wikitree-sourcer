@@ -566,6 +566,12 @@ const otherFoundTitles = [
   {
     recordType: "cr_baptisms",
     titles: [],
+    reTitles: [
+      /Church of Scotland ?[:-]? Catholic Registers ?[:-] Births (?:and|&) Baptisms/i,
+      /Catholic Registers ?[:-] ?Births(?: ?(?:and|&) ?Baptisms)?/i,
+      /Church of Scotland ?[:-]? Catholic Registers ?[:-] ?Baptisms/i,
+      /Catholic Registers ?[:-] ?Baptisms?/i,
+    ],
   },
   {
     recordType: "cr_banns",
@@ -643,15 +649,15 @@ const otherFoundTitles = [
 
 // sp means "sentence part"
 const spName = {
-  regex: /([^,0-9]+)/,
+  regex: /([^,:0-9]+)/,
   paramKeys: ["name"],
 };
 const spSpouse = {
-  regex: /([^,0-9]+)/,
+  regex: /([^,:0-9]+)/,
   paramKeys: ["spouseName"],
 };
 const spSpouseLastName = {
-  regex: /([^,0-9]+)/,
+  regex: /([^,:0-9]+)/,
   paramKeys: ["spouseLastName"],
 };
 const spNameAndSpouse = {
@@ -742,8 +748,12 @@ const spTwoParents = {
   regex: /(?:, |,| )([^,&0-9]+)(?: and | ?& ?| ?\/ ?)([^,&0-9]+)/,
   paramKeys: ["fatherName", "motherName"],
 };
+const spOneParent = {
+  regex: /(?:, |,| )([^,&0-9]+)/,
+  paramKeys: ["fatherName"],
+};
 const spBirthDate = {
-  regex: /,? \(?(?:born|birth) (\d?\d [a-z]+ \d\d\d\d|\d\d\d\d)\)?/,
+  regex: /,? \(?(?:birth date|born|birth):? (\d?\d [a-z]+ \d\d\d\d|\d\d\d\d)\)?/,
   paramKeys: ["birthDate"],
 };
 const spBirthPlace = {
@@ -821,6 +831,15 @@ const dataStringSentencePatterns = {
         /; Parish Number: \d+; Reference Number:/,
         spRefNum,
       ],
+    },
+    {
+      // John Turner, parent: Barr, 12 January 1863, Bridgeton; Reference Number: 644/3 92
+      name: "Non-standard format: name, 1 parent, date, RD name, ref",
+      parts: [spName, /, parent:/, spOneParent, spEventDate, spRdName, /; Reference Number:/, spRefNum],
+    },
+    {
+      name: "Non-standard format: name, 2 parenta, date, RD name, ref",
+      parts: [spName, /, parents:/, spTwoParents, spEventDate, spRdName, /; Reference Number:/, spRefNum],
     },
     {
       // Annie Dunlop Climie, 1906, Riccarton; Reference Number: 611 / 1 / 87
@@ -968,6 +987,30 @@ const dataStringSentencePatterns = {
     {
       name: "Non-standard format: names, date, RD name",
       parts: [spName, / death registered/, spEventDate, spRdName],
+    },
+    {
+      // Jean Turner; spouse: John Turner; parents: Robert Barr and Agnes Reid; 8 March 1863; Reference Number: 644/3 243
+      name: "Non-standard format: name, spouse, parents, date, ref",
+      parts: [
+        spName,
+        /[;,]? spouse:/,
+        spSpouse,
+        /[;,]? parents:/,
+        spTwoParents,
+        spEventDate,
+        /; Reference Number:/,
+        spRefNum,
+      ],
+    },
+    {
+      // Mary Alexander parent: Gray, 18 October 1862, Old Monkland; Reference Number: 652/2 293
+      name: "Non-standard format: name, parent, date, RD, ref",
+      parts: [spName, /[;,]? parent:/, spOneParent, spEventDate, spRdName, /; Reference Number:/, spRefNum],
+    },
+    {
+      // Ann White Alexander parent: Gray, Bridgeton; Reference Number: 644/3 1308
+      name: "Non-standard format: name, parent, date, RD, ref",
+      parts: [spName, /[;,]? parent:/, spOneParent, spRdName, /; Reference Number:/, spRefNum],
     },
     {
       // Jenny Grosart Hyslop, 22 Sep 1970; Barrhill; Parish Number: 594, Reference Number: 93
@@ -1236,6 +1279,12 @@ const dataStringSentencePatterns = {
       // William McAtasny, birth 31 Dec 1867 and baptism 1 Apr 1868, son of William McAtasny and Margaret McIlveny.
       name: "Scotland Project format, birth and baptism dates, parents, no place",
       parts: [spName, spBirthDate, / and baptism/, spEventDate, spChildOfTwoParents],
+    },
+    {
+      // Example: Found
+      // John McKinley, parents: James McKinley/Bridget Wallace, Birth Date: 4 Nov 1841, Airdrie
+      name: "Non-standard format, name, parents, birth date, parish",
+      parts: [spName, /[,;]? ?parents:/, spTwoParents, spBirthDate, spEventPlace],
     },
   ],
   cr_banns: [
@@ -2694,6 +2743,68 @@ function parseDataSentence(dataString, parsedCitation, builder, allowAnythingOnE
   return false;
 }
 
+function cleanSourceReference(parsedCitation) {
+  let sourceReference = parsedCitation.sourceReference;
+
+  if (!sourceReference) {
+    return sourceReference;
+  }
+
+  sourceReference = sourceReference.trim();
+
+  if (sourceReference.endsWith(";")) {
+    sourceReference = sourceReference.substring(0, dataString.length - 1);
+  }
+
+  sourceReference = sourceReference.trim();
+
+  const testForHttpOnEnd = /(.*)https?\:\/\/$/;
+  if (testForHttpOnEnd.test(sourceReference)) {
+    // this can happen if there is bare link after source reference befause the
+    // https:// is options as we allow bare links like www.scotlandspeople.gov.uk
+    sourceReference = sourceReference.replace(testForHttpOnEnd, "$1");
+  }
+
+  sourceReference = sourceReference.trim();
+
+  const testForPunctuationOnEnd = /(.*)[\s\.,;\[\(]+$/;
+  if (testForPunctuationOnEnd.test(sourceReference)) {
+    sourceReference = sourceReference.replace(testForPunctuationOnEnd, "$1");
+  }
+
+  const testForPunctuationOnStart = /^[\s\.,;:\]\)]+(.*)/;
+  if (testForPunctuationOnStart.test(sourceReference)) {
+    sourceReference = sourceReference.replace(testForPunctuationOnStart, "$1");
+  }
+  const possibleStartJunkRegexes = [
+    /^(?:image )?(?:last )?(?:accessed|viewed)(?: : |:| )\d\d? [a-z]+ \d\d\d\d ?(.*)/i,
+    /^National Records of Scotland ?(.*)/i,
+    /^database ?(.*)/i,
+    /^Scotlands People ?(.*)/i,
+    /^ScotlandsPeople ?(.*)/i,
+  ];
+
+  let foundMatch = true;
+  while (foundMatch) {
+    foundMatch = false;
+    for (let regex of possibleStartJunkRegexes) {
+      if (regex.test(sourceReference)) {
+        foundMatch = true;
+
+        sourceReference = sourceReference.replace(regex, "$1");
+
+        // recheck for punctuation on start
+        if (testForPunctuationOnStart.test(sourceReference)) {
+          sourceReference = sourceReference.replace(testForPunctuationOnStart, "$1");
+        }
+        break;
+      }
+    }
+  }
+
+  return sourceReference;
+}
+
 function cleanDataString(parsedCitation) {
   let dataString = parsedCitation.dataString;
 
@@ -2719,12 +2830,12 @@ function cleanDataString(parsedCitation) {
 
   dataString = dataString.trim();
 
-  const testForPunctuationOnEnd = /(.*)[\s\.,;]+$/;
+  const testForPunctuationOnEnd = /(.*)[\s\.,;\[\(]+$/;
   if (testForPunctuationOnEnd.test(dataString)) {
     dataString = dataString.replace(testForPunctuationOnEnd, "$1");
   }
 
-  const testForPunctuationOnStart = /^[\s\.,;:]+(.*)/;
+  const testForPunctuationOnStart = /^[\s\.,;:\]\)]+(.*)/;
   if (testForPunctuationOnStart.test(dataString)) {
     dataString = dataString.replace(testForPunctuationOnStart, "$1");
   }
@@ -2819,13 +2930,13 @@ function parseDataString(parsedCitation, builder) {
         return;
       }
     }
-
-    // not parsed as a sentence or a list - could still be some missing data in
-    // other strings.
-    let data = {};
-    addDataToBuilder(parsedCitation, data, builder);
-    parsedCitation.data = data;
   }
+
+  // not parsed as a sentence or a list - could still be some missing data in
+  // other strings.
+  let data = {};
+  addDataToBuilder(parsedCitation, data, builder);
+  parsedCitation.data = data;
 }
 
 function extractReferenceNumber(parsedCitation) {
@@ -2929,6 +3040,14 @@ function extractReferenceNumber(parsedCitation) {
 
   logMessage("Search for ref num...");
   refNum = extractFromSourceRefDataStringOrData(standardRefNumRegexes, nonStandardRefNumRegexes, "ref", "ref");
+
+  if (!refNum && parsedCitation.sourceReference) {
+    // occasionally the entire source ref is just the reference number
+    const testForOnlyRefNum = /^\s*([0-9 \/]+)\s*$/i;
+    if (testForOnlyRefNum.test(parsedCitation.sourceReference)) {
+      refNum = parsedCitation.sourceReference.replace(testForOnlyRefNum, "$1");
+    }
+  }
 
   if (refNum) {
     refNum = refNum.trim();
@@ -3074,6 +3193,8 @@ function buildScotlandsPeopleContextSearchData(text) {
     parsedCitation.sourceReference = parsedCitation.websiteCreatorOwner;
     logMessage("Moved Website Creator/Owner string into Source Reference");
   }
+
+  parsedCitation.sourceReference = cleanSourceReference(parsedCitation);
 
   var builder = new ScotpFormDataBuilder(parsedCitation.scotpRecordType);
 
