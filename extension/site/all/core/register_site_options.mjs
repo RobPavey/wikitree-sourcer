@@ -55,6 +55,7 @@ import "../../noda/core/noda_options.mjs";
 import "../../np/core/np_options.mjs";
 import "../../npa/core/npa_options.mjs";
 import "../../nswbdm/core/nswbdm_options.mjs";
+import "../../nzash/core/nzash_options.mjs";
 import "../../nzbdm/core/nzbdm_options.mjs";
 import "../../opccorn/core/opccorn_options.mjs";
 import "../../openarch/core/openarch_options.mjs";
