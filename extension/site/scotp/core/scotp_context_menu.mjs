@@ -3151,13 +3151,15 @@ function buildScotlandsPeopleContextSearchData(text) {
   }
 
   if (!parsedCitation.scotpRecordType) {
-    logMessage("Trying for a partial citation pattern match.");
+    logMessage("Trying for a partial citation pattern match by searching for known source titles in text.");
 
     if (!getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation)) {
-      logMessage("Trying again including label text.");
-      if (!getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation, true)) {
-        logMessage("Could not find any known source title text.");
-        return { messages: messages };
+      if (parsedCitation.labelText) {
+        logMessage("Trying again including label text.");
+        if (!getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation, true)) {
+          logMessage("Could not find any known source title text.");
+          return { messages: messages };
+        }
       }
     }
 
