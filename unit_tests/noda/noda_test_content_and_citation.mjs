@@ -154,6 +154,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/census/person/pf01049501000001",
   },
   {
+    caseName: "census_1920_laura_steihaug",
+    url: "https://www.digitalarkivet.no/en/census/person/pf01073730000711",
+  },
+  {
     caseName: "confirmation_1825_carl_motzfeldt",
     url: "https://www.digitalarkivet.no/en/view/279/pk00000002723491",
   },
