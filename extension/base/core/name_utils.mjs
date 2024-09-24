@@ -24,6 +24,8 @@ SOFTWARE.
 
 import { StringUtils } from "./string_utils.mjs";
 
+const genderNeutralGivenNames = ["Aubrey", "Ashley", "Cameron", "Jean", "Jesse", "Jessee", "Lesley", "Leslie"];
+
 const femaleGivenNames = [
   "Aaf",
   "Aafje",
@@ -7068,7 +7070,6 @@ const maleGivenNames = [
   "Ashel",
   "Asher",
   "Ashford",
-  "Ashley",
   "Ashman",
   "Ashton",
   "Ashur",
@@ -7103,7 +7104,6 @@ const maleGivenNames = [
   "Aubin",
   "Aubone",
   "Aubra",
-  "Aubrey",
   "Aubry",
   "Auburn",
   "Aud",
@@ -7641,7 +7641,6 @@ const maleGivenNames = [
   "Cam",
   "Cambridge",
   "Camden",
-  "Cameron",
   "Camiel",
   "Camillo",
   "Camillus",
@@ -10030,7 +10029,6 @@ const maleGivenNames = [
   "Javier",
   "Jay",
   "Jayme",
-  "Jean",
   "Jean-Antoine",
   "Jean-Baptiste",
   "Jean-Bernard",
@@ -10116,8 +10114,6 @@ const maleGivenNames = [
   "Jesaias",
   "Jesper",
   "Jess",
-  "Jesse",
-  "Jessee",
   "Jessey",
   "Jessop",
   "Jesus",
@@ -10667,8 +10663,6 @@ const maleGivenNames = [
   "Leopoldo",
   "Leopoldus",
   "Leroy",
-  "Lesley",
-  "Leslie",
   "Lessin",
   "Lester",
   "Lestock",
