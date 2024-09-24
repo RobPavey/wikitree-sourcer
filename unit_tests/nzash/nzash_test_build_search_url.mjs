@@ -22,50 +22,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { buildSearchUrl } from "../../extension/site/nzash/core/nzash_build_search_url.mjs";
+import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
-// The order should not matter since user facing lists are sorted
-
-const siteNames = [
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
+const regressionData = [
+  {
+    caseName: "wikitree_nz_sowerby-41_read",
+    inputPath: "wikitree/generalized_data/ref/nz_sowerby-41_read",
+  },
 ];
 
-export { siteNames };
+async function runTests(testManager) {
+  await runBuildSearchUrlTests("nzash", buildSearchUrl, regressionData, testManager);
+}
+
+export { runTests };
