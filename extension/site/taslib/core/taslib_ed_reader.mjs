@@ -333,19 +333,36 @@ class TaslibEdReader extends ExtractedDataReader {
     return dateObj;
   }
 
-  makePlaceObjFromTaslibPlaceName(placeString, isRegistrationPlace) {
+  makePlaceObjFromTaslibPlaceName(placeString, isRegistrationPlace, dateObj) {
     // possibly separate out street address if present
 
     let placeObj = new PlaceObj();
 
     let fullPlaceString = placeString;
 
+    let fullPlaceEnding = "Tasmania, Australia";
+    if (dateObj) {
+      let yearString = dateObj.getYearString();
+      if (yearString) {
+        let yearNum = Number(yearString);
+        if (yearNum && !isNaN(yearNum)) {
+          if (yearNum < 1856) {
+            fullPlaceEnding = "Van Diemen's Land, Australia";
+          }
+        }
+      }
+    }
+
     if (fullPlaceString) {
-      if (!fullPlaceString.includes("Tasmania") && !fullPlaceString.includes("Australia")) {
-        fullPlaceString += ", Tasmania, Australia";
+      if (
+        !fullPlaceString.includes("Tasmania") &&
+        !fullPlaceString.includes("Australia") &&
+        !fullPlaceString.includes("Van Diemen's Land")
+      ) {
+        fullPlaceString += ", " + fullPlaceEnding;
       }
     } else {
-      fullPlaceString = "Tasmania, Australia";
+      fullPlaceString = fullPlaceEnding;
     }
 
     placeObj.placeString = fullPlaceString;
@@ -460,7 +477,10 @@ class TaslibEdReader extends ExtractedDataReader {
       }
     }
 
-    return this.makePlaceObjFromTaslibPlaceName(placeString, isRegistrationPlace);
+    // need date to determine full place name
+    let eventDateObj = this.getEventDateObj();
+
+    return this.makePlaceObjFromTaslibPlaceName(placeString, isRegistrationPlace, eventDateObj);
   }
 
   getLastNameAtBirth() {
@@ -495,7 +515,7 @@ class TaslibEdReader extends ExtractedDataReader {
   getBirthPlaceObj() {
     let placeString = this.ed.recordData["Where born"];
     if (placeString) {
-      return this.makePlaceObjFromTaslibPlaceName(placeString);
+      return this.makePlaceObjFromTaslibPlaceName(placeString, false, this.getBirthDateObj());
     }
   }
 
@@ -507,7 +527,7 @@ class TaslibEdReader extends ExtractedDataReader {
   getDeathPlaceObj() {
     let placeString = this.ed.recordData["Where died"];
     if (placeString) {
-      return this.makePlaceObjFromTaslibPlaceName(placeString);
+      return this.makePlaceObjFromTaslibPlaceName(placeString, false, this.getDeathDateObj());
     }
   }
 

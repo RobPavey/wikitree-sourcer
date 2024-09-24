@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD35/1/16 no 179<br/>\n[https://libraries.tas.gov.au/Digital/RGD35-1-16/RGD35-1-16-P45 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1143724 Record Permalink] (accessed 6 May 2021)<br/>\nMichael Smith death 8 Oct 1839 (age 48) registered in Launceston, Tasmania, Australia.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD35/1/16 no 179<br/>\n[https://libraries.tas.gov.au/Digital/RGD35-1-16/RGD35-1-16-P45 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1143724 Record Permalink] (accessed 6 May 2021)<br/>\nMichael Smith death 8 Oct 1839 (age 48) registered in Launceston, Van Diemen's Land, Australia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Michael's death (age 48) on 8 October 1839 was registered in Launceston, Tasmania, Australia.<ref>\n'''Death Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD35/1/16 no 179<br/>\n[https://libraries.tas.gov.au/Digital/RGD35-1-16/RGD35-1-16-P45 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1143724 Record Permalink] (accessed 6 May 2021)<br/>\nMichael Smith death 8 Oct 1839 (age 48) registered in Launceston, Tasmania, Australia.\n</ref>",
+    "citation": "Michael's death (age 48) on 8 October 1839 was registered in Launceston, Van Diemen's Land, Australia.<ref>\n'''Death Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD35/1/16 no 179<br/>\n[https://libraries.tas.gov.au/Digital/RGD35-1-16/RGD35-1-16-P45 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1143724 Record Permalink] (accessed 6 May 2021)<br/>\nMichael Smith death 8 Oct 1839 (age 48) registered in Launceston, Van Diemen's Land, Australia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Registration''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: RGD35/1/16 no 179<br/>[https://libraries.tas.gov.au/Digital/RGD35-1-16/RGD35-1-16-P45 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1143724 Record Permalink] (accessed 6 May 2021)<br/>Michael Smith death 8 Oct 1839 (age 48) registered in Launceston, Tasmania, Australia.",
+    "citation": "* '''Death Registration''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: RGD35/1/16 no 179<br/>[https://libraries.tas.gov.au/Digital/RGD35-1-16/RGD35-1-16-P45 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1143724 Record Permalink] (accessed 6 May 2021)<br/>Michael Smith death 8 Oct 1839 (age 48) registered in Launceston, Van Diemen's Land, Australia.",
     "type": "source"
   }
 }
