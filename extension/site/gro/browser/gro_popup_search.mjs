@@ -33,7 +33,12 @@ import {
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
+import {
+  doSearch,
+  registerSearchMenuItemFunction,
+  shouldShowSiteSearch,
+  doBackgroundSearchWithSearchData,
+} from "/base/browser/popup/popup_search.mjs";
 import { RT } from "/base/core/record_type.mjs";
 
 const groStartYear = 1837;
@@ -93,6 +98,138 @@ async function groSearch(generalizedData, typeOfSearch) {
     };
     doSearch(loadedModule, input);
   });
+}
+
+async function groSmartSearch(gd, typeOfSearch) {
+  // !!!!!!!!!
+  // need permisions check
+  // !!!!!!
+
+  function yearStringToNumber(yearString) {
+    if (!yearString) {
+      return 0;
+    }
+    let yearNum = Number(yearString);
+
+    if (!yearNum || isNaN(yearNum)) {
+      yearNum = 0;
+    }
+    return yearNum;
+  }
+
+  let searchUrl = "/site/gro/browser/gro_smart_search.html";
+  let searchData = {
+    timeStamp: Date.now(),
+    url: searchUrl,
+  };
+
+  let parameters = {};
+
+  if (typeOfSearch == "birthsOfChildren") {
+    parameters.type = "births";
+
+    parameters.surname = gd.inferLastName();
+    parameters.gender = gd.personGender;
+
+    const startReproductiveAge = 14;
+    let endReproductiveAge = 80;
+    if (gd.personGender == "female") {
+      endReproductiveAge = 50;
+    }
+    let birthYear = yearStringToNumber(gd.inferBirthYear());
+    if (birthYear) {
+      let birthYearNum = Number(birthYear);
+      parameters.birthStartYear = birthYearNum + startReproductiveAge;
+      parameters.birthEndYear = birthYearNum + endReproductiveAge;
+      let deathYear = yearStringToNumber(gd.inferDeathYear());
+      if (deathYear) {
+        if (parameters.birthEndYear > deathYear + 1) {
+          parameters.birthEndYear = deathYear + 1;
+        }
+      }
+    }
+
+    parameters.surname = gd.inferLastName();
+    parameters.gender = "both"; //gd.personGender;
+
+    if (gd.spouses && gd.spouses.length > 0) {
+      let spouse = gd.spouses[0];
+      let spouseLnab = spouse.lastNameAtBirth;
+      if (!spouseLnab) {
+        if (spouse.name) {
+          spouseLnab = spouse.name.inferLastName();
+        }
+      }
+      if (spouseLnab) {
+        if (gd.personGender == "female") {
+          parameters.surname = spouseLnab;
+          parameters.mmn = gd.inferLastNameAtBirth();
+        } else {
+          parameters.mmn = spouseLnab;
+        }
+      }
+    }
+  } else if (typeOfSearch == "deaths") {
+    parameters.type = "deaths";
+
+    parameters.surname = gd.inferLastName();
+    parameters.forename1 = gd.inferFirstName();
+    parameters.forename2 = ""; // see code in gro_build_search_url
+    parameters.gender = gd.personGender;
+  }
+
+  searchData.parameters = parameters;
+
+  //console.log("nswbdmSearch, searchData is:");
+  //console.log(searchData);
+
+  let reuseTabIfPossible = false; // options.search_nswbdm_reuseExistingTab;
+
+  doBackgroundSearchWithSearchData("groSmartSearch", searchData, reuseTabIfPossible);
+  /*
+  chrome.tabs.create({ url: "/site/gro/browser/gro_smart_search.html" }, function (createdTab) {
+    //console.log('Created Tab');
+    //console.log(createdTab);
+
+    if (createdTab && createdTab.id) {
+      chrome.tabs.onUpdated.addListener(function exceptionTabListener(tabId, changeInfo, tab) {
+        //console.log("Exception tab updated, tabId is: " + tabId);
+
+        // make sure the status is 'complete' and it's the right tab
+        if (tabId == createdTab.id && changeInfo.status == "complete") {
+          // remove the listener now that we know the tab has completed loading
+          chrome.tabs.onUpdated.removeListener(exceptionTabListener);
+
+          chrome.tabs.sendMessage(
+            tabId,
+            {
+              type: "groSmartSearch",
+              generalizedData: generalizedData,
+            },
+            function (response) {
+              let success = true;
+              if (!response) {
+                // we were unable to send a message to the exception tab
+                // This happens in Safari (at least when the exception happens early in popup)
+                // So remove the new tab since we were not able to fill it out.
+                console.log(
+                  "WikiTree Sourcer, background script: could not sent message to exception tab. Closing tab."
+                );
+                console.log(request);
+                chrome.tabs.remove(tabId, function () {
+                  // do nothing extra here
+                });
+              } else {
+                // we send a detailed response back to the caller for debugging this mechanism
+                // do nothing extra here for now
+              }
+            }
+          );
+        }
+      });
+    }
+  });
+  */
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -155,6 +292,21 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
   }
 }
 
+function addGroSmartSearchMenuItem(menu, data, filter) {
+  const onClick = function (element) {
+    groSmartSearch(data.generalizedData, "birthsOfChildren");
+  };
+
+  const menuItemText = "Do smart search";
+  let subtitle = "";
+
+  if (subtitle) {
+    addMenuItemWithSubtitle(menu, menuItemText, onClick, subtitle);
+  } else {
+    addMenuItem(menu, menuItemText, onClick);
+  }
+}
+
 function addGroDefaultSearchMenuItem(menu, data, backFunction, filter) {
   addMenuItem(menu, "Search GRO (UK)...", function (element) {
     setupGroSearchSubMenu(data, backFunction, filter);
@@ -207,6 +359,7 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
   addGroSameRecordMenuItem(menu, data, filter);
   addGroSearchBirthsMenuItem(menu, data, filter);
   addGroSearchDeathsMenuItem(menu, data, filter);
+  addGroSmartSearchMenuItem(menu, data, filter);
 
   endMainMenu(menu);
 }
