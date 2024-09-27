@@ -30,6 +30,15 @@ var domParser = new DOMParser();
 
 var searchParameters = {};
 
+// the unsorted and unfiltered search results
+var searchResults = [];
+
+// the unsorted search results after applying user filters
+var filteredSearchResults = [];
+
+// the sorted and filtered
+var sortedSearchResults = [];
+
 function extractAllRowsData(document, firstRowFunction, secondRowFunction, result) {
   console.log("extractAllRowsData called");
 
@@ -123,11 +132,9 @@ async function doSearchPost(url, postData) {
   console.log("doFetch, fetchUrl is: " + fetchUrl);
 
   let fetchOptionsHeaders = {
-    accept: "application/x-gedcomx-v1+json, application/json",
-    "accept-language": "en",
-    //"sec-fetch-dest": "empty",
-    //"sec-fetch-mode": "cors",
-    //"sec-fetch-site": "same-origin",
+    accept:
+      "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "accept-language": "en-US,en;q=0.9",
     "Content-Type": "application/x-www-form-urlencoded",
   };
 
@@ -277,7 +284,14 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
 }
 
 function getYearRanges(startYear, endYear, startBirthYear, endBirthYear) {
-  let needAges = startBirthYear && endBirthYear && startBirthYear < endBirthYear ? true : false;
+  let needAges = false;
+  if (startBirthYear && endBirthYear && startBirthYear <= endBirthYear) {
+    // we could use age in search but don't if the range is too large, in that
+    // case it if better to not pass age to search and filter later.
+    if (endBirthYear - startBirthYear < 20) {
+      needAges = true;
+    }
+  }
 
   function addYearRange(year, range) {
     if (needAges && year < 1984) {
@@ -345,7 +359,7 @@ function fillTable(extractedDataObjs) {
     { key: "eventQuarter", text: "Quarter" },
     { key: "lastName", text: "Surname" },
     { key: "forenames", text: "Forenames" },
-    { key: "gender", text: "Gender" },
+    { key: "gender", text: "Sex" },
     { key: "mothersMaidenName", text: "MMN" },
     { key: "ageAtDeath", text: "Age" },
     { key: "birthYear", text: "Birth Year" },
@@ -360,8 +374,6 @@ function fillTable(extractedDataObjs) {
       }
     }
   }
-
-  let hasBothAgesAndYobs = usedKeys.has("ageAtDeath") && usedKeys.has("birthYear");
 
   let tableElement = document.getElementById("resultsTable");
   if (!tableElement) {
@@ -384,18 +396,9 @@ function fillTable(extractedDataObjs) {
   for (let heading of possibleHeadings) {
     if (usedKeys.has(heading.key)) {
       let headingText = heading.text;
-      if (hasBothAgesAndYobs) {
-        if (heading.key == "ageAtDeath") {
-          headingText = "Age/YoB";
-        } else if (heading.key == "birthYear") {
-          headingText = "";
-        }
-      }
-      if (headingText) {
-        let thElement = document.createElement("th");
-        thElement.innerText = headingText;
-        headerElement.appendChild(thElement);
-      }
+      let thElement = document.createElement("th");
+      thElement.innerText = headingText;
+      headerElement.appendChild(thElement);
     }
   }
 
@@ -415,31 +418,26 @@ function fillTable(extractedDataObjs) {
 
       let hasKey = extractedData.hasOwnProperty(heading.key);
 
-      let skipCell = false;
-      if (hasBothAgesAndYobs) {
-        if (heading.key == "ageAtDeath") {
-          if (hasKey) {
-            addedAgeOrYob = true;
-          } else {
-            skipCell = true;
+      let value = "";
+      if (hasKey) {
+        value = extractedData[heading.key];
+
+        if (heading.key == "gender") {
+          if (value == "male") {
+            value = "M";
+          } else if (value == "female") {
+            value = "F";
           }
-        } else if (heading.key == "birthYear") {
-          if (addedAgeOrYob) {
-            skipCell = true;
-          }
+        }
+
+        if (extractedData[heading.key + "Implied"]) {
+          value = "(" + value + ")";
         }
       }
 
-      if (!skipCell) {
-        let value = "";
-        if (hasKey) {
-          value = extractedData[heading.key];
-        }
-
-        let tdElement = document.createElement("td");
-        tdElement.innerHTML = value;
-        rowElement.appendChild(tdElement);
-      }
+      let tdElement = document.createElement("td");
+      tdElement.innerHTML = value;
+      rowElement.appendChild(tdElement);
     }
   }
 
@@ -451,6 +449,9 @@ function initFilters(extractedDataObjs) {
 
   for (let extractedData of extractedDataObjs) {
     let district = extractedData.registrationDistrict;
+    if (district === undefined) {
+      district = "";
+    }
     if (!districts.includes(district)) {
       districts.push(district);
     }
@@ -581,7 +582,7 @@ async function doSmartSearch() {
   console.log("yearRanges:");
   console.log(yearRanges);
 
-  let totalResults = [];
+  let totalFetchResults = [];
 
   function addFetchResults(result, gender) {
     if (result) {
@@ -590,7 +591,7 @@ async function doSmartSearch() {
           row.gender = gender;
         }
 
-        totalResults.push(result);
+        totalFetchResults.push(result);
       }
     }
   }
@@ -636,30 +637,64 @@ async function doSmartSearch() {
     }
   }
 
-  let extractedDataObjs = [];
-  for (let result of totalResults) {
+  let searchResults = [];
+  for (let result of totalFetchResults) {
     if (result.success && result.rows) {
       for (let row of result.rows) {
-        extractedDataObjs.push(row);
+        searchResults.push(row);
       }
     }
   }
 
-  extractedDataObjs.sort(compareExtractedData);
+  sortedSearchResults = searchResults.toSorted(compareExtractedData);
 
   // we have a sorted list but it could have duplicates for deaths with large birth year range
   if (searchParameters.type == "death") {
-    console.log("Before remove dupes, extractedDataObjs.length = " + extractedDataObjs.length);
+    console.log("Before remove dupes, extractedDataObjs.length = " + sortedSearchResults.length);
     // remove an element if it is the same as the one before it.
-    extractedDataObjs = extractedDataObjs.filter(function (item, pos, ary) {
-      return !pos || compareExtractedData(item, ary[pos - 1]) != 0;
+    sortedSearchResults = sortedSearchResults.filter(function (item, pos, ary) {
+      let keepElement = true;
+
+      //console.log("filtering element, forenames = " + item.forenames + ", district = " + item.registrationDistrict);
+
+      if (pos > 0 && compareExtractedData(item, ary[pos - 1]) == 0) {
+        keepElement = false;
+      } else {
+        let year = item.eventYear;
+        let age = item.ageAtDeath;
+        let birthYear = item.birthYear;
+        if (!birthYear) {
+          if (age !== undefined) {
+            birthYear = year - age;
+            item.birthYear = birthYear;
+            item.birthYearImplied = true;
+          }
+        } else if (age === undefined) {
+          age = year - birthYear;
+          item.age = birthYear;
+          item.ageImplied = true;
+        }
+
+        //console.log("filtering element, birthYear = " + birthYear + ", age = " + age);
+
+        if (birthYear) {
+          let startBirthYear = searchParameters.startBirthYear;
+          let endBirthYear = searchParameters.endBirthYear;
+          if ((startBirthYear && birthYear < startBirthYear) || (endBirthYear && birthYear > endBirthYear)) {
+            //console.log("removing element with birthYear of: " + birthYear);
+            keepElement = false;
+          }
+        }
+      }
+
+      return keepElement;
     });
-    console.log("After remove dupes, extractedDataObjs.length = " + extractedDataObjs.length);
+    console.log("After remove dupes, extractedDataObjs.length = " + sortedSearchResults.length);
   }
 
-  fillTable(extractedDataObjs);
+  fillTable(sortedSearchResults);
 
-  initFilters(extractedDataObjs);
+  initFilters(sortedSearchResults);
 }
 
 function getRadioButtonValue(name) {
