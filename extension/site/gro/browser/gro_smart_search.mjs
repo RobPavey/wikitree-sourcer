@@ -59,6 +59,32 @@ function extractAllRowsData(document, firstRowFunction, secondRowFunction, resul
     result.rows.push(rowResult);
   }
 
+  // Look to see how many pages there are
+  result.resultsNumRecords = 0;
+  result.resultsPageCount = 1;
+  result.resultsPageNumber = 1;
+
+  let possiblePageXOfYTdElements = resultsTable.querySelectorAll(
+    "tbody > tr > td.main_text > table > tbody > tr > td.main_text"
+  );
+  console.log("possiblePageXOfYTdElements.length is: " + possiblePageXOfYTdElements.length);
+
+  for (let possiblePageXOfYTdElement of possiblePageXOfYTdElements) {
+    let text = possiblePageXOfYTdElement.textContent;
+    console.log("possiblePageXOfYTdElement, text is: " + text);
+    // example text : `250 Record(s) Found - Showing Page 1 of 5Go to page      `
+    let regex = /(^\d+)\s+Record(?:\(s\))?\s+Found\s+-\s+Showing\s+Page\s+(\d+)\s+of\s+(\d+).*$/i;
+    if (regex.test(text)) {
+      result.resultsNumRecords = Number(text.replace(regex, "$1"));
+      result.resultsPageCount = Number(text.replace(regex, "$2"));
+      result.resultsPageNumber = Number(text.replace(regex, "$3"));
+      console.log("Found page number, resultsNumRecords is: " + result.resultsNumRecords);
+      console.log("Found page number, resultsPageCount is: " + result.resultsPageCount);
+      console.log("Found page number, resultsPageNumber is: " + result.resultsPageNumber);
+      break;
+    }
+  }
+
   result.success = true;
 }
 
@@ -193,16 +219,13 @@ async function doSingleSearch(singleSearchParameters) {
   if (queryIndex != -1) {
     let startOfQuery = queryIndex + 1;
     postData = url.substring(startOfQuery);
-    postData += "&CurrentPage=1&OccasionalCopy=&RUI=&SearchIndexes=Search";
+    postData += "&SurnameMatches=0&ForenameMatches=0&MothersSurnameMatches=0";
+    postData += "&CurrentPage=1";
+    postData += "&OccasionalCopy=&RUI=&SearchIndexes=Search";
   }
 
   console.log("postData from builder is:");
   console.log(postData);
-
-  const extra1 = "&SurnameMatches=0&ForenameMatches=0&MothersSurnameMatches=0";
-  //const extra2 = "&DOBDay=&DOBMonth=&DOBYear=&PlaceofBirth=&District=&Quarter=&Month=&Volume=&Page=&Reg=&EntryNumber=";
-  postData += extra1;
-  //postData += extra2;
 
   let groDocument = await doSearchPost(searchUrl, postData);
 
