@@ -126,7 +126,7 @@ async function groSmartSearch(gd, typeOfSearch) {
   let parameters = {};
 
   if (typeOfSearch == "birthsOfChildren") {
-    parameters.type = "births";
+    parameters.type = "birth";
 
     parameters.surname = gd.inferLastName();
     parameters.gender = gd.personGender;
@@ -138,13 +138,12 @@ async function groSmartSearch(gd, typeOfSearch) {
     }
     let birthYear = yearStringToNumber(gd.inferBirthYear());
     if (birthYear) {
-      let birthYearNum = Number(birthYear);
-      parameters.birthStartYear = birthYearNum + startReproductiveAge;
-      parameters.birthEndYear = birthYearNum + endReproductiveAge;
+      parameters.startYear = birthYear + startReproductiveAge;
+      parameters.endYear = birthYear + endReproductiveAge;
       let deathYear = yearStringToNumber(gd.inferDeathYear());
       if (deathYear) {
-        if (parameters.birthEndYear > deathYear + 1) {
-          parameters.birthEndYear = deathYear + 1;
+        if (parameters.endYear > deathYear + 1) {
+          parameters.endYear = deathYear + 1;
         }
       }
     }
@@ -170,12 +169,51 @@ async function groSmartSearch(gd, typeOfSearch) {
       }
     }
   } else if (typeOfSearch == "deaths") {
-    parameters.type = "deaths";
+    parameters.type = "death";
 
-    parameters.surname = gd.inferLastName();
+    const maxLifespan = 120;
+    let birthYear = yearStringToNumber(gd.inferBirthYear());
+    if (birthYear) {
+      parameters.startYear = birthYear - 2;
+      parameters.endYear = birthYear + maxLifespan;
+
+      parameters.startBirthYear = birthYear - 2;
+      parameters.endBirthYear = birthYear + 2;
+    }
+
+    parameters.surname = gd.inferLastNameAtDeath();
     parameters.forename1 = gd.inferFirstName();
-    parameters.forename2 = ""; // see code in gro_build_search_url
+    // Second forename. This should never be an initial. So if what we have is an initial
+
+    // we should either not add it or expand it if we have other sources of information
+    let secondForename = gd.inferSecondForename();
+    if (secondForename) {
+      if (secondForename.length == 1) {
+        if (gd.personGeneralizedData) {
+          let pgd = gd.personGeneralizedData;
+          let personFirstName = pgd.inferFirstName();
+          let personSecondForename = pgd.inferSecondForename();
+          if (personSecondForename && personSecondForename.length > 1) {
+            if (personSecondForename[0] == secondForename) {
+              if (gd.inferFirstName() == personFirstName) {
+                let lastNameAtBirth = gd.inferLastNameAtBirth();
+                let lastNameAtDeath = gd.inferLastNameAtDeath(options);
+                let personLastNameAtBirth = pgd.inferLastNameAtBirth();
+                let personLastNameAtDeath = pgd.inferLastNameAtDeath(options);
+                if (personLastNameAtBirth == lastNameAtBirth || personLastNameAtDeath == lastNameAtDeath) {
+                  parameters.forename2 = personSecondForename;
+                }
+              }
+            }
+          }
+        }
+      } else {
+        parameters.forename2 = secondForename;
+      }
+    }
+
     parameters.gender = gd.personGender;
+    parameters.district = gd.registrationDistrict;
   }
 
   searchData.parameters = parameters;
@@ -186,50 +224,6 @@ async function groSmartSearch(gd, typeOfSearch) {
   let reuseTabIfPossible = false; // options.search_nswbdm_reuseExistingTab;
 
   doBackgroundSearchWithSearchData("groSmartSearch", searchData, reuseTabIfPossible);
-  /*
-  chrome.tabs.create({ url: "/site/gro/browser/gro_smart_search.html" }, function (createdTab) {
-    //console.log('Created Tab');
-    //console.log(createdTab);
-
-    if (createdTab && createdTab.id) {
-      chrome.tabs.onUpdated.addListener(function exceptionTabListener(tabId, changeInfo, tab) {
-        //console.log("Exception tab updated, tabId is: " + tabId);
-
-        // make sure the status is 'complete' and it's the right tab
-        if (tabId == createdTab.id && changeInfo.status == "complete") {
-          // remove the listener now that we know the tab has completed loading
-          chrome.tabs.onUpdated.removeListener(exceptionTabListener);
-
-          chrome.tabs.sendMessage(
-            tabId,
-            {
-              type: "groSmartSearch",
-              generalizedData: generalizedData,
-            },
-            function (response) {
-              let success = true;
-              if (!response) {
-                // we were unable to send a message to the exception tab
-                // This happens in Safari (at least when the exception happens early in popup)
-                // So remove the new tab since we were not able to fill it out.
-                console.log(
-                  "WikiTree Sourcer, background script: could not sent message to exception tab. Closing tab."
-                );
-                console.log(request);
-                chrome.tabs.remove(tabId, function () {
-                  // do nothing extra here
-                });
-              } else {
-                // we send a detailed response back to the caller for debugging this mechanism
-                // do nothing extra here for now
-              }
-            }
-          );
-        }
-      });
-    }
-  });
-  */
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -292,12 +286,27 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
   }
 }
 
-function addGroSmartSearchMenuItem(menu, data, filter) {
+function addGroSmartSearchChildBirthsMenuItem(menu, data, filter) {
   const onClick = function (element) {
     groSmartSearch(data.generalizedData, "birthsOfChildren");
   };
 
-  const menuItemText = "Do smart search";
+  const menuItemText = "Do smart search for children of this person";
+  let subtitle = "";
+
+  if (subtitle) {
+    addMenuItemWithSubtitle(menu, menuItemText, onClick, subtitle);
+  } else {
+    addMenuItem(menu, menuItemText, onClick);
+  }
+}
+
+function addGroSmartSearchDeathsMenuItem(menu, data, filter) {
+  const onClick = function (element) {
+    groSmartSearch(data.generalizedData, "deaths");
+  };
+
+  const menuItemText = "Do smart search for possible deaths";
   let subtitle = "";
 
   if (subtitle) {
@@ -359,7 +368,8 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
   addGroSameRecordMenuItem(menu, data, filter);
   addGroSearchBirthsMenuItem(menu, data, filter);
   addGroSearchDeathsMenuItem(menu, data, filter);
-  addGroSmartSearchMenuItem(menu, data, filter);
+  addGroSmartSearchChildBirthsMenuItem(menu, data, filter);
+  addGroSmartSearchDeathsMenuItem(menu, data, filter);
 
   endMainMenu(menu);
 }
