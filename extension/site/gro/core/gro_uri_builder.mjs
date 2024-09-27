@@ -25,9 +25,10 @@ SOFTWARE.
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class GroUriBuilder {
-  constructor() {
+  constructor(includeEmptyParams = false) {
     this.uri = "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp";
     this.searchTermAdded = false;
+    this.includeEmptyParams = includeEmptyParams;
   }
 
   addSearchTerm(string) {
@@ -43,8 +44,11 @@ class GroUriBuilder {
   }
 
   addSearchParameter(parameter, value) {
-    if (value === undefined || value === "") {
+    if (!this.includeEmptyParams && (value === undefined || value === "")) {
       return;
+    }
+    if (value === undefined) {
+      value = "";
     }
 
     const encodedValue = encodeURIComponent(value);
@@ -62,82 +66,90 @@ class GroUriBuilder {
   }
 
   addFirstForename(string) {
-    this.addSearchParameter("forename1", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Forename1", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addForenameMatches(string) {
-    this.addSearchParameter("forenamematches", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("ForenameMatches", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addSecondForename(string) {
     let forename2 = StringUtils.getFirstWord(string);
-    this.addSearchParameter("forename2", StringUtils.removeExtendedAsciiCharacters(forename2));
+    this.addSearchParameter("Forename2", StringUtils.removeExtendedAsciiCharacters(forename2));
   }
 
   addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("Surname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addSurnameMatches(string) {
-    this.addSearchParameter("surnamematches", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("SurnameMatches", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addMothersSurname(string) {
     if (string != "-") {
-      this.addSearchParameter("motherssurname", StringUtils.removeExtendedAsciiCharacters(string));
+      this.addSearchParameter("MothersSurname", StringUtils.removeExtendedAsciiCharacters(string));
     }
   }
 
   addMothersSurnameMatches(string) {
-    this.addSearchParameter("motherssurnamematches", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("MothersSurnameMatches", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addYear(string) {
-    this.addSearchParameter("year", string);
+    this.addSearchParameter("Year", string);
   }
 
   addYearRange(string) {
-    this.addSearchParameter("range", string);
+    this.addSearchParameter("Range", string);
   }
 
   addAge(string) {
-    this.addSearchParameter("age", string);
+    this.addSearchParameter("Age", string);
   }
 
   addAgeRange(string) {
-    this.addSearchParameter("agerange", string);
+    this.addSearchParameter("AgeRange", string);
   }
 
   addGenderMale() {
-    this.addSearchTerm("gender=M");
+    this.addSearchTerm("Gender=M");
   }
 
   addGenderFemale() {
-    this.addSearchTerm("gender=F");
+    this.addSearchTerm("Gender=F");
   }
 
   addQuarter(string) {
-    this.addSearchParameter("quarter", string);
+    this.addSearchParameter("Quarter", string);
   }
 
   addMonth(string) {
-    this.addSearchParameter("month", string);
+    this.addSearchParameter("Month", string);
   }
 
   addDistrict(string) {
-    this.addSearchParameter("district", string);
+    this.addSearchParameter("District", string);
   }
 
   addVolume(string) {
-    this.addSearchParameter("volume", string);
+    this.addSearchParameter("Volume", string);
   }
 
   addPage(string) {
-    this.addSearchParameter("page", string);
+    this.addSearchParameter("Page", string);
   }
 
   addRegister(string) {
-    this.addSearchParameter("reg", string);
+    this.addSearchParameter("Reg", string);
+  }
+
+  addCurrentPage(string) {
+    this.addSearchParameter("CurrentPage", string);
+  }
+
+  addUrlText(string) {
+    this.uri += string;
   }
 
   getUri() {

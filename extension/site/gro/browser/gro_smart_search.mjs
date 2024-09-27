@@ -31,13 +31,17 @@ var domParser = new DOMParser();
 var searchParameters = {};
 
 function extractAllRowsData(document, firstRowFunction, secondRowFunction, result) {
+  console.log("extractAllRowsData called");
+
   let resultsNode = document.querySelector("[name='Results']");
   if (!resultsNode) {
+    console.log("extractAllRowsData: no results found in document");
     return;
   }
 
   let resultsTable = resultsNode.closest("TABLE");
   if (!resultsTable) {
+    console.log("extractAllRowsData: no results table found in document");
     return;
   }
 
@@ -46,6 +50,7 @@ function extractAllRowsData(document, firstRowFunction, secondRowFunction, resul
 
   // if no results bail out
   if (inputElements.length == 0) {
+    console.log("extractAllRowsData: no result rows found in document");
     return;
   }
 
@@ -162,13 +167,13 @@ async function doSearchPost(url, postData) {
 }
 
 async function doSingleSearch(singleSearchParameters, pageNumber) {
-  let builder = new GroUriBuilder();
+  let builder = new GroUriBuilder(true);
 
   const type = singleSearchParameters.type;
   const surname = singleSearchParameters.surname;
   const surnameMatches = singleSearchParameters.surnameMatches;
   const forename1 = singleSearchParameters.forename1;
-  const forename1Matches = singleSearchParameters.forename1Matches;
+  const forenameMatches = singleSearchParameters.forenameMatches;
   const forename2 = singleSearchParameters.forename2;
   const mmn = singleSearchParameters.mmn;
   const mmnMatches = singleSearchParameters.mmnMatches;
@@ -187,18 +192,28 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
     console.log("  ageRange: " + ageRange);
   }
 
+  // Add the parameters in the same order that the GRO page would add them
   if (type == "birth") {
     builder.addIndex("EW_Birth");
   } else {
     builder.addIndex("EW_Death");
   }
+
+  let currentPage = "1";
+  if (pageNumber > 1) {
+    currentPage = (pageNumber - 1).toString();
+  }
+  builder.addCurrentPage(currentPage);
+
+  builder.addYear(year);
+  builder.addYearRange(yearRange);
+
   builder.addSurname(surname);
   builder.addSurnameMatches(surnameMatches);
   builder.addFirstForename(forename1);
+  builder.addForenameMatches(forenameMatches);
   builder.addSecondForename(forename2);
-  builder.addForenameMatches(forename1Matches);
-  builder.addYear(year);
-  builder.addYearRange(yearRange);
+  builder.addUrlText("&Forename3=&Forename4=");
 
   if (gender == "male") {
     builder.addGenderMale();
@@ -214,7 +229,21 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
     builder.addAgeRange(ageRange);
   }
 
+  if (type == "birth") {
+    builder.addUrlText("&DOBDay=&DOBMonth=&DOBYear=&PlaceofBirth=");
+  } else {
+    builder.addUrlText("&DODDay=&DODMonth=&DODYear=&PlaceofDeath=");
+  }
+
   builder.addDistrict(district);
+
+  builder.addUrlText("&Quarter=&Month=&Volume=&Page=&Reg=&EntryNumber=&OccasionalCopy=&RUI=");
+
+  if (pageNumber > 1) {
+    builder.addUrlText("&SearchIndexes=" + pageNumber);
+  } else {
+    builder.addUrlText("&SearchIndexes=Search");
+  }
 
   const url = builder.getUri();
 
@@ -225,15 +254,6 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   if (queryIndex != -1) {
     let startOfQuery = queryIndex + 1;
     postData = url.substring(startOfQuery);
-    postData += "&SurnameMatches=0&ForenameMatches=0&MothersSurnameMatches=0";
-    postData += "&CurrentPage=1";
-    postData += "&OccasionalCopy=&RUI=";
-
-    if (pageNumber > 1) {
-      postData += "&SearchIndexes=" + pageNumber;
-    } else {
-      postData += "&SearchIndexes=Search";
-    }
   }
 
   console.log("postData is:");
@@ -535,9 +555,12 @@ async function doSmartSearch() {
   let singleSearchParameters = {
     type: searchParameters.type,
     surname: searchParameters.surname,
+    surnameMatches: searchParameters.surnameMatches,
     forename1: searchParameters.forename1,
     forename2: searchParameters.forename2,
+    forenameMatches: searchParameters.forenameMatches,
     mmn: searchParameters.mmn,
+    mmnMatches: searchParameters.mmnMatches,
     district: searchParameters.district,
   };
 
@@ -584,30 +607,30 @@ async function doSmartSearch() {
     if (searchParameters.gender == "male" || searchParameters.gender == "both") {
       singleSearchParameters.gender = "male";
       let result = await doSingleSearch(singleSearchParameters, 1);
-      addFetchResults(result, "male");
+      if (result.rows && result.rows.length > 0) {
+        addFetchResults(result, "male");
 
-      if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
-        for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
-          result = await doSingleSearch(singleSearchParameters, pageNumber);
-          addFetchResults(result, "male");
+        if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
+          for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
+            result = await doSingleSearch(singleSearchParameters, pageNumber);
+            addFetchResults(result, "male");
+          }
         }
       }
     }
     if (searchParameters.gender == "female" || searchParameters.gender == "both") {
       singleSearchParameters.gender = "female";
       let result = await doSingleSearch(singleSearchParameters, 1);
-      addFetchResults(result, "female");
+      if (result.rows && result.rows.length > 0) {
+        addFetchResults(result, "female");
 
-      console.log("doSmartSearch:");
-      console.log("result.resultsPageCount = " + result.resultsPageCount);
-      console.log("result.resultsPageNumber = " + result.resultsPageNumber);
+        if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
+          for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
+            console.log("doSmartSearch: doing another search for page number: " + pageNumber);
 
-      if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
-        for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
-          console.log("doSmartSearch: doing another search for page number: " + pageNumber);
-
-          result = await doSingleSearch(singleSearchParameters, pageNumber);
-          addFetchResults(result, "female");
+            result = await doSingleSearch(singleSearchParameters, pageNumber);
+            addFetchResults(result, "female");
+          }
         }
       }
     }
@@ -780,7 +803,7 @@ function createSearchControls(type) {
     searchControlsBody.appendChild(forename1Row);
     addTextInput(forename1Row, "First Forename: ", "searchParamForename1");
 
-    createSelect(forename1Row, "Include: ", "searchParamForename1Matches", [
+    createSelect(forename1Row, "Include: ", "searchParamForenameMatches", [
       { text: "Exact Matches Only", value: "0" },
       { text: "Phonetically Similar Variations", value: "1" },
       { text: "Derivative Name Variations", value: "5" },
@@ -945,7 +968,7 @@ function setSearchParametersFromControls() {
   searchParameters.surname = getTextInputValue("searchParamSurname");
   searchParameters.surnameMatches = getSelectValue("searchParamSurnameMatches");
   searchParameters.forename1 = getTextInputValue("searchParamForename1");
-  searchParameters.forename1Matches = getSelectValue("searchParamForename1Matches");
+  searchParameters.forenameMatches = getSelectValue("searchParamForenameMatches");
   searchParameters.forename2 = getTextInputValue("searchParamForename2");
 
   if (searchParameters.type == "birth") {
