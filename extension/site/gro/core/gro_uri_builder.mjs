@@ -65,6 +65,10 @@ class GroUriBuilder {
     this.addSearchParameter("forename1", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
+  addForenameMatches(string) {
+    this.addSearchParameter("forenamematches", StringUtils.removeExtendedAsciiCharacters(string));
+  }
+
   addSecondForename(string) {
     let forename2 = StringUtils.getFirstWord(string);
     this.addSearchParameter("forename2", StringUtils.removeExtendedAsciiCharacters(forename2));
@@ -74,10 +78,18 @@ class GroUriBuilder {
     this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
+  addSurnameMatches(string) {
+    this.addSearchParameter("surnamematches", StringUtils.removeExtendedAsciiCharacters(string));
+  }
+
   addMothersSurname(string) {
     if (string != "-") {
       this.addSearchParameter("motherssurname", StringUtils.removeExtendedAsciiCharacters(string));
     }
+  }
+
+  addMothersSurnameMatches(string) {
+    this.addSearchParameter("motherssurnamematches", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addYear(string) {

@@ -28,7 +28,7 @@ import { extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow } fr
 // Avoid creating this for every search
 var domParser = new DOMParser();
 
-var searchParameters;
+var searchParameters = {};
 
 function extractAllRowsData(document, firstRowFunction, secondRowFunction, result) {
   let resultsNode = document.querySelector("[name='Results']");
@@ -76,11 +76,11 @@ function extractAllRowsData(document, firstRowFunction, secondRowFunction, resul
     let regex = /(^\d+)\s+Record(?:\(s\))?\s+Found\s+-\s+Showing\s+Page\s+(\d+)\s+of\s+(\d+).*$/i;
     if (regex.test(text)) {
       result.resultsNumRecords = Number(text.replace(regex, "$1"));
-      result.resultsPageCount = Number(text.replace(regex, "$2"));
-      result.resultsPageNumber = Number(text.replace(regex, "$3"));
+      result.resultsPageNumber = Number(text.replace(regex, "$2"));
+      result.resultsPageCount = Number(text.replace(regex, "$3"));
       console.log("Found page number, resultsNumRecords is: " + result.resultsNumRecords);
-      console.log("Found page number, resultsPageCount is: " + result.resultsPageCount);
       console.log("Found page number, resultsPageNumber is: " + result.resultsPageNumber);
+      console.log("Found page number, resultsPageCount is: " + result.resultsPageCount);
       break;
     }
   }
@@ -161,14 +161,17 @@ async function doSearchPost(url, postData) {
   }
 }
 
-async function doSingleSearch(singleSearchParameters) {
+async function doSingleSearch(singleSearchParameters, pageNumber) {
   let builder = new GroUriBuilder();
 
   const type = singleSearchParameters.type;
   const surname = singleSearchParameters.surname;
+  const surnameMatches = singleSearchParameters.surnameMatches;
   const forename1 = singleSearchParameters.forename1;
+  const forename1Matches = singleSearchParameters.forename1Matches;
   const forename2 = singleSearchParameters.forename2;
   const mmn = singleSearchParameters.mmn;
+  const mmnMatches = singleSearchParameters.mmnMatches;
   const year = singleSearchParameters.year;
   const yearRange = singleSearchParameters.yearRange;
   const age = singleSearchParameters.age;
@@ -190,8 +193,10 @@ async function doSingleSearch(singleSearchParameters) {
     builder.addIndex("EW_Death");
   }
   builder.addSurname(surname);
+  builder.addSurnameMatches(surnameMatches);
   builder.addFirstForename(forename1);
   builder.addSecondForename(forename2);
+  builder.addForenameMatches(forename1Matches);
   builder.addYear(year);
   builder.addYearRange(yearRange);
 
@@ -203,6 +208,7 @@ async function doSingleSearch(singleSearchParameters) {
 
   if (type == "birth") {
     builder.addMothersSurname(mmn);
+    builder.addMothersSurnameMatches(mmnMatches);
   } else {
     builder.addAge(age);
     builder.addAgeRange(ageRange);
@@ -221,10 +227,16 @@ async function doSingleSearch(singleSearchParameters) {
     postData = url.substring(startOfQuery);
     postData += "&SurnameMatches=0&ForenameMatches=0&MothersSurnameMatches=0";
     postData += "&CurrentPage=1";
-    postData += "&OccasionalCopy=&RUI=&SearchIndexes=Search";
+    postData += "&OccasionalCopy=&RUI=";
+
+    if (pageNumber > 1) {
+      postData += "&SearchIndexes=" + pageNumber;
+    } else {
+      postData += "&SearchIndexes=Search";
+    }
   }
 
-  console.log("postData from builder is:");
+  console.log("postData is:");
   console.log(postData);
 
   let groDocument = await doSearchPost(searchUrl, postData);
@@ -571,13 +583,33 @@ async function doSmartSearch() {
 
     if (searchParameters.gender == "male" || searchParameters.gender == "both") {
       singleSearchParameters.gender = "male";
-      let result = await doSingleSearch(singleSearchParameters);
+      let result = await doSingleSearch(singleSearchParameters, 1);
       addFetchResults(result, "male");
+
+      if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
+        for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
+          result = await doSingleSearch(singleSearchParameters, pageNumber);
+          addFetchResults(result, "male");
+        }
+      }
     }
     if (searchParameters.gender == "female" || searchParameters.gender == "both") {
       singleSearchParameters.gender = "female";
-      let result = await doSingleSearch(singleSearchParameters);
+      let result = await doSingleSearch(singleSearchParameters, 1);
       addFetchResults(result, "female");
+
+      console.log("doSmartSearch:");
+      console.log("result.resultsPageCount = " + result.resultsPageCount);
+      console.log("result.resultsPageNumber = " + result.resultsPageNumber);
+
+      if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
+        for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
+          console.log("doSmartSearch: doing another search for page number: " + pageNumber);
+
+          result = await doSingleSearch(singleSearchParameters, pageNumber);
+          addFetchResults(result, "female");
+        }
+      }
     }
   }
 
@@ -621,9 +653,20 @@ function getRadioButtonValue(name) {
   return selectedValue;
 }
 
+function getSelectValue(id) {
+  const selectElement = document.getElementById(id);
+  if (selectElement) {
+    return selectElement.value;
+  }
+  return "0";
+}
+
 function createRadioButtonGroup(parent, legendText, name, options) {
+  let tdElement = document.createElement("td");
+  parent.appendChild(tdElement);
+
   let fieldSet = document.createElement("fieldset");
-  parent.appendChild(fieldSet);
+  tdElement.appendChild(fieldSet);
 
   let legend = document.createElement("legend");
   fieldSet.appendChild(legend);
@@ -644,9 +687,38 @@ function createRadioButtonGroup(parent, legendText, name, options) {
   }
 }
 
+function createSelect(parent, label, id, options) {
+  let tdElement = document.createElement("td");
+  parent.appendChild(tdElement);
+
+  let labelElement = document.createElement("label");
+  tdElement.appendChild(labelElement);
+  labelElement.innerText = label;
+
+  let selectElement = document.createElement("select");
+  selectElement.id = id;
+  selectElement.class = "dropdown";
+  tdElement.appendChild(selectElement);
+
+  let isFirst = true;
+  for (let option of options) {
+    let optionElement = document.createElement("option");
+    selectElement.appendChild(optionElement);
+    optionElement.value = option.value;
+    optionElement.innerText = option.text;
+    if (isFirst) {
+      selectElement.value = option.value;
+      isFirst = false;
+    }
+  }
+}
+
 function addTextInput(parent, label, id) {
+  let tdElement = document.createElement("td");
+  parent.appendChild(tdElement);
+
   let divElement = document.createElement("div");
-  parent.appendChild(divElement);
+  tdElement.appendChild(divElement);
   let labelElement = document.createElement("label");
   divElement.appendChild(labelElement);
   labelElement.innerText = label;
@@ -666,40 +738,94 @@ function createSearchControls(type) {
 
   let fragment = document.createDocumentFragment();
 
+  let searchControlsTable = document.createElement("table");
+  fragment.appendChild(searchControlsTable);
+  let searchControlsBody = document.createElement("tbody");
+  searchControlsTable.appendChild(searchControlsBody);
+
   // add the "type" radio button group
   {
+    let typeRow = document.createElement("tr");
+    searchControlsBody.appendChild(typeRow);
+
     let options = [
       { label: "Births", value: "birth", id: "searchParamBirth" },
       { label: "Deaths", value: "death", id: "searchParamDeath" },
     ];
-    createRadioButtonGroup(fragment, "Select index to search:", "recordType", options);
+    createRadioButtonGroup(typeRow, "Select index to search:", "recordType", options);
   }
 
   // start year and end year
   {
-    addTextInput(fragment, "Start year: ", "searchParamStartYear");
-    addTextInput(fragment, "End year: ", "searchParamEndYear");
+    let yearRow = document.createElement("tr");
+    searchControlsBody.appendChild(yearRow);
+    addTextInput(yearRow, "Start year: ", "searchParamStartYear");
+    addTextInput(yearRow, "End year: ", "searchParamEndYear");
   }
 
-  addTextInput(fragment, "Surname at birth: ", "searchParamSurname");
-  addTextInput(fragment, "First Forename: ", "searchParamForename1");
-  addTextInput(fragment, "Second Forename: ", "searchParamForename2");
+  {
+    let surnameRow = document.createElement("tr");
+    searchControlsBody.appendChild(surnameRow);
+    let label = type == "birth" ? "Surname at birth: " : "Surname at death: ";
+    addTextInput(surnameRow, label, "searchParamSurname");
 
-  let options = [
-    { label: "Male", value: "male", id: "searchParamGenderMale" },
-    { label: "Female", value: "female", id: "searchParamGenderFemale" },
-    { label: "Either", value: "both", id: "searchParamGenderBoth" },
-  ];
-  createRadioButtonGroup(fragment, "Sex:", "gender", options);
+    createSelect(surnameRow, "Include: ", "searchParamSurnameMatches", [
+      { text: "Exact Matches Only", value: "0" },
+      { text: "Phonetically Similar Variations", value: "1" },
+    ]);
+  }
+
+  {
+    let forename1Row = document.createElement("tr");
+    searchControlsBody.appendChild(forename1Row);
+    addTextInput(forename1Row, "First Forename: ", "searchParamForename1");
+
+    createSelect(forename1Row, "Include: ", "searchParamForename1Matches", [
+      { text: "Exact Matches Only", value: "0" },
+      { text: "Phonetically Similar Variations", value: "1" },
+      { text: "Derivative Name Variations", value: "5" },
+    ]);
+  }
+
+  {
+    let forename2Row = document.createElement("tr");
+    searchControlsBody.appendChild(forename2Row);
+    addTextInput(forename2Row, "Second Forename: ", "searchParamForename2");
+  }
+
+  {
+    let genderRow = document.createElement("tr");
+    searchControlsBody.appendChild(genderRow);
+    let options = [
+      { label: "Male", value: "male", id: "searchParamGenderMale" },
+      { label: "Female", value: "female", id: "searchParamGenderFemale" },
+      { label: "Either", value: "both", id: "searchParamGenderBoth" },
+    ];
+    createRadioButtonGroup(genderRow, "Sex:", "gender", options);
+  }
 
   if (type == "birth") {
-    addTextInput(fragment, "Mother's maiden name: ", "searchParamMmn");
+    let mmnRow = document.createElement("tr");
+    searchControlsBody.appendChild(mmnRow);
+    addTextInput(mmnRow, "Mother's maiden name: ", "searchParamMmn");
+
+    createSelect(mmnRow, "Include: ", "searchParamMmnMatches", [
+      { text: "Exact Matches Only", value: "0" },
+      { text: "Phonetically Similar Variations", value: "1" },
+      { text: "Similar Sounding Variations", value: "4" },
+    ]);
   } else {
-    addTextInput(fragment, "Earliest birth year: ", "searchParamStartBirthYear");
-    addTextInput(fragment, "Latest birth year: ", "searchParamEndBirthYear");
+    let birthYearRow = document.createElement("tr");
+    searchControlsBody.appendChild(birthYearRow);
+    addTextInput(birthYearRow, "Earliest birth year: ", "searchParamStartBirthYear");
+    addTextInput(birthYearRow, "Latest birth year: ", "searchParamEndBirthYear");
   }
 
-  addTextInput(fragment, "District: ", "searchParamDistrict");
+  {
+    let districtRow = document.createElement("tr");
+    searchControlsBody.appendChild(districtRow);
+    addTextInput(districtRow, "District: ", "searchParamDistrict");
+  }
 
   parametersElement.appendChild(fragment);
 
@@ -709,9 +835,9 @@ function createSearchControls(type) {
     birthInput.addEventListener("click", (event) => {
       createSearchControls("birth");
     });
-  }
-  if (type == "birth") {
-    birthInput.checked = true;
+    if (type == "birth") {
+      birthInput.checked = true;
+    }
   }
 
   let deathInput = document.getElementById("searchParamDeath");
@@ -719,9 +845,14 @@ function createSearchControls(type) {
     deathInput.addEventListener("click", (event) => {
       createSearchControls("death");
     });
+    if (type == "death") {
+      deathInput.checked = true;
+    }
   }
-  if (type == "death") {
-    deathInput.checked = true;
+
+  let genderBothInput = document.getElementById("searchParamGenderBoth");
+  if (genderBothInput) {
+    genderBothInput.checked = true;
   }
 }
 
@@ -812,11 +943,14 @@ function setSearchParametersFromControls() {
   searchParameters.endYear = getTextInputValue("searchParamEndYear", true);
 
   searchParameters.surname = getTextInputValue("searchParamSurname");
+  searchParameters.surnameMatches = getSelectValue("searchParamSurnameMatches");
   searchParameters.forename1 = getTextInputValue("searchParamForename1");
+  searchParameters.forename1Matches = getSelectValue("searchParamForename1Matches");
   searchParameters.forename2 = getTextInputValue("searchParamForename2");
 
   if (searchParameters.type == "birth") {
     searchParameters.mmn = getTextInputValue("searchParamMmn");
+    searchParameters.mmnMatches = getTextInputValue("searchParamMmnMatches");
   } else {
     searchParameters.startBirthYear = getTextInputValue("searchParamStartBirthYear", true);
     searchParameters.endBirthYear = getTextInputValue("searchParamEndBirthYear", true);
