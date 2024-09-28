@@ -42,7 +42,7 @@ var userFilteredSearchResults = [];
 var userSortedSearchResults = [];
 
 function extractAllRowsData(document, firstRowFunction, secondRowFunction, result) {
-  console.log("extractAllRowsData called");
+  //console.log("extractAllRowsData called");
 
   let resultsNode = document.querySelector("[name='Results']");
   if (!resultsNode) {
@@ -83,11 +83,11 @@ function extractAllRowsData(document, firstRowFunction, secondRowFunction, resul
   let possiblePageXOfYTdElements = resultsTable.querySelectorAll(
     "tbody > tr > td.main_text > table > tbody > tr > td.main_text"
   );
-  console.log("possiblePageXOfYTdElements.length is: " + possiblePageXOfYTdElements.length);
+  //console.log("possiblePageXOfYTdElements.length is: " + possiblePageXOfYTdElements.length);
 
   for (let possiblePageXOfYTdElement of possiblePageXOfYTdElements) {
     let text = possiblePageXOfYTdElement.textContent;
-    console.log("possiblePageXOfYTdElement, text is: " + text);
+    //console.log("possiblePageXOfYTdElement, text is: " + text);
     // example text : `250 Record(s) Found - Showing Page 1 of 5Go to page      `
     let regex = /(^\d+)\s+Record(?:\(s\))?\s+Found\s+-\s+Showing\s+Page\s+(\d+)\s+of\s+(\d+).*$/i;
     if (regex.test(text)) {
@@ -95,8 +95,8 @@ function extractAllRowsData(document, firstRowFunction, secondRowFunction, resul
       result.resultsPageNumber = Number(text.replace(regex, "$2"));
       result.resultsPageCount = Number(text.replace(regex, "$3"));
       console.log("Found page number, resultsNumRecords is: " + result.resultsNumRecords);
-      console.log("Found page number, resultsPageNumber is: " + result.resultsPageNumber);
-      console.log("Found page number, resultsPageCount is: " + result.resultsPageCount);
+      //console.log("Found page number, resultsPageNumber is: " + result.resultsPageNumber);
+      //console.log("Found page number, resultsPageCount is: " + result.resultsPageCount);
       break;
     }
   }
@@ -201,15 +201,6 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
     console.log("  ageRange: " + ageRange);
   }
 
-  let progressMessage = "Searching " + year + " +/-" + yearRange + ", " + gender;
-  if (age) {
-    progressMessage += ", age " + age + " +/-" + ageRange;
-  }
-  if (pageNumber) {
-    progressMessage += ", page " + pageNumber;
-  }
-  updateProgressDialog(progressMessage);
-
   // Add the parameters in the same order that the GRO page would add them
   if (type == "birth") {
     builder.addIndex("EW_Birth");
@@ -279,8 +270,8 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
 
   let groDocument = await doSearchPost(searchUrl, postData);
 
-  console.log("groDocument is:");
-  console.log(groDocument);
+  //console.log("groDocument is:");
+  //console.log(groDocument);
 
   if (groDocument) {
     let extractResult = extractAllGroRowData(groDocument);
@@ -770,8 +761,32 @@ async function showWarningDialog(message) {
   return await showDialog("Warning", message, ["Continue", "Cancel"]);
 }
 
+var progressDialogResponse = "";
 async function showProgressDialog(message) {
+  progressDialogResponse = "";
   showDialog("Progress", message, ["Stop", "Cancel"]);
+
+  let dialog = document.getElementById("dialog");
+  if (!dialog) {
+    console.log("dialog not found");
+    return;
+  }
+
+  let stopButtonId = "buttonStop";
+  let stopButtonElement = dialog.querySelector("#" + stopButtonId);
+  if (stopButtonElement) {
+    stopButtonElement.addEventListener("click", (event) => {
+      progressDialogResponse = "stop";
+    });
+  }
+
+  let cancelButtonId = "buttonCancel";
+  let cancelButtonElement = dialog.querySelector("#" + cancelButtonId);
+  if (cancelButtonElement) {
+    cancelButtonElement.addEventListener("click", (event) => {
+      progressDialogResponse = "cancel";
+    });
+  }
 }
 
 function updateProgressDialog(message) {
@@ -810,6 +825,62 @@ function closeProgressDialog() {
     return;
   }
   dialog.close();
+}
+
+async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchParameters, gender) {
+  function addFetchResults(result, gender) {
+    if (result) {
+      if (result.success && result.rows) {
+        for (let row of result.rows) {
+          row.gender = gender;
+        }
+
+        totalFetchResults.singleSearchResults.push(result);
+        totalFetchResults.resultCount += result.resultsNumRecords;
+      }
+    }
+  }
+
+  const year = singleSearchParameters.year;
+  const yearRange = singleSearchParameters.yearRange;
+  const age = singleSearchParameters.age;
+  const ageRange = singleSearchParameters.ageRange;
+
+  let progressMessage = "Found " + totalFetchResults.resultCount + " records.";
+  progressMessage += "\nNow searching " + year + " +/-" + yearRange + ", " + gender;
+  if (age) {
+    progressMessage += ", age " + age + " +/-" + ageRange;
+  }
+  updateProgressDialog(progressMessage);
+
+  singleSearchParameters.gender = gender;
+  let result = await doSingleSearch(singleSearchParameters, 1);
+  if (progressDialogResponse) return false;
+
+  if (result.rows && result.rows.length > 0) {
+    if (result.resultsNumRecords >= 250) {
+      // too many results to get all of them
+      showErrorDialog(
+        "A single search returned more the 250 results. Canceling search. Please try a more specific search."
+      );
+      return false;
+    }
+
+    addFetchResults(result, gender);
+
+    if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
+      for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
+        let pageProgressMessage = progressMessage + ", page " + pageNumber;
+        updateProgressDialog(pageProgressMessage);
+
+        result = await doSingleSearch(singleSearchParameters, pageNumber);
+        if (progressDialogResponse) return false;
+        addFetchResults(result, gender);
+      }
+    }
+  }
+
+  return true;
 }
 
 async function doSmartSearch() {
@@ -936,19 +1007,10 @@ async function doSmartSearch() {
   console.log("yearRanges:");
   console.log(yearRanges);
 
-  let totalFetchResults = [];
-
-  function addFetchResults(result, gender) {
-    if (result) {
-      if (result.success && result.rows) {
-        for (let row of result.rows) {
-          row.gender = gender;
-        }
-
-        totalFetchResults.push(result);
-      }
-    }
-  }
+  let totalFetchResults = {
+    singleSearchResults: [],
+    resultCount: 0,
+  };
 
   showProgressDialog("Starting search");
 
@@ -962,42 +1024,28 @@ async function doSmartSearch() {
     console.log("fetching year " + range.year + ", yearRange, " + range.range);
 
     if (searchParameters.gender == "male" || searchParameters.gender == "both") {
-      singleSearchParameters.gender = "male";
-      let result = await doSingleSearch(singleSearchParameters, 1);
-      if (result.rows && result.rows.length > 0) {
-        addFetchResults(result, "male");
-
-        if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
-          for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
-            result = await doSingleSearch(singleSearchParameters, pageNumber);
-            addFetchResults(result, "male");
-          }
-        }
+      let result = await doSearchForGivenYearAndGender(totalFetchResults, singleSearchParameters, "male");
+      if (!result) {
+        break;
       }
     }
     if (searchParameters.gender == "female" || searchParameters.gender == "both") {
-      singleSearchParameters.gender = "female";
-      let result = await doSingleSearch(singleSearchParameters, 1);
-      if (result.rows && result.rows.length > 0) {
-        addFetchResults(result, "female");
-
-        if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
-          for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
-            console.log("doSmartSearch: doing another search for page number: " + pageNumber);
-
-            result = await doSingleSearch(singleSearchParameters, pageNumber);
-            addFetchResults(result, "female");
-          }
-        }
+      let result = await doSearchForGivenYearAndGender(totalFetchResults, singleSearchParameters, "female");
+      if (!result) {
+        break;
       }
     }
   }
 
   closeProgressDialog();
 
+  if (progressDialogResponse == "cancel") {
+    return;
+  }
+
   // clear the global var for the searchResults and popluate from fetch results
   searchResults = [];
-  for (let result of totalFetchResults) {
+  for (let result of totalFetchResults.singleSearchResults) {
     if (result.success && result.rows) {
       for (let row of result.rows) {
         searchResults.push(row);
