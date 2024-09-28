@@ -201,6 +201,15 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
     console.log("  ageRange: " + ageRange);
   }
 
+  let progressMessage = "Searching " + year + " +/-" + yearRange + ", " + gender;
+  if (age) {
+    progressMessage += ", age " + age + " +/-" + ageRange;
+  }
+  if (pageNumber) {
+    progressMessage += ", page " + pageNumber;
+  }
+  updateProgressDialog(progressMessage);
+
   // Add the parameters in the same order that the GRO page would add them
   if (type == "birth") {
     builder.addIndex("EW_Birth");
@@ -285,18 +294,30 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   return { success: false };
 }
 
-function getYearRanges(startYear, endYear, startBirthYear, endBirthYear) {
+function getYearRanges(type, startYear, endYear, startBirthYear, endBirthYear) {
+  let gapStartYear = 1935;
+  let gapEndYear = 1983;
+  if (type == "death") {
+    gapStartYear = 1958;
+  }
+
+  let maxYearAgeRangeAllowed = gapStartYear - 1;
+
   let needAges = false;
-  if (startBirthYear && endBirthYear && startBirthYear <= endBirthYear) {
-    // we could use age in search but don't if the range is too large, in that
-    // case it if better to not pass age to search and filter later.
-    if (endBirthYear - startBirthYear < 20) {
-      needAges = true;
+  if (type == "death") {
+    if (startBirthYear && endBirthYear && startBirthYear <= endBirthYear) {
+      // we could use age in search but don't if the range is too large, in that
+      // case it if better to not pass age to search and filter later.
+      if (endBirthYear - startBirthYear < 20) {
+        needAges = true;
+      }
     }
   }
 
+  let yearRanges = [];
+
   function addYearRange(year, range) {
-    if (needAges && year < 1984) {
+    if (needAges && year <= maxYearAgeRangeAllowed) {
       let minAgeForYearRange = year - range - endBirthYear;
       let maxAgeForYearRange = year + range - startBirthYear;
       if (minAgeForYearRange < 0) {
@@ -335,27 +356,36 @@ function getYearRanges(startYear, endYear, startBirthYear, endBirthYear) {
     }
   }
 
-  let yearRanges = [];
-  let year = startYear;
-  while (year <= endYear) {
-    if (year + 4 > endYear) {
-      // partial
-      if (year + 2 > endYear) {
-        addYearRange(year, 0);
-        year += 1;
+  function addYearsForYearRange(rangeStartYear, rangeEndYear) {
+    let year = rangeStartYear;
+    while (year <= rangeEndYear) {
+      if (year + 4 > rangeEndYear) {
+        // partial
+        if (year + 2 > rangeEndYear) {
+          addYearRange(year, 0);
+          year += 1;
+        } else {
+          addYearRange(year + 1, 1);
+          year += 3;
+        }
       } else {
-        addYearRange(year + 1, 1);
-        year += 3;
+        addYearRange(year + 2, 2);
+        year += 5;
       }
-    } else {
-      addYearRange(year + 2, 2);
-      year += 5;
     }
   }
+
+  if (startYear < gapStartYear && endYear > gapEndYear) {
+    addYearsForYearRange(startYear, gapStartYear - 1);
+    addYearsForYearRange(gapEndYear + 1, endYear);
+  } else {
+    addYearsForYearRange(startYear, endYear);
+  }
+
   return yearRanges;
 }
 
-function clearResultsTable() {
+function clearResultsTable(showPlaceholder) {
   let tableElement = document.getElementById("resultsTable");
   if (!tableElement) {
     return;
@@ -364,6 +394,12 @@ function clearResultsTable() {
   // empty existing table
   while (tableElement.firstChild) {
     tableElement.removeChild(tableElement.firstChild);
+  }
+
+  if (showPlaceholder) {
+    let placeHolder = document.createElement("label");
+    placeHolder.innerText = "The results table will appear here after a successful search.";
+    tableElement.appendChild(placeHolder);
   }
 }
 
@@ -455,7 +491,7 @@ function fillTable(extractedDataObjs) {
   tableElement.appendChild(fragment);
 }
 
-function clearFilters() {
+function clearFilters(showPlaceholder) {
   let resultsFilterContainer = document.getElementById("resultsFilterContainer");
   if (!resultsFilterContainer) {
     return;
@@ -463,6 +499,13 @@ function clearFilters() {
   // remove all children
   while (resultsFilterContainer.firstChild) {
     resultsFilterContainer.removeChild(resultsFilterContainer.firstChild);
+  }
+
+  if (showPlaceholder) {
+    let placeHolder = document.createElement("label");
+    placeHolder.innerText =
+      "The filters appear here when there are results and the filter would have an effect on them.";
+    resultsFilterContainer.appendChild(placeHolder);
   }
 }
 
@@ -628,6 +671,147 @@ function compareExtractedData(a, b) {
   return 0;
 }
 
+function waitForButtonClicks(dialog, buttons) {
+  return new Promise((resolve) => {
+    const handleClick = (event) => {
+      for (let button of buttons) {
+        let buttonId = "button" + button;
+        let buttonElement = dialog.querySelector("#" + buttonId);
+        buttonElement.removeEventListener("click", handleClick);
+      }
+      resolve(event.target.id); // Resolve with the ID of the clicked button
+    };
+
+    for (let button of buttons) {
+      let buttonId = "button" + button;
+      let buttonElement = dialog.querySelector("#" + buttonId);
+      buttonElement.addEventListener("click", handleClick);
+    }
+  });
+}
+
+async function showDialog(heading, message, buttons) {
+  let dialog = document.getElementById("dialog");
+  if (!dialog) {
+    console.log("dialog not found");
+    return;
+  }
+
+  let dialogHeader = dialog.querySelector("div.dialogHeader");
+  if (!dialogHeader) {
+    console.log("dialogHeader not found");
+    return;
+  }
+  let dialogList = dialog.querySelector("ul.dialogMenuItemList");
+  if (!dialogList) {
+    console.log("dialogList not found");
+    return;
+  }
+  let dialogButtonRow = dialog.querySelector("div.dialogButtonRow");
+  if (!dialogButtonRow) {
+    console.log("dialogButtonRow not found");
+    return;
+  }
+
+  // add header
+  {
+    // remove all children
+    while (dialogHeader.firstChild) {
+      dialogHeader.removeChild(dialogHeader.firstChild);
+    }
+    let label = document.createElement("label");
+    label.innerText = heading;
+    dialogHeader.appendChild(label);
+  }
+
+  // add message
+  {
+    // remove all children
+    while (dialogList.firstChild) {
+      dialogList.removeChild(dialogList.firstChild);
+    }
+
+    let listItem = document.createElement("li");
+    dialogList.appendChild(listItem);
+
+    let label = document.createElement("label");
+    label.innerText = message;
+    listItem.appendChild(label);
+  }
+
+  // add buttons
+  {
+    // remove all children
+    while (dialogButtonRow.firstChild) {
+      dialogButtonRow.removeChild(dialogButtonRow.firstChild);
+    }
+    for (let button of buttons) {
+      let buttonElement = document.createElement("button");
+      buttonElement.innerText = button;
+      buttonElement.id = "button" + button;
+      dialogButtonRow.appendChild(buttonElement);
+    }
+  }
+
+  dialog.showModal();
+
+  let clickedButtonId = await waitForButtonClicks(dialog, buttons);
+
+  dialog.close();
+
+  return clickedButtonId;
+}
+
+async function showErrorDialog(message) {
+  return await showDialog("Error", message, ["OK"]);
+}
+
+async function showWarningDialog(message) {
+  return await showDialog("Warning", message, ["Continue", "Cancel"]);
+}
+
+async function showProgressDialog(message) {
+  showDialog("Progress", message, ["Stop", "Cancel"]);
+}
+
+function updateProgressDialog(message) {
+  let dialog = document.getElementById("dialog");
+  if (!dialog) {
+    console.log("dialog not found");
+    return;
+  }
+
+  let dialogList = dialog.querySelector("ul.dialogMenuItemList");
+  if (!dialogList) {
+    console.log("dialogList not found");
+    return;
+  }
+
+  // add message
+  {
+    // remove all children
+    while (dialogList.firstChild) {
+      dialogList.removeChild(dialogList.firstChild);
+    }
+
+    let listItem = document.createElement("li");
+    dialogList.appendChild(listItem);
+
+    let label = document.createElement("label");
+    label.innerText = message;
+    listItem.appendChild(label);
+  }
+}
+
+function closeProgressDialog() {
+  let dialog = document.getElementById("dialog");
+  if (!dialog) {
+    console.log("dialog not found");
+    return;
+  }
+  dialog.close();
+}
+
 async function doSmartSearch() {
   console.log("doSmartSearch");
 
@@ -635,6 +819,92 @@ async function doSmartSearch() {
   clearResultsTable();
 
   setSearchParametersFromControls();
+
+  if (
+    !searchParameters.startYear ||
+    !searchParameters.endYear ||
+    searchParameters.startYear > searchParameters.endYear
+  ) {
+    showErrorDialog("Invalid start and end years");
+    return;
+  }
+
+  if (!searchParameters.surname) {
+    showErrorDialog("Surname is required");
+    return;
+  }
+
+  if (!searchParameters.gender) {
+    showErrorDialog("Gender is required");
+    return;
+  }
+
+  let groStartYear = 1839;
+  let groEndYear = 2022;
+  let gapStartYear = 1935;
+  let gapEndYear = 1983;
+  if (searchParameters.type == "death") {
+    gapStartYear = 1958;
+  }
+
+  let invalidRange = false;
+  let startYear = searchParameters.startYear;
+  let endYear = searchParameters.endYear;
+  if (endYear < groStartYear) {
+    invalidRange = true;
+  } else if (startYear > groEndYear) {
+    invalidRange = true;
+  } else if (startYear >= gapStartYear && endYear <= gapEndYear) {
+    invalidRange = true;
+  }
+  if (invalidRange) {
+    showErrorDialog("Invalid start and end years");
+    return;
+  }
+  let clampedRange = false;
+  let clampedMessage = "Clamped the start and end years as some were out of range.";
+  if (startYear < groStartYear) {
+    startYear = groStartYear;
+    clampedRange = true;
+    clampedMessage += "\nStart year is less than GRO start year of " + groStartYear + ".";
+  }
+  if (endYear > groEndYear) {
+    endYear = groEndYear;
+    clampedRange = true;
+    clampedMessage += "\nEnd year is greater than GRO end year of " + groEndYear + ".";
+  }
+  if (startYear >= gapStartYear && startYear <= gapEndYear) {
+    startYear = gapEndYear;
+    clampedRange = true;
+    clampedMessage += "\nStart year is in the gap in GRO records between " + groStartYear + " and " + groEndYear + ".";
+  }
+  if (endYear >= gapStartYear && endYear <= gapEndYear) {
+    endYear = gapStartYear;
+    clampedRange = true;
+    clampedMessage += "\nEnd year is in the gap in GRO records between " + groStartYear + " and " + groEndYear + ".";
+  }
+  searchParameters.startYear = startYear;
+  searchParameters.endYear = endYear;
+
+  if (clampedRange) {
+    let response = await showWarningDialog(clampedMessage);
+    if (response == "buttonCancel") {
+      return;
+    }
+  }
+
+  if (startYear < gapStartYear && endYear > gapEndYear) {
+    let message =
+      "The year range includes the gap years " +
+      gapStartYear +
+      "-" +
+      gapEndYear +
+      ". These years will not be searched.";
+    let response = await showWarningDialog(message);
+    if (response == "buttonCancel") {
+      return;
+    }
+  }
 
   let singleSearchParameters = {
     type: searchParameters.type,
@@ -656,6 +926,7 @@ async function doSmartSearch() {
   }
 
   let yearRanges = getYearRanges(
+    searchParameters.type,
     searchParameters.startYear,
     searchParameters.endYear,
     startBirthYearForYearRanges,
@@ -678,6 +949,8 @@ async function doSmartSearch() {
       }
     }
   }
+
+  showProgressDialog("Starting search");
 
   for (let range of yearRanges) {
     singleSearchParameters.year = range.year;
@@ -719,6 +992,8 @@ async function doSmartSearch() {
       }
     }
   }
+
+  closeProgressDialog();
 
   // clear the global var for the searchResults and popluate from fetch results
   searchResults = [];
@@ -872,7 +1147,7 @@ function addTextInput(parent, label, id) {
 }
 
 function createSearchControls(type) {
-  let parametersElement = document.getElementById("searchParametersDiv");
+  let parametersElement = document.getElementById("searchParametersContainer");
 
   // empty existing div
   while (parametersElement.firstChild) {
@@ -1007,6 +1282,8 @@ function initializePage() {
   }
 
   createSearchControls("birth");
+  clearFilters(true);
+  clearResultsTable(true);
 }
 
 function fillControlsFromSearchParameters() {

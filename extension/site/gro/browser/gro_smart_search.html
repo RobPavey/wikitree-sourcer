@@ -15,7 +15,8 @@
     <h2>WikiTree Sourcer: GRO Smart Search.</h2>
 
     <div id="searchParametersDiv">
-      <label> Search Parameters: </label>
+      <h3>Search Parameters:</h3>
+      <div id="searchParametersContainer"></div>
     </div>
 
     <button id="searchButton">
@@ -23,14 +24,20 @@
     </button>
 
     <div id="resultsFilterDiv">
-      <label> Results filter: </label>
+      <h3>Results filters:</h3>
       <div id="resultsFilterContainer"></div>
     </div>
 
     <div id="resultTableDiv">
-      <label> Search Results: </label>
+      <h3>Search Results:</h3>
       <table id="resultsTable"></table>
     </div>
+
+    <dialog id="dialog">
+      <div class="dialogHeader"></div>
+      <ul class="dialogMenuItemList"></ul>
+      <div class="dialogButtonRow"></div>
+    </dialog>
 
     <script type="module" src="gro_smart_search.mjs"></script>
   </body>
