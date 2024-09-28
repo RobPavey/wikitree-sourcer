@@ -30,14 +30,16 @@ var domParser = new DOMParser();
 
 var searchParameters = {};
 
-// the unsorted and unfiltered search results
+// this are the main search results that the user can then flter and sort different ways
+// These lways remain sorted by the default sort and they have duplicates and out-of-range
+// entries removed.
 var searchResults = [];
 
 // the unsorted search results after applying user filters
-var filteredSearchResults = [];
+var userFilteredSearchResults = [];
 
-// the sorted and filtered
-var sortedSearchResults = [];
+// the user filtered results after applying user sorting
+var userSortedSearchResults = [];
 
 function extractAllRowsData(document, firstRowFunction, secondRowFunction, result) {
   console.log("extractAllRowsData called");
@@ -353,6 +355,18 @@ function getYearRanges(startYear, endYear, startBirthYear, endBirthYear) {
   return yearRanges;
 }
 
+function clearResultsTable() {
+  let tableElement = document.getElementById("resultsTable");
+  if (!tableElement) {
+    return;
+  }
+
+  // empty existing table
+  while (tableElement.firstChild) {
+    tableElement.removeChild(tableElement.firstChild);
+  }
+}
+
 function fillTable(extractedDataObjs) {
   let possibleHeadings = [
     { key: "eventYear", text: "Year" },
@@ -381,9 +395,7 @@ function fillTable(extractedDataObjs) {
   }
 
   // empty existing table
-  while (tableElement.firstChild) {
-    tableElement.removeChild(tableElement.firstChild);
-  }
+  clearResultsTable();
 
   // check if some of the optional fields exists for any of the entries
 
@@ -410,7 +422,6 @@ function fillTable(extractedDataObjs) {
     let rowElement = document.createElement("tr");
     bodyElement.appendChild(rowElement);
 
-    let addedAgeOrYob = false;
     for (let heading of possibleHeadings) {
       if (!usedKeys.has(heading.key)) {
         continue;
@@ -444,13 +455,60 @@ function fillTable(extractedDataObjs) {
   tableElement.appendChild(fragment);
 }
 
+function clearFilters() {
+  let resultsFilterContainer = document.getElementById("resultsFilterContainer");
+  if (!resultsFilterContainer) {
+    return;
+  }
+  // remove all children
+  while (resultsFilterContainer.firstChild) {
+    resultsFilterContainer.removeChild(resultsFilterContainer.firstChild);
+  }
+}
+
+function applyUserFilters() {
+  userFilteredSearchResults = Array.from(searchResults);
+
+  console.log(
+    "applyUserFilters. Before filter, userFilteredSearchResults.length = " + userFilteredSearchResults.length
+  );
+
+  {
+    let selectElement = document.getElementById("filterByDistrict");
+    if (selectElement) {
+      // Get all selected options
+      const selectedOptions = Array.from(selectElement.selectedOptions);
+
+      // Get the values of the selected options
+      const selectedValues = selectedOptions.map((option) => option.value);
+
+      userFilteredSearchResults = userFilteredSearchResults.filter(function (item, pos, ary) {
+        let district = item.registrationDistrict;
+        if (district) {
+          return selectedValues.includes(district);
+        } else {
+          return selectedValues.includes(" ");
+        }
+      });
+    }
+  }
+
+  console.log("applyUserFilters. After filter, userFilteredSearchResults.length = " + userFilteredSearchResults.length);
+
+  applyUserSorting();
+
+  fillTable(userFilteredSearchResults);
+}
+
+function applyUserSorting() {}
+
 function initFilters(extractedDataObjs) {
   let districts = [];
 
   for (let extractedData of extractedDataObjs) {
     let district = extractedData.registrationDistrict;
     if (district === undefined) {
-      district = "";
+      district = " ";
     }
     if (!districts.includes(district)) {
       districts.push(district);
@@ -459,11 +517,33 @@ function initFilters(extractedDataObjs) {
 
   districts.sort();
 
-  let districtSelectElement = document.getElementById("filterByDistrict");
-  for (let district of districts) {
-    let optionElement = document.createElement("option");
-    optionElement.innerHTML = district;
-    districtSelectElement.appendChild(optionElement);
+  clearFilters();
+
+  let resultsFilterContainer = document.getElementById("resultsFilterContainer");
+  if (!resultsFilterContainer) {
+    return;
+  }
+
+  if (districts.length > 1) {
+    let labelElement = document.createElement("label");
+    labelElement.innerText = "Select districts:";
+    resultsFilterContainer.appendChild(labelElement);
+
+    let selectElement = document.createElement("select");
+    selectElement.id = "filterByDistrict";
+    selectElement.multiple = true;
+    resultsFilterContainer.appendChild(selectElement);
+
+    for (let district of districts) {
+      let optionElement = document.createElement("option");
+      optionElement.innerHTML = district;
+      optionElement.value = district;
+      selectElement.appendChild(optionElement);
+    }
+
+    selectElement.addEventListener("change", (event) => {
+      applyUserFilters();
+    });
   }
 
   // can filter by MMN for both birth and death
@@ -551,6 +631,9 @@ function compareExtractedData(a, b) {
 async function doSmartSearch() {
   console.log("doSmartSearch");
 
+  clearFilters();
+  clearResultsTable();
+
   setSearchParametersFromControls();
 
   let singleSearchParameters = {
@@ -637,7 +720,8 @@ async function doSmartSearch() {
     }
   }
 
-  let searchResults = [];
+  // clear the global var for the searchResults and popluate from fetch results
+  searchResults = [];
   for (let result of totalFetchResults) {
     if (result.success && result.rows) {
       for (let row of result.rows) {
@@ -646,13 +730,14 @@ async function doSmartSearch() {
     }
   }
 
-  sortedSearchResults = searchResults.toSorted(compareExtractedData);
+  searchResults.sort(compareExtractedData);
 
   // we have a sorted list but it could have duplicates for deaths with large birth year range
+  // it could also have birth dates that are out of range.
   if (searchParameters.type == "death") {
-    console.log("Before remove dupes, extractedDataObjs.length = " + sortedSearchResults.length);
+    console.log("Before remove dupes, extractedDataObjs.length = " + searchResults.length);
     // remove an element if it is the same as the one before it.
-    sortedSearchResults = sortedSearchResults.filter(function (item, pos, ary) {
+    searchResults = searchResults.filter(function (item, pos, ary) {
       let keepElement = true;
 
       //console.log("filtering element, forenames = " + item.forenames + ", district = " + item.registrationDistrict);
@@ -689,12 +774,12 @@ async function doSmartSearch() {
 
       return keepElement;
     });
-    console.log("After remove dupes, extractedDataObjs.length = " + sortedSearchResults.length);
+    console.log("After remove dupes, extractedDataObjs.length = " + searchResults.length);
   }
 
-  fillTable(sortedSearchResults);
+  fillTable(searchResults);
 
-  initFilters(sortedSearchResults);
+  initFilters(searchResults);
 }
 
 function getRadioButtonValue(name) {
