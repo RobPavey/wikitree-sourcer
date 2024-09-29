@@ -56,7 +56,7 @@ import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 import { generalizeData } from "../core/wikitree_generalize_data.mjs";
 import { wtApiGetRelatives, wtApiGetPeople, wtApiGetBio } from "./wikitree_api.mjs";
 
-import { GeneralizedData, dateQualifiers } from "/base/core/generalize_data_utils.mjs";
+import { GeneralizedData, dateQualifiers, DateObj } from "/base/core/generalize_data_utils.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
@@ -118,7 +118,8 @@ async function makeApiRequests(extractedData) {
     }
   } else {
     timeApiRequestMade = Date.now();
-    const fields = "Id,Gender,Name,FirstName,MiddleName,LastNameAtBirth,LastNameCurrent,RealName,Nicknames";
+    const fields =
+      "Id,Gender,Name,FirstName,MiddleName,LastNameAtBirth,LastNameCurrent,RealName,Nicknames,BirthDate,DeathDate";
     wtApiGetRelatives(extractedData.wikiId, fields, true, false, false, true).then(
       function handleResolve(jsonData) {
         if (jsonData && jsonData.length > 0) {
@@ -164,6 +165,9 @@ function waitForAPIResponse() {
 }
 
 async function updateGeneralizedDataUsingApiResponse(data) {
+  //console.log("updateGeneralizedDataUsingApiResponse, apiResponse is");
+  //console.log(apiResponse);
+
   function getApiPersonFromGetRelatives(wikiId) {
     //console.log("getApiPersonFromGetRelatives, apiResponse is");
     //console.log(apiResponse);
@@ -183,6 +187,8 @@ async function updateGeneralizedDataUsingApiResponse(data) {
       for (let spouseKey of Object.keys(apiPerson.Spouses)) {
         let spouse = apiPerson.Spouses[spouseKey];
         if (spouse) {
+          //console.log("WTAPI Spouse Info:");
+          //console.log(spouse);
           let spouseWikiId = spouse.Name.replace(/\s/g, "_");
           if (spouseWikiId == wikiId) {
             return {
@@ -192,6 +198,8 @@ async function updateGeneralizedDataUsingApiResponse(data) {
               middleName: spouse.MiddleName,
               prefName: spouse.RealName,
               nicknames: spouse.NickNames,
+              birthDate: spouse.BirthDate,
+              deathDate: spouse.DeathDate,
             };
           }
         }
@@ -266,6 +274,26 @@ async function updateGeneralizedDataUsingApiResponse(data) {
         updateValueIfNeeded(person.name, "prefName", apiInfo.prefName);
       }
       updateValueIfNeeded(person.name, "nicknames", apiInfo.nicknames);
+    }
+
+    // possibly update dates
+    if (apiInfo.birthDate) {
+      if (!person.birthDate) {
+        let dateString = DateUtils.getStdShortDateStringFromYearMonthDayString(apiInfo.birthDate);
+        if (dateString) {
+          person.birthDate = new DateObj();
+          person.birthDate.dateString = dateString;
+        }
+      }
+    }
+    if (apiInfo.deathDate) {
+      if (!person.deathDate) {
+        let dateString = DateUtils.getStdShortDateStringFromYearMonthDayString(apiInfo.deathDate);
+        if (dateString) {
+          person.deathDate = new DateObj();
+          person.deathDate.dateString = dateString;
+        }
+      }
     }
   }
 

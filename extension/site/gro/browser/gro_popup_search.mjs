@@ -41,6 +41,7 @@ import {
 } from "/base/browser/popup/popup_search.mjs";
 import { RT } from "/base/core/record_type.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { options } from "/base/browser/options/options_loader.mjs";
 
 const groStartYear = 1837;
 const groEndYear = 2022;
@@ -101,7 +102,7 @@ async function groSearch(generalizedData, typeOfSearch) {
   });
 }
 
-async function groSmartSearch(gd, typeOfSearch) {
+async function groSmartSearch(gd, typeOfSearch, spouse) {
   // request permission if needed
   const checkPermissionsOptions = {
     reason: "Sourcer needs to send search requests to the GRO site.",
@@ -140,8 +141,11 @@ async function groSmartSearch(gd, typeOfSearch) {
 
     const startReproductiveAge = 14;
     let endReproductiveAge = 80;
+    let spouseEndReproductiveAge = 80;
     if (gd.personGender == "female") {
       endReproductiveAge = 50;
+    } else {
+      spouseEndReproductiveAge = 50;
     }
     let birthYear = yearStringToNumber(gd.inferBirthYear());
     if (birthYear) {
@@ -158,8 +162,7 @@ async function groSmartSearch(gd, typeOfSearch) {
     parameters.surname = gd.inferLastName();
     parameters.gender = "both"; //gd.personGender;
 
-    if (gd.spouses && gd.spouses.length > 0) {
-      let spouse = gd.spouses[0];
+    if (spouse) {
       let spouseLnab = spouse.lastNameAtBirth;
       if (!spouseLnab) {
         if (spouse.name) {
@@ -172,6 +175,36 @@ async function groSmartSearch(gd, typeOfSearch) {
           parameters.mmn = gd.inferLastNameAtBirth();
         } else {
           parameters.mmn = spouseLnab;
+        }
+      }
+
+      if (spouse.birthDate) {
+        let spouseBirthYear = yearStringToNumber(spouse.birthDate.getYearString());
+        if (spouseBirthYear) {
+          let spouseStartReproductiveAge = spouseBirthYear + startReproductiveAge;
+          if (spouseStartReproductiveAge > parameters.startYear) {
+            parameters.startYear = spouseStartReproductiveAge;
+          }
+          let thisSpouseEndReproductiveAge = spouseBirthYear + spouseEndReproductiveAge;
+          if (thisSpouseEndReproductiveAge < parameters.endYear) {
+            parameters.endYear = thisSpouseEndReproductiveAge;
+          }
+        }
+      }
+      if (spouse.deathDate) {
+        let spouseDeathYear = yearStringToNumber(spouse.deathDate.getYearString());
+        if (spouseDeathYear) {
+          if (spouseDeathYear + 1 < parameters.endYear) {
+            parameters.endYear = spouseDeathYear + 1;
+          }
+        }
+      }
+      if (spouse.marriageDate) {
+        let spouseMarriageYear = yearStringToNumber(spouse.marriageDate.getYearString());
+        if (spouseMarriageYear) {
+          if (spouseMarriageYear > parameters.startYear) {
+            parameters.startYear = spouseMarriageYear;
+          }
         }
       }
     }
@@ -293,13 +326,30 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
   }
 }
 
-function addGroSmartSearchChildBirthsMenuItem(menu, data, filter) {
+function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
   const onClick = function (element) {
-    groSmartSearch(data.generalizedData, "birthsOfChildren");
+    groSmartSearch(data.generalizedData, "birthsOfChildren", spouse);
   };
 
-  const menuItemText = "Do smart search for children of this person";
+  let menuItemText = "Do smart search for children with unknown partner";
   let subtitle = "";
+
+  if (spouse) {
+    let spouseName = spouse.name.inferFullName();
+    menuItemText = "Do smart search for children with spouse:";
+    subtitle = spouseName;
+    if (spouse.birthDate || spouse.deathDate) {
+      subtitle += " (";
+      if (spouse.birthDate) {
+        subtitle += spouse.birthDate.getYearString();
+      }
+      subtitle += "-";
+      if (spouse.deathDate) {
+        subtitle += spouse.deathDate.getYearString();
+      }
+      subtitle += ")";
+    }
+  }
 
   if (subtitle) {
     addMenuItemWithSubtitle(menu, menuItemText, onClick, subtitle);
@@ -375,8 +425,16 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
   addGroSameRecordMenuItem(menu, data, filter);
   addGroSearchBirthsMenuItem(menu, data, filter);
   addGroSearchDeathsMenuItem(menu, data, filter);
-  addGroSmartSearchChildBirthsMenuItem(menu, data, filter);
-  addGroSmartSearchDeathsMenuItem(menu, data, filter);
+
+  if (options.search_gro_enableSmartSearch) {
+    if (data.generalizedData.spouses) {
+      for (let spouse of data.generalizedData.spouses) {
+        addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse);
+      }
+    }
+    addGroSmartSearchChildBirthsMenuItem(menu, data, filter);
+    addGroSmartSearchDeathsMenuItem(menu, data, filter);
+  }
 
   endMainMenu(menu);
 }

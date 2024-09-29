@@ -655,6 +655,20 @@ const DateUtils = {
     return dateString;
   },
 
+  getStdShortDateStringFromYearMonthDayString: function (yearMonthDayString, separator = "-") {
+    if (!yearMonthDayString) {
+      return "";
+    }
+
+    let parts = yearMonthDayString.split(separator);
+
+    if (parts.length != 3 || parts[0].length != 4) {
+      return "";
+    }
+
+    return this.getDateStringFromYearMonthDay(parts[0], parts[1], parts[2]);
+  },
+
   compareParsedDates: function (parsedDateA, parsedDateB) {
     if (parsedDateA.isValid) {
       if (parsedDateB.isValid) {
