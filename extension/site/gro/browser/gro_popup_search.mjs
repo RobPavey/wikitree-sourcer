@@ -40,6 +40,7 @@ import {
   doBackgroundSearchWithSearchData,
 } from "/base/browser/popup/popup_search.mjs";
 import { RT } from "/base/core/record_type.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 const groStartYear = 1837;
 const groEndYear = 2022;
@@ -101,9 +102,15 @@ async function groSearch(generalizedData, typeOfSearch) {
 }
 
 async function groSmartSearch(gd, typeOfSearch) {
-  // !!!!!!!!!
-  // need permisions check
-  // !!!!!!
+  // request permission if needed
+  const checkPermissionsOptions = {
+    reason: "Sourcer needs to send search requests to the GRO site.",
+    needsPopupDisplayed: true,
+  };
+
+  if (!(await checkPermissionForSite("*://www.gro.gov.uk/gro/content/certificates/*", checkPermissionsOptions))) {
+    return result;
+  }
 
   function yearStringToNumber(yearString) {
     if (!yearString) {

@@ -24,9 +24,12 @@ SOFTWARE.
 
 import { GroUriBuilder } from "../core/gro_uri_builder.mjs";
 import { extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow } from "../core/gro_extract_data.mjs";
+import { buildGroSearchUrl } from "../core/gro_build_citation.mjs";
 
 // Avoid creating this for every search
 var domParser = new DOMParser();
+
+const maxResultCount = 1000;
 
 var searchParameters = {};
 
@@ -40,6 +43,16 @@ var userFilteredSearchResults = [];
 
 // the user filtered results after applying user sorting
 var userSortedSearchResults = [];
+
+function openGroSearchInNewTab(extractedData) {
+  console.log("openGroSearchInNewTab called");
+
+  let url = buildGroSearchUrl(extractedData);
+
+  // we could use options to decide whether to opren in new tab or window etc
+  // currently don't have options loaded in this tab
+  chrome.tabs.create({ url: url });
+}
 
 function extractAllRowsData(document, firstRowFunction, secondRowFunction, result) {
   //console.log("extractAllRowsData called");
@@ -167,11 +180,23 @@ async function doSearchPost(url, postData) {
     //console.log(htmlText);
 
     let doc = domParser.parseFromString(htmlText, "text/html");
-    return doc;
+
+    return {
+      success: true,
+      status: response.status,
+      document: doc,
+    };
   } catch (error) {
     console.log("fetch failed, error is:");
-    console.log(error);
+    console.log(c);
     console.log("Fetch URL is: " + fetchUrl);
+
+    return {
+      success: false,
+      errorCondition: "Exception",
+      status: response.status,
+      error: error,
+    };
   }
 }
 
@@ -268,18 +293,32 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   console.log("postData is:");
   console.log(postData);
 
-  let groDocument = await doSearchPost(searchUrl, postData);
+  let fetchResult = await doSearchPost(searchUrl, postData);
 
-  //console.log("groDocument is:");
-  //console.log(groDocument);
+  console.log("fetchResult is:");
+  console.log(fetchResult);
 
-  if (groDocument) {
-    let extractResult = extractAllGroRowData(groDocument);
+  if (fetchResult.success && fetchResult.document) {
+    // if user is not logged in we will have a successful fetch but
+    // it will have been redirected to the login page
+    if (fetchResult.document.title) {
+      let lcTitle = fetchResult.document.title.toLowerCase();
+      if (lcTitle.includes("login")) {
+        await showErrorDialog(
+          "Search failed. Please check that you are logged into the GRO site at https://www.gro.gov.uk/gro/content/certificates"
+        );
+        return { success: false };
+      }
+    }
+
+    let extractResult = extractAllGroRowData(fetchResult.document);
 
     console.log("extractResult is:");
     console.log(extractResult);
 
     return extractResult;
+  } else {
+    await showErrorDialog("Search failed. Unable to get search results from GRO.");
   }
 
   return { success: false };
@@ -377,20 +416,20 @@ function getYearRanges(type, startYear, endYear, startBirthYear, endBirthYear) {
 }
 
 function clearResultsTable(showPlaceholder) {
-  let tableElement = document.getElementById("resultsTable");
-  if (!tableElement) {
+  let containerElement = document.getElementById("searchResultsContainer");
+  if (!containerElement) {
     return;
   }
 
-  // empty existing table
-  while (tableElement.firstChild) {
-    tableElement.removeChild(tableElement.firstChild);
+  // empty existing container
+  while (containerElement.firstChild) {
+    containerElement.removeChild(containerElement.firstChild);
   }
 
   if (showPlaceholder) {
     let placeHolder = document.createElement("label");
     placeHolder.innerText = "The results table will appear here after a successful search.";
-    tableElement.appendChild(placeHolder);
+    containerElement.appendChild(placeHolder);
   }
 }
 
@@ -400,7 +439,7 @@ function fillTable(extractedDataObjs) {
     { key: "eventQuarter", text: "Quarter" },
     { key: "lastName", text: "Surname" },
     { key: "forenames", text: "Forenames" },
-    { key: "gender", text: "Sex" },
+    { key: "personGender", text: "Sex" },
     { key: "mothersMaidenName", text: "MMN" },
     { key: "ageAtDeath", text: "Age" },
     { key: "birthYear", text: "Birth Year" },
@@ -416,13 +455,27 @@ function fillTable(extractedDataObjs) {
     }
   }
 
-  let tableElement = document.getElementById("resultsTable");
-  if (!tableElement) {
+  // empty existing table
+  clearResultsTable();
+
+  let containerElement = document.getElementById("searchResultsContainer");
+  if (!containerElement) {
     return;
   }
 
-  // empty existing table
-  clearResultsTable();
+  let resultsSummaryElement = document.createElement("div");
+  containerElement.appendChild(resultsSummaryElement);
+  resultsSummaryElement.id = "resultsSummary";
+
+  let resultsSummary =
+    "Found " + searchResults.length + " results. With filters showing " + extractedDataObjs.length + " results";
+  let resultsSummaryLabel = document.createElement("label");
+  resultsSummaryLabel.innerText = resultsSummary;
+  resultsSummaryElement.appendChild(resultsSummaryLabel);
+
+  let tableElement = document.createElement("table");
+  containerElement.appendChild(tableElement);
+  tableElement.id = "resultsTable";
 
   // check if some of the optional fields exists for any of the entries
 
@@ -460,7 +513,7 @@ function fillTable(extractedDataObjs) {
       if (hasKey) {
         value = extractedData[heading.key];
 
-        if (heading.key == "gender") {
+        if (heading.key == "personGender") {
           if (value == "male") {
             value = "M";
           } else if (value == "female") {
@@ -477,6 +530,16 @@ function fillTable(extractedDataObjs) {
       tdElement.innerHTML = value;
       rowElement.appendChild(tdElement);
     }
+
+    // add button to go to GRO
+    let tdElement = document.createElement("td");
+    rowElement.appendChild(tdElement);
+    let groButtonElement = document.createElement("button");
+    tdElement.appendChild(groButtonElement);
+    groButtonElement.innerText = "Show on GRO";
+    groButtonElement.addEventListener("click", (event) => {
+      openGroSearchInNewTab(extractedData);
+    });
   }
 
   tableElement.appendChild(fragment);
@@ -516,14 +579,38 @@ function applyUserFilters() {
       // Get the values of the selected options
       const selectedValues = selectedOptions.map((option) => option.value);
 
-      userFilteredSearchResults = userFilteredSearchResults.filter(function (item, pos, ary) {
-        let district = item.registrationDistrict;
-        if (district) {
-          return selectedValues.includes(district);
-        } else {
-          return selectedValues.includes(" ");
-        }
-      });
+      if (selectedValues.length > 0 && !selectedValues.includes("ALL")) {
+        userFilteredSearchResults = userFilteredSearchResults.filter(function (item, pos, ary) {
+          let district = item.registrationDistrict;
+          if (district) {
+            return selectedValues.includes(district);
+          } else {
+            return selectedValues.includes(" ");
+          }
+        });
+      }
+    }
+  }
+
+  {
+    let selectElement = document.getElementById("filterByMmn");
+    if (selectElement) {
+      // Get all selected options
+      const selectedOptions = Array.from(selectElement.selectedOptions);
+
+      // Get the values of the selected options
+      const selectedValues = selectedOptions.map((option) => option.value);
+
+      if (selectedValues.length > 0 && !selectedValues.includes("ALL")) {
+        userFilteredSearchResults = userFilteredSearchResults.filter(function (item, pos, ary) {
+          let mmn = item.mothersMaidenName;
+          if (mmn) {
+            return selectedValues.includes(mmn);
+          } else {
+            return selectedValues.includes(" ");
+          }
+        });
+      }
     }
   }
 
@@ -536,8 +623,9 @@ function applyUserFilters() {
 
 function applyUserSorting() {}
 
-function initFilters(extractedDataObjs) {
+function initFilters(searchParameters, extractedDataObjs) {
   let districts = [];
+  let mmns = [];
 
   for (let extractedData of extractedDataObjs) {
     let district = extractedData.registrationDistrict;
@@ -547,9 +635,20 @@ function initFilters(extractedDataObjs) {
     if (!districts.includes(district)) {
       districts.push(district);
     }
+
+    if (searchParameters.type == "birth") {
+      let mmn = extractedData.mothersMaidenName;
+      if (mmn === undefined) {
+        mmn = " ";
+      }
+      if (!mmns.includes(mmn)) {
+        mmns.push(mmn);
+      }
+    }
   }
 
   districts.sort();
+  mmns.sort();
 
   clearFilters();
 
@@ -568,10 +667,48 @@ function initFilters(extractedDataObjs) {
     selectElement.multiple = true;
     resultsFilterContainer.appendChild(selectElement);
 
+    // add initial "ALL" element
+    {
+      let optionElement = document.createElement("option");
+      optionElement.innerHTML = "Show All";
+      optionElement.value = "ALL";
+      selectElement.appendChild(optionElement);
+    }
+
     for (let district of districts) {
       let optionElement = document.createElement("option");
       optionElement.innerHTML = district;
       optionElement.value = district;
+      selectElement.appendChild(optionElement);
+    }
+
+    selectElement.addEventListener("change", (event) => {
+      applyUserFilters();
+    });
+  }
+
+  if (mmns.length > 1) {
+    let labelElement = document.createElement("label");
+    labelElement.innerText = "Select MMNs:";
+    resultsFilterContainer.appendChild(labelElement);
+
+    let selectElement = document.createElement("select");
+    selectElement.id = "filterByMmn";
+    selectElement.multiple = true;
+    resultsFilterContainer.appendChild(selectElement);
+
+    // add initial "ALL" element
+    {
+      let optionElement = document.createElement("option");
+      optionElement.innerHTML = "Show All";
+      optionElement.value = "ALL";
+      selectElement.appendChild(optionElement);
+    }
+
+    for (let mmn of mmns) {
+      let optionElement = document.createElement("option");
+      optionElement.innerHTML = mmn;
+      optionElement.value = mmn;
       selectElement.appendChild(optionElement);
     }
 
@@ -653,9 +790,9 @@ function compareExtractedData(a, b) {
     return 1;
   }
 
-  if (a.gender < b.gender) {
+  if (a.personGender < b.personGender) {
     return -1;
-  } else if (a.gender > b.gender) {
+  } else if (a.personGender > b.personGender) {
     return 1;
   }
 
@@ -832,11 +969,12 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
     if (result) {
       if (result.success && result.rows) {
         for (let row of result.rows) {
-          row.gender = gender;
+          row.personGender = gender;
+          row.eventType = singleSearchParameters.type;
         }
 
         totalFetchResults.singleSearchResults.push(result);
-        totalFetchResults.resultCount += result.resultsNumRecords;
+        totalFetchResults.resultCount += result.rows.length;
       }
     }
   }
@@ -846,21 +984,28 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
   const age = singleSearchParameters.age;
   const ageRange = singleSearchParameters.ageRange;
 
-  let progressMessage = "Found " + totalFetchResults.resultCount + " records.";
-  progressMessage += "\nNow searching " + year + " +/-" + yearRange + ", " + gender;
-  if (age) {
-    progressMessage += ", age " + age + " +/-" + ageRange;
+  function updateSearchProgressMessage(pageNumber) {
+    let progressMessage = "Found " + totalFetchResults.resultCount + " records.";
+    progressMessage += "\nNow searching " + year + " +/-" + yearRange + ", " + gender;
+    if (age) {
+      progressMessage += ", age " + age + " +/-" + ageRange;
+    }
+    if (pageNumber) {
+      progressMessage += ", page " + pageNumber;
+    }
+    updateProgressDialog(progressMessage);
   }
-  updateProgressDialog(progressMessage);
+
+  updateSearchProgressMessage();
 
   singleSearchParameters.gender = gender;
   let result = await doSingleSearch(singleSearchParameters, 1);
-  if (progressDialogResponse) return false;
+  if (progressDialogResponse || !result.success) return false;
 
   if (result.rows && result.rows.length > 0) {
     if (result.resultsNumRecords >= 250) {
       // too many results to get all of them
-      showErrorDialog(
+      await showErrorDialog(
         "A single search returned more the 250 results. Canceling search. Please try a more specific search."
       );
       return false;
@@ -870,11 +1015,9 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
 
     if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
       for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
-        let pageProgressMessage = progressMessage + ", page " + pageNumber;
-        updateProgressDialog(pageProgressMessage);
-
+        updateSearchProgressMessage(pageNumber);
         result = await doSingleSearch(singleSearchParameters, pageNumber);
-        if (progressDialogResponse) return false;
+        if (progressDialogResponse || !result.success) return false;
         addFetchResults(result, gender);
       }
     }
@@ -947,12 +1090,12 @@ async function doSmartSearch() {
   if (startYear >= gapStartYear && startYear <= gapEndYear) {
     startYear = gapEndYear;
     clampedRange = true;
-    clampedMessage += "\nStart year is in the gap in GRO records between " + groStartYear + " and " + groEndYear + ".";
+    clampedMessage += "\nStart year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
   }
   if (endYear >= gapStartYear && endYear <= gapEndYear) {
     endYear = gapStartYear;
     clampedRange = true;
-    clampedMessage += "\nEnd year is in the gap in GRO records between " + groStartYear + " and " + groEndYear + ".";
+    clampedMessage += "\nEnd year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
   }
   searchParameters.startYear = startYear;
   searchParameters.endYear = endYear;
@@ -1035,6 +1178,11 @@ async function doSmartSearch() {
         break;
       }
     }
+
+    if (totalFetchResults.resultCount > maxResultCount) {
+      await showErrorDialog("Exceeded maximum number of search results. Stopping search.");
+      break;
+    }
   }
 
   closeProgressDialog();
@@ -1042,6 +1190,8 @@ async function doSmartSearch() {
   if (progressDialogResponse == "cancel") {
     return;
   }
+
+  console.log("Finished search, totalFetchResults.resultCount = ", totalFetchResults.resultCount);
 
   // clear the global var for the searchResults and popluate from fetch results
   searchResults = [];
@@ -1052,6 +1202,8 @@ async function doSmartSearch() {
       }
     }
   }
+
+  console.log("Populated searchResults, searchResults.length = ", searchResults.length);
 
   searchResults.sort(compareExtractedData);
 
@@ -1102,7 +1254,7 @@ async function doSmartSearch() {
 
   fillTable(searchResults);
 
-  initFilters(searchResults);
+  initFilters(searchParameters, searchResults);
 }
 
 function getRadioButtonValue(name) {

@@ -350,4 +350,4 @@ function buildCitation(input) {
   return simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
 }
 
-export { buildCitation };
+export { buildCitation, buildGroSearchUrl };
