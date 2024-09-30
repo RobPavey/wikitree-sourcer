@@ -25,6 +25,7 @@ SOFTWARE.
 import { GroUriBuilder } from "../core/gro_uri_builder.mjs";
 import { extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow } from "../core/gro_extract_data.mjs";
 import { buildGroSearchUrl } from "../core/gro_build_citation.mjs";
+import { getUkbmdDistrictPageUrl } from "../core/gro_to_ukbmd.mjs";
 
 // Avoid creating this for every search
 var domParser = new DOMParser();
@@ -470,12 +471,14 @@ function fillTable(extractedDataObjs) {
   let resultsSummary =
     "Found " + searchResults.length + " results. With filters showing " + extractedDataObjs.length + " results";
   let resultsSummaryLabel = document.createElement("label");
+  resultsSummaryLabel.className = "resultsSummary";
   resultsSummaryLabel.innerText = resultsSummary;
   resultsSummaryElement.appendChild(resultsSummaryLabel);
 
   let tableElement = document.createElement("table");
   containerElement.appendChild(tableElement);
   tableElement.id = "resultsTable";
+  tableElement.className = "resultsTable";
 
   // check if some of the optional fields exists for any of the entries
 
@@ -490,8 +493,17 @@ function fillTable(extractedDataObjs) {
       let headingText = heading.text;
       let thElement = document.createElement("th");
       thElement.innerText = headingText;
+      thElement.className = "resultsTableHeaderCell";
       headerElement.appendChild(thElement);
     }
+  }
+
+  // add column for go to GRO
+  {
+    let thElement = document.createElement("th");
+    thElement.innerText = "GRO";
+    thElement.className = "resultsTableHeaderCell";
+    headerElement.appendChild(thElement);
   }
 
   let bodyElement = document.createElement("tbody");
@@ -500,6 +512,7 @@ function fillTable(extractedDataObjs) {
 
   for (let extractedData of extractedDataObjs) {
     let rowElement = document.createElement("tr");
+    rowElement.className = "resultsTableDataRow";
     bodyElement.appendChild(rowElement);
 
     for (let heading of possibleHeadings) {
@@ -519,6 +532,16 @@ function fillTable(extractedDataObjs) {
           } else if (value == "female") {
             value = "F";
           }
+        } else if (heading.key == "eventQuarter") {
+          if (value == 1) {
+            value = "Jan-Feb-Mar";
+          } else if (value == 2) {
+            value = "Apr-May-Jun";
+          } else if (value == 3) {
+            value = "Jul-Aug-Sep";
+          } else if (value == 4) {
+            value = "Oct-Nov-Dec";
+          }
         }
 
         if (extractedData[heading.key + "Implied"]) {
@@ -526,23 +549,54 @@ function fillTable(extractedDataObjs) {
         }
       }
 
+      let linkText = "";
+      if (heading.key == "registrationDistrict" && value) {
+        if (extractedData.districtLink) {
+          linkText = extractedData.districtLink;
+        }
+      }
+
       let tdElement = document.createElement("td");
-      tdElement.innerHTML = value;
+      if (linkText) {
+        let linkElement = document.createElement("a");
+        linkElement.setAttribute("href", linkText);
+        linkElement.innerHTML = value;
+        tdElement.appendChild(linkElement);
+      } else {
+        tdElement.innerHTML = value;
+      }
+
+      tdElement.className = "resultsTableDataCell";
       rowElement.appendChild(tdElement);
     }
 
     // add button to go to GRO
     let tdElement = document.createElement("td");
+    tdElement.className = "resultsTableDataCell";
     rowElement.appendChild(tdElement);
     let groButtonElement = document.createElement("button");
     tdElement.appendChild(groButtonElement);
-    groButtonElement.innerText = "Show on GRO";
+    groButtonElement.innerText = "Open tab";
     groButtonElement.addEventListener("click", (event) => {
       openGroSearchInNewTab(extractedData);
     });
   }
 
   tableElement.appendChild(fragment);
+}
+
+function addDistrictLinksToResults(searchResults) {
+  for (let ed of searchResults) {
+    let url = getUkbmdDistrictPageUrl(
+      ed.registrationDistrict,
+      ed.referenceVolume,
+      ed.eventYear,
+      ed.registrationDistrictCode
+    );
+    if (url) {
+      ed.districtLink = url;
+    }
+  }
 }
 
 function clearFilters(showPlaceholder) {
@@ -658,14 +712,20 @@ function initFilters(searchParameters, extractedDataObjs) {
   }
 
   if (districts.length > 1) {
+    let selectDiv = document.createElement("div");
+    selectDiv.className = "filterSelectDiv";
+    resultsFilterContainer.appendChild(selectDiv);
+
     let labelElement = document.createElement("label");
     labelElement.innerText = "Select districts:";
-    resultsFilterContainer.appendChild(labelElement);
+    labelElement.className = "filterSelectLabel";
+    selectDiv.appendChild(labelElement);
 
     let selectElement = document.createElement("select");
     selectElement.id = "filterByDistrict";
+    selectElement.className = "filterSelect";
     selectElement.multiple = true;
-    resultsFilterContainer.appendChild(selectElement);
+    selectDiv.appendChild(selectElement);
 
     // add initial "ALL" element
     {
@@ -688,14 +748,20 @@ function initFilters(searchParameters, extractedDataObjs) {
   }
 
   if (mmns.length > 1) {
+    let selectDiv = document.createElement("div");
+    selectDiv.className = "filterSelectDiv";
+    resultsFilterContainer.appendChild(selectDiv);
+
     let labelElement = document.createElement("label");
     labelElement.innerText = "Select MMNs:";
-    resultsFilterContainer.appendChild(labelElement);
+    labelElement.className = "filterSelectLabel";
+    selectDiv.appendChild(labelElement);
 
     let selectElement = document.createElement("select");
     selectElement.id = "filterByMmn";
+    selectElement.className = "filterSelect";
     selectElement.multiple = true;
-    resultsFilterContainer.appendChild(selectElement);
+    selectDiv.appendChild(selectElement);
 
     // add initial "ALL" element
     {
@@ -717,7 +783,9 @@ function initFilters(searchParameters, extractedDataObjs) {
     });
   }
 
-  // can filter by MMN for both birth and death
+  let clearDiv = document.createElement("div");
+  clearDiv.className = "filterSelectClear";
+  resultsFilterContainer.appendChild(clearDiv);
 }
 
 function compareExtractedData(a, b) {
@@ -1252,6 +1320,8 @@ async function doSmartSearch() {
     console.log("After remove dupes, extractedDataObjs.length = " + searchResults.length);
   }
 
+  addDistrictLinksToResults(searchResults);
+
   fillTable(searchResults);
 
   initFilters(searchParameters, searchResults);
@@ -1279,23 +1349,26 @@ function getSelectValue(id) {
   return "0";
 }
 
-function createRadioButtonGroup(parent, legendText, name, options) {
+function createRadioButtonGroup(parent, labelText, name, options) {
   let tdElement = document.createElement("td");
   parent.appendChild(tdElement);
 
-  let fieldSet = document.createElement("fieldset");
-  tdElement.appendChild(fieldSet);
+  let radioButtonsDiv = document.createElement("div");
+  tdElement.appendChild(radioButtonsDiv);
+  radioButtonsDiv.className = "radioButtons";
 
-  let legend = document.createElement("legend");
-  fieldSet.appendChild(legend);
-  legend.innerText = legendText;
+  let label = document.createElement("label");
+  radioButtonsDiv.appendChild(label);
+  label.innerText = labelText;
 
   for (let option of options) {
     let inputDiv = document.createElement("div");
-    fieldSet.appendChild(inputDiv);
+    inputDiv.className = "radioButtonAndLabel";
+    radioButtonsDiv.appendChild(inputDiv);
     let inputElement = document.createElement("input");
     inputDiv.appendChild(inputElement);
     inputElement.type = "radio";
+    inputElement.className = "radio";
     inputElement.name = name;
     inputElement.value = option.value;
     inputElement.id = option.id;
@@ -1346,6 +1419,48 @@ function addTextInput(parent, label, id) {
   inputElement.id = id;
 }
 
+function createIntro() {
+  let introElement = document.getElementById("introDiv");
+
+  // empty existing div
+  while (introElement.firstChild) {
+    introElement.removeChild(introElement.firstChild);
+  }
+
+  let text = "This tool will compute a set of searches to do on the ";
+  let linkText = "GRO Online Indexes";
+  let text2 = " and submit them for you and collate the results.";
+  let text3 = " The number of results is limited to " + maxResultCount + ".";
+  let text4 = " This is useful, for example,  for finding all the possible birth registrations";
+  text4 += " for children of a couple";
+  text4 += " when you know both their surnames at birth and the dates they could have had children.";
+
+  let fragment = document.createDocumentFragment();
+
+  let labelElement = document.createElement("label");
+  labelElement.innerText = text;
+  fragment.appendChild(labelElement);
+
+  let linkElement = document.createElement("a");
+  linkElement.innerText = linkText;
+  linkElement.setAttribute("href", "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp");
+  fragment.appendChild(linkElement);
+
+  let label2Element = document.createElement("label");
+  label2Element.innerText = text2;
+  fragment.appendChild(label2Element);
+
+  let label3Element = document.createElement("label");
+  label3Element.innerText = text3;
+  fragment.appendChild(label3Element);
+
+  let label4Element = document.createElement("label");
+  label4Element.innerText = text4;
+  fragment.appendChild(label4Element);
+
+  introElement.appendChild(fragment);
+}
+
 function createSearchControls(type) {
   let parametersElement = document.getElementById("searchParametersContainer");
 
@@ -1373,12 +1488,38 @@ function createSearchControls(type) {
     createRadioButtonGroup(typeRow, "Select index to search:", "recordType", options);
   }
 
+  {
+    let genderRow = document.createElement("tr");
+    searchControlsBody.appendChild(genderRow);
+    let options = [
+      { label: "Male", value: "male", id: "searchParamGenderMale" },
+      { label: "Female", value: "female", id: "searchParamGenderFemale" },
+      { label: "Either", value: "both", id: "searchParamGenderBoth" },
+    ];
+    createRadioButtonGroup(genderRow, "Sex:", "gender", options);
+  }
+
   // start year and end year
   {
+    let partialLabel = "";
+    if (type == "birth") {
+      partialLabel = " year of birth reg: ";
+    } else {
+      partialLabel = " year of death reg: ";
+    }
+
     let yearRow = document.createElement("tr");
     searchControlsBody.appendChild(yearRow);
-    addTextInput(yearRow, "Start year: ", "searchParamStartYear");
-    addTextInput(yearRow, "End year: ", "searchParamEndYear");
+    addTextInput(yearRow, "Earliest" + partialLabel, "searchParamStartYear");
+    addTextInput(yearRow, "Latest" + partialLabel, "searchParamEndYear");
+  }
+
+  // if death add start birth year and end birth year
+  if (type == "death") {
+    let birthYearRow = document.createElement("tr");
+    searchControlsBody.appendChild(birthYearRow);
+    addTextInput(birthYearRow, "Earliest year of birth: ", "searchParamStartBirthYear");
+    addTextInput(birthYearRow, "Latest year of birth: ", "searchParamEndBirthYear");
   }
 
   {
@@ -1411,17 +1552,6 @@ function createSearchControls(type) {
     addTextInput(forename2Row, "Second Forename: ", "searchParamForename2");
   }
 
-  {
-    let genderRow = document.createElement("tr");
-    searchControlsBody.appendChild(genderRow);
-    let options = [
-      { label: "Male", value: "male", id: "searchParamGenderMale" },
-      { label: "Female", value: "female", id: "searchParamGenderFemale" },
-      { label: "Either", value: "both", id: "searchParamGenderBoth" },
-    ];
-    createRadioButtonGroup(genderRow, "Sex:", "gender", options);
-  }
-
   if (type == "birth") {
     let mmnRow = document.createElement("tr");
     searchControlsBody.appendChild(mmnRow);
@@ -1432,17 +1562,12 @@ function createSearchControls(type) {
       { text: "Phonetically Similar Variations", value: "1" },
       { text: "Similar Sounding Variations", value: "4" },
     ]);
-  } else {
-    let birthYearRow = document.createElement("tr");
-    searchControlsBody.appendChild(birthYearRow);
-    addTextInput(birthYearRow, "Earliest birth year: ", "searchParamStartBirthYear");
-    addTextInput(birthYearRow, "Latest birth year: ", "searchParamEndBirthYear");
   }
 
   {
     let districtRow = document.createElement("tr");
     searchControlsBody.appendChild(districtRow);
-    addTextInput(districtRow, "District: ", "searchParamDistrict");
+    addTextInput(districtRow, "Registration district: ", "searchParamDistrict");
   }
 
   parametersElement.appendChild(fragment);
@@ -1481,6 +1606,7 @@ function initializePage() {
     searchButton.addEventListener("click", doSmartSearch);
   }
 
+  createIntro();
   createSearchControls("birth");
   clearFilters(true);
   clearResultsTable(true);
