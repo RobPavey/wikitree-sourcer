@@ -26,6 +26,7 @@ import { GroUriBuilder } from "../core/gro_uri_builder.mjs";
 import { extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow } from "../core/gro_extract_data.mjs";
 import { buildGroSearchUrl } from "../core/gro_build_citation.mjs";
 import { getUkbmdDistrictPageUrl } from "../core/gro_to_ukbmd.mjs";
+import { getGroYearRanges } from "../core/gro_years.mjs";
 
 // Avoid creating this for every search
 var domParser = new DOMParser();
@@ -46,7 +47,8 @@ var userFilteredSearchResults = [];
 var userSortedSearchResults = [];
 
 function openGroSearchInNewTab(extractedData) {
-  console.log("openGroSearchInNewTab called");
+  console.log("openGroSearchInNewTab called, extracted data is:");
+  console.log(extractedData);
 
   let url = buildGroSearchUrl(extractedData);
 
@@ -228,7 +230,7 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   }
 
   // Add the parameters in the same order that the GRO page would add them
-  if (type == "birth") {
+  if (type == "births") {
     builder.addIndex("EW_Birth");
   } else {
     builder.addIndex("EW_Death");
@@ -256,7 +258,7 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
     builder.addGenderFemale();
   }
 
-  if (type == "birth") {
+  if (type == "births") {
     builder.addMothersSurname(mmn);
     builder.addMothersSurnameMatches(mmnMatches);
   } else {
@@ -264,7 +266,7 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
     builder.addAgeRange(ageRange);
   }
 
-  if (type == "birth") {
+  if (type == "births") {
     builder.addUrlText("&DOBDay=&DOBMonth=&DOBYear=&PlaceofBirth=");
   } else {
     builder.addUrlText("&DODDay=&DODMonth=&DODYear=&PlaceofDeath=");
@@ -326,16 +328,14 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
 }
 
 function getYearRanges(type, startYear, endYear, startBirthYear, endBirthYear) {
-  let gapStartYear = 1935;
-  let gapEndYear = 1983;
-  if (type == "death") {
-    gapStartYear = 1958;
-  }
+  let groRanges = getGroYearRanges(type);
+  let gapStartYear = groRanges.gapStartYear;
+  let gapEndYear = groRanges.gapEndYear;
 
   let maxYearAgeRangeAllowed = gapStartYear - 1;
 
   let needAges = false;
-  if (type == "death") {
+  if (type == "deaths") {
     if (startBirthYear && endBirthYear && startBirthYear <= endBirthYear) {
       // we could use age in search but don't if the range is too large, in that
       // case it if better to not pass age to search and filter later.
@@ -468,12 +468,27 @@ function fillTable(extractedDataObjs) {
   containerElement.appendChild(resultsSummaryElement);
   resultsSummaryElement.id = "resultsSummary";
 
-  let resultsSummary =
-    "Found " + searchResults.length + " results. With filters showing " + extractedDataObjs.length + " results";
+  function resultsEnding(number) {
+    let text = number + " result";
+    if (number != 1) {
+      text += "s";
+    }
+    text += ".";
+    return text;
+  }
+  let resultsSummary = "Found " + resultsEnding(searchResults.length);
+  if (searchResults.length > 0) {
+    resultsSummary += " After applying filters showing " + resultsEnding(extractedDataObjs.length);
+  }
   let resultsSummaryLabel = document.createElement("label");
   resultsSummaryLabel.className = "resultsSummary";
   resultsSummaryLabel.innerText = resultsSummary;
   resultsSummaryElement.appendChild(resultsSummaryLabel);
+
+  if (searchResults.length == 0) {
+    tableElement.appendChild(fragment);
+    return;
+  }
 
   let tableElement = document.createElement("table");
   containerElement.appendChild(tableElement);
@@ -690,7 +705,7 @@ function initFilters(searchParameters, extractedDataObjs) {
       districts.push(district);
     }
 
-    if (searchParameters.type == "birth") {
+    if (searchParameters.type == "births") {
       let mmn = extractedData.mothersMaidenName;
       if (mmn === undefined) {
         mmn = " ";
@@ -886,7 +901,7 @@ function waitForButtonClicks(dialog, buttons) {
   });
 }
 
-async function showDialog(heading, message, buttons) {
+async function showDialog(heading, message, buttons, type) {
   let dialog = document.getElementById("dialog");
   if (!dialog) {
     console.log("dialog not found");
@@ -898,9 +913,14 @@ async function showDialog(heading, message, buttons) {
     console.log("dialogHeader not found");
     return;
   }
-  let dialogList = dialog.querySelector("ul.dialogMenuItemList");
-  if (!dialogList) {
-    console.log("dialogList not found");
+  let dialogMessageDiv = dialog.querySelector("div.dialogMessage");
+  if (!dialogMessageDiv) {
+    console.log("dialogMessageDiv not found");
+    return;
+  }
+  let dialogBusyDiv = dialog.querySelector("div.dialogBusy");
+  if (!dialogBusyDiv) {
+    console.log("dialogBusyDiv not found");
     return;
   }
   let dialogButtonRow = dialog.querySelector("div.dialogButtonRow");
@@ -915,24 +935,48 @@ async function showDialog(heading, message, buttons) {
     while (dialogHeader.firstChild) {
       dialogHeader.removeChild(dialogHeader.firstChild);
     }
+    let wrapperDiv = document.createElement("div");
+    if (type == "error") {
+      wrapperDiv.className = "dialogErrorHeader";
+    } else if (type == "warning") {
+      wrapperDiv.className = "dialogWarningHeader";
+    } else if (type == "progress") {
+      wrapperDiv.className = "dialogProgressHeader";
+    }
+    dialogHeader.appendChild(wrapperDiv);
     let label = document.createElement("label");
     label.innerText = heading;
-    dialogHeader.appendChild(label);
+    label.className = "dialogHeaderLabel";
+    wrapperDiv.appendChild(label);
   }
 
   // add message
   {
     // remove all children
-    while (dialogList.firstChild) {
-      dialogList.removeChild(dialogList.firstChild);
+    while (dialogMessageDiv.firstChild) {
+      dialogMessageDiv.removeChild(dialogMessageDiv.firstChild);
     }
-
-    let listItem = document.createElement("li");
-    dialogList.appendChild(listItem);
 
     let label = document.createElement("label");
     label.innerText = message;
-    listItem.appendChild(label);
+    dialogMessageDiv.appendChild(label);
+  }
+
+  {
+    while (dialogBusyDiv.firstChild) {
+      dialogBusyDiv.removeChild(dialogBusyDiv.firstChild);
+    }
+
+    if (type == "progress") {
+      let busy = document.createElement("div");
+      busy.id = "busyContainer";
+      busy.className = "busyContainer";
+      dialogBusyDiv.appendChild(busy);
+
+      let loader = document.createElement("div");
+      loader.className = "spinner";
+      busy.appendChild(loader);
+    }
   }
 
   // add buttons
@@ -944,6 +988,7 @@ async function showDialog(heading, message, buttons) {
     for (let button of buttons) {
       let buttonElement = document.createElement("button");
       buttonElement.innerText = button;
+      buttonElement.className = "dialogButton";
       buttonElement.id = "button" + button;
       dialogButtonRow.appendChild(buttonElement);
     }
@@ -959,17 +1004,17 @@ async function showDialog(heading, message, buttons) {
 }
 
 async function showErrorDialog(message) {
-  return await showDialog("Error", message, ["OK"]);
+  return await showDialog("Error", message, ["OK"], "error");
 }
 
 async function showWarningDialog(message) {
-  return await showDialog("Warning", message, ["Continue", "Cancel"]);
+  return await showDialog("Warning", message, ["Continue", "Cancel"], "warning");
 }
 
 var progressDialogResponse = "";
 async function showProgressDialog(message) {
   progressDialogResponse = "";
-  showDialog("Progress", message, ["Stop", "Cancel"]);
+  showDialog("Progress", message, ["Stop", "Cancel"], "progress");
 
   let dialog = document.getElementById("dialog");
   if (!dialog) {
@@ -1001,8 +1046,8 @@ function updateProgressDialog(message) {
     return;
   }
 
-  let dialogList = dialog.querySelector("ul.dialogMenuItemList");
-  if (!dialogList) {
+  let dialogMessageDiv = dialog.querySelector("div.dialogMessage");
+  if (!dialogMessageDiv) {
     console.log("dialogList not found");
     return;
   }
@@ -1010,16 +1055,13 @@ function updateProgressDialog(message) {
   // add message
   {
     // remove all children
-    while (dialogList.firstChild) {
-      dialogList.removeChild(dialogList.firstChild);
+    while (dialogMessageDiv.firstChild) {
+      dialogMessageDiv.removeChild(dialogMessageDiv.firstChild);
     }
-
-    let listItem = document.createElement("li");
-    dialogList.appendChild(listItem);
 
     let label = document.createElement("label");
     label.innerText = message;
-    listItem.appendChild(label);
+    dialogMessageDiv.appendChild(label);
   }
 }
 
@@ -1038,7 +1080,11 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
       if (result.success && result.rows) {
         for (let row of result.rows) {
           row.personGender = gender;
-          row.eventType = singleSearchParameters.type;
+          if (singleSearchParameters.type == "births") {
+            row.eventType = "birth";
+          } else {
+            row.eventType = "death";
+          }
         }
 
         totalFetchResults.singleSearchResults.push(result);
@@ -1080,6 +1126,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
     }
 
     addFetchResults(result, gender);
+    if (totalFetchResults.resultCount > maxResultCount) return true;
 
     if (result.resultsPageCount > 1 && result.resultsPageNumber == 1) {
       for (let pageNumber = 2; pageNumber <= result.resultsPageCount; pageNumber++) {
@@ -1087,6 +1134,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
         result = await doSingleSearch(singleSearchParameters, pageNumber);
         if (progressDialogResponse || !result.success) return false;
         addFetchResults(result, gender);
+        if (totalFetchResults.resultCount > maxResultCount) return true;
       }
     }
   }
@@ -1107,63 +1155,83 @@ async function doSmartSearch() {
     !searchParameters.endYear ||
     searchParameters.startYear > searchParameters.endYear
   ) {
-    showErrorDialog("Invalid start and end years");
+    let message = "Invalid start and end years.";
+    if (!searchParameters.startYear) {
+      message += "\nNo start year specified.";
+    }
+    if (!searchParameters.endYear) {
+      message += "\nNo end year specified.";
+    }
+    if (
+      searchParameters.startYear &&
+      searchParameters.endYear &&
+      searchParameters.startYear > searchParameters.endYear
+    ) {
+      message += "\nStart year is greater than end year.";
+    }
+    showErrorDialog(message);
     return;
   }
 
   if (!searchParameters.surname) {
-    showErrorDialog("Surname is required");
+    showErrorDialog("Surname is required.");
     return;
   }
 
   if (!searchParameters.gender) {
-    showErrorDialog("Gender is required");
+    showErrorDialog("Gender is required.");
     return;
   }
 
-  let groStartYear = 1839;
-  let groEndYear = 2022;
-  let gapStartYear = 1935;
-  let gapEndYear = 1983;
-  if (searchParameters.type == "death") {
-    gapStartYear = 1958;
-  }
+  let groRanges = getGroYearRanges(searchParameters.type);
+  let groStartYear = groRanges.startYear;
+  let groEndYear = groRanges.endYear;
+  let gapStartYear = groRanges.gapStartYear;
+  let gapEndYear = groRanges.gapEndYear;
 
+  let invalidRangeMessage = "Invalid start and end years.";
   let invalidRange = false;
   let startYear = searchParameters.startYear;
   let endYear = searchParameters.endYear;
   if (endYear < groStartYear) {
     invalidRange = true;
+    invalidRangeMessage += "\nEnd year is less than GRO start year of " + groStartYear + ".";
   } else if (startYear > groEndYear) {
     invalidRange = true;
+    invalidRangeMessage += "\nStart year is greater than GRO end year of " + groEndYear + ".";
   } else if (startYear >= gapStartYear && endYear <= gapEndYear) {
     invalidRange = true;
+    invalidRangeMessage += "\nRange is fully within the gap in GRO records of " + gapStartYear + "-" + gapEndYear + ".";
   }
   if (invalidRange) {
-    showErrorDialog("Invalid start and end years");
+    showErrorDialog(invalidRangeMessage);
     return;
   }
   let clampedRange = false;
-  let clampedMessage = "Clamped the start and end years as some were out of range.";
+  let clampedMessage = "Year range checks.";
   if (startYear < groStartYear) {
     startYear = groStartYear;
     clampedRange = true;
     clampedMessage += "\nStart year is less than GRO start year of " + groStartYear + ".";
+    clampedMessage += " Will use start year of " + startYear + ".";
   }
   if (endYear > groEndYear) {
     endYear = groEndYear;
     clampedRange = true;
     clampedMessage += "\nEnd year is greater than GRO end year of " + groEndYear + ".";
+    clampedMessage += " Will use end year of " + endYear + ".";
   }
   if (startYear >= gapStartYear && startYear <= gapEndYear) {
-    startYear = gapEndYear;
+    startYear = gapEndYear + 1;
     clampedRange = true;
     clampedMessage += "\nStart year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
+    clampedMessage += " Will use start year of " + startYear + ".";
   }
   if (endYear >= gapStartYear && endYear <= gapEndYear) {
-    endYear = gapStartYear;
+    endYear = gapStartYear - 1;
     clampedRange = true;
     clampedMessage += "\nEnd year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
+    clampedMessage += " Will use end year of " + endYear + ".";
   }
   searchParameters.startYear = startYear;
   searchParameters.endYear = endYear;
@@ -1202,7 +1270,7 @@ async function doSmartSearch() {
 
   let startBirthYearForYearRanges = 0;
   let endBirthYearForYearRanges = 0;
-  if (searchParameters.type == "death") {
+  if (searchParameters.type == "deaths") {
     startBirthYearForYearRanges = searchParameters.startBirthYear;
     endBirthYearForYearRanges = searchParameters.endBirthYear;
   }
@@ -1277,7 +1345,7 @@ async function doSmartSearch() {
 
   // we have a sorted list but it could have duplicates for deaths with large birth year range
   // it could also have birth dates that are out of range.
-  if (searchParameters.type == "death") {
+  if (searchParameters.type == "deaths") {
     console.log("Before remove dupes, extractedDataObjs.length = " + searchResults.length);
     // remove an element if it is the same as the one before it.
     searchResults = searchResults.filter(function (item, pos, ary) {
@@ -1482,8 +1550,8 @@ function createSearchControls(type) {
     searchControlsBody.appendChild(typeRow);
 
     let options = [
-      { label: "Births", value: "birth", id: "searchParamBirth" },
-      { label: "Deaths", value: "death", id: "searchParamDeath" },
+      { label: "Births", value: "births", id: "searchParamBirth" },
+      { label: "Deaths", value: "deaths", id: "searchParamDeath" },
     ];
     createRadioButtonGroup(typeRow, "Select index to search:", "recordType", options);
   }
@@ -1502,7 +1570,7 @@ function createSearchControls(type) {
   // start year and end year
   {
     let partialLabel = "";
-    if (type == "birth") {
+    if (type == "births") {
       partialLabel = " year of birth reg: ";
     } else {
       partialLabel = " year of death reg: ";
@@ -1515,7 +1583,7 @@ function createSearchControls(type) {
   }
 
   // if death add start birth year and end birth year
-  if (type == "death") {
+  if (type == "deaths") {
     let birthYearRow = document.createElement("tr");
     searchControlsBody.appendChild(birthYearRow);
     addTextInput(birthYearRow, "Earliest year of birth: ", "searchParamStartBirthYear");
@@ -1525,7 +1593,7 @@ function createSearchControls(type) {
   {
     let surnameRow = document.createElement("tr");
     searchControlsBody.appendChild(surnameRow);
-    let label = type == "birth" ? "Surname at birth: " : "Surname at death: ";
+    let label = type == "births" ? "Surname at birth: " : "Surname at death: ";
     addTextInput(surnameRow, label, "searchParamSurname");
 
     createSelect(surnameRow, "Include: ", "searchParamSurnameMatches", [
@@ -1552,7 +1620,7 @@ function createSearchControls(type) {
     addTextInput(forename2Row, "Second Forename: ", "searchParamForename2");
   }
 
-  if (type == "birth") {
+  if (type == "births") {
     let mmnRow = document.createElement("tr");
     searchControlsBody.appendChild(mmnRow);
     addTextInput(mmnRow, "Mother's maiden name: ", "searchParamMmn");
@@ -1576,9 +1644,9 @@ function createSearchControls(type) {
   let birthInput = document.getElementById("searchParamBirth");
   if (birthInput) {
     birthInput.addEventListener("click", (event) => {
-      createSearchControls("birth");
+      createSearchControls("births");
     });
-    if (type == "birth") {
+    if (type == "births") {
       birthInput.checked = true;
     }
   }
@@ -1586,9 +1654,9 @@ function createSearchControls(type) {
   let deathInput = document.getElementById("searchParamDeath");
   if (deathInput) {
     deathInput.addEventListener("click", (event) => {
-      createSearchControls("death");
+      createSearchControls("deaths");
     });
-    if (type == "death") {
+    if (type == "deaths") {
       deathInput.checked = true;
     }
   }
@@ -1607,7 +1675,7 @@ function initializePage() {
   }
 
   createIntro();
-  createSearchControls("birth");
+  createSearchControls("births");
   clearFilters(true);
   clearResultsTable(true);
 }
@@ -1652,7 +1720,7 @@ function fillControlsFromSearchParameters() {
 
   setRadioButton("gender", searchParameters.gender);
 
-  if (type == "birth") {
+  if (type == "births") {
     fillTextInput("searchParamMmn", searchParameters.mmn);
   } else {
     fillTextInput("searchParamStartBirthYear", searchParameters.startBirthYear);
@@ -1694,7 +1762,7 @@ function setSearchParametersFromControls() {
   searchParameters.forenameMatches = getSelectValue("searchParamForenameMatches");
   searchParameters.forename2 = getTextInputValue("searchParamForename2");
 
-  if (searchParameters.type == "birth") {
+  if (searchParameters.type == "births") {
     searchParameters.mmn = getTextInputValue("searchParamMmn");
     searchParameters.mmnMatches = getTextInputValue("searchParamMmnMatches");
   } else {

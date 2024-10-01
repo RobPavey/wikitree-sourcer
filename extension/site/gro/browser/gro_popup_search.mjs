@@ -43,19 +43,21 @@ import { RT } from "/base/core/record_type.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const groStartYear = 1837;
-const groEndYear = 2022;
+import { getOverallGroYearRange, getGroYearRanges } from "../core/gro_years.mjs";
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Helper functions
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function shouldShowSearchMenuItem(data, filter) {
+  let groRange = getOverallGroYearRange();
+
   const siteConstraints = {
-    startYear: groStartYear,
-    endYear: groEndYear,
+    startYear: groRange.startYear,
+    endYear: groRange.endYear,
     countryList: ["England and Wales"],
     exactCountryList: ["United Kingdom"],
+    dateTestType: "bd",
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
@@ -65,16 +67,157 @@ function shouldShowSearchMenuItem(data, filter) {
   return true;
 }
 
-function birthYearInGroRange(data) {
-  // currently starts at 1837 and there is a gap from 1935-1983
-  let birthYear = data.generalizedData.inferBirthYear();
-  return birthYear && birthYear >= groStartYear;
+function yearStringToNumber(yearString) {
+  if (!yearString) {
+    return 0;
+  }
+  let yearNum = Number(yearString);
+
+  if (!yearNum || isNaN(yearNum)) {
+    yearNum = 0;
+  }
+  return yearNum;
 }
 
-function deathYearInGroRange(data) {
+function birthYearInOverallGroRange(data) {
+  let groRanges = getGroYearRanges("births");
+
+  // currently starts at 1837 and there is a gap from 1935-1983
+  let birthYear = data.generalizedData.inferBirthYear();
+  return birthYear && birthYear >= groRanges.startYear && birthYear <= groRanges.endYear;
+}
+
+function deathYearInOverallGroRange(data) {
+  let groRanges = getGroYearRanges("deaths");
+
   // currently starts at 1837 and there is a gap from 1958-1983
   let deathYear = data.generalizedData.inferDeathYear();
-  return deathYear && deathYear >= groStartYear;
+  return deathYear && deathYear >= groRanges.startYear && deathYear <= groRanges.endYear;
+}
+
+function yearRangeOverlapsOverallGroRange(range) {
+  let groRanges = getGroYearRanges("deaths");
+
+  if (range.startYear && range.endYear) {
+    if (range.endYear < groRanges.startYear || range.startYear > groRanges.endYear) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function yearInInGroRanges(type, year) {
+  if (!year) {
+    return false;
+  }
+  let groRanges = getGroYearRanges(type);
+  let inOverallRange = year >= groRanges.startYear && year <= groRanges.endYear;
+  let inGap = year >= groRanges.gapStartYear && year <= groRanges.gapEndYear;
+
+  return inOverallRange && !inGap;
+}
+
+function yearRangeOverlapsGroRanges(type, range) {
+  if (!range || !range.startYear || !range.endYear) {
+    return false;
+  }
+  let groRanges = getGroYearRanges(type);
+  let overlapsOverallRange = range.endYear >= groRanges.startYear && range.startYear <= groRanges.endYear;
+  let inGap = range.startYear >= groRanges.gapStartYear && range.endYear <= groRanges.gapEndYear;
+
+  return overlapsOverallRange && !inGap;
+}
+
+function getYearRangesAsText(type) {
+  let groRanges = getGroYearRanges(type);
+  let text =
+    "(" +
+    groRanges.startYear +
+    "-" +
+    (groRanges.gapStartYear - 1) +
+    ", " +
+    (groRanges.gapEndYear + 1) +
+    "-" +
+    groRanges.endYear +
+    ")";
+
+  return text;
+}
+
+function getReproductiveYearRangeForCouple(gd, spouse) {
+  const startReproductiveAge = 14;
+
+  let endReproductiveAge = 80;
+  let spouseEndReproductiveAge = 80;
+  if (gd.personGender == "female") {
+    endReproductiveAge = 50;
+  } else {
+    spouseEndReproductiveAge = 50;
+  }
+
+  let range = {};
+
+  let birthYear = yearStringToNumber(gd.inferBirthYear());
+  if (birthYear) {
+    range.startYear = birthYear + startReproductiveAge;
+    range.endYear = birthYear + endReproductiveAge;
+    let deathYear = yearStringToNumber(gd.inferDeathYear());
+    if (deathYear) {
+      if (range.endYear > deathYear + 1) {
+        range.endYear = deathYear + 1;
+      }
+    }
+  }
+
+  if (spouse) {
+    if (spouse.birthDate) {
+      let spouseBirthYear = yearStringToNumber(spouse.birthDate.getYearString());
+      if (spouseBirthYear) {
+        let spouseStartReproductiveAge = spouseBirthYear + startReproductiveAge;
+        if (spouseStartReproductiveAge > range.startYear) {
+          range.startYear = spouseStartReproductiveAge;
+        }
+        let thisSpouseEndReproductiveAge = spouseBirthYear + spouseEndReproductiveAge;
+        if (thisSpouseEndReproductiveAge < range.endYear) {
+          range.endYear = thisSpouseEndReproductiveAge;
+        }
+      }
+    }
+    if (spouse.deathDate) {
+      let spouseDeathYear = yearStringToNumber(spouse.deathDate.getYearString());
+      if (spouseDeathYear) {
+        if (spouseDeathYear + 1 < range.endYear) {
+          range.endYear = spouseDeathYear + 1;
+        }
+      }
+    }
+    if (spouse.marriageDate) {
+      let spouseMarriageYear = yearStringToNumber(spouse.marriageDate.getYearString());
+      if (spouseMarriageYear) {
+        if (spouseMarriageYear > range.startYear) {
+          range.startYear = spouseMarriageYear;
+        }
+      }
+    }
+  }
+
+  return range;
+}
+
+function getPossibleDeathRange(gd) {
+  const maxLifespan = 120;
+  let range = {};
+  let birthYear = yearStringToNumber(gd.inferBirthYear());
+  if (birthYear) {
+    range.startYear = birthYear - 2;
+    range.endYear = birthYear + maxLifespan;
+
+    range.startBirthYear = birthYear - 2;
+    range.endBirthYear = birthYear + 2;
+  }
+
+  return range;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -113,18 +256,6 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
     return result;
   }
 
-  function yearStringToNumber(yearString) {
-    if (!yearString) {
-      return 0;
-    }
-    let yearNum = Number(yearString);
-
-    if (!yearNum || isNaN(yearNum)) {
-      yearNum = 0;
-    }
-    return yearNum;
-  }
-
   let searchUrl = "/site/gro/browser/gro_smart_search.html";
   let searchData = {
     timeStamp: Date.now(),
@@ -134,30 +265,14 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
   let parameters = {};
 
   if (typeOfSearch == "birthsOfChildren") {
-    parameters.type = "birth";
+    parameters.type = "births";
 
     parameters.surname = gd.inferLastName();
     parameters.gender = gd.personGender;
 
-    const startReproductiveAge = 14;
-    let endReproductiveAge = 80;
-    let spouseEndReproductiveAge = 80;
-    if (gd.personGender == "female") {
-      endReproductiveAge = 50;
-    } else {
-      spouseEndReproductiveAge = 50;
-    }
-    let birthYear = yearStringToNumber(gd.inferBirthYear());
-    if (birthYear) {
-      parameters.startYear = birthYear + startReproductiveAge;
-      parameters.endYear = birthYear + endReproductiveAge;
-      let deathYear = yearStringToNumber(gd.inferDeathYear());
-      if (deathYear) {
-        if (parameters.endYear > deathYear + 1) {
-          parameters.endYear = deathYear + 1;
-        }
-      }
-    }
+    let yearRange = getReproductiveYearRangeForCouple(gd, spouse);
+    parameters.startYear = yearRange.startYear;
+    parameters.endYear = yearRange.endYear;
 
     parameters.surname = gd.inferLastName();
     parameters.gender = "both"; //gd.personGender;
@@ -177,49 +292,17 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
           parameters.mmn = spouseLnab;
         }
       }
-
-      if (spouse.birthDate) {
-        let spouseBirthYear = yearStringToNumber(spouse.birthDate.getYearString());
-        if (spouseBirthYear) {
-          let spouseStartReproductiveAge = spouseBirthYear + startReproductiveAge;
-          if (spouseStartReproductiveAge > parameters.startYear) {
-            parameters.startYear = spouseStartReproductiveAge;
-          }
-          let thisSpouseEndReproductiveAge = spouseBirthYear + spouseEndReproductiveAge;
-          if (thisSpouseEndReproductiveAge < parameters.endYear) {
-            parameters.endYear = thisSpouseEndReproductiveAge;
-          }
-        }
-      }
-      if (spouse.deathDate) {
-        let spouseDeathYear = yearStringToNumber(spouse.deathDate.getYearString());
-        if (spouseDeathYear) {
-          if (spouseDeathYear + 1 < parameters.endYear) {
-            parameters.endYear = spouseDeathYear + 1;
-          }
-        }
-      }
-      if (spouse.marriageDate) {
-        let spouseMarriageYear = yearStringToNumber(spouse.marriageDate.getYearString());
-        if (spouseMarriageYear) {
-          if (spouseMarriageYear > parameters.startYear) {
-            parameters.startYear = spouseMarriageYear;
-          }
-        }
-      }
+    } else {
+      // no spouse, we have to search with surname of this person
+      // So, if this is a woman, we cannot search for births with any registered father because
+      // the surname in search cannot be left blank
     }
   } else if (typeOfSearch == "deaths") {
-    parameters.type = "death";
+    parameters.type = "deaths";
 
-    const maxLifespan = 120;
-    let birthYear = yearStringToNumber(gd.inferBirthYear());
-    if (birthYear) {
-      parameters.startYear = birthYear - 2;
-      parameters.endYear = birthYear + maxLifespan;
-
-      parameters.startBirthYear = birthYear - 2;
-      parameters.endBirthYear = birthYear + 2;
-    }
+    let deathRange = getPossibleDeathRange(gd);
+    parameters.startYear = deathRange.startYear;
+    parameters.endYear = deathRange.endYear;
 
     parameters.surname = gd.inferLastNameAtDeath();
     parameters.forename1 = gd.inferFirstName();
@@ -271,7 +354,7 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addGroSearchBirthsMenuItem(menu, data, filter) {
-  if (!filter && !birthYearInGroRange(data)) {
+  if (!filter && !birthYearInOverallGroRange(data)) {
     return;
   }
 
@@ -279,12 +362,13 @@ function addGroSearchBirthsMenuItem(menu, data, filter) {
     groSearch(data.generalizedData, "births");
   };
 
-  const menuItemText = "Search GRO Births (1837-1934, 1984-2022)";
+  const menuItemText = "Search GRO Births " + getYearRangesAsText("births");
+
   let year = data.generalizedData.inferBirthYear();
   let subtitle = "";
 
   if (year) {
-    if (year < groStartYear || year > groEndYear || (year > 1934 && year < 1984)) {
+    if (!yearInInGroRanges("births", year)) {
       subtitle = "Birth year " + year + " is not covered by GRO";
     }
   } else {
@@ -299,7 +383,7 @@ function addGroSearchBirthsMenuItem(menu, data, filter) {
 }
 
 function addGroSearchDeathsMenuItem(menu, data, filter) {
-  if (!filter && !deathYearInGroRange(data)) {
+  if (!filter && !deathYearInOverallGroRange(data)) {
     return;
   }
 
@@ -307,12 +391,12 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
     groSearch(data.generalizedData, "deaths");
   };
 
-  const menuItemText = "Search GRO Deaths (1837-1957, 1984-2022)";
+  const menuItemText = "Search GRO Deaths " + getYearRangesAsText("deaths");
   let year = data.generalizedData.inferDeathYear();
   let subtitle = "";
 
   if (year) {
-    if (year < groStartYear || year > groEndYear || (year > 1957 && year < 1984)) {
+    if (!yearInInGroRanges("deaths", year)) {
       subtitle = "Death year " + year + " is not covered by GRO";
     }
   } else {
@@ -327,11 +411,16 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
 }
 
 function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
+  let yearRange = getReproductiveYearRangeForCouple(data.generalizedData, spouse);
+  if (!yearRangeOverlapsOverallGroRange(yearRange)) {
+    return;
+  }
+
   const onClick = function (element) {
     groSmartSearch(data.generalizedData, "birthsOfChildren", spouse);
   };
 
-  let menuItemText = "Do smart search for children with unknown partner";
+  let menuItemText = "";
   let subtitle = "";
 
   if (spouse) {
@@ -349,6 +438,19 @@ function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
       }
       subtitle += ")";
     }
+  } else {
+    let gender = data.extractedData.personGender;
+
+    if (gender == "female") {
+      menuItemText = "Do smart search for children with no registered father";
+    } else {
+      menuItemText = "Do smart search for children with any mother";
+    }
+  }
+
+  if (!yearRangeOverlapsGroRanges("births", yearRange)) {
+    let rangeText = getYearRangesAsText(yearRange.startYear, yearRange.endYear);
+    subtitle += "\nBirth years " + rangeText + " are not covered by GRO";
   }
 
   if (subtitle) {
@@ -359,6 +461,11 @@ function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
 }
 
 function addGroSmartSearchDeathsMenuItem(menu, data, filter) {
+  let yearRange = getPossibleDeathRange(data.generalizedData);
+  if (!yearRangeOverlapsOverallGroRange(yearRange)) {
+    return;
+  }
+
   const onClick = function (element) {
     groSmartSearch(data.generalizedData, "deaths");
   };
@@ -388,14 +495,14 @@ function addGroSameRecordMenuItem(menu, data) {
   if (recordType == RT.BirthRegistration) {
     let year = data.generalizedData.inferBirthYear();
     if (year) {
-      if (year < groStartYear || year > groEndYear || (year > 1934 && year < 1984)) {
+      if (!yearInInGroRanges("births", year)) {
         subtitle = "Birth year " + year + " is not covered by GRO";
       }
     }
   } else if (recordType == RT.DeathRegistration) {
     let year = data.generalizedData.inferDeathYear();
     if (year) {
-      if (year < groStartYear || year > groEndYear || (year > 1957 && year < 1984)) {
+      if (!yearInInGroRanges("deaths", year)) {
         subtitle = "Death year " + year + " is not covered by GRO";
       }
     }

@@ -89,3 +89,112 @@ th.resultsTableHeaderCell {
   text-align: left;
   background: #e1f0b4;
 }
+
+/****************
+Search parameters area
+*****************/
+
+#dialog {
+  width: 500px;
+}
+
+.dialogHeader {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dialogErrorHeader {
+  background-color: rgb(251, 120, 120);
+  padding: 10px;
+}
+
+.dialogWarningHeader {
+  background-color: rgb(248, 189, 70);
+  padding: 10px;
+}
+
+.dialogProgressHeader {
+  background-color: #e1f0b4;
+  padding: 10px;
+}
+
+.dialogMessage {
+  margin-left: 10px;
+}
+
+.dialogButtonRow {
+  margin-top: 10px;
+}
+
+.dialogButton {
+  margin-right: 10px;
+}
+
+/* busy menu */
+
+.busyContainer {
+  /*display: inline-block;*/
+  background-color: #ffffff; /* color of spinner background */
+  padding: 10px;
+  margin: 0px;
+  animation: opacityFadeIn 0.2s 1 ease-in; /* fade in briefly, not sure if this is necessary */
+}
+
+.spinner {
+  /* inspired by https://projects.lukehaas.me/css-loaders/ */
+  font-size: 10px;
+  margin: 0px auto;
+  text-indent: -9999em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background: #a12929;
+  background: -moz-linear-gradient(left, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  animation: spinner3 1.4s infinite linear;
+  transform: translateZ(0);
+}
+.spinner:before {
+  width: 50%;
+  height: 50%;
+  background: #c7ec58; /* color of spinner */
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+}
+.spinner:after {
+  background-color: #ffffff; /* color of inner circle background */
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@keyframes spinner3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes opacityFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

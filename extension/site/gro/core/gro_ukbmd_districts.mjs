@@ -1454,9 +1454,9 @@ function isValidUkbmdDistrictName(encodedName) {
 }
 
 function getDisambigatedDistrictName(possibleNames, volume, year, districtCode) {
-  console.log("getDisambigatedDistrictName, possibleNames:");
-  console.log(possibleNames);
-  console.log("Vol = " + volume + ", year = " + year + ", districtCode = " + districtCode);
+  //console.log("getDisambigatedDistrictName, possibleNames:");
+  //console.log(possibleNames);
+  //console.log("Vol = " + volume + ", year = " + year + ", districtCode = " + districtCode);
 
   if (!year) {
     return "";
@@ -1481,22 +1481,22 @@ function getDisambigatedDistrictName(possibleNames, volume, year, districtCode) 
     }
   }
 
-  console.log("lcVolume = " + lcVolume + ", lcDistrictCode = " + lcDistrictCode);
+  //console.log("lcVolume = " + lcVolume + ", lcDistrictCode = " + lcDistrictCode);
 
   let result = "";
 
   // if we have a district code (only for later records) try to match that first
   if (lcDistrictCode) {
-    console.log("lcDistrictCode = " + lcDistrictCode);
+    //console.log("lcDistrictCode = " + lcDistrictCode);
     for (let possibleName of possibleNames) {
       let encodedName = encodeURI(possibleName);
       let districtDetails = districts[encodedName];
 
       if (districtDetails) {
         if (districtDetails.districtCodes) {
-          console.log("District has codes");
+          //console.log("District has codes");
           for (let code of districtDetails.districtCodes) {
-            console.log("Comparing " + lcDistrictCode + " with " + code.id);
+            //console.log("Comparing " + lcDistrictCode + " with " + code.id);
             if (lcDistrictCode.startsWith(code.id)) {
               if (code.startYear <= year && code.endYear >= year) {
                 if (result) {

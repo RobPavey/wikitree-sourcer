@@ -48,6 +48,7 @@ function getUkbmdDistrictPageUrl(district, volume, year, districtCode) {
     ashbydelazouch: "ashby-de-la-zouch",
     ashtonunderlyne: "ashton under lyne",
     "ashton underlyne": "ashton under lyne",
+    asminster: "axminster", // transcription error
     bamsley: "barnsley", // transcription error?
     "bangor and beaumaris": "bangor",
     "barrow in furness": "barrow-in-furness",
