@@ -282,6 +282,9 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
     parameters.gender = gd.personGender;
 
     let yearRange = getReproductiveYearRangeForCouple(gd, spouse);
+    if (yearRange.startYear > yearRange.endYear) {
+      return;
+    }
     parameters.startYear = yearRange.startYear;
     parameters.endYear = yearRange.endYear;
 
@@ -425,7 +428,7 @@ function addGroSearchDeathsMenuItem(menu, data, filter) {
 
 function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
   let yearRange = getReproductiveYearRangeForCouple(data.generalizedData, spouse);
-  if (!yearRangeOverlapsOverallGroRange(yearRange)) {
+  if (!yearRangeOverlapsOverallGroRange(yearRange) || yearRange.startYear > yearRange.endYear) {
     return;
   }
 

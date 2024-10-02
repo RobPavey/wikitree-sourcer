@@ -1296,6 +1296,9 @@ async function checkForAndReportErrorsAndWarnings() {
     }
   }
 
+  // If we clamped values change them in the input fields
+  fillControlsFromSearchParameters();
+
   return true;
 }
 

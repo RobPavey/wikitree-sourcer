@@ -64,7 +64,9 @@ input.radio {
 #searchButton {
   background: #25422d;
   border-radius: 5px;
-  padding: 13px 30px 14px;
+  padding: 10px 30px;
+  margin-top: 10px;
+  margin-left: 180px;
   color: #fff;
   font-size: 20px;
   border: 0;
