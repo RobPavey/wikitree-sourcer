@@ -31,6 +31,14 @@ input.radio {
   display: inline-block;
 }
 
+.searchParamError {
+  border-color: red;
+}
+.searchParamWarning {
+  border-color: orange;
+  border-style: solid;
+}
+
 /****************
 Filter area
 *****************/

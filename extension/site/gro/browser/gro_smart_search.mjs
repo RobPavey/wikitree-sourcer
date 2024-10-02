@@ -486,7 +486,6 @@ function fillTable(extractedDataObjs) {
   resultsSummaryElement.appendChild(resultsSummaryLabel);
 
   if (searchResults.length == 0) {
-    tableElement.appendChild(fragment);
     return;
   }
 
@@ -516,7 +515,7 @@ function fillTable(extractedDataObjs) {
   // add column for go to GRO
   {
     let thElement = document.createElement("th");
-    thElement.innerText = "GRO";
+    thElement.innerText = "GRO site";
     thElement.className = "resultsTableHeaderCell";
     headerElement.appendChild(thElement);
   }
@@ -1142,13 +1141,13 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
   return true;
 }
 
-async function doSmartSearch() {
-  console.log("doSmartSearch");
-
-  clearFilters();
-  clearResultsTable();
-
-  setSearchParametersFromControls();
+function checkSearchParameters() {
+  let result = {
+    errorInputIds: [],
+    warningInputIds: [],
+    errorMessages: [],
+    warningMessages: [],
+  };
 
   if (
     !searchParameters.startYear ||
@@ -1158,29 +1157,32 @@ async function doSmartSearch() {
     let message = "Invalid start and end years.";
     if (!searchParameters.startYear) {
       message += "\nNo start year specified.";
+      result.errorInputIds.push("searchParamStartYear");
     }
     if (!searchParameters.endYear) {
       message += "\nNo end year specified.";
+      result.errorInputIds.push("searchParamEndYear");
     }
     if (
       searchParameters.startYear &&
       searchParameters.endYear &&
       searchParameters.startYear > searchParameters.endYear
     ) {
+      result.errorInputIds.push("searchParamStartYear");
+      result.errorInputIds.push("searchParamEndYear");
       message += "\nStart year is greater than end year.";
     }
-    showErrorDialog(message);
-    return;
+    result.errorMessages.push(message);
   }
 
   if (!searchParameters.surname) {
-    showErrorDialog("Surname is required.");
-    return;
+    result.errorInputIds.push("searchParamSurname");
+    result.errorMessages.push("Surname is required.");
   }
 
   if (!searchParameters.gender) {
-    showErrorDialog("Gender is required.");
-    return;
+    result.errorInputIds.push("searchParamGender");
+    result.errorMessages.push("Gender is required.");
   }
 
   let groRanges = getGroYearRanges(searchParameters.type);
@@ -1196,17 +1198,21 @@ async function doSmartSearch() {
   if (endYear < groStartYear) {
     invalidRange = true;
     invalidRangeMessage += "\nEnd year is less than GRO start year of " + groStartYear + ".";
+    result.errorInputIds.push("searchParamEndYear");
   } else if (startYear > groEndYear) {
     invalidRange = true;
     invalidRangeMessage += "\nStart year is greater than GRO end year of " + groEndYear + ".";
+    result.errorInputIds.push("searchParamStartYear");
   } else if (startYear >= gapStartYear && endYear <= gapEndYear) {
     invalidRange = true;
     invalidRangeMessage += "\nRange is fully within the gap in GRO records of " + gapStartYear + "-" + gapEndYear + ".";
+    result.errorInputIds.push("searchParamStartYear");
+    result.errorInputIds.push("searchParamEndYear");
   }
   if (invalidRange) {
-    showErrorDialog(invalidRangeMessage);
-    return;
+    result.errorMessages.push(invalidRangeMessage);
   }
+
   let clampedRange = false;
   let clampedMessage = "Year range checks.";
   if (startYear < groStartYear) {
@@ -1214,33 +1220,34 @@ async function doSmartSearch() {
     clampedRange = true;
     clampedMessage += "\nStart year is less than GRO start year of " + groStartYear + ".";
     clampedMessage += " Will use start year of " + startYear + ".";
+    result.warningInputIds.push("searchParamStartYear");
   }
   if (endYear > groEndYear) {
     endYear = groEndYear;
     clampedRange = true;
     clampedMessage += "\nEnd year is greater than GRO end year of " + groEndYear + ".";
     clampedMessage += " Will use end year of " + endYear + ".";
+    result.warningInputIds.push("searchParamEndYear");
   }
   if (startYear >= gapStartYear && startYear <= gapEndYear) {
     startYear = gapEndYear + 1;
     clampedRange = true;
     clampedMessage += "\nStart year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
     clampedMessage += " Will use start year of " + startYear + ".";
+    result.warningInputIds.push("searchParamStartYear");
   }
   if (endYear >= gapStartYear && endYear <= gapEndYear) {
     endYear = gapStartYear - 1;
     clampedRange = true;
     clampedMessage += "\nEnd year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
     clampedMessage += " Will use end year of " + endYear + ".";
+    result.warningInputIds.push("searchParamEndYear");
   }
   searchParameters.startYear = startYear;
   searchParameters.endYear = endYear;
 
   if (clampedRange) {
-    let response = await showWarningDialog(clampedMessage);
-    if (response == "buttonCancel") {
-      return;
-    }
+    result.warningMessages.push(clampedMessage);
   }
 
   if (startYear < gapStartYear && endYear > gapEndYear) {
@@ -1250,10 +1257,59 @@ async function doSmartSearch() {
       "-" +
       gapEndYear +
       ". These years will not be searched.";
+    result.warningMessages.push(message);
+    result.warningInputIds.push("searchParamStartYear");
+    result.warningInputIds.push("searchParamEndYear");
+  }
+
+  if (searchParameters.type == "births") {
+    if (searchParameters.endYear > 1923 && searchParameters.mmn) {
+      let message = "Mother's Maiden Name is specified but range includes years greater than 1923.";
+      message += "\n\nFor those years the GRO search cannot narrow the search results using the MMN";
+      message += " but it does return the MMN in the result if it matches,";
+      message += " so there will be extra search results with blank MMNs.";
+      if (searchParameters.startYear <= 1924 && searchParameters.endYear >= 1924) {
+        message += "\n\nThe year 1924 is a special case. It does return the MMN for non-matching results.";
+        message += " So there may be extra search results with non-matching MMNs.";
+      }
+      message += "\n\nYou can use the MMN results filter to only show the results with the MMNs that you want.";
+      result.warningMessages.push(message);
+      result.warningInputIds.push("searchParamMmn");
+    }
+  }
+
+  return result;
+}
+
+async function checkForAndReportErrorsAndWarnings() {
+  let checkData = checkSearchParameters();
+
+  if (checkData.errorMessages.length) {
+    showErrorDialog(checkData.errorMessages[0]);
+    return false;
+  }
+
+  for (let message of checkData.warningMessages) {
     let response = await showWarningDialog(message);
     if (response == "buttonCancel") {
-      return;
+      return false;
     }
+  }
+
+  return true;
+}
+
+async function doSmartSearch() {
+  console.log("doSmartSearch");
+
+  clearFilters();
+  clearResultsTable();
+
+  setSearchParametersFromControls();
+
+  let success = await checkForAndReportErrorsAndWarnings();
+  if (!success) {
+    return;
   }
 
   let singleSearchParameters = {
@@ -1529,6 +1585,51 @@ function createIntro() {
   introElement.appendChild(fragment);
 }
 
+function updateSearchControlsOnChange() {
+  console.log("updateSearchControlsOnChange");
+  setSearchParametersFromControls();
+  console.log("updateSearchControlsOnChange, searchParameters is:");
+  console.log(searchParameters);
+
+  const allSearchParamInputIds = [
+    "searchParamStartYear",
+    "searchParamEndYear",
+    "searchParamStartBirthYear",
+    "searchParamEndBirthYear",
+    "searchParamSurname",
+    "searchParamForename1",
+    "searchParamForename2",
+    "searchParamMmn",
+    "searchParamDistrict",
+  ];
+
+  for (let id of allSearchParamInputIds) {
+    let element = document.getElementById(id);
+    if (element) {
+      element.classList.remove("searchParamError");
+      element.classList.remove("searchParamWarning");
+    } else {
+      console.log("element with id " + id + " not found");
+    }
+  }
+
+  let checkData = checkSearchParameters();
+  console.log("checkData is:");
+  console.log(checkData);
+
+  for (let id of checkData.errorInputIds) {
+    let element = document.getElementById(id);
+    element.classList.add("searchParamError");
+  }
+
+  for (let id of checkData.warningInputIds) {
+    let element = document.getElementById(id);
+    if (!element.classList.contains("searchParamError")) {
+      element.classList.add("searchParamWarning");
+    }
+  }
+}
+
 function createSearchControls(type) {
   let parametersElement = document.getElementById("searchParametersContainer");
 
@@ -1540,6 +1641,7 @@ function createSearchControls(type) {
   let fragment = document.createDocumentFragment();
 
   let searchControlsTable = document.createElement("table");
+  searchControlsTable.id = "searchControlsTable";
   fragment.appendChild(searchControlsTable);
   let searchControlsBody = document.createElement("tbody");
   searchControlsTable.appendChild(searchControlsBody);
@@ -1622,6 +1724,7 @@ function createSearchControls(type) {
 
   if (type == "births") {
     let mmnRow = document.createElement("tr");
+    mmnRow.id = "searchParamMmnRow";
     searchControlsBody.appendChild(mmnRow);
     addTextInput(mmnRow, "Mother's maiden name: ", "searchParamMmn");
 
@@ -1665,6 +1768,11 @@ function createSearchControls(type) {
   if (genderBothInput) {
     genderBothInput.checked = true;
   }
+
+  // add a listener for whenever controls changed
+  searchControlsTable.addEventListener("change", (event) => {
+    updateSearchControlsOnChange();
+  });
 }
 
 function initializePage() {
@@ -1726,6 +1834,8 @@ function fillControlsFromSearchParameters() {
     fillTextInput("searchParamStartBirthYear", searchParameters.startBirthYear);
     fillTextInput("searchParamEndBirthYear", searchParameters.endBirthYear);
   }
+
+  updateSearchControlsOnChange();
 }
 
 function setSearchParametersFromControls() {

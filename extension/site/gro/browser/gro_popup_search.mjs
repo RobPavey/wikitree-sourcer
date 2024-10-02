@@ -145,6 +145,17 @@ function getYearRangesAsText(type) {
   return text;
 }
 
+function getYearRangeAsText(startYear, endYear) {
+  if (!startYear) {
+    startYear = "";
+  }
+  if (!endYear) {
+    endYear = "";
+  }
+  let text = startYear + "-" + endYear;
+  return text;
+}
+
 function getReproductiveYearRangeForCouple(gd, spouse) {
   const startReproductiveAge = 14;
 
@@ -303,6 +314,8 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
     let deathRange = getPossibleDeathRange(gd);
     parameters.startYear = deathRange.startYear;
     parameters.endYear = deathRange.endYear;
+    parameters.startBirthYear = deathRange.startBirthYear;
+    parameters.endBirthYear = deathRange.endBirthYear;
 
     parameters.surname = gd.inferLastNameAtDeath();
     parameters.forename1 = gd.inferFirstName();
@@ -449,7 +462,7 @@ function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
   }
 
   if (!yearRangeOverlapsGroRanges("births", yearRange)) {
-    let rangeText = getYearRangesAsText(yearRange.startYear, yearRange.endYear);
+    let rangeText = getYearRangeAsText(yearRange.startYear, yearRange.endYear);
     subtitle += "\nBirth years " + rangeText + " are not covered by GRO";
   }
 
