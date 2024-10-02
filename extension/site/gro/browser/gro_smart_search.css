@@ -27,16 +27,53 @@ input.radio {
   display: inline-block;
 }
 
+input.radio {
+  margin-left: 0px;
+}
+
+.radioLabel {
+  margin-right: 5px;
+}
+
 .radioButtonAndLabel {
   display: inline-block;
 }
 
+.textInputYear {
+  width: 50px;
+}
+
+.textInputName,
+.textInputDistrict {
+  width: 160px;
+}
+
+.searchParamsRequired {
+  font-weight: bold;
+}
+
 .searchParamError {
   border-color: red;
+  border-style: solid;
 }
 .searchParamWarning {
   border-color: orange;
   border-style: solid;
+}
+
+#searchButton {
+  background: #25422d;
+  border-radius: 5px;
+  padding: 13px 30px 14px;
+  color: #fff;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+  border-style: solid;
+}
+
+#searchButton:hover {
+  background: #2cb107;
 }
 
 /****************

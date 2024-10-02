@@ -1473,22 +1473,23 @@ function getSelectValue(id) {
   return "0";
 }
 
-function createRadioButtonGroup(parent, labelText, name, options) {
-  let tdElement = document.createElement("td");
-  parent.appendChild(tdElement);
-
-  let radioButtonsDiv = document.createElement("div");
-  tdElement.appendChild(radioButtonsDiv);
-  radioButtonsDiv.className = "radioButtons";
+function createRadioButtonGroup(parent, labelText, name, options, required) {
+  let labelTdElement = document.createElement("td");
+  parent.appendChild(labelTdElement);
+  let valueTdElement = document.createElement("td");
+  parent.appendChild(valueTdElement);
 
   let label = document.createElement("label");
-  radioButtonsDiv.appendChild(label);
+  labelTdElement.appendChild(label);
   label.innerText = labelText;
+  if (required) {
+    label.classList.add("searchParamsRequired");
+  }
 
   for (let option of options) {
     let inputDiv = document.createElement("div");
     inputDiv.className = "radioButtonAndLabel";
-    radioButtonsDiv.appendChild(inputDiv);
+    valueTdElement.appendChild(inputDiv);
     let inputElement = document.createElement("input");
     inputDiv.appendChild(inputElement);
     inputElement.type = "radio";
@@ -1498,22 +1499,25 @@ function createRadioButtonGroup(parent, labelText, name, options) {
     inputElement.id = option.id;
     let labelElement = document.createElement("label");
     inputDiv.appendChild(labelElement);
+    labelElement.className = "radioLabel";
     labelElement.innerText = option.label;
   }
 }
 
 function createSelect(parent, label, id, options) {
-  let tdElement = document.createElement("td");
-  parent.appendChild(tdElement);
+  let labelTdElement = document.createElement("td");
+  parent.appendChild(labelTdElement);
+  let valuelTdElement = document.createElement("td");
+  parent.appendChild(valuelTdElement);
 
   let labelElement = document.createElement("label");
-  tdElement.appendChild(labelElement);
+  labelTdElement.appendChild(labelElement);
   labelElement.innerText = label;
 
   let selectElement = document.createElement("select");
   selectElement.id = id;
   selectElement.class = "dropdown";
-  tdElement.appendChild(selectElement);
+  valuelTdElement.appendChild(selectElement);
 
   let isFirst = true;
   for (let option of options) {
@@ -1528,19 +1532,24 @@ function createSelect(parent, label, id, options) {
   }
 }
 
-function addTextInput(parent, label, id) {
-  let tdElement = document.createElement("td");
-  parent.appendChild(tdElement);
+function addTextInput(parent, label, id, inputClass, required) {
+  let labelTdElement = document.createElement("td");
+  parent.appendChild(labelTdElement);
+  let valueTdElement = document.createElement("td");
+  parent.appendChild(valueTdElement);
 
-  let divElement = document.createElement("div");
-  tdElement.appendChild(divElement);
   let labelElement = document.createElement("label");
-  divElement.appendChild(labelElement);
+  labelTdElement.appendChild(labelElement);
   labelElement.innerText = label;
+  if (required) {
+    labelElement.classList.add("searchParamsRequired");
+  }
+
   let inputElement = document.createElement("input");
-  divElement.appendChild(inputElement);
+  valueTdElement.appendChild(inputElement);
   inputElement.type = "text";
   inputElement.id = id;
+  inputElement.className = inputClass;
 }
 
 function createIntro() {
@@ -1655,7 +1664,7 @@ function createSearchControls(type) {
       { label: "Births", value: "births", id: "searchParamBirth" },
       { label: "Deaths", value: "deaths", id: "searchParamDeath" },
     ];
-    createRadioButtonGroup(typeRow, "Select index to search:", "recordType", options);
+    createRadioButtonGroup(typeRow, "Select index to search:", "recordType", options, true);
   }
 
   {
@@ -1664,9 +1673,9 @@ function createSearchControls(type) {
     let options = [
       { label: "Male", value: "male", id: "searchParamGenderMale" },
       { label: "Female", value: "female", id: "searchParamGenderFemale" },
-      { label: "Either", value: "both", id: "searchParamGenderBoth" },
+      { label: "Both", value: "both", id: "searchParamGenderBoth" },
     ];
-    createRadioButtonGroup(genderRow, "Sex:", "gender", options);
+    createRadioButtonGroup(genderRow, "Sex/Gender:", "gender", options, true);
   }
 
   // start year and end year
@@ -1680,25 +1689,25 @@ function createSearchControls(type) {
 
     let yearRow = document.createElement("tr");
     searchControlsBody.appendChild(yearRow);
-    addTextInput(yearRow, "Earliest" + partialLabel, "searchParamStartYear");
-    addTextInput(yearRow, "Latest" + partialLabel, "searchParamEndYear");
+    addTextInput(yearRow, "Earliest" + partialLabel, "searchParamStartYear", "textInputYear", true);
+    addTextInput(yearRow, "Latest" + partialLabel, "searchParamEndYear", "textInputYear", true);
   }
 
   // if death add start birth year and end birth year
   if (type == "deaths") {
     let birthYearRow = document.createElement("tr");
     searchControlsBody.appendChild(birthYearRow);
-    addTextInput(birthYearRow, "Earliest year of birth: ", "searchParamStartBirthYear");
-    addTextInput(birthYearRow, "Latest year of birth: ", "searchParamEndBirthYear");
+    addTextInput(birthYearRow, "Earliest year of birth: ", "searchParamStartBirthYear", "textInputYear", false);
+    addTextInput(birthYearRow, "Latest year of birth: ", "searchParamEndBirthYear", "textInputYear", false);
   }
 
   {
     let surnameRow = document.createElement("tr");
     searchControlsBody.appendChild(surnameRow);
     let label = type == "births" ? "Surname at birth: " : "Surname at death: ";
-    addTextInput(surnameRow, label, "searchParamSurname");
+    addTextInput(surnameRow, label, "searchParamSurname", "textInputName", true);
 
-    createSelect(surnameRow, "Include: ", "searchParamSurnameMatches", [
+    createSelect(surnameRow, "Surname matching: ", "searchParamSurnameMatches", [
       { text: "Exact Matches Only", value: "0" },
       { text: "Phonetically Similar Variations", value: "1" },
     ]);
@@ -1707,9 +1716,9 @@ function createSearchControls(type) {
   {
     let forename1Row = document.createElement("tr");
     searchControlsBody.appendChild(forename1Row);
-    addTextInput(forename1Row, "First Forename: ", "searchParamForename1");
+    addTextInput(forename1Row, "First Forename: ", "searchParamForename1", "textInputName", false);
 
-    createSelect(forename1Row, "Include: ", "searchParamForenameMatches", [
+    createSelect(forename1Row, "Forename matching: ", "searchParamForenameMatches", [
       { text: "Exact Matches Only", value: "0" },
       { text: "Phonetically Similar Variations", value: "1" },
       { text: "Derivative Name Variations", value: "5" },
@@ -1719,16 +1728,16 @@ function createSearchControls(type) {
   {
     let forename2Row = document.createElement("tr");
     searchControlsBody.appendChild(forename2Row);
-    addTextInput(forename2Row, "Second Forename: ", "searchParamForename2");
+    addTextInput(forename2Row, "Second Forename: ", "searchParamForename2", "textInputName", false);
   }
 
   if (type == "births") {
     let mmnRow = document.createElement("tr");
     mmnRow.id = "searchParamMmnRow";
     searchControlsBody.appendChild(mmnRow);
-    addTextInput(mmnRow, "Mother's maiden name: ", "searchParamMmn");
+    addTextInput(mmnRow, "Mother's maiden name: ", "searchParamMmn", "textInputName", false);
 
-    createSelect(mmnRow, "Include: ", "searchParamMmnMatches", [
+    createSelect(mmnRow, "MMN matching: ", "searchParamMmnMatches", [
       { text: "Exact Matches Only", value: "0" },
       { text: "Phonetically Similar Variations", value: "1" },
       { text: "Similar Sounding Variations", value: "4" },
@@ -1738,7 +1747,7 @@ function createSearchControls(type) {
   {
     let districtRow = document.createElement("tr");
     searchControlsBody.appendChild(districtRow);
-    addTextInput(districtRow, "Registration district: ", "searchParamDistrict");
+    addTextInput(districtRow, "Registration district: ", "searchParamDistrict", "textInputDistrict", false);
   }
 
   parametersElement.appendChild(fragment);
