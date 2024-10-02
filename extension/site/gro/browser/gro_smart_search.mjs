@@ -22,18 +22,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { GroUriBuilder } from "../core/gro_uri_builder.mjs";
-import { extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow } from "../core/gro_extract_data.mjs";
 import { buildGroSearchUrl } from "../core/gro_build_citation.mjs";
 import { getUkbmdDistrictPageUrl } from "../core/gro_to_ukbmd.mjs";
 import { getGroYearRanges } from "../core/gro_years.mjs";
-
-// Avoid creating this for every search
-var domParser = new DOMParser();
+import { doSingleSearch } from "./gro_smart_search_single_search.mjs";
+import {
+  progressDialogResponse,
+  showErrorDialog,
+  showProgressDialog,
+  updateProgressDialog,
+  closeProgressDialog,
+} from "./gro_smart_search_dialog.mjs";
+import {
+  searchParameters,
+  createSearchControls,
+  setSearchParametersFromControls,
+  fillControlsFromSearchParameters,
+  checkForAndReportErrorsAndWarnings,
+} from "./gro_smart_search_parameters.mjs";
 
 const maxResultCount = 1000;
-
-var searchParameters = {};
 
 // this are the main search results that the user can then flter and sort different ways
 // These lways remain sorted by the default sort and they have duplicates and out-of-range
@@ -43,288 +51,15 @@ var searchResults = [];
 // the unsorted search results after applying user filters
 var userFilteredSearchResults = [];
 
-// the user filtered results after applying user sorting
-var userSortedSearchResults = [];
-
 function openGroSearchInNewTab(extractedData) {
-  console.log("openGroSearchInNewTab called, extracted data is:");
-  console.log(extractedData);
+  //console.log("openGroSearchInNewTab called, extracted data is:");
+  //console.log(extractedData);
 
   let url = buildGroSearchUrl(extractedData);
 
   // we could use options to decide whether to opren in new tab or window etc
   // currently don't have options loaded in this tab
   chrome.tabs.create({ url: url });
-}
-
-function extractAllRowsData(document, firstRowFunction, secondRowFunction, result) {
-  //console.log("extractAllRowsData called");
-
-  let resultsNode = document.querySelector("[name='Results']");
-  if (!resultsNode) {
-    console.log("extractAllRowsData: no results found in document");
-    return;
-  }
-
-  let resultsTable = resultsNode.closest("TABLE");
-  if (!resultsTable) {
-    console.log("extractAllRowsData: no results table found in document");
-    return;
-  }
-
-  // look for the selected result
-  let inputElements = resultsTable.querySelectorAll("input[type=radio]");
-
-  // if no results bail out
-  if (inputElements.length == 0) {
-    console.log("extractAllRowsData: no result rows found in document");
-    return;
-  }
-
-  result.rows = [];
-
-  for (let inputElement of inputElements) {
-    let rowResult = {};
-    firstRowFunction(inputElement, rowResult);
-    secondRowFunction(inputElement, rowResult);
-
-    result.rows.push(rowResult);
-  }
-
-  // Look to see how many pages there are
-  result.resultsNumRecords = 0;
-  result.resultsPageCount = 1;
-  result.resultsPageNumber = 1;
-
-  let possiblePageXOfYTdElements = resultsTable.querySelectorAll(
-    "tbody > tr > td.main_text > table > tbody > tr > td.main_text"
-  );
-  //console.log("possiblePageXOfYTdElements.length is: " + possiblePageXOfYTdElements.length);
-
-  for (let possiblePageXOfYTdElement of possiblePageXOfYTdElements) {
-    let text = possiblePageXOfYTdElement.textContent;
-    //console.log("possiblePageXOfYTdElement, text is: " + text);
-    // example text : `250 Record(s) Found - Showing Page 1 of 5Go to page      `
-    let regex = /(^\d+)\s+Record(?:\(s\))?\s+Found\s+-\s+Showing\s+Page\s+(\d+)\s+of\s+(\d+).*$/i;
-    if (regex.test(text)) {
-      result.resultsNumRecords = Number(text.replace(regex, "$1"));
-      result.resultsPageNumber = Number(text.replace(regex, "$2"));
-      result.resultsPageCount = Number(text.replace(regex, "$3"));
-      console.log("Found page number, resultsNumRecords is: " + result.resultsNumRecords);
-      //console.log("Found page number, resultsPageNumber is: " + result.resultsPageNumber);
-      //console.log("Found page number, resultsPageCount is: " + result.resultsPageCount);
-      break;
-    }
-  }
-
-  result.success = true;
-}
-
-function extractAllGroRowData(document) {
-  var result = {
-    success: false,
-  };
-
-  // first check whether these are births or deaths
-  const isBirth = document.querySelector("#EW_Birth:checked");
-  const isDeath = document.querySelector("#EW_Death:checked");
-
-  if (isBirth) {
-    extractAllRowsData(document, extractFirstRowForBirth, extractSecondRow, result);
-  } else if (isDeath) {
-    extractAllRowsData(document, extractFirstRowForDeath, extractSecondRow, result);
-  }
-
-  result.success = true;
-
-  //console.log(result);
-
-  return result;
-}
-
-async function doSearchPost(url, postData) {
-  //console.log('doFetch, document.location is: ' + document.location);
-
-  let fetchUrl = url;
-
-  console.log("doFetch, fetchUrl is: " + fetchUrl);
-
-  let fetchOptionsHeaders = {
-    accept:
-      "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-    "accept-language": "en-US,en;q=0.9",
-    "Content-Type": "application/x-www-form-urlencoded",
-  };
-
-  let fetchOptions = {
-    headers: fetchOptionsHeaders,
-    body: postData,
-    method: "POST",
-  };
-
-  try {
-    let response = await fetch(fetchUrl, fetchOptions);
-
-    //console.log("doFetch, response.status is: " + response.status);
-
-    if (response.status !== 200) {
-      //console.log("Looks like there was a problem. Status Code: " + response.status);
-      //console.log("Fetch URL is: " + fetchUrl);
-      return {
-        success: false,
-        errorCondition: "FetchError",
-        status: response.status,
-      };
-    }
-
-    let htmlText = await response.text();
-
-    //console.log("doFetch: response text is:");
-    //console.log(htmlText);
-
-    let doc = domParser.parseFromString(htmlText, "text/html");
-
-    return {
-      success: true,
-      status: response.status,
-      document: doc,
-    };
-  } catch (error) {
-    console.log("fetch failed, error is:");
-    console.log(c);
-    console.log("Fetch URL is: " + fetchUrl);
-
-    return {
-      success: false,
-      errorCondition: "Exception",
-      status: response.status,
-      error: error,
-    };
-  }
-}
-
-async function doSingleSearch(singleSearchParameters, pageNumber) {
-  let builder = new GroUriBuilder(true);
-
-  const type = singleSearchParameters.type;
-  const surname = singleSearchParameters.surname;
-  const surnameMatches = singleSearchParameters.surnameMatches;
-  const forename1 = singleSearchParameters.forename1;
-  const forenameMatches = singleSearchParameters.forenameMatches;
-  const forename2 = singleSearchParameters.forename2;
-  const mmn = singleSearchParameters.mmn;
-  const mmnMatches = singleSearchParameters.mmnMatches;
-  const year = singleSearchParameters.year;
-  const yearRange = singleSearchParameters.yearRange;
-  const age = singleSearchParameters.age;
-  const ageRange = singleSearchParameters.ageRange;
-  const gender = singleSearchParameters.gender;
-  const district = singleSearchParameters.district;
-
-  console.log("doSingleSearch, singleSearchParameters has:");
-  console.log("  year: " + year);
-  console.log("  yearRange: " + yearRange);
-  if (age) {
-    console.log("  age: " + age);
-    console.log("  ageRange: " + ageRange);
-  }
-
-  // Add the parameters in the same order that the GRO page would add them
-  if (type == "births") {
-    builder.addIndex("EW_Birth");
-  } else {
-    builder.addIndex("EW_Death");
-  }
-
-  let currentPage = "1";
-  if (pageNumber > 1) {
-    currentPage = (pageNumber - 1).toString();
-  }
-  builder.addCurrentPage(currentPage);
-
-  builder.addYear(year);
-  builder.addYearRange(yearRange);
-
-  builder.addSurname(surname);
-  builder.addSurnameMatches(surnameMatches);
-  builder.addFirstForename(forename1);
-  builder.addForenameMatches(forenameMatches);
-  builder.addSecondForename(forename2);
-  builder.addUrlText("&Forename3=&Forename4=");
-
-  if (gender == "male") {
-    builder.addGenderMale();
-  } else {
-    builder.addGenderFemale();
-  }
-
-  if (type == "births") {
-    builder.addMothersSurname(mmn);
-    builder.addMothersSurnameMatches(mmnMatches);
-  } else {
-    builder.addAge(age);
-    builder.addAgeRange(ageRange);
-  }
-
-  if (type == "births") {
-    builder.addUrlText("&DOBDay=&DOBMonth=&DOBYear=&PlaceofBirth=");
-  } else {
-    builder.addUrlText("&DODDay=&DODMonth=&DODYear=&PlaceofDeath=");
-  }
-
-  builder.addDistrict(district);
-
-  builder.addUrlText("&Quarter=&Month=&Volume=&Page=&Reg=&EntryNumber=&OccasionalCopy=&RUI=");
-
-  if (pageNumber > 1) {
-    builder.addUrlText("&SearchIndexes=" + pageNumber);
-  } else {
-    builder.addUrlText("&SearchIndexes=Search");
-  }
-
-  const url = builder.getUri();
-
-  const searchUrl = "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp";
-
-  let postData = "";
-  const queryIndex = url.indexOf("?");
-  if (queryIndex != -1) {
-    let startOfQuery = queryIndex + 1;
-    postData = url.substring(startOfQuery);
-  }
-
-  console.log("postData is:");
-  console.log(postData);
-
-  let fetchResult = await doSearchPost(searchUrl, postData);
-
-  console.log("fetchResult is:");
-  console.log(fetchResult);
-
-  if (fetchResult.success && fetchResult.document) {
-    // if user is not logged in we will have a successful fetch but
-    // it will have been redirected to the login page
-    if (fetchResult.document.title) {
-      let lcTitle = fetchResult.document.title.toLowerCase();
-      if (lcTitle.includes("login")) {
-        await showErrorDialog(
-          "Search failed. Please check that you are logged into the GRO site at https://www.gro.gov.uk/gro/content/certificates"
-        );
-        return { success: false };
-      }
-    }
-
-    let extractResult = extractAllGroRowData(fetchResult.document);
-
-    console.log("extractResult is:");
-    console.log(extractResult);
-
-    return extractResult;
-  } else {
-    await showErrorDialog("Search failed. Unable to get search results from GRO.");
-  }
-
-  return { success: false };
 }
 
 function getYearRanges(type, startYear, endYear, startBirthYear, endBirthYear) {
@@ -634,9 +369,8 @@ function clearFilters(showPlaceholder) {
 function applyUserFilters() {
   userFilteredSearchResults = Array.from(searchResults);
 
-  console.log(
-    "applyUserFilters. Before filter, userFilteredSearchResults.length = " + userFilteredSearchResults.length
-  );
+  //console.log("applyUserFilters.");
+  //console.log("Before filter, userFilteredSearchResults.length = " + userFilteredSearchResults.length);
 
   {
     let selectElement = document.getElementById("filterByDistrict");
@@ -682,7 +416,7 @@ function applyUserFilters() {
     }
   }
 
-  console.log("applyUserFilters. After filter, userFilteredSearchResults.length = " + userFilteredSearchResults.length);
+  //console.log("After filter, userFilteredSearchResults.length = " + userFilteredSearchResults.length);
 
   applyUserSorting();
 
@@ -881,198 +615,6 @@ function compareExtractedData(a, b) {
   return 0;
 }
 
-function waitForButtonClicks(dialog, buttons) {
-  return new Promise((resolve) => {
-    const handleClick = (event) => {
-      for (let button of buttons) {
-        let buttonId = "button" + button;
-        let buttonElement = dialog.querySelector("#" + buttonId);
-        buttonElement.removeEventListener("click", handleClick);
-      }
-      resolve(event.target.id); // Resolve with the ID of the clicked button
-    };
-
-    for (let button of buttons) {
-      let buttonId = "button" + button;
-      let buttonElement = dialog.querySelector("#" + buttonId);
-      buttonElement.addEventListener("click", handleClick);
-    }
-  });
-}
-
-async function showDialog(heading, message, buttons, type) {
-  let dialog = document.getElementById("dialog");
-  if (!dialog) {
-    console.log("dialog not found");
-    return;
-  }
-
-  let dialogHeader = dialog.querySelector("div.dialogHeader");
-  if (!dialogHeader) {
-    console.log("dialogHeader not found");
-    return;
-  }
-  let dialogMessageDiv = dialog.querySelector("div.dialogMessage");
-  if (!dialogMessageDiv) {
-    console.log("dialogMessageDiv not found");
-    return;
-  }
-  let dialogBusyDiv = dialog.querySelector("div.dialogBusy");
-  if (!dialogBusyDiv) {
-    console.log("dialogBusyDiv not found");
-    return;
-  }
-  let dialogButtonRow = dialog.querySelector("div.dialogButtonRow");
-  if (!dialogButtonRow) {
-    console.log("dialogButtonRow not found");
-    return;
-  }
-
-  // add header
-  {
-    // remove all children
-    while (dialogHeader.firstChild) {
-      dialogHeader.removeChild(dialogHeader.firstChild);
-    }
-    let wrapperDiv = document.createElement("div");
-    if (type == "error") {
-      wrapperDiv.className = "dialogErrorHeader";
-    } else if (type == "warning") {
-      wrapperDiv.className = "dialogWarningHeader";
-    } else if (type == "progress") {
-      wrapperDiv.className = "dialogProgressHeader";
-    }
-    dialogHeader.appendChild(wrapperDiv);
-    let label = document.createElement("label");
-    label.innerText = heading;
-    label.className = "dialogHeaderLabel";
-    wrapperDiv.appendChild(label);
-  }
-
-  // add message
-  {
-    // remove all children
-    while (dialogMessageDiv.firstChild) {
-      dialogMessageDiv.removeChild(dialogMessageDiv.firstChild);
-    }
-
-    let label = document.createElement("label");
-    label.innerText = message;
-    dialogMessageDiv.appendChild(label);
-  }
-
-  {
-    while (dialogBusyDiv.firstChild) {
-      dialogBusyDiv.removeChild(dialogBusyDiv.firstChild);
-    }
-
-    if (type == "progress") {
-      let busy = document.createElement("div");
-      busy.id = "busyContainer";
-      busy.className = "busyContainer";
-      dialogBusyDiv.appendChild(busy);
-
-      let loader = document.createElement("div");
-      loader.className = "spinner";
-      busy.appendChild(loader);
-    }
-  }
-
-  // add buttons
-  {
-    // remove all children
-    while (dialogButtonRow.firstChild) {
-      dialogButtonRow.removeChild(dialogButtonRow.firstChild);
-    }
-    for (let button of buttons) {
-      let buttonElement = document.createElement("button");
-      buttonElement.innerText = button;
-      buttonElement.className = "dialogButton";
-      buttonElement.id = "button" + button;
-      dialogButtonRow.appendChild(buttonElement);
-    }
-  }
-
-  dialog.showModal();
-
-  let clickedButtonId = await waitForButtonClicks(dialog, buttons);
-
-  dialog.close();
-
-  return clickedButtonId;
-}
-
-async function showErrorDialog(message) {
-  return await showDialog("Error", message, ["OK"], "error");
-}
-
-async function showWarningDialog(message) {
-  return await showDialog("Warning", message, ["Continue", "Cancel"], "warning");
-}
-
-var progressDialogResponse = "";
-async function showProgressDialog(message) {
-  progressDialogResponse = "";
-  showDialog("Progress", message, ["Stop", "Cancel"], "progress");
-
-  let dialog = document.getElementById("dialog");
-  if (!dialog) {
-    console.log("dialog not found");
-    return;
-  }
-
-  let stopButtonId = "buttonStop";
-  let stopButtonElement = dialog.querySelector("#" + stopButtonId);
-  if (stopButtonElement) {
-    stopButtonElement.addEventListener("click", (event) => {
-      progressDialogResponse = "stop";
-    });
-  }
-
-  let cancelButtonId = "buttonCancel";
-  let cancelButtonElement = dialog.querySelector("#" + cancelButtonId);
-  if (cancelButtonElement) {
-    cancelButtonElement.addEventListener("click", (event) => {
-      progressDialogResponse = "cancel";
-    });
-  }
-}
-
-function updateProgressDialog(message) {
-  let dialog = document.getElementById("dialog");
-  if (!dialog) {
-    console.log("dialog not found");
-    return;
-  }
-
-  let dialogMessageDiv = dialog.querySelector("div.dialogMessage");
-  if (!dialogMessageDiv) {
-    console.log("dialogList not found");
-    return;
-  }
-
-  // add message
-  {
-    // remove all children
-    while (dialogMessageDiv.firstChild) {
-      dialogMessageDiv.removeChild(dialogMessageDiv.firstChild);
-    }
-
-    let label = document.createElement("label");
-    label.innerText = message;
-    dialogMessageDiv.appendChild(label);
-  }
-}
-
-function closeProgressDialog() {
-  let dialog = document.getElementById("dialog");
-  if (!dialog) {
-    console.log("dialog not found");
-    return;
-  }
-  dialog.close();
-}
-
 async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchParameters, gender) {
   function addFetchResults(result, gender) {
     if (result) {
@@ -1141,169 +683,8 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
   return true;
 }
 
-function checkSearchParameters() {
-  let result = {
-    errorInputIds: [],
-    warningInputIds: [],
-    errorMessages: [],
-    warningMessages: [],
-  };
-
-  if (
-    !searchParameters.startYear ||
-    !searchParameters.endYear ||
-    searchParameters.startYear > searchParameters.endYear
-  ) {
-    let message = "Invalid start and end years.";
-    if (!searchParameters.startYear) {
-      message += "\nNo start year specified.";
-      result.errorInputIds.push("searchParamStartYear");
-    }
-    if (!searchParameters.endYear) {
-      message += "\nNo end year specified.";
-      result.errorInputIds.push("searchParamEndYear");
-    }
-    if (
-      searchParameters.startYear &&
-      searchParameters.endYear &&
-      searchParameters.startYear > searchParameters.endYear
-    ) {
-      result.errorInputIds.push("searchParamStartYear");
-      result.errorInputIds.push("searchParamEndYear");
-      message += "\nStart year is greater than end year.";
-    }
-    result.errorMessages.push(message);
-  }
-
-  if (!searchParameters.surname) {
-    result.errorInputIds.push("searchParamSurname");
-    result.errorMessages.push("Surname is required.");
-  }
-
-  if (!searchParameters.gender) {
-    result.errorInputIds.push("searchParamGender");
-    result.errorMessages.push("Gender is required.");
-  }
-
-  let groRanges = getGroYearRanges(searchParameters.type);
-  let groStartYear = groRanges.startYear;
-  let groEndYear = groRanges.endYear;
-  let gapStartYear = groRanges.gapStartYear;
-  let gapEndYear = groRanges.gapEndYear;
-
-  let invalidRangeMessage = "Invalid start and end years.";
-  let invalidRange = false;
-  let startYear = searchParameters.startYear;
-  let endYear = searchParameters.endYear;
-  if (endYear < groStartYear) {
-    invalidRange = true;
-    invalidRangeMessage += "\nEnd year is less than GRO start year of " + groStartYear + ".";
-    result.errorInputIds.push("searchParamEndYear");
-  } else if (startYear > groEndYear) {
-    invalidRange = true;
-    invalidRangeMessage += "\nStart year is greater than GRO end year of " + groEndYear + ".";
-    result.errorInputIds.push("searchParamStartYear");
-  } else if (startYear >= gapStartYear && endYear <= gapEndYear) {
-    invalidRange = true;
-    invalidRangeMessage += "\nRange is fully within the gap in GRO records of " + gapStartYear + "-" + gapEndYear + ".";
-    result.errorInputIds.push("searchParamStartYear");
-    result.errorInputIds.push("searchParamEndYear");
-  }
-  if (invalidRange) {
-    result.errorMessages.push(invalidRangeMessage);
-  }
-
-  let clampedRange = false;
-  let clampedMessage = "Year range checks.";
-  if (startYear < groStartYear) {
-    startYear = groStartYear;
-    clampedRange = true;
-    clampedMessage += "\nStart year is less than GRO start year of " + groStartYear + ".";
-    clampedMessage += " Will use start year of " + startYear + ".";
-    result.warningInputIds.push("searchParamStartYear");
-  }
-  if (endYear > groEndYear) {
-    endYear = groEndYear;
-    clampedRange = true;
-    clampedMessage += "\nEnd year is greater than GRO end year of " + groEndYear + ".";
-    clampedMessage += " Will use end year of " + endYear + ".";
-    result.warningInputIds.push("searchParamEndYear");
-  }
-  if (startYear >= gapStartYear && startYear <= gapEndYear) {
-    startYear = gapEndYear + 1;
-    clampedRange = true;
-    clampedMessage += "\nStart year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
-    clampedMessage += " Will use start year of " + startYear + ".";
-    result.warningInputIds.push("searchParamStartYear");
-  }
-  if (endYear >= gapStartYear && endYear <= gapEndYear) {
-    endYear = gapStartYear - 1;
-    clampedRange = true;
-    clampedMessage += "\nEnd year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
-    clampedMessage += " Will use end year of " + endYear + ".";
-    result.warningInputIds.push("searchParamEndYear");
-  }
-  searchParameters.startYear = startYear;
-  searchParameters.endYear = endYear;
-
-  if (clampedRange) {
-    result.warningMessages.push(clampedMessage);
-  }
-
-  if (startYear < gapStartYear && endYear > gapEndYear) {
-    let message =
-      "The year range includes the gap years " +
-      gapStartYear +
-      "-" +
-      gapEndYear +
-      ". These years will not be searched.";
-    result.warningMessages.push(message);
-    result.warningInputIds.push("searchParamStartYear");
-    result.warningInputIds.push("searchParamEndYear");
-  }
-
-  if (searchParameters.type == "births") {
-    if (searchParameters.endYear > 1923 && searchParameters.mmn) {
-      let message = "Mother's Maiden Name is specified but range includes years greater than 1923.";
-      message += "\n\nFor those years the GRO search cannot narrow the search results using the MMN";
-      message += " but it does return the MMN in the result if it matches,";
-      message += " so there will be extra search results with blank MMNs.";
-      if (searchParameters.startYear <= 1924 && searchParameters.endYear >= 1924) {
-        message += "\n\nThe year 1924 is a special case. It does return the MMN for non-matching results.";
-        message += " So there may be extra search results with non-matching MMNs.";
-      }
-      message += "\n\nYou can use the MMN results filter to only show the results with the MMNs that you want.";
-      result.warningMessages.push(message);
-      result.warningInputIds.push("searchParamMmn");
-    }
-  }
-
-  return result;
-}
-
-async function checkForAndReportErrorsAndWarnings() {
-  let checkData = checkSearchParameters();
-
-  if (checkData.errorMessages.length) {
-    showErrorDialog(checkData.errorMessages[0]);
-    return false;
-  }
-
-  for (let message of checkData.warningMessages) {
-    let response = await showWarningDialog(message);
-    if (response == "buttonCancel") {
-      return false;
-    }
-  }
-
-  // If we clamped values change them in the input fields
-  fillControlsFromSearchParameters();
-
-  return true;
-}
-
 async function doSmartSearch() {
-  console.log("doSmartSearch");
+  //console.log("doSmartSearch");
 
   clearFilters();
   clearResultsTable();
@@ -1342,13 +723,13 @@ async function doSmartSearch() {
     endBirthYearForYearRanges
   );
 
-  console.log("yearRanges:");
-  console.log(yearRanges);
-
   let totalFetchResults = {
     singleSearchResults: [],
     resultCount: 0,
   };
+
+  //console.log("Starting search, yearRanges is");
+  //console.log(yearRanges);
 
   showProgressDialog("Starting search");
 
@@ -1359,7 +740,7 @@ async function doSmartSearch() {
       singleSearchParameters.age = range.age;
       singleSearchParameters.ageRange = range.ageRange;
     }
-    console.log("fetching year " + range.year + ", yearRange, " + range.range);
+    //console.log("fetching year " + range.year + ", yearRange, " + range.range);
 
     if (searchParameters.gender == "male" || searchParameters.gender == "both") {
       let result = await doSearchForGivenYearAndGender(totalFetchResults, singleSearchParameters, "male");
@@ -1386,7 +767,7 @@ async function doSmartSearch() {
     return;
   }
 
-  console.log("Finished search, totalFetchResults.resultCount = ", totalFetchResults.resultCount);
+  //console.log("Finished search, totalFetchResults.resultCount = ", totalFetchResults.resultCount);
 
   // clear the global var for the searchResults and popluate from fetch results
   searchResults = [];
@@ -1398,14 +779,14 @@ async function doSmartSearch() {
     }
   }
 
-  console.log("Populated searchResults, searchResults.length = ", searchResults.length);
+  //console.log("Populated searchResults, searchResults.length = ", searchResults.length);
 
   searchResults.sort(compareExtractedData);
 
   // we have a sorted list but it could have duplicates for deaths with large birth year range
   // it could also have birth dates that are out of range.
   if (searchParameters.type == "deaths") {
-    console.log("Before remove dupes, extractedDataObjs.length = " + searchResults.length);
+    //console.log("Before remove dupes, extractedDataObjs.length = " + searchResults.length);
     // remove an element if it is the same as the one before it.
     searchResults = searchResults.filter(function (item, pos, ary) {
       let keepElement = true;
@@ -1444,7 +825,7 @@ async function doSmartSearch() {
 
       return keepElement;
     });
-    console.log("After remove dupes, extractedDataObjs.length = " + searchResults.length);
+    //console.log("After remove dupes, extractedDataObjs.length = " + searchResults.length);
   }
 
   addDistrictLinksToResults(searchResults);
@@ -1452,107 +833,6 @@ async function doSmartSearch() {
   fillTable(searchResults);
 
   initFilters(searchParameters, searchResults);
-}
-
-function getRadioButtonValue(name) {
-  // Get the radio buttons by their name attribute
-  const radioButtons = document.getElementsByName(name);
-  // Find the selected radio button
-  let selectedValue = "";
-  for (const radioButton of radioButtons) {
-    if (radioButton.checked) {
-      selectedValue = radioButton.value;
-      break;
-    }
-  }
-  return selectedValue;
-}
-
-function getSelectValue(id) {
-  const selectElement = document.getElementById(id);
-  if (selectElement) {
-    return selectElement.value;
-  }
-  return "0";
-}
-
-function createRadioButtonGroup(parent, labelText, name, options, required) {
-  let labelTdElement = document.createElement("td");
-  parent.appendChild(labelTdElement);
-  let valueTdElement = document.createElement("td");
-  parent.appendChild(valueTdElement);
-
-  let label = document.createElement("label");
-  labelTdElement.appendChild(label);
-  label.innerText = labelText;
-  if (required) {
-    label.classList.add("searchParamsRequired");
-  }
-
-  for (let option of options) {
-    let inputDiv = document.createElement("div");
-    inputDiv.className = "radioButtonAndLabel";
-    valueTdElement.appendChild(inputDiv);
-    let inputElement = document.createElement("input");
-    inputDiv.appendChild(inputElement);
-    inputElement.type = "radio";
-    inputElement.className = "radio";
-    inputElement.name = name;
-    inputElement.value = option.value;
-    inputElement.id = option.id;
-    let labelElement = document.createElement("label");
-    inputDiv.appendChild(labelElement);
-    labelElement.className = "radioLabel";
-    labelElement.innerText = option.label;
-  }
-}
-
-function createSelect(parent, label, id, options) {
-  let labelTdElement = document.createElement("td");
-  parent.appendChild(labelTdElement);
-  let valuelTdElement = document.createElement("td");
-  parent.appendChild(valuelTdElement);
-
-  let labelElement = document.createElement("label");
-  labelTdElement.appendChild(labelElement);
-  labelElement.innerText = label;
-
-  let selectElement = document.createElement("select");
-  selectElement.id = id;
-  selectElement.class = "dropdown";
-  valuelTdElement.appendChild(selectElement);
-
-  let isFirst = true;
-  for (let option of options) {
-    let optionElement = document.createElement("option");
-    selectElement.appendChild(optionElement);
-    optionElement.value = option.value;
-    optionElement.innerText = option.text;
-    if (isFirst) {
-      selectElement.value = option.value;
-      isFirst = false;
-    }
-  }
-}
-
-function addTextInput(parent, label, id, inputClass, required) {
-  let labelTdElement = document.createElement("td");
-  parent.appendChild(labelTdElement);
-  let valueTdElement = document.createElement("td");
-  parent.appendChild(valueTdElement);
-
-  let labelElement = document.createElement("label");
-  labelTdElement.appendChild(labelElement);
-  labelElement.innerText = label;
-  if (required) {
-    labelElement.classList.add("searchParamsRequired");
-  }
-
-  let inputElement = document.createElement("input");
-  valueTdElement.appendChild(inputElement);
-  inputElement.type = "text";
-  inputElement.id = id;
-  inputElement.className = inputClass;
 }
 
 function createIntro() {
@@ -1597,200 +877,9 @@ function createIntro() {
   introElement.appendChild(fragment);
 }
 
-function updateSearchControlsOnChange() {
-  console.log("updateSearchControlsOnChange");
-  setSearchParametersFromControls();
-  console.log("updateSearchControlsOnChange, searchParameters is:");
-  console.log(searchParameters);
-
-  const allSearchParamInputIds = [
-    "searchParamStartYear",
-    "searchParamEndYear",
-    "searchParamStartBirthYear",
-    "searchParamEndBirthYear",
-    "searchParamSurname",
-    "searchParamForename1",
-    "searchParamForename2",
-    "searchParamMmn",
-    "searchParamDistrict",
-  ];
-
-  for (let id of allSearchParamInputIds) {
-    let element = document.getElementById(id);
-    if (element) {
-      element.classList.remove("searchParamError");
-      element.classList.remove("searchParamWarning");
-    } else {
-      console.log("element with id " + id + " not found");
-    }
-  }
-
-  let checkData = checkSearchParameters();
-  console.log("checkData is:");
-  console.log(checkData);
-
-  for (let id of checkData.errorInputIds) {
-    let element = document.getElementById(id);
-    element.classList.add("searchParamError");
-  }
-
-  for (let id of checkData.warningInputIds) {
-    let element = document.getElementById(id);
-    if (!element.classList.contains("searchParamError")) {
-      element.classList.add("searchParamWarning");
-    }
-  }
-}
-
-function createSearchControls(type) {
-  let parametersElement = document.getElementById("searchParametersContainer");
-
-  // empty existing div
-  while (parametersElement.firstChild) {
-    parametersElement.removeChild(parametersElement.firstChild);
-  }
-
-  let fragment = document.createDocumentFragment();
-
-  let searchControlsTable = document.createElement("table");
-  searchControlsTable.id = "searchControlsTable";
-  fragment.appendChild(searchControlsTable);
-  let searchControlsBody = document.createElement("tbody");
-  searchControlsTable.appendChild(searchControlsBody);
-
-  // add the "type" radio button group
-  {
-    let typeRow = document.createElement("tr");
-    searchControlsBody.appendChild(typeRow);
-
-    let options = [
-      { label: "Births", value: "births", id: "searchParamBirth" },
-      { label: "Deaths", value: "deaths", id: "searchParamDeath" },
-    ];
-    createRadioButtonGroup(typeRow, "Select index to search:", "recordType", options, true);
-  }
-
-  {
-    let genderRow = document.createElement("tr");
-    searchControlsBody.appendChild(genderRow);
-    let options = [
-      { label: "Male", value: "male", id: "searchParamGenderMale" },
-      { label: "Female", value: "female", id: "searchParamGenderFemale" },
-      { label: "Both", value: "both", id: "searchParamGenderBoth" },
-    ];
-    createRadioButtonGroup(genderRow, "Sex/Gender:", "gender", options, true);
-  }
-
-  // start year and end year
-  {
-    let partialLabel = "";
-    if (type == "births") {
-      partialLabel = " year of birth reg: ";
-    } else {
-      partialLabel = " year of death reg: ";
-    }
-
-    let yearRow = document.createElement("tr");
-    searchControlsBody.appendChild(yearRow);
-    addTextInput(yearRow, "Earliest" + partialLabel, "searchParamStartYear", "textInputYear", true);
-    addTextInput(yearRow, "Latest" + partialLabel, "searchParamEndYear", "textInputYear", true);
-  }
-
-  // if death add start birth year and end birth year
-  if (type == "deaths") {
-    let birthYearRow = document.createElement("tr");
-    searchControlsBody.appendChild(birthYearRow);
-    addTextInput(birthYearRow, "Earliest year of birth: ", "searchParamStartBirthYear", "textInputYear", false);
-    addTextInput(birthYearRow, "Latest year of birth: ", "searchParamEndBirthYear", "textInputYear", false);
-  }
-
-  {
-    let surnameRow = document.createElement("tr");
-    searchControlsBody.appendChild(surnameRow);
-    let label = type == "births" ? "Surname at birth: " : "Surname at death: ";
-    addTextInput(surnameRow, label, "searchParamSurname", "textInputName", true);
-
-    createSelect(surnameRow, "Surname matching: ", "searchParamSurnameMatches", [
-      { text: "Exact Matches Only", value: "0" },
-      { text: "Phonetically Similar Variations", value: "1" },
-    ]);
-  }
-
-  {
-    let forename1Row = document.createElement("tr");
-    searchControlsBody.appendChild(forename1Row);
-    addTextInput(forename1Row, "First Forename: ", "searchParamForename1", "textInputName", false);
-
-    createSelect(forename1Row, "Forename matching: ", "searchParamForenameMatches", [
-      { text: "Exact Matches Only", value: "0" },
-      { text: "Phonetically Similar Variations", value: "1" },
-      { text: "Derivative Name Variations", value: "5" },
-    ]);
-  }
-
-  {
-    let forename2Row = document.createElement("tr");
-    searchControlsBody.appendChild(forename2Row);
-    addTextInput(forename2Row, "Second Forename: ", "searchParamForename2", "textInputName", false);
-  }
-
-  if (type == "births") {
-    let mmnRow = document.createElement("tr");
-    mmnRow.id = "searchParamMmnRow";
-    searchControlsBody.appendChild(mmnRow);
-    addTextInput(mmnRow, "Mother's maiden name: ", "searchParamMmn", "textInputName", false);
-
-    createSelect(mmnRow, "MMN matching: ", "searchParamMmnMatches", [
-      { text: "Exact Matches Only", value: "0" },
-      { text: "Phonetically Similar Variations", value: "1" },
-      { text: "Similar Sounding Variations", value: "4" },
-    ]);
-  }
-
-  {
-    let districtRow = document.createElement("tr");
-    searchControlsBody.appendChild(districtRow);
-    addTextInput(districtRow, "Registration district: ", "searchParamDistrict", "textInputDistrict", false);
-  }
-
-  parametersElement.appendChild(fragment);
-
-  // now initialize values
-  let birthInput = document.getElementById("searchParamBirth");
-  if (birthInput) {
-    birthInput.addEventListener("click", (event) => {
-      createSearchControls("births");
-    });
-    if (type == "births") {
-      birthInput.checked = true;
-    }
-  }
-
-  let deathInput = document.getElementById("searchParamDeath");
-  if (deathInput) {
-    deathInput.addEventListener("click", (event) => {
-      createSearchControls("deaths");
-    });
-    if (type == "deaths") {
-      deathInput.checked = true;
-    }
-  }
-
-  let genderBothInput = document.getElementById("searchParamGenderBoth");
-  if (genderBothInput) {
-    genderBothInput.checked = true;
-  }
-
-  // add a listener for whenever controls changed
-  searchControlsTable.addEventListener("change", (event) => {
-    updateSearchControlsOnChange();
-  });
-}
-
 function initializePage() {
   let searchButton = document.getElementById("searchButton");
   if (searchButton) {
-    console.log("adding listener for button");
     searchButton.addEventListener("click", doSmartSearch);
   }
 
@@ -1800,105 +889,9 @@ function initializePage() {
   clearResultsTable(true);
 }
 
-function fillControlsFromSearchParameters() {
-  function fillTextInput(id, value) {
-    let inputElement = document.getElementById(id);
-    if (inputElement) {
-      if (value) {
-        inputElement.value = value;
-      } else {
-        inputElement.value = "";
-      }
-    }
-  }
-
-  function setRadioButton(name, value) {
-    console.log("setRadioButton: name = " + name + ", value = " + value);
-    // Get the radio buttons by their name attribute
-    const radioButtons = document.getElementsByName(name);
-    console.log("radioButtons.length = " + radioButtons.length);
-    // Find the selected radio button
-    for (const radioButton of radioButtons) {
-      if (radioButton.value == value) {
-        console.log("found radioButton with value = " + value);
-
-        radioButton.checked = true;
-        break;
-      }
-    }
-  }
-
-  let type = searchParameters.type;
-  createSearchControls(type);
-
-  fillTextInput("searchParamStartYear", searchParameters.startYear);
-  fillTextInput("searchParamEndYear", searchParameters.endYear);
-
-  fillTextInput("searchParamSurname", searchParameters.surname);
-  fillTextInput("searchParamForename1", searchParameters.forename1);
-  fillTextInput("searchParamForename2", searchParameters.forename2);
-
-  setRadioButton("gender", searchParameters.gender);
-
-  if (type == "births") {
-    fillTextInput("searchParamMmn", searchParameters.mmn);
-  } else {
-    fillTextInput("searchParamStartBirthYear", searchParameters.startBirthYear);
-    fillTextInput("searchParamEndBirthYear", searchParameters.endBirthYear);
-  }
-
-  updateSearchControlsOnChange();
-}
-
-function setSearchParametersFromControls() {
-  function getTextInputValue(id, isNumber) {
-    let value = "";
-    if (isNumber) {
-      value = 0;
-    }
-    let inputElement = document.getElementById(id);
-    if (inputElement) {
-      if (inputElement.value) {
-        if (isNumber) {
-          let number = Number(inputElement.value);
-          if (number && !isNaN(number)) {
-            value = number;
-          }
-        } else {
-          value = inputElement.value;
-        }
-      }
-    }
-    return value;
-  }
-
-  searchParameters.type = getRadioButtonValue("recordType");
-  searchParameters.gender = getRadioButtonValue("gender");
-
-  searchParameters.startYear = getTextInputValue("searchParamStartYear", true);
-  searchParameters.endYear = getTextInputValue("searchParamEndYear", true);
-
-  searchParameters.surname = getTextInputValue("searchParamSurname");
-  searchParameters.surnameMatches = getSelectValue("searchParamSurnameMatches");
-  searchParameters.forename1 = getTextInputValue("searchParamForename1");
-  searchParameters.forenameMatches = getSelectValue("searchParamForenameMatches");
-  searchParameters.forename2 = getTextInputValue("searchParamForename2");
-
-  if (searchParameters.type == "births") {
-    searchParameters.mmn = getTextInputValue("searchParamMmn");
-    searchParameters.mmnMatches = getTextInputValue("searchParamMmnMatches");
-  } else {
-    searchParameters.startBirthYear = getTextInputValue("searchParamStartBirthYear", true);
-    searchParameters.endBirthYear = getTextInputValue("searchParamEndBirthYear", true);
-  }
-
-  searchParameters.mothersMaidenName = getTextInputValue("searchParamMmn");
-  searchParameters.district = getTextInputValue("searchParamDistrict");
-}
-
 function setupPageForSearchFromPopup(parameters) {
-  console.log("updatePage: parameters is :");
-  console.log(parameters);
+  //console.log("updatePage: parameters is :");
+  //console.log(parameters);
 
   searchParameters = parameters;
 
