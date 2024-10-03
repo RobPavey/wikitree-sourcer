@@ -136,6 +136,8 @@ function setupExtensionPageMenu(url) {
     pageType = "options";
   } else if (url.endsWith("exception.html")) {
     pageType = "exception";
+  } else if (url.endsWith("gro_smart_search.html")) {
+    pageType = "groSmartSearch";
   }
 
   let message = "";
@@ -146,6 +148,9 @@ function setupExtensionPageMenu(url) {
     message = "WikiTree Sourcer options page.";
   } else if (pageType == "exception") {
     message = "WikiTree Sourcer exception page.";
+  } else if (pageType == "groSmartSearch") {
+    message =
+      "WikiTree Sourcer GRO Smart Search page.\n\nClick on 'Open tab' for a result to go to GRO page to generate a citation.";
   } else {
     message = "WikiTree Sourcer extension page.";
   }
