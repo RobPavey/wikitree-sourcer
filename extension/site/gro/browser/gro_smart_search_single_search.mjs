@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { GroUriBuilder } from "../core/gro_uri_builder.mjs";
 import { extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow } from "../core/gro_extract_data.mjs";
+import { showErrorDialog } from "./gro_smart_search_dialog.mjs";
 
 // Avoid creating this for every search
 var domParser = new DOMParser();
@@ -114,11 +115,11 @@ function extractAllGroRowData(document) {
 }
 
 async function doSearchPost(url, postData) {
-  //console.log('doFetch, document.location is: ' + document.location);
+  //console.log('doSearchPost, document.location is: ' + document.location);
 
   let fetchUrl = url;
 
-  //console.log("doFetch, fetchUrl is: " + fetchUrl);
+  //console.log("doSearchPost, fetchUrl is: " + fetchUrl);
 
   let fetchOptionsHeaders = {
     accept:
@@ -136,7 +137,7 @@ async function doSearchPost(url, postData) {
   try {
     let response = await fetch(fetchUrl, fetchOptions);
 
-    //console.log("doFetch, response.status is: " + response.status);
+    //console.log("doSearchPost, response.status is: " + response.status);
 
     if (response.status !== 200) {
       //console.log("Looks like there was a problem. Status Code: " + response.status);
@@ -150,10 +151,13 @@ async function doSearchPost(url, postData) {
 
     let htmlText = await response.text();
 
-    //console.log("doFetch: response text is:");
+    //console.log("doSearchPost: response text is:");
     //console.log(htmlText);
 
     let doc = domParser.parseFromString(htmlText, "text/html");
+
+    //console.log("doSearchPost: doc:");
+    //console.log(doc);
 
     return {
       success: true,
@@ -175,6 +179,9 @@ async function doSearchPost(url, postData) {
 }
 
 async function doSingleSearch(singleSearchParameters, pageNumber) {
+  //console.log("doSingleSearch, singleSearchParameters is:");
+  //console.log(singleSearchParameters);
+
   let builder = new GroUriBuilder(true);
 
   const type = singleSearchParameters.type;
@@ -191,6 +198,17 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   const ageRange = singleSearchParameters.ageRange;
   const gender = singleSearchParameters.gender;
   const district = singleSearchParameters.district;
+
+  // safety code - the matches value are required
+  if (!surnameMatches) {
+    surnameMatches = "0";
+  }
+  if (!forenameMatches) {
+    forenameMatches = "0";
+  }
+  if (!mmnMatches) {
+    mmnMatches = "0";
+  }
 
   //console.log("doSingleSearch, singleSearchParameters has:");
   //console.log("  year: " + year);
@@ -276,12 +294,42 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
     // if user is not logged in we will have a successful fetch but
     // it will have been redirected to the login page
     if (fetchResult.document.title) {
+      //console.log("fetchResult.document.title is:");
+      //console.log(fetchResult.document.title);
       let lcTitle = fetchResult.document.title.toLowerCase();
       if (lcTitle.includes("login")) {
         await showErrorDialog(
           "Search failed. Please check that you are logged into the GRO site at https://www.gro.gov.uk/gro/content/certificates"
         );
         return { success: false };
+      }
+    }
+
+    // check for errors reported on page
+    let formElement = fetchResult.document.querySelector("form[name='SearchIndexes']");
+    //console.log("formElement is:");
+    //console.log(formElement);
+
+    if (formElement) {
+      let subHeadElements = formElement.querySelectorAll("div.sub_head");
+      for (let subHeadElement of subHeadElements) {
+        //console.log("subHeadElement is:");
+        //console.log(subHeadElement);
+
+        if (subHeadElement.textContent == "Form Errors") {
+          // there were errors
+          let message = "Search failed. GRO site reported form errors.";
+          let parent = subHeadElement.parentElement;
+          let mainTextElement = parent.querySelector("div.main_text");
+          if (mainTextElement) {
+            let formErrors = mainTextElement.textContent;
+            if (formErrors) {
+              message += "\n\n" + formErrors;
+            }
+          }
+          await showErrorDialog(message);
+          return { success: false };
+        }
       }
     }
 

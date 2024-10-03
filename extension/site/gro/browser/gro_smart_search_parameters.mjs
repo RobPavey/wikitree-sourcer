@@ -505,13 +505,13 @@ function fillControlsFromSearchParameters() {
     }
   }
 
-  function fillSelect(id, value) {
+  function fillSelect(id, value, defaultValue = "") {
     let inputElement = document.getElementById(id);
     if (inputElement) {
       if (value) {
         inputElement.value = value;
       } else {
-        inputElement.value = "";
+        inputElement.value = defaultValue;
       }
     }
   }
@@ -523,16 +523,16 @@ function fillControlsFromSearchParameters() {
   fillTextInput("searchParamEndYear", searchParameters.endYear);
 
   fillTextInput("searchParamSurname", searchParameters.surname);
-  fillSelect("searchParamSurnameMatches", searchParameters.surnameMatches);
+  fillSelect("searchParamSurnameMatches", searchParameters.surnameMatches, "0");
   fillTextInput("searchParamForename1", searchParameters.forename1);
   fillTextInput("searchParamForename2", searchParameters.forename2);
-  fillSelect("searchParamForenameMatches", searchParameters.forenameMatches);
+  fillSelect("searchParamForenameMatches", searchParameters.forenameMatches, "0");
 
   setRadioButton("gender", searchParameters.gender);
 
   if (type == "births") {
     fillTextInput("searchParamMmn", searchParameters.mmn);
-    fillSelect("searchParamMmnMatches", searchParameters.mmnMatches);
+    fillSelect("searchParamMmnMatches", searchParameters.mmnMatches, "0");
   } else {
     fillTextInput("searchParamStartBirthYear", searchParameters.startBirthYear);
     fillTextInput("searchParamEndBirthYear", searchParameters.endBirthYear);
@@ -589,6 +589,18 @@ function setSearchParametersFromControls() {
 
 function setSearchParameters(parameters) {
   searchParameters = parameters;
+
+  // the parameters are probably coming from the gro_search_popup.
+  // in case they are not complete add any missing values
+  if (!searchParameters.surnameMatches) {
+    searchParameters.surnameMatches = "0";
+  }
+  if (!searchParameters.forenameMatches) {
+    searchParameters.forenameMatches = "0";
+  }
+  if (!searchParameters.mmnMatches) {
+    searchParameters.mmnMatches = "0";
+  }
 }
 
 export {
