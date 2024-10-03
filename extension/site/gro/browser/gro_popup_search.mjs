@@ -454,6 +454,11 @@ function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
       }
       subtitle += ")";
     }
+    if (spouse.marriageDate) {
+      subtitle += " m. ";
+      subtitle += spouse.marriageDate.getYearString();
+    }
+    subtitle += "\nPossible child birth years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
   } else {
     let gender = data.extractedData.personGender;
 
@@ -462,6 +467,7 @@ function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
     } else {
       menuItemText = "Do smart search for children with any mother";
     }
+    subtitle += "Possible child birth years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
   }
 
   if (!yearRangeOverlapsGroRanges("births", yearRange)) {
@@ -486,8 +492,13 @@ function addGroSmartSearchDeathsMenuItem(menu, data, filter) {
     groSmartSearch(data.generalizedData, "deaths");
   };
 
-  const menuItemText = "Do smart search for possible deaths";
+  let menuItemText = "Do smart search for possible deaths";
   let subtitle = "";
+
+  if (data.generalizedData.inferDeathYear()) {
+    menuItemText = "Do smart search for other possible deaths";
+  }
+  subtitle += "Possible death years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
 
   if (subtitle) {
     addMenuItemWithSubtitle(menu, menuItemText, onClick, subtitle);

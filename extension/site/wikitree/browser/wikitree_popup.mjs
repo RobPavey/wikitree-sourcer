@@ -77,6 +77,14 @@ var haveValidApiResponse = false;
 var apiResponse = undefined;
 var timeApiRequestMade = undefined;
 
+function standardizeDate(dateString) {
+  let parsedDate = DateUtils.parseDateString(dateString);
+  if (!parsedDate.isValid) {
+    return dateString;
+  }
+  return DateUtils.getStdShortFormDateString(parsedDate);
+}
+
 async function makeApiRequests(extractedData) {
   if (haveValidApiResponse) {
     return;
@@ -191,16 +199,21 @@ async function updateGeneralizedDataUsingApiResponse(data) {
           //console.log(spouse);
           let spouseWikiId = spouse.Name.replace(/\s/g, "_");
           if (spouseWikiId == wikiId) {
-            return {
+            let result = {
               lnab: spouse.LastNameAtBirth,
               cln: spouse.LastNameCurrent,
               firstName: spouse.FirstName,
               middleName: spouse.MiddleName,
               prefName: spouse.RealName,
               nicknames: spouse.NickNames,
-              birthDate: spouse.BirthDate,
-              deathDate: spouse.DeathDate,
             };
+            if (spouse.BirthDate && !spouse.BirthDate.startsWith("0000")) {
+              result.birthDate = spouse.BirthDate;
+            }
+            if (spouse.DeathDate && !spouse.DeathDate.startsWith("0000")) {
+              result.deathDate = spouse.DeathDate;
+            }
+            return result;
           }
         }
       }
@@ -439,14 +452,6 @@ function getWikiTreeAddMergeData(data, personEd, personGd, citationObject) {
         return "after";
     }
     return "";
-  }
-
-  function standardizeDate(dateString) {
-    let parsedDate = DateUtils.parseDateString(dateString);
-    if (!parsedDate.isValid) {
-      return dateString;
-    }
-    return DateUtils.getStdShortFormDateString(parsedDate);
   }
 
   function standardizePlace(placeString, dateString) {

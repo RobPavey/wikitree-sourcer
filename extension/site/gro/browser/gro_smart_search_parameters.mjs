@@ -573,8 +573,13 @@ function setSearchParametersFromControls() {
   searchParameters.district = getTextInputValue("searchParamDistrict");
 }
 
+function setSearchParameters(parameters) {
+  searchParameters = parameters;
+}
+
 export {
   searchParameters,
+  setSearchParameters,
   createSearchControls,
   setSearchParametersFromControls,
   fillControlsFromSearchParameters,
