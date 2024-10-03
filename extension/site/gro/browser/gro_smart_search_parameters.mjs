@@ -505,6 +505,17 @@ function fillControlsFromSearchParameters() {
     }
   }
 
+  function fillSelect(id, value) {
+    let inputElement = document.getElementById(id);
+    if (inputElement) {
+      if (value) {
+        inputElement.value = value;
+      } else {
+        inputElement.value = "";
+      }
+    }
+  }
+
   let type = searchParameters.type;
   createSearchControls(type);
 
@@ -512,13 +523,16 @@ function fillControlsFromSearchParameters() {
   fillTextInput("searchParamEndYear", searchParameters.endYear);
 
   fillTextInput("searchParamSurname", searchParameters.surname);
+  fillSelect("searchParamSurnameMatches", searchParameters.surnameMatches);
   fillTextInput("searchParamForename1", searchParameters.forename1);
   fillTextInput("searchParamForename2", searchParameters.forename2);
+  fillSelect("searchParamForenameMatches", searchParameters.forenameMatches);
 
   setRadioButton("gender", searchParameters.gender);
 
   if (type == "births") {
     fillTextInput("searchParamMmn", searchParameters.mmn);
+    fillSelect("searchParamMmnMatches", searchParameters.mmnMatches);
   } else {
     fillTextInput("searchParamStartBirthYear", searchParameters.startBirthYear);
     fillTextInput("searchParamEndBirthYear", searchParameters.endBirthYear);
