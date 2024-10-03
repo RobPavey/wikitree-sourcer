@@ -184,9 +184,16 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
   if (result.rows && result.rows.length > 0) {
     if (result.resultsNumRecords >= 250) {
       // too many results to get all of them
-      await showErrorDialog(
-        "A single search returned more the 250 results. Canceling search. Please try a more specific search."
-      );
+      let message =
+        "A single search returned more than 250 results. Canceling search. Please try a more specific search.";
+      if (singleSearchParameters.type == "births") {
+        if (singleSearchParameters.mmnMatches != "0") {
+          message +=
+            "\n\nNote that when MMN matching is not set to exact it will match births with no MMN or with an MMN of '-'.";
+          message += " This will greatly increase the number of results.";
+        }
+      }
+      await showErrorDialog(message);
       return false;
     }
 

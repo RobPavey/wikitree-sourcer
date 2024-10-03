@@ -344,8 +344,8 @@ function applyUserFilters() {
   //console.log("applyUserFilters.");
   //console.log("Before filter, userFilteredSearchResults.length = " + userFilteredSearchResults.length);
 
-  {
-    let selectElement = document.getElementById("filterByDistrict");
+  function applySelectFilter(id, edKey) {
+    let selectElement = document.getElementById(id);
     if (selectElement) {
       // Get all selected options
       const selectedOptions = Array.from(selectElement.selectedOptions);
@@ -355,9 +355,9 @@ function applyUserFilters() {
 
       if (selectedValues.length > 0 && !selectedValues.includes("ALL")) {
         userFilteredSearchResults = userFilteredSearchResults.filter(function (item, pos, ary) {
-          let district = item.registrationDistrict;
-          if (district) {
-            return selectedValues.includes(district);
+          let value = item[edKey];
+          if (value) {
+            return selectedValues.includes(value);
           } else {
             return selectedValues.includes(" ");
           }
@@ -366,27 +366,9 @@ function applyUserFilters() {
     }
   }
 
-  {
-    let selectElement = document.getElementById("filterByMmn");
-    if (selectElement) {
-      // Get all selected options
-      const selectedOptions = Array.from(selectElement.selectedOptions);
-
-      // Get the values of the selected options
-      const selectedValues = selectedOptions.map((option) => option.value);
-
-      if (selectedValues.length > 0 && !selectedValues.includes("ALL")) {
-        userFilteredSearchResults = userFilteredSearchResults.filter(function (item, pos, ary) {
-          let mmn = item.mothersMaidenName;
-          if (mmn) {
-            return selectedValues.includes(mmn);
-          } else {
-            return selectedValues.includes(" ");
-          }
-        });
-      }
-    }
-  }
+  applySelectFilter("filterByDistrict", "registrationDistrict");
+  applySelectFilter("filterByMmn", "mothersMaidenName");
+  applySelectFilter("filterBySurname", "lastName");
 
   //console.log("After filter, userFilteredSearchResults.length = " + userFilteredSearchResults.length);
 
@@ -401,6 +383,7 @@ function initFilters(searchParameters) {
   let extractedDataObjs = searchResults;
   let districts = [];
   let mmns = [];
+  let surnames = [];
 
   for (let extractedData of extractedDataObjs) {
     let district = extractedData.registrationDistrict;
@@ -420,10 +403,19 @@ function initFilters(searchParameters) {
         mmns.push(mmn);
       }
     }
+
+    let surname = extractedData.lastName;
+    if (surname === undefined) {
+      surname = " ";
+    }
+    if (!surnames.includes(surname)) {
+      surnames.push(surname);
+    }
   }
 
   districts.sort();
   mmns.sort();
+  surnames.sort();
 
   clearFilters();
 
@@ -432,77 +424,47 @@ function initFilters(searchParameters) {
     return;
   }
 
-  if (districts.length > 1) {
-    let selectDiv = document.createElement("div");
-    selectDiv.className = "filterSelectDiv";
-    resultsFilterContainer.appendChild(selectDiv);
+  function addSelectFilter(label, stringArray, id) {
+    if (stringArray.length > 1) {
+      let selectDiv = document.createElement("div");
+      selectDiv.className = "filterSelectDiv";
+      resultsFilterContainer.appendChild(selectDiv);
 
-    let labelElement = document.createElement("label");
-    labelElement.innerText = "Select districts:";
-    labelElement.className = "filterSelectLabel";
-    selectDiv.appendChild(labelElement);
+      let labelElement = document.createElement("label");
+      labelElement.innerText = label;
+      labelElement.className = "filterSelectLabel";
+      selectDiv.appendChild(labelElement);
 
-    let selectElement = document.createElement("select");
-    selectElement.id = "filterByDistrict";
-    selectElement.className = "filterSelect";
-    selectElement.multiple = true;
-    selectDiv.appendChild(selectElement);
+      let selectElement = document.createElement("select");
+      selectElement.id = id;
+      selectElement.className = "filterSelect";
+      selectElement.multiple = true;
+      selectDiv.appendChild(selectElement);
 
-    // add initial "ALL" element
-    {
-      let optionElement = document.createElement("option");
-      optionElement.innerHTML = "Show All";
-      optionElement.value = "ALL";
-      selectElement.appendChild(optionElement);
+      // add initial "ALL" element
+      {
+        let optionElement = document.createElement("option");
+        optionElement.innerHTML = "Show All";
+        optionElement.value = "ALL";
+        selectElement.appendChild(optionElement);
+      }
+
+      for (let string of stringArray) {
+        let optionElement = document.createElement("option");
+        optionElement.innerHTML = string;
+        optionElement.value = string;
+        selectElement.appendChild(optionElement);
+      }
+
+      selectElement.addEventListener("change", (event) => {
+        applyUserFilters();
+      });
     }
-
-    for (let district of districts) {
-      let optionElement = document.createElement("option");
-      optionElement.innerHTML = district;
-      optionElement.value = district;
-      selectElement.appendChild(optionElement);
-    }
-
-    selectElement.addEventListener("change", (event) => {
-      applyUserFilters();
-    });
   }
 
-  if (mmns.length > 1) {
-    let selectDiv = document.createElement("div");
-    selectDiv.className = "filterSelectDiv";
-    resultsFilterContainer.appendChild(selectDiv);
-
-    let labelElement = document.createElement("label");
-    labelElement.innerText = "Select MMNs:";
-    labelElement.className = "filterSelectLabel";
-    selectDiv.appendChild(labelElement);
-
-    let selectElement = document.createElement("select");
-    selectElement.id = "filterByMmn";
-    selectElement.className = "filterSelect";
-    selectElement.multiple = true;
-    selectDiv.appendChild(selectElement);
-
-    // add initial "ALL" element
-    {
-      let optionElement = document.createElement("option");
-      optionElement.innerHTML = "Show All";
-      optionElement.value = "ALL";
-      selectElement.appendChild(optionElement);
-    }
-
-    for (let mmn of mmns) {
-      let optionElement = document.createElement("option");
-      optionElement.innerHTML = mmn;
-      optionElement.value = mmn;
-      selectElement.appendChild(optionElement);
-    }
-
-    selectElement.addEventListener("change", (event) => {
-      applyUserFilters();
-    });
-  }
+  addSelectFilter("Select districts:", districts, "filterByDistrict");
+  addSelectFilter("Select MMNs:", mmns, "filterByMmn");
+  addSelectFilter("Select surnames:", surnames, "filterBySurname");
 
   let clearDiv = document.createElement("div");
   clearDiv.className = "filterSelectClear";
