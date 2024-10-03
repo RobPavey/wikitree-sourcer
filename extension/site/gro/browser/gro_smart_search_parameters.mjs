@@ -67,7 +67,7 @@ function checkSearchParameters() {
   }
 
   if (!searchParameters.gender) {
-    result.errorInputIds.push("searchParamGender");
+    result.errorInputIds.push("searchParamGenderRow");
     result.errorMessages.push("Gender is required.");
   }
 
@@ -161,6 +161,14 @@ function checkSearchParameters() {
       message += "\n\nYou can use the MMN results filter to only show the results with the MMNs that you want.";
       result.warningMessages.push(message);
       result.warningInputIds.push("searchParamMmn");
+    }
+  } else {
+    // deaths
+    if (searchParameters.endYear > gapEndYear) {
+      let message = "For years greater than " + gapEndYear + " the GRO does not support searching by age at death.";
+      message += " So for those years the year of birth search parameters will be ignored in the GRO searches";
+      message += " but the extra results will be pruned out on this page.";
+      result.warningMessages.push(message);
     }
   }
 
@@ -289,12 +297,7 @@ function addTextInput(parent, label, id, inputClass, required) {
   inputElement.className = inputClass;
 }
 
-function updateSearchControlsOnChange() {
-  //console.log("updateSearchControlsOnChange");
-  setSearchParametersFromControls();
-  //console.log("updateSearchControlsOnChange, searchParameters is:");
-  //console.log(searchParameters);
-
+function updateSearchControlsHighlighting() {
   const allSearchParamInputIds = [
     "searchParamStartYear",
     "searchParamEndYear",
@@ -316,20 +319,29 @@ function updateSearchControlsOnChange() {
   }
 
   let checkData = checkSearchParameters();
-  //console.log("checkData is:");
-  //console.log(checkData);
 
   for (let id of checkData.errorInputIds) {
     let element = document.getElementById(id);
-    element.classList.add("searchParamError");
+    if (element) {
+      element.classList.add("searchParamError");
+    }
   }
 
   for (let id of checkData.warningInputIds) {
     let element = document.getElementById(id);
-    if (!element.classList.contains("searchParamError")) {
+    if (element && !element.classList.contains("searchParamError")) {
       element.classList.add("searchParamWarning");
     }
   }
+}
+
+function updateSearchControlsOnChange() {
+  //console.log("updateSearchControlsOnChange");
+  setSearchParametersFromControls();
+  //console.log("updateSearchControlsOnChange, searchParameters is:");
+  //console.log(searchParameters);
+
+  updateSearchControlsHighlighting();
 }
 
 function createSearchControls(type) {
@@ -362,6 +374,7 @@ function createSearchControls(type) {
 
   {
     let genderRow = document.createElement("tr");
+    genderRow.id = "searchParamGenderRow";
     searchControlsBody.appendChild(genderRow);
     let options = [
       { label: "Male", value: "male", id: "searchParamGenderMale" },
@@ -411,7 +424,7 @@ function createSearchControls(type) {
     searchControlsBody.appendChild(forename1Row);
     addTextInput(forename1Row, "First Forename: ", "searchParamForename1", "textInputName", false);
 
-    createSelect(forename1Row, "Forename matching: ", "searchParamForenameMatches", [
+    createSelect(forename1Row, "Forename 1 matching: ", "searchParamForenameMatches", [
       { text: "Exact Matches Only", value: "0" },
       { text: "Phonetically Similar Variations", value: "1" },
       { text: "Derivative Name Variations", value: "5" },
@@ -449,7 +462,9 @@ function createSearchControls(type) {
   let birthInput = document.getElementById("searchParamBirth");
   if (birthInput) {
     birthInput.addEventListener("click", (event) => {
-      createSearchControls("births");
+      searchParameters.type = "births";
+      createSearchControls(searchParameters.type);
+      fillControlsFromSearchParameters();
     });
     if (type == "births") {
       birthInput.checked = true;
@@ -459,7 +474,9 @@ function createSearchControls(type) {
   let deathInput = document.getElementById("searchParamDeath");
   if (deathInput) {
     deathInput.addEventListener("click", (event) => {
-      createSearchControls("deaths");
+      searchParameters.type = "deaths";
+      createSearchControls(searchParameters.type);
+      fillControlsFromSearchParameters();
     });
     if (type == "deaths") {
       deathInput.checked = true;
@@ -475,6 +492,9 @@ function createSearchControls(type) {
   searchControlsTable.addEventListener("change", (event) => {
     updateSearchControlsOnChange();
   });
+
+  // update highlighting to show any missing required fields
+  updateSearchControlsHighlighting();
 }
 
 function fillControlsFromSearchParameters() {
@@ -537,6 +557,8 @@ function fillControlsFromSearchParameters() {
     fillTextInput("searchParamStartBirthYear", searchParameters.startBirthYear);
     fillTextInput("searchParamEndBirthYear", searchParameters.endBirthYear);
   }
+
+  fillTextInput("searchParamDistrict", searchParameters.district);
 
   updateSearchControlsOnChange();
 }

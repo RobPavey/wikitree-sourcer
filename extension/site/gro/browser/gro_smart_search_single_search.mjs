@@ -184,20 +184,20 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
 
   let builder = new GroUriBuilder(true);
 
-  const type = singleSearchParameters.type;
-  const surname = singleSearchParameters.surname;
-  const surnameMatches = singleSearchParameters.surnameMatches;
-  const forename1 = singleSearchParameters.forename1;
-  const forenameMatches = singleSearchParameters.forenameMatches;
-  const forename2 = singleSearchParameters.forename2;
-  const mmn = singleSearchParameters.mmn;
-  const mmnMatches = singleSearchParameters.mmnMatches;
-  const year = singleSearchParameters.year;
-  const yearRange = singleSearchParameters.yearRange;
-  const age = singleSearchParameters.age;
-  const ageRange = singleSearchParameters.ageRange;
-  const gender = singleSearchParameters.gender;
-  const district = singleSearchParameters.district;
+  let type = singleSearchParameters.type;
+  let surname = singleSearchParameters.surname;
+  let surnameMatches = singleSearchParameters.surnameMatches;
+  let forename1 = singleSearchParameters.forename1;
+  let forenameMatches = singleSearchParameters.forenameMatches;
+  let forename2 = singleSearchParameters.forename2;
+  let mmn = singleSearchParameters.mmn;
+  let mmnMatches = singleSearchParameters.mmnMatches;
+  let year = singleSearchParameters.year;
+  let yearRange = singleSearchParameters.yearRange;
+  let age = singleSearchParameters.age;
+  let ageRange = singleSearchParameters.ageRange;
+  let gender = singleSearchParameters.gender;
+  let district = singleSearchParameters.district;
 
   // safety code - the matches value are required
   if (!surnameMatches) {
@@ -206,7 +206,7 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   if (!forenameMatches) {
     forenameMatches = "0";
   }
-  if (!mmnMatches) {
+  if (!mmnMatches && type == "births") {
     mmnMatches = "0";
   }
 

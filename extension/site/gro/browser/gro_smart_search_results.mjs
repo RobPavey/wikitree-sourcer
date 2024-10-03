@@ -184,7 +184,7 @@ function fillTable(extractedDataObjs) {
     return text;
   }
   let resultsSummary = "Found " + resultsEnding(searchResults.length);
-  if (searchResults.length > 0) {
+  if (searchResults.length > 0 && searchResults.length != extractedDataObjs.length) {
     resultsSummary += " After applying filters showing " + resultsEnding(extractedDataObjs.length);
   }
   let resultsSummaryLabel = document.createElement("label");
@@ -266,7 +266,7 @@ function fillTable(extractedDataObjs) {
         }
 
         if (extractedData[heading.key + "Implied"]) {
-          value = "(" + value + ")";
+          //value = "(" + value + ")";
         }
       }
 
@@ -278,6 +278,7 @@ function fillTable(extractedDataObjs) {
       }
 
       let tdElement = document.createElement("td");
+
       if (linkText) {
         let linkElement = document.createElement("a");
         linkElement.setAttribute("href", linkText);
@@ -288,6 +289,11 @@ function fillTable(extractedDataObjs) {
       }
 
       tdElement.className = "resultsTableDataCell";
+
+      if (extractedData[heading.key + "Implied"]) {
+        tdElement.classList.add("valueImplied");
+      }
+
       rowElement.appendChild(tdElement);
     }
 
@@ -504,8 +510,8 @@ function sortPruneAndShowResults(searchParameters) {
           }
         } else if (age === undefined) {
           age = year - birthYear;
-          item.age = birthYear;
-          item.ageImplied = true;
+          item.ageAtDeath = age;
+          item.ageAtDeathImplied = true;
         }
 
         //console.log("filtering element, birthYear = " + birthYear + ", age = " + age);
@@ -513,6 +519,14 @@ function sortPruneAndShowResults(searchParameters) {
         if (birthYear) {
           let startBirthYear = searchParameters.startBirthYear;
           let endBirthYear = searchParameters.endBirthYear;
+          if (item.birthYearImplied) {
+            // we computed the birth year from the age, this can be off by one
+            // for example if a person died in 1850 age 0 the birth year can be
+            // 1850 or 1849, so include an extra year
+            if (endBirthYear) {
+              endBirthYear += 1;
+            }
+          }
           if ((startBirthYear && birthYear < startBirthYear) || (endBirthYear && birthYear > endBirthYear)) {
             //console.log("removing element with birthYear of: " + birthYear);
             keepElement = false;

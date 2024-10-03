@@ -124,6 +124,11 @@ th.resultsTableHeaderCell {
   padding: 2px 5px 2px 5px;
 }
 
+td.valueImplied {
+  font-style: italic;
+  color: grey;
+}
+
 td.resultsTableDataCell + td.resultsTableDataCell,
 th.resultsTableHeaderCell + th.resultsTableHeaderCell {
   border-left: 1px solid;

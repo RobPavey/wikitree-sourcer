@@ -72,7 +72,8 @@ function getYearRanges(type, startYear, endYear, startBirthYear, endBirthYear) {
 
   function addYearRange(year, range) {
     if (needAges && year <= maxYearAgeRangeAllowed) {
-      let minAgeForYearRange = year - range - endBirthYear;
+      // the extra -1 here is because someone could be born in 1849 but still be 0 in 1850 for example
+      let minAgeForYearRange = year - range - endBirthYear - 1;
       let maxAgeForYearRange = year + range - startBirthYear;
       if (minAgeForYearRange < 0) {
         minAgeForYearRange = 0;
@@ -185,7 +186,7 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
     if (result.resultsNumRecords >= 250) {
       // too many results to get all of them
       let message =
-        "A single search returned more than 250 results. Canceling search. Please try a more specific search.";
+        "A single search returned more than 250 results. Stopping search. Please try a more specific search.";
       if (singleSearchParameters.type == "births") {
         if (singleSearchParameters.mmnMatches != "0") {
           message +=
