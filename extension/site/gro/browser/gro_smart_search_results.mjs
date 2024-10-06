@@ -522,7 +522,8 @@ function sortPruneAndShowResults(searchParameters) {
           if (item.birthYearImplied) {
             // we computed the birth year from the age, this can be off by one
             // for example if a person died in 1850 age 0 the birth year can be
-            // 1850 or 1849, so include an extra year
+            // 1850 or 1849 but we set the implied value to 1850. So if they user has set
+            // endBirthYear to 1849 it will miss it. So include an extra year.
             if (endBirthYear) {
               endBirthYear += 1;
             }
