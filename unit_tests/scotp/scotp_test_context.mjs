@@ -113,6 +113,11 @@ const regressionData = [
     caseName: "found_stat_births_10",
     text: `↑ "Statutory Register of Births," database; National Records of Scotland; ScotlandsPeople : accessed 9 November 2023; Agnes McTaggart Currie birth registered 1856 in Greenock Old or West; citing 564/3/722`,
   },
+  {
+    // Ref and dataString in Source Title
+    caseName: "found_stat_births_11",
+    text: `"1901 CATHIE, CHARLES SKEOCH (Statutory registers Births 597 / 893)" database, National Records of Scotland, ScotlandsPeople https://www.scotlandspeople.gov.uk/ Accessed 7 Apr 2024.`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_marriages
@@ -351,6 +356,10 @@ const regressionData = [
     // Mismated quotes - the opening quote is missing
     caseName: "found_opr_birth_5",
     text: `Old Parish Registers - Births", National Records of Scotland database Scotlands People, William, lawful son of parents William Stewart / Isobel Dow. Parish: Clunie, 1817, citing Reference No. 339 10/357. see also Source batch 7628136 serial sheet 19 LDS`,
+  },
+  {
+    caseName: "found_opr_birth_6",
+    text: `ScotlandsPeople Old Parish Registers: Births & Baptisms. WATT, ALEXANDER DUFF, parents: THOS. WATT/JEAN DUFF, sex: M, date: 11/10/1837, 289/ 30 50 Glamis`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

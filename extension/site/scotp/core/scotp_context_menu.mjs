@@ -882,6 +882,11 @@ const dataStringSentencePatterns = {
       parts: [spEventDateNoWs, /;/, spRdName, spRefNum],
     },
     {
+      // "1901 CATHIE, CHARLES SKEOCH (Statutory registers Births 597 / 893)"
+      name: "Non-standard format: date, name with surname first, source title",
+      parts: [spEventDateNoWs, spNameSurnameFirst, / \(.*/],
+    },
+    {
       // Made up example: e.g.
       // 10 July 1867
       name: "Non-standard format: date only",
@@ -1195,6 +1200,22 @@ const dataStringSentencePatterns = {
       // William, lawful son of parents William Stewart / Isobel Dow. Parish: Clunie, 1817
       name: "Non-standard format, name, parents, parish, date",
       parts: [spName, spChildOfTwoParents, /.? parish:?/, spParishName, spEventDate],
+    },
+    {
+      // Example: Found
+      // WATT, ALEXANDER DUFF, parents: THOS. WATT/JEAN DUFF, sex: M, date: 11/10/1837, 289/ 30 50 Glamis
+      name: "Non-standard format, 'parents' in string, with sex and place",
+      parts: [
+        spNameSurnameFirst,
+        /,? parents:?/,
+        spTwoParents,
+        /,? ?sex:/,
+        spGender,
+        /(?:,|\.|, date:)/,
+        spEventDate,
+        spRefNum,
+        spEventPlace,
+      ],
     },
   ],
   opr_marriages: [
@@ -3043,6 +3064,27 @@ function parseDataString(parsedCitation, builder) {
     }
   }
 
+  // sometimes the data got put in the SourceTitle e.g. found_stat_births_11
+  dataString = parsedCitation.sourceTitle;
+  if (dataString) {
+    dataString = dataString.trim();
+    if (dataString.endsWith(";")) {
+      // this can happen if there is a "; citing " after data string
+      dataString = dataString.substring(0, dataString.length - 1);
+    }
+
+    if (parseDataSentence(dataString, parsedCitation, builder)) {
+      return;
+    }
+
+    // no matched sentence pattern, try a list
+    if (dataString.includes("surname") || dataString.includes("full name")) {
+      if (parseDataList(dataString, parsedCitation, builder)) {
+        return;
+      }
+    }
+  }
+
   // not parsed as a sentence or a list - could still be some missing data in
   // other strings.
   let data = {};
@@ -3065,31 +3107,41 @@ function extractReferenceNumber(parsedCitation) {
 
   const nonStandardRefNumRegexes = [/^.*Statutory Registers no[\.,:]? ([a-z0-9 \/]+).*$/i];
 
+  const bareRefNumRegexes = [
+    /^.*[^\d\/](\d+ ?\/ ?\d+ \d+ ?\/ ?\d+)[^\d\/].*$/, // 123 / 12 123 / 12
+    /^.*[^\d\/](\d+ ?\/ ?\d+ ?\/ ?\d+)[^\d\/].*$/, // 123 / 12 / 123
+    /^.*[^\d\/](\d+ ?\/ ?\d+)[^\d\/].*$/, // 123 / 12
+  ];
+
   function extractFromTextString(text, regexes, rtKey) {
     if (!text) {
       return "";
     }
 
-    for (let regex of regexes) {
-      if (regex.test(text)) {
-        let num = text.replace(regex, "$1");
-        if (num && num != text) {
-          return num;
+    if (regexes) {
+      for (let regex of regexes) {
+        if (regex.test(text)) {
+          let num = text.replace(regex, "$1");
+          if (num && num != text) {
+            return num;
+          }
         }
       }
     }
 
     // another way is to look for what this record type would use.
-    let refName = ScotpRecordType.getRecordKey(parsedCitation.scotpRecordType, rtKey);
-    if (refName) {
-      let lcRefName = refName.toLowerCase();
-      let lcSourceReference = text.toLowerCase();
-      let index = lcSourceReference.indexOf(lcRefName);
-      if (index != -1) {
-        let remainder = lcSourceReference.substring(index + lcRefName.length);
-        let num = remainder.replace(/^:? ([a-z0-9 \/]+).*$/, "$1");
-        if (num && num != remainder) {
-          return num;
+    if (rtKey) {
+      let refName = ScotpRecordType.getRecordKey(parsedCitation.scotpRecordType, rtKey);
+      if (refName) {
+        let lcRefName = refName.toLowerCase();
+        let lcSourceReference = text.toLowerCase();
+        let index = lcSourceReference.indexOf(lcRefName);
+        if (index != -1) {
+          let remainder = lcSourceReference.substring(index + lcRefName.length);
+          let num = remainder.replace(/^:? ([a-z0-9 \/]+).*$/, "$1");
+          if (num && num != remainder) {
+            return num;
+          }
         }
       }
     }
@@ -3099,7 +3151,7 @@ function extractReferenceNumber(parsedCitation) {
 
   function extractFromSourceRefDataStringOrData(standardRegexes, nonStandardRegexes, dataKey, rtKey) {
     // See if we can extract a reference number from sourceReference
-    if (parsedCitation.sourceReference) {
+    if (parsedCitation.sourceReference && standardRegexes) {
       let sourceReference = parsedCitation.sourceReference;
       let result = extractFromTextString(sourceReference, standardRegexes, rtKey);
 
@@ -3121,7 +3173,7 @@ function extractReferenceNumber(parsedCitation) {
 
     // check the data string for a refNum, it could have been parsed as a sentence but have
     // been put in the place name
-    if (parsedCitation.dataString) {
+    if (parsedCitation.dataString && standardRegexes) {
       let result = extractFromTextString(parsedCitation.dataString, standardRegexes, rtKey);
       if (result) {
         logMessage("  found in data string");
@@ -3130,7 +3182,7 @@ function extractReferenceNumber(parsedCitation) {
     }
 
     // if still nothing try non-standard labels
-    if (parsedCitation.dataString) {
+    if (parsedCitation.sourceReference && nonStandardRegexes) {
       let result = extractFromTextString(parsedCitation.sourceReference, nonStandardRegexes, rtKey);
       if (result) {
         logMessage("  found using non-standard label");
@@ -3138,7 +3190,7 @@ function extractReferenceNumber(parsedCitation) {
       }
     }
 
-    if (parsedCitation.dataString) {
+    if (parsedCitation.dataString && nonStandardRegexes) {
       let result = extractFromTextString(parsedCitation.dataString, nonStandardRegexes, rtKey);
       if (result) {
         logMessage("  found in data string using non-standard label");
@@ -3146,6 +3198,29 @@ function extractReferenceNumber(parsedCitation) {
       }
     }
 
+    return "";
+  }
+
+  function extractFromSourceTitle(standardRegexes, nonStandardRegexes, rtKey) {
+    // See if we can extract a reference number from sourceTItle
+    if (parsedCitation.sourceTitle) {
+      let sourceTitle = parsedCitation.sourceTitle;
+      let result = extractFromTextString(sourceTitle, standardRegexes, rtKey);
+
+      if (result) {
+        logMessage("  found in source reference");
+        return result;
+      }
+    }
+
+    // if still nothing try non-standard labels
+    if (parsedCitation.sourceTitle) {
+      let result = extractFromTextString(parsedCitation.sourceTitle, nonStandardRegexes, rtKey);
+      if (result) {
+        logMessage("  found using non-standard label");
+        return result;
+      }
+    }
     return "";
   }
 
@@ -3157,6 +3232,26 @@ function extractReferenceNumber(parsedCitation) {
     const testForOnlyRefNum = /^\s*([0-9 \/]+)\s*$/i;
     if (testForOnlyRefNum.test(parsedCitation.sourceReference)) {
       refNum = parsedCitation.sourceReference.replace(testForOnlyRefNum, "$1");
+    }
+  }
+
+  if (!refNum && parsedCitation.sourceTitle) {
+    // occasionally the source ref is in the source title
+    refNum = extractFromSourceTitle(standardRefNumRegexes, nonStandardRefNumRegexes, "ref");
+  }
+
+  // try looking for a bare ref num
+  if (!refNum) {
+    refNum = extractFromSourceRefDataStringOrData(undefined, bareRefNumRegexes);
+
+    if (!refNum && parsedCitation.sourceTitle) {
+      // occasionally the source ref is in the source title
+      refNum = extractFromSourceTitle(undefined, bareRefNumRegexes);
+    }
+
+    // exclude if it looks like a date
+    if (refNum && /\d\d?\/\d\d?\/\d\d\d\d/.test(refNum)) {
+      refNum = "";
     }
   }
 
