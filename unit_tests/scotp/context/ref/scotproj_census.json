@@ -45,7 +45,9 @@
       {
         "fieldKey": "edit-search-params-str-district",
         "type": "multipleSelect",
-        "values": []
+        "values": [
+          "GREENOCK OLD OR WEST|GREENOCK WEST|GREENOCK MIDDLE|GREENOCK NEW OR MIDDLE|GREENOCK EAST|GREENOCK_GREENOCK"
+        ]
       }
     ]
   },

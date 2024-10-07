@@ -1,11 +1,11 @@
 {
   "formData": {
-    "urlPart": "statutory-records/stat-births",
+    "urlPart": "census-returns/census",
     "fields": [
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "Robert"
+        "value": "Agnes"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "Hamilton"
+        "value": "Miller"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -23,35 +23,22 @@
         "value": "exact"
       },
       {
-        "fieldKey": "edit-search-params-nrs-search-year-year-from",
-        "type": "text",
-        "value": "1862"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-search-year-year-to",
-        "type": "text",
-        "value": "1862"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-mmsurname",
-        "type": "text",
-        "value": "Jeffrey"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-mmsurname",
-        "type": "so",
-        "value": "exact"
+        "fieldKey": "edit-search-params-nrs-census-year-1881",
+        "type": "checkbox",
+        "value": true
       },
       {
         "fieldKey": "edit-search-params-str-district",
         "type": "multipleSelect",
         "values": [
-          "SOUTH LANARKSHIRE (CARLUKE)|CARLUKE_CARLUKE"
+          "GREENOCK OLD OR WEST|GREENOCK WEST|GREENOCK MIDDLE|GREENOCK NEW OR MIDDLE|GREENOCK EAST|GREENOCK_GREENOCK"
         ]
       }
     ]
   },
   "refineData": {
     "fields": []
-  }
+  },
+  "refNum": "564/2 18/ 18",
+  "recordType": "census"
 }

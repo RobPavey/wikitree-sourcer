@@ -48,6 +48,8 @@ function logMessage(message) {
   messages += message;
 }
 
+// To debug regex matches use: https://regex101.com/r/vY0iK9/1
+
 // NOTE: All patterns try to handle the optional accessed date in all three options
 // This non-capturing group should match all possibilities
 // (?: ?\(accessed [^\)]+\),? ?| ?\: ?accessed [^\)]+\),? ?| |,|, )
@@ -494,6 +496,12 @@ const otherFoundTitles = [
       /(?:Scotland )?Statutory Births?(?: Records?| Index(?:es))/i,
       /Statutory(?: Registers? ?(?:of|:|-)?)? ?Births(?: \d\d\d\d(?: ?- ?| ?: ?| to )present)?/i,
     ],
+    reTitlesPlusKeyword: [
+      {
+        titleRegex: /Statutory Registers/i,
+        keywordRegex: /Birth of /i,
+      },
+    ],
   },
   {
     recordType: "stat_marriages",
@@ -501,6 +509,12 @@ const otherFoundTitles = [
     reTitles: [
       /(?:Scotland )?Statutory Marriages?(?: Records?| Index(?:es))/i,
       /Statutory(?: Registers? ?(?:of|:|-)?)? ?Marriages(?: \d\d\d\d(?: ?- ?| ?: ?| to )present)?/i,
+    ],
+    reTitlesPlusKeyword: [
+      {
+        titleRegex: /Statutory Registers/i,
+        keywordRegex: /Marriage of /i,
+      },
     ],
   },
   {
@@ -517,6 +531,12 @@ const otherFoundTitles = [
     reTitles: [
       /(?:Scotland )?Statutory Deaths?(?: Records?| Index(?:es))/i,
       /Statutory(?: Registers? ?(?:of|:|-)?)? ?Deaths(?: \d\d\d\d(?: ?- ?| ?: ?| to )present)?/i,
+    ],
+    reTitlesPlusKeyword: [
+      {
+        titleRegex: /Statutory Registers/i,
+        keywordRegex: /Death of /i,
+      },
     ],
   },
   {
@@ -721,7 +741,7 @@ const spGender = {
   paramKeys: ["gender"],
 };
 const spAge = {
-  regex: /(?:, |,| )\(?age ([^;,\)]+)\)?/,
+  regex: /(?:, |,| )\(?aged? ([^;,\)]+)\)?/,
   paramKeys: ["age"],
 };
 const spAgeNoWs = {
@@ -888,6 +908,12 @@ const dataStringSentencePatterns = {
       parts: [/marriage registration,? /, spNameAndSpouse, /,? married/, spEventYear, spRdName],
     },
     {
+      // Found case
+      // Marriage of Legh R.H. Peter Marshall and Frances Marian Ainslie, in Peebles in 1912 (ref. 768/27). Index online at ScotlandsPeople, hosted by National Records of Scotland, www.scotlandspeople.gov.uk (register entry purchased by Alison Kilpatrick, 2018-07-11).
+      name: "non-standard format, 'Marriage of', names, RD, year",
+      parts: [/marriage of /, spNameAndSpouse, spRdName, / in/, spEventYear, /.*/],
+    },
+    {
       // Scotland Project. Example:
       // Euphemia Lamont, and John McBride, 1856, Greenock Old or West
       name: "Scotland Project format",
@@ -978,6 +1004,12 @@ const dataStringSentencePatterns = {
       // Joseph Sloy, 12 September 2028, corrected entry, West District, Greenock, Renfrewshire, p. 159, item 475, reference number 564/2 475
       name: "Scotland Project format",
       parts: [spName, /,/, spEventDate, /,/, spRdName, /, p\. \d+, item \d+, reference number/, spRefNum, /.*/],
+    },
+    {
+      // Found case
+      // Death of Legh Richmond H. Marshall, aged 74 years, in 1948, Walkerburn registration district, ref. 762/2 6. Index online at ScotlandsPeople, hosted by National Records of Scotland, www.scotlandspeople.gov.uk (register entry purchased by Alison Kilpatrick, 2018-07-20).
+      name: "non-standard format, 'Death of', name, age, year, RD",
+      parts: [/death of /, spName, spAge, /,? in/, spEventYear, spRdName, /(?:registration district)?,.*/],
     },
     {
       // death registration, Jane Lamont, 1924, 44, District of Paisley, County of Renfrew
@@ -1384,6 +1416,11 @@ const dataStringSentencePatterns = {
       name: "Non-standard format, census year in dataString",
       parts: [spEventDateNoWs, spName, / \(?Census/, spRefNum, /\)/],
     },
+    {
+      // Agnes Miller in Greenock, Renfrewshire
+      name: "Non-standard format, name in place",
+      parts: [spName, / in/, spRdName],
+    },
   ],
   census_lds: [
     {
@@ -1783,6 +1820,8 @@ function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation, combineLab
     while (remainder.startsWith('"') || remainder.startsWith(",") || remainder.startsWith(" ")) {
       remainder = remainder.substring(1);
     }
+    // remove punctuation from start
+    remainder = remainder.replace(/^\s*[\.\,\:\;\-]+\s*/, "");
     // partial patterns expect a space at start
     parsedCitation.partialText = " " + remainder;
     parsedCitation.textBeforeTitleInPartialMatch = beforeTitle;
@@ -1812,6 +1851,24 @@ function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation, combineLab
     return false;
   }
 
+  function checkRePlusKeywordMatch(recordType, reTitlePlusKeyword) {
+    let titleRegex = reTitlePlusKeyword.titleRegex;
+    let keywordRegex = reTitlePlusKeyword.keywordRegex;
+    let sourceTitleIndex = lcText.search(titleRegex);
+    if (sourceTitleIndex != -1) {
+      let keywordIndex = lcText.search(keywordRegex);
+      if (keywordIndex != -1) {
+        let matches = lcText.match(titleRegex);
+        if (matches && matches.length > 0) {
+          let title = matches[0];
+          foundMatch(recordType, title, sourceTitleIndex);
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   function checkTitleObjects(titleObjects) {
     for (let titleObject of titleObjects) {
       if (titleObject.reTitles) {
@@ -1824,6 +1881,13 @@ function getScotpRecordTypeAndSourceTitleFromFullText(parsedCitation, combineLab
       if (titleObject.titles) {
         for (let title of titleObject.titles) {
           if (checkMatch(titleObject.recordType, title)) {
+            return true;
+          }
+        }
+      }
+      if (titleObject.reTitlesPlusKeyword) {
+        for (let reTitlePlusKeyword of titleObject.reTitlesPlusKeyword) {
+          if (checkRePlusKeywordMatch(titleObject.recordType, reTitlePlusKeyword)) {
             return true;
           }
         }
@@ -2103,17 +2167,27 @@ function setName(data, parsedCitation, builder) {
     return;
   }
 
+  // change initials with periods to have no periods or they will not match
+  const removePeriodsAfterInitialsRegEx = /[ \.]([a-z])\./gi;
+  while (removePeriodsAfterInitialsRegEx.test(name)) {
+    name = name.replace(removePeriodsAfterInitialsRegEx, " $1 ");
+  }
+  name = name.replace(/\s+/g, " ");
+  name = name.trim();
+
   let numWordsInName = StringUtils.countWords(name);
   if (numWordsInName > 1) {
     if (numWordsInName > 2 && name.toLowerCase().includes(" or ")) {
       // this handles the cases like "Christina Clark Or Pocock"
       let nameParts = name.split(" ");
       let newNameParts = [];
+      let newIndexOfOrPart = -1;
       for (let i = 0; i < nameParts.length; i++) {
         let namePart = nameParts[i];
         if (i < nameParts.length - 2 && nameParts[i + 1].toLowerCase() == "or") {
           let newNamePart = nameParts[i] + " or " + nameParts[i + 2];
           newNameParts.push(newNamePart);
+          newIndexOfOrPart = newNameParts.length - 1;
           i += 2;
         } else {
           newNameParts.push(namePart);
@@ -2124,10 +2198,17 @@ function setName(data, parsedCitation, builder) {
         let forenames = newNameParts[0];
         let lastName = newNameParts[newNameParts.length - 1];
 
-        if (newNameParts.length > 2) {
-          for (let i = 1; i < newNameParts.length - 1; i++) {
-            forenames += " " + newNameParts[i];
+        if (newIndexOfOrPart == newNameParts.length - 1) {
+          // the OR is in the last part, so the OR indicates two surnames
+          if (newNameParts.length > 2) {
+            for (let i = 1; i < newNameParts.length - 1; i++) {
+              forenames += " " + newNameParts[i];
+            }
           }
+        } else {
+          // the or is not in the last part, it could be something like
+          // "Jeanie Campbell OR Jeanie Stevenson"
+          // so ignore the part with the OR
         }
 
         forenames = cleanForename(forenames);
@@ -2141,6 +2222,27 @@ function setName(data, parsedCitation, builder) {
         return;
       }
     }
+
+    if (numWordsInName > 2 && name.includes("/")) {
+      // this handles the cases like "Helen ADAM / CHALMERS"
+      // In this case the user has added both the maiden name and married name
+      // usually on a death registration
+      // We try just throwing away the part after the slash
+      let slashIndex = name.indexOf("/");
+      if (slashIndex != -1) {
+        name = name.substring(0, slashIndex).trim();
+      }
+    }
+
+    if (numWordsInName > 2 && name.includes("(") && name.includes(")")) {
+      // this handles the cases like "Helen (ADAM) CHALMERS"
+      // In this case the user has added both the maiden name and married name
+      // usually on a death registration
+      // We try just throwing away the part in the parens
+      name = name.replace(/^(.*)\(.*\)(.*)$/, "$1 $2");
+      name = name.replace(/\s+/g, " ");
+    }
+
     let forenames = StringUtils.getWordsBeforeLastWord(name);
     let lastName = StringUtils.getLastWord(name);
 
@@ -2349,6 +2451,9 @@ function setAge(data, parsedCitation, builder) {
     return;
   }
 
+  // check for extra text like " years" on the end
+  age = age.replace(/ years?$/i, "");
+
   builder.addAgeRange(age, age);
 }
 
@@ -2373,7 +2478,13 @@ function setPlace(data, parsedCitation, builder) {
   // Registration district
   if (ScotpRecordType.hasSearchFeature(scotpRecordType, SpFeature.rd)) {
     if (data.rdName) {
-      if (builder.addRdName(data.rdName, false)) {
+      // check if rdName has extra stuff on end
+      let rdName = data.rdName;
+      rdName = rdName.replace(/ registration district$/i, "");
+      rdName = rdName.replace(/ district$/i, "");
+      rdName = rdName.replace(/ rd$/i, "");
+
+      if (builder.addRdName(rdName, false)) {
         addedPlace = true;
       }
     }
@@ -2753,7 +2864,7 @@ function cleanSourceReference(parsedCitation) {
   sourceReference = sourceReference.trim();
 
   if (sourceReference.endsWith(";")) {
-    sourceReference = sourceReference.substring(0, dataString.length - 1);
+    sourceReference = sourceReference.substring(0, sourceReference.length - 1);
   }
 
   sourceReference = sourceReference.trim();
@@ -2840,7 +2951,7 @@ function cleanDataString(parsedCitation) {
     dataString = dataString.replace(testForPunctuationOnStart, "$1");
   }
   const possibleStartJunkRegexes = [
-    /^(?:image )?(?:last )?(?:accessed|viewed)(?: : |:| )\d\d? [a-z]+ \d\d\d\d ?(.*)/i,
+    /^(?:image )?(?:last )?(?:accessed|viewed)(?: : |: ?| )\d\d? [a-z]+ \d\d\d\d\)? ?(.*)/i,
     /^National Records of Scotland ?(.*)/i,
     /^database ?(.*)/i,
     /^Scotlands People ?(.*)/i,
@@ -3160,6 +3271,9 @@ function buildScotlandsPeopleContextSearchData(text) {
           logMessage("Could not find any known source title text.");
           return { messages: messages };
         }
+      } else {
+        logMessage("Could not find any known source title text.");
+        return { messages: messages };
       }
     }
 

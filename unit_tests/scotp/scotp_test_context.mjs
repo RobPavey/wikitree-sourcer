@@ -34,7 +34,6 @@ import {
 import { deepObjectEquals } from "../test_utils/compare_result_utils.mjs";
 
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
-import { reportStringDiff } from "../test_utils/compare_result_utils.mjs";
 
 // Note the text is what comes through from the context selection text - it has newlines removed already.
 
@@ -108,6 +107,12 @@ const regressionData = [
     caseName: "found_stat_births_9",
     text: `↑ "Statutory Registers - Births" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 1 June 2023), John Turner, parent: Barr, 12 January 1863, Bridgeton; Reference Number: 644/3 92.`,
   },
+  {
+    // Found on: https://www.wikitree.com/wiki/Currie-43
+    // Caused a crash in cleanSourceReference
+    caseName: "found_stat_births_10",
+    text: `↑ "Statutory Register of Births," database; National Records of Scotland; ScotlandsPeople : accessed 9 November 2023; Agnes McTaggart Currie birth registered 1856 in Greenock Old or West; citing 564/3/722`,
+  },
 
   ////////////////////////////////////////////////////////////////////////////////
   // stat_marriages
@@ -168,6 +173,12 @@ const regressionData = [
     // Entire citing is ref num
     caseName: "found_stat_marriages_8",
     text: `Statutory Register of Marriages, database: National Records of Scotland; ScotlandsPeople : [ https://www.scotlandspeople.gov.uk/record-results/1990049175663e75e216334 ]: accessed 10 May 2024; Mary Deans marriage to John McKinlay registered 1862 in Old Cumnock; citing 610/19.`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Marshall-14769
+    // Entire citing is ref num
+    caseName: "found_stat_marriages_9",
+    text: `General Register Office of Scotland. Statutory Registers. Marriage of Legh R.H. Peter Marshall and Frances Marian Ainslie, in Peebles in 1912 (ref. 768/27). Index online at ScotlandsPeople, hosted by National Records of Scotland, www.scotlandspeople.gov.uk (register entry purchased by Alison Kilpatrick, 2018-07-11).`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -241,6 +252,23 @@ const regressionData = [
     // Found on: https://www.wikitree.com/wiki/Alexander-13866 (22 Sep 2024)
     caseName: "found_stat_deaths_9",
     text: `↑ "Statutory Registers - Deaths" database, National Records of Scotland, ScotlandsPeople (https://www.scotlandspeople.gov.uk/: accessed 1 June 2023), Mary Alexander parent: Gray, 18 October 1862, Old Monkland; Reference Number: 652/2 293.`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Marshall-14769
+    caseName: "found_stat_deaths_10",
+    text: `National Records of Scotland. Statutory Registers. Death of Legh Richmond H. Marshall, aged 74 years, in 1948, Walkerburn registration district, ref. 762/2 6. Index online at ScotlandsPeople, hosted by National Records of Scotland, www.scotlandspeople.gov.uk (register entry purchased by Alison Kilpatrick, 2018-07-20).`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Adam-4432
+    // Has both maiden name and married name separate by slash
+    caseName: "found_stat_deaths_11",
+    text: `Death Registration: "Statutory Register of Deaths," database, National Records of Scotland, (ScotlandsPeople : accessed 29 September 2024), Helen ADAM / CHALMERS death registered 1862 in Rothiemay (age 43, mother's maiden name Petrie); citing Ref 165/4.`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Stevenson-1227
+    // Has both maiden name and married name separate by or
+    caseName: "found_stat_deaths_12",
+    text: `"Statutory Register of Deaths" database; National Records of Scotland (ScotlandsPeople Accessed: 18 August 2023) Jeanie Campbell OR Jeanie Stevenson Death Registered 1939 in New Cumnock, Ayrshire (Aged 74 years); citing Ref 608/8.`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -476,6 +504,11 @@ const regressionData = [
   {
     caseName: "found_census_2",
     text: `"1921 Census of Scotland", database with images, ScotlandsPeople (http://www.scotlandspeople.gov.uk : accessed 1 Feb 2024), Jane Lamont (Census 573/1 90/ 6), Copyright National Records of Scotland. Image generated on 4 Feb 2024 20:09`,
+  },
+  {
+    // Found on: https://www.wikitree.com/wiki/Currie-43
+    caseName: "found_census_3",
+    text: `↑ "Scotland Census, 1881," database; National Records of Scotland; ScotlandsPeople : accessed 9 November 2023; Agnes Miller in Greenock, Renfrewshire; citing 564/2 18/ 18`,
   },
 
   ////////////////////////////////////////////////////////////////////////////////

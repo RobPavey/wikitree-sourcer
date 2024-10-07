@@ -5,7 +5,7 @@
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "Robert"
+        "value": "Agnes McTaggart"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "Hamilton"
+        "value": "Currie"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -25,33 +25,25 @@
       {
         "fieldKey": "edit-search-params-nrs-search-year-year-from",
         "type": "text",
-        "value": "1862"
+        "value": "1856"
       },
       {
         "fieldKey": "edit-search-params-nrs-search-year-year-to",
         "type": "text",
-        "value": "1862"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-mmsurname",
-        "type": "text",
-        "value": "Jeffrey"
-      },
-      {
-        "fieldKey": "edit-search-params-nrs-mmsurname",
-        "type": "so",
-        "value": "exact"
+        "value": "1856"
       },
       {
         "fieldKey": "edit-search-params-str-district",
         "type": "multipleSelect",
         "values": [
-          "SOUTH LANARKSHIRE (CARLUKE)|CARLUKE_CARLUKE"
+          "GREENOCK OLD OR WEST|GREENOCK WEST|GREENOCK MIDDLE|GREENOCK NEW OR MIDDLE|GREENOCK EAST|GREENOCK_GREENOCK"
         ]
       }
     ]
   },
   "refineData": {
     "fields": []
-  }
+  },
+  "refNum": "564/3/722",
+  "recordType": "stat_births"
 }

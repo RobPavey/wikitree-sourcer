@@ -1,11 +1,11 @@
 {
   "formData": {
-    "urlPart": "statutory-records/stat-births",
+    "urlPart": "statutory-records/stat-marriages",
     "fields": [
       {
         "fieldKey": "edit-search-params-nrs-forename",
         "type": "text",
-        "value": "Robert"
+        "value": "Legh R H Peter"
       },
       {
         "fieldKey": "edit-search-params-nrs-forename",
@@ -15,7 +15,7 @@
       {
         "fieldKey": "edit-search-params-nrs-surname",
         "type": "text",
-        "value": "Hamilton"
+        "value": "Marshall"
       },
       {
         "fieldKey": "edit-search-params-nrs-surname",
@@ -25,20 +25,30 @@
       {
         "fieldKey": "edit-search-params-nrs-search-year-year-from",
         "type": "text",
-        "value": "1862"
+        "value": "1912"
       },
       {
         "fieldKey": "edit-search-params-nrs-search-year-year-to",
         "type": "text",
-        "value": "1862"
+        "value": "1912"
       },
       {
-        "fieldKey": "edit-search-params-nrs-mmsurname",
+        "fieldKey": "edit-search-params-nrs-spforename",
         "type": "text",
-        "value": "Jeffrey"
+        "value": "Frances Marian"
       },
       {
-        "fieldKey": "edit-search-params-nrs-mmsurname",
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "text",
+        "value": "Ainslie"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
         "type": "so",
         "value": "exact"
       },
@@ -46,12 +56,14 @@
         "fieldKey": "edit-search-params-str-district",
         "type": "multipleSelect",
         "values": [
-          "SOUTH LANARKSHIRE (CARLUKE)|CARLUKE_CARLUKE"
+          "SCOTTISH BORDERS (PEEBLES)|PEEBLES LANDWARD|PEEBLES BURGH|PEEBLES_PEEBLES"
         ]
       }
     ]
   },
   "refineData": {
     "fields": []
-  }
+  },
+  "refNum": "768/27",
+  "recordType": "stat_marriages"
 }
