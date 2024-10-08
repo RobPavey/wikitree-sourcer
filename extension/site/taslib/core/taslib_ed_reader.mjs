@@ -347,7 +347,7 @@ class TaslibEdReader extends ExtractedDataReader {
         let yearNum = Number(yearString);
         if (yearNum && !isNaN(yearNum)) {
           if (yearNum < 1856) {
-            fullPlaceEnding = "Van Diemen's Land, Australia";
+            fullPlaceEnding = "Van Diemen's Land";
           }
         }
       }

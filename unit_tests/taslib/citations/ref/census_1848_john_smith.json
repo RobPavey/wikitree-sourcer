@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1848 Census''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CEN1/1/97; Page: 476<br/>\n[https://libraries.tas.gov.au/Digital/CEN1-1-97/CEN1-1-97-476 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/484501 Record Permalink] (accessed 6 May 2021)<br/>\nJohn Smith in Launceston, Van Diemen's Land, Australia.\n</ref>",
+    "citation": "<ref>\n'''1848 Census''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CEN1/1/97; Page: 476<br/>\n[https://libraries.tas.gov.au/Digital/CEN1-1-97/CEN1-1-97-476 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/484501 Record Permalink] (accessed 6 May 2021)<br/>\nJohn Smith in Launceston, Van Diemen's Land.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1848 census John was in Launceston, Van Diemen's Land, Australia.<ref>\n'''1848 Census''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CEN1/1/97; Page: 476<br/>\n[https://libraries.tas.gov.au/Digital/CEN1-1-97/CEN1-1-97-476 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/484501 Record Permalink] (accessed 6 May 2021)<br/>\nJohn Smith in Launceston, Van Diemen's Land, Australia.\n</ref>",
+    "citation": "In the 1848 census John was in Launceston, Van Diemen's Land.<ref>\n'''1848 Census''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CEN1/1/97; Page: 476<br/>\n[https://libraries.tas.gov.au/Digital/CEN1-1-97/CEN1-1-97-476 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/484501 Record Permalink] (accessed 6 May 2021)<br/>\nJohn Smith in Launceston, Van Diemen's Land.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1848 Census''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: CEN1/1/97; Page: 476<br/>[https://libraries.tas.gov.au/Digital/CEN1-1-97/CEN1-1-97-476 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/484501 Record Permalink] (accessed 6 May 2021)<br/>John Smith in Launceston, Van Diemen's Land, Australia.",
+    "citation": "* '''1848 Census''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: CEN1/1/97; Page: 476<br/>[https://libraries.tas.gov.au/Digital/CEN1-1-97/CEN1-1-97-476 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/484501 Record Permalink] (accessed 6 May 2021)<br/>John Smith in Launceston, Van Diemen's Land.",
     "type": "source"
   }
 }
