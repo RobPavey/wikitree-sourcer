@@ -231,6 +231,11 @@ const regressionData = [
     url: "https://www.familysearch.org/tree/person/details/K2B7-NSV",
   },
   {
+    // bug in sorting, marriage source has no date but its record does
+    caseName: "k2fn_1vl_william_herron",
+    url: "https://www.familysearch.org/tree/person/details/K2FN-1VL",
+  },
+  {
     caseName: "k2hc_86c_jeanne_lajuenesse",
     url: "https://www.familysearch.org/tree/person/details/K2HC-86C",
     optionVariants: [

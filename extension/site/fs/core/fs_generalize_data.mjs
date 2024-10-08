@@ -712,6 +712,9 @@ function generalizeDataGivenRecordType(ed, result) {
       }
       resultSpouse.marriageDate = marriageDate;
       result.marriageDate = marriageDate.getDateString();
+      if (!result.eventDate) {
+        result.eventDate = marriageDate;
+      }
     }
 
     result.spouses.push(resultSpouse);
