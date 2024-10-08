@@ -73,6 +73,10 @@ const recordTypeByFields = [
   },
   {
     type: RT.Marriage,
+    labels: ["Marriage License Date", "Marriage License Place", "Spouse"],
+  },
+  {
+    type: RT.Marriage,
     labels: ["Affidavit or License Date", "License Place", "Spouse"],
   },
   {
@@ -394,17 +398,17 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.Residence,
-      matches: ["Residents", "U.S., Public Records Index"],
+      matches: ["Residents", "U.S., Public Records Index", "U.S., Index to Public Records"],
       requiredData: [["Residence Place"]],
     },
     {
       type: RT.Residence,
-      matches: ["U.S., Public Records Index"],
+      matches: ["U.S., Public Records Index", "U.S., Index to Public Records"],
       requiredData: [["Residence"]],
     },
     {
       type: RT.Residence,
-      matches: ["U.S., Public Records Index"],
+      matches: ["U.S., Public Records Index", "U.S., Index to Public Records"],
       requiredData: [["Residence Date"]],
     },
     {
