@@ -1026,8 +1026,7 @@ class PlaceObj {
         let place = thisCounty;
         if (thisCountry) {
           place += ", " + thisCountry.country.stdName;
-        }
-        if (otherCountry) {
+        } else if (otherCountry) {
           place += ", " + otherCountry.country.stdName;
         }
         return place;
