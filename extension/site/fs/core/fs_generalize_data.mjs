@@ -205,7 +205,10 @@ const sourceRecordTypeToRecordType = [
 ];
 
 function determineRecordType(extractedData) {
-  const titleMatches = [{ type: RT.Census, matches: ["Census"] }];
+  const titleMatches = [
+    { type: RT.Census, matches: ["Census"] },
+    { type: RT.Military, matches: ["World War I"] },
+  ];
 
   //console.log("in determineRecordType, factType is");
   //console.log(extractedData.factType);
