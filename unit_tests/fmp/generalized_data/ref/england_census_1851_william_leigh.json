@@ -1,0 +1,144 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Leigh",
+    "forenames": "William"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Sidesankey Green, Warrington, Lancashire & Cheshire, England"
+  },
+  "registrationDistrict": "Warrington",
+  "birthDate": {
+    "yearString": "1851",
+    "qualifier": 2
+  },
+  "ageAtEvent": "0",
+  "birthPlace": {
+    "placeString": "Warrington, Lancashire, England"
+  },
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "occupation": "At home",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "James Leigh",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "33",
+      "birthYear": "1818",
+      "occupation": "Maliner",
+      "birthPlace": "Lancashire, England"
+    },
+    {
+      "name": "Ellen Leigh",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "31",
+      "birthYear": "1820",
+      "birthPlace": "Warrington, Lancashire, England"
+    },
+    {
+      "name": "Ann Leigh",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "13",
+      "birthYear": "1838",
+      "occupation": "Dressmaker",
+      "birthPlace": "Warrington, Lancashire, England"
+    },
+    {
+      "name": "Jane Leigh",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "11",
+      "birthYear": "1840",
+      "occupation": "Scholar",
+      "birthPlace": "Warrington, Lancashire, England"
+    },
+    {
+      "name": "Samuel Leigh",
+      "relationship": "son",
+      "gender": "male",
+      "age": "9",
+      "birthYear": "1842",
+      "occupation": "Scholar",
+      "birthPlace": "Warrington, Lancashire, England"
+    },
+    {
+      "name": "Mary Ann Leigh",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "7",
+      "birthYear": "1844",
+      "occupation": "Scholar",
+      "birthPlace": "Warrington, Lancashire, England"
+    },
+    {
+      "name": "Thomas Leigh",
+      "relationship": "son",
+      "gender": "male",
+      "age": "5",
+      "birthYear": "1846",
+      "occupation": "Scholar",
+      "birthPlace": "Warrington, Lancashire, England"
+    },
+    {
+      "name": "James Leigh",
+      "relationship": "son",
+      "gender": "male",
+      "age": "3",
+      "birthYear": "1848",
+      "occupation": "At home",
+      "birthPlace": "Warrington, Lancashire, England"
+    },
+    {
+      "isSelected": true,
+      "name": "William Leigh",
+      "relationship": "son",
+      "gender": "male",
+      "age": "0",
+      "birthYear": "1851",
+      "occupation": "At home",
+      "birthPlace": "Warrington, Lancashire, England"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Leigh"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ellen Leigh"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1851 England, Wales & Scotland Census",
+    "page": "27",
+    "piece": "2203",
+    "folio": "461",
+    "schedule": "100"
+  },
+  "hasValidData": true
+}
