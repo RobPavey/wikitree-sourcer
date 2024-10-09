@@ -379,7 +379,7 @@ function buildBirthPlaceObj(ed) {
         if (remainder && remainder.endsWith(countyName)) {
           remainder = remainder.substring(0, remainder.length - countyName.length);
           remainder = remainder.replace(/\s*,\s*$/, "");
-          if (!placeObj.town || !remainder.includes(town)) {
+          if (!placeObj.town || !remainder.includes(placeObj.town)) {
             placeObj.place = remainder;
           }
         }
