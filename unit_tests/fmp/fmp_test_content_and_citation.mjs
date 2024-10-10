@@ -276,6 +276,11 @@ const regressionData = [
     ],
   },
   {
+    // saved 10 Oct 2024. Caused a crash in 2.6.2
+    caseName: "england_census_1921_walter_hill",
+    url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1921%2FRG15%2F05188%2F0475%2F01&tab=this",
+  },
+  {
     caseName: "england_divorce_louisa_smith_1893",
     url: "https://www.findmypast.co.uk/transcript?id=GBOR%2FDIV%2F364111",
   },
