@@ -39,6 +39,11 @@
       "js": ["base/browser/content/content_common.js", "site/wikitree/browser/wikitree_content.js"]
     },
     {
+      "matches": ["*://*.americanancestors.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/ameranc/browser/ameranc_content.js"]
+    },
+    {
       "matches": [
         "*://*.ancestry.com/*",
         "*://*.ancestry.co.uk/*",
@@ -236,6 +241,11 @@
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
     },
     {
+      "matches": ["*://*.thegenealogist.com/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/thegen/browser/thegen_content.js"]
+    },
+    {
       "matches": ["*://trove.nla.gov.au/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/trove/browser/trove_content.js"]
@@ -277,6 +287,10 @@
     {
       "resources": ["site/wikitree/core/wikitree_extract_data.mjs"],
       "matches": ["*://*.wikitree.com/*"]
+    },
+    {
+      "resources": ["site/ameranc/core/ameranc_extract_data.mjs"],
+      "matches": ["*://*.americanancestors.org/*"]
     },
     {
       "resources": ["site/ancestry/core/ancestry_extract_data.mjs"],
@@ -436,6 +450,10 @@
     {
       "resources": ["site/scotp/core/scotp_extract_data.mjs"],
       "matches": ["*://www.scotlandspeople.gov.uk/*"]
+    },
+    {
+      "resources": ["site/thegen/core/thegen_extract_data.mjs"],
+      "matches": ["*://*.thegenealogist.com/*"]
     },
     {
       "resources": ["site/trove/core/trove_extract_data.mjs"],

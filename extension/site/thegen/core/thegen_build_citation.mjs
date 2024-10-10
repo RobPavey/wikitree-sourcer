@@ -22,52 +22,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-// The order should not matter since user facing lists are sorted
+function buildThegenUrl(ed, builder) {
+  return ed.url;
+}
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-];
+function buildSourceTitle(ed, gd, builder) {
+  builder.sourceTitle += "Put Source Title here";
+}
 
-export { siteNames };
+function buildSourceReference(ed, gd, builder) {
+  builder.sourceReference = "Put Source Reference here";
+}
+
+function buildRecordLink(ed, gd, builder) {
+  var thegenUrl = buildThegenUrl(ed, builder);
+
+  let recordLink = "[" + thegenUrl + " The Genealogist Record]";
+  builder.recordLinkOrTemplate = recordLink;
+}
+
+function buildCoreCitation(ed, gd, builder) {
+  buildSourceTitle(ed, gd, builder);
+  buildSourceReference(ed, gd, builder);
+  buildRecordLink(ed, gd, builder);
+  builder.addStandardDataString(gd);
+}
+
+function buildCitation(input) {
+  return simpleBuildCitationWrapper(input, buildCoreCitation);
+}
+
+export { buildCitation };

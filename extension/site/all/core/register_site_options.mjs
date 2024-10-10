@@ -30,6 +30,7 @@ SOFTWARE.
 // Importing each of these site modules causes them to register their options
 // The order of these lines does not matter since the options streen sorts them
 // by label.
+import "../../ameranc/core/ameranc_options.mjs";
 import "../../ancestry/core/ancestry_options.mjs";
 import "../../archive/core/archive_options.mjs";
 import "../../baclac/core/baclac_options.mjs";
@@ -63,6 +64,7 @@ import "../../ppnz/core/ppnz_options.mjs";
 import "../../psuk/core/psuk_options.mjs";
 import "../../scotp/core/scotp_options.mjs";
 import "../../taslib/core/taslib_options.mjs";
+import "../../thegen/core/thegen_options.mjs";
 import "../../trove/core/trove_options.mjs";
 import "../../vicbdm/core/vicbdm_options.mjs";
 import "../../wiewaswie/core/wiewaswie_options.mjs";

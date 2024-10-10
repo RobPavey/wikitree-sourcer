@@ -22,52 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import * as test_content_and_citation from "./ameranc_test_content_and_citation.mjs";
+import * as test_build_search_url from "./ameranc_test_build_search_url.mjs";
 
-// The order should not matter since user facing lists are sorted
+async function runTests(testManager) {
+  await test_content_and_citation.runTests(testManager);
+  await test_build_search_url.runTests(testManager);
+}
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-];
-
-export { siteNames };
+export { runTests };

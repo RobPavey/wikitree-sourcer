@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1930-federal-census/RecordDisplay?volumeId=42296&pageName=319&rId=1192327076 American Ancestors Record] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1930-federal-census/RecordDisplay?volumeId=42296&pageName=319&rId=1192327076 American Ancestors Record] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-1930-federal-census/RecordDisplay?volumeId=42296&pageName=319&rId=1192327076 American Ancestors Record] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

@@ -26,6 +26,7 @@ import { getUnitTestOptions } from "../extension/base/core/options/options_datab
 
 // Register all test modules, this is the order that they will be run in
 const siteNames = [
+  "ameranc",
   "ancestry",
   "archive",
   "baclac",
@@ -59,6 +60,7 @@ const siteNames = [
   "psuk",
   "scotp",
   "taslib",
+  "thegen",
   "trove",
   "vicbdm",
   "wiewaswie",

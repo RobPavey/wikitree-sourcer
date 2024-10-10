@@ -22,52 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import {
+  registerSubsectionForOptions,
+  registerOptionsGroup,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
 
-// The order should not matter since user facing lists are sorted
+const citationOptionsGroup = {
+  category: "citation",
+  subcategory: "ameranc",
+  tab: "citation",
+  subsection: "ameranc",
+  options: [],
+};
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-];
+registerSubsectionForOptions("search", "ameranc", "American Ancestors");
+registerSiteSearchPopupOptionsGroup("ameranc", 7, 7);
 
-export { siteNames };
+registerSubsectionForOptions("citation", "ameranc", "American Ancestors");
+registerOptionsGroup(citationOptionsGroup);
