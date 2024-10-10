@@ -30,13 +30,82 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
+  let titleElement = document.querySelector("div.header-results h3");
+  if (titleElement) {
+    result.title = titleElement.textContent.trim();
+  }
+
+  let volumeElement = document.getElementById("volume");
+  if (volumeElement) {
+    result.volumeId = volumeElement.value;
+    let selectedIndex = volumeElement.selectedIndex;
+    if (selectedIndex >= 0 && volumeElement.options && selectedIndex < volumeElement.options.length) {
+      let selectedOptionElement = volumeElement.options[selectedIndex];
+      if (selectedOptionElement) {
+        result.volumeName = selectedOptionElement.innerHTML;
+      }
+    }
+  }
+
+  let pagesElement = document.getElementById("pages");
+  if (pagesElement) {
+    result.page = pagesElement.textContent.trim();
+
+    let pagesListItem = pagesElement.closest("li");
+    if (pagesListItem) {
+      let pageCountElement = pagesListItem.nextSiblingElement;
+      if (pageCountElement) {
+        let pageCount = pageCountElement.textContent.trim();
+        pageCount = pageCount.replace(/^of /, "");
+        result.pageCount = pageCount;
+      }
+    }
+  }
+
+  let recordDataTable = document.getElementById("tblRecordDislpay");
+
+  if (!recordDataTable) {
     return result;
   }
-  */
+
+  let tableRows = recordDataTable.querySelectorAll("tbody > tr");
+
+  if (tableRows.length > 0) {
+    result.recordData = {};
+
+    for (let row of tableRows) {
+      let tableDataElements = row.querySelectorAll("td");
+      if (tableDataElements.length == 2) {
+        let labelElement = tableDataElements[0];
+        let valueElement = tableDataElements[1];
+
+        let label = labelElement.textContent.trim();
+        let value = valueElement.textContent.trim();
+
+        if (label && value) {
+          result.recordData[label] = value;
+        }
+      }
+    }
+  }
+
+  let citationElement = document.getElementById("divClipboardURLTranscript");
+  if (citationElement) {
+    let citationParas = citationElement.querySelectorAll("p");
+    console.log("citationParas.length = " + citationParas.length);
+    if (citationParas.length) {
+      result.citationParts = [];
+      for (let citationPara of citationParas) {
+        result.citationParts.push(citationPara.textContent.trim());
+      }
+    }
+  }
+
+  let imgRecord = document.getElementById("imgRecord");
+
+  if (imgRecord) {
+    result.hasImage = true;
+  }
 
   result.success = true;
 
