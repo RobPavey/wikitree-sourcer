@@ -59,6 +59,24 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
       needsPopupDisplayed: true,
     };
     if (!(await checkPermissionForSiteFromUrl(url, checkPermissionsOptions))) {
+      console.log("getDataForLinkedRecords, permission check failed");
+      let processInput = data;
+      processInput.linkedRecordFailureCount = linkedRecords.length;
+      processInput.linkedRecords = [];
+
+      // fake this so that an error message is displayed
+      // Not ideal would be better to have a different error message
+      for (let i = 0; i < linkedRecords.length; i++) {
+        let link = linkedRecords[i].link;
+        let linkedRecord = {
+          name: linkedRecords[i].name,
+          link: link,
+        };
+        processInput.linkedRecords.push(linkedRecord);
+      }
+
+      processFunction(processInput);
+
       return;
     }
   }
@@ -211,6 +229,9 @@ async function getDataForLinkedHouseholdRecords(data, processfunction, options) 
   // check which members should be included due to max size
   markHouseholdMembersToIncludeInTable(gd, options);
 
+  //console.log("getDataForLinkedHouseholdRecords after markHouseholdMembersToIncludeInTable. gd is : ");
+  //console.log(gd);
+
   let linkedRecords = [];
   for (let member of gd.householdArray) {
     if (member.uid && gd.recordId != member.uid) {
@@ -236,6 +257,9 @@ async function getDataForLinkedHouseholdRecords(data, processfunction, options) 
 }
 
 async function processWithFetchedLinkData(data, processFunction, tabId) {
+  //console.log("processWithFetchedLinkData. data is : ");
+  //console.log(data);
+
   let linkData = data.extractedData.linkData;
 
   let role = data.generalizedData.role;
@@ -295,6 +319,9 @@ async function processWithFetchedLinkData(data, processFunction, tabId) {
       }
     }
   }
+
+  //console.log("processWithFetchedLinkData. linkedRecords is : ");
+  //console.log(linkedRecords);
 
   if (linkedRecords.length > 0) {
     getDataForLinkedRecords(data, linkedRecords, processFunction);
@@ -361,6 +388,9 @@ async function getDataForCitationAndHouseholdRecords(data, processfunction, opti
   } else {
     processfunction(data);
   }
+
+  //console.log("getDataForCitationAndHouseholdRecords. returning, data is : ");
+  //console.log(data);
 }
 
 export {
