@@ -9,5 +9,8 @@
   "eventDate": {
     "yearString": "1820"
   },
+  "eventPlace": {
+    "placeString": "New Milford, Litchfield, Connecticut, United States"
+  },
   "hasValidData": true
 }

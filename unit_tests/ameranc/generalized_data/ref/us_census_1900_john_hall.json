@@ -10,5 +10,17 @@
   "eventDate": {
     "yearString": "1900"
   },
+  "eventPlace": {
+    "placeString": "Beat 3 Yazoo city Ward 2, Yazoo, Mississippi, United States"
+  },
+  "birthDate": {
+    "dateString": "Feb 1872"
+  },
+  "birthPlace": {
+    "placeString": "Mississippi"
+  },
+  "ageAtEvent": "28",
+  "relationshipToHead": "brother",
+  "maritalStatus": "single",
   "hasValidData": true
 }

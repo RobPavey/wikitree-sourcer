@@ -134,6 +134,22 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getEventPlaceObj() {
+    let location = this.getRecordDataValueForKeys(["Location"]);
+    if (location) {
+      if (this.recordType == RT.Census) {
+        // sometimes the location has a district name like:
+        // Queens (Districts 0001-0250), Queens, New York, United States
+        const districtRegex = /^.+\(.+\), (.*)$/;
+        if (districtRegex.test(location)) {
+          location = location.replace(districtRegex, "$1");
+        }
+        const notStatedRegex = /^Not Stated, (.*)$/;
+        if (notStatedRegex.test(location)) {
+          location = location.replace(notStatedRegex, "$1");
+        }
+      }
+      return this.makePlaceObjFromFullPlaceName(location);
+    }
     return undefined;
   }
 
@@ -150,11 +166,13 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    return undefined;
+    let dateString = this.getRecordDataValueForKeys(["Date of Birth"]);
+    return this.makeDateObjFromDateString(dateString);
   }
 
   getBirthPlaceObj() {
-    return undefined;
+    let placeString = this.getRecordDataValueForKeys(["Birth Place"]);
+    return this.makePlaceObjFromFullPlaceName(placeString);
   }
 
   getDeathDateObj() {
@@ -166,7 +184,7 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
-    return "";
+    return this.getRecordDataValueForKeys(["Age"]);
   }
 
   getAgeAtDeath() {
@@ -178,11 +196,11 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getRelationshipToHead() {
-    return "";
+    return this.getRecordDataValueForKeys(["Relationship"]);
   }
 
   getMaritalStatus() {
-    return "";
+    return this.getRecordDataValueForKeys(["Marital Status"]);
   }
 
   getOccupation() {

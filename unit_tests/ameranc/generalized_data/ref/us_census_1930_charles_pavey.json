@@ -10,5 +10,17 @@
   "eventDate": {
     "yearString": "1930"
   },
+  "eventPlace": {
+    "placeString": "Queens, New York, United States"
+  },
+  "birthDate": {
+    "dateString": "1891"
+  },
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "ageAtEvent": "39",
+  "relationshipToHead": "lodger",
+  "maritalStatus": "divorced",
   "hasValidData": true
 }

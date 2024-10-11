@@ -24,9 +24,21 @@ SOFTWARE.
 
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
+// Example search URL
+// https://www.americanancestors.org/search/database-search
+// ?keywords=myKey
+// &firstname=John%20Michael&lastname=Wilson
+// &fromyear=1900&toyear=1920
+// &recordtype=Census
+// &location=Menlo%20Park%2C%20California
+// &allData=true&searchPage=Advanced-Searc
+// &category=Census%2C%20Tax%20and%20Voter%20Lists
+// &database=United%20States%201920%20Federal%20Census
+// &exactRecordType=true
+
 class AmerancUriBuilder {
   constructor() {
-    this.uri = "https://www.ameranc.org.uk/cgi/search.pl";
+    this.uri = "https://www.americanancestors.org/search/database-search";
     this.searchTermAdded = false;
   }
 

@@ -9,5 +9,8 @@
   "eventDate": {
     "yearString": "1810"
   },
+  "eventPlace": {
+    "placeString": "Derry, Westmoreland, Pennsylvania, United States"
+  },
   "hasValidData": true
 }

@@ -10,5 +10,17 @@
   "eventDate": {
     "yearString": "1880"
   },
+  "eventPlace": {
+    "placeString": "Blackwater, Surry, Virginia, United States"
+  },
+  "birthDate": {
+    "dateString": "1857"
+  },
+  "birthPlace": {
+    "placeString": "Virginia, United States"
+  },
+  "ageAtEvent": "23",
+  "relationshipToHead": "other",
+  "maritalStatus": "single",
   "hasValidData": true
 }
