@@ -385,11 +385,19 @@ async function displayBusyMessage(message1, message2) {
     let messageLabel2 = document.getElementById("messageLabel2");
 
     if (messageLabel1) {
-      messageLabel1.innerText = message1;
+      if (message1) {
+        messageLabel1.innerText = message1;
+      } else {
+        messageLabel1.innerText = "";
+      }
     }
 
     if (messageLabel2) {
-      messageLabel2.innerText = message2;
+      if (message2) {
+        messageLabel2.innerText = message2;
+      } else {
+        messageLabel2.innerText = "";
+      }
     }
     return;
   }

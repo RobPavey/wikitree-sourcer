@@ -927,6 +927,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/41984770:6061",
   },
   {
+    caseName: "us_federal_census_1950_polly_beardsley",
+    url: "https://www.ancestry.com/discoveryui-content/view/18187958:8054?ssrc=pt&tid=82382307&pid=44461527800",
+  },
+  {
     caseName: "us_federal_census_1950_william_pavey",
     url: "https://www.ancestry.com/discoveryui-content/view/106947163:62308?_phsrc=Vww4195&_phstart=successSource&gsln=Pavey&ml_rpos=1&queryId=a49f2cd14190e5fbda1183dad6292633",
   },
