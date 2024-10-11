@@ -1,0 +1,29 @@
+{
+  "url": "https://www.americanancestors.org/databases/united-states-1870-census/RecordDisplay?volumeId=27637&pageName=22&rId=555183710",
+  "success": true,
+  "title": "United States 1870 Census",
+  "volumeId": "27637",
+  "volumeName": "NARA Roll 219 (Ill., V.34)",
+  "page": "",
+  "recordData": {
+    "Name": "David SMITH",
+    "Census": "1870",
+    "Location": "Illinois, United States",
+    "Age": "6",
+    "Gender": "Male",
+    "Race": "White",
+    "Date of Birth": "1863-1864",
+    "Birth Place": "Illinois, United States",
+    "Film No.": "000545718",
+    "House Hold": "113",
+    "Line Number": "9",
+    "Series": "M593",
+    "Volume Name": "NARA Roll 219 (Ill., V.34)",
+    "Page": "22"
+  },
+  "citationParts": [
+    "United States 1870 Census. Online database. AmericanAncestors.org. New England Historic Genealogical Society, 2015. (Original index:  United States Census, 1870. FamilySearch, 2014.)",
+    "https://www.americanancestors.org/DB1588/rd/27637/22/555183710"
+  ],
+  "hasImage": true
+}

@@ -2,5 +2,9 @@
   "sourceOfData": "ameranc",
   "sourceType": "record",
   "recordType": "Unclassified",
+  "name": {
+    "lastName": "Jones",
+    "forenames": "Terrance Wayne"
+  },
   "hasValidData": true
 }

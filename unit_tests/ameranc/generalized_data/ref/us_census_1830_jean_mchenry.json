@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "McHenry",
+    "forenames": "Jean"
+  },
+  "eventDate": {
+    "yearString": "1830"
+  },
+  "hasValidData": true
+}

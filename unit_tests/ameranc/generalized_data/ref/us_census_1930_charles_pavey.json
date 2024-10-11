@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Charles"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1930"
+  },
+  "hasValidData": true
+}

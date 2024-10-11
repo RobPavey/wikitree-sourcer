@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Hall",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1900"
+  },
+  "hasValidData": true
+}

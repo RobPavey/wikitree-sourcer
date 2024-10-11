@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Jefferson",
+    "forenames": "George"
+  },
+  "eventDate": {
+    "yearString": "1810"
+  },
+  "hasValidData": true
+}

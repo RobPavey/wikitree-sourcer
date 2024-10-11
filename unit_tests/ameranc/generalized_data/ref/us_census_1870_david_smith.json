@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "David"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1870"
+  },
+  "hasValidData": true
+}

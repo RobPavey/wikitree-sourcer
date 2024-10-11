@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "Archibald"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1850"
+  },
+  "hasValidData": true
+}

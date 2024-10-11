@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "McDonald",
+    "forenames": "Walter"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1920"
+  },
+  "hasValidData": true
+}

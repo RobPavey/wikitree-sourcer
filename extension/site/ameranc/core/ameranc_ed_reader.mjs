@@ -24,10 +24,74 @@ SOFTWARE.
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
+import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { NameObj, DateObj, PlaceObj } from "../../../base/core/generalize_data_utils.mjs";
+
+const recordTypeMatches = [
+  {
+    recordType: RT.Census,
+    requiredFields: [["Census"]],
+  },
+  {
+    recordType: RT.Census,
+    collectionTitleMatches: [["Federal Census"]],
+  },
+];
 
 class AmerancEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+
+    let inputData = {
+      collectionTitle: ed.title,
+      recordData: ed.recordData,
+    };
+
+    this.recordType = this.determineRecordType(recordTypeMatches, inputData);
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Helper functions
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  makeNameObjFromAmerancFullName(fullNameString) {
+    if (fullNameString) {
+      if (StringUtils.isWordAllUpperCase(fullNameString)) {
+        let fullName = NameUtils.convertNameFromAllCapsToMixedCase(fullNameString);
+        return this.makeNameObjFromFullName(fullName);
+      } else {
+        let forenames = "";
+        let lastName = "";
+        let foundLastName = false;
+        let parts = fullNameString.split(" ");
+        for (let part of parts) {
+          if (foundLastName || StringUtils.isWordAllUpperCase(part)) {
+            foundLastName = true;
+            if (lastName) {
+              lastName += " ";
+            }
+            lastName += part;
+          } else {
+            if (forenames) {
+              forenames += " ";
+            }
+            forenames += part;
+          }
+        }
+
+        if (foundLastName) {
+          lastName = NameUtils.convertNameFromAllCapsToMixedCase(lastName);
+
+          let nameObj = new NameObj();
+          nameObj.setLastName(lastName);
+          nameObj.setForenames(forenames);
+          return nameObj;
+        } else {
+          return this.makeNameObjFromFullName(fullNameString);
+        }
+      }
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,14 +111,25 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    return undefined;
+    let name = this.getRecordDataValueForKeys(["Name"]);
+    return this.makeNameObjFromAmerancFullName(name);
   }
 
   getGender() {
+    let gender = this.getRecordDataValueForKeys(["Gender"]);
+    if (gender) {
+      return gender.toLowerCase();
+    }
     return "";
   }
 
   getEventDateObj() {
+    if (this.recordType == RT.Census) {
+      let year = this.getRecordDataValueForKeys(["Census"]);
+      if (year) {
+        return this.makeDateObjFromYear(year);
+      }
+    }
     return undefined;
   }
 

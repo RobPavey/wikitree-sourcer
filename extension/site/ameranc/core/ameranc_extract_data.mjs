@@ -63,27 +63,50 @@ function extractData(document, url) {
   }
 
   let recordDataTable = document.getElementById("tblRecordDislpay");
+  if (recordDataTable) {
+    let tableRows = recordDataTable.querySelectorAll("tbody > tr");
 
-  if (!recordDataTable) {
-    return result;
-  }
+    if (tableRows.length > 0) {
+      result.recordData = {};
 
-  let tableRows = recordDataTable.querySelectorAll("tbody > tr");
+      for (let row of tableRows) {
+        let tableDataElements = row.querySelectorAll("td");
+        if (tableDataElements.length == 2) {
+          let labelElement = tableDataElements[0];
+          let valueElement = tableDataElements[1];
 
-  if (tableRows.length > 0) {
-    result.recordData = {};
+          let label = labelElement.textContent.trim();
+          let value = valueElement.textContent.trim();
 
-    for (let row of tableRows) {
-      let tableDataElements = row.querySelectorAll("td");
-      if (tableDataElements.length == 2) {
-        let labelElement = tableDataElements[0];
-        let valueElement = tableDataElements[1];
+          if (label && value) {
+            result.recordData[label] = value;
+          }
+        }
+      }
+    }
+  } else {
+    // different table - possibly only when you don't have a paid sub
+    recordDataTable = document.getElementById("recordtable");
+    let actualTable = recordDataTable.querySelector("tr > td > table.db-table");
+    if (actualTable) {
+      let tableRows = actualTable.querySelectorAll("tbody > tr");
 
-        let label = labelElement.textContent.trim();
-        let value = valueElement.textContent.trim();
+      if (tableRows.length > 0) {
+        result.recordData = {};
 
-        if (label && value) {
-          result.recordData[label] = value;
+        for (let row of tableRows) {
+          let tableDataElements = row.querySelectorAll("td");
+          if (tableDataElements.length == 2) {
+            let labelElement = tableDataElements[0];
+            let valueElement = tableDataElements[1];
+
+            let label = labelElement.textContent.trim();
+            let value = valueElement.textContent.trim();
+
+            if (label && value) {
+              result.recordData[label] = value;
+            }
+          }
         }
       }
     }
@@ -92,7 +115,6 @@ function extractData(document, url) {
   let citationElement = document.getElementById("divClipboardURLTranscript");
   if (citationElement) {
     let citationParas = citationElement.querySelectorAll("p");
-    console.log("citationParas.length = " + citationParas.length);
     if (citationParas.length) {
       result.citationParts = [];
       for (let citationPara of citationParas) {
