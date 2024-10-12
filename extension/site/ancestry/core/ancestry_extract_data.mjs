@@ -63,7 +63,7 @@ function cleanPlaceName(text) {
   return result;
 }
 
-function cleanLinkUrl(url, documentURL) {
+function cleanLinkUrl(url, result) {
   if (!url) {
     return url;
   }
@@ -76,9 +76,14 @@ function cleanLinkUrl(url, documentURL) {
   // href="/discoveryui-content/view/7707468:2101"
   // That broke things. This fixes it.
   if (url.startsWith("/")) {
-    if (documentURL) {
-      let site = documentURL.replace(/^(https?:\/\/[^\/]+)\/.*$/, "$1");
-      if (site && site != documentURL) {
+    if (result.domain) {
+      let site = "https://www.ancestry." + result.domain;
+      return site + url;
+    } else if (result.url) {
+      let site = result.url.replace(/^(https?:\/\/[^\/]+)\/.*$/, "$1");
+      if (site && site != result.url) {
+        // replace search.ancestry with www.ancestry
+        site = site.replace("//search.ancestry", "//www.ancestry");
         return site + url;
       }
     }
@@ -332,7 +337,7 @@ function extractRecordData(document, result) {
                   if (linkNode) {
                     let link = linkNode.getAttribute("href");
                     if (link) {
-                      link = cleanLinkUrl(link, result.url);
+                      link = cleanLinkUrl(link, result);
                       let extractResult = {};
                       extractDbAndRecordId(extractResult, link);
                       member.dbId = extractResult.dbId;
@@ -379,7 +384,7 @@ function extractRecordData(document, result) {
                     if (!linkText || !linkText.startsWith("[")) {
                       let link = linkNode.getAttribute("href");
                       if (link) {
-                        link = cleanLinkUrl(link, result.url);
+                        link = cleanLinkUrl(link, result);
                         if (!result.linkData) {
                           result.linkData = {};
                         }
@@ -462,7 +467,7 @@ function extractRecordData(document, result) {
                   let linkNode = cell.querySelector("a");
                   if (linkNode) {
                     let link = linkNode.getAttribute("href");
-                    link = cleanLinkUrl(link, result.url);
+                    link = cleanLinkUrl(link, result);
                     let extractResult = {};
                     extractDbAndRecordId(extractResult, link);
                     member.dbId = extractResult.dbId;
@@ -602,7 +607,7 @@ function extractImageThumb(document, result) {
       //console.log("extractImageThumb, url = " + url);
 
       if (url) {
-        url = cleanLinkUrl(url, result.url);
+        url = cleanLinkUrl(url, result);
 
         // Example:
         // "https://www.ancestry.com/imageviewer/collections/7814/images/LNDRG13_157_158-0095?pid=2229789&amp;backurl=https://search.ancestry.com/cgi-bin/sse.dll?dbid%3D7814%26h%3D2229789%26indiv%3Dtry%26o_vc%3DRecord:OtherRecord%26rhSource%3D8753&amp;treeid=&amp;personid=&amp;hintid=&amp;usePUB=true&amp;usePUBJs=true"
@@ -1190,7 +1195,7 @@ function handlePersonSourceCitation(document, result) {
       let link = modalContents.querySelector("#viewRecordLink");
       if (link) {
         let recordUrl = link.getAttribute("href");
-        recordUrl = cleanLinkUrl(recordUrl, result.url);
+        recordUrl = cleanLinkUrl(recordUrl, result);
 
         // for the normal case this is all we need since we will extract the rest of the data
         // with a fetch using this. This gets us better data (mainly the link data)
@@ -1215,7 +1220,7 @@ function handlePersonSourceCitation(document, result) {
           // clicking on this goes to:
           // https://www.ancestry.com/imageviewer/collections/2352/images/rg14_14817_0059_03?pId=55565824
 
-          url = cleanLinkUrl(url, result.url);
+          url = cleanLinkUrl(url, result);
 
           let dbId = "";
           let recordId = "";
@@ -1582,7 +1587,7 @@ function handlePersonFactsPreJune2024(document, result) {
             let title = titleElement.textContent;
             let webLink = webLinkElement.getAttribute("href");
             if (title && webLink) {
-              webLink = cleanLinkUrl(webLink, result.url);
+              webLink = cleanLinkUrl(webLink, result);
 
               title = title.replace("&amp;", "&");
               title = title.trim();
@@ -1887,7 +1892,7 @@ function handlePersonFactsJune2024(document, result) {
               let title = titleElement.textContent;
               let webLink = webLinkElement.getAttribute("href");
               if (title && webLink) {
-                webLink = cleanLinkUrl(webLink, result.url);
+                webLink = cleanLinkUrl(webLink, result);
                 title = title.replace("&amp;", "&");
                 title = title.trim();
 
