@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "gro",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "eventDate": {
+    "yearString": "1837",
+    "quarter": 3
+  },
+  "name": {
+    "lastName": "Fletcher",
+    "forenames": "Thomas"
+  },
+  "lastNameAtDeath": "Fletcher",
+  "deathDate": {
+    "yearString": "1837",
+    "quarter": 3
+  },
+  "ageAtDeath": 2,
+  "personGender": "male",
+  "registrationDistrict": "The Newport Union in the Counties of Salop And",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "18",
+    "page": "91"
+  },
+  "hasValidData": true
+}

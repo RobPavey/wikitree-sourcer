@@ -141,6 +141,37 @@ function getYearRanges(type, startYear, endYear, startBirthYear, endBirthYear) {
 }
 
 async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchParameters, gender) {
+  //console.log("doSearchForGivenYearAndGender, singleSearchParameters is:");
+  //console.log(singleSearchParameters);
+
+  function pruneResultRows(result) {
+    // if singleSearchParameters.mmm
+    let lcMmn = singleSearchParameters.mmn;
+    if (lcMmn) {
+      lcMmn = lcMmn.toLowerCase().trim();
+    }
+    let mmnMatches = singleSearchParameters.mmnMatches;
+    let newRows = [];
+    for (let row of result.rows) {
+      let includeRow = true;
+      if (singleSearchParameters.type == "births") {
+        if (lcMmn && (row.eventYear > 1923 || mmnMatches == "0")) {
+          let lcRowMmn = row.mothersMaidenName;
+          if (lcRowMmn) {
+            lcRowMmn = lcRowMmn.toLowerCase().trim();
+          }
+          if (lcMmn != lcRowMmn) {
+            includeRow = false;
+          }
+        }
+      }
+      if (includeRow) {
+        newRows.push(row);
+      }
+    }
+    result.rows = newRows;
+  }
+
   function addFetchResults(result, gender) {
     if (result) {
       if (result.success && result.rows) {
@@ -153,6 +184,8 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
           }
         }
 
+        pruneResultRows(result);
+
         totalFetchResults.singleSearchResults.push(result);
         totalFetchResults.resultCount += result.rows.length;
       }
@@ -163,12 +196,29 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
   const yearRange = singleSearchParameters.yearRange;
   const age = singleSearchParameters.age;
   const ageRange = singleSearchParameters.ageRange;
+  const quarter = singleSearchParameters.quarter;
+  const month = singleSearchParameters.month;
+  let monthNum = 0;
+  if (month) {
+    monthNum = Number(month);
+  }
 
   function updateSearchProgressMessage(pageNumber) {
     let progressMessage = "Found " + totalFetchResults.resultCount + " records.";
     progressMessage += "\nNow searching " + year + " +/-" + yearRange + ", " + gender;
     if (age) {
       progressMessage += ", age " + age + " +/-" + ageRange;
+    }
+    if (quarter) {
+      progressMessage += ", quarter " + quarter;
+    } else if (month) {
+      if (monthNum > 12) {
+        const quarters = ["M", "J", "S", "D"];
+        let quarter = quarters[monthNum - 13];
+        progressMessage += ", quarter " + quarter;
+      } else {
+        progressMessage += ", month " + month;
+      }
     }
     if (pageNumber) {
       progressMessage += ", page " + pageNumber;
@@ -182,20 +232,84 @@ async function doSearchForGivenYearAndGender(totalFetchResults, singleSearchPara
   let result = await doSingleSearch(singleSearchParameters, 1);
   if (progressDialogResponse || !result.success) return false;
 
+  //console.log("result from doSingleSearch is:");
+  //console.log(result);
   if (result.rows && result.rows.length > 0) {
     if (result.resultsNumRecords >= 250) {
       // too many results to get all of them
-      let message =
-        "A single search returned more than 250 results. Stopping search. Please try a more specific search.";
-      if (singleSearchParameters.type == "births") {
-        if (singleSearchParameters.mmnMatches != "0") {
-          message +=
-            "\n\nNote that when MMN matching is not set to exact it will match births with no MMN or with an MMN of '-'.";
-          message += " This will greatly increase the number of results.";
+      if (singleSearchParameters.yearRange > 0) {
+        let searchYear = singleSearchParameters.year;
+        let range = singleSearchParameters.yearRange;
+        let newSingleSearchParameters = Object.assign({}, singleSearchParameters);
+        for (let year = searchYear - range; year <= searchYear + range; year++) {
+          newSingleSearchParameters.yearRange = 0;
+          newSingleSearchParameters.year = year;
+          if (!(await doSearchForGivenYearAndGender(totalFetchResults, newSingleSearchParameters, gender))) {
+            return false;
+          }
+          if (totalFetchResults.resultCount > maxResultCount) return true;
         }
+        return true;
+      } else if (singleSearchParameters.year < 1984 && !singleSearchParameters.quarter) {
+        const quarters = ["M", "J", "S", "D"];
+        let newSingleSearchParameters = Object.assign({}, singleSearchParameters);
+        for (let quarter of quarters) {
+          newSingleSearchParameters.quarter = quarter;
+          if (!(await doSearchForGivenYearAndGender(totalFetchResults, newSingleSearchParameters, gender))) {
+            return false;
+          }
+          if (totalFetchResults.resultCount > maxResultCount) return true;
+        }
+        return true;
+      } else if (singleSearchParameters.year >= 1984 && !singleSearchParameters.month) {
+        let months = ["13", "14", "15", "16"];
+        let newSingleSearchParameters = Object.assign({}, singleSearchParameters);
+        for (let month of months) {
+          newSingleSearchParameters.month = month;
+          if (!(await doSearchForGivenYearAndGender(totalFetchResults, newSingleSearchParameters, gender))) {
+            return false;
+          }
+          if (totalFetchResults.resultCount > maxResultCount) return true;
+        }
+        return true;
+        /*
+          Post 1984 we can break it down to individual months. It still doesn't help for something
+          like: Births, surname=Fletcher, 1987, month=6 - still gets over 250 results
+          This is commented out because the GRO site will never send this.
+      } else if (singleSearchParameters.year >= 1984 && monthNum > 12) {
+        let quarter = monthNum - 13;
+        let quarterMonths = [
+          ["1", "2", "3"],
+          ["4", "5", "6"],
+          ["7", "8", "9"],
+          ["10", "11", "12"],
+        ];
+        let months = quarterMonths[quarter];
+        let newSingleSearchParameters = Object.assign({}, singleSearchParameters);
+        for (let month of months) {
+          newSingleSearchParameters.month = month;
+          if (!(await doSearchForGivenYearAndGender(totalFetchResults, newSingleSearchParameters, gender))) {
+            return false;
+          }
+          if (totalFetchResults.resultCount > maxResultCount) return true;
+
+        }
+        return true;
+
+      */
+      } else {
+        let message =
+          "A single search returned more than 250 results. Stopping search. Please try a more specific search.";
+        if (singleSearchParameters.type == "births") {
+          if (singleSearchParameters.mmnMatches != "0") {
+            message +=
+              "\n\nNote that when MMN matching is not set to exact it will match births with no MMN or with an MMN of '-'.";
+            message += " This will greatly increase the number of results.";
+          }
+        }
+        await showErrorDialog(message);
+        return false;
       }
-      await showErrorDialog(message);
-      return false;
     }
 
     addFetchResults(result, gender);

@@ -173,6 +173,7 @@ function getUkbmdDistrictPageUrl(district, volume, year, districtCode) {
     "newcastle on tyne and northumberland": "newcastle upon tyne",
     "newcastle emlyn": "newcastle in emlyn",
     "new castle in emlyn": "newcastle in emlyn",
+    newmarkett: "newmarket", // transcription error?
     "newport pagnett": "newport pagnell", // transcription error?
     "newport salop": "newport1",
     "newport salop and stafford": "newport1",
@@ -529,6 +530,13 @@ function getUkbmdDistrictPageUrl(district, volume, year, districtCode) {
   // OF HOUGHTON LE SPRING IN THE COUNTY OF DURHAM
   if (overrides.hasOwnProperty(districtName)) {
     districtName = overrides[districtName];
+  }
+
+  // try to disambiguate one more time, needed for example like
+  // OF THE NEWPORT UNION IN THE COUNTIES OF SALOP AND
+  districtName = disambiguateName(districtName, volume, year, districtCode);
+  if (!districtName) {
+    return "";
   }
 
   districtName = encodeURI(districtName);

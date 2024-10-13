@@ -193,6 +193,9 @@ const regressionData = [
   {
     caseName: "d_pavey-701",
   },
+  {
+    caseName: "d_thomas_fletcher_1837",
+  },
 ];
 
 async function runTests(testManager) {

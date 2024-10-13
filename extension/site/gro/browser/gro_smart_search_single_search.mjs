@@ -198,6 +198,8 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   let ageRange = singleSearchParameters.ageRange;
   let gender = singleSearchParameters.gender;
   let district = singleSearchParameters.district;
+  let quarter = singleSearchParameters.quarter;
+  let month = singleSearchParameters.month;
 
   // safety code - the matches value are required
   if (!surnameMatches) {
@@ -262,8 +264,10 @@ async function doSingleSearch(singleSearchParameters, pageNumber) {
   }
 
   builder.addDistrict(district);
+  builder.addQuarter(quarter);
+  builder.addMonth(month);
 
-  builder.addUrlText("&Quarter=&Month=&Volume=&Page=&Reg=&EntryNumber=&OccasionalCopy=&RUI=");
+  builder.addUrlText("&Volume=&Page=&Reg=&EntryNumber=&OccasionalCopy=&RUI=");
 
   if (pageNumber > 1) {
     builder.addUrlText("&SearchIndexes=" + pageNumber);
