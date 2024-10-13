@@ -99,6 +99,35 @@ function checkSearchParameters() {
     result.errorMessages.push(invalidRangeMessage);
   }
 
+  if (searchParameters.type == "deaths") {
+    // check that start and end birth years are not after the end death year
+    let startBirthYear = searchParameters.startBirthYear;
+    let endBirthYear = searchParameters.endBirthYear;
+    let message = "Invalid birth years.";
+    let invalidBirthYears = false;
+    if (startBirthYear > endBirthYear) {
+      result.errorInputIds.push("searchParamStartBirthYear");
+      result.errorInputIds.push("searchParamEndBirthYear");
+      message += "\nEarliest year of birth is greater than latest year of birth:.";
+      invalidBirthYears = true;
+    } else if (startBirthYear > endYear) {
+      result.errorInputIds.push("searchParamStartBirthYear");
+      message += "\nEarliest year of birth is greater than latest year of death:.";
+      invalidBirthYears = true;
+    } else if (endBirthYear > endYear) {
+      result.errorInputIds.push("searchParamEndBirthYear");
+      message += "\nLatest year of birth is greater than latest year of death:.";
+      invalidBirthYears = true;
+    } else if (startBirthYear > startYear) {
+      result.errorInputIds.push("searchParamStartBirthYear");
+      message += "\nEarliest year of birth is greater than earliest year of death:.";
+      invalidBirthYears = true;
+    }
+    if (invalidBirthYears) {
+      result.errorMessages.push(message);
+    }
+  }
+
   let clampedRange = false;
   let clampedMessage = "Year range checks.";
   if (startYear < groStartYear) {

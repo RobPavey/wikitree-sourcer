@@ -310,6 +310,9 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
       // no spouse, we have to search with surname of this person
       // So, if this is a woman, we cannot search for births with any registered father because
       // the surname in search cannot be left blank
+      if (gd.personGender == "female") {
+        parameters.mmn = "-";
+      }
     }
   } else if (typeOfSearch == "deaths") {
     parameters.type = "deaths";
