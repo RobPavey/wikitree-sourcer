@@ -106,9 +106,8 @@ function extractData(document, url) {
 
   const pageSelect = document.querySelector("select");
   if (pageSelect) {
-    const pageIndex = pageSelect.querySelector("option[selected]");
     result.pageData = {
-      page: parseInt(pageIndex.text) + 1,
+      page: parseInt(pageSelect.value),
     };
   }
 

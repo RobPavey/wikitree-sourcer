@@ -24,39 +24,6 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function generatePermalinkForPage(uid, pageId, permalinkBase, url) {
-  const permalinkBaseUrl = extractPermalinkBaseUrl(url);
-
-  let response = fetch(permalinkBaseUrl, {
-    headers: {
-      accept: "*/*",
-      "accept-language": "en-US,en;q=0.9",
-      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-      "sec-ch-ua": '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
-      "sec-ch-ua-mobile": "?0",
-      "sec-ch-ua-platform": '"Windows"',
-      "sec-fetch-dest": "empty",
-      "sec-fetch-mode": "cors",
-      "sec-fetch-site": "same-origin",
-      "x-requested-with": "XMLHttpRequest",
-    },
-    referrer: url,
-    referrerPolicy: "strict-origin-when-cross-origin",
-    body: "uid=" + uid + "&type=churchRegister&pageId=" + pageId,
-    method: "POST",
-    mode: "cors",
-    credentials: "include",
-  });
-  response
-    .then((x) => x.text())
-    .then((text) => {
-      const start = text.indexOf("<p><a href=");
-      const end = text.indexOf("</a></p>");
-      const section = text.substring(start, end);
-      alert(section.split(">")[2].split("<")[0]);
-    });
-}
-
 function buildArchionUrl(ed, builder) {
   // alert(ed.permalink);
   if (ed.permalink && ed.permalink != "<<NOT YET GENERATED>>") {
