@@ -91,7 +91,7 @@ function extractData(document, url) {
           let wrap = {};
           let imageLink = wrapValueDiv.querySelector("a.preservicaItem");
           if (imageLink) {
-            wrap.link = imageLink.getAttribute("href");
+            wrap.link = imageLink.href;
           }
           wrap.text = wrapValueDiv.textContent.trim();
           addRecordData(label, wrap);

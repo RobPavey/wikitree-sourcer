@@ -357,7 +357,7 @@ function extractData(document, url) {
 
     let imageLinkElement = headingElement.nextElementSibling;
     if (imageLinkElement) {
-      let imageLink = imageLinkElement.getAttribute("href");
+      let imageLink = imageLinkElement.href;
       if (imageLink) {
         result.imageLink = imageLink;
       }

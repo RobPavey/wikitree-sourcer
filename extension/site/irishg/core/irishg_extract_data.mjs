@@ -98,7 +98,7 @@ function extractData(document, url) {
             // could be an image link
             let linkNode = valueNodes[0].querySelector("a");
             if (linkNode && linkNode.textContent == "Image") {
-              let link = linkNode.getAttribute("href");
+              let link = linkNode.href;
               if (link) {
                 result.imageHref = link;
               }
@@ -148,7 +148,7 @@ function extractData(document, url) {
     for (let link of links) {
       let text = link.textContent;
       if (text && text.startsWith("View the ")) {
-        let href = link.getAttribute("href");
+        let href = link.href;
         if (href) {
           result.imageHref = href;
         }

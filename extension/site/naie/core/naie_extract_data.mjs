@@ -126,7 +126,7 @@ function extractData(document, url) {
     // just use the fist link for now
     let linkNode = imageList.querySelector("dt > a.imagelink");
     if (linkNode) {
-      let href = linkNode.getAttribute("href");
+      let href = linkNode.href;
       if (href) {
         result.imageLink = href;
       }

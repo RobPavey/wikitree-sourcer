@@ -70,7 +70,7 @@ function extractData(document, url) {
 
   const titleLinkElement = document.querySelector("#breadcrumb-c div.quicknav-title > a");
   if (titleLinkElement) {
-    result.titleLink = titleLinkElement.getAttribute("href");
+    result.titleLink = titleLinkElement.href;
   }
 
   const fullTextLineElements = document.querySelectorAll("#fulltextContents div.line > div.read");

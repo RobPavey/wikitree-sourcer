@@ -309,7 +309,7 @@ function extractDataForImageInNewViewer(document, result) {
 
       for (let link of possibleLinks) {
         let text = link.textContent;
-        let href = link.getAttribute("href");
+        let href = link.href;
         if (text && href) {
           if (/^\s*\d+\s*$/.test(text)) {
             if (href.includes("imageGroupNumbers")) {
@@ -451,7 +451,7 @@ function extractDataForImage(filmViewerNode, result) {
           if (catalogLink) {
             result.catalogRecordName = catalogLink.textContent;
             // this link is relative to https://www.familysearch.org
-            result.catalogRecordLink = "https://www.familysearch.org" + catalogLink.getAttribute("href");
+            result.catalogRecordLink = "https://www.familysearch.org" + catalogLink.href;
           }
 
           let imageInfoCols = tableRows[0].querySelectorAll("td");
@@ -480,7 +480,7 @@ function extractDataForImage(filmViewerNode, result) {
             if (catalogLink) {
               let newCatalogRecordName = catalogLink.textContent;
               // this link is sometime relative to https://www.familysearch.org
-              let newCatalogRecordLink = catalogLink.getAttribute("href");
+              let newCatalogRecordLink = catalogLink.href;
               if (!newCatalogRecordLink.startsWith("http")) {
                 newCatalogRecordLink = "https://www.familysearch.org" + newCatalogRecordLink;
               }
@@ -931,7 +931,7 @@ function extractDataForPopup(searchArtifactResults, result) {
           if (collectionLink) {
             result.collectionName = collectionLink.textContent;
             // this link is relative to familysearch.org
-            result.collectionLink = collectionLink.getAttribute("href");
+            result.collectionLink = collectionLink.href;
           }
 
           let documentInfoFields = shadowRoot5.querySelector("div.document-info-inner > table.fields");

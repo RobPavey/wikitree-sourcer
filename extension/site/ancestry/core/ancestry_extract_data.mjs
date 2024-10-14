@@ -340,7 +340,7 @@ function extractRecordData(document, result) {
                   member[heading] = memberText;
                   let linkNode = cell.querySelector("a");
                   if (linkNode) {
-                    let link = linkNode.getAttribute("href");
+                    let link = linkNode.href;
                     if (link) {
                       link = cleanLinkUrl(link, result);
                       let extractResult = {};
@@ -387,7 +387,7 @@ function extractRecordData(document, result) {
                     let linkText = linkNode.textContent;
                     // ignore links for alternate names
                     if (!linkText || !linkText.startsWith("[")) {
-                      let link = linkNode.getAttribute("href");
+                      let link = linkNode.href;
                       if (link) {
                         link = cleanLinkUrl(link, result);
                         if (!result.linkData) {
@@ -471,7 +471,7 @@ function extractRecordData(document, result) {
 
                   let linkNode = cell.querySelector("a");
                   if (linkNode) {
-                    let link = linkNode.getAttribute("href");
+                    let link = linkNode.href;
                     link = cleanLinkUrl(link, result);
                     let extractResult = {};
                     extractDbAndRecordId(extractResult, link);
@@ -607,7 +607,7 @@ function extractImageThumb(document, result) {
     //console.log(linkNode);
 
     if (linkNode) {
-      let url = linkNode.getAttribute("href");
+      let url = linkNode.href;
 
       //console.log("extractImageThumb, url = " + url);
 
@@ -636,7 +636,7 @@ function extractImageThumb(document, result) {
         // Report problem node looks like:
         // <a href="https://www.ancestry.com/feedback/reportissue?rp=RD&amp;pid=1903047&amp;dbid=2352&amp;imageId=rg14_00802_0395_03&amp;indexOnly=false&amp;backurl=http%3a%2f%2fsearch.ancestry.com%2fcgi-bin%2fsse.dll%3findiv%3d1%26dbid%3d2352%26h%3d1903047%26ssrc%3dpt%26tid%3d86808578%26pid%3d46552199708%26usePUB%3dtrue%26_gl%3d1*vivebz*_ga*MTA5NTMwNjUwOS4xNTg3ODQ4ODc3*_ga_4QT8FMEX30*MTY1MTYwMzE2NS4zMi4xLjE2NTE2MDYzNzkuMA.." class="link icon iconWarning"><span>Report a problem</span></a>
 
-        let url = reportProblemNode.getAttribute("href");
+        let url = reportProblemNode.href;
 
         //console.log("extractImageThumb, reportProblemNode URL = ");
         //console.log(url);
@@ -1199,7 +1199,7 @@ function handlePersonSourceCitation(document, result) {
     if (factEdit) {
       let link = modalContents.querySelector("#viewRecordLink");
       if (link) {
-        let recordUrl = link.getAttribute("href");
+        let recordUrl = link.href;
         recordUrl = cleanLinkUrl(recordUrl, result);
 
         // for the normal case this is all we need since we will extract the rest of the data
@@ -1213,7 +1213,7 @@ function handlePersonSourceCitation(document, result) {
 
       let imageLink = modalContents.querySelector("#viewRecordImageLink");
       if (imageLink) {
-        let url = imageLink.getAttribute("href");
+        let url = imageLink.href;
 
         //console.log("handlePersonSourceCitation, url = " + url);
 
@@ -1590,7 +1590,7 @@ function handlePersonFactsPreJune2024(document, result) {
 
           if (titleElement && webLinkElement) {
             let title = titleElement.textContent;
-            let webLink = webLinkElement.getAttribute("href");
+            let webLink = webLinkElement.href;
             if (title && webLink) {
               webLink = cleanLinkUrl(webLink, result);
 
@@ -1895,7 +1895,7 @@ function handlePersonFactsJune2024(document, result) {
 
             if (titleElement && webLinkElement) {
               let title = titleElement.textContent;
-              let webLink = webLinkElement.getAttribute("href");
+              let webLink = webLinkElement.href;
               if (title && webLink) {
                 webLink = cleanLinkUrl(webLink, result);
                 title = title.replace("&amp;", "&");

@@ -992,7 +992,7 @@ function extractStyle1TranscriptionData(document, result) {
       //console.log("imgNode is:");
       //console.log(imgNode);
       if (imgNode) {
-        let link = imgNode.getAttribute("href");
+        let link = imgNode.href;
         if (link) {
           result.imageUrl = link;
         }
@@ -1048,7 +1048,7 @@ function extractStyle2TranscriptionData(document, result) {
   //console.log("imgNode is:");
   //console.log(imgNode);
   if (imgNode) {
-    let link = imgNode.getAttribute("href");
+    let link = imgNode.href;
     if (link) {
       result.imageUrl = link;
     }

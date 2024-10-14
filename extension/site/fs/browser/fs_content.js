@@ -43,7 +43,7 @@ async function doFetch() {
     if (viewRecord) {
       //console.log("found view record");
       let text = viewRecord.textContent;
-      let viewRecordUrl = viewRecord.getAttribute("href");
+      let viewRecordUrl = viewRecord.href;
       if (viewRecordUrl) {
         // strangely on firefox viewRecordUrl can be something like:
         // /ark:/61903/1:1:J39Y-3Q6
@@ -103,7 +103,7 @@ async function doFetch() {
         "#root > div > div > div > div > div:nth-child(1) > div > div > div > div.spacerCss_sqhrtfm > aside > div > div > div:nth-child(4) > aside > div > div > div.contentWrapper_cfjslsq > div > div.contentCss_czb43rf > div > div > div.bleedCss_b1cy5i06 > div > div > div > div > h2 > span > a"
       );
       if (selectedPersonLinkNode) {
-        let link = selectedPersonLinkNode.getAttribute("href");
+        let link = selectedPersonLinkNode.href;
         if (link) {
           if (/\/ark\:\/\d+\/1\:1\:\w\w\w\w\-\w\w\w/.test(link)) {
             fetchUrl = "https://www.familysearch.org" + link;
@@ -131,7 +131,7 @@ async function doFetch() {
         "#root > div > div > div > div > div:nth-child(1) > div > div > div > div.spacerCss_sqhrtfm > aside > div > div > div:nth-child(4) > aside > div > div > div.contentWrapper_cfjslsq > div > div.contentCss_czb43rf > div > div > div.bleedCss_b1cy5i06 > div > div > div > div > h2 > span > a"
       );
       if (selectedPersonLinkNode) {
-        let link = selectedPersonLinkNode.getAttribute("href");
+        let link = selectedPersonLinkNode.href;
         if (link) {
           if (/\/ark\:\/\d+\/1\:1\:\w\w\w\w\-\w\w\w/.test(link)) {
             fetchUrl = "https://www.familysearch.org" + link;
