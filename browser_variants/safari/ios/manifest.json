@@ -17,9 +17,7 @@
     "*://*.ancestrylibraryedition.co.uk/*",
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
-    "*://*.ancestryheritagequest.com/*",
-    "*://www.archion.de/*",
-    "*://data.matricula-online.eu/*"
+    "*://*.ancestryheritagequest.com/*"
   ],
   "background": {
     "scripts": ["base/browser/background/background_mv3.mjs"],
