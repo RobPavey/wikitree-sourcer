@@ -29,6 +29,10 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new ArchionUriBuilder();
 
+  if (buildUrlInput.searchParameters && buildUrlInput.searchParameters.place) {
+    builder.addLocationName(buildUrlInput.searchParameters.place);
+  }
+
   // call methods on builder here
 
   const url = builder.getUri();

@@ -65,7 +65,7 @@ function title2type(title) {
     result += ", Church withdrawal";
   }
 
-  if (title.includes("familie")) {
+  if (title.includes("familie") || title.includes("seele")) {
     result += ", Family Register";
   } else if (title.includes("register") || title.includes("index")) {
     result += ", Name Register";

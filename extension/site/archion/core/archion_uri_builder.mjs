@@ -57,44 +57,8 @@ class ArchionUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
-  }
-
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
-
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addLocationName(location) {
+    this.addSearchParameter("location_name", location);
   }
 
   getUri() {
