@@ -32,6 +32,7 @@ SOFTWARE.
 // by label.
 import "../../ameranc/core/ameranc_options.mjs";
 import "../../ancestry/core/ancestry_options.mjs";
+import "../../archion/core/archion_options.mjs";
 import "../../archive/core/archive_options.mjs";
 import "../../baclac/core/baclac_options.mjs";
 import "../../bg/core/bg_options.mjs";

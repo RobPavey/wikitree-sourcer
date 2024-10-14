@@ -28,6 +28,7 @@ import { getUnitTestOptions } from "../extension/base/core/options/options_datab
 const siteNames = [
   "ameranc",
   "ancestry",
+  "archion",
   "archive",
   "baclac",
   "bg",

@@ -22,53 +22,48 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { StringUtils } from "../../../base/core/string_utils.mjs";
 
-// The order should not matter since user facing lists are sorted
+class ArchionUriBuilder {
+  constructor() {
+    this.uri = "https://www.archion.de/de/suche";
+    this.searchTermAdded = false;
+  }
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-];
+  addSearchTerm(string) {
+    if (string == undefined || string == "") {
+      return;
+    }
+    if (!this.searchTermAdded) {
+      this.uri = this.uri.concat("?", string);
+      this.searchTermAdded = true;
+    } else {
+      this.uri = this.uri.concat("&", string);
+    }
+  }
 
-export { siteNames };
+  addSearchParameter(parameter, value) {
+    if (value == undefined || value == "") {
+      return;
+    }
+
+    const encodedValue = encodeURIComponent(value);
+
+    if (!this.searchTermAdded) {
+      this.uri = this.uri.concat("?", parameter, "=", encodedValue);
+      this.searchTermAdded = true;
+    } else {
+      this.uri = this.uri.concat("&", parameter, "=", encodedValue);
+    }
+  }
+
+  addLocationName(location) {
+    this.addSearchParameter("location_name", location);
+  }
+
+  getUri() {
+    return this.uri;
+  }
+}
+
+export { ArchionUriBuilder };

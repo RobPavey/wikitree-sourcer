@@ -19,6 +19,7 @@
     "*://*.ancestrylibrary.ca/*",
     "*://*.ancestrylibrary.com.au/*",
     "*://*.ancestryheritagequest.com/*",
+    "*://www.archion.de/*",
     "*://archive.org/*",
     "*://*.bac-lac.gc.ca/*",
     "*://*.bdm.nsw.gov.au/*",
@@ -111,6 +112,11 @@
       ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
+    },
+    {
+      "matches": ["*://www.archion.de/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/archion/browser/archion_content.js"]
     },
     {
       "matches": ["*://archive.org/*"],
@@ -352,6 +358,10 @@
         "*://*.ancestrylibrary.com.au/*",
         "*://*.ancestryheritagequest.com/*"
       ]
+    },
+    {
+      "resources": ["site/archion/core/archion_extract_data.mjs"],
+      "matches": ["*://www.archion.de/*"]
     },
     {
       "resources": ["site/archive/core/archive_extract_data.mjs"],
