@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1810 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1810-census/RecordDisplay?volumeId=22111&pageName=779&rId=439190122 American Ancestors Record] (accessed 6 May 2021)<br/>\nGeorge Jefferson.\n</ref>",
+    "citation": "<ref>\n'''1810 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1810-census/RecordDisplay?volumeId=22111&pageName=779&rId=439190122 American Ancestors Record] (accessed 6 May 2021)<br/>\nGeorge Jefferson in Derry, Westmoreland, Pennsylvania, United States.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "George was in a record in 1810.<ref>\n'''1810 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1810-census/RecordDisplay?volumeId=22111&pageName=779&rId=439190122 American Ancestors Record] (accessed 6 May 2021)<br/>\nGeorge Jefferson.\n</ref>",
+    "citation": "In the 1810 census George was in Derry, Westmoreland, Pennsylvania, United States.<ref>\n'''1810 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1810-census/RecordDisplay?volumeId=22111&pageName=779&rId=439190122 American Ancestors Record] (accessed 6 May 2021)<br/>\nGeorge Jefferson in Derry, Westmoreland, Pennsylvania, United States.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1810 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-1810-census/RecordDisplay?volumeId=22111&pageName=779&rId=439190122 American Ancestors Record] (accessed 6 May 2021)<br/>George Jefferson.",
+    "citation": "* '''1810 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-1810-census/RecordDisplay?volumeId=22111&pageName=779&rId=439190122 American Ancestors Record] (accessed 6 May 2021)<br/>George Jefferson in Derry, Westmoreland, Pennsylvania, United States.",
     "type": "source"
   }
 }

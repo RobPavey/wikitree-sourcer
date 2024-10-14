@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1820 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1820-census/RecordDisplay?volumeId=22356&pageName=337&rId=441427764 American Ancestors Record] (accessed 6 May 2021)<br/>\nMichael Taylor.\n</ref>",
+    "citation": "<ref>\n'''1820 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1820-census/RecordDisplay?volumeId=22356&pageName=337&rId=441427764 American Ancestors Record] (accessed 6 May 2021)<br/>\nMichael Taylor in New Milford, Litchfield, Connecticut, United States.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Michael was in a record in 1820.<ref>\n'''1820 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1820-census/RecordDisplay?volumeId=22356&pageName=337&rId=441427764 American Ancestors Record] (accessed 6 May 2021)<br/>\nMichael Taylor.\n</ref>",
+    "citation": "In the 1820 census Michael was in New Milford, Litchfield, Connecticut, United States.<ref>\n'''1820 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1820-census/RecordDisplay?volumeId=22356&pageName=337&rId=441427764 American Ancestors Record] (accessed 6 May 2021)<br/>\nMichael Taylor in New Milford, Litchfield, Connecticut, United States.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1820 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-1820-census/RecordDisplay?volumeId=22356&pageName=337&rId=441427764 American Ancestors Record] (accessed 6 May 2021)<br/>Michael Taylor.",
+    "citation": "* '''1820 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-1820-census/RecordDisplay?volumeId=22356&pageName=337&rId=441427764 American Ancestors Record] (accessed 6 May 2021)<br/>Michael Taylor in New Milford, Litchfield, Connecticut, United States.",
     "type": "source"
   }
 }

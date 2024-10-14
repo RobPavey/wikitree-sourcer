@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1870 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1870-census/RecordDisplay?volumeId=27637&pageName=22&rId=555183710 American Ancestors Record] (accessed 6 May 2021)<br/>\nDavid Smith.\n</ref>",
+    "citation": "<ref>\n'''1870 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1870-census/RecordDisplay?volumeId=27637&pageName=22&rId=555183710 American Ancestors Record] (accessed 6 May 2021)<br/>\nDavid Smith (6) in Illinois, United States. Born in Illinois, United States.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "David was in a record in 1870.<ref>\n'''1870 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1870-census/RecordDisplay?volumeId=27637&pageName=22&rId=555183710 American Ancestors Record] (accessed 6 May 2021)<br/>\nDavid Smith.\n</ref>",
+    "citation": "In the 1870 census David (age 6) was in Illinois, United States.<ref>\n'''1870 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1870-census/RecordDisplay?volumeId=27637&pageName=22&rId=555183710 American Ancestors Record] (accessed 6 May 2021)<br/>\nDavid Smith (6) in Illinois, United States. Born in Illinois, United States.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1870 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-1870-census/RecordDisplay?volumeId=27637&pageName=22&rId=555183710 American Ancestors Record] (accessed 6 May 2021)<br/>David Smith.",
+    "citation": "* '''1870 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-1870-census/RecordDisplay?volumeId=27637&pageName=22&rId=555183710 American Ancestors Record] (accessed 6 May 2021)<br/>David Smith (6) in Illinois, United States. Born in Illinois, United States.",
     "type": "source"
   }
 }
