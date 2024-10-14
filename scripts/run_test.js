@@ -28,6 +28,7 @@ import { getUnitTestOptions } from "../extension/base/core/options/options_datab
 const siteNames = [
   "ameranc",
   "ancestry",
+  "archion",
   "archive",
   "baclac",
   "bg",
@@ -66,11 +67,6 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
-  "npa",
-  "nzbdm",
-  "matricula",
-  "nswbdm",
-  "archion",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
