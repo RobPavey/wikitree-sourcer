@@ -68,6 +68,10 @@ function cleanLinkUrl(url, result) {
     return url;
   }
 
+  //console.log("cleanLinkUrl, url = " + url);
+  //console.log("cleanLinkUrl, result is");
+  //console.log(result);
+
   if (url.startsWith("http")) {
     return url;
   }
@@ -77,7 +81,7 @@ function cleanLinkUrl(url, result) {
   // That broke things. This fixes it.
   if (url.startsWith("/")) {
     if (result.domain) {
-      let site = "https://www.ancestry." + result.domain;
+      let site = "https://www." + result.domain;
       return site + url;
     } else if (result.url) {
       let site = result.url.replace(/^(https?:\/\/[^\/]+)\/.*$/, "$1");
@@ -190,7 +194,8 @@ function extractDbAndRecordId(result, url) {
   // Note this is overidden in buildCitation using use options
   result.ancestryTemplate = "{{Ancestry Record|" + result.dbId + "|" + result.recordId + "}}";
 
-  let domain = url.replace(/.*\.ancestry.([^\/]+)\/.*/, "$1");
+  let domainRegex = /.*\.(ancestry[^\/]+)\/.*/;
+  let domain = url.replace(domainRegex, "$1");
   result.domain = domain;
 }
 
@@ -763,7 +768,7 @@ function extractImageTemplate(result, url) {
   let db = url.replace(/.*\/imageviewer\/collections\/(\w+)\/.*/, "$1");
   let rec = url.replace(/.*\/images\/([\w\d\-_.]+).*/, "$1");
   let pid = url.replace(/.*[\?\&]pId\=(\d+).*/, "$1");
-  let domain = url.replace(/.*\.ancestry.([^\/]+)\/.*/, "$1");
+  let domain = url.replace(/.*\.(ancestry[^\/]+)\/.*/, "$1");
 
   if (db != "" && db != url && rec != "" && rec != url) {
     result.dbId = db;

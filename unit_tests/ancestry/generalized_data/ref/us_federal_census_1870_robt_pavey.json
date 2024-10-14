@@ -1,0 +1,92 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Robt Pavey"
+  },
+  "personGender": "male",
+  "birthPlace": {
+    "placeString": "Canada"
+  },
+  "eventDate": {
+    "yearString": "1870"
+  },
+  "eventPlace": {
+    "placeString": "Walnut, Bureau, Illinois"
+  },
+  "ageAtEvent": "19",
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Eli Pavey",
+      "age": "56",
+      "uid": "https://www.ancestryheritagequest.com/discoveryui-content/view/15894170:7163"
+    },
+    {
+      "name": "Nanzy Pavey",
+      "age": "50",
+      "uid": "https://www.ancestryheritagequest.com/discoveryui-content/view/16534027:7163"
+    },
+    {
+      "name": "Harriet Pavey",
+      "age": "26",
+      "uid": "https://www.ancestryheritagequest.com/discoveryui-content/view/16377995:7163"
+    },
+    {
+      "name": "Gilbert Pavey",
+      "age": "21",
+      "uid": "https://www.ancestryheritagequest.com/discoveryui-content/view/16533883:7163"
+    },
+    {
+      "name": "Robt Pavey",
+      "age": "19",
+      "isSelected": true,
+      "race": "White",
+      "gender": "male",
+      "birthDate": "abt 1851",
+      "birthPlace": "Canada"
+    },
+    {
+      "name": "Eli Pavey",
+      "age": "17",
+      "uid": "https://www.ancestryheritagequest.com/discoveryui-content/view/15893906:7163"
+    },
+    {
+      "name": "Lizzie Pavey",
+      "age": "15",
+      "uid": "https://www.ancestryheritagequest.com/discoveryui-content/view/15884714:7163"
+    },
+    {
+      "name": "Eddie Pavey",
+      "age": "8",
+      "uid": "https://www.ancestryheritagequest.com/discoveryui-content/view/15884484:7163"
+    },
+    {
+      "name": "Ella Pavey",
+      "age": "4",
+      "uid": "https://www.ancestryheritagequest.com/discoveryui-content/view/15894099:7163"
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7163|15894073}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|7163|15894170}}",
+    "{{Ancestry Record|7163|16534027}}",
+    "{{Ancestry Record|7163|16377995}}",
+    "{{Ancestry Record|7163|16533883}}",
+    "{{Ancestry Record|7163|15893906}}",
+    "{{Ancestry Record|7163|15884714}}",
+    "{{Ancestry Record|7163|15884484}}",
+    "{{Ancestry Record|7163|15894099}}"
+  ],
+  "collectionData": {
+    "id": "7163",
+    "collectionTitle": "1870 United States Federal Census"
+  },
+  "hasValidData": true
+}
