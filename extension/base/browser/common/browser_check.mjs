@@ -49,10 +49,43 @@ function isSafari() {
   return isSafariBrowser;
 }
 
+function isSafariOnMacOs() {
+  const isSafariBrowser = isSafari();
+
+  if (isSafariBrowser) {
+    // On my Mac userAgent is:
+    // Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Safari/605.1.15 (options.mjs, line 356)
+    // Note that it will be the same in the ios simulator but on an actual iOS device it will be different.
+    const isMacOSWebKit = /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent);
+    if (isMacOSWebKit) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function isSafariOnIos() {
+  const isSafariBrowser = isSafari();
+
+  if (isSafariBrowser) {
+    // On iPhone simulator userAgent is:
+    // Mozilla/5.0 (iPhone; CPU iPhone OS 17_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604.1
+    // Note that it will be the same in the ios simulator but on an actual iOS device it will be different.
+    let userAgent = navigator.userAgent;
+    const isIos = /iPhone/.test(userAgent) || /iPad/.test(userAgent);
+    if (isIos) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function isFirefox() {
   let browserName = getBrowserName();
   const isFirefoxBrowser = browserName == "Firefox";
   return isFirefoxBrowser;
 }
 
-export { getBrowserName, isSafari, isFirefox };
+export { getBrowserName, isSafari, isSafariOnMacOs, isSafariOnIos, isFirefox };

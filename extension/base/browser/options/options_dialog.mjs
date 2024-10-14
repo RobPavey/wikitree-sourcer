@@ -26,24 +26,7 @@ import { updateOptionsToLatestVersion, options } from "./options_loader.mjs";
 import { getDefaultOptions } from "../../core/options/options_database.mjs";
 import { saveOptions } from "./options_storage.mjs";
 import { restoreOptionsGivenOptions } from "./options_save_restore.mjs";
-import { getBrowserName } from "../common/browser_check.mjs";
-
-function isSafariOnMacOs() {
-  let browserName = getBrowserName();
-  const isSafariBrowser = browserName == "Safari";
-
-  if (isSafariBrowser) {
-    // On my Mac userAgent is:
-    // Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Safari/605.1.15 (options.mjs, line 356)
-    // Note that it will be the same in the ios simulator but on an actual iOS device it will be different.
-    const isMacOSWebKit = /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent);
-    if (isMacOSWebKit) {
-      return true;
-    }
-  }
-
-  return false;
-}
+import { isSafariOnMacOs } from "../common/browser_check.mjs";
 
 async function resetOptions() {
   let defaultOptions = await getDefaultOptions();
