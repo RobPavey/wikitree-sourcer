@@ -61,6 +61,15 @@ class ArchionUriBuilder {
     this.addSearchParameter("location_name", location);
   }
 
+  addTimeSpan(startYear, endYear) {
+    this.addSearchParameter("from", startYear);
+    this.addSearchParameter("to", endYear);
+  }
+
+  addKind(kind) {
+    this.addSearchParameter("act%5B%5D", kind)
+  }
+
   getUri() {
     return this.uri;
   }

@@ -32,6 +32,12 @@ function buildSearchUrl(buildUrlInput) {
   if (buildUrlInput.searchParameters && buildUrlInput.searchParameters.place) {
     builder.addLocationName(buildUrlInput.searchParameters.place);
   }
+  if (buildUrlInput.searchParameters && buildUrlInput.searchParameters.year) {
+    builder.addTimeSpan(buildUrlInput.searchParameters.year, buildUrlInput.searchParameters.year);
+  }
+  if (buildUrlInput.searchParameters && buildUrlInput.searchParameters.kind) {
+    builder.addKind(buildUrlInput.searchParameters.kind);
+  }
 
   // call methods on builder here
 
