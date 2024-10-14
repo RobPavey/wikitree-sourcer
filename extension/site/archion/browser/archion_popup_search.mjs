@@ -81,18 +81,20 @@ function extractPlaceStrings(ed, gd) {
   let locations = [];
 
   let placeObj = gd.inferBirthPlaceObj();
+  let dateObj = gd.inferBirthDateObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
     if (placeParts && placeParts.localPlace) {
-      locations.push({ descriptor: "Birth", place: placeParts.localPlace });
+      locations.push({ descriptor: "Birth", place: placeParts.localPlace, year: dateObj ? dateObj.getYearString() : -1 });
     }
   }
 
   placeObj = gd.inferResidencePlaceObj();
+  dateObj = gd.inferResidenceDateObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
     if (placeParts && placeParts.localPlace) {
-      locations.push({ descriptor: "Residence", place: placeParts.localPlace });
+      locations.push({ descriptor: "Residence", place: placeParts.localPlace, year: dateObj ? dateObj.getYearString() : -1 });
     }
   }
 
@@ -100,33 +102,32 @@ function extractPlaceStrings(ed, gd) {
   // add marriage places
   if (gd.sourceType == "profile" && gd.spouses) {
     for (let spouse of gd.spouses) {
-      if (spouse.marriagePlace && spouse.marriagePlace.placeString) {
-        locations.push({ descriptor: "Marriage", place: spouse.marriagePlace.placeString });
+      let year = -1;
+      if (spouse.marriageDate && spouse.marriageDate.dateString) {
+        year = Number(spouse.marriageDate.dateString.split(" ")[2]);
       }
-    }
-  }
-  // Marriage records on FS are not included in above, but we can work around this issue
-  else if (gd.sourceType == "record" && gd.recordType.toLowerCase() == "marriage") {
-    const place = gd.eventPlace.placeString;
-    if (place) {
-      locations.push({ descriptor: "Marriage", place: place });
+      if (spouse.marriagePlace && spouse.marriagePlace.placeString) {
+        locations.push({ descriptor: "Marriage", place: spouse.marriagePlace.placeString, year : year });
+      }
     }
   }
 
   placeObj = gd.inferDeathPlaceObj();
+  dateObj = gd.inferDeathDateObj();
   if (placeObj) {
     let placeParts = placeObj.separatePlaceIntoParts();
     if (placeParts && placeParts.localPlace) {
-      locations.push({ descriptor: "Death", place: placeParts.localPlace });
+      locations.push({ descriptor: "Death", place: placeParts.localPlace, year: dateObj ? dateObj.getYearString() : -1 });
     }
   }
 
   if (!locations) {
     placeObj = gd.inferEventPlaceObj();
+    dateObj = gd.inferEventDateObj();
     if (placeObj) {
       let placeParts = placeObj.separatePlaceIntoParts();
       if (placeParts && placeParts.localPlace) {
-        locations.push({ descriptor: "Event", place: placeParts.localPlace });
+        locations.push({ descriptor: "Event", place: placeParts.localPlace, year: dateObj ? dateObj.getYearString() : -1 });
       }
     }
   }
@@ -192,7 +193,19 @@ function setupArchionLocationSubmenuLayer2(data, backFunction, item) {
     }
     part = part.trim();
     addMenuItem(menu, part, function (element) {
-      archionLocationSearch({ place: part });
+      let kind = undefined;
+
+      if (item.descriptor == "Birth") {
+        kind = "TA";
+      }
+      if (item.descriptor == "Marriage") {
+        kind = "TR";
+      }
+      if (item.descriptor == "Death") {
+        kind = "BE";
+      }
+
+      archionLocationSearch({ place: part, year: item.year, kind: kind });
     });
   }
 
