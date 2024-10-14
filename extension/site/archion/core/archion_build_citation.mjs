@@ -65,7 +65,6 @@ function customLableFunction(ed, gd) {
   if (ed.bookType) {
     return ed.bookType;
   }
-
   return "Churchbook";
 }
 
