@@ -181,13 +181,13 @@ function checkSearchParameters() {
     if (searchParameters.endYear > 1923 && searchParameters.mmn) {
       let message = "Mother's Maiden Name is specified but range includes years greater than 1923.";
       message += "\n\nFor those years the GRO search cannot narrow the search results using the MMN";
-      message += " but it does return the MMN in the result if it matches,";
-      message += " so there will be extra search results with blank MMNs.";
-      if (searchParameters.startYear <= 1924 && searchParameters.endYear >= 1924) {
-        message += "\n\nThe year 1924 is a special case. It does return the MMN for non-matching results.";
-        message += " So there may be extra search results with non-matching MMNs.";
-      }
-      message += "\n\nYou can use the MMN results filter to only show the results with the MMNs that you want.";
+      message += " but it does return the MMN in the result if it matches. This tool will prune out the";
+      message += " non-matching results.";
+      message += " However, if the surname at birth is common there can be many search results which";
+      message += " can result in extra searches to break down the search ranges";
+      message += " and fetch extra pages which will slow down the search.";
+      message += "\n\nBecause of this it may be better to use FreeBMD to do a search for births after 1911";
+      message += " which is when FreeBMD has MMNs available to search.";
       result.warningMessages.push(message);
       result.warningInputIds.push("searchParamMmn");
     }

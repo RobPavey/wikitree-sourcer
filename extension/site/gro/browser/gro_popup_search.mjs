@@ -28,6 +28,7 @@ import {
   addBackMenuItem,
   addMenuItem,
   addMenuItemWithSubtitle,
+  addItalicMessageMenuItem,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
@@ -463,7 +464,7 @@ function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
     }
     subtitle += "\nPossible child birth years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
   } else {
-    let gender = data.extractedData.personGender;
+    let gender = data.generalizedData.personGender;
 
     if (gender == "female") {
       menuItemText = "Do smart search for children with no registered father";
@@ -571,6 +572,7 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
     }
     addGroSmartSearchChildBirthsMenuItem(menu, data, filter);
     addGroSmartSearchDeathsMenuItem(menu, data, filter);
+    addItalicMessageMenuItem(menu, "To search for births of siblings, do the search from a parent.");
   }
 
   endMainMenu(menu);

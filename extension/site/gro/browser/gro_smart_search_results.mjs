@@ -282,6 +282,7 @@ function fillTable(extractedDataObjs) {
       if (linkText) {
         let linkElement = document.createElement("a");
         linkElement.setAttribute("href", linkText);
+        linkElement.setAttribute("target", "_blank"); // opens in new tab
         linkElement.innerHTML = value;
         tdElement.appendChild(linkElement);
       } else {
