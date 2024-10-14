@@ -1,0 +1,85 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Laura I Steihaug"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1920"
+  },
+  "eventPlace": {
+    "placeString": "Alvdal, Hedmark, Norway",
+    "parish": "Alvdal",
+    "county": "Hedmark",
+    "country": "Norway",
+    "streetAddress": "Steihaug",
+    "prepositionHint": "at"
+  },
+  "birthDate": {
+    "dateString": "11 Apr 1889"
+  },
+  "birthPlace": {
+    "placeString": "Alvdal"
+  },
+  "relationshipToHead": "servant",
+  "maritalStatus": "single",
+  "occupation": "Budeie hos bror",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "occupation",
+    "birthDate",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Sigrid Larsdatter Steihaug",
+      "relationship": "gårdbrukerens mor",
+      "maritalStatus": "widow",
+      "occupation": "Føderådskone",
+      "birthDate": "11 Nov 1848",
+      "birthPlace": "Foldal"
+    },
+    {
+      "name": "Laura I. Steihaug",
+      "relationship": "servant",
+      "maritalStatus": "single",
+      "occupation": "Budeie hos bror",
+      "birthDate": "11 Apr 1889",
+      "birthPlace": "Alvdal",
+      "isSelected": true,
+      "gender": "female"
+    },
+    {
+      "name": "Inga Steihaug",
+      "relationship": "søsterdatter",
+      "maritalStatus": "single",
+      "occupation": "Child",
+      "birthDate": "2 Aug 1910",
+      "birthPlace": "Alvdal"
+    },
+    {
+      "name": "Lars L. Kveberg",
+      "relationship": "servant",
+      "maritalStatus": "single",
+      "occupation": "Gårdsbestyrer",
+      "birthDate": "10 Mar 1875",
+      "birthPlace": "Alvdal"
+    },
+    {
+      "name": "Birger Tronsvang",
+      "relationship": "servant",
+      "maritalStatus": "single",
+      "occupation": "Småbruker",
+      "birthDate": "19 Oct 1896",
+      "birthPlace": "Alvdal"
+    }
+  ],
+  "collectionData": {
+    "id": "jt_18"
+  },
+  "hasValidData": true
+}

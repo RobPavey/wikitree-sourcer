@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Death Index\"<br/>\n[https://www.freebmd.org.uk/cgi/information.pl?cite=BPWMD5euQCbaHxoApSv%2FbQ&scan=1 FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nWatson, Ann Dawson (Date of birth: 06 SE 1904).<br/>\n''GRO Reference:'' 1980 Jan-Feb-Mar in Congleton/C Volume 35 Page 0550.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Ann's death was registered in the Jan-Feb-Mar quarter of 1980 in the Congleton/C district.<ref>\n'''Death Registration''':\n\"England & Wales Death Index\"<br/>\n[https://www.freebmd.org.uk/cgi/information.pl?cite=BPWMD5euQCbaHxoApSv%2FbQ&scan=1 FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nWatson, Ann Dawson (Date of birth: 06 SE 1904).<br/>\n''GRO Reference:'' 1980 Jan-Feb-Mar in Congleton/C Volume 35 Page 0550.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Death Index\"<br/>[https://www.freebmd.org.uk/cgi/information.pl?cite=BPWMD5euQCbaHxoApSv%2FbQ&scan=1 FreeBMD Entry Information] (accessed 6 May 2021)<br/>Watson, Ann Dawson (Date of birth: 06 SE 1904).<br/>''GRO Reference:'' 1980 Jan-Feb-Mar in Congleton/C Volume 35 Page 0550.",
+    "type": "source"
+  }
+}

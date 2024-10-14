@@ -1,0 +1,63 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Robert Lewis Ba"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Stevenson"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1850"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1850"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "text",
+        "value": "Thomas Stevenson"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-two",
+        "type": "text",
+        "value": "Margaret Isabella Balfour"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-two",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refNum": "600 207",
+  "recordType": "opr_births"
+}

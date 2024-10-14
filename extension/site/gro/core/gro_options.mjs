@@ -29,6 +29,22 @@ import {
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
 
+const searchOptionsGroup = {
+  category: "search",
+  subcategory: "gro",
+  tab: "search",
+  subsection: "gro",
+  subheading: "features",
+  options: [
+    {
+      optionName: "enableSmartSearch",
+      type: "checkbox",
+      label: "Enable Smart Search (BETA)",
+      defaultValue: false,
+    },
+  ],
+};
+
 const citationOptionsGroup = {
   category: "citation",
   subcategory: "gro",
@@ -70,6 +86,8 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "gro", "GRO (UK)");
 registerSiteSearchPopupOptionsGroup("gro", 5, 5);
+registerSubheadingForOptions("search", "gro", "features", "Search Features");
+registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "gro", "GRO (UK)");
 registerOptionsGroup(citationOptionsGroup);

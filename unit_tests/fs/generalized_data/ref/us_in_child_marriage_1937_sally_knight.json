@@ -7,7 +7,11 @@
       "lastName": "Blackshear",
       "forenames": "Ethel D"
     },
-    "gender": "female"
+    "gender": "female",
+    "birthDate": {
+      "dateString": "12 Sep 1902",
+      "yearString": "1902"
+    }
   },
   "recordType": "MarriageRegistration",
   "sourceOfData": "fs",
@@ -35,7 +39,8 @@
     "{{FamilySearch Record|27K9-9V1}}"
   ],
   "collectionData": {
-    "id": "1410397"
+    "id": "1410397",
+    "collectionTitle": "Indiana Marriages, 1811-2019"
   },
   "hasValidData": true
 }

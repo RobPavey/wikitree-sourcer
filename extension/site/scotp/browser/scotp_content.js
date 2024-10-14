@@ -50,8 +50,8 @@ function getRefRecordKey(recordType) {
     stat_marriages: { ref: "Ref" },
     stat_divorces: { ref: "Serial Number" },
     stat_deaths: { ref: "Ref" },
-    civilpartnership: { ref: "RD/EntryNumber" },
-    dissolutions: { ref: "Serial Number" },
+    stat_civilpartnerships: { ref: "Ref" },
+    stat_dissolutions: { ref: "Serial Number" },
     ///////////////////// Church Registers ///////////////////////
     opr_births: { ref: "Ref" },
     opr_marriages: { ref: "Ref" },
@@ -60,9 +60,9 @@ function getRefRecordKey(recordType) {
     census: { ref: "Ref" },
     census_lds: { ref: "Ref" },
     ///////////////////// Valuation Rolls ///////////////////////
-    valuation_rolls: { ref: "Reference Number" },
+    vr: { ref: "Reference Number" },
     ///////////////////// Legal ///////////////////////
-    wills_testaments: { ref: "Reference Number" },
+    wills: { ref: "Reference Number" },
     coa: { ref: "Record Number" },
   };
 
@@ -112,6 +112,122 @@ function getClickedRow() {
   }
 }
 
+async function doHighlightForRefNumber(refValue, recordType, isFromUrl) {
+  //console.log("doHighlightForRefNumber, refValue = " + refValue + " recordType = " + recordType);
+
+  // work out what key to look for
+  let refKey = getRefRecordKey(recordType);
+  if (!refKey) {
+    return;
+  }
+
+  //console.log("doHighlightForRefNumber, refKey = " + refKey);
+
+  let resultsTable = document.querySelector("table.results-table");
+  if (!resultsTable) {
+    //console.log("doHighlightForRefNumber, table.table not found");
+    return;
+  }
+  let headerRow = resultsTable.querySelector("thead > tr");
+  if (!headerRow) {
+    //console.log("doHighlightForRefNumber, thead > tr not found");
+    return;
+  }
+  let headerCells = headerRow.querySelectorAll("th");
+
+  // find the refKey in the header cells to get the right column index
+  let refKeyColumnIndex = -1;
+  for (let index = 0; index < headerCells.length; index++) {
+    let headerCell = headerCells[index];
+    let text = headerCell.textContent;
+    if (text && text.trim() == refKey) {
+      refKeyColumnIndex = index;
+      break;
+    }
+  }
+
+  //console.log("doHighlightForRefNumber, refKeyColumnIndex = " + refKeyColumnIndex);
+
+  if (refKeyColumnIndex == -1) {
+    return;
+  }
+
+  let rowElements = resultsTable.querySelectorAll("tbody > tr");
+  for (let index = 0; index < rowElements.length; index++) {
+    let rowElement = rowElements[index];
+
+    let rowCells = rowElement.querySelectorAll("td");
+    if (rowCells.length > refKeyColumnIndex) {
+      let rowCell = rowCells[refKeyColumnIndex];
+      let rowDataElement = rowCell.querySelector("div.table-row-cell-data");
+      if (rowDataElement) {
+        let text = rowDataElement.textContent;
+        if (text) {
+          refValue = refValue.toLowerCase();
+          text = text.trim().toLowerCase();
+
+          text = text.replace(/\s+/g, " "); // remove double spaces
+          if (isFromUrl) {
+            text = encodeURIComponent(text);
+          }
+          //console.log("doHighlightForRefNumber: text = '" + text + "', refValue = '" + refValue + "'");
+          if (text == refValue) {
+            // we have found the row to highlight
+            //console.log("doHighlightForRefNumber: found match, highlighting row");
+            highlightRow(rowElement);
+            return;
+          }
+          // there could be a difference in spaces
+          if (!isFromUrl) {
+            let cleanRefValue = refValue.replace(/\s*\/\s*/g, "/");
+            let cleanText = text.replace(/\s*\/\s*/g, "/");
+            //console.log("doHighlightForRefNumber: cleanText = '" + cleanText + "', cleanRefValue = '" + cleanRefValue + "'");
+            if (cleanText == cleanRefValue) {
+              // we have found the row to highlight
+              //console.log("doHighlightForRefNumber: found match, highlighting row");
+              highlightRow(rowElement);
+              return;
+            }
+
+            // On some old Sourcer sitations we have some thing like "20 27" when what is actually
+            // displayed in the search results is "20 / 27"
+            cleanRefValue = refValue.replace(/\s*\/\s*/g, " ");
+            cleanText = text.replace(/\s*\/\s*/g, " ");
+            //console.log("doHighlightForRefNumber: cleanText = '" + cleanText + "', cleanRefValue = '" + cleanRefValue + "'");
+            if (cleanText == cleanRefValue) {
+              // we have found the row to highlight
+              //console.log("doHighlightForRefNumber: found match, highlighting row");
+              highlightRow(rowElement);
+              return;
+            }
+
+            // On some cases like valuation rolls we can have refValue = "VR008600001" and
+            // text = "VR008600001-"
+            cleanRefValue = cleanRefValue.replace(/^(.*)\-$/, "$1");
+            cleanText = cleanText.replace(/^(.*)\-$/, "$1");
+            //console.log("doHighlightForRefNumber: cleanText = '" + cleanText + "', cleanRefValue = '" + cleanRefValue + "'");
+            if (cleanText == cleanRefValue) {
+              // we have found the row to highlight
+              //console.log("doHighlightForRefNumber: found match, highlighting row");
+              highlightRow(rowElement);
+              return;
+            }
+
+            // sometimes the ref includes extra info like the parish number. e.g.
+            // refVal = "685/3 160/127" and text = "160/127"
+            if (cleanRefValue.endsWith(cleanText)) {
+              // we have found the row to highlight
+              //console.log("doHighlightForRefNumber: found match, highlighting row");
+              highlightRow(rowElement);
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 async function doHighlightForRefQuery() {
   let url = location.href;
 
@@ -129,99 +245,155 @@ async function doHighlightForRefQuery() {
     if (!refValue) {
       return;
     }
+  } else {
+    return;
+  }
 
-    //console.log("doHighlightForRefQuery: refValue = " + refValue);
-
-    // extract the record_type from url
-    const rt1Query = "&record_type=";
-    let rtIndex = url.indexOf(rt1Query);
+  // extract the record_type from url
+  const rt1Query = "&record_type=";
+  let rtIndex = url.indexOf(rt1Query);
+  if (rtIndex != -1) {
+    rtIndex += rt1Query.length;
+  } else {
+    const rt2Query = "&record_type%5B0%5D=";
+    rtIndex = url.indexOf(rt2Query);
     if (rtIndex != -1) {
-      rtIndex += rt1Query.length;
+      rtIndex += rt2Query.length;
     } else {
-      const rt2Query = "&record_type%5B0%5D=";
-      rtIndex = url.indexOf(rt2Query);
-      if (rtIndex != -1) {
-        rtIndex += rt2Query.length;
-      } else {
+      return;
+    }
+  }
+  ampIndex = url.indexOf("&", rtIndex);
+  if (ampIndex == -1) {
+    ampIndex = url.length;
+  }
+  let recordType = url.substring(rtIndex, ampIndex);
+
+  doHighlightForRefNumber(refValue, recordType, true);
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function doHighlightForRefNumData() {
+  // should only do this when the search is completed
+
+  //console.log("doHighlightForRefNumData: document.URL is : " + document.URL);
+
+  let isAdvancedSearch = false;
+  let isSearchResults = false;
+  if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/search-records/")) {
+    isAdvancedSearch = true;
+  } else if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/record-results/")) {
+    isSearchResults = true;
+  }
+
+  let storageName = "scotpSearchRefNumData";
+  let expiryTime = 30000;
+
+  if (isSearchResults) {
+    //console.log("doHighlightForRefNumData: URL matches");
+
+    // check logged in
+    const loginElement = document.querySelector("div.log-in");
+    if (loginElement) {
+      //console.log("doHighlightForRefNumData: returning because not logged in");
+      return;
+    }
+
+    let searchData = await getPendingSearch(storageName, false);
+    //console.log("doHighlightForRefNumData: got searchData:");
+    //console.log(searchData);
+
+    if (!searchData) {
+      // look for refine data
+      storageName = "scotpSearchRefNumDataForRefine";
+      searchData = await getPendingSearch(storageName, false);
+      expiryTime = 1000 * 60 * 60 * 24;
+    }
+
+    if (searchData) {
+      // If we found a pending search and submitted form then we will get called again
+      // when the search results of the form come up.
+      if (doingFormSubmit) {
+        // wait to be called again when the results are available
+        //console.log("doHighlightForRefNumData: returning because waiting for form submit");
         return;
       }
-    }
-    ampIndex = url.indexOf("&", rtIndex);
-    if (ampIndex == -1) {
-      ampIndex = url.length;
-    }
-    let recordType = url.substring(rtIndex, ampIndex);
 
-    // work out what key to look for
-    let refKey = getRefRecordKey(recordType);
-    if (!refKey) {
-      return;
-    }
+      let searchUrl = searchData.url;
+      let timeStamp = searchData.timeStamp;
+      let timeStampNow = Date.now();
+      let timeSinceSearch = timeStampNow - timeStamp;
 
-    let resultsTableWrapper = document.querySelector("div.results-table-wrapper");
-    if (!resultsTableWrapper) {
-      return;
-    }
-    let resultsTable = resultsTableWrapper.querySelector("table.table");
-    if (!resultsTable) {
-      return;
-    }
-    let headerRow = resultsTable.querySelector("thead > tr");
-    if (!headerRow) {
-      return;
-    }
-    let headerCells = headerRow.querySelectorAll("th");
+      //console.log("doHighlightForRefNumData: searchUrl is : '" + searchUrl + "'");
+      //console.log("doHighlightForRefNumData: document.URL is : '" + document.URL + "'");
+      //console.log("doHighlightForRefNumData: timeStamp is :" + timeStamp);
+      //console.log("doHighlightForRefNumData: timeStampNow is :" + timeStampNow);
+      //console.log("doHighlightForRefNumData: timeSinceSearch is :" + timeSinceSearch);
 
-    // find the refKey in the header cells to get the right column index
-    let refKeyColumnIndex = -1;
-    for (let index = 0; index < headerCells.length; index++) {
-      let headerCell = headerCells[index];
-      let text = headerCell.textContent;
-      if (text && text.trim() == refKey) {
-        refKeyColumnIndex = index;
-        break;
-      }
-    }
-    if (refKeyColumnIndex == -1) {
-      return;
-    }
+      if (timeSinceSearch < expiryTime && (isSearchResults || searchUrl == document.URL)) {
+        // wait a  short time in case table not fully populated
+        await sleep(200);
+        doHighlightForRefNumber(searchData.refNum, searchData.recordType, false);
 
-    let rowElements = resultsTable.querySelectorAll("tbody > tr");
-    for (let index = 0; index < rowElements.length; index++) {
-      let rowElement = rowElements[index];
+        if (storageName == "scotpSearchRefNumData") {
+          clearPendingSearch(storageName);
 
-      let rowCells = rowElement.querySelectorAll("td");
-      if (rowCells.length > refKeyColumnIndex) {
-        let rowCell = rowCells[refKeyColumnIndex];
-        let rowDataElement = rowCell.querySelector("div.table-cell-data");
-        if (rowDataElement) {
-          let text = rowDataElement.textContent;
-          if (text) {
-            text = text.trim();
-            text = text.replace(/\s+/g, " "); // remove double spaces
-            text = encodeURIComponent(text);
-            //console.log("doHighlightForRefQuery: text = '" + text + "', refValue = '" + refValue + "'");
-            if (text == refValue) {
-              // we have found the row to highlight
-              highlightRow(rowElement);
-              return;
-            }
-          }
+          // if the search is not specific there may be several pages of results
+          // and the highlt may not be visible. So Save off the ref num search and recheck
+          // on further results
+          safeRefNumSearchDataForUserRefineSearches(searchData);
         }
       }
     }
   }
 }
 
-async function getPendingSearch(storageName) {
+async function getPendingSearch(storageName, removeAfterRead = true) {
   return new Promise((resolve, reject) => {
     try {
       chrome.storage.local.get([storageName], function (value) {
-        // clear the search data
-        chrome.storage.local.remove([storageName], function () {
-          //console.log('cleared scotpSearchData');
+        //console.log("read storage: " + storageName + ", value is:");
+        //console.log(value[storageName]);
+        if (removeAfterRead) {
+          // clear the search data
+          chrome.storage.local.remove([storageName], function () {
+            //console.log("cleared storage: " + storageName);
+            resolve(value[storageName]);
+          });
+        } else {
           resolve(value[storageName]);
-        });
+        }
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
+async function clearPendingSearch(storageName) {
+  return new Promise((resolve, reject) => {
+    try {
+      // clear the search data
+      chrome.storage.local.remove([storageName], function () {
+        //console.log('cleared scotpSearchData');
+        resolve();
+      });
+    } catch (ex) {
+      reject(ex);
+    }
+  });
+}
+
+async function safeRefNumSearchDataForUserRefineSearches(searchData) {
+  return new Promise((resolve, reject) => {
+    try {
+      // save the search data
+      chrome.storage.local.set({ scotpSearchRefNumDataForRefine: searchData }, function () {
+        console.log("saved scotpSearchRefNumDataForRefine");
+        resolve();
       });
     } catch (ex) {
       reject(ex);
@@ -308,6 +480,9 @@ function legacyUrlQueryToFormData(urlQuery) {
   let formData = {};
   formData.fields = [];
 
+  //console.log("legacyUrlQueryToFormData, urlQuery is:");
+  //console.log(urlQuery);
+
   // https://www.scotlandspeople.gov.uk/record-results?search_type=people&dl_cat=census&record_type=census&surname=O'CONNOR&forename=BARTLEY&year%5B0%5D=1871&sex=M&age_from=28&age_to=28&county=Shipping&rd_real_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY&rd_display_name%5B0%5D=SHIPPING%20-%20MERCHANT%20NAVY_SHIPPING%20-%20MERCHANT%20NAVY&rdno%5B0%5D=%20&ref=903%2FS%201%2F%2016
 
   let recordType = urlQuery.record_type;
@@ -353,6 +528,10 @@ function legacyUrlQueryToFormData(urlQuery) {
   };
 
   let urlPart = recordTypeToUrlPart[recordType];
+
+  //console.log("legacyUrlQueryToFormData, urlPart is:");
+  //console.log(urlPart);
+
   if (!urlPart) {
     return formData;
   }
@@ -655,6 +834,9 @@ function sendFormDataToSearchPage(path, formData) {
     formData: formData,
   };
 
+  //console.log("sendFormDataToSearchPage, scotpSearchData is:");
+  //console.log(scotpSearchData);
+
   // this stores the search data in local storage which is then picked up by the
   // content script in the new tab/window
   chrome.storage.local.set({ scotpSearchData: scotpSearchData }, async function () {
@@ -679,24 +861,27 @@ function doLegacySearch() {
 
   if (formData && formData.fields && formData.fields.length > 0) {
     hideElementsDuringSearch();
-    const searchUrl = "https://www.scotlandspeople.gov.uk/advanced-search/" + formData.urlPart;
+    const searchUrl = "https://www.scotlandspeople.gov.uk/search-records/" + formData.urlPart;
     sendFormDataToSearchPage(searchUrl, formData);
   }
 }
 
+var doingFormSubmit = false;
+
 async function checkForPendingSearch() {
   //console.log("checkForPendingSearch: called, document.URL is: " + document.URL);
+
+  if (document.URL.startsWith("https://www.scotlandspeople.gov.uk/search-records/")) {
+    // found an initial search so clear the ref num refine data
+    clearPendingSearch("scotpSearchRefNumDataForRefine");
+  }
 
   if (document.URL) {
     let lcUrl = document.URL.toLowerCase();
     if (lcUrl.includes("search_type=people")) {
       let isLegacy = false;
       if (lcUrl.includes("/record-results?")) {
-        // an old saved search URL, just in case they start working again check for 404 error
-        const errorBlock = document.getElementById("block-404pagenotfoundblock");
-        if (errorBlock) {
-          isLegacy = true;
-        }
+        isLegacy = true;
       } else if (lcUrl.includes("/advanced-search?")) {
         // a modified old search URL
         isLegacy = true;
@@ -854,6 +1039,7 @@ async function checkForPendingSearch() {
           //console.log("checkForPendingSearch: found formElement:");
           //console.log(formElement);
           // now submit the form to do the search
+          doingFormSubmit = true;
           formElement.submit();
         }
       }
@@ -869,6 +1055,7 @@ async function checkForSearchThenInit() {
 
   addClickedRowListener();
   doHighlightForRefQuery();
+  doHighlightForRefNumData();
 }
 
 checkForSearchThenInit();

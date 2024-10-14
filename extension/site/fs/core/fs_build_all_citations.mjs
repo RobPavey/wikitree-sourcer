@@ -241,6 +241,12 @@ function inferBestEventDateForCompare(gd) {
             eventDate = birthDate;
           }
         }
+      } else if (gd.recordType == RT.Marriage) {
+        if (!gd.role || gd.role == Role.Primary) {
+          if (gd.marriageDate) {
+            eventDate = gd.marriageDate;
+          }
+        }
       }
     }
   }
@@ -248,7 +254,7 @@ function inferBestEventDateForCompare(gd) {
   return eventDate;
 }
 
-// this can be used both for sorthing sources and facts
+// this can be used both for sorting sources and facts
 function compareGdsAndSources(gdA, gdB, sourceA, sourceB) {
   let recordTypeSortPriority = {};
   recordTypeSortPriority[RT.Birth] = 1;

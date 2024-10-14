@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "name": {
+    "lastName": "Grice",
+    "forenames": "Clarence Vernon"
+  },
+  "eventDate": {
+    "dateString": "1950"
+  },
+  "eventPlace": {
+    "placeString": "Tasmania, Australia"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Grice",
+        "forenames": "Kathleen Elizabeth"
+      }
+    }
+  ],
+  "hasValidData": true
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:610151<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/610151 Record Permalink] (accessed 6 May 2021)<br/>\nName: Smith, John; Record Type: Departures; Rank: Seaman; Departure date: 18 May 1818; Departure port: Hobart; Ship: Elizabeth and Mary; Bound to: Macquarie Island.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John departed from Hobart on the ship Elizabeth and Mary on 18 May 1818 bound to Macquarie Island.<ref>\n'''Passenger List''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:610151<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/610151 Record Permalink] (accessed 6 May 2021)<br/>\nName: Smith, John; Record Type: Departures; Rank: Seaman; Departure date: 18 May 1818; Departure port: Hobart; Ship: Elizabeth and Mary; Bound to: Macquarie Island.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Passenger List''': \"Libraries Tasmania, Names Index\"<br/>Record ID: NAME_INDEXES:610151<br/>[https://libraries.tas.gov.au/Record/NamesIndex/610151 Record Permalink] (accessed 6 May 2021)<br/>Name: Smith, John; Record Type: Departures; Rank: Seaman; Departure date: 18 May 1818; Departure port: Hobart; Ship: Elizabeth and Mary; Bound to: Macquarie Island.",
+    "type": "source"
+  }
+}

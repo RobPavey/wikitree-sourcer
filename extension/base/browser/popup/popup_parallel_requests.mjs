@@ -280,7 +280,7 @@ function displayStatusMessage(resolve) {
 }
 
 async function parallelRequestsDisplayErrorsMessage(actionName) {
-  let baseMessage = "During " + actionName + " some linked records could not be retreived.";
+  let baseMessage = "During " + actionName + " some linked records could not be retrieved.";
   if (queueResponseTracker.skippedByUser) {
     baseMessage += "\nThe server responded with 'Too many requests' (error 429).";
   } else if (queueResponseTracker.abortRequests) {
@@ -288,7 +288,7 @@ async function parallelRequestsDisplayErrorsMessage(actionName) {
   } else {
     baseMessage += "\nThis could be due to internet connectivity issues or server issues.";
   }
-  baseMessage += "\nPress continue to use what could be retreived.\n";
+  baseMessage += "\nPress continue to use what could be retrieved.\n";
 
   let message2 = "";
   for (let requestState of requestsTracker.requestStates) {

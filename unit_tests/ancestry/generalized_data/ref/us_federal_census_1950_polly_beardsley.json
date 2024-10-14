@@ -1,0 +1,62 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Polly A Beardsley"
+  },
+  "personGender": "female",
+  "birthPlace": {
+    "placeString": "Connecticut"
+  },
+  "eventDate": {
+    "dateString": "1850"
+  },
+  "eventPlace": {
+    "placeString": "New Milford, Litchfield, Connecticut, USA"
+  },
+  "householdArrayFields": [
+    "name",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Addison L Beardsley",
+      "age": "45",
+      "uid": "https://www.ancestry.com/discoveryui-content/view/18187955:8054"
+    },
+    {
+      "name": "Harriett Beardsley",
+      "age": "43",
+      "uid": "https://www.ancestry.com/discoveryui-content/view/18187956:8054"
+    },
+    {
+      "name": "Mary Beardsley",
+      "age": "7",
+      "uid": "https://www.ancestry.com/discoveryui-content/view/18187957:8054"
+    },
+    {
+      "name": "Polly A Beardsley",
+      "age": "65",
+      "isSelected": true,
+      "race": "White",
+      "gender": "female",
+      "birthDate": "abt 1785",
+      "birthPlace": "Connecticut"
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8054|18187958}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|8054|18187955}}",
+    "{{Ancestry Record|8054|18187956}}",
+    "{{Ancestry Record|8054|18187957}}"
+  ],
+  "collectionData": {
+    "id": "8054",
+    "collectionTitle": "1850 United States Federal Census",
+    "familyNumber": "805"
+  },
+  "hasValidData": true
+}

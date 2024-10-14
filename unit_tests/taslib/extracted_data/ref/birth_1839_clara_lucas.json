@@ -1,0 +1,19 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1106997/one?qu=Henry&qu=Abigail&qu=Archdall&qf=NI_INDEX%09Record+type%09Births%09Births&qf=PUBDATE%09Year%091846%091846",
+  "success": true,
+  "recordData": {
+    "Name": "Lucas, Clara",
+    "Record Type": "Births",
+    "Gender": "Female",
+    "Father": "Lucas, James",
+    "Mother": "Walton, Naomi",
+    "Date of birth": "22 Feb 1835",
+    "Registered": "Hobart",
+    "Registration year": "1839",
+    "Record ID": "NAME_INDEXES:1066519",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD33-1-1-p260j2k",
+      "text": "RGD33/1/1/ no 77"
+    }
+  }
+}

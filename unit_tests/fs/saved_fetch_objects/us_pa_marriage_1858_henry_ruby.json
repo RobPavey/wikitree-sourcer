@@ -1,0 +1,1460 @@
+{
+  "id" : "r_173508725556",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1699602515512,
+    "created" : 1699602515512
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:4BMH-CSRW?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:4BMH-CSRW?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:4BMH-CSRW"
+    }
+  },
+  "description" : "#sd_p_291539304864",
+  "persons" : [ {
+    "id" : "p_291539304864",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6CYF-SMB5?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/4BMH-CSRW?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5" ]
+    },
+    "names" : [ {
+      "id" : "5835254f-95f7-4331-924b-7de41a4e45ce",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Henry Rice Ruby",
+        "parts" : [ {
+          "id" : "071da893-46ba-4505-8a25-9f15ead71b6d",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Ruby",
+          "fields" : [ {
+            "id" : "1db14145-8209-42e5-9bfd-0b9975ff2d4b",
+            "attribution" : {
+              "modified" : 1699602515512,
+              "created" : 1699602515512
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "8a8dac04-ec43-4e39-bb31-f3d1112bc487",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Ruby"
+            }, {
+              "id" : "8a8dac04-ec43-4e39-bb31-f3d1112bc487",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Ruby",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "5db188f0-d178-4c93-be60-95b3a919b933",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Henry Rice",
+          "fields" : [ {
+            "id" : "e13e68da-61db-4fea-b388-7aa077b4a862",
+            "attribution" : {
+              "modified" : 1699602515512,
+              "created" : 1699602515512
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "71035472-de39-414d-af0f-f459511afec1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Henry Rice"
+            }, {
+              "id" : "71035472-de39-414d-af0f-f459511afec1",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Henry Rice",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "0181581d-5162-4dd2-abc8-8d7d325545b3",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "b8746625-a9e5-4856-81ed-ec80bfd56f67",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Henry Rice Ruby"
+          }, {
+            "id" : "b8746625-a9e5-4856-81ed-ec80bfd56f67",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Henry Rice Ruby",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "9ee02aeb-9d43-43ec-8676-b269b6a2c077",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://familysearch.org/types/facts/Unknown",
+      "date" : {
+        "id" : "42506407-1883-4bd4-8a12-0a436a32fd80",
+        "original" : "9 Nov 1858",
+        "fields" : [ {
+          "id" : "83761cbd-349f-4c36-b8a7-b7da93a7ae9f",
+          "attribution" : {
+            "modified" : 1699602515512,
+            "created" : 1699602515512
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "abdda8ac-4000-4b39-a391-ee6c629a4ba9",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "9 Nov 1858"
+          } ]
+        } ]
+      },
+      "primary" : true
+    } ],
+    "fields" : [ {
+      "id" : "369ea5cd-844b-441e-b9a3-11beb60448f1",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "3eb5da4f-4f41-4f18-b2b1-3017c7cb385c",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000102535395_00240_00000_0000173508725556_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Henry Rice Ruby"
+    }
+  }, {
+    "id" : "p_291539304865",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "fe964a81-d33f-4027-9d6a-0eab12c7edb6",
+        "attribution" : {
+          "modified" : 1699602515512,
+          "created" : 1699602515512
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "ff9b8ddd-1c7c-47fb-87eb-1cee35138fb2",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1610130800366,
+            "created" : 1610130800366
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6CYF-SMBR?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/4BMH-CSRW?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBR" ]
+    },
+    "names" : [ {
+      "id" : "1ad78073-b535-40c4-ae17-f885cb6cc8e3",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Judge Henry Ruby",
+        "parts" : [ {
+          "id" : "c64c7779-7f7d-4c18-8ab9-dbb41b7ab248",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Ruby",
+          "fields" : [ {
+            "id" : "18410523-bbdf-46d4-a438-abfd4b39d5f4",
+            "attribution" : {
+              "modified" : 1699602515512,
+              "created" : 1699602515512
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "594f64d1-637d-4ef0-b677-cdbc954c475a",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Ruby"
+            }, {
+              "id" : "594f64d1-637d-4ef0-b677-cdbc954c475a",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Ruby",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "dcbb8e79-c790-4b93-afc8-f6cd9536c37b",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Judge Henry",
+          "fields" : [ {
+            "id" : "3e6d11fc-f1e2-47cd-a929-1e0b43be662a",
+            "attribution" : {
+              "modified" : 1699602515512,
+              "created" : 1699602515512
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "565abeb9-5611-4dfc-967b-d2099b1bb227",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Judge Henry"
+            }, {
+              "id" : "565abeb9-5611-4dfc-967b-d2099b1bb227",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Judge Henry",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "f230adab-5c07-4e10-8186-e4498afcc7a0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "4bf265f9-899c-42cf-a1bb-ce90ed550ed1",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "Judge Henry Ruby"
+          }, {
+            "id" : "4bf265f9-899c-42cf-a1bb-ce90ed550ed1",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Judge Henry Ruby",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "a913fb42-3e83-411e-83e3-323ff9acce10",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "0ee971e3-d34f-4eb4-bdee-8d15b9e59ae8",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000102535395_00240_00000_0000173508725556_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Judge Henry Ruby",
+      "gender" : "Male"
+    }
+  }, {
+    "id" : "p_291539304866",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "e53b1f37-40d9-452d-979f-898b09fe513b",
+        "attribution" : {
+          "modified" : 1699602515512,
+          "created" : 1699602515512
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "046d493e-5536-4f97-bea7-7379c0a401c2",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://treatment/CvGenderTreatment/ver/1"
+            },
+            "modified" : 1610130800366,
+            "created" : 1610130800366
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6CYF-SMBT?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/4BMH-CSRW?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBT" ]
+    },
+    "names" : [ {
+      "id" : "9f648c42-ec07-4e9c-b430-baeb424a6f9d",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Rebecca Senseny Ruby",
+        "parts" : [ {
+          "id" : "8c55f458-b9e4-4f2b-a485-6e2e5bd853ba",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Ruby",
+          "fields" : [ {
+            "id" : "784ae54f-9c6f-4573-864b-61b4431f91b9",
+            "attribution" : {
+              "modified" : 1699602515512,
+              "created" : 1699602515512
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "0751927f-feab-48d7-9171-8c3927e02e24",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Ruby"
+            }, {
+              "id" : "0751927f-feab-48d7-9171-8c3927e02e24",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_SURN",
+              "text" : "Ruby",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "7c654ffb-bd7d-4bee-8833-53c7366ec1bc",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Rebecca Senseny",
+          "fields" : [ {
+            "id" : "6f710237-0ca6-42b9-87cc-974936302e60",
+            "attribution" : {
+              "modified" : 1699602515512,
+              "created" : 1699602515512
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "693e52df-2c98-494c-b105-8d9d3a877e7d",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_GN_ORIG",
+              "text" : "Rebecca Senseny"
+            }, {
+              "id" : "693e52df-2c98-494c-b105-8d9d3a877e7d",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_MTHR_NAME_GN",
+              "text" : "Rebecca Senseny",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "1f7ab70a-5781-4a45-81e0-6f7b652e3434",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "2792295e-dada-4b14-9c10-9492e2cf373e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "Rebecca Senseny Ruby"
+          }, {
+            "id" : "2792295e-dada-4b14-9c10-9492e2cf373e",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Rebecca Senseny Ruby",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "977d4a37-4d17-402b-9047-9701c895bfef",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "059efbe4-a296-46e0-83fb-f35c112f6378",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000102535395_00240_00000_0000173508725556_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Rebecca Senseny Ruby",
+      "gender" : "Female"
+    }
+  }, {
+    "id" : "p_291539304868",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/6CYF-SMBB?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/4BMH-CSRW?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBB" ]
+    },
+    "names" : [ {
+      "id" : "a70318d7-6f51-4f88-8f54-b19fecddcfcf",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Susan S Ruby Ruby",
+        "parts" : [ {
+          "id" : "80bbe436-e2c2-41d9-b10c-52772cdd0bab",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Ruby",
+          "fields" : [ {
+            "id" : "5bfd209f-6714-4d8c-a813-ecfe8eab7bfa",
+            "attribution" : {
+              "modified" : 1699602515512,
+              "created" : 1699602515512
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "e22cac0e-94e4-46cf-81da-a9f3f6dd04ef",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Ruby"
+            }, {
+              "id" : "e22cac0e-94e4-46cf-81da-a9f3f6dd04ef",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Ruby",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "c0c2d1fd-0658-4aca-8197-962819afbf21",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Susan S Ruby",
+          "fields" : [ {
+            "id" : "e3630fa5-c1f2-44dc-a264-0a14533e080d",
+            "attribution" : {
+              "modified" : 1699602515512,
+              "created" : 1699602515512
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "1f78f442-0646-4fd4-b94b-9f8f5049f785",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Susan S Ruby"
+            }, {
+              "id" : "1f78f442-0646-4fd4-b94b-9f8f5049f785",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Susan S Ruby",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "dbea9220-fa6d-4653-a2c3-ed935d972ccf",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "8b2c27cd-657a-44d5-8909-6e691a4b07e3",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Susan S Ruby Ruby"
+          }, {
+            "id" : "8b2c27cd-657a-44d5-8909-6e691a4b07e3",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Susan S Ruby Ruby",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "38466766-25f0-4085-a6f7-fd66309a91e0",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "b2264ea4-fbaa-4166-a6f1-4c97053edc45",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000102535395_00240_00000_0000173508725556_003"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Susan S Ruby Ruby"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "5b13c86e-b658-4ee0-94e6-59e27f11d8bd",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_291539304864",
+      "resourceId" : "p_291539304864"
+    },
+    "person2" : {
+      "resource" : "#p_291539304868",
+      "resourceId" : "p_291539304868"
+    },
+    "facts" : [ {
+      "id" : "cecbc96c-1151-4076-9bac-6588346f3e90",
+      "attribution" : {
+        "modified" : 1699602515512,
+        "created" : 1699602515512
+      },
+      "type" : "http://gedcomx.org/Marriage",
+      "date" : {
+        "id" : "f0bdaaac-79bc-4f21-82bd-ef69bf3fa4ca",
+        "original" : "9 November 1858",
+        "formal" : "+1858-11-09",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "fields" : [ {
+          "id" : "9cf491da-7c78-4bfa-ad95-67a503adaea8",
+          "attribution" : {
+            "modified" : 1699602515512,
+            "created" : 1699602515512
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "43aa7664-f3cf-4bd4-bf55-4fd622b7f43e",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1858"
+          } ]
+        }, {
+          "id" : "d6d87e74-423f-45b1-82ae-caeb1cac5344",
+          "attribution" : {
+            "modified" : 1699602515512,
+            "created" : 1699602515512
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "49b8de30-8221-4a12-8310-0c7bc997fdc8",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "09"
+          } ]
+        }, {
+          "id" : "57190a26-5afb-430f-bfc9-795bf0a77aa7",
+          "attribution" : {
+            "modified" : 1699602515512,
+            "created" : 1699602515512
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "f24d8983-7ad6-4cdf-b610-941d400d6d20",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Nov"
+          } ]
+        }, {
+          "id" : "48dcb327-d7b8-444d-9d9b-ba9f39370911",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "78cbea5f-83f9-4187-a0e1-39fd9273e630",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "09 Nov 1858"
+          }, {
+            "id" : "78cbea5f-83f9-4187-a0e1-39fd9273e630",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "9 November 1858",
+            "resource" : "+1858-11-09",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "688b6358-fcbb-4c94-9926-a305492c6753",
+        "original" : "Pennsylvania, United States",
+        "description" : "#place_338",
+        "fields" : [ {
+          "id" : "98fe32ff-0d5b-40d4-915b-859d88d0c45a",
+          "attribution" : {
+            "modified" : 1699602515512,
+            "created" : 1699602515512
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "bf8a9366-a7ec-4854-ba0c-19e6e28d3fac",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Pennsylvania, United States",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "bf8a9366-a7ec-4854-ba0c-19e6e28d3fac",
+            "confidence" : "http://confidence/100",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1610130800390,
+              "created" : 1610130800390
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Pennsylvania, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/338",
+            "qualifiers" : [ {
+              "value" : "1013, 1010",
+              "name" : "StdQualifier"
+            } ]
+          }, {
+            "id" : "bf8a9366-a7ec-4854-ba0c-19e6e28d3fac",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Pennsylvania, United States",
+            "resource" : "https://www.familysearch.org/platform/places/description/338",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "f46596ae-e048-44d3-8838-94493ee5c018",
+          "attribution" : {
+            "modified" : 1699602515512,
+            "created" : 1699602515512
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "febba516-fbd2-469e-bec5-7ba233b24637",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "United States"
+          } ]
+        }, {
+          "id" : "2aef7649-3b9e-42ef-abaf-afe85236093e",
+          "attribution" : {
+            "modified" : 1699602515512,
+            "created" : 1699602515512
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "4a3103a7-4a39-4e12-8670-e9a689de8b8c",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Pennsylvania"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "330f9cf3-f0c7-4b04-b48e-b18438af13c9",
+        "attribution" : {
+          "modified" : 1699602515512,
+          "created" : 1699602515512
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "1992091e-c359-4d40-b9b8-8600e8b32d72",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Marriage",
+          "resource" : "http://gedcomx.org/Marriage"
+        } ]
+      } ]
+    } ]
+  }, {
+    "id" : "67d15d4d-4e8e-4c82-b9a7-b020d6e1b65e",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_291539304866",
+      "resourceId" : "p_291539304866"
+    },
+    "person2" : {
+      "resource" : "#p_291539304864",
+      "resourceId" : "p_291539304864"
+    }
+  }, {
+    "id" : "8c64328e-f55e-4a79-80b2-9d32d8d74660",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_291539304865",
+      "resourceId" : "p_291539304865"
+    },
+    "person2" : {
+      "resource" : "#p_291539304866",
+      "resourceId" : "p_291539304866"
+    }
+  }, {
+    "id" : "c1a1325c-abbb-4a2d-8d0f-7f701b8117e3",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_291539304865",
+      "resourceId" : "p_291539304865"
+    },
+    "person2" : {
+      "resource" : "#p_291539304864",
+      "resourceId" : "p_291539304864"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_173508725556",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:4BMH-CSRW",
+    "componentOf" : {
+      "description" : "#sd_c_4138689",
+      "descriptionId" : "sd_c_4138689"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1699602515512,
+    "modified" : 1709970772942,
+    "coverage" : [ {
+      "spatial" : {
+        "id" : "688b6358-fcbb-4c94-9926-a305492c6753",
+        "original" : "Pennsylvania, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/338"
+      },
+      "temporal" : {
+        "original" : "9 November 1858",
+        "formal" : "+1858-11-09"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5 : Sat Mar 09 07:52:52 UTC 2024), Entry for Henry Rice Ruby and Judge Henry Ruby, 9 November 1858."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Henry Rice Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmFhlc", "http://familysearch.org/records/recordPermissions/CdsPrmLdsMember" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/15000663208529" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:4BMH-CSRW" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/4138689?arkName=1:2:4BMH-CSRW"
+    }
+  }, {
+    "id" : "sd_c_4138689",
+    "about" : "https://www.familysearch.org/platform/records/collections/4138689",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1610129798649,
+    "modified" : 1721972321630,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "US-Pennsylvania",
+        "description" : "https://www.familysearch.org/platform/places/description/10703580"
+      },
+      "temporal" : {
+        "original" : "1512/1989",
+        "formal" : "+1512/+1989"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989"
+    }, {
+      "lang" : "zh",
+      "value" : "賓夕法尼亞州，賓夕法尼亞州歷史學會，婚姻紀錄，1512 年 - 1989 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Pennsylvanie, Société historique de Pennsylvanie, Actes de mariage, 1512-1989"
+    }, {
+      "lang" : "ru",
+      "value" : "Пенсильвания, Историческое общество Пенсильвании, записи о браках, 1512-1989 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Pennsylvania, Historical Society of Pennsylvania, vielsesopptegnelser, 1512-1989"
+    }, {
+      "lang" : "es",
+      "value" : "Sociedad Histórica de Pensilvania, Registros de matrimonio, Pensilvania, 1512-1989"
+    }, {
+      "lang" : "mn",
+      "value" : "Пенсильвани муж улс, Пенсильванийн Түүхийн нийгэмлэг, Гэрлэлтийн бүртгэл, 1512-1989 он"
+    }, {
+      "lang" : "ko",
+      "value" : "펜실베이니아, 펜실베이니아 역사 학회, 혼인 기록, 1512-1989"
+    }, {
+      "lang" : "ja",
+      "value" : "ペンシルベニア州、ペンシルベニア歴史協会、結婚レコード、1512年-1989年"
+    }, {
+      "lang" : "it",
+      "value" : "Pennsylvania, Società storica di Pennsylvania, Registri di matrimonio, 1512-1989"
+    }, {
+      "lang" : "id",
+      "value" : "Pennsylvania, Historical Society of Pennsylvania, Catatan Pernikahan, 1512-1989"
+    }, {
+      "lang" : "hu",
+      "value" : "Pennsylvania, Pennsylvaniai Történeti Társaság, Házassági feljegyzések, 1512-1989"
+    }, {
+      "lang" : "sk",
+      "value" : "Pensylvánia, Historická spoločnosť Pensylvánie, Záznamy sobášov, 1512 – 1989"
+    }, {
+      "lang" : "th",
+      "value" : "เพนซิลเวเนีย, สมาคมประวัติศาสตร์แห่งเพนซิลเวเนีย, บันทึกการแต่งงาน, ปี 1512-1989"
+    }, {
+      "lang" : "to",
+      "value" : "Pennsylvania, Sosaieti Fakahisitolia ʻo Pennsylvania, Ngaahi Lekooti Mali, 1512-1989"
+    }, {
+      "lang" : "bg",
+      "value" : "Пенсилвания, Брачни записи от Историческото дружество на Пенсилвания, 1512-1989"
+    }, {
+      "lang" : "km",
+      "value" : "ផេនស៊ីលវ៉ានី, សង្គមប្រវត្តិសាស្រ្តនៃរដ្ឋផេនស៊ីលវ៉ានី, កំណត់ត្រាអាពាហ៍ពិពាហ៍, ឆ្នាំ 1512-1989"
+    }, {
+      "lang" : "pl",
+      "value" : "Pensylwania, Towarzystwo Historyczne Pensylwanii, Akta Małżeńskie, 1512-1989"
+    }, {
+      "lang" : "ro",
+      "value" : "Pennsylvania, Societatea de Istorie din Pennsylvania, Înregistrări privind căsătoriile, 1512-1989"
+    }, {
+      "lang" : "sv",
+      "value" : "Pennsylvania, Historical Society of Pennsylvania, vigseluppteckningar, 1512-1989"
+    }, {
+      "lang" : "sm",
+      "value" : "Pennsylvania, Hiệp Hội Lịch Sử Pennsylvania, Hồ Sơ Kết Hôn, 1512-1989"
+    }, {
+      "lang" : "vi",
+      "value" : "Pennsylvania, Hiệp Hội Lịch Sử Pennsylvania, Hồ Sơ Kết Hôn, 1512-1989"
+    }, {
+      "lang" : "sq",
+      "value" : "Pensilvani, Shoqata Historike e Pensilvanisë, Regjistrimet e Martesave, 1512-1989"
+    }, {
+      "lang" : "pt",
+      "value" : "Pensilvânia, Sociedade Histórica da Pensilvânia, registros de casamento, 1512-1989"
+    }, {
+      "lang" : "de",
+      "value" : "Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989"
+    }, {
+      "lang" : "uk",
+      "value" : "Пенсильванія, Історичне товариство Пенсильванії, записи про шлюби, 1512–1989 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Pennsylvanija, Povijesno društvo Pennsylvanije, matice vjenčanih 1512. - 1989."
+    }, {
+      "lang" : "cs",
+      "value" : "Pensylvánie, Historická společnost Pensylvánie, matrika sňatků, 1512-1989"
+    }, {
+      "lang" : "nl",
+      "value" : "Pennsylvania, Historical Society of Pennsylvania, Huwelijk bestanden, 1512-1989"
+    }, {
+      "lang" : "et",
+      "value" : "Pennsylvania, Pennsylvania Ajaloo Selts, Abielukirjed, 1512-1989"
+    }, {
+      "lang" : "fj",
+      "value" : "Pennsylvania, Historical Society of Pennsylvania, iVolatukutuku ni Vakamau, 1512-1989"
+    }, {
+      "lang" : "fi",
+      "value" : "Pennsylvania, Pennsylvanian historiallinen yhdistys, avioliittotietueet, 1512-1989"
+    }, {
+      "lang" : "tl",
+      "value" : "Pennsylvania, Historical Society of Pennsylvania, Mga Record ng Kasal, 1512-1989"
+    }, {
+      "lang" : "mg",
+      "value" : "Firaketana Fanambadiana, Historical Society of Pennsylvania, Pennsylvanie, 1512-1989"
+    }, {
+      "lang" : "ceb",
+      "value" : "Pennsylvania, Historical Society of Pennsylvania, Mga Rekord sa Kasal, 1512-1989"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/4138689" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSZL-T3MY-1",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Pennsylvania, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/338"
+      },
+      "temporal" : {
+        "original" : "1776?/1815?",
+        "formal" : "+1776-01-01T00:00:00Z/+1815-12-31T23:59:59Z"
+      }
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSZL-T3MY-1" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/4138689?arkName=3:1:3Q9M-CSZL-T3MY-1"
+    }
+  }, {
+    "id" : "sd_p_291539304868",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBB",
+    "componentOf" : {
+      "description" : "#src_r_173508725556",
+      "descriptionId" : "src_r_173508725556"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5 : Sat Mar 09 07:52:52 UTC 2024), Entry for Henry Rice Ruby and Judge Henry Ruby, 9 November 1858."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Susan S Ruby Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Susan S Ruby Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBB" ]
+    }
+  }, {
+    "id" : "sd_p_291539304866",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBT",
+    "componentOf" : {
+      "description" : "#src_r_173508725556",
+      "descriptionId" : "src_r_173508725556"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5 : Sat Mar 09 07:52:52 UTC 2024), Entry for Henry Rice Ruby and Judge Henry Ruby, 9 November 1858."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Rebecca Senseny Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Rebecca Senseny Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBT" ]
+    }
+  }, {
+    "id" : "sd_p_291539304864",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5",
+    "componentOf" : {
+      "description" : "#src_r_173508725556",
+      "descriptionId" : "src_r_173508725556"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5 : Sat Mar 09 07:52:52 UTC 2024), Entry for Henry Rice Ruby and Judge Henry Ruby, 9 November 1858."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Henry Rice Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Henry Rice Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5" ]
+    }
+  }, {
+    "id" : "sd_p_291539304865",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBR",
+    "componentOf" : {
+      "description" : "#src_r_173508725556",
+      "descriptionId" : "src_r_173508725556"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5 : Sat Mar 09 07:52:52 UTC 2024), Entry for Henry Rice Ruby and Judge Henry Ruby, 9 November 1858."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Judge Henry Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Judge Henry Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBR" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_338",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/338" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "a444832f-c786-4eea-af66-1ec04fd02c11",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/ExtRepositoryName",
+    "values" : [ {
+      "id" : "459209c1-5fce-4ac2-8b59-c2e09ca7c98f",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_REPOSITORY_NAME_ORIG",
+      "text" : "Historical Society of Pennsylvania"
+    } ]
+  }, {
+    "id" : "6e785834-9673-4a0a-b964-2bf2595cbf7b",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "841100af-bf9b-4e16-b4f0-f77accb97ee5",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "19-0475; 2021-01-08:12:13-0600; cartertp; Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989 (FMP) - 3rd Party Index"
+    } ]
+  }, {
+    "id" : "6a2bfa5e-e5d3-41c9-9415-d980926174fc",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "b75de438-acbf-4609-8ab9-d20e87b3eb93",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "19-0475"
+    } ]
+  }, {
+    "id" : "28b17890-c2b2-41d4-9ebe-ac41c96f0cb4",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "6e5b2043-5d17-44b0-9cfc-ddc129a2a3eb",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1610130800390,
+        "created" : 1610130800390
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000102535395_00240_00000_0000173508725556"
+    } ]
+  }, {
+    "id" : "6dc6ae2b-0565-40f1-be44-e978293f5c92",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "6716e675-37d7-47d0-84ae-dc9f4b6f3f61",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "102535395_00240"
+    } ]
+  }, {
+    "id" : "4ed413c6-a9bd-4021-b422-481c1efed05b",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "72272a78-f53c-4b2a-83b8-f0713d450ac2",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "9c362e74-675a-439b-abb2-23a8a3cd824d",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "2657de38-4a97-40cf-9056-a4d2cd777087",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-909-63656-81839-99\",\"FS_IMAGE_NBR\":\"00240\",\"FS_UNIQUE_ID\":\"15000663208529\"}"
+    } ]
+  }, {
+    "id" : "c25d00c5-d0a4-4e08-8feb-df0c481ae42e",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/SourceRecordType",
+    "values" : [ {
+      "id" : "150ec2b2-d5a9-49a8-b1d7-cea9c3473f06",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_RECORD_TYPE_ORIG",
+      "text" : "Marriage"
+    } ]
+  }, {
+    "id" : "d3d625c8-adff-4d53-a944-6bb295d53678",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "d60d7043-8955-4b72-99aa-d29bbeeee820",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Pennsylvania, United States"
+    } ]
+  }, {
+    "id" : "e16bd28a-4450-4450-905e-8f8397d26878",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "fa06d932-82d4-4375-941c-070557959dfd",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "51d57dc5-6447-4d4e-8db1-b9fe562d9164",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "e2cd045a-4a11-4ac9-8dc9-61ba53f1ff41",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"first_image\": \"102535395_00240\", \"keywords_place\": \",,Pennsylvania,United States\", \"year_of_marriage\": \"1858\"}"
+    }, {
+      "id" : "e2cd045a-4a11-4ac9-8dc9-61ba53f1ff41",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "EXT_DATA",
+      "text" : "{\"SOURCE_PUB_YEAR_RANGE_ORIG\":\"1776-1815\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-CSZL-T3MY-1\",\"FS_COLLECTION_ID\":\"4138689\",\"SOURCE_PUB_YEAR_RANGE\":\"1776-1815\",\"EXT_IMAGE_REFERENCE_ORIG\":\"S2/US/HSP/102535395/00240\"}"
+    } ]
+  }, {
+    "id" : "e97d8c96-122d-4a3e-ad0e-7cee26557e12",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "8044fc92-4921-417c-8ebb-93cbdc32a4f6",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "60778"
+    } ]
+  }, {
+    "id" : "46a6331c-df3c-4ed6-a464-12853e00879c",
+    "attribution" : {
+      "modified" : 1699602515512,
+      "created" : 1699602515512
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "8cd3d8b8-2c5d-4e87-a7d5-8e64a48d666c",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "2"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "102535395"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "240"
+    } ]
+  } ]
+}

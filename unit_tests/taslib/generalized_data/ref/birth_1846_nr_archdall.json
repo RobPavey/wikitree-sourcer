@@ -1,0 +1,40 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Archdall",
+    "forenames": "",
+    "narrativeName": "Unnamed Archdall"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1846",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "Launceston, Van Diemen's Land",
+    "originalPlaceString": "Launceston",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtBirth": "Archdall",
+  "birthDate": {
+    "dateString": "Apr 1846"
+  },
+  "registrationDistrict": "Launceston",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Archdall",
+        "forenames": "Henry"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Archdall",
+        "forenames": "Abigail"
+      }
+    }
+  },
+  "hasValidData": true
+}

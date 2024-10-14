@@ -1,0 +1,69 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-marriages",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Rose Ann"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Fairley"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1933"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1933"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "text",
+        "value": "Thomas Telfer"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "text",
+        "value": "Miller"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "BLYTHSWOOD_BLYTHSWOOD"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "644/10/2036",
+  "recordType": "stat_marriages"
+}

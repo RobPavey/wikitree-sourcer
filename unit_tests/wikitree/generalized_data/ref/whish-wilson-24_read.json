@@ -1,0 +1,66 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Cosmo",
+    "middleNames": "McCashion Colquhoun",
+    "lastName": "Whish-Wilson"
+  },
+  "lastNameAtBirth": "Whish-Wilson",
+  "lastNameAtDeath": "Whish-Wilson",
+  "mothersMaidenName": "Falconer",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "22 Jul 1890",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "15 Aug 1969",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Launceston, Tasmania , Australia"
+  },
+  "deathPlace": {
+    "placeString": "Tasmania, Australia"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Francis John Everett Tennant Colquhoun Whish-Wilson",
+        "lastName": "Whish-Wilson",
+        "forenames": "Francis John Everett Tennant Colquhoun"
+      },
+      "lastNameAtBirth": "Whish-Wilson",
+      "lastNameAtDeath": "Whish-Wilson"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Mary",
+        "lastName": "Falconer",
+        "name": "Mary Falconer"
+      },
+      "lastNameAtBirth": "Falconer",
+      "lastNameAtDeath": "Whish-Wilson"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Helena Mary",
+        "lastName": "Crole",
+        "name": "Helena Mary Crole"
+      },
+      "lastNameAtBirth": "Crole",
+      "lastNameAtDeath": "Whish-Wilson",
+      "marriageDate": {
+        "dateString": "4 Sep 1918"
+      },
+      "marriagePlace": {
+        "placeString": "Trowutta, Tasmania, Australia"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Whish-Wilson-24"
+}

@@ -1,0 +1,30 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-other/ch3-other",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "CATHERINE"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "MATHER"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  }
+}

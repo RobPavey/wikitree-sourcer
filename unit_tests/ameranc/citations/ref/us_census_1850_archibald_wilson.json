@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1850 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1850-federal-census/RecordDisplay?volumeId=39349&pageName=78&rId=1017367707 American Ancestors Record] (accessed 6 May 2021)<br/>\nArchibald Wilson.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Archibald was in a record in 1850.<ref>\n'''1850 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1850-federal-census/RecordDisplay?volumeId=39349&pageName=78&rId=1017367707 American Ancestors Record] (accessed 6 May 2021)<br/>\nArchibald Wilson.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1850 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-1850-federal-census/RecordDisplay?volumeId=39349&pageName=78&rId=1017367707 American Ancestors Record] (accessed 6 May 2021)<br/>Archibald Wilson.",
+    "type": "source"
+  }
+}

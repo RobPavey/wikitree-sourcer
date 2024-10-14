@@ -1,0 +1,15 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1366607/one?qu=James&qu=Wilson&qf=NI_INDEX%09Record+type%09Inquests%09Inquests&qf=NI_NAME_FACET%09Name%09Wilson%2C+James%09Wilson%2C+James&qf=PUBDATE%09Year%091845%091845",
+  "success": true,
+  "recordData": {
+    "Name": "Wilson, James",
+    "Record Type": "Inquests",
+    "Age": "23",
+    "Date of inquest": "13 Oct 1845",
+    "Record ID": "NAME_INDEXES:1366607",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/SC195-1-16-1340",
+      "text": "SC195/1/16 (Inquest 1340)"
+    }
+  }
+}

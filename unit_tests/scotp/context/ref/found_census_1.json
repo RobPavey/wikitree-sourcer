@@ -1,0 +1,37 @@
+{
+  "formData": {
+    "urlPart": "census-returns/census",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Lydia"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "O'Hara"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1901",
+        "type": "checkbox",
+        "value": true
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "647/1112",
+  "recordType": "census"
+}

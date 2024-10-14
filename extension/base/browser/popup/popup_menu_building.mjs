@@ -385,11 +385,19 @@ async function displayBusyMessage(message1, message2) {
     let messageLabel2 = document.getElementById("messageLabel2");
 
     if (messageLabel1) {
-      messageLabel1.innerText = message1;
+      if (message1) {
+        messageLabel1.innerText = message1;
+      } else {
+        messageLabel1.innerText = "";
+      }
     }
 
     if (messageLabel2) {
-      messageLabel2.innerText = message2;
+      if (message2) {
+        messageLabel2.innerText = message2;
+      } else {
+        messageLabel2.innerText = "";
+      }
     }
     return;
   }
@@ -808,20 +816,33 @@ function addBreak(element) {
   element.appendChild(document.createElement("br"));
 }
 
-function addMenuItem(menu, innerText, onclick) {
+function addMenuItem(menu, innerText, onclick, shortcut) {
   // create a list item and add it to the list
   let listItem = document.createElement("li");
   setMenuItemClassName(menu, listItem, "menuItem");
   //listItem.innerText = innerText;
   //listItem.onclick = onclick;
 
+  if (shortcut) {
+    innerText = innerText + " [" + shortcut + "]";
+  }
+
   let button = document.createElement("button");
   button.className = "menuButton";
   button.onclick = onclick;
   button.innerText = innerText;
+  button.setAttribute("aria-keyshortcuts", shortcut);
   listItem.appendChild(button);
 
   menu.list.appendChild(listItem);
+
+  if (shortcut) {
+    document.addEventListener("keyup", (e) => {
+      if (e.key == shortcut) {
+        onclick();
+      }
+    });
+  }
 }
 
 function addMenuItemWithSubtitle(menu, innerText, onclick, subTitleText) {
@@ -1236,6 +1257,7 @@ function setupBuildCitationSubMenu(
     GovernmentDocument: `Government Document`,
     Heraldry: `Heraldic Record`,
     Immigration: `Immigration`,
+    Inquest: `Inquest`,
     LandTax: `Land Tax`,
     LandPetition: `Land Petition`,
     LandGrant: `Land Grant`,
@@ -1479,12 +1501,21 @@ function addBuildCitationMenuItem(
   }
 
   let menuText = "";
+  let shortcut = "";
   if (type == "inline") {
     menuText = "Build Inline Citation";
+    shortcut = "i";
   } else if (type == "narrative") {
     menuText = "Build Narrative with Citation";
+    shortcut = "n";
   } else if (type == "source") {
     menuText = "Build Source Citation";
+    shortcut = "s";
+  }
+
+  let shortCutOption = options.citation_general_addShortcuts;
+  if (!shortCutOption) {
+    shortcut = "";
   }
 
   menuText = menuText + suffix;
@@ -1527,7 +1558,7 @@ function addBuildCitationMenuItem(
   if (othersOnSubmenu) {
     addMenuItemWithSubMenu(menu, menuText, mainClickFunction, rightArrowClickFunction);
   } else {
-    addMenuItem(menu, menuText, mainClickFunction);
+    addMenuItem(menu, menuText, mainClickFunction, shortcut);
   }
 
   addMenuItemWithSubMenu;

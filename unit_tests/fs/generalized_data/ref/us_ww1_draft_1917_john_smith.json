@@ -1,6 +1,7 @@
 {
   "sourceType": "record",
   "recordType": "Military",
+  "recordSubtype": "WWIDraftRegistration",
   "sourceOfData": "fs",
   "personGender": "male",
   "name": {
@@ -29,7 +30,8 @@
     "{{FamilySearch Image|33SQ-GYBK-9SM6}}"
   ],
   "collectionData": {
-    "id": "1968530"
+    "id": "1968530",
+    "collectionTitle": "United States World War I Draft Registration Cards, 1917-1918"
   },
   "hasValidData": true
 }

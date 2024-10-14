@@ -1,0 +1,108 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Hill",
+    "forenames": "Walter R J"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "18, Tipnor Street, North End, Portsmouth, Hampshire, England",
+    "streetAddress": "18 Tipnor Street, North End"
+  },
+  "registrationDistrict": "Portsmouth",
+  "birthDate": {
+    "yearString": "1882",
+    "qualifier": 2
+  },
+  "ageAtEvent": "38",
+  "birthPlace": {
+    "placeString": "Portsmouth, Hampshire, England"
+  },
+  "eventDate": {
+    "yearString": "1921"
+  },
+  "occupation": "Petty Officer",
+  "employer": "H M Government",
+  "maritalStatus": "married",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "employer",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "isSelected": true,
+      "name": "Walter R J Hill",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "38",
+      "birthYear": "1882",
+      "occupation": "Petty Officer",
+      "employer": "H M Government",
+      "birthPlace": "Portsmouth, Hampshire, England"
+    },
+    {
+      "name": "Ada Hill",
+      "relationship": "wife",
+      "gender": "female",
+      "age": "37",
+      "birthYear": "1883",
+      "occupation": "Household Duties",
+      "employer": "At Home",
+      "birthPlace": "Portsmouth, Hampshire, England"
+    },
+    {
+      "name": "Walter J Hill",
+      "relationship": "son",
+      "gender": "male",
+      "age": "16",
+      "birthYear": "1905",
+      "occupation": "Errand Boy",
+      "employer": "Timothy White Ltd",
+      "birthPlace": "Portsmouth, Hampshire, England"
+    },
+    {
+      "name": "Elsie W Hill",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "13",
+      "birthYear": "1908",
+      "birthPlace": "Portsmouth, Hampshire, England"
+    },
+    {
+      "name": "Doris Hill",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "8",
+      "birthYear": "1913",
+      "birthPlace": "Portsmouth, Hampshire, England"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Ada Hill"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "collectionData": {
+    "id": "1921 Census Of England & Wales",
+    "archiveSeries": "RG 15",
+    "districtNumber": "90",
+    "piece": "05188"
+  },
+  "hasValidData": true
+}

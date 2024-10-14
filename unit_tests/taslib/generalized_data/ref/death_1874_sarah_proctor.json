@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Proctor",
+    "forenames": "Sarah"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1874",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "Hobart, Tasmania, Australia",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtDeath": "Proctor",
+  "deathDate": {
+    "dateString": "30 Apr 1874"
+  },
+  "ageAtEvent": "87",
+  "ageAtDeath": "87",
+  "registrationDistrict": "Hobart",
+  "hasValidData": true
+}

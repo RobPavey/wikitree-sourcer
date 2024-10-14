@@ -1,0 +1,227 @@
+{
+  "url": "https://www.digitalarkivet.no/en/census/person/pf01073730000711",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "1920 census for Alvdal",
+    "Census districts summary",
+    "003 Steien",
+    "0034 Steihaug",
+    "002 Laura I. Steihaug"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Census district: 003 Steien",
+      "collectionNameParts": [
+        "Census district",
+        "003 Steien"
+      ]
+    },
+    {
+      "collectionHeading": "Rural residence: 0034 Steihaug",
+      "collectionNameParts": [
+        "Rural residence",
+        "0034 Steihaug"
+      ]
+    }
+  ],
+  "heading": "Person: 002 Laura I. Steihaug",
+  "headingSpanParts": [
+    "Person:",
+    "002"
+  ],
+  "headingTextParts": [
+    "Laura I. Steihaug"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/fs10771817224383",
+  "recordData": {
+    "Household no.": {
+      "textString": "01"
+    },
+    "Person no.": {
+      "textString": "002"
+    },
+    "Family position": {
+      "textString": "tj"
+    },
+    "Marital status": {
+      "textString": "ug"
+    },
+    "Occupation": {
+      "textString": "Budeie hos bror"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Date of birth": {
+      "textString": "1889-04-11"
+    },
+    "Place of birth": {
+      "textString": "Alvdal"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Residents",
+      "people": [
+        {
+          "personLabel": "001",
+          "personNameParts": [
+            "Sigrid Larsdatter Steihaug"
+          ],
+          "personHeading": "001 Sigrid Larsdatter Steihaug",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1848-11-11"
+          },
+          "Place of birth": {
+            "textString": "Foldal"
+          },
+          "Family position": {
+            "textString": "Gårdbrukerens mor"
+          },
+          "Marital status": {
+            "textString": "e"
+          },
+          "Occupation": {
+            "textString": "Føderådskone"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "002",
+          "personNameParts": [
+            "Laura I. Steihaug"
+          ],
+          "personHeading": "002 Laura I. Steihaug",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1889-04-11"
+          },
+          "Place of birth": {
+            "textString": "Alvdal"
+          },
+          "Family position": {
+            "textString": "tj"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Budeie hos bror"
+          }
+        },
+        {
+          "personLabel": "003",
+          "personNameParts": [
+            "Inga Steihaug"
+          ],
+          "personHeading": "003 Inga Steihaug",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1910-08-02"
+          },
+          "Place of birth": {
+            "textString": "Alvdal"
+          },
+          "Family position": {
+            "textString": "Søsterdatter"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Barn"
+          }
+        },
+        {
+          "personLabel": "004",
+          "personNameParts": [
+            "Lars L. Kveberg"
+          ],
+          "personHeading": "004 Lars L. Kveberg",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1875-03-10"
+          },
+          "Place of birth": {
+            "textString": "Alvdal"
+          },
+          "Family position": {
+            "textString": "tj"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Gårdsbestyrer"
+          }
+        },
+        {
+          "personLabel": "005",
+          "personNameParts": [
+            "Birger Tronsvang"
+          ],
+          "personHeading": "005 Birger Tronsvang",
+          "H.no.": {
+            "textString": "01"
+          },
+          "Age/born": {
+            "textString": "1896-10-19"
+          },
+          "Place of birth": {
+            "textString": "Alvdal"
+          },
+          "Family position": {
+            "textString": "tj"
+          },
+          "Marital status": {
+            "textString": "ug"
+          },
+          "Occupation": {
+            "textString": "Småbruker"
+          }
+        }
+      ]
+    }
+  ],
+  "permanentId": "pf01073730000711",
+  "sourceInformation": "1920 census for Alvdal",
+  "sourceData": {
+    "County": {
+      "textString": "Hedmark"
+    },
+    "Municipality (1947)": {
+      "textString": "Alvdal"
+    },
+    "Geographic area": {
+      "textString": "Alvdal muni."
+    },
+    "Start year": {
+      "textString": "1920"
+    },
+    "End year": {
+      "textString": "1920"
+    },
+    "Matr.nr/Gnr": {
+      "textString": "7"
+    },
+    "Løpenr/Bnr": {
+      "textString": "68"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Walter McDonald''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-social-security-death-index-1935-2012/RecordDisplay?pageName=&rId=219059715 American Ancestors Record] (accessed 6 May 2021)<br/>\nWalter McDonald.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Walter was in a record.<ref>\n'''Record of Walter McDonald''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-social-security-death-index-1935-2012/RecordDisplay?pageName=&rId=219059715 American Ancestors Record] (accessed 6 May 2021)<br/>\nWalter McDonald.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Walter McDonald''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-social-security-death-index-1935-2012/RecordDisplay?pageName=&rId=219059715 American Ancestors Record] (accessed 6 May 2021)<br/>Walter McDonald.",
+    "type": "source"
+  }
+}

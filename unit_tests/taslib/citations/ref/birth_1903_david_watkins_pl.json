@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:2055114; File number: 1637<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/2055114 Record Permalink] (accessed 6 May 2021)<br/>\nHedley David Watkins birth 03 Dec 1903 registered in Tasmania, Australia, birth place 32 French St, Launceston, Tasmania, Australia, son of Alfred Ernest Watkins & Ellen Honora Feltham.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Hedley's birth on 3 December 1903 was registered in Tasmania, Australia. He was the son of Alfred Ernest Watkins & Ellen Honora Feltham.<ref>\n'''Birth Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:2055114; File number: 1637<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/2055114 Record Permalink] (accessed 6 May 2021)<br/>\nHedley David Watkins birth 03 Dec 1903 registered in Tasmania, Australia, birth place 32 French St, Launceston, Tasmania, Australia, son of Alfred Ernest Watkins & Ellen Honora Feltham.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Libraries Tasmania, Names Index\"<br/>Record ID: NAME_INDEXES:2055114; File number: 1637<br/>[https://libraries.tas.gov.au/Record/NamesIndex/2055114 Record Permalink] (accessed 6 May 2021)<br/>Hedley David Watkins birth 03 Dec 1903 registered in Tasmania, Australia, birth place 32 French St, Launceston, Tasmania, Australia, son of Alfred Ernest Watkins & Ellen Honora Feltham.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-banns-marriages/opr-marriages",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "McBain"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1797"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1797"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-motherspousename",
+        "type": "text",
+        "value": "Anne Richart"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-motherspousename",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "10/370",
+  "recordType": "opr_marriages"
+}

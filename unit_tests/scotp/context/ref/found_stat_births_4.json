@@ -1,0 +1,49 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Jessie Grosart"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "McLean"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1891"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1891"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "ARGYLL AND BUTE (LOCHGOILHEAD)|LOCHGOILHEAD AND KILMORICH|LOCHGOILHEAD_LOCHGOILHEAD"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "527 1/4",
+  "recordType": "stat_births"
+}

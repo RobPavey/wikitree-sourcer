@@ -1,0 +1,14 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "ConvictTransportation",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Mary"
+  },
+  "eventPlace": {
+    "placeString": "Tasmania, Australia"
+  },
+  "shipName": "Duke of Wellington",
+  "hasValidData": true
+}

@@ -195,7 +195,7 @@ class StructuredHousehold {
           // his wife would be recorded as "wife" or "his wife" and same for children.
           let isWife = false;
           if (numPeopleSinceHead == 1) {
-            if (householdMember.gender == "female" && lastHead.gender == "male") {
+            if (householdMember.gender == "female" && lastHead && lastHead.gender == "male") {
               // this could be a lodger who is the wife of the previous lodger
               if (householdMember.gdMember.maritalStatus == "married" && lastHead.gdMember.maritalStatus) {
                 isWife = true;
@@ -203,7 +203,7 @@ class StructuredHousehold {
             }
           }
 
-          if (isWife) {
+          if (lastHead && isWife) {
             lastWifeOfHead = householdMember;
             lastHead.wife = householdMember;
             householdMember.husband = lastHead;

@@ -838,6 +838,13 @@ const districts = {
         endYear: 1992,
       },
     ],
+    districtCodes: [
+      {
+        id: "836",
+        startYear: 1974,
+        endYear: 2100, // still in use
+      },
+    ],
   },
   "newport%20pagnell": {
     name: "Newport Pagnell",
@@ -1446,32 +1453,83 @@ function isValidUkbmdDistrictName(encodedName) {
   return false;
 }
 
-function getDisambigatedDistrictName(possibleNames, volume, year) {
-  if (!volume || !year) {
+function getDisambigatedDistrictName(possibleNames, volume, year, districtCode) {
+  //console.log("getDisambigatedDistrictName, possibleNames:");
+  //console.log(possibleNames);
+  //console.log("Vol = " + volume + ", year = " + year + ", districtCode = " + districtCode);
+
+  if (!year) {
     return "";
   }
-  let lcVolume = volume.toLowerCase().trim();
-  while (lcVolume.startsWith(0)) {
-    lcVolume = lcVolume.substring(1);
+  if (!(volume || districtCode)) {
+    return "";
   }
+
+  let lcVolume = "";
+  if (volume) {
+    lcVolume = volume.toLowerCase().trim();
+    while (lcVolume.startsWith(0)) {
+      lcVolume = lcVolume.substring(1);
+    }
+  }
+
+  let lcDistrictCode = "";
+  if (districtCode) {
+    lcDistrictCode = districtCode.toLowerCase().trim();
+    while (lcDistrictCode.startsWith(0)) {
+      lcDistrictCode = lcDistrictCode.substring(1);
+    }
+  }
+
+  //console.log("lcVolume = " + lcVolume + ", lcDistrictCode = " + lcDistrictCode);
 
   let result = "";
 
-  for (let possibleName of possibleNames) {
-    let encodedName = encodeURI(possibleName);
-    let districtDetails = districts[encodedName];
+  // if we have a district code (only for later records) try to match that first
+  if (lcDistrictCode) {
+    //console.log("lcDistrictCode = " + lcDistrictCode);
+    for (let possibleName of possibleNames) {
+      let encodedName = encodeURI(possibleName);
+      let districtDetails = districts[encodedName];
 
-    if (districtDetails) {
-      if (districtDetails.volumes) {
-        for (let volume of districtDetails.volumes) {
-          if (volume.id == lcVolume) {
-            if (volume.startYear <= year && volume.endYear >= year) {
-              if (result) {
-                // there is more than one match
-                return "";
+      if (districtDetails) {
+        if (districtDetails.districtCodes) {
+          //console.log("District has codes");
+          for (let code of districtDetails.districtCodes) {
+            //console.log("Comparing " + lcDistrictCode + " with " + code.id);
+            if (lcDistrictCode.startsWith(code.id)) {
+              if (code.startYear <= year && code.endYear >= year) {
+                if (result) {
+                  // there is more than one match
+                  return "";
+                }
+                result = encodedName;
+                break;
               }
-              result = encodedName;
-              break;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  if (!result && lcVolume) {
+    for (let possibleName of possibleNames) {
+      let encodedName = encodeURI(possibleName);
+      let districtDetails = districts[encodedName];
+
+      if (districtDetails) {
+        if (districtDetails.volumes) {
+          for (let volume of districtDetails.volumes) {
+            if (volume.id == lcVolume) {
+              if (volume.startYear <= year && volume.endYear >= year) {
+                if (result) {
+                  // there is more than one match
+                  return "";
+                }
+                result = encodedName;
+                break;
+              }
             }
           }
         }

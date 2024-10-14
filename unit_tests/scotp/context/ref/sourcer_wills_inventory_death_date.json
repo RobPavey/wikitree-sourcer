@@ -1,0 +1,42 @@
+{
+  "formData": {
+    "urlPart": "legal-records/wills",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Agnes"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Fraser"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-year-from",
+        "type": "text",
+        "value": "1910"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-year-to",
+        "type": "text",
+        "value": "1910"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "SC36/48/224",
+  "recordType": "wills"
+}

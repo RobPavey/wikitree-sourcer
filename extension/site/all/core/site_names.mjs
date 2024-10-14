@@ -28,6 +28,7 @@ SOFTWARE.
 // The order should not matter since user facing lists are sorted
 
 const siteNames = [
+  "ameranc",
   "ancestry",
   "archion",
   "archive",
@@ -54,12 +55,15 @@ const siteNames = [
   "npa",
   "np",
   "nswbdm",
+  "nzash",
   "nzbdm",
   "opccorn",
   "openarch",
   "ppnz",
   "psuk",
   "scotp",
+  "taslib",
+  "thegen",
   "trove",
   "vicbdm",
   "wiewaswie",

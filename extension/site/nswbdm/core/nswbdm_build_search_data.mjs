@@ -82,13 +82,13 @@ function constrainDate(date, allowedDateRange, runDate) {
 
       if (date.year > endDate.getFullYear()) {
         date.year = endDate.getFullYear();
-        date.month = endDate.getMonth();
+        date.month = endDate.getMonth() + 1;
         date.day = endDate.getDate();
       } else if (date.year == endDate.getFullYear()) {
-        if (date.month > endDate.getMonth()) {
-          date.month = endDate.getMonth();
+        if (date.month > endDate.getMonth() + 1) {
+          date.month = endDate.getMonth() + 1;
           date.day = endDate.getDate();
-        } else if (date.month == endDate.getMonth()) {
+        } else if (date.month == endDate.getMonth() + 1) {
           if (date.day > endDate.getDate()) {
             date.day = endDate.getDate();
           }
@@ -103,6 +103,8 @@ function constrainDate(date, allowedDateRange, runDate) {
 function addDateRange(gd, fieldData, dateString, runDate, options, allowedDateRange) {
   //console.log("addDateRange: allowedDateRange is:");
   //console.log(allowedDateRange);
+
+  const lastDayOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
   const maxLifespan = Number(options.search_general_maxLifespan);
 
@@ -127,7 +129,6 @@ function addDateRange(gd, fieldData, dateString, runDate, options, allowedDateRa
       let fromMonth = parsedDate.hasMonth ? parsedDate.monthNum : 1;
       let fromYear = parsedDate.yearNum - exactness;
 
-      const lastDayOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
       let toDay = parsedDate.dayNum;
       let toMonth = parsedDate.monthNum;
       if (parsedDate.hasMonth) {
@@ -177,6 +178,15 @@ function addDateRange(gd, fieldData, dateString, runDate, options, allowedDateRa
 
   fromDate = constrainDate(fromDate, allowedDateRange, runDate);
   toDate = constrainDate(toDate, allowedDateRange, runDate);
+
+  if (fromDate.day == toDate.day && fromDate.month == toDate.month && fromDate.year == toDate.year) {
+    // we can't set the to and from dates to exactly the same day
+    if (toDate.day == lastDayOfMonth[toDate.month - 1]) {
+      fromDate.day -= 1;
+    } else {
+      toDate.day += 1;
+    }
+  }
 
   fieldData["dateOfEvent:switchGroup:range:dateFrom:day"] = fromDate.day;
   fieldData["dateOfEvent:switchGroup:range:dateFrom:month"] = fromDate.month;

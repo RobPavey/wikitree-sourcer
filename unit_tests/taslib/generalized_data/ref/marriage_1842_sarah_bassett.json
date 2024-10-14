@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Bassett",
+    "forenames": "Sarah"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "13 Apr 1842"
+  },
+  "eventPlace": {
+    "placeString": "Hobart, Van Diemen's Land",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
+  },
+  "ageAtEvent": "21",
+  "registrationDistrict": "Hobart",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Monk",
+        "forenames": "James"
+      },
+      "gender": "Male",
+      "age": "26",
+      "marriageDate": {
+        "dateString": "13 Apr 1842"
+      }
+    }
+  ],
+  "hasValidData": true
+}

@@ -1,0 +1,59 @@
+{
+  "formData": {
+    "urlPart": "census-returns/census",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Ella W"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "McMillan"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-f",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-from",
+        "type": "text",
+        "value": "2"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-to",
+        "type": "text",
+        "value": "2"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1911",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "GREENOCK OLD OR WEST|GREENOCK WEST|GREENOCK MIDDLE|GREENOCK NEW OR MIDDLE|GREENOCK EAST|GREENOCK_GREENOCK"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "564/2 25/ 7",
+  "recordType": "census"
+}

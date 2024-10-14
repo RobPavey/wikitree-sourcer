@@ -185,8 +185,11 @@ const factTypeToRecordType = [
   },
   {
     type: "SocialProgramCorrespondence",
-    defaultRT: RT.Birth,
-    recordDataMatches: [{ recordType: RT.Death, matches: ["Death Date"] }],
+    defaultRT: RT.SocialSecurity,
+    recordDataMatches: [
+      { recordType: RT.Death, matches: ["Death Date"] },
+      { recordType: RT.Birth, matches: ["Birth Date"] },
+    ],
   },
 ];
 
@@ -202,7 +205,10 @@ const sourceRecordTypeToRecordType = [
 ];
 
 function determineRecordType(extractedData) {
-  const titleMatches = [{ type: RT.Census, matches: ["Census"] }];
+  const titleMatches = [
+    { type: RT.Census, matches: ["Census"] },
+    { type: RT.Military, matches: ["World War I"] },
+  ];
 
   //console.log("in determineRecordType, factType is");
   //console.log(extractedData.factType);
@@ -302,11 +308,21 @@ function determineRecordType(extractedData) {
 }
 
 function determineRecordSubtype(recordType, extractedData) {
+  let collectionTitle = extractedData.collectionTitle;
+
   if (recordType == RT.Census) {
-    let collectionTitle = extractedData.collectionTitle;
     if (collectionTitle) {
       if (collectionTitle.includes("Church Census Records") && collectionTitle.includes("Latter-day Saints")) {
         return RecordSubtype.LdsCensus;
+      }
+    }
+  } else if (recordType == RT.Military) {
+    if (collectionTitle) {
+      if (collectionTitle.includes("World War I Draft Registration")) {
+        return RecordSubtype.WWIDraftRegistration;
+      }
+      if (collectionTitle.includes("World War II Draft Registration")) {
+        return RecordSubtype.WWIIDraftRegistration;
       }
     }
   }
@@ -696,6 +712,9 @@ function generalizeDataGivenRecordType(ed, result) {
       }
       resultSpouse.marriageDate = marriageDate;
       result.marriageDate = marriageDate.getDateString();
+      if (!result.eventDate) {
+        result.eventDate = marriageDate;
+      }
     }
 
     result.spouses.push(resultSpouse);
@@ -1217,6 +1236,16 @@ function generalizeData(input) {
       let birthYear = ed.relatedPersonBirthYear;
       result.setPrimaryPersonBirthDate(birthDate);
       result.setPrimaryPersonBirthYear(birthYear);
+    } else {
+      // might as well store all possible ones
+      let birthDate = selectDate(ed.relatedPersonBirthDate, ed.relatedPersonBirthDateOriginal);
+      let birthYear = ed.relatedPersonBirthYear;
+      result.setPrimaryPersonBirthDate(birthDate);
+      result.setPrimaryPersonBirthYear(birthYear);
+      let deathDate = selectDate(ed.relatedPersonDeathDate, ed.relatedPersonDeathDateOriginal);
+      let deathYear = ed.relatedPersonDeathYear;
+      result.setPrimaryPersonDeathDate(deathDate);
+      result.setPrimaryPersonDeathYear(deathYear);
     }
   }
 
@@ -1244,6 +1273,12 @@ function generalizeData(input) {
       }
       eventPlace += ed.eventCountry;
     }
+
+    if (!eventPlace) {
+      if (ed.documentRecordData) {
+        eventPlace = ed.documentRecordData["Event Place"];
+      }
+    }
   }
 
   result.setEventPlace(cleanPlace(eventPlace));
@@ -1261,15 +1296,26 @@ function generalizeData(input) {
     // sometimes this is a field that is not on the residence fact
     residencePlace = ed.recordData["Note Res Place"];
   }
+  if (!residencePlace && ed.recordData && ed.recordData["Previous Residence Place"]) {
+    // sometimes this is a field that is not on the residence fact
+    residencePlace = ed.recordData["Previous Residence Place"];
+  }
+
   if (residencePlace && result.eventPlace) {
     // at least in 1841 census this is the stree address
     result.eventPlace.streetAddress = cleanPlace(residencePlace);
+  } else if (residencePlace) {
+    result.setResidencePlace(cleanPlace(residencePlace));
   }
 
   if (result.eventPlace) {
     // there is an event place. But sometimes this isn't really the event place
     // For example for US SS Death Index it is the last residence place
-    if (ed.collectionTitle == "United States Social Security Death Index") {
+    if (
+      ed.collectionTitle == "United States Social Security Death Index" ||
+      ed.collectionTitle == "United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007" ||
+      ed.factType == "SocialProgramCorrespondence"
+    ) {
       result.residencePlace = result.eventPlace;
       delete result.eventPlace;
     }
@@ -1347,6 +1393,10 @@ function generalizeData(input) {
     result.collectionData = {
       id: ed.fsCollectionId,
     };
+
+    if (ed.collectionTitle) {
+      result.collectionData.collectionTitle = ed.collectionTitle;
+    }
 
     if (ed.referenceData) {
       let refData = ed.referenceData;

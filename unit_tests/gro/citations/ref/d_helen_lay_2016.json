@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=2016&range=0&surname=LAY&forename1=HELEN&forename2=ROSE-MARIE&gender=F&month=14&district=PLYMOUTH GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nLay, Helen Rose-marie (Year of birth: 1939).<br/>\n''GRO Reference:'' 2016 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/plymouth.html Plymouth] (416-1C) Entry Number 513852158.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&Year=2016&Range=0&Surname=LAY&Forename1=HELEN&Forename2=ROSE-MARIE&Gender=F&Month=14&District=PLYMOUTH GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nLay, Helen Rose-marie (Year of birth: 1939).<br/>\n''GRO Reference:'' 2016 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/plymouth.html Plymouth] (416-1C) Entry Number 513852158.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Helen's death was registered in the Apr-May-Jun quarter of 2016 in the Plymouth district.<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=2016&range=0&surname=LAY&forename1=HELEN&forename2=ROSE-MARIE&gender=F&month=14&district=PLYMOUTH GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nLay, Helen Rose-marie (Year of birth: 1939).<br/>\n''GRO Reference:'' 2016 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/plymouth.html Plymouth] (416-1C) Entry Number 513852158.\n</ref>",
+    "citation": "Helen's death was registered in the Apr-May-Jun quarter of 2016 in the Plymouth district.<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&Year=2016&Range=0&Surname=LAY&Forename1=HELEN&Forename2=ROSE-MARIE&Gender=F&Month=14&District=PLYMOUTH GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nLay, Helen Rose-marie (Year of birth: 1939).<br/>\n''GRO Reference:'' 2016 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/plymouth.html Plymouth] (416-1C) Entry Number 513852158.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&year=2016&range=0&surname=LAY&forename1=HELEN&forename2=ROSE-MARIE&gender=F&month=14&district=PLYMOUTH GRO Online Indexes - Death] (accessed 6 May 2021)<br/>Lay, Helen Rose-marie (Year of birth: 1939).<br/>''GRO Reference:'' 2016 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/plymouth.html Plymouth] (416-1C) Entry Number 513852158.",
+    "citation": "* '''Death Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&Year=2016&Range=0&Surname=LAY&Forename1=HELEN&Forename2=ROSE-MARIE&Gender=F&Month=14&District=PLYMOUTH GRO Online Indexes - Death] (accessed 6 May 2021)<br/>Lay, Helen Rose-marie (Year of birth: 1939).<br/>''GRO Reference:'' 2016 Apr-May-Jun in [https://www.ukbmd.org.uk/reg/districts/plymouth.html Plymouth] (416-1C) Entry Number 513852158.",
     "type": "source"
   }
 }

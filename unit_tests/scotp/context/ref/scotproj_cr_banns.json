@@ -1,0 +1,62 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-banns-marriages/cr-banns",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Michael"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "McBride"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1862"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1862"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spouse-forename",
+        "type": "text",
+        "value": "Mary"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spouse-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spouse-surname",
+        "type": "text",
+        "value": "McSloy"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spouse-surname",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "MP 9 1 4 1 69",
+  "recordType": "cr_banns"
+}

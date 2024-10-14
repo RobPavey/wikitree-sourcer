@@ -173,6 +173,9 @@ async function checkPermissionForSite(matchString, options) {
 }
 
 async function checkPermissionForSiteFromUrl(url, options) {
+  //console.log("checkPermissionForSiteFromUrl, url is:");
+  //console.log(url);
+
   let domain = url.replace(/https?\:\/\/[^\.]+\.([^\/]+)\/.*/, "$1");
   if (!domain || domain == url) {
     if (!options.defaultDomain) {
@@ -180,6 +183,9 @@ async function checkPermissionForSiteFromUrl(url, options) {
     }
     domain = options.defaultDomain;
   }
+
+  //console.log("checkPermissionForSites, domain is:");
+  //console.log(domain);
 
   // Note: it is best to use the scheme in the URL rather than "*" because the request
   // has to be a subset of what is in the manifest. On Safari if there is a content match
@@ -190,6 +196,9 @@ async function checkPermissionForSiteFromUrl(url, options) {
     scheme = "https";
   }
 
+  //console.log("checkPermissionForSites, scheme is:");
+  //console.log(scheme);
+
   // we want a match string like: "*://*.ancestry.com/*"
 
   let subDomain = "*";
@@ -198,6 +207,9 @@ async function checkPermissionForSiteFromUrl(url, options) {
   }
 
   let matchString = scheme + "://" + subDomain + "." + domain + "/*";
+
+  //console.log("checkPermissionForSites, matchString is:");
+  //console.log(matchString);
 
   return await checkPermissionForSite(matchString, options);
 }

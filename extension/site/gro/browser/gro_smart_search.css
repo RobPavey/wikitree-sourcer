@@ -1,0 +1,252 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+    sans-serif;
+  font-size: 14px;
+}
+h2 {
+  color: #000;
+  text-align: center;
+  font-size: 2em;
+}
+h3 {
+  color: #000;
+  padding: 0px 0px;
+}
+h4 {
+  color: #000;
+  padding: 0px 0px;
+  margin: 10px 0px;
+}
+
+/****************
+Search parameters area
+*****************/
+
+div.radioButtons,
+input.radio {
+  display: inline-block;
+}
+
+input.radio {
+  margin-left: 0px;
+}
+
+.radioLabel {
+  margin-right: 5px;
+}
+
+.radioButtonAndLabel {
+  display: inline-block;
+}
+
+.textInputYear {
+  width: 50px;
+}
+
+.textInputName,
+.textInputDistrict {
+  width: 160px;
+}
+
+.searchParamsRequired {
+  font-weight: bold;
+}
+
+.searchParamError {
+  border-color: red;
+  border-style: solid;
+}
+.searchParamWarning {
+  border-color: orange;
+  border-style: solid;
+}
+
+#searchButton {
+  background: #25422d;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin-top: 10px;
+  margin-left: 180px;
+  color: #fff;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+  border-style: solid;
+}
+
+#searchButton:hover {
+  background: #2cb107;
+}
+
+/****************
+Filter area
+*****************/
+
+label.filterSelectLabel,
+select.filterSelect {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+label.filterSelectLabel {
+  margin-bottom: 2px;
+}
+
+/* See: https://stackoverflow.com/questions/15374918/how-to-put-two-divs-side-by-side */
+div.filterSelectDiv {
+  float: left;
+}
+
+div.filterSelectClear {
+  clear: both;
+}
+
+/****************
+Results table area
+*****************/
+
+#resultsSummary {
+  margin-bottom: 5px;
+}
+label.resultsSummary {
+  padding-bottom: 5px;
+}
+
+table.resultsTable {
+  border: 1px solid;
+  border-collapse: collapse;
+  /* width: 100%; */
+}
+td.resultsTableDataCell,
+th.resultsTableHeaderCell {
+  /* table cells */
+  padding: 2px 5px 2px 5px;
+}
+
+td.valueImplied {
+  font-style: italic;
+  color: grey;
+}
+
+td.resultsTableDataCell + td.resultsTableDataCell,
+th.resultsTableHeaderCell + th.resultsTableHeaderCell {
+  border-left: 1px solid;
+}
+tr.resultsTableDataRow {
+  border-top: 1px solid;
+}
+
+th.resultsTableHeaderCell {
+  text-align: left;
+  background: #e1f0b4;
+}
+
+/****************
+Search parameters area
+*****************/
+
+#dialog {
+  width: 500px;
+}
+
+.dialogHeader {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dialogErrorHeader {
+  background-color: rgb(251, 120, 120);
+  padding: 10px;
+}
+
+.dialogWarningHeader {
+  background-color: rgb(248, 189, 70);
+  padding: 10px;
+}
+
+.dialogProgressHeader {
+  background-color: #e1f0b4;
+  padding: 10px;
+}
+
+.dialogMessage {
+  margin-left: 10px;
+}
+
+.dialogButtonRow {
+  margin-top: 10px;
+}
+
+.dialogButton {
+  margin-right: 10px;
+}
+
+/* busy menu */
+
+.busyContainer {
+  /*display: inline-block;*/
+  background-color: #ffffff; /* color of spinner background */
+  padding: 10px;
+  margin: 0px;
+  animation: opacityFadeIn 0.2s 1 ease-in; /* fade in briefly, not sure if this is necessary */
+}
+
+.spinner {
+  /* inspired by https://projects.lukehaas.me/css-loaders/ */
+  font-size: 10px;
+  margin: 0px auto;
+  text-indent: -9999em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background: #a12929;
+  background: -moz-linear-gradient(left, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #c7ec58 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  animation: spinner3 1.4s infinite linear;
+  transform: translateZ(0);
+}
+.spinner:before {
+  width: 50%;
+  height: 50%;
+  background: #c7ec58; /* color of spinner */
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+}
+.spinner:after {
+  background-color: #ffffff; /* color of inner circle background */
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@keyframes spinner3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes opacityFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

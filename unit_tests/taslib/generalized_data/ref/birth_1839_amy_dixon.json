@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Dixon",
+    "forenames": "Amy"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1839",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "Hobart, Van Diemen's Land",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtBirth": "Dixon",
+  "birthDate": {
+    "dateString": "03 Dec 1838"
+  },
+  "registrationDistrict": "Hobart",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Dixon",
+        "forenames": "William Henry"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Kerr",
+        "forenames": "Sarah Christian"
+      }
+    }
+  },
+  "hasValidData": true
+}

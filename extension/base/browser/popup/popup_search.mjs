@@ -148,6 +148,9 @@ function testGeneralizedDataForDatesAndCountries(gd, siteConstraints) {
   let filterByDate = options.search_general_filterMainMenuByDate;
   let filterByCountries = options.search_general_filterMainMenuByCountries;
 
+  //console.log("testGeneralizedDataForDatesAndCountries: filterByDate = " + filterByDate);
+  //console.log("testGeneralizedDataForDatesAndCountries: filterByCountries = " + filterByCountries);
+
   if (filterByDate) {
     let maxLifespan = Number(options.search_general_maxLifespan);
 
@@ -178,6 +181,9 @@ function testGeneralizedDataForDatesAndCountries(gd, siteConstraints) {
   }
 
   if (filterByCountries && siteCountryList && siteCountryList.length > 0) {
+    //console.log("testGeneralizedDataForDatesAndCountries: siteCountryList is:");
+    //console.log(siteCountryList);
+
     if (siteExactCountryList && siteExactCountryList.length > 0) {
       let countryArray = gd.inferCountries();
 
@@ -243,6 +249,9 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
       continue;
     }
 
+    //console.log("buildSortedMenuItemFunctions: registeredFunction is:");
+    //console.log(registeredFunction);
+
     if (registeredFunction.shouldShowFunction && !registeredFunction.shouldShowFunction(data, filter)) {
       //console.log("buildSortedMenuItemFunctions: excluded by filter");
       result.numSitesExcludedByFilter++;
@@ -275,7 +284,7 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
     }
 
     if (priority > 0) {
-      //console.log("buildSortedMenuItemFunctions: pushing functionList");
+      //console.log("buildSortedMenuItemFunctions: pushing to functionList");
 
       functionList.push({
         siteName: siteName,
@@ -315,6 +324,9 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
   }
 
   result.functionList = sortedList;
+
+  //console.log("buildSortedMenuItemFunctions: result is:");
+  //console.log(result);
   return result;
 }
 

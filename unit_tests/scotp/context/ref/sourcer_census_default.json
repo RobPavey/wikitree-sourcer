@@ -1,0 +1,59 @@
+{
+  "formData": {
+    "urlPart": "census-returns/census",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "DONALD"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "MCKAY"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-m",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-from",
+        "type": "text",
+        "value": "11"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-to",
+        "type": "text",
+        "value": "11"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1851",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "PORTNAHAVEN_PORTNAHAVEN"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "547/ 1/ 35",
+  "recordType": "census"
+}

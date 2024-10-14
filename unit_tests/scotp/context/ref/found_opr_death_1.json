@@ -1,0 +1,42 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-deaths-burials/opr-deaths",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Jonet"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Scott"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1568"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1569"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "10 289",
+  "recordType": "opr_deaths"
+}

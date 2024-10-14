@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "nswbdm",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Frederick W"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "New South Wales, Australia"
+  },
+  "lastNameAtBirth": "Smith",
+  "registrationDistrict": "Granville",
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Frederick J"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "Jessie W"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Births",
+    "registrationNumber": "4307",
+    "year": "1911"
+  },
+  "hasValidData": true
+}

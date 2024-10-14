@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>\nNational Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Isobel married Peter Campbell on or after 10 December 1796 in Beith, Ayrshire, Scotland.<ref>\n'''Marriage''':\n\"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>\nNational Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>National Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>\nNational Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nIsobel Gillies marriage to Peter Campbell on or after 10 Dec 1796 in Beith, Ayrshire, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Isobel married Peter Campbell on or after 10 December 1796 in Beith, Ayrshire, Scotland.<ref>\n'''Marriage''':\n\"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>\nNational Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nIsobel Gillies marriage to Peter Campbell on or after 10 Dec 1796 in Beith, Ayrshire, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>National Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Isobel Gillies marriage to Peter Campbell on or after 10 Dec 1796 in Beith, Ayrshire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>\nNational Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: GILLIES; Forename: ISOBEL; Spouse Name: PETER CAMPBELL/FR 186 (FR186); Date: 10/12/1796; Parish: Beith.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Isobel married Peter Campbell on or after 10 December 1796 in Beith, Ayrshire, Scotland.<ref>\n'''Marriage''':\n\"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>\nNational Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: GILLIES; Forename: ISOBEL; Spouse Name: PETER CAMPBELL/FR 186 (FR186); Date: 10/12/1796; Parish: Beith.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>National Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: GILLIES; Forename: ISOBEL; Spouse Name: PETER CAMPBELL/FR 186 (FR186); Date: 10/12/1796; Parish: Beith.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>\nNational Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || GILLIES\n|-\n| Forename || ISOBEL\n|-\n| Spouse Name || PETER CAMPBELL/FR 186 (FR186)\n|-\n| Date || 10/12/1796\n|-\n| Parish || Beith\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Isobel married Peter Campbell on or after 10 December 1796 in Beith, Ayrshire, Scotland.<ref>\n'''Marriage''':\n\"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>\nNational Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || GILLIES\n|-\n| Forename || ISOBEL\n|-\n| Spouse Name || PETER CAMPBELL/FR 186 (FR186)\n|-\n| Date || 10/12/1796\n|-\n| Parish || Beith\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Church of Scotland: Old Parish Registers - Banns and Marriages\"<br/>National Records of Scotland, Parish Number: 581; Ref: 10/334; Frame: 186<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: GILLIES; Forename: ISOBEL; Spouse Name: PETER CAMPBELL/FR 186 (FR186); Date: 10/12/1796; Parish: Beith.",
+    "type": "source"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "2.5.0",
+  "version": "2.6.4",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": ["storage", "contextMenus"],
   "host_permissions": [
@@ -39,6 +39,11 @@
       "matches": ["*://*.wikitree.com/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/wikitree/browser/wikitree_content.js"]
+    },
+    {
+      "matches": ["*://*.americanancestors.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/ameranc/browser/ameranc_content.js"]
     },
     {
       "matches": [
@@ -188,6 +193,11 @@
       "js": ["base/browser/content/content_common.js", "site/jstor/browser/jstor_content.js"]
     },
     {
+      "matches": ["*://librariestas.ent.sirsidynix.net.au/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/taslib/browser/taslib_content.js"]
+    },
+    {
       "matches": ["*://data.matricula-online.eu/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/matricula/browser/matricula_content.js"]
@@ -238,6 +248,11 @@
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
     },
     {
+      "matches": ["*://*.thegenealogist.com/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/thegen/browser/thegen_content.js"]
+    },
+    {
       "matches": ["*://trove.nla.gov.au/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/trove/browser/trove_content.js"]
@@ -279,6 +294,10 @@
     {
       "resources": ["site/wikitree/core/wikitree_extract_data.mjs"],
       "matches": ["*://*.wikitree.com/*"]
+    },
+    {
+      "resources": ["site/ameranc/core/ameranc_extract_data.mjs"],
+      "matches": ["*://*.americanancestors.org/*"]
     },
     {
       "resources": ["site/ancestry/core/ancestry_extract_data.mjs"],
@@ -400,6 +419,10 @@
       "matches": ["*://*.jstor.org/*"]
     },
     {
+      "resources": ["site/taslib/core/taslib_extract_data.mjs"],
+      "matches": ["*://librariestas.ent.sirsidynix.net.au/*"]
+    },
+    {
       "resources": ["site/matricula/core/matricula_extract_data.mjs"],
       "matches": ["*://data.matricula-online.eu/*"]
     },
@@ -438,6 +461,10 @@
     {
       "resources": ["site/scotp/core/scotp_extract_data.mjs"],
       "matches": ["*://www.scotlandspeople.gov.uk/*"]
+    },
+    {
+      "resources": ["site/thegen/core/thegen_extract_data.mjs"],
+      "matches": ["*://*.thegenealogist.com/*"]
     },
     {
       "resources": ["site/trove/core/trove_extract_data.mjs"],

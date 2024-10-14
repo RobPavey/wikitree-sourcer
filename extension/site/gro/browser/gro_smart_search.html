@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="gro_smart_search.css" />
+    <title>WikiTree Sourcer: GRO Smart Search</title>
+    <link rel="icon" type="image/x-icon" href="/images/wikitree_sourcer16.png" />
+  </head>
+  <body>
+    <h2>WikiTree Sourcer: GRO Smart Search.</h2>
+    <div id="introDiv"></div>
+
+    <div id="searchParametersDiv">
+      <h3>Search Parameters:</h3>
+      <div id="searchParametersContainer"></div>
+    </div>
+
+    <button id="searchButton">
+      <label> Do search </label>
+    </button>
+
+    <div id="resultsFilterDiv">
+      <h3>Results filters:</h3>
+      <div id="resultsFilterContainer"></div>
+    </div>
+
+    <div id="resultTableDiv">
+      <h3>Search Results:</h3>
+      <div id="searchResultsContainer"></div>
+    </div>
+
+    <dialog id="dialog">
+      <div class="dialogHeader"></div>
+      <div class="dialogMessage"></div>
+      <div class="dialogBusy"></div>
+      <div class="dialogButtonRow"></div>
+    </dialog>
+
+    <script type="module" src="gro_smart_search.mjs"></script>
+  </body>
+</html>

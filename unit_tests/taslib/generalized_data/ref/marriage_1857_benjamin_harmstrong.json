@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Harmstrong",
+    "forenames": "Benjamin"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "31 Aug 1857"
+  },
+  "eventPlace": {
+    "placeString": "Hobart, Tasmania, Australia",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
+  },
+  "ageAtEvent": "Adult",
+  "registrationDistrict": "Hobart",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Sangwell",
+        "forenames": "Mary"
+      },
+      "gender": "Female",
+      "age": "Minor",
+      "marriageDate": {
+        "dateString": "31 Aug 1857"
+      }
+    }
+  ],
+  "hasValidData": true
+}

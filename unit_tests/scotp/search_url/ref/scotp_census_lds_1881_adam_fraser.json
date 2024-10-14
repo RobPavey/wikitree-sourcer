@@ -26,7 +26,7 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-given-name",
@@ -36,7 +36,7 @@
         {
           "fieldKey": "edit-search-params-nrs-given-name",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-sex-m",

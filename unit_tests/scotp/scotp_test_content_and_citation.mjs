@@ -207,6 +207,11 @@ const regressionData = [
     url: "https://www.scotlandspeople.gov.uk/record-results/1920557426638bb41812938",
   },
   {
+    // After site redesign on 3 Sep 2024
+    caseName: "church_mar_cos_1796_isobel_gillies",
+    url: "https://www.scotlandspeople.gov.uk/record-results/81353814466d89d6608fe5",
+  },
+  {
     // https://www.scotlandspeople.gov.uk/record-results/102760922765c5703a1d1a2
     caseName: "church_mar_cos_1836_william_scobie",
     url: "https://www.scotlandspeople.gov.uk/record-results/102760922765c5703a1d1a2",

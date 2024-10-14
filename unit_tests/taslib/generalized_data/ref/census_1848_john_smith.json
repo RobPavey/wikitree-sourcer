@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "John"
+  },
+  "eventDate": {
+    "dateString": "1848"
+  },
+  "eventPlace": {
+    "placeString": "Launceston, Van Diemen's Land",
+    "originalPlaceString": "Launceston"
+  },
+  "hasValidData": true
+}

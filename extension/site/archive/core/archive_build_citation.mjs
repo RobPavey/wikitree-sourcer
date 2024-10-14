@@ -66,8 +66,11 @@ function buildSourceReference(ed, gd, builder) {
       builder.addSourceReferenceField(title, value);
     }
   }
+
   addTerm("", ed.metadata["Publisher"]);
   addTerm("", ed.metadata["Publication date"]);
+
+  addTerm("volume", ed.metadata["Volume"]);
 
   // if the URL is just to the book and not a specific page we don't want to include a page number even though
   // ed.pageXOfY may be something like: (1 of 350)

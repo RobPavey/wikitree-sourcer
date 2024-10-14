@@ -15,5 +15,8 @@
     "county": "Cornwall",
     "country": "England"
   },
+  "typeSpecificData": {
+    "dateIsWrittenDate": true
+  },
   "hasValidData": true
 }

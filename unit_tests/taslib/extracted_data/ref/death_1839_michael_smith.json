@@ -1,0 +1,18 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1151285/one?qu=Sarah&qu=Proctor&qf=NI_INDEX%09Record+type%09Deaths%09Deaths&qf=PUBDATE%09Year%091874%091874",
+  "success": true,
+  "recordData": {
+    "Name": "Smith, Michael",
+    "Record Type": "Deaths",
+    "Gender": "Male",
+    "Age": "48",
+    "Date of death": "08 Oct 1839",
+    "Registered": "Launceston",
+    "Registration year": "1839",
+    "Record ID": "NAME_INDEXES:1143724",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD35-1-16p45j2k",
+      "text": "RGD35/1/16 no 179"
+    }
+  }
+}

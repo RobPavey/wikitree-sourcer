@@ -442,6 +442,21 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:VF9F-FGL",
   },
   {
+    // has saved document as well, was not getting event place
+    caseName: "us_pa_marriage_1858_henry_ruby",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5",
+  },
+  {
+    // has saved document as well, was treating as a death
+    caseName: "us_spd_1974_imogene_webb",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6KW3-12JP",
+  },
+  {
+    // has saved document as well, was treating as a birth
+    caseName: "us_spd_parent_1974_hubert_townsend",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6KW3-12J5",
+  },
+  {
     caseName: "us_sd_census_1905_j_stoner",
     url: "https://www.familysearch.org/ark:/61903/1:1:MMHS-3X7",
   },

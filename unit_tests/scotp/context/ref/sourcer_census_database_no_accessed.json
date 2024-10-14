@@ -1,0 +1,54 @@
+{
+  "formData": {
+    "urlPart": "census-returns/census",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Donald"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "McKay"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-from",
+        "type": "text",
+        "value": "13"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-to",
+        "type": "text",
+        "value": "13"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-census-year-1851",
+        "type": "checkbox",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "LAIRG|HIGHLAND (LAIRG)_LAIRG"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "053/ 1/ 6",
+  "recordType": "census"
+}

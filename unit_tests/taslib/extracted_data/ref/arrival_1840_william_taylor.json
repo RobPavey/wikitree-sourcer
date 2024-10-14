@@ -1,0 +1,17 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1575259/one?qu=Taylor&qf=NI_INDEX%09Record+type%09Arrivals%09Arrivals&qf=NI_NAME_FACET%09Name%09Taylor%2C+William%09Taylor%2C+William&qf=PUBDATE%09Year%091840-1842%091840-1842&qf=PUBDATE%09Year%091840%091840",
+  "success": true,
+  "recordData": {
+    "Name": "Taylor, William",
+    "Record Type": "Arrivals",
+    "Title": "Mr",
+    "Arrival date": "13 Sep 1840",
+    "Departure port": "Port Phillip",
+    "Ship": "Lillias",
+    "Record ID": "NAME_INDEXES:1575259",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/CSO92-1-5p42jpg",
+      "text": "CSO92/1/5 p. 39"
+    }
+  }
+}

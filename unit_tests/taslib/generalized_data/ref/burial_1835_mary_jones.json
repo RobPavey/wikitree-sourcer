@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Jones",
+    "forenames": "Mary"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "18 May 1838"
+  },
+  "eventPlace": {
+    "placeString": "Hobart, Van Diemen's Land",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtDeath": "Jones",
+  "ageAtEvent": "75",
+  "ageAtDeath": "75",
+  "registrationDistrict": "Hobart",
+  "hasValidData": true
+}

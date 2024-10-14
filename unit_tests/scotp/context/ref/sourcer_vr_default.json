@@ -1,0 +1,37 @@
+{
+  "formData": {
+    "urlPart": "valuation-rolls/vr",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "W J"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Fraser"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-1855",
+        "type": "radio",
+        "value": true
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "VR008600001",
+  "recordType": "vr"
+}

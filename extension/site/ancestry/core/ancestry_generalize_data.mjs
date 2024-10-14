@@ -73,6 +73,10 @@ const recordTypeByFields = [
   },
   {
     type: RT.Marriage,
+    labels: ["Marriage License Date", "Marriage License Place", "Spouse"],
+  },
+  {
+    type: RT.Marriage,
     labels: ["Affidavit or License Date", "License Place", "Spouse"],
   },
   {
@@ -394,17 +398,17 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.Residence,
-      matches: ["Residents", "U.S., Public Records Index"],
+      matches: ["Residents", "U.S., Public Records Index", "U.S., Index to Public Records"],
       requiredData: [["Residence Place"]],
     },
     {
       type: RT.Residence,
-      matches: ["U.S., Public Records Index"],
+      matches: ["U.S., Public Records Index", "U.S., Index to Public Records"],
       requiredData: [["Residence"]],
     },
     {
       type: RT.Residence,
-      matches: ["U.S., Public Records Index"],
+      matches: ["U.S., Public Records Index", "U.S., Index to Public Records"],
       requiredData: [["Residence Date"]],
     },
     {
@@ -2045,6 +2049,7 @@ function generalizeDataGivenRecordType(ed, result) {
     let deathDate = getCleanRecordDataValue(ed, "Death Date", "date");
     result.setDeathDate(deathDate);
     result.setDeathYear(getCleanRecordDataValue(ed, "Death Year"));
+    result.setResidenceDate(getCleanRecordDataValue(ed, "Residence Date", "date"));
     result.setResidencePlace(getCleanRecordDataValue(ed, "Residence Place"));
 
     let probateGrantDate = getCleanValueForRecordDataList(
@@ -2057,9 +2062,11 @@ function generalizeDataGivenRecordType(ed, result) {
     if (probateGrantDate) {
       result.setEventDate(probateGrantDate);
       result.setTypeSpecficDataValue("willDate", willDate);
+    } else if (willDate) {
+      result.setTypeSpecficDataValue("dateIsWrittenDate", true);
+      result.setEventDate(willDate);
     } else {
       result.setTypeSpecficDataValue("dateIsNotGrantDate", true);
-      result.setEventDate(willDate);
     }
     result.setEventYear(getCleanRecordDataValue(ed, "Probate Year"));
 
@@ -2177,6 +2184,21 @@ function generalizeDataGivenRecordType(ed, result) {
       }
     }
   } else if (result.recordType == RT.Military) {
+    // check if there is a record subtype that we can use
+
+    if (ed.titleCollection) {
+      if (ed.titleCollection.includes("World War I Draft Registration")) {
+        result.recordSubtype = RecordSubtype.WWIDraftRegistration;
+      } else if (
+        ed.titleCollection.includes("World War II Draft Cards") ||
+        ed.titleCollection.includes("World War II Draft Registration")
+      ) {
+        result.recordSubtype = RecordSubtype.WWIIDraftRegistration;
+      } else if (ed.titleCollection.includes("World War II Allied Prisoners of War")) {
+        result.recordSubtype = RecordSubtype.WWIIPrisonerOfWar;
+      }
+    }
+
     result.setEventDate(
       getCleanValueForRecordDataList(
         ed,
@@ -2594,6 +2616,10 @@ function generalizeRecordData(input, result) {
     result.collectionData = {
       id: collectionId,
     };
+
+    if (ed.titleCollection) {
+      result.collectionData.collectionTitle = ed.titleCollection;
+    }
 
     if (ed.recordData) {
       function addRef(key, value) {

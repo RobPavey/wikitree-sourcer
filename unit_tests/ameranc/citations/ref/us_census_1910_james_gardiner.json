@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1900 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1900-census/RecordDisplay?volumeId=31750&pageName=751&rId=781933320 American Ancestors Record] (accessed 6 May 2021)<br/>\nJames Gardiner.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James was in a record in 1900.<ref>\n'''1900 Census''':\n\"Put Source Title here\"<br/>\nPut Source Reference here<br/>\n[https://www.americanancestors.org/databases/united-states-1900-census/RecordDisplay?volumeId=31750&pageName=751&rId=781933320 American Ancestors Record] (accessed 6 May 2021)<br/>\nJames Gardiner.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1900 Census''': \"Put Source Title here\"<br/>Put Source Reference here<br/>[https://www.americanancestors.org/databases/united-states-1900-census/RecordDisplay?volumeId=31750&pageName=751&rId=781933320 American Ancestors Record] (accessed 6 May 2021)<br/>James Gardiner.",
+    "type": "source"
+  }
+}

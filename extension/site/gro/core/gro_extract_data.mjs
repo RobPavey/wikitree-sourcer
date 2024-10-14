@@ -351,4 +351,4 @@ function extractData(document, url) {
   return result;
 }
 
-export { extractData };
+export { extractData, extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow };

@@ -1,0 +1,61 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-births-baptisms/cr-baptisms",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "John"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "McKinley"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1841"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1841"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "text",
+        "value": "James McKinley"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-two",
+        "type": "text",
+        "value": "Bridget Wallace"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-two",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  }
+}

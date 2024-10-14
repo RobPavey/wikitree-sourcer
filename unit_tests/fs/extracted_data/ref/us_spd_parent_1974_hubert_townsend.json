@@ -1,0 +1,35 @@
+{
+  "recordData": {
+    "Name": "Hubert A Townsend",
+    "Source Ssn": "492108506"
+  },
+  "fullName": "Hubert A Townsend",
+  "givenName": "Hubert A",
+  "surname": "Townsend",
+  "gender": "male",
+  "relatedPersonFactType": "SocialProgramCorrespondence",
+  "relationshipToFactPerson": "Parent",
+  "relatedPersonFullName": "Imogene Webb",
+  "relatedPersonGivenName": "Imogene",
+  "relatedPersonSurname": "Webb",
+  "relatedPersonGender": "female",
+  "relatedPersonLink": "https://www.familysearch.org/ark:/61903/1:1:6KW3-12JP",
+  "relatedPersonBirthDate": "20 May 1913",
+  "relatedPersonBirthYear": "1913",
+  "relatedPersonDeathDate": "12 Apr 1999",
+  "relatedPersonDeathYear": "1999",
+  "fsCollectionId": "5000016",
+  "referenceData": {
+    "digitalFilmNumber": "DI0001099"
+  },
+  "collectionTitle": "United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:HSKR-4S3J",
+  "citation": "\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\", database, <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6KW3-12J5 : 10 February 2023), Hubert A Townsend in entry for Imogene Webb, .",
+  "sourceTitleForPerson": "Hubert A Townsend in entry for Imogene Townsend, \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:6KW3-12J5",
+  "documentRecordData": {
+    "Name": "Hubert A Townsend",
+    "Sex": "M"
+  },
+  "pageType": "record"
+}

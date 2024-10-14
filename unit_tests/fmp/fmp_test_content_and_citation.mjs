@@ -106,6 +106,11 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FPORTSMOUTH%2FBUR%2F00238041",
   },
   {
+    // Saved 8 Oct 2024, birth place in GD is only getting England
+    caseName: "england_census_1851_william_leigh",
+    url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1851%2F0001700843&expand=true&tab=this",
+  },
+  {
     caseName: "england_census_1871_mary_forster",
     url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1871%2F0011811498",
     optionVariants: [
@@ -269,6 +274,11 @@ const regressionData = [
         },
       },
     ],
+  },
+  {
+    // saved 10 Oct 2024. Caused a crash in 2.6.2
+    caseName: "england_census_1921_walter_hill",
+    url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1921%2FRG15%2F05188%2F0475%2F01&tab=this",
   },
   {
     caseName: "england_divorce_louisa_smith_1893",

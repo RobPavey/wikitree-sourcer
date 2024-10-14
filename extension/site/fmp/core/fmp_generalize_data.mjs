@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { GeneralizedData, GD, dateQualifiers, NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
+import { CD } from "../../../base/core/country_data.mjs";
 import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
 
 function determineRecordType(extractedData) {
@@ -349,6 +350,48 @@ function buildMainPlaceObj(ed) {
   return placeObj;
 }
 
+function buildBirthPlaceObj(ed) {
+  let placeObj = {};
+
+  placeObj.country = getCleanRecordDataValue(ed, "Birth country");
+  placeObj.state = getCleanRecordDataValue(ed, "Birth state");
+  placeObj.county = getCleanRecordDataValue(ed, "Birth county");
+  placeObj.parish = getCleanRecordDataValue(ed, "Birth parish");
+
+  // some less common ones
+  placeObj.town = getRecordDataValueForList(ed, ["Birth town", "Birth town as transcribed"]);
+
+  // In some censuses the "Birth place" can just be the country
+  let place = getRecordDataValueForList(ed, ["Birth place"]);
+  if (CD.standardizeCountryName(place)) {
+    if (!placeObj.country) {
+      placeObj.country = place;
+    }
+  } else {
+    // alternatively the place can be the whole place string like
+    // "London, Middlesex, England"
+    // In the 1921 census for example the place can be ignored because it is just the town + county + country
+    let placeCountryParts = CD.extractCountryFromPlaceName(place);
+    if (placeCountryParts) {
+      let countyName = GD.inferCountyNameFromPlaceString(place);
+      if (countyName) {
+        let remainder = placeCountryParts.remainder;
+        if (remainder && remainder.endsWith(countyName)) {
+          remainder = remainder.substring(0, remainder.length - countyName.length);
+          remainder = remainder.replace(/\s*,\s*$/, "");
+          if (!placeObj.town || !remainder.includes(placeObj.town)) {
+            placeObj.place = remainder;
+          }
+        }
+      }
+    } else {
+      placeObj.place = place;
+    }
+  }
+
+  return placeObj;
+}
+
 function isValidPlaceValue(value) {
   return value && value != "-";
 }
@@ -404,6 +447,12 @@ function getPlaceStringFromPlaceObj(placeObj, recordType) {
     placeObj.parish != placeObj.place
   ) {
     addString(placeObj.parish);
+  } else if (
+    isValidPlaceValue(placeObj.town) &&
+    placeObj.town != placeObj.residence &&
+    placeObj.town != placeObj.place
+  ) {
+    addString(placeObj.town);
   } else if (isValidPlaceValue(placeObj.electorate)) {
     addString(placeObj.electorate);
   } else if (isValidPlaceValue(placeObj.pollingDistrict)) {
@@ -515,9 +564,9 @@ function generalizeDataGivenRecordType(ed, result) {
       }
     }
 
-    if (getCleanRecordDataValue(ed, "Birth place")) {
-      result.setBirthPlace(getCleanRecordDataValue(ed, "Birth place"));
-    }
+    let birthPlaceObj = buildBirthPlaceObj(ed);
+    let fullBirthPlaceString = getPlaceStringFromPlaceObj(birthPlaceObj);
+    result.setBirthPlace(fullBirthPlaceString);
 
     if (!result.eventDate || (!result.eventDate.dateString && !result.eventDate.yearString)) {
       // if this came from an image there will be no heading but may be a year

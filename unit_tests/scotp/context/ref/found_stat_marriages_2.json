@@ -1,0 +1,59 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-marriages",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "MARGARET"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "FORREST"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "text",
+        "value": "GEORGE"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spforename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "text",
+        "value": "FINNIE"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-spsurname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "CAMBUSNETHAN_CAMBUSNETHAN"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "628 / 46",
+  "recordType": "stat_marriages"
+}

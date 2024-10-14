@@ -1,0 +1,28 @@
+{
+  "url": "https://www.scotlandspeople.gov.uk/record-results/81353814466d89d6608fe5",
+  "success": true,
+  "isRowSelected": true,
+  "numResultsOnPage": 2,
+  "recordData": {
+    "Surname": "GILLIES",
+    "Forename": "ISOBEL",
+    "Spouse Name": "PETER CAMPBELL/FR 186 (FR186)",
+    "Date": "10/12/1796",
+    "Parish Number": "581",
+    "Ref": "10/334",
+    "Parish": "Beith"
+  },
+  "imageLink": "https://www.scotlandspeople.gov.uk/buy-credits?destination=/record-results/81353814466d89d6608fe5&get-referer=1&nojs=",
+  "searchCriteria": {
+    "Church type": "Old Parish Registers - Marriages",
+    "Forename": "Isobel",
+    "Forename options": "Names that begin with",
+    "Gender": "Female",
+    "Spouse's name": "Peter Campbell",
+    "Spouse's name options": "Fuzzy matching",
+    "Year range": "from 1796 to 1796",
+    "County/city": "ALL"
+  },
+  "recordGroup": "church_registers",
+  "recordType": "opr_marriages"
+}

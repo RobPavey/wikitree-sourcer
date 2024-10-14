@@ -1,0 +1,19 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1106997/one?qu=Henry&qu=Abigail&qu=Archdall&qf=NI_INDEX%09Record+type%09Births%09Births&qf=PUBDATE%09Year%091846%091846",
+  "success": true,
+  "recordData": {
+    "Name": "Dixon, Amy",
+    "Record Type": "Births",
+    "Gender": "Female",
+    "Father": "Dixon, William Henry",
+    "Mother": "Kerr, Sarah Christian",
+    "Date of birth": "03 Dec 1838",
+    "Registered": "Hobart",
+    "Registration year": "1839",
+    "Record ID": "NAME_INDEXES:1066525",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD33-1-1-p260j2k",
+      "text": "RGD33/1/1/ no 83"
+    }
+  }
+}

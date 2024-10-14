@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "David"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1870"
+  },
+  "eventPlace": {
+    "placeString": "Illinois, United States"
+  },
+  "birthDate": {
+    "dateString": "1863-1864"
+  },
+  "birthPlace": {
+    "placeString": "Illinois, United States"
+  },
+  "ageAtEvent": "6",
+  "hasValidData": true
+}

@@ -1,0 +1,49 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Hugh Patrick"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Mcdermott"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1906"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1906"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "CRAMOND_CRAMOND"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "679/ 13",
+  "recordType": "stat_births"
+}

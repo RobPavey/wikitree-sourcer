@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Taylor",
+    "forenames": "Michael"
+  },
+  "eventDate": {
+    "yearString": "1820"
+  },
+  "eventPlace": {
+    "placeString": "New Milford, Litchfield, Connecticut, United States"
+  },
+  "hasValidData": true
+}

@@ -109,6 +109,9 @@ async function updateDataUsingLinkedRecords(data, citationType, options) {
 
   await updateWithLinkData(data);
 
+  //console.log("updateDataUsingLinkedRecords after updateWithLinkData, data is:");
+  //console.log(data);
+
   if (data.linkedRecords && data.linkedRecords.length > 0) {
     if (data.linkedRecordFailureCount > 0) {
       // some of the linked records could not be retrieved.
@@ -117,8 +120,13 @@ async function updateDataUsingLinkedRecords(data, citationType, options) {
   }
 
   if (doesCitationWantHouseholdTable(citationType, data.generalizedData)) {
+    //console.log("updateDataUsingLinkedRecords, wants household table");
+
     data.linkedRecordFailureCount = 0;
     await updateWithHouseholdData(data, options);
+
+    //console.log("updateDataUsingLinkedRecords after updateWithHouseholdData, data is:");
+    //console.log(data);
 
     if (data.linkedRecordFailureCount > 0) {
       // some of the linked records could not be retrieved.

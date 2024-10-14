@@ -1,0 +1,53 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Marie"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Douglas-hamilto"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1657"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1657"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "text",
+        "value": "William Duke Of Hamilton Douglas-hamilton Anne Duchess Of Ha"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refNum": "10/53",
+  "recordType": "opr_births"
+}

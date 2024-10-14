@@ -1,0 +1,40 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Watkins",
+    "forenames": "Hedley David"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "1903",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "Tasmania, Australia"
+  },
+  "lastNameAtBirth": "Watkins",
+  "birthDate": {
+    "dateString": "03 Dec 1903"
+  },
+  "birthPlace": {
+    "placeString": "32 French St, Launceston, Tasmania, Australia",
+    "originalPlaceString": "32 French St, Launceston"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Watkins",
+        "forenames": "Alfred Ernest"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Feltham",
+        "forenames": "Ellen Honora"
+      }
+    }
+  },
+  "hasValidData": true
+}

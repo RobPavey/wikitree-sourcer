@@ -1,50 +1,50 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith death 1989 in New South Wales, Australia, son of Robert & Mary.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith death registered 1989 in New South Wales, Australia, son of Robert & Mary.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Ian's death was registered in 1989 in New South Wales, Australia. He was the son of Robert & Mary.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith death 1989 in New South Wales, Australia, son of Robert & Mary.\n</ref>",
+    "citation": "Ian's death was registered in 1989 in New South Wales, Australia. He was the son of Robert & Mary.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith death registered 1989 in New South Wales, Australia, son of Robert & Mary.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 108710/1989; District: 120 (Grafton)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>Ian McLaurin-Smith death 1989 in New South Wales, Australia, son of Robert & Mary.",
+    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 108710/1989; District: 120 (Grafton)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>Ian McLaurin-Smith death registered 1989 in New South Wales, Australia, son of Robert & Mary.",
     "type": "source"
   },
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Ian's death was registered in 1989 in New South Wales, Australia. He was the son of Robert & Mary.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)\n</ref>",
+    "citation": "Ian's death was registered in 1989 in New South Wales, Australia. He was the son of Robert & Mary.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 108710/1989<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)",
+    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 108710/1989; District: 120 (Grafton)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)",
     "type": "source"
   },
   "dataStyle_listCurated_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith; District: 120 (Grafton); Father: Robert; Mother: Mary.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith; Father: Robert; Mother: Mary.\n</ref>",
     "type": "inline"
   },
   "dataStyle_listCurated_narrative": {
-    "citation": "Ian's death was registered in 1989 in New South Wales, Australia. He was the son of Robert & Mary.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith; District: 120 (Grafton); Father: Robert; Mother: Mary.\n</ref>",
+    "citation": "Ian's death was registered in 1989 in New South Wales, Australia. He was the son of Robert & Mary.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nIan McLaurin-Smith; Father: Robert; Mother: Mary.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_listCurated_source": {
-    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 108710/1989<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>Ian McLaurin-Smith; District: 120 (Grafton); Father: Robert; Mother: Mary.",
+    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 108710/1989; District: 120 (Grafton)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>Ian McLaurin-Smith; Father: Robert; Mother: Mary.",
     "type": "source"
   },
   "dataStyle_listOriginal_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nMCLAURIN-SMITH IAN; Father's Given Name(s): ROBERT; Mother's Given Name(s): MARY; District: 120.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nMCLAURIN-SMITH IAN; Father's Given Name(s): ROBERT; Mother's Given Name(s): MARY.\n</ref>",
     "type": "inline"
   },
   "dataStyle_listOriginal_narrative": {
-    "citation": "Ian's death was registered in 1989 in New South Wales, Australia. He was the son of Robert & Mary.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nMCLAURIN-SMITH IAN; Father's Given Name(s): ROBERT; Mother's Given Name(s): MARY; District: 120.\n</ref>",
+    "citation": "Ian's death was registered in 1989 in New South Wales, Australia. He was the son of Robert & Mary.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 108710/1989; District: 120 (Grafton)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nMCLAURIN-SMITH IAN; Father's Given Name(s): ROBERT; Mother's Given Name(s): MARY.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_listOriginal_source": {
-    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 108710/1989<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>MCLAURIN-SMITH IAN; Father's Given Name(s): ROBERT; Mother's Given Name(s): MARY; District: 120.",
+    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 108710/1989; District: 120 (Grafton)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>MCLAURIN-SMITH IAN; Father's Given Name(s): ROBERT; Mother's Given Name(s): MARY.",
     "type": "source"
   }
 }

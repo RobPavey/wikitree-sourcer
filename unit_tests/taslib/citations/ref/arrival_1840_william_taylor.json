@@ -1,0 +1,62 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CSO92/1/5 p. 39<br/>\n[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>\nName: Taylor, William; Record Type: Arrivals; Title: Mr; Arrival date: 13 Sep 1840; Departure port: Port Phillip; Ship: Lillias.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "William arrived on the ship Lillias on 13 September 1840 having departed from Port Phillip.<ref>\n'''Passenger List''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CSO92/1/5 p. 39<br/>\n[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>\nName: Taylor, William; Record Type: Arrivals; Title: Mr; Arrival date: 13 Sep 1840; Departure port: Port Phillip; Ship: Lillias.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Passenger List''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: CSO92/1/5 p. 39<br/>[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>Name: Taylor, William; Record Type: Arrivals; Title: Mr; Arrival date: 13 Sep 1840; Departure port: Port Phillip; Ship: Lillias.",
+    "type": "source"
+  },
+  "ee_style_inline": {
+    "citation": "<ref>\"Libraries Tasmania, Names Index,\" database, Tasmanian Archives, Resource ID CSO92/1/5 p. 39, [https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - ([https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] : accessed 6 May 2021), Name Taylor, William, Record Type Arrivals, Title Mr, Arrival date 13 Sep 1840, Departure port Port Phillip, Ship Lillias.</ref>",
+    "type": "inline"
+  },
+  "ee_style_narrative": {
+    "citation": "William arrived on the ship Lillias on 13 September 1840 having departed from Port Phillip.<ref>\"Libraries Tasmania, Names Index,\" database, Tasmanian Archives, Resource ID CSO92/1/5 p. 39, [https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - ([https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] : accessed 6 May 2021), Name Taylor, William, Record Type Arrivals, Title Mr, Arrival date 13 Sep 1840, Departure port Port Phillip, Ship Lillias.</ref>",
+    "type": "narrative"
+  },
+  "ee_style_source": {
+    "citation": "* \"Libraries Tasmania, Names Index,\" database, Tasmanian Archives, Resource ID CSO92/1/5 p. 39, [https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - ([https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] : accessed 6 May 2021), Name Taylor, William, Record Type Arrivals, Title Mr, Arrival date 13 Sep 1840, Departure port Port Phillip, Ship Lillias.",
+    "type": "source"
+  },
+  "bee_style_inline": {
+    "citation": "<ref>\"Libraries Tasmania, Names Index,\" Tasmanian Archives, Resource ID CSO92/1/5 p. 39, [https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - ([https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] : accessed 6 May 2021), Name Taylor, William, Record Type Arrivals, Title Mr, Arrival date 13 Sep 1840, Departure port Port Phillip, Ship Lillias.</ref>",
+    "type": "inline"
+  },
+  "bee_style_narrative": {
+    "citation": "William arrived on the ship Lillias on 13 September 1840 having departed from Port Phillip.<ref>\"Libraries Tasmania, Names Index,\" Tasmanian Archives, Resource ID CSO92/1/5 p. 39, [https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - ([https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] : accessed 6 May 2021), Name Taylor, William, Record Type Arrivals, Title Mr, Arrival date 13 Sep 1840, Departure port Port Phillip, Ship Lillias.</ref>",
+    "type": "narrative"
+  },
+  "bee_style_source": {
+    "citation": "* \"Libraries Tasmania, Names Index,\" Tasmanian Archives, Resource ID CSO92/1/5 p. 39, [https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - ([https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] : accessed 6 May 2021), Name Taylor, William, Record Type Arrivals, Title Mr, Arrival date 13 Sep 1840, Departure port Port Phillip, Ship Lillias.",
+    "type": "source"
+  },
+  "dataList_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CSO92/1/5 p. 39<br/>\n[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>\nName: Taylor, William; Record Type: Arrivals; Title: Mr; Arrival date: 13 Sep 1840; Departure port: Port Phillip; Ship: Lillias.\n</ref>",
+    "type": "inline"
+  },
+  "dataList_narrative": {
+    "citation": "William arrived on the ship Lillias on 13 September 1840 having departed from Port Phillip.<ref>\n'''Passenger List''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: CSO92/1/5 p. 39<br/>\n[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>\nName: Taylor, William; Record Type: Arrivals; Title: Mr; Arrival date: 13 Sep 1840; Departure port: Port Phillip; Ship: Lillias.\n</ref>",
+    "type": "narrative"
+  },
+  "dataList_source": {
+    "citation": "* '''Passenger List''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: CSO92/1/5 p. 39<br/>[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>Name: Taylor, William; Record Type: Arrivals; Title: Mr; Arrival date: 13 Sep 1840; Departure port: Port Phillip; Ship: Lillias.",
+    "type": "source"
+  },
+  "dataListNoRef_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Libraries Tasmania, Names Index\"<br/>\n[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>\nName: Taylor, William; Record Type: Arrivals; Title: Mr; Arrival date: 13 Sep 1840; Departure port: Port Phillip; Ship: Lillias; Record ID: NAME_INDEXES:1575259; Resource: CSO92/1/5 p. 39.\n</ref>",
+    "type": "inline"
+  },
+  "dataListNoRef_narrative": {
+    "citation": "William arrived on the ship Lillias on 13 September 1840 having departed from Port Phillip.<ref>\n'''Passenger List''':\n\"Libraries Tasmania, Names Index\"<br/>\n[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>\nName: Taylor, William; Record Type: Arrivals; Title: Mr; Arrival date: 13 Sep 1840; Departure port: Port Phillip; Ship: Lillias; Record ID: NAME_INDEXES:1575259; Resource: CSO92/1/5 p. 39.\n</ref>",
+    "type": "narrative"
+  },
+  "dataListNoRef_source": {
+    "citation": "* '''Passenger List''': \"Libraries Tasmania, Names Index\"<br/>[https://libraries.tas.gov.au/Digital/CSO92-1-5/CSO92-1-5-P42 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1575259 Record Permalink] (accessed 6 May 2021)<br/>Name: Taylor, William; Record Type: Arrivals; Title: Mr; Arrival date: 13 Sep 1840; Departure port: Port Phillip; Ship: Lillias; Record ID: NAME_INDEXES:1575259; Resource: CSO92/1/5 p. 39.",
+    "type": "source"
+  }
+}

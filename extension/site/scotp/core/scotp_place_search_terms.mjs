@@ -2982,7 +2982,16 @@ function getPlaceSearchTerms(string, type, stringIsFromResults) {
     if (stringIsFromResults) {
       return getStatutorySearchParameters(string, false);
     } else {
-      return getStatutorySearchParameters(string, true);
+      let parameters = getStatutorySearchParameters(string, true);
+      if (parameters.length > 0) {
+        return parameters;
+      }
+      // see if there is a county name we can remove
+      let parts = string.split(",");
+      if (parts.length > 1) {
+        let rdName = parts[0].trim();
+        return getStatutorySearchParameters(rdName, true);
+      }
     }
   } else if (type === "opr") {
     // for opr BMDs

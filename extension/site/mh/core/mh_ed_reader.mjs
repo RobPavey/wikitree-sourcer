@@ -27,15 +27,16 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 import { GD } from "../../../base/core/generalize_data_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
-// for some common collections specify the exact record type for every record
-// in the collection
-const collectionIdToRecordType = {
-  10092: RT.BirthRegistration,
-  10442: RT.BirthRegistration,
-  10443: RT.MarriageRegistration,
-};
+const recordTypeMatches = [
+  {
+    recordType: RT.BirthRegistration,
+    collectionIds: ["10092", "10442"],
+  },
+  {
+    recordType: RT.MarriageRegistration,
+    collectionIds: ["10443"],
+  },
 
-const recordTypeData = [
   // put ones with Document type first
   {
     recordType: RT.Immigration,
@@ -352,111 +353,29 @@ class MhEdReader extends ExtractedDataReader {
         return;
       }
 
-      if (this.urlParts.collectionId) {
-        let rtFromCollection = collectionIdToRecordType[this.urlParts.collectionId];
-        if (rtFromCollection) {
-          this.recordType = rtFromCollection;
-          return;
+      let inputData = {
+        collectionId: this.urlParts.collectionId,
+        collectionTitle: ed.collectionTitle,
+        recordSections: ed.recordSections,
+      };
+
+      // convert recordData into labels since it is not in standard fotm
+      if (this.ed.recordData) {
+        let recordDataLabels = [];
+        for (let field of Object.values(ed.recordData)) {
+          if (field.label) {
+            recordDataLabels.push(field.label);
+          }
         }
+        inputData.recordDataLabels = recordDataLabels;
       }
 
-      for (let typeData of recordTypeData) {
-        if (typeData.documentTypes) {
-          let docTypeValue = this.getRecordDataValueByKeysOrLabels(["formtype"], ["document type", "record type"]);
-          if (docTypeValue && docTypeValue.value) {
-            let docType = docTypeValue.value.toLowerCase();
-            let docTypesMatch = false;
-            for (let typeDataDocType of typeData.documentTypes) {
-              if (typeDataDocType == docType) {
-                docTypesMatch = true;
-                break;
-              }
-            }
-            if (!docTypesMatch) {
-              continue;
-            }
-          } else {
-            continue;
-          }
-        }
-
-        if (typeData.collectionTitleMatches) {
-          let title = ed.collectionTitle;
-          if (!title) {
-            continue;
-          }
-
-          title = title.toLowerCase();
-          let collectionTitlesMatch = false;
-          for (let typeDataTitleParts of typeData.collectionTitleMatches) {
-            let partsMatch = true;
-            for (let part of typeDataTitleParts) {
-              if (!title.includes(part)) {
-                partsMatch = false;
-                break;
-              }
-            }
-            if (partsMatch) {
-              collectionTitlesMatch = true;
-              break;
-            }
-          }
-
-          if (!collectionTitlesMatch) {
-            continue;
-          }
-        }
-
-        if (typeData.requiredRecordSections) {
-          if (!ed.recordSections) {
-            continue;
-          }
-
-          let requiredSectionsPresent = false;
-          for (let requiredSectionSet of typeData.requiredRecordSections) {
-            let sectionsPresent = true;
-            for (let section of requiredSectionSet) {
-              if (!ed.recordSections[section]) {
-                sectionsPresent = false;
-              }
-            }
-            if (sectionsPresent) {
-              requiredSectionsPresent = true;
-              break;
-            }
-          }
-          if (!requiredSectionsPresent) {
-            continue;
-          }
-        }
-
-        if (typeData.requiredFields) {
-          if (!ed.recordData) {
-            continue;
-          }
-
-          let requiredFieldsPresent = false;
-          for (let requiredFieldSet of typeData.requiredFields) {
-            let fieldsPresent = true;
-            for (let field of requiredFieldSet) {
-              if (!this.findRecordDataFieldByLabel(field)) {
-                fieldsPresent = false;
-              }
-            }
-            if (fieldsPresent) {
-              requiredFieldsPresent = true;
-              break;
-            }
-          }
-          if (!requiredFieldsPresent) {
-            continue;
-          }
-        }
-
-        // if we get this far it is a match
-        this.recordType = typeData.recordType;
-        break;
+      let documentTypeValue = this.getRecordDataValueByKeysOrLabels(["formtype"], ["document type", "record type"]);
+      if (documentTypeValue && documentTypeValue.value) {
+        inputData.documentType = documentTypeValue.value;
       }
+
+      this.recordType = this.determineRecordType(recordTypeMatches, inputData);
     }
   }
 
@@ -1531,6 +1450,30 @@ class MhEdReader extends ExtractedDataReader {
     addStringField(this, "unit", ["unit", "unit / ship", "military unit"]);
     addStringField(this, "service", ["service"]);
     addStringField(this, "serviceNumber", ["service #"]);
+
+    addStringField(this, "shipName", ["ship"]);
+    addStringField(this, "sentence", ["sentence"]);
+
+    if (this.recordType == RT.ConvictTransportation) {
+      let conviction = this.getRecordDataValue(["conviction"]);
+      if (conviction) {
+        if (conviction.dateString) {
+          gd.convictionDate = conviction.dateString;
+        }
+        if (conviction.placeString) {
+          gd.convictionPlace = conviction.placeString;
+        }
+      }
+      let transit = this.getRecordDataValue(["transit"]);
+      if (transit) {
+        if (transit.dateString) {
+          gd.transitDate = transit.dateString;
+        }
+        if (transit.placeString) {
+          gd.transitPlace = transit.placeString;
+        }
+      }
+    }
   }
 
   getCollectionData() {

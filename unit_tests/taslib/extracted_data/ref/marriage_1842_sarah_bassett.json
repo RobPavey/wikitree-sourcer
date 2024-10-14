@@ -1,0 +1,21 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:829392/one",
+  "success": true,
+  "recordData": {
+    "Name": "Bassett, Sarah",
+    "Record Type": "Marriages",
+    "Gender": "Female",
+    "Age": "21",
+    "Spouse": "Monk, James",
+    "Gender2": "Male",
+    "Age2": "26",
+    "Date of marriage": "13 Apr 1842",
+    "Registered": "Hobart",
+    "Registration year": "1842",
+    "Record ID": "NAME_INDEXES:829392",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD37-1-2p398j2k",
+      "text": "RGD37/1/2 no 1750"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1612204; File number: 62<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1612204 Record Permalink] (accessed 6 May 2021)<br/>\nClarence Vernon Grice divorce from Kathleen Elizabeth Grice in 1950 in Tasmania, Australia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Clarence was divorced from Kathleen Elizabeth Grice in 1950 in Tasmania, Australia.<ref>\n'''Divorce''':\n\"Libraries Tasmania, Names Index\"<br/>\nRecord ID: NAME_INDEXES:1612204; File number: 62<br/>\n[https://libraries.tas.gov.au/Record/NamesIndex/1612204 Record Permalink] (accessed 6 May 2021)<br/>\nClarence Vernon Grice divorce from Kathleen Elizabeth Grice in 1950 in Tasmania, Australia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Divorce''': \"Libraries Tasmania, Names Index\"<br/>Record ID: NAME_INDEXES:1612204; File number: 62<br/>[https://libraries.tas.gov.au/Record/NamesIndex/1612204 Record Permalink] (accessed 6 May 2021)<br/>Clarence Vernon Grice divorce from Kathleen Elizabeth Grice in 1950 in Tasmania, Australia.",
+    "type": "source"
+  }
+}

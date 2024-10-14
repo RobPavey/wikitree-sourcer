@@ -1,0 +1,33 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Imogene Webb",
+    "lastName": "Webb",
+    "forenames": "Imogene"
+  },
+  "birthDate": {
+    "dateString": "20 May 1913",
+    "yearString": "1913"
+  },
+  "birthPlace": {
+    "placeString": "Memphis Scot*, Missouri, United States"
+  },
+  "deathDate": {
+    "dateString": "12 Apr 1999",
+    "yearString": "1999"
+  },
+  "residencePlace": {
+    "placeString": "Bolingbrook, Will, Illinois, United States"
+  },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|6KW3-12JP}}"
+  ],
+  "collectionData": {
+    "id": "5000016",
+    "collectionTitle": "United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007"
+  },
+  "hasValidData": true
+}

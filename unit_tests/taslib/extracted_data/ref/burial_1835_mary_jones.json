@@ -1,0 +1,18 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=Mary&qu=Jones&qf=NI_INDEX%09Record+type%09Deaths%09Deaths&qf=PUBDATE%09Year%091833-1852%091833-1852#",
+  "success": true,
+  "recordData": {
+    "Name": "Jones, Mary",
+    "Record Type": "Deaths",
+    "Gender": "Female",
+    "Age": "75",
+    "Date of burial": "18 May 1838",
+    "Registered": "Hobart",
+    "Registration year": "1838",
+    "Record ID": "NAME_INDEXES:1180923",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD34-1-1p229j2k",
+      "text": "RGD34/1/1 no 5325"
+    }
+  }
+}

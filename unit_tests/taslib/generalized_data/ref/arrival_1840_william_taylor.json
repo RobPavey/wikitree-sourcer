@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "PassengerList",
+  "name": {
+    "lastName": "Taylor",
+    "forenames": "William"
+  },
+  "eventDate": {
+    "dateString": "13 Sep 1840"
+  },
+  "eventPlace": {
+    "placeString": "Van Diemen's Land"
+  },
+  "arrivalDate": "13 Sep 1840",
+  "departurePlace": "Port Phillip",
+  "shipName": "Lillias",
+  "hasValidData": true
+}

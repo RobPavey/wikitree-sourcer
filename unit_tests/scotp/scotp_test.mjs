@@ -24,10 +24,12 @@ SOFTWARE.
 
 import * as test_content_and_citation from "./scotp_test_content_and_citation.mjs";
 import * as test_build_search_url from "./scotp_test_build_search_url.mjs";
+import * as test_context from "./scotp_test_context.mjs";
 
 async function runTests(options, testResults) {
   await test_content_and_citation.runTests(options, testResults);
   await test_build_search_url.runTests(options, testResults);
+  await test_context.runTests(options, testResults);
 }
 
 export { runTests };

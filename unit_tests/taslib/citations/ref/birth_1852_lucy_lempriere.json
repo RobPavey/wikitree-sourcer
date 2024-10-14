@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD33/1/4/ no 1475<br/>\n[https://libraries.tas.gov.au/Digital/RGD33-1-4/RGD33-1-4-P479 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/956244 Record Permalink] (accessed 6 May 2021)<br/>\nLucy Maria Lempriere birth registered 1852 (born 30 Mar 1838) in Hobart, Van Diemen's Land, daughter of Thomas James Lempriere & Charlotte Smith.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Lucy's birth on 30 March 1838 was registered in 1852 in Hobart, Van Diemen's Land. She was the daughter of Thomas James Lempriere & Charlotte Smith.<ref>\n'''Birth Registration''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD33/1/4/ no 1475<br/>\n[https://libraries.tas.gov.au/Digital/RGD33-1-4/RGD33-1-4-P479 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/956244 Record Permalink] (accessed 6 May 2021)<br/>\nLucy Maria Lempriere birth registered 1852 (born 30 Mar 1838) in Hobart, Van Diemen's Land, daughter of Thomas James Lempriere & Charlotte Smith.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: RGD33/1/4/ no 1475<br/>[https://libraries.tas.gov.au/Digital/RGD33-1-4/RGD33-1-4-P479 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/956244 Record Permalink] (accessed 6 May 2021)<br/>Lucy Maria Lempriere birth registered 1852 (born 30 Mar 1838) in Hobart, Van Diemen's Land, daughter of Thomas James Lempriere & Charlotte Smith.",
+    "type": "source"
+  }
+}

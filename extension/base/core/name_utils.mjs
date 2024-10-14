@@ -24,6 +24,9 @@ SOFTWARE.
 
 import { StringUtils } from "./string_utils.mjs";
 
+// These are names that have been removed (or not added to the male/female) names because they could be either
+const genderNeutralGivenNames = ["Aubrey", "Ashley", "Cameron", "Jean", "Jesse", "Jessee", "Kerry", "Lesley", "Leslie"];
+
 const femaleGivenNames = [
   "Aaf",
   "Aafje",
@@ -7068,7 +7071,6 @@ const maleGivenNames = [
   "Ashel",
   "Asher",
   "Ashford",
-  "Ashley",
   "Ashman",
   "Ashton",
   "Ashur",
@@ -7103,7 +7105,6 @@ const maleGivenNames = [
   "Aubin",
   "Aubone",
   "Aubra",
-  "Aubrey",
   "Aubry",
   "Auburn",
   "Aud",
@@ -7641,7 +7642,6 @@ const maleGivenNames = [
   "Cam",
   "Cambridge",
   "Camden",
-  "Cameron",
   "Camiel",
   "Camillo",
   "Camillus",
@@ -10030,7 +10030,6 @@ const maleGivenNames = [
   "Javier",
   "Jay",
   "Jayme",
-  "Jean",
   "Jean-Antoine",
   "Jean-Baptiste",
   "Jean-Bernard",
@@ -10116,8 +10115,6 @@ const maleGivenNames = [
   "Jesaias",
   "Jesper",
   "Jess",
-  "Jesse",
-  "Jessee",
   "Jessey",
   "Jessop",
   "Jesus",
@@ -10416,7 +10413,6 @@ const maleGivenNames = [
   "Kenton",
   "Kenyon",
   "Kermit",
-  "Kerry",
   "Kerst",
   "Kester",
   "Ketill",
@@ -10667,8 +10663,6 @@ const maleGivenNames = [
   "Leopoldo",
   "Leopoldus",
   "Leroy",
-  "Lesley",
-  "Leslie",
   "Lessin",
   "Lester",
   "Lestock",
@@ -14477,7 +14471,7 @@ const NameUtils = {
             quoteIndex = word.indexOf("/", quoteIndex + 1);
           }
         }
-      } else if (word.startsWith("(") && word[1] != " ") {
+      } else if (word.startsWith("(") && word.length > 1 && word[1] != " ") {
         upperCaseLetterAtIndex(index + 1);
       }
 

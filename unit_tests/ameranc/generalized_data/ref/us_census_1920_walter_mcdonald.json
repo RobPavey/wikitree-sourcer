@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "McDonald",
+    "forenames": "Walter"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1920"
+  },
+  "eventPlace": {
+    "placeString": "Manning, Dillon, South Carolina, United States"
+  },
+  "birthDate": {
+    "dateString": "1912"
+  },
+  "birthPlace": {
+    "placeString": "South Carolina"
+  },
+  "ageAtEvent": "8",
+  "relationshipToHead": "son",
+  "maritalStatus": "single",
+  "hasValidData": true
+}

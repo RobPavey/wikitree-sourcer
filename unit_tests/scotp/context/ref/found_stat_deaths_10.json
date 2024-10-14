@@ -1,0 +1,59 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-deaths",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Legh Richmond H"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Marshall"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-from",
+        "type": "text",
+        "value": "74"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-to",
+        "type": "text",
+        "value": "74"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1948"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1948"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "WALKERBURN_WALKERBURN"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "762/2 6",
+  "recordType": "stat_deaths"
+}

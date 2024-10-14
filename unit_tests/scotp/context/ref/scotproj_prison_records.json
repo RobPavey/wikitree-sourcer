@@ -1,0 +1,40 @@
+{
+  "formData": {
+    "urlPart": "prison-registers/prison-records",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Duncan"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Robertson"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-yearadmitted-year-from",
+        "type": "text",
+        "value": "1848"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-yearadmitted-year-to",
+        "type": "text",
+        "value": "1848"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  }
+}

@@ -1,7 +1,7 @@
 {
   "sourceOfData": "nswbdm",
   "sourceType": "record",
-  "recordType": "BirthRegistration",
+  "recordType": "Baptism",
   "name": {
     "lastName": "Nicholson",
     "forenames": "Charles"

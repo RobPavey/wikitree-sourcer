@@ -748,6 +748,10 @@ const regressionData = [
     url: "https://www.ancestry.co.uk/discoveryui-content/view/1712038:70845?ssrc=pt&tid=172368945&pid=392239251049",
   },
   {
+    caseName: "uk_military_1942_john_smith",
+    url: "https://www.ancestry.com/discoveryui-content/view/1053823:61642?tid=&pid=&queryid=672bfe1c-dd04-4414-b8c6-b84ef6a7c0ca&_phsrc=Zqm11613&_phstart=successSource",
+  },
+  {
     caseName: "uk_military_1944_albert_braccini",
     url: "https://www.ancestry.com/discoveryui-content/view/84274:1604?ssrc=pt&tid=180461776&pid=202343229183",
   },
@@ -921,6 +925,10 @@ const regressionData = [
   {
     caseName: "us_federal_census_1920_henry_barral",
     url: "https://www.ancestry.com/discoveryui-content/view/41984770:6061",
+  },
+  {
+    caseName: "us_federal_census_1950_polly_beardsley",
+    url: "https://www.ancestry.com/discoveryui-content/view/18187958:8054?ssrc=pt&tid=82382307&pid=44461527800",
   },
   {
     caseName: "us_federal_census_1950_william_pavey",
@@ -1229,6 +1237,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/260052341589/facts",
   },
   {
+    // Has name and gender hidden
+    caseName: "xx_profile_clement_smith_1883_1957_nz",
+    url: "https://www.ancestry.com/family-tree/person/tree/164568404/person/162379710099/facts",
+  },
+  {
     // Has middle initial and multiple last names
     caseName: "xx_profile_fannie_kemper_1859_1933_us",
     url: "https://www.ancestry.com/family-tree/person/tree/11748183/person/12992988602/facts",
@@ -1249,6 +1262,11 @@ const regressionData = [
   },
   {
     caseName: "xx_profile_ralph_pavey_1891_1958_england",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
+  },
+  {
+    // Changed format in September 2024
+    caseName: "xx_profile_ralph_pavey_1891_1958_england_Sep2024",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },
   {

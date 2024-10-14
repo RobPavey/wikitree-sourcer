@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "McHenry",
+    "forenames": "Jean"
+  },
+  "eventDate": {
+    "yearString": "1830"
+  },
+  "eventPlace": {
+    "placeString": "Ascension, Louisiana, United States"
+  },
+  "hasValidData": true
+}

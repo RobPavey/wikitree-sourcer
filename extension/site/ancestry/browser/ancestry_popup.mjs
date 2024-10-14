@@ -382,6 +382,9 @@ async function ancestryBuildSharingUrl(extractedData) {
 }
 
 async function ancestryBuildHouseholdTableWithLinkedRecords(data) {
+  //console.log("ancestryBuildHouseholdTableWithLinkedRecords, data is:");
+  //console.log(data);
+
   clearClipboard();
 
   // if there are linked records then add that data to the generalized data
@@ -418,6 +421,7 @@ async function ancestryBuildHouseholdTableWithLinkedRecords(data) {
 }
 
 async function ancestryBuildHouseholdTable(data) {
+  //console.log("ancestryBuildHouseholdTable");
   if (!ancestryPrefetch.areBuildTableDependenciesReady) {
     // dependencies not ready, wait a few milliseconds and try again
     console.log("ancestryBuildHouseholdTable, waiting another 10ms");

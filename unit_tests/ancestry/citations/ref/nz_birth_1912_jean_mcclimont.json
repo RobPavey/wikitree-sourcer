@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"New Zealand, Birth Index, 1840-1950\"<br/>\nN/A - microfiche from a private collector; New Zealand; Birth Index, 1840-1950<br/>\n{{Ancestry Record|8949|1158632|au}} (accessed 6 May 2021)<br/>\nJean Mary Agnes McClimont birth 1912 in Springburn, Canterbury, New Zealand.\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"New Zealand, Birth Index, 1840-1950\"<br/>\nN/A - microfiche from a private collector; New Zealand; Birth Index, 1840-1950<br/>\n{{Ancestry Record|8949|1158632|au}} (accessed 6 May 2021)<br/>\nJean Mary Agnes McClimont birth registered 1912 in Springburn, Canterbury, New Zealand.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Jean's birth was registered in the Jan-Feb-Mar quarter of 1912 in Springburn, Canterbury, New Zealand.<ref>\n'''Birth Registration''':\n\"New Zealand, Birth Index, 1840-1950\"<br/>\nN/A - microfiche from a private collector; New Zealand; Birth Index, 1840-1950<br/>\n{{Ancestry Record|8949|1158632|au}} (accessed 6 May 2021)<br/>\nJean Mary Agnes McClimont birth 1912 in Springburn, Canterbury, New Zealand.\n</ref>",
+    "citation": "Jean's birth was registered in the Jan-Feb-Mar quarter of 1912 in Springburn, Canterbury, New Zealand.<ref>\n'''Birth Registration''':\n\"New Zealand, Birth Index, 1840-1950\"<br/>\nN/A - microfiche from a private collector; New Zealand; Birth Index, 1840-1950<br/>\n{{Ancestry Record|8949|1158632|au}} (accessed 6 May 2021)<br/>\nJean Mary Agnes McClimont birth registered 1912 in Springburn, Canterbury, New Zealand.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Birth Registration''': \"New Zealand, Birth Index, 1840-1950\"<br/>N/A - microfiche from a private collector; New Zealand; Birth Index, 1840-1950<br/>{{Ancestry Record|8949|1158632|au}} (accessed 6 May 2021)<br/>Jean Mary Agnes McClimont birth 1912 in Springburn, Canterbury, New Zealand.",
+    "citation": "* '''Birth Registration''': \"New Zealand, Birth Index, 1840-1950\"<br/>N/A - microfiche from a private collector; New Zealand; Birth Index, 1840-1950<br/>{{Ancestry Record|8949|1158632|au}} (accessed 6 May 2021)<br/>Jean Mary Agnes McClimont birth registered 1912 in Springburn, Canterbury, New Zealand.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"New Zealand, Birth Index, 1840-1950,\" database, ({{Ancestry Record|8949|1158632|au}} : accessed 6 May 2021), Jean Mary Agnes McClimont birth 1912 in Springburn, Canterbury, New Zealand; citing N/A - microfiche from a private collector, New Zealand, Birth Index, 1840-1950.</ref>",
+    "citation": "<ref>\"New Zealand, Birth Index, 1840-1950,\" database, ({{Ancestry Record|8949|1158632|au}} : accessed 6 May 2021), Jean Mary Agnes McClimont birth registered 1912 in Springburn, Canterbury, New Zealand; citing N/A - microfiche from a private collector, New Zealand, Birth Index, 1840-1950.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Jean's birth was registered in the Jan-Feb-Mar quarter of 1912 in Springburn, Canterbury, New Zealand.<ref>\"New Zealand, Birth Index, 1840-1950,\" database, ({{Ancestry Record|8949|1158632|au}} : accessed 6 May 2021), Jean Mary Agnes McClimont birth 1912 in Springburn, Canterbury, New Zealand; citing N/A - microfiche from a private collector, New Zealand, Birth Index, 1840-1950.</ref>",
+    "citation": "Jean's birth was registered in the Jan-Feb-Mar quarter of 1912 in Springburn, Canterbury, New Zealand.<ref>\"New Zealand, Birth Index, 1840-1950,\" database, ({{Ancestry Record|8949|1158632|au}} : accessed 6 May 2021), Jean Mary Agnes McClimont birth registered 1912 in Springburn, Canterbury, New Zealand; citing N/A - microfiche from a private collector, New Zealand, Birth Index, 1840-1950.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"New Zealand, Birth Index, 1840-1950,\" database, ({{Ancestry Record|8949|1158632|au}} : accessed 6 May 2021), Jean Mary Agnes McClimont birth 1912 in Springburn, Canterbury, New Zealand; citing N/A - microfiche from a private collector, New Zealand, Birth Index, 1840-1950.",
+    "citation": "* \"New Zealand, Birth Index, 1840-1950,\" database, ({{Ancestry Record|8949|1158632|au}} : accessed 6 May 2021), Jean Mary Agnes McClimont birth registered 1912 in Springburn, Canterbury, New Zealand; citing N/A - microfiche from a private collector, New Zealand, Birth Index, 1840-1950.",
     "type": "source"
   },
   "partial_ee_style_inline": {

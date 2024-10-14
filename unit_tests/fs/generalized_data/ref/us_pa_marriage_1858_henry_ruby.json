@@ -1,0 +1,43 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Henry Rice Ruby",
+    "lastName": "Ruby",
+    "forenames": "Henry Rice"
+  },
+  "eventDate": {
+    "dateString": "9 Nov 1858"
+  },
+  "eventPlace": {
+    "placeString": "Pennsylvania, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Susan S Ruby Ruby",
+        "lastName": "Ruby",
+        "forenames": "Susan S Ruby"
+      },
+      "marriageDate": {
+        "dateString": "9 November 1858"
+      },
+      "marriagePlace": {
+        "placeString": "Pennsylvania, United States"
+      }
+    }
+  ],
+  "marriageDate": "9 November 1858",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|6CYF-SMB5}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}"
+  ],
+  "collectionData": {
+    "id": "4138689",
+    "collectionTitle": "Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989"
+  },
+  "hasValidData": true
+}

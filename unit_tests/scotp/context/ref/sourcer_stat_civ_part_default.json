@@ -1,0 +1,59 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-civilpartnerships",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Abigail Alice"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Walker"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "2021"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "2021"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Morera-Pallares"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "ROSSKEEN|HIGHLAND (ROSSKEEN)_ROSSKEEN"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "195",
+  "recordType": "stat_civilpartnerships"
+}

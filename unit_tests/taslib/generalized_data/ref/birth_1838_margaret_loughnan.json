@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Loughnan",
+    "forenames": "Margaret Isabella"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1838",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "Hobart, Van Diemen's Land",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtBirth": "Loughnan",
+  "birthDate": {
+    "dateString": "15 Nov 1838"
+  },
+  "registrationDistrict": "Hobart",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Loughnan",
+        "forenames": "John Michael"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Ness",
+        "forenames": "Marion"
+      }
+    }
+  },
+  "hasValidData": true
+}

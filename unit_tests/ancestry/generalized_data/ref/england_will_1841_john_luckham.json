@@ -5,6 +5,9 @@
   "name": {
     "name": "John Luckham"
   },
+  "residenceDate": {
+    "dateString": "1841"
+  },
   "residencePlace": {
     "placeString": "Broadway, Dorset, England"
   },
@@ -16,7 +19,8 @@
     "{{Ancestry Record|2119|37801}}"
   ],
   "collectionData": {
-    "id": "2119"
+    "id": "2119",
+    "collectionTitle": "Dorset, England, Wills and Probates, 1565-1858"
   },
   "hasValidData": true
 }

@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Lucas",
+    "forenames": "Clara"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1839",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "Hobart, Van Diemen's Land",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtBirth": "Lucas",
+  "birthDate": {
+    "dateString": "22 Feb 1835"
+  },
+  "registrationDistrict": "Hobart",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Lucas",
+        "forenames": "James"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Walton",
+        "forenames": "Naomi"
+      }
+    }
+  },
+  "hasValidData": true
+}

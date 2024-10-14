@@ -1,0 +1,32 @@
+{
+  "formData": {
+    "urlPart": "legal-records/coa",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-name",
+        "type": "text",
+        "value": "Alexander Edmund Fraser of the Foreign Office, London"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-name",
+        "type": "so",
+        "value": "fuzzy"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-grantyear-year-from",
+        "type": "text",
+        "value": "1899"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-grantyear-year-to",
+        "type": "text",
+        "value": "1899"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "69",
+  "recordType": "coa"
+}

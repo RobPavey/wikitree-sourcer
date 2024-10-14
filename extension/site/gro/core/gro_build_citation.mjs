@@ -303,7 +303,12 @@ async function buildCoreCitation(ed, runDate, builder) {
   let districtNameForOutput = getRegistrationDistrict(ed, options);
   if (districtNameForOutput) {
     if (options.citation_gro_useDistrictUrl) {
-      let url = getUkbmdDistrictPageUrl(ed.registrationDistrict, ed.referenceVolume, ed.eventYear);
+      let url = getUkbmdDistrictPageUrl(
+        ed.registrationDistrict,
+        ed.referenceVolume,
+        ed.eventYear,
+        ed.registrationDistrictCode
+      );
       if (url) {
         dataString += "[" + url + " " + districtNameForOutput + "]";
       } else {
@@ -350,4 +355,4 @@ function buildCitation(input) {
   return simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
 }
 
-export { buildCitation };
+export { buildCitation, buildGroSearchUrl };

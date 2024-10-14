@@ -21,7 +21,7 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
@@ -31,7 +31,7 @@
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-sex-f",
@@ -57,7 +57,7 @@
         {
           "fieldKey": "edit-search-params-nrs-parent-one",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-parent-two",
@@ -67,7 +67,7 @@
         {
           "fieldKey": "edit-search-params-nrs-parent-two",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         }
       ]
     }
@@ -94,7 +94,7 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
@@ -104,7 +104,7 @@
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-sex-f",
@@ -130,7 +130,7 @@
         {
           "fieldKey": "edit-search-params-nrs-parent-one",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         }
       ]
     }
@@ -157,7 +157,7 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
@@ -167,7 +167,7 @@
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-sex-f",
@@ -193,7 +193,7 @@
         {
           "fieldKey": "edit-search-params-nrs-parent-one",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         }
       ]
     }
@@ -220,7 +220,7 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
@@ -230,7 +230,7 @@
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-sex-f",
@@ -272,7 +272,7 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
@@ -282,7 +282,7 @@
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-sex-f",
@@ -324,7 +324,7 @@
         {
           "fieldKey": "edit-search-params-nrs-surname",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-forename",
@@ -334,7 +334,7 @@
         {
           "fieldKey": "edit-search-params-nrs-forename",
           "type": "so",
-          "value": "soundex"
+          "value": "fuzzy"
         },
         {
           "fieldKey": "edit-search-params-nrs-sex-f",

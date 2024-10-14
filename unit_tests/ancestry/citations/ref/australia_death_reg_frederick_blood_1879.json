@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>\nFrederick Blood death 1879 in Victoria, Australia.\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>\nFrederick Blood death registered 1879 in Victoria, Australia.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>\nFrederick Blood death 1879 in Victoria, Australia.\n</ref>",
+    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\n'''Death Registration''':\n\"Victoria, Australia, Death Index, 1840-1991\"<br/>\nThe Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>\n{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>\nFrederick Blood death registered 1879 in Victoria, Australia.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Death Registration''': \"Victoria, Australia, Death Index, 1840-1991\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>Frederick Blood death 1879 in Victoria, Australia.",
+    "citation": "* '''Death Registration''': \"Victoria, Australia, Death Index, 1840-1991\"<br/>The Victorian Registry of Births, Deaths, and Marriages; Melbourne, Victoria, Australia; Victoria, Australia, Death Records; Reference Number: 3907<br/>{{Ancestry Record|61650|1181988}} (accessed 6 May 2021)<br/>Frederick Blood death registered 1879 in Victoria, Australia.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"Victoria, Australia, Death Index, 1840-1991,\" database, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Frederick Blood death 1879 in Victoria, Australia; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907.</ref>",
+    "citation": "<ref>\"Victoria, Australia, Death Index, 1840-1991,\" database, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Frederick Blood death registered 1879 in Victoria, Australia; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\"Victoria, Australia, Death Index, 1840-1991,\" database, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Frederick Blood death 1879 in Victoria, Australia; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907.</ref>",
+    "citation": "Frederick's death was registered in 1879 in Victoria, Australia.<ref>\"Victoria, Australia, Death Index, 1840-1991,\" database, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Frederick Blood death registered 1879 in Victoria, Australia; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"Victoria, Australia, Death Index, 1840-1991,\" database, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Frederick Blood death 1879 in Victoria, Australia; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907.",
+    "citation": "* \"Victoria, Australia, Death Index, 1840-1991,\" database, ({{Ancestry Record|61650|1181988}} : accessed 6 May 2021), Frederick Blood death registered 1879 in Victoria, Australia; citing The Victorian Registry of Births, Deaths, and Marriages, Melbourne, Victoria, Australia, Victoria, Australia, Death Records, Reference Number 3907.",
     "type": "source"
   },
   "partial_ee_style_inline": {

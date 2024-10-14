@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import { DateUtils } from "../../../base/core/date_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 // Births:
 // Search From Date must be later than 31/12/1839.
@@ -45,7 +46,7 @@ const marriagesDateRange = {
   to: { day: 19, month: 8, year: 1949 },
 };
 
-function constrainDate(date, allowedDateRange) {
+function constrainDate(date, runDate, allowedDateRange) {
   if (allowedDateRange) {
     let from = allowedDateRange.from;
     let to = allowedDateRange.to;
@@ -64,6 +65,17 @@ function constrainDate(date, allowedDateRange) {
             date.day = from.day;
           }
         }
+      }
+    }
+
+    if (!to) {
+      if (runDate) {
+        let endDate = new Date(runDate);
+        const oneDayOffset = 24 * 60 * 60 * 1000;
+        endDate.setTime(endDate.getTime() - oneDayOffset);
+
+        // note that getMonth returns a zero-based number
+        to = { day: endDate.getDate(), month: endDate.getMonth() + 1, year: endDate.getFullYear() };
       }
     }
 
@@ -144,8 +156,8 @@ function addDateRange(gd, dateString, runDate, options, allowedDateRange) {
     }
   }
 
-  fromDate = constrainDate(fromDate, allowedDateRange);
-  toDate = constrainDate(toDate, allowedDateRange);
+  fromDate = constrainDate(fromDate, runDate, allowedDateRange);
+  toDate = constrainDate(toDate, runDate, allowedDateRange);
 
   function makeDateString(date) {
     return date.day.toString() + "/" + date.month.toString() + "/" + date.year.toString();
@@ -170,6 +182,11 @@ function buildSearchData(input) {
   let forenames = gd.inferForenames();
   let lastName = gd.inferLastName();
 
+  let gender = gd.personGender;
+  if (!gender) {
+    gender = NameUtils.predictGenderFromGivenNames(forenames);
+  }
+
   if (typeOfSearch == "Births") {
     fieldData.csur = lastName;
     fieldData.cfirst = forenames;
@@ -183,16 +200,21 @@ function buildSearchData(input) {
     fieldData.cdate_lower = dateRange.fromDate;
     fieldData.cdate_upper = dateRange.toDate;
   } else if (typeOfSearch == "Deaths") {
+    let lastNameAtDeath = gd.inferLastNameAtDeath();
+    if (lastNameAtDeath) {
+      lastName = lastNameAtDeath;
+    }
     fieldData.dsur = lastName;
     fieldData.dfirst = forenames;
     let dateRange = addDateRange(gd, gd.inferDeathDate(), runDate, options, deathsDateRange);
     fieldData.ddate_lower = dateRange.fromDate;
     fieldData.ddate_upper = dateRange.toDate;
   } else {
-    if (gd.personGender == "male") {
+    if (gender == "male") {
       fieldData.bgsur = lastName;
       fieldData.bgfirst = forenames;
     } else {
+      // if no gender it may get these the wrong way around, we are already trying gender prediction
       fieldData.brsur = lastName;
       fieldData.brfirst = forenames;
     }

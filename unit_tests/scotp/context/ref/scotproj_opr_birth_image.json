@@ -1,0 +1,63 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "William"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Walker"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1808"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1808"
+      }
+    ]
+  },
+  "refineData": {
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "text",
+        "value": "Hugh Walker"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-two",
+        "type": "text",
+        "value": "Ann Young"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-two",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refNum": "20 / 211",
+  "recordType": "opr_births"
+}

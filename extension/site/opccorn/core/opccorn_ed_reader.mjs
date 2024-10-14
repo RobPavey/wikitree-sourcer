@@ -166,6 +166,7 @@ const typeData = {
   wills_transcriptions: {
     recordType: RT.Will,
     searchUrl: "extra-searches/wills/",
+    typeSpecificData: { dateIsWrittenDate: true },
   },
   // Wills Index
   wills_index: {
@@ -527,6 +528,14 @@ class OpccornEdReader extends ExtractedDataReader {
       parents = this.makeParentsFromForenamesAndLastNames(fatherForename, fatherSurname, motherForename, motherSurname);
     }
     return parents;
+  }
+
+  setCustomFields(gd) {
+    if (this.typeData) {
+      if (this.typeData.typeSpecificData) {
+        gd.typeSpecificData = this.typeData.typeSpecificData;
+      }
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Gardiner",
+    "forenames": "James"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1900"
+  },
+  "eventPlace": {
+    "placeString": "Detroit city Ward 17, Wayne, Michigan, United States"
+  },
+  "birthDate": {
+    "dateString": "Jul 1862"
+  },
+  "birthPlace": {
+    "placeString": "Canada"
+  },
+  "ageAtEvent": "38",
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "hasValidData": true
+}

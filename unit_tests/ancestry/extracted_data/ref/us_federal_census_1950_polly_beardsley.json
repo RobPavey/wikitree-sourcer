@@ -1,0 +1,64 @@
+{
+  "url": "https://www.ancestry.com/discoveryui-content/view/18187958:8054?ssrc=pt&tid=82382307&pid=44461527800",
+  "pageType": "record",
+  "dbId": "8054",
+  "recordId": "18187958",
+  "ancestryTemplate": "{{Ancestry Record|8054|18187958}}",
+  "domain": "com",
+  "titleName": "Polly A Beardsley",
+  "titleCollection": "1850 United States Federal Census",
+  "recordData": {
+    "Name": "Polly A Beardsley",
+    "Gender": "Female",
+    "Race": "White",
+    "Residence Age": "65",
+    "Birth Date": "abt 1785",
+    "Birthplace": "Connecticut",
+    "Residence Date": "1850",
+    "Home in 1850": "New Milford, Litchfield, Connecticut, USA",
+    "Line Number": "25",
+    "Dwelling Number": "790",
+    "Family Number": "805",
+    "Household Members (Name)<br/>Age": "Addison L Beardsley 45<br/>Harriett Beardsley 43<br/>Mary Beardsley 7<br/>Polly A Beardsley 65"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "Addison L Beardsley",
+        "dbId": "8054",
+        "recordId": "18187955",
+        "link": "https://www.ancestry.com/discoveryui-content/view/18187955:8054",
+        "Age": "45"
+      },
+      {
+        "Household Members (Name)": "Harriett Beardsley",
+        "dbId": "8054",
+        "recordId": "18187956",
+        "link": "https://www.ancestry.com/discoveryui-content/view/18187956:8054",
+        "Age": "43"
+      },
+      {
+        "Household Members (Name)": "Mary Beardsley",
+        "dbId": "8054",
+        "recordId": "18187957",
+        "link": "https://www.ancestry.com/discoveryui-content/view/18187957:8054",
+        "Age": "7"
+      },
+      {
+        "Household Members (Name)": "Polly A Beardsley",
+        "Age": "65"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8054/images/4181025-00528?pid=18187958&treeid=82382307&personid=44461527800&usePUB=true&usePUBJs=true",
+  "imageDbId": "8054",
+  "imageRecordId": "4181025-00528",
+  "sourceCitation": "The National Archives in Washington, DC; Record Group: Records of the Bureau of the Census; Record Group Number: 29; Series Number: M432; Residence Date: 1850; Home in 1850: New Milford, Litchfield, Connecticut; Roll: 43; Page: 151a",
+  "sourceInformation": "Ancestry.com. 1850 United States Federal Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2009. Images reproduced by FamilySearch. Original data: Seventh Census of the United States, 1850; (National Archives Microfilm Publication M432, 1009 rolls); Records of the Bureau of the Census, Record Group 29; National Archives, Washington, D.C.",
+  "originalData": "Seventh Census of the United States, 1850; (National Archives Microfilm Publication M432, 1009 rolls); Records of the Bureau of the Census, Record Group 29; National Archives, Washington, D.C.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1850 United States Federal Census, the Seventh Census of the United States. Census takers recorded many details including each person's name, age as of the census day, sex, color; birthplace, occupation of males over age fifteen, and more. No relationships were shown between members of a household. Additionally, the names of those listed on the population schedule are linked to actual images of the 1850 Federal Census. Learn more..."
+}

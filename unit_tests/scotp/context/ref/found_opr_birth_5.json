@@ -1,0 +1,60 @@
+{
+  "formData": {
+    "urlPart": "church-registers/church-births-baptisms/opr-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "William"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-from",
+        "type": "text",
+        "value": "1817"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-year-field-year-to",
+        "type": "text",
+        "value": "1817"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-rd-name",
+        "type": "multipleSelect",
+        "values": [
+          "CLUNIE_CLUNIE (PERTH)"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "text",
+        "value": "William Stewart"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-one",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-two",
+        "type": "text",
+        "value": "Isobel Dow"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-parent-two",
+        "type": "so",
+        "value": "exact"
+      }
+    ]
+  },
+  "refNum": "339 10/357",
+  "recordType": "opr_births"
+}

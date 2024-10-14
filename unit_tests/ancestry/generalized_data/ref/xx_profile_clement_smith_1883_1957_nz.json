@@ -1,0 +1,46 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Clement Cecil Smith"
+  },
+  "birthDate": {
+    "dateString": "1883"
+  },
+  "birthPlace": {
+    "placeString": "Auckland, New Zealand"
+  },
+  "deathDate": {
+    "dateString": "22 MAR 1957"
+  },
+  "deathPlace": {
+    "placeString": "Napier, Hawke's Bay, New Zealand"
+  },
+  "personGender": "male",
+  "spouses": [
+    {
+      "name": {
+        "name": "Agnes Elizabeth Davidson"
+      },
+      "marriageDate": {
+        "dateString": "1909"
+      },
+      "marriagePlace": {
+        "placeString": "New Zealand"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Francis Smith"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Ellen Fletcher"
+      }
+    }
+  },
+  "hasValidData": true
+}

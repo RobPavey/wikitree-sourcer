@@ -1,0 +1,46 @@
+{
+  "recordData": {
+    "Name": "Henry Rice Ruby",
+    "Unknown Date": "9 Nov 1858",
+    "Marriage Date": "9 November 1858",
+    "Marriage Place": "Pennsylvania, United States",
+    "System Of Record": "SLS"
+  },
+  "fullName": "Henry Rice Ruby",
+  "surname": "Ruby",
+  "givenName": "Henry Rice",
+  "factType": "Unknown",
+  "eventDateOriginal": "9 Nov 1858",
+  "eventDate": "9 Nov 1858",
+  "eventPlace": "Pennsylvania, United States",
+  "spouseFullName": "Susan S Ruby Ruby",
+  "spouseSurname": "Ruby",
+  "spouseGivenName": "Susan S Ruby",
+  "referenceData": {
+    "externalRepositoryName": "Historical Society of Pennsylvania",
+    "digitalFilmNumber": "102535395",
+    "imageNumber": "240"
+  },
+  "extData": "{\"first_image\": \"102535395_00240\", \"keywords_place\": \",,Pennsylvania,United States\", \"year_of_marriage\": \"1858\"}",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:4BMH-CSRW",
+  "collectionTitle": "Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989",
+  "fsCollectionId": "4138689",
+  "citation": "\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5 : Sat Mar 09 07:52:52 UTC 2024), Entry for Henry Rice Ruby and Judge Henry Ruby, 9 November 1858.",
+  "sourceTitleForPerson": "Henry Rice Ruby, \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMB5",
+  "documentRecordData": {
+    "Name": "Henry Rice Ruby",
+    "Father's Name": "Judge Henry Ruby",
+    "Father's Sex": "Male",
+    "Mother's Name": "Rebecca Senseny Ruby",
+    "Mother's Sex": "Female",
+    "Spouse's Name": "Susan S Ruby Ruby",
+    "Event Type": "Marriage",
+    "Event Date": "9 Nov 1858",
+    "Event Place": "Pennsylvania, United States",
+    "Record Type": "Marriage",
+    "Affiliate Name": "Historical Society of Pennsylvania"
+  },
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSZL-T3MY-1",
+  "pageType": "record"
+}

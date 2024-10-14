@@ -1,0 +1,14 @@
+{
+  "std": {
+    "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DCosmo McCashion Colquhoun Whish-Wilson&qf=PUBDATE%09Year%091888-1971%091888-1971"
+  },
+  "births": {
+    "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DCosmo McCashion Colquhoun Whish-Wilson&qf=PUBDATE%09Year%091888-1892%091888-1892&qf=NI_INDEX%09Record+type%09Births%09Births"
+  },
+  "deaths": {
+    "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DCosmo McCashion Colquhoun Whish-Wilson&qf=PUBDATE%09Year%091967-1971%091967-1971&qf=NI_INDEX%09Record+type%09Deaths%09Deaths"
+  },
+  "marriages": {
+    "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/results?qu=NI_NAME%3DCosmo McCashion Colquhoun Whish-Wilson&qf=PUBDATE%09Year%091902-1971%091902-1971&qf=NI_INDEX%09Record+type%09Marriages%09Marriages"
+  }
+}

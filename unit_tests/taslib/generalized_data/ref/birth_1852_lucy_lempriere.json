@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "taslib",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "lastName": "Lempriere",
+    "forenames": "Lucy Maria"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1852",
+    "isRegistrationDate": true
+  },
+  "eventPlace": {
+    "placeString": "Hobart, Van Diemen's Land",
+    "originalPlaceString": "Hobart",
+    "isRegistrationPlace": true
+  },
+  "lastNameAtBirth": "Lempriere",
+  "birthDate": {
+    "dateString": "30 Mar 1838"
+  },
+  "registrationDistrict": "Hobart",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Lempriere",
+        "forenames": "Thomas James"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Smith",
+        "forenames": "Charlotte"
+      }
+    }
+  },
+  "hasValidData": true
+}

@@ -1,0 +1,64 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-deaths",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "John"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Stewart"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-sex-m",
+        "type": "radio",
+        "value": true
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-from",
+        "type": "text",
+        "value": "47"
+      },
+      {
+        "fieldKey": "edit-search-params-hss-age-age-to",
+        "type": "text",
+        "value": "47"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1908"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1908"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "RENFREWSHIRE (PAISLEY)|PAISLEY MIDDLE CHURCH|PAISLEY MIDDLE AND LOW PARISHES|PAISLEY LOW CHURCH|PAISLEY HIGH CHURCH|PAISLEY BURGH PARISHES|PAISLEY_PAISLEY"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  },
+  "refNum": "573 / 1 / 160",
+  "recordType": "stat_deaths"
+}

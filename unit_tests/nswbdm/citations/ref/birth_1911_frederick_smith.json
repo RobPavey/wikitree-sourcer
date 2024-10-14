@@ -1,0 +1,50 @@
+{
+    "std_inline": {
+      "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nFrederick W Smith birth registered 1911 in New South Wales, Australia, son of Frederick J & Jessie W.\n</ref>",
+      "type": "inline"
+    },
+    "std_narrative": {
+      "citation": "Frederick's birth was registered in 1911 in New South Wales, Australia. He was the son of Frederick J & Jessie W.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nFrederick W Smith birth registered 1911 in New South Wales, Australia, son of Frederick J & Jessie W.\n</ref>",
+      "type": "narrative"
+    },
+    "std_source": {
+      "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 4307/1911; District: Granville<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>Frederick W Smith birth registered 1911 in New South Wales, Australia, son of Frederick J & Jessie W.",
+      "type": "source"
+    },
+    "dataStyle_none_inline": {
+      "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)\n</ref>",
+      "type": "inline"
+    },
+    "dataStyle_none_narrative": {
+      "citation": "Frederick's birth was registered in 1911 in New South Wales, Australia. He was the son of Frederick J & Jessie W.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)\n</ref>",
+      "type": "narrative"
+    },
+    "dataStyle_none_source": {
+      "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 4307/1911; District: Granville<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)",
+      "type": "source"
+    },
+    "dataStyle_listCurated_inline": {
+      "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nFrederick W Smith; Father: Frederick J; Mother: Jessie W.\n</ref>",
+      "type": "inline"
+    },
+    "dataStyle_listCurated_narrative": {
+      "citation": "Frederick's birth was registered in 1911 in New South Wales, Australia. He was the son of Frederick J & Jessie W.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nFrederick W Smith; Father: Frederick J; Mother: Jessie W.\n</ref>",
+      "type": "narrative"
+    },
+    "dataStyle_listCurated_source": {
+      "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 4307/1911; District: Granville<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>Frederick W Smith; Father: Frederick J; Mother: Jessie W.",
+      "type": "source"
+    },
+    "dataStyle_listOriginal_inline": {
+      "citation": "<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nSMITH FREDERICK W; Father's Given name(s): FREDERICK J; Mother's Given name(s): JESSIE W.\n</ref>",
+      "type": "inline"
+    },
+    "dataStyle_listOriginal_narrative": {
+      "citation": "Frederick's birth was registered in 1911 in New South Wales, Australia. He was the son of Frederick J & Jessie W.<ref>\n'''Birth Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nBirth Registration Number: 4307/1911; District: Granville<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>\nSMITH FREDERICK W; Father's Given name(s): FREDERICK J; Mother's Given name(s): JESSIE W.\n</ref>",
+      "type": "narrative"
+    },
+    "dataStyle_listOriginal_source": {
+      "citation": "* '''Birth Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Birth Registration Number: 4307/1911; District: Granville<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births Births search page] (accessed 6 May 2021)<br/>SMITH FREDERICK W; Father's Given name(s): FREDERICK J; Mother's Given name(s): JESSIE W.",
+      "type": "source"
+    }
+  }

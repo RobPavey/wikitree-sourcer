@@ -173,7 +173,7 @@ const scotpRecordTypes = {
     dates: { from: 2005, to: 0 },
     eventClass: "marriage",
     recordKeys: {
-      ref: "RD/EntryNumber",
+      ref: "Ref",
       rdName: "RD Name",
       spouseSurname: "Partner Surname",
     },
@@ -570,6 +570,9 @@ const scotpRecordTypes = {
     recordKeys: { county: "County" },
     search: { gender: false, rd: false },
     searchNameLimits: { forename: 99, surname: 99 }, // if limit not known set to 99
+    searchFields: {
+      forename: "edit-search-params-nrs-forenames",
+    },
     searchStdText: "&dl_cat=poor-relief&dl_rec=poor-relief-hie&record_type=hie",
     searchUrl: "poor-relief/hie",
     sourcerRecordType: RT.Immigration,
@@ -679,10 +682,10 @@ const ScotpRecordType = {
     return getValueWithDefault(recordType, "recordKeys", fieldName, defaultValue);
   },
 
-  getNameSearchLimitForSoundex: function (recordType, nameType) {
+  getNameSearchLimit: function (recordType, nameType) {
     let defaultValue = getDefaultValue("searchNameLimits", nameType);
     return getValueWithDefault(recordType, "searchNameLimits", nameType, defaultValue);
   },
 };
 
-export { ScotpRecordType, SpField, SpFeature, SpEventClass };
+export { scotpRecordTypes, ScotpRecordType, SpField, SpFeature, SpEventClass };

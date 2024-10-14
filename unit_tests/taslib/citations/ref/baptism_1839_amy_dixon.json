@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD32/1/3/ no 521<br/>\n[https://libraries.tas.gov.au/Digital/RGD32-1-3/RGD32-1-3-P483 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1087348 Record Permalink] (accessed 6 May 2021)<br/>\nAmy Dixon baptism in 1839 (born 3 Dec 1838), daughter of William Henry Dixon & Christian Sarah, in New Norfolk, Van Diemen's Land.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Amy, daughter of William Henry Dixon & Christian Sarah, was born on 3 December 1838 and baptised in 1839 in New Norfolk, Van Diemen's Land.<ref>\n'''Baptism''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Resource ID: RGD32/1/3/ no 521<br/>\n[https://libraries.tas.gov.au/Digital/RGD32-1-3/RGD32-1-3-P483 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1087348 Record Permalink] (accessed 6 May 2021)<br/>\nAmy Dixon baptism in 1839 (born 3 Dec 1838), daughter of William Henry Dixon & Christian Sarah, in New Norfolk, Van Diemen's Land.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Resource ID: RGD32/1/3/ no 521<br/>[https://libraries.tas.gov.au/Digital/RGD32-1-3/RGD32-1-3-P483 Image Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1087348 Record Permalink] (accessed 6 May 2021)<br/>Amy Dixon baptism in 1839 (born 3 Dec 1838), daughter of William Henry Dixon & Christian Sarah, in New Norfolk, Van Diemen's Land.",
+    "type": "source"
+  }
+}

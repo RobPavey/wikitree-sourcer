@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Jefferson",
+    "forenames": "George"
+  },
+  "eventDate": {
+    "yearString": "1810"
+  },
+  "eventPlace": {
+    "placeString": "Derry, Westmoreland, Pennsylvania, United States"
+  },
+  "hasValidData": true
+}

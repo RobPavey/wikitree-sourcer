@@ -84,11 +84,9 @@ class ScotpFormDataBuilder {
   addSurname(string, searchOption) {
     let fieldName = ScotpRecordType.getSearchField(this.recordType, "surname");
     if (fieldName) {
-      if (searchOption == "soundex") {
-        let surnameLengthLimit = ScotpRecordType.getNameSearchLimitForSoundex(this.recordType, "surname");
-        if (string.length > surnameLengthLimit) {
-          string = string.substring(0, surnameLengthLimit);
-        }
+      let surnameLengthLimit = ScotpRecordType.getNameSearchLimit(this.recordType, "surname");
+      if (string.length > surnameLengthLimit) {
+        string = string.substring(0, surnameLengthLimit);
       }
 
       this.addTextField(fieldName, string);
@@ -99,11 +97,9 @@ class ScotpFormDataBuilder {
   addForename(string, searchOption) {
     let forenameParam = ScotpRecordType.getSearchField(this.recordType, SpField.forename);
 
-    if (searchOption == "soundex") {
-      let forenameLengthLimit = ScotpRecordType.getNameSearchLimitForSoundex(this.recordType, "forename");
-      if (string.length > forenameLengthLimit) {
-        string = string.substring(0, forenameLengthLimit);
-      }
+    let forenameLengthLimit = ScotpRecordType.getNameSearchLimit(this.recordType, "forename");
+    if (string.length > forenameLengthLimit) {
+      string = string.substring(0, forenameLengthLimit);
     }
 
     this.addTextField(forenameParam, string);
@@ -119,6 +115,11 @@ class ScotpFormDataBuilder {
     let surnameParam = ScotpRecordType.getSearchField(this.recordType, SpField.spouseSurname);
 
     if (surnameParam) {
+      let surnameLengthLimit = ScotpRecordType.getNameSearchLimit(this.recordType, "surname");
+      if (string.length > surnameLengthLimit) {
+        string = string.substring(0, surnameLengthLimit);
+      }
+
       this.addTextField(surnameParam, string);
       this.addSearchOption(surnameParam, searchOption);
     }
@@ -128,6 +129,11 @@ class ScotpFormDataBuilder {
     let forenameParam = ScotpRecordType.getSearchField(this.recordType, SpField.spouseForename);
 
     if (forenameParam) {
+      let forenameLengthLimit = ScotpRecordType.getNameSearchLimit(this.recordType, "forename");
+      if (string.length > forenameLengthLimit) {
+        string = string.substring(0, forenameLengthLimit);
+      }
+
       this.addTextField(forenameParam, string);
       this.addSearchOption(forenameParam, searchOption);
     }
@@ -175,8 +181,18 @@ class ScotpFormDataBuilder {
   }
 
   addAgeRange(from, to) {
-    this.addTextField("edit-search-params-hss-age-age-from", from);
-    this.addTextField("edit-search-params-hss-age-age-to", to);
+    // goes in refine data now (at least it does for cr_burials)
+    const recordTypesUsingRefine = ["cr_burials"];
+    const addToRefine = recordTypesUsingRefine.includes(this.recordType);
+
+    // there is a different id when in refine
+    if (addToRefine) {
+      this.addTextField("edit-search-params-nrs-age-age-from", from, addToRefine);
+      this.addTextField("edit-search-params-nrs-age-age-to", to, addToRefine);
+    } else {
+      this.addTextField("edit-search-params-hss-age-age-from", from, addToRefine);
+      this.addTextField("edit-search-params-hss-age-age-to", to, addToRefine);
+    }
   }
 
   addAge(age) {
@@ -194,8 +210,10 @@ class ScotpFormDataBuilder {
       sex = useNumber ? "2" : "f";
     }
 
-    let fieldId = "edit-search-params-nrs-sex-" + sex;
-    this.addRadioButtonField(fieldId, true);
+    if (sex) {
+      let fieldId = "edit-search-params-nrs-sex-" + sex;
+      this.addRadioButtonField(fieldId, true);
+    }
   }
 
   addParentName(string, searchOption) {

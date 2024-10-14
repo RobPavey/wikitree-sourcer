@@ -133,7 +133,7 @@ function buildSearchUrl(buildUrlInput) {
   let personGender = getPersonGenderFromGeneralizedDataOrDataCache(
     gd,
     dataCache,
-    buildUrlInput.typeOfSearch == "groBirth"
+    buildUrlInput.typeOfSearch == "births"
   );
   if (personGender) {
     if (personGender.toLowerCase() == "male") {

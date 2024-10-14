@@ -1,0 +1,57 @@
+{
+  "formData": {
+    "urlPart": "statutory-records/stat-births",
+    "fields": [
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "text",
+        "value": "Robert"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-forename",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "text",
+        "value": "Hamilton"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-surname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-from",
+        "type": "text",
+        "value": "1862"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-search-year-year-to",
+        "type": "text",
+        "value": "1862"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-mmsurname",
+        "type": "text",
+        "value": "Jeffrey"
+      },
+      {
+        "fieldKey": "edit-search-params-nrs-mmsurname",
+        "type": "so",
+        "value": "exact"
+      },
+      {
+        "fieldKey": "edit-search-params-str-district",
+        "type": "multipleSelect",
+        "values": [
+          "SOUTH LANARKSHIRE (CARLUKE)|CARLUKE_CARLUKE"
+        ]
+      }
+    ]
+  },
+  "refineData": {
+    "fields": []
+  }
+}

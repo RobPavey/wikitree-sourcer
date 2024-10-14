@@ -91,6 +91,7 @@ const RT = {
   Encyclopedia: `Encyclopedia`,
   Book: `Book`,
   Journal: `Journal`,
+  Inquest: `Inquest`,
 };
 
 const RecordSubtype = {
@@ -98,6 +99,11 @@ const RecordSubtype = {
   MarriageOrBanns: `MarriageOrBanns`,
   MemberRegistration: `MemberRegistration`,
   LdsCensus: `LdsCensus`,
+
+  // military subtypes
+  WWIDraftRegistration: `WWIDraftRegistration`,
+  WWIIDraftRegistration: `WWIIDraftRegistration`,
+  WWIIPrisonerOfWar: `WWIIPrisonerOfWar`,
 };
 
 const Role = {

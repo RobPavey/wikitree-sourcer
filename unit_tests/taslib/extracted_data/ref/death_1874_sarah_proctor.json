@@ -1,0 +1,18 @@
+{
+  "url": "https://librariestas.ent.sirsidynix.net.au/client/en_AU/names/search/detailnonmodal/ent:$002f$002fNAME_INDEXES$002f0$002fNAME_INDEXES:1151285/one?qu=Sarah&qu=Proctor&qf=NI_INDEX%09Record+type%09Deaths%09Deaths&qf=PUBDATE%09Year%091874%091874",
+  "success": true,
+  "recordData": {
+    "Name": "Proctor, Sarah",
+    "Record Type": "Deaths",
+    "Gender": "Female",
+    "Age": "87",
+    "Date of death": "30 Apr 1874",
+    "Registered": "Hobart",
+    "Registration year": "1874",
+    "Record ID": "NAME_INDEXES:1151285",
+    "Resource": {
+      "link": "https://libraries.tas.gov.au/Digital/RGD35-1-8p232j2k",
+      "text": "RGD35/1/8 no 2014"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Other Records ID: CON13/1/1 Page 139<br/>\n[https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111 Other Record Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1435652 Record Permalink] (accessed 6 May 2021)<br/>\nName: Smith, Mary; Record Type: Convicts; Ship: Duke of Wellington; Remarks: To NSW per Friendship; Other Records: CON13/1/1 Page 139.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mary was transported to Tasmania, Australia on the ship ''Duke of Wellington''.<ref>\n'''Convict Transportation''':\n\"Libraries Tasmania, Names Index\"<br/>\nTasmanian Archives; Other Records ID: CON13/1/1 Page 139<br/>\n[https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111 Other Record Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1435652 Record Permalink] (accessed 6 May 2021)<br/>\nName: Smith, Mary; Record Type: Convicts; Ship: Duke of Wellington; Remarks: To NSW per Friendship; Other Records: CON13/1/1 Page 139.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Convict Transportation''': \"Libraries Tasmania, Names Index\"<br/>Tasmanian Archives; Other Records ID: CON13/1/1 Page 139<br/>[https://libraries.tas.gov.au/Digital/CON13-1-1/CON13-1-1P111 Other Record Permalink] - [https://libraries.tas.gov.au/Record/NamesIndex/1435652 Record Permalink] (accessed 6 May 2021)<br/>Name: Smith, Mary; Record Type: Convicts; Ship: Duke of Wellington; Remarks: To NSW per Friendship; Other Records: CON13/1/1 Page 139.",
+    "type": "source"
+  }
+}
