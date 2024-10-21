@@ -650,8 +650,12 @@ function extractImageThumb(document, result) {
         let recordId = url.replace(/.*\/images\/([^?]+).*/, "$1");
 
         result.imageUrl = url;
-        result.imageDbId = dbId;
-        result.imageRecordId = recordId;
+        if (dbId && dbId != url) {
+          result.imageDbId = dbId;
+        }
+        if (recordId && recordId != url) {
+          result.imageRecordId = recordId;
+        }
       }
     } else {
       // Sometimes in some browsers the linkNode is not there. This happens more when ther user is on the
@@ -1267,8 +1271,12 @@ function handlePersonSourceCitation(document, result) {
           }
 
           result.imageUrl = url;
-          result.imageDbId = dbId;
-          result.imageRecordId = recordId;
+          if (dbId && dbId != url) {
+            result.imageDbId = dbId;
+          }
+          if (recordId && recordId != url) {
+            result.imageRecordId = recordId;
+          }
         }
       }
 

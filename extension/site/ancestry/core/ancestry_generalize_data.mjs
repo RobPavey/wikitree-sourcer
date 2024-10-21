@@ -1222,9 +1222,9 @@ function addWtSearchTemplates(ed, result) {
   addLinkOrTemplate(wtTemplates, ed.ancestryTemplate);
 
   if (ed.titleCollection && ed.titleCollection.includes("Find a Grave")) {
-    if (ed.imageRecordId & ed.imageRecordId.includes("/memorial/")) {
-      let memorialId = ed.imageRecordId.replace(/^.*\/memorial\/([^\/]+)\/.*$/, "$1");
-      if (memorialId && memorialId != ed.imageRecordId) {
+    if (ed.imageUrl && ed.imageUrl.includes("/memorial/")) {
+      let memorialId = ed.imageUrl.replace(/^.*\/memorial\/([^\/]+)\/.*$/, "$1");
+      if (memorialId && memorialId != ed.imageUrl) {
         addLinkOrTemplate(wtTemplatesRelated, "{{FindAGrave|" + memorialId + "}}");
       }
     }

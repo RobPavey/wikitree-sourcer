@@ -111,8 +111,9 @@ async function addCachedAsyncResult(cacheTag, key, result) {
     }
 
     let timeNow = Date.now();
+    let version = chrome.runtime.getManifest().version;
 
-    newCache.push({ key: key, result: result, timeStamp: timeNow });
+    newCache.push({ key: key, result: result, timeStamp: timeNow, version: version });
 
     cache.contents = newCache;
 
@@ -139,7 +140,8 @@ async function addCachedAsyncResult(cacheTag, key, result) {
     }
     contentsToSave = prunedCache;
   } else {
-    cacheContents = [{ key: key, result: result, timeStamp: Date.now() }];
+    let version = chrome.runtime.getManifest().version;
+    cacheContents = [{ key: key, result: result, timeStamp: Date.now(), version: version }];
     cache.contents = cacheContents;
     contentsToSave = cacheContents;
   }
@@ -169,12 +171,14 @@ async function getCachedAsyncResult(cacheTag, key) {
     //console.log("getCachedAsyncResult, cacheContents is:");
     //console.log(cacheContents);
 
+    let version = chrome.runtime.getManifest().version;
+
     let timeNow = Date.now();
     for (let index = cacheContents.length - 1; index >= 0; index--) {
       let cacheEntry = cacheContents[index];
       //console.log("getCachedAsyncResult, index = " + index + ", cacheEntry is:");
       //console.log(cacheEntry);
-      if (cacheEntry.key == key && timeNow - cacheEntry.timeStamp < cache.expireTime) {
+      if (cacheEntry.key == key && timeNow - cacheEntry.timeStamp < cache.expireTime && version == cacheEntry.version) {
         //console.log("getCachedAsyncResult, key = " + key + ", found in cache, cacheEntry is:");
         //console.log(cacheEntry);
 

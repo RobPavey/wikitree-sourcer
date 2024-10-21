@@ -515,6 +515,9 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
     needsPopupDisplayed: true,
   };
   if (!(await checkPermissionForSiteFromUrl(recordUrl, checkPermissionsOptions))) {
+    let message = "Error fetching linked record from URL:\n\n" + recordUrl;
+    message += "\n\nThe permission to access that URL either could not be checked or was denied.";
+    displayMessageWithIcon("warning", message);
     return;
   }
 
