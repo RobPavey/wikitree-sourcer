@@ -507,6 +507,7 @@ function ancestryGoToFullSizeSharingImage(data) {
 
 async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalExtractedData) {
   //console.log("extractRecordFromUrlFromPersonSourceCitation");
+  //console.log("recordUrl = " + recordUrl);
 
   // request permission if needed
   const checkPermissionsOptions = {
@@ -517,9 +518,14 @@ async function extractRecordFromUrlFromPersonSourceCitation(recordUrl, originalE
     return;
   }
 
+  //console.log("extractRecordFromUrlFromPersonSourceCitation, calling getExtractedDataFromRecordUrl");
+
   displayBusyMessageAfterDelay("WikiTree Sourcer fetching full record page ...\n(This might take several seconds)");
 
   let extractResult = await getExtractedDataFromRecordUrl(recordUrl);
+
+  //console.log("extractRecordFromUrlFromPersonSourceCitation, extractResult is:");
+  //console.log(extractResult);
 
   if (extractResult.success) {
     let extractedData = extractResult.extractedData;

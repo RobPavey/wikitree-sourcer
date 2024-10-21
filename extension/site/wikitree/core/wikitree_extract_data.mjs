@@ -292,7 +292,7 @@ function getParentsFromDocumentInReadOrPrivateMode(document, result) {
       result.parents = {};
     }
 
-    var pathName = parentUrls[index].href;
+    var pathName = parentUrls[index].getAttribute("href");
     const wikiId = pathName.replace(/(?:https?\:\/\/www\.wikitree\.com)?\/wiki\//, "");
     var fullName = getTextBySelector(parentUrls[index], "span[itemprop=name]");
 
@@ -349,7 +349,7 @@ function getSpousesFromDocumentInNonEditMode(isPrivate, document, result) {
   // get the spouses (if any)
   var spouseUrls = document.querySelectorAll(".VITALS span[itemprop=spouse] a[itemprop=url]");
   for (let index = 0; index < spouseUrls.length; ++index) {
-    let pathName = spouseUrls[index].href;
+    let pathName = spouseUrls[index].getAttribute("href");
     const wikiId = pathName.replace(/(?:https?\:\/\/www\.wikitree\.com)?\/wiki\//, "");
     let fullName = getTextBySelector(spouseUrls[index], "span[itemprop=name]");
 
@@ -696,7 +696,7 @@ function extractDataForEditFamily(document, result) {
 
         let linkNode = textNode.nextSibling;
         if (linkNode) {
-          let href = linkNode.href;
+          let href = linkNode.getAttribute("href");
           if (href) {
             href = href.replace(/^\/wiki\//, "");
             nameAndId.wikiId = href;
@@ -706,7 +706,7 @@ function extractDataForEditFamily(document, result) {
     } else if (parentNode) {
       let linkNode = parentNode.querySelector("a");
       if (linkNode) {
-        let href = linkNode.href;
+        let href = linkNode.getAttribute("href");
         if (href) {
           href = href.replace(/^\/wiki\//, "");
           nameAndId.wikiId = href;
@@ -745,7 +745,7 @@ function extractDataForEditFamily(document, result) {
 
           let linkNode = textNode.nextSibling;
           if (linkNode) {
-            let href = linkNode.href;
+            let href = linkNode.getAttribute("href");
             if (href) {
               href = href.replace(/^\/wiki\//, "");
               nameAndId.wikiId = href;
@@ -758,7 +758,7 @@ function extractDataForEditFamily(document, result) {
           let linkNode = textNode.nextSibling;
           if (linkNode && linkNode.type != 3) {
             nameAndId.name = linkNode.textContent;
-            let href = linkNode.href;
+            let href = linkNode.getAttribute("href");
             if (href) {
               href = href.replace(/^\/wiki\//, "");
               nameAndId.wikiId = href;

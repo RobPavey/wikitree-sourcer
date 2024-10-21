@@ -59,7 +59,7 @@ async function getDataForLinkedRecords(data, linkedRecords, processFunction) {
       needsPopupDisplayed: true,
     };
     if (!(await checkPermissionForSiteFromUrl(url, checkPermissionsOptions))) {
-      console.log("getDataForLinkedRecords, permission check failed");
+      //console.log("getDataForLinkedRecords, permission check failed. URL is: " + url);
       let processInput = data;
       processInput.linkedRecordFailureCount = linkedRecords.length;
       processInput.linkedRecords = [];

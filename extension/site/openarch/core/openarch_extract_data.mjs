@@ -94,7 +94,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
         part.type = child.nodeType;
         part.tag = child.tagName;
         if (part.tag && part.tag.toLowerCase() == "a") {
-          part.href = child.href;
+          part.href = child.getAttribute("href");
         }
         part.text = child.textContent;
         result.citationParts.push(part);

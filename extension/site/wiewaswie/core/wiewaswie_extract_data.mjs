@@ -147,7 +147,7 @@ function extractData(document, url) {
   }
 
   if (originalSourceLink) {
-    let href = originalSourceLink.href;
+    let href = originalSourceLink.getAttribute("href");
     if (href) {
       result.originalSourceLink = href;
     }

@@ -123,10 +123,10 @@ function extractData(document, url) {
 
   let imageList = document.querySelector("#mainlist");
   if (imageList) {
-    // just use the fist link for now
+    // just use the first link for now
     let linkNode = imageList.querySelector("dt > a.imagelink");
     if (linkNode) {
-      let href = linkNode.href;
+      let href = linkNode.getAttribute("href");
       if (href) {
         result.imageLink = href;
       }

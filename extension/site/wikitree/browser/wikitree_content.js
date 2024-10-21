@@ -333,7 +333,7 @@ function connectionsContinueClickedAddingChild(spouseIsParentElements) {
       }
 
       if (linkElement) {
-        let href = linkElement.href;
+        let href = linkElement.getAttribute("href");
         if (href) {
           let selectedWikiId = href.replace("/wiki/", "");
           if (selectedWikiId && selectedWikiId != href) {

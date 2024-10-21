@@ -63,17 +63,42 @@ function cleanPlaceName(text) {
   return result;
 }
 
-function cleanLinkUrl(url, result) {
+function getAbsoluteLinkUrl(linkNode, document, result) {
+  if (!linkNode || !document || !result) {
+    return "";
+  }
+
+  // We used .getAttribute("href") rather than .href because sometimes the link node
+  // is in a document that we fetched and .href could give a URL starting with something like
+  // chrome-extension://
+  let url = linkNode.getAttribute("href");
+
   if (!url) {
     return url;
   }
 
-  //console.log("cleanLinkUrl, url = " + url);
-  //console.log("cleanLinkUrl, result is");
+  //console.log("getAbsoluteLinkUrl, url = " + url);
+  //console.log("getAbsoluteLinkUrl, result is");
   //console.log(result);
 
   if (url.startsWith("http")) {
     return url;
+  }
+
+  // These two should never happen. There was a brief time (in version 2.6.6) when it could
+  // leave these here for one release in case of things in the fetch cache
+  const extensionUrlMatch = /^extension\:\/\/[^\/]+/;
+  if (extensionUrlMatch.test(url)) {
+    url = url.replace(extensionUrlMatch, "");
+  }
+  const chromeExtensionUrlMatch = /^chrome-extension\:\/\/[^\/]+/;
+  if (chromeExtensionUrlMatch.test(url)) {
+    url = url.replace(chromeExtensionUrlMatch, "");
+  }
+
+  let documentUrl = result.url;
+  if (!document.URL) {
+    document.URL = document.URL;
   }
 
   // around 10 October 2024 Ancestry started having relative URLs like
@@ -82,18 +107,31 @@ function cleanLinkUrl(url, result) {
   if (url.startsWith("/")) {
     if (result.domain) {
       let site = "https://www." + result.domain;
-      return site + url;
-    } else if (result.url) {
-      let site = result.url.replace(/^(https?:\/\/[^\/]+)\/.*$/, "$1");
-      if (site && site != result.url) {
-        // replace search.ancestry with www.ancestry
-        site = site.replace("//search.ancestry", "//www.ancestry");
-        return site + url;
+      let newUrl = site + url;
+      //console.log("getAbsoluteLinkUrl, newUrl = " + newUrl);
+      return newUrl;
+    } else {
+      if (documentUrl) {
+        let site = documentUrl.replace(/^(https?:\/\/[^\/]+)\/.*$/, "$1");
+        if (site && site != documentUrl) {
+          // replace search.ancestry with www.ancestry
+          site = site.replace("//search.ancestry", "//www.ancestry");
+          let newUrl = site + url;
+          //console.log("getAbsoluteLinkUrl, newUrl = " + newUrl);
+          return newUrl;
+        }
       }
+    }
+  } else {
+    // should never get here. Only happens if this is a relative URL that doesn't start with /
+    //console.log("getAbsoluteLinkUrl, relative URL not starting with /");
+    if (URL.canParse(url, documentUrl)) {
+      const urlObject = new URL(url, documentUrl);
+      return urlObject.href;
     }
   }
 
-  console.log("cleanLinkUrl, could not fix url: " + url);
+  //console.log("getAbsoluteLinkUrl, could not fix url: " + url);
 
   return url;
 }
@@ -340,15 +378,12 @@ function extractRecordData(document, result) {
                   member[heading] = memberText;
                   let linkNode = cell.querySelector("a");
                   if (linkNode) {
-                    let link = linkNode.href;
-                    if (link) {
-                      link = cleanLinkUrl(link, result);
-                      let extractResult = {};
-                      extractDbAndRecordId(extractResult, link);
-                      member.dbId = extractResult.dbId;
-                      member.recordId = extractResult.recordId;
-                      member.link = link; // used to fetch additional records if needed
-                    }
+                    let link = getAbsoluteLinkUrl(linkNode, document, result);
+                    let extractResult = {};
+                    extractDbAndRecordId(extractResult, link);
+                    member.dbId = extractResult.dbId;
+                    member.recordId = extractResult.recordId;
+                    member.link = link; // used to fetch additional records if needed
                   }
                 }
               }
@@ -387,14 +422,11 @@ function extractRecordData(document, result) {
                     let linkText = linkNode.textContent;
                     // ignore links for alternate names
                     if (!linkText || !linkText.startsWith("[")) {
-                      let link = linkNode.href;
-                      if (link) {
-                        link = cleanLinkUrl(link, result);
-                        if (!result.linkData) {
-                          result.linkData = {};
-                        }
-                        result.linkData[label] = link;
+                      let link = getAbsoluteLinkUrl(linkNode, document, result);
+                      if (!result.linkData) {
+                        result.linkData = {};
                       }
+                      result.linkData[label] = link;
                     }
                   }
                 } else {
@@ -471,8 +503,7 @@ function extractRecordData(document, result) {
 
                   let linkNode = cell.querySelector("a");
                   if (linkNode) {
-                    let link = linkNode.href;
-                    link = cleanLinkUrl(link, result);
+                    let link = getAbsoluteLinkUrl(linkNode, document, result);
                     let extractResult = {};
                     extractDbAndRecordId(extractResult, link);
                     member.dbId = extractResult.dbId;
@@ -607,13 +638,11 @@ function extractImageThumb(document, result) {
     //console.log(linkNode);
 
     if (linkNode) {
-      let url = linkNode.href;
+      let url = getAbsoluteLinkUrl(linkNode, document, result);
 
       //console.log("extractImageThumb, url = " + url);
 
       if (url) {
-        url = cleanLinkUrl(url, result);
-
         // Example:
         // "https://www.ancestry.com/imageviewer/collections/7814/images/LNDRG13_157_158-0095?pid=2229789&amp;backurl=https://search.ancestry.com/cgi-bin/sse.dll?dbid%3D7814%26h%3D2229789%26indiv%3Dtry%26o_vc%3DRecord:OtherRecord%26rhSource%3D8753&amp;treeid=&amp;personid=&amp;hintid=&amp;usePUB=true&amp;usePUBJs=true"
 
@@ -636,7 +665,7 @@ function extractImageThumb(document, result) {
         // Report problem node looks like:
         // <a href="https://www.ancestry.com/feedback/reportissue?rp=RD&amp;pid=1903047&amp;dbid=2352&amp;imageId=rg14_00802_0395_03&amp;indexOnly=false&amp;backurl=http%3a%2f%2fsearch.ancestry.com%2fcgi-bin%2fsse.dll%3findiv%3d1%26dbid%3d2352%26h%3d1903047%26ssrc%3dpt%26tid%3d86808578%26pid%3d46552199708%26usePUB%3dtrue%26_gl%3d1*vivebz*_ga*MTA5NTMwNjUwOS4xNTg3ODQ4ODc3*_ga_4QT8FMEX30*MTY1MTYwMzE2NS4zMi4xLjE2NTE2MDYzNzkuMA.." class="link icon iconWarning"><span>Report a problem</span></a>
 
-        let url = reportProblemNode.href;
+        let url = getAbsoluteLinkUrl(reportProblemNode, document, result);
 
         //console.log("extractImageThumb, reportProblemNode URL = ");
         //console.log(url);
@@ -1199,8 +1228,7 @@ function handlePersonSourceCitation(document, result) {
     if (factEdit) {
       let link = modalContents.querySelector("#viewRecordLink");
       if (link) {
-        let recordUrl = link.href;
-        recordUrl = cleanLinkUrl(recordUrl, result);
+        let recordUrl = getAbsoluteLinkUrl(link, document, result);
 
         // for the normal case this is all we need since we will extract the rest of the data
         // with a fetch using this. This gets us better data (mainly the link data)
@@ -1213,7 +1241,7 @@ function handlePersonSourceCitation(document, result) {
 
       let imageLink = modalContents.querySelector("#viewRecordImageLink");
       if (imageLink) {
-        let url = imageLink.href;
+        let url = getAbsoluteLinkUrl(imageLink, document, result);
 
         //console.log("handlePersonSourceCitation, url = " + url);
 
@@ -1224,8 +1252,6 @@ function handlePersonSourceCitation(document, result) {
           //    ?backurl=https://www.ancestry.com/family-tree/person/tree/86808578/person/46548439562/facts/citation/323635602069/edit/record"
           // clicking on this goes to:
           // https://www.ancestry.com/imageviewer/collections/2352/images/rg14_14817_0059_03?pId=55565824
-
-          url = cleanLinkUrl(url, result);
 
           let dbId = "";
           let recordId = "";
@@ -1590,10 +1616,8 @@ function handlePersonFactsPreJune2024(document, result) {
 
           if (titleElement && webLinkElement) {
             let title = titleElement.textContent;
-            let webLink = webLinkElement.href;
+            let webLink = getAbsoluteLinkUrl(webLinkElement, document, result);
             if (title && webLink) {
-              webLink = cleanLinkUrl(webLink, result);
-
               title = title.replace("&amp;", "&");
               title = title.trim();
 
@@ -1895,9 +1919,8 @@ function handlePersonFactsJune2024(document, result) {
 
             if (titleElement && webLinkElement) {
               let title = titleElement.textContent;
-              let webLink = webLinkElement.href;
+              let webLink = getAbsoluteLinkUrl(webLinkElement, document, result);
               if (title && webLink) {
-                webLink = cleanLinkUrl(webLink, result);
                 title = title.replace("&amp;", "&");
                 title = title.trim();
 

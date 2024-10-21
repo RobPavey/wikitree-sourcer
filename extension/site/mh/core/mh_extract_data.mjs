@@ -761,7 +761,7 @@ function extractData(document, url) {
                   let personLink = personContainer.querySelector("a.individualNameLink");
                   if (personLink) {
                     person.name = personLink.textContent.trim();
-                    person.link = personLink.href;
+                    person.link = personLink.getAttribute("href");
 
                     let nextElement = personLink.nextSibling;
                     if (nextElement && nextElement.classList.contains("immediateMemberDateRange")) {
@@ -821,7 +821,7 @@ function extractData(document, url) {
             if (personLink) {
               let value = personLink.textContent.trim();
               if (value) {
-                let link = personLink.href;
+                let link = personLink.getAttribute("href");
                 if (link) {
                   member.link = link;
                 }

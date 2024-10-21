@@ -113,7 +113,7 @@ function extractFromSearchResults(document, url, result) {
       let viewedImageLinkElement = rowCell.querySelector("a.view-image-button");
       //console.log(`extractFromSearchResults: viewedImageLinkElement = ${viewedImageLinkElement}`);
       if (viewedImageLinkElement) {
-        let linkText = viewedImageLinkElement.href;
+        let linkText = viewedImageLinkElement.getAttribute("href");
         result.imageLink = linkText;
       }
     }
