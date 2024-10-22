@@ -4,7 +4,7 @@
   "dbId": "70667",
   "recordId": "10426199",
   "ancestryTemplate": "{{Ancestry Record|70667|10426199}}",
-  "domain": "co.uk",
+  "domain": "ancestry.co.uk",
   "titleName": "Margaret Kearney",
   "titleCollection": "Web: Ireland, Census, 1901",
   "recordData": {
@@ -87,8 +87,6 @@
     ]
   },
   "imageUrl": "http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/",
-  "imageDbId": "http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/",
-  "imageRecordId": "http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/",
   "sourceCitation": "Class: RG14",
   "sourceInformation": "Ancestry.com. Web: Ireland, Census, 1901 [database on-line]. Provo, UT, USA: Ancestry.com Operations, Inc., 2013. Original data: Census of Ireland 1901/1911. The National Archives of Ireland. http://www.census.nationalarchives.ie/search/: accessed 31 May 2013.",
   "originalData": "Census of Ireland 1901/1911. The National Archives of Ireland. http://www.census.nationalarchives.ie/search/: accessed 31 May 2013.",

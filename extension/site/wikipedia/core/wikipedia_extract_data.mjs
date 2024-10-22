@@ -63,7 +63,8 @@ function extractData(document, url) {
 
   const permalinkElement = document.querySelector("#t-permalink > a");
   if (permalinkElement) {
-    let href = permalinkElement.getAttribute("href");
+    // Use href property rather than getAttribute("href") to ensure an absolute URL
+    let href = permalinkElement.href;
     if (href) {
       result.permalink = href.trim();
     }

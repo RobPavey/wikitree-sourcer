@@ -1,0 +1,104 @@
+{
+  "url": "https://www.ancestryheritagequest.com/discoveryui-content/view/15894073:7163?tid=&pid=&queryid=c33133ff-7d7c-4927-aa77-4322c00d7506&_phsrc=VAO12&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "7163",
+  "recordId": "15894073",
+  "ancestryTemplate": "{{Ancestry Record|7163|15894073}}",
+  "domain": "ancestryheritagequest.com",
+  "titleName": "Robt Pavey",
+  "titleCollection": "1870 United States Federal Census",
+  "recordData": {
+    "Name": "Robt Pavey",
+    "Age in 1870": "19",
+    "Birth Date": "abt 1851",
+    "Birthplace": "Canada",
+    "Dwelling Number": "205",
+    "Home in 1870": "Walnut, Bureau, Illinois",
+    "Race": "White",
+    "Gender": "Male",
+    "Post Office": "Walnut",
+    "Father of Foreign Birth": "Yes",
+    "Mother of Foreign Birth": "Yes",
+    "Inferred Father": "Eli Pavey",
+    "Inferred Mother": "Nanzy Pavey",
+    "Household Members (Name)<br/>Age": "Eli Pavey 56<br/>Nanzy Pavey 50<br/>Harriet Pavey 26<br/>Gilbert Pavey 21<br/>Robt Pavey 19<br/>Eli Pavey 17<br/>Lizzie Pavey 15<br/>Eddie Pavey 8<br/>Ella Pavey 4"
+  },
+  "linkData": {
+    "Inferred Father": "https://www.ancestryheritagequest.com/discoveryui-content/view/15894170:7163",
+    "Inferred Mother": "https://www.ancestryheritagequest.com/discoveryui-content/view/16534027:7163"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "Eli Pavey",
+        "dbId": "7163",
+        "recordId": "15894170",
+        "link": "https://www.ancestryheritagequest.com/discoveryui-content/view/15894170:7163",
+        "Age": "56"
+      },
+      {
+        "Household Members (Name)": "Nanzy Pavey",
+        "dbId": "7163",
+        "recordId": "16534027",
+        "link": "https://www.ancestryheritagequest.com/discoveryui-content/view/16534027:7163",
+        "Age": "50"
+      },
+      {
+        "Household Members (Name)": "Harriet Pavey",
+        "dbId": "7163",
+        "recordId": "16377995",
+        "link": "https://www.ancestryheritagequest.com/discoveryui-content/view/16377995:7163",
+        "Age": "26"
+      },
+      {
+        "Household Members (Name)": "Gilbert Pavey",
+        "dbId": "7163",
+        "recordId": "16533883",
+        "link": "https://www.ancestryheritagequest.com/discoveryui-content/view/16533883:7163",
+        "Age": "21"
+      },
+      {
+        "Household Members (Name)": "Robt Pavey",
+        "Age": "19"
+      },
+      {
+        "Household Members (Name)": "Eli Pavey",
+        "dbId": "7163",
+        "recordId": "15893906",
+        "link": "https://www.ancestryheritagequest.com/discoveryui-content/view/15893906:7163",
+        "Age": "17"
+      },
+      {
+        "Household Members (Name)": "Lizzie Pavey",
+        "dbId": "7163",
+        "recordId": "15884714",
+        "link": "https://www.ancestryheritagequest.com/discoveryui-content/view/15884714:7163",
+        "Age": "15"
+      },
+      {
+        "Household Members (Name)": "Eddie Pavey",
+        "dbId": "7163",
+        "recordId": "15884484",
+        "link": "https://www.ancestryheritagequest.com/discoveryui-content/view/15884484:7163",
+        "Age": "8"
+      },
+      {
+        "Household Members (Name)": "Ella Pavey",
+        "dbId": "7163",
+        "recordId": "15894099",
+        "link": "https://www.ancestryheritagequest.com/discoveryui-content/view/15894099:7163",
+        "Age": "4"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestryheritagequest.com/imageviewer/collections/7163/images/4263652_00750?pid=15894073&usePUB=true&_phsrc=VAO12&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "7163",
+  "imageRecordId": "4263652_00750",
+  "sourceCitation": "Year: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B",
+  "sourceInformation": "Ancestry.com. 1870 United States Federal Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2009. Images reproduced by FamilySearch. Original data: 1870 U.S. census, population schedules. NARA microfilm publication M593, 1,761 rolls. Washington, D.C.: National Archives and Records Administration, n.d.Minnesota census schedules for 1870. NARA microfilm publication T132, 13 rolls. Washington, D.C.: National Archives and Records Administration, n.d.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1870 United States Federal Census, the Ninth Census of the United States. Census takers recorded many details including each person's name, age at last birthday, sex, color; birthplace, occupation, and more. No relationships were shown between members of a household. Additionally, the names of those listed on the population schedule are linked to actual images of the 1870 Federal Census. Learn more..."
+}

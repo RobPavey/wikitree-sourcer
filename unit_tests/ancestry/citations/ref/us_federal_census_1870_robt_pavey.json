@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1870 census Robt (age 19) was in Walnut, Bureau, Illinois.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)<br/>\nRobt Pavey (19) in Walnut, Bureau, Illinois. Born in Canada.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1870 census Robt (age 19) was in Walnut, Bureau, Illinois.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)<br/>\nRobt Pavey (19) in Walnut, Bureau, Illinois. Born in Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)<br/>Robt Pavey (19) in Walnut, Bureau, Illinois. Born in Canada.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)<br/>\nName: Robt Pavey; Age in 1870: 19; Birth Date: abt 1851; Birthplace: Canada; Dwelling Number: 205; Home in 1870: Walnut, Bureau, Illinois; Race: White; Gender: Male; Post Office: Walnut; Father of Foreign Birth: Yes; Mother of Foreign Birth: Yes; Inferred Father: Eli Pavey; Inferred Mother: Nanzy Pavey; <br/>Household Members (Name) Age:<br/>Eli Pavey 56<br/>Nanzy Pavey 50<br/>Harriet Pavey 26<br/>Gilbert Pavey 21<br/>Robt Pavey 19<br/>Eli Pavey 17<br/>Lizzie Pavey 15<br/>Eddie Pavey 8<br/>Ella Pavey 4.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1870 census Robt (age 19) was in Walnut, Bureau, Illinois.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)<br/>\nName: Robt Pavey; Age in 1870: 19; Birth Date: abt 1851; Birthplace: Canada; Dwelling Number: 205; Home in 1870: Walnut, Bureau, Illinois; Race: White; Gender: Male; Post Office: Walnut; Father of Foreign Birth: Yes; Mother of Foreign Birth: Yes; Inferred Father: Eli Pavey; Inferred Mother: Nanzy Pavey; <br/>Household Members (Name) Age:<br/>Eli Pavey 56<br/>Nanzy Pavey 50<br/>Harriet Pavey 26<br/>Gilbert Pavey 21<br/>Robt Pavey 19<br/>Eli Pavey 17<br/>Lizzie Pavey 15<br/>Eddie Pavey 8<br/>Ella Pavey 4.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)<br/>Name: Robt Pavey; Age in 1870: 19; Birth Date: abt 1851; Birthplace: Canada; Dwelling Number: 205; Home in 1870: Walnut, Bureau, Illinois; Race: White; Gender: Male; Post Office: Walnut; Father of Foreign Birth: Yes; Mother of Foreign Birth: Yes; Inferred Father: Eli Pavey; Inferred Mother: Nanzy Pavey; <br/>Household Members (Name) Age:<br/>Eli Pavey 56<br/>Nanzy Pavey 50<br/>Harriet Pavey 26<br/>Gilbert Pavey 21<br/>Robt Pavey 19<br/>Eli Pavey 17<br/>Lizzie Pavey 15<br/>Eddie Pavey 8<br/>Ella Pavey 4.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Robt Pavey\n|-\n| Age in 1870 || 19\n|-\n| Birth Date || abt 1851\n|-\n| Birthplace || Canada\n|-\n| Dwelling Number || 205\n|-\n| Home in 1870 || Walnut, Bureau, Illinois\n|-\n| Race || White\n|-\n| Gender || Male\n|-\n| Post Office || Walnut\n|-\n| Father of Foreign Birth || Yes\n|-\n| Mother of Foreign Birth || Yes\n|-\n| Inferred Father || Eli Pavey\n|-\n| Inferred Mother || Nanzy Pavey\n|-\n| Household Members (Name)<br/>Age || Eli Pavey 56<br/>Nanzy Pavey 50<br/>Harriet Pavey 26<br/>Gilbert Pavey 21<br/>Robt Pavey 19<br/>Eli Pavey 17<br/>Lizzie Pavey 15<br/>Eddie Pavey 8<br/>Ella Pavey 4\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1870 census Robt (age 19) was in Walnut, Bureau, Illinois.<ref>\n'''1870 Census''':\n\"1870 United States Federal Census\"<br/>\nYear: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>\n{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Robt Pavey\n|-\n| Age in 1870 || 19\n|-\n| Birth Date || abt 1851\n|-\n| Birthplace || Canada\n|-\n| Dwelling Number || 205\n|-\n| Home in 1870 || Walnut, Bureau, Illinois\n|-\n| Race || White\n|-\n| Gender || Male\n|-\n| Post Office || Walnut\n|-\n| Father of Foreign Birth || Yes\n|-\n| Mother of Foreign Birth || Yes\n|-\n| Inferred Father || Eli Pavey\n|-\n| Inferred Mother || Nanzy Pavey\n|-\n| Household Members (Name)<br/>Age || Eli Pavey 56<br/>Nanzy Pavey 50<br/>Harriet Pavey 26<br/>Gilbert Pavey 21<br/>Robt Pavey 19<br/>Eli Pavey 17<br/>Lizzie Pavey 15<br/>Eddie Pavey 8<br/>Ella Pavey 4\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1870 Census''': \"1870 United States Federal Census\"<br/>Year: 1870; Census Place: Walnut, Bureau, Illinois; Roll: M593_190; Page: 530B<br/>{{Ancestry Record|7163|15894073}} (accessed 6 May 2021)<br/>Name: Robt Pavey; Age in 1870: 19; Birth Date: abt 1851; Birthplace: Canada; Dwelling Number: 205; Home in 1870: Walnut, Bureau, Illinois; Race: White; Gender: Male; Post Office: Walnut; Father of Foreign Birth: Yes; Mother of Foreign Birth: Yes; Inferred Father: Eli Pavey; Inferred Mother: Nanzy Pavey; <br/>Household Members (Name) Age:<br/>Eli Pavey 56<br/>Nanzy Pavey 50<br/>Harriet Pavey 26<br/>Gilbert Pavey 21<br/>Robt Pavey 19<br/>Eli Pavey 17<br/>Lizzie Pavey 15<br/>Eddie Pavey 8<br/>Ella Pavey 4.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1870 United States Federal Census,\" database, ({{Ancestry Record|7163|15894073}} : accessed 6 May 2021), Robt Pavey (19) in Walnut, Bureau, Illinois. Born in Canada; citing Year 1870, Census Place Walnut, Bureau, Illinois, Roll M593_190, Page 530B.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1870 census Robt (age 19) was in Walnut, Bureau, Illinois.<ref>\"1870 United States Federal Census,\" database, ({{Ancestry Record|7163|15894073}} : accessed 6 May 2021), Robt Pavey (19) in Walnut, Bureau, Illinois. Born in Canada; citing Year 1870, Census Place Walnut, Bureau, Illinois, Roll M593_190, Page 530B.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1870 United States Federal Census,\" database, ({{Ancestry Record|7163|15894073}} : accessed 6 May 2021), Robt Pavey (19) in Walnut, Bureau, Illinois. Born in Canada; citing Year 1870, Census Place Walnut, Bureau, Illinois, Roll M593_190, Page 530B.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1870 Census'':\n\"1870 United States Federal Census\", database, \nYear 1870, Census Place Walnut, Bureau, Illinois, Roll M593_190, Page 530B, \n({{Ancestry Record|7163|15894073}} : accessed 6 May 2021), \nName: Robt Pavey; Age in 1870: 19; Birth Date: abt 1851; Birthplace: Canada; Dwelling Number: 205; Home in 1870: Walnut, Bureau, Illinois; Race: White; Gender: Male; Post Office: Walnut; Father of Foreign Birth: Yes; Mother of Foreign Birth: Yes; Inferred Father: Eli Pavey; Inferred Mother: Nanzy Pavey; Household Members (Name) Age: Eli Pavey 56, Nanzy Pavey 50, Harriet Pavey 26, Gilbert Pavey 21, Robt Pavey 19, Eli Pavey 17, Lizzie Pavey 15, Eddie Pavey 8, Ella Pavey 4.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1870 census Robt (age 19) was in Walnut, Bureau, Illinois.<ref>\n''1870 Census'':\n\"1870 United States Federal Census\", database, \nYear 1870, Census Place Walnut, Bureau, Illinois, Roll M593_190, Page 530B, \n({{Ancestry Record|7163|15894073}} : accessed 6 May 2021), \nName: Robt Pavey; Age in 1870: 19; Birth Date: abt 1851; Birthplace: Canada; Dwelling Number: 205; Home in 1870: Walnut, Bureau, Illinois; Race: White; Gender: Male; Post Office: Walnut; Father of Foreign Birth: Yes; Mother of Foreign Birth: Yes; Inferred Father: Eli Pavey; Inferred Mother: Nanzy Pavey; Household Members (Name) Age: Eli Pavey 56, Nanzy Pavey 50, Harriet Pavey 26, Gilbert Pavey 21, Robt Pavey 19, Eli Pavey 17, Lizzie Pavey 15, Eddie Pavey 8, Ella Pavey 4.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1870 Census'': \"1870 United States Federal Census\", database, Year 1870, Census Place Walnut, Bureau, Illinois, Roll M593_190, Page 530B, ({{Ancestry Record|7163|15894073}} : accessed 6 May 2021), Name: Robt Pavey; Age in 1870: 19; Birth Date: abt 1851; Birthplace: Canada; Dwelling Number: 205; Home in 1870: Walnut, Bureau, Illinois; Race: White; Gender: Male; Post Office: Walnut; Father of Foreign Birth: Yes; Mother of Foreign Birth: Yes; Inferred Father: Eli Pavey; Inferred Mother: Nanzy Pavey; Household Members (Name) Age: Eli Pavey 56, Nanzy Pavey 50, Harriet Pavey 26, Gilbert Pavey 21, Robt Pavey 19, Eli Pavey 17, Lizzie Pavey 15, Eddie Pavey 8, Ella Pavey 4.",
+    "type": "source"
+  }
+}

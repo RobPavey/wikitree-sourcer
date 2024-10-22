@@ -919,6 +919,11 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/10410782:7163?tid=&pid=&queryId=5cd807e56b157c5368ce218360c2c866&_phsrc=Vww4236&_phstart=successSource",
   },
   {
+    // Saved from HeritageQuest after the Oct 2024 change to have relative links
+    caseName: "us_federal_census_1870_robt_pavey",
+    url: "https://www.ancestryheritagequest.com/discoveryui-content/view/15894073:7163?tid=&pid=&queryid=c33133ff-7d7c-4927-aa77-4322c00d7506&_phsrc=VAO12&_phstart=successSource",
+  },
+  {
     caseName: "us_federal_census_1880_isabelle_potter",
     url: "https://www.ancestry.com/discoveryui-content/view/10577665:6742",
   },

@@ -28,10 +28,12 @@ import {
   addBackMenuItem,
   addMenuItem,
   addMenuItemWithSubtitle,
+  addItalicMessageMenuItem,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
+import { isSafariOnIos } from "/base/browser/common/browser_check.mjs";
 
 import {
   doSearch,
@@ -310,6 +312,9 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
       // no spouse, we have to search with surname of this person
       // So, if this is a woman, we cannot search for births with any registered father because
       // the surname in search cannot be left blank
+      if (gd.personGender == "female") {
+        parameters.mmn = "-";
+      }
     }
   } else if (typeOfSearch == "deaths") {
     parameters.type = "deaths";
@@ -460,7 +465,7 @@ function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
     }
     subtitle += "\nPossible child birth years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
   } else {
-    let gender = data.extractedData.personGender;
+    let gender = data.generalizedData.personGender;
 
     if (gender == "female") {
       menuItemText = "Do smart search for children with no registered father";
@@ -560,7 +565,9 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
   addGroSearchBirthsMenuItem(menu, data, filter);
   addGroSearchDeathsMenuItem(menu, data, filter);
 
-  if (options.search_gro_enableSmartSearch) {
+  let isIos = isSafariOnIos();
+
+  if (options.search_gro_enableSmartSearch && !isIos) {
     if (data.generalizedData.spouses) {
       for (let spouse of data.generalizedData.spouses) {
         addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse);
@@ -568,6 +575,7 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
     }
     addGroSmartSearchChildBirthsMenuItem(menu, data, filter);
     addGroSmartSearchDeathsMenuItem(menu, data, filter);
+    addItalicMessageMenuItem(menu, "To search for births of siblings, do the search from a parent.");
   }
 
   endMainMenu(menu);

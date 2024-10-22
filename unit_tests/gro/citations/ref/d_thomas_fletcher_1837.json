@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&Year=1837&Range=0&Surname=FLETCHER&Age=2&AgeRange=0&Forename1=THOMAS&Gender=M&Quarter=S&District=OF%20THE%20NEWPORT%20UNION%20IN%20THE%20COUNTIES%20OF%20SALOP%20AND&Volume=18&Page=91 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nFletcher, Thomas (Age at death: 2).<br/>\n''GRO Reference:'' 1837 Jul-Aug-Sep in [https://www.ukbmd.org.uk/reg/districts/newport1.html Of the Newport Union in the Counties of Salop And] Volume 18 Page 91.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Thomas's death (age 2) was registered in the Jul-Aug-Sep quarter of 1837 in the The Newport Union in the Counties of Salop And district.<ref>\n'''Death Registration''':\n\"England & Wales General Register Office\"<br/>\n[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&Year=1837&Range=0&Surname=FLETCHER&Age=2&AgeRange=0&Forename1=THOMAS&Gender=M&Quarter=S&District=OF%20THE%20NEWPORT%20UNION%20IN%20THE%20COUNTIES%20OF%20SALOP%20AND&Volume=18&Page=91 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>\nFletcher, Thomas (Age at death: 2).<br/>\n''GRO Reference:'' 1837 Jul-Aug-Sep in [https://www.ukbmd.org.uk/reg/districts/newport1.html Of the Newport Union in the Counties of Salop And] Volume 18 Page 91.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales General Register Office\"<br/>[https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp?index=EW_Death&Year=1837&Range=0&Surname=FLETCHER&Age=2&AgeRange=0&Forename1=THOMAS&Gender=M&Quarter=S&District=OF%20THE%20NEWPORT%20UNION%20IN%20THE%20COUNTIES%20OF%20SALOP%20AND&Volume=18&Page=91 GRO Online Indexes - Death] (accessed 6 May 2021)<br/>Fletcher, Thomas (Age at death: 2).<br/>''GRO Reference:'' 1837 Jul-Aug-Sep in [https://www.ukbmd.org.uk/reg/districts/newport1.html Of the Newport Union in the Counties of Salop And] Volume 18 Page 91.",
+    "type": "source"
+  }
+}

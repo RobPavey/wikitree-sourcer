@@ -21,6 +21,9 @@
   "wtSearchTemplates": [
     "{{Ancestry Record|60525|106712744}}"
   ],
+  "wtSearchTemplatesRelated": [
+    "{{FindAGrave|129805818}}"
+  ],
   "collectionData": {
     "id": "60525",
     "collectionTitle": "U.S., Find a Grave Index, 1600s-Current"

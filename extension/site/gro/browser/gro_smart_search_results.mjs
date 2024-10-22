@@ -282,6 +282,7 @@ function fillTable(extractedDataObjs) {
       if (linkText) {
         let linkElement = document.createElement("a");
         linkElement.setAttribute("href", linkText);
+        linkElement.setAttribute("target", "_blank"); // opens in new tab
         linkElement.innerHTML = value;
         tdElement.appendChild(linkElement);
       } else {
@@ -481,6 +482,62 @@ function addResult(searchResult) {
   searchResults.push(searchResult);
 }
 
+function doesExtractedDataMatchParameters(ed, searchParameters) {
+  if (searchParameters.type == "births") {
+    let lcMmn = searchParameters.mmn;
+    if (lcMmn) {
+      lcMmn = lcMmn.toLowerCase().trim();
+    }
+    let mmnMatches = searchParameters.mmnMatches;
+    if (lcMmn && (ed.eventYear > 1923 || mmnMatches == "0")) {
+      let lcRowMmn = ed.mothersMaidenName;
+      if (lcRowMmn) {
+        lcRowMmn = lcRowMmn.toLowerCase().trim();
+      }
+      if (lcMmn != lcRowMmn) {
+        return false;
+      }
+    }
+  } else {
+    let year = ed.eventYear;
+    let age = ed.ageAtDeath;
+    let birthYear = ed.birthYear;
+    if (!birthYear) {
+      if (age !== undefined) {
+        birthYear = year - age;
+        ed.birthYear = birthYear;
+        ed.birthYearImplied = true;
+      }
+    } else if (age === undefined) {
+      age = year - birthYear;
+      ed.ageAtDeath = age;
+      ed.ageAtDeathImplied = true;
+    }
+
+    //console.log("filtering element, birthYear = " + birthYear + ", age = " + age);
+
+    if (birthYear) {
+      let startBirthYear = searchParameters.startBirthYear;
+      let endBirthYear = searchParameters.endBirthYear;
+      if (ed.birthYearImplied) {
+        // we computed the birth year from the age, this can be off by one
+        // for example if a person died in 1850 age 0 the birth year can be
+        // 1850 or 1849 but we set the implied value to 1850. So if they user has set
+        // endBirthYear to 1849 it will miss it. So include an extra year.
+        if (endBirthYear) {
+          endBirthYear += 1;
+        }
+      }
+      if ((startBirthYear && birthYear < startBirthYear) || (endBirthYear && birthYear > endBirthYear)) {
+        //console.log("removing element with birthYear of: " + birthYear);
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
 function sortPruneAndShowResults(searchParameters) {
   //console.log("Populated searchResults, searchResults.length = ", searchResults.length);
 
@@ -549,4 +606,12 @@ function clearResults() {
   searchResults = [];
 }
 
-export { clearResults, addResult, sortPruneAndShowResults, clearResultsTable, initFilters, clearFilters };
+export {
+  clearResults,
+  addResult,
+  doesExtractedDataMatchParameters,
+  sortPruneAndShowResults,
+  clearResultsTable,
+  initFilters,
+  clearFilters,
+};

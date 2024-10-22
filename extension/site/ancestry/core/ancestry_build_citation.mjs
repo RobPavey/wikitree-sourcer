@@ -534,13 +534,19 @@ function buildAncestryRecordTemplate(ed, options) {
 
   let domainParam = undefined;
 
+  const topLevelDomainFromDomainRegex = /^ancestry[^\.]*\.(.+)$/;
   if (options.citation_ancestry_recordTemplateDomain == "fromRecord") {
-    domainParam = domainParams[ed.domain];
+    if (ed.domain && topLevelDomainFromDomainRegex.test(ed.domain)) {
+      let topLevelDomain = ed.domain.replace(topLevelDomainFromDomainRegex, "$1");
+      domainParam = domainParams[topLevelDomain];
+    }
   } else {
     let fullDomain = options.citation_ancestry_recordTemplateDomain;
-    let domain = fullDomain.replace(/ancestry.(.+)$/, "$1");
-    if (domain && domain != fullDomain) {
-      domainParam = domainParams[domain];
+    if (fullDomain && topLevelDomainFromDomainRegex.test(fullDomain)) {
+      let topLevelDomain = fullDomain.replace(topLevelDomainFromDomainRegex, "$1");
+      if (topLevelDomain && topLevelDomain != fullDomain) {
+        domainParam = domainParams[topLevelDomain];
+      }
     }
   }
 
