@@ -25,15 +25,24 @@ SOFTWARE.
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
 function buildAmerancUrl(ed, builder) {
+  if (ed.citationParts && ed.citationParts.length > 0) {
+    let citationUrl = ed.citationParts[ed.citationParts.length - 1];
+    if (citationUrl.startsWith("http")) {
+      return citationUrl;
+    }
+  }
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle += ed.title;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.addSourceReferenceField("Volume", ed.volumeName);
+  if (ed.recordData) {
+    builder.addSourceReferenceField("Page", ed.recordData["Page"]);
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {

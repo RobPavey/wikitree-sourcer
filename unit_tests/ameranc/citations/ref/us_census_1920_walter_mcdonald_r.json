@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1920 Census''':\n\"United States 1920 Federal Census\"<br/>\nVolume: NARA Roll 1693 (S.C., V.12); Page: 395<br/>\n[https://www.americanancestors.org/DB1707/rd/44353/395/1258574809 American Ancestors Record] (accessed 6 May 2021)<br/>\nWalter McDonald (8), single son, in Manning, Dillon, South Carolina, United States. Born in South Carolina.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1920 census Walter (age 8) was a son in Manning, Dillon, South Carolina, United States.<ref>\n'''1920 Census''':\n\"United States 1920 Federal Census\"<br/>\nVolume: NARA Roll 1693 (S.C., V.12); Page: 395<br/>\n[https://www.americanancestors.org/DB1707/rd/44353/395/1258574809 American Ancestors Record] (accessed 6 May 2021)<br/>\nWalter McDonald (8), single son, in Manning, Dillon, South Carolina, United States. Born in South Carolina.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1920 Census''': \"United States 1920 Federal Census\"<br/>Volume: NARA Roll 1693 (S.C., V.12); Page: 395<br/>[https://www.americanancestors.org/DB1707/rd/44353/395/1258574809 American Ancestors Record] (accessed 6 May 2021)<br/>Walter McDonald (8), single son, in Manning, Dillon, South Carolina, United States. Born in South Carolina.",
+    "type": "source"
+  }
+}

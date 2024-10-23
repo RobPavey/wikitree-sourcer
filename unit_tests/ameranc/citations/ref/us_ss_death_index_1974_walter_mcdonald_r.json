@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Walter McDonald''':\n\"United States: Social Security Death Index, 1935-2012\"<br/>\nPage: 71473476<br/>\n[https://www.americanancestors.org/DB269/rd/219059715 American Ancestors Record] (accessed 6 May 2021)<br/>\nWalter McDonald in United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Walter was in a record in United States.<ref>\n'''Record of Walter McDonald''':\n\"United States: Social Security Death Index, 1935-2012\"<br/>\nPage: 71473476<br/>\n[https://www.americanancestors.org/DB269/rd/219059715 American Ancestors Record] (accessed 6 May 2021)<br/>\nWalter McDonald in United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Walter McDonald''': \"United States: Social Security Death Index, 1935-2012\"<br/>Page: 71473476<br/>[https://www.americanancestors.org/DB269/rd/219059715 American Ancestors Record] (accessed 6 May 2021)<br/>Walter McDonald in United States.",
+    "type": "source"
+  }
+}

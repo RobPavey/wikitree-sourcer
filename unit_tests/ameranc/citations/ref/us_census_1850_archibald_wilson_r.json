@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1850 Census''':\n\"United States 1850 Federal Census\"<br/>\nVolume: NARA Roll 124 (Ill., V.28); Page: 78<br/>\n[https://www.americanancestors.org/DB1665/rd/39349/78/1017367707 American Ancestors Record] (accessed 6 May 2021)<br/>\nArchibald Wilson (10) in Perry county, Perry, Illinois, United States. Born in Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1850 census Archibald (age 10) was in Perry county, Perry, Illinois, United States.<ref>\n'''1850 Census''':\n\"United States 1850 Federal Census\"<br/>\nVolume: NARA Roll 124 (Ill., V.28); Page: 78<br/>\n[https://www.americanancestors.org/DB1665/rd/39349/78/1017367707 American Ancestors Record] (accessed 6 May 2021)<br/>\nArchibald Wilson (10) in Perry county, Perry, Illinois, United States. Born in Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1850 Census''': \"United States 1850 Federal Census\"<br/>Volume: NARA Roll 124 (Ill., V.28); Page: 78<br/>[https://www.americanancestors.org/DB1665/rd/39349/78/1017367707 American Ancestors Record] (accessed 6 May 2021)<br/>Archibald Wilson (10) in Perry county, Perry, Illinois, United States. Born in Scotland.",
+    "type": "source"
+  }
+}

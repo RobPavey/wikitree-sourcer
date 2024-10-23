@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Coburn",
+    "forenames": "Smith"
+  },
+  "eventPlace": {
+    "placeString": "Massachusetts, United States"
+  },
+  "hasValidData": true
+}

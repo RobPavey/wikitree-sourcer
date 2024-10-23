@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Samuel Baker''':\n\"Massachusetts: Vital Records, 1620-1850\"<br/>\nVolume: Rehoboth - V1; Page: 925<br/>\n[https://www.americanancestors.org/DB190/rd/14010/925/253509394 American Ancestors Record] (accessed 6 May 2021)<br/>\nSamuel Baker in Rehoboth, Bristol, Massachusetts, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Samuel was in a record in Rehoboth, Bristol, Massachusetts, United States.<ref>\n'''Record of Samuel Baker''':\n\"Massachusetts: Vital Records, 1620-1850\"<br/>\nVolume: Rehoboth - V1; Page: 925<br/>\n[https://www.americanancestors.org/DB190/rd/14010/925/253509394 American Ancestors Record] (accessed 6 May 2021)<br/>\nSamuel Baker in Rehoboth, Bristol, Massachusetts, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Samuel Baker''': \"Massachusetts: Vital Records, 1620-1850\"<br/>Volume: Rehoboth - V1; Page: 925<br/>[https://www.americanancestors.org/DB190/rd/14010/925/253509394 American Ancestors Record] (accessed 6 May 2021)<br/>Samuel Baker in Rehoboth, Bristol, Massachusetts, United States.",
+    "type": "source"
+  }
+}

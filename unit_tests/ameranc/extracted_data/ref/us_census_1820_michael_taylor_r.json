@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "url": "https://www.americanancestors.org/databases/united-states-1820-census/RecordDisplay?volumeId=22356&pageName=337&rId=441427764",
+  "pageType": "record",
+  "title": "United States 1820 Census",
+  "volumeId": "22356",
+  "volumeName": "NARA Roll 1 (Conn., V.1)",
+  "page": "337",
+  "pageCount": "479",
+  "recordData": {
+    "Name": "Michael TAYLOR",
+    "Census": "1820",
+    "Location": "New Milford, Litchfield, Connecticut, United States",
+    "Image": "00269",
+    "Series": "M33",
+    "Origin": "1",
+    "Film No.": "0281234",
+    "Volume Name": "NARA Roll 1 (Conn., V.1)",
+    "Page": "337"
+  },
+  "citationParts": [
+    "United States 1820 Census. Online database. AmericanAncestors.org. New England Historic Genealogical Society, 2015. (Original index:  United States Census, 1820. FamilySearch, 2015.)",
+    "https://www.americanancestors.org/DB1561/rd/22356/337/441427764"
+  ],
+  "hasImage": true
+}

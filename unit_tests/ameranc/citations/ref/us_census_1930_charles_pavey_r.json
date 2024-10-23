@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1930 Census''':\n\"United States 1930 Federal Census\"<br/>\nVolume: NARA Roll 1590 (N.Y., V.190); Page: 319<br/>\n[https://www.americanancestors.org/DB1668/rd/42296/319/1192327076 American Ancestors Record] (accessed 6 May 2021)<br/>\nCharles Pavey (39), divorced lodger, in Queens, New York, United States. Born in England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1930 census Charles (age 39) was a divorced lodger in Queens, New York, United States.<ref>\n'''1930 Census''':\n\"United States 1930 Federal Census\"<br/>\nVolume: NARA Roll 1590 (N.Y., V.190); Page: 319<br/>\n[https://www.americanancestors.org/DB1668/rd/42296/319/1192327076 American Ancestors Record] (accessed 6 May 2021)<br/>\nCharles Pavey (39), divorced lodger, in Queens, New York, United States. Born in England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1930 Census''': \"United States 1930 Federal Census\"<br/>Volume: NARA Roll 1590 (N.Y., V.190); Page: 319<br/>[https://www.americanancestors.org/DB1668/rd/42296/319/1192327076 American Ancestors Record] (accessed 6 May 2021)<br/>Charles Pavey (39), divorced lodger, in Queens, New York, United States. Born in England.",
+    "type": "source"
+  }
+}

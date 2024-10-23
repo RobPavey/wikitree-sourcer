@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1900 Census''':\n\"United States 1900 Census\"<br/>\nVolume: NARA Roll 753 (Mich., V.56); Page: 751<br/>\n[https://www.americanancestors.org/DB1648/rd/31750/751/781933320 American Ancestors Record] (accessed 6 May 2021)<br/>\nJames Gardiner (38), married head of household in Detroit city Ward 17, Wayne, Michigan, United States. Born in Canada.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1900 census James (age 38) was the married head of household in Detroit city Ward 17, Wayne, Michigan, United States.<ref>\n'''1900 Census''':\n\"United States 1900 Census\"<br/>\nVolume: NARA Roll 753 (Mich., V.56); Page: 751<br/>\n[https://www.americanancestors.org/DB1648/rd/31750/751/781933320 American Ancestors Record] (accessed 6 May 2021)<br/>\nJames Gardiner (38), married head of household in Detroit city Ward 17, Wayne, Michigan, United States. Born in Canada.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1900 Census''': \"United States 1900 Census\"<br/>Volume: NARA Roll 753 (Mich., V.56); Page: 751<br/>[https://www.americanancestors.org/DB1648/rd/31750/751/781933320 American Ancestors Record] (accessed 6 May 2021)<br/>James Gardiner (38), married head of household in Detroit city Ward 17, Wayne, Michigan, United States. Born in Canada.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Terrance Wayne Jones''':\n\"California: Birth Index, 1905-1995\"<br/>\nPage: 11585079<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones in San Diego, San Diego, California, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Terrance was in a record in San Diego, San Diego, California, United States.<ref>\n'''Record of Terrance Wayne Jones''':\n\"California: Birth Index, 1905-1995\"<br/>\nPage: 11585079<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones in San Diego, San Diego, California, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Terrance Wayne Jones''': \"California: Birth Index, 1905-1995\"<br/>Page: 11585079<br/>[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>Terrance Wayne Jones in San Diego, San Diego, California, United States.",
+    "type": "source"
+  }
+}

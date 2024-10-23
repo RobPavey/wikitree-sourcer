@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1870 Census''':\n\"United States 1870 Census\"<br/>\nVolume: NARA Roll 219 (Ill., V.34); Page: 22<br/>\n[https://www.americanancestors.org/DB1588/rd/27637/22/555183710 American Ancestors Record] (accessed 6 May 2021)<br/>\nDavid Smith (6) in Illinois, United States. Born in Illinois, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1870 census David (age 6) was in Illinois, United States.<ref>\n'''1870 Census''':\n\"United States 1870 Census\"<br/>\nVolume: NARA Roll 219 (Ill., V.34); Page: 22<br/>\n[https://www.americanancestors.org/DB1588/rd/27637/22/555183710 American Ancestors Record] (accessed 6 May 2021)<br/>\nDavid Smith (6) in Illinois, United States. Born in Illinois, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1870 Census''': \"United States 1870 Census\"<br/>Volume: NARA Roll 219 (Ill., V.34); Page: 22<br/>[https://www.americanancestors.org/DB1588/rd/27637/22/555183710 American Ancestors Record] (accessed 6 May 2021)<br/>David Smith (6) in Illinois, United States. Born in Illinois, United States.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "url": "https://www.americanancestors.org/databases/massachusetts-vital-records-1620-1850/RecordDisplay?volumeId=14010&pageName=925&rId=253509394",
+  "pageType": "record",
+  "title": "Massachusetts: Vital Records, 1620-1850",
+  "volumeId": "14010",
+  "volumeName": "Rehoboth - V1",
+  "page": "925",
+  "pageCount": "957",
+  "recordData": {
+    "Name": "Samuel BAKER",
+    "Record": "1620 - 1850",
+    "Location": "Rehoboth, Bristol, Massachusetts, United States",
+    "Original Text": "Men from Rehoboth in the Continental Army at various periods of the war. Under Captain Martin, 3 years.",
+    "Town Info": "Rehoboth",
+    "Volume Name": "Rehoboth - V1",
+    "Page": "925"
+  },
+  "citationParts": [
+    "Massachusetts: Vital Records, 1620-1850 (Online Database: AmericanAncestors.org, New England Historic Genealogical Society, 2001-2016).",
+    "https://www.americanancestors.org/DB190/rd/14010/925/253509394"
+  ],
+  "hasImage": true
+}

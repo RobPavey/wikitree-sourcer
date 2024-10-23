@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "url": "https://www.americanancestors.org/databases/united-states-1830-census/RecordDisplay?volumeId=21640&pageName=28&rId=434925549",
+  "pageType": "record",
+  "title": "United States 1830 Census",
+  "volumeId": "21640",
+  "volumeName": "NARA Roll 43 (La., V.1)",
+  "page": "28",
+  "pageCount": "339",
+  "recordData": {
+    "Name": "Jean MCHENRY",
+    "Census": "1830",
+    "Location": "Not Stated, Ascension, Louisiana, United States",
+    "Image": "00059",
+    "Series": "M19",
+    "Origin": "43",
+    "Film No.": "0009686",
+    "Volume Name": "NARA Roll 43 (La., V.1)",
+    "Page": "28"
+  },
+  "citationParts": [
+    "United States 1830 Census. Online database. AmericanAncestors.org. New England Historic Genealogical Society, 2015. (Original index:  United States Census, 1830. FamilySearch, 2015.)",
+    "https://www.americanancestors.org/DB1562/rd/21640/28/434925549"
+  ],
+  "hasImage": true
+}

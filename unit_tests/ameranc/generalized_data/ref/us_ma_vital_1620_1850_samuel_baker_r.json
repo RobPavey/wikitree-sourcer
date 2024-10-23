@@ -1,0 +1,13 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "Baker",
+    "forenames": "Samuel"
+  },
+  "eventPlace": {
+    "placeString": "Rehoboth, Bristol, Massachusetts, United States"
+  },
+  "hasValidData": true
+}

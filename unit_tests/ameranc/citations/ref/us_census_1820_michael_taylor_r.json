@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1820 Census''':\n\"United States 1820 Census\"<br/>\nVolume: NARA Roll 1 (Conn., V.1); Page: 337<br/>\n[https://www.americanancestors.org/DB1561/rd/22356/337/441427764 American Ancestors Record] (accessed 6 May 2021)<br/>\nMichael Taylor in New Milford, Litchfield, Connecticut, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1820 census Michael was in New Milford, Litchfield, Connecticut, United States.<ref>\n'''1820 Census''':\n\"United States 1820 Census\"<br/>\nVolume: NARA Roll 1 (Conn., V.1); Page: 337<br/>\n[https://www.americanancestors.org/DB1561/rd/22356/337/441427764 American Ancestors Record] (accessed 6 May 2021)<br/>\nMichael Taylor in New Milford, Litchfield, Connecticut, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1820 Census''': \"United States 1820 Census\"<br/>Volume: NARA Roll 1 (Conn., V.1); Page: 337<br/>[https://www.americanancestors.org/DB1561/rd/22356/337/441427764 American Ancestors Record] (accessed 6 May 2021)<br/>Michael Taylor in New Milford, Litchfield, Connecticut, United States.",
+    "type": "source"
+  }
+}

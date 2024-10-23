@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1830 Census''':\n\"United States 1830 Census\"<br/>\nVolume: NARA Roll 43 (La., V.1); Page: 28<br/>\n[https://www.americanancestors.org/DB1562/rd/21640/28/434925549 American Ancestors Record] (accessed 6 May 2021)<br/>\nJean McHenry in Ascension, Louisiana, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1830 census Jean was in Ascension, Louisiana, United States.<ref>\n'''1830 Census''':\n\"United States 1830 Census\"<br/>\nVolume: NARA Roll 43 (La., V.1); Page: 28<br/>\n[https://www.americanancestors.org/DB1562/rd/21640/28/434925549 American Ancestors Record] (accessed 6 May 2021)<br/>\nJean McHenry in Ascension, Louisiana, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1830 Census''': \"United States 1830 Census\"<br/>Volume: NARA Roll 43 (La., V.1); Page: 28<br/>[https://www.americanancestors.org/DB1562/rd/21640/28/434925549 American Ancestors Record] (accessed 6 May 2021)<br/>Jean McHenry in Ascension, Louisiana, United States.",
+    "type": "source"
+  }
+}

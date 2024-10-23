@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "url": "https://www.americanancestors.org/databases/united-states-1900-census/RecordDisplay?volumeId=31750&pageName=751&rId=781933320",
+  "pageType": "record",
+  "title": "United States 1900 Census",
+  "volumeId": "31750",
+  "volumeName": "NARA Roll 753 (Mich., V.56)",
+  "page": "751",
+  "pageCount": "834",
+  "recordData": {
+    "Name": "James GARDINER",
+    "Census": "1900",
+    "Location": "Detroit city Ward 17, Wayne, Michigan, United States",
+    "Age": "38",
+    "Birth Place": "Canada",
+    "Date of Birth": "Jul 1862",
+    "Enumeration District": "175",
+    "Father's Birth Place": "Canada",
+    "Film No.": "1240753",
+    "Gender": "Male",
+    "House Hold": "147",
+    "Line Number": "4",
+    "Marital Status": "Married",
+    "Mother's Birth Place": "Canada",
+    "Number": "00751",
+    "Origin": "T623",
+    "OriginalPage": "9A",
+    "Race": "White",
+    "Relationship": "Head",
+    "Volume Name": "NARA Roll 753 (Mich., V.56)",
+    "Page": "751"
+  },
+  "citationParts": [
+    "United States 1900 Census. Online database. AmericanAncestors.org. New England Historic Genealogical Society, 2015. (Original index:  United States Census, 1900. FamilySearch, 2014.)",
+    "https://www.americanancestors.org/DB1648/rd/31750/751/781933320"
+  ],
+  "hasImage": true
+}

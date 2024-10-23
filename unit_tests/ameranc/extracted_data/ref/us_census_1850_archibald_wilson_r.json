@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "url": "https://www.americanancestors.org/databases/united-states-1850-federal-census/RecordDisplay?volumeId=39349&pageName=78&rId=1017367707",
+  "pageType": "record",
+  "title": "United States 1850 Federal Census",
+  "volumeId": "39349",
+  "volumeName": "NARA Roll 124 (Ill., V.28)",
+  "page": "78",
+  "pageCount": "627",
+  "recordData": {
+    "Name": "Archibald WILSON",
+    "Census": "1850",
+    "Location": "Perry county, Perry, Illinois, United States",
+    "Age": "10",
+    "Date of Birth": "1840",
+    "House Hold": "570",
+    "Gender": "Male",
+    "Race": "White",
+    "Series": "M432",
+    "Origin": "124",
+    "Birth Place": "Scotland",
+    "Line Number": "32",
+    "House Number": "568",
+    "Film No.": "442912",
+    "Volume Name": "NARA Roll 124 (Ill., V.28)",
+    "Page": "78"
+  },
+  "citationParts": [
+    "United States 1850 Census. Online database. AmericanAncestors.org. New England Historic Genealogical Society, 2014. (Original index:  United States Census, 1850. FamilySearch, 2014.)",
+    "https://www.americanancestors.org/DB1665/rd/39349/78/1017367707"
+  ],
+  "hasImage": true
+}

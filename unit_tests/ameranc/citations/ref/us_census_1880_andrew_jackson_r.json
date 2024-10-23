@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1880 Census''':\n\"United States 1880 Census\"<br/>\nVolume: NARA Roll 1392 (Va., V.42); Page: 19<br/>\n[https://www.americanancestors.org/DB1589/rd/29614/19/651601642 American Ancestors Record] (accessed 6 May 2021)<br/>\nAndrew Jackson (23), single other, in Blackwater, Surry, Virginia, United States. Born in Virginia, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1880 census Andrew (age 23) was recorded as single in Blackwater, Surry, Virginia, United States.<ref>\n'''1880 Census''':\n\"United States 1880 Census\"<br/>\nVolume: NARA Roll 1392 (Va., V.42); Page: 19<br/>\n[https://www.americanancestors.org/DB1589/rd/29614/19/651601642 American Ancestors Record] (accessed 6 May 2021)<br/>\nAndrew Jackson (23), single other, in Blackwater, Surry, Virginia, United States. Born in Virginia, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1880 Census''': \"United States 1880 Census\"<br/>Volume: NARA Roll 1392 (Va., V.42); Page: 19<br/>[https://www.americanancestors.org/DB1589/rd/29614/19/651601642 American Ancestors Record] (accessed 6 May 2021)<br/>Andrew Jackson (23), single other, in Blackwater, Surry, Virginia, United States. Born in Virginia, United States.",
+    "type": "source"
+  }
+}

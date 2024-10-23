@@ -25,10 +25,32 @@ SOFTWARE.
 function extractData(document, url) {
   var result = {};
 
+  result.success = false;
+
   if (url) {
     result.url = url;
+
+    let urlObj = new URL(url);
+    if (urlObj) {
+      let pathname = urlObj.pathname;
+      if (pathname && pathname.startsWith("/")) {
+        let pathParts = pathname.split("/");
+        let lastPart = pathParts[pathParts.length - 1];
+        lastPart = lastPart.trim().toLowerCase();
+        if (lastPart == "recorddisplay") {
+          result.pageType = "record";
+        } else if (lastPart == "transcript") {
+          result.pageType = "transcript";
+        } else if (lastPart == "image") {
+          result.pageType = "image";
+        }
+      }
+    }
   }
-  result.success = false;
+
+  if (!result.pageType) {
+    return result;
+  }
 
   let titleElement = document.querySelector("div.header-results h3");
   if (titleElement) {
@@ -49,11 +71,17 @@ function extractData(document, url) {
 
   let pagesElement = document.getElementById("pages");
   if (pagesElement) {
-    result.page = pagesElement.textContent.trim();
+    let pageNumber = pagesElement.textContent.trim();
+    if (!pageNumber) {
+      pageNumber = pagesElement.value;
+    }
+    if (pageNumber) {
+      result.page = pageNumber.trim();
+    }
 
     let pagesListItem = pagesElement.closest("li");
     if (pagesListItem) {
-      let pageCountElement = pagesListItem.nextSiblingElement;
+      let pageCountElement = pagesListItem.nextElementSibling;
       if (pageCountElement) {
         let pageCount = pageCountElement.textContent.trim();
         pageCount = pageCount.replace(/^of /, "");
@@ -87,28 +115,32 @@ function extractData(document, url) {
   } else {
     // different table - possibly only when you don't have a paid sub
     recordDataTable = document.getElementById("recordtable");
-    let actualTable = recordDataTable.querySelector("tr > td > table.db-table");
-    if (actualTable) {
-      let tableRows = actualTable.querySelectorAll("tbody > tr");
+    if (recordDataTable) {
+      let actualTable = recordDataTable.querySelector("tr > td > table.db-table");
+      if (actualTable) {
+        let tableRows = actualTable.querySelectorAll("tbody > tr");
 
-      if (tableRows.length > 0) {
-        result.recordData = {};
+        if (tableRows.length > 0) {
+          result.recordData = {};
 
-        for (let row of tableRows) {
-          let tableDataElements = row.querySelectorAll("td");
-          if (tableDataElements.length == 2) {
-            let labelElement = tableDataElements[0];
-            let valueElement = tableDataElements[1];
+          for (let row of tableRows) {
+            let tableDataElements = row.querySelectorAll("td");
+            if (tableDataElements.length == 2) {
+              let labelElement = tableDataElements[0];
+              let valueElement = tableDataElements[1];
 
-            let label = labelElement.textContent.trim();
-            let value = valueElement.textContent.trim();
+              let label = labelElement.textContent.trim();
+              let value = valueElement.textContent.trim();
 
-            if (label && value) {
-              result.recordData[label] = value;
+              if (label && value) {
+                result.recordData[label] = value;
+              }
             }
           }
         }
       }
+    } else {
+      // no transcription
     }
   }
 

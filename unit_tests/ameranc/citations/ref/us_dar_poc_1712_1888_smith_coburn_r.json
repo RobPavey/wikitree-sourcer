@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of Smith Coburn''':\n\"Daughters of the American Revolution: Patriots of Color, 1712 - 1888\"<br/>\nPage: 327<br/>\n[https://www.americanancestors.org/DB3843/rd/10010522530 American Ancestors Record] (accessed 6 May 2021)<br/>\nSmith Coburn in Massachusetts, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Smith was in a record in Massachusetts, United States.<ref>\n'''Record of Smith Coburn''':\n\"Daughters of the American Revolution: Patriots of Color, 1712 - 1888\"<br/>\nPage: 327<br/>\n[https://www.americanancestors.org/DB3843/rd/10010522530 American Ancestors Record] (accessed 6 May 2021)<br/>\nSmith Coburn in Massachusetts, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of Smith Coburn''': \"Daughters of the American Revolution: Patriots of Color, 1712 - 1888\"<br/>Page: 327<br/>[https://www.americanancestors.org/DB3843/rd/10010522530 American Ancestors Record] (accessed 6 May 2021)<br/>Smith Coburn in Massachusetts, United States.",
+    "type": "source"
+  }
+}

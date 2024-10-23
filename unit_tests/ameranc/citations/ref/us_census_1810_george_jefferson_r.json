@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1810 Census''':\n\"United States 1810 Census\"<br/>\nVolume: NARA Roll 51 (Penn., V.8); Page: 779<br/>\n[https://www.americanancestors.org/DB1560/rd/22111/779/439190122 American Ancestors Record] (accessed 6 May 2021)<br/>\nGeorge Jefferson in Derry, Westmoreland, Pennsylvania, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1810 census George was in Derry, Westmoreland, Pennsylvania, United States.<ref>\n'''1810 Census''':\n\"United States 1810 Census\"<br/>\nVolume: NARA Roll 51 (Penn., V.8); Page: 779<br/>\n[https://www.americanancestors.org/DB1560/rd/22111/779/439190122 American Ancestors Record] (accessed 6 May 2021)<br/>\nGeorge Jefferson in Derry, Westmoreland, Pennsylvania, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1810 Census''': \"United States 1810 Census\"<br/>Volume: NARA Roll 51 (Penn., V.8); Page: 779<br/>[https://www.americanancestors.org/DB1560/rd/22111/779/439190122 American Ancestors Record] (accessed 6 May 2021)<br/>George Jefferson in Derry, Westmoreland, Pennsylvania, United States.",
+    "type": "source"
+  }
+}

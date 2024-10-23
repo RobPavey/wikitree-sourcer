@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1900 Census''':\n\"United States 1900 Census\"<br/>\nVolume: NARA Roll 835 (Miss., V.37); Page: 594<br/>\n[https://www.americanancestors.org/DB1648/rd/31156/594/774305254 American Ancestors Record] (accessed 6 May 2021)<br/>\nJohn Hall (28), single brother, in Beat 3 Yazoo city Ward 2, Yazoo, Mississippi, United States. Born in Mississippi.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1900 census John (age 28) was a single brother in Beat 3 Yazoo city Ward 2, Yazoo, Mississippi, United States.<ref>\n'''1900 Census''':\n\"United States 1900 Census\"<br/>\nVolume: NARA Roll 835 (Miss., V.37); Page: 594<br/>\n[https://www.americanancestors.org/DB1648/rd/31156/594/774305254 American Ancestors Record] (accessed 6 May 2021)<br/>\nJohn Hall (28), single brother, in Beat 3 Yazoo city Ward 2, Yazoo, Mississippi, United States. Born in Mississippi.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1900 Census''': \"United States 1900 Census\"<br/>Volume: NARA Roll 835 (Miss., V.37); Page: 594<br/>[https://www.americanancestors.org/DB1648/rd/31156/594/774305254 American Ancestors Record] (accessed 6 May 2021)<br/>John Hall (28), single brother, in Beat 3 Yazoo city Ward 2, Yazoo, Mississippi, United States. Born in Mississippi.",
+    "type": "source"
+  }
+}
