@@ -1,13 +1,9 @@
 {
   "sourceOfData": "ameranc",
   "sourceType": "record",
-  "recordType": "Unclassified",
-  "name": {
-    "lastName": "Baker",
-    "forenames": "Samuel"
-  },
+  "recordType": "Probate",
   "eventDate": {
-    "dateString": "1620 - 1850"
+    "dateString": "1872"
   },
   "eventPlace": {
     "placeString": "Rehoboth, Bristol, Massachusetts, United States"

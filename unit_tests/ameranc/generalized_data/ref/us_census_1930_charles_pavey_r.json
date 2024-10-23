@@ -20,6 +20,7 @@
     "placeString": "England"
   },
   "ageAtEvent": "39",
+  "race": "White",
   "relationshipToHead": "lodger",
   "maritalStatus": "divorced",
   "hasValidData": true

@@ -94,6 +94,14 @@ const regressionData = [
     url: "https://www.americanancestors.org/databases/bristol-county-ma-probate-file-papers-1686-1880/image?volumeId=48299&pageName=1396:3&rId=68078058",
   },
   {
+    caseName: "us_ma_probate_1872_samuel_baker_r",
+    url: "https://www.americanancestors.org/databases/bristol-county-ma-probate-file-papers-1686-1880/RecordDisplay?volumeId=48299&pageName=1396:3&rId=68078058",
+  },
+  {
+    caseName: "us_ma_probate_1872_samuel_baker_t",
+    url: "https://www.americanancestors.org/databases/bristol-county-ma-probate-file-papers-1686-1880/transcript?volumeId=48299&pageName=1396:3&rId=68078058",
+  },
+  {
     caseName: "us_ma_tax_1798_samuel_baker_i",
     url: "https://www.americanancestors.org/databases/massachusetts-and-maine-direct-tax-1798/image?rId=235227325&volumeId=13142&pageName=206&filterQuery=",
   },

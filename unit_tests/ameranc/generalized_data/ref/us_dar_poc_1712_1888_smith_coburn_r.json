@@ -1,13 +1,17 @@
 {
   "sourceOfData": "ameranc",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Military",
   "name": {
     "lastName": "Coburn",
     "forenames": "Smith"
   },
+  "eventDate": {
+    "dateString": "1712 - 1888"
+  },
   "eventPlace": {
     "placeString": "Massachusetts, United States"
   },
+  "race": "Negro.",
   "hasValidData": true
 }

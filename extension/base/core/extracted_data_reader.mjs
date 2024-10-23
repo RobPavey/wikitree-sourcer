@@ -306,6 +306,50 @@ class ExtractedDataReader {
     }
   }
 
+  makeDateObjFromMmddyyyyDate(mmddyyyyDate, separator) {
+    if (mmddyyyyDate) {
+      let parts = mmddyyyyDate.split(separator);
+      if (parts.length != 3) {
+        if (parts.length == 1) {
+          // could be year only
+          if (/^\d\d\d\d$/.test(mmddyyyyDate)) {
+            let dateObj = new DateObj();
+            dateObj.yearString = mmddyyyyDate;
+            return dateObj;
+          }
+        }
+        return;
+      }
+
+      let month = parts[0];
+      let day = parts[1];
+      let year = parts[2];
+
+      /*
+        We want to allow dates like 12/3/1887
+      if (day.length != 2 || month.length != 2 || year.length != 4) {
+        return;
+      }
+        */
+
+      let dayNum = parseInt(day);
+      let monthNum = parseInt(month);
+      let yearNum = parseInt(year);
+
+      if (isNaN(dayNum) || isNaN(monthNum) || isNaN(yearNum)) {
+        return;
+      }
+
+      let dateString = DateUtils.getDateStringFromYearMonthDay(yearNum, monthNum, dayNum);
+
+      if (dateString) {
+        let dateObj = new DateObj();
+        dateObj.dateString = dateString;
+        return dateObj;
+      }
+    }
+  }
+
   makeDateObjFromYyyymmddDate(yyyymmddDate, separator = "-") {
     if (yyyymmddDate) {
       let parts = yyyymmddDate.split(separator);

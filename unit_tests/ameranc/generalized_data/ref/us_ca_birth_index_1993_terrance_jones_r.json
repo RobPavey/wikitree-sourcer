@@ -1,16 +1,27 @@
 {
   "sourceOfData": "ameranc",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Birth",
   "name": {
     "lastName": "Jones",
     "forenames": "Terrance Wayne"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "18 Sep 1993"
   },
   "eventPlace": {
     "placeString": "San Diego, San Diego, California, United States"
   },
   "birthDate": {
     "dateString": "18 Sep 1993"
+  },
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Hendricks"
+      }
+    }
   },
   "hasValidData": true
 }

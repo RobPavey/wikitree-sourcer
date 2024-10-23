@@ -20,6 +20,7 @@
     "placeString": "Mississippi"
   },
   "ageAtEvent": "28",
+  "race": "Black",
   "relationshipToHead": "brother",
   "maritalStatus": "single",
   "hasValidData": true

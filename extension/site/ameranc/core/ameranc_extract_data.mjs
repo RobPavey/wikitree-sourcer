@@ -52,9 +52,20 @@ function extractData(document, url) {
     return result;
   }
 
-  let titleElement = document.querySelector("div.header-results h3");
+  let dynamicContent = document.getElementById("dynamic-content");
+  if (!dynamicContent) {
+    return result;
+  }
+
+  let titleElement = dynamicContent.querySelector("div.header-results h3");
   if (titleElement) {
     result.title = titleElement.textContent.trim();
+  } else {
+    // for transcript it is different
+    titleElement = dynamicContent.querySelector("div.container h3");
+    if (titleElement) {
+      result.title = titleElement.textContent.trim();
+    }
   }
 
   let volumeElement = document.getElementById("volume");
@@ -140,7 +151,37 @@ function extractData(document, url) {
         }
       }
     } else {
-      // no transcription
+      if (result.pageType == "transcript") {
+        let transcriptTable = document.getElementById("tblTranscript");
+        if (transcriptTable) {
+          let tableHeadings = transcriptTable.querySelectorAll("thead > tr > th");
+          let tableRows = transcriptTable.querySelectorAll("tbody > tr");
+
+          let headings = [];
+          for (let headingElement of tableHeadings) {
+            let headingText = headingElement.textContent.trim();
+            headings.push(headingText);
+          }
+          if (tableRows.length > 0) {
+            result.transcriptTable = [];
+
+            for (let row of tableRows) {
+              let tableDataElements = row.querySelectorAll("td");
+              if (tableDataElements.length == headings.length) {
+                let rowData = {};
+                for (let index = 0; index < headings.length; index++) {
+                  let dataElement = tableDataElements[index];
+                  let value = dataElement.textContent.trim();
+                  value = value.replace(/\n\s*/g, ". ");
+                  let label = headings[index];
+                  rowData[label] = value;
+                }
+                result.transcriptTable.push(rowData);
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -158,6 +199,9 @@ function extractData(document, url) {
   let imgRecord = document.getElementById("imgRecord");
 
   if (imgRecord) {
+    result.hasImage = true;
+  } else if (result.pageType == "transcript" || result.pageType == "image") {
+    // there are only image and transcript pages if there is an image
     result.hasImage = true;
   }
 

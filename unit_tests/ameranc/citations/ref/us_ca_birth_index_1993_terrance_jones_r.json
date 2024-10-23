@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record of Terrance Wayne Jones''':\n\"California: Birth Index, 1905-1995\"<br/>\nPage: 11585079<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones in San Diego, San Diego, California, United States.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"California: Birth Index, 1905-1995\"<br/>\nPage: 11585079; Original Text: San Diego, California, United States<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones born on 18 Sep 1993, son of Hendricks, in San Diego, San Diego, California, United States.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Terrance was in a record in San Diego, San Diego, California, United States.<ref>\n'''Record of Terrance Wayne Jones''':\n\"California: Birth Index, 1905-1995\"<br/>\nPage: 11585079<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones in San Diego, San Diego, California, United States.\n</ref>",
+    "citation": "Terrance, son of Hendricks, was born on 18 September 1993 in San Diego, San Diego, California, United States.<ref>\n'''Birth''':\n\"California: Birth Index, 1905-1995\"<br/>\nPage: 11585079; Original Text: San Diego, California, United States<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones born on 18 Sep 1993, son of Hendricks, in San Diego, San Diego, California, United States.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record of Terrance Wayne Jones''': \"California: Birth Index, 1905-1995\"<br/>Page: 11585079<br/>[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>Terrance Wayne Jones in San Diego, San Diego, California, United States.",
+    "citation": "* '''Birth''': \"California: Birth Index, 1905-1995\"<br/>Page: 11585079; Original Text: San Diego, California, United States<br/>[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>Terrance Wayne Jones born on 18 Sep 1993, son of Hendricks, in San Diego, San Diego, California, United States.",
     "type": "source"
   }
 }

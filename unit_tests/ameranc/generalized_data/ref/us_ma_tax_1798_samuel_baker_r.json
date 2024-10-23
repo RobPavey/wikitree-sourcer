@@ -1,10 +1,13 @@
 {
   "sourceOfData": "ameranc",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Tax",
   "name": {
     "lastName": "Baker",
     "forenames": "Samuel"
+  },
+  "eventDate": {
+    "dateString": "1798"
   },
   "eventPlace": {
     "placeString": "Rehoboth, Bristol, Massachusetts, United States"

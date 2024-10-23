@@ -39,9 +39,26 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
+  if (ed.recordData) {
+    builder.addSourceReferenceField("Source", ed.recordData["Source"]);
+  }
+
+  let volumeName = ed.volumeName;
+  if (!volumeName && ed.recordData) {
+    volumeName = ed.recordData["Volume"];
+  }
+  if (!volumeName && ed.recordData) {
+    volumeName = ed.recordData["Volume Name"];
+  }
   builder.addSourceReferenceField("Volume", ed.volumeName);
+
   if (ed.recordData) {
     builder.addSourceReferenceField("Page", ed.recordData["Page"]);
+    builder.addSourceReferenceField("Reference", ed.recordData["Reference"]);
+    builder.addSourceReferenceField("Case Number", ed.recordData["Case Number"]);
+    builder.addSourceReferenceField("Note", ed.recordData["Note"]);
+    builder.addSourceReferenceField("Original Text", ed.recordData["Original Text"]);
+    builder.addSourceReferenceField("Town Info", ed.recordData["Town Info"]);
   }
 }
 

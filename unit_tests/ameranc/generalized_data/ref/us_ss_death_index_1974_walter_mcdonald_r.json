@@ -1,12 +1,21 @@
 {
   "sourceOfData": "ameranc",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Death",
   "name": {
     "name": "Walter McDonald"
   },
+  "eventDate": {
+    "yearString": "1974"
+  },
   "eventPlace": {
     "placeString": "United States"
+  },
+  "birthDate": {
+    "dateString": "3 Dec 1887"
+  },
+  "deathDate": {
+    "yearString": "1974"
   },
   "hasValidData": true
 }

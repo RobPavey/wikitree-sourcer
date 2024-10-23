@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record of Terrance Wayne Jones''':\n\"California: Birth Index, 1905-1995\"<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones.\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"California: Birth Index, 1905-1995\"<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones born.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Terrance was in a record.<ref>\n'''Record of Terrance Wayne Jones''':\n\"California: Birth Index, 1905-1995\"<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones.\n</ref>",
+    "citation": "Terrance was born.<ref>\n'''Birth''':\n\"California: Birth Index, 1905-1995\"<br/>\n[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>\nTerrance Wayne Jones born.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record of Terrance Wayne Jones''': \"California: Birth Index, 1905-1995\"<br/>[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>Terrance Wayne Jones.",
+    "citation": "* '''Birth''': \"California: Birth Index, 1905-1995\"<br/>[https://www.americanancestors.org/DB1694/rd/1069879214 American Ancestors Record] (accessed 6 May 2021)<br/>Terrance Wayne Jones born.",
     "type": "source"
   }
 }

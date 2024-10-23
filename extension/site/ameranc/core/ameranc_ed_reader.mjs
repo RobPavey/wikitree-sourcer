@@ -37,6 +37,26 @@ const recordTypeMatches = [
     recordType: RT.Census,
     collectionTitleMatches: [["Federal Census"]],
   },
+  {
+    recordType: RT.Birth,
+    collectionTitleMatches: [["Birth Index"]],
+  },
+  {
+    recordType: RT.Death,
+    collectionTitleMatches: [["Death Index"]],
+  },
+  {
+    recordType: RT.Tax,
+    collectionTitleMatches: [["Direct Tax"]],
+  },
+  {
+    recordType: RT.Probate,
+    collectionTitleMatches: [["Probate"]],
+  },
+  {
+    recordType: RT.Military,
+    requiredFields: [["Military Record"]],
+  },
 ];
 
 class AmerancEdReader extends ExtractedDataReader {
@@ -48,6 +68,10 @@ class AmerancEdReader extends ExtractedDataReader {
       recordData: ed.recordData,
     };
 
+    // Note: for transcript pages there is often a "Record Type" column in table.
+    // For record pages the second fields in recordData is often named in a way that indicates
+    // the record type.
+    // For images all we have to go on is the title.
     this.recordType = this.determineRecordType(recordTypeMatches, inputData);
   }
 
@@ -116,7 +140,7 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getGender() {
-    let gender = this.getRecordDataValueForKeys(["Gender"]);
+    let gender = this.getRecordDataValueForKeys(["Gender", "Sex"]);
     if (gender) {
       return gender.toLowerCase();
     }
@@ -129,7 +153,49 @@ class AmerancEdReader extends ExtractedDataReader {
       if (year) {
         return this.makeDateObjFromYear(year);
       }
+    } else if (this.recordType == RT.Birth) {
+      let dateString = this.getRecordDataValueForKeys(["Date of Birth"]);
+      if (dateString) {
+        return this.makeDateObjFromDateString(dateString);
+      }
+      let year = this.getRecordDataValueForKeys(["Birth"]);
+      if (year) {
+        return this.makeDateObjFromYear(year);
+      }
+    } else if (this.recordType == RT.Military) {
+      let dateString = this.getRecordDataValueForKeys(["Military Record"]);
+      if (dateString) {
+        return this.makeDateObjFromDateString(dateString);
+      }
+    } else if (this.recordType == RT.Probate) {
+      let dateString = this.getRecordDataValueForKeys(["Probate Record"]);
+      if (dateString) {
+        return this.makeDateObjFromDateString(dateString);
+      }
+    } else if (this.recordType == RT.Tax) {
+      let dateString = this.getRecordDataValueForKeys(["Tax"]);
+      if (dateString) {
+        return this.makeDateObjFromDateString(dateString);
+      }
+    } else if (this.recordType == RT.Death) {
+      // the SS Death Index can have a field: Death	12/3/1887 - 1974
+      let dateString = this.getRecordDataValueForKeys(["Death"]);
+      if (dateString) {
+        const birthAndDeathRegex = /^(\d\d?\/\d\d?\/\d\d\d\d)\s+\-\s+(\d\d\d\d)/;
+        if (birthAndDeathRegex.test(dateString)) {
+          let birthDate = dateString.replace(birthAndDeathRegex, "$1");
+          let deathDate = dateString.replace(birthAndDeathRegex, "$2");
+          return this.makeDateObjFromYear(deathDate);
+        }
+        return this.makeDateObjFromDateString(dateString);
+      }
     }
+
+    let genericRecordValue = this.getRecordDataValueForKeys(["Record"]);
+    if (genericRecordValue) {
+      return this.makeDateObjFromDateString(genericRecordValue);
+    }
+
     return undefined;
   }
 
@@ -167,7 +233,19 @@ class AmerancEdReader extends ExtractedDataReader {
 
   getBirthDateObj() {
     let dateString = this.getRecordDataValueForKeys(["Date of Birth"]);
-    return this.makeDateObjFromDateString(dateString);
+    if (dateString) {
+      return this.makeDateObjFromDateString(dateString);
+    }
+    if (this.recordType == RT.Death) {
+      let dateString = this.getRecordDataValueForKeys(["Death"]);
+      if (dateString) {
+        const birthAndDeathRegex = /^(\d\d?\/\d\d?\/\d\d\d\d)\s+\-\s+(\d\d\d\d)/;
+        if (birthAndDeathRegex.test(dateString)) {
+          let birthDate = dateString.replace(birthAndDeathRegex, "$1");
+          return this.makeDateObjFromMmddyyyyDate(birthDate, "/");
+        }
+      }
+    }
   }
 
   getBirthPlaceObj() {
@@ -176,6 +254,19 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getDeathDateObj() {
+    if (this.recordType == RT.Death) {
+      // the SS Death Index can have a field: Death	12/3/1887 - 1974
+      let dateString = this.getRecordDataValueForKeys(["Death"]);
+      if (dateString) {
+        const birthAndDeathRegex = /^(\d\d?\/\d\d?\/\d\d\d\d)\s+\-\s+(\d\d\d\d)/;
+        if (birthAndDeathRegex.test(dateString)) {
+          let deathDate = dateString.replace(birthAndDeathRegex, "$2");
+          return this.makeDateObjFromYear(deathDate);
+        }
+        return this.makeDateObjFromDateString(dateString);
+      }
+    }
+
     return undefined;
   }
 
@@ -189,6 +280,16 @@ class AmerancEdReader extends ExtractedDataReader {
 
   getAgeAtDeath() {
     return "";
+  }
+
+  getRace() {
+    let race = this.getRecordDataValueForKeys(["Race", "Historic Racial Identification"]);
+    const quotedRegex = /^"(.*)"$/;
+    if (quotedRegex.test(race)) {
+      race = race.replace(quotedRegex, "$1");
+      race = race.trim();
+    }
+    return race;
   }
 
   getRegistrationDistrict() {
@@ -212,7 +313,9 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getParents() {
-    return undefined;
+    let fatherName = this.getRecordDataValueForKeys(["Father"]);
+    let motherName = this.getRecordDataValueForKeys(["Mother"]);
+    return this.makeParentsFromFullNames(fatherName, motherName);
   }
 
   getHousehold() {
