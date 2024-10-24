@@ -252,6 +252,7 @@
   ],
   "extendedAttributes": [
     {
+      "isExpanded": true,
       "Age": "25",
       "Birth Place": "England",
       "Gender": "Male",
@@ -259,8 +260,7 @@
       "Ward No": "3",
       "Enumeration District": "158",
       "House Hold": "254",
-      "Line Number": "1",
-      "isExpanded": true
+      "Line Number": "1"
     },
     {
       "Age": "17",
@@ -453,6 +453,8 @@
       "Line Number": "20"
     },
     {
+      "isExpanded": true,
+      "isPrimary": true,
       "Age": "30",
       "Birth Place": "East Providence",
       "Gender": "Male",
@@ -460,9 +462,7 @@
       "Ward No": "3",
       "Enumeration District": "157",
       "House Hold": "245",
-      "Line Number": "21",
-      "isExpanded": true,
-      "isPrimary": true
+      "Line Number": "21"
     },
     {
       "Age": "59",

@@ -164,6 +164,53 @@ class AmerancEdReader extends ExtractedDataReader {
     return this.makeDateObjFromDateString(dateString);
   }
 
+  getPrimaryTranscriptValue(keys) {
+    let transcriptTable = this.ed.transcriptTable;
+    let extendedAttributes = this.ed.extendedAttributes;
+    if (!transcriptTable || !extendedAttributes) {
+      return;
+    }
+
+    if (!transcriptTable.length || transcriptTable.length != extendedAttributes.length) {
+      return;
+    }
+
+    let primaryTranscript = undefined;
+    let primaryExtendedAttributes = undefined;
+
+    for (let index = 0; index < transcriptTable.length; index++) {
+      if (extendedAttributes[index].isPrimary) {
+        primaryTranscript = transcriptTable[index];
+        primaryExtendedAttributes = extendedAttributes[index];
+        break;
+      }
+    }
+
+    if (!primaryTranscript || !primaryExtendedAttributes) {
+      return;
+    }
+
+    for (let key of keys) {
+      if (primaryTranscript[key]) {
+        return primaryTranscript[key];
+      }
+    }
+
+    for (let key of keys) {
+      if (primaryExtendedAttributes[key]) {
+        return primaryExtendedAttributes[key];
+      }
+    }
+  }
+
+  getRecordDataOrTranscriptValueForKeys(keys) {
+    let value = this.getRecordDataValueForKeys(keys);
+    if (!value) {
+      value = this.getPrimaryTranscriptValue(keys);
+    }
+    return value;
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -181,12 +228,12 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let name = this.getRecordDataValueForKeys(["Name"]);
+    let name = this.getRecordDataOrTranscriptValueForKeys(["Name", "Names"]);
     return this.makeNameObjFromAmerancFullName(name);
   }
 
   getGender() {
-    let gender = this.getRecordDataValueForKeys(["Gender", "Sex"]);
+    let gender = this.getRecordDataOrTranscriptValueForKeys(["Gender", "Sex"]);
     if (gender) {
       return gender.toLowerCase();
     }
@@ -253,11 +300,23 @@ class AmerancEdReader extends ExtractedDataReader {
       return this.makeDateObjFromAmerancDateString(genericRecordValue);
     }
 
+    // transcript can have date in the table data
+    if (this.ed.isTranscript) {
+      let startDateString = this.getPrimaryTranscriptValue(["Start Date"]);
+      if (startDateString) {
+        return this.makeDateObjFromAmerancDateString(startDateString);
+      }
+      let endDateString = this.getPrimaryTranscriptValue(["End Date"]);
+      if (endDateString) {
+        return this.makeDateObjFromAmerancDateString(endDateString);
+      }
+    }
+
     return undefined;
   }
 
   getEventPlaceObj() {
-    let location = this.getRecordDataValueForKeys(["Location"]);
+    let location = this.getRecordDataOrTranscriptValueForKeys(["Location"]);
     if (location) {
       if (this.recordType == RT.Census) {
         // sometimes the location has a district name like:
@@ -289,7 +348,7 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    let dateString = this.getRecordDataValueForKeys(["Date of Birth"]);
+    let dateString = this.getRecordDataOrTranscriptValueForKeys(["Date of Birth"]);
     if (dateString) {
       return this.makeDateObjFromAmerancDateString(dateString);
     }
@@ -306,14 +365,14 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getBirthPlaceObj() {
-    let placeString = this.getRecordDataValueForKeys(["Birth Place"]);
+    let placeString = this.getRecordDataOrTranscriptValueForKeys(["Birth Place"]);
     return this.makePlaceObjFromFullPlaceName(placeString);
   }
 
   getDeathDateObj() {
     if (this.recordType == RT.Death) {
       // the SS Death Index can have a field: Death	12/3/1887 - 1974
-      let dateString = this.getRecordDataValueForKeys(["Death"]);
+      let dateString = this.getRecordDataOrTranscriptValueForKeys(["Death"]);
       if (dateString) {
         const birthAndDeathRegex = /^(\d\d?\/\d\d?\/\d\d\d\d)\s+\-\s+(\d\d\d\d)$/;
         if (birthAndDeathRegex.test(dateString)) {
@@ -332,7 +391,7 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
-    return this.getRecordDataValueForKeys(["Age"]);
+    return this.getRecordDataOrTranscriptValueForKeys(["Age"]);
   }
 
   getAgeAtDeath() {
@@ -340,7 +399,7 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getRace() {
-    let race = this.getRecordDataValueForKeys(["Race", "Historic Racial Identification"]);
+    let race = this.getRecordDataOrTranscriptValueForKeys(["Race", "Historic Racial Identification"]);
     const quotedRegex = /^"(.*)"$/;
     if (quotedRegex.test(race)) {
       race = race.replace(quotedRegex, "$1");
@@ -354,15 +413,15 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getRelationshipToHead() {
-    return this.getRecordDataValueForKeys(["Relationship"]);
+    return this.getRecordDataOrTranscriptValueForKeys(["Relationship"]);
   }
 
   getMaritalStatus() {
-    return this.getRecordDataValueForKeys(["Marital Status"]);
+    return this.getRecordDataOrTranscriptValueForKeys(["Marital Status"]);
   }
 
   getOccupation() {
-    return "";
+    return this.getRecordDataOrTranscriptValueForKeys(["Occupation"]);
   }
 
   getSpouses() {

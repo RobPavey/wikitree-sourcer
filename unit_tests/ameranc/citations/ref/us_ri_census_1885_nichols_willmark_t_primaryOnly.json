@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Census''':\n\"Rhode Island: Census Collection, 1865-1935\"<br/>\nVolume: Rhode Island Census 1885<br/>\n[https://www.americanancestors.org/DB518/t/13815/4017/246867425 American Ancestors Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "<ref>\n'''1885 Census''':\n\"Rhode Island: Census Collection, 1865-1935\"<br/>\nVolume: Rhode Island Census 1885<br/>\n[https://www.americanancestors.org/DB518/t/13815/4017/246867425 American Ancestors Record] (accessed 6 May 2021)<br/>\nNichols Willmarth (30), married in Pawtucket, Providence, Rhode Island, United States. Born in East Providence.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Census''':\n\"Rhode Island: Census Collection, 1865-1935\"<br/>\nVolume: Rhode Island Census 1885<br/>\n[https://www.americanancestors.org/DB518/t/13815/4017/246867425 American Ancestors Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "citation": "In the 1885 census Nichols (age 30) was recorded as married in Pawtucket, Providence, Rhode Island, United States.<ref>\n'''1885 Census''':\n\"Rhode Island: Census Collection, 1865-1935\"<br/>\nVolume: Rhode Island Census 1885<br/>\n[https://www.americanancestors.org/DB518/t/13815/4017/246867425 American Ancestors Record] (accessed 6 May 2021)<br/>\nNichols Willmarth (30), married in Pawtucket, Providence, Rhode Island, United States. Born in East Providence.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Census''': \"Rhode Island: Census Collection, 1865-1935\"<br/>Volume: Rhode Island Census 1885<br/>[https://www.americanancestors.org/DB518/t/13815/4017/246867425 American Ancestors Record] (accessed 6 May 2021)<br/>Unknown.",
+    "citation": "* '''1885 Census''': \"Rhode Island: Census Collection, 1865-1935\"<br/>Volume: Rhode Island Census 1885<br/>[https://www.americanancestors.org/DB518/t/13815/4017/246867425 American Ancestors Record] (accessed 6 May 2021)<br/>Nichols Willmarth (30), married in Pawtucket, Providence, Rhode Island, United States. Born in East Providence.",
     "type": "source"
   }
 }

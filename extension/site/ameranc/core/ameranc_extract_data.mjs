@@ -206,13 +206,19 @@ function extractData(document, url) {
 
                     let isExpanded = isPrimary || isDisplayBlock;
 
+                    let rowExtendedAttributes = {};
+                    if (isExpanded) {
+                      rowExtendedAttributes.isExpanded = true;
+                    }
+                    if (isPrimary) {
+                      rowExtendedAttributes.isPrimary = true;
+                    }
+
                     let paras = dataElement.querySelectorAll("div.extended-attributes > p");
                     if (paras.length) {
-                      let rowExtendedAttributes = {};
                       for (let para of paras) {
                         let childNodes = para.childNodes;
                         if (childNodes && childNodes.length == 2) {
-                          console.log(childNodes);
                           let extendedLabel = childNodes[0].textContent.trim();
                           let extendedValue = childNodes[1].textContent.trim();
                           if (extendedLabel) {
@@ -220,14 +226,8 @@ function extractData(document, url) {
                           }
                         }
                       }
-                      if (isExpanded) {
-                        rowExtendedAttributes.isExpanded = true;
-                      }
-                      if (isPrimary) {
-                        rowExtendedAttributes.isPrimary = true;
-                      }
-                      extendedAttributes.push(rowExtendedAttributes);
                     }
+                    extendedAttributes.push(rowExtendedAttributes);
                   } else {
                     let value = dataElement.textContent.trim();
                     value = value.replace(/\n\s*/g, ". ");
