@@ -3,7 +3,7 @@
   "sourceType": "record",
   "recordType": "Probate",
   "eventDate": {
-    "dateString": "1872"
+    "yearString": "1872"
   },
   "eventPlace": {
     "placeString": "Rehoboth, Bristol, Massachusetts, United States"

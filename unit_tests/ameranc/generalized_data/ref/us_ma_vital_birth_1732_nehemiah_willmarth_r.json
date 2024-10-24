@@ -1,13 +1,13 @@
 {
   "sourceOfData": "ameranc",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Birth",
   "name": {
-    "lastName": "Baker",
-    "forenames": "Samuel"
+    "lastName": "Willmarth",
+    "forenames": "Nehemiah"
   },
   "eventDate": {
-    "yearString": "1620-1850"
+    "yearString": "1732"
   },
   "eventPlace": {
     "placeString": "Rehoboth, Bristol, Massachusetts, United States"

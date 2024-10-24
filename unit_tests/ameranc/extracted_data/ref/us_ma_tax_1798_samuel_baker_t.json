@@ -1,7 +1,8 @@
 {
   "success": true,
   "url": "https://www.americanancestors.org/databases/massachusetts-and-maine-direct-tax-1798/transcript?volumeId=13142&pageName=206&rId=235227325",
-  "pageType": "transcript",
+  "pageType": "record",
+  "isTranscript": true,
   "title": "Massachusetts and Maine: Direct Tax, 1798",
   "volumeId": "13142",
   "volumeName": "V.11",

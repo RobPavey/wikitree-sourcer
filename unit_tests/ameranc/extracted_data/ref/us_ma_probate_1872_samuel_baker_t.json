@@ -1,7 +1,8 @@
 {
   "success": true,
   "url": "https://www.americanancestors.org/databases/bristol-county-ma-probate-file-papers-1686-1880/transcript?volumeId=48299&pageName=1396:3&rId=68078058",
-  "pageType": "transcript",
+  "pageType": "record",
+  "isTranscript": true,
   "title": "Bristol County, MA: Probate File Papers, 1686-1880",
   "volumeId": "48299",
   "volumeName": "Bristol 1-1999",
@@ -9,12 +10,18 @@
   "pageCount": "1999:2",
   "transcriptTable": [
     {
-      "Names": "Case Number 1396. Note page 3 of 39",
+      "Names": "",
       "Start Date": "1872",
       "End Date": "",
       "Location": "Rehoboth, Bristol, Massachusetts, United States",
       "Original Text": "BAKER, Samuel",
       "Record Type": "Probate Record"
+    }
+  ],
+  "extendedAttributes": [
+    {
+      "Case Number": "1396",
+      "Note": "page 3 of 39"
     }
   ],
   "citationParts": [

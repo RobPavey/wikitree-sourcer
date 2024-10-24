@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "birthPlace",
+    "gender",
+    "maritalStatus"
+  ],
+  "householdArray": [
+    {
+      "name": "Thomas WOOD",
+      "age": "25",
+      "birthPlace": "England",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "Nichols WILLMARTH",
+      "age": "30",
+      "birthPlace": "East Providence",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    }
+  ],
+  "hasValidData": true
+}

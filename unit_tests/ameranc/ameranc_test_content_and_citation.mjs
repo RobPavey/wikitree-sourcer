@@ -37,6 +37,18 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 // _na = no access
 const regressionData = [
   {
+    caseName: "gsocw_birth_1712_thomas_willmarth_r",
+    url: "https://www.americanancestors.org/databases/general-society-of-colonial-wars-membership-applications-1893-1949/RecordDisplay?volumeId=63371&pageName=2025_0_2&rId=10008493440",
+  },
+  {
+    caseName: "mayflower_baptism_1746_shubael_willmarth_r",
+    url: "https://www.americanancestors.org/databases/mayflower-families-fifth-generation-descendants-1700-1880/RecordDisplay?volumeId=48521&pageName=273&rId=1415632989",
+  },
+  {
+    caseName: "mayflower_marriage_1790_hannah_willmarth_r",
+    url: "https://www.americanancestors.org/databases/mayflower-families-fifth-generation-descendants-1700-1880/RecordDisplay?volumeId=48521&pageName=274&rId=1415633021",
+  },
+  {
     // saved using guest membership that has no access
     caseName: "us_ca_birth_index_1993_terrance_jones_r_na",
     url: "https://www.americanancestors.org/databases/california-birth-index-1905-1995/RecordDisplay?pageName=&rId=1069879214",
@@ -116,6 +128,22 @@ const regressionData = [
   {
     caseName: "us_ma_vital_1620_1850_samuel_baker_r",
     url: "https://www.americanancestors.org/databases/massachusetts-vital-records-1620-1850/RecordDisplay?volumeId=14010&pageName=925&rId=253509394",
+  },
+  {
+    caseName: "us_ma_vital_birth_1732_nehemiah_willmarth_r",
+    url: "https://www.americanancestors.org/databases/massachusetts-vital-records-1620-1850/RecordDisplay?volumeId=14010&pageName=781&rId=253503206",
+  },
+  {
+    caseName: "us_ri_census_1885_nichols_willmark_r",
+    url: "https://www.americanancestors.org/databases/rhode-island-census-collection-1865-1935/RecordDisplay?volumeId=13815&pageName=4017&rId=246867425",
+  },
+  {
+    caseName: "us_ri_census_1885_nichols_willmark_t_primaryOnly",
+    url: "https://www.americanancestors.org/databases/rhode-island-census-collection-1865-1935/transcript?volumeId=13815&pageName=4017&rId=246867425",
+  },
+  {
+    caseName: "us_ri_census_1885_nichols_willmark_t",
+    url: "https://www.americanancestors.org/databases/rhode-island-census-collection-1865-1935/transcript?volumeId=13815&pageName=4017&rId=246867425",
   },
   {
     caseName: "us_ss_death_index_1974_walter_mcdonald_r",

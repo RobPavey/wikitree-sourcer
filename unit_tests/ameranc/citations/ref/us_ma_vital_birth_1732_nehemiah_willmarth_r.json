@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Massachusetts: Vital Records, 1620-1850\"<br/>\nVolume: Rehoboth - V1; Page: 781; Original Text: Nehemiah, March 18, 1732-3; Town Info: Rehoboth<br/>\n[https://www.americanancestors.org/DB190/rd/14010/781/253503206 American Ancestors Record] (accessed 6 May 2021)<br/>\nNehemiah Willmarth born in 1732 in Rehoboth, Bristol, Massachusetts, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Nehemiah was born in 1732 in Rehoboth, Bristol, Massachusetts, United States.<ref>\n'''Birth''':\n\"Massachusetts: Vital Records, 1620-1850\"<br/>\nVolume: Rehoboth - V1; Page: 781; Original Text: Nehemiah, March 18, 1732-3; Town Info: Rehoboth<br/>\n[https://www.americanancestors.org/DB190/rd/14010/781/253503206 American Ancestors Record] (accessed 6 May 2021)<br/>\nNehemiah Willmarth born in 1732 in Rehoboth, Bristol, Massachusetts, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Massachusetts: Vital Records, 1620-1850\"<br/>Volume: Rehoboth - V1; Page: 781; Original Text: Nehemiah, March 18, 1732-3; Town Info: Rehoboth<br/>[https://www.americanancestors.org/DB190/rd/14010/781/253503206 American Ancestors Record] (accessed 6 May 2021)<br/>Nehemiah Willmarth born in 1732 in Rehoboth, Bristol, Massachusetts, United States.",
+    "type": "source"
+  }
+}

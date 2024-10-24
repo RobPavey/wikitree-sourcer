@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "url": "https://www.americanancestors.org/databases/massachusetts-vital-records-1620-1850/RecordDisplay?volumeId=14010&pageName=781&rId=253503206",
+  "pageType": "record",
+  "title": "Massachusetts: Vital Records, 1620-1850",
+  "volumeId": "14010",
+  "volumeName": "Rehoboth - V1",
+  "page": "781",
+  "pageCount": "957",
+  "recordData": {
+    "Name": "Nehemiah WILLMARTH",
+    "Birth": "1732",
+    "Location": "Rehoboth, Bristol, Massachusetts, United States",
+    "Original Text": "Nehemiah, March 18, 1732-3",
+    "Town Info": "Rehoboth",
+    "Volume Name": "Rehoboth - V1",
+    "Page": "781"
+  },
+  "citationParts": [
+    "Massachusetts: Vital Records, 1620-1850 (Online Database: AmericanAncestors.org, New England Historic Genealogical Society, 2001-2016).",
+    "https://www.americanancestors.org/DB190/rd/14010/781/253503206"
+  ],
+  "hasImage": true
+}

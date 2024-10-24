@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "url": "https://www.americanancestors.org/databases/rhode-island-census-collection-1865-1935/RecordDisplay?volumeId=13815&pageName=4017&rId=246867425",
+  "pageType": "record",
+  "title": "Rhode Island: Census Collection, 1865-1935",
+  "volumeId": "13815",
+  "volumeName": "Rhode Island Census 1885",
+  "page": "4017",
+  "pageCount": "10455",
+  "recordData": {
+    "Name": "Nichols WILLMARTH",
+    "Census": "1885",
+    "Location": "Pawtucket, Providence, Rhode Island, United States",
+    "Age": "30",
+    "Birth Place": "East Providence",
+    "Gender": "Male",
+    "Marital Status": "Married",
+    "Ward No": "3",
+    "Enumeration District": "157",
+    "House Hold": "245",
+    "Line Number": "21",
+    "Volume Name": "Rhode Island Census 1885",
+    "Page": "4017"
+  },
+  "citationParts": [
+    "Rhode Island: Census Collection, 1865-1935 (From microfilmed records. Online database: AmericanAncestors.org, New England Historic Genealogical Society, 2013.)",
+    "https://www.americanancestors.org/DB518/rd/13815/4017/246867425"
+  ],
+  "hasImage": true
+}

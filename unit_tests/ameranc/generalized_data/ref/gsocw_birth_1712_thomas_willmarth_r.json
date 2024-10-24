@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Birth",
+  "name": {
+    "lastName": "Willmarth",
+    "forenames": "Thomas, 4th"
+  },
+  "eventDate": {
+    "dateString": "27 Jan 1712"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Thomas, 3rd Willmarth"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Deborah Peck"
+      }
+    }
+  },
+  "hasValidData": true
+}

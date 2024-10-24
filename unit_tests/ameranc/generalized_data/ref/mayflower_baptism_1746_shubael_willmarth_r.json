@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Willmarth",
+    "forenames": "Shubael"
+  },
+  "eventDate": {
+    "dateString": "26 Aug 1746"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Wilmarth"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Dorothy Wilmarth"
+      }
+    }
+  },
+  "hasValidData": true
+}

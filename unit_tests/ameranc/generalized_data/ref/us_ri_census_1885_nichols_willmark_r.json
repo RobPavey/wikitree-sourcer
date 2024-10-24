@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Willmarth",
+    "forenames": "Nichols"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1885"
+  },
+  "eventPlace": {
+    "placeString": "Pawtucket, Providence, Rhode Island, United States"
+  },
+  "birthPlace": {
+    "placeString": "East Providence"
+  },
+  "ageAtEvent": "30",
+  "maritalStatus": "married",
+  "hasValidData": true
+}

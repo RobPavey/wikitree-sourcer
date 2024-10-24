@@ -1,0 +1,41 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Willmarth",
+    "forenames": "Hannah"
+  },
+  "eventDate": {
+    "dateString": "3 Jan 1790"
+  },
+  "eventPlace": {
+    "placeString": "Adams, Berkshire, Massachusetts, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "John, Jr Wells"
+      },
+      "marriageDate": {
+        "dateString": "3 Jan 1790"
+      },
+      "marriagePlace": {
+        "placeString": "Adams, Berkshire, Massachusetts, United States"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Shubael Willmarth"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Willmarth"
+      }
+    }
+  },
+  "hasValidData": true
+}

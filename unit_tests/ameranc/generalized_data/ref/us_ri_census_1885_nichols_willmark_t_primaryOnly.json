@@ -1,0 +1,226 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "birthPlace",
+    "gender",
+    "maritalStatus"
+  ],
+  "householdArray": [
+    {
+      "name": "Thomas WOOD",
+      "age": "25",
+      "birthPlace": "England",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "John C WEIR",
+      "age": "17",
+      "birthPlace": "Scotland",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "William WOOD",
+      "age": "20",
+      "birthPlace": "England",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "Thomas WHITWORTH",
+      "age": "65",
+      "birthPlace": "England",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "John WHETSTONE",
+      "age": "29",
+      "birthPlace": "England",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "Samuel WOOD",
+      "age": "53",
+      "birthPlace": "England",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "William E WEIR",
+      "age": "38",
+      "birthPlace": "Scotland",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "John WAIN",
+      "age": "34",
+      "birthPlace": "England",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "John F WHIPPLE",
+      "age": "39",
+      "birthPlace": "New Hampshire",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "Benjamin WATERMAN",
+      "age": "72",
+      "birthPlace": "Cranston",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "Benjamin WHITE",
+      "age": "68",
+      "birthPlace": "Massachusetts",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "Lloyd WILBUR",
+      "age": "24",
+      "birthPlace": "Massachusetts",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "John WILLIAMS",
+      "age": "26",
+      "birthPlace": "Massachusetts",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "Stukely WATERMAN",
+      "age": "38",
+      "birthPlace": "Massachusetts",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "George WILLIAMS",
+      "age": "25",
+      "birthPlace": "Massachusetts",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "George WEATHERHEAD",
+      "age": "53",
+      "birthPlace": "Cumberland",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "William WILSON",
+      "age": "23",
+      "birthPlace": "Lonsdale",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "Jasper WHITMAN",
+      "age": "45",
+      "birthPlace": "Warwick",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "Geo W WHITMAN",
+      "age": "23",
+      "birthPlace": "E Greenwich",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "John W WILMARTH",
+      "age": "33",
+      "birthPlace": "Seekonk",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "isSelected": true,
+      "name": "Nichols WILLMARTH",
+      "age": "30",
+      "birthPlace": "East Providence",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "Silas G WHEELER",
+      "age": "59",
+      "birthPlace": "Maine",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "Joshua P WHIPPLE",
+      "age": "38",
+      "birthPlace": "Massachusetts",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "Geo R WOOD",
+      "age": "43",
+      "birthPlace": "Pawtucket",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "Edward S WATERMAN",
+      "age": "28",
+      "birthPlace": "Massachusetts",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "James WASHINGTON",
+      "age": "35",
+      "birthPlace": "Virginia",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    },
+    {
+      "name": "John WALL",
+      "age": "26",
+      "birthPlace": "New Jersey",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "Henry WALKER",
+      "age": "53",
+      "birthPlace": "Pawtucket",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "Michael WALSH",
+      "age": "48",
+      "birthPlace": "Ireland",
+      "gender": "Male",
+      "maritalStatus": "Single"
+    },
+    {
+      "name": "James WILLIAMS",
+      "age": "77",
+      "birthPlace": "Vermont",
+      "gender": "Male",
+      "maritalStatus": "Married"
+    }
+  ],
+  "hasValidData": true
+}

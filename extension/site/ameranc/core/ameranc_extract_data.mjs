@@ -40,7 +40,8 @@ function extractData(document, url) {
         if (lastPart == "recorddisplay") {
           result.pageType = "record";
         } else if (lastPart == "transcript") {
-          result.pageType = "transcript";
+          result.pageType = "record";
+          result.isTranscript = true;
         } else if (lastPart == "image") {
           result.pageType = "image";
         }
@@ -151,7 +152,7 @@ function extractData(document, url) {
         }
       }
     } else {
-      if (result.pageType == "transcript") {
+      if (result.isTranscript) {
         let transcriptTable = document.getElementById("tblTranscript");
         if (transcriptTable) {
           let tableHeadings = transcriptTable.querySelectorAll("thead > tr > th");
@@ -164,6 +165,7 @@ function extractData(document, url) {
           }
           if (tableRows.length > 0) {
             result.transcriptTable = [];
+            let extendedAttributes = [];
 
             for (let row of tableRows) {
               let tableDataElements = row.querySelectorAll("td");
@@ -171,13 +173,72 @@ function extractData(document, url) {
                 let rowData = {};
                 for (let index = 0; index < headings.length; index++) {
                   let dataElement = tableDataElements[index];
-                  let value = dataElement.textContent.trim();
-                  value = value.replace(/\n\s*/g, ". ");
                   let label = headings[index];
-                  rowData[label] = value;
+
+                  let extendedAttributesDiv = dataElement.querySelector("div.extended-attributes");
+
+                  if (extendedAttributesDiv && label == "Names") {
+                    let value = "";
+                    let childElements = dataElement.children;
+                    if (!childElements || childElements.length == 0) {
+                      value = dataElement.textContent.trim();
+                    } else {
+                      for (let childElement of childElements) {
+                        if (childElement.classList.contains("display-attributes")) {
+                          continue;
+                        }
+                        if (childElement.classList.contains("hide-attributes")) {
+                          continue;
+                        }
+                        if (childElement.classList.contains("extended-attributes")) {
+                          continue;
+                        }
+                        value = childElement.textContent.trim();
+                        break;
+                      }
+                    }
+
+                    value = value.replace(/\n\s*/g, ". ");
+                    rowData[label] = value;
+
+                    let isPrimary = !extendedAttributesDiv.classList.contains("displayNone");
+                    let isDisplayBlock = extendedAttributesDiv.style.display == "block";
+
+                    let isExpanded = isPrimary || isDisplayBlock;
+
+                    let paras = dataElement.querySelectorAll("div.extended-attributes > p");
+                    if (paras.length) {
+                      let rowExtendedAttributes = {};
+                      for (let para of paras) {
+                        let childNodes = para.childNodes;
+                        if (childNodes && childNodes.length == 2) {
+                          console.log(childNodes);
+                          let extendedLabel = childNodes[0].textContent.trim();
+                          let extendedValue = childNodes[1].textContent.trim();
+                          if (extendedLabel) {
+                            rowExtendedAttributes[extendedLabel] = extendedValue;
+                          }
+                        }
+                      }
+                      if (isExpanded) {
+                        rowExtendedAttributes.isExpanded = true;
+                      }
+                      if (isPrimary) {
+                        rowExtendedAttributes.isPrimary = true;
+                      }
+                      extendedAttributes.push(rowExtendedAttributes);
+                    }
+                  } else {
+                    let value = dataElement.textContent.trim();
+                    value = value.replace(/\n\s*/g, ". ");
+                    rowData[label] = value;
+                  }
                 }
                 result.transcriptTable.push(rowData);
               }
+            }
+            if (extendedAttributes.length) {
+              result.extendedAttributes = extendedAttributes;
             }
           }
         }
@@ -200,7 +261,7 @@ function extractData(document, url) {
 
   if (imgRecord) {
     result.hasImage = true;
-  } else if (result.pageType == "transcript" || result.pageType == "image") {
+  } else if (result.isTranscript || result.pageType == "image") {
     // there are only image and transcript pages if there is an image
     result.hasImage = true;
   }
