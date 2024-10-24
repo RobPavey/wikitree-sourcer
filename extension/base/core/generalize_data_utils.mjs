@@ -4019,6 +4019,10 @@ class GeneralizedData {
         defaultTitle: "Probate",
       },
       {
+        type: RT.Deed,
+        defaultTitle: "Deed",
+      },
+      {
         type: RT.Will,
         defaultTitle: "Will",
       },

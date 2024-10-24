@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1827 Legal Record''':\n\"New York: Abstracts of Wills, Admins. and Guardianships, 1787-1835\"<br/>\nVolume: Washington; Page: 1407<br/>\n[https://www.americanancestors.org/DB7/rd/6929/1407/476603 American Ancestors Record] (accessed 6 May 2021)<br/>\nJohn P Adams in 1827 in Hampton, Washington, New York, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "John was in a legal record in 1827 in Hampton, Washington, New York, United States.<ref>\n'''1827 Legal Record''':\n\"New York: Abstracts of Wills, Admins. and Guardianships, 1787-1835\"<br/>\nVolume: Washington; Page: 1407<br/>\n[https://www.americanancestors.org/DB7/rd/6929/1407/476603 American Ancestors Record] (accessed 6 May 2021)<br/>\nJohn P Adams in 1827 in Hampton, Washington, New York, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1827 Legal Record''': \"New York: Abstracts of Wills, Admins. and Guardianships, 1787-1835\"<br/>Volume: Washington; Page: 1407<br/>[https://www.americanancestors.org/DB7/rd/6929/1407/476603 American Ancestors Record] (accessed 6 May 2021)<br/>John P Adams in 1827 in Hampton, Washington, New York, United States.",
+    "type": "source"
+  }
+}

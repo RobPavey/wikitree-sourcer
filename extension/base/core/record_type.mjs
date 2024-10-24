@@ -45,6 +45,7 @@ const RT = {
   Will: `Will`,
   Divorce: `Divorce`,
   Memorial: `Memorial`,
+  Deed: `Deed`,
 
   CriminalRegister: `CriminalRegister`,
   FreemasonMembership: `FreemasonMembership`,

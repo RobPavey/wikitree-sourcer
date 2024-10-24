@@ -134,6 +134,15 @@ const regressionData = [
     url: "https://www.americanancestors.org/databases/massachusetts-vital-records-1620-1850/RecordDisplay?volumeId=14010&pageName=781&rId=253503206",
   },
   {
+    caseName: "us_nc_deaths_burial_1957_maude_mcpherson_r",
+    url: "https://www.americanancestors.org/databases/north-carolina-deaths-1931-1994/RecordDisplay?pageName=&rId=1041914016",
+  },
+  {
+    // has a date with a blank label
+    caseName: "us_ny_probate_1827_john_adams_r",
+    url: "https://www.americanancestors.org/databases/new-york-abstracts-of-wills-admins-and-guardianships-1787-1835/RecordDisplay?volumeId=6929&pageName=1407&rId=476603",
+  },
+  {
     caseName: "us_ri_census_1885_nichols_willmark_r",
     url: "https://www.americanancestors.org/databases/rhode-island-census-collection-1865-1935/RecordDisplay?volumeId=13815&pageName=4017&rId=246867425",
   },

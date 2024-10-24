@@ -1,0 +1,38 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "McPherson McPherson",
+    "forenames": "Maude"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "12 Feb 1957"
+  },
+  "eventPlace": {
+    "placeString": "Snow Camp, Alamance, North Carolina, United States"
+  },
+  "birthDate": {
+    "dateString": "8 Apr 1885"
+  },
+  "birthPlace": {
+    "placeString": ", Alamance, N. C."
+  },
+  "ageAtEvent": "71",
+  "race": "White",
+  "maritalStatus": "married",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James M Mcpherson"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Nancy Clark"
+      }
+    }
+  },
+  "hasValidData": true
+}

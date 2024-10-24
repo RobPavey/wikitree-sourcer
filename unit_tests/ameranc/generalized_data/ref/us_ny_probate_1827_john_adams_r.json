@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "LegalRecord",
+  "name": {
+    "lastName": "P Adams",
+    "forenames": "John"
+  },
+  "eventDate": {
+    "yearString": "1827"
+  },
+  "eventPlace": {
+    "placeString": "Hampton, Washington, New York, United States"
+  },
+  "hasValidData": true
+}

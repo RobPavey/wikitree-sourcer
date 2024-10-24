@@ -102,13 +102,13 @@ function extractData(document, url) {
     }
   }
 
-  let recordDataTable = document.getElementById("tblRecordDislpay");
-  if (recordDataTable) {
-    let tableRows = recordDataTable.querySelectorAll("tbody > tr");
+  function addRecordDataFromTable(table) {
+    let tableRows = table.querySelectorAll("tbody > tr");
 
     if (tableRows.length > 0) {
       result.recordData = {};
 
+      let previousLabel = "";
       for (let row of tableRows) {
         let tableDataElements = row.querySelectorAll("td");
         if (tableDataElements.length == 2) {
@@ -120,36 +120,36 @@ function extractData(document, url) {
 
           if (label && value) {
             result.recordData[label] = value;
+          } else if (value) {
+            // there is no label. This can happen for the date when the record type is not knowm
+            if (previousLabel == "Name") {
+              const yearRegex = /^\d\d\d\d$/;
+              const dateRegex = /^\d\d?\/\d\d?\/\d\d\d\d$/;
+              const rangeRegex = /^\d\d\d\d\s*\-\s*\d\d\d\d$/;
+              if (yearRegex.test(value) || dateRegex.test(value) || rangeRegex.test(value)) {
+                if (!result.recordData.date) {
+                  result.recordData.date = value;
+                }
+              }
+            }
           }
+
+          previousLabel = label;
         }
       }
     }
+  }
+
+  let recordDataTable = document.getElementById("tblRecordDislpay");
+  if (recordDataTable) {
+    addRecordDataFromTable(recordDataTable);
   } else {
     // different table - possibly only when you don't have a paid sub
     recordDataTable = document.getElementById("recordtable");
     if (recordDataTable) {
       let actualTable = recordDataTable.querySelector("tr > td > table.db-table");
       if (actualTable) {
-        let tableRows = actualTable.querySelectorAll("tbody > tr");
-
-        if (tableRows.length > 0) {
-          result.recordData = {};
-
-          for (let row of tableRows) {
-            let tableDataElements = row.querySelectorAll("td");
-            if (tableDataElements.length == 2) {
-              let labelElement = tableDataElements[0];
-              let valueElement = tableDataElements[1];
-
-              let label = labelElement.textContent.trim();
-              let value = valueElement.textContent.trim();
-
-              if (label && value) {
-                result.recordData[label] = value;
-              }
-            }
-          }
-        }
+        addRecordDataFromTable(actualTable);
       }
     } else {
       if (result.isTranscript) {

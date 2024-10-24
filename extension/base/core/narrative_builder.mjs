@@ -3002,6 +3002,7 @@ class NarrativeBuilder {
       { recordType: RT.GovernmentDocument, string: "was in a government document" },
       { recordType: RT.Diary, string: "was in a diary entry" },
       { recordType: RT.Inquest, string: "was the subject of an inquest" },
+      { recordType: RT.Deed, string: "was recorded in a deed" },
     ];
 
     let gd = this.eventGd;

@@ -34,6 +34,10 @@ const recordTypeMatches = [
     requiredFields: [["Census"]],
   },
   {
+    recordType: RT.Burial,
+    requiredFields: [["Burial Date"], ["Burial Place"]],
+  },
+  {
     recordType: RT.Baptism,
     requiredFields: [["Baptism"]],
   },
@@ -82,27 +86,92 @@ const recordTypeMatches = [
     recordType: RT.Residence,
     requiredFields: [["Residence"]],
   },
+  {
+    recordType: RT.Deed,
+    requiredFields: [["Deed"]],
+  },
+  {
+    recordType: RT.Will,
+    requiredFields: [["Will"]],
+  },
+  {
+    recordType: RT.Probate,
+    requiredFields: [["Probate Record"], ["Probate Administration"]],
+  },
+  {
+    recordType: RT.LegalRecord,
+    requiredFields: [["Court Record"]],
+  },
+  {
+    recordType: RT.Immigration,
+    requiredFields: [["Naturalization"]],
+  },
+
+  // ones with vague type
+  {
+    recordType: RT.LegalRecord,
+    collectionTitleMatches: [["Abstracts of Wills, Admins. and Guardianships"]],
+  },
 ];
+
+const aaRecordTypeToRecordType = {
+  Baptism: RT.Baptism,
+  Birth: RT.Birth,
+  Burial: RT.Burial,
+  Census: RT.Census,
+  "Court Record": RT.LegalRecord,
+  Deed: RT.Deed,
+  Death: RT.Death,
+  Marriage: RT.Marriage,
+  "Military Record": RT.Military,
+  Naturalization: RT.Immigration,
+  "Probate Record": RT.Probate,
+  "Probate Administration": RT.Probate,
+  Residence: RT.Residence,
+  Tax: RT.Tax,
+  Will: RT.Will,
+};
 
 class AmerancEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
-    let inputData = {
-      collectionTitle: ed.title,
-      recordData: ed.recordData,
-    };
-
-    // Note: for transcript pages there is often a "Record Type" column in table.
-    // For record pages the second fields in recordData is often named in a way that indicates
-    // the record type.
-    // For images all we have to go on is the title.
-    this.recordType = this.determineRecordType(recordTypeMatches, inputData);
+    this.determineRecordTypeForAmeranc();
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Helper functions
   ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  determineRecordTypeForAmeranc() {
+    // Note: for transcript pages there is often a "Record Type" column in table.
+    // For record pages the second field in recordData is often named in a way that indicates
+    // the record type.
+    // For images all we have to go on is the title.
+
+    if (this.ed.isTranscript) {
+      let transcriptData = this.getPrimaryTranscriptData();
+
+      if (transcriptData) {
+        let primaryTranscript = transcriptData.transcript;
+        let aaRecordType = primaryTranscript["Record Type"];
+        if (aaRecordType) {
+          let recordType = aaRecordTypeToRecordType[aaRecordType];
+          if (recordType) {
+            this.recordType = recordType;
+            return;
+          }
+        }
+      }
+    }
+
+    let inputData = {
+      collectionTitle: this.ed.title,
+      recordData: this.ed.recordData,
+    };
+
+    this.recordType = this.determineRecordType(recordTypeMatches, inputData);
+  }
 
   makeNameObjFromAmerancFullName(fullNameString) {
     if (fullNameString) {
@@ -164,7 +233,7 @@ class AmerancEdReader extends ExtractedDataReader {
     return this.makeDateObjFromDateString(dateString);
   }
 
-  getPrimaryTranscriptValue(keys) {
+  getPrimaryTranscriptData() {
     let transcriptTable = this.ed.transcriptTable;
     let extendedAttributes = this.ed.extendedAttributes;
     if (!transcriptTable || !extendedAttributes) {
@@ -190,6 +259,19 @@ class AmerancEdReader extends ExtractedDataReader {
       return;
     }
 
+    return { transcript: primaryTranscript, extendedAttributes: primaryExtendedAttributes };
+  }
+
+  getPrimaryTranscriptValue(keys) {
+    let transcriptData = this.getPrimaryTranscriptData();
+
+    if (!transcriptData) {
+      return;
+    }
+
+    let primaryTranscript = transcriptData.transcript;
+    let primaryExtendedAttributes = transcriptData.extendedAttributes;
+
     for (let key of keys) {
       if (primaryTranscript[key]) {
         return primaryTranscript[key];
@@ -209,6 +291,15 @@ class AmerancEdReader extends ExtractedDataReader {
       value = this.getPrimaryTranscriptValue(keys);
     }
     return value;
+  }
+
+  getDateFromRecordTypeField() {
+    for (let key of Object.keys(aaRecordTypeToRecordType)) {
+      let value = this.getRecordDataValueForKeys([key]);
+      if (value) {
+        return value;
+      }
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -241,38 +332,13 @@ class AmerancEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    if (this.recordType == RT.Census) {
-      let year = this.getRecordDataValueForKeys(["Census"]);
-      if (year) {
-        return this.makeDateObjFromYear(year);
-      }
-    } else if (this.recordType == RT.Birth) {
+    if (this.recordType == RT.Birth) {
       let dateString = this.getRecordDataValueForKeys(["Date of Birth", "Birth"]);
       if (dateString) {
         return this.makeDateObjFromAmerancDateString(dateString);
       }
-    } else if (this.recordType == RT.Baptism) {
-      let dateString = this.getRecordDataValueForKeys(["Baptism"]);
-      if (dateString) {
-        return this.makeDateObjFromAmerancDateString(dateString);
-      }
-    } else if (this.recordType == RT.Marriage) {
-      let dateString = this.getRecordDataValueForKeys(["Marriage"]);
-      if (dateString) {
-        return this.makeDateObjFromAmerancDateString(dateString);
-      }
-    } else if (this.recordType == RT.Military) {
-      let dateString = this.getRecordDataValueForKeys(["Military Record"]);
-      if (dateString) {
-        return this.makeDateObjFromAmerancDateString(dateString);
-      }
-    } else if (this.recordType == RT.Probate) {
-      let dateString = this.getRecordDataValueForKeys(["Probate Record"]);
-      if (dateString) {
-        return this.makeDateObjFromAmerancDateString(dateString);
-      }
-    } else if (this.recordType == RT.Tax) {
-      let dateString = this.getRecordDataValueForKeys(["Tax"]);
+    } else if (this.recordType == RT.Burial) {
+      let dateString = this.getRecordDataValueForKeys(["Burial Date"]);
       if (dateString) {
         return this.makeDateObjFromAmerancDateString(dateString);
       }
@@ -288,11 +354,11 @@ class AmerancEdReader extends ExtractedDataReader {
         }
         return this.makeDateObjFromAmerancDateString(dateString);
       }
-    } else if (this.recordType == RT.Residence) {
-      let dateString = this.getRecordDataValueForKeys(["Residence"]);
-      if (dateString) {
-        return this.makeDateObjFromAmerancDateString(dateString);
-      }
+    }
+
+    let recordTypeDateString = this.getDateFromRecordTypeField();
+    if (recordTypeDateString) {
+      return this.makeDateObjFromAmerancDateString(recordTypeDateString);
     }
 
     let genericRecordValue = this.getRecordDataValueForKeys(["Record"]);
@@ -300,8 +366,17 @@ class AmerancEdReader extends ExtractedDataReader {
       return this.makeDateObjFromAmerancDateString(genericRecordValue);
     }
 
+    let untypedDateValue = this.getRecordDataValueForKeys(["date"]);
+    if (untypedDateValue) {
+      return this.makeDateObjFromAmerancDateString(untypedDateValue);
+    }
+
     // transcript can have date in the table data
     if (this.ed.isTranscript) {
+      let dateString = this.getPrimaryTranscriptValue(["Date"]);
+      if (dateString) {
+        return this.makeDateObjFromAmerancDateString(dateString);
+      }
       let startDateString = this.getPrimaryTranscriptValue(["Start Date"]);
       if (startDateString) {
         return this.makeDateObjFromAmerancDateString(startDateString);
