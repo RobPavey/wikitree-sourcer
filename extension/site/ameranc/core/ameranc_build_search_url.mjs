@@ -26,19 +26,77 @@ import { AmerancUriBuilder } from "./ameranc_uri_builder.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
+  const typeOfSearch = buildUrlInput.typeOfSearch;
+  const parameters = buildUrlInput.searchParameters;
+  const options = buildUrlInput.options;
 
   var builder = new AmerancUriBuilder();
 
   // call methods on builder here
 
-  builder.addLastName(gd.inferLastName());
+  let lastName = gd.inferLastName();
+  if (typeOfSearch == "SpecifiedParameters") {
+    let lastNamesArray = gd.inferPersonLastNamesArray(gd);
+    if (lastNamesArray.length > 0) {
+      if (lastNamesArray.length == 1) {
+        lastName = lastNamesArray[0];
+      } else if (lastNamesArray.length > parameters.lastNameIndex) {
+        lastName = lastNamesArray[parameters.lastNameIndex];
+      }
+    }
+  }
+  builder.addLastName(lastName);
+
   builder.addFirstName(gd.inferForenames());
 
-  let lifeRange = gd.inferPossibleLifeYearRange();
-  builder.addStartYear(lifeRange.startYear);
-  builder.addEndYear(lifeRange.endYear);
+  let exactness = 2;
+  const exactnessOption = options.search_ameranc_dateExactness;
+  if (exactnessOption == "exact") {
+    exactness = 0;
+  } else if (/^\d+$/.test(exactnessOption)) {
+    exactness = Number(exactnessOption);
+  }
 
-  builder.addLocation(gd.inferEventPlace());
+  if (typeOfSearch == "SameEvent") {
+    let eventDateObj = gd.inferEventDateObj();
+    if (eventDateObj) {
+      let eventYear = eventDateObj.getYearString();
+      if (eventYear) {
+        let yearNum = Number(eventYear);
+        if (yearNum && !isNaN(yearNum)) {
+          builder.addStartYear(yearNum - exactness);
+          builder.addEndYear(yearNum + exactness);
+        }
+      }
+    }
+  } else {
+    const maxLifespan = Number(options.search_general_maxLifespan);
+
+    let lifeRange = gd.inferPossibleLifeYearRange(maxLifespan, Date.now(), exactness);
+    builder.addStartYear(lifeRange.startYear);
+    builder.addEndYear(lifeRange.endYear);
+  }
+
+  if (typeOfSearch == "SpecifiedParameters") {
+    let placeName = parameters.place;
+    if (placeName && placeName != "<none>") {
+      builder.addLocation(placeName);
+    }
+  } else if (typeOfSearch == "SameEvent") {
+    builder.addLocation(gd.inferEventPlace());
+  } else {
+    let placeNames = gd.inferPlaceNames();
+    if (placeNames.length == 1) {
+      builder.addLocation(placeNames[0]);
+    }
+  }
+
+  if (typeOfSearch == "SpecifiedParameters") {
+    let category = parameters.category;
+    if (category && category != "all") {
+      builder.addCategory(category);
+    }
+  }
 
   const url = builder.getUri();
 

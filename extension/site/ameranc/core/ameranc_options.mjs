@@ -24,6 +24,7 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
@@ -36,8 +37,35 @@ const citationOptionsGroup = {
   options: [],
 };
 
+const searchParametersOptionsGroup = {
+  category: "search",
+  subcategory: "ameranc",
+  tab: "search",
+  subsection: "ameranc",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "dateExactness",
+      type: "select",
+      label: "Search exactness to use for the search from/to dates",
+      values: [
+        { value: "exact", text: "Exact year" },
+        { value: "1", text: "+/- 1 years" },
+        { value: "2", text: "+/- 2 years" },
+        { value: "3", text: "+/- 3 years" },
+        { value: "5", text: "+/- 5 years" },
+        { value: "10", text: "+/- 10 years" },
+        { value: "25", text: "+/- 25 years" },
+      ],
+      defaultValue: "2",
+    },
+  ],
+};
+
 registerSubsectionForOptions("search", "ameranc", "American Ancestors");
 registerSiteSearchPopupOptionsGroup("ameranc", 7, 7);
+registerSubheadingForOptions("search", "ameranc", "parameters", "Search Parameters");
+registerOptionsGroup(searchParametersOptionsGroup);
 
 registerSubsectionForOptions("citation", "ameranc", "American Ancestors");
 registerOptionsGroup(citationOptionsGroup);

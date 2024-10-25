@@ -22,9 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import {
+  addMenuItem,
+  addMenuItemWithSubMenu,
+  addBackMenuItem,
+  addSameEventMenuItem,
+  beginMainMenu,
+  endMainMenu,
+  doAsyncActionWithCatch,
+} from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
+
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -50,12 +60,26 @@ function shouldShowSearchMenuItem(data, filter) {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function amerancSearch(generalizedData) {
-  const input = { generalizedData: generalizedData, options: options };
+async function doAmerancSearch(input) {
   doAsyncActionWithCatch("American Ancestors Search", input, async function () {
     let loadedModule = await import(`../core/ameranc_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
+}
+
+async function amerancSearch(generalizedData, typeOfSearch) {
+  const input = { generalizedData: generalizedData, options: options, typeOfSearch: typeOfSearch };
+  doAmerancSearch(input);
+}
+
+async function amerancSearchWithParameters(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  doAmerancSearch(input);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -63,16 +87,51 @@ async function amerancSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addAmerancDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search American Ancestors", function (element) {
-    amerancSearch(data.generalizedData);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search American Ancestors",
+    function (element) {
+      amerancSearch(data.generalizedData, "");
+    },
+    function () {
+      setupAmerancSearchSubMenu(data, backFunction, filter);
+    }
+  );
 
   return true;
+}
+
+function addAmerancSameEventMenuItem(menu, data) {
+  let added = addSameEventMenuItem(menu, data, function (element) {
+    amerancSearch(data.generalizedData, "SameEvent");
+  });
+}
+
+function addAmerancSearchWithParametersMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
+    setupAmerancSearchWithParametersSubMenu(data, backFunction);
+  });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
+
+async function setupAmerancSearchSubMenu(data, backFunction, filter) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  addAmerancSameEventMenuItem(menu, data);
+  addAmerancSearchWithParametersMenuItem(menu, data, backFunction);
+
+  endMainMenu(menu);
+}
+
+async function setupAmerancSearchWithParametersSubMenu(data, backFunction) {
+  let dataModule = await import(`../core/ameranc_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.AmerancData, amerancSearchWithParameters);
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites

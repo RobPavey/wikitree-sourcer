@@ -70,11 +70,11 @@ class AmerancUriBuilder {
   }
 
   addLastName(string) {
-    this.addSearchParameter("lastname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("lastname", string);
   }
 
   addFirstName(string) {
-    this.addSearchParameter("firstname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("firstname", string);
   }
 
   addStartYear(string) {
@@ -90,7 +90,11 @@ class AmerancUriBuilder {
   }
 
   addLocation(string) {
-    this.addSearchParameter("location", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("location", string);
+  }
+
+  addCategory(string) {
+    this.addSearchParameter("category", string);
   }
 
   getUri() {
