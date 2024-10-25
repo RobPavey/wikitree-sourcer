@@ -88,6 +88,43 @@ function buildSearchUrl(buildUrlInput) {
     let placeNames = gd.inferPlaceNames();
     if (placeNames.length == 1) {
       builder.addLocation(placeNames[0]);
+    } else if (placeNames.length > 1) {
+      // do the place names all have something in common
+      let commonPlace = placeNames[0];
+      for (let index = 1; index < placeNames.length; index++) {
+        let thisPlace = placeNames[index];
+        if (thisPlace != commonPlace) {
+          if (commonPlace.includes(thisPlace)) {
+            commonPlace = thisPlace;
+          } else if (!thisPlace.includes(commonPlace)) {
+            // neither includes the other but they may share a common ending
+            let placeParts = thisPlace.split(",");
+            let commonParts = commonPlace.split(",");
+            let shortestLength = placeParts.length;
+            if (commonParts.length < shortestLength) {
+              shortestLength = commonParts.length;
+            }
+            commonPlace = "";
+            for (let index = 0; index < shortestLength; index++) {
+              let placePart = placeParts[placeParts.length - 1 - index].trim();
+              let commonPart = commonParts[commonParts.length - 1 - index].trim();
+              if (placePart == commonPart) {
+                if (commonPlace) {
+                  commonPlace = placePart + ", " + commonPlace;
+                } else {
+                  commonPlace = placePart;
+                }
+              }
+            }
+            if (!commonPlace) {
+              break;
+            }
+          }
+        }
+      }
+      if (commonPlace) {
+        builder.addLocation(commonPlace);
+      }
     }
   }
 
