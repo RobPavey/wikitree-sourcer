@@ -1,0 +1,394 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Beckworth",
+    "forenames": "Mary"
+  },
+  "eventDate": {
+    "yearString": "1790"
+  },
+  "eventPlace": {
+    "placeString": "Frederick, Maryland, United States"
+  },
+  "householdArrayFields": [
+    "name"
+  ],
+  "householdArray": [
+    {
+      "name": "Andrew CABEL"
+    },
+    {
+      "name": "Wm ALLEN"
+    },
+    {
+      "name": "Mary BURBIAN"
+    },
+    {
+      "name": "Wm LOCK"
+    },
+    {
+      "name": "Andrew LUPESTINE"
+    },
+    {
+      "name": "Joseph LAURANCE"
+    },
+    {
+      "name": "Daniel LAMOTT"
+    },
+    {
+      "name": "James MILLER"
+    },
+    {
+      "name": "James MCCULLA"
+    },
+    {
+      "name": "Magalen MILLER"
+    },
+    {
+      "name": "Catherener MAY"
+    },
+    {
+      "name": "Wm MCQUIAN"
+    },
+    {
+      "name": "David MCCOSLIN"
+    },
+    {
+      "name": "Mary MCGUIER"
+    },
+    {
+      "name": "Benjan MAYSON"
+    },
+    {
+      "name": "Joseph MUSHEROW"
+    },
+    {
+      "name": "James MCHENARY"
+    },
+    {
+      "name": "Croutz MINE"
+    },
+    {
+      "name": "Henary NOGEL"
+    },
+    {
+      "name": "Thos NASH"
+    },
+    {
+      "name": "Elizabeth NIGHT"
+    },
+    {
+      "name": "Benjan NIGHT"
+    },
+    {
+      "name": "Jacob NUSSER"
+    },
+    {
+      "name": "Benjan NORTON"
+    },
+    {
+      "name": "Lucy ODEVAGER"
+    },
+    {
+      "name": "Charles ORRICK"
+    },
+    {
+      "name": "Thomas POWAL"
+    },
+    {
+      "name": "Joseph BARKMAN"
+    },
+    {
+      "name": "Wm PHILIPS"
+    },
+    {
+      "name": "Nicholus PRISHON"
+    },
+    {
+      "name": "John PERRY"
+    },
+    {
+      "name": "Geo PEAL"
+    },
+    {
+      "name": "Wm RICHARD"
+    },
+    {
+      "name": "Rebecca TWILENNY"
+    },
+    {
+      "name": "Geo RAY"
+    },
+    {
+      "name": "David RUSK"
+    },
+    {
+      "name": "Alexr RUSSEL"
+    },
+    {
+      "name": "Peter RANGELWARE"
+    },
+    {
+      "name": "James REED"
+    },
+    {
+      "name": "Martin RUSEBURT"
+    },
+    {
+      "name": "Wm REED"
+    },
+    {
+      "name": "Geo SHOCK"
+    },
+    {
+      "name": "Jacob SMITH"
+    },
+    {
+      "name": "Matthias SUNDAY"
+    },
+    {
+      "name": "John SHIER"
+    },
+    {
+      "name": "John SLAY"
+    },
+    {
+      "name": "John SMITH"
+    },
+    {
+      "name": "David DORSEY"
+    },
+    {
+      "name": "Joseph MCLAIN"
+    },
+    {
+      "name": "Robert CRONE"
+    },
+    {
+      "name": "Isaac NORTON"
+    },
+    {
+      "name": "Daniel HECK"
+    },
+    {
+      "name": "Peter MYERS"
+    },
+    {
+      "name": "William PHILBEL"
+    },
+    {
+      "name": "Conrod SILE"
+    },
+    {
+      "name": "William POTTER"
+    },
+    {
+      "name": "Samuel MCKEE"
+    },
+    {
+      "name": "Samuel RISTER"
+    },
+    {
+      "name": "Danl CORNICLE"
+    },
+    {
+      "name": "Thos KELLY"
+    },
+    {
+      "name": "David CLARY"
+    },
+    {
+      "name": "Joseph PLASTER"
+    },
+    {
+      "name": "Joseph WHITEHEAD"
+    },
+    {
+      "name": "John GERRING"
+    },
+    {
+      "name": "Henry POOLE"
+    },
+    {
+      "name": "Robert MASON"
+    },
+    {
+      "name": "Jacob SMITH"
+    },
+    {
+      "name": "Henry WOOD"
+    },
+    {
+      "name": "Richard BRIGHTWELL"
+    },
+    {
+      "name": "Joseph WRIGHT"
+    },
+    {
+      "name": "John RUNEY"
+    },
+    {
+      "name": "James MCMAHENS"
+    },
+    {
+      "name": "John BLACK"
+    },
+    {
+      "name": "Leonard REDICK"
+    },
+    {
+      "name": "Joseph SHOESTER"
+    },
+    {
+      "name": "William ROBERTS"
+    },
+    {
+      "name": "Enoch UMSTEAD"
+    },
+    {
+      "name": "Jacob DAGE"
+    },
+    {
+      "name": "William BEATTY"
+    },
+    {
+      "name": "Aquila JUSTICE"
+    },
+    {
+      "name": "John DODSON"
+    },
+    {
+      "name": "Henry ISENBERGER"
+    },
+    {
+      "name": "Gilbert DAVIS"
+    },
+    {
+      "name": "Francis DAVIS"
+    },
+    {
+      "name": "Henry BALL"
+    },
+    {
+      "name": "John RICHARDSON"
+    },
+    {
+      "name": "John BAB"
+    },
+    {
+      "name": "Jacob LAVELY"
+    },
+    {
+      "name": "William JAMES"
+    },
+    {
+      "name": "Henry KOONTZ"
+    },
+    {
+      "name": "William LEEK"
+    },
+    {
+      "name": "Samuel PARRON"
+    },
+    {
+      "name": "Burges NELSON"
+    },
+    {
+      "name": "Isaac STORMES"
+    },
+    {
+      "isSelected": true,
+      "name": "Mary BECKWORTH"
+    },
+    {
+      "name": "Abraham PEPPLE"
+    },
+    {
+      "name": "John BEAVERD"
+    },
+    {
+      "name": "Henry DAHOOF"
+    },
+    {
+      "name": "Margarett FARVER"
+    },
+    {
+      "name": "Peter SHETHOUSE"
+    },
+    {
+      "name": "William GATHER"
+    },
+    {
+      "name": "Thomas WAYMAN"
+    },
+    {
+      "name": "Henry HARGWAGER"
+    },
+    {
+      "name": "Peter SNIDER"
+    },
+    {
+      "name": "John STRINGER"
+    },
+    {
+      "name": "Michael RISTER"
+    },
+    {
+      "name": "Joseph ADAMS"
+    },
+    {
+      "name": "Christopher FULKER"
+    },
+    {
+      "name": "Benja CASTLEBURG"
+    },
+    {
+      "name": "David INGLER"
+    },
+    {
+      "name": "George GIRTY"
+    },
+    {
+      "name": "Jacob POONSOCK"
+    },
+    {
+      "name": "Michael PRINGMAN"
+    },
+    {
+      "name": "Abraham FAW"
+    },
+    {
+      "name": "Geo. W SNERTZELL"
+    },
+    {
+      "name": "Philip PIFER"
+    },
+    {
+      "name": "Nicholas HISLER"
+    },
+    {
+      "name": "John MARGIN"
+    },
+    {
+      "name": "Valentine SWARTZ"
+    },
+    {
+      "name": "Thomas HICKSON"
+    },
+    {
+      "name": "Michael OLIX"
+    },
+    {
+      "name": "George ADAMS"
+    },
+    {
+      "name": "Jacob BEAR"
+    },
+    {
+      "name": "Jacob BEAR"
+    }
+  ],
+  "hasValidData": true
+}

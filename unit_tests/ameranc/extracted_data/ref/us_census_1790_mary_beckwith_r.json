@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "url": "https://www.americanancestors.org/databases/united-states-1790-census/RecordDisplay?volumeId=18283&pageName=227&rId=269626884",
+  "pageType": "record",
+  "title": "United States 1790 Census",
+  "volumeId": "18283",
+  "volumeName": "MD",
+  "page": "227",
+  "pageCount": "45",
+  "recordData": {
+    "Name": "Mary BECKWORTH",
+    "Census": "1790",
+    "Location": "Not Stated, Frederick, Maryland, United States",
+    "Series": "M637",
+    "Origin": "3",
+    "Archive Roll Number": "568143",
+    "Line Number": "16274",
+    "Image": "498",
+    "Url to Image": "/004440911/004440911_00498.jpg",
+    "Volume Name": "MD",
+    "Page": "227"
+  },
+  "citationParts": [
+    "United States 1790 Census. Online database. AmericanAncestors.org. New England Historic Genealogical Society, 2014. (Original index:  United States Census, 1790. FamilySearch, 2014.)",
+    "https://www.americanancestors.org/DB541/rd/18283/227/269626884"
+  ],
+  "hasImage": true
+}

@@ -1,0 +1,1911 @@
+{
+  "success": true,
+  "url": "https://www.americanancestors.org/databases/united-states-1790-census/transcript?rId=269626884&volumeId=18283&pageName=227&filterQuery=",
+  "pageType": "record",
+  "isTranscript": true,
+  "title": "United States 1790 Census",
+  "volumeId": "18283",
+  "volumeName": "MD",
+  "page": "227",
+  "pageCount": "45",
+  "transcriptTable": [
+    {
+      "Names": "Andrew CABEL",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Wm ALLEN",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Mary BURBIAN",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Wm LOCK",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Andrew LUPESTINE",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Joseph LAURANCE",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Daniel LAMOTT",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "James MILLER",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "James MCCULLA",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Magalen MILLER",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Catherener MAY",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Wm MCQUIAN",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "David MCCOSLIN",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Mary MCGUIER",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Benjan MAYSON",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Joseph MUSHEROW",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "James MCHENARY",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Croutz MINE",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Henary NOGEL",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Thos NASH",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Elizabeth NIGHT",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Benjan NIGHT",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Jacob NUSSER",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Benjan NORTON",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Lucy ODEVAGER",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Charles ORRICK",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Thomas POWAL",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Joseph BARKMAN",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Wm PHILIPS",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Nicholus PRISHON",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John PERRY",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Geo PEAL",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Wm RICHARD",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Rebecca TWILENNY",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Geo RAY",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "David RUSK",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Alexr RUSSEL",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Peter RANGELWARE",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "James REED",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Martin RUSEBURT",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Wm REED",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Geo SHOCK",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Jacob SMITH",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Matthias SUNDAY",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John SHIER",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John SLAY",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John SMITH",
+      "Start Date": "1790",
+      "Location": "Patapsco Lower Hundred, Baltimore, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "David DORSEY",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Joseph MCLAIN",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Robert CRONE",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Isaac NORTON",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Daniel HECK",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Peter MYERS",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "William PHILBEL",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Conrod SILE",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "William POTTER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Samuel MCKEE",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Samuel RISTER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Danl CORNICLE",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Thos KELLY",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "David CLARY",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Joseph PLASTER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Joseph WHITEHEAD",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John GERRING",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Henry POOLE",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Robert MASON",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Jacob SMITH",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Henry WOOD",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Richard BRIGHTWELL",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Joseph WRIGHT",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John RUNEY",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "James MCMAHENS",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John BLACK",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Leonard REDICK",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Joseph SHOESTER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "William ROBERTS",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Enoch UMSTEAD",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Jacob DAGE",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "William BEATTY",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Aquila JUSTICE",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John DODSON",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Henry ISENBERGER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Gilbert DAVIS",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Francis DAVIS",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Henry BALL",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John RICHARDSON",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John BAB",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Jacob LAVELY",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "William JAMES",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Henry KOONTZ",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "William LEEK",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Samuel PARRON",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Burges NELSON",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Isaac STORMES",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Mary BECKWORTH",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Abraham PEPPLE",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John BEAVERD",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Henry DAHOOF",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Margarett FARVER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Peter SHETHOUSE",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "William GATHER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Thomas WAYMAN",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Henry HARGWAGER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Peter SNIDER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John STRINGER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Michael RISTER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Joseph ADAMS",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Christopher FULKER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Benja CASTLEBURG",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "David INGLER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "George GIRTY",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Jacob POONSOCK",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Michael PRINGMAN",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Abraham FAW",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Geo. W SNERTZELL",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Philip PIFER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Nicholas HISLER",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "John MARGIN",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Valentine SWARTZ",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Thomas HICKSON",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Michael OLIX",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "George ADAMS",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Jacob BEAR",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    },
+    {
+      "Names": "Jacob BEAR",
+      "Start Date": "1790",
+      "Location": "Not Stated, Frederick, Maryland, United States",
+      "Original Text": "",
+      "Record Type": "Census"
+    }
+  ],
+  "extendedAttributes": [
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7276",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7277",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7278",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7279",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7280",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7281",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7282",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7283",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7284",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7285",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7286",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7287",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7288",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7289",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7290",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7291",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7292",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7293",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7294",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7295",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7296",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7297",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7298",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7299",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7300",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7301",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7302",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7303",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7304",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7305",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7306",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7307",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7308",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7309",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7310",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7311",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7312",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7313",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7314",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7315",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7316",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7317",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7318",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7319",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7320",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7321",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7322",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7323",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "7324",
+      "Image": "135",
+      "Url to Image": "/004440911/004440911_00135.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16227",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16228",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16229",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16230",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16231",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16232",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16233",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16234",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16235",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16236",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16237",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16238",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16239",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16240",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16241",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16242",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16243",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16244",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16245",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16246",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16247",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16248",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16249",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16250",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16251",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16252",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16253",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16254",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16255",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16256",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16257",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16258",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16259",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16260",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16261",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16262",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16263",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16264",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16265",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16266",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16267",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16268",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16269",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16270",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16271",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16272",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16273",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "isExpanded": true,
+      "isPrimary": true,
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16274",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16275",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16276",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16277",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16278",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16279",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16280",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16281",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16282",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16283",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16284",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16285",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16286",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16287",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16288",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16289",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16290",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16291",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16292",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16293",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16294",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16295",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16296",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16297",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16298",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16299",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16300",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16301",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16302",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    },
+    {
+      "Series": "M637",
+      "Origin": "3",
+      "Archive Roll Number": "568143",
+      "Line Number": "16303",
+      "Image": "498",
+      "Url to Image": "/004440911/004440911_00498.jpg"
+    }
+  ],
+  "citationParts": [
+    "United States 1790 Census. Online database. AmericanAncestors.org. New England Historic Genealogical Society, 2014. (Original index:  United States Census, 1790. FamilySearch, 2014.)",
+    "https://www.americanancestors.org/DB541/t/18283/227/269626884"
+  ]
+}

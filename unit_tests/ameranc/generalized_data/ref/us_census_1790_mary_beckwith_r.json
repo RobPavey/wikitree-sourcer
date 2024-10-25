@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "ameranc",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Beckworth",
+    "forenames": "Mary"
+  },
+  "eventDate": {
+    "yearString": "1790"
+  },
+  "eventPlace": {
+    "placeString": "Frederick, Maryland, United States"
+  },
+  "hasValidData": true
+}

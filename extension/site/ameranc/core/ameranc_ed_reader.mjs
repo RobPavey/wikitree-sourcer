@@ -76,7 +76,7 @@ const recordTypeMatches = [
   },
   {
     recordType: RT.Marriage,
-    requiredFields: [["Marriage"]],
+    requiredFields: [["Marriage"], ["Intention"]],
   },
   {
     recordType: RT.Birth,
@@ -122,6 +122,7 @@ const aaRecordTypeToRecordType = {
   "Court Record": RT.LegalRecord,
   Deed: RT.Deed,
   Death: RT.Death,
+  Intention: RT.Marriage,
   Marriage: RT.Marriage,
   "Military Record": RT.Military,
   Naturalization: RT.Immigration,
@@ -352,6 +353,11 @@ class AmerancEdReader extends ExtractedDataReader {
           let deathDate = dateString.replace(birthAndDeathRegex, "$2");
           return this.makeDateObjFromYear(deathDate);
         }
+        return this.makeDateObjFromAmerancDateString(dateString);
+      }
+    } else if (this.recordType == RT.Marriage) {
+      let dateString = this.getRecordDataValueForKeys(["Date of Marriage"]);
+      if (dateString) {
         return this.makeDateObjFromAmerancDateString(dateString);
       }
     }

@@ -28,15 +28,15 @@ import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const amerancStartYear = 1800;
-const amerancEndYear = 2000;
+const amerancStartYear = 1600;
+const amerancEndYear = 2024;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
     startYear: amerancStartYear,
     endYear: amerancEndYear,
-    dateTestType: "bmd",
-    countryList: [],
+    dateTestType: "lived",
+    countryList: ["United States"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {

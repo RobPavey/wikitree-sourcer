@@ -69,44 +69,28 @@ class AmerancUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addLastName(string) {
+    this.addSearchParameter("lastname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
+  addFirstName(string) {
+    this.addSearchParameter("firstname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addStartYear(string) {
-    this.addSearchParameter("start", string);
+    this.addSearchParameter("fromyear", string);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("end", string);
+    this.addSearchParameter("toyear", string);
   }
 
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
+  addRecordType(string) {
+    this.addSearchParameter("recordtype", string);
   }
 
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addLocation(string) {
+    this.addSearchParameter("location", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   getUri() {

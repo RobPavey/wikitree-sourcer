@@ -31,6 +31,15 @@ function buildSearchUrl(buildUrlInput) {
 
   // call methods on builder here
 
+  builder.addLastName(gd.inferLastName());
+  builder.addFirstName(gd.inferForenames());
+
+  let lifeRange = gd.inferPossibleLifeYearRange();
+  builder.addStartYear(lifeRange.startYear);
+  builder.addEndYear(lifeRange.endYear);
+
+  builder.addLocation(gd.inferEventPlace());
+
   const url = builder.getUri();
 
   //console.log("URL is " + url);

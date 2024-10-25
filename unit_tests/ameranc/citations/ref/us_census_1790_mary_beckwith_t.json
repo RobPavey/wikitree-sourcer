@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1790 Census''':\n\"United States 1790 Census\"<br/>\nVolume: MD<br/>\n[https://www.americanancestors.org/DB541/t/18283/227/269626884 American Ancestors Record] (accessed 6 May 2021)<br/>\nMary Beckworth in Frederick, Maryland, United States.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1790 census Mary was in Frederick, Maryland, United States.<ref>\n'''1790 Census''':\n\"United States 1790 Census\"<br/>\nVolume: MD<br/>\n[https://www.americanancestors.org/DB541/t/18283/227/269626884 American Ancestors Record] (accessed 6 May 2021)<br/>\nMary Beckworth in Frederick, Maryland, United States.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1790 Census''': \"United States 1790 Census\"<br/>Volume: MD<br/>[https://www.americanancestors.org/DB541/t/18283/227/269626884 American Ancestors Record] (accessed 6 May 2021)<br/>Mary Beckworth in Frederick, Maryland, United States.",
+    "type": "source"
+  }
+}

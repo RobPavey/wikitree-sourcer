@@ -259,10 +259,17 @@ function extractData(document, url) {
 
   let imgRecord = document.getElementById("imgRecord");
 
-  if (imgRecord) {
+  if (imgRecord && !result.isTranscript) {
     result.hasImage = true;
-  } else if (result.isTranscript || result.pageType == "image") {
-    // there are only image and transcript pages if there is an image
+  } else if (result.isTranscript) {
+    let imageButton = document.getElementById("image-btn");
+    if (imageButton) {
+      if (!imageButton.disabled && !imageButton.classList.contains("disabled")) {
+        result.hasImage = true;
+      }
+    }
+  } else if (result.pageType == "image") {
+    // an image page so there is an image
     result.hasImage = true;
   }
 

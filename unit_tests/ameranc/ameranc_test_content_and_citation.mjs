@@ -58,6 +58,14 @@ const regressionData = [
     url: "https://www.americanancestors.org/databases/california-birth-index-1905-1995/RecordDisplay?pageName=&rId=1069879214",
   },
   {
+    caseName: "us_census_1790_mary_beckwith_r",
+    url: "https://www.americanancestors.org/databases/united-states-1790-census/RecordDisplay?volumeId=18283&pageName=227&rId=269626884",
+  },
+  {
+    caseName: "us_census_1790_mary_beckwith_t",
+    url: "https://www.americanancestors.org/databases/united-states-1790-census/transcript?rId=269626884&volumeId=18283&pageName=227&filterQuery=",
+  },
+  {
     caseName: "us_census_1810_george_jefferson_r",
     url: "https://www.americanancestors.org/databases/united-states-1810-census/RecordDisplay?volumeId=22111&pageName=779&rId=439190122",
   },
