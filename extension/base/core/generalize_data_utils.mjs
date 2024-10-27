@@ -1553,28 +1553,64 @@ class NameObj {
     }
   }
 
-  getMiddleName() {
-    if (this.middleName) {
-      return this.middleName;
+  separateFullNameIntoForenamesAndLastName(fullName) {
+    // See https://en.wikipedia.org/wiki/List_of_family_name_affixes
+    // To be better this could take country names into account
+    const lastNamePrefixes = [
+      " ab ",
+      " ap ",
+      " da ",
+      " de ",
+      " di ",
+      " du ",
+      " ibn ",
+      " la ",
+      " le ",
+      " lu ",
+      " te ",
+      " ter ",
+      " ten ",
+      " van ",
+      " van de ",
+      " van den ",
+      " van der ",
+      " von ",
+      " zu ",
+    ];
+
+    let result = {};
+
+    let numWordsInName = StringUtils.countWords(fullName);
+    if (numWordsInName > 1) {
+      result.forenames = StringUtils.getWordsBeforeLastWord(fullName);
+      result.lastName = StringUtils.getLastWord(fullName);
+    } else {
+      result.forenames = fullName;
+      result.lastName = "";
     }
-    if (this.middleNames) {
-      return StringUtils.getFirstWord(this.middleNames);
-    }
-    if (this.forenames) {
-      let middleNames = StringUtils.getWordsAfterFirstWord(this.forenames);
-      if (middleNames) {
-        return StringUtils.getFirstWord(middleNames);
-      }
-    }
-    if (this.name) {
-      let forenames = StringUtils.getWordsBeforeLastWord(this.name);
-      if (forenames) {
-        let middleNames = StringUtils.getWordsAfterFirstWord(forenames);
-        if (middleNames) {
-          return StringUtils.getFirstWord(middleNames);
+
+    if (numWordsInName > 2) {
+      // it could be something like Margarete Van Wye
+      let lastNameIndex = -1;
+      let lcFullName = fullName.toLowerCase();
+      for (let prefix of lastNamePrefixes) {
+        let prefixIndex = lcFullName.indexOf(prefix);
+        if (prefixIndex != -1 && prefixIndex > 0) {
+          if (lastNameIndex == -1) {
+            lastNameIndex = prefixIndex;
+          } else if (prefixIndex < lastNameIndex) {
+            lastNameIndex = prefixIndex;
+          }
         }
       }
+
+      if (lastNameIndex != -1) {
+        result.forenames = fullName.substring(0, lastNameIndex).trim();
+        result.lastName = fullName.substring(lastNameIndex).trim();
+      }
     }
+
+    return result;
   }
 
   inferFullName() {
@@ -1633,7 +1669,12 @@ class NameObj {
       }
       let numWordsInName = StringUtils.countWords(this.name);
       if (numWordsInName > 1) {
-        return StringUtils.getLastWord(this.name);
+        let parts = this.separateFullNameIntoForenamesAndLastName(this.name);
+        if (parts && parts.lastName) {
+          return parts.lastName;
+        } else {
+          return "";
+        }
       }
       // it is a single word name. Should it be considered first or last?
       // it may depend on the country or the event type, for now we consider it a

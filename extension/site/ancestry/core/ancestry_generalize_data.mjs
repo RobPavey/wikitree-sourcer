@@ -2680,15 +2680,6 @@ function generalizeProfileData(input, result) {
     }
   }
 
-  if (ed.fatherName) {
-    let father = result.addFather();
-    father.name.setFullName(cleanName(ed.fatherName));
-  }
-  if (ed.motherName) {
-    let mother = result.addMother();
-    mother.name.setFullName(cleanName(ed.motherName));
-  }
-
   // analyze the surname - sometimes Ancestry users put the LNAB in parens
   let surname = ed.surname;
   if (surname) {
@@ -2718,6 +2709,26 @@ function generalizeProfileData(input, result) {
     }
   }
   result.setLastNameAndForenames(cleanName(surname), cleanName(ed.givenName));
+
+  if (ed.fatherName) {
+    let father = result.addFather();
+    father.name.setFullName(cleanName(ed.fatherName));
+
+    if (result.name.lastName) {
+      if (father.name.name.endsWith(result.name.lastName)) {
+        father.name.lastName = result.name.lastName;
+        let givenNames = father.name.name.substring(0, father.name.name.length - father.name.lastName.length);
+        givenNames = givenNames.trim();
+        if (givenNames) {
+          father.name.forenames = givenNames;
+        }
+      }
+    }
+  }
+  if (ed.motherName) {
+    let mother = result.addMother();
+    mother.name.setFullName(cleanName(ed.motherName));
+  }
 }
 
 // This function generalizes the data (ed) extracted from an Ancestry page.

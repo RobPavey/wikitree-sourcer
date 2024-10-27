@@ -35,7 +35,9 @@
   "parents": {
     "father": {
       "name": {
-        "name": "Homer William Van Wye"
+        "name": "Homer William Van Wye",
+        "lastName": "Van Wye",
+        "forenames": "Homer William"
       }
     },
     "mother": {

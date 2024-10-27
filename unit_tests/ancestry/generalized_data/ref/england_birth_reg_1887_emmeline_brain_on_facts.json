@@ -35,7 +35,9 @@
   "parents": {
     "father": {
       "name": {
-        "name": "Robert Brain"
+        "name": "Robert Brain",
+        "lastName": "Brain",
+        "forenames": "Robert"
       }
     },
     "mother": {
