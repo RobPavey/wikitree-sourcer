@@ -1656,13 +1656,17 @@ function handlePersonFactsJune2024(document, result) {
         let endIndex = text.indexOf("}", fullNameIndex);
         if (endIndex != -1) {
           let fullNameText = text.substring(fullNameIndex, endIndex);
-          let givenName = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$1");
-          let surname = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$2");
-          if (givenName && givenName != fullNameText) {
-            result.givenName = parseHtmlEscapeCodes(givenName);
-          }
-          if (surname && surname != fullNameText) {
-            result.surname = parseHtmlEscapeCodes(surname);
+          fullNameText = fullNameText.replace(/\s+/g, " ");
+          const regex = /fullName: { given: '([^']*)', surname: '([^']*)'.*$/;
+          if (regex.test(fullNameText)) {
+            let givenName = fullNameText.replace(regex, "$1");
+            let surname = fullNameText.replace(regex, "$2");
+            if (givenName && givenName != fullNameText) {
+              result.givenName = parseHtmlEscapeCodes(givenName);
+            }
+            if (surname && surname != fullNameText) {
+              result.surname = parseHtmlEscapeCodes(surname);
+            }
           }
         }
       }
