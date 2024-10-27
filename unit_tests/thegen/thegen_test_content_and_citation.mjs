@@ -30,13 +30,28 @@ import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
+// The URL has to be copied from iframe address for record a search results
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.thegen.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "bmd_birth_1839_charles_pavey_r",
+    url: "https://www.thegenealogist.com/search/advanced/bmd/births/full/?id=260105357&year=1839",
   },
-  */
+  {
+    caseName: "bmd_marriage_1845_thomas_smith_r",
+    url: "https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=446092223&year=1845",
+  },
+  {
+    caseName: "bmd_nc_burial_1849_henry_smith_r",
+    url: "https://www.thegenealogist.com/search/advanced/bmd/non-conformist/full/?id=716475002&uid_type=1",
+  },
+  {
+    caseName: "census_1861_sarah_pavey_r",
+    url: "https://www.thegenealogist.com/search/advanced/census/main-household/?hlt=219560985&county=243&y=1861&household_id=16268345&a=Search&hh=1&hs=1&cl=1&sscid=243&view_type=fullRecord",
+  },
+  {
+    caseName: "parish_marriage_1851_thomas_smith_r",
+    url: "https://www.thegenealogist.com/search/advanced/parish/marriage/full/?id=851071136&s_id=1464&sscid=401",
+  },
 ];
 
 async function runTests(testManager) {

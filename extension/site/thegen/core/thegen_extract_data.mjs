@@ -22,23 +22,235 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function extractDataForRecordCensus(document, url, result) {
+  let titleElement = document.querySelector("#framework-advanced-search > h3");
+  if (titleElement) {
+    let title = titleElement.textContent.trim();
+    result.title = title;
+  }
+
+  let recordDataElement = document.querySelector("#framework-advanced-search > table.table");
+  if (recordDataElement) {
+    result.recordData = {};
+
+    let rows = recordDataElement.querySelectorAll("tr");
+    for (let row of rows) {
+      let labelElement = row.querySelector("th");
+      let valueElement = row.querySelector("td");
+      if (labelElement && valueElement) {
+        let label = labelElement.textContent.trim();
+        let value = valueElement.textContent.trim();
+        if (label && value) {
+          result.recordData[label] = value;
+        }
+      }
+    }
+  }
+
+  let tableDataElement = document.querySelector("#results > table");
+  if (tableDataElement) {
+    let headingElements = tableDataElement.querySelectorAll("thead > tr > th");
+    let rowElements = tableDataElement.querySelectorAll("tbody > tr");
+    let table = { headings: [], rows: [] };
+    for (let headingElement of headingElements) {
+      let heading = headingElement.textContent.trim();
+      table.headings.push(heading);
+    }
+    for (let rowElement of rowElements) {
+      let cellElements = rowElement.querySelectorAll("td");
+      if (cellElements.length == table.headings.length) {
+        let rowData = {};
+        for (let cellIndex = 0; cellIndex < cellElements.length; cellIndex++) {
+          let cellElement = cellElements[cellIndex];
+          let label = table.headings[cellIndex];
+          let value = cellElement.textContent.trim();
+          if (label) {
+            rowData[label] = value;
+          }
+        }
+        table.rows.push(rowData);
+      }
+    }
+    result.tableData = table;
+  }
+
+  let sourceInfoElement = document.querySelector("#collapseSource");
+  if (sourceInfoElement) {
+    let sourceInfoPara = sourceInfoElement.querySelector("p");
+    if (sourceInfoPara) {
+      let sourceInfo = sourceInfoPara.textContent.trim();
+      if (sourceInfo) {
+        result.sourceInfo = sourceInfo;
+      }
+    }
+  }
+
+  result.success = true;
+
+  return result;
+}
+
+function extractDataForRecordResultsFull(document, url, result) {
+  let resultsFullElement = document.querySelector("#results-full");
+  if (!resultsFullElement) {
+    return result;
+  }
+
+  let breadcrumbElement = document.querySelector("#results-full > div.panel-heading");
+  if (breadcrumbElement) {
+    let breadcrumb = breadcrumbElement.textContent.trim();
+    result.breadcrumb = breadcrumb;
+  }
+
+  let recordDataElement = document.querySelector("#framework-advanced-search table.table");
+  if (recordDataElement) {
+    result.recordData = {};
+
+    let rows = recordDataElement.querySelectorAll("tr");
+    for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+      let row = rows[rowIndex];
+      let labelElements = row.querySelectorAll("th");
+      let valueElements = row.querySelectorAll("td");
+      if (labelElements.length == valueElements.length) {
+        for (let index = 0; index < labelElements.length; index++) {
+          let labelElement = labelElements[index];
+          let valueElement = valueElements[index];
+          if (labelElement && valueElement) {
+            let label = labelElement.textContent.trim();
+            let value = valueElement.textContent.trim();
+
+            if (valueElement.children) {
+              // this is a more complex data value
+              let listGroupElement = valueElement.querySelector("div.list-group");
+              if (listGroupElement) {
+                let listGroupItems = listGroupElement.querySelectorAll(".list-group-item");
+                if (listGroupItems.length == 1) {
+                  let listGroupItem = listGroupItems[0];
+                  let listGroupValue = listGroupItem.textContent.trim();
+                  if (listGroupValue) {
+                    value = listGroupValue;
+                  }
+                } else if (listGroupItems.length > 1) {
+                  let newValue = "";
+                  for (let listGroupItem of listGroupItems) {
+                    let text = listGroupItem.textContent.trim();
+                    if (text && !text.startsWith("Why is")) {
+                      if (newValue) {
+                        newValue += ", ";
+                      }
+                      newValue += text;
+                    }
+                  }
+                  if (newValue) {
+                    value = newValue;
+                  }
+                }
+              }
+            }
+            if (label && value) {
+              result.recordData[label] = value;
+            } else if (!label && rowIndex == 0) {
+              result.title = value;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  let sourceInfoElement = document.querySelector("#accordion-more-info");
+  if (sourceInfoElement) {
+    let sourceInfoPara = sourceInfoElement.querySelector("p");
+    if (sourceInfoPara) {
+      let sourceInfo = sourceInfoPara.textContent.trim();
+      if (sourceInfo) {
+        result.sourceInfo = sourceInfo;
+      }
+    }
+  }
+
+  result.success = true;
+
+  return result;
+}
+
+function extractDataForRecord(document, url, result) {
+  let titleElement = document.querySelector("#framework-advanced-search > h3");
+  let recordDataElement = document.querySelector("#framework-advanced-search > table.table");
+  let tableDataElement = document.querySelector("#results > table");
+  let sourceInfoElement = document.querySelector("#collapseSource");
+
+  if (titleElement && recordDataElement && tableDataElement && sourceInfoElement) {
+    return extractDataForRecordCensus(document, url, result);
+  }
+
+  let resultsFullElement = document.querySelector("#results-full");
+  if (resultsFullElement) {
+    return extractDataForRecordResultsFull(document, url, result);
+  }
+  return result;
+}
+
+function extractDataForImage(document, url, result) {
+  return result;
+}
+
+// Usually a transcript or image is shown in an iframe
+// but it is possible to get to a page by copying the document link from the iframe
+// E.g.:
+// https://www.thegenealogist.com/search/advanced/census/main-family/?hlt=14967669&county=241&y=1841&family_id=2&household_id=14390766&a=Search&hh=1&hs=1&cl=1&sscid=241&view_type=fullRecord
+// So perhaps this is the URL that should be in the Extracted Data.
+
+// The main document URL gives no indication that a transcript is being shown in iframe
+// https://www.thegenealogist.com/search/master/?layout=compact&type=person&source=&master_event=&person_event=&include_uk=1&include_ireland=1&include_elsewhere=1&fn=Charles&sn=Pavey&yr=1840&range=5&kw=Sussex&kw_mode=simple&kw_simple_type=any&search=Search#loadwindow_754578296
+
 function extractData(document, url) {
   var result = {};
+
+  // look for modal content in iframe
+  let modalContentIframe = document.querySelector("div.modal-content iframe");
+  if (modalContentIframe) {
+    let contentWindow = modalContentIframe.contentWindow;
+    if (contentWindow) {
+      let iframeUrl = contentWindow.location.href;
+      let iframeDocument = contentWindow.document;
+
+      if (iframeUrl && !iframeUrl.startsWith("file:")) {
+        url = iframeUrl;
+      }
+      if (iframeDocument) {
+        document = iframeDocument;
+      }
+    }
+  }
 
   if (url) {
     result.url = url;
   }
   result.success = false;
 
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
-    return result;
-  }
-  */
+  // determine page type.
+  result.pageType = "unknown";
 
-  result.success = true;
+  // Image URL: https://www.thegenealogist.com/image_viewer_beta/?imagego=ZGVmNTAyMDAzZDBlODhiNmZmMTkxM2FlN2IzZWY1OTQyNDgyYmRjMDM0OGEwNTIwMTc1ZDg2ZGY1Yjk2Y2I5M2JjZWM0MWFiYTU3YmRhNzY1NTZlMDdhNmMxYmI2ZWFlNjdiYzMzNjk4ODJmMTcwODBmOGEyNTAyNmJkODAxNDkwMWQ0N2I1OWU0MTkzMjEyYjYwNmQ4NTEyOWE3YWE5YjZmZTMwNGQyODE0ZDg3ZGU4Y2Q5ZGVlZWIwYmNiNjYxMzFhZTQ2ZTczNzIzMTAzYTc1ZjQyMTZhYzAyM2QwMzE5YTlhYmUxMGU5YjQzMmRmOGQ5NjkwZGU0ZWM3YTZmNDNhNTczNGU2N2U1ZDVkYjg3MGUxZDY5MDExMTY2NTBkNjY2ZjM4ODdhZGRjZjJmZmRlNWI%3D
+  if (url.includes("image_viewer")) {
+    result.pageType = "image";
+  } else if (url.includes("/search/")) {
+    // Record URL: https://www.thegenealogist.com/search/advanced/census/main-household/?hlt=219560985&county=243&y=1861&household_id=16268345&a=Search&hh=1&hs=1&cl=1&sscid=243&view_type=fullRecord
+    if (url.includes("view_type=fullRecord")) {
+      result.pageType = "record";
+    } else if (url.includes("search/advanced")) {
+      result.pageType = "record";
+    } else if (!modalContentIframe) {
+      result.pageType = "searchResults";
+    }
+  }
+
+  if (result.pageType == "record") {
+    result = extractDataForRecord(document, url, result);
+  } else if (result.pageType == "image") {
+    result = extractDataForImage(document, url, result);
+  }
 
   //console.log(result);
 
