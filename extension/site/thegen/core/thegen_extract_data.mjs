@@ -26,6 +26,7 @@ function extractDataForRecordCensus(document, url, result) {
   let titleElement = document.querySelector("#framework-advanced-search > h3");
   if (titleElement) {
     let title = titleElement.textContent.trim();
+    title = title.replace(/\s+/g, " ").trim();
     result.title = title;
   }
 
@@ -150,6 +151,7 @@ function extractDataForRecordResultsFull(document, url, result) {
             if (label && value) {
               result.recordData[label] = value;
             } else if (!label && rowIndex == 0) {
+              value = value.replace(/\s+/g, " ");
               result.title = value;
             }
           }
@@ -192,6 +194,81 @@ function extractDataForRecord(document, url, result) {
 }
 
 function extractDataForImage(document, url, result) {
+  function addNavData(element) {
+    if (element) {
+      let labelElement = element.querySelector("strong");
+      let valueElement = element.querySelector("button > span.ellipsis-outer > span.ellipsis-inner");
+      if (labelElement && valueElement) {
+        let label = labelElement.textContent.trim();
+        let value = valueElement.textContent.trim();
+        if (label && value) {
+          result.navData[label] = value;
+        }
+      }
+    }
+  }
+
+  let navigationElement = document.querySelector("#framework-image-viewer div.control-navigation");
+  if (navigationElement) {
+    result.navData = {};
+    addNavData(navigationElement.querySelector("div[data-r='r1']"));
+    addNavData(navigationElement.querySelector("div[data-r='r2']"));
+    addNavData(navigationElement.querySelector("div[data-r='r3']"));
+    addNavData(navigationElement.querySelector("div[data-r='r4']"));
+    addNavData(navigationElement.querySelector("div[data-r='r5']"));
+  }
+
+  let bookmarkElement = document.querySelector("#framework-image-viewer div.panel-bookmark");
+  if (bookmarkElement) {
+    let linkElement = bookmarkElement.querySelector("div > div > a.text-bold");
+
+    if (linkElement) {
+      let selectedPath = "";
+      let elementPath = [linkElement];
+      let path = "";
+      let prevElement = linkElement.previousElementSibling;
+      let prevAnchorElement = linkElement;
+      while (prevElement) {
+        if (prevElement.tagName == "SPAN") {
+          let iconText = "";
+          if (prevElement.classList.contains("glyphicon-file")) {
+            iconText = "f";
+          } else if (prevElement.classList.contains("glyphicon-option-horizontal")) {
+            iconText = "h";
+          } else if (prevElement.classList.contains("glyphicon-option-vertical")) {
+            iconText = "v";
+          }
+          path = iconText + path;
+        } else if (prevElement.tagName == "A") {
+          if (!selectedPath) {
+            selectedPath = path;
+          } else if (path.length < selectedPath.length) {
+            selectedPath = path;
+            elementPath.push(prevAnchorElement);
+          }
+
+          prevAnchorElement = prevElement;
+          path = "";
+        } else if (prevElement.tagName == "BR") {
+        } else {
+          elementPath.push(prevAnchorElement);
+          break;
+        }
+        prevElement = prevElement.previousElementSibling;
+      }
+
+      if (elementPath.length > 0) {
+        result.bookmarkPath = [];
+        for (let index = elementPath.length - 1; index >= 0; index--) {
+          let element = elementPath[index];
+          let text = element.textContent.trim();
+          result.bookmarkPath.push(text);
+        }
+      }
+    }
+  }
+
+  result.success = true;
   return result;
 }
 

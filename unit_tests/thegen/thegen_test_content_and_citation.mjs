@@ -41,12 +41,20 @@ const regressionData = [
     url: "https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=446092223&year=1845",
   },
   {
+    caseName: "bmd_marriage_1885_james_wilson_r",
+    url: "https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=460269538&year=1885",
+  },
+  {
     caseName: "bmd_nc_burial_1849_henry_smith_r",
     url: "https://www.thegenealogist.com/search/advanced/bmd/non-conformist/full/?id=716475002&uid_type=1",
   },
   {
     caseName: "census_1861_sarah_pavey_r",
     url: "https://www.thegenealogist.com/search/advanced/census/main-household/?hlt=219560985&county=243&y=1861&household_id=16268345&a=Search&hh=1&hs=1&cl=1&sscid=243&view_type=fullRecord",
+  },
+  {
+    caseName: "insolv_1891_george_wilson_i",
+    url: "https://www.thegenealogist.com/image_viewer_beta/?imagego=ZGVmNTAyMDBlZDliMjY4NGM2NDgwNjczNzU1OWEwZjZjZDhlMTY5NDFjNGE0ZTIyNTA3MTkyODIyNjc1YzhjM2I4MTkyMDFhYTZmNjMwNzU1MDUzZDg4YTgzMjc2ZDRkYjdkOTJlNDc5OGRlMzVlMzZmYTg4NDUwOWI5ZDIxNTJhNmNkOTIwYWYzZTBhNzI4OTNjZWQ5MGY2NzJhMjUxN2U1MTBjYzI4MzQwMzc2YjZiYzVkZjg2M2M1NzBiMjU3ZmU0ZWRlYTY0ZGRiNGI2NmJkNTlmYWY4ZmViZmQwZGI5NTVmNDNmMjNmOGM0ZmU3NDMwYjM5Y2I1MDU3Yjk4Mjk3OTg5MjU3MjMxNmZjMzMzMDIzYzg4MjU5YjYwODg4ZTIyZTFjNjdiNWQyODJmNTNiZTRhOGRhOWE4ZThkNTZiMTk1ZDIwMDliZjg4MGY3NWRiZTBiNDlmOTYxM2E4Nzc4MzMzZTU3NTk0Y2Q5NWI2ZWMxZjRlNTAyNGM1ZTMyMDgxYzI2ZGI0NDA0ZjYxZjIxNTk2ZDk5ZmFjZjFmY2I4NTc1M2JkNjM2MzEwOWY3YzVjZmVmYTBmMmUyNjY2ZTI1YWJkMjdlNTg4MTY4YzU1OWM1MTU5NjI5MzcwMjVlMWQwMDg1ZTA1ODVkODExZWY5YzQ1YTgyODg2ODBiNmRkODMxN2RiNGRlZGY1ODk4NjI2Yzg5Zjc4NGQxZjdmMWYzNzNhYjFhOTEyMzAxNTFlMzhhYjNlM2JmNGQxODYzNjQ5MGU5MWQzMmZlYjQ0NjMxMDIwMTIwMjlkOWJlMWRlNTM4NWQ4YTYwYjdhYmM4N2U5MjljYzk0MDg2YzdmNjc0YjdiZWQyYTBkZTVmN2ZlM2VhNTFjNDdjYTNiZjJiNWEzNGNiY2ExZGE3MGFlZWFmOWFjMTc0Zjg2MDZhNGI5ZGIzZmI0N2EwZjlhYTY3MWUxZjNjY2FlMzg2NmE2NTEyZGYxYmY2MDAxMGI4OWY3ZDY3MzQxM2ZiMWNhMGMxM2I1NmM4MGMyOTQwZjc4Y2ZmMjYwYzRhMTUwNDI0NDY0OGQyMzZlOGEwZDU5MDkzN2JmNWMzMDVlNmJhODcyOTMzMTE0NDBhNDdkODc4MmUyMDE1NTliY2VmMGJhMmEyNjAwNTYzNDAzMGU1Mjk1N2I2",
   },
   {
     caseName: "parish_marriage_1851_thomas_smith_r",
