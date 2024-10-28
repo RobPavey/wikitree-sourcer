@@ -110,9 +110,64 @@ function extractDataForRecordResultsFull(document, url, result) {
     let rows = recordDataElement.querySelectorAll("tr");
     for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
       let row = rows[rowIndex];
+      let tableElement = row.querySelector("div.table-responsive > table.table");
       let labelElements = row.querySelectorAll("th");
       let valueElements = row.querySelectorAll("td");
-      if (labelElements.length == valueElements.length) {
+      if (tableElement) {
+        let headingElements = tableElement.querySelectorAll("thead > tr > th");
+        let rowElements = tableElement.querySelectorAll("tbody > tr");
+        let table = { headings: [], rows: [] };
+        for (let headingElement of headingElements) {
+          let heading = headingElement.textContent.trim();
+          table.headings.push(heading);
+        }
+        for (let rowElement of rowElements) {
+          let cellElements = rowElement.querySelectorAll("td");
+          let numCols = Math.min(cellElements.length, table.headings.length);
+          let rowData = {};
+          let headingIndex = 0;
+          for (let cellElement of cellElements) {
+            let isSpecial = false;
+            let colspan = cellElement.getAttribute("colspan");
+            let colspanNum = 1;
+            if (colspan) {
+              colspanNum = Number(colspan);
+              if (!isNaN(colspanNum) && colspanNum > 1) {
+                isSpecial = true;
+              }
+            }
+            if (!isSpecial) {
+              let label = table.headings[headingIndex];
+              let value = cellElement.textContent.trim();
+              if (label) {
+                label = label.replace(/\s+/g, " ");
+                value = value.replace(/\s+/g, " ");
+                rowData[label] = value;
+              }
+            } else {
+              let label = table.headings[headingIndex];
+              if (label) {
+                let value = cellElement.textContent.trim();
+                let childNodes = cellElement.childNodes;
+                if (childNodes.length > 1) {
+                  value = childNodes[0].textContent.trim();
+                }
+
+                label = label.replace(/\s+/g, " ");
+                value = value.replace(/\s+/g, " ");
+                rowData[label] = value;
+              }
+            }
+
+            headingIndex += colspanNum;
+            if (headingIndex >= table.headings.length) {
+              break;
+            }
+          }
+          table.rows.push(rowData);
+        }
+        result.tableData = table;
+      } else if (labelElements.length == valueElements.length) {
         for (let index = 0; index < labelElements.length; index++) {
           let labelElement = labelElements[index];
           let valueElement = valueElements[index];

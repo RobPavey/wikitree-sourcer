@@ -60,6 +60,18 @@ const regressionData = [
     caseName: "parish_marriage_1851_thomas_smith_r",
     url: "https://www.thegenealogist.com/search/advanced/parish/marriage/full/?id=851071136&s_id=1464&sscid=401",
   },
+  {
+    caseName: "register_1939_james_wilson_r",
+    url: "https://www.thegenealogist.com/search/advanced/register/1939/full/?id=900074529&data_set=Durham",
+  },
+  {
+    caseName: "tithe_1839_john_smith_i",
+    url: "https://www.thegenealogist.co.uk/image_viewer_beta/?imagego=ZGVmNTAyMDBjZTc5YWU0ZDllZTkxYWYzZmJiODcyOTY2MTJiYWQ5YWI2ODY1MDIxNGMwNzRjYWMxMmEwZjM1NWY3YzNkNGY5MjNlNGE4YzRkZTI5ZTY3MjFkYjI3ZjBiZWJmZmYyZWRiNGQwY2VlZWZkYjI1ZDdiZjkyYjE4NjUyMDI5NTBmYWM2MTQ1N2M2NzQwM2VmZmUyZTg2ZTJiZGNlZTdkYWU1MTMwM2Q1OTc0MjFiMTc4ZDY3NjE3OWU5OTk3ZjFkNzc0ZmJhMWQ1MjQ0ZjBjNzcxMTViOTFkODg2N2E3ZjYzNjBmYmQ5YjdjM2U1MWM2MGQ0MTg5MGUyZGRiZDMxNDFiYTQ2NjcyZmU3MTNiYWFiOTM0OTUwNDE0OTA4OGZi",
+  },
+  {
+    caseName: "tithe_1839_john_smith_r",
+    url: "https://www.thegenealogist.co.uk/search/advanced/landowner/tithe-records/full/?id=53453535",
+  },
 ];
 
 async function runTests(testManager) {

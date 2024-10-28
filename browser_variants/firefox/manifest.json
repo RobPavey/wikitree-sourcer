@@ -69,7 +69,11 @@
     "*://www.wiewaswie.nl/*",
     "*://*.wikipedia.org/*"
   ],
-  "optional_host_permissions": ["*://*.americanancestors.org/*", "*://*.thegenealogist.com/*"],
+  "optional_host_permissions": [
+    "*://*.americanancestors.org/*",
+    "*://*.thegenealogist.com/*",
+    "*://*.thegenealogist.co.uk/*"
+  ],
   "background": {
     "scripts": ["base/browser/background/background_mv3.mjs"],
     "type": "module"
@@ -297,7 +301,7 @@
       "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
     },
     {
-      "matches": ["*://*.thegenealogist.com/*"],
+      "matches": ["*://*.thegenealogist.com/*", "*://*.thegenealogist.co.uk/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/thegen/browser/thegen_content.js"]
     },
@@ -513,7 +517,7 @@
     },
     {
       "resources": ["site/thegen/core/thegen_extract_data.mjs"],
-      "matches": ["*://*.thegenealogist.com/*"]
+      "matches": ["*://*.thegenealogist.com/*", "*://*.thegenealogist.co.uk/*"]
     },
     {
       "resources": ["site/trove/core/trove_extract_data.mjs"],
