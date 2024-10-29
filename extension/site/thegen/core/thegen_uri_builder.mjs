@@ -73,6 +73,10 @@ class ThegenUriBuilder {
     }
   }
 
+  addMasterEvent(string) {
+    this.addSearchParameter("master_event", string);
+  }
+
   addSurname(string) {
     this.addSearchParameter("sn", StringUtils.removeExtendedAsciiCharacters(string));
   }
@@ -87,6 +91,10 @@ class ThegenUriBuilder {
 
   addRange(string) {
     this.addSearchParameter("range", string);
+  }
+
+  addKeywords(string) {
+    this.addSearchParameter("kw", string);
   }
 
   getUri() {
