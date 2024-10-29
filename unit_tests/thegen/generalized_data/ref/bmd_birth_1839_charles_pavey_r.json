@@ -1,6 +1,16 @@
 {
   "sourceOfData": "thegen",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "Charles Pavey"
+  },
+  "eventDate": {
+    "quarter": 2,
+    "yearString": "1839"
+  },
+  "eventPlace": {
+    "placeString": "Petworth, Sussex, England"
+  },
   "hasValidData": true
 }

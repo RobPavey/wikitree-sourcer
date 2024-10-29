@@ -56,7 +56,8 @@
         "Year Born": "1839",
         "Relation": "Lodger",
         "Birth Place": "Billingshurst, Sussex",
-        "Occupation": "Carter"
+        "Occupation": "Carter",
+        "isSelected": true
       }
     ]
   },

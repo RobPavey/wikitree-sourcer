@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Wilson",
+    "forenames": "James"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1939"
+  },
+  "eventPlace": {
+    "placeString": "28, Frederick Street, Bishop Auckland, Durham, England"
+  },
+  "birthDate": {
+    "dateString": "4th March 1885"
+  },
+  "registrationDistrict": "Bishop Auckland (Urban District)",
+  "hasValidData": true
+}

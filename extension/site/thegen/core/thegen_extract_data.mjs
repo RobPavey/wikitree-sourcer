@@ -69,6 +69,10 @@ function extractDataForRecordCensus(document, url, result) {
             rowData[label] = value;
           }
         }
+
+        if (rowElement.classList.contains("success")) {
+          rowData.isSelected = true;
+        }
         table.rows.push(rowData);
       }
     }

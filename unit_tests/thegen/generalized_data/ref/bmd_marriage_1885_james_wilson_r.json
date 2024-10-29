@@ -3,14 +3,14 @@
   "sourceType": "record",
   "recordType": "MarriageRegistration",
   "name": {
-    "name": "Thomas Smith"
+    "name": "James Wilson"
   },
   "eventDate": {
-    "quarter": 3,
-    "yearString": "1845"
+    "quarter": 1,
+    "yearString": "1885"
   },
   "eventPlace": {
-    "placeString": "Rye, Sussex, England"
+    "placeString": "Howden, Yorkshire East Riding, England"
   },
   "hasValidData": true
 }

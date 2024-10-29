@@ -1,6 +1,15 @@
 {
   "sourceOfData": "thegen",
   "sourceType": "record",
-  "recordType": "Unclassified",
+  "recordType": "Marriage",
+  "name": {
+    "name": "Thomas Smith"
+  },
+  "eventDate": {
+    "dateString": "30th April 1851"
+  },
+  "eventPlace": {
+    "placeString": "Bury, Sussex, England"
+  },
   "hasValidData": true
 }

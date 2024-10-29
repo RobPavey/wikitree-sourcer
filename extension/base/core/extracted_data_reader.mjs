@@ -260,6 +260,28 @@ class ExtractedDataReader {
         }
       }
 
+      // handle alternate quarter strings like "April - June 1839"
+      let altQuarterRegex = /^([A-Z][a-z]+\s*\-\s*[A-Z][a-z]+)\s+(\d\d\d\d)/;
+      if (altQuarterRegex.test(dateString)) {
+        let quarterString = dateString.replace(altQuarterRegex, "$1");
+        let yearString = dateString.replace(altQuarterRegex, "$2");
+        if (quarterString && quarterString != dateString && yearString && yearString != dateString) {
+          const quarterStringToQuarter = {
+            "January-March": 1,
+            "April-June": 2,
+            "July-September": 3,
+            "October-December": 4,
+          };
+          quarterString = quarterString.replace(/\s*/g, "");
+          let quarter = quarterStringToQuarter[quarterString];
+          if (quarter) {
+            dateObj.quarter = quarter;
+            dateObj.yearString = yearString;
+            return dateObj;
+          }
+        }
+      }
+
       dateObj.setDateAndQualifierFromString(dateString);
       return dateObj;
     }

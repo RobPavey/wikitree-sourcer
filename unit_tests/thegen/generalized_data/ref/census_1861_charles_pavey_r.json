@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Charles"
+  },
+  "eventDate": {
+    "yearString": "1861"
+  },
+  "eventPlace": {
+    "placeString": "Newbridge Road, Pulborough, Sussex, England"
+  },
+  "birthDate": {
+    "yearString": "1839"
+  },
+  "birthPlace": {
+    "yearString": "Billingshurst, Sussex"
+  },
+  "registrationDistrict": "Thakeham",
+  "hasValidData": true
+}
