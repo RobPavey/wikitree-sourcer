@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Parish Transcript Baptisms, Births and Bastardy Records\"<br/>\n[https://www.thegenealogist.com/search/advanced/parish/baptism/full/?id=971368692&s_id=1920&sscid=334 The Genealogist Record] (accessed 6 May 2021)<br/>\nMichael Hall baptism on 29th August 1833, child of John Hall & Mary Clohnary, in Doon and Castletown, Tipperary, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Michael, child of John Hall & Mary Clohnary, was baptised on 29th August 1833 in Doon and Castletown, Tipperary, Ireland.<ref>\n'''Baptism''':\n\"Parish Transcript Baptisms, Births and Bastardy Records\"<br/>\n[https://www.thegenealogist.com/search/advanced/parish/baptism/full/?id=971368692&s_id=1920&sscid=334 The Genealogist Record] (accessed 6 May 2021)<br/>\nMichael Hall baptism on 29th August 1833, child of John Hall & Mary Clohnary, in Doon and Castletown, Tipperary, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Parish Transcript Baptisms, Births and Bastardy Records\"<br/>[https://www.thegenealogist.com/search/advanced/parish/baptism/full/?id=971368692&s_id=1920&sscid=334 The Genealogist Record] (accessed 6 May 2021)<br/>Michael Hall baptism on 29th August 1833, child of John Hall & Mary Clohnary, in Doon and Castletown, Tipperary, Ireland.",
+    "type": "source"
+  }
+}

@@ -17,5 +17,38 @@
     "dateString": "4th March 1885"
   },
   "registrationDistrict": "Bishop Auckland (Urban District)",
+  "householdArrayFields": [
+    "name",
+    "birthDate",
+    "gender",
+    "maritalStatus",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "James Wilson",
+      "birthDate": "4th March 1885",
+      "gender": "Male",
+      "maritalStatus": "Married",
+      "occupation": "Grave Digger Heavy Worker"
+    },
+    {
+      "name": "Lovina Wilson",
+      "birthDate": "7th April 1893",
+      "gender": "Female",
+      "maritalStatus": "Married",
+      "occupation": "Unpaid Domestic Duties"
+    },
+    {
+      "name": "Thomas W Wilson",
+      "birthDate": "25th May 1925",
+      "gender": "Male",
+      "maritalStatus": "Single",
+      "occupation": "Colliery Stable Boy Seeking Employed"
+    },
+    {
+      "isClosed": true
+    }
+  ],
   "hasValidData": true
 }

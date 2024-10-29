@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "Michael Hall"
+  },
+  "eventDate": {
+    "dateString": "29th August 1833"
+  },
+  "eventPlace": {
+    "placeString": "Doon and Castletown, Tipperary, Ireland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Hall"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Clohnary"
+      }
+    }
+  },
+  "hasValidData": true
+}

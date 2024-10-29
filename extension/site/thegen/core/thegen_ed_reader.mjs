@@ -40,6 +40,11 @@ const recordTypeMatches = [
     collectionTitleMatches: [["Civil Registration Deaths"]],
   },
   {
+    recordType: RT.Baptism,
+    collectionTitleMatches: [["Baptism"]],
+    requiredFields: [["Date of Baptism"]],
+  },
+  {
     recordType: RT.Burial,
     collectionTitleMatches: [["BMDs"]],
     requiredFields: [["Date of Burial"]],
@@ -62,6 +67,11 @@ const recordTypeMatches = [
     collectionTitleMatches: [["Tithe Records"]],
   },
 
+  {
+    recordType: RT.Birth,
+    collectionTitleMatches: [["BMDs", "Births"]],
+  },
+
   // ones with vague type, possibly images
   {
     recordType: RT.Birth,
@@ -81,6 +91,11 @@ const keysForRecordType = {
   DeathRegistration: {
     date: ["Registered"],
     place: ["District"],
+    age: ["Age"],
+  },
+  Baptism: {
+    date: ["Date of Baptism"],
+    place: ["Place of Event", "Parish"],
     age: ["Age"],
   },
   Marriage: {
@@ -123,7 +138,7 @@ class ThegenEdReader extends ExtractedDataReader {
       if (ed.breadcrumb) {
         let breadcrumbs = ed.breadcrumb.split("»");
         if (breadcrumbs.length == 3) {
-          inputData.collectionTitle = breadcrumbs[1].trim();
+          inputData.collectionTitle = breadcrumbs[0].trim() + ", " + breadcrumbs[1].trim();
         }
       }
 
@@ -138,6 +153,8 @@ class ThegenEdReader extends ExtractedDataReader {
       if (ed.recordData) {
         if (ed.recordData["Type"]) {
           inputData.documentType = ed.recordData["Type"];
+        } else if (ed.recordData["Event"]) {
+          inputData.documentType = ed.recordData["Event"];
         }
       }
     } else if (ed.pageType == "image") {
@@ -159,6 +176,10 @@ class ThegenEdReader extends ExtractedDataReader {
     // useful in other functions to avoid duplicating code
     this.collectionTitle = inputData.collectionTitle;
     this.documentType = inputData.documentType;
+
+    if (this.collectionTitle == "Register, 1939 Register") {
+      this.is1939Register = true;
+    }
   }
 
   getSelectedCensusRow() {
@@ -265,7 +286,7 @@ class ThegenEdReader extends ExtractedDataReader {
     }
 
     if (this.recordType == RT.Census) {
-      if (this.collectionTitle == "1939 Register") {
+      if (this.is1939Register) {
         return this.makeDateObjFromYear("1939");
       }
 
@@ -295,7 +316,7 @@ class ThegenEdReader extends ExtractedDataReader {
 
       let country = "";
       if (county) {
-        let possibleCountries = ["England", "Wales", "Scotland"];
+        let possibleCountries = ["England", "Wales", "Scotland", "Ireland"];
         for (let possibleCountry of possibleCountries) {
           let countryObj = CD.matchCountryFromPlaceName(possibleCountry);
           if (countryObj) {
@@ -308,7 +329,7 @@ class ThegenEdReader extends ExtractedDataReader {
         }
       }
 
-      if (!country && this.collectionTitle == "1939 Register") {
+      if (!country && this.is1939Register) {
         country = "England";
         if (ledgerCode) {
           // See https://www.findmypast.com/articles/1939-register-enumeration-districts
@@ -330,7 +351,7 @@ class ThegenEdReader extends ExtractedDataReader {
 
       addPlacePart(address);
       addPlacePart(parish);
-      if (this.collectionTitle == "1939 Register") {
+      if (this.is1939Register) {
         addPlacePart(enumDistrict);
       }
       addPlacePart(county);
@@ -358,7 +379,7 @@ class ThegenEdReader extends ExtractedDataReader {
 
       let country = "";
       if (county) {
-        let possibleCountries = ["England", "Wales", "Scotland"];
+        let possibleCountries = ["England", "Wales", "Scotland", "Ireland"];
         for (let possibleCountry of possibleCountries) {
           let countryObj = CD.matchCountryFromPlaceName(possibleCountry);
           if (countryObj) {
@@ -412,7 +433,7 @@ class ThegenEdReader extends ExtractedDataReader {
 
   getBirthDateObj() {
     if (this.recordType == RT.Census) {
-      if (this.collectionTitle == "1939 Register") {
+      if (this.is1939Register) {
         let birthDate = this.getSelectedCensusRowValueForKeys(["Birth Date"]);
         return this.makeDateObjFromDateString(birthDate);
       }
@@ -478,15 +499,116 @@ class ThegenEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
+    if (this.recordType == RT.Marriage || this.recordType == RT.MarriageRegistration) {
+      let eventDateObj = this.getEventDateObj();
+      let eventPlaceObj = this.getEventPlaceObj();
+      let spouseName = this.getRecordDataValueForKeys(["Spouse"]);
+      if (spouseName) {
+        if (spouseName.includes(", ")) {
+          // for a marriage registration there can be several possible spouses
+          return undefined;
+        }
+        let spouseNameObj = this.makeNameObjFromFullName(spouseName);
+        return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj)];
+      }
+    }
+
     return undefined;
   }
 
   getParents() {
-    return undefined;
+    let fatherName = this.getRecordDataValueForKeys(["Father's Name"]);
+    let motherName = this.getRecordDataValueForKeys(["Mother's Name"]);
+    return this.makeParentsFromFullNames(fatherName, motherName);
   }
 
   getHousehold() {
-    return undefined;
+    if (this.recordType != RT.Census || !this.ed.pageType == "record") {
+      return undefined;
+    }
+    const stdFieldNames = [
+      { stdName: "age", siteHeadings: ["Age"] },
+      { stdName: "birthDate", siteHeadings: ["Birth Date"] },
+      { stdName: "birthPlace", siteHeadings: ["Birth Place"] },
+      { stdName: "maritalStatus", siteHeadings: ["Marriage Status"] },
+      { stdName: "gender", siteHeadings: ["Gender"] },
+      { stdName: "relationship", siteHeadings: ["Relation"] },
+      { stdName: "occupation", siteHeadings: ["Occupation", "Profession"] },
+    ];
+    function headingToStdName(heading) {
+      for (let entry of stdFieldNames) {
+        if (entry.siteHeadings.includes(heading)) {
+          return entry.stdName;
+        }
+      }
+    }
+
+    let table = this.ed.tableData;
+    if (!table) {
+      return undefined;
+    }
+
+    let is1939Register = this.is1939Register;
+    function isHeadingValidForRecord(heading) {
+      if (is1939Register) {
+        if (heading == "Age") {
+          return false; // this is a computed value
+        }
+      }
+      return true;
+    }
+
+    let headings = ["name"];
+    for (let tableHeading of table.headings) {
+      if (isHeadingValidForRecord(tableHeading)) {
+        let stdHeading = headingToStdName(tableHeading);
+        if (stdHeading) {
+          if (!headings.includes(stdHeading)) {
+            headings.push(stdHeading);
+          }
+        }
+      }
+    }
+
+    let householdArray = [];
+    for (let row of table.rows) {
+      let householdMember = {};
+      if (row.isSelected) {
+        householdMember.isSelected = true;
+      }
+
+      let name = row.Forename;
+      if (row.Surname) {
+        if (name) {
+          name += " ";
+        }
+        name += row.Surname;
+      }
+
+      if (name == "Closed Entry") {
+        householdMember.isClosed = true;
+      } else {
+        householdMember.name = name;
+        for (let key of Object.keys(row)) {
+          if (isHeadingValidForRecord(key)) {
+            let stdHeading = headingToStdName(key);
+            if (stdHeading) {
+              if (headings.includes(stdHeading)) {
+                householdMember[stdHeading] = row[key];
+              }
+            }
+          }
+        }
+      }
+
+      householdArray.push(householdMember);
+    }
+
+    let result = {};
+    result.fields = headings;
+    result.members = householdArray;
+
+    return result;
   }
 
   getCollectionData() {
