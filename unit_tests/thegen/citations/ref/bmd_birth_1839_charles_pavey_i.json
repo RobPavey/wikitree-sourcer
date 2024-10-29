@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth''':\n\"Births 1839\"<br/>\nQuarter: Jun; Letter: P; Image: Jun_0523<br/>\n[https://www.thegenealogist.com/image_viewer_beta/?imagego=ZGVmNTAyMDBkZjFiNWQ0NTZhM2RlNmI2MjRhZWNjMmJlYzc0MmFhZWY0MTkwZTdlMTE5NTQ4YTZlN2E2NjNlNDE3MWEwOWM4OTNjN2EwNjJlMjQ5MTU2MDgwMmEyOWEwNGE4MTgyN2ViOWYwODUwN2EzMTdiNzVlYjg5MTNkM2U3MzFlZGM3MmZjZWRhZGFjODBjZGNhYzJlZGFkNjZiNjM3MjVjYTg4Mjk1YjYwZjkzYjYwZDM0ZTk4YjgwNDc4ZWU4ZTA1YjAxYTg0MWQwNWJhMzUxZDgyNjFkOWExODU5YjFkNzg1NDU5ZTQ0ZWQ1MzA0ODJmNmUwNTNhMDU1ZTVjOWRhMTg0NDY0YjgzMzQxMTIyYTgxNGRmMzNlODNl The Genealogist Record] (accessed 6 May 2021)<br/>\nUnknown born.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Unknown was born.<ref>\n'''Birth''':\n\"Births 1839\"<br/>\nQuarter: Jun; Letter: P; Image: Jun_0523<br/>\n[https://www.thegenealogist.com/image_viewer_beta/?imagego=ZGVmNTAyMDBkZjFiNWQ0NTZhM2RlNmI2MjRhZWNjMmJlYzc0MmFhZWY0MTkwZTdlMTE5NTQ4YTZlN2E2NjNlNDE3MWEwOWM4OTNjN2EwNjJlMjQ5MTU2MDgwMmEyOWEwNGE4MTgyN2ViOWYwODUwN2EzMTdiNzVlYjg5MTNkM2U3MzFlZGM3MmZjZWRhZGFjODBjZGNhYzJlZGFkNjZiNjM3MjVjYTg4Mjk1YjYwZjkzYjYwZDM0ZTk4YjgwNDc4ZWU4ZTA1YjAxYTg0MWQwNWJhMzUxZDgyNjFkOWExODU5YjFkNzg1NDU5ZTQ0ZWQ1MzA0ODJmNmUwNTNhMDU1ZTVjOWRhMTg0NDY0YjgzMzQxMTIyYTgxNGRmMzNlODNl The Genealogist Record] (accessed 6 May 2021)<br/>\nUnknown born.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth''': \"Births 1839\"<br/>Quarter: Jun; Letter: P; Image: Jun_0523<br/>[https://www.thegenealogist.com/image_viewer_beta/?imagego=ZGVmNTAyMDBkZjFiNWQ0NTZhM2RlNmI2MjRhZWNjMmJlYzc0MmFhZWY0MTkwZTdlMTE5NTQ4YTZlN2E2NjNlNDE3MWEwOWM4OTNjN2EwNjJlMjQ5MTU2MDgwMmEyOWEwNGE4MTgyN2ViOWYwODUwN2EzMTdiNzVlYjg5MTNkM2U3MzFlZGM3MmZjZWRhZGFjODBjZGNhYzJlZGFkNjZiNjM3MjVjYTg4Mjk1YjYwZjkzYjYwZDM0ZTk4YjgwNDc4ZWU4ZTA1YjAxYTg0MWQwNWJhMzUxZDgyNjFkOWExODU5YjFkNzg1NDU5ZTQ0ZWQ1MzA0ODJmNmUwNTNhMDU1ZTVjOWRhMTg0NDY0YjgzMzQxMTIyYTgxNGRmMzNlODNl The Genealogist Record] (accessed 6 May 2021)<br/>Unknown born.",
+    "type": "source"
+  }
+}

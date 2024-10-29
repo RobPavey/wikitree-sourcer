@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Civil Registration Births 1837-2005\"<br/>\nCivil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 7; Page: 0391<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/births/full/?id=260105357&year=1839 The Genealogist Record] (accessed 6 May 2021)<br/>\nCharles Pavey birth registered Apr-May-Jun 1839 in Petworth, Sussex, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Charles's birth was registered in the Apr-May-Jun quarter of 1839 in Petworth, Sussex, England.<ref>\n'''Birth Registration''':\n\"Civil Registration Births 1837-2005\"<br/>\nCivil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 7; Page: 0391<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/births/full/?id=260105357&year=1839 The Genealogist Record] (accessed 6 May 2021)<br/>\nCharles Pavey birth registered Apr-May-Jun 1839 in Petworth, Sussex, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Civil Registration Births 1837-2005\"<br/>Civil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 7; Page: 0391<br/>[https://www.thegenealogist.com/search/advanced/bmd/births/full/?id=260105357&year=1839 The Genealogist Record] (accessed 6 May 2021)<br/>Charles Pavey birth registered Apr-May-Jun 1839 in Petworth, Sussex, England.",
+    "type": "source"
+  }
+}

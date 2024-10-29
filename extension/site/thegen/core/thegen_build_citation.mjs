@@ -29,11 +29,53 @@ function buildThegenUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  if (ed.pageType == "record") {
+    if (ed.breadcrumb) {
+      let breadcrumbs = ed.breadcrumb.split("»");
+      if (breadcrumbs.length == 3) {
+        builder.sourceTitle = breadcrumbs[1].trim();
+      }
+    } else if (ed.title) {
+      builder.sourceTitle = ed.title;
+    }
+  } else if (ed.pageType == "image") {
+    if (ed.navData) {
+      if (ed.navData["Title"]) {
+        builder.sourceTitle = ed.navData["Title"];
+      } else if (ed.navData["Year"]) {
+        builder.sourceTitle = ed.navData["Year"];
+      }
+    }
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  if (ed.pageType == "record") {
+    if (ed.sourceInfo) {
+      if (ed.sourceInfo.length < 150) {
+        builder.sourceReference += ed.sourceInfo;
+      }
+    }
+
+    if (ed.recordData) {
+      builder.addSourceReferenceField("Volume", ed.recordData["Volume"]);
+      builder.addSourceReferenceField("Page", ed.recordData["Page"]);
+    }
+  } else if (ed.pageType == "image") {
+    if (ed.navData) {
+      for (let key of Object.keys(ed.navData)) {
+        let value = ed.navData[key];
+        if (!builder.sourceTitle.includes(value)) {
+          builder.addSourceReferenceField(key, value);
+        }
+      }
+    }
+    if (ed.bookmarkPath) {
+      for (let bookmark of ed.bookmarkPath) {
+        builder.addSourceReferenceText(bookmark);
+      }
+    }
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {

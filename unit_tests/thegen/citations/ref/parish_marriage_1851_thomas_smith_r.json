@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Parish Transcript Marriages, Licences and Banns\"<br/>\n[https://www.thegenealogist.com/search/advanced/parish/marriage/full/?id=851071136&s_id=1464&sscid=401 The Genealogist Record] (accessed 6 May 2021)<br/>\nThomas Smith marriage on 30th April 1851 in Bury, Sussex, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Thomas married on 30th April 1851 in Bury, Sussex, England.<ref>\n'''Marriage''':\n\"Parish Transcript Marriages, Licences and Banns\"<br/>\n[https://www.thegenealogist.com/search/advanced/parish/marriage/full/?id=851071136&s_id=1464&sscid=401 The Genealogist Record] (accessed 6 May 2021)<br/>\nThomas Smith marriage on 30th April 1851 in Bury, Sussex, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Parish Transcript Marriages, Licences and Banns\"<br/>[https://www.thegenealogist.com/search/advanced/parish/marriage/full/?id=851071136&s_id=1464&sscid=401 The Genealogist Record] (accessed 6 May 2021)<br/>Thomas Smith marriage on 30th April 1851 in Bury, Sussex, England.",
+    "type": "source"
+  }
+}
