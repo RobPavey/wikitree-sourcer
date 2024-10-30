@@ -41,6 +41,11 @@ const recordTypeMatches = [
     recordType: RT.Marriage,
     documentTypes: ["Marriage"],
   },
+  {
+    recordType: RT.QuarterSession,
+    documentTypes: ["Court & Criminal"],
+    documentSubtypes: ["Quarter Sessions"],
+  },
 
   {
     recordType: RT.BirthRegistration,
@@ -80,6 +85,18 @@ const recordTypeMatches = [
   {
     recordType: RT.LandTax,
     collectionTitleMatches: [["Tithe Records"]],
+  },
+  {
+    recordType: RT.CriminalRegister,
+    collectionTitleMatches: [["Criminal Records"]],
+  },
+  {
+    recordType: RT.ConvictTransportation,
+    collectionTitleMatches: [["Transportation"]],
+  },
+  {
+    recordType: RT.PassengerList,
+    collectionTitleMatches: [["Passenger List"]],
   },
 
   {
@@ -125,6 +142,19 @@ const keysForRecordType = {
   LandTax: {
     date: ["Original Date"],
     place: ["Parish"],
+  },
+  CriminalRegister: {
+    date: ["Date Tried", "Date of Return at Institution", "Date"],
+    place: ["Where Tried", "Institution"],
+    age: ["Age"],
+  },
+  ConvictTransportation: {
+    date: ["Date of Departure", "Date"],
+    place: ["Place of Arrival"],
+  },
+  PassengerList: {
+    date: ["Departure Date", "Date"],
+    place: ["Port of Departure"],
   },
 };
 
@@ -182,6 +212,9 @@ class ThegenEdReader extends ExtractedDataReader {
 
         if (ed.navData["Master Event"]) {
           inputData.documentType = ed.navData["Master Event"];
+        }
+        if (ed.navData["Sub Event"]) {
+          inputData.documentSubtype = ed.navData["Sub Event"];
         }
       }
     }

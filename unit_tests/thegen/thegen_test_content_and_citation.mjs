@@ -33,6 +33,10 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 // The URL has to be copied from iframe address for record a search results
 const regressionData = [
   {
+    caseName: "aus_trans_1831_francis_jones_r",
+    url: "https://www.thegenealogist.com/search/advanced/overseas/australian-transportation/full/?id=18517737",
+  },
+  {
     caseName: "bmd_birth_1839_charles_pavey_i",
     url: "https://www.thegenealogist.com/image_viewer_beta/?imagego=ZGVmNTAyMDBkZjFiNWQ0NTZhM2RlNmI2MjRhZWNjMmJlYzc0MmFhZWY0MTkwZTdlMTE5NTQ4YTZlN2E2NjNlNDE3MWEwOWM4OTNjN2EwNjJlMjQ5MTU2MDgwMmEyOWEwNGE4MTgyN2ViOWYwODUwN2EzMTdiNzVlYjg5MTNkM2U3MzFlZGM3MmZjZWRhZGFjODBjZGNhYzJlZGFkNjZiNjM3MjVjYTg4Mjk1YjYwZjkzYjYwZDM0ZTk4YjgwNDc4ZWU4ZTA1YjAxYTg0MWQwNWJhMzUxZDgyNjFkOWExODU5YjFkNzg1NDU5ZTQ0ZWQ1MzA0ODJmNmUwNTNhMDU1ZTVjOWRhMTg0NDY0YjgzMzQxMTIyYTgxNGRmMzNlODNl",
   },
@@ -79,6 +83,10 @@ const regressionData = [
   {
     caseName: "parish_marriage_1851_thomas_smith_r",
     url: "https://www.thegenealogist.com/search/advanced/parish/marriage/full/?id=851071136&s_id=1464&sscid=401",
+  },
+  {
+    caseName: "pass_list_1849_francis_jones_r",
+    url: "https://www.thegenealogist.com/search/advanced/overseas/passenger-lists/full/?id=730397542",
   },
   {
     caseName: "register_1939_james_wilson_r",

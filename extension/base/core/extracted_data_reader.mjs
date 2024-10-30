@@ -589,6 +589,7 @@ class ExtractedDataReader {
     let collectionId = inputData.collectionId;
     let collectionTitle = inputData.collectionTitle;
     let documentType = inputData.documentType;
+    let documentSubtype = inputData.documentSubtype;
     let recordData = inputData.recordData;
     let recordDataLabels = inputData.recordDataLabels;
     let recordSections = inputData.recordSections;
@@ -624,6 +625,23 @@ class ExtractedDataReader {
           }
         }
         if (!documentTypeMatchFound) {
+          continue;
+        }
+      }
+
+      // document subtype
+      if (typeData.documentSubtypes) {
+        if (!documentSubtype) {
+          continue;
+        }
+        let documentSubtypeMatchFound = false;
+        for (let typeDocumentSubtype of typeData.documentSubtypes) {
+          if (typeDocumentSubtype.toLowerCase() == documentSubtype.toLowerCase()) {
+            documentSubtypeMatchFound = true;
+            break;
+          }
+        }
+        if (!documentSubtypeMatchFound) {
           continue;
         }
       }

@@ -85,6 +85,7 @@ function extractDataForRecordCensus(document, url, result) {
     if (sourceInfoPara) {
       let sourceInfo = sourceInfoPara.textContent.trim();
       if (sourceInfo) {
+        sourceInfo = sourceInfo.replace(/\s+/g, " ");
         result.sourceInfo = sourceInfo;
       }
     }
@@ -142,8 +143,13 @@ function extractDataForRecordResultsFull(document, url, result) {
             }
             if (!isSpecial) {
               let label = table.headings[headingIndex];
-              let value = cellElement.textContent.trim();
               if (label) {
+                let value = cellElement.textContent.trim();
+                let childNodes = cellElement.childNodes;
+                if (childNodes.length > 1) {
+                  value = childNodes[0].textContent.trim();
+                }
+
                 label = label.replace(/\s+/g, " ");
                 value = value.replace(/\s+/g, " ");
                 rowData[label] = value;
@@ -205,12 +211,21 @@ function extractDataForRecordResultsFull(document, url, result) {
                     value = newValue;
                   }
                 }
+              } else {
+                // get the first child node
+                let childNodes = valueElement.childNodes;
+                if (childNodes.length > 1) {
+                  let firstChildNodeText = childNodes[0].textContent.trim();
+                  if (firstChildNodeText) {
+                    value = firstChildNodeText;
+                  }
+                }
               }
             }
+            value = value.replace(/\s+/g, " ");
             if (label && value) {
               result.recordData[label] = value;
             } else if (!label && rowIndex == 0) {
-              value = value.replace(/\s+/g, " ");
               result.title = value;
             }
           }
@@ -225,6 +240,7 @@ function extractDataForRecordResultsFull(document, url, result) {
     if (sourceInfoPara) {
       let sourceInfo = sourceInfoPara.textContent.trim();
       if (sourceInfo) {
+        sourceInfo = sourceInfo.replace(/\s+/g, " ");
         result.sourceInfo = sourceInfo;
       }
     }

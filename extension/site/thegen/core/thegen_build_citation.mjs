@@ -58,8 +58,14 @@ function buildSourceReference(ed, gd, builder) {
     }
 
     if (ed.recordData) {
+      builder.addSourceReferenceField("Record type", ed.recordData["Record type"]);
+      builder.addSourceReferenceField("Source", ed.recordData["Source"]);
+      builder.addSourceReferenceField("Piece Description", ed.recordData["Piece Description"]);
+      builder.addSourceReferenceField("Piece Number", ed.recordData["Piece Number"]);
+      builder.addSourceReferenceField("Folio Number", ed.recordData["Folio Number"]);
       builder.addSourceReferenceField("Volume", ed.recordData["Volume"]);
       builder.addSourceReferenceField("Page", ed.recordData["Page"]);
+      builder.addSourceReferenceField("Page no.", ed.recordData["Page no."]);
     }
   } else if (ed.pageType == "image") {
     if (ed.navData) {
@@ -81,8 +87,14 @@ function buildSourceReference(ed, gd, builder) {
 function buildRecordLink(ed, gd, builder) {
   var thegenUrl = buildThegenUrl(ed, builder);
 
-  let recordLink = "[" + thegenUrl + " The Genealogist Record]";
-  builder.recordLinkOrTemplate = recordLink;
+  if (ed.pageType == "record") {
+    let recordLink = "[" + thegenUrl + " The Genealogist Record]";
+    builder.recordLinkOrTemplate = recordLink;
+  } else if (ed.pageType == "image") {
+    let imageLink = "[" + thegenUrl + " The Genealogist Image]";
+    // could set builder.imageLink but would not get accessed date
+    builder.recordLinkOrTemplate = imageLink;
+  }
 }
 
 function buildCoreCitation(ed, gd, builder) {
