@@ -22,11 +22,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { RT } from "../../../base/core/record_type.mjs";
+import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
 const recordTypeMatches = [
+  // document types
+  {
+    recordType: RT.Baptism,
+    documentTypes: ["Baptism"],
+  },
+  {
+    recordType: RT.Marriage,
+    recordSubtype: RecordSubtype.Banns,
+    documentTypes: ["Marriage Banns"],
+  },
+  {
+    recordType: RT.Marriage,
+    documentTypes: ["Marriage"],
+  },
+
   {
     recordType: RT.BirthRegistration,
     collectionTitleMatches: [["Civil Registration Births"]],
@@ -95,12 +110,12 @@ const keysForRecordType = {
   },
   Baptism: {
     date: ["Date of Baptism"],
-    place: ["Place of Event", "Parish"],
+    place: ["Place of Event", "Registration Town/County", "Parish"],
     age: ["Age"],
   },
   Marriage: {
-    date: ["Date"],
-    place: ["Potential Places of Event"],
+    date: ["Date", "Banns Date 3", "Banns Date 2", "Banns Date 1"],
+    place: ["Potential Places of Event", "Parish"],
   },
   Burial: {
     date: ["Date of Burial"],
@@ -171,7 +186,15 @@ class ThegenEdReader extends ExtractedDataReader {
       }
     }
 
-    this.recordType = this.determineRecordType(recordTypeMatches, inputData);
+    let recordTypeData = this.getRecordTypeMatch(recordTypeMatches, inputData);
+    if (recordTypeData) {
+      this.recordType = recordTypeData.recordType;
+      if (recordTypeData.recordSubtype) {
+        this.recordSubtype = recordTypeData.recordSubtype;
+      }
+    } else {
+      this.recordType = RT.Unclassified;
+    }
 
     // useful in other functions to avoid duplicating code
     this.collectionTitle = inputData.collectionTitle;
@@ -440,6 +463,9 @@ class ThegenEdReader extends ExtractedDataReader {
 
       let birthYear = this.getSelectedCensusRowValueForKeys(["Year Born"]);
       return this.makeDateObjFromYear(birthYear);
+    } else {
+      let birthDate = this.getRecordDataValueForKeys(["Date of Birth", "Year of Birth"]);
+      return this.makeDateObjFromDateString(birthDate);
     }
     return undefined;
   }
@@ -510,6 +536,12 @@ class ThegenEdReader extends ExtractedDataReader {
         }
         let spouseNameObj = this.makeNameObjFromFullName(spouseName);
         return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj)];
+      } else {
+        let brideName = this.getRecordDataValueForKeys(["Bride's Name"]);
+        if (brideName) {
+          let spouseNameObj = this.makeNameObjFromFullName(brideName);
+          return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj)];
+        }
       }
     }
 

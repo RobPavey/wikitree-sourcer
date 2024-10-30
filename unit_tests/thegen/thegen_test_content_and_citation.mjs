@@ -53,6 +53,10 @@ const regressionData = [
     url: "https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=460269538&year=1885",
   },
   {
+    caseName: "bmd_nc_baptism_1833_robert_hall_r",
+    url: "https://www.thegenealogist.com/search/advanced/bmd/non-conformist/full/?id=715878515&uid_type=2",
+  },
+  {
     caseName: "bmd_nc_burial_1849_henry_smith_r",
     url: "https://www.thegenealogist.com/search/advanced/bmd/non-conformist/full/?id=716475002&uid_type=1",
   },

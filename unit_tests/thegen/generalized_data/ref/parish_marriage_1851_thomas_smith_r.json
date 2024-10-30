@@ -11,5 +11,18 @@
   "eventPlace": {
     "placeString": "Bury, Sussex, England"
   },
+  "spouses": [
+    {
+      "name": {
+        "name": "Harriet Butcher"
+      },
+      "marriageDate": {
+        "dateString": "30th April 1851"
+      },
+      "marriagePlace": {
+        "placeString": "Bury, Sussex, England"
+      }
+    }
+  ],
   "hasValidData": true
 }

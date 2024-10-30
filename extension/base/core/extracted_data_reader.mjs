@@ -585,7 +585,7 @@ class ExtractedDataReader {
     }
   }
 
-  determineRecordType(recordTypeMatches, inputData) {
+  getRecordTypeMatch(recordTypeMatches, inputData) {
     let collectionId = inputData.collectionId;
     let collectionTitle = inputData.collectionTitle;
     let documentType = inputData.documentType;
@@ -741,6 +741,15 @@ class ExtractedDataReader {
       }
 
       // if we get this far it is a match
+      return typeData;
+    }
+
+    return undefined;
+  }
+
+  determineRecordType(recordTypeMatches, inputData) {
+    let typeData = this.getRecordTypeMatch(recordTypeMatches, inputData);
+    if (typeData) {
       return typeData.recordType;
     }
 
