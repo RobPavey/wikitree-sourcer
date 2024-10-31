@@ -152,6 +152,91 @@ async function handleGetRegisteredTabMessage(request, sender, sendResponse) {
   sendResponse(response);
 }
 
+async function handleSendMessageToRegisteredTabMessage(request, sender, sendResponse) {
+  //console.log("handleSendMessageToRegisteredTabMessage, siteName is: " + request.siteName);
+
+  let siteName = request.siteName;
+  let requestToSend = request.requestToSend;
+  let urlToCreate = request.urlToCreate;
+  let makeActive = request.makeActive;
+
+  let existingTabId = await getRegisteredTab(siteName);
+
+  if (existingTabId) {
+    // tab exists send the message
+    let result = { success: false };
+
+    try {
+      let response = await chrome.tabs.sendMessage(existingTabId, requestToSend);
+
+      if (chrome.runtime.lastError) {
+        console.log("handleSendMessageToRegisteredTabMessage failed, lastError is:");
+        console.log(lastError);
+      } else if (!response) {
+        console.log("handleSendMessageToRegisteredTabMessage failed, null response");
+      } else {
+        //console.log("doSearchInExistingTab message sent OK");
+        result.success = true;
+        result.responseFromTab = response;
+      }
+    } catch (error) {
+      console.log("caught error from sendMessage:");
+      console.log(error);
+    }
+
+    //console.log("WikiTree Sourcer, background script, sending response to getRegisteredTab message:");
+    //console.log(response);
+    sendResponse(result);
+  } else {
+    chrome.tabs.create({ url: urlToCreate, active: makeActive }, function (createdTab) {
+      //console.log("Created Tab");
+      //console.log(createdTab);
+
+      if (createdTab && createdTab.id) {
+        chrome.tabs.onUpdated.addListener(function tabListener(tabId, changeInfo, tab) {
+          //console.log("Created tab updated, tabId is: " + tabId);
+
+          // make sure the status is 'complete' and it's the right tab
+          if (tabId == createdTab.id && changeInfo.status == "complete") {
+            //console.log("Created tab is complete, sending message");
+
+            // remove the listener now that we know the tab has completed loading
+            chrome.tabs.onUpdated.removeListener(tabListener);
+
+            chrome.tabs.sendMessage(tabId, requestToSend, function (response) {
+              if (!response) {
+                console.log("Null response from sending message to tab");
+                sendResponse({
+                  success: false,
+                  createdTab: createdTab,
+                  changeInfo: changeInfo,
+                  tabId: tabId,
+                  tab: tab,
+                  lastError: chrome.runtime.lastError,
+                });
+              } else {
+                //console.log("Response from sending message to tab is:");
+                //console.log(response);
+
+                // we send a detailed response back to the caller for debugging this mechanism
+                sendResponse({
+                  success: true,
+                  createdTab: createdTab,
+                  changeInfo: changeInfo,
+                  tabId: tabId,
+                  tab: tab,
+                  responseFromTab: response,
+                  lastError: chrome.runtime.lastError,
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+}
+
 async function getRegisteredTab(siteName) {
   let siteRegistry = await getSiteRegistry();
 
@@ -205,4 +290,10 @@ async function anyTabRemoved(tabId) {
 
 chrome.tabs.onRemoved.addListener(anyTabRemoved);
 
-export { handleRegisterTabMessage, handleUnregisterTabMessage, handleGetRegisteredTabMessage, getRegisteredTab };
+export {
+  handleRegisterTabMessage,
+  handleUnregisterTabMessage,
+  handleGetRegisteredTabMessage,
+  handleSendMessageToRegisteredTabMessage,
+  getRegisteredTab,
+};

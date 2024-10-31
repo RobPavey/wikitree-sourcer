@@ -25,6 +25,7 @@ SOFTWARE.
 import { GroUriBuilder } from "../core/gro_uri_builder.mjs";
 import { extractFirstRowForBirth, extractFirstRowForDeath, extractSecondRow } from "../core/gro_extract_data.mjs";
 import { showErrorDialog } from "./gro_smart_search_dialog.mjs";
+import { checkPermissionForSite } from "/base/browser/background/background_permissions.mjs";
 
 // Avoid creating this for every search
 var domParser = new DOMParser();
@@ -114,7 +115,10 @@ function extractAllGroRowData(document) {
   return result;
 }
 
-async function doSearchPost(url, postData) {
+// Using local post does not work on iOS
+const useLocalPost = false;
+
+async function doLocalPost(url, postData) {
   //console.log('doSearchPost, document.location is: ' + document.location);
 
   let fetchUrl = url;
@@ -153,16 +157,13 @@ async function doSearchPost(url, postData) {
 
     //console.log("doSearchPost: response text is:");
     //console.log(htmlText);
-
-    let doc = domParser.parseFromString(htmlText, "text/html");
-
     //console.log("doSearchPost: doc:");
     //console.log(doc);
 
     return {
       success: true,
       status: response.status,
-      document: doc,
+      htmlText: htmlText,
     };
   } catch (error) {
     console.log("fetch failed, error is:");
@@ -176,6 +177,88 @@ async function doSearchPost(url, postData) {
       error: error,
     };
   }
+}
+
+async function doPostOnGroPage(url, postData) {
+  try {
+    const checkPermissionsOptions = {
+      reason:
+        "To perform a search on GRO a content script needs to be loaded on the https://www.gro.gov.uk/gro/content/ search page.",
+    };
+    let allowed = await checkPermissionForSite(
+      "*://www.gro.gov.uk/gro/content/certificates/*",
+      checkPermissionsOptions
+    );
+    if (!allowed) {
+      return {
+        success: false,
+      };
+    }
+
+    let tabRequest = {
+      type: "doPost",
+      url: url,
+      postData: postData,
+    };
+
+    let backgroundRequest = {
+      type: "sendMessageToRegisteredTab",
+      siteName: "gro",
+      requestToSend: tabRequest,
+      urlToCreate: "https://www.gro.gov.uk/gro/content/certificates/indexes_search.asp",
+      makeActive: false,
+    };
+
+    let response = await chrome.runtime.sendMessage(backgroundRequest);
+
+    if (response) {
+      //console.log("doPostOnGroPage: received response, response is:");
+      //console.log(response);
+
+      if (response.success && response.responseFromTab) {
+        return {
+          success: true,
+          htmlText: response.responseFromTab.htmlText,
+          status: response.responseFromTab.status,
+        };
+      } else {
+        console.log("doPostOnGroPage: chrome.runtime.sendMessage returned failed response");
+        return {
+          success: false,
+        };
+      }
+    } else {
+      console.log("doPostOnGroPage: chrome.runtime.sendMessage returned null response");
+      return {
+        success: false,
+      };
+    }
+  } catch (error) {
+    console.log("doPostOnGroPage: exception occurred");
+    console.log(error);
+    return {
+      success: false,
+      errorCondition: "Exception",
+      error: error,
+    };
+  }
+}
+
+async function doSearchPost(url, postData) {
+  //console.log('doSearchPost, document.location is: ' + document.location);
+
+  let postResult = undefined;
+  if (useLocalPost) {
+    postResult = await doLocalPost(url, postData);
+  } else {
+    postResult = await doPostOnGroPage(url, postData);
+  }
+
+  if (postResult && postResult.success && postResult.htmlText) {
+    postResult.document = domParser.parseFromString(postResult.htmlText, "text/html");
+  }
+
+  return postResult;
 }
 
 async function doSingleSearch(singleSearchParameters, pageNumber) {

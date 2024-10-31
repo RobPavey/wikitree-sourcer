@@ -33,7 +33,6 @@ import {
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { isSafariOnIos } from "/base/browser/common/browser_check.mjs";
 
 import {
   doSearch,
@@ -565,9 +564,7 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
   addGroSearchBirthsMenuItem(menu, data, filter);
   addGroSearchDeathsMenuItem(menu, data, filter);
 
-  let isIos = isSafariOnIos();
-
-  if (options.search_gro_enableSmartSearch && !isIos) {
+  if (options.search_gro_enableSmartSearch) {
     if (data.generalizedData.spouses) {
       for (let spouse of data.generalizedData.spouses) {
         addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse);
