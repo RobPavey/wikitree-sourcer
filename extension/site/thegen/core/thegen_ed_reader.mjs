@@ -74,6 +74,11 @@ const recordTypeMatches = [
     collectionTitleMatches: [["Parish Transcript Burials"]],
   },
   {
+    recordType: RT.Death,
+    collectionTitleMatches: [["Headstones"]],
+    requiredFields: [["Date of Death"]],
+  },
+  {
     recordType: RT.Marriage,
     collectionTitleMatches: [["Parish Transcript Marriages, Licences and Banns"]],
   },
@@ -97,6 +102,10 @@ const recordTypeMatches = [
   {
     recordType: RT.PassengerList,
     collectionTitleMatches: [["Passenger List"]],
+  },
+  {
+    recordType: RT.Apprenticeship,
+    collectionTitleMatches: [["Apprenticeship Records"]],
   },
 
   {
@@ -134,6 +143,11 @@ const keysForRecordType = {
     date: ["Date", "Banns Date 3", "Banns Date 2", "Banns Date 1"],
     place: ["Potential Places of Event", "Parish"],
   },
+  Death: {
+    date: ["Date of Death"],
+    place: ["Town", "Parish"],
+    age: ["Age"],
+  },
   Burial: {
     date: ["Date of Burial"],
     place: ["Registration Town/County", "Parish"],
@@ -155,6 +169,10 @@ const keysForRecordType = {
   PassengerList: {
     date: ["Departure Date", "Date"],
     place: ["Port of Departure"],
+  },
+  Apprenticeship: {
+    date: ["Date of Indenture Date", "Date"],
+    place: ["Master Abode"],
   },
 };
 
@@ -307,12 +325,20 @@ class ThegenEdReader extends ExtractedDataReader {
       return this.makeNameObjFromForenamesAndLastName(forenames, surname);
     }
 
+    let forenames = this.getRecordDataValueForKeys(["Forename"]);
+    let surname = this.getRecordDataValueForKeys(["Surname"]);
+    if (forenames || surname) {
+      return this.makeNameObjFromForenamesAndLastName(forenames, surname);
+    }
+
     let nameString = this.getRecordDataValueForKeys(["Name", "Full Name"]);
     if (!nameString) {
       if (this.recordType == RT.Marriage) {
         nameString = this.getRecordDataValueForKeys(["Groom's Name"]);
       } else if (this.recordType == RT.LandTax) {
         nameString = this.getRecordDataValueForKeys(["Occupier", "Landowner"]);
+      } else if (this.recordType == RT.Apprenticeship) {
+        nameString = this.getRecordDataValueForKeys(["Apprentice Name", "Master Name"]);
       }
     }
 

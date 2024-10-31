@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Mary"
+  },
+  "eventDate": {
+    "dateString": "23rd September 1904"
+  },
+  "eventPlace": {
+    "placeString": "Offwell, Devon, England"
+  },
+  "ageAtEvent": "83 Years",
+  "ageAtDeath": "83 Years",
+  "hasValidData": true
+}

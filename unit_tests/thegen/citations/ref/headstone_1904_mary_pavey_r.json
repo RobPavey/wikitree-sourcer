@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Headstones\"<br/>\nInternational HeadStones [database online]. TheGenealogist.co.uk 2024<br/>\n[https://www.thegenealogist.com/search/advanced/deaths-burials/headstone/full/?id=964862973 The Genealogist Record] (accessed 6 May 2021)<br/>\nMary Pavey death 23rd September 1904 (age 83 years) in Offwell, Devon, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mary died (age 83 Years) on 23rd September 1904 in Offwell, Devon, England.<ref>\n'''Death''':\n\"Headstones\"<br/>\nInternational HeadStones [database online]. TheGenealogist.co.uk 2024<br/>\n[https://www.thegenealogist.com/search/advanced/deaths-burials/headstone/full/?id=964862973 The Genealogist Record] (accessed 6 May 2021)<br/>\nMary Pavey death 23rd September 1904 (age 83 years) in Offwell, Devon, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Headstones\"<br/>International HeadStones [database online]. TheGenealogist.co.uk 2024<br/>[https://www.thegenealogist.com/search/advanced/deaths-burials/headstone/full/?id=964862973 The Genealogist Record] (accessed 6 May 2021)<br/>Mary Pavey death 23rd September 1904 (age 83 years) in Offwell, Devon, England.",
+    "type": "source"
+  }
+}
