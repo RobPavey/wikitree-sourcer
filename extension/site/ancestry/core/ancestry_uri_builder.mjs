@@ -304,6 +304,10 @@ class AncestryUriBuilder {
     this.addSearchParameter("f-Self-RelationToHead", relationship);
   }
 
+  addRestrictToRecords() {
+    this.addSearchParameter("types", "r");
+  }
+
   getUri() {
     return this.uri;
   }

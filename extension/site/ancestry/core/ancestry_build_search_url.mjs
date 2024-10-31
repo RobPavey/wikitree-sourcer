@@ -187,6 +187,11 @@ function buildSearchUrl(buildUrlInput) {
     builder.addDistrict(gd.registrationDistrict);
   }
 
+  let restrictOption = options.search_ancestry_restrictToRecords;
+  if (restrictOption || sameCollection) {
+    builder.addRestrictToRecords();
+  }
+
   const url = builder.getUri();
 
   //console.log("URL is " + url);
