@@ -259,7 +259,7 @@ function determineRecordType(extractedData) {
     { type: RT.Census, matches: ["Census", "1939 England and Wales Register"] },
     {
       type: RT.ElectoralRegister,
-      matches: ["Electoral Roll", "Voter Registers", "Electoral Registers"],
+      matches: ["Electoral Roll", "Voter Registers", "Electoral Registers", "Qualified Voters"],
     },
     {
       type: RT.Will,
@@ -2461,6 +2461,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "Date Received",
           "Passport Issue Date",
           "Examination Date",
+          "Registry Date",
         ],
         "date"
       )
