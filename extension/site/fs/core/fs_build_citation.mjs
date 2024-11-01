@@ -512,7 +512,7 @@ function buildCoreCitation(ed, gd, builder) {
   //console.log(builder);
 }
 
-function getImageRefTitle(catalogRecordName, filmTitle) {
+function getImageRefTitle(catalogRecordName, filmTitle, filmDigitalNote) {
   const catalogRecordNameTightMatches = [
     { title: "Marriage", matches: ["Marriage records"] },
     { title: "Marriage Bond", matches: ["Marriage licence bonds"] },
@@ -531,6 +531,8 @@ function getImageRefTitle(catalogRecordName, filmTitle) {
     { title: "Land record", matches: ["Land Records,"] },
   ];
 
+  const filmDigitalNoteTightMatches = [{ title: "Marriage", matches: ["Indice (matrimoni)"] }];
+
   const catalogRecordNameLooseMatches = [
     { title: "Marriage", matches: ["Marriage"] },
     { title: "Property Tax", matches: ["property tax"] },
@@ -543,11 +545,18 @@ function getImageRefTitle(catalogRecordName, filmTitle) {
     { title: "Deed record", matches: ["Deed"] },
   ];
 
+  const filmDigitalNoteLooseMatches = [{ title: "Marriage", matches: ["matrimoni"] }];
+
   function lookup(title, table) {
+    if (!title) {
+      return undefined;
+    }
+    let lcTitle = title.toLowerCase();
     for (let obj of table) {
       if (obj.matches) {
         for (let match of obj.matches) {
-          if (title && title.includes(match)) {
+          let lcMatch = match.toLowerCase();
+          if (lcTitle.includes(lcMatch)) {
             return obj.title;
           }
         }
@@ -569,6 +578,13 @@ function getImageRefTitle(catalogRecordName, filmTitle) {
     }
   }
 
+  if (filmDigitalNote) {
+    let refTitle = lookup(filmDigitalNote, filmDigitalNoteTightMatches);
+    if (refTitle) {
+      return refTitle;
+    }
+  }
+
   if (catalogRecordName) {
     let refTitle = lookup(catalogRecordName, catalogRecordNameLooseMatches);
     if (refTitle) {
@@ -578,6 +594,13 @@ function getImageRefTitle(catalogRecordName, filmTitle) {
 
   if (filmTitle) {
     let refTitle = lookup(filmTitle, filmTitleLooseMatches);
+    if (refTitle) {
+      return refTitle;
+    }
+  }
+
+  if (filmDigitalNote) {
+    let refTitle = lookup(filmDigitalNote, filmDigitalNoteLooseMatches);
     if (refTitle) {
       return refTitle;
     }
@@ -680,7 +703,7 @@ function buildImageCitation(ed, gd, builder) {
 
   builder.sourceReference = newSourceReference;
 
-  builder.meaningfulTitle = getImageRefTitle(ed.catalogRecordName, builder.sourceTitle);
+  builder.meaningfulTitle = getImageRefTitle(ed.catalogRecordName, builder.sourceTitle, ed.filmNote);
 }
 
 function buildBookCitation(ed, gd, builder) {

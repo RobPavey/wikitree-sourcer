@@ -240,6 +240,34 @@ function extractDataForImageInNewViewer(document, result) {
     if (title) {
       result.filmTitle = title;
     }
+  } else {
+    // newer format is different
+    let wayFindingLink1 = mainNode.querySelector("nav[aria-label='Waypoints'] a[wayfinding]");
+    if (wayFindingLink1) {
+      let title = wayFindingLink1.textContent.trim();
+      if (title) {
+        result.filmTitle = title;
+      }
+    }
+
+    let browsePathElements = mainNode.querySelectorAll(
+      "nav[aria-label='Waypoints'] > div > div > div > div > div > div > div > div > p"
+    );
+    if (browsePathElements.length > 0) {
+      let browsePath = "";
+      for (let browsePathElement of browsePathElements) {
+        let text = browsePathElement.textContent.trim();
+        if (text) {
+          if (browsePath) {
+            browsePath += " > ";
+          }
+          browsePath += text;
+        }
+      }
+      if (browsePath) {
+        result.imageBrowsePath = browsePath;
+      }
+    }
   }
 
   let imageNumberInput = mainNode.querySelector("div input[aria-label='Enter Image number']");
@@ -307,20 +335,54 @@ function extractDataForImageInNewViewer(document, result) {
       let possibleLinks = groupDataTab.querySelectorAll("div ul div a");
       //console.log("possibleLinks.length = " + possibleLinks.length);
 
-      for (let link of possibleLinks) {
-        let text = link.textContent;
-        let href = link.getAttribute("href");
-        if (text && href) {
-          if (/^\s*\d+\s*$/.test(text)) {
-            if (href.includes("imageGroupNumbers")) {
-              if (!result.filmNumber) {
-                result.filmNumber = link.textContent.trim();
+      if (possibleLinks.length) {
+        for (let link of possibleLinks) {
+          let text = link.textContent;
+          let href = link.getAttribute("href");
+          if (text && href) {
+            if (/^\s*\d+\s*$/.test(text)) {
+              if (href.includes("imageGroupNumbers")) {
+                if (!result.filmNumber) {
+                  result.filmNumber = link.textContent.trim();
+                }
               }
             }
-          }
 
-          if (href.includes("?creator=")) {
-            result.creator = text;
+            if (href.includes("?creator=")) {
+              result.creator = text;
+            }
+          }
+        }
+      } else {
+        // new format seems to use a table
+        let tableElement = groupDataTab.querySelector("table");
+        if (tableElement) {
+          let headerElements = tableElement.querySelectorAll("thead th");
+          let rowElements = tableElement.querySelectorAll("tbody > tr");
+          for (let rowElement of rowElements) {
+            let cellElements = rowElement.querySelectorAll("td");
+            if (headerElements.length == cellElements.length) {
+              for (let index = 0; index < headerElements.length; index++) {
+                let key = headerElements[index].textContent.trim();
+                let value = cellElements[index].textContent.trim();
+                if (key && value) {
+                  if (key == "Catalog Record") {
+                    result.catalogRecordName = value;
+                    let linkElement = cellElements[index].querySelector("a");
+                    if (linkElement) {
+                      let href = linkElement.href;
+                      if (href) {
+                        result.catalogRecordLink = href;
+                      }
+                    }
+                  } else if (key == "Item Number") {
+                    result.catalogItemNumber = value;
+                  } else if (key == "Film/Digital Note") {
+                    result.filmNote = value;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -355,6 +417,20 @@ function extractDataForImageInNewViewer(document, result) {
                   result.volume = volumeDiv.textContent;
                 }
               }
+            }
+          }
+        }
+      }
+
+      // new 2024 format is different
+      if (!result.citation) {
+        let h5Element = groupDataTab.querySelector("h5");
+        if (h5Element) {
+          let h5Text = h5Element.textContent.trim();
+          if (h5Text == "Citation") {
+            let citationElement = h5Element.nextElementSibling;
+            if (citationElement) {
+              result.citation = citationElement.textContent.trim();
             }
           }
         }
@@ -3142,7 +3218,7 @@ function setRelatedPersonInfoFromOtherPerson(
   }
 }
 
-function extractHintsFromRecordRocument(document) {
+function extractHintsFromRecordDocument(document) {
   if (!document) {
     return undefined;
   }
@@ -3203,7 +3279,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
   // if we have the document as well we can try to use that to get the correct values from the
   // fetch data.
   // An example is the event place for https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y
-  let docHints = extractHintsFromRecordRocument(document);
+  let docHints = extractHintsFromRecordDocument(document);
 
   // there could be many people in this data, the description is one way to find out which
   // is the one that is being focused on
