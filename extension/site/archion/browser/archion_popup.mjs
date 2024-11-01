@@ -120,6 +120,12 @@ async function generatePermaLink(ed) {
       credentials: "include",
     });
     let text = await response.text();
+
+    // Check for erros from the server, e.g. user has no active pass and cannot generate permalinks
+    if (text.indexOf("alert alert-warning") != -1) {
+      return ed.url;
+    }
+
     const start = text.indexOf("<p><a href=");
     const end = text.indexOf(">", start + 8);
     ed.permalink = text.substring(start, end).split('"')[1];
