@@ -104,6 +104,7 @@ function extractData(document, url) {
   result.pathComponents = pathComponents.slice(0, -1);
   result.book = pathComponents[pathComponents.length - 1];
   result.bookType = title2type(result.book);
+  result.pageType = "image";
 
   const pageSelect = document.querySelector("select");
   if (pageSelect) {
