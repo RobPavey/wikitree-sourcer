@@ -24,6 +24,15 @@ SOFTWARE.
 
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
+// Example search URL (2024)
+// https://billiongraves.com/search/results
+// ?cemetery_country=United%20States&cemetery_state=California&cemetery_county=Marin
+// &given_names=John%20Michael&family_names=Peters%20Smith
+// &birth_year=1800&death_year=1870&year_range=4&size=15
+
+// Optionally
+// &exact=true&phonetic=true
+
 class bgUriBuilder {
   constructor() {
     this.uri = "https://billiongraves.com/search/results";
@@ -58,26 +67,15 @@ class bgUriBuilder {
   }
 
   addPreamble() {
-    this.addSearchTerm("CollectionID=&CatalogID=&PageNumber=1&PageSize=20");
+    this.addSearchTerm("size=15");
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addSurname(string) {
+    this.addSearchParameter("family_names", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
-  addSurname(string, exact) {
-    this.addSearchParameter("FamilyName", StringUtils.removeExtendedAsciiCharacters(string));
-    this.addSearchParameter("FamilyNameExact", exact);
-  }
-
-  addGivenNames(string, exact) {
-    this.addSearchParameter("GivenNames", StringUtils.removeExtendedAsciiCharacters(string));
-    this.addSearchParameter("GivenNamesExact", exact);
-  }
-
-  addMaidenName(string, exact) {
-    this.addSearchParameter("MaidenName", StringUtils.removeExtendedAsciiCharacters(string));
-    this.addSearchParameter("MaidenNameExact", exact);
+  addGivenNames(string) {
+    this.addSearchParameter("given_names", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addCemeteryCountry(string) {
@@ -92,26 +90,28 @@ class bgUriBuilder {
     this.addSearchParameter("cemetery_state", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
-  addBirthYear(string, range) {
-    this.addSearchParameter("EventBirthYear", string);
-    this.addSearchParameter("EventBirthYearRange", range);
+  addBirthYear(string) {
+    this.addSearchParameter("birth_year", string);
   }
 
-  addDeathYear(string, range) {
-    this.addSearchParameter("EventDeathYear", string);
-    this.addSearchParameter("EventDeathYearRange", range);
+  addDeathYear(string) {
+    this.addSearchParameter("death_year", string);
   }
 
   addYearRange(string) {
-    this.addSearchParameter("YearRange", string);
+    this.addSearchParameter("year_range", string);
   }
 
   addSize(string) {
     this.addSearchParameter("size", string);
   }
 
-  addCountry(string) {
-    this.addSearchParameter("Country", StringUtils.removeExtendedAsciiCharacters(string));
+  addExact() {
+    this.addSearchParameter("exact", "true");
+  }
+
+  addPhonetic() {
+    this.addSearchParameter("phonetic", "true");
   }
 
   getUri() {

@@ -1,5 +1,5 @@
 {
   "std": {
-    "url": "https://billiongraves.com/search/results?CollectionID=&CatalogID=&PageNumber=1&PageSize=20&GivenNames=Mary%20Ellen&FamilyName=Hughes&MaidenName=Adams&EventBirthYear=1879&EventBirthYearRange=5&EventDeathYear=1974&EventDeathYearRange=5&Country=Canada"
+    "url": "https://billiongraves.com/search/results?size=15&given_names=Mary%20Ellen&family_names=Hughes&birth_year=1879&death_year=1974&year_range=5&cemetery_country=Canada"
   }
 }
