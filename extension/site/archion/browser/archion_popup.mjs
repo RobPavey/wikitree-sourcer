@@ -95,6 +95,8 @@ async function extractPermalinkBaseUrl(url) {
 }
 
 async function generatePermaLink(ed) {
+  console.log("generatePermaLink");
+
   if (ed.pageData && ed.pageData.page != undefined) {
     ed.pageData.pageId = await extractPageDataFromDocument(ed.uid, ed.url, ed.pageData.page);
     ed.permalinkBase = await extractPermalinkBaseUrl(ed.url);

@@ -253,9 +253,10 @@ function extractDataForImageInNewViewer(document, result) {
     let browsePathElements = mainNode.querySelectorAll(
       "nav[aria-label='Waypoints'] > div > div > div > div > div > div > div > div > p"
     );
-    if (browsePathElements.length > 0) {
+    if (browsePathElements.length > 1) {
       let browsePath = "";
-      for (let browsePathElement of browsePathElements) {
+      for (let index = 1; index < browsePathElements.length; index++) {
+        let browsePathElement = browsePathElements[index];
         let text = browsePathElement.textContent.trim();
         if (text) {
           if (browsePath) {
@@ -472,7 +473,7 @@ function extractDataForImage(filmViewerNode, result) {
     let crumbList = crumbsNode.querySelector("nav > ul");
     if (crumbList) {
       let children = crumbList.children;
-      for (let index = 0; index < children.length; index++) {
+      for (let index = 1; index < children.length; index++) {
         let child = children[index];
         let childDataNgRepeat = child.getAttribute("data-ng-repeat");
         if (childDataNgRepeat && childDataNgRepeat.includes("crumb in crumbs")) {

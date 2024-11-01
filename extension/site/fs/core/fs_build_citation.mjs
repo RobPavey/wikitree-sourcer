@@ -545,7 +545,7 @@ function getImageRefTitle(catalogRecordName, filmTitle, filmDigitalNote) {
     { title: "Deed record", matches: ["Deed"] },
   ];
 
-  const filmDigitalNoteLooseMatches = [{ title: "Marriage", matches: ["matrimoni"] }];
+  const filmDigitalNoteLooseMatches = [{ title: "Marriage", matches: ["matrimoni", "Overlijden"] }];
 
   function lookup(title, table) {
     if (!title) {
