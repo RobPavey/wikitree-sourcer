@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Land Tax''':\n\"Tithe Records\"<br/>\nTithe Apportionments, 1836-1929 [database online]. TheGenealogist.co.uk 2024<br/>\n[https://www.thegenealogist.co.uk/search/advanced/landowner/tithe-records/full/?id=53453535 The Genealogist Record] (accessed 6 May 2021)<br/>\nThomas Kidman on 13th November 1839 in Westoning, Bedfordshire, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Thomas was in a land tax record on 13th November 1839 in Westoning, Bedfordshire, England.<ref>\n'''Land Tax''':\n\"Tithe Records\"<br/>\nTithe Apportionments, 1836-1929 [database online]. TheGenealogist.co.uk 2024<br/>\n[https://www.thegenealogist.co.uk/search/advanced/landowner/tithe-records/full/?id=53453535 The Genealogist Record] (accessed 6 May 2021)<br/>\nThomas Kidman on 13th November 1839 in Westoning, Bedfordshire, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Land Tax''': \"Tithe Records\"<br/>Tithe Apportionments, 1836-1929 [database online]. TheGenealogist.co.uk 2024<br/>[https://www.thegenealogist.co.uk/search/advanced/landowner/tithe-records/full/?id=53453535 The Genealogist Record] (accessed 6 May 2021)<br/>Thomas Kidman on 13th November 1839 in Westoning, Bedfordshire, England.",
+    "type": "source"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/71402081/person/32242536573/facts",
+  "pageType": "personFacts",
+  "givenName": "Margarete",
+  "surname": "Van Wye",
+  "titleName": "Margarete Van Wye",
+  "birthDate": "8 AUGUST 1889",
+  "birthPlace": "Warren, Trumbull County, Ohio",
+  "deathDate": "23 DECEMBER 1974",
+  "deathPlace": "Newton Falls, Trumbull County, Ohio",
+  "gender": "Female",
+  "marriages": [
+    {
+      "date": "10 October 1919",
+      "place": "Trumbull County, Ohio",
+      "spouseName": "George Edwin Kelts"
+    }
+  ],
+  "fatherName": "Homer William Van Wye",
+  "motherName": "Apollonia (Lena) Lemley",
+  "sources": [
+    {
+      "dbId": "7602",
+      "recordId": "41580831",
+      "title": "1900 United States Federal Census"
+    },
+    {
+      "dbId": "7884",
+      "recordId": "142909798",
+      "title": "1910 United States Federal Census"
+    },
+    {
+      "dbId": "6061",
+      "recordId": "76822290",
+      "title": "1920 United States Federal Census"
+    },
+    {
+      "dbId": "6224",
+      "recordId": "68957909",
+      "title": "1930 United States Federal Census"
+    },
+    {
+      "dbId": "2442",
+      "recordId": "38378635",
+      "title": "1940 United States Federal Census"
+    },
+    {
+      "dbId": "62308",
+      "recordId": "207439047",
+      "title": "1950 United States Federal Census"
+    },
+    {
+      "dbId": "2541",
+      "recordId": "1170473",
+      "title": "Ohio, Births and Christenings Index, 1800-1962"
+    },
+    {
+      "dbId": "5763",
+      "recordId": "785243",
+      "title": "Ohio, Deaths, 1908-1932, 1938-2007"
+    },
+    {
+      "dbId": "60525",
+      "recordId": "36688426",
+      "title": "U.S., Find A Grave Index, 1600s-Current"
+    },
+    {
+      "dbId": "3693",
+      "recordId": "32785648",
+      "title": "U.S., Social Security Death Index, 1935-2014"
+    },
+    {
+      "dbId": "70559",
+      "recordId": "6301011",
+      "title": "Web: Ohio, Find A Grave Index, 1787-2012"
+    }
+  ],
+  "webLinks": [],
+  "ancestryTemplate": "{{Ancestry Tree|71402081|32242536573}}"
+}

@@ -1,0 +1,12 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "ConvictTransportation",
+  "eventDate": {
+    "dateString": "26th January 1832"
+  },
+  "eventPlace": {
+    "placeString": "New South Wales"
+  },
+  "hasValidData": true
+}

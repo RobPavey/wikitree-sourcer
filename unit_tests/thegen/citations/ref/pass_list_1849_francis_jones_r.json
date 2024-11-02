@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Passenger List''':\n\"Passenger Lists\"<br/>\n- BT27 - Board of Trade: Commercial and Statistical Department and successors: Outwards Passenger Lists [database online]. TheGenealogist.co.uk 2024; Source: Famine Irish Passenger Record , 12th Jan 1846 - 31st Dec 1851<br/>\n[https://www.thegenealogist.com/search/advanced/overseas/passenger-lists/full/?id=730397542 The Genealogist Record] (accessed 6 May 2021)<br/>\nUnknown on 5th June 1849 in London, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Unknown was a passenger on 5th June 1849 in London, England.<ref>\n'''Passenger List''':\n\"Passenger Lists\"<br/>\n- BT27 - Board of Trade: Commercial and Statistical Department and successors: Outwards Passenger Lists [database online]. TheGenealogist.co.uk 2024; Source: Famine Irish Passenger Record , 12th Jan 1846 - 31st Dec 1851<br/>\n[https://www.thegenealogist.com/search/advanced/overseas/passenger-lists/full/?id=730397542 The Genealogist Record] (accessed 6 May 2021)<br/>\nUnknown on 5th June 1849 in London, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Passenger List''': \"Passenger Lists\"<br/>- BT27 - Board of Trade: Commercial and Statistical Department and successors: Outwards Passenger Lists [database online]. TheGenealogist.co.uk 2024; Source: Famine Irish Passenger Record , 12th Jan 1846 - 31st Dec 1851<br/>[https://www.thegenealogist.com/search/advanced/overseas/passenger-lists/full/?id=730397542 The Genealogist Record] (accessed 6 May 2021)<br/>Unknown on 5th June 1849 in London, England.",
+    "type": "source"
+  }
+}

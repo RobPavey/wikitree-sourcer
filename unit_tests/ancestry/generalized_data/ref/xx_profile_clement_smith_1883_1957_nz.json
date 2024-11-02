@@ -2,7 +2,9 @@
   "sourceType": "profile",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "Clement Cecil Smith"
+    "name": "Clement Cecil Smith",
+    "lastName": "Smith",
+    "forenames": "Clement Cecil"
   },
   "birthDate": {
     "dateString": "1883"
@@ -33,7 +35,9 @@
   "parents": {
     "father": {
       "name": {
-        "name": "John Francis Smith"
+        "name": "John Francis Smith",
+        "lastName": "Smith",
+        "forenames": "John Francis"
       }
     },
     "mother": {

@@ -37,7 +37,9 @@
     "father": {
       "name": {
         "name": "Daniel Henry Sheffey",
-        "suffix": "Jr"
+        "suffix": "Jr",
+        "lastName": "Sheffey",
+        "forenames": "Daniel Henry"
       }
     },
     "mother": {

@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "Michael Hall"
+  },
+  "eventDate": {
+    "dateString": "21st August 1834"
+  },
+  "eventPlace": {
+    "placeString": "Newcastle All Saints, Northumberland, England"
+  },
+  "ageAtEvent": "58",
+  "ageAtDeath": "58",
+  "hasValidData": true
+}

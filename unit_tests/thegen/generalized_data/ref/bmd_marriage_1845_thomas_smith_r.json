@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "name": "Thomas Smith"
+  },
+  "eventDate": {
+    "quarter": 3,
+    "yearString": "1845"
+  },
+  "eventPlace": {
+    "placeString": "Rye, Sussex, England"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Lydia Offer"
+      },
+      "marriageDate": {
+        "quarter": 3,
+        "yearString": "1845"
+      },
+      "marriagePlace": {
+        "placeString": "Rye, Sussex, England"
+      }
+    }
+  ],
+  "hasValidData": true
+}

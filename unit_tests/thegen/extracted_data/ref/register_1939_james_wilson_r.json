@@ -1,0 +1,73 @@
+{
+  "url": "https://www.thegenealogist.com/search/advanced/register/1939/full/?id=900074529&data_set=Durham",
+  "success": true,
+  "pageType": "record",
+  "breadcrumb": "Register » 1939 Register » Full",
+  "recordData": {
+    "Address": "28, Frederick Street",
+    "Parish (Inferred)": "Bishop Auckland",
+    "Borough or District": "Bishop Auckland (Urban District)",
+    "Enumeration District": "Durham",
+    "Piece": "2745",
+    "Ledger Code": "FFCI"
+  },
+  "tableData": {
+    "headings": [
+      "Page",
+      "Line",
+      "Forename",
+      "Surname",
+      "Birth Date",
+      "Age",
+      "Gender",
+      "Marriage Status",
+      "Profession",
+      "Schedule"
+    ],
+    "rows": [
+      {
+        "Page": "13",
+        "Line": "36",
+        "Forename": "James",
+        "Surname": "Wilson",
+        "Birth Date": "4th March 1885",
+        "Age": "54",
+        "Gender": "Male",
+        "Marriage Status": "Married",
+        "Profession": "Grave Digger Heavy Worker",
+        "Schedule": "160 / 1"
+      },
+      {
+        "Page": "13",
+        "Line": "37",
+        "Forename": "Lovina",
+        "Surname": "Wilson",
+        "Birth Date": "7th April 1893",
+        "Age": "46",
+        "Gender": "Female",
+        "Marriage Status": "Married",
+        "Profession": "Unpaid Domestic Duties",
+        "Schedule": "160 / 2"
+      },
+      {
+        "Page": "13",
+        "Line": "38",
+        "Forename": "Thomas W",
+        "Surname": "Wilson",
+        "Birth Date": "25th May 1925",
+        "Age": "14",
+        "Gender": "Male",
+        "Marriage Status": "Single",
+        "Profession": "Colliery Stable Boy Seeking Employed",
+        "Schedule": "160 / 3"
+      },
+      {
+        "Page": "13",
+        "Line": "39",
+        "Forename": "Closed Entry",
+        "Schedule": "160 / 4"
+      }
+    ]
+  },
+  "sourceInfo": "The 1939 Register, 1939 [database online]. TheGenealogist.co.uk 2024"
+}

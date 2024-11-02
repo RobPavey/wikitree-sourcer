@@ -17,7 +17,9 @@
   "parents": {
     "father": {
       "name": {
-        "name": "Mark Powis Saville"
+        "name": "Mark Powis Saville",
+        "lastName": "Saville",
+        "forenames": "Mark Powis"
       }
     },
     "mother": {

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Civil Registration Marriages 1837-2005\"<br/>\nCivil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 7; Page: 0657<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=446092223&year=1845 The Genealogist Record] (accessed 6 May 2021)<br/>\nThomas Smith marriage to Lydia Offer registered Jul-Aug-Sep 1845 in Rye, Sussex, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Thomas's marriage to Lydia Offer was registered in the Jul-Aug-Sep quarter of 1845 in Rye, Sussex, England.<ref>\n'''Marriage Registration''':\n\"Civil Registration Marriages 1837-2005\"<br/>\nCivil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 7; Page: 0657<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=446092223&year=1845 The Genealogist Record] (accessed 6 May 2021)<br/>\nThomas Smith marriage to Lydia Offer registered Jul-Aug-Sep 1845 in Rye, Sussex, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Civil Registration Marriages 1837-2005\"<br/>Civil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 7; Page: 0657<br/>[https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=446092223&year=1845 The Genealogist Record] (accessed 6 May 2021)<br/>Thomas Smith marriage to Lydia Offer registered Jul-Aug-Sep 1845 in Rye, Sussex, England.",
+    "type": "source"
+  }
+}

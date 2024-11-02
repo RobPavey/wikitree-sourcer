@@ -330,6 +330,9 @@ function contentMessageListener(
 
   // if we were going to respond async we would return true here. But in current design
   // we always respond synchronously for most requests.
+  // However, because the overrideExtractHandler can *sometimes* be async
+  // we now always return true here.
+  return true;
 }
 
 function siteContentInit(siteName, extractModulePath, overrideExtractHandler, additionalMessageHandler) {

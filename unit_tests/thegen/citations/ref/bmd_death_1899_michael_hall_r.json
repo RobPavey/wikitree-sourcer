@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Civil Registration Deaths 1837-2005\"<br/>\nCivil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 5B; Page: 0029<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/deaths/full/?id=399734943&year=1899 The Genealogist Record] (accessed 6 May 2021)<br/>\nMichael Hall death registered Jul-Aug-Sep 1899 in St. Thomas, Devon, England (age 63).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Michael's death (age 63) was registered in the Jul-Aug-Sep quarter of 1899 in St. Thomas, Devon, England.<ref>\n'''Death Registration''':\n\"Civil Registration Deaths 1837-2005\"<br/>\nCivil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 5B; Page: 0029<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/deaths/full/?id=399734943&year=1899 The Genealogist Record] (accessed 6 May 2021)<br/>\nMichael Hall death registered Jul-Aug-Sep 1899 in St. Thomas, Devon, England (age 63).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Civil Registration Deaths 1837-2005\"<br/>Civil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 5B; Page: 0029<br/>[https://www.thegenealogist.com/search/advanced/bmd/deaths/full/?id=399734943&year=1899 The Genealogist Record] (accessed 6 May 2021)<br/>Michael Hall death registered Jul-Aug-Sep 1899 in St. Thomas, Devon, England (age 63).",
+    "type": "source"
+  }
+}

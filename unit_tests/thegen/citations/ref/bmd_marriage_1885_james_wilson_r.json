@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Civil Registration Marriages 1837-2005\"<br/>\nCivil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 9D; Page: 0151<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=460269538&year=1885 The Genealogist Record] (accessed 6 May 2021)<br/>\nJames Wilson marriage registered Jan-Feb-Mar 1885 in Howden, Yorkshire East Riding, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "James's marriage was registered in the Jan-Feb-Mar quarter of 1885 in Howden, Yorkshire East Riding, England.<ref>\n'''Marriage Registration''':\n\"Civil Registration Marriages 1837-2005\"<br/>\nCivil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 9D; Page: 0151<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=460269538&year=1885 The Genealogist Record] (accessed 6 May 2021)<br/>\nJames Wilson marriage registered Jan-Feb-Mar 1885 in Howden, Yorkshire East Riding, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Civil Registration Marriages 1837-2005\"<br/>Civil Registration, 1837-2005 [database online]. TheGenealogist.co.uk 2024; Volume: 9D; Page: 0151<br/>[https://www.thegenealogist.com/search/advanced/bmd/marriages/full/?id=460269538&year=1885 The Genealogist Record] (accessed 6 May 2021)<br/>James Wilson marriage registered Jan-Feb-Mar 1885 in Howden, Yorkshire East Riding, England.",
+    "type": "source"
+  }
+}

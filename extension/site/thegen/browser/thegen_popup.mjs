@@ -26,6 +26,7 @@ import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs"
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/thegen_generalize_data.mjs";
 import { buildCitation } from "../core/thegen_build_citation.mjs";
+import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 
 async function setupThegenPopupMenu(extractedData) {
   let input = {
@@ -34,6 +35,7 @@ async function setupThegenPopupMenu(extractedData) {
     generalizeFailedMessage: "It looks like a The Genealogist page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
+    buildHouseholdTableFunction: buildHouseholdTable,
     siteNameToExcludeFromSearch: "thegen",
   };
   setupSimplePopupMenu(input);

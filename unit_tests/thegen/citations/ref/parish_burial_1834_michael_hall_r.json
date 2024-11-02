@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Parish Transcript Burials\"<br/>\n[https://www.thegenealogist.com/search/advanced/parish/burial/full/?id=848838868&s_id=1219&sscid=335 The Genealogist Record] (accessed 6 May 2021)<br/>\nMichael Hall burial (died age 58) on 21st August 1834 in Newcastle All Saints, Northumberland, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Michael (age 58) was buried on 21st August 1834 in Newcastle All Saints, Northumberland, England.<ref>\n'''Burial''':\n\"Parish Transcript Burials\"<br/>\n[https://www.thegenealogist.com/search/advanced/parish/burial/full/?id=848838868&s_id=1219&sscid=335 The Genealogist Record] (accessed 6 May 2021)<br/>\nMichael Hall burial (died age 58) on 21st August 1834 in Newcastle All Saints, Northumberland, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Parish Transcript Burials\"<br/>[https://www.thegenealogist.com/search/advanced/parish/burial/full/?id=848838868&s_id=1219&sscid=335 The Genealogist Record] (accessed 6 May 2021)<br/>Michael Hall burial (died age 58) on 21st August 1834 in Newcastle All Saints, Northumberland, England.",
+    "type": "source"
+  }
+}

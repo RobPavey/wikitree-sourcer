@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\nPiece: 01; Sub-Piece: 059; Image: 008<br/>\n[https://www.thegenealogist.co.uk/image_viewer_beta/?imagego=ZGVmNTAyMDBjZTc5YWU0ZDllZTkxYWYzZmJiODcyOTY2MTJiYWQ5YWI2ODY1MDIxNGMwNzRjYWMxMmEwZjM1NWY3YzNkNGY5MjNlNGE4YzRkZTI5ZTY3MjFkYjI3ZjBiZWJmZmYyZWRiNGQwY2VlZWZkYjI1ZDdiZjkyYjE4NjUyMDI5NTBmYWM2MTQ1N2M2NzQwM2VmZmUyZTg2ZTJiZGNlZTdkYWU1MTMwM2Q1OTc0MjFiMTc4ZDY3NjE3OWU5OTk3ZjFkNzc0ZmJhMWQ1MjQ0ZjBjNzcxMTViOTFkODg2N2E3ZjYzNjBmYmQ5YjdjM2U1MWM2MGQ0MTg5MGUyZGRiZDMxNDFiYTQ2NjcyZmU3MTNiYWFiOTM0OTUwNDE0OTA4OGZi The Genealogist Image] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\nPiece: 01; Sub-Piece: 059; Image: 008<br/>\n[https://www.thegenealogist.co.uk/image_viewer_beta/?imagego=ZGVmNTAyMDBjZTc5YWU0ZDllZTkxYWYzZmJiODcyOTY2MTJiYWQ5YWI2ODY1MDIxNGMwNzRjYWMxMmEwZjM1NWY3YzNkNGY5MjNlNGE4YzRkZTI5ZTY3MjFkYjI3ZjBiZWJmZmYyZWRiNGQwY2VlZWZkYjI1ZDdiZjkyYjE4NjUyMDI5NTBmYWM2MTQ1N2M2NzQwM2VmZmUyZTg2ZTJiZGNlZTdkYWU1MTMwM2Q1OTc0MjFiMTc4ZDY3NjE3OWU5OTk3ZjFkNzc0ZmJhMWQ1MjQ0ZjBjNzcxMTViOTFkODg2N2E3ZjYzNjBmYmQ5YjdjM2U1MWM2MGQ0MTg5MGUyZGRiZDMxNDFiYTQ2NjcyZmU3MTNiYWFiOTM0OTUwNDE0OTA4OGZi The Genealogist Image] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': Piece: 01; Sub-Piece: 059; Image: 008<br/>[https://www.thegenealogist.co.uk/image_viewer_beta/?imagego=ZGVmNTAyMDBjZTc5YWU0ZDllZTkxYWYzZmJiODcyOTY2MTJiYWQ5YWI2ODY1MDIxNGMwNzRjYWMxMmEwZjM1NWY3YzNkNGY5MjNlNGE4YzRkZTI5ZTY3MjFkYjI3ZjBiZWJmZmYyZWRiNGQwY2VlZWZkYjI1ZDdiZjkyYjE4NjUyMDI5NTBmYWM2MTQ1N2M2NzQwM2VmZmUyZTg2ZTJiZGNlZTdkYWU1MTMwM2Q1OTc0MjFiMTc4ZDY3NjE3OWU5OTk3ZjFkNzc0ZmJhMWQ1MjQ0ZjBjNzcxMTViOTFkODg2N2E3ZjYzNjBmYmQ5YjdjM2U1MWM2MGQ0MTg5MGUyZGRiZDMxNDFiYTQ2NjcyZmU3MTNiYWFiOTM0OTUwNDE0OTA4OGZi The Genealogist Image] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

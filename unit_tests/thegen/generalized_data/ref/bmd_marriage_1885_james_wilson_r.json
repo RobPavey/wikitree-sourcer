@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "name": "James Wilson"
+  },
+  "eventDate": {
+    "quarter": 1,
+    "yearString": "1885"
+  },
+  "eventPlace": {
+    "placeString": "Howden, Yorkshire East Riding, England"
+  },
+  "hasValidData": true
+}
