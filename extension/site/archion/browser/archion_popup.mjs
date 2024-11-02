@@ -237,7 +237,6 @@ async function generatePermaLink(ed) {
     };
     let allowed = await checkPermissionForSite("*://archion.de/*", checkPermissionsOptions);
     if (!allowed) {
-      alert("blocked");
       closePopup();
       return;
     }
