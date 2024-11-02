@@ -28,12 +28,14 @@ import {
   beginMainMenu,
   doAsyncActionWithCatch,
   openExceptionPage,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
 import { loadDataCache, cachedDataCache, isCachedDataCacheReady } from "/base/browser/common/data_cache.mjs";
 import { clearCitation, saveCitation } from "/base/browser/popup/popup_citation.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 import { setupSimplePopupMenu, simplePopupFunctions } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
@@ -230,11 +232,18 @@ async function setupArchionPopupMenuInner(input) {
 
 async function generatePermaLink(ed) {
   if (ed.pageData && ed.pageData.page != undefined) {
-    alert(1);
+    const checkPermissionsOptions = {
+      reason: "To generate a permalink a content script needs to be loaded on the archion.de page.",
+    };
+    let allowed = await checkPermissionForSite("*://archion.de/*", checkPermissionsOptions);
+    if (!allowed) {
+      alert("blocked");
+      closePopup();
+      return;
+    }
+
     ed.pageData.pageId = await extractPageDataFromDocument(ed.uid, ed.url, ed.pageData.page);
-    alert(2);
     ed.permalinkBase = await extractPermalinkBaseUrl(ed.url);
-    alert(3);
 
     let response = await fetch(ed.permalinkBase, {
       headers: {

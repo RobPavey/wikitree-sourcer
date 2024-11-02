@@ -68,7 +68,7 @@
     "*://www.wiewaswie.nl/*",
     "*://*.wikipedia.org/*"
   ],
-  "optional_host_permissions": ["*://*.americanancestors.org/*", "*://*.thegenealogist.com/*"],
+  "optional_host_permissions": ["*://*.americanancestors.org/*", "*://archion.de/*", "*://*.thegenealogist.com/*"],
   "background": {
     "service_worker": "base/browser/background/background_chrome.mjs",
     "type": "module"
