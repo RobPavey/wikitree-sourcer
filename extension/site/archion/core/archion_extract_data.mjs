@@ -29,7 +29,7 @@ function title2type(title) {
   if (title.includes("tauf")) {
     result += ", Christening";
   }
-  if (title.includes("trau") || title.includes("heirat")) {
+  if (title.includes("trau") || title.includes("heirat") || title.includes("eheprotokoll")) {
     result += ", Marriage";
   }
   if (title.includes("proklamation")) {
@@ -40,7 +40,8 @@ function title2type(title) {
     title.includes("tot") ||
     title.includes("bestattung") ||
     title.includes("begraben") ||
-    title.includes("begräbnis")
+    title.includes("begräbnis") ||
+    title.includes("beerdigung")
   ) {
     result += ", Death";
   }
@@ -103,6 +104,7 @@ function extractData(document, url) {
   result.pathComponents = pathComponents.slice(0, -1);
   result.book = pathComponents[pathComponents.length - 1];
   result.bookType = title2type(result.book);
+  result.pageType = "image";
 
   const pageSelect = document.querySelector("select");
   if (pageSelect) {

@@ -22,7 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import {
+  addBuildCitationMenuItems,
+  addMenuDivider,
+  beginMainMenu,
+  doAsyncActionWithCatch,
+  openExceptionPage,
+  closePopup,
+} from "/base/browser/popup/popup_menu_building.mjs";
+import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
+import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
+import { loadDataCache, cachedDataCache, isCachedDataCacheReady } from "/base/browser/common/data_cache.mjs";
+import { clearCitation, saveCitation } from "/base/browser/popup/popup_citation.mjs";
+import { options } from "/base/browser/options/options_loader.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+
+import { setupSimplePopupMenu, simplePopupFunctions } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/archion_generalize_data.mjs";
 import { buildCitation } from "../core/archion_build_citation.mjs";
@@ -94,10 +109,140 @@ async function extractPermalinkBaseUrl(url) {
   return baseUrl;
 }
 
+async function archionPopupBuildCitation(data) {
+  clearCitation();
+
+  if (!isCachedDataCacheReady) {
+    // dependencies not ready, wait a few milliseconds and try again
+    //console.log("simplePopupBuildCitation, waiting another 10ms")
+    setTimeout(function () {
+      archionPopupBuildCitation(data);
+    }, 10);
+    return;
+  }
+
+  //console.log("simplePopupBuildCitation");
+
+  //console.log(householdTableString);
+
+  doAsyncActionWithCatch("Building Citation", data, async function () {
+    if (data.extractedData.permalink && data.extractedData.permalink == "<<NOT YET GENERATED>>") {
+      data.extractedData.permalink = await generatePermaLink(data.extractedData);
+    }
+
+    const input = {
+      extractedData: data.extractedData,
+      generalizedData: data.generalizedData,
+      runDate: new Date(),
+      type: data.type,
+      dataCache: cachedDataCache,
+      options: options,
+    };
+    const citationObject = simplePopupFunctions.buildCitationFunction(input);
+    citationObject.generalizedData = data.generalizedData;
+    //console.log("simplePopupBuildCitation, citationObject is:");
+    //console.log(citationObject);
+
+    //console.log("simplePopupBuildCitation, citationObject is:");
+    //console.log(citationObject);
+
+    saveCitation(citationObject);
+  });
+}
+
+async function setupArchionPopupMenuInner(input) {
+  let backFunction = function () {
+    setupSimplePopupMenu(input);
+  };
+
+  let extractedData = input.extractedData;
+
+  //console.log("setupSimplePopupMenu, extractedData is:");
+  //console.log(extractedData);
+
+  if (!extractedData || !extractedData.success) {
+    let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
+    message += "\n\n" + input.extractFailedMessage;
+    let data = { extractedData: extractedData };
+    buildMinimalMenuWithMessage(message, data, backFunction);
+    return;
+  }
+
+  // get generalized data
+  if (!input.generalizeDataFunction) {
+    openExceptionPage(
+      "Error during creating popup menu for content.",
+      "generalizeDataFunction missing",
+      undefined,
+      true
+    );
+  }
+  let generalizedData = undefined;
+
+  try {
+    generalizedData = input.generalizeDataFunction({
+      extractedData: extractedData,
+    });
+  } catch (err) {
+    openExceptionPage("Error during creating popup menu for content.", "generalizeData failed", err, true);
+  }
+
+  //console.log("setupSimplePopupMenu, generalizedData is:");
+  //console.log(generalizedData);
+
+  let data = { extractedData: extractedData, generalizedData: generalizedData };
+
+  if (!generalizedData || !generalizedData.hasValidData) {
+    let message = "WikiTree Sourcer could not interpret the data on this page.";
+    message += "\n\n" + input.generalizeFailedMessage;
+    buildMinimalMenuWithMessage(message, data, backFunction);
+    return;
+  }
+
+  simplePopupFunctions.buildCitationFunction = input.buildCitationFunction;
+  simplePopupFunctions.buildHouseholdTableFunction = input.buildHouseholdTableFunction;
+
+  // do async prefetches
+  loadDataCache();
+
+  let menu = beginMainMenu();
+
+  if (input.doNotIncludeSearch != true) {
+    await addSearchMenus(menu, data, backFunction, input.siteNameToExcludeFromSearch);
+    addMenuDivider(menu);
+  }
+
+  if (input.buildCitationFunction) {
+    addBuildCitationMenuItems(
+      menu,
+      data,
+      archionPopupBuildCitation,
+      backFunction,
+      input.regeneralizeFunction,
+      input.userInputFunction
+    );
+  }
+
+  if (input.customMenuFunction) {
+    input.customMenuFunction(menu, data);
+  }
+
+  addStandardMenuEnd(menu, data, backFunction);
+}
+
 async function generatePermaLink(ed) {
   console.log("generatePermaLink");
 
   if (ed.pageData && ed.pageData.page != undefined) {
+    const checkPermissionsOptions = {
+      reason: "To generate a permalink a content script needs to be loaded on the archion.de page.",
+    };
+    let allowed = await checkPermissionForSite("*://archion.de/*", checkPermissionsOptions);
+    if (!allowed) {
+      closePopup();
+      return;
+    }
+
     ed.pageData.pageId = await extractPageDataFromDocument(ed.uid, ed.url, ed.pageData.page);
     ed.permalinkBase = await extractPermalinkBaseUrl(ed.url);
 
@@ -122,6 +267,12 @@ async function generatePermaLink(ed) {
       credentials: "include",
     });
     let text = await response.text();
+
+    // Check for erros from the server, e.g. user has no active pass and cannot generate permalinks
+    if (text.indexOf("alert alert-warning") != -1) {
+      return ed.url;
+    }
+
     const start = text.indexOf("<p><a href=");
     const end = text.indexOf(">", start + 8);
     ed.permalink = text.substring(start, end).split('"')[1];
@@ -130,10 +281,6 @@ async function generatePermaLink(ed) {
 }
 
 async function setupArchionPopupMenu(extractedData) {
-  if (extractedData.permalink && extractedData.permalink == "<<NOT YET GENERATED>>") {
-    extractedData.permalink = await generatePermaLink(extractedData);
-  }
-
   let input = {
     extractedData: extractedData,
     extractFailedMessage: "It looks like an Archion page but not a record page.",
@@ -141,8 +288,9 @@ async function setupArchionPopupMenu(extractedData) {
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "archion",
+    doNotIncludeSearch: true,
   };
-  setupSimplePopupMenu(input);
+  setupArchionPopupMenuInner(input);
 }
 
 initPopup("archion", setupArchionPopupMenu);

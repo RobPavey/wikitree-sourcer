@@ -71,6 +71,7 @@
   ],
   "optional_host_permissions": [
     "*://*.americanancestors.org/*",
+    "*://archion.de/*",
     "*://*.thegenealogist.com/*",
     "*://*.thegenealogist.co.uk/*"
   ],
