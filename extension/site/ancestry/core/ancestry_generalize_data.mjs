@@ -64,6 +64,8 @@ const eventTypeStringToDataType = {
 };
 
 const recordTypeByFields = [
+  { type: RT.Obituary, labels: ["Obituary Date"] },
+  { type: RT.Obituary, labels: ["Obituary Place"] },
   { type: RT.Divorce, labels: ["Divorce Date"] },
   { type: RT.Marriage, labels: ["Marriage Date", "Marriage Place", "Spouse"] },
   { type: RT.Marriage, labels: ["Marriage Banns Date", "Marriage Banns Place", "Spouse"] },
