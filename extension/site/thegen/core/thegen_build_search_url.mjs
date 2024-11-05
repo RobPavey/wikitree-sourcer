@@ -30,7 +30,7 @@ function buildSearchUrl(buildUrlInput) {
   const parameters = buildUrlInput.searchParameters;
   const options = buildUrlInput.options;
 
-  var builder = new ThegenUriBuilder();
+  var builder = new ThegenUriBuilder(options);
 
   // call methods on builder here
 

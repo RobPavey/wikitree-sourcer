@@ -41,8 +41,13 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 // &search=Search#show-result
 
 class ThegenUriBuilder {
-  constructor() {
-    this.uri = "https://www.thegenealogist.com/search/master/?layout=compact&type=person";
+  constructor(options) {
+    let domain = options.search_thegen_domain;
+    if (domain == "none" || !domain) {
+      domain = "thegenealogist.co.uk";
+    }
+
+    this.uri = "https://www." + domain + "/search/master/?layout=compact&type=person";
     this.searchTermAdded = true;
   }
 
