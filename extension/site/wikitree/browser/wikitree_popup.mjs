@@ -1447,8 +1447,11 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
 
   let intro = "";
   if (addDiedYoung) {
+    let parameter = options.addMerge_addPerson_diedYoungParameter;
     let image = options.addMerge_addPerson_diedYoungImage;
-    if (image) {
+    if (parameter && parameter != "default") {
+      intro += "{{Died Young|" + parameter + "}}\n";
+    } else if (image) {
       intro += "{{Died Young|image=" + image + "}}\n";
     } else {
       intro += "{{Died Young}}\n";
