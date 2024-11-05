@@ -251,4 +251,4 @@ async function setupSimplePopupMenu(input) {
   addStandardMenuEnd(menu, data, backFunction);
 }
 
-export { setupSimplePopupMenu, simplePopupFunctions };
+export { setupSimplePopupMenu };

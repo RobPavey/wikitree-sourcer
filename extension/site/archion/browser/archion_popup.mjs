@@ -30,14 +30,11 @@ import {
   openExceptionPage,
   closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { addSearchMenus } from "/base/browser/popup/popup_search.mjs";
 import { addStandardMenuEnd, buildMinimalMenuWithMessage } from "/base/browser/popup/popup_menu_blocks.mjs";
-import { loadDataCache, cachedDataCache, isCachedDataCacheReady } from "/base/browser/common/data_cache.mjs";
 import { clearCitation, saveCitation } from "/base/browser/popup/popup_citation.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
-import { setupSimplePopupMenu, simplePopupFunctions } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/archion_generalize_data.mjs";
 import { buildCitation } from "../core/archion_build_citation.mjs";
@@ -112,18 +109,7 @@ async function extractPermalinkBaseUrl(url) {
 async function archionPopupBuildCitation(data) {
   clearCitation();
 
-  if (!isCachedDataCacheReady) {
-    // dependencies not ready, wait a few milliseconds and try again
-    //console.log("simplePopupBuildCitation, waiting another 10ms")
-    setTimeout(function () {
-      archionPopupBuildCitation(data);
-    }, 10);
-    return;
-  }
-
-  //console.log("simplePopupBuildCitation");
-
-  //console.log(householdTableString);
+  //console.log("archionPopupBuildCitation");
 
   doAsyncActionWithCatch("Building Citation", data, async function () {
     if (data.extractedData.permalink && data.extractedData.permalink == "<<NOT YET GENERATED>>") {
@@ -135,99 +121,18 @@ async function archionPopupBuildCitation(data) {
       generalizedData: data.generalizedData,
       runDate: new Date(),
       type: data.type,
-      dataCache: cachedDataCache,
       options: options,
     };
-    const citationObject = simplePopupFunctions.buildCitationFunction(input);
+    const citationObject = buildCitation(input);
     citationObject.generalizedData = data.generalizedData;
-    //console.log("simplePopupBuildCitation, citationObject is:");
+    //console.log("archionPopupBuildCitation, citationObject is:");
     //console.log(citationObject);
 
-    //console.log("simplePopupBuildCitation, citationObject is:");
+    //console.log("archionPopupBuildCitation, citationObject is:");
     //console.log(citationObject);
 
     saveCitation(citationObject);
   });
-}
-
-async function setupArchionPopupMenuInner(input) {
-  let backFunction = function () {
-    setupSimplePopupMenu(input);
-  };
-
-  let extractedData = input.extractedData;
-
-  //console.log("setupSimplePopupMenu, extractedData is:");
-  //console.log(extractedData);
-
-  if (!extractedData || !extractedData.success) {
-    let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
-    message += "\n\n" + input.extractFailedMessage;
-    let data = { extractedData: extractedData };
-    buildMinimalMenuWithMessage(message, data, backFunction);
-    return;
-  }
-
-  // get generalized data
-  if (!input.generalizeDataFunction) {
-    openExceptionPage(
-      "Error during creating popup menu for content.",
-      "generalizeDataFunction missing",
-      undefined,
-      true
-    );
-  }
-  let generalizedData = undefined;
-
-  try {
-    generalizedData = input.generalizeDataFunction({
-      extractedData: extractedData,
-    });
-  } catch (err) {
-    openExceptionPage("Error during creating popup menu for content.", "generalizeData failed", err, true);
-  }
-
-  //console.log("setupSimplePopupMenu, generalizedData is:");
-  //console.log(generalizedData);
-
-  let data = { extractedData: extractedData, generalizedData: generalizedData };
-
-  if (!generalizedData || !generalizedData.hasValidData) {
-    let message = "WikiTree Sourcer could not interpret the data on this page.";
-    message += "\n\n" + input.generalizeFailedMessage;
-    buildMinimalMenuWithMessage(message, data, backFunction);
-    return;
-  }
-
-  simplePopupFunctions.buildCitationFunction = input.buildCitationFunction;
-  simplePopupFunctions.buildHouseholdTableFunction = input.buildHouseholdTableFunction;
-
-  // do async prefetches
-  loadDataCache();
-
-  let menu = beginMainMenu();
-
-  if (input.doNotIncludeSearch != true) {
-    await addSearchMenus(menu, data, backFunction, input.siteNameToExcludeFromSearch);
-    addMenuDivider(menu);
-  }
-
-  if (input.buildCitationFunction) {
-    addBuildCitationMenuItems(
-      menu,
-      data,
-      archionPopupBuildCitation,
-      backFunction,
-      input.regeneralizeFunction,
-      input.userInputFunction
-    );
-  }
-
-  if (input.customMenuFunction) {
-    input.customMenuFunction(menu, data);
-  }
-
-  addStandardMenuEnd(menu, data, backFunction);
 }
 
 async function generatePermaLink(ed) {
@@ -281,16 +186,48 @@ async function generatePermaLink(ed) {
 }
 
 async function setupArchionPopupMenu(extractedData) {
-  let input = {
-    extractedData: extractedData,
-    extractFailedMessage: "It looks like an Archion page but not a record page.",
-    generalizeFailedMessage: "It looks like an Archion page but does not contain the required data.",
-    generalizeDataFunction: generalizeData,
-    buildCitationFunction: buildCitation,
-    siteNameToExcludeFromSearch: "archion",
-    doNotIncludeSearch: true,
+  let backFunction = function () {
+    setupArchionPopupMenu(extractedData);
   };
-  setupArchionPopupMenuInner(input);
+
+  //console.log("setupArchionPopupMenu, extractedData is:");
+  //console.log(extractedData);
+
+  if (!extractedData || !extractedData.success) {
+    let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
+    message += "\n\nIt looks like an Archion page but not a record page.";
+    let data = { extractedData: extractedData };
+    buildMinimalMenuWithMessage(message, data, backFunction);
+    return;
+  }
+
+  let generalizedData = undefined;
+
+  try {
+    generalizedData = generalizeData({
+      extractedData: extractedData,
+    });
+  } catch (err) {
+    openExceptionPage("Error during creating popup menu for content.", "generalizeData failed", err, true);
+  }
+
+  //console.log("setupArchionPopupMenu, generalizedData is:");
+  //console.log(generalizedData);
+
+  let data = { extractedData: extractedData, generalizedData: generalizedData };
+
+  if (!generalizedData || !generalizedData.hasValidData) {
+    let message = "WikiTree Sourcer could not interpret the data on this page.";
+    message += "\n\nIt looks like an Archion page but does not contain the required data.";
+    buildMinimalMenuWithMessage(message, data, backFunction);
+    return;
+  }
+
+  let menu = beginMainMenu();
+
+  addBuildCitationMenuItems(menu, data, archionPopupBuildCitation, backFunction);
+
+  addStandardMenuEnd(menu, data, backFunction);
 }
 
 initPopup("archion", setupArchionPopupMenu);
