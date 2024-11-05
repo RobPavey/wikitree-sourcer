@@ -11,7 +11,9 @@
   },
   "eventPlace": {
     "country": "Scotland",
-    "placeString": "Ardersier, Scotland"
+    "placeString": "Ardersier, Scotland",
+    "streetAddress": "Dwelling House in Campbelltoun"
   },
+  "status": "Proprietor/Occupier",
   "hasValidData": true
 }

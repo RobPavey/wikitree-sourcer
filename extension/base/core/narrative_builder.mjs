@@ -2946,6 +2946,35 @@ class NarrativeBuilder {
     this.narrative += ".";
   }
 
+  buildValuationRollString() {
+    let gd = this.eventGd;
+
+    let dateObj = gd.inferEventDateObj();
+    let placeObj = gd.inferEventPlaceObj();
+
+    let formattedDate = undefined;
+    if (dateObj) {
+      formattedDate = this.formatDateObj(dateObj, true);
+    }
+
+    const nameOrPronoun = this.getPersonNameOrPronoun(false, true);
+    this.narrative += nameOrPronoun;
+
+    if (gd.status) {
+      this.narrative += " was recorded as a " + gd.status + " in a valuation roll";
+    } else {
+      this.narrative += " was recorded in a valuation roll";
+    }
+
+    if (formattedDate) {
+      this.narrative += " " + formattedDate;
+    }
+
+    this.addFullPlaceWithPreposition(placeObj);
+
+    this.narrative += ".";
+  }
+
   buildDefaultString() {
     const narratives = [
       {
@@ -3164,7 +3193,12 @@ class NarrativeBuilder {
       }
       case RT.ConvictTransportation: {
         this.buildFunction = this.buildConvictTransportationString;
-        this.optionsSubcategory = "convictTransportaion";
+        this.optionsSubcategory = "convictTransportation";
+        break;
+      }
+      case RT.ValuationRoll: {
+        this.buildFunction = this.buildValuationRollString;
+        this.optionsSubcategory = "valuationRoll";
         break;
       }
     }

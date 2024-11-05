@@ -741,6 +741,25 @@ function getUkRegistrationString(gd, options, type) {
   return dataString;
 }
 
+function getValuationRollString(gd, options) {
+  let dataString = getFullName(gd);
+
+  if (gd.status) {
+    dataString += "recorded as " + gd.status + " in a valuation roll";
+  } else {
+    dataString += "recorded in a valuation roll";
+  }
+
+  let date = gd.inferEventDateObj();
+  if (date) {
+    dataString += " " + getDateWithPreposition(date);
+  }
+
+  dataString += getFullPlaceTermWithPreposition(gd.inferEventPlaceObj());
+
+  return dataString;
+}
+
 function addRegistrationPlace(gd, options) {
   let placeString = "";
 
@@ -1747,6 +1766,10 @@ const DataString = {
       }
       case RT.SocialSecurity: {
         dataString = getSocialSecurityString(gd, options);
+        break;
+      }
+      case RT.ValuationRoll: {
+        dataString = getValuationRollString(gd, options);
         break;
       }
     }
