@@ -30,7 +30,8 @@
       "birthDate": "4th March 1885",
       "gender": "Male",
       "maritalStatus": "Married",
-      "occupation": "Grave Digger Heavy Worker"
+      "occupation": "Grave Digger Heavy Worker",
+      "isSelected": true
     },
     {
       "name": "Lovina Wilson",
@@ -49,6 +50,12 @@
     {
       "isClosed": true
     }
+  ],
+  "primaryPersonOptions": [
+    "James Wilson, b. 4 Mar 1885",
+    "Lovina Wilson, b. 7 Apr 1893",
+    "Thomas W Wilson, b. 25 May 1925",
+    "Closed Entry"
   ],
   "hasValidData": true
 }

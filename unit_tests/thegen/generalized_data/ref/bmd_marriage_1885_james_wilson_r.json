@@ -12,5 +12,9 @@
   "eventPlace": {
     "placeString": "Howden, Yorkshire East Riding, England"
   },
+  "spousePersonOptions": [
+    "Annie Elizabeth Hunt",
+    "Mary Ellen Kilham"
+  ],
   "hasValidData": true
 }

@@ -62,6 +62,8 @@ const DateUtils = {
 
   // This returns a parsed data object
   parseDateString: function (string) {
+    //console.log("parseDateString, string is: " + string);
+
     let result = {
       inputString: string,
       dayNum: 0,
@@ -132,6 +134,34 @@ const DateUtils = {
       return result;
     }
 
+    // check for a month and year range
+    const monthYearRangeRegex = /^(\w\w\w) (\d\d\d\d) ?- ?(\w\w\w) (\d\d\d\d)$/;
+    if (monthYearRangeRegex.test(cleanString)) {
+      let startMonthString = cleanString.replace(monthYearRangeRegex, "$1");
+      let startYearString = cleanString.replace(monthYearRangeRegex, "$2");
+      let endMonthString = cleanString.replace(monthYearRangeRegex, "$1");
+      let endYearString = cleanString.replace(monthYearRangeRegex, "$2");
+
+      let startYearNum = parseInt(startYearString);
+      let endYearNum = parseInt(endYearString);
+      if (isNaN(startYearNum) || isNaN(endYearNum)) {
+        return result;
+      }
+
+      if (startYearNum == endYearNum) {
+        result.isValid = true;
+        result.yearNum = startYearNum;
+        return result;
+      }
+
+      result.isRange = true;
+      result.isValid = true;
+      result.startYearNum = startYearNum;
+      result.endYearNum = endYearNum;
+      result.yearNum = startYearNum;
+      return result;
+    }
+
     // it is longer than 4 digits. The most common formats would be:
     // dd mmm yyyy
     // mmm yyyy
@@ -181,12 +211,13 @@ const DateUtils = {
 
     // Did not match the common formats, try less common ones
     // e.g. 12 September 1867
-    if (/^\d\d? [a-zA-Z]+ \d\d\d\d$/.test(cleanString)) {
-      let firstSpaceIndex = cleanString.indexOf(" ");
-      let lastSpaceIndex = cleanString.lastIndexOf(" ");
-      let dayString = cleanString.substring(0, firstSpaceIndex);
-      let monthString = cleanString.substring(firstSpaceIndex + 1, lastSpaceIndex);
-      let yearString = cleanString.substring(lastSpaceIndex + 1);
+    // or there could be a suffix on day number 12th
+    // e.g. 12th September 1867
+    const longFormWithSuffixRegex = /^(\d\d?)(?:st|nd|rd|th)? ([a-zA-Z]+) (\d\d\d\d)$/i;
+    if (longFormWithSuffixRegex.test(cleanString)) {
+      let dayString = cleanString.replace(longFormWithSuffixRegex, "$1");
+      let monthString = cleanString.replace(longFormWithSuffixRegex, "$2");
+      let yearString = cleanString.replace(longFormWithSuffixRegex, "$3");
       let dayNum = parseInt(dayString);
       if (isNaN(dayNum) || !dayNum) {
         return result;
@@ -339,7 +370,7 @@ const DateUtils = {
     }
 
     // Sometimes we can get a date like: July 1852 or Jul 1852
-    if (/[a-zA-Z]+\s+\d\d\d\d$/.test(cleanString)) {
+    if (/^[a-zA-Z]+\s+\d\d\d\d$/.test(cleanString)) {
       let remainder = cleanString;
 
       let yearIndex = remainder.search(/\d/);

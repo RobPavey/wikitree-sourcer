@@ -2159,6 +2159,25 @@ class NarrativeBuilder {
       }
     }
 
+    function isClosedEntry() {
+      if (year == "1939") {
+        if (gd.name && gd.name.forenames) {
+          let lcForenames = gd.name.forenames.toLowerCase();
+          if (lcForenames == "closed entry") {
+            return true;
+          }
+        }
+        if (gd.householdArray) {
+          for (let person of gd.householdArray) {
+            if (person.isSelected && person.isClosed) {
+              return true;
+            }
+          }
+        }
+      }
+      return false;
+    }
+
     let year = gd.inferEventYear();
     let placeObj = gd.inferEventPlaceObj();
 
@@ -2177,7 +2196,11 @@ class NarrativeBuilder {
     }
     this.narrative += " ";
 
-    this.narrative += this.getPersonNameOrPronoun(true);
+    if (isClosedEntry()) {
+      this.narrative += "a person with a closed entry";
+    } else {
+      this.narrative += this.getPersonNameOrPronoun(true);
+    }
 
     let ageNum = undefined;
     let ageAtEvent = "";

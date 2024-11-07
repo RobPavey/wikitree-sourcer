@@ -24,5 +24,9 @@
       }
     }
   ],
+  "primaryPersonOptions": [
+    "Thomas Smith (groom)",
+    "Harriet Butcher (bride)"
+  ],
   "hasValidData": true
 }

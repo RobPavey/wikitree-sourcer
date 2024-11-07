@@ -186,6 +186,14 @@ class ExtractedDataReader {
     return undefined;
   }
 
+  getPrimaryPersonOptions() {
+    return undefined;
+  }
+
+  getSpousePersonOptions() {
+    return undefined;
+  }
+
   getCollectionData() {
     return undefined;
   }

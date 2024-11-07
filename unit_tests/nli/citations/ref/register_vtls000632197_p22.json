@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland; Holy Trinity, Waterford city, Diocese of Waterford and Lismore, County of Waterford; Microfilm 02444 / 01; Page 22; Oct. 1732 to Nov. 1732<br/>\n[https://registers.nli.ie/registers/vtls000632197#page/22/mode/1up National Library of Ireland Register] (accessed 6 May 2021)<br/>\nUnknown baptism in Oct 1732 in Holy Trinity, Waterford city, Waterford, Ireland.\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland; Holy Trinity, Waterford city, Diocese of Waterford and Lismore, County of Waterford; Microfilm 02444 / 01; Page 22; Oct. 1732 to Nov. 1732<br/>\n[https://registers.nli.ie/registers/vtls000632197#page/22/mode/1up National Library of Ireland Register] (accessed 6 May 2021)<br/>\nUnknown baptism in 1732 in Holy Trinity, Waterford city, Waterford, Ireland.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Unknown was baptised in October 1732 in Holy Trinity, Waterford city, Waterford, Ireland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland; Holy Trinity, Waterford city, Diocese of Waterford and Lismore, County of Waterford; Microfilm 02444 / 01; Page 22; Oct. 1732 to Nov. 1732<br/>\n[https://registers.nli.ie/registers/vtls000632197#page/22/mode/1up National Library of Ireland Register] (accessed 6 May 2021)<br/>\nUnknown baptism in Oct 1732 in Holy Trinity, Waterford city, Waterford, Ireland.\n</ref>",
+    "citation": "Unknown was baptised in 1732 in Holy Trinity, Waterford city, Waterford, Ireland.<ref>\n'''Baptism''':\n\"Catholic Parish Registers\"<br/>\nNational Library of Ireland; Holy Trinity, Waterford city, Diocese of Waterford and Lismore, County of Waterford; Microfilm 02444 / 01; Page 22; Oct. 1732 to Nov. 1732<br/>\n[https://registers.nli.ie/registers/vtls000632197#page/22/mode/1up National Library of Ireland Register] (accessed 6 May 2021)<br/>\nUnknown baptism in 1732 in Holy Trinity, Waterford city, Waterford, Ireland.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Baptism''': \"Catholic Parish Registers\"<br/>National Library of Ireland; Holy Trinity, Waterford city, Diocese of Waterford and Lismore, County of Waterford; Microfilm 02444 / 01; Page 22; Oct. 1732 to Nov. 1732<br/>[https://registers.nli.ie/registers/vtls000632197#page/22/mode/1up National Library of Ireland Register] (accessed 6 May 2021)<br/>Unknown baptism in Oct 1732 in Holy Trinity, Waterford city, Waterford, Ireland.",
+    "citation": "* '''Baptism''': \"Catholic Parish Registers\"<br/>National Library of Ireland; Holy Trinity, Waterford city, Diocese of Waterford and Lismore, County of Waterford; Microfilm 02444 / 01; Page 22; Oct. 1732 to Nov. 1732<br/>[https://registers.nli.ie/registers/vtls000632197#page/22/mode/1up National Library of Ireland Register] (accessed 6 May 2021)<br/>Unknown baptism in 1732 in Holy Trinity, Waterford city, Waterford, Ireland.",
     "type": "source"
   }
 }

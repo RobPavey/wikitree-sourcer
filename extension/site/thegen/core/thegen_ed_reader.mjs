@@ -177,9 +177,11 @@ const keysForRecordType = {
 };
 
 class ThegenEdReader extends ExtractedDataReader {
-  constructor(ed) {
+  constructor(ed, primaryPersonIndex, spousePersonIndex) {
     super(ed);
 
+    this.primaryPersonIndex = primaryPersonIndex;
+    this.spousePersonIndex = spousePersonIndex;
     this.determineRecordTypeForThegen();
   }
 
@@ -258,8 +260,12 @@ class ThegenEdReader extends ExtractedDataReader {
 
   getSelectedCensusRow() {
     let tableData = this.ed.tableData;
-    if (!tableData) {
+    if (!tableData || !tableData.rows || tableData.rows.length <= 0) {
       return;
+    }
+
+    if (this.primaryPersonIndex !== undefined && this.primaryPersonIndex < tableData.rows.length) {
+      return tableData.rows[this.primaryPersonIndex];
     }
 
     for (let row of tableData.rows) {
@@ -298,6 +304,16 @@ class ThegenEdReader extends ExtractedDataReader {
     return "";
   }
 
+  isPrimaryTheGroom() {
+    let result = true;
+
+    if (this.primaryPersonIndex == 1) {
+      result = false;
+    }
+
+    return result;
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Overrides of the relevant get functions used in commonGeneralizeData
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -334,7 +350,11 @@ class ThegenEdReader extends ExtractedDataReader {
     let nameString = this.getRecordDataValueForKeys(["Name", "Full Name"]);
     if (!nameString) {
       if (this.recordType == RT.Marriage) {
-        nameString = this.getRecordDataValueForKeys(["Groom's Name"]);
+        if (this.isPrimaryTheGroom()) {
+          nameString = this.getRecordDataValueForKeys(["Groom's Name"]);
+        } else {
+          nameString = this.getRecordDataValueForKeys(["Bride's Name"]);
+        }
       } else if (this.recordType == RT.LandTax) {
         nameString = this.getRecordDataValueForKeys(["Occupier", "Landowner"]);
       } else if (this.recordType == RT.Apprenticeship) {
@@ -591,14 +611,25 @@ class ThegenEdReader extends ExtractedDataReader {
       if (spouseName) {
         if (spouseName.includes(", ")) {
           // for a marriage registration there can be several possible spouses
-          return undefined;
+          // We default to the first but have an option in the popup to pick which one
+          if (this.spousePersonIndex === undefined || this.spousePersonIndex == -1) {
+            return undefined;
+          }
+
+          let spouseNames = spouseName.split(",");
+          if (this.spousePersonIndex < spouseNames.length) {
+            spouseName = spouseNames[this.spousePersonIndex].trim();
+          }
         }
         let spouseNameObj = this.makeNameObjFromFullName(spouseName);
         return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj)];
       } else {
-        let brideName = this.getRecordDataValueForKeys(["Bride's Name"]);
-        if (brideName) {
-          let spouseNameObj = this.makeNameObjFromFullName(brideName);
+        let spouseName = this.getRecordDataValueForKeys(["Bride's Name"]);
+        if (!this.isPrimaryTheGroom()) {
+          spouseName = this.getRecordDataValueForKeys(["Groom's Name"]);
+        }
+        if (spouseName) {
+          let spouseNameObj = this.makeNameObjFromFullName(spouseName);
           return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj)];
         }
       }
@@ -661,11 +692,14 @@ class ThegenEdReader extends ExtractedDataReader {
       }
     }
 
+    let isSelectedFound = false;
     let householdArray = [];
-    for (let row of table.rows) {
+    for (let rowIndex = 0; rowIndex < table.rows.length; rowIndex++) {
+      let row = table.rows[rowIndex];
       let householdMember = {};
       if (row.isSelected) {
         householdMember.isSelected = true;
+        isSelectedFound = true;
       }
 
       let name = row.Forename;
@@ -695,11 +729,90 @@ class ThegenEdReader extends ExtractedDataReader {
       householdArray.push(householdMember);
     }
 
+    if (!isSelectedFound) {
+      if (this.primaryPersonIndex !== undefined && this.primaryPersonIndex < householdArray.length) {
+        householdArray[this.primaryPersonIndex].isSelected = true;
+      } else if (householdArray.length > 0) {
+        householdArray[0].isSelected = true;
+      }
+    }
+
     let result = {};
     result.fields = headings;
     result.members = householdArray;
 
     return result;
+  }
+
+  getPrimaryPersonOptions() {
+    if (this.is1939Register && this.ed.tableData) {
+      let rows = this.ed.tableData.rows;
+      if (rows.length > 1) {
+        let options = [];
+        for (let row of rows) {
+          let text = "";
+          if (row.Forename) {
+            text += row.Forename;
+          }
+          if (row.Surname) {
+            if (text) {
+              text += " ";
+            }
+            text += row.Surname;
+          }
+
+          let birthDate = row["Birth Date"];
+          if (birthDate) {
+            let dateObj = this.makeDateObjFromDateString(birthDate);
+            if (dateObj) {
+              let dateString = dateObj.getFormattedStringForCitationOrNarrative("short", "none", false, "");
+              if (dateString) {
+                if (text) {
+                  text += ", ";
+                }
+                text += "b. " + dateString;
+              }
+            }
+          }
+          options.push(text);
+        }
+        return options;
+      }
+    }
+
+    if (this.recordType == RT.Marriage || this.recordType == RT.MarriageRegistration) {
+      let spouseName = this.getRecordDataValueForKeys(["Spouse"]);
+      if (!spouseName) {
+        let groomName = this.getRecordDataValueForKeys(["Groom's Name"]);
+        let brideName = this.getRecordDataValueForKeys(["Bride's Name"]);
+
+        if (groomName && brideName) {
+          let options = [groomName + " (groom)", brideName + " (bride)"];
+          return options;
+        }
+      }
+    }
+
+    return undefined;
+  }
+
+  getSpousePersonOptions() {
+    if (this.recordType == RT.MarriageRegistration) {
+      let spouseName = this.getRecordDataValueForKeys(["Spouse"]);
+      if (spouseName && spouseName.includes(", ")) {
+        let spouseNames = spouseName.split(",");
+        if (spouseNames.length > 1) {
+          let options = [];
+          for (let name of spouseNames) {
+            name = name.trim();
+            options.push(name);
+          }
+          return options;
+        }
+      }
+    }
+
+    return undefined;
   }
 
   getCollectionData() {

@@ -100,6 +100,9 @@ function commonGeneralizeData(sourceOfData, edReader) {
   // We can also determine parents and spouse from household table in some cases
   addSpouseOrParentsForSelectedHouseholdMember(result);
 
+  setField("primaryPersonOptions", edReader.getPrimaryPersonOptions());
+  setField("spousePersonOptions", edReader.getSpousePersonOptions());
+
   setField("collectionData", edReader.getCollectionData());
 
   edReader.setCustomFields(result);

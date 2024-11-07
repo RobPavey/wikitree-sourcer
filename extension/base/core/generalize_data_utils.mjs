@@ -784,6 +784,10 @@ class DateObj {
     let qualifier = this.qualifier;
 
     let parsedDate = DateUtils.parseDateString(dateString);
+
+    //console.log("getFormattedStringForCitationOrNarrative, parsedDate is:");
+    //console.log(parsedDate);
+
     if (!parsedDate.isValid) {
       if (addPreposition) {
         let preposition = "on";
