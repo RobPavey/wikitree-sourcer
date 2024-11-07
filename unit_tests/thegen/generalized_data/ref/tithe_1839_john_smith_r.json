@@ -3,7 +3,7 @@
   "sourceType": "record",
   "recordType": "LandTax",
   "name": {
-    "name": "Thomas Kidman"
+    "name": "John Smith"
   },
   "eventDate": {
     "dateString": "13th November 1839"
@@ -11,5 +11,9 @@
   "eventPlace": {
     "placeString": "Westoning, Bedfordshire, England"
   },
+  "primaryPersonOptions": [
+    "John Smith (landowner)",
+    "Thomas Kidman (occupier)"
+  ],
   "hasValidData": true
 }

@@ -171,7 +171,7 @@ const keysForRecordType = {
     place: ["Port of Departure"],
   },
   Apprenticeship: {
-    date: ["Date of Indenture Date", "Date"],
+    date: ["Date of Indenture", "Date"],
     place: ["Master Abode"],
   },
 };
@@ -304,11 +304,11 @@ class ThegenEdReader extends ExtractedDataReader {
     return "";
   }
 
-  isPrimaryTheGroom() {
-    let result = true;
+  isPrimaryTheSecond() {
+    let result = false;
 
     if (this.primaryPersonIndex == 1) {
-      result = false;
+      result = true;
     }
 
     return result;
@@ -350,15 +350,23 @@ class ThegenEdReader extends ExtractedDataReader {
     let nameString = this.getRecordDataValueForKeys(["Name", "Full Name"]);
     if (!nameString) {
       if (this.recordType == RT.Marriage) {
-        if (this.isPrimaryTheGroom()) {
-          nameString = this.getRecordDataValueForKeys(["Groom's Name"]);
-        } else {
+        if (this.isPrimaryTheSecond()) {
           nameString = this.getRecordDataValueForKeys(["Bride's Name"]);
+        } else {
+          nameString = this.getRecordDataValueForKeys(["Groom's Name"]);
         }
       } else if (this.recordType == RT.LandTax) {
-        nameString = this.getRecordDataValueForKeys(["Occupier", "Landowner"]);
+        if (this.isPrimaryTheSecond()) {
+          nameString = this.getRecordDataValueForKeys(["Occupier"]);
+        } else {
+          nameString = this.getRecordDataValueForKeys(["Landowner"]);
+        }
       } else if (this.recordType == RT.Apprenticeship) {
-        nameString = this.getRecordDataValueForKeys(["Apprentice Name", "Master Name"]);
+        if (this.isPrimaryTheSecond()) {
+          nameString = this.getRecordDataValueForKeys(["Master Name"]);
+        } else {
+          nameString = this.getRecordDataValueForKeys(["Apprentice Name"]);
+        }
       }
     }
 
@@ -625,7 +633,7 @@ class ThegenEdReader extends ExtractedDataReader {
         return [this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj)];
       } else {
         let spouseName = this.getRecordDataValueForKeys(["Bride's Name"]);
-        if (!this.isPrimaryTheGroom()) {
+        if (this.isPrimaryTheSecond()) {
           spouseName = this.getRecordDataValueForKeys(["Groom's Name"]);
         }
         if (spouseName) {
@@ -790,6 +798,26 @@ class ThegenEdReader extends ExtractedDataReader {
           let options = [groomName + " (groom)", brideName + " (bride)"];
           return options;
         }
+      }
+    }
+
+    if (this.recordType == RT.LandTax) {
+      let landownerName = this.getRecordDataValueForKeys(["Landowner"]);
+      let occupierName = this.getRecordDataValueForKeys(["Occupier"]);
+
+      if (landownerName && occupierName) {
+        let options = [landownerName + " (landowner)", occupierName + " (occupier)"];
+        return options;
+      }
+    }
+
+    if (this.recordType == RT.Apprenticeship) {
+      let apprenticeName = this.getRecordDataValueForKeys(["Apprentice Name"]);
+      let masterName = this.getRecordDataValueForKeys(["Master Name"]);
+
+      if (apprenticeName && masterName) {
+        let options = [apprenticeName + " (apprentice)", masterName + " (master)"];
+        return options;
       }
     }
 
