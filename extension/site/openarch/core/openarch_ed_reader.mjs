@@ -100,6 +100,7 @@ const typeData = {
 
   "BS Geboorte": {
     // Civil Birth
+    nlDocumentType: "Burgerlijke Stand Geboorte",
     enDocumentType: "Civil registration births",
     recordType: RT.Birth,
     relation: {
@@ -108,6 +109,7 @@ const typeData = {
   },
   "BS Huwelijk": {
     // Civil Marriage
+    nlDocumentType: "Burgerlijke Stand Huwelijk",
     enDocumentType: "Civil registration marriages",
     recordType: RT.Marriage,
     fixedGender: "male", // the primary person is always the groom
@@ -119,6 +121,7 @@ const typeData = {
   },
   "BS Overlijden": {
     // Civil Death
+    nlDocumentType: "Burgerlijke Stand Overlijden",
     enDocumentType: "Civil registration deaths",
     recordType: RT.Death,
     relation: {
@@ -833,6 +836,10 @@ class OpenarchEdReader extends ExtractedDataReader {
     const otherPrefix = "other:";
     if (title.startsWith(otherPrefix)) {
       title = title.substring(otherPrefix.length);
+    }
+
+    if (this.typeData && this.typeData.nlDocumentType) {
+      title = this.typeData.nlDocumentType;
     }
 
     if (this.typeData && this.typeData.enDocumentType) {

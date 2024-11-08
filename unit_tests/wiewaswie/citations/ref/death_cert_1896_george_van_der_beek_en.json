@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"BS Overlijden (Death Certificates)\"<br/>\nNoord-Hollands Archief, Sourcenumber: 72<br/>\n[https://www.wiewaswie.nl/en/detail/32166839 WieWasWie Record] (accessed 6 May 2021)<br/>\nGeorge Frans van der Beek death 29 Mar 1896, son of George Frans van der Beek & Hendrika Christina Verweij, in Haarlemmermeer, Noord-Holland, Nederland.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Burgerlijke Stand Overlijden (Civil Death Registration)\"<br/>\nNoord-Hollands Archief, Sourcenumber: 72<br/>\n[https://www.wiewaswie.nl/en/detail/32166839 WieWasWie Record] (accessed 6 May 2021)<br/>\nGeorge Frans van der Beek death 29 Mar 1896, son of George Frans van der Beek & Hendrika Christina Verweij, in Haarlemmermeer, Noord-Holland, Nederland.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "George, son of George Frans van der Beek & Hendrika Christina Verweij, died (age 12 weeks) on 29 March 1896 in Haarlemmermeer, Noord-Holland, Nederland.<ref>\n'''Death''':\n\"BS Overlijden (Death Certificates)\"<br/>\nNoord-Hollands Archief, Sourcenumber: 72<br/>\n[https://www.wiewaswie.nl/en/detail/32166839 WieWasWie Record] (accessed 6 May 2021)<br/>\nGeorge Frans van der Beek death 29 Mar 1896, son of George Frans van der Beek & Hendrika Christina Verweij, in Haarlemmermeer, Noord-Holland, Nederland.\n</ref>",
+    "citation": "George, son of George Frans van der Beek & Hendrika Christina Verweij, died (age 12 weeks) on 29 March 1896 in Haarlemmermeer, Noord-Holland, Nederland.<ref>\n'''Death''':\n\"Burgerlijke Stand Overlijden (Civil Death Registration)\"<br/>\nNoord-Hollands Archief, Sourcenumber: 72<br/>\n[https://www.wiewaswie.nl/en/detail/32166839 WieWasWie Record] (accessed 6 May 2021)<br/>\nGeorge Frans van der Beek death 29 Mar 1896, son of George Frans van der Beek & Hendrika Christina Verweij, in Haarlemmermeer, Noord-Holland, Nederland.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Death''': \"BS Overlijden (Death Certificates)\"<br/>Noord-Hollands Archief, Sourcenumber: 72<br/>[https://www.wiewaswie.nl/en/detail/32166839 WieWasWie Record] (accessed 6 May 2021)<br/>George Frans van der Beek death 29 Mar 1896, son of George Frans van der Beek & Hendrika Christina Verweij, in Haarlemmermeer, Noord-Holland, Nederland.",
+    "citation": "* '''Death''': \"Burgerlijke Stand Overlijden (Civil Death Registration)\"<br/>Noord-Hollands Archief, Sourcenumber: 72<br/>[https://www.wiewaswie.nl/en/detail/32166839 WieWasWie Record] (accessed 6 May 2021)<br/>George Frans van der Beek death 29 Mar 1896, son of George Frans van der Beek & Hendrika Christina Verweij, in Haarlemmermeer, Noord-Holland, Nederland.",
     "type": "source"
   }
 }

@@ -46,7 +46,8 @@ const FT = {
 const typeData = {
   "BS Geboorte": {
     // Birth certificates
-    enDocumentType: "Birth Certificates",
+    nlDocumentType: "Burgerlijke Stand Geboorte",
+    enDocumentType: "Civil Birth Registration",
     recordType: RT.Birth,
     nameFormat: "full",
     labels: {
@@ -66,7 +67,8 @@ const typeData = {
   },
   "BS Huwelijk": {
     // Marriage certificates
-    enDocumentType: "Marriage Certificates",
+    nlDocumentType: "Burgerlijke Stand Huwelijk",
+    enDocumentType: "Civil Marriage Registration",
     recordType: RT.Marriage,
     fixedGender: "male", // the primary person is always the groom
     nameFormat: "full",
@@ -93,7 +95,8 @@ const typeData = {
   },
   "BS Overlijden": {
     // Death certificates
-    enDocumentType: "Death Certificates",
+    nlDocumentType: "Burgerlijke Stand Overlijden",
+    enDocumentType: "Civil Death Registration",
     recordType: RT.Death,
     nameFormat: "full",
     labels: {
@@ -964,6 +967,9 @@ class WiewaswieEdReader extends ExtractedDataReader {
 
   getSourceTitle() {
     let title = this.documentType;
+    if (this.typeData && this.typeData.nlDocumentType) {
+      title = this.typeData.nlDocumentType;
+    }
     if (this.typeData && this.typeData.enDocumentType) {
       title += " (" + this.typeData.enDocumentType + ")";
     }
