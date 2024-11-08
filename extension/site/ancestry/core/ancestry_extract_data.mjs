@@ -194,6 +194,10 @@ function extractDbAndRecordId(result, url) {
 
   const discoveryRegex = /.*\/discoveryui-content\/view\/([^:]+)(?:\:|%3A)(\d+).*/i;
   const searchCollectionsRegex = /^.*\/collections\/([^\/]+)\/records\/([^\/\?]+).*$/i;
+  const viewRecordsRecordCollectionRegex =
+    /^.*\/discoveryui-content\/view\/records\?.*recordId=([^&]+).*&collectionId=([^&]+).*$/i;
+  const viewRecordsCollectionRecordRegex =
+    /^.*\/discoveryui-content\/view\/records\?.*collectionId=([^&]+).*&recordId=([^&]+).*$/i;
 
   if (url.includes(dbIdStr) || url.includes(dbStr)) {
     var dbIdOrDbStr = url.includes(dbIdStr) ? dbIdStr : dbStr;
@@ -228,13 +232,30 @@ function extractDbAndRecordId(result, url) {
       dbId = db;
       recordId = rec;
     }
+  } else if (viewRecordsRecordCollectionRegex.test(url)) {
+    let db = url.replace(viewRecordsRecordCollectionRegex, "$2");
+    let rec = url.replace(viewRecordsRecordCollectionRegex, "$1");
+    if (db != "" && db != url && rec != "" && rec != url) {
+      dbId = db;
+      recordId = rec;
+    }
+  } else if (viewRecordsCollectionRecordRegex.test(url)) {
+    let db = url.replace(viewRecordsCollectionRecordRegex, "$1");
+    let rec = url.replace(viewRecordsCollectionRecordRegex, "$2");
+    if (db != "" && db != url && rec != "" && rec != url) {
+      dbId = db;
+      recordId = rec;
+    }
   }
+
   //console.log("dbId = " + dbId + ", recordId = " + recordId);
 
-  result.dbId = dbId;
-  result.recordId = recordId;
-  // Note this is overidden in buildCitation using use options
-  result.ancestryTemplate = "{{Ancestry Record|" + result.dbId + "|" + result.recordId + "}}";
+  if (dbId && recordId) {
+    result.dbId = dbId;
+    result.recordId = recordId;
+    // Note this is overidden in buildCitation using use options
+    result.ancestryTemplate = "{{Ancestry Record|" + result.dbId + "|" + result.recordId + "}}";
+  }
 
   let domainRegex = /.*\.(ancestry[^\/]+)\/.*/;
   let domain = url.replace(domainRegex, "$1");

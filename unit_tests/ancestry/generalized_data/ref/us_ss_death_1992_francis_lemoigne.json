@@ -1,0 +1,33 @@
+{
+  "sourceType": "record",
+  "recordType": "SocialSecurity",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Francis Lewis Lemoigne"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "Nov 1992"
+  },
+  "birthDate": {
+    "dateString": "27 Apr 1918"
+  },
+  "birthPlace": {
+    "placeString": "Kalispell FL??, Montana"
+  },
+  "deathDate": {
+    "dateString": "Nov 1992"
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|60901|49201494}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|60901|649201494}}",
+    "{{Ancestry Record|60901|799201494}}"
+  ],
+  "collectionData": {
+    "id": "60901",
+    "collectionTitle": "U.S., Social Security Applications and Claims Index, 1936-2007"
+  },
+  "hasValidData": true
+}

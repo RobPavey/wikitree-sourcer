@@ -1048,15 +1048,39 @@ function setDateFromAncestryDateFields(ed, result, dateTypesToSet, dateFields, y
 }
 
 function buildParents(ed, result) {
-  let fatherName = getCleanValueForRecordDataList(ed, ["Father", "Father Name"]);
+  let fatherName = getCleanValueForRecordDataList(ed, ["Father", "Father Name", "Father's Name"]);
   if (fatherName) {
     let father = result.addFather();
     father.name.name = fatherName;
+  } else {
+    let fatherForenames = getCleanValueForRecordDataList(ed, ["Father's First Name", "Father First Name"]);
+    let fatherLastName = getCleanValueForRecordDataList(ed, ["Father's Last Name", "Father Last Name"]);
+    if (fatherForenames || fatherLastName) {
+      let father = result.addFather();
+      if (fatherForenames) {
+        father.name.forenames = fatherForenames;
+      }
+      if (fatherLastName) {
+        father.name.lastName = fatherLastName;
+      }
+    }
   }
-  let motherName = getCleanValueForRecordDataList(ed, ["Mother", "Mother Name"]);
+  let motherName = getCleanValueForRecordDataList(ed, ["Mother", "Mother Name", "Mother's Name"]);
   if (motherName) {
     let mother = result.addMother();
     mother.name.name = motherName;
+  } else {
+    let motherForenames = getCleanValueForRecordDataList(ed, ["Mother's First Name", "Mother First Name"]);
+    let motherLastName = getCleanValueForRecordDataList(ed, ["Mother's Last Name", "Mother Last Name"]);
+    if (motherForenames || motherLastName) {
+      let mother = result.addMother();
+      if (motherForenames) {
+        mother.name.forenames = motherForenames;
+      }
+      if (motherLastName) {
+        mother.name.lastName = motherLastName;
+      }
+    }
   }
 
   let mmn = getCleanValueForRecordDataList(ed, ["Mother Maiden Name", "Mother's Maiden Name"]);

@@ -1195,6 +1195,12 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/264074:61208",
   },
   {
+    // New URL form that Sourcer wasn't getting record ID and collection ID from
+    // Equivalent URL is : https://www.ancestry.com/discoveryui-content/view/49201494:60901
+    caseName: "us_ss_death_1992_francis_lemoigne",
+    url: "https://www.ancestry.com/discoveryui-content/view/records?recordId=49201494&collectionId=60901&tid=&pid=&queryId=00def0c8-1d53-4d21-a10c-6c6baaf980f7&_phsrc=ktJ21038&_phstart=successSource",
+  },
+  {
     caseName: "us_ss_death_1996_john_smith",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=3693&h=14641755&tid=&pid=&queryId=cd43f15d15cbf13e87f4dc4888f499dc&usePUB=true&_phsrc=Vww4090&_phstart=successSource",
   },

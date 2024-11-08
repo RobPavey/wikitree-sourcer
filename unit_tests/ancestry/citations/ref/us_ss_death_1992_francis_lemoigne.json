@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Francis was in a Social Security record in November 1992.<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1992 Social Security record''': \"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>Original data: Social Security Applications and Claims, 1936-2007<br/>{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)<br/>\nFrancis Lewis Lemoigne Social Security record.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Francis was in a Social Security record in November 1992.<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)<br/>\nFrancis Lewis Lemoigne Social Security record.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1992 Social Security record''': \"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>Original data: Social Security Applications and Claims, 1936-2007<br/>{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)<br/>Francis Lewis Lemoigne Social Security record.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)<br/>\nName: Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]; Gender: Male; Race: White; Birth Date: 27 Apr 1918; Birth Place: Kalispell FL??, Montana [Kalispell FL??] [Montana]; Death Date: Nov 1992; Father: Jean L Lemoigne; Mother: Bertha J Dieu; Notes: Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Francis was in a Social Security record in November 1992.<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)<br/>\nName: Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]; Gender: Male; Race: White; Birth Date: 27 Apr 1918; Birth Place: Kalispell FL??, Montana [Kalispell FL??] [Montana]; Death Date: Nov 1992; Father: Jean L Lemoigne; Mother: Bertha J Dieu; Notes: Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1992 Social Security record''': \"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>Original data: Social Security Applications and Claims, 1936-2007<br/>{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)<br/>Name: Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]; Gender: Male; Race: White; Birth Date: 27 Apr 1918; Birth Place: Kalispell FL??, Montana [Kalispell FL??] [Montana]; Death Date: Nov 1992; Father: Jean L Lemoigne; Mother: Bertha J Dieu; Notes: Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 27 Apr 1918\n|-\n| Birth Place || Kalispell FL??, Montana [Kalispell FL??] [Montana]\n|-\n| Death Date || Nov 1992\n|-\n| Father || Jean L Lemoigne\n|-\n| Mother || Bertha J Dieu\n|-\n| Notes || Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Francis was in a Social Security record in November 1992.<ref>\n'''1992 Social Security record''':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>\nOriginal data: Social Security Applications and Claims, 1936-2007<br/>\n{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]\n|-\n| Gender || Male\n|-\n| Race || White\n|-\n| Birth Date || 27 Apr 1918\n|-\n| Birth Place || Kalispell FL??, Montana [Kalispell FL??] [Montana]\n|-\n| Death Date || Nov 1992\n|-\n| Father || Jean L Lemoigne\n|-\n| Mother || Bertha J Dieu\n|-\n| Notes || Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1992 Social Security record''': \"U.S., Social Security Applications and Claims Index, 1936-2007\"<br/>Original data: Social Security Applications and Claims, 1936-2007<br/>{{Ancestry Record|60901|49201494}} (accessed 6 May 2021)<br/>Name: Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]; Gender: Male; Race: White; Birth Date: 27 Apr 1918; Birth Place: Kalispell FL??, Montana [Kalispell FL??] [Montana]; Death Date: Nov 1992; Father: Jean L Lemoigne; Mother: Bertha J Dieu; Notes: Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., Social Security Applications and Claims Index, 1936-2007,\" database, ({{Ancestry Record|60901|49201494}} : accessed 6 May 2021), Francis Lewis Lemoigne Social Security record; citing Original data Social Security Applications and Claims, 1936-2007.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Francis was in a Social Security record in November 1992.<ref>\"U.S., Social Security Applications and Claims Index, 1936-2007,\" database, ({{Ancestry Record|60901|49201494}} : accessed 6 May 2021), Francis Lewis Lemoigne Social Security record; citing Original data Social Security Applications and Claims, 1936-2007.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., Social Security Applications and Claims Index, 1936-2007,\" database, ({{Ancestry Record|60901|49201494}} : accessed 6 May 2021), Francis Lewis Lemoigne Social Security record; citing Original data Social Security Applications and Claims, 1936-2007.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1992 Social Security record'':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\", database, \nOriginal data Social Security Applications and Claims, 1936-2007, \n({{Ancestry Record|60901|49201494}} : accessed 6 May 2021), \nName: Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]; Gender: Male; Race: White; Birth Date: 27 Apr 1918; Birth Place: Kalispell FL??, Montana [Kalispell FL??] [Montana]; Death Date: Nov 1992; Father: Jean L Lemoigne; Mother: Bertha J Dieu; Notes: Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Francis was in a Social Security record in November 1992.<ref>\n''1992 Social Security record'':\n\"U.S., Social Security Applications and Claims Index, 1936-2007\", database, \nOriginal data Social Security Applications and Claims, 1936-2007, \n({{Ancestry Record|60901|49201494}} : accessed 6 May 2021), \nName: Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]; Gender: Male; Race: White; Birth Date: 27 Apr 1918; Birth Place: Kalispell FL??, Montana [Kalispell FL??] [Montana]; Death Date: Nov 1992; Father: Jean L Lemoigne; Mother: Bertha J Dieu; Notes: Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1992 Social Security record'': \"U.S., Social Security Applications and Claims Index, 1936-2007\", database, Original data Social Security Applications and Claims, 1936-2007, ({{Ancestry Record|60901|49201494}} : accessed 6 May 2021), Name: Francis Lewis Lemoigne [Francis Louis Lemoigne] [Francis Lemoigne]; Gender: Male; Race: White; Birth Date: 27 Apr 1918; Birth Place: Kalispell FL??, Montana [Kalispell FL??] [Montana]; Death Date: Nov 1992; Father: Jean L Lemoigne; Mother: Bertha J Dieu; Notes: Dec 1936: Name listed as FRANCIS LEWIS LEMOIGNE; Apr 1971: Name listed as FRANCIS LOUIS LEMOIGNE; 19 Dec 1992: Name listed as FRANCIS L LEMOIGNE.",
+    "type": "source"
+  }
+}
