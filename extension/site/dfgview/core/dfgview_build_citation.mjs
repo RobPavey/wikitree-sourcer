@@ -29,11 +29,22 @@ function buildDfgviewUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle += ed.title;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  if (ed.signature && ed.context) {
+    builder.sourceReference = ed.context + ", Signature: " + ed.signature;
+  }
+  else if (ed.signature) {
+    builder.sourceReference = "Signature: " + ed.signature;
+  }
+  else if (ed.context) {
+    builder.sourceReference = ed.context;
+  }
+  else {
+    builder.sourceReference = "";
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
