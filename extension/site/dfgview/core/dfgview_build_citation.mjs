@@ -39,7 +39,7 @@ function buildSourceReference(ed, gd, builder) {
 function buildRecordLink(ed, gd, builder) {
   var dfgviewUrl = buildDfgviewUrl(ed, builder);
 
-  let recordLink = "[" + dfgviewUrl + " DFG Viewer Record]";
+  let recordLink = "[" + dfgviewUrl + " Image (DFG Viewer)]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

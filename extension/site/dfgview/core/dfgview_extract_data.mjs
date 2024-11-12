@@ -30,6 +30,31 @@ function extractData(document, url) {
   }
   result.success = false;
 
+  let metadata = document.querySelector("dl[class='tx-dlf-metadata-titledata']");
+  if (metadata) {
+    let sections = metadata.querySelectorAll("dt");
+
+    for (let section of sections) {
+      let key = section.textContent.trim();
+      if (key == "Titel") {
+        result.title = section.nextElementSibling.textContent.trim();
+      }
+      if (key == "Kontext") {
+        result.context = section.nextElementSibling.textContent.trim();
+      }
+      if (key == "Signatur") {
+        result.signature = section.nextElementSibling.textContent.trim();
+      }
+    }
+  }
+
+  if (url) {
+    let decodedUrl = new URLSearchParams(url);
+    if (decodedUrl) {
+      result.metadataUrl = decodedUrl.get("tx_dlf[id]");
+    }
+  }
+
   /*
   const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
   //console.log("entriesQuery size is: " + entriesQuery.length);
