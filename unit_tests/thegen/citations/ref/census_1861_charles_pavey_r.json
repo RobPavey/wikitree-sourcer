@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1861 Census''':\n\"Census Transcript Household Sussex 1861\"<br/>\nCensus Transcript Search, 1841-1911 [database online]. TheGenealogist.co.uk 2024<br/>\n[https://www.thegenealogist.com/search/advanced/census/main-household/?hlt=219560985&county=243&y=1861&household_id=16268345&a=Search&hh=1&hs=1&cl=1&sscid=243&view_type=fullRecord The Genealogist Record] (accessed 6 May 2021)<br/>\nCharles Pavey on Newbridge Road, Pulborough, Sussex, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1861 census Charles was on Newbridge Road, Pulborough, Sussex, England.<ref>\n'''1861 Census''':\n\"Census Transcript Household Sussex 1861\"<br/>\nCensus Transcript Search, 1841-1911 [database online]. TheGenealogist.co.uk 2024<br/>\n[https://www.thegenealogist.com/search/advanced/census/main-household/?hlt=219560985&county=243&y=1861&household_id=16268345&a=Search&hh=1&hs=1&cl=1&sscid=243&view_type=fullRecord The Genealogist Record] (accessed 6 May 2021)<br/>\nCharles Pavey on Newbridge Road, Pulborough, Sussex, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1861 Census''': \"Census Transcript Household Sussex 1861\"<br/>Census Transcript Search, 1841-1911 [database online]. TheGenealogist.co.uk 2024<br/>[https://www.thegenealogist.com/search/advanced/census/main-household/?hlt=219560985&county=243&y=1861&household_id=16268345&a=Search&hh=1&hs=1&cl=1&sscid=243&view_type=fullRecord The Genealogist Record] (accessed 6 May 2021)<br/>Charles Pavey on Newbridge Road, Pulborough, Sussex, England.",
+    "type": "source"
+  }
+}

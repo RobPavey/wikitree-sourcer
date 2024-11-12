@@ -24,10 +24,31 @@ SOFTWARE.
 
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
+// Example search url:
+// https://www.thegenealogist.com/search/master/
+// ?layout=compact&type=person&source=&master_event=&person_event=
+// &include_uk=1&include_ireland=1&include_elsewhere=1
+// &fn=Charles&sn=Pavey&yr=1840&range=5
+// &kw=Sussex&kw_mode=simple&kw_simple_type=any
+// &search=Search#show-result
+
+// example with a master event:
+// https://www.thegenealogist.com/search/master/?layout=compact&type=person&source=
+// &master_event=1939+Register
+// &include_uk=1&include_ireland=1&include_elsewhere=1
+// &fn=Charles&sn=Pavey&yr=1840&range=5
+// &kw=Sussex&kw_mode=simple&kw_simple_type=any
+// &search=Search#show-result
+
 class ThegenUriBuilder {
-  constructor() {
-    this.uri = "https://www.thegen.org.uk/cgi/search.pl";
-    this.searchTermAdded = false;
+  constructor(options) {
+    let domain = options.search_thegen_domain;
+    if (domain == "none" || !domain) {
+      domain = "thegenealogist.co.uk";
+    }
+
+    this.uri = "https://www." + domain + "/search/master/?layout=compact&type=person";
+    this.searchTermAdded = true;
   }
 
   addSearchTerm(string) {
@@ -57,44 +78,28 @@ class ThegenUriBuilder {
     }
   }
 
-  addType(string) {
-    this.addSearchParameter("type", string);
+  addMasterEvent(string) {
+    this.addSearchParameter("master_event", string);
   }
 
   addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("sn", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("fn", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
+  addYear(string) {
+    this.addSearchParameter("yr", string);
   }
 
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
+  addRange(string) {
+    this.addSearchParameter("range", string);
   }
 
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
-
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
+  addKeywords(string) {
+    this.addSearchParameter("kw", string);
   }
 
   getUri() {

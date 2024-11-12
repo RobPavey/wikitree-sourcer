@@ -27,7 +27,7 @@ import { NzbdmEdReader } from "./nzbdm_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let edReader = new NzbdmEdReader(input.extractedData);
+  let edReader = new NzbdmEdReader(input.extractedData, input.primaryPersonIndex);
   return commonGeneralizeData("nzbdm", edReader);
 }
 

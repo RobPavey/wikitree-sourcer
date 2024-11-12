@@ -191,6 +191,10 @@ function extractDbAndRecordId(result, url) {
   let recordId = "";
   const dbIdStr = "dbid="; // could have & or ? before dbid
   const dbStr = "db="; // On some records (like Birth Registrations) it is db rather than dbid
+
+  const discoveryRegex = /.*\/discoveryui-content\/view\/([^:]+)(?:\:|%3A)(\d+).*/i;
+  const searchCollectionsRegex = /^.*\/collections\/([^\/]+)\/records\/([^\/\?]+).*$/i;
+
   if (url.includes(dbIdStr) || url.includes(dbStr)) {
     var dbIdOrDbStr = url.includes(dbIdStr) ? dbIdStr : dbStr;
     let dbIdIndex = url.indexOf(dbIdOrDbStr);
@@ -210,16 +214,16 @@ function extractDbAndRecordId(result, url) {
         }
       }
     }
-  } else if (url.includes("discoveryui-content")) {
-    let rec = url.replace(/.*\/discoveryui-content\/view\/([^:]+)(?:\:|%3A).*/i, "$1");
-    let db = url.replace(/.*\/discoveryui-content\/view\/[^:]+(?:\:|%3A)(\d+).*/i, "$1");
+  } else if (discoveryRegex.test(url)) {
+    let rec = url.replace(discoveryRegex, "$1");
+    let db = url.replace(discoveryRegex, "$2");
     if (db != "" && db != url && rec != "" && rec != url) {
       dbId = db;
       recordId = rec;
     }
-  } else if (url.includes("/collections/") && url.includes("/records/")) {
-    let db = url.replace(/.*\/collections\/([^\/]+)\/records\/.*/, "$1");
-    let rec = url.replace(/.*\/collections\/[^\/]+\/records\/([^\/]+)/, "$1");
+  } else if (searchCollectionsRegex.test(url)) {
+    let db = url.replace(searchCollectionsRegex, "$1");
+    let rec = url.replace(searchCollectionsRegex, "$2");
     if (db != "" && db != url && rec != "" && rec != url) {
       dbId = db;
       recordId = rec;
@@ -1656,13 +1660,17 @@ function handlePersonFactsJune2024(document, result) {
         let endIndex = text.indexOf("}", fullNameIndex);
         if (endIndex != -1) {
           let fullNameText = text.substring(fullNameIndex, endIndex);
-          let givenName = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$1");
-          let surname = fullNameText.replace(/fullName: { given: '([^']*)', surname: '(([^']*))',.*/, "$2");
-          if (givenName && givenName != fullNameText) {
-            result.givenName = parseHtmlEscapeCodes(givenName);
-          }
-          if (surname && surname != fullNameText) {
-            result.surname = parseHtmlEscapeCodes(surname);
+          fullNameText = fullNameText.replace(/\s+/g, " ");
+          const regex = /fullName: { given: '([^']*)', surname: '([^']*)'.*$/;
+          if (regex.test(fullNameText)) {
+            let givenName = fullNameText.replace(regex, "$1");
+            let surname = fullNameText.replace(regex, "$2");
+            if (givenName && givenName != fullNameText) {
+              result.givenName = parseHtmlEscapeCodes(givenName);
+            }
+            if (surname && surname != fullNameText) {
+              result.surname = parseHtmlEscapeCodes(surname);
+            }
           }
         }
       }

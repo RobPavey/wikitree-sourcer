@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "name": "Henry Thomas Bambridge Smith"
+  },
+  "eventDate": {
+    "dateString": "17th May 1849"
+  },
+  "eventPlace": {
+    "placeString": "Brighton, Sussex, England"
+  },
+  "ageAtEvent": "11m",
+  "ageAtDeath": "11m",
+  "hasValidData": true
+}

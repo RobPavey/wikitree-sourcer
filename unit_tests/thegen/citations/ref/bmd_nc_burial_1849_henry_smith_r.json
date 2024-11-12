@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"Non-Conformist and Non-Parochial BMDs\"<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/non-conformist/full/?id=716475002&uid_type=1 The Genealogist Record] (accessed 6 May 2021)<br/>\nHenry Thomas Bambridge Smith burial (died age 11m) on 17 May 1849 in Brighton, Sussex, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Henry (age 11m) was buried on 17 May 1849 in Brighton, Sussex, England.<ref>\n'''Burial''':\n\"Non-Conformist and Non-Parochial BMDs\"<br/>\n[https://www.thegenealogist.com/search/advanced/bmd/non-conformist/full/?id=716475002&uid_type=1 The Genealogist Record] (accessed 6 May 2021)<br/>\nHenry Thomas Bambridge Smith burial (died age 11m) on 17 May 1849 in Brighton, Sussex, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"Non-Conformist and Non-Parochial BMDs\"<br/>[https://www.thegenealogist.com/search/advanced/bmd/non-conformist/full/?id=716475002&uid_type=1 The Genealogist Record] (accessed 6 May 2021)<br/>Henry Thomas Bambridge Smith burial (died age 11m) on 17 May 1849 in Brighton, Sussex, England.",
+    "type": "source"
+  }
+}

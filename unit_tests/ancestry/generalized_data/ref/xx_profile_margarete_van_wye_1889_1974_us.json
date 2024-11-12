@@ -1,0 +1,50 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Margarete Van Wye",
+    "lastName": "Van Wye",
+    "forenames": "Margarete"
+  },
+  "birthDate": {
+    "dateString": "8 AUGUST 1889"
+  },
+  "birthPlace": {
+    "placeString": "Warren, Trumbull County, Ohio"
+  },
+  "deathDate": {
+    "dateString": "23 DECEMBER 1974"
+  },
+  "deathPlace": {
+    "placeString": "Newton Falls, Trumbull County, Ohio"
+  },
+  "personGender": "female",
+  "spouses": [
+    {
+      "name": {
+        "name": "George Edwin Kelts"
+      },
+      "marriageDate": {
+        "dateString": "10 October 1919"
+      },
+      "marriagePlace": {
+        "placeString": "Trumbull County, Ohio"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Homer William Van Wye",
+        "lastName": "Van Wye",
+        "forenames": "Homer William"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Apollonia (Lena) Lemley"
+      }
+    }
+  },
+  "hasValidData": true
+}

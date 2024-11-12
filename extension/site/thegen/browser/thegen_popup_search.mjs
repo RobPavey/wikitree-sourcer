@@ -22,21 +22,31 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import {
+  addMenuItem,
+  addMenuItemWithSubMenu,
+  addBackMenuItem,
+  addSameEventMenuItem,
+  beginMainMenu,
+  endMainMenu,
+  doAsyncActionWithCatch,
+} from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
+
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const thegenStartYear = 1800;
-const thegenEndYear = 2000;
+const thegenStartYear = 1500;
+const thegenEndYear = 2025;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
     startYear: thegenStartYear,
     endYear: thegenEndYear,
-    dateTestType: "bmd",
-    countryList: [],
+    dateTestType: "lived",
+    countryList: ["England", "Scotland", "Wales", "Ireland"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
@@ -50,12 +60,26 @@ function shouldShowSearchMenuItem(data, filter) {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function thegenSearch(generalizedData) {
-  const input = { generalizedData: generalizedData, options: options };
+async function doThegenSearch(input) {
   doAsyncActionWithCatch("The Genealogist Search", input, async function () {
     let loadedModule = await import(`../core/thegen_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
+}
+
+async function thegenSearch(generalizedData, typeOfSearch) {
+  const input = { generalizedData: generalizedData, options: options, typeOfSearch: typeOfSearch };
+  doThegenSearch(input);
+}
+
+async function thegenSearchWithParameters(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  doThegenSearch(input);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -63,24 +87,54 @@ async function thegenSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addThegenDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search The Genealogist", function (element) {
-    thegenSearch(data.generalizedData);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search The Genealogist",
+    function (element) {
+      thegenSearch(data.generalizedData, "");
+    },
+    function () {
+      setupThegenSearchSubMenu(data, backFunction, filter);
+    }
+  );
 
   return true;
+}
+
+function addThegenSameEventMenuItem(menu, data) {
+  let added = addSameEventMenuItem(menu, data, function (element) {
+    thegenSearch(data.generalizedData, "SameEvent");
+  });
+}
+
+function addThegenSearchWithParametersMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
+    setupThegenSearchWithParametersSubMenu(data, backFunction);
+  });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
+async function setupThegenSearchSubMenu(data, backFunction, filter) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  addThegenSameEventMenuItem(menu, data);
+  addThegenSearchWithParametersMenuItem(menu, data, backFunction);
+
+  endMainMenu(menu);
+}
+
+async function setupThegenSearchWithParametersSubMenu(data, backFunction) {
+  let dataModule = await import(`../core/thegen_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.ThegenData, thegenSearchWithParameters);
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Register the search menu - it can be used on the popup for lots of sites
 //////////////////////////////////////////////////////////////////////////////////////////
 
-registerSearchMenuItemFunction(
-  "thegen",
-  "The Genealogist",
-  addThegenDefaultSearchMenuItem,
-  shouldShowSearchMenuItem
-);
+registerSearchMenuItemFunction("thegen", "The Genealogist", addThegenDefaultSearchMenuItem, shouldShowSearchMenuItem);

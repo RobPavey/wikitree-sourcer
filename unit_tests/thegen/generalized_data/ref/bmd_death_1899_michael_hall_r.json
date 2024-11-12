@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "Michael Hall"
+  },
+  "eventDate": {
+    "quarter": 3,
+    "yearString": "1899"
+  },
+  "eventPlace": {
+    "placeString": "St. Thomas, Devon, England"
+  },
+  "ageAtEvent": "63",
+  "ageAtDeath": "63",
+  "hasValidData": true
+}

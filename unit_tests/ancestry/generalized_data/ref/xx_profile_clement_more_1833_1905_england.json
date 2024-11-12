@@ -45,7 +45,9 @@
   "parents": {
     "father": {
       "name": {
-        "name": "John More"
+        "name": "John More",
+        "lastName": "More",
+        "forenames": "John"
       }
     },
     "mother": {

@@ -26,8 +26,10 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
 class NzbdmEdReader extends ExtractedDataReader {
-  constructor(ed) {
+  constructor(ed, primaryPersonIndex) {
     super(ed);
+
+    this.primaryPersonIndex = primaryPersonIndex;
 
     if (ed.recordType == "Birth Search") {
       this.recordType = RT.BirthRegistration;
@@ -36,6 +38,20 @@ class NzbdmEdReader extends ExtractedDataReader {
     } else if (ed.recordType == "Marriage Search") {
       this.recordType = RT.MarriageRegistration;
     }
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Helper functions
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  isPrimaryTheSecond() {
+    let result = false;
+
+    if (this.primaryPersonIndex == 1) {
+      result = true;
+    }
+
+    return result;
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,8 +79,13 @@ class NzbdmEdReader extends ExtractedDataReader {
     let familyName = "";
 
     if (this.recordType == RT.MarriageRegistration) {
-      givenNames = this.ed.recordData["Bride's GivenName(s)"];
-      familyName = this.ed.recordData["Bride's Family Name"];
+      if (this.isPrimaryTheSecond()) {
+        givenNames = this.ed.recordData["Groom's GivenName(s)"];
+        familyName = this.ed.recordData["Groom's Family Name"];
+      } else {
+        givenNames = this.ed.recordData["Bride's GivenName(s)"];
+        familyName = this.ed.recordData["Bride's Family Name"];
+      }
     } else {
       givenNames = this.ed.recordData["Given Name(s)"];
       familyName = this.ed.recordData["Family Name"];
@@ -82,7 +103,11 @@ class NzbdmEdReader extends ExtractedDataReader {
 
   getGender() {
     if (this.recordType == RT.MarriageRegistration) {
-      return "female";
+      if (this.isPrimaryTheSecond()) {
+        return "male";
+      } else {
+        return "female";
+      }
     }
     return "";
   }
@@ -179,9 +204,13 @@ class NzbdmEdReader extends ExtractedDataReader {
 
   getSpouses() {
     if (this.recordType == RT.MarriageRegistration) {
-      let groomGivenNames = this.ed.recordData["Groom's GivenName(s)"];
-      let groomFamilyName = this.ed.recordData["Groom's Family Name"];
-      let spouseNameObj = this.makeNameObjFromForenamesAndLastName(groomGivenNames, groomFamilyName);
+      let spouseGivenNames = this.ed.recordData["Groom's GivenName(s)"];
+      let spouseFamilyName = this.ed.recordData["Groom's Family Name"];
+      if (this.isPrimaryTheSecond()) {
+        spouseGivenNames = this.ed.recordData["Bride's GivenName(s)"];
+        spouseFamilyName = this.ed.recordData["Bride's Family Name"];
+      }
+      let spouseNameObj = this.makeNameObjFromForenamesAndLastName(spouseGivenNames, spouseFamilyName);
       if (spouseNameObj) {
         let spouse = { name: spouseNameObj };
         spouse.personGender = "male";
@@ -227,6 +256,42 @@ class NzbdmEdReader extends ExtractedDataReader {
           parents.mother = { name: motherNameObj };
         }
         return parents;
+      }
+    }
+
+    return undefined;
+  }
+
+  getPrimaryPersonOptions() {
+    if (this.recordType == RT.MarriageRegistration) {
+      let spouseName = this.getRecordDataValueForKeys(["Spouse"]);
+      if (!spouseName) {
+        let brideGivenName = this.getRecordDataValueForKeys(["Bride's GivenName(s)"]);
+        let brideFamilyName = this.getRecordDataValueForKeys(["Bride's Family Name"]);
+        let groomGivenName = this.getRecordDataValueForKeys(["Groom's GivenName(s)"]);
+        let groomFamilyName = this.getRecordDataValueForKeys(["Groom's Family Name"]);
+
+        function makeFullName(givenName, familyName) {
+          let fullName = "";
+          if (givenName) {
+            fullName += givenName;
+          }
+          if (familyName) {
+            if (fullName) {
+              fullName += " ";
+            }
+            fullName += familyName;
+          }
+          return fullName;
+        }
+
+        let brideName = makeFullName(brideGivenName, brideFamilyName);
+        let groomName = makeFullName(groomGivenName, groomFamilyName);
+
+        if (brideName && groomName) {
+          let options = [brideName + " (bride)", groomName + " (groom)"];
+          return options;
+        }
       }
     }
 

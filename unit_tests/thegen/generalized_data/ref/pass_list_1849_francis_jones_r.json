@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "PassengerList",
+  "name": {
+    "lastName": "Jones",
+    "forenames": "Francis"
+  },
+  "eventDate": {
+    "dateString": "5th June 1849"
+  },
+  "eventPlace": {
+    "placeString": "London, England"
+  },
+  "hasValidData": true
+}

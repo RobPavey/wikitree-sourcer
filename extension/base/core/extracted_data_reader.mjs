@@ -186,6 +186,14 @@ class ExtractedDataReader {
     return undefined;
   }
 
+  getPrimaryPersonOptions() {
+    return undefined;
+  }
+
+  getSpousePersonOptions() {
+    return undefined;
+  }
+
   getCollectionData() {
     return undefined;
   }
@@ -251,6 +259,28 @@ class ExtractedDataReader {
             "Jul-Aug-Sep": 3,
             "Oct-Nov-Dec": 4,
           };
+          let quarter = quarterStringToQuarter[quarterString];
+          if (quarter) {
+            dateObj.quarter = quarter;
+            dateObj.yearString = yearString;
+            return dateObj;
+          }
+        }
+      }
+
+      // handle alternate quarter strings like "April - June 1839"
+      let altQuarterRegex = /^([A-Z][a-z]+\s*\-\s*[A-Z][a-z]+)\s+(\d\d\d\d)/;
+      if (altQuarterRegex.test(dateString)) {
+        let quarterString = dateString.replace(altQuarterRegex, "$1");
+        let yearString = dateString.replace(altQuarterRegex, "$2");
+        if (quarterString && quarterString != dateString && yearString && yearString != dateString) {
+          const quarterStringToQuarter = {
+            "January-March": 1,
+            "April-June": 2,
+            "July-September": 3,
+            "October-December": 4,
+          };
+          quarterString = quarterString.replace(/\s*/g, "");
           let quarter = quarterStringToQuarter[quarterString];
           if (quarter) {
             dateObj.quarter = quarter;
@@ -563,10 +593,11 @@ class ExtractedDataReader {
     }
   }
 
-  determineRecordType(recordTypeMatches, inputData) {
+  getRecordTypeMatch(recordTypeMatches, inputData) {
     let collectionId = inputData.collectionId;
     let collectionTitle = inputData.collectionTitle;
     let documentType = inputData.documentType;
+    let documentSubtype = inputData.documentSubtype;
     let recordData = inputData.recordData;
     let recordDataLabels = inputData.recordDataLabels;
     let recordSections = inputData.recordSections;
@@ -602,6 +633,23 @@ class ExtractedDataReader {
           }
         }
         if (!documentTypeMatchFound) {
+          continue;
+        }
+      }
+
+      // document subtype
+      if (typeData.documentSubtypes) {
+        if (!documentSubtype) {
+          continue;
+        }
+        let documentSubtypeMatchFound = false;
+        for (let typeDocumentSubtype of typeData.documentSubtypes) {
+          if (typeDocumentSubtype.toLowerCase() == documentSubtype.toLowerCase()) {
+            documentSubtypeMatchFound = true;
+            break;
+          }
+        }
+        if (!documentSubtypeMatchFound) {
           continue;
         }
       }
@@ -719,6 +767,15 @@ class ExtractedDataReader {
       }
 
       // if we get this far it is a match
+      return typeData;
+    }
+
+    return undefined;
+  }
+
+  determineRecordType(recordTypeMatches, inputData) {
+    let typeData = this.getRecordTypeMatch(recordTypeMatches, inputData);
+    if (typeData) {
       return typeData.recordType;
     }
 

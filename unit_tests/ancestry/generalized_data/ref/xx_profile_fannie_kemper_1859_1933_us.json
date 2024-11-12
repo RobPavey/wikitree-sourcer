@@ -40,10 +40,14 @@
       }
     }
   ],
+  "lastNameAtBirth": "Kemper",
+  "lastNameAtDeath": "Money Barber",
   "parents": {
     "father": {
       "name": {
-        "name": "William K Kemper"
+        "name": "William K Kemper",
+        "lastName": "Kemper",
+        "forenames": "William K"
       }
     },
     "mother": {
@@ -53,7 +57,5 @@
       }
     }
   },
-  "lastNameAtBirth": "Kemper",
-  "lastNameAtDeath": "Money Barber",
   "hasValidData": true
 }

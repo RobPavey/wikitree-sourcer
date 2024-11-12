@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "name": "Robert Hall"
+  },
+  "eventDate": {
+    "dateString": "26th June 1833"
+  },
+  "eventPlace": {
+    "placeString": "Alnwick, Northumberland, England"
+  },
+  "birthDate": {
+    "dateString": "16th June 1833"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Michael Hall"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Margaret Hall"
+      }
+    }
+  },
+  "hasValidData": true
+}

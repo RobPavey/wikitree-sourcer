@@ -43,14 +43,6 @@ function getBgDateQualifierFromWtsQualifier(wtsQualifier) {
   return "10"; // should never get here
 }
 
-function getBgDateQualifier(exactnessOption, wtsQualifier) {
-  if (exactnessOption == "auto") {
-    return getBgDateQualifierFromWtsQualifier(wtsQualifier);
-  }
-
-  return exactnessOption;
-}
-
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const options = buildUrlInput.options;
@@ -74,43 +66,38 @@ function buildSearchUrl(buildUrlInput) {
     }
   }
 
-  const givenNameExactness = options.search_bg_exactFirstNames ? true : false;
-  builder.addGivenNames(firstNames, givenNameExactness);
+  builder.addGivenNames(firstNames);
 
   let lastName = gd.inferLastNameAtDeath(options);
   if (!lastName) {
     lastName = gd.inferLastName();
   }
   if (lastName) {
-    const lastNameExactness = options.search_bg_exactLastName ? true : false;
-    builder.addSurname(lastName, lastNameExactness);
+    builder.addSurname(lastName);
   }
 
-  if (options.search_bg_includeMaidenName) {
-    let maidenName = gd.inferLastNameAtBirth();
-    if (maidenName !== lastName) {
-      const maidenNameExactness = options.search_bg_exactMaidenName ? true : false;
-      builder.addMaidenName(maidenName, maidenNameExactness);
-    }
-  }
-
-  if (options.search_bg_birthYearExactness != "none") {
+  if (options.search_bg_includeBirthYear) {
     let birthYear = gd.inferBirthYear();
-    let birthDateQualifier = gd.inferBirthDateQualifier();
-    let bgBirthDateQualifier = getBgDateQualifier(options.search_bg_birthYearExactness, birthDateQualifier);
-    builder.addBirthYear(birthYear, bgBirthDateQualifier);
+    builder.addBirthYear(birthYear);
   }
 
-  if (options.search_bg_deathYearExactness != "none") {
-    let deathYear = gd.inferDeathYear();
-    let deathDateQualifier = gd.inferDeathDateQualifier();
-    let bgDeathDateQualifier = getBgDateQualifier(options.search_bg_deathYearExactness, deathDateQualifier);
-    builder.addDeathYear(deathYear, bgDeathDateQualifier);
-  }
+  let deathYear = gd.inferDeathYear();
+  builder.addDeathYear(deathYear);
+
+  let yearRange = options.search_bg_yearExactness;
+  builder.addYearRange(yearRange);
 
   const bgCountry = getBgCountry(gd);
   if (bgCountry) {
-    builder.addCountry(bgCountry);
+    builder.addCemeteryCountry(bgCountry);
+  }
+
+  if (options.search_bg_filterByExact) {
+    builder.addExact();
+  }
+
+  if (options.search_bg_filterByPhonetic) {
+    builder.addPhonetic();
   }
 
   const url = builder.getUri();

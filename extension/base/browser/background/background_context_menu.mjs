@@ -209,6 +209,28 @@ function openFmpLink(tab, link, options) {
   openInNewTab(link, tab, tabOption);
 }
 
+function openThegenLink(tab, link, options) {
+  let domain = link.replace(/^https?\:\/\/[^\.]+\.(thegenealogist[^\/]+)\/.*/, "$1");
+
+  //console.log("openThegenLink, domain is: " + domain);
+  if (domain && domain != link) {
+    let desiredDomain = options.search_thegen_domain;
+    //console.log("openThegenLink, desiredDomain is: " + desiredDomain);
+
+    if (desiredDomain != "none" && desiredDomain != domain) {
+      let newLink = link.replace(domain, desiredDomain);
+
+      if (newLink && newLink != link) {
+        link = newLink;
+        //console.log("openThegenLink, new link is: " + newLink);
+      }
+    }
+  }
+
+  const tabOption = options.context_general_newTabPos;
+  openInNewTab(link, tab, tabOption);
+}
+
 function openLink(info, tab) {
   // linkUrl: "https://search.findmypast.co.uk/record/browse?id=GBC/1881/4362252/00449&parentid=GBC/1881/0023259406"
   // linkUrl: "https://ancestry.prf.hn/click/camref:1011l4xx5/type:cpc/destination:https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=2352&h=1903048"
@@ -235,6 +257,10 @@ function openLink(info, tab) {
     } else if (link.includes("findmypast")) {
       callFunctionWithStoredOptions(function (options) {
         openFmpLink(tab, link, options);
+      });
+    } else if (link.includes("thegenealogist")) {
+      callFunctionWithStoredOptions(function (options) {
+        openThegenLink(tab, link, options);
       });
     } else {
       let openedAsText = openSelectionPlainText(info, tab);

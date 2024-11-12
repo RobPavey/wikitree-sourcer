@@ -1,0 +1,16 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "ConvictTransportation",
+  "name": {
+    "lastName": "Jones",
+    "forenames": "Francis"
+  },
+  "eventDate": {
+    "dateString": "26th January 1832"
+  },
+  "eventPlace": {
+    "placeString": "New South Wales"
+  },
+  "hasValidData": true
+}

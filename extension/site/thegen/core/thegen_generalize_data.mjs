@@ -27,7 +27,7 @@ import { ThegenEdReader } from "./thegen_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let edReader = new ThegenEdReader(input.extractedData);
+  let edReader = new ThegenEdReader(input.extractedData, input.primaryPersonIndex, input.spousePersonIndex);
   return commonGeneralizeData("thegen", edReader);
 }
 

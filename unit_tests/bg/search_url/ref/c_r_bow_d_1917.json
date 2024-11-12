@@ -1,5 +1,5 @@
 {
   "std": {
-    "url": "https://billiongraves.com/search/results?CollectionID=&CatalogID=&PageNumber=1&PageSize=20&GivenNames=C.%20R.&FamilyName=Bow&EventBirthYearRange=5&EventDeathYear=1917&EventDeathYearRange=5&Country=France"
+    "url": "https://billiongraves.com/search/results?size=15&given_names=C.%20R.&family_names=Bow&death_year=1917&year_range=5&cemetery_country=France"
   }
 }

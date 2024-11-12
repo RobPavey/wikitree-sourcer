@@ -26,7 +26,32 @@ import {
   registerSubsectionForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
+  registerSubheadingForOptions,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchOptionsGroup = {
+  category: "search",
+  subcategory: "thegen",
+  tab: "search",
+  subsection: "thegen",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "domain",
+      type: "select",
+      label: "Domain to use for searches (where is your subscription?)",
+      comment:
+        "NOTE: If you are trying to follow a The Genealogist link that points to a different domain" +
+        ' you can right click on the link and use the context menu item "Sourcer: Open Link in New Tab".' +
+        " This will redirect to the domain selected above.",
+      values: [
+        { value: "thegenealogist.com", text: "thegenealogist.com" },
+        { value: "thegenealogist.co.uk", text: "thegenealogist.co.uk" },
+      ],
+      defaultValue: "thegenealogist.co.uk",
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -38,6 +63,8 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "thegen", "The Genealogist");
 registerSiteSearchPopupOptionsGroup("thegen", 7, 7);
+registerSubheadingForOptions("search", "thegen", "parameters", "Search Parameters");
+registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "thegen", "The Genealogist");
 registerOptionsGroup(citationOptionsGroup);

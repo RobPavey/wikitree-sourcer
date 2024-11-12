@@ -112,10 +112,13 @@ function removeUnwantedKeysForDataString(keys, recordData) {
 function buildValuationRollDataString(ed, gd, dataStyle, builder) {
   let dataString = gd.inferFullName();
   let date = gd.inferEventDate();
+  if (gd.status) {
+    dataString += " " + gd.status;
+  }
   if (date) {
     dataString += " in " + date;
   }
-  let parish = gd.inferFullEventPlace();
+  let parish = gd.inferEventPlace();
   let place = "";
   if (ed.recordData) {
     let placeString = ed.recordData["Place"];

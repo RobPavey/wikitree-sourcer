@@ -396,6 +396,15 @@ function buildPlaceWithOprParishName(ed, parishName, year) {
   return buildPlaceWithTownAndCountyName(parishName, county);
 }
 
+function buildPlaceWithOprParishNameAndStreetAddress(ed, parishName, year, streetAddress) {
+  let county = getCountyNameFromOprParish(ed, ed.recordData["Parish"], year);
+  let place = buildPlaceWithTownAndCountyName(parishName, county);
+  if (place && streetAddress) {
+    place.streetAddress = standardizePlaceName(streetAddress);
+  }
+  return place;
+}
+
 function buildPlaceWithRcParishCongregationName(placeName, ed) {
   // examples:
   //   "DUNFERMLINE - ST MARGARET'S UNITED SECESSION",
@@ -1620,7 +1629,13 @@ function generalizeData(input) {
 
     case "vr":
       result.setEventYear(ed.recordData["Year"]);
-      result.eventPlace = buildPlaceWithOprParishName(ed, ed.recordData["Parish"], ed.recordData["Year"]);
+      result.eventPlace = buildPlaceWithOprParishNameAndStreetAddress(
+        ed,
+        ed.recordData["Parish"],
+        ed.recordData["Year"],
+        ed.recordData["Place"]
+      );
+      result.setFieldIfValueExists("status", ed.recordData["Status"]);
       break;
 
     default:
