@@ -22,54 +22,30 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { extractData } from "../../extension/site/dfgview/core/dfgview_extract_data.mjs";
+import { generalizeData } from "../../extension/site/dfgview/core/dfgview_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/dfgview/core/dfgview_build_citation.mjs";
 
-// The order should not matter since user facing lists are sorted
+import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "dfgview",
+const regressionData = [
+  /*
+  {
+    caseName: "b_1902_calvert_florence",
+    url: "https://www.dfgview.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+  },
+  */
 ];
 
-export { siteNames };
+async function runTests(testManager) {
+  await runExtractDataTests("dfgview", extractData, regressionData, testManager);
+
+  await runGeneralizeDataTests("dfgview", generalizeData, regressionData, testManager);
+
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("dfgview", functions, regressionData, testManager);
+}
+
+export { runTests };

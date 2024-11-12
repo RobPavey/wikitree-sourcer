@@ -28,6 +28,7 @@
     "*://*.cornwall-opc-database.org/*",
     "*://*.cwgc.org/*",
     "*://*.digitalarkivet.no/*",
+    "*://dfg-viewer.de/*",
     "*://*.findmypast.com/*",
     "*://*.findmypast.co.uk/*",
     "*://*.findmypast.ie/*",
@@ -158,6 +159,11 @@
       "matches": ["*://*.digitalarkivet.no/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/noda/browser/noda_content.js"]
+    },
+    {
+      "matches": ["*://dfg-viewer.de/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/dfgview/browser/dfgview_content.js"]
     },
     {
       "matches": [
@@ -402,6 +408,10 @@
     {
       "resources": ["site/noda/core/noda_extract_data.mjs"],
       "matches": ["*://*.digitalarkivet.no/*"]
+    },
+    {
+      "resources": ["site/dfgview/core/dfgview_extract_data.mjs"],
+      "matches": ["*://dfg-viewer.de/*"]
     },
     {
       "resources": ["site/fg/core/fg_extract_data.mjs"],

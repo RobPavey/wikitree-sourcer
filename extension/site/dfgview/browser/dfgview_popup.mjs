@@ -22,54 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/dfgview_generalize_data.mjs";
+import { buildCitation } from "../core/dfgview_build_citation.mjs";
 
-// The order should not matter since user facing lists are sorted
+async function setupDfgviewPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage: "It looks like a DFG Viewer page but not a record page.",
+    generalizeFailedMessage: "It looks like a DFG Viewer page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "dfgview",
+  };
+  setupSimplePopupMenu(input);
+}
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "dfgview",
-];
-
-export { siteNames };
+initPopup("dfgview", setupDfgviewPopupMenu);
