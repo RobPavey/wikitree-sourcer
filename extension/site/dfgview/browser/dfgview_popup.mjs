@@ -87,6 +87,7 @@ async function dfgViewGetExtendedMetadata(extractedData, metadataUrl) {
     text = await response.text();
   }
   catch (err) {
+    alert("Fetch failed, please report this error\nurl was: "+metadataUrl+"\nerror was: "+err);
     return;
   }
 
@@ -94,8 +95,17 @@ async function dfgViewGetExtendedMetadata(extractedData, metadataUrl) {
   let xmldoc = serializer.parseFromString(text, "text/xml");
 
   // mods:title holds the 'context' property
-  extractedData.context = xmldoc.getElementsByTagName("mods:title")[0].textContent;
-  extractedData.owner = xmldoc.getElementsByTagName("dv:owner")[0].textContent;
+  let title_property = xmldoc.getElementsByTagName("mods:title")[0];
+  if (!title_property) {
+    title_property = xmldoc.getElementsByTagName("ns4:title")[0];
+  }
+  if (title_property) {
+    extractedData.context = title_property.textContent;
+  }
+  let owner_property = xmldoc.getElementsByTagName("dv:owner")[0];
+  if (owner_property) {
+    extractedData.owner = owner_property.textContent;
+  }
 }
 
 async function dfgViewPopupBuildCitation(data) {
