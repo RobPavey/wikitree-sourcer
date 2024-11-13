@@ -20,6 +20,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+* '''Record''': "Taufen"<br/>Archiv des Erzbistums München und Freising, Bestand: CB221 Litzldorf-St. Michael - 1815-1999, Signature: CB221, M9801, Page: 1<br/>[https://dfg-viewer.de/show/?tx_dlf%5Bid%5D=https%3A//digitales-archiv.erzbistum-muenchen.de/actaproweb/mets%3Fid=Rep_75619fa4-7094-43a4-9ce4-c302d1e310c9_mets_actapro.xml Image (DFG Viewer)] (accessed 13 November 2024)
 */
 
 function extractData(document, url) {
@@ -48,9 +50,28 @@ function extractData(document, url) {
     }
   }
 
+  let page = document.querySelector("select[name='tx_dlf[page]']");
+  if (page) {
+    page = page.querySelector("option[selected]");
+    if (page) {
+      page = page.textContent.trim();
+      if (page.startsWith("[")) {
+        page = page.substring(1);
+      }
+      if (page.endsWith("]")) {
+        page = page.substring(0, page.length - 1);
+      }
+      result.page = page;
+    }
+  }
+
   if (url) {
-    let decodedUrl = new URLSearchParams(url);
+    let queryString = url.split('?')[1];
+    let decodedUrl = new URLSearchParams(queryString);
     if (decodedUrl) {
+      for (const [key, value] of decodedUrl.entries()) {
+        console.log(key + "\n" + value);
+      }
       result.metadataUrl = decodedUrl.get("tx_dlf[id]");
     }
   }

@@ -45,6 +45,22 @@ function buildSourceReference(ed, gd, builder) {
   else {
     builder.sourceReference = "";
   }
+  if (ed.owner) {
+    if (builder.sourceReference != "") {
+      builder.sourceReference = ed.owner + ", " + builder.sourceReference;
+    }
+    else {
+      builder.sourceReference = ed.owner;
+    }
+  }
+  if (ed.page) {
+    if (builder.sourceReference != "") {
+      builder.sourceReference += ", Page: " + ed.page;
+    }
+    else {
+      builder.sourceReference = "Page: " + ed.page;
+    }
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {

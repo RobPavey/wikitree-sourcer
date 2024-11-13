@@ -39,39 +39,63 @@ import { initPopup } from "/base/browser/popup/popup_init.mjs";
 import { generalizeData } from "../core/dfgview_generalize_data.mjs";
 import { buildCitation } from "../core/dfgview_build_citation.mjs";
 
-async function dfgViewGetExtendedMetadata(exttractedData, metadataUrl) {
+async function dfgViewGetExtendedMetadata(extractedData, metadataUrl) {
+  let metadataPattern = metadataUrl;
+  if (metadataPattern.includes("://")) {
+    metadataPattern = metadataPattern.split("://")[1];
+    if (metadataPattern.includes("/")) {
+      metadataPattern = metadataPattern.split("/")[0] + "/*";
+    }
+    metadataPattern = "*://" + metadataPattern;
+  }
+  else if (metadataPattern.includes("/")) {
+    metadataPattern = metadataPattern.split("/")[0] + "/*";
+  }
+
   const checkPermissionsOptions = {
-    reason: "To get advanced metadata a content script needs to be loaded on the dfg-viewer.de page.",
+    reason: "To get advanced metadata a content script needs to be loaded on the dfg-viewer.de page.\n" + metadataPattern,
   };
-  let allowed = await checkPermissionForSite("*://dfg-viewer.de/*", checkPermissionsOptions);
+  let allowed = await checkPermissionForSite(metadataPattern, checkPermissionsOptions);
   if (!allowed) {
+    alert("Permission denied to access advanced metadata.");
     return;
   }
 
-  alert(metadataUrl);
+  var text;
 
-  let data = await fetch(metadataUrl, {
-    "headers": {
-      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-      "accept-language": "en-US,en;q=0.9",
-      "cache-control": "no-cache",
-      "pragma": "no-cache",
-      "priority": "u=0, i",
-      "sec-ch-ua": "\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"",
-      "sec-ch-ua-mobile": "?0",
-      "sec-ch-ua-platform": "\"Windows\"",
-      "sec-fetch-dest": "document",
-      "sec-fetch-mode": "navigate",
-      "sec-fetch-site": "none",
-      "sec-fetch-user": "?1",
-      "upgrade-insecure-requests": "1"
-    },
-    "referrerPolicy": "strict-origin-when-cross-origin",
-    "method": "GET",
-    "mode": "cors",
-    "credentials": "omit"
-  });
-  alert(await data.text());
+  try {
+    let response = await fetch(metadataUrl, {
+      "headers": {
+        "accept": "application/xml",
+        "accept-language": "en-US,en;q=0.9",
+        "cache-control": "no-cache",
+        "pragma": "no-cache",
+        "priority": "u=0, i",
+        "sec-ch-ua": "\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"",
+        "upgrade-insecure-requests": "1"
+      },
+      "referrerPolicy": "strict-origin-when-cross-origin",
+      "method": "GET",
+      "mode": "cors",
+      "credentials": "omit"
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    text = await response.text();
+  }
+  catch (err) {
+    return;
+  }
+
+  let serializer = new DOMParser();
+  let xmldoc = serializer.parseFromString(text, "text/xml");
+
+  // mods:title holds the 'context' property
+  extractedData.context = xmldoc.getElementsByTagName("mods:title")[0].textContent;
+  extractedData.owner = xmldoc.getElementsByTagName("dv:owner")[0].textContent;
 }
 
 async function dfgViewPopupBuildCitation(data) {
