@@ -1,0 +1,131 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "female",
+  "name": {
+    "lastName": "Cocker",
+    "forenames": "Agnes"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Ashton Road Grocers Shop, Oldham, Lancashire, England"
+  },
+  "registrationDistrict": "Oldham",
+  "birthDate": {
+    "yearString": "1863",
+    "qualifier": 2
+  },
+  "ageAtEvent": "8",
+  "birthPlace": {
+    "placeString": "Oldham, Lancashire, England"
+  },
+  "eventDate": {
+    "yearString": "1871"
+  },
+  "occupation": "Scholar",
+  "relationshipToHead": "daughter",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Abraham Cocker",
+      "relationship": "head",
+      "gender": "male",
+      "age": "45",
+      "birthYear": "1826",
+      "occupation": "Mechanic",
+      "birthPlace": "Chadderton, Lancashire, England"
+    },
+    {
+      "name": "Hannah Cocker",
+      "relationship": "wife",
+      "gender": "female",
+      "age": "39",
+      "birthYear": "1832",
+      "birthPlace": "Oldham, Lancashire, England"
+    },
+    {
+      "name": "Mary A Cocker",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "15",
+      "birthYear": "1856",
+      "occupation": "Weaver",
+      "birthPlace": "Oldham, Lancashire, England"
+    },
+    {
+      "name": "James Cocker",
+      "relationship": "son",
+      "gender": "male",
+      "age": "13",
+      "birthYear": "1858",
+      "occupation": "File cutter",
+      "birthPlace": "Oldham, Lancashire, England"
+    },
+    {
+      "name": "Alice Cocker",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "11",
+      "birthYear": "1860",
+      "occupation": "Scholar",
+      "birthPlace": "Oldham, Lancashire, England"
+    },
+    {
+      "isSelected": true,
+      "name": "Agnes Cocker",
+      "relationship": "daughter",
+      "gender": "female",
+      "age": "8",
+      "birthYear": "1863",
+      "occupation": "Scholar",
+      "birthPlace": "Oldham, Lancashire, England"
+    },
+    {
+      "name": "Peter Cocker",
+      "relationship": "son",
+      "gender": "male",
+      "age": "6",
+      "birthYear": "1865",
+      "occupation": "Scholar",
+      "birthPlace": "Oldham, Lancashire, England"
+    },
+    {
+      "name": "Abraham Cocker",
+      "relationship": "son",
+      "gender": "male",
+      "age": "2",
+      "birthYear": "1869",
+      "birthPlace": "Oldham, Lancashire, England"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Abraham Cocker"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Hannah Cocker"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1871 England, Wales & Scotland Census",
+    "archiveSeries": "RG10",
+    "page": "20",
+    "piece": "4097",
+    "folio": "80",
+    "schedule": "101"
+  },
+  "hasValidData": true
+}

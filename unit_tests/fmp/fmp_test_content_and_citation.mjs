@@ -142,6 +142,11 @@ const regressionData = [
     ],
   },
   {
+    // saved 14 Nov 2024 after they changed transcription of birth place
+    caseName: "england_census_1871_agnes_cocker",
+    url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1871%2F0012967652&expand=true&tab=this",
+  },
+  {
     caseName: "england_census_1871_robert",
     url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1871%2F0003951781",
     optionVariants: [

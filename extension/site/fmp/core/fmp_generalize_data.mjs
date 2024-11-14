@@ -385,7 +385,15 @@ function buildBirthPlaceObj(ed) {
         }
       }
     } else {
-      placeObj.place = place;
+      // sometimes the "Birth place" is something like: "Oldham Lancashire England" while
+      // "Birth town" is "Oldham", "Birth county" is "Lancashire" and "Birth Country" is "England".
+      let usePlace = true;
+      if (placeObj.country && place.endsWith(placeObj.country)) {
+        usePlace = false;
+      }
+      if (usePlace) {
+        placeObj.place = place;
+      }
     }
   }
 
