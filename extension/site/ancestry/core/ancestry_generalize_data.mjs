@@ -68,6 +68,7 @@ const recordTypeByFields = [
   { type: RT.Obituary, labels: ["Obituary Place"] },
   { type: RT.Divorce, labels: ["Divorce Date"] },
   { type: RT.Marriage, labels: ["Marriage Date", "Marriage Place", "Spouse"] },
+  { type: RT.Marriage, labels: ["Age", "Marriage Place", "Spouse"] },
   { type: RT.Marriage, labels: ["Marriage Banns Date", "Marriage Banns Place", "Spouse"] },
   {
     type: RT.Marriage,
@@ -343,6 +344,7 @@ function determineRecordType(extractedData) {
         "Royal Naval Reserve Service Records",
         "Marine Corps Muster",
         "Army Roll of Honour",
+        "Military List",
       ],
     },
     { type: RT.Military, matches: ["War"], secondMatches: ["Pension"] },
