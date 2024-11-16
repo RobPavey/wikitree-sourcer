@@ -26,6 +26,7 @@ import { getOptionsRegistry } from "../../core/options/options_database.mjs";
 import { restoreOptions, saveOptionsFromPage } from "./options_save_restore.mjs";
 import { openDialog } from "./options_dialog.mjs";
 import { restoreOptionsUiStateAndSetState, updateAndSaveOptionsUiState } from "./options_ui_state.mjs";
+import { createDraggableListElement } from "./options_draggable_list.mjs";
 
 // keeps track of the elements for tabs an subsections
 var tabElements = {};
@@ -403,8 +404,24 @@ async function buildPage() {
         labelElement.appendChild(labelTextNode);
         labelElement.appendChild(optionElement);
         optionDivElement.appendChild(labelElement);
+      } else if (option.type == "siteListDraggable") {
+        optionElement = createDraggableListElement(document);
+        optionElement.className = "optionSiteListDraggable";
+
+        let labelTextNode = document.createTextNode(option.label + ": ");
+
+        let labelElement = document.createElement("label");
+
+        labelElement.appendChild(labelTextNode);
+        labelElement.appendChild(optionElement);
+        optionDivElement.appendChild(labelElement);
+      } else {
+        console.log("Unknown option type: " + option.type);
       }
-      optionElement.id = fullOptionName;
+
+      if (optionElement) {
+        optionElement.id = fullOptionName;
+      }
 
       if (option.comment) {
         let breakElement = document.createElement("br");

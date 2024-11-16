@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import { updateOptionsToLatestVersion, options } from "./options_loader.mjs";
-import { getDefaultOptions } from "../../core/options/options_database.mjs";
+import { getDefaultOptions, getOptionsRegistry } from "../../core/options/options_database.mjs";
 import { saveOptions } from "./options_storage.mjs";
 import { restoreOptionsGivenOptions } from "./options_save_restore.mjs";
 import { isSafariOnMacOs } from "../common/browser_check.mjs";
@@ -83,7 +83,7 @@ function saveOptionsToFile() {
   closeDialog();
 }
 
-function doLoadOptionsFromFile() {
+function doLoadOptionsFromFile(optionsRegistry) {
   return new Promise((resolve, reject) => {
     if (window.FileReader) {
       let chooser = document.createElement("input");
@@ -116,7 +116,7 @@ function doLoadOptionsFromFile() {
 
                   // conversion should use current option values rather than defaults
                   // for any options on in loaded file.
-                  let mergedOptions = updateOptionsToLatestVersion(importedOptions, options);
+                  let mergedOptions = updateOptionsToLatestVersion(importedOptions, options, optionsRegistry);
 
                   //console.log("doLoadOptionsFromFile, merged options are:");
                   //console.log(mergedOptions);
@@ -158,8 +158,10 @@ function doLoadOptionsFromFile() {
   });
 }
 
-function loadOptionsFromFile() {
-  doLoadOptionsFromFile()
+async function loadOptionsFromFile() {
+  let optionsRegistry = await getOptionsRegistry();
+
+  doLoadOptionsFromFile(optionsRegistry)
     .then(closeDialog)
     .catch((result) => {
       let message = "The options file was not valid. The current options were not changed.";

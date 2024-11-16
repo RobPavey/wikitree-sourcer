@@ -144,7 +144,7 @@ function registerOptionsGroup(optionsGroup) {
   internalOptionsRegistry.optionsGroups.push(optionsGroup);
 }
 
-function registerSiteSearchPopupOptionsGroup(siteName, topMenuPriority, subMenuPriority) {
+function registerSiteSearchPopupOptionsGroup(siteName) {
   const optionsGroup = {
     category: "search",
     subcategory: siteName,
@@ -153,17 +153,18 @@ function registerSiteSearchPopupOptionsGroup(siteName, topMenuPriority, subMenuP
     subheading: "popup",
     options: [
       {
-        optionName: "popup_priorityOnTopMenu",
-        type: "number",
-        label: "Priority of the search menu item for this site on the top-level popup menu",
-        defaultValue: topMenuPriority,
+        optionName: "popup_includeOnTopMenu",
+        type: "checkbox",
+        label: "Include the search menu item for this site on the top-level popup menu",
+        defaultValue: true,
+        comment:
+          "NOTE: The search menu item may not be shown depending on 'General' options like max items and priority order",
       },
       {
-        optionName: "popup_priorityOnSubMenu",
-        type: "number",
-        label: "Priority of the search menu item for this site on the search submenu",
-        defaultValue: subMenuPriority,
-        comment: "NOTE: One is highest priority. A priority of zero or less means never show this menu item.",
+        optionName: "popup_includeOnSubmenu",
+        type: "checkbox",
+        label: "Include the search menu item for this site on the search submenu",
+        defaultValue: true,
       },
     ],
   };

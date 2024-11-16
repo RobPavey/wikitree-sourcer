@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { getDefaultOptions } from "../../core/options/options_database.mjs";
+import { getDefaultOptions, getOptionsRegistry } from "../../core/options/options_database.mjs";
 import { loadOptions } from "./options_storage.mjs";
 
 var options = undefined; // we cache the current options here
@@ -203,11 +203,13 @@ function convertOptionsFrom8To9(loadedOptions) {
   console.log("convertOptionsFrom8To9, before:");
   console.log(loadedOptions);
 
-  convertedOptions["search_wikitree_birthLocationExactness"] = convertedOptions["search_wikitree_locationExactness"];
-  convertedOptions["search_wikitree_deathLocationExactness"] = convertedOptions["search_wikitree_locationExactness"];
-  delete convertedOptions["search_wikitree_locationExactness"];
+  if (convertedOptions["search_wikitree_birthLocationExactness"] === undefined) {
+    convertedOptions["search_wikitree_birthLocationExactness"] = convertedOptions["search_wikitree_locationExactness"];
+    convertedOptions["search_wikitree_deathLocationExactness"] = convertedOptions["search_wikitree_locationExactness"];
+    delete convertedOptions["search_wikitree_locationExactness"];
+  }
 
-  convertedOptions.options_version = 8;
+  convertedOptions.options_version = 9;
 
   console.log("convertOptionsFrom8To9, after:");
   console.log(convertedOptions);
@@ -215,7 +217,108 @@ function convertOptionsFrom8To9(loadedOptions) {
   return convertedOptions;
 }
 
-function convertOptions(loadedOptions, defaultOptions) {
+function convertOptionsFrom9To10(loadedOptions, optionsRegistry) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom9To10, before:");
+  console.log(loadedOptions);
+
+  // change is to the search menu item priorities.
+  // In version 9 they are in options of the form
+  //    search_<sitename>_popup_priorityOnTopMenu
+  //    search_<sitename>_popup_priorityOnSubMenu
+  // In version 10 there is one option for the order:
+  //    search_general_priorityOrder
+  // and separate options when whether to include a site:
+  //    search_<sitename>_popup_includeOnTopMenu
+  //    search_<sitename>_popup_includeOnSubmenu
+  //
+
+  // build a siteNameToSiteLabel object  because we use the label to sort
+  // siteNames if their priorities are the same
+  let siteNameToSiteLabel = {};
+  let tab = undefined;
+  for (let thisTab of optionsRegistry.tabs) {
+    if (thisTab.name == "search") {
+      tab = thisTab;
+    }
+  }
+  if (tab) {
+    for (let subsection of tab.subsections) {
+      let name = subsection.name;
+      let label = subsection.label;
+      if (name != "general") {
+        siteNameToSiteLabel[name] = label;
+      }
+    }
+  }
+
+  let oldPriorityOrder = [];
+  for (let optionName of Object.keys(convertedOptions)) {
+    const topRegex = /^search_([a-z]+)_popup_priorityOnTopMenu$/i;
+    const subRegex = /^search_([a-z]+)_popup_priorityOnSubMenu$/i;
+    let isTop = topRegex.test(optionName);
+    let isSub = subRegex.test(optionName);
+    if (isTop || isSub) {
+      let siteName = "";
+      let newOptionName = "";
+      if (isTop) {
+        siteName = optionName.replace(topRegex, "$1");
+        newOptionName = "search_" + siteName + "_popup_includeOnTopMenu";
+      } else {
+        siteName = optionName.replace(subRegex, "$1");
+        newOptionName = "search_" + siteName + "_popup_includeOnSubmenu";
+      }
+      if (siteName) {
+        let oldValue = convertedOptions[optionName];
+        let priority = Number(oldValue);
+        if (isNaN(priority)) {
+          priority = 0;
+        }
+
+        console.log(optionName + " : " + oldValue);
+
+        let includeSite = priority > 0 ? true : false;
+        console.log("setting " + newOptionName + " to " + includeSite);
+        convertedOptions[newOptionName] = includeSite;
+        delete convertedOptions[optionName];
+
+        // we don't want to put in list twice so use the top value only
+        if (includeSite && isTop) {
+          let label = siteNameToSiteLabel[siteName];
+          oldPriorityOrder.push({ name: siteName, priority: priority, label: label });
+        }
+      }
+    }
+  }
+
+  let sortedList = oldPriorityOrder.sort(function (a, b) {
+    if (a.priority == b.priority) {
+      // if priority is same then sort alphabetically by site title
+      return a.label.localeCompare(b.label);
+    }
+    if (a.priority < b.priority) {
+      return -1;
+    }
+    return +1;
+  });
+
+  let priorityOrder = [];
+  for (let item of sortedList) {
+    priorityOrder.push(item.name);
+  }
+
+  convertedOptions["search_general_priorityOrder"] = priorityOrder;
+
+  convertedOptions.options_version = 10;
+
+  console.log("convertOptionsFrom9To10, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
+function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
 
@@ -223,6 +326,8 @@ function convertOptions(loadedOptions, defaultOptions) {
 
   //console.log("convertOptions, loadedOptions is : ");
   //console.log(loadedOptions);
+  console.log("convertOptions, optionsRegistry is : ");
+  console.log(optionsRegistry);
 
   if (loadedVersion >= currentVersion) {
     return loadedOptions;
@@ -249,6 +354,9 @@ function convertOptions(loadedOptions, defaultOptions) {
   if (loadedVersion < 9) {
     loadedOptions = convertOptionsFrom8To9(loadedOptions);
   }
+  if (loadedVersion < 10) {
+    loadedOptions = convertOptionsFrom9To10(loadedOptions, optionsRegistry);
+  }
 
   return loadedOptions;
 }
@@ -268,7 +376,7 @@ function addNewDefaultsAndRemoveOldOptions(loadedOptions, defaultOptions) {
   return newOptions;
 }
 
-function updateOptionsToLatestVersion(loadedOptions, defaultOptions) {
+function updateOptionsToLatestVersion(loadedOptions, defaultOptions, optionsRegistry) {
   let optionsObject = undefined;
   if (loadedOptions) {
     if (!loadedOptions.options_version) {
@@ -276,7 +384,7 @@ function updateOptionsToLatestVersion(loadedOptions, defaultOptions) {
       loadedOptions.options_version = defaultOptions.options_version;
     }
 
-    let convertedOptions = convertOptions(loadedOptions, defaultOptions);
+    let convertedOptions = convertOptions(loadedOptions, defaultOptions, optionsRegistry);
     // We used to use the spread operator to merge the stored options and the ones from defaultOptions with
     // the stored ones taking priority. Out of a concern that no longer used options (that the converter forgot)
     // would build up it was changed to use a function.
@@ -292,7 +400,9 @@ async function callFunctionWithStoredOptions(optionsFunction) {
   let loadedOptions = await loadOptions();
 
   let defaultOptions = await getDefaultOptions();
-  options = updateOptionsToLatestVersion(loadedOptions, defaultOptions);
+  let optionsRegistry = await getOptionsRegistry();
+
+  options = updateOptionsToLatestVersion(loadedOptions, defaultOptions, optionsRegistry);
 
   optionsFunction(options);
 }

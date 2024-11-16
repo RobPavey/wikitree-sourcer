@@ -256,3 +256,64 @@ dialog::backdrop {
   background-color: #c1d094af;
 }
 */
+
+/*
+  Draggable List
+  */
+
+.optionSiteListDraggable {
+  list-style-type: none;
+  padding: 0;
+  margin: 0px;
+
+  border: 1px solid black;
+  max-width: 400px;
+}
+
+li.draggableListItem {
+  background-color: #f0f0f0;
+  padding: 3px;
+  margin: 3px;
+  cursor: grab;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.draggableListItem > label {
+  cursor: grab;
+}
+
+.beingDragged {
+  color: #a0a0a0;
+}
+
+.draggableIconBar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 3px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
+}
+
+.draggableIconContainer {
+  display: block;
+  width: 25px;
+  padding: 0;
+}
+
+.draggableIcon {
+  padding: 0;
+  display: block;
+  background-color: #f0f0f0;
+  border: 0px;
+  cursor: grab;
+}
+
+.draggableListItemComment {
+  font-style: italic;
+  font-size: 10px;
+}

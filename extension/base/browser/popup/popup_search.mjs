@@ -228,7 +228,7 @@ function shouldShowSiteSearch(gd, filter, siteConstraints) {
 
 var registeredSearchMenuItemFunctions = [];
 
-function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOptionName, data, filter, excludeSite) {
+function buildSortedMenuItemFunctions(maxItems, includeOptionName, sortAlphaOptionName, data, filter, excludeSite) {
   let result = {
     functionList: [],
     numSitesExcludedByFilter: 0,
@@ -237,6 +237,11 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
   };
 
   let functionList = [];
+
+  let priorityOrderList = options["search_general_priorityOrder"];
+  if (!priorityOrderList) {
+    priorityOrderList = [];
+  }
 
   for (let registeredFunction of registeredSearchMenuItemFunctions) {
     let siteName = registeredFunction.siteName;
@@ -259,8 +264,13 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
     }
 
     let menuItemFunction = registeredFunction.menuItemFunction;
-    let fullPriorityOptionName = "search_" + siteName + "_" + priorityOptionName;
-    let priorityOptionValue = options[fullPriorityOptionName];
+    let fullIncludeOptionName = "search_" + siteName + "_" + includeOptionName;
+    let includeOptionValue = options[fullIncludeOptionName];
+
+    let priority = priorityOrderList.indexOf(siteName);
+    if (priority == -1) {
+      priority = priorityOrderList.length;
+    }
 
     /*
     console.log(
@@ -271,19 +281,12 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
     );
     */
 
-    let priority = 0;
-
-    if (typeof priorityOptionValue === "undefined") {
-      console.log("buildSortedMenuItemFunctions: missing option value for: " + fullPriorityOptionName);
-      priority = 10000; // don't exclude it - put at end of list
-    } else {
-      let priorityOptionNumber = parseInt(priorityOptionValue);
-      if (priorityOptionNumber != NaN) {
-        priority = priorityOptionNumber;
-      }
+    if (typeof includeOptionValue === "undefined") {
+      console.log("buildSortedMenuItemFunctions: missing option value for: " + fullIncludeOptionName);
+      includeOptionValue = true; // don't exclude it
     }
 
-    if (priority > 0) {
+    if (includeOptionValue) {
       //console.log("buildSortedMenuItemFunctions: pushing to functionList");
 
       functionList.push({
@@ -333,7 +336,7 @@ function buildSortedMenuItemFunctions(maxItems, priorityOptionName, sortAlphaOpt
 function buildTopLevelMenuItemFunctions(maxItems, data, excludeSite) {
   return buildSortedMenuItemFunctions(
     maxItems,
-    "popup_priorityOnTopMenu",
+    "popup_includeOnTopMenu",
     "popup_sortAlphaInTopMenu",
     data,
     undefined,
@@ -344,7 +347,7 @@ function buildTopLevelMenuItemFunctions(maxItems, data, excludeSite) {
 function buildSubMenuItemFunctions(data, filter, excludeSite) {
   return buildSortedMenuItemFunctions(
     -1,
-    "popup_priorityOnSubMenu",
+    "popup_includeOnSubMenu",
     "popup_sortAlphaInSubmenu",
     data,
     filter,

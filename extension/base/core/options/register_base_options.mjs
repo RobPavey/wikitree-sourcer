@@ -120,6 +120,54 @@ const searchOptionsGroup = {
       label: "Maximum lifespan to consider when building search date/age ranges",
       defaultValue: 120,
     },
+    {
+      optionName: "priorityOrder",
+      type: "siteListDraggable",
+      label: "Priority order for sites in menus",
+      defaultValue: [
+        "fs",
+        "ancestry",
+        "fg",
+        "fmp",
+        "mh",
+        "bg",
+        "wikitree",
+        "ameranc",
+        "archion",
+        "baclac",
+        "cwgc",
+        "freebmd",
+        "freecen",
+        "freereg",
+        "geneteka",
+        "gro",
+        "irishg",
+        "matricula",
+        "naie",
+        "nli",
+        "noda",
+        "nswbdm",
+        "nzash",
+        "nzbdm",
+        "opccorn",
+        "openarch",
+        "psuk",
+        "scotp",
+        "taslib",
+        "thegen",
+        "vicbdm",
+        "wiewaswie",
+        "np",
+        "npa",
+        "ppnz",
+        "trove",
+        "archive",
+        "gbooks",
+        "hathi",
+        "jstor",
+        "wikipedia",
+      ],
+    },
   ],
 };
 
@@ -1677,6 +1725,7 @@ registerSubheadingForOptions(
   "When date and place are for registration, not marriage"
 );
 registerSubsectionForOptions("narrative", "obituary", "Obituary");
+registerSubsectionForOptions("narrative", "passengerList", "Passenger List");
 registerSubsectionForOptions("narrative", "slaveSchedule", "Slave Schedule");
 
 registerSubsectionForOptions("table", "general", "General", "", 1);
