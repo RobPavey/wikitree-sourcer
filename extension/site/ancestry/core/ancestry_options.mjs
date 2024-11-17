@@ -69,7 +69,7 @@ const searchOptionsGroup = {
       optionName: "restrictToRecords",
       type: "checkbox",
       label: "Restrict the search to record results (not trees, stories or photos)",
-      defaultValue: true,
+      defaultValue: false,
     },
   ],
 };
