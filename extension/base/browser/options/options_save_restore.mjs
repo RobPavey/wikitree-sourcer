@@ -26,6 +26,68 @@ import { callFunctionWithStoredOptions, replaceCachedOptions, options } from "./
 import { getDefaultOptions, getOptionsRegistry } from "../../core/options/options_database.mjs";
 import { saveOptions } from "./options_storage.mjs";
 
+function restoreSiteListDraggable(element, fullOptionName, optionsRegistry) {
+  let currentOptionsSiteList = options[fullOptionName];
+
+  let siteNameToSiteLabel = {};
+  let tab = undefined;
+  for (let thisTab of optionsRegistry.tabs) {
+    if (thisTab.name == "search") {
+      tab = thisTab;
+    }
+  }
+  if (tab) {
+    for (let subsection of tab.subsections) {
+      let name = subsection.name;
+      let label = subsection.label;
+      if (name != "general") {
+        siteNameToSiteLabel[name] = { label: label, added: false };
+      }
+    }
+  }
+
+  let siteList = [];
+  for (let siteName of currentOptionsSiteList) {
+    let site = siteNameToSiteLabel[siteName];
+    if (site) {
+      siteList.push({ name: siteName, label: site.label });
+      site.added = true;
+    }
+  }
+  // if there are sites not stored in the options list yet then add them at the end
+  for (let siteName of Object.keys(siteNameToSiteLabel)) {
+    let site = siteNameToSiteLabel[siteName];
+    if (site) {
+      if (!site.added) {
+        siteList.push({ name: siteName, label: site.label });
+      }
+    }
+  }
+
+  for (let site of siteList) {
+    let listItem = document.createElement("li");
+    listItem.draggable = true;
+    listItem.className = "draggableListItem";
+    listItem.setAttribute("siteName", site.name);
+    let label = document.createElement("label");
+    let labelTextNode = document.createTextNode(site.label);
+    label.appendChild(labelTextNode);
+    listItem.appendChild(label);
+
+    // add a draggable icon
+    let draggableIconDiv = document.createElement("div");
+    draggableIconDiv.className = "draggableIcon";
+    for (let i = 0; i < 3; i++) {
+      let draggableIconBar = document.createElement("span");
+      draggableIconBar.className = "draggableIconBar";
+      draggableIconDiv.appendChild(draggableIconBar);
+    }
+    listItem.appendChild(draggableIconDiv);
+
+    element.appendChild(listItem);
+  }
+}
+
 async function restoreOptionsGivenOptions(inputOptions) {
   replaceCachedOptions(inputOptions);
   let optionsRegistry = await getOptionsRegistry();
@@ -44,95 +106,7 @@ async function restoreOptionsGivenOptions(inputOptions) {
       if (option.type == "checkbox") {
         element.checked = options[fullOptionName];
       } else if (option.type == "siteListDraggable") {
-        let currentOptionsSiteList = options[fullOptionName];
-
-        let siteNameToSiteLabel = {};
-        let tab = undefined;
-        for (let thisTab of optionsRegistry.tabs) {
-          if (thisTab.name == "search") {
-            tab = thisTab;
-          }
-        }
-        if (tab) {
-          for (let subsection of tab.subsections) {
-            let name = subsection.name;
-            let label = subsection.label;
-            if (name != "general") {
-              siteNameToSiteLabel[name] = { label: label, added: false };
-            }
-          }
-        }
-
-        let siteList = [];
-        for (let siteName of currentOptionsSiteList) {
-          let site = siteNameToSiteLabel[siteName];
-          if (site) {
-            siteList.push({ name: siteName, label: site.label });
-            site.added = true;
-          }
-        }
-        // if there are sites not stored in the options list yet then add them at the end
-        for (let siteName of Object.keys(siteNameToSiteLabel)) {
-          let site = siteNameToSiteLabel[siteName];
-          if (site) {
-            if (!site.added) {
-              siteList.push({ name: siteName, label: site.label });
-            }
-          }
-        }
-
-        for (let site of siteList) {
-          let listItem = document.createElement("li");
-          listItem.draggable = true;
-          listItem.className = "draggableListItem";
-          listItem.setAttribute("siteName", site.name);
-          let label = document.createElement("label");
-          let labelTextNode = document.createTextNode(site.label);
-          label.appendChild(labelTextNode);
-
-          /*
-            This introduces the idea that one option can need updating when another option changes
-            We don't currently support this.
-
-          let includedOnTopMenuOption = options["search_" + site.name + "_popup_includeOnTopMenu"];
-          let includedOnSubmenuOption = options["search_" + site.name + "_popup_includeOnSubmenu"];
-          let includedOnTopMenu = includedOnTopMenuOption === undefined || includedOnTopMenuOption ? true : false;
-          let includedOnSubmenu = includedOnSubmenuOption === undefined || includedOnSubmenuOption ? true : false;
-          if (!includedOnTopMenu || !includedOnSubmenu) {
-            let breakElement = document.createElement("br");
-            label.appendChild(breakElement);
-            let message = "";
-            if (!includedOnTopMenu) {
-              if (includedOnSubmenu) {
-                message = "Not included on top menu";
-              } else {
-                message = "Not included on top menu or submenu";
-              }
-            } else {
-              message = "Not included on submenu";
-            }
-            let commentTextNode = document.createTextNode(message);
-            let commentLabel = document.createElement("label");
-            commentLabel.appendChild(commentTextNode);
-            commentLabel.className = "draggableListItemComment";
-            label.appendChild(commentLabel);
-          }
-            */
-
-          listItem.appendChild(label);
-
-          // add a draggable icon
-          let draggableIconDiv = document.createElement("div");
-          draggableIconDiv.className = "draggableIcon";
-          for (let i = 0; i < 3; i++) {
-            let draggableIconBar = document.createElement("span");
-            draggableIconBar.className = "draggableIconBar";
-            draggableIconDiv.appendChild(draggableIconBar);
-          }
-          listItem.appendChild(draggableIconDiv);
-
-          element.appendChild(listItem);
-        }
+        restoreSiteListDraggable(element, fullOptionName, optionsRegistry);
       } else {
         element.value = options[fullOptionName];
       }
