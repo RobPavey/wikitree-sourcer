@@ -158,7 +158,7 @@ function registerSiteSearchPopupOptionsGroup(siteName) {
         label: "Include the search menu item for this site on the top-level popup menu",
         defaultValue: true,
         comment:
-          "NOTE: The search menu item may not be shown depending on 'General' options like max items and priority order",
+          "NOTE: The search menu item may not be shown depending on 'General' options like filters, max items and priority order",
       },
       {
         optionName: "popup_includeOnSubmenu",

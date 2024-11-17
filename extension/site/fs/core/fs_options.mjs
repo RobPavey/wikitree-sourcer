@@ -233,7 +233,7 @@ const buildAllCitationsOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "fs", "FamilySearch");
-registerSiteSearchPopupOptionsGroup("fs", 3, 3);
+registerSiteSearchPopupOptionsGroup("fs");
 registerSubheadingForOptions("search", "fs", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

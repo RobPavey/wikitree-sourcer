@@ -124,6 +124,6 @@ const searchOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "wikitree", "WikiTree");
-registerSiteSearchPopupOptionsGroup("wikitree", 4, 4);
+registerSiteSearchPopupOptionsGroup("wikitree");
 registerSubheadingForOptions("search", "wikitree", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);

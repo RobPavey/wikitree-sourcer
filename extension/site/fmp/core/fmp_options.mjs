@@ -117,7 +117,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "fmp", "FindMyPast");
-registerSiteSearchPopupOptionsGroup("fmp", 2, 2);
+registerSiteSearchPopupOptionsGroup("fmp");
 registerSubheadingForOptions("search", "fmp", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

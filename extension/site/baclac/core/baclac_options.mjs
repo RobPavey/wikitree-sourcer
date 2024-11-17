@@ -37,7 +37,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "baclac", "Library and Archives Canada");
-registerSiteSearchPopupOptionsGroup("baclac", 7, 7);
+registerSiteSearchPopupOptionsGroup("baclac");
 
 registerSubsectionForOptions("citation", "baclac", "Library and Archives Canada");
 registerOptionsGroup(citationOptionsGroup);

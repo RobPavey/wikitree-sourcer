@@ -79,7 +79,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "taslib", "Libraries Tasmania");
-registerSiteSearchPopupOptionsGroup("taslib", 7, 7);
+registerSiteSearchPopupOptionsGroup("taslib");
 registerSubheadingForOptions("search", "taslib", "parameters", "Search Parameters");
 registerOptionsGroup(searchParametersOptionsGroup);
 

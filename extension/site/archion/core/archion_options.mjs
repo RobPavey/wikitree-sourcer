@@ -37,7 +37,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "archion", "Archion");
-registerSiteSearchPopupOptionsGroup("archion", 7, 7);
+registerSiteSearchPopupOptionsGroup("archion");
 
 registerSubsectionForOptions("citation", "archion", "Archion");
 registerOptionsGroup(citationOptionsGroup);

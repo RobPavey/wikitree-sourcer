@@ -112,7 +112,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "cwgc", "Commonwealth War Graves Commission");
-registerSiteSearchPopupOptionsGroup("cwgc", 10, 10);
+registerSiteSearchPopupOptionsGroup("cwgc");
 registerSubheadingForOptions("search", "cwgc", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 registerSubsectionForOptions("citation", "cwgc", "Commonwealth War Graves Commission");

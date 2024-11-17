@@ -57,7 +57,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "psuk", "Probate Search/Find A Will (UK)");
-registerSiteSearchPopupOptionsGroup("psuk", 7, 7);
+registerSiteSearchPopupOptionsGroup("psuk");
 
 registerSubsectionForOptions("citation", "psuk", "Probate Search/Find A Will (UK)");
 registerOptionsGroup(citationOptionsGroup);

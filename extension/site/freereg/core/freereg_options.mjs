@@ -91,7 +91,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "freereg", "FreeReg (UK)");
-registerSiteSearchPopupOptionsGroup("freereg", 8, 8);
+registerSiteSearchPopupOptionsGroup("freereg");
 registerSubheadingForOptions("search", "freereg", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

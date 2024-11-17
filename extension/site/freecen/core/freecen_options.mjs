@@ -123,7 +123,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "freecen", "FreeCen (UK)");
-registerSiteSearchPopupOptionsGroup("freecen", 6, 6);
+registerSiteSearchPopupOptionsGroup("freecen");
 registerSubheadingForOptions("search", "freecen", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

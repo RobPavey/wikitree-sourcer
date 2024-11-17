@@ -116,7 +116,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "noda", "Digitalarkivet (Norway)");
-registerSiteSearchPopupOptionsGroup("noda", 7, 7);
+registerSiteSearchPopupOptionsGroup("noda");
 registerSubheadingForOptions("search", "noda", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

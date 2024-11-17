@@ -161,7 +161,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "vicbdm", "Victoria BDM (Aus)");
-registerSiteSearchPopupOptionsGroup("vicbdm", 7, 7);
+registerSiteSearchPopupOptionsGroup("vicbdm");
 registerSubheadingForOptions("search", "vicbdm", "behavior", "Search Behavior");
 registerOptionsGroup(searchBehaviorOptionsGroup);
 registerSubheadingForOptions("search", "vicbdm", "parameters", "Search Parameters");

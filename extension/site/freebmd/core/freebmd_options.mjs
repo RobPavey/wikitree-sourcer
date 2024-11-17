@@ -56,7 +56,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "freebmd", "FreeBMD (UK)");
-registerSiteSearchPopupOptionsGroup("freebmd", 7, 7);
+registerSiteSearchPopupOptionsGroup("freebmd");
 
 registerSubsectionForOptions("citation", "freebmd", "FreeBMD (UK)");
 registerOptionsGroup(citationOptionsGroup);

@@ -28,4 +28,4 @@ import {
 } from "../../../base/core/options/options_registry.mjs";
 
 registerSubsectionForOptions("search", "geneteka", "Geneteka");
-registerSiteSearchPopupOptionsGroup("geneteka", 7, 7);
+registerSiteSearchPopupOptionsGroup("geneteka");

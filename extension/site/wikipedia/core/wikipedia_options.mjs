@@ -140,7 +140,7 @@ const buildLinkOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "wikipedia", "Wikipedia");
-registerSiteSearchPopupOptionsGroup("wikipedia", 10, 10);
+registerSiteSearchPopupOptionsGroup("wikipedia");
 
 registerSubsectionForOptions("citation", "wikipedia", "Wikipedia");
 registerSubheadingForOptions("citation", "wikipedia", "citation", "When building a citation");

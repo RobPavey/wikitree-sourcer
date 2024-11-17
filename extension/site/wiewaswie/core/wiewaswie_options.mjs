@@ -89,7 +89,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "wiewaswie", "WieWasWie (NL)");
-registerSiteSearchPopupOptionsGroup("wiewaswie", 7, 7);
+registerSiteSearchPopupOptionsGroup("wiewaswie");
 registerSubheadingForOptions("search", "wiewaswie", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

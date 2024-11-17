@@ -68,7 +68,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "ppnz", "Papers Past (NZ)");
-registerSiteSearchPopupOptionsGroup("ppnz", 12, 12);
+registerSiteSearchPopupOptionsGroup("ppnz");
 
 registerSubheadingForOptions("search", "ppnz", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);

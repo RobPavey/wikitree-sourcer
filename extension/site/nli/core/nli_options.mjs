@@ -37,7 +37,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "nli", "National Library of Ireland");
-registerSiteSearchPopupOptionsGroup("nli", 7, 7);
+registerSiteSearchPopupOptionsGroup("nli");
 
 registerSubsectionForOptions("citation", "nli", "National Library of Ireland");
 registerOptionsGroup(citationOptionsGroup);

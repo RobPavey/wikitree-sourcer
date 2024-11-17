@@ -37,7 +37,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "hathi", "HathiTrust");
-registerSiteSearchPopupOptionsGroup("hathi", 10, 10);
+registerSiteSearchPopupOptionsGroup("hathi");
 
 registerSubsectionForOptions("citation", "hathi", "HathiTrust");
 registerOptionsGroup(citationOptionsGroup);

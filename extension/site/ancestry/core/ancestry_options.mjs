@@ -181,7 +181,7 @@ const buildAllCitationsOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "ancestry", "Ancestry");
-registerSiteSearchPopupOptionsGroup("ancestry", 1, 1);
+registerSiteSearchPopupOptionsGroup("ancestry");
 registerSubheadingForOptions("search", "ancestry", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

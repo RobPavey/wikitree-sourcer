@@ -118,7 +118,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "nswbdm", "New South Wales BDM (Aus)");
-registerSiteSearchPopupOptionsGroup("nswbdm", 4, 4);
+registerSiteSearchPopupOptionsGroup("nswbdm");
 registerSubheadingForOptions("search", "nswbdm", "behavior", "Search Behavior");
 registerOptionsGroup(searchBehaviorOptionsGroup);
 registerSubheadingForOptions("search", "nswbdm", "parameters", "Search Parameters");

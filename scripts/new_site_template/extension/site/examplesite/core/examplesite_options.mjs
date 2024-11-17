@@ -37,7 +37,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "examplesite", "ExampleSite");
-registerSiteSearchPopupOptionsGroup("examplesite", 7, 7);
+registerSiteSearchPopupOptionsGroup("examplesite");
 
 registerSubsectionForOptions("citation", "examplesite", "ExampleSite");
 registerOptionsGroup(citationOptionsGroup);

@@ -85,7 +85,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "gro", "GRO (UK)");
-registerSiteSearchPopupOptionsGroup("gro", 5, 5);
+registerSiteSearchPopupOptionsGroup("gro");
 registerSubheadingForOptions("search", "gro", "features", "Search Features");
 registerOptionsGroup(searchOptionsGroup);
 

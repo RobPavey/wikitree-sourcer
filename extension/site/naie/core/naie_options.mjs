@@ -37,7 +37,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "naie", "National Archives of Ireland");
-registerSiteSearchPopupOptionsGroup("naie", 7, 7);
+registerSiteSearchPopupOptionsGroup("naie");
 
 registerSubsectionForOptions("citation", "naie", "National Archives of Ireland");
 registerOptionsGroup(citationOptionsGroup);

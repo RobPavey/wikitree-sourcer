@@ -44,7 +44,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "archive", "Internet Archive");
-registerSiteSearchPopupOptionsGroup("archive", 7, 7);
+registerSiteSearchPopupOptionsGroup("archive");
 
 registerSubsectionForOptions("citation", "archive", "Internet Archive");
 registerOptionsGroup(citationOptionsGroup);

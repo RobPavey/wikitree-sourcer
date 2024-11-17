@@ -37,7 +37,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "nzash", "NZ Ancestor Search Helper");
-registerSiteSearchPopupOptionsGroup("nzash", 7, 7);
+registerSiteSearchPopupOptionsGroup("nzash");
 
 registerSubsectionForOptions("citation", "nzash", "NZ Ancestor Search Helper");
 registerOptionsGroup(citationOptionsGroup);

@@ -87,7 +87,7 @@ const citationApiSourceRefOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "openarch", "Open Archives (NL)");
-registerSiteSearchPopupOptionsGroup("openarch", 7, 7);
+registerSiteSearchPopupOptionsGroup("openarch");
 
 registerSubsectionForOptions("citation", "openarch", "Open Archives (NL)");
 registerSubheadingForOptions("citation", "openarch", "api", "When generating 'source reference' from API");

@@ -74,7 +74,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "trove", "Trove (Aus)");
-registerSiteSearchPopupOptionsGroup("trove", 12, 12);
+registerSiteSearchPopupOptionsGroup("trove");
 registerSubheadingForOptions("search", "trove", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

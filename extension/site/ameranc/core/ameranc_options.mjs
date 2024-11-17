@@ -63,7 +63,7 @@ const searchParametersOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "ameranc", "American Ancestors");
-registerSiteSearchPopupOptionsGroup("ameranc", 7, 7);
+registerSiteSearchPopupOptionsGroup("ameranc");
 registerSubheadingForOptions("search", "ameranc", "parameters", "Search Parameters");
 registerOptionsGroup(searchParametersOptionsGroup);
 

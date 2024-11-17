@@ -71,7 +71,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "gbooks", "Google Books");
-registerSiteSearchPopupOptionsGroup("gbooks", 10, 10);
+registerSiteSearchPopupOptionsGroup("gbooks");
 
 registerSubsectionForOptions("citation", "gbooks", "Google Books");
 registerOptionsGroup(citationOptionsGroup);

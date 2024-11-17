@@ -211,7 +211,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "scotp", "ScotlandsPeople");
-registerSiteSearchPopupOptionsGroup("scotp", 7, 7);
+registerSiteSearchPopupOptionsGroup("scotp");
 registerSubheadingForOptions("search", "scotp", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

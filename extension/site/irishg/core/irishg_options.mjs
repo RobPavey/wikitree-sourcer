@@ -102,7 +102,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "irishg", "IrishGenealogy.ie");
-registerSiteSearchPopupOptionsGroup("irishg", 7, 7);
+registerSiteSearchPopupOptionsGroup("irishg");
 registerSubheadingForOptions("search", "irishg", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

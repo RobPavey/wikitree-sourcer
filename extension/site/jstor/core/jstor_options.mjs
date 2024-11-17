@@ -37,7 +37,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "jstor", "JSTOR");
-registerSiteSearchPopupOptionsGroup("jstor", 7, 7);
+registerSiteSearchPopupOptionsGroup("jstor");
 
 registerSubsectionForOptions("citation", "jstor", "JSTOR");
 registerOptionsGroup(citationOptionsGroup);

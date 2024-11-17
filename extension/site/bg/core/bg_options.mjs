@@ -145,7 +145,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "bg", "BillionGraves");
-registerSiteSearchPopupOptionsGroup("bg", 10, 10);
+registerSiteSearchPopupOptionsGroup("bg");
 registerSubheadingForOptions("search", "bg", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 

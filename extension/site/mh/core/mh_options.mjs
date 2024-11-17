@@ -37,7 +37,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "mh", "MyHeritage");
-registerSiteSearchPopupOptionsGroup("mh", 7, 7);
+registerSiteSearchPopupOptionsGroup("mh");
 
 registerSubsectionForOptions("citation", "mh", "MyHeritage");
 registerOptionsGroup(citationOptionsGroup);

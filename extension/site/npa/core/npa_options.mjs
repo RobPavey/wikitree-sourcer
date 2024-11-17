@@ -50,7 +50,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "npa", "NewspaperArchive");
-registerSiteSearchPopupOptionsGroup("npa", 7, 7);
+registerSiteSearchPopupOptionsGroup("npa");
 
 registerSubsectionForOptions("citation", "npa", "NewspaperArchive");
 registerOptionsGroup(citationOptionsGroup);

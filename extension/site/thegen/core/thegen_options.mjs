@@ -62,7 +62,7 @@ const citationOptionsGroup = {
 };
 
 registerSubsectionForOptions("search", "thegen", "The Genealogist");
-registerSiteSearchPopupOptionsGroup("thegen", 7, 7);
+registerSiteSearchPopupOptionsGroup("thegen");
 registerSubheadingForOptions("search", "thegen", "parameters", "Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 
