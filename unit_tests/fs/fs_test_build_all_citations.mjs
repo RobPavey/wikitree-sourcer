@@ -276,6 +276,10 @@ const regressionData = [
     url: "https://www.familysearch.org/tree/person/sources/KH6D-7G5",
   },
   {
+    caseName: "khm4_p78_abner_yoder",
+    url: "https://www.familysearch.org/tree/person/details/KHM4-PY8",
+  },
+  {
     caseName: "l231_r8m_harry_pavey",
     url: "https://www.familysearch.org/tree/person/details/L231-R8M",
     optionVariants: [

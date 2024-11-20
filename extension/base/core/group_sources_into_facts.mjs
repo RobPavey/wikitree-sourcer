@@ -436,7 +436,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
     let nameARemainder = fullNameA;
     let nameBRemainder = fullNameB;
 
-    if (lastNamesMatch) {
+    if (lastNamesMatch && lastNameA && lastNameB) {
       nameARemainder = nameARemainder.substring(0, nameARemainder.length - lastNameA.length);
       nameBRemainder = nameBRemainder.substring(0, nameBRemainder.length - lastNameB.ength);
     } else if (/^.+ \w+ or \w+$/.test(fullNameA)) {
@@ -509,7 +509,7 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
       if (lastNameB1 && lastNameB2) {
         let lastNameA = nameObjA.inferLastName();
 
-        if (lastNameA == lastNameB1 || lastNameA == lastNameB2) {
+        if (lastNameA && (lastNameA == lastNameB1 || lastNameA == lastNameB2)) {
           lastNamesMatch = true;
           mergedLastName = lastNameB1 + " or " + lastNameB2;
           nameARemainder = fullNameA.substring(0, fullNameA.length - lastNameA.length);
