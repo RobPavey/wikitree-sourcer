@@ -543,6 +543,16 @@ const imageRegressionData = [
     url: "https://www.familysearch.org/ark:/61903/3:1:S3HY-6YKS-D9X?i=101&cc=2020117",
   },
   {
+    // saved Nov 2024, language set to "English"
+    caseName: "image_nl_lutjebroek_dtb_en",
+    url: "https://www.familysearch.org/ark:/61903/3:1:3QS7-L9QV-1HGC?cat=291201&i=4",
+  },
+  {
+    // saved Nov 2024, language set to "Nederlands"
+    caseName: "image_nl_lutjebroek_dtb_nl",
+    url: "https://www.familysearch.org/ark:/61903/3:1:3QS7-L9QV-1HGC?cat=291201&i=4",
+  },
+  {
     // Note: I had to edit the saved .html file for many errors.
     caseName: "image_us_al_land_deed",
     url: "https://www.familysearch.org/search/catalog/549079?availability=Family%20History%20Library",

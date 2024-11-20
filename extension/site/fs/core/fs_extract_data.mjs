@@ -243,6 +243,10 @@ function extractDataForImageInNewViewer(document, result) {
   } else {
     // newer format is different
     let wayFindingLink1 = mainNode.querySelector("nav[aria-label='Waypoints'] a[wayfinding]");
+    if (!wayFindingLink1) {
+      // can't rely on aria-label as it changes with language
+      wayFindingLink1 = mainNode.querySelector("nav a[wayfinding]");
+    }
     if (wayFindingLink1) {
       let title = wayFindingLink1.textContent.trim();
       if (title) {
@@ -253,6 +257,10 @@ function extractDataForImageInNewViewer(document, result) {
     let browsePathElements = mainNode.querySelectorAll(
       "nav[aria-label='Waypoints'] > div > div > div > div > div > div > div > div > p"
     );
+    if (browsePathElements.length == 0) {
+      // can't rely on aria-label as it changes with language
+      browsePathElements = mainNode.querySelectorAll("nav > div > div > div > div > div > div > div > div > p");
+    }
     if (browsePathElements.length > 1) {
       let browsePath = "";
       for (let index = 1; index < browsePathElements.length; index++) {
@@ -272,6 +280,10 @@ function extractDataForImageInNewViewer(document, result) {
   }
 
   let imageNumberInput = mainNode.querySelector("div input[aria-label='Enter Image number']");
+  if (!imageNumberInput) {
+    // can't rely on aria-label as it changes with language
+    imageNumberInput = mainNode.querySelector("div[inputbase='true'] > div > div > div > input");
+  }
   //console.log("imageNumberInput is:");
   //console.log(imageNumberInput);
   if (imageNumberInput) {
@@ -287,9 +299,24 @@ function extractDataForImageInNewViewer(document, result) {
       }
     }
 
+    if (!totalImagesPara) {
+      // because of language setings this is a better way
+      let zoomPanViewer = mainNode.querySelector("div[class*='zoomPanViewerHud']");
+      if (zoomPanViewer) {
+        let pageCellParas = zoomPanViewer.querySelectorAll("div[class^='cell'] > p");
+        if (pageCellParas.length == 2) {
+          totalImagesPara = pageCellParas[1];
+        }
+      }
+    }
+
     if (totalImagesPara) {
       let imageNumber = imageNumberInput.value;
       let totalImages = totalImagesPara.textContent.trim();
+      const totalImagesRegex = /^\w+\s+(\d+)$/;
+      if (totalImagesRegex.test(totalImages)) {
+        totalImages = totalImages.replace(totalImagesRegex, "$1");
+      }
 
       if (imageNumber && totalImages) {
         result.imageNumber = imageNumber;
