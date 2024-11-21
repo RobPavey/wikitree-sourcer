@@ -33,6 +33,147 @@ var searchResults = [];
 // the unsorted search results after applying user filters
 var userFilteredSearchResults = [];
 
+var showExportControls = false;
+
+function getDataHeadingsForResultsTable(extractedDataObjs) {
+  let possibleHeadings = [
+    { key: "eventYear", text: "Year" },
+    { key: "eventQuarter", text: "Quarter" },
+    { key: "lastName", text: "Surname" },
+    { key: "forenames", text: "Forenames" },
+    { key: "personGender", text: "Sex" },
+    { key: "mothersMaidenName", text: "MMN" },
+    { key: "ageAtDeath", text: "Age" },
+    { key: "birthYear", text: "Birth Year" },
+    { key: "registrationDistrict", text: "District" },
+  ];
+
+  let usedKeys = new Set();
+  for (let extractedData of extractedDataObjs) {
+    for (let heading of possibleHeadings) {
+      if (extractedData.hasOwnProperty(heading.key)) {
+        usedKeys.add(heading.key);
+      }
+    }
+  }
+
+  let headings = [];
+  for (let heading of possibleHeadings) {
+    if (usedKeys.has(heading.key)) {
+      headings.push(heading);
+    }
+  }
+
+  return headings;
+}
+
+function getFormattedDataValue(extractedData, heading) {
+  let hasKey = extractedData.hasOwnProperty(heading.key);
+
+  let value = "";
+  if (hasKey) {
+    value = extractedData[heading.key];
+
+    if (heading.key == "personGender") {
+      if (value == "male") {
+        value = "M";
+      } else if (value == "female") {
+        value = "F";
+      }
+    } else if (heading.key == "eventQuarter") {
+      if (value == 1) {
+        value = "Jan-Feb-Mar";
+      } else if (value == 2) {
+        value = "Apr-May-Jun";
+      } else if (value == 3) {
+        value = "Jul-Aug-Sep";
+      } else if (value == 4) {
+        value = "Oct-Nov-Dec";
+      }
+    }
+
+    if (extractedData[heading.key + "Implied"]) {
+      //value = "(" + value + ")";
+    }
+  }
+
+  return value;
+}
+
+async function exportTable(extractedDataObjs) {
+  let tableString = "";
+  const columnSeparator = ` ` + `||` + ` `;
+
+  const headingColor = "#E1F0B4";
+
+  tableString += `{|`;
+
+  tableString += ` border="1"`;
+  tableString += ` cellpadding="4"`;
+  tableString += ` width="100%"`;
+  tableString += `\n`;
+
+  tableString += `|- bgcolor=` + headingColor + `\n`;
+
+  let dataHeadings = getDataHeadingsForResultsTable(extractedDataObjs);
+
+  // create the heading row
+  let firstCol = true;
+  for (let heading of dataHeadings) {
+    if (firstCol) {
+      tableString += `| `;
+      firstCol = false;
+    } else {
+      tableString += columnSeparator;
+    }
+    let title = heading.text;
+    if (title) {
+      tableString += title;
+    }
+  }
+  tableString += `\n`;
+
+  for (let extractedData of extractedDataObjs) {
+    if (!extractedData.isSelectedForExport) {
+      continue;
+    }
+
+    tableString += `|-\n`;
+
+    let firstCol = true;
+    for (let heading of dataHeadings) {
+      if (firstCol) {
+        tableString += `| `;
+        firstCol = false;
+      } else {
+        tableString += columnSeparator;
+      }
+      let value = getFormattedDataValue(extractedData, heading);
+
+      if (value) {
+        if (heading.key == "registrationDistrict") {
+          if (extractedData.districtLink) {
+            value = "[" + extractedData.districtLink + " " + value + "]";
+          }
+        }
+
+        tableString += value;
+      }
+    }
+    firstCol = false;
+    tableString += `\n`;
+  }
+
+  tableString += `|}`;
+
+  // table string complete, save to clipboard
+  try {
+    await navigator.clipboard.writeText(tableString);
+  } catch (error) {
+    console.log("Clipboard write failed.");
+  }
+}
+
 function compareExtractedData(a, b) {
   if (a.eventYear < b.eventYear) {
     return -1;
@@ -118,7 +259,7 @@ function openGroSearchInNewTab(extractedData) {
 
   let url = buildGroSearchUrl(extractedData);
 
-  // we could use options to decide whether to opren in new tab or window etc
+  // we could use options to decide whether to open in new tab or window etc
   // currently don't have options loaded in this tab
   chrome.tabs.create({ url: url });
 }
@@ -142,26 +283,7 @@ function clearResultsTable(showPlaceholder) {
 }
 
 function fillTable(extractedDataObjs) {
-  let possibleHeadings = [
-    { key: "eventYear", text: "Year" },
-    { key: "eventQuarter", text: "Quarter" },
-    { key: "lastName", text: "Surname" },
-    { key: "forenames", text: "Forenames" },
-    { key: "personGender", text: "Sex" },
-    { key: "mothersMaidenName", text: "MMN" },
-    { key: "ageAtDeath", text: "Age" },
-    { key: "birthYear", text: "Birth Year" },
-    { key: "registrationDistrict", text: "District" },
-  ];
-
-  let usedKeys = new Set();
-  for (let extractedData of extractedDataObjs) {
-    for (let heading of possibleHeadings) {
-      if (extractedData.hasOwnProperty(heading.key)) {
-        usedKeys.add(heading.key);
-      }
-    }
-  }
+  let dataHeadings = getDataHeadingsForResultsTable(extractedDataObjs);
 
   // empty existing table
   clearResultsTable();
@@ -209,14 +331,19 @@ function fillTable(extractedDataObjs) {
   headerElement.className = "tableHeader";
   fragment.appendChild(headerElement);
 
-  for (let heading of possibleHeadings) {
-    if (usedKeys.has(heading.key)) {
-      let headingText = heading.text;
-      let thElement = document.createElement("th");
-      thElement.innerText = headingText;
-      thElement.className = "resultsTableHeaderCell";
-      headerElement.appendChild(thElement);
-    }
+  if (showExportControls) {
+    let thElement = document.createElement("th");
+    thElement.innerText = "Export";
+    thElement.className = "resultsTableHeaderCell";
+    headerElement.appendChild(thElement);
+  }
+
+  for (let heading of dataHeadings) {
+    let headingText = heading.text;
+    let thElement = document.createElement("th");
+    thElement.innerText = headingText;
+    thElement.className = "resultsTableHeaderCell";
+    headerElement.appendChild(thElement);
   }
 
   // add column for go to GRO
@@ -236,39 +363,22 @@ function fillTable(extractedDataObjs) {
     rowElement.className = "resultsTableDataRow";
     bodyElement.appendChild(rowElement);
 
-    for (let heading of possibleHeadings) {
-      if (!usedKeys.has(heading.key)) {
-        continue;
-      }
+    if (showExportControls) {
+      // add checkbox to export
+      let tdElement = document.createElement("td");
+      tdElement.className = "resultsTableDataCell";
+      rowElement.appendChild(tdElement);
+      let checkboxElement = document.createElement("input");
+      checkboxElement.type = "checkbox";
+      checkboxElement.checked = extractedData.isSelectedForExport ? true : false;
+      tdElement.appendChild(checkboxElement);
+      checkboxElement.addEventListener("change", function () {
+        extractedData.isSelectedForExport = this.checked;
+      });
+    }
 
-      let hasKey = extractedData.hasOwnProperty(heading.key);
-
-      let value = "";
-      if (hasKey) {
-        value = extractedData[heading.key];
-
-        if (heading.key == "personGender") {
-          if (value == "male") {
-            value = "M";
-          } else if (value == "female") {
-            value = "F";
-          }
-        } else if (heading.key == "eventQuarter") {
-          if (value == 1) {
-            value = "Jan-Feb-Mar";
-          } else if (value == 2) {
-            value = "Apr-May-Jun";
-          } else if (value == 3) {
-            value = "Jul-Aug-Sep";
-          } else if (value == 4) {
-            value = "Oct-Nov-Dec";
-          }
-        }
-
-        if (extractedData[heading.key + "Implied"]) {
-          //value = "(" + value + ")";
-        }
-      }
+    for (let heading of dataHeadings) {
+      let value = getFormattedDataValue(extractedData, heading);
 
       let linkText = "";
       if (heading.key == "registrationDistrict" && value) {
@@ -311,6 +421,36 @@ function fillTable(extractedDataObjs) {
   }
 
   tableElement.appendChild(fragment);
+
+  // export controls
+  let exportControlsElement = document.createElement("div");
+  containerElement.appendChild(exportControlsElement);
+  exportControlsElement.className = "exportControls";
+
+  let showExportControlsCheckbox = document.createElement("input");
+  showExportControlsCheckbox.type = "checkbox";
+  showExportControlsCheckbox.id = "showExportControlsCheckbox";
+  showExportControlsCheckbox.checked = showExportControls;
+  exportControlsElement.appendChild(showExportControlsCheckbox);
+  showExportControlsCheckbox.addEventListener("change", function () {
+    showExportControls = this.checked;
+    fillTable(extractedDataObjs);
+  });
+
+  let showExportControlsLabel = document.createElement("label");
+  showExportControlsLabel.innerText = "Show export controls";
+  showExportControlsLabel.htmlFor = "showExportControlsCheckbox";
+  exportControlsElement.appendChild(showExportControlsLabel);
+
+  if (showExportControls) {
+    let exportButton = document.createElement("button");
+    exportButton.id = "exportButton";
+    exportButton.innerText = "Export";
+    exportControlsElement.appendChild(exportButton);
+    exportButton.addEventListener("click", function () {
+      exportTable(extractedDataObjs);
+    });
+  }
 }
 
 function addDistrictLinksToResults(searchResults) {
