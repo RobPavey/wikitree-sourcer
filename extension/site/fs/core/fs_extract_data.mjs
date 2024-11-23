@@ -3287,7 +3287,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
   let dataObj = dataObjects.dataObj;
 
   // This is messy. I previously just checked if a document existed and if so saved the URL.
-  // That caused problems in the rare cases in the unit tests where there is bot a fetch object
+  // That caused problems in the rare cases in the unit tests where there is both a fetch object
   // and a saved page (document). It was saving a local file path URL to the ref files which
   // meant that the unit tests faled on a different machine. In this case the url is passed in
   // by the unit tests. So if there is a url then do not use the document url.
@@ -3303,7 +3303,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
     return extractPersonDataFromFetch(result, document, dataObj, options);
   }
 
-  // There seem to be somethings that cannot be determined solely from the fect data,
+  // There seem to be some things that cannot be determined solely from the fact data,
   // if we have the document as well we can try to use that to get the correct values from the
   // fetch data.
   // An example is the event place for https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y

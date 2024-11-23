@@ -221,6 +221,11 @@ const regressionData = [
     ],
   },
   {
+    // Strange location was created for birth - includes person name in place name
+    caseName: "9jr5_db1_mary_carrington",
+    url: "https://www.familysearch.org/tree/person/details/9JR5-DB1",
+  },
+  {
     // Hungarian. Has last name first in profile
     caseName: "gzlh_57h_trnik_janos",
     url: "https://www.familysearch.org/tree/person/details/GZLH-57H",
