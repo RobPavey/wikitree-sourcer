@@ -377,7 +377,7 @@ function determineRecordType(extractedData) {
     { type: RT.LandTax, matches: ["Land Tax Redemption", "Land Tax Records"] },
     {
       type: RT.Tax,
-      matches: ["Direct Tax Lists", "Tax and Exoneration", "Tax List Record", "Tax Record"],
+      matches: ["Direct Tax Lists", "Tax and Exoneration", "Tax List Record", "Tax Record", "Tax Assessment"],
     },
     { type: RT.Apprenticeship, matches: ["Apprentices' Indentures"] },
     { type: RT.Obituary, matches: ["Obituary", "Obituaries"] },
