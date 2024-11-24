@@ -49,13 +49,13 @@ const typeData = {
       brideMother: ["Moeder van de bruid"],
     },
     referenceKeys: {
-      "a2a:InstitutionName": "",
-      "a2a:Collection": "Collection",
-      "a2a:Archive": "Archive",
-      "a2a:RegistryNumber": "Inventory number",
-      "a2a:DocumentNumber": "Record number",
-      "a2a:Folio": "Folio",
-      "a2a:Book": "Book",
+      InstitutionName: "",
+      Collection: "Collection",
+      Archive: "Archive",
+      RegistryNumber: "Inventory number",
+      DocumentNumber: "Record number",
+      Folio: "Folio",
+      Book: "Book",
     },
   },
   "DTB Dopen": {
@@ -77,7 +77,7 @@ const typeData = {
       mother: ["Moeder van de bruidegom", "Moeder"],
     },
     referenceKeys: {
-      "a2a:Archive": "Access code",
+      Archive: "Access code",
     },
   },
   "DTB Begraven": {
@@ -154,7 +154,7 @@ const typeData = {
       primary: ["Overledene"],
     },
     referenceKeys: {
-      "a2a:Archive": "Access code",
+      Archive: "Access code",
     },
   },
 };
@@ -174,11 +174,14 @@ class OpenarchEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
-    if (ed.dataObj && ed.dataObj.A2A) {
+    if (ed.dataObj) {
       this.a2a = ed.dataObj.A2A;
+      if (!this.a2a) {
+        this.a2a = ed.dataObj;
+      }
 
-      this.a2aSourceType = this.extractSourceFieldByKey("a2a:SourceType");
-      this.a2aEventType = this.extractEventFieldByKey("a2a:EventType");
+      this.a2aSourceType = this.extractSourceFieldByKey("SourceType");
+      this.a2aEventType = this.extractEventFieldByKey("EventType");
 
       if (this.a2aSourceType) {
         this.typeData = typeData[this.a2aSourceType];
@@ -204,16 +207,26 @@ class OpenarchEdReader extends ExtractedDataReader {
   // Helper functions
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  extractA2aFieldByKey(object, key) {
+    if (object) {
+      let value = object[key];
+      if (!value) {
+        value = object["a2a:" + key];
+      }
+      return value;
+    }
+  }
+
   makeNameObjFromA2aName(a2aName) {
     // e.g. "a2a:PersonName": { "a2a:PersonNameFirstName": "Hendrik", "a2a:PersonNameLastName": "Goudemond" },
 
     if (a2aName) {
       let nameObj = new NameObj();
 
-      let firstName = a2aName["a2a:PersonNameFirstName"];
-      let lastNamePrefix = a2aName["a2a:PersonNamePrefixLastName"];
-      let patronym = a2aName["a2a:PersonNamePatronym"];
-      let lastName = a2aName["a2a:PersonNameLastName"];
+      let firstName = this.extractA2aFieldByKey(a2aName, "PersonNameFirstName");
+      let lastNamePrefix = this.extractA2aFieldByKey(a2aName, "PersonNamePrefixLastName");
+      let patronym = this.extractA2aFieldByKey(a2aName, "PersonNamePatronym");
+      let lastName = this.extractA2aFieldByKey(a2aName, "PersonNameLastName");
 
       if (firstName && firstName != "NN" && firstName != "N.N." && firstName != []) {
         nameObj.setForenames(firstName);
@@ -255,10 +268,10 @@ class OpenarchEdReader extends ExtractedDataReader {
     if (a2aName) {
       let fullName = "";
 
-      let firstName = a2aName["a2a:PersonNameFirstName"];
-      let lastNamePrefix = a2aName["a2a:PersonNamePrefixLastName"];
-      let patronym = a2aName["a2a:PersonNamePatronym"];
-      let lastName = a2aName["a2a:PersonNameLastName"];
+      let firstName = this.extractA2aFieldByKey(a2aName, "PersonNameFirstName");
+      let lastNamePrefix = this.extractA2aFieldByKey(a2aName, "PersonNamePrefixLastName");
+      let patronym = this.extractA2aFieldByKey(a2aName, "PersonNamePatronym");
+      let lastName = this.extractA2aFieldByKey(a2aName, "PersonNameLastName");
 
       if (firstName && firstName != "NN" && firstName != "N.N.") {
         fullName = firstName;
@@ -300,9 +313,9 @@ class OpenarchEdReader extends ExtractedDataReader {
   makeDateObjFromA2aDate(a2aDate) {
     // e.g.       "a2a:EventDate": { "a2a:Year": "1789", "a2a:Month": "8", "a2a:Day": "14" },
     if (a2aDate) {
-      let day = a2aDate["a2a:Day"];
-      let month = a2aDate["a2a:Month"];
-      let year = a2aDate["a2a:Year"];
+      let day = this.extractA2aFieldByKey(a2aDate, "Day");
+      let month = this.extractA2aFieldByKey(a2aDate, "Month");
+      let year = this.extractA2aFieldByKey(a2aDate, "Year");
 
       let dayNum = 0;
       let monthNum = 0;
@@ -342,9 +355,9 @@ class OpenarchEdReader extends ExtractedDataReader {
   makePlaceObjFromA2aPlace(a2aPlace) {
     // e.g.       "a2a:EventDate": { "a2a:Year": "1789", "a2a:Month": "8", "a2a:Day": "14" },
     if (a2aPlace) {
-      let place = a2aPlace["a2a:Place"];
-      let province = a2aPlace["a2a:Province"];
-      let country = a2aPlace["a2a:Country"];
+      let place = this.extractA2aFieldByKey(a2aPlace, "Place");
+      let province = this.extractA2aFieldByKey(a2aPlace, "Province");
+      let country = this.extractA2aFieldByKey(a2aPlace, "Country");
 
       let placeString = "";
 
@@ -388,9 +401,9 @@ class OpenarchEdReader extends ExtractedDataReader {
 
   ageFromA2aAge(a2aAge) {
     if (a2aAge) {
-      let age = a2aAge["a2a:PersonAgeYears"];
+      let age = this.extractA2aFieldByKey(a2aAge, "PersonAgeYears");
       if (!age) {
-        age = a2aAge["a2a:PersonAgeLiteral"];
+        age = this.extractA2aFieldByKey(a2aAge, "PersonAgeLiteral");
       }
       if (age) {
         age = age.replace(/ jaar$/, "");
@@ -407,41 +420,43 @@ class OpenarchEdReader extends ExtractedDataReader {
     if (father || mother) {
       let parents = {};
       if (father) {
+        let fatherName = this.extractA2aFieldByKey(father, "PersonName");
         parents.father = {};
-        parents.father.name = this.makeNameObjFromA2aName(father["a2a:PersonName"]);
+        parents.father.name = this.makeNameObjFromA2aName(fatherName);
       }
       if (mother) {
+        let motherName = this.extractA2aFieldByKey(mother, "PersonName");
         parents.mother = {};
-        parents.mother.name = this.makeNameObjFromA2aName(mother["a2a:PersonName"]);
+        parents.mother.name = this.makeNameObjFromA2aName(motherName);
       }
       return parents;
     }
   }
 
   extractEventFieldByKey(key) {
-    let event = this.a2a["a2a:Event"];
+    let event = this.extractA2aFieldByKey(this.a2a, "Event");
     if (event) {
-      return event[key];
+      return this.extractA2aFieldByKey(event, key);
     }
   }
 
   extractSourceFieldByKey(key) {
-    let source = this.a2a["a2a:Source"];
+    let source = this.extractA2aFieldByKey(this.a2a, "Source");
     if (source) {
-      return source[key];
+      return this.extractA2aFieldByKey(source, key);
     }
   }
 
   extractPersonFieldByKey(person, key) {
     if (person) {
-      return person[key];
+      return this.extractA2aFieldByKey(person, key);
     }
   }
 
   extractPrimaryPersonFieldByKey(key) {
     let person = this.findPrimaryPerson();
     if (person) {
-      return person[key];
+      return this.extractA2aFieldByKey(person, key);
     }
   }
 
@@ -449,10 +464,17 @@ class OpenarchEdReader extends ExtractedDataReader {
     let name = undefined;
     if (this.typeData && this.typeData.referenceKeys) {
       name = this.typeData.referenceKeys[key];
+
+      if (name === undefined) {
+        name = typeData.default.referenceKeys["a2a:" + key];
+      }
     }
 
     if (name === undefined) {
       name = typeData.default.referenceKeys[key];
+      if (name === undefined) {
+        name = typeData.default.referenceKeys["a2a:" + key];
+      }
     }
 
     if (name === undefined) {
@@ -473,18 +495,18 @@ class OpenarchEdReader extends ExtractedDataReader {
     }
     if (a2aRelationTypes) {
       for (let a2aRelationType of a2aRelationTypes) {
-        let relationshipArray = this.a2a["a2a:RelationEP"];
+        let relationshipArray = this.extractA2aFieldByKey(this.a2a, "RelationEP");
         if (relationshipArray) {
           if (Array.isArray(relationshipArray)) {
             for (let relation of relationshipArray) {
-              let type = relation["a2a:RelationType"];
+              let type = this.extractA2aFieldByKey(relation, "RelationType");
               if (type == a2aRelationType) {
                 return relation;
               }
             }
           } else {
             let relation = relationshipArray;
-            let type = relation["a2a:RelationType"];
+            let type = this.extractA2aFieldByKey(relation, "RelationType");
             if (type == a2aRelationType) {
               return relation;
             }
@@ -495,7 +517,7 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   findPersonById(pid) {
-    let personArray = this.a2a["a2a:Person"];
+    let personArray = this.extractA2aFieldByKey(this.a2a, "Person");
     if (personArray) {
       if (Array.isArray(personArray)) {
         for (let person of personArray) {
@@ -517,7 +539,7 @@ class OpenarchEdReader extends ExtractedDataReader {
   findPersonByRelationType(relationType) {
     let relation = this.findRelationshipByType(relationType);
     if (relation) {
-      let pid = relation["a2a:PersonKeyRef"];
+      let pid = this.extractA2aFieldByKey(relation, "PersonKeyRef");
       if (pid) {
         return this.findPersonById(pid);
       }
@@ -527,12 +549,12 @@ class OpenarchEdReader extends ExtractedDataReader {
   findPrimaryPerson() {
     let relation = this.findRelationshipByType(RelationType.primary);
     if (relation) {
-      let pid = relation["a2a:PersonKeyRef"];
+      let pid = this.extractA2aFieldByKey(relation, "PersonKeyRef");
       if (pid) {
         return this.findPersonById(pid);
       }
     } else {
-      let personArray = this.a2a["a2a:Person"];
+      let personArray = this.extractA2aFieldByKey(this.a2a, "Person");
       if (personArray) {
         if (Array.isArray(personArray)) {
           if (personArray && personArray.length > 0) {
@@ -562,7 +584,7 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    let a2aName = this.extractPrimaryPersonFieldByKey("a2a:PersonName");
+    let a2aName = this.extractPrimaryPersonFieldByKey("PersonName");
     return this.makeNameObjFromA2aName(a2aName);
   }
 
@@ -571,7 +593,7 @@ class OpenarchEdReader extends ExtractedDataReader {
       return this.typeData.fixedGender;
     }
 
-    let a2aGender = this.extractPrimaryPersonFieldByKey("a2a:Gender");
+    let a2aGender = this.extractPrimaryPersonFieldByKey("Gender");
     if (a2aGender == "Man") {
       return "male";
     } else if (a2aGender == "Vrouw") {
@@ -582,7 +604,7 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    let a2aDate = this.extractEventFieldByKey("a2a:EventDate");
+    let a2aDate = this.extractEventFieldByKey("EventDate");
 
     if (a2aDate && Object.keys(a2aDate).length > 0) {
       let dateObj = this.makeDateObjFromA2aDate(a2aDate);
@@ -591,7 +613,7 @@ class OpenarchEdReader extends ExtractedDataReader {
       }
     }
 
-    a2aDate = this.extractSourceFieldByKey("a2a:SourceDate");
+    a2aDate = this.extractSourceFieldByKey("SourceDate");
     if (a2aDate && Object.keys(a2aDate).length > 0) {
       let dateObj = this.makeDateObjFromA2aDate(a2aDate);
       if (dateObj) {
@@ -599,10 +621,10 @@ class OpenarchEdReader extends ExtractedDataReader {
       }
     }
 
-    let dateRange = this.extractSourceFieldByKey("a2a:SourceIndexDate");
+    let dateRange = this.extractSourceFieldByKey("SourceIndexDate");
     if (dateRange) {
-      let from = dateRange["a2a:From"];
-      let to = dateRange["a2a:To"];
+      let from = this.extractA2aFieldByKey(dateRange, "From");
+      let to = this.extractA2aFieldByKey(dateRange, "To");
       if (from && to) {
         let fromDateObj = this.makeDateObjFromYyyymmddDate(from, "-");
         let toDateObj = this.makeDateObjFromYyyymmddDate(to, "-");
@@ -618,9 +640,9 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getEventPlaceObj() {
-    let a2aPlace = this.extractEventFieldByKey("a2a:EventPlace");
+    let a2aPlace = this.extractEventFieldByKey("EventPlace");
     if (!a2aPlace) {
-      a2aPlace = this.extractSourceFieldByKey("a2a:SourcePlace");
+      a2aPlace = this.extractSourceFieldByKey("SourcePlace");
     }
     return this.makePlaceObjFromA2aPlace(a2aPlace);
   }
@@ -638,12 +660,12 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    let a2aDate = this.extractPrimaryPersonFieldByKey("a2a:BirthDate");
+    let a2aDate = this.extractPrimaryPersonFieldByKey("BirthDate");
     return this.makeDateObjFromA2aDate(a2aDate);
   }
 
   getBirthPlaceObj() {
-    let place = this.extractPrimaryPersonFieldByKey("a2a:BirthPlace");
+    let place = this.extractPrimaryPersonFieldByKey("BirthPlace");
     let placeObj = this.makePlaceObjFromA2aPlace(place);
     return placeObj;
   }
@@ -657,7 +679,7 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
-    let a2aAge = this.extractPrimaryPersonFieldByKey("a2a:Age");
+    let a2aAge = this.extractPrimaryPersonFieldByKey("Age");
     return this.ageFromA2aAge(a2aAge);
   }
 
@@ -678,7 +700,7 @@ class OpenarchEdReader extends ExtractedDataReader {
   }
 
   getOccupation() {
-    let profession = this.extractPrimaryPersonFieldByKey("a2a:Profession");
+    let profession = this.extractPrimaryPersonFieldByKey("Profession");
     return cleanOccupation(profession);
 
     return "";
@@ -687,9 +709,9 @@ class OpenarchEdReader extends ExtractedDataReader {
   getSpouses() {
     let bride = this.findPersonByRelationType(RelationType.bride);
     if (bride) {
-      let brideName = this.extractPersonFieldByKey(bride, "a2a:PersonName");
+      let brideName = this.extractPersonFieldByKey(bride, "PersonName");
       let spouseNameObj = this.makeNameObjFromA2aName(brideName);
-      let a2aAge = this.extractPersonFieldByKey(bride, "a2a:Age");
+      let a2aAge = this.extractPersonFieldByKey(bride, "Age");
       let age = this.ageFromA2aAge(a2aAge);
       let eventDateObj = this.getEventDateObj();
       let eventPlaceObj = this.getEventPlaceObj();
@@ -713,7 +735,7 @@ class OpenarchEdReader extends ExtractedDataReader {
     // for a death or burial or other records it can give the spouse
     let spouse = this.findPersonByRelationType(RelationType.spouse);
     if (spouse) {
-      let spouseName = this.extractPersonFieldByKey(spouse, "a2a:PersonName");
+      let spouseName = this.extractPersonFieldByKey(spouse, "PersonName");
       let spouseNameObj = this.makeNameObjFromA2aName(spouseName);
       let spouseObj = this.makeSpouseObj(spouseNameObj);
       return [spouseObj];
@@ -728,13 +750,13 @@ class OpenarchEdReader extends ExtractedDataReader {
 
   getHousehold() {
     if (this.a2aSourceType == "Bevolkingsregister") {
-      let personArray = this.a2a["a2a:Person"];
+      let personArray = this.extractA2aFieldByKey(this.a2a, "Person");
       if (personArray.length > 1) {
         let householdArray = [];
         let fields = ["name"];
 
         for (let person of personArray) {
-          let a2aName = this.extractPersonFieldByKey(person, "a2a:PersonName");
+          let a2aName = this.extractPersonFieldByKey(person, "PersonName");
           let name = this.makeFullNameFromA2aName(a2aName);
 
           if (name) {
@@ -749,7 +771,7 @@ class OpenarchEdReader extends ExtractedDataReader {
                     value = dateObj.getDateString();
                   }
                 } else if (type == "place") {
-                  let place = value["a2a:Place"];
+                  let place = reader.extractA2aFieldByKey(value, "Place");
                   if (place) {
                     value = place;
                   } else {
@@ -764,9 +786,9 @@ class OpenarchEdReader extends ExtractedDataReader {
               }
             }
 
-            addMemberField(this, "a2a:Profession", "profession");
-            addMemberField(this, "a2a:BirthDate", "birthDate", "date");
-            addMemberField(this, "a2a:BirthPlace", "birthPlace", "place");
+            addMemberField(this, "Profession", "profession");
+            addMemberField(this, "BirthDate", "birthDate", "date");
+            addMemberField(this, "BirthPlace", "birthPlace", "place");
 
             householdArray.push(householdMember);
           }
@@ -785,12 +807,12 @@ class OpenarchEdReader extends ExtractedDataReader {
     if (this.a2aSourceType) {
       let collectionData = { id: this.a2aSourceType };
 
-      let a2aName = this.extractPrimaryPersonFieldByKey("a2a:PersonName");
+      let a2aName = this.extractPrimaryPersonFieldByKey("PersonName");
       if (a2aName) {
-        let firstName = a2aName["a2a:PersonNameFirstName"];
-        let lastNamePrefix = a2aName["a2a:PersonNamePrefixLastName"];
-        let patronym = a2aName["a2a:PersonNamePatronym"];
-        let lastName = a2aName["a2a:PersonNameLastName"];
+        let firstName = this.extractA2aFieldByKey(a2aName, "PersonNameFirstName");
+        let lastNamePrefix = this.extractA2aFieldByKey(a2aName, "PersonNamePrefixLastName");
+        let patronym = this.extractA2aFieldByKey(a2aName, "PersonNamePatronym");
+        let lastName = this.extractA2aFieldByKey(a2aName, "PersonNameLastName");
 
         let nameParts = {};
         if (firstName) {
@@ -808,12 +830,12 @@ class OpenarchEdReader extends ExtractedDataReader {
         collectionData.nameParts = nameParts;
       }
 
-      let a2aPlace = this.extractEventFieldByKey("a2a:EventPlace");
+      let a2aPlace = this.extractEventFieldByKey("EventPlace");
       if (!a2aPlace) {
-        a2aPlace = this.extractSourceFieldByKey("a2a:SourcePlace");
+        a2aPlace = this.extractSourceFieldByKey("SourcePlace");
       }
       if (a2aPlace) {
-        let place = a2aPlace["a2a:Place"];
+        let place = this.extractA2aFieldByKey(a2aPlace, "Place");
         if (place) {
           collectionData.place = place;
         }
@@ -884,7 +906,7 @@ class OpenarchEdReader extends ExtractedDataReader {
       return this.ed.citationText;
     }
 
-    let reference = this.extractSourceFieldByKey("a2a:SourceReference");
+    let reference = this.extractSourceFieldByKey("SourceReference");
     if (!reference) {
       return "";
     }
@@ -892,12 +914,12 @@ class OpenarchEdReader extends ExtractedDataReader {
     let string = "";
 
     function addPart(reader, referenceKey) {
-      let value = reference[referenceKey];
+      let value = reader.extractA2aFieldByKey(reference, referenceKey);
 
       if (value) {
         let name = reader.getNameForReferenceKey(referenceKey);
 
-        if (referenceKey == "a2a:Collection") {
+        if (referenceKey == "Collection") {
           const prefix = "Archiefnaam: ";
           if (value.startsWith(prefix)) {
             value = value.substring(prefix.length);
@@ -918,21 +940,21 @@ class OpenarchEdReader extends ExtractedDataReader {
       }
     }
 
-    addPart(this, "a2a:InstitutionName");
-    addPart(this, "a2a:Collection");
+    addPart(this, "InstitutionName");
+    addPart(this, "Collection");
 
     if (options.citation_openarch_includeArchiveNumInSourceRef) {
-      addPart(this, "a2a:Archive");
+      addPart(this, "Archive");
     }
     if (options.citation_openarch_includeRegNumInSourceRef) {
-      addPart(this, "a2a:RegistryNumber");
+      addPart(this, "RegistryNumber");
     }
     if (options.citation_openarch_includeDocNumInSourceRef) {
-      addPart(this, "a2a:DocumentNumber");
+      addPart(this, "DocumentNumber");
     }
-    addPart(this, "a2a:Book");
+    addPart(this, "Book");
     if (options.citation_openarch_includeFolioNumInSourceRef) {
-      addPart(this, "a2a:Folio");
+      addPart(this, "Folio");
     }
     return string;
   }
@@ -943,15 +965,15 @@ class OpenarchEdReader extends ExtractedDataReader {
       text: "",
     };
 
-    let originalSourceLink = this.extractSourceFieldByKey("a2a:SourceDigitalOriginal");
+    let originalSourceLink = this.extractSourceFieldByKey("SourceDigitalOriginal");
 
     if (originalSourceLink) {
       externalLink.link = originalSourceLink;
 
       externalLink.text = "External Record";
-      let reference = this.extractSourceFieldByKey("a2a:SourceReference");
+      let reference = this.extractSourceFieldByKey("SourceReference");
       if (reference) {
-        let institution = reference["a2a:InstitutionName"];
+        let institution = this.extractA2aFieldByKey(reference, "InstitutionName");
         if (institution) {
           externalLink.text = institution + " Record";
         }
