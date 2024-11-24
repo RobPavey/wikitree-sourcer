@@ -161,6 +161,10 @@ div.exportControls {
   background: #2cb107;
 }
 
+.exportOption {
+  margin-left: 10px;
+}
+
 /****************
 Dialog
 *****************/

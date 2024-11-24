@@ -34,6 +34,10 @@ var searchResults = [];
 var userFilteredSearchResults = [];
 
 var showExportControls = false;
+var exportOptions = {
+  includeDistrictLink: true,
+  fullWidth: false,
+};
 
 function getDataHeadingsForResultsTable(extractedDataObjs) {
   let possibleHeadings = [
@@ -110,7 +114,11 @@ async function exportTable(extractedDataObjs) {
 
   tableString += ` border="1"`;
   tableString += ` cellpadding="4"`;
-  tableString += ` width="100%"`;
+
+  if (exportOptions.fullWidth) {
+    tableString += ` width="100%"`;
+  }
+
   tableString += `\n`;
 
   tableString += `|- bgcolor=` + headingColor + `\n`;
@@ -151,7 +159,7 @@ async function exportTable(extractedDataObjs) {
       let value = getFormattedDataValue(extractedData, heading);
 
       if (value) {
-        if (heading.key == "registrationDistrict") {
+        if (heading.key == "registrationDistrict" && exportOptions.includeDistrictLink) {
           if (extractedData.districtLink) {
             value = "[" + extractedData.districtLink + " " + value + "]";
           }
@@ -280,6 +288,26 @@ function clearResultsTable(showPlaceholder) {
     placeHolder.innerText = "The results table will appear here after a successful search.";
     containerElement.appendChild(placeHolder);
   }
+}
+
+function addExportOptionCheckbox(key, text, parent) {
+  let id = key + "Checkbox";
+
+  // district link option
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "exportOption";
+  checkbox.checked = exportOptions[key];
+  checkbox.id = id;
+  parent.appendChild(checkbox);
+  checkbox.addEventListener("change", function () {
+    exportOptions[key] = this.checked;
+  });
+
+  let label = document.createElement("label");
+  label.innerText = text;
+  label.htmlFor = id;
+  parent.appendChild(label);
 }
 
 function fillTable(extractedDataObjs) {
@@ -450,6 +478,9 @@ function fillTable(extractedDataObjs) {
     exportButton.addEventListener("click", function () {
       exportTable(extractedDataObjs);
     });
+
+    addExportOptionCheckbox("includeDistrictLink", "Include district links", exportControlsElement);
+    addExportOptionCheckbox("fullWidth", "Full width table", exportControlsElement);
   }
 }
 
