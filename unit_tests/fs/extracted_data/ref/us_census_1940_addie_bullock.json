@@ -18,7 +18,7 @@
   "eventDateOriginal": "1940",
   "eventDate": "1940",
   "eventYear": "1940",
-  "eventPlaceOriginal": "Pearl, Rankin, Mississippi, United States",
+  "eventPlaceOriginal": "Beat 2, Beat 2, East Jackson, Pearl, 61-8A, Rankin, Mississippi, United States",
   "eventPlace": "Pearl, Rankin, Mississippi, United States",
   "eventPlaceL2": "Rankin",
   "eventPlaceL1": "United States",
@@ -31,6 +31,7 @@
   "birthYear": "1909",
   "birthPlace": "Mississippi",
   "factType": "Census",
+  "residenceOriginal": "Brookhaven, Lincoln, Mississippi",
   "referenceData": {
     "sourceLineNbr": "56",
     "sheetLetter": "B",

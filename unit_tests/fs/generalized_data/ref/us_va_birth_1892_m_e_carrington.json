@@ -1,0 +1,52 @@
+{
+  "sourceType": "record",
+  "recordType": "Birth",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "M E Carrington",
+    "lastName": "Carrington",
+    "forenames": "M E"
+  },
+  "birthDate": {
+    "dateString": "Mar 1892",
+    "yearString": "1892"
+  },
+  "eventDate": {
+    "dateString": "Mar 1892",
+    "yearString": "1892"
+  },
+  "eventPlace": {
+    "placeString": "Smithville, Charlotte, Virginia, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "J. C. Carrington",
+        "forenames": "J. C.",
+        "lastName": "Carrington"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "M. E. Carrington",
+        "forenames": "M. E.",
+        "lastName": "Carrington"
+      }
+    }
+  },
+  "race": "White",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|6ZGV-DXJ4}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QHN-T3YN-TCNB}}",
+    "{{FamilySearch Record|6ZGV-DXJH}}",
+    "{{FamilySearch Record|6ZGV-DXJC}}"
+  ],
+  "collectionData": {
+    "id": "4231103",
+    "collectionTitle": "Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900"
+  },
+  "hasValidData": true
+}

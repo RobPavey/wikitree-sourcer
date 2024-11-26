@@ -1,0 +1,64 @@
+{
+  "recordData": {
+    "Name": "M. E. Carrington",
+    "Race": "White",
+    "Birth Date": "Mar 1892",
+    "Birth Place": "Carrington, Charles, Maryland, United States",
+    "Vis Status": "VISIBLE",
+    "Record Nbr": "3",
+    "System Of Record": "SLS"
+  },
+  "fullName": "M. E. Carrington",
+  "surname": "Carrington",
+  "givenName": "M. E.",
+  "gender": "female",
+  "factType": "Birth",
+  "eventDateOriginal": "Mar 1892",
+  "eventDate": "Mar 1892",
+  "eventYear": "1892",
+  "eventPlaceOriginal": "Carrington",
+  "eventPlace": "Smithville, Charlotte, Virginia, United States",
+  "eventPlaceL2": "Carrington",
+  "birthDateOriginal": "Mar 1892",
+  "birthDate": "Mar 1892",
+  "birthYear": "1892",
+  "mother": {
+    "fullName": "M. E. Carrington",
+    "surname": "Carrington",
+    "givenName": "M. E.",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:6ZGV-DXJC"
+  },
+  "father": {
+    "fullName": "J. C. Carrington",
+    "surname": "Carrington",
+    "givenName": "J. C.",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:6ZGV-DXJH"
+  },
+  "extData": "{\"FS_COLLECTION_ID\":\"4231103\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3QHN-T3YN-TCNB\"}",
+  "referenceData": {
+    "digitalFilmNumber": "107833282_001_M9VS-9X7",
+    "imageNumber": "368"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:4BZD-N9VK",
+  "collectionTitle": "Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900",
+  "fsCollectionId": "4231103",
+  "citation": "\"Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:6ZGV-DXJ4 : Fri Mar 08 20:59:55 UTC 2024), Entry for M. E. Carrington and J. C. Carrington, Mar 1892.",
+  "sourceTitleForPerson": "M. E. Carrington, \"Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:6ZGV-DXJ4",
+  "documentRecordData": {
+    "Name": "M. E. Carrington",
+    "Sex": "Female",
+    "Race": "White",
+    "Father's Name": "J. C. Carrington",
+    "Father's Sex": "Male",
+    "Father's Residence Place": "Charlotte County, Virginia",
+    "Mother's Name": "M. E. Carrington",
+    "Mother's Sex": "Female",
+    "Event Type": "Birth",
+    "Event Date": "March 1892",
+    "Event Place": "Smithville, Charlotte, Virginia, United States",
+    "Event Place (Original)": "Carrington"
+  },
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3QHN-T3YN-TCNB",
+  "pageType": "record"
+}

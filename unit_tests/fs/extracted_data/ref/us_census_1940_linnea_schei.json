@@ -17,7 +17,7 @@
   },
   "eventDateOriginal": "1940",
   "eventDate": "1940",
-  "eventPlaceOriginal": "Kingsford, Dickinson, Michigan, United States",
+  "eventPlaceOriginal": "Michigan, Dickinson, Breitung Township, Kingsford",
   "eventPlace": "Kingsford, Dickinson, Michigan, United States",
   "eventPlaceL2": "Dickinson",
   "eventPlaceL1": "United States",
@@ -29,6 +29,7 @@
   "birthYear": "1908",
   "birthPlace": "Sweden",
   "factType": "Census",
+  "residenceOriginal": "Same House",
   "referenceData": {
     "sheetNumber": "15",
     "sourceLineNbr": "64",

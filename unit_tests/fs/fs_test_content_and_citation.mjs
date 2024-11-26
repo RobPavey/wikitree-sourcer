@@ -492,6 +492,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C?from=lynx1UIV8&treeref=KWCG-DRL",
   },
   {
+    caseName: "us_va_birth_1892_m_e_carrington",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6ZGV-DXJ4",
+  },
+  {
     caseName: "us_va_census_slaves_1850_jesse_jeter",
     url: "https://www.familysearch.org/ark:/61903/1:1:HRWJ-NTN2",
   },

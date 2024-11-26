@@ -1335,7 +1335,80 @@ function setOriginalAndNormalizedField(valueContainer, result, resultFieldName) 
   setFieldFromNormalizedValue(valueContainer, result, resultFieldName);
 }
 
-function getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) {
+function choosePlaceValueFromList(values, place, result) {
+  if (!values || !values.length) {
+    return "";
+  }
+
+  if (values.length == 1) {
+    return values[0].text;
+  }
+
+  function getConfidenceScore(value) {
+    let score = 0;
+    let confidence = value.confidence;
+    const basicRegex = /^https?\:\/\/confidence\/(\d+)$/i;
+    if (basicRegex.test(confidence)) {
+      let scoreText = confidence.replace(basicRegex, "$1");
+      let scoreNum = Number(scoreText);
+      if (!isNaN(scoreNum)) {
+        return scoreNum;
+      }
+    }
+    const fieldValueRegex =
+      /^https?\:\/\/familysearch\.org\/types\/confidenceLevels\?fieldValueScore=(\d+)&fieldScorerVersion=([\d\.]+)$/i;
+    if (fieldValueRegex.test(confidence)) {
+      let scoreText = confidence.replace(fieldValueRegex, "$1");
+      let scoreNum = Number(scoreText);
+      if (!isNaN(scoreNum)) {
+        return scoreNum + 100; // this type of score always beats the other kind
+      }
+    }
+    return score;
+  }
+
+  let bestScore = 0;
+  let bestValues = [];
+  for (let value of values) {
+    let score = getConfidenceScore(value);
+    if (score == bestScore) {
+      bestValues.push(value);
+    } else if (score > bestScore) {
+      bestValues = [value];
+      bestScore = score;
+    }
+  }
+
+  if (bestValues.length == 1) {
+    return bestValues[0].text;
+  }
+
+  if (bestValues.length > 1) {
+    // there are several values with the same score
+    if (place && place.original) {
+      let placeOriginal = place.original;
+
+      for (let value of bestValues) {
+        if (value.text == placeOriginal) {
+          return value.text;
+        }
+      }
+    }
+    if (result && result.eventPlaceOriginal) {
+      let eventPlaceOriginal = result.eventPlaceOriginal;
+      for (let value of bestValues) {
+        if (value.text == eventPlaceOriginal) {
+          return value.text;
+        }
+      }
+    }
+
+    return bestValues[bestValues.length - 1].text;
+  }
+
+  return values[values.length - 1].text;
+}
+function getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints, result) {
   if (docHints) {
     if (labelId == "EVENT_PLACE" && docHints.eventPlace) {
       return docHints.eventPlace;
@@ -1356,19 +1429,50 @@ function getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) {
     }
   }
   if (place.fields) {
+    let matchingTypeValues = [];
+    let matchingLabelValues = [];
+    let fallbackValues = [];
     for (let field of place.fields) {
       if (field.values) {
         let type = field.type;
         for (let value of field.values) {
-          if ((type && fieldTypeEnding && type.endsWith(fieldTypeEnding)) || value.labelId == labelId) {
-            return value.text;
-          } else if (!fieldTypeEnding && !labelId) {
-            if (value.text) {
-              return value.text;
+          if (value.text) {
+            if (type && fieldTypeEnding && type.endsWith(fieldTypeEnding)) {
+              matchingTypeValues.push(value);
+            }
+
+            if (value.labelId == labelId) {
+              matchingLabelValues.push(value);
+            }
+
+            if (!fieldTypeEnding && !labelId) {
+              fallbackValues.push(value);
             }
           }
         }
       }
+    }
+
+    // when there are multiple values there are various criteria we could use to choose:
+    // Confidence
+    // Attribution
+    // Qualifiers
+    // Order in list
+    // Matching other values like "EVENT_COUNTY"
+    if (matchingLabelValues.length > 0) {
+      if (labelId == "EVENT_PLACE") {
+        return choosePlaceValueFromList(matchingLabelValues, place, result);
+      }
+      return matchingLabelValues[0].text;
+    }
+
+    if (matchingTypeValues.length > 0) {
+      return matchingTypeValues[0].text;
+      //return matchingTypeValues[matchingTypeValues.length - 1].text;
+    }
+
+    if (fallbackValues.length > 0) {
+      return fallbackValues[0].text;
     }
   }
 
@@ -1391,8 +1495,8 @@ function cleanPlaceString(value) {
   return value;
 }
 
-function getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) {
-  let value = getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints);
+function getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints, result) {
+  let value = getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints, result);
   if (value) {
     value = cleanPlaceString(value);
   }
@@ -1400,7 +1504,7 @@ function getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) 
 }
 
 function setFieldFromPlace(place, fieldTypeEnding, labelId, result, resultFieldName, docHints) {
-  let value = getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints);
+  let value = getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints, result);
   if (value) {
     result[resultFieldName] = value;
   }
@@ -2348,8 +2452,10 @@ function setEventDateAndPlaceForFact(result, fact, docHints) {
     if (fact.place.original) {
       result.eventPlaceOriginal = fact.place.original;
     }
+    setFieldFromPlace(fact.place, "", "EVENT_PLACE_ORIG", result, "eventPlaceOriginal", docHints);
     setFieldFromPlace(fact.place, "", "EVENT_PLACE", result, "eventPlace", docHints);
     setFieldFromPlace(fact.place, "/RegistrationDistrict", "", result, "registrationDistrict");
+    setFieldFromPlace(fact.place, "/DistrictReg", "", result, "registrationDistrict");
     setFieldFromPlace(fact.place, "", "EVENT_PLACE_LEVEL_3", result, "eventPlaceL3");
     setFieldFromPlace(fact.place, "/County", "EVENT_PLACE_LEVEL_2", result, "eventPlaceL2");
     setFieldFromPlace(fact.place, "/Country", "EVENT_PLACE_LEVEL_1", result, "eventPlaceL1");
@@ -2721,7 +2827,10 @@ function processRecordDataFactsForPersonObj(person, result) {
           }
         } else if (factType == "Residence" || factType == "Census") {
           if (fact.place) {
-            setFieldFromPlace(fact.place, "", "NOTE_PR_RES_PLACE", result, "residence");
+            setFieldFromPlace(fact.place, "/Residence", "NOTE_PR_RES_PLACE", result, "residence");
+            if (!result.residence) {
+              setFieldFromPlace(fact.place, "/Residence", "PR_RES_PLACE_ORIG", result, "residenceOriginal");
+            }
           }
         }
 
