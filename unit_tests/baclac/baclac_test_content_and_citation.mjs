@@ -158,6 +158,10 @@ const regressionData = [
   // MetisScrip
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   {
+    caseName: "fonandcol_1864_ann_belcourt",
+    url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?idnumber=1497251&app=fonandcol",
+  },
+  {
     caseName: "fonandcol_1877_leandre_stgermain",
     url: "https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=fonandcol&IdNumber=1503773&q=Scrip%20affidavit%20for%20St.%20Germain,%20Leandre",
   },

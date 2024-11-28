@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "baclac",
+  "sourceType": "record",
+  "recordType": "MetisScrip",
+  "name": {},
+  "eventPlace": {
+    "placeString": "Canada",
+    "country": "Canada"
+  },
+  "birthDate": {
+    "dateString": "Lac Ste. Ann, 1864"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Alexis Belcourt, deceased,"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Nancy Rowand,"
+      }
+    }
+  },
+  "hasValidData": true
+}
