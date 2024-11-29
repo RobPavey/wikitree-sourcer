@@ -1300,9 +1300,21 @@ function generalizeData(input) {
     // sometimes this is a field that is not on the residence fact
     residencePlace = ed.recordData["Previous Residence Place"];
   }
+  if (!residencePlace && ed.residenceOriginal) {
+    // sometimes this is useful but other times it is rubbish
+    let lcResidence = ed.residenceOriginal.toLowerCase();
+    if (!lcResidence.startsWith("same ")) {
+      let commaIndex = lcResidence.indexOf(",");
+      if (commaIndex == -1) {
+        if (!(eventPlace && eventPlace.includes(ed.residenceOriginal))) {
+          residencePlace = ed.residenceOriginal;
+        }
+      }
+    }
+  }
 
   if (residencePlace && result.eventPlace) {
-    // at least in 1841 census this is the stree address
+    // at least in 1841 census this is the street address
     result.eventPlace.streetAddress = cleanPlace(residencePlace);
   } else if (residencePlace) {
     result.setResidencePlace(cleanPlace(residencePlace));

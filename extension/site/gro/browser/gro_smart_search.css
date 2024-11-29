@@ -142,8 +142,31 @@ th.resultsTableHeaderCell {
   background: #e1f0b4;
 }
 
+div.exportControls {
+  margin-top: 10px;
+}
+
+#exportButton {
+  background: #25422d;
+  padding: 5px 10px;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 14px;
+  border: 0;
+  border-radius: 3px;
+  border-style: solid;
+}
+
+#exportButton:hover {
+  background: #2cb107;
+}
+
+.exportOption {
+  margin-left: 10px;
+}
+
 /****************
-Search parameters area
+Dialog
 *****************/
 
 #dialog {

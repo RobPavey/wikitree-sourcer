@@ -221,6 +221,11 @@ const regressionData = [
     ],
   },
   {
+    // Strange location was created for birth - includes person name in place name
+    caseName: "9jr5_db1_mary_carrington",
+    url: "https://www.familysearch.org/tree/person/details/9JR5-DB1",
+  },
+  {
     // Hungarian. Has last name first in profile
     caseName: "gzlh_57h_trnik_janos",
     url: "https://www.familysearch.org/tree/person/details/GZLH-57H",
@@ -274,6 +279,10 @@ const regressionData = [
   {
     caseName: "kh6d_7g5_sherod_canada",
     url: "https://www.familysearch.org/tree/person/sources/KH6D-7G5",
+  },
+  {
+    caseName: "khm4_p78_abner_yoder",
+    url: "https://www.familysearch.org/tree/person/details/KHM4-PY8",
   },
   {
     caseName: "l231_r8m_harry_pavey",

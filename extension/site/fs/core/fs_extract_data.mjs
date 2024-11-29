@@ -243,6 +243,10 @@ function extractDataForImageInNewViewer(document, result) {
   } else {
     // newer format is different
     let wayFindingLink1 = mainNode.querySelector("nav[aria-label='Waypoints'] a[wayfinding]");
+    if (!wayFindingLink1) {
+      // can't rely on aria-label as it changes with language
+      wayFindingLink1 = mainNode.querySelector("nav a[wayfinding]");
+    }
     if (wayFindingLink1) {
       let title = wayFindingLink1.textContent.trim();
       if (title) {
@@ -253,6 +257,10 @@ function extractDataForImageInNewViewer(document, result) {
     let browsePathElements = mainNode.querySelectorAll(
       "nav[aria-label='Waypoints'] > div > div > div > div > div > div > div > div > p"
     );
+    if (browsePathElements.length == 0) {
+      // can't rely on aria-label as it changes with language
+      browsePathElements = mainNode.querySelectorAll("nav > div > div > div > div > div > div > div > div > p");
+    }
     if (browsePathElements.length > 1) {
       let browsePath = "";
       for (let index = 1; index < browsePathElements.length; index++) {
@@ -272,6 +280,10 @@ function extractDataForImageInNewViewer(document, result) {
   }
 
   let imageNumberInput = mainNode.querySelector("div input[aria-label='Enter Image number']");
+  if (!imageNumberInput) {
+    // can't rely on aria-label as it changes with language
+    imageNumberInput = mainNode.querySelector("div[inputbase='true'] > div > div > div > input");
+  }
   //console.log("imageNumberInput is:");
   //console.log(imageNumberInput);
   if (imageNumberInput) {
@@ -287,9 +299,24 @@ function extractDataForImageInNewViewer(document, result) {
       }
     }
 
+    if (!totalImagesPara) {
+      // because of language setings this is a better way
+      let zoomPanViewer = mainNode.querySelector("div[class*='zoomPanViewerHud']");
+      if (zoomPanViewer) {
+        let pageCellParas = zoomPanViewer.querySelectorAll("div[class^='cell'] > p");
+        if (pageCellParas.length == 2) {
+          totalImagesPara = pageCellParas[1];
+        }
+      }
+    }
+
     if (totalImagesPara) {
       let imageNumber = imageNumberInput.value;
       let totalImages = totalImagesPara.textContent.trim();
+      const totalImagesRegex = /^\w+\s+(\d+)$/;
+      if (totalImagesRegex.test(totalImages)) {
+        totalImages = totalImages.replace(totalImagesRegex, "$1");
+      }
 
       if (imageNumber && totalImages) {
         result.imageNumber = imageNumber;
@@ -1308,7 +1335,80 @@ function setOriginalAndNormalizedField(valueContainer, result, resultFieldName) 
   setFieldFromNormalizedValue(valueContainer, result, resultFieldName);
 }
 
-function getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) {
+function choosePlaceValueFromList(values, place, result) {
+  if (!values || !values.length) {
+    return "";
+  }
+
+  if (values.length == 1) {
+    return values[0].text;
+  }
+
+  function getConfidenceScore(value) {
+    let score = 0;
+    let confidence = value.confidence;
+    const basicRegex = /^https?\:\/\/confidence\/(\d+)$/i;
+    if (basicRegex.test(confidence)) {
+      let scoreText = confidence.replace(basicRegex, "$1");
+      let scoreNum = Number(scoreText);
+      if (!isNaN(scoreNum)) {
+        return scoreNum;
+      }
+    }
+    const fieldValueRegex =
+      /^https?\:\/\/familysearch\.org\/types\/confidenceLevels\?fieldValueScore=(\d+)&fieldScorerVersion=([\d\.]+)$/i;
+    if (fieldValueRegex.test(confidence)) {
+      let scoreText = confidence.replace(fieldValueRegex, "$1");
+      let scoreNum = Number(scoreText);
+      if (!isNaN(scoreNum)) {
+        return scoreNum + 100; // this type of score always beats the other kind
+      }
+    }
+    return score;
+  }
+
+  let bestScore = 0;
+  let bestValues = [];
+  for (let value of values) {
+    let score = getConfidenceScore(value);
+    if (score == bestScore) {
+      bestValues.push(value);
+    } else if (score > bestScore) {
+      bestValues = [value];
+      bestScore = score;
+    }
+  }
+
+  if (bestValues.length == 1) {
+    return bestValues[0].text;
+  }
+
+  if (bestValues.length > 1) {
+    // there are several values with the same score
+    if (place && place.original) {
+      let placeOriginal = place.original;
+
+      for (let value of bestValues) {
+        if (value.text == placeOriginal) {
+          return value.text;
+        }
+      }
+    }
+    if (result && result.eventPlaceOriginal) {
+      let eventPlaceOriginal = result.eventPlaceOriginal;
+      for (let value of bestValues) {
+        if (value.text == eventPlaceOriginal) {
+          return value.text;
+        }
+      }
+    }
+
+    return bestValues[bestValues.length - 1].text;
+  }
+
+  return values[values.length - 1].text;
+}
+function getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints, result) {
   if (docHints) {
     if (labelId == "EVENT_PLACE" && docHints.eventPlace) {
       return docHints.eventPlace;
@@ -1329,19 +1429,50 @@ function getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) {
     }
   }
   if (place.fields) {
+    let matchingTypeValues = [];
+    let matchingLabelValues = [];
+    let fallbackValues = [];
     for (let field of place.fields) {
       if (field.values) {
         let type = field.type;
         for (let value of field.values) {
-          if ((type && fieldTypeEnding && type.endsWith(fieldTypeEnding)) || value.labelId == labelId) {
-            return value.text;
-          } else if (!fieldTypeEnding && !labelId) {
-            if (value.text) {
-              return value.text;
+          if (value.text) {
+            if (type && fieldTypeEnding && type.endsWith(fieldTypeEnding)) {
+              matchingTypeValues.push(value);
+            }
+
+            if (value.labelId == labelId) {
+              matchingLabelValues.push(value);
+            }
+
+            if (!fieldTypeEnding && !labelId) {
+              fallbackValues.push(value);
             }
           }
         }
       }
+    }
+
+    // when there are multiple values there are various criteria we could use to choose:
+    // Confidence
+    // Attribution
+    // Qualifiers
+    // Order in list
+    // Matching other values like "EVENT_COUNTY"
+    if (matchingLabelValues.length > 0) {
+      if (labelId == "EVENT_PLACE") {
+        return choosePlaceValueFromList(matchingLabelValues, place, result);
+      }
+      return matchingLabelValues[0].text;
+    }
+
+    if (matchingTypeValues.length > 0) {
+      return matchingTypeValues[0].text;
+      //return matchingTypeValues[matchingTypeValues.length - 1].text;
+    }
+
+    if (fallbackValues.length > 0) {
+      return fallbackValues[0].text;
     }
   }
 
@@ -1364,8 +1495,8 @@ function cleanPlaceString(value) {
   return value;
 }
 
-function getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) {
-  let value = getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints);
+function getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints, result) {
+  let value = getPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints, result);
   if (value) {
     value = cleanPlaceString(value);
   }
@@ -1373,7 +1504,7 @@ function getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints) 
 }
 
 function setFieldFromPlace(place, fieldTypeEnding, labelId, result, resultFieldName, docHints) {
-  let value = getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints);
+  let value = getCleanPlaceValueFromPlace(place, fieldTypeEnding, labelId, docHints, result);
   if (value) {
     result[resultFieldName] = value;
   }
@@ -2321,8 +2452,10 @@ function setEventDateAndPlaceForFact(result, fact, docHints) {
     if (fact.place.original) {
       result.eventPlaceOriginal = fact.place.original;
     }
+    setFieldFromPlace(fact.place, "", "EVENT_PLACE_ORIG", result, "eventPlaceOriginal", docHints);
     setFieldFromPlace(fact.place, "", "EVENT_PLACE", result, "eventPlace", docHints);
     setFieldFromPlace(fact.place, "/RegistrationDistrict", "", result, "registrationDistrict");
+    setFieldFromPlace(fact.place, "/DistrictReg", "", result, "registrationDistrict");
     setFieldFromPlace(fact.place, "", "EVENT_PLACE_LEVEL_3", result, "eventPlaceL3");
     setFieldFromPlace(fact.place, "/County", "EVENT_PLACE_LEVEL_2", result, "eventPlaceL2");
     setFieldFromPlace(fact.place, "/Country", "EVENT_PLACE_LEVEL_1", result, "eventPlaceL1");
@@ -2694,7 +2827,10 @@ function processRecordDataFactsForPersonObj(person, result) {
           }
         } else if (factType == "Residence" || factType == "Census") {
           if (fact.place) {
-            setFieldFromPlace(fact.place, "", "NOTE_PR_RES_PLACE", result, "residence");
+            setFieldFromPlace(fact.place, "/Residence", "NOTE_PR_RES_PLACE", result, "residence");
+            if (!result.residence) {
+              setFieldFromPlace(fact.place, "/Residence", "PR_RES_PLACE_ORIG", result, "residenceOriginal");
+            }
           }
         }
 
@@ -3260,7 +3396,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
   let dataObj = dataObjects.dataObj;
 
   // This is messy. I previously just checked if a document existed and if so saved the URL.
-  // That caused problems in the rare cases in the unit tests where there is bot a fetch object
+  // That caused problems in the rare cases in the unit tests where there is both a fetch object
   // and a saved page (document). It was saving a local file path URL to the ref files which
   // meant that the unit tests faled on a different machine. In this case the url is passed in
   // by the unit tests. So if there is a url then do not use the document url.
@@ -3276,7 +3412,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
     return extractPersonDataFromFetch(result, document, dataObj, options);
   }
 
-  // There seem to be somethings that cannot be determined solely from the fect data,
+  // There seem to be some things that cannot be determined solely from the fact data,
   // if we have the document as well we can try to use that to get the correct values from the
   // fetch data.
   // An example is the event place for https://www.familysearch.org/ark:/61903/1:1:KC67-F1Y

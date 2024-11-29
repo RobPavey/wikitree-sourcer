@@ -302,6 +302,13 @@ const GD = {
       nephew: "nephew",
       uncle: "uncle",
 
+      // adopted
+      "adopted daughter": "adopted daughter",
+      "adopted dau": "adopted daughter",
+      "adopted d": "adopted daughter",
+      "adopted son": "adopted son",
+      "adopted a": "adopted son",
+
       // other relationships
       apprentice: "apprentice",
       appren: "apprentice",

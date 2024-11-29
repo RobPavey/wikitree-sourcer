@@ -492,6 +492,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:Q234-5Z3C?from=lynx1UIV8&treeref=KWCG-DRL",
   },
   {
+    caseName: "us_va_birth_1892_m_e_carrington",
+    url: "https://www.familysearch.org/ark:/61903/1:1:6ZGV-DXJ4",
+  },
+  {
     caseName: "us_va_census_slaves_1850_jesse_jeter",
     url: "https://www.familysearch.org/ark:/61903/1:1:HRWJ-NTN2",
   },
@@ -541,6 +545,16 @@ const imageRegressionData = [
     // saved Nov 2024
     caseName: "image_nl_death_1853",
     url: "https://www.familysearch.org/ark:/61903/3:1:S3HY-6YKS-D9X?i=101&cc=2020117",
+  },
+  {
+    // saved Nov 2024, language set to "English"
+    caseName: "image_nl_lutjebroek_dtb_en",
+    url: "https://www.familysearch.org/ark:/61903/3:1:3QS7-L9QV-1HGC?cat=291201&i=4",
+  },
+  {
+    // saved Nov 2024, language set to "Nederlands"
+    caseName: "image_nl_lutjebroek_dtb_nl",
+    url: "https://www.familysearch.org/ark:/61903/3:1:3QS7-L9QV-1HGC?cat=291201&i=4",
   },
   {
     // Note: I had to edit the saved .html file for many errors.

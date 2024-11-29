@@ -54,6 +54,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "baptism_1789_gerryt_goudemond_nov_2024",
+    url: "https://www.openarchieven.nl/frl:ddbcbbb4-6c3a-4fca-a222-505a70ac75bf",
+  },
+  {
     caseName: "birth_cert_1811_jan_van_der_wijk",
     url: "https://www.openarchieven.nl/frl:920ffe70-6378-e93b-71a0-58a1e1237e3f",
   },

@@ -134,13 +134,39 @@ const DateUtils = {
       return result;
     }
 
+    // check for year range like: "from 1934 to 1946"
+    const fromToYearRangeRegex = /^from\s+(\d\d\d\d)\s+to\s+(\d\d\d\d)$/i;
+    if (fromToYearRangeRegex.test(cleanString)) {
+      let startYearString = cleanString.replace(fromToYearRangeRegex, "$1");
+      let endYearString = cleanString.replace(fromToYearRangeRegex, "$2");
+
+      let startYearNum = parseInt(startYearString);
+      let endYearNum = parseInt(endYearString);
+      if (isNaN(startYearNum) || isNaN(endYearNum)) {
+        return result;
+      }
+
+      if (startYearNum == endYearNum) {
+        result.isValid = true;
+        result.yearNum = startYearNum;
+        return result;
+      }
+
+      result.isRange = true;
+      result.isValid = true;
+      result.startYearNum = startYearNum;
+      result.endYearNum = endYearNum;
+      result.yearNum = startYearNum;
+      return result;
+    }
+
     // check for a month and year range
     const monthYearRangeRegex = /^(\w\w\w) (\d\d\d\d) ?- ?(\w\w\w) (\d\d\d\d)$/;
     if (monthYearRangeRegex.test(cleanString)) {
       let startMonthString = cleanString.replace(monthYearRangeRegex, "$1");
       let startYearString = cleanString.replace(monthYearRangeRegex, "$2");
-      let endMonthString = cleanString.replace(monthYearRangeRegex, "$1");
-      let endYearString = cleanString.replace(monthYearRangeRegex, "$2");
+      let endMonthString = cleanString.replace(monthYearRangeRegex, "$3");
+      let endYearString = cleanString.replace(monthYearRangeRegex, "$4");
 
       let startYearNum = parseInt(startYearString);
       let endYearNum = parseInt(endYearString);

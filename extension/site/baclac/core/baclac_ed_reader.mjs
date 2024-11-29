@@ -166,7 +166,7 @@ function getAppFromUrl(url) {
 
   // example URL:
   // https://recherche-collection-search.bac-lac.gc.ca/eng/home/record?app=census&IdNumber=23720052
-  let appString = url.replace(/.*\?app\=([^\&]+)\&.*/, "$1");
+  let appString = url.replace(/.*[\?\&]app\=([^\&]+).*/, "$1");
   if (appString && appString != url) {
     return appString;
   }
@@ -249,11 +249,32 @@ class BaclacEdReader extends ExtractedDataReader {
   }
 
   getLabeledValueFromMetisScripTitle(labelString) {
-    let titleParts = this.ed.name.split(" = ");
-    titleParts = titleParts[0].split("; ");
-    for (let part of titleParts) {
-      if (part.startsWith(labelString)) {
-        return part.substring(labelString.length).trim();
+    // split into the English and French parts
+    let languageParts = this.ed.name.split(" = ");
+
+    // first try spliting the English part using ';' and with ": " after labelString
+    let semiColonParts = languageParts[0].split("; ");
+    let colonLabel = labelString.toLowerCase() + ": ";
+    for (let part of semiColonParts) {
+      if (part) {
+        part = part.trim();
+        let lcPart = part.toLowerCase();
+        if (lcPart.startsWith(colonLabel)) {
+          return part.substring(colonLabel.length).trim();
+        }
+      }
+    }
+
+    // if nothing found try spliting the English part using '-'
+    let dashParts = languageParts[0].split("-");
+    let commaLabel = labelString.toLowerCase() + ", ";
+    for (let part of dashParts) {
+      if (part) {
+        part = part.trim();
+        let lcPart = part.toLowerCase();
+        if (lcPart.startsWith(commaLabel)) {
+          return part.substring(commaLabel.length).trim();
+        }
       }
     }
   }
@@ -375,7 +396,7 @@ class BaclacEdReader extends ExtractedDataReader {
         return this.makeDateObjFromYear(yearString);
       }
     } else if (this.recordType == RT.MetisScrip) {
-      let dateString = this.getLabeledValueFromMetisScripTitle("date of issue: ");
+      let dateString = this.getLabeledValueFromMetisScripTitle("date of issue");
       return this.makeDateObjFromDateString(dateString);
     } else if (this.recordType == RT.GovernmentDocument) {
       let dateString = this.getRecordDataValueForKeys(["Meeting date"]);
@@ -524,7 +545,7 @@ class BaclacEdReader extends ExtractedDataReader {
     }
 
     if (this.recordType == RT.MetisScrip) {
-      let dateString = this.getLabeledValueFromMetisScripTitle("born: ");
+      let dateString = this.getLabeledValueFromMetisScripTitle("born");
       return this.makeDateObjFromDateString(dateString);
     }
   }
@@ -621,12 +642,12 @@ class BaclacEdReader extends ExtractedDataReader {
 
   getParents() {
     if (this.recordType == RT.MetisScrip) {
-      let fatherName = this.getLabeledValueFromMetisScripTitle("father: ");
-      let motherName = this.getLabeledValueFromMetisScripTitle("mother: ");
+      let fatherName = this.getLabeledValueFromMetisScripTitle("father");
+      let motherName = this.getLabeledValueFromMetisScripTitle("mother");
 
       // Example: father: François St. Germain (French Canadian); mother: Louise Morand (Métis)
       function cleanName(nameString) {
-        if (nameString.endsWith(")")) {
+        if (nameString && nameString.endsWith(")")) {
           let lastOpenParenIndex = nameString.lastIndexOf("(");
           if (lastOpenParenIndex != -1) {
             nameString = nameString.substring(0, lastOpenParenIndex).trim();

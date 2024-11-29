@@ -1,6 +1,10 @@
 {
   "id" : "r_105705363643",
   "lang" : "en",
+  "attribution" : {
+    "modified" : 1700156213206,
+    "created" : 1700156213206
+  },
   "links" : {
     "next" : {
       "href" : "https://www.familysearch.org/ark:/61903/1:2:QRMM-6X96?seek=next"
@@ -15,236 +19,285 @@
   "description" : "#sd_p_103922963856",
   "persons" : [ {
     "id" : "p_103922963856",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
     "extracted" : true,
     "principal" : true,
     "links" : {
       "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QGNK-BKRW?flag=fsh"
+        "href" : "https://www.familysearch.org/platform/records/personas/QGNK-BKRW?flag=fsh"
       },
       "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QRMM-6X96?flag=fsh"
+        "href" : "https://www.familysearch.org/platform/records/records/QRMM-6X96?flag=fsh"
       }
     },
     "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
     } ],
     "identifiers" : {
       "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW" ]
     },
     "names" : [ {
+      "id" : "487e7d37-5250-4db7-ac75-66a501dbb213",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1700156213206,
+        "created" : 1700156213206
+      },
       "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
       "nameForms" : [ {
         "fullText" : "Ella Rose Giles",
         "parts" : [ {
-          "type" : "http://gedcomx.org/Given",
-          "value" : "Ella Rose",
-          "fields" : [ {
-            "type" : "http://gedcomx.org/Given",
-            "values" : [ {
-              "id" : "09827985-b3da-406f-9055-c971f5cb64c4",
-              "type" : "http://gedcomx.org/Original",
-              "labelId" : "PR_NAME_GN_ORIG",
-              "text" : "Ella Rose"
-            }, {
-              "id" : "8a315a67-7fee-4599-a483-536594674dbe",
-              "attribution" : {
-                "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1555642242617
-              },
-              "type" : "http://gedcomx.org/Interpreted",
-              "labelId" : "PR_NAME_GN",
-              "text" : "Ella Rose"
-            } ]
-          } ]
-        }, {
+          "id" : "662021f1-b5fe-4940-bfe8-42f136b88497",
           "type" : "http://gedcomx.org/Surname",
           "value" : "Giles",
           "fields" : [ {
+            "id" : "09c54595-67b8-44a3-baee-1f79115e5f76",
+            "attribution" : {
+              "modified" : 1700156213206,
+              "created" : 1700156213206
+            },
             "type" : "http://gedcomx.org/Surname",
             "values" : [ {
-              "id" : "c9416071-65c1-438b-9960-b0516940074a",
+              "id" : "69f1c91d-2d82-4d25-bb94-3075bdd7b6de",
               "type" : "http://gedcomx.org/Original",
               "labelId" : "PR_NAME_SURN_ORIG",
               "text" : "Giles"
             }, {
-              "id" : "e1ed6ddb-b197-496d-8025-770417a4288a",
+              "id" : "69f1c91d-2d82-4d25-bb94-3075bdd7b6de",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
               "attribution" : {
                 "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1555642242617
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
               },
               "type" : "http://gedcomx.org/Interpreted",
               "labelId" : "PR_NAME_SURN",
-              "text" : "Giles"
+              "text" : "Giles",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "1ffe9dd1-9548-42eb-a4c4-16be7529cebc",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Ella Rose",
+          "fields" : [ {
+            "id" : "aee94b6d-041f-4888-86a1-1b8d3bad73ab",
+            "attribution" : {
+              "modified" : 1700156213206,
+              "created" : 1700156213206
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "ff7ef6fb-35de-4d71-bde5-be4135c71e46",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Ella Rose"
+            }, {
+              "id" : "ff7ef6fb-35de-4d71-bde5-be4135c71e46",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Ella Rose",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
             } ]
           } ]
         } ],
         "fields" : [ {
+          "id" : "b2406314-f0c2-4829-bd47-6675256d630c",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
           "type" : "http://gedcomx.org/Name",
           "values" : [ {
-            "id" : "86c273aa-4a01-4f3a-9213-720ed0177514",
+            "id" : "66a1073a-b8d1-4f18-824f-d2e15894d91d",
             "attribution" : {
               "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1555642242578
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
             },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "PR_NAME_ORIG",
             "text" : "Ella Rose Giles"
           }, {
-            "id" : "37105db3-58de-46ac-9acd-f91033e61437",
+            "id" : "66a1073a-b8d1-4f18-824f-d2e15894d91d",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
             "attribution" : {
               "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1555642242617
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
             },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "PR_NAME",
-            "text" : "Ella Rose Giles"
+            "text" : "Ella Rose Giles",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       } ]
     } ],
     "facts" : [ {
+      "id" : "26399efd-33da-41c6-92f9-aca82b711fe4",
+      "attribution" : {
+        "modified" : 1700156213206,
+        "created" : 1700156213206
+      },
       "type" : "http://gedcomx.org/Baptism",
       "date" : {
-        "original" : "24 Aug 1902",
+        "id" : "e60cb561-9243-45b4-bfe7-b4a83fb55280",
+        "original" : "24 August 1902",
         "formal" : "+1902-08-24",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
         "fields" : [ {
+          "id" : "f8327304-c86a-4c23-9127-bb2109b6f133",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            }
+          },
           "type" : "http://gedcomx.org/Date",
           "values" : [ {
-            "id" : "5f802402-f1d3-471c-af86-84d734d88741",
+            "id" : "4a9ecaad-ac8d-4708-8284-0dfd0e22d80b",
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_DATE_ORIG",
             "text" : "24 Aug 1902"
           }, {
-            "id" : "9e3e0bee-44b2-4e56-af06-d4a0037f9df0",
+            "id" : "4a9ecaad-ac8d-4708-8284-0dfd0e22d80b",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
             "attribution" : {
               "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1555642242578
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              }
             },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "EVENT_DATE",
-            "text" : "24 Aug 1902",
-            "resource" : "+1902-08-24"
+            "text" : "24 August 1902",
+            "resource" : "+1902-08-24",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         }, {
-          "type" : "http://gedcomx.org/Month",
-          "values" : [ {
-            "id" : "0298f30a-6036-4c2d-9cd7-03d50b0bef1f",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_MONTH_ORIG",
-            "text" : "Aug"
-          }, {
-            "id" : "db89171b-edd2-4e7a-a86c-213a18cc141a",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1555642242578
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_MONTH",
-            "text" : "8"
-          } ]
-        }, {
+          "id" : "3a64e254-5996-494a-aeda-23d59fea9d0d",
+          "attribution" : {
+            "modified" : 1700156213206,
+            "created" : 1700156213206
+          },
           "type" : "http://gedcomx.org/Day",
           "values" : [ {
-            "id" : "2b5ec0aa-b80f-4aec-8855-21642a4f606d",
+            "id" : "2e2e49d9-9796-4ebb-bf7f-8362230f312d",
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_DAY_ORIG",
             "text" : "24"
-          }, {
-            "id" : "29e91fa7-d01a-4090-8b94-ebbbddb06cc4",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1555642242578
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_DAY",
-            "text" : "24"
           } ]
         }, {
+          "id" : "7e0d1d83-5a79-4530-b148-574cc2a04a1b",
+          "attribution" : {
+            "modified" : 1700156213206,
+            "created" : 1700156213206
+          },
           "type" : "http://gedcomx.org/Year",
           "values" : [ {
-            "id" : "4a74907c-6b55-4ad1-a9fd-a401ba8cf193",
+            "id" : "ed93a340-b6f1-4570-bf53-dc7ea538e64a",
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_YEAR_ORIG",
             "text" : "1902"
-          }, {
-            "id" : "5bb6cd5a-a74e-44de-ae60-da4478e0a41e",
-            "attribution" : {
-              "contributor" : {
-                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
-              },
-              "modified" : 1555642242578
-            },
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_YEAR",
-            "text" : "1902"
-          }, {
-            "id" : "9a118f21-040f-44cf-9da0-e46bd07340ae",
+          } ]
+        }, {
+          "id" : "217b71ba-0f59-4780-b73a-d648bda61d4d",
+          "attribution" : {
+            "modified" : 1700156213206,
+            "created" : 1700156213206
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "0ab47537-3025-4c00-8c81-c4452f9f9960",
             "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_YEAR_RANGE_ORIG",
-            "text" : "1850-1966"
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Aug"
           } ]
         } ]
       },
       "place" : {
+        "id" : "1c6cf6f9-5ec5-4743-9d74-479206c0846f",
         "original" : "St Damian-in-the-Blean, Kent, England, United Kingdom",
+        "confidence" : "http://confidence/94",
         "description" : "#place_3354972",
         "fields" : [ {
+          "id" : "8962731f-7232-495e-932d-84edcadccd44",
+          "attribution" : {
+            "modified" : 1700156213206,
+            "created" : 1700156213206
+          },
           "type" : "http://gedcomx.org/Place",
           "values" : [ {
-            "id" : "72d400ba-8619-4c3c-af92-f528cf6e381f",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "EVENT_PLACE_SUP",
-            "text" : "Blean",
-            "qualifiers" : [ {
-              "value" : "SUP",
-              "name" : "http://familysearch.org/types/qualifiers/Info"
-            } ]
-          }, {
-            "id" : "f387510e-9f11-4aef-bd2b-446168c0a77c",
-            "type" : "http://gedcomx.org/Interpreted",
-            "labelId" : "NOTE_EVENT_PLACE",
-            "text" : "1558-1912",
-            "qualifiers" : [ {
-              "value" : "NOTE",
-              "name" : "http://familysearch.org/types/qualifiers/Info"
-            } ]
-          }, {
-            "id" : "958666b4-c023-4641-aef9-9fbd6b2f7269",
+            "id" : "a12f0805-5d45-4162-be60-ae9f654d0e55",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "EVENT_PLACE_ORIG",
             "text" : "Blean, SS Cosmus & Damian, Kent"
           }, {
-            "id" : "7f864f9f-762f-4949-8cf8-792e739b5b67",
+            "id" : "a12f0805-5d45-4162-be60-ae9f654d0e55",
             "confidence" : "http://confidence/94",
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "EVENT_PLACE",
             "text" : "St Damian-in-the-Blean, Kent, England, United Kingdom",
-            "resource" : "https://www.familysearch.org/platform/places/description/3354972"
+            "resource" : "https://www.familysearch.org/platform/places/description/3354972",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "a12f0805-5d45-4162-be60-ae9f654d0e55",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Blean, Kent, England, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/3041310",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         }, {
-          "type" : "http://gedcomx.org/County",
-          "values" : [ {
-            "id" : "1a808a2a-0af5-49ed-b4c6-468f65ce6a16",
-            "type" : "http://gedcomx.org/Original",
-            "labelId" : "EVENT_COUNTY_ORIG",
-            "text" : "Kent"
-          } ]
-        }, {
+          "id" : "d27f7aa7-e649-4976-8918-935f5ca75d53",
+          "attribution" : {
+            "modified" : 1700156213206,
+            "created" : 1700156213206
+          },
           "type" : "http://gedcomx.org/Parish",
           "values" : [ {
             "id" : "7b46bb86-54f6-48cd-bf50-770f253643c7",
@@ -252,197 +305,362 @@
             "labelId" : "EVENT_PARISH_ORIG",
             "text" : "Blean, SS Cosmus & Damian"
           } ]
+        }, {
+          "id" : "72778d94-d83a-43af-9939-4745e6a56dcd",
+          "attribution" : {
+            "modified" : 1700156213206,
+            "created" : 1700156213206
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "1a808a2a-0af5-49ed-b4c6-468f65ce6a16",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Kent"
+          } ]
         } ]
       },
       "primary" : true,
       "fields" : [ {
+        "id" : "dd160e2c-c438-4562-b1a6-ea62d2cc6b94",
+        "attribution" : {
+          "modified" : 1700156213206,
+          "created" : 1700156213206
+        },
         "type" : "http://familysearch.org/types/fields/EventType",
         "values" : [ {
-          "id" : "4280fe66-1f59-41d0-b45d-2ea21d29bd52",
+          "id" : "f0042e39-50bf-4622-8668-e5a9dd82b7cf",
           "type" : "http://gedcomx.org/Original",
           "labelId" : "EVENT_TYPE_ORIG",
-          "text" : "Baptism"
+          "text" : "Baptism",
+          "resource" : "http://gedcomx.org/Baptism"
         }, {
-          "id" : "603acfa3-903e-419f-93af-aa894427136e",
+          "id" : "f0042e39-50bf-4622-8668-e5a9dd82b7cf",
           "type" : "http://gedcomx.org/Interpreted",
           "labelId" : "EVENT_TYPE",
-          "text" : "Baptism"
+          "text" : "Baptism",
+          "resource" : "http://gedcomx.org/Baptism"
         } ]
       } ]
-    } ]
+    } ],
+    "fields" : [ {
+      "id" : "e54ad013-3f85-4f0a-8abe-5eeb4731ca59",
+      "attribution" : {
+        "modified" : 1700156213206,
+        "created" : 1700156213206
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "7f1e9550-d95c-4c7a-a0d5-497e5ff7768a",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000005265403_00684_00000_0000105705363643_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Ella Rose Giles"
+    }
   }, {
     "id" : "p_103922963862",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
     "extracted" : true,
     "principal" : false,
     "gender" : {
       "type" : "http://gedcomx.org/Male",
       "fields" : [ {
+        "id" : "b0f9baa7-0b83-4421-b3ea-190fc44ded05",
+        "attribution" : {
+          "modified" : 1700156213206,
+          "created" : 1700156213206
+        },
         "type" : "http://gedcomx.org/Gender",
         "values" : [ {
+          "id" : "abf510f4-37f4-44a1-8a29-f27d7c7652f3",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1700234848592,
+            "created" : 1700234848592
+          },
           "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
           "resource" : "http://gedcomx.org/Male"
         } ]
       } ]
     },
     "links" : {
       "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QGNK-BKRD?flag=fsh"
+        "href" : "https://www.familysearch.org/platform/records/personas/QGNK-BKRD?flag=fsh"
       },
       "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QRMM-6X96?flag=fsh"
+        "href" : "https://www.familysearch.org/platform/records/records/QRMM-6X96?flag=fsh"
       }
     },
     "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
     } ],
     "identifiers" : {
       "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRD" ]
     },
     "names" : [ {
+      "id" : "d7363997-5853-411d-aa22-16425e86053e",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1700156213206,
+        "created" : 1700156213206
+      },
       "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
       "nameForms" : [ {
         "fullText" : "Frank",
         "parts" : [ {
+          "id" : "da26a523-5bd6-43df-92fb-9c14f9d97b05",
           "type" : "http://gedcomx.org/Given",
           "value" : "Frank",
           "fields" : [ {
+            "id" : "f97b4c50-07cc-40ec-ad77-e4055fec57c2",
+            "attribution" : {
+              "modified" : 1700156213206,
+              "created" : 1700156213206
+            },
             "type" : "http://gedcomx.org/Given",
             "values" : [ {
-              "id" : "fa3bfeb6-9ddd-48bf-b6ad-bbe0876e8d23",
+              "id" : "b691e18f-2230-4a29-bca7-5db8df7a6f6f",
               "type" : "http://gedcomx.org/Original",
               "labelId" : "PR_FTHR_NAME_GN_ORIG",
               "text" : "Frank"
             }, {
-              "id" : "8146d638-fd08-46bb-878d-52a09e1cceaf",
+              "id" : "b691e18f-2230-4a29-bca7-5db8df7a6f6f",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
               "attribution" : {
                 "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1555642242632
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
               },
               "type" : "http://gedcomx.org/Interpreted",
               "labelId" : "PR_FTHR_NAME_GN",
-              "text" : "Frank"
+              "text" : "Frank",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:F&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
             } ]
           } ]
         } ],
         "fields" : [ {
+          "id" : "b5097b71-128c-4163-a68d-902cc7961eef",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
           "type" : "http://gedcomx.org/Name",
           "values" : [ {
-            "id" : "9ae75c60-0af5-465c-b2e9-dd3e60faf097",
+            "id" : "0a172f74-0c6e-4de9-8ab0-8790bcca6b6a",
             "attribution" : {
               "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1555642242617
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
             },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "PR_FTHR_NAME_ORIG",
             "text" : "Frank"
           }, {
-            "id" : "45af0659-250b-4b21-8002-f821f13e8079",
+            "id" : "0a172f74-0c6e-4de9-8ab0-8790bcca6b6a",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
             "attribution" : {
               "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1555642242632
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
             },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "PR_FTHR_NAME",
-            "text" : "Frank"
+            "text" : "Frank",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:F&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       } ]
-    } ]
+    } ],
+    "fields" : [ {
+      "id" : "75ed1ee6-d533-4a66-ba12-e1bbf54c052c",
+      "attribution" : {
+        "modified" : 1700156213206,
+        "created" : 1700156213206
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "9e414678-e167-4cd6-861a-6ee9e60c15cc",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000005265403_00684_00000_0000105705363643_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Frank",
+      "gender" : "Male"
+    }
   }, {
     "id" : "p_103922963882",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
     "extracted" : true,
     "principal" : false,
     "gender" : {
       "type" : "http://gedcomx.org/Female",
       "fields" : [ {
+        "id" : "6f7f2e0f-b92e-43ce-b242-d353e7bdf8d8",
+        "attribution" : {
+          "modified" : 1700156213206,
+          "created" : 1700156213206
+        },
         "type" : "http://gedcomx.org/Gender",
         "values" : [ {
+          "id" : "7a5cb399-9928-4ed1-b4ff-01d2a96db4d4",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1700234848592,
+            "created" : 1700234848592
+          },
           "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
           "resource" : "http://gedcomx.org/Female"
         } ]
       } ]
     },
     "links" : {
       "persona" : {
-        "href" : "https://api.familysearch.org/platform/records/personas/QGNK-BKTS?flag=fsh"
+        "href" : "https://www.familysearch.org/platform/records/personas/QGNK-BKTS?flag=fsh"
       },
       "record" : {
-        "href" : "https://api.familysearch.org/platform/records/records/QRMM-6X96?flag=fsh"
+        "href" : "https://www.familysearch.org/platform/records/records/QRMM-6X96?flag=fsh"
       }
     },
     "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
     } ],
     "identifiers" : {
       "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKTS" ]
     },
     "names" : [ {
+      "id" : "9f4c4b8f-dd13-4f20-8afa-470436ea9b87",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1700156213206,
+        "created" : 1700156213206
+      },
       "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
       "nameForms" : [ {
         "fullText" : "Emma",
         "parts" : [ {
+          "id" : "a14d484b-2ee8-4f56-af30-2100d2f73deb",
           "type" : "http://gedcomx.org/Given",
           "value" : "Emma",
           "fields" : [ {
+            "id" : "3dedbd48-da30-455e-83c2-f533497060cf",
+            "attribution" : {
+              "modified" : 1700156213206,
+              "created" : 1700156213206
+            },
             "type" : "http://gedcomx.org/Given",
             "values" : [ {
-              "id" : "aeff1aa9-01cc-4d53-8f01-7be949c6d4ee",
+              "id" : "f859774e-878c-4993-ba47-219a9d8a1d42",
               "type" : "http://gedcomx.org/Original",
               "labelId" : "PR_MTHR_NAME_GN_ORIG",
               "text" : "Emma"
             }, {
-              "id" : "fee34c31-1ad8-460c-9dc4-2d3bc3a0f2ca",
+              "id" : "f859774e-878c-4993-ba47-219a9d8a1d42",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
               "attribution" : {
                 "contributor" : {
-                  "resource" : "http://treatment/NameTreatment/ver/1"
-                },
-                "modified" : 1555642242653
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
               },
               "type" : "http://gedcomx.org/Interpreted",
               "labelId" : "PR_MTHR_NAME_GN",
-              "text" : "Emma"
+              "text" : "Emma",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:F&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
             } ]
           } ]
         } ],
         "fields" : [ {
+          "id" : "902b14e2-3220-4acc-9f0d-4c6039a539ce",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
           "type" : "http://gedcomx.org/Name",
           "values" : [ {
-            "id" : "0c9df7b1-1166-4fb5-b6d4-271f9513d059",
+            "id" : "1585bccf-15a7-4198-95e3-eda2776930ea",
             "attribution" : {
               "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1555642242632
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
             },
             "type" : "http://gedcomx.org/Original",
             "labelId" : "PR_MTHR_NAME_ORIG",
             "text" : "Emma"
           }, {
-            "id" : "41a72873-6caf-4167-a3a4-ba64cc029d6f",
+            "id" : "1585bccf-15a7-4198-95e3-eda2776930ea",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=87&fieldScorerVersion=1.0.0",
             "attribution" : {
               "contributor" : {
-                "resource" : "http://treatment/NameTreatment/ver/1"
-              },
-              "modified" : 1555642242653
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
             },
             "type" : "http://gedcomx.org/Interpreted",
             "labelId" : "PR_MTHR_NAME",
-            "text" : "Emma"
+            "text" : "Emma",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:F&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
           } ]
         } ]
       } ]
-    } ]
+    } ],
+    "fields" : [ {
+      "id" : "36b391af-c6db-4dfa-8936-e2c7eb20ec52",
+      "attribution" : {
+        "modified" : 1700156213206,
+        "created" : 1700156213206
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "1f6cd59c-bd2c-4759-9809-b112d465e840",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000005265403_00684_00000_0000105705363643_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Emma",
+      "gender" : "Female"
+    }
   } ],
   "relationships" : [ {
-    "id" : "MM9.1.6/QMRG-7PNL",
+    "id" : "c41c95dd-b6da-4b6a-9f7b-820ba6888170",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
     "type" : "http://gedcomx.org/ParentChild",
     "person1" : {
       "resource" : "#p_103922963862",
@@ -453,18 +671,11 @@
       "resourceId" : "p_103922963856"
     }
   }, {
-    "id" : "MM9.1.6/QMRG-7P29",
-    "type" : "http://gedcomx.org/ParentChild",
-    "person1" : {
-      "resource" : "#p_103922963882",
-      "resourceId" : "p_103922963882"
+    "id" : "c81e316a-31c2-48d6-8d5f-87fc20844d53",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
     },
-    "person2" : {
-      "resource" : "#p_103922963856",
-      "resourceId" : "p_103922963856"
-    }
-  }, {
-    "id" : "MM9.1.6/QMRG-7PP8",
     "type" : "http://gedcomx.org/Couple",
     "person1" : {
       "resource" : "#p_103922963862",
@@ -474,56 +685,50 @@
       "resource" : "#p_103922963882",
       "resourceId" : "p_103922963882"
     }
+  }, {
+    "id" : "37a027ec-cc68-4705-99e6-e9e46a06d56d",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_103922963882",
+      "resourceId" : "p_103922963882"
+    },
+    "person2" : {
+      "resource" : "#p_103922963856",
+      "resourceId" : "p_103922963856"
+    }
   } ],
   "sourceDescriptions" : [ {
-    "id" : "sd_c_2384987",
-    "about" : "https://api.familysearch.org/platform/records/collections/2384987",
-    "resourceType" : "http://gedcomx.org/Collection",
-    "created" : 1455318108109,
-    "modified" : 1660259767907,
-    "coverage" : [ {
-      "spatial" : {
-        "original" : "Canterbury, Kent, England, United Kingdom",
-        "description" : "#place_1927033-1986340-1930686-6256883"
-      },
-      "temporal" : {
-        "original" : "1538/1986",
-        "formal" : "1538/1986"
-      },
-      "recordType" : "http://gedcomx.org/Vital"
-    } ],
-    "titles" : [ {
-      "lang" : "en",
-      "value" : "England, Kent, Canterbury Parish Registers, 1538-1986"
-    } ],
-    "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/platform/records/collections/2384987" ]
-    }
-  }, {
     "id" : "src_r_105705363643",
     "mediaType" : "image/jpeg",
     "about" : "https://www.familysearch.org/ark:/61903/1:2:QRMM-6X96",
     "componentOf" : {
-      "description" : "#sd_c_2384987"
+      "description" : "#sd_c_2384987",
+      "descriptionId" : "sd_c_2384987"
     },
     "resourceType" : "http://gedcomx.org/Record",
-    "created" : 1555642242670,
-    "modified" : 1660259767907,
+    "created" : 1700156213206,
+    "modified" : 1709942820945,
     "coverage" : [ {
       "spatial" : {
-        "original" : "St Damian-in-the-Blean, Kent, England, United Kingdom"
+        "original" : "St Damian-in-the-Blean, Kent, England, United Kingdom",
+        "description" : "https://www.familysearch.org/platform/places/description/3354972"
       },
       "temporal" : {
-        "original" : "24 Aug 1902"
+        "original" : "24 August 1902",
+        "formal" : "+1902-08-24"
       },
       "recordType" : "http://gedcomx.org/Vital"
     } ],
     "citations" : [ {
-      "value" : "\"England, Kent, Canterbury Parish Registers, 1538-1986,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:2:QRMM-6X96 : 12 March 2020), Entry for Ella Rose Giles, 24 Aug 1902; from \" Kent, Canterbury Archdeaconry Parish Registers Browse, 1538-1913,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d); citing Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England."
+      "value" : "\"England, Kent, Canterbury Parish Registers, 1538-1986\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW : Sat Mar 09 00:07:00 UTC 2024), Entry for Ella Rose Giles and Frank, 24 August 1902."
     } ],
     "sources" : [ {
-      "description" : "#sd2",
-      "descriptionId" : "sd2"
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
     } ],
     "titles" : [ {
       "lang" : "en",
@@ -531,42 +736,181 @@
     } ],
     "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
     "identifiers" : {
-      "$" : [ "https://www.familysearch.org/platform/externalId/easy/13000022322960" ],
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/13000022322960" ],
       "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QRMM-6X96" ]
     },
     "descriptor" : {
       "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2384987?arkName=1:2:QRMM-6X96"
     }
   }, {
-    "id" : "sd_p_103922963856",
-    "about" : "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW",
-    "componentOf" : {
-      "description" : "#src_r_105705363643"
-    },
-    "resourceType" : "http://gedcomx.org/Person",
-    "citations" : [ {
-      "value" : "\"England, Kent, Canterbury Parish Registers, 1538-1986,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QGNK-BKRW : 12 March 2020), Ella Rose Giles, 24 Aug 1902; from \" Kent, Canterbury Archdeaconry Parish Registers Browse, 1538-1913,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d); citing Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England."
+    "id" : "sd_c_2384987",
+    "about" : "https://www.familysearch.org/platform/records/collections/2384987",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1455318108109,
+    "modified" : 1718396951737,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Canterbury, Kent, England, United Kingdom",
+        "description" : "https://www.familysearch.org/platform/places/description/3040044"
+      },
+      "temporal" : {
+        "original" : "1538/1986",
+        "formal" : "+1538/+1986"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
     } ],
     "titles" : [ {
       "lang" : "en",
-      "value" : "Ella Rose Giles, \"England, Kent, Canterbury Parish Registers, 1538-1986\""
+      "value" : "England, Kent, Canterbury Parish Registers, 1538-1986"
+    }, {
+      "lang" : "zh",
+      "value" : "英國，肯特，坎特伯雷教區登記簿，1538 年 - 1986 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Angleterre, registres paroissiaux du Kent, 1538-1986"
+    }, {
+      "lang" : "ru",
+      "value" : "Англия, Кент, Кентерберийские приходские реестры, 1538-1986 гг."
+    }, {
+      "lang" : "no",
+      "value" : "England, Kent, Canterbury Sogneregistre, 1538-1986"
+    }, {
+      "lang" : "es",
+      "value" : "Inglaterra, Kent, Registros parroquiales de Canterbury, 1538-1986"
+    }, {
+      "lang" : "mn",
+      "value" : "Англи, Кент, Кентербури сүмийн харьяа газрын бүртгэл, 1538-1986"
+    }, {
+      "lang" : "ko",
+      "value" : "영국, 켄트, 캔터베리 교구 등록부, 1538-1986"
+    }, {
+      "lang" : "ja",
+      "value" : "イングランド、ケント、カンタベリー教区簿冊、1538年-1986年"
+    }, {
+      "lang" : "it",
+      "value" : "Inghilterra, Kent, Registri parrocchiali di Canterbury, 1538-1986"
+    }, {
+      "lang" : "id",
+      "value" : "Inggris, Kent, Register Paroki Canterbury, 1538-1986"
+    }, {
+      "lang" : "hu",
+      "value" : "Anglia, Kent, Canterbury-i Plébánia anyakönyvek, 1538-1986"
+    }, {
+      "lang" : "sk",
+      "value" : "Anglicko, Kent, registre farnosti Canterbury, 1538-1986"
+    }, {
+      "lang" : "th",
+      "value" : "อังกฤษ, เคนท์, ทะเบียนเขตทางศาสนาแคนเทอเบอรี่, ปี 1538-1986"
+    }, {
+      "lang" : "to",
+      "value" : "ʻIngilani, Keni, Ngaahi Lesisita Fakapalokia 'o Kenitapuli, 1538-1986"
+    }, {
+      "lang" : "bg",
+      "value" : "Англия, Кент, Енорийски регистри в Кентърбъри, 1538-1986"
+    }, {
+      "lang" : "km",
+      "value" : "អង់គ្លេស, ខេនថ៍, បញ្ជីសង្កាត់ជើងព្រះវិហារខេនធើបេរី, ឆ្នាំ 1538-1986"
+    }, {
+      "lang" : "pl",
+      "value" : "Anglia, Kent, Rejestry parafialne, 1538-1986"
+    }, {
+      "lang" : "ro",
+      "value" : "Anglia, Kent, Canterbury, Registre parohiale, 1538-1986"
+    }, {
+      "lang" : "sv",
+      "value" : "England, Kent, Canterbury flrsamlingsregister, 1538-1986"
+    }, {
+      "lang" : "sm",
+      "value" : "Anh, Kent, Sổ Đăng Ký Giáo Xứ Canterbury, 1538-1986"
+    }, {
+      "lang" : "vi",
+      "value" : "Anh, Kent, Sổ Đăng Ký Giáo Xứ Canterbury, 1538-1986"
+    }, {
+      "lang" : "sq",
+      "value" : "Angli, Kent, Regjistrat e Famullisë së Canterburyt, 1538-1986"
+    }, {
+      "lang" : "pt",
+      "value" : "Inglaterra, Kent, Registro da Paróquia de Canterbury, 1538-1986"
+    }, {
+      "lang" : "de",
+      "value" : "England, Kent, Canterbury Pfarreiregister, 1538-1986"
+    }, {
+      "lang" : "uk",
+      "value" : "Англія, Кент, реєстри парафій, 1538–1986 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Engleska, Kent, župni registri Canterbury, 1538.-1986."
+    }, {
+      "lang" : "cs",
+      "value" : "Anglie, Kent, Canterbury farní rejstříky, 1538-1986"
+    }, {
+      "lang" : "da",
+      "value" : "England, Kent, Canterbury, sogneregistre, 1538-1986"
+    }, {
+      "lang" : "nl",
+      "value" : "Engeland, Kent, Parochie Registers, 1538-1968"
+    }, {
+      "lang" : "et",
+      "value" : "Inglismaa, Kent, Canterbury koguduse registrid, 1538–1986"
+    }, {
+      "lang" : "fj",
+      "value" : "Igiladi, Kent, Volatudei ni Tabacakacaka Canterbury , 1538-1986"
+    }, {
+      "lang" : "fi",
+      "value" : "Englanti, Kent, Canterburyn kirkonkirjat, 1538-1986"
+    }, {
+      "lang" : "tl",
+      "value" : "England, Kent, Mga Rehistro ng Parokya ng Canterbury, 1538-1986"
+    }, {
+      "lang" : "mg",
+      "value" : "Angletera, Kent, Canterbury, Rejisitry ny Paroasy, 1538-1986"
+    }, {
+      "lang" : "ceb",
+      "value" : "England, Kent, Canterbury Mga Rehistro sa Parokya, 1538-1986"
     } ],
     "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW" ]
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/2384987" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:33S7-81LP-51M",
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "title:England, Kent, Blean",
+        "description" : "https://www.familysearch.org/platform/places/description/3041310"
+      },
+      "temporal" : {
+        "original" : "1850–1966",
+        "formal" : "+1850-01-01T00:00:00Z/+1966-12-31T23:59:59Z"
+      },
+      "recordType" : "http://gedcomx.org/Baptism"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:33S7-81LP-51M" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2384987?arkName=3:1:33S7-81LP-51M"
     }
   }, {
     "id" : "sd_p_103922963862",
     "about" : "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRD",
     "componentOf" : {
-      "description" : "#src_r_105705363643"
+      "description" : "#src_r_105705363643",
+      "descriptionId" : "src_r_105705363643"
     },
     "resourceType" : "http://gedcomx.org/Person",
     "citations" : [ {
-      "value" : "\"England, Kent, Canterbury Parish Registers, 1538-1986,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QGNK-BKRD : 12 March 2020), Frank in entry for Ella Rose Giles, 24 Aug 1902; from \" Kent, Canterbury Archdeaconry Parish Registers Browse, 1538-1913,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d); citing Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England."
+      "value" : "\"England, Kent, Canterbury Parish Registers, 1538-1986\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW : Sat Mar 09 00:07:00 UTC 2024), Entry for Ella Rose Giles and Frank, 24 August 1902."
     } ],
     "titles" : [ {
       "lang" : "en",
-      "value" : "Frank in entry for Ella Rose Giles, \"England, Kent, Canterbury Parish Registers, 1538-1986\""
+      "value" : "Frank, \"England, Kent, Canterbury Parish Registers, 1538-1986\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Frank, \"England, Kent, Canterbury Parish Registers, 1538-1986\""
     } ],
     "identifiers" : {
       "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRD" ]
@@ -575,124 +919,131 @@
     "id" : "sd_p_103922963882",
     "about" : "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKTS",
     "componentOf" : {
-      "description" : "#src_r_105705363643"
+      "description" : "#src_r_105705363643",
+      "descriptionId" : "src_r_105705363643"
     },
     "resourceType" : "http://gedcomx.org/Person",
     "citations" : [ {
-      "value" : "\"England, Kent, Canterbury Parish Registers, 1538-1986,\" database with images, <i>FamilySearch</i> (https://familysearch.org/ark:/61903/1:1:QGNK-BKTS : 12 March 2020), Emma in entry for Ella Rose Giles, 24 Aug 1902; from \" Kent, Canterbury Archdeaconry Parish Registers Browse, 1538-1913,\" database and images, <i>findmypast</i> (http://www.findmypast.com : n.d); citing Baptism, St Damian-in-the-Blean, Kent, England, United Kingdom, Citing Canterbury Cathedral Archives, England."
+      "value" : "\"England, Kent, Canterbury Parish Registers, 1538-1986\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW : Sat Mar 09 00:07:00 UTC 2024), Entry for Ella Rose Giles and Frank, 24 August 1902."
     } ],
     "titles" : [ {
       "lang" : "en",
-      "value" : "Emma in entry for Ella Rose Giles, \"England, Kent, Canterbury Parish Registers, 1538-1986\""
+      "value" : "Emma, \"England, Kent, Canterbury Parish Registers, 1538-1986\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Emma, \"England, Kent, Canterbury Parish Registers, 1538-1986\""
     } ],
     "identifiers" : {
       "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKTS" ]
     }
   }, {
-    "id" : "sd2",
-    "mediaType" : "image/jpeg",
-    "about" : "https://www.familysearch.org/ark:/61903/3:1:33S7-81LP-51M?cc=2384987",
-    "resourceType" : "http://gedcomx.org/DigitalArtifact",
-    "repository" : {
-      "resourceId" : "#a1"
+    "id" : "sd_p_103922963856",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW",
+    "componentOf" : {
+      "description" : "#src_r_105705363643",
+      "descriptionId" : "src_r_105705363643"
     },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"England, Kent, Canterbury Parish Registers, 1538-1986\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW : Sat Mar 09 00:07:00 UTC 2024), Entry for Ella Rose Giles and Frank, 24 August 1902."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Ella Rose Giles, \"England, Kent, Canterbury Parish Registers, 1538-1986\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Ella Rose Giles, \"England, Kent, Canterbury Parish Registers, 1538-1986\""
+    } ],
     "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:33S7-81LP-51M?cc=2384987" ]
-    },
-    "descriptor" : {
-      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2384987?arkName=3:1:33S7-81LP-51M"
-    }
-  } ],
-  "agents" : [ {
-    "id" : "a1",
-    "identifiers" : {
-      "http://gedcomx.org/Persistent" : [ "www.familysearch.org" ]
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QGNK-BKRW" ]
     }
   } ],
   "places" : [ {
-    "place" : {
-      "resource" : "https://www.familysearch.org/platform/places/description/3354972",
-      "resourceId" : "place_3354972"
-    }
-  }, {
-    "id" : "place_1927033-1986340-1930686-6256883",
+    "id" : "place_3354972",
     "identifiers" : {
-      "http://gedcomx.org/Primary" : [ "https://api.familysearch.org/authorities/v1/place/6256883?context=1927033-1986340-1930686" ]
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/3354972" ]
     }
   } ],
   "fields" : [ {
-    "type" : "http://familysearch.org/types/fields/ExtArcIdOrig",
+    "id" : "3ce8b296-efaf-4944-9c3e-3dc65b18aadb",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
     "values" : [ {
-      "id" : "232781c7-d80f-42f5-9f6b-67e4bd40c4c5",
+      "id" : "13b37a97-40b7-47ba-9e1a-cc1fbf98f60f",
+      "attribution" : {
+        "contributor" : {
+          "resource" : "http://treatment/SortKeyTreatment/ver/1"
+        },
+        "modified" : 1555642242655,
+        "created" : 1555642242655
+      },
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000005265403_00684_00000_0000105705363643"
+    } ]
+  }, {
+    "id" : "732f7d82-596f-474d-a847-23d08858fc66",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "d759904b-57ed-4e3a-8214-f01df6b72581",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "7"
+    } ]
+  }, {
+    "id" : "61754cab-1da7-4628-9986-d931ff411f54",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "1d0d0162-0d41-46ee-8e39-95becc640831",
       "type" : "http://gedcomx.org/Original",
-      "labelId" : "EXT_ARC_ID_ORIG",
-      "text" : "U3/62/1/8"
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"EXT_IMAGE_REFERENCE\":\"GBPRS/CANT/005265403/00684\",\"FS_COLLECTION_ID\":\"2384987\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:33S7-81LP-51M\",\"EXT_ARC_ID_ORIG\":\"U3/62/1/8\",\"EXT_RECORD_SEQ_ORIG\":\"96288131\"}"
     } ]
   }, {
-    "type" : "http://familysearch.org/types/fields/ExternalImageId",
+    "id" : "583f3042-04b7-44e4-9355-05fcfc9d3ecf",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
     "values" : [ {
-      "id" : "12fa8eab-2ae2-4755-b4f5-e49c20eaed3c",
+      "id" : "c3102698-4a01-404b-883b-e84147ade18d",
       "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_IMAGE_ID",
-      "text" : "GBPRS/CANT/B/96288131"
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
     } ]
   }, {
-    "type" : "http://familysearch.org/types/fields/ExtImageReference",
+    "id" : "ac216a04-0624-4c32-ad0e-af82bac6ff5e",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://familysearch.org/types/fields/VisStatus",
     "values" : [ {
-      "id" : "00368c81-f5f4-4ea4-bf74-0c8212d51fe5",
+      "id" : "3920bf39-8c98-4e41-8674-9aef6a0b2275",
       "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "EXT_IMAGE_REFERENCE",
-      "text" : "GBPRS/CANT/005265403/00684"
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
     } ]
   }, {
-    "type" : "http://familysearch.org/types/fields/ExtRecordSeqOrig",
-    "values" : [ {
-      "id" : "4c2edc74-b0a9-4ef0-a15c-93922dae4af2",
-      "type" : "http://gedcomx.org/Original",
-      "labelId" : "EXT_RECORD_SEQ_ORIG",
-      "text" : "96288131"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/CollectionId",
-    "values" : [ {
-      "id" : "fd9364eb-5247-478a-9f71-980f68351ed8",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_COLLECTION_ID",
-      "text" : "2384987"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/DigitalFilmNumber",
-    "values" : [ {
-      "id" : "8f13677c-e085-4c1b-bfaa-8f147b1312e6",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_DIGITAL_FILM_NBR",
-      "text" : "005265403"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageId",
-    "values" : [ {
-      "id" : "08c57ab4-2376-40d1-9121-80202bdef1d1",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_ID",
-      "text" : "005265403_00684"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageNumber",
-    "values" : [ {
-      "id" : "195fe5cd-1575-4341-a58c-12a6f326c9ac",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_NBR",
-      "text" : "00684"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/PpqId",
-    "values" : [ {
-      "id" : "68f68e79-6eb4-4237-a1f4-6abbdaf3edf8",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PPQ_ID",
-      "text" : "14-0895"
-    } ]
-  }, {
+    "id" : "b75d4159-6e23-4019-8172-736d8a76b2a1",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
     "type" : "http://familysearch.org/types/fields/RecordGroup",
     "values" : [ {
       "id" : "ab29acab-8547-4dd9-a31b-f80e98afa50e",
@@ -701,20 +1052,37 @@
       "text" : "No Traveler; 2019-04-18T10:37:30-0600; gilberts; 4607; TB; work.sg_2384987_dio_540; No Traveler"
     } ]
   }, {
-    "type" : "http://familysearch.org/types/fields/SortKey",
+    "id" : "5b5ed5d1-be27-48b7-bbd1-c0dafe33bcd2",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
     "values" : [ {
-      "id" : "13b37a97-40b7-47ba-9e1a-cc1fbf98f60f",
-      "attribution" : {
-        "contributor" : {
-          "resource" : "http://treatment/SortKeyTreatment/ver/1"
-        },
-        "modified" : 1555642242655
-      },
+      "id" : "6f810308-25db-4065-8582-84b1db784f21",
       "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_SORT_KEY",
-      "text" : "0000000005265403_00684_00000_0000105705363643"
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-1961-26753-22470-28\",\"FS_IMAGE_NBR\":\"00684\",\"FS_IMAGE_ID\":\"005265403_00684\",\"FS_UNIQUE_ID\":\"13000022322960\"}"
     } ]
   }, {
+    "id" : "a223d4c8-3584-46e8-9b08-a98e37c4704e",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "889008c0-2a3e-46e6-be0d-481e0d1f479e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "48093"
+    } ]
+  }, {
+    "id" : "fdfd3f08-dc4a-4177-9771-a10526c026c4",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
     "type" : "http://familysearch.org/types/fields/TravelerTitle",
     "values" : [ {
       "id" : "9bcc6fd5-21b4-40df-9ccc-ad15ddc0c8f8",
@@ -723,64 +1091,64 @@
       "text" : "England, Kent, Canterbury Archdeaconry Parish Registers, 1538-1900 (FMP) - Affiliate Index"
     } ]
   }, {
-    "type" : "http://familysearch.org/types/fields/UniqueId",
+    "id" : "9b53f733-ca17-4ad1-b73c-c98feaf989fa",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://familysearch.org/types/fields/ExtImageId",
     "values" : [ {
-      "id" : "ecf7bc0f-22b6-496c-8f99-be9cd40cf180",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_UNIQUE_ID",
-      "text" : "13000022322960"
+      "id" : "12fa8eab-2ae2-4755-b4f5-e49c20eaed3c",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_IMAGE_ID_ORIG",
+      "text" : "GBPRS/CANT/B/96288131"
     } ]
   }, {
-    "type" : "http://familysearch.org/types/fields/FsVisStatus",
-    "values" : [ {
-      "id" : "3920bf39-8c98-4e41-8674-9aef6a0b2275",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_VIS_STATUS",
-      "text" : "VISIBLE"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageApid",
-    "values" : [ {
-      "id" : "f3f35218-9fb5-4ec1-8752-1c6c988ca29d",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_IMAGE_APID",
-      "text" : "TH-1961-26753-22470-28"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/ImageArk",
-    "values" : [ {
-      "id" : "f5d07466-2717-4dcb-8e7f-b6fb2bd7dea9",
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "IMAGE_ARK",
-      "text" : "https://familysearch.org/ark:/61903/3:1:33S7-81LP-51M"
-    } ]
-  }, {
-    "type" : "http://familysearch.org/types/fields/RecordVersion",
-    "values" : [ {
-      "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_RECORD_VERSION",
-      "text" : "7"
-    } ]
-  }, {
+    "id" : "d30784ed-54bb-4e64-b3f8-70fc8e9f9a69",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
     "type" : "http://familysearch.org/types/fields/UserModified",
     "values" : [ {
+      "id" : "662b1f1d-c9ab-4dc5-9d33-8215f8b19f55",
       "type" : "http://gedcomx.org/Interpreted",
       "labelId" : "FS_USER_MODIFIED",
       "text" : "false"
     } ]
   }, {
-    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "id" : "d6793b7c-6d4e-44b0-87b3-63ea0d30c8ed",
+    "attribution" : {
+      "modified" : 1700156213206,
+      "created" : 1700156213206
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
     "values" : [ {
+      "id" : "68f68e79-6eb4-4237-a1f4-6abbdaf3edf8",
       "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_CDS_BATCH_ID",
-      "text" : "48093"
+      "labelId" : "FS_PPQ_ID",
+      "text" : "14-0895"
     } ]
   }, {
-    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
     "values" : [ {
       "type" : "http://gedcomx.org/Interpreted",
-      "labelId" : "FS_PUB_STATUS",
-      "text" : "Production"
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "005265403_011_M99X-V4Z"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "63"
     } ]
   } ]
 }
