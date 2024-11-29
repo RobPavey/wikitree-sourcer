@@ -113,10 +113,22 @@ function extractData(document, url) {
     };
   }
 
+  // https://www.archion.de/en/viewer/?type=churchRegister&uid=113568&pageId=31765493 [get 113568]
+  if (url.includes("uid")) {
+    const paramString = url.split("?")[1];
+    let queryString = new URLSearchParams(paramString);
+    result.uid = queryString.get("uid");
+  }
+  
   // https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12 [get 290910]
-  const paramString = url.split("?")[1];
-  let queryString = new URLSearchParams(paramString);
-  result.uid = queryString.get("uid");
+  else {
+    if (url[url.length - 1] == "/") {
+      url = url.substring(0, url.length - 1);
+    }
+    const parts = url.split("/");
+    const uid = parts[parts.length - 1].split("?")[0];
+    result.uid = uid;
+  }
 
   // Only if the page has a permalink button, we can generate a permalink
   const permaLinkButton = document.querySelector("span[class='addlink']");

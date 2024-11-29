@@ -46,6 +46,11 @@ const regressionData = [
     url: "https://www.archion.de/de/viewer/churchRegister/366328?cHash=990aef2a0aab4cd5211f5013bf1721c6",
     extraExtractedDataFields: { permalink: "https://www.archion.de/p/0252a09d0d/" },
   },
+  {
+    caseName: "baden_wuerttemberg_sulz_am_neckar_aistaig_trauungen_1798_1831_44",
+    url: "https://www.archion.de/en/viewer/?type=churchRegister&uid=113568&pageId=31765493",
+    extraExtractedDataFields: { permalink: "https://www.archion.de/p/1aa1b9ba8e/" },
+  },
 ];
 
 async function runTests(testManager) {
