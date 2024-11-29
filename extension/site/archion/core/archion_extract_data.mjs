@@ -114,12 +114,9 @@ function extractData(document, url) {
   }
 
   // https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12 [get 290910]
-  if (url[url.length - 1] == "/") {
-    url = url.substring(0, url.length - 1);
-  }
-  const parts = url.split("/");
-  const uid = parts[parts.length - 1].split("?")[0];
-  result.uid = uid;
+  const paramString = url.split("?")[1];
+  let queryString = new URLSearchParams(paramString);
+  result.uid = queryString.get("uid");
 
   // Only if the page has a permalink button, we can generate a permalink
   const permaLinkButton = document.querySelector("span[class='addlink']");
