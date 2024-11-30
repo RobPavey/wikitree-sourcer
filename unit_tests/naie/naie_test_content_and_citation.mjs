@@ -78,6 +78,10 @@ const regressionData = [
     url: "http://www.census.nationalarchives.ie/pages/1901/Clare/Ballynacally/Inishmore_on_Deen_Island/1075611/",
   },
   {
+    caseName: "census_1911_mountjoy_edward_fuller",
+    url: "https://census.nationalarchives.ie/pages/1911/Dublin/Mountjoy/Charles_Street__Great/27180/",
+  },
+  {
     caseName: "census_1911_waterford_john_long",
     url: "http://www.census.nationalarchives.ie/pages/1911/Waterford/Waterford_No__2_Urban/Spring_Garden_Alley/670431/",
   },

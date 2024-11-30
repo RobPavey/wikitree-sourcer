@@ -1,0 +1,70 @@
+{
+  "url": "https://census.nationalarchives.ie/pages/1911/Dublin/Mountjoy/Charles_Street__Great/27180/",
+  "success": true,
+  "breadCrumbs": [
+    "Census Years",
+    "1911",
+    "Dublin",
+    "Mountjoy",
+    "Charles Street, Great",
+    "Residents of a house"
+  ],
+  "heading": "Residents of a house 2.2 in Charles Street, Great (Mountjoy, Dublin)",
+  "household": {
+    "headings": [
+      "Surname",
+      "Forename",
+      "Age",
+      "Sex",
+      "Relation to head",
+      "Religion",
+      "Birthplace",
+      "Occupation",
+      "Literacy",
+      "Irish Language",
+      "Marital Status",
+      "Specified Illnesses",
+      "Years Married",
+      "Children Born",
+      "Children Living"
+    ],
+    "members": [
+      {
+        "Surname": "Fuller",
+        "Forename": "Edward",
+        "Age": "53",
+        "Sex": "Male",
+        "Relation to head": "Head of Family",
+        "Religion": "Roman Catholic",
+        "Birthplace": "Monmouthshire Wales",
+        "Occupation": "Chairmaker",
+        "Literacy": "Read and write",
+        "Irish Language": "-",
+        "Marital Status": "Married",
+        "Specified Illnesses": "-",
+        "Years Married": "36",
+        "Children Born": "6",
+        "Children Living": "3",
+        "isSelected": true
+      },
+      {
+        "Surname": "Fuller",
+        "Forename": "Elizabeth",
+        "Age": "55",
+        "Sex": "Female",
+        "Relation to head": "Wife",
+        "Religion": "Roman Catholic",
+        "Birthplace": "City Dublin",
+        "Occupation": "-",
+        "Literacy": "Read and write",
+        "Irish Language": "-",
+        "Marital Status": "Married",
+        "Specified Illnesses": "-",
+        "Years Married": "36",
+        "Children Born": "6",
+        "Children Living": "3"
+      }
+    ]
+  },
+  "imageLink": "https://census.nationalarchives.ie/reels/nai000059769/"
+}

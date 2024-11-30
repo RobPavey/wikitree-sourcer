@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 2.2 in Charles Street, Great (Mountjoy, Dublin)<br/>\n[https://census.nationalarchives.ie/reels/nai000059769/ National Archives of Ireland Image] - [https://census.nationalarchives.ie/pages/1911/Dublin/Mountjoy/Charles_Street__Great/27180/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nEdward Fuller (53), married, Chairmaker, head of household on Charles Street, Great, Mountjoy, Dublin, Ireland. Born in Monmouthshire Wales, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1911 census Edward (age 53), Chairmaker, was the married head of household on Charles Street, Great, Mountjoy, Dublin, Ireland.<ref>\n'''1911 Census''':\n\"1911 Census of Ireland\"<br/>\nThe National Archives of Ireland; Residents of a house 2.2 in Charles Street, Great (Mountjoy, Dublin)<br/>\n[https://census.nationalarchives.ie/reels/nai000059769/ National Archives of Ireland Image] - [https://census.nationalarchives.ie/pages/1911/Dublin/Mountjoy/Charles_Street__Great/27180/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nEdward Fuller (53), married, Chairmaker, head of household on Charles Street, Great, Mountjoy, Dublin, Ireland. Born in Monmouthshire Wales, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of Ireland\"<br/>The National Archives of Ireland; Residents of a house 2.2 in Charles Street, Great (Mountjoy, Dublin)<br/>[https://census.nationalarchives.ie/reels/nai000059769/ National Archives of Ireland Image] - [https://census.nationalarchives.ie/pages/1911/Dublin/Mountjoy/Charles_Street__Great/27180/ National Archives of Ireland Record] (accessed 6 May 2021)<br/>Edward Fuller (53), married, Chairmaker, head of household on Charles Street, Great, Mountjoy, Dublin, Ireland. Born in Monmouthshire Wales, Ireland.",
+    "type": "source"
+  }
+}
