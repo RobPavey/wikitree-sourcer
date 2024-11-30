@@ -35,9 +35,10 @@ async function registerSiteData() {
   if (isSiteDataRegistered) {
     return;
   }
-  for (let siteName of siteNames) {
-    let pathName = "../../" + siteName + "/core/" + siteName + "_site_data.mjs";
+  for (const siteName of siteNames) {
+    const pathName = "../../" + siteName + "/core/" + siteName + "_site_data.mjs";
     try {
+      // Note: this gets a validation waring for Firefox but is not a security risk
       let module = await import(pathName);
       if (module) {
         module.register();

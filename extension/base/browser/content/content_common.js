@@ -116,6 +116,7 @@ async function loadExtractDataModule(modulePath) {
     try {
       //console.log('WikiTree Sourcer: loadExtractDataModule. About to import. src is: ', src);
       isLoadedExtractDataModuleLoading = true;
+      // Note: this gets a validation waring for Firefox but is not a security risk
       loadedExtractDataModule = await import(src);
       isLoadedExtractDataModuleReady = true;
       isLoadedExtractDataModuleLoading = false;

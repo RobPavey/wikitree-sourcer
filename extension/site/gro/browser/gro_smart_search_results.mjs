@@ -421,10 +421,10 @@ function fillTable(extractedDataObjs) {
         let linkElement = document.createElement("a");
         linkElement.setAttribute("href", linkText);
         linkElement.setAttribute("target", "_blank"); // opens in new tab
-        linkElement.innerHTML = value;
+        linkElement.innerText = value;
         tdElement.appendChild(linkElement);
       } else {
-        tdElement.innerHTML = value;
+        tdElement.innerText = value;
       }
 
       tdElement.className = "resultsTableDataCell";
@@ -622,14 +622,14 @@ function initFilters(searchParameters) {
       // add initial "ALL" element
       {
         let optionElement = document.createElement("option");
-        optionElement.innerHTML = "Show All";
+        optionElement.innerText = "Show All";
         optionElement.value = "ALL";
         selectElement.appendChild(optionElement);
       }
 
       for (let string of stringArray) {
         let optionElement = document.createElement("option");
-        optionElement.innerHTML = string;
+        optionElement.innerText = string;
         optionElement.value = string;
         selectElement.appendChild(optionElement);
       }

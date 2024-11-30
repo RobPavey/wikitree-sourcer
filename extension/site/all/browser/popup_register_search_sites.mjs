@@ -31,8 +31,9 @@ import { siteNames } from "../core/site_names.mjs";
 // priority set, in that case the order of import would probably control their order
 
 async function importOptions() {
-  for (let siteName of siteNames) {
-    let pathName = "/site/" + siteName + "/browser/" + siteName + "_popup_search.mjs";
+  for (const siteName of siteNames) {
+    const pathName = "/site/" + siteName + "/browser/" + siteName + "_popup_search.mjs";
+    // Note: this gets a validation waring for Firefox but is not a security risk
     let module = await import(pathName);
   }
 }
