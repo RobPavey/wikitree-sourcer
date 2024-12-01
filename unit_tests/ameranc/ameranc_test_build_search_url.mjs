@@ -26,13 +26,10 @@ import { buildSearchUrl } from "../../extension/site/ameranc/core/ameranc_build_
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+    caseName: "ancestry_xx_profile_margarete_van_wye_1889_1974_us",
+    inputPath: "ancestry/generalized_data/ref/xx_profile_margarete_van_wye_1889_1974_us",
   },
-  */
 ];
 
 async function runTests(testManager) {

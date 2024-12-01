@@ -98,6 +98,8 @@ class AmerancUriBuilder {
   }
 
   getUri() {
+    // add normal extra fields
+    this.uri += "&allData=true&searchPage=Advanced-Search&exactRecordType=true";
     return this.uri;
   }
 }
