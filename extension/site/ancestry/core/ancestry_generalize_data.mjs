@@ -393,7 +393,7 @@ function determineRecordType(extractedData) {
       type: RT.LegalRecord,
       matches: ["Land Warrant", "Land Office Records", "Homestead Grant"],
     },
-    { type: RT.Immigration, matches: ["Immigration Records"] },
+    { type: RT.Immigration, matches: ["Immigration Records", "Immigrant Records"] },
     { type: RT.Emigration, matches: ["Emigration Records"] },
     {
       type: RT.Certificate,
@@ -2502,6 +2502,7 @@ function generalizeDataGivenRecordType(ed, result) {
         "Enlistment Year",
         "Residence Year",
         "Electoral Year",
+        "Year of Record",
       ])
     );
     let eventPlace = getCleanValueForRecordDataList(ed, [
