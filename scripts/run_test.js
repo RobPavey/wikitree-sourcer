@@ -67,6 +67,7 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
+  "dfgview",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
