@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { updateDataCacheWithWikiTreeExtract } from "/base/browser/common/data_cache.mjs";
 import {
+  emptyMenu,
   beginMainMenu,
   endMainMenu,
   addMenuItem,
@@ -65,9 +66,11 @@ import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
-async function checkIfWeHavePermissionsToUseApi() {
+async function checkIfWeHavePermissionsToUseApi(checkOnly) {
   const checkPermissionsOptions = {
-    checkOnly: true,
+    reason:
+      "To get extra information for the WikiTree profile permission is needed to access api.wikitree.com to use API calls.",
+    checkOnly: checkOnly,
   };
   let allowed = await checkPermissionForSite("*://api.wikitree.com/*", checkPermissionsOptions);
   return allowed;
@@ -90,7 +93,7 @@ async function makeApiRequests(extractedData) {
     return;
   }
 
-  let havePermission = await checkIfWeHavePermissionsToUseApi();
+  let havePermission = await checkIfWeHavePermissionsToUseApi(true);
   if (!havePermission) {
     return;
   }
@@ -310,7 +313,7 @@ async function updateGeneralizedDataUsingApiResponse(data) {
     }
   }
 
-  let havePermission = await checkIfWeHavePermissionsToUseApi();
+  let havePermission = await checkIfWeHavePermissionsToUseApi(false);
   if (!havePermission) {
     return;
   }
@@ -2233,6 +2236,23 @@ async function setupMergeEditSubMenu(data, tabId, backFunction) {
   endMainMenu(menu);
 }
 
+async function reportLoggedOut() {
+  let fragment = document.createDocumentFragment();
+
+  let messageDiv = document.createElement("div");
+
+  let label = document.createElement("label");
+  label.className = "messageLabel";
+  label.innerText = "You are not logged into WikiTree. This may mean less data is extracted from the page";
+  messageDiv.appendChild(label);
+
+  fragment.appendChild(messageDiv);
+
+  // add fragment to menu
+  let menu = document.getElementById("menu");
+  menu.appendChild(fragment);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Main menu setup function
 ////////////////////////////////////////////////////////////////////////////////
@@ -2270,7 +2290,9 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
     }
   }
 
-  makeApiRequests(extractedData);
+  if (extractedData.pageType != "loggedOut") {
+    makeApiRequests(extractedData);
+  }
 
   // get generalized data
   let generalizedData = generalizeData({ extractedData: extractedData });
@@ -2289,12 +2311,20 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
   // This will rebuild the generalizedData if and when the WikiTree API call responds
   // It is only needed for rare cases like https://www.wikitree.com/wiki/Gilmour-1415 where the husband's
   // name has a space in it.
-  updateGeneralizedDataUsingApiResponse(data);
+  // It also can get extra info like the birth and death dates of the parents - this can be used in
+  // GRO search menu for GRO smart search for example.
+  if (extractedData.pageType != "loggedOut") {
+    updateGeneralizedDataUsingApiResponse(data);
+  }
 
   // This will result in cachedDataCache being set once it is ready (used for some (e.g. GRO) search menu items)
   updateDataCacheWithWikiTreeExtract(extractedData, generalizedData);
 
   let menu = beginMainMenu();
+
+  if (extractedData.pageType == "loggedOut") {
+    reportLoggedOut();
+  }
 
   await addSearchMenus(menu, data, backFunction, "wikitree");
   addMenuDivider(menu);
