@@ -26,12 +26,21 @@ import {
   addSameRecordMenuItem,
   addBackMenuItem,
   addMenuItem,
+  addMenuItemWithSubtitle,
+  addItalicMessageMenuItem,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
+import {
+  doSearch,
+  registerSearchMenuItemFunction,
+  shouldShowSiteSearch,
+  getReproductiveYearRangeForCouple,
+  getPossibleDeathRange,
+  getYearRangeAsText,
+} from "/base/browser/popup/popup_search.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -53,15 +62,25 @@ function shouldShowSearchMenuItem(data, filter) {
   return true;
 }
 
+function yearRangeOverlapsFreebmdRange(range) {
+  if (!range || !range.startYear || !range.endYear) {
+    return false;
+  }
+  let overlapsRange = range.endYear >= freebmdStartYear && range.startYear <= freebmdEndYear;
+
+  return overlapsRange;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function freebmdSearch(generalizedData, typeOfSearch) {
+async function freebmdSearch(generalizedData, typeOfSearch, parameters) {
   const input = {
     typeOfSearch: typeOfSearch,
     generalizedData: generalizedData,
     options: options,
+    parameters: parameters,
   };
   doAsyncActionWithCatch("FreeBMD Search", input, async function () {
     let loadedModule = await import(`../core/freebmd_build_search_url.mjs`);
@@ -141,6 +160,98 @@ function addFreebmdSearchDeathsMenuItem(menu, data, filter) {
   });
 }
 
+function addFreebmdSearchChildBirthsMenuItem(menu, data, filter, spouse) {
+  let yearRange = getReproductiveYearRangeForCouple(data.generalizedData, spouse);
+  if (!yearRangeOverlapsFreebmdRange(yearRange) || yearRange.startYear > yearRange.endYear) {
+    return;
+  }
+
+  const parameters = {
+    startYear: yearRange.startYear,
+    endYear: yearRange.endYear,
+    spouse: spouse,
+  };
+
+  const onClick = function (element) {
+    freebmdSearch(data.generalizedData, "BirthsOfChildren", parameters);
+  };
+
+  let menuItemText = "";
+  let subtitle = "";
+
+  if (spouse) {
+    let spouseName = spouse.name.inferFullName();
+    menuItemText = "Do smart search for children with spouse:";
+    subtitle = spouseName;
+    if (spouse.birthDate || spouse.deathDate) {
+      subtitle += " (";
+      if (spouse.birthDate) {
+        subtitle += spouse.birthDate.getYearString();
+      }
+      subtitle += "-";
+      if (spouse.deathDate) {
+        subtitle += spouse.deathDate.getYearString();
+      }
+      subtitle += ")";
+    }
+    if (spouse.marriageDate) {
+      subtitle += " m. ";
+      subtitle += spouse.marriageDate.getYearString();
+    }
+    subtitle += "\nPossible child birth years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
+  } else {
+    let gender = data.generalizedData.personGender;
+
+    if (gender == "female") {
+      menuItemText = "Do smart search for children with no registered father";
+    } else {
+      menuItemText = "Do smart search for children with any mother";
+    }
+    subtitle += "Possible child birth years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
+  }
+
+  if (!yearRangeOverlapsFreebmdRange(yearRange)) {
+    let rangeText = getYearRangeAsText(yearRange.startYear, yearRange.endYear);
+    subtitle += "\nBirth years " + rangeText + " are not covered by GRO";
+  }
+
+  if (subtitle) {
+    addMenuItemWithSubtitle(menu, menuItemText, onClick, subtitle);
+  } else {
+    addMenuItem(menu, menuItemText, onClick);
+  }
+}
+
+function addFreebmdSearchPossibleDeathsMenuItem(menu, data, filter) {
+  let yearRange = getPossibleDeathRange(data.generalizedData);
+  if (!yearRangeOverlapsFreebmdRange(yearRange)) {
+    return;
+  }
+
+  const parameters = {
+    startYear: yearRange.startYear,
+    endYear: yearRange.endYear,
+  };
+
+  const onClick = function (element) {
+    freebmdSearch(data.generalizedData, "PossibleDeaths", parameters);
+  };
+
+  let menuItemText = "Do search for possible deaths";
+  let subtitle = "";
+
+  if (data.generalizedData.inferDeathYear()) {
+    menuItemText = "Do search for other possible deaths";
+  }
+  subtitle += "Possible death years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
+
+  if (subtitle) {
+    addMenuItemWithSubtitle(menu, menuItemText, onClick, subtitle);
+  } else {
+    addMenuItem(menu, menuItemText, onClick);
+  }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -154,6 +265,15 @@ async function setupFreebmdSearchSubMenu(data, backFunction, filter) {
   addFreebmdSearchBirthsMenuItem(menu, data, filter);
   addFreebmdSearchMarriagesMenuItem(menu, data, filter);
   addFreebmdSearchDeathsMenuItem(menu, data, filter);
+
+  if (data.generalizedData.spouses) {
+    for (let spouse of data.generalizedData.spouses) {
+      addFreebmdSearchChildBirthsMenuItem(menu, data, filter, spouse);
+    }
+  }
+  addFreebmdSearchChildBirthsMenuItem(menu, data, filter);
+  addFreebmdSearchPossibleDeathsMenuItem(menu, data, filter);
+  addItalicMessageMenuItem(menu, "To search for births of siblings, do the search from a parent.");
 
   endMainMenu(menu);
 }

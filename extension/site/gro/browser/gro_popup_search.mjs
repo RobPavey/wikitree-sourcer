@@ -39,6 +39,9 @@ import {
   registerSearchMenuItemFunction,
   shouldShowSiteSearch,
   doBackgroundSearchWithSearchData,
+  getReproductiveYearRangeForCouple,
+  getPossibleDeathRange,
+  getYearRangeAsText,
 } from "/base/browser/popup/popup_search.mjs";
 import { RT } from "/base/core/record_type.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
@@ -66,18 +69,6 @@ function shouldShowSearchMenuItem(data, filter) {
   }
 
   return true;
-}
-
-function yearStringToNumber(yearString) {
-  if (!yearString) {
-    return 0;
-  }
-  let yearNum = Number(yearString);
-
-  if (!yearNum || isNaN(yearNum)) {
-    yearNum = 0;
-  }
-  return yearNum;
 }
 
 function birthYearInOverallGroRange(data) {
@@ -144,92 +135,6 @@ function getYearRangesAsText(type) {
     ")";
 
   return text;
-}
-
-function getYearRangeAsText(startYear, endYear) {
-  if (!startYear) {
-    startYear = "";
-  }
-  if (!endYear) {
-    endYear = "";
-  }
-  let text = startYear + "-" + endYear;
-  return text;
-}
-
-function getReproductiveYearRangeForCouple(gd, spouse) {
-  const startReproductiveAge = 14;
-
-  let endReproductiveAge = 80;
-  let spouseEndReproductiveAge = 80;
-  if (gd.personGender == "female") {
-    endReproductiveAge = 50;
-  } else {
-    spouseEndReproductiveAge = 50;
-  }
-
-  let range = {};
-
-  let birthYear = yearStringToNumber(gd.inferBirthYear());
-  if (birthYear) {
-    range.startYear = birthYear + startReproductiveAge;
-    range.endYear = birthYear + endReproductiveAge;
-    let deathYear = yearStringToNumber(gd.inferDeathYear());
-    if (deathYear) {
-      if (range.endYear > deathYear + 1) {
-        range.endYear = deathYear + 1;
-      }
-    }
-  }
-
-  if (spouse) {
-    if (spouse.birthDate) {
-      let spouseBirthYear = yearStringToNumber(spouse.birthDate.getYearString());
-      if (spouseBirthYear) {
-        let spouseStartReproductiveAge = spouseBirthYear + startReproductiveAge;
-        if (spouseStartReproductiveAge > range.startYear) {
-          range.startYear = spouseStartReproductiveAge;
-        }
-        let thisSpouseEndReproductiveAge = spouseBirthYear + spouseEndReproductiveAge;
-        if (thisSpouseEndReproductiveAge < range.endYear) {
-          range.endYear = thisSpouseEndReproductiveAge;
-        }
-      }
-    }
-    if (spouse.deathDate) {
-      let spouseDeathYear = yearStringToNumber(spouse.deathDate.getYearString());
-      if (spouseDeathYear) {
-        if (spouseDeathYear + 1 < range.endYear) {
-          range.endYear = spouseDeathYear + 1;
-        }
-      }
-    }
-    if (spouse.marriageDate) {
-      let spouseMarriageYear = yearStringToNumber(spouse.marriageDate.getYearString());
-      if (spouseMarriageYear) {
-        if (spouseMarriageYear > range.startYear) {
-          range.startYear = spouseMarriageYear;
-        }
-      }
-    }
-  }
-
-  return range;
-}
-
-function getPossibleDeathRange(gd) {
-  const maxLifespan = 120;
-  let range = {};
-  let birthYear = yearStringToNumber(gd.inferBirthYear());
-  if (birthYear) {
-    range.startYear = birthYear - 2;
-    range.endYear = birthYear + maxLifespan;
-
-    range.startBirthYear = birthYear - 2;
-    range.endBirthYear = birthYear + 2;
-  }
-
-  return range;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

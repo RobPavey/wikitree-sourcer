@@ -199,6 +199,7 @@ function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
   const dataCache = buildUrlInput.dataCache;
   const typeOfSearch = buildUrlInput.typeOfSearch;
+  const parameters = buildUrlInput.parameters;
   const options = buildUrlInput.options;
 
   var builder = new FreebmdUriBuilder();
@@ -223,6 +224,10 @@ function buildSearchUrl(buildUrlInput) {
       // should never happen
       type = "births";
     }
+  } else if (typeOfSearch == "BirthsOfChildren") {
+    type = "births";
+  } else if (typeOfSearch == "PossibleDeaths") {
+    type = "deaths";
   }
 
   // add type to search
@@ -245,6 +250,16 @@ function buildSearchUrl(buildUrlInput) {
     let eventYear = gd.inferEventYear();
     dates.startYear = eventYear;
     dates.endYear = eventYear;
+  } else if (typeOfSearch == "BirthsOfChildren") {
+    if (parameters) {
+      dates.startYear = parameters.startYear;
+      dates.endYear = parameters.endYear;
+    }
+  } else if (typeOfSearch == "PossibleDeaths") {
+    if (parameters) {
+      dates.startYear = parameters.startYear;
+      dates.endYear = parameters.endYear;
+    }
   } else if (type == "births") {
     let birthYear = gd.inferBirthYear();
     let birthDateQualifier = gd.inferBirthDateQualifier();
@@ -286,9 +301,47 @@ function buildSearchUrl(buildUrlInput) {
     builder.addEndQuarter(dates.endQuarter);
   }
 
-  addAppropriateSurname(gd, type, builder, options);
+  if (typeOfSearch == "BirthsOfChildren") {
+    if (gd.personGender == "female") {
+      if (parameters && parameters.spouse && parameters.spouse.name) {
+        let spouseLastName = parameters.spouse.name.inferLastName();
+        if (spouseLastName) {
+          builder.addSurname(spouseLastName);
+        }
+        let mmn = gd.lastNameAtBirth;
+        if (!mmn) {
+          mmn = gd.inferLastName();
+        }
+        if (mmn) {
+          if (includeMothersName(dates, mmn)) {
+            builder.addOtherSurname(mmn);
+          }
+        }
+      }
+    } else {
+      let lastName = gd.lastNameAtBirth;
+      if (!lastName) {
+        lastName = gd.inferLastName();
+      }
 
-  addAppropriateGivenNames(gd, dates, type, builder);
+      if (lastName) {
+        builder.addSurname(lastName);
+      }
+
+      if (parameters && parameters.spouse && parameters.spouse.name) {
+        let spouseLastName = parameters.spouse.name.inferLastName();
+        if (spouseLastName) {
+          if (includeMothersName(dates, spouseLastName)) {
+            builder.addOtherSurname(spouseLastName);
+          }
+        }
+      }
+    }
+  } else {
+    addAppropriateSurname(gd, type, builder, options);
+
+    addAppropriateGivenNames(gd, dates, type, builder);
+  }
 
   // now set specific fields for each type
   if (type == "births") {
