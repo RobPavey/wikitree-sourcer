@@ -172,7 +172,7 @@ function includeMothersName(dates, mothersMaidenName) {
     return false;
   }
 
-  if (yearNum > 1911) {
+  if (yearNum >= 1911 && dates.startQuarter > 2) {
     return true;
   }
 
@@ -243,6 +243,8 @@ function buildSearchUrl(buildUrlInput) {
   let dates = {
     startYear: undefined,
     endYear: undefined,
+    startQuarter: 1,
+    endQuarter: 4,
   };
 
   if (typeOfSearch == "SameCollection") {
@@ -254,11 +256,15 @@ function buildSearchUrl(buildUrlInput) {
     if (parameters) {
       dates.startYear = parameters.startYear;
       dates.endYear = parameters.endYear;
+      dates.startQuarter = parameters.startQuarter;
+      dates.endQuarter = parameters.endQuarter;
     }
   } else if (typeOfSearch == "PossibleDeaths") {
     if (parameters) {
       dates.startYear = parameters.startYear;
       dates.endYear = parameters.endYear;
+      dates.startQuarter = parameters.startQuarter;
+      dates.endQuarter = parameters.endQuarter;
     }
   } else if (type == "births") {
     let birthYear = gd.inferBirthYear();
@@ -287,8 +293,6 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   // constrain years to the range covered by Freebmd
-  dates.startQuarter = 1;
-  dates.endQuarter = 4;
   constrainYears(dates);
 
   // set the date parameters
@@ -303,19 +307,27 @@ function buildSearchUrl(buildUrlInput) {
 
   if (typeOfSearch == "BirthsOfChildren") {
     if (gd.personGender == "female") {
+      let mmn = gd.lastNameAtBirth;
+      if (!mmn) {
+        mmn = gd.inferLastName();
+      }
+
       if (parameters && parameters.spouse && parameters.spouse.name) {
         let spouseLastName = parameters.spouse.name.inferLastName();
+
         if (spouseLastName) {
           builder.addSurname(spouseLastName);
         }
-        let mmn = gd.lastNameAtBirth;
-        if (!mmn) {
-          mmn = gd.inferLastName();
-        }
+      } else {
+        // no spouse, user mother's name as surname
         if (mmn) {
-          if (includeMothersName(dates, mmn)) {
-            builder.addOtherSurname(mmn);
-          }
+          builder.addSurname(mmn);
+        }
+      }
+
+      if (mmn) {
+        if (includeMothersName(dates, mmn)) {
+          builder.addOtherSurname(mmn);
         }
       }
     } else {
@@ -355,18 +367,20 @@ function buildSearchUrl(buildUrlInput) {
     // seem to throw off the search if it is included. However if the entry includes the
     // age of death and it is off by even 1 year it fails to find it. So only include age
     // if this is SameCollection
-    let age = gd.inferAgeAtDeath();
-    if (age !== undefined && age >= 0) {
-      if (typeOfSearch != "SameCollection") {
-        let range = 5;
-        if (age < 14) {
-          range = 2;
-        } else if (age > 50) {
-          range = 10;
+    if (typeOfSearch != "PossibleDeaths") {
+      let age = gd.inferAgeAtDeath();
+      if (age !== undefined && age >= 0) {
+        if (typeOfSearch != "SameCollection") {
+          let range = 5;
+          if (age < 14) {
+            range = 2;
+          } else if (age > 50) {
+            range = 10;
+          }
+          age = age.toString() + "%" + range.toString();
         }
-        age = age.toString() + "%" + range.toString();
+        builder.addAgeAtDeath(age);
       }
-      builder.addAgeAtDeath(age);
     }
   }
 

@@ -160,7 +160,7 @@ function addFreebmdSearchDeathsMenuItem(menu, data, filter) {
   });
 }
 
-function addFreebmdSearchChildBirthsMenuItem(menu, data, filter, spouse) {
+function addFreebmdSearchChildBirthsMenuItem(menu, data, backFunction, filter, spouse) {
   let yearRange = getReproductiveYearRangeForCouple(data.generalizedData, spouse);
   if (!yearRangeOverlapsFreebmdRange(yearRange) || yearRange.startYear > yearRange.endYear) {
     return;
@@ -169,19 +169,23 @@ function addFreebmdSearchChildBirthsMenuItem(menu, data, filter, spouse) {
   const parameters = {
     startYear: yearRange.startYear,
     endYear: yearRange.endYear,
+    startQuarter: 1,
+    endQuarter: 4,
     spouse: spouse,
   };
 
-  const onClick = function (element) {
+  let onClick = function (element) {
     freebmdSearch(data.generalizedData, "BirthsOfChildren", parameters);
   };
 
   let menuItemText = "";
   let subtitle = "";
 
+  let couldUseMmn = true;
+
   if (spouse) {
     let spouseName = spouse.name.inferFullName();
-    menuItemText = "Do smart search for children with spouse:";
+    menuItemText = "Do search for children with spouse:";
     subtitle = spouseName;
     if (spouse.birthDate || spouse.deathDate) {
       subtitle += " (";
@@ -203,11 +207,26 @@ function addFreebmdSearchChildBirthsMenuItem(menu, data, filter, spouse) {
     let gender = data.generalizedData.personGender;
 
     if (gender == "female") {
-      menuItemText = "Do smart search for children with no registered father";
+      menuItemText = "Do search for children with no registered father";
     } else {
-      menuItemText = "Do smart search for children with any mother";
+      menuItemText = "Do search for children with any mother";
+      couldUseMmn = false;
     }
     subtitle += "Possible child birth years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
+  }
+
+  // if the end year is less than 1912 add note that MMN cannot be used
+  if (couldUseMmn && yearRange.startYear < 1912) {
+    if (yearRange.endYear < 1911) {
+      // whole year range is before MMNs
+      subtitle += "\nNOTE: MMN cannot be used in search prior to Q3 1911";
+    } else {
+      subtitle += "\nNOTE: MMN cannot be used in search prior to Q3 1911. You will be given a choice in submenu.";
+      menuItemText += "...";
+      onClick = function (element) {
+        setupFreebmdSearchForBirthsAround1911Submenu(data, backFunction, parameters);
+      };
+    }
   }
 
   if (!yearRangeOverlapsFreebmdRange(yearRange)) {
@@ -222,6 +241,45 @@ function addFreebmdSearchChildBirthsMenuItem(menu, data, filter, spouse) {
   }
 }
 
+function addFreebmdSearchChildBirthsOverlapMenuItem(menu, data, parameters, type) {
+  let onClick = function (element) {
+    freebmdSearch(data.generalizedData, "BirthsOfChildren", parameters);
+  };
+
+  let menuItemText = "";
+
+  const spouse = parameters.spouse;
+
+  if (type == "twoSearches") {
+    menuItemText = "Do two separate searches in two tabs/windows";
+    let parameters1 = { ...parameters };
+    let parameters2 = { ...parameters };
+
+    parameters1.endYear = 1911;
+    parameters1.endQuarter = 2;
+    parameters2.startYear = 1911;
+    parameters2.startQuarter = 3;
+
+    onClick = function (element) {
+      freebmdSearch(data.generalizedData, "BirthsOfChildren", parameters1);
+      freebmdSearch(data.generalizedData, "BirthsOfChildren", parameters2);
+    };
+  } else if (type == "q31911AndLater") {
+    menuItemText = "Only search from Q3 1911 onwards and include MMN";
+    parameters = { ...parameters };
+    parameters.startYear = 1911;
+    parameters.startQuarter = 3;
+  } else if (type == "q21911AndEarlier") {
+    menuItemText = "Only search up to Q2 1911 and do not include MMN";
+    parameters = { ...parameters };
+    parameters.endYear = 1911;
+    parameters.endQuarter = 2;
+  } else if (type == "fullRange") {
+    menuItemText = "Search the whole year range and do not include MMN";
+  }
+  addMenuItem(menu, menuItemText, onClick);
+}
+
 function addFreebmdSearchPossibleDeathsMenuItem(menu, data, filter) {
   let yearRange = getPossibleDeathRange(data.generalizedData);
   if (!yearRangeOverlapsFreebmdRange(yearRange)) {
@@ -231,6 +289,8 @@ function addFreebmdSearchPossibleDeathsMenuItem(menu, data, filter) {
   const parameters = {
     startYear: yearRange.startYear,
     endYear: yearRange.endYear,
+    startQuarter: 1,
+    endQuarter: 4,
   };
 
   const onClick = function (element) {
@@ -257,6 +317,10 @@ function addFreebmdSearchPossibleDeathsMenuItem(menu, data, filter) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupFreebmdSearchSubMenu(data, backFunction, filter) {
+  let backToHereFunction = function () {
+    setupFreebmdSearchSubMenu(data, backFunction, filter);
+  };
+
   let menu = beginMainMenu();
 
   addBackMenuItem(menu, backFunction);
@@ -268,12 +332,42 @@ async function setupFreebmdSearchSubMenu(data, backFunction, filter) {
 
   if (data.generalizedData.spouses) {
     for (let spouse of data.generalizedData.spouses) {
-      addFreebmdSearchChildBirthsMenuItem(menu, data, filter, spouse);
+      addFreebmdSearchChildBirthsMenuItem(menu, data, backToHereFunction, filter, spouse);
     }
   }
-  addFreebmdSearchChildBirthsMenuItem(menu, data, filter);
+  addFreebmdSearchChildBirthsMenuItem(menu, data, backToHereFunction, filter);
   addFreebmdSearchPossibleDeathsMenuItem(menu, data, filter);
   addItalicMessageMenuItem(menu, "To search for births of siblings, do the search from a parent.");
+
+  endMainMenu(menu);
+}
+
+function setupFreebmdSearchForBirthsAround1911Submenu(data, backFunction, parameters) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  let yearRangeText = getYearRangeAsText(parameters.startYear, parameters.endYear);
+
+  let message =
+    "The year range " +
+    yearRangeText +
+    " overlaps Q3 1911 which is when FreeBMD starts allowing searches using the mother's maiden name.";
+  message += " Searching the whole year range with the MMN would omit any possible births prior to Q3 1911.";
+  message += " Choose one of the options below.";
+
+  addItalicMessageMenuItem(menu, message);
+
+  // There are 4 menu items to add:
+  // do two separate searches (in separate tabs)
+  // only search Q3 1911 and later with the mmn
+  // only search Q2 1911 and earlier without mmn
+  // search whole range without mmn
+
+  addFreebmdSearchChildBirthsOverlapMenuItem(menu, data, parameters, "twoSearches");
+  addFreebmdSearchChildBirthsOverlapMenuItem(menu, data, parameters, "q31911AndLater");
+  addFreebmdSearchChildBirthsOverlapMenuItem(menu, data, parameters, "q21911AndEarlier");
+  addFreebmdSearchChildBirthsOverlapMenuItem(menu, data, parameters, "fullRange");
 
   endMainMenu(menu);
 }
