@@ -42,6 +42,7 @@ import {
   getYearRangeAsText,
 } from "/base/browser/popup/popup_search.mjs";
 
+import { RT } from "../../../base/core/record_type.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 
 const freebmdStartYear = 1837;
@@ -178,13 +179,50 @@ function addFreebmdSearchChildBirthsMenuItem(menu, data, backFunction, filter, s
     freebmdSearch(data.generalizedData, "BirthsOfChildren", parameters);
   };
 
+  let gd = data.generalizedData;
+
   let menuItemText = "";
   let subtitle = "";
 
   let couldUseMmn = true;
+  let isMmnKnown = true;
+
+  let gender = gd.personGender;
+
+  // If this is a record (like a census) for a married woman and her surname
+  // if the same as her spouse then the surname is likely not her maiden name
+  // so do not try to use it as such
+  if (gender == "female" && gd.sourceType != "profile") {
+    if (gd.spouses && gd.spouses.length == 1 && gd.spouses[0].name) {
+      let thisPersonLastName = gd.inferLastName();
+      let spouseLastName = gd.spouses[0].name.inferLastName();
+      if (thisPersonLastName == spouseLastName) {
+        if (gd.recordType != RT.Marriage && gd.recordType != RT.MarriageRegistration) {
+          if (spouse) {
+            isMmnKnown = false;
+          } else {
+            // the name is the spouses name but this is the option for no registered father
+            // so no point adding it
+            return;
+          }
+        }
+      }
+    }
+  }
 
   if (spouse) {
     let spouseName = spouse.name.inferFullName();
+
+    if (gender == "male") {
+      let thisPersonLastName = gd.inferLastName();
+      let spouseLastName = spouse.name.inferLastName();
+      if (thisPersonLastName == spouseLastName) {
+        if (gd.recordType != RT.Marriage && gd.recordType != RT.MarriageRegistration) {
+          isMmnKnown = false;
+        }
+      }
+    }
+
     menuItemText = "Do search for children with spouse:";
     subtitle = spouseName;
     if (spouse.birthDate || spouse.deathDate) {
@@ -199,13 +237,17 @@ function addFreebmdSearchChildBirthsMenuItem(menu, data, backFunction, filter, s
       subtitle += ")";
     }
     if (spouse.marriageDate) {
-      subtitle += " m. ";
-      subtitle += spouse.marriageDate.getYearString();
+      let marriageYearString = spouse.marriageDate.getYearString();
+      if (marriageYearString) {
+        subtitle += " m. ";
+        subtitle += marriageYearString;
+      }
     }
     subtitle += "\nPossible child birth years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
+    if (!isMmnKnown && yearRange.endYear >= 1911) {
+      subtitle += "\nMaiden name is not known.";
+    }
   } else {
-    let gender = data.generalizedData.personGender;
-
     if (gender == "female") {
       menuItemText = "Do search for children with no registered father";
     } else {
@@ -216,7 +258,7 @@ function addFreebmdSearchChildBirthsMenuItem(menu, data, backFunction, filter, s
   }
 
   // if the end year is less than 1912 add note that MMN cannot be used
-  if (couldUseMmn && yearRange.startYear < 1912) {
+  if (couldUseMmn && isMmnKnown && yearRange.startYear < 1912) {
     if (yearRange.endYear < 1911) {
       // whole year range is before MMNs
       subtitle += "\nNOTE: MMN cannot be used in search prior to Q3 1911";

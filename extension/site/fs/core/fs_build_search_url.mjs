@@ -260,7 +260,6 @@ function buildSearchUrl(buildUrlInput) {
           if (spouse.marriagePlace) {
             marriagePlace = spouse.marriagePlace.placeString;
           }
-
           let marriageYearRange = getDateRange(
             marriageYear,
             options.search_fs_marriageYearExactness,

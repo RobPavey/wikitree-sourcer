@@ -364,8 +364,11 @@ function addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse) {
       subtitle += ")";
     }
     if (spouse.marriageDate) {
-      subtitle += " m. ";
-      subtitle += spouse.marriageDate.getYearString();
+      let marriageYearString = spouse.marriageDate.getYearString();
+      if (marriageYearString) {
+        subtitle += " m. ";
+        subtitle += marriageYearString;
+      }
     }
     subtitle += "\nPossible child birth years: " + getYearRangeAsText(yearRange.startYear, yearRange.endYear);
   } else {

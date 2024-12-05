@@ -3881,13 +3881,15 @@ class GeneralizedData {
           for (let spouse of this.spouses) {
             if (spouse.marriageDate) {
               let marriageDate = spouse.marriageDate.getDateString();
-              let marriageParsedDate = DateUtils.parseDateString(marriageDate);
-              let diff = DateUtils.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
-              if (diff >= 0) {
-                let howClose = diff;
-                if (!bestMatchName || howClose <= howCloseIsBestMatch) {
-                  bestMatchName = spouse.lastNameAtBirth;
-                  howCloseIsBestMatch = howClose;
+              if (marriageDate) {
+                let marriageParsedDate = DateUtils.parseDateString(marriageDate);
+                let diff = DateUtils.getDaysBetweenParsedDates(marriageParsedDate, targetParsedDate);
+                if (diff >= 0) {
+                  let howClose = diff;
+                  if (!bestMatchName || howClose <= howCloseIsBestMatch) {
+                    bestMatchName = spouse.lastNameAtBirth;
+                    howCloseIsBestMatch = howClose;
+                  }
                 }
               }
             }

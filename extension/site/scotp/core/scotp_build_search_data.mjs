@@ -323,19 +323,20 @@ function setDates(gd, scotpRecordType, parameters, options, runDate, builder) {
         let spouse = gd.spouses[parameters.spouseIndex];
         if (spouse.marriageDate) {
           let marriageYear = spouse.marriageDate.getYearString();
-
-          // if the marriage date is outside collection range then ignore it
-          let constrainedYear = constrainYear(marriageYear, scotpRecordType);
-          if (constrainedYear == marriageYear) {
-            let range = getRangeFromExactnessOption(options, "search_scotp_marriageYearExactness");
-            if (range == "auto") {
-              range = 5;
-              if (gd.recordType == RT.Marriage) {
-                range = 1;
+          if (marriageYear) {
+            // if the marriage date is outside collection range then ignore it
+            let constrainedYear = constrainYear(marriageYear, scotpRecordType);
+            if (constrainedYear == marriageYear) {
+              let range = getRangeFromExactnessOption(options, "search_scotp_marriageYearExactness");
+              if (range == "auto") {
+                range = 5;
+                if (gd.recordType == RT.Marriage) {
+                  range = 1;
+                }
               }
+              setDatesToRangeAroundYear(dates, marriageYear, range);
+              datesAdjusted = true;
             }
-            setDatesToRangeAroundYear(dates, marriageYear, range);
-            datesAdjusted = true;
           }
         }
       }
