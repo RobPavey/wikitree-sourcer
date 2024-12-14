@@ -22,6 +22,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+// This is an image with a person details selected. example URL:
+// https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9MR-NFZL?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVTHY-ZB3&action=view&groupId=TH-1971-27766-10578-99
+// This is also an image with a person details selected - newer form
+// https://www.familysearch.org/ark:/61903/3:1:3QS7-L9S9-RGHR?view=index&action=view&personArk=%2Fark%3A%2F61903%2F1%3A1%3AQ2Q8-11ZZ
+// there can also be fewer digits in the image id. e.g.:
+// https://www.familysearch.org/ark:/61903/3:1:S3HY-DRVJ-ZJ?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVFR1-FH4&action=view&cc=1478678
+// Or more like:
+// https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSKX-9798-6?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3A6ZQY-71VD&action=view&cc=1478678
+const imageWithSidebarUrlRegEx =
+  /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w?\w?\w?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w\w?).*$/;
+
 async function doFetch() {
   //console.log("doFetch, document.location is: " + document.location);
 
@@ -83,45 +94,9 @@ async function doFetch() {
       fetchUrl = "https://www.familysearch.org/platform/tree/persons/" + personId + "?relatives";
       fetchType = "person";
     }
-  } else if (
-    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w\w\w\w\-\w\w\w&/.test(
-      fetchUrl
-    )
-  ) {
-    // This is an image with a person details selected. example URL:
-    // https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9MR-NFZL?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVTHY-ZB3&action=view&groupId=TH-1971-27766-10578-99
-    let newUrl = fetchUrl.replace(
-      /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w)&.*$/,
-      "https://www.familysearch.org/ark:/$1/1:1:$2"
-    );
-    if (newUrl && newUrl != fetchUrl) {
-      fetchUrl = newUrl;
-
-      // we have the URL for the person record in the URL, But the user can change to a different person without the URL
-      // changing.
-      let selectedPersonLinkNode = document.querySelector(
-        "#root > div > div > div > div > div:nth-child(1) > div > div > div > div.spacerCss_sqhrtfm > aside > div > div > div:nth-child(4) > aside > div > div > div.contentWrapper_cfjslsq > div > div.contentCss_czb43rf > div > div > div.bleedCss_b1cy5i06 > div > div > div > div > h2 > span > a"
-      );
-      if (selectedPersonLinkNode) {
-        let link = selectedPersonLinkNode.getAttribute("href");
-        if (link) {
-          if (/\/ark\:\/\d+\/1\:1\:\w\w\w\w\-\w\w\w/.test(link)) {
-            fetchUrl = "https://www.familysearch.org" + link;
-          }
-        }
-      }
-    }
-  } else if (
-    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w\w\w\w\-\w\w\w\w?/.test(
-      fetchUrl
-    )
-  ) {
-    // This is also an image with a person details selected - newer form
-    // https://www.familysearch.org/ark:/61903/3:1:3QS7-L9S9-RGHR?view=index&action=view&personArk=%2Fark%3A%2F61903%2F1%3A1%3AQ2Q8-11ZZ
-    let newUrl = fetchUrl.replace(
-      /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w\w?).*$/,
-      "https://www.familysearch.org/ark:/$1/1:1:$2"
-    );
+  } else if (imageWithSidebarUrlRegEx.test(fetchUrl)) {
+    // This is an image with a person details selected.
+    let newUrl = fetchUrl.replace(imageWithSidebarUrlRegEx, "https://www.familysearch.org/ark:/$1/1:1:$2");
     if (newUrl && newUrl != fetchUrl) {
       fetchUrl = newUrl;
 
@@ -326,21 +301,8 @@ function shouldUseFetch() {
     useFetch = true;
   } else if (location.href.startsWith("https://www.familysearch.org/tree/person/sources/")) {
     useFetch = true;
-  } else if (
-    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:\d\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w\w\w\w\-\w\w\w&.*$/.test(
-      location.href
-    )
-  ) {
+  } else if (imageWithSidebarUrlRegEx.test(location.href)) {
     // This is an image with a person details selected
-    // https://www.familysearch.org/ark:/61903/3:1:3QSQ-G9MR-NFZL?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVTHY-ZB3&action=view&groupId=TH-1971-27766-10578-99
-    useFetch = true;
-  } else if (
-    /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:\d\:\w\w\w\w\-\w\w\w\w\-\w\w\w\w?.*personArk=%2Fark%3A%2F\d+%2F1%3A1%3A\w+\-\w+.*$/.test(
-      location.href
-    )
-  ) {
-    // This is also an image with a person details selected - newer form
-    // https://www.familysearch.org/ark:/61903/3:1:3QS7-L9S9-RGHR?view=index&action=view&personArk=%2Fark%3A%2F61903%2F1%3A1%3AQ2Q8-11ZZ
     useFetch = true;
   } else {
     let main = document.querySelector("#main");
