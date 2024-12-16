@@ -181,7 +181,7 @@ function includeMothersName(dates, mothersMaidenName) {
 
 function includeSpouseNameIfValidThruDateRange(dates, gd, builder) {
   // although spouse name were not recorded until 1911 the FreeBMD search will
-  // check the name you give againt other on the page.
+  // check the name you give against other on the page.
   // So for now we always include the surname
 
   //if (dates.startYear > 1911) {
