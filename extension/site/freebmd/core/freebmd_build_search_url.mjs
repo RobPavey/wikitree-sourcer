@@ -172,7 +172,7 @@ function includeMothersName(dates, mothersMaidenName) {
     return false;
   }
 
-  if (yearNum >= 1911 && dates.startQuarter > 2) {
+  if (yearNum > 1911 || (yearNum == 1911 && dates.startQuarter > 2)) {
     return true;
   }
 
