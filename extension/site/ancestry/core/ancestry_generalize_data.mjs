@@ -2189,8 +2189,10 @@ function generalizeDataGivenRecordType(ed, result) {
 
     result.lastNameAtDeath = result.inferLastName();
   } else if (result.recordType == RT.Divorce) {
-    result.setEventDate(getCleanValueForRecordDataList(ed, ["Divorce Date", "Petition Date", "Date"], "date"));
-    result.setEventPlace(getCleanValueForRecordDataList(ed, ["Divorce Place", "Location"]));
+    result.setEventDate(
+      getCleanValueForRecordDataList(ed, ["Divorce Date", "Petition Date", "Decree Date", "Date"], "date")
+    );
+    result.setEventPlace(getCleanValueForRecordDataList(ed, ["Divorce Place", "Decree Place", "Location"]));
 
     let spouseName = getCleanValueForRecordDataList(ed, ["Spouse", "Spouse Name"]);
 
