@@ -801,7 +801,7 @@ class WiewaswieEdReader extends ExtractedDataReader {
     if (bride) {
       let brideName = this.extractPersonFieldByFieldType(bride, FT.personBride);
       let spouseNameObj = this.makeNameObjFromFullName(brideName);
-      let age = this.extractPersonFieldByFieldType(bride, FT.age);
+      let age = cleanAge(this.extractPersonFieldByFieldType(bride, FT.age));
       let spouseObj = this.makeSpouseObj(spouseNameObj, eventDateObj, eventPlaceObj, age);
 
       if (spouseObj) {
