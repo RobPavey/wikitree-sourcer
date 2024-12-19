@@ -281,7 +281,7 @@ function determineRecordType(extractedData) {
     { type: RT.Census, matches: ["Census", "1939 England and Wales Register"] },
     {
       type: RT.ElectoralRegister,
-      matches: ["Electoral Roll", "Voter Registers", "Electoral Registers", "Qualified Voters"],
+      matches: ["Electoral Roll", "Voter Registers", "Voter Registration", "Electoral Registers", "Qualified Voters"],
     },
     {
       type: RT.Will,
