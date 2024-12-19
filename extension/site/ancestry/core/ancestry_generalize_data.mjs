@@ -41,6 +41,7 @@ function cleanName(name) {
   return name;
 }
 
+// Note that spaces are remoxed from the Event Type or Record Type field before looking up here
 const eventTypeStringToDataType = {
   BirthRegistration: RT.BirthRegistration,
   Birth: RT.Birth,
@@ -50,6 +51,7 @@ const eventTypeStringToDataType = {
   "ægteskab(Marriage)": RT.Marriage,
   "MarriageBanns(MarriageBann)": RT.Marriage,
   MarriageLicense: RT.Marriage,
+  MarriageLicence: RT.Marriage,
   Census: RT.Census,
   ElectoralRegister: RT.ElectoralRegister,
   Baptism: RT.Baptism,
@@ -76,7 +78,15 @@ const recordTypeByFields = [
   },
   {
     type: RT.Marriage,
+    labels: ["Marriage Licence Date", "Allegation Place", "Spouse"],
+  },
+  {
+    type: RT.Marriage,
     labels: ["Marriage License Date", "Marriage License Place", "Spouse"],
+  },
+  {
+    type: RT.Marriage,
+    labels: ["Marriage Licence Date", "Marriage Licence Place", "Spouse"],
   },
   {
     type: RT.Marriage,
@@ -84,9 +94,18 @@ const recordTypeByFields = [
   },
   {
     type: RT.Marriage,
+    labels: ["Affidavit or Licence Date", "Licence Place", "Spouse"],
+  },
+  {
+    type: RT.Marriage,
     labels: ["Allegation Date", "Marriage License Place", "Spouse"],
   },
+  {
+    type: RT.Marriage,
+    labels: ["Allegation Date", "Marriage Licence Place", "Spouse"],
+  },
   { type: RT.Marriage, labels: ["License Date", "License Place", "Spouse"] },
+  { type: RT.Marriage, labels: ["Licence Date", "Licence Place", "Spouse"] },
   { type: RT.Baptism, labels: ["Baptism Date", "Baptism Place"] },
   { type: RT.Baptism, labels: ["Christening Date", "Christening Place"] },
   { type: RT.Burial, labels: ["Burial Date", "Burial Place"] },
@@ -652,6 +671,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       "Marriage Banns Date",
       "Allegation Date",
       "Affidavit or License Date",
+      "Affidavit or Licence Date",
       "Marriage Year",
       "Marriage Banns Year",
       "Allegation Year",
@@ -1737,15 +1757,19 @@ function generalizeDataGivenRecordType(ed, result) {
           "Marriage or Bann Date",
           "Marriage Banns Date",
           "Marriage License Date",
+          "Marriage Licence Date",
           "Bond Date",
           "Recording Date",
           "License Date",
+          "Licence Date",
           "Event Date",
           "Allegation Date",
           "Affidavit or License Date",
+          "Affidavit or Licence Date",
           "Translated Marriage Date",
           "Marriage Year",
           "Marriage Date on Image",
+          "Document Year",
         ],
         "date"
       )
@@ -1756,8 +1780,10 @@ function generalizeDataGivenRecordType(ed, result) {
       "Marriage or Bann Place",
       "Marriage Banns Place",
       "Marriage License Place",
+      "Marriage Licence Place",
       "Recording Place",
       "License Place",
+      "Licence Place",
       "Allegation Place",
       "Marriage State",
       "Marriage City",
@@ -1846,7 +1872,12 @@ function generalizeDataGivenRecordType(ed, result) {
     result.setBirthDate(getCleanRecordDataValue(ed, "Birth Date", "date"));
     result.setBirthPlace(getCleanValueForRecordDataList(ed, ["Birth Place"]));
   } else if (result.recordType == RT.MarriageRegistration) {
-    const dateFields = ["Marriage Registration Date", "Marriage Date", "Marriage License Date"];
+    const dateFields = [
+      "Marriage Registration Date",
+      "Marriage Date",
+      "Marriage License Date",
+      "Marriage Licence Date",
+    ];
     const yearFields = ["Marriage Registration Year", "Marriage Year"];
     const quarterFields = ["Marriage Registration Quarter", "Marriage Quarter"];
     setDateFromAncestryDateFields(ed, result, ["event", "marriage"], dateFields, yearFields, quarterFields);
