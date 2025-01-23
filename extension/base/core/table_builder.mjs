@@ -175,7 +175,7 @@ class TableBuilder {
     }
     tableString += `\n`;
 
-    if (this.options.table_table_caption && this.caption) {
+    if (this.caption) {
       tableString += `|+ ` + this.caption + `\n`;
     }
 
@@ -217,6 +217,22 @@ class TableBuilder {
     let skipping = false;
     for (let person of this.personArray) {
       if (person.includeInTable) {
+        if (person.addDividerBefore) {
+          tableString += `|-\n`;
+          let firstCol = true;
+          for (let fieldName of this.fieldNames) {
+            if (this.includeFieldColumn(fieldName)) {
+              if (firstCol) {
+                tableString += `| `;
+              } else {
+                tableString += columnSeparator;
+              }
+            }
+            firstCol = false;
+          }
+          tableString += `\n`;
+        }
+
         skipping = false;
         if (person.isClosed) {
           tableString += `|- bgcolor=` + optClosedColor + `\n`;
@@ -905,4 +921,34 @@ function markHouseholdMembersToIncludeInTable(generalizedData, options) {
   return;
 }
 
-export { buildHouseholdTable, TableBuilder, markHouseholdMembersToIncludeInTable };
+function buildCustomTable(input) {
+  //console.log("buildCustomTable: input is")
+  //console.log(input)
+
+  const gd = input.generalizedData;
+  const fieldNames = input.fieldNames;
+  const objectArray = input.objectArray;
+  const captionString = input.captionString;
+  const options = input.options;
+
+  if (!fieldNames || !objectArray) {
+    return { tableString: "" };
+  }
+
+  let builder = new TableBuilder(gd, options);
+
+  builder.addHeadingFields(fieldNames);
+  builder.addPersonArray(objectArray);
+  builder.caption = captionString;
+
+  // now the builder is setup use it to build the table or list text
+  let tableString = builder.getString();
+
+  var tableObject = {
+    tableString: tableString,
+  };
+
+  return tableObject;
+}
+
+export { buildHouseholdTable, TableBuilder, markHouseholdMembersToIncludeInTable, buildCustomTable };

@@ -802,6 +802,46 @@ function extractImageHasIndex(document, result) {
   }
 }
 
+function extractImageIndex(document, result) {
+  // During dev only do this for a certain collection (England 1881 census)
+  if (result.dbId != "7572") {
+    return;
+  }
+
+  let indexPanelContent = document.querySelector("div.image-viewer-wrapper div.index-panel div.index-panel-content");
+
+  if (indexPanelContent) {
+    let rows = indexPanelContent.querySelectorAll("div.grid-row");
+    if (rows.length > 1) {
+      let headerRow = rows[0];
+      let tableHeadings = [];
+      let tableRows = [];
+      let headerCells = headerRow.querySelectorAll("div.grid-cell");
+      for (let cell of headerCells) {
+        let text = cell.textContent;
+        tableHeadings.push(text);
+      }
+
+      for (let rowIndex = 1; rowIndex < rows.length; rowIndex++) {
+        let row = rows[rowIndex];
+        let cells = row.querySelectorAll("div.grid-cell");
+        if (cells.length == headerCells.length) {
+          let rowData = {};
+          for (let cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+            let cell = cells[cellIndex];
+            let text = cell.textContent;
+            rowData[tableHeadings[cellIndex]] = text;
+          }
+          tableRows.push(rowData);
+        }
+      }
+
+      result.indexHeadings = tableHeadings;
+      result.indexRows = tableRows;
+    }
+  }
+}
+
 function extractImageNumberAndTotal(document, result) {
   let pageCountWrap = document.querySelector(
     "div.image-viewer-wrapper > div.container-space > div.bottom-container > div.paging-panel.panelTopHeight > div > div.imageNum.pageCountWrapInner"
@@ -2066,6 +2106,7 @@ function extractData(document, url) {
     extractImageNumberAndTotal(document, result);
     extractImageHasIndex(document, result);
     extractImageSourceCitation(document, result);
+    extractImageIndex(document, result);
   } else if (result.pageType == "sharingUrl") {
     extractImagePageTitle(document, result);
     extractSharingUrlTemplate(document, result);
