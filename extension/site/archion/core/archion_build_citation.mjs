@@ -43,7 +43,7 @@ function buildSourceTitle(ed, gd, builder) {
 function buildSourceReference(ed, gd, builder) {
   builder.addSourceReferenceText(ed.book);
   if (ed.pageData) {
-    builder.addSourceReferenceField("Page", ed.pageData.page);
+    builder.addSourceReferenceField("Image", ed.pageData.page);
   }
 }
 
