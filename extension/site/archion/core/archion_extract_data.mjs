@@ -66,9 +66,16 @@ function title2type(title) {
     result += ", Church withdrawal";
   }
 
+  let drop_register_item = false;
+  if (title.includes("kirchstuhl")) {
+    result += ", Church Chair Register";
+    drop_register_item = true;
+  }
   if (title.includes("familie") || title.includes("seele")) {
     result += ", Family Register";
-  } else if (title.includes("register") || title.includes("index")) {
+    drop_register_item = true;
+  }
+  if (!drop_register_item && (title.includes("register") || title.includes("index"))) {
     result += ", Name Register";
   }
 
@@ -108,8 +115,13 @@ function extractData(document, url) {
 
   const pageSelect = document.querySelector("select");
   if (pageSelect) {
+    if ((pageSelect.value + "").includes("'") || (pageSelect.value + "").includes("\\")) {
+      alert("The page number contains invalid characters. Please report this issue.");
+      return result;
+    }
+    const entry = pageSelect.querySelector("option[value='" + pageSelect.value + "'");
     result.pageData = {
-      page: parseInt(pageSelect.value),
+      page: parseInt(entry.text),
     };
   }
 
@@ -119,7 +131,7 @@ function extractData(document, url) {
     let queryString = new URLSearchParams(paramString);
     result.uid = queryString.get("uid");
   }
-  
+
   // https://www.archion.de/de/viewer/churchRegister/290910?cHash=7425117a1f08bec109082a024138bc12 [get 290910]
   else {
     if (url[url.length - 1] == "/") {
