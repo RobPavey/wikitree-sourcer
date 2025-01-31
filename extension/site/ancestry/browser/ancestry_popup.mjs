@@ -486,7 +486,6 @@ async function ancestryBuildCensusPageTable(data) {
       rowObject["Name"] = name;
 
       let relation = row["Relationship to Head"];
-      rowObject["Relation"] = relation;
 
       let ageString = row["Age"];
       let ageNum = Number(ageString);
@@ -550,6 +549,8 @@ async function ancestryBuildCensusPageTable(data) {
         isNewHouse = true;
       } else if (relation == "Head") {
         isNewHouse = true;
+      } else if (relation.includes("(Head)")) {
+        isNewHouse = true;
       } else if (relation == "Wife" && lastRelation != "Head") {
         isNewHouse = true;
       }
@@ -564,6 +565,12 @@ async function ancestryBuildCensusPageTable(data) {
       if (isNewHouse || relation == "Lodger") {
         rowObject["No."] = "#";
       }
+
+      const headHeadString = " (Head) (Head)";
+      if (relation.includes(headHeadString)) {
+        relation = relation.replace(headHeadString, "");
+      }
+      rowObject["Relation"] = relation;
 
       lastHouse = house;
       lastRelation = relation;
