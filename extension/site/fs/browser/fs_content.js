@@ -33,6 +33,11 @@ SOFTWARE.
 const imageWithSidebarUrlRegEx =
   /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w?\w?\w?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w\w?).*$/;
 
+// these can now have a language code like "en" in them
+const personDetailsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/details\/(.*)$/i;
+const personSourcesRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/sources\/(.*$)/i;
+const personVitalsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/vitals\/(.*$)/i;
+
 async function doFetch() {
   //console.log("doFetch, document.location is: " + document.location);
 
@@ -73,16 +78,17 @@ async function doFetch() {
       }
     }
   } else if (
-    fetchUrl.startsWith("https://www.familysearch.org/tree/person/details/") ||
-    fetchUrl.startsWith("https://www.familysearch.org/tree/person/vitals/") ||
-    fetchUrl.startsWith("https://www.familysearch.org/tree/person/sources/")
+    personDetailsRegex.test(fetchUrl) ||
+    personSourcesRegex.test(fetchUrl) ||
+    personVitalsRegex.test(fetchUrl)
   ) {
-    let personId = fetchUrl.replace("https://www.familysearch.org/tree/person/details/", "");
-    if (!personId || personId == fetchUrl) {
-      personId = fetchUrl.replace("https://www.familysearch.org/tree/person/vitals/", "");
-    }
-    if (!personId || personId == fetchUrl) {
-      personId = fetchUrl.replace("https://www.familysearch.org/tree/person/sources/", "");
+    let personId = "";
+    if (personDetailsRegex.test(fetchUrl)) {
+      personId = fetchUrl.replace(personDetailsRegex, "$1");
+    } else if (personSourcesRegex.test(fetchUrl)) {
+      personId = fetchUrl.replace(personSourcesRegex, "$1");
+    } else if (personVitalsRegex.test(fetchUrl)) {
+      personId = fetchUrl.replace(personVitalsRegex, "$1");
     }
     let slashOrQueryIndex = personId.search(/[/?]/);
     if (slashOrQueryIndex != -1) {
@@ -297,9 +303,9 @@ function shouldUseFetch() {
 
   let useFetch = false;
 
-  if (location.href.startsWith("https://www.familysearch.org/tree/person/details/")) {
+  if (personDetailsRegex.test(location.href)) {
     useFetch = true;
-  } else if (location.href.startsWith("https://www.familysearch.org/tree/person/sources/")) {
+  } else if (personSourcesRegex.test(location.href)) {
     useFetch = true;
   } else if (imageWithSidebarUrlRegEx.test(location.href)) {
     // This is an image with a person details selected

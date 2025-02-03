@@ -1104,6 +1104,11 @@ function extractData(document, url) {
 
   let mainContent = document.querySelector("#main-content-section");
 
+  // these can now have a language code like "en" in them
+  const personDetailsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/details\/(.*)$/i;
+  const personSourcesRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/sources\/(.*$)/i;
+  const personVitalsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/vitals\/(.*$)/i;
+
   //console.log("mainContent is");
   //console.log(mainContent);
 
@@ -1114,7 +1119,7 @@ function extractData(document, url) {
 
       extractDataForImage(filmViewerNode, result);
       return result;
-    } else if (url.startsWith("https://www.familysearch.org/tree/person/details/")) {
+    } else if (personDetailsRegex.test(url)) {
       // it is a person page
       //console.log("extractData, it is a person:");
 
@@ -1125,11 +1130,11 @@ function extractData(document, url) {
     mainContent = document.querySelector("#main");
     if (mainContent) {
       // this is a newer format page, only supported for person pages currently
-      if (url.startsWith("https://www.familysearch.org/tree/person/details/")) {
+      if (personDetailsRegex.test(url)) {
         // it is a person page
         //console.log("extractData, it is a person:");
 
-        let personId = url.replace("https://www.familysearch.org/tree/person/details/", "");
+        let personId = url.replace(personDetailsRegex, "$1");
 
         extractDataForPersonPageFormat2(document, personId, result);
         return result;
