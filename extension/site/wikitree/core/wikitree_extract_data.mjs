@@ -959,10 +959,348 @@ function extractDataForEditFamily(document, result) {
   return result;
 }
 
+function extractDataForEditFamily2025(document, result) {
+  console.log("extractDataForEditFamily2025");
+
+  function getSpouseNameAndWikiId(spouseIsParentNode) {
+    console.log("getSpouseNameAndWikiId");
+
+    let parentNode = spouseIsParentNode.parentNode;
+
+    let nameAndId = {};
+    if (result.editFamilyType != "steps") {
+      let textNode = spouseIsParentNode.nextSibling;
+      if (textNode) {
+        let spouseText = textNode.textContent;
+        spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
+        nameAndId.name = spouseText.trim();
+
+        let linkNode = textNode.nextSibling;
+        if (linkNode) {
+          let href = linkNode.getAttribute("href");
+          if (href) {
+            href = href.replace(/^\/wiki\//, "");
+            nameAndId.wikiId = href;
+          }
+        }
+      }
+    } else if (parentNode) {
+      console.log("Found parentNode");
+      let linkNode = parentNode.querySelector("a");
+      if (linkNode) {
+        let href = linkNode.getAttribute("href");
+        if (href) {
+          href = href.replace(/^\/wiki\//, "");
+          nameAndId.wikiId = href;
+        }
+
+        let spouseText = linkNode.textContent;
+        spouseText = spouseText.replace(/\($/, ""); // remove trailing "("
+        nameAndId.name = spouseText.trim();
+      }
+    }
+
+    console.log("nameAndId is");
+    console.log(nameAndId);
+
+    return nameAndId;
+  }
+
+  function getSiblingParentNameAndWikiId(isFather) {
+    let selector = isFather
+      ? '#content input[name="wpSameFather"]:not([type="hidden"])'
+      : '#content input[name="wpSameMother"]:not([type="hidden"])';
+
+    let nameAndId = {};
+
+    let sameParentNode = document.querySelector(selector);
+    if (sameParentNode) {
+      if (sameParentNode.checked) {
+        nameAndId.checked = true;
+      }
+
+      if (result.editFamilyType != "steps") {
+        let textNode = sameParentNode.nextSibling;
+        if (textNode) {
+          const regex = isFather ? /^\s*Father of new sibling is\s+/ : /^\s*Mother of new sibling is\s+/;
+          let parentText = textNode.textContent;
+          parentText = parentText.replace(regex, ""); // leading text
+          parentText = parentText.replace(/\($/, ""); // remove trailing "("
+          nameAndId.name = parentText.trim();
+
+          let linkNode = textNode.nextSibling;
+          if (linkNode) {
+            let href = linkNode.getAttribute("href");
+            if (href) {
+              href = href.replace(/^\/wiki\//, "");
+              nameAndId.wikiId = href;
+            }
+          }
+        }
+      } else {
+        let textNode = sameParentNode.nextSibling;
+        if (textNode) {
+          let linkNode = textNode.nextSibling;
+          if (linkNode && linkNode.type != 3) {
+            nameAndId.name = linkNode.textContent;
+            let href = linkNode.getAttribute("href");
+            if (href) {
+              href = href.replace(/^\/wiki\//, "");
+              nameAndId.wikiId = href;
+            }
+          }
+        }
+      }
+    }
+
+    return nameAndId;
+  }
+
+  result.pageType = "editFamily";
+
+  // check the end of the URL. Examples are:
+  // https://www.wikitree.com/index.php?title=Special:EditFamily&u=27453632&who=sibling
+  // https://www.wikitree.com/index.php?title=Special:EditFamily&u=27453632&who=child
+  // https://www.wikitree.com/index.php?title=Special:EditFamily&u=27453632&who=spouse
+  // https://www.wikitree.com/index.php?title=Special:EditFamily&u=27453632&who=father
+  // https://www.wikitree.com/index.php?title=Special:EditFamily&u=35832502&who=sibling
+  let url = result.url;
+  let relationship = "unrelated";
+  const whoString = "&who=";
+  let whoIndex = url.indexOf(whoString);
+  if (whoIndex != -1) {
+    relationship = url.substring(whoIndex + whoString.length);
+  }
+  result.relationshipToFamilyMember = relationship;
+
+  // check for the new "steps" form
+  let actionSectionNode = document.querySelector("#actionSection");
+  if (actionSectionNode) {
+    // this is the steps variant
+    result.editFamilyType = "steps";
+    // check which step we are on:
+    let currentTab = document.querySelector("#progressBar > span.current");
+    if (currentTab) {
+      if (currentTab.id == "basicDataTab") {
+        result.editFamilyTypeStep = "basicData";
+      } else if (currentTab.id == "validationTab") {
+        result.editFamilyTypeStep = "validation";
+      } else if (currentTab.id == "potentialMatchesTab") {
+        result.editFamilyTypeStep = "potentialMatches";
+      } else if (currentTab.id == "connectionsTab") {
+        result.editFamilyTypeStep = "connections";
+      } else if (currentTab.id == "sourcesTab") {
+        result.editFamilyTypeStep = "sources";
+      }
+    } else {
+      result.editFamilyTypeStep = "action";
+    }
+  } else {
+    result.editFamilyType = "oneStage";
+  }
+
+  //console.log("extractDataForEditFamily, editFamilyTypeStep = " + result.editFamilyTypeStep);
+
+  let otherPersonName = "";
+  let wikiId = "";
+
+  let headingNode = document.querySelector("#addEditHeadline");
+  if (!headingNode) {
+    headingNode = document.querySelector("#content > div > h1");
+    if (!headingNode) {
+      return result;
+    }
+  }
+
+  let heading = headingNode.textContent;
+
+  if (relationship != "unrelated") {
+    otherPersonName = "";
+    if (result.editFamilyType != "steps") {
+      if (heading.indexOf("Edit Family") != -1) {
+        otherPersonName = heading.replace("Edit Family of ", "").trim();
+      }
+    } else {
+      // steps page, there can be multiple "a" child nodes, we want the first
+      let headingNameNode = headingNode.querySelector("a");
+      if (!headingNameNode) {
+        return result;
+      }
+      otherPersonName = headingNameNode.textContent;
+    }
+
+    result.familyMemberName = otherPersonName;
+
+    let headingButtonNode = headingNode.querySelector("button.copyWidget");
+    if (!headingButtonNode) {
+      return result;
+    }
+    wikiId = headingButtonNode.getAttribute("data-copy-text");
+    if (!wikiId) {
+      return result;
+    }
+    result.familyMemberWikiId = wikiId;
+
+    let spouseIsParentNodes = document.querySelectorAll(
+      '#connectionsSection input[name="wpSpouseIsParent"]:not([type="hidden"])'
+    );
+    if (spouseIsParentNodes.length > 0) {
+      result.familyMemberSpouses = [];
+
+      for (let spouseIsParentNode of spouseIsParentNodes) {
+        console.log("spouseIsParentNode is:");
+        console.log(spouseIsParentNode);
+
+        let nameAndId = getSpouseNameAndWikiId(spouseIsParentNode);
+        result.familyMemberSpouses.push(nameAndId);
+
+        if (spouseIsParentNode.checked) {
+          result.familyMemberSpouseName = nameAndId.name;
+          result.familyMemberSpouseWikiId = nameAndId.wikiId;
+        }
+      }
+    } else {
+      result.familyMemberFather = getSiblingParentNameAndWikiId(true);
+      result.familyMemberMother = getSiblingParentNameAndWikiId(false);
+    }
+  }
+
+  //console.log("extractDataForEditFamily, otherPersonName is: " + otherPersonName);
+
+  let firstNameNode = document.querySelector("#mFirstName");
+  let realNameNode = document.querySelector("#mRealName");
+  let lnabNode = document.querySelector("#mLastNameAtBirth");
+  let clnNode = document.querySelector("#mLastNameCurrent");
+  let birthDateNode = document.querySelector("#mBirthDate");
+  let deathDateNode = document.querySelector("#mDeathDate");
+
+  if (!(firstNameNode && realNameNode && lnabNode && clnNode && birthDateNode && deathDateNode)) {
+    return result;
+  }
+
+  result.hasValidData = true;
+
+  // record if the middle name field is present (there is a WikiTree setting to turn it off)
+  let middleNameNode = document.querySelector("#mMiddleName");
+  if (middleNameNode) {
+    result.hasMiddleNameField = true;
+  }
+
+  result.firstNames = getValueBySelector(document, "#mFirstName");
+  result.prefNames = getValueBySelector(document, "#mRealName");
+  result.middleNames = getValueBySelector(document, "#mMiddleName");
+  result.lnab = getValueBySelector(document, "#mLastNameAtBirth");
+  result.currentLastName = getValueBySelector(document, "#mLastNameCurrent");
+
+  let nickNames = getValueBySelector(document, "#mNicknames");
+  if (nickNames) {
+    result.nicknames = nickNames;
+  }
+  let otherLastNames = getValueBySelector(document, "#mLastNameOther").trim();
+  if (otherLastNames) {
+    result.otherLastNames = otherLastNames;
+  }
+  let prefix = getValueBySelector(document, "#mPrefix");
+  if (prefix) {
+    result.prefix = prefix;
+  }
+  let suffix = getValueBySelector(document, "#mSuffix");
+  if (suffix) {
+    result.suffix = suffix;
+  }
+
+  result.birthDate = getValueBySelector(document, "#mBirthDate");
+  let checkedBirthDateStatus = document.querySelector("input[name=mStatus_BirthDate]:checked");
+  if (checkedBirthDateStatus) {
+    result.birthDateStatus = checkedBirthDateStatus.value;
+  }
+  result.deathDate = getValueBySelector(document, "#mDeathDate");
+  let checkedDeathDateStatus = document.querySelector("input[name=mStatus_DeathDate]:checked");
+  if (checkedDeathDateStatus) {
+    result.deathDateStatus = checkedDeathDateStatus.value;
+  }
+
+  result.birthLocation = getValueBySelector(document, "#mBirthLocation");
+  result.deathLocation = getValueBySelector(document, "#mDeathLocation");
+
+  result.personGender = getValueBySelector(document, "select[name=mGender]");
+
+  if (relationship == "spouse") {
+    // when adding a spouse there can be marriage info
+    let marriageDateNode = document.querySelector("#mMarrriageDate");
+    let marriageLocationNode = document.querySelector("#mMarriageLocation");
+    if (marriageDateNode && marriageLocationNode) {
+      let spouse = { name: otherPersonName, wikiId: wikiId };
+
+      let marriageDate = marriageDateNode.textContent;
+      if (marriageDate) {
+        spouse.marriageDate = marriageDate;
+      }
+      let marriagePlace = marriageLocationNode.textContent;
+      if (marriagePlace) {
+        spouse.marriagePlace = marriagePlace;
+      }
+      result.spouses.push(spouse);
+    }
+  }
+
+  //console.log(result);
+
+  return result;
+}
+
+function is2025FormatPage(document, url) {
+  console.log("is2025FormatPage");
+
+  let hasNewFooter = document.querySelector("footer#footer");
+  console.log("hasNewFooter is:");
+  console.log(hasNewFooter);
+  if (hasNewFooter) {
+    return true;
+  }
+
+  let hasFamilyContent = document.querySelector("#nav-familyContent");
+  console.log("hasFamilyContent is:");
+  console.log(hasFamilyContent);
+  if (hasFamilyContent) {
+    return true;
+  }
+
+  return false;
+}
+
+function extractDataFor2025FormatPage(result, document, url) {
+  console.log("extractDataFor2025FormatPage");
+
+  // check for the Add Person/Edit Family page
+  if (url.includes("title=Special:EditFamily")) {
+    return extractDataForEditFamily2025(document, result);
+  }
+
+  // first test whether we are in edit mode or not since the text fields will be different.
+  var textbox = document.getElementById("wpTextbox1");
+
+  if (textbox != undefined) {
+    extractDataInEditMode2025(document, result);
+  } else {
+    extractDataInReadMode2025(document, result);
+  }
+
+  //console.log(result);
+
+  return result;
+}
+
 function extractData(document, url) {
+  console.log("extractData");
+
   let result = new WikiTreeExtractedData();
 
   result.url = url;
+
+  if (is2025FormatPage(document, url)) {
+    extractDataFor2025FormatPage(result, document, url);
+  }
 
   // check for the Add Person/Edit Family page
   let editFamilyNode = document.querySelector("body.page-Special_EditFamily");
@@ -1023,7 +1361,7 @@ function extractData(document, url) {
     }
   }
 
-  //console.log(result);
+  console.log(result);
 
   return result;
 }
