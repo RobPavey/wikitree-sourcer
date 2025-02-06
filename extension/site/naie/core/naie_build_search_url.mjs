@@ -26,6 +26,8 @@ import { NaieUriBuilder } from "./naie_uri_builder.mjs";
 import { GeneralizedData } from "../../../base/core/generalize_data_utils.mjs";
 import { RT } from "../../../base/core/record_type.mjs";
 
+const use2025Search = false;
+
 function buildSearchUrl(buildUrlInput) {
   // typeOfSearch is current allways specifiedParameters
   const gd = buildUrlInput.generalizedData;
@@ -56,7 +58,11 @@ function buildSearchUrl(buildUrlInput) {
     let birthDateString = gd.inferBirthDate();
     if (birthDateString && censusYearString) {
       let age = GeneralizedData.getAgeAtDate(birthDateString, censusYearString);
-      builder.addAge(age);
+      if (use2025Search) {
+        builder.addAge(age, 2);
+      } else {
+        builder.addAge(age);
+      }
     }
   }
 

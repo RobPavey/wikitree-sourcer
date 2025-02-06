@@ -66,7 +66,7 @@
     "*://librariestas.ent.sirsidynix.net.au/*",
     "*://data.matricula-online.eu/*",
     "*://*.myheritage.com/*",
-    "*://*.census.nationalarchives.ie/*",
+    "*://*.nationalarchives.ie/*",
     "*://*.nli.ie/*",
     "*://*.newspaperarchive.com/*",
     "*://*.newspapers.com/*",
@@ -283,7 +283,7 @@
       "js": ["base/browser/content/content_common.js", "site/mh/browser/mh_content.js"]
     },
     {
-      "matches": ["*://*.census.nationalarchives.ie/*"],
+      "matches": ["*://*.nationalarchives.ie/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/naie/browser/naie_content.js"]
     },
@@ -511,7 +511,7 @@
     },
     {
       "resources": ["site/naie/core/naie_extract_data.mjs"],
-      "matches": ["*://*.census.nationalarchives.ie/*"]
+      "matches": ["*://*.nationalarchives.ie/*"]
     },
     {
       "resources": ["site/nli/core/nli_extract_data.mjs"],

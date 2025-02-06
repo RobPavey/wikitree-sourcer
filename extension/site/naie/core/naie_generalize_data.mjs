@@ -27,6 +27,26 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { CD } from "../../../base/core/country_data.mjs";
 import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
 
+function setYearAndPlacePre2025(ed, result) {
+  // breadcrumbs
+  if (!ed.breadCrumbs || ed.breadCrumbs.length < 6) {
+    return false;
+  }
+  const breadCrumbs = ed.breadCrumbs;
+
+  result.setEventYear(breadCrumbs[1]);
+
+  let eventPlace = breadCrumbs[4] + ", " + breadCrumbs[3] + ", " + breadCrumbs[2];
+  if (ed.breadCrumbs.length == 7) {
+    eventPlace = breadCrumbs[5] + ", " + eventPlace;
+  }
+
+  eventPlace += ", Ireland";
+  result.setEventPlace(eventPlace);
+
+  return true;
+}
+
 function buildHouseholdArray(headings, members, result) {
   const stdFieldNames = [
     { stdName: "relationship", siteHeadings: ["Relation to head"] },
@@ -144,20 +164,28 @@ function buildHouseholdArray(headings, members, result) {
 }
 
 function setYearAndPlace(ed, result) {
-  // breadcrumbs
-  if (!ed.breadCrumbs || ed.breadCrumbs.length < 6) {
-    return false;
-  }
-  const breadCrumbs = ed.breadCrumbs;
-
-  result.setEventYear(breadCrumbs[1]);
-
-  let eventPlace = breadCrumbs[4] + ", " + breadCrumbs[3] + ", " + breadCrumbs[2];
-  if (ed.breadCrumbs.length == 7) {
-    eventPlace = breadCrumbs[5] + ", " + eventPlace;
+  if (!ed.isPost2025Format) {
+    return setYearAndPlacePre2025(ed, result);
   }
 
-  eventPlace += ", Ireland";
+  result.setEventYear(ed.recordData.census_year);
+
+  let eventPlace = "";
+  function addPlacePart(part) {
+    if (part) {
+      if (eventPlace) {
+        eventPlace += ", ";
+      }
+      eventPlace += part;
+    }
+  }
+
+  addPlacePart(ed.recordData.house_number);
+  addPlacePart(ed.recordData.townland);
+  addPlacePart(ed.recordData.ded);
+  addPlacePart(ed.recordData.county);
+  addPlacePart("Ireland");
+
   result.setEventPlace(eventPlace);
 
   return true;
@@ -220,7 +248,11 @@ function setDataFromTable(ed, result) {
   let year = result.inferEventYear();
 
   // Names, there should always be a firstName and lastName. MiddleNames my be undefined.
-  result.setLastNameAndForenames(selectedMember["Surname"], selectedMember["Forename"]);
+  if (ed.isPost2025Format) {
+    result.setLastNameAndForenames(selectedMember["Surname"], selectedMember["First Name"]);
+  } else {
+    result.setLastNameAndForenames(selectedMember["Surname"], selectedMember["Forename"]);
+  }
 
   result.setAgeAtEvent(extractAgeFromMember(selectedMember));
 

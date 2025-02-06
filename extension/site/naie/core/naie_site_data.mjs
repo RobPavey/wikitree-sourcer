@@ -29,7 +29,7 @@ const siteData = {
   usPhoneNumber: "",
   email: "",
   address: "",
-  baseUrl: "http://www.census.nationalarchives.ie/",
+  baseUrl: "http://nationalarchives.ie/",
 };
 
 function register() {
