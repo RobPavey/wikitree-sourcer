@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1821"
+  },
+  "eventPlace": {
+    "placeString": "3 Rathreddy, Galway, Ireland"
+  },
+  "name": {
+    "lastName": "Gleese",
+    "forenames": "Walter"
+  },
+  "ageAtEvent": "35",
+  "occupation": "Farmer & Shepherd",
+  "hasValidData": true
+}

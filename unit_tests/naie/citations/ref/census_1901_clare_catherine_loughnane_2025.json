@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://nai.prod.derilinx.com/census/image/nai000472125.pdf National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Loughnane&firstname__icontains=Catherine&sex=F&age=23&county=Clare&id=6697100 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nCatherine Loughnane (23) daughter, Farmer's Daughter, in household of Patrick Loughnane (74) at 7 Inishmore on Deen Island, Ballynacally, Clare, Ireland. Born in County Clare, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1901 census Catherine (age 23), Farmer's Daughter, was the daughter of Patrick Loughnane at 7 Inishmore on Deen Island, Ballynacally, Clare, Ireland.<ref>\n'''1901 Census''':\n\"1901 Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://nai.prod.derilinx.com/census/image/nai000472125.pdf National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Loughnane&firstname__icontains=Catherine&sex=F&age=23&county=Clare&id=6697100 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nCatherine Loughnane (23) daughter, Farmer's Daughter, in household of Patrick Loughnane (74) at 7 Inishmore on Deen Island, Ballynacally, Clare, Ireland. Born in County Clare, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of Ireland\"<br/>The National Archives of Ireland<br/>[https://nai.prod.derilinx.com/census/image/nai000472125.pdf National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Loughnane&firstname__icontains=Catherine&sex=F&age=23&county=Clare&id=6697100 National Archives of Ireland Record] (accessed 6 May 2021)<br/>Catherine Loughnane (23) daughter, Farmer's Daughter, in household of Patrick Loughnane (74) at 7 Inishmore on Deen Island, Ballynacally, Clare, Ireland. Born in County Clare, Ireland.",
+    "type": "source"
+  }
+}

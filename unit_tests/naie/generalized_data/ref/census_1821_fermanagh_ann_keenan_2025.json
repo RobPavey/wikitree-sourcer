@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1821"
+  },
+  "eventPlace": {
+    "placeString": "15 Lisnarrick Village, Fermanagh, Ireland"
+  },
+  "name": {
+    "lastName": "Keenan",
+    "forenames": "Ann"
+  },
+  "ageAtEvent": "92",
+  "relationshipToHead": "mother",
+  "hasValidData": true
+}

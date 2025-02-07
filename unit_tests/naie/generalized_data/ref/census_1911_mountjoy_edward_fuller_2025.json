@@ -1,0 +1,66 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "2.2 Charles Street, Great, Mountjoy, Dublin, Ireland"
+  },
+  "name": {
+    "lastName": "Fuller",
+    "forenames": "Edward"
+  },
+  "ageAtEvent": "53",
+  "birthPlace": {
+    "placeString": "Monmouthshire Wales, Ireland"
+  },
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "personGender": "male",
+  "occupation": "Chairmaker",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "birthPlace",
+    "occupation",
+    "gender",
+    "relationship",
+    "maritalStatus"
+  ],
+  "householdArray": [
+    {
+      "name": "Edward Fuller",
+      "yearsMarried": "36",
+      "birthPlace": "Monmouthshire Wales",
+      "age": "53",
+      "occupation": "Chairmaker",
+      "gender": "male",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "isSelected": true
+    },
+    {
+      "name": "Elizabeth Fuller",
+      "yearsMarried": "36",
+      "birthPlace": "City Dublin",
+      "age": "55",
+      "gender": "female",
+      "relationship": "wife",
+      "maritalStatus": "married"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Elizabeth Fuller"
+      },
+      "marriageDate": {
+        "yearString": "1875"
+      },
+      "marriagePlace": {}
+    }
+  ],
+  "hasValidData": true
+}

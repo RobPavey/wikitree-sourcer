@@ -1,0 +1,26 @@
+{
+  "url": "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1831&surname__icontains=Dimond&firstname__icontains=Danl&county=Londonderry&id=153133",
+  "success": true,
+  "isPost2025Format": true,
+  "recordId": "153133",
+  "name": "Dimond, Danl",
+  "recordData": {
+    "census_year": "1831",
+    "surname": "Dimond",
+    "firstname": "Danl",
+    "county": "Londonderry",
+    "barony": "Loughinshollin",
+    "parish": "Kilrea",
+    "townland": "Kilrea",
+    "house_number": "55",
+    "families_in_each": "1",
+    "males_in_family": "2",
+    "females_in_family": "3",
+    "male_servants": "N/A",
+    "female_servants": "N/A",
+    "established_church": "N/A",
+    "roman_catholics": "5",
+    "presbyterians": "N/A",
+    "other_protestants": "N/A"
+  }
+}

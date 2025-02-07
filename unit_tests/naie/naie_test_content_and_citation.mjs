@@ -66,7 +66,7 @@ const regressionData = [
     url: "http://www.census.nationalarchives.ie/pages/1821/Galway/Kilconickney/Rathreddy/3/",
   },
   {
-    caseName: "census_1831_londonderry_danl_dimon_2025",
+    caseName: "census_1831_londonderry_danl_dimond_2025",
     url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1831&surname__icontains=Dimond&firstname__icontains=Danl&county=Londonderry&id=153133",
   },
   {
