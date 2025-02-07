@@ -1,8 +1,14 @@
 {
   "std": {
-    "url": "http://www.census.nationalarchives.ie/search/results.jsp?census_year=1901&surname=Kearney&firstname=Margaret&sex=F&age=31&search=Search"
+    "url": "http://nationalarchives.ie/collections/search-the-census/search-results/?census_year=1901&surname__icontains=Kearney&firstname__icontains=Margaret&sex=F&age=31"
   },
   "county": {
+    "url": "http://nationalarchives.ie/collections/search-the-census/search-results/?census_year=1901&surname__icontains=Kearney&firstname__icontains=Margaret&sex=F&age=31&county=Waterford"
+  },
+  "oldSite": {
+    "url": "http://www.census.nationalarchives.ie/search/results.jsp?census_year=1901&surname=Kearney&firstname=Margaret&sex=F&age=31&search=Search"
+  },
+  "oldSiteCounty": {
     "url": "http://www.census.nationalarchives.ie/search/results.jsp?census_year=1901&surname=Kearney&firstname=Margaret&sex=F&age=31&county19011911=Waterford&search=Search"
   }
 }

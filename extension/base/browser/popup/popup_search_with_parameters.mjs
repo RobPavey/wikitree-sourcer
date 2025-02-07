@@ -551,8 +551,8 @@ function addWarningMessages(data, siteData, listElement, parameters) {
 }
 
 function setupParametersElements(data, siteData, listElement, parameters) {
-  console.log("setupParametersElements, parameters is:");
-  console.log(parameters);
+  //console.log("setupParametersElements, parameters is:");
+  //console.log(parameters);
   // remove any existing children (this function gets called recursively)
   while (listElement.firstChild) {
     listElement.removeChild(listElement.firstChild);

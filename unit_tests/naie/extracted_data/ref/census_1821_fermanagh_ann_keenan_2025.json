@@ -1,0 +1,19 @@
+{
+  "url": "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1821&surname__icontains=Keenan&firstname__icontains=Ann&age=92&county=Fermanagh&id=51570",
+  "success": true,
+  "isPost2025Format": true,
+  "recordId": "51570",
+  "name": "Keenan, Ann",
+  "recordData": {
+    "census_year": "1821",
+    "surname": "Keenan",
+    "firstname": "Ann",
+    "county": "Fermanagh",
+    "parish": "Derryvolland",
+    "townland": "Lisnarrick Village",
+    "house_number": "15",
+    "age": "92",
+    "relation_to_head": "Mother, Widow",
+    "occupation": "N/A"
+  }
+}

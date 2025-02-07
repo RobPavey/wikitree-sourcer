@@ -33,14 +33,13 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 // http://www.census.nationalarchives.ie/search/results.jsp?searchMoreVisible=&census_year=1901&surname=Connors&firstname=Margaret&county19011911=&county1821=&county1831=&county1841=&county1851=&parish=&ward=&barony=&townland=&houseNumber=&ded=&age=31&sex=F&search=Search&ageInMonths=&relationToHead=&religion=&education=&occupation=&marriageStatus=&yearsMarried=&birthplace=&nativeCountry=&language=&deafdumb=&causeOfDeath=&yearOfDeath=&familiesNumber=&malesNumber=&femalesNumber=&maleServNumber=&femaleServNumber=&estChurchNumber=&romanCatNumber=&presbNumber=&protNumber=&marriageYears=&childrenBorn=&childrenLiving=
 // http://www.census.nationalarchives.ie/search/results.jsp?census_year=1901&surname=Connors&firstname=Margaret&county19011911=&county1821=&county1831=&county1841=&county1851=&parish=&ward=&barony=&townland=&houseNumber=&ded=&age=31&sex=F&search=Search
 
-const use2025Search = false;
-
 class NaieUriBuilder {
-  constructor() {
-    if (use2025Search) {
-      this.uri = "http://nationalarchives.ie/collections/search-the-census/search-results/";
-    } else {
+  constructor(usePre2025Site) {
+    this.usePre2025Site = usePre2025Site;
+    if (usePre2025Site) {
       this.uri = "http://www.census.nationalarchives.ie/search/results.jsp";
+    } else {
+      this.uri = "http://nationalarchives.ie/collections/search-the-census/search-results/";
     }
 
     this.searchTermAdded = false;
@@ -78,23 +77,23 @@ class NaieUriBuilder {
   }
 
   addSurname(string) {
-    if (use2025Search) {
-      this.addSearchParameter("surname__icontains", StringUtils.removeExtendedAsciiCharacters(string));
-    } else {
+    if (this.usePre2025Site) {
       this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
+    } else {
+      this.addSearchParameter("surname__icontains", StringUtils.removeExtendedAsciiCharacters(string));
     }
   }
 
   addGivenNames(string) {
-    if (use2025Search) {
-      this.addSearchParameter("firstname__icontains", StringUtils.removeExtendedAsciiCharacters(string));
-    } else {
+    if (this.usePre2025Site) {
       this.addSearchParameter("firstname", StringUtils.removeExtendedAsciiCharacters(string));
+    } else {
+      this.addSearchParameter("firstname__icontains", StringUtils.removeExtendedAsciiCharacters(string));
     }
   }
 
   addAge(string, range = 0) {
-    if (use2025Search) {
+    if (!this.usePre2025Site) {
       if (range) {
         let ageNum = Number(string);
         if (!isNaN(ageNum)) {
@@ -125,7 +124,7 @@ class NaieUriBuilder {
   }
 
   addCounty(censusYear, county) {
-    if (use2025Search) {
+    if (!this.usePre2025Site) {
       this.addSearchParameter("county", county);
       return;
     }
@@ -139,7 +138,7 @@ class NaieUriBuilder {
   }
 
   getUri() {
-    if (!use2025Search) {
+    if (this.usePre2025Site) {
       this.uri += "&search=Search";
     }
 

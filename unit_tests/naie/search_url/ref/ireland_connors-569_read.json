@@ -1,14 +1,23 @@
 {
   "1831": {
-    "url": "http://www.census.nationalarchives.ie/search/results.jsp?census_year=1831&surname=Connors&firstname=Margaret&sex=F&age=-38&county1831=Antrim&search=Search"
+    "url": "http://nationalarchives.ie/collections/search-the-census/search-results/?census_year=1831&surname__icontains=Connors&firstname__icontains=Margaret&sex=F&age__lte=-36&county=Antrim"
   },
   "std": {
-    "url": "http://www.census.nationalarchives.ie/search/results.jsp?census_year=1821&surname=Connors&firstname=Margaret&sex=F&age=-48&search=Search"
+    "url": "http://nationalarchives.ie/collections/search-the-census/search-results/?census_year=1821&surname__icontains=Connors&firstname__icontains=Margaret&sex=F&age__lte=-46"
   },
   "1901Kearney": {
-    "url": "http://www.census.nationalarchives.ie/search/results.jsp?census_year=1901&surname=Long&firstname=Margaret&sex=F&age=32&county19011911=Waterford&search=Search"
+    "url": "http://nationalarchives.ie/collections/search-the-census/search-results/?census_year=1901&surname__icontains=Long&firstname__icontains=Margaret&sex=F&age__gte=30&age__lte=34&county=Waterford"
   },
   "1911Long": {
+    "url": "http://nationalarchives.ie/collections/search-the-census/search-results/?census_year=1911&surname__icontains=O'Connor&firstname__icontains=Margaret&sex=F&age__gte=40&age__lte=44&county=Waterford"
+  },
+  "oldSite1901Kearney": {
+    "url": "http://www.census.nationalarchives.ie/search/results.jsp?census_year=1901&surname=Long&firstname=Margaret&sex=F&age=32&county19011911=Waterford&search=Search"
+  },
+  "oldSite1911Long": {
     "url": "http://www.census.nationalarchives.ie/search/results.jsp?census_year=1911&surname=O'Connor&firstname=Margaret&sex=F&age=42&county19011911=Waterford&search=Search"
+  },
+  "oldSite1831": {
+    "url": "http://www.census.nationalarchives.ie/search/results.jsp?census_year=1831&surname=Connors&firstname=Margaret&sex=F&age=-38&county1831=Antrim&search=Search"
   }
 }
