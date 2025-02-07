@@ -1,0 +1,339 @@
+{
+  "url": "https://www.ancestry.com/search/collections/8767/records/8067946",
+  "pageType": "record",
+  "dbId": "8767",
+  "recordId": "8067946",
+  "ancestryTemplate": "{{Ancestry Record|8767|8067946}}",
+  "domain": "ancestry.com",
+  "titleName": "Rt Honbm Wm Camper",
+  "titleCollection": "1861 England Census",
+  "recordData": {
+    "Name": "Rt Honbm Wm Camper [Rt Hon W [illia]m [Francis] Cowper] [Cowper] [Rt Honbm Wm Cowper] [Rt Hon. William Cowper]",
+    "Gender": "Male",
+    "Age": "90 [40]",
+    "Relation": "Son-in-law",
+    "Estimated Birth Year": "1771 [1811]",
+    "Where born": "St George Hanover Square, London, England",
+    "Civil parish": "Romsey Extra",
+    "Ecclesiastical parish": "Romsey",
+    "County/Island": "Hampshire",
+    "Country": "England",
+    "Registration District": "Romsey",
+    "Sub-registration district": "Romsey",
+    "ED, institution, or vessel": "5",
+    "Household schedule number": "1",
+    "Piece": "685",
+    "Folio": "88",
+    "Page number": "23",
+    "Household Members (Name)<br/>Age<br/>Relationship": "Viscount Palmerston 76 Head<br/>Vicountiss Palmerston 72 Wife<br/>Honbm Wm Ashley 37 Visitor<br/>Maria Ashley 49 Visitor<br/>Honbm Ralf Dutton 39 Visitor<br/>Honbm Arthur Kinnard 44 Visitor<br/>Arthur [Fitzgerald] Kinnard 14 Visitor<br/>Rt Honbm Sammie Sulivan 71 Brother-in-law<br/>Mary Sulivan 41 Niece<br/>Charlotte Sulivan 36 Niece<br/>Rt Honbm Wm Camper 90 Son-in-law<br/>[Georgina] Camper 39 Daughter-in-law<br/>Honbm Evelyn Ashley 24 Grandson<br/>Anne Paris 48 Servant<br/>Jane Brown 44 Servant<br/>Susan Lancaster 36 Servant<br/>Emma Lyle 33 Servant<br/>Catherine Klsbert 36 Servant<br/>Sarah Young 33 Servant<br/>Elizabeth Forster 34 Servant<br/>Louisa Timms 27 Servant<br/>Ann Thould 33 Servant<br/>Betsey Powell 24 Servant<br/>Ann Hatt 18 Servant<br/>Josiah Dauston 38 Servant<br/>Alexander Fairm 69 Servant<br/>Henry Bird 21 Servant<br/>William Harvey 21 Servant<br/>Thomas Atkinson 24 Servant<br/>Joseph Grower 25 Servant<br/>William H Pleasant 26 Servant<br/>Frederick Hawkins 27 Servant<br/>Walter Reed 17 Servant<br/>Agnes Yotman 17 Servant<br/>George Rowe 21 Servant<br/>John Barber 36 Servant<br/>George Doe 45"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "Viscount Palmerston",
+        "dbId": "8767",
+        "recordId": "8067936",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067936",
+        "Age": "76",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "Vicountiss Palmerston",
+        "dbId": "8767",
+        "recordId": "8067937",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067937",
+        "Age": "72",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members (Name)": "Honbm Wm Ashley",
+        "dbId": "8767",
+        "recordId": "8067938",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067938",
+        "Age": "37",
+        "Relationship": "Visitor"
+      },
+      {
+        "Household Members (Name)": "Maria Ashley",
+        "dbId": "8767",
+        "recordId": "8067939",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067939",
+        "Age": "49",
+        "Relationship": "Visitor"
+      },
+      {
+        "Household Members (Name)": "Honbm Ralf Dutton",
+        "dbId": "8767",
+        "recordId": "8067940",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067940",
+        "Age": "39",
+        "Relationship": "Visitor"
+      },
+      {
+        "Household Members (Name)": "Honbm Arthur Kinnard",
+        "dbId": "8767",
+        "recordId": "8067941",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067941",
+        "Age": "44",
+        "Relationship": "Visitor"
+      },
+      {
+        "Household Members (Name)": "Arthur [Fitzgerald] Kinnard",
+        "dbId": "8767",
+        "recordId": "8067942",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067942",
+        "Age": "14",
+        "Relationship": "Visitor"
+      },
+      {
+        "Household Members (Name)": "Rt Honbm Sammie Sulivan",
+        "dbId": "8767",
+        "recordId": "8067943",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067943",
+        "Age": "71",
+        "Relationship": "Brother-in-law"
+      },
+      {
+        "Household Members (Name)": "Mary Sulivan",
+        "dbId": "8767",
+        "recordId": "8067944",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067944",
+        "Age": "41",
+        "Relationship": "Niece"
+      },
+      {
+        "Household Members (Name)": "Charlotte Sulivan",
+        "dbId": "8767",
+        "recordId": "8067945",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067945",
+        "Age": "36",
+        "Relationship": "Niece"
+      },
+      {
+        "Household Members (Name)": "Rt Honbm Wm Camper",
+        "Age": "90",
+        "Relationship": "Son-in-law"
+      },
+      {
+        "Household Members (Name)": "[Georgina] Camper",
+        "dbId": "8767",
+        "recordId": "8067947",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067947",
+        "Age": "39",
+        "Relationship": "Daughter-in-law"
+      },
+      {
+        "Household Members (Name)": "Honbm Evelyn Ashley",
+        "dbId": "8767",
+        "recordId": "8067948",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067948",
+        "Age": "24",
+        "Relationship": "Grandson"
+      },
+      {
+        "Household Members (Name)": "Anne Paris",
+        "dbId": "8767",
+        "recordId": "8067949",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067949",
+        "Age": "48",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Jane Brown",
+        "dbId": "8767",
+        "recordId": "8067950",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067950",
+        "Age": "44",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Susan Lancaster",
+        "dbId": "8767",
+        "recordId": "8067951",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067951",
+        "Age": "36",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Emma Lyle",
+        "dbId": "8767",
+        "recordId": "8067952",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067952",
+        "Age": "33",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Catherine Klsbert",
+        "dbId": "8767",
+        "recordId": "8067953",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067953",
+        "Age": "36",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Sarah Young",
+        "dbId": "8767",
+        "recordId": "8067954",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067954",
+        "Age": "33",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Elizabeth Forster",
+        "dbId": "8767",
+        "recordId": "8067955",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067955",
+        "Age": "34",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Louisa Timms",
+        "dbId": "8767",
+        "recordId": "8067956",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067956",
+        "Age": "27",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Ann Thould",
+        "dbId": "8767",
+        "recordId": "8067957",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067957",
+        "Age": "33",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Betsey Powell",
+        "dbId": "8767",
+        "recordId": "8067958",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067958",
+        "Age": "24",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Ann Hatt",
+        "dbId": "8767",
+        "recordId": "8067959",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067959",
+        "Age": "18",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Josiah Dauston",
+        "dbId": "8767",
+        "recordId": "8067960",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067960",
+        "Age": "38",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Alexander Fairm",
+        "dbId": "8767",
+        "recordId": "8067961",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067961",
+        "Age": "69",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Henry Bird",
+        "dbId": "8767",
+        "recordId": "8067962",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067962",
+        "Age": "21",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "William Harvey",
+        "dbId": "8767",
+        "recordId": "8067963",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067963",
+        "Age": "21",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Thomas Atkinson",
+        "dbId": "8767",
+        "recordId": "8067964",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067964",
+        "Age": "24",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Joseph Grower",
+        "dbId": "8767",
+        "recordId": "8067965",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067965",
+        "Age": "25",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "William H Pleasant",
+        "dbId": "8767",
+        "recordId": "8067966",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067966",
+        "Age": "26",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Frederick Hawkins",
+        "dbId": "8767",
+        "recordId": "8067967",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067967",
+        "Age": "27",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Walter Reed",
+        "dbId": "8767",
+        "recordId": "8067968",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067968",
+        "Age": "17",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Agnes Yotman",
+        "dbId": "8767",
+        "recordId": "8067969",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067969",
+        "Age": "17",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "George Rowe",
+        "dbId": "8767",
+        "recordId": "8067970",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067970",
+        "Age": "21",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "John Barber",
+        "dbId": "8767",
+        "recordId": "8067971",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067971",
+        "Age": "36",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "George Doe",
+        "dbId": "8767",
+        "recordId": "8067972",
+        "link": "https://www.ancestry.com/search/collections/8767/records/8067972",
+        "Age": "45",
+        "Relationship": ""
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8767/images/HAMRG9_682_685-0782?pid=8067946&usePUB=true&usePUBJs=true",
+  "imageDbId": "8767",
+  "imageRecordId": "HAMRG9_682_685-0782",
+  "sourceCitation": "Class: Rg 9; Piece: 685; Folio: 88; Page: 23; GSU roll: 542684",
+  "sourceInformation": "Ancestry.com. 1861 England Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2005. Original data: Census Returns of England and Wales, 1861. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1861. Data imaged from The National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1861. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1861. Data imaged from The National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1861 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1861 England Census. Learn more..."
+}
