@@ -562,7 +562,12 @@ function generalizeDataGivenRecordType(ed, result) {
       // occasionally the age has extra text. e.g. "7 years"
       if (age && age.length > 1) {
         if (age.search(/[^\d]/) != -1) {
-          age = age.replace(/\s*years\s*$/i, "");
+          if (age == "0 days") {
+            // FS uses this for any age less than 1 year
+            age = "infant";
+          } else {
+            age = age.replace(/\s*years\s*$/i, "");
+          }
         }
       }
       if (result.recordType == RT.DeathRegistration || result.recordType == RT.Death) {
