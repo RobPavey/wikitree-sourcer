@@ -53,9 +53,9 @@ const searchParametersOptionsGroup = {
   subheading: "parameters",
   options: [
     {
-      optionName: "dateExactness",
+      optionName: "ageExactness",
       type: "select",
-      label: "Search exactness to use for the search from/to dates",
+      label: "Search exactness to use for the person's recorded age in census",
       values: [
         { value: "exactYear", text: "Exact year" },
         { value: "1", text: "+/- 1 years" },

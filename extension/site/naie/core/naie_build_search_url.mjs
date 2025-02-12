@@ -63,12 +63,12 @@ function buildSearchUrl(buildUrlInput) {
       if (usePre2025Site) {
         builder.addAge(age);
       } else {
-        const dateExactness = options.search_naie_dateExactness;
+        const ageExactness = options.search_naie_ageExactness;
         let range = 2;
-        if (dateExactness == "exactYear") {
+        if (ageExactness == "exactYear") {
           range = 0;
         } else {
-          range = Number(dateExactness);
+          range = Number(ageExactness);
           if (isNaN(range)) {
             range = 2;
           }
