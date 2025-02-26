@@ -240,6 +240,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/5941797:8767?ssrc=pt&tid=118975788&pid=400176376493&clickref=1100lw3b8Ahw%2C1100lw3b8Ahw&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
   },
   {
+    caseName: "england_census_1861_hon_wm_camper",
+    url: "https://www.ancestry.com/search/collections/8767/records/8067946",
+  },
+  {
     caseName: "england_census_1871_cole-650",
     url: "https://www.ancestry.com/discoveryui-content/view/11291260:7619",
   },

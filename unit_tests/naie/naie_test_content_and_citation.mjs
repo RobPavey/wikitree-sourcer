@@ -32,6 +32,10 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "census_1821_fermanagh_ann_keenan_2025",
+    url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1821&surname__icontains=Keenan&firstname__icontains=Ann&age=92&county=Fermanagh&id=51570",
+  },
+  {
     caseName: "census_1821_fermanagh_ann_keenan",
     url: "http://www.census.nationalarchives.ie/pages/1821/Fermanagh/Derryvolland/Lisnarrick_Village/15/",
     optionVariants: [
@@ -54,8 +58,16 @@ const regressionData = [
     ],
   },
   {
+    caseName: "census_1821_galway_walter_gleese_2025",
+    url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1821&surname__icontains=Gleese&firstname__icontains=Walter&age=35&county=Galway&id=323263",
+  },
+  {
     caseName: "census_1821_galway_walter_gleese",
     url: "http://www.census.nationalarchives.ie/pages/1821/Galway/Kilconickney/Rathreddy/3/",
+  },
+  {
+    caseName: "census_1831_londonderry_danl_dimond_2025",
+    url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1831&surname__icontains=Dimond&firstname__icontains=Danl&county=Londonderry&id=153133",
   },
   {
     caseName: "census_1831_londonderry_danl_dimond",
@@ -74,12 +86,24 @@ const regressionData = [
     url: "http://www.census.nationalarchives.ie/pages/1851/Dublin/Balrothery_East/Balrothery/Stephenstown/10/",
   },
   {
+    caseName: "census_1901_clare_catherine_loughnane_2025",
+    url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Loughnane&firstname__icontains=Catherine&sex=F&age=23&county=Clare&id=6697100",
+  },
+  {
     caseName: "census_1901_clare_catherine_loughnane",
     url: "http://www.census.nationalarchives.ie/pages/1901/Clare/Ballynacally/Inishmore_on_Deen_Island/1075611/",
   },
   {
+    caseName: "census_1911_mountjoy_edward_fuller_2025",
+    url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1911&surname__icontains=Fuller&firstname__icontains=Edward&sex=M&age=53&county=Dublin&id=121442",
+  },
+  {
     caseName: "census_1911_mountjoy_edward_fuller",
     url: "https://census.nationalarchives.ie/pages/1911/Dublin/Mountjoy/Charles_Street__Great/27180/",
+  },
+  {
+    caseName: "census_1911_waterford_john_long_2025",
+    url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1911&surname__icontains=Long&firstname__icontains=John&sex=M&age=33&county=Waterford&id=2396927",
   },
   {
     caseName: "census_1911_waterford_john_long",

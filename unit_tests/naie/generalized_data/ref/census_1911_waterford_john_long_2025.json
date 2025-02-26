@@ -1,0 +1,134 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1911"
+  },
+  "eventPlace": {
+    "placeString": "5 Spring Garden Alley, Waterford No. 2 Urban, Waterford, Ireland"
+  },
+  "name": {
+    "lastName": "Long",
+    "forenames": "John"
+  },
+  "ageAtEvent": "33",
+  "birthPlace": {
+    "placeString": "City of Waterford, Ireland"
+  },
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "personGender": "male",
+  "occupation": "Labourer - General",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "birthPlace",
+    "occupation",
+    "gender",
+    "relationship",
+    "maritalStatus"
+  ],
+  "householdArray": [
+    {
+      "name": "John Long",
+      "birthPlace": "City of Waterford",
+      "age": "33",
+      "occupation": "Labourer - General",
+      "gender": "male",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "isSelected": true
+    },
+    {
+      "name": "Margaret Long",
+      "yearsMarried": "4",
+      "birthPlace": "County Waterford",
+      "age": "41",
+      "gender": "female",
+      "relationship": "wife",
+      "maritalStatus": "married"
+    },
+    {
+      "name": "James Kearney",
+      "birthPlace": "City of Waterford",
+      "age": "19",
+      "occupation": "Engine Cleaner",
+      "gender": "male",
+      "relationship": "son",
+      "maritalStatus": "single"
+    },
+    {
+      "name": "Mary Kate Kearney",
+      "birthPlace": "City of Waterford",
+      "age": "15",
+      "occupation": "Scholar",
+      "gender": "female",
+      "relationship": "daughter",
+      "maritalStatus": "single"
+    },
+    {
+      "name": "Myles Kearney",
+      "birthPlace": "City of Waterford",
+      "age": "1",
+      "occupation": "Scholar",
+      "gender": "male",
+      "relationship": "son",
+      "maritalStatus": "single"
+    },
+    {
+      "name": "Margaret Mary Long",
+      "birthPlace": "City of Waterford",
+      "age": "3",
+      "gender": "female",
+      "relationship": "daughter",
+      "maritalStatus": "single"
+    },
+    {
+      "name": "Joseph Long",
+      "birthPlace": "City of Waterford",
+      "gender": "male",
+      "relationship": "son",
+      "maritalStatus": "single"
+    },
+    {
+      "name": "Ellie Long",
+      "birthPlace": "City of Waterford",
+      "age": "34",
+      "occupation": "Domestic Servant",
+      "gender": "female",
+      "relationship": "sister",
+      "maritalStatus": "single"
+    },
+    {
+      "name": "Michael Carroll",
+      "birthPlace": "County Kerry",
+      "age": "49",
+      "occupation": "Labourer - General",
+      "gender": "male",
+      "relationship": "boarder",
+      "maritalStatus": "single"
+    },
+    {
+      "name": "Maurice Murphy",
+      "birthPlace": "County Kilkenny",
+      "age": "35",
+      "occupation": "Sailor",
+      "gender": "male",
+      "relationship": "boarder",
+      "maritalStatus": "single"
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Margaret Long"
+      },
+      "marriageDate": {
+        "yearString": "1907"
+      },
+      "marriagePlace": {}
+    }
+  ],
+  "hasValidData": true
+}

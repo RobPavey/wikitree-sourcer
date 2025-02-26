@@ -160,7 +160,6 @@ async function additionalMessageHandler(request, sender, sendResponse) {
       console.log("Fetch URL is: " + fetchUrl);
 
       result.errorCondition = "Exception";
-      result.status = response.status;
       result.error = error;
       sendResponse(result);
       return { wasHandled: true, returnValue: false };

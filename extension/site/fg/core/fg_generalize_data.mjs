@@ -52,6 +52,10 @@ function addWtSearchTemplates(ed, result) {
 }
 
 function extractNicknames(name, nameObj) {
+  if (!name) {
+    return name;
+  }
+
   // change non-standard "smart" quotes to quotes
   name = name.replace(/[“”]/g, '"');
 

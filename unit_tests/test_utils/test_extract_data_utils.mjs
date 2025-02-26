@@ -58,6 +58,8 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       continue;
     }
 
+    //console.log("=== testData.caseName is : " + testData.caseName + " ===");
+
     let result = undefined;
 
     let pageFile = testData.pageFile;

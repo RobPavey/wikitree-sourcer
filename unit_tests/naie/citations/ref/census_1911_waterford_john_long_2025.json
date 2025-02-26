@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1911 Census''':\n\"1911 Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://nai.prod.derilinx.com/census/image/nai003499429.pdf National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1911&surname__icontains=Long&firstname__icontains=John&sex=M&age=33&county=Waterford&id=2396927 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nJohn Long (33), married, Labourer - General, head of household at 5 Spring Garden Alley, Waterford No. 2 Urban, Waterford, Ireland. Born in City of Waterford, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1911 census John (age 33), Labourer - General, was the married head of household at 5 Spring Garden Alley, Waterford No. 2 Urban, Waterford, Ireland.<ref>\n'''1911 Census''':\n\"1911 Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://nai.prod.derilinx.com/census/image/nai003499429.pdf National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1911&surname__icontains=Long&firstname__icontains=John&sex=M&age=33&county=Waterford&id=2396927 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nJohn Long (33), married, Labourer - General, head of household at 5 Spring Garden Alley, Waterford No. 2 Urban, Waterford, Ireland. Born in City of Waterford, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1911 Census''': \"1911 Census of Ireland\"<br/>The National Archives of Ireland<br/>[https://nai.prod.derilinx.com/census/image/nai003499429.pdf National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1911&surname__icontains=Long&firstname__icontains=John&sex=M&age=33&county=Waterford&id=2396927 National Archives of Ireland Record] (accessed 6 May 2021)<br/>John Long (33), married, Labourer - General, head of household at 5 Spring Garden Alley, Waterford No. 2 Urban, Waterford, Ireland. Born in City of Waterford, Ireland.",
+    "type": "source"
+  }
+}

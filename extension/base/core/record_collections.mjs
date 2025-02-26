@@ -409,7 +409,7 @@ const RecordCollectionData = [
     wtsId: "EnglandAndWalesCensus1921",
     title: "1921 Census of England and Wales",
     country: "England and Wales",
-    dates: { year: 1921 },
+    dates: { year: 1921, exactDate: "19 Jun 1921" },
     householdTableColumns: [
       "name",
       "relationship",
@@ -571,6 +571,20 @@ const RecordCollectionData = [
         id: "2352",
         altId: "1911England",
         title: "1911 England Census",
+      },
+    },
+  },
+  {
+    wtsId: "EnglandCensus1921",
+    partOf: ["EnglandAndWalesCensus1921"],
+    title: "1921 Census of England",
+    country: "England",
+    dates: { year: 1921, exactDate: "19 Jun 1921" },
+    sites: {
+      ancestry: {
+        id: "63150",
+        altId: "1921England",
+        title: "1921 England Census",
       },
     },
   },

@@ -43,6 +43,27 @@ const regressionData = [
           county: "Waterford",
         },
       },
+      {
+        variantName: "oldSite",
+        searchParameters: {
+          collection: "1901",
+          lastNameIndex: 0,
+        },
+        optionOverrides: {
+          search_naie_usePre2025Site: true,
+        },
+      },
+      {
+        variantName: "oldSiteCounty",
+        searchParameters: {
+          collection: "1901",
+          lastNameIndex: 0,
+          county: "Waterford",
+        },
+        optionOverrides: {
+          search_naie_usePre2025Site: true,
+        },
+      },
     ],
   },
   {
@@ -76,6 +97,39 @@ const regressionData = [
           collection: "1831",
           lastNameIndex: 0,
           county: "Antrim",
+        },
+      },
+      {
+        variantName: "oldSite1901Kearney",
+        searchParameters: {
+          collection: "1901",
+          lastNameIndex: 1,
+          county: "Waterford",
+        },
+        optionOverrides: {
+          search_naie_usePre2025Site: true,
+        },
+      },
+      {
+        variantName: "oldSite1911Long",
+        searchParameters: {
+          collection: "1911",
+          lastNameIndex: 2,
+          county: "Waterford",
+        },
+        optionOverrides: {
+          search_naie_usePre2025Site: true,
+        },
+      },
+      {
+        variantName: "oldSite1831",
+        searchParameters: {
+          collection: "1831",
+          lastNameIndex: 0,
+          county: "Antrim",
+        },
+        optionOverrides: {
+          search_naie_usePre2025Site: true,
         },
       },
     ],

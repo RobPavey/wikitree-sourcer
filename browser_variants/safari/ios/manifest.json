@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": ["storage", "contextMenus"],
   "host_permissions": [
@@ -229,7 +229,7 @@
       "js": ["base/browser/content/content_common.js", "site/mh/browser/mh_content.js"]
     },
     {
-      "matches": ["*://*.census.nationalarchives.ie/*"],
+      "matches": ["*://*.nationalarchives.ie/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/naie/browser/naie_content.js"]
     },
@@ -464,7 +464,7 @@
     },
     {
       "resources": ["site/naie/core/naie_extract_data.mjs"],
-      "matches": ["*://*.census.nationalarchives.ie/*"]
+      "matches": ["*://*.nationalarchives.ie/*"]
     },
     {
       "resources": ["site/nli/core/nli_extract_data.mjs"],

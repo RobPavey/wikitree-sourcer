@@ -1,0 +1,5 @@
+{
+  "std": {
+    "tableString": "{| border=\"1\" cellpadding=\"4\"\n|- bgcolor=#E1F0B4\n| Name || Relation || Status || Sex || Age || Occupation || Birth Place\n|-\n| ... || ... || ... || ... || ... || ... || ...\n|-\n| Arthur [Fitzgerald] Kinnard || Visitor ||  ||  || 14 ||  || \n|-\n| Rt Honbm Sammie Sulivan || Brother-in-law ||  ||  || 71 ||  || \n|-\n| Mary Sulivan || Niece ||  ||  || 41 ||  || \n|-\n| Charlotte Sulivan || Niece ||  ||  || 36 ||  || \n|-\n| '''Rt Honbm Wm Camper''' || '''Son-in-law''' ||  || '''M''' || '''90''' ||  || '''St George Hanover Square, London, England'''\n|-\n| [Georgina] Camper || Daughter-in-law ||  ||  || 39 ||  || \n|-\n| Honbm Evelyn Ashley || Grandson ||  ||  || 24 ||  || \n|-\n| ... || ... || ... || ... || ... || ... || ...\n|}"
+  }
+}

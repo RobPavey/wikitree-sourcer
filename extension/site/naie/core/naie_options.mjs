@@ -24,9 +24,51 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchBehaviorOptionsGroup = {
+  category: "search",
+  subcategory: "naie",
+  tab: "search",
+  subsection: "naie",
+  subheading: "behavior",
+  options: [
+    {
+      optionName: "usePre2025Site",
+      type: "checkbox",
+      label: "Do search on old (pre-2025) National Archives site",
+      defaultValue: false,
+    },
+  ],
+};
+
+const searchParametersOptionsGroup = {
+  category: "search",
+  subcategory: "naie",
+  tab: "search",
+  subsection: "naie",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "ageExactness",
+      type: "select",
+      label: "Search exactness to use for the person's recorded age in census",
+      values: [
+        { value: "exactYear", text: "Exact year" },
+        { value: "1", text: "+/- 1 years" },
+        { value: "2", text: "+/- 2 years" },
+        { value: "3", text: "+/- 3 years" },
+        { value: "5", text: "+/- 5 years" },
+        { value: "10", text: "+/- 10 years" },
+        { value: "25", text: "+/- 25 years" },
+      ],
+      defaultValue: "2",
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -38,6 +80,10 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "naie", "National Archives of Ireland");
 registerSiteSearchPopupOptionsGroup("naie");
+registerSubheadingForOptions("search", "naie", "behavior", "Search Behavior");
+registerOptionsGroup(searchBehaviorOptionsGroup);
+registerSubheadingForOptions("search", "naie", "parameters", "Search Parameters");
+registerOptionsGroup(searchParametersOptionsGroup);
 
 registerSubsectionForOptions("citation", "naie", "National Archives of Ireland");
 registerOptionsGroup(citationOptionsGroup);

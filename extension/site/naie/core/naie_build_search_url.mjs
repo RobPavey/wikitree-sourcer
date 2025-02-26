@@ -30,8 +30,11 @@ function buildSearchUrl(buildUrlInput) {
   // typeOfSearch is current allways specifiedParameters
   const gd = buildUrlInput.generalizedData;
   const parameters = buildUrlInput.searchParameters;
+  const options = buildUrlInput.options;
 
-  var builder = new NaieUriBuilder();
+  const usePre2025Site = options.search_naie_usePre2025Site;
+
+  var builder = new NaieUriBuilder(usePre2025Site);
 
   builder.addYear(parameters.collection);
 
@@ -56,7 +59,23 @@ function buildSearchUrl(buildUrlInput) {
     let birthDateString = gd.inferBirthDate();
     if (birthDateString && censusYearString) {
       let age = GeneralizedData.getAgeAtDate(birthDateString, censusYearString);
-      builder.addAge(age);
+
+      if (usePre2025Site) {
+        builder.addAge(age);
+      } else {
+        const ageExactness = options.search_naie_ageExactness;
+        let range = 2;
+        if (ageExactness == "exactYear") {
+          range = 0;
+        } else {
+          range = Number(ageExactness);
+          if (isNaN(range)) {
+            range = 2;
+          }
+        }
+
+        builder.addAge(age, range);
+      }
     }
   }
 
