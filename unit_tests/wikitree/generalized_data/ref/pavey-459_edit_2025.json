@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "William",
+    "middleNames": "Henry",
+    "prefNames": "William",
+    "lastName": "Pavey"
+  },
+  "lastNameAtDeath": "Pavey",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "28 Sep 1863",
+    "qualifier": 1
+  },
+  "deathDate": {
+    "dateString": "Dec 1944",
+    "qualifier": 1
+  },
+  "birthPlace": {
+    "placeString": "Kentish Town, London, England, United Kingdom"
+  },
+  "deathPlace": {
+    "placeString": "Rochford, Essex, England, United Kingdom"
+  },
+  "parents": {},
+  "spouses": [],
+  "hasValidData": true,
+  "personRepoRef": ""
+}

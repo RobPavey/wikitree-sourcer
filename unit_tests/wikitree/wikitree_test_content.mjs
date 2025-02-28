@@ -111,6 +111,14 @@ const regressionData = [
     url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=22280837",
   },
   {
+    caseName: "pavey-342_read",
+    url: "https://www.wikitree.com/wiki/Pavey-342",
+  },
+  {
+    caseName: "pavey-342_read_2025",
+    url: "https://dev-2025.wikitree.com/wiki/Pavey-342",
+  },
+  {
     caseName: "pavey-443_private",
     url: "https://www.wikitree.com/wiki/Pavey-443",
   },
@@ -129,6 +137,10 @@ const regressionData = [
   {
     caseName: "pavey-459_edit",
     url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=27023237",
+  },
+  {
+    caseName: "pavey-459_edit_2025",
+    url: "https://dev-2025.wikitree.com/index.php?title=Special:EditPerson&u=27196994",
   },
   {
     caseName: "pavey-507_private",

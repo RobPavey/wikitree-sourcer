@@ -1,0 +1,40 @@
+{
+  "hasValidData": true,
+  "firstNames": "Harry",
+  "prefNames": "",
+  "middleNames": "Alfred",
+  "lnab": "Pavey",
+  "currentLastName": "Pavey",
+  "mothersMaidenName": "Ellacott",
+  "birthDate": "18 Jul 1852",
+  "birthDateStatus": "none",
+  "deathDate": "5 Jan 1914",
+  "deathDateStatus": "none",
+  "birthLocation": "Plymouth, Devon, England, United Kingdom",
+  "deathLocation": "Hampstead, London, England, United Kingdom",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Littlemore-13",
+      "name": "Amelia Elizabeth (Littlemore) Pavey",
+      "marriageString": "about Oct 1870 in Pancras, Middlesex, England, United Kingdom",
+      "marriageDate": "about Oct 1870",
+      "marriagePlace": "Pancras, Middlesex, England, United Kingdom"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Pavey-342",
+  "currentTabText": "Harry Pavey's Profile",
+  "pageType": "read",
+  "wikiId": "Pavey-342",
+  "name": "Harry Alfred Pavey",
+  "parents": {
+    "father": {
+      "wikiId": "Pavey-343",
+      "name": "William Henry Pavey"
+    },
+    "mother": {
+      "wikiId": "Ellacott-59",
+      "name": "Elizabeth (Ellacott) Pavey"
+    }
+  }
+}

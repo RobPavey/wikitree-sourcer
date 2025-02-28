@@ -1,0 +1,45 @@
+{
+  "hasValidData": true,
+  "firstNames": "Ralph",
+  "prefNames": "Ralph",
+  "middleNames": "Edgar",
+  "lnab": "Pavey",
+  "currentLastName": "Pavey",
+  "mothersMaidenName": "Littlemore",
+  "birthDate": "9 Jul 1891",
+  "birthDateStatus": "certain",
+  "deathDate": "8 Sep 1958",
+  "deathDateStatus": "certain",
+  "birthLocation": "Kentish Town, London, England, United Kingdom",
+  "deathLocation": "Marylebone, Middlesex, England, United Kingdom",
+  "personGender": "Male",
+  "spouses": [
+    {
+      "name": "Clara Ethel (Risley) Pavey",
+      "wikiId": "Risley-1040",
+      "marriageString": "15 Feb 1914 Lambeth, Surrey, England, United Kingdom",
+      "marriageDate": "15 Feb 1914",
+      "marriagePlace": "Lambeth, Surrey, England, United Kingdom"
+    },
+    {
+      "name": "Elsie Sarah (Chambers) Pavey",
+      "wikiId": "Chambers-9661",
+      "marriageString": "Sep 1944 Hendon, Middlesex, England, United Kingdom",
+      "marriageDate": "Sep 1944",
+      "marriagePlace": "Hendon, Middlesex, England, United Kingdom"
+    }
+  ],
+  "url": "https://dev-2025.wikitree.com/index.php?title=Special:EditPerson&u=27196994",
+  "pageType": "edit",
+  "parents": {
+    "father": {
+      "name": "Harry Alfred Pavey",
+      "wikiId": "Pavey-342"
+    },
+    "mother": {
+      "name": "Amelia Elizabeth (Littlemore) Pavey",
+      "wikiId": "Littlemore-13"
+    }
+  },
+  "wikiId": "Pavey-459"
+}
