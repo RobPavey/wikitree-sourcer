@@ -1008,8 +1008,8 @@ function extractDataForEditFamily2025(document, result) {
 
   function getSiblingParentNameAndWikiId(isFather) {
     let selector = isFather
-      ? '#content input[name="wpSameFather"]:not([type="hidden"])'
-      : '#content input[name="wpSameMother"]:not([type="hidden"])';
+      ? '#connectionsSection input[name="wpSameFather"]:not([type="hidden"])'
+      : '#connectionsSection input[name="wpSameMother"]:not([type="hidden"])';
 
     let nameAndId = {};
 
@@ -1038,10 +1038,10 @@ function extractDataForEditFamily2025(document, result) {
           }
         }
       } else {
-        let textNode = sameParentNode.nextSibling;
-        if (textNode) {
-          let linkNode = textNode.nextSibling;
-          if (linkNode && linkNode.type != 3) {
+        let labelNode = sameParentNode.nextElementSibling;
+        if (labelNode) {
+          let linkNode = labelNode.querySelector("a");
+          if (linkNode) {
             nameAndId.name = linkNode.textContent;
             let href = linkNode.getAttribute("href");
             if (href) {
@@ -1106,7 +1106,7 @@ function extractDataForEditFamily2025(document, result) {
 
   let headingNode = document.querySelector("#addEditHeadline");
   if (!headingNode) {
-    headingNode = document.querySelector("#content > div > h1");
+    headingNode = document.querySelector("#heading > div > h1");
     if (!headingNode) {
       return result;
     }
@@ -1394,57 +1394,28 @@ function getParentsFromDocumentInNonEditMode2025(document, result) {
 function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
   // read
   // get the spouses (if any)
-  var spouseUrls = document.querySelectorAll(".VITALS span[itemprop=spouse] a[itemprop=url]");
-  for (let index = 0; index < spouseUrls.length; ++index) {
-    let pathName = spouseUrls[index].getAttribute("href");
+  let spouseElements = document.querySelectorAll("#Spouses span.spouse");
+  for (let spouseElement of spouseElements) {
+    let spouseLink = spouseElement.querySelector("span[itemprop=spouse] a[itemprop=url]");
+    let pathName = spouseLink.getAttribute("href");
     const wikiId = pathName.replace(/(?:https?\:\/\/[^\.]+\.wikitree\.com)?\/wiki\//, "");
-    let fullName = getTextBySelector(spouseUrls[index], "span[itemprop=name]");
+    let fullName = getTextBySelector(spouseLink, "span[itemprop=name]");
 
     let spouse = { wikiId: wikiId, name: fullName };
 
-    let spouseDiv = spouseUrls[index].closest("div");
-    if (spouseDiv) {
-      let marriageString = "";
-
-      // The WikiTree BEE extension restructures the marriage section
-      let beeMarriageDetails = spouseDiv.querySelector("span.marriageDetails");
-      if (beeMarriageDetails) {
-        marriageString = beeMarriageDetails.textContent;
-      } else {
-        let marriageChildNodes = spouseDiv.childNodes;
-        if (marriageChildNodes.length >= 3) {
-          marriageString = marriageChildNodes[2].textContent;
-        }
+    let marriageDateElement = spouseElement.querySelector("span.marriage-date");
+    if (marriageDateElement) {
+      let marriageDate = marriageDateElement.textContent.trim();
+      if (marriageDate) {
+        spouse.marriageDate = marriageDate;
       }
+    }
 
-      // the three child nodes are something like:
-      // 1. "Husband of"
-      // 2. name
-      // 3. "— married 15 Feb 1914 in Lambeth, Surrey, England, United Kingdom"
-      if (marriageString) {
-        marriageString = marriageString.replace(/\s+/g, " ").trim();
-
-        if (isPrivate) {
-          marriageString = marriageString.replace(/^[\-\—] married ?/, ""); // note this is a special dash (em or en)
-        } else {
-          marriageString = marriageString.replace(/^[\-\—] married /, ""); // note this is a special dash (em or en)
-        }
-        spouse.marriageString = marriageString;
-
-        //let marriageDate = marriageString.replace(/^\s*\-\s*married\s+((?:\d\d? )?(?:\w\w\w )?\d\d\d\d)\s+in\s+.*$/, "$1");
-        let marriageDate = marriageString.replace(/^(.*) in .*$/, "$1");
-        if (marriageDate != marriageString) {
-          // the marriage date can include a marriage end date in parentheses
-          let openParenIndex = marriageDate.indexOf("(");
-          if (openParenIndex != -1) {
-            marriageDate = marriageDate.substring(0, openParenIndex);
-          }
-          spouse.marriageDate = marriageDate.trim();
-        }
-        let marriagePlace = marriageString.replace(/^.* in (.*)$/, "$1");
-        if (marriagePlace != marriageString) {
-          spouse.marriagePlace = marriagePlace;
-        }
+    let marriagePlaceElement = spouseElement.querySelector("span.marriage-location");
+    if (marriagePlaceElement) {
+      let marriagePlace = marriagePlaceElement.textContent.trim();
+      if (marriagePlace) {
+        spouse.marriagePlace = marriagePlace;
       }
     }
 

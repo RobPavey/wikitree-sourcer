@@ -143,6 +143,10 @@ const regressionData = [
     url: "https://dev-2025.wikitree.com/index.php?title=Special:EditPerson&u=27196994",
   },
   {
+    caseName: "pavey-459_read_2025",
+    url: "https://dev-2025.wikitree.com/wiki/Pavey-459",
+  },
+  {
     caseName: "pavey-507_private",
     url: "https://www.wikitree.com/wiki/Pavey-507",
   },

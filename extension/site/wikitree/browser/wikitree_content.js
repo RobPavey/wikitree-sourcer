@@ -317,19 +317,36 @@ function connectionsContinueClickedChangeParentLine(desiredParentLine) {
 function connectionsContinueClickedAddingChild(spouseIsParentElements) {
   let wikiId = "";
 
+  let hasNewFooter = document.querySelector("footer#footer");
+  let is2025Format = hasNewFooter ? true : false;
+
   for (let inputElement of spouseIsParentElements) {
     let isChecked = inputElement.checked;
     if (isChecked) {
       let linkElement = undefined;
 
-      // Get the next sibling element that is a link
-      let sibling = inputElement.nextElementSibling;
-      while (sibling) {
-        if (sibling.matches("a")) {
-          linkElement = sibling;
-          break;
+      if (is2025Format) {
+        // Get the next sibling element that is a link
+        let sibling = inputElement.nextElementSibling;
+        while (sibling) {
+          if (sibling.matches("label")) {
+            linkElement = sibling.querySelector("a");
+            if (linkElement) {
+              break;
+            }
+          }
+          sibling = sibling.nextElementSibling;
         }
-        sibling = sibling.nextElementSibling;
+      } else {
+        // Get the next sibling element that is a link
+        let sibling = inputElement.nextElementSibling;
+        while (sibling) {
+          if (sibling.matches("a")) {
+            linkElement = sibling;
+            break;
+          }
+          sibling = sibling.nextElementSibling;
+        }
       }
 
       if (linkElement) {
@@ -387,8 +404,8 @@ function connectionsContinueClicked(event) {
   if (spouseIsParentElements && spouseIsParentElements.length > 0) {
     connectionsContinueClickedAddingChild(spouseIsParentElements);
   } else {
-    let sameFatherNode = document.querySelector('#content input[name="wpSameFather"]');
-    let sameMotherNode = document.querySelector('#content input[name="wpSameMother"]');
+    let sameFatherNode = document.querySelector('#connectionsSection input[name="wpSameFather"]');
+    let sameMotherNode = document.querySelector('#connectionsSection input[name="wpSameMother"]');
     if (sameFatherNode || sameMotherNode) {
       connectionsContinueClickedAddingSibling(sameFatherNode, sameMotherNode);
     }

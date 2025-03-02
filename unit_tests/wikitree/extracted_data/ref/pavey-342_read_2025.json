@@ -13,18 +13,7 @@
   "birthLocation": "Plymouth, Devon, England, United Kingdom",
   "deathLocation": "Hampstead, London, England, United Kingdom",
   "personGender": "male",
-  "spouses": [
-    {
-      "wikiId": "Littlemore-13",
-      "name": "Amelia Elizabeth (Littlemore) Pavey",
-      "marriageString": ""
-    },
-    {
-      "wikiId": "Littlemore-13",
-      "name": "Amelia Elizabeth (Littlemore) Pavey",
-      "marriageString": ""
-    }
-  ],
+  "spouses": [],
   "url": "https://dev-2025.wikitree.com/wiki/Pavey-342",
   "pageType": "read",
   "wikiId": "Pavey-342",
