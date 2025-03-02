@@ -4,7 +4,6 @@
   "name": {
     "firstNames": "Ralph",
     "middleNames": "Edgar",
-    "prefNames": "Ralph",
     "lastName": "Pavey"
   },
   "lastNameAtBirth": "Pavey",
@@ -13,11 +12,11 @@
   "personGender": "male",
   "birthDate": {
     "dateString": "9 Jul 1891",
-    "qualifier": 1
+    "qualifier": 0
   },
   "deathDate": {
     "dateString": "8 Sep 1958",
-    "qualifier": 1
+    "qualifier": 0
   },
   "birthPlace": {
     "placeString": "Kentish Town, London, England, United Kingdom"

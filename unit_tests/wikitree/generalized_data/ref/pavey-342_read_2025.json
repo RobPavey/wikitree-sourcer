@@ -1,7 +1,50 @@
 {
   "sourceOfData": "wikitree",
   "sourceType": "profile",
-  "name": {},
+  "name": {
+    "firstNames": "Harry",
+    "middleNames": "Alfred",
+    "lastName": "Pavey"
+  },
+  "lastNameAtBirth": "Pavey",
+  "lastNameAtDeath": "Pavey",
+  "mothersMaidenName": "Ellacott",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "18 Jul 1852",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "5 Jan 1914",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Plymouth, Devon, England, United Kingdom"
+  },
+  "deathPlace": {
+    "placeString": "Hampstead, London, England, United Kingdom"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Henry Pavey",
+        "lastName": "Pavey",
+        "forenames": "William Henry"
+      },
+      "lastNameAtBirth": "Pavey",
+      "lastNameAtDeath": "Pavey"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Elizabeth",
+        "lastName": "Ellacott",
+        "name": "Elizabeth Ellacott"
+      },
+      "lastNameAtBirth": "Ellacott",
+      "lastNameAtDeath": "Pavey"
+    }
+  },
   "spouses": [],
-  "hasValidData": true
+  "hasValidData": true,
+  "personRepoRef": "Pavey-342"
 }
