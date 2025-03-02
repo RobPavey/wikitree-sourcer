@@ -49,8 +49,13 @@ function wikitreeDoSearch(input) {
     let loadedModule = await import(`../core/wikitree_build_search_data.mjs`);
     let buildResult = loadedModule.buildSearchData(input);
 
+    let options = input.options;
+
     let fieldData = buildResult.fieldData;
-    const searchUrl = "https://www.wikitree.com/wiki/Special:SearchPerson";
+    let searchUrl = "https://www.wikitree.com/wiki/Special:SearchPerson";
+    if (options && options.search_wikitree_useDev2025Server) {
+      searchUrl = "https://dev-2025.wikitree.com/wiki/Special:SearchPerson";
+    }
 
     const checkPermissionsOptions = {
       reason:

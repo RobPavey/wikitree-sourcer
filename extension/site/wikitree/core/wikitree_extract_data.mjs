@@ -960,11 +960,9 @@ function extractDataForEditFamily(document, result) {
 }
 
 function extractDataForEditFamily2025(document, result) {
-  console.log("extractDataForEditFamily2025");
+  //console.log("extractDataForEditFamily2025");
 
   function getSpouseNameAndWikiId(spouseIsParentNode) {
-    console.log("getSpouseNameAndWikiId");
-
     let parentNode = spouseIsParentNode.parentNode;
 
     let nameAndId = {};
@@ -985,7 +983,6 @@ function extractDataForEditFamily2025(document, result) {
         }
       }
     } else if (parentNode) {
-      console.log("Found parentNode");
       let linkNode = parentNode.querySelector("a");
       if (linkNode) {
         let href = linkNode.getAttribute("href");
@@ -999,9 +996,6 @@ function extractDataForEditFamily2025(document, result) {
         nameAndId.name = spouseText.trim();
       }
     }
-
-    console.log("nameAndId is");
-    console.log(nameAndId);
 
     return nameAndId;
   }
@@ -1148,9 +1142,6 @@ function extractDataForEditFamily2025(document, result) {
       result.familyMemberSpouses = [];
 
       for (let spouseIsParentNode of spouseIsParentNodes) {
-        console.log("spouseIsParentNode is:");
-        console.log(spouseIsParentNode);
-
         let nameAndId = getSpouseNameAndWikiId(spouseIsParentNode);
         result.familyMemberSpouses.push(nameAndId);
 

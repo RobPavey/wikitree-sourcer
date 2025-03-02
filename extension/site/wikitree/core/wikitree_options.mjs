@@ -120,6 +120,12 @@ const searchOptionsGroup = {
 
       defaultValue: true,
     },
+    {
+      optionName: "useDev2025Server",
+      type: "checkbox",
+      label: "Perform search on the dev-2025 server (for temporary testing)",
+      defaultValue: false,
+    },
   ],
 };
 

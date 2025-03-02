@@ -56,7 +56,9 @@ async function checkForPendingSearchData() {
     return;
   }
 
-  if (document.URL == "https://www.wikitree.com/wiki/Special:SearchPerson") {
+  const searchUrlRegEx = /^https\:\/\/[^\.]+\.wikitree\.com\/wiki\/Special\:SearchPerson$/i;
+
+  if (searchUrlRegEx.test(document.URL)) {
     //console.log("checkForPendingSearchData: URL matches");
 
     let wikitreeSearchData = await getPendingSearch();
