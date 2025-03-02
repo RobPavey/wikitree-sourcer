@@ -1388,29 +1388,32 @@ function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
   let spouseElements = document.querySelectorAll("#Spouses span.spouse");
   for (let spouseElement of spouseElements) {
     let spouseLink = spouseElement.querySelector("span[itemprop=spouse] a[itemprop=url]");
-    let pathName = spouseLink.getAttribute("href");
-    const wikiId = pathName.replace(/(?:https?\:\/\/[^\.]+\.wikitree\.com)?\/wiki\//, "");
-    let fullName = getTextBySelector(spouseLink, "span[itemprop=name]");
+    // spouseLink can be null for private spouse
+    if (spouseLink) {
+      let pathName = spouseLink.getAttribute("href");
+      const wikiId = pathName.replace(/(?:https?\:\/\/[^\.]+\.wikitree\.com)?\/wiki\//, "");
+      let fullName = getTextBySelector(spouseLink, "span[itemprop=name]");
 
-    let spouse = { wikiId: wikiId, name: fullName };
+      let spouse = { wikiId: wikiId, name: fullName };
 
-    let marriageDateElement = spouseElement.querySelector("span.marriage-date");
-    if (marriageDateElement) {
-      let marriageDate = marriageDateElement.textContent.trim();
-      if (marriageDate) {
-        spouse.marriageDate = marriageDate;
+      let marriageDateElement = spouseElement.querySelector("span.marriage-date");
+      if (marriageDateElement) {
+        let marriageDate = marriageDateElement.textContent.trim();
+        if (marriageDate) {
+          spouse.marriageDate = marriageDate;
+        }
       }
-    }
 
-    let marriagePlaceElement = spouseElement.querySelector("span.marriage-location");
-    if (marriagePlaceElement) {
-      let marriagePlace = marriagePlaceElement.textContent.trim();
-      if (marriagePlace) {
-        spouse.marriagePlace = marriagePlace;
+      let marriagePlaceElement = spouseElement.querySelector("span.marriage-location");
+      if (marriagePlaceElement) {
+        let marriagePlace = marriagePlaceElement.textContent.trim();
+        if (marriagePlace) {
+          spouse.marriagePlace = marriagePlace;
+        }
       }
-    }
 
-    result.spouses.push(spouse);
+      result.spouses.push(spouse);
+    }
   }
 }
 
@@ -1423,17 +1426,24 @@ function extractDataInReadMode2025(document, result) {
   let copyIdSelector = document.querySelector("button[aria-label='Copy ID']");
   let genderSelector = document.querySelector(".VITALS meta[itemprop=gender]");
 
-  if (!copyIdSelector || !genderSelector) {
-    return;
+  if (copyIdSelector) {
+    result.wikiId = copyIdSelector.getAttribute("data-copy-text");
   } else {
+    const profileUrlRegEx = /^https\:\/\/[^\.]+\.wikitree\.com\/wiki\/([^\/\?]+)$/;
+    if (profileUrlRegEx.test(result.url)) {
+      result.wikiId = result.url.replace(profileUrlRegEx, "$1");
+    }
+  }
+
+  if (genderSelector) {
+    result.personGender = genderSelector.getAttribute("content");
+  }
+
+  if (result.wikiId) {
     result.hasValidData = true;
   }
 
-  result.wikiId = copyIdSelector.getAttribute("data-copy-text");
-
   extractVitalsDataInNonEditMode2025(document, result, false);
-
-  result.personGender = genderSelector.getAttribute("content");
 
   getParentsFromDocumentInNonEditMode2025(document, result);
 
