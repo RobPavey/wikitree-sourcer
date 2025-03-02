@@ -44,7 +44,23 @@
       "lastNameAtDeath": "Pavey"
     }
   },
-  "spouses": [],
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Amelia Elizabeth",
+        "lastName": "Littlemore",
+        "name": "Amelia Elizabeth Littlemore"
+      },
+      "lastNameAtBirth": "Littlemore",
+      "lastNameAtDeath": "Pavey",
+      "marriageDate": {
+        "dateString": "about Oct 1870"
+      },
+      "marriagePlace": {
+        "placeString": "Pancras, Middlesex, England, United Kingdom"
+      }
+    }
+  ],
   "hasValidData": true,
   "personRepoRef": "Pavey-342"
 }
