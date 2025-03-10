@@ -1067,9 +1067,10 @@ function extractDataForEditFamily2025(document, result) {
   }
   result.relationshipToFamilyMember = relationship;
 
-  // check for the new "steps" form
+  // check for the new "steps" form, note when adding an unrelated person the actionSection is not there
   let actionSectionNode = document.querySelector("#actionSection");
-  if (actionSectionNode) {
+  let basicDataSectionNode = document.querySelector("#basicDataSection");
+  if (actionSectionNode || basicDataSectionNode) {
     // this is the steps variant
     result.editFamilyType = "steps";
     // check which step we are on:
@@ -1100,7 +1101,7 @@ function extractDataForEditFamily2025(document, result) {
 
   let headingNode = document.querySelector("#addEditHeadline");
   if (!headingNode) {
-    headingNode = document.querySelector("#heading > div > h1");
+    headingNode = document.querySelector("#heading h1");
     if (!headingNode) {
       return result;
     }
@@ -1601,7 +1602,7 @@ function extractDataFor2025FormatPage(result, document, url) {
   //console.log("extractDataFor2025FormatPage");
 
   // check for the Add Person/Edit Family page
-  if (url.includes("title=Special:EditFamily")) {
+  if (url.includes("Special:EditFamily")) {
     return extractDataForEditFamily2025(document, result);
   }
 
