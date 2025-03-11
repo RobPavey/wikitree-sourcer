@@ -183,6 +183,10 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Stanway-252",
   },
   {
+    caseName: "thomas-78801_add_child_2025",
+    url: "https://www.wikitree.com/index.php?title=Special:EditFamily&u=46061695&who=child",
+  },
+  {
     caseName: "tulloch-46_read",
     url: "https://www.wikitree.com/wiki/Tulloch-46",
   },

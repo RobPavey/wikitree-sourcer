@@ -1,0 +1,33 @@
+{
+  "hasValidData": true,
+  "firstNames": "",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Thomas",
+  "currentLastName": "",
+  "mothersMaidenName": "",
+  "birthDate": "",
+  "birthDateStatus": "none",
+  "deathDate": "",
+  "deathDateStatus": "none",
+  "birthLocation": "",
+  "deathLocation": "",
+  "personGender": "",
+  "spouses": [],
+  "url": "https://www.wikitree.com/index.php?title=Special:EditFamily&u=46061695&who=child",
+  "pageType": "editFamily",
+  "relationshipToFamilyMember": "child",
+  "editFamilyType": "steps",
+  "editFamilyTypeStep": "sources",
+  "familyMemberName": "John Thomas",
+  "familyMemberWikiId": "Thomas-78801",
+  "familyMemberSpouses": [
+    {
+      "wikiId": "https://www.wikitree.com/wiki/Simmons-23831",
+      "name": "Eliza (Simmons) Thomas"
+    }
+  ],
+  "familyMemberSpouseName": "Eliza (Simmons) Thomas",
+  "familyMemberSpouseWikiId": "https://www.wikitree.com/wiki/Simmons-23831",
+  "hasMiddleNameField": true
+}
