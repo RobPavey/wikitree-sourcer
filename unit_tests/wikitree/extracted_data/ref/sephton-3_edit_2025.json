@@ -1,0 +1,34 @@
+{
+  "hasValidData": true,
+  "firstNames": "John",
+  "prefNames": "John",
+  "middleNames": "",
+  "lnab": "Sephton",
+  "currentLastName": "Sephton",
+  "mothersMaidenName": "",
+  "birthDate": "1804",
+  "birthDateStatus": "guess",
+  "deathDate": "19 Oct 1885",
+  "deathDateStatus": "guess",
+  "birthLocation": "Scarisbrick, Lancashire, England",
+  "deathLocation": "Aughton, Lancashire, England",
+  "personGender": "Male",
+  "spouses": [
+    {
+      "name": "Jane Moorcroft",
+      "wikiId": "Moorcroft-11",
+      "marriageString": "6 Sep 1826 Church of St Peter and St Paul, Ormskirk, Lancashire, England",
+      "marriageDate": "6 Sep 1826",
+      "marriagePlace": "Church of St Peter and St Paul, Ormskirk, Lancashire, England"
+    }
+  ],
+  "url": "https://www.wikitree.com/index.php?title=Special:EditPerson&u=3874579",
+  "pageType": "edit",
+  "parents": {
+    "father": {
+      "name": "Richard Sephton",
+      "wikiId": "Sephton-134"
+    }
+  },
+  "wikiId": "Sephton-3"
+}

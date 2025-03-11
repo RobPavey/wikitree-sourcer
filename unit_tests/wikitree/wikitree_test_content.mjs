@@ -161,6 +161,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Peffers-436",
   },
   {
+    // Has no mother which cased a bug extracting mother
+    caseName: "sephton-3_edit_2025",
+    url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=3874579",
+  },
+  {
     // Birth and death in NSW Aus. Death 2004
     caseName: "smith-57461_read",
     url: "https://www.wikitree.com/wiki/Smith-57461",

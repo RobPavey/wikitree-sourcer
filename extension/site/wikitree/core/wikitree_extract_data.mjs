@@ -1458,8 +1458,8 @@ function getParentsFromDocumentInEditMode2025(document, result) {
   // So we look at the text to see if it says
   // "[father unknown]" (public view) or "[father?]" (private view)
 
-  let fatherLink = document.querySelector("#Father a");
-  let motherLink = document.querySelector("#Mother a");
+  let fatherLink = document.querySelector("#Father div.tree--person a");
+  let motherLink = document.querySelector("#Mother div.tree--person a");
 
   if (fatherLink) {
     if (result.parents == undefined) {
