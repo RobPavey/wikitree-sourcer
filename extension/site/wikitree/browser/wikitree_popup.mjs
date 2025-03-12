@@ -1742,17 +1742,19 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
         "Dr.",
       ];
       for (let prefix of problemFirstNamePrefixes) {
-        if (wtPersonData.firstName.startsWith(prefix + " ") || wtPersonData.firstName == prefix) {
-          hasProblem = true;
-          problemMessages.push(
-            "First name at birth starts with '" + prefix + "'. This should probably be moved to the prefix."
-          );
-          break;
+        if (wtPersonData.firstName) {
+          if (wtPersonData.firstName.startsWith(prefix + " ") || wtPersonData.firstName == prefix) {
+            hasProblem = true;
+            problemMessages.push(
+              "First name at birth starts with '" + prefix + "'. This should probably be moved to the prefix."
+            );
+            break;
+          }
         }
       }
 
       // check for quotes in first name
-      if (wtPersonData.firstName.includes('"')) {
+      if (wtPersonData.firstName && wtPersonData.firstName.includes('"')) {
         hasProblem = true;
         problemMessages.push(
           `First name at birth includes '"'. This should probably be moved to the nicknames or preferred name.`
