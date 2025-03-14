@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "eventPlace": {
+    "placeString": "St. Michan, Dublin (RC)",
+    "country": "Ireland"
+  },
+  "eventDate": {
+    "dateString": "June 1770"
+  },
+  "name": {
+    "name": "Bartle Fagan"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Mary Malone"
+      },
+      "marriageDate": {
+        "dateString": "June 1770"
+      },
+      "marriagePlace": "St. Michan, Dublin (RC)"
+    }
+  ],
+  "collectionData": {
+    "id": "marriages"
+  },
+  "hasValidData": true
+}

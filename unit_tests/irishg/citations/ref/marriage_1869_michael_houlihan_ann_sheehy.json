@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Irish Church Records; Causeway, Kerry (RC)\"<br/>\n[https://www.irishgenealogy.ie/view/ IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nMichael Houlihan marriage to Ann Sheehy on 15 May 1869 in Causeway, Kerry (RC).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Michael married Ann Sheehy on 15 May 1869 in Causeway, Kerry (RC).<ref>\n'''Marriage''':\n\"Irish Church Records; Causeway, Kerry (RC)\"<br/>\n[https://www.irishgenealogy.ie/view/ IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nMichael Houlihan marriage to Ann Sheehy on 15 May 1869 in Causeway, Kerry (RC).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''': \"Irish Church Records; Causeway, Kerry (RC)\"<br/>[https://www.irishgenealogy.ie/view/ IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Michael Houlihan marriage to Ann Sheehy on 15 May 1869 in Causeway, Kerry (RC).",
+    "type": "source"
+  }
+}

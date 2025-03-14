@@ -26,16 +26,23 @@ import { GeneralizedData, GD, NameObj, PlaceObj } from "../../../base/core/gener
 import { RT } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 function cleanFullName(name) {
   if (!name) {
     return name;
   }
 
+  // in 2025 format they are sometimes downcased names in a dumb way resulting in names
+  // like O'connor or Mcdermott
+  if (/O'[a-z]/.test(name) || /Mc[a-z]/.test(name) || /Mac[a-z]/.test(name)) {
+    name = name.toUpperCase();
+  }
+
   // in irishg there are sometimes name like: "ISABELLA MC DONALD"
   let modifiedName = name.replace(/MC (\w)/, "MC$1");
 
-  return NameUtils.convertNameFromAllCapsToMixedCase(modifiedName);
+  return NameUtils.convertNameFromAllCapsToMixedCase(modifiedName, true);
 }
 
 function cleanDate(dateString) {
@@ -48,6 +55,29 @@ function cleanDate(dateString) {
   let cleanDate = dateString.replace(/\(.*\)/g, "").trim();
 
   cleanDate = cleanDate.replace(/N\/R/g, "").trim();
+
+  cleanDate = cleanDate.replace(/N\/A/g, "").trim();
+
+  const ddMmYyyyRegEx = /^(\d\d)\/(\d\d)\/(\d\d\d\d)$/;
+  if (ddMmYyyyRegEx.test(cleanDate)) {
+    let day = cleanDate.replace(ddMmYyyyRegEx, "$1");
+    let month = cleanDate.replace(ddMmYyyyRegEx, "$2");
+    let year = cleanDate.replace(ddMmYyyyRegEx, "$3");
+
+    if (day.length != 2 || month.length != 2 || year.length != 4) {
+      return "";
+    }
+
+    let dayNum = parseInt(day);
+    let monthNum = parseInt(month);
+    let yearNum = parseInt(year);
+
+    if (isNaN(dayNum) || isNaN(monthNum) || isNaN(yearNum)) {
+      return "";
+    }
+
+    cleanDate = DateUtils.getDateStringFromYearMonthDay(yearNum, monthNum, dayNum);
+  }
 
   return cleanDate;
 }
@@ -64,6 +94,12 @@ function extractDateFromEventString(eventString) {
   }
 
   dateString = eventString.replace(/^.* on N\/R (\w+ \d\d\d\d)$/, "$1");
+  if (dateString && dateString != eventString) {
+    return dateString;
+  }
+
+  // Marriage record for BARTLE FAGAN and MARY MALONE on ?? June 1770
+  dateString = eventString.replace(/^.* on \?\? (\w+ \d\d\d\d)$/, "$1");
   if (dateString && dateString != eventString) {
     return dateString;
   }
@@ -196,6 +232,17 @@ function generalizeData(input) {
     return result;
   }
 
+  if (recordSite == "www") {
+    // new 2025 format, can't use the URL to determine if a church record
+    // "imageHref": "https://www.irishgenealogy.ie/files/church/st.michans_mf_1726-1830_ma_1113.pdf.pdf",
+    // "headingText": "Area - DUBLIN (RC), Parish/Church/Congregation - ST. MICHAN",
+    const imageHrefChurchRegEx = /^.*\/church\/.*$/i;
+    const headingChurchRegEx = /^.*\/church\/.*$/i;
+    if (imageHrefChurchRegEx.test(ed.imageHref) || headingChurchRegEx.test(ed.headingText)) {
+      recordSite = "churchrecords";
+    }
+  }
+
   let firstWord = StringUtils.getFirstWord(ed.eventText).toLowerCase();
   switch (firstWord) {
     case "baptism":
@@ -230,13 +277,20 @@ function generalizeData(input) {
   result.eventPlace.country = "Ireland";
 
   if (result.recordType == RT.BirthRegistration) {
-    result.setEventDate(ed.recordData["Date of Birth"]);
+    let dateOfBirth = cleanDate(ed.recordData["Date of Birth"]);
+    let yearOfBirth = ed.recordData["Year of Birth"];
+
+    if (dateOfBirth) {
+      result.setEventDate(dateOfBirth);
+    } else if (yearOfBirth) {
+      result.setEventYear(yearOfBirth);
+    }
     result.setFullName(cleanFullName(ed.recordData["Name"]));
 
     collectionId = "births";
     result.birthDate = result.eventDate;
     let mmn = ed.recordData["Mother's Birth Surname"];
-    if (mmn && mmn != "see register entry") {
+    if (mmn && mmn != "see register entry" && mmn != "Null") {
       result.mothersMaidenName = cleanFullName(mmn);
     }
 
@@ -245,7 +299,7 @@ function generalizeData(input) {
       result.gender = GD.standardizeGender(sex);
     }
   } else if (result.recordType == RT.MarriageRegistration) {
-    result.setEventDate(ed.recordData["Date of Event"]);
+    result.setEventDate(cleanDate(ed.recordData["Date of Event"]));
 
     collectionId = "civil-marriages";
 
@@ -289,7 +343,7 @@ function generalizeData(input) {
       result.spouses = [spouse];
     }
   } else if (result.recordType == RT.DeathRegistration) {
-    result.setEventDate(ed.recordData["Date of Death"]);
+    result.setEventDate(cleanDate(ed.recordData["Date of Death"]));
     result.setFullName(cleanFullName(ed.recordData["Name"]));
 
     collectionId = "deaths";
@@ -318,34 +372,55 @@ function generalizeData(input) {
     result.setEventDate(extractDateFromEventString(ed.eventText));
     collectionId = "marriages";
 
-    let name1 = cleanFullName(ed.recordData["Name"]);
-    let name2 = cleanFullName(ed.spouseRecordData["Name"]);
+    if (ed.spouseRecordData) {
+      let name1 = cleanFullName(ed.recordData["Name"]);
+      let name2 = cleanFullName(ed.spouseRecordData["Name"]);
 
-    // who should be considered the primary person?
-    if (isName2Primary(ed, name1, name2)) {
-      let temp = name1;
-      name1 = name2;
-      name2 = temp;
-    }
-
-    if (name1) {
-      result.setFullName(name1);
-    }
-
-    if (name2) {
-      let name = new NameObj();
-      name.name = name2;
-      let spouse = {
-        name: name,
-        marriageDate: result.eventDate,
-      };
-
-      let eventPlace = result.inferEventPlace();
-      if (eventPlace) {
-        spouse["marriagePlace"] = eventPlace;
+      // who should be considered the primary person?
+      if (isName2Primary(ed, name1, name2)) {
+        let temp = name1;
+        name1 = name2;
+        name2 = temp;
       }
 
-      result.spouses = [spouse];
+      if (name1) {
+        result.setFullName(name1);
+      }
+
+      if (name2) {
+        let name = new NameObj();
+        name.name = name2;
+        let spouse = {
+          name: name,
+          marriageDate: result.eventDate,
+        };
+
+        let eventPlace = result.inferEventPlace();
+        if (eventPlace) {
+          spouse["marriagePlace"] = eventPlace;
+        }
+
+        result.spouses = [spouse];
+      }
+    } else {
+      let husbandName = cleanFullName(ed.recordData["Husband Name"]);
+      let wifeName = cleanFullName(ed.recordData["Wife Name"]);
+      if (husbandName && wifeName) {
+        result.setFullName(husbandName);
+        let spouseNameObj = new NameObj();
+        spouseNameObj.name = wifeName;
+        let spouse = {
+          name: spouseNameObj,
+          marriageDate: result.eventDate,
+        };
+
+        let eventPlace = result.inferEventPlace();
+        if (eventPlace) {
+          spouse["marriagePlace"] = eventPlace;
+        }
+
+        result.spouses = [spouse];
+      }
     }
   } else if (result.recordType == RT.Burial) {
     result.setFullName(cleanFullName(ed.recordData["Name"]));

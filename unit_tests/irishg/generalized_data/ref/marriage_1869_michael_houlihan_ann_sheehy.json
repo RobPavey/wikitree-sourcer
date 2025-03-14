@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "eventPlace": {
+    "placeString": "Causeway, Kerry (RC)",
+    "country": "Ireland"
+  },
+  "eventDate": {
+    "dateString": "15 May 1869"
+  },
+  "name": {
+    "name": "Michael Houlihan"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Ann Sheehy"
+      },
+      "marriageDate": {
+        "dateString": "15 May 1869"
+      },
+      "marriagePlace": "Causeway, Kerry (RC)"
+    }
+  ],
+  "collectionData": {
+    "id": "marriages"
+  },
+  "hasValidData": true
+}

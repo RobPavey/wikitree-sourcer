@@ -22,6 +22,213 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function extractData2025(document, url) {
+  //console.log("extractData for irishg");
+
+  var result = {};
+
+  if (url) {
+    result.url = url;
+  }
+  result.success = false;
+
+  let dataArea = document.querySelector("#result-details");
+  if (!dataArea) {
+    return result;
+  }
+
+  let dataTables = dataArea.querySelectorAll("table > tbody");
+  if (!dataTables || dataTables.length < 1) {
+    return result;
+  }
+
+  result.recordData = {};
+
+  for (let table of dataTables) {
+    let dataRows = table.querySelectorAll("tr");
+    if (!dataRows || dataRows.length < 1) {
+      return result;
+    }
+
+    // there can be two different types of table:
+    // 1. Rows where each row is label and value (simple)
+    //    e.g. baptism_1773_john_oconnor_2025, marriage_1901_thomas_goodwin_mary_reidy_2025
+    // 2. A table with two rows where headings are labels and td's on 2nd row are values (inverted)
+    // 3. A table with three columns where headings in 2nd and 3rd cols are parties and
+    //    headings in 1st col are labels (multiParty)
+    //    e.g.: marriage_1869_michael_houlihan_ann_sheehy
+
+    let isSimpleTable = true;
+
+    let numRows = dataRows.length;
+    if (numRows >= 2) {
+      let thsOnRow0 = dataRows[0].querySelectorAll("th");
+      let tdsOnRow0 = dataRows[0].querySelectorAll("td");
+      if (thsOnRow0.length > 1 && tdsOnRow0.length == 0) {
+        // the first row contains onlt headings and no values
+        isSimpleTable = false;
+      }
+    }
+
+    if (isSimpleTable) {
+      for (let row of dataRows) {
+        let labelNode = row.querySelector("th");
+        let valueNodes = row.querySelectorAll("td");
+        let label = "";
+        let value = "";
+        if (labelNode && valueNodes.length == 1) {
+          if (labelNode.textContent) {
+            // has a label
+            label = labelNode.textContent.trim();
+            value = valueNodes[0].textContent.trim();
+          } else {
+            // could be an image link
+            let linkNode = valueNodes[0].querySelector("a");
+            if (linkNode && linkNode.textContent == "Image") {
+              let link = linkNode.getAttribute("href");
+              if (link) {
+                result.imageHref = link;
+              }
+            }
+          }
+        } else if (valueNodes.length == 2) {
+          label = valueNodes[0].textContent.trim();
+          value = valueNodes[1].textContent.trim();
+        } else if (valueNodes.length == 1) {
+          // could be an image link
+          let linkNode = valueNodes[0].querySelector("a");
+          const imageRegex = /image/i;
+          if (linkNode && linkNode.textContent) {
+            if (linkNode.textContent == "View record image" || imageRegex.test(linkNode.textContent)) {
+              let link = linkNode.getAttribute("href");
+              if (link) {
+                result.imageHref = link;
+              }
+            }
+          }
+        }
+        if (label && value) {
+          label = label.replace(/\s+/g, " ");
+          label = label.replace(/\:$/, "");
+          value = value.replace(/\s+/g, " ");
+          result.recordData[label] = value;
+        }
+      }
+    } else if (numRows == 2) {
+      // not sure this every happens any more
+      let thsOnRow0 = dataRows[0].querySelectorAll("th");
+      let tdsOnRow1 = dataRows[1].querySelectorAll("td");
+      if (thsOnRow0.length > 1 && thsOnRow0.length == tdsOnRow1.length) {
+        // we know there are two rows and the ths on 1st have same count as the tds on 2nd
+
+        result.refData = {};
+        for (let index = 0; index < thsOnRow0.length; index++) {
+          let labelNode = thsOnRow0[index];
+          let valueNode = tdsOnRow1[index];
+          if (labelNode && valueNode) {
+            if (labelNode.textContent) {
+              // has a label
+              let label = labelNode.textContent.trim();
+              let value = valueNode.textContent.trim();
+              if (label && value) {
+                label = label.replace(/\s+/g, " ");
+                label = label.replace(/\:$/, "");
+                value = value.replace(/\s+/g, " ");
+                result.refData[label] = value;
+              }
+            }
+          }
+        }
+      }
+    } else {
+      // more than 2 rows, it could be that there is a column for each party and labels down the left
+      // in this case there  will be three headings and the first is blank
+      let thsOnRow0 = dataRows[0].querySelectorAll("th");
+      if (thsOnRow0.length == 3 && !thsOnRow0[0].textContent) {
+        for (let rowIndex = 1; rowIndex < dataRows.length; rowIndex++) {
+          let tdsOnThisRow = dataRows[rowIndex].querySelectorAll("td");
+          if (thsOnRow0.length == tdsOnThisRow.length) {
+            let rowLabelNode = tdsOnThisRow[0];
+            let rowLabel = rowLabelNode.textContent.trim();
+            for (let index = 1; index < tdsOnThisRow.length; index++) {
+              let colLabelNode = thsOnRow0[index];
+              let colLabel = colLabelNode.textContent.trim();
+              let valueNode = tdsOnThisRow[index];
+              if (colLabel && rowLabel && valueNode) {
+                // has a label
+                let label = colLabel + " " + rowLabel;
+                let value = valueNode.textContent.trim();
+                if (label && value) {
+                  label = label.replace(/\s+/g, " ");
+                  label = label.replace(/\:$/, "");
+                  value = value.replace(/\s+/g, " ");
+                  result.recordData[label] = value;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // if we did not find an image href in a table try looking for a paragraph with text starting with
+  // "View the "
+  if (!result.imageHref) {
+    let links = dataArea.querySelectorAll("div.content > p > a");
+    for (let link of links) {
+      let text = link.textContent;
+      if (text && text.startsWith("View the ")) {
+        let href = link.getAttribute("href");
+        if (href) {
+          result.imageHref = href;
+        }
+      }
+    }
+  }
+
+  // Also extract from the banner, we may need this to determine the event type
+  let bannerArea = document.querySelector("div.section-page-content section > div");
+  if (!bannerArea) {
+    return result;
+  }
+
+  let subDivs = bannerArea.querySelectorAll("div");
+  for (let subDiv of subDivs) {
+    // check if it is a link
+    let linkNode = subDiv.querySelector("a");
+    if (!linkNode) {
+      let text = subDiv.textContent;
+      if (text) {
+        text = text.replace(/\s+/g, " ").trim();
+        if (text) {
+          text = text.replace(/« Back to results/i, "");
+          text = text.replace(/^\s*\/\s*/, "");
+          text = text.trim();
+          result.headingText = text;
+        }
+      }
+    }
+  }
+
+  let heading = bannerArea.querySelector("h3");
+  if (heading) {
+    let text = heading.textContent;
+    if (text) {
+      text = text.replace(/\s+/g, " ").trim();
+      if (text) {
+        result.eventText = text;
+      }
+    }
+  }
+
+  result.success = true;
+
+  //console.log(result);
+
+  return result;
+}
+
 function extractData(document, url) {
   //console.log("extractData for irishg");
 
@@ -34,7 +241,7 @@ function extractData(document, url) {
 
   let dataArea = document.querySelector("#right");
   if (!dataArea) {
-    return result;
+    return extractData2025(document, url);
   }
 
   let dataTables = dataArea.querySelectorAll("table > tbody");

@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "eventPlace": {
+    "placeString": "St. James, Dublin (COI)",
+    "country": "Ireland"
+  },
+  "name": {
+    "name": "Siobhan Martin"
+  },
+  "deathDate": {
+    "dateString": "December"
+  },
+  "collectionData": {
+    "id": "burials"
+  },
+  "hasValidData": true
+}
