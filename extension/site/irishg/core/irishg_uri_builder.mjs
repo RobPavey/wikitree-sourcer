@@ -92,6 +92,9 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 // &relation-0=spouse&relation-first-0=Fred&relation-last-0=Smith
 // &relation-1=parent&relation-first-1=John&relation-last-1=Wilson
 
+// https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Kearney&event-marriage=1&yearStart=1907&yearEnd=1908&relation-0=spouse&relation-first-0=John&relation-last-0=Long&submit=Search
+// https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Kearney&location=&yearStart=1907&yearEnd=1908&event-marriage=1&_day=&month=&mothers-surname=&age-at-death=&relation-0=spouse&relation-first-0=John&relation-last-0=Long
+
 class IrishgUriBuilder {
   constructor(churchOrCivil) {
     this.uri = "https://www.irishgenealogy.ie/search/?church-or-civil=" + churchOrCivil;
@@ -187,7 +190,6 @@ class IrishgUriBuilder {
   }
 
   getUri() {
-    this.addSearchParameter("submit", "Search");
     return this.uri;
   }
 }
