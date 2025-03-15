@@ -1,56 +1,56 @@
 {
   "std": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1936&event-birth=1&event-death=1&event-marriage=1&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1936&event-birth=1&event-death=1&event-marriage=1"
   },
   "all_lifetime": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=all&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1936&event-birth=1&event-death=1&event-burials=1&event-marriage=1&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=all&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1936&event-birth=1&event-death=1&event-burials=1&event-marriage=1"
   },
   "civil_events": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-birth=1&yearStart=1869&yearEnd=1870&event-death=1&yearStart=1936&yearEnd=1937&event-marriage=1&yearStart=1883&yearEnd=1937&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-birth=1&yearStart=1869&yearEnd=1870&event-death=1&yearStart=1936&yearEnd=1937&event-marriage=1&yearStart=1883&yearEnd=1937"
   },
   "civil_events_spouse": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-birth=1&yearStart=1869&yearEnd=1870&event-death=1&yearStart=1936&yearEnd=1937&event-marriage=1&yearStart=1891&yearEnd=1892&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-birth=1&yearStart=1869&yearEnd=1870&event-death=1&yearStart=1936&yearEnd=1937&event-marriage=1&yearStart=1891&yearEnd=1892"
   },
   "civil_events_exactness": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&event-birth=1&yearStart=1867&yearEnd=1871&event-death=1&yearStart=1926&yearEnd=1946&event-marriage=1&yearStart=1886&yearEnd=1896&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&event-birth=1&yearStart=1867&yearEnd=1871&event-death=1&yearStart=1926&yearEnd=1946&event-marriage=1&yearStart=1886&yearEnd=1896"
   },
   "civil_births": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-birth=1&yearStart=1869&yearEnd=1870&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-birth=1&yearStart=1869&yearEnd=1870"
   },
   "civil_births_cln_inclMmn": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Long&event-birth=1&yearStart=1869&yearEnd=1870&mothers-surname=Power&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Long&event-birth=1&yearStart=1869&yearEnd=1870&mothers-surname=Power"
   },
   "civil_births_aka1": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=O'Connor&event-birth=1&yearStart=1869&yearEnd=1870&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=O'Connor&event-birth=1&yearStart=1869&yearEnd=1870"
   },
   "civil_births_aka2": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Kearney&event-birth=1&yearStart=1869&yearEnd=1870&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Kearney&event-birth=1&yearStart=1869&yearEnd=1870"
   },
   "civil_deaths": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-death=1&yearStart=1936&yearEnd=1937&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-death=1&yearStart=1936&yearEnd=1937"
   },
   "civil_deaths_cln": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Long&event-death=1&yearStart=1936&yearEnd=1937&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Long&event-death=1&yearStart=1936&yearEnd=1937"
   },
   "civil_deaths_cln_age": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Long&event-death=1&yearStart=1936&yearEnd=1937&age-at-death=66&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Long&event-death=1&yearStart=1936&yearEnd=1937&age-at-death=66"
   },
   "civil_marriages": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-marriage=1&yearStart=1891&yearEnd=1892&relation-0=spouse&relation-first-0=James&relation-last-0=Kearney&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Connors&event-marriage=1&yearStart=1891&yearEnd=1892&relation-0=spouse&relation-first-0=James&relation-last-0=Kearney"
   },
   "church_lifetime": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1937&event-burials=1&event-marriage=1&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1937&event-burials=1&event-marriage=1"
   },
   "church_events": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1869&event-burials=1&yearStart=1936&yearEnd=1936&event-marriage=1&yearStart=1883&yearEnd=1936&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1869&event-burials=1&yearStart=1936&yearEnd=1936&event-marriage=1&yearStart=1883&yearEnd=1936"
   },
   "church_events_spouse": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1869&event-burials=1&yearStart=1936&yearEnd=1936&event-marriage=1&yearStart=1891&yearEnd=1891&relation-0=spouse&relation-first-0=James&relation-last-0=Kearney&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1869&event-burials=1&yearStart=1936&yearEnd=1936&event-marriage=1&yearStart=1891&yearEnd=1891&relation-0=spouse&relation-first-0=James&relation-last-0=Kearney"
   },
   "church_baptisms": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1869&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1869"
   },
   "church_baptisms_parents": {
-    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1869&relation-0=parent&relation-first-0=James&relation-last-0=Connors&relation-1=parent&relation-first-1=Catherine&relation-last-1=Power&submit=Search"
+    "url": "https://www.irishgenealogy.ie/search/?church-or-civil=church&firstname=Margaret&lastname=Connors&yearStart=1869&yearEnd=1869&relation-0=parent&relation-first-0=James&relation-last-0=Connors&relation-1=parent&relation-first-1=Catherine&relation-last-1=Power"
   }
 }
