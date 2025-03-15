@@ -1778,6 +1778,9 @@ class NameObj {
     if (this.forenames) {
       return StringUtils.getWordsAfterFirstWord(this.forenames);
     }
+    if (this.firstNames) {
+      return StringUtils.getWordsAfterFirstWord(this.firstNames);
+    }
     if (this.name) {
       if (this.lastName && this.lastName == this.name) {
         return ""; // full name is just last name, no forenames known
