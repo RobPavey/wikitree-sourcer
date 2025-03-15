@@ -80,7 +80,15 @@ function getAutoYearsToAddOrSubtract(isAdd, qualifier, type, dateInput) {
   }
 
   let subcategory = dateInput.parameters.subcategory;
-  if (subcategory == "civil_events") {
+  if (subcategory == "allevents") {
+    if (type == "birth") {
+      subcategory = "all_births";
+    } else if (type == "marriage") {
+      subcategory = "all_marriages";
+    } else if (type == "death") {
+      subcategory = "all_deaths";
+    }
+  } else if (subcategory == "civil_events") {
     if (type == "birth") {
       subcategory = "civil_births";
     } else if (type == "marriage") {
@@ -94,11 +102,11 @@ function getAutoYearsToAddOrSubtract(isAdd, qualifier, type, dateInput) {
     } else if (type == "marriage") {
       subcategory = "church_marriages";
     } else if (type == "death") {
-      subcategory = "church_deaths";
+      subcategory = "church_burials";
     }
   }
 
-  switch (dateInput.parameters.subcategory) {
+  switch (subcategory) {
     case "civil_births": {
       // can be registered up to a year after actual birth
       if (recordType == RT.BirthRegistration) {
@@ -221,9 +229,9 @@ function setBirthStartAndEndDates(builder, type, dateInput) {
   const birthDateObj = dateInput.gd.inferBirthDateObj();
   if (birthDateObj) {
     let startYear = adjustStartYear(birthDateObj.getYearString(), birthDateObj.qualifier, "birth", dateInput);
-    builder.addBirthStartYear(startYear);
+    builder.addStartYear(startYear);
     let endYear = adjustEndYear(birthDateObj.getYearString(), birthDateObj.qualifier, "birth", dateInput);
-    builder.addBirthEndYear(endYear);
+    builder.addEndYear(endYear);
   }
 }
 
@@ -231,9 +239,9 @@ function setDeathStartAndEndDates(builder, type, dateInput) {
   const deathDateObj = dateInput.gd.inferDeathDateObj();
   if (deathDateObj) {
     let startYear = adjustStartYear(deathDateObj.getYearString(), deathDateObj.qualifier, "death", dateInput);
-    builder.addDeathStartYear(startYear);
+    builder.addStartYear(startYear);
     let endYear = adjustEndYear(deathDateObj.getYearString(), deathDateObj.qualifier, "death", dateInput);
-    builder.addDeathEndYear(endYear);
+    builder.addEndYear(endYear);
   }
 }
 
@@ -245,25 +253,50 @@ function buildSearchUrl(buildUrlInput) {
 
   const dateInput = { gd: gd, parameters: parameters, options: options };
 
-  let urlStart = parameters.category + "records";
-  var builder = new IrishgUriBuilder(urlStart);
+  let churchOrCivil = parameters.category;
+  var builder = new IrishgUriBuilder(churchOrCivil);
+
+  let subCategoryParts = parameters.subcategory.split("_");
+  if (!subCategoryParts.length == 2) {
+    return;
+  }
+  let eventType = subCategoryParts[1];
 
   addAppropriateGivenNames(gd, builder);
 
   addAppropriateSurname(gd, parameters, builder);
 
-  if (parameters.subcategory == "civil_lifetime" || parameters.subcategory == "church_lifetime") {
+  if (eventType == "lifetime") {
     setLifetimeStartAndEndDates(builder, dateInput);
-  } else if (parameters.subcategory == "civil_events" || parameters.subcategory == "church_events") {
+    if (churchOrCivil == "all" || churchOrCivil == "civil") {
+      builder.addType("births");
+      builder.addType("deaths");
+    }
+    if (churchOrCivil == "all" || churchOrCivil == "church") {
+      builder.addType("baptisms");
+      builder.addType("burials");
+    }
+    builder.addType("marriages");
+  } else if (eventType == "events") {
     let birthYear = gd.inferBirthYear();
     if (birthYear) {
-      builder.addType("B");
+      if (churchOrCivil == "all" || churchOrCivil == "civil") {
+        builder.addType("births");
+      }
+      if (churchOrCivil == "all" || churchOrCivil == "church") {
+        builder.addType("baptisms");
+      }
       setBirthStartAndEndDates(builder, "birth", dateInput);
     }
 
     let deathYear = gd.inferDeathYear();
     if (deathYear) {
-      builder.addType("D");
+      if (churchOrCivil == "all" || churchOrCivil == "civil") {
+        builder.addType("deaths");
+      }
+      if (churchOrCivil == "all" || churchOrCivil == "church") {
+        builder.addType("burials");
+      }
       setDeathStartAndEndDates(builder, "death", dateInput);
     }
 
@@ -306,26 +339,26 @@ function buildSearchUrl(buildUrlInput) {
     }
 
     if (marriageStartYear || marriageEndYear) {
-      builder.addType("M");
+      builder.addType("marriages");
       let startYear = adjustStartYear(marriageStartYear, marriageStartQualifier, "marriage", dateInput);
       let endYear = adjustEndYear(marriageEndYear, marriageEndQualifier, "marriage", dateInput);
-      builder.addMarriageStartYear(startYear);
-      builder.addMarriageEndYear(endYear);
+      builder.addStartYear(startYear);
+      builder.addEndYear(endYear);
     }
 
     if (spouse && spouse.name) {
       if (parameters.subcategory == "church_events") {
         let spouseForenames = spouse.name.inferForenames();
         let spouseLastNames = gd.inferPersonLastNames(spouse);
-        builder.addSpouseName(spouseForenames, spouseLastNames);
+        builder.addOtherPerson("spouse", spouseForenames, spouseLastNames);
       } else {
         // don't add spouse keywords as this will cause all birth and death hits to be ignored
         //let spouseNames = spouse.name.inferFullName();
         //builder.addSpouseKeywords(spouseNames);
       }
     }
-  } else if (parameters.subcategory == "civil_births" || parameters.subcategory == "church_baptisms") {
-    builder.addType("B");
+  } else if (eventType == "births") {
+    builder.addType("births");
     setBirthStartAndEndDates(builder, "birth", dateInput);
 
     if (parameters.subcategory == "civil_births") {
@@ -334,8 +367,11 @@ function buildSearchUrl(buildUrlInput) {
         builder.addMothersMaidenName(mmn);
       }
     }
-  } else if (parameters.subcategory == "civil_marriages" || parameters.subcategory == "church_marriages") {
-    builder.addType("M");
+  } else if (eventType == "baptisms") {
+    builder.addType("baptisms");
+    setBirthStartAndEndDates(builder, "birth", dateInput);
+  } else if (eventType == "marriages") {
+    builder.addType("marriages");
 
     let addedDateRange = false;
     if (gd.spouses && gd.spouses.length > 0) {
@@ -355,20 +391,15 @@ function buildSearchUrl(buildUrlInput) {
           let startYear = adjustStartYear(marriageYear, marriageQualifier, "marriage", dateInput);
           let endYear = adjustEndYear(marriageYear, marriageQualifier, "marriage", dateInput);
 
-          builder.addMarriageStartYear(startYear);
-          builder.addMarriageEndYear(endYear);
+          builder.addStartYear(startYear);
+          builder.addEndYear(endYear);
           addedDateRange = true;
         }
 
         if (spouse.name) {
-          if (parameters.subcategory == "church_marriages") {
-            let spouseForenames = spouse.name.inferForenames();
-            let spouseLastNames = gd.inferPersonLastNames(spouse);
-            builder.addSpouseName(spouseForenames, spouseLastNames);
-          } else {
-            let spouseNames = spouse.name.inferFullName();
-            builder.addSpouseKeywords(spouseNames);
-          }
+          let spouseForenames = spouse.name.inferForenames();
+          let spouseLastNames = gd.inferPersonLastNames(spouse);
+          builder.addOtherPerson("spouse", spouseForenames, spouseLastNames);
         }
       }
     }
@@ -380,8 +411,8 @@ function buildSearchUrl(buildUrlInput) {
       builder.addStartYear(startYearNum + 14);
       builder.addEndYear(endYear);
     }
-  } else if (parameters.subcategory == "civil_deaths" || parameters.subcategory == "church_burials") {
-    builder.addType("D");
+  } else if (eventType == "deaths") {
+    builder.addType("deaths");
     setDeathStartAndEndDates(builder, "death", dateInput);
 
     if (parameters.subcategory == "civil_deaths") {
@@ -390,16 +421,19 @@ function buildSearchUrl(buildUrlInput) {
         builder.addAgeAtDeath(ageAtDeath.toString());
       }
     }
+  } else if (eventType == "burials") {
+    builder.addType("burials");
+    setDeathStartAndEndDates(builder, "death", dateInput);
   }
 
   if (parameters.category == "church") {
     let parentNames = gd.inferParentForenamesAndLastName();
 
     if (parameters.father) {
-      builder.addParentName(parentNames.fatherForenames, parentNames.fatherLastName);
+      builder.addOtherPerson("parent", parentNames.fatherForenames, parentNames.fatherLastName);
     }
     if (parameters.mother) {
-      builder.addParentName(parentNames.motherForenames, parentNames.motherLastName);
+      builder.addOtherPerson("parent", parentNames.motherForenames, parentNames.motherLastName);
     }
   }
 

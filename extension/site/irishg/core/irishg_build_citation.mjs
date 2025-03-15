@@ -54,7 +54,7 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
-  const excludeValues = ["N/R"];
+  const excludeValues = ["N/R", "N/A"];
 
   function addFieldFromRecordData(label) {
     if (ed.recordData) {
@@ -65,6 +65,8 @@ function buildSourceReference(ed, gd, builder) {
   function addFieldFromRefData(label) {
     if (ed.refData) {
       builder.addSourceReferenceField(label, ed.refData[label], excludeValues);
+    } else if (ed.recordData) {
+      builder.addSourceReferenceField(label, ed.recordData[label], excludeValues);
     }
   }
 
