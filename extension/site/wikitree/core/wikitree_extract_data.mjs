@@ -1424,20 +1424,31 @@ function extractDataInReadMode2025(document, result) {
 
   result.pageType = "read";
 
-  let copyIdSelector = document.querySelector("button[aria-label='Copy ID']");
-  let genderSelector = document.querySelector(".VITALS meta[itemprop=gender]");
+  let pageDataSelector = document.querySelector("#pageData");
 
-  if (copyIdSelector) {
-    result.wikiId = copyIdSelector.getAttribute("data-copy-text");
-  } else {
-    const profileUrlRegEx = /^https\:\/\/[^\.]+\.wikitree\.com\/wiki\/([^\/\?]+)$/;
-    if (profileUrlRegEx.test(result.url)) {
-      result.wikiId = result.url.replace(profileUrlRegEx, "$1");
+  if (pageDataSelector) {
+    let wikiId = pageDataSelector.getAttribute("data-mnamedb");
+    if (wikiId) {
+      result.wikiId = wikiId;
+    }
+
+    let gender = pageDataSelector.getAttribute("data-mgender");
+    if (gender) {
+      result.personGender = gender.toLowerCase();
     }
   }
 
-  if (genderSelector) {
-    result.personGender = genderSelector.getAttribute("content");
+  if (!result.wikiId) {
+    let copyIdSelector = document.querySelector("button[aria-label='Copy ID']");
+
+    if (copyIdSelector) {
+      result.wikiId = copyIdSelector.getAttribute("data-copy-text");
+    } else {
+      const profileUrlRegEx = /^https\:\/\/[^\.]+\.wikitree\.com\/wiki\/([^\/\?]+)$/;
+      if (profileUrlRegEx.test(result.url)) {
+        result.wikiId = result.url.replace(profileUrlRegEx, "$1");
+      }
+    }
   }
 
   if (result.wikiId) {
