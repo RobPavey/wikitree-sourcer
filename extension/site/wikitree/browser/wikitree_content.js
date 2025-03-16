@@ -222,34 +222,51 @@ function addNewNodesForField(label, nodeSelector, followingNodeSelector) {
   let followingNode = document.querySelector(followingNodeSelector);
   if (!followingNode) return;
 
-  let trNode = followingNode.parentNode.parentNode;
-  if (!trNode) return;
+  let rowDivElement = undefined;
+  let parentElement = followingNode.parentElement;
+  while (parentElement && !parentElement.classList.contains("col")) {
+    if (parentElement.classList.contains("row")) {
+      rowDivElement = parentElement;
+      break;
+    }
+    parentElement = parentElement.parentElement;
+  }
+  if (!rowDivElement) {
+    return;
+  }
 
-  let tbodyNode = trNode.parentNode;
-  if (!tbodyNode) return;
+  let colDivElement = rowDivElement.parentNode;
+  if (!colDivElement) return;
 
   let idName = nodeSelector.replace("#", "");
 
-  let newTrNode = document.createElement("tr");
-  let newLabelTdNode = document.createElement("td");
-  newLabelTdNode.textContent = label + ":";
-  newLabelTdNode.align = "right";
-  newLabelTdNode.style.verticalAlign = "top";
+  let newRowDivElement = document.createElement("div");
+  newRowDivElement.classList.add("mb-4", "row");
 
-  let newValueTdNode = document.createElement("td");
+  let newLabelElement = document.createElement("label");
+  newLabelElement.classList.add("col-lg-2", "col-form-label", "text-lg-end");
+  newLabelElement.textContent = label + ":";
+
+  let newTopDivElement = document.createElement("div");
+  newTopDivElement.classList.add("col-lg-8");
+
+  let newGroupDivElement = document.createElement("div");
+  newGroupDivElement.classList.add("input-group");
+
   let newInputNode = document.createElement("input");
-
   newInputNode.id = idName;
   newInputNode.type = "text";
   newInputNode.name = idName;
-  newInputNode.className = "small";
+  newInputNode.className = "form-control";
   newInputNode.size = "40";
 
-  newTrNode.appendChild(newLabelTdNode);
-  newTrNode.appendChild(newValueTdNode);
-  newValueTdNode.appendChild(newInputNode);
+  newGroupDivElement.appendChild(newInputNode);
+  newTopDivElement.appendChild(newGroupDivElement);
 
-  tbodyNode.insertBefore(newTrNode, trNode);
+  newRowDivElement.appendChild(newLabelElement);
+  newRowDivElement.appendChild(newTopDivElement);
+
+  colDivElement.insertBefore(newRowDivElement, rowDivElement);
 
   return newInputNode;
 }
