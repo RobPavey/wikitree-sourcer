@@ -90,6 +90,18 @@
       "birthYear": "abt 1875"
     }
   ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Maggs"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Maggs"
+      }
+    }
+  },
   "wtSearchTemplates": [
     "{{Ancestry Record|7572|18899854}}"
   ],
