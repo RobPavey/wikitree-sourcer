@@ -319,6 +319,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/2477121:7619",
   },
   {
+    caseName: "england_census_1881_francis_maggs",
+    url: "https://www.ancestry.com/search/collections/7572/records/18899854?tid=86808578&pid=46552172864&ssrc=pt",
+  },
+  {
     caseName: "england_census_1881_searle-38",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=7572&h=26496682&clickref=1100lh4Tvjw5%2C1100lh4Tvjw5&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
   },

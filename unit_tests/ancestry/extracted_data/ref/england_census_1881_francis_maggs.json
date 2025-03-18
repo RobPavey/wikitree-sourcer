@@ -1,0 +1,116 @@
+{
+  "url": "https://www.ancestry.com/search/collections/7572/records/18899854?tid=86808578&pid=46552172864&ssrc=pt",
+  "pageType": "record",
+  "dbId": "7572",
+  "recordId": "18899854",
+  "ancestryTemplate": "{{Ancestry Record|7572|18899854}}",
+  "domain": "ancestry.com",
+  "titleName": "Francis W. Maggs",
+  "titleCollection": "1881 England Census",
+  "recordData": {
+    "Name": "Francis W. Maggs",
+    "Age": "6",
+    "Estimated Birth Year": "abt 1875",
+    "Relationship to Head": "Son",
+    "Father": "John Maggs",
+    "Mother": "Mary Maggs",
+    "Gender": "Male",
+    "Where born": "St George, Somerset, England",
+    "Civil parish": "Easton in Gordano",
+    "County/Island": "Somerset",
+    "Country": "England",
+    "Street Address": "Wilmot Farm",
+    "Occupation": "Scholar",
+    "Registration District": "Bedminster",
+    "ED, institution, or vessel": "4",
+    "Piece": "2463",
+    "Folio": "45",
+    "Page number": "10",
+    "Household Members (Name)<br/>Age<br/>Relationship": "John Maggs 40 Head<br/>Mary Maggs 45 Wife<br/>Agness Maggs 14 Daughter<br/>Martha E. Maggs 11 Daughter<br/>Rebecca Maggs 9 Daughter<br/>Francis Jeffries 74 Father in Law (Father-in-law)<br/>Henry Davey 20 Servant<br/>Julia F. Vincent 17 Servant<br/>Francis W. Maggs 6 Son"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "John Maggs",
+        "dbId": "7572",
+        "recordId": "18899782",
+        "link": "https://www.ancestry.com/search/collections/7572/records/18899782",
+        "Age": "40",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "Mary Maggs",
+        "dbId": "7572",
+        "recordId": "18899732",
+        "link": "https://www.ancestry.com/search/collections/7572/records/18899732",
+        "Age": "45",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members (Name)": "Agness Maggs",
+        "dbId": "7572",
+        "recordId": "18899823",
+        "link": "https://www.ancestry.com/search/collections/7572/records/18899823",
+        "Age": "14",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "Martha E. Maggs",
+        "dbId": "7572",
+        "recordId": "18899681",
+        "link": "https://www.ancestry.com/search/collections/7572/records/18899681",
+        "Age": "11",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "Rebecca Maggs",
+        "dbId": "7572",
+        "recordId": "18899845",
+        "link": "https://www.ancestry.com/search/collections/7572/records/18899845",
+        "Age": "9",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "Francis Jeffries",
+        "dbId": "7572",
+        "recordId": "18899630",
+        "link": "https://www.ancestry.com/search/collections/7572/records/18899630",
+        "Age": "74",
+        "Relationship": "Father in Law (Father-in-law)"
+      },
+      {
+        "Household Members (Name)": "Henry Davey",
+        "dbId": "7572",
+        "recordId": "18899879",
+        "link": "https://www.ancestry.com/search/collections/7572/records/18899879",
+        "Age": "20",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Julia F. Vincent",
+        "dbId": "7572",
+        "recordId": "18899824",
+        "link": "https://www.ancestry.com/search/collections/7572/records/18899824",
+        "Age": "17",
+        "Relationship": "Servant"
+      },
+      {
+        "Household Members (Name)": "Francis W. Maggs",
+        "Age": "6",
+        "Relationship": "Son"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/7572/images/SOMRG11_2463_2467-0043?pid=18899854&treeid=86808578&personid=46552172864&usePUB=true&usePUBJs=true",
+  "imageDbId": "7572",
+  "imageRecordId": "SOMRG11_2463_2467-0043",
+  "sourceCitation": "Class: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593",
+  "sourceInformation": "Ancestry.com and The Church of Jesus Christ of Latter-day Saints. 1881 England Census [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2004. 1881 British Isles Census Index provided by The Church of Jesus Christ of Latter-day Saints © Copyright 1999 Intellectual Reserve, Inc. All rights reserved. All use is subject to the limited use license and other terms and conditions applicable to this site. Appreciation is expressed to The Church of Jesus Christ of Latter-day Saints for providing the 1881 England and Wales Census Index. Original data: Census Returns of England and Wales, 1881. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1881. Images © Crown copyright. Images reproduced by courtesy of The National Archives, London, England. The National Archives give no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to The National Archives Image Library, Kew, Richmond, Surrey TW9 4DU, Tel: 020 8392 5225 Fax: 020 8392 5266.",
+  "originalData": "Census Returns of England and Wales, 1881. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1881.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1881 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1881 England Census. Learn more..."
+}
