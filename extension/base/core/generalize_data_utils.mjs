@@ -1659,10 +1659,10 @@ class NameObj {
     }
 
     if (fullName) {
-      if (this.prefix) {
+      if (this.prefix && !fullName.startsWith(this.prefix)) {
         fullName = this.prefix + " " + fullName;
       }
-      if (this.suffix) {
+      if (this.suffix && !fullName.endsWith(this.suffix)) {
         fullName = fullName + " " + this.suffix;
       }
     }
