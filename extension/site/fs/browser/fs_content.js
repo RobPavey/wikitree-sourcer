@@ -211,7 +211,7 @@ async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, 
       console.log("extractDataFromFetchAndRespond. Retry number: ", loadExtractDataModuleRetries);
       setTimeout(function () {
         extractDataFromFetchAndRespond(document, dataObjects, fetchType, sessionId, options, sendResponse);
-      }, loadModuleTimeout);
+      }, 10);
       return true;
     } else {
       console.log("extractDataFromFetchAndRespond. Too many retries");
