@@ -37,6 +37,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1V",
   },
   {
+    caseName: "aus_tas_birth_reg_1883_alfred_widdowson",
+    url: "https://www.familysearch.org/ark:/61903/1:1:Q27M-LKVK?lang=en",
+  },
+  {
     caseName: "canada_census_1901_james_mcdonald",
     url: "https://www.familysearch.org/ark:/61903/1:1:KHGF-SX6?from=lynx1UIV8&treeref=KFPX-STB",
   },

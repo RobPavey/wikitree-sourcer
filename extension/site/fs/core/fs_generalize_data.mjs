@@ -522,6 +522,16 @@ function selectDate(dateString, originalDateString) {
     return originalDateString;
   }
 
+  // sometimes date come through in like this:
+  // "birthDateOriginal": "28 July 1883",
+  // "birthDate": "28JUL JUL 1883",
+  // Example is Australia, Tasmania, Civil Registration
+  // https://www.familysearch.org/ark:/61903/1:1:Q27M-LKVK?lang=en
+  const goodDateStringRegEx = /^\d?\d [A-Za-z]+ \d\d\d\d$/;
+  if (!goodDateStringRegEx.test(dateString) && goodDateStringRegEx.test(originalDateString)) {
+    return originalDateString;
+  }
+
   // sometimes dateString is just a year and originalDateString is the full date
   if (dateString.length < 6 && originalDateString.length > dateString.length) {
     return originalDateString;

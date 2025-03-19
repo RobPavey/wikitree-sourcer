@@ -1,0 +1,62 @@
+{
+  "recordData": {
+    "Name": "Alfred Wimble Widdowson",
+    "Birth Date": "28 July 1883",
+    "Birth Place": "George Town, Tasmania, Australia",
+    "Birth Registration Date": "1883",
+    "Vis Status": "VISIBLE",
+    "System Of Record": "SLS"
+  },
+  "fullName": "Alfred Wimble Widdowson",
+  "givenName": "Alfred Wimble",
+  "surname": "Widdowson",
+  "gender": "male",
+  "birthDateOriginal": "28 July 1883",
+  "birthDate": "28JUL JUL 1883",
+  "birthYear": "1883",
+  "birthPlace": "George Town, Tasmania, Australia",
+  "factType": "BirthRegistration",
+  "eventDateOriginal": "1883",
+  "eventDate": "1883",
+  "eventYear": "1883",
+  "father": {
+    "fullName": "Alfred Shepherd Widdowson",
+    "givenName": "Alfred Shepherd",
+    "surname": "Widdowson",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:Q27M-LKVT"
+  },
+  "mother": {
+    "fullName": "Wimble Emily Widdowson",
+    "givenName": "Wimble Emily",
+    "surname": "Widdowson",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:Q27M-LKKQ"
+  },
+  "referenceData": {
+    "filmNumber": "007368123",
+    "sourceRegNbr": "932",
+    "sourceLineNbr": "149364",
+    "digitalFilmNumber": "007368123",
+    "imageNumber": "604"
+  },
+  "extData": "{\"EXT_LINK_GRADE\":\"007368123_RGD33_00604\",\"FS_COLLECTION_ID\":\"2125029\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3QS7-89CH-4CN\",\"EVENT_TYPE_ORIG\":\"Birth\"}",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QL9T-GFDY",
+  "collectionTitle": "Australia, Tasmania, Civil Registration, 1803-1933",
+  "fsCollectionId": "2125029",
+  "citation": "\"Australia, Tasmania, Civil Registration, 1803-1933\", , <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:Q27M-LKVK : Tue Mar 11 06:08:26 UTC 2025), Entry for Alfred Wimble Widdowson and Alfred Shepherd Widdowson, 1883.",
+  "sourceTitleForPerson": "Alfred Wimble Widdowson, \"Australia, Tasmania, Civil Registration, 1803-1933\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:Q27M-LKVK",
+  "documentRecordData": {
+    "Name": "Alfred Wimble Widdowson",
+    "Sex": "Male",
+    "Birth Date": "July 1881",
+    "Birthplace": "George Town, Tasmania, Australia",
+    "Father's Name": "Alfred Shepherd Widdowson",
+    "Mother's Name": "Wimble Emily Widdowson",
+    "Event Type": "Birth Registration",
+    "Event Date": "1883",
+    "Line Number": "149364",
+    "Registration Number": "932"
+  },
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3QS7-89CH-4CN",
+  "pageType": "record"
+}
