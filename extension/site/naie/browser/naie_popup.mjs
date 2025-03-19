@@ -31,9 +31,9 @@ import { buildHouseholdTable } from "/base/core/table_builder.mjs";
 async function setupNaiePopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a National Archives of Ireland page but not a record page.",
+    extractFailedMessage: "It looks like a National Archives of Ireland page but not a census record page.",
     generalizeFailedMessage:
-      "It looks like a National Archives of Ireland page but does not contain the required data.",
+      "It looks like a National Archives of Ireland page but does not contain the required data for a census record.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     buildHouseholdTableFunction: buildHouseholdTable,

@@ -1,0 +1,125 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<!-- saved from url=(0082)https://www.willcalendars.nationalarchives.ie/search/cwa/details.jsp?id=1639538416 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Calendars of Wills and Administrations, 1858 - 1922</title>
+    <link href="./will_1876_2025_files/main.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="./will_1876_2025_files/content.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="./will_1876_2025_files/search.css" rel="stylesheet" type="text/css" media="screen">
+    <!--[if lte IE 8]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" async="" src="./will_1876_2025_files/js"></script><script async="" src="./will_1876_2025_files/analytics.js"></script><script type="text/javascript" src="./will_1876_2025_files/jquery.js"></script>
+    <script type="text/javascript" src="./will_1876_2025_files/placeholder.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27345134-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head><body><script type="text/javascript">
+    $(function() {
+        $('#detailbox a').click(function(e) {
+          e.preventDefault();
+          var url = $(this).attr('href');
+          ga('send', 'pageview', url);
+          document.location = url;
+        });
+        var feedbackActive = false;
+        window.onbeforeunload = function (e) {
+                if (feedbackActive) {
+                  e = e || window.event;
+
+                  // For IE and Firefox prior to version 4
+                  if (e) {
+                    e.returnValue = 'You have not submitted the feedback form!';
+                  }
+
+                  // For Safari
+                  return 'You have not submitted the feedback form!';
+                }
+            };
+
+        $('button#feedbackinvoke').click(function() {
+            feedbackActive = true;
+            $("div.box").find('.correctable').each(function() {
+                $(this).html($(this).text());
+            });
+            $('#feedbackreset').click(function() {
+                feedbackActive = false;
+                location.reload();
+            });
+            $('#feedbacksubmit').click(function() {
+                $('#feedbacksubmit').attr("disabled", "disabled");
+                $('#feedbacksubmit').text("Submitting...");
+                $('#feedbackreset').attr("disabled", "disabled");
+                $("div.box").data('send_info', {type: 'CWA', url: location.href, changes: []});
+                var rowchanges={id: $("div.box").attr('id'), data:[]};
+                $('span.correctable').each(function() {
+                    if($(this).data('original') != null && $(this).data('original') != $(this).text()) {
+                       rowchanges.data.push({name: $(this).data('name'), orig: $(this).data('original'), changed: $(this).text()});
+                    } else {
+                       rowchanges.data.push({name: $(this).data('name'), orig: $(this).text()});
+                    }
+                });
+                $("div.box").data('send_info').changes.push(rowchanges);
+                $.post('/feedback/feedbackAjax', {data: JSON.stringify($("div.box").data('send_info'))}, function(data) {
+                    alert('Your feedback has been submitted. Thank you!');
+                    feedbackActive = false;
+                    $('#feedbacksubmit').attr("disabled", false);
+                    $('#feedbacksubmit').text("Submit Feedback");
+                    $('#feedbackreset').attr("disabled", false);
+                    location.reload();
+                });
+            });
+            $("div.box").find('span.correctable').each(function() {
+                $(this).attr("contentEditable", "true");
+             });
+            $("div.box").delegate(
+                    ".correctable",
+                    'mouseover mouseout focus focusout',
+                    function(e) {
+                        if (e.type == 'mouseover') {
+                            $(e.target).css("outline", "#4488ff dotted 2px");
+                        } else if ((e.type == 'mouseout' && $(e.target).data('editing') == null) || e.type == 'focusout') {
+                            $(e.target).css("outline", "none");
+                            $(e.target).data('editing', null);
+                        } else {
+                            if ($(e.target).data('original') == null) {
+                                $(e.target).data('original', $(e.target).text());
+                            }
+                            $(e.target).css("outline", "#FF9900 solid 2px");
+                            $(e.target).data('editing', true);
+                            return false;
+                        }
+            });
+            $('#beforefeedback').hide();
+            $('#duringfeedback').show();
+         });
+    });
+    </script><header>
+    <div id="title">
+        <a href="http://www.nationalarchives.ie/" id="main_title"><img src="./will_1876_2025_files/main_text.png" alt="The National Archives of Ireland"></a>
+        <div id="site_title"><img src="./will_1876_2025_files/site_text.png" alt="Calendars of Wills and Administrations, 1858 â 1922"></div>
+    </div>
+    <nav>
+        <div id="genealogy_link"><a href="http://genealogy.nationalarchives.ie/">GENEALOGY</a></div>
+        <ul>
+            <li><a href="https://www.willcalendars.nationalarchives.ie/search/cwa/home.jsp">Home</a></li>
+            <li><a href="https://www.willcalendars.nationalarchives.ie/search/cwa/index.jsp">Search</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="main"><section><div id="detailbox" class="box"><h1>Details</h1><form><br><div class="row"><label for="deceasedSurname">Deceased Surname</label><span data-name="Deceased Surname" class="correctable" id="deceasedSurname">Betts</span></div><div class="row"><label for="deceasedForename">Deceased Forename</label><span data-name="Deceased Forename" class="correctable" id="deceasedForename">James</span></div><div class="row"><label for="pBeneficiary">Primary Beneficiary/Executor</label><span data-name="Primary Beneficiary/Executor" class="correctable" id="pBeneficiary">George&nbsp;Betts</span></div><div class="row"><label for="dateDeath">Date of Death</label><span id="dateDeath">20&nbsp;Apr&nbsp;1876</span></div><div class="row"><label for="placeDeath">County of Death</label><span id="placeDeath">Queen's</span></div><div class="row"><a href="https://www.willcalendars.nationalarchives.ie/reels/cwa/005014893/005014893_00030.pdf">Image</a></div><input onclick="history.back()" value="Back" name="back" class="submit" type="button"></form><div class="feedback"><div id="beforefeedback"><p>If you notice any NAMES transcription errors, please select “Report errors in transcription”</p><button id="feedbackinvoke">Report Errors in Transcription</button></div><div style="display: none;" id="duringfeedback"><p>Please select NAMES entry you would like to amend.  When ORANGE OUTLINE on the entry appears, please insert amended entry. When finished, select “Submit Feedback” or “Cancel”. The live database details will be updated when resources permit.</p><button id="feedbacksubmit">Submit Feedback</button><button id="feedbackreset">Cancel</button></div></div></div></section></div><footer>
+    <nav>
+        <ul>
+            <li><a href="https://www.willcalendars.nationalarchives.ie/search/cwa/home.jsp">Home</a></li>
+            <li><a href="https://www.willcalendars.nationalarchives.ie/search/cwa/index.jsp">Search</a></li>
+        </ul>
+    </nav>
+</footer>
+  </body></html>
