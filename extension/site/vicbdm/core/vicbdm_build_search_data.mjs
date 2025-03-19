@@ -308,7 +308,7 @@ function buildSearchData(input) {
     setAdditionalOption("historicalSearch-additionalOptions-place", parameters.place);
   }
 
-  if (parameters && parameters.spouseIndex != -1 && parameters.spouseIndex < gd.spouses.length) {
+  if (parameters && parameters.spouseIndex != -1 && gd.spouses && parameters.spouseIndex < gd.spouses.length) {
     if (parameters.category != "Births") {
       let spouse = gd.spouses[parameters.spouseIndex];
       if (spouse.name) {
