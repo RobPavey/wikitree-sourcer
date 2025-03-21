@@ -1435,6 +1435,13 @@ function extractDataInReadMode2025(document, result) {
     let gender = pageDataSelector.getAttribute("data-mgender");
     if (gender) {
       result.personGender = gender.toLowerCase();
+    } else {
+      // sometimes it is not available, perhaps for private profiles, in that
+      // case use the older method
+      let genderSelector = document.querySelector(".VITALS meta[itemprop=gender]");
+      if (genderSelector) {
+        result.personGender = genderSelector.getAttribute("content");
+      }
     }
   }
 
