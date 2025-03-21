@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Census''':\n\"Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://www.willcalendars.nationalarchives.ie/search/cwa/details.jsp?id=1639538416 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Census''':\n\"Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://www.willcalendars.nationalarchives.ie/search/cwa/details.jsp?id=1639538416 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nUnknown.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Census''': \"Census of Ireland\"<br/>The National Archives of Ireland<br/>[https://www.willcalendars.nationalarchives.ie/search/cwa/details.jsp?id=1639538416 National Archives of Ireland Record] (accessed 6 May 2021)<br/>Unknown.",
+    "type": "source"
+  }
+}
