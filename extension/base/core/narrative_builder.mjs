@@ -1006,15 +1006,8 @@ class NarrativeBuilder {
             birthDateString = gd.primaryPerson.birthDate.getDateString();
           }
         }
-        if (birthDateString && eventDateString && birthDateString != eventDateString) {
-          // If the event date is subset of the birth date then use birth date
-          // e.g.: https://www.familysearch.org/ark:/61903/1:1:Q27M-LKVK?lang=en
-          if (birthDateString.toLowerCase().endsWith(eventDateString.toLowerCase())) {
-            isDateTheRegistrationDate = false;
-            eventDateString = birthDateString;
-          } else {
-            hasAdditionalDate = true;
-          }
+        if (birthDateString != eventDateString) {
+          hasAdditionalDate = true;
         }
       } else if (typeString == "death") {
         let eventDateString = gd.inferEventDate();
@@ -1024,14 +1017,8 @@ class NarrativeBuilder {
             deathDateString = gd.primaryPerson.deathDate.getDateString();
           }
         }
-        if (deathDateString && eventDateString && deathDateString != eventDateString) {
-          // If the event date is subset of the death date then use death date
-          if (deathDateString.toLowerCase().endsWith(eventDateString.toLowerCase())) {
-            isDateTheRegistrationDate = false;
-            eventDateString = deathDateString;
-          } else {
-            hasAdditionalDate = true;
-          }
+        if (deathDateString != eventDateString) {
+          hasAdditionalDate = true;
         }
       }
     }
