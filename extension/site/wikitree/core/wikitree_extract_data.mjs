@@ -1386,7 +1386,7 @@ function getParentsFromDocumentInNonEditMode2025(document, result) {
 function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
   // read
   // get the spouses (if any)
-  let spouseElements = document.querySelectorAll("#Spouses span.spouse");
+  let spouseElements = document.querySelectorAll("#Spouses .spouse");
   for (let spouseElement of spouseElements) {
     let spouseLink = spouseElement.querySelector("span[itemprop=spouse] a[itemprop=url]");
     // spouseLink can be null for private spouse
