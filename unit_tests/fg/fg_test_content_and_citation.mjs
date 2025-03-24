@@ -96,6 +96,11 @@ const regressionData = [
     url: "https://www.findagrave.com/memorial/60724641/harry-bleeker",
   },
   {
+    // unusual URL with no dashes
+    caseName: "helen_hupp_d_1996",
+    url: "https://www.findagrave.com/memorial/111269301/blackwell",
+  },
+  {
     // has only one name
     caseName: "john_d_1978",
     url: "https://www.findagrave.com/memorial/62103674/john",
