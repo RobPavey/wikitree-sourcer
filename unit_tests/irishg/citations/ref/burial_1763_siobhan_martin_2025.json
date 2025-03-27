@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"Irish Church Records; St. James, Dublin (COI)\"<br/>\nBook Number: 1; Page: 89; Entry Number: 8013<br/>\n[https://www.irishgenealogy.ie/view/ IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nSiobhan Martin burial (died in December) in St. James, Dublin (COI).\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"Irish Church Records; St. James, Dublin (COI)\"<br/>\nBook Number: 1; Page: 89; Entry Number: 8013<br/>\n[https://www.irishgenealogy.ie/view/?record_id=3aacb9f330-24808 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nSiobhan Martin burial (died in December) in St. James, Dublin (COI).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Siobhan died in December and was buried in St. James, Dublin (COI).<ref>\n'''Burial''':\n\"Irish Church Records; St. James, Dublin (COI)\"<br/>\nBook Number: 1; Page: 89; Entry Number: 8013<br/>\n[https://www.irishgenealogy.ie/view/ IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nSiobhan Martin burial (died in December) in St. James, Dublin (COI).\n</ref>",
+    "citation": "Siobhan died in December and was buried in St. James, Dublin (COI).<ref>\n'''Burial''':\n\"Irish Church Records; St. James, Dublin (COI)\"<br/>\nBook Number: 1; Page: 89; Entry Number: 8013<br/>\n[https://www.irishgenealogy.ie/view/?record_id=3aacb9f330-24808 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nSiobhan Martin burial (died in December) in St. James, Dublin (COI).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Burial''': \"Irish Church Records; St. James, Dublin (COI)\"<br/>Book Number: 1; Page: 89; Entry Number: 8013<br/>[https://www.irishgenealogy.ie/view/ IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Siobhan Martin burial (died in December) in St. James, Dublin (COI).",
+    "citation": "* '''Burial''': \"Irish Church Records; St. James, Dublin (COI)\"<br/>Book Number: 1; Page: 89; Entry Number: 8013<br/>[https://www.irishgenealogy.ie/view/?record_id=3aacb9f330-24808 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Siobhan Martin burial (died in December) in St. James, Dublin (COI).",
     "type": "source"
   }
 }

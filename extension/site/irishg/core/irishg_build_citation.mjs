@@ -26,9 +26,25 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 import { RT } from "../../../base/core/record_type.mjs";
 
 function buildIrishgUrl(ed, builder) {
-  // Example URL:
+  // Example old style URL:
+  // "https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275
+  // ?b=https%3A%2F%2Fchurchrecords.irishgenealogy.ie%2Fchurchrecords%2Fsearch.jsp%3Fnamefm%3DJohn%26namel%3DO%2527Connor%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch"
+  // Example new (2025) style URL:
   // https://www.irishgenealogy.ie/view/?record_id=5fc6443d7a-1552122
+
   let url = ed.url;
+
+  // to tell if old of new, look at start of URL
+  let recordSite = url.replace(/^.*\:\/\/([^\.]+)\.irishgenealogy.*$/, "$1");
+
+  // if it is the old style then remove the query part of the URL
+  if (recordSite && recordSite != url && recordSite != "www") {
+    let queryIndex = url.indexOf("?");
+    if (queryIndex != -1) {
+      url = url.substring(0, queryIndex);
+    }
+  }
+
   return url;
 }
 
