@@ -87,8 +87,16 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Kimberlin-117",
   },
   {
+    caseName: "leich-8_private_2025",
+    url: "https://www.wikitree.com/wiki/Leich-8",
+  },
+  {
     caseName: "littlemore-13_read",
     url: "https://www.wikitree.com/wiki/Littlemore-13",
+  },
+  {
+    caseName: "marsh-9608_private_2025",
+    url: "https://www.wikitree.com/wiki/Marsh-9608",
   },
   {
     caseName: "mcdonald-1168_read",
@@ -169,6 +177,10 @@ const regressionData = [
     // Birth and death in NSW Aus. Death 2004
     caseName: "smith-57461_read",
     url: "https://www.wikitree.com/wiki/Smith-57461",
+  },
+  {
+    caseName: "smith-201914_private_2025",
+    url: "https://www.wikitree.com/wiki/Smith-201914",
   },
   {
     caseName: "smith-241018_read",

@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Celia",
+    "lastName": "Marsh"
+  },
+  "lastNameAtBirth": "Marsh",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "1975",
+    "qualifier": 2
+  },
+  "spouses": [],
+  "hasValidData": true,
+  "personRepoRef": "Marsh-9608"
+}

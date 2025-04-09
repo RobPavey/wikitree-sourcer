@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "lastName": "Leich",
+    "firstNames": "Ann"
+  },
+  "lastNameAtBirth": "Leich",
+  "lastNameAtDeath": "Reardon",
+  "birthDate": {
+    "dateString": "1915",
+    "qualifier": 2
+  },
+  "deathDate": {
+    "dateString": "2005",
+    "qualifier": 2
+  },
+  "spouses": [],
+  "hasValidData": true,
+  "personRepoRef": "Leich-8"
+}

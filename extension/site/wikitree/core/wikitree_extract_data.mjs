@@ -1261,21 +1261,25 @@ function is2025FormatPage(document, url) {
   return false;
 }
 
-function extractVitalsDataInNonEditMode2025(document, result, isPrivate) {
+function extractVitalsDataInNonEditMode2025(document, result, privacyLevel) {
+  let isPrivate = privacyLevel.startsWith("Private") ? true : false;
+
   // Get name (includes first, middle, last names)
   result.name = getTextBySelector(document, "#person h1[itemProp=name]");
-  result.birthDate = getTextBySelector(document, ".VITALS time[itemprop=birthDate]");
-  result.birthDateStatus = getDateStatus(document, ".VITALS time[itemprop=birthDate]");
-  result.deathDate = getTextBySelector(document, ".VITALS time[itemprop=deathDate]");
-  result.deathDateStatus = getDateStatus(document, ".VITALS time[itemprop=deathDate]");
 
+  // This will get nothing if family tree is private
   result.firstNames = getTextBySelector(document, ".VITALS span[itemprop=givenName]");
   result.middleNames = getTextBySelector(document, ".VITALS span[itemprop=additionalName]");
 
   if (isPrivate) {
-    result.birthLocation = getBirthOrDeathLocation(document, ".VITALS time[itemprop=birthDate]");
-    result.deathLocation = getBirthOrDeathLocation(document, ".VITALS time[itemprop=deathDate]");
+    result.birthDate = getTextBySelector(document, ".VITALS span[data-cy=birth-date]");
+    result.deathDate = getTextBySelector(document, ".VITALS span[data-cy=death-date]");
   } else {
+    result.birthDate = getTextBySelector(document, ".VITALS time[itemprop=birthDate]");
+    result.birthDateStatus = getDateStatus(document, ".VITALS time[itemprop=birthDate]");
+    result.deathDate = getTextBySelector(document, ".VITALS time[itemprop=deathDate]");
+    result.deathDateStatus = getDateStatus(document, ".VITALS time[itemprop=deathDate]");
+
     result.birthLocation = getTextBySelector(document, ".VITALS span[itemprop=birthPlace]");
     result.deathLocation = getTextBySelector(document, ".VITALS span[itemprop=deathPlace]");
   }
@@ -1424,6 +1428,27 @@ function extractDataInReadMode2025(document, result) {
 
   result.pageType = "read";
 
+  // check privacy level as that can affect how we extract things
+  let privacyLevel = "Open";
+  let privacySpan = document.querySelector("#person span.privacy");
+  if (privacySpan) {
+    let privacyString = privacySpan.getAttribute("data-bs-title");
+    if (privacyString) {
+      // string should start with "Privacy Level: "
+      if (privacyString.startsWith("Privacy Level: ")) {
+        privacyLevel = privacyString.substring("Privacy Level: ".length);
+        // can be any of:
+        //  Unlisted
+        //  Private
+        //  Private with Public Biography
+        //  Private with Public Family Tree
+        //  Private with Public Biography and Family Tree
+        //  Public
+        //  Open
+      }
+    }
+  }
+
   let pageDataSelector = document.querySelector("#pageData");
 
   if (pageDataSelector) {
@@ -1441,6 +1466,14 @@ function extractDataInReadMode2025(document, result) {
       let genderSelector = document.querySelector(".VITALS meta[itemprop=gender]");
       if (genderSelector) {
         result.personGender = genderSelector.getAttribute("content");
+      } else {
+        let pageDataDiv = document.querySelector("#pageData");
+        if (pageDataDiv) {
+          let genderAttr = pageDataDiv.getAttribute("data-mgender");
+          if (genderAttr) {
+            result.personGender = genderAttr.toLowerCase();
+          }
+        }
       }
     }
   }
@@ -1462,7 +1495,7 @@ function extractDataInReadMode2025(document, result) {
     result.hasValidData = true;
   }
 
-  extractVitalsDataInNonEditMode2025(document, result, false);
+  extractVitalsDataInNonEditMode2025(document, result, privacyLevel);
 
   getParentsFromDocumentInNonEditMode2025(document, result);
 

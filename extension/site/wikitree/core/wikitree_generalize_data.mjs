@@ -231,19 +231,59 @@ function generalizeData(input) {
     result.mothersMaidenName = ed.mothersMaidenName;
   }
 
+  // for private profiles they may not have the name parts
+  if (!ed.firstNames && !result.lastNameAtBirth) {
+    // get lnab from wikiId
+    let lastDashIndex = ed.wikiId.lastIndexOf("-");
+    if (lastDashIndex != -1) {
+      let lastName = ed.wikiId.substring(0, lastDashIndex);
+      if (lastName) {
+        result.lastNameAtBirth = lastName;
+        result.name.lastName = lastName;
+
+        if (ed.name) {
+          if (ed.name.endsWith(lastName)) {
+            let firstNames = ed.name.substring(0, ed.name.length - lastName.length).trim();
+            result.name.setFirstNames(firstNames);
+          } else {
+            const marriedNameRegex = /^([^\(]+)\(([^\)]+)\)(.+)$/;
+            if (marriedNameRegex.test(ed.name)) {
+              let firstNames = ed.name.replace(marriedNameRegex, "$1").trim();
+              let lnab = ed.name.replace(marriedNameRegex, "$2").trim();
+              let cln = ed.name.replace(marriedNameRegex, "$3").trim();
+              if (lnab == lastName) {
+                result.name.setFirstNames(firstNames);
+                if (cln) {
+                  result.lastNameAtDeath = cln;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   result.setPersonGender(ed.personGender);
+
+  const decadeRegex = /^(\d\d\d)0s$/;
 
   // Birth date
   if (ed.birthDate || ed.birthYear) {
     result.birthDate = new DateObj();
 
     if (ed.birthDate) {
-      result.birthDate.dateString = ed.birthDate;
+      if (decadeRegex.test(ed.birthDate)) {
+        result.birthDate.dateString = ed.birthDate.replace(decadeRegex, "$1") + "5";
+        result.birthDate.qualifier = dateQualifiers.ABOUT;
+      } else {
+        result.birthDate.dateString = ed.birthDate;
+      }
     }
     if (ed.birthYear) {
       result.birthDate.yearString = ed.birthYear;
     }
-    if (ed.birthDateStatus) {
+    if (ed.birthDateStatus && !result.birthDate.qualifier) {
       result.birthDate.qualifier = getQualifier(ed.birthDateStatus);
     }
   }
@@ -253,12 +293,17 @@ function generalizeData(input) {
     result.deathDate = new DateObj();
 
     if (ed.deathDate) {
-      result.deathDate.dateString = ed.deathDate;
+      if (decadeRegex.test(ed.deathDate)) {
+        result.deathDate.dateString = ed.deathDate.replace(decadeRegex, "$1") + "5";
+        result.deathDate.qualifier = dateQualifiers.ABOUT;
+      } else {
+        result.deathDate.dateString = ed.deathDate;
+      }
     }
     if (ed.birthYear) {
       result.deathDate.yearString = ed.deathYear;
     }
-    if (ed.deathDateStatus) {
+    if (ed.deathDateStatus && !result.deathDate.qualifier) {
       result.deathDate.qualifier = getQualifier(ed.deathDateStatus);
     }
   }
