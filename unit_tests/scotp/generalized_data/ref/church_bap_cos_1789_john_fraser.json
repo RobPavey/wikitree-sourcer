@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "scotp",
+  "sourceType": "record",
+  "recordType": "BirthOrBaptism",
+  "name": {
+    "lastName": "Fraser",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "6 April 1789"
+  },
+  "eventPlace": {
+    "country": "Scotland",
+    "county": "Inverness-shire",
+    "placeString": "Urquhart and Glenmoriston, Inverness-shire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Donald Fraser"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Fraser"
+      }
+    }
+  },
+  "hasValidData": true
+}
