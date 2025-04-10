@@ -202,6 +202,7 @@ function determineRecordType(extractedData) {
         "Index to Marriage Bonds",
         "Marriage Bonds and Allegations",
         "Allegations for Marriage Licences",
+        "Marriage Records",
       ],
     },
     {
@@ -676,6 +677,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       "Marriage Year",
       "Marriage Banns Year",
       "Allegation Year",
+      "Application Date",
     ]);
     if (!value) {
       if (extractedData.recordData["Child"]) {
@@ -1765,6 +1767,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "Licence Date",
           "Event Date",
           "Allegation Date",
+          "Application Date",
           "Affidavit or License Date",
           "Affidavit or Licence Date",
           "Translated Marriage Date",
@@ -1785,6 +1788,7 @@ function generalizeDataGivenRecordType(ed, result) {
       "Recording Place",
       "License Place",
       "Licence Place",
+      "Application Place",
       "Allegation Place",
       "Marriage State",
       "Marriage City",
@@ -1794,7 +1798,10 @@ function generalizeDataGivenRecordType(ed, result) {
     } else {
       buildEventPlace(ed, result);
     }
-    result.setFieldIfValueExists("ageAtEvent", getCleanValueForRecordDataList(ed, ["Marriage Age", "Age"]));
+    result.setFieldIfValueExists(
+      "ageAtEvent",
+      getCleanValueForRecordDataList(ed, ["Marriage Age", "Age", "Application Age"])
+    );
     buildParents(ed, result);
 
     let spouseName = getCleanValueForRecordDataList(ed, ["Spouse", "Spouse Name", "Spouse's Name"]);
