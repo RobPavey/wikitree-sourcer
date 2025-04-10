@@ -22,8 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const highlightStyle = "font-weight: bold; font-style: italic";
-const cellHighlightStyle = "background-color: palegoldenrod";
+var highlightStyle = "font-weight: bold; font-style: italic";
+var cellHighlightStyle = "background-color: palegoldenrod";
 
 function highlightRow(selectedRow) {
   selectedRow.setAttribute("style", highlightStyle);
