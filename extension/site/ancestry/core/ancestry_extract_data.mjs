@@ -1446,10 +1446,16 @@ function handlePersonSourceCitation(document, result) {
 }
 
 function parseHtmlEscapeCodes(str) {
-  return str.replace(/&#([0-9]{1,3});/gi, function (match, numStr) {
+  str = str.replace(/&#([0-9]{1,3});/gi, function (match, numStr) {
     var num = parseInt(numStr, 10); // read num as normal number
     return String.fromCharCode(num);
   });
+
+  // the below two replaces were needed for:
+  // https://www.ancestry.com/family-tree/person/tree/86808578/person/260140894818/facts
+  str = str.replace(/&quot;/gi, '"');
+  str = str.replace(/\\/gi, "");
+  return str;
 }
 
 // Extracting the HTML elements is working but I am unable to get the given name
