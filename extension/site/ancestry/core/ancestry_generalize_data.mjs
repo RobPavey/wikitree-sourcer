@@ -61,6 +61,7 @@ const eventTypeStringToDataType = {
   Probate: RT.Probate,
   Divorce: RT.Divorce,
   MilitaryService: RT.Military,
+  "Naturalization Petition": RT.Naturalization,
   TaxList: RT.Tax,
   Will: RT.Will,
 };
@@ -406,7 +407,7 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.Naturalization,
-      matches: ["Naturalization Record", "Naturalisation Certificate"],
+      matches: ["Naturalization Record", "Naturalisation Certificate", "Petitions for Naturalization"],
     },
     {
       type: RT.LegalRecord,
