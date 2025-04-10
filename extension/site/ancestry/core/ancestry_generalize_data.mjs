@@ -301,7 +301,7 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.CriminalRegister,
-      matches: ["Criminal Register", "Police Gazettes", "Convict Register", "Prison Hulk Register"],
+      matches: ["Criminal Register", "Convict Register", "Prison Hulk Register"],
     },
     {
       type: RT.FreemasonMembership,
@@ -478,6 +478,7 @@ function determineRecordType(extractedData) {
     },
     { type: RT.PassportApplication, matches: ["Passport Application"] },
     { type: RT.Pension, matches: [["Pension Index"]] },
+    { type: RT.Newspaper, matches: [["Police Gazettes"]] },
   ];
 
   //console.log("in determineRecordType");
@@ -2531,6 +2532,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "Passport Issue Date",
           "Examination Date",
           "Registry Date",
+          "Publication Date",
         ],
         "date"
       )
