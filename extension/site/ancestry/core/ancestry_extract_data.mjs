@@ -363,6 +363,17 @@ function extractRecordData(document, result) {
         let value = rowData.textContent;
         value = value.replace(/\s+/g, " ").trim();
 
+        // clean up height field
+        if (label == "Height") {
+          // example: https://www.ancestry.com/search/collections/2238/records/303556213
+          // has height of: 5''8 1/2 "
+          // which should be: 5' 8 1/2"
+          if (value.includes("''") && value.includes('"')) {
+            value = value.replace(/''/g, "'");
+            value = value.replace(/ "/g, '"');
+          }
+        }
+
         if (!value.startsWith("Search for")) {
           //console.log(label + " " + value);
           result.recordData[label] = value;

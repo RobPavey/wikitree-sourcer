@@ -1,0 +1,30 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Gordon Elrey Burke"
+  },
+  "eventDate": {
+    "dateString": "29 Apr 1946"
+  },
+  "recordSubtype": "WWIIDraftRegistration",
+  "birthDate": {
+    "dateString": "29 Apr 1928"
+  },
+  "eventPlace": {
+    "placeString": "Corning, Steuben, New York"
+  },
+  "nextOfKin": "Leland Burke",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|2238|303556213}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|2238|318556213}}"
+  ],
+  "collectionData": {
+    "id": "2238",
+    "collectionTitle": "U.S., World War II Draft Cards Young Men, 1940-1947"
+  },
+  "hasValidData": true
+}

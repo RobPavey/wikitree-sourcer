@@ -1241,6 +1241,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/4102834:61861",
   },
   {
+    caseName: "us_wwii_draft_gordon_burke",
+    url: "https://www.ancestry.com/search/collections/2238/records/303556213",
+  },
+  {
     caseName: "us_yearbook_1935_lorraine_gardiner",
     url: "https://www.ancestry.com/discoveryui-content/view/90610650:1265",
   },
