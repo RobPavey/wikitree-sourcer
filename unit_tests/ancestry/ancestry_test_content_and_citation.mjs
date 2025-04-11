@@ -421,6 +421,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "england_census_1921_j_berry",
+    url: "https://www.ancestry.com/search/collections/63150/records/16913132",
+  },
+  {
     caseName: "england_chelsea_pensioner_william_nicholls",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=61068&h=825575&tid=&pid=&queryId=d105456679ffb7a432e3f0e2d8c91fdc&usePUB=true&_phsrc=ywU8090&_phstart=successSource",
   },
@@ -1287,6 +1291,11 @@ const regressionData = [
     // June 2024 format. Has "Van Wye" as surname
     caseName: "xx_profile_margarete_van_wye_1889_1974_us",
     url: "https://www.ancestry.com/family-tree/person/tree/71402081/person/32242536573/facts",
+  },
+  {
+    // Has spouse with death year but no birth year
+    caseName: "xx_profile_mary_north_england_2025",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/82009850755/facts",
   },
   {
     caseName: "xx_profile_ralph_pavey_1891_1958_england",

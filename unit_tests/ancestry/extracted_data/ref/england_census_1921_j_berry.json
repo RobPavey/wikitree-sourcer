@@ -1,0 +1,86 @@
+{
+  "url": "https://www.ancestry.com/search/collections/63150/records/16913132",
+  "pageType": "record",
+  "dbId": "63150",
+  "recordId": "16913132",
+  "ancestryTemplate": "{{Ancestry Record|63150|16913132}}",
+  "domain": "ancestry.com",
+  "titleName": "J G Berry",
+  "titleCollection": "1921 England Census",
+  "recordData": {
+    "Name": "J G Berry",
+    "Gender": "Male",
+    "Marital Status": "Married",
+    "Age": "58 Years 9 Months",
+    "Relation to Head": "Head",
+    "Estimated Birth Year": "1862",
+    "Birth Place": "Pill, Somerset, England",
+    "Residence Date": "1921",
+    "Residence Street Address": "30 Birch Rd, Southville, Bristol",
+    "Residence Place": "Bristol, Gloucestershire, England",
+    "Occupation": "Assist Dockmaster",
+    "Occupation Code": "731/6",
+    "Employer": "Bristol Docks Committee",
+    "Employer Code": "561",
+    "Place of Work": "Queen Square Bristol",
+    "Number of Children Under 16": "0",
+    "Inhabited": "Y",
+    "Ward": "Southville",
+    "Parliamentary Division": "Bristol Pb, South Div.",
+    "Registration District": "Bristol",
+    "Registration District Number": "319",
+    "Sub registration district": "Bedminster",
+    "Sub Registration District Number": "3",
+    "Respondent": "Mr J G Berry",
+    "Enumeration District Name": "Bristol Cb",
+    "Enumeration District": "41",
+    "Schedule": "244",
+    "Schedule Type Code": "E",
+    "Household Members (Name)<br/>Age<br/>Relationship": "J G Berry 58 Years 9 Months Head<br/>Eliza Gertrude Berry 58 Years 3 Months Wife<br/>Gertrude Berry 20 Years 9 Months Daughter<br/>Olive Berry 18 Years 6 Months Daughter"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "J G Berry",
+        "Age": "58 Years 9 Months",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "Eliza Gertrude Berry",
+        "dbId": "63150",
+        "recordId": "16913133",
+        "link": "https://www.ancestry.com/search/collections/63150/records/16913133",
+        "Age": "58 Years 3 Months",
+        "Relationship": "Wife"
+      },
+      {
+        "Household Members (Name)": "Gertrude Berry",
+        "dbId": "63150",
+        "recordId": "16913134",
+        "link": "https://www.ancestry.com/search/collections/63150/records/16913134",
+        "Age": "20 Years 9 Months",
+        "Relationship": "Daughter"
+      },
+      {
+        "Household Members (Name)": "Olive Berry",
+        "dbId": "63150",
+        "recordId": "16913135",
+        "link": "https://www.ancestry.com/search/collections/63150/records/16913135",
+        "Age": "18 Years 6 Months",
+        "Relationship": "Daughter"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/63150/images/11709_0493?pid=16913132&usePUB=true&usePUBJs=true",
+  "imageDbId": "63150",
+  "imageRecordId": "11709_0493",
+  "sourceCitation": "The National Archives of the UK (TNA); Kew, Surrey, England; 1921 Census Returns; Reference: RG 15/11709, ED 41, Sch 244; Book: 11709",
+  "sourceInformation": "Ancestry.com. 1921 England Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2025. Original data: Census Returns of England and Wales, 1921. Kew, Surrey, England: The National Archives of the UK (TNA) Series RG15, 1921. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1921. Kew, Surrey, England: The National Archives of the UK (TNA) Series RG15, 1921.",
+  "sourceDescription": "This collection provides census information for every individual residing in England on 19 June 1921. Learn more..."
+}

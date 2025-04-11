@@ -13,7 +13,9 @@
     {
       "date": "10 October 1919",
       "place": "Trumbull County, Ohio",
-      "spouseName": "George Edwin Kelts"
+      "spouseName": "George Edwin Kelts",
+      "spouseBirthYear": "1889",
+      "spouseDeathYear": "1965"
     }
   ],
   "fatherName": "Homer William Van Wye",

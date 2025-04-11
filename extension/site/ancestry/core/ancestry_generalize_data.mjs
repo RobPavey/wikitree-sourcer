@@ -1121,7 +1121,7 @@ function buildEventPlace(ed, result, includeResidence) {
   let county = getCleanValueForRecordDataList(ed, ["County/Island", "County", "County or Borough"]);
   let civilParish = getCleanValueForRecordDataList(ed, ["Civil Parish", "Civil parish", "Parish"]);
   let town = getCleanValueForRecordDataList(ed, ["Town", "Ward or Division/Constituency", "Locality", "Municipality"]);
-  let streetAddress = getCleanValueForRecordDataList(ed, ["Street Address", "Address"]);
+  let streetAddress = getCleanValueForRecordDataList(ed, ["Street Address", "Address", "Residence Street Address"]);
   let houseNumber = getCleanValueForRecordDataList(ed, ["House Number"]);
   let residence = "";
 
@@ -1139,7 +1139,12 @@ function buildEventPlace(ed, result, includeResidence) {
       town = getCleanValueForRecordDataList(ed, ["Place of Habitation", "Residence District"]);
     }
     if (!streetAddress) {
-      streetAddress = getCleanValueForRecordDataList(ed, ["Street Address", "Address", "Residence Street or Township"]);
+      streetAddress = getCleanValueForRecordDataList(ed, [
+        "Street Address",
+        "Address",
+        "Residence Street or Township",
+        "Residence Street Address",
+      ]);
     }
 
     let yearString = result.inferEventYear();
@@ -1162,7 +1167,33 @@ function buildEventPlace(ed, result, includeResidence) {
   }
   if (residence) {
     if (residence == town) {
-      placeString = "";
+      residence = "";
+    }
+  }
+
+  if (residence && streetAddress) {
+    // Example from 1921 census: https://www.ancestry.com/search/collections/63150/records/16913132
+    // residence = "Bristol, Gloucestershire, England"
+    // streetAddress = "30 Birch Rd, Southville, Bristol"
+    // Another example: https://www.ancestry.com/search/collections/63150/records/16768339
+    // residence = "Easton in Gordano, Somerset, England"
+    // streetAddress = "Heywood Terrace, Pill Bristol"
+    // Another example: https://www.ancestry.com/search/collections/63150/records/10208539
+    // residence = "Ealing, Middlesex, England"
+    // streetAddress = "117 Northcroft Rd, W Ealing, W 13"
+    // It is a mess. Could we use the Resistration District and Sub registration district?
+    let residenceArray = residence.split(", ");
+    let streetArray = streetAddress.split(", ");
+    if (residenceArray.length && streetArray.length) {
+      if (residenceArray[0] == streetArray[streetArray.length - 1]) {
+        streetAddress = "";
+        for (let i = 0; i < streetArray.length - 1; i++) {
+          if (streetAddress) {
+            streetAddress += ", ";
+          }
+          streetAddress += streetArray[i];
+        }
+      }
     }
   }
 
@@ -2749,6 +2780,16 @@ function generalizeProfileData(input, result) {
       }
       if (marriage.place) {
         spouse.marriagePlace.placeString = marriage.place;
+      }
+      if (marriage.spouseBirthYear) {
+        let dateObj = new DateObj();
+        dateObj.yearString = marriage.spouseBirthYear;
+        spouse.birthDate = dateObj;
+      }
+      if (marriage.spouseDeathYear) {
+        let dateObj = new DateObj();
+        dateObj.yearString = marriage.spouseDeathYear;
+        spouse.deathDate = dateObj;
       }
     }
   }

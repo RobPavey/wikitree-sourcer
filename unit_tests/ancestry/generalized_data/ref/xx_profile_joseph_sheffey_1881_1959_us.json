@@ -30,6 +30,9 @@
       },
       "marriagePlace": {
         "placeString": "Wythe County Virginia, USA"
+      },
+      "birthDate": {
+        "yearString": "1888"
       }
     }
   ],

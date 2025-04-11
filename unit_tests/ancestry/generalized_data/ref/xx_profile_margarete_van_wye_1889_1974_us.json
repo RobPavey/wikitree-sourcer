@@ -29,6 +29,12 @@
       },
       "marriagePlace": {
         "placeString": "Trumbull County, Ohio"
+      },
+      "birthDate": {
+        "yearString": "1889"
+      },
+      "deathDate": {
+        "yearString": "1965"
       }
     }
   ],
