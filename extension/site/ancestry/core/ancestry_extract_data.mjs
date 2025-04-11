@@ -1845,6 +1845,25 @@ function handlePersonFactsJune2024(document, result) {
               marriage.spouseName = spouseName;
             }
           }
+
+          let spouseBirthDeathNode = spouseNode.nextElementSibling;
+          if (spouseBirthDeathNode) {
+            let spouseBirthDeath = spouseBirthDeathNode.textContent;
+            // Sometimes 1704-1764 comes through as 1704â€“1764
+            if (spouseBirthDeath) {
+              const regex = /(\d\d\d\d)?[\-â€\“]+(\d\d\d\d)?/;
+              if (regex.test(spouseBirthDeath)) {
+                let birthYear = spouseBirthDeath.replace(regex, "$1");
+                let deathYear = spouseBirthDeath.replace(regex, "$2");
+                if (birthYear) {
+                  marriage.spouseBirthYear = birthYear;
+                }
+                if (deathYear) {
+                  marriage.spouseDeathYear = deathYear;
+                }
+              }
+            }
+          }
         }
 
         // add the marriage

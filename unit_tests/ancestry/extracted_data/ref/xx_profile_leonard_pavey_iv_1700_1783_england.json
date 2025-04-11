@@ -13,7 +13,9 @@
     {
       "date": "30 May 1727",
       "place": "Stockland, Devon, England",
-      "spouseName": "Ann Hearn"
+      "spouseName": "Ann Hearn",
+      "spouseBirthYear": "1704",
+      "spouseDeathYear": "1764"
     }
   ],
   "fatherName": "Leonard Pavey Junr",
