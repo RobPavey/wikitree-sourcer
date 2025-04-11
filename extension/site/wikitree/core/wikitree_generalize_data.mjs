@@ -232,7 +232,7 @@ function generalizeData(input) {
   }
 
   // for private profiles they may not have the name parts
-  if (!ed.firstNames && !result.lastNameAtBirth) {
+  if (!ed.firstNames && !result.lastNameAtBirth && ed.wikiId) {
     // get lnab from wikiId
     let lastDashIndex = ed.wikiId.lastIndexOf("-");
     if (lastDashIndex != -1) {
