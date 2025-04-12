@@ -2648,12 +2648,20 @@ class NarrativeBuilder {
 
   buildMilitaryString() {
     let gd = this.eventGd;
+    let role = gd.role;
 
     let eventDate = gd.inferEventDate();
     let deathDate = gd.inferDeathDate();
     let placeObj = gd.inferEventPlaceObj();
 
-    this.narrative = this.getPersonNameOrPronoun();
+    if (role && role != Role.Primary) {
+      let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
+      let possessiveName = this.getPossessiveName();
+      this.narrative = possessiveName + " " + relationship;
+    } else {
+      this.narrative += this.getPersonNameOrPronoun(true);
+    }
+
     if (deathDate) {
       let branch = gd.militaryBranch;
       if (!branch) {

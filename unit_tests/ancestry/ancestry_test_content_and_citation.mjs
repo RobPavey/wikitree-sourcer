@@ -1245,6 +1245,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/4102834:61861",
   },
   {
+    caseName: "us_wwi_draft_elizabeth_knicherbocher",
+    url: "https://www.ancestry.com/search/collections/6482/records/309086444",
+  },
+  {
     caseName: "us_wwii_draft_gordon_burke",
     url: "https://www.ancestry.com/search/collections/2238/records/303556213",
   },

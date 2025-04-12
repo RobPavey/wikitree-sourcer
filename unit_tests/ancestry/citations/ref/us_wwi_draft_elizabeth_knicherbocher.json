@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Military of child Elmer Acy Knickerbocker''':\n\"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>\nOriginal data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>\n{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Elizabeth's child registered for the World War I draft.<ref>\n'''Military of child Elmer Acy Knickerbocker''':\n\"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>\nOriginal data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>\n{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Military of child Elmer Acy Knickerbocker''': \"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>Original data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Military of child Elmer Acy Knickerbocker''':\n\"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>\nOriginal data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>\n{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)<br/>\nName: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Elizabeth's child registered for the World War I draft.<ref>\n'''Military of child Elmer Acy Knickerbocker''':\n\"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>\nOriginal data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>\n{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)<br/>\nName: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Military of child Elmer Acy Knickerbocker''': \"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>Original data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)<br/>Name: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Military of child Elmer Acy Knickerbocker''':\n\"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>\nOriginal data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>\n{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)<br/>\nName: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Elizabeth's child registered for the World War I draft.<ref>\n'''Military of child Elmer Acy Knickerbocker''':\n\"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>\nOriginal data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>\n{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)<br/>\nName: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Military of child Elmer Acy Knickerbocker''': \"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>Original data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)<br/>Name: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Military of child Elmer Acy Knickerbocker''':\n\"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>\nOriginal data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>\n{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Elizabeth Knicherbocher\n|-\n| Child || Elmer Acy Knickerbocker\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Elizabeth's child registered for the World War I draft.<ref>\n'''Military of child Elmer Acy Knickerbocker''':\n\"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>\nOriginal data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>\n{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Elizabeth Knicherbocher\n|-\n| Child || Elmer Acy Knickerbocker\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Military of child Elmer Acy Knickerbocker''': \"U.S., World War I Draft Registration Cards, 1917-1918\"<br/>Original data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm<br/>{{Ancestry Record|6482|309086444}} (accessed 6 May 2021)<br/>Name: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"U.S., World War I Draft Registration Cards, 1917-1918,\" database, ({{Ancestry Record|6482|309086444}} : accessed 6 May 2021), Name Elizabeth Knicherbocher, Child Elmer Acy Knickerbocker; citing Original data United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C. National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Elizabeth's child registered for the World War I draft.<ref>\"U.S., World War I Draft Registration Cards, 1917-1918,\" database, ({{Ancestry Record|6482|309086444}} : accessed 6 May 2021), Name Elizabeth Knicherbocher, Child Elmer Acy Knickerbocker; citing Original data United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C. National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"U.S., World War I Draft Registration Cards, 1917-1918,\" database, ({{Ancestry Record|6482|309086444}} : accessed 6 May 2021), Name Elizabeth Knicherbocher, Child Elmer Acy Knickerbocker; citing Original data United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C. National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Military of child Elmer Acy Knickerbocker'':\n\"U.S., World War I Draft Registration Cards, 1917-1918\", database, \nOriginal data United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C. National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm, \n({{Ancestry Record|6482|309086444}} : accessed 6 May 2021), \nName: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Elizabeth's child registered for the World War I draft.<ref>\n''Military of child Elmer Acy Knickerbocker'':\n\"U.S., World War I Draft Registration Cards, 1917-1918\", database, \nOriginal data United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C. National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm, \n({{Ancestry Record|6482|309086444}} : accessed 6 May 2021), \nName: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Military of child Elmer Acy Knickerbocker'': \"U.S., World War I Draft Registration Cards, 1917-1918\", database, Original data United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C. National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm, ({{Ancestry Record|6482|309086444}} : accessed 6 May 2021), Name: Elizabeth Knicherbocher; Child: Elmer Acy Knickerbocker.",
+    "type": "source"
+  }
+}

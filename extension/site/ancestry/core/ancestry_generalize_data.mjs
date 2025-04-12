@@ -691,7 +691,12 @@ function determineRoleGivenRecordType(extractedData, result) {
   }
   // possibly any other type should go through here?
   // We could possibly test if recordData num properties is <= 4 or something like that
-  else if (recordType == RT.Unclassified || recordType == RT.Employment || recordType == RT.FreedomOfCity) {
+  else if (
+    recordType == RT.Unclassified ||
+    recordType == RT.Employment ||
+    recordType == RT.FreedomOfCity ||
+    recordType == RT.Military
+  ) {
     let hasDateKey = testForWordsInRecordDataKeys(extractedData, ["Date", "Place"]);
     if (!hasDateKey) {
       if (extractedData.recordData["Child"]) {
