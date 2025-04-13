@@ -2158,7 +2158,7 @@ function generalizeDataGivenRecordType(ed, result) {
 
     let probateGrantDate = getCleanValueForRecordDataList(
       ed,
-      ["Probate Date", "Will Proved Date", "Grant Date"],
+      ["Probate Date", "Will Proved Date", "Grant Date", "Granted Date"],
       "date"
     );
     let willDate = getCleanValueForRecordDataList(ed, ["Will Date"], "date");
