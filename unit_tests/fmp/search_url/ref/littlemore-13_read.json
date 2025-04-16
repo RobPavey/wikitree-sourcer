@@ -1,17 +1,17 @@
 {
   "std": {
-    "url": "https://www.findmypast.co.uk/search/results?gender=female&firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Littlemore&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&yearofdeath=1938&yearofdeath_offset=2&keywordsplace=England&keywordsplace_proximity=5&sourcecountry=england"
+    "url": "https://www.findmypast.co.uk/search/results?firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Littlemore&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&yearofdeath=1938&yearofdeath_offset=2&keywordsplace=England&keywordsplace_proximity=5&sourcecountry=england"
   },
   "specified_collection": {
-    "url": "https://www.findmypast.co.uk/search/results?datasetname=england+%26+wales+deaths+1837-2007&gender=female&firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Pavey&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&eventyear=1938&eventyear_offset=2&keywordsplace=Leek%2c%20Staffordshire%2c%20England&keywordsplace_proximity=5"
+    "url": "https://www.findmypast.co.uk/search/results?datasetname=england+%26+wales+deaths+1837-2007&firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Pavey&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&eventyear=1938&eventyear_offset=2&keywordsplace=Leek%2c%20Staffordshire%2c%20England&keywordsplace_proximity=5"
   },
   "parameters_all_no_spouse": {
-    "url": "https://www.findmypast.co.uk/search/results?gender=female&firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Littlemore&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&yearofdeath=1938&yearofdeath_offset=2&keywordsplace=Camden%2c%20Middlesex%2c%20England&keywordsplace_proximity=5&fatherfirstname=John&fatherfirstname_variants=true&fatherlastname=Littlemore&fatherlastname_variants=true&motherfirstname=Mary&motherfirstname_variants=true&sourcecountry=england"
+    "url": "https://www.findmypast.co.uk/search/results?firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Littlemore&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&yearofdeath=1938&yearofdeath_offset=2&keywordsplace=Camden%2c%20Middlesex%2c%20England&keywordsplace_proximity=5&fatherfirstname=John&fatherfirstname_variants=true&fatherlastname=Littlemore&fatherlastname_variants=true&motherfirstname=Mary&motherfirstname_variants=true&sourcecountry=england"
   },
   "parameters_civil_marriage": {
-    "url": "https://www.findmypast.co.uk/search/results?sourcecategory=life+events+%28bmds%29&collection=civil+marriage+%26+divorce&gender=female&firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Littlemore&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&yearofdeath=1938&yearofdeath_offset=2&keywordsplace=Camden%2c%20Middlesex%2c%20England&keywordsplace_proximity=5&spousefirstname=Harry+Alfred&spousefirstname_variants=true&spouselastname=Pavey&spouselastname_variants=true&sourcecountry=england"
+    "url": "https://www.findmypast.co.uk/search/results?sourcecategory=life+events+%28bmds%29&collection=civil+marriage+%26+divorce&firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Littlemore&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&keywordsplace=Camden%2c%20Middlesex%2c%20England&keywordsplace_proximity=5&spousefirstname=Harry+Alfred&spousefirstname_variants=true&spouselastname=Pavey&spouselastname_variants=true&sourcecountry=england"
   },
   "parameters_baptism": {
-    "url": "https://www.findmypast.co.uk/search/results?sourcecategory=life+events+%28bmds%29&collection=parish+baptisms&gender=female&firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Littlemore&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&yearofdeath=1938&yearofdeath_offset=2&keywordsplace=Camden%2c%20Middlesex%2c%20England&keywordsplace_proximity=5&fatherfirstname=John&fatherfirstname_variants=true&motherfirstname=Mary&motherfirstname_variants=true&sourcecountry=england"
+    "url": "https://www.findmypast.co.uk/search/results?sourcecategory=life+events+%28bmds%29&collection=parish+baptisms&firstname=Amelia+Elizabeth&firstname_variants=true&lastname=Littlemore&lastname_variants=true&yearofbirth=1849&yearofbirth_offset=2&keywordsplace=Camden%2c%20Middlesex%2c%20England&keywordsplace_proximity=5&fatherfirstname=John&fatherfirstname_variants=true&motherfirstname=Mary&motherfirstname_variants=true&sourcecountry=england"
   }
 }
