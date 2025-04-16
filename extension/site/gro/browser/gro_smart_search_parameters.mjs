@@ -144,19 +144,26 @@ function checkSearchParameters() {
     clampedMessage += " Will use end year of " + endYear + ".";
     result.warningInputIds.push("searchParamEndYear");
   }
-  if (startYear >= gapStartYear && startYear <= gapEndYear) {
-    startYear = gapEndYear + 1;
-    clampedRange = true;
-    clampedMessage += "\nStart year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
-    clampedMessage += " Will use start year of " + startYear + ".";
-    result.warningInputIds.push("searchParamStartYear");
-  }
-  if (endYear >= gapStartYear && endYear <= gapEndYear) {
-    endYear = gapStartYear - 1;
-    clampedRange = true;
-    clampedMessage += "\nEnd year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
-    clampedMessage += " Will use end year of " + endYear + ".";
-    result.warningInputIds.push("searchParamEndYear");
+  if (startYear >= gapStartYear && endYear <= gapEndYear) {
+    // special case to avoid startYear being set to > endYear
+    // The start and end are completely in the gap.
+    // It doesn't make sense to clamp in this case
+  } else {
+    if (startYear >= gapStartYear && startYear <= gapEndYear) {
+      startYear = gapEndYear + 1;
+      clampedRange = true;
+      clampedMessage +=
+        "\nStart year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
+      clampedMessage += " Will use start year of " + startYear + ".";
+      result.warningInputIds.push("searchParamStartYear");
+    }
+    if (endYear >= gapStartYear && endYear <= gapEndYear) {
+      endYear = gapStartYear - 1;
+      clampedRange = true;
+      clampedMessage += "\nEnd year is in the gap in GRO records between " + gapStartYear + " and " + gapEndYear + ".";
+      clampedMessage += " Will use end year of " + endYear + ".";
+      result.warningInputIds.push("searchParamEndYear");
+    }
   }
   searchParameters.startYear = startYear;
   searchParameters.endYear = endYear;
