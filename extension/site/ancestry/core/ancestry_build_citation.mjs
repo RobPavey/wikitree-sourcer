@@ -730,7 +730,18 @@ function buildSharingPageCitation(ed, options, builder) {
   }
 
   if (ed.dbId && ed.recordId) {
+    // determin if the ed.recordId is actually an image ID
+    let isImageId = false;
     if (ed.sharingType == "v1") {
+      isImageId = true;
+    } else {
+      let dashIndex = ed.recordId.indexOf("-");
+      if (dashIndex != -1) {
+        isImageId = true;
+      }
+    }
+
+    if (isImageId) {
       builder.recordLinkOrTemplate = "Ancestry " + buildAncestryImageTemplate(ed, options);
     } else {
       builder.recordLinkOrTemplate = buildAncestryRecordTemplate(ed, options);

@@ -1,0 +1,12 @@
+{
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "sourceOfData": "ancestry",
+  "wtSearchTemplates": [
+    "{{Ancestry Sharing|33168122|7b22746f6b656e223a222f3179764c7074566d615357773531536b45704a2b41745470316f536c687258504e3850624b584e3279773d222c22746f6b656e5f76657273696f6e223a225632227d}}"
+  ],
+  "collectionData": {
+    "id": "2496"
+  },
+  "hasValidData": true
+}

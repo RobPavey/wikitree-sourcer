@@ -1326,6 +1326,10 @@ const regressionData = [
     url: "https://www.ancestry.com/sharing/26033082?h=b2ba14&clickref=1011lwhmX9Rt%2C1011lwhmX9Rt&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate+External",
   },
   {
+    caseName: "yy_sharing_image_will_1635_boniface_burton",
+    url: "https://www.ancestry.com/sharing/33168122?token=7b22746f6b656e223a222f3179764c7074566d615357773531536b45704a2b41745470316f536c687258504e3850624b584e3279773d222c22746f6b656e5f76657273696f6e223a225632227d",
+  },
+  {
     caseName: "yy_sharing_mark_germany_marriage",
     url: "https://www.ancestry.com/sharing/9157607?mark=7b22746f6b656e223a226e5462303635657a394764346a583745615a47496d354f6f454248484d42363242684c65696742534a5a493d222c22746f6b656e5f76657273696f6e223a225632227d",
   },
