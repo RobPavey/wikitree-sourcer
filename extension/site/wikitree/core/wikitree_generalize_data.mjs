@@ -330,6 +330,15 @@ function generalizeData(input) {
         if (obj.lastNameAtDeath && obj.lastNameAtDeath.toLowerCase() != "unknown") {
           result.parents.father.lastNameAtDeath = obj.lastNameAtDeath;
         }
+      } else if (ed.parents.father.firstName || ed.parents.father.lastName) {
+        // comes here from search page
+        result.parents.father = { name: new NameObj() };
+        if (ed.parents.father.firstName) {
+          result.parents.father.name.forenames = ed.parents.father.firstName;
+        }
+        if (ed.parents.father.lastName) {
+          result.parents.father.name.lastName = ed.parents.father.lastName;
+        }
       }
     }
     if (ed.parents.mother) {
@@ -342,6 +351,15 @@ function generalizeData(input) {
         }
         if (obj.lastNameAtDeath && obj.lastNameAtDeath.toLowerCase() != "unknown") {
           result.parents.mother.lastNameAtDeath = obj.lastNameAtDeath;
+        }
+      } else if (ed.parents.mother.firstName || ed.parents.mother.lastName) {
+        // comes here from search page
+        result.parents.mother = { name: new NameObj() };
+        if (ed.parents.mother.firstName) {
+          result.parents.mother.name.forenames = ed.parents.mother.firstName;
+        }
+        if (ed.parents.mother.lastName) {
+          result.parents.mother.name.lastName = ed.parents.mother.lastName;
         }
       }
     }

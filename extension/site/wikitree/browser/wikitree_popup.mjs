@@ -2349,7 +2349,11 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
       await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
       addShowAdditionalFieldsMenuItem(menu, tabId);
     }
-  } else if (extractedData.pageType == "read" || extractedData.pageType == "private") {
+  } else if (
+    extractedData.pageType == "read" ||
+    extractedData.pageType == "private" ||
+    extractedData.pageType == "searchPerson"
+  ) {
     addMenuDivider(menu);
     await addMergeEditMenuItem(menu, data, tabId, backFunction);
     addSavePersonDataMenuItem(menu, data);

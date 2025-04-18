@@ -959,6 +959,64 @@ function extractDataForEditFamily(document, result) {
   return result;
 }
 
+function extractDataForSearchPerson2025(document, result) {
+  //console.log("extractDataForSearchPerson2025");
+
+  result.pageType = "searchPerson";
+
+  function getTextValueFromSelector(selector) {
+    let textInput = document.querySelector(selector);
+    if (textInput) {
+      let text = textInput.value;
+      return text;
+    }
+  }
+  function setFieldFromSelector(selector, fieldName) {
+    let text = getTextValueFromSelector(selector);
+    if (text) {
+      result[fieldName] = text;
+    }
+  }
+
+  setFieldFromSelector("#wpFirst", "firstNames");
+  setFieldFromSelector("#wpLast", "lnab");
+  setFieldFromSelector("#wpBirthDate", "birthDate");
+  setFieldFromSelector("#wpDeathDate", "deathDate");
+  setFieldFromSelector("input.form-control[name=birth_location]", "birthLocation");
+  setFieldFromSelector("input.form-control[name=death_location]", "deathLocation");
+
+  let gender = getTextValueFromSelector("input.form-check-input[name=gender]:checked");
+  if (gender) {
+    result.personGender = gender.toLowerCase();
+  }
+
+  let fatherFirstName = getTextValueFromSelector("input.form-control[name=father_first_name]");
+  let fatherLastName = getTextValueFromSelector("input.form-control[name=father_last_name]");
+  let motherFirstName = getTextValueFromSelector("input.form-control[name=mother_first_name]");
+  let motherLastName = getTextValueFromSelector("input.form-control[name=mother_last_name]");
+
+  if (fatherFirstName || fatherLastName || motherFirstName || motherLastName) {
+    let parents = {};
+    if (fatherFirstName || fatherLastName) {
+      parents.father = {};
+      parents.father.firstName = fatherFirstName;
+      parents.father.lastName = fatherLastName;
+    }
+    if (motherFirstName || motherLastName) {
+      parents.mother = {};
+      parents.mother.firstName = motherFirstName;
+      parents.mother.lastName = motherLastName;
+    }
+    result.parents = parents;
+  }
+
+  result.hasValidData = true;
+
+  //console.log(result);
+
+  return result;
+}
+
 function extractDataForEditFamily2025(document, result) {
   //console.log("extractDataForEditFamily2025");
 
@@ -1655,6 +1713,11 @@ function extractDataFor2025FormatPage(result, document, url) {
   // check for the Add Person/Edit Family page
   if (url.includes("Special:EditFamily")) {
     return extractDataForEditFamily2025(document, result);
+  }
+
+  // check for the SearchPerson page
+  if (url.includes("Special:SearchPerson")) {
+    return extractDataForSearchPerson2025(document, result);
   }
 
   // next test whether we are in edit mode or not since the text fields will be different.
