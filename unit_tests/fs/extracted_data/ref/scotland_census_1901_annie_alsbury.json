@@ -9,7 +9,6 @@
     "Age": "36",
     "Relationship To Head": "WIFE",
     "Source House Nbr": "4",
-    "Source Schedule Nbr": "97",
     "Source Street Address1": "ARGYLE STREET"
   },
   "eventDateOriginal": "1901",
@@ -34,6 +33,7 @@
     "sourceLineNbr": "14",
     "sourcePageNbr": "17",
     "sourcePieceFolio": "14",
+    "sourceScheduleNumber": "97",
     "digitalFilmNumber": "DI0001028"
   },
   "household": {

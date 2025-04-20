@@ -6,10 +6,7 @@
     "Birth Place": "Oldhamstocks, HADDINGTONSHIRE (EAST LOTHIAN)",
     "Census Date": "1871",
     "Census Place": "Dunbar, Dunbar, Haddingtonshire (East Lothian), Scotland",
-    "Source Folio Nbr": "5",
-    "Source Schedule Nbr": "77",
-    "Age": "41",
-    "System Of Record": "SLS"
+    "Age": "41"
   },
   "eventDateOriginal": "1871",
   "eventDate": "1871",
@@ -31,6 +28,8 @@
     "sourcePageNbr": "18",
     "sourceRegNbr": "RG10",
     "filmNumber": "103984",
+    "sourceFolioNumber": "5",
+    "sourceScheduleNumber": "77",
     "sourceLineNbr": "12",
     "digitalFilmNumber": "004549787_005_M9QV-5FL",
     "imageNumber": "104"

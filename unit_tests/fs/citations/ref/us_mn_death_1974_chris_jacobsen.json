@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nEntry for Chris W. Jacobson and Jacobson, 19 Sep 1974.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nEntry for Chris W. Jacobson and Jacobson, 19 Sep 1974.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>Entry for Chris W. Jacobson and Jacobson, 19 Sep 1974.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nChris W Jacobson death 19 Sep 1974 (born 30 Jun 1890), child of Jacobson, in Hennepin, Minnesota.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nChris W Jacobson death 19 Sep 1974 (born 30 Jun 1890), child of Jacobson, in Hennepin, Minnesota.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>Chris W Jacobson death 19 Sep 1974 (born 30 Jun 1890), child of Jacobson, in Hennepin, Minnesota.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nName: Chris W. Jacobson; Death Date: 19 Sep 1974; Death Place: Hennepin, Minnesota; Birth Date: 30 Jun 1890; Misc Flag Typed Or Handwritten: T.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nName: Chris W. Jacobson; Death Date: 19 Sep 1974; Death Place: Hennepin, Minnesota; Birth Date: 30 Jun 1890; Misc Flag Typed Or Handwritten: T.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>Name: Chris W. Jacobson; Death Date: 19 Sep 1974; Death Place: Hennepin, Minnesota; Birth Date: 30 Jun 1890; Misc Flag Typed Or Handwritten: T.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Chris W. Jacobson\n|-\n| Death Date || 19 Sep 1974\n|-\n| Death Place || Hennepin, Minnesota\n|-\n| Birth Date || 30 Jun 1890\n|-\n| Misc Flag Typed Or Handwritten || T\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Chris W. Jacobson\n|-\n| Death Date || 19 Sep 1974\n|-\n| Death Place || Hennepin, Minnesota\n|-\n| Birth Date || 30 Jun 1890\n|-\n| Misc Flag Typed Or Handwritten || T\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>Name: Chris W. Jacobson; Death Date: 19 Sep 1974; Death Place: Hennepin, Minnesota; Birth Date: 30 Jun 1890; Misc Flag Typed Or Handwritten: T.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nEntry for Chris W. Jacobson and Jacobson, 19 Sep 1974.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nEntry for Chris W. Jacobson and Jacobson, 19 Sep 1974.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>Entry for Chris W. Jacobson and Jacobson, 19 Sep 1974.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nChris W Jacobson death 19 Sep 1974 (born 30 Jun 1890), child of Jacobson, in Hennepin, Minnesota.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nChris W Jacobson death 19 Sep 1974 (born 30 Jun 1890), child of Jacobson, in Hennepin, Minnesota.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>Chris W Jacobson death 19 Sep 1974 (born 30 Jun 1890), child of Jacobson, in Hennepin, Minnesota.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nEntry for Chris W. Jacobson and Jacobson, 19 Sep 1974.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Chris, child of Jacobson, died (age 84) on 19 September 1974 in Hennepin, Minnesota.<ref>\n'''Death''':\n\"Minnesota, Death Index, 1908-2002\"<br/>\nciting Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>\n{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>\nEntry for Chris W. Jacobson and Jacobson, 19 Sep 1974.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Death''': \"Minnesota, Death Index, 1908-2002\"<br/>citing Source file name: 022984; Record number: 1924498; Certificate year: 1974; Certificate number: 022984<br/>{{FamilySearch Record|V47K-MBP}} (accessed 6 May 2021)<br/>Entry for Chris W. Jacobson and Jacobson, 19 Sep 1974.",
+    "type": "source"
+  }
+}

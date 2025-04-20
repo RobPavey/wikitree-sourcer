@@ -2072,6 +2072,7 @@ const fieldData = [
   { fieldFsType: "LineNbr", referenceDataField: "lineNumber" },
   { fieldFsType: "RefId", referenceDataField: "referenceId" },
   { fieldFsType: "RecNbr", referenceDataField: "recordNumber" },
+  { fieldFsType: "RecordNbr", referenceDataField: "recordNumber" },
   { fieldFsType: "RecNumber", referenceDataField: "recordNumber" },
   { fieldFsType: "RecordNumber", referenceDataField: "recordNumber" },
   { fieldFsType: "FileNumber", referenceDataField: "fileNumber" },
@@ -2092,6 +2093,17 @@ const fieldData = [
   { fieldFsType: "SourceSheetNbrLtr", referenceDataField: "sheetNumberLetter" },
   { fieldFsType: "SourceSheetNbr", referenceDataField: "sheetNumber" },
   { fieldFsType: "SourceSheetLtr", referenceDataField: "sheetLetter" },
+  { fieldFsType: "SourceRecordNbr", referenceDataField: "sourceRecordNumber" },
+  { fieldFsType: "SourceCertificateNbr", referenceDataField: "certificateNumber" },
+  { fieldFsType: "SourceCertificateYear", referenceDataField: "certificateYear" },
+  { fieldFsType: "SourceVolumeNbr", referenceDataField: "volumeNumber" },
+  { fieldFsType: "SourceReference", referenceDataField: "sourceReference" },
+  { fieldFsType: "SourceScheduleNbr", referenceDataField: "sourceScheduleNumber" },
+  { fieldFsType: "SourceSubScheduleNbr", referenceDataField: "sourceSubScheduleNumber" },
+  { fieldFsType: "SourceFolioNbr", referenceDataField: "sourceFolioNumber" },
+  { fieldFsType: "SourceFolioSuf", referenceDataField: "sourceFolioSuffix" },
+  { fieldFsType: "SourceDocketNbr", referenceDataField: "sourceDocketNumber" },
+  { fieldFsType: "SourceFileName", referenceDataField: "sourceFileName" },
 
   { fieldFsType: "ExtFilmNbr", referenceDataField: "externalFilmNumber" },
   { fieldFsType: "ExtPubNbr", referenceDataField: "externalPublicationNumber" },
@@ -2200,6 +2212,11 @@ const fieldData = [
   { fieldFsTypePrefix: "Fs" },
   { fieldFsTypePrefix: "Idx" },
   { fieldFsTypePrefix: "Nara" },
+
+  { fieldFsTypePrefix: "VisStatus" },
+  { fieldFsTypePrefix: "SystemOfRecord" },
+  { fieldFsTypePrefix: "ImsCtlFileId" },
+  { fieldFsTypePrefix: "ImageDimensions" },
 
   // catchAll
   {

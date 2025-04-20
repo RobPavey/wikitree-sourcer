@@ -5,8 +5,7 @@
     "Birth Place": "Baltimore, Maryland",
     "Age": "22",
     "Age Exp": "22 years",
-    "Age Form": "22",
-    "Source Certificate Nbr": "17602"
+    "Age Form": "22"
   },
   "eventDateOriginal": "04 Jun 1918",
   "eventDate": "4 Jun 1918",
@@ -36,7 +35,8 @@
     "digitalFilmNumber": "004402535",
     "filmNumber": "1308830",
     "packetLetter": "A",
-    "recordNumber": "118"
+    "recordNumber": "118",
+    "certificateNumber": "17602"
   },
   "fsImageNumber": "00118",
   "collectionTitle": "Illinois, Cook County, Birth Certificates, 1871-1949",

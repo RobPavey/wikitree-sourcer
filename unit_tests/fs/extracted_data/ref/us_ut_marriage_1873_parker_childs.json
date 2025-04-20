@@ -4,7 +4,6 @@
     "Marriage Date": "4 Mar 1873",
     "Marriage Place": "Springville, Utah, Utah, United States",
     "Marriage Id": "242974",
-    "Source Volume Nbr": "5",
     "Misc Note": "Source: LDS Genealogical Surveys (FHL 1,059,455)",
     "Event Place Year Range": "1858-1912"
   },
@@ -25,6 +24,7 @@
   "spouseSurname": "Coats",
   "spouseGender": "female",
   "referenceData": {
+    "volumeNumber": "5",
     "sourcePageNbr": "371"
   },
   "fsCollectionId": "1854302",

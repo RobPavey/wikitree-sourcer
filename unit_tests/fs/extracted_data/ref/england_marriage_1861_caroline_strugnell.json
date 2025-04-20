@@ -7,9 +7,7 @@
     "Birth Date": "1826",
     "Age": "35 years",
     "Marriage Date": "14 January 1861",
-    "Marriage Place": "St Peter St Paul And St Andrew's Cathedral, Peterborough, Northamptonshire, England, United Kingdom",
-    "Source Reference": "CHU 43/1C/6",
-    "System Of Record": "SLS"
+    "Marriage Place": "St Peter St Paul And St Andrew's Cathedral, Peterborough, Northamptonshire, England, United Kingdom"
   },
   "fullName": "Caroline Strugnell",
   "givenName": "Caroline",
@@ -46,6 +44,7 @@
   "externalRecordId": "GBPRS/PORTSMOUTH/MAR/00070107/2",
   "referenceData": {
     "sourcePageNbr": "247",
+    "sourceReference": "CHU 43/1C/6",
     "externalRepositoryName": "Portsmouth History Centre",
     "digitalFilmNumber": "008061860",
     "imageNumber": "447"

@@ -7,10 +7,7 @@
     "Birth Date": "1828",
     "Birth Place": "Glasgow, LANARKSHIRE",
     "Misc Flag Inhabited": "Y",
-    "Source Schedule Nbr": "112",
-    "Source Folio Nbr": "2",
-    "Age": "33",
-    "System Of Record": "SLS"
+    "Age": "33"
   },
   "eventDateOriginal": "1861",
   "eventDate": "1861",
@@ -31,6 +28,8 @@
   "referenceData": {
     "filmNumber": "103866",
     "sourcePageNbr": "22",
+    "sourceScheduleNumber": "112",
+    "sourceFolioNumber": "2",
     "sourceRegNbr": "RG09",
     "sourceLineNbr": "24",
     "digitalFilmNumber": "004548765_006_M93P-DRX",

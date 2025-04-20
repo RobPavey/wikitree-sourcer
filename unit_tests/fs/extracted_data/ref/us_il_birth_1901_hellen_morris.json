@@ -4,10 +4,7 @@
     "Birth Registration Date": "26 Jun 1925",
     "Birth Registration Place": "Cook, Illinois, United States",
     "Birth Date": "23 Nov 1901",
-    "Birth Place": "Chicago, Cook, Illinois, United States",
-    "Source Certificate Nbr": "16881",
-    "Vis Status": "VISIBLE",
-    "System Of Record": "SLS"
+    "Birth Place": "Chicago, Cook, Illinois, United States"
   },
   "fullName": "Hellen Muriel Morris",
   "givenName": "Hellen Muriel",
@@ -35,11 +32,12 @@
     "surname": "Morris",
     "link": "https://www.familysearch.org/ark:/61903/1:1:QKDC-1YH9"
   },
-  "extData": "{\"FS_COLLECTION_ID\":\"1462519\",\"FS_FOLDER\":\"100713512\"}",
   "referenceData": {
+    "certificateNumber": "16881",
     "digitalFilmNumber": "100713512",
     "imageNumber": "388"
   },
+  "extData": "{\"FS_COLLECTION_ID\":\"1462519\",\"FS_FOLDER\":\"100713512\"}",
   "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:Q2KF-5KB4",
   "collectionTitle": "Illinois, Cook County, Birth Certificates, 1871-1949",
   "fsCollectionId": "1462519",

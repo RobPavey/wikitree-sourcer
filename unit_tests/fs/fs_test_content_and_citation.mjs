@@ -405,6 +405,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:MQ67-PZS",
   },
   {
+    caseName: "us_mn_death_1974_chris_jacobsen",
+    url: "https://www.familysearch.org/ark:/61903/1:1:V47K-MBP?lang=en",
+  },
+  {
     caseName: "us_mn_spouse_death_1955_jennie_eneboe",
     url: "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ?treeref=9ZF5-1VJ",
   },

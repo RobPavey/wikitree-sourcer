@@ -3,11 +3,7 @@
     "Name": "Ada M Everett",
     "Marriage Date": "28 Sep 1881",
     "Divorce Date": "3 Oct 1910",
-    "Divorce Place": "Teller, Colorado, United States",
-    "Vis Status": "VISIBLE",
-    "Record Nbr": "0",
-    "Source Docket Nbr": "2669",
-    "System Of Record": "SLS"
+    "Divorce Place": "Teller, Colorado, United States"
   },
   "fullName": "Ada M Everett",
   "surname": "Everett",
@@ -24,6 +20,8 @@
   "factType": "Divorce",
   "extData": "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3QSQ-G9WB-CGLL\",\"FS_COLLECTION_ID\":\"2043439\"}",
   "referenceData": {
+    "recordNumber": "0",
+    "sourceDocketNumber": "2669",
     "digitalFilmNumber": "007192059",
     "imageNumber": "4127"
   },

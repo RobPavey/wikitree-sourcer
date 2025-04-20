@@ -5,8 +5,7 @@
     "Death Place": "Salt Lake City, Salt Lake, Utah, United States",
     "Birth Date": "1923",
     "Marital Status": "Married",
-    "Age": "36",
-    "Source Certificate Nbr": "59 18 1754"
+    "Age": "36"
   },
   "fullName": "Virginia Reynolds Vigus",
   "givenName": "Virginia Reynolds",
@@ -46,7 +45,8 @@
   "fsCollectionId": "1747615",
   "referenceData": {
     "digitalFilmNumber": "101152037",
-    "filmNumber": "101152037"
+    "filmNumber": "101152037",
+    "certificateNumber": "59 18 1754"
   },
   "fsImageNumber": "00009",
   "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:3Q9M-C9T2-WSNS-B",

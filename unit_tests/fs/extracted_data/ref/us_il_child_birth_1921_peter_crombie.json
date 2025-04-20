@@ -2,10 +2,7 @@
   "recordData": {
     "Name": "Peter Blyth Crombie",
     "Birth Date": "1880",
-    "Age": "41",
-    "Source Certificate Nbr": "62112",
-    "Vis Status": "VISIBLE",
-    "System Of Record": "SLS"
+    "Age": "41"
   },
   "eventPlaceOriginal": "Cook, Illinois",
   "eventPlace": "Cook, Illinois, United States",
@@ -25,6 +22,7 @@
   "relatedPersonBirthDate": "12 May 1921",
   "relatedPersonBirthYear": "1921",
   "referenceData": {
+    "certificateNumber": "62112",
     "filmNumber": "1379094",
     "indexingBatchNumber": "C05571-7",
     "packetLetter": "A",

@@ -4,8 +4,7 @@
     "Passport Application Date": "1914",
     "Birth Date": "27 Aug 1885",
     "Birth Place": "Pennsylvania",
-    "Age": "29",
-    "Source Certificate Nbr": "43563"
+    "Age": "29"
   },
   "fullName": "Edward Digby Baltzell",
   "givenName": "Edward Digby",
@@ -25,7 +24,8 @@
     "externalPublicationNumber": "M1490",
     "externalPublicationTitle": "Passport Applications, January 2, 1906 - March 31, 1925",
     "digitalFilmNumber": "007574955",
-    "filmNumber": "1514005"
+    "filmNumber": "1514005",
+    "certificateNumber": "43563"
   },
   "fsCollectionId": "2185145",
   "fsImageNumber": "00106",

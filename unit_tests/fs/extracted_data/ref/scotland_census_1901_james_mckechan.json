@@ -12,8 +12,6 @@
     "Code Employed": "W",
     "Inhabited Flag": "1",
     "Relationship To Head": "HEAD",
-    "Source Folio Suf": "18",
-    "Source Schedule Nbr": "142",
     "Source Street Address1": "NEW STREET"
   },
   "fullName": "James McKechan",
@@ -36,9 +34,11 @@
   "externalRecordId": "GBC/1901/0036519417",
   "externalUir": "1625997",
   "referenceData": {
+    "sourceFolioSuffix": "18",
     "sourceLineNbr": "9",
     "sourcePageNbr": "33",
     "sourcePieceFolio": "3",
+    "sourceScheduleNumber": "142",
     "digitalFilmNumber": "DI0001028"
   },
   "household": {

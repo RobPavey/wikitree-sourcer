@@ -5,9 +5,7 @@
     "Religion": "Anglican",
     "Residence Place": "Great Casterton",
     "Marriage Banns Date": "1799",
-    "Marriage Banns Place": "Great Casterton with Pickworth, Rutland, England, United Kingdom",
-    "Source Record Nbr": "GBPRS/LEICS/BANNS/00119979/2",
-    "Source Reference": "DE2343/3"
+    "Marriage Banns Place": "Great Casterton with Pickworth, Rutland, England, United Kingdom"
   },
   "fullName": "Ann Brian",
   "givenName": "Ann",
@@ -25,7 +23,9 @@
   "spouseSurname": "Skellet",
   "referenceData": {
     "externalRepositoryName": "The Record Office For Leicestershire, Leicester & Rutland",
-    "digitalFilmNumber": "102302752"
+    "digitalFilmNumber": "102302752",
+    "sourceRecordNumber": "GBPRS/LEICS/BANNS/00119979/2",
+    "sourceReference": "DE2343/3"
   },
   "fsCollectionId": "2821293",
   "fsImageNumber": "00039",

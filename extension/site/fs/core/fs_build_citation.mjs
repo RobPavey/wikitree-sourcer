@@ -354,20 +354,38 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
     addValue("Affiliate Publication Number", refData.externalPublicationNumber);
     addValue("Affiliate Film Number", refData.externalFilmNumber);
 
-    addValue("Line", refData.sourceLineNbr);
+    addValue("Line", refData.lineNumber);
+    if (refData.sourceLineNbr != refData.lineNumber && refData.sourceLineNbr != refData.externalLineNumber) {
+      addValue("Line", refData.sourceLineNbr);
+    }
     if (refData.externalLineNumber != refData.sourceLineNbr) {
       addValue("Affiliate Line Number", refData.externalLineNumber);
-    }
-    if (refData.sourceLineNbr != refData.sourceLineNbr && refData.sourceLineNbr != refData.externalLineNumber) {
-      addValue("Source line number", refData.sourceLineNbr);
     }
     addValue("Entry", refData.sourceEntryNbr);
 
     addValue("Reference", refData.referenceId);
+    if (refData.sourceReference != refData.referenceId) {
+      addValue("Reference", refData.sourceReference);
+    }
+
+    addValue("Source Schedule Number", refData.sourceScheduleNumber);
+    addValue("Source Sub-schedule Number", refData.sourceSubScheduleNumber);
+    addValue("Source Folio Number", refData.sourceFolioNumber);
+    addValue("Source Folio Suffix", refData.sourceFolioSuffix);
+    addValue("Source docket number", refData.sourceDocketNumber);
+    addValue("Source file name", refData.sourceFileName);
+
     addValue("Digital film/folder number", refData.digitalFilmNumber);
     addValue("FHL microfilm", refData.filmNumber);
     addValue("Image number", refData.imageNumber);
     addValue("Record number", refData.recordNumber);
+    if (!refData.recordNumber) {
+      addValue("Record number", refData.sourceRecordNumber);
+    }
+    addValue("Certificate year", refData.certificateYear);
+    addValue("Certificate number", refData.certificateNumber);
+
+    addValue("Volume number", refData.volumeNumber);
     addValue("Sheet number", refData.sheetNumber);
     addValue("Sheet letter", refData.sheetLetter);
     addValue("Packet letter", refData.packetLetter);

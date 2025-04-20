@@ -1,7 +1,6 @@
 {
   "recordData": {
-    "Name": "Jennie Eggn Eneboe",
-    "Source Certificate Nbr": "011102"
+    "Name": "Jennie Eggn Eneboe"
   },
   "eventDateOriginal": "20 May 1955",
   "eventDate": "20 May 1955",
@@ -21,7 +20,8 @@
   "fsCollectionId": "3398461",
   "referenceData": {
     "digitalFilmNumber": "004225434",
-    "recordNumber": "0"
+    "recordNumber": "0",
+    "certificateNumber": "011102"
   },
   "fsImageNumber": "00697",
   "fsImageUrl": "https://familysearch.org/ark:/61903/3:1:S3HT-67Q9-R1Z",

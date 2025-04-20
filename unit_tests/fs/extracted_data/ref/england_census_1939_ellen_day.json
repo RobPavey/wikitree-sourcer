@@ -6,10 +6,7 @@
     "Birth Date": "10 Dec 1899",
     "Marital Status": "Married",
     "Occupation": "Unpaid Domestic Duties",
-    "Age": "40",
-    "Source Reference": "RG101/1041C/011/15",
-    "Source Schedule Nbr": "137",
-    "Source Sub Schedule Nbr": "2"
+    "Age": "40"
   },
   "eventDateOriginal": "29 Sep 1939",
   "eventDate": "29 Sep 1939",
@@ -32,6 +29,9 @@
   "referenceData": {
     "sourceEntryNbr": "011",
     "sourceLineNbr": "15",
+    "sourceReference": "RG101/1041C/011/15",
+    "sourceScheduleNumber": "137",
+    "sourceSubScheduleNumber": "2",
     "digitalFilmNumber": "DI0001004"
   },
   "household": {

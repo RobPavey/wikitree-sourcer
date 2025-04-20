@@ -7,10 +7,7 @@
     "Census Place": "Tradeston, Lanarkshire, Scotland",
     "Birth Date": "1820",
     "Birth Place": "Lanarkshire",
-    "Age": "51",
-    "Source Folio Nbr": "30",
-    "Source Schedule Nbr": "14",
-    "System Of Record": "SLS"
+    "Age": "51"
   },
   "fullName": "Alexander Auld",
   "givenName": "Alexander",
@@ -28,8 +25,10 @@
   "birthPlace": "Lanarkshire",
   "age": "51",
   "referenceData": {
+    "sourceFolioNumber": "30",
     "sourcePageNbr": "2",
     "filmNumber": "104032",
+    "sourceScheduleNumber": "14",
     "sourceRegNbr": "RG10",
     "sourceLineNbr": "20",
     "digitalFilmNumber": "004549834",

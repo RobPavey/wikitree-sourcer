@@ -2,9 +2,7 @@
   "recordData": {
     "Name": "Harp Cox",
     "Marriage Notice Date": "23 Apr 1938",
-    "Marriage Notice Place": "Baxter, Arkansas, United States",
-    "Source Certificate Nbr": "30230",
-    "Source Volume Nbr": "151"
+    "Marriage Notice Place": "Baxter, Arkansas, United States"
   },
   "fullName": "Harp Cox",
   "givenName": "Harp",
@@ -21,7 +19,9 @@
   "spouseGivenName": "Ora",
   "spouseSurname": "Thacker",
   "referenceData": {
-    "externalFilmNumber": "0001"
+    "externalFilmNumber": "0001",
+    "certificateNumber": "30230",
+    "volumeNumber": "151"
   },
   "fsCollectionId": "1940215",
   "collectionTitle": "Arkansas Marriage Index, 1933-1939",

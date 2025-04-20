@@ -4,8 +4,7 @@
     "Birth Date": "1874",
     "Age": "28",
     "Marriage Date": "19 Feb 1902",
-    "Marriage Place": "Liverpool, Lancashire, England, United Kingdom",
-    "Source Reference": "Items 3-8"
+    "Marriage Place": "Liverpool, Lancashire, England, United Kingdom"
   },
   "fullName": "Beatrice Ellen Fairchild",
   "givenName": "Beatrice Ellen",
@@ -41,7 +40,8 @@
   "referenceData": {
     "digitalFilmNumber": "004484303",
     "filmNumber": "1546076",
-    "recordNumber": "828823"
+    "recordNumber": "828823",
+    "sourceReference": "Items 3-8"
   },
   "collectionTitle": "England Marriages, 1538–1973",
   "fsCollectionId": "1473015",
