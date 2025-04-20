@@ -2428,10 +2428,19 @@ class NarrativeBuilder {
         this.narrative += " residing " + this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj);
       }
     } else if (eventDateObj) {
-      if (dateIsWrittenDate) {
-        this.narrative += possessiveName + " will was written";
+      if (gd.role && gd.role != Role.Primary) {
+        let possessiveName = this.getPossessiveNamePlusPrimaryPerson();
+        if (dateIsWrittenDate) {
+          this.narrative += "The will of " + possessiveName + " was written";
+        } else {
+          this.narrative += "The estate of " + possessiveName + " passed probate";
+        }
       } else {
-        this.narrative += possessiveName + " estate passed probate";
+        if (dateIsWrittenDate) {
+          this.narrative += possessiveName + " will was written";
+        } else {
+          this.narrative += possessiveName + " estate passed probate";
+        }
       }
       this.addDateWithPreposition(eventDateObj);
       if (eventPlaceObj) {

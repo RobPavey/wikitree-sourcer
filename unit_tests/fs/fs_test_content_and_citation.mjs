@@ -262,6 +262,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5?count=20&f.recordType=1&q.givenName=archibald&q.recordCountry=Scotland&q.recordSubcountry=Scotland%2CDumfriesshire&q.surname=saunders",
   },
   {
+    caseName: "sa_probate_1925_johanna_faul",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QLKL-3F9B?lang=en",
+  },
+  {
     caseName: "teresa_fitchie_death_2002",
     url: "https://www.familysearch.org/ark:/61903/1:1:CGGS-5YZM",
   },

@@ -359,6 +359,14 @@ function determineRecordTypeAndRole(extractedData, result) {
     } else {
       result.role = Role.Other;
     }
+  } else if (extractedData.recordData && extractedData.recordData["Relationship To Head"]) {
+    if (recordType != RT.Census) {
+      // example record: https://www.familysearch.org/ark:/61903/1:1:QLKL-3F9B?lang=en
+      let relationship = extractedData.recordData["Relationship To Head"];
+      if (relationship == "Spouse") {
+        result.role = Role.Spouse;
+      }
+    }
   }
 
   result.recordType = recordType;
