@@ -1225,6 +1225,15 @@ function generalizeData(input) {
   result.setDeathPlace(deathPlace);
 
   let eventDate = selectDate(ed.eventDate, ed.eventDateOriginal);
+
+  if (eventDate && ed.eventYear) {
+    // occasionally the event date is missing the year and should have it added
+    // E.g. https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC?lang=en
+    if (!eventDate.includes(ed.eventYear)) {
+      eventDate += " " + ed.eventYear;
+    }
+  }
+
   result.setEventDate(eventDate);
   result.setEventYear(ed.eventYear);
 

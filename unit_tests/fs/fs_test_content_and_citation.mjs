@@ -163,6 +163,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:N1N6-6JS?from=lynx1UIV8&treeref=MMVG-Z3H",
   },
   {
+    caseName: "england_spouse_obituary_1943_nicholas_roseveare",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC?lang=en",
+  },
+  {
     caseName: "germany_child_burial_1858_casimirus_sobczak",
     url: "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPT",
   },

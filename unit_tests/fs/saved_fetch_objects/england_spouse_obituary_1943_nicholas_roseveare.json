@@ -1,0 +1,1459 @@
+{
+  "id" : "r_106286792386",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1697726023957,
+    "created" : 1697726023957
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QRPB-4R1N?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QRPB-4R1N?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:QRPB-4R1N"
+    }
+  },
+  "description" : "#sd_p_104494792179",
+  "persons" : [ {
+    "id" : "p_104494792169",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "2f68cfd1-6a61-4759-ab50-2e9d532e945c",
+        "attribution" : {
+          "modified" : 1697726023957,
+          "created" : 1697726023957
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "36e01127-cb81-4ba2-915e-86b8a9c7aed7",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "F"
+        }, {
+          "id" : "36e01127-cb81-4ba2-915e-86b8a9c7aed7",
+          "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Gender?version=1.0.3"
+            },
+            "modified" : 1709677827599,
+            "created" : 1709677827599
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female",
+          "qualifiers" : [ {
+            "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+            "name" : "StdQualifier"
+          } ]
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QPZ7-YXV1?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QRPB-4R1N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXV1" ]
+    },
+    "names" : [ {
+      "id" : "692f35da-1624-4bd6-aabb-f25a2cc2a436",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1697726023957,
+        "created" : 1697726023957
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Jemima Grace Roseveare, Widow",
+        "parts" : [ {
+          "id" : "1a25e6b7-4ccb-416e-83f4-701a90e0cfad",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Roseveare",
+          "fields" : [ {
+            "id" : "f82cc12d-2d65-4d10-ac98-6e1810e2b613",
+            "attribution" : {
+              "modified" : 1697726023957,
+              "created" : 1697726023957
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "bd42ae14-a49c-4ebf-a0c6-e0c8dd60a388",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Roseveare"
+            }, {
+              "id" : "bd42ae14-a49c-4ebf-a0c6-e0c8dd60a388",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                },
+                "modified" : 1555489650468,
+                "created" : 1555489650468
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Roseveare",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FLS&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "7addd341-f1c2-49d2-86b5-2409d12ec271",
+          "type" : "http://gedcomx.org/Suffix",
+          "value" : "Widow",
+          "fields" : [ {
+            "id" : "07ffe101-978c-439d-b428-f1b8f2907c3a",
+            "attribution" : {
+              "modified" : 1697726023957,
+              "created" : 1697726023957
+            },
+            "type" : "http://gedcomx.org/Suffix",
+            "values" : [ {
+              "id" : "eae9ab49-8a2f-4a18-9da9-f2b88e5e2c5e",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1555489650468,
+                "created" : 1555489650468
+              },
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SUF_ORIG",
+              "text" : "Widow"
+            }, {
+              "id" : "eae9ab49-8a2f-4a18-9da9-f2b88e5e2c5e",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://treatment/NameTreatment/ver/1"
+                },
+                "modified" : 1555489650518,
+                "created" : 1555489650518
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SUF",
+              "text" : "Widow"
+            }, {
+              "id" : "eae9ab49-8a2f-4a18-9da9-f2b88e5e2c5e",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                },
+                "modified" : 1555489650468,
+                "created" : 1555489650468
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SUF",
+              "text" : "Widow",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FLS&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "66f40cdf-e6c1-4606-b16d-623eb4f5ce0b",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Jemima Grace",
+          "fields" : [ {
+            "id" : "9b98efcc-e2a7-4eb1-a98c-3e9d31745afc",
+            "attribution" : {
+              "modified" : 1697726023957,
+              "created" : 1697726023957
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "02498a05-2c9e-4e94-8f82-fc7f883324f6",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Jemima Grace"
+            }, {
+              "id" : "02498a05-2c9e-4e94-8f82-fc7f883324f6",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                },
+                "modified" : 1555489650468,
+                "created" : 1555489650468
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Jemima Grace",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FLS&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "ea905519-5f16-49f3-90d7-8404224c6803",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            },
+            "modified" : 1555489650468,
+            "created" : 1555489650468
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "49cf58f5-d66f-41f6-8b87-89a173152946",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              },
+              "modified" : 1555489650468,
+              "created" : 1555489650468
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_NAME_ORIG",
+            "text" : "Jemima Grace Roseveare, Widow"
+          }, {
+            "id" : "49cf58f5-d66f-41f6-8b87-89a173152946",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=98&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              },
+              "modified" : 1555489650468,
+              "created" : 1555489650468
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Jemima Grace Roseveare, Widow",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FLS&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "b8aef90f-f538-48f7-99bc-ddec4b02be26",
+      "attribution" : {
+        "modified" : 1697726023957,
+        "created" : 1697726023957
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "id" : "7f934f3f-82f8-4691-a01f-5f03904faefd",
+        "original" : "12 December 1943",
+        "formal" : "+1943-12-12",
+        "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+        "fields" : [ {
+          "id" : "e603c2f9-fa12-4e99-81ca-be6ba83170f6",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "90c83e4c-152f-4d47-87e8-137445435e0e",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1555489650468,
+              "created" : 1555489650468
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_MONTH",
+            "text" : "12"
+          } ]
+        }, {
+          "id" : "a06b4ca4-7d85-4dd6-a2a7-e4d68aa0dd48",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1555489650468,
+            "created" : 1555489650468
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "a60bcd86-9d04-4dad-b09a-7444020c01be",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_DEA_DATE_ORIG",
+            "text" : "12 Dec 1943"
+          }, {
+            "id" : "a60bcd86-9d04-4dad-b09a-7444020c01be",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+              },
+              "modified" : 1555489650468,
+              "created" : 1555489650468
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_DATE",
+            "text" : "12 December 1943",
+            "resource" : "+1943-12-12",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "f57c43de-33f9-4264-9512-725828967034",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "ac690f21-37a3-4df3-80d7-a2d09312d109",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1555489650468,
+              "created" : 1555489650468
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_DAY",
+            "text" : "12"
+          } ]
+        }, {
+          "id" : "deb8d0a0-fe75-4f2d-97e1-cdab0ee1556f",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "6f847bbb-c790-404c-b96d-6131dcd75001",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1555489650468,
+              "created" : 1555489650468
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_DEA_YEAR",
+            "text" : "1943"
+          } ]
+        } ]
+      }
+    }, {
+      "id" : "27603f96-83d3-441d-b16b-69d11cb4b495",
+      "attribution" : {
+        "modified" : 1697726023957,
+        "created" : 1697726023957
+      },
+      "type" : "http://gedcomx.org/Obituary",
+      "date" : {
+        "id" : "144b25e5-b33c-45e6-bae7-c562fcc2e105",
+        "original" : "12 Dec",
+        "fields" : [ {
+          "id" : "2bc09817-ccd5-4ae9-b50e-8c121cf6c118",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "64b83bd7-45b6-4539-a84d-9da1b03ad338",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Dec"
+          } ]
+        }, {
+          "id" : "1a5ba5d8-68ad-49a1-adba-1be1e0bfaef9",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/Date?version=1.3.1"
+            },
+            "modified" : 1555489650464,
+            "created" : 1555489650464
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "64c0e7a4-4104-4e18-b22d-38d1d8394770",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "12 Dec"
+          } ]
+        }, {
+          "id" : "e7b9b6b2-3b33-49ec-91d1-79a6286c17ad",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "767fa365-7f3f-4e15-83ca-c25929f4d4e5",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "12"
+          } ]
+        }, {
+          "id" : "670d33fc-c112-4973-b440-68eb51a3ee45",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "f3791c2e-e7a2-4287-ace6-3524533b56ee",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/StandardsDateTreatmentV2/ver/2"
+              },
+              "modified" : 1555489650464,
+              "created" : 1555489650464
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1943"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "63124691-7f25-4e4e-8db6-02d92672c1b7",
+        "original" : "Plymouth, Devon, England, United Kingdom",
+        "confidence" : "http://confidence/94",
+        "description" : "#place_3041150",
+        "fields" : [ {
+          "id" : "6f4e0231-0117-4c71-818c-bd8d401e9e9b",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "9f7a9bbc-aade-449a-8eb9-88590ce45979",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Devon"
+          } ]
+        }, {
+          "id" : "7f94749b-2082-43aa-a5ba-baf744fcd38c",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/Country",
+          "values" : [ {
+            "id" : "effbaf61-9913-488b-aca1-a9e6bf50bfd2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTRY_ORIG",
+            "text" : "England"
+          } ]
+        }, {
+          "id" : "4d627b02-5be2-4673-b9a9-4a36b8c72b3b",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "d41ab670-90e4-4315-94e7-d5eaa1f471cd",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Plymouth, Devon, England"
+          }, {
+            "id" : "d41ab670-90e4-4315-94e7-d5eaa1f471cd",
+            "confidence" : "http://confidence/94",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://treatment/LocalityTreatment/ver/1"
+              },
+              "modified" : 1555489650606,
+              "created" : 1555489650606
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Plymouth, Devon, England, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/3041150",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            }, {
+              "value" : "1014, 1010, 1013",
+              "name" : "StdQualifier"
+            } ]
+          }, {
+            "id" : "d41ab670-90e4-4315-94e7-d5eaa1f471cd",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=90&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/Locality?version=1.4.1"
+              },
+              "modified" : 1709677827599,
+              "created" : 1709677827599
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_PLACE",
+            "text" : "Plymouth, Devon, England, United Kingdom",
+            "resource" : "https://www.familysearch.org/platform/places/description/3041150",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=HE,CLF&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        }, {
+          "id" : "58eef5e0-402e-4e40-88bd-b3ef7c5476fd",
+          "attribution" : {
+            "modified" : 1697726023957,
+            "created" : 1697726023957
+          },
+          "type" : "http://gedcomx.org/Parish",
+          "values" : [ {
+            "id" : "74392a33-012f-412c-98ae-f4075ac74c1b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PARISH_ORIG",
+            "text" : "Plymouth"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "bd2c7454-d00b-4ae8-98cd-433c8114af87",
+        "attribution" : {
+          "modified" : 1697726023957,
+          "created" : 1697726023957
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "07e5df65-594d-40f3-bc84-88784e116fa1",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Obituary",
+          "resource" : "http://gedcomx.org/Obituary"
+        }, {
+          "id" : "07e5df65-594d-40f3-bc84-88784e116fa1",
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "EVENT_TYPE",
+          "text" : "Obituary",
+          "resource" : "http://gedcomx.org/Obituary"
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "dfaf1ac0-1a48-4225-a5de-78e8fa10435c",
+      "attribution" : {
+        "modified" : 1697726023957,
+        "created" : 1697726023957
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "384b35aa-c545-4cbf-946b-c9a3f9cda803",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000102117936_00595_00031_0000106286792386_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Jemima Grace Roseveare, Widow",
+      "gender" : "Female",
+      "deathDate" : "12 December 1943"
+    }
+  }, {
+    "id" : "p_104494792174",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "bb2f3700-af0c-48f6-b51d-f3aff4b22429",
+        "attribution" : {
+          "modified" : 1697726023957,
+          "created" : 1697726023957
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "e4f1ec69-d8b9-4bfe-85f5-3f2d5d765d8b",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1698414126417,
+            "created" : 1698414126417
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_FTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QPZ7-YXKQ?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QRPB-4R1N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKQ" ]
+    },
+    "names" : [ {
+      "id" : "2b0deacf-3f49-4965-886a-b9fce4973041",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1697726023957,
+        "created" : 1697726023957
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Henry Maynard",
+        "parts" : [ {
+          "id" : "9246cbd0-a85e-434b-960b-8792aa99cac8",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Maynard",
+          "fields" : [ {
+            "id" : "bd91aff3-a732-4bc2-a460-45c0518ce966",
+            "attribution" : {
+              "modified" : 1697726023957,
+              "created" : 1697726023957
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "db6498a8-8f48-475f-b299-e4eed4a6520e",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_SURN_ORIG",
+              "text" : "Maynard"
+            }, {
+              "id" : "db6498a8-8f48-475f-b299-e4eed4a6520e",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_SURN",
+              "text" : "Maynard",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "547431f8-e070-4674-8940-1291473b8491",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Henry",
+          "fields" : [ {
+            "id" : "8211d9e7-ce46-411a-8b0f-aef8afa34a09",
+            "attribution" : {
+              "modified" : 1697726023957,
+              "created" : 1697726023957
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "ebd0e7ed-8f1a-4ab4-af4b-c683d0d9735e",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_FTHR_NAME_GN_ORIG",
+              "text" : "Henry"
+            }, {
+              "id" : "ebd0e7ed-8f1a-4ab4-af4b-c683d0d9735e",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_FTHR_NAME_GN",
+              "text" : "Henry",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "a84bff48-8e9c-41d1-aa43-b131c2945bab",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "9a07d2ca-6099-4045-bdbd-9733e9e0ad26",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_FTHR_NAME_ORIG",
+            "text" : "Henry Maynard"
+          }, {
+            "id" : "9a07d2ca-6099-4045-bdbd-9733e9e0ad26",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_FTHR_NAME",
+            "text" : "Henry Maynard",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "77def96f-8a3c-44b5-9ed4-76eb6d51d909",
+      "attribution" : {
+        "modified" : 1697726023957,
+        "created" : 1697726023957
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "13239167-729b-4c69-990a-b7d7760acfd2",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000102117936_00595_00031_0000106286792386_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Henry Maynard",
+      "gender" : "Male"
+    }
+  }, {
+    "id" : "p_104494792179",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "extracted" : true,
+    "principal" : false,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/QPZ7-YXKC?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/QRPB-4R1N?flag=fsh"
+      }
+    },
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC" ]
+    },
+    "names" : [ {
+      "id" : "56000719-9e3f-42ad-80b6-027d66806ed3",
+      "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+      "attribution" : {
+        "modified" : 1697726023957,
+        "created" : 1697726023957
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Nicholas Roseveare",
+        "parts" : [ {
+          "id" : "32893ef7-2b1d-47c3-8ac7-7296a4614d32",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Roseveare",
+          "fields" : [ {
+            "id" : "ba50237e-45c8-4f29-b0e0-39ce4a368928",
+            "attribution" : {
+              "modified" : 1697726023957,
+              "created" : 1697726023957
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "b31d07bd-e5ba-470d-af5d-19866ccc8fa1",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Roseveare"
+            }, {
+              "id" : "b31d07bd-e5ba-470d-af5d-19866ccc8fa1",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Roseveare",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        }, {
+          "id" : "0c118838-283f-4437-a6cb-c6179c5dbb66",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Nicholas",
+          "fields" : [ {
+            "id" : "c3366b23-0ab0-4219-a203-64d058ee209d",
+            "attribution" : {
+              "modified" : 1697726023957,
+              "created" : 1697726023957
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "6394d3cf-4448-4d6c-8b39-2fe8638d05a5",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Nicholas"
+            }, {
+              "id" : "6394d3cf-4448-4d6c-8b39-2fe8638d05a5",
+              "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+              "attribution" : {
+                "contributor" : {
+                  "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+                }
+              },
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Nicholas",
+              "qualifiers" : [ {
+                "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+                "name" : "StdQualifier"
+              } ]
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "cffbe6f4-573d-4f6a-a1bc-4741112b8936",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+            }
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "325501cc-f040-44e7-b79b-5f5cd9d7f6bc",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_NAME_ORIG",
+            "text" : "Nicholas Roseveare"
+          }, {
+            "id" : "325501cc-f040-44e7-b79b-5f5cd9d7f6bc",
+            "confidence" : "http://familysearch.org/types/confidenceLevels?fieldValueScore=100&fieldScorerVersion=1.0.0",
+            "attribution" : {
+              "contributor" : {
+                "resource" : "http://familysearch.org/treatments/sls/NameTreatment?version=1.3.0"
+              }
+            },
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Nicholas Roseveare",
+            "qualifiers" : [ {
+              "value" : "http://familysearch.org/types/proof?fieldScoringAnnotations=NG:FL&fieldScorerVersion=1.0.0",
+              "name" : "StdQualifier"
+            } ]
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "6293d1c5-b6dc-411a-b6f4-57e69e692bda",
+      "attribution" : {
+        "modified" : 1697726023957,
+        "created" : 1697726023957
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "8b616b6f-ceeb-4ae7-840d-3cfa34fcbf29",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "0000000102117936_00595_00031_0000106286792386_002"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Nicholas Roseveare"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "f1c2951f-85f0-4c13-89a1-ef4e8bbffd64",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_104494792169",
+      "resourceId" : "p_104494792169"
+    },
+    "person2" : {
+      "resource" : "#p_104494792179",
+      "resourceId" : "p_104494792179"
+    }
+  }, {
+    "id" : "39c048b9-3872-4e4b-a3af-a7ff94508ba6",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_104494792174",
+      "resourceId" : "p_104494792174"
+    },
+    "person2" : {
+      "resource" : "#p_104494792169",
+      "resourceId" : "p_104494792169"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_106286792386",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:QRPB-4R1N",
+    "componentOf" : {
+      "description" : "#sd_c_2562514",
+      "descriptionId" : "sd_c_2562514"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1697726023957,
+    "modified" : 1709833846749,
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Death"
+    } ],
+    "citations" : [ {
+      "value" : "\"British Newspaper Archive, Family Notices\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXV1 : Thu Mar 07 17:50:46 UTC 2024), Entry for Jemima Grace Roseveare, Widow and Henry Maynard, 12 Dec."
+    } ],
+    "sources" : [ {
+      "description" : "#sd_da1",
+      "descriptionId" : "sd_da1"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Jemima Grace Roseveare, Widow, \"British Newspaper Archive, Family Notices\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/14239478617" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:QRPB-4R1N" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2562514?arkName=1:2:QRPB-4R1N"
+    }
+  }, {
+    "id" : "sd_c_2562514",
+    "about" : "https://www.familysearch.org/platform/records/collections/2562514",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1492529240260,
+    "modified" : 1737793402105,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "United Kingdom",
+        "description" : "https://www.familysearch.org/platform/places/description/56"
+      },
+      "temporal" : {
+        "original" : "1710/1959",
+        "formal" : "+1710/+1959"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    }, {
+      "spatial" : {
+        "original" : "United Kingdom",
+        "description" : "https://www.familysearch.org/platform/places/description/56"
+      },
+      "temporal" : {
+        "original" : "1710/1959",
+        "formal" : "+1710/+1959"
+      },
+      "recordType" : "http://gedcomx.org/Obituary"
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "British Newspaper Archive, Family Notices"
+    }, {
+      "lang" : "zh",
+      "value" : "英國報紙檔案館，家庭通知"
+    }, {
+      "lang" : "fr",
+      "value" : "British Newspaper Archive, Family Notices"
+    }, {
+      "lang" : "ru",
+      "value" : "Архив британских газет, семейные заметки"
+    }, {
+      "lang" : "no",
+      "value" : "British Newspaper Archive, Familieregistre"
+    }, {
+      "lang" : "es",
+      "value" : "Archivo de periódicos de Gran Bretaña, Avisos de la familia"
+    }, {
+      "lang" : "mn",
+      "value" : "Бритиш сонины архив, гэр бүлийн мэдэгдэл"
+    }, {
+      "lang" : "ko",
+      "value" : "영국 신문 기록 보관소, 가족 통지"
+    }, {
+      "lang" : "ja",
+      "value" : "イギリス新聞のアーカイブ、家族通知"
+    }, {
+      "lang" : "it",
+      "value" : "Archivio di giornali inglesi, Annunci familiari"
+    }, {
+      "lang" : "id",
+      "value" : "Arsip Surat Kabar Inggris, Pemberitahuan Keluarga"
+    }, {
+      "lang" : "hu",
+      "value" : "Brit Újságok Levéltára, családi hirdetmények"
+    }, {
+      "lang" : "sk",
+      "value" : "Archív novín British Newspaper, rodinné oznamy"
+    }, {
+      "lang" : "th",
+      "value" : "คลังเก็บหนังสือพิมพ์บริติช หมายแจ้งครอบครัว"
+    }, {
+      "lang" : "to",
+      "value" : "ʻĀkaivi nusipepa ʻa Pilitisi, Ngaahi Fanongonongo ki he Fāmilí"
+    }, {
+      "lang" : "bg",
+      "value" : "Архив на британския вестник, Съобщения за семейството"
+    }, {
+      "lang" : "km",
+      "value" : "បណ្ណសារកាសែតអង់គ្លេស, ការជូនដំណឹងអំពីគ្រួសារ"
+    }, {
+      "lang" : "pl",
+      "value" : "Brytyjskie Archiwum Prasowe, Ogłoszenia Rodzinne"
+    }, {
+      "lang" : "ro",
+      "value" : "Arhiva British Newspaper, Informații legate de familie"
+    }, {
+      "lang" : "sv",
+      "value" : "British Newspaper Archive, Familjenotiser"
+    }, {
+      "lang" : "sm",
+      "value" : "Văn Khố Của Báo Anh, Các Thông Báo về Gia Đình"
+    }, {
+      "lang" : "vi",
+      "value" : "Văn Khố Của Báo Anh, Các Thông Báo về Gia Đình"
+    }, {
+      "lang" : "sq",
+      "value" : "Arkivi i gazetës britanike, njoftime familjare"
+    }, {
+      "lang" : "pt",
+      "value" : "Arquivo de jornais britânicos, obituários"
+    }, {
+      "lang" : "de",
+      "value" : "British Newspaper Archive, Familienhinweise"
+    }, {
+      "lang" : "uk",
+      "value" : "Британський архів газет, повідомлення про сім'ї"
+    }, {
+      "lang" : "hr",
+      "value" : "Arhiva britanskih novina, obiteljske obavijesti"
+    }, {
+      "lang" : "cs",
+      "value" : "Britský novinový archiv, Rodinná sdělení"
+    }, {
+      "lang" : "da",
+      "value" : "Britisk avisarkiv, familiemeddelelser"
+    }, {
+      "lang" : "nl",
+      "value" : "Archief van Britse kranten, familiekennisgevingen"
+    }, {
+      "lang" : "et",
+      "value" : "Briti ajalehearhiiv, perekonnateated"
+    }, {
+      "lang" : "fj",
+      "value" : "Tukutuku Maroroi Ena Niusipepa E Peritania, Notisi ni Matavuvale"
+    }, {
+      "lang" : "fi",
+      "value" : "British Newspaper Archive, perheilmoitukset,"
+    }, {
+      "lang" : "tl",
+      "value" : "British Newspaper Archive,  Mga Abiso sa Pamilya"
+    }, {
+      "lang" : "mg",
+      "value" : "Arsivan' ny Gazety Britanika, Fampandrenesana ho an' ny Fianakaviana"
+    }, {
+      "lang" : "ceb",
+      "value" : "Ang Arkibo sa Pamantalaan sa Britanya, Mga Pahibalo sa Pamilya"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/2562514" ]
+    }
+  }, {
+    "id" : "sd_da1",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSW5-H31L-9",
+    "componentOf" : {
+      "description" : "#sd_c_2562514",
+      "descriptionId" : "sd_c_2562514"
+    },
+    "resourceType" : "http://gedcomx.org/DigitalArtifact",
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "title:England, Devon, Plymouth",
+        "description" : "https://www.familysearch.org/platform/places/description/3041150"
+      },
+      "temporal" : {
+        "original" : "1942-1944",
+        "formal" : "+1942-01-01T00:00:00Z/+1944-12-31T23:59:59Z"
+      },
+      "recordType" : "http://gedcomx.org/Newspaper"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSW5-H31L-9" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/2562514?arkName=3:1:3Q9M-CSW5-H31L-9"
+    }
+  }, {
+    "id" : "sd_p_104494792179",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC",
+    "componentOf" : {
+      "description" : "#src_r_106286792386",
+      "descriptionId" : "src_r_106286792386"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"British Newspaper Archive, Family Notices\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXV1 : Thu Mar 07 17:50:46 UTC 2024), Entry for Jemima Grace Roseveare, Widow and Henry Maynard, 12 Dec."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Nicholas Roseveare, \"British Newspaper Archive, Family Notices\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Nicholas Roseveare, \"British Newspaper Archive, Family Notices\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC" ]
+    }
+  }, {
+    "id" : "sd_p_104494792169",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXV1",
+    "componentOf" : {
+      "description" : "#src_r_106286792386",
+      "descriptionId" : "src_r_106286792386"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"British Newspaper Archive, Family Notices\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXV1 : Thu Mar 07 17:50:46 UTC 2024), Entry for Jemima Grace Roseveare, Widow and Henry Maynard, 12 Dec."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Jemima Grace Roseveare, Widow, \"British Newspaper Archive, Family Notices\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Jemima Grace Roseveare, Widow, \"British Newspaper Archive, Family Notices\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXV1" ]
+    }
+  }, {
+    "id" : "sd_p_104494792174",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKQ",
+    "componentOf" : {
+      "description" : "#src_r_106286792386",
+      "descriptionId" : "src_r_106286792386"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"British Newspaper Archive, Family Notices\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXV1 : Thu Mar 07 17:50:46 UTC 2024), Entry for Jemima Grace Roseveare, Widow and Henry Maynard, 12 Dec."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Henry Maynard, \"British Newspaper Archive, Family Notices\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Henry Maynard, \"British Newspaper Archive, Family Notices\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKQ" ]
+    }
+  } ],
+  "places" : [ {
+    "id" : "place_3041150",
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/places/description/3041150" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "ba205eb9-d7f8-490c-9657-c7c06afdbf8f",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "f8a12d5d-24e0-4013-a6d8-b5c1a08adee1",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "2"
+    } ]
+  }, {
+    "id" : "70ed9bb0-1388-410b-b467-e17625a92c3e",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/PpqId",
+    "values" : [ {
+      "id" : "4a84164d-3f1f-48ab-8ea2-55159f268bed",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PPQ_ID",
+      "text" : "16-1047"
+    } ]
+  }, {
+    "id" : "21e66694-ec75-4dfb-8934-045d29cfc2f9",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/TravelerTitle",
+    "values" : [ {
+      "id" : "72bf712b-e020-4ea4-829c-0f8b301d7634",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_TRAVELER_TITLE",
+      "text" : "British Newspaper Archives, Family Notices (Redo | FMP) - FSI"
+    } ]
+  }, {
+    "id" : "766d57b5-b9a1-4a58-9e2e-8572f18db051",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "44ba2920-99da-47d5-8511-890e89adb66b",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"FS_IMAGE_APID\":\"TH-909-60128-107731-40\",\"FS_IMAGE_NBR\":\"00595\",\"FS_IMAGE_ID\":\"102117936_00595\",\"FS_UNIQUE_ID\":\"14239478617\"}"
+    } ]
+  }, {
+    "id" : "8df6ddfa-aaf4-49d1-a53f-c651796f998d",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/VisStatus",
+    "values" : [ {
+      "id" : "4b9b9171-780c-4f14-bae6-4c71d2b7bf97",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_VIS_STATUS",
+      "text" : "VISIBLE"
+    } ]
+  }, {
+    "id" : "2d4fb7b0-3102-4be1-86e1-456ea676a840",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "e5cb3a7f-532b-4d32-bcfe-5810cf8571bf",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "1e4995a5-f610-4a22-88b9-a3f488fbeac1",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "4fd4fa42-1957-4fe6-8a55-459d0711b51c",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-CSW5-H31L-9\",\"FS_COLLECTION_ID\":\"2562514\"}"
+    } ]
+  }, {
+    "id" : "fd18c704-de46-4e32-b805-668719bff552",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/BatchLocality",
+    "values" : [ {
+      "id" : "c0af5fad-1059-468a-b0a6-d30fededa16d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_LOCALITY",
+      "text" : "Great Britain"
+    } ]
+  }, {
+    "id" : "b4dfdfab-393b-46a6-80e2-f3c6c45c7328",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+    "values" : [ {
+      "id" : "8ef38e6b-7b98-4072-a890-f9cabfd38a0a",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_PAGE_NBR_ORIG",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "fad3af4c-f526-4499-b837-ab1994bcc35d",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "1a73cbcf-604f-42e8-b0f8-1514968ce40e",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "102117936_00595_31"
+    } ]
+  }, {
+    "id" : "653655ac-69e0-43b3-b86b-e2ac3a29370f",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/SourceNewspaper",
+    "values" : [ {
+      "id" : "12d58ae0-eb5e-45ac-b2e4-933e02d2db3e",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_NEWSPAPER_ORIG",
+      "text" : "Western Morning News"
+    } ]
+  }, {
+    "id" : "ae50c697-5312-4fb2-ab4b-a196704fa55f",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "c57e7c07-785e-4163-8409-74f299420eea",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "No Traveler; 2019-04-16T13:19:48-0600; gilberts; 4585; TB; work.sg_2562514_dio_441; No Traveler"
+    } ]
+  }, {
+    "id" : "2979bef7-03cb-48de-ae70-ca679a630543",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "caba6f73-1286-4f3e-a60e-a536b8ee1505",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "0000000102117936_00595_00031_0000106286792386"
+    } ]
+  }, {
+    "id" : "392a7377-57a5-4d9e-a11e-18c993185591",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "ebc112ab-4033-4dab-b65f-ba17a0dfe969",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "7d1949b2-4f1b-4176-badc-5b42f0ecbd04",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/SourcePubDate",
+    "values" : [ {
+      "id" : "c356edbd-99da-4d7c-9d52-d0864e251490",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_PUB_DATE_ORIG",
+      "text" : "15 Dec 1943"
+    }, {
+      "id" : "c356edbd-99da-4d7c-9d52-d0864e251490",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "SOURCE_PUB_DATE",
+      "text" : "15 Dec 1943"
+    } ]
+  }, {
+    "id" : "73d14293-a225-441b-88eb-a96284207a23",
+    "attribution" : {
+      "modified" : 1697726023957,
+      "created" : 1697726023957
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "4536abdd-3632-488e-8345-cad7449132ad",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "48066"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/DigitalFilmNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_DIGITAL_FILM_NBR",
+      "text" : "102117936"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/ImageNbr",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_IMAGE_NBR",
+      "text" : "595"
+    } ]
+  } ]
+}
