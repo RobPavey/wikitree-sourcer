@@ -347,7 +347,7 @@ const fieldLabels = {
   hNo: {
     en: ["H.no."],
     bo: ["H.nr"],
-    nn: ["FørH.H.nr"],
+    nn: ["FørH.H.nr", "H.nr"],
   },
   institution: {
     en: ["Institution"],
@@ -582,6 +582,14 @@ const familyPositionValues = {
   hustru: { standardRelationship: "wife" }, // hustru = wife
   kone: { standardRelationship: "wife" },
   "hans kone": { standardRelationship: "wife", isPositionSensitive: true },
+
+  fader: { standardRelationship: "father" },
+  "hans fader": { standardRelationship: "father" },
+  "deres fader": { standardRelationship: "father" },
+
+  mor: { standardRelationship: "mother" },
+  "hans mor": { standardRelationship: "mother" },
+  "deres mor": { standardRelationship: "mother" },
 
   s: { standardRelationship: "son" },
   søn: { standardRelationship: "son" },
