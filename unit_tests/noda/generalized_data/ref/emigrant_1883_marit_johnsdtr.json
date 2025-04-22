@@ -1,0 +1,23 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Emigration",
+  "name": {
+    "lastName": "Johnsdtr Alnæstrøen",
+    "forenames": "Marit"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1883"
+  },
+  "eventPlace": {
+    "placeString": "Kors, Grytten, Møre og Romsdal, Norway",
+    "parish": "Grytten",
+    "county": "Møre og Romsdal",
+    "country": "Norway"
+  },
+  "birthDate": {
+    "dateString": "6 Feb 1843"
+  },
+  "hasValidData": true
+}

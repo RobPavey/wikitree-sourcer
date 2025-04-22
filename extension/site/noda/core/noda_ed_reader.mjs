@@ -97,6 +97,16 @@ const eventTypes = [
     panelTitleKey: "",
   },
   {
+    recordType: RT.Census,
+    breadcrumbText: {
+      en: "Census ",
+      bo: "Manntallet ",
+      nn: "Manntalet ",
+      matchType: "startsWith",
+    },
+    panelTitleKey: "",
+  },
+  {
     recordType: RT.Confirmation,
     breadcrumbText: {
       en: "Confirmations",
@@ -127,6 +137,15 @@ const eventTypes = [
     panelTitleKey: "Reported death",
   },
   {
+    recordType: RT.Death,
+    breadcrumbText: {
+      en: "Year of death",
+      bo: "Dødsår",
+      nn: "Dødsår",
+    },
+    panelTitleKey: "Year of death",
+  },
+  {
     recordType: RT.Emigration,
     breadcrumbText: {
       en: "Emigration",
@@ -136,6 +155,18 @@ const eventTypes = [
     panelTitleKey: "Emigration",
     eventDate: [{ type: "yyyyMmDd", section: "record", keys: ["emigrationDate"] }],
     eventPlace: [{ section: "panel", keys: ["parish"] }],
+  },
+  {
+    recordType: RT.Emigration,
+    breadcrumbText: {
+      en: "Out-migration",
+      bo: "Utflyttede",
+      nn: "Utflytta",
+    },
+    panelTitleKey: "Emigration",
+    eventDate: [{ type: "year", section: "panel", keys: ["emigrationDate"] }],
+    eventPlace: [{ section: "panel", keys: ["localParish"] }],
+    sourceInfoToParishNameType: "churchBook",
   },
   {
     recordType: RT.Marriage,
@@ -209,9 +240,9 @@ const fieldLabels = {
     nn: ["Alder"],
   },
   ageBorn: {
-    en: ["Age/born"],
-    bo: ["Alder/født"],
-    nn: ["Alder/fødd"],
+    en: ["Age/born", "Age"],
+    bo: ["Alder/født", "Alder"],
+    nn: ["Alder/fødd", "Alder"],
   },
   baptismDate: {
     en: ["Baptism date"],
@@ -284,14 +315,14 @@ const fieldLabels = {
     nn: ["Dødsår"],
   },
   emigrationDate: {
-    en: ["Date of emigration"],
-    bo: ["Utreisedato"],
-    nn: ["Utreisedato"],
+    en: ["Date of emigration", "Year"],
+    bo: ["Utreisedato", "År"],
+    nn: ["Utreisedato", "År"],
   },
   familyPosition: {
-    en: ["Family position"],
-    bo: ["Familiestilling"],
-    nn: ["Familiestilling"],
+    en: ["Family position", "Position and conditions"],
+    bo: ["Familiestilling", "Stilling/stand og vilkår"],
+    nn: ["Familiestilling", "Stilling/stand og vilkår"],
   },
   farmNumber: {
     en: ["Gårdens nr."],
@@ -447,9 +478,9 @@ const panelTitles = {
     nn: ["Konfirmerte"],
   },
   Emigration: {
-    en: ["Emigration"],
-    bo: ["Emigrasjon"],
-    nn: ["Emigrasjon"],
+    en: ["Emigration", "Out-migration"],
+    bo: ["Emigrasjon", "Utflyttede"],
+    nn: ["Emigrasjon", "Utflytta"],
   },
   Marriages: {
     en: ["Marriages"],
@@ -460,6 +491,16 @@ const panelTitles = {
     en: ["Probate"],
     bo: ["Skifteforretning"],
     nn: ["Skifteforretning"],
+  },
+  "Reported death": {
+    en: ["Reported death"],
+    bo: ["Dødsfall"],
+    nn: ["Dødsfall"],
+  },
+  "Year of death": {
+    en: ["Year of death"],
+    bo: ["Dødsår"],
+    nn: ["Dødsår"],
   },
   "Year/index": {
     en: ["Year/index", "Surrounding area in the source"],
@@ -916,6 +957,7 @@ class NodaEdReader extends ExtractedDataReader {
     // Census 1815 for Luster
     // Municipal Census 1912 for Bergen
     // 1865 census for Trondheim
+    // Census (manntall) 1701, no. 7: Nordhordland and Voss fogderi
 
     let parts = {
       year: "",
@@ -946,6 +988,14 @@ class NodaEdReader extends ExtractedDataReader {
       bo: /^\w+ Folketelling (\d+) for (.*)$/i,
       nn: /^\w+ Folketeljing (\d+) for (.*)$/i,
     };
+    const censusManntallDateForRegexes = {
+      // Census (manntall) 1701, no. 7: Nordhordland and Voss fogderi
+      // Manntallet 1701, nr. 7: Nordhordland og Voss fogderi
+      // Manntalet 1701, nr. 7: Nordhordland og Voss futedøme
+      en: /^Census \(manntall\) (\d+)[^\:]+\:\s*(.*)$/i,
+      bo: /^Manntallet (\d+)[^\:]+\:\s*(.*)$/i,
+      nn: /^Manntalet (\d+)[^\:]+\:\s*(.*)$/i,
+    };
     const parishWords = {
       en: "parish",
       bo: "prestegjeld",
@@ -955,6 +1005,7 @@ class NodaEdReader extends ExtractedDataReader {
     let dateCensusForRegex = dateCensusForRegexes[lang];
     let censusDateForRegex = censusDateForRegexes[lang];
     let typeCensusDateForRegex = typeCensusDateForRegexes[lang];
+    let censusManntallDateForRegex = censusManntallDateForRegexes[lang];
     let parishWord = parishWords[lang];
 
     let sourceInfo = this.ed.sourceInformation;
@@ -965,6 +1016,8 @@ class NodaEdReader extends ExtractedDataReader {
       regex = censusDateForRegex;
     } else if (typeCensusDateForRegex.test(sourceInfo)) {
       regex = typeCensusDateForRegex;
+    } else if (censusManntallDateForRegex.test(sourceInfo)) {
+      regex = censusManntallDateForRegex;
     }
 
     if (!regex) {
@@ -1090,6 +1143,11 @@ class NodaEdReader extends ExtractedDataReader {
       }
     }
 
+    // for some emigration records
+    if (sourceInfoParishName == sourceInformation) {
+      sourceInfoParishName = this.getParishNameFromSourceInformationForChurchBook();
+    }
+
     return sourceInfoParishName;
   }
 
@@ -1182,12 +1240,18 @@ class NodaEdReader extends ExtractedDataReader {
   }
 
   getParishNameFromSourceInformation() {
-    if (this.recordType == RT.Census) {
-      return this.getParishNameFromSourceInformationForCensus();
-    } else if (this.recordType == RT.Emigration) {
-      return this.getParishNameFromSourceInformationForEmigration();
+    if (this.eventType.sourceInfoToParishNameType) {
+      if (this.eventType.sourceInfoToParishNameType == "churchBook") {
+        return this.getParishNameFromSourceInformationForChurchBook();
+      }
     } else {
-      return this.getParishNameFromSourceInformationForChurchBook();
+      if (this.recordType == RT.Census) {
+        return this.getParishNameFromSourceInformationForCensus();
+      } else if (this.recordType == RT.Emigration) {
+        return this.getParishNameFromSourceInformationForEmigration();
+      } else {
+        return this.getParishNameFromSourceInformationForChurchBook();
+      }
     }
   }
 
@@ -1636,6 +1700,13 @@ class NodaEdReader extends ExtractedDataReader {
         if (person.personLabel && person.personLabel == personNumber) {
           return person;
         }
+      }
+    }
+
+    // it could be a case like https://www.digitalarkivet.no/nn/view/206/pc00000000600161
+    for (let person of people) {
+      if (person.current) {
+        return person;
       }
     }
 
@@ -2261,7 +2332,14 @@ class NodaEdReader extends ExtractedDataReader {
       if (person.personNameParts && person.personNameParts.length == 1) {
         let name = person.personNameParts[0];
         if (name) {
-          setMemberField(householdMember, "name", cleanName(name));
+          // sometime that name in personNameParts is something like pc00000000600161
+          // and the name is in a separate field
+          if (/\d\d\d/.test(name)) {
+            name = this.getPersonDataValue(person, "name");
+            setMemberField(householdMember, "name", cleanName(name));
+          } else {
+            setMemberField(householdMember, "name", cleanName(name));
+          }
         }
       }
 

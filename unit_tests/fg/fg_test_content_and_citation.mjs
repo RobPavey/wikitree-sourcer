@@ -38,7 +38,7 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    // has extensded ASCII characters
+    // has extended ASCII characters
     caseName: "ales_hrdlicka_d_1943",
     url: "https://www.findagrave.com/memorial/202957947/ale%C5%A1-hrdli%C4%8Dka",
   },

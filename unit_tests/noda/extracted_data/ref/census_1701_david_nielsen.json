@@ -1,0 +1,262 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/206/pc00000000600161",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Census (manntall) 1701, no. 7: Nordhordland and Voss fogderi",
+    "Farm",
+    "David Nielsen"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Farm: Wangen",
+      "collectionNameParts": [
+        "Farm",
+        "Wangen"
+      ]
+    }
+  ],
+  "heading": "Person: David Nielsen",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: David Nielsen"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/ft10051010272167",
+  "recordData": {
+    "Given name": {
+      "textString": "David"
+    },
+    "Last name": {
+      "textString": "Nielsen"
+    },
+    "Position and conditions": {
+      "textString": "tjener"
+    },
+    "Gender": {
+      "textString": "m"
+    },
+    "Age": {
+      "textString": "22"
+    },
+    "Year of birth": {
+      "textString": "1679 (calculated)"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "More information"
+    },
+    {
+      "panelTitle": "Persons involved",
+      "people": [
+        {
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600152"
+          ],
+          "personHeading": "id pc00000000600152",
+          "Name": {
+            "textString": "Christen Nielsen Weinwiig"
+          },
+          "Position and conditions": {
+            "textString": "ops SognePræsten Hr."
+          },
+          "Age": {
+            "textString": "66"
+          }
+        },
+        {
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600153"
+          ],
+          "personHeading": "id pc00000000600153",
+          "Name": {
+            "textString": "Niels Christensen"
+          },
+          "Position and conditions": {
+            "textString": "ops sønn Student"
+          },
+          "Age": {
+            "textString": "24"
+          }
+        },
+        {
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600154"
+          ],
+          "personHeading": "id pc00000000600154",
+          "Name": {
+            "textString": "Hendrich Christensen"
+          },
+          "Position and conditions": {
+            "textString": "ops sønn"
+          },
+          "Age": {
+            "textString": "21"
+          }
+        },
+        {
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600155"
+          ],
+          "personHeading": "id pc00000000600155",
+          "Name": {
+            "textString": "Otte Christensen"
+          },
+          "Position and conditions": {
+            "textString": "ops sønn"
+          },
+          "Age": {
+            "textString": "10"
+          },
+          "Residence": {
+            "textString": "Er i Bergen"
+          }
+        },
+        {
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600156"
+          ],
+          "personHeading": "id pc00000000600156",
+          "Name": {
+            "textString": "Giert Christensen"
+          },
+          "Position and conditions": {
+            "textString": "ops sønn"
+          },
+          "Age": {
+            "textString": "8"
+          }
+        },
+        {
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600157"
+          ],
+          "personHeading": "id pc00000000600157",
+          "Name": {
+            "textString": "Sifr Bottelsen St. Røtte"
+          },
+          "Position and conditions": {
+            "textString": "tjener"
+          },
+          "Age": {
+            "textString": "26"
+          }
+        },
+        {
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600158"
+          ],
+          "personHeading": "id pc00000000600158",
+          "Name": {
+            "textString": "Christen Haldorsen Øjorden"
+          },
+          "Position and conditions": {
+            "textString": "tjener"
+          },
+          "Age": {
+            "textString": "26"
+          }
+        },
+        {
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600159"
+          ],
+          "personHeading": "id pc00000000600159",
+          "Name": {
+            "textString": "Mons Ellingsen Houge"
+          },
+          "Position and conditions": {
+            "textString": "tjener"
+          },
+          "Age": {
+            "textString": "28"
+          }
+        },
+        {
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600160"
+          ],
+          "personHeading": "id pc00000000600160",
+          "Name": {
+            "textString": "Iver Askildsen MølsterTeigen"
+          },
+          "Position and conditions": {
+            "textString": "tjener"
+          },
+          "Age": {
+            "textString": "21"
+          }
+        },
+        {
+          "current": true,
+          "personLabel": "id",
+          "personNameParts": [
+            "pc00000000600161"
+          ],
+          "personHeading": "id pc00000000600161",
+          "Name": {
+            "textString": "David Nielsen"
+          },
+          "Position and conditions": {
+            "textString": "tjener"
+          },
+          "Age": {
+            "textString": "22"
+          }
+        }
+      ]
+    },
+    {
+      "panelTitle": "Farm",
+      "Farm": {
+        "textString": "Wangen"
+      },
+      "Parish": {
+        "textString": "Waass"
+      },
+      "Bailiff": {
+        "textString": "Nordhordland"
+      },
+      "aar": {
+        "textString": "1701"
+      },
+      "Page": {
+        "textString": "313"
+      }
+    }
+  ],
+  "permanentId": "pc00000000600161",
+  "sourceInformation": "Census (manntall) 1701, no. 7: Nordhordland and Voss fogderi",
+  "sourceData": {
+    "County": {
+      "textString": "Hordaland, Sogn og Fjordane"
+    },
+    "Municipality (1947)": {
+      "textString": "Alversund, Askøy, Austrheim, Bruvik, Evanger, Fana, Fedje, Fjell, Gulen, Hamre, Haus, Herdla, Hjelme, Hordabø, Hosanger, Laksevåg, Lindås, Manger, Masfjorden, Modalen, Mæland, Sund, Sæbø, Voss, Vossestrand, Åsane"
+    },
+    "Geographic area": {
+      "textString": "Nordhordland og Voss bailiwick"
+    },
+    "Start year": {
+      "textString": "1701"
+    },
+    "End year": {
+      "textString": "1701"
+    },
+    "Parish": {
+      "textString": "Waass"
+    }
+  }
+}
