@@ -65,6 +65,11 @@ const regressionData = [
     url: "https://www.thegenealogist.com/search/advanced/bmd/non-conformist/full/?id=716475002&uid_type=1",
   },
   {
+    // Tested in Apr 2025 and no longer worked
+    caseName: "census_1861_charles_pavey_r_2025",
+    url: "https://www.thegenealogist.com/search/advanced/census/main-household/?hlt=219560985&county=243&y=1861&household_id=16268345&a=Search&hh=1&hs=1&cl=1&sscid=243&view_type=fullRecord#sign-in",
+  },
+  {
     caseName: "census_1861_charles_pavey_r",
     url: "https://www.thegenealogist.com/search/advanced/census/main-household/?hlt=219560985&county=243&y=1861&household_id=16268345&a=Search&hh=1&hs=1&cl=1&sscid=243&view_type=fullRecord",
   },
