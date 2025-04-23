@@ -153,9 +153,14 @@ async function runBuildSearchUrlTests(
       input.options = { ...userOptions, ...variant.optionOverrides };
       if (variant.typeOfSearch) {
         input.typeOfSearch = variant.typeOfSearch;
+      } else {
+        input.typeOfSearch = testData.typeOfSearch;
       }
       if (variant.searchParameters) {
         input.searchParameters = variant.searchParameters;
+      } else {
+        // needed to reset back to default if not specified for this variant
+        input.searchParameters = testData.searchParameters;
       }
       try {
         let name = variant.variantName;
