@@ -64,7 +64,7 @@ const RecordCollectionData = [
       fs: {
         id: "2285338",
         dates: { from: 1837, to: 2008 },
-        searchTerms: { gender: false },
+        searchTerms: { gender: false, death: false, parents: false, spouse: false },
       },
       fmp: {
         id: "England & Wales Births 1837-2006",
@@ -115,7 +115,11 @@ const RecordCollectionData = [
     country: "England and Wales",
     isMarriage: true,
     sites: {
-      fs: { id: "2285732", dates: { from: 1837, to: 2008 } },
+      fs: {
+        id: "2285732",
+        dates: { from: 1837, to: 2008 },
+        searchTerms: { gender: false, birth: false, death: false, parents: false },
+      },
       fmp: {
         id: "England & Wales Marriages 1837-2005",
         dates: { from: 1837, to: 2005 },
@@ -163,7 +167,11 @@ const RecordCollectionData = [
     country: "England and Wales",
     isDeath: true,
     sites: {
-      fs: { id: "2285341", dates: { from: 1837, to: 2008 } },
+      fs: {
+        id: "2285341",
+        dates: { from: 1837, to: 2008 },
+        searchTerms: { gender: false, parents: false, spouse: false },
+      },
       fmp: {
         id: "England & Wales Deaths 1837-2007",
         dates: { from: 1837, to: 2007 },
