@@ -547,6 +547,11 @@ const imageRegressionData = [
     url: "https://www.familysearch.org/ark:/61903/3:1:33SQ-GYWJ-TMS?i=44",
   },
   {
+    // Danish language page
+    caseName: "image_denmark_church_records_1645_1815",
+    url: "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G94W-5848?lang=da&i=3",
+  },
+  {
     // Note: I had to edit the saved .html file for many errors. vscode highlighted them and they prevented
     // jsdom from parsing it.
     caseName: "image_england_marriage_bonds_1754_richard_fawssett",

@@ -282,7 +282,7 @@ function extractDataForImageInNewViewer(document, result) {
   let imageNumberInput = mainNode.querySelector("div input[aria-label='Enter Image number']");
   if (!imageNumberInput) {
     // can't rely on aria-label as it changes with language
-    imageNumberInput = mainNode.querySelector("div[inputbase='true'] > div > div > div > input");
+    imageNumberInput = mainNode.querySelector("div[inputbase='true'] input");
   }
   //console.log("imageNumberInput is:");
   //console.log(imageNumberInput);
