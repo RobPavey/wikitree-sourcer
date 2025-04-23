@@ -68,13 +68,13 @@ function extractNicknames(name, nameObj) {
   if (startQuoteIndex != -1) {
     let endQuoteIndex = name.indexOf('"', startQuoteIndex + 1);
     if (endQuoteIndex != -1) {
-      let nickNames = name.substring(startQuoteIndex + 1, endQuoteIndex);
-      if (nickNames) {
-        if (nameObj.nickNames) {
-          nameObj.nickNames += " ";
-          nameObj.nickNames += nickNames;
+      let nicknames = name.substring(startQuoteIndex + 1, endQuoteIndex);
+      if (nicknames) {
+        if (nameObj.nicknames) {
+          nameObj.nicknames += " ";
+          nameObj.nicknames += nicknames;
         } else {
-          nameObj.nickNames = nickNames;
+          nameObj.nicknames = nicknames;
         }
       }
       name = name.substring(0, startQuoteIndex) + name.substring(endQuoteIndex + 1);
