@@ -94,13 +94,13 @@ function constrainYears(dates) {
 }
 
 function addAppropriateSurname(gd, type, builder, options) {
-  let lastName = gd.lastNameAtBirth;
-  if (type == "deaths" || !lastName) {
-    lastName = gd.inferLastNameAtDeath(options);
-  }
+  let lastName = gd.inferLastNameAtBirth();
 
-  if (!lastName) {
-    lastName = gd.inferLastName();
+  if (type == "deaths" || !lastName) {
+    let cln = gd.inferLastNameAtDeath(options);
+    if (cln) {
+      lastName = cln;
+    }
   }
 
   if (lastName) {
