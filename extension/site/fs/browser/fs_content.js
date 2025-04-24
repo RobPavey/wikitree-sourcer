@@ -217,7 +217,8 @@ async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, 
       console.log("extractDataFromFetchAndRespond. Too many retries");
       sendResponse({
         success: false,
-        errorMessage: "Extract data module never loaded",
+        errorMessage: "Extract data module never loaded, tried " + maxLoadModuleRetries + " times",
+        noException: true,
       });
     }
     return false;

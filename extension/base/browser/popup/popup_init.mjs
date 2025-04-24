@@ -92,6 +92,14 @@ function displayUrlChangedMessage(menuUrl, newUrl) {
   displayMessageWithIcon("warning", "The web page URL changed after the extension icon was clicked. Please try again.");
 }
 
+function displayUnexpectedErrorMessage(message) {
+  popupState.progress = progressState.sitePopupDisplayError;
+
+  console.log("popup_init: displayUnexpectedErrorMessage, message is: " + message);
+
+  displayMessageWithIcon("warning", "Unexpected error: " + message + ". Please try again.");
+}
+
 function setupMenuForExtractedData(menuSetupFunction, extractedData, tabId) {
   if (!extractedData.ambiguousPerson) {
     menuSetupFunction(extractedData, tabId);
@@ -245,8 +253,10 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             setupMenuForExtractedData(menuSetupFunction, response.extractedData, tabId);
           }
         }
+      } else if (response.noException) {
+        displayUnexpectedErrorMessage(response.errorMessage);
       } else {
-        // it works better to catach this is content_common since the error stack works then
+        // it works better to catch this in content_common since the error stack works then
         // So normally exceptionWasReported will be true if an exception was caught in extractDataAndRespond
         if (!response.exceptionWasReported) {
           let message = response.errorMessage;
