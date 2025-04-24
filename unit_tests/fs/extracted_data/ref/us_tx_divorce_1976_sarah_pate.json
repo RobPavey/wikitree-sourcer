@@ -26,6 +26,7 @@
   "spouseFullName": "John T Pate",
   "spouseGivenName": "John T",
   "spouseSurname": "Pate",
+  "spouseGender": "male",
   "spouseAge": "28",
   "eventCountry": "United States",
   "eventCounty": "Lubbock",

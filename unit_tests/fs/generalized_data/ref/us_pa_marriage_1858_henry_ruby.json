@@ -8,7 +8,8 @@
     "forenames": "Henry Rice"
   },
   "eventDate": {
-    "dateString": "9 Nov 1858"
+    "dateString": "9 November 1858",
+    "yearString": "1858"
   },
   "eventPlace": {
     "placeString": "Pennsylvania, United States"
@@ -28,12 +29,30 @@
       }
     }
   ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Judge Henry Ruby",
+        "forenames": "Judge Henry",
+        "lastName": "Ruby"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Rebecca Senseny Ruby",
+        "forenames": "Rebecca Senseny",
+        "lastName": "Ruby"
+      }
+    }
+  },
   "marriageDate": "9 November 1858",
   "wtSearchTemplates": [
     "{{FamilySearch Record|6CYF-SMB5}}"
   ],
   "wtSearchTemplatesRelated": [
-    "{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}"
+    "{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}",
+    "{{FamilySearch Record|6CYF-SMBR}}",
+    "{{FamilySearch Record|6CYF-SMBT}}"
   ],
   "collectionData": {
     "id": "4138689",

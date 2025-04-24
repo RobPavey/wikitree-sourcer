@@ -1,0 +1,876 @@
+{
+  "id" : "r_22020130451",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1739301564436,
+    "created" : 1739301564436
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MW7-Z8V8?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MW7-Z8V8?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MW7-Z8V8"
+    }
+  },
+  "description" : "#sd_p_13585773501",
+  "persons" : [ {
+    "id" : "p_13585773501",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "b2cc6b6a-5625-4d55-a19e-b5164b7f385c",
+        "attribution" : {
+          "modified" : 1739301564436,
+          "created" : 1739301564436
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "baf52551-385a-426f-b7b7-a02671c75c87",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_SEX_CODE_ORIG",
+          "text" : "Female"
+        }, {
+          "id" : "baf52551-385a-426f-b7b7-a02671c75c87",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1740453157423,
+            "created" : 1740453157423
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_SEX_CODE",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VKSN-PTL?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MW7-Z8V8?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL" ]
+    },
+    "names" : [ {
+      "id" : "62ccffca-7d37-4ec3-83f6-b0c37c8defc6",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Elaine K Hovland",
+        "parts" : [ {
+          "id" : "2a314782-f0ab-46e8-8ef0-d08f9c76e1e1",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Elaine K",
+          "fields" : [ {
+            "id" : "4f90f5b7-bdb8-43eb-8397-97d35b654f2c",
+            "attribution" : {
+              "modified" : 1739301564436,
+              "created" : 1739301564436
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "c7ed6b23-f81d-4821-9447-6a522c7a5f17",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Elaine K"
+            }, {
+              "id" : "c7ed6b23-f81d-4821-9447-6a522c7a5f17",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Elaine K"
+            } ]
+          } ]
+        }, {
+          "id" : "5079d674-987d-4d1d-b3de-f94b8212610d",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Hovland",
+          "fields" : [ {
+            "id" : "dee4b6de-29cf-4af2-95ea-1717ebbec47d",
+            "attribution" : {
+              "modified" : 1739301564436,
+              "created" : 1739301564436
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "458c0af7-5bb1-456a-8464-67cd4d3b2d44",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Hovland"
+            }, {
+              "id" : "458c0af7-5bb1-456a-8464-67cd4d3b2d44",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Hovland"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "f3fa41c5-ba79-43e6-96fa-50faada713aa",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "97201343-13e0-4d21-afd1-7aeda10b2352",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Elaine K Hovland"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "072ee724-37c3-4040-a8b8-ca88d671b21e",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://familysearch.org/types/facts/Unknown",
+      "place" : {
+        "id" : "348e10ff-3567-4a47-bdc6-1d1392482c52",
+        "original" : "Hennepin",
+        "fields" : [ {
+          "id" : "0c25329e-d1f2-4553-a52a-1b07562cd20e",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "99e8baf5-6092-46e7-9a91-87e3f959004b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Hennepin"
+          } ]
+        } ]
+      },
+      "primary" : true
+    }, {
+      "id" : "34150636-15bb-4ac5-a86c-2f1ac731d520",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "0345fc6a-2e54-459b-8c25-8654d2488718",
+        "original" : "1953",
+        "fields" : [ {
+          "id" : "b39a56fc-682f-49ad-bc45-3595382b6a1d",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "78ac8a45-e30b-463b-95a2-4cdbb67a42b7",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1953"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "8288ae49-53b6-4830-874e-f1933adf69fa",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "3e4d4425-879a-4a31-bdb8-34aa7efe4d6f",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "1000920566946#12_000"
+      } ]
+    }, {
+      "id" : "a19f5666-7c49-45b4-a098-b14ec256ac73",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "3e12c303-b037-4c6a-ac6d-d1ee15690330",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_ORIG",
+        "text" : "35"
+      } ],
+      "qualifiers" : [ {
+        "value" : "59748634-311b-4716-a410-e65c94a847c6",
+        "name" : "AgeIdentifier"
+      } ]
+    }, {
+      "id" : "85f6d95d-18fe-4758-b9b8-bb4e91cf2de8",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://familysearch.org/types/fields/AgeYears",
+      "values" : [ {
+        "id" : "8ce627a1-cfd9-4a69-80db-47e7e477fedc",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "PR_AGE_YEARS_ORIG",
+        "text" : "44"
+      } ],
+      "qualifiers" : [ {
+        "value" : "59748634-311b-4716-a410-e65c94a847c6",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Elaine K Hovland",
+      "gender" : "Female",
+      "birthDate" : "1953"
+    }
+  }, {
+    "id" : "p_13585773502",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "extracted" : true,
+    "principal" : true,
+    "gender" : {
+      "type" : "http://gedcomx.org/Male",
+      "fields" : [ {
+        "id" : "dd83c1db-4f1d-4381-bdd7-1b682c1ae090",
+        "attribution" : {
+          "modified" : 1739301564436,
+          "created" : 1739301564436
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "8533d4a8-22f4-4e8d-b001-8a6827c61feb",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "SP_SEX_CODE_ORIG",
+          "text" : "Male",
+          "resource" : "http://gedcomx.org/Male"
+        }, {
+          "id" : "8533d4a8-22f4-4e8d-b001-8a6827c61feb",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1740468276946,
+            "created" : 1740468276946
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "SP_SEX_CODE",
+          "resource" : "http://gedcomx.org/Male"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/VKSN-PTG?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MW7-Z8V8?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VKSN-PTG" ]
+    },
+    "names" : [ {
+      "id" : "b4287455-b4bf-48d7-82cb-007d39d0beaf",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Gerald D Hovland",
+        "parts" : [ {
+          "id" : "b10394bb-e403-49f5-87cb-ba03afc8d4ec",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Gerald D",
+          "fields" : [ {
+            "id" : "92a25486-d942-41fd-acbe-bc69f4467dbe",
+            "attribution" : {
+              "modified" : 1739301564436,
+              "created" : 1739301564436
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "fb84cdf9-35c8-49b9-b190-828255d99f43",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_GN_ORIG",
+              "text" : "Gerald D"
+            }, {
+              "id" : "fb84cdf9-35c8-49b9-b190-828255d99f43",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_GN",
+              "text" : "Gerald D"
+            } ]
+          } ]
+        }, {
+          "id" : "b9678c18-df93-4f6e-a31e-5f1796ee748e",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Hovland",
+          "fields" : [ {
+            "id" : "711843f6-5f7c-493f-b3f9-3019d84a7fbd",
+            "attribution" : {
+              "modified" : 1739301564436,
+              "created" : 1739301564436
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "f4f6dee5-a23a-4366-bee4-b055264c4233",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "SP_NAME_SURN_ORIG",
+              "text" : "Hovland"
+            }, {
+              "id" : "f4f6dee5-a23a-4366-bee4-b055264c4233",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "SP_NAME_SURN",
+              "text" : "Hovland"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "13ed92a4-534a-44a5-8b54-f3741b1a6ead",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "6799498e-580f-4ecf-929f-41c3daefa8de",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "SP_NAME",
+            "text" : "Gerald D Hovland"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "5f139225-b062-45b5-b613-6533ac747e1e",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "852c4fc0-ce99-49c8-916d-10e3012a5ee7",
+        "original" : "1944",
+        "fields" : [ {
+          "id" : "0dec13ae-d690-4f99-bfd4-1729c95997e7",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "443a7129-6c3d-4ae1-8a36-8519ed699934",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "SP_BIR_YEAR_ORIG",
+            "text" : "1944"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "98f1a04b-f199-45e0-aae1-c45e9d47f2ba",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "21a441fe-05a3-4eff-adf7-fda8af95343d",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "1000920566946#12_001"
+      } ]
+    }, {
+      "id" : "660105d6-5a38-4282-98a5-96ed6cf467f8",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://gedcomx.org/Age",
+      "values" : [ {
+        "id" : "9a9ebc55-95b0-4452-b054-5c237ac69aa7",
+        "type" : "http://gedcomx.org/Original",
+        "labelId" : "SP_AGE_ORIG",
+        "text" : "44"
+      } ],
+      "qualifiers" : [ {
+        "value" : "96d2cd35-27b0-4973-8bcd-0fa19b6c2a12",
+        "name" : "AgeIdentifier"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Gerald D Hovland",
+      "gender" : "Male",
+      "birthDate" : "1944"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "71ea307d-5c2a-4f8e-a242-03dbf5515e0d",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "type" : "http://gedcomx.org/Couple",
+    "person1" : {
+      "resource" : "#p_13585773502",
+      "resourceId" : "p_13585773502"
+    },
+    "person2" : {
+      "resource" : "#p_13585773501",
+      "resourceId" : "p_13585773501"
+    },
+    "facts" : [ {
+      "id" : "315e4e94-64e0-4982-9cf3-554820f94c99",
+      "attribution" : {
+        "modified" : 1739301564436,
+        "created" : 1739301564436
+      },
+      "type" : "http://gedcomx.org/Divorce",
+      "date" : {
+        "id" : "61517080-45cc-4de7-b750-ab005f1ffe23",
+        "original" : "06 Oct 1988",
+        "fields" : [ {
+          "id" : "34d18b36-ae7f-4731-9253-796a1b015aa0",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "b653d649-6ff5-442e-90cb-6504df8767e4",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Oct"
+          } ]
+        }, {
+          "id" : "653faf33-5b96-4fcf-985a-46db8af209e4",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "898bd12e-c91e-408e-89f5-7d32e846290b",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1988"
+          }, {
+            "id" : "898bd12e-c91e-408e-89f5-7d32e846290b",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1988"
+          } ]
+        }, {
+          "id" : "b464621a-fff7-4b82-accf-6b2c85a05e38",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "226bd276-a91b-4ae9-829c-47fa1f715149",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "06 Oct 1988",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "226bd276-a91b-4ae9-829c-47fa1f715149",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "06 Oct 1988"
+          } ]
+        }, {
+          "id" : "8b30fdcb-0a3b-42a7-9678-bd99b7704a67",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "d2fb6151-b270-4da0-8417-70161fe1e8cb",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "06"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "9e8d2822-1de0-4d76-b276-839d0475a750",
+        "original" : "Hennepin, Minnesota",
+        "fields" : [ {
+          "id" : "b742f025-2a77-4377-bab5-d1c5590a9e58",
+          "attribution" : {
+            "modified" : 1739301564436,
+            "created" : 1739301564436
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "fcc7ddf7-a9d9-4511-8a19-e084dc3e7ee8",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hennepin, Minnesota"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "c320c292-ffec-482a-9d53-457a1dc9d963",
+        "attribution" : {
+          "modified" : 1739301564436,
+          "created" : 1739301564436
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "d924b038-db7e-4acc-b83a-d5113e4d9501",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Divorce",
+          "resource" : "http://gedcomx.org/Divorce"
+        } ]
+      } ]
+    } ]
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_22020130451",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MW7-Z8V8",
+    "componentOf" : {
+      "description" : "#sd_c_1967743",
+      "descriptionId" : "sd_c_1967743"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1739301564436,
+    "modified" : 1740468277106,
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Minnesota, Divorce Index, 1970-1995\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL : Tue Feb 25 07:24:37 UTC 2025), Entry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Elaine K Hovland and Gerald D Hovland, \"Minnesota, Divorce Index, 1970-1995\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1000920566946" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MW7-Z8V8" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1967743?arkName=1:2:9MW7-Z8V8"
+    }
+  }, {
+    "id" : "sd_c_1967743",
+    "about" : "https://www.familysearch.org/platform/records/collections/1967743",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223434043,
+    "modified" : 1740647422286,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Minnesota, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/335"
+      },
+      "temporal" : {
+        "original" : "1970/1995",
+        "formal" : "+1970/+1995"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Minnesota, Divorce Index, 1970-1995"
+    }, {
+      "lang" : "zh",
+      "value" : "明尼蘇達州離婚紀錄索引，1970 年 - 1995 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Minnesota, index des divorces, 1970-1995"
+    }, {
+      "lang" : "ru",
+      "value" : "Миннесота, указатель разводов, 1970-1995 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Minnesota Skilsmisseindeks, 1970-95"
+    }, {
+      "lang" : "es",
+      "value" : "Índice de divorcio de Minnesota, 1970-1995"
+    }, {
+      "lang" : "mn",
+      "value" : "Миннесота муж улс дахь салалтын индекс, 1970-1995 он"
+    }, {
+      "lang" : "ko",
+      "value" : "미네소타 이혼 색인, 1970-1995"
+    }, {
+      "lang" : "ja",
+      "value" : "ミネソタ州離婚インデックス、1970年-1995年"
+    }, {
+      "lang" : "it",
+      "value" : "Indice di divorzio del Minnesota, 1970-1995"
+    }, {
+      "lang" : "id",
+      "value" : "Indeks Perceraian Minnesota, 1970-1995"
+    }, {
+      "lang" : "hu",
+      "value" : "Minnesotai válási index, 1970–1995"
+    }, {
+      "lang" : "sk",
+      "value" : "Minnesota, Index rozvodov, 1970 – 1995"
+    }, {
+      "lang" : "th",
+      "value" : "ดัชนีการหย่าร้างในมินนิโซตา, ปี 1970-1995"
+    }, {
+      "lang" : "to",
+      "value" : "Fakahokohoko Fakamotuʻalea ʻo e Vete Mali Minesota, 1970-1995"
+    }, {
+      "lang" : "bg",
+      "value" : "Индекс на разводите в Минесота, 1970 – 1995"
+    }, {
+      "lang" : "km",
+      "value" : "លិបិក្រមការលែងលះនៅរដ្ឋមីនីសូតា, ឆ្នាំ 1970-1995"
+    }, {
+      "lang" : "pl",
+      "value" : "Minnesota Indeks rozwodów, 1970-1995"
+    }, {
+      "lang" : "ro",
+      "value" : "Indexul divorțurilor din Minnesota, 1970-1995"
+    }, {
+      "lang" : "sv",
+      "value" : "Minnesota, index över skilsmässor, 1970-1995"
+    }, {
+      "lang" : "sm",
+      "value" : "Chỉ Mục về Những Trường Hợp Ly Hôn ở Minnesota, 1970-1995"
+    }, {
+      "lang" : "vi",
+      "value" : "Chỉ Mục về Những Trường Hợp Ly Hôn ở Minnesota, 1970-1995"
+    }, {
+      "lang" : "sq",
+      "value" : "Treguesi i Divorceve në Minesota, 1970-1995"
+    }, {
+      "lang" : "pt",
+      "value" : "Índice de Divórcio de Minnesota, 1970-1995"
+    }, {
+      "lang" : "de",
+      "value" : "Minnesota Scheidungsindex, 1970-1995"
+    }, {
+      "lang" : "uk",
+      "value" : "Міннесота, покажчик розлучень, 1970–1995 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Indeks razvoda u Minnesoti, 1970. - 1995."
+    }, {
+      "lang" : "cs",
+      "value" : "Rejstřík rozvodů v Minnesotě, 1970–1995"
+    }, {
+      "lang" : "da",
+      "value" : "Minnesota skilsmisseindeks, 1970-1995"
+    }, {
+      "lang" : "nl",
+      "value" : "Minnesota Echtscheidingen Index, 1970-1995"
+    }, {
+      "lang" : "et",
+      "value" : "Minnesota lahutuste indeks, 1970–1995"
+    }, {
+      "lang" : "fj",
+      "value" : "iTuvatuva Vakamatanivola ni Veisere e Minnesota, 1970-1995"
+    }, {
+      "lang" : "fi",
+      "value" : "Minnesotan avioerohakemisto, 1970-1995"
+    }, {
+      "lang" : "tl",
+      "value" : "Index ng Diborsyo sa Minnesota, 1970-1995"
+    }, {
+      "lang" : "mg",
+      "value" : "Tondro fikarohana fisarahana tao Minnesota 1970-1995"
+    }, {
+      "lang" : "ceb",
+      "value" : "Indeks sa Diborsyo sa Minnesota, 1970-1995"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1967743" ]
+    }
+  }, {
+    "id" : "sd_p_13585773502",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VKSN-PTG",
+    "componentOf" : {
+      "description" : "#src_r_22020130451",
+      "descriptionId" : "src_r_22020130451"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Minnesota, Divorce Index, 1970-1995\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL : Tue Feb 25 07:24:37 UTC 2025), Entry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Gerald D Hovland, \"Minnesota, Divorce Index, 1970-1995\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Gerald D Hovland, \"Minnesota, Divorce Index, 1970-1995\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VKSN-PTG" ]
+    }
+  }, {
+    "id" : "sd_p_13585773501",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL",
+    "componentOf" : {
+      "description" : "#src_r_22020130451",
+      "descriptionId" : "src_r_22020130451"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Minnesota, Divorce Index, 1970-1995\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL : Tue Feb 25 07:24:37 UTC 2025), Entry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Elaine K Hovland, \"Minnesota, Divorce Index, 1970-1995\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Elaine K Hovland, \"Minnesota, Divorce Index, 1970-1995\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "154901e1-1550-4072-9110-5ecfd60c9c5f",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "3a8c258c-1f75-49d5-9583-cb64189c205f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "1000920566946#12"
+    } ]
+  }, {
+    "id" : "86a6de7e-a1f8-458f-91dd-2b0acc18933d",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "type" : "http://familysearch.org/types/fields/SourcePageNbr",
+    "values" : [ {
+      "id" : "b9070230-ecb4-4496-a96f-4059b1df2cf1",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_PAGE_NBR_ORIG",
+      "text" : "C11"
+    } ]
+  }, {
+    "id" : "eeb04682-1b2a-4f46-9eb6-d26a72496fcd",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "c5c34be4-78af-41e4-afea-879c24fae8d5",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "5665"
+    } ]
+  }, {
+    "id" : "0a374ef6-0f15-4894-8249-83e79f3e7e02",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "429d110e-fc24-4448-9d26-a0a27aec9f12",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "1ee17960-7cc9-44a2-ade1-1ac3dc53504a",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "d1b0ad7f-e6ce-4cdb-888a-462cf1bb4438",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "874a6979-96b9-4af9-876a-d75422e94695",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "abedeab3-7f53-496a-aa7a-e5c51f013a39",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "217ab045-c1b2-427f-b5a7-51b571602af3",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "type" : "http://familysearch.org/types/fields/ExtData",
+    "values" : [ {
+      "id" : "aba5ea67-d657-455b-80c0-b474e9644588",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "EXT_DATA_ORIG",
+      "text" : "{\"ANCESTRY_UNIQUE_IDENTIFIER\":\"10189312\"}"
+    } ]
+  }, {
+    "id" : "5b0dec4e-ed58-4ae2-b16a-be7875ba8786",
+    "attribution" : {
+      "modified" : 1739301564436,
+      "created" : 1739301564436
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "fd13e902-5e7e-4634-bb25-49f02e148507",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"UNIQUE_IDENTIFIER\":\"1000920566946\"}"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  } ]
+}

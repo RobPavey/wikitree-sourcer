@@ -417,6 +417,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:V47K-MBP?lang=en",
   },
   {
+    caseName: "us_mn_divorce_1988_elaine_hovland",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL?lang=en",
+  },
+  {
     caseName: "us_mn_spouse_death_1955_jennie_eneboe",
     url: "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ?treeref=9ZF5-1VJ",
   },

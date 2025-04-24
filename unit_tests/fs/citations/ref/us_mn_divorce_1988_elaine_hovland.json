@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nEntry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nEntry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>Entry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nElaine K Hovland divorce from Gerald D Hovland on 6 Oct 1988 in Hennepin, Minnesota.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nElaine K Hovland divorce from Gerald D Hovland on 6 Oct 1988 in Hennepin, Minnesota.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>Elaine K Hovland divorce from Gerald D Hovland on 6 Oct 1988 in Hennepin, Minnesota.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nName: Elaine K Hovland; Birth Date: 1953; Age: 35; Age Years: 44; Divorce Date: 06 Oct 1988; Divorce Place: Hennepin, Minnesota.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nName: Elaine K Hovland; Birth Date: 1953; Age: 35; Age Years: 44; Divorce Date: 06 Oct 1988; Divorce Place: Hennepin, Minnesota.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>Name: Elaine K Hovland; Birth Date: 1953; Age: 35; Age Years: 44; Divorce Date: 06 Oct 1988; Divorce Place: Hennepin, Minnesota.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Elaine K Hovland\n|-\n| Birth Date || 1953\n|-\n| Age || 35\n|-\n| Age Years || 44\n|-\n| Divorce Date || 06 Oct 1988\n|-\n| Divorce Place || Hennepin, Minnesota\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Elaine K Hovland\n|-\n| Birth Date || 1953\n|-\n| Age || 35\n|-\n| Age Years || 44\n|-\n| Divorce Date || 06 Oct 1988\n|-\n| Divorce Place || Hennepin, Minnesota\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>Name: Elaine K Hovland; Birth Date: 1953; Age: 35; Age Years: 44; Divorce Date: 06 Oct 1988; Divorce Place: Hennepin, Minnesota.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nEntry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nEntry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>Entry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nElaine K Hovland divorce from Gerald D Hovland on 6 Oct 1988 in Hennepin, Minnesota.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nElaine K Hovland divorce from Gerald D Hovland on 6 Oct 1988 in Hennepin, Minnesota.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>Elaine K Hovland divorce from Gerald D Hovland on 6 Oct 1988 in Hennepin, Minnesota.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nEntry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>\nEntry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)<br/>Entry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.",
+    "type": "source"
+  }
+}

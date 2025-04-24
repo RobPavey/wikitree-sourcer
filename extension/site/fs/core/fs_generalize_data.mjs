@@ -302,6 +302,10 @@ function determineRecordType(extractedData) {
     if (sourceTitle.includes("Freemason Membership")) {
       return RT.FreemasonMembership;
     }
+
+    if (sourceTitle.includes("Divorce")) {
+      return RT.Divorce;
+    }
   }
 
   return RT.Unclassified;
@@ -873,6 +877,10 @@ function generalizeDataGivenRecordType(ed, result) {
       }
       resultSpouse.divorceDate = divorceDate;
       result.divorceDate = divorceDate.getDateString();
+
+      if (!result.eventDate) {
+        result.eventDate = divorceDate;
+      }
     }
 
     result.spouses.push(resultSpouse);

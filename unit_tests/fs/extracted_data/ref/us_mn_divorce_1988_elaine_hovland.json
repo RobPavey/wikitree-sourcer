@@ -1,0 +1,39 @@
+{
+  "recordData": {
+    "Name": "Elaine K Hovland",
+    "Birth Date": "1953",
+    "Age": "35",
+    "Age Years": "44",
+    "Divorce Date": "06 Oct 1988",
+    "Divorce Place": "Hennepin, Minnesota"
+  },
+  "fullName": "Elaine K Hovland",
+  "givenName": "Elaine K",
+  "surname": "Hovland",
+  "gender": "female",
+  "factType": "Divorce",
+  "eventPlaceOriginal": "Hennepin, Minnesota",
+  "eventPlaceL2": "Hennepin",
+  "birthDateOriginal": "1953",
+  "birthYear": "1953",
+  "age": "35",
+  "eventDateOriginal": "06 Oct 1988",
+  "eventDate": "6 Oct 1988",
+  "eventYear": "1988",
+  "spouseFullName": "Gerald D Hovland",
+  "spouseGivenName": "Gerald D",
+  "spouseSurname": "Hovland",
+  "spouseGender": "male",
+  "spouseAge": "44",
+  "referenceData": {
+    "sourcePageNbr": "C11"
+  },
+  "extData": "{\"ANCESTRY_UNIQUE_IDENTIFIER\":\"10189312\"}",
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9MW7-Z8V8",
+  "collectionTitle": "Minnesota, Divorce Index, 1970-1995",
+  "fsCollectionId": "1967743",
+  "citation": "\"Minnesota, Divorce Index, 1970-1995\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL : Tue Feb 25 07:24:37 UTC 2025), Entry for Elaine K Hovland and Gerald D Hovland, 06 Oct 1988.",
+  "sourceTitleForPerson": "Elaine K Hovland, \"Minnesota, Divorce Index, 1970-1995\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL",
+  "pageType": "record"
+}

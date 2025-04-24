@@ -1965,7 +1965,7 @@ function addRecordDataForFact(result, fact, factType) {
       }
     }
 
-    if (fact.place.original) {
+    if (fact.place.original && factTypeWithSpaces) {
       let label = factTypeWithSpaces + " Place";
       if (overrideKey) {
         label = overrideKey;
@@ -2449,6 +2449,9 @@ function getFactType(fact) {
     factType = factType.substring(fsTypePrefix.length);
   } else if (factType.startsWith(gcTypePrefix)) {
     factType = factType.substring(gcTypePrefix.length);
+  }
+  if (factType == "Unknown") {
+    return "";
   }
   return factType;
 }
@@ -3535,7 +3538,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
               addRecordDataForFact(result, fact, factType);
 
               // if this is a marriage then add a spouse if possible
-              if (factType.startsWith("Marriage")) {
+              if (factType.startsWith("Marriage") || factType.startsWith("Divorce")) {
                 let otherPersonId = relationship.person2.resourceId;
                 if (relationship.person2.resourceId == personId) {
                   otherPersonId = relationship.person1.resourceId;
@@ -3595,7 +3598,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
 
             // if this is a marriage then add a spouse if possible
             if (relationship.person1.resourceId == personId || relationship.person2.resourceId == personId) {
-              if (factType.startsWith("Marriage")) {
+              if (factType.startsWith("Marriage") || factType.startsWith("Divorce")) {
                 let otherPersonId = relationship.person2.resourceId;
                 if (relationship.person2.resourceId == personId) {
                   otherPersonId = relationship.person1.resourceId;

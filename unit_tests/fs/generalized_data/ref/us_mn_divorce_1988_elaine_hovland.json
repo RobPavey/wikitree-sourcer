@@ -1,0 +1,49 @@
+{
+  "sourceType": "record",
+  "recordType": "Divorce",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Elaine K Hovland",
+    "lastName": "Hovland",
+    "forenames": "Elaine K"
+  },
+  "birthDate": {
+    "dateString": "1953",
+    "yearString": "1953"
+  },
+  "eventDate": {
+    "dateString": "6 Oct 1988",
+    "yearString": "1988"
+  },
+  "eventPlace": {
+    "placeString": "Hennepin, Minnesota"
+  },
+  "ageAtEvent": "35",
+  "spouses": [
+    {
+      "name": {
+        "name": "Gerald D Hovland",
+        "lastName": "Hovland",
+        "forenames": "Gerald D"
+      },
+      "age": "44",
+      "divorceDate": {
+        "dateString": "06 Oct 1988"
+      },
+      "divorcePlace": {
+        "placeString": "Hennepin, Minnesota"
+      }
+    }
+  ],
+  "divorceDate": "06 Oct 1988",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|VKSN-PTL}}"
+  ],
+  "collectionData": {
+    "id": "1967743",
+    "collectionTitle": "Minnesota, Divorce Index, 1970-1995",
+    "page": "C11"
+  },
+  "hasValidData": true
+}
