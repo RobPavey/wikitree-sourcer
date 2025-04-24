@@ -400,7 +400,7 @@ function determineRecordType(extractedData) {
       type: RT.Tax,
       matches: ["Direct Tax Lists", "Tax and Exoneration", "Tax List Record", "Tax Record", "Tax Assessment"],
     },
-    { type: RT.Apprenticeship, matches: ["Apprentices' Indentures"] },
+    { type: RT.Apprenticeship, matches: ["Apprentices' Indentures", "Apprentices Indentured"] },
     { type: RT.Obituary, matches: ["Obituary", "Obituaries"] },
     {
       type: RT.SchoolRecords,
@@ -2569,6 +2569,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "Examination Date",
           "Registry Date",
           "Publication Date",
+          "Registration or Indenture Date",
         ],
         "date"
       )
@@ -2607,6 +2608,7 @@ function generalizeDataGivenRecordType(ed, result) {
       "Parliamentary Division",
       "Death County",
       "Cemetery",
+      "Port of Registry",
     ]);
 
     if (!eventPlace) {
