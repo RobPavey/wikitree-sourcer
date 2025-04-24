@@ -256,6 +256,22 @@ function determineRecordType(extractedData) {
     }
   }
 
+  // special case where there is more than one fact/event/record type
+  //  Example: https://www.familysearch.org/ark:/61903/1:1:QKM7-DN5C?lang=en
+  // There are few possibles
+  // extractedData.factType
+  // extractedData.documentRecordData["Record Type"]
+  // extractedData.documentRecordData["Event Type"] - usually same as extractedData.factType
+  // recordData["Source Record Type"]
+  if (extractedData.factType && extractedData.documentRecordData && extractedData.documentRecordData["Record Type"]) {
+    let ft = extractedData.factType;
+    let edrt = extractedData.documentRecordData["Record Type"];
+    if (ft == "Death" && edrt == "Obituaries") {
+      // Disabled for now because the event place is actually the death place - not the obituary place
+      // return RT.Obituary;
+    }
+  }
+
   if (extractedData.factType) {
     let recordType = lookup(extractedData.factType, sourceTitle, recordData, factTypeToRecordType);
     if (recordType != undefined) {
