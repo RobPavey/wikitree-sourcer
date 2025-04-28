@@ -133,7 +133,7 @@ const regressionData = [
   {
     // has parens and hyphens
     caseName: "margaret_cody-carter-large-day_d_1923",
-    url: "view-source:https://www.findagrave.com/memorial/20605336/margaret-ca-kit-sie-cody-carter-large-day",
+    url: "https://www.findagrave.com/memorial/20605336/margaret-ca-kit-sie-cody-carter-large-day",
   },
   {
     // has multiple prefixes
