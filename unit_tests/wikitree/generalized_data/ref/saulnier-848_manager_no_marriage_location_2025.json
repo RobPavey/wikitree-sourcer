@@ -1,0 +1,66 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Guillaume",
+    "prefNames": "William",
+    "lastName": "Saulnier"
+  },
+  "lastNameAtBirth": "Saulnier",
+  "lastNameAtDeath": "Saulnier",
+  "mothersMaidenName": "Bastarache",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "23 Aug 1906",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "6 May 2005",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "New Brunswick, Canada"
+  },
+  "deathPlace": {
+    "placeString": "Gardner, Worcester, Massachusetts, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Maxime Saulnier",
+        "lastName": "Saulnier",
+        "forenames": "Maxime"
+      },
+      "lastNameAtBirth": "Saulnier",
+      "lastNameAtDeath": "Saulnier"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Magdeleine",
+        "lastName": "Bastarache",
+        "name": "Magdeleine Bastarache"
+      },
+      "lastNameAtBirth": "Bastarache",
+      "lastNameAtDeath": "Saulnier"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "forenames": "Jane",
+        "lastName": "Bettez",
+        "name": "Jane Bettez"
+      },
+      "lastNameAtBirth": "Bettez",
+      "lastNameAtDeath": "Saulnier",
+      "marriageDate": {
+        "dateString": "[marriage date?]"
+      },
+      "marriagePlace": {
+        "placeString": "[marriage location?]"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Saulnier-848"
+}

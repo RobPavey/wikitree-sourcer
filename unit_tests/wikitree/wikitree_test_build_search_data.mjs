@@ -78,10 +78,15 @@ const regressionData = [
       },
     ],
   },
+  {
+    caseName: "/saulnier-848_manager_no_marriage_location_2025",
+    inputPath: "wikitree/generalized_data/ref/saulnier-848_manager_no_marriage_location_2025",
+  },
 ];
 
 async function runTests(testManager) {
   await runBuildSearchUrlTests("freecen", buildSearchData, regressionData, testManager);
+  await runBuildSearchUrlTests("ancestry", buildSearchData, regressionData, testManager);
 }
 
 export { runTests };

@@ -1,0 +1,38 @@
+{
+  "hasValidData": true,
+  "firstNames": "Guillaume",
+  "prefNames": "William",
+  "middleNames": "",
+  "lnab": "Saulnier",
+  "currentLastName": "Saulnier",
+  "mothersMaidenName": "Bastarache",
+  "birthDate": "23 Aug 1906",
+  "birthDateStatus": "none",
+  "deathDate": "6 May 2005",
+  "deathDateStatus": "none",
+  "birthLocation": "New Brunswick, Canada",
+  "deathLocation": "Gardner, Worcester, Massachusetts, United States",
+  "personGender": "male",
+  "spouses": [
+    {
+      "wikiId": "Bettez-35",
+      "name": "Jane (Bettez) Saulnier",
+      "marriageDate": "[marriage date?]",
+      "marriagePlace": "[marriage location?]"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Saulnier-848",
+  "pageType": "read",
+  "wikiId": "Saulnier-848",
+  "name": "Guillaume Saulnier5Â°",
+  "parents": {
+    "father": {
+      "wikiId": "Saulnier-849",
+      "name": "Maxime Saulnier"
+    },
+    "mother": {
+      "wikiId": "Bastarache-573",
+      "name": "Magdeleine (Bastarache) Saulnier"
+    }
+  }
+}
