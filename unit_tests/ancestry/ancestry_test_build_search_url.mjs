@@ -83,6 +83,11 @@ const regressionData = [
     inputPath: "scotp/generalized_data/ref/census_1861_james_fraser",
     typeOfSearch: "SameCollection",
   },
+  {
+    // To test no marriage location when user is manager
+    caseName: "saulnier-848_manager_no_marriage_location_2025",
+    inputPath: "wikitree/generalized_data/ref/saulnier-848_manager_no_marriage_location_2025",
+  },
 ];
 
 async function runTests(testManager) {

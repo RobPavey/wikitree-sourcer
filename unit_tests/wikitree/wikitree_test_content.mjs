@@ -217,6 +217,11 @@ const regressionData = [
     caseName: "whish-wilson-24_read",
     url: "https://www.wikitree.com/wiki/Whish-Wilson-24",
   },
+  {
+    // To test no marriage location when user is manager
+    caseName: "saulnier-848_manager_no_marriage_location_2025",
+    url: "https://www.wikitree.com/wiki/Saulnier-848",
+  }
 ];
 
 async function runTests(testManager) {
