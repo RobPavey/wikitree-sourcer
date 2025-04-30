@@ -1009,6 +1009,52 @@ function isManualClassificationNeeded(data) {
   return result;
 }
 
+function getBuildCitationMenuTextForType(type) {
+  let target = options.citation_general_target;
+
+  let menuText = "";
+  if (target == "wikitree") {
+    if (type == "inline") {
+      menuText = "Build Inline Citation";
+    } else if (type == "narrative") {
+      menuText = "Build Narrative with Citation";
+    } else if (type == "source") {
+      menuText = "Build Source Citation";
+    }
+  } else {
+    if (type == "inline") {
+      menuText = "Build Plain Text Citation";
+    } else if (type == "narrative") {
+      menuText = "Build Narrative";
+    }
+  }
+
+  return menuText;
+}
+
+function getBuildCitationShortcutForType(type) {
+  let target = options.citation_general_target;
+
+  let shortcut = "";
+  if (target == "wikitree") {
+    if (type == "inline") {
+      shortcut = "i";
+    } else if (type == "narrative") {
+      shortcut = "n";
+    } else if (type == "source") {
+      shortcut = "s";
+    }
+  } else if (target == "plain") {
+    if (type == "inline") {
+      shortcut = "c";
+    } else if (type == "narrative") {
+      shortcut = "n";
+    }
+  }
+
+  return shortcut;
+}
+
 function setupBuildCitationSubMenuForRequestedUserInput(
   data,
   buildFunction,
@@ -1170,15 +1216,7 @@ function setupBuildCitationSubMenuForRequestedUserInput(
   }
 
   // final button
-  let buttonText = "";
-  if (data.type == "inline") {
-    buttonText = "Build Inline Citation";
-  } else if (data.type == "narrative") {
-    buttonText = "Build Narrative with Citation";
-  } else if (data.type == "source") {
-    buttonText = "Build Source Citation";
-  }
-
+  let buttonText = getBuildCitationMenuTextForType(data.type);
   let button = document.createElement("button");
   button.className = "dialogButton";
   button.innerText = buttonText;
@@ -1388,14 +1426,7 @@ function setupBuildCitationSubMenu(
   }
 
   // final button
-  let buttonText = "";
-  if (data.type == "inline") {
-    buttonText = "Build Inline Citation";
-  } else if (data.type == "narrative") {
-    buttonText = "Build Narrative with Citation";
-  } else if (data.type == "source") {
-    buttonText = "Build Source Citation";
-  }
+  let buttonText = getBuildCitationMenuTextForType(data.type);
 
   addBreak(menu.list);
   addBreak(menu.list);
@@ -1501,17 +1532,11 @@ function addBuildCitationMenuItem(
     }
   }
 
-  let menuText = "";
-  let shortcut = "";
-  if (type == "inline") {
-    menuText = "Build Inline Citation";
-    shortcut = "i";
-  } else if (type == "narrative") {
-    menuText = "Build Narrative with Citation";
-    shortcut = "n";
-  } else if (type == "source") {
-    menuText = "Build Source Citation";
-    shortcut = "s";
+  let menuText = getBuildCitationMenuTextForType(type);
+  let shortcut = getBuildCitationShortcutForType(type);
+
+  if (!menuText) {
+    return;
   }
 
   let shortCutOption = options.citation_general_addShortcuts;
@@ -1561,8 +1586,6 @@ function addBuildCitationMenuItem(
   } else {
     addMenuItem(menu, menuText, mainClickFunction, shortcut);
   }
-
-  addMenuItemWithSubMenu;
 }
 
 function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, regeneralizeFunction, userInputFunction) {

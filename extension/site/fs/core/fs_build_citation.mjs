@@ -480,6 +480,8 @@ function buildSourceReference(ed, gd, options) {
 }
 
 function buildCoreCitation(ed, gd, builder) {
+  let target = builder.getOptions().citation_general_target;
+
   builder.sourceTitle = ed.collectionTitle;
 
   var recordUrl = ed.personRecordUrl;
@@ -507,17 +509,29 @@ function buildCoreCitation(ed, gd, builder) {
     } else {
       builder.databaseHasImages = true;
 
-      text += buildFsImageLinkOrTemplate(ed.fsImageUrl);
+      if (target == "wikitree") {
+        text += buildFsImageLinkOrTemplate(ed.fsImageUrl);
+      } else {
+        text += "FamilySearch Image Link: " + ed.fsImageUrl;
+      }
       if (ed.fsImageNumber) {
         text += " Image number " + ed.fsImageNumber;
       }
     }
     builder.externalSiteLink = text;
   } else if (ed.digitalArtifact) {
-    builder.externalSiteLink = buildExternalLinkOrTemplate(ed.digitalArtifact);
+    if (target == "wikitree") {
+      builder.externalSiteLink = buildExternalLinkOrTemplate(ed.digitalArtifact);
+    } else {
+      builder.externalSiteLink = ed.digitalArtifact;
+    }
   }
 
-  builder.recordLinkOrTemplate = buildFsRecordLinkOrTemplate(recordUrl);
+  if (target == "wikitree") {
+    builder.recordLinkOrTemplate = buildFsRecordLinkOrTemplate(recordUrl);
+  } else {
+    builder.recordLinkOrTemplate = "FamilySearch Record Link: " + recordUrl;
+  }
 
   let additionalInfo = getAdditionalInfo(ed, gd, builder);
   if (additionalInfo) {
@@ -640,6 +654,8 @@ function getImageRefTitle(catalogRecordName, filmTitle, filmDigitalNote) {
 }
 
 function buildImageCitation(ed, gd, builder) {
+  let target = builder.getOptions().citation_general_target;
+
   builder.databaseHasImages = true;
 
   if (ed.filmTitle) {
@@ -662,8 +678,12 @@ function buildImageCitation(ed, gd, builder) {
     }
   }
 
-  let imageLink = buildFsImageLinkOrTemplate(ed.url);
-  builder.recordLinkOrTemplate = imageLink;
+  if (target == "wikitree") {
+    let imageLink = buildFsImageLinkOrTemplate(ed.url);
+    builder.recordLinkOrTemplate = imageLink;
+  } else {
+    builder.recordLinkOrTemplate = ed.url;
+  }
 
   builder.dataString = buildDataString(ed, gd, builder.options.citation_fs_dataStyle, builder);
 

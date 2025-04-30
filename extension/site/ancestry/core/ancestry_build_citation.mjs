@@ -205,11 +205,15 @@ function getSharingPageRefTitle(titleCollection) {
   return "Unclassified";
 }
 
-function modifyValueForUrl(value) {
+function modifyValueForUrl(builder, value) {
+  let target = builder.getOptions().citation_general_target;
+
   if (value.startsWith("https://www.findagrave.com/memorial")) {
-    let memorialId = value.replace(/^https\:\/\/www\.findagrave\.com\/memorial\/(\d+)\/.*$/, "$1");
-    if (memorialId && memorialId != value) {
-      return "{{FindAGrave|" + memorialId + "}}";
+    if (target == "wikitree") {
+      let memorialId = value.replace(/^https\:\/\/www\.findagrave\.com\/memorial\/(\d+)\/.*$/, "$1");
+      if (memorialId && memorialId != value) {
+        return "{{FindAGrave|" + memorialId + "}}";
+      }
     }
   }
 
@@ -350,7 +354,7 @@ function addReferenceDataToSourceReference(ed, builder, options) {
           }
           if (!alreadyInSourceReference) {
             if (key == "URL") {
-              value = modifyValueForUrl(value);
+              value = modifyValueForUrl(builder, value);
             }
 
             if (value.startsWith("{{")) {
@@ -520,6 +524,12 @@ function getAdditionalInfo(ed, gd, citationType, options, builder) {
 }
 
 function buildAncestryRecordTemplate(ed, options) {
+  let target = options.citation_general_target;
+
+  if (target == "plain") {
+    return "Ancestry Record Link: " + ed.url;
+  }
+
   const domainParams = {
     com: "",
     "co.uk": "uk",
@@ -562,11 +572,25 @@ function buildAncestryRecordTemplate(ed, options) {
 }
 
 function buildAncestryImageTemplate(ed, options) {
+  let target = options.citation_general_target;
+  if (target == "plain") {
+    return "Ancestry Image Link: " + ed.url;
+  }
+
   // Note that the Ancestry Image template has no 3rd (domain parameter)
   return "{{Ancestry Image|" + ed.dbId + "|" + ed.recordId + "}}";
 }
 
-function buildAncestrySharingTemplateFromSharingDataObj(dataObj) {
+function buildAncestrySharingTemplateFromSharingDataObj(options, dataObj) {
+  let target = options.citation_general_target;
+
+  if (target == "plain") {
+    if (dataObj.v2 && dataObj.v2.share_url) {
+      return "Ancestry Sharing Link: " + dataObj.v2.share_url;
+    }
+    return;
+  }
+
   // V1 versions
   // https://www.ancestry.com/sharing/24274440?h=95cf5c
   let num1 = dataObj.id;
@@ -678,7 +702,7 @@ function buildCoreCitation(ed, gd, options, sharingDataObj, builder) {
   addReferenceDataToSourceReference(ed, builder, options);
 
   if (sharingDataObj) {
-    let template = buildAncestrySharingTemplateFromSharingDataObj(sharingDataObj);
+    let template = buildAncestrySharingTemplateFromSharingDataObj(options, sharingDataObj);
     builder.sharingLinkOrTemplate = template;
     builder.databaseHasImages = true;
   }
@@ -707,7 +731,7 @@ function buildImageCitation(ed, options, sharingDataObj, builder) {
   }
 
   if (sharingDataObj) {
-    let template = buildAncestrySharingTemplateFromSharingDataObj(sharingDataObj);
+    let template = buildAncestrySharingTemplateFromSharingDataObj(options, sharingDataObj);
     builder.sharingLinkOrTemplate = template;
   }
 

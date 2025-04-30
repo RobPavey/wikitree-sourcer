@@ -401,6 +401,11 @@ class CitationBuilder {
       citation += this.narrative;
     }
 
+    // For a plain text target the "narrative" type mean JUST the narrative
+    if (target == "plain" && this.type == "narrative") {
+      return citation;
+    }
+
     if (target == "wikitree") {
       if (this.type == "source") {
         citation += "* ";
@@ -428,6 +433,8 @@ class CitationBuilder {
         } else {
           citation += " ";
         }
+      } else {
+        citation += " ";
       }
     }
 
