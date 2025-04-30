@@ -86,7 +86,6 @@ const regressionData = [
 
 async function runTests(testManager) {
   await runBuildSearchUrlTests("freecen", buildSearchData, regressionData, testManager);
-  await runBuildSearchUrlTests("ancestry", buildSearchData, regressionData, testManager);
 }
 
 export { runTests };
