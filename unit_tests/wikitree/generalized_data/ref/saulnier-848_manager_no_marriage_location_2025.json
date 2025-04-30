@@ -52,10 +52,7 @@
         "name": "Jane Bettez"
       },
       "lastNameAtBirth": "Bettez",
-      "lastNameAtDeath": "Saulnier",
-      "marriageDate": {
-        "dateString": "[marriage date?]"
-      }
+      "lastNameAtDeath": "Saulnier"
     }
   ],
   "hasValidData": true,

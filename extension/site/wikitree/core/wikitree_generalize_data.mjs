@@ -381,7 +381,7 @@ function generalizeData(input) {
         resultSpouse.marriageDate = new DateObj();
         resultSpouse.marriageDate.dateString = spouse.marriageDate;
       }
-      if (spouse.marriagePlace && spouse.marriagePlace != "[marriage location?]") {
+      if (spouse.marriagePlace) {
         resultSpouse.marriagePlace = new PlaceObj();
         resultSpouse.marriagePlace.placeString = spouse.marriagePlace;
       }

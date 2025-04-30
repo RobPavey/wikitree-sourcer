@@ -1448,6 +1448,12 @@ function getParentsFromDocumentInNonEditMode2025(document, result) {
 function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
   // read
   // get the spouses (if any)
+
+  // used to check for things like:
+  //  [marriage date?]
+  //  [marriage location?]
+  const missingDataRegEx = /^\[.*\]$/;
+
   let spouseElements = document.querySelectorAll("#Spouses .spouse");
   for (let spouseElement of spouseElements) {
     let spouseLink = spouseElement.querySelector("span[itemprop=spouse] a[itemprop=url]");
@@ -1463,7 +1469,9 @@ function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
       if (marriageDateElement) {
         let marriageDate = marriageDateElement.textContent.trim();
         if (marriageDate) {
-          spouse.marriageDate = marriageDate;
+          if (!missingDataRegEx.test(marriageDate)) {
+            spouse.marriageDate = marriageDate;
+          }
         }
       }
 
@@ -1471,7 +1479,9 @@ function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
       if (marriagePlaceElement) {
         let marriagePlace = marriagePlaceElement.textContent.trim();
         if (marriagePlace) {
-          spouse.marriagePlace = marriagePlace;
+          if (!missingDataRegEx.test(marriagePlace)) {
+            spouse.marriagePlace = marriagePlace;
+          }
         }
       }
 
