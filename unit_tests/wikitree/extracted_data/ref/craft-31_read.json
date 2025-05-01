@@ -1,0 +1,32 @@
+{
+  "hasValidData": true,
+  "firstNames": "Kenneth",
+  "prefNames": "",
+  "middleNames": "Roger",
+  "lnab": "Craft",
+  "currentLastName": "Craft",
+  "mothersMaidenName": "Britt",
+  "birthDate": "28 Feb 1955",
+  "birthDateStatus": "none",
+  "deathDate": "27 Mar 2025",
+  "deathDateStatus": "none",
+  "birthLocation": "Stone Mountain, DeKalb, Georgia, United States",
+  "deathLocation": "Lawrenceville, Gwinnett, Georgia, United States",
+  "personGender": "male",
+  "spouses": [],
+  "url": "https://www.wikitree.com/wiki/Craft-31",
+  "pageType": "read",
+  "wikiId": "Craft-31",
+  "name": "Kenneth Roger Craft",
+  "nicknames": "Kenny",
+  "parents": {
+    "father": {
+      "wikiId": "Craft-32",
+      "name": "Thomas Spurgeon Craft"
+    },
+    "mother": {
+      "wikiId": "Britt-24",
+      "name": "Sarah Frances (Britt) Craft"
+    }
+  }
+}

@@ -28,6 +28,10 @@ import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_util
 
 const regressionDataWikitreeData = [
   {
+    caseName: "wikitree_craft-31_read",
+    inputPath: "wikitree/generalized_data/ref/craft-31_read",
+  },
+  {
     caseName: "scotland_birth_1842_christian_mcleod",
     inputPath: "ancestry/generalized_data/ref/scotland_birth_1842_christian_mcleod",
   },

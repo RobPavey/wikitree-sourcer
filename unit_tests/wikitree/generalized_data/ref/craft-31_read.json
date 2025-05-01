@@ -1,0 +1,51 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Kenneth",
+    "middleNames": "Roger",
+    "nicknames": "Kenny",
+    "lastName": "Craft"
+  },
+  "lastNameAtBirth": "Craft",
+  "lastNameAtDeath": "Craft",
+  "mothersMaidenName": "Britt",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "28 Feb 1955",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "27 Mar 2025",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Stone Mountain, DeKalb, Georgia, United States"
+  },
+  "deathPlace": {
+    "placeString": "Lawrenceville, Gwinnett, Georgia, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Thomas Spurgeon Craft",
+        "lastName": "Craft",
+        "forenames": "Thomas Spurgeon"
+      },
+      "lastNameAtBirth": "Craft",
+      "lastNameAtDeath": "Craft"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Sarah Frances",
+        "lastName": "Britt",
+        "name": "Sarah Frances Britt"
+      },
+      "lastNameAtBirth": "Britt",
+      "lastNameAtDeath": "Craft"
+    }
+  },
+  "spouses": [],
+  "hasValidData": true,
+  "personRepoRef": "Craft-31"
+}

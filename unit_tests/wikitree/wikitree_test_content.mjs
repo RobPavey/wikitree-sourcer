@@ -44,6 +44,10 @@ const regressionData = [
     url: "https://www.wikitree.com/index.php?title=Brewster-4803&errcode=saved",
   },
   {
+    caseName: "craft-31_read",
+    url: "https://www.wikitree.com/wiki/Craft-31",
+  },
+  {
     caseName: "davey-2737_private",
     url: "https://www.wikitree.com/wiki/Davey-2737",
   },
@@ -221,7 +225,7 @@ const regressionData = [
     // To test no marriage location when user is manager
     caseName: "saulnier-848_manager_no_marriage_location_2025",
     url: "https://www.wikitree.com/wiki/Saulnier-848",
-  }
+  },
 ];
 
 async function runTests(testManager) {

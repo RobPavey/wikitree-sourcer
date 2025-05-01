@@ -89,6 +89,12 @@ function getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection) {
   fromYear = fromYear - 2;
   toYear = toYear + 2;
 
+  let today = new Date();
+  let thisYear = today.getFullYear();
+  if (toYear > thisYear) {
+    toYear = thisYear;
+  }
+
   return { fromYear: fromYear.toString(), toYear: toYear.toString() };
 }
 
@@ -131,6 +137,12 @@ function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection)
   if (plusOrMinus != undefined) {
     fromYear = fromYear - plusOrMinus;
     toYear = toYear + plusOrMinus;
+  }
+
+  let today = new Date();
+  let thisYear = today.getFullYear();
+  if (toYear > thisYear) {
+    toYear = thisYear;
   }
 
   return { fromYear: fromYear.toString(), toYear: toYear.toString() };
