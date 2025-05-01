@@ -455,7 +455,7 @@ const CountryData = [
   },
   {
     stdName: "Oranje Vrijstaat",
-    matches: ["Oranje Vrijstaat"],
+    matches: ["Oranje Vrijstaat", "Oranje Vrijstat", "Orange Free State"],
     validDateRange: { startYear: 1852, endYear: 1900 },
   },
   {
