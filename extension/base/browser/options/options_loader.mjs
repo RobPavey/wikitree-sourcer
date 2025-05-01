@@ -318,6 +318,29 @@ function convertOptionsFrom9To10(loadedOptions, optionsRegistry) {
   return convertedOptions;
 }
 
+function convertOptionsFrom10To11(loadedOptions, optionsRegistry) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom10To11, before:");
+  console.log(loadedOptions);
+
+  if (convertedOptions.search_ancestry_restrictToRecords !== undefined) {
+    if (convertedOptions.search_ancestry_restrictToRecords) {
+      convertedOptions.search_ancestry_includeFamilyTrees = false;
+      convertedOptions.search_ancestry_includeStoriesAndPublications = false;
+      convertedOptions.search_ancestry_includePhotosAndMaps = false;
+    }
+    delete convertedOptions.search_ancestry_restrictToRecords;
+  }
+
+  convertedOptions.options_version = 11;
+
+  console.log("convertOptionsFrom10To11, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
 function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
@@ -356,6 +379,9 @@ function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   }
   if (loadedVersion < 10) {
     loadedOptions = convertOptionsFrom9To10(loadedOptions, optionsRegistry);
+  }
+  if (loadedVersion < 11) {
+    loadedOptions = convertOptionsFrom10To11(loadedOptions, optionsRegistry);
   }
 
   return loadedOptions;

@@ -187,10 +187,15 @@ function buildSearchUrl(buildUrlInput) {
     builder.addDistrict(gd.registrationDistrict);
   }
 
-  let restrictOption = options.search_ancestry_restrictToRecords;
-  if (restrictOption || sameCollection) {
-    builder.addRestrictToRecords();
+  let includeTrees = options.search_ancestry_includeFamilyTrees;
+  let includeStories = options.search_ancestry_includeStoriesAndPublications;
+  let includePhotos = options.search_ancestry_includePhotosAndMaps;
+  if (sameCollection) {
+    includeTrees = false;
+    includeStories = false;
+    includePhotos = false;
   }
+  builder.addRestrictToRecords(includeTrees, includeStories, includePhotos);
 
   const url = builder.getUri();
 

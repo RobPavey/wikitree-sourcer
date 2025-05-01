@@ -304,8 +304,22 @@ class AncestryUriBuilder {
     this.addSearchParameter("f-Self-RelationToHead", relationship);
   }
 
-  addRestrictToRecords() {
-    this.addSearchParameter("types", "r");
+  addRestrictToRecords(includeTrees, includeStories, includePhotos) {
+    if (includeTrees && includeStories && includePhotos) {
+      return;
+    }
+
+    let typesString = "r";
+    if (includeTrees) {
+      typesString += "t";
+    }
+    if (includeStories) {
+      typesString += "s";
+    }
+    if (includePhotos) {
+      typesString += "p";
+    }
+    this.addSearchParameter("types", typesString);
   }
 
   getUri() {

@@ -77,10 +77,22 @@ const searchOptionsGroup = {
       defaultValue: "ancestry.com",
     },
     {
-      optionName: "restrictToRecords",
+      optionName: "includeFamilyTrees",
       type: "checkbox",
-      label: "Restrict the search to record results (not trees, stories or photos)",
-      defaultValue: false,
+      label: "Include family trees in search results",
+      defaultValue: true,
+    },
+    {
+      optionName: "includeStoriesAndPublications",
+      type: "checkbox",
+      label: "Include stories & publications in search results",
+      defaultValue: true,
+    },
+    {
+      optionName: "includePhotosAndMaps",
+      type: "checkbox",
+      label: "Include photos & maps in search results",
+      defaultValue: true,
     },
   ],
 };
