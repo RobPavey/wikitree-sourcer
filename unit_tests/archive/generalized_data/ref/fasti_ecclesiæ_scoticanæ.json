@@ -1,0 +1,15 @@
+{
+  "sourceOfData": "archive",
+  "sourceType": "record",
+  "recordType": "Book",
+  "name": {
+    "lastName": "Scott",
+    "forenames": "Hew"
+  },
+  "eventDate": {
+    "dateString": "1915-"
+  },
+  "bookTitle": "Fasti ecclesiæ scoticanæ; the succession of ministers in the Church of Scotland from the reformation",
+  "bookAuthor": "Scott, Hew, 1791-1872; Macdonald, D. F. (Donald Farquhar), 1906-",
+  "hasValidData": true
+}

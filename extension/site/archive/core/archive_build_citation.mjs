@@ -77,8 +77,15 @@ function buildSourceReference(ed, gd, builder) {
   if (ed.url.includes("/page/")) {
     let pageXOfY = ed.pageXOfY;
     if (pageXOfY) {
-      let page = pageXOfY.replace(/^\s*(\d+)\s+of\s+\d+\s*$/, "$1");
-      if (page && page != pageXOfY) {
+      // e.g. 1 of 350
+      const simpleRegEx = /^\s*(\d+)\s+of\s+\d+\s*$/;
+      // e.g. Page 222 (238/572)
+      const longerRegEx = /^\s*page\s+(\d+)\s+\((\d+)\/(\d+)\)\s*$/i;
+      if (simpleRegEx.test(pageXOfY)) {
+        let page = pageXOfY.replace(simpleRegEx, "$1");
+        addTerm("page", page);
+      } else if (longerRegEx.test(pageXOfY)) {
+        let page = pageXOfY.replace(longerRegEx, "$1");
         addTerm("page", page);
       } else {
         // there can be parentheses, this means there is no actual printed decimal page number on the page
