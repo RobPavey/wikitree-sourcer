@@ -53,6 +53,7 @@ const siteNames = [
   "noda",
   "np",
   "npa",
+  "nsvr",
   "nzash",
   "nzbdm",
   "opccorn",
@@ -67,7 +68,6 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
-  "nsvr",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
