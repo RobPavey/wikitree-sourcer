@@ -41,6 +41,7 @@ function createPackage() {
     fs.rmSync(zipPath);
   }
   child_process.execSync(`zip -r ../firefox.zip * -x "*.DS_Store"`, {
+    // child_process.execSync(`7z a -r ../firefox.zip * -xr!*.DS_Store`, {
     cwd: "browser_variants/firefox",
   });
 }

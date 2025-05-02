@@ -54,6 +54,7 @@ const siteNames = [
   "noda",
   "npa",
   "np",
+  "nsvr",
   "nswbdm",
   "nzash",
   "nzbdm",

@@ -53,6 +53,7 @@ const siteNames = [
   "noda",
   "np",
   "npa",
+  "nsvr",
   "nzash",
   "nzbdm",
   "opccorn",

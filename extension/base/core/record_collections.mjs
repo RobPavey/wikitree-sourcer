@@ -1167,6 +1167,53 @@ const RecordCollectionData = [
   // Canada
   ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  // Canada BMD
+  {
+    wtsId: "NovaScotiaBirthReg",
+    title: "Nova Scotia, Birth Registration Index",
+    country: "Canada",
+    isBirth: true,
+    sites: {
+      fs: {
+        id: "1952893",
+        dates: { from: 1800, to: 1930 },
+        searchTerms: { gender: false },
+      },
+      ancestry: { id: "1643", dates: { from: 1800, to: 1930 } },
+      nsvr: { id: "births", dates: { from: 1800, to: 1930 } },
+    },
+  },
+  {
+    wtsId: "NovaScotiaMarriageReg",
+    title: "Nova Scotia, Marriage Registration Index",
+    country: "Canada",
+    isMarriage: true,
+    sites: {
+      fs: {
+        id: "1952893",
+        dates: { from: 1763, to: 1950 },
+        searchTerms: { gender: false },
+      },
+      ancestry: { id: "1644", dates: { from: 1763, to: 1950 } },
+      nsvr: { id: "marriages", dates: { from: 1763, to: 1950 } },
+    },
+  },
+  {
+    wtsId: "NovaScotiaDeathReg",
+    title: "Nova Scotia, Death Registration Index",
+    country: "Canada",
+    isDeath: true,
+    sites: {
+      fs: {
+        id: "1952893",
+        dates: { from: 1864, to: 1975 },
+        searchTerms: { gender: false },
+      },
+      ancestry: { id: "1645", dates: { from: 1864, to: 1975 } },
+      nsvr: { id: "deaths", dates: { from: 1864, to: 1975 } },
+    },
+  },
+
   // Canada Census
   {
     wtsId: "CanadaCensus1825LowerEast",
