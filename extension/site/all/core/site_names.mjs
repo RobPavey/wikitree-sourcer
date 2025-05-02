@@ -54,6 +54,7 @@ const siteNames = [
   "noda",
   "npa",
   "np",
+  "nsvr",
   "nswbdm",
   "nzash",
   "nzbdm",
@@ -69,7 +70,6 @@ const siteNames = [
   "wiewaswie",
   "wikitree",
   "wikipedia",
-  "nsvr",
 ];
 
 export { siteNames };

@@ -591,7 +591,7 @@ const GD = {
   },
 
   inferCountyNameFromPlaceString: function (placeString) {
-    console.log("inferCountyNameFromPlaceString, placeString is : " + placeString);
+    //console.log("inferCountyNameFromPlaceString, placeString is : " + placeString);
 
     // it can be hard to get the county from the string.
     let country = undefined;
@@ -609,7 +609,7 @@ const GD = {
       return ""; // no country recognized
     }
 
-    console.log("inferCountyNameFromPlaceString, placeNameMinusCountry is : " + placeNameMinusCountry);
+    //console.log("inferCountyNameFromPlaceString, placeNameMinusCountry is : " + placeNameMinusCountry);
 
     let countyName = undefined;
     let lastCommaIndex = placeNameMinusCountry.lastIndexOf(",");
@@ -619,11 +619,11 @@ const GD = {
       countyName = placeNameMinusCountry;
     }
 
-    console.log("inferCountyNameFromPlaceString, countyName is : " + countyName);
+    //console.log("inferCountyNameFromPlaceString, countyName is : " + countyName);
 
     if (country) {
       let stdCountyName = CD.standardizeCountyNameForCountry(countyName, country);
-      console.log("inferCountyNameFromPlaceString, stdCountyName is : " + stdCountyName);
+      //console.log("inferCountyNameFromPlaceString, stdCountyName is : " + stdCountyName);
       if (stdCountyName) {
         return stdCountyName;
       }
