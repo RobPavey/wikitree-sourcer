@@ -3,9 +3,9 @@
   "sourceType": "record",
   "recordType": "MarriageRegistration",
   "name": {
-    "name": "Florence McNamara"
+    "name": "William Canty"
   },
-  "personGender": "female",
+  "personGender": "male",
   "eventDate": {
     "yearString": "1901"
   },
@@ -16,17 +16,17 @@
   "spouses": [
     {
       "name": {
-        "name": "William Canty"
+        "name": "Florence McNamara"
       },
-      "personGender": "male",
+      "personGender": "female",
       "marriageDate": {
         "yearString": "1901"
       }
     }
   ],
   "primaryPersonOptions": [
-    "Florence McNamara (bride)",
-    "William Canty (groom)"
+    "William Canty (groom)",
+    "Florence McNamara (bride)"
   ],
   "collectionData": {
     "id": "marriages",

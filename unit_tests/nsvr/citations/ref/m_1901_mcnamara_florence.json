@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nYear: 1901; Book: 1810; Page: 247; Number: 175<br/>\n[https://archives.novascotia.ca/vital-statistics/marriage/?ID=106485 Nova Scotia Archives] (accessed 6 May 2021)<br/>\nFlorence McNamara marriage to William Canty in 1901 in Cumberland, Nova Scotia.\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nYear: 1901; Book: 1810; Page: 247; Number: 175<br/>\n[https://archives.novascotia.ca/vital-statistics/marriage/?ID=106485 Nova Scotia Archives] (accessed 6 May 2021)<br/>\nWilliam Canty marriage to Florence McNamara in 1901 in Cumberland, Nova Scotia.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "Florence's marriage to William Canty was registered in 1901 in Cumberland, Nova Scotia.<ref>\n'''Marriage Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nYear: 1901; Book: 1810; Page: 247; Number: 175<br/>\n[https://archives.novascotia.ca/vital-statistics/marriage/?ID=106485 Nova Scotia Archives] (accessed 6 May 2021)<br/>\nFlorence McNamara marriage to William Canty in 1901 in Cumberland, Nova Scotia.\n</ref>",
+    "citation": "William's marriage to Florence McNamara was registered in 1901 in Cumberland, Nova Scotia.<ref>\n'''Marriage Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nYear: 1901; Book: 1810; Page: 247; Number: 175<br/>\n[https://archives.novascotia.ca/vital-statistics/marriage/?ID=106485 Nova Scotia Archives] (accessed 6 May 2021)<br/>\nWilliam Canty marriage to Florence McNamara in 1901 in Cumberland, Nova Scotia.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Marriage Registration''': \"Nova Scotia Births, Marriages, and Deaths\"<br/>Year: 1901; Book: 1810; Page: 247; Number: 175<br/>[https://archives.novascotia.ca/vital-statistics/marriage/?ID=106485 Nova Scotia Archives] (accessed 6 May 2021)<br/>Florence McNamara marriage to William Canty in 1901 in Cumberland, Nova Scotia.",
+    "citation": "* '''Marriage Registration''': \"Nova Scotia Births, Marriages, and Deaths\"<br/>Year: 1901; Book: 1810; Page: 247; Number: 175<br/>[https://archives.novascotia.ca/vital-statistics/marriage/?ID=106485 Nova Scotia Archives] (accessed 6 May 2021)<br/>William Canty marriage to Florence McNamara in 1901 in Cumberland, Nova Scotia.",
     "type": "source"
   }
 }
