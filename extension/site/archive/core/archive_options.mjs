@@ -25,8 +25,35 @@ SOFTWARE.
 import {
   registerSubsectionForOptions,
   registerOptionsGroup,
+  registerSubheadingForOptions,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchOptionsGroup = {
+  category: "search",
+  subcategory: "archive",
+  tab: "search",
+  subsection: "archive",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "nameInQuotes",
+      type: "checkbox",
+      label: "Put name in quotes",
+      defaultValue: false,
+    },
+    {
+      optionName: "searchType",
+      type: "select",
+      label: "What to search",
+      values: [
+        { value: "metadata", text: "Metadata" },
+        { value: "text", text: "Text contents" },
+      ],
+      defaultValue: "metadata",
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -45,6 +72,8 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "archive", "Internet Archive");
 registerSiteSearchPopupOptionsGroup("archive");
+registerSubheadingForOptions("search", "archive", "parameters", "Search Parameters");
+registerOptionsGroup(searchOptionsGroup);
 
 registerSubsectionForOptions("citation", "archive", "Internet Archive");
 registerOptionsGroup(citationOptionsGroup);

@@ -61,6 +61,10 @@ class ArchiveUriBuilder {
     this.addSearchParameter("query", string);
   }
 
+  addSearchIn(string) {
+    this.addSearchParameter("sin", string);
+  }
+
   getUri() {
     return this.uri;
   }

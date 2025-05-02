@@ -26,6 +26,7 @@ import { ArchiveUriBuilder } from "./archive_uri_builder.mjs";
 
 function buildSearchUrl(buildUrlInput) {
   const gd = buildUrlInput.generalizedData;
+  const options = buildUrlInput.options;
 
   var builder = new ArchiveUriBuilder();
 
@@ -53,10 +54,19 @@ function buildSearchUrl(buildUrlInput) {
   let eventYear = gd.inferEventYear();
 
   if (gd.bookTitle) {
-    addTerm("title:(" + gd.bookTitle + ")");
+    let title = gd.bookTitle;
+    if (options.search_archive_nameInQuotes) {
+      title = '"' + title + '"';
+    }
+    addTerm("title:(" + title + ")");
     addTerm("date:" + eventYear);
   } else {
-    addTerm("(" + gd.inferFullName() + ")");
+    let name = gd.inferFullName();
+    if (options.search_archive_nameInQuotes) {
+      name = '"' + name + '"';
+    }
+
+    addTerm("(" + name + ")");
 
     let birthYear = gd.inferBirthYear();
     let deathYear = gd.inferDeathYear();
@@ -73,6 +83,10 @@ function buildSearchUrl(buildUrlInput) {
   }
 
   builder.addSearchQuery(searchString);
+
+  if (options.search_archive_searchType == "text") {
+    builder.addSearchIn("TXT");
+  }
 
   const url = builder.getUri();
 
