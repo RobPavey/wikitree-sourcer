@@ -911,6 +911,15 @@ function generalizeDataGivenRecordType(ed, result) {
       let race = ed.recordData["Race"];
       result.setTypeSpecficDataValue("race", race);
     }
+  } else if (result.recordType == RT.Burial) {
+    // sometimes there is a cemetary name in the document record data
+    // e.g. https://www.familysearch.org/ark:/61903/1:1:QVVG-NP36?lang=en
+    if (result.eventPlace && ed.documentRecordData && ed.documentRecordData["Cemetery"]) {
+      let streetAddress = ed.documentRecordData["Cemetery"];
+      if (!(result.eventPlace.placeString && result.eventPlace.placeString.includes(streetAddress))) {
+        result.eventPlace.streetAddress = streetAddress;
+      }
+    }
   }
 
   if (ed.household) {
