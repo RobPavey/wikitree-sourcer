@@ -82,9 +82,9 @@ class NsvrEdReader extends ExtractedDataReader {
       return this.makeNameObjFromFullName(this.ed.childName);
     } else if (this.ed.eventType == "marriage") {
       if (this.isPrimaryTheSecond()) {
-        return this.makeNameObjFromFullName(this.ed.groomName);
-      } else {
         return this.makeNameObjFromFullName(this.ed.brideName);
+      } else {
+        return this.makeNameObjFromFullName(this.ed.groomName);
       }
     } else if (this.ed.eventType == "death") {
       return this.makeNameObjFromFullName(this.ed.deceasedName);
@@ -94,9 +94,9 @@ class NsvrEdReader extends ExtractedDataReader {
   getGender() {
     if (this.isMarriage) {
       if (this.isPrimaryTheSecond()) {
-        return "male";
-      } else {
         return "female";
+      } else {
+        return "male";
       }
     }
 
@@ -164,16 +164,16 @@ class NsvrEdReader extends ExtractedDataReader {
 
   getSpouses() {
     if (this.isMarriage) {
-      let spouseFullName = this.ed.groomName;
+      let spouseFullName = this.ed.brideName;
       if (this.isPrimaryTheSecond()) {
-        spouseFullName = this.ed.brideName;
+        spouseFullName = this.ed.groomName;
       }
       let spouseNameObj = this.makeNameObjFromFullName(spouseFullName);
       if (spouseNameObj) {
         let spouse = { name: spouseNameObj };
-        spouse.personGender = "male";
+        spouse.personGender = "female";
         if (this.isPrimaryTheSecond()) {
-          spouse.personGender = "female";
+          spouse.personGender = "male";
         }
         let marriageDateObj = this.getEventDateObj();
         if (marriageDateObj) {
@@ -188,11 +188,11 @@ class NsvrEdReader extends ExtractedDataReader {
 
   getPrimaryPersonOptions() {
     if (this.isMarriage) {
-      let brideName = this.ed.brideName;
       let groomName = this.ed.groomName;
+      let brideName = this.ed.brideName;
 
-      if (brideName && groomName) {
-        let options = [brideName + " (bride)", groomName + " (groom)"];
+      if (groomName && brideName) {
+        let options = [groomName + " (groom)", brideName + " (bride)"];
         return options;
       }
     }

@@ -111,7 +111,7 @@ function inferNSCounty(placeString) {
     ];
     let place = placeString.toLowerCase().replace(" county", "");
     const found = counties.find((v) => place.includes(v));
-    // console.log("found is " + found);
+    //console.log("found is " + found);
     if (found) {
       // place string includes at least one match to county names
       if (place.includes("canada")) {

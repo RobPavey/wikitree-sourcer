@@ -837,7 +837,7 @@ function getBirthRegistrationString(gd, options) {
         }
       }
     } else {
-      // console.log("birthDate is " + birthDate + ", eventDate is " + eventDate);
+      //console.log("birthDate is " + birthDate + ", eventDate is " + eventDate);
       dataString += " birth";
       if (birthDate) {
         dataString += " " + birthDate;

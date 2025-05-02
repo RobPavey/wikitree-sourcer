@@ -533,7 +533,7 @@
     },
     {
       "resources": ["site/nsvr/core/nsvr_extract_data.mjs"],
-      "matches": ["*://archives.novascotia.ca/vital-statistics/*"]
+      "matches": ["*://archives.novascotia.ca/*"]
     },
     {
       "resources": ["site/openarch/core/openarch_extract_data.mjs"],

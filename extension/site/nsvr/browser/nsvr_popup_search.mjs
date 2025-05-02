@@ -22,7 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
+import {
+  beginMainMenu,
+  addMenuItem,
+  addBackMenuItem,
+  endMainMenu,
+  doAsyncActionWithCatch,
+} from "/base/browser/popup/popup_menu_building.mjs";
 
 import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
 
@@ -52,7 +58,7 @@ function shouldShowSearchMenuItem(data, filter) {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function nsvrSearch(generalizedData) {
+async function nsvrSearch(generalizedData, typeOfSearch) {
   const input = {
     typeOfSearch: typeOfSearch,
     generalizedData: generalizedData,
