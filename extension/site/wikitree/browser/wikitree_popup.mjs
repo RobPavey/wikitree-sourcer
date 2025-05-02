@@ -1110,6 +1110,8 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
 
     await waitForAPIResponse();
 
+    //console.log("getPageParentsForAddingChild ");
+
     if (apiResponse) {
       //console.log("getWikiTreeEditFamilyData, apiResponse is:");
       //console.log(apiResponse);
@@ -1131,6 +1133,9 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
         }
       }
     }
+
+    //console.log("getWikiTreeEditFamilyData, parents is:");
+    //console.log(parents);
 
     if (!parents.genderKnown) {
       let parent1HasParen = false;
@@ -1156,6 +1161,9 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
 
       let p1MatchesLnab = pageParent1Name && pageParent1BirthName.endsWith(" " + childLnab);
       let p2MatchesLnab = pageParent2Name && pageParent2BirthName.endsWith(" " + childLnab);
+
+      //console.log("getPageParentsForAddingChild, p1MatchesLnab: " + p1MatchesLnab);
+      //console.log("getPageParentsForAddingChild, p2MatchesLnab: " + p2MatchesLnab);
 
       if (p1MatchesLnab && !p2MatchesLnab) {
         pageParent1Gender = "Male";
@@ -1426,6 +1434,9 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
     } else {
       parentsLine = generateParentsLineGivenPageParents(fullName, birthDateString, birthPlace, undefined);
     }
+
+    //console.log("generateParentsLine, returning parentsLine:");
+    //console.log(parentsLine);
 
     return parentsLine;
   }
@@ -1731,17 +1742,19 @@ async function checkWtPersonData(wtPersonData, processFunction, backFunction) {
         "Dr.",
       ];
       for (let prefix of problemFirstNamePrefixes) {
-        if (wtPersonData.firstName.startsWith(prefix + " ") || wtPersonData.firstName == prefix) {
-          hasProblem = true;
-          problemMessages.push(
-            "First name at birth starts with '" + prefix + "'. This should probably be moved to the prefix."
-          );
-          break;
+        if (wtPersonData.firstName) {
+          if (wtPersonData.firstName.startsWith(prefix + " ") || wtPersonData.firstName == prefix) {
+            hasProblem = true;
+            problemMessages.push(
+              "First name at birth starts with '" + prefix + "'. This should probably be moved to the prefix."
+            );
+            break;
+          }
         }
       }
 
       // check for quotes in first name
-      if (wtPersonData.firstName.includes('"')) {
+      if (wtPersonData.firstName && wtPersonData.firstName.includes('"')) {
         hasProblem = true;
         problemMessages.push(
           `First name at birth includes '"'. This should probably be moved to the nicknames or preferred name.`
@@ -2336,7 +2349,11 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
       await addSetFieldsFromCitationMenuItem(menu, data, tabId, backFunction);
       addShowAdditionalFieldsMenuItem(menu, tabId);
     }
-  } else if (extractedData.pageType == "read" || extractedData.pageType == "private") {
+  } else if (
+    extractedData.pageType == "read" ||
+    extractedData.pageType == "private" ||
+    extractedData.pageType == "searchPerson"
+  ) {
     addMenuDivider(menu);
     await addMergeEditMenuItem(menu, data, tabId, backFunction);
     addSavePersonDataMenuItem(menu, data);

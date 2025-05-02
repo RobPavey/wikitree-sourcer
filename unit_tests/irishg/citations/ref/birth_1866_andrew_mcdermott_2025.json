@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Civil Records of Irish Births, Deaths and Marriages\"<br/>\nGeneral Register Office, Ireland; Group Registration ID: 8347915; SR District/Reg Area: Ballinrobe<br/>\n[https://www.irishgenealogy.ie/files/civil/birth_returns/births_1866/03525/2296882.pdf IrishGenealogy.ie Image] - [https://www.irishgenealogy.ie/view/?record_id=a2e62f754f-6898339 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nAndrew McDermott birth registered 1866 in the Ballinrobe Superintendent Registrar's District.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Andrew's birth was registered in 1866 in the Ballinrobe Superintendent Registrar's District.<ref>\n'''Birth Registration''':\n\"Civil Records of Irish Births, Deaths and Marriages\"<br/>\nGeneral Register Office, Ireland; Group Registration ID: 8347915; SR District/Reg Area: Ballinrobe<br/>\n[https://www.irishgenealogy.ie/files/civil/birth_returns/births_1866/03525/2296882.pdf IrishGenealogy.ie Image] - [https://www.irishgenealogy.ie/view/?record_id=a2e62f754f-6898339 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nAndrew McDermott birth registered 1866 in the Ballinrobe Superintendent Registrar's District.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Civil Records of Irish Births, Deaths and Marriages\"<br/>General Register Office, Ireland; Group Registration ID: 8347915; SR District/Reg Area: Ballinrobe<br/>[https://www.irishgenealogy.ie/files/civil/birth_returns/births_1866/03525/2296882.pdf IrishGenealogy.ie Image] - [https://www.irishgenealogy.ie/view/?record_id=a2e62f754f-6898339 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Andrew McDermott birth registered 1866 in the Ballinrobe Superintendent Registrar's District.",
+    "type": "source"
+  }
+}

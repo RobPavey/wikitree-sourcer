@@ -1,0 +1,27 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Mary North",
+    "lastName": "North",
+    "forenames": "Mary"
+  },
+  "personGender": "female",
+  "spouses": [
+    {
+      "name": {
+        "name": "John Pavey"
+      },
+      "marriageDate": {
+        "dateString": "25 Apr 1547"
+      },
+      "marriagePlace": {
+        "placeString": "Yarcombe, Devon, England"
+      },
+      "deathDate": {
+        "yearString": "1580"
+      }
+    }
+  ],
+  "hasValidData": true
+}

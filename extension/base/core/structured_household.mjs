@@ -209,7 +209,11 @@ class StructuredHousehold {
             householdMember.husband = lastHead;
             householdMember.relationTo = lastHead;
           } else {
-            setHead(householdMember);
+            if (relationship == "lodger") {
+              // possibly this should be a "provisionalHead" and possible relationships to them
+              // or the main head can be checked by comparing last names
+              setHead(householdMember);
+            }
           }
         }
       }

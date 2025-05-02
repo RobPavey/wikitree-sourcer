@@ -1,0 +1,51 @@
+{
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Alfred Wimble Widdowson",
+    "lastName": "Widdowson",
+    "forenames": "Alfred Wimble"
+  },
+  "birthDate": {
+    "dateString": "28 July 1883",
+    "yearString": "1883"
+  },
+  "birthPlace": {
+    "placeString": "George Town, Tasmania, Australia"
+  },
+  "eventDate": {
+    "dateString": "1883",
+    "yearString": "1883"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Alfred Shepherd Widdowson",
+        "forenames": "Alfred Shepherd",
+        "lastName": "Widdowson"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Wimble Emily Widdowson",
+        "forenames": "Wimble Emily",
+        "lastName": "Widdowson"
+      }
+    }
+  },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|Q27M-LKVK}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3QS7-89CH-4CN}}",
+    "{{FamilySearch Record|Q27M-LKVT}}",
+    "{{FamilySearch Record|Q27M-LKKQ}}"
+  ],
+  "collectionData": {
+    "id": "2125029",
+    "collectionTitle": "Australia, Tasmania, Civil Registration, 1803-1933"
+  },
+  "hasValidData": true
+}

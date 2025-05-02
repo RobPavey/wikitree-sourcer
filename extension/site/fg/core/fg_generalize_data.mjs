@@ -68,13 +68,13 @@ function extractNicknames(name, nameObj) {
   if (startQuoteIndex != -1) {
     let endQuoteIndex = name.indexOf('"', startQuoteIndex + 1);
     if (endQuoteIndex != -1) {
-      let nickNames = name.substring(startQuoteIndex + 1, endQuoteIndex);
-      if (nickNames) {
-        if (nameObj.nickNames) {
-          nameObj.nickNames += " ";
-          nameObj.nickNames += nickNames;
+      let nicknames = name.substring(startQuoteIndex + 1, endQuoteIndex);
+      if (nicknames) {
+        if (nameObj.nicknames) {
+          nameObj.nicknames += " ";
+          nameObj.nicknames += nicknames;
         } else {
-          nameObj.nickNames = nickNames;
+          nameObj.nicknames = nicknames;
         }
       }
       name = name.substring(0, startQuoteIndex) + name.substring(endQuoteIndex + 1);
@@ -150,9 +150,16 @@ function extractNameParts(ed, name, nameObj) {
     urlNameParts = newUrlNameParts;
   }
 
+  let firstNames = "";
+  let lastNames = "";
+
   // use these to find prefix and suffix, they could be the same
-  let firstNames = urlNameParts[0].replace("_", " ");
-  let lastNames = urlNameParts[urlNameParts.length - 1].replace("_", " ");
+  if (urlNameParts.length > 0) {
+    firstNames = urlNameParts[0].replace("_", " ");
+    lastNames = urlNameParts[urlNameParts.length - 1].replace("_", " ");
+  } else {
+    lastNames = urlName;
+  }
 
   // There are some cases where the URL doesn't contain all the name parts.
   // For example: https://www.findagrave.com/memorial/91226577/l-rich

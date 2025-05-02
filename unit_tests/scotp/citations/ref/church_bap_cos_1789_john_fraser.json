@@ -1,0 +1,50 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "John, son of Donald Fraser & Mary Fraser, was born or baptised on 6 April 1789 in Urquhart and Glenmoriston, Inverness-shire, Scotland.<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Birth or Baptism''': \"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Fraser born or baptised on 6 Apr 1789, son of Donald Fraser & Mary Fraser, in Urquhart and Glenmoriston, Inverness-shire, Scotland.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "John, son of Donald Fraser & Mary Fraser, was born or baptised on 6 April 1789 in Urquhart and Glenmoriston, Inverness-shire, Scotland.<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nJohn Fraser born or baptised on 6 Apr 1789, son of Donald Fraser & Mary Fraser, in Urquhart and Glenmoriston, Inverness-shire, Scotland.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Birth or Baptism''': \"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>John Fraser born or baptised on 6 Apr 1789, son of Donald Fraser & Mary Fraser, in Urquhart and Glenmoriston, Inverness-shire, Scotland.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: JOHN; Parents/Other details: DONALD FRASER/MARY FRASER FR44 NOT IN ORIG FR186 (FR44); Gender: M; Birth Date: 06/04/1789; Parish: Urquhart and Glenmoriston.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "John, son of Donald Fraser & Mary Fraser, was born or baptised on 6 April 1789 in Urquhart and Glenmoriston, Inverness-shire, Scotland.<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>\nSurname: FRASER; Forename: JOHN; Parents/Other details: DONALD FRASER/MARY FRASER FR44 NOT IN ORIG FR186 (FR44); Gender: M; Birth Date: 06/04/1789; Parish: Urquhart and Glenmoriston.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Birth or Baptism''': \"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: JOHN; Parents/Other details: DONALD FRASER/MARY FRASER FR44 NOT IN ORIG FR186 (FR44); Gender: M; Birth Date: 06/04/1789; Parish: Urquhart and Glenmoriston.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || JOHN\n|-\n| Parents/Other details || DONALD FRASER/MARY FRASER FR44 NOT IN ORIG FR186 (FR44)\n|-\n| Gender || M\n|-\n| Birth Date || 06/04/1789\n|-\n| Parish || Urquhart and Glenmoriston\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "John, son of Donald Fraser & Mary Fraser, was born or baptised on 6 April 1789 in Urquhart and Glenmoriston, Inverness-shire, Scotland.<ref>\n'''Birth or Baptism''':\n\"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>\nNational Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n{| border=\"1\"\n| Surname || FRASER\n|-\n| Forename || JOHN\n|-\n| Parents/Other details || DONALD FRASER/MARY FRASER FR44 NOT IN ORIG FR186 (FR44)\n|-\n| Gender || M\n|-\n| Birth Date || 06/04/1789\n|-\n| Parish || Urquhart and Glenmoriston\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Birth or Baptism''': \"Church of Scotland: Old Parish Registers - Births and Baptisms\"<br/>National Records of Scotland, Parish Number: 107; Ref: 0010/68<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)<br/>Surname: FRASER; Forename: JOHN; Parents/Other details: DONALD FRASER/MARY FRASER FR44 NOT IN ORIG FR186 (FR44); Gender: M; Birth Date: 06/04/1789; Parish: Urquhart and Glenmoriston.",
+    "type": "source"
+  }
+}

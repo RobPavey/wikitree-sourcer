@@ -1,0 +1,56 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "John",
+    "prefNames": "John",
+    "lastName": "Sephton"
+  },
+  "lastNameAtBirth": "Sephton",
+  "lastNameAtDeath": "Sephton",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "1804",
+    "qualifier": 2
+  },
+  "deathDate": {
+    "dateString": "19 Oct 1885",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Scarisbrick, Lancashire, England"
+  },
+  "deathPlace": {
+    "placeString": "Aughton, Lancashire, England"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Richard Sephton",
+        "lastName": "Sephton",
+        "forenames": "Richard"
+      },
+      "lastNameAtBirth": "Sephton",
+      "lastNameAtDeath": "Sephton"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Jane Moorcroft",
+        "lastName": "Moorcroft",
+        "forenames": "Jane"
+      },
+      "lastNameAtBirth": "Moorcroft",
+      "lastNameAtDeath": "Moorcroft",
+      "marriageDate": {
+        "dateString": "6 Sep 1826"
+      },
+      "marriagePlace": {
+        "placeString": "Church of St Peter and St Paul, Ormskirk, Lancashire, England"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Sephton-3"
+}

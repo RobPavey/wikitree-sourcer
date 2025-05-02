@@ -44,28 +44,34 @@ const categories = [
   {
     value: "life+events+(bmds)",
     text: "Birth, Marriage, Death & Parish Records",
+    useDeathYear: true,
   },
-  { value: "census,+land+&+surveys", text: "Census, land & surveys" },
-  { value: "churches+&+religion", text: "Churches & religion" },
+  { value: "census,+land+&+surveys", text: "Census, land & surveys", useDeathYear: true },
+  { value: "churches+&+religion", text: "Churches & religion", useDeathYear: true },
   {
     value: "directories+&+social+history",
     text: "Directories & social history",
+    useDeathYear: true,
   },
-  { value: "education+&+work", text: "Education & work" },
+  { value: "education+&+work", text: "Education & work", useDeathYear: true },
   {
     value: "institutions+&+organisations",
     text: "Institutions & organisations",
+    useDeathYear: true,
   },
   {
     value: "armed+forces+&+conflict",
     text: "Military, armed forces & conflict",
+    useDeathYear: true,
   },
+  { value: "newspapers+&+publications", text: "Newspapers & Publications", useDeathYear: true },
   { value: "travel+&+migration", text: "Travel & migration" },
 ];
 
 const subcategories = [
   { value: "all", text: "All Subcategories" },
 
+  // Birth, Marriage, Death & Parish Records
   {
     value: "civil+births",
     text: "Civil Births",
@@ -75,6 +81,7 @@ const subcategories = [
     value: "civil+deaths+&+burials",
     text: "Civil Deaths & Burials",
     category: "life+events+(bmds)",
+    useDeathYear: true,
   },
   {
     value: "civil+marriage+&+divorce",
@@ -90,6 +97,7 @@ const subcategories = [
     value: "parish+burials",
     text: "Parish Burials",
     category: "life+events+(bmds)",
+    useDeathYear: true,
   },
   {
     value: "parish+marriages",
@@ -100,23 +108,34 @@ const subcategories = [
     value: "parish+registers",
     text: "Parish Registers",
     category: "life+events+(bmds)",
+    useDeathYear: true,
   },
   {
     value: "religious+ceremonies",
     text: "Religious Ceremonies",
     category: "life+events+(bmds)",
+    useDeathYear: true,
   },
   {
     value: "wills+&+probate",
     text: "Wills & Probate",
     category: "life+events+(bmds)",
+    useDeathYear: true,
   },
 
+  // Census, land & surveys
   { value: "census", text: "Census", category: "census,+land+&+surveys" },
   {
     value: "courts+&+legal",
     text: "Courts & Legal",
     category: "census,+land+&+surveys",
+    useDeathYear: true,
+  },
+  {
+    value: "directories+&+almanacs",
+    text: "Directories & Almanacs",
+    category: "census,+land+&+surveys",
+    useDeathYear: true,
   },
   {
     value: "electoral+rolls",
@@ -135,17 +154,41 @@ const subcategories = [
   },
   { value: "surveys", text: "Surveys", category: "census,+land+&+surveys" },
 
+  // Churches & religion
   {
     value: "administration",
     text: "Administration",
     category: "churches+&+religion",
+    useDeathYear: true,
   },
+  {
+    value: "courts+&+legal",
+    text: "Courts & Legal",
+    category: "churches+&+religion",
+    useDeathYear: true,
+  },
+
+  {
+    value: "directories+&+almanacs",
+    text: "Directories & Almanacs",
+    category: "churches+&+religion",
+    useDeathYear: true,
+  },
+
   {
     value: "religious+ceremonies",
     text: "Religious Ceremonies",
     category: "churches+&+religion",
+    useDeathYear: true,
   },
 
+  // Directories & social history
+  {
+    value: "clubs+&+societies",
+    text: "Clubs & Societies",
+    category: "directories+&+social+history",
+    useDeathYear: true,
+  },
   {
     value: "directories+&+almanacs",
     text: "Directories & Almanacs",
@@ -155,19 +198,49 @@ const subcategories = [
     value: "family+histories+&+pedigrees",
     text: "Family Histories & Pedigrees",
     category: "directories+&+social+history",
+    useDeathYear: true,
+  },
+  {
+    value: "government",
+    text: "Government",
+    category: "directories+&+social+history",
+    useDeathYear: true,
+  },
+  {
+    value: "medal+rolls+&+honours",
+    text: "Medal Rolls & Honours",
+    category: "directories+&+social+history",
+    useDeathYear: true,
   },
   {
     value: "newspapers+&+magazines",
     text: "Newspapers & Magazines",
     category: "directories+&+social+history",
+    useDeathYear: true,
+  },
+  {
+    value: "postal+&+telephone+directories",
+    text: "Postal & Telephone Directories",
+    category: "directories+&+social+history",
+    useDeathYear: true,
   },
   {
     value: "social+history",
     text: "Social History",
     category: "directories+&+social+history",
+    useDeathYear: true,
   },
 
-  { value: "apprentices", text: "Apprentices", category: "education+&+work" },
+  // Education & work
+  { value: "apprentices", text: "Apprentices", category: "education+&+work", useDeathYear: true },
+  { value: "civil+service", text: "Civil Service", category: "education+&+work", useDeathYear: true },
+  { value: "colonial+service", text: "Colonial Service", category: "education+&+work", useDeathYear: true },
+  {
+    value: "farming+&+agriculture",
+    text: "Farming & Agriculture",
+    category: "education+&+work",
+    useDeathYear: true,
+  },
   {
     value: "guild+&+trade+associations",
     text: "Guild & Trade Associations",
@@ -177,109 +250,199 @@ const subcategories = [
     value: "merchant+navy+&+maritime",
     text: "Merchant Navy & Maritime",
     category: "education+&+work",
+    useDeathYear: true,
   },
-  { value: "occupations", text: "Occupations", category: "education+&+work" },
-  { value: "professions", text: "Professions", category: "education+&+work" },
+  { value: "occupations", text: "Occupations", category: "education+&+work", useDeathYear: true },
+  { value: "professions", text: "Professions", category: "education+&+work", useDeathYear: true },
   {
     value: "schools+&+education",
     text: "Schools & Education",
     category: "education+&+work",
+    useDeathYear: true,
+  },
+  {
+    value: "transports+&+railways",
+    text: "Transport & Railways",
+    category: "education+&+work",
+    useDeathYear: true,
   },
   {
     value: "workhouses+and+poor+law",
     text: "Workhouses and Poor Law",
     category: "education+&+work",
+    useDeathYear: true,
   },
 
+  // Institutions & organisations
   {
     value: "clubs+&+societies",
     text: "Clubs & Societies",
     category: "institutions+&+organisations",
+    useDeathYear: true,
   },
   {
     value: "courts+&+legal",
     text: "Courts & Legal",
     category: "institutions+&+organisations",
+    useDeathYear: true,
+  },
+  {
+    value: "directories+&+almanacs",
+    text: "Directories & Almanacs",
+    category: "institutions+&+organisations",
+    useDeathYear: true,
   },
   {
     value: "government",
     text: "Government",
     category: "institutions+&+organisations",
+    useDeathYear: true,
   },
   {
     value: "guild+&+trade+associations",
     text: "Guild & Trade Associations",
     category: "institutions+&+organisations",
+    useDeathYear: true,
   },
   {
     value: "hospitals",
     text: "Hospitals",
     category: "institutions+&+organisations",
+    useDeathYear: true,
   },
   {
     value: "hospitals+&+institutions",
     text: "Hospitals & Institutions",
     category: "institutions+&+organisations",
+    useDeathYear: true,
+  },
+  {
+    value: "postal+service",
+    text: "Postal Service",
+    category: "institutions+&+organisations",
+    useDeathYear: true,
   },
   {
     value: "prison+registers",
     text: "Prison Registers",
     category: "institutions+&+organisations",
+    useDeathYear: true,
   },
   {
     value: "schools+&+education",
     text: "Schools & Education",
     category: "institutions+&+organisations",
+    useDeathYear: true,
   },
   {
     value: "social+history",
     text: "Social History",
     category: "institutions+&+organisations",
+    useDeathYear: true,
   },
   {
     value: "workhouses+and+poor+law",
     text: "Workhouses and Poor Law",
     category: "institutions+&+organisations",
+    useDeathYear: true,
   },
 
+  // Military, armed forces & conflict
   {
     value: "boer+wars",
     text: "Boer Wars",
     category: "armed+forces+&+conflict",
   },
   {
+    value: "civil+war+&+rebellion",
+    text: "Civil War & Rebellion",
+    category: "armed+forces+&+conflict",
+    useDeathYear: true,
+  },
+  {
+    value: "directories+&+almanacs",
+    text: "Directories & Almanacs",
+    category: "armed+forces+&+conflict",
+    useDeathYear: true,
+  },
+  {
     value: "first+world+war",
     text: "First World War",
     category: "armed+forces+&+conflict",
+    useDeathYear: true,
+  },
+  {
+    value: "government",
+    text: "Government",
+    category: "armed+forces+&+conflict",
+    useDeathYear: true,
   },
   {
     value: "medal+rolls+and+honours",
     text: "Medal Rolls and Honours",
     category: "armed+forces+&+conflict",
+    useDeathYear: true,
+  },
+  {
+    value: "newspapers+&+magazines",
+    text: "Newspapers & Magazines",
+    category: "armed+forces+&+conflict",
+    useDeathYear: true,
   },
   {
     value: "other+wars+&+conflicts",
     text: "Other Wars & Conflicts",
     category: "armed+forces+&+conflict",
+    useDeathYear: true,
   },
   {
     value: "regimental+&+service+records",
     text: "Regimental & Service Records",
     category: "armed+forces+&+conflict",
+    useDeathYear: true,
   },
   {
     value: "second+world+war",
     text: "Second World War",
     category: "armed+forces+&+conflict",
+    useDeathYear: true,
+  },
+  {
+    value: "vietnam+war",
+    text: "Vietnam War",
+    category: "armed+forces+&+conflict",
+    useDeathYear: true,
   },
 
-  { value: "migration", text: "Migration", category: "travel+&+migration" },
+  // Newspapers & Publications
+  {
+    value: "newspaper+birth+notices",
+    text: "Newspaper Birth Notices",
+    category: "newspapers+&+publications",
+  },
+  {
+    value: "newspaper+death+&+in+memoriam+notices",
+    text: "Newspaper Death & In Memoriam Notices",
+    category: "newspapers+&+publications",
+    useDeathYear: true,
+  },
+  {
+    value: "newspaper+marriage+notices",
+    text: "Newspaper Marriage Notices",
+    category: "newspapers+&+publications",
+  },
+
+  // Travel & migration
+  { value: "migration", text: "Migration", category: "travel+&+migration", useDeathYear: true },
+  { value: "naturalizations", text: "Naturalizations", category: "travel+&+migration", useDeathYear: true },
   {
     value: "passenger+lists",
     text: "Passenger Lists",
     category: "travel+&+migration",
+    useDeathYear: true,
   },
-  { value: "travel", text: "Travel", category: "travel+&+migration" },
+  { value: "transportation", text: "Transportation", category: "travel+&+migration", useDeathYear: true },
+  { value: "travel", text: "Travel", category: "travel+&+migration", useDeathYear: true },
 ];
 
 const wtsCollectionData = {
@@ -353,6 +516,23 @@ const FmpData = {
 
   getCountryNameFromStdCountry: function (stdCountry) {
     return countryStdNameToSourceCountry[stdCountry];
+  },
+
+  doCategoryAndSubCategoryUseDeathYear(categoryValue, subcategoryValue) {
+    if (subcategoryValue) {
+      for (let subcategory of subcategories) {
+        if (subcategory.value == subcategoryValue) {
+          return subcategory.useDeathYear;
+        }
+      }
+    } else if (categoryValue) {
+      for (let category of categories) {
+        if (category.value == categoryValue) {
+          return category.useDeathYear;
+        }
+      }
+    }
+    return true;
   },
 
   getCategories: function (generalizedData, parameters, options) {

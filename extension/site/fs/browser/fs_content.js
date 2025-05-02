@@ -30,13 +30,13 @@ SOFTWARE.
 // https://www.familysearch.org/ark:/61903/3:1:S3HY-DRVJ-ZJ?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVFR1-FH4&action=view&cc=1478678
 // Or more like:
 // https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSKX-9798-6?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3A6ZQY-71VD&action=view&cc=1478678
-const imageWithSidebarUrlRegEx =
+var imageWithSidebarUrlRegEx =
   /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w?\w?\w?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w\w?).*$/;
 
 // these can now have a language code like "en" in them
-const personDetailsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/details\/(.*)$/i;
-const personSourcesRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/sources\/(.*$)/i;
-const personVitalsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/vitals\/(.*$)/i;
+var personDetailsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/details\/(.*)$/i;
+var personSourcesRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/sources\/(.*$)/i;
+var personVitalsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/vitals\/(.*$)/i;
 
 async function doFetch() {
   //console.log("doFetch, document.location is: " + document.location);
@@ -211,13 +211,14 @@ async function extractDataFromFetchAndRespond(document, dataObjects, fetchType, 
       console.log("extractDataFromFetchAndRespond. Retry number: ", loadExtractDataModuleRetries);
       setTimeout(function () {
         extractDataFromFetchAndRespond(document, dataObjects, fetchType, sessionId, options, sendResponse);
-      }, loadModuleTimeout);
+      }, 10);
       return true;
     } else {
       console.log("extractDataFromFetchAndRespond. Too many retries");
       sendResponse({
         success: false,
-        errorMessage: "Extract data module never loaded",
+        errorMessage: "Extract data module never loaded, tried " + maxLoadModuleRetries + " times",
+        noException: true,
       });
     }
     return false;

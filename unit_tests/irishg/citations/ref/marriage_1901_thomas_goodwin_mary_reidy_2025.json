@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"Civil Records of Irish Births, Deaths and Marriages\"<br/>\nGeneral Register Office, Ireland; Group Registration ID: 1669285; SR District/Reg Area: Limerick<br/>\n[https://www.irishgenealogy.ie/view/?record_id=a2e3957fce-3280 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nThomas Goodwin marriage to Mary Reidy on 31 Oct 1901 in the Limerick Superintendent Registrar's District.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Thomas married Mary Reidy on 31 October 1901 in the Limerick Superintendent Registrar's District.<ref>\n'''Marriage Registration''':\n\"Civil Records of Irish Births, Deaths and Marriages\"<br/>\nGeneral Register Office, Ireland; Group Registration ID: 1669285; SR District/Reg Area: Limerick<br/>\n[https://www.irishgenealogy.ie/view/?record_id=a2e3957fce-3280 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>\nThomas Goodwin marriage to Mary Reidy on 31 Oct 1901 in the Limerick Superintendent Registrar's District.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"Civil Records of Irish Births, Deaths and Marriages\"<br/>General Register Office, Ireland; Group Registration ID: 1669285; SR District/Reg Area: Limerick<br/>[https://www.irishgenealogy.ie/view/?record_id=a2e3957fce-3280 IrishGenealogy.ie Record] (accessed 6 May 2021)<br/>Thomas Goodwin marriage to Mary Reidy on 31 Oct 1901 in the Limerick Superintendent Registrar's District.",
+    "type": "source"
+  }
+}

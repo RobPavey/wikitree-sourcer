@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1701 Census''':\n\"Census (manntall) 1701, no. 7: Nordhordland and Voss fogderi\"<br/>\nFarm: Wangen<br/>\n[https://media.digitalarkivet.no/ft10051010272167 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/206/pc00000000600161 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nDavid Nielsen (22) servant in household of Christen Nielsen Weinwiig (66) in Nordhordland and Voss fogderi, Hordaland, Sogn og Fjordane, Norway.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1701 census David (age 22) was a servant in Nordhordland and Voss fogderi, Hordaland, Sogn og Fjordane, Norway.<ref>\n'''1701 Census''':\n\"Census (manntall) 1701, no. 7: Nordhordland and Voss fogderi\"<br/>\nFarm: Wangen<br/>\n[https://media.digitalarkivet.no/ft10051010272167 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/206/pc00000000600161 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nDavid Nielsen (22) servant in household of Christen Nielsen Weinwiig (66) in Nordhordland and Voss fogderi, Hordaland, Sogn og Fjordane, Norway.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1701 Census''': \"Census (manntall) 1701, no. 7: Nordhordland and Voss fogderi\"<br/>Farm: Wangen<br/>[https://media.digitalarkivet.no/ft10051010272167 Digitalarkivet Image] - [https://www.digitalarkivet.no/en/view/206/pc00000000600161 Digitalarkivet Record] (accessed 6 May 2021)<br/>David Nielsen (22) servant in household of Christen Nielsen Weinwiig (66) in Nordhordland and Voss fogderi, Hordaland, Sogn og Fjordane, Norway.",
+    "type": "source"
+  }
+}

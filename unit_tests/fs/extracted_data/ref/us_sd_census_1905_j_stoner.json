@@ -10,10 +10,8 @@
     "Age Years": "63",
     "Age": "63 years",
     "Cnt Years In State": "18",
-    "Record Nbr": "2189",
     "Father Birth Place": "New York",
-    "Mother Birth Place": "New York",
-    "System Of Record": "SLS"
+    "Mother Birth Place": "New York"
   },
   "fullName": "J L Stoner",
   "givenName": "J L",
@@ -31,6 +29,7 @@
     "filmNumber": "2281913",
     "indexingBatchNumber": "N01194-3",
     "packetLetter": "A",
+    "recordNumber": "2189",
     "sheetNumber": "282",
     "digitalFilmNumber": "004245279",
     "imageNumber": "2189"

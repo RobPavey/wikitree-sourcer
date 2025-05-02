@@ -5,10 +5,7 @@
     "Birth Date": "15 August 1847",
     "Birth Place": "Ohio",
     "Marriage Date": "02 Apr",
-    "Marriage Place": "Allegheny, Pennsylvania, United States",
-    "Vis Status": "VISIBLE",
-    "Record Nbr": "1018",
-    "System Of Record": "SLS"
+    "Marriage Place": "Allegheny, Pennsylvania, United States"
   },
   "fullName": "Amanda J. Duff",
   "givenName": "Amanda J.",
@@ -33,6 +30,7 @@
     "packetLetter": "R",
     "filmNumber": "000878581",
     "indexingBatchNumber": "M01417-0",
+    "recordNumber": "1018",
     "digitalFilmNumber": "004266929",
     "imageNumber": "529"
   },

@@ -3,10 +3,7 @@
     "Name": "M. E. Carrington",
     "Race": "White",
     "Birth Date": "Mar 1892",
-    "Birth Place": "Carrington, Charles, Maryland, United States",
-    "Vis Status": "VISIBLE",
-    "Record Nbr": "3",
-    "System Of Record": "SLS"
+    "Birth Place": "Carrington, Charles, Maryland, United States"
   },
   "fullName": "M. E. Carrington",
   "surname": "Carrington",
@@ -34,11 +31,12 @@
     "givenName": "J. C.",
     "link": "https://www.familysearch.org/ark:/61903/1:1:6ZGV-DXJH"
   },
-  "extData": "{\"FS_COLLECTION_ID\":\"4231103\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3QHN-T3YN-TCNB\"}",
   "referenceData": {
+    "recordNumber": "3",
     "digitalFilmNumber": "107833282_001_M9VS-9X7",
     "imageNumber": "368"
   },
+  "extData": "{\"FS_COLLECTION_ID\":\"4231103\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3QHN-T3YN-TCNB\"}",
   "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:4BZD-N9VK",
   "collectionTitle": "Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900",
   "fsCollectionId": "4231103",

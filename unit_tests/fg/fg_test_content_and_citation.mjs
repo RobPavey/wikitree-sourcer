@@ -38,7 +38,7 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    // has extensded ASCII characters
+    // has extended ASCII characters
     caseName: "ales_hrdlicka_d_1943",
     url: "https://www.findagrave.com/memorial/202957947/ale%C5%A1-hrdli%C4%8Dka",
   },
@@ -96,6 +96,11 @@ const regressionData = [
     url: "https://www.findagrave.com/memorial/60724641/harry-bleeker",
   },
   {
+    // unusual URL with no dashes
+    caseName: "helen_hupp_d_1996",
+    url: "https://www.findagrave.com/memorial/111269301/blackwell",
+  },
+  {
     // has only one name
     caseName: "john_d_1978",
     url: "https://www.findagrave.com/memorial/62103674/john",
@@ -128,7 +133,7 @@ const regressionData = [
   {
     // has parens and hyphens
     caseName: "margaret_cody-carter-large-day_d_1923",
-    url: "view-source:https://www.findagrave.com/memorial/20605336/margaret-ca-kit-sie-cody-carter-large-day",
+    url: "https://www.findagrave.com/memorial/20605336/margaret-ca-kit-sie-cody-carter-large-day",
   },
   {
     // has multiple prefixes

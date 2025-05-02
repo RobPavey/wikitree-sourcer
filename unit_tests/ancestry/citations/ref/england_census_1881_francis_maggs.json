@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1881 census Francis (age 6), Scholar, was the son of John Maggs at Wilmot Farm, Easton in Gordano, Somerset, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)<br/>\nFrancis W Maggs (6) son, Scholar, in household of John Maggs (40) at Wilmot Farm, Easton in Gordano in Bedminster registration district in Somerset, England. Born in St George, Somerset, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1881 census Francis (age 6), Scholar, was the son of John Maggs at Wilmot Farm, Easton in Gordano, Somerset, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)<br/>\nFrancis W Maggs (6) son, Scholar, in household of John Maggs (40) at Wilmot Farm, Easton in Gordano in Bedminster registration district in Somerset, England. Born in St George, Somerset, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)<br/>Francis W Maggs (6) son, Scholar, in household of John Maggs (40) at Wilmot Farm, Easton in Gordano in Bedminster registration district in Somerset, England. Born in St George, Somerset, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)<br/>\nName: Francis W. Maggs; Age: 6; Estimated Birth Year: abt 1875; Relationship to Head: Son; Father: John Maggs; Mother: Mary Maggs; Gender: Male; Where born: St George, Somerset, England; Civil parish: Easton in Gordano; County/Island: Somerset; Country: England; Street Address: Wilmot Farm; Occupation: Scholar; Registration District: Bedminster; <br/>Household Members (Name) Age Relationship:<br/>John Maggs 40 Head<br/>Mary Maggs 45 Wife<br/>Agness Maggs 14 Daughter<br/>Martha E. Maggs 11 Daughter<br/>Rebecca Maggs 9 Daughter<br/>Francis Jeffries 74 Father in Law (Father-in-law)<br/>Henry Davey 20 Servant<br/>Julia F. Vincent 17 Servant<br/>Francis W. Maggs 6 Son.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1881 census Francis (age 6), Scholar, was the son of John Maggs at Wilmot Farm, Easton in Gordano, Somerset, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)<br/>\nName: Francis W. Maggs; Age: 6; Estimated Birth Year: abt 1875; Relationship to Head: Son; Father: John Maggs; Mother: Mary Maggs; Gender: Male; Where born: St George, Somerset, England; Civil parish: Easton in Gordano; County/Island: Somerset; Country: England; Street Address: Wilmot Farm; Occupation: Scholar; Registration District: Bedminster; <br/>Household Members (Name) Age Relationship:<br/>John Maggs 40 Head<br/>Mary Maggs 45 Wife<br/>Agness Maggs 14 Daughter<br/>Martha E. Maggs 11 Daughter<br/>Rebecca Maggs 9 Daughter<br/>Francis Jeffries 74 Father in Law (Father-in-law)<br/>Henry Davey 20 Servant<br/>Julia F. Vincent 17 Servant<br/>Francis W. Maggs 6 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)<br/>Name: Francis W. Maggs; Age: 6; Estimated Birth Year: abt 1875; Relationship to Head: Son; Father: John Maggs; Mother: Mary Maggs; Gender: Male; Where born: St George, Somerset, England; Civil parish: Easton in Gordano; County/Island: Somerset; Country: England; Street Address: Wilmot Farm; Occupation: Scholar; Registration District: Bedminster; <br/>Household Members (Name) Age Relationship:<br/>John Maggs 40 Head<br/>Mary Maggs 45 Wife<br/>Agness Maggs 14 Daughter<br/>Martha E. Maggs 11 Daughter<br/>Rebecca Maggs 9 Daughter<br/>Francis Jeffries 74 Father in Law (Father-in-law)<br/>Henry Davey 20 Servant<br/>Julia F. Vincent 17 Servant<br/>Francis W. Maggs 6 Son.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Francis W. Maggs\n|-\n| Age || 6\n|-\n| Estimated Birth Year || abt 1875\n|-\n| Relationship to Head || Son\n|-\n| Father || John Maggs\n|-\n| Mother || Mary Maggs\n|-\n| Gender || Male\n|-\n| Where born || St George, Somerset, England\n|-\n| Civil parish || Easton in Gordano\n|-\n| County/Island || Somerset\n|-\n| Country || England\n|-\n| Street Address || Wilmot Farm\n|-\n| Occupation || Scholar\n|-\n| Registration District || Bedminster\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || John Maggs 40 Head<br/>Mary Maggs 45 Wife<br/>Agness Maggs 14 Daughter<br/>Martha E. Maggs 11 Daughter<br/>Rebecca Maggs 9 Daughter<br/>Francis Jeffries 74 Father in Law (Father-in-law)<br/>Henry Davey 20 Servant<br/>Julia F. Vincent 17 Servant<br/>Francis W. Maggs 6 Son\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1881 census Francis (age 6), Scholar, was the son of John Maggs at Wilmot Farm, Easton in Gordano, Somerset, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Francis W. Maggs\n|-\n| Age || 6\n|-\n| Estimated Birth Year || abt 1875\n|-\n| Relationship to Head || Son\n|-\n| Father || John Maggs\n|-\n| Mother || Mary Maggs\n|-\n| Gender || Male\n|-\n| Where born || St George, Somerset, England\n|-\n| Civil parish || Easton in Gordano\n|-\n| County/Island || Somerset\n|-\n| Country || England\n|-\n| Street Address || Wilmot Farm\n|-\n| Occupation || Scholar\n|-\n| Registration District || Bedminster\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || John Maggs 40 Head<br/>Mary Maggs 45 Wife<br/>Agness Maggs 14 Daughter<br/>Martha E. Maggs 11 Daughter<br/>Rebecca Maggs 9 Daughter<br/>Francis Jeffries 74 Father in Law (Father-in-law)<br/>Henry Davey 20 Servant<br/>Julia F. Vincent 17 Servant<br/>Francis W. Maggs 6 Son\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)<br/>Name: Francis W. Maggs; Age: 6; Estimated Birth Year: abt 1875; Relationship to Head: Son; Father: John Maggs; Mother: Mary Maggs; Gender: Male; Where born: St George, Somerset, England; Civil parish: Easton in Gordano; County/Island: Somerset; Country: England; Street Address: Wilmot Farm; Occupation: Scholar; Registration District: Bedminster; <br/>Household Members (Name) Age Relationship:<br/>John Maggs 40 Head<br/>Mary Maggs 45 Wife<br/>Agness Maggs 14 Daughter<br/>Martha E. Maggs 11 Daughter<br/>Rebecca Maggs 9 Daughter<br/>Francis Jeffries 74 Father in Law (Father-in-law)<br/>Henry Davey 20 Servant<br/>Julia F. Vincent 17 Servant<br/>Francis W. Maggs 6 Son.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1881 England Census,\" database, ({{Ancestry Record|7572|18899854}} : accessed 6 May 2021), Francis W Maggs (6) son, Scholar, in household of John Maggs (40) at Wilmot Farm, Easton in Gordano in Bedminster registration district in Somerset, England. Born in St George, Somerset, England; citing Class RG11, Piece 2463, Folio 45, Page 10, GSU roll 1341593, ED, institution, or vessel 4.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1881 census Francis (age 6), Scholar, was the son of John Maggs at Wilmot Farm, Easton in Gordano, Somerset, England.<ref>\"1881 England Census,\" database, ({{Ancestry Record|7572|18899854}} : accessed 6 May 2021), Francis W Maggs (6) son, Scholar, in household of John Maggs (40) at Wilmot Farm, Easton in Gordano in Bedminster registration district in Somerset, England. Born in St George, Somerset, England; citing Class RG11, Piece 2463, Folio 45, Page 10, GSU roll 1341593, ED, institution, or vessel 4.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1881 England Census,\" database, ({{Ancestry Record|7572|18899854}} : accessed 6 May 2021), Francis W Maggs (6) son, Scholar, in household of John Maggs (40) at Wilmot Farm, Easton in Gordano in Bedminster registration district in Somerset, England. Born in St George, Somerset, England; citing Class RG11, Piece 2463, Folio 45, Page 10, GSU roll 1341593, ED, institution, or vessel 4.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1881 Census'':\n\"1881 England Census\", database, \nClass RG11, Piece 2463, Folio 45, Page 10, GSU roll 1341593, ED, institution, or vessel 4, \n({{Ancestry Record|7572|18899854}} : accessed 6 May 2021), \nName: Francis W. Maggs; Age: 6; Estimated Birth Year: abt 1875; Relationship to Head: Son; Father: John Maggs; Mother: Mary Maggs; Gender: Male; Where born: St George, Somerset, England; Civil parish: Easton in Gordano; County/Island: Somerset; Country: England; Street Address: Wilmot Farm; Occupation: Scholar; Registration District: Bedminster; Household Members (Name) Age Relationship: John Maggs 40 Head, Mary Maggs 45 Wife, Agness Maggs 14 Daughter, Martha E. Maggs 11 Daughter, Rebecca Maggs 9 Daughter, Francis Jeffries 74 Father in Law (Father-in-law), Henry Davey 20 Servant, Julia F. Vincent 17 Servant, Francis W. Maggs 6 Son.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1881 census Francis (age 6), Scholar, was the son of John Maggs at Wilmot Farm, Easton in Gordano, Somerset, England.<ref>\n''1881 Census'':\n\"1881 England Census\", database, \nClass RG11, Piece 2463, Folio 45, Page 10, GSU roll 1341593, ED, institution, or vessel 4, \n({{Ancestry Record|7572|18899854}} : accessed 6 May 2021), \nName: Francis W. Maggs; Age: 6; Estimated Birth Year: abt 1875; Relationship to Head: Son; Father: John Maggs; Mother: Mary Maggs; Gender: Male; Where born: St George, Somerset, England; Civil parish: Easton in Gordano; County/Island: Somerset; Country: England; Street Address: Wilmot Farm; Occupation: Scholar; Registration District: Bedminster; Household Members (Name) Age Relationship: John Maggs 40 Head, Mary Maggs 45 Wife, Agness Maggs 14 Daughter, Martha E. Maggs 11 Daughter, Rebecca Maggs 9 Daughter, Francis Jeffries 74 Father in Law (Father-in-law), Henry Davey 20 Servant, Julia F. Vincent 17 Servant, Francis W. Maggs 6 Son.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1881 Census'': \"1881 England Census\", database, Class RG11, Piece 2463, Folio 45, Page 10, GSU roll 1341593, ED, institution, or vessel 4, ({{Ancestry Record|7572|18899854}} : accessed 6 May 2021), Name: Francis W. Maggs; Age: 6; Estimated Birth Year: abt 1875; Relationship to Head: Son; Father: John Maggs; Mother: Mary Maggs; Gender: Male; Where born: St George, Somerset, England; Civil parish: Easton in Gordano; County/Island: Somerset; Country: England; Street Address: Wilmot Farm; Occupation: Scholar; Registration District: Bedminster; Household Members (Name) Age Relationship: John Maggs 40 Head, Mary Maggs 45 Wife, Agness Maggs 14 Daughter, Martha E. Maggs 11 Daughter, Rebecca Maggs 9 Daughter, Francis Jeffries 74 Father in Law (Father-in-law), Henry Davey 20 Servant, Julia F. Vincent 17 Servant, Francis W. Maggs 6 Son.",
+    "type": "source"
+  }
+}

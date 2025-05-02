@@ -1487,6 +1487,11 @@ function getCremationString(gd, options) {
 
 function getProbateString(gd, options) {
   let dataString = getFullName(gd);
+
+  if (gd.role && gd.role != Role.Primary) {
+    dataString += " in record for another person's";
+  }
+
   dataString += " probate";
 
   let date = gd.inferEventDateObj();

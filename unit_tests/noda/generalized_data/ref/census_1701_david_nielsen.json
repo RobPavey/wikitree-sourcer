@@ -1,0 +1,85 @@
+{
+  "sourceOfData": "noda",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Nielsen",
+    "forenames": "David"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1701"
+  },
+  "eventPlace": {
+    "placeString": "Nordhordland and Voss fogderi, Hordaland, Sogn og Fjordane, Norway",
+    "parish": "Nordhordland and Voss fogderi",
+    "county": "Hordaland, Sogn og Fjordane",
+    "country": "Norway"
+  },
+  "birthDate": {
+    "yearString": "1679",
+    "qualifier": 2
+  },
+  "ageAtEvent": "22",
+  "relationshipToHead": "servant",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "age"
+  ],
+  "householdArray": [
+    {
+      "name": "Christen Nielsen Weinwiig",
+      "relationship": "ops sognepræsten hr.",
+      "age": "66"
+    },
+    {
+      "name": "Niels Christensen",
+      "relationship": "son",
+      "age": "24"
+    },
+    {
+      "name": "Hendrich Christensen",
+      "relationship": "son",
+      "age": "21"
+    },
+    {
+      "name": "Otte Christensen",
+      "relationship": "son",
+      "age": "10"
+    },
+    {
+      "name": "Giert Christensen",
+      "relationship": "son",
+      "age": "8"
+    },
+    {
+      "name": "Sifr Bottelsen St. Røtte",
+      "relationship": "servant",
+      "age": "26"
+    },
+    {
+      "name": "Christen Haldorsen Øjorden",
+      "relationship": "servant",
+      "age": "26"
+    },
+    {
+      "name": "Mons Ellingsen Houge",
+      "relationship": "servant",
+      "age": "28"
+    },
+    {
+      "name": "Iver Askildsen MølsterTeigen",
+      "relationship": "servant",
+      "age": "21"
+    },
+    {
+      "name": "David Nielsen",
+      "relationship": "servant",
+      "age": "22",
+      "isSelected": true,
+      "gender": "male"
+    }
+  ],
+  "hasValidData": true
+}

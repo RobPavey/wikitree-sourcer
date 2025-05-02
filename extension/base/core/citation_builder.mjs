@@ -93,6 +93,8 @@ class CitationBuilder {
   }
 
   addBreakNewlineOrAlternatives(oldCitation, separatorChar = ",") {
+    let target = this.options.citation_general_target;
+
     let citation = oldCitation;
 
     citation = citation.trim();
@@ -102,11 +104,13 @@ class CitationBuilder {
     }
 
     const breakString = "<br/>";
-    if (citation.endsWith(breakString)) {
-      citation = citation.substring(0, citation.length - breakString.length).trim();
+    if (target == "wikitree") {
+      if (citation.endsWith(breakString)) {
+        citation = citation.substring(0, citation.length - breakString.length).trim();
+      }
     }
 
-    if (this.options.citation_general_addBreaksWithinBody) {
+    if (target == "wikitree" && this.options.citation_general_addBreaksWithinBody) {
       citation += breakString;
     } else {
       if (this.options.citation_general_commaInsideQuotes && citation.endsWith('"')) {
@@ -356,6 +360,7 @@ class CitationBuilder {
 
   getCitationString() {
     let options = this.options;
+    let target = options.citation_general_target;
     let autoTableOpt = options.table_general_autoGenerate;
 
     let accessedDate = this.getDateString(this.runDate);
@@ -396,27 +401,38 @@ class CitationBuilder {
       citation += this.narrative;
     }
 
-    if (this.type == "source") {
-      citation += "* ";
-    } else {
-      citation += "<ref>";
+    // For a plain text target the "narrative" type mean JUST the narrative
+    if (target == "plain" && this.type == "narrative") {
+      return citation;
     }
 
-    if (this.type != "source" && options.citation_general_addNewlinesWithinRefs) {
-      citation += "\n";
+    if (target == "wikitree") {
+      if (this.type == "source") {
+        citation += "* ";
+      } else {
+        citation += "<ref>";
+      }
+
+      if (this.type != "source" && options.citation_general_addNewlinesWithinRefs) {
+        citation += "\n";
+      }
     }
 
     if (options.citation_general_meaningfulNames != "none" && this.meaningfulTitle) {
-      if (options.citation_general_meaningfulNames == "bold") {
+      if (target == "wikitree" && options.citation_general_meaningfulNames == "bold") {
         citation += "'''" + this.meaningfulTitle + "''':";
-      } else if (options.citation_general_meaningfulNames == "italic") {
+      } else if (target == "wikitree" && options.citation_general_meaningfulNames == "italic") {
         citation += "''" + this.meaningfulTitle + "'':";
       } else {
         citation += this.meaningfulTitle + ":";
       }
 
-      if (this.type != "source" && options.citation_general_addNewlinesWithinBody) {
-        citation += "\n";
+      if (target == "wikitree") {
+        if (this.type != "source" && options.citation_general_addNewlinesWithinBody) {
+          citation += "\n";
+        } else {
+          citation += " ";
+        }
       } else {
         citation += " ";
       }
@@ -593,11 +609,11 @@ class CitationBuilder {
       }
     }
 
-    if (this.type != "source") {
+    if (target == "wikitree" && this.type != "source") {
       citation += "</ref>";
     }
 
-    if (this.householdTableString && this.type != "source") {
+    if (target == "wikitree" && this.householdTableString && this.type != "source") {
       if (autoTableOpt == "afterRef" || autoTableOpt == "afterRefBlankLine") {
         if (autoTableOpt == "afterRef") {
           citation += "\n";

@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "freebmd",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Greenfield",
+    "forenames": "Mary"
+  },
+  "eventDate": {
+    "yearString": "1985"
+  },
+  "lastNameAtDeath": "Greenfield",
+  "birthDate": {
+    "dateString": "16 DE 1909"
+  },
+  "deathDate": {
+    "yearString": "1985"
+  },
+  "registrationDistrict": "Islington",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "13",
+    "page": "1308"
+  },
+  "hasValidData": true
+}

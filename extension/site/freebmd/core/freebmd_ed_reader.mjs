@@ -28,6 +28,9 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 function freebmdQuarterToGdQuarter(quarter) {
+  if (!quarter) {
+    return 0; // deaths 1984 and later do not have a quarter
+  }
   let string = quarter.toLowerCase();
   switch (string) {
     case "mar":
@@ -39,7 +42,7 @@ function freebmdQuarterToGdQuarter(quarter) {
     case "dec":
       return 4;
     default:
-      return 1;
+      return 0;
   }
 }
 

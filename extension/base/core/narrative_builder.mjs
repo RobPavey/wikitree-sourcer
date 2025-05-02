@@ -1265,6 +1265,19 @@ class NarrativeBuilder {
       }
     } else if (eventPlaceObj) {
       this.addFullPlaceWithPreposition(eventPlaceObj);
+    } else {
+      // could use the birth/death/marriage place
+      if (typeString == "birth") {
+        let birthPlaceObj = gd.inferBirthPlaceObj();
+        if (birthPlaceObj) {
+          this.addFullPlaceWithPreposition(birthPlaceObj);
+        }
+      } else if (typeString == "death") {
+        let deathPlaceObj = gd.inferDeathPlaceObj();
+        if (deathPlaceObj) {
+          this.addFullPlaceWithPreposition(deathPlaceObj);
+        }
+      }
     }
 
     this.narrative += ".";
@@ -2415,10 +2428,19 @@ class NarrativeBuilder {
         this.narrative += " residing " + this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj);
       }
     } else if (eventDateObj) {
-      if (dateIsWrittenDate) {
-        this.narrative += possessiveName + " will was written";
+      if (gd.role && gd.role != Role.Primary) {
+        let possessiveName = this.getPossessiveNamePlusPrimaryPerson();
+        if (dateIsWrittenDate) {
+          this.narrative += "The will of " + possessiveName + " was written";
+        } else {
+          this.narrative += "The estate of " + possessiveName + " passed probate";
+        }
       } else {
-        this.narrative += possessiveName + " estate passed probate";
+        if (dateIsWrittenDate) {
+          this.narrative += possessiveName + " will was written";
+        } else {
+          this.narrative += possessiveName + " estate passed probate";
+        }
       }
       this.addDateWithPreposition(eventDateObj);
       if (eventPlaceObj) {
@@ -2635,12 +2657,20 @@ class NarrativeBuilder {
 
   buildMilitaryString() {
     let gd = this.eventGd;
+    let role = gd.role;
 
     let eventDate = gd.inferEventDate();
     let deathDate = gd.inferDeathDate();
     let placeObj = gd.inferEventPlaceObj();
 
-    this.narrative = this.getPersonNameOrPronoun();
+    if (role && role != Role.Primary) {
+      let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
+      let possessiveName = this.getPossessiveName();
+      this.narrative = possessiveName + " " + relationship;
+    } else {
+      this.narrative += this.getPersonNameOrPronoun(true);
+    }
+
     if (deathDate) {
       let branch = gd.militaryBranch;
       if (!branch) {

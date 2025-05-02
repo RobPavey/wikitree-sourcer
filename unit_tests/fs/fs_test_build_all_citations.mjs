@@ -221,6 +221,20 @@ const regressionData = [
     ],
   },
   {
+    // test case for bug in narrative when merging deaths and burials
+    // https://github.com/RobPavey/wikitree-sourcer/issues/89
+    caseName: "gxgl_cf8_gordon_moats",
+    url: "https://www.familysearch.org/en/tree/person/details/GXGL-CF8",
+    optionVariants: [
+      {
+        variantName: "merge_deaths_burials",
+        optionOverrides: {
+          buildAll_general_mergeDeathsBurials: true,
+        },
+      },
+    ],
+  },
+  {
     // Strange location was created for birth - includes person name in place name
     caseName: "9jr5_db1_mary_carrington",
     url: "https://www.familysearch.org/tree/person/details/9JR5-DB1",

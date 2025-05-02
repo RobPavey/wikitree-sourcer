@@ -26,15 +26,25 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 import { RT } from "../../../base/core/record_type.mjs";
 
 function buildIrishgUrl(ed, builder) {
-  // Example URL:
+  // Example old style URL:
   // "https://churchrecords.irishgenealogy.ie/churchrecords/details/59a05e0443275
   // ?b=https%3A%2F%2Fchurchrecords.irishgenealogy.ie%2Fchurchrecords%2Fsearch.jsp%3Fnamefm%3DJohn%26namel%3DO%2527Connor%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch"
+  // Example new (2025) style URL:
+  // https://www.irishgenealogy.ie/view/?record_id=5fc6443d7a-1552122
+
   let url = ed.url;
 
-  let queryIndex = url.indexOf("?");
-  if (queryIndex != -1) {
-    url = url.substring(0, queryIndex);
+  // to tell if old of new, look at start of URL
+  let recordSite = url.replace(/^.*\:\/\/([^\.]+)\.irishgenealogy.*$/, "$1");
+
+  // if it is the old style then remove the query part of the URL
+  if (recordSite && recordSite != url && recordSite != "www") {
+    let queryIndex = url.indexOf("?");
+    if (queryIndex != -1) {
+      url = url.substring(0, queryIndex);
+    }
   }
+
   return url;
 }
 
@@ -54,7 +64,7 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
-  const excludeValues = ["N/R"];
+  const excludeValues = ["N/R", "N/A"];
 
   function addFieldFromRecordData(label) {
     if (ed.recordData) {
@@ -65,6 +75,8 @@ function buildSourceReference(ed, gd, builder) {
   function addFieldFromRefData(label) {
     if (ed.refData) {
       builder.addSourceReferenceField(label, ed.refData[label], excludeValues);
+    } else if (ed.recordData) {
+      builder.addSourceReferenceField(label, ed.recordData[label], excludeValues);
     }
   }
 

@@ -215,7 +215,10 @@ function buildSearchUrl(buildUrlInput) {
   builder.addCollection(subcategory);
   builder.addDataSetName(dataSetName);
 
-  builder.addGender(gd.inferPersonGender());
+  // It used to be that gender was used in most FMP record searches but now it is not
+  // and adding it caused it to fail to find meny records where gender is not known.
+  // See: https://github.com/RobPavey/wikitree-sourcer/issues/94
+  // builder.addGender(gd.inferPersonGender());
 
   let hasAnyName = false;
   let lastName = gd.inferLastNameGivenParametersAndCollection(parameters, collection);
@@ -245,7 +248,12 @@ function buildSearchUrl(buildUrlInput) {
     // is the date of death and we don't want another date
     builder.addEventYear(gd.inferDeathYear(), eventYearRange);
   } else {
-    builder.addDeathYear(gd.inferDeathYear(), deathYearRange);
+    // we only want to add a death date if we are either:
+    // a) not searching for any specific category/subcategory
+    // b) searching for a category/subcategory where a death date is relevant
+    if (FmpData.doCategoryAndSubCategoryUseDeathYear(category, subcategory)) {
+      builder.addDeathYear(gd.inferDeathYear(), deathYearRange);
+    }
   }
 
   if (sameCollection) {

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Book''':\nScott, Hew, 1791-1872; Macdonald, D. F. (Donald Farquhar), 1906-, ''[https://n2t.net/ark:/13960/fk6nz81187 Fasti ecclesiæ scoticanæ; the succession of ministers in the Church of Scotland from the reformation]''<br/>\nEdinburgh : Oliver and Boyd; 1915-; page: 222<br/>\n[https://archive.org/details/fastiecclesiu06scotuoft/page/222/mode/2up Internet Archive] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was mentioned in the book ''Fasti ecclesiæ scoticanæ; the succession of ministers in the Church of Scotland from the reformation'' on 1915-.<ref>\n'''Book''':\nScott, Hew, 1791-1872; Macdonald, D. F. (Donald Farquhar), 1906-, ''[https://n2t.net/ark:/13960/fk6nz81187 Fasti ecclesiæ scoticanæ; the succession of ministers in the Church of Scotland from the reformation]''<br/>\nEdinburgh : Oliver and Boyd; 1915-; page: 222<br/>\n[https://archive.org/details/fastiecclesiu06scotuoft/page/222/mode/2up Internet Archive] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Book''': Scott, Hew, 1791-1872; Macdonald, D. F. (Donald Farquhar), 1906-, ''[https://n2t.net/ark:/13960/fk6nz81187 Fasti ecclesiæ scoticanæ; the succession of ministers in the Church of Scotland from the reformation]''<br/>Edinburgh : Oliver and Boyd; 1915-; page: 222<br/>[https://archive.org/details/fastiecclesiu06scotuoft/page/222/mode/2up Internet Archive] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

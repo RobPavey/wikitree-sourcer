@@ -27,6 +27,10 @@ import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_util
 
 const regressionData = [
   {
+    caseName: "craft-31_read",
+    inputPath: "wikitree/generalized_data/ref/craft-31_read",
+  },
+  {
     caseName: "pavey-451_wikitree",
     inputPath: "wikitree/generalized_data/ref/pavey-451_read",
     optionVariants: [
@@ -110,6 +114,11 @@ const regressionData = [
         },
       },
     ],
+  },
+  {
+    // To test no marriage location when user is manager
+    caseName: "saulnier-848_manager_no_marriage_location_2025",
+    inputPath: "wikitree/generalized_data/ref/saulnier-848_manager_no_marriage_location_2025",
   },
 ];
 

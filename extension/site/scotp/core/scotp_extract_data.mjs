@@ -127,6 +127,22 @@ function extractFromSearchResults(document, url, result) {
       textString = textString.replace(" - Search results", "");
       result.pageHeader = textString;
     }
+  } else {
+    // no page header found. Use breadcrumbs
+    let crumbs = document.querySelectorAll("#page-wrapper .breadcrumb-item");
+    let pageHeader = "";
+    for (let crumb of crumbs) {
+      let text = crumb.textContent.trim();
+      if (text && text != "Home" && text != "Search the records") {
+        if (pageHeader) {
+          pageHeader += " - ";
+        }
+        pageHeader += text;
+      }
+    }
+    if (pageHeader) {
+      result.pageHeader = pageHeader;
+    }
   }
 
   let searchCriteria = document.querySelector("#you_searched_for");
@@ -170,7 +186,13 @@ document.querySelector("#refine_form_custom_wrapper > input[type=hidden]:nth-chi
 <input data-drupal-selector="edit-search-params-record-type" type="hidden" name="search_params[record_type]" value="census">
 */
   // to get the record group and record type we use the form on left
-  const refineFormWrapper = document.querySelector("#refine_form_custom_wrapper");
+  let refineFormWrapper = document.querySelector("#refine_form_custom_wrapper");
+
+  if (!refineFormWrapper) {
+    // this looks like a bug introduced during maintenance on the site on 8-Apr-2025
+    refineFormWrapper = document.querySelector("[id='refine_form_custom_wrapper wrapper-control']");
+  }
+
   if (refineFormWrapper) {
     const recordGroupElement = refineFormWrapper.querySelector("input[name='search_params[record_group]'");
     if (recordGroupElement) {

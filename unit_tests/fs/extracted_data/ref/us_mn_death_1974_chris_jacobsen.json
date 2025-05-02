@@ -1,0 +1,43 @@
+{
+  "recordData": {
+    "Name": "Chris W. Jacobson",
+    "Death Date": "19 Sep 1974",
+    "Death Place": "Hennepin, Minnesota",
+    "Birth Date": "30 Jun 1890",
+    "Misc Flag Typed Or Handwritten": "T"
+  },
+  "fullName": "Chris W. Jacobson",
+  "givenName": "Chris W.",
+  "surname": "Jacobson",
+  "factType": "Death",
+  "eventDateOriginal": "19 Sep 1974",
+  "eventDate": "19 Sep 1974",
+  "eventYear": "1974",
+  "eventPlaceOriginal": "Hennepin, Minnesota",
+  "eventPlaceL2": "Hennepin",
+  "deathDateOriginal": "19 Sep 1974",
+  "deathDate": "19 Sep 1974",
+  "deathYear": "1974",
+  "deathMonth": "Sep",
+  "birthDateOriginal": "30 Jun 1890",
+  "birthDate": "30 Jun 1890",
+  "birthYear": "1890",
+  "mother": {
+    "fullName": "Jacobson",
+    "surname": "Jacobson",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:V47K-MB5"
+  },
+  "referenceData": {
+    "certificateYear": "1974",
+    "certificateNumber": "022984",
+    "sourceRecordNumber": "1924498",
+    "sourceFileName": "022984"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:9MMY-RPQL",
+  "collectionTitle": "Minnesota, Death Index, 1908-2002",
+  "fsCollectionId": "1937234",
+  "citation": "\"Minnesota, Death Index, 1908-2002\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:V47K-MBP : Tue Feb 18 22:06:22 UTC 2025), Entry for Chris W. Jacobson and Jacobson, 19 Sep 1974.",
+  "sourceTitleForPerson": "Chris W. Jacobson, \"Minnesota, Death Index, 1908-2002\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:V47K-MBP",
+  "pageType": "record"
+}

@@ -354,20 +354,38 @@ function buildSourceReferenceFromRecord(ed, gd, options) {
     addValue("Affiliate Publication Number", refData.externalPublicationNumber);
     addValue("Affiliate Film Number", refData.externalFilmNumber);
 
-    addValue("Line", refData.sourceLineNbr);
+    addValue("Line", refData.lineNumber);
+    if (refData.sourceLineNbr != refData.lineNumber && refData.sourceLineNbr != refData.externalLineNumber) {
+      addValue("Line", refData.sourceLineNbr);
+    }
     if (refData.externalLineNumber != refData.sourceLineNbr) {
       addValue("Affiliate Line Number", refData.externalLineNumber);
-    }
-    if (refData.sourceLineNbr != refData.sourceLineNbr && refData.sourceLineNbr != refData.externalLineNumber) {
-      addValue("Source line number", refData.sourceLineNbr);
     }
     addValue("Entry", refData.sourceEntryNbr);
 
     addValue("Reference", refData.referenceId);
+    if (refData.sourceReference != refData.referenceId) {
+      addValue("Reference", refData.sourceReference);
+    }
+
+    addValue("Source Schedule Number", refData.sourceScheduleNumber);
+    addValue("Source Sub-schedule Number", refData.sourceSubScheduleNumber);
+    addValue("Source Folio Number", refData.sourceFolioNumber);
+    addValue("Source Folio Suffix", refData.sourceFolioSuffix);
+    addValue("Source docket number", refData.sourceDocketNumber);
+    addValue("Source file name", refData.sourceFileName);
+
     addValue("Digital film/folder number", refData.digitalFilmNumber);
     addValue("FHL microfilm", refData.filmNumber);
     addValue("Image number", refData.imageNumber);
     addValue("Record number", refData.recordNumber);
+    if (!refData.recordNumber) {
+      addValue("Record number", refData.sourceRecordNumber);
+    }
+    addValue("Certificate year", refData.certificateYear);
+    addValue("Certificate number", refData.certificateNumber);
+
+    addValue("Volume number", refData.volumeNumber);
     addValue("Sheet number", refData.sheetNumber);
     addValue("Sheet letter", refData.sheetLetter);
     addValue("Packet letter", refData.packetLetter);
@@ -462,6 +480,8 @@ function buildSourceReference(ed, gd, options) {
 }
 
 function buildCoreCitation(ed, gd, builder) {
+  let target = builder.getOptions().citation_general_target;
+
   builder.sourceTitle = ed.collectionTitle;
 
   var recordUrl = ed.personRecordUrl;
@@ -489,17 +509,29 @@ function buildCoreCitation(ed, gd, builder) {
     } else {
       builder.databaseHasImages = true;
 
-      text += buildFsImageLinkOrTemplate(ed.fsImageUrl);
+      if (target == "wikitree") {
+        text += buildFsImageLinkOrTemplate(ed.fsImageUrl);
+      } else {
+        text += "FamilySearch Image Link: " + ed.fsImageUrl;
+      }
       if (ed.fsImageNumber) {
         text += " Image number " + ed.fsImageNumber;
       }
     }
     builder.externalSiteLink = text;
   } else if (ed.digitalArtifact) {
-    builder.externalSiteLink = buildExternalLinkOrTemplate(ed.digitalArtifact);
+    if (target == "wikitree") {
+      builder.externalSiteLink = buildExternalLinkOrTemplate(ed.digitalArtifact);
+    } else {
+      builder.externalSiteLink = ed.digitalArtifact;
+    }
   }
 
-  builder.recordLinkOrTemplate = buildFsRecordLinkOrTemplate(recordUrl);
+  if (target == "wikitree") {
+    builder.recordLinkOrTemplate = buildFsRecordLinkOrTemplate(recordUrl);
+  } else {
+    builder.recordLinkOrTemplate = "FamilySearch Record Link: " + recordUrl;
+  }
 
   let additionalInfo = getAdditionalInfo(ed, gd, builder);
   if (additionalInfo) {
@@ -622,6 +654,8 @@ function getImageRefTitle(catalogRecordName, filmTitle, filmDigitalNote) {
 }
 
 function buildImageCitation(ed, gd, builder) {
+  let target = builder.getOptions().citation_general_target;
+
   builder.databaseHasImages = true;
 
   if (ed.filmTitle) {
@@ -644,8 +678,12 @@ function buildImageCitation(ed, gd, builder) {
     }
   }
 
-  let imageLink = buildFsImageLinkOrTemplate(ed.url);
-  builder.recordLinkOrTemplate = imageLink;
+  if (target == "wikitree") {
+    let imageLink = buildFsImageLinkOrTemplate(ed.url);
+    builder.recordLinkOrTemplate = imageLink;
+  } else {
+    builder.recordLinkOrTemplate = ed.url;
+  }
 
   builder.dataString = buildDataString(ed, gd, builder.options.citation_fs_dataStyle, builder);
 

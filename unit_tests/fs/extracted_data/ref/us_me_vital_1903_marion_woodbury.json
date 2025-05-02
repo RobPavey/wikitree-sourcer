@@ -2,10 +2,7 @@
   "recordData": {
     "Name": "Marion Woodbury",
     "Birth Date": "09 Feb 1903",
-    "Birth Place": "Winthrop, Maine, Maine, United States",
-    "Source Volume Nbr": "Witham - Woodsum",
-    "Record Nbr": "2902",
-    "System Of Record": "SLS"
+    "Birth Place": "Winthrop, Maine, Maine, United States"
   },
   "fullName": "Marion Woodbury",
   "surname": "Woodbury",
@@ -35,7 +32,9 @@
   },
   "referenceData": {
     "filmNumber": "10065",
+    "volumeNumber": "Witham - Woodsum",
     "packetLetter": "A",
+    "recordNumber": "2902",
     "indexingBatchNumber": "I11420-7",
     "digitalFilmNumber": "004703991",
     "imageNumber": "2902"

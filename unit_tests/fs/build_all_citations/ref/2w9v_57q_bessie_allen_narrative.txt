@@ -1,7 +1,7 @@
 In the 1880 census Bessie (age 1) was the daughter of George Allen in Lynn, Essex, Massachusetts, United States.<ref>
 '''1880 Census''':
 "United States Census, 1880"<br/>
-citing Volume: 1; Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T9; Affiliate Line Number: 00012; Digital film/folder number: 005160792; FHL microfilm: 1254531; Image number: 783; Sheet number: 390; Sheet letter: C; Packet letter: B; Indexing batch: C72031-3<br/>
+citing Volume: 1; Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T9; Affiliate Line Number: 00012; Digital film/folder number: 005160792; FHL microfilm: 1254531; Image number: 783; Record number: 2221723; Sheet number: 390; Sheet letter: C; Packet letter: B; Indexing batch: C72031-3<br/>
 {{FamilySearch Record|MH6X-2FC}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|33S7-9YYL-F5L}}<br/>
 Bessie J Allen (1), single daughter, in household of George Allen (28) in Lynn, Essex, Massachusetts, United States. Born in Massachusetts, United States.
@@ -136,7 +136,7 @@ Mildred D Adgurson born to Bessie J E Alline in 1900 in Lynn, Essex, Massachuset
 In the 1900 census Bessie (age 21) was the wife of Clarence Adgurson in Lynn, Essex, Massachusetts, United States.<ref>
 '''1900 Census''':
 "United States Census, 1900"<br/>
-citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T623; Line: 59; Digital film/folder number: 004113829; FHL microfilm: 1240644; Image number: 299; Sheet number: 6; Sheet letter: B; Packet letter: A; Indexing batch: N00677-5<br/>
+citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T623; Line: 59; Digital film/folder number: 004113829; FHL microfilm: 1240644; Image number: 299; Record number: 14326; Sheet number: 6; Sheet letter: B; Packet letter: A; Indexing batch: N00677-5<br/>
 {{FamilySearch Record|M9RW-VB6}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|S3HY-DH6W-15J}}<br/>
 Bessie Adgurson (21), wife, in household of Clarence Adgurson (25) in Lynn, Essex, Massachusetts, United States. Born in Massachusetts.
@@ -233,7 +233,7 @@ Joseph Alton Adgurson born to Bessie Josephine Allen on 8 Jan 1909 in Lynn, Esse
 In the 1910 census Bessie (age 31) was the wife of Clarence Adgusson in Lynn Ward 3, Essex, Massachusetts, United States.<ref>
 '''1910 Census''':
 "United States Census, 1910"<br/>
-citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T624; Digital film/folder number: 004971697; FHL microfilm: 1374597; Image number: 803; Sheet number: 3; Sheet letter: B; Packet letter: A; Indexing batch: N03407-8<br/>
+citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T624; Digital film/folder number: 004971697; FHL microfilm: 1374597; Image number: 803; Record number: 37699; Sheet number: 3; Sheet letter: B; Packet letter: A; Indexing batch: N03407-8<br/>
 {{FamilySearch Record|M2J8-1PP}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|33S7-9RNT-HG6}}<br/>
 Bessie Adgusson (31), wife, in household of Clarence Adgusson (35) in Lynn Ward 3, Essex, Massachusetts, United States. Born in Massachusetts.
@@ -242,7 +242,7 @@ Bessie Adgusson (31), wife, in household of Clarence Adgusson (35) in Lynn Ward 
 In the 1920 census Bessie (age 41) was the wife of Clarence E Adgenson in Essex, Massachusetts, United States.<ref>
 '''1920 Census''':
 "United States Census, 1920"<br/>
-citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T625; Line: 90; Digital film/folder number: 004966071; FHL microfilm: 1820693; Image number: 854; Sheet number: 13; Sheet letter: B; Packet letter: A; Indexing batch: N01868-2<br/>
+citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T625; Line: 90; Digital film/folder number: 004966071; FHL microfilm: 1820693; Image number: 854; Record number: 41075; Sheet number: 13; Sheet letter: B; Packet letter: A; Indexing batch: N01868-2<br/>
 {{FamilySearch Record|MXYK-7JX}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|33SQ-GRX4-HG6}}<br/>
 Bessie J Adgenson (41), wife, in household of Clarence E Adgenson (44) in Essex, Massachusetts, United States. Born in Massachusetts.
@@ -251,7 +251,7 @@ Bessie J Adgenson (41), wife, in household of Clarence E Adgenson (44) in Essex,
 In the 1930 census Bessie (age 51) was the wife of Clarence Aggerson in Swampscott, Essex, Massachusetts, United States.<ref>
 '''1930 Census''':
 "United States Census, 1930"<br/>
-citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T626; Line: 8; Digital film/folder number: 004951084; FHL microfilm: 2340638; Image number: 917; Sheet number: 27; Sheet letter: A; Packet letter: A; Indexing batch: N03852-8<br/>
+citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T626; Line: 8; Digital film/folder number: 004951084; FHL microfilm: 2340638; Image number: 917; Record number: 44598; Sheet number: 27; Sheet letter: A; Packet letter: A; Indexing batch: N03852-8<br/>
 {{FamilySearch Record|XQGS-SS4}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|33SQ-GRHQ-ZY5}}<br/>
 Bessie J Aggerson (51), wife, in household of Clarence Aggerson (55) in Swampscott, Essex, Massachusetts, United States. Born in Massachusetts.

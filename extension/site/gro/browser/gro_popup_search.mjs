@@ -32,6 +32,7 @@ import {
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
+  keepPopupOpen,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
@@ -266,12 +267,14 @@ async function groSmartSearch(gd, typeOfSearch, spouse) {
 
   searchData.parameters = parameters;
 
-  //console.log("nswbdmSearch, searchData is:");
+  //console.log("groSmartSearch, searchData is:");
   //console.log(searchData);
 
   let reuseTabIfPossible = false; // options.search_nswbdm_reuseExistingTab;
 
-  doBackgroundSearchWithSearchData("groSmartSearch", searchData, reuseTabIfPossible);
+  if (!keepPopupOpen) {
+    doBackgroundSearchWithSearchData("groSmartSearch", searchData, reuseTabIfPossible);
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

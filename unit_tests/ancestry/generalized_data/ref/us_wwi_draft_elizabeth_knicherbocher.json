@@ -1,0 +1,23 @@
+{
+  "sourceType": "record",
+  "recordType": "Military",
+  "role": "Parent",
+  "primaryPerson": {
+    "name": {
+      "name": "Elmer Acy Knickerbocker"
+    }
+  },
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Elizabeth Knicherbocher"
+  },
+  "recordSubtype": "WWIDraftRegistration",
+  "wtSearchTemplates": [
+    "{{Ancestry Record|6482|309086444}}"
+  ],
+  "collectionData": {
+    "id": "6482",
+    "collectionTitle": "U.S., World War I Draft Registration Cards, 1917-1918"
+  },
+  "hasValidData": true
+}

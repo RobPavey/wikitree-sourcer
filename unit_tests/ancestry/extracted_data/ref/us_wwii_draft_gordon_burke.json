@@ -1,0 +1,53 @@
+{
+  "url": "https://www.ancestry.com/search/collections/2238/records/303556213",
+  "pageType": "record",
+  "dbId": "2238",
+  "recordId": "303556213",
+  "ancestryTemplate": "{{Ancestry Record|2238|303556213}}",
+  "domain": "ancestry.com",
+  "titleName": "Gordon Elrey Burke",
+  "titleCollection": "U.S., World War II Draft Cards Young Men, 1940-1947",
+  "recordData": {
+    "Name": "Gordon Elrey Burke",
+    "Race": "White",
+    "Age": "18",
+    "Birth Date": "29 Apr 1928",
+    "Birth Place": "Corning, N Y",
+    "Residence Place": "Corning, Steuben, New York",
+    "Registration Date": "29 Apr 1946",
+    "Registration Place": "Corning, New York, USA",
+    "Employer": "Corning Glass Works",
+    "Height": "5'8 1/2\"",
+    "Weight": "150",
+    "Complexion": "Light",
+    "Hair Color": "Brown",
+    "Eye Color": "Brown",
+    "Next of Kin": "Leland Burke",
+    "Household Members (Name)<br/>Relationship": "Gordon Elrey Burke<br/>Leland Burke Father"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "Gordon Elrey Burke",
+        "Relationship": ""
+      },
+      {
+        "Household Members (Name)": "Leland Burke",
+        "dbId": "2238",
+        "recordId": "318556213",
+        "link": "https://www.ancestry.com/search/collections/2238/records/318556213",
+        "Relationship": "Father"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/2238/images/44028_06_00002-00285?pid=303556213&usePUB=true&usePUBJs=true",
+  "imageDbId": "2238",
+  "imageRecordId": "44028_06_00002-00285",
+  "sourceCitation": "National Archives at St. Louis; St. Louis, Missouri; Wwii Draft Registration Cards For New York State, 10/16/1940 - 03/31/1947; Record Group: Records of the Selective Service System, 147",
+  "sourceInformation": "Ancestry.com. U.S., World War II Draft Cards Young Men, 1940-1947 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2011. Original data: View Sources.",
+  "sourceDescription": "This database contains World War II draft registration cards from multiple registrations filled out by men in select states aged 18–44. Learn more..."
+}

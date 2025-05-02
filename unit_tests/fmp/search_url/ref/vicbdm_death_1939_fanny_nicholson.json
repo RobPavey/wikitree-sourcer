@@ -1,8 +1,8 @@
 {
   "std": {
-    "url": "https://www.findmypast.co.uk/search/results?gender=female&firstname=Fanny&firstname_variants=true&lastname=Nicholson&lastname_variants=true&yearofdeath=1939&yearofdeath_offset=2&keywordsplace=Victoria%2c%20Australia&keywordsplace_proximity=5&sourcecountry=australasia"
+    "url": "https://www.findmypast.co.uk/search/results?firstname=Fanny&firstname_variants=true&lastname=Nicholson&lastname_variants=true&yearofdeath=1939&yearofdeath_offset=2&keywordsplace=Victoria%2c%20Australia&keywordsplace_proximity=5&sourcecountry=australasia"
   },
   "same_collection": {
-    "url": "https://www.findmypast.co.uk/search/results?datasetname=victoria+deaths+1836-1985&gender=female&firstname=Fanny&firstname_variants=true&lastname=Nicholson&lastname_variants=true&eventyear=1939&eventyear_offset=0&eventyear=1939&eventyear_offset=0&keywordsplace=Victoria%2c%20Australia&keywordsplace_proximity=5&_variants=true&_variants=true&_variants=true&keywords=Baker"
+    "url": "https://www.findmypast.co.uk/search/results?datasetname=victoria+deaths+1836-1985&firstname=Fanny&firstname_variants=true&lastname=Nicholson&lastname_variants=true&eventyear=1939&eventyear_offset=0&eventyear=1939&eventyear_offset=0&keywordsplace=Victoria%2c%20Australia&keywordsplace_proximity=5&_variants=true&_variants=true&_variants=true&keywords=Baker"
   }
 }

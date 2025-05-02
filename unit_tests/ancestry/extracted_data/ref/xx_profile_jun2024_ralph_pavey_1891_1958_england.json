@@ -13,12 +13,16 @@
     {
       "date": "15 Feb 1914",
       "place": "Holy Trinity, Lambeth, England",
-      "spouseName": "Clara Ethel Risley"
+      "spouseName": "Clara Ethel Risley",
+      "spouseBirthYear": "1888",
+      "spouseDeathYear": "1942"
     },
     {
       "date": "Sep 1944",
       "place": "Hendon, Middlesex",
-      "spouseName": "Elsie Sarah Chambers"
+      "spouseName": "Elsie Sarah Chambers",
+      "spouseBirthYear": "1904",
+      "spouseDeathYear": "1975"
     }
   ],
   "fatherName": "Harry Alfred Pavey",

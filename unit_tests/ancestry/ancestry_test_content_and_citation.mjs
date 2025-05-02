@@ -319,6 +319,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/2477121:7619",
   },
   {
+    caseName: "england_census_1881_francis_maggs",
+    url: "https://www.ancestry.com/search/collections/7572/records/18899854?tid=86808578&pid=46552172864&ssrc=pt",
+  },
+  {
     caseName: "england_census_1881_searle-38",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=7572&h=26496682&clickref=1100lh4Tvjw5%2C1100lh4Tvjw5&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
   },
@@ -415,6 +419,10 @@ const regressionData = [
         },
       },
     ],
+  },
+  {
+    caseName: "england_census_1921_j_berry",
+    url: "https://www.ancestry.com/search/collections/63150/records/16913132",
   },
   {
     caseName: "england_chelsea_pensioner_william_nicholls",
@@ -1237,6 +1245,14 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/4102834:61861",
   },
   {
+    caseName: "us_wwi_draft_elizabeth_knicherbocher",
+    url: "https://www.ancestry.com/search/collections/6482/records/309086444",
+  },
+  {
+    caseName: "us_wwii_draft_gordon_burke",
+    url: "https://www.ancestry.com/search/collections/2238/records/303556213",
+  },
+  {
     caseName: "us_yearbook_1935_lorraine_gardiner",
     url: "https://www.ancestry.com/discoveryui-content/view/90610650:1265",
   },
@@ -1281,6 +1297,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/71402081/person/32242536573/facts",
   },
   {
+    // Has spouse with death year but no birth year
+    caseName: "xx_profile_mary_north_england_2025",
+    url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/82009850755/facts",
+  },
+  {
     caseName: "xx_profile_ralph_pavey_1891_1958_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },
@@ -1303,6 +1324,10 @@ const regressionData = [
   {
     caseName: "yy_sharing_england_census_1911_harold_pavey",
     url: "https://www.ancestry.com/sharing/26033082?h=b2ba14&clickref=1011lwhmX9Rt%2C1011lwhmX9Rt&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate+External",
+  },
+  {
+    caseName: "yy_sharing_image_will_1635_boniface_burton",
+    url: "https://www.ancestry.com/sharing/33168122?token=7b22746f6b656e223a222f3179764c7074566d615357773531536b45704a2b41745470316f536c687258504e3850624b584e3279773d222c22746f6b656e5f76657273696f6e223a225632227d",
   },
   {
     caseName: "yy_sharing_mark_germany_marriage",

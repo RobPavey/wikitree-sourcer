@@ -71,6 +71,10 @@ const regressionData = [
     url: "https://www.digitalarkivet.no/en/view/255/pd00000033830720",
   },
   {
+    caseName: "census_1701_david_nielsen",
+    url: "https://www.digitalarkivet.no/en/view/206/pc00000000600161",
+  },
+  {
     caseName: "census_1815_ole_anders",
     url: "https://www.digitalarkivet.no/en/census/person/pf01051099000750",
     optionVariants: [
@@ -173,6 +177,10 @@ const regressionData = [
   {
     caseName: "emigrant_1872_ole_anders",
     url: "https://www.digitalarkivet.no/en/view/8/pe00000000917949",
+  },
+  {
+    caseName: "emigrant_1883_marit_johnsdtr",
+    url: "https://www.digitalarkivet.no/en/view/291/pu00000000210702",
   },
   {
     caseName: "marriage_1814_ole_ingmundsen",

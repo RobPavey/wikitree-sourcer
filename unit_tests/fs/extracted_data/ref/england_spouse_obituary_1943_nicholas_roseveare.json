@@ -1,0 +1,38 @@
+{
+  "recordData": {
+    "Name": "Nicholas Roseveare",
+    "Source Newspaper": "Western Morning News",
+    "Source Pub Date": "15 Dec 1943"
+  },
+  "eventDateOriginal": "12 Dec",
+  "eventDate": "12 Dec",
+  "eventYear": "1943",
+  "eventPlaceOriginal": "Plymouth, Devon, England",
+  "eventPlace": "Plymouth, Devon, England, United Kingdom",
+  "eventPlaceL2": "Devon",
+  "eventPlaceL1": "England",
+  "fullName": "Nicholas Roseveare",
+  "surname": "Roseveare",
+  "givenName": "Nicholas",
+  "relatedPersonFactType": "Obituary",
+  "relationshipToFactPerson": "Spouse",
+  "relatedPersonFullName": "Jemima Grace Roseveare, Widow",
+  "relatedPersonSurname": "Roseveare",
+  "relatedPersonGivenName": "Jemima Grace",
+  "relatedPersonGender": "female",
+  "relatedPersonLink": "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXV1",
+  "extData": "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-CSW5-H31L-9\",\"FS_COLLECTION_ID\":\"2562514\"}",
+  "referenceData": {
+    "sourcePageNbr": "1",
+    "digitalFilmNumber": "102117936",
+    "imageNumber": "595"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QRPB-4R1N",
+  "collectionTitle": "British Newspaper Archive, Family Notices",
+  "fsCollectionId": "2562514",
+  "citation": "\"British Newspaper Archive, Family Notices\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXV1 : Thu Mar 07 17:50:46 UTC 2024), Entry for Jemima Grace Roseveare, Widow and Henry Maynard, 12 Dec.",
+  "sourceTitleForPerson": "Nicholas Roseveare, \"British Newspaper Archive, Family Notices\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSW5-H31L-9",
+  "pageType": "record"
+}

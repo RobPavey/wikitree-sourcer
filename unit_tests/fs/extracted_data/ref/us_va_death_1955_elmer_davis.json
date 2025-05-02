@@ -6,9 +6,7 @@
     "Death Date": "06 Jan 1955",
     "Death Place": ", Grayson, Virginia, United States",
     "Birth Date": "12 Apr 1910",
-    "Age": "44",
-    "Record Nbr": "1744",
-    "System Of Record": "SLS"
+    "Age": "44"
   },
   "fullName": "Elmer Lawrence Davis",
   "surname": "Davis",
@@ -43,6 +41,7 @@
   },
   "extData": "{\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:3Q9M-C95D-78NZ\",\"FS_COLLECTION_ID\":\"2377565\",\"FS_FOLDER\":\"100936704\"}",
   "referenceData": {
+    "recordNumber": "1744",
     "sourceRegNbr": "380",
     "digitalFilmNumber": "100936704",
     "imageNumber": "65"

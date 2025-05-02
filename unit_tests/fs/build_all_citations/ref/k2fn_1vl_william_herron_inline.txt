@@ -22,7 +22,7 @@ US Census 1900 ED 434 Precinct 2 McKeesport city Ward 8, Allegheny, Pennsylvania
 <ref>
 '''1900 Census''':
 "United States Census, 1900"<br/>
-citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T623; Line: 4; Digital film/folder number: 004114976; FHL microfilm: 1241369; Image number: 184; Sheet number: 9; Sheet letter: A; Packet letter: A; Indexing batch: N00682-7<br/>
+citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T623; Line: 4; Digital film/folder number: 004114976; FHL microfilm: 1241369; Image number: 184; Record number: 8925; Sheet number: 9; Sheet letter: A; Packet letter: A; Indexing batch: N00682-7<br/>
 {{FamilySearch Record|M3M4-NG7}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|S3HY-DCP9-BPT}}<br/>
 William Herron (4), single son, in household of William Herron (38) in McKeesport, Allegheny, Pennsylvania, United States. Born in Pennsylvania.
@@ -47,10 +47,10 @@ US Census Fulton, Georgia, Camp Jesup<br/>
 <ref>
 '''Marriage''':
 "California, County Marriages, 1850-1953"<br/>
-citing Page: 136; Digital film/folder number: 005698422; FHL microfilm: 2074454; Image number: 1808<br/>
+citing Page: 136; Digital film/folder number: 005698422; FHL microfilm: 2074454; Image number: 1808; Record number: 889<br/>
 {{FamilySearch Record|K8NH-3R3}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|3QSQ-G93W-NSKY-Z}}<br/>
-William Herron (28) marriage to Flora Christena Wakefield (24) on 6 Aug 1924 in Los Angeles.
+William Herron (28), son of William Herron & William Herron, marriage to Flora Christena Wakefield (24), daughter of Wesley Wakefield & Christena Woodford, on 6 Aug 1924 in Los Angeles, California, United States.
 </ref>
 
 <ref>
@@ -63,7 +63,7 @@ US Census 1930 Los Angeles, California, Los Angeles assembly district no. 64<br/
 <ref>
 '''1930 Census''':
 "United States Census, 1930"<br/>
-citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T626; Line: 83; Digital film/folder number: 004950138; FHL microfilm: 2339882; Image number: 1037; Sheet number: 20; Sheet letter: B; Packet letter: A; Indexing batch: N03992-1<br/>
+citing Affiliate Name: The U.S. National Archives and Records Administration (NARA); Affiliate Publication Number: T626; Line: 83; Digital film/folder number: 004950138; FHL microfilm: 2339882; Image number: 1037; Record number: 44172; Sheet number: 20; Sheet letter: B; Packet letter: A; Indexing batch: N03992-1<br/>
 {{FamilySearch Record|XCVL-HHT}} (accessed 20 July 2023)<br/>
 {{FamilySearch Image|33S7-9R4V-HNW}}<br/>
 Wm Herron (33), married head of household at Los Angeles (Districts 0251-0500), Los Angeles, California, United States. Born in Pennsylvania.

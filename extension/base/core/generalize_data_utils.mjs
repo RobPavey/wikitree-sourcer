@@ -1659,10 +1659,10 @@ class NameObj {
     }
 
     if (fullName) {
-      if (this.prefix) {
+      if (this.prefix && !fullName.startsWith(this.prefix)) {
         fullName = this.prefix + " " + fullName;
       }
-      if (this.suffix) {
+      if (this.suffix && !fullName.endsWith(this.suffix)) {
         fullName = fullName + " " + this.suffix;
       }
     }
@@ -1777,6 +1777,9 @@ class NameObj {
     }
     if (this.forenames) {
       return StringUtils.getWordsAfterFirstWord(this.forenames);
+    }
+    if (this.firstNames) {
+      return StringUtils.getWordsAfterFirstWord(this.firstNames);
     }
     if (this.name) {
       if (this.lastName && this.lastName == this.name) {

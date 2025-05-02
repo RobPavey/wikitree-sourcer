@@ -48,6 +48,10 @@ const regressionData = [
     url: "https://www.freebmd.org.uk/cgi/information.pl?cite=BPWMD5euQCbaHxoApSv%2FbQ&scan=1",
   },
   {
+    caseName: "d_1985_greenfield_mary",
+    url: "https://www.freebmd.org.uk/cgi/information.pl?cite=aGzrr%2B%2BC02OpOvuJRw7OVw&scan=1",
+  },
+  {
     caseName: "m_1870_pavey_henry_alfred",
     url: "https://www.freebmd.org.uk/cgi/information.pl?r=48088197:8889&d=bmd_1627336144",
   },

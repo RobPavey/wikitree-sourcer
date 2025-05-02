@@ -190,6 +190,10 @@ function setYearAndPlace(ed, result) {
     return setYearAndPlacePre2025(ed, result);
   }
 
+  if (!ed.recordData) {
+    return false;
+  }
+
   result.setEventYear(ed.recordData.census_year);
 
   let eventPlace = "";

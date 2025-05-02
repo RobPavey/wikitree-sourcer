@@ -29,6 +29,12 @@
       },
       "marriagePlace": {
         "placeString": "Holy Trinity, Lambeth, England"
+      },
+      "birthDate": {
+        "yearString": "1888"
+      },
+      "deathDate": {
+        "yearString": "1942"
       }
     },
     {
@@ -40,6 +46,12 @@
       },
       "marriagePlace": {
         "placeString": "Hendon, Middlesex"
+      },
+      "birthDate": {
+        "yearString": "1904"
+      },
+      "deathDate": {
+        "yearString": "1975"
       }
     }
   ],

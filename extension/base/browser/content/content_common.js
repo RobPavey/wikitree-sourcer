@@ -192,7 +192,8 @@ function extractDataAndRespond(document, url, contentType, sendResponse, siteSpe
         console.log("extractDataAndRespond. Too many retries");
         sendResponse({
           success: false,
-          errorMessage: "Extract data module never loaded",
+          errorMessage: "Extract data module never loaded, tried " + maxExtractDataAndRespondRetries + " times",
+          noException: true,
         });
       }
     } else {
@@ -205,7 +206,8 @@ function extractDataAndRespond(document, url, contentType, sendResponse, siteSpe
       console.log(loadedExtractDataModule);
       sendResponse({
         success: false,
-        errorMessage: "Extract data module never loaded",
+        errorMessage: "Extract data module never loaded. Is not in process of loading.",
+        noException: true,
       });
     }
 

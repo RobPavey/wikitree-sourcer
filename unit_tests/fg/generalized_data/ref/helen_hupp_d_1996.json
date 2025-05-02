@@ -1,0 +1,33 @@
+{
+  "sourceOfData": "fg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "18 Dec 1996"
+  },
+  "eventPlace": {
+    "placeString": "Dover, Tuscarawas County, Ohio, USA",
+    "streetAddress": "Ridgecrest Memory Gardens"
+  },
+  "name": {
+    "name": "Helen Wilabea Hupp - Davis"
+  },
+  "lastNameAtBirth": "Blackwell",
+  "deathDate": {
+    "dateString": "18 Dec 1996"
+  },
+  "deathPlace": {
+    "placeString": "Dover, Tuscarawas County, Ohio, USA"
+  },
+  "ageAtDeath": "80",
+  "birthDate": {
+    "dateString": "30 Jun 1916"
+  },
+  "birthPlace": {
+    "placeString": "Little Rock, Pulaski County, Arkansas, USA"
+  },
+  "wtSearchTemplates": [
+    "{{FindAGrave|111269301}}"
+  ],
+  "hasValidData": true
+}

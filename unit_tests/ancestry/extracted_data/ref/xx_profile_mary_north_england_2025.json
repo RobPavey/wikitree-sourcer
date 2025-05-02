@@ -1,0 +1,24 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/86808578/person/82009850755/facts",
+  "pageType": "personFacts",
+  "givenName": "Mary",
+  "surname": "North",
+  "titleName": "Mary North",
+  "gender": "Female",
+  "marriages": [
+    {
+      "date": "25 Apr 1547",
+      "place": "Yarcombe, Devon, England",
+      "spouseName": "John Pavey",
+      "spouseDeathYear": "1580"
+    }
+  ],
+  "sources": [
+    {
+      "dbId": "9852",
+      "recordId": "15440383",
+      "title": "England, Select Marriages, 1538–1973"
+    }
+  ],
+  "ancestryTemplate": "{{Ancestry Tree|86808578|82009850755}}"
+}

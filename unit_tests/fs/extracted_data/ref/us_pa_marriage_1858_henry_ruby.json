@@ -1,21 +1,35 @@
 {
   "recordData": {
     "Name": "Henry Rice Ruby",
-    "Unknown Date": "9 Nov 1858",
+    " Date": "9 Nov 1858",
     "Marriage Date": "9 November 1858",
-    "Marriage Place": "Pennsylvania, United States",
-    "System Of Record": "SLS"
+    "Marriage Place": "Pennsylvania, United States"
   },
   "fullName": "Henry Rice Ruby",
   "surname": "Ruby",
   "givenName": "Henry Rice",
-  "factType": "Unknown",
-  "eventDateOriginal": "9 Nov 1858",
-  "eventDate": "9 Nov 1858",
+  "factType": "Marriage",
+  "eventDateOriginal": "9 November 1858",
+  "eventDate": "9 November 1858",
+  "eventYear": "1858",
+  "eventPlaceOriginal": "Pennsylvania, United States",
   "eventPlace": "Pennsylvania, United States",
+  "eventPlaceL1": "United States",
   "spouseFullName": "Susan S Ruby Ruby",
   "spouseSurname": "Ruby",
   "spouseGivenName": "Susan S Ruby",
+  "mother": {
+    "fullName": "Rebecca Senseny Ruby",
+    "surname": "Ruby",
+    "givenName": "Rebecca Senseny",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBT"
+  },
+  "father": {
+    "fullName": "Judge Henry Ruby",
+    "surname": "Ruby",
+    "givenName": "Judge Henry",
+    "link": "https://www.familysearch.org/ark:/61903/1:1:6CYF-SMBR"
+  },
   "referenceData": {
     "externalRepositoryName": "Historical Society of Pennsylvania",
     "digitalFilmNumber": "102535395",

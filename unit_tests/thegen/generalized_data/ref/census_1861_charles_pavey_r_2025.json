@@ -1,0 +1,61 @@
+{
+  "sourceOfData": "thegen",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Charles"
+  },
+  "eventDate": {
+    "yearString": "1861"
+  },
+  "eventPlace": {
+    "placeString": "Newbridge Road, Pulborough, Sussex, England"
+  },
+  "birthDate": {
+    "yearString": "1839"
+  },
+  "birthPlace": {
+    "yearString": "Billingshurst, Sussex"
+  },
+  "registrationDistrict": "Thakeham",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship",
+    "birthPlace",
+    "occupation"
+  ],
+  "householdArray": [
+    {
+      "name": "Maurice Pavey",
+      "age": "23",
+      "relationship": "Head",
+      "birthPlace": "Billingshurst, Sussex",
+      "occupation": "Agricultural Labourer"
+    },
+    {
+      "name": "Sarah Pavey",
+      "age": "23",
+      "relationship": "Wife",
+      "birthPlace": "Plaistow, Sussex",
+      "occupation": ""
+    },
+    {
+      "name": "Constance Pavey",
+      "age": "3m",
+      "relationship": "Daughter",
+      "birthPlace": "Pulborough, Sussex",
+      "occupation": ""
+    },
+    {
+      "isSelected": true,
+      "name": "Charles Pavey",
+      "age": "22",
+      "relationship": "Lodger",
+      "birthPlace": "Billingshurst, Sussex",
+      "occupation": "Carter"
+    }
+  ],
+  "hasValidData": true
+}

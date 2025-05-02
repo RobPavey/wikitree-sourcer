@@ -282,7 +282,7 @@ function extractDataForImageInNewViewer(document, result) {
   let imageNumberInput = mainNode.querySelector("div input[aria-label='Enter Image number']");
   if (!imageNumberInput) {
     // can't rely on aria-label as it changes with language
-    imageNumberInput = mainNode.querySelector("div[inputbase='true'] > div > div > div > input");
+    imageNumberInput = mainNode.querySelector("div[inputbase='true'] input");
   }
   //console.log("imageNumberInput is:");
   //console.log(imageNumberInput);
@@ -1965,7 +1965,7 @@ function addRecordDataForFact(result, fact, factType) {
       }
     }
 
-    if (fact.place.original) {
+    if (fact.place.original && factTypeWithSpaces) {
       let label = factTypeWithSpaces + " Place";
       if (overrideKey) {
         label = overrideKey;
@@ -2072,6 +2072,7 @@ const fieldData = [
   { fieldFsType: "LineNbr", referenceDataField: "lineNumber" },
   { fieldFsType: "RefId", referenceDataField: "referenceId" },
   { fieldFsType: "RecNbr", referenceDataField: "recordNumber" },
+  { fieldFsType: "RecordNbr", referenceDataField: "recordNumber" },
   { fieldFsType: "RecNumber", referenceDataField: "recordNumber" },
   { fieldFsType: "RecordNumber", referenceDataField: "recordNumber" },
   { fieldFsType: "FileNumber", referenceDataField: "fileNumber" },
@@ -2092,6 +2093,17 @@ const fieldData = [
   { fieldFsType: "SourceSheetNbrLtr", referenceDataField: "sheetNumberLetter" },
   { fieldFsType: "SourceSheetNbr", referenceDataField: "sheetNumber" },
   { fieldFsType: "SourceSheetLtr", referenceDataField: "sheetLetter" },
+  { fieldFsType: "SourceRecordNbr", referenceDataField: "sourceRecordNumber" },
+  { fieldFsType: "SourceCertificateNbr", referenceDataField: "certificateNumber" },
+  { fieldFsType: "SourceCertificateYear", referenceDataField: "certificateYear" },
+  { fieldFsType: "SourceVolumeNbr", referenceDataField: "volumeNumber" },
+  { fieldFsType: "SourceReference", referenceDataField: "sourceReference" },
+  { fieldFsType: "SourceScheduleNbr", referenceDataField: "sourceScheduleNumber" },
+  { fieldFsType: "SourceSubScheduleNbr", referenceDataField: "sourceSubScheduleNumber" },
+  { fieldFsType: "SourceFolioNbr", referenceDataField: "sourceFolioNumber" },
+  { fieldFsType: "SourceFolioSuf", referenceDataField: "sourceFolioSuffix" },
+  { fieldFsType: "SourceDocketNbr", referenceDataField: "sourceDocketNumber" },
+  { fieldFsType: "SourceFileName", referenceDataField: "sourceFileName" },
 
   { fieldFsType: "ExtFilmNbr", referenceDataField: "externalFilmNumber" },
   { fieldFsType: "ExtPubNbr", referenceDataField: "externalPublicationNumber" },
@@ -2200,6 +2212,11 @@ const fieldData = [
   { fieldFsTypePrefix: "Fs" },
   { fieldFsTypePrefix: "Idx" },
   { fieldFsTypePrefix: "Nara" },
+
+  { fieldFsTypePrefix: "VisStatus" },
+  { fieldFsTypePrefix: "SystemOfRecord" },
+  { fieldFsTypePrefix: "ImsCtlFileId" },
+  { fieldFsTypePrefix: "ImageDimensions" },
 
   // catchAll
   {
@@ -2432,6 +2449,9 @@ function getFactType(fact) {
     factType = factType.substring(fsTypePrefix.length);
   } else if (factType.startsWith(gcTypePrefix)) {
     factType = factType.substring(gcTypePrefix.length);
+  }
+  if (factType == "Unknown") {
+    return "";
   }
   return factType;
 }
@@ -3518,7 +3538,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
               addRecordDataForFact(result, fact, factType);
 
               // if this is a marriage then add a spouse if possible
-              if (factType.startsWith("Marriage")) {
+              if (factType.startsWith("Marriage") || factType.startsWith("Divorce")) {
                 let otherPersonId = relationship.person2.resourceId;
                 if (relationship.person2.resourceId == personId) {
                   otherPersonId = relationship.person1.resourceId;
@@ -3578,7 +3598,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
 
             // if this is a marriage then add a spouse if possible
             if (relationship.person1.resourceId == personId || relationship.person2.resourceId == personId) {
-              if (factType.startsWith("Marriage")) {
+              if (factType.startsWith("Marriage") || factType.startsWith("Divorce")) {
                 let otherPersonId = relationship.person2.resourceId;
                 if (relationship.person2.resourceId == personId) {
                   otherPersonId = relationship.person1.resourceId;

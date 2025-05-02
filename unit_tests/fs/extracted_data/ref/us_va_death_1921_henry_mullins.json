@@ -6,8 +6,7 @@
     "Event Registration Date": "09 Jan 1921",
     "Birth Date": "18 Feb 1825",
     "Race": "White",
-    "Age": "95",
-    "Source Certificate Nbr": "2362"
+    "Age": "95"
   },
   "fullName": "Henry Mullins",
   "givenName": "Henry",
@@ -46,6 +45,7 @@
   "fsCollectionId": "2377565",
   "referenceData": {
     "digitalFilmNumber": "100786026",
+    "certificateNumber": "2362",
     "sourceRegNbr": "973"
   },
   "fsImageNumber": "00631",

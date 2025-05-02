@@ -29,7 +29,12 @@ import { DateUtils } from "./date_utils.mjs";
 import { NameObj, DateObj, PlaceObj } from "./generalize_data_utils.mjs";
 import { getFieldsUsedInNarrative } from "./narrative_builder.mjs";
 
-function canMergeDifferentTypes(recordTypeA, recordTypeB, subTypeA, subTypeB, options) {
+function canMergeDifferentTypes(recordTypeA, recordTypeB, subTypeA, subTypeB, eventDateObjA, eventDateObjB, options) {
+  // if neither has an eventDateObj then merging may be a bad idea
+  if (!eventDateObjA && !eventDateObjB) {
+    return undefined;
+  }
+
   if (
     recordTypeA == RT.Baptism ||
     recordTypeA == RT.BirthOrBaptism ||
@@ -101,6 +106,17 @@ function canMergeDifferentTypes(recordTypeA, recordTypeB, subTypeA, subTypeB, op
     // Don't worry about dates at this point - just say if options allow these types to be merged
     if (options.buildAll_general_mergeDeathsBurials) {
       // can merge, decide which type to use
+
+      // If one has an eventDate and the other does not then use the type with the event date
+      // e.g. if there is a burial event with no eventDate that implies it probably has a
+      // death date but no event date.
+      if (eventDateObjA && !eventDateObjB) {
+        return recordTypeA;
+      }
+      if (!eventDateObjA && eventDateObjB) {
+        return recordTypeB;
+      }
+
       if (recordTypeA == RT.Burial || recordTypeB == RT.Burial) {
         return RT.Burial;
       } else if (recordTypeA == RT.Probate || recordTypeB == RT.Probate) {
@@ -960,6 +976,8 @@ function attemptToMergeSourceIntoPriorFact(source, result, type, options) {
           recordType,
           mergedGd.recordSubtype,
           recordSubtype,
+          mergedGd.inferEventDateObj(),
+          eventDateObj,
           options
         );
         if (mergedRecordType === undefined) {

@@ -1,0 +1,127 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Francis W Maggs"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Wilmot Farm, Easton in Gordano, Somerset, England",
+    "streetAddress": "Wilmot Farm"
+  },
+  "registrationDistrict": "Bedminster",
+  "birthDate": {
+    "yearString": "1875",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "St George, Somerset, England"
+  },
+  "eventDate": {
+    "yearString": "1881"
+  },
+  "occupation": "Scholar",
+  "ageAtEvent": "6",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "John Maggs",
+      "age": "40",
+      "relationship": "head",
+      "uid": "https://www.ancestry.com/search/collections/7572/records/18899782"
+    },
+    {
+      "name": "Mary Maggs",
+      "age": "45",
+      "relationship": "wife",
+      "uid": "https://www.ancestry.com/search/collections/7572/records/18899732"
+    },
+    {
+      "name": "Agness Maggs",
+      "age": "14",
+      "relationship": "daughter",
+      "uid": "https://www.ancestry.com/search/collections/7572/records/18899823"
+    },
+    {
+      "name": "Martha E. Maggs",
+      "age": "11",
+      "relationship": "daughter",
+      "uid": "https://www.ancestry.com/search/collections/7572/records/18899681"
+    },
+    {
+      "name": "Rebecca Maggs",
+      "age": "9",
+      "relationship": "daughter",
+      "uid": "https://www.ancestry.com/search/collections/7572/records/18899845"
+    },
+    {
+      "name": "Francis Jeffries",
+      "age": "74",
+      "relationship": "father-in-law",
+      "uid": "https://www.ancestry.com/search/collections/7572/records/18899630"
+    },
+    {
+      "name": "Henry Davey",
+      "age": "20",
+      "relationship": "servant",
+      "uid": "https://www.ancestry.com/search/collections/7572/records/18899879"
+    },
+    {
+      "name": "Julia F. Vincent",
+      "age": "17",
+      "relationship": "servant",
+      "uid": "https://www.ancestry.com/search/collections/7572/records/18899824"
+    },
+    {
+      "name": "Francis W. Maggs",
+      "age": "6",
+      "relationship": "son",
+      "isSelected": true,
+      "gender": "male",
+      "occupation": "Scholar",
+      "birthPlace": "St George, Somerset, England",
+      "birthYear": "abt 1875"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "John Maggs"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Mary Maggs"
+      }
+    }
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|7572|18899854}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|7572|18899782}}",
+    "{{Ancestry Record|7572|18899732}}",
+    "{{Ancestry Record|7572|18899823}}",
+    "{{Ancestry Record|7572|18899681}}",
+    "{{Ancestry Record|7572|18899845}}",
+    "{{Ancestry Record|7572|18899630}}",
+    "{{Ancestry Record|7572|18899879}}",
+    "{{Ancestry Record|7572|18899824}}"
+  ],
+  "collectionData": {
+    "id": "7572",
+    "collectionTitle": "1881 England Census",
+    "page": "10",
+    "folio": "45",
+    "piece": "2463",
+    "county": "Somerset"
+  },
+  "hasValidData": true
+}

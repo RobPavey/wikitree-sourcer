@@ -123,6 +123,11 @@ const regressionData = [
     url: "https://www.scotlandspeople.gov.uk/record-results/1967133423638a87a20ef27",
   },
   {
+    // After maintenance update on 9 Apr 2025
+    caseName: "church_bap_cos_1789_john_fraser",
+    url: "https://www.scotlandspeople.gov.uk/record-results/164347446767f6d0bf8ec67",
+  },
+  {
     // https://www.scotlandspeople.gov.uk/record-results?search_type=people&event=%28B%20OR%20C%20OR%20S%29&record_type%5B0%5D=opr_births&church_type=Old%20Parish%20Registers&dl_cat=church&dl_rec=church-births-baptisms&surname=Reid&surname_so=wild&forename_so=wild&parent_names_so=wild&parent_name_two=Jane%20Gemmel&parent_name_two_so=wild&record=Church%20of%20Scotland%20%28old%20parish%20registers%29%20Roman%20Catholic%20Church%20Other%20churches
     caseName: "church_bap_cos_1810_agnes_reid",
     url: "https://www.scotlandspeople.gov.uk/record-results/1519122960638a8ba01b3a4",

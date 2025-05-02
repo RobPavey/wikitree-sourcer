@@ -1,0 +1,44 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Chris W Jacobson",
+    "lastName": "Jacobson",
+    "forenames": "Chris W"
+  },
+  "birthDate": {
+    "dateString": "30 Jun 1890",
+    "yearString": "1890"
+  },
+  "deathDate": {
+    "dateString": "19 Sep 1974",
+    "yearString": "1974"
+  },
+  "eventDate": {
+    "dateString": "19 Sep 1974",
+    "yearString": "1974"
+  },
+  "eventPlace": {
+    "placeString": "Hennepin, Minnesota"
+  },
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Jacobson",
+        "lastName": "Jacobson"
+      }
+    }
+  },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|V47K-MBP}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Record|V47K-MB5}}"
+  ],
+  "collectionData": {
+    "id": "1937234",
+    "collectionTitle": "Minnesota, Death Index, 1908-2002"
+  },
+  "hasValidData": true
+}

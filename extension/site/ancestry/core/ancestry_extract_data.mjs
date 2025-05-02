@@ -363,6 +363,17 @@ function extractRecordData(document, result) {
         let value = rowData.textContent;
         value = value.replace(/\s+/g, " ").trim();
 
+        // clean up height field
+        if (label == "Height") {
+          // example: https://www.ancestry.com/search/collections/2238/records/303556213
+          // has height of: 5''8 1/2 "
+          // which should be: 5' 8 1/2"
+          if (value.includes("''") && value.includes('"')) {
+            value = value.replace(/''/g, "'");
+            value = value.replace(/ "/g, '"');
+          }
+        }
+
         if (!value.startsWith("Search for")) {
           //console.log(label + " " + value);
           result.recordData[label] = value;
@@ -1446,10 +1457,16 @@ function handlePersonSourceCitation(document, result) {
 }
 
 function parseHtmlEscapeCodes(str) {
-  return str.replace(/&#([0-9]{1,3});/gi, function (match, numStr) {
+  str = str.replace(/&#([0-9]{1,3});/gi, function (match, numStr) {
     var num = parseInt(numStr, 10); // read num as normal number
     return String.fromCharCode(num);
   });
+
+  // the below two replaces were needed for:
+  // https://www.ancestry.com/family-tree/person/tree/86808578/person/260140894818/facts
+  str = str.replace(/&quot;/gi, '"');
+  str = str.replace(/\\/gi, "");
+  return str;
 }
 
 // Extracting the HTML elements is working but I am unable to get the given name
@@ -1826,6 +1843,25 @@ function handlePersonFactsJune2024(document, result) {
             let spouseName = spouseLinkNode.textContent;
             if (spouseName) {
               marriage.spouseName = spouseName;
+            }
+          }
+
+          let spouseBirthDeathNode = spouseNode.nextElementSibling;
+          if (spouseBirthDeathNode) {
+            let spouseBirthDeath = spouseBirthDeathNode.textContent;
+            // Sometimes 1704-1764 comes through as 1704â€“1764
+            if (spouseBirthDeath) {
+              const regex = /^(\d\d\d\d)?[\–\-â€\“]+(\d\d\d\d)?$/;
+              if (regex.test(spouseBirthDeath)) {
+                let birthYear = spouseBirthDeath.replace(regex, "$1");
+                let deathYear = spouseBirthDeath.replace(regex, "$2");
+                if (birthYear) {
+                  marriage.spouseBirthYear = birthYear;
+                }
+                if (deathYear) {
+                  marriage.spouseDeathYear = deathYear;
+                }
+              }
             }
           }
         }

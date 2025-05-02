@@ -65,13 +65,15 @@ function extractData(document, url) {
     }
 
     bmdText = bmdText.trim();
-    let quarter = "Mar";
+    let quarter = undefined;
     let spaceIndex = bmdText.indexOf(" ");
     if (spaceIndex != -1) {
       quarter = bmdText.substring(0, spaceIndex).trim();
       bmdText = bmdText.substring(spaceIndex + 1).trim();
     }
-    result.eventQuarter = quarter;
+    if (quarter) {
+      result.eventQuarter = quarter; // deaths after 1984 have no quarter
+    }
     result.eventYear = bmdText;
   } else {
     // it could be modified by ORA

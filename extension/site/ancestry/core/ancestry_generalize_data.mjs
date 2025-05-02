@@ -61,6 +61,7 @@ const eventTypeStringToDataType = {
   Probate: RT.Probate,
   Divorce: RT.Divorce,
   MilitaryService: RT.Military,
+  "Naturalization Petition": RT.Naturalization,
   TaxList: RT.Tax,
   Will: RT.Will,
 };
@@ -201,6 +202,7 @@ function determineRecordType(extractedData) {
         "Index to Marriage Bonds",
         "Marriage Bonds and Allegations",
         "Allegations for Marriage Licences",
+        "Marriage Records",
       ],
     },
     {
@@ -299,7 +301,7 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.CriminalRegister,
-      matches: ["Criminal Register", "Police Gazettes", "Convict Register", "Prison Hulk Register"],
+      matches: ["Criminal Register", "Convict Register", "Prison Hulk Register"],
     },
     {
       type: RT.FreemasonMembership,
@@ -398,7 +400,7 @@ function determineRecordType(extractedData) {
       type: RT.Tax,
       matches: ["Direct Tax Lists", "Tax and Exoneration", "Tax List Record", "Tax Record", "Tax Assessment"],
     },
-    { type: RT.Apprenticeship, matches: ["Apprentices' Indentures"] },
+    { type: RT.Apprenticeship, matches: ["Apprentices' Indentures", "Apprentices Indentured"] },
     { type: RT.Obituary, matches: ["Obituary", "Obituaries"] },
     {
       type: RT.SchoolRecords,
@@ -406,7 +408,7 @@ function determineRecordType(extractedData) {
     },
     {
       type: RT.Naturalization,
-      matches: ["Naturalization Record", "Naturalisation Certificate"],
+      matches: ["Naturalization Record", "Naturalisation Certificate", "Petitions for Naturalization"],
     },
     {
       type: RT.LegalRecord,
@@ -476,6 +478,7 @@ function determineRecordType(extractedData) {
     },
     { type: RT.PassportApplication, matches: ["Passport Application"] },
     { type: RT.Pension, matches: [["Pension Index"]] },
+    { type: RT.Newspaper, matches: [["Police Gazettes"]] },
   ];
 
   //console.log("in determineRecordType");
@@ -675,6 +678,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       "Marriage Year",
       "Marriage Banns Year",
       "Allegation Year",
+      "Application Date",
     ]);
     if (!value) {
       if (extractedData.recordData["Child"]) {
@@ -687,7 +691,12 @@ function determineRoleGivenRecordType(extractedData, result) {
   }
   // possibly any other type should go through here?
   // We could possibly test if recordData num properties is <= 4 or something like that
-  else if (recordType == RT.Unclassified || recordType == RT.Employment || recordType == RT.FreedomOfCity) {
+  else if (
+    recordType == RT.Unclassified ||
+    recordType == RT.Employment ||
+    recordType == RT.FreedomOfCity ||
+    recordType == RT.Military
+  ) {
     let hasDateKey = testForWordsInRecordDataKeys(extractedData, ["Date", "Place"]);
     if (!hasDateKey) {
       if (extractedData.recordData["Child"]) {
@@ -1117,7 +1126,7 @@ function buildEventPlace(ed, result, includeResidence) {
   let county = getCleanValueForRecordDataList(ed, ["County/Island", "County", "County or Borough"]);
   let civilParish = getCleanValueForRecordDataList(ed, ["Civil Parish", "Civil parish", "Parish"]);
   let town = getCleanValueForRecordDataList(ed, ["Town", "Ward or Division/Constituency", "Locality", "Municipality"]);
-  let streetAddress = getCleanValueForRecordDataList(ed, ["Street Address", "Address"]);
+  let streetAddress = getCleanValueForRecordDataList(ed, ["Street Address", "Address", "Residence Street Address"]);
   let houseNumber = getCleanValueForRecordDataList(ed, ["House Number"]);
   let residence = "";
 
@@ -1135,7 +1144,12 @@ function buildEventPlace(ed, result, includeResidence) {
       town = getCleanValueForRecordDataList(ed, ["Place of Habitation", "Residence District"]);
     }
     if (!streetAddress) {
-      streetAddress = getCleanValueForRecordDataList(ed, ["Street Address", "Address", "Residence Street or Township"]);
+      streetAddress = getCleanValueForRecordDataList(ed, [
+        "Street Address",
+        "Address",
+        "Residence Street or Township",
+        "Residence Street Address",
+      ]);
     }
 
     let yearString = result.inferEventYear();
@@ -1158,7 +1172,33 @@ function buildEventPlace(ed, result, includeResidence) {
   }
   if (residence) {
     if (residence == town) {
-      placeString = "";
+      residence = "";
+    }
+  }
+
+  if (residence && streetAddress) {
+    // Example from 1921 census: https://www.ancestry.com/search/collections/63150/records/16913132
+    // residence = "Bristol, Gloucestershire, England"
+    // streetAddress = "30 Birch Rd, Southville, Bristol"
+    // Another example: https://www.ancestry.com/search/collections/63150/records/16768339
+    // residence = "Easton in Gordano, Somerset, England"
+    // streetAddress = "Heywood Terrace, Pill Bristol"
+    // Another example: https://www.ancestry.com/search/collections/63150/records/10208539
+    // residence = "Ealing, Middlesex, England"
+    // streetAddress = "117 Northcroft Rd, W Ealing, W 13"
+    // It is a mess. Could we use the Resistration District and Sub registration district?
+    let residenceArray = residence.split(", ");
+    let streetArray = streetAddress.split(", ");
+    if (residenceArray.length && streetArray.length) {
+      if (residenceArray[0] == streetArray[streetArray.length - 1]) {
+        streetAddress = "";
+        for (let i = 0; i < streetArray.length - 1; i++) {
+          if (streetAddress) {
+            streetAddress += ", ";
+          }
+          streetAddress += streetArray[i];
+        }
+      }
     }
   }
 
@@ -1764,6 +1804,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "Licence Date",
           "Event Date",
           "Allegation Date",
+          "Application Date",
           "Affidavit or License Date",
           "Affidavit or Licence Date",
           "Translated Marriage Date",
@@ -1784,6 +1825,7 @@ function generalizeDataGivenRecordType(ed, result) {
       "Recording Place",
       "License Place",
       "Licence Place",
+      "Application Place",
       "Allegation Place",
       "Marriage State",
       "Marriage City",
@@ -1793,7 +1835,10 @@ function generalizeDataGivenRecordType(ed, result) {
     } else {
       buildEventPlace(ed, result);
     }
-    result.setFieldIfValueExists("ageAtEvent", getCleanValueForRecordDataList(ed, ["Marriage Age", "Age"]));
+    result.setFieldIfValueExists(
+      "ageAtEvent",
+      getCleanValueForRecordDataList(ed, ["Marriage Age", "Age", "Application Age"])
+    );
     buildParents(ed, result);
 
     let spouseName = getCleanValueForRecordDataList(ed, ["Spouse", "Spouse Name", "Spouse's Name"]);
@@ -2113,7 +2158,7 @@ function generalizeDataGivenRecordType(ed, result) {
 
     let probateGrantDate = getCleanValueForRecordDataList(
       ed,
-      ["Probate Date", "Will Proved Date", "Grant Date"],
+      ["Probate Date", "Will Proved Date", "Grant Date", "Granted Date"],
       "date"
     );
     let willDate = getCleanValueForRecordDataList(ed, ["Will Date"], "date");
@@ -2523,6 +2568,8 @@ function generalizeDataGivenRecordType(ed, result) {
           "Passport Issue Date",
           "Examination Date",
           "Registry Date",
+          "Publication Date",
+          "Registration or Indenture Date",
         ],
         "date"
       )
@@ -2561,6 +2608,7 @@ function generalizeDataGivenRecordType(ed, result) {
       "Parliamentary Division",
       "Death County",
       "Cemetery",
+      "Port of Registry",
     ]);
 
     if (!eventPlace) {
@@ -2739,6 +2787,16 @@ function generalizeProfileData(input, result) {
       }
       if (marriage.place) {
         spouse.marriagePlace.placeString = marriage.place;
+      }
+      if (marriage.spouseBirthYear) {
+        let dateObj = new DateObj();
+        dateObj.yearString = marriage.spouseBirthYear;
+        spouse.birthDate = dateObj;
+      }
+      if (marriage.spouseDeathYear) {
+        let dateObj = new DateObj();
+        dateObj.yearString = marriage.spouseDeathYear;
+        spouse.deathDate = dateObj;
       }
     }
   }

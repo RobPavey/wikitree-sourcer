@@ -37,6 +37,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:QV8X-7L1V",
   },
   {
+    caseName: "aus_tas_birth_reg_1883_alfred_widdowson",
+    url: "https://www.familysearch.org/ark:/61903/1:1:Q27M-LKVK?lang=en",
+  },
+  {
     caseName: "canada_census_1901_james_mcdonald",
     url: "https://www.familysearch.org/ark:/61903/1:1:KHGF-SX6?from=lynx1UIV8&treeref=KFPX-STB",
   },
@@ -159,6 +163,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:N1N6-6JS?from=lynx1UIV8&treeref=MMVG-Z3H",
   },
   {
+    caseName: "england_spouse_obituary_1943_nicholas_roseveare",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC?lang=en",
+  },
+  {
     caseName: "germany_child_burial_1858_casimirus_sobczak",
     url: "https://www.familysearch.org/ark:/61903/1:1:6FCF-2JPT",
   },
@@ -256,6 +264,10 @@ const regressionData = [
   {
     caseName: "scotland_marriage_1764_archbald_saunders",
     url: "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5?count=20&f.recordType=1&q.givenName=archibald&q.recordCountry=Scotland&q.recordSubcountry=Scotland%2CDumfriesshire&q.surname=saunders",
+  },
+  {
+    caseName: "sa_probate_1925_johanna_faul",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QLKL-3F9B?lang=en",
   },
   {
     caseName: "teresa_fitchie_death_2002",
@@ -401,6 +413,14 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:MQ67-PZS",
   },
   {
+    caseName: "us_mn_death_1974_chris_jacobsen",
+    url: "https://www.familysearch.org/ark:/61903/1:1:V47K-MBP?lang=en",
+  },
+  {
+    caseName: "us_mn_divorce_1988_elaine_hovland",
+    url: "https://www.familysearch.org/ark:/61903/1:1:VKSN-PTL?lang=en",
+  },
+  {
     caseName: "us_mn_spouse_death_1955_jennie_eneboe",
     url: "https://www.familysearch.org/ark:/61903/1:1:HX2Y-P1PZ?treeref=9ZF5-1VJ",
   },
@@ -529,6 +549,11 @@ const imageRegressionData = [
     // Note: I had to edit the saved .html file for many errors.
     caseName: "image_canada_church_1866_sarnia_lambton",
     url: "https://www.familysearch.org/ark:/61903/3:1:33SQ-GYWJ-TMS?i=44",
+  },
+  {
+    // Danish language page
+    caseName: "image_denmark_church_records_1645_1815",
+    url: "https://www.familysearch.org/ark:/61903/3:1:3QSQ-G94W-5848?lang=da&i=3",
   },
   {
     // Note: I had to edit the saved .html file for many errors. vscode highlighted them and they prevented

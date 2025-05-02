@@ -69,14 +69,36 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 // &member1=p&namef1=Catherine&namel0=Carroll
 // &keyword=&submit=Search
 
+// 2025 site redesign of IrishGenealogy:
+//
+// https://www.irishgenealogy.ie/search/
+// ?church-or-civil=all&firstname=Mary&lastname=Slade
+// &location=Belfast&yearStart=1880&yearEnd=1890
+// &event-birth=1&_day=&month=&mothers-surname=&age-at-death=&relation-0=
+//
+// https://www.irishgenealogy.ie/search/
+// ?church-or-civil=civil&firstname=John&lastname=Walters
+// &location=Dublin&yearStart=1860&yearEnd=1870
+// &event-birth=1&event-death=1&_day=&month=&mothers-surname=&age-at-death=&relation-0=
+
+// https://www.irishgenealogy.ie/search/
+// ?church-or-civil=church&firstname=John&lastname=Walters
+// &location=Dublin&yearStart=1860&yearEnd=1870&event-marriage=1&_day=&month=
+// &mothers-surname=&age-at-death=&relation-0=witness&relation-first-0=Fred&relation-last-0=Smith
+
+// https://www.irishgenealogy.ie/search/?church-or-civil=all
+// &firstname=Mary&lastname=Pavey&location=Belfast&yearStart=1880&yearEnd=1890
+// &event-marriage=1&_day=&month=&mothers-surname=&age-at-death=
+// &relation-0=spouse&relation-first-0=Fred&relation-last-0=Smith
+// &relation-1=parent&relation-first-1=John&relation-last-1=Wilson
+
+// https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Kearney&event-marriage=1&yearStart=1907&yearEnd=1908&relation-0=spouse&relation-first-0=John&relation-last-0=Long&submit=Search
+// https://www.irishgenealogy.ie/search/?church-or-civil=civil&firstname=Margaret&lastname=Kearney&location=&yearStart=1907&yearEnd=1908&event-marriage=1&_day=&month=&mothers-surname=&age-at-death=&relation-0=spouse&relation-first-0=John&relation-last-0=Long
+
 class IrishgUriBuilder {
-  constructor(typeOfSearch) {
-    let searchJsp = "search";
-    if (typeOfSearch == "civilrecords") {
-      searchJsp = "civil-perform-search";
-    }
-    this.uri = "https://" + typeOfSearch + ".irishgenealogy.ie/churchrecords/" + searchJsp + ".jsp";
-    this.searchTermAdded = false;
+  constructor(churchOrCivil) {
+    this.uri = "https://www.irishgenealogy.ie/search/?church-or-civil=" + churchOrCivil;
+    this.searchTermAdded = true;
     this.membersAdded = 0;
   }
 
@@ -108,11 +130,11 @@ class IrishgUriBuilder {
   }
 
   addSurname(string) {
-    this.addSearchParameter("namel", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("lastname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addGivenNames(string) {
-    this.addSearchParameter("namefm", StringUtils.removeExtendedAsciiCharacters(string));
+    this.addSearchParameter("firstname", StringUtils.removeExtendedAsciiCharacters(string));
   }
 
   addLocation(string) {
@@ -124,43 +146,30 @@ class IrishgUriBuilder {
   }
 
   addStartYear(string) {
-    this.addSearchParameter("yyfrom", string);
+    this.addSearchParameter("yearStart", string);
   }
 
   addEndYear(string) {
-    this.addSearchParameter("yyto", string);
-  }
-
-  addBirthStartYear(string) {
-    this.addSearchParameter("yyBfrom", string);
-  }
-
-  addBirthEndYear(string) {
-    this.addSearchParameter("yyBto", string);
-  }
-
-  addMarriageStartYear(string) {
-    this.addSearchParameter("yyMfrom", string);
-  }
-
-  addMarriageEndYear(string) {
-    this.addSearchParameter("yyMto", string);
-  }
-
-  addDeathStartYear(string) {
-    this.addSearchParameter("yyDfrom", string);
-  }
-
-  addDeathEndYear(string) {
-    this.addSearchParameter("yyDto", string);
+    this.addSearchParameter("yearEnd", string);
   }
 
   addType(string) {
-    this.addSearchParameter("type", string);
+    const mapString = {
+      births: "event-birth",
+      deaths: "event-death",
+      marriages: "event-marriage",
+      baptism: "event-baptisms",
+      burials: "event-burials",
+    };
+
+    let paramName = mapString[string];
+    if (paramName) {
+      this.addSearchParameter(paramName, "1");
+    }
   }
 
   addMothersMaidenName(string) {
-    this.addSearchParameter("keywordb", string);
+    this.addSearchParameter("mothers-surname", string);
   }
 
   addSpouseKeywords(string) {
@@ -168,31 +177,19 @@ class IrishgUriBuilder {
   }
 
   addAgeAtDeath(string) {
-    this.addSearchParameter("keywordd", string);
+    this.addSearchParameter("age-at-death", string);
   }
 
-  addParentName(forenames, lastName) {
-    // &member0=p&namef0=John&namel0=Smith
-    // &member1=p&namef1=Catherine&namel0=Carroll
+  addOtherPerson(relation, forenames, lastName) {
     if (forenames || lastName) {
-      this.addSearchParameter("member" + this.membersAdded, "p");
-      this.addSearchParameter("namef" + this.membersAdded, forenames);
-      this.addSearchParameter("namel" + this.membersAdded, lastName);
-      this.membersAdded++;
-    }
-  }
-
-  addSpouseName(forenames, lastName) {
-    if (forenames || lastName) {
-      this.addSearchParameter("member" + this.membersAdded, "s");
-      this.addSearchParameter("namef" + this.membersAdded, forenames);
-      this.addSearchParameter("namel" + this.membersAdded, lastName);
+      this.addSearchParameter("relation-" + this.membersAdded, relation);
+      this.addSearchParameter("relation-first-" + this.membersAdded, forenames);
+      this.addSearchParameter("relation-last-" + this.membersAdded, lastName);
       this.membersAdded++;
     }
   }
 
   getUri() {
-    this.addSearchParameter("submit", "Search");
     return this.uri;
   }
 }

@@ -26,11 +26,68 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 const categories = [
+  { value: "all", text: "All Records" },
   { value: "civil", text: "Civil Records" },
   { value: "church", text: "Church Records" },
 ];
 
 const subcategories = [
+  {
+    value: "all_lifetime",
+    text: "All records in lifetime",
+    category: "all",
+    startYear: 1845,
+    endYear: 1973,
+  },
+  {
+    value: "all_events",
+    text: "All records for events on this page",
+    category: "all",
+    includeSpouses: true,
+    includeMmn: true,
+    startYear: 1845,
+    endYear: 1973,
+  },
+  {
+    value: "all_births",
+    text: "All Births",
+    category: "all",
+    includeMmn: true,
+    startYear: 1864,
+    endYear: 1923,
+  },
+  {
+    value: "all_baptisms",
+    text: "All Baptisms",
+    category: "all",
+    includeParents: true,
+    startYear: 1520,
+    endYear: 1930,
+  },
+  {
+    value: "all_marriages",
+    text: "All Marriages",
+    category: "all",
+    includeSpouses: true,
+    startYear: 1845,
+    endYear: 1948,
+  },
+  {
+    value: "all_deaths",
+    text: "All Deaths",
+    category: "all",
+    includeAgeAtDeath: true,
+    startYear: 1871,
+    endYear: 1973,
+  },
+  {
+    value: "all_burials",
+    text: "All Burials",
+    category: "all",
+    startYear: 1520,
+    endYear: 1930,
+  },
+
   {
     value: "civil_lifetime",
     text: "All records in lifetime",
@@ -105,7 +162,7 @@ const subcategories = [
     endYear: 1930,
   },
   {
-    value: "church_deaths",
+    value: "church_burials",
     text: "Church Burials",
     category: "church",
     startYear: 1520,
@@ -363,8 +420,8 @@ const IrishgData = {
     let maxLifespan = Number(options.search_general_maxLifespan);
     let lifeDates = generalizedData.inferPossibleLifeYearRange(maxLifespan);
 
-    parameters.category = "civil";
-    parameters.subcategory = "civil_lifetime";
+    parameters.category = "all";
+    parameters.subcategory = "all_lifetime";
 
     // Use a subcategory that corresponds to the source record if it works with date ranges
     // Only do this for the common bases

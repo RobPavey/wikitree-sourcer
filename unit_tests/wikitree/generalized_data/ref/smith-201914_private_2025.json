@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "lastName": "Smith",
+    "firstNames": "John"
+  },
+  "lastNameAtBirth": "Smith",
+  "birthDate": {
+    "dateString": "1955",
+    "qualifier": 2
+  },
+  "deathDate": {
+    "dateString": "1955",
+    "qualifier": 2
+  },
+  "spouses": [],
+  "hasValidData": true,
+  "personRepoRef": "Smith-201914"
+}

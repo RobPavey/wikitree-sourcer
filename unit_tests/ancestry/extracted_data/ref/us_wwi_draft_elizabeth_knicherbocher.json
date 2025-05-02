@@ -1,0 +1,23 @@
+{
+  "url": "https://www.ancestry.com/search/collections/6482/records/309086444",
+  "pageType": "record",
+  "dbId": "6482",
+  "recordId": "309086444",
+  "ancestryTemplate": "{{Ancestry Record|6482|309086444}}",
+  "domain": "ancestry.com",
+  "titleName": "Elizabeth Knicherbocher",
+  "titleCollection": "U.S., World War I Draft Registration Cards, 1917-1918",
+  "recordData": {
+    "Name": "Elizabeth Knicherbocher",
+    "Child": "Elmer Acy Knickerbocker"
+  },
+  "linkData": {
+    "Child": "https://www.ancestry.com/search/collections/6482/records/9086444"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/6482/images/005262605_01481?pid=309086444&usePUB=true&usePUBJs=true",
+  "imageDbId": "6482",
+  "imageRecordId": "005262605_01481",
+  "sourceInformation": "Ancestry.com. U.S., World War I Draft Registration Cards, 1917-1918 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 2005. Original data: United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm.",
+  "originalData": "United States, Selective Service System. World War I Selective Service System Draft Registration Cards, 1917-1918. Washington, D.C.: National Archives and Records Administration. M1509, 4,582 rolls. Imaged from Family History Library microfilm.",
+  "sourceDescription": "This database contains an index and images of World War I draft registration cards completed by approximately 24 million men living in the U.S. in 1917 and 1918. Information that may be found for an individual includes: name, place of residence, date and place of birth, race, country of citizenship, occupation, and employer. Learn more..."
+}

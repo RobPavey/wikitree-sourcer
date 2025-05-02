@@ -175,6 +175,26 @@ const searchOptionsGroup = {
 // Citation options groups, General
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const citationTargetOptionsGroup = {
+  category: "citation",
+  subcategory: "general",
+  tab: "citation",
+  subsection: "general",
+  subheading: "target",
+  options: [
+    {
+      optionName: "target",
+      type: "select",
+      label: "Overall format/style of citation (where will you use it?)",
+      values: [
+        { value: "wikitree", text: "WikiTree" },
+        { value: "plain", text: "Plain Text" },
+      ],
+      defaultValue: "wikitree",
+    },
+  ],
+};
+
 const citationPopupOptionsGroup = {
   category: "citation",
   subcategory: "general",
@@ -1696,6 +1716,7 @@ const contextGeneralOptionsGroup = {
 registerSubsectionForOptions("search", "general", "General", "", 1);
 
 registerSubsectionForOptions("citation", "general", "General", "", 1);
+registerSubheadingForOptions("citation", "general", "target", "Target");
 registerSubheadingForOptions("citation", "general", "popup", "Popup Menu");
 registerSubheadingForOptions("citation", "general", "style", "Citation Style");
 
@@ -1742,6 +1763,7 @@ registerSubsectionForOptions("addMerge", "mergeEdit", "Merge/Edit", "", 3);
 registerSubsectionForOptions("context", "general", "General", "", 1);
 
 registerOptionsGroup(searchOptionsGroup);
+registerOptionsGroup(citationTargetOptionsGroup);
 registerOptionsGroup(citationPopupOptionsGroup);
 registerOptionsGroup(citationStyleOptionsGroup);
 registerOptionsGroup(userCitationOptionsGroup);

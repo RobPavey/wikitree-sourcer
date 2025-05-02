@@ -44,6 +44,10 @@ const regressionData = [
     url: "https://www.wikitree.com/index.php?title=Brewster-4803&errcode=saved",
   },
   {
+    caseName: "craft-31_read",
+    url: "https://www.wikitree.com/wiki/Craft-31",
+  },
+  {
     caseName: "davey-2737_private",
     url: "https://www.wikitree.com/wiki/Davey-2737",
   },
@@ -87,8 +91,16 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Kimberlin-117",
   },
   {
+    caseName: "leich-8_private_2025",
+    url: "https://www.wikitree.com/wiki/Leich-8",
+  },
+  {
     caseName: "littlemore-13_read",
     url: "https://www.wikitree.com/wiki/Littlemore-13",
+  },
+  {
+    caseName: "marsh-9608_private_2025",
+    url: "https://www.wikitree.com/wiki/Marsh-9608",
   },
   {
     caseName: "mcdonald-1168_read",
@@ -166,9 +178,18 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Peffers-436",
   },
   {
+    // Has no mother which cased a bug extracting mother
+    caseName: "sephton-3_edit_2025",
+    url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=3874579",
+  },
+  {
     // Birth and death in NSW Aus. Death 2004
     caseName: "smith-57461_read",
     url: "https://www.wikitree.com/wiki/Smith-57461",
+  },
+  {
+    caseName: "smith-201914_private_2025",
+    url: "https://www.wikitree.com/wiki/Smith-201914",
   },
   {
     caseName: "smith-241018_read",
@@ -181,6 +202,10 @@ const regressionData = [
   {
     caseName: "stanway-252_read",
     url: "https://www.wikitree.com/wiki/Stanway-252",
+  },
+  {
+    caseName: "thomas-78801_add_child_2025",
+    url: "https://www.wikitree.com/index.php?title=Special:EditFamily&u=46061695&who=child",
   },
   {
     caseName: "tulloch-46_read",
@@ -200,6 +225,11 @@ const regressionData = [
     // To test search on taslib
     caseName: "whish-wilson-24_read",
     url: "https://www.wikitree.com/wiki/Whish-Wilson-24",
+  },
+  {
+    // To test no marriage location when user is manager
+    caseName: "saulnier-848_manager_no_marriage_location_2025",
+    url: "https://www.wikitree.com/wiki/Saulnier-848",
   },
 ];
 

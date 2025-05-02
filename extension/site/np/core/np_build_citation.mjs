@@ -26,6 +26,7 @@ import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.
 
 function buildCoreCitation(ed, gd, builder) {
   let options = builder.getOptions();
+  let target = options.citation_general_target;
 
   builder.sourceTitle = "Newspapers.com";
   if (ed.articleTitle && options.citation_np_includeTitle) {
@@ -38,36 +39,40 @@ function buildCoreCitation(ed, gd, builder) {
 
   builder.databaseHasImages = true;
 
-  const clipString = "/clip/";
-  let clipIndex = ed.url.indexOf(clipString);
-  if (clipIndex != -1) {
-    let remainder = ed.url.substring(clipIndex + clipString.length);
-    let recordLink = "{{Newspapers.com|" + remainder.split("/")[0] + "}}";
-    builder.recordLinkOrTemplate = recordLink;
-  } else {
-    const articleString = "/article/";
-    let articleIndex = ed.url.indexOf(articleString);
-    if (articleIndex != -1) {
-      // Can be of various forms:
-      // https://www.newspapers.com/article/116219279/tom-turners-sons-visit/
-      // https://www.newspapers.com/article/daily-gazette/121899396/
-      // https://www.newspapers.com/article/111420722/
+  if (target == "wikitree") {
+    const clipString = "/clip/";
+    let clipIndex = ed.url.indexOf(clipString);
+    if (clipIndex != -1) {
+      let remainder = ed.url.substring(clipIndex + clipString.length);
+      let recordLink = "{{Newspapers.com|" + remainder.split("/")[0] + "}}";
+      builder.recordLinkOrTemplate = recordLink;
+    } else {
+      const articleString = "/article/";
+      let articleIndex = ed.url.indexOf(articleString);
+      if (articleIndex != -1) {
+        // Can be of various forms:
+        // https://www.newspapers.com/article/116219279/tom-turners-sons-visit/
+        // https://www.newspapers.com/article/daily-gazette/121899396/
+        // https://www.newspapers.com/article/111420722/
 
-      let remainder = ed.url.substring(articleIndex + articleString.length);
-      let clipNum = "";
-      let parts = remainder.split("/");
-      for (let part of parts) {
-        if (/^\d+$/.test(part)) {
-          clipNum = part;
-          break;
+        let remainder = ed.url.substring(articleIndex + articleString.length);
+        let clipNum = "";
+        let parts = remainder.split("/");
+        for (let part of parts) {
+          if (/^\d+$/.test(part)) {
+            clipNum = part;
+            break;
+          }
+        }
+
+        if (clipNum) {
+          let recordLink = "{{Newspapers.com|" + clipNum + "}}";
+          builder.recordLinkOrTemplate = recordLink;
         }
       }
-
-      if (clipNum) {
-        let recordLink = "{{Newspapers.com|" + clipNum + "}}";
-        builder.recordLinkOrTemplate = recordLink;
-      }
     }
+  } else {
+    builder.recordLinkOrTemplate = "Newspapers.com Link: " + ed.url;
   }
 
   builder.sourceReference = ed.newspaperTitle;

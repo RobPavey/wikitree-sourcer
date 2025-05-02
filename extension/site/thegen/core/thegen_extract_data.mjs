@@ -23,14 +23,14 @@ SOFTWARE.
 */
 
 function extractDataForRecordCensus(document, url, result) {
-  let titleElement = document.querySelector("#framework-advanced-search > h3");
+  let titleElement = document.querySelector("#framework-advanced-search h3");
   if (titleElement) {
     let title = titleElement.textContent.trim();
     title = title.replace(/\s+/g, " ").trim();
     result.title = title;
   }
 
-  let recordDataElement = document.querySelector("#framework-advanced-search > table.table");
+  let recordDataElement = document.querySelector("#framework-advanced-search table.table");
   if (recordDataElement) {
     result.recordData = {};
 
@@ -59,7 +59,7 @@ function extractDataForRecordCensus(document, url, result) {
     }
     for (let rowElement of rowElements) {
       let cellElements = rowElement.querySelectorAll("td");
-      if (cellElements.length == table.headings.length) {
+      if (cellElements.length >= table.headings.length) {
         let rowData = {};
         for (let cellIndex = 0; cellIndex < cellElements.length; cellIndex++) {
           let cellElement = cellElements[cellIndex];
@@ -80,6 +80,10 @@ function extractDataForRecordCensus(document, url, result) {
   }
 
   let sourceInfoElement = document.querySelector("#collapseSource");
+  if (!sourceInfoElement) {
+    sourceInfoElement = document.querySelector("#more-info-collapse-bottom");
+  }
+
   if (sourceInfoElement) {
     let sourceInfoPara = sourceInfoElement.querySelector("p");
     if (sourceInfoPara) {
@@ -252,10 +256,13 @@ function extractDataForRecordResultsFull(document, url, result) {
 }
 
 function extractDataForRecord(document, url, result) {
-  let titleElement = document.querySelector("#framework-advanced-search > h3");
-  let recordDataElement = document.querySelector("#framework-advanced-search > table.table");
+  let titleElement = document.querySelector("#framework-advanced-search h3");
+  let recordDataElement = document.querySelector("#framework-advanced-search table.table");
   let tableDataElement = document.querySelector("#results > table");
   let sourceInfoElement = document.querySelector("#collapseSource");
+  if (!sourceInfoElement) {
+    sourceInfoElement = document.querySelector("#more-info-collapse-bottom");
+  }
 
   if (titleElement && recordDataElement && tableDataElement && sourceInfoElement) {
     return extractDataForRecordCensus(document, url, result);

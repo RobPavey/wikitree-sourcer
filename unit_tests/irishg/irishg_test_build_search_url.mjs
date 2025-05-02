@@ -39,6 +39,18 @@ const regressionData = [
       mother: false,
     },
     optionVariants: [
+      // All lifetime
+      // Civil all events
+      {
+        variantName: "all_lifetime",
+        searchParameters: {
+          category: "all",
+          subcategory: "all_lifetime",
+          lastNameIndex: 0,
+          spouseIndex: -1,
+        },
+      },
+
       // Civil all events
       {
         variantName: "civil_events",
@@ -139,6 +151,17 @@ const regressionData = [
           lastNameIndex: 1,
           spouseIndex: -1,
           ageAtDeath: true,
+        },
+      },
+
+      // Civil marriages
+      {
+        variantName: "civil_marriages",
+        searchParameters: {
+          category: "civil",
+          subcategory: "civil_marriages",
+          lastNameIndex: 0,
+          spouseIndex: 0,
         },
       },
 

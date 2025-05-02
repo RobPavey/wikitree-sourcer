@@ -32,6 +32,7 @@ function buildCoreCitation(data, gd, builder) {
   // William Henry Pavey (1 Dec 1875–14 Apr 1961)
 
   let options = builder.getOptions();
+  let target = options.citation_general_target;
 
   let sourceTitle = "Find a Grave";
 
@@ -51,12 +52,16 @@ function buildCoreCitation(data, gd, builder) {
   }
   builder.sourceTitle = sourceTitle;
 
-  if (data.memorialId) {
-    let recordLink = "{{FindAGrave|" + data.memorialId + "}}";
-    builder.recordLinkOrTemplate = recordLink;
+  if (target == "wikitree") {
+    if (data.memorialId) {
+      let recordLink = "{{FindAGrave|" + data.memorialId + "}}";
+      builder.recordLinkOrTemplate = recordLink;
+    } else if (data.url) {
+      let recordLink = "[" + data.url + " FindAGrave Memorial]";
+      builder.recordLinkOrTemplate = recordLink;
+    }
   } else if (data.url) {
-    let recordLink = "[" + data.url + " FindAGrave Memorial]";
-    builder.recordLinkOrTemplate = recordLink;
+    builder.recordLinkOrTemplate = "FindAGrave Memorial: " + data.url;
   }
 
   // The name string can contain italics

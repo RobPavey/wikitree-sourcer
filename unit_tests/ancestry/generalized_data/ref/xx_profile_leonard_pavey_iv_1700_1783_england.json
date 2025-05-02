@@ -29,6 +29,12 @@
       },
       "marriagePlace": {
         "placeString": "Stockland, Devon, England"
+      },
+      "birthDate": {
+        "yearString": "1704"
+      },
+      "deathDate": {
+        "yearString": "1764"
       }
     }
   ],

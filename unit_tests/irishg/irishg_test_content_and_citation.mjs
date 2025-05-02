@@ -63,14 +63,55 @@ const regressionData = [
     ],
   },
   {
+    // no image link
+    caseName: "baptism_1773_john_oconnor_2025",
+    url: "https://www.irishgenealogy.ie/view/?record_id=68d5d71735-43276",
+    optionVariants: [
+      {
+        variantName: "dataFromPage",
+        optionOverrides: { citation_irishg_dataStringFormat: "fromPage" },
+      },
+      {
+        variantName: "dataNone",
+        optionOverrides: { citation_irishg_dataStringFormat: "none" },
+      },
+      {
+        variantName: "semicolon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "semicolon" },
+      },
+      {
+        variantName: "commaColon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaColon" },
+      },
+      {
+        variantName: "commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+      {
+        variantName: "siteStyle",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "siteStyle" },
+      },
+    ],
+  },
+  {
     // Test for converting MC name to mixed case
     caseName: "birth_1866_andrew_mcdermott",
     url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/c943b58347915",
   },
   {
+    // Test for converting MC name to mixed case
+    caseName: "birth_1866_andrew_mcdermott_2025",
+    url: "https://www.irishgenealogy.ie/view/?record_id=a2e62f754f-6898339",
+  },
+  {
     // missing sex and MMN
     caseName: "birth_1898_mark_donnelly",
     url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/1c3e5511946689?b=https%3A%2F%2Fcivilrecords.irishgenealogy.ie%2Fchurchrecords%2Fcivil-perform-search.jsp%3Fnamefm%3DMark%26namel%3D%26exact%3D%26name2fm%3D%26name2l%3D%26location%3D%26yyfrom%3D%26yyto%3D%26century%3D%26decade%3D%26sort%3D%26pageSize%3D100%26ddBfrom%3D%26mmBfrom%3D%26yyBfrom%3D%26ddMfrom%3D%26mmMfrom%3D%26yyMfrom%3D%26ddDfrom%3D%26mmDfrom%3D%26yyDfrom%3D%26ddPfrom%3D%26mmPfrom%3D%26yyPfrom%3D%26ddBto%3D%26mmBto%3D%26yyBto%3D%26ddMto%3D%26mmMto%3D%26yyMto%3D%26ddDto%3D%26mmDto%3D%26yyDto%3D%26ddPto%3D%26mmPto%3D%26yyPto%3D%26locationB%3D%26locationM%3D%26locationD%3D%26locationP%3D%26keywordb%3D%26keywordm%3D%26keywordd%3D%26keywordp%3D%26event%3DB%26district%3DBelfast%26submit%3DSearch",
+  },
+  {
+    // missing sex and MMN
+    caseName: "birth_1898_mark_donnelly_2025",
+    url: "https://www.irishgenealogy.ie/view/?record_id=a2e62f754f-2771030",
   },
   {
     // has sex and MMN
@@ -82,8 +123,16 @@ const regressionData = [
     url: "https://churchrecords.irishgenealogy.ie/churchrecords/details/062ad80320870?b=https%3A%2F%2Fchurchrecords.irishgenealogy.ie%2Fchurchrecords%2Fsearch.jsp%3Fnamefm%3Dsiobhan%26namel%3D%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch",
   },
   {
+    caseName: "burial_1763_siobhan_martin_2025",
+    url: "https://www.irishgenealogy.ie/view/?record_id=3aacb9f330-24808",
+  },
+  {
     caseName: "civil_marriage_1854_mary_henry_john_smith",
     url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/5ff15e3242437?b=https%3A%2F%2Fcivilrecords.irishgenealogy.ie%2Fchurchrecords%2Fcivil-perform-search.jsp%3Fnamefm%3DJohn%26namel%3DSmith%26location%3D%26type%3DB%26ddBfrom%3D%26mmBfrom%3D%26yyBfrom%3D%26ddBto%3D%26mmBto%3D%26yyBto%3D%26type%3DM%26ddMfrom%3D%26mmMfrom%3D%26yyMfrom%3D%26ddMto%3D%26mmMto%3D%26yyMto%3D%26type%3DD%26ddDfrom%3D%26mmDfrom%3D%26yyDfrom%3D%26ddDto%3D%26mmDto%3D%26yyDto%3D%26submit%3DSearch",
+  },
+  {
+    caseName: "civil_marriage_1854_mary_henry_john_smith_2025",
+    url: "https://www.irishgenealogy.ie/view/?record_id=99668cf754-1994288",
   },
   {
     // has space after MC in name
@@ -99,8 +148,21 @@ const regressionData = [
     url: "https://churchrecords.irishgenealogy.ie/churchrecords/details/7da64d0073868?b=https%3A%2F%2Fchurchrecords.irishgenealogy.ie%2Fchurchrecords%2Fsearch.jsp%3Fnamefm%3Dmary%26namel%3Dmalone%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch",
   },
   {
+    caseName: "marriage_1770_bartle_fagan_mary_malone_2025",
+    url: "https://www.irishgenealogy.ie/view/?record_id=e89c9f7927-3026",
+  },
+  {
     caseName: "marriage_1856_david_mc_guire_elizabeth_mackey",
     url: "https://civilrecords.irishgenealogy.ie/churchrecords/details-civil/4a18be3262887?b=https%3A%2F%2Fcivilrecords.irishgenealogy.ie%2Fchurchrecords%2Fcivil-perform-search.jsp%3Fnamefm%3D%26namel%3DMackey%26location%3D%26yyfrom%3D%26yyto%3D%26submit%3DSearch",
+  },
+  {
+    // New site format introduced in March 2025
+    caseName: "marriage_1869_michael_houlihan_ann_sheehy",
+    url: "https://www.irishgenealogy.ie/view/?record_id=68f3c8a8f2-32694",
+  },
+  {
+    caseName: "marriage_1901_thomas_goodwin_mary_reidy_2025",
+    url: "https://www.irishgenealogy.ie/view/?record_id=a2e3957fce-3280",
   },
   {
     caseName: "marriage_1901_thomas_goodwin_mary_reidy",

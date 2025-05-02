@@ -1,0 +1,162 @@
+{
+  "url": "https://www.digitalarkivet.no/en/view/291/pu00000000210702",
+  "success": true,
+  "lang": "en",
+  "pageType": "record",
+  "breadcrumbs": [
+    "Home",
+    "Find source",
+    "Church book from Grytten parish, Kors local parish 1882-1920 (1539P)",
+    "Out-migration",
+    "Marit Johnsdtr. Alnæstrøen"
+  ],
+  "collectionParts": [
+    {
+      "collectionHeading": "Out-migration: 1883",
+      "collectionNameParts": [
+        "Out-migration",
+        "1883"
+      ]
+    }
+  ],
+  "heading": "Person: Marit Johnsdtr. Alnæstrøen",
+  "headingSpanParts": [],
+  "headingTextParts": [
+    "Person: Marit Johnsdtr. Alnæstrøen"
+  ],
+  "imageLink": "https://media.digitalarkivet.no/kb10711608300178",
+  "recordData": {
+    "Serial no.": {
+      "textString": "1"
+    },
+    "Role": {
+      "textString": "utflyttar"
+    },
+    "Given name": {
+      "textString": "Marit"
+    },
+    "Last name": {
+      "textString": "Johnsdtr. Alnæstrøen"
+    },
+    "Gender": {
+      "textString": "k"
+    },
+    "Date of birth": {
+      "textString": "02-06"
+    },
+    "Birth year": {
+      "textString": "1843"
+    },
+    "Migrating to": {
+      "textString": "Aalesund"
+    },
+    "Reference": {
+      "textString": "Døbt 1843-02-19. Konf 1858-10-03 :godt - meget godt. Ægteviet 1872-03-01"
+    }
+  },
+  "panelGroups": [
+    {
+      "panelTitle": "Persons involved",
+      "people": [
+        {
+          "current": true,
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "1"
+          ],
+          "personHeading": "Serial no. 1",
+          "Name": {
+            "textString": "Marit Johnsdtr. Alnæstrøen"
+          },
+          "Birth year": {
+            "textString": "1843"
+          }
+        },
+        {
+          "personLabel": "Serial no.",
+          "personNameParts": [
+            "2"
+          ],
+          "personHeading": "Serial no. 2",
+          "Name": {
+            "textString": "Benjamin"
+          },
+          "Position": {
+            "textString": "Søn"
+          },
+          "Birth year": {
+            "textString": "1877"
+          }
+        }
+      ]
+    },
+    {
+      "panelTitle": "Out-migration",
+      "Page": {
+        "textString": "190"
+      },
+      "Serial no.": {
+        "textString": "20-21"
+      },
+      "Year": {
+        "textString": "1883"
+      },
+      "Local parish": {
+        "textString": "Kors"
+      },
+      "Remarks": {
+        "textString": "Flyttet 1880"
+      }
+    }
+  ],
+  "permanentId": "pu00000000210702",
+  "sourceInformation": "Church book from Grytten parish, Kors local parish 1882-1920 (1539P)",
+  "sourceData": {
+    "County": {
+      "textString": "Møre og Romsdal"
+    },
+    "Municipality (1947)": {
+      "textString": "Grytten"
+    },
+    "Geographic area": {
+      "textString": "Grytten parish Kors local parish",
+      "textParts": [
+        "Grytten parish",
+        "Kors local parish"
+      ]
+    },
+    "Start year": {
+      "textString": "1882"
+    },
+    "End year": {
+      "textString": "1920"
+    },
+    "Local parish": {
+      "textString": "Kors"
+    },
+    "Page": {
+      "textString": "190"
+    },
+    "Serial no.": {
+      "textString": "20-21"
+    },
+    "Deceased and buried": {
+      "textString": "Bygdebok Rauma"
+    },
+    "Born and baptised": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    },
+    "In-migrated": {
+      "textString": "Per Einar Langseth , Bygdebok Rauma"
+    },
+    "Confirmation": {
+      "textString": "Bygdebok Rauma , Ingunn Skiri Willa"
+    },
+    "Out-migrated": {
+      "textString": "Per Einar Langseth , Bygdebok Rauma"
+    },
+    "Married": {
+      "textString": "AMF - Ancestry, MyHeritage and FamilySearch"
+    }
+  }
+}

@@ -134,13 +134,14 @@ async function extractDataFromFetchAndRespond(document, dataObjects, options, se
       console.log("extractDataFromFetchAndRespond. Retry number: ", loadExtractDataModuleRetries);
       setTimeout(function () {
         extractDataFromFetchAndRespond(document, dataObjects, options, sendResponse);
-      }, loadModuleTimeout);
+      }, 10);
       return true;
     } else {
       console.log("extractDataFromFetchAndRespond. Too many retries");
       sendResponse({
         success: false,
-        errorMessage: "Extract data module never loaded",
+        errorMessage: "Extract data module never loaded, tried " + maxLoadModuleRetries + " times",
+        noException: true,
       });
     }
     return false;

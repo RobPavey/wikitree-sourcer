@@ -2,8 +2,7 @@
   "recordData": {
     "Name": "Stephen Bunaugh",
     "Marriage Date": "14 Dec 1853",
-    "Marriage Place": "Wheatland, Kenosha, Wisconsin, United States",
-    "Source Reference": "Items 1-2"
+    "Marriage Place": "Wheatland, Kenosha, Wisconsin, United States"
   },
   "fullName": "Stephen Bunaugh",
   "givenName": "Stephen",
@@ -25,7 +24,8 @@
     "digitalFilmNumber": "007619664",
     "filmNumber": "1276050",
     "packetLetter": "I",
-    "recordNumber": "40"
+    "recordNumber": "40",
+    "sourceReference": "Items 1-2"
   },
   "collectionTitle": "Wisconsin Marriages, 1836-1930",
   "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:MX1R-VQZ",

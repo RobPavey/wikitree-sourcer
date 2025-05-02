@@ -166,7 +166,7 @@ function extractData(document, url) {
   } else {
     let alternateLink = document.querySelector("nav.top-menu a[rel='alternate']");
     if (alternateLink) {
-      let alternateUrl = linkNode.getAttribute("href");
+      let alternateUrl = alternateLink.getAttribute("href");
       if (alternateUrl) {
         // "https://nationalarchives.ie/ga/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Kearney&firstname__icontains=Margaret&sex=F&age__gte=30&age__lte=34&county=Waterford&id=7194256"
         if (idRegex.test(alternateUrl)) {

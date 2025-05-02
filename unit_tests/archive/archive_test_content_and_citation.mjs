@@ -36,6 +36,10 @@ const regressionData = [
     url: "https://archive.org/details/dugdalesvisitati03dugd/page/89/mode/1up?view=theater",
   },
   {
+    caseName: "fasti_ecclesiæ_scoticanæ",
+    url: "https://archive.org/details/fastiecclesiu06scotuoft/page/222/mode/2up",
+  },
+  {
     caseName: "linn_county_iowa_1887",
     url: "https://archive.org/details/portraitbiolinn00chap",
   },

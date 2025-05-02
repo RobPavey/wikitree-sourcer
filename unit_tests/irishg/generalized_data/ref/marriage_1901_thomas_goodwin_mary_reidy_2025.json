@@ -1,0 +1,32 @@
+{
+  "sourceOfData": "irishg",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "eventPlace": {
+    "placeString": "Limerick",
+    "country": "Ireland"
+  },
+  "registrationDistrict": "Limerick",
+  "eventDate": {
+    "dateString": "31 Oct 1901"
+  },
+  "name": {
+    "name": "Thomas Goodwin"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Mary Reidy"
+      },
+      "marriageDate": {
+        "dateString": "31 Oct 1901"
+      },
+      "marriagePlace": "Limerick"
+    }
+  ],
+  "collectionData": {
+    "id": "civil-marriages",
+    "registrationId": "1669285"
+  },
+  "hasValidData": true
+}

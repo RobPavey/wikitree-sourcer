@@ -1,0 +1,29 @@
+{
+  "sourceType": "record",
+  "role": "Spouse",
+  "recordType": "Probate",
+  "sourceOfData": "fs",
+  "name": {
+    "name": "Johanna Catherine Faul",
+    "lastName": "Faul",
+    "forenames": "Johanna Catherine"
+  },
+  "eventDate": {
+    "dateString": "1925",
+    "yearString": "1925"
+  },
+  "eventPlace": {
+    "placeString": "Grahamstown, Albany, Cape Province, South Africa"
+  },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QLKL-3F9B}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-C9BB-2SG1-M}}"
+  ],
+  "collectionData": {
+    "id": "2517051",
+    "collectionTitle": "South Africa, Cape, Probate Records of the Master of the High Court, 1822-1990"
+  },
+  "hasValidData": true
+}

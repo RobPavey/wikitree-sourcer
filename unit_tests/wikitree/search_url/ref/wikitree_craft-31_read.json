@@ -1,0 +1,36 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "simpleIdFields": {
+        "wpFirst": "Kenneth",
+        "wpLast": "Craft"
+      },
+      "simpleNameFields": {
+        "wpBirthDate": "28 Feb 1955",
+        "wpDeathDate": "27 Mar 2025",
+        "birth_location": "Stone Mountain, DeKalb, Georgia, United States",
+        "death_location": "Lawrenceville, Gwinnett, Georgia, United States",
+        "father_first_name": "Thomas",
+        "father_last_name": "Craft",
+        "mother_first_name": "Sarah",
+        "mother_last_name": "Britt"
+      },
+      "radioFields": [
+        {
+          "name": "gender",
+          "value": "Male"
+        },
+        {
+          "name": "date_spread",
+          "value": "-1"
+        },
+        {
+          "name": "skip_variants",
+          "value": "0"
+        }
+      ],
+      "options": {}
+    }
+  }
+}

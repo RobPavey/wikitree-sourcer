@@ -256,6 +256,22 @@ function determineRecordType(extractedData) {
     }
   }
 
+  // special case where there is more than one fact/event/record type
+  //  Example: https://www.familysearch.org/ark:/61903/1:1:QKM7-DN5C?lang=en
+  // There are few possibles
+  // extractedData.factType
+  // extractedData.documentRecordData["Record Type"]
+  // extractedData.documentRecordData["Event Type"] - usually same as extractedData.factType
+  // recordData["Source Record Type"]
+  if (extractedData.factType && extractedData.documentRecordData && extractedData.documentRecordData["Record Type"]) {
+    let ft = extractedData.factType;
+    let edrt = extractedData.documentRecordData["Record Type"];
+    if (ft == "Death" && edrt == "Obituaries") {
+      // Disabled for now because the event place is actually the death place - not the obituary place
+      // return RT.Obituary;
+    }
+  }
+
   if (extractedData.factType) {
     let recordType = lookup(extractedData.factType, sourceTitle, recordData, factTypeToRecordType);
     if (recordType != undefined) {
@@ -301,6 +317,10 @@ function determineRecordType(extractedData) {
 
     if (sourceTitle.includes("Freemason Membership")) {
       return RT.FreemasonMembership;
+    }
+
+    if (sourceTitle.includes("Divorce")) {
+      return RT.Divorce;
     }
   }
 
@@ -358,6 +378,14 @@ function determineRecordTypeAndRole(extractedData, result) {
       result.setPrimaryPersonGender(extractedData.relatedPersonGender);
     } else {
       result.role = Role.Other;
+    }
+  } else if (extractedData.recordData && extractedData.recordData["Relationship To Head"]) {
+    if (recordType != RT.Census) {
+      // example record: https://www.familysearch.org/ark:/61903/1:1:QLKL-3F9B?lang=en
+      let relationship = extractedData.recordData["Relationship To Head"];
+      if (relationship == "Spouse") {
+        result.role = Role.Spouse;
+      }
     }
   }
 
@@ -519,6 +547,16 @@ function selectDate(dateString, originalDateString) {
   // "birthDate": "1 11 1854",
   // Example is https://www.familysearch.org/ark:/61903/1:1:XBQC-X9Q
   if (/\d?\d\s+\d?\d\s+\d\d\d\d/.test(dateString)) {
+    return originalDateString;
+  }
+
+  // sometimes date come through in like this:
+  // "birthDateOriginal": "28 July 1883",
+  // "birthDate": "28JUL JUL 1883",
+  // Example is Australia, Tasmania, Civil Registration
+  // https://www.familysearch.org/ark:/61903/1:1:Q27M-LKVK?lang=en
+  const goodDateStringRegEx = /^\d?\d [A-Za-z]+ \d\d\d\d$/;
+  if (!goodDateStringRegEx.test(dateString) && goodDateStringRegEx.test(originalDateString)) {
     return originalDateString;
   }
 
@@ -855,6 +893,10 @@ function generalizeDataGivenRecordType(ed, result) {
       }
       resultSpouse.divorceDate = divorceDate;
       result.divorceDate = divorceDate.getDateString();
+
+      if (!result.eventDate) {
+        result.eventDate = divorceDate;
+      }
     }
 
     result.spouses.push(resultSpouse);
@@ -1207,6 +1249,15 @@ function generalizeData(input) {
   result.setDeathPlace(deathPlace);
 
   let eventDate = selectDate(ed.eventDate, ed.eventDateOriginal);
+
+  if (eventDate && ed.eventYear) {
+    // occasionally the event date is missing the year and should have it added
+    // E.g. https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC?lang=en
+    if (!eventDate.includes(ed.eventYear)) {
+      eventDate += " " + ed.eventYear;
+    }
+  }
+
   result.setEventDate(eventDate);
   result.setEventYear(ed.eventYear);
 

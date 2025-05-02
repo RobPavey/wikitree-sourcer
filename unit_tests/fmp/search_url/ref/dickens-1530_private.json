@@ -1,8 +1,8 @@
 {
   "std": {
-    "url": "https://www.findmypast.co.uk/search/results?gender=male&firstname=Harold+Edington&firstname_variants=true&lastname=Dickens&lastname_variants=true&yearofbirth=1893&yearofbirth_offset=2&yearofdeath=1985&yearofdeath_offset=2&keywordsplace=England&keywordsplace_proximity=5"
+    "url": "https://www.findmypast.co.uk/search/results?firstname=Harold+Edington&firstname_variants=true&lastname=Dickens&lastname_variants=true&yearofbirth=1893&yearofbirth_offset=2&yearofdeath=1985&yearofdeath_offset=2&keywordsplace=England&keywordsplace_proximity=5"
   },
   "specified_collection": {
-    "url": "https://www.findmypast.co.uk/search/results?datasetname=1921+census+of+england+%26+wales&gender=male&firstname=Harold+Edington&firstname_variants=true&lastname=Dickens&lastname_variants=true&yearofbirth=1893&yearofbirth_offset=2&yearofdeath=1985&yearofdeath_offset=2&whereborntext=Pill%2c%20Somerset%2c%20England"
+    "url": "https://www.findmypast.co.uk/search/results?datasetname=1921+census+of+england+%26+wales&firstname=Harold+Edington&firstname_variants=true&lastname=Dickens&lastname_variants=true&yearofbirth=1893&yearofbirth_offset=2&yearofdeath=1985&yearofdeath_offset=2&whereborntext=Pill%2c%20Somerset%2c%20England"
   }
 }

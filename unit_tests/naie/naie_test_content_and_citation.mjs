@@ -109,6 +109,10 @@ const regressionData = [
     caseName: "census_1911_waterford_john_long",
     url: "http://www.census.nationalarchives.ie/pages/1911/Waterford/Waterford_No__2_Urban/Spring_Garden_Alley/670431/",
   },
+  {
+    caseName: "will_1876_james_betts_2025",
+    url: "https://www.willcalendars.nationalarchives.ie/search/cwa/details.jsp?id=1639538416",
+  },
 ];
 
 async function runTests(testManager) {

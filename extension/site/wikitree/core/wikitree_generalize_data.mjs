@@ -231,19 +231,59 @@ function generalizeData(input) {
     result.mothersMaidenName = ed.mothersMaidenName;
   }
 
+  // for private profiles they may not have the name parts
+  if (!ed.firstNames && !result.lastNameAtBirth && ed.wikiId) {
+    // get lnab from wikiId
+    let lastDashIndex = ed.wikiId.lastIndexOf("-");
+    if (lastDashIndex != -1) {
+      let lastName = ed.wikiId.substring(0, lastDashIndex);
+      if (lastName) {
+        result.lastNameAtBirth = lastName;
+        result.name.lastName = lastName;
+
+        if (ed.name) {
+          if (ed.name.endsWith(lastName)) {
+            let firstNames = ed.name.substring(0, ed.name.length - lastName.length).trim();
+            result.name.setFirstNames(firstNames);
+          } else {
+            const marriedNameRegex = /^([^\(]+)\(([^\)]+)\)(.+)$/;
+            if (marriedNameRegex.test(ed.name)) {
+              let firstNames = ed.name.replace(marriedNameRegex, "$1").trim();
+              let lnab = ed.name.replace(marriedNameRegex, "$2").trim();
+              let cln = ed.name.replace(marriedNameRegex, "$3").trim();
+              if (lnab == lastName) {
+                result.name.setFirstNames(firstNames);
+                if (cln) {
+                  result.lastNameAtDeath = cln;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   result.setPersonGender(ed.personGender);
+
+  const decadeRegex = /^(\d\d\d)0s$/;
 
   // Birth date
   if (ed.birthDate || ed.birthYear) {
     result.birthDate = new DateObj();
 
     if (ed.birthDate) {
-      result.birthDate.dateString = ed.birthDate;
+      if (decadeRegex.test(ed.birthDate)) {
+        result.birthDate.dateString = ed.birthDate.replace(decadeRegex, "$1") + "5";
+        result.birthDate.qualifier = dateQualifiers.ABOUT;
+      } else {
+        result.birthDate.dateString = ed.birthDate;
+      }
     }
     if (ed.birthYear) {
       result.birthDate.yearString = ed.birthYear;
     }
-    if (ed.birthDateStatus) {
+    if (ed.birthDateStatus && !result.birthDate.qualifier) {
       result.birthDate.qualifier = getQualifier(ed.birthDateStatus);
     }
   }
@@ -253,12 +293,17 @@ function generalizeData(input) {
     result.deathDate = new DateObj();
 
     if (ed.deathDate) {
-      result.deathDate.dateString = ed.deathDate;
+      if (decadeRegex.test(ed.deathDate)) {
+        result.deathDate.dateString = ed.deathDate.replace(decadeRegex, "$1") + "5";
+        result.deathDate.qualifier = dateQualifiers.ABOUT;
+      } else {
+        result.deathDate.dateString = ed.deathDate;
+      }
     }
     if (ed.birthYear) {
       result.deathDate.yearString = ed.deathYear;
     }
-    if (ed.deathDateStatus) {
+    if (ed.deathDateStatus && !result.deathDate.qualifier) {
       result.deathDate.qualifier = getQualifier(ed.deathDateStatus);
     }
   }
@@ -285,6 +330,15 @@ function generalizeData(input) {
         if (obj.lastNameAtDeath && obj.lastNameAtDeath.toLowerCase() != "unknown") {
           result.parents.father.lastNameAtDeath = obj.lastNameAtDeath;
         }
+      } else if (ed.parents.father.firstName || ed.parents.father.lastName) {
+        // comes here from search page
+        result.parents.father = { name: new NameObj() };
+        if (ed.parents.father.firstName) {
+          result.parents.father.name.forenames = ed.parents.father.firstName;
+        }
+        if (ed.parents.father.lastName) {
+          result.parents.father.name.lastName = ed.parents.father.lastName;
+        }
       }
     }
     if (ed.parents.mother) {
@@ -297,6 +351,15 @@ function generalizeData(input) {
         }
         if (obj.lastNameAtDeath && obj.lastNameAtDeath.toLowerCase() != "unknown") {
           result.parents.mother.lastNameAtDeath = obj.lastNameAtDeath;
+        }
+      } else if (ed.parents.mother.firstName || ed.parents.mother.lastName) {
+        // comes here from search page
+        result.parents.mother = { name: new NameObj() };
+        if (ed.parents.mother.firstName) {
+          result.parents.mother.name.forenames = ed.parents.mother.firstName;
+        }
+        if (ed.parents.mother.lastName) {
+          result.parents.mother.name.lastName = ed.parents.mother.lastName;
         }
       }
     }

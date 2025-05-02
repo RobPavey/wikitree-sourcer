@@ -89,6 +89,12 @@ function getDateRangeFromWtsQualifier(yearNum, wtsQualifier, sameCollection) {
   fromYear = fromYear - 2;
   toYear = toYear + 2;
 
+  let today = new Date();
+  let thisYear = today.getFullYear();
+  if (toYear > thisYear) {
+    toYear = thisYear;
+  }
+
   return { fromYear: fromYear.toString(), toYear: toYear.toString() };
 }
 
@@ -131,6 +137,12 @@ function getDateRange(yearString, exactnessOption, wtsQualifier, sameCollection)
   if (plusOrMinus != undefined) {
     fromYear = fromYear - plusOrMinus;
     toYear = toYear + plusOrMinus;
+  }
+
+  let today = new Date();
+  let thisYear = today.getFullYear();
+  if (toYear > thisYear) {
+    toYear = thisYear;
   }
 
   return { fromYear: fromYear.toString(), toYear: toYear.toString() };
@@ -212,77 +224,85 @@ function buildSearchUrl(buildUrlInput) {
       birthDateQualifier = dateQualifiers.NONE;
     }
 
-    let birthYearRangeRange = getDateRange(
-      gd.inferBirthYear(),
-      options.search_fs_birthYearExactness,
-      birthDateQualifier,
-      sameCollection
-    );
-    builder.addBirth(birthYearRangeRange, gd.inferBirthPlace());
-    let deathYearRangeRange = getDateRange(
-      gd.inferDeathYear(),
-      options.search_fs_deathYearExactness,
-      gd.inferDeathDateQualifier(),
-      sameCollection
-    );
-    builder.addDeath(deathYearRangeRange, gd.inferDeathPlace());
+    if (shouldAddSearchTerm(collection, "birth", true)) {
+      let birthYearRangeRange = getDateRange(
+        gd.inferBirthYear(),
+        options.search_fs_birthYearExactness,
+        birthDateQualifier,
+        sameCollection
+      );
+      builder.addBirth(birthYearRangeRange, gd.inferBirthPlace());
+    }
+    if (shouldAddSearchTerm(collection, "death", true)) {
+      let deathYearRangeRange = getDateRange(
+        gd.inferDeathYear(),
+        options.search_fs_deathYearExactness,
+        gd.inferDeathDateQualifier(),
+        sameCollection
+      );
+      builder.addDeath(deathYearRangeRange, gd.inferDeathPlace());
+    }
 
-    if (gd.parents && gd.parents.father && gd.parents.father.name) {
-      // for now we don't include the father unless it is a specified parameter
-      if ((parameters && parameters.father) || sameCollection) {
-        let father = gd.parents.father;
-        builder.addFather(father.name.inferForenames(), father.name.inferLastName());
+    if (shouldAddSearchTerm(collection, "parents", true)) {
+      if (gd.parents && gd.parents.father && gd.parents.father.name) {
+        // for now we don't include the father unless it is a specified parameter
+        if ((parameters && parameters.father) || sameCollection) {
+          let father = gd.parents.father;
+          builder.addFather(father.name.inferForenames(), father.name.inferLastName());
+        }
+      }
+
+      if (gd.parents && gd.parents.mother && gd.parents.mother.name) {
+        // for now we don't include the mother unless it is a specified parameter
+        if ((parameters && parameters.mother) || sameCollection) {
+          let mother = gd.parents.mother;
+          builder.addMother(mother.name.inferForenames(), mother.name.inferLastName());
+        }
       }
     }
 
-    if (gd.parents && gd.parents.mother && gd.parents.mother.name) {
-      // for now we don't include the mother unless it is a specified parameter
-      if ((parameters && parameters.mother) || sameCollection) {
-        let mother = gd.parents.mother;
-        builder.addMother(mother.name.inferForenames(), mother.name.inferLastName());
-      }
-    }
+    if (shouldAddSearchTerm(collection, "spouse", true)) {
+      if (gd.spouses) {
+        for (let spouseIndex = 0; spouseIndex < gd.spouses.length; ++spouseIndex) {
+          let spouse = gd.spouses[spouseIndex];
 
-    if (gd.spouses) {
-      for (let spouseIndex = 0; spouseIndex < gd.spouses.length; ++spouseIndex) {
-        let spouse = gd.spouses[spouseIndex];
-
-        if (parameters && !parameters.spouses[spouseIndex]) {
-          continue;
-        }
-
-        if (spouse.marriageDate || spouse.marriagePlace) {
-          let marriageYear = "";
-          let marriagePlace = "";
-          if (spouse.marriageDate) {
-            marriageYear = spouse.marriageDate.getYearString();
+          if (parameters && !parameters.spouses[spouseIndex]) {
+            continue;
           }
-          if (spouse.marriagePlace) {
-            marriagePlace = spouse.marriagePlace.placeString;
-          }
-          let marriageYearRange = getDateRange(
-            marriageYear,
-            options.search_fs_marriageYearExactness,
-            dateQualifiers.NONE,
-            sameCollection
-          );
-          builder.addMarriage(marriageYearRange, marriagePlace);
-        }
 
-        if (spouse.name) {
-          // if searching for a census record do not add the surname of the spouse
-          // since, if it is a wife their last name will no be different
-          let spouseLastName = spouse.name.inferLastName();
-          if (gd.inferPersonGender() == "male") {
-            if (sameCollection) {
-              if (gd.recordType == RT.Census) {
+          if (spouse.marriageDate || spouse.marriagePlace) {
+            let marriageYear = "";
+            let marriagePlace = "";
+            if (spouse.marriageDate) {
+              marriageYear = spouse.marriageDate.getYearString();
+            }
+            if (spouse.marriagePlace) {
+              marriagePlace = spouse.marriagePlace.placeString;
+            }
+            let marriageYearRange = getDateRange(
+              marriageYear,
+              options.search_fs_marriageYearExactness,
+              dateQualifiers.NONE,
+              sameCollection
+            );
+            builder.addMarriage(marriageYearRange, marriagePlace);
+          }
+
+          if (spouse.name) {
+            // if searching for a census record do not add the surname of the spouse
+            // since, if it is a wife their last name will no be different
+            let spouseLastName = spouse.name.inferLastName();
+            if (gd.inferPersonGender() == "male") {
+              if (sameCollection) {
+                if (gd.recordType == RT.Census) {
+                  spouseLastName = "";
+                }
+              } else if (collection && !collection.isMarriage) {
                 spouseLastName = "";
               }
-            } else if (collection && !collection.isMarriage) {
-              spouseLastName = "";
             }
+            builder.addSpouse(spouse.name.inferForenames(), spouseLastName);
           }
-          builder.addSpouse(spouse.name.inferForenames(), spouseLastName);
         }
       }
     }

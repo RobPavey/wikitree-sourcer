@@ -1,0 +1,895 @@
+{
+  "id" : "r_21892565841",
+  "lang" : "en",
+  "attribution" : {
+    "modified" : 1739301561248,
+    "created" : 1739301561248
+  },
+  "links" : {
+    "next" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MMY-RPQL?seek=next"
+    },
+    "prev" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MMY-RPQL?seek=prev"
+    },
+    "self" : {
+      "href" : "https://www.familysearch.org/ark:/61903/1:2:9MMY-RPQL"
+    }
+  },
+  "description" : "#sd_p_13296663863",
+  "persons" : [ {
+    "id" : "p_13296663863",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "extracted" : true,
+    "principal" : true,
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/V47K-MBP?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MMY-RPQL?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:V47K-MBP" ]
+    },
+    "names" : [ {
+      "id" : "c25e0e4b-b734-45aa-adb7-6e3f673b5e2d",
+      "attribution" : {
+        "modified" : 1739301561248,
+        "created" : 1739301561248
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Chris W. Jacobson",
+        "parts" : [ {
+          "id" : "3a63a2be-b9d9-4a87-b26e-fe713ecd1db6",
+          "type" : "http://gedcomx.org/Given",
+          "value" : "Chris W.",
+          "fields" : [ {
+            "id" : "47faa672-563a-496a-bf0c-9dd7b463e1c4",
+            "attribution" : {
+              "modified" : 1739301561248,
+              "created" : 1739301561248
+            },
+            "type" : "http://gedcomx.org/Given",
+            "values" : [ {
+              "id" : "09ab0134-bb2f-4570-9aea-080570415144",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_GN_ORIG",
+              "text" : "Chris W."
+            }, {
+              "id" : "09ab0134-bb2f-4570-9aea-080570415144",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_GN",
+              "text" : "Chris W."
+            } ]
+          } ]
+        }, {
+          "id" : "09690884-3a56-4645-bfbb-2b5384639a98",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Jacobson",
+          "fields" : [ {
+            "id" : "1e1acc82-97fe-46b0-a1d2-e3222ea0e9d0",
+            "attribution" : {
+              "modified" : 1739301561248,
+              "created" : 1739301561248
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "02d1e778-2c86-4584-8bc9-5998132eedeb",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_NAME_SURN_ORIG",
+              "text" : "Jacobson"
+            }, {
+              "id" : "02d1e778-2c86-4584-8bc9-5998132eedeb",
+              "type" : "http://gedcomx.org/Interpreted",
+              "labelId" : "PR_NAME_SURN",
+              "text" : "Jacobson"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "919f6470-7ca3-4cec-8990-4014ca4b2429",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "3ca5e430-ff88-43e5-85fc-4c939eeb3c49",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_NAME",
+            "text" : "Chris W. Jacobson"
+          } ]
+        } ]
+      } ]
+    } ],
+    "facts" : [ {
+      "id" : "2e47f20e-ae24-47e9-8ce0-72fd62655a13",
+      "attribution" : {
+        "modified" : 1739301561248,
+        "created" : 1739301561248
+      },
+      "type" : "http://gedcomx.org/Death",
+      "date" : {
+        "id" : "e7ef18a3-65ec-4d96-9128-6a77238954d7",
+        "original" : "19 Sep 1974",
+        "fields" : [ {
+          "id" : "4c76d7d7-da48-4166-9465-7c15ec97cb34",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "d116233f-21f3-409d-a511-eecfc851d475",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_MONTH_ORIG",
+            "text" : "Sep"
+          } ]
+        }, {
+          "id" : "66492db4-4f8d-4741-8512-eba20026355a",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "da0e71cd-5a7f-4750-a074-75875990f485",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DAY_ORIG",
+            "text" : "19"
+          } ]
+        }, {
+          "id" : "04ea2dc3-6637-4deb-abe2-d2dacad42428",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "6390d445-c7fd-45ee-beb9-5d4e60790e38",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_DATE_ORIG",
+            "text" : "19 Sep 1974",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "6390d445-c7fd-45ee-beb9-5d4e60790e38",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_DATE",
+            "text" : "19 Sep 1974"
+          } ]
+        }, {
+          "id" : "9a85463f-a471-476b-b097-49765c9b9b31",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "62390137-1bfb-4907-9be1-5a5619ab7c57",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_YEAR_ORIG",
+            "text" : "1974"
+          }, {
+            "id" : "62390137-1bfb-4907-9be1-5a5619ab7c57",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "EVENT_YEAR",
+            "text" : "1974"
+          } ]
+        } ]
+      },
+      "place" : {
+        "id" : "45bc6527-ea06-414a-bb0f-3559cae36fd0",
+        "original" : "Hennepin, Minnesota",
+        "fields" : [ {
+          "id" : "8aabc490-0df1-4438-a65b-e9fb51e8a7e2",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/State",
+          "values" : [ {
+            "id" : "ff7449dc-c3a8-48a4-ba87-ace3c6211240",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_STATE_ORIG",
+            "text" : "Minnesota"
+          } ]
+        }, {
+          "id" : "15b6009f-c9e8-406d-b88b-481bb9e267dd",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Place",
+          "values" : [ {
+            "id" : "d633034b-2d52-44cf-9864-e244bcec5175",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_PLACE_ORIG",
+            "text" : "Hennepin, Minnesota",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          } ]
+        }, {
+          "id" : "9a89a5f5-1357-4138-94f3-4af15819184e",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/County",
+          "values" : [ {
+            "id" : "b91e229d-f2f9-4f58-b6cb-6344584f84ce",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "EVENT_COUNTY_ORIG",
+            "text" : "Hennepin"
+          } ]
+        } ]
+      },
+      "primary" : true,
+      "fields" : [ {
+        "id" : "41246237-1d91-4689-a01b-94323587d123",
+        "attribution" : {
+          "modified" : 1739301561248,
+          "created" : 1739301561248
+        },
+        "type" : "http://familysearch.org/types/fields/EventType",
+        "values" : [ {
+          "id" : "969bb38b-1bb4-4341-aba2-72f7b3100cc5",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "EVENT_TYPE_ORIG",
+          "text" : "Death",
+          "resource" : "http://gedcomx.org/Death"
+        } ]
+      } ]
+    }, {
+      "id" : "03175cb5-0128-41fc-a7d3-8a04dec0f2e3",
+      "attribution" : {
+        "modified" : 1739301561248,
+        "created" : 1739301561248
+      },
+      "type" : "http://gedcomx.org/Birth",
+      "date" : {
+        "id" : "52eecdda-c185-4783-9eec-bb879ac35df3",
+        "original" : "30 Jun 1890",
+        "fields" : [ {
+          "id" : "83baac49-76d0-40e4-852e-9a6fc4667181",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Date",
+          "values" : [ {
+            "id" : "f95d3b9e-5c2f-4e93-a7db-15b379f6b4c1",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DATE_ORIG",
+            "text" : "30 Jun 1890",
+            "qualifiers" : [ {
+              "value" : "true",
+              "name" : "http://familysearch.org/types/qualifiers/Preferred"
+            } ]
+          }, {
+            "id" : "f95d3b9e-5c2f-4e93-a7db-15b379f6b4c1",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_BIR_DATE",
+            "text" : "30 Jun 1890"
+          } ]
+        }, {
+          "id" : "ce5aaab5-ad5d-40dc-8ba6-b65ff50fd24f",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Year",
+          "values" : [ {
+            "id" : "ce432d64-5b03-4dec-9efd-83a3fcdad7e2",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_YEAR_ORIG",
+            "text" : "1890"
+          } ]
+        }, {
+          "id" : "f23c0217-544a-4f20-9df8-bb1471663918",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Day",
+          "values" : [ {
+            "id" : "8a5a086c-1e84-4b6c-a06d-4dbd980e203a",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_DAY_ORIG",
+            "text" : "30"
+          } ]
+        }, {
+          "id" : "3927b1d9-ae34-4f81-bfdf-4d60f8945273",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Month",
+          "values" : [ {
+            "id" : "15177a41-1873-4af9-b5d3-0fc009701b20",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_BIR_MONTH_ORIG",
+            "text" : "Jun"
+          } ]
+        } ]
+      }
+    } ],
+    "fields" : [ {
+      "id" : "05572da7-f37e-4236-9fbd-1a7836254170",
+      "attribution" : {
+        "modified" : 1739301561248,
+        "created" : 1739301561248
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "c0333760-9718-4c37-8227-94e5d9845bc4",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "1000903473529#12_000"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Chris W. Jacobson",
+      "birthDate" : "30 Jun 1890",
+      "deathDate" : "19 Sep 1974",
+      "deathPlace" : "Hennepin, Minnesota"
+    }
+  }, {
+    "id" : "p_13296663864",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "extracted" : true,
+    "principal" : false,
+    "gender" : {
+      "type" : "http://gedcomx.org/Female",
+      "fields" : [ {
+        "id" : "c563d8a2-2926-46b5-bd63-5936b25b62ad",
+        "attribution" : {
+          "modified" : 1739301561248,
+          "created" : 1739301561248
+        },
+        "type" : "http://gedcomx.org/Gender",
+        "values" : [ {
+          "id" : "6326ea20-1253-4fba-8bf1-312eb95ae4dd",
+          "type" : "http://gedcomx.org/Original",
+          "labelId" : "PR_MTHR_SEX_CODE_ORIG",
+          "text" : "Female",
+          "resource" : "http://gedcomx.org/Female"
+        }, {
+          "id" : "6326ea20-1253-4fba-8bf1-312eb95ae4dd",
+          "attribution" : {
+            "contributor" : {
+              "resource" : "http://familysearch.org/cds/migration"
+            },
+            "modified" : 1739916382139,
+            "created" : 1739916382139
+          },
+          "type" : "http://gedcomx.org/Interpreted",
+          "labelId" : "PR_MTHR_SEX_CODE",
+          "resource" : "http://gedcomx.org/Female"
+        } ]
+      } ]
+    },
+    "links" : {
+      "persona" : {
+        "href" : "https://www.familysearch.org/platform/records/personas/V47K-MB5?flag=fsh"
+      },
+      "record" : {
+        "href" : "https://www.familysearch.org/platform/records/records/9MMY-RPQL?flag=fsh"
+      }
+    },
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:V47K-MB5" ]
+    },
+    "names" : [ {
+      "id" : "2d90856c-fbdb-4da3-b3fd-960fd9102be1",
+      "attribution" : {
+        "modified" : 1739301561248,
+        "created" : 1739301561248
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Jacobson",
+        "parts" : [ {
+          "id" : "29eb2c95-83ba-4160-b5cb-3126795008df",
+          "type" : "http://gedcomx.org/Surname",
+          "value" : "Jacobson",
+          "fields" : [ {
+            "id" : "cd010ae5-6c5c-4a34-a27c-33c24d7fba4f",
+            "attribution" : {
+              "modified" : 1739301561248,
+              "created" : 1739301561248
+            },
+            "type" : "http://gedcomx.org/Surname",
+            "values" : [ {
+              "id" : "033c13de-d894-4fd6-9db0-c3a7e7d4bdb0",
+              "type" : "http://gedcomx.org/Original",
+              "labelId" : "PR_MTHR_NAME_SURN_ORIG",
+              "text" : "Jacobson"
+            } ]
+          } ]
+        } ],
+        "fields" : [ {
+          "id" : "30dd0bac-76de-444c-9e0a-780fa901711c",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "11f391ef-81cf-48df-9334-49b9a1b909f2",
+            "type" : "http://gedcomx.org/Interpreted",
+            "labelId" : "PR_MTHR_NAME",
+            "text" : "Jacobson"
+          } ]
+        } ]
+      } ]
+    }, {
+      "id" : "e628be7b-50f8-4d62-a4ba-1a8cc97493b2",
+      "attribution" : {
+        "modified" : 1739301561248,
+        "created" : 1739301561248
+      },
+      "type" : "http://gedcomx.org/BirthName",
+      "preferred" : false,
+      "nameForms" : [ {
+        "fullText" : "Jacobson",
+        "fields" : [ {
+          "id" : "615a4d36-cd70-4366-86a3-b5f77363805c",
+          "attribution" : {
+            "modified" : 1739301561248,
+            "created" : 1739301561248
+          },
+          "type" : "http://gedcomx.org/Name",
+          "values" : [ {
+            "id" : "be4af6aa-9d00-437b-b81a-fcdde31eb49d",
+            "type" : "http://gedcomx.org/Original",
+            "labelId" : "PR_MTHR_NAME_ORIG",
+            "text" : "Jacobson"
+          } ]
+        } ]
+      } ]
+    } ],
+    "fields" : [ {
+      "id" : "237a697b-2195-4ffb-9baa-b5b0511fa793",
+      "attribution" : {
+        "modified" : 1739301561248,
+        "created" : 1739301561248
+      },
+      "type" : "http://familysearch.org/types/fields/SortKey",
+      "values" : [ {
+        "id" : "b073992a-1919-4643-8cdc-c5502203d585",
+        "type" : "http://gedcomx.org/Interpreted",
+        "labelId" : "FS_SORT_KEY",
+        "text" : "1000903473529#12_001"
+      } ]
+    } ],
+    "display" : {
+      "name" : "Jacobson",
+      "gender" : "Female"
+    }
+  } ],
+  "relationships" : [ {
+    "id" : "907a2f87-62ca-4fcb-8953-22a09b0f3167",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://gedcomx.org/ParentChild",
+    "person1" : {
+      "resource" : "#p_13296663864",
+      "resourceId" : "p_13296663864"
+    },
+    "person2" : {
+      "resource" : "#p_13296663863",
+      "resourceId" : "p_13296663863"
+    }
+  } ],
+  "sourceDescriptions" : [ {
+    "id" : "src_r_21892565841",
+    "mediaType" : "image/jpeg",
+    "about" : "https://www.familysearch.org/ark:/61903/1:2:9MMY-RPQL",
+    "componentOf" : {
+      "description" : "#sd_c_1937234",
+      "descriptionId" : "sd_c_1937234"
+    },
+    "resourceType" : "http://gedcomx.org/Record",
+    "created" : 1739301561248,
+    "modified" : 1739916382348,
+    "coverage" : [ {
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "citations" : [ {
+      "value" : "\"Minnesota, Death Index, 1908-2002\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:V47K-MBP : Tue Feb 18 22:06:22 UTC 2025), Entry for Chris W. Jacobson and Jacobson, 19 Sep 1974."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Entry for Chris W. Jacobson, \"Minnesota, Death Index, 1908-2002\""
+    } ],
+    "rights" : [ "http://familysearch.org/records/recordPermissions/CdsPrmAnyone" ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/externalId/easy/1000903473529" ],
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:2:9MMY-RPQL" ]
+    },
+    "descriptor" : {
+      "resource" : "https://www.familysearch.org/service/cds/recapi/collections/1937234?arkName=1:2:9MMY-RPQL"
+    }
+  }, {
+    "id" : "sd_c_1937234",
+    "about" : "https://www.familysearch.org/platform/records/collections/1937234",
+    "resourceType" : "http://gedcomx.org/Collection",
+    "created" : 1382223433515,
+    "modified" : 1740041388800,
+    "coverage" : [ {
+      "spatial" : {
+        "original" : "Minnesota, United States",
+        "description" : "https://www.familysearch.org/platform/places/description/335"
+      },
+      "temporal" : {
+        "original" : "1908/2002",
+        "formal" : "+1908/+2002"
+      },
+      "recordType" : "http://gedcomx.org/Vital"
+    } ],
+    "titles" : [ {
+      "lang" : "en_US",
+      "value" : "Minnesota, Death Index, 1908-2002"
+    }, {
+      "lang" : "zh",
+      "value" : "明尼蘇達州死亡索引，1908 年 - 2002 年"
+    }, {
+      "lang" : "fr",
+      "value" : "Minnesota, index des décès, 1908-2002"
+    }, {
+      "lang" : "ru",
+      "value" : "Миннесота, указатель умерших, 1908-2002 гг."
+    }, {
+      "lang" : "no",
+      "value" : "Minnesota Dødsregister, 1908-2002"
+    }, {
+      "lang" : "es",
+      "value" : "Índice de mortalidad de Minnesota, 1908-2002"
+    }, {
+      "lang" : "mn",
+      "value" : "Миннесота муж улс дахь нас баралтын индекс, 1908-2002 он"
+    }, {
+      "lang" : "ko",
+      "value" : "미네소타 사망 색인, 1908-2002"
+    }, {
+      "lang" : "ja",
+      "value" : "ミネソタ州での死亡インデックス、1908年-2002年"
+    }, {
+      "lang" : "it",
+      "value" : "Indice dei decessi del Minnesota, 1908-2002"
+    }, {
+      "lang" : "id",
+      "value" : "Indeks Kematian Minnesota, 1908-2002"
+    }, {
+      "lang" : "hu",
+      "value" : "Minnesotai halálozási index, 1908–2002"
+    }, {
+      "lang" : "sk",
+      "value" : "Minnesota, Index úmrtí, 1908 – 2002"
+    }, {
+      "lang" : "th",
+      "value" : "ดัชนีการเสียชีวิตในมินนิโซตา, ปี 1908-2002"
+    }, {
+      "lang" : "to",
+      "value" : "Fakahokohoko Fakamotuʻalea ʻo e Mate ʻi Minesota, 1908-2002"
+    }, {
+      "lang" : "bg",
+      "value" : "Индекс за смъртни случаи в Минесота, 1908 – 2002"
+    }, {
+      "lang" : "km",
+      "value" : "លិបិក្រមមរណភាពមីនីសូតា, ឆ្នាំ 1908-2002"
+    }, {
+      "lang" : "pl",
+      "value" : "Minnesota Indeks zgonów, 1908-2002"
+    }, {
+      "lang" : "ro",
+      "value" : "Indexul deceselor din Minnesota, 1908-2002"
+    }, {
+      "lang" : "sv",
+      "value" : "Minnesota Index över dödsfall, 1908-2002"
+    }, {
+      "lang" : "sm",
+      "value" : "Chỉ Mục về Ca Tử Vong ở Minnesota, 1908-2002"
+    }, {
+      "lang" : "vi",
+      "value" : "Chỉ Mục về Ca Tử Vong ở Minnesota, 1908-2002"
+    }, {
+      "lang" : "sq",
+      "value" : "Indeksi i Vdekjeve të Minesotës, 1908-2002"
+    }, {
+      "lang" : "pt",
+      "value" : "Índice de Morte de Minnesota, 1908-2002"
+    }, {
+      "lang" : "de",
+      "value" : "Minnesota Todesindex, 1908-2002"
+    }, {
+      "lang" : "uk",
+      "value" : "Міннесота, покажчик записів про смерті, 1908–2002 рр."
+    }, {
+      "lang" : "hr",
+      "value" : "Indeks smrti u Minnesoti, 1908. – 2002."
+    }, {
+      "lang" : "cs",
+      "value" : "Rejstřík úmrtí v Minnesotě, 1908–2002"
+    }, {
+      "lang" : "da",
+      "value" : "Minnesota dødsfaldindeks, 1908-2002"
+    }, {
+      "lang" : "nl",
+      "value" : "Minnesota Sterften Index, 1908-2002"
+    }, {
+      "lang" : "et",
+      "value" : "Minnesota surmade indeks, 1908–2002"
+    }, {
+      "lang" : "fj",
+      "value" : "iTuvatuva vakamatanivola ni Mate e Minnesota, 1908-2002"
+    }, {
+      "lang" : "fi",
+      "value" : "Minnesotan kuolinhakemisto, 1908–2002"
+    }, {
+      "lang" : "tl",
+      "value" : "Index ng Kamatayan ng Minnesota, 1908-2002"
+    }, {
+      "lang" : "mg",
+      "value" : "Tondro fikarohana fahafatesana tao Minnesota 1908-2002"
+    }, {
+      "lang" : "ceb",
+      "value" : "Indeks sa Kamatayon sa Minnesota, 1908-2002"
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Primary" : [ "https://www.familysearch.org/platform/records/collections/1937234" ]
+    }
+  }, {
+    "id" : "sd_p_13296663863",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:V47K-MBP",
+    "componentOf" : {
+      "description" : "#src_r_21892565841",
+      "descriptionId" : "src_r_21892565841"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Minnesota, Death Index, 1908-2002\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:V47K-MBP : Tue Feb 18 22:06:22 UTC 2025), Entry for Chris W. Jacobson and Jacobson, 19 Sep 1974."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Chris W. Jacobson, \"Minnesota, Death Index, 1908-2002\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Chris W. Jacobson, \"Minnesota, Death Index, 1908-2002\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:V47K-MBP" ]
+    }
+  }, {
+    "id" : "sd_p_13296663864",
+    "about" : "https://www.familysearch.org/ark:/61903/1:1:V47K-MB5",
+    "componentOf" : {
+      "description" : "#src_r_21892565841",
+      "descriptionId" : "src_r_21892565841"
+    },
+    "resourceType" : "http://gedcomx.org/Person",
+    "citations" : [ {
+      "value" : "\"Minnesota, Death Index, 1908-2002\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:V47K-MBP : Tue Feb 18 22:06:22 UTC 2025), Entry for Chris W. Jacobson and Jacobson, 19 Sep 1974."
+    } ],
+    "titles" : [ {
+      "lang" : "en",
+      "value" : "Jacobson, \"Minnesota, Death Index, 1908-2002\""
+    } ],
+    "descriptions" : [ {
+      "lang" : "en",
+      "value" : "Jacobson, \"Minnesota, Death Index, 1908-2002\""
+    } ],
+    "identifiers" : {
+      "http://gedcomx.org/Persistent" : [ "https://www.familysearch.org/ark:/61903/1:1:V47K-MB5" ]
+    }
+  } ],
+  "fields" : [ {
+    "id" : "79603ee6-2b4d-4a02-884e-4ed2e6c0b2a1",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/BatchId",
+    "values" : [ {
+      "id" : "961ada78-9841-4e17-9909-ae4faa790e23",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_BATCH_ID",
+      "text" : "NN264DN"
+    } ]
+  }, {
+    "id" : "865ecd99-68e7-4157-b005-958c19f9c236",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/SourceCertificateYear",
+    "values" : [ {
+      "id" : "44164bad-cdb8-4e9d-b5e9-7bbc51a39545",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_CERTIFICATE_YEAR_ORIG",
+      "text" : "1974"
+    } ]
+  }, {
+    "id" : "f201c849-1bec-41e0-8e8e-63bf27fda60f",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/CdsBatchId",
+    "values" : [ {
+      "id" : "82487ff2-3b3d-4a68-aac9-e1e813fed470",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_CDS_BATCH_ID",
+      "text" : "5857"
+    } ]
+  }, {
+    "id" : "f06ad714-fab9-4475-bd6c-10623dcafb9a",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/SourceCertificateNbr",
+    "values" : [ {
+      "id" : "587b78db-1d41-4016-a5fe-bb7dcbfffaf1",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_CERTIFICATE_NBR_ORIG",
+      "text" : "022984"
+    } ]
+  }, {
+    "id" : "e0753d77-146c-4c44-b8be-7ff357444c4b",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/FsUnsupported",
+    "values" : [ {
+      "id" : "374b619b-6f66-408f-90ec-2b9fe3491237",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_UNSUPPORTED",
+      "text" : "{\"BORN_IN_MINNESOTA\":\"N\",\"UNIQUE_IDENTIFIER\":\"1000903473529\"}"
+    } ]
+  }, {
+    "id" : "994dfd14-c0df-4ef0-83f7-fca8053504b4",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/RecordVersion",
+    "values" : [ {
+      "id" : "a6654b7d-571f-4957-8324-b4ed7db74708",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_VERSION",
+      "text" : "1"
+    } ]
+  }, {
+    "id" : "32f8bb8b-93ba-4b82-af27-d0c43dc31c80",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/SourceRecordNbr",
+    "values" : [ {
+      "id" : "586333bb-a284-426b-9bc8-e94f3d74e294",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_RECORD_NBR_ORIG",
+      "text" : "1924498"
+    } ]
+  }, {
+    "id" : "73e185b9-8cf4-43a9-9346-707fbeb46c2b",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/RecordId",
+    "values" : [ {
+      "id" : "5da70891-6852-4773-af8f-40d1510ea01d",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_ID",
+      "text" : "1176372"
+    } ]
+  }, {
+    "id" : "a015977a-aa91-4f94-9d57-56a664c55ae1",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/MiscFlagTypedOrHandwritten",
+    "values" : [ {
+      "id" : "72d95ed9-f8d6-4cea-9001-e571d2ed8772",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "MISC_FLAG_TYPED_OR_HANDWRITTEN_ORIG",
+      "text" : "T"
+    } ]
+  }, {
+    "id" : "ce3c857d-3543-461d-aa42-d3c70579cbe5",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/SortKey",
+    "values" : [ {
+      "id" : "77758c19-9abb-441f-9c7d-9a822652e26a",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SORT_KEY",
+      "text" : "1000903473529#12"
+    } ]
+  }, {
+    "id" : "a6cd79ba-3e35-4a14-b2f2-a7d831d774df",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/PublicationStatus",
+    "values" : [ {
+      "id" : "58de5fa1-dd7d-44a6-ad67-785d3fca9c71",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_PUB_STATUS",
+      "text" : "Production"
+    } ]
+  }, {
+    "id" : "1167ce08-2ea4-4a7b-b56e-8fccf848a44b",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/RecordGroup",
+    "values" : [ {
+      "id" : "5413b240-2af7-4f37-b898-8e6937321f7f",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_RECORD_GROUP",
+      "text" : "Set 1"
+    } ]
+  }, {
+    "id" : "3375f08c-3963-4021-bf1b-d7b3c0c0410c",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/UserModified",
+    "values" : [ {
+      "id" : "7ee09281-e423-4103-aa02-a4a93344d2da",
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_USER_MODIFIED",
+      "text" : "false"
+    } ]
+  }, {
+    "id" : "a5d5d6f7-89e9-4d23-ad67-05c23b502a3d",
+    "attribution" : {
+      "modified" : 1739301561248,
+      "created" : 1739301561248
+    },
+    "type" : "http://familysearch.org/types/fields/SourceFileName",
+    "values" : [ {
+      "id" : "9b1f4833-b0dc-430d-b9b3-1c3702272e2e",
+      "type" : "http://gedcomx.org/Original",
+      "labelId" : "SOURCE_FILE_NAME_ORIG",
+      "text" : "022984"
+    } ]
+  }, {
+    "type" : "http://familysearch.org/types/fields/SystemOfRecord",
+    "values" : [ {
+      "type" : "http://gedcomx.org/Interpreted",
+      "labelId" : "FS_SYSTEM_OF_RECORD",
+      "text" : "SLS"
+    } ]
+  } ]
+}
