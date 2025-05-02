@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Birth Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nYear: 1904; Number: 70901306<br/>\n[https://archives.novascotia.ca/vital-statistics/birth/?ID=172191 Nova Scotia Archives] (accessed 6 May 2021)<br/>\nFlorence Agnes McNamara birth February 22, 1880 in Parrsboro, Cumberland, Nova Scotia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Florence was born on 22 February 1880 in Parrsboro, Cumberland, Nova Scotia.<ref>\n'''Birth Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nYear: 1904; Number: 70901306<br/>\n[https://archives.novascotia.ca/vital-statistics/birth/?ID=172191 Nova Scotia Archives] (accessed 6 May 2021)<br/>\nFlorence Agnes McNamara birth February 22, 1880 in Parrsboro, Cumberland, Nova Scotia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Birth Registration''': \"Nova Scotia Births, Marriages, and Deaths\"<br/>Year: 1904; Number: 70901306<br/>[https://archives.novascotia.ca/vital-statistics/birth/?ID=172191 Nova Scotia Archives] (accessed 6 May 2021)<br/>Florence Agnes McNamara birth February 22, 1880 in Parrsboro, Cumberland, Nova Scotia.",
+    "type": "source"
+  }
+}

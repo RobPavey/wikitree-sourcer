@@ -1,0 +1,65 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Florence Agnes",
+    "lastName": "McNamara"
+  },
+  "lastNameAtBirth": "McNamara",
+  "lastNameAtDeath": "Canty",
+  "mothersMaidenName": "McLellan",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "22 Feb 1880",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "27 Apr 1958",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Parrsboro, Cumberland, Nova Scotia, Canada"
+  },
+  "deathPlace": {
+    "placeString": "Dartmouth, Halifax, Nova Scotia, Canada"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Rogers McNamara",
+        "lastName": "McNamara",
+        "forenames": "James Rogers"
+      },
+      "lastNameAtBirth": "McNamara",
+      "lastNameAtDeath": "McNamara"
+    },
+    "mother": {
+      "name": {
+        "name": "Julia Ann McLellan",
+        "lastName": "McLellan",
+        "forenames": "Julia Ann"
+      },
+      "lastNameAtBirth": "McLellan",
+      "lastNameAtDeath": "McLellan"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "William Canty",
+        "lastName": "Canty",
+        "forenames": "William"
+      },
+      "lastNameAtBirth": "Canty",
+      "lastNameAtDeath": "Canty",
+      "marriageDate": {
+        "dateString": "18 Sep 1901"
+      },
+      "marriagePlace": {
+        "placeString": "Parrsboro, Cumberland, Nova Scotia, Canada"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "McNamara-5434"
+}

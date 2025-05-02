@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "nsvr",
+  "sourceType": "record",
+  "recordType": "BirthRegistration",
+  "name": {
+    "name": "Florence Agnes McNamara"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "February 22, 1880"
+  },
+  "eventPlace": {
+    "placeString": "Parrsboro, Cumberland, Nova Scotia"
+  },
+  "birthDate": {
+    "dateString": "February 22, 1880"
+  },
+  "birthPlace": {
+    "placeString": "Parrsboro, Cumberland, Nova Scotia"
+  },
+  "registrationDistrict": "Cumberland County",
+  "collectionData": {
+    "id": "births",
+    "year": "1904",
+    "number": "70901306"
+  },
+  "hasValidData": true
+}
