@@ -248,6 +248,11 @@
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
     {
+      "matches": ["*://*.archives.novascotia.ca/vital-statistics/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/nsvr/browser/nsvr_content.js"]
+    },
+    {
       "matches": ["*://*.openarchieven.nl/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/openarch/browser/openarch_content.js"]
@@ -476,6 +481,10 @@
     {
       "resources": ["site/np/core/np_extract_data.mjs"],
       "matches": ["*://*.newspapers.com/*"]
+    },
+    {
+      "resources": ["site/nsvr/core/nsvr_extract_data.mjs"],
+      "matches": ["*://*.archives.novascotia.ca/vital-statistics/*"]
     },
     {
       "resources": ["site/openarch/core/openarch_extract_data.mjs"],

@@ -614,7 +614,7 @@ class CitationBuilder {
   getCitationObject(generalizedData, url) {
     let citationString = this.getCitationString();
 
-    //console.log(fullCitation);
+    // console.log(fullCitation);
 
     let standardDataString = this.getStandardDataString(generalizedData);
 

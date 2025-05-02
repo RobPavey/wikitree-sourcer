@@ -69,6 +69,7 @@ const siteNames = [
   "wiewaswie",
   "wikitree",
   "wikipedia",
+  "nsvr",
 ];
 
 export { siteNames };

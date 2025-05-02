@@ -95,6 +95,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/McDonald-1168",
   },
   {
+    // Nova Scotia example
+    caseName: "mcnamara-5434_read",
+    url: "https://www.wikitree.com/wiki/McNamara-5434",
+  },
+  {
     caseName: "moore-12982_private",
     url: "https://www.wikitree.com/wiki/Moore-12982",
   },

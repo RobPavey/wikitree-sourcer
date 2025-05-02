@@ -249,6 +249,11 @@
       "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
     },
     {
+      "matches": ["*://*.archives.novascotia.ca/vital-statistics/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/nsvr/browser/nsvr_content.js"]
+    },
+    {
       "matches": ["*://*.openarchieven.nl/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/openarch/browser/openarch_content.js"]
