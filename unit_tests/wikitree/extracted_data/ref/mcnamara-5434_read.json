@@ -1,0 +1,38 @@
+{
+  "hasValidData": true,
+  "firstNames": "Florence Agnes",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "McNamara",
+  "currentLastName": "Canty",
+  "mothersMaidenName": "McLellan",
+  "birthDate": "22 Feb 1880",
+  "birthDateStatus": "none",
+  "deathDate": "27 Apr 1958",
+  "deathDateStatus": "none",
+  "birthLocation": "Parrsboro, Cumberland, Nova Scotia, Canada",
+  "deathLocation": "Dartmouth, Halifax, Nova Scotia, Canada",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Canty-580",
+      "name": "William Canty",
+      "marriageDate": "18 Sep 1901",
+      "marriagePlace": "Parrsboro, Cumberland, Nova Scotia, Canada"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/McNamara-5434",
+  "pageType": "read",
+  "wikiId": "McNamara-5434",
+  "name": "Florence Agnes (McNamara) Canty",
+  "parents": {
+    "father": {
+      "wikiId": "McNamara-4063",
+      "name": "James Rogers McNamara"
+    },
+    "mother": {
+      "wikiId": "McLellan-2566",
+      "name": "Julia Ann McLellan"
+    }
+  }
+}

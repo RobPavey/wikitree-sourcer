@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nYear: 1958; Number: 2902<br/>\n[https://archives.novascotia.ca/vital-statistics/death/?ID=411306 Nova Scotia Archives] (accessed 6 May 2021)<br/>\nFlorence Agnes Canty death 27 Apr 1958 in Head Of Chezzetcook, Halifax, Nova Scotia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Florence died on 27 April 1958 in Head Of Chezzetcook, Halifax, Nova Scotia.<ref>\n'''Death Registration''':\n\"Nova Scotia Births, Marriages, and Deaths\"<br/>\nYear: 1958; Number: 2902<br/>\n[https://archives.novascotia.ca/vital-statistics/death/?ID=411306 Nova Scotia Archives] (accessed 6 May 2021)<br/>\nFlorence Agnes Canty death 27 Apr 1958 in Head Of Chezzetcook, Halifax, Nova Scotia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"Nova Scotia Births, Marriages, and Deaths\"<br/>Year: 1958; Number: 2902<br/>[https://archives.novascotia.ca/vital-statistics/death/?ID=411306 Nova Scotia Archives] (accessed 6 May 2021)<br/>Florence Agnes Canty death 27 Apr 1958 in Head Of Chezzetcook, Halifax, Nova Scotia.",
+    "type": "source"
+  }
+}

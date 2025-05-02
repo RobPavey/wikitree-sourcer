@@ -1,0 +1,28 @@
+{
+  "sourceOfData": "nsvr",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "name": "Florence Agnes Canty"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "April 27, 1958"
+  },
+  "eventPlace": {
+    "placeString": "Head Of Chezzetcook, Halifax, Nova Scotia"
+  },
+  "deathDate": {
+    "dateString": "April 27, 1958"
+  },
+  "deathPlace": {
+    "placeString": "Head Of Chezzetcook, Halifax, Nova Scotia"
+  },
+  "registrationDistrict": "Halifax County",
+  "collectionData": {
+    "id": "deaths",
+    "year": "1958",
+    "number": "2902"
+  },
+  "hasValidData": true
+}

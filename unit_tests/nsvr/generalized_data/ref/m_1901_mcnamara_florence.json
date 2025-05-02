@@ -1,0 +1,39 @@
+{
+  "sourceOfData": "nsvr",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "name": "Florence McNamara"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "Cumberland, Nova Scotia"
+  },
+  "registrationDistrict": "Cumberland County",
+  "spouses": [
+    {
+      "name": {
+        "name": "William Canty"
+      },
+      "personGender": "male",
+      "marriageDate": {
+        "yearString": "1901"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Florence McNamara (bride)",
+    "William Canty (groom)"
+  ],
+  "collectionData": {
+    "id": "marriages",
+    "year": "1901",
+    "book": "1810",
+    "page": "247",
+    "number": "175"
+  },
+  "hasValidData": true
+}
