@@ -756,6 +756,10 @@ const regressionData = [
     url: "https://www.ancestry.com/discoveryui-content/view/165755:1080?_phsrc=AhC28&_phstart=successSource&gsfn=James&gsln=Fraser&ml_rpos=1&queryId=ac9ef1c2767e23287bf156e33da8ee3c",
   },
   {
+    caseName: "sweden_clerical_survey_1871_helena",
+    url: "https://www.ancestry.com/search/collections/9731/records/8776552?tid=200767639&pid=292641764708&ssrc=pt",
+  },
+  {
     caseName: "uk_burial_1923_amelia_mccarthy",
     url: "https://www.ancestry.co.uk/discoveryui-content/view/1712038:70845?ssrc=pt&tid=172368945&pid=392239251049",
   },

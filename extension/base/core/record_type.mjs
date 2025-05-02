@@ -83,6 +83,7 @@ const RT = {
   FamilyTree: `FamilyTree`,
   Confirmation: `Confirmation`, // Church confirmation
   OtherChurchEvent: `OtherChurchEvent`, // other than baptism, marriage, burial etc. e.g. Confirmation, Seat Rents
+  ChurchRecords: `ChurchRecords`, // a combined record with multiple events like birth, baptism, confirmation, marriage
   Heraldry: `Heraldry`,
   Bastardy: `Bastardy`,
   Patent: `Patent`,
@@ -105,6 +106,9 @@ const RecordSubtype = {
   WWIDraftRegistration: `WWIDraftRegistration`,
   WWIIDraftRegistration: `WWIIDraftRegistration`,
   WWIIPrisonerOfWar: `WWIIPrisonerOfWar`,
+
+  // census subtypes
+  HouseholdClericalSurveys: `HouseholdClericalSurveys`,
 };
 
 const Role = {

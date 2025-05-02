@@ -277,6 +277,11 @@ function determineRecordType(extractedData) {
       matches: ["Census Non-Population Schedule"],
     },
     {
+      type: RT.Census,
+      subtype: RecordSubtype.HouseholdClericalSurveys,
+      matches: ["Household Clerical Surveys"],
+    },
+    {
       type: RT.SlaveSchedule,
       matches: ["Slave Schedules"],
     },
@@ -479,6 +484,10 @@ function determineRecordType(extractedData) {
     { type: RT.PassportApplication, matches: ["Passport Application"] },
     { type: RT.Pension, matches: [["Pension Index"]] },
     { type: RT.Newspaper, matches: [["Police Gazettes"]] },
+    {
+      type: RT.ChurchRecords,
+      matches: ["Church Records"],
+    },
   ];
 
   //console.log("in determineRecordType");
@@ -489,6 +498,9 @@ function determineRecordType(extractedData) {
     eventTypeString = extractedData.recordData["Event Type"];
     if (!eventTypeString) {
       eventTypeString = extractedData.recordData["Record Type"];
+    }
+    if (!eventTypeString) {
+      eventTypeString = extractedData.recordData["Event"];
     }
   }
 
@@ -505,17 +517,17 @@ function determineRecordType(extractedData) {
 
         recordType = eventTypeStringToDataType[firstTypeString];
         if (recordType) {
-          return recordType;
+          return { recordType: recordType };
         }
 
         recordType = eventTypeStringToDataType[secondTypeString];
         if (recordType) {
-          return recordType;
+          return { recordType: recordType };
         }
       }
       console.log("determineRecordType: Unrecognised event or record type: " + eventTypeString);
     } else {
-      return recordType;
+      return { recordType: recordType };
     }
   }
 
@@ -546,7 +558,7 @@ function determineRecordType(extractedData) {
       }
 
       if (!titleMatch.requiredData) {
-        return titleMatch.type;
+        return { recordType: titleMatch.type, recordSubtype: titleMatch.subtype };
       } else if (extractedData.recordData) {
         for (let requiredDataSet of titleMatch.requiredData) {
           let match = true;
@@ -557,7 +569,7 @@ function determineRecordType(extractedData) {
             }
           }
           if (match) {
-            return titleMatch.type;
+            return { recordType: titleMatch.type, recordSubtype: titleMatch.subtype };
           }
         }
       }
@@ -577,12 +589,12 @@ function determineRecordType(extractedData) {
       }
 
       if (match) {
-        return entry.type;
+        return { recordType: entry.type };
       }
     }
   }
 
-  return RT.Unclassified;
+  return { recordType: RT.Unclassified };
 }
 
 function determineRoleGivenRecordType(extractedData, result) {
@@ -773,7 +785,15 @@ function determineRoleGivenRecordType(extractedData, result) {
 }
 
 function determineRecordTypeAndRole(extractedData, result) {
-  result.recordType = determineRecordType(extractedData);
+  let type = determineRecordType(extractedData);
+  if (type) {
+    if (type.recordType) {
+      result.recordType = type.recordType;
+      if (type.recordSubtype) {
+        result.recordSubtype = type.recordSubtype;
+      }
+    }
+  }
   determineRoleGivenRecordType(extractedData, result);
 }
 
@@ -1710,6 +1730,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "Census Year",
           "Census year",
           "Year",
+          "Year range",
         ]);
         if (yearString) {
           result.setEventYear(yearString);

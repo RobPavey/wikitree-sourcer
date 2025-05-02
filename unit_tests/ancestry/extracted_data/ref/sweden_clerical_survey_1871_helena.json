@@ -1,0 +1,101 @@
+{
+  "url": "https://www.ancestry.com/search/collections/9731/records/8776552?tid=200767639&pid=292641764708&ssrc=pt",
+  "pageType": "record",
+  "dbId": "9731",
+  "recordId": "8776552",
+  "ancestryTemplate": "{{Ancestry Record|9731|8776552}}",
+  "domain": "ancestry.com",
+  "titleName": "Helena",
+  "titleCollection": "Sweden, Household Clerical Surveys, 1654-1901",
+  "recordData": {
+    "Name": "Helena",
+    "Gender": "Female",
+    "Relationship": "Dotter (Daughter)",
+    "Residence Age": "18",
+    "Birth Date": "17 dec. 1853 (17 Dec 1853)",
+    "Birth Place": "Torsås",
+    "Year range": "1871-1875",
+    "Residence Place": "Östra Torsås, Kronoberg, Sverige (Sweden)",
+    "Village, Farm, or Croft": "Granstorp Siöareg (Granstorp)",
+    "Date Moved Into Parish": "1873",
+    "Place Moved From": "Ternaby",
+    "Date Moved Out of Parish": "8 nov. 1870 (8 Nov 1870)",
+    "Place Moved To": "Ternaby",
+    "Household Members (Name)<br/>Relationship": "Johannes Nilsson Head<br/>Lisa Petersdotter Hustru (Wife)<br/>Anna Stina Dotter (Daughter)<br/>Johan S.<br/>Elias S.<br/>Helena Dotter (Daughter)<br/>Lovisa Dotter (Daughter)<br/>Carl S.<br/>Ratiaren Gustaf Johansson S."
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "Johannes Nilsson",
+        "dbId": "9731",
+        "recordId": "8776547",
+        "link": "https://www.ancestry.com/search/collections/9731/records/8776547",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "Lisa Petersdotter",
+        "dbId": "9731",
+        "recordId": "8776548",
+        "link": "https://www.ancestry.com/search/collections/9731/records/8776548",
+        "Relationship": "Hustru (Wife)"
+      },
+      {
+        "Household Members (Name)": "Anna Stina",
+        "dbId": "9731",
+        "recordId": "8776549",
+        "link": "https://www.ancestry.com/search/collections/9731/records/8776549",
+        "Relationship": "Dotter (Daughter)"
+      },
+      {
+        "Household Members (Name)": "Johan",
+        "dbId": "9731",
+        "recordId": "8776550",
+        "link": "https://www.ancestry.com/search/collections/9731/records/8776550",
+        "Relationship": "S."
+      },
+      {
+        "Household Members (Name)": "Elias",
+        "dbId": "9731",
+        "recordId": "8776551",
+        "link": "https://www.ancestry.com/search/collections/9731/records/8776551",
+        "Relationship": "S."
+      },
+      {
+        "Household Members (Name)": "Helena",
+        "Relationship": "Dotter (Daughter)"
+      },
+      {
+        "Household Members (Name)": "Lovisa",
+        "dbId": "9731",
+        "recordId": "8776553",
+        "link": "https://www.ancestry.com/search/collections/9731/records/8776553",
+        "Relationship": "Dotter (Daughter)"
+      },
+      {
+        "Household Members (Name)": "Carl",
+        "dbId": "9731",
+        "recordId": "8776554",
+        "link": "https://www.ancestry.com/search/collections/9731/records/8776554",
+        "Relationship": "S."
+      },
+      {
+        "Household Members (Name)": "Ratiaren Gustaf Johansson",
+        "dbId": "9731",
+        "recordId": "8776555",
+        "link": "https://www.ancestry.com/search/collections/9731/records/8776555",
+        "Relationship": "S."
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/9731/images/vs-131_850__29-063300?pid=8776552&treeid=200767639&personid=292641764708&usePUB=true&usePUBJs=true",
+  "imageDbId": "9731",
+  "imageRecordId": "vs-131_850__29-063300",
+  "sourceCitation": "Genline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15",
+  "sourceInformation": "Ancestry.com. Sweden, Household Clerical Surveys, 1654-1901 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2014. Original data: Swedish Church Records Archive. Johanneshov, Sweden: Genline AB.",
+  "originalData": "Swedish Church Records Archive. Johanneshov, Sweden: Genline AB.",
+  "sourceDescription": "Swedish household examination rolls, like the ones in this collection, list everyone in a parish, including children, household by household. These records came about from examinations held each year to determine people’s knowledge of the catechism. Learn more..."
+}

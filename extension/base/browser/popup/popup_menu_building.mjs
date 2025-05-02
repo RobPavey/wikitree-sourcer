@@ -1311,6 +1311,7 @@ function setupBuildCitationSubMenu(
     NonpopulationCensus: `Nonpopulation Census`,
     Obituary: `Obituary`,
     OtherChurchEvent: `Other Church Event`,
+    ChurchRecords: `Church Records`,
     PassengerList: `Passenger List`,
     PassportApplication: `Passport Application`,
     Pension: `Pension`,

@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1871-1875 Household Clerical Survey''':\n\"Sweden, Household Clerical Surveys, 1654-1901\"<br/>\nGenline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>\n{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1871-1875 household clerical survey Helena was the daughter of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden).<ref>\n'''1871-1875 Household Clerical Survey''':\n\"Sweden, Household Clerical Surveys, 1654-1901\"<br/>\nGenline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>\n{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1871-1875 Household Clerical Survey''': \"Sweden, Household Clerical Surveys, 1654-1901\"<br/>Genline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1871-1875 Household Clerical Survey''':\n\"Sweden, Household Clerical Surveys, 1654-1901\"<br/>\nGenline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>\n{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)<br/>\nHelena daughter in household of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden). Born in Torsås.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1871-1875 household clerical survey Helena was the daughter of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden).<ref>\n'''1871-1875 Household Clerical Survey''':\n\"Sweden, Household Clerical Surveys, 1654-1901\"<br/>\nGenline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>\n{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)<br/>\nHelena daughter in household of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden). Born in Torsås.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1871-1875 Household Clerical Survey''': \"Sweden, Household Clerical Surveys, 1654-1901\"<br/>Genline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)<br/>Helena daughter in household of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden). Born in Torsås.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1871-1875 Household Clerical Survey''':\n\"Sweden, Household Clerical Surveys, 1654-1901\"<br/>\nGenline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>\n{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)<br/>\nName: Helena; Gender: Female; Relationship: Dotter (Daughter); Residence Age: 18; Birth Date: 17 dec. 1853 (17 Dec 1853); Birth Place: Torsås; Year range: 1871-1875; Residence Place: Östra Torsås, Kronoberg, Sverige (Sweden); Village, Farm, or Croft: Granstorp Siöareg (Granstorp); Date Moved Into Parish: 1873; Place Moved From: Ternaby; Date Moved Out of Parish: 8 nov. 1870 (8 Nov 1870); Place Moved To: Ternaby; <br/>Household Members (Name) Relationship:<br/>Johannes Nilsson Head<br/>Lisa Petersdotter Hustru (Wife)<br/>Anna Stina Dotter (Daughter)<br/>Johan S.<br/>Elias S.<br/>Helena Dotter (Daughter)<br/>Lovisa Dotter (Daughter)<br/>Carl S.<br/>Ratiaren Gustaf Johansson S.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1871-1875 household clerical survey Helena was the daughter of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden).<ref>\n'''1871-1875 Household Clerical Survey''':\n\"Sweden, Household Clerical Surveys, 1654-1901\"<br/>\nGenline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>\n{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)<br/>\nName: Helena; Gender: Female; Relationship: Dotter (Daughter); Residence Age: 18; Birth Date: 17 dec. 1853 (17 Dec 1853); Birth Place: Torsås; Year range: 1871-1875; Residence Place: Östra Torsås, Kronoberg, Sverige (Sweden); Village, Farm, or Croft: Granstorp Siöareg (Granstorp); Date Moved Into Parish: 1873; Place Moved From: Ternaby; Date Moved Out of Parish: 8 nov. 1870 (8 Nov 1870); Place Moved To: Ternaby; <br/>Household Members (Name) Relationship:<br/>Johannes Nilsson Head<br/>Lisa Petersdotter Hustru (Wife)<br/>Anna Stina Dotter (Daughter)<br/>Johan S.<br/>Elias S.<br/>Helena Dotter (Daughter)<br/>Lovisa Dotter (Daughter)<br/>Carl S.<br/>Ratiaren Gustaf Johansson S.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1871-1875 Household Clerical Survey''': \"Sweden, Household Clerical Surveys, 1654-1901\"<br/>Genline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)<br/>Name: Helena; Gender: Female; Relationship: Dotter (Daughter); Residence Age: 18; Birth Date: 17 dec. 1853 (17 Dec 1853); Birth Place: Torsås; Year range: 1871-1875; Residence Place: Östra Torsås, Kronoberg, Sverige (Sweden); Village, Farm, or Croft: Granstorp Siöareg (Granstorp); Date Moved Into Parish: 1873; Place Moved From: Ternaby; Date Moved Out of Parish: 8 nov. 1870 (8 Nov 1870); Place Moved To: Ternaby; <br/>Household Members (Name) Relationship:<br/>Johannes Nilsson Head<br/>Lisa Petersdotter Hustru (Wife)<br/>Anna Stina Dotter (Daughter)<br/>Johan S.<br/>Elias S.<br/>Helena Dotter (Daughter)<br/>Lovisa Dotter (Daughter)<br/>Carl S.<br/>Ratiaren Gustaf Johansson S.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1871-1875 Household Clerical Survey''':\n\"Sweden, Household Clerical Surveys, 1654-1901\"<br/>\nGenline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>\n{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Helena\n|-\n| Gender || Female\n|-\n| Relationship || Dotter (Daughter)\n|-\n| Residence Age || 18\n|-\n| Birth Date || 17 dec. 1853 (17 Dec 1853)\n|-\n| Birth Place || Torsås\n|-\n| Year range || 1871-1875\n|-\n| Residence Place || Östra Torsås, Kronoberg, Sverige (Sweden)\n|-\n| Village, Farm, or Croft || Granstorp Siöareg (Granstorp)\n|-\n| Date Moved Into Parish || 1873\n|-\n| Place Moved From || Ternaby\n|-\n| Date Moved Out of Parish || 8 nov. 1870 (8 Nov 1870)\n|-\n| Place Moved To || Ternaby\n|-\n| Household Members (Name)<br/>Relationship || Johannes Nilsson Head<br/>Lisa Petersdotter Hustru (Wife)<br/>Anna Stina Dotter (Daughter)<br/>Johan S.<br/>Elias S.<br/>Helena Dotter (Daughter)<br/>Lovisa Dotter (Daughter)<br/>Carl S.<br/>Ratiaren Gustaf Johansson S.\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1871-1875 household clerical survey Helena was the daughter of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden).<ref>\n'''1871-1875 Household Clerical Survey''':\n\"Sweden, Household Clerical Surveys, 1654-1901\"<br/>\nGenline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>\n{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Helena\n|-\n| Gender || Female\n|-\n| Relationship || Dotter (Daughter)\n|-\n| Residence Age || 18\n|-\n| Birth Date || 17 dec. 1853 (17 Dec 1853)\n|-\n| Birth Place || Torsås\n|-\n| Year range || 1871-1875\n|-\n| Residence Place || Östra Torsås, Kronoberg, Sverige (Sweden)\n|-\n| Village, Farm, or Croft || Granstorp Siöareg (Granstorp)\n|-\n| Date Moved Into Parish || 1873\n|-\n| Place Moved From || Ternaby\n|-\n| Date Moved Out of Parish || 8 nov. 1870 (8 Nov 1870)\n|-\n| Place Moved To || Ternaby\n|-\n| Household Members (Name)<br/>Relationship || Johannes Nilsson Head<br/>Lisa Petersdotter Hustru (Wife)<br/>Anna Stina Dotter (Daughter)<br/>Johan S.<br/>Elias S.<br/>Helena Dotter (Daughter)<br/>Lovisa Dotter (Daughter)<br/>Carl S.<br/>Ratiaren Gustaf Johansson S.\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1871-1875 Household Clerical Survey''': \"Sweden, Household Clerical Surveys, 1654-1901\"<br/>Genline AB; Johanneshov, Stockholm, Sweden; Swedish Church Records Archive; Volume Number: AI:15<br/>{{Ancestry Record|9731|8776552}} (accessed 6 May 2021)<br/>Name: Helena; Gender: Female; Relationship: Dotter (Daughter); Residence Age: 18; Birth Date: 17 dec. 1853 (17 Dec 1853); Birth Place: Torsås; Year range: 1871-1875; Residence Place: Östra Torsås, Kronoberg, Sverige (Sweden); Village, Farm, or Croft: Granstorp Siöareg (Granstorp); Date Moved Into Parish: 1873; Place Moved From: Ternaby; Date Moved Out of Parish: 8 nov. 1870 (8 Nov 1870); Place Moved To: Ternaby; <br/>Household Members (Name) Relationship:<br/>Johannes Nilsson Head<br/>Lisa Petersdotter Hustru (Wife)<br/>Anna Stina Dotter (Daughter)<br/>Johan S.<br/>Elias S.<br/>Helena Dotter (Daughter)<br/>Lovisa Dotter (Daughter)<br/>Carl S.<br/>Ratiaren Gustaf Johansson S.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Sweden, Household Clerical Surveys, 1654-1901,\" database, ({{Ancestry Record|9731|8776552}} : accessed 6 May 2021), Helena daughter in household of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden). Born in Torsås; citing Genline AB, Johanneshov, Stockholm, Sweden, Swedish Church Records Archive, Volume Number AI:15.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1871-1875 household clerical survey Helena was the daughter of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden).<ref>\"Sweden, Household Clerical Surveys, 1654-1901,\" database, ({{Ancestry Record|9731|8776552}} : accessed 6 May 2021), Helena daughter in household of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden). Born in Torsås; citing Genline AB, Johanneshov, Stockholm, Sweden, Swedish Church Records Archive, Volume Number AI:15.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Sweden, Household Clerical Surveys, 1654-1901,\" database, ({{Ancestry Record|9731|8776552}} : accessed 6 May 2021), Helena daughter in household of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden). Born in Torsås; citing Genline AB, Johanneshov, Stockholm, Sweden, Swedish Church Records Archive, Volume Number AI:15.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1871-1875 Household Clerical Survey'':\n\"Sweden, Household Clerical Surveys, 1654-1901\", database, \nGenline AB, Johanneshov, Stockholm, Sweden, Swedish Church Records Archive, Volume Number AI:15, \n({{Ancestry Record|9731|8776552}} : accessed 6 May 2021), \nName: Helena; Gender: Female; Relationship: Dotter (Daughter); Residence Age: 18; Birth Date: 17 dec. 1853 (17 Dec 1853); Birth Place: Torsås; Year range: 1871-1875; Residence Place: Östra Torsås, Kronoberg, Sverige (Sweden); Village, Farm, or Croft: Granstorp Siöareg (Granstorp); Date Moved Into Parish: 1873; Place Moved From: Ternaby; Date Moved Out of Parish: 8 nov. 1870 (8 Nov 1870); Place Moved To: Ternaby; Household Members (Name) Relationship: Johannes Nilsson Head, Lisa Petersdotter Hustru (Wife), Anna Stina Dotter (Daughter), Johan S., Elias S., Helena Dotter (Daughter), Lovisa Dotter (Daughter), Carl S., Ratiaren Gustaf Johansson S.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1871-1875 household clerical survey Helena was the daughter of Johannes Nilsson in Östra Torsås, Kronoberg, Sverige (Sweden).<ref>\n''1871-1875 Household Clerical Survey'':\n\"Sweden, Household Clerical Surveys, 1654-1901\", database, \nGenline AB, Johanneshov, Stockholm, Sweden, Swedish Church Records Archive, Volume Number AI:15, \n({{Ancestry Record|9731|8776552}} : accessed 6 May 2021), \nName: Helena; Gender: Female; Relationship: Dotter (Daughter); Residence Age: 18; Birth Date: 17 dec. 1853 (17 Dec 1853); Birth Place: Torsås; Year range: 1871-1875; Residence Place: Östra Torsås, Kronoberg, Sverige (Sweden); Village, Farm, or Croft: Granstorp Siöareg (Granstorp); Date Moved Into Parish: 1873; Place Moved From: Ternaby; Date Moved Out of Parish: 8 nov. 1870 (8 Nov 1870); Place Moved To: Ternaby; Household Members (Name) Relationship: Johannes Nilsson Head, Lisa Petersdotter Hustru (Wife), Anna Stina Dotter (Daughter), Johan S., Elias S., Helena Dotter (Daughter), Lovisa Dotter (Daughter), Carl S., Ratiaren Gustaf Johansson S.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1871-1875 Household Clerical Survey'': \"Sweden, Household Clerical Surveys, 1654-1901\", database, Genline AB, Johanneshov, Stockholm, Sweden, Swedish Church Records Archive, Volume Number AI:15, ({{Ancestry Record|9731|8776552}} : accessed 6 May 2021), Name: Helena; Gender: Female; Relationship: Dotter (Daughter); Residence Age: 18; Birth Date: 17 dec. 1853 (17 Dec 1853); Birth Place: Torsås; Year range: 1871-1875; Residence Place: Östra Torsås, Kronoberg, Sverige (Sweden); Village, Farm, or Croft: Granstorp Siöareg (Granstorp); Date Moved Into Parish: 1873; Place Moved From: Ternaby; Date Moved Out of Parish: 8 nov. 1870 (8 Nov 1870); Place Moved To: Ternaby; Household Members (Name) Relationship: Johannes Nilsson Head, Lisa Petersdotter Hustru (Wife), Anna Stina Dotter (Daughter), Johan S., Elias S., Helena Dotter (Daughter), Lovisa Dotter (Daughter), Carl S., Ratiaren Gustaf Johansson S.",
+    "type": "source"
+  }
+}

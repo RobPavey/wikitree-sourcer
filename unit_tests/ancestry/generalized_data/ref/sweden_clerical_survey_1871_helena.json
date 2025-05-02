@@ -1,0 +1,104 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "recordSubtype": "HouseholdClericalSurveys",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Helena"
+  },
+  "personGender": "female",
+  "birthPlace": {
+    "placeString": "Torsås"
+  },
+  "eventDate": {
+    "yearString": "1871-1875"
+  },
+  "eventPlace": {
+    "placeString": "Östra Torsås, Kronoberg, Sverige (Sweden)"
+  },
+  "relationshipToHead": "daughter",
+  "householdArrayFields": [
+    "name",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "Johannes Nilsson",
+      "relationship": "head",
+      "uid": "https://www.ancestry.com/search/collections/9731/records/8776547"
+    },
+    {
+      "name": "Lisa Petersdotter",
+      "relationship": "wife",
+      "uid": "https://www.ancestry.com/search/collections/9731/records/8776548"
+    },
+    {
+      "name": "Anna Stina",
+      "relationship": "daughter",
+      "uid": "https://www.ancestry.com/search/collections/9731/records/8776549"
+    },
+    {
+      "name": "Johan",
+      "relationship": "s.",
+      "uid": "https://www.ancestry.com/search/collections/9731/records/8776550"
+    },
+    {
+      "name": "Elias",
+      "relationship": "s.",
+      "uid": "https://www.ancestry.com/search/collections/9731/records/8776551"
+    },
+    {
+      "name": "Helena",
+      "relationship": "daughter",
+      "isSelected": true,
+      "gender": "female",
+      "birthDate": "17 dec. 1853 (17 Dec 1853)",
+      "birthPlace": "Torsås"
+    },
+    {
+      "name": "Lovisa",
+      "relationship": "daughter",
+      "uid": "https://www.ancestry.com/search/collections/9731/records/8776553"
+    },
+    {
+      "name": "Carl",
+      "relationship": "s.",
+      "uid": "https://www.ancestry.com/search/collections/9731/records/8776554"
+    },
+    {
+      "name": "Ratiaren Gustaf Johansson",
+      "relationship": "s.",
+      "uid": "https://www.ancestry.com/search/collections/9731/records/8776555"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Johannes Nilsson"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Lisa Petersdotter"
+      }
+    }
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|9731|8776552}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|9731|8776547}}",
+    "{{Ancestry Record|9731|8776548}}",
+    "{{Ancestry Record|9731|8776549}}",
+    "{{Ancestry Record|9731|8776550}}",
+    "{{Ancestry Record|9731|8776551}}",
+    "{{Ancestry Record|9731|8776553}}",
+    "{{Ancestry Record|9731|8776554}}",
+    "{{Ancestry Record|9731|8776555}}"
+  ],
+  "collectionData": {
+    "id": "9731",
+    "collectionTitle": "Sweden, Household Clerical Surveys, 1654-1901"
+  },
+  "hasValidData": true
+}

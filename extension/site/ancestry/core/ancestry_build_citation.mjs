@@ -24,7 +24,7 @@ SOFTWARE.
 
 import { CitationBuilder } from "../../../base/core/citation_builder.mjs";
 import { DataString } from "../../../base/core/data_string.mjs";
-import { RT } from "../../../base/core/record_type.mjs";
+import { RT, RecordSubtype } from "../../../base/core/record_type.mjs";
 
 function getCleanRecordDataValue(recordData, fieldName) {
   let value = recordData[fieldName];
@@ -49,6 +49,7 @@ function getRefTitle(ed, gd) {
       defaultTitle: "Census",
       addYear: true,
       titleMatches: [{ title: "Register", matches: ["1939 England and Wales Register"] }],
+      subtypes: [{ title: "Household Clerical Survey", subtype: RecordSubtype.HouseholdClericalSurveys }],
     },
   ];
 

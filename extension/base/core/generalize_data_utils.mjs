@@ -4054,7 +4054,10 @@ class GeneralizedData {
         type: RT.Census,
         defaultTitle: "Census",
         addYear: true,
-        subtypes: [{ title: "LDS Census", subtype: RecordSubtype.LdsCensus }],
+        subtypes: [
+          { title: "LDS Census", subtype: RecordSubtype.LdsCensus },
+          { title: "Household Clerical Survey", subtype: RecordSubtype.HouseholdClericalSurveys },
+        ],
       },
       {
         type: RT.NonpopulationCensus,
@@ -4240,6 +4243,10 @@ class GeneralizedData {
         type: RT.OtherChurchEvent,
         defaultTitle: "Other Church Event",
         subtypes: [{ title: "Church Member Registration", subtype: RecordSubtype.MemberRegistration }],
+      },
+      {
+        type: RT.ChurchRecords,
+        defaultTitle: "Church Records",
       },
       {
         type: RT.Confirmation,

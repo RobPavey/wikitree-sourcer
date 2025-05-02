@@ -1836,6 +1836,25 @@ class NarrativeBuilder {
       return "";
     }
 
+    function getInYearCensusPart(year) {
+      let result = "In the " + builder.highlightDate(year);
+      let usedSubtype = false;
+      if (gd.recordSubtype) {
+        if (gd.recordSubtype == RecordSubtype.HouseholdClericalSurveys) {
+          result += " household clerical survey";
+          usedSubtype = true;
+        }
+      }
+      if (!usedSubtype) {
+        if (year == "1939") {
+          result += " register";
+        } else {
+          result += " census";
+        }
+      }
+      return result;
+    }
+
     function getCensusDatePart(year) {
       let part1Option = options.narrative_census_censusDatePartFormat;
       let result = "";
@@ -1843,20 +1862,10 @@ class NarrativeBuilder {
         if (collection && collection.title) {
           result = "In the " + collection.title;
         } else {
-          result = "In the " + builder.highlightDate(year);
-          if (year == "1939") {
-            result += " register";
-          } else {
-            result += " census";
-          }
+          result = getInYearCensusPart(year);
         }
       } else if (part1Option == "inYearCensus") {
-        result = "In the " + builder.highlightDate(year);
-        if (year == "1939") {
-          result += " register";
-        } else {
-          result += " census";
-        }
+        result = getInYearCensusPart(year);
       } else if (part1Option == "inYear") {
         result = "In " + builder.highlightDate(year);
       } else if (part1Option == "onDate") {
@@ -3079,6 +3088,10 @@ class NarrativeBuilder {
       {
         recordType: RT.OtherChurchEvent,
         string: "was recorded in a church event",
+      },
+      {
+        recordType: RT.ChurchRecords,
+        string: "was in a church record",
       },
       { recordType: RT.Heraldry, string: "was in a heraldic record" },
       { recordType: RT.GovernmentDocument, string: "was in a government document" },
