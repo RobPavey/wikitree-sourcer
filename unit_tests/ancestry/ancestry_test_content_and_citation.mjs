@@ -1306,6 +1306,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/82009850755/facts",
   },
   {
+    // Has last name in all uppercase
+    caseName: "xx_profile_millie_snyder_1869_1934",
+    url: "https://www.ancestry.com/family-tree/person/tree/5767792/person/24074592712/facts",
+  },
+  {
     caseName: "xx_profile_ralph_pavey_1891_1958_england",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },

@@ -1,0 +1,55 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/5767792/person/24074592712/facts",
+  "pageType": "personFacts",
+  "givenName": "Millie B",
+  "surname": "SNYDER",
+  "titleName": "Millie B SNYDER",
+  "birthDate": "31 MAR 1869",
+  "birthPlace": "Chicago, Cook, Illinois, USA",
+  "deathDate": "18 JUL 1934",
+  "deathPlace": "Chicago, Cook, Illinois, USA",
+  "gender": "Female",
+  "marriages": [
+    {
+      "date": "15 Oct 1885",
+      "place": "Vermilion, Illinois, USA",
+      "spouseName": "Charles W BAILEY"
+    },
+    {
+      "date": "16 Oct 1901",
+      "place": "Chicago, Cook, Illinois, USA",
+      "spouseName": "Charles W SMITH",
+      "spouseBirthYear": "1859"
+    }
+  ],
+  "fatherName": "Charles W SNYDER",
+  "motherName": "Lydia Margaret ALLHANDS",
+  "sources": [
+    {
+      "dbId": "6742",
+      "recordId": "47064998",
+      "title": "1880 United States Federal Census"
+    },
+    {
+      "dbId": "6061",
+      "recordId": "14868525",
+      "title": "1920 United States Federal Census"
+    },
+    {
+      "dbId": "2556",
+      "recordId": "1414851",
+      "title": "Cook County, Illinois, Marriages Index, 1871-1920"
+    },
+    {
+      "dbId": "7857",
+      "recordId": "549398",
+      "title": "Illinois Marriages, 1851-1900"
+    },
+    {
+      "dbId": "2542",
+      "recordId": "1922788",
+      "title": "Illinois, Deaths and Stillbirths Index, 1916-1947"
+    }
+  ],
+  "ancestryTemplate": "{{Ancestry Tree|5767792|24074592712}}"
+}

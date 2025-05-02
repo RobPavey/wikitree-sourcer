@@ -13,7 +13,8 @@
     "sourceType": "profile",
     "sourceOfData": "ancestry",
     "name": {
-      "name": "Leonard Pavey V",
+      "name": "Leonard Pavey",
+      "suffix": "V",
       "lastName": "Pavey",
       "forenames": "Leonard"
     },
@@ -46,7 +47,10 @@
     "parents": {
       "father": {
         "name": {
-          "name": "Leonard Pavey IV"
+          "name": "Leonard Pavey",
+          "suffix": "IV",
+          "lastName": "Pavey",
+          "forenames": "Leonard"
         }
       },
       "mother": {

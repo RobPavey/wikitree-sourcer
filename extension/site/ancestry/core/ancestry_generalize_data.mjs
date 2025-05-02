@@ -34,10 +34,14 @@ import { RC } from "../../../base/core/record_collections.mjs";
 import { RT, RecordSubtype, Role } from "../../../base/core/record_type.mjs";
 import { addSpouseOrParentsForSelectedHouseholdMember } from "../../../base/core/structured_household.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { NameUtils } from "../../../base/core/name_utils.mjs";
 
 function cleanName(name) {
   // currently all cleaning we need is done in generalize_data_utils
   // Ancestry names are pretty good
+
+  // One exception is that in profiles the last name is sometimes in all uppercase
+
   return name;
 }
 
@@ -2849,12 +2853,35 @@ function generalizeProfileData(input, result) {
         }
       }
     }
+  } else {
+    surname = result.inferLastName();
   }
+
+  // sometimes the last name is all uppercase on Ancestry profiles
+  // setFullName above will have removed suffixes
+  if (surname && StringUtils.isAllUppercase(surname)) {
+    let newLastName = NameUtils.convertNameFromAllCapsToMixedCase(surname);
+    if (result.name) {
+      result.name.name = result.name.name.replace(surname, newLastName);
+    }
+    surname = newLastName;
+  }
+
   result.setLastNameAndForenames(cleanName(surname), cleanName(ed.givenName));
 
   if (ed.fatherName) {
     let father = result.addFather();
     father.name.setFullName(cleanName(ed.fatherName));
+
+    // sometimes the last name is all uppercase on Ancestry profiles
+    // setFullName above will have removed suffixes
+    let surname = father.name.inferLastName();
+    if (surname && StringUtils.isAllUppercase(surname)) {
+      let newLastName = NameUtils.convertNameFromAllCapsToMixedCase(surname);
+      if (father.name) {
+        father.name.name = father.name.name.replace(surname, newLastName);
+      }
+    }
 
     if (result.name.lastName) {
       if (father.name.name.endsWith(result.name.lastName)) {
@@ -2870,6 +2897,16 @@ function generalizeProfileData(input, result) {
   if (ed.motherName) {
     let mother = result.addMother();
     mother.name.setFullName(cleanName(ed.motherName));
+
+    // sometimes the last name is all uppercase on Ancestry profiles
+    // setFullName above will have removed suffixes
+    let surname = mother.name.inferLastName();
+    if (surname && StringUtils.isAllUppercase(surname)) {
+      let newLastName = NameUtils.convertNameFromAllCapsToMixedCase(surname);
+      if (mother.name) {
+        mother.name.name = mother.name.name.replace(surname, newLastName);
+      }
+    }
   }
 }
 

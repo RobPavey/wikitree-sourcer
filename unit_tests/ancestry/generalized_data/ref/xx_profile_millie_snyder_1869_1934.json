@@ -1,0 +1,64 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Millie B Snyder",
+    "lastName": "Snyder",
+    "forenames": "Millie B"
+  },
+  "birthDate": {
+    "dateString": "31 MAR 1869"
+  },
+  "birthPlace": {
+    "placeString": "Chicago, Cook, Illinois, USA"
+  },
+  "deathDate": {
+    "dateString": "18 JUL 1934"
+  },
+  "deathPlace": {
+    "placeString": "Chicago, Cook, Illinois, USA"
+  },
+  "personGender": "female",
+  "spouses": [
+    {
+      "name": {
+        "name": "Charles W BAILEY"
+      },
+      "marriageDate": {
+        "dateString": "15 Oct 1885"
+      },
+      "marriagePlace": {
+        "placeString": "Vermilion, Illinois, USA"
+      }
+    },
+    {
+      "name": {
+        "name": "Charles W SMITH"
+      },
+      "marriageDate": {
+        "dateString": "16 Oct 1901"
+      },
+      "marriagePlace": {
+        "placeString": "Chicago, Cook, Illinois, USA"
+      },
+      "birthDate": {
+        "yearString": "1859"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Charles W Snyder",
+        "lastName": "Snyder",
+        "forenames": "Charles W"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Lydia Margaret Allhands"
+      }
+    }
+  },
+  "hasValidData": true
+}

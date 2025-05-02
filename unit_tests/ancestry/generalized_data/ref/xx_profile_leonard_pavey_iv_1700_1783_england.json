@@ -2,7 +2,8 @@
   "sourceType": "profile",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "Leonard Pavey IV",
+    "name": "Leonard Pavey",
+    "suffix": "IV",
     "lastName": "Pavey",
     "forenames": "Leonard"
   },
