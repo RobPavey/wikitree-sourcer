@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "William died on 22 September 1962 in London, England and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)\n</ref>",
+    "citation": "William died on 22 September 1962 in London, England, and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -16,7 +16,7 @@
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "William died on 22 September 1962 in London, England and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)<br/>\nWilliam Berry McLaren probate on 30 Nov 1962 in London, England. Died 22 Sep 1962 in London, England.\n</ref>",
+    "citation": "William died on 22 September 1962 in London, England, and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)<br/>\nWilliam Berry McLaren probate on 30 Nov 1962 in London, England. Died 22 Sep 1962 in London, England.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "William died on 22 September 1962 in London, England and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)<br/>\nName: William Berry McLaren; Death Date: 22 Sep 1962; Death Place: London, England; Probate Date: 30 Nov 1962; Probate Registry: London, England.\n</ref>",
+    "citation": "William died on 22 September 1962 in London, England, and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)<br/>\nName: William Berry McLaren; Death Date: 22 Sep 1962; Death Place: London, England; Probate Date: 30 Nov 1962; Probate Registry: London, England.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "William died on 22 September 1962 in London, England and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Berry McLaren\n|-\n| Death Date || 22 Sep 1962\n|-\n| Death Place || London, England\n|-\n| Probate Date || 30 Nov 1962\n|-\n| Probate Registry || London, England\n|}\n</ref>",
+    "citation": "William died on 22 September 1962 in London, England, and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Berry McLaren\n|-\n| Death Date || 22 Sep 1962\n|-\n| Death Place || London, England\n|-\n| Probate Date || 30 Nov 1962\n|-\n| Probate Registry || London, England\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {
@@ -52,7 +52,7 @@
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "William died on 22 September 1962 in London, England and their estate passed probate on 30 November 1962 in London, England.<ref>\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995,\" database, ({{Ancestry Record|1904|13762821}} : accessed 6 May 2021), William Berry McLaren probate on 30 Nov 1962 in London, England. Died 22 Sep 1962 in London, England; citing Original data Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England.</ref>",
+    "citation": "William died on 22 September 1962 in London, England, and their estate passed probate on 30 November 1962 in London, England.<ref>\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995,\" database, ({{Ancestry Record|1904|13762821}} : accessed 6 May 2021), William Berry McLaren probate on 30 Nov 1962 in London, England. Died 22 Sep 1962 in London, England; citing Original data Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
@@ -64,7 +64,7 @@
     "type": "inline"
   },
   "partial_ee_style_narrative": {
-    "citation": "William died on 22 September 1962 in London, England and their estate passed probate on 30 November 1962 in London, England.<ref>\n''Probate'':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\", database, \nOriginal data Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England, \n({{Ancestry Record|1904|13762821}} : accessed 6 May 2021), \nName: William Berry McLaren; Death Date: 22 Sep 1962; Death Place: London, England; Probate Date: 30 Nov 1962; Probate Registry: London, England.\n</ref>",
+    "citation": "William died on 22 September 1962 in London, England, and their estate passed probate on 30 November 1962 in London, England.<ref>\n''Probate'':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\", database, \nOriginal data Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England, \n({{Ancestry Record|1904|13762821}} : accessed 6 May 2021), \nName: William Berry McLaren; Death Date: 22 Sep 1962; Death Place: London, England; Probate Date: 30 Nov 1962; Probate Registry: London, England.\n</ref>",
     "type": "narrative"
   },
   "partial_ee_style_source": {
@@ -72,7 +72,7 @@
     "type": "source"
   },
   "fullName_narrative": {
-    "citation": "William Berry McLaren died on 22 September 1962 in London, England and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Berry McLaren\n|-\n| Death Date || 22 Sep 1962\n|-\n| Death Place || London, England\n|-\n| Probate Date || 30 Nov 1962\n|-\n| Probate Registry || London, England\n|}\n</ref>",
+    "citation": "William Berry McLaren died on 22 September 1962 in London, England, and their estate passed probate on 30 November 1962 in London, England.<ref>\n'''Probate''':\n\"England & Wales, National Probate Calendar (Index of Wills and Administrations), 1858-1995\"<br/>\nOriginal data: Principal Probate Registry. Calendar of the Grants of Probate and Letters of Administration made in the Probate Registries of the High Court of Justice in England<br/>\n{{Ancestry Record|1904|13762821}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || William Berry McLaren\n|-\n| Death Date || 22 Sep 1962\n|-\n| Death Place || London, England\n|-\n| Probate Date || 30 Nov 1962\n|-\n| Probate Registry || London, England\n|}\n</ref>",
     "type": "narrative"
   }
 }

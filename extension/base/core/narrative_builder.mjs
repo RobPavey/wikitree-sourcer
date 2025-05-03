@@ -287,13 +287,13 @@ class NarrativeBuilder {
 
   addPlaceWithPreposition(placeObj) {
     if (placeObj) {
-      this.narrative += " " + this.getPlaceWithPrepositionFromPlaceObj(placeObj);
+      this.addPlaceToSentence(this.getPlaceWithPrepositionFromPlaceObj(placeObj));
     }
   }
 
   addFullPlaceWithPreposition(placeObj) {
     if (placeObj) {
-      this.narrative += " " + this.getFullPlaceWithPrepositionFromPlaceObj(placeObj);
+      this.addPlaceToSentence(this.getFullPlaceWithPrepositionFromPlaceObj(placeObj));
     }
   }
 
@@ -309,7 +309,7 @@ class NarrativeBuilder {
         this.addPlaceWithPreposition(placeObj);
       }
     } else if (gd.registrationDistrict) {
-      this.narrative += ". Registration district was " + gd.registrationDistrict;
+      this.startSentence("Registration district was " + gd.registrationDistrict);
     }
   }
 
@@ -317,8 +317,109 @@ class NarrativeBuilder {
     if (dateObj) {
       let formattedDate = this.formatDateObj(dateObj, true);
       if (formattedDate) {
-        this.narrative += " " + formattedDate;
+        this.addDateToSentence(formattedDate);
       }
+    }
+  }
+
+  addSpaceToContinueSentence() {
+    if (!this.narrative) {
+      return;
+    }
+
+    if (this.commaNeededForSentenceContinuation) {
+      this.addCommaSpaceToSentence();
+    } else {
+      this.removeSpacesAtEndOfSentence();
+      this.narrative += " ";
+    }
+  }
+
+  addCommaSpaceToSentence() {
+    this.commaNeededForSentenceContinuation = false;
+    // don't remove a period because it could be at the end of an abbreviation
+    this.removeCommasAndSpacesAtEndOfSentence();
+    this.narrative += ", ";
+  }
+
+  addToSentence(text) {
+    if (text) {
+      this.addSpaceToContinueSentence();
+
+      // remove any leading spaces from text
+      this.narrative += text.trimStart();
+    }
+  }
+
+  addToSentenceNoSpace(text) {
+    // this is rarely used - it is adding a part to the last word
+    if (text) {
+      // remove any leading spaces from text
+      this.narrative += text.trimStart();
+      this.commaNeededForSentenceContinuation = false;
+    }
+  }
+
+  addPlaceToSentence(placeText) {
+    this.addToSentence(placeText);
+    if (placeText.includes(",")) {
+      this.commaNeededForSentenceContinuation = true;
+    }
+  }
+
+  addDateToSentence(dateText) {
+    this.addToSentence(dateText);
+    if (dateText.includes(",")) {
+      this.commaNeededForSentenceContinuation = true;
+    }
+  }
+
+  terminateSentenceAndAddSpace() {
+    this.terminateSentence();
+    if (this.narrative) {
+      this.narrative += " ";
+    }
+  }
+
+  terminateSentence() {
+    this.commaNeededForSentenceContinuation = false;
+    this.removePunctuationAtEndOfSentence();
+    if (this.narrative) {
+      this.narrative += ".";
+    }
+  }
+
+  removePunctuationAtEndOfSentence() {
+    // remove any spaces or punctuation on end of narrative
+    const sentenceWithExtraPunct = /^(.*)([\s\.\,]+)$/;
+    if (sentenceWithExtraPunct.test(this.narrative)) {
+      this.narrative = this.narrative.replace(sentenceWithExtraPunct, "$1");
+    }
+  }
+
+  removeCommasAndSpacesAtEndOfSentence() {
+    // remove any spaces or commas on end of narrative (not periods)
+    const sentenceWithExtraPunct = /^(.*)([\s\,]+)$/;
+    if (sentenceWithExtraPunct.test(this.narrative)) {
+      this.narrative = this.narrative.replace(sentenceWithExtraPunct, "$1");
+    }
+  }
+
+  removeSpacesAtEndOfSentence() {
+    // remove any spaces at end of the sentence
+    this.narrative = this.narrative.trimEnd();
+  }
+
+  startSentence(text) {
+    this.terminateSentenceAndAddSpace();
+    this.narrative += text;
+  }
+
+  addFullSentence(text) {
+    if (text) {
+      this.terminateSentenceAndAddSpace();
+      this.narrative += text;
+      this.terminateSentence();
     }
   }
 
@@ -568,24 +669,24 @@ class NarrativeBuilder {
 
     if (includeParentage == "inMainSentence") {
       if (parentNames.fatherName || parentNames.motherName) {
-        if (!this.narrative.endsWith(",")) {
-          this.narrative += ",";
-        }
-        this.narrative += " ";
+        let parentageString = "";
         if (parentageFormat == "theTwoCommas") {
-          this.narrative += "the ";
+          parentageString += "the ";
         }
-        this.narrative += getChildTerm(personGender) + " of ";
+        parentageString += getChildTerm(personGender) + " of ";
         if (parentNames.fatherName) {
-          this.narrative += parentNames.fatherName;
+          parentageString += parentNames.fatherName;
         }
         if (parentNames.motherName) {
           if (parentNames.fatherName) {
-            this.narrative += this.getParentSeparator();
+            parentageString += this.getParentSeparator();
           }
-          this.narrative += parentNames.motherName;
+          parentageString += parentNames.motherName;
         }
-        this.narrative += ",";
+
+        this.addCommaSpaceToSentence();
+        this.addToSentence(parentageString);
+        this.addCommaSpaceToSentence();
       }
     }
   }
@@ -605,22 +706,23 @@ class NarrativeBuilder {
   addParentageAsSeparateSentenceGivenParentsAndGender(parentNames, personGender) {
     let includeParentage = this.getSubcatOption("includeParentage");
 
+    let sentence = "";
     if (includeParentage == "inSeparateSentence") {
       if (parentNames.fatherName || parentNames.motherName) {
-        this.narrative += " " + this.getPronounAndPastTenseInitialCaps() + " the ";
-        this.narrative += getChildTerm(personGender) + " of ";
+        sentence = this.getPronounAndPastTenseInitialCaps() + " the ";
+        sentence += getChildTerm(personGender) + " of ";
         if (parentNames.fatherName) {
-          this.narrative += parentNames.fatherName;
+          sentence += parentNames.fatherName;
         }
         if (parentNames.motherName) {
           if (parentNames.fatherName) {
-            this.narrative += this.getParentSeparator();
+            sentence += this.getParentSeparator();
           }
-          this.narrative += parentNames.motherName;
+          sentence += parentNames.motherName;
         }
-        this.narrative += ".";
       }
     }
+    this.addFullSentence(sentence);
   }
 
   addParentageAsSeparateSentence() {
@@ -667,9 +769,7 @@ class NarrativeBuilder {
   addMmnForMainSentence(mmn) {
     if (this.getSubcatOption("includeMmn") == "inMainSentence") {
       if (mmn) {
-        this.narrative += " (Mother's maiden name ";
-        this.narrative += mmn;
-        this.narrative += ")";
+        this.addToSentence("(Mother's maiden name " + mmn + ")");
       }
     }
   }
@@ -677,9 +777,8 @@ class NarrativeBuilder {
   addMmnAsSeparateSentence(mmn) {
     if (this.getSubcatOption("includeMmn") == "inSeparateSentence") {
       if (mmn) {
-        this.narrative += " Mother's maiden name ";
-        this.narrative += mmn;
-        this.narrative += ".";
+        this.startSentence("Mother's maiden name " + mmn);
+        this.terminateSentence();
       }
     }
   }
@@ -700,34 +799,28 @@ class NarrativeBuilder {
       let format = this.getSubcatOption("ageFormat");
       if (includeAgeText) {
         if (format == "parensAge") {
-          this.narrative += " (age " + age + ")";
+          this.addToSentence("(age " + age + ")");
         } else if (format == "commasAge") {
-          if (!this.narrative.endsWith(",")) {
-            this.narrative += ",";
-          }
-          this.narrative += " age " + age + ",";
+          this.addCommaSpaceToSentence();
+          this.addToSentence("age " + age + ",");
         } else if (format == "plainAge") {
-          this.narrative += " age " + age;
+          this.addToSentence("age " + age);
         } else if (format == "parensAged") {
-          this.narrative += " (aged " + age + ")";
+          this.addToSentence("(aged " + age + ")");
         } else if (format == "commasAged") {
-          if (!this.narrative.endsWith(",")) {
-            this.narrative += ",";
-          }
-          this.narrative += " aged " + age + ",";
+          this.addCommaSpaceToSentence();
+          this.addToSentence("aged " + age + ",");
         } else if (format == "plainAged") {
-          this.narrative += " aged " + age;
+          this.addToSentence("aged " + age);
         }
       } else {
         if (format == "parensAge" || format == "parensAged") {
-          this.narrative += " (" + age + ")";
+          this.addToSentence("(" + age + ")");
         } else if (format == "commasAge" || format == "commasAged") {
-          if (!this.narrative.endsWith(",")) {
-            this.narrative += ",";
-          }
-          this.narrative += " " + age + ",";
+          this.addCommaSpaceToSentence();
+          this.addToSentence(age + ",");
         } else if (format == "plainAge" || format == "plainAged") {
-          this.narrative += " " + age;
+          this.addToSentence(age);
         }
       }
     }
@@ -742,17 +835,17 @@ class NarrativeBuilder {
   addAgeAsSeparateSentence(age) {
     if (this.getSubcatOption("includeAge") == "inSeparateSentence") {
       if (age) {
-        this.narrative += " " + this.getPronounAndPastTenseInitialCaps() + " ";
+        let sentence = this.getPronounAndPastTenseInitialCaps() + " ";
 
         if (typeof age == "string" && age.search(/[^0-9]/) != -1) {
           // the age has non numerical characters, it could be something like "of Full Age"
           let lcAge = age.toLowerCase();
-          this.narrative += lcAge;
+          sentence += lcAge;
         } else {
-          this.narrative += age + " years old";
+          sentence += age + " years old";
         }
 
-        this.narrative += ".";
+        this.addFullSentence(sentence);
       }
     }
   }
@@ -777,12 +870,10 @@ class NarrativeBuilder {
 
     let spouseFormatOpt = this.getSubcatOption("spouseFormat");
     if (spouseFormatOpt == "parensSpouse") {
-      this.narrative += " (" + spouseTerm + " of " + spouseName + ")";
+      this.addToSentence("(" + spouseTerm + " of " + spouseName + ")");
     } else if (spouseFormatOpt == "commasSpouse") {
-      if (!this.narrative.endsWith(",")) {
-        this.narrative += ",";
-      }
-      this.narrative += " " + spouseTerm + " of " + spouseName + ",";
+      this.addCommaSpaceToSentence();
+      this.addToSentence(spouseTerm + " of " + spouseName + ",");
     }
   }
 
@@ -795,7 +886,7 @@ class NarrativeBuilder {
   addSpouseOfAsSeparateSentence(spouseName) {
     if (this.getSubcatOption("includeSpouse") == "inSeparateSentence") {
       if (spouseName) {
-        this.narrative += " " + this.getPronounAndPastTenseInitialCaps();
+        let sentence = this.getPronounAndPastTenseInitialCaps();
 
         let gd = this.eventGd;
 
@@ -806,7 +897,8 @@ class NarrativeBuilder {
           spouseTerm = "wife";
         }
 
-        this.narrative += " the " + spouseTerm + " of " + spouseName + ".";
+        sentence += " the " + spouseTerm + " of " + spouseName;
+        this.addFullSentence(sentence);
       }
     }
   }
@@ -850,10 +942,8 @@ class NarrativeBuilder {
     if (occupation && includeOption == "inMainSentence") {
       let occupationText = this.getOccupationPart(occupation);
       if (occupationText) {
-        if (!this.narrative.endsWith(",")) {
-          this.narrative += ",";
-        }
-        this.narrative += " " + occupationText + ",";
+        this.addCommaSpaceToSentence();
+        this.addToSentence(occupationText + ",");
       }
     }
   }
@@ -904,19 +994,20 @@ class NarrativeBuilder {
       }
     }
 
+    let sentence = "";
     if (occupationText) {
       if (headRelation) {
-        this.narrative += " " + this.getPossessivePronounInitialCaps() + " " + headRelation + " was ";
-        this.narrative += StringUtils.getIndefiniteArticle(occupationText);
-        this.narrative += " " + occupationText;
-        this.narrative += ".";
+        sentence = this.getPossessivePronounInitialCaps() + " " + headRelation + " was ";
+        sentence += StringUtils.getIndefiniteArticle(occupationText);
+        sentence += " " + occupationText;
       } else {
-        this.narrative += " " + this.getPronounInitialCaps() + " was ";
-        this.narrative += StringUtils.getIndefiniteArticle(occupationText);
-        this.narrative += " " + occupationText;
-        this.narrative += ".";
+        sentence = this.getPronounInitialCaps() + " was ";
+        sentence += StringUtils.getIndefiniteArticle(occupationText);
+        sentence += " " + occupationText;
       }
     }
+
+    this.addFullSentence(sentence);
   }
 
   getAtSea(vitalPlaceObj, eventPlaceObj) {
@@ -949,14 +1040,14 @@ class NarrativeBuilder {
   }
 
   addAtSea(vitalPlaceObj, eventPlaceObj) {
-    this.narrative += this.getAtSea(vitalPlaceObj, eventPlaceObj);
+    this.addToSentence(this.getAtSea(vitalPlaceObj, eventPlaceObj));
   }
 
   addAtSeaAsSeparateSentence(vitalPlaceObj, eventPlaceObj, typeString) {
     let atSea = this.getAtSea(vitalPlaceObj, eventPlaceObj);
 
     if (atSea) {
-      this.narrative += " " + this.getPersonNameOrPronoun();
+      let sentence = this.getPersonNameOrPronoun();
 
       const toPast = { birth: "was born", marriage: "married", death: "died" };
 
@@ -965,7 +1056,8 @@ class NarrativeBuilder {
         pastTense = "was";
       }
 
-      this.narrative += " " + pastTense + atSea + ".";
+      sentence += " " + pastTense + atSea;
+      this.addFullSentence(sentence);
     }
   }
 
@@ -1093,10 +1185,10 @@ class NarrativeBuilder {
       if (sentenceStructure == "oneSentence") {
         // One sentence format
         if (gd.role && gd.role != Role.Primary) {
-          this.narrative += "The " + typeString + " of " + this.getPossessiveNamePlusPrimaryPerson();
+          this.startSentence("The " + typeString + " of " + this.getPossessiveNamePlusPrimaryPerson());
         } else {
           let possessiveName = this.getPossessiveName();
-          this.narrative += possessiveName + " " + typeString;
+          this.startSentence(possessiveName + " " + typeString);
           this.addAgeForMainSentence(ageAtEvent);
         }
 
@@ -1104,12 +1196,12 @@ class NarrativeBuilder {
           if (typeString == "birth") {
             let birthDateObj = gd.inferBirthDateObj();
             if (birthDateObj) {
-              this.narrative += " " + this.formatDateObj(birthDateObj, true);
+              this.addDateToSentence(this.formatDateObj(birthDateObj, true));
             }
           } else if (typeString == "death") {
             let deathDateObj = gd.inferDeathDateObj();
             if (deathDateObj) {
-              this.narrative += " " + this.formatDateObj(deathDateObj, true);
+              this.addDateToSentence(this.formatDateObj(deathDateObj, true));
             }
           }
         }
@@ -1124,7 +1216,7 @@ class NarrativeBuilder {
           if (typeString == "death") {
             this.addSpouseOfForMainSentence(spouseName);
           } else {
-            this.narrative += " to " + spouseName;
+            this.addToSentence("to " + spouseName);
           }
           this.addAgeForMainSentence(spouseAge);
         }
@@ -1132,9 +1224,9 @@ class NarrativeBuilder {
         // Two sentence format
         let pastTense = toPast[typeString];
         if (gd.role && gd.role != Role.Primary) {
-          this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+          this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
         } else {
-          this.narrative += this.getPersonNameOrPronoun();
+          this.startSentence(this.getPersonNameOrPronoun());
           this.addAgeForMainSentence(ageAtEvent);
         }
 
@@ -1143,29 +1235,28 @@ class NarrativeBuilder {
           this.addAgeForMainSentence(spouseAge);
         }
 
-        this.narrative += " " + pastTense;
+        this.addToSentence(pastTense);
 
         if (spouseName && typeString == "marriage") {
-          this.narrative += " " + spouseName;
+          this.addToSentence(spouseName);
           this.addAgeForMainSentence(spouseAge);
         }
         let year = gd.inferEventYear();
         if (dateString != year && !quarter) {
-          this.narrative += " " + this.formatDateObj(dateObj, true);
+          this.addDateToSentence(this.formatDateObj(dateObj, true));
         } else if (year) {
           if (quarter == "Jan-Feb-Mar") {
             let yearNum = DateUtils.getYearNumFromYearString(year);
             if (yearNum) {
               yearNum -= 1;
-              this.narrative += " in late " + yearNum + "/early " + year;
+              this.addToSentence("in late " + yearNum + "/early " + year);
             } else {
-              this.narrative += " in " + year;
+              this.addToSentence("in " + year);
             }
           } else {
-            this.narrative += " in " + year;
+            this.addToSentence("in " + year);
           }
         }
-        this.narrative += ". ";
         let pronoun = this.getPossessivePronounInitialCaps();
         if (!spouseName) {
           if (gd.role && gd.primaryPerson) {
@@ -1177,14 +1268,14 @@ class NarrativeBuilder {
             pronoun = "The";
           }
         }
-        this.narrative += pronoun + " " + typeString;
+        this.startSentence(pronoun + " " + typeString);
       }
 
-      this.narrative += " was registered";
+      this.addToSentence("was registered");
 
       if (sentenceStructure == "oneSentence" || sentenceStructure == "twoSentencesDate") {
         if (quarter) {
-          this.narrative += " in the " + quarter + " quarter of " + this.highlightDate(year);
+          this.addToSentence("in the " + quarter + " quarter of " + this.highlightDate(year));
         } else {
           // if the event date is just a subset of the birth or death date then leave it out
           let eventDateString = gd.inferEventDate();
@@ -1195,7 +1286,7 @@ class NarrativeBuilder {
               !birthDateString ||
               !(eventDateString && birthDateString.endsWith(eventDateString))
             ) {
-              this.narrative += " " + this.formatDateObj(dateObj, true);
+              this.addDateToSentence(this.formatDateObj(dateObj, true));
             }
           } else if (typeString == "death") {
             let deathDateString = gd.inferDeathDate();
@@ -1204,10 +1295,10 @@ class NarrativeBuilder {
               !deathDateString ||
               !(eventDateString && deathDateString.endsWith(eventDateString))
             ) {
-              this.narrative += " " + this.formatDateObj(dateObj, true);
+              this.addDateToSentence(this.formatDateObj(dateObj, true));
             }
           } else {
-            this.narrative += " " + this.formatDateObj(dateObj, true);
+            this.addDateToSentence(this.formatDateObj(dateObj, true));
           }
         }
       }
@@ -1217,16 +1308,16 @@ class NarrativeBuilder {
       let pastTense = toPast[typeString];
 
       if (gd.role && gd.role != Role.Primary) {
-        this.narrative += this.getPossessiveNamePlusPrimaryPerson();
-        this.narrative += " " + pastTense;
+        this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
+        this.addToSentence(pastTense);
       } else {
-        this.narrative += this.getPersonNameOrPronoun();
+        this.startSentence(this.getPersonNameOrPronoun());
 
         if (ageAtEvent && typeString == "marriage") {
           this.addAgeForMainSentence(ageAtEvent);
         }
         this.addParentageForMainSentence();
-        this.narrative += " " + pastTense;
+        this.addToSentence(pastTense);
         if (ageAtEvent && typeString != "marriage") {
           this.addAgeForMainSentence(ageAtEvent);
         }
@@ -1234,7 +1325,7 @@ class NarrativeBuilder {
 
       if (typeString == "marriage") {
         if (spouseName) {
-          this.narrative += " " + spouseName;
+          this.addToSentence(spouseName);
           this.addAgeForMainSentence(spouseAge);
           this.addParentageForMainSentenceGivenParentsAndGender(spouseParents, spouseGender);
         }
@@ -1250,17 +1341,18 @@ class NarrativeBuilder {
         let addedDistrict = false;
         let eventYearNum = DateUtils.getYearNumFromYearString(gd.inferEventYear());
         if (gd.isRecordInCountry("Ireland") && eventYearNum && eventYearNum >= 1864) {
-          this.narrative += " in the " + registrationDistrict + " Superintendent Registrar's District";
+          this.addToSentence("in the " + registrationDistrict + " Superintendent Registrar's District");
         } else {
-          this.narrative += " in the " + registrationDistrict + " district";
+          this.addToSentence("in the " + registrationDistrict + " district");
         }
       } else if (districtFormat == "districtName") {
-        this.narrative += " in " + registrationDistrict;
+        this.addToSentence("in " + registrationDistrict);
       } else if (districtFormat == "districtCounty") {
-        this.narrative += " in " + registrationDistrict;
+        this.addToSentence("in " + registrationDistrict);
         let county = gd.inferEventCounty();
         if (county) {
-          this.narrative += ", " + county;
+          this.addCommaSpaceToSentence();
+          this.addToSentence(county);
         }
       }
     } else if (eventPlaceObj) {
@@ -1280,7 +1372,7 @@ class NarrativeBuilder {
       }
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
 
     this.addParentageAsSeparateSentence();
     this.addAgeAsSeparateSentence(ageAtEvent);
@@ -1306,7 +1398,7 @@ class NarrativeBuilder {
     let dateObj = gd.inferBirthDateObj();
     let placeObj = gd.inferBirthPlaceObj();
 
-    this.narrative = this.getPersonNameOrPronoun();
+    this.startSentence(this.getPersonNameOrPronoun());
 
     let primaryPersonName = gd.inferPrimaryPersonFullName();
     if (gd.role && gd.role != Role.Primary) {
@@ -1314,11 +1406,11 @@ class NarrativeBuilder {
         // This is a record for one of the parents
         // "X and X's child Z"
         if (gd.spouses && gd.spouses[0] && gd.spouses[0].name && gd.spouses[0].name.name) {
-          this.narrative += " and " + gd.spouses[0].name.name;
+          this.addToSentence("and " + gd.spouses[0].name.name);
         }
-        this.narrative += "'s " + getPrimaryPersonChildTerm(gd) + " " + primaryPersonName;
+        this.addToSentenceNoSpace("'s " + getPrimaryPersonChildTerm(gd) + " " + primaryPersonName);
       } else {
-        this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+        this.addToSentence(this.getPossessiveNamePlusPrimaryPerson());
       }
       // inferBirthDate will not return the date of the primary person's birth
       dateObj = gd.inferEventDateObj();
@@ -1327,13 +1419,13 @@ class NarrativeBuilder {
       this.addParentageForMainSentence();
     }
 
-    this.narrative += " was born"; // "was" is OK because we never use "They" at start
+    this.addToSentence("was born"); // "was" is OK because we never use "They" at start
 
     this.addDateWithPreposition(dateObj);
     this.addEventPlaceWithPrepositionOrRd(gd, false, placeObj);
     this.addAtSea(placeObj, gd.eventPlace);
 
-    this.narrative += ".";
+    this.terminateSentence();
 
     this.addParentageAsSeparateSentence();
   }
@@ -1344,16 +1436,16 @@ class NarrativeBuilder {
     let placeObj = gd.inferDeathPlaceObj();
 
     if (gd.role && gd.role != Role.Primary) {
-      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+      this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
       // inferDeathDate will not return the date of the primary person's death
       dateObj = gd.inferEventDateObj();
       placeObj = gd.inferEventPlaceObj();
     } else {
-      this.narrative += this.getPersonNameOrPronoun();
+      this.startSentence(this.getPersonNameOrPronoun());
       this.addParentageForMainSentence();
     }
 
-    this.narrative += " died";
+    this.addToSentence("died");
 
     let ageAtEvent = gd.inferAgeAtEventAsString();
     this.addAgeForMainSentence(ageAtEvent);
@@ -1365,10 +1457,11 @@ class NarrativeBuilder {
     } else {
       let residencePlaceObj = gd.inferResidencePlaceObj();
       if (residencePlaceObj) {
-        this.narrative += " residing " + this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj);
+        this.addToSentence("residing");
+        this.addPlaceToSentence(this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj));
       }
     }
-    this.narrative += ".";
+    this.terminateSentence();
 
     this.addAgeAsSeparateSentence(ageAtEvent);
     this.addParentageAsSeparateSentence();
@@ -1386,24 +1479,25 @@ class NarrativeBuilder {
 
     let birthDate = gd.birthDate;
     if (gd.role && gd.role != Role.Primary) {
-      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+      this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
       birthDate = gd.inferPrimaryPersonBirthDateObj();
     } else {
-      this.narrative += this.getPersonNameOrPronoun();
+      this.startSentence(this.getPersonNameOrPronoun());
       this.addParentageForMainSentence();
     }
-    this.narrative += " was ";
+    this.addToSentence("was");
 
     if (birthDate && this.options.narrative_baptism_includeBirthDate) {
-      this.narrative += "born " + this.formatDateObj(birthDate, true);
+      this.addToSentence("born");
+      this.addDateToSentence(this.formatDateObj(birthDate, true));
       if (this.options.narrative_baptism_sentenceStructure == "parentsBornAndBap") {
-        this.narrative += " and ";
+        this.addToSentence("and");
       } else {
-        this.narrative += "; ";
+        this.addToSentenceNoSpace(";");
       }
     }
 
-    this.narrative += baptisedString;
+    this.addToSentence(baptisedString);
 
     this.addDateWithPreposition(dateObj);
     this.addFullPlaceWithPreposition(placeObj);
@@ -1412,11 +1506,12 @@ class NarrativeBuilder {
     if (this.options.narrative_baptism_includeDeathDate) {
       let deathDateObj = gd.inferDeathDateObj();
       if (deathDateObj) {
-        this.narrative += " and died " + this.formatDateObj(deathDateObj, true);
+        this.addToSentence("and died");
+        this.addDateToSentence(this.formatDateObj(deathDateObj, true));
       }
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
 
     this.addParentageAsSeparateSentence();
   }
@@ -1430,29 +1525,30 @@ class NarrativeBuilder {
 
     let birthDate = gd.birthDate;
     if (gd.role && gd.role != Role.Primary) {
-      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+      this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
       birthDate = gd.inferPrimaryPersonBirthDateObj();
     } else {
-      this.narrative += this.getPersonNameOrPronoun();
+      this.startSentence(this.getPersonNameOrPronoun());
       this.addParentageForMainSentence();
     }
-    this.narrative += " was ";
+    this.addToSentence("was");
 
     if (birthDate && this.options.narrative_confirmation_includeBirthDate) {
-      this.narrative += "born " + this.formatDateObj(birthDate, true);
+      this.addToSentence("born");
+      this.addDateToSentence(this.formatDateObj(birthDate, true));
       if (this.options.narrative_confirmation_sentenceStructure == "parentsBornAndConf") {
-        this.narrative += " and ";
+        this.addToSentence("and");
       } else {
-        this.narrative += "; ";
+        this.addToSentenceNoSpace(";");
       }
     }
 
-    this.narrative += baptisedString;
+    this.addToSentence(baptisedString);
 
     this.addDateWithPreposition(dateObj);
     this.addFullPlaceWithPreposition(placeObj);
 
-    this.narrative += ".";
+    this.terminateSentence();
 
     this.addParentageAsSeparateSentence();
   }
@@ -1485,40 +1581,40 @@ class NarrativeBuilder {
     }
 
     if (gd.role && gd.role != Role.Primary) {
-      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
-      this.narrative += " married";
+      this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
+      this.addToSentence("married");
     } else {
-      this.narrative += this.getPersonNameOrPronoun();
+      this.startSentence(this.getPersonNameOrPronoun());
       this.addAgeForMainSentence(ageAtEvent);
       this.addParentageForMainSentence();
-      this.narrative += " married";
+      this.addToSentence("married");
     }
 
     if (spouseName) {
       spouseName = StringUtils.changeAllCapsWordsToInitialCaps(spouseName);
-      this.narrative += " " + spouseName;
+      this.addToSentence(spouseName);
       this.addAgeForMainSentence(spouseAge);
       this.addParentageForMainSentenceGivenParentsAndGender(spouseParents, spouseGender);
     }
 
     if (gd.recordSubtype && gd.recordSubtype == RecordSubtype.Banns && (dateObj || place)) {
-      this.narrative += ". The banns were read";
+      this.startSentence("The banns were read");
     }
 
     if (gd.marriageDate) {
       // sometimes there is a specific marriage date
       dateObj = new DateObj();
       dateObj.dateString = gd.marriageDate;
-      this.narrative += " " + this.formatDateObj(dateObj, true);
+      this.addDateToSentence(this.formatDateObj(dateObj, true));
     } else if (dateObj) {
       let prepSuffix = "";
       if (gd.recordSubtype && gd.recordSubtype == RecordSubtype.MarriageOrBanns) {
         prepSuffix = "or after";
       }
-      this.narrative += " " + this.formatDateObj(dateObj, true, prepSuffix);
+      this.addDateToSentence(this.formatDateObj(dateObj, true, prepSuffix));
     }
     this.addFullPlaceWithPreposition(placeObj);
-    this.narrative += ".";
+    this.terminateSentence();
 
     this.addAgeAsSeparateSentence(ageAtEvent);
     this.addParentageAsSeparateSentence();
@@ -1531,10 +1627,10 @@ class NarrativeBuilder {
     let deathDateObj = gd.deathDate;
 
     if (gd.role && gd.role != Role.Primary) {
-      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+      this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
       deathDateObj = gd.inferPrimaryPersonDeathDateObj();
     } else {
-      this.narrative += this.getPersonNameOrPronoun();
+      this.startSentence(this.getPersonNameOrPronoun());
     }
 
     let age = gd.ageAtDeath;
@@ -1548,27 +1644,27 @@ class NarrativeBuilder {
     }
 
     if (deathDateObj && burialDateObj && deathDateObj.dateString != burialDateObj.dateString) {
-      this.narrative += " died";
+      this.addToSentence("died");
       this.addDateWithPreposition(deathDateObj);
-      this.narrative += " and was buried";
+      this.addToSentence("and was buried");
       this.addDateWithPreposition(burialDateObj);
     } else if (gd.recordType == RT.DeathOrBurial) {
-      this.narrative += " died or was buried";
+      this.addToSentence("died or was buried");
       this.addDateWithPreposition(burialDateObj);
     } else if (burialDateObj) {
-      this.narrative += " was buried";
+      this.addToSentence("was buried");
       this.addDateWithPreposition(burialDateObj);
     } else if (deathDateObj) {
-      this.narrative += " died";
+      this.addToSentence("died");
       this.addDateWithPreposition(deathDateObj);
-      this.narrative += " and was buried";
+      this.addToSentence("and was buried");
     } else {
-      this.narrative += " was buried";
+      this.addToSentence("was buried");
     }
 
     this.addEventPlaceWithPrepositionOrRd(gd);
 
-    this.narrative += ".";
+    this.terminateSentence();
 
     this.addAgeAsSeparateSentence(age);
     this.addParentageAsSeparateSentence();
@@ -1581,26 +1677,26 @@ class NarrativeBuilder {
 
     let placeObj = gd.inferEventPlaceObj();
 
-    this.narrative = this.getPersonNameOrPronoun();
+    this.startSentence(this.getPersonNameOrPronoun());
 
     if (deathDateObj && cremationDateObj) {
-      this.narrative += " died";
+      this.addToSentence("died");
       this.addDateWithPreposition(deathDateObj);
-      this.narrative += " and was cremated";
+      this.addToSentence("and was cremated");
       this.addDateWithPreposition(cremationDateObj);
     } else if (cremationDateObj) {
-      this.narrative += " was cremated";
+      this.addToSentence("was cremated");
       this.addDateWithPreposition(cremationDateObj);
     } else if (deathDateObj) {
-      this.narrative += " died";
+      this.addToSentence("died");
       this.addDateWithPreposition(deathDateObj);
-      this.narrative += " and was cremated";
+      this.addToSentence("and was cremated");
     } else {
-      this.narrative += " was cremated";
+      this.addToSentence("was cremated");
     }
 
     this.addFullPlaceWithPreposition(placeObj);
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildMemorialString() {
@@ -1610,14 +1706,15 @@ class NarrativeBuilder {
 
     let deathDateObj = gd.inferDeathDateObj();
 
-    this.narrative += this.getPersonNameOrPronoun();
-    this.narrative += " was mentioned on a memorial";
+    this.startSentence(this.getPersonNameOrPronoun());
+    this.addToSentence("was mentioned on a memorial");
 
     this.addFullPlaceWithPreposition(placeObj);
     if (deathDateObj) {
-      this.narrative += " with a death date of " + this.formatDateObj(deathDateObj, false);
+      this.addToSentence("with a death date of");
+      this.addToSentence(this.formatDateObj(deathDateObj, false));
     }
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildObituaryString() {
@@ -1629,28 +1726,28 @@ class NarrativeBuilder {
     let deathPlaceObj = gd.inferDeathPlaceObj();
     let age = "";
 
-    this.narrative += this.getPersonNameOrPronoun();
+    this.startSentence(this.getPersonNameOrPronoun());
     this.addParentageForMainSentence();
 
     if (gd.role && gd.role != Role.Primary) {
       let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
       let otherName = gd.inferPrimaryPersonFullName();
       if (relationship || otherName) {
-        this.narrative += " was mentioned in the obituary of";
+        this.addToSentence("was mentioned in the obituary of");
 
         if (relationship) {
           let pronoun = this.getPossessivePronounInitialCaps().toLowerCase();
-          this.narrative += " " + pronoun + " " + relationship;
+          this.addToSentence(pronoun + " " + relationship);
         }
 
         if (otherName) {
-          this.narrative += " " + otherName;
+          this.addToSentence(otherName);
         }
       } else {
-        this.narrative += " was mentioned in an obituary";
+        this.addToSentence("was mentioned in an obituary");
       }
     } else {
-      this.narrative += " was in an obituary";
+      this.addToSentence("was in an obituary");
     }
 
     if (eventDateObj && (!deathDateObj || eventDateObj.getDateString() != deathDateObj.getDateString())) {
@@ -1671,7 +1768,7 @@ class NarrativeBuilder {
     }
 
     if (deathDateObj) {
-      this.narrative += ". " + this.getPersonPronounOrNameIfNoGender() + " died";
+      this.startSentence(this.getPersonPronounOrNameIfNoGender() + " died");
 
       age = gd.ageAtDeath;
       if (!age) {
@@ -1681,7 +1778,7 @@ class NarrativeBuilder {
       this.addDateWithPreposition(deathDateObj);
       this.addPlaceWithPreposition(deathPlaceObj);
     }
-    this.narrative += ".";
+    this.terminateSentence();
 
     this.addAgeAsSeparateSentence(age);
     this.addParentageAsSeparateSentence();
@@ -1717,40 +1814,41 @@ class NarrativeBuilder {
     }
 
     if (gd.role && gd.role != Role.Primary) {
-      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+      this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
     } else {
-      this.narrative += this.getPersonNameOrPronoun();
+      this.startSentence(this.getPersonNameOrPronoun());
       this.addParentageForMainSentence();
     }
 
     if (hasDifferentBirthDate) {
-      this.narrative += " was born";
+      this.addToSentence("was born");
       this.addDateWithPreposition(birthDateObj);
-      this.narrative += " and " + baptisedString + " or registered";
+      this.addToSentence("and " + baptisedString + " or registered");
       this.addDateWithPreposition(eventDateObj);
       if (hasDifferentBirthPlace) {
         this.addFullPlaceWithPreposition(eventPlaceObj);
-        this.narrative += " (born";
+        this.addToSentence("(born");
         if (birthPlaceObj.originalPlaceString) {
-          this.narrative += " " + this.getPlaceWithPreposition(birthPlaceObj.originalPlaceString);
+          this.addPlaceToSentence(this.getPlaceWithPreposition(birthPlaceObj.originalPlaceString));
         } else {
           this.addFullPlaceWithPreposition(birthPlaceObj);
         }
-        this.narrative += ")";
+        this.addToSentenceNoSpace(")");
       } else if (eventPlaceObj) {
         this.addFullPlaceWithPreposition(eventPlaceObj);
       } else if (birthPlaceObj) {
-        this.narrative += ", born";
+        this.addCommaSpaceToSentence();
+        this.addToSentence("born");
         this.addFullPlaceWithPreposition(birthPlaceObj);
       }
     } else {
-      this.narrative += " was born or " + baptisedString;
+      this.addToSentence("was born or " + baptisedString);
       this.addDateWithPreposition(eventDateObj);
       if (hasDifferentBirthPlace) {
         this.addFullPlaceWithPreposition(eventPlaceObj);
-        this.narrative += " (born";
+        this.addToSentence("(born");
         this.addFullPlaceWithPreposition(birthPlaceObj);
-        this.narrative += ")";
+        this.addToSentenceNoSpace(")");
       } else if (eventPlaceObj) {
         this.addFullPlaceWithPreposition(eventPlaceObj);
       } else if (birthPlaceObj) {
@@ -1760,10 +1858,11 @@ class NarrativeBuilder {
 
     // sometimes a baptism has a death date. (e.g. germany_baptism_1840_johanna_hartmann)
     if (gd.deathDate) {
-      this.narrative += " and died " + this.formatDateObj(gd.inferDeathDateObj(), true);
+      this.addToSentence("and died");
+      this.addDateToSentence(this.formatDateObj(gd.inferDeathDateObj(), true));
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
 
     this.addParentageAsSeparateSentence();
   }
@@ -2214,14 +2313,13 @@ class NarrativeBuilder {
 
     this.narrative = getCensusDatePart(year);
     if (options.narrative_census_sentenceStructure == "comma") {
-      this.narrative += ",";
+      this.addCommaSpaceToSentence();
     }
-    this.narrative += " ";
 
     if (isClosedEntry()) {
-      this.narrative += "a person with a closed entry";
+      this.addToSentence("a person with a closed entry");
     } else {
-      this.narrative += this.getPersonNameOrPronoun(true);
+      this.addToSentence(this.getPersonNameOrPronoun(true));
     }
 
     let ageNum = undefined;
@@ -2272,17 +2370,17 @@ class NarrativeBuilder {
     this.addAgeForMainSentence(ageAtEvent);
     this.addOccupationForMainSentence(occupation);
 
-    this.narrative += " was";
+    this.addToSentence("was");
     if (options.narrative_census_wasPartFormat == "wasEnumerated") {
-      this.narrative += " enumerated";
+      this.addToSentence("enumerated");
     } else if (options.narrative_census_wasPartFormat == "wasRecorded") {
-      this.narrative += " recorded";
+      this.addToSentence("recorded");
     }
 
     addHouseholdPartForMainSentence();
 
     this.addFullPlaceWithPreposition(placeObj);
-    this.narrative += ".";
+    this.terminateSentence();
 
     addHouseholdPartAsSeparateSentence();
     this.addAgeAsSeparateSentence(ageAtEvent);
@@ -2297,9 +2395,9 @@ class NarrativeBuilder {
 
     this.narrative = this.getPersonNameOrPronoun();
 
-    this.narrative += " was recorded";
+    this.addToSentence("was recorded");
     this.addAgeForMainSentence(gd.ageAtEvent);
-    this.narrative += " in a slave schedule";
+    this.addToSentence("in a slave schedule");
 
     this.addDateWithPreposition(eventDateObj);
     this.addFullPlaceWithPreposition(eventPlaceObj);
@@ -2309,47 +2407,50 @@ class NarrativeBuilder {
       if (role == "Enslaved Person") {
         let wasFugitive = gd.typeSpecificData.wasFugitive;
         let race = gd.typeSpecificData.race;
+        this.addSpaceToContinueSentence();
         if (race) {
-          this.narrative += " as a";
+          this.addToSentence("as a");
           if (wasFugitive) {
-            this.narrative += " fugitive";
+            this.addToSentence("fugitive");
           }
           if (this.personGender) {
-            this.narrative += " " + this.personGender;
+            this.addToSentence(this.personGender);
           }
-          this.narrative += " " + race.toLowerCase() + " enslaved person";
+          this.addToSentence(race.toLowerCase() + " enslaved person");
         } else {
-          this.narrative += " as";
+          this.addToSentence("as");
           if (this.personGender) {
             if (wasFugitive) {
-              this.narrative += " a fugitive";
+              this.addToSentence("a fugitive");
             } else {
-              this.narrative += " a";
+              this.addToSentence("a");
             }
-            this.narrative += " " + this.personGender;
+            this.addToSentence(this.personGender);
           } else {
             if (wasFugitive) {
-              this.narrative += " a fugitive";
+              this.addToSentence("a fugitive");
             } else {
-              this.narrative += " an";
+              this.addToSentence("an");
             }
           }
-          this.narrative += " enslaved person";
+          this.addToSentence("enslaved person");
         }
       } else if (role == "Slave Owner") {
-        this.narrative += " as a slave owner";
+        this.addSpaceToContinueSentence();
+        this.addToSentence("as a slave owner");
         let numEnslavedPeople = gd.typeSpecificData.numEnslavedPeople;
         if (numEnslavedPeople) {
-          this.narrative += " of " + numEnslavedPeople + " enslaved people";
+          this.addToSentence("of " + numEnslavedPeople + " enslaved people");
         }
       } else if (role) {
-        this.narrative += " as a " + role;
+        this.addSpaceToContinueSentence();
+        this.addToSentence("as a " + role);
       }
     }
 
     this.addAgeAsSeparateSentence(gd.ageAtEvent);
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildPopulationRegisterString() {
@@ -2362,10 +2463,11 @@ class NarrativeBuilder {
 
     let occupationText = this.getOccupationPart(gd.occupation);
     if (occupationText) {
-      this.narrative += ", " + occupationText + ",";
+      this.addCommaSpaceToSentence();
+      this.addToSentence(occupationText + ",");
     }
 
-    this.narrative += " was recorded in a population register";
+    this.addToSentence("was recorded in a population register");
 
     if (eventDateObj) {
       if (eventDateObj.fromDate && eventDateObj.toDate) {
@@ -2385,15 +2487,15 @@ class NarrativeBuilder {
     let birthPlaceObj = gd.inferBirthPlaceObj();
 
     if (birthDateObj) {
-      this.narrative += ". " + this.getPronounAndPastTenseInitialCaps() + " born";
+      this.startSentence(this.getPronounAndPastTenseInitialCaps() + " born");
       this.addDateWithPreposition(birthDateObj);
       this.addPlaceWithPreposition(birthPlaceObj);
     } else if (birthPlaceObj) {
-      this.narrative += ". " + this.getPronounAndPastTenseInitialCaps() + " born";
+      this.startSentence(this.getPronounAndPastTenseInitialCaps() + " born");
       this.addPlaceWithPreposition(birthPlaceObj);
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildProbateString() {
@@ -2414,58 +2516,57 @@ class NarrativeBuilder {
 
     if (deathDateObj && eventDateObj) {
       let pronoun = this.getPossessivePronounInitialCaps().toLowerCase();
-      this.narrative += this.getPersonNameOrPronoun() + " died";
+      this.startSentence(this.getPersonNameOrPronoun() + " died");
       this.addDateWithPreposition(deathDateObj);
       if (deathPlaceObj) {
         this.addFullPlaceWithPreposition(deathPlaceObj);
       } else if (residencePlaceObj) {
-        this.narrative += " residing " + this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj);
+        this.addToSentence("residing");
+        this.addPlaceToSentence(this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj));
       }
       if (dateIsWrittenDate) {
-        this.narrative += " and " + pronoun + " estate was in the probate process";
+        this.addToSentence("and " + pronoun + " estate was in the probate process");
       } else {
-        this.narrative += " and " + pronoun + " estate passed probate";
+        this.addToSentence("and " + pronoun + " estate passed probate");
       }
       this.addDateWithPreposition(eventDateObj);
       this.addFullPlaceWithPreposition(eventPlaceObj);
     } else if (deathDateObj) {
-      this.narrative += this.getPersonNameOrPronoun() + " died";
+      this.startSentence(this.getPersonNameOrPronoun() + " died");
       this.addDateWithPreposition(deathDateObj);
       if (deathPlaceObj) {
         this.addFullPlaceWithPreposition(deathPlaceObj);
       } else if (residencePlaceObj) {
-        this.narrative += " residing " + this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj);
+        this.addToSentence("residing");
+        this.addPlaceToSentence(this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj));
       }
     } else if (eventDateObj) {
       if (gd.role && gd.role != Role.Primary) {
         let possessiveName = this.getPossessiveNamePlusPrimaryPerson();
         if (dateIsWrittenDate) {
-          this.narrative += "The will of " + possessiveName + " was written";
+          this.startSentence("The will of " + possessiveName + " was written");
         } else {
-          this.narrative += "The estate of " + possessiveName + " passed probate";
+          this.startSentence("The estate of " + possessiveName + " passed probate");
         }
       } else {
         if (dateIsWrittenDate) {
-          this.narrative += possessiveName + " will was written";
+          this.startSentence(possessiveName + " will was written");
         } else {
-          this.narrative += possessiveName + " estate passed probate";
+          this.startSentence(possessiveName + " estate passed probate");
         }
       }
       this.addDateWithPreposition(eventDateObj);
       if (eventPlaceObj) {
         this.addFullPlaceWithPreposition(eventPlaceObj);
       } else if (residencePlaceObj) {
-        this.narrative +=
-          ". " +
-          this.getPossessivePronounInitialCaps() +
-          " last residence was " +
-          residencePlaceObj.inferFullPlaceString();
+        this.startSentence(this.getPossessivePronounInitialCaps() + " last residence was");
+        this.addPlaceToSentence(residencePlaceObj.inferFullPlaceString());
       }
     } else if (this.getPersonNameOrPronoun()) {
-      this.narrative += this.getPersonNameOrPronoun() + " was in a probate record";
+      this.startSentence(this.getPersonNameOrPronoun() + " was in a probate record");
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildScottishWillString() {
@@ -2480,57 +2581,61 @@ class NarrativeBuilder {
     if (!gd.recordSubtype || gd.recordSubtype == "Probate") {
       if (role && role != Role.Primary) {
         if (role == Role.Witness) {
-          this.narrative = this.getPersonNameOrPronoun() + " witnessed a will that passed probate";
+          this.startSentence(this.getPersonNameOrPronoun() + " witnessed a will that passed probate");
         } else {
           let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
-          this.narrative = possessiveName + " " + relationship + "'s will passed probate";
+          this.startSentence(possessiveName + " " + relationship + "'s will passed probate");
         }
       } else {
         if (gd.courtName && gd.courtName != "non-Scottish Court") {
-          this.narrative = "Probate of " + possessiveName + " estate endorsed";
+          this.startSentence("Probate of " + possessiveName + " estate endorsed");
         } else {
-          this.narrative = "Probate of " + possessiveName + " estate recorded";
+          this.startSentence("Probate of " + possessiveName + " estate recorded");
         }
       }
     } else if (gd.recordSubtype == "Testament") {
       if (gd.originalConfirmationGrantedDate) {
-        this.narrative = "Confirmation was originally granted on " + possessiveName + " estate";
-        this.narrative += " " + this.formatDate(gd.originalConfirmationGrantedDate, true);
-        this.narrative += " and an additional confirmation was granted";
+        this.startSentence("Confirmation was originally granted on " + possessiveName + " estate");
+        this.addDateToSentence(this.formatDate(gd.originalConfirmationGrantedDate, true));
+        this.addToSentence("and an additional confirmation was granted");
       } else {
-        this.narrative = "Confirmation was granted on " + possessiveName + " estate";
+        this.startSentence("Confirmation was granted on " + possessiveName + " estate");
       }
     } else if (gd.recordSubtype == "Inventory" || gd.recordSubtype == "AdditionalInventory") {
-      this.narrative = "Confirmation was granted on " + possessiveName + " estate";
+      this.startSentence("Confirmation was granted on " + possessiveName + " estate");
       if (gd.originalConfirmationGrantedDate) {
-        this.narrative += " " + this.formatDate(gd.originalConfirmationGrantedDate, true);
-        this.narrative += " and an additional inventory was granted";
+        this.addDateToSentence(this.formatDate(gd.originalConfirmationGrantedDate, true));
+        this.addToSentence("and an additional inventory was granted");
       }
     } else {
-      this.narrative = "Confirmation was granted on " + possessiveName + " estate";
+      this.startSentence("Confirmation was granted on " + possessiveName + " estate");
     }
 
     this.addDateWithPreposition(dateObj);
 
     if (gd.recordSubtype == "AdditionalInventory") {
       if (gd.grantedDate) {
-        this.narrative += ", additional inventory granted on " + this.formatDate(gd.grantedDate, false);
+        this.addCommaSpaceToSentence();
+        this.addToSentence("additional inventory granted on");
+        this.addDateToSentence(this.formatDate(gd.grantedDate, false));
       } else if (gd.givenUpDate) {
-        this.narrative += ", additional inventory given up on " + this.formatDate(gd.givenUpDate, false);
+        this.addCommaSpaceToSentence();
+        this.addToSentence("additional inventory given up on");
+        this.addDateToSentence(this.formatDate(gd.givenUpDate, false));
       }
     }
 
     if (gd.courtName) {
       if (gd.courtName.startsWith("non-Scot")) {
-        this.narrative += " at a non-Scottish court";
+        this.addToSentence("at a non-Scottish court");
       } else {
-        this.narrative += " at " + gd.courtName;
+        this.addToSentence("at " + gd.courtName);
       }
     } else if (placeObj) {
       this.addFullPlaceWithPreposition(placeObj);
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildWillString() {
@@ -2555,10 +2660,9 @@ class NarrativeBuilder {
     if (deathDateObj) {
       if (role && role != Role.Primary) {
         let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
-        this.narrative = possessiveName + " " + relationship + " died";
+        this.startSentence(possessiveName + " " + relationship + " died");
       } else {
-        this.narrative += this.getPersonNameOrPronoun(true);
-        this.narrative += " died";
+        this.startSentence(this.getPersonNameOrPronoun(true) + " died");
       }
 
       let hasProbateDate = false;
@@ -2576,13 +2680,14 @@ class NarrativeBuilder {
       if (deathPlaceObj) {
         this.addFullPlaceWithPreposition(deathPlaceObj);
       } else if (residencePlaceObj) {
-        this.narrative += " residing " + this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj);
+        this.addToSentence("residing");
+        this.addPlaceToSentence(this.getPlaceWithPrepositionFromPlaceObj(residencePlaceObj));
       } else if (placeObj && !hasProbateDate) {
         this.addFullPlaceWithPreposition(placeObj);
       }
 
       if (hasProbateDate) {
-        this.narrative += ". " + this.getPossessivePronounInitialCaps() + " will passed probate";
+        this.startSentence(this.getPossessivePronounInitialCaps() + " will passed probate");
 
         this.addDateWithPreposition(dateObj);
         this.addFullPlaceWithPreposition(placeObj);
@@ -2615,7 +2720,7 @@ class NarrativeBuilder {
       }
 
       if (hasOnlyResidenceDate && hasOnlyResidencePlace) {
-        this.narrative += ". Residence";
+        this.startSentence("Residence");
         this.addDateWithPreposition(residenceDateObj);
         this.addFullPlaceWithPreposition(residencePlaceObj);
       } else {
@@ -2633,7 +2738,7 @@ class NarrativeBuilder {
       }
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildDivorceString() {
@@ -2642,7 +2747,7 @@ class NarrativeBuilder {
     let dateObj = gd.inferEventDateObj();
     let placeObj = gd.inferEventPlaceObj();
 
-    this.narrative = this.getPersonNameOrPronoun();
+    this.startSentence(this.getPersonNameOrPronoun());
 
     let spouseName = "";
     if (gd.spouses && gd.spouses.length == 1) {
@@ -2654,14 +2759,14 @@ class NarrativeBuilder {
 
     if (spouseName) {
       spouseName = StringUtils.changeAllCapsWordsToInitialCaps(spouseName);
-      this.narrative += " was divorced from " + spouseName;
+      this.addToSentence("was divorced from " + spouseName);
     } else {
-      this.narrative += " was in a divorce record";
+      this.addToSentence("was in a divorce record");
     }
 
     this.addDateWithPreposition(dateObj);
     this.addFullPlaceWithPreposition(placeObj);
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildMilitaryString() {
@@ -2675,9 +2780,9 @@ class NarrativeBuilder {
     if (role && role != Role.Primary) {
       let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
       let possessiveName = this.getPossessiveName();
-      this.narrative = possessiveName + " " + relationship;
+      this.startSentence(possessiveName + " " + relationship);
     } else {
-      this.narrative += this.getPersonNameOrPronoun(true);
+      this.startSentence(this.getPersonNameOrPronoun(true));
     }
 
     if (deathDate) {
@@ -2692,8 +2797,8 @@ class NarrativeBuilder {
         branch = branch.toLowerCase();
       }
 
-      this.narrative += " was in the " + branch + " and died";
-      this.narrative += " " + this.formatDate(deathDate, true);
+      this.addToSentence("was in the " + branch + " and died");
+      this.addDateToSentence(this.formatDate(deathDate, true));
 
       let deathPlaceObj = gd.inferDeathPlaceObj();
       if (deathPlaceObj) {
@@ -2701,49 +2806,50 @@ class NarrativeBuilder {
       } else {
         if (gd.burialPlace) {
           placeObj = this.makePlaceObjFromString(gd.burialPlace);
-          this.narrative += " and was buried";
+          this.addToSentence("and was buried");
         }
       }
     } else {
       let addedCustomNarrative = false;
       if (gd.recordSubtype) {
         if (gd.recordSubtype == RecordSubtype.WWIDraftRegistration) {
-          this.narrative += " registered for the World War I draft";
+          this.addToSentence("registered for the World War I draft");
           addedCustomNarrative = true;
         } else if (gd.recordSubtype == RecordSubtype.WWIIDraftRegistration) {
-          this.narrative += " registered for the World War II draft";
+          this.addToSentence("registered for the World War II draft");
           addedCustomNarrative = true;
         } else if (gd.recordSubtype == RecordSubtype.WWIIPrisonerOfWar) {
-          this.narrative += " was a prisoner of war in World War II";
+          this.addToSentence("was a prisoner of war in World War II");
           addedCustomNarrative = true;
         }
       }
 
       if (!addedCustomNarrative) {
-        this.narrative += " was in a military record";
+        this.addToSentence("was in a military record");
         if (gd.collectionData && gd.collectionData.collectionTitle) {
           let title = gd.collectionData.collectionTitle;
-          this.narrative += " (" + title + ")";
+          this.addToSentence("(" + title + ")");
         }
       }
       if (eventDate) {
-        this.narrative += " " + this.formatDate(eventDate, true);
+        this.addDateToSentence(this.formatDate(eventDate, true));
       }
     }
 
     this.addFullPlaceWithPreposition(placeObj);
-    this.narrative += ".";
+    this.terminateSentence();
 
     let number = gd.serviceNumber;
     let unit = gd.unit;
     if (unit) {
-      this.narrative += " " + this.getPronounAndPastTenseInitialCaps() + " in the " + unit;
+      this.addToSentence(this.getPronounAndPastTenseInitialCaps() + " in the " + unit);
       if (number) {
-        this.narrative += " (service number " + number + ")";
+        this.addToSentence("(service number " + number + ")");
       }
-      this.narrative += ".";
+      this.terminateSentence();
     } else if (number) {
-      this.narrative += " " + this.getPossessivePronounInitialCaps() + " service number was " + number + ".";
+      this.addToSentence(this.getPossessivePronounInitialCaps() + " service number was " + number);
+      this.terminateSentence();
     }
   }
 
@@ -2770,61 +2876,64 @@ class NarrativeBuilder {
     }
 
     if (isArrival) {
-      this.narrative = this.getPersonNameOrPronoun();
+      this.startSentence(this.getPersonNameOrPronoun());
       this.addAgeForMainSentence(ageAtEvent);
-      this.narrative += " arrived";
+      this.addToSentence("arrived");
 
       if (gd.shipName) {
-        this.narrative += " on the ship " + gd.shipName;
+        this.addToSentence("on the ship " + gd.shipName);
       }
 
       if (arrivalDate) {
-        this.narrative += " " + this.formatDate(arrivalDate, true);
+        this.addDateToSentence(this.formatDate(arrivalDate, true));
       }
 
       if (arrivalPlace) {
-        this.narrative += " " + this.getPlaceWithPreposition(arrivalPlace);
+        this.addPlaceToSentence(this.getPlaceWithPreposition(arrivalPlace));
       }
 
       if (departurePlace) {
-        this.narrative += " having departed from " + departurePlace;
+        this.addToSentence("having departed from ");
+        this.addPlaceToSentence(departurePlace);
         if (departureDate) {
-          this.narrative += " " + this.formatDate(departureDate, true);
+          this.addDateToSentence(this.formatDate(departureDate, true));
         }
       }
     } else if (isDeparture) {
-      this.narrative = this.getPersonNameOrPronoun() + " departed";
+      this.startSentence(this.getPersonNameOrPronoun() + " departed");
 
       if (departurePlace) {
-        this.narrative += " from " + departurePlace;
+        this.addToSentence("from");
+        this.addPlaceToSentence(departurePlace);
       }
 
       if (gd.shipName) {
-        this.narrative += " on the ship " + gd.shipName;
+        this.addToSentence("on the ship " + gd.shipName);
       }
 
       if (departureDate) {
-        this.narrative += " " + this.formatDate(departureDate, true);
+        this.addDateToSentence(this.formatDate(departureDate, true));
       }
 
       if (arrivalPlace) {
-        this.narrative += " bound to " + arrivalPlace;
+        this.addToSentence("bound to");
+        this.addPlaceToSentence(arrivalPlace);
       }
     } else {
-      this.narrative = this.getPersonNameOrPronoun() + " was a passenger";
+      this.startSentence(this.getPersonNameOrPronoun() + " was a passenger");
 
       if (gd.shipName) {
-        this.narrative += " on the ship " + gd.shipName;
+        this.addToSentence("on the ship " + gd.shipName);
       }
 
       if (eventDate) {
-        this.narrative += " " + this.formatDate(eventDate, true);
+        this.addDateToSentence(this.formatDate(eventDate, true));
       }
 
       this.addFullPlaceWithPreposition(eventPlaceObj);
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
     this.addAgeAsSeparateSentence(ageAtEvent);
   }
 
@@ -2834,20 +2943,20 @@ class NarrativeBuilder {
     let dateObj = gd.inferEventDateObj();
     let placeObj = gd.inferEventPlaceObj();
 
-    this.narrative += this.getPersonNameOrPronoun(false, true);
+    this.startSentence(this.getPersonNameOrPronoun(false, true));
 
-    this.narrative += " was mentioned in ";
+    this.addToSentence("was mentioned in");
 
     if (gd.newspaperName) {
-      this.narrative += "the " + gd.newspaperName;
+      this.addToSentence("the " + gd.newspaperName);
     } else {
-      this.narrative += "a newspaper article";
+      this.addToSentence("a newspaper article");
     }
 
     this.addDateWithPreposition(dateObj);
     this.addFullPlaceWithPreposition(placeObj);
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildBookString() {
@@ -2855,16 +2964,16 @@ class NarrativeBuilder {
 
     let dateObj = gd.inferEventDateObj();
 
-    this.narrative += "This person was mentioned in ";
+    this.startSentence("This person was mentioned in");
 
     if (gd.bookTitle) {
-      this.narrative += "the book ''" + gd.bookTitle + "''";
+      this.addToSentence("the book ''" + gd.bookTitle + "''");
     } else {
-      this.narrative += "a book";
+      this.addToSentence("a book");
     }
 
     this.addDateWithPreposition(dateObj);
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildJournalString() {
@@ -2872,30 +2981,30 @@ class NarrativeBuilder {
 
     let dateObj = gd.inferEventDateObj();
 
-    this.narrative += "This person was mentioned in ";
+    this.startSentence("This person was mentioned in");
 
     if (gd.journalName) {
-      this.narrative += "the journal ''" + gd.journalName + "''";
+      this.addToSentence("the journal ''" + gd.journalName + "''");
     } else {
-      this.narrative += "a book";
+      this.addToSentence("a book");
     }
 
     this.addDateWithPreposition(dateObj);
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildEncyclopediaString() {
     let gd = this.eventGd;
 
-    this.narrative += "This person was mentioned in ";
+    this.startSentence("This person was mentioned in");
 
     if (gd.sourceOfData == "wikipedia") {
-      this.narrative += "a Wikipedia entry";
+      this.addToSentence("a Wikipedia entry");
     } else {
-      this.narrative += "an encyclopedia entry";
+      this.addToSentence("an encyclopedia entry");
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildFreedomOfCityString() {
@@ -2915,35 +3024,35 @@ class NarrativeBuilder {
       const nameOrPronoun = this.getPersonNameOrPronoun(false, true);
       let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
 
-      this.narrative += possessiveName + " " + relationship;
-      this.narrative += " was admitted into the Freedom of the City";
+      this.startSentence(possessiveName + " " + relationship);
+      this.addToSentence(" was admitted into the Freedom of the City");
 
       if (formattedDate) {
-        this.narrative += ". Either " + nameOrPronoun + " or " + possessiveName + " child was admitted";
+        this.startSentence("Either " + nameOrPronoun + " or " + possessiveName + " child was admitted");
       }
     } else {
       const nameOrPronoun = this.getPersonNameOrPronoun(false, true);
-      this.narrative += nameOrPronoun;
+      this.startSentence(nameOrPronoun);
 
       if (gd.admissionDate) {
-        this.narrative += " was admitted into the Freedom of the City";
+        this.addToSentence("was admitted into the Freedom of the City");
 
         if (gd.parents && gd.parents.father) {
           let possessive = this.getPossessiveName(true);
-          this.narrative += ". Either " + nameOrPronoun + " or " + possessive + " father was admitted";
+          this.startSentence("Either " + nameOrPronoun + " or " + possessive + " father was admitted");
         }
       } else {
-        this.narrative += " was mentioned in the Freedom of the City papers";
+        this.addToSentence("was mentioned in the Freedom of the City papers");
       }
     }
 
     if (formattedDate) {
-      this.narrative += " " + formattedDate;
+      this.addDateToSentence(formattedDate);
     }
 
     this.addFullPlaceWithPreposition(placeObj);
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildConvictTransportationString() {
@@ -2962,50 +3071,54 @@ class NarrativeBuilder {
       let possessiveName = this.getPossessiveName();
       let relationship = gd.getRelationshipOfPrimaryPersonToThisPerson();
 
-      this.narrative += possessiveName + " " + relationship;
+      this.startSentence(possessiveName + " " + relationship);
     } else {
       const nameOrPronoun = this.getPersonNameOrPronoun(false, true);
-      this.narrative += nameOrPronoun;
+      this.startSentence(nameOrPronoun);
     }
 
     if (gd.convictionDate || gd.convictionPlace) {
-      this.narrative += " was convicted";
+      this.addToSentence("was convicted");
       if (gd.convictionDate) {
-        this.narrative += " " + this.formatDate(gd.convictionDate, true);
+        this.addDateToSentence(this.formatDate(gd.convictionDate, true));
       }
       if (gd.convictionPlace) {
-        this.narrative += " " + this.getPlaceWithPreposition(gd.convictionPlace);
+        this.addPlaceToSentence(this.getPlaceWithPreposition(gd.convictionPlace));
       }
 
       if (gd.sentence) {
-        this.narrative += " and sentenced to " + gd.sentence + " transportation";
+        this.addToSentence(" and sentenced to " + gd.sentence + " transportation");
       }
 
       if (gd.transitDate) {
-        this.narrative += " and transported " + this.formatDate(gd.transitDate, true);
+        this.addToSentence("and transported");
+        this.addDateToSentence(this.formatDate(gd.transitDate, true));
       }
     } else {
-      this.narrative += " was transported";
+      this.addToSentence("was transported");
       if (formattedDate) {
-        this.narrative += " " + formattedDate;
+        this.addDateToSentence(formattedDate);
       }
     }
 
     if (gd.departurePlace) {
-      this.narrative += " from " + gd.departurePlace;
+      this.addToSentence("from");
+      this.addPlaceToSentence(gd.departurePlace);
     }
 
     if (gd.arrivalPlace) {
-      this.narrative += " to " + gd.arrivalPlace;
+      this.addToSentence("to");
+      this.addPlaceToSentence(gd.arrivalPlace);
     } else if (placeObj && placeObj.inferPlaceString() != gd.convictionPlace) {
-      this.narrative += " to " + placeObj.inferPlaceString();
+      this.addToSentence("to");
+      this.addPlaceToSentence(placeObj.inferPlaceString());
     }
 
     if (gd.shipName) {
-      this.narrative += " on the ship ''" + gd.shipName + "''";
+      this.addToSentence("on the ship ''" + gd.shipName + "''");
     }
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildValuationRollString() {
@@ -3020,21 +3133,21 @@ class NarrativeBuilder {
     }
 
     const nameOrPronoun = this.getPersonNameOrPronoun(false, true);
-    this.narrative += nameOrPronoun;
+    this.startSentence(nameOrPronoun);
 
     if (gd.status) {
-      this.narrative += " was recorded as a " + gd.status + " in a valuation roll";
+      this.addToSentence("was recorded as a " + gd.status + " in a valuation roll");
     } else {
-      this.narrative += " was recorded in a valuation roll";
+      this.addToSentence("was recorded in a valuation roll");
     }
 
     if (formattedDate) {
-      this.narrative += " " + formattedDate;
+      this.addDateToSentence(formattedDate);
     }
 
     this.addFullPlaceWithPreposition(placeObj);
 
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   buildDefaultString() {
@@ -3114,15 +3227,15 @@ class NarrativeBuilder {
     let placeObj = gd.inferEventPlaceObj();
 
     if (gd.role && gd.role != Role.Primary) {
-      this.narrative += this.getPossessiveNamePlusPrimaryPerson();
+      this.startSentence(this.getPossessiveNamePlusPrimaryPerson());
     } else {
-      this.narrative += this.getPersonNameOrPronoun(false, true);
+      this.startSentence(this.getPersonNameOrPronoun(false, true));
     }
 
-    this.narrative += " " + narrativeCore;
+    this.addToSentence(narrativeCore);
     this.addDateWithPreposition(dateObj);
     this.addFullPlaceWithPreposition(placeObj);
-    this.narrative += ".";
+    this.terminateSentence();
   }
 
   setupForRecordType() {
