@@ -1,0 +1,71 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Tobias James O'Hara",
+    "lastName": "O'Hara",
+    "forenames": "Tobias James"
+  },
+  "birthDate": {
+    "dateString": "24 OCT 1848"
+  },
+  "birthPlace": {
+    "placeString": "Everton, Lancashire, England"
+  },
+  "deathDate": {
+    "dateString": "14 MARCH 1928"
+  },
+  "deathPlace": {
+    "placeString": "42 Roberts Road Walton Liverpool, Lancashire, England"
+  },
+  "personGender": "male",
+  "spouses": [
+    {
+      "name": {
+        "name": "Annie Farmer"
+      },
+      "marriageDate": {
+        "dateString": "8 Apr 1872"
+      },
+      "marriagePlace": {
+        "placeString": "Our Lady of Immaculate Conception, Lancashire, England"
+      },
+      "birthDate": {
+        "yearString": "1849"
+      },
+      "deathDate": {
+        "yearString": "1921"
+      }
+    },
+    {
+      "name": {
+        "name": "Annie Farmer"
+      },
+      "marriageDate": {
+        "dateString": "8 April 1872"
+      },
+      "marriagePlace": {
+        "placeString": "Our Lady of Immaculate Conception, Lancashire, England"
+      },
+      "birthDate": {
+        "yearString": "1849"
+      },
+      "deathDate": {
+        "yearString": "1921"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Michael/2 OHara"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Elizabeth Sandys"
+      }
+    }
+  },
+  "hasValidData": true
+}

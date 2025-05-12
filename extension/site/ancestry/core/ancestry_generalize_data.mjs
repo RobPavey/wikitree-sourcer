@@ -2857,6 +2857,9 @@ function generalizeProfileData(input, result) {
     surname = result.inferLastName();
   }
 
+  surname = cleanName(surname);
+  let givenName = cleanName(ed.givenName);
+
   // sometimes the last name is all uppercase on Ancestry profiles
   // setFullName above will have removed suffixes
   if (surname && StringUtils.isAllUppercase(surname)) {
@@ -2867,7 +2870,29 @@ function generalizeProfileData(input, result) {
     surname = newLastName;
   }
 
-  result.setLastNameAndForenames(cleanName(surname), cleanName(ed.givenName));
+  if (ed.titleName) {
+    // we want to set the separate ginnNames and surname
+    // but just in case there is some weird encoding in them that we did not fix
+    // in extratData, first check that they are in the full name
+    let lcFullName = cleanName(ed.titleName).toLowerCase();
+    let namesValid = true;
+    if (surname) {
+      let lcSurname = surname.toLowerCase();
+      if (!lcFullName.includes(lcSurname)) {
+        namesValid = false;
+      }
+    }
+    if (givenName) {
+      let lcGivenName = givenName.toLowerCase();
+      if (!lcFullName.includes(lcGivenName)) {
+        namesValid = false;
+      }
+    }
+
+    if (namesValid) {
+      result.setLastNameAndForenames(surname, givenName);
+    }
+  }
 
   if (ed.fatherName) {
     let father = result.addFather();

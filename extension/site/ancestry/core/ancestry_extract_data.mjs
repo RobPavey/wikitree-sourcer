@@ -1462,6 +1462,11 @@ function parseHtmlEscapeCodes(str) {
     return String.fromCharCode(num);
   });
 
+  str = str.replace(/\\u([0-9a-f]+)/gi, function (match, numStr) {
+    var num = parseInt(numStr, 16); // read num as normal number
+    return String.fromCharCode(num);
+  });
+
   // the below two replaces were needed for:
   // https://www.ancestry.com/family-tree/person/tree/86808578/person/260140894818/facts
   str = str.replace(/&quot;/gi, '"');

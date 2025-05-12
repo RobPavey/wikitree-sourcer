@@ -1,0 +1,118 @@
+{
+  "url": "https://www.ancestry.com/family-tree/person/tree/41033099/person/19568141067/facts",
+  "pageType": "personFacts",
+  "givenName": "Tobias James",
+  "surname": "O'Hara",
+  "titleName": "Tobias James O'Hara",
+  "birthDate": "24 OCT 1848",
+  "birthPlace": "Everton, Lancashire, England",
+  "deathDate": "14 MARCH 1928",
+  "deathPlace": "42 Roberts Road Walton Liverpool, Lancashire, England",
+  "gender": "Male",
+  "marriages": [
+    {
+      "date": "8 Apr 1872",
+      "place": "Our Lady of Immaculate Conception, Lancashire, England",
+      "spouseName": "Annie Farmer",
+      "spouseBirthYear": "1849",
+      "spouseDeathYear": "1921"
+    },
+    {
+      "date": "8 April 1872",
+      "place": "Our Lady of Immaculate Conception, Lancashire, England",
+      "spouseName": "Annie Farmer",
+      "spouseBirthYear": "1849",
+      "spouseDeathYear": "1921"
+    }
+  ],
+  "fatherName": "Michael/2  OHara",
+  "motherName": "Elizabeth SANDYS",
+  "sources": [
+    {
+      "dbId": "8860",
+      "recordId": "17765014",
+      "title": "1851 England Census"
+    },
+    {
+      "dbId": "8767",
+      "recordId": "23185793",
+      "title": "1861 England Census"
+    },
+    {
+      "dbId": "7619",
+      "recordId": "16085940",
+      "title": "1871 England Census"
+    },
+    {
+      "dbId": "7572",
+      "recordId": "9021319",
+      "title": "1881 England Census"
+    },
+    {
+      "dbId": "6598",
+      "recordId": "816332",
+      "title": "1891 England Census"
+    },
+    {
+      "dbId": "7814",
+      "recordId": "20796680",
+      "title": "1901 England Census"
+    },
+    {
+      "dbId": "2352",
+      "recordId": "23239922",
+      "title": "1911 England Census"
+    },
+    {
+      "dbId": "1708",
+      "recordId": "2614448",
+      "title": "1911 England Census Summary Books"
+    },
+    {
+      "dbId": "7579",
+      "recordId": "21464447",
+      "title": "England & Wales, Death Index, 1916-2007"
+    },
+    {
+      "dbId": "8912",
+      "recordId": "25358428",
+      "title": "England & Wales, FreeBMD Birth Index, 1837-1915"
+    },
+    {
+      "dbId": "8913",
+      "recordId": "21242535",
+      "title": "England & Wales, FreeBMD Marriage Index, 1837-1915"
+    },
+    {
+      "dbId": "2180",
+      "recordId": "1000364",
+      "title": "Liverpool, England, Catholic Baptisms, 1802-1906"
+    },
+    {
+      "dbId": "2180",
+      "recordId": "151008583",
+      "title": "Liverpool, England, Catholic Baptisms, 1802-1906"
+    },
+    {
+      "dbId": "2180",
+      "recordId": "151007950",
+      "title": "Liverpool, England, Catholic Baptisms, 1802-1906"
+    },
+    {
+      "dbId": "2182",
+      "recordId": "1257920",
+      "title": "Liverpool, England, Catholic Marriages, 1754-1921"
+    },
+    {
+      "dbId": "61319",
+      "recordId": "5804241",
+      "title": "Liverpool, England, Electoral Registers, 1832-1970"
+    },
+    {
+      "dbId": "3145",
+      "recordId": "40816790",
+      "title": "UK, City and County Directories, 1766 - 1946"
+    }
+  ],
+  "ancestryTemplate": "{{Ancestry Tree|41033099|19568141067}}"
+}

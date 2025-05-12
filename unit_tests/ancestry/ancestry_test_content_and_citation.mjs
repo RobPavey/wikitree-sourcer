@@ -1320,6 +1320,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/46552199708/facts",
   },
   {
+    // apostrophe in last name causes issues
+    caseName: "xx_profile_tobias_ohara_1848_1928",
+    url: "https://www.ancestry.com/family-tree/person/tree/41033099/person/19568141067/facts",
+  },
+  {
     caseName: "xx_profile_william_no_last_name",
     url: "https://www.ancestry.com/family-tree/person/tree/86808578/person/262544635265/facts",
   },
