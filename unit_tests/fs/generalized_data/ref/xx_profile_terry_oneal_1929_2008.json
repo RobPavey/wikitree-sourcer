@@ -40,7 +40,8 @@
   "parents": {
     "father": {
       "name": {
-        "name": "Terry Warren O'Neal Sr",
+        "name": "Terry Warren O'Neal",
+        "suffix": "Sr",
         "lastName": "O'Neal",
         "forenames": "Terry Warren"
       }

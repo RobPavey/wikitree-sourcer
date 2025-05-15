@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Death''':\n\"Texas, U.S., Death Certificates, 1903-1982\"<br/>\nTexas Department of State Health Services; Austin Texas, USA<br/>\n{{Ancestry Record|2272|23886198}} (accessed 6 May 2021)<br/>\nNellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA.\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"Texas, U.S., Death Certificates, 1903-1982\"<br/>\nTexas Department of State Health Services; Austin Texas, USA<br/>\n{{Ancestry Record|2272|23886198}} (accessed 6 May 2021)<br/>\nMrs Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Nellie, daughter of Carlas Putnam & Lurna Pennie, died (age 82) on 29 April 1947 in Hamilton, Hamilton, Texas, USA.<ref>\n'''Death''':\n\"Texas, U.S., Death Certificates, 1903-1982\"<br/>\nTexas Department of State Health Services; Austin Texas, USA<br/>\n{{Ancestry Record|2272|23886198}} (accessed 6 May 2021)<br/>\nNellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA.\n</ref>",
+    "citation": "Nellie, daughter of Carlas Putnam & Lurna Pennie, died (age 82) on 29 April 1947 in Hamilton, Hamilton, Texas, USA.<ref>\n'''Death''':\n\"Texas, U.S., Death Certificates, 1903-1982\"<br/>\nTexas Department of State Health Services; Austin Texas, USA<br/>\n{{Ancestry Record|2272|23886198}} (accessed 6 May 2021)<br/>\nMrs Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Death''': \"Texas, U.S., Death Certificates, 1903-1982\"<br/>Texas Department of State Health Services; Austin Texas, USA<br/>{{Ancestry Record|2272|23886198}} (accessed 6 May 2021)<br/>Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA.",
+    "citation": "* '''Death''': \"Texas, U.S., Death Certificates, 1903-1982\"<br/>Texas Department of State Health Services; Austin Texas, USA<br/>{{Ancestry Record|2272|23886198}} (accessed 6 May 2021)<br/>Mrs Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"Texas, U.S., Death Certificates, 1903-1982,\" database, ({{Ancestry Record|2272|23886198}} : accessed 6 May 2021), Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA; citing Texas Department of State Health Services, Austin Texas, USA.</ref>",
+    "citation": "<ref>\"Texas, U.S., Death Certificates, 1903-1982,\" database, ({{Ancestry Record|2272|23886198}} : accessed 6 May 2021), Mrs Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA; citing Texas Department of State Health Services, Austin Texas, USA.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Nellie, daughter of Carlas Putnam & Lurna Pennie, died (age 82) on 29 April 1947 in Hamilton, Hamilton, Texas, USA.<ref>\"Texas, U.S., Death Certificates, 1903-1982,\" database, ({{Ancestry Record|2272|23886198}} : accessed 6 May 2021), Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA; citing Texas Department of State Health Services, Austin Texas, USA.</ref>",
+    "citation": "Nellie, daughter of Carlas Putnam & Lurna Pennie, died (age 82) on 29 April 1947 in Hamilton, Hamilton, Texas, USA.<ref>\"Texas, U.S., Death Certificates, 1903-1982,\" database, ({{Ancestry Record|2272|23886198}} : accessed 6 May 2021), Mrs Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA; citing Texas Department of State Health Services, Austin Texas, USA.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"Texas, U.S., Death Certificates, 1903-1982,\" database, ({{Ancestry Record|2272|23886198}} : accessed 6 May 2021), Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA; citing Texas Department of State Health Services, Austin Texas, USA.",
+    "citation": "* \"Texas, U.S., Death Certificates, 1903-1982,\" database, ({{Ancestry Record|2272|23886198}} : accessed 6 May 2021), Mrs Nellie E Drake death 29 Apr 1947 (born 1 Mar 1865), daughter of Carlas Putnam & Lurna Pennie, in Hamilton, Hamilton, Texas, USA; citing Texas Department of State Health Services, Austin Texas, USA.",
     "type": "source"
   },
   "partial_ee_style_inline": {

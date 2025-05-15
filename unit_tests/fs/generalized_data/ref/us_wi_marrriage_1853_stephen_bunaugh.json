@@ -18,9 +18,9 @@
   "spouses": [
     {
       "name": {
-        "name": "Susan B. Newbury",
+        "name": "Susan B Newbury",
         "lastName": "Newbury",
-        "forenames": "Susan B."
+        "forenames": "Susan B"
       },
       "personGender": "female",
       "marriageDate": {

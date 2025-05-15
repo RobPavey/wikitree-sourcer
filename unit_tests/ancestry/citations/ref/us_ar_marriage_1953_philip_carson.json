@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Arkansas, Marriage Certificates, 1917-1969\"<br/>\nArkansas Department of Vital Records; Little Rock, Arkansas; Marriage Certificates; Year: 1953; Film: #1; Certificate Number: 3634<br/>\n{{Ancestry Record|61775|1236093}} (accessed 6 May 2021)<br/>\nPhilip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA.\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Arkansas, Marriage Certificates, 1917-1969\"<br/>\nArkansas Department of Vital Records; Little Rock, Arkansas; Marriage Certificates; Year: 1953; Film: #1; Certificate Number: 3634<br/>\n{{Ancestry Record|61775|1236093}} (accessed 6 May 2021)<br/>\nMr Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "Philip married Violet M Crook on 22 June 1953 in Carroll, Arkansas, USA.<ref>\n'''Marriage''':\n\"Arkansas, Marriage Certificates, 1917-1969\"<br/>\nArkansas Department of Vital Records; Little Rock, Arkansas; Marriage Certificates; Year: 1953; Film: #1; Certificate Number: 3634<br/>\n{{Ancestry Record|61775|1236093}} (accessed 6 May 2021)<br/>\nPhilip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA.\n</ref>",
+    "citation": "Philip married Violet M Crook on 22 June 1953 in Carroll, Arkansas, USA.<ref>\n'''Marriage''':\n\"Arkansas, Marriage Certificates, 1917-1969\"<br/>\nArkansas Department of Vital Records; Little Rock, Arkansas; Marriage Certificates; Year: 1953; Film: #1; Certificate Number: 3634<br/>\n{{Ancestry Record|61775|1236093}} (accessed 6 May 2021)<br/>\nMr Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''Marriage''': \"Arkansas, Marriage Certificates, 1917-1969\"<br/>Arkansas Department of Vital Records; Little Rock, Arkansas; Marriage Certificates; Year: 1953; Film: #1; Certificate Number: 3634<br/>{{Ancestry Record|61775|1236093}} (accessed 6 May 2021)<br/>Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA.",
+    "citation": "* '''Marriage''': \"Arkansas, Marriage Certificates, 1917-1969\"<br/>Arkansas Department of Vital Records; Little Rock, Arkansas; Marriage Certificates; Year: 1953; Film: #1; Certificate Number: 3634<br/>{{Ancestry Record|61775|1236093}} (accessed 6 May 2021)<br/>Mr Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"Arkansas, Marriage Certificates, 1917-1969,\" database, ({{Ancestry Record|61775|1236093}} : accessed 6 May 2021), Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA; citing Arkansas Department of Vital Records, Little Rock, Arkansas, Marriage Certificates, Year 1953, Film #1, Certificate Number 3634.</ref>",
+    "citation": "<ref>\"Arkansas, Marriage Certificates, 1917-1969,\" database, ({{Ancestry Record|61775|1236093}} : accessed 6 May 2021), Mr Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA; citing Arkansas Department of Vital Records, Little Rock, Arkansas, Marriage Certificates, Year 1953, Film #1, Certificate Number 3634.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "Philip married Violet M Crook on 22 June 1953 in Carroll, Arkansas, USA.<ref>\"Arkansas, Marriage Certificates, 1917-1969,\" database, ({{Ancestry Record|61775|1236093}} : accessed 6 May 2021), Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA; citing Arkansas Department of Vital Records, Little Rock, Arkansas, Marriage Certificates, Year 1953, Film #1, Certificate Number 3634.</ref>",
+    "citation": "Philip married Violet M Crook on 22 June 1953 in Carroll, Arkansas, USA.<ref>\"Arkansas, Marriage Certificates, 1917-1969,\" database, ({{Ancestry Record|61775|1236093}} : accessed 6 May 2021), Mr Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA; citing Arkansas Department of Vital Records, Little Rock, Arkansas, Marriage Certificates, Year 1953, Film #1, Certificate Number 3634.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"Arkansas, Marriage Certificates, 1917-1969,\" database, ({{Ancestry Record|61775|1236093}} : accessed 6 May 2021), Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA; citing Arkansas Department of Vital Records, Little Rock, Arkansas, Marriage Certificates, Year 1953, Film #1, Certificate Number 3634.",
+    "citation": "* \"Arkansas, Marriage Certificates, 1917-1969,\" database, ({{Ancestry Record|61775|1236093}} : accessed 6 May 2021), Mr Philip A Carson marriage to Violet M Crook on 22 Jun 1953 in Carroll, Arkansas, USA; citing Arkansas Department of Vital Records, Little Rock, Arkansas, Marriage Certificates, Year 1953, Film #1, Certificate Number 3634.",
     "type": "source"
   },
   "partial_ee_style_inline": {

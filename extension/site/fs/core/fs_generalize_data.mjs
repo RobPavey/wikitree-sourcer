@@ -431,18 +431,12 @@ function cleanOccupation(text) {
   return newText;
 }
 
-function setFieldIfDefined(targetObject, fieldName, value) {
-  if (typeof value !== "undefined") {
-    targetObject[fieldName] = value;
-  }
-}
-
 function setParentFields(gdParent, edParent) {
-  setFieldIfDefined(gdParent.name, "name", edParent.fullName);
-  setFieldIfDefined(gdParent.name, "forenames", edParent.givenName);
-  setFieldIfDefined(gdParent.name, "lastName", edParent.surname);
-  setFieldIfDefined(gdParent.name, "prefix", edParent.prefix);
-  setFieldIfDefined(gdParent.name, "suffix", edParent.suffix);
+  gdParent.name.setFullName(edParent.fullName);
+  gdParent.name.setForenames(edParent.givenName);
+  gdParent.name.setLastName(edParent.surname);
+  gdParent.name.setPrefix(edParent.prefix);
+  gdParent.name.setSuffix(edParent.suffix);
 }
 
 const quarterNames = [
@@ -648,13 +642,13 @@ function generalizeDataGivenRecordType(ed, result) {
         resultSpouse.name = new NameObj();
 
         if (ed.spouseFullName) {
-          resultSpouse.name.name = ed.spouseFullName;
+          resultSpouse.name.setFullName(ed.spouseFullName);
         }
         if (ed.spouseSurname) {
-          resultSpouse.name.lastName = ed.spouseSurname;
+          resultSpouse.name.setLastName(ed.spouseSurname);
         }
         if (ed.spouseGivenName) {
-          resultSpouse.name.forenames = ed.spouseGivenName;
+          resultSpouse.name.setForenames(ed.spouseGivenName);
         }
         if (ed.spousePrefix) {
           resultSpouse.name.setPrefix(ed.spousePrefix);
@@ -687,13 +681,13 @@ function generalizeDataGivenRecordType(ed, result) {
       resultSpouse.name = new NameObj();
 
       if (ed.spouseFullName) {
-        resultSpouse.name.name = ed.spouseFullName;
+        resultSpouse.name.setFullName(ed.spouseFullName);
       }
       if (ed.spouseSurname) {
-        resultSpouse.name.lastName = ed.spouseSurname;
+        resultSpouse.name.setLastName(ed.spouseSurname);
       }
       if (ed.spouseGivenName) {
-        resultSpouse.name.forenames = ed.spouseGivenName;
+        resultSpouse.name.setForenames(ed.spouseGivenName);
       }
       if (ed.spousePrefix) {
         resultSpouse.name.setPrefix(ed.spousePrefix);
@@ -725,13 +719,13 @@ function generalizeDataGivenRecordType(ed, result) {
     } else if (ed.relatedPersonSpouseFullName || ed.relatedPersonSpouseSurname || ed.relatedPersonSpouseGivenName) {
       resultSpouse.name = new NameObj();
       if (ed.relatedPersonSpouseFullName) {
-        resultSpouse.name.name = ed.relatedPersonSpouseFullName;
+        resultSpouse.name.setFullName(ed.relatedPersonSpouseFullName);
       }
       if (ed.relatedPersonSpouseSurname) {
-        resultSpouse.name.lastName = ed.relatedPersonSpouseSurname;
+        resultSpouse.name.setLastName(ed.relatedPersonSpouseSurname);
       }
       if (ed.relatedPersonSpouseGivenName) {
-        resultSpouse.name.forenames = ed.relatedPersonSpouseGivenName;
+        resultSpouse.name.setForenames(ed.relatedPersonSpouseGivenName);
       }
     }
     if (result.eventDate) {
@@ -784,13 +778,13 @@ function generalizeDataGivenRecordType(ed, result) {
       }
 
       if (spouseFullName) {
-        resultSpouse.name.name = spouseFullName;
+        resultSpouse.name.setFullName(spouseFullName);
       }
       if (ed.spouseSurname) {
-        resultSpouse.name.lastName = ed.spouseSurname;
+        resultSpouse.name.setLastName(ed.spouseSurname);
       }
       if (ed.spouseGivenName) {
-        resultSpouse.name.forenames = ed.spouseGivenName;
+        resultSpouse.name.setForenames(ed.spouseGivenName);
       }
       if (ed.spousePrefix) {
         resultSpouse.name.setPrefix(ed.spousePrefix);
@@ -843,13 +837,13 @@ function generalizeDataGivenRecordType(ed, result) {
       resultSpouse.name = new NameObj();
 
       if (ed.spouseFullName) {
-        resultSpouse.name.name = ed.spouseFullName;
+        resultSpouse.name.setFullName(ed.spouseFullName);
       }
       if (ed.spouseSurname) {
-        resultSpouse.name.lastName = ed.spouseSurname;
+        resultSpouse.name.setLastName(ed.spouseSurname);
       }
       if (ed.spouseGivenName) {
-        resultSpouse.name.forenames = ed.spouseGivenName;
+        resultSpouse.name.setForenames(ed.spouseGivenName);
       }
       if (ed.spousePrefix) {
         resultSpouse.name.setPrefix(ed.spousePrefix);
@@ -863,13 +857,13 @@ function generalizeDataGivenRecordType(ed, result) {
     } else if (ed.relatedPersonSpouseFullName || ed.relatedPersonSpouseSurname || ed.relatedPersonSpouseGivenName) {
       resultSpouse.name = new NameObj();
       if (ed.relatedPersonSpouseFullName) {
-        resultSpouse.name.name = ed.relatedPersonSpouseFullName;
+        resultSpouse.name.setFullName(ed.relatedPersonSpouseFullName);
       }
       if (ed.relatedPersonSpouseSurname) {
-        resultSpouse.name.lastName = ed.relatedPersonSpouseSurname;
+        resultSpouse.name.setLastName(ed.relatedPersonSpouseSurname);
       }
       if (ed.relatedPersonSpouseGivenName) {
-        resultSpouse.name.forenames = ed.relatedPersonSpouseGivenName;
+        resultSpouse.name.setForenames(ed.relatedPersonSpouseGivenName);
       }
     }
     if (result.eventDate) {
@@ -1108,7 +1102,7 @@ function generalizeDataForPerson(ed, result) {
       resultObject.name.setFullName(dataObject.fullName);
     }
     if (dataObject.surname) {
-      resultObject.name.lastName = dataObject.surname;
+      resultObject.name.setLastName(dataObject.surname);
     }
     if (dataObject.givenName) {
       resultObject.name.setForenames(dataObject.givenName);
@@ -1128,13 +1122,13 @@ function generalizeDataForPerson(ed, result) {
 
   function setName(dataObject, resultObject) {
     if (dataObject.fullName) {
-      resultObject.name.name = dataObject.fullName;
+      resultObject.name.setFullName(dataObject.fullName);
     }
     if (dataObject.surname) {
-      resultObject.name.lastName = dataObject.surname;
+      resultObject.name.setLastName(dataObject.surname);
     }
     if (dataObject.givenName) {
-      resultObject.name.forenames = dataObject.givenName;
+      resultObject.name.setForenames(dataObject.givenName);
     }
     if (dataObject.prefix) {
       resultObject.name.setPrefix(dataObject.prefix);
@@ -1144,7 +1138,7 @@ function generalizeDataForPerson(ed, result) {
     }
   }
 
-  // we will already have set fullName but try to get the fornames and last names
+  // we will already have set fullName but try to get the forenames and last names
   setNameWithPossibleNicknames(ed, result);
 
   // if there is no birth or death details then there could be baptism or burial

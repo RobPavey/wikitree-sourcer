@@ -1370,6 +1370,10 @@ class NameObj {
           } else {
             this.prefix = firstWord;
           }
+        } else {
+          if (!this.nonPrefixHonorific) {
+            this.nonPrefixHonorific = firstWord;
+          }
         }
         return remainder;
       }
@@ -1579,6 +1583,11 @@ class NameObj {
   setSuffix(suffix) {
     let cleanSuffix = this.cleanName(suffix);
     if (cleanSuffix) {
+      // if the full name already has the suffix then remove it
+      if (this.name && isString(this.name) && this.name.includes(suffix)) {
+        this.removeSuffix();
+      }
+
       this.suffix = cleanSuffix;
     }
   }
@@ -1680,6 +1689,8 @@ class NameObj {
     if (fullName) {
       if (this.prefix && !fullName.startsWith(this.prefix)) {
         fullName = this.prefix + " " + fullName;
+      } else if (this.nonPrefixHonorific && !fullName.startsWith(this.nonPrefixHonorific)) {
+        fullName = this.nonPrefixHonorific + " " + fullName;
       }
       if (this.suffix && !fullName.endsWith(this.suffix)) {
         fullName = fullName + " " + this.suffix;

@@ -3,7 +3,8 @@
   "recordType": "Marriage",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "Philip A Carson"
+    "name": "Philip A Carson",
+    "nonPrefixHonorific": "Mr"
   },
   "eventDate": {
     "dateString": "22 Jun 1953"

@@ -3,7 +3,8 @@
   "recordType": "Death",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "Nellie E Drake"
+    "name": "Nellie E Drake",
+    "nonPrefixHonorific": "Mrs"
   },
   "personGender": "female",
   "eventDate": {

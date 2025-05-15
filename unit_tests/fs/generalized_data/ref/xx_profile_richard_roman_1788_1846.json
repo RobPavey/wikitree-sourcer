@@ -20,9 +20,10 @@
   "spouses": [
     {
       "name": {
-        "name": "Sarah \"Sallie\" Evans",
+        "name": "Sarah Evans",
+        "nicknames": "Sallie",
         "lastName": "Evans",
-        "forenames": "Sarah \"Sallie\""
+        "forenames": "Sarah"
       }
     }
   ],

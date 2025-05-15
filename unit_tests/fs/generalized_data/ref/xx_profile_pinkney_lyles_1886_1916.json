@@ -34,16 +34,17 @@
   "parents": {
     "father": {
       "name": {
-        "name": "Rev William Oscar Lyles",
+        "name": "William Oscar Lyles",
+        "prefix": "Rev",
         "lastName": "Lyles",
         "forenames": "William Oscar"
       }
     },
     "mother": {
       "name": {
-        "name": "Hannah J. Taylor",
+        "name": "Hannah J Taylor",
         "lastName": "Taylor",
-        "forenames": "Hannah J."
+        "forenames": "Hannah J"
       }
     }
   },
