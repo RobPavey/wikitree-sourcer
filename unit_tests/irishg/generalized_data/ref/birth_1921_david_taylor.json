@@ -17,7 +17,7 @@
     "dateString": "30 May 1921"
   },
   "mothersMaidenName": "Taylor",
-  "gender": "male",
+  "personGender": "male",
   "collectionData": {
     "id": "births",
     "registrationId": "1424208"

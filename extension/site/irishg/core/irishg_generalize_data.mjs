@@ -296,7 +296,7 @@ function generalizeData(input) {
 
     let sex = ed.recordData["Sex"];
     if (sex && sex != "see register entry") {
-      result.gender = GD.standardizeGender(sex);
+      result.setPersonGender(sex);
     }
   } else if (result.recordType == RT.MarriageRegistration) {
     result.setEventDate(cleanDate(ed.recordData["Date of Event"]));
