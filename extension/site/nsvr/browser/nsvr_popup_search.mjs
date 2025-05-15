@@ -37,14 +37,14 @@ import { options } from "/base/browser/options/options_loader.mjs";
 const nsvrStartYear = 1763;
 const nsvrEndYear = 1980;
 
-const COUNTRY_NAMES = ["Nova Scotia", "Canada"];
+const countryNames = ["Nova Scotia", "Canada"];
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
     startYear: nsvrStartYear,
     endYear: nsvrEndYear,
     dateTestType: "bmd",
-    countryList: COUNTRY_NAMES,
+    countryList: countryNames,
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {

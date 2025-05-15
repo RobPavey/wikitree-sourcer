@@ -255,6 +255,23 @@ const CountryData = [
     usesMiddleNames: true,
     wifeChangesName: true,
   },
+
+  // Canada predecessors and colonies
+  {
+    stdName: "Nova Scotia",
+    matches: ["Nova Scotia"],
+    hasStates: false,
+    usesMiddleNames: true,
+    wifeChangesName: true,
+    validDateRange: { startYear: 1713, endYear: 1867 },
+  },
+  {
+    stdName: "Acadia",
+    matches: ["Acadia"],
+    hasStates: false,
+    validDateRange: { startYear: 1604, endYear: 1713 },
+  },
+
   { stdName: "Mexico", matches: ["Mexico"], hasStates: true },
 
   // Central America
