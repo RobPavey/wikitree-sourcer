@@ -106,6 +106,6 @@ function onEnabledHandler(extensionInfo) {
 }
 
 chrome.runtime.onMessage.addListener(messageHandler);
-chrome.runtime.onInstalled.addListener(onInstalledHandler);
-chrome.management.onEnabled.addListener(onEnabledHandler);
+//chrome.runtime.onInstalled.addListener(onInstalledHandler);
+//chrome.management.onEnabled.addListener(onEnabledHandler);
 setupContextMenu();

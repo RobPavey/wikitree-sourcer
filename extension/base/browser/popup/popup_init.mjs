@@ -181,8 +181,10 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             if (timeWaited > 1) {
               let timeWaitedString = timeWaited.toFixed(2) + " seconds";
               displayBusyMessage(
-                "WikiTree Sourcer is waiting for the page to respond...\nTab still not responding after " +
-                  timeWaitedString
+                "WikiTree Sourcer is waiting for the Sourcer content script on this page to respond... it is still not responding after " +
+                  timeWaitedString +
+                  ".\n\nThis can happen if you have just installed, updated or enabled Sourcer and this page was open before that." +
+                  "\n\nIn that case please reload this page."
               );
             }
             popupState.progress = progressState.sitePopupRetryExtractTimeout;
@@ -196,12 +198,23 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             // the retry in progress will continue the work
           }
         } else {
-          let message = "The content script did not respond. Cannot initialize the WikiTree Sourcer menu";
+          let message = "The Sourcer content script did not respond. Cannot initialize the WikiTree Sourcer menu.";
 
           if (chrome.runtime.lastError) {
             console.log("popup_init: setupMenuBasedOnContent, extract failed with error after all retries: ");
             console.log(chrome.runtime.lastError);
-            message += "\nError:\n" + chrome.runtime.lastError.message;
+            let errorMessage = chrome.runtime.lastError.message;
+            if (errorMessage) {
+              message += "\n\nThe error was:\n" + '"' + errorMessage + '"';
+              if (errorMessage.startsWith("Could not establish connection")) {
+                message += "\n\nTry reloading the page and trying the Sourcer menu again.";
+                message +=
+                  "\n\nThis can happen if Sourcer was installed, updated or enabled while this page was already open.";
+              }
+            }
+          } else {
+            message += "\nTry reloading the page and trying the Sourcer menu again.";
+            message += "\nThis can happen when Sourcer is first installed, updated or enabled.";
           }
 
           popupState.progress = progressState.sitePopupDisplayError;
