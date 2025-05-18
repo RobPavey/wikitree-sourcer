@@ -95,6 +95,8 @@ function setupDefaultPopupMenuWhenNoResponseFromContent() {
   message +=
     "\n\nThe extension appears to have permissions for this page but the page type could not be identified and the content script is not responding.";
   message += "\n\nPlease check that you are logged into this site (if required) and on a record page and try again.";
+  message +=
+    "\n\nIf it still doesn't work try reloading the page. This can happen if this page was open when the extension was installed, updated or enabled.";
 
   let menu = beginMainMenu();
   addItalicMessageMenuItem(menu, message);
