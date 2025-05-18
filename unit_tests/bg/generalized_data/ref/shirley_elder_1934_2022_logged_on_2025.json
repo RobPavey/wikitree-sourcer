@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "26 April 2022"
+  },
+  "eventPlace": {
+    "placeString": "2099 Fullerton Rd, Rowland Heights, California 91748, United States",
+    "streetAddress": "Queen of Heaven Cemetery"
+  },
+  "name": {
+    "name": "Shirley Ann Elder",
+    "lastName": "Elder",
+    "forenames": "Shirley Ann"
+  },
+  "lastNameAtDeath": "Elder",
+  "birthDate": {
+    "dateString": "29 December 1934"
+  },
+  "deathDate": {
+    "dateString": "26 April 2022"
+  },
+  "hasValidData": true
+}

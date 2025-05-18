@@ -337,6 +337,48 @@ function extractData(document, url) {
     }
   }
 
+  if (!result.cemeteryName) {
+    // may be new 2025 format
+    let otherInfoWrapper = document.querySelector("[class^=RecordContentWrapper_Wrapper] [class^=OtherInfo_Wrapper]");
+
+    if (otherInfoWrapper) {
+      let firstSection = otherInfoWrapper.querySelector("[class^=OtherInfo_Section]");
+      if (firstSection) {
+        let cemeteryNameHeader = firstSection.querySelector("a> h3");
+        if (cemeteryNameHeader) {
+          let cemeteryName = cemeteryNameHeader.textContent.trim();
+          if (cemeteryName) {
+            result.cemeteryName = cemeteryName;
+
+            let addressLines = firstSection.querySelectorAll("div[class^=OtherInfo_addressLine");
+            let cemeteryFullAddress = "";
+            for (let addressLine of addressLines) {
+              let lineText = addressLine.textContent.trim();
+              if (lineText) {
+                if (cemeteryFullAddress && !cemeteryFullAddress.endsWith(", ")) {
+                  cemeteryFullAddress += ", ";
+                }
+                cemeteryFullAddress += lineText;
+              }
+            }
+            if (cemeteryFullAddress) {
+              result.cemeteryFullAddress = cemeteryFullAddress;
+            }
+          }
+        }
+      }
+
+      if (!result.hasImage) {
+        let imageWrapper = document.querySelector(
+          "[class^=RecordContentWrapper_Wrapper] [class^=Images_Wrapper__KAbhz]"
+        );
+        if (imageWrapper) {
+          result.hasImage = true;
+        }
+      }
+    }
+  }
+
   if (result.fullName && result.cemeteryName) {
     result.success = true;
   }

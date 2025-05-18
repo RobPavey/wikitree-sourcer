@@ -80,6 +80,14 @@ const regressionData = [
     url: "https://billiongraves.com/supporting-record/Roderick-McLennan/104134264",
   },
   {
+    caseName: "shirley_elder_1934_2008_no_image_logged_on_2025",
+    url: "https://billiongraves.com/grave/Shirley-Ann-Elder/117976750",
+  },
+  {
+    caseName: "shirley_elder_1934_2022_logged_on_2025",
+    url: "https://billiongraves.com/grave/Shirley-Ann-Elder/66540638",
+  },
+  {
     caseName: "thomas_moffat_29_october_new_style",
     url: "https://billiongraves.com/grave/Thomas-Moffat/22067921",
   },

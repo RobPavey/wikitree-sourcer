@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "bg",
+  "sourceType": "record",
+  "recordType": "Memorial",
+  "eventDate": {
+    "dateString": "2008"
+  },
+  "eventPlace": {
+    "placeString": "Farm-to-Market Road 677, Saint Jo, Texas, United States",
+    "streetAddress": "Boggess Cemetery"
+  },
+  "name": {
+    "name": "Shirley Ann Elder",
+    "lastName": "Elder",
+    "forenames": "Shirley Ann"
+  },
+  "lastNameAtDeath": "Elder",
+  "birthDate": {
+    "dateString": "1934"
+  },
+  "deathDate": {
+    "dateString": "2008"
+  },
+  "hasValidData": true
+}

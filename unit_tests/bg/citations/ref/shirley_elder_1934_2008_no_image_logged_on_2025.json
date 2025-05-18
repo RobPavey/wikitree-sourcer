@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nBoggess Cemetery, Farm-to-Market Road 677, Saint Jo, Texas, United States<br/>\n[https://billiongraves.com/grave/Shirley-Ann-Elder/117976750 BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Shirley Ann Elder (1934-2008).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Shirley was mentioned on a memorial at Boggess Cemetery, Farm-to-Market Road 677, Saint Jo, Texas, United States, with a death date of 2008.<ref>\n'''Memorial''':\n\"Billion Graves\"<br/>\nBoggess Cemetery, Farm-to-Market Road 677, Saint Jo, Texas, United States<br/>\n[https://billiongraves.com/grave/Shirley-Ann-Elder/117976750 BillionGraves memorial] (accessed 6 May 2021)<br/>\nMemorial page for Shirley Ann Elder (1934-2008).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Memorial''': \"Billion Graves\"<br/>Boggess Cemetery, Farm-to-Market Road 677, Saint Jo, Texas, United States<br/>[https://billiongraves.com/grave/Shirley-Ann-Elder/117976750 BillionGraves memorial] (accessed 6 May 2021)<br/>Memorial page for Shirley Ann Elder (1934-2008).",
+    "type": "source"
+  }
+}
