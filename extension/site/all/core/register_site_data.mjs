@@ -36,10 +36,11 @@ async function registerSiteData() {
     return;
   }
   for (const siteName of siteNames) {
-    const pathName = "../../" + siteName + "/core/" + siteName + "_site_data.mjs";
+    const pathName = "site/" + siteName + "/core/" + siteName + "_site_data.mjs";
     try {
-      // Note: this gets a validation waring for Firefox but is not a security risk
-      let module = await import(pathName);
+      // Note: Using chrome.runtime.getURL is considered "sanitizing" the pathName
+      // so it avoids a validation warning for Firefox
+      let module = await import(chrome.runtime.getURL(pathName));
       if (module) {
         module.register();
       }

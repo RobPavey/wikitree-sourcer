@@ -112,17 +112,17 @@ async function openExceptionPageForContentScript(message, input, error, requestR
 async function loadExtractDataModule(modulePath) {
   //console.log('WikiTree Sourcer: loadExtractDataModule. relative path is: ', modulePath);
   if (!isLoadedExtractDataModuleReady && !isLoadedExtractDataModuleLoading) {
-    const src = chrome.runtime.getURL(modulePath);
     try {
-      //console.log('WikiTree Sourcer: loadExtractDataModule. About to import. src is: ', src);
+      //console.log('WikiTree Sourcer: loadExtractDataModule. About to import. modulePath is: ', modulePath);
       isLoadedExtractDataModuleLoading = true;
-      // Note: this gets a validation waring for Firefox but is not a security risk
-      loadedExtractDataModule = await import(src);
+      // Note: Using chrome.runtime.getURL is considered "sanitizing" the pathName
+      // so it avoids a validation warning for Firefox
+      loadedExtractDataModule = await import(chrome.runtime.getURL(modulePath));
       isLoadedExtractDataModuleReady = true;
       isLoadedExtractDataModuleLoading = false;
-      //console.log('WikiTree Sourcer: loadExtractDataModule. Loaded. src is: ', src);
+      //console.log('WikiTree Sourcer: loadExtractDataModule. Loaded. modulePath is: ', modulePath);
     } catch (e) {
-      console.log("WikiTree Sourcer: error in loadExtractDataModule. Path is: " + src + ", exception is:");
+      console.log("WikiTree Sourcer: error in loadExtractDataModule. Path is: " + modulePath + ", exception is:");
       console.log(e);
 
       // This can happen in the case of a FreeCen search for example, we are in the middle of loading

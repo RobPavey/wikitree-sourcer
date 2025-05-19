@@ -32,9 +32,10 @@ import { siteNames } from "../core/site_names.mjs";
 
 async function importOptions() {
   for (const siteName of siteNames) {
-    const pathName = "/site/" + siteName + "/browser/" + siteName + "_popup_search.mjs";
-    // Note: this gets a validation waring for Firefox but is not a security risk
-    let module = await import(pathName);
+    const pathName = "site/" + siteName + "/browser/" + siteName + "_popup_search.mjs";
+    // Note: Using chrome.runtime.getURL is considered "sanitizing" the pathName
+    // so it avoids a validation warning for Firefox
+    let module = await import(chrome.runtime.getURL(pathName));
   }
 }
 

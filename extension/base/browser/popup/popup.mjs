@@ -278,18 +278,19 @@ async function loadPopupModuleForSupportedSite(popupModulePath) {
   //console.log('WikiTree Sourcer: loadPopupModuleForSupportedSite. popupActiveTab is:');
   //console.log(popupActiveTab);
 
-  const src = chrome.runtime.getURL(popupModulePath);
   try {
-    //console.log('WikiTree Sourcer: loadPopupModuleForSupportedSite. importing: ', src);
+    //console.log('WikiTree Sourcer: loadPopupModuleForSupportedSite. importing: ', popupModulePath);
     popupState.progress = progressState.defaultPopupLoadingSiteModule;
-    let loadedPopupModule = await import(src);
+    // Note: Using chrome.runtime.getURL is considered "sanitizing" the pathName
+    // so it avoids a validation warning for Firefox
+    let loadedPopupModule = await import(chrome.runtime.getURL(popupModulePath));
     if (!loadedPopupModule) {
       console.log("WikiTree Sourcer: loadPopupModuleForSupportedSite. failed to import");
     }
   } catch (e) {
     popupState.progress = progressState.defaultPopupException;
 
-    console.log("WikiTree Sourcer: error in loadPopupModuleForSupportedSite. Path is: ", src);
+    console.log("WikiTree Sourcer: error in loadPopupModuleForSupportedSite. Path is: ", popupModulePath);
     console.log(e);
 
     let message = "Error when attempting a dynamic import of the popup module in a the default popup.\n";
