@@ -84,4 +84,6 @@ This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any mo
 
 ### Add some lines under "host_permissions"
 
-To be honest I forget why this is needed and whether it is needed on all three platforms (Chrome, Safari, Firefox). I think it is related to the code that reloads the content scripts when the extension is installed or re-enabled. This code is only needed on Chrome since the other platforms do it automatically. But there may be a reason why adding the sites here is needed on the other platforms to.
+This is only required for Chrome and Firefox. Safari has a slightly different security model. This is required in order to be able to get the URL for a tab on a supported page. More info at: https://developer.chrome.com/docs/extensions/develop/concepts/declare-permissions and https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/host_permissions
+
+This list is kept in alphabetically order (by domain name).
