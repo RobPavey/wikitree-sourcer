@@ -48,12 +48,12 @@ function shouldAddSearchTerm(collection, termName, defaultResult, options) {
     if (collection.sites.fs.searchTerms.hasOwnProperty(termName)) {
       result = collection.sites.fs.searchTerms.termName;
     }
-  }
-
-  if (options) {
-    const optionName = "search_fs_" + termName + "SearchTerm";
-    if (options.hasOwnProperty(optionName)) {
-      result = options[optionName];
+  } else {
+    if (options) {
+      const optionName = "search_fs_" + termName + "SearchTerm";
+      if (options.hasOwnProperty(optionName)) {
+        result = options[optionName];
+      }
     }
   }
 
