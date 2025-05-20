@@ -96,6 +96,14 @@ const searchOptionsGroup = {
       ],
       defaultValue: "auto",
     },
+    {
+      optionName: "genderSearchTerm",
+      type: "checkbox",
+      label:
+        "When not searching a specific collection should the sex be specified (can exclude results with no gender specified)",
+      defaultValue: false,
+      unitTestValue: true,
+    },
   ],
 };
 

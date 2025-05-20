@@ -41,12 +41,19 @@ function adaptCountryForFamilySearch(country) {
   return country;
 }
 
-function shouldAddSearchTerm(collection, termName, defaultResult) {
+function shouldAddSearchTerm(collection, termName, defaultResult, options) {
   let result = defaultResult;
 
   if (collection && collection.sites.fs.hasOwnProperty("searchTerms")) {
     if (collection.sites.fs.searchTerms.hasOwnProperty(termName)) {
       result = collection.sites.fs.searchTerms.termName;
+    }
+  }
+
+  if (options) {
+    const optionName = "search_fs_" + termName + "SearchTerm";
+    if (options.hasOwnProperty(optionName)) {
+      result = options[optionName];
     }
   }
 
@@ -201,7 +208,7 @@ function buildSearchUrl(buildUrlInput) {
 
     builder = new FsUriBuilder(searchType, fsCollectionId);
 
-    if (gd.inferPersonGender() && shouldAddSearchTerm(collection, "gender", true)) {
+    if (gd.inferPersonGender() && shouldAddSearchTerm(collection, "gender", true, options)) {
       builder.addGender(gd.inferPersonGender());
     }
 
@@ -224,7 +231,7 @@ function buildSearchUrl(buildUrlInput) {
       birthDateQualifier = dateQualifiers.NONE;
     }
 
-    if (shouldAddSearchTerm(collection, "birth", true)) {
+    if (shouldAddSearchTerm(collection, "birth", true, options)) {
       let birthYearRangeRange = getDateRange(
         gd.inferBirthYear(),
         options.search_fs_birthYearExactness,
@@ -233,7 +240,7 @@ function buildSearchUrl(buildUrlInput) {
       );
       builder.addBirth(birthYearRangeRange, gd.inferBirthPlace());
     }
-    if (shouldAddSearchTerm(collection, "death", true)) {
+    if (shouldAddSearchTerm(collection, "death", true, options)) {
       let deathYearRangeRange = getDateRange(
         gd.inferDeathYear(),
         options.search_fs_deathYearExactness,
@@ -243,7 +250,7 @@ function buildSearchUrl(buildUrlInput) {
       builder.addDeath(deathYearRangeRange, gd.inferDeathPlace());
     }
 
-    if (shouldAddSearchTerm(collection, "parents", true)) {
+    if (shouldAddSearchTerm(collection, "parents", true, options)) {
       if (gd.parents && gd.parents.father && gd.parents.father.name) {
         // for now we don't include the father unless it is a specified parameter
         if ((parameters && parameters.father) || sameCollection) {
@@ -261,7 +268,7 @@ function buildSearchUrl(buildUrlInput) {
       }
     }
 
-    if (shouldAddSearchTerm(collection, "spouse", true)) {
+    if (shouldAddSearchTerm(collection, "spouse", true, options)) {
       if (gd.spouses) {
         for (let spouseIndex = 0; spouseIndex < gd.spouses.length; ++spouseIndex) {
           let spouse = gd.spouses[spouseIndex];
