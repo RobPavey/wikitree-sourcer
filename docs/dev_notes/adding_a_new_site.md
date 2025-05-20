@@ -82,8 +82,3 @@ This is the obvious one. This is what causes the extensions site-specific conten
 
 This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any module loaded dynamically by a content script has to be specified in this section
 
-### Add some lines under "host_permissions"
-
-This is only required for Chrome and Firefox. Safari has a slightly different security model. This is required in order to be able to get the URL for a tab on a supported page. More info at: https://developer.chrome.com/docs/extensions/develop/concepts/declare-permissions and https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/host_permissions
-
-This list is kept in alphabetically order (by domain name).
