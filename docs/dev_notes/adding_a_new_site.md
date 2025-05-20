@@ -72,7 +72,7 @@ This is not done by the create_new_site script.
 
 In order for the popup to work on your site you need to add the site to the manifest files. Because there are three different manifest files (for Chrome, Firefox and Safari) the same changes need to made to each one.
 
-There are actually three places in the manifest file that have to be changed to add a site.
+There are actually two places in the manifest file that have to be changed to add a site.
 
 ### Add a section under "content_scripts"
 
