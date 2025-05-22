@@ -72,7 +72,7 @@ This is not done by the create_new_site script.
 
 In order for the popup to work on your site you need to add the site to the manifest files. Because there are three different manifest files (for Chrome, Firefox and Safari) the same changes need to made to each one.
 
-There are actually three places in the manifest file that have to be changed to add a site.
+There are actually two places in the manifest file that have to be changed to add a site.
 
 ### Add a section under "content_scripts"
 
@@ -82,8 +82,3 @@ This is the obvious one. This is what causes the extensions site-specific conten
 
 This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any module loaded dynamically by a content script has to be specified in this section
 
-### Add some lines under "host_permissions"
-
-This is only required for Chrome and Firefox. Safari has a slightly different security model. This is required in order to be able to get the URL for a tab on a supported page. More info at: https://developer.chrome.com/docs/extensions/develop/concepts/declare-permissions and https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/host_permissions
-
-This list is kept in alphabetically order (by domain name).
