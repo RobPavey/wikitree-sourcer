@@ -590,7 +590,7 @@ const scotpRecordTypes = {
     },
     searchStdText: "&dl_cat=prison&record_type=prison_records",
     searchUrl: "prison-registers/prison-records",
-    sourcerRecordType: RT.CriminalRegister,
+    sourcerRecordType: RT.Imprisonment,
   },
 };
 

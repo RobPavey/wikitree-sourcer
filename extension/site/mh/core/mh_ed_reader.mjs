@@ -189,7 +189,11 @@ const recordTypeMatches = [
   },
   {
     recordType: RT.CriminalRegister,
-    requiredFields: [["offence", "conviction"], ["imprisonment"]],
+    requiredFields: [["offence", "conviction"]],
+  },
+  {
+    recordType: RT.Imprisonment,
+    requiredFields: [["imprisonment"]],
   },
   {
     recordType: RT.Immigration,
@@ -221,7 +225,8 @@ const typeDataEventLabels = {
   Burial: ["burial"],
   Census: ["residence"],
   ConvictTransportation: ["conviction", "transit"],
-  CriminalRegister: ["conviction", "imprisonment"],
+  CriminalRegister: ["conviction"],
+  Imprisonment: ["imprisonment"],
   Death: ["death"],
   DeathOrBurial: ["death / burial", "burial", "death"],
   Divorce: ["divorce"],

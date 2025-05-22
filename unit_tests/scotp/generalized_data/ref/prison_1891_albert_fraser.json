@@ -1,7 +1,7 @@
 {
   "sourceOfData": "scotp",
   "sourceType": "record",
-  "recordType": "CriminalRegister",
+  "recordType": "Imprisonment",
   "name": {
     "lastName": "Fraser",
     "forenames": "Albert Attwood"

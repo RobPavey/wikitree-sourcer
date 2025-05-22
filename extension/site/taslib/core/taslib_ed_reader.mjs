@@ -226,7 +226,7 @@ const eventTypes = [
   },
   {
     taslibRecordType: "Prisoners",
-    recordType: RT.CriminalRegister,
+    recordType: RT.Imprisonment,
   },
   {
     taslibRecordType: "Wills",

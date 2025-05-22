@@ -4130,6 +4130,10 @@ class GeneralizedData {
         defaultTitle: "Criminal Register",
       },
       {
+        type: RT.Imprisonment,
+        defaultTitle: "Imprisonment",
+      },
+      {
         type: RT.FreemasonMembership,
         defaultTitle: "Freemason Membership",
       },
