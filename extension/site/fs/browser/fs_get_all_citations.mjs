@@ -65,6 +65,7 @@ async function getSourcerCitations(runDate, result, type, sessionId, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
+    result.success = true;
     return;
   }
 

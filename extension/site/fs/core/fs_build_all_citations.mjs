@@ -158,6 +158,7 @@ function buildFsPlainCitations(result, type, options) {
   if (result.sources.length == 0) {
     result.citationsString = "";
     result.citationsStringType = type;
+    result.success = true;
     return;
   }
 
