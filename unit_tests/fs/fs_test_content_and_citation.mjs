@@ -219,6 +219,15 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:QVJ8-SFH9?from=lynx1UIV8&treeref=L8PL-J4M",
   },
   {
+    // has saved page also. Saved May 2025
+    caseName: "sa_death_1887_jacobus_moller",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QG56-M6K9?lang=en",
+  },
+  {
+    caseName: "sa_probate_1925_johanna_faul",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QLKL-3F9B?lang=en",
+  },
+  {
     // this is a "retired" source
     caseName: "scotland_baptism_1786_barbara_cooper",
     url: "https://www.familysearch.org/ark:/61903/1:1:XTTZ-SQT",
@@ -264,10 +273,6 @@ const regressionData = [
   {
     caseName: "scotland_marriage_1764_archbald_saunders",
     url: "https://www.familysearch.org/ark:/61903/1:1:XTLR-ZX5?count=20&f.recordType=1&q.givenName=archibald&q.recordCountry=Scotland&q.recordSubcountry=Scotland%2CDumfriesshire&q.surname=saunders",
-  },
-  {
-    caseName: "sa_probate_1925_johanna_faul",
-    url: "https://www.familysearch.org/ark:/61903/1:1:QLKL-3F9B?lang=en",
   },
   {
     caseName: "teresa_fitchie_death_2002",

@@ -1,0 +1,50 @@
+{
+  "sourceType": "record",
+  "recordType": "Death",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Jacobus Petrus Moller",
+    "lastName": "Moller",
+    "forenames": "Jacobus Petrus"
+  },
+  "birthDate": {
+    "dateString": "1887",
+    "yearString": "1887"
+  },
+  "birthPlace": {
+    "placeString": "Cape Province"
+  },
+  "deathDate": {
+    "dateString": "28 Jun 1950",
+    "yearString": "1950"
+  },
+  "eventDate": {
+    "dateString": "28 Jun 1950",
+    "yearString": "1950"
+  },
+  "eventPlace": {
+    "placeString": "Paarl, Cape Province, South Africa"
+  },
+  "ageAtDeath": "63",
+  "spouses": [
+    {
+      "name": {
+        "name": "Rachel Elizabeth Marais Moller",
+        "lastName": "Marais Moller",
+        "forenames": "Rachel Elizabeth"
+      }
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QG56-M6K9}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-C91S-T9S5-T}}"
+  ],
+  "collectionData": {
+    "id": "2517051",
+    "collectionTitle": "South Africa, Cape, Probate Records of the Master of the High Court, 1822-1990"
+  },
+  "hasValidData": true
+}

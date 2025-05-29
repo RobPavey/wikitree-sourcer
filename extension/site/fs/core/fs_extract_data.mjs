@@ -3662,7 +3662,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
             let otherPerson = findPersonById(dataObj, otherPersonId);
             if (otherPerson) {
               let relationType = relationship.type;
-              if (relationType.endsWith("/ParentChild")) {
+              if (relationType.endsWith("/ParentChild") && relationship.person1.resourceId == otherPersonId) {
                 // other person is either father or mother
                 addParentFromPerson(otherPerson, result);
               } else if (relationType.endsWith("/Couple")) {
@@ -3707,7 +3707,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
 
             if (otherPersonId) {
               let relationType = relationship.type;
-              if (relationType.endsWith("/ParentChild")) {
+              if (relationType.endsWith("/ParentChild") && relationship.person1.resourceId == otherPersonId) {
                 // other person is either the spouse's father or mother
                 let otherPerson = findPersonById(dataObj, otherPersonId);
                 if (otherPerson) {
