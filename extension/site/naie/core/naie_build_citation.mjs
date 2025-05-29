@@ -61,7 +61,11 @@ function buildCoreCitation(ed, gd, builder) {
   if (ed.imageLink) {
     let link = ed.imageLink;
     if (!link.startsWith("http")) {
-      link = "http://nationalarchives.ie" + link;
+      if (ed.isPost2025Format) {
+        link = "https://nationalarchives.ie" + link;
+      } else {
+        link = "http://www.census.nationalarchives.ie" + link;
+      }
     }
     builder.imageLink = "[" + link + " National Archives of Ireland Image]";
   }

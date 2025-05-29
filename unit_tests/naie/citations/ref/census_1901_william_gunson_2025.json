@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''1901 Census''':\n\"1901 Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai003899738 National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Gunson&firstname__icontains=William&county=Tipperary&id=8161089 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nWilliam Gunson (45), married, Farmer, head of household at 15 Ballinteenoe, Greenhall, Tipperary, Ireland. Born in County Tipperary, Ireland.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1901 census William (age 45), Farmer, was the married head of household at 15 Ballinteenoe, Greenhall, Tipperary, Ireland.<ref>\n'''1901 Census''':\n\"1901 Census of Ireland\"<br/>\nThe National Archives of Ireland<br/>\n[https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai003899738 National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Gunson&firstname__icontains=William&county=Tipperary&id=8161089 National Archives of Ireland Record] (accessed 6 May 2021)<br/>\nWilliam Gunson (45), married, Farmer, head of household at 15 Ballinteenoe, Greenhall, Tipperary, Ireland. Born in County Tipperary, Ireland.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1901 Census''': \"1901 Census of Ireland\"<br/>The National Archives of Ireland<br/>[https://nationalarchives.ie/collections/search-the-census/view-pdf/?doc=nai003899738 National Archives of Ireland Image] - [https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Gunson&firstname__icontains=William&county=Tipperary&id=8161089 National Archives of Ireland Record] (accessed 6 May 2021)<br/>William Gunson (45), married, Farmer, head of household at 15 Ballinteenoe, Greenhall, Tipperary, Ireland. Born in County Tipperary, Ireland.",
+    "type": "source"
+  }
+}

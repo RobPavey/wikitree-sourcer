@@ -1,0 +1,107 @@
+{
+  "sourceOfData": "naie",
+  "sourceType": "record",
+  "recordType": "Census",
+  "eventDate": {
+    "yearString": "1901"
+  },
+  "eventPlace": {
+    "placeString": "15 Ballinteenoe, Greenhall, Tipperary, Ireland"
+  },
+  "name": {
+    "lastName": "Gunson",
+    "forenames": "William"
+  },
+  "ageAtEvent": "45",
+  "birthPlace": {
+    "placeString": "County Tipperary, Ireland"
+  },
+  "relationshipToHead": "head",
+  "maritalStatus": "married",
+  "personGender": "male",
+  "occupation": "Farmer",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "birthPlace",
+    "occupation",
+    "gender",
+    "relationship",
+    "maritalStatus"
+  ],
+  "householdArray": [
+    {
+      "name": "William Gunson",
+      "birthPlace": "County Tipperary",
+      "age": "45",
+      "occupation": "Farmer",
+      "gender": "male",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "isSelected": true
+    },
+    {
+      "name": "Catherine Gunson",
+      "birthPlace": "County Limerick",
+      "age": "42",
+      "gender": "female",
+      "relationship": "wife",
+      "maritalStatus": "married"
+    },
+    {
+      "name": "Susan Gunson",
+      "birthPlace": "County Tipperary",
+      "age": "13",
+      "occupation": "Scholar",
+      "gender": "female",
+      "relationship": "daughter",
+      "maritalStatus": ""
+    },
+    {
+      "name": "John Gunson",
+      "birthPlace": "County Tipperary",
+      "age": "11",
+      "occupation": "Scholar",
+      "gender": "male",
+      "relationship": "son",
+      "maritalStatus": ""
+    },
+    {
+      "name": "Clerenda Gunson",
+      "birthPlace": "County Tipperary",
+      "age": "9",
+      "occupation": "Scholar",
+      "gender": "female",
+      "relationship": "daughter",
+      "maritalStatus": ""
+    },
+    {
+      "name": "Ann Gunson",
+      "birthPlace": "County Tipperary",
+      "age": "6",
+      "occupation": "Scholar",
+      "gender": "female",
+      "relationship": "daughter",
+      "maritalStatus": ""
+    },
+    {
+      "name": "Robert Gunson",
+      "birthPlace": "County Tipperary",
+      "age": "4",
+      "occupation": "Scholar",
+      "gender": "male",
+      "relationship": "son",
+      "maritalStatus": ""
+    }
+  ],
+  "spouses": [
+    {
+      "name": {
+        "name": "Catherine Gunson"
+      },
+      "marriageDate": {},
+      "marriagePlace": {}
+    }
+  ],
+  "hasValidData": true
+}

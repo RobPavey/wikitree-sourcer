@@ -270,6 +270,9 @@ function extractData(document, url) {
   if (formADiv) {
     // just use the first link for now
     let linkNode = formADiv.querySelector("a#form-a-front");
+    if (!linkNode) {
+      linkNode = formADiv.querySelector("a.form-a");
+    }
     if (linkNode) {
       let href = linkNode.getAttribute("href");
       if (href) {

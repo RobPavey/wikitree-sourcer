@@ -94,6 +94,10 @@ const regressionData = [
     url: "http://www.census.nationalarchives.ie/pages/1901/Clare/Ballynacally/Inishmore_on_Deen_Island/1075611/",
   },
   {
+    caseName: "census_1901_william_gunson_2025",
+    url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Gunson&firstname__icontains=William&county=Tipperary&id=8161089",
+  },
+  {
     caseName: "census_1911_mountjoy_edward_fuller_2025",
     url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1911&surname__icontains=Fuller&firstname__icontains=Edward&sex=M&age=53&county=Dublin&id=121442",
   },
