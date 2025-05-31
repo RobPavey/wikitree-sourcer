@@ -56,6 +56,7 @@ import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 
 import { generalizeData } from "../core/wikitree_generalize_data.mjs";
 import { wtApiGetRelatives, wtApiGetPeople, wtApiGetBio } from "./wikitree_api.mjs";
+import { compareCensusTables } from "../core/wikitree_bio_tools.mjs";
 
 import { GeneralizedData, dateQualifiers, DateObj } from "/base/core/generalize_data_utils.mjs";
 
@@ -2101,6 +2102,12 @@ async function addShowAdditionalFieldsMenuItem(menu, tabId) {
   });
 }
 
+async function addImproveCensusTablesMenuItem(menu, data, tabId, backFunction) {
+  addMenuItem(menu, "Improve census tables...", function (element) {
+    setupImproveCensusTablesSubMenu(data, tabId, backFunction);
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Sub menus
 ////////////////////////////////////////////////////////////////////////////////
@@ -2249,6 +2256,117 @@ async function setupMergeEditSubMenu(data, tabId, backFunction) {
   endMainMenu(menu);
 }
 
+async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biography, jsonData) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  let toHereBackFunction = function () {
+    setupMergeEditSubMenu(data, tabId, backFunction);
+  };
+
+  let compareResult = compareCensusTables(data, biography, jsonData);
+  console.log("compareCensusTables returned:");
+  console.log(compareResult);
+
+  let message = "Improve census tables.";
+
+  if (jsonData.length == 1) {
+    let jsonRecord = jsonData[0];
+    if (jsonRecord.items) {
+      let items = jsonRecord.items;
+      message += "\nLength of items array is : " + items.length;
+
+      for (let item of items) {
+        message += "\nItem key is : " + item.key;
+
+        if (item.person) {
+          let spouses = item.person.Spouses;
+          if (spouses) {
+            for (let spouseId in spouses) {
+              let spouse = spouses[spouseId];
+              message += "\nSpouse " + spouseId + " Name is : " + spouse.Name;
+              message += "\nSpouse " + spouseId + " Gender is : " + spouse.Gender;
+
+              let spouseBio = spouse.bio;
+              if (spouseBio) {
+                message += "\nSpouse " + spouseId + " Bio length is : " + spouseBio.length;
+
+                let tableCount = spouseBio.match(/\{\|/g);
+                message += "\nSpouse " + spouseId + " Num tables is : " + tableCount.length;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  addItalicMessageMenuItem(menu, message);
+
+  endMainMenu(menu);
+}
+
+async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  let toHereBackFunction = function () {
+    setupMergeEditSubMenu(data, tabId, backFunction);
+  };
+
+  let biography = "";
+  // send a message to content script to get the biography
+  try {
+    let response = await chrome.tabs.sendMessage(tabId, { type: "getBiography" });
+
+    if (chrome.runtime.lastError) {
+      displayMessageWithIcon("warning", "Failed to get biography from profile.");
+    } else if (!response) {
+      displayMessageWithIcon("warning", "Failed to get biography from profile.");
+    } else if (!response.success) {
+      displayMessageWithIcon("warning", "Failed to get biography from profile.");
+    } else if (response.success) {
+      biography = response.biography;
+    }
+  } catch (error) {
+    console.log("caught error from sendMessage:");
+    console.log(error);
+    displayMessageWithIcon("warning", "Failed to get biography from profile.");
+  }
+
+  let improvePossible = true;
+  if (!biography) {
+    let message = "No biography found for this profile.";
+    addItalicMessageMenuItem(menu, message);
+    improvePossible = false;
+  } else if (!biography.includes("{|")) {
+    let message = "No tables in biography for this profile.";
+    addItalicMessageMenuItem(menu, message);
+    improvePossible = false;
+  }
+
+  if (improvePossible) {
+    let message = "Requesting data for related profiles...";
+    addItalicMessageMenuItem(menu, message);
+    const fields =
+      "Id,Gender,Name,FirstName,MiddleName,LastNameAtBirth,LastNameCurrent,RealName,Nicknames,BirthDate,DeathDate,Bio";
+    wtApiGetRelatives(data.extractedData.wikiId, fields, true, true, true, true).then(
+      function handleResolve(jsonData) {
+        if (jsonData && jsonData.length > 0) {
+          setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biography, jsonData);
+        }
+      },
+      function handleReject(reason) {
+        // nothing to do here
+      }
+    );
+  }
+
+  endMainMenu(menu);
+}
+
 async function reportLoggedOut() {
   let fragment = document.createDocumentFragment();
 
@@ -2357,6 +2475,9 @@ async function setupWikiTreePopupMenu(extractedData, tabId) {
     addMenuDivider(menu);
     await addMergeEditMenuItem(menu, data, tabId, backFunction);
     addSavePersonDataMenuItem(menu, data);
+  } else if (extractedData.pageType == "edit") {
+    addMenuDivider(menu);
+    await addImproveCensusTablesMenuItem(menu, data, tabId, backFunction);
   }
 
   addStandardMenuEnd(menu, data, backFunction);

@@ -764,6 +764,24 @@ function additionalMessageHandler(request, sender, sendResponse) {
     addAdditionalAddPersonFields();
     sendResponse({ success: true });
     return { wasHandled: true, returnValue: false };
+  } else if (request.type == "getBiography") {
+    let textArea = document.querySelector("#wpTextbox1");
+    if (textArea) {
+      let biography = textArea.textContent;
+      sendResponse({ success: true, biography: biography });
+    } else {
+      sendResponse({ success: false });
+    }
+    return { wasHandled: true, returnValue: false };
+  } else if (request.type == "setBiography") {
+    let textArea = document.querySelector("#wpTextbox1");
+    if (textArea) {
+      textArea.textContent = request.biography;
+      sendResponse({ success: true });
+    } else {
+      sendResponse({ success: false });
+    }
+    return { wasHandled: true, returnValue: false };
   }
 
   return { wasHandled: false };
