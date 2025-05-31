@@ -56,7 +56,7 @@ import { getLatestPersonData } from "/base/browser/popup/popup_person_data.mjs";
 
 import { generalizeData } from "../core/wikitree_generalize_data.mjs";
 import { wtApiGetRelatives, wtApiGetPeople, wtApiGetBio } from "./wikitree_api.mjs";
-import { compareCensusTables } from "../core/wikitree_bio_tools.mjs";
+import { compareCensusTables, updateBiography } from "../core/wikitree_bio_tools.mjs";
 
 import { GeneralizedData, dateQualifiers, DateObj } from "/base/core/generalize_data_utils.mjs";
 
@@ -1951,6 +1951,32 @@ async function doShowAdditionalFields(tabId) {
   }
 }
 
+async function doCensusTablesImprovements(data, tabId, compareResult, biography) {
+  let newBio = updateBiography(compareResult, biography);
+  if (!newBio) {
+    displayMessageWithIcon("warning", "Failed build a new biography.");
+    return;
+  }
+
+  try {
+    let response = await chrome.tabs.sendMessage(tabId, { type: "setBiography", biography: newBio });
+
+    if (chrome.runtime.lastError) {
+      displayMessageWithIcon("warning", "Failed to set biography in profile.");
+    } else if (!response) {
+      displayMessageWithIcon("warning", "Failed to set biography in profile.");
+    } else if (!response.success) {
+      displayMessageWithIcon("warning", "Failed to set biography in profile.");
+    } else if (response.success) {
+      displayMessageWithIconThenClosePopup("check", "Biography updated", "");
+    }
+  } catch (error) {
+    console.log("caught error from sendMessage:");
+    console.log(error);
+    displayMessageWithIcon("warning", "Failed to set biography in profile.");
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Add menu item functions
 ////////////////////////////////////////////////////////////////////////////////
@@ -2105,6 +2131,12 @@ async function addShowAdditionalFieldsMenuItem(menu, tabId) {
 async function addImproveCensusTablesMenuItem(menu, data, tabId, backFunction) {
   addMenuItem(menu, "Improve census tables...", function (element) {
     setupImproveCensusTablesSubMenu(data, tabId, backFunction);
+  });
+}
+
+async function addImproveAutoOnlyMenuItem(menu, data, tabId, compareResult, biography) {
+  addMenuItem(menu, "Do auto improvements only...", function (element) {
+    doCensusTablesImprovements(data, tabId, compareResult, biography);
   });
 }
 
@@ -2271,38 +2303,21 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
 
   let message = "Improve census tables.";
 
-  if (jsonData.length == 1) {
-    let jsonRecord = jsonData[0];
-    if (jsonRecord.items) {
-      let items = jsonRecord.items;
-      message += "\nLength of items array is : " + items.length;
-
-      for (let item of items) {
-        message += "\nItem key is : " + item.key;
-
-        if (item.person) {
-          let spouses = item.person.Spouses;
-          if (spouses) {
-            for (let spouseId in spouses) {
-              let spouse = spouses[spouseId];
-              message += "\nSpouse " + spouseId + " Name is : " + spouse.Name;
-              message += "\nSpouse " + spouseId + " Gender is : " + spouse.Gender;
-
-              let spouseBio = spouse.bio;
-              if (spouseBio) {
-                message += "\nSpouse " + spouseId + " Bio length is : " + spouseBio.length;
-
-                let tableCount = spouseBio.match(/\{\|/g);
-                message += "\nSpouse " + spouseId + " Num tables is : " + tableCount.length;
-              }
-            }
-          }
-        }
+  let diffs = undefined;
+  if (compareResult) {
+    if (compareResult.diffs) {
+      diffs = compareResult.diffs;
+      if (diffs.length) {
+        message += "\nNumber of diffs : " + diffs.length;
       }
     }
   }
 
   addItalicMessageMenuItem(menu, message);
+
+  if (diffs) {
+    addImproveAutoOnlyMenuItem(menu, data, tabId, compareResult, biography);
+  }
 
   endMainMenu(menu);
 }

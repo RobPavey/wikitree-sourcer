@@ -286,43 +286,37 @@ function censusTablesMatch(census, relativeCensus) {
     return false;
   }
 
-  if (
-    census.parsedRef.sourceReference &&
-    census.parsedRef.sourceReference == relativeCensus.parsedRef.sourceReference
-  ) {
-    return true;
+  let sourceReference = census.parsedRef.sourceReference;
+  let relSourceReference = relativeCensus.parsedRef.sourceReference;
+  if (sourceReference && sourceReference == relSourceReference) {
+    let householdTable = census.householdTable;
+    let relHouseholdTable = relativeCensus.householdTable;
+    if (householdTable && relHouseholdTable) {
+      let fields = householdTable.fields;
+      let relFields = relHouseholdTable.fields;
+      if (fields && relFields && fields.length == relFields.length) {
+        for (let i = 0; i < fields.length; i++) {
+          if (fields[i] != relFields[i]) {
+            console.log("censusTablesMatch: names of fields do not match");
+            return false;
+          }
+        }
+
+        return true;
+      }
+    }
   }
 
   return false;
 }
 
-function handleNewValueForBlankField(improvements, census, relative, relativeCensus, personIndex, field) {
-  let improvedHouseholdTable = census.improvedHouseholdTable;
-  let improvedPerson = improvedHouseholdTable.people[personIndex];
-  let relTable = relativeCensus.householdTable;
-  let relPerson = relTable.people[personIndex];
-
-  improvedPerson[field] = relPerson[field];
-
-  let improvement = {
-    census: census,
-    relative: relative,
-    relativeCensus: relativeCensus,
-    improvedPerson: improvedPerson,
-    personIndex: personIndex,
-    field: field,
-    value: relPerson[field],
-  };
-  improvements.auto.push(improvement);
-}
-
-function findExistingAutoImprovement(improvements, census, personIndex, field) {
-  for (let index = 0; index < improvements.auto.length; index++) {
-    let improvement = improvements.auto[index];
-    if (improvement.census.year == census.year) {
-      if (improvement.census.parsedRef.sourceReference == census.parsedRef.sourceReference) {
-        if (improvement.personIndex == personIndex) {
-          if (improvement.field == field) {
+function findExistingCensusFieldDiff(diffs, census, personIndex, field) {
+  for (let index = 0; index < diffs.length; index++) {
+    let diff = diffs[index];
+    if (diff.census.year == census.year) {
+      if (diff.census.parsedRef.sourceReference == census.parsedRef.sourceReference) {
+        if (diff.personIndex == personIndex) {
+          if (diff.field == field) {
             return index;
           }
         }
@@ -333,130 +327,65 @@ function findExistingAutoImprovement(improvements, census, personIndex, field) {
   return -1;
 }
 
-function findExistingConflictImprovement(improvements, census, personIndex, field) {
-  for (let index = 0; index < improvements.conflicts.length; index++) {
-    let improvement = improvements.conflicts[index];
-    if (improvement.census.year == census.year) {
-      if (improvement.census.parsedRef.sourceReference == census.parsedRef.sourceReference) {
-        if (improvement.personIndex == personIndex) {
-          if (improvement.field == field) {
-            return index;
-          }
-        }
-      }
-    }
-  }
+function addDiff(diffs, census, relative, relativeCensus, personIndex, field) {
+  let existingIndex = findExistingCensusFieldDiff(diffs, census, personIndex, field);
 
-  return -1;
-}
-
-function handleConflictForOriginallyBlankField(improvements, census, relative, relativeCensus, personIndex, field) {
-  // there should be an improvement recorded
-  let autoIndex = findExistingAutoImprovement(improvements, census, relative, relativeCensus, personIndex, field);
-  if (autoIndex == -1) {
-    console.log("handleConflictForOriginallyBlankField: could not find existing auto improvement");
-    return;
-  }
-
-  // get the auto improvement
-  let oldAutoImprovement = improvements.auto[autoIndex];
-
-  // remove this improvement from the auto array.
-  improvements.auto.splice(autoIndex, 1);
-
-  let improvedHouseholdTable = census.improvedHouseholdTable;
-  let improvedPerson = improvedHouseholdTable.people[personIndex];
-  let relTable = relativeCensus.householdTable;
-  let relPerson = relTable.people[personIndex];
-
-  let conflict = {
-    census: census,
-    relatives: [oldAutoImprovement.relative, relative],
-    relativeCensuses: [oldAutoImprovement.relativeCensus, relativeCensus],
-    improvedPerson: improvedPerson,
-    personIndex: personIndex,
-    field: field,
-    value: relPerson[(oldAutoImprovement.value, field)],
-  };
-  improvements.conflicts.push(conflict);
-}
-
-function handleConflictForOriginallyFilledField(improvements, census, relative, relativeCensus, personIndex, field) {
-  let improvedHouseholdTable = census.improvedHouseholdTable;
-  let improvedPerson = improvedHouseholdTable.people[personIndex];
-  let relTable = relativeCensus.householdTable;
-  let relPerson = relTable.people[personIndex];
-
-  // there should be an improvement recorded
-  let existingIndex = findExistingConflictImprovement(improvements, census, personIndex, field);
-  if (existingIndex != -1) {
-    let existingConflict = improvements.conflicts[existingIndex];
-    existingConflict.relatives.push(relative);
-    existingConflict.relativeCensuses.push(relativeCensus);
-    existingConflict.values.push(relPerson[field]);
-    return;
-  }
-
-  let conflict = {
-    census: census,
-    relatives: [relative],
-    relativeCensuses: [relativeCensus],
-    improvedPerson: improvedPerson,
-    personIndex: personIndex,
-    field: field,
-    values: [relPerson[field]],
-  };
-  improvements.conflicts.push(conflict);
-}
-
-function compareTableWithRelative(census, relativeCensus, relative, improvements) {
   let table = census.householdTable;
+  let person = table.people[personIndex];
   let relTable = relativeCensus.householdTable;
-  if (!(table && relTable)) {
-    console.log("compareTableWithRelative: missing householdTable");
-    return;
+  let relPerson = relTable.people[personIndex];
+
+  if (existingIndex == -1) {
+    let diff = {
+      census: census,
+      person: person,
+      personIndex: personIndex,
+      field: field,
+      relatives: [relative],
+      relativeCensuses: [relativeCensus],
+      values: [relPerson[field]],
+    };
+    diffs.push(diff);
+    return diff;
+  } else {
+    let diff = diffs[existingIndex];
+    diff.relatives.push(relative);
+    diff.relativeCensuses.push(relativeCensus);
+    diff.values.push(relPerson[field]);
+    return diff;
   }
+}
 
-  if (!table.fields || table.fields.length != relTable.fields.length) {
-    console.log("compareTableWithRelative: num fields differ");
-    return;
-  }
+function compareTableWithRelatives(census, relativesData, diffs) {
+  // we know that all the censuses have householdTables and the fields match at this point
+  let table = census.householdTable;
 
-  if (!table.people || table.people.length != relTable.people.length) {
-    console.log("compareTableWithRelative: num people differ");
-    return;
-  }
-
-  for (let i = 0; i < table.fields.length; i++) {
-    if (table.fields[i] != relTable.fields[i]) {
-      console.log("compareTableWithRelative: fields differ");
-      return;
-    }
-  }
-
-  // make a deep copy of houseHoldTable
-  let improvedHouseholdTable = JSON.parse(JSON.stringify(table));
-  census.improvedHouseholdTable = improvedHouseholdTable;
-
-  let fields = improvedHouseholdTable.fields;
+  let fields = table.fields;
   for (let personIndex = 0; personIndex < table.people.length; personIndex++) {
     let person = table.people[personIndex];
-    let improvedPerson = improvedHouseholdTable.people[personIndex];
-    let relPerson = relTable.people[personIndex];
     for (let field of fields) {
-      if (!improvedPerson[field] && relPerson[field]) {
-        console.log(
-          "compareTableWithRelative: found extra field value, field: " + field + ", value : " + relPerson[field]
-        );
+      for (let relativeData of relativesData) {
+        let relative = relativeData.relative;
+        let relativeCensus = relativeData.census;
+        let relTable = relativeCensus.householdTable;
+        let relPerson = relTable.people[personIndex];
 
-        handleNewValueForBlankField(improvements, census, relative, relativeCensus, personIndex, field);
-      } else if (improvedPerson[field] != relPerson[field]) {
-        // they differ, see if already improved
-        if (!person[field]) {
-          // it was originally blank
-          handleConflictForOriginallyBlankField(improvements, census, relative, relativeCensus, personIndex, field);
-        } else {
-          handleConflictForOriginallyFilledField(improvements, census, relative, relativeCensus, personIndex, field);
+        let value = person[field];
+        let relValue = relPerson[field];
+
+        if (value != relValue) {
+          let diff = addDiff(diffs, census, relative, relativeCensus, personIndex, field);
+
+          if (value) {
+            if (relValue) {
+              diff.hasDifferentValueForCell = true;
+            } else {
+              diff.relativeHasEmptyCellWeDont = true;
+            }
+          } else {
+            // relValue can't be empty string here or it would equal value
+            diff.hasNewValueForEmptyCell = true;
+          }
         }
       }
     }
@@ -464,24 +393,25 @@ function compareTableWithRelative(census, relativeCensus, relative, improvements
 }
 
 function doCompares(result) {
-  result.improvements = {
-    auto: [],
-    conflicts: [],
-  };
+  result.diffs = [];
   for (let census of result.parsedBio.censusTables) {
     let year = census.year;
     if (year) {
+      let relativesData = [];
       for (let relative of result.relatives) {
         if (relative.parsedBio) {
           for (let relativeCensus of relative.parsedBio.censusTables) {
             if (censusTablesMatch(census, relativeCensus)) {
               let relativeName = relative.firstName + " " + relative.lnab;
               console.log("Found match, relative is " + relativeName + ", year is " + census.year);
-
-              compareTableWithRelative(census, relativeCensus, relative, result.improvements);
+              relativesData.push({ relative: relative, census: relativeCensus });
             }
           }
         }
+      }
+
+      if (relativesData.length) {
+        compareTableWithRelatives(census, relativesData, result.diffs);
       }
     }
   }
@@ -502,4 +432,83 @@ function compareCensusTables(data, biography, jsonData) {
   return result;
 }
 
-export { parseBio, buildRelatives, compareCensusTables };
+function buildImprovedTableString(censusTable) {
+  // the improvements should already be in householdTable
+  let improvedHouseholdTable = censusTable.householdTable;
+  if (!improvedHouseholdTable) {
+    return;
+  }
+
+  let tableString = "{| " + censusTable.parsedTable.options + "\n";
+
+  for (let rowIndex = 0; rowIndex < censusTable.parsedTable.rows.length; rowIndex++) {
+    let row = censusTable.parsedTable.rows[rowIndex];
+    tableString += "|-";
+    if (row.options) {
+      tableString += " " + row.options;
+    }
+    tableString += "\n";
+
+    if (rowIndex == 0) {
+      tableString += "|";
+      for (let cellIndex = 0; cellIndex < improvedHouseholdTable.fields.length; cellIndex++) {
+        tableString += " ";
+        let value = improvedHouseholdTable.fields[cellIndex];
+        if (value) {
+          tableString += value;
+        }
+        tableString += " ";
+        if (cellIndex != improvedHouseholdTable.fields.length - 1) {
+          tableString += "||";
+        } else {
+          tableString += "\n";
+        }
+      }
+    } else {
+      tableString += "|";
+      let person = improvedHouseholdTable.people[rowIndex - 1];
+      for (let cellIndex = 0; cellIndex < improvedHouseholdTable.fields.length; cellIndex++) {
+        tableString += " ";
+        let field = improvedHouseholdTable.fields[cellIndex];
+        let value = person[field];
+        if (value) {
+          tableString += value;
+        }
+        tableString += " ";
+        if (cellIndex != improvedHouseholdTable.fields.length - 1) {
+          tableString += "||";
+        } else {
+          tableString += "\n";
+        }
+      }
+    }
+  }
+
+  tableString += "|}";
+
+  return tableString;
+}
+
+function updateBiography(compareResults, biography) {
+  let newBiography = biography;
+
+  // any resolution of the census cell values should now have updated these values
+  // in the householdTable object within each census table.
+
+  // go through censusTables and generate an improvedTable string for each one from
+  // the improvedHouseholdTable
+  let censusTables = compareResults.parsedBio.censusTables;
+  for (let censusTable of censusTables) {
+    let tableString = buildImprovedTableString(censusTable);
+    if (tableString && tableString != censusTable.table) {
+      let matches = newBiography.match(censusTable.table);
+      if (matches && matches.length == 1) {
+        newBiography = newBiography.replace(censusTable.table, tableString);
+      }
+    }
+  }
+
+  return newBiography;
+}
+
+export { compareCensusTables, updateBiography };
