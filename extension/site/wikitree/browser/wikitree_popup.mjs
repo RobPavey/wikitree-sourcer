@@ -1951,7 +1951,7 @@ async function doShowAdditionalFields(tabId) {
   }
 }
 
-async function doCensusTablesImprovements(data, tabId, compareResult, biography) {
+async function doCensusTablesImprovements(tabId, compareResult, biography) {
   let newBio = updateBiography(compareResult, biography);
   if (!newBio) {
     displayMessageWithIcon("warning", "Failed build a new biography.");
@@ -1974,6 +1974,54 @@ async function doCensusTablesImprovements(data, tabId, compareResult, biography)
     console.log("caught error from sendMessage:");
     console.log(error);
     displayMessageWithIcon("warning", "Failed to set biography in profile.");
+  }
+}
+
+async function userCheckForCensusTablesImprovements(
+  tabId,
+  compareResult,
+  biography,
+  backFunction,
+  flags,
+  lastDiffIndex
+) {
+  function doesDiffNeedApproval(diff) {
+    if (diff.hasDifferentValueForCell) {
+      return true;
+    }
+    return false;
+  }
+
+  function getIndexOfNextDiffNeedingApproval() {
+    for (let index = lastDiffIndex + 1; index < compareResult.diffs.length; index++) {
+      let diff = compareResult.diffs[index];
+      if (doesDiffNeedApproval(diff)) {
+        return index;
+      }
+
+      // doesn't need approval - make any changes that might not need approval
+      if (diff.hasNewValueForEmptyCell) {
+        diff.person[diff.field] = diff.values[0];
+      }
+    }
+    return -1;
+  }
+
+  function backFunctionForApprove() {
+    if (lastDiffIndex == -1) {
+      backFunction();
+    } else {
+      let prevDiffIndex = getIndexOfPrevDiffNeedingApproval();
+      setupApproveCensusChangeSubMenu(data, tabId, backFunction, input, prevDiffIndex);
+    }
+  }
+
+  let diffIndex = getIndexOfNextDiffNeedingApproval();
+  if (diffIndex == -1) {
+    // got to end
+    doCensusTablesImprovements(tabId, compareResult, biography);
+  } else {
+    setupApproveCensusChangeSubMenu(tabId, backFunctionForApprove, compareResult, biography, flags, diffIndex);
   }
 }
 
@@ -2134,9 +2182,9 @@ async function addImproveCensusTablesMenuItem(menu, data, tabId, backFunction) {
   });
 }
 
-async function addImproveAutoOnlyMenuItem(menu, data, tabId, compareResult, biography) {
-  addMenuItem(menu, "Do auto improvements only...", function (element) {
-    doCensusTablesImprovements(data, tabId, compareResult, biography);
+async function addDoImprovementsMenuItem(menu, tabId, backFunction, compareResult, biography, flags) {
+  addMenuItem(menu, "Do improvements...", function (element) {
+    userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, -1);
   });
 }
 
@@ -2294,7 +2342,7 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
   addBackMenuItem(menu, backFunction);
 
   let toHereBackFunction = function () {
-    setupMergeEditSubMenu(data, tabId, backFunction);
+    setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biography, jsonData);
   };
 
   let compareResult = compareCensusTables(data, biography, jsonData);
@@ -2308,15 +2356,25 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
     if (compareResult.diffs) {
       diffs = compareResult.diffs;
       if (diffs.length) {
-        message += "\nNumber of diffs : " + diffs.length;
+        message += "\nNumber of diffs: " + diffs.length;
+        message += "\nNumber of cells with differing values: " + compareResult.numDiffValues;
+        message += "\nNumber of empty cells new values: " + compareResult.numValuesForEmptyCells;
+        message +=
+          "\nNumber of non-empty cells where relative is empty: " + compareResult.numCellsWhereRelativesAreEmpty;
       }
     }
   }
 
   addItalicMessageMenuItem(menu, message);
 
+  let flags = {
+    fillEmptyCells: true,
+    askAboutDiffValues: true,
+    reportEmptyRelatives: true,
+  };
+
   if (diffs) {
-    addImproveAutoOnlyMenuItem(menu, data, tabId, compareResult, biography);
+    addDoImprovementsMenuItem(menu, tabId, toHereBackFunction, compareResult, biography, flags);
   }
 
   endMainMenu(menu);
@@ -2378,6 +2436,70 @@ async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
       }
     );
   }
+
+  endMainMenu(menu);
+}
+
+async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResult, biography, flags, diffIndex) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  function changeApproved() {
+    diff.person[diff.field] = diff.values[0];
+    userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, diffIndex);
+  }
+
+  function changeRejected() {
+    userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, diffIndex);
+  }
+
+  let diff = compareResult.diffs[diffIndex];
+
+  let message = "Census year is: " + diff.census.year;
+  let name = "unknown";
+  if (diff.person.Name) {
+    name = diff.person.Name;
+  } else if (diff.census.househildTable.fields.length > 0) {
+    name = diff.person[census.househildTable.fields[0]];
+  }
+  message += "\nRow for " + name;
+  message += "\nField is: " + diff.field;
+  message += "\nCurrent value: " + diff.person[diff.field];
+
+  let valueChoices = {};
+  let numRelatives = diff.relatives.length;
+  let numChoices = 0;
+  for (let relIndex = 0; relIndex < numRelatives; relIndex++) {
+    let relValue = diff.values[relIndex];
+    let relative = diff.relatives[relIndex];
+    let relativeId = relative.wikiId + " (" + relative.relation + " " + relative.firstName + " " + relative.lnab + ")";
+    if (valueChoices[relValue]) {
+      valueChoices[relValue].push(relativeId);
+    } else {
+      valueChoices[relValue] = [relativeId];
+      numChoices++;
+    }
+  }
+
+  message += "\nThere are " + numChoices + " possible other values";
+  for (let choiceKey in valueChoices) {
+    message += "\nValue: " + choiceKey + " used by:";
+    let ids = valueChoices[choiceKey];
+    for (let id of ids) {
+      message += "\n.." + id;
+    }
+  }
+
+  addItalicMessageMenuItem(menu, message);
+
+  addMenuItem(menu, "Approve change", function (element) {
+    changeApproved();
+  });
+
+  addMenuItem(menu, "Reject change", function (element) {
+    changeRejected();
+  });
 
   endMainMenu(menu);
 }

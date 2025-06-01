@@ -268,7 +268,7 @@ function buildRelatives(data, jsonData) {
             for (let siblingId in siblings) {
               let sibling = siblings[siblingId];
               let person = createPerson(sibling);
-              person.relation = "parent";
+              person.relation = "sibling";
               person.parsedBio = parseBio(person.biography);
               relatives.push(person);
             }
@@ -415,6 +415,20 @@ function doCompares(result) {
       }
     }
   }
+
+  result.numDiffValues = 0;
+  result.numValuesForEmptyCells = 0;
+  result.numCellsWhereRelativesAreEmpty = 0;
+  for (let diff of result.diffs) {
+    if (diff.hasDifferentValueForCell) {
+      result.numDiffValues++;
+    } else if (diff.hasNewValueForEmptyCell) {
+      console.log("doCompares: incrementing diff.hasNewValueForEmptyCell");
+      result.numValuesForEmptyCells++;
+    } else if (diff.relativeHasEmptyCellWeDont) {
+      result.numCellsWhereRelativesAreEmpty++;
+    }
+  }
 }
 
 function compareCensusTables(data, biography, jsonData) {
@@ -457,9 +471,8 @@ function buildImprovedTableString(censusTable) {
         if (value) {
           tableString += value;
         }
-        tableString += " ";
         if (cellIndex != improvedHouseholdTable.fields.length - 1) {
-          tableString += "||";
+          tableString += " ||";
         } else {
           tableString += "\n";
         }
@@ -472,11 +485,16 @@ function buildImprovedTableString(censusTable) {
         let field = improvedHouseholdTable.fields[cellIndex];
         let value = person[field];
         if (value) {
+          if (person.isSelected) {
+            tableString += "'''";
+          }
           tableString += value;
+          if (person.isSelected) {
+            tableString += "'''";
+          }
         }
-        tableString += " ";
         if (cellIndex != improvedHouseholdTable.fields.length - 1) {
-          tableString += "||";
+          tableString += " ||";
         } else {
           tableString += "\n";
         }
