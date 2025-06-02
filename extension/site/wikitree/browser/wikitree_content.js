@@ -767,7 +767,7 @@ function additionalMessageHandler(request, sender, sendResponse) {
   } else if (request.type == "getBiography") {
     let textArea = document.querySelector("#wpTextbox1");
     if (textArea) {
-      let biography = textArea.textContent;
+      let biography = textArea.value;
       sendResponse({ success: true, biography: biography });
     } else {
       sendResponse({ success: false });
@@ -776,7 +776,7 @@ function additionalMessageHandler(request, sender, sendResponse) {
   } else if (request.type == "setBiography") {
     let textArea = document.querySelector("#wpTextbox1");
     if (textArea) {
-      textArea.textContent = request.biography;
+      textArea.value = request.biography;
       sendResponse({ success: true });
     } else {
       sendResponse({ success: false });

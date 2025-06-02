@@ -38,11 +38,11 @@ function createPerson(jsonPerson) {
 
 function parseRef(ref) {
   let separatorRe = /(<br\/>\n|<br\/>|\n)/;
-  let lines = ref.split(separatorRe);
+  let lines = ref.trim().split(separatorRe);
   let parsedRef = {};
 
-  console.log("parseRef: lines.length = " + lines.length);
-  console.log(lines);
+  //console.log("parseRef: lines.length = " + lines.length);
+  //console.log(lines);
 
   let realLines = [];
   for (let line of lines) {
@@ -51,8 +51,8 @@ function parseRef(ref) {
     }
   }
 
-  console.log("parseRef: realLines.length = " + realLines.length);
-  console.log(realLines);
+  //console.log("parseRef: realLines.length = " + realLines.length);
+  //console.log(realLines);
 
   // simple hack
   if (realLines.length >= 3) {
@@ -66,7 +66,7 @@ function parseTable(table) {
   let lines = table.split("\n");
   let parsedTable = {};
 
-  console.log("parseTable: lines.length = " + lines.length);
+  //console.log("parseTable: lines.length = " + lines.length);
 
   if (lines.length < 6) {
     console.log("parseTable: returning, not enough lines");
@@ -154,11 +154,22 @@ function buildHouseholdTable(parsedTable) {
 }
 
 function determineCensusYear(censusTable) {
-  const narrativeRe = /^In the (\d\d\d\d) (census|register).*$/;
-  if (narrativeRe.test(censusTable.narrative)) {
-    censusTable.year = censusTable.narrative.replace(narrativeRe, "$1");
+  const narrativeYearRe = /^In the (\d\d\d\d) (census|register).*$/;
+  if (narrativeYearRe.test(censusTable.narrative)) {
+    censusTable.year = censusTable.narrative.replace(narrativeYearRe, "$1");
     return;
   }
+
+  const narrativeDateRe = /^On \d+ [A-Za-z]* (\d\d\d\d) .*$/;
+  if (narrativeDateRe.test(censusTable.narrative)) {
+    censusTable.year = censusTable.narrative.replace(narrativeDateRe, "$1");
+    return;
+  }
+
+  console.log("determineCensusYear failed, censusTable is:");
+  console.log(censusTable);
+  console.log("censusTable.narrative is:");
+  console.log(censusTable.narrative);
 }
 
 function parseBio(biography) {
@@ -191,21 +202,38 @@ function parseBio(biography) {
 
   let paras = coreBioText.split("\n\n");
 
-  console.log("parseBio: paras.length = " + paras.length);
+  //console.log("parseBio: paras.length = " + paras.length);
 
   for (let para of paras) {
     if (para.includes("{|")) {
-      console.log("parseBio: found para with table");
-      console.log(para);
+      //console.log("parseBio: found para with table");
+      //console.log(para);
       para = para.trim();
-      let censusParaRe = /^(.+)\<ref\>(.+)\<\/ref\>.*(\{\|.*\|\})$/s;
+      let censusParaRe = /^([^\n]+)\<ref\>(.+)\<\/ref\>.*(\{\|.*\|\})$/s;
       if (censusParaRe.test(para)) {
-        console.log("parseBio: found census table para");
+        //console.log("parseBio: found census table para");
+
         let censusTable = {};
         censusTable.fullText = para;
         censusTable.narrative = para.replace(censusParaRe, "$1").trim();
-        censusTable.ref = para.replace(censusParaRe, "$2").trim();
-        censusTable.parsedRef = parseRef(censusTable.ref);
+
+        // there can be more than one ref, this is unusual and wound not happen when the
+        // profile has just been created.
+        censusTable.refs = [];
+        censusTable.parsedRefs = [];
+        let refString = para.replace(censusParaRe, "$2").trim();
+        if (refString.includes("<ref")) {
+          let refStrings = refString.split(/\<\/ref\>\s*\<ref\>/);
+          for (let indivRefString of refStrings) {
+            indivRefString = indivRefString.trim();
+            censusTable.refs.push(indivRefString);
+            censusTable.parsedRefs.push(parseRef(indivRefString));
+          }
+        } else {
+          censusTable.refs.push(refString);
+          censusTable.parsedRefs.push(parseRef(refString));
+        }
+
         censusTable.table = para.replace(censusParaRe, "$3").trim();
         censusTable.parsedTable = parseTable(censusTable.table);
         censusTable.householdTable = buildHouseholdTable(censusTable.parsedTable);
@@ -281,29 +309,94 @@ function buildRelatives(data, jsonData) {
   return relatives;
 }
 
-function censusTablesMatch(census, relativeCensus) {
+function censusTablesMatch(census, relativeCensus, relative) {
   if (census.year != relativeCensus.year) {
     return false;
   }
 
-  let sourceReference = census.parsedRef.sourceReference;
-  let relSourceReference = relativeCensus.parsedRef.sourceReference;
-  if (sourceReference && sourceReference == relSourceReference) {
-    let householdTable = census.householdTable;
-    let relHouseholdTable = relativeCensus.householdTable;
-    if (householdTable && relHouseholdTable) {
-      let fields = householdTable.fields;
-      let relFields = relHouseholdTable.fields;
-      if (fields && relFields && fields.length == relFields.length) {
-        for (let i = 0; i < fields.length; i++) {
-          if (fields[i] != relFields[i]) {
-            console.log("censusTablesMatch: names of fields do not match");
-            return false;
+  let foundMatchingSourceReference = false;
+
+  if (census.parsedRefs.length == 1 && relativeCensus.parsedRefs.length == 1) {
+    let sourceReference = census.parsedRefs[0].sourceReference;
+    let relSourceReference = relativeCensus.parsedRefs[0].sourceReference;
+    if (sourceReference && sourceReference == relSourceReference) {
+      foundMatchingSourceReference = true;
+    } else {
+      console.log("censusTablesMatch: source references differ: (year is " + census.year + ")");
+      console.log("  " + sourceReference);
+      console.log("  " + relSourceReference);
+      console.log("relative is:");
+      console.log(relative);
+      return false;
+    }
+  } else {
+    for (let parsedRef of census.parsedRefs) {
+      for (let relParsedRef of relativeCensus.parsedRefs) {
+        let sourceReference = parsedRef.sourceReference;
+        let relSourceReference = relParsedRef.sourceReference;
+        if (sourceReference && sourceReference == relSourceReference) {
+          foundMatchingSourceReference = true;
+        }
+      }
+    }
+
+    if (!foundMatchingSourceReference) {
+      console.log("censusTablesMatch: source references differ (year is " + census.year + ") (multiple source refs):");
+      for (let parsedRef of census.parsedRefs) {
+        console.log("  " + parsedRef.sourceReference);
+      }
+      console.log("vs.");
+      for (let relParsedRef of relativeCensus.parsedRefs) {
+        console.log("  " + relParsedRef.sourceReference);
+      }
+      console.log("relative is:");
+      console.log(relative);
+      return false;
+    }
+  }
+
+  let householdTable = census.householdTable;
+  let relHouseholdTable = relativeCensus.householdTable;
+  if (householdTable && relHouseholdTable) {
+    let fields = householdTable.fields;
+    let relFields = relHouseholdTable.fields;
+    if (fields && relFields && fields.length == relFields.length) {
+      for (let i = 0; i < fields.length; i++) {
+        if (fields[i] != relFields[i]) {
+          console.log("censusTablesMatch: names of fields do not match");
+          return false;
+        }
+      }
+
+      // they are the same year and sourceReference is the same, but it could be two
+      // different households in same census place
+      if (householdTable.people.length != relHouseholdTable.people.length) {
+        return false;
+      }
+
+      // count how many fields match and don't
+      let numMatches = 0;
+      let numDiffs = 0;
+      for (let personIndex = 0; personIndex < householdTable.people.length; personIndex++) {
+        let person = householdTable.people[personIndex];
+        let relPerson = relHouseholdTable.people[personIndex];
+        for (let fieldIndex = 0; fieldIndex < fields.length; fieldIndex++) {
+          let field = fields[fieldIndex];
+          let value = person[field];
+          let relValue = relPerson[field];
+          if (value == relValue) {
+            numMatches++;
+          } else {
+            numDiffs++;
           }
         }
-
-        return true;
       }
+      if (numDiffs >= numMatches) {
+        console.log("censusTablesMatch: too many differences");
+        return false;
+      }
+
+      return true;
     }
   }
 
@@ -314,11 +407,9 @@ function findExistingCensusFieldDiff(diffs, census, personIndex, field) {
   for (let index = 0; index < diffs.length; index++) {
     let diff = diffs[index];
     if (diff.census.year == census.year) {
-      if (diff.census.parsedRef.sourceReference == census.parsedRef.sourceReference) {
-        if (diff.personIndex == personIndex) {
-          if (diff.field == field) {
-            return index;
-          }
+      if (diff.personIndex == personIndex) {
+        if (diff.field == field) {
+          return index;
         }
       }
     }
@@ -364,27 +455,67 @@ function compareTableWithRelatives(census, relativesData, diffs) {
   for (let personIndex = 0; personIndex < table.people.length; personIndex++) {
     let person = table.people[personIndex];
     for (let field of fields) {
+      let foundDiff = false;
       for (let relativeData of relativesData) {
         let relative = relativeData.relative;
         let relativeCensus = relativeData.census;
         let relTable = relativeCensus.householdTable;
-        let relPerson = relTable.people[personIndex];
 
-        let value = person[field];
-        let relValue = relPerson[field];
+        if (relTable.people.length == table.people.length) {
+          let relPerson = relTable.people[personIndex];
 
-        if (value != relValue) {
-          let diff = addDiff(diffs, census, relative, relativeCensus, personIndex, field);
+          let value = person[field];
+          let relValue = relPerson[field];
 
-          if (value) {
-            if (relValue) {
-              diff.hasDifferentValueForCell = true;
+          if (value != relValue) {
+            let diff = addDiff(diffs, census, relative, relativeCensus, personIndex, field);
+            foundDiff = true;
+
+            if (value) {
+              if (relValue) {
+                diff.hasDifferentValueForCell = true;
+              } else {
+                diff.relativeHasEmptyCellWeDont = true;
+              }
             } else {
-              diff.relativeHasEmptyCellWeDont = true;
+              // relValue can't be empty string here or it would equal value
+              diff.hasNewValueForEmptyCell = true;
             }
-          } else {
-            // relValue can't be empty string here or it would equal value
-            diff.hasNewValueForEmptyCell = true;
+          }
+        } else {
+          // different number of rows in table, this could mean some missing data or
+          // could mean that the census households are different
+          console.log("Different number of rows in table for relative");
+          console.log("relativeData is:");
+          console.log(relativeData);
+        }
+      }
+
+      if (foundDiff) {
+        // a diff was found, gather info on relatives that are NOT different
+        for (let relativeData of relativesData) {
+          let relative = relativeData.relative;
+          let relativeCensus = relativeData.census;
+          let relTable = relativeCensus.householdTable;
+          let relPerson = relTable.people[personIndex];
+
+          let value = person[field];
+          let relValue = relPerson[field];
+
+          if (value == relValue) {
+            let existingIndex = findExistingCensusFieldDiff(diffs, census, personIndex, field);
+            if (existingIndex != -1) {
+              let diff = diffs[existingIndex];
+
+              if (!diff.noDiffRelatives) {
+                diff.noDiffRelatives = [];
+              }
+              diff.noDiffRelatives.push(relative);
+              if (!diff.noDiffRelativeCensuses) {
+                diff.noDiffRelativeCensuses = [];
+              }
+              diff.noDiffRelativeCensuses.push(relativeCensus);
+            }
           }
         }
       }
@@ -401,9 +532,16 @@ function doCompares(result) {
       for (let relative of result.relatives) {
         if (relative.parsedBio) {
           for (let relativeCensus of relative.parsedBio.censusTables) {
-            if (censusTablesMatch(census, relativeCensus)) {
+            if (censusTablesMatch(census, relativeCensus, relative)) {
               let relativeName = relative.firstName + " " + relative.lnab;
-              console.log("Found match, relative is " + relativeName + ", year is " + census.year);
+              console.log(
+                "Found match, relative is " +
+                  relativeName +
+                  ", year is " +
+                  census.year +
+                  " relation is " +
+                  relative.relation
+              );
               relativesData.push({ relative: relative, census: relativeCensus });
             }
           }
@@ -417,14 +555,26 @@ function doCompares(result) {
   }
 
   result.numDiffValues = 0;
-  result.numValuesForEmptyCells = 0;
+  result.numSingleValuesForEmptyCells = 0;
+  result.numMultipleValuesForEmptyCells = 0;
   result.numCellsWhereRelativesAreEmpty = 0;
   for (let diff of result.diffs) {
     if (diff.hasDifferentValueForCell) {
       result.numDiffValues++;
     } else if (diff.hasNewValueForEmptyCell) {
-      console.log("doCompares: incrementing diff.hasNewValueForEmptyCell");
-      result.numValuesForEmptyCells++;
+      let hasMultipleValues = false;
+      if (diff.values.length > 1) {
+        for (let valueIndex = 1; valueIndex < diff.values.length; valueIndex++) {
+          if (diff.values[valueIndex] != diff.values[0]) {
+            hasMultipleValues = true;
+          }
+        }
+      }
+      if (hasMultipleValues) {
+        result.numSingleValuesForEmptyCells++;
+      } else {
+        result.numMultipleValuesForEmptyCells++;
+      }
     } else if (diff.relativeHasEmptyCellWeDont) {
       result.numCellsWhereRelativesAreEmpty++;
     }

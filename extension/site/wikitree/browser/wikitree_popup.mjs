@@ -2358,22 +2358,36 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
       if (diffs.length) {
         message += "\nNumber of diffs: " + diffs.length;
         message += "\nNumber of cells with differing values: " + compareResult.numDiffValues;
-        message += "\nNumber of empty cells new values: " + compareResult.numValuesForEmptyCells;
+        message += "\nNumber of empty cells with single new values: " + compareResult.numSingleValuesForEmptyCells;
+        message += "\nNumber of empty cells with multiple new values: " + compareResult.numMultipleValuesForEmptyCells;
         message +=
           "\nNumber of non-empty cells where relative is empty: " + compareResult.numCellsWhereRelativesAreEmpty;
+      } else {
+        message += "\nNo differences found";
       }
+    } else {
+      message += "\nNo compare result diffs";
     }
+  } else {
+    message += "\nNo compare result";
   }
 
   addItalicMessageMenuItem(menu, message);
 
-  let flags = {
-    fillEmptyCells: true,
-    askAboutDiffValues: true,
-    reportEmptyRelatives: true,
-  };
+  if (diffs && diffs.length) {
+    let flags = {
+      fillEmptyCells: true,
+      askAboutDiffValues: true,
+      reportEmptyRelatives: true,
+    };
 
-  if (diffs) {
+    if (compareResult.numSingleValuesForEmptyCells) {
+      addItalicMessageMenuItem(menu, "Ask about new values for empty cells if only one other value used by relatives?");
+    }
+    if (compareResult.numCellsWhereRelativesAreEmpty) {
+      addItalicMessageMenuItem(menu, "Ask about fields where this profile has a value but relatives have no value?");
+    }
+
     addDoImprovementsMenuItem(menu, tabId, toHereBackFunction, compareResult, biography, flags);
   }
 
@@ -2443,10 +2457,14 @@ async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
 async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResult, biography, flags, diffIndex) {
   let menu = beginMainMenu();
 
+  let diff = compareResult.diffs[diffIndex];
+
   addBackMenuItem(menu, backFunction);
 
-  function changeApproved() {
-    diff.person[diff.field] = diff.values[0];
+  // See setupImproveNameFieldsSubMenu for example
+
+  function changeApproved(value) {
+    diff.person[diff.field] = value;
     userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, diffIndex);
   }
 
@@ -2454,18 +2472,30 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
     userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, diffIndex);
   }
 
-  let diff = compareResult.diffs[diffIndex];
-
-  let message = "Census year is: " + diff.census.year;
+  let message = "In the table for " + diff.census.year + " census:";
   let name = "unknown";
   if (diff.person.Name) {
     name = diff.person.Name;
-  } else if (diff.census.househildTable.fields.length > 0) {
-    name = diff.person[census.househildTable.fields[0]];
+  } else if (diff.census.householdTable.fields.length > 0) {
+    name = diff.person[census.householdTable.fields[0]];
   }
-  message += "\nRow for " + name;
-  message += "\nField is: " + diff.field;
-  message += "\nCurrent value: " + diff.person[diff.field];
+  message += "\nin the '" + diff.field + "' column for person '" + name + "':";
+  message += "\nCurrent value is '" + diff.person[diff.field] + "'";
+
+  if (diff.noDiffRelatives && diff.noDiffRelatives.length > 0) {
+    message += "\nalso used by:";
+    for (let relative of diff.noDiffRelatives) {
+      let id = relative.wikiId + " (" + relative.relation + " " + relative.firstName + " " + relative.lnab + ")";
+      message += "\n..." + id;
+    }
+  }
+  addItalicMessageMenuItem(menu, message);
+
+  addMenuItem(menu, "Keep this value", function (element) {
+    changeRejected();
+  });
+
+  message = "";
 
   let valueChoices = {};
   let numRelatives = diff.relatives.length;
@@ -2482,25 +2512,28 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
     }
   }
 
-  message += "\nThere are " + numChoices + " possible other values";
+  message += "There are " + numChoices + " possible other values";
+  addItalicMessageMenuItem(menu, message);
+  message = "";
   for (let choiceKey in valueChoices) {
-    message += "\nValue: " + choiceKey + " used by:";
+    let valueDisplay = choiceKey;
+    if (valueDisplay) {
+      valueDisplay = "'" + valueDisplay + "'";
+    } else {
+      valueDisplay = "<empty>";
+    }
+    message += "* " + valueDisplay + " used by:";
     let ids = valueChoices[choiceKey];
     for (let id of ids) {
-      message += "\n.." + id;
+      message += "\n..." + id;
     }
+    addItalicMessageMenuItem(menu, message);
+    message = "";
+
+    addMenuItem(menu, "Use this value", function (element) {
+      changeApproved(choiceKey);
+    });
   }
-
-  addItalicMessageMenuItem(menu, message);
-
-  addMenuItem(menu, "Approve change", function (element) {
-    changeApproved();
-  });
-
-  addMenuItem(menu, "Reject change", function (element) {
-    changeRejected();
-  });
-
   endMainMenu(menu);
 }
 
