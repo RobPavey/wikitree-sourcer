@@ -2782,7 +2782,7 @@ class NarrativeBuilder {
       let possessiveName = this.getPossessiveName();
       this.startSentence(possessiveName + " " + relationship);
     } else {
-      this.startSentence(this.getPersonNameOrPronoun(true));
+      this.startSentence(this.getPersonNameOrPronoun(false));
     }
 
     if (deathDate) {
