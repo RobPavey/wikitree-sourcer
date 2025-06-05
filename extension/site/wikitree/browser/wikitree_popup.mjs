@@ -1968,7 +1968,11 @@ async function doCensusTablesImprovements(tabId, compareResult, biography) {
     } else if (!response.success) {
       displayMessageWithIcon("warning", "Failed to set biography in profile.");
     } else if (response.success) {
-      displayMessageWithIconThenClosePopup("check", "Biography updated", "");
+      let message1 = "Biography updated.";
+      let message2 = "\nSave a draft and then do";
+      message2 += "\n'compare draft with saved information'";
+      message2 += "\nto check the changes before doing a full save.";
+      displayMessageWithIconThenClosePopup("check", message1, message2);
     }
   } catch (error) {
     console.log("caught error from sendMessage:");
@@ -2349,30 +2353,100 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
   console.log("compareCensusTables returned:");
   console.log(compareResult);
 
-  let message = "Improve census tables.";
-
   let diffs = undefined;
   if (compareResult) {
-    if (compareResult.diffs) {
-      diffs = compareResult.diffs;
-      if (diffs.length) {
-        message += "\nNumber of diffs: " + diffs.length;
-        message += "\nNumber of cells with differing values: " + compareResult.numDiffValues;
-        message += "\nNumber of empty cells with single new values: " + compareResult.numSingleValuesForEmptyCells;
-        message += "\nNumber of empty cells with multiple new values: " + compareResult.numMultipleValuesForEmptyCells;
-        message +=
-          "\nNumber of non-empty cells where relative is empty: " + compareResult.numCellsWhereRelativesAreEmpty;
+    let censusTables = compareResult.parsedBio.censusTables;
+    if (censusTables.length) {
+      let message = "Found " + censusTables.length;
+      if (censusTables.length == 1) {
+        message += " census table ";
       } else {
-        message += "\nNo differences found";
+        message += " census tables ";
+      }
+      message += "in biography (";
+      for (let censusTable of censusTables) {
+        if (!message.endsWith("(")) {
+          message += " ";
+        }
+        if (censusTable.year) {
+          message += censusTable.year;
+        } else {
+          message += "<no year>";
+        }
+      }
+      message += ")";
+      addItalicMessageMenuItem(menu, message);
+
+      if (compareResult.numRelativesWithMatchingTables) {
+        message = "Found " + compareResult.numRelativesWithMatchingTables;
+        if (compareResult.numRelativesWithMatchingTables == 1) {
+          message += " relative ";
+        } else {
+          message += " relatives ";
+        }
+        message += "with matching census tables.";
+
+        for (let relative of compareResult.relatives) {
+          if (relative.matchingCensusTables) {
+            let relativeId = getRelativeId(relative);
+            message += "\n..." + relativeId + "(";
+            for (let relativeCensusTable of relative.parsedBio.censusTables) {
+              if (relativeCensusTable.isMatch) {
+                if (!message.endsWith("(")) {
+                  message += " ";
+                }
+                if (relativeCensusTable.year) {
+                  message += relativeCensusTable.year;
+                } else {
+                  message += "<no year>";
+                }
+              }
+            }
+            message += ")";
+          }
+        }
+      } else {
+        message = "Found no relatives with matching census tables.";
+      }
+      addItalicMessageMenuItem(menu, message);
+      message = "";
+
+      if (compareResult.diffs) {
+        diffs = compareResult.diffs;
+        if (diffs.length) {
+          message +=
+            "In these matching tables on relatives there are " +
+            diffs.length +
+            " table cells that differ with this profile. Of these:";
+          if (compareResult.numDiffValues) {
+            message += "\n. " + compareResult.numDiffValues + " cells have different values.";
+          }
+          if (compareResult.numMultipleValuesForEmptyCells) {
+            message +=
+              "\n. " + compareResult.numMultipleValuesForEmptyCells + " cells have multiple possible new new values.";
+          }
+          if (compareResult.numSingleValuesForEmptyCells) {
+            message += "\n. " + compareResult.numSingleValuesForEmptyCells + " cells add a single new value.";
+            message += "\n.. Ask about these before adding?";
+          }
+          if (compareResult.numCellsWhereRelativesAreEmpty) {
+            message += "\n. " + compareResult.numCellsWhereRelativesAreEmpty + " cells delete a value.";
+            message += "\n... Ask about these before ignoring?";
+          }
+
+          addItalicMessageMenuItem(menu, message);
+        } else {
+          addItalicMessageMenuItem("\n\nNo differences found in table cell values.");
+        }
+      } else {
+        addItalicMessageMenuItem(menu, "No compare result diffs");
       }
     } else {
-      message += "\nNo compare result diffs";
+      addItalicMessageMenuItem(menu, "No census tables found in biography.");
     }
   } else {
-    message += "\nNo compare result";
+    addItalicMessageMenuItem(menu, "No compare result.");
   }
-
-  addItalicMessageMenuItem(menu, message);
 
   if (diffs && diffs.length) {
     let flags = {
@@ -2380,13 +2454,6 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
       askAboutDiffValues: true,
       reportEmptyRelatives: true,
     };
-
-    if (compareResult.numSingleValuesForEmptyCells) {
-      addItalicMessageMenuItem(menu, "Ask about new values for empty cells if only one other value used by relatives?");
-    }
-    if (compareResult.numCellsWhereRelativesAreEmpty) {
-      addItalicMessageMenuItem(menu, "Ask about fields where this profile has a value but relatives have no value?");
-    }
 
     addDoImprovementsMenuItem(menu, tabId, toHereBackFunction, compareResult, biography, flags);
   }
@@ -2454,6 +2521,11 @@ async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
   endMainMenu(menu);
 }
 
+function getRelativeId(relative) {
+  let id = relative.wikiId + " (" + relative.relation + " " + relative.firstName + " " + relative.lnab + ")";
+  return id;
+}
+
 async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResult, biography, flags, diffIndex) {
   let menu = beginMainMenu();
 
@@ -2485,8 +2557,7 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
   if (diff.noDiffRelatives && diff.noDiffRelatives.length > 0) {
     message += "\nalso used by:";
     for (let relative of diff.noDiffRelatives) {
-      let id = relative.wikiId + " (" + relative.relation + " " + relative.firstName + " " + relative.lnab + ")";
-      message += "\n..." + id;
+      message += "\n..." + getRelativeId(relative);
     }
   }
   addItalicMessageMenuItem(menu, message);
@@ -2503,7 +2574,7 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
   for (let relIndex = 0; relIndex < numRelatives; relIndex++) {
     let relValue = diff.values[relIndex];
     let relative = diff.relatives[relIndex];
-    let relativeId = relative.wikiId + " (" + relative.relation + " " + relative.firstName + " " + relative.lnab + ")";
+    let relativeId = getRelativeId(relative);
     if (valueChoices[relValue]) {
       valueChoices[relValue].push(relativeId);
     } else {

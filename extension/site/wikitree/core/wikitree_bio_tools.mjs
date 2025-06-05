@@ -314,13 +314,13 @@ function censusTablesMatch(census, relativeCensus, relative) {
     return false;
   }
 
-  let foundMatchingSourceReference = false;
+  let matchingSourceReference = "";
 
   if (census.parsedRefs.length == 1 && relativeCensus.parsedRefs.length == 1) {
     let sourceReference = census.parsedRefs[0].sourceReference;
     let relSourceReference = relativeCensus.parsedRefs[0].sourceReference;
     if (sourceReference && sourceReference == relSourceReference) {
-      foundMatchingSourceReference = true;
+      matchingSourceReference = relSourceReference;
     } else {
       console.log("censusTablesMatch: source references differ: (year is " + census.year + ")");
       console.log("  " + sourceReference);
@@ -335,12 +335,12 @@ function censusTablesMatch(census, relativeCensus, relative) {
         let sourceReference = parsedRef.sourceReference;
         let relSourceReference = relParsedRef.sourceReference;
         if (sourceReference && sourceReference == relSourceReference) {
-          foundMatchingSourceReference = true;
+          matchingSourceReference = relSourceReference;
         }
       }
     }
 
-    if (!foundMatchingSourceReference) {
+    if (!matchingSourceReference) {
       console.log("censusTablesMatch: source references differ (year is " + census.year + ") (multiple source refs):");
       for (let parsedRef of census.parsedRefs) {
         console.log("  " + parsedRef.sourceReference);
@@ -355,6 +355,15 @@ function censusTablesMatch(census, relativeCensus, relative) {
     }
   }
 
+  // if the source reference contains enough info to uniquely ID the entry that is
+  // good enough
+  if (matchingSourceReference.includes("Household schedule number")) {
+    return true;
+  }
+
+  // they are the same year and sourceReference is the same, but it could be two
+  // different households in same census place
+
   let householdTable = census.householdTable;
   let relHouseholdTable = relativeCensus.householdTable;
   if (householdTable && relHouseholdTable) {
@@ -368,8 +377,8 @@ function censusTablesMatch(census, relativeCensus, relative) {
         }
       }
 
-      // they are the same year and sourceReference is the same, but it could be two
-      // different households in same census place
+      // If they contain different numbers of people in the household then assume they
+      // are different households
       if (householdTable.people.length != relHouseholdTable.people.length) {
         return false;
       }
@@ -386,7 +395,7 @@ function censusTablesMatch(census, relativeCensus, relative) {
           let relValue = relPerson[field];
           if (value == relValue) {
             numMatches++;
-          } else {
+          } else if (value && relValue) {
             numDiffs++;
           }
         }
@@ -525,6 +534,11 @@ function compareTableWithRelatives(census, relativesData, diffs) {
 
 function doCompares(result) {
   result.diffs = [];
+  result.numRelativesWithMatchingTables = 0;
+  for (let relative of result.relatives) {
+    relative.matchingCensusTables = 0;
+  }
+
   for (let census of result.parsedBio.censusTables) {
     let year = census.year;
     if (year) {
@@ -533,6 +547,12 @@ function doCompares(result) {
         if (relative.parsedBio) {
           for (let relativeCensus of relative.parsedBio.censusTables) {
             if (censusTablesMatch(census, relativeCensus, relative)) {
+              if (relative.matchingCensusTables == 0) {
+                result.numRelativesWithMatchingTables++;
+              }
+              relative.matchingCensusTables++;
+              relativeCensus.isMatch = true;
+
               let relativeName = relative.firstName + " " + relative.lnab;
               console.log(
                 "Found match, relative is " +
@@ -567,13 +587,14 @@ function doCompares(result) {
         for (let valueIndex = 1; valueIndex < diff.values.length; valueIndex++) {
           if (diff.values[valueIndex] != diff.values[0]) {
             hasMultipleValues = true;
+            break;
           }
         }
       }
       if (hasMultipleValues) {
-        result.numSingleValuesForEmptyCells++;
-      } else {
         result.numMultipleValuesForEmptyCells++;
+      } else {
+        result.numSingleValuesForEmptyCells++;
       }
     } else if (diff.relativeHasEmptyCellWeDont) {
       result.numCellsWhereRelativesAreEmpty++;
