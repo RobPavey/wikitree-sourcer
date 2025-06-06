@@ -1948,7 +1948,7 @@ function addSameEventMenuItem(menu, data, searchFunction, subtitle = "") {
 
 // This flag indicates whether the popup should resize after the initial setup -
 // e.g. for EditCitation.
-// The only case where it should NOT resize currebt is on iOS.
+// The only case where it should NOT resize currently is on iOS.
 // Even in cases on iOS where the menu is not fized size we don't want to resize because
 // it resizing back to the smaller size after Edit Citation does not work on iOS.
 var shouldPopupWindowResize = true;

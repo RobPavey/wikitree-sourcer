@@ -37,6 +37,7 @@ import {
   displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
   closePopup,
+  shouldPopupWindowResize,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import { addSavePersonDataMenuItem } from "/base/browser/popup/popup_person_data.mjs";
@@ -80,6 +81,9 @@ async function checkIfWeHavePermissionsToUseApi(checkOnly) {
 var haveValidApiResponse = false;
 var apiResponse = undefined;
 var timeApiRequestMade = undefined;
+
+// Global to remember the popup menu width before widening it
+var widthBeforeWidePopup = "";
 
 function standardizeDate(dateString) {
   let parsedDate = DateUtils.parseDateString(dateString);
@@ -1968,6 +1972,9 @@ async function doCensusTablesImprovements(tabId, compareResult, biography) {
     } else if (!response.success) {
       displayMessageWithIcon("warning", "Failed to set biography in profile.");
     } else if (response.success) {
+      if (shouldPopupWindowResize && widthBeforeWidePopup) {
+        document.body.style.width = widthBeforeWidePopup;
+      }
       let message1 = "Biography updated.";
       let message2 = "\nSave a draft and then do";
       message2 += "\n'compare draft with saved information'";
@@ -1992,6 +1999,14 @@ async function userCheckForCensusTablesImprovements(
   function doesDiffNeedApproval(diff) {
     if (diff.hasDifferentValueForCell) {
       return true;
+    }
+
+    if (diff.hasNewValueForEmptyCell) {
+      return flags.askAboutFillingEmptyCells;
+    }
+
+    if (diff.relativeHasEmptyCellWeDont) {
+      return flags.askAboutDeletingCells;
     }
     return false;
   }
@@ -2181,14 +2196,8 @@ async function addShowAdditionalFieldsMenuItem(menu, tabId) {
 }
 
 async function addImproveCensusTablesMenuItem(menu, data, tabId, backFunction) {
-  addMenuItem(menu, "Improve census tables...", function (element) {
+  addMenuItem(menu, "Improve census tables (BETA) ...", function (element) {
     setupImproveCensusTablesSubMenu(data, tabId, backFunction);
-  });
-}
-
-async function addDoImprovementsMenuItem(menu, tabId, backFunction, compareResult, biography, flags) {
-  addMenuItem(menu, "Do improvements...", function (element) {
-    userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, -1);
   });
 }
 
@@ -2345,6 +2354,11 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
 
   addBackMenuItem(menu, backFunction);
 
+  let flags = {
+    askAboutFillingEmptyCells: true,
+    askAboutDeletingCells: true,
+  };
+
   let toHereBackFunction = function () {
     setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biography, jsonData);
   };
@@ -2352,6 +2366,37 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
   let compareResult = compareCensusTables(data, biography, jsonData);
   console.log("compareCensusTables returned:");
   console.log(compareResult);
+
+  let fragment = document.createDocumentFragment();
+
+  function addLabelWithBreak(parent, message) {
+    let label = document.createElement("label");
+    label.innerHTML = message;
+    label.className = "largeEditBoxLabel";
+    parent.appendChild(label);
+    addBreak(parent);
+    return label;
+  }
+
+  function addCheckbox(parent, message, flagKey) {
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = flags[flagKey];
+
+    checkbox.addEventListener("change", function () {
+      if (this.checked) {
+        flags[flagKey] = true;
+      } else {
+        flags[flagKey] = false;
+      }
+    });
+
+    let label = document.createElement("label");
+    label.innerHTML = message;
+
+    parent.appendChild(checkbox);
+    parent.appendChild(label);
+  }
 
   let diffs = undefined;
   if (compareResult) {
@@ -2363,7 +2408,7 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
       } else {
         message += " census tables ";
       }
-      message += "in biography (";
+      message += "in this biography (";
       for (let censusTable of censusTables) {
         if (!message.endsWith("(")) {
           message += " ";
@@ -2375,7 +2420,8 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
         }
       }
       message += ")";
-      addItalicMessageMenuItem(menu, message);
+      addLabelWithBreak(fragment, message);
+      addBreak(fragment);
 
       if (compareResult.numRelativesWithMatchingTables) {
         message = "Found " + compareResult.numRelativesWithMatchingTables;
@@ -2385,11 +2431,16 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
           message += " relatives ";
         }
         message += "with matching census tables.";
+        addLabelWithBreak(fragment, message);
+        message = "";
+
+        let listElement = document.createElement("ul");
+        fragment.appendChild(listElement);
 
         for (let relative of compareResult.relatives) {
           if (relative.matchingCensusTables) {
             let relativeId = getRelativeId(relative);
-            message += "\n..." + relativeId + "(";
+            message += relativeId + " (";
             for (let relativeCensusTable of relative.parsedBio.censusTables) {
               if (relativeCensusTable.isMatch) {
                 if (!message.endsWith("(")) {
@@ -2403,72 +2454,114 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
               }
             }
             message += ")";
+            let listItem = document.createElement("li");
+            addLabelWithBreak(listItem, message);
+            listElement.appendChild(listItem);
+            message = "";
           }
         }
       } else {
         message = "Found no relatives with matching census tables.";
+        addLabelWithBreak(fragment, message);
       }
-      addItalicMessageMenuItem(menu, message);
+      //addItalicMessageMenuItem(menu, message);
+
       message = "";
 
       if (compareResult.diffs) {
         diffs = compareResult.diffs;
         if (diffs.length) {
-          message +=
-            "In these matching tables on relatives there are " +
+          addBreak(fragment);
+          message =
+            "In these matching tables there are " +
             diffs.length +
             " table cells that differ with this profile. Of these:";
+          addLabelWithBreak(fragment, message);
+
+          let listElement = document.createElement("ul");
+          fragment.appendChild(listElement);
+
           if (compareResult.numDiffValues) {
-            message += "\n. " + compareResult.numDiffValues + " cells have different values.";
+            message = compareResult.numDiffValues + " cells have a common different value";
+            let listItem = document.createElement("li");
+            addLabelWithBreak(listItem, message);
+            listElement.appendChild(listItem);
           }
           if (compareResult.numMultipleValuesForEmptyCells) {
-            message +=
-              "\n. " + compareResult.numMultipleValuesForEmptyCells + " cells have multiple possible new new values.";
+            message = compareResult.numMultipleValuesForEmptyCells + " cells have multiple possible new values";
+            let listItem = document.createElement("li");
+            addLabelWithBreak(listItem, message);
+            listElement.appendChild(listItem);
           }
           if (compareResult.numSingleValuesForEmptyCells) {
-            message += "\n. " + compareResult.numSingleValuesForEmptyCells + " cells add a single new value.";
-            message += "\n.. Ask about these before adding?";
+            message = compareResult.numSingleValuesForEmptyCells + " cells add a single new value";
+            let listItem = document.createElement("li");
+            addLabelWithBreak(listItem, message);
+            message = "Ask about these before adding?";
+            addCheckbox(listItem, message, "askAboutFillingEmptyCells");
+            listElement.appendChild(listItem);
           }
           if (compareResult.numCellsWhereRelativesAreEmpty) {
-            message += "\n. " + compareResult.numCellsWhereRelativesAreEmpty + " cells delete a value.";
-            message += "\n... Ask about these before ignoring?";
+            message = compareResult.numCellsWhereRelativesAreEmpty + " cells delete a value";
+            let listItem = document.createElement("li");
+            addLabelWithBreak(listItem, message);
+            message = "Ask about these before ignoring?";
+            addCheckbox(listItem, message, "askAboutDeletingCells");
+            listElement.appendChild(listItem);
           }
-
-          addItalicMessageMenuItem(menu, message);
         } else {
-          addItalicMessageMenuItem("\n\nNo differences found in table cell values.");
+          addLabelWithBreak(fragment, "\n\nNo differences found in table cell values.");
         }
       } else {
-        addItalicMessageMenuItem(menu, "No compare result diffs");
+        addLabelWithBreak(fragment, "No compare result diffs.");
       }
     } else {
-      addItalicMessageMenuItem(menu, "No census tables found in biography.");
+      addLabelWithBreak(fragment, "No census tables found in biography.");
     }
   } else {
-    addItalicMessageMenuItem(menu, "No compare result.");
+    addLabelWithBreak(fragment, "No compare result.");
   }
 
   if (diffs && diffs.length) {
-    let flags = {
-      fillEmptyCells: true,
-      askAboutDiffValues: true,
-      reportEmptyRelatives: true,
+    let saveButton = document.createElement("button");
+    saveButton.className = "dialogButton";
+    saveButton.innerText = "Do improvements";
+    saveButton.onclick = async function (element) {
+      userCheckForCensusTablesImprovements(tabId, compareResult, biography, toHereBackFunction, flags, -1);
     };
 
-    addDoImprovementsMenuItem(menu, tabId, toHereBackFunction, compareResult, biography, flags);
+    let buttonDiv = document.createElement("div");
+    buttonDiv.className = "flex-parent jc-center";
+    buttonDiv.appendChild(saveButton);
+
+    fragment.appendChild(buttonDiv);
   }
+
+  menu.list.appendChild(fragment);
 
   endMainMenu(menu);
 }
 
 async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
+  // Make the whole window wider (if not on iOS)
+  if (shouldPopupWindowResize) {
+    widthBeforeWidePopup = document.body.style.width;
+    document.body.style.width = "600px";
+  }
+
   let menu = beginMainMenu();
 
-  addBackMenuItem(menu, backFunction);
+  // Special backFunction for leaving wider menu
+  async function resizeBackFunction() {
+    // Make the whole window the width it was before (not on iOS)
+    if (shouldPopupWindowResize && widthBeforeWidePopup) {
+      document.body.style.width = widthBeforeWidePopup;
+    }
 
-  let toHereBackFunction = function () {
-    setupMergeEditSubMenu(data, tabId, backFunction);
-  };
+    backFunction();
+  }
+
+  addBackMenuItem(menu, resizeBackFunction);
 
   let biography = "";
   // send a message to content script to get the biography
@@ -2509,7 +2602,7 @@ async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
     wtApiGetRelatives(data.extractedData.wikiId, fields, true, true, true, true).then(
       function handleResolve(jsonData) {
         if (jsonData && jsonData.length > 0) {
-          setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biography, jsonData);
+          setupImproveCensusTablesSubMenu2(data, tabId, resizeBackFunction, biography, jsonData);
         }
       },
       function handleReject(reason) {
@@ -2522,7 +2615,41 @@ async function setupImproveCensusTablesSubMenu(data, tabId, backFunction) {
 }
 
 function getRelativeId(relative) {
-  let id = relative.wikiId + " (" + relative.relation + " " + relative.firstName + " " + relative.lnab + ")";
+  // could include relative.wikiId but it is not that helpful to use
+  let relation = relative.relation;
+  if (relative.gender == "Male") {
+    if (relation == "spouse") {
+      relation = "Husband";
+    } else if (relation == "parent") {
+      relation = "Father";
+    } else if (relation == "child") {
+      relation = "Son";
+    } else if (relation == "sibling") {
+      relation = "Brother";
+    }
+  } else if (relative.gender == "Female") {
+    if (relation == "spouse") {
+      relation = "Wife";
+    } else if (relation == "parent") {
+      relation = "Mother";
+    } else if (relation == "child") {
+      relation = "Daughter";
+    } else if (relation == "sibling") {
+      relation = "Sister";
+    }
+  } else {
+    if (relation == "spouse") {
+      relation = "Spouse";
+    } else if (relation == "parent") {
+      relation = "Parent";
+    } else if (relation == "child") {
+      relation = "Child";
+    } else if (relation == "sibling") {
+      relation = "Sibling";
+    }
+  }
+
+  let id = relation + " " + relative.firstName + " " + relative.lnab;
   return id;
 }
 
@@ -2544,29 +2671,57 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
     userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, diffIndex);
   }
 
-  let message = "In the table for " + diff.census.year + " census:";
+  let fragment = document.createDocumentFragment();
+
+  function addLabelWithBreak(parent, message) {
+    let label = document.createElement("label");
+    label.innerText = message;
+    label.className = "largeEditBoxLabel";
+    parent.appendChild(label);
+    addBreak(parent);
+    return label;
+  }
+
+  function addButton(parent, labelText, clickFunc) {
+    let saveButton = document.createElement("button");
+    saveButton.className = "dialogButton";
+    saveButton.innerText = labelText;
+    saveButton.onclick = clickFunc;
+
+    let buttonDiv = document.createElement("div");
+    buttonDiv.className = "flex-parent jc-center";
+    buttonDiv.appendChild(saveButton);
+
+    parent.appendChild(buttonDiv);
+  }
+
+  addLabelWithBreak(fragment, "In the table for " + diff.census.year + " census:");
+
   let name = "unknown";
   if (diff.person.Name) {
     name = diff.person.Name;
   } else if (diff.census.householdTable.fields.length > 0) {
     name = diff.person[census.householdTable.fields[0]];
   }
-  message += "\nin the '" + diff.field + "' column for person '" + name + "':";
-  message += "\nCurrent value is '" + diff.person[diff.field] + "'";
+  addLabelWithBreak(fragment, "in the '" + diff.field + "' column for person '" + name + "':");
+  addLabelWithBreak(fragment, "Current value is '" + diff.person[diff.field] + "'");
 
   if (diff.noDiffRelatives && diff.noDiffRelatives.length > 0) {
-    message += "\nalso used by:";
+    addLabelWithBreak(fragment, "also used by:");
+
+    let listElement = document.createElement("ul");
+    fragment.appendChild(listElement);
+
     for (let relative of diff.noDiffRelatives) {
-      message += "\n..." + getRelativeId(relative);
+      let listItem = document.createElement("li");
+      addLabelWithBreak(listItem, getRelativeId(relative));
+      listElement.appendChild(listItem);
     }
   }
-  addItalicMessageMenuItem(menu, message);
 
-  addMenuItem(menu, "Keep this value", function (element) {
+  addButton(fragment, "Keep this value", function (element) {
     changeRejected();
   });
-
-  message = "";
 
   let valueChoices = {};
   let numRelatives = diff.relatives.length;
@@ -2583,9 +2738,15 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
     }
   }
 
-  message += "There are " + numChoices + " possible other values";
-  addItalicMessageMenuItem(menu, message);
-  message = "";
+  let message = "";
+  if (numChoices == 1) {
+    addLabelWithBreak(fragment, "There is one other value:");
+  } else {
+    addLabelWithBreak(fragment, "There are " + numChoices + " possible other values:");
+  }
+
+  let choiceListElement = document.createElement("ul");
+  fragment.appendChild(choiceListElement);
   for (let choiceKey in valueChoices) {
     let valueDisplay = choiceKey;
     if (valueDisplay) {
@@ -2593,18 +2754,28 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
     } else {
       valueDisplay = "<empty>";
     }
-    message += "* " + valueDisplay + " used by:";
+
+    let listItem = document.createElement("li");
+    addLabelWithBreak(listItem, valueDisplay + " used by:");
+    choiceListElement.appendChild(listItem);
+
+    let relativeListElement = document.createElement("ul");
+    listItem.appendChild(relativeListElement);
+
     let ids = valueChoices[choiceKey];
     for (let id of ids) {
-      message += "\n..." + id;
+      let relativeListItem = document.createElement("li");
+      addLabelWithBreak(relativeListItem, id);
+      relativeListElement.appendChild(relativeListItem);
     }
-    addItalicMessageMenuItem(menu, message);
-    message = "";
 
-    addMenuItem(menu, "Use this value", function (element) {
+    addButton(listItem, "Use this value", function (element) {
       changeApproved(choiceKey);
     });
   }
+
+  menu.list.appendChild(fragment);
+
   endMainMenu(menu);
 }
 
