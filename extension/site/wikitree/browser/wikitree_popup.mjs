@@ -2030,8 +2030,9 @@ async function userCheckForCensusTablesImprovements(
     if (lastDiffIndex == -1) {
       backFunction();
     } else {
-      let prevDiffIndex = getIndexOfPrevDiffNeedingApproval();
-      setupApproveCensusChangeSubMenu(data, tabId, backFunction, input, prevDiffIndex);
+      //let prevDiffIndex = getIndexOfPrevDiffNeedingApproval();
+      //setupApproveCensusChangeSubMenu(data, tabId, backFunction, input, prevDiffIndex);
+      setupApproveCensusChangeSubMenu(tabId, backFunction, compareResult, biography, flags, lastDiffIndex);
     }
   }
 
@@ -2481,14 +2482,14 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
           let listElement = document.createElement("ul");
           fragment.appendChild(listElement);
 
-          if (compareResult.numDiffValues) {
-            message = compareResult.numDiffValues + " cells have a common different value";
+          if (compareResult.numMultipleValuesForEmptyCells) {
+            message = compareResult.numMultipleValuesForEmptyCells + " cells have multiple possible new values";
             let listItem = document.createElement("li");
             addLabelWithBreak(listItem, message);
             listElement.appendChild(listItem);
           }
-          if (compareResult.numMultipleValuesForEmptyCells) {
-            message = compareResult.numMultipleValuesForEmptyCells + " cells have multiple possible new values";
+          if (compareResult.numDiffValues) {
+            message = compareResult.numDiffValues + " cells have a common different value";
             let listItem = document.createElement("li");
             addLabelWithBreak(listItem, message);
             listElement.appendChild(listItem);
@@ -2675,7 +2676,7 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
 
   function addLabelWithBreak(parent, message) {
     let label = document.createElement("label");
-    label.innerText = message;
+    label.innerHTML = message;
     label.className = "largeEditBoxLabel";
     parent.appendChild(label);
     addBreak(parent);
@@ -2689,13 +2690,14 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
     saveButton.onclick = clickFunc;
 
     let buttonDiv = document.createElement("div");
-    buttonDiv.className = "flex-parent jc-center";
+    //buttonDiv.className = "flex-parent jc-center";
     buttonDiv.appendChild(saveButton);
 
     parent.appendChild(buttonDiv);
   }
 
-  addLabelWithBreak(fragment, "In the table for " + diff.census.year + " census:");
+  let topMessage = "In the table for <b>" + diff.census.year + "</b> census";
+  //addLabelWithBreak(fragment, "In the table for <b>" + diff.census.year + "</b> census:");
 
   let name = "unknown";
   if (diff.person.Name) {
@@ -2703,14 +2705,28 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
   } else if (diff.census.householdTable.fields.length > 0) {
     name = diff.person[census.householdTable.fields[0]];
   }
-  addLabelWithBreak(fragment, "in the '" + diff.field + "' column for person '" + name + "':");
-  addLabelWithBreak(fragment, "Current value is '" + diff.person[diff.field] + "'");
+  topMessage += " in the <b>" + diff.field + "</b> column for person <b>" + name + "</b>:";
+  //addLabelWithBreak(fragment, "in the <b>" + diff.field + "</b> column for person <b>" + name + "</b>:");
+  addLabelWithBreak(fragment, topMessage);
+
+  addBreak(fragment);
+  addLabelWithBreak(fragment, "Current value is:");
+
+  let currentValueListElement = document.createElement("ul");
+  fragment.appendChild(currentValueListElement);
+
+  let currentValueMessage = "<b>" + diff.person[diff.field] + "</b>";
+  if (diff.noDiffRelatives && diff.noDiffRelatives.length > 0) {
+    currentValueMessage += " also used by:";
+  }
+
+  let currentValueListItem = document.createElement("li");
+  addLabelWithBreak(currentValueListItem, currentValueMessage);
+  currentValueListElement.appendChild(currentValueListItem);
 
   if (diff.noDiffRelatives && diff.noDiffRelatives.length > 0) {
-    addLabelWithBreak(fragment, "also used by:");
-
     let listElement = document.createElement("ul");
-    fragment.appendChild(listElement);
+    currentValueListItem.appendChild(listElement);
 
     for (let relative of diff.noDiffRelatives) {
       let listItem = document.createElement("li");
@@ -2719,7 +2735,7 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
     }
   }
 
-  addButton(fragment, "Keep this value", function (element) {
+  addButton(currentValueListElement, "Keep this value", function (element) {
     changeRejected();
   });
 
@@ -2738,7 +2754,7 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
     }
   }
 
-  let message = "";
+  addBreak(fragment);
   if (numChoices == 1) {
     addLabelWithBreak(fragment, "There is one other value:");
   } else {
@@ -2750,9 +2766,9 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
   for (let choiceKey in valueChoices) {
     let valueDisplay = choiceKey;
     if (valueDisplay) {
-      valueDisplay = "'" + valueDisplay + "'";
+      valueDisplay = "<b>" + valueDisplay + "</b>";
     } else {
-      valueDisplay = "<empty>";
+      valueDisplay = "<b>[empty]</b>";
     }
 
     let listItem = document.createElement("li");
