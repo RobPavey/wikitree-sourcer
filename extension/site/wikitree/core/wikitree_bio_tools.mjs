@@ -681,18 +681,37 @@ function buildImprovedTableString(censusTable) {
 function updateBiography(compareResults, biography) {
   let newBiography = biography;
 
-  // any resolution of the census cell values should now have updated these values
-  // in the householdTable object within each census table.
+  // any resolution of the census cell values has been updated in the diff objects
+  // Now go through and unpdate the householdTable object within each census table.
+  for (let diff of compareResults.diffs) {
+    if ("newValue" in diff) {
+      diff.person[diff.field] = diff.newValue;
+    }
+  }
 
   // go through censusTables and generate an improvedTable string for each one from
-  // the improvedHouseholdTable
+  // the now improved householdTable
   let censusTables = compareResults.parsedBio.censusTables;
   for (let censusTable of censusTables) {
     let tableString = buildImprovedTableString(censusTable);
     if (tableString && tableString != censusTable.table) {
-      let matches = newBiography.match(censusTable.table);
-      if (matches && matches.length == 1) {
-        newBiography = newBiography.replace(censusTable.table, tableString);
+      // we want to make the change. Do some safety checks. Check that censusTable.table
+      // is only in newBiography once.
+      // We do not want to treat censusTable.table as a regexp since it can contain special characters
+      // like ( and ). So we can't use newBiography.match
+      let matchIndex = newBiography.indexOf(censusTable.table);
+      if (matchIndex != -1) {
+        let additionalMatchIndex = newBiography.indexOf(censusTable.table, matchIndex + 1);
+        if (additionalMatchIndex == -1) {
+          //console.log("updateBiography, replacing table string:");
+          //console.log(censusTable.table);
+          //console.log(tableString);
+          newBiography = newBiography.replace(censusTable.table, tableString);
+        } else {
+          console.log("updateBiography, multiple matches found in biography for census year: " + censusTable.year);
+        }
+      } else {
+        console.log("updateBiography, no match found in biography for census year: " + censusTable.year);
       }
     }
   }

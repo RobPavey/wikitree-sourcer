@@ -2409,9 +2409,9 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
       } else {
         message += " census tables ";
       }
-      message += "in this biography (";
+      message += "in this biography [";
       for (let censusTable of censusTables) {
-        if (!message.endsWith("(")) {
+        if (!message.endsWith("[")) {
           message += " ";
         }
         if (censusTable.year) {
@@ -2420,7 +2420,7 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
           message += "<no year>";
         }
       }
-      message += ")";
+      message += "]";
       addLabelWithBreak(fragment, message);
       addBreak(fragment);
 
@@ -2441,10 +2441,10 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
         for (let relative of compareResult.relatives) {
           if (relative.matchingCensusTables) {
             let relativeId = getRelativeId(relative);
-            message += relativeId + " (";
+            message += relativeId + " [";
             for (let relativeCensusTable of relative.parsedBio.censusTables) {
               if (relativeCensusTable.isMatch) {
-                if (!message.endsWith("(")) {
+                if (!message.endsWith("[")) {
                   message += " ";
                 }
                 if (relativeCensusTable.year) {
@@ -2454,7 +2454,7 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
                 }
               }
             }
-            message += ")";
+            message += "]";
             let listItem = document.createElement("li");
             addLabelWithBreak(listItem, message);
             listElement.appendChild(listItem);
@@ -2650,7 +2650,7 @@ function getRelativeId(relative) {
     }
   }
 
-  let id = relation + " " + relative.firstName + " " + relative.lnab;
+  let id = relation + ": " + relative.firstName + " " + relative.lnab;
   return id;
 }
 
@@ -2661,10 +2661,9 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
 
   addBackMenuItem(menu, backFunction);
 
-  // See setupImproveNameFieldsSubMenu for example
-
   function changeApproved(value) {
-    diff.person[diff.field] = value;
+    //diff.person[diff.field] = value;
+    diff.newValue = value;
     userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, diffIndex);
   }
 
@@ -2690,14 +2689,22 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
     saveButton.onclick = clickFunc;
 
     let buttonDiv = document.createElement("div");
-    //buttonDiv.className = "flex-parent jc-center";
     buttonDiv.appendChild(saveButton);
 
     parent.appendChild(buttonDiv);
   }
 
-  let topMessage = "In the table for <b>" + diff.census.year + "</b> census";
-  //addLabelWithBreak(fragment, "In the table for <b>" + diff.census.year + "</b> census:");
+  function getValueDisplayString(value) {
+    let valueDisplay = value;
+    if (value) {
+      valueDisplay = "<b>" + value + "</b>";
+    } else {
+      valueDisplay = "<b>[empty]</b>";
+    }
+    return valueDisplay;
+  }
+
+  let topMessage = "In the <b>" + diff.census.year + "</b> census table";
 
   let name = "unknown";
   if (diff.person.Name) {
@@ -2705,8 +2712,7 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
   } else if (diff.census.householdTable.fields.length > 0) {
     name = diff.person[census.householdTable.fields[0]];
   }
-  topMessage += " in the <b>" + diff.field + "</b> column for person <b>" + name + "</b>:";
-  //addLabelWithBreak(fragment, "in the <b>" + diff.field + "</b> column for person <b>" + name + "</b>:");
+  topMessage += " in the row for person <b>" + name + "</b> in the <b>" + diff.field + "</b> column:";
   addLabelWithBreak(fragment, topMessage);
 
   addBreak(fragment);
@@ -2715,7 +2721,7 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
   let currentValueListElement = document.createElement("ul");
   fragment.appendChild(currentValueListElement);
 
-  let currentValueMessage = "<b>" + diff.person[diff.field] + "</b>";
+  let currentValueMessage = getValueDisplayString(diff.person[diff.field]);
   if (diff.noDiffRelatives && diff.noDiffRelatives.length > 0) {
     currentValueMessage += " also used by:";
   }
@@ -2764,12 +2770,7 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
   let choiceListElement = document.createElement("ul");
   fragment.appendChild(choiceListElement);
   for (let choiceKey in valueChoices) {
-    let valueDisplay = choiceKey;
-    if (valueDisplay) {
-      valueDisplay = "<b>" + valueDisplay + "</b>";
-    } else {
-      valueDisplay = "<b>[empty]</b>";
-    }
+    let valueDisplay = getValueDisplayString(choiceKey);
 
     let listItem = document.createElement("li");
     addLabelWithBreak(listItem, valueDisplay + " used by:");
