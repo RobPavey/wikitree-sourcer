@@ -2020,7 +2020,7 @@ async function userCheckForCensusTablesImprovements(
 
       // doesn't need approval - make any changes that might not need approval
       if (diff.hasNewValueForEmptyCell) {
-        diff.person[diff.field] = diff.values[0];
+        diff.newValue = diff.values[0];
       }
     }
     return -1;
@@ -2511,7 +2511,8 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
             listElement.appendChild(listItem);
           }
         } else {
-          addLabelWithBreak(fragment, "\n\nNo differences found in table cell values.");
+          addBreak(fragment);
+          addLabelWithBreak(fragment, "No differences found in table cell values.");
         }
       } else {
         addLabelWithBreak(fragment, "No compare result diffs.");
@@ -2662,12 +2663,14 @@ async function setupApproveCensusChangeSubMenu(tabId, backFunction, compareResul
   addBackMenuItem(menu, backFunction);
 
   function changeApproved(value) {
-    //diff.person[diff.field] = value;
     diff.newValue = value;
     userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, diffIndex);
   }
 
   function changeRejected() {
+    // set newValue here in case it was previously approved and then user went back
+    // could also delete newValue
+    diff.newValue = diff.person[diff.field];
     userCheckForCensusTablesImprovements(tabId, compareResult, biography, backFunction, flags, diffIndex);
   }
 
