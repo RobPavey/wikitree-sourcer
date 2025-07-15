@@ -1913,15 +1913,17 @@ function buildBestDateFromDateObject(date) {
   }
 
   // see if there is a better date in the fields
-  for (let field of date.fields) {
-    if (field.type == "http://gedcomx.org/Date") {
-      for (let value of field.values) {
-        let text = value.text;
-        if (!bestBackupDate) {
-          bestBackupDate = test;
-        }
-        if (goodDateRexExp.test(text)) {
-          return text;
+  if (date.fields) {
+    for (let field of date.fields) {
+      if (field.type == "http://gedcomx.org/Date") {
+        for (let value of field.values) {
+          let text = value.text;
+          if (!bestBackupDate) {
+            bestBackupDate = test;
+          }
+          if (goodDateRexExp.test(text)) {
+            return text;
+          }
         }
       }
     }
