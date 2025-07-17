@@ -106,6 +106,16 @@ const regressionData = [
     url: "https://www.findmypast.co.uk/transcript?id=GBPRS%2FPORTSMOUTH%2FBUR%2F00238041",
   },
   {
+    // Saved 17 Jul 2025, household transcribed in wrong order
+    caseName: "england_census_1851_john_wells",
+    url: "https://www.findmypast.co.uk/transcript?id=gbc%2F1851%2F0000457525&tab=this",
+  },
+  {
+    // Saved 17 Jul 2025, household transcribed in wrong order
+    caseName: "england_census_1851_philip_wells",
+    url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1851%2F0000457527&tab=this",
+  },
+  {
     // Saved 8 Oct 2024, birth place in GD is only getting England
     caseName: "england_census_1851_william_leigh",
     url: "https://www.findmypast.co.uk/transcript?id=GBC%2F1851%2F0001700843&expand=true&tab=this",

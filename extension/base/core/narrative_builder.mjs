@@ -1883,7 +1883,7 @@ class NarrativeBuilder {
           relatedToPerson = selectedStructuredMember.relationTo;
         } else if (
           structuredHousehold.head &&
-          structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
+          structuredHousehold.head.personIndex < selectedStructuredMember.personIndex
         ) {
           // sometimes this is a pauper and the "head" is also a pauper
           // maybe some relationships are not valid to be head
@@ -1898,37 +1898,8 @@ class NarrativeBuilder {
       }
     }
 
-    function getHeadOfHouseholdMemberIfNotSelected(household) {
-      let hasRelationships = false;
-      if (household && household.length > 1) {
-        for (let member of household) {
-          if (!member.isSelected && member.relationship) {
-            hasRelationships = true; // the selected person can have a relationship when the rest do not
-          }
-          if (!member.isSelected && member.relationship == "head") {
-            return member;
-          }
-        }
-
-        if (hasRelationships) {
-          // There is no head (this should not be called if this person is the head)
-          // Occasionally the first person of the household has a relationship of "wife" or "widow"
-          if (!household[0].isSelected) {
-            if (household[0].relationship == "wife" || household[0].relationship == "widow") {
-              return household[0];
-            }
-          }
-        } else {
-          if (!household[0].isSelected) {
-            return household[0];
-          }
-        }
-      }
-      return undefined;
-    }
-
-    function getHeadOfHouseholdNameIfNotSelected(household) {
-      let member = getHeadOfHouseholdMemberIfNotSelected(household);
+    function getHeadOfHouseholdNameIfNotSelected(gd) {
+      let member = gd.getHeadOfHouseholdMemberIfNotSelected();
       if (member) {
         return member.name;
       }
@@ -1989,7 +1960,7 @@ class NarrativeBuilder {
     function getHouseholdPart() {
       let result = "";
       if (options.narrative_census_householdPartFormat == "relationship") {
-        let headName = getHeadOfHouseholdNameIfNotSelected(gd.householdArray);
+        let headName = getHeadOfHouseholdNameIfNotSelected(gd);
         if (relatedToPerson) {
           headName = relatedToPerson.gdMember.name;
         }
@@ -2074,7 +2045,7 @@ class NarrativeBuilder {
           let hasMother = false;
           let isHeadOrWife = false;
 
-          let headMember = getHeadOfHouseholdMemberIfNotSelected(gd.householdArray);
+          let headMember = gd.getHeadOfHouseholdMemberIfNotSelected();
 
           if (relationship.includes("head") || relationship == "wife") {
             isHeadOrWife = true;
@@ -2243,7 +2214,7 @@ class NarrativeBuilder {
               result += " as";
             }
 
-            let headName = getHeadOfHouseholdNameIfNotSelected(gd.householdArray);
+            let headName = getHeadOfHouseholdNameIfNotSelected(gd);
 
             if (relationship.includes("head")) {
               result += " the head of household";

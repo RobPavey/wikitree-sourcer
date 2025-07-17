@@ -4877,6 +4877,36 @@ class GeneralizedData {
     return false;
   }
 
+  getHeadOfHouseholdMemberIfNotSelected() {
+    let household = this.householdArray;
+    let hasRelationships = false;
+    if (household && household.length > 1) {
+      for (let member of household) {
+        if (!member.isSelected && member.relationship) {
+          hasRelationships = true; // the selected person can have a relationship when the rest do not
+        }
+        if (!member.isSelected && member.relationship == "head") {
+          return member;
+        }
+      }
+
+      if (hasRelationships) {
+        // There is no head (this should not be called if this person is the head)
+        // Occasionally the first person of the household has a relationship of "wife" or "widow"
+        if (!household[0].isSelected) {
+          if (household[0].relationship == "wife" || household[0].relationship == "widow") {
+            return household[0];
+          }
+        }
+      } else {
+        if (!household[0].isSelected) {
+          return household[0];
+        }
+      }
+    }
+    return undefined;
+  }
+
   getNarrativeDateFormat(dateObj, format, highlightOption, addPreposition, prepSuffix = "") {
     let newFormat = format;
     if (format == "country" || format == "countryNth") {

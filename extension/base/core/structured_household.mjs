@@ -69,10 +69,10 @@ class StructuredHousehold {
       }
     }
 
-    function addChildOfLastHead(householdMember) {
-      addChildOfHouseholdMember(lastHead, householdMember);
-      if (lastHead && lastHead.wife) {
-        addChildOfHouseholdMember(lastHead.wife, householdMember);
+    function addChildOfHead(householdMember, head) {
+      addChildOfHouseholdMember(head, householdMember);
+      if (head && head.wife) {
+        addChildOfHouseholdMember(head.wife, householdMember);
       }
     }
 
@@ -91,8 +91,70 @@ class StructuredHousehold {
       }
     }
 
+    // to handle rare cases where there is a single head but the head is not listed first
+    // check for that. Example: https://www.findmypast.co.uk/transcript?id=GBC%2F1851%2F0000457527&tab=this
+    let hasOutOfOrderHead = false;
+    let numHeads = 0;
+    let singleHeadMemberIndex = -1;
+    for (let memberIndex = 0; memberIndex < this.members.length; memberIndex++) {
+      let member = this.members[memberIndex];
+      if (member.relationship == "head") {
+        if (numHeads == 0) {
+          singleHeadMemberIndex = memberIndex;
+        }
+        numHeads++;
+      }
+    }
+    if (numHeads == 1) {
+      if (singleHeadMemberIndex != 0) {
+        hasOutOfOrderHead = true;
+      }
+    }
+
+    let gdMembers = this.members;
+    if (hasOutOfOrderHead) {
+      // move head to start of list
+      gdMembers = [];
+      gdMembers[0] = this.members[singleHeadMemberIndex];
+      for (let memberIndex = 0; memberIndex < this.members.length; memberIndex++) {
+        if (memberIndex != singleHeadMemberIndex) {
+          gdMembers.push(this.members[memberIndex]);
+        }
+      }
+      singleHeadMemberIndex = 0;
+    }
+
+    function getBestHeadForMember(member) {
+      let relationship = member.relationship;
+      if (singleHeadMemberIndex != -1) {
+        if (singleHeadMemberIndex < household.members.length) {
+          let singleHead = household.members[singleHeadMemberIndex];
+          if (!lastHead) {
+            return singleHead;
+          } else if (lastHead != singleHead) {
+            // handle case where member is not related to lastHead
+            if (lastHead) {
+              let memberName = member.name;
+              let lastHeadName = lastHead.gdMember.name;
+              let singleHeadName = singleHead.gdMember.name;
+              if (memberName && lastHeadName && singleHeadName) {
+                let memberLastName = StringUtils.getLastWord(memberName);
+                let lastHeadLastName = StringUtils.getLastWord(lastHeadName);
+                let singleHeadLastName = StringUtils.getLastWord(singleHeadName);
+                if (memberLastName != lastHeadLastName && memberLastName == singleHeadLastName) {
+                  return singleHead;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      return lastHead;
+    }
+
     let personIndex = 0;
-    for (let member of this.members) {
+    for (let member of gdMembers) {
       let householdMember = {};
       household.members.push(householdMember);
       householdMember.gdMember = member;
@@ -117,7 +179,7 @@ class StructuredHousehold {
         setHead(householdMember);
       } else if (relationship == "wife") {
         confirmGender(householdMember, "female");
-        if (lastHead && numPeopleSinceHead == 1) {
+        if (lastHead && (numPeopleSinceHead == 1 || (hasOutOfOrderHead && lastHead.gdMember.relationship == "head"))) {
           lastWifeOfHead = householdMember;
           lastHead.wife = householdMember;
           householdMember.husband = lastHead;
@@ -150,15 +212,24 @@ class StructuredHousehold {
         }
       } else if (relationship == "son") {
         confirmGender(householdMember, "male");
-        addChildOfLastHead(householdMember);
-        householdMember.relationTo = lastHead;
+        let relationTo = getBestHeadForMember(member);
+        if (relationTo) {
+          addChildOfHead(householdMember, relationTo);
+          householdMember.relationTo = relationTo;
+        }
       } else if (relationship == "daughter") {
         confirmGender(householdMember, "female");
-        addChildOfLastHead(householdMember);
-        householdMember.relationTo = lastHead;
+        let relationTo = getBestHeadForMember(member);
+        if (relationTo) {
+          addChildOfHead(householdMember, relationTo);
+          householdMember.relationTo = relationTo;
+        }
       } else if (relationship == "child") {
-        addChildOfLastHead(householdMember);
-        householdMember.relationTo = lastHead;
+        let relationTo = getBestHeadForMember(member);
+        if (relationTo) {
+          addChildOfHead(householdMember, relationTo);
+          householdMember.relationTo = relationTo;
+        }
       } else if (relationship == "father") {
         confirmGender(householdMember, "male");
         addChildOfHouseholdMember(householdMember, lastHead);

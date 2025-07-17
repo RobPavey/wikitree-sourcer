@@ -212,7 +212,7 @@ function getUkCensusString(gd, options) {
         relatedToPerson = selectedStructuredMember.relationTo;
       } else if (
         structuredHousehold.head &&
-        structuredHousehold.head.personIndex != selectedStructuredMember.personIndex
+        structuredHousehold.head.personIndex < selectedStructuredMember.personIndex
       ) {
         // sometimes this is a pauper and the "head" is also a pauper
         // maybe some relationships are not valid to be head
@@ -283,14 +283,17 @@ function getUkCensusString(gd, options) {
     }
 
     if (gd.householdArray && gd.householdArray.length > 0) {
-      let headIndex = 0;
-      if (relatedToPerson) {
-        headIndex = relatedToPerson.personIndex;
+      let headMember = gd.householdArray[0];
+      if (relatedToPerson && relatedToPerson.personIndex) {
+        headMember = gd.householdArray[relatedToPerson.personIndex];
       } else {
-        headIndex = getHeadOfHouseholdIndex(gd.householdArray);
+        let member = gd.getHeadOfHouseholdMemberIfNotSelected();
+        if (member) {
+          headMember = member;
+        }
       }
-      let headName = gd.householdArray[headIndex].name;
-      let headAge = cleanAge(gd.householdArray[headIndex].age);
+      let headName = headMember.name;
+      let headAge = cleanAge(headMember.age);
 
       if (headName) {
         dataString += " in household of ";
@@ -472,14 +475,17 @@ function getOtherCensusString(gd, options) {
     }
 
     if (gd.householdArray && gd.householdArray.length > 0) {
-      let headIndex = 0;
-      if (relatedToPerson) {
-        headIndex = relatedToPerson.personIndex;
+      let headMember = gd.householdArray[0];
+      if (relatedToPerson && relatedToPerson.personIndex) {
+        headMember = gd.householdArray[relatedToPerson.personIndex];
       } else {
-        headIndex = getHeadOfHouseholdIndex(gd.householdArray);
+        let member = gd.getHeadOfHouseholdMemberIfNotSelected();
+        if (member) {
+          headMember = member;
+        }
       }
-      let headName = gd.householdArray[headIndex].name;
-      let headAge = cleanAge(gd.householdArray[headIndex].age);
+      let headName = headMember.name;
+      let headAge = cleanAge(headMember.age);
 
       if (headName) {
         dataString += " in household of ";

@@ -1,0 +1,107 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fmp",
+  "personGender": "male",
+  "name": {
+    "lastName": "Wells",
+    "forenames": "John"
+  },
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Back Street, Tetsworth, Thame, Oxfordshire, England"
+  },
+  "registrationDistrict": "Thame",
+  "birthDate": {
+    "yearString": "1825",
+    "qualifier": 2
+  },
+  "ageAtEvent": "26",
+  "birthPlace": {
+    "placeString": "Tetsworth, Oxfordshire, England"
+  },
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "occupation": "Carpenter & joiner",
+  "maritalStatus": "single",
+  "relationshipToHead": "son",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "occupation",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "isSelected": true,
+      "name": "John Wells",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "26",
+      "birthYear": "1825",
+      "occupation": "Carpenter & joiner",
+      "birthPlace": "Tetsworth, Oxfordshire, England"
+    },
+    {
+      "name": "George Ball",
+      "relationship": "lodger",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "38",
+      "birthYear": "1813",
+      "occupation": "Labourer",
+      "birthPlace": "Tetsworth, Oxfordshire, England"
+    },
+    {
+      "name": "Philip Wells",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "15",
+      "birthYear": "1836",
+      "occupation": "Carpenter apprentice",
+      "birthPlace": "Tetsworth, Oxfordshire, England"
+    },
+    {
+      "name": "Susan Wells",
+      "relationship": "head",
+      "maritalStatus": "widowed",
+      "gender": "female",
+      "age": "55",
+      "birthYear": "1796",
+      "occupation": "Chair woman",
+      "birthPlace": "Gloucestershire, England"
+    },
+    {
+      "name": "James Thorn",
+      "relationship": "lodger",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "45",
+      "birthYear": "1806",
+      "occupation": "Parish rileaf",
+      "birthPlace": "Oxfordshire, England"
+    }
+  ],
+  "parents": {
+    "mother": {
+      "name": {
+        "name": "Susan Wells"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "1851 England, Wales & Scotland Census",
+    "page": "28",
+    "piece": "1726",
+    "folio": "148",
+    "schedule": "90"
+  },
+  "hasValidData": true
+}
