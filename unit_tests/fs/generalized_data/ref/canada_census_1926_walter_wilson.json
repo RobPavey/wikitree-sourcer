@@ -1,0 +1,125 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Walter Wilson",
+    "lastName": "Wilson",
+    "forenames": "Walter"
+  },
+  "birthDate": {
+    "dateString": "1916",
+    "yearString": "1916"
+  },
+  "birthPlace": {
+    "placeString": "Sask"
+  },
+  "eventDate": {
+    "dateString": "1926",
+    "yearString": "1926"
+  },
+  "eventPlace": {
+    "placeString": "Prince Albert No. 461, Saskatchewan, Canada"
+  },
+  "ageAtEvent": "10",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "William Wilson",
+      "relationship": "head",
+      "maritalStatus": "married",
+      "gender": "male",
+      "age": "60",
+      "birthYear": "1866",
+      "birthPlace": "Scotland"
+    },
+    {
+      "name": "Alice Wilson",
+      "relationship": "wife",
+      "maritalStatus": "married",
+      "gender": "female",
+      "age": "48",
+      "birthYear": "1878",
+      "birthPlace": "England"
+    },
+    {
+      "name": "Molly Wilson",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "17",
+      "birthYear": "1909",
+      "birthPlace": "Sask"
+    },
+    {
+      "name": "James Wilson",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "14",
+      "birthYear": "1912",
+      "birthPlace": "Sask"
+    },
+    {
+      "name": "Walter Wilson",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "10",
+      "birthYear": "1916",
+      "birthPlace": "Sask",
+      "isSelected": true
+    },
+    {
+      "name": "Alice Wilson",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "5",
+      "birthYear": "1921",
+      "birthPlace": "Saskatchwen"
+    }
+  ],
+  "maritalStatus": "single",
+  "relationshipToHead": "son",
+  "race": "Scotish",
+  "parents": {
+    "father": {
+      "name": {
+        "name": "William Wilson"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Alice Wilson"
+      }
+    }
+  },
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QP2W-DC3N}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-C395-G94R-Q}}",
+    "{{FamilySearch Record|QP2W-DC3D}}",
+    "{{FamilySearch Record|QP2W-DC36}}",
+    "{{FamilySearch Record|QP2W-DC3X}}",
+    "{{FamilySearch Record|QP2W-DC3F}}",
+    "{{FamilySearch Record|QP2W-DC3N}}",
+    "{{FamilySearch Record|QP2W-DC3J}}"
+  ],
+  "collectionData": {
+    "id": "3005862",
+    "collectionTitle": "Canada, Prairie Provinces, Census, 1926",
+    "page": "8"
+  },
+  "hasValidData": true
+}

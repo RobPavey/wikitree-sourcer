@@ -2798,7 +2798,7 @@ function processRecordDataFactsForPersonObj(person, result) {
       // In a birth registration the child is a principal and the mother is not
       if (fact.type) {
         let factType = getFactType(fact);
-        if (fact.primary) {
+        if (fact.primary && !result.factType) {
           result.factType = factType;
           setEventDateAndPlaceForFact(result, fact);
         }
