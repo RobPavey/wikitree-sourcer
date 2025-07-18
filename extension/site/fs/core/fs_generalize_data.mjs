@@ -1256,8 +1256,15 @@ function generalizeData(input) {
   if (eventDate && ed.eventYear) {
     // occasionally the event date is missing the year and should have it added
     // E.g. https://www.familysearch.org/ark:/61903/1:1:QPZ7-YXKC?lang=en
-    if (!eventDate.includes(ed.eventYear)) {
-      eventDate += " " + ed.eventYear;
+    // BUT. Sometime (e.g. on https://www.familysearch.org/ark:/61903/1:1:QGLK-B6K4?lang=en )
+    // we get:
+    // "eventDate": "1 January 1782",
+    // "eventYear": "1641-1813",
+    // In that case we do not want to include the "eventYear"
+    if (ed.eventYear.length == 4) {
+      if (!eventDate.includes(ed.eventYear)) {
+        eventDate += " " + ed.eventYear;
+      }
     }
   }
 
