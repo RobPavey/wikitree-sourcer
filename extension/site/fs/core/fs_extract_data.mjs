@@ -2648,10 +2648,12 @@ function getPrimaryNameForm(person) {
   let nameForms = [];
 
   if (preferredName) {
-    for (let nameForm of preferredName.nameForms) {
-      if (nameForm.parts) {
-        nameForms.push(nameForm);
-        break;
+    if (preferredName.nameForms) {
+      for (let nameForm of preferredName.nameForms) {
+        if (nameForm.parts) {
+          nameForms.push(nameForm);
+          break;
+        }
       }
     }
   } else {
@@ -2660,10 +2662,12 @@ function getPrimaryNameForm(person) {
       // "http://gedcomx.org/AlsoKnownAs" which we ignore
       let nameType = name.type;
       if (nameType == "http://gedcomx.org/BirthName") {
-        for (let nameForm of name.nameForms) {
-          if (nameForm.parts) {
-            nameForms.push(nameForm);
-            break;
+        if (name.nameForms) {
+          for (let nameForm of name.nameForms) {
+            if (nameForm.parts) {
+              nameForms.push(nameForm);
+              break;
+            }
           }
         }
       }
@@ -3861,21 +3865,23 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
         if (names) {
           for (let name of names) {
             let nameForms = name.nameForms;
-            for (let nameForm of nameForms) {
-              let parts = nameForm.parts;
-              if (parts) {
-                for (let part of parts) {
-                  let fields = part.fields;
-                  if (fields) {
-                    for (let field of fields) {
-                      let values = field.values;
-                      if (values) {
-                        for (let value of values) {
-                          let labelId = value.labelId;
-                          if (labelId) {
-                            if (labelId.startsWith("SPOUSE")) {
-                              relationshipToPerson = "Spouse";
-                              break;
+            if (nameForms) {
+              for (let nameForm of nameForms) {
+                let parts = nameForm.parts;
+                if (parts) {
+                  for (let part of parts) {
+                    let fields = part.fields;
+                    if (fields) {
+                      for (let field of fields) {
+                        let values = field.values;
+                        if (values) {
+                          for (let value of values) {
+                            let labelId = value.labelId;
+                            if (labelId) {
+                              if (labelId.startsWith("SPOUSE")) {
+                                relationshipToPerson = "Spouse";
+                                break;
+                              }
                             }
                           }
                         }
