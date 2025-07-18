@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Institution Inmate''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nInstitution Inmates database<br/>\n[https://www.cornwall-opc-database.org/extra-searches/institution-inmates/ Cornwall OPC] (accessed 6 May 2021)<br/>\nMargaret M Grose on 28 Feb 1867 in Bodmin County Lunatic Asylum, Cornwall, England.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Margaret was an inmate on 28 February 1867 in Bodmin County Lunatic Asylum, Cornwall, England.<ref>\n'''Institution Inmate''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nInstitution Inmates database<br/>\n[https://www.cornwall-opc-database.org/extra-searches/institution-inmates/ Cornwall OPC] (accessed 6 May 2021)<br/>\nMargaret M Grose on 28 Feb 1867 in Bodmin County Lunatic Asylum, Cornwall, England.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Institution Inmate''': \"Cornwall Online Parish Clerks Database\"<br/>Institution Inmates database<br/>[https://www.cornwall-opc-database.org/extra-searches/institution-inmates/ Cornwall OPC] (accessed 6 May 2021)<br/>Margaret M Grose on 28 Feb 1867 in Bodmin County Lunatic Asylum, Cornwall, England.",
+    "type": "source"
+  }
+}

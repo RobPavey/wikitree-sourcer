@@ -4134,6 +4134,10 @@ class GeneralizedData {
         defaultTitle: "Imprisonment",
       },
       {
+        type: RT.InstitutionInmate,
+        defaultTitle: "Institution Inmate",
+      },
+      {
         type: RT.FreemasonMembership,
         defaultTitle: "Freemason Membership",
       },

@@ -3130,6 +3130,7 @@ class NarrativeBuilder {
       { recordType: RT.ElectoralRegister, string: "was registered to vote" },
       { recordType: RT.CriminalRegister, string: "was in a criminal register" },
       { recordType: RT.Imprisonment, string: "was imprisoned" },
+      { recordType: RT.InstitutionInmate, string: "was an inmate" },
       { recordType: RT.FreemasonMembership, string: "was a freemason" },
       { recordType: RT.Certificate, string: "was issued a certificate" },
       { recordType: RT.Directory, string: "was in a directory" },

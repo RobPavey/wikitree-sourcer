@@ -49,6 +49,8 @@ const RT = {
 
   CriminalRegister: `CriminalRegister`,
   Imprisonment: `Imprisonment`,
+  InstitutionInmate: `InstitutionInmate`,
+
   FreemasonMembership: `FreemasonMembership`,
   Directory: `Directory`,
   Employment: `Employment`,

@@ -109,8 +109,9 @@ const typeData = {
   },
   // Institution Inmates
   institution_inmates: {
-    recordType: RT.CriminalRegister,
+    recordType: RT.InstitutionInmate,
     searchUrl: "extra-searches/institution-inmates/",
+    placeType: "institution",
   },
   // Land Records
   land_tax: {
@@ -360,6 +361,33 @@ class OpccornEdReader extends ExtractedDataReader {
             dateObj.dateString = dateString;
           }
         }
+      } else {
+        let year = this.ed.recordData["Year Of Admission"];
+        if (year) {
+          // Banns can have two years for the three dates
+          const slashIndex = year.indexOf("/");
+          if (slashIndex != -1) {
+            year = year.substring(0, slashIndex);
+          }
+
+          dateObj.yearString = year;
+
+          let dayMonth = this.ed.recordData["Date Of Admission"];
+          if (dayMonth) {
+            let parts = dayMonth.split("-");
+            if (parts.length == 2) {
+              let day = parts[0];
+              // remove leading 0
+              if (day && day.length == 2 && day[0] == "0") {
+                day = day.substring(1);
+              }
+              let month = parts[1];
+
+              let dateString = day + " " + month + " " + year;
+              dateObj.dateString = dateString;
+            }
+          }
+        }
       }
     }
     return dateObj;
@@ -414,6 +442,16 @@ class OpccornEdReader extends ExtractedDataReader {
           let prd = this.ed.recordData["Parish Or Reg District"];
           if (prd) {
             placeString = prd + ", " + county + ", " + country;
+          }
+        }
+        break;
+      case "institution":
+        {
+          // e.g.
+          // "Institution": "Bodmin County Lunatic Asylum",
+          let institution = this.ed.recordData["Institution"];
+          if (institution) {
+            placeString = institution + ", " + county + ", " + country;
           }
         }
         break;

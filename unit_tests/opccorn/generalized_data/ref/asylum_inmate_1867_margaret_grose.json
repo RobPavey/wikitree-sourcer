@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "InstitutionInmate",
+  "name": {
+    "lastName": "Grose",
+    "forenames": "Margaret M"
+  },
+  "eventDate": {
+    "yearString": "1867",
+    "dateString": "28 Feb 1867"
+  },
+  "eventPlace": {
+    "placeString": "Bodmin County Lunatic Asylum, Cornwall, England",
+    "county": "Cornwall",
+    "country": "England"
+  },
+  "hasValidData": true
+}

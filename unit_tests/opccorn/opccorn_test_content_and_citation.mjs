@@ -32,6 +32,10 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
+    caseName: "asylum_inmate_1867_margaret_grose",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=institution_inmates&id=183742",
+  },
+  {
     caseName: "banns_1810_david_jones",
     url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=banns&id=72798",
     optionVariants: [
