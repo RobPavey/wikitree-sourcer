@@ -1415,7 +1415,16 @@ function getParentsFromDocumentInNonEditMode2025(document, result) {
   // "[father unknown]" (public view) or "[father?]" (private view)
 
   let fatherLink = document.querySelector("#Father a[itemprop=url]");
+  if (!fatherLink) {
+    // WBE Change Family Lists can cause it to be somewhere else
+    fatherLink = document.querySelector(".VITALS span[itemprop=Father] a[itemprop=url]");
+  }
+
   let motherLink = document.querySelector("#Mother a[itemprop=url]");
+  if (!motherLink) {
+    // WBE Change Family Lists can cause it to be somewhere else
+    motherLink = document.querySelector(".VITALS span[itemprop=Mother] a[itemprop=url]");
+  }
 
   if (fatherLink) {
     if (result.parents == undefined) {
