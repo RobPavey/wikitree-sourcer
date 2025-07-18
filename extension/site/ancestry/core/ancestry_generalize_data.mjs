@@ -372,6 +372,7 @@ function determineRecordType(extractedData) {
         "Confederate Pensions",
         "War Pension",
         "Royal Naval Reserve Service Records",
+        "Naval Officers' Service Record",
         "Marine Corps Muster",
         "Army Roll of Honour",
         "Army Attestation Registers",
