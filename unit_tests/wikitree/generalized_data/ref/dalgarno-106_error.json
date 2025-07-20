@@ -1,0 +1,59 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Jean",
+    "otherLastNames": "Dalgairns",
+    "lastName": "Dalgarno"
+  },
+  "lastNameAtBirth": "Dalgarno",
+  "lastNameAtDeath": "Livie",
+  "mothersMaidenName": "Hill",
+  "personGender": "female",
+  "birthDate": {
+    "dateString": "1790",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Maryton, Forfarshire, Scotland"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Alexander Dalgarno",
+        "lastName": "Dalgarno",
+        "forenames": "Alexander"
+      },
+      "lastNameAtBirth": "Dalgarno",
+      "lastNameAtDeath": "Dalgarno"
+    },
+    "mother": {
+      "name": {
+        "forenames": "Elizabeth",
+        "lastName": "Hill",
+        "name": "Elizabeth Hill"
+      },
+      "lastNameAtBirth": "Hill",
+      "lastNameAtDeath": "Dalgarno"
+    }
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Alexander Livie",
+        "lastName": "Livie",
+        "forenames": "Alexander"
+      },
+      "lastNameAtBirth": "Livie",
+      "lastNameAtDeath": "Livie",
+      "marriageDate": {
+        "dateString": "4 Feb 1813"
+      },
+      "marriagePlace": {
+        "placeString": "Montrose, Angus, Scotland, United Kingdom"
+      }
+    }
+  ],
+  "hasValidData": true,
+  "personRepoRef": "Dalgarno-106"
+}

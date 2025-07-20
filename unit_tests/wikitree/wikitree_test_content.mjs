@@ -48,6 +48,16 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Craft-31",
   },
   {
+    // Saved by Linda - the Sourcer popup treats it as an unrecogized page for her
+    caseName: "dalgarno-106_error",
+    url: "https://www.wikitree.com/wiki/Dalgarno-106",
+  },
+  {
+    // Same as above saved by me. Works fine for me
+    caseName: "dalgarno-106_read",
+    url: "https://www.wikitree.com/wiki/Dalgarno-106",
+  },
+  {
     caseName: "davey-2737_private",
     url: "https://www.wikitree.com/wiki/Davey-2737",
   },

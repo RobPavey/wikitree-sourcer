@@ -1,0 +1,39 @@
+{
+  "hasValidData": true,
+  "firstNames": "Jean",
+  "prefNames": "",
+  "middleNames": "",
+  "lnab": "Dalgarno",
+  "currentLastName": "Livie",
+  "mothersMaidenName": "Hill",
+  "birthDate": "1790",
+  "birthDateStatus": "none",
+  "deathDate": "",
+  "deathDateStatus": "none",
+  "birthLocation": "Maryton, Forfarshire, Scotland",
+  "deathLocation": "",
+  "personGender": "female",
+  "spouses": [
+    {
+      "wikiId": "Livie-17",
+      "name": "Alexander Livie",
+      "marriageDate": "4 Feb 1813",
+      "marriagePlace": "Montrose, Angus, Scotland, United Kingdom"
+    }
+  ],
+  "url": "https://www.wikitree.com/wiki/Dalgarno-106",
+  "pageType": "read",
+  "wikiId": "Dalgarno-106",
+  "name": "Jean (Dalgarno) Livie\n25Â°",
+  "otherLastNames": "Dalgairns",
+  "parents": {
+    "father": {
+      "wikiId": "Dalgarno-101",
+      "name": "Alexander Dalgarno"
+    },
+    "mother": {
+      "wikiId": "Hill-35469",
+      "name": "Elizabeth (Hill) Dalgarno"
+    }
+  }
+}

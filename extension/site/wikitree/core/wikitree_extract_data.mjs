@@ -1464,6 +1464,12 @@ function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
   const missingDataRegEx = /^\[.*\]$/;
 
   let spouseElements = document.querySelectorAll("#Spouses .spouse");
+
+  // if there is a single spouse then the div.spouse can be a sibling the #Spouses element
+  if (spouseElements.length == 0) {
+    spouseElements = document.querySelectorAll("#Family-pane .spouse");
+  }
+
   for (let spouseElement of spouseElements) {
     let spouseLink = spouseElement.querySelector("span[itemprop=spouse] a[itemprop=url]");
     // spouseLink can be null for private spouse
