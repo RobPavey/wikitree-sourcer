@@ -22,8 +22,14 @@
       "spouseBirthYear": "1859"
     }
   ],
-  "fatherName": "Charles W SNYDER",
-  "motherName": "Lydia Margaret ALLHANDS",
+  "father": {
+    "name": "Charles W SNYDER",
+    "subtitle": "1843–1900"
+  },
+  "mother": {
+    "name": "Lydia Margaret ALLHANDS",
+    "subtitle": "1845–1894"
+  },
   "sources": [
     {
       "dbId": "6742",

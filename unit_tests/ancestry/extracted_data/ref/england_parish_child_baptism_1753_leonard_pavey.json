@@ -30,8 +30,12 @@
         "spouseName": "Martha Northam"
       }
     ],
-    "fatherName": "Leonard Pavey IV",
-    "motherName": "Ann Hearn",
+    "father": {
+      "name": "Leonard Pavey IV"
+    },
+    "mother": {
+      "name": "Ann Hearn"
+    },
     "sources": [
       {
         "dbId": "2243",

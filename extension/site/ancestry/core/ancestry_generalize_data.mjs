@@ -2898,9 +2898,27 @@ function generalizeProfileData(input, result) {
     }
   }
 
-  if (ed.fatherName) {
+  function addBirthAndDeathDatesFromSubtitle(person, subtitle) {
+    if (subtitle && subtitle.includes("–")) {
+      let dates = subtitle.split("–");
+      if (dates.length == 2) {
+        if (dates[0]) {
+          let dateObj = new DateObj();
+          dateObj.yearString = dates[0];
+          person.birthDate = dateObj;
+        }
+        if (dates[1]) {
+          let dateObj = new DateObj();
+          dateObj.yearString = dates[1];
+          person.deathDate = dateObj;
+        }
+      }
+    }
+  }
+
+  if (ed.father && ed.father.name) {
     let father = result.addFather();
-    father.name.setFullName(cleanName(ed.fatherName));
+    father.name.setFullName(cleanName(ed.father.name));
 
     // sometimes the last name is all uppercase on Ancestry profiles
     // setFullName above will have removed suffixes
@@ -2922,10 +2940,12 @@ function generalizeProfileData(input, result) {
         }
       }
     }
+
+    addBirthAndDeathDatesFromSubtitle(father, ed.father.subtitle);
   }
-  if (ed.motherName) {
+  if (ed.mother && ed.mother.name) {
     let mother = result.addMother();
-    mother.name.setFullName(cleanName(ed.motherName));
+    mother.name.setFullName(cleanName(ed.mother.name));
 
     // sometimes the last name is all uppercase on Ancestry profiles
     // setFullName above will have removed suffixes
@@ -2934,6 +2954,74 @@ function generalizeProfileData(input, result) {
       let newLastName = NameUtils.convertNameFromAllCapsToMixedCase(surname);
       if (mother.name) {
         mother.name.name = mother.name.name.replace(surname, newLastName);
+      }
+    }
+
+    addBirthAndDeathDatesFromSubtitle(mother, ed.mother.subtitle);
+  }
+
+  // add siblings
+  if (ed.siblings && ed.siblings.length > 0) {
+    result.siblings = [];
+    for (let edSibling of ed.siblings) {
+      let sibling = {};
+      sibling.name = new NameObj();
+      sibling.name.setFullName(cleanName(edSibling.name));
+      addBirthAndDeathDatesFromSubtitle(sibling, edSibling.subtitle);
+      result.siblings.push(sibling);
+    }
+  }
+
+  // add half siblings
+  if (ed.halfSiblings && ed.halfSiblings.length > 0) {
+    result.halfSiblings = [];
+    for (let edSibling of ed.halfSiblings) {
+      let sibling = {};
+      sibling.name = new NameObj();
+      sibling.name.setFullName(cleanName(edSibling.name));
+      addBirthAndDeathDatesFromSubtitle(sibling, edSibling.subtitle);
+      result.halfSiblings.push(sibling);
+    }
+  }
+
+  // add spouses and children (spouse already added but check with this extra data)
+  if (ed.spousesAndChildren && ed.spousesAndChildren.length > 0) {
+    for (let edSpouse of ed.spousesAndChildren) {
+      // see if the spouse already exists.
+      let newSpouse = {};
+      newSpouse.name = new NameObj();
+      newSpouse.name.setFullName(cleanName(edSpouse.name));
+      addBirthAndDeathDatesFromSubtitle(newSpouse, edSpouse.subtitle);
+
+      let existingSpouse = undefined;
+      if (result.spouses) {
+        for (let spouse of result.spouses) {
+          if (spouse.name && newSpouse.name) {
+            if (spouse.name.name == newSpouse.name.name) {
+              existingSpouse = spouse;
+            }
+          }
+        }
+      }
+
+      let spouse = existingSpouse;
+      if (!spouse) {
+        spouse = result.addSpouse();
+        spouse.name = newSpouse.name;
+        spouse.birthDate = newSpouse.birthDate;
+        spouse.deathDate = newSpouse.deathDate;
+      }
+
+      if (edSpouse.children && edSpouse.children.length > 0) {
+        spouse.children = [];
+        for (let edChild of edSpouse.children) {
+          let child = {};
+          child.name = new NameObj();
+          child.name.setFullName(cleanName(edChild.name));
+          addBirthAndDeathDatesFromSubtitle(child, edChild.subtitle);
+
+          spouse.children.push(child);
+        }
       }
     }
   }

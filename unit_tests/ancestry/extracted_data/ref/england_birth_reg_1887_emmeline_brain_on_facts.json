@@ -16,8 +16,12 @@
       "spouseName": "Arthur Eli Pavey"
     }
   ],
-  "fatherName": "Robert Brain",
-  "motherName": "Mary Elizabeth Kimberlin",
+  "father": {
+    "name": "Robert Brain"
+  },
+  "mother": {
+    "name": "Mary Elizabeth Kimberlin"
+  },
   "sources": [
     {
       "dbId": "6598",

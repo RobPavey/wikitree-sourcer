@@ -13,6 +13,30 @@
       "spouseDeathYear": "1580"
     }
   ],
+  "spousesAndChildren": [
+    {
+      "name": "John Pavey",
+      "subtitle": "–1580",
+      "children": [
+        {
+          "name": "John Pavey",
+          "subtitle": "1548–"
+        },
+        {
+          "name": "Robert Pavey",
+          "subtitle": "1552–"
+        },
+        {
+          "name": "Peternell Pavey",
+          "subtitle": "1553–1555"
+        },
+        {
+          "name": "Thomas Pavey",
+          "subtitle": "1555–"
+        }
+      ]
+    }
+  ],
   "sources": [
     {
       "dbId": "9852",

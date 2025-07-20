@@ -36,7 +36,30 @@
       },
       "deathDate": {
         "yearString": "1764"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Leonard Pavey",
+            "suffix": "V"
+          }
+        },
+        {
+          "name": {
+            "name": "Rebecca Pavey"
+          }
+        },
+        {
+          "name": {
+            "name": "John Pavey"
+          }
+        },
+        {
+          "name": {
+            "name": "Samuel Pavey"
+          }
+        }
+      ]
     }
   ],
   "parents": {

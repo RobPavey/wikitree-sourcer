@@ -20,8 +20,12 @@
       "spouseName": "Edward Hodge Barber"
     }
   ],
-  "fatherName": "William K. Kemper",
-  "motherName": "Mary \"Polly\" (Hornberger) Kemper",
+  "father": {
+    "name": "William K. Kemper"
+  },
+  "mother": {
+    "name": "Mary \"Polly\" (Hornberger) Kemper"
+  },
   "sources": [
     {
       "dbId": "7667",

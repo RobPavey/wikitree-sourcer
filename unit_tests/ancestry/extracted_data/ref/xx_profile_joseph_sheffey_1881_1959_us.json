@@ -17,8 +17,33 @@
       "spouseBirthYear": "1888"
     }
   ],
-  "fatherName": "Daniel Henry Sheffey Jr",
-  "motherName": "Jane A White",
+  "father": {
+    "name": "Daniel Henry Sheffey Jr"
+  },
+  "mother": {
+    "name": "Jane A White"
+  },
+  "spousesAndChildren": [
+    {
+      "name": "Nannie E Buford",
+      "children": [
+        {
+          "name": "Ethel Darnella Sheffey"
+        },
+        {
+          "name": "Thelma Constance Sheffey"
+        }
+      ]
+    },
+    {
+      "name": "Susan Julia \"Susie\" Roane",
+      "children": [
+        {
+          "name": "Joseph Christopher Sheffey Jr"
+        }
+      ]
+    }
+  ],
   "sources": [
     {
       "dbId": "7602",

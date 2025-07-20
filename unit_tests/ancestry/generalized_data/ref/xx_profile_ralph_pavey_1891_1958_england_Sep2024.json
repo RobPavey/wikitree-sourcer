@@ -35,7 +35,64 @@
       },
       "deathDate": {
         "yearString": "1942"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Ralph Allan Pavey"
+          },
+          "birthDate": {
+            "yearString": "1914"
+          },
+          "deathDate": {
+            "yearString": "1992"
+          }
+        },
+        {
+          "name": {
+            "name": "Jack Vernon Pavey"
+          },
+          "birthDate": {
+            "yearString": "1919"
+          },
+          "deathDate": {
+            "yearString": "1925"
+          }
+        },
+        {
+          "name": {
+            "name": "Darel Pavey"
+          },
+          "birthDate": {
+            "yearString": "1922"
+          },
+          "deathDate": {
+            "yearString": "1973"
+          }
+        },
+        {
+          "name": {
+            "name": "Peter Pavey"
+          },
+          "birthDate": {
+            "yearString": "1924"
+          },
+          "deathDate": {
+            "yearString": "1973"
+          }
+        },
+        {
+          "name": {
+            "name": "Derek Pavey"
+          },
+          "birthDate": {
+            "yearString": "1927"
+          },
+          "deathDate": {
+            "yearString": "1995"
+          }
+        }
+      ]
     },
     {
       "name": {
@@ -52,7 +109,17 @@
       },
       "deathDate": {
         "yearString": "1975"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Heather Carol Pavey"
+          },
+          "birthDate": {
+            "yearString": "1948"
+          }
+        }
+      ]
     }
   ],
   "parents": {
@@ -61,11 +128,23 @@
         "name": "Harry Alfred Pavey",
         "lastName": "Pavey",
         "forenames": "Harry Alfred"
+      },
+      "birthDate": {
+        "yearString": "1852"
+      },
+      "deathDate": {
+        "yearString": "1914"
       }
     },
     "mother": {
       "name": {
         "name": "Amelia Elizabeth Littlemore"
+      },
+      "birthDate": {
+        "yearString": "1849"
+      },
+      "deathDate": {
+        "yearString": "1938"
       }
     }
   },

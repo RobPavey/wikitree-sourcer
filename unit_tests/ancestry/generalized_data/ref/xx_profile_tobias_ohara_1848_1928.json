@@ -52,18 +52,150 @@
       },
       "deathDate": {
         "yearString": "1921"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Ann O'Hara"
+          },
+          "birthDate": {
+            "yearString": "1875"
+          },
+          "deathDate": {
+            "yearString": "1875"
+          }
+        },
+        {
+          "name": {
+            "name": "Francis Alexander O'Hara"
+          },
+          "birthDate": {
+            "yearString": "1875"
+          },
+          "deathDate": {
+            "yearString": "1948"
+          }
+        },
+        {
+          "name": {
+            "name": "MARY ELIZABETH OHara"
+          },
+          "birthDate": {
+            "yearString": "1876"
+          },
+          "deathDate": {
+            "yearString": "1889"
+          }
+        },
+        {
+          "name": {
+            "name": "ISABELLA OHARA"
+          },
+          "birthDate": {
+            "yearString": "1877"
+          },
+          "deathDate": {
+            "yearString": "1940"
+          }
+        },
+        {
+          "name": {
+            "name": "MICHAEL OHara/4"
+          },
+          "birthDate": {
+            "yearString": "1879"
+          },
+          "deathDate": {
+            "yearString": "1946"
+          }
+        },
+        {
+          "name": {
+            "name": "Tobias O Hara"
+          },
+          "birthDate": {
+            "yearString": "1880"
+          },
+          "deathDate": {
+            "yearString": "1889"
+          }
+        },
+        {
+          "name": {
+            "name": "Henry O'Hara"
+          },
+          "birthDate": {
+            "yearString": "1881"
+          },
+          "deathDate": {
+            "yearString": "1965"
+          }
+        },
+        {
+          "name": {
+            "name": "George O'Hara"
+          },
+          "birthDate": {
+            "yearString": "1884"
+          },
+          "deathDate": {
+            "yearString": "1885"
+          }
+        },
+        {
+          "name": {
+            "name": "William James OHara"
+          },
+          "birthDate": {
+            "yearString": "1886"
+          },
+          "deathDate": {
+            "yearString": "1919"
+          }
+        },
+        {
+          "name": {
+            "name": "Raymond Francis Ohara"
+          },
+          "birthDate": {
+            "yearString": "1887"
+          },
+          "deathDate": {
+            "yearString": "1919"
+          }
+        },
+        {
+          "name": {
+            "name": "Angela O Hara"
+          },
+          "birthDate": {
+            "yearString": "1889"
+          },
+          "deathDate": {
+            "yearString": "1933"
+          }
+        }
+      ]
     }
   ],
   "parents": {
     "father": {
       "name": {
         "name": "Michael/2 OHara"
+      },
+      "birthDate": {
+        "yearString": "1811"
+      },
+      "deathDate": {
+        "yearString": "1888"
       }
     },
     "mother": {
       "name": {
         "name": "Elizabeth Sandys"
+      },
+      "deathDate": {
+        "yearString": "1855"
       }
     }
   },

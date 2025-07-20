@@ -52,11 +52,23 @@
         "name": "Charles W Snyder",
         "lastName": "Snyder",
         "forenames": "Charles W"
+      },
+      "birthDate": {
+        "yearString": "1843"
+      },
+      "deathDate": {
+        "yearString": "1900"
       }
     },
     "mother": {
       "name": {
         "name": "Lydia Margaret Allhands"
+      },
+      "birthDate": {
+        "yearString": "1845"
+      },
+      "deathDate": {
+        "yearString": "1894"
       }
     }
   },

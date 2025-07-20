@@ -20,7 +20,44 @@
       },
       "deathDate": {
         "yearString": "1580"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "John Pavey"
+          },
+          "birthDate": {
+            "yearString": "1548"
+          }
+        },
+        {
+          "name": {
+            "name": "Robert Pavey"
+          },
+          "birthDate": {
+            "yearString": "1552"
+          }
+        },
+        {
+          "name": {
+            "name": "Peternell Pavey"
+          },
+          "birthDate": {
+            "yearString": "1553"
+          },
+          "deathDate": {
+            "yearString": "1555"
+          }
+        },
+        {
+          "name": {
+            "name": "Thomas Pavey"
+          },
+          "birthDate": {
+            "yearString": "1555"
+          }
+        }
+      ]
     }
   ],
   "hasValidData": true

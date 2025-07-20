@@ -33,7 +33,35 @@
       },
       "birthDate": {
         "yearString": "1888"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Ethel Darnella Sheffey"
+          }
+        },
+        {
+          "name": {
+            "name": "Thelma Constance Sheffey"
+          }
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Susan Julia Roane",
+        "nicknames": "Susie"
+      },
+      "marriageDate": {},
+      "marriagePlace": {},
+      "children": [
+        {
+          "name": {
+            "name": "Joseph Christopher Sheffey",
+            "suffix": "Jr"
+          }
+        }
+      ]
     }
   ],
   "parents": {

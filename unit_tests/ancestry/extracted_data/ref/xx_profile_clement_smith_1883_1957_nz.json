@@ -15,8 +15,12 @@
       "spouseName": "Agnes Elizabeth Davidson"
     }
   ],
-  "fatherName": "John Francis Smith",
-  "motherName": "Ellen Fletcher",
+  "father": {
+    "name": "John Francis Smith"
+  },
+  "mother": {
+    "name": "Ellen Fletcher"
+  },
   "sources": [
     {
       "dbId": "8949",

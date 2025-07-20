@@ -25,8 +25,42 @@
       "spouseDeathYear": "1975"
     }
   ],
-  "fatherName": "Harry Alfred Pavey",
-  "motherName": "Amelia Elizabeth Littlemore",
+  "father": {
+    "name": "Harry Alfred Pavey"
+  },
+  "mother": {
+    "name": "Amelia Elizabeth Littlemore"
+  },
+  "spousesAndChildren": [
+    {
+      "name": "Clara Ethel Risley",
+      "children": [
+        {
+          "name": "Ralph Allan Pavey"
+        },
+        {
+          "name": "Jack Vernon Pavey"
+        },
+        {
+          "name": "Darel Pavey"
+        },
+        {
+          "name": "Peter Pavey"
+        },
+        {
+          "name": "Derek Pavey"
+        }
+      ]
+    },
+    {
+      "name": "Elsie Sarah Chambers",
+      "children": [
+        {
+          "name": "Heather Carol Pavey"
+        }
+      ]
+    }
+  ],
   "sources": [
     {
       "dbId": "7814",

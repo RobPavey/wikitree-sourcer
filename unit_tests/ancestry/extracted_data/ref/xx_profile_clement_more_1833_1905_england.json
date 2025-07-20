@@ -20,8 +20,12 @@
       "spouseName": "Louisa Maria Laver"
     }
   ],
-  "fatherName": "John More",
-  "motherName": "Mary More",
+  "father": {
+    "name": "John More"
+  },
+  "mother": {
+    "name": "Mary More"
+  },
   "sources": [
     {
       "dbId": "8860",

@@ -35,7 +35,34 @@
       },
       "deathDate": {
         "yearString": "1942"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Ralph Allan Pavey"
+          }
+        },
+        {
+          "name": {
+            "name": "Jack Vernon Pavey"
+          }
+        },
+        {
+          "name": {
+            "name": "Darel Pavey"
+          }
+        },
+        {
+          "name": {
+            "name": "Peter Pavey"
+          }
+        },
+        {
+          "name": {
+            "name": "Derek Pavey"
+          }
+        }
+      ]
     },
     {
       "name": {
@@ -52,7 +79,14 @@
       },
       "deathDate": {
         "yearString": "1975"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Heather Carol Pavey"
+          }
+        }
+      ]
     }
   ],
   "parents": {

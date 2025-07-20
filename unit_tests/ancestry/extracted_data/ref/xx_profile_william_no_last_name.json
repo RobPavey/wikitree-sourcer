@@ -4,7 +4,11 @@
   "givenName": "William",
   "titleName": "William",
   "gender": "Male",
-  "fatherName": "Robert Michael Pavey",
-  "motherName": "Summer Ariana Lopez",
+  "father": {
+    "name": "Robert Michael Pavey"
+  },
+  "mother": {
+    "name": "Summer Ariana Lopez"
+  },
   "ancestryTemplate": "{{Ancestry Tree|86808578|262544635265}}"
 }

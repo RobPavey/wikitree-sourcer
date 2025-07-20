@@ -25,8 +25,66 @@
       "spouseDeathYear": "1921"
     }
   ],
-  "fatherName": "Michael/2  OHara",
-  "motherName": "Elizabeth SANDYS",
+  "father": {
+    "name": "Michael/2  OHara",
+    "subtitle": "1811–1888"
+  },
+  "mother": {
+    "name": "Elizabeth SANDYS",
+    "subtitle": "–1855"
+  },
+  "spousesAndChildren": [
+    {
+      "name": "Annie Farmer",
+      "subtitle": "1849–1921",
+      "children": [
+        {
+          "name": "Ann O'Hara",
+          "subtitle": "1875–1875"
+        },
+        {
+          "name": "Francis Alexander O'Hara",
+          "subtitle": "1875–1948"
+        },
+        {
+          "name": "MARY ELIZABETH OHara",
+          "subtitle": "1876–1889"
+        },
+        {
+          "name": "ISABELLA OHARA",
+          "subtitle": "1877–1940"
+        },
+        {
+          "name": "MICHAEL OHara/4",
+          "subtitle": "1879–1946"
+        },
+        {
+          "name": "Tobias O Hara",
+          "subtitle": "1880–1889"
+        },
+        {
+          "name": "Henry O'Hara",
+          "subtitle": "1881–1965"
+        },
+        {
+          "name": "George O'Hara",
+          "subtitle": "1884–1885"
+        },
+        {
+          "name": "William James OHara",
+          "subtitle": "1886–1919"
+        },
+        {
+          "name": "Raymond Francis Ohara",
+          "subtitle": "1887–1919"
+        },
+        {
+          "name": "Angela O Hara",
+          "subtitle": "1889–1933"
+        }
+      ]
+    }
+  ],
   "sources": [
     {
       "dbId": "8860",

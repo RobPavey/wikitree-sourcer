@@ -7,7 +7,11 @@
   "birthDate": "AFT. 1995",
   "birthPlace": "England",
   "gender": "Male",
-  "fatherName": "Mark Powis Saville",
-  "motherName": "Fiona L Kirby",
+  "father": {
+    "name": "Mark Powis Saville"
+  },
+  "mother": {
+    "name": "Fiona L Kirby"
+  },
   "ancestryTemplate": "{{Ancestry Tree|86808578|262406177056}}"
 }

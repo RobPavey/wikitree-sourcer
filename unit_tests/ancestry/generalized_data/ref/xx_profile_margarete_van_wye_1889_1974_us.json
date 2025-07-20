@@ -35,7 +35,42 @@
       },
       "deathDate": {
         "yearString": "1965"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Jean Louise Kelts"
+          },
+          "birthDate": {
+            "yearString": "1921"
+          },
+          "deathDate": {
+            "yearString": "1986"
+          }
+        },
+        {
+          "name": {
+            "name": "William David (Dave) Kelts"
+          },
+          "birthDate": {
+            "yearString": "1924"
+          },
+          "deathDate": {
+            "yearString": "1984"
+          }
+        },
+        {
+          "name": {
+            "name": "Marian Adaline Kelts"
+          },
+          "birthDate": {
+            "yearString": "1927"
+          },
+          "deathDate": {
+            "yearString": "2013"
+          }
+        }
+      ]
     }
   ],
   "parents": {
@@ -44,11 +79,23 @@
         "name": "Homer William Van Wye",
         "lastName": "Van Wye",
         "forenames": "Homer William"
+      },
+      "birthDate": {
+        "yearString": "1859"
+      },
+      "deathDate": {
+        "yearString": "1919"
       }
     },
     "mother": {
       "name": {
         "name": "Apollonia (Lena) Lemley"
+      },
+      "birthDate": {
+        "yearString": "1860"
+      },
+      "deathDate": {
+        "yearString": "1945"
       }
     }
   },

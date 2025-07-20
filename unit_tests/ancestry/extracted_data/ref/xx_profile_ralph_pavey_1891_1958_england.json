@@ -21,8 +21,12 @@
       "spouseName": "Elsie Sarah Chambers"
     }
   ],
-  "fatherName": "Harry Alfred Pavey",
-  "motherName": "Amelia Elizabeth Littlemore",
+  "father": {
+    "name": "Harry Alfred Pavey"
+  },
+  "mother": {
+    "name": "Amelia Elizabeth Littlemore"
+  },
   "sources": [
     {
       "dbId": "7814",

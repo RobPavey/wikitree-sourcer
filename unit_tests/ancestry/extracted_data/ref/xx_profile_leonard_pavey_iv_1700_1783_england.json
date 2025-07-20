@@ -18,8 +18,31 @@
       "spouseDeathYear": "1764"
     }
   ],
-  "fatherName": "Leonard Pavey Junr",
-  "motherName": "Elizabeth Phippen",
+  "father": {
+    "name": "Leonard Pavey Junr"
+  },
+  "mother": {
+    "name": "Elizabeth Phippen"
+  },
+  "spousesAndChildren": [
+    {
+      "name": "Ann Hearn",
+      "children": [
+        {
+          "name": "Leonard Pavey V"
+        },
+        {
+          "name": "Rebecca Pavey"
+        },
+        {
+          "name": "John Pavey"
+        },
+        {
+          "name": "Samuel Pavey"
+        }
+      ]
+    }
+  ],
   "sources": [
     {
       "dbId": "2448",

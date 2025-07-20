@@ -18,8 +18,34 @@
       "spouseDeathYear": "1965"
     }
   ],
-  "fatherName": "Homer William Van Wye",
-  "motherName": "Apollonia (Lena) Lemley",
+  "father": {
+    "name": "Homer William Van Wye",
+    "subtitle": "1859–1919"
+  },
+  "mother": {
+    "name": "Apollonia (Lena) Lemley",
+    "subtitle": "1860–1945"
+  },
+  "spousesAndChildren": [
+    {
+      "name": "George Edwin Kelts",
+      "subtitle": "1889–1965",
+      "children": [
+        {
+          "name": "Jean Louise Kelts",
+          "subtitle": "1921–1986"
+        },
+        {
+          "name": "William David (Dave) Kelts",
+          "subtitle": "1924–1984"
+        },
+        {
+          "name": "Marian Adaline Kelts",
+          "subtitle": "1927–2013"
+        }
+      ]
+    }
+  ],
   "sources": [
     {
       "dbId": "7602",

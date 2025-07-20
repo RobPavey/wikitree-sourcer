@@ -1597,13 +1597,13 @@ function handlePersonFactsPreJune2024(document, result) {
       let fatherItem = parentItems[0];
       let fatherTitle = fatherItem.querySelector("h4.userCardTitle");
       if (fatherTitle && fatherTitle.textContent != "Unknown father") {
-        result.fatherName = fatherTitle.textContent;
+        result.father = { name: fatherTitle.textContent };
       }
 
       let motherItem = parentItems[1];
       let motherTitle = motherItem.querySelector("h4.userCardTitle");
       if (motherTitle && motherTitle.textContent != "Unknown mother") {
-        result.motherName = motherTitle.textContent;
+        result.mother = { name: motherTitle.textContent };
       }
     }
   }
@@ -1882,22 +1882,144 @@ function handlePersonFactsJune2024(document, result) {
 
   let familySection = document.querySelector("#familySection");
   if (familySection) {
-    // there can be multiple research lists but parents should always be first one
-    let parentResearchList = familySection.querySelector("ul.researchList");
-
-    let parentItems = parentResearchList.querySelectorAll("li.researchListItem");
-
-    if (parentItems.length == 2) {
-      let fatherItem = parentItems[0];
-      let fatherTitle = fatherItem.querySelector("h4.userCardTitle");
-      if (fatherTitle && fatherTitle.textContent != "Unknown father") {
-        result.fatherName = fatherTitle.textContent;
+    // there are multiple ur.researchList elements, each one should have an h3
+    // preceding it which identifies it
+    let researchLists = familySection.querySelectorAll("ul.researchList");
+    let parentResearchList = undefined;
+    let siblingResearchList = undefined;
+    let halfSiblingResearchList = undefined;
+    let spouseResearchLists = [];
+    for (let researchList of researchLists) {
+      let prevElement = researchList.previousElementSibling;
+      if (prevElement) {
+        if (prevElement.tagName == "H3") {
+          if (prevElement.textContent == "Biological parents") {
+            parentResearchList = researchList;
+          } else if (prevElement.textContent == "Siblings") {
+            siblingResearchList = researchList;
+          } else if (prevElement.textContent == "Half siblings") {
+            halfSiblingResearchList = researchList;
+          } else if (prevElement.textContent == "Spouse and children") {
+            spouseResearchLists.push(researchList);
+          }
+        } else if (prevElement.tagName == "UL") {
+          if (spouseResearchLists.length > 0) {
+            spouseResearchLists.push(researchList);
+          }
+        }
+      } else {
+        let parentElement = researchList.parentElement;
+        if (parentElement && parentElement.id == "toggleSiblingsFacts") {
+          siblingResearchList = researchList;
+        }
       }
+    }
 
-      let motherItem = parentItems[1];
-      let motherTitle = motherItem.querySelector("h4.userCardTitle");
-      if (motherTitle && motherTitle.textContent != "Unknown mother") {
-        result.motherName = motherTitle.textContent;
+    // there can be multiple research lists but parents should always be first one
+    if (!parentResearchList) {
+      parentResearchList = familySection.querySelector("ul.researchList");
+    }
+
+    if (parentResearchList) {
+      let parentItems = parentResearchList.querySelectorAll("li.researchListItem");
+
+      if (parentItems.length == 2) {
+        let fatherItem = parentItems[0];
+        let fatherTitle = fatherItem.querySelector("h4.userCardTitle");
+        if (fatherTitle && fatherTitle.textContent != "Unknown father") {
+          result.father = {};
+          result.father.name = fatherTitle.textContent;
+          let fatherSubtitle = fatherItem.querySelector("p.userCardSubTitle");
+          if (fatherSubtitle) {
+            result.father.subtitle = fatherSubtitle.textContent;
+          }
+        }
+
+        let motherItem = parentItems[1];
+        let motherTitle = motherItem.querySelector("h4.userCardTitle");
+        if (motherTitle && motherTitle.textContent != "Unknown mother") {
+          result.mother = {};
+          result.mother.name = motherTitle.textContent;
+          let motherSubtitle = motherItem.querySelector("p.userCardSubTitle");
+          if (motherSubtitle) {
+            result.mother.subtitle = motherSubtitle.textContent;
+          }
+        }
+      }
+    }
+
+    if (siblingResearchList) {
+      let siblingElements = siblingResearchList.querySelectorAll("li.researchListItem");
+      result.siblings = [];
+
+      for (let siblingElement of siblingElements) {
+        let sibling = {};
+        let titleElement = siblingElement.querySelector("h4.userCardTitle");
+        let subtitleElement = siblingElement.querySelector("p.userCardSubTitle");
+        if (titleElement) {
+          sibling.name = titleElement.textContent;
+        }
+        if (subtitleElement) {
+          sibling.subtitle = subtitleElement.textContent;
+        }
+        result.siblings.push(sibling);
+      }
+    }
+
+    if (halfSiblingResearchList) {
+      let halfSiblingElements = halfSiblingResearchList.querySelectorAll("li.researchListItem");
+      result.halfSiblings = [];
+      for (let halfSiblingElement of halfSiblingElements) {
+        let halfSibling = {};
+        let titleElement = halfSiblingElement.querySelector("h4.userCardTitle");
+        let subtitleElement = halfSiblingElement.querySelector("p.userCardSubTitle");
+        if (titleElement) {
+          halfSibling.name = titleElement.textContent;
+        }
+        if (subtitleElement) {
+          halfSibling.subtitle = subtitleElement.textContent;
+        }
+        result.halfSiblings.push(halfSibling);
+      }
+    }
+
+    if (spouseResearchLists.length > 0) {
+      result.spousesAndChildren = [];
+      for (let spouseResearchList of spouseResearchLists) {
+        let spouseElement = spouseResearchList.querySelector("li.researchListItem");
+        let spouseChildElements = spouseResearchList.querySelectorAll("li.researchListItem.researchListItemIndented");
+        if (spouseElement) {
+          let spouse = {};
+          result.spousesAndChildren.push(spouse);
+
+          let titleElement = spouseElement.querySelector("h4.userCardTitle");
+          let subtitleElement = spouseElement.querySelector("p.userCardSubTitle");
+
+          if (titleElement) {
+            spouse.name = titleElement.textContent;
+          }
+          if (subtitleElement) {
+            spouse.subtitle = subtitleElement.textContent;
+          }
+
+          if (spouseChildElements.length > 0) {
+            spouse.children = [];
+            for (let spouseChildElement of spouseChildElements) {
+              let child = {};
+              spouse.children.push(child);
+
+              let titleElement = spouseChildElement.querySelector("h5.userCardTitle");
+              let subtitleElement = spouseChildElement.querySelector("p.userCardSubTitle");
+
+              if (titleElement) {
+                child.name = titleElement.textContent;
+              }
+              if (subtitleElement) {
+                child.subtitle = subtitleElement.textContent;
+              }
+            }
+          }
+        }
       }
     }
   }
