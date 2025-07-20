@@ -37,7 +37,23 @@
       "lastNameAtDeath": "Dalgarno"
     }
   },
-  "spouses": [],
+  "spouses": [
+    {
+      "name": {
+        "name": "Alexander Livie",
+        "lastName": "Livie",
+        "forenames": "Alexander"
+      },
+      "lastNameAtBirth": "Livie",
+      "lastNameAtDeath": "Livie",
+      "marriageDate": {
+        "dateString": "4 Feb 1813"
+      },
+      "marriagePlace": {
+        "placeString": "Montrose, Angus, Scotland, United Kingdom"
+      }
+    }
+  ],
   "hasValidData": true,
   "personRepoRef": "Dalgarno-106"
 }
