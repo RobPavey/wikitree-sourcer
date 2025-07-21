@@ -30,8 +30,10 @@ SOFTWARE.
 // https://www.familysearch.org/ark:/61903/3:1:S3HY-DRVJ-ZJ?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AVFR1-FH4&action=view&cc=1478678
 // Or more like:
 // https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSKX-9798-6?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3A6ZQY-71VD&action=view&cc=1478678
+// Or there can be a shorter image ID like:
+// https://www.familysearch.org/ark:/61903/3:2:77TD-89FK?view=index&personArk=%2Fark%3A%2F61903%2F1%3A1%3AKSLT-3C1&action=view&cc=1910846&lang=en&groupId=
 var imageWithSidebarUrlRegEx =
-  /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:1\:\w\w\w\w\-\w\w\w\w\-\w\w?\w?\w?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w\w?).*$/;
+  /^https:\/\/www\.familysearch\.org\/ark\:\/\d+\/3\:\d\:\w\w\w\w\-\w\w\w\w(?:\-\w\w?\w?\w?)?.*personArk=%2Fark%3A%2F(\d+)%2F1%3A1%3A(\w\w\w\w\-\w\w\w\w?).*$/;
 
 // these can now have a language code like "en" in them
 var personDetailsRegex = /^https\:\/\/www.familysearch.org\/(?:\w\w\/)?tree\/person\/details\/(.*)$/i;
@@ -101,6 +103,8 @@ async function doFetch() {
       fetchType = "person";
     }
   } else if (imageWithSidebarUrlRegEx.test(fetchUrl)) {
+    console.log("This is an image with a sidebar");
+
     // This is an image with a person details selected.
     let newUrl = fetchUrl.replace(imageWithSidebarUrlRegEx, "https://www.familysearch.org/ark:/$1/1:1:$2");
     if (newUrl && newUrl != fetchUrl) {
@@ -337,7 +341,7 @@ function shouldUseFetch() {
     }
   }
 
-  //console.log("shouldUseFetch, returning useFetch = " + useFetch);
+  console.log("shouldUseFetch, returning useFetch = " + useFetch);
 
   return useFetch;
 }
