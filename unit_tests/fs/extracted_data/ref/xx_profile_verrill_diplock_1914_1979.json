@@ -21,7 +21,25 @@
       "marriageDateOriginal": "21 October 1945",
       "marriageDate": "21 October 1945",
       "marriagePlaceOriginal": "Maine, United States",
-      "marriagePlace": "Maine, United States"
+      "marriagePlace": "Maine, United States",
+      "children": [
+        {
+          "fullName": "Thomas Verrill Long",
+          "givenName": "Thomas Verrill",
+          "surname": "Long",
+          "gender": "male",
+          "birthDate": "12 June 1948",
+          "deathDate": "21 August 2012"
+        },
+        {
+          "fullName": "Benjamin Harvey Long",
+          "givenName": "Benjamin Harvey",
+          "surname": "Long",
+          "gender": "male",
+          "birthDate": "18 May 1950",
+          "deathDate": "28 March 2020"
+        }
+      ]
     }
   ],
   "father": {

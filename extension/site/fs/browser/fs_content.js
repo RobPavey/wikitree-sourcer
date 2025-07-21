@@ -103,7 +103,7 @@ async function doFetch() {
       fetchType = "person";
     }
   } else if (imageWithSidebarUrlRegEx.test(fetchUrl)) {
-    console.log("This is an image with a sidebar");
+    //console.log("This is an image with a sidebar");
 
     // This is an image with a person details selected.
     let newUrl = fetchUrl.replace(imageWithSidebarUrlRegEx, "https://www.familysearch.org/ark:/$1/1:1:$2");
@@ -341,7 +341,7 @@ function shouldUseFetch() {
     }
   }
 
-  console.log("shouldUseFetch, returning useFetch = " + useFetch);
+  //console.log("shouldUseFetch, returning useFetch = " + useFetch);
 
   return useFetch;
 }

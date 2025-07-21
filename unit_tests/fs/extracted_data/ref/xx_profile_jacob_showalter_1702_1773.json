@@ -23,7 +23,104 @@
       "marriageDateOriginal": "1722",
       "marriageDate": "1722",
       "marriagePlaceOriginal": "Germany",
-      "marriagePlace": "Germany"
+      "marriagePlace": "Germany",
+      "children": [
+        {
+          "fullName": "Peter Showalter",
+          "givenName": "Peter",
+          "surname": "Showalter",
+          "gender": "male",
+          "birthDate": "1722",
+          "deathDate": "1775"
+        },
+        {
+          "fullName": "Christian Showalter",
+          "givenName": "Christian",
+          "surname": "Showalter",
+          "gender": "male",
+          "birthDate": "1727",
+          "deathDate": "17 May 1805"
+        },
+        {
+          "fullName": "Jacob Mathias Showalter",
+          "givenName": "Jacob Mathias",
+          "surname": "Showalter",
+          "gender": "male",
+          "birthDate": "1728",
+          "deathDate": "1778"
+        },
+        {
+          "fullName": "Johannes Showalter",
+          "givenName": "Johannes",
+          "surname": "Showalter",
+          "gender": "male",
+          "birthDate": "17 October 1731",
+          "deathDate": "February 1806"
+        },
+        {
+          "fullName": "Valentin Showalter",
+          "givenName": "Valentin",
+          "surname": "Showalter",
+          "gender": "male",
+          "birthDate": "1732",
+          "deathDate": "1803"
+        },
+        {
+          "fullName": "Barbara Showalter",
+          "givenName": "Barbara",
+          "surname": "Showalter",
+          "gender": "female",
+          "birthDate": "1 January 1733",
+          "deathDate": "1824"
+        },
+        {
+          "fullName": "Joseph Showalter",
+          "givenName": "Joseph",
+          "surname": "Showalter",
+          "gender": "male",
+          "birthDate": "1733",
+          "deathDate": "22 May 1802"
+        },
+        {
+          "fullName": "Daniel Showalter",
+          "givenName": "Daniel",
+          "surname": "Showalter",
+          "gender": "male",
+          "birthDate": "20 June 1738",
+          "deathDate": "10 May 1822"
+        },
+        {
+          "fullName": "Ulrich Showalter",
+          "givenName": "Ulrich",
+          "surname": "Showalter",
+          "gender": "male",
+          "birthDate": "1743",
+          "deathDate": "31 July 1818"
+        },
+        {
+          "fullName": "Mary Elizabeth Showalter",
+          "givenName": "Mary Elizabeth",
+          "surname": "Showalter",
+          "gender": "female",
+          "birthDate": "1747",
+          "deathDate": "1776"
+        },
+        {
+          "fullName": "Martha Ann Showalter",
+          "givenName": "Martha Ann",
+          "surname": "Showalter",
+          "gender": "female",
+          "birthDate": "1748"
+        },
+        {
+          "fullName": "Baby Showalter",
+          "givenName": "Baby",
+          "surname": "Showalter",
+          "gender": "male",
+          "birthDate": "1750",
+          "deathDate": "1750"
+        }
+      ]
     }
   ],
   "father": {

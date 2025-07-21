@@ -21,7 +21,17 @@
       "marriageDateOriginal": "13 August 1943",
       "marriageDate": "13 August 1943",
       "marriagePlaceOriginal": "La Verne, Los Angeles, California, United States",
-      "marriagePlace": "La Verne, Los Angeles, California, United States"
+      "marriagePlace": "La Verne, Los Angeles, California, United States",
+      "children": [
+        {
+          "fullName": "Stanley King Crist",
+          "givenName": "Stanley King",
+          "surname": "Crist",
+          "gender": "male",
+          "birthDate": "6 August 1946",
+          "deathDate": "11 December 2007"
+        }
+      ]
     }
   ],
   "father": {

@@ -27,7 +27,16 @@
       "marriageDateOriginal": "18 November 1952",
       "marriageDate": "18 November 1952",
       "marriagePlaceOriginal": "Amelia Court House, Amelia, Virginia, United States",
-      "marriagePlace": "Amelia Court House, Amelia, Virginia, United States"
+      "marriagePlace": "Amelia Court House, Amelia, Virginia, United States",
+      "children": [
+        {
+          "fullName": "Katherine Teresa O'Neal",
+          "givenName": "Katherine Teresa",
+          "surname": "O'Neal",
+          "gender": "female",
+          "birthDate": "7 October 1964"
+        }
+      ]
     }
   ],
   "father": {

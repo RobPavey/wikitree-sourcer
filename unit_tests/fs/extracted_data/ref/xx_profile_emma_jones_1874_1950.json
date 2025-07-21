@@ -23,7 +23,113 @@
       "marriageDateOriginal": "4 February 1899",
       "marriageDate": "4 February 1899",
       "marriagePlaceOriginal": "Stewarts Creek Township, Surry, North Carolina, United States ",
-      "marriagePlace": "Stewarts Creek Township, Surry, North Carolina, United States"
+      "marriagePlace": "Stewarts Creek Township, Surry, North Carolina, United States",
+      "children": [
+        {
+          "fullName": "Ida Louisa Allen Snow",
+          "givenName": "Ida Louisa Allen",
+          "surname": "Snow",
+          "gender": "female",
+          "birthDate": "26 January 1900",
+          "deathDate": "7 October 1900"
+        },
+        {
+          "fullName": "Isaac Lee Snow",
+          "givenName": "Isaac Lee",
+          "surname": "Snow",
+          "gender": "male",
+          "birthDate": "30 September 1901",
+          "deathDate": "2 October 1901"
+        },
+        {
+          "fullName": "John Wesley Snow",
+          "givenName": "John Wesley",
+          "surname": "Snow",
+          "gender": "male",
+          "birthDate": "29 July 1902",
+          "deathDate": "24 June 1903"
+        },
+        {
+          "fullName": "Greer Blackburn Snow",
+          "givenName": "Greer Blackburn",
+          "surname": "Snow",
+          "gender": "male",
+          "birthDate": "8 February 1904",
+          "deathDate": "18 February 1973"
+        },
+        {
+          "fullName": "Samuel Banner Snow",
+          "givenName": "Samuel Banner",
+          "surname": "Snow",
+          "gender": "male",
+          "birthDate": "30 May 1905",
+          "deathDate": "5 December 1983"
+        },
+        {
+          "fullName": "Silas Jones Snow Sr",
+          "givenName": "Silas Jones",
+          "surname": "Snow",
+          "suffix": "Sr",
+          "gender": "male",
+          "birthDate": "22 March 1907",
+          "deathDate": "25 October 1989"
+        },
+        {
+          "fullName": "Ethel Elizabeth Snow",
+          "givenName": "Ethel Elizabeth",
+          "surname": "Snow",
+          "gender": "female",
+          "birthDate": "19 December 1908",
+          "deathDate": "19 May 2007"
+        },
+        {
+          "fullName": "Rose Emma Snow",
+          "givenName": "Rose Emma",
+          "surname": "Snow",
+          "gender": "female",
+          "birthDate": "14 August 1910",
+          "deathDate": "21 September 1998"
+        },
+        {
+          "fullName": "James Fred Snow",
+          "givenName": "James Fred",
+          "surname": "Snow",
+          "gender": "male",
+          "birthDate": "5 March 1912",
+          "deathDate": "13 July 1912"
+        },
+        {
+          "fullName": "Howard Byrd Snow",
+          "givenName": "Howard Byrd",
+          "surname": "Snow",
+          "gender": "male",
+          "birthDate": "14 April 1913",
+          "deathDate": "5 June 1969"
+        },
+        {
+          "fullName": "Violet Davis Snow",
+          "givenName": "Violet Davis",
+          "surname": "Snow",
+          "gender": "female",
+          "birthDate": "20 September 1914",
+          "deathDate": "10 February 2004"
+        },
+        {
+          "fullName": "Neal Swanson Snow Sr",
+          "givenName": "Neal Swanson",
+          "surname": "Snow",
+          "suffix": "Sr",
+          "gender": "male",
+          "birthDate": "7 September 1916",
+          "deathDate": "12 July 1975"
+        },
+        {
+          "fullName": "Amelia Snow",
+          "givenName": "Amelia",
+          "surname": "Snow",
+          "gender": "female"
+        }
+      ]
     }
   ],
   "father": {

@@ -22,7 +22,46 @@
       "surname": "Taylor",
       "gender": "female",
       "marriageDateOriginal": "about 1878",
-      "marriageDate": "about 1878"
+      "marriageDate": "about 1878",
+      "children": [
+        {
+          "fullName": "Daisy May Lyles",
+          "givenName": "Daisy May",
+          "surname": "Lyles",
+          "gender": "female",
+          "birthDate": "February 1879"
+        },
+        {
+          "fullName": "William Henry Lyles",
+          "givenName": "William Henry",
+          "surname": "Lyles",
+          "gender": "male",
+          "birthDate": "25 July 1883",
+          "deathDate": "17 September 1958"
+        },
+        {
+          "fullName": "Pinkney Francis Lyles",
+          "givenName": "Pinkney Francis",
+          "surname": "Lyles",
+          "gender": "male",
+          "birthDate": "1886",
+          "deathDate": "28 March 1916"
+        },
+        {
+          "fullName": "Rueben B Lyles",
+          "givenName": "Rueben B",
+          "surname": "Lyles",
+          "gender": "male",
+          "birthDate": "June 1889"
+        },
+        {
+          "fullName": "Hannah J. Lyles",
+          "givenName": "Hannah J.",
+          "surname": "Lyles",
+          "gender": "female",
+          "birthDate": "January 1891"
+        }
+      ]
     }
   ],
   "sourceIds": [

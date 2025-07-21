@@ -616,6 +616,12 @@ const imageRegressionData = [
 // Network tab.
 const personRegressionData = [
   {
+    // has multiple spouses
+    caseName: "xx_profile_alice_pavey_1860_1939",
+    url: "https://www.familysearch.org/en/tree/person/details/G3P6-NQB",
+    fetchType: "person",
+  },
+  {
     // has nickname
     caseName: "xx_profile_emma_jones_1874_1950",
     url: "https://www.familysearch.org/tree/person/details/L69W-LQL",

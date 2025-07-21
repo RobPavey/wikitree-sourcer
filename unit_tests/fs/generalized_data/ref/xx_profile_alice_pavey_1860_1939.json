@@ -1,0 +1,56 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Alice Adeline Pavey",
+    "lastName": "Pavey",
+    "forenames": "Alice Adeline"
+  },
+  "birthDate": {
+    "dateString": "5 March 1860"
+  },
+  "birthPlace": {
+    "placeString": "Bayswater, Middlesex, England"
+  },
+  "deathDate": {
+    "dateString": "1939"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Charles Kelley",
+        "lastName": "Kelley",
+        "forenames": "Charles"
+      },
+      "marriageDate": {
+        "dateString": "1893"
+      }
+    },
+    {
+      "name": {
+        "name": "John Alfred Chantler",
+        "lastName": "Chantler",
+        "forenames": "John Alfred"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Frederick Archibald Pavey",
+        "lastName": "Pavey",
+        "forenames": "Frederick Archibald"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Eliza Hatt",
+        "lastName": "Hatt",
+        "forenames": "Eliza"
+      }
+    }
+  },
+  "personRepoRef": "G3P6-NQB",
+  "hasValidData": true
+}

@@ -17,7 +17,66 @@
       "fullName": "William Smith",
       "givenName": "William",
       "surname": "Smith",
-      "gender": "male"
+      "gender": "male",
+      "children": [
+        {
+          "fullName": "Annie May Smith",
+          "givenName": "Annie May",
+          "surname": "Smith",
+          "gender": "female",
+          "birthDate": "October 1875",
+          "deathDate": "7 May 1957"
+        },
+        {
+          "fullName": "William John Smith Jr.",
+          "givenName": "William John",
+          "surname": "Smith",
+          "suffix": "Jr.",
+          "gender": "male",
+          "birthDate": "1878",
+          "deathDate": "1949"
+        },
+        {
+          "fullName": "Oscar Daniel Smith",
+          "givenName": "Oscar Daniel",
+          "surname": "Smith",
+          "gender": "male",
+          "birthDate": "8 November 1880",
+          "deathDate": "14 September 1951"
+        },
+        {
+          "fullName": "Daisy Levenia Smith",
+          "givenName": "Daisy Levenia",
+          "surname": "Smith",
+          "gender": "female",
+          "birthDate": "about 1883",
+          "deathDate": "1928"
+        },
+        {
+          "fullName": "Charles Victor Smith",
+          "givenName": "Charles Victor",
+          "surname": "Smith",
+          "gender": "male",
+          "birthDate": "27 December 1885",
+          "deathDate": "1 October 1967"
+        },
+        {
+          "fullName": "George Washington Smith",
+          "givenName": "George Washington",
+          "surname": "Smith",
+          "gender": "male",
+          "birthDate": "July 1888",
+          "deathDate": "26 May 1963"
+        },
+        {
+          "fullName": "David Carl Smith",
+          "givenName": "David Carl",
+          "surname": "Smith",
+          "gender": "male",
+          "birthDate": "8 September 1895",
+          "deathDate": "26 March 1965"
+        }
+      ]
     }
   ],
   "father": {

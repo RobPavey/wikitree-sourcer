@@ -16,7 +16,54 @@
       "fullName": "Sarah \"Sallie\" Evans",
       "givenName": "Sarah \"Sallie\"",
       "surname": "Evans",
-      "gender": "female"
+      "gender": "female",
+      "children": [
+        {
+          "fullName": "James Roman",
+          "givenName": "James",
+          "surname": "Roman",
+          "gender": "male",
+          "birthDate": "1811"
+        },
+        {
+          "fullName": "Isabel Roman",
+          "givenName": "Isabel",
+          "surname": "Roman",
+          "gender": "female",
+          "birthDate": "about 1812"
+        },
+        {
+          "fullName": "Martha Roman",
+          "givenName": "Martha",
+          "surname": "Roman",
+          "gender": "female",
+          "birthDate": "about 1818"
+        },
+        {
+          "fullName": "Virginia Jane Roman",
+          "givenName": "Virginia Jane",
+          "surname": "Roman",
+          "gender": "female",
+          "birthDate": "24 March 1819",
+          "deathDate": "4 April 1894"
+        },
+        {
+          "fullName": "Richard Roman Jr",
+          "givenName": "Richard",
+          "surname": "Roman",
+          "suffix": "Jr",
+          "gender": "male",
+          "birthDate": "about 1824"
+        },
+        {
+          "fullName": "William S Roman",
+          "givenName": "William S",
+          "surname": "Roman",
+          "gender": "male",
+          "birthDate": "1827",
+          "deathDate": "19 April 1877"
+        }
+      ]
     }
   ],
   "father": {
