@@ -373,12 +373,12 @@ const DateUtils = {
       let dayString = dateParts[2];
 
       let monthNum = parseInt(monthNumString);
-      if (isNaN(monthNum) || !monthNum || monthNum < 1 || monthNum > 12) {
+      if (isNaN(monthNum) || monthNum === undefined || monthNum < 0 || monthNum > 12) {
         return result;
       }
 
       let dayNum = parseInt(dayString);
-      if (isNaN(dayNum) || !dayNum) {
+      if (isNaN(dayNum) || dayNum === undefined || dayNum < 0 || dayNum > 31) {
         return result;
       }
       let yearNum = parseInt(yearString);
@@ -386,11 +386,15 @@ const DateUtils = {
         return result;
       }
 
-      result.dayNum = dayNum;
-      result.monthNum = monthNum;
+      if (dayNum) {
+        result.dayNum = dayNum;
+        result.hasDay = true;
+      }
+      if (monthNum) {
+        result.monthNum = monthNum;
+        result.hasMonth = true;
+      }
       result.yearNum = yearNum;
-      result.hasDay = true;
-      result.hasMonth = true;
       result.isValid = true;
       return result;
     }
