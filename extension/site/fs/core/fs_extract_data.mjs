@@ -3386,26 +3386,23 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
       if (document && siblings.length == 0) {
         // this data is not available in the dataObj. Try getting it from document
         let familyDivs = document.querySelectorAll("div[data-testid^='family-']");
-        console.log("familyDivs.length = " + familyDivs.length);
         for (let familyDiv of familyDivs) {
           let coupleDiv = familyDiv.querySelector("ul[data-testid='couple-persons']");
           if (coupleDiv) {
             let couplePidDivs = coupleDiv.querySelectorAll("[data-testid='pid']");
-            console.log("couplePidDivs.length = " + couplePidDivs.length);
             if (couplePidDivs.length == 2) {
               let pid1 = couplePidDivs[0].textContent.trim();
               let pid2 = couplePidDivs[1].textContent.trim();
-              console.log("pid1 = " + pid1);
-              console.log("pid2 = " + pid2);
-              if (pid1 == bestRelationshipPair.father && pid2 == bestRelationshipPair.mother) {
-                console.log("found parents family");
+              if (pid1 == bestRelationshipPair.father || pid2 == bestRelationshipPair.mother) {
+                let familyAreFullSiblings = false;
+                if (pid1 == bestRelationshipPair.father && pid2 == bestRelationshipPair.mother) {
+                  familyAreFullSiblings = true;
+                }
                 let childList = familyDiv.querySelector("ul[data-testid='children-person-list']");
                 if (childList) {
-                  console.log("found childList");
                   let childDivs = childList.querySelectorAll(
                     "li[data-testid='child-person'] div[data-testid='person']"
                   );
-                  console.log("childDivs.length = " + childDivs.length);
 
                   for (let childDiv of childDivs) {
                     let nameLink = childDiv.querySelector("a[data-testid='nameLink']");
@@ -3417,10 +3414,18 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
                           let siblingPid = siblingPidElement.textContent.trim();
                           if (siblingPid != personId) {
                             let sibling = { name: siblingName };
-                            if (!result.siblings) {
-                              result.siblings = [];
+
+                            if (familyAreFullSiblings) {
+                              if (!result.siblings) {
+                                result.siblings = [];
+                              }
+                              result.siblings.push(sibling);
+                            } else {
+                              if (!result.halfSiblings) {
+                                result.halfSiblings = [];
+                              }
+                              result.halfSiblings.push(sibling);
                             }
-                            result.siblings.push(sibling);
                             let lifeSpan = childDiv.querySelector("span[data-testid='lifespan']");
                             if (lifeSpan) {
                               let lifeSpanString = lifeSpan.textContent;
@@ -3435,7 +3440,6 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
                     }
                   }
                 }
-                break;
               }
             }
           }
