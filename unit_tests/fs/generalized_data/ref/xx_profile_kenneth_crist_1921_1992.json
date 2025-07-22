@@ -28,7 +28,20 @@
       },
       "marriagePlace": {
         "placeString": "La Verne, Los Angeles, California, United States"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Stanley King Crist"
+          },
+          "birthDate": {
+            "yearString": "1946"
+          },
+          "deathDate": {
+            "yearString": "2007"
+          }
+        }
+      ]
     }
   ],
   "parents": {

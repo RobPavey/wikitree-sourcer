@@ -1191,6 +1191,47 @@ function generalizeDataForPerson(ed, result) {
         resultSpouse.marriagePlace.placeString = selectPlace(spouse.marriagePlace, spouse.marriagePlaceOriginal, true);
       }
 
+      // add children
+      if (spouse.children && spouse.children.length > 0) {
+        resultSpouse.children = [];
+
+        function extractYearFromDate(dateString) {
+          let yearString = "";
+          if (!/^\d\d\d\d?$/.test(dateString)) {
+            if (/^.*\s\d\d\d\d?$/.test(dateString)) {
+              yearString = dateString.replace(/^.*\s(\d\d\d\d?)$/, "$1");
+            }
+          } else {
+            yearString = dateString;
+          }
+          return yearString;
+        }
+
+        for (let edChild of spouse.children) {
+          let child = {};
+          child.name = new NameObj();
+          child.name.setFullName(cleanName(edChild.fullName));
+          if (edChild.birthDate) {
+            let birthYear = extractYearFromDate(edChild.birthDate);
+            if (birthYear) {
+              let dateObj = new DateObj();
+              dateObj.yearString = birthYear;
+              child.birthDate = dateObj;
+            }
+          }
+          if (edChild.deathDate) {
+            let deathYear = extractYearFromDate(edChild.deathDate);
+            if (deathYear) {
+              let dateObj = new DateObj();
+              dateObj.yearString = deathYear;
+              child.deathDate = dateObj;
+            }
+          }
+
+          resultSpouse.children.push(child);
+        }
+      }
+
       result.spouses.push(resultSpouse);
     }
   }
@@ -1203,6 +1244,50 @@ function generalizeDataForPerson(ed, result) {
   if (ed.mother) {
     let mother = result.addMother();
     setName(ed.mother, mother);
+  }
+
+  // add siblings
+  if (ed.siblings && ed.siblings.length > 0) {
+    result.siblings = [];
+    for (let edSibling of ed.siblings) {
+      let sibling = {};
+      sibling.name = new NameObj();
+      sibling.name.setFullName(cleanName(edSibling.name));
+
+      if (edSibling.birthDate) {
+        let dateObj = new DateObj();
+        dateObj.yearString = edSibling.birthDate;
+        sibling.birthDate = dateObj;
+      }
+      if (edSibling.deathDate) {
+        let dateObj = new DateObj();
+        dateObj.yearString = edSibling.deathDate;
+        sibling.deathDate = dateObj;
+      }
+
+      result.siblings.push(sibling);
+    }
+  }
+
+  // add half siblings
+  if (ed.halfSiblings && ed.halfSiblings.length > 0) {
+    result.halfSiblings = [];
+    for (let edSibling of ed.halfSiblings) {
+      let sibling = {};
+      sibling.name = new NameObj();
+      sibling.name.setFullName(cleanName(edSibling.name));
+      if (edSibling.birthDate) {
+        let dateObj = new DateObj();
+        dateObj.yearString = edSibling.birthDate;
+        sibling.birthDate = dateObj;
+      }
+      if (edSibling.deathDate) {
+        let dateObj = new DateObj();
+        dateObj.yearString = edSibling.deathDate;
+        sibling.deathDate = dateObj;
+      }
+      result.halfSiblings.push(sibling);
+    }
   }
 }
 

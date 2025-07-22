@@ -34,7 +34,17 @@
       },
       "marriagePlace": {
         "placeString": "Amelia Court House, Amelia, Virginia, United States"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Katherine Teresa O'Neal"
+          },
+          "birthDate": {
+            "yearString": "1964"
+          }
+        }
+      ]
     }
   ],
   "parents": {

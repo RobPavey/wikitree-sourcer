@@ -24,7 +24,64 @@
         "nicknames": "Sallie",
         "lastName": "Evans",
         "forenames": "Sarah"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "James Roman"
+          },
+          "birthDate": {
+            "yearString": "1811"
+          }
+        },
+        {
+          "name": {
+            "name": "Isabel Roman"
+          },
+          "birthDate": {
+            "yearString": "1812"
+          }
+        },
+        {
+          "name": {
+            "name": "Martha Roman"
+          },
+          "birthDate": {
+            "yearString": "1818"
+          }
+        },
+        {
+          "name": {
+            "name": "Virginia Jane Roman"
+          },
+          "birthDate": {
+            "yearString": "1819"
+          },
+          "deathDate": {
+            "yearString": "1894"
+          }
+        },
+        {
+          "name": {
+            "name": "Richard Roman",
+            "suffix": "Jr"
+          },
+          "birthDate": {
+            "yearString": "1824"
+          }
+        },
+        {
+          "name": {
+            "name": "William S Roman"
+          },
+          "birthDate": {
+            "yearString": "1827"
+          },
+          "deathDate": {
+            "yearString": "1877"
+          }
+        }
+      ]
     }
   ],
   "parents": {

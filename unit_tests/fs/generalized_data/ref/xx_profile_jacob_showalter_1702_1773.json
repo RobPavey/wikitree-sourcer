@@ -31,7 +31,138 @@
       },
       "marriagePlace": {
         "placeString": "Germany"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Peter Showalter"
+          },
+          "birthDate": {
+            "yearString": "1722"
+          },
+          "deathDate": {
+            "yearString": "1775"
+          }
+        },
+        {
+          "name": {
+            "name": "Christian Showalter"
+          },
+          "birthDate": {
+            "yearString": "1727"
+          },
+          "deathDate": {
+            "yearString": "1805"
+          }
+        },
+        {
+          "name": {
+            "name": "Jacob Mathias Showalter"
+          },
+          "birthDate": {
+            "yearString": "1728"
+          },
+          "deathDate": {
+            "yearString": "1778"
+          }
+        },
+        {
+          "name": {
+            "name": "Johannes Showalter"
+          },
+          "birthDate": {
+            "yearString": "1731"
+          },
+          "deathDate": {
+            "yearString": "1806"
+          }
+        },
+        {
+          "name": {
+            "name": "Valentin Showalter"
+          },
+          "birthDate": {
+            "yearString": "1732"
+          },
+          "deathDate": {
+            "yearString": "1803"
+          }
+        },
+        {
+          "name": {
+            "name": "Barbara Showalter"
+          },
+          "birthDate": {
+            "yearString": "1733"
+          },
+          "deathDate": {
+            "yearString": "1824"
+          }
+        },
+        {
+          "name": {
+            "name": "Joseph Showalter"
+          },
+          "birthDate": {
+            "yearString": "1733"
+          },
+          "deathDate": {
+            "yearString": "1802"
+          }
+        },
+        {
+          "name": {
+            "name": "Daniel Showalter"
+          },
+          "birthDate": {
+            "yearString": "1738"
+          },
+          "deathDate": {
+            "yearString": "1822"
+          }
+        },
+        {
+          "name": {
+            "name": "Ulrich Showalter"
+          },
+          "birthDate": {
+            "yearString": "1743"
+          },
+          "deathDate": {
+            "yearString": "1818"
+          }
+        },
+        {
+          "name": {
+            "name": "Mary Elizabeth Showalter"
+          },
+          "birthDate": {
+            "yearString": "1747"
+          },
+          "deathDate": {
+            "yearString": "1776"
+          }
+        },
+        {
+          "name": {
+            "name": "Martha Ann Showalter"
+          },
+          "birthDate": {
+            "yearString": "1748"
+          }
+        },
+        {
+          "name": {
+            "name": "Baby Showalter"
+          },
+          "birthDate": {
+            "yearString": "1750"
+          },
+          "deathDate": {
+            "yearString": "1750"
+          }
+        }
+      ]
     }
   ],
   "parents": {

@@ -32,7 +32,148 @@
       },
       "marriagePlace": {
         "placeString": "Stewarts Creek Township, Surry, North Carolina, United States"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Ida Louisa Allen Snow"
+          },
+          "birthDate": {
+            "yearString": "1900"
+          },
+          "deathDate": {
+            "yearString": "1900"
+          }
+        },
+        {
+          "name": {
+            "name": "Isaac Lee Snow"
+          },
+          "birthDate": {
+            "yearString": "1901"
+          },
+          "deathDate": {
+            "yearString": "1901"
+          }
+        },
+        {
+          "name": {
+            "name": "John Wesley Snow"
+          },
+          "birthDate": {
+            "yearString": "1902"
+          },
+          "deathDate": {
+            "yearString": "1903"
+          }
+        },
+        {
+          "name": {
+            "name": "Greer Blackburn Snow"
+          },
+          "birthDate": {
+            "yearString": "1904"
+          },
+          "deathDate": {
+            "yearString": "1973"
+          }
+        },
+        {
+          "name": {
+            "name": "Samuel Banner Snow"
+          },
+          "birthDate": {
+            "yearString": "1905"
+          },
+          "deathDate": {
+            "yearString": "1983"
+          }
+        },
+        {
+          "name": {
+            "name": "Silas Jones Snow",
+            "suffix": "Sr"
+          },
+          "birthDate": {
+            "yearString": "1907"
+          },
+          "deathDate": {
+            "yearString": "1989"
+          }
+        },
+        {
+          "name": {
+            "name": "Ethel Elizabeth Snow"
+          },
+          "birthDate": {
+            "yearString": "1908"
+          },
+          "deathDate": {
+            "yearString": "2007"
+          }
+        },
+        {
+          "name": {
+            "name": "Rose Emma Snow"
+          },
+          "birthDate": {
+            "yearString": "1910"
+          },
+          "deathDate": {
+            "yearString": "1998"
+          }
+        },
+        {
+          "name": {
+            "name": "James Fred Snow"
+          },
+          "birthDate": {
+            "yearString": "1912"
+          },
+          "deathDate": {
+            "yearString": "1912"
+          }
+        },
+        {
+          "name": {
+            "name": "Howard Byrd Snow"
+          },
+          "birthDate": {
+            "yearString": "1913"
+          },
+          "deathDate": {
+            "yearString": "1969"
+          }
+        },
+        {
+          "name": {
+            "name": "Violet Davis Snow"
+          },
+          "birthDate": {
+            "yearString": "1914"
+          },
+          "deathDate": {
+            "yearString": "2004"
+          }
+        },
+        {
+          "name": {
+            "name": "Neal Swanson Snow",
+            "suffix": "Sr"
+          },
+          "birthDate": {
+            "yearString": "1916"
+          },
+          "deathDate": {
+            "yearString": "1975"
+          }
+        },
+        {
+          "name": {
+            "name": "Amelia Snow"
+          }
+        }
+      ]
     }
   ],
   "parents": {

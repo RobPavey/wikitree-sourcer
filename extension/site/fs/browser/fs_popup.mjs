@@ -266,6 +266,85 @@ async function fsBuildAllCitationsAction(data, citationType) {
   }
 }
 
+async function fsBuildListAction(data, listType, spouse) {
+  try {
+    clearClipboard();
+
+    // build the list
+    let gd = data.generalizedData;
+    let listText = "";
+    function buildList(personArray) {
+      if (personArray && personArray.length) {
+        for (let index = 0; index < personArray.length; index++) {
+          if (index > 0) {
+            if (index < personArray.length - 1) {
+              listText += ", ";
+            } else {
+              listText += " and ";
+            }
+          }
+          let person = personArray[index];
+          if (person.name && person.name.name) {
+            listText += person.name.name;
+          } else {
+            listText += "<unknown>";
+          }
+          let birthDate = "";
+          let deathDate = "";
+          if (person.birthDate && person.birthDate.yearString) {
+            birthDate = person.birthDate.yearString;
+          }
+          if (person.deathDate && person.deathDate.yearString) {
+            deathDate = person.deathDate.yearString;
+          }
+          if (birthDate || deathDate) {
+            listText += " (" + birthDate + "-" + deathDate + ")";
+          }
+        }
+      }
+    }
+
+    if (listType == "fullSiblings") {
+      buildList(gd.siblings);
+    } else if (listType == "halfSiblings") {
+      buildList(gd.halfSiblings);
+    } else if (listType == "allSiblings") {
+      if (gd.siblings && gd.halfSiblings) {
+        buildList(gd.siblings.concat(gd.halfSiblings));
+      }
+    } else if (listType == "children") {
+      if (spouse) {
+        buildList(spouse.children);
+      } else {
+        // all children
+        let childArray = [];
+        for (let spouse of gd.spouses) {
+          if (spouse.children && spouse.children.length) {
+            childArray = childArray.concat(spouse.children);
+          }
+        }
+        buildList(childArray);
+      }
+    }
+
+    // save to clipboard
+    let message = "List";
+
+    writeToClipboard(listText, message, false);
+  } catch (e) {
+    console.log("ancestryBuildListAction caught exception:");
+    console.log(e);
+    keepPopupOpenForDebug();
+
+    const message = "An exception occurred building list and writing to clipboard.";
+    let message2 = "";
+    if (e && e.message) {
+      message2 = e.message;
+    }
+    displayMessageWithIcon("warning", message, message2);
+  }
+}
+
 async function fsGetAllCitationsForSavePersonData(data) {
   try {
     if (!data.extractedData.sourceIds || data.extractedData.sourceIds.length <= 0) {
@@ -366,12 +445,41 @@ function addBuildAllCitationsMenuItem(menu, data, backFunction) {
   }
 }
 
+function addBuildListsMenuItem(menu, data, backFunction) {
+  let gd = data.generalizedData;
+  let listsAvailable = false;
+  if (gd.siblings && gd.siblings.length) {
+    listsAvailable = true;
+  } else if (gd.halfSiblings && gd.halfSiblings.length) {
+    listsAvailable = true;
+  } else if (gd.spouses && gd.spouses.length) {
+    for (let spouse of gd.spouses) {
+      if (spouse.children && spouse.children.length) {
+        listsAvailable = true;
+        break;
+      }
+    }
+  }
+
+  if (listsAvailable) {
+    addMenuItem(menu, "Build Lists...", function () {
+      setupBuildListsSubMenu(data, backFunction);
+    });
+  }
+}
+
 function addBuildAllCitationsSubmenuMenuItem(menu, data, text, citationType) {
   if (data.extractedData.sourceIds && data.extractedData.sourceIds.length > 0) {
     addMenuItem(menu, text, function (element) {
       fsBuildAllCitationsAction(data, citationType);
     });
   }
+}
+
+function addBuildListSubmenuMenuItem(menu, data, text, listType, spouse) {
+  addMenuItem(menu, text, function (element) {
+    fsBuildListAction(data, listType, spouse);
+  });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -409,6 +517,42 @@ function setupBuildAllCitationsSubMenu(data, backFunction) {
   addBuildAllCitationsSubmenuMenuItem(menu, data, "Sourcer style source citations", "source");
   addBuildAllCitationsSubmenuMenuItem(menu, data, "Inline citations using text on FS Sources page", "fsPlainInline");
   addBuildAllCitationsSubmenuMenuItem(menu, data, "Source citations using text on FS Sources page", "fsPlainSource");
+
+  endMainMenu(menu);
+}
+
+function setupBuildListsSubMenu(data, backFunction) {
+  let menu = beginMainMenu();
+
+  addBackMenuItem(menu, backFunction);
+
+  let gd = data.generalizedData;
+  if (gd.spouses && gd.spouses.length) {
+    let numSpousesWithChildren = 0;
+    for (let spouse of gd.spouses) {
+      if (spouse.children && spouse.children.length) {
+        let spouseName = "unknown parent";
+        if (spouse.name && spouse.name.name) {
+          spouseName = spouse.name.name;
+        }
+        addBuildListSubmenuMenuItem(menu, data, "List of children with " + spouseName, "children", spouse);
+        numSpousesWithChildren++;
+      }
+    }
+    if (numSpousesWithChildren > 1) {
+      addBuildListSubmenuMenuItem(menu, data, "List of all children", "children");
+    }
+  }
+
+  if (gd.siblings && gd.siblings.length) {
+    addBuildListSubmenuMenuItem(menu, data, "Full siblings list", "fullSiblings");
+  }
+  if (gd.halfSiblings && gd.halfSiblings.length) {
+    addBuildListSubmenuMenuItem(menu, data, "Half siblings list", "halfSiblings");
+    if (gd.siblings && gd.siblings.length) {
+      addBuildListSubmenuMenuItem(menu, data, "All siblings list", "allSiblings");
+    }
+  }
 
   endMainMenu(menu);
 }
@@ -476,6 +620,7 @@ async function setupFsPopupMenu(extractedData) {
     addMenuDivider(menu);
     addSavePersonDataMenuItem(menu, data, fsGetAllCitationsForSavePersonData);
     addBuildAllCitationsMenuItem(menu, data, backFunction);
+    addBuildListsMenuItem(menu, data, backFunction);
     addBuildFsTemplateMenuItem(menu, data);
   } else if (extractedData.pageType == "book") {
     addBuildBookCitationMenuItems(menu, data);

@@ -25,14 +25,95 @@
       },
       "marriageDate": {
         "dateString": "1893"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Rosa Georgina M Chantler"
+          },
+          "birthDate": {
+            "yearString": "1885"
+          },
+          "deathDate": {
+            "yearString": "1930"
+          }
+        },
+        {
+          "name": {
+            "name": "Alice Chantler"
+          },
+          "birthDate": {
+            "yearString": "1887"
+          },
+          "deathDate": {
+            "yearString": "1951"
+          }
+        },
+        {
+          "name": {
+            "name": "Beatrice Chantler"
+          },
+          "birthDate": {
+            "yearString": "1890"
+          },
+          "deathDate": {
+            "yearString": "1981"
+          }
+        }
+      ]
     },
     {
       "name": {
         "name": "John Alfred Chantler",
         "lastName": "Chantler",
         "forenames": "John Alfred"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Kate Florence Chantler"
+          },
+          "birthDate": {
+            "yearString": "1877"
+          },
+          "deathDate": {
+            "yearString": "1905"
+          }
+        },
+        {
+          "name": {
+            "name": "Rosa Georgina M Chantler"
+          },
+          "birthDate": {
+            "yearString": "1885"
+          },
+          "deathDate": {
+            "yearString": "1930"
+          }
+        },
+        {
+          "name": {
+            "name": "Alice Chantler"
+          },
+          "birthDate": {
+            "yearString": "1887"
+          },
+          "deathDate": {
+            "yearString": "1951"
+          }
+        },
+        {
+          "name": {
+            "name": "Beatrice Chantler"
+          },
+          "birthDate": {
+            "yearString": "1890"
+          },
+          "deathDate": {
+            "yearString": "1981"
+          }
+        }
+      ]
     }
   ],
   "parents": {

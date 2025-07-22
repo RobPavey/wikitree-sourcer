@@ -3300,19 +3300,15 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
 
     // now identify children and siblings
     // It might be better to use dataObj.childAndParentsRelationships for children
-    for (let relationship of childRelationships) {
-      let childId = relationship.person2.resourceId;
-      // children are added under spouses
-      // We need to find the other parent
+    for (let childAndParentrelationship of dataObj.childAndParentsRelationships) {
       let otherParentId = undefined;
-      for (let otherRelationship of relationshipsNotThisPerson) {
-        if (otherRelationship.type == "http://gedcomx.org/ParentChild") {
-          if (otherRelationship.person2.resourceId == childId) {
-            otherParentId = otherRelationship.person1.resourceId;
-            break;
-          }
-        }
+      if (childAndParentrelationship.parent1 && childAndParentrelationship.parent1.resourceId == personId) {
+        otherParentId = childAndParentrelationship.parent2.resourceId;
+      } else if (childAndParentrelationship.parent2 && childAndParentrelationship.parent2.resourceId == personId) {
+        otherParentId = childAndParentrelationship.parent1.resourceId;
       }
+      let childId = childAndParentrelationship.child.resourceId;
+
       if (otherParentId) {
         let spouse = spousesById[otherParentId];
         if (spouse) {
@@ -3431,7 +3427,24 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
                               let lifeSpanString = lifeSpan.textContent;
                               if (lifeSpanString && lifeSpanString.length > 1) {
                                 lifeSpanString = lifeSpanString.replace("Deceased", "");
-                                sibling.lifespanString = lifeSpanString;
+                                let dashIndex = lifeSpanString.indexOf("–");
+                                if (dashIndex != -1) {
+                                  if (dashIndex > 0) {
+                                    let birthDate = lifeSpanString.substring(0, dashIndex);
+                                    if (birthDate.length > 3) {
+                                      sibling.birthDate = birthDate;
+                                    }
+                                  }
+                                  let deathDateLength = lifeSpanString.length - dashIndex - 1;
+                                  if (deathDateLength > 0) {
+                                    let deathDate = lifeSpanString.substring(dashIndex + 1);
+                                    if (deathDate.length > 3) {
+                                      if (deathDate != "Deceased") {
+                                        sibling.deathDate = deathDate;
+                                      }
+                                    }
+                                  }
+                                }
                               }
                             }
                           }

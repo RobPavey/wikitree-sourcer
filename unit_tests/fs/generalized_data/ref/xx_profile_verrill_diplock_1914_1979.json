@@ -31,7 +31,31 @@
       },
       "marriagePlace": {
         "placeString": "Maine, United States"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Thomas Verrill Long"
+          },
+          "birthDate": {
+            "yearString": "1948"
+          },
+          "deathDate": {
+            "yearString": "2012"
+          }
+        },
+        {
+          "name": {
+            "name": "Benjamin Harvey Long"
+          },
+          "birthDate": {
+            "yearString": "1950"
+          },
+          "deathDate": {
+            "yearString": "2020"
+          }
+        }
+      ]
     }
   ],
   "parents": {

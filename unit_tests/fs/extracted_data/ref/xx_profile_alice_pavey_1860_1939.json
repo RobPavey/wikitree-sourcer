@@ -24,12 +24,20 @@
       "marriageDate": "1893",
       "children": [
         {
-          "fullName": "Beatrice Chantler",
-          "givenName": "Beatrice",
+          "fullName": "Rosa Georgina M Chantler",
+          "givenName": "Rosa Georgina M",
           "surname": "Chantler",
           "gender": "female",
-          "birthDate": "about 1890",
-          "deathDate": "June 1981"
+          "birthDate": "about 1885",
+          "deathDate": "March 1930"
+        },
+        {
+          "fullName": "Alice Chantler",
+          "givenName": "Alice",
+          "surname": "Chantler",
+          "gender": "female",
+          "birthDate": "about 1887",
+          "deathDate": "9 January 1951"
         },
         {
           "fullName": "Beatrice Chantler",
@@ -64,14 +72,6 @@
           "deathDate": "March 1930"
         },
         {
-          "fullName": "Rosa Georgina M Chantler",
-          "givenName": "Rosa Georgina M",
-          "surname": "Chantler",
-          "gender": "female",
-          "birthDate": "about 1885",
-          "deathDate": "March 1930"
-        },
-        {
           "fullName": "Alice Chantler",
           "givenName": "Alice",
           "surname": "Chantler",
@@ -80,12 +80,12 @@
           "deathDate": "9 January 1951"
         },
         {
-          "fullName": "Alice Chantler",
-          "givenName": "Alice",
+          "fullName": "Beatrice Chantler",
+          "givenName": "Beatrice",
           "surname": "Chantler",
           "gender": "female",
-          "birthDate": "about 1887",
-          "deathDate": "9 January 1951"
+          "birthDate": "about 1890",
+          "deathDate": "June 1981"
         }
       ]
     }

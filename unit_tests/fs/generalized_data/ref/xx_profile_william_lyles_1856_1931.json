@@ -30,7 +30,55 @@
       "marriageDate": {
         "qualifier": 2,
         "dateString": "1878"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Daisy May Lyles"
+          },
+          "birthDate": {
+            "yearString": "1879"
+          }
+        },
+        {
+          "name": {
+            "name": "William Henry Lyles"
+          },
+          "birthDate": {
+            "yearString": "1883"
+          },
+          "deathDate": {
+            "yearString": "1958"
+          }
+        },
+        {
+          "name": {
+            "name": "Pinkney Francis Lyles"
+          },
+          "birthDate": {
+            "yearString": "1886"
+          },
+          "deathDate": {
+            "yearString": "1916"
+          }
+        },
+        {
+          "name": {
+            "name": "Rueben B Lyles"
+          },
+          "birthDate": {
+            "yearString": "1889"
+          }
+        },
+        {
+          "name": {
+            "name": "Hannah J Lyles"
+          },
+          "birthDate": {
+            "yearString": "1891"
+          }
+        }
+      ]
     }
   ],
   "personRepoRef": "G8S8-5FJ",

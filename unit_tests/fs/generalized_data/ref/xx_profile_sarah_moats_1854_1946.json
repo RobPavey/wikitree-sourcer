@@ -19,7 +19,87 @@
         "name": "William Smith",
         "lastName": "Smith",
         "forenames": "William"
-      }
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Annie May Smith"
+          },
+          "birthDate": {
+            "yearString": "1875"
+          },
+          "deathDate": {
+            "yearString": "1957"
+          }
+        },
+        {
+          "name": {
+            "name": "William John Smith",
+            "suffix": "Jr"
+          },
+          "birthDate": {
+            "yearString": "1878"
+          },
+          "deathDate": {
+            "yearString": "1949"
+          }
+        },
+        {
+          "name": {
+            "name": "Oscar Daniel Smith"
+          },
+          "birthDate": {
+            "yearString": "1880"
+          },
+          "deathDate": {
+            "yearString": "1951"
+          }
+        },
+        {
+          "name": {
+            "name": "Daisy Levenia Smith"
+          },
+          "birthDate": {
+            "yearString": "1883"
+          },
+          "deathDate": {
+            "yearString": "1928"
+          }
+        },
+        {
+          "name": {
+            "name": "Charles Victor Smith"
+          },
+          "birthDate": {
+            "yearString": "1885"
+          },
+          "deathDate": {
+            "yearString": "1967"
+          }
+        },
+        {
+          "name": {
+            "name": "George Washington Smith"
+          },
+          "birthDate": {
+            "yearString": "1888"
+          },
+          "deathDate": {
+            "yearString": "1963"
+          }
+        },
+        {
+          "name": {
+            "name": "David Carl Smith"
+          },
+          "birthDate": {
+            "yearString": "1895"
+          },
+          "deathDate": {
+            "yearString": "1965"
+          }
+        }
+      ]
     }
   ],
   "parents": {
