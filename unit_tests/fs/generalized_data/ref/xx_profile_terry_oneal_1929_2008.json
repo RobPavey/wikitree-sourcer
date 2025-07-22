@@ -38,7 +38,9 @@
       "children": [
         {
           "name": {
-            "name": "Katherine Teresa O'Neal"
+            "name": "Katherine Teresa O'Neal",
+            "forenames": "Katherine Teresa",
+            "lastName": "O'Neal"
           },
           "birthDate": {
             "yearString": "1964"

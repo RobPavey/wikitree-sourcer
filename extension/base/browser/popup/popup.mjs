@@ -275,8 +275,8 @@ async function loadPopupModuleForSupportedSite(popupModulePath) {
 
   detectedSupportedSite = true;
 
-  //console.log('WikiTree Sourcer: loadPopupModuleForSupportedSite. popupActiveTab is:');
-  //console.log(popupActiveTab);
+  console.log("WikiTree Sourcer: loadPopupModuleForSupportedSite. popupModulePath is:");
+  console.log(popupModulePath);
 
   try {
     //console.log('WikiTree Sourcer: loadPopupModuleForSupportedSite. importing: ', popupModulePath);
@@ -316,6 +316,9 @@ const initPopupGivenActiveTabRetryOnCompleteDelay = 100;
 const initPopupGivenActiveTabRetryOnCompleteMaxCount = 5;
 
 async function initPopupGivenActiveTab(activeTab) {
+  console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, active tab is:");
+  console.log(activeTab);
+
   if (detectedSupportedSite) {
     // our work here is done
     return;
@@ -392,11 +395,14 @@ async function initPopupGivenActiveTab(activeTab) {
 
   if (!siteName) {
     // the url will be blank if we don't have permission to the tab so we can't get site name
+    console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, cannot determine site name");
     setupUnrecognizedSiteMenu(activeTab.id);
     return;
   }
 
   if (siteName != "unknown") {
+    console.log("WikiTree Sourcer: popup.mjs: initPopupGivenActiveTab, site name is: " + siteName);
+
     // we worked out the siteName from the url, switch to the correct popup script
     let popupModulePath = "site/" + siteName + "/browser/" + siteName + "_popup.mjs";
     loadPopupModuleForSupportedSite(popupModulePath);
@@ -432,7 +438,7 @@ function initPopup() {
 
   setPopupMenuWidth();
 
-  //console.log("WikiTree Sourcer: popup.mjs: initPopup");
+  console.log("WikiTree Sourcer: popup.mjs: initPopup");
   displayBusyMessage("WikiTree Sourcer initializing menu ...");
 
   initPopupWithActiveTab();

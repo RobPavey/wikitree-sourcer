@@ -1211,6 +1211,8 @@ function generalizeDataForPerson(ed, result) {
           let child = {};
           child.name = new NameObj();
           child.name.setFullName(cleanName(edChild.fullName));
+          child.name.setForenames(cleanName(edChild.givenName));
+          child.name.setLastName(cleanName(edChild.surname));
           if (edChild.birthDate) {
             let birthYear = extractYearFromDate(edChild.birthDate);
             if (birthYear) {

@@ -32,7 +32,9 @@
       "children": [
         {
           "name": {
-            "name": "Stanley King Crist"
+            "name": "Stanley King Crist",
+            "forenames": "Stanley King",
+            "lastName": "Crist"
           },
           "birthDate": {
             "yearString": "1946"

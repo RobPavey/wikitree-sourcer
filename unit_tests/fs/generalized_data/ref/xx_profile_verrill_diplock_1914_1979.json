@@ -35,7 +35,9 @@
       "children": [
         {
           "name": {
-            "name": "Thomas Verrill Long"
+            "name": "Thomas Verrill Long",
+            "forenames": "Thomas Verrill",
+            "lastName": "Long"
           },
           "birthDate": {
             "yearString": "1948"
@@ -46,7 +48,9 @@
         },
         {
           "name": {
-            "name": "Benjamin Harvey Long"
+            "name": "Benjamin Harvey Long",
+            "forenames": "Benjamin Harvey",
+            "lastName": "Long"
           },
           "birthDate": {
             "yearString": "1950"

@@ -34,7 +34,9 @@
       "children": [
         {
           "name": {
-            "name": "Daisy May Lyles"
+            "name": "Daisy May Lyles",
+            "forenames": "Daisy May",
+            "lastName": "Lyles"
           },
           "birthDate": {
             "yearString": "1879"
@@ -42,7 +44,9 @@
         },
         {
           "name": {
-            "name": "William Henry Lyles"
+            "name": "William Henry Lyles",
+            "forenames": "William Henry",
+            "lastName": "Lyles"
           },
           "birthDate": {
             "yearString": "1883"
@@ -53,7 +57,9 @@
         },
         {
           "name": {
-            "name": "Pinkney Francis Lyles"
+            "name": "Pinkney Francis Lyles",
+            "forenames": "Pinkney Francis",
+            "lastName": "Lyles"
           },
           "birthDate": {
             "yearString": "1886"
@@ -64,7 +70,9 @@
         },
         {
           "name": {
-            "name": "Rueben B Lyles"
+            "name": "Rueben B Lyles",
+            "forenames": "Rueben B",
+            "lastName": "Lyles"
           },
           "birthDate": {
             "yearString": "1889"
@@ -72,7 +80,9 @@
         },
         {
           "name": {
-            "name": "Hannah J Lyles"
+            "name": "Hannah J Lyles",
+            "forenames": "Hannah J",
+            "lastName": "Lyles"
           },
           "birthDate": {
             "yearString": "1891"

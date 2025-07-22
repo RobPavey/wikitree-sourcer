@@ -29,7 +29,9 @@
       "children": [
         {
           "name": {
-            "name": "Rosa Georgina M Chantler"
+            "name": "Rosa Georgina M Chantler",
+            "forenames": "Rosa Georgina M",
+            "lastName": "Chantler"
           },
           "birthDate": {
             "yearString": "1885"
@@ -40,7 +42,9 @@
         },
         {
           "name": {
-            "name": "Alice Chantler"
+            "name": "Alice Chantler",
+            "forenames": "Alice",
+            "lastName": "Chantler"
           },
           "birthDate": {
             "yearString": "1887"
@@ -51,7 +55,9 @@
         },
         {
           "name": {
-            "name": "Beatrice Chantler"
+            "name": "Beatrice Chantler",
+            "forenames": "Beatrice",
+            "lastName": "Chantler"
           },
           "birthDate": {
             "yearString": "1890"
@@ -71,7 +77,9 @@
       "children": [
         {
           "name": {
-            "name": "Kate Florence Chantler"
+            "name": "Kate Florence Chantler",
+            "forenames": "Kate Florence",
+            "lastName": "Chantler"
           },
           "birthDate": {
             "yearString": "1877"
@@ -82,7 +90,9 @@
         },
         {
           "name": {
-            "name": "Rosa Georgina M Chantler"
+            "name": "Rosa Georgina M Chantler",
+            "forenames": "Rosa Georgina M",
+            "lastName": "Chantler"
           },
           "birthDate": {
             "yearString": "1885"
@@ -93,7 +103,9 @@
         },
         {
           "name": {
-            "name": "Alice Chantler"
+            "name": "Alice Chantler",
+            "forenames": "Alice",
+            "lastName": "Chantler"
           },
           "birthDate": {
             "yearString": "1887"
@@ -104,7 +116,9 @@
         },
         {
           "name": {
-            "name": "Beatrice Chantler"
+            "name": "Beatrice Chantler",
+            "forenames": "Beatrice",
+            "lastName": "Chantler"
           },
           "birthDate": {
             "yearString": "1890"

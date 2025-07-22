@@ -36,7 +36,9 @@
       "children": [
         {
           "name": {
-            "name": "Ida Louisa Allen Snow"
+            "name": "Ida Louisa Allen Snow",
+            "forenames": "Ida Louisa Allen",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1900"
@@ -47,7 +49,9 @@
         },
         {
           "name": {
-            "name": "Isaac Lee Snow"
+            "name": "Isaac Lee Snow",
+            "forenames": "Isaac Lee",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1901"
@@ -58,7 +62,9 @@
         },
         {
           "name": {
-            "name": "John Wesley Snow"
+            "name": "John Wesley Snow",
+            "forenames": "John Wesley",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1902"
@@ -69,7 +75,9 @@
         },
         {
           "name": {
-            "name": "Greer Blackburn Snow"
+            "name": "Greer Blackburn Snow",
+            "forenames": "Greer Blackburn",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1904"
@@ -80,7 +88,9 @@
         },
         {
           "name": {
-            "name": "Samuel Banner Snow"
+            "name": "Samuel Banner Snow",
+            "forenames": "Samuel Banner",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1905"
@@ -92,7 +102,9 @@
         {
           "name": {
             "name": "Silas Jones Snow",
-            "suffix": "Sr"
+            "suffix": "Sr",
+            "forenames": "Silas Jones",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1907"
@@ -103,7 +115,9 @@
         },
         {
           "name": {
-            "name": "Ethel Elizabeth Snow"
+            "name": "Ethel Elizabeth Snow",
+            "forenames": "Ethel Elizabeth",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1908"
@@ -114,7 +128,9 @@
         },
         {
           "name": {
-            "name": "Rose Emma Snow"
+            "name": "Rose Emma Snow",
+            "forenames": "Rose Emma",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1910"
@@ -125,7 +141,9 @@
         },
         {
           "name": {
-            "name": "James Fred Snow"
+            "name": "James Fred Snow",
+            "forenames": "James Fred",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1912"
@@ -136,7 +154,9 @@
         },
         {
           "name": {
-            "name": "Howard Byrd Snow"
+            "name": "Howard Byrd Snow",
+            "forenames": "Howard Byrd",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1913"
@@ -147,7 +167,9 @@
         },
         {
           "name": {
-            "name": "Violet Davis Snow"
+            "name": "Violet Davis Snow",
+            "forenames": "Violet Davis",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1914"
@@ -159,7 +181,9 @@
         {
           "name": {
             "name": "Neal Swanson Snow",
-            "suffix": "Sr"
+            "suffix": "Sr",
+            "forenames": "Neal Swanson",
+            "lastName": "Snow"
           },
           "birthDate": {
             "yearString": "1916"
@@ -170,7 +194,9 @@
         },
         {
           "name": {
-            "name": "Amelia Snow"
+            "name": "Amelia Snow",
+            "forenames": "Amelia",
+            "lastName": "Snow"
           }
         }
       ]

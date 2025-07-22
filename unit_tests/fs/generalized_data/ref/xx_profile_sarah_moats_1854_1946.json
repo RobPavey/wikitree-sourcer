@@ -23,7 +23,9 @@
       "children": [
         {
           "name": {
-            "name": "Annie May Smith"
+            "name": "Annie May Smith",
+            "forenames": "Annie May",
+            "lastName": "Smith"
           },
           "birthDate": {
             "yearString": "1875"
@@ -35,7 +37,9 @@
         {
           "name": {
             "name": "William John Smith",
-            "suffix": "Jr"
+            "suffix": "Jr",
+            "forenames": "William John",
+            "lastName": "Smith"
           },
           "birthDate": {
             "yearString": "1878"
@@ -46,7 +50,9 @@
         },
         {
           "name": {
-            "name": "Oscar Daniel Smith"
+            "name": "Oscar Daniel Smith",
+            "forenames": "Oscar Daniel",
+            "lastName": "Smith"
           },
           "birthDate": {
             "yearString": "1880"
@@ -57,7 +63,9 @@
         },
         {
           "name": {
-            "name": "Daisy Levenia Smith"
+            "name": "Daisy Levenia Smith",
+            "forenames": "Daisy Levenia",
+            "lastName": "Smith"
           },
           "birthDate": {
             "yearString": "1883"
@@ -68,7 +76,9 @@
         },
         {
           "name": {
-            "name": "Charles Victor Smith"
+            "name": "Charles Victor Smith",
+            "forenames": "Charles Victor",
+            "lastName": "Smith"
           },
           "birthDate": {
             "yearString": "1885"
@@ -79,7 +89,9 @@
         },
         {
           "name": {
-            "name": "George Washington Smith"
+            "name": "George Washington Smith",
+            "forenames": "George Washington",
+            "lastName": "Smith"
           },
           "birthDate": {
             "yearString": "1888"
@@ -90,7 +102,9 @@
         },
         {
           "name": {
-            "name": "David Carl Smith"
+            "name": "David Carl Smith",
+            "forenames": "David Carl",
+            "lastName": "Smith"
           },
           "birthDate": {
             "yearString": "1895"

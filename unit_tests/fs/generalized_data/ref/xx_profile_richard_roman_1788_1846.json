@@ -28,7 +28,9 @@
       "children": [
         {
           "name": {
-            "name": "James Roman"
+            "name": "James Roman",
+            "forenames": "James",
+            "lastName": "Roman"
           },
           "birthDate": {
             "yearString": "1811"
@@ -36,7 +38,9 @@
         },
         {
           "name": {
-            "name": "Isabel Roman"
+            "name": "Isabel Roman",
+            "forenames": "Isabel",
+            "lastName": "Roman"
           },
           "birthDate": {
             "yearString": "1812"
@@ -44,7 +48,9 @@
         },
         {
           "name": {
-            "name": "Martha Roman"
+            "name": "Martha Roman",
+            "forenames": "Martha",
+            "lastName": "Roman"
           },
           "birthDate": {
             "yearString": "1818"
@@ -52,7 +58,9 @@
         },
         {
           "name": {
-            "name": "Virginia Jane Roman"
+            "name": "Virginia Jane Roman",
+            "forenames": "Virginia Jane",
+            "lastName": "Roman"
           },
           "birthDate": {
             "yearString": "1819"
@@ -64,7 +72,9 @@
         {
           "name": {
             "name": "Richard Roman",
-            "suffix": "Jr"
+            "suffix": "Jr",
+            "forenames": "Richard",
+            "lastName": "Roman"
           },
           "birthDate": {
             "yearString": "1824"
@@ -72,7 +82,9 @@
         },
         {
           "name": {
-            "name": "William S Roman"
+            "name": "William S Roman",
+            "forenames": "William S",
+            "lastName": "Roman"
           },
           "birthDate": {
             "yearString": "1827"
