@@ -28,10 +28,54 @@ SOFTWARE.
 let draggedItem = null;
 let startingAfterElement = null;
 
+function touchHandler(event) {
+  console.log("touchHandler called, event is:");
+  console.log(event);
+
+  // stop the scroll from happening
+  event.preventDefault();
+
+  var touches = event.changedTouches,
+    first = touches[0],
+    type = "";
+  switch (event.type) {
+    case "touchstart":
+      type = "mousedown";
+      break;
+    case "touchmove":
+      type = "mousemove";
+      break;
+    case "touchend":
+      type = "mouseup";
+      break;
+    default:
+      return;
+  }
+
+  const simulatedEvent = new MouseEvent(type, {
+    bubbles: true,
+    cancelable: true,
+    screenX: first.screenX,
+    screenY: first.screenY,
+    clientX: first.clientX,
+    clientY: first.clientY,
+    button: 0, // Left mouse button
+  });
+
+  console.log("touchHandler called, simulatedEvent is:");
+  console.log(simulatedEvent);
+
+  console.log("touchHandler called, first.target is:");
+  console.log(first.target);
+
+  first.target.dispatchEvent(simulatedEvent);
+}
+
 function createDraggableListElement(document, option) {
   let listElement = document.createElement("ul");
 
   listElement.addEventListener("dragstart", (e) => {
+    console.log("dragStart");
     draggedItem = e.target;
     startingAfterElement = draggedItem.nextElementSibling;
     setTimeout(() => {
@@ -41,6 +85,7 @@ function createDraggableListElement(document, option) {
   });
 
   listElement.addEventListener("dragend", (e) => {
+    console.log("dragEnd");
     setTimeout(() => {
       //e.target.style.display = "";
       e.target.classList.remove("beingDragged");
@@ -62,6 +107,8 @@ function createDraggableListElement(document, option) {
   });
 
   listElement.addEventListener("dragover", (e) => {
+    console.log("dragover");
+
     e.preventDefault();
     const afterElement = getDragAfterElement(listElement, e.clientY);
     const currentElement = document.querySelector(".dragging");
@@ -93,6 +140,15 @@ function createDraggableListElement(document, option) {
       }
     ).element;
   };
+
+  /*
+  Attemp to make it work on iPad - not working
+
+  listElement.addEventListener("touchstart", touchHandler, true);
+  listElement.addEventListener("touchmove", touchHandler, true);
+  listElement.addEventListener("touchend", touchHandler, true);
+  listElement.addEventListener("touchcancel", touchHandler, true);
+*/
 
   return listElement;
 }
