@@ -2,7 +2,7 @@
   "name": "WikiTree Sourcer",
   "version": "2.10.2",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
-  "permissions": ["storage", "contextMenus"],
+  "permissions": ["activeTab", "storage", "contextMenus"],
   "background": {
     "service_worker": "base/browser/background/background_chrome.mjs",
     "type": "module"

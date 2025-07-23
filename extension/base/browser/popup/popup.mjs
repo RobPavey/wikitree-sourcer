@@ -214,6 +214,10 @@ function determineSiteNameForTab(activeTab) {
 
   // Note: the url and pendingUrl properties will be ignored unless the extsnion has the "tabs" permission
   // or "host_permission" for the site. Chrome has the latter currently.
+  // Update: I removed the host_permissions on 19 May 2025 and people started seeing this fail (it would
+  // bring up the default popup on wikitree profiles after they had been open a while).
+  // It appears that adding the activeTab permission fixes this. That seems easier to maintain than
+  // having a host_permission for every site.
 
   let urlParts = separateUrlIntoParts(activeTab.pendingUrl);
   if (!urlParts) {
