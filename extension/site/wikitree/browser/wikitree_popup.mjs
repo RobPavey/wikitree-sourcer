@@ -2609,7 +2609,7 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
             listElement.appendChild(listItem);
           }
           if (compareResult.numDiffValues) {
-            message = compareResult.numDiffValues + " cells have a common different value";
+            message = compareResult.numDiffValues + " cells have a different value";
             let listItem = document.createElement("li");
             addLabelWithBreak(listItem, message);
             listElement.appendChild(listItem);

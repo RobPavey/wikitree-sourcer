@@ -2099,10 +2099,14 @@ class GeneralizedData {
   static getSubtractAgeFromDate(dateString, age) {
     let parsedDate = DateUtils.parseDateString(dateString);
     if (!parsedDate.isValid) {
-      return dateString;
+      return "";
     }
 
-    parsedDate.yearNum -= age;
+    let ageNum = parseInt(age);
+    if (isNaN(ageNum)) {
+      return "";
+    }
+    parsedDate.yearNum -= ageNum;
 
     return DateUtils.getStdShortFormDateString(parsedDate);
   }
@@ -3218,6 +3222,9 @@ class GeneralizedData {
         let deathDateString = this.deathDate.getDateString();
 
         let dateString = GeneralizedData.getSubtractAgeFromDate(deathDateString, this.ageAtDeath);
+        if (!dateString) {
+          return undefined;
+        }
         let yearString = StringUtils.getLastWord(dateString);
         let dateObj = new DateObj();
         dateObj.yearString = yearString;
