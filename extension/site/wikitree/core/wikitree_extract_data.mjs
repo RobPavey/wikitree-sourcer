@@ -1757,7 +1757,8 @@ function extractDataFor2025FormatPage(result, document, url) {
   } else {
     // could be a read mode profile or could be some non-profile page such as a free space
     var biography = document.getElementById("Biography");
-    if (biography) {
+    var vitals = document.querySelector("div.VITALS");
+    if (biography || vitals) {
       extractDataInReadMode2025(document, result);
     } else {
       extractDataForNonPerson2025(document, result);
