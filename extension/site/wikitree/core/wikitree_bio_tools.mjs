@@ -310,6 +310,11 @@ function buildRelatives(data, jsonData) {
 }
 
 function censusTablesMatch(census, relativeCensus, relative) {
+  //console.log("censusTablesMatch: census is:");
+  //console.log(census);
+  //console.log("censusTablesMatch: relativeCensus is:");
+  //console.log(relativeCensus);
+
   if (census.year != relativeCensus.year) {
     return false;
   }
@@ -319,6 +324,16 @@ function censusTablesMatch(census, relativeCensus, relative) {
   if (census.parsedRefs.length == 1 && relativeCensus.parsedRefs.length == 1) {
     let sourceReference = census.parsedRefs[0].sourceReference;
     let relSourceReference = relativeCensus.parsedRefs[0].sourceReference;
+
+    // sometimes the sourceReference only differs by line number or page number, line number
+    // should be ignored. Page number is OK to be different by one or two
+    let lineRegex = /;\s*Line\:\s+\d+/i;
+    let pageRegex = /;\s*Page\:\s+\d+/i;
+    sourceReference = sourceReference.replace(lineRegex, "");
+    sourceReference = sourceReference.replace(pageRegex, "");
+    relSourceReference = relSourceReference.replace(lineRegex, "");
+    relSourceReference = relSourceReference.replace(pageRegex, "");
+
     if (sourceReference && sourceReference == relSourceReference) {
       matchingSourceReference = relSourceReference;
     } else {
@@ -327,6 +342,7 @@ function censusTablesMatch(census, relativeCensus, relative) {
       console.log("  " + relSourceReference);
       console.log("relative is:");
       console.log(relative);
+
       return false;
     }
   } else {
