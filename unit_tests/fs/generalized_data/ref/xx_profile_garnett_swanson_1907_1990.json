@@ -1,0 +1,100 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Garnett Lofton Swanson",
+    "lastName": "Swanson",
+    "forenames": "Garnett Lofton"
+  },
+  "birthDate": {
+    "dateString": "7 February 1907"
+  },
+  "birthPlace": {
+    "placeString": "Hayesville, Clay, North Carolina, United States"
+  },
+  "deathDate": {
+    "dateString": "4 April 1990"
+  },
+  "deathPlace": {
+    "placeString": "Union, Georgia, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Arizona Eva Tanner",
+        "lastName": "Tanner",
+        "forenames": "Arizona Eva"
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Clarence Swanson",
+            "forenames": "Clarence",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1928"
+          },
+          "deathDate": {
+            "yearString": "2004"
+          }
+        },
+        {
+          "name": {
+            "name": "Ellis Lofton Swanson",
+            "forenames": "Ellis Lofton",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1931"
+          },
+          "deathDate": {
+            "yearString": "1995"
+          }
+        },
+        {
+          "name": {
+            "name": "Robert Weaver Swanson",
+            "forenames": "Robert Weaver",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1935"
+          },
+          "deathDate": {
+            "yearString": "1992"
+          }
+        },
+        {
+          "name": {
+            "name": "Robert Fred Swanson",
+            "forenames": "Robert Fred",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1943"
+          }
+        }
+      ]
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Hurshell Jesse Swanson",
+        "lastName": "Swanson",
+        "forenames": "Hurshell Jesse"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Callie Iona Gable",
+        "lastName": "Gable",
+        "forenames": "Callie Iona"
+      }
+    }
+  },
+  "personRepoRef": "L64W-R4Z",
+  "hasValidData": true
+}

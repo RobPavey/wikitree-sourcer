@@ -1,0 +1,108 @@
+{
+  "personId": "L67M-27N",
+  "fullName": "Hurshell Jesse Swanson",
+  "givenName": "Hurshell Jesse",
+  "surname": "Swanson",
+  "gender": "male",
+  "birthDateOriginal": "16 May 1872",
+  "birthDate": "16 May 1872",
+  "birthPlaceOriginal": "Clay, North Carolina, United States",
+  "birthPlace": "Clay, North Carolina, United States",
+  "deathDateOriginal": "8 August 1952",
+  "deathDate": "8 August 1952",
+  "deathPlaceOriginal": "Hayesville, Clay, North Carolina, United States",
+  "deathPlace": "Hayesville, Clay, North Carolina, United States",
+  "burialDateOriginal": "1952",
+  "burialDate": "1952",
+  "burialPlaceOriginal": "Hayesville, Clay, North Carolina, United States of America",
+  "burialPlace": "Hayesville, Clay, North Carolina, United States",
+  "spouses": [
+    {
+      "fullName": "Callie Iona Gable",
+      "givenName": "Callie Iona",
+      "surname": "Gable",
+      "gender": "female",
+      "marriageDateOriginal": "5 May 1891",
+      "marriageDate": "5 May 1891",
+      "children": [
+        {
+          "fullName": "Haskew James Swanson",
+          "givenName": "Haskew James",
+          "surname": "Swanson",
+          "gender": "male",
+          "birthDate": "10 March 1892",
+          "deathDate": "27 August 1964"
+        },
+        {
+          "fullName": "Robert Lee Swanson",
+          "givenName": "Robert Lee",
+          "surname": "Swanson",
+          "gender": "male",
+          "birthDate": "6 August 1894",
+          "deathDate": "6 August 1970"
+        },
+        {
+          "fullName": "Ferdinand Marcus Swanson",
+          "givenName": "Ferdinand Marcus",
+          "surname": "Swanson",
+          "gender": "male",
+          "birthDate": "12 October 1897",
+          "deathDate": "26 March 1947"
+        },
+        {
+          "fullName": "Mondree Swanson",
+          "givenName": "Mondree",
+          "surname": "Swanson",
+          "gender": "female",
+          "birthDate": "28 December 1899",
+          "deathDate": "17 March 1953"
+        },
+        {
+          "fullName": "Harley Swanson",
+          "givenName": "Harley",
+          "surname": "Swanson",
+          "gender": "male",
+          "birthDate": "25 June 1903",
+          "deathDate": "31 March 1978"
+        },
+        {
+          "fullName": "Garnett Lofton Swanson",
+          "givenName": "Garnett Lofton",
+          "surname": "Swanson",
+          "gender": "male",
+          "birthDate": "7 February 1907",
+          "deathDate": "4 April 1990"
+        }
+      ]
+    }
+  ],
+  "father": {
+    "fullName": "James Smith Swanson",
+    "givenName": "James Smith",
+    "surname": "Swanson"
+  },
+  "mother": {
+    "fullName": "Cynthia Emeline Wood",
+    "givenName": "Cynthia Emeline",
+    "surname": "Wood"
+  },
+  "sourceIds": [
+    "3HM4-RQZ",
+    "3HM4-5Y6",
+    "3HM4-5LW",
+    "3HM4-5XN",
+    "3HM4-N64",
+    "3HM4-NZK",
+    "SFFB-VSR",
+    "9Y2Z-ZPH",
+    "9RY1-QPC",
+    "953S-W47",
+    "9J9L-LJR",
+    "9J9L-3TX",
+    "9J92-SVS",
+    "9J92-9R6",
+    "9J92-97B",
+    "9J92-MXG"
+  ],
+  "pageType": "person"
+}

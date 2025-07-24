@@ -1169,6 +1169,18 @@ function generalizeDataForPerson(ed, result) {
     }
   }
 
+  function extractYearFromDate(dateString) {
+    let yearString = "";
+    if (!/^\d\d\d\d?$/.test(dateString)) {
+      if (/^.*\s\d\d\d\d?$/.test(dateString)) {
+        yearString = dateString.replace(/^.*\s(\d\d\d\d?)$/, "$1");
+      }
+    } else {
+      yearString = dateString;
+    }
+    return yearString;
+  }
+
   if (ed.spouses) {
     result.spouses = [];
 
@@ -1194,18 +1206,6 @@ function generalizeDataForPerson(ed, result) {
       // add children
       if (spouse.children && spouse.children.length > 0) {
         resultSpouse.children = [];
-
-        function extractYearFromDate(dateString) {
-          let yearString = "";
-          if (!/^\d\d\d\d?$/.test(dateString)) {
-            if (/^.*\s\d\d\d\d?$/.test(dateString)) {
-              yearString = dateString.replace(/^.*\s(\d\d\d\d?)$/, "$1");
-            }
-          } else {
-            yearString = dateString;
-          }
-          return yearString;
-        }
 
         for (let edChild of spouse.children) {
           let child = {};
@@ -1258,12 +1258,12 @@ function generalizeDataForPerson(ed, result) {
 
       if (edSibling.birthDate) {
         let dateObj = new DateObj();
-        dateObj.yearString = edSibling.birthDate;
+        dateObj.yearString = extractYearFromDate(edSibling.birthDate);
         sibling.birthDate = dateObj;
       }
       if (edSibling.deathDate) {
         let dateObj = new DateObj();
-        dateObj.yearString = edSibling.deathDate;
+        dateObj.yearString = extractYearFromDate(edSibling.deathDate);
         sibling.deathDate = dateObj;
       }
 
@@ -1280,12 +1280,12 @@ function generalizeDataForPerson(ed, result) {
       sibling.name.setFullName(cleanName(edSibling.name));
       if (edSibling.birthDate) {
         let dateObj = new DateObj();
-        dateObj.yearString = edSibling.birthDate;
+        dateObj.yearString = extractYearFromDate(edSibling.birthDate);
         sibling.birthDate = dateObj;
       }
       if (edSibling.deathDate) {
         let dateObj = new DateObj();
-        dateObj.yearString = edSibling.deathDate;
+        dateObj.yearString = extractYearFromDate(edSibling.deathDate);
         sibling.deathDate = dateObj;
       }
       result.halfSiblings.push(sibling);

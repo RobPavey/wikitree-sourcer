@@ -628,6 +628,18 @@ const personRegressionData = [
     fetchType: "person",
   },
   {
+    // causing issues with sibling lists
+    caseName: "xx_profile_garnett_swanson_1907_1990",
+    url: "https://www.familysearch.org/en/tree/person/details/L64W-R4Z",
+    fetchType: "person",
+  },
+  {
+    // causing issues with sibling lists
+    caseName: "xx_profile_hurshell_swanson_1872_1952",
+    url: "https://www.familysearch.org/en/tree/person/details/L67M-27N",
+    fetchType: "person",
+  },
+  {
     caseName: "xx_profile_jacob_showalter_1702_1773",
     url: "https://www.familysearch.org/tree/person/details/LDL8-2H9",
     fetchType: "person",

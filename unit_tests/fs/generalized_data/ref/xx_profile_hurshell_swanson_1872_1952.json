@@ -1,0 +1,132 @@
+{
+  "sourceType": "profile",
+  "sourceOfData": "fs",
+  "personGender": "male",
+  "name": {
+    "name": "Hurshell Jesse Swanson",
+    "lastName": "Swanson",
+    "forenames": "Hurshell Jesse"
+  },
+  "birthDate": {
+    "dateString": "16 May 1872"
+  },
+  "birthPlace": {
+    "placeString": "Clay, North Carolina, United States"
+  },
+  "deathDate": {
+    "dateString": "8 August 1952"
+  },
+  "deathPlace": {
+    "placeString": "Hayesville, Clay, North Carolina, United States"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Callie Iona Gable",
+        "lastName": "Gable",
+        "forenames": "Callie Iona"
+      },
+      "marriageDate": {
+        "dateString": "5 May 1891"
+      },
+      "children": [
+        {
+          "name": {
+            "name": "Haskew James Swanson",
+            "forenames": "Haskew James",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1892"
+          },
+          "deathDate": {
+            "yearString": "1964"
+          }
+        },
+        {
+          "name": {
+            "name": "Robert Lee Swanson",
+            "forenames": "Robert Lee",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1894"
+          },
+          "deathDate": {
+            "yearString": "1970"
+          }
+        },
+        {
+          "name": {
+            "name": "Ferdinand Marcus Swanson",
+            "forenames": "Ferdinand Marcus",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1897"
+          },
+          "deathDate": {
+            "yearString": "1947"
+          }
+        },
+        {
+          "name": {
+            "name": "Mondree Swanson",
+            "forenames": "Mondree",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1899"
+          },
+          "deathDate": {
+            "yearString": "1953"
+          }
+        },
+        {
+          "name": {
+            "name": "Harley Swanson",
+            "forenames": "Harley",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1903"
+          },
+          "deathDate": {
+            "yearString": "1978"
+          }
+        },
+        {
+          "name": {
+            "name": "Garnett Lofton Swanson",
+            "forenames": "Garnett Lofton",
+            "lastName": "Swanson"
+          },
+          "birthDate": {
+            "yearString": "1907"
+          },
+          "deathDate": {
+            "yearString": "1990"
+          }
+        }
+      ]
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "James Smith Swanson",
+        "lastName": "Swanson",
+        "forenames": "James Smith"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Cynthia Emeline Wood",
+        "lastName": "Wood",
+        "forenames": "Cynthia Emeline"
+      }
+    }
+  },
+  "personRepoRef": "L67M-27N",
+  "hasValidData": true
+}

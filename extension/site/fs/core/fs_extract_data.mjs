@@ -3302,9 +3302,17 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
     // It might be better to use dataObj.childAndParentsRelationships for children
     for (let childAndParentrelationship of dataObj.childAndParentsRelationships) {
       let otherParentId = undefined;
-      if (childAndParentrelationship.parent1 && childAndParentrelationship.parent1.resourceId == personId) {
+      if (
+        childAndParentrelationship.parent1 &&
+        childAndParentrelationship.parent2 &&
+        childAndParentrelationship.parent1.resourceId == personId
+      ) {
         otherParentId = childAndParentrelationship.parent2.resourceId;
-      } else if (childAndParentrelationship.parent2 && childAndParentrelationship.parent2.resourceId == personId) {
+      } else if (
+        childAndParentrelationship.parent1 &&
+        childAndParentrelationship.parent2 &&
+        childAndParentrelationship.parent2.resourceId == personId
+      ) {
         otherParentId = childAndParentrelationship.parent1.resourceId;
       }
       let childId = childAndParentrelationship.child.resourceId;
@@ -3313,73 +3321,21 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
         let spouse = spousesById[otherParentId];
         if (spouse) {
           let childObj = findPersonById(dataObj, childId);
-          if (!spouse.children) {
-            spouse.children = [];
+          if (childObj) {
+            if (!spouse.children) {
+              spouse.children = [];
+            }
+            let child = {};
+            getNameForPersonObj(childObj, child);
+            getGenderForPersonObj(childObj, child);
+            getBirthAndDeathDatesForPersonObj(childObj, child);
+            spouse.children.push(child);
           }
-          let child = {};
-          getNameForPersonObj(childObj, child);
-          getGenderForPersonObj(childObj, child);
-          getBirthAndDeathDatesForPersonObj(childObj, child);
-          spouse.children.push(child);
         }
       }
     }
     if (bestRelationshipPair) {
-      // this is an attempt to get siblings but it fails because the dataObj doesn't
-      // contain the name etc for the siblings. The IDs in the relationships for them
-      // find on objects
-      let siblingFlags = {};
-      let siblings = [];
-      for (let relationship of relationshipsNotThisPerson) {
-        // find parent/child relationships where one of the parents is the parent
-        // of this profile
-        if (relationship.type == "http://gedcomx.org/ParentChild") {
-          let childId = relationship.person2.resourceId;
-          if (relationship.person1.resourceId == bestRelationshipPair.father) {
-            if (siblingFlags[childId]) {
-              siblingFlags[childId].matchesFather = true;
-            } else {
-              siblingFlags[childId] = { matchesFather: true };
-            }
-            if (!siblings.includes(childId)) {
-              siblings.push(childId);
-            }
-          }
-          if (relationship.person1.resourceId == bestRelationshipPair.mother) {
-            if (siblingFlags[childId]) {
-              siblingFlags[childId].matchesMother = true;
-            } else {
-              siblingFlags[childId] = { matchesMother: true };
-            }
-            if (!siblings.includes(childId)) {
-              siblings.push(childId);
-            }
-          }
-        }
-      }
-      for (let siblingId of siblings) {
-        let siblingObj = findPersonById(dataObj, siblingId);
-
-        let sibling = {};
-        getNameForPersonObj(siblingObj, sibling);
-        getGenderForPersonObj(siblingObj, sibling);
-        getBirthAndDeathDatesForPersonObj(siblingObj, sibling);
-
-        let flags = siblingFlags[sibling];
-        if (flags.matchesFather && flags.matchesMother) {
-          if (!result.siblings) {
-            result.siblings = [];
-          }
-          result.siblings.push(sibling);
-        } else {
-          if (!result.halfSiblings) {
-            result.halfSiblings = [];
-          }
-          result.halfSiblings.push(sibling);
-        }
-      }
-
-      if (document && siblings.length == 0) {
+      if (document) {
         // this data is not available in the dataObj. Try getting it from document
         let familyDivs = document.querySelectorAll("div[data-testid^='family-']");
         for (let familyDiv of familyDivs) {

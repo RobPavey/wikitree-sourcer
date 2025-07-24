@@ -1,0 +1,97 @@
+{
+  "personId": "L64W-R4Z",
+  "fullName": "Garnett Lofton Swanson",
+  "givenName": "Garnett Lofton",
+  "surname": "Swanson",
+  "gender": "male",
+  "birthDateOriginal": "7 February 1907",
+  "birthDate": "7 February 1907",
+  "birthPlaceOriginal": "Hayesville, Clay, North Carolina, United States",
+  "birthPlace": "Hayesville, Clay, North Carolina, United States",
+  "deathDateOriginal": "4 April 1990",
+  "deathDate": "4 April 1990",
+  "deathPlaceOriginal": "Union, Georgia, United States",
+  "deathPlace": "Union, Georgia, United States",
+  "burialPlaceOriginal": "Hayesville, Clay, North Carolina, United States of America",
+  "burialPlace": "Hayesville, Clay, North Carolina, United States",
+  "spouses": [
+    {
+      "fullName": "Arizona Eva Tanner",
+      "givenName": "Arizona Eva",
+      "surname": "Tanner",
+      "gender": "female",
+      "children": [
+        {
+          "fullName": "Clarence Swanson",
+          "givenName": "Clarence",
+          "surname": "Swanson",
+          "gender": "male",
+          "birthDate": "10 May 1928",
+          "deathDate": "7 September 2004"
+        },
+        {
+          "fullName": "Ellis Lofton Swanson",
+          "givenName": "Ellis Lofton",
+          "surname": "Swanson",
+          "gender": "male",
+          "birthDate": "27 September 1931",
+          "deathDate": "5 February 1995"
+        },
+        {
+          "fullName": "Robert Weaver Swanson",
+          "givenName": "Robert Weaver",
+          "surname": "Swanson",
+          "gender": "male",
+          "birthDate": "6 February 1935",
+          "deathDate": "27 January 1992"
+        },
+        {
+          "fullName": "Robert Fred Swanson",
+          "givenName": "Robert Fred",
+          "surname": "Swanson",
+          "gender": "male",
+          "birthDate": "4 December 1943"
+        }
+      ]
+    }
+  ],
+  "father": {
+    "fullName": "Hurshell Jesse Swanson",
+    "givenName": "Hurshell Jesse",
+    "surname": "Swanson"
+  },
+  "mother": {
+    "fullName": "Callie Iona Gable",
+    "givenName": "Callie Iona",
+    "surname": "Gable"
+  },
+  "sourceIds": [
+    "QBQQ-WZG",
+    "QBQ3-82L",
+    "QBQ3-8ZF",
+    "Q5W5-GNC",
+    "324C-MPV",
+    "324C-M8Z",
+    "324C-MSQ",
+    "3FPN-VHV",
+    "3FPN-JB2",
+    "3FPN-XKL",
+    "3FPN-6T7",
+    "3FPN-6NT",
+    "3FPN-8WB",
+    "3HM4-5P1",
+    "S184-YFH",
+    "S184-RY5",
+    "9J9L-Q6P",
+    "9J92-4QW",
+    "9J92-WNH",
+    "9J92-WMD",
+    "9J92-Q1Q",
+    "9J92-Q66",
+    "9J92-3RF",
+    "9J92-3WK",
+    "9J92-SP1",
+    "9J92-96S"
+  ],
+  "pageType": "person"
+}
