@@ -1585,6 +1585,10 @@ function extractDataInReadMode2025(document, result) {
   getSpousesFromDocumentInNonEditMode2025(false, document, result);
 }
 
+function extractDataForNonPerson2025(document, result) {
+  result.pageType = "nonPerson";
+}
+
 function getParentsFromDocumentInEditMode2025(document, result) {
   // there is no easy way to distinguish the parents, there could be 0, 1 or 2 and they don't say if they are mother
   // or father. So we have to compare the lnab - if it matches this person then it is the father.
@@ -1751,7 +1755,13 @@ function extractDataFor2025FormatPage(result, document, url) {
   if (textbox != undefined) {
     extractDataInEditMode2025(document, result);
   } else {
-    extractDataInReadMode2025(document, result);
+    // could be a read mode profile or could be some non-profile page such as a free space
+    var biography = document.getElementById("Biography");
+    if (biography) {
+      extractDataInReadMode2025(document, result);
+    } else {
+      extractDataForNonPerson2025(document, result);
+    }
   }
 
   //console.log(result);
