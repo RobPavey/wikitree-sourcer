@@ -395,12 +395,39 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
     }
   }
 
+  function sortApiPersonSetByBirthDate(personSet) {
+    // personSet is an object with prperties keyed by the internal ID
+    let personArray = [];
+    for (let personKey of Object.keys(personSet)) {
+      let person = personSet[personKey];
+      personArray.push(person);
+    }
+
+    function compareFunction(a, b) {
+      // example property to sort by: BirthDate: "1812-00-00"
+      if (a.BirthDate == b.BirthDate) {
+        return 0;
+      }
+      if (!a.BirthDate) {
+        return -1;
+      }
+      if (!b.BirthDate) {
+        return 1;
+      }
+      return a.BirthDate.localeCompare(b.BirthDate);
+    }
+
+    personArray.sort(compareFunction);
+
+    return personArray;
+  }
+
   // add siblings and children to generalizedData, this is only done if we have the API
   // data for now - not done through extractData
   if (apiPerson.Children && typeof apiPerson.Children == "object") {
-    for (let childKey of Object.keys(apiPerson.Children)) {
-      let apiChild = apiPerson.Children[childKey];
+    let childArray = sortApiPersonSetByBirthDate(apiPerson.Children);
 
+    for (let apiChild of childArray) {
       let apiOtherParentId = undefined;
       if (gd.personGender == "male") {
         apiOtherParentId = apiChild.Mother;
@@ -446,9 +473,9 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
   }
 
   if (apiPerson.Siblings && typeof apiPerson.Siblings == "object") {
-    for (let siblingKey of Object.keys(apiPerson.Siblings)) {
-      let apiSibling = apiPerson.Siblings[siblingKey];
+    let siblingArray = sortApiPersonSetByBirthDate(apiPerson.Siblings);
 
+    for (let apiSibling of siblingArray) {
       let isfullSibling = false;
       if (apiSibling.Mother == apiPerson.Mother && apiSibling.Father == apiPerson.Father) {
         isfullSibling = true;
