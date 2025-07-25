@@ -522,7 +522,21 @@ function compareTableWithRelatives(census, relativesData, diffs) {
           let relative = relativeData.relative;
           let relativeCensus = relativeData.census;
           let relTable = relativeCensus.householdTable;
+
+          if (relTable.people.length != table.people.length) {
+            continue;
+          }
+
           let relPerson = relTable.people[personIndex];
+
+          if (!relPerson) {
+            // this should never happen
+            console.log("relPerson is undefined for personIndex " + personIndex);
+            console.log("table is:");
+            console.log(table);
+            console.log("relTable is:");
+            console.log(relTable);
+          }
 
           let value = person[field];
           let relValue = relPerson[field];
@@ -550,7 +564,10 @@ function compareTableWithRelatives(census, relativesData, diffs) {
 
 function doCompares(result) {
   result.diffs = [];
+  result.diffSizeTables = [];
   result.numRelativesWithMatchingTables = 0;
+  result.numTablesWithDifferentNumberOfRows = 0;
+
   for (let relative of result.relatives) {
     relative.matchingCensusTables = 0;
   }
@@ -578,7 +595,17 @@ function doCompares(result) {
                   " relation is " +
                   relative.relation
               );
-              relativesData.push({ relative: relative, census: relativeCensus });
+
+              if (census.householdTable.people.length == relativeCensus.householdTable.people.length) {
+                relativesData.push({ relative: relative, census: relativeCensus });
+              } else {
+                result.numTablesWithDifferentNumberOfRows++;
+                let diffSizeTable = {};
+                diffSizeTable.census = census;
+                diffSizeTable.relativeCensus = relativeCensus;
+                diffSizeTable.relative = relative;
+                result.diffSizeTables.push(diffSizeTable);
+              }
             }
           }
         }

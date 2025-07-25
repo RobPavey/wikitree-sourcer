@@ -2616,6 +2616,28 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
 
       message = "";
 
+      if (compareResult.numTablesWithDifferentNumberOfRows > 0) {
+        message =
+          compareResult.numTablesWithDifferentNumberOfRows +
+          " tables on relatives have a different number of people so cannot be compared.";
+        addBreak(fragment);
+        addLabelWithBreak(fragment, message);
+
+        let listElement = document.createElement("ul");
+        fragment.appendChild(listElement);
+
+        for (let diffSizeTable of compareResult.diffSizeTables) {
+          let year = diffSizeTable.census.year;
+          let relativeId = getRelativeId(diffSizeTable.relative);
+          let relNum = diffSizeTable.relativeCensus.householdTable.people.length;
+          let num = diffSizeTable.census.householdTable.people.length;
+          message = relativeId + " [" + year + "], has " + relNum + " people vs. " + num;
+          let listItem = document.createElement("li");
+          addLabelWithBreak(listItem, message);
+          listElement.appendChild(listItem);
+        }
+      }
+
       if (compareResult.diffs) {
         diffs = compareResult.diffs;
         if (diffs.length) {
