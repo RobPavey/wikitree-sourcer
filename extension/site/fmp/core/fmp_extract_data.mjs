@@ -968,8 +968,17 @@ function extractStyle1TranscriptionData(document, result) {
     // check if expanded
     let nextSibling = householdTableNode.nextElementSibling;
     while (nextSibling) {
+      // Note in July 2025 the FMP page changed so that the expand button is no longer
+      // a sibling of the table element but is a child of the next sibling
+      let button = undefined;
       if (nextSibling.tagName.toLowerCase() === "button") {
-        let expandedAttr = nextSibling.getAttribute("aria-expanded");
+        button = nextSibling;
+      } else {
+        button = nextSibling.querySelector("button[aria-expanded]");
+      }
+
+      if (button) {
+        let expandedAttr = button.getAttribute("aria-expanded");
         if (expandedAttr) {
           if (expandedAttr.toLowerCase() == "false") {
             result.household.expanded = false;
