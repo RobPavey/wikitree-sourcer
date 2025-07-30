@@ -26,37 +26,84 @@
     }
   ],
   "father": {
-    "name": "Harry Alfred Pavey"
+    "name": "Harry Alfred Pavey",
+    "subtitle": "1852–1914"
   },
   "mother": {
-    "name": "Amelia Elizabeth Littlemore"
+    "name": "Amelia Elizabeth Littlemore",
+    "subtitle": "1849–1938"
   },
+  "siblings": [
+    {
+      "name": "Harry Alfred George Pavey",
+      "subtitle": "1871–1872"
+    },
+    {
+      "name": "Mary Elizabeth Maisie Pavey",
+      "subtitle": "1872–1950"
+    },
+    {
+      "name": "George Bernard Pavey",
+      "subtitle": "1876–1876"
+    },
+    {
+      "name": "Harry Alfred Pavey",
+      "subtitle": "1877–1918"
+    },
+    {
+      "name": "Amelia Annie Pavey",
+      "subtitle": "1879–1958"
+    },
+    {
+      "name": "Charles Allan Dew Pavey",
+      "subtitle": "1883–1934"
+    },
+    {
+      "name": "Arthur Eli Pavey",
+      "subtitle": "1885–1950"
+    },
+    {
+      "name": "Harold Gilbert Pavey",
+      "subtitle": "1887–1915"
+    },
+    {
+      "name": "Henry Pavey",
+      "subtitle": "1889–1889"
+    }
+  ],
   "spousesAndChildren": [
     {
       "name": "Clara Ethel Risley",
+      "subtitle": "1888–1942",
       "children": [
         {
-          "name": "Ralph Allan Pavey"
+          "name": "Ralph Allan Pavey",
+          "subtitle": "1914–1992"
         },
         {
-          "name": "Jack Vernon Pavey"
+          "name": "Jack Vernon Pavey",
+          "subtitle": "1919–1925"
         },
         {
-          "name": "Darel Pavey"
+          "name": "Darel Pavey",
+          "subtitle": "1922–1973"
         },
         {
-          "name": "Peter Pavey"
+          "name": "Peter Pavey",
+          "subtitle": "1924–1973"
         },
         {
-          "name": "Derek Pavey"
+          "name": "Derek Pavey",
+          "subtitle": "1927–1995"
         }
       ]
     },
     {
       "name": "Elsie Sarah Chambers",
+      "subtitle": "1904–1975",
       "children": [
         {
-          "name": "Heather Carol Pavey"
+          "name": "Private"
         }
       ]
     }

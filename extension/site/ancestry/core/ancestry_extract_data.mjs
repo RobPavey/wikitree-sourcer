@@ -1516,10 +1516,18 @@ function handlePersonFactsPreJune2024(document, result) {
 
     let userCardEvents = personCardContainer.querySelector(".userCardEvents");
     if (userCardEvents) {
+      let userCardEventArray = userCardEvents.querySelectorAll("span.userCardEvent");
+      for (let userCardEvent of userCardEventArray) {
+        let type = userCardEvent.textContent; // not safe to test this as it is language specific
+      }
+
       let birthDateSpan = userCardEvents.querySelector("span.birthDate");
+      if (!birthDateSpan) {
+      }
       if (birthDateSpan) {
         result.birthDate = birthDateSpan.textContent;
       }
+
       let birthPlaceSpan = userCardEvents.querySelector("span.birthPlace");
       if (birthPlaceSpan && birthPlaceSpan.textContent) {
         result.birthPlace = cleanPlaceName(birthPlaceSpan.textContent);
@@ -1730,35 +1738,83 @@ function handlePersonFactsPreJune2024(document, result) {
   //console.log("handleFactEdit, recordUrl is: " + result.recordUrl);
 }
 
-function handlePersonFactsJune2024(document, result) {
+function getPersonCardScriptText(document) {
   let personCardContainer = document.querySelector("#personCardContainer");
   if (personCardContainer) {
-    // There is no way that I have found to find the given name and surname separated in the
-    // HTML elements. But it can be found in a script.
     let scriptElements = personCardContainer.querySelectorAll("script");
     for (let scriptElement of scriptElements) {
       let text = scriptElement.textContent;
-      let fullNameIndex = text.indexOf("fullName:");
-      if (fullNameIndex != -1) {
-        let endIndex = text.indexOf("}", fullNameIndex);
-        if (endIndex != -1) {
-          let fullNameText = text.substring(fullNameIndex, endIndex);
-          fullNameText = fullNameText.replace(/\s+/g, " ");
-          const regex = /fullName: { given: '([^']*)', surname: '([^']*)'.*$/;
-          if (regex.test(fullNameText)) {
-            let givenName = fullNameText.replace(regex, "$1");
-            let surname = fullNameText.replace(regex, "$2");
-            if (givenName && givenName != fullNameText) {
-              result.givenName = parseHtmlEscapeCodes(givenName);
-            }
-            if (surname && surname != fullNameText) {
-              result.surname = parseHtmlEscapeCodes(surname);
-            }
+      let personCardIndex = text.indexOf("var PersonCard =");
+      if (personCardIndex != -1) {
+        return text;
+      }
+    }
+  }
+
+  let personViewDiv = document.querySelector("#personView");
+  if (personViewDiv) {
+    let scriptElements = personViewDiv.querySelectorAll("script");
+    for (let scriptElement of scriptElements) {
+      let text = scriptElement.textContent;
+      let personCardIndex = text.indexOf("var PersonCard =");
+      if (personCardIndex != -1) {
+        return text;
+      }
+    }
+  }
+}
+
+function extractPersonCardSimpleValue(result, text, pcKey, resultKey) {
+  let startString = pcKey + ": '";
+  let keyIndex = text.indexOf(startString);
+  if (keyIndex != -1) {
+    let valueStartIndex = keyIndex + startString.length;
+    let endIndex = text.indexOf("'", valueStartIndex);
+    if (endIndex != -1) {
+      let valueText = text.substring(valueStartIndex, endIndex);
+      valueText = valueText.replace(/\s+/g, " ");
+      if (valueText) {
+        result[resultKey] = valueText;
+      }
+    }
+  }
+}
+
+function handlePersonFactsJune2024(document, result) {
+  let personCardScript = getPersonCardScriptText(document);
+  if (personCardScript) {
+    // There is no way that I have found to find the given name and surname separated in the
+    // HTML elements. But it can be found in a script.
+
+    let fullNameIndex = personCardScript.indexOf("fullName:");
+    if (fullNameIndex != -1) {
+      let endIndex = personCardScript.indexOf("}", fullNameIndex);
+      if (endIndex != -1) {
+        let fullNameText = personCardScript.substring(fullNameIndex, endIndex);
+        fullNameText = fullNameText.replace(/\s+/g, " ");
+        const regex = /fullName: { given: '([^']*)', surname: '([^']*)'.*$/;
+        if (regex.test(fullNameText)) {
+          let givenName = fullNameText.replace(regex, "$1");
+          let surname = fullNameText.replace(regex, "$2");
+          if (givenName && givenName != fullNameText) {
+            result.givenName = parseHtmlEscapeCodes(givenName);
+          }
+          if (surname && surname != fullNameText) {
+            result.surname = parseHtmlEscapeCodes(surname);
           }
         }
       }
     }
 
+    extractPersonCardSimpleValue(result, personCardScript, "birthDate", "birthDate");
+    extractPersonCardSimpleValue(result, personCardScript, "birthPlace", "birthPlace");
+    extractPersonCardSimpleValue(result, personCardScript, "deathDate", "deathDate");
+    extractPersonCardSimpleValue(result, personCardScript, "deathPlace", "deathPlace");
+    extractPersonCardSimpleValue(result, personCardScript, "gender", "gender");
+  }
+
+  let personCardContainer = document.querySelector("#personCardContainer");
+  if (personCardContainer) {
     let userCardTitle = personCardContainer.querySelector(".userCardTitle");
     if (userCardTitle) {
       let fullName = userCardTitle.textContent;
@@ -2196,37 +2252,6 @@ function handlePersonFacts(document, result) {
     handlePersonFactsPreJune2024(document, result);
   } else {
     handlePersonFactsJune2024(document, result);
-  }
-
-  // if there is no gender they may have the filter set to hide the name and gender
-  // try to get gender from scripts
-  if (!result.gender) {
-    let scriptElements = document.querySelectorAll("#personCardContainer > script");
-    for (let scriptElement of scriptElements) {
-      let scriptText = scriptElement.innerHTML;
-      if (scriptText && scriptText.includes("var PersonCard = ")) {
-        const genderLabel = "gender:";
-        let genderIndex = scriptText.indexOf(genderLabel);
-        if (genderIndex != -1) {
-          let quoteIndex = scriptText.indexOf("'", genderIndex + genderLabel.length);
-          if (quoteIndex != -1) {
-            let endQuoteIndex = scriptText.indexOf("'", quoteIndex + 1);
-            if (endQuoteIndex != -1) {
-              let genderText = scriptText.substring(quoteIndex + 1, endQuoteIndex);
-              if (genderText) {
-                if (genderText == "Male") {
-                  result.gender = "male";
-                  break;
-                } else if (genderText == "Female") {
-                  result.gender = "female";
-                  break;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 }
 

@@ -3,8 +3,8 @@
   "pageType": "personFacts",
   "givenName": "Mary",
   "surname": "North",
-  "titleName": "Mary North",
   "gender": "Female",
+  "titleName": "Mary North",
   "marriages": [
     {
       "date": "25 Apr 1547",

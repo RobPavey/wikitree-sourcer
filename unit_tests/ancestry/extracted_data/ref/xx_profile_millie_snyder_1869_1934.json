@@ -3,12 +3,12 @@
   "pageType": "personFacts",
   "givenName": "Millie B",
   "surname": "SNYDER",
-  "titleName": "Millie B SNYDER",
   "birthDate": "31 MAR 1869",
   "birthPlace": "Chicago, Cook, Illinois, USA",
   "deathDate": "18 JUL 1934",
   "deathPlace": "Chicago, Cook, Illinois, USA",
   "gender": "Female",
+  "titleName": "Millie B SNYDER",
   "marriages": [
     {
       "date": "15 Oct 1885",

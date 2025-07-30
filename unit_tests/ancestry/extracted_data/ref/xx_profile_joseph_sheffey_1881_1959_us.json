@@ -3,12 +3,12 @@
   "pageType": "personFacts",
   "givenName": "Joseph Christopher",
   "surname": "Sheffey",
-  "titleName": "Joseph Christopher Sheffey Sr",
   "birthDate": "25 SEP 1881",
   "birthPlace": "Wytheville Town, Wythe, Virginia, USA",
   "deathDate": "8 FEB 1959",
   "deathPlace": "Wytheville Town, Wythe, Virginia, USA",
   "gender": "Male",
+  "titleName": "Joseph Christopher Sheffey Sr",
   "marriages": [
     {
       "date": "13 Nov 1904",

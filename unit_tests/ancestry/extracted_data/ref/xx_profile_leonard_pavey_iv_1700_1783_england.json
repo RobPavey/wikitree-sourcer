@@ -3,12 +3,12 @@
   "pageType": "personFacts",
   "givenName": "Leonard",
   "surname": "Pavey",
-  "titleName": "Leonard Pavey IV",
   "birthDate": "1700",
   "birthPlace": "Yarcombe, Devon, England",
   "deathDate": "1783",
   "deathPlace": "Stockland, Devon, England",
   "gender": "Male",
+  "titleName": "Leonard Pavey IV",
   "marriages": [
     {
       "date": "30 May 1727",

@@ -3,11 +3,12 @@
   "pageType": "personFacts",
   "givenName": "Clement Cecil",
   "surname": "Smith",
-  "titleName": "Clement Cecil Smith",
   "birthDate": "1883",
   "birthPlace": "Auckland, New Zealand",
   "deathDate": "22 MAR 1957",
   "deathPlace": "Napier, Hawke's Bay, New Zealand",
+  "gender": "Male",
+  "titleName": "Clement Cecil Smith",
   "marriages": [
     {
       "date": "1909",
@@ -43,6 +44,5 @@
       "title": "New Zealand, Marriage Index, 1840-1937"
     }
   ],
-  "gender": "male",
   "ancestryTemplate": "{{Ancestry Tree|164568404|162379710099}}"
 }

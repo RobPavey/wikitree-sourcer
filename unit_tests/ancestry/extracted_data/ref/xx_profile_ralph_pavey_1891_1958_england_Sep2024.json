@@ -3,12 +3,12 @@
   "pageType": "personFacts",
   "givenName": "Ralph Edgar",
   "surname": "Pavey",
-  "titleName": "Ralph Edgar Pavey",
   "birthDate": "9 JUL 1891",
   "birthPlace": "Kentish Town, London, England",
   "deathDate": "8 SEP 1958",
   "deathPlace": "Marylebone, London, England",
   "gender": "Male",
+  "titleName": "Ralph Edgar Pavey",
   "marriages": [
     {
       "date": "15 Feb 1914",

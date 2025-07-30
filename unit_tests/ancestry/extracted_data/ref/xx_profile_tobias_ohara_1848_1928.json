@@ -3,12 +3,12 @@
   "pageType": "personFacts",
   "givenName": "Tobias James",
   "surname": "O'Hara",
-  "titleName": "Tobias James O'Hara",
   "birthDate": "24 OCT 1848",
   "birthPlace": "Everton, Lancashire, England",
   "deathDate": "14 MARCH 1928",
   "deathPlace": "42 Roberts Road Walton Liverpool, Lancashire, England",
   "gender": "Male",
+  "titleName": "Tobias James O'Hara",
   "marriages": [
     {
       "date": "8 Apr 1872",
