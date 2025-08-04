@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "Dorothy (age 18) married Elbert T. Orr on 1 March 1942 in Pulaski, Arkansas, USA.<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''Marriage''': \"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>Pulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)<br/>\nDorothy Stevenson (18) marriage to Elbert T. Orr on 1 Mar 1942 in Pulaski, Arkansas, USA.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "Dorothy (age 18) married Elbert T. Orr on 1 March 1942 in Pulaski, Arkansas, USA.<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)<br/>\nDorothy Stevenson (18) marriage to Elbert T. Orr on 1 Mar 1942 in Pulaski, Arkansas, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''Marriage''': \"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>Pulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)<br/>Dorothy Stevenson (18) marriage to Elbert T. Orr on 1 Mar 1942 in Pulaski, Arkansas, USA.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)<br/>\nName: Dorothy Stevenson; Marriage Age: 18; Birth Date: abt 1924; Marriage Date: 1 Mar 1942; Marriage Place: Pulaski, Arkansas, USA; Spouse: Elbert T. Orr.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "Dorothy (age 18) married Elbert T. Orr on 1 March 1942 in Pulaski, Arkansas, USA.<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)<br/>\nName: Dorothy Stevenson; Marriage Age: 18; Birth Date: abt 1924; Marriage Date: 1 Mar 1942; Marriage Place: Pulaski, Arkansas, USA; Spouse: Elbert T. Orr.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''Marriage''': \"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>Pulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)<br/>Name: Dorothy Stevenson; Marriage Age: 18; Birth Date: abt 1924; Marriage Date: 1 Mar 1942; Marriage Place: Pulaski, Arkansas, USA; Spouse: Elbert T. Orr.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Dorothy Stevenson\n|-\n| Marriage Age || 18\n|-\n| Birth Date || abt 1924\n|-\n| Marriage Date || 1 Mar 1942\n|-\n| Marriage Place || Pulaski, Arkansas, USA\n|-\n| Spouse || Elbert T. Orr\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "Dorothy (age 18) married Elbert T. Orr on 1 March 1942 in Pulaski, Arkansas, USA.<ref>\n'''Marriage''':\n\"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>\nPulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>\n{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || Dorothy Stevenson\n|-\n| Marriage Age || 18\n|-\n| Birth Date || abt 1924\n|-\n| Marriage Date || 1 Mar 1942\n|-\n| Marriage Place || Pulaski, Arkansas, USA\n|-\n| Spouse || Elbert T. Orr\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''Marriage''': \"Pulaski County, Arkansas, Marriages 1838-1999\"<br/>Pulaski County Clerk; Little Rock, Arkansas; Marriage Records<br/>{{Ancestry Record|61797|90165864}} (accessed 6 May 2021)<br/>Name: Dorothy Stevenson; Marriage Age: 18; Birth Date: abt 1924; Marriage Date: 1 Mar 1942; Marriage Place: Pulaski, Arkansas, USA; Spouse: Elbert T. Orr.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"Pulaski County, Arkansas, Marriages 1838-1999,\" database, ({{Ancestry Record|61797|90165864}} : accessed 6 May 2021), Dorothy Stevenson (18) marriage to Elbert T. Orr on 1 Mar 1942 in Pulaski, Arkansas, USA; citing Pulaski County Clerk, Little Rock, Arkansas, Marriage Records.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "Dorothy (age 18) married Elbert T. Orr on 1 March 1942 in Pulaski, Arkansas, USA.<ref>\"Pulaski County, Arkansas, Marriages 1838-1999,\" database, ({{Ancestry Record|61797|90165864}} : accessed 6 May 2021), Dorothy Stevenson (18) marriage to Elbert T. Orr on 1 Mar 1942 in Pulaski, Arkansas, USA; citing Pulaski County Clerk, Little Rock, Arkansas, Marriage Records.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"Pulaski County, Arkansas, Marriages 1838-1999,\" database, ({{Ancestry Record|61797|90165864}} : accessed 6 May 2021), Dorothy Stevenson (18) marriage to Elbert T. Orr on 1 Mar 1942 in Pulaski, Arkansas, USA; citing Pulaski County Clerk, Little Rock, Arkansas, Marriage Records.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''Marriage'':\n\"Pulaski County, Arkansas, Marriages 1838-1999\", database, \nPulaski County Clerk, Little Rock, Arkansas, Marriage Records, \n({{Ancestry Record|61797|90165864}} : accessed 6 May 2021), \nName: Dorothy Stevenson; Marriage Age: 18; Birth Date: abt 1924; Marriage Date: 1 Mar 1942; Marriage Place: Pulaski, Arkansas, USA; Spouse: Elbert T. Orr.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "Dorothy (age 18) married Elbert T. Orr on 1 March 1942 in Pulaski, Arkansas, USA.<ref>\n''Marriage'':\n\"Pulaski County, Arkansas, Marriages 1838-1999\", database, \nPulaski County Clerk, Little Rock, Arkansas, Marriage Records, \n({{Ancestry Record|61797|90165864}} : accessed 6 May 2021), \nName: Dorothy Stevenson; Marriage Age: 18; Birth Date: abt 1924; Marriage Date: 1 Mar 1942; Marriage Place: Pulaski, Arkansas, USA; Spouse: Elbert T. Orr.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''Marriage'': \"Pulaski County, Arkansas, Marriages 1838-1999\", database, Pulaski County Clerk, Little Rock, Arkansas, Marriage Records, ({{Ancestry Record|61797|90165864}} : accessed 6 May 2021), Name: Dorothy Stevenson; Marriage Age: 18; Birth Date: abt 1924; Marriage Date: 1 Mar 1942; Marriage Place: Pulaski, Arkansas, USA; Spouse: Elbert T. Orr.",
+    "type": "source"
+  }
+}

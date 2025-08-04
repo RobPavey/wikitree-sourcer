@@ -43,7 +43,7 @@ function cleanLabel(text) {
     return "";
   }
 
-  text = text.replace(/\s/g, " "); // eliminate nbsp etc
+  text = text.replace(/\s+/g, " "); // eliminate nbsp etc
   text = text.trim();
 
   // remove trailing :

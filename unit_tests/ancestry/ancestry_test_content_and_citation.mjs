@@ -817,6 +817,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "us_ar_marriage_1942_dorothy_stevenson",
+    url: "https://www.ancestry.com/search/collections/61797/records/90165864",
+  },
+  {
     caseName: "us_ar_marriage_1953_philip_carson",
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&db=61775&h=1236093",
   },

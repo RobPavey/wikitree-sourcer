@@ -1,0 +1,28 @@
+{
+  "url": "https://www.ancestry.com/search/collections/61797/records/90165864",
+  "pageType": "record",
+  "dbId": "61797",
+  "recordId": "90165864",
+  "ancestryTemplate": "{{Ancestry Record|61797|90165864}}",
+  "domain": "ancestry.com",
+  "titleName": "Dorothy Stevenson",
+  "titleCollection": "Pulaski County, Arkansas, Marriages 1838-1999",
+  "recordData": {
+    "Name": "Dorothy Stevenson",
+    "Marriage Age": "18",
+    "Birth Date": "abt 1924",
+    "Marriage Date": "1 Mar 1942",
+    "Marriage Place": "Pulaski, Arkansas, USA",
+    "Spouse": "Elbert T. Orr"
+  },
+  "linkData": {
+    "Spouse": "http://www.ancestry.com/search/collections/61797/records/165864"
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/61797/images/61797_b929843-00796?pid=90165864&usePUB=true&usePUBJs=true",
+  "imageDbId": "61797",
+  "imageRecordId": "61797_b929843-00796",
+  "sourceCitation": "Pulaski County Clerk; Little Rock, Arkansas; Marriage Records",
+  "sourceInformation": "Ancestry.com. Pulaski County, Arkansas, Marriages 1838-1999 [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2020. Original data: Pulaski County Clerk, Little Rock, Arkansas; Marriage Records.",
+  "originalData": "Pulaski County Clerk, Little Rock, Arkansas; Marriage Records.",
+  "sourceDescription": "This collection contains marriage records from Pulaski County, Arkansas from 1838-1999. Learn more..."
+}

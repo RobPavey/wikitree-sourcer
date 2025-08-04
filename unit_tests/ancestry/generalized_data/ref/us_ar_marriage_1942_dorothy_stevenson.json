@@ -1,0 +1,40 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Dorothy Stevenson"
+  },
+  "eventDate": {
+    "dateString": "1 Mar 1942"
+  },
+  "eventPlace": {
+    "placeString": "Pulaski, Arkansas, USA"
+  },
+  "ageAtEvent": "18",
+  "spouses": [
+    {
+      "name": {
+        "name": "Elbert T. Orr"
+      },
+      "marriageDate": {
+        "dateString": "1 Mar 1942"
+      },
+      "marriagePlace": {
+        "placeString": "Pulaski, Arkansas, USA"
+      }
+    }
+  ],
+  "birthDate": {
+    "qualifier": 2,
+    "dateString": "1924"
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|61797|90165864}}"
+  ],
+  "collectionData": {
+    "id": "61797",
+    "collectionTitle": "Pulaski County, Arkansas, Marriages 1838-1999"
+  },
+  "hasValidData": true
+}
