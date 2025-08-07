@@ -1774,7 +1774,7 @@ function extractPersonCardSimpleValue(result, text, pcKey, resultKey) {
       let valueText = text.substring(valueStartIndex, endIndex);
       valueText = valueText.replace(/\s+/g, " ");
       if (valueText) {
-        result[resultKey] = valueText;
+        result[resultKey] = parseHtmlEscapeCodes(valueText);
       }
     }
   }
