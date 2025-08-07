@@ -496,12 +496,20 @@ function getOtherCensusString(gd, options) {
       }
     }
   } else {
+    let needsClosingComma = false;
+
     if (maritalStatus) {
       dataString += ", " + maritalStatus;
+      needsClosingComma = true;
     }
     let occupation = gd.occupation;
     if (occupation) {
-      dataString += ", " + occupation + ",";
+      dataString += ", " + occupation;
+      needsClosingComma = true;
+    }
+
+    if (needsClosingComma) {
+      dataString += ",";
     }
   }
 
