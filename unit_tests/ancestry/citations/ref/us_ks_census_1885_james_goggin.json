@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>\nJames Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas.\n</ref>",
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>\nJames Goggin (10), single, in Jefferson, Davis, Kansas. Born in Kansas.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>\nJames Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas.\n</ref>",
+    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>\n{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>\nJames Goggin (10), single, in Jefferson, Davis, Kansas. Born in Kansas.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>James Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas.",
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_34; Line: 13<br/>{{Ancestry Record|1088|76967}} (accessed 6 May 2021)<br/>James Goggin (10), single, in Jefferson, Davis, Kansas. Born in Kansas.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), James Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13.</ref>",
+    "citation": "<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), James Goggin (10), single, in Jefferson, Davis, Kansas. Born in Kansas; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), James Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13.</ref>",
+    "citation": "In the 1885 census James (age 10) was in Jefferson, Davis, Kansas.<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), James Goggin (10), single, in Jefferson, Davis, Kansas. Born in Kansas; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), James Goggin (10), single in Jefferson, Davis, Kansas. Born in Kansas; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13.",
+    "citation": "* \"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|76967}} : accessed 6 May 2021), James Goggin (10), single, in Jefferson, Davis, Kansas. Born in Kansas; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_34, Line 13.",
     "type": "source"
   },
   "partial_ee_style_inline": {

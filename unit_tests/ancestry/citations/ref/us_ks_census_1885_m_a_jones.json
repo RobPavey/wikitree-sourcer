@@ -12,15 +12,15 @@
     "type": "source"
   },
   "dataStyle_string_inline": {
-    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>\nM A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina.\n</ref>",
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>\nM A Jones (34), married, in Richland, Cowley, Kansas. Born in Ind Carolina.\n</ref>",
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>\nM A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina.\n</ref>",
+    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>\nM A Jones (34), married, in Richland, Cowley, Kansas. Born in Ind Carolina.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
-    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>M A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina.",
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>{{Ancestry Record|1088|187423}} (accessed 6 May 2021)<br/>M A Jones (34), married, in Richland, Cowley, Kansas. Born in Ind Carolina.",
     "type": "source"
   },
   "dataStyle_list_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), M A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11.</ref>",
+    "citation": "<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), M A Jones (34), married, in Richland, Cowley, Kansas. Born in Ind Carolina; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11.</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), M A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11.</ref>",
+    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), M A Jones (34), married, in Richland, Cowley, Kansas. Born in Ind Carolina; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11.</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), M A Jones (34), married in Richland, Cowley, Kansas. Born in Ind Carolina; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11.",
+    "citation": "* \"Kansas, U.S., State Census Collection, 1855-1925,\" database, ({{Ancestry Record|1088|187423}} : accessed 6 May 2021), M A Jones (34), married, in Richland, Cowley, Kansas. Born in Ind Carolina; citing Kansas State Historical Society, Topeka, Kansas, 1885 Kansas Territory Census, Roll KS1885_30, Line 11.",
     "type": "source"
   },
   "partial_ee_style_inline": {

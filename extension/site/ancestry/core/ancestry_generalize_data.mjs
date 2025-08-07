@@ -207,6 +207,7 @@ function determineRecordType(extractedData) {
         "Marriage Bonds and Allegations",
         "Allegations for Marriage Licences",
         "Marriage Records",
+        "Compiled Marriages",
       ],
     },
     {
@@ -697,6 +698,7 @@ function determineRoleGivenRecordType(extractedData, result) {
       "Marriage Banns Year",
       "Allegation Year",
       "Application Date",
+      "Date",
     ]);
     if (!value) {
       if (extractedData.recordData["Child"]) {
@@ -1837,6 +1839,7 @@ function generalizeDataGivenRecordType(ed, result) {
           "Translated Marriage Date",
           "Marriage Year",
           "Marriage Date on Image",
+          "Date",
           "Document Year",
         ],
         "date"

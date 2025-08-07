@@ -234,7 +234,7 @@ const referenceKeys = [
   ["line", "line number"],
   ["roll"],
   ["reel number"],
-  ["fhl film number"],
+  ["fhl film number", "microfilm"],
   ["schedule", "schedule number", "household schedule number"],
   ["parish number"],
   ["household number"],
