@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Census of Canada, 1881\"<br/>\nReference: RG31 - Statistics Canada; Page: 60; Family number: 255; Microfilm reel number: C-13275; Image number: e008205196; Item ID number: 20567235<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=20567235&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nMary E Fenton (32), married in Arran, Bruce North, Ontario, Canada. Born in Ontario.\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Census of Canada, 1881\"<br/>\nReference: RG31 - Statistics Canada; Page: 60; Family number: 255; Microfilm reel number: C-13275; Image number: e008205196; Item ID number: 20567235<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=20567235&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nMary E Fenton (32), married, in Arran, Bruce North, Ontario, Canada. Born in Ontario.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1881 census Mary (age 32) was recorded as married in Arran, Bruce North, Ontario, Canada.<ref>\n'''1881 Census''':\n\"Census of Canada, 1881\"<br/>\nReference: RG31 - Statistics Canada; Page: 60; Family number: 255; Microfilm reel number: C-13275; Image number: e008205196; Item ID number: 20567235<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=20567235&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nMary E Fenton (32), married in Arran, Bruce North, Ontario, Canada. Born in Ontario.\n</ref>",
+    "citation": "In the 1881 census Mary (age 32) was recorded as married in Arran, Bruce North, Ontario, Canada.<ref>\n'''1881 Census''':\n\"Census of Canada, 1881\"<br/>\nReference: RG31 - Statistics Canada; Page: 60; Family number: 255; Microfilm reel number: C-13275; Image number: e008205196; Item ID number: 20567235<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=20567235&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nMary E Fenton (32), married, in Arran, Bruce North, Ontario, Canada. Born in Ontario.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1881 Census''': \"Census of Canada, 1881\"<br/>Reference: RG31 - Statistics Canada; Page: 60; Family number: 255; Microfilm reel number: C-13275; Image number: e008205196; Item ID number: 20567235<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=20567235&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Mary E Fenton (32), married in Arran, Bruce North, Ontario, Canada. Born in Ontario.",
+    "citation": "* '''1881 Census''': \"Census of Canada, 1881\"<br/>Reference: RG31 - Statistics Canada; Page: 60; Family number: 255; Microfilm reel number: C-13275; Image number: e008205196; Item ID number: 20567235<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=20567235&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Mary E Fenton (32), married, in Arran, Bruce North, Ontario, Canada. Born in Ontario.",
     "type": "source"
   }
 }

@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1891 Census''':\n\"Census of Canada, 1891\"<br/>\nReference: RG31 - Statistics Canada; Page: 32-33; Family number: 162; Microfilm reel number: T-6361; Image number: 30953_148163-00058; Item ID number: 26261677<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=26261677&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (67), married in Ingersoll Town, Oxford South, Ontario, Canada.\n</ref>",
+    "citation": "<ref>\n'''1891 Census''':\n\"Census of Canada, 1891\"<br/>\nReference: RG31 - Statistics Canada; Page: 32-33; Family number: 162; Microfilm reel number: T-6361; Image number: 30953_148163-00058; Item ID number: 26261677<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=26261677&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (67), married, in Ingersoll Town, Oxford South, Ontario, Canada.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1891 census John (age 67) was recorded as married in Ingersoll Town, Oxford South, Ontario, Canada.<ref>\n'''1891 Census''':\n\"Census of Canada, 1891\"<br/>\nReference: RG31 - Statistics Canada; Page: 32-33; Family number: 162; Microfilm reel number: T-6361; Image number: 30953_148163-00058; Item ID number: 26261677<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=26261677&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (67), married in Ingersoll Town, Oxford South, Ontario, Canada.\n</ref>",
+    "citation": "In the 1891 census John (age 67) was recorded as married in Ingersoll Town, Oxford South, Ontario, Canada.<ref>\n'''1891 Census''':\n\"Census of Canada, 1891\"<br/>\nReference: RG31 - Statistics Canada; Page: 32-33; Family number: 162; Microfilm reel number: T-6361; Image number: 30953_148163-00058; Item ID number: 26261677<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=26261677&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (67), married, in Ingersoll Town, Oxford South, Ontario, Canada.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1891 Census''': \"Census of Canada, 1891\"<br/>Reference: RG31 - Statistics Canada; Page: 32-33; Family number: 162; Microfilm reel number: T-6361; Image number: 30953_148163-00058; Item ID number: 26261677<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=26261677&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>John Smith (67), married in Ingersoll Town, Oxford South, Ontario, Canada.",
+    "citation": "* '''1891 Census''': \"Census of Canada, 1891\"<br/>Reference: RG31 - Statistics Canada; Page: 32-33; Family number: 162; Microfilm reel number: T-6361; Image number: 30953_148163-00058; Item ID number: 26261677<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=26261677&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>John Smith (67), married, in Ingersoll Town, Oxford South, Ontario, Canada.",
     "type": "source"
   }
 }

@@ -2011,7 +2011,10 @@ class NarrativeBuilder {
             result += " a " + relationshipToString;
           }
         } else if (maritalStatus) {
-          result += " recorded as " + maritalStatus;
+          if (options.narrative_census_wasPartFormat == "was") {
+            result += " recorded as";
+          }
+          result += " " + maritalStatus;
         }
       } else if (structuredHousehold) {
         let listParts = [];

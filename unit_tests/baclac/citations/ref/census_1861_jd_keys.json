@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1861 Census''':\n\"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 153; Line: 37; Microfilm reel number: C-1280-1281; Image number: 4108708_00331; Item ID number: 44445788<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=44445788&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJ...d Keys (35), married in Montréal, Hochelaga, Canada East (Quebec), Canada. Born in Ireland.\n</ref>",
+    "citation": "<ref>\n'''1861 Census''':\n\"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 153; Line: 37; Microfilm reel number: C-1280-1281; Image number: 4108708_00331; Item ID number: 44445788<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=44445788&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJ...d Keys (35), married, in Montréal, Hochelaga, Canada East (Quebec), Canada. Born in Ireland.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1861 census J...d (age 35) was recorded as married in Montréal, Hochelaga, Canada East (Quebec), Canada.<ref>\n'''1861 Census''':\n\"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 153; Line: 37; Microfilm reel number: C-1280-1281; Image number: 4108708_00331; Item ID number: 44445788<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=44445788&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJ...d Keys (35), married in Montréal, Hochelaga, Canada East (Quebec), Canada. Born in Ireland.\n</ref>",
+    "citation": "In the 1861 census J...d (age 35) was recorded as married in Montréal, Hochelaga, Canada East (Quebec), Canada.<ref>\n'''1861 Census''':\n\"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 153; Line: 37; Microfilm reel number: C-1280-1281; Image number: 4108708_00331; Item ID number: 44445788<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=44445788&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJ...d Keys (35), married, in Montréal, Hochelaga, Canada East (Quebec), Canada. Born in Ireland.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1861 Census''': \"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>Reference: RG31 - Statistics Canada; Page: 153; Line: 37; Microfilm reel number: C-1280-1281; Image number: 4108708_00331; Item ID number: 44445788<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=44445788&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>J...d Keys (35), married in Montréal, Hochelaga, Canada East (Quebec), Canada. Born in Ireland.",
+    "citation": "* '''1861 Census''': \"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>Reference: RG31 - Statistics Canada; Page: 153; Line: 37; Microfilm reel number: C-1280-1281; Image number: 4108708_00331; Item ID number: 44445788<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=44445788&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>J...d Keys (35), married, in Montréal, Hochelaga, Canada East (Quebec), Canada. Born in Ireland.",
     "type": "source"
   }
 }

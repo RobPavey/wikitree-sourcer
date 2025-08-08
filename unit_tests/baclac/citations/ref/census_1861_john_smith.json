@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1861 Census''':\n\"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 255; Line: 19; Microfilm reel number: C-1270; Image number: 4108676_00544; Item ID number: 44376755<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=44376755&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (14), single in Sutton, Brome, Canada East (Quebec), Canada. Born in Sutton C. E.\n</ref>",
+    "citation": "<ref>\n'''1861 Census''':\n\"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 255; Line: 19; Microfilm reel number: C-1270; Image number: 4108676_00544; Item ID number: 44376755<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=44376755&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (14), single, in Sutton, Brome, Canada East (Quebec), Canada. Born in Sutton C. E.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1861 census John (age 14) was in Sutton, Brome, Canada East (Quebec), Canada.<ref>\n'''1861 Census''':\n\"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 255; Line: 19; Microfilm reel number: C-1270; Image number: 4108676_00544; Item ID number: 44376755<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=44376755&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (14), single in Sutton, Brome, Canada East (Quebec), Canada. Born in Sutton C. E.\n</ref>",
+    "citation": "In the 1861 census John (age 14) was in Sutton, Brome, Canada East (Quebec), Canada.<ref>\n'''1861 Census''':\n\"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>\nReference: RG31 - Statistics Canada; Page: 255; Line: 19; Microfilm reel number: C-1270; Image number: 4108676_00544; Item ID number: 44376755<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=44376755&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nJohn Smith (14), single, in Sutton, Brome, Canada East (Quebec), Canada. Born in Sutton C. E.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1861 Census''': \"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>Reference: RG31 - Statistics Canada; Page: 255; Line: 19; Microfilm reel number: C-1270; Image number: 4108676_00544; Item ID number: 44376755<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=44376755&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>John Smith (14), single in Sutton, Brome, Canada East (Quebec), Canada. Born in Sutton C. E.",
+    "citation": "* '''1861 Census''': \"Census of 1861 (Canada East, Canada West, Prince Edward Island, New Brunswick and Nova Scotia)\"<br/>Reference: RG31 - Statistics Canada; Page: 255; Line: 19; Microfilm reel number: C-1270; Image number: 4108676_00544; Item ID number: 44376755<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=44376755&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>John Smith (14), single, in Sutton, Brome, Canada East (Quebec), Canada. Born in Sutton C. E.",
     "type": "source"
   }
 }

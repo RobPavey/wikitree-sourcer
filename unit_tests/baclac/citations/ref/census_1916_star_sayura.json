@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1916 Census''':\n\"Census of the Prairie Provinces, 1916\"<br/>\nReference: R233-47-9-E; Page: 11; Line: 25; Family number: 108; Microfilm reel number: T-21949; Image number: 31228_4363978-00824; Item ID number: 42454309<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=42454309&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\n* Sayura (35), married in Calgary West, Alberta, Canada. Born in Austria.\n</ref>",
+    "citation": "<ref>\n'''1916 Census''':\n\"Census of the Prairie Provinces, 1916\"<br/>\nReference: R233-47-9-E; Page: 11; Line: 25; Family number: 108; Microfilm reel number: T-21949; Image number: 31228_4363978-00824; Item ID number: 42454309<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=42454309&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\n* Sayura (35), married, in Calgary West, Alberta, Canada. Born in Austria.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1916 census * (age 35) was recorded as married in Calgary West, Alberta, Canada.<ref>\n'''1916 Census''':\n\"Census of the Prairie Provinces, 1916\"<br/>\nReference: R233-47-9-E; Page: 11; Line: 25; Family number: 108; Microfilm reel number: T-21949; Image number: 31228_4363978-00824; Item ID number: 42454309<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=42454309&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\n* Sayura (35), married in Calgary West, Alberta, Canada. Born in Austria.\n</ref>",
+    "citation": "In the 1916 census * (age 35) was recorded as married in Calgary West, Alberta, Canada.<ref>\n'''1916 Census''':\n\"Census of the Prairie Provinces, 1916\"<br/>\nReference: R233-47-9-E; Page: 11; Line: 25; Family number: 108; Microfilm reel number: T-21949; Image number: 31228_4363978-00824; Item ID number: 42454309<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=42454309&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\n* Sayura (35), married, in Calgary West, Alberta, Canada. Born in Austria.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1916 Census''': \"Census of the Prairie Provinces, 1916\"<br/>Reference: R233-47-9-E; Page: 11; Line: 25; Family number: 108; Microfilm reel number: T-21949; Image number: 31228_4363978-00824; Item ID number: 42454309<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=42454309&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>* Sayura (35), married in Calgary West, Alberta, Canada. Born in Austria.",
+    "citation": "* '''1916 Census''': \"Census of the Prairie Provinces, 1916\"<br/>Reference: R233-47-9-E; Page: 11; Line: 25; Family number: 108; Microfilm reel number: T-21949; Image number: 31228_4363978-00824; Item ID number: 42454309<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=42454309&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>* Sayura (35), married, in Calgary West, Alberta, Canada. Born in Austria.",
     "type": "source"
   }
 }

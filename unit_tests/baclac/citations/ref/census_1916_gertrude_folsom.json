@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''1916 Census''':\n\"Census of the Prairie Provinces, 1916\"<br/>\nReference: R233-47-9-E; Page: 4; Line: 24; Family number: 33; Microfilm reel number: T-21951; Image number: 31228_4363980-00837; Item ID number: 42564419<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=42564419&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nGertrude L Folsom (33), married in Cardston, Lethbridge, Alberta, Canada. Born in England.\n</ref>",
+    "citation": "<ref>\n'''1916 Census''':\n\"Census of the Prairie Provinces, 1916\"<br/>\nReference: R233-47-9-E; Page: 4; Line: 24; Family number: 33; Microfilm reel number: T-21951; Image number: 31228_4363980-00837; Item ID number: 42564419<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=42564419&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nGertrude L Folsom (33), married, in Cardston, Lethbridge, Alberta, Canada. Born in England.\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "In the 1916 census Gertrude (age 33) was recorded as married in Cardston, Lethbridge, Alberta, Canada.<ref>\n'''1916 Census''':\n\"Census of the Prairie Provinces, 1916\"<br/>\nReference: R233-47-9-E; Page: 4; Line: 24; Family number: 33; Microfilm reel number: T-21951; Image number: 31228_4363980-00837; Item ID number: 42564419<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=42564419&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nGertrude L Folsom (33), married in Cardston, Lethbridge, Alberta, Canada. Born in England.\n</ref>",
+    "citation": "In the 1916 census Gertrude (age 33) was recorded as married in Cardston, Lethbridge, Alberta, Canada.<ref>\n'''1916 Census''':\n\"Census of the Prairie Provinces, 1916\"<br/>\nReference: R233-47-9-E; Page: 4; Line: 24; Family number: 33; Microfilm reel number: T-21951; Image number: 31228_4363980-00837; Item ID number: 42564419<br/>\n[http://central.bac-lac.gc.ca/.redirect?app=census&id=42564419&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>\nGertrude L Folsom (33), married, in Cardston, Lethbridge, Alberta, Canada. Born in England.\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''1916 Census''': \"Census of the Prairie Provinces, 1916\"<br/>Reference: R233-47-9-E; Page: 4; Line: 24; Family number: 33; Microfilm reel number: T-21951; Image number: 31228_4363980-00837; Item ID number: 42564419<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=42564419&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Gertrude L Folsom (33), married in Cardston, Lethbridge, Alberta, Canada. Born in England.",
+    "citation": "* '''1916 Census''': \"Census of the Prairie Provinces, 1916\"<br/>Reference: R233-47-9-E; Page: 4; Line: 24; Family number: 33; Microfilm reel number: T-21951; Image number: 31228_4363980-00837; Item ID number: 42564419<br/>[http://central.bac-lac.gc.ca/.redirect?app=census&id=42564419&lang=eng Library and Archives Canada] (accessed 6 May 2021)<br/>Gertrude L Folsom (33), married, in Cardston, Lethbridge, Alberta, Canada. Born in England.",
     "type": "source"
   }
 }
