@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "opccorn",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Kellow",
+    "forenames": "Joseph B"
+  },
+  "eventDate": {
+    "yearString": "1924"
+  },
+  "eventPlace": {
+    "placeString": "Pennsylvania, USA",
+    "state": "Pennsylvania",
+    "country": "USA"
+  },
+  "hasValidData": true
+}

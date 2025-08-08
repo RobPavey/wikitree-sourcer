@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nEmigrants database, England<br/>\n[https://www.cornwall-opc-database.org/extra-searches/emigrants/ Cornwall OPC] (accessed 6 May 2021)<br/>\nJoseph B Kellow death 1924 in Pennsylvania, USA.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Joseph died in 1924 in Pennsylvania, USA.<ref>\n'''Death''':\n\"Cornwall Online Parish Clerks Database\"<br/>\nEmigrants database, England<br/>\n[https://www.cornwall-opc-database.org/extra-searches/emigrants/ Cornwall OPC] (accessed 6 May 2021)<br/>\nJoseph B Kellow death 1924 in Pennsylvania, USA.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Cornwall Online Parish Clerks Database\"<br/>Emigrants database, England<br/>[https://www.cornwall-opc-database.org/extra-searches/emigrants/ Cornwall OPC] (accessed 6 May 2021)<br/>Joseph B Kellow death 1924 in Pennsylvania, USA.",
+    "type": "source"
+  }
+}

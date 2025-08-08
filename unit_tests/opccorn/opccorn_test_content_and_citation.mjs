@@ -72,6 +72,10 @@ const regressionData = [
     url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=death_certificate&id=309",
   },
   {
+    caseName: "emmigrant_death_1924_joseph_kellow",
+    url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=emigrants&id=85077",
+  },
+  {
     caseName: "marriage_1801_david_davis",
     url: "https://www.cornwall-opc-database.org/search-database/more-info/?t=marriages&id=586772",
   },

@@ -99,8 +99,13 @@ const typeData = {
   },
   // Emigrants
   emigrants: {
+    hasMultipleTypes: true,
+    recordTypes: {
+      Death: { recordType: RT.Death },
+    },
     recordType: RT.Emigration,
     searchUrl: "extra-searches/emigrants/",
+    placeType: "destination",
   },
   // Hearth Tax
   hearth: {
@@ -208,6 +213,25 @@ class OpccornEdReader extends ExtractedDataReader {
             let recordSubtype = thisTypeData.recordSubtype;
             if (recordSubtype) {
               this.recordSubtype = recordSubtype;
+            }
+
+            if (thisTypeData.hasMultipleTypes && ed.recordData) {
+              let extractedRecordType = ed.recordData["Record Type"];
+              if (extractedRecordType) {
+                let typeSubData = thisTypeData.recordTypes[extractedRecordType];
+                if (typeSubData) {
+                  recordType = typeSubData.recordType;
+                  if (recordType) {
+                    this.recordType = recordType;
+                  }
+                  let recordSubtype = typeSubData.recordSubtype;
+                  if (recordSubtype) {
+                    this.recordSubtype = recordSubtype;
+                  } else {
+                    delete this.recordSubtype;
+                  }
+                }
+              }
             }
           }
         }
@@ -397,6 +421,7 @@ class OpccornEdReader extends ExtractedDataReader {
     let placeObj = new PlaceObj();
 
     let county = "Cornwall";
+    let state = "";
     let country = "England";
     let placeString = "";
 
@@ -455,15 +480,41 @@ class OpccornEdReader extends ExtractedDataReader {
           }
         }
         break;
+      case "destination":
+        {
+          // e.g.
+          // "Destination Country State: 	USA, Pennsylvania",
+          let destination = this.ed.recordData["Destination Country State"];
+          if (destination) {
+            county = "";
+            let parts = destination.split(", ");
+            if (parts.length == 2) {
+              country = parts[0];
+              state = parts[1];
+              placeString = state + ", " + country;
+            } else {
+              country = "";
+              placeString = destination;
+            }
+          }
+        }
+        break;
     }
 
     if (placeString) {
       placeObj.placeString = placeString;
-    } else {
+    } else if (county && country) {
       placeObj.placeString = county + ", " + country;
+    } else if (country) {
+      placeObj.placeString = country;
     }
 
-    placeObj.county = county;
+    if (county) {
+      placeObj.county = county;
+    }
+    if (state) {
+      placeObj.state = state;
+    }
     placeObj.country = country;
 
     return placeObj;
