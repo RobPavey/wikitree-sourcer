@@ -349,8 +349,8 @@ function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
 
   //console.log("convertOptions, loadedOptions is : ");
   //console.log(loadedOptions);
-  console.log("convertOptions, optionsRegistry is : ");
-  console.log(optionsRegistry);
+  //console.log("convertOptions, optionsRegistry is : ");
+  //console.log(optionsRegistry);
 
   if (loadedVersion >= currentVersion) {
     return loadedOptions;

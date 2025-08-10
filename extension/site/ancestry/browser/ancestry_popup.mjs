@@ -128,8 +128,8 @@ var ancestryPrefetch = {
   timeoutCount: 0,
 };
 
-const prefetchTimeoutMax = 100;
-const prefetchTimeoutDelay = 100;
+const prefetchTimeoutMax = 100; // retry 100 times
+const prefetchTimeoutDelay = 100; // in ms
 
 function displayPrefetchErrorForSharingData() {
   console.log("displayPrefetchError: ancestryPrefetch is:");
@@ -185,6 +185,10 @@ function ancestryDependencyListener() {
   }
 }
 
+var getSharingObjRetryCount = 0;
+var getSharingObjRetryMax = 3;
+var getSharingObjTimeoutDelay = 100;
+
 // This is done in advance when the popup comes up. That avoids any stalls when buildingCitation.
 // Stalls on Safari can make saveCitation fail.
 async function getAncestrySharingDataObj(data, dependencyListener) {
@@ -209,6 +213,16 @@ async function getAncestrySharingDataObj(data, dependencyListener) {
       // It can fail even if there is an image URL, for example findagrave images:
       // https://www.ancestry.com/discoveryui-content/view/2221897:60527
       // This is not considered an error there just will be no sharing link
+      console.log("fetchAncestrySharingDataObj did not succeed, response is:");
+      console.log(response);
+
+      if (getSharingObjRetryCount < getSharingObjRetryMax) {
+        getSharingObjRetryCount++;
+        setTimeout(function () {
+          getAncestrySharingDataObj(data, dependencyListener);
+        }, getSharingObjTimeoutDelay);
+        return;
+      }
     }
   } catch (e) {
     console.log("getAncestrySharingDataObj caught exception on fetchAncestrySharingDataObj:");
