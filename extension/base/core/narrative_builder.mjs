@@ -1597,7 +1597,7 @@ class NarrativeBuilder {
       this.addParentageForMainSentenceGivenParentsAndGender(spouseParents, spouseGender);
     }
 
-    if (gd.recordSubtype && gd.recordSubtype == RecordSubtype.Banns && (dateObj || place)) {
+    if (gd.recordSubtype && gd.recordSubtype == RecordSubtype.Banns && (dateObj || placeObj)) {
       this.startSentence("The banns were read");
     }
 
