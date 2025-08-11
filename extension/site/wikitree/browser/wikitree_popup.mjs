@@ -2574,8 +2574,11 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
         }
         message += "].";
         message += " This is will cause duplicate differences in the following screens. It is best to fix this first.";
+        addErrorLabelWithBreak(parentElement, message);
+      } else {
+        message += " This is unusual.";
+        addLabelWithBreak(parentElement, message);
       }
-      addErrorLabelWithBreak(parentElement, message);
     }
   }
 
