@@ -562,6 +562,36 @@ function compareTableWithRelatives(census, relativesData, diffs) {
   }
 }
 
+function checkForDuplicateTables(result, relative) {
+  let parsedBio = result.parsedBio;
+  let container = result;
+  if (relative) {
+    parsedBio = relative.parsedBio;
+    container = relative;
+  }
+
+  for (let index1 = 0; index1 < parsedBio.censusTables.length; index1++) {
+    let census1 = parsedBio.censusTables[index1];
+    let year1 = census1.year;
+    if (year1) {
+      for (let index2 = 0; index2 < index1; index2++) {
+        let census2 = parsedBio.censusTables[index2];
+        let year2 = census2.year;
+        if (year2 && year1 == year2) {
+          let duplicate = { censusTable: census2 };
+          if (censusTablesMatch(census1, census2, relative)) {
+            duplicate.isMatch = true;
+          }
+          if (!container.duplicateTables) {
+            container.duplicateTables = [];
+          }
+          container.duplicateTables.push(duplicate);
+        }
+      }
+    }
+  }
+}
+
 function doCompares(result) {
   result.diffs = [];
   result.diffSizeTables = [];
@@ -570,6 +600,14 @@ function doCompares(result) {
 
   for (let relative of result.relatives) {
     relative.matchingCensusTables = 0;
+  }
+
+  checkForDuplicateTables(result);
+
+  for (let relative of result.relatives) {
+    if (relative.parsedBio) {
+      checkForDuplicateTables(result, relative);
+    }
   }
 
   for (let census of result.parsedBio.censusTables) {

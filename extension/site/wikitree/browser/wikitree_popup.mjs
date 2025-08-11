@@ -2526,6 +2526,15 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
     return label;
   }
 
+  function addErrorLabelWithBreak(parent, message) {
+    let label = document.createElement("label");
+    label.innerHTML = message;
+    label.className = "largeEditBoxErrorLabel";
+    parent.appendChild(label);
+    addBreak(parent);
+    return label;
+  }
+
   function addCheckbox(parent, message, flagKey) {
     let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
@@ -2544,6 +2553,30 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
 
     parent.appendChild(checkbox);
     parent.appendChild(label);
+  }
+
+  function reportDuplicates(container, parentElement) {
+    if (container.duplicateTables && container.duplicateTables.length > 0) {
+      let message = "This person has multiple tables for the same years.";
+      let matchingDuplicates = [];
+      for (let duplicate of container.duplicateTables) {
+        if (duplicate.isMatch) {
+          matchingDuplicates.push(duplicate);
+        }
+      }
+      if (matchingDuplicates.length) {
+        message += " Some are duplicates of the same household [";
+        for (let matchingDuplicate of matchingDuplicates) {
+          if (!message.endsWith("[")) {
+            message += " ";
+          }
+          message += matchingDuplicate.censusTable.year;
+        }
+        message += "].";
+        message += " This is will cause duplicate differences in the following screens. It is best to fix this first.";
+      }
+      addErrorLabelWithBreak(parentElement, message);
+    }
   }
 
   let diffs = undefined;
@@ -2569,6 +2602,9 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
       }
       message += "]";
       addLabelWithBreak(fragment, message);
+
+      reportDuplicates(compareResult, fragment);
+
       addBreak(fragment);
 
       if (compareResult.numRelativesWithMatchingTables) {
@@ -2605,6 +2641,9 @@ async function setupImproveCensusTablesSubMenu2(data, tabId, backFunction, biogr
             let listItem = document.createElement("li");
             addLabelWithBreak(listItem, message);
             listElement.appendChild(listItem);
+
+            reportDuplicates(relative, listElement);
+
             message = "";
           }
         }
