@@ -172,7 +172,7 @@ async function setupFmpPopupMenu(extractedData) {
   if (!extractedData || (!isTranscript && !isRecord && !isProfile && !isImageShare) || !extractedData.success) {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
     message +=
-      "\n\nIt looks like FindMyPast page but not a transcript or a record/image with a parent id nor a person profile on the Overview tab.";
+      "\n\nIt looks like FindMyPast page but not a transcript or a record/image with a parent id nor a person profile on the Facts tab.";
     message += "\n\nThis can also happen if the page has not finished loading when you click on the extension icon.";
     let data = { extractedData: extractedData };
     buildMinimalMenuWithMessage(message, data, backFunction);

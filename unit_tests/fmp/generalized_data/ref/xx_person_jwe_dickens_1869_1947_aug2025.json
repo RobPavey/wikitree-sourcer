@@ -1,0 +1,31 @@
+{
+  "name": {
+    "name": "John William Edington Dickens"
+  },
+  "birthDate": {
+    "dateString": "15 Jan 1869"
+  },
+  "birthPlace": {
+    "placeString": "Pill, Easton In Gordano, Somerset"
+  },
+  "deathDate": {
+    "dateString": "9 May 1947"
+  },
+  "deathPlace": {
+    "placeString": "Paignton, Devon, England"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Rebecca Maggs"
+      },
+      "marriageDate": {
+        "dateString": "October 1892"
+      },
+      "marriagePlace": {
+        "placeString": "Bedminster, Somerset"
+      }
+    }
+  ],
+  "hasValidData": true
+}

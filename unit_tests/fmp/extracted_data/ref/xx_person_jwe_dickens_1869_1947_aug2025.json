@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "url": "https://www.findmypast.co.uk/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/people/1181964321/facts-and-events",
+  "subDomain": "www",
+  "domain": "findmypast.co.uk",
+  "urlPath": "trees/918c5b61-df62-4dec-b840-31cad3d86bf9/people/1181964321/facts-and-events",
+  "urlTreeId": "918c5b61-df62-4dec-b840-31cad3d86bf9",
+  "urlProfileId": "1181964321",
+  "fullName": "John William Edington Dickens",
+  "birthDate": "15 Jan 1869",
+  "birthPlace": "Pill, Easton In Gordano, Somerset",
+  "deathDate": "9 May 1947",
+  "deathPlace": "Paignton, Devon, England",
+  "spouses": [
+    {
+      "name": "Rebecca Maggs",
+      "marriageDate": "October 1892",
+      "marriagePlace": "Bedminster, Somerset"
+    }
+  ]
+}

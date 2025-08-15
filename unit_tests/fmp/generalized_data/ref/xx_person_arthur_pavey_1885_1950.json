@@ -1,0 +1,31 @@
+{
+  "name": {
+    "name": "Arthur Eli Pavey"
+  },
+  "birthDate": {
+    "dateString": "8 Jan 1885"
+  },
+  "birthPlace": {
+    "placeString": "Pancras, London"
+  },
+  "deathDate": {
+    "dateString": "17 Dec 1950"
+  },
+  "deathPlace": {
+    "placeString": "Hamble, Hampshire, England"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Emmeline May Brain"
+      },
+      "marriageDate": {
+        "dateString": "14 Jun 1913"
+      },
+      "marriagePlace": {
+        "placeString": "Amington, Warwickshire, England"
+      }
+    }
+  ],
+  "hasValidData": true
+}

@@ -438,6 +438,10 @@ const regressionData = [
   // Person pages
 
   {
+    caseName: "xx_person_arthur_pavey_1885_1950",
+    url: "https://www.findmypast.co.uk/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/people/1181964300/facts-and-events",
+  },
+  {
     caseName: "xx_person_emmeline_brain_1888_1966",
     url: "https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181964296/profile",
   },
@@ -454,6 +458,10 @@ const regressionData = [
     // This is from a public tree that I do not own
     caseName: "xx_person_joseph_rose_1858_1927",
     url: "https://www.findmypast.co.uk/search-family-tree/transcript?id=1615406188&ref=3481B4D0-F26F-4D46-BF33-37AD8DDCB559",
+  },
+  {
+    caseName: "xx_person_jwe_dickens_1869_1947_aug2025",
+    url: "https://www.findmypast.co.uk/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/people/1181964321/facts-and-events",
   },
   {
     caseName: "xx_person_jwe_dickens_1869_1947",

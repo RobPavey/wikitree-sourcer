@@ -91,19 +91,31 @@ function extractUrlInfo(result, url) {
   if (queryIndex == -1) {
     // could be a tree like:
     // https://tree.findmypast.co.uk/#/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/1181965009/profile
+    // or a new form from August 2025:
+    // https://www.findmypast.co.uk/trees/918c5b61-df62-4dec-b840-31cad3d86bf9/people/1181964851/timeline
     // Or a shared clipping like:
     // https://www.findmypast.co.uk/image-share/1eb2fb56-2ecd-4144-b0b6-08888276e66d
-    if (/\#\/trees\/[a-f0-9\-]+\/[0-9]+\/profile/.test(remainder)) {
+    const oldProfileRegEx = /^\#\/trees\/([a-f0-9\-]+)\/([0-9]+)\/profile.*$/i;
+    const aug2025ProfileRegEx = /^trees\/([a-f0-9\-]+)\/people\/([0-9]+)\/facts\-and\-events.*$/i;
+    const clippingRegEx = /^image-share\/([a-f0-9\-]+)$/i;
+
+    if (oldProfileRegEx.test(remainder)) {
       result.urlPath = remainder;
-      result.urlTreeId = remainder.replace(/\#\/trees\/([a-f0-9\-]+)\/[0-9]+\/profile/i, "$1");
-      result.urlProfileId = remainder.replace(/\#\/trees\/[a-f0-9\-]+\/([0-9]+)\/profile/i, "$1");
+      result.urlTreeId = remainder.replace(oldProfileRegEx, "$1");
+      result.urlProfileId = remainder.replace(oldProfileRegEx, "$2");
       return true;
-    } else if (/^image-share\/[a-f0-9\-]+$/i.test(remainder)) {
+    } else if (clippingRegEx.test(remainder)) {
       // it is an image share
       result.urlPath = remainder;
-      result.urlImageShareId = remainder.replace(/^image-share\/([a-f0-9\-]+).*$/i, "$1");
+      result.urlImageShareId = remainder.replace(clippingRegEx, "$1");
+      return true;
+    } else if (aug2025ProfileRegEx.test(remainder)) {
+      result.urlPath = remainder;
+      result.urlTreeId = remainder.replace(aug2025ProfileRegEx, "$1");
+      result.urlProfileId = remainder.replace(aug2025ProfileRegEx, "$2");
       return true;
     }
+
     return false;
   }
 
@@ -831,6 +843,202 @@ function extractReadOnlyProfileData(document, result) {
   result.success = true;
 }
 
+function extractAug2025ReadOnlyProfileData(document, result) {
+  function extractName(article) {
+    let name = "";
+
+    let labelText = article.getAttribute("aria-label");
+    if (labelText) {
+      const prefix = "Tree node transcript for ";
+      if (labelText.startsWith(prefix)) {
+        name = labelText.substring(prefix.length);
+      }
+    }
+    return name;
+  }
+
+  function extractBirthFact(para) {
+    let datePara = para.nextSibling;
+    if (datePara) {
+      let blankPara = datePara.nextSibling;
+      if (blankPara) {
+        let placePara = blankPara.nextSibling;
+        if (placePara) {
+          result.birthDate = datePara.textContent;
+          result.birthPlace = placePara.textContent;
+        }
+      }
+    }
+  }
+
+  function extractDeathFact(para) {
+    let datePara = para.nextSibling;
+    if (datePara) {
+      let blankPara = datePara.nextSibling;
+      if (blankPara) {
+        let placePara = blankPara.nextSibling;
+        if (placePara) {
+          result.deathDate = datePara.textContent;
+          result.deathPlace = placePara.textContent;
+        }
+      }
+    }
+  }
+
+  function extractMarriageFact(para) {
+    let namePara = para.nextSibling;
+    if (namePara) {
+      let datePara = namePara.nextSibling;
+      if (datePara) {
+        let blankPara = datePara.nextSibling;
+        if (blankPara) {
+          let placePara = blankPara.nextSibling;
+          if (placePara) {
+            let spouse = {};
+            spouse.name = namePara.textContent;
+            spouse.marriageDate = datePara.textContent;
+            spouse.marriagePlace = placePara.textContent;
+            if (!result.spouses) {
+              result.spouses = [];
+            }
+            let isDuplicate = false;
+            for (let existingSpouse of result.spouses) {
+              if (
+                existingSpouse.name == spouse.name &&
+                existingSpouse.marriageDate == spouse.marriageDate &&
+                existingSpouse.marriagePlace == spouse.marriagePlace
+              ) {
+                isDuplicate = true;
+              }
+            }
+            if (!isDuplicate) {
+              result.spouses.push(spouse);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  let mainElement = document.querySelector("#main");
+  if (!mainElement) {
+    return;
+  }
+
+  let factElements = mainElement.querySelectorAll("div[role='list'] div[role='listitem'] > div");
+
+  for (let factElement of factElements) {
+    if (factElement.children.length == 2) {
+      let leftElement = factElement.children[0];
+      let rightElement = factElement.children[1];
+
+      let label = "";
+      // if it is a preferred fact then it may have an h2 element (only seems true for name)
+      let factTypeElement = leftElement.querySelector("h2");
+      if (!factTypeElement) {
+        if (leftElement.children.length == 2) {
+          // it is probably a preferred fact
+          factTypeElement = leftElement.querySelector("p");
+        }
+      }
+
+      if (factTypeElement) {
+        let label = factTypeElement.textContent;
+        if (label) {
+          // the right element always has one value, it can also have additional values
+          // and sources.
+          let value1 = "";
+          let value2 = "";
+          let comment = "";
+
+          let numChildren = rightElement.children.length;
+          if (numChildren > 0) {
+            let value1Element = rightElement.children[0].querySelector("div > p");
+            if (value1Element) {
+              value1 = value1Element.textContent;
+            }
+
+            if (numChildren > 1) {
+              let secondElement = rightElement.children[1];
+              let buttonElement = secondElement.querySelector("button");
+              if (!buttonElement) {
+                // there can be one or two children
+                if (secondElement.children.length == 1) {
+                  // it can be a comment or a place
+                  let value2Element = secondElement.querySelector(":scope > p");
+                  if (value2Element) {
+                    value2 = value2Element.textContent;
+                  } else {
+                    comment = secondElement.textContent;
+                  }
+                } else if (secondElement.children.length == 2) {
+                  // it can be a comment and a place
+                  let value2Element = secondElement.querySelector("p");
+                  if (value2Element) {
+                    value2 = value2Element.textContent;
+                  }
+                  let commentElement = secondElement.children[1].querySelector("div > p");
+                  if (commentElement) {
+                    comment = commentElement.textContent;
+                  }
+                }
+              }
+            }
+          }
+
+          //console.log("value1 = " + value1 + ", value2 = " + value2 + ", comment = " + comment);
+
+          if (label == "Full name") {
+            result.fullName = value1;
+          } else if (label == "Birth") {
+            result.birthDate = value1;
+            result.birthPlace = value2;
+          } else if (label == "Death") {
+            result.deathDate = value1;
+            result.deathPlace = value2;
+          } else if (label == "Marriage") {
+            // factElement is the enclosing child of the listitem
+            let listItem = factElement.parentElement;
+            let previousElement = listItem.previousElementSibling;
+            if (previousElement) {
+              let spouseLink = previousElement.querySelector("h2 > span > a");
+              if (spouseLink) {
+                let spouseName = spouseLink.textContent;
+                if (spouseName) {
+                  let spouse = {};
+                  spouse.name = spouseName;
+                  spouse.marriageDate = value1;
+                  spouse.marriagePlace = value2;
+                  if (!result.spouses) {
+                    result.spouses = [];
+                  }
+                  let isDuplicate = false;
+                  for (let existingSpouse of result.spouses) {
+                    if (
+                      existingSpouse.name == spouse.name &&
+                      existingSpouse.marriageDate == spouse.marriageDate &&
+                      existingSpouse.marriagePlace == spouse.marriagePlace
+                    ) {
+                      isDuplicate = true;
+                    }
+                  }
+                  if (!isDuplicate) {
+                    result.spouses.push(spouse);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  if (result.fullName) {
+    result.success = true;
+  }
+}
+
 function extractStyle1TranscriptionData(document, result) {
   // the class names seem generated and may not be consistent
   // the attribute data-testid seems useful.
@@ -1149,6 +1357,8 @@ function extractData(document, url) {
     // it is a tree but could either be an editable on or a view of someone else's
     if (result.urlPath.startsWith("search-family-tree")) {
       extractReadOnlyProfileData(document, result);
+    } else if (result.urlPath.startsWith("trees")) {
+      extractAug2025ReadOnlyProfileData(document, result);
     } else {
       extractProfileData(document, result);
     }
