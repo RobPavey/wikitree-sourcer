@@ -69,6 +69,8 @@ import { DateUtils } from "../../../base/core/date_utils.mjs";
 
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
+import { getSiteDataForSite } from "/base/core/site_registry.mjs";
+
 async function checkIfWeHavePermissionsToUseApi(checkOnly) {
   const checkPermissionsOptions = {
     reason:
@@ -1055,12 +1057,17 @@ async function getWikiTreeMergeEditData(data, personData, citationObject) {
     }
   }
 
+  let otherSiteData = undefined;
+  if (personGd) {
+    otherSiteData = await getSiteDataForSite(personGd.sourceOfData);
+  }
+
   // change explanation
   let fromString = "";
   if (citationObject) {
-    fromString = getCitationObjectExplanationText(personGd);
+    fromString = getCitationObjectExplanationText(personGd, otherSiteData);
   } else if (personGd.sourceType == "profile") {
-    fromString = getPersonDataExplanationText(personGd);
+    fromString = getPersonDataExplanationText(personGd, otherSiteData);
   }
   if (fromString) {
     result.changeExplanation = "Merge external data for " + fromString + " via WikiTree Sourcer";
@@ -1761,12 +1768,17 @@ async function getWikiTreeEditFamilyData(data, personData, citationObject) {
     result.useAdvancedSourcingMode = false;
   }
 
+  let otherSiteData = undefined;
+  if (personGd) {
+    otherSiteData = await getSiteDataForSite(personGd.sourceOfData);
+  }
+
   // change explanation
   let fromString = "";
   if (citationObject) {
-    fromString = getCitationObjectExplanationText(personGd);
+    fromString = getCitationObjectExplanationText(personGd, otherSiteData);
   } else if (personGd.sourceType == "profile") {
-    fromString = getPersonDataExplanationText(personGd);
+    fromString = getPersonDataExplanationText(personGd, otherSiteData);
   }
   if (fromString) {
     result.changeExplanation = "Add using external data for " + fromString + " via WikiTree Sourcer";
@@ -2024,7 +2036,7 @@ async function mergeEditFromPersonData(data, personData, citationObject, tabId, 
   checkWtPersonData(wtPersonData, processFunction, backFunction);
 }
 
-function getPersonDataExplanationText(gd) {
+function getPersonDataExplanationText(gd, otherSiteData) {
   let name = gd.inferFullName();
   if (!name) {
     name = "Unknown";
@@ -2044,12 +2056,20 @@ function getPersonDataExplanationText(gd) {
     text += " (" + birthYear + "-" + deathYear + ")";
   }
 
-  text += " from " + gd.sourceOfData;
+  let externalSiteName = gd.sourceOfData;
+  if (otherSiteData) {
+    externalSiteName = otherSiteData.repositoryName;
+  }
+  text += " from " + externalSiteName;
+
+  if (gd.personRepoRef) {
+    text += " profile " + gd.personRepoRef;
+  }
 
   return text;
 }
 
-function getCitationObjectExplanationText(gd) {
+function getCitationObjectExplanationText(gd, otherSiteData) {
   let name = gd.inferFullName();
   if (!name) {
     name = "Unknown";
@@ -2070,7 +2090,12 @@ function getCitationObjectExplanationText(gd) {
   }
 
   text += ". Record type: " + gd.recordType;
-  text += " from " + gd.sourceOfData;
+
+  let externalSiteName = gd.sourceOfData;
+  if (otherSiteData) {
+    externalSiteName = otherSiteData.repositoryName;
+  }
+  text += " from " + externalSiteName;
 
   return text;
 }
