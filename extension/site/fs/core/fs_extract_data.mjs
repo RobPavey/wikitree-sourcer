@@ -3300,36 +3300,38 @@ function extractPersonDataFromFetch(result, document, dataObj, options) {
 
     // now identify children and siblings
     // It might be better to use dataObj.childAndParentsRelationships for children
-    for (let childAndParentrelationship of dataObj.childAndParentsRelationships) {
-      let otherParentId = undefined;
-      if (
-        childAndParentrelationship.parent1 &&
-        childAndParentrelationship.parent2 &&
-        childAndParentrelationship.parent1.resourceId == personId
-      ) {
-        otherParentId = childAndParentrelationship.parent2.resourceId;
-      } else if (
-        childAndParentrelationship.parent1 &&
-        childAndParentrelationship.parent2 &&
-        childAndParentrelationship.parent2.resourceId == personId
-      ) {
-        otherParentId = childAndParentrelationship.parent1.resourceId;
-      }
-      let childId = childAndParentrelationship.child.resourceId;
+    if (dataObj.childAndParentsRelationships) {
+      for (let childAndParentrelationship of dataObj.childAndParentsRelationships) {
+        let otherParentId = undefined;
+        if (
+          childAndParentrelationship.parent1 &&
+          childAndParentrelationship.parent2 &&
+          childAndParentrelationship.parent1.resourceId == personId
+        ) {
+          otherParentId = childAndParentrelationship.parent2.resourceId;
+        } else if (
+          childAndParentrelationship.parent1 &&
+          childAndParentrelationship.parent2 &&
+          childAndParentrelationship.parent2.resourceId == personId
+        ) {
+          otherParentId = childAndParentrelationship.parent1.resourceId;
+        }
+        let childId = childAndParentrelationship.child.resourceId;
 
-      if (otherParentId) {
-        let spouse = spousesById[otherParentId];
-        if (spouse) {
-          let childObj = findPersonById(dataObj, childId);
-          if (childObj) {
-            if (!spouse.children) {
-              spouse.children = [];
+        if (otherParentId) {
+          let spouse = spousesById[otherParentId];
+          if (spouse) {
+            let childObj = findPersonById(dataObj, childId);
+            if (childObj) {
+              if (!spouse.children) {
+                spouse.children = [];
+              }
+              let child = {};
+              getNameForPersonObj(childObj, child);
+              getGenderForPersonObj(childObj, child);
+              getBirthAndDeathDatesForPersonObj(childObj, child);
+              spouse.children.push(child);
             }
-            let child = {};
-            getNameForPersonObj(childObj, child);
-            getGenderForPersonObj(childObj, child);
-            getBirthAndDeathDatesForPersonObj(childObj, child);
-            spouse.children.push(child);
           }
         }
       }
