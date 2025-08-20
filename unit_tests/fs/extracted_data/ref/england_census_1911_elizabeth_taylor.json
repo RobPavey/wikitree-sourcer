@@ -43,6 +43,7 @@
     "sourceRegNbr": "RG14",
     "sourceScheduleType": "16"
   },
+  "sourceRecordType": "Household",
   "household": {
     "headings": [
       "fullName",

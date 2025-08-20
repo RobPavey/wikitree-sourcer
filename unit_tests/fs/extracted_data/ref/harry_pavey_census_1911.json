@@ -41,6 +41,7 @@
     "sourceRegNbr": "10",
     "sourceScheduleType": "198"
   },
+  "sourceRecordType": "Household",
   "household": {
     "headings": [
       "fullName",

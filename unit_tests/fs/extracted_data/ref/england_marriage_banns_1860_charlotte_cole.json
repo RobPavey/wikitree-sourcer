@@ -1,0 +1,38 @@
+{
+  "recordData": {
+    "Name": "Charlotte Cole",
+    "Marital Status": "Single",
+    "Marriage Date": "4 Nov 1860",
+    "Marriage Place": "Cardinham, Cornwall, England, United Kingdom"
+  },
+  "fullName": "Charlotte Cole",
+  "surname": "Cole",
+  "givenName": "Charlotte",
+  "gender": "female",
+  "eventDateOriginal": "1860",
+  "eventDate": "1860",
+  "eventYear": "1814-1911",
+  "eventPlaceOriginal": "Cardinham, Cornwall, England",
+  "eventPlace": "Cardinham, Cornwall, England, United Kingdom",
+  "eventPlaceL2": "Cornwall",
+  "eventPlaceL1": "England",
+  "factType": "Marriage",
+  "spouseFullName": "James Wherry",
+  "spouseSurname": "Wherry",
+  "spouseGivenName": "James",
+  "spouseGender": "male",
+  "sourceRecordType": "Marriage banns",
+  "extData": "{\"FS_COLLECTION_ID\":\"1769414\",\"IMAGE_ARK\":\"https://familysearch.org/ark:/61903/3:1:33S7-9GFT-9FSX\",\"FS_FOLDER\":\"004786778\"}",
+  "referenceData": {
+    "digitalFilmNumber": "004786778",
+    "imageNumber": "53"
+  },
+  "recordUrl": "https://www.familysearch.org/ark:/61903/1:2:QV16-5QC7",
+  "collectionTitle": "England, Cornwall, Parish Registers, 1538-2010",
+  "fsCollectionId": "1769414",
+  "citation": "\"England, Cornwall, Parish Registers, 1538-2010\", <i>FamilySearch</i> (https://www.familysearch.org/ark:/61903/1:1:QJHB-2392 : Thu Mar 07 20:58:29 UTC 2024), Entry for James Wherry and Charlotte Cole, 1860.",
+  "sourceTitleForPerson": "Charlotte Cole, \"England, Cornwall, Parish Registers, 1538-2010\"",
+  "personRecordUrl": "https://www.familysearch.org/ark:/61903/1:1:QJHB-239L",
+  "fsImageUrl": "https://www.familysearch.org/ark:/61903/3:1:33S7-9GFT-9FSX",
+  "pageType": "record"
+}

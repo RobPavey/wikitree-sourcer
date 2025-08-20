@@ -1,0 +1,47 @@
+{
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "recordSubtype": "Banns",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Charlotte Cole",
+    "lastName": "Cole",
+    "forenames": "Charlotte"
+  },
+  "eventDate": {
+    "dateString": "1860",
+    "yearString": "1814-1911"
+  },
+  "eventPlace": {
+    "placeString": "Cardinham, Cornwall, England, United Kingdom"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "James Wherry",
+        "lastName": "Wherry",
+        "forenames": "James"
+      },
+      "personGender": "male",
+      "marriageDate": {
+        "dateString": "4 Nov 1860"
+      },
+      "marriagePlace": {
+        "placeString": "Cardinham, Cornwall, England, United Kingdom"
+      }
+    }
+  ],
+  "marriageDate": "4 Nov 1860",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QJHB-239L}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|33S7-9GFT-9FSX}}"
+  ],
+  "collectionData": {
+    "id": "1769414",
+    "collectionTitle": "England, Cornwall, Parish Registers, 1538-2010"
+  },
+  "hasValidData": true
+}

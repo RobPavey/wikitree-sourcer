@@ -202,6 +202,10 @@ const sourceRecordTypeToRecordType = [
     type: "Marriages",
     defaultRT: RT.Marriage,
   },
+  {
+    type: "Marriage banns",
+    defaultRT: RT.Marriage,
+  },
 ];
 
 function determineRecordType(extractedData) {
@@ -285,6 +289,12 @@ function determineRecordType(extractedData) {
     if (recordType != undefined) {
       return recordType;
     }
+
+    sourceRecordType = extractedData.sourceRecordType;
+    recordType = lookup(sourceRecordType, sourceTitle, recordData, sourceRecordTypeToRecordType);
+    if (recordType != undefined) {
+      return recordType;
+    }
   }
 
   if (sourceTitle) {
@@ -343,6 +353,12 @@ function determineRecordSubtype(recordType, extractedData) {
       }
       if (collectionTitle.includes("World War II Draft Registration")) {
         return RecordSubtype.WWIIDraftRegistration;
+      }
+    }
+  } else if (recordType == RT.Marriage) {
+    if (extractedData.sourceRecordType) {
+      if (extractedData.sourceRecordType == "Marriage banns") {
+        return RecordSubtype.Banns;
       }
     }
   }

@@ -759,13 +759,8 @@ function buildBookCitation(ed, gd, builder) {
 function getRefTitle(ed, gd) {
   const recordTypeToRefTitle = [
     {
-      type: RT.Marriage,
-      defaultTitle: "Marriage",
-      titleMatches: [{ title: "Marriage Bond", matches: ["Marriage Bond"] }],
-    },
-    {
-      type: RT.MilitaryService,
-      defaultTitle: "Military Service",
+      type: RT.Military,
+      defaultTitle: "Military",
       titleMatches: [{ title: "Navy Allotment", matches: ["Navy Allotment"] }],
     },
     {

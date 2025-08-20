@@ -2032,6 +2032,7 @@ const fieldData = [
   { fieldFsType: "ImageArk", dataField: "fsImageUrl" },
   { fieldFsType: "ImageNumber", dataField: "fsImageNumber" },
   { fieldFsType: "CollectionId", dataField: "fsCollectionId" },
+  { fieldFsType: "SourceRecordType", dataField: "sourceRecordType" },
 
   // record data fields
   {
@@ -2172,7 +2173,6 @@ const fieldData = [
   { fieldFsType: "SourceDocumentType" },
   { fieldFsType: "SourcePageType" },
   { fieldFsType: "SourcePieceNbr" },
-  { fieldFsType: "SourceRecordType" },
   { fieldFsType: "SourceScheduleType" },
   { fieldFsType: "SourceComposite" },
   { fieldFsType: "SourceBookNbr" },

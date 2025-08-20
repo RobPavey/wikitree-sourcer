@@ -163,6 +163,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:NFFD-HZB",
   },
   {
+    caseName: "england_marriage_banns_1860_charlotte_cole",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QJHB-239L?lang=en",
+  },
+  {
     caseName: "england_child_baptism_1882_charlotte",
     url: "https://www.familysearch.org/ark:/61903/1:1:N1N6-6JS?from=lynx1UIV8&treeref=MMVG-Z3H",
   },

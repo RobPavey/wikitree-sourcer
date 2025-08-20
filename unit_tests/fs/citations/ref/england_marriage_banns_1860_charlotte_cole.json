@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nEntry for James Wherry and Charlotte Cole, 1860.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nEntry for James Wherry and Charlotte Cole, 1860.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>Entry for James Wherry and Charlotte Cole, 1860.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nCharlotte Cole marriage to James Wherry. Banns read on 4 Nov 1860 in Cardinham, Cornwall, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nCharlotte Cole marriage to James Wherry. Banns read on 4 Nov 1860 in Cardinham, Cornwall, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>Charlotte Cole marriage to James Wherry. Banns read on 4 Nov 1860 in Cardinham, Cornwall, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nName: Charlotte Cole; Marital Status: Single; Marriage Date: 4 Nov 1860; Marriage Place: Cardinham, Cornwall, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nName: Charlotte Cole; Marital Status: Single; Marriage Date: 4 Nov 1860; Marriage Place: Cardinham, Cornwall, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>Name: Charlotte Cole; Marital Status: Single; Marriage Date: 4 Nov 1860; Marriage Place: Cardinham, Cornwall, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}\n{| border=\"1\"\n| Name || Charlotte Cole\n|-\n| Marital Status || Single\n|-\n| Marriage Date || 4 Nov 1860\n|-\n| Marriage Place || Cardinham, Cornwall, England, United Kingdom\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}\n{| border=\"1\"\n| Name || Charlotte Cole\n|-\n| Marital Status || Single\n|-\n| Marriage Date || 4 Nov 1860\n|-\n| Marriage Place || Cardinham, Cornwall, England, United Kingdom\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>Name: Charlotte Cole; Marital Status: Single; Marriage Date: 4 Nov 1860; Marriage Place: Cardinham, Cornwall, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nEntry for James Wherry and Charlotte Cole, 1860.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nEntry for James Wherry and Charlotte Cole, 1860.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>Entry for James Wherry and Charlotte Cole, 1860.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nCharlotte Cole marriage to James Wherry. Banns read on 4 Nov 1860 in Cardinham, Cornwall, England, United Kingdom.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nCharlotte Cole marriage to James Wherry. Banns read on 4 Nov 1860 in Cardinham, Cornwall, England, United Kingdom.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>Charlotte Cole marriage to James Wherry. Banns read on 4 Nov 1860 in Cardinham, Cornwall, England, United Kingdom.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nEntry for James Wherry and Charlotte Cole, 1860.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>\nEntry for James Wherry and Charlotte Cole, 1860.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}<br/>Entry for James Wherry and Charlotte Cole, 1860.",
+    "type": "source"
+  }
+}
