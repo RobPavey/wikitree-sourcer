@@ -108,7 +108,11 @@ function buildCoreCitation(ed, gd, builder) {
   builder.recordLinkOrTemplate = recordLink;
 
   if (ed.imageHref) {
+    // it can have spaces etc in it, this causes problems with WikiTree external links
     let link = ed.imageHref;
+    if (link.search(/\s/) != -1) {
+      link = link.replace(/\s+/g, "%20");
+    }
     if (!link.startsWith("http")) {
       link = "https://civilrecords.irishgenealogy.ie" + link;
     }
