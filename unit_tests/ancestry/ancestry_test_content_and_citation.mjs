@@ -421,6 +421,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "england_census_1921_gertrude_berry",
+    url: "https://www.ancestry.com/search/collections/63150/records/16913134",
+  },
+  {
     caseName: "england_census_1921_j_berry",
     url: "https://www.ancestry.com/search/collections/63150/records/16913132",
   },

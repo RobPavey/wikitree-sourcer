@@ -1,0 +1,91 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "Gertrude Berry"
+  },
+  "personGender": "female",
+  "registrationDistrict": "Bristol",
+  "birthDate": {
+    "yearString": "1900",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Pill, Somerset, England"
+  },
+  "eventDate": {
+    "dateString": "1921"
+  },
+  "eventPlace": {
+    "placeString": "Bristol, Gloucestershire, England",
+    "streetAddress": "30 Birch Rd, Southville"
+  },
+  "occupation": "Shorthand Typist",
+  "ageAtEvent": "20 Years 9 Months",
+  "maritalStatus": "single",
+  "relationshipToHead": "daughter",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "J G Berry",
+      "age": "58 Years 9 Months",
+      "relationship": "head",
+      "uid": "http://www.ancestry.com/search/collections/63150/records/16913132"
+    },
+    {
+      "name": "Eliza Gertrude Berry",
+      "age": "58 Years 3 Months",
+      "relationship": "wife",
+      "uid": "http://www.ancestry.com/search/collections/63150/records/16913133"
+    },
+    {
+      "name": "Gertrude Berry",
+      "age": "20 Years 9 Months",
+      "relationship": "daughter",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "gender": "female",
+      "occupation": "Shorthand Typist",
+      "birthPlace": "Pill, Somerset, England",
+      "birthYear": "1900",
+      "employer": "Messrs Edward Stock & Sons Ltd Ship Brokers 70 Queen Square Bristol"
+    },
+    {
+      "name": "Olive Berry",
+      "age": "18 Years 6 Months",
+      "relationship": "daughter",
+      "uid": "http://www.ancestry.com/search/collections/63150/records/16913135"
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "J G Berry"
+      }
+    },
+    "mother": {
+      "name": {
+        "name": "Eliza Gertrude Berry"
+      }
+    }
+  },
+  "wtSearchTemplates": [
+    "{{Ancestry Record|63150|16913134}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|63150|16913132}}",
+    "{{Ancestry Record|63150|16913133}}",
+    "{{Ancestry Record|63150|16913135}}"
+  ],
+  "collectionData": {
+    "id": "63150",
+    "collectionTitle": "1921 England Census",
+    "enumerationDistrict": "41"
+  },
+  "hasValidData": true
+}

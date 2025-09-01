@@ -79,13 +79,20 @@ class NarrativeBuilder {
   getNarrativeAgeString(ageString) {
     let result = "";
     if (ageString) {
-      result = ageString.replace(/years?/i, "").trim();
-      if (/^\d+\/12$/.test(result)) {
-        result = result.replace(/\/12/, "").trim();
-        if (result == "1") {
-          result += " month";
-        } else {
-          result += " months";
+      // if it is something like "20 Years 9 months" we just want "20"
+      const yearsAndMonthsRegex = /^(\d+)\s+years\s+(\d+)\s+months[\s\.]*$/i;
+      if (yearsAndMonthsRegex.test(ageString)) {
+        result = ageString.replace(yearsAndMonthsRegex, "$1");
+      } else {
+        // if it is something like "20 years" or "20 years." we just want 20
+        result = ageString.replace(/years?/i, "").trim();
+        if (/^\d+\/12$/.test(result)) {
+          result = result.replace(/\/12/, "").trim();
+          if (result == "1") {
+            result += " month";
+          } else {
+            result += " months";
+          }
         }
       }
     }
