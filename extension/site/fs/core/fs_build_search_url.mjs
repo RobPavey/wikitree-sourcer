@@ -208,6 +208,11 @@ function buildSearchUrl(buildUrlInput) {
 
     builder = new FsUriBuilder(searchType, fsCollectionId);
 
+    // Add FamilySearch person ID to search URI to enable improved "Attach to Tree" in FamilySearch results.
+    if (gd.sourceType === "profile" && gd.sourceOfData === "fs") {
+      builder.addPersonId(gd.personRepoRef);
+    }
+
     if (gd.inferPersonGender() && shouldAddSearchTerm(collection, "gender", true, options)) {
       builder.addGender(gd.inferPersonGender());
     }

@@ -316,6 +316,13 @@ class FsUriBuilder {
     }
   }
 
+  addPersonId(personId) {
+    // &treeref=P9KR-RVJ
+    if (personId) {
+      this.addSearchParameter("treeref", personId);
+    }
+  }
+
   getUri() {
     return this.uri;
   }
