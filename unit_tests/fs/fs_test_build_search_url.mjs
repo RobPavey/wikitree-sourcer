@@ -120,6 +120,11 @@ const regressionData = [
     caseName: "saulnier-848_manager_no_marriage_location_2025",
     inputPath: "wikitree/generalized_data/ref/saulnier-848_manager_no_marriage_location_2025",
   },
+  {
+    // To test treeref parameter added for fs profiles
+    caseName: "xx_profile_alice_pavey_1860_1939",
+    inputPath: "fs/generalized_data/ref/xx_profile_alice_pavey_1860_1939",
+  },
 ];
 
 async function runTests(testManager) {
