@@ -47,7 +47,7 @@ function getPartsFromResource(ed) {
         }
         result.id = id;
         result.pageNum = pageNum;
-        result.permalink = "https://libraries.tas.gov.au/Digital/" + id + "/" + id + "-P" + pageNum;
+        result.permalink = "https://libraries.tas.gov.au/Digital/" + id + "/" + id + "P" + pageNum;
         return result;
       }
     }
