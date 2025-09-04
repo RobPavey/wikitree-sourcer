@@ -189,6 +189,11 @@ Dialog
   padding: 10px;
 }
 
+.dialogSuccessHeader {
+  background-color: #e1f0b4;
+  padding: 10px;
+}
+
 .dialogProgressHeader {
   background-color: #e1f0b4;
   padding: 10px;

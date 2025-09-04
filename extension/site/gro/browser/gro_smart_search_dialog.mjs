@@ -82,6 +82,8 @@ async function showDialog(heading, message, buttons, type) {
       wrapperDiv.className = "dialogWarningHeader";
     } else if (type == "progress") {
       wrapperDiv.className = "dialogProgressHeader";
+    } else if (type == "success") {
+      wrapperDiv.className = "dialogSuccessHeader";
     }
     dialogHeader.appendChild(wrapperDiv);
     let label = document.createElement("label");
@@ -151,6 +153,10 @@ async function showWarningDialog(message) {
   return await showDialog("Warning", message, ["Continue", "Cancel"], "warning");
 }
 
+async function showSuccessDialog(message) {
+  return await showDialog("Success", message, ["OK"], "success");
+}
+
 var progressDialogResponse = "";
 async function showProgressDialog(message) {
   progressDialogResponse = "";
@@ -218,6 +224,7 @@ export {
   progressDialogResponse,
   showErrorDialog,
   showWarningDialog,
+  showSuccessDialog,
   showProgressDialog,
   updateProgressDialog,
   closeProgressDialog,

@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { buildGroSearchUrl } from "../core/gro_build_citation.mjs";
 import { getUkbmdDistrictPageUrl } from "../core/gro_to_ukbmd.mjs";
+import { showErrorDialog, showSuccessDialog } from "./gro_smart_search_dialog.mjs";
 
 // this are the main search results that the user can then flter and sort different ways
 // These lways remain sorted by the default sort and they have duplicates and out-of-range
@@ -141,6 +142,7 @@ async function exportTable(extractedDataObjs) {
   }
   tableString += `\n`;
 
+  let exportedCount = 0;
   for (let extractedData of extractedDataObjs) {
     if (!extractedData.isSelectedForExport) {
       continue;
@@ -170,6 +172,8 @@ async function exportTable(extractedDataObjs) {
     }
     firstCol = false;
     tableString += `\n`;
+
+    exportedCount++;
   }
 
   tableString += `|}`;
@@ -177,7 +181,9 @@ async function exportTable(extractedDataObjs) {
   // table string complete, save to clipboard
   try {
     await navigator.clipboard.writeText(tableString);
+    await showSuccessDialog("Table with " + exportedCount + " rows saved to clipboard");
   } catch (error) {
+    await showErrorDialog("Table could not be saved to clipboard");
     console.log("Clipboard write failed.");
   }
 }
@@ -360,10 +366,30 @@ function fillTable(extractedDataObjs) {
   fragment.appendChild(headerElement);
 
   if (showExportControls) {
+    // check if all elements are selected for export
+    let allSelectedForExport = true;
+    for (let extractedData of extractedDataObjs) {
+      if (!extractedData.isSelectedForExport) {
+        allSelectedForExport = false;
+      }
+    }
+
     let thElement = document.createElement("th");
-    thElement.innerText = "Export";
     thElement.className = "resultsTableHeaderCell";
+    thElement.innerText = "Export";
     headerElement.appendChild(thElement);
+
+    let checkboxElement = document.createElement("input");
+    checkboxElement.type = "checkbox";
+    checkboxElement.checked = allSelectedForExport ? true : false;
+
+    thElement.appendChild(checkboxElement);
+    checkboxElement.addEventListener("change", function () {
+      for (let extractedData of extractedDataObjs) {
+        extractedData.isSelectedForExport = this.checked;
+      }
+      fillTable(extractedDataObjs);
+    });
   }
 
   for (let heading of dataHeadings) {
@@ -402,6 +428,7 @@ function fillTable(extractedDataObjs) {
       tdElement.appendChild(checkboxElement);
       checkboxElement.addEventListener("change", function () {
         extractedData.isSelectedForExport = this.checked;
+        fillTable(extractedDataObjs);
       });
     }
 
@@ -473,7 +500,7 @@ function fillTable(extractedDataObjs) {
   if (showExportControls) {
     let exportButton = document.createElement("button");
     exportButton.id = "exportButton";
-    exportButton.innerText = "Export";
+    exportButton.innerText = "Export to clipboard";
     exportControlsElement.appendChild(exportButton);
     exportButton.addEventListener("click", function () {
       exportTable(extractedDataObjs);
