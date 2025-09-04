@@ -118,16 +118,19 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
 
     if (options.buildAll_fs_excludeNonFsSources) {
       if (!sourceObj.uri) {
+        result.numExcludedNonFsSources++;
         continue;
       }
       let validLinkIndex = sourceObj.uri.search(/familysearch\.org\/ark\:\/\d+\/1\:1\:/);
       if (validLinkIndex == -1) {
+        result.numExcludedNonFsSources++;
         continue;
       }
     }
 
     // ignore some useless sources
     if (source.citation == "Ancestry Family Tree" && source.title == "Ancestry Family Trees" && !source.notes) {
+      result.numExcludedTreeSources++;
       continue;
     }
 
@@ -854,6 +857,7 @@ async function buildSourcerCitations(result, type, options) {
           const gd = source.generalizedData;
           if (gd && gd.role && gd.role != Role.Primary) {
             // exclude this one
+            result.numExcludedOtherRoleSources++;
           } else {
             newSources.push(source);
           }
@@ -900,7 +904,9 @@ async function buildSourcerCitations(result, type, options) {
           }
         }
 
-        if (!removeSource) {
+        if (removeSource) {
+          result.numExcludedDuplicateSources++;
+        } else {
           newSources.push(source);
         }
       }

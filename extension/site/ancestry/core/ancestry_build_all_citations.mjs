@@ -505,6 +505,7 @@ async function buildSourcerCitations(result, type, options) {
           const gd = source.generalizedData;
           if (gd && gd.role && gd.role != Role.Primary) {
             // exclude this one
+            result.numExcludedOtherRoleSources++;
           } else {
             newSources.push(source);
           }

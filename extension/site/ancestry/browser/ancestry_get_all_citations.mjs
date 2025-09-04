@@ -324,6 +324,7 @@ async function ancestryGetAllCitations(input) {
   let runDate = input.runDate;
 
   let result = { success: false, personExtractedData: ed, personGeneralizedData: gd };
+  result.numExcludedOtherRoleSources = 0;
 
   let sourceIds = ed.sources;
   if (!sourceIds || sourceIds.length == 0) {

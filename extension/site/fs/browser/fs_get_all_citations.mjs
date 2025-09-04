@@ -105,6 +105,10 @@ async function fsGetAllCitations(input) {
   let sessionId = ed.sessionId;
 
   let result = { success: false };
+  result.numExcludedOtherRoleSources = 0;
+  result.numExcludedDuplicateSources = 0;
+  result.numExcludedNonFsSources = 0;
+  result.numExcludedTreeSources = 0;
 
   // request permission if needed
   const checkPermissionsOptions = {

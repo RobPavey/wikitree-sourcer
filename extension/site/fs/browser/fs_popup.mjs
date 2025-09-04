@@ -241,6 +241,48 @@ async function fsBuildAllCitationsAction(data, citationType) {
           } else {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
           }
+
+          if (response.numExcludedNonFsSources) {
+            message2 += "\n\nNote: " + response.numExcludedNonFsSources;
+            if (response.numExcludedNonFsSources == 1) {
+              message2 += " source was";
+            } else {
+              message2 += " sources were";
+            }
+            message2 += " excluded due to option settings because there was no valid link to a FamilySearch record.";
+          }
+
+          if (response.numExcludedOtherRoleSources) {
+            message2 += "\n\nNote: " + response.numExcludedOtherRoleSources;
+            if (response.numExcludedOtherRoleSources == 1) {
+              message2 += " source was";
+            } else {
+              message2 += " sources were";
+            }
+            message2 +=
+              " excluded due to option settings because the source person was not a primary person for the event.";
+          }
+
+          if (response.numExcludedDuplicateSources) {
+            message2 += "\n\nNote: " + response.numExcludedDuplicateSources;
+            if (response.numExcludedDuplicateSources == 1) {
+              message2 += " source was";
+            } else {
+              message2 += " sources were";
+            }
+            message2 += " excluded due to option settings because the source is a duplicate.";
+          }
+
+          if (response.numExcludedTreeSources) {
+            message2 += "\n\nNote: " + response.numExcludedTreeSources;
+            if (response.numExcludedTreeSources == 1) {
+              message2 += " source was";
+            } else {
+              message2 += " sources were";
+            }
+            message2 += " excluded because they just reference another family tree.";
+          }
+
           writeToClipboard(response.citationsString, message, false, message2);
         }
       } else {

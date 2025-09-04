@@ -838,6 +838,17 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
           }
 
+          if (response.numExcludedOtherRoleSources) {
+            message2 += "\n\nNote: " + response.numExcludedOtherRoleSources;
+            if (response.numExcludedOtherRoleSources == 1) {
+              message2 += " source was";
+            } else {
+              message2 += " sources were";
+            }
+            message2 +=
+              " excluded due to option settings because the source person was not a primary person for the event.";
+          }
+
           let iconType = "check";
           if (response.failureCount || response.linkedRecordFailureCount) {
             iconType = "warning";

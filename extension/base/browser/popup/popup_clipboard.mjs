@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 import {
+  displayMessageWithIcon,
   displayMessageWithIconThenClosePopup,
   displayMessageThenClosePopup,
   emptyMenu,
@@ -34,7 +35,11 @@ function writeToClipboardSuccessMessage(objectName, internalSave, extraMessage =
   if (internalSave) {
     message2 = "It is also saved internally.\n" + extraMessage;
   }
-  displayMessageWithIconThenClosePopup(iconType, message1, message2);
+  if (iconType == "check") {
+    displayMessageWithIconThenClosePopup(iconType, message1, message2);
+  } else {
+    displayMessageWithIcon(iconType, message1, message2);
+  }
 }
 
 async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
