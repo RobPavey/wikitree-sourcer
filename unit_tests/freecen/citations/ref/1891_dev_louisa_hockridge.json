@@ -4,7 +4,7 @@
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1891 census Louisa (age 15) was the single daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1891 census Louisa (age 15) was the unmarried daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
@@ -16,7 +16,7 @@
     "type": "inline"
   },
   "dataStyle_string_narrative": {
-    "citation": "In the 1891 census Louisa (age 15) was the single daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)<br/>\nLouisa Hockridge (15), single daughter, in household of Samuel Hockridge (61) at 13 Looe Street in Plymouth registration district in Devon, England. Born in Oreston, Devon, England.\n</ref>",
+    "citation": "In the 1891 census Louisa (age 15) was the unmarried daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)<br/>\nLouisa Hockridge (15), single daughter, in household of Samuel Hockridge (61) at 13 Looe Street in Plymouth registration district in Devon, England. Born in Oreston, Devon, England.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_string_source": {
@@ -28,7 +28,7 @@
     "type": "inline"
   },
   "dataStyle_list_narrative": {
-    "citation": "In the 1891 census Louisa (age 15) was the single daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1891; County: Devon (DEV); District: Plymouth; Civil Parish: Plymouth Charles; Ecclesiastical Parish: Trinity; Piece: 1729; Enumeration District: 16; Folio: 31; Page: 55; Schedule: 421; House Number: 13; House or Street Name: Looe Street.\n</ref>",
+    "citation": "In the 1891 census Louisa (age 15) was the unmarried daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)<br/>\nCensus: 1891; County: Devon (DEV); District: Plymouth; Civil Parish: Plymouth Charles; Ecclesiastical Parish: Trinity; Piece: 1729; Enumeration District: 16; Folio: 31; Page: 55; Schedule: 421; House Number: 13; House or Street Name: Looe Street.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_list_source": {
@@ -40,7 +40,7 @@
     "type": "inline"
   },
   "dataStyle_table_narrative": {
-    "citation": "In the 1891 census Louisa (age 15) was the single daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1891\n|-\n| County || Devon (DEV)\n|-\n| District || Plymouth\n|-\n| Civil Parish || Plymouth Charles\n|-\n| Ecclesiastical Parish || Trinity\n|-\n| Piece || 1729\n|-\n| Enumeration District || 16\n|-\n| Folio || 31\n|-\n| Page || 55\n|-\n| Schedule || 421\n|-\n| House Number || 13\n|-\n| House or Street Name || Looe Street\n|}\n</ref>",
+    "citation": "In the 1891 census Louisa (age 15) was the unmarried daughter of Samuel Hockridge at 13 Looe Street, Plymouth Charles, Plymouth, Devon, England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 1729; Folio: 31; Page: 55; Schedule: 421<br/>\n[https://www.freecen.org.uk/search_records/5902e09ce9379091b1b7a9eb FreeCen Transcription] (accessed 6 May 2021)\n{| border=\"1\"\n| Census || 1891\n|-\n| County || Devon (DEV)\n|-\n| District || Plymouth\n|-\n| Civil Parish || Plymouth Charles\n|-\n| Ecclesiastical Parish || Trinity\n|-\n| Piece || 1729\n|-\n| Enumeration District || 16\n|-\n| Folio || 31\n|-\n| Page || 55\n|-\n| Schedule || 421\n|-\n| House Number || 13\n|-\n| House or Street Name || Looe Street\n|}\n</ref>",
     "type": "narrative"
   },
   "dataStyle_table_source": {

@@ -631,6 +631,18 @@ const narrativeAgeFormatOption = {
   defaultValue: "parensAge",
 };
 
+const narrativeIncludeMaritalStatusOption = {
+  optionName: "includeMaritalStatus",
+  type: "select",
+  label: "Include marital status if known",
+  values: [
+    { value: "no", text: "No" },
+    { value: "beforeWas", text: "In the main sentence as a condition before 'was'" },
+    { value: "afterWas", text: "In the main sentence as an adjective after 'was'" },
+  ],
+  defaultValue: "afterWas",
+};
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Record type specific narrative options groups
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1043,6 +1055,7 @@ const narrativeCensusOptionsGroup = {
     },
     narrativeIncludeAgeOption,
     narrativeAgeFormatOption,
+    narrativeIncludeMaritalStatusOption,
     {
       optionName: "includeOccupation",
       type: "select",

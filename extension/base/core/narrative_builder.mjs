@@ -1964,6 +1964,67 @@ class NarrativeBuilder {
       return result;
     }
 
+    function getMaritalStatusAsCondition(ageNum) {
+      if (!gd.maritalStatus) {
+        return "";
+      }
+
+      let maritalStatusText = gd.maritalStatus;
+
+      if (maritalStatusText == "single") {
+        maritalStatusText = gd.getTermForUnmarried();
+
+        if (ageNum != undefined && ageNum != NaN && ageNum <= 14) {
+          // if less than marriagable age it seems odd to describe them as single
+          maritalStatusText = "";
+        }
+      }
+
+      return maritalStatusText;
+    }
+
+    function addMaritalStatusBeforeWas(builder, ageNum) {
+      let includeOption = options.narrative_census_includeMaritalStatus;
+      if (gd.maritalStatus && includeOption == "beforeWas") {
+        let maritalStatusText = getMaritalStatusAsCondition(ageNum);
+        if (maritalStatusText) {
+          builder.addCommaSpaceToSentence();
+          builder.addToSentence(maritalStatusText + ",");
+        }
+      }
+    }
+
+    function getMaritalStatusAsAdjective(ageNum) {
+      if (!gd.maritalStatus) {
+        return "";
+      }
+
+      let maritalStatusText = gd.maritalStatus;
+
+      if (maritalStatusText == "single") {
+        maritalStatusText = "unmarried";
+
+        if (ageNum != undefined && ageNum != NaN && ageNum <= 14) {
+          // if less than marriagable age it seems odd to describe them as single
+          maritalStatusText = "";
+        }
+      } else if (maritalStatusText == "widow" || maritalStatusText == "widower") {
+        maritalStatusText = "widowed";
+      }
+
+      return maritalStatusText;
+    }
+
+    function getMaritalStatusAfterWas(ageNum) {
+      let includeOption = options.narrative_census_includeMaritalStatus;
+
+      if (gd.maritalStatus && includeOption == "afterWas") {
+        return getMaritalStatusAsAdjective(ageNum);
+      }
+
+      return "";
+    }
+
     function getHouseholdPart() {
       let result = "";
       if (options.narrative_census_householdPartFormat == "relationship") {
@@ -1999,14 +2060,17 @@ class NarrativeBuilder {
           }
         }
 
+        let maritalStatus = getMaritalStatusAfterWas(ageNum);
+
         if (relationship && maritalStatus) {
           if (relationship.includes("head")) {
             result += " the " + maritalStatus + " " + relationshipToString;
           } else {
-            let article = headName ? "the" : "a";
             if (relationship == "wife") {
+              let article = headName ? "the" : StringUtils.getIndefiniteArticle(relationshipToString);
               result += " " + article + " " + relationshipToString;
             } else {
+              let article = headName ? "the" : StringUtils.getIndefiniteArticle(maritalStatus);
               result += " " + article + " " + maritalStatus + " " + relationshipToString;
             }
           }
@@ -2014,14 +2078,15 @@ class NarrativeBuilder {
           if (headName || relationship == "head") {
             result += " the " + relationshipToString;
           } else {
-            // "was the scholar at ..." does not sound right
-            result += " a " + relationshipToString;
+            // "was the scholar at ..." or "was the brother at ..." does not sound right
+            let article = StringUtils.getIndefiniteArticle(relationshipToString);
+            result += " " + article + " " + relationshipToString;
           }
         } else if (maritalStatus) {
           if (options.narrative_census_wasPartFormat == "was") {
             result += " recorded as";
           }
-          result += " " + maritalStatus;
+          result += " " + getMaritalStatusAsCondition(ageNum);
         }
       } else if (structuredHousehold) {
         let listParts = [];
@@ -2336,19 +2401,8 @@ class NarrativeBuilder {
       }
     }
 
-    let maritalStatus = gd.maritalStatus;
-    if (maritalStatus == "widow") {
-      maritalStatus = "widowed";
-    } else if (maritalStatus == "single") {
-      maritalStatus = gd.getTermForUnmarried();
-
-      if (ageNum != undefined && ageNum != NaN && ageNum <= 14) {
-        // if less than marriagable age it seems odd to describe them as single
-        maritalStatus = "";
-      }
-    }
-
     this.addAgeForMainSentence(ageAtEvent);
+    addMaritalStatusBeforeWas(this, ageNum);
     this.addOccupationForMainSentence(occupation);
 
     this.addToSentence("was");

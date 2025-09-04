@@ -301,9 +301,42 @@ const StringUtils = {
 
   getIndefiniteArticle: function (word) {
     if (!word || !word.length) {
-      return "";
+      return "a"; // should never happen
     }
-    if (/[aeiou]/i.test(word[0])) {
+
+    function isVowel(letter) {
+      const vowels = "aeiou";
+      return vowels.includes(letter);
+    }
+
+    function matchSpecialCase(word) {
+      // more could be added, see https://www.scribbr.com/commonly-confused-words/a-vs-an
+      const specialCases = [
+        { startsWith: "uni", useAn: false },
+        { startsWith: "hour", useAn: true },
+      ];
+
+      for (let entry of specialCases) {
+        if (entry.startsWith && word.startsWith(entry.startsWith)) {
+          return entry;
+        }
+      }
+    }
+
+    function shouldUseAn(word) {
+      let specialCase = matchSpecialCase(word);
+      if (specialCase) {
+        return specialCase.useAn;
+      }
+
+      let firstLetter = word[0];
+      if (isVowel(firstLetter)) {
+        return true;
+      }
+      return false;
+    }
+
+    if (shouldUseAn(word)) {
       return "an";
     }
     return "a";
