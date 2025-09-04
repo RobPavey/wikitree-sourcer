@@ -140,7 +140,10 @@ function updateQueueTimingForResponse(response) {
     if (response.statusCode == 429) {
       queueResponseTracker.total429++;
       queueResponseTracker.num429SinceSuccess++;
-      if (queueResponseTracker.num429SinceSuccess > 5) {
+      if (
+        queueResponseTracker.num429SinceSuccess > 5 &&
+        queueResponseTracker.waitBetweenRequests >= queueOptions.maxWaitime
+      ) {
         queueResponseTracker.abortRequests = true;
       }
 
@@ -289,6 +292,8 @@ async function parallelRequestsDisplayErrorsMessage(actionName) {
     baseMessage += "\nThis could be due to internet connectivity issues or server issues.";
   }
   baseMessage += "\nPress continue to use what could be retrieved.\n";
+  baseMessage +=
+    "\nNote: Sourcer caches the data that was retreived, so if you press continue and then wait a few seconds and try again you may be able to get all of the records and thus get a full list of citations.\n";
 
   let message2 = "";
   for (let requestState of requestsTracker.requestStates) {

@@ -838,7 +838,22 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
           }
 
-          writeToClipboard(response.citationsString, message, false, message2);
+          let iconType = "check";
+          if (response.failureCount || response.linkedRecordFailureCount) {
+            iconType = "warning";
+            message2 +=
+              "\n\nWarning: Some data could not be retreived from Ancestry so the citations may be incomplete.";
+            if (response.failureCount) {
+              message2 += "\n- There were " + response.failureCount + " failures getting sources";
+            }
+            if (response.linkedRecordFailureCount) {
+              message2 += "\n- There were " + response.linkedRecordFailureCount + " failures getting linked records";
+            }
+            message2 +=
+              "\n\nNote: Sourcer caches the data that was retreived, so if you wait a few seconds and try again you may be able to get all of the records and thus get a full list of citations.\n";
+          }
+
+          writeToClipboard(response.citationsString, message, false, message2, iconType);
         }
       } else {
         if (response.failureCount) {

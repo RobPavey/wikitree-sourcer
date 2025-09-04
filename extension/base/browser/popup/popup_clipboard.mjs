@@ -28,13 +28,13 @@ import {
   emptyMenu,
 } from "./popup_menu_building.mjs";
 
-function writeToClipboardSuccessMessage(objectName, internalSave, extraMessage = "") {
+function writeToClipboardSuccessMessage(objectName, internalSave, extraMessage = "", iconType = "check") {
   let message1 = objectName + " saved to clipboard.";
   let message2 = extraMessage;
   if (internalSave) {
     message2 = "It is also saved internally.\n" + extraMessage;
   }
-  displayMessageWithIconThenClosePopup("check", message1, message2);
+  displayMessageWithIconThenClosePopup(iconType, message1, message2);
 }
 
 async function userWriteToClipboardWithEdit(text, objectName, internalSave) {
@@ -158,10 +158,10 @@ async function userWriteToClipboard(text, objectName, internalSave = false, extr
   document.getElementById("menu").appendChild(fragment);
 }
 
-async function writeToClipboard(text, objectName, internalSave, extraMessage = "") {
+async function writeToClipboard(text, objectName, internalSave, extraMessage = "", iconType = "check") {
   try {
     await navigator.clipboard.writeText(text);
-    writeToClipboardSuccessMessage(objectName, internalSave, extraMessage);
+    writeToClipboardSuccessMessage(objectName, internalSave, extraMessage, iconType);
     //console.log("Clipboard set");
   } catch (error) {
     console.log("Clipboard write failed. Using dialog instead.");

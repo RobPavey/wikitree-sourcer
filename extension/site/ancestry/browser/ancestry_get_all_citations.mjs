@@ -218,13 +218,12 @@ async function getSourcerCitations(runDate, result, type, options) {
     //console.log(input);
 
     updateStatusFunction("fetching...");
-    let newResponse = { success: true };
-    await getExtractedAndGeneralizedData(input);
+    let response = await getExtractedAndGeneralizedData(input);
 
-    //console.log("getSourcerCitations, requestFunction, newResponse is:");
-    //console.log(newResponse);
+    //console.log("getSourcerCitations, requestFunction, response is:");
+    //console.log(response);
 
-    return newResponse;
+    return response;
   }
 
   const queueOptions = {
