@@ -2343,7 +2343,7 @@ class NarrativeBuilder {
       maritalStatus = gd.getTermForUnmarried();
 
       if (ageNum != undefined && ageNum != NaN && ageNum <= 14) {
-        // if less than marriageble age it seems odd to describe them as single
+        // if less than marriagable age it seems odd to describe them as single
         maritalStatus = "";
       }
     }

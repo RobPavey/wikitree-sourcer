@@ -4863,7 +4863,7 @@ class GeneralizedData {
       let eventYear = this.inferEventYear();
       let yearNum = parseInt(eventYear);
       if (!isNaN(yearNum) && yearNum < 1891) {
-        // In UK the term Unmarried was used until it was replace with single in 1891
+        // In UK the term Unmarried was used until it was replaced with single in 1891
         term = "unmarried";
       }
     } else if (this.isRecordInCountry("United States")) {
