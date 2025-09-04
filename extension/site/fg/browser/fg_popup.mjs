@@ -24,8 +24,18 @@ SOFTWARE.
 
 import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
 import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { addMenuItem } from "/base/browser/popup/popup_menu_building.mjs";
+import { writeToClipboard } from "/base/browser/popup/popup_clipboard.mjs";
 import { generalizeData } from "../core/fg_generalize_data.mjs";
 import { buildCitation } from "../core/fg_build_citation.mjs";
+
+async function buildFindAGraveTemplate(data) {
+  let ed = data.extractedData;
+  let memorialId = ed.memorialId;
+  let templateText = "{{FindAGrave|" + memorialId + "}}";
+
+  writeToClipboard(templateText, "FindAGrave Template");
+}
 
 async function setupFgPopupMenu(extractedData) {
   let input = {
@@ -36,6 +46,15 @@ async function setupFgPopupMenu(extractedData) {
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "fg",
   };
+
+  input.customMenuFunction = function (menu, data) {
+    if (data.extractedData.memorialId) {
+      addMenuItem(menu, "Build FindAGrave template", function (element) {
+        buildFindAGraveTemplate(data);
+      });
+    }
+  };
+
   setupSimplePopupMenu(input);
 }
 
