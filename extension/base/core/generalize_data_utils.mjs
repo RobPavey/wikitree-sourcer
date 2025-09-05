@@ -371,6 +371,8 @@ const GD = {
       },
       { standard: "step-daughter", starts: ["dau"], andContains: ["step"] },
       { standard: "step-daughter", starts: ["step"], andContains: ["dau"] },
+
+      { standard: "son", starts: ["s."] },
     ];
 
     let lc = string.toLowerCase();
