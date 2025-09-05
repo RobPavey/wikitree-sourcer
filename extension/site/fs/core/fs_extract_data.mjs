@@ -2811,9 +2811,32 @@ function processRecordDataFactsForPersonObj(person, result) {
       // In a birth registration the child is a principal and the mother is not
       if (fact.type) {
         let factType = getFactType(fact);
-        if (fact.primary && !result.factType) {
-          result.factType = factType;
-          setEventDateAndPlaceForFact(result, fact);
+        if (fact.primary) {
+          let setDateAndPlace = false;
+          if (!result.factType) {
+            result.factType = factType;
+            setDateAndPlace = true;
+          } else {
+            // we have already set the result factType but now we have another promart fact
+            // Which to chose. An example where this happens is canada_census_1926_ellen_knott
+            // which is a census but has a primary death fact first (which seems to be an error)
+            // There are various was to decide but for now pick which ever has a date and place.
+            let resultFactHasDate = result.eventDate ? true : false;
+            let resultFactHasPlace = result.eventPlace ? true : false;
+            let thisFactHasDate = fact.date ? true : false;
+            let thisFactHasPlace = fact.place ? true : false;
+            let resultFactHasDateAndPlace = resultFactHasDate && resultFactHasPlace;
+            let thisFactHasDateAndPlace = thisFactHasDate && thisFactHasPlace;
+
+            if (thisFactHasDateAndPlace && !resultFactHasDateAndPlace) {
+              result.factType = factType;
+              setDateAndPlace = true;
+            }
+          }
+
+          if (setDateAndPlace) {
+            setEventDateAndPlaceForFact(result, fact);
+          }
         }
 
         //console.log("factType is " + factType);
@@ -3681,7 +3704,7 @@ function extractDataFromFetch(document, url, dataObjects, fetchType, sessionId, 
   let relationships = dataObj.relationships;
   if (relationships) {
     let personIdWithRelatedFact2 = undefined;
-    // go through the list one looking for relationships with facts
+    // go through the list once looking for relationships with facts
     // we need to do this before looking at the relationships with no facts since we need the
     // factType to process those.
     for (let relationship of relationships) {

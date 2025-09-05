@@ -1,0 +1,93 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "fs",
+  "personGender": "female",
+  "name": {
+    "name": "Ellen Knott",
+    "lastName": "Knott",
+    "forenames": "Ellen"
+  },
+  "birthDate": {
+    "dateString": "1882",
+    "yearString": "1882"
+  },
+  "birthPlace": {
+    "placeString": "England"
+  },
+  "eventDate": {
+    "dateString": "1926",
+    "yearString": "1926"
+  },
+  "eventPlace": {
+    "placeString": "Calgary, Alberta, Canada"
+  },
+  "ageAtEvent": "44",
+  "householdArrayFields": [
+    "name",
+    "relationship",
+    "maritalStatus",
+    "gender",
+    "age",
+    "birthYear",
+    "birthPlace"
+  ],
+  "householdArray": [
+    {
+      "name": "Ellen Knott",
+      "relationship": "head",
+      "maritalStatus": "widowed",
+      "gender": "female",
+      "age": "44",
+      "birthYear": "1882",
+      "birthPlace": "England",
+      "isSelected": true
+    },
+    {
+      "name": "Cyril Knott",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "22",
+      "birthYear": "1904",
+      "birthPlace": "England"
+    },
+    {
+      "name": "Nita Knott",
+      "relationship": "daughter",
+      "maritalStatus": "single",
+      "gender": "female",
+      "age": "18",
+      "birthYear": "1908",
+      "birthPlace": "Alberta"
+    },
+    {
+      "name": "Reginal Knott",
+      "relationship": "son",
+      "maritalStatus": "single",
+      "gender": "male",
+      "age": "14",
+      "birthYear": "1912",
+      "birthPlace": "England"
+    }
+  ],
+  "maritalStatus": "widowed",
+  "relationshipToHead": "head",
+  "race": "English",
+  "wtSearchTemplates": [
+    "{{FamilySearch Record|QP2H-P2B9}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{FamilySearch Image|3Q9M-C395-GSC3-J}}",
+    "{{FamilySearch Record|QP2H-P2B9}}",
+    "{{FamilySearch Record|QP2H-P2BS}}",
+    "{{FamilySearch Record|QP2H-P2B3}}",
+    "{{FamilySearch Record|QP2H-P2BQ}}"
+  ],
+  "collectionData": {
+    "id": "3005862",
+    "collectionTitle": "Canada, Prairie Provinces, Census, 1926",
+    "page": "10"
+  },
+  "hasValidData": true
+}

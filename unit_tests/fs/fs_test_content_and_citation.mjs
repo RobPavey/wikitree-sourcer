@@ -45,6 +45,10 @@ const regressionData = [
     url: "https://www.familysearch.org/ark:/61903/1:1:KHGF-SX6?from=lynx1UIV8&treeref=KFPX-STB",
   },
   {
+    caseName: "canada_census_1926_ellen_knott",
+    url: "https://www.familysearch.org/ark:/61903/1:1:QP2H-P2B9?lang=en",
+  },
+  {
     caseName: "canada_census_1926_walter_wilson",
     url: "https://www.familysearch.org/ark:/61903/1:1:QP2W-DC3N?lang=en",
   },

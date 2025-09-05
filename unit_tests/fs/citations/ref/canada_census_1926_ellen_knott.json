@@ -1,0 +1,98 @@
+{
+  "dataStyle_fsShort_fsCitation_inline": {
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEntry for Ellen Knott and Cyril Knott, 1926.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_fsCitation_narrative": {
+    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEntry for Ellen Knott and Cyril Knott, 1926.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_fsCitation_source": {
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>Entry for Ellen Knott and Cyril Knott, 1926.",
+    "type": "source"
+  },
+  "dataStyle_record_string_inline": {
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEllen Knott (44), widowed head of household in Calgary, Alberta, Canada. Born in England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_string_narrative": {
+    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEllen Knott (44), widowed head of household in Calgary, Alberta, Canada. Born in England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_string_source": {
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>Ellen Knott (44), widowed head of household in Calgary, Alberta, Canada. Born in England.",
+    "type": "source"
+  },
+  "dataStyle_record_list_inline": {
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nName: Ellen Knott; Immigration Date: 1911; Death Place: Alberta, Canada; Census Place: Calgary, Alberta, Canada; Birth Place: England; Birth Date: 1882; Census Date: 1926; Marital Status: Widowed; Race: English; Relationship To Head: Head of Household; Source Family Nbr: 118; Age: 44.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_list_narrative": {
+    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nName: Ellen Knott; Immigration Date: 1911; Death Place: Alberta, Canada; Census Place: Calgary, Alberta, Canada; Birth Place: England; Birth Date: 1882; Census Date: 1926; Marital Status: Widowed; Race: English; Relationship To Head: Head of Household; Source Family Nbr: 118; Age: 44.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_list_source": {
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>Name: Ellen Knott; Immigration Date: 1911; Death Place: Alberta, Canada; Census Place: Calgary, Alberta, Canada; Birth Place: England; Birth Date: 1882; Census Date: 1926; Marital Status: Widowed; Race: English; Relationship To Head: Head of Household; Source Family Nbr: 118; Age: 44.",
+    "type": "source"
+  },
+  "dataStyle_record_table_inline": {
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}\n{| border=\"1\"\n| Name || Ellen Knott\n|-\n| Immigration Date || 1911\n|-\n| Death Place || Alberta, Canada\n|-\n| Census Place || Calgary, Alberta, Canada\n|-\n| Birth Place || England\n|-\n| Birth Date || 1882\n|-\n| Census Date || 1926\n|-\n| Marital Status || Widowed\n|-\n| Race || English\n|-\n| Relationship To Head || Head of Household\n|-\n| Source Family Nbr || 118\n|-\n| Age || 44\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_table_narrative": {
+    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}\n{| border=\"1\"\n| Name || Ellen Knott\n|-\n| Immigration Date || 1911\n|-\n| Death Place || Alberta, Canada\n|-\n| Census Place || Calgary, Alberta, Canada\n|-\n| Birth Place || England\n|-\n| Birth Date || 1882\n|-\n| Census Date || 1926\n|-\n| Marital Status || Widowed\n|-\n| Race || English\n|-\n| Relationship To Head || Head of Household\n|-\n| Source Family Nbr || 118\n|-\n| Age || 44\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_table_source": {
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>Name: Ellen Knott; Immigration Date: 1911; Death Place: Alberta, Canada; Census Place: Calgary, Alberta, Canada; Birth Place: England; Birth Date: 1882; Census Date: 1926; Marital Status: Widowed; Race: English; Relationship To Head: Head of Household; Source Family Nbr: 118; Age: 44.",
+    "type": "source"
+  },
+  "dataStyle_record_fsCitation_inline": {
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEntry for Ellen Knott and Cyril Knott, 1926.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_fsCitation_narrative": {
+    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEntry for Ellen Knott and Cyril Knott, 1926.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_fsCitation_source": {
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>Entry for Ellen Knott and Cyril Knott, 1926.",
+    "type": "source"
+  },
+  "dataStyle_record_none_inline": {
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_record_none_narrative": {
+    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_record_none_source": {
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}",
+    "type": "source"
+  },
+  "dataStyle_fsShort_string_inline": {
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEllen Knott (44), widowed head of household in Calgary, Alberta, Canada. Born in England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsShort_string_narrative": {
+    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEllen Knott (44), widowed head of household in Calgary, Alberta, Canada. Born in England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsShort_string_source": {
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>Ellen Knott (44), widowed head of household in Calgary, Alberta, Canada. Born in England.",
+    "type": "source"
+  },
+  "dataStyle_fsLong_fsCitation_inline": {
+    "citation": "<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEntry for Ellen Knott and Cyril Knott, 1926.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_fsLong_fsCitation_narrative": {
+    "citation": "In the 1926 census Ellen (age 44) was the widowed head of household in Calgary, Alberta, Canada.<ref>\n'''1926 Census''':\n\"Canada, Prairie Provinces, Census, 1926\"<br/>\nciting Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>\n{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>\nEntry for Ellen Knott and Cyril Knott, 1926.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_fsLong_fsCitation_source": {
+    "citation": "* '''1926 Census''': \"Canada, Prairie Provinces, Census, 1926\"<br/>citing Page: 10; Line: 14; Digital film/folder number: 105519978; Image number: 1066; Record number: 11<br/>{{FamilySearch Record|QP2H-P2B9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C395-GSC3-J}}<br/>Entry for Ellen Knott and Cyril Knott, 1926.",
+    "type": "source"
+  }
+}
