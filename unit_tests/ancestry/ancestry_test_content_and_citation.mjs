@@ -1290,6 +1290,11 @@ const regressionData = [
     url: "https://www.ancestry.com/family-tree/person/tree/11748183/person/12992988602/facts",
   },
   {
+    // Has ancestry tree source
+    caseName: "xx_profile_isabel_nesbett_1752_1814_england_sep2025",
+    url: "https://www.ancestry.com/family-tree/person/tree/11630356/person/202215204848/facts",
+  },
+  {
     // Has suffix and father has suffix
     caseName: "xx_profile_joseph_sheffey_1881_1959_us",
     url: "https://www.ancestry.com/family-tree/person/tree/74248219/person/48290959228/facts",

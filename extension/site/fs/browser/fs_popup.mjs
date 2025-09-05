@@ -203,6 +203,38 @@ async function fsSaveUnitTestDataForAllCitations(input, response) {
   writeToClipboard(debugText, message);
 }
 
+function getExcludedSourcesString(response) {
+  let message = "";
+
+  function addMessage(numExcluded, reason) {
+    if (numExcluded) {
+      message += "\n\nNote: " + numExcluded;
+      if (numExcluded == 1) {
+        message += " source was";
+      } else {
+        message += " sources were";
+      }
+      message += " excluded " + reason;
+    }
+  }
+
+  addMessage(
+    response.numExcludedNonFsSources,
+    "due to option settings because there was no valid link to a FamilySearch record."
+  );
+
+  addMessage(
+    response.numExcludedOtherRoleSources,
+    "due to option settings because the source person was not a primary person for the event."
+  );
+
+  addMessage(response.numExcludedDuplicateSources, "due to option settings because the source is a duplicate.");
+
+  addMessage(response.numExcludedTreeSources, "because the source just references another family tree.");
+
+  return message;
+}
+
 async function fsBuildAllCitationsAction(data, citationType) {
   try {
     clearClipboard();
@@ -230,6 +262,8 @@ async function fsBuildAllCitationsAction(data, citationType) {
       //console.log(response);
       //keepPopupOpenForDebug();
 
+      let excludedSourcesMessage = getExcludedSourcesString(response);
+
       if (response.citationsString) {
         if (saveUnitTestData) {
           fsSaveUnitTestDataForAllCitations(input, response);
@@ -242,52 +276,16 @@ async function fsBuildAllCitationsAction(data, citationType) {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
           }
 
-          if (response.numExcludedNonFsSources) {
-            message2 += "\n\nNote: " + response.numExcludedNonFsSources;
-            if (response.numExcludedNonFsSources == 1) {
-              message2 += " source was";
-            } else {
-              message2 += " sources were";
-            }
-            message2 += " excluded due to option settings because there was no valid link to a FamilySearch record.";
-          }
-
-          if (response.numExcludedOtherRoleSources) {
-            message2 += "\n\nNote: " + response.numExcludedOtherRoleSources;
-            if (response.numExcludedOtherRoleSources == 1) {
-              message2 += " source was";
-            } else {
-              message2 += " sources were";
-            }
-            message2 +=
-              " excluded due to option settings because the source person was not a primary person for the event.";
-          }
-
-          if (response.numExcludedDuplicateSources) {
-            message2 += "\n\nNote: " + response.numExcludedDuplicateSources;
-            if (response.numExcludedDuplicateSources == 1) {
-              message2 += " source was";
-            } else {
-              message2 += " sources were";
-            }
-            message2 += " excluded due to option settings because the source is a duplicate.";
-          }
-
-          if (response.numExcludedTreeSources) {
-            message2 += "\n\nNote: " + response.numExcludedTreeSources;
-            if (response.numExcludedTreeSources == 1) {
-              message2 += " source was";
-            } else {
-              message2 += " sources were";
-            }
-            message2 += " excluded because they just reference another family tree.";
+          if (excludedSourcesMessage) {
+            message2 += excludedSourcesMessage;
           }
 
           writeToClipboard(response.citationsString, message, false, message2);
         }
       } else {
         const message = "All sources were excluded due to option settings.";
-        displayMessageWithIconThenClosePopup("warning", message, "");
+
+        displayMessageWithIcon("warning", message, excludedSourcesMessage);
       }
     } else {
       // It can fail even if there is an image URL, for example findagrave images:
@@ -329,8 +327,10 @@ async function fsGetAllCitationsForSavePersonData(data) {
       //console.log("fsGetAllCitations, response is");
       //console.log(response);
 
+      data.allCitationsCount = response.citationCount;
       data.allCitationsString = response.citationsString;
       data.allCitationsType = response.citationsStringType;
+      data.allCitationsNoteMessage = getExcludedSourcesString(response);
       return { success: true };
     } else {
       // If it fails we want to let the user know

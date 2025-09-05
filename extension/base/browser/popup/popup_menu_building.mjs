@@ -529,9 +529,22 @@ async function displayMessageThenClosePopup(message1, message2) {
 async function displayMessageWithIconThenClosePopup(iconType, message1, message2) {
   displayMessageWithIcon(iconType, message1, message2);
 
+  let messageLength = message1.length;
+  if (message2) {
+    messageLength += message2.length;
+  }
+
+  let timeoutMs = 10 * 1000;
+  if (messageLength > 200) {
+    timeoutMs = 30 * 1000;
+  }
+  if (messageLength > 500) {
+    timeoutMs = 120 * 1000;
+  }
+
   setTimeout(function () {
     closePopup();
-  }, 10000);
+  }, timeoutMs);
 }
 
 function addMenuTitle(menu) {

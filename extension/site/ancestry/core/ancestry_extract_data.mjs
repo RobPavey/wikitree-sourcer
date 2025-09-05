@@ -1655,6 +1655,7 @@ function handlePersonFactsPreJune2024(document, result) {
       let researchListItems = ancestrySourcesList.querySelectorAll("li.researchListItem");
       if (researchListItems.length > 0) {
         result.sources = [];
+        let numExcludedSources = 0;
         for (let researchListItem of researchListItems) {
           let dbIdInput = researchListItem.querySelector("input.dbId");
           let recordIdInput = researchListItem.querySelector("input.recordId");
@@ -1666,6 +1667,7 @@ function handlePersonFactsPreJune2024(document, result) {
             if (dbId && recordId) {
               // exclude "Ancestry Family Trees" sources
               if (dbId == "1030") {
+                numExcludedSources++;
                 continue;
               }
 
@@ -1682,6 +1684,9 @@ function handlePersonFactsPreJune2024(document, result) {
               result.sources.push(source);
             }
           }
+        }
+        if (numExcludedSources) {
+          result.numExcludedSources = numExcludedSources;
         }
       }
     }
@@ -2128,6 +2133,8 @@ function handlePersonFactsJune2024(document, result) {
         let researchListItems = ancestrySourcesList.querySelectorAll("li.researchListItem");
         if (researchListItems.length > 0) {
           result.sources = [];
+          let numExcludedSources = 0;
+
           for (let researchListItem of researchListItems) {
             let dbId = "";
             let recordId = "";
@@ -2165,6 +2172,7 @@ function handlePersonFactsJune2024(document, result) {
             if (dbId && recordId) {
               // exclude "Ancestry Family Trees" sources
               if (dbId == "1030") {
+                numExcludedSources++;
                 continue;
               }
 
@@ -2177,7 +2185,13 @@ function handlePersonFactsJune2024(document, result) {
               }
 
               result.sources.push(source);
+            } else {
+              // sometimes Ancestry Family Tree sources have no dbid or recordid
+              numExcludedSources++;
             }
+          }
+          if (numExcludedSources) {
+            result.numExcludedSources = numExcludedSources;
           }
         }
       }

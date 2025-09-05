@@ -798,6 +798,33 @@ async function ancestrySaveUnitTestDataForAllCitations(input, response) {
   writeToClipboard(debugText, message);
 }
 
+function getExcludedSourcesString(response, data) {
+  let message = "";
+
+  function addMessage(numExcluded, reason) {
+    if (numExcluded) {
+      message += "\n\nNote: " + numExcluded;
+      if (numExcluded == 1) {
+        message += " source was";
+      } else {
+        message += " sources were";
+      }
+      message += " excluded " + reason;
+    }
+  }
+
+  addMessage(
+    response.numExcludedOtherRoleSources,
+    "due to option settings because the source person was not a primary person for the event."
+  );
+
+  addMessage(response.numExcludedDuplicateSources, "because the source is a duplicate.");
+
+  addMessage(data.extractedData.numExcludedSources, "because the source just references another family tree.");
+
+  return message;
+}
+
 async function ancestryBuildAllCitationsAction(data, citationType) {
   try {
     clearClipboard();
@@ -826,6 +853,8 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
       //console.log(response);
       //keepPopupOpenForDebug();
 
+      let excludedSourcesMessage = getExcludedSourcesString(response, data);
+
       if (response.citationsString) {
         if (saveUnitTestData) {
           ancestrySaveUnitTestDataForAllCitations(input, response);
@@ -838,15 +867,8 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
             message2 = "\nThese are inline citations and should be pasted before the Sources heading.";
           }
 
-          if (response.numExcludedOtherRoleSources) {
-            message2 += "\n\nNote: " + response.numExcludedOtherRoleSources;
-            if (response.numExcludedOtherRoleSources == 1) {
-              message2 += " source was";
-            } else {
-              message2 += " sources were";
-            }
-            message2 +=
-              " excluded due to option settings because the source person was not a primary person for the event.";
+          if (excludedSourcesMessage) {
+            message2 += excludedSourcesMessage;
           }
 
           let iconType = "check";
@@ -872,7 +894,22 @@ async function ancestryBuildAllCitationsAction(data, citationType) {
           displayMessageWithIconThenClosePopup("warning", message, "");
         } else {
           const message = "All sources were excluded due to option settings.";
-          displayMessageWithIconThenClosePopup("warning", message, "");
+
+          let message2 = "";
+          if (response.numExcludedOtherRoleSources) {
+            message2 += "\n\nNote: " + response.numExcludedOtherRoleSources;
+            if (response.numExcludedOtherRoleSources == 1) {
+              message2 += " source was";
+            } else {
+              message2 += " sources were";
+            }
+            message2 +=
+              " excluded due to option settings because the source person was not a primary person for the event.";
+          }
+
+          numExcludedDuplicateSources;
+
+          displayMessageWithIcon("warning", message, message2);
         }
       }
     } else {
@@ -918,8 +955,10 @@ async function ancestryGetAllCitationsForSavePersonData(data) {
       //console.log("ancestryGetAllCitationsForSavePersonData, response is");
       //console.log(response);
 
+      data.allCitationsCount = response.citationCount;
       data.allCitationsString = response.citationsString;
       data.allCitationsType = response.citationsStringType;
+      data.allCitationsNoteMessage = getExcludedSourcesString(response, data);
       return { success: true };
     } else {
       // If it fails we want to let the user know

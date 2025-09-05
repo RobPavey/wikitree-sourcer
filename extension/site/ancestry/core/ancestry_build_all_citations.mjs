@@ -435,7 +435,9 @@ function filterSourceIdsToSources(result, sourceIds, options) {
         break;
       }
     }
-    if (!foundMatch) {
+    if (foundMatch) {
+      result.numExcludedDuplicateSources++;
+    } else {
       uniqueSourceIds.push(sourceId);
     }
   }
