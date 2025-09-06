@@ -82,3 +82,31 @@ This is the obvious one. This is what causes the extensions site-specific conten
 
 This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any module loaded dynamically by a content script has to be specified in this section.
 
+## Implement the extract step
+
+The first step is to write the code to extract the data from the web site. For most sites this just involves extracting from one web page with no other fetches required.
+
+The code for this will be in the `core/<site_extract_data.mjs>` file. You can look at other sites for examples.
+
+This step will create an extracted_data structure that is used by the generalize step AND the build citation step. Unlike the generalized_data structure the extracted_data structure can have whhatever fields you want but it is suggested that you keep it somewhat similar to other sites just to make maintenance easier.
+
+Key points about this file that make it different to the other steps:
+* the `<site>_extract_data.mjs` file cannot import any other modules
+* Sourcer does not use jquery. The built-in Javascript functions query_selector and query_selector_all are used
+* You can save the web page locally and test this using the unit test framework or test in the browser. Testing locally allows you to implement this before doing any work on the popup code.
+
+## Implement the generalize step
+
+This step takes the extracted_data structure and builds a generalized_data structure. The generalized_data structure is used for searc and for building narrative sentences and can also be used in the build citation step.
+
+## Implement the build citation step
+
+This step takes the extracted_data and generalized_data (and the options) as input and build the citation text and saves that to the clipboard. There are common helper classed like citation_builder.mjs you should use.
+
+## Implement search
+
+The search code for the site will allow this site to be searched from WikiTree or from all other sites that WikiTree supports.
+
+## Implement any extra features for this site
+
+Simple sites will not need anything more but many sites have little extras like context menu support or menu items to build templates etc.
