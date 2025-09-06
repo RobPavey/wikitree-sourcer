@@ -6,12 +6,12 @@ This is so that I can merge a PR to the main repo without affecting the next rel
 
 ## Pick a name
 
-The first decision is to choose a unique abbrevation for your new site. This will be all lower case.
-For example FindMyPast is fmp and Scotlands People is scotp. Try to keep it to 8 characters or less.
+The first decision is to choose a unique abbrevation for your new site. This will be all lower case with no spaces or underscores.
+For example FindMyPast is fmp and Scotlands People is scotp. Try to keep it to 10 characters or less.
 
 ## Use the create_new_site script to setup the files and folders for your new site
 
-This does many steps for you. The one thing it doesn't do it edit the manifest.json files.
+This does many steps for you. The one thing it doesn't do is edit the manifest.json files.
 
 To run the script:
 
@@ -21,7 +21,7 @@ for example:
 
 `node scripts/create_new_site.js trove "Trove (Aus)"`
 
-See the subsections below for what the script does and how they could be done manually if needed.
+See the subsections below for what the script does and how they could be done manually if needed. Note you do not need to do thse - the script does them automatically.
 
 ### It creates the extension site folder
 
@@ -80,5 +80,5 @@ This is the obvious one. This is what causes the extensions site-specific conten
 
 ### Add a section under "web_accessible_resources"
 
-This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any module loaded dynamically by a content script has to be specified in this section
+This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any module loaded dynamically by a content script has to be specified in this section.
 
