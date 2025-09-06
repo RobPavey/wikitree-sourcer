@@ -97,7 +97,9 @@ Key points about this file that make it different to the other steps:
 
 ## Implement the generalize step
 
-This step takes the extracted_data structure and builds a generalized_data structure. The generalized_data structure is used for searc and for building narrative sentences and can also be used in the build citation step.
+This step takes the extracted_data structure and builds a generalized_data structure. The generalized_data structure is used for search and for building narrative sentences and can also be used in the build citation step. The generalized_data structure is an instance of the GeneralizedData class.
+
+New sites use a file called `<site>_ed_reader.mjs` to do this. This provides a structure where you just need to fill in the functions that set each fields in the generalized_data structure.
 
 ## Implement the build citation step
 
@@ -106,6 +108,10 @@ This step takes the extracted_data and generalized_data (and the options) as inp
 ## Implement search
 
 The search code for the site will allow this site to be searched from WikiTree or from all other sites that WikiTree supports.
+
+The approach taken depends on how the site can be searched. Usually it is one of two ways:
+1. The site supports search via the query part of the URL. This is the simplest.
+2. The site does not support URL query so Sourcer must fill out the form on the sites search page.
 
 ## Implement any extra features for this site
 
