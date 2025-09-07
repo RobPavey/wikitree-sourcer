@@ -34,9 +34,13 @@ There are three variants of the extension:
 
 ## Guides for developers
 
-- [Guide for setting up the development envionment](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md)
-- [Guide for the folder structure](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/folder_structure.md)
-- [Guide for adding support for a new site](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/adding_a_new_site.md)
+- [Setting up the development envionment](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md)
+- [Guide to the folder structure](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/folder_structure.md)
+- [Adding support for a new site](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/adding_a_new_site.md)
+- Running the extension locally in the Chrome browser (TBD)
+- Running and debugging the unit tests (outside the browser) (TBD)
+- Running the extension locally in Firefox (TBD)
+- Running the extension locally in Safari (TBD)
 
 ## More in depth descriptions or architecture and design choices
 
