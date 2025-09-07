@@ -2,6 +2,8 @@
 
 Note: See the [setup guide](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md) for details of setting up your local repository and build environment before starting on adding a new site.
 
+The time taken to add support for a new site varies a lot based on the complexity of the site, the experience or the developer etc. With testing and debugging it usually takes Rob 4-15 days to add a site.
+
 ## Work in the develop branch in your fork when adding a new site
 
 This is so that I can merge a PR to the main repo without affecting the next release being worked on in the main branch.
