@@ -4,7 +4,7 @@
 
 The code is broken up into modules. It is separated in several ways:
 
-- site specific doed (e.g. ancestry or fmp) is separated from each other and from the base code
+- site specific code (e.g. ancestry or fmp) is separated from each other and from the base code
 - code that depends on the browser APIs (and thus can't be used in local unitt tests) is separated from core code
 - code that is part of the actual shipping extension is separated from the unit tests
 
