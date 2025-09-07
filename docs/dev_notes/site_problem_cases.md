@@ -20,4 +20,4 @@ This is implemented by making a list called primaryPersonOptions in the generali
 
 ### Provide a context menu ability to find a result from a citation
 
-If the site supports URL queries then you can create a link in the citation that performs the search to find the record. But for ones that do not you can add code for the context that parses the selected citation and works out how to performa asearch for it. Search the code for `openSelectionPlainText` to see how this works.
+If the site supports URL queries then you can create a link in the citation that performs the search to find the record. But for ones that do not you can add code for the context that parses the selected citation and works out how to perform a search for it. Search the code for `openSelectionPlainText` to see how this works.
