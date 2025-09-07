@@ -47,7 +47,7 @@ This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any mo
 
 The first step is to write the code to extract the data from the web site. For most sites this just involves extracting from one web page with no other fetches required.
 
-The code for this will be in the `core/<site_extract_data.mjs>` file. You can look at other sites for examples.
+The code for this will be in the `extension/site/<site>/core/<site>_extract_data.mjs` file. You can look at other sites for examples.
 
 This step will create an extracted_data structure that is used by the generalize step AND the build citation step. Unlike the generalized_data structure the extracted_data structure can have whatever fields you want but it is suggested that you keep it somewhat similar to other sites just to make maintenance easier.
 
@@ -68,13 +68,19 @@ New sites use a file called `<site>_ed_reader.mjs` to do this. This provides a s
 
 This step takes the extracted_data and generalized_data (and the options) as input and build the citation text and saves that to the clipboard. There are common helper classed like citation_builder.mjs you should use.
 
+The code for this will be in the `extension/site/<site>/core/<site>_build_citation.mjs` file.
+
 ## Implement search
 
 The search code for the site will allow this site to be searched from WikiTree or from all other sites that WikiTree supports.
 
 The approach taken depends on how the site can be searched. Usually it is one of two ways:
-1. The site supports search via the query part of the URL. This is the simplest.
-2. The site does not support URL query so Sourcer must fill out the form on the sites search page.
+1. The site supports search via the query part of the URL. This is the simplest. Simple example sites are freebmd and fg.
+   The code for this will be in the `extension/site/<site>/core/<site>_build_search_url.mjs` file.
+3. The site does not support URL query so Sourcer must fill out the form on the sites search page and submit the form. Example sites are vicbdm and wikitree.
+   The code for this will be in the `extension/site/<site>/core/<site>_build_search_data.mjs` file.
+
+The create_new_site script assumes the first approach so if using the second approach rename the `<site>_build_search_url.mjs` file and copy the contents from another site using approach 2.
 
 ## Implement any extra features for this site
 
