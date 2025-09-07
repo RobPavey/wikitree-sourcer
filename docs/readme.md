@@ -29,5 +29,5 @@ The [Google Javascript Style Guide](https://google.github.io/styleguide/jsguide.
 There are three variants of the extension:
 
 - Chrome, this is the main development version
-- Firefox, there is a separate folder browser_variants/firefox. The only file that is different is the manifest
+- Firefox, there is a separate folder browser_variants/firefox. The only file that is different is the manifest. There is a script `build_firefox.js` that copies all the extension files here for local testing and builds a .zip file for releasing.
 - Safari, there is an App that points to the same extension source as the Chrome version. Except for the manifest file which is different.
