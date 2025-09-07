@@ -1,5 +1,7 @@
 # Adding support for a new site
 
+Note: See the [setup guide](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md) for details of setting up your local repository and build environment before starting on adding a new site.
+
 ## Work in the develop branch in your fork when adding a new site
 
 This is so that I can merge a PR to the main repo without affecting the next release being worked on in the main branch.
@@ -55,6 +57,8 @@ Key points about this file that make it different to the other steps:
 ## Implement the generalize step
 
 This step takes the extracted_data structure and builds a generalized_data structure. The generalized_data structure is used for search and for building narrative sentences and can also be used in the build citation step. The generalized_data structure is an instance of the GeneralizedData class.
+
+This step includes assigning a record type and filling in fields like name, birth date, birth place etc.
 
 New sites use a file called `<site>_ed_reader.mjs` to do this. This provides a structure where you just need to fill in the functions that set each fields in the generalized_data structure.
 
