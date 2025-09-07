@@ -31,7 +31,11 @@ See this [separate doc](https://github.com/RobPavey/wikitree-sourcer/blob/main/d
 
 This is not done by the create_new_site script.
 
-In order for the popup to work on your site you need to add the site to the manifest files. Because there are four different manifest files (for Chrome, Firefox, Safari macOS and Safari iOS) the same changes need to made to each one.
+In order for the popup to work on your site you need to add the site to the manifest files. Because there are four different manifest files (for Chrome, Firefox, Safari macOS and Safari iOS) the same changes need to made to each one. The for files are:
+* `extension/manifest.json`
+* `browser_variants/firefox/manifest.json`
+* `browser_variants/safari/macos/manifest.json`
+* `browser_variants/safari/ios/manifest.json`
 
 There are actually two places in the manifest file that have to be changed to add a site.
 
