@@ -18,7 +18,7 @@ without too much extra interpretation. Make it "as simple as possible, but no si
 If a module is imported statically it will increase the size to load all the time (see above).
 If it is imported dynamically then it has to be declared in the manifest in `web_accessible_resources`.
 
-Occasionally we might import modules but is the exception rather than the rule. Care has to be taken of all paths in the of imports within the imported module.
+Occasionally we might import modules but is the exception rather than the rule. Care has to be taken of all paths in the imports within the imported module.
 
 ## Do not assume that the extract_data module is running within the content script enviroment
 
