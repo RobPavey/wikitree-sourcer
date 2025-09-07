@@ -66,7 +66,7 @@ New sites use a file called `<site>_ed_reader.mjs` to do this. This provides a s
 
 ## Implement the build citation step
 
-This step takes the extracted_data and generalized_data (and the options) as input and build the citation text and saves that to the clipboard. There are common helper classed like citation_builder.mjs you should use.
+This step takes the extracted_data and generalized_data (and the options) as input and builds the citation text and saves that to the clipboard. There are common helper classes like citation_builder.mjs you should use.
 
 The code for this will be in the `extension/site/<site>/core/<site>_build_citation.mjs` file.
 
