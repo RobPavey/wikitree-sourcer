@@ -16,7 +16,7 @@ Currently that includes naie, nswbdm, nzbdm, psuk, scotp.
 
 A grave record may have more than one person or a marriage record might only have one search result that always lists the groom first.
 To allow the user to select the person that they want to build a citation for (or do a search for) you can have a drop down at the top of the Sourcer menu.
-This is implemented by making a list called primaryPersonOptions in the generalizedData. This is used by the nzbdm site for example for marriages.
+This is implemented by making a list called `primaryPersonOptions` in the generalizedData. This is used by the nzbdm site for example for marriages.
 
 ### Provide a context menu ability to find a result from a citation
 
