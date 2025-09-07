@@ -90,3 +90,7 @@ The create_new_site script assumes the first approach so if using the second app
 ## Implement any extra features for this site
 
 Simple sites will not need anything more but many sites have little extras like context menu support or menu items to build templates etc.
+
+## Documentation
+
+You can add user documentation for the new site to a free space page. When the site support is released you can add a link to the documentation page to the [supported sites](https://www.wikitree.com/wiki/Space:WikiTree_Sourcer_supported_sites) page.
