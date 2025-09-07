@@ -20,7 +20,7 @@ Node.js is used for the unit test environment, this requires installing Node.js 
 
 Xcode is required to test and run the Safari version of the extension.
 
-The extension uses manifest version 3 (MV3) for Chrome and manifest version 2 (MV2) for Firefox and Safari.
+The extension uses manifest version 3 (MV3) for all browsers now.
 
 The [Google Javascript Style Guide](https://google.github.io/styleguide/jsguide.html) is the guide used for formatting/coding standards.
 
