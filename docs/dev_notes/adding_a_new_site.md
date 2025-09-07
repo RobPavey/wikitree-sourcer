@@ -93,7 +93,7 @@ Simple sites will not need anything more but many sites have little extras like 
 
 ## Problem cases
 
-Some site present problems in searching or building citations. These may have been encountered for other sites. See this list of problem cases to see if you can follow an existing pattern.
+Some site present problems in searching or building citations. These may have been encountered for other sites. See [this list of problem cases](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/site_problem_cases.md) to see if you can follow an existing pattern.
 
 ## Documentation
 
