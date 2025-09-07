@@ -31,3 +31,15 @@ There are three variants of the extension:
 - Chrome, this is the main development version
 - Firefox, there is a separate folder browser_variants/firefox. The only file that is different is the manifest. There is a script `build_firefox.js` that copies all the extension files here for local testing and builds a .zip file for releasing.
 - Safari, there is an App that points to the same extension source as the Chrome version. Except for the manifest file which is different.
+
+## Guides for developers
+
+- [Guide for setting up the development envionment](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md)
+- [Guide for the folder structure](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/folder_structure.md)
+- [Guide for adding support for a new site](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/adding_a_new_site.md)
+
+## More in depth descriptions or architecture and design choices
+
+- [How the extension handles startup and loading](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/startup_and_loading.md)
+
+  
