@@ -1,14 +1,14 @@
 {
-    "std_inline": {
-      "citation": "<ref>\n'''1910 Census''':\n\"1910 census for Volda\"<br/>\nCensus district: 001 Yksnøen; Rural residence: 0001 Yksnøy<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01036754000004 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nAnna Nikolaidatter, wife, Gaardmandskone, in household of Knut Knutsen at Yksnøy, Volda, Møre og Romsdal, Norway. Born in Volden.\n</ref>",
-      "type": "inline"
-    },
-    "std_narrative": {
-      "citation": "In the 1910 census Anna, Gaardmandskone, was the wife of Knut Knutsen at Yksnøy, Volda, Møre og Romsdal, Norway.<ref>\n'''1910 Census''':\n\"1910 census for Volda\"<br/>\nCensus district: 001 Yksnøen; Rural residence: 0001 Yksnøy<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01036754000004 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nAnna Nikolaidatter, wife, Gaardmandskone, in household of Knut Knutsen at Yksnøy, Volda, Møre og Romsdal, Norway. Born in Volden.\n</ref>",
-      "type": "narrative"
-    },
-    "std_source": {
-      "citation": "* '''1910 Census''': \"1910 census for Volda\"<br/>Census district: 001 Yksnøen; Rural residence: 0001 Yksnøy<br/>[https://www.digitalarkivet.no/en/census/person/pf01036754000004 Digitalarkivet Record] (accessed 6 May 2021)<br/>Anna Nikolaidatter, wife, Gaardmandskone, in household of Knut Knutsen at Yksnøy, Volda, Møre og Romsdal, Norway. Born in Volden.",
-      "type": "source"
-    }
+  "std_inline": {
+    "citation": "<ref>\n'''1910 Census''':\n\"1910 census for Volda\"<br/>\nCensus district: 001 Yksnøen; Rural residence: 0001 Yksnøy<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01036754000004 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nAnna Nikolaidatter, wife, Gaardmandskone, in household of Knut Knutsen at Yksnøy, Volda, Møre og Romsdal, Norway. Born in Volden.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "In the 1910 census Anna, Gaardmandskone, was the wife of Knut Knutsen at Yksnøy, Volda, Møre og Romsdal, Norway.<ref>\n'''1910 Census''':\n\"1910 census for Volda\"<br/>\nCensus district: 001 Yksnøen; Rural residence: 0001 Yksnøy<br/>\n[https://www.digitalarkivet.no/en/census/person/pf01036754000004 Digitalarkivet Record] (accessed 6 May 2021)<br/>\nAnna Nikolaidatter, wife, Gaardmandskone, in household of Knut Knutsen at Yksnøy, Volda, Møre og Romsdal, Norway. Born in Volden.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''1910 Census''': \"1910 census for Volda\"<br/>Census district: 001 Yksnøen; Rural residence: 0001 Yksnøy<br/>[https://www.digitalarkivet.no/en/census/person/pf01036754000004 Digitalarkivet Record] (accessed 6 May 2021)<br/>Anna Nikolaidatter, wife, Gaardmandskone, in household of Knut Knutsen at Yksnøy, Volda, Møre og Romsdal, Norway. Born in Volden.",
+    "type": "source"
   }
+}

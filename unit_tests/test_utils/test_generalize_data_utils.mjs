@@ -23,15 +23,9 @@ SOFTWARE.
 */
 
 import fs from "fs";
-import { deepObjectEquals } from "../test_utils/compare_result_utils.mjs";
-import {
-  writeTestOutputFile,
-  readRefFile,
-  readInputFile,
-  getRefFilePath,
-  getTestFilePath,
-} from "../test_utils/ref_file_utils.mjs";
+import { writeTestOutputFile, readInputFile } from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
+import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
 
 function testEnabled(parameters, testName) {
   return parameters.testName == "" || parameters.testName == testName;
@@ -72,20 +66,7 @@ async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressi
       continue;
     }
 
-    // read in the reference result
-    let refObject = readRefFile(result, siteName, resultDir, testData, logger);
-    if (!refObject) {
-      continue;
-    }
-
-    let equal = deepObjectEquals(result, refObject);
-    if (!equal) {
-      console.log("Result differs from reference. Result is:");
-      console.log(result);
-      let refFile = getRefFilePath(siteName, resultDir, testData);
-      let testFile = getTestFilePath(siteName, resultDir, testData);
-      logger.logError(testData, "Result differs from reference", refFile, testFile);
-    }
+    compareOrReplaceRefFileWithResult(result, siteName, testManager, resultDir, testData, logger);
   }
 
   if (logger.numFailedTests > 0) {

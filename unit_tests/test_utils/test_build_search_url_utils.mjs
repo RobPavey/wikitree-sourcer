@@ -22,16 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import {
-  writeTestOutputFile,
-  readRefFile,
-  readInputFile,
-  readFile,
-  getRefFilePath,
-  getTestFilePath,
-} from "../test_utils/ref_file_utils.mjs";
+import { writeTestOutputFile, readInputFile, readFile } from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
-import { deepObjectEquals } from "../test_utils/compare_result_utils.mjs";
+import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
+
 import { GeneralizedData } from "../../extension/base/core/generalize_data_utils.mjs";
 
 const testDataWikiTreeProfileCacheSources = [
@@ -181,20 +175,7 @@ async function runBuildSearchUrlTests(
 
     testManager.results.totalTestsRun++;
 
-    // read in the reference result
-    let refObject = readRefFile(result, siteName, resultDir, testData, logger);
-    if (!refObject) {
-      continue;
-    }
-
-    let equal = deepObjectEquals(result, refObject);
-    if (!equal) {
-      console.log("Result differs from reference. Result is:");
-      console.log(result);
-      let refFile = getRefFilePath(siteName, resultDir, testData);
-      let testFile = getTestFilePath(siteName, resultDir, testData);
-      logger.logError(testData, "Result differs from reference", refFile, testFile);
-    }
+    compareOrReplaceRefFileWithResult(result, siteName, testManager, resultDir, testData, logger);
   }
 
   if (logger.numFailedTests > 0) {

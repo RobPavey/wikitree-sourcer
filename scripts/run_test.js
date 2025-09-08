@@ -89,13 +89,30 @@ async function runTests() {
     testCaseName: "",
   };
 
-  if (process.argv.length > 2) {
-    parameters.testSuiteName = process.argv[2];
-    if (process.argv.length > 3) {
-      parameters.testName = process.argv[3];
-      if (process.argv.length > 4) {
-        parameters.testCaseName = process.argv[4];
+  let args = process.argv.slice(2);
+  let argFlags = [];
+  let argValues = [];
+  for (let arg of args) {
+    if (arg[0] == "-") {
+      argFlags.push(arg);
+    } else {
+      argValues.push(arg);
+    }
+  }
+
+  if (argValues.length > 0) {
+    parameters.testSuiteName = argValues[0];
+    if (argValues.length > 1) {
+      parameters.testName = argValues[1];
+      if (argValues.length > 2) {
+        parameters.testCaseName = argValues[2];
       }
+    }
+  }
+
+  for (let argFlag of argFlags) {
+    if ((argFlag = "-force")) {
+      parameters.forceReplaceRefs = true;
     }
   }
 
@@ -128,7 +145,11 @@ async function runTests() {
 
   // Report the test results
   if (results.numFailedTests == 0) {
-    console.log("++++ All tests passed ++++");
+    if (parameters.forceReplaceRefs) {
+      console.log("++++ Ref files were force replaced ++++");
+    } else {
+      console.log("++++ All tests passed ++++");
+    }
   } else {
     console.log("#### TESTS FAILED ####");
     for (let result of results.allTests) {

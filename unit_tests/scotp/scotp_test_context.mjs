@@ -24,14 +24,8 @@ SOFTWARE.
 
 import { buildScotlandsPeopleContextSearchData } from "../../extension/site/scotp/core/scotp_context_menu.mjs";
 
-import {
-  writeTestOutputFile,
-  readRefFile,
-  readFile,
-  getRefFilePath,
-  getTestFilePath,
-} from "../test_utils/ref_file_utils.mjs";
-import { deepObjectEquals } from "../test_utils/compare_result_utils.mjs";
+import { writeTestOutputFile } from "../test_utils/ref_file_utils.mjs";
+import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
 
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 
@@ -665,22 +659,7 @@ async function runContextTests(siteName, regressionData, testManager, optionVari
     //console.log(result);
     testManager.results.totalTestsRun++;
 
-    // read in the reference result
-    let refObject = readRefFile(result, siteName, resultDir, testData, logger);
-    if (!refObject) {
-      // ref file didn't exist it will have been created now
-      continue;
-    }
-
-    // do compare
-    let equal = deepObjectEquals(result, refObject);
-    if (!equal) {
-      console.log("Result differs from reference. Result is:");
-      console.log(result);
-      let refFile = getRefFilePath(siteName, resultDir, testData);
-      let testFile = getTestFilePath(siteName, resultDir, testData);
-      logger.logError(testData, "Result differs from reference", refFile, testFile);
-    }
+    compareOrReplaceRefFileWithResult(result, siteName, testManager, resultDir, testData, logger);
   }
 
   if (logger.numFailedTests > 0) {

@@ -226,4 +226,5 @@ export {
   getTestTextFilePath,
   writeTestOutputTextFile,
   readRefTextFile,
+  createRefFile,
 };

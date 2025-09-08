@@ -1,49 +1,49 @@
 {
-    "sourceOfData": "mh",
-    "sourceType": "profile",
-    "recordType": "Unclassified",
-    "name": {
-      "name": "Arthur Eli Pavey"
-    },
-    "lastNameAtBirth": "Pavey",
-    "birthDate": {
-      "dateString": "28 Jan 1885"
-    },
-    "birthPlace": {
-      "placeString": "Pancras, London"
-    },
-    "deathDate": {
-      "dateString": "17 Dec 1950"
-    },
-    "deathPlace": {
-      "placeString": "Hamble, Hampshire, England"
-    },
-    "spouses": [
-      {
-        "name": {
-          "name": "Emmeline May Brain"
-        },
-        "marriageDate": {
-          "dateString": "Apr 1913"
-        },
-        "marriagePlace": {
-          "placeString": "Tamworth, Staffordshire"
-        }
-      }
-    ],
-    "parents": {
-      "father": {
-        "name": {
-          "name": "Harry Alfred Pavey"
-        },
-        "lastNameAtBirth": "Pavey"
+  "sourceOfData": "mh",
+  "sourceType": "profile",
+  "recordType": "Unclassified",
+  "name": {
+    "name": "Arthur Eli Pavey"
+  },
+  "lastNameAtBirth": "Pavey",
+  "birthDate": {
+    "dateString": "28 Jan 1885"
+  },
+  "birthPlace": {
+    "placeString": "Pancras, London"
+  },
+  "deathDate": {
+    "dateString": "17 Dec 1950"
+  },
+  "deathPlace": {
+    "placeString": "Hamble, Hampshire, England"
+  },
+  "spouses": [
+    {
+      "name": {
+        "name": "Emmeline May Brain"
       },
-      "mother": {
-        "name": {
-          "name": "Amelia Elizabeth Littlemore"
-        },
-        "lastNameAtBirth": "Littlemore"
+      "marriageDate": {
+        "dateString": "Apr 1913"
+      },
+      "marriagePlace": {
+        "placeString": "Tamworth, Staffordshire"
       }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Harry Alfred Pavey"
+      },
+      "lastNameAtBirth": "Pavey"
     },
-    "hasValidData": true
-  }
+    "mother": {
+      "name": {
+        "name": "Amelia Elizabeth Littlemore"
+      },
+      "lastNameAtBirth": "Littlemore"
+    }
+  },
+  "hasValidData": true
+}
