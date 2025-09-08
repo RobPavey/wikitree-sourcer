@@ -69,6 +69,8 @@ This step includes assigning a record type and filling in fields like name, birt
 
 New sites use a file called `<site>_ed_reader.mjs` to do this. This provides a structure where you just need to fill in the functions that set each fields in the generalized_data structure.
 
+For more details see [this page](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/generalize_data_design.md) on the generalize data design.
+
 ## Implement the build citation step
 
 This step takes the extracted_data and generalized_data (and the options) as input and builds the citation text and saves that to the clipboard. There are common helper classes like citation_builder.mjs you should use.
