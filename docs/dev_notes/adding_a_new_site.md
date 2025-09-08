@@ -11,7 +11,7 @@ This is so that I can merge a PR to the main repo without affecting the next rel
 ## Pick a name
 
 The first decision is to choose a unique abbrevation for your new site. This will be all lower case with no spaces or underscores.
-For example FindMyPast is `fmp` and Scotlands People is `scotp`. Try to keep it to 10 characters or less.
+For example FindMyPast is `fmp` and Scotlands People is `scotp`. Try to keep it to 10 characters or less since this name will be part of many folder, file and class names.
 
 ## Use the create_new_site script to setup the files and folders for your new site
 
