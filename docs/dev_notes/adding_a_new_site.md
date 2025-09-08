@@ -57,7 +57,7 @@ This step will create an extracted_data structure that is used by the generalize
 
 Key points about this file that make it different to the other steps:
 * the `<site>_extract_data.mjs` file cannot import any other modules
-* Sourcer does not use jquery. The built-in Javascript functions query_selector and query_selector_all are used
+* Sourcer does not use jquery. The built-in Javascript functions `querySelector` and `querySelectorAll` are used
 * You can save the web page locally and test this using the unit test framework or test in the browser. Testing locally allows you to implement this before doing any work on the popup code or the manifest.
 * See [this doc on the extract data design for more details](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/extract_data_design.md)
 
