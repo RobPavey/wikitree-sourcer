@@ -4,8 +4,8 @@
 
 The code is broken up into modules. It is separated in several ways:
 
-- site specific doed (e.g. ancestry or fmp) is separated from each other and from the base code
-- code that depends on the browser APIs (and thus can't be used in local unitt tests) is separated from core code
+- site specific code (e.g. ancestry or fmp) is separated from each other and from the base code
+- code that depends on the browser APIs (and thus can't be used in local unit tests) is separated from core code
 - code that is part of the actual shipping extension is separated from the unit tests
 
 ## Top level folders
@@ -17,7 +17,7 @@ The code is broken up into modules. It is separated in several ways:
 - docs: contains documentation files
 - resources: contains images used for creating icons and screenshots used when publishing
 
-## Folders within the extension
+## Folders within the extension folder
 
 - base: this is the code that is not specific to any site
 - site: contains a folder for each supported site
@@ -28,4 +28,4 @@ The code is broken up into modules. It is separated in several ways:
 Within the base folder and within each site specific folder there are two folders:
 
 - browser: this contains code that relies on the browser APIs, it is not used in the unit tests
-- core: this contains the core core that can be tested in the unit tests, we keep as much code as we can in here
+- core: this contains the core code that can be tested in the unit tests, we keep as much code as we can in here
