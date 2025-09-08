@@ -1,6 +1,6 @@
 # Adding support for a new site
 
-Note: See the [setup guide](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md) for details of setting up your local repository and build environment before starting on adding a new site.
+Note: See the [setup guide](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md) for details of setting up your local repository and build environment before starting on adding a new site. The [README file](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/readme.md) is the best jumping off point for all developer documentation.
 
 The time taken to add support for a new site varies a lot based on the complexity of the site, the experience of the developer etc. With testing and debugging it usually takes Rob 4-15 days to add a site. The way Sourcer works means that it is not just a matter of scraping the data from the page since the search and narrative support requires interpreting the data.
 
@@ -31,7 +31,7 @@ See this [separate doc](https://github.com/RobPavey/wikitree-sourcer/blob/main/d
 
 This is not done by the create_new_site script.
 
-In order for the popup to work on your site you need to add the site to the manifest files. Because there are four different manifest files (for Chrome, Firefox, Safari macOS and Safari iOS) the same changes need to made to each one. The for files are:
+In order for the popup to work on your site you need to add the site to the manifest files. Because there are four different manifest files (for Chrome, Firefox, Safari macOS and Safari iOS) the same changes need to made to each one. The four files are:
 * Chrome: `extension/manifest.json`
 * Firefox: `browser_variants/firefox/manifest.json`
 * Safari macOS: `browser_variants/safari/macos/manifest.json`
@@ -68,6 +68,8 @@ This step takes the extracted_data structure and builds a generalized_data struc
 This step includes assigning a record type and filling in fields like name, birth date, birth place etc.
 
 New sites use a file called `<site>_ed_reader.mjs` to do this. This provides a structure where you just need to fill in the functions that set each fields in the generalized_data structure.
+
+For more details see [this page](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/generalize_data_design.md) on the generalize data design.
 
 ## Implement the build citation step
 

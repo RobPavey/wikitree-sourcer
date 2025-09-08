@@ -10,17 +10,19 @@ Note that the unit tests only test code in the `core` subfolders and not the cod
 
 ## The run_test script
 
-From a terminal window with the current director set to the root wikitree-sourcer folder enter this command:
+From a terminal window with the current directory set to the root wikitree-sourcer folder enter this command:
 
 `node scripts/run_test.js`
 
-This will run all of the unit tests. This involves testing using all of the test cases in each site's unit tests. If all is good the output will end with `+++ All tests passed +++`
+This will run all of the unit tests. This involves running all of the test cases in each site's unit tests. If all is good the output will end with:
 
-You can also fun just the tests for one site. For example to run all the tests for FamilySearch (fs) enter this:
+```+++ All tests passed +++```
+
+You can also run just the tests for one site. For example to run all the tests for FamilySearch (fs) enter this:
 
 `node scripts/run_test.js fs`
 
-To focus it more narrowly you can run just one phase of the tests. The phases are `extract, `generalize`, `citation`, `table`, `build_all_citations` and `search`.
+To focus it more narrowly you can run just one phase of the tests. The phases are `extract`, `generalize`, `citation`, `table`, `build_all_citations` and `search`.
 So for example to run just the `extract` phase for FamilySearch enter this:
 
 `node scripts/run_test.js fs extract`
@@ -30,6 +32,18 @@ You can narrow it down to one specific unit test. So to run the extract phase on
 `node scripts/run_test.js fs extract england_baptism_1838_george_newberry`
 
 This last example is useful for debugging a specific error.
+
+The run_test script reports any test files where the newly generated 'test' result is different to the stored 'ref' result. You can then compare the ref and test in VS Code. For example you might get this output:
+
+```
+#### TESTS FAILED ####
+FAILED: fs_extract_data in test: aus_tas_birth_reg_1883_alfred_widdowson (Result differs from reference)
+  ref file: ./unit_tests/fs/extracted_data/ref/aus_tas_birth_reg_1883_alfred_widdowson.json
+  test file: ./unit_tests/fs/extracted_data/test/aus_tas_birth_reg_1883_alfred_widdowson.json
+```
+If you are running the script in the terminal pane of VS Code, you can then Ctrl+Click (Windows) or Cmd+Click (Mac) on each of those json file paths to open them them in the "Open Editors" section. Then click on one in the open editors and then Ctrl/Cmd click on the other, then right-click on one of them and do "Compare selected". This will show you what changed. If it looks correct you can copy the contents of the test file into the ref file (in the diff windows).
+
+Sometimes you make a change that you know will affect all the ref files for a site/phase. Once you have checked a few you can use the run_test script with the `-force` parameter to automatically replace the ref files with the new test files.
 
 ## Using the Visual Studio Code debugger with the run_test script
 
@@ -53,4 +67,6 @@ To run one specific test case in the debugger edit the launch.json file to look 
   ]
 }
 ```
+
+You can then set breakpoints in the `fs/core/fs_extract_data.mjs` file and run in the debugger.
 
