@@ -1,6 +1,6 @@
 # Adding support for a new site
 
-Note: See the [setup guide](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md) for details of setting up your local repository and build environment before starting on adding a new site.
+Note: See the [setup guide](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md) for details of setting up your local repository and build environment before starting on adding a new site. The [README file](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/readme.md) is the best jumping off point for all developer documentation.
 
 The time taken to add support for a new site varies a lot based on the complexity of the site, the experience of the developer etc. With testing and debugging it usually takes Rob 4-15 days to add a site. The way Sourcer works means that it is not just a matter of scraping the data from the page since the search and narrative support requires interpreting the data.
 
