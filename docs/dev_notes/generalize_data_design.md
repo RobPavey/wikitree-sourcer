@@ -28,3 +28,11 @@ As the first few sites were implemented in Sourcer the generalizeData code becam
 To make it easier to add new sites we wanted a way to provide a skeleton structure that could be filled in for each site.
 The approach taken was the EdReader. This is a class names <Site>EdReader in the <site>_ed_reader.mjs file for each site. Some older sites don't use this but all new sites do.
 
+I site using the ed_reader the <site>_generalize_data.mjs file is just a imple boilerplate file that created the EdReader and uses the function commonGeneralizeData to build the GeneralizedData object using the EdReader.
+
+The EdReader will have a constructor that is passed the extracted_data. The constructor will determinr the record type and store it in the recordType property (if needed it will also set the recordSubtype and role properties).
+
+The function commonGeneralizeData then called methods on the EdReader to get each field that GeneralizedData supports. E.g. `getEventDateObj`.
+
+
+
