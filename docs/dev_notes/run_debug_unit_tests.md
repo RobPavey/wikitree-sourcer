@@ -22,7 +22,7 @@ You can also run just the tests for one site. For example to run all the tests f
 
 `node scripts/run_test.js fs`
 
-To focus it more narrowly you can run just one phase of the tests. The phases are `extract, `generalize`, `citation`, `table`, `build_all_citations` and `search`.
+To focus it more narrowly you can run just one phase of the tests. The phases are `extract`, `generalize`, `citation`, `table`, `build_all_citations` and `search`.
 So for example to run just the `extract` phase for FamilySearch enter this:
 
 `node scripts/run_test.js fs extract`
