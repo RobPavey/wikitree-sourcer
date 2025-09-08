@@ -14260,7 +14260,7 @@ const NameUtils = {
     // MACGREGOR, MCLELLAN, MACKIE, MACHIN
     // O'CONNOR
     // If it is already mixed case then we should leave it how it is. Except for special cases
-    // like "(Mrs) FRASER" in th surname
+    // like "(Mrs) FRASER" in the surname
     // If it is all upper case then maybe there should be a user option to leave in upper case
     // Else can take a stab at it with a few rules and exceptions
     function shouldUpperCaseAfterMac(name) {
