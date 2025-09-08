@@ -10,13 +10,13 @@ Note that the unit tests only test code in the `core` subfolders and not the cod
 
 ## The run_test script
 
-From a terminal window with the current director set to the root wikitree-sourcer folder enter this command:
+From a terminal window with the current directory set to the root wikitree-sourcer folder enter this command:
 
 `node scripts/run_test.js`
 
-This will run all of the unit tests. This involves testing using all of the test cases in each site's unit tests. If all is good the output will end with `+++ All tests passed +++`
+This will run all of the unit tests. This involves running all of the test cases in each site's unit tests. If all is good the output will end with `+++ All tests passed +++`
 
-You can also fun just the tests for one site. For example to run all the tests for FamilySearch (fs) enter this:
+You can also run just the tests for one site. For example to run all the tests for FamilySearch (fs) enter this:
 
 `node scripts/run_test.js fs`
 
@@ -53,4 +53,6 @@ To run one specific test case in the debugger edit the launch.json file to look 
   ]
 }
 ```
+
+You can then set breakpoints in the `fs/core/fs_extract_data.mjs` file and run in the debugger.
 
