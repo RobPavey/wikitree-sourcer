@@ -31,6 +31,18 @@ You can narrow it down to one specific unit test. So to run the extract phase on
 
 This last example is useful for debugging a specific error.
 
+The run_test script reports any test files where the newly generated 'test' result is different to the stored 'ref' result. You can then compare the ref and test in VS Code. For example you might get this output:
+
+```
+#### TESTS FAILED ####
+FAILED: fs_extract_data in test: aus_tas_birth_reg_1883_alfred_widdowson (Result differs from reference)
+  ref file: ./unit_tests/fs/extracted_data/ref/aus_tas_birth_reg_1883_alfred_widdowson.json
+  test file: ./unit_tests/fs/extracted_data/test/aus_tas_birth_reg_1883_alfred_widdowson.json
+```
+If you are running the script in the terminal pane of VS Code, you can then Ctrl+Click (Windows) or Cmd+Click (Mac) on each of those json file paths to open them them in the "Open Editors" section. Then click on one in the open editors and then Ctrl/Cmd click on the other, then right-click on one of them and do "Compare selected". This will show you what changed. If it looks correct you can copy the contents of the test file into the ref file (in the diff windows).
+
+Sometimes you make a change that you know will affect all the ref files for a site/phase. Once you have checked a few you can use the run_test script with the `-force` parameter to automatically replace the ref files with the new test files.
+
 ## Using the Visual Studio Code debugger with the run_test script
 
 To run one specific test case in the debugger edit the launch.json file to look like this:
