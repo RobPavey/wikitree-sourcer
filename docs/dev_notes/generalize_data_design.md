@@ -34,5 +34,7 @@ The EdReader will have a constructor that is passed the extracted_data. The cons
 
 The function commonGeneralizeData then called methods on the EdReader to get each field that GeneralizedData supports. E.g. `getEventDateObj`.
 
+The <Site>EdReader class is derived from a common base class `ExtractedDataReader`. This provides default implementations of each function and also provides helper functions (e.g. `  makeParentsFromForenamesAndLastNames`.
+
 
 
