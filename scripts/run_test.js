@@ -99,6 +99,11 @@ async function runTests() {
     }
   }
 
+  if (parameters.testSuiteName && !siteNames.includes(parameters.testSuiteName)) {
+    console.log("Error: site name '" + parameters.testSuiteName + "' is not recognized.");
+    return;
+  }
+
   let options = await getUnitTestOptions();
   let testManager = {
     parameters: parameters,
@@ -114,6 +119,11 @@ async function runTests() {
         await testModule.runTests(testManager);
       }
     }
+  }
+
+  if (results.totalTestsRun == 0) {
+    console.log("Error: those parameters resulted in no tests being run.");
+    return;
   }
 
   // Report the test results
