@@ -1,6 +1,6 @@
 # Adding support for a new site
 
-Note: See the [setup guide](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/contributors/setup_guide.md) for details of setting up your local repository and build environment before starting on adding a new site. The [README file](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/readme.md) is the best jumping off point for all developer documentation.
+Note: See the [setup guide](../contributors/setup_guide.md) for details of setting up your local repository and build environment before starting on adding a new site. The [README file](../readme.md) is the best jumping off point for all developer documentation.
 
 The time taken to add support for a new site varies a lot based on the complexity of the site, the experience of the developer etc. With testing and debugging it usually takes Rob 4-15 days to add a site. The way Sourcer works means that it is not just a matter of scraping the data from the page since the search and narrative support requires interpreting the data.
 
@@ -25,7 +25,7 @@ for example:
 
 `node scripts/create_new_site.js trove "Trove (Aus)"`
 
-See this [separate doc](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/what_the_create_new_site_script_does.md) for what the script does.
+See this [separate doc](what_the_create_new_site_script_does.md) for what the script does.
 
 ## Add the site to the manifest.json file(s)
 
@@ -59,7 +59,7 @@ Key points about this file that make it different to the other steps:
 * the `<site>_extract_data.mjs` file cannot import any other modules
 * Sourcer does not use jquery. The built-in Javascript functions `querySelector` and `querySelectorAll` are used
 * You can save the web page locally and test this using the unit test framework or test in the browser. Testing locally allows you to implement this before doing any work on the popup code or the manifest.
-* See [this doc on the extract data design for more details](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/extract_data_design.md)
+* See [this doc on the extract data design for more details](extract_data_design.md)
 
 ## Implement the generalize step
 
@@ -69,7 +69,7 @@ This step includes assigning a record type and filling in fields like name, birt
 
 New sites use a file called `<site>_ed_reader.mjs` to do this. This provides a structure where you just need to fill in the functions that set each fields in the generalized_data structure.
 
-For more details see [this page](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/generalize_data_design.md) on the generalize data design.
+For more details see [this page](generalize_data_design.md) on the generalize data design.
 
 ## Implement the build citation step
 
@@ -94,7 +94,7 @@ Simple sites will not need anything more but many sites have little extras like 
 
 ## Problem cases
 
-Some sites present problems in searching or building citations. These may have been encountered for other sites. See [this list of problem cases](https://github.com/RobPavey/wikitree-sourcer/blob/main/docs/dev_notes/site_problem_cases.md) to see if you can follow an existing pattern.
+Some sites present problems in searching or building citations. These may have been encountered for other sites. See [this list of problem cases](site_problem_cases.md) to see if you can follow an existing pattern.
 
 ## Documentation
 
