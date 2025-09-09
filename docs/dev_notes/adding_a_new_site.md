@@ -82,12 +82,11 @@ The code for this will be in the `extension/site/<site>/core/<site>_build_citati
 The search code for the site will allow this site to be searched from WikiTree or from all other sites that WikiTree supports.
 
 The approach taken depends on how the site can be searched. Usually it is one of two ways:
-1. The site supports search via the query part of the URL. This is the simplest. Simple example sites are freebmd and fg.
+1. The site supports search via the query part of the URL. This is the simplest. Simple example sites are `freebmd` and `fg`.
    The code for this will be in the `extension/site/<site>/core/<site>_build_search_url.mjs` file.
-3. The site does not support URL query so Sourcer must fill out the form on the sites search page and submit the form. Example sites are vicbdm and wikitree.
-   The code for this will be in the `extension/site/<site>/core/<site>_build_search_data.mjs` file.
+3. The site does not support URL query so Sourcer must save the search data in local storage and then fill out the form on the site's search page and submit the form. Example sites are `vicbdm` and `wikitree`. The code for this will be in the `extension/site/<site>/core/<site>_build_search_data.mjs` file.
 
-The create_new_site script assumes the first approach so if using the second approach rename the `<site>_build_search_url.mjs` file and copy the contents from another site using approach 2.
+The create_new_site script assumes the first approach. To use the second approach see [Implementing search using local storage](implement_search_using_local_storage.md)
 
 ## Implement any extra features for this site
 
