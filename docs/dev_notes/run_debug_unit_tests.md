@@ -49,7 +49,7 @@ Sometimes you make a change that you know will affect all the ref files for a si
 
 To run one specific test case in the debugger you use the launch.json file to pass the parameters to the run_test script.
 
-Look in the .vscode folder at the roo of your project and see if there is a launch.json file there. If not create one. Either way set the contents to:
+Look in the .vscode folder in the root folder of your project and see if there is a launch.json file there. If not create one. Either way set the contents to:
 
 ```
 {
@@ -69,7 +69,7 @@ Look in the .vscode folder at the roo of your project and see if there is a laun
   ]
 }
 ```
-You can then set breakpoints in the `fs/core/fs_extract_data.mjs` file and run in the debugger. In VSCode on Mac I use the `RUN AND DEBUG` tab in the top left section (click on the "play" style right arrow). You can also use the dropdown menus and do `Run > Start Debugging`. There is probably a shortcut also.
+You can then set breakpoints in the `fs/core/fs_extract_data.mjs` file and run in the debugger. In VSCode on Mac I use the `RUN AND DEBUG` tab in the top left section (click on the "play" style right arrow) to start the debugger. You can also use the dropdown menus and do `Run > Start Debugging`. There is probably a shortcut also.
 
 To debug your own specific examples change the three values in the `args` array.
 
