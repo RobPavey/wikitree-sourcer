@@ -1,6 +1,6 @@
 # Problem cases when adding support for a site
 
-Some sites do not make it simple to search or build citations for an idividual record. Here are some cases and how they were handled. These may provide useful examples to follow when adding a new site.
+Some sites do not make it simple to search or build citations for an individual record. Here are some cases and how they were handled. These may provide useful examples to follow when adding a new site.
 
 ## No individual record page
 
@@ -21,3 +21,4 @@ This is implemented by making a list called `primaryPersonOptions` in the genera
 ### Provide a context menu ability to find a result from a citation
 
 If the site supports URL queries then you can create a link in the citation that performs the search to find the record. But for ones that do not you can add code for the context menu `[1] Sourcer: Open Link in new Tab` feature that parses the selected citation and works out how to perform a search for it. Search the code for `openSelectionPlainText` to see how this works.
+
