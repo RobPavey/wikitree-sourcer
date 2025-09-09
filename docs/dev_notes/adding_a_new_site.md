@@ -86,7 +86,7 @@ The approach taken depends on how the site can be searched. Usually it is one of
    The code for this will be in the `extension/site/<site>/core/<site>_build_search_url.mjs` file.
 3. The site does not support URL query so Sourcer must save the search data in local storage and then fill out the form on the site's search page and submit the form. Example sites are `vicbdm` and `wikitree`. The code for this will be in the `extension/site/<site>/core/<site>_build_search_data.mjs` file.
 
-The create_new_site script assumes the first approach. To use the second approach see [Implementing search using local storage](implement_search_using_local_storage.md)
+The create_new_site script assumes the first approach. To use the second approach see [implement search using local storage](implement_search_using_local_storage.md)
 
 ## Implement any extra features for this site
 
