@@ -34,7 +34,7 @@ There are two different patterns you can use here:
 1. The simpler system used by `freecen`, `freereg`, `psuk`, `scotp`, `wiewaswie` and `wikitree`.
 2. The common `doBackgroundSearchWithSearchData` function which is more powerful but a bit more complex. This is used by `nswbdm`, `nzbdm` and `vicbdm`. It is also used by the `gro` smart search.
 
-The second pattern allows for already open tabs on the site to be used for the search. This relies on the site content script registering open tabs and gets complicated if the open page is not the search page. Most sites that use this have a search option so the user can choose whether to use an open tab or open a new one. This pattern is good to use for sites where it takes a long time to open a new page.
+The second pattern allows for already open tabs on the site to be used for the search. This relies on the site content script registering open tabs and the content script gets complicated if the open page is not the search page. Most sites that use this have a search option so the user can choose whether to use an open tab or open a new one. This pattern is good to use for sites where it takes a long time to open a new page.
 
 # The `<site>_content.js` file
 
