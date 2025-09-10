@@ -106,6 +106,8 @@ function emptyMenu() {
 
   // setup keyboard shortcut listener
   clearShortcuts();
+  // remove any existing listener first (so a submenu doesn't have two listeners)
+  document.removeEventListener("keyup", shortcutListenerFunction);
   document.addEventListener("keyup", shortcutListenerFunction);
 }
 
