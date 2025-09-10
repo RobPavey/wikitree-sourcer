@@ -41,7 +41,7 @@ There are actually two places in the manifest file that have to be changed to ad
 
 ### Add a section under "content_scripts"
 
-This is the obvious one. This is what causes the extensions site-specific content script to be loaded when on this site.
+This is the obvious one. This is what causes the extensions site-specific content script to be loaded when on this site. Pay close attention to the match section - not all web addresses start with www so make sure that the match string will match both record pages and the search page on your site.
 
 ### Add a section under "web_accessible_resources"
 
