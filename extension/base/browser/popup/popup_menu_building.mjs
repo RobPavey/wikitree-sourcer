@@ -76,6 +76,24 @@ function macSecondMonitorWorkaround() {
 var waitingBusyMessage1 = "";
 var waitingBusyMessage2 = "";
 
+var keyboardShortcuts = [];
+
+function shortcutListenerFunction(e) {
+  for (let shortcut of keyboardShortcuts) {
+    if (e.key == shortcut.key) {
+      shortcut.func();
+    }
+  }
+}
+
+function clearShortcuts() {
+  keyboardShortcuts = [];
+}
+
+function addShortcut(key, func) {
+  keyboardShortcuts.push({ key: key, func: func });
+}
+
 function emptyMenu() {
   waitingBusyMessage1 = "";
   waitingBusyMessage2 = "";
@@ -85,6 +103,10 @@ function emptyMenu() {
   while (menuElement.firstChild) {
     menuElement.removeChild(menuElement.firstChild);
   }
+
+  // setup keyboard shortcut listener
+  clearShortcuts();
+  document.addEventListener("keyup", shortcutListenerFunction);
 }
 
 var keepPopupOpen = false;
@@ -850,11 +872,7 @@ function addMenuItem(menu, innerText, onclick, shortcut) {
   menu.list.appendChild(listItem);
 
   if (shortcut) {
-    document.addEventListener("keyup", (e) => {
-      if (e.key == shortcut) {
-        onclick();
-      }
-    });
+    addShortcut(shortcut, onclick);
   }
 }
 
