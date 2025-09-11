@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "DeathOrBurial",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van der Merwe",
+    "forenames": "Izak Wilhelmus"
+  },
+  "eventDate": {
+    "yearString": "1942"
+  },
+  "eventPlace": {
+    "placeString": "Ceres, Western Cape, South Africa"
+  },
+  "lastNameAtDeath": "van der Merwe",
+  "birthDate": {
+    "yearString": "1869"
+  },
+  "deathDate": {
+    "yearString": "1942"
+  },
+  "ageAtEvent": 73,
+  "ageAtDeath": 73,
+  "primaryPersonOptions": [
+    "Izak Wilhelmus van der Merwe",
+    "Debora Petronella Jacoba van der Merwe",
+    "Bettie van der Merwe"
+  ],
+  "hasValidData": true
+}

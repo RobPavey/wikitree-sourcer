@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "DeathOrBurial",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van Eeden",
+    "forenames": "Bessie"
+  },
+  "eventDate": {
+    "yearString": "1918"
+  },
+  "eventPlace": {
+    "placeString": "Bredasdorp, Western Cape, South Africa"
+  },
+  "lastNameAtDeath": "van Eeden",
+  "birthDate": {
+    "yearString": "1895"
+  },
+  "deathDate": {
+    "yearString": "1918"
+  },
+  "ageAtEvent": 23,
+  "ageAtDeath": 23,
+  "primaryPersonOptions": [
+    "Bessie van Eeden",
+    "Baby van Eeden"
+  ],
+  "hasValidData": true
+}

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Eastern Cape\"<br/>\nEastern Cape, BATHURST, Urban area / Eastern Cape, BATHURST, Wesleyan Church, Cemetery /  PURDON Kenneth Trevelyn 1919-2007 :: PURDON Sylvia Anne nee NOVELLA 1939-2014 :: WIGGIN Dorothy Merle nee PURDON 1922-2012 /<br/>\n[https://www.graves.eggsa.org/easterncape/BATHURST-Urban/Bathurst-Weslyan/PURDON/IMG_1241.JPG PURDON Kenneth Trevelyn 1919-2007 :: PURDON Sylvia Anne nee NOVELLA 1939-2014 :: WIGGIN Dorothy Merle nee PURDON 1922-2012] (accessed 6 May 2021)<br/>\nKenneth Trevelyn Purdon death 2007 (age 88) in Bathurst, Eastern Cape, South Africa.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Kenneth died (age 88) in 2007 in Bathurst, Eastern Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Eastern Cape\"<br/>\nEastern Cape, BATHURST, Urban area / Eastern Cape, BATHURST, Wesleyan Church, Cemetery /  PURDON Kenneth Trevelyn 1919-2007 :: PURDON Sylvia Anne nee NOVELLA 1939-2014 :: WIGGIN Dorothy Merle nee PURDON 1922-2012 /<br/>\n[https://www.graves.eggsa.org/easterncape/BATHURST-Urban/Bathurst-Weslyan/PURDON/IMG_1241.JPG PURDON Kenneth Trevelyn 1919-2007 :: PURDON Sylvia Anne nee NOVELLA 1939-2014 :: WIGGIN Dorothy Merle nee PURDON 1922-2012] (accessed 6 May 2021)<br/>\nKenneth Trevelyn Purdon death 2007 (age 88) in Bathurst, Eastern Cape, South Africa.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Eastern Cape\"<br/>Eastern Cape, BATHURST, Urban area / Eastern Cape, BATHURST, Wesleyan Church, Cemetery /  PURDON Kenneth Trevelyn 1919-2007 :: PURDON Sylvia Anne nee NOVELLA 1939-2014 :: WIGGIN Dorothy Merle nee PURDON 1922-2012 /<br/>[https://www.graves.eggsa.org/easterncape/BATHURST-Urban/Bathurst-Weslyan/PURDON/IMG_1241.JPG PURDON Kenneth Trevelyn 1919-2007 :: PURDON Sylvia Anne nee NOVELLA 1939-2014 :: WIGGIN Dorothy Merle nee PURDON 1922-2012] (accessed 6 May 2021)<br/>Kenneth Trevelyn Purdon death 2007 (age 88) in Bathurst, Eastern Cape, South Africa.",
+    "type": "source"
+  }
+}

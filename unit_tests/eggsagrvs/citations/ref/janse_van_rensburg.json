@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, RIVERSDALE, Urban area / Western Cape, RIVERSDALE, New cemetery /  R - Vanne :: Surnames - R /<br/>\n[https://www.graves.eggsa.org/westerncape/Riversdale_Urban/NuweBP/R%20-%20Vanne%20__%20Surnames%20-%20R/WC-Riversdale-nuweBP-ALouw-0026.JPG RENSBURG Gil, Janse van 1908-1995 :: JANSE VAN RENSBURG Susie 1925-1996] (accessed 6 May 2021)<br/>\nGil Janse van Rensburg death 1995 (age 87) in Riversdale, Western Cape, South Africa.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Gil died (age 87) in 1995 in Riversdale, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, RIVERSDALE, Urban area / Western Cape, RIVERSDALE, New cemetery /  R - Vanne :: Surnames - R /<br/>\n[https://www.graves.eggsa.org/westerncape/Riversdale_Urban/NuweBP/R%20-%20Vanne%20__%20Surnames%20-%20R/WC-Riversdale-nuweBP-ALouw-0026.JPG RENSBURG Gil, Janse van 1908-1995 :: JANSE VAN RENSBURG Susie 1925-1996] (accessed 6 May 2021)<br/>\nGil Janse van Rensburg death 1995 (age 87) in Riversdale, Western Cape, South Africa.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>Western Cape, RIVERSDALE, Urban area / Western Cape, RIVERSDALE, New cemetery /  R - Vanne :: Surnames - R /<br/>[https://www.graves.eggsa.org/westerncape/Riversdale_Urban/NuweBP/R%20-%20Vanne%20__%20Surnames%20-%20R/WC-Riversdale-nuweBP-ALouw-0026.JPG RENSBURG Gil, Janse van 1908-1995 :: JANSE VAN RENSBURG Susie 1925-1996] (accessed 6 May 2021)<br/>Gil Janse van Rensburg death 1995 (age 87) in Riversdale, Western Cape, South Africa.",
+    "type": "source"
+  }
+}

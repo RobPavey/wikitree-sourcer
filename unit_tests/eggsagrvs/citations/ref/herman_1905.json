@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery /<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0732.jpeg HERMANN -1905] (accessed 6 May 2021)<br/>\nHermann death 1905 in Namibia.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Hermann died in 1905 in Namibia.<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery /<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0732.jpeg HERMANN -1905] (accessed 6 May 2021)<br/>\nHermann death 1905 in Namibia.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Worldwide\"<br/>Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery /<br/>[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0732.jpeg HERMANN -1905] (accessed 6 May 2021)<br/>Hermann death 1905 in Namibia.",
+    "type": "source"
+  }
+}

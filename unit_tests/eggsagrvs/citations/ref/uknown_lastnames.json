@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves in South Africa - Gauteng\"<br/>\nGauteng, JOHANNESBURG, Urban area / Gauteng, JOHANNESBURG, Braamfontein / Gauteng, JOHANNESBURG, Braamfontein, Main cemetery / S - Surnames :: Vanne - S /  SKINN :: MARTIN :: PEAKE :: HUNT /<br/>\n[https://www.graves.eggsa.org/gauteng/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/Skinn/LDH00476.jpg ? Dad :: ? Mother -1913 :: Walter -1907 :: ? Stella :: ? Lallie :: ? Scott ] (accessed 6 May 2021)<br/>\nDad ? death in Johannesburg, Gauteng, South Africa.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Dad died in Johannesburg, Gauteng, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves in South Africa - Gauteng\"<br/>\nGauteng, JOHANNESBURG, Urban area / Gauteng, JOHANNESBURG, Braamfontein / Gauteng, JOHANNESBURG, Braamfontein, Main cemetery / S - Surnames :: Vanne - S /  SKINN :: MARTIN :: PEAKE :: HUNT /<br/>\n[https://www.graves.eggsa.org/gauteng/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/Skinn/LDH00476.jpg ? Dad :: ? Mother -1913 :: Walter -1907 :: ? Stella :: ? Lallie :: ? Scott ] (accessed 6 May 2021)<br/>\nDad ? death in Johannesburg, Gauteng, South Africa.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"eGGSA Graves in South Africa - Gauteng\"<br/>Gauteng, JOHANNESBURG, Urban area / Gauteng, JOHANNESBURG, Braamfontein / Gauteng, JOHANNESBURG, Braamfontein, Main cemetery / S - Surnames :: Vanne - S /  SKINN :: MARTIN :: PEAKE :: HUNT /<br/>[https://www.graves.eggsa.org/gauteng/Johannesburg-urban/Braamfontein/Braamfontein-Main-cem/S%20-%20Surnames%20__%20Vanne%20-%20S/Skinn/LDH00476.jpg ? Dad :: ? Mother -1913 :: Walter -1907 :: ? Stella :: ? Lallie :: ? Scott ] (accessed 6 May 2021)<br/>Dad ? death in Johannesburg, Gauteng, South Africa.",
+    "type": "source"
+  }
+}

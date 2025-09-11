@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "DeathOrBurial",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van der Merwe",
+    "forenames": "Rachel Jacoba Elizabeth"
+  },
+  "eventDate": {
+    "yearString": "1972"
+  },
+  "eventPlace": {
+    "placeString": "Bredasdorp, Western Cape, South Africa"
+  },
+  "lastNameAtBirth": "le Roux",
+  "lastNameAtDeath": "van der Merwe",
+  "birthDate": {
+    "yearString": "1885"
+  },
+  "deathDate": {
+    "yearString": "1972"
+  },
+  "ageAtEvent": 87,
+  "ageAtDeath": 87,
+  "hasValidData": true
+}
