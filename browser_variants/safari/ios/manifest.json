@@ -105,7 +105,7 @@
       "js": ["base/browser/content/content_common.js", "site/noda/browser/noda_content.js"]
     },
     {
-      "matches": ["*://www.graves.eggsa.org/*"],
+      "matches": ["*://graves.eggsa.org/*", "*://www.graves.eggsa.org/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/eggsagrvs/browser/eggsagrvs_content.js"]
     },
@@ -371,7 +371,7 @@
     },
     {
       "resources": ["site/eggsagrvs/core/eggsagrvs_extract_data.mjs"],
-      "matches": ["*://www.graves.eggsa.org/*"]
+      "matches": ["*://graves.eggsa.org/*", "*://www.graves.eggsa.org/*"]
     },
     {
       "resources": ["site/fg/core/fg_extract_data.mjs"],
