@@ -90,7 +90,7 @@ The create_new_site script assumes the first approach. To use the second approac
 
 ## Implement options for the site
 
-Each site can have its own option settings for searching the site and for building citations. The `create_new_site` script generates the file `<site>_options.mjs`. If you want any site options you will define them here. See other sites with similar options for examples.
+Each site can have its own option settings for searching the site and for building citations. The `create_new_site` script generates the file `extension/site/<site>/core/<site>_options.mjs`. If you want any site options you will define them here. See other sites with similar options for examples.
 
 ## Implement any extra features for this site
 
