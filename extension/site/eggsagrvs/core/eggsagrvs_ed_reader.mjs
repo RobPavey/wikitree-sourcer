@@ -66,11 +66,12 @@ class EggsagrvsEdReader extends ExtractedDataReader {
   }
 
   getSourceType() {
-    return RT.DeathOrBurial;
+    return "record";
   }
 
   getNameObj() {
     const p = this.getPerson();
+    if (!p) return undefined;
     return this.makeNameObjFromForenamesAndLastName(p.firstNames, p.lastName);
   }
 
@@ -139,42 +140,6 @@ class EggsagrvsEdReader extends ExtractedDataReader {
       return parseInt(p.death, 10) - parseInt(p.birth, 10);
     }
     return "";
-  }
-
-  getAgeAtDeath() {
-    return this.getAgeAtEvent();
-  }
-
-  getRegistrationDistrict() {
-    return "";
-  }
-
-  getRelationshipToHead() {
-    return "";
-  }
-
-  getMaritalStatus() {
-    return "";
-  }
-
-  getOccupation() {
-    return "";
-  }
-
-  getSpouses() {
-    return undefined;
-  }
-
-  getParents() {
-    return undefined;
-  }
-
-  getHousehold() {
-    return undefined;
-  }
-
-  getCollectionData() {
-    return undefined;
   }
 }
 

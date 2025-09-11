@@ -44,7 +44,7 @@ function buildSearchData(input) {
     fieldData.simpleNameFields["what_firstname"] = firstName;
   }
 
-  let lastName = gd.inferLastNameGivenParametersAndCollection(undefined, undefined);
+  let lastName = gd.inferLastName();
   if (lastName) {
     const prefix = multiWordSurnamePrefix(lastName);
     if (prefix) {
