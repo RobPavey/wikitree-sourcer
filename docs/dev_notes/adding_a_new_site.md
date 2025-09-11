@@ -88,6 +88,10 @@ The approach taken depends on how the site can be searched. Usually it is one of
 
 The create_new_site script assumes the first approach. To use the second approach see [implement search using local storage](implement_search_using_local_storage.md)
 
+## Implement options for the site
+
+Each site can have its own option settings for searching the site and for building citations. The `create_new_site` script generates the file `<site>_options.mjs`. If you want any site options you will define them here. See other sites with similar options for examples.
+
 ## Implement any extra features for this site
 
 Simple sites will not need anything more but many sites have little extras like context menu support or menu items to build templates etc.
