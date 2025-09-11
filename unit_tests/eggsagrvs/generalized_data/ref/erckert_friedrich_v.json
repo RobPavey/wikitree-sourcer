@@ -1,0 +1,24 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "DeathOrBurial",
+  "recordType": "Death",
+  "name": {
+    "lastName": "v Erckert",
+    "forenames": "Friedrich"
+  },
+  "eventDate": {
+    "yearString": "1908"
+  },
+  "eventPlace": {
+    "country": "Namibia"
+  },
+  "lastNameAtDeath": "v Erckert",
+  "deathDate": {
+    "yearString": "1908"
+  },
+  "primaryPersonOptions": [
+    "Friedrich v Erckert",
+    "Oskar Ebinger"
+  ],
+  "hasValidData": true
+}

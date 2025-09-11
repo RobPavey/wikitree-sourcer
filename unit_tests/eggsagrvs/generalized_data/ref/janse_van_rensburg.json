@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "DeathOrBurial",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Janse van Rensburg",
+    "forenames": "Gil"
+  },
+  "eventDate": {
+    "yearString": "1995"
+  },
+  "eventPlace": {
+    "placeString": "Riversdale, Western Cape, South Africa"
+  },
+  "lastNameAtDeath": "Janse van Rensburg",
+  "birthDate": {
+    "yearString": "1908"
+  },
+  "deathDate": {
+    "yearString": "1995"
+  },
+  "ageAtEvent": 87,
+  "ageAtDeath": 87,
+  "primaryPersonOptions": [
+    "Gil Janse van Rensburg",
+    "Susie Janse van Rensburg"
+  ],
+  "hasValidData": true
+}

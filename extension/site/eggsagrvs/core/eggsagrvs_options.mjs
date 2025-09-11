@@ -22,55 +22,41 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import {
+  registerSubsectionForOptions,
+  registerSubheadingForOptions,
+  registerOptionsGroup,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
 
-// The order should not matter since user facing lists are sorted
+const searchOptionsGroup = {
+  category: "search",
+  subcategory: "eggsagrvs",
+  tab: "search",
+  subsection: "eggsagrvs",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "fullFirstname",
+      type: "checkbox",
+      label: "Use all first names in First name field",
+      defaultValue: false,
+    },
+  ],
+};
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nsvr",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "eggsagrvs",
-];
+const citationOptionsGroup = {
+  category: "citation",
+  subcategory: "eggsagrvs",
+  tab: "citation",
+  subsection: "eggsagrvs",
+  options: [],
+};
 
-export { siteNames };
+registerSubsectionForOptions("search", "eggsagrvs", "eGGSA Graves");
+registerSiteSearchPopupOptionsGroup("eggsagrvs");
+registerSubheadingForOptions("search", "eggsagrvs", "parameters", "Search Parameters");
+registerOptionsGroup(searchOptionsGroup);
+
+registerSubsectionForOptions("citation", "eggsagrvs", "eGGSA Graves");
+registerOptionsGroup(citationOptionsGroup);

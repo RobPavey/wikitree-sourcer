@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  M - Surnames :: Vanne - M /<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/M%20-%20Surnames%20__%20Vanne%20-%20M/Van+der+Meet_+Jan+J+en+Huddelstone_+FJJ.jpg MEET Jan J., van der 1861 1940 &  F.J.J. HUDDLESTONE 1867-1942] (accessed 6 May 2021)<br/>\nJan J van der Meet death 1940 (age 79) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Jan died (age 79) in 1940 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  M - Surnames :: Vanne - M /<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/M%20-%20Surnames%20__%20Vanne%20-%20M/Van+der+Meet_+Jan+J+en+Huddelstone_+FJJ.jpg MEET Jan J., van der 1861 1940 &  F.J.J. HUDDLESTONE 1867-1942] (accessed 6 May 2021)<br/>\nJan J van der Meet death 1940 (age 79) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  M - Surnames :: Vanne - M /<br/>[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/M%20-%20Surnames%20__%20Vanne%20-%20M/Van+der+Meet_+Jan+J+en+Huddelstone_+FJJ.jpg MEET Jan J., van der 1861 1940 &  F.J.J. HUDDLESTONE 1867-1942] (accessed 6 May 2021)<br/>Jan J van der Meet death 1940 (age 79) in Bredasdorp, Western Cape, South Africa.",
+    "type": "source"
+  }
+}
