@@ -16,9 +16,9 @@ The `freereg` is a good simple example to look at for this. `vicbdm` is a more c
 
 The `create_new_site` script will have created the file `core/<site>_build_search_url.mjs` and `<site>_url_builder.mjs`.
 
-Delete the `<site>_url_builder.mjs` file as it is not needed if not using a URL query.
+Delete the `<site>_uri_builder.mjs` file as it is not needed if not using a URL query.
 
-Rename `core/<site>_build_search_url.mjs` to `core/<site>_build_search_data.mjs`. See an example like `freereg` to see what this file should contain.
+Rename `core/<site>_build_search_url.mjs` to `core/<site>_build_search_data.mjs`. See an example like `freereg` to see what this file should contain. You can either delete the whole contents and copy the contents from another site or edit the functions that are there in which case the import of `<site>_uri_builder.mjs` should be removed.
 
 It should export a function named `buildSearchData` which returns an object. The properties of this object are site specific but usually it has a property named `fieldData`.
 
