@@ -194,14 +194,8 @@ function finalizeRegistry() {
       }
     }
 
-    // Sort others alphabetically
-    if (a.label < b.label) {
-      return -1;
-    } else if (a.label > b.label) {
-      return 1;
-    } else {
-      return 0;
-    }
+    // Sort others alphabetically (ignoring case so that something like eGGSA does not come after WikiTree)
+    return a.label.localeCompare(b.label);
   }
 
   for (let tab of internalOptionsRegistry.tabs) {
