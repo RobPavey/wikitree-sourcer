@@ -32,7 +32,7 @@ function extractData(document, url) {
 
   const peopleH2 = document.querySelector("#object-title h2");
   if (!peopleH2) {
-    return false;
+    return result;
   }
   result.peopleStr = peopleH2.textContent;
   result.topHeading = document.querySelector("#header h1")?.textContent || "";
