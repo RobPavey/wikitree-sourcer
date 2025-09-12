@@ -72,6 +72,10 @@ const regressionData = [
     url: "https://www.myheritage.com/research/record-10151-40011245/william-henry-pavey-in-1851-england-wales-census",
   },
   {
+    caseName: "england_census_1939_joyce_shead",
+    url: "https://www.myheritage.com/research/record-10678-32461148/joyce-w-shead-in-1939-register-of-england-wales",
+  },
+  {
     caseName: "england_death_gro_1970_peter_wilson",
     url: "https://www.myheritage.com/research/record-10093-95546275/peter-wilson-in-england-wales-deaths-gro-indexes",
   },

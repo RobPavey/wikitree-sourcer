@@ -36,6 +36,10 @@ const recordTypeMatches = [
     recordType: RT.MarriageRegistration,
     collectionIds: ["10443"],
   },
+  {
+    recordType: RT.Census,
+    collectionIds: ["10678"],
+  },
 
   // put ones with Document type first
   {
@@ -81,7 +85,7 @@ const recordTypeMatches = [
   },
   {
     recordType: RT.Census,
-    collectionTitleMatches: [["census"]],
+    collectionTitleMatches: [["census"], ["register"]],
     requiredRecordSections: [["Census"]],
   },
   {
@@ -364,7 +368,7 @@ class MhEdReader extends ExtractedDataReader {
         recordSections: ed.recordSections,
       };
 
-      // convert recordData into labels since it is not in standard fotm
+      // convert recordData into labels since it is not in standard form
       if (this.ed.recordData) {
         let recordDataLabels = [];
         for (let field of Object.values(ed.recordData)) {
