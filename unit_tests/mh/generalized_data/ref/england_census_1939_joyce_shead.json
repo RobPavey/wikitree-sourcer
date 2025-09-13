@@ -1,0 +1,58 @@
+{
+  "sourceOfData": "mh",
+  "sourceType": "record",
+  "recordType": "Census",
+  "name": {
+    "name": "Joyce W Shead"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "29 Sep 1939"
+  },
+  "eventPlace": {
+    "placeString": "12, Evans Street, Derby C.B., Derbyshire, England"
+  },
+  "birthDate": {
+    "dateString": "17 Mar 1922"
+  },
+  "ageAtEvent": "17",
+  "relationshipToHead": "<private> this record is officially closed",
+  "maritalStatus": "single",
+  "occupation": "Shop Office Girl Lms",
+  "householdArrayFields": [
+    "relationship",
+    "name",
+    "birthYear"
+  ],
+  "householdArray": [
+    {
+      "relationship": "head",
+      "name": "Francis Shead",
+      "birthYear": "Dec 13 1896"
+    },
+    {
+      "relationship": "wife",
+      "name": "Dorothy Shead",
+      "birthYear": "Mar 3 1897"
+    },
+    {
+      "relationship": "<private> this record is officially closed",
+      "name": "Joyce W. Shead",
+      "birthYear": "Mar 17 1922",
+      "isSelected": true,
+      "maritalStatus": "single",
+      "age": "17",
+      "occupation": "Shop Office Girl Lms",
+      "gender": "female"
+    },
+    {
+      "relationship": "<private> this record is officially closed"
+    }
+  ],
+  "collectionData": {
+    "id": "10678",
+    "county": "Derbyshire",
+    "piece": "5871F"
+  },
+  "hasValidData": true
+}

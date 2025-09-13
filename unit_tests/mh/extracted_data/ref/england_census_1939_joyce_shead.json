@@ -1,0 +1,91 @@
+{
+  "url": "https://www.myheritage.com/research/record-10678-32461148/joyce-w-shead-in-1939-register-of-england-wales",
+  "success": true,
+  "collectionTitle": "1939 Register of England & Wales",
+  "pageType": "record",
+  "recordTitle": "Joyce W. Shead",
+  "recordData": {
+    "NAME": {
+      "label": "Name",
+      "value": "Joyce W. Shead"
+    },
+    "gender": {
+      "label": "Gender",
+      "value": "Female"
+    },
+    "birth": {
+      "label": "Birth",
+      "dateString": "Mar 17 1922"
+    },
+    "census": {
+      "label": "Residence",
+      "dateString": "Sep 29 1939",
+      "placeString": "12, Evans Street, Derby C.B., Derbyshire, England"
+    },
+    "age": {
+      "label": "Age",
+      "value": "17"
+    },
+    "marital-status": {
+      "label": "Marital status",
+      "value": "Single"
+    },
+    "occupation": {
+      "label": "Occupation",
+      "value": "Shop Office Girl Lms"
+    }
+  },
+  "recordSections": {
+    "Census": {
+      "District": "Derby C.B.",
+      "E.D. Letter Code": "RACM",
+      "County": "Derbyshire",
+      "TNA Reference": "RG101/5871F/020/1",
+      "Country": "England",
+      "Piece": "5871F",
+      "Date": "Sep 29 1939",
+      "Item #": "020",
+      "Schedule": "210",
+      "Line": "1"
+    }
+  },
+  "household": {
+    "headings": [
+      "Relation to head",
+      "Name",
+      "Birth",
+      "Marital status",
+      "Occupation"
+    ],
+    "members": [
+      {
+        "Relation to head": "Head",
+        "link": "https://www.myheritage.com/research/record-10678-32461146/francis-shead-in-1939-register-of-england-wales",
+        "Name": "Francis Shead",
+        "Birth": "Dec 13 1896",
+        "Marital status": "Married",
+        "Occupation": "LMS progress man"
+      },
+      {
+        "Relation to head": "Wife (implied)",
+        "link": "https://www.myheritage.com/research/record-10678-32461147/dorothy-shead-in-1939-register-of-england-wales",
+        "Name": "Dorothy Shead",
+        "Birth": "Mar 3 1897",
+        "Marital status": "Married",
+        "Occupation": "Unpaid Domestic Duties"
+      },
+      {
+        "isSelected": true,
+        "Relation to head": "<Private> This record is officially closed",
+        "link": "https://www.myheritage.com/research/record-10678-32461148/joyce-w-shead-in-1939-register-of-england-wales",
+        "Name": "Joyce W. Shead",
+        "Birth": "Mar 17 1922",
+        "Marital status": "Single",
+        "Occupation": "Shop Office Girl Lms"
+      },
+      {
+        "Relation to head": "<Private> This record is officially closed"
+      }
+    ]
+  }
+}
