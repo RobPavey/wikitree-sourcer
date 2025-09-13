@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractData(document, url) {
+function extractData(document, url, siteSpecificInput) {
   var result = {};
 
   if (url) {
@@ -37,12 +37,18 @@ function extractData(document, url) {
   result.peopleStr = peopleH2.textContent;
   result.topHeading = document.querySelector("#header h1")?.textContent || "";
   const breadcrumb = document.querySelector("#breadcrumb")?.textContent || "";
-  const match = breadcrumb.match(/^[\n\t]*([^\n\t]+)/);
-  result.breadcrumb = match ? match[1] : null;
+  const match = breadcrumb.match(/^[\n\t]*([^\n\t]+)[\n\t]*(\([^)]+\))?/);
+  if (match) {
+    result.breadcrumb = match[1].replace(/\s*\/\s*$/, "");
+    result.imagePos = match[2] ? match[2] : null;
+  } else {
+    result.breadcrumb = null;
+    result.imagePos = null;
+  }
 
   result.success = true;
 
-  // console.log(result);
+  // console.log("extractData", result);
 
   return result;
 }

@@ -108,6 +108,104 @@ const regressionData = [
   },
   */
 ];
+const optionVariants = [
+  {
+    variantName: "linkIn_imgTitle",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inImageTitle",
+      citation_general_referencePosition: "afterSourceTitle",
+      citation_eggsagrvs_includeImgPos: false,
+    },
+  },
+  {
+    variantName: "linkIn_imgTitle_withImgPos",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inImageTitle",
+      citation_general_referencePosition: "afterSourceTitle",
+      citation_eggsagrvs_includeImgPos: true,
+    },
+  },
+  {
+    variantName: "linkIn_srcTitle",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inSourceTitle",
+      citation_general_referencePosition: "afterSourceTitle",
+      citation_eggsagrvs_includeImgPos: false,
+    },
+  },
+  {
+    variantName: "linkIn_srcTitle_withImgPos",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inSourceTitle",
+      citation_general_referencePosition: "afterSourceTitle",
+      citation_eggsagrvs_includeImgPos: true,
+    },
+  },
+  {
+    variantName: "linkIn_ref",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inRef",
+      citation_general_referencePosition: "afterSourceTitle",
+      citation_eggsagrvs_includeImgPos: false,
+    },
+  },
+  {
+    variantName: "linkIn_ref_withImgPos",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inRef",
+      citation_general_referencePosition: "afterSourceTitle",
+      citation_eggsagrvs_includeImgPos: true,
+    },
+  },
+  {
+    variantName: "linkIn_imgTitle_refAtEnd",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inImageTitle",
+      citation_general_referencePosition: "atEnd",
+      citation_eggsagrvs_includeImgPos: false,
+    },
+  },
+  {
+    variantName: "linkIn_imgTitle_refAtEnd_withImgPos",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inImageTitle",
+      citation_general_referencePosition: "atEnd",
+      citation_eggsagrvs_includeImgPos: true,
+    },
+  },
+  {
+    variantName: "linkIn_srcTitle_refAtEnd",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inSourceTitle",
+      citation_general_referencePosition: "atEnd",
+      citation_eggsagrvs_includeImgPos: false,
+    },
+  },
+  {
+    variantName: "linkIn_srcTitle_refAtEnd_withImgPos",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inSourceTitle",
+      citation_general_referencePosition: "atEnd",
+      citation_eggsagrvs_includeImgPos: true,
+    },
+  },
+  {
+    variantName: "linkIn_ref_refAtEnd",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inRef",
+      citation_general_referencePosition: "atEnd",
+      citation_eggsagrvs_includeImgPos: false,
+    },
+  },
+  {
+    variantName: "linkIn_ref_refAtEnd_withImgPos",
+    optionOverrides: {
+      citation_eggsagrvs_includeLink: "inRef",
+      citation_general_referencePosition: "atEnd",
+      citation_eggsagrvs_includeImgPos: true,
+    },
+  },
+];
 
 async function runTests(testManager) {
   await runExtractDataTests("eggsagrvs", extractData, regressionData, testManager);
@@ -115,7 +213,7 @@ async function runTests(testManager) {
   await runGeneralizeDataTests("eggsagrvs", generalizeData, regressionData, testManager);
 
   const functions = { buildCitation: buildCitation };
-  await runBuildCitationTests("eggsagrvs", functions, regressionData, testManager);
+  await runBuildCitationTests("eggsagrvs", functions, regressionData, testManager, optionVariants);
 }
 
 export { runTests };

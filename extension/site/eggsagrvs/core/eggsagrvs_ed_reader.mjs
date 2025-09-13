@@ -141,6 +141,10 @@ class EggsagrvsEdReader extends ExtractedDataReader {
     }
     return "";
   }
+
+  getAgeAtDeath() {
+    return this.getAgeAtEvent();
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
