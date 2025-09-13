@@ -50,7 +50,25 @@ const citationOptionsGroup = {
   subcategory: "eggsagrvs",
   tab: "citation",
   subsection: "eggsagrvs",
-  options: [],
+  options: [
+    {
+      optionName: "includeLink",
+      type: "select",
+      label: "Include link to eGGSA Graves site",
+      values: [
+        { value: "inImageTitle", text: "In image title" },
+        { value: "inSourceTitle", text: "In source title" },
+        { value: "inRef", text: "In source reference data (if at end)" },
+      ],
+      defaultValue: "inImageTitle",
+    },
+    {
+      optionName: "includeImgPos",
+      type: "checkbox",
+      label: "Include (M of N images) in citation if available",
+      defaultValue: false,
+    },
+  ],
 };
 
 registerSubsectionForOptions("search", "eggsagrvs", "eGGSA Graves");

@@ -1,14 +1,146 @@
 {
-  "std_inline": {
-    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E /<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+  "linkIn_imgTitle_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
     "type": "inline"
   },
-  "std_narrative": {
-    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E /<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+  "linkIn_imgTitle_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
     "type": "narrative"
   },
-  "std_source": {
-    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E /<br/>[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.",
+  "linkIn_imgTitle_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E<br/>[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.",
+    "type": "source"
+  },
+  "linkIn_imgTitle_withImgPos_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E (3 of 30 images)<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_imgTitle_withImgPos_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E (3 of 30 images)<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_imgTitle_withImgPos_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E (3 of 30 images)<br/>[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.",
+    "type": "source"
+  },
+  "linkIn_srcTitle_inline": {
+    "citation": "<ref>\n'''Death''':\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_srcTitle_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_srcTitle_source": {
+    "citation": "* '''Death''': [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.",
+    "type": "source"
+  },
+  "linkIn_srcTitle_withImgPos_inline": {
+    "citation": "<ref>\n'''Death''':\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_srcTitle_withImgPos_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_srcTitle_withImgPos_source": {
+    "citation": "* '''Death''': [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.",
+    "type": "source"
+  },
+  "linkIn_ref_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_ref_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_ref_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E<br/>[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.",
+    "type": "source"
+  },
+  "linkIn_ref_withImgPos_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E (3 of 30 images)<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_ref_withImgPos_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nWestern Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E (3 of 30 images)<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_ref_withImgPos_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E (3 of 30 images)<br/>[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa.",
+    "type": "source"
+  },
+  "linkIn_imgTitle_refAtEnd_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971.\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_imgTitle_refAtEnd_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971.\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_imgTitle_refAtEnd_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>citing eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971.",
+    "type": "source"
+  },
+  "linkIn_imgTitle_refAtEnd_withImgPos_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images).\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_imgTitle_refAtEnd_withImgPos_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images).\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_imgTitle_refAtEnd_withImgPos_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971] (accessed 6 May 2021)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>citing eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images).",
+    "type": "source"
+  },
+  "linkIn_srcTitle_refAtEnd_inline": {
+    "citation": "<ref>\n'''Death''':\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971.\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_srcTitle_refAtEnd_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971.\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_srcTitle_refAtEnd_source": {
+    "citation": "* '''Death''': [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>citing eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971.",
+    "type": "source"
+  },
+  "linkIn_srcTitle_refAtEnd_withImgPos_inline": {
+    "citation": "<ref>\n'''Death''':\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images).\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_srcTitle_refAtEnd_withImgPos_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n[https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images).\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_srcTitle_refAtEnd_withImgPos_source": {
+    "citation": "* '''Death''': [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves - Western Cape] (accessed 6 May 2021)<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>citing eGGSA Graves: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images).",
+    "type": "source"
+  },
+  "linkIn_ref_refAtEnd_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves]: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971.\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_ref_refAtEnd_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves]: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971.\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_ref_refAtEnd_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>citing [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves]: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971.",
+    "type": "source"
+  },
+  "linkIn_ref_refAtEnd_withImgPos_inline": {
+    "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves]: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images).\n</ref>",
+    "type": "inline"
+  },
+  "linkIn_ref_refAtEnd_withImgPos_narrative": {
+    "citation": "Bessie died (age 23) in 1918 in Bredasdorp, Western Cape, South Africa.<ref>\n'''Death''':\n\"eGGSA Graves - Western Cape\"<br/>\nBessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>\nciting [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves]: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images).\n</ref>",
+    "type": "narrative"
+  },
+  "linkIn_ref_refAtEnd_withImgPos_source": {
+    "citation": "* '''Death''': \"eGGSA Graves - Western Cape\"<br/>Bessie van Eeden death 1918 (age 23) in Bredasdorp, Western Cape, South Africa<br/>citing [https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/E%20-%20Surnames%20__%20Vanne%20-%20E/DSCF3257.JPG eGGSA Graves]: Western Cape, BREDASDORP, Urban area / Western Cape, BREDASDORP, new cemetery /  E - Surnames :: Vanne - E / EEDEN Bessie, van 1895-1918 :: VAN EEDEN Baby 1897-1971 (3 of 30 images).",
     "type": "source"
   }
 }
