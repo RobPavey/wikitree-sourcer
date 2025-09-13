@@ -115,6 +115,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inImageTitle",
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: false,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -123,6 +124,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inImageTitle",
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: true,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -131,6 +133,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inSourceTitle",
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: false,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -139,6 +142,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inSourceTitle",
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: true,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -147,6 +151,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inRef",
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: false,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -155,6 +160,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inRef",
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: true,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -163,6 +169,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inImageTitle",
       citation_general_referencePosition: "atEnd",
       citation_eggsagrvs_includeImgPos: false,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -171,6 +178,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inImageTitle",
       citation_general_referencePosition: "atEnd",
       citation_eggsagrvs_includeImgPos: true,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -179,6 +187,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inSourceTitle",
       citation_general_referencePosition: "atEnd",
       citation_eggsagrvs_includeImgPos: false,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -187,6 +196,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inSourceTitle",
       citation_general_referencePosition: "atEnd",
       citation_eggsagrvs_includeImgPos: true,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -195,6 +205,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inRef",
       citation_general_referencePosition: "atEnd",
       citation_eggsagrvs_includeImgPos: false,
+      citation_general_dataStringInItalics: true,
     },
   },
   {
@@ -203,6 +214,7 @@ const optionVariants = [
       citation_eggsagrvs_includeLink: "inRef",
       citation_general_referencePosition: "atEnd",
       citation_eggsagrvs_includeImgPos: true,
+      citation_general_dataStringInItalics: true,
     },
   },
 ];
