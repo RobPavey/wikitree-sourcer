@@ -46,5 +46,17 @@
   "dataStyle_listOriginal_source": {
     "citation": "* '''Baptism''': \"New South Wales Births, Deaths and Marriages\"<br/> Registration Number: 120/1852 V1852120 38; District: CA (Sydney, St Phillip's)<br/>NICHOLSON CHARLES; Father's Given name(s): CHARLES; Mother's Given name(s): ELIZABETH A.",
     "type": "source"
+  },
+  "dataStyle_listCurated_includeLink_inSourceTitle_inline": {
+    "citation": "<ref>\n'''Baptism''':\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/ New South Wales Births, Deaths and Marriages] (accessed 6 May 2021)<br/>\n Registration Number: 120/1852 V1852120 38; District: CA (Sydney, St Phillip's)<br/>\nCharles Nicholson; Father: Charles; Mother: Elizabeth A.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_listCurated_includeLink_inSourceTitle_narrative": {
+    "citation": "Charles, son of Charles & Elizabeth A, was baptised in 1852 in New South Wales, Australia.<ref>\n'''Baptism''':\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/ New South Wales Births, Deaths and Marriages] (accessed 6 May 2021)<br/>\n Registration Number: 120/1852 V1852120 38; District: CA (Sydney, St Phillip's)<br/>\nCharles Nicholson; Father: Charles; Mother: Elizabeth A.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_listCurated_includeLink_inSourceTitle_source": {
+    "citation": "* '''Baptism''': [https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/ New South Wales Births, Deaths and Marriages] (accessed 6 May 2021)<br/> Registration Number: 120/1852 V1852120 38; District: CA (Sydney, St Phillip's)<br/>Charles Nicholson; Father: Charles; Mother: Elizabeth A.",
+    "type": "source"
   }
 }
