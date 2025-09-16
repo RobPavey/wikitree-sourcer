@@ -30,7 +30,6 @@ import {
   doAsyncActionWithCatch,
   closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
-import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 
 import {
   registerSearchMenuItemFunction,
