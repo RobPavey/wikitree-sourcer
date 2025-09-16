@@ -215,6 +215,48 @@ function readInputFile(siteName, dataDir, testData, logger) {
   return readFile(inputSubPath, testData, logger);
 }
 
+function removeStaleOutputFilesOfType(siteName, dataDir, type, testCaseSets, logger) {
+  createFolderIfNeeded(type, siteName, dataDir);
+
+  let folderName = "./unit_tests/" + siteName + "/" + dataDir + "/" + type;
+  let fileNames = fs.readdirSync(folderName);
+  for (const fileName of fileNames) {
+    const filePath = folderName + "/" + fileName;
+
+    // Check if the item is a file (not a directory)
+    let stats = fs.statSync(filePath);
+    if (stats && stats.isFile()) {
+      // check that this ref file belongs to an active test case
+      if (fileName.endsWith(".json")) {
+        let testCaseName = fileName.substring(0, fileName.length - 5);
+
+        let thisFileIsActive = false;
+        for (let testCaseSet of testCaseSets) {
+          for (let testCase of testCaseSet) {
+            if (testCase.caseName == testCaseName) {
+              thisFileIsActive = true;
+              break;
+            }
+          }
+        }
+
+        if (!thisFileIsActive) {
+          fs.unlinkSync(filePath);
+          console.log("Deleted stale " + type + " file: " + filePath);
+        }
+      }
+    }
+  }
+
+  return true;
+}
+
+function removeStaleOutputFiles(siteName, dataDir, testCaseSets, logger) {
+  removeStaleOutputFilesOfType(siteName, dataDir, "test", testCaseSets, logger);
+  removeStaleOutputFilesOfType(siteName, dataDir, "ref", testCaseSets, logger);
+  return true;
+}
+
 export {
   writeTestOutputFile,
   readRefFile,
@@ -227,4 +269,5 @@ export {
   writeTestOutputTextFile,
   readRefTextFile,
   createRefFile,
+  removeStaleOutputFiles,
 };
