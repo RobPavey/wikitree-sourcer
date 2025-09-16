@@ -72,7 +72,9 @@ class EggsagrvsEdReader extends ExtractedDataReader {
   getNameObj() {
     const p = this.getPerson();
     if (!p) return undefined;
-    return this.makeNameObjFromForenamesAndLastName(p.firstNames, p.lastName);
+    const nameObj = this.makeNameObjFromForenamesAndLastName(p.firstNames, p.lastName);
+    nameObj.otherLastNames = p.otherLastNames;
+    return nameObj;
   }
 
   getGender() {
@@ -136,7 +138,7 @@ class EggsagrvsEdReader extends ExtractedDataReader {
 
   getAgeAtEvent() {
     const p = this.getPerson();
-    if (p?.birth && p?.death) {
+    if (p?.birth && p?.death && isNumeric(p.birth) && isNumeric(p.death)) {
       return parseInt(p.death, 10) - parseInt(p.birth, 10);
     }
     return "";
@@ -167,6 +169,10 @@ function getCountry(url) {
   }
 }
 
+function isNumeric(str) {
+  return !isNaN(str) && str.trim() !== "";
+}
+
 function extractNames(ed) {
   // Construct an array of objects
   //   {
@@ -175,6 +181,7 @@ function extractNames(ed) {
   //    firstNames:
   //    lastName:
   //    lnab:
+  //    otherLastNames: []
   //    birth:
   //    death:
   //   }
@@ -191,7 +198,7 @@ function extractNames(ed) {
   // as we've indicated, the surname is split and only the main part is capitalised (and at the front). In other multi-word
   // surnames, the "prefixes" are sometimes not capitalised, but sometimes are.
   // Any name may have only either a surname or first name(s).
-  // Any name could have "nee LNAB" at the end.
+  // Any name could have "nee LNAB" or "geb. LNAB" at the end.
 
   const peopleParts = splitWithSeparators(ed.peopleStr);
 
@@ -202,12 +209,10 @@ function extractNames(ed) {
     if (!person) continue;
 
     let originalName = person.originalName;
-    const neeIdx = originalName.replaceAll("é", "e").indexOf(" nee ");
-    if (neeIdx >= 0) {
-      [, person.lnab] = extractLastNameAtFront(person.originalName.substring(neeIdx + 5) + " ");
-
-      // person.lnab = NameUtils.convertNameFromAllCapsToMixedCase(person.originalName.substring(neeIdx + 5));
-      originalName = originalName.slice(0, neeIdx);
+    const match = originalName.replaceAll("é", "e").match(/ nee | geb.? /);
+    if (match) {
+      [, person.lnab] = extractLastNameAtFront(person.originalName.substring(match.index + match[0].length) + " ");
+      originalName = originalName.slice(0, match.index);
     }
 
     // Extract last name
@@ -215,22 +220,43 @@ function extractNames(ed) {
     let firstNames;
     if (separator === null) {
       // First person
-      // The first person's name is in the format "LASTNAME First Names", or,
-      // for multi-word last names: "MERWE First Name, van der"
+      // The first person's name is in the format "LASTNAME First Names",
+      // or, for multi-word last names: "MERWE First Name, van der"
+      // or LITH Martha Louisa, van der formerly OLIVIER
       if (hasSurname(originalName)) {
         let rest;
         [lastName, rest] = shiftWord(originalName);
-        // fix e.g. Merwe Johan, van der (his is only the case for the first name)
+
+        // check for formerly
+        const formerlyIdx = rest.indexOf("formerly ");
+        if (formerlyIdx >= 0) {
+          person.otherLastNames = rest
+            .substring(formerlyIdx)
+            .replaceAll(",", "")
+            .trim()
+            .split("formerly ")
+            .splice(1)
+            .map((s) => NameUtils.convertNameFromAllCapsToMixedCase(s));
+          rest = rest.substring(0, formerlyIdx);
+        }
+
+        // fix e.g. Merwe Johan, van der (this is only the case for the first person)
         const lnpIdx = rest.indexOf(", ");
         if (lnpIdx >= 0) {
-          lastName =
-            rest.substring(lnpIdx + 2).replaceAll(".", "") +
-            " " +
-            NameUtils.convertNameFromAllCapsToMixedCase(lastName);
           firstNames = rest.substring(0, lnpIdx);
+          const newRest = rest.substring(lnpIdx + 2).replaceAll(".", "");
+          const prefix = multiWordSurnamePrefix(newRest + " ");
+          if (prefix && newRest.length > prefix.length) {
+            // The prefix is actually another multi-word last name
+            const [, ln] = fixPrefixCapitalisation(` ${newRest} `, ` ${newRest.toLowerCase()} `);
+            if (ln) lastName = ln + " " + NameUtils.convertNameFromAllCapsToMixedCase(lastName);
+          } else {
+            const lnPrefix = rest.substring(lnpIdx + 2).replaceAll(".", "");
+            lastName = lnPrefix + " " + NameUtils.convertNameFromAllCapsToMixedCase(lastName);
+          }
         } else {
-          lastName = NameUtils.convertNameFromAllCapsToMixedCase(lastName);
           firstNames = rest;
+          lastName = NameUtils.convertNameFromAllCapsToMixedCase(lastName);
         }
       } else {
         // No last name
@@ -247,17 +273,18 @@ function extractNames(ed) {
         } else {
           // For & separators, all but the first person's names are of the form "First Names ALL CAPS LASTNAME" (with
           // multi-word last names in the normal order), but  could also be just "First Name".
-          for (const prefix of lastNamePrefixes) {
-            // Make sure we know where the last name of multi-word last names start.
-            const lnIdx = lcName.indexOf(" " + prefix);
-            if (lnIdx >= 0) {
-              lastName =
-                (prefix.startsWith("janse") ? StringUtils.toInitialCaps(prefix) : prefix) +
-                NameUtils.convertNameFromAllCapsToMixedCase(originalName.substring(lnIdx + prefix.length + 1)); // don't include the leading space
-              firstNames = originalName.substring(0, lnIdx);
-              break;
-            }
-          }
+          [firstNames, lastName] = fixPrefixCapitalisation(originalName, lcName);
+          // for (const prefix of lastNamePrefixes) {
+          //   // Make sure we know where the last name of multi-word last names start.
+          //   const lnIdx = lcName.indexOf(" " + prefix);
+          //   if (lnIdx >= 0) {
+          //     lastName =
+          //       (prefix.startsWith("janse") ? StringUtils.toInitialCaps(prefix) : prefix) +
+          //       NameUtils.convertNameFromAllCapsToMixedCase(originalName.substring(lnIdx + prefix.length + 1)); // don't include the leading space
+          //     firstNames = originalName.substring(0, lnIdx);
+          //     break;
+          //   }
+          // }
           if (!lastName) {
             // We don't have a multi-word last name
             lastName = StringUtils.getLastWord(originalName);
@@ -270,6 +297,14 @@ function extractNames(ed) {
         lastName = people[0]?.lastName;
         firstNames = originalName;
       }
+    }
+
+    // Fix first name capitalisation
+    if (firstNames) {
+      // We shouls really check for multi-word prefixes and not capitalise them, but for now we'll
+      // leave that to be fixed in convertNameFromAllCapsToMixedCase
+      firstNames = firstNames.replaceAll(".", " "); // remove dots
+      firstNames = NameUtils.convertNameFromAllCapsToMixedCase(firstNames);
     }
 
     if (lastName || firstNames) {
@@ -288,6 +323,26 @@ function extractNames(ed) {
     }
   }
   ed.people = people;
+}
+
+function fixPrefixCapitalisation(name, lcName) {
+  // If name is "First Names ALL CAPS LASTNAME" (with multi-word last names in the normal order), lcName just
+  // the lower case version of name,
+  // return: { firstNames: First Names, lastName: all caps LastName } if "all caps" is a valid prefix,
+  // otherwise return undefined. We cater for "First Names" possibly being empty.
+  let firstNames, lastName;
+  for (const prefix of lastNamePrefixes) {
+    // Make sure we know where the last name of multi-word last names start.
+    const lnIdx = lcName.indexOf(" " + prefix);
+    if (lnIdx >= 0) {
+      lastName =
+        (prefix.startsWith("janse") ? StringUtils.toInitialCaps(prefix) : prefix) +
+        NameUtils.convertNameFromAllCapsToMixedCase(name.substring(lnIdx + prefix.length + 1)); // don't include the leading space
+      firstNames = name.substring(0, lnIdx).trim();
+      return [firstNames, lastName];
+    }
+  }
+  return [];
 }
 
 function extractLastNameAtFront(originalName) {
@@ -343,9 +398,8 @@ function shiftWord(str) {
 
 function getNameAndDates(str) {
   // Match "<name>" optionally followed by " XXXX-YYYY"
-  const match = str.match(/^(.*?)(?:\s+(\d{0,4})[- ](\d{0,4}))?$/);
+  const match = str.match(/^(.*?)(?:\s+([\d?]{0,4})[- ]([\d?]{0,4}))?$/);
   if (!match) return null;
-
   return {
     originalName: match[1].trim(),
     birth: match[2],

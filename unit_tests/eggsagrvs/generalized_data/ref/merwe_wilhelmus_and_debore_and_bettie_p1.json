@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van der Merwe",
+    "forenames": "Debora Petronella Jacoba"
+  },
+  "eventDate": {
+    "yearString": "1951"
+  },
+  "eventPlace": {
+    "placeString": "Ceres, Western Cape, South Africa"
+  },
+  "lastNameAtDeath": "van der Merwe",
+  "birthDate": {
+    "yearString": "1873"
+  },
+  "deathDate": {
+    "yearString": "1951"
+  },
+  "ageAtEvent": 78,
+  "ageAtDeath": 78,
+  "primaryPersonOptions": [
+    "Izak Wilhelmus van der Merwe",
+    "Debora Petronella Jacoba van der Merwe",
+    "Bettie van der Merwe"
+  ],
+  "hasValidData": true
+}

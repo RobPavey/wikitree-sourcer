@@ -1,0 +1,25 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van Rooyen Nel",
+    "forenames": "Lena"
+  },
+  "eventDate": {
+    "yearString": "2014"
+  },
+  "eventPlace": {
+    "placeString": "Mokopane / Potgietersrus District, Limpopo, South Africa"
+  },
+  "lastNameAtDeath": "van Rooyen Nel",
+  "birthDate": {
+    "yearString": "1929"
+  },
+  "deathDate": {
+    "yearString": "2014"
+  },
+  "ageAtEvent": 85,
+  "ageAtDeath": 85,
+  "hasValidData": true
+}

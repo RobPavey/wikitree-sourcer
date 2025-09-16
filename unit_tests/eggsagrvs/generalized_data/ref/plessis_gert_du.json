@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "du Plessis",
+    "forenames": "Gert Johannes"
+  },
+  "eventDate": {
+    "yearString": "19?9"
+  },
+  "eventPlace": {
+    "placeString": "Modjadjiskloof / Duiwelskloof, Limpopo, South Africa"
+  },
+  "lastNameAtDeath": "du Plessis",
+  "birthDate": {
+    "yearString": "1886"
+  },
+  "deathDate": {
+    "yearString": "19?9"
+  },
+  "primaryPersonOptions": [
+    "Gert Johannes du Plessis",
+    "Andries Gerhardus du Plessis"
+  ],
+  "hasValidData": true
+}
