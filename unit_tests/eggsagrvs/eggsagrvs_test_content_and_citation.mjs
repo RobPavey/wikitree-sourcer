@@ -69,8 +69,8 @@ const regressionData = [
     caseName: "engelbrecht_koos_en_hannie",
     url: "https://www.graves.eggsa.org/world/Kenya/Eldoret/0717036%20Eldoret%20Kenya_%20Elize%20Church%20FB/0005.jpg",
   },
-  // Namibia, shortened multi-name
   // ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908
+  // Namibia, shortened multi-name
   {
     caseName: "erckert_friedrich_v",
     url: "https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg",

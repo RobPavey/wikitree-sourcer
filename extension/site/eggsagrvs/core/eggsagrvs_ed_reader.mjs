@@ -27,128 +27,6 @@ import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mj
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
 
-class EggsagrvsEdReader extends ExtractedDataReader {
-  constructor(ed, primaryPersonIndex = 0) {
-    super(ed);
-    this.primaryPersonIndex = primaryPersonIndex;
-    this.ed.country = getCountry(ed.url);
-    this.recordType = RT.Death;
-
-    // console.log("EggsagrvsEdReader before", this.ed);
-    extractNames(this.ed);
-    // console.log("EggsagrvsEdReader after", this.ed);
-  }
-
-  getPerson() {
-    return this.ed.people[this.primaryPersonIndex];
-  }
-
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
-  // Overrides of the relevant get functions used in commonGeneralizeData
-  ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  hasValidData() {
-    if (!this.ed.success) {
-      return false; //the extract failed, GeneralizedData is not even normally called in this case
-    }
-    if (!this.ed.peopleStr) {
-      return false;
-    }
-
-    return true;
-  }
-
-  getPrimaryPersonOptions() {
-    if (this.ed.people.length > 1) {
-      return this.ed.people.map((p) => p.fullName);
-    }
-    return undefined;
-  }
-
-  getSourceType() {
-    return "record";
-  }
-
-  getNameObj() {
-    const p = this.getPerson();
-    if (!p) return undefined;
-    const nameObj = this.makeNameObjFromForenamesAndLastName(p.firstNames, p.lastName);
-    nameObj.otherLastNames = p.otherLastNames;
-    return nameObj;
-  }
-
-  getGender() {
-    return "";
-  }
-
-  getEventDateObj() {
-    const yearString = this.getPerson()?.death;
-    if (yearString) return this.makeDateObjFromYear(yearString);
-    return undefined;
-  }
-
-  getEventPlaceObj() {
-    const text = this.ed.breadcrumb;
-    const parts = text.split(",");
-    let place;
-    if (this.ed.country != "South Africa") {
-      return this.makePlaceObjFromCountryName(this.ed.country);
-    } else {
-      if (parts.length >= 2) {
-        place = [parts[1].trim(), parts[0].trim(), this.ed.country].join(", ");
-      } else {
-        place = [parts[0].trim(), this.ed.country].join(", ");
-      }
-    }
-    return this.makePlaceObjFromFullPlaceName(StringUtils.toInitialCapsEachWord(place));
-  }
-
-  getLastNameAtBirth() {
-    const p = this.getPerson();
-    return p?.lnab || "";
-  }
-
-  getLastNameAtDeath() {
-    return this.getPerson()?.lastName || "";
-  }
-
-  getMothersMaidenName() {
-    return "";
-  }
-
-  getBirthDateObj() {
-    const yearString = this.getPerson()?.birth;
-    if (yearString) return this.makeDateObjFromYear(yearString);
-    return undefined;
-  }
-
-  getBirthPlaceObj() {
-    return undefined;
-  }
-
-  getDeathDateObj() {
-    const yearString = this.getPerson()?.death;
-    if (yearString) return this.makeDateObjFromYear(yearString);
-    return undefined;
-  }
-
-  getDeathPlaceObj() {
-    return undefined;
-  }
-
-  getAgeAtEvent() {
-    const p = this.getPerson();
-    if (p?.birth && p?.death && isNumeric(p.birth) && isNumeric(p.death)) {
-      return parseInt(p.death, 10) - parseInt(p.birth, 10);
-    }
-    return "";
-  }
-
-  getAgeAtDeath() {
-    return this.getAgeAtEvent();
-  }
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Helper functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -228,30 +106,31 @@ function extractNames(ed) {
         [lastName, rest] = shiftWord(originalName);
 
         // check for formerly
-        const formerlyIdx = rest.indexOf("formerly ");
-        if (formerlyIdx >= 0) {
+        const indexOfFormerly = rest.indexOf("formerly ");
+        if (indexOfFormerly >= 0) {
           person.otherLastNames = rest
-            .substring(formerlyIdx)
+            .substring(indexOfFormerly)
             .replaceAll(",", "")
             .trim()
             .split("formerly ")
             .splice(1)
             .map((s) => NameUtils.convertNameFromAllCapsToMixedCase(s));
-          rest = rest.substring(0, formerlyIdx);
+          rest = rest.substring(0, indexOfFormerly);
         }
 
         // fix e.g. Merwe Johan, van der (this is only the case for the first person)
-        const lnpIdx = rest.indexOf(", ");
-        if (lnpIdx >= 0) {
-          firstNames = rest.substring(0, lnpIdx);
-          const newRest = rest.substring(lnpIdx + 2).replaceAll(".", "");
+        const indexOfCommaSpace = rest.indexOf(", ");
+        if (indexOfCommaSpace >= 0) {
+          firstNames = rest.substring(0, indexOfCommaSpace);
+          const newRest = rest.substring(indexOfCommaSpace + 2).replaceAll(".", "");
           const prefix = multiWordSurnamePrefix(newRest + " ");
           if (prefix && newRest.length > prefix.length) {
             // The prefix is actually another multi-word last name
-            const [, ln] = fixPrefixCapitalisation(` ${newRest} `, ` ${newRest.toLowerCase()} `);
-            if (ln) lastName = ln + " " + NameUtils.convertNameFromAllCapsToMixedCase(lastName);
+            const [, correctedPrefix] = fixPrefixCapitalisation(` ${newRest} `, ` ${newRest.toLowerCase()} `);
+            if (correctedPrefix)
+              lastName = correctedPrefix + " " + NameUtils.convertNameFromAllCapsToMixedCase(lastName);
           } else {
-            const lnPrefix = rest.substring(lnpIdx + 2).replaceAll(".", "");
+            const lnPrefix = rest.substring(indexOfCommaSpace + 2).replaceAll(".", "");
             lastName = lnPrefix + " " + NameUtils.convertNameFromAllCapsToMixedCase(lastName);
           }
         } else {
@@ -333,12 +212,12 @@ function fixPrefixCapitalisation(name, lcName) {
   let firstNames, lastName;
   for (const prefix of lastNamePrefixes) {
     // Make sure we know where the last name of multi-word last names start.
-    const lnIdx = lcName.indexOf(" " + prefix);
-    if (lnIdx >= 0) {
+    const indexOfLastnameAfterPrefix = lcName.indexOf(" " + prefix);
+    if (indexOfLastnameAfterPrefix >= 0) {
       lastName =
         (prefix.startsWith("janse") ? StringUtils.toInitialCaps(prefix) : prefix) +
-        NameUtils.convertNameFromAllCapsToMixedCase(name.substring(lnIdx + prefix.length + 1)); // don't include the leading space
-      firstNames = name.substring(0, lnIdx).trim();
+        NameUtils.convertNameFromAllCapsToMixedCase(name.substring(indexOfLastnameAfterPrefix + prefix.length + 1)); // don't include the leading space
+      firstNames = name.substring(0, indexOfLastnameAfterPrefix).trim();
       return [firstNames, lastName];
     }
   }
@@ -459,6 +338,130 @@ function multiWordSurnamePrefix(str) {
     }
   }
   return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// The class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+class EggsagrvsEdReader extends ExtractedDataReader {
+  constructor(ed, primaryPersonIndex = 0) {
+    super(ed);
+    this.primaryPersonIndex = primaryPersonIndex;
+    this.ed.country = getCountry(ed.url);
+    this.recordType = RT.Death;
+
+    // console.log("EggsagrvsEdReader before", this.ed);
+    extractNames(this.ed);
+    // console.log("EggsagrvsEdReader after", this.ed);
+  }
+
+  getPerson() {
+    return this.ed.people[this.primaryPersonIndex];
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Overrides of the relevant get functions used in commonGeneralizeData
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  hasValidData() {
+    if (!this.ed.success) {
+      return false; //the extract failed, GeneralizedData is not even normally called in this case
+    }
+    if (!this.ed.peopleStr) {
+      return false;
+    }
+
+    return true;
+  }
+
+  getPrimaryPersonOptions() {
+    if (this.ed.people.length > 1) {
+      return this.ed.people.map((p) => p.fullName);
+    }
+    return undefined;
+  }
+
+  getSourceType() {
+    return "record";
+  }
+
+  getNameObj() {
+    const person = this.getPerson();
+    if (!person) return undefined;
+    const nameObj = this.makeNameObjFromForenamesAndLastName(person.firstNames, person.lastName);
+    nameObj.otherLastNames = person.otherLastNames;
+    return nameObj;
+  }
+
+  getGender() {
+    return "";
+  }
+
+  getEventDateObj() {
+    const yearString = this.getPerson()?.death;
+    if (yearString) return this.makeDateObjFromYear(yearString);
+    return undefined;
+  }
+
+  getEventPlaceObj() {
+    const text = this.ed.breadcrumb;
+    const parts = text.split(",");
+    let place;
+    if (this.ed.country != "South Africa") {
+      return this.makePlaceObjFromCountryName(this.ed.country);
+    } else {
+      if (parts.length >= 2) {
+        place = [parts[1].trim(), parts[0].trim(), this.ed.country].join(", ");
+      } else {
+        place = [parts[0].trim(), this.ed.country].join(", ");
+      }
+    }
+    return this.makePlaceObjFromFullPlaceName(StringUtils.toInitialCapsEachWord(place));
+  }
+
+  getLastNameAtBirth() {
+    return this.getPerson()?.lnab || "";
+  }
+
+  getLastNameAtDeath() {
+    return this.getPerson()?.lastName || "";
+  }
+
+  getMothersMaidenName() {
+    return "";
+  }
+
+  getBirthDateObj() {
+    const yearString = this.getPerson()?.birth;
+    if (yearString) return this.makeDateObjFromYear(yearString);
+    return undefined;
+  }
+
+  getBirthPlaceObj() {
+    return undefined;
+  }
+
+  getDeathDateObj() {
+    const yearString = this.getPerson()?.death;
+    if (yearString) return this.makeDateObjFromYear(yearString);
+    return undefined;
+  }
+
+  getDeathPlaceObj() {
+    return undefined;
+  }
+
+  getAgeAtEvent() {
+    const person = this.getPerson();
+    if (person?.birth && person?.death && isNumeric(person.birth) && isNumeric(person.death)) {
+      return parseInt(person.death, 10) - parseInt(person.birth, 10);
+    }
+    return "";
+  }
+
+  getAgeAtDeath() {
+    return this.getAgeAtEvent();
+  }
 }
 
 export { EggsagrvsEdReader, multiWordSurnamePrefix };

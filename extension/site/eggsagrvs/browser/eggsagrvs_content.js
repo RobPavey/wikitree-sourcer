@@ -72,8 +72,8 @@ async function checkForPendingSearch() {
           //   console.log("checkForPendingSearch: fieldData is:");
           //   console.log(fieldData);
 
-          let fName;
-          let lName;
+          let firstName;
+          let lastName;
           for (var key in fieldData.simpleNameFields) {
             // console.log("checkForPendingSearchData: key is: " + key);
             if (key) {
@@ -89,9 +89,9 @@ async function checkForPendingSearch() {
                 inputElement.value = value;
               }
               if (key == "what_firstname") {
-                fName = value;
+                firstName = value;
               } else if (key == "what_surname") {
-                lName = value;
+                lastName = value;
               }
             }
           }
@@ -110,7 +110,7 @@ async function checkForPendingSearch() {
           }
           const div = document.querySelector(".form-style-search");
           const p = document.createElement("p");
-          p.textContent = `Searching for ${fName} ${lName}...`;
+          p.textContent = `Searching for ${firstName} ${lastName}...`;
           div.prepend(p);
 
           // now submit the form to do the search
