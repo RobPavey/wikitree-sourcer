@@ -121,13 +121,15 @@ $sitesAll = getSitesAll();
 <body>
   <h1>Citations Unit Test Browser</h1>
 
-  <label for="src">Source:</label>
-  <select id="src">
-    <option value="ref" selected>ref</option>
-    <option value="test">test</option>
-  </select>
+  <label for="src"
+    title="Choose between test result or reference (expected) data to be displayed">Source:
+    <select id="src">
+      <option value="ref">ref</option>
+      <option value="test" selected>test</option>
+    </select>
+  </label>
 
-  Test variants style:
+  Test variant names style:
   <label>
     <input type="radio" name="style" value="i" checked>
     <i>Italic</i>
@@ -142,22 +144,25 @@ $sitesAll = getSitesAll();
   </label>
   <br><br>
 
-  <label for="site">Site:</label>
-  <select id="site">
-    <option value="">-- Select source first --</option>
-  </select>
+  <label for="site">Site:
+    <select id="site">
+      <option value="">-- Select source first --</option>
+    </select>
+  </label>
 
-  <label for="test">Test:</label>
-  <select id="test" disabled>
-    <option value="All">All</option>
-  </select>
+  <label for="test">Test:
+    <select id="test" disabled>
+      <option value="All">All</option>
+    </select>
+  </label>
 
-  <label for="type">Type:</label>
-  <select id="type">
-    <option value="source">source</option>
-    <option value="inline">inline</option>
-    <option value="narrative">narrative</option>
-  </select>
+  <label for="type">Type:
+    <select id="type">
+      <option value="source">source</option>
+      <option value="inline">inline</option>
+      <option value="narrative">narrative</option>
+    </select>
+  </label>
 
   <div id="results"></div>
 
@@ -191,55 +196,70 @@ function renderCitation(text) {
   }
   if (!text) return '';
 
-  // 1) full <ref ...>content</ref>  (handles multi-line content)
+  // 1) full <ref>content</ref>
   text = text.replace(/<ref\b([^>]*)>([\s\S]*?)<\/ref>/gi, function(_, attrStr, note) {
-    let nameMatch = attrStr.match(/name\s*=\s*"(.*?)"/i) || attrStr.match(/name\s*=\s*'(.*?)'/i);
-    if (nameMatch) {
-      let name = nameMatch[1];
-      if (name in refsByName) return `<sup>[${refsByName[name]}]</sup>`;
-      refs.push(note);
-      refsByName[name] = refs.length;
-      return `<sup>[${refsByName[name]}]</sup>`;
+    let nameMatch = attrStr.match(/name\s*=\s*(?:"(.*?)"|'(.*?)'|(\S+))/i);
+    let name = nameMatch?.[1] || nameMatch?.[2] || nameMatch?.[3];
+    let idx;
+    if (name) {
+      if (name in refsByName) {
+        idx = refsByName[name];
+      } else {
+        refs.push(note);
+        idx = refs.length;
+        refsByName[name] = idx;
+      }
     } else {
       refs.push(note);
-      return `<sup>[${refs.length}]</sup>`;
+      idx = refs.length;
     }
+    return `<sup id="ref-${idx}"><a href="#note-${idx}">[${idx}]</a></sup>`;
   });
 
-  // 2) self-closing <ref ... />  (e.g. <ref name="x" />)
+  // 2) self-closing <ref ... />
   text = text.replace(/<ref\b([^>]*)\/>/gi, function(_, attrStr) {
-    let nameMatch = attrStr.match(/name\s*=\s*"(.*?)"/i) || attrStr.match(/name\s*=\s*'(.*?)'/i);
-    if (nameMatch) {
-      let name = nameMatch[1];
-      if (name in refsByName) return `<sup>[${refsByName[name]}]</sup>`;
-      refs.push('');
-      refsByName[name] = refs.length;
-      return `<sup>[${refsByName[name]}]</sup>`;
+    let nameMatch = attrStr.match(/name\s*=\s*(?:"(.*?)"|'(.*?)'|(\S+))/i);
+    let name = nameMatch?.[1] || nameMatch?.[2] || nameMatch?.[3];
+    let idx;
+    if (name) {
+      if (name in refsByName) {
+        idx = refsByName[name];
+      } else {
+        refs.push('');
+        idx = refs.length;
+        refsByName[name] = idx;
+      }
     } else {
       refs.push('');
-      return `<sup>[${refs.length}]</sup>`;
+      idx = refs.length;
     }
+    return `<sup id="ref-${idx}"><a href="#note-${idx}">[${idx}]</a></sup>`;
   });
 
-  // 3) Apply other formatting and links on the result
   return renderFormatting(text);
 }
 
 function appendReferences(container) {
-  if (!refs || refs.length === 0) { renderCitation.active = false; return; }
+  if (!refs || refs.length === 0) { 
+    renderCitation.active = false; 
+    return; 
+  }
   let h3 = document.createElement('h3');
   h3.textContent = 'References';
   container.appendChild(h3);
+
   let ol = document.createElement('ol');
-  refs.forEach(r => {
+  refs.forEach((r, i) => {
+    let idx = i + 1;
     let li = document.createElement('li');
-    // Render formatting inside the reference text (but DON'T process <ref> tags again)
-    li.innerHTML = renderFormatting(r || '');
+    li.id = `note-${idx}`;
+    li.innerHTML = renderFormatting(r || '') + 
+                   ` <a href="#ref-${idx}" class="backref">↩︎</a>`;
     ol.appendChild(li);
   });
   container.appendChild(ol);
 
-  // Mark render pass finished so next UI update restarts refs.
+  // Reset for the next render pass
   renderCitation.active = false;
 }
 

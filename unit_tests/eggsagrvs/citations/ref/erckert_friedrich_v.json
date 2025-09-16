@@ -15,10 +15,6 @@
     "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery (18 of 73 images)<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
     "type": "inline"
   },
-  "linkIn_imgTitle_withImgPos_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery (18 of 73 images)<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
-    "type": "narrative"
-  },
   "linkIn_imgTitle_withImgPos_source": {
     "citation": "* '''Death''': \"eGGSA Graves - Worldwide\"<br/>Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery (18 of 73 images)<br/>[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>''Friedrich v Erckert death 1908 in Namibia.''",
     "type": "source"
@@ -26,10 +22,6 @@
   "linkIn_srcTitle_inline": {
     "citation": "<ref>\n'''Death''':\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
     "type": "inline"
-  },
-  "linkIn_srcTitle_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
-    "type": "narrative"
   },
   "linkIn_srcTitle_source": {
     "citation": "* '''Death''': [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908<br/>''Friedrich v Erckert death 1908 in Namibia.''",
@@ -39,10 +31,6 @@
     "citation": "<ref>\n'''Death''':\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
     "type": "inline"
   },
-  "linkIn_srcTitle_withImgPos_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
-    "type": "narrative"
-  },
   "linkIn_srcTitle_withImgPos_source": {
     "citation": "* '''Death''': [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images)<br/>''Friedrich v Erckert death 1908 in Namibia.''",
     "type": "source"
@@ -50,10 +38,6 @@
   "linkIn_ref_inline": {
     "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
     "type": "inline"
-  },
-  "linkIn_ref_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
-    "type": "narrative"
   },
   "linkIn_ref_source": {
     "citation": "* '''Death''': \"eGGSA Graves - Worldwide\"<br/>Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery<br/>[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>''Friedrich v Erckert death 1908 in Namibia.''",
@@ -63,10 +47,6 @@
     "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery (18 of 73 images)<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
     "type": "inline"
   },
-  "linkIn_ref_withImgPos_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\nNamibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery (18 of 73 images)<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''\n</ref>",
-    "type": "narrative"
-  },
   "linkIn_ref_withImgPos_source": {
     "citation": "* '''Death''': \"eGGSA Graves - Worldwide\"<br/>Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery (18 of 73 images)<br/>[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>''Friedrich v Erckert death 1908 in Namibia.''",
     "type": "source"
@@ -74,10 +54,6 @@
   "linkIn_imgTitle_refAtEnd_inline": {
     "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908.\n</ref>",
     "type": "inline"
-  },
-  "linkIn_imgTitle_refAtEnd_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908.\n</ref>",
-    "type": "narrative"
   },
   "linkIn_imgTitle_refAtEnd_source": {
     "citation": "* '''Death''': \"eGGSA Graves - Worldwide\"<br/>[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>''Friedrich v Erckert death 1908 in Namibia.''<br/>citing eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908.",
@@ -87,10 +63,6 @@
     "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images).\n</ref>",
     "type": "inline"
   },
-  "linkIn_imgTitle_refAtEnd_withImgPos_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images).\n</ref>",
-    "type": "narrative"
-  },
   "linkIn_imgTitle_refAtEnd_withImgPos_source": {
     "citation": "* '''Death''': \"eGGSA Graves - Worldwide\"<br/>[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908] (accessed 6 May 2021)<br/>''Friedrich v Erckert death 1908 in Namibia.''<br/>citing eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images).",
     "type": "source"
@@ -98,10 +70,6 @@
   "linkIn_srcTitle_refAtEnd_inline": {
     "citation": "<ref>\n'''Death''':\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908.\n</ref>",
     "type": "inline"
-  },
-  "linkIn_srcTitle_refAtEnd_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908.\n</ref>",
-    "type": "narrative"
   },
   "linkIn_srcTitle_refAtEnd_source": {
     "citation": "* '''Death''': [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>''Friedrich v Erckert death 1908 in Namibia.''<br/>citing eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908.",
@@ -111,10 +79,6 @@
     "citation": "<ref>\n'''Death''':\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images).\n</ref>",
     "type": "inline"
   },
-  "linkIn_srcTitle_refAtEnd_withImgPos_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n[https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images).\n</ref>",
-    "type": "narrative"
-  },
   "linkIn_srcTitle_refAtEnd_withImgPos_source": {
     "citation": "* '''Death''': [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves - Worldwide] (accessed 6 May 2021)<br/>''Friedrich v Erckert death 1908 in Namibia.''<br/>citing eGGSA Graves: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images).",
     "type": "source"
@@ -123,10 +87,6 @@
     "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves]: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908.\n</ref>",
     "type": "inline"
   },
-  "linkIn_ref_refAtEnd_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves]: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908.\n</ref>",
-    "type": "narrative"
-  },
   "linkIn_ref_refAtEnd_source": {
     "citation": "* '''Death''': \"eGGSA Graves - Worldwide\"<br/>''Friedrich v Erckert death 1908 in Namibia.''<br/>citing [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves]: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908.",
     "type": "source"
@@ -134,10 +94,6 @@
   "linkIn_ref_refAtEnd_withImgPos_inline": {
     "citation": "<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves]: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images).\n</ref>",
     "type": "inline"
-  },
-  "linkIn_ref_refAtEnd_withImgPos_narrative": {
-    "citation": "Friedrich died in 1908 in Namibia.<ref>\n'''Death''':\n\"eGGSA Graves - Worldwide\"<br/>\n''Friedrich v Erckert death 1908 in Namibia.''<br/>\nciting [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves]: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images).\n</ref>",
-    "type": "narrative"
   },
   "linkIn_ref_refAtEnd_withImgPos_source": {
     "citation": "* '''Death''': \"eGGSA Graves - Worldwide\"<br/>''Friedrich v Erckert death 1908 in Namibia.''<br/>citing [https://www.graves.eggsa.org/world/Namibia/nam%2014%20Apr_016/0817023%20Gochas%20histories/IMG_0724.jpeg eGGSA Graves]: Namibia / Namibia, GOCHAS, Urban area /  Namibia, GOCHAS, Historical war graves and civilian cemetery / ERCKERT Friedrich, v. -1908 :: EBINGER Oskar -1908 (18 of 73 images).",

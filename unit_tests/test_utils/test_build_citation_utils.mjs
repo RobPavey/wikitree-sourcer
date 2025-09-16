@@ -126,8 +126,14 @@ async function runBuildCitationTests(siteName, functions, regressionData, testMa
         regeneralizeDataFunction(regeneralizeInput);
       }
 
+      const onlyTypes = Array.isArray(variant.thisTypeOnly)
+        ? variant.thisTypeOnly
+        : variant.thisTypeOnly != null
+        ? [variant.thisTypeOnly]
+        : null;
+
       for (let citationType of citationTypes) {
-        if (variant.thisTypeOnly && variant.thisTypeOnly != citationType) {
+        if (onlyTypes && !onlyTypes.includes(citationType)) {
           continue;
         }
         try {

@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van der Lith",
+    "forenames": "Martha Louisa",
+    "otherLastNames": [
+      "Olivier"
+    ]
+  },
+  "eventDate": {
+    "yearString": "1980"
+  },
+  "eventPlace": {
+    "placeString": "Modjadjiskloof / Duiwelskloof, Limpopo, South Africa"
+  },
+  "lastNameAtBirth": "Joubert",
+  "lastNameAtDeath": "van der  Lith",
+  "birthDate": {
+    "yearString": "1899"
+  },
+  "deathDate": {
+    "yearString": "1980"
+  },
+  "ageAtEvent": 81,
+  "ageAtDeath": 81,
+  "hasValidData": true
+}

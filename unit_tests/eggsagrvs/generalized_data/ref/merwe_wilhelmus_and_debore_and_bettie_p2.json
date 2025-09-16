@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van der Merwe",
+    "forenames": "Bettie"
+  },
+  "eventDate": {
+    "yearString": "2000"
+  },
+  "eventPlace": {
+    "placeString": "Ceres, Western Cape, South Africa"
+  },
+  "lastNameAtDeath": "van der Merwe",
+  "birthDate": {
+    "yearString": "1909"
+  },
+  "deathDate": {
+    "yearString": "2000"
+  },
+  "ageAtEvent": 91,
+  "ageAtDeath": 91,
+  "primaryPersonOptions": [
+    "Izak Wilhelmus van der Merwe",
+    "Debora Petronella Jacoba van der Merwe",
+    "Bettie van der Merwe"
+  ],
+  "hasValidData": true
+}

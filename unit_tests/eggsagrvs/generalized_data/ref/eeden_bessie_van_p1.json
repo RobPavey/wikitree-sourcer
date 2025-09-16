@@ -3,27 +3,27 @@
   "sourceType": "record",
   "recordType": "Death",
   "name": {
-    "lastName": "van der Meet",
-    "forenames": "Jan J"
+    "lastName": "van Eeden",
+    "forenames": "Baby"
   },
   "eventDate": {
-    "yearString": "1940"
+    "yearString": "1971"
   },
   "eventPlace": {
     "placeString": "Bredasdorp, Western Cape, South Africa"
   },
-  "lastNameAtDeath": "van der Meet",
+  "lastNameAtDeath": "van Eeden",
   "birthDate": {
-    "yearString": "1861"
+    "yearString": "1897"
   },
   "deathDate": {
-    "yearString": "1940"
+    "yearString": "1971"
   },
-  "ageAtEvent": 79,
-  "ageAtDeath": 79,
+  "ageAtEvent": 74,
+  "ageAtDeath": 74,
   "primaryPersonOptions": [
-    "Jan J van der Meet",
-    "F J J Huddlestone"
+    "Bessie van Eeden",
+    "Baby van Eeden"
   ],
   "hasValidData": true
 }
