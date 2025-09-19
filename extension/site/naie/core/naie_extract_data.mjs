@@ -198,7 +198,11 @@ function extractData(document, url) {
     }
   }
 
-  const tableNode = document.querySelector("div.household ul.table table");
+  let tableNode = document.querySelector("#tab-content-household div.table_wrap table");
+  if (!tableNode) {
+    // old style in 2025 before September
+    tableNode = document.querySelector("div.household ul.table table");
+  }
   if (tableNode) {
     let tableBody = tableNode.querySelector("tbody");
 
