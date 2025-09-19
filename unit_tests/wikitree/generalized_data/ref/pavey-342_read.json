@@ -54,7 +54,8 @@
       "lastNameAtBirth": "Littlemore",
       "lastNameAtDeath": "Pavey",
       "marriageDate": {
-        "dateString": "about Oct 1870"
+        "qualifier": 2,
+        "dateString": "Oct 1870"
       },
       "marriagePlace": {
         "placeString": "Pancras, Middlesex, England, United Kingdom"

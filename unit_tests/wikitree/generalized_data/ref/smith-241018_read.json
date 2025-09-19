@@ -54,7 +54,8 @@
       "lastNameAtBirth": "Lang",
       "lastNameAtDeath": "Smith",
       "marriageDate": {
-        "dateString": "about 1917"
+        "qualifier": 2,
+        "dateString": "1917"
       },
       "marriagePlace": {
         "placeString": "New Zealand"

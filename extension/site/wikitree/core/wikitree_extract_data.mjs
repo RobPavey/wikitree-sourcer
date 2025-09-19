@@ -1455,9 +1455,6 @@ function getParentsFromDocumentInNonEditMode2025(document, result) {
 }
 
 function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
-  // read
-  // get the spouses (if any)
-
   // used to check for things like:
   //  [marriage date?]
   //  [marriage location?]
@@ -1485,6 +1482,12 @@ function getSpousesFromDocumentInNonEditMode2025(isPrivate, document, result) {
         let marriageDate = marriageDateElement.textContent.trim();
         if (marriageDate) {
           if (!missingDataRegEx.test(marriageDate)) {
+            // when marriage date is "about" it seems to vace a "\n" character after the about.
+            // just remove the qualifier for now - perhaps should add it as qualifier
+            const qualifierRegEx = /^(about|before|after)\s+(.+)$/i;
+            if (qualifierRegEx.test(marriageDate)) {
+              marriageDate = marriageDate.replace(qualifierRegEx, "$1 $2");
+            }
             spouse.marriageDate = marriageDate;
           }
         }

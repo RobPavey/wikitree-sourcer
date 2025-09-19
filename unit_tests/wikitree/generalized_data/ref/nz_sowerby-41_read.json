@@ -55,7 +55,8 @@
       "lastNameAtBirth": "Smith",
       "lastNameAtDeath": "Smith",
       "marriageDate": {
-        "dateString": "about 30 May 1905"
+        "qualifier": 2,
+        "dateString": "30 May 1905"
       },
       "marriagePlace": {
         "placeString": "Hawkes Bay, New Zealand"
