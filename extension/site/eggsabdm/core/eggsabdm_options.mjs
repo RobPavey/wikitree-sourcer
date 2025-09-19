@@ -31,13 +31,13 @@ import {
 
 const searchOptionsGroup = {
   category: "search",
-  subcategory: "eggsagrvs",
+  subcategory: "eggsabdm",
   tab: "search",
-  subsection: "eggsagrvs",
+  subsection: "eggsabdm",
   subheading: "parameters",
   options: [
     {
-      optionName: "fullFirstname",
+      optionName: "fullFirstName",
       type: "checkbox",
       label: "Use all first names in First name field",
       defaultValue: false,
@@ -66,39 +66,31 @@ const searchOptionsGroup = {
       ],
       defaultValue: "1",
     },
+    {
+      optionName: "resultOrder",
+      type: "select",
+      label: "Order results by",
+      values: [
+        { value: "by_Surname", text: "Surname" },
+        { value: "by_Year", text: "Year" },
+      ],
+      defaultValue: "by_Surname",
+    },
   ],
 };
 
 const citationOptionsGroup = {
   category: "citation",
-  subcategory: "eggsagrvs",
+  subcategory: "eggsabdm",
   tab: "citation",
-  subsection: "eggsagrvs",
-  options: [
-    {
-      optionName: "includeLink",
-      type: "select",
-      label: "Include link to eGGSA Graves site",
-      values: [
-        { value: "inImageTitle", text: "In image title" },
-        { value: "inSourceTitle", text: "In source title" },
-        { value: "inRef", text: "In source reference data (if at end)" },
-      ],
-      defaultValue: "inImageTitle",
-    },
-    {
-      optionName: "includeImgPos",
-      type: "checkbox",
-      label: "Include (M of N images) in citation if available",
-      defaultValue: false,
-    },
-  ],
+  subsection: "eggsabdm",
+  options: [],
 };
 
-registerSubsectionForOptions("search", "eggsagrvs", "eGGSA Graves");
-registerSiteSearchPopupOptionsGroup("eggsagrvs");
-registerSubheadingForOptions("search", "eggsagrvs", "parameters", "Search Parameters");
+registerSubsectionForOptions("search", "eggsabdm", "eGGSA BDM");
+registerSiteSearchPopupOptionsGroup("eggsabdm");
+registerSubheadingForOptions("search", "eggsabdm", "parameters", "Default Search Parameters");
 registerOptionsGroup(searchOptionsGroup);
 
-registerSubsectionForOptions("citation", "eggsagrvs", "eGGSA Graves");
+registerSubsectionForOptions("citation", "eggsabdm", "eGGSA BDM");
 registerOptionsGroup(citationOptionsGroup);

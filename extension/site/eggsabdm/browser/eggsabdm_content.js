@@ -28,8 +28,8 @@ async function setSearchData(key, data) {
   });
 }
 
-const PENDING_SEARCH = "eggsagrvsSearchData";
-const PREVIOUS_SEARCH = "eggsagrvsPrevSearchData";
+const PENDING_SEARCH = "eggsabdmSearchData";
+const PREVIOUS_SEARCH = "eggsabdmPrevSearchData";
 
 async function getPendingSearch() {
   return getSearchData(PENDING_SEARCH);
@@ -67,7 +67,7 @@ async function checkForPendingSearch() {
   }
 
   const lcUrl = document.URL.toLowerCase();
-  if (lcUrl.includes("graves.eggsa.org") && lcUrl.includes("searchgraves")) {
+  if (lcUrl.includes("eggsa.org/bdms")) {
     // console.log("checkForPendingSearch: URLs match");
 
     const searchData = await getSearchData(PENDING_SEARCH);
@@ -80,38 +80,38 @@ async function checkForPendingSearch() {
       const timeStampNow = Date.now();
       const timeSinceSearch = timeStampNow - timeStamp;
 
-      //   console.log("checkForPendingSearch: searchUrl is :" + searchUrl);
-      //   console.log("checkForPendingSearch: timeStamp is :" + timeStamp);
-      //   console.log("checkForPendingSearch: timeStampNow is :" + timeStampNow);
-      //   console.log("checkForPendingSearch: timeSinceSearch is :" + timeSinceSearch);
-
       if (timeSinceSearch < 10000 && searchUrl == document.URL) {
-        const [firstName, lastName] = populateForm(searchData);
+        const [firstName, lastName, role, where] = populateForm(searchData);
+        // console.log(`firstName:${firstName}, lastName:${lastName}, role=${role}, where:${where}`);
         if (firstName || lastName) {
           setSearchData(PREVIOUS_SEARCH, searchData);
 
-          // try to submit form
-          // but first add a message to the page so that the user knows what is happening
           const formElement = document.querySelector("form");
+
+          // Try to submit form
+          // but first add a message to the page so that the user knows what is happening
           const titleElement = document.querySelector("#content h2");
           if (titleElement) {
             const text = titleElement.textContent;
-            titleElement.innerText = "Sourcer: " + text;
+            titleElement.innerText = "Sourcer searching: " + text;
           }
-          const div = document.querySelector(".form-style-search");
+          const roleText = role ? ` as ${role}` : "";
+          const whereText = where == "All" ? " anywhere" : ` in ${where}`;
+
           const p = document.createElement("p");
-          p.textContent = `Searching for ${firstName} ${lastName}...`;
-          div.prepend(p);
+          p.textContent = `Searching for ${firstName} ${lastName}${roleText}${whereText}...`;
+          formElement.before(p);
 
           // Now hide the form so that the user doesn't try to use it.
           formElement.style.display = "none";
 
-          // Submit the form to do the search
+          // now submit the form to do the search
           formElement.submit();
         }
       } else {
-        console.log(`searcTarget mismatch: ${searchData.searchTarget}`);
+        console.log(`searchTarget mismatch: ${searchData.searchTarget}`);
       }
+
       // clear the search data
       clearSearchData(PENDING_SEARCH);
     } else {
@@ -123,12 +123,14 @@ async function checkForPendingSearch() {
 function populateForm(searchData) {
   let firstName;
   let lastName;
+  let role;
+  let where;
   const formElement = document.querySelector("form");
   if (formElement) {
     const fieldData = searchData.fieldData;
     // console.log("populateForm: fieldData is:", fieldData);
 
-    for (var key in fieldData.simpleNameFields) {
+    for (const key in fieldData.simpleNameFields) {
       if (key) {
         const value = fieldData.simpleNameFields[key];
         const selector = "input[name=" + CSS.escape(key) + "]";
@@ -137,31 +139,68 @@ function populateForm(searchData) {
           inputElement.value = value;
         }
         // This so we can display an informative message during the search
-        if (key == "what_firstname") {
+        if (key == "Person_one_first_name" || key == "what_firstname") {
           firstName = value;
-        } else if (key == "what_surname") {
+        } else if (key == "Person_one_surname" || key == "what_surname") {
           lastName = value;
         }
       }
     }
-    for (const key in fieldData.selectFieldsByValue) {
+    for (const key in fieldData.selectFieldsByText) {
       if (key) {
-        const value = fieldData.selectFieldsByValue[key];
+        const value = fieldData.selectFieldsByText[key];
         const selector = "select[name=" + CSS.escape(key) + "]";
         const selectElement = formElement.querySelector(selector);
+
         if (selectElement) {
-          selectElement.value = value;
+          selectByText(selectElement, value);
+
+          // This so we can display an informative message during the search
+          if (key == "Role_of_Person_One") {
+            role = value;
+          } else if (key == "Which_Town") {
+            where = value;
+          }
+        }
+      }
+      for (const key in fieldData.selectFieldsByValue) {
+        if (key) {
+          const value = fieldData.selectFieldsByValue[key];
+
+          const selector = "select[name=" + CSS.escape(key) + "]";
+          const selectElement = formElement.querySelector(selector);
+
+          if (selectElement) {
+            selectElement.value = value;
+          }
+        }
+      }
+      for (const key in fieldData.radioNameFields) {
+        const value = fieldData.radioNameFields[key];
+        const selector = `input[name="${CSS.escape(key)}"][value="${CSS.escape(value)}"]`;
+        const radioElement = formElement.querySelector(selector);
+        if (radioElement) {
+          radioElement.checked = true;
         }
       }
     }
+    return [firstName, lastName, role, where];
   }
-  return [firstName, lastName];
+}
+
+function selectByText(select, text) {
+  for (const option of select.options) {
+    if (option.text.trim() === text) {
+      select.value = option.value; // equivalent to option.selected = true
+      break;
+    }
+  }
 }
 
 async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
   await checkForPendingSearch();
-  siteContentInit(`eggsagrvs`, `site/eggsagrvs/core/eggsagrvs_extract_data.mjs`);
+  siteContentInit(`eggsabdm`, `site/eggsabdm/core/eggsabdm_extract_data.mjs`);
   const prevSearch = await getSearchData(PREVIOUS_SEARCH);
   if (prevSearch) {
     populateForm(prevSearch);

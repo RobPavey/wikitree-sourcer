@@ -35,6 +35,7 @@ function buildSearchData(input) {
   const fieldData = {
     utf8: true,
     simpleNameFields: {},
+    selectFieldsByValue: {},
     options: {},
   };
 
@@ -43,6 +44,7 @@ function buildSearchData(input) {
   if (firstName) {
     fieldData.simpleNameFields["what_firstname"] = firstName;
   }
+  fieldData.selectFieldsByValue["firstname_mode"] = options.search_eggsagrvs_firstNameMode;
 
   let lastName = gd.inferLastName();
   if (lastName) {
@@ -53,6 +55,7 @@ function buildSearchData(input) {
     }
     fieldData.simpleNameFields["what_surname"] = lastName;
   }
+  fieldData.selectFieldsByValue["surname_mode"] = options.search_eggsagrvs_surnameMode;
 
   //console.log("fieldData is:");
   //console.log(fieldData);

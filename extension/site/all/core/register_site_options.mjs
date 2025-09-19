@@ -37,6 +37,7 @@ import "../../archive/core/archive_options.mjs";
 import "../../baclac/core/baclac_options.mjs";
 import "../../bg/core/bg_options.mjs";
 import "../../cwgc/core/cwgc_options.mjs";
+import "../../eggsabdm/core/eggsabdm_options.mjs";
 import "../../eggsagrvs/core/eggsagrvs_options.mjs";
 import "../../fmp/core/fmp_options.mjs";
 import "../../fs/core/fs_options.mjs";
