@@ -291,6 +291,10 @@ const regressionData = [
     ],
   },
   {
+    caseName: "kd7t_dzy_john_baird",
+    url: "https://www.familysearch.org/en/tree/person/details/KD7T-DZY",
+  },
+  {
     caseName: "kh6d_7g5_sherod_canada",
     url: "https://www.familysearch.org/tree/person/sources/KH6D-7G5",
   },

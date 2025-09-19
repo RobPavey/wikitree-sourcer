@@ -104,9 +104,32 @@ function filterAndEnhanceFsSourcesIntoSources(result, options) {
     addField("title");
     addField("id");
     addField("notes");
+    addField("fsCollectionUri");
+    addField("citationJustification");
+    addField("uriJustification");
 
     if (source.uri && source.uri.uri) {
       sourceObj.uri = source.uri.uri;
+
+      /*
+        On the page for the source we have:
+        <img src=
+        "https://sg30p0.familysearch.org/service/records/storage/dascloud/patron/v2/TH-7769-153811-26756-97/thumb200.jpg?ctx=ArtCtxPublic"
+        alt="https://sg30p0.familysearch.org/service/records/storage/dascloud/patron/v2/TH-7769-153811-26756-97/thumb200.jpg?ctx=ArtCtxPublic"
+        ></img>
+
+        If I click on this thumbnail it takes me to this page:
+        https://www.familysearch.org/en/memories/memory/228249313
+
+        But in this source object the URI is:
+        "http://familysearch.org/patron/source/photoId/228249313"
+      */
+      // change http://familysearch.org/patron/source/photoId/228249313 to
+      // https://www.familysearch.org/en/memories/memory/228249313
+      let userPhotoRegEx = /^.*\:\/\/familysearch\.org\/patron\/source\/photoId\/(\d+)$/;
+      if (userPhotoRegEx.test(sourceObj.uri)) {
+        sourceObj.uri = sourceObj.uri.replace(userPhotoRegEx, "https://www.familysearch.org/en/memories/memory/$1");
+      }
 
       if (source.uriUpdatedOn) {
         let date = new Date(source.uriUpdatedOn);
