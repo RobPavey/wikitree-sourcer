@@ -54,6 +54,10 @@ async function doFetch() {
   let fetchUrl = document.location.href;
   //console.log("doFetch, fetchUrl is: " + fetchUrl);
 
+  // sometimes the URL has an extra / on the end. This causes the fetch to fail. So remove it
+  fetchUrl = fetchUrl.replace(/\/\?/, "?");
+  fetchUrl = fetchUrl.replace(/\/$/, "");
+
   if (fetchUrl.indexOf("/search/record/results?") != -1) {
     //console.log('doFetch, looks like a search page, checking sidebar');
     // this looks like a search page, see if a record is selected in sidebar
@@ -165,6 +169,7 @@ async function doFetch() {
         success: false,
         errorCondition: "FetchError",
         status: response.status,
+        fetchUrl: fetchUrl,
       };
     }
 
@@ -281,12 +286,18 @@ async function doFetchAndSendResponse(sendResponse, options) {
       });
     } else {
       // treat this as a serious error
+      let errorMessage = "Fetch failed.\nStatus code: " + result.status;
+      errorMessage += "\nError condition: " + result.errorCondition;
+      errorMessage += "\nFetch URL: " + result.fetchUrl;
+
       sendResponse({
         success: false,
-        errorMessage: "Fetch failed. Status code: " + result.status + ", Error condition: " + result.errorCondition,
+        errorMessage: errorMessage,
         exceptionObject: result.exceptionObject,
         wasFetchError: true,
+        fetchStatus: result.status,
         contentType: "fs",
+        fetchUrl: result.fetchUrl,
       });
     }
   }
@@ -352,7 +363,7 @@ function extractHandler(request, sendResponse) {
   //console.log("received extract request, useFetch = " + useFetch);
 
   if (useFetch) {
-    // extract the data via a fetch thatreturns JSON data
+    // extract the data via a fetch that returns JSON data
     doFetchAndSendResponse(sendResponse, request.options);
     return true; // will respond async
   } else {

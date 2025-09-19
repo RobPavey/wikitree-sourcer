@@ -97,7 +97,7 @@ function displayUnexpectedErrorMessage(message) {
 
   console.log("popup_init: displayUnexpectedErrorMessage, message is: " + message);
 
-  displayMessageWithIcon("warning", "Unexpected error: " + message + ". Please try again.");
+  displayMessageWithIcon("warning", "Unexpected error: " + message + ".\n\nPlease try again.");
 }
 
 function setupMenuForExtractedData(menuSetupFunction, extractedData, tabId) {
@@ -164,7 +164,7 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
       // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
       // NOTE: On FamilySearch I have recently been getting exceptions in the fetch the page has been inactive
       // for a while. So do retry if the response has an exception object
-      if (chrome.runtime.lastError || !response || (!response.success && response.wasFetchError)) {
+      if (chrome.runtime.lastError || !response) {
         // possibly there is no content script loaded, this could be an error that should be reported
         // By testing edge cases I have found the if you reload the page and immediately click the
         // extension button sometimes this will happen. Presumably because the content script
@@ -266,6 +266,10 @@ async function setupMenuBasedOnContent(tabId, options, siteName, menuSetupFuncti
             setupMenuForExtractedData(menuSetupFunction, response.extractedData, tabId);
           }
         }
+      } else if (response.wasFetchError) {
+        // possibly we should retry if there is a fetch error? It may depend on the error code.
+        // e.g. 404 is an unknown address so probably not worth retrying
+        displayUnexpectedErrorMessage(response.errorMessage);
       } else if (response.noException) {
         displayUnexpectedErrorMessage(response.errorMessage);
       } else {
