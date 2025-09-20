@@ -30,7 +30,7 @@ import { buildCitation } from "../core/gro_build_citation.mjs";
 async function setupGroPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a GRO page but not a birth or death index with a succesfull search run.",
+    extractFailedMessage: "It looks like a GRO page but not a birth or death index with a successful search run.",
     generalizeFailedMessage: "It looks like a GRO page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
