@@ -54,7 +54,8 @@
       "lastNameAtBirth": "Pavey",
       "lastNameAtDeath": "Pavey",
       "marriageDate": {
-        "dateString": "about Oct 1890"
+        "qualifier": 2,
+        "dateString": "Oct 1890"
       },
       "marriagePlace": {
         "placeString": "Pancras, Middlesex, England, United Kingdom"

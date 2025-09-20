@@ -199,36 +199,35 @@ function buildSourceReference(ed, builder) {
   if (!ed.recordData) {
     return "";
   }
+
+  function getRecordData(keyList) {
+    for (let key of keyList) {
+      let value = ed.recordData[key];
+      if (value) {
+        return value;
+      }
+    }
+  }
+
   // Archive reference: RG13, Piece number: 1440; Folio 55; Page: 2
 
-  let archive = ed.recordData["Archive"];
-  let archiveReference = ed.recordData["Archive reference"];
-  if (!archiveReference) {
-    archiveReference = ed.recordData["Archive ref"];
-  }
-  if (!archiveReference) {
-    archiveReference = ed.recordData["Reference"];
-  }
-  let rolls = ed.recordData["Rolls"];
-  let pieceNumber = ed.recordData["Piece number"];
-  let folio = ed.recordData["Folio"];
+  let archive = getRecordData(["Archive"]);
+  let archiveReference = getRecordData(["Archive reference", "Archive ref", "Reference"]);
+  let rolls = getRecordData(["Rolls"]);
+  let pieceNumber = getRecordData(["Piece number"]);
+  let bookNumber = getRecordData(["Book number"]);
+  let folio = getRecordData(["Folio", "Folio number"]);
 
-  let volume = ed.recordData["Volume"];
-  let page = ed.recordData["Page"];
-  if (!page) {
-    page = ed.recordData["Page number"];
-  }
-  let schedule = ed.recordData["Schedule"];
-  let series = ed.recordData["Series"];
-  if (!series) {
-    series = ed.recordData["Archive series"];
-  }
+  let volume = getRecordData(["Volume"]);
+  let page = getRecordData(["Page", "Page number"]);
+  let schedule = getRecordData(["Schedule"]);
+  let series = getRecordData(["Series", "Archive series"]);
 
-  let registrationNumber = ed.recordData["Registration number"];
+  let registrationNumber = getRecordData(["Registration number"]);
 
-  let districtNumber = ed.recordData["Registration district number"];
-  let enumerationDistrict = ed.recordData["Enumeration district"];
-  let districtReference = ed.recordData["District reference"];
+  let districtNumber = getRecordData(["Registration district number"]);
+  let enumerationDistrict = getRecordData(["Enumeration district"]);
+  let districtReference = getRecordData(["District reference"]);
 
   function addTerm(title, value) {
     builder.addSourceReferenceField(title, value);
@@ -239,6 +238,7 @@ function buildSourceReference(ed, builder) {
   addTerm("Reference", archiveReference);
   addTerm("Rolls", rolls);
   addTerm("Piece number", pieceNumber);
+  addTerm("Book number", bookNumber);
   addTerm("Folio", folio);
   addTerm("Volume", volume);
   addTerm("Page", page);

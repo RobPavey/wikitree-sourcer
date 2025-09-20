@@ -90,6 +90,10 @@ const regressionData = [
     url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Loughnane&firstname__icontains=Catherine&sex=F&age=23&county=Clare&id=6697100",
   },
   {
+    caseName: "census_1901_clare_catherine_loughnane_sep_2025",
+    url: "https://nationalarchives.ie/collections/search-the-census/census-record/?census_year=1901&surname__icontains=Loughnane&firstname__icontains=Catherine&county=Clare&id=6697100",
+  },
+  {
     caseName: "census_1901_clare_catherine_loughnane",
     url: "http://www.census.nationalarchives.ie/pages/1901/Clare/Ballynacally/Inishmore_on_Deen_Island/1075611/",
   },

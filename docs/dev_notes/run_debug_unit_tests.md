@@ -73,4 +73,11 @@ You can then set breakpoints in the `fs/core/fs_extract_data.mjs` file and run i
 
 To debug your own specific examples change the three values in the `args` array.
 
+# Viewing the results of the citation tests
+
+The .json output files produced by the build_citation tests don't give a good idea of how it will look on a WikiTree profile.
+
+Riel wrote a PHP script to help with this. To use it you will need PHP installed. To do this I installed HomeBrew and then used that to install PHP.
+
+The script file is scripts/show_test_ref_citations.php, there are instructions at the top of that file.
 
