@@ -820,7 +820,7 @@ const RecordCollectionData = [
     partOf: ["EnglandWalesAndScotlandCensus1911"],
     title: "1901 Census of Scotland",
     country: "Scotland",
-    dates: { year: 1901, exactDate: "31 Mar 1901" },
+    dates: { year: 1911, exactDate: "2 Apr 1911" },
     sites: {
       scotp: { id: "census1911" },
     },
