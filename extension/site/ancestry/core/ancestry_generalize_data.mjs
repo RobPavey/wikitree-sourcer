@@ -74,6 +74,7 @@ const recordTypeByFields = [
   { type: RT.Obituary, labels: ["Obituary Date"] },
   { type: RT.Obituary, labels: ["Obituary Place"] },
   { type: RT.Divorce, labels: ["Divorce Date"] },
+  { type: RT.Divorce, labels: ["Grounds for Divorce"] },
   { type: RT.Marriage, labels: ["Marriage Date", "Marriage Place", "Spouse"] },
   { type: RT.Marriage, labels: ["Age", "Marriage Place", "Spouse"] },
   { type: RT.Marriage, labels: ["Marriage Banns Date", "Marriage Banns Place", "Spouse"] },
@@ -196,7 +197,7 @@ function determineRecordType(extractedData) {
       ],
     },
 
-    { type: RT.Divorce, matches: ["Divorce Records", "Divorce Index"] },
+    { type: RT.Divorce, matches: ["Divorce Records", "Divorce Index", "Divorce Abstracts"] },
     {
       type: RT.Marriage,
       matches: [
