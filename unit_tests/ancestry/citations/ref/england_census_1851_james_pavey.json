@@ -1,0 +1,74 @@
+{
+  "dataStyle_none_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_none_narrative": {
+    "citation": "In the 1851 census James (age 83) was the head of household in Town, Axminster, Devon, England.<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_none_source": {
+    "citation": "* '''1851 Census''': \"1851 England Census\"<br/>Class: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)",
+    "type": "source"
+  },
+  "dataStyle_string_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)<br/>\nJames Pavey (83) head of household in Town in Axminster registration district in Devon, England. Born in Yarcombe, Devon, England.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_string_narrative": {
+    "citation": "In the 1851 census James (age 83) was the head of household in Town, Axminster, Devon, England.<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)<br/>\nJames Pavey (83) head of household in Town in Axminster registration district in Devon, England. Born in Yarcombe, Devon, England.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_string_source": {
+    "citation": "* '''1851 Census''': \"1851 England Census\"<br/>Class: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)<br/>James Pavey (83) head of household in Town in Axminster registration district in Devon, England. Born in Yarcombe, Devon, England.",
+    "type": "source"
+  },
+  "dataStyle_list_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)<br/>\nName: [User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]; Age: 83; Estimated Birth Year: abt 1768; Relation: Head; Gender: Male; Where born: Yarcombe, Devon, England; Civil parish: Axminster; Town: Town; County/Island: Devon; Country: England; Registration District: Axminster; Sub-registration district: Lyme; <br/>Household Members (Name) Age Relationship:<br/>James Pavey 83 Head<br/>Sarah Pavey 43 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_list_narrative": {
+    "citation": "In the 1851 census James (age 83) was the head of household in Town, Axminster, Devon, England.<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)<br/>\nName: [User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]; Age: 83; Estimated Birth Year: abt 1768; Relation: Head; Gender: Male; Where born: Yarcombe, Devon, England; Civil parish: Axminster; Town: Town; County/Island: Devon; Country: England; Registration District: Axminster; Sub-registration district: Lyme; <br/>Household Members (Name) Age Relationship:<br/>James Pavey 83 Head<br/>Sarah Pavey 43 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_list_source": {
+    "citation": "* '''1851 Census''': \"1851 England Census\"<br/>Class: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)<br/>Name: [User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]; Age: 83; Estimated Birth Year: abt 1768; Relation: Head; Gender: Male; Where born: Yarcombe, Devon, England; Civil parish: Axminster; Town: Town; County/Island: Devon; Country: England; Registration District: Axminster; Sub-registration district: Lyme; <br/>Household Members (Name) Age Relationship:<br/>James Pavey 83 Head<br/>Sarah Pavey 43 Daughter.",
+    "type": "source"
+  },
+  "dataStyle_table_inline": {
+    "citation": "<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || [User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]\n|-\n| Age || 83\n|-\n| Estimated Birth Year || abt 1768\n|-\n| Relation || Head\n|-\n| Gender || Male\n|-\n| Where born || Yarcombe, Devon, England\n|-\n| Civil parish || Axminster\n|-\n| Town || Town\n|-\n| County/Island || Devon\n|-\n| Country || England\n|-\n| Registration District || Axminster\n|-\n| Sub-registration district || Lyme\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || James Pavey 83 Head<br/>Sarah Pavey 43 Daughter\n|}\n</ref>",
+    "type": "inline"
+  },
+  "dataStyle_table_narrative": {
+    "citation": "In the 1851 census James (age 83) was the head of household in Town, Axminster, Devon, England.<ref>\n'''1851 Census''':\n\"1851 England Census\"<br/>\nClass: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>\n{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)\n{| border=\"1\"\n| Name || [User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]\n|-\n| Age || 83\n|-\n| Estimated Birth Year || abt 1768\n|-\n| Relation || Head\n|-\n| Gender || Male\n|-\n| Where born || Yarcombe, Devon, England\n|-\n| Civil parish || Axminster\n|-\n| Town || Town\n|-\n| County/Island || Devon\n|-\n| Country || England\n|-\n| Registration District || Axminster\n|-\n| Sub-registration district || Lyme\n|-\n| Household Members (Name)<br/>Age<br/>Relationship || James Pavey 83 Head<br/>Sarah Pavey 43 Daughter\n|}\n</ref>",
+    "type": "narrative"
+  },
+  "dataStyle_table_source": {
+    "citation": "* '''1851 Census''': \"1851 England Census\"<br/>Class: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010; ED, institution, or vessel: 3d; Household schedule number: 43<br/>{{Ancestry Record|8860|5626136}} (accessed 6 May 2021)<br/>Name: [User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]; Age: 83; Estimated Birth Year: abt 1768; Relation: Head; Gender: Male; Where born: Yarcombe, Devon, England; Civil parish: Axminster; Town: Town; County/Island: Devon; Country: England; Registration District: Axminster; Sub-registration district: Lyme; <br/>Household Members (Name) Age Relationship:<br/>James Pavey 83 Head<br/>Sarah Pavey 43 Daughter.",
+    "type": "source"
+  },
+  "full_ee_style_inline": {
+    "citation": "<ref>\"1851 England Census,\" database, ({{Ancestry Record|8860|5626136}} : accessed 6 May 2021), James Pavey (83) head of household in Town in Axminster registration district in Devon, England. Born in Yarcombe, Devon, England; citing Class HO107, Piece 1862, Folio 246, Page 12, GSU roll 221009-221010, ED, institution, or vessel 3d, Household schedule number 43.</ref>",
+    "type": "inline"
+  },
+  "full_ee_style_narrative": {
+    "citation": "In the 1851 census James (age 83) was the head of household in Town, Axminster, Devon, England.<ref>\"1851 England Census,\" database, ({{Ancestry Record|8860|5626136}} : accessed 6 May 2021), James Pavey (83) head of household in Town in Axminster registration district in Devon, England. Born in Yarcombe, Devon, England; citing Class HO107, Piece 1862, Folio 246, Page 12, GSU roll 221009-221010, ED, institution, or vessel 3d, Household schedule number 43.</ref>",
+    "type": "narrative"
+  },
+  "full_ee_style_source": {
+    "citation": "* \"1851 England Census,\" database, ({{Ancestry Record|8860|5626136}} : accessed 6 May 2021), James Pavey (83) head of household in Town in Axminster registration district in Devon, England. Born in Yarcombe, Devon, England; citing Class HO107, Piece 1862, Folio 246, Page 12, GSU roll 221009-221010, ED, institution, or vessel 3d, Household schedule number 43.",
+    "type": "source"
+  },
+  "partial_ee_style_inline": {
+    "citation": "<ref>\n''1851 Census'':\n\"1851 England Census\", database, \nClass HO107, Piece 1862, Folio 246, Page 12, GSU roll 221009-221010, ED, institution, or vessel 3d, Household schedule number 43, \n({{Ancestry Record|8860|5626136}} : accessed 6 May 2021), \nName: [User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]; Age: 83; Estimated Birth Year: abt 1768; Relation: Head; Gender: Male; Where born: Yarcombe, Devon, England; Civil parish: Axminster; Town: Town; County/Island: Devon; Country: England; Registration District: Axminster; Sub-registration district: Lyme; Household Members (Name) Age Relationship: James Pavey 83 Head, Sarah Pavey 43 Daughter.\n</ref>",
+    "type": "inline"
+  },
+  "partial_ee_style_narrative": {
+    "citation": "In the 1851 census James (age 83) was the head of household in Town, Axminster, Devon, England.<ref>\n''1851 Census'':\n\"1851 England Census\", database, \nClass HO107, Piece 1862, Folio 246, Page 12, GSU roll 221009-221010, ED, institution, or vessel 3d, Household schedule number 43, \n({{Ancestry Record|8860|5626136}} : accessed 6 May 2021), \nName: [User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]; Age: 83; Estimated Birth Year: abt 1768; Relation: Head; Gender: Male; Where born: Yarcombe, Devon, England; Civil parish: Axminster; Town: Town; County/Island: Devon; Country: England; Registration District: Axminster; Sub-registration district: Lyme; Household Members (Name) Age Relationship: James Pavey 83 Head, Sarah Pavey 43 Daughter.\n</ref>",
+    "type": "narrative"
+  },
+  "partial_ee_style_source": {
+    "citation": "* ''1851 Census'': \"1851 England Census\", database, Class HO107, Piece 1862, Folio 246, Page 12, GSU roll 221009-221010, ED, institution, or vessel 3d, Household schedule number 43, ({{Ancestry Record|8860|5626136}} : accessed 6 May 2021), Name: [User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]; Age: 83; Estimated Birth Year: abt 1768; Relation: Head; Gender: Male; Where born: Yarcombe, Devon, England; Civil parish: Axminster; Town: Town; County/Island: Devon; Country: England; Registration District: Axminster; Sub-registration district: Lyme; Household Members (Name) Age Relationship: James Pavey 83 Head, Sarah Pavey 43 Daughter.",
+    "type": "source"
+  }
+}

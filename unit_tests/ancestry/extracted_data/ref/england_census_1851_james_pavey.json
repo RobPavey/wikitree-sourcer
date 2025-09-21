@@ -1,0 +1,59 @@
+{
+  "url": "https://www.ancestry.com/search/collections/8860/records/5626136?tid=&pid=&queryId=bab4f926-478e-4678-a210-2dc321fba07b&_phsrc=Zqm20883&_phstart=successSource",
+  "pageType": "record",
+  "dbId": "8860",
+  "recordId": "5626136",
+  "ancestryTemplate": "{{Ancestry Record|8860|5626136}}",
+  "domain": "ancestry.com",
+  "titleName": "James Pavey",
+  "titleCollection": "1851 England Census",
+  "recordData": {
+    "Name": "[User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]",
+    "Age": "83",
+    "Estimated Birth Year": "abt 1768",
+    "Relation": "Head",
+    "Gender": "Male",
+    "Where born": "Yarcombe, Devon, England",
+    "Civil parish": "Axminster",
+    "Town": "Town",
+    "County/Island": "Devon",
+    "Country": "England",
+    "Registration District": "Axminster",
+    "Sub-registration district": "Lyme",
+    "ED, institution, or vessel": "3d",
+    "Household schedule number": "43",
+    "Piece": "1862",
+    "Folio": "246",
+    "Page number": "12",
+    "Household Members (Name)<br/>Age<br/>Relationship": "James Pavey 83 Head<br/>Sarah Pavey 43 Daughter"
+  },
+  "household": {
+    "headings": [
+      "Household Members (Name)",
+      "Age",
+      "Relationship"
+    ],
+    "members": [
+      {
+        "Household Members (Name)": "James Pavey",
+        "Age": "83",
+        "Relationship": "Head"
+      },
+      {
+        "Household Members (Name)": "Sarah Pavey",
+        "dbId": "8860",
+        "recordId": "5626137",
+        "link": "http://www.ancestry.com/search/collections/8860/records/5626137",
+        "Age": "43",
+        "Relationship": "Daughter"
+      }
+    ]
+  },
+  "imageUrl": "https://www.ancestry.com/imageviewer/collections/8860/images/DEVHO107_1862_1862-0481?pid=5626136&queryId=bab4f926-478e-4678-a210-2dc321fba07b&usePUB=true&_phsrc=Zqm20883&_phstart=successSource&usePUBJs=true",
+  "imageDbId": "8860",
+  "imageRecordId": "DEVHO107_1862_1862-0481",
+  "sourceCitation": "Class: HO107; Piece: 1862; Folio: 246; Page: 12; GSU roll: 221009-221010",
+  "sourceInformation": "Ancestry.com. 1851 England Census [database on-line]. Lehi, UT, USA: Ancestry.com Operations Inc, 2005. Original data: Census Returns of England and Wales, 1851. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1851. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "originalData": "Census Returns of England and Wales, 1851. Kew, Surrey, England: The National Archives of the UK (TNA): Public Record Office (PRO), 1851. Data imaged from the National Archives, London, England. The National Archives gives no warranty as to the accuracy, completeness or fitness for the purpose of the information provided. Images may be used only for purposes of research, private study or education. Applications for any other use should be made to the National Archives, Kew, Richmond, Surrey TW9 4DU.",
+  "sourceDescription": "This database is an index to individuals enumerated in the 1851 Census for England. The census contains detailed information on each individual who spent the night in each household including name, relationship to the head of the family, marital status, age at last birthday, gender, occupation, and birthplace. Additional information about the dwelling and property was collected. Each name in this index is linked to actual images of the 1851 England Census. Learn more..."
+}

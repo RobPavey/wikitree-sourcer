@@ -897,12 +897,12 @@ function possiblyChooseUserCorrectedValue(ed, fieldName, value, type = "") {
 
     // We could have an option to chose a rule for how to pick a correction
     //  For example always use the correction if it is longer that main value
-    // Or there could be a popup that prompts the user o pick (but when)
+    // Or there could be a popup that prompts the user to pick (but when)
 
     // For now only chose a correction if it is adding something to the end
     // this helps with records from Norway where they often only have the forenames in the main value
     for (let userCorrection of userCorrections) {
-      if (userCorrection.startsWith(newValue)) {
+      if (newValue && userCorrection.startsWith(newValue)) {
         newValue = userCorrection;
       }
     }
