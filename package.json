@@ -3,7 +3,7 @@
   "dependencies": {
     "git-filter-repo": "0.0.30",
     "jsdom": "^16.7.0",
-    "web-ext": "^6.8.0"
+    "web-ext": "^8.10.0"
   },
   "devDependencies": {
     "husky": "^8.0.1",
