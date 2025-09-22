@@ -223,7 +223,7 @@ function extractSecondRowText(secondRowText, result) {
 }
 
 function extractFirstRowForBirth(inputElement, result) {
-  var firstRowFirstCell = inputElement.closest("TD");
+  var firstRowFirstCell = inputElement.closest("td");
   if (firstRowFirstCell) {
     let secondCell = firstRowFirstCell.nextElementSibling;
     if (secondCell) {
@@ -242,7 +242,7 @@ function extractFirstRowForBirth(inputElement, result) {
 }
 
 function extractFirstRowForDeath(inputElement, result) {
-  var firstRowFirstCell = inputElement.closest("TD");
+  var firstRowFirstCell = inputElement.closest("td");
   if (firstRowFirstCell) {
     let secondCell = firstRowFirstCell.nextElementSibling;
     if (secondCell) {
@@ -267,11 +267,11 @@ function extractFirstRowForDeath(inputElement, result) {
 
 function extractSecondRow(inputElement, result) {
   // get the second row text
-  let parentRow = inputElement.closest("TR");
+  let parentRow = inputElement.closest("tr");
   if (parentRow) {
     let nextRow = parentRow.nextElementSibling;
     if (nextRow) {
-      var secondRowTextNode = nextRow.querySelector("TD.main_text");
+      var secondRowTextNode = nextRow.querySelector("td.main_text");
       if (secondRowTextNode) {
         var secondRowText = cleanText(secondRowTextNode.textContent);
         extractSecondRowText(secondRowText, result);
@@ -286,7 +286,7 @@ function extractFirstOrSelectedData(document, firstRowFunction, secondRowFunctio
     return;
   }
 
-  let resultsTable = resultsNode.closest("TABLE");
+  let resultsTable = resultsNode.closest("table");
   if (!resultsTable) {
     return;
   }
