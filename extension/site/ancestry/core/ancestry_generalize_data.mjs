@@ -894,6 +894,8 @@ function possiblyChooseUserCorrectedValue(ed, fieldName, value, type = "") {
     // "Thekla Marie [Thekla Marie Høegh]"
     // less useful example:
     // "Jas Willson [James] [James Wilson] [Wilson]"
+    // Sometimes it is ALL user submitted:
+    // "[User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]"
 
     // We could have an option to chose a rule for how to pick a correction
     //  For example always use the correction if it is longer that main value
