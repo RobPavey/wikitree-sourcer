@@ -74,6 +74,7 @@ const recordTypeByFields = [
   { type: RT.Obituary, labels: ["Obituary Date"] },
   { type: RT.Obituary, labels: ["Obituary Place"] },
   { type: RT.Divorce, labels: ["Divorce Date"] },
+  { type: RT.Divorce, labels: ["Grounds for Divorce"] },
   { type: RT.Marriage, labels: ["Marriage Date", "Marriage Place", "Spouse"] },
   { type: RT.Marriage, labels: ["Age", "Marriage Place", "Spouse"] },
   { type: RT.Marriage, labels: ["Marriage Banns Date", "Marriage Banns Place", "Spouse"] },
@@ -196,7 +197,7 @@ function determineRecordType(extractedData) {
       ],
     },
 
-    { type: RT.Divorce, matches: ["Divorce Records", "Divorce Index"] },
+    { type: RT.Divorce, matches: ["Divorce Records", "Divorce Index", "Divorce Abstracts"] },
     {
       type: RT.Marriage,
       matches: [
@@ -893,15 +894,17 @@ function possiblyChooseUserCorrectedValue(ed, fieldName, value, type = "") {
     // "Thekla Marie [Thekla Marie Høegh]"
     // less useful example:
     // "Jas Willson [James] [James Wilson] [Wilson]"
+    // Sometimes it is ALL user submitted:
+    // "[User-submitted-comment Pavey] [Jane] [jane Pavey] [James Pavey]"
 
     // We could have an option to chose a rule for how to pick a correction
     //  For example always use the correction if it is longer that main value
-    // Or there could be a popup that prompts the user o pick (but when)
+    // Or there could be a popup that prompts the user to pick (but when)
 
     // For now only chose a correction if it is adding something to the end
     // this helps with records from Norway where they often only have the forenames in the main value
     for (let userCorrection of userCorrections) {
-      if (userCorrection.startsWith(newValue)) {
+      if (newValue && userCorrection.startsWith(newValue)) {
         newValue = userCorrection;
       }
     }

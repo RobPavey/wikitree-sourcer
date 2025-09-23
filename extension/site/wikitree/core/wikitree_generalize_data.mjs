@@ -277,11 +277,11 @@ function generalizeData(input) {
         result.birthDate.dateString = ed.birthDate.replace(decadeRegex, "$1") + "5";
         result.birthDate.qualifier = dateQualifiers.ABOUT;
       } else {
-        result.birthDate.dateString = ed.birthDate;
+        result.birthDate.setDateAndQualifierFromString(ed.birthDate);
       }
     }
     if (ed.birthYear) {
-      result.birthDate.yearString = ed.birthYear;
+      result.birthDate.setDateAndQualifierFromString(ed.birthYear, true);
     }
     if (ed.birthDateStatus && !result.birthDate.qualifier) {
       result.birthDate.qualifier = getQualifier(ed.birthDateStatus);
@@ -289,7 +289,7 @@ function generalizeData(input) {
   }
 
   // Death date
-  if (ed.deathDate || ed.birthYear) {
+  if (ed.deathDate || ed.deathYear) {
     result.deathDate = new DateObj();
 
     if (ed.deathDate) {
@@ -297,11 +297,11 @@ function generalizeData(input) {
         result.deathDate.dateString = ed.deathDate.replace(decadeRegex, "$1") + "5";
         result.deathDate.qualifier = dateQualifiers.ABOUT;
       } else {
-        result.deathDate.dateString = ed.deathDate;
+        result.deathDate.setDateAndQualifierFromString(ed.deathDate);
       }
     }
-    if (ed.birthYear) {
-      result.deathDate.yearString = ed.deathYear;
+    if (ed.deathYear) {
+      result.deathDate.setDateAndQualifierFromString(ed.deathYear, true);
     }
     if (ed.deathDateStatus && !result.deathDate.qualifier) {
       result.deathDate.qualifier = getQualifier(ed.deathDateStatus);
@@ -379,7 +379,7 @@ function generalizeData(input) {
       }
       if (spouse.marriageDate) {
         resultSpouse.marriageDate = new DateObj();
-        resultSpouse.marriageDate.dateString = spouse.marriageDate;
+        resultSpouse.marriageDate.setDateAndQualifierFromString(spouse.marriageDate);
       }
       if (spouse.marriagePlace) {
         resultSpouse.marriagePlace = new PlaceObj();

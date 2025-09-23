@@ -96,6 +96,22 @@ function standardizeDate(dateString) {
   return DateUtils.getStdShortFormDateString(parsedDate);
 }
 
+function apiDataStatusToQualifier(status) {
+  if (status == "guess") {
+    return dateQualifiers.ABOUT;
+  }
+  if (status == "certain") {
+    return dateQualifiers.EXACT;
+  }
+  if (status == "before") {
+    return dateQualifiers.BEFORE;
+  }
+  if (status == "after") {
+    return dateQualifiers.AFTER;
+  }
+  return dateQualifiers.NONE;
+}
+
 async function makeApiRequests(extractedData) {
   if (haveValidApiResponse) {
     return;
@@ -333,6 +349,32 @@ async function updateGeneralizedDataUsingApiResponse(data, tabId) {
           person.deathDate = new DateObj();
           person.deathDate.dateString = dateString;
         }
+      }
+    }
+    if (apiInfo.marriage_date) {
+      let dateString = DateUtils.getStdShortDateStringFromYearMonthDayString(apiInfo.marriage_date);
+      if (dateString) {
+        if (!person.marriageDate || !person.marriageDate.dateString || person.marriageDate.dateString != dateString) {
+          if (!person.marriageDate) {
+            person.marriageDate = new DateObj();
+          }
+          person.marriageDate.dateString = dateString;
+        }
+        if (apiInfo.data_status) {
+          person.marriageDate.qualifier = apiDataStatusToQualifier(apiInfo.data_status.marriage_date);
+        }
+      }
+    }
+    if (apiInfo.marriage_place) {
+      if (
+        !person.marriagePlace ||
+        !person.marriagePlace.placeString ||
+        person.marriagePlace.placeString != apiInfo.marriage_place
+      ) {
+        if (!person.marriagePlace) {
+          person.marriagePlace = new PlaceObj();
+        }
+        person.marriagePlace.placeString = apiInfo.marriage_place;
       }
     }
   }

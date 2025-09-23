@@ -236,6 +236,11 @@ const regressionData = [
     url: "https://search.ancestry.com/cgi-bin/sse.dll?indiv=1&dbid=8978&h=16161242&tid=&pid=&queryId=1452d1df2d23a3ad7af1da515159f4bf&usePUB=true&_phsrc=ywU8297&_phstart=successSource",
   },
   {
+    // all of names are user submitted
+    caseName: "england_census_1851_james_pavey",
+    url: "https://www.ancestry.com/search/collections/8860/records/5626136?tid=&pid=&queryId=bab4f926-478e-4678-a210-2dc321fba07b&_phsrc=Zqm20883&_phstart=successSource",
+  },
+  {
     caseName: "england_census_1851_john_lago",
     url: "https://www.ancestry.com/discoveryui-content/view/5941797:8767?ssrc=pt&tid=118975788&pid=400176376493&clickref=1100lw3b8Ahw%2C1100lw3b8Ahw&adref=&o_xid=01011l4xx5&o_lid=01011l4xx5&o_sch=Affiliate%2BExternal",
   },

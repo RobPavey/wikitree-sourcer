@@ -1,0 +1,63 @@
+{
+  "sourceType": "record",
+  "recordType": "Census",
+  "sourceOfData": "ancestry",
+  "name": {
+    "name": "James Pavey"
+  },
+  "personGender": "male",
+  "eventPlace": {
+    "country": "England",
+    "placeString": "Town, Axminster, Devon, England"
+  },
+  "registrationDistrict": "Axminster",
+  "birthDate": {
+    "yearString": "1768",
+    "qualifier": 2
+  },
+  "birthPlace": {
+    "placeString": "Yarcombe, Devon, England"
+  },
+  "eventDate": {
+    "yearString": "1851"
+  },
+  "ageAtEvent": "83",
+  "relationshipToHead": "head",
+  "householdArrayFields": [
+    "name",
+    "age",
+    "relationship"
+  ],
+  "householdArray": [
+    {
+      "name": "James Pavey",
+      "age": "83",
+      "relationship": "head",
+      "isSelected": true,
+      "gender": "male",
+      "birthPlace": "Yarcombe, Devon, England",
+      "birthYear": "abt 1768"
+    },
+    {
+      "name": "Sarah Pavey",
+      "age": "43",
+      "relationship": "daughter",
+      "uid": "http://www.ancestry.com/search/collections/8860/records/5626137"
+    }
+  ],
+  "wtSearchTemplates": [
+    "{{Ancestry Record|8860|5626136}}"
+  ],
+  "wtSearchTemplatesRelated": [
+    "{{Ancestry Record|8860|5626137}}"
+  ],
+  "collectionData": {
+    "id": "8860",
+    "collectionTitle": "1851 England Census",
+    "page": "12",
+    "folio": "246",
+    "piece": "1862",
+    "county": "Devon"
+  },
+  "hasValidData": true
+}
