@@ -14,6 +14,8 @@ The sub-folder "extension" is the extension itself.
 
 This projects is participating in Hacktoberfest 2025. The preferred way to contribute is by adding support for a new site. The sites that have been requested have entries in the issues list for this project and can be seen with [this search](https://github.com/RobPavey/wikitree-sourcer/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Add%20new%20site%22). Issues that are already in progess are marked with the "In progress" label. Some [issues that seem good tasks for Hacktoberfest have the "hacktoberfest" label added](https://github.com/RobPavey/wikitree-sourcer/issues?q=is%3Aissue%20state%3Aopen%20label%3Ahacktoberfest).
 
+For guides on how to get setup and how to add a new site see below.
+
 ## Development environment
 
 The extension is being developed by Rob using VSCode on Mac but any editor and platform that supports javascript development can be used.
