@@ -32,7 +32,8 @@
       "lastNameAtBirth": "Cole",
       "lastNameAtDeath": "Handford",
       "marriageDate": {
-        "dateString": "about 5 Dec 1864"
+        "qualifier": 2,
+        "dateString": "5 Dec 1864"
       },
       "marriagePlace": {
         "placeString": "High Bickington, Devon, England, United Kingdom"
