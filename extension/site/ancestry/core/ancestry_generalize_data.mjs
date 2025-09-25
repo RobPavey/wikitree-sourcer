@@ -2802,7 +2802,15 @@ function generalizeProfileData(input, result) {
   result.sourceType = "profile";
   result.sourceOfData = "ancestry";
 
-  result.setFullName(cleanName(ed.titleName));
+  // if we have the name parts already identifed then use them
+  if (ed.surname || ed.givenName) {
+    result.setLastNameAndForenames(ed.surname, ed.givenName);
+    if (ed.suffix) {
+      result.name.suffix = ed.suffix;
+    }
+  } else {
+    result.setFullName(cleanName(ed.titleName));
+  }
 
   result.setBirthDate(ed.birthDate);
   result.setBirthPlace(ed.birthPlace);
@@ -2874,7 +2882,7 @@ function generalizeProfileData(input, result) {
   // setFullName above will have removed suffixes
   if (surname && StringUtils.isAllUppercase(surname)) {
     let newLastName = NameUtils.convertNameFromAllCapsToMixedCase(surname);
-    if (result.name) {
+    if (result.name.name) {
       result.name.name = result.name.name.replace(surname, newLastName);
     }
     surname = newLastName;
