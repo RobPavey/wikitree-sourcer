@@ -22,6 +22,70 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function extractTypeSet(text) {
+  text = text.trim().toLowerCase();
+
+  let typeSet = "";
+
+  if (text.includes("geburt")) {
+    typeSet += ", Birth";
+  }
+  if (text.includes("tauf")) {
+    typeSet += ", Baptism";
+  }
+  if (text.includes("trauu") || text.includes("heirat") || text.includes("eheschließung")) {
+    typeSet += ", Marriage";
+  }
+  if (text.includes("verlobung")) {
+    typeSet += ", Engagement";
+  }
+  if (
+    text.includes("sterbe") ||
+    text.includes("tod") ||
+    text.includes("tot") ||
+    text.includes("begräbnis") ||
+    text.includes("begraben") ||
+    text.includes("beeerdigung")
+  ) {
+    typeSet += ", Death";
+  }
+  if (text.includes("kommunion")) {
+    typeSet += ", First Communion";
+  }
+  if (text.includes("firmung")) {
+    typeSet += ", Confirmation (Firmung)";
+  }
+  if (text.includes("notizen") || text.includes("anmerkung")) {
+    typeSet += ", Notes";
+  }
+  if (text.includes("register") || text.includes("index")) {
+    typeSet += ", Name Register";
+  }
+  if (text.includes("umschlag")) {
+    typeSet += ", Envelope";
+  }
+  if (text.includes("familie")) {
+    typeSet += ", Family Book";
+  }
+  if (text.includes("grundbuch")) {
+    typeSet += ", Land Register";
+  }
+  if (text.includes("lose blätter")) {
+    if (typeSet) {
+      typeSet += ", Loose Sheets";
+    } else {
+      typeSet += ", Loose Sheets (Church Records)";
+    }
+  }
+  if (text.includes("einband")) {
+    typeSet += ", Envelope";
+  }
+  if (text.includes("sonstiges")) {
+    typeSet += ", Miscellaneous";
+  }
+  return typeSet.substring(2);
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -51,71 +115,16 @@ function extractData(document, url) {
   }
 
   result.book = book;
-  const bookTitle = components[0].split("-")[0].trim().toLowerCase();
-
+  const bookTitle = components[0].split("-")[0];
   let typeSet = "";
-
-  if (bookTitle.includes("geburt")) {
-    typeSet += ", Birth";
-  }
-  if (bookTitle.includes("tauf")) {
-    typeSet += ", Baptism";
-  }
-  if (bookTitle.includes("trauu") || bookTitle.includes("heirat") || bookTitle.includes("eheschließung")) {
-    typeSet += ", Marriage";
-  }
-  if (bookTitle.includes("verlobung")) {
-    typeSet += ", Engagement";
-  }
-  if (
-    bookTitle.includes("sterbe") ||
-    bookTitle.includes("tod") ||
-    bookTitle.includes("tot") ||
-    bookTitle.includes("begräbnis") ||
-    bookTitle.includes("begraben") ||
-    bookTitle.includes("beeerdigung")
-  ) {
-    typeSet += ", Death";
-  }
-  if (bookTitle.includes("kommunion")) {
-    typeSet += ", First Communion";
-  }
-  if (bookTitle.includes("firmung")) {
-    typeSet += ", Confirmation (Firmung)";
-  }
-  if (bookTitle.includes("notizen") || bookTitle.includes("anmerkung")) {
-    typeSet += ", Notes";
-  }
-  if (bookTitle.includes("register") || bookTitle.includes("index")) {
-    typeSet += ", Name Register";
-  }
-  if (bookTitle.includes("umschlag")) {
-    typeSet += ", Envelope";
-  }
-  if (bookTitle.includes("familie")) {
-    typeSet += ", Family Book";
-  }
-  if (bookTitle.includes("grundbuch")) {
-    typeSet += ", Land Register";
-  }
-  if (bookTitle.includes("lose blätter")) {
-    if (typeSet) {
-      typeSet += ", Loose Sheets";
-    } else {
-      typeSet += ", Loose Sheets (Church Records)";
-    }
-  }
-
-  if (typeSet) {
-    // Remove the first ', '
-    result.typeSet = typeSet.substring(2);
-  }
 
   if (url.match("/oesterreich/wien/")) {
     const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
     const text = selectedComponent.text;
     const page = text.split("_")[1];
     result.page = Number(page).toString();
+    result.sectionNumber = Number(text.split("-")[0]).toString();
+    typeSet = extractTypeSet(text);
   }
   
   if (result.page == null) {
@@ -124,6 +133,12 @@ function extractData(document, url) {
     if (lastComponent.substring(0, 4) == "?pg=") {
       result.page = lastComponent.substring(4).split("&")[0];
     }
+    typeSet = extractTypeSet(bookTitle);
+  }
+
+  if (typeSet) {
+    // Remove the first ', '
+    result.typeSet = typeSet;
   }
 
   result.success = true;
