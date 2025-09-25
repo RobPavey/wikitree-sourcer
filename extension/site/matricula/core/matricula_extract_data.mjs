@@ -111,10 +111,19 @@ function extractData(document, url) {
     result.typeSet = typeSet.substring(2);
   }
 
-  const urlSplit = url.split("/");
-  const lastComponent = urlSplit[urlSplit.length - 1];
-  if (lastComponent.substring(0, 4) == "?pg=") {
-    result.page = lastComponent.substring(4).split("&")[0];
+  if (url.match("/oesterreich/wien/")) {
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
+    const text = selectedComponent.text;
+    const page = text.split("_")[1];
+    result.page = Number(page).toString();
+  }
+  
+  if (result.page == null) {
+    const urlSplit = url.split("/");
+    const lastComponent = urlSplit[urlSplit.length - 1];
+    if (lastComponent.substring(0, 4) == "?pg=") {
+      result.page = lastComponent.substring(4).split("&")[0];
+    }
   }
 
   result.success = true;
