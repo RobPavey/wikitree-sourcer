@@ -118,73 +118,84 @@ function extractData(document, url) {
   const bookTitle = components[0].split("-")[0];
 
   // Format: <some text>_<page num>
-  if ( url.match("/oesterreich/wien/") 
-    || url.match("/oesterreich/alt-ev/")
-    || url.match("/oesterreich/burgenland-ab-hb/")
-    || url.match("/oesterreich/burgenland/")
-    || url.match("/oesterreich/metropolis/")
-    || url.match("/oesterreich/st-poelten/")
-    || url.match("/oesterreich/salzburg/")
-    || url.match("/oesterreich/steiermark-ev-kirche-AB/")
-    || url.match("/oesterreich/daw/")
-    || url.match("/oesterreich/wien-evang-dioezese-AB/")
-    || url.match("/oesterreich/wien-evang-dioezese-HB/")
-    || url.match("/oesterreich/wien/")
-    || url.match("/deutschland/osnabrueck/")
+  if (
+    url.match("/oesterreich/wien/") ||
+    url.match("/oesterreich/alt-ev/") ||
+    url.match("/oesterreich/burgenland-ab-hb/") ||
+    url.match("/oesterreich/burgenland/") ||
+    url.match("/oesterreich/metropolis/") ||
+    url.match("/oesterreich/st-poelten/") ||
+    url.match("/oesterreich/salzburg/") ||
+    url.match("/oesterreich/steiermark-ev-kirche-AB/") ||
+    url.match("/oesterreich/daw/") ||
+    url.match("/oesterreich/wien-evang-dioezese-AB/") ||
+    url.match("/oesterreich/wien-evang-dioezese-HB/") ||
+    url.match("/oesterreich/wien/") ||
+    url.match("/deutschland/osnabrueck/")
   ) {
-    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
-    const text = selectedComponent.text;
-    const page = text.split("_")[1];
-    result.page = Number(page).toString();
-    result.sectionNumber = Number(text.split("-")[0]).toString();
-    result.typeSet = extractTypeSet(text);
-    if (result.typeSet == "") {
-      result.typeSet = extractTypeSet(bookTitle);
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      const page = text.split("_")[1];
+      result.page = Number(page).toString();
+      result.sectionNumber = Number(text.split("-")[0]).toString();
+      result.typeSet = extractTypeSet(text);
+      if (result.typeSet == "") {
+        result.typeSet = extractTypeSet(bookTitle);
+      }
     }
   }
 
   if (url.match("/oesterreich/graz-seckau/")) {
-    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
-    const text = selectedComponent.text;
-    const page = text.substring("Seite ".length);
-    result.page = page;
-    result.typeSet = extractTypeSet(bookTitle);
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      const page = text.substring("Seite ".length);
+      result.page = page;
+      result.typeSet = extractTypeSet(bookTitle);
+    }
   }
 
   if (url.match("/oesterreich/vorarlberg/")) {
-    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
-    const text = selectedComponent.text;
-    let page = text.substring(text.indexOf("-")+1).trim();
-    if (page.match("^Seite")) {
-      page = page.substring("Seite".length).trim();
-    }
-    result.page = page;
-    result.typeSet = extractTypeSet(text.split("-")[0]);
-    if (result.typeSet == "") {
-      result.typeSet = extractTypeSet(bookTitle);
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      let page = text.substring(text.indexOf("-") + 1).trim();
+      if (page.match("^Seite")) {
+        page = page.substring("Seite".length).trim();
+      }
+      result.page = page;
+      result.typeSet = extractTypeSet(text.split("-")[0]);
+      if (result.typeSet == "") {
+        result.typeSet = extractTypeSet(bookTitle);
+      }
     }
   }
 
   if (url.match("/deutschland/fulda/")) {
-    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
-    const text = selectedComponent.text;
-    const page = text.substring(text.lastIndexOf("-")+1).trim();
-    result.page = Number(page).toString();
-    result.sectionNumber = Number(text.split("-")[0]).toString();
-    result.typeSet = extractTypeSet(text);
-    if (result.typeSet == "") {
-      result.typeSet = extractTypeSet(bookTitle);
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      const page = text.substring(text.lastIndexOf("-") + 1).trim();
+      result.page = Number(page).toString();
+      result.sectionNumber = Number(text.split("-")[0]).toString();
+      result.typeSet = extractTypeSet(text);
+      if (result.typeSet == "") {
+        result.typeSet = extractTypeSet(bookTitle);
+      }
     }
   }
 
   if (url.match("/deutschland/hildesheim/")) {
-    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
-    const text = selectedComponent.text;
-    const page = text.split("_")[0].trim();
-    result.page = page;
-    result.typeSet = extractTypeSet(bookTitle);
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      const page = text.split("_")[0].trim();
+      result.page = page;
+      result.typeSet = extractTypeSet(bookTitle);
+    }
   }
-  
+
   if (result.page == null) {
     const urlSplit = url.split("/");
     const lastComponent = urlSplit[urlSplit.length - 1];
