@@ -71,6 +71,22 @@ const regressionData = [
     caseName: "luxemburg_asselborn_kb12_13",
     url: "https://data.matricula-online.eu/de/LU/luxemburg/asselborn/KB-12/?pg=13",
   },
+  {
+    caseName: "admont_tb1_68",
+    url: "https://data.matricula-online.eu/de/oesterreich/graz-seckau/admont/18512/?pg=37",
+  },
+  {
+    caseName: "batschuns_sb1_3",
+    url: "https://data.matricula-online.eu/de/oesterreich/vorarlberg/Batschuns/AT-ADF+Batschuns+Sterbebuch+1/?pg=4",
+  },
+  {
+    caseName: "burghaun_tote_4_4",
+    url: "https://data.matricula-online.eu/de/deutschland/fulda/DE-Ful3_JBK/4-03/?pg=5",
+  },
+  {
+    caseName: "derneburg_taufe_101",
+    url: "https://data.matricula-online.eu/de/deutschland/hildesheim/derneburg-st-andreas/0421_01/?pg=50",
+  },
 ];
 
 async function runTests(testManager) {
