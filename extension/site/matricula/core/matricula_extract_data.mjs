@@ -45,7 +45,7 @@ function extractTypeSet(text) {
     text.includes("tot") ||
     text.includes("begräbnis") ||
     text.includes("begraben") ||
-    text.includes("beeerdigung")
+    text.includes("beerdigung")
   ) {
     typeSet += ", Death";
   }
@@ -117,6 +117,7 @@ function extractData(document, url) {
   result.book = book;
   const bookTitle = components[0].split("-")[0];
 
+  // Format: <some text>_<page num>
   if ( url.match("/oesterreich/wien/") 
     || url.match("/oesterreich/alt-ev/")
     || url.match("/oesterreich/burgenland-ab-hb/")
@@ -129,6 +130,7 @@ function extractData(document, url) {
     || url.match("/oesterreich/wien-evang-dioezese-AB/")
     || url.match("/oesterreich/wien-evang-dioezese-HB/")
     || url.match("/oesterreich/wien/")
+    || url.match("/deutschland/osnabrueck/")
   ) {
     const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
     const text = selectedComponent.text;
@@ -161,6 +163,26 @@ function extractData(document, url) {
     if (result.typeSet == "") {
       result.typeSet = extractTypeSet(bookTitle);
     }
+  }
+
+  if (url.match("/deutschland/fulda/")) {
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
+    const text = selectedComponent.text;
+    const page = text.substring(text.lastIndexOf("-")+1).trim();
+    result.page = Number(page).toString();
+    result.sectionNumber = Number(text.split("-")[0]).toString();
+    result.typeSet = extractTypeSet(text);
+    if (result.typeSet == "") {
+      result.typeSet = extractTypeSet(bookTitle);
+    }
+  }
+
+  if (url.match("/deutschland/hildesheim/")) {
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active")
+    const text = selectedComponent.text;
+    const page = text.split("_")[0].trim();
+    result.page = page;
+    result.typeSet = extractTypeSet(bookTitle);
   }
   
   if (result.page == null) {
