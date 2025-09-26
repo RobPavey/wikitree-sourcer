@@ -164,6 +164,9 @@ function extractData(document, url) {
       if (page.match("^Seite")) {
         page = page.substring("Seite".length).trim();
       }
+      if (page.match("^fol.")) {
+        page = page.substring("fol.".length).trim();
+      }
       result.page = page;
       result.typeSet = extractTypeSet(text.split("-")[0]);
       if (result.typeSet == "") {
