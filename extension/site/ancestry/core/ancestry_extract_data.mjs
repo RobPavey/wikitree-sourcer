@@ -1502,6 +1502,10 @@ function handlePersonFactsPreJune2024(document, result) {
           if (surname && surname != fullNameText) {
             result.surname = parseHtmlEscapeCodes(surname);
           }
+          let suffix = fullNameText.replace(/fullName: {.*\ssuffix:\s*'([^']*)'.*/, "$1");
+          if (suffix && suffix != fullNameText) {
+            result.suffix = parseHtmlEscapeCodes(suffix);
+          }
         }
       }
     }
@@ -1806,6 +1810,10 @@ function handlePersonFactsJune2024(document, result) {
           }
           if (surname && surname != fullNameText) {
             result.surname = parseHtmlEscapeCodes(surname);
+          }
+          let suffix = fullNameText.replace(/fullName: {.*\ssuffix:\s*'([^']*)'.*/, "$1");
+          if (suffix && suffix != fullNameText) {
+            result.suffix = parseHtmlEscapeCodes(suffix);
           }
         }
       }

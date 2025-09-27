@@ -13,10 +13,9 @@
     "sourceType": "profile",
     "sourceOfData": "ancestry",
     "name": {
-      "name": "Leonard Pavey",
-      "suffix": "V",
       "lastName": "Pavey",
-      "forenames": "Leonard"
+      "forenames": "Leonard",
+      "suffix": "V"
     },
     "birthDate": {
       "dateString": "1728"
