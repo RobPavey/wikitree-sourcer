@@ -46,11 +46,25 @@ This is done using npm. Change directory to the project folder (the folder that 
 
 `npm ci`
 
-THis does an npm "clean install" it uses the versions of packages from the package-lock.json file.
+This does an npm "clean install" it uses the versions of packages from the package-lock.json file.
 
-You will get a lot of messages but towards the end you should see a line something like this:
+You will get a lot of messages but at the end you should see something like this:
 
-`added 510 packages from 467 contributors and audited 510 packages in 37.946s`
+```
+added 464 packages, and audited 465 packages in 3s
+
+125 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+```
+
+Note that these node.js packages are only used for the test harness, not in the extension itself. So we are not too concerned about some packages being unsupported versions.
 
 ### Run the unit tests
 
