@@ -99,7 +99,13 @@
       "js": ["base/browser/content/content_common.js", "site/cwgc/browser/cwgc_content.js"]
     },
     {
-      "matches": ["*://dfg-viewer.de/*"],
+      "matches": [
+        "*://dfg-viewer.de/*",
+        "*://digitales-archiv.erzbistum-muenchen.de/*",
+        "*://www.gda.bayern.de/*",
+        "*://www.arcinsys.niedersachsen.de/*",
+        "*://arcinsys.hessen.de/*"
+      ],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/dfgviewer/browser/dfgviewer_content.js"]
     },
@@ -366,7 +372,13 @@
     },
     {
       "resources": ["site/dfgviewer/core/dfgviewer_extract_data.mjs"],
-      "matches": ["*://dfg-viewer.de/*"]
+      "matches": [
+        "*://dfg-viewer.de/*",
+        "*://digitales-archiv.erzbistum-muenchen.de/*",
+        "*://www.gda.bayern.de/*",
+        "*://www.arcinsys.niedersachsen.de/*",
+        "*://arcinsys.hessen.de/*"
+      ]
     },
     {
       "resources": ["site/noda/core/noda_extract_data.mjs"],

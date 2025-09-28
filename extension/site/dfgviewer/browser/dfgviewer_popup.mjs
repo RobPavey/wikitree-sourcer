@@ -71,6 +71,8 @@ const nsResolver = (prefix) => {
   const ns = {
     mets: "http://www.loc.gov/METS/",
     mods: "http://www.loc.gov/mods/v3",
+    ns2: "http://www.loc.gov/METS/",
+    ns4: "http://www.loc.gov/mods/v3",
     dv: "http://dfg-viewer.de/",
   };
   return ns[prefix] || null;
@@ -108,6 +110,32 @@ function parseStaatsarchivBayernMetadata(extractData) {
   extractData.signature = getText("//mods:mods/mods:location/mods:shelfLocator");
 }
 
+function parseArcinsysMetadata(extractData) {
+  const getText = (xpath) => {
+    const node = extractData.metadata.evaluate(
+      xpath,
+      extractData.metadata,
+      nsResolver,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    ).singleNodeValue;
+    return node ? node.textContent.trim() : null;
+  };
+
+  const getAllTexts = (xpath) => {
+    const results = extractData.metadata.evaluate(xpath, extractData.metadata, nsResolver, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+    let values = [];
+    for (let i = 0; i < results.snapshotLength; i++) {
+      values.push(results.snapshotItem(i).textContent.trim());
+    }
+    return values;
+  };
+
+  extractData.title = getText("//ns4:mods/ns4:titleInfo/ns4:title");
+  let signature_components = getAllTexts("//ns4:mods/ns4:location/ns4:shelfLocator");
+  extractData.signature = signature_components.join(", ");
+}
+
 let domParser = new DOMParser();
 
 function parseMetadata(extractData) {
@@ -118,6 +146,10 @@ function parseMetadata(extractData) {
     parseErzbistumMunichMetadata(extractData);
   } else if (extractData.metadata_url.match("www.gda.bayern.de")) {
     parseStaatsarchivBayernMetadata(extractData);
+  } else if (extractData.metadata_url.match("www.arcinsys.niedersachsen.de")) {
+    parseArcinsysMetadata(extractData);
+  } else if (extractData.metadata_url.match("arcinsys.hessen.de")) {
+    parseArcinsysMetadata(extractData);
   } else {
     alert("No support for side " + extractData.metadata_url + " yet");
   }
