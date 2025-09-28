@@ -36,8 +36,8 @@ const citationOptionsGroup = {
   options: [],
 };
 
-registerSubsectionForOptions("search", "dfgviewer", "DFG Viewer");
-registerSiteSearchPopupOptionsGroup("dfgviewer");
+// registerSubsectionForOptions("search", "dfgviewer", "DFG Viewer");
+// registerSiteSearchPopupOptionsGroup("dfgviewer");
 
 registerSubsectionForOptions("citation", "dfgviewer", "DFG Viewer");
 registerOptionsGroup(citationOptionsGroup);

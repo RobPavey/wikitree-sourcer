@@ -26,10 +26,7 @@ import { registerSite } from "../../../base/core/site_registry.mjs";
 
 const siteData = {
   repositoryName: "DFG Viewer",
-  usPhoneNumber: "",
-  email: "",
-  address: "",
-  baseUrl: "",
+  baseUrl: "https://dfg-viewer.de",
 };
 
 function register() {
