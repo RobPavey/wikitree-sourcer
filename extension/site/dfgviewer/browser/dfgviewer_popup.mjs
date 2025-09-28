@@ -78,61 +78,39 @@ const nsResolver = (prefix) => {
   return ns[prefix] || null;
 };
 
-function parseErzbistumMunichMetadata(extractData) {
-  const getText = (xpath) => {
-    const node = extractData.metadata.evaluate(
-      xpath,
-      extractData.metadata,
-      nsResolver,
-      XPathResult.FIRST_ORDERED_NODE_TYPE,
-      null
-    ).singleNodeValue;
-    return node ? node.textContent.trim() : null;
-  };
+const getText = (data, xpath) => {
+  const node = data.evaluate(
+    xpath,
+    data,
+    nsResolver,
+    XPathResult.FIRST_ORDERED_NODE_TYPE,
+    null
+  ).singleNodeValue;
+  return node ? node.textContent.trim() : null;
+};
 
-  extractData.title = getText("//mods:mods/mods:titleInfo/mods:title");
-  extractData.signature = getText("//mods:relatedItem[@type='host']/mods:titleInfo/mods:title");
+const getAllTexts = (data, xpath) => {
+  const results = data.evaluate(xpath, data, nsResolver, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+  let values = [];
+  for (let i = 0; i < results.snapshotLength; i++) {
+    values.push(results.snapshotItem(i).textContent.trim());
+  }
+  return values;
+};
+
+function parseErzbistumMunichMetadata(extractData) {
+  extractData.title = getText(extractData.metadata, "//mods:mods/mods:titleInfo/mods:title");
+  extractData.signature = getText(extractData.metadata, "//mods:relatedItem[@type='host']/mods:titleInfo/mods:title");
 }
 
 function parseStaatsarchivBayernMetadata(extractData) {
-  const getText = (xpath) => {
-    const node = extractData.metadata.evaluate(
-      xpath,
-      extractData.metadata,
-      nsResolver,
-      XPathResult.FIRST_ORDERED_NODE_TYPE,
-      null
-    ).singleNodeValue;
-    return node ? node.textContent.trim() : null;
-  };
-
-  extractData.title = getText("//mods:mods/mods:titleInfo/mods:title");
-  extractData.signature = getText("//mods:mods/mods:location/mods:shelfLocator");
+  extractData.title = getText(extractData.metadata, "//mods:mods/mods:titleInfo/mods:title");
+  extractData.signature = getText(extractData.metadata, "//mods:mods/mods:location/mods:shelfLocator");
 }
 
 function parseArcinsysMetadata(extractData) {
-  const getText = (xpath) => {
-    const node = extractData.metadata.evaluate(
-      xpath,
-      extractData.metadata,
-      nsResolver,
-      XPathResult.FIRST_ORDERED_NODE_TYPE,
-      null
-    ).singleNodeValue;
-    return node ? node.textContent.trim() : null;
-  };
-
-  const getAllTexts = (xpath) => {
-    const results = extractData.metadata.evaluate(xpath, extractData.metadata, nsResolver, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
-    let values = [];
-    for (let i = 0; i < results.snapshotLength; i++) {
-      values.push(results.snapshotItem(i).textContent.trim());
-    }
-    return values;
-  };
-
-  extractData.title = getText("//ns4:mods/ns4:titleInfo/ns4:title");
-  let signature_components = getAllTexts("//ns4:mods/ns4:location/ns4:shelfLocator");
+  extractData.title = getText(extractData.metadata, "//ns4:mods/ns4:titleInfo/ns4:title");
+  let signature_components = getAllTexts(extractData.metadata, "//ns4:mods/ns4:location/ns4:shelfLocator");
   extractData.signature = signature_components.join(", ");
 }
 
