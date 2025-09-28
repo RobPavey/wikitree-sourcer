@@ -99,6 +99,11 @@
       "js": ["base/browser/content/content_common.js", "site/cwgc/browser/cwgc_content.js"]
     },
     {
+      "matches": ["*://dfg-viewer.de/*", "*://digitales-archiv.erzbistum-muenchen.de/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/dfgviewer/browser/dfgviewer_content.js"]
+    },
+    {
       "matches": ["*://*.digitalarkivet.no/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/noda/browser/noda_content.js"]
@@ -351,6 +356,10 @@
     {
       "resources": ["site/cwgc/core/cwgc_extract_data.mjs"],
       "matches": ["*://*.cwgc.org/*"]
+    },
+    {
+      "resources": ["site/dfgviewer/core/dfgviewer_extract_data.mjs"],
+      "matches": ["*://dfg-viewer.de/*", "*://digitales-archiv.erzbistum-muenchen.de/*"]
     },
     {
       "resources": ["site/noda/core/noda_extract_data.mjs"],

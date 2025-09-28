@@ -1,0 +1,119 @@
+/*
+MIT License
+
+Copyright (c) 2020 Robert M Pavey
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/dfgviewer_generalize_data.mjs";
+import { buildCitation } from "../core/dfgviewer_build_citation.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { closePopup } from "/base/browser/popup/popup_menu_building.mjs";
+
+async function fetch_metadata(url) {
+  const checkPermissionsOptions = {
+    reason: "To fetch additional metadata, a content script needs to be loaded on the dfg-viewer.de page.",
+  };
+  let allowed = await checkPermissionForSite("*://digitales-archiv.erzbistum-muenchen.de/*", checkPermissionsOptions);
+  if (!allowed) {
+    closePopup();
+    return;
+  }
+
+  const url_parsed = new URLSearchParams(url);
+  const metadata_url = url_parsed.get("tx_dlf[id]");
+  let request = await fetch(metadata_url, {
+    headers: {
+      accept: "*/*",
+      "accept-language": "en-US,en;q=0.9",
+      "sec-ch-ua": '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": '"Windows"',
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "same-origin",
+      "x-requested-with": "XMLHttpRequest",
+    },
+    referrer: url,
+    referrerPolicy: "strict-origin-when-cross-origin",
+    method: "GET",
+    mode: "cors",
+    credentials: "include",
+  });
+  if (request.ok) {
+    return await request.text();
+  }
+  return null;
+}
+
+const nsResolver = (prefix) => {
+  const ns = {
+    mets: "http://www.loc.gov/METS/",
+    mods: "http://www.loc.gov/mods/v3",
+    dv: "http://dfg-viewer.de/",
+  };
+  return ns[prefix] || null;
+};
+
+function parseErzbistumMunichMetadata(extractData) {
+  const getText = (xpath) => {
+    const node = extractData.metadata.evaluate(
+      xpath,
+      extractData.metadata,
+      nsResolver,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    ).singleNodeValue;
+    return node ? node.textContent.trim() : null;
+  };
+
+  extractData.title = getText("//mods:mods/mods:titleInfo/mods:title");
+  extractData.signature = getText("//mods:relatedItem[@type='host']/mods:titleInfo/mods:title");
+}
+
+let domParser = new DOMParser();
+
+function parseMetadata(extractData) {
+  let xmlDoc = domParser.parseFromString(extractData.metadata, "text/xml");
+  extractData.metadata = xmlDoc;
+
+  if (extractData.url.match("digitales-archiv.erzbistum-muenchen.de")) {
+    parseErzbistumMunichMetadata(extractData);
+  }
+}
+
+async function setupDfgviewerPopupMenu(extractedData) {
+  extractedData.metadata = await fetch_metadata(extractedData.url);
+  parseMetadata(extractedData);
+
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage: "It looks like a DFG Viewer page but not a record page.",
+    generalizeFailedMessage: "It looks like a DFG Viewer page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "dfgviewer",
+  };
+  setupSimplePopupMenu(input);
+}
+
+initPopup("dfgviewer", setupDfgviewerPopupMenu);
