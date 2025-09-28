@@ -29,7 +29,7 @@ import { buildCitation } from "../core/dfgviewer_build_citation.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 import { closePopup } from "/base/browser/popup/popup_menu_building.mjs";
 
-async function fetch_metadata(url) {
+async function fetch_metadata(url, extractData) {
   const checkPermissionsOptions = {
     reason: "To fetch additional metadata, a content script needs to be loaded on the dfg-viewer.de page.",
   };
@@ -41,6 +41,9 @@ async function fetch_metadata(url) {
 
   const url_parsed = new URLSearchParams(url);
   const metadata_url = url_parsed.get("tx_dlf[id]");
+
+  extractData.metadata_url = metadata_url;
+
   let request = await fetch(metadata_url, {
     headers: {
       accept: "*/*",
@@ -60,9 +63,8 @@ async function fetch_metadata(url) {
     credentials: "include",
   });
   if (request.ok) {
-    return await request.text();
+    extractData.metadata = await request.text();
   }
-  return null;
 }
 
 const nsResolver = (prefix) => {
@@ -90,19 +92,41 @@ function parseErzbistumMunichMetadata(extractData) {
   extractData.signature = getText("//mods:relatedItem[@type='host']/mods:titleInfo/mods:title");
 }
 
+function parseStaatsarchivBayernMetadata(extractData) {
+  const getText = (xpath) => {
+    const node = extractData.metadata.evaluate(
+      xpath,
+      extractData.metadata,
+      nsResolver,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    ).singleNodeValue;
+    return node ? node.textContent.trim() : null;
+  };
+
+  alert(extractData.metadata_url);
+
+  extractData.title = getText("//mods:mods/mods:titleInfo/mods:title");
+  extractData.signature = getText("//mods:mods/mods:location/mods:shelfLocator");
+}
+
 let domParser = new DOMParser();
 
 function parseMetadata(extractData) {
   let xmlDoc = domParser.parseFromString(extractData.metadata, "text/xml");
   extractData.metadata = xmlDoc;
 
-  if (extractData.url.match("digitales-archiv.erzbistum-muenchen.de")) {
+  if (extractData.metadata_url.match("digitales-archiv.erzbistum-muenchen.de")) {
     parseErzbistumMunichMetadata(extractData);
+  } else if (extractData.metadata_url.match("www.gda.bayern.de")) {
+    parseStaatsarchivBayernMetadata(extractData);
+  } else {
+    alert("No support for side " + extractData.metadata_url + " yet");
   }
 }
 
 async function setupDfgviewerPopupMenu(extractedData) {
-  extractedData.metadata = await fetch_metadata(extractedData.url);
+  await fetch_metadata(extractedData.url, extractedData);
   parseMetadata(extractedData);
 
   let input = {
