@@ -53,6 +53,13 @@ const regressionData = [
           citation_nswbdm_dataStyle: "listOriginal",
         },
       },
+      {
+        variantName: "dataStyle_listCurated_includeLink_inSourceTitle",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listCurated",
+          citation_nswbdm_includeLink: "inSourceTitle",
+        },
+      },
     ],
   },
   {

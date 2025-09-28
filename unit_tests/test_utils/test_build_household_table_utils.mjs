@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { writeTestOutputFile, readInputFile } from "../test_utils/ref_file_utils.mjs";
+import { writeTestOutputFile, readInputFile, removeStaleOutputFiles } from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
 
@@ -40,7 +40,8 @@ async function runBuildHouseholdTableTests(
   buildCitationFunction,
   regressionData,
   testManager,
-  optionVariants = undefined
+  optionVariants = undefined,
+  cleanStaleFiles = true
 ) {
   if (!testEnabled(testManager.parameters, "table")) {
     return;
@@ -51,6 +52,13 @@ async function runBuildHouseholdTableTests(
   console.log("=== Starting test : " + testName + " ===");
 
   let logger = new LocalErrorLogger(testManager.results, testName);
+  let resultDir = "household_tables";
+
+  // clear out any stale test or ref files so that old test data doesn't hang around after a test is renamed
+  // or removed. A file is considered stale if there is no longer a test case that generates it.
+  if (cleanStaleFiles) {
+    removeStaleOutputFiles(siteName, resultDir, [regressionData], logger);
+  }
 
   for (var testData of regressionData) {
     if (testManager.parameters.testCaseName != "" && testManager.parameters.testCaseName != testData.caseName) {
@@ -123,8 +131,6 @@ async function runBuildHouseholdTableTests(
         continue;
       }
     }
-
-    let resultDir = "household_tables";
 
     // write out result file.
     if (!writeTestOutputFile(result, siteName, resultDir, testData, logger)) {

@@ -28,7 +28,7 @@ SOFTWARE.
 // message that can be sent to the background from a content script.
 
 // Importing each of these site modules causes them to register their options
-// The order of these lines does not matter since the options streen sorts them
+// The order of these lines does not matter since the options screen sorts them
 // by label.
 import "../../ameranc/core/ameranc_options.mjs";
 import "../../ancestry/core/ancestry_options.mjs";
@@ -37,6 +37,7 @@ import "../../archive/core/archive_options.mjs";
 import "../../baclac/core/baclac_options.mjs";
 import "../../bg/core/bg_options.mjs";
 import "../../cwgc/core/cwgc_options.mjs";
+import "../../eggsagrvs/core/eggsagrvs_options.mjs";
 import "../../fmp/core/fmp_options.mjs";
 import "../../fs/core/fs_options.mjs";
 import "../../fg/core/fg_options.mjs";

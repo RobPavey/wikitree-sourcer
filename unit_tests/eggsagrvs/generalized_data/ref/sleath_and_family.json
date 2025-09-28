@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Sleath",
+    "forenames": "Lizzie Florence"
+  },
+  "eventDate": {
+    "yearString": "1909"
+  },
+  "eventPlace": {
+    "placeString": "Johannesburg, Gauteng, South Africa"
+  },
+  "lastNameAtDeath": "Sleath",
+  "birthDate": {
+    "yearString": "1864"
+  },
+  "deathDate": {
+    "yearString": "1909"
+  },
+  "ageAtEvent": 45,
+  "ageAtDeath": 45,
+  "primaryPersonOptions": [
+    "Walter Sleath",
+    "Lizzie Florence Sleath",
+    "Eleanor Sleath",
+    "Elizabeth Sleath"
+  ],
+  "hasValidData": true
+}

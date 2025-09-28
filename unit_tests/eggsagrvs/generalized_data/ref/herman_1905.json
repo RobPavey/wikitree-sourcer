@@ -1,0 +1,19 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Hermann"
+  },
+  "eventDate": {
+    "yearString": "1905"
+  },
+  "eventPlace": {
+    "country": "Namibia"
+  },
+  "lastNameAtDeath": "Hermann",
+  "deathDate": {
+    "yearString": "1905"
+  },
+  "hasValidData": true
+}

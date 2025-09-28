@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"Matricula Online, Deutschland, Hildesheim, rk. Bistum, Derneburg, St. Andreas\"<br/>\nTaufe - 0421, Section 01; Page: 101<br/>\n[https://data.matricula-online.eu/de/deutschland/hildesheim/derneburg-st-andreas/0421_01/?pg=50 Matricula Image] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Baptism''':\n\"Matricula Online, Deutschland, Hildesheim, rk. Bistum, Derneburg, St. Andreas\"<br/>\nTaufe - 0421, Section 01; Page: 101<br/>\n[https://data.matricula-online.eu/de/deutschland/hildesheim/derneburg-st-andreas/0421_01/?pg=50 Matricula Image] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"Matricula Online, Deutschland, Hildesheim, rk. Bistum, Derneburg, St. Andreas\"<br/>Taufe - 0421, Section 01; Page: 101<br/>[https://data.matricula-online.eu/de/deutschland/hildesheim/derneburg-st-andreas/0421_01/?pg=50 Matricula Image] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

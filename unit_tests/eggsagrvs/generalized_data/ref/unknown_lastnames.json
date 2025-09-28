@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "?",
+    "forenames": "Dad"
+  },
+  "eventPlace": {
+    "placeString": "Johannesburg, Gauteng, South Africa"
+  },
+  "lastNameAtDeath": "?",
+  "primaryPersonOptions": [
+    "Dad ?",
+    "Mother ?",
+    "Walter ?",
+    "Stella ?",
+    "Lallie ?",
+    "Scott ?"
+  ],
+  "hasValidData": true
+}

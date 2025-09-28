@@ -1625,8 +1625,8 @@ function addBuildCitationMenuItem(
 }
 
 function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, regeneralizeFunction, userInputFunction) {
-  let ed = data.extractedData;
-  if (ed.pageType && !(ed.pageType == "record" || ed.pageType == "image")) {
+  let gd = data.generalizedData;
+  if (gd.sourceType && !(gd.sourceType == "record" || gd.sourceType == "image")) {
     addShowCitationAssistantMenuItem(menu);
     return;
   }
@@ -1640,7 +1640,7 @@ function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, rege
   }
 
   let typeStrings = ["inline", "narrative", "source"];
-  if (ed.pageType == "image") {
+  if (gd.sourceType == "image") {
     typeStrings = ["inline", "source"];
   }
   for (let typeString of typeStrings) {
@@ -1659,7 +1659,7 @@ function addBuildCitationMenuItems(menu, data, buildFunction, backFunction, rege
     }
   }
 
-  if (ed.pageType == "image") {
+  if (gd.sourceType == "image") {
     // Images typically do not have a lot of info for a citation
     // so show citation assistant as well.
     addShowCitationAssistantMenuItem(menu);

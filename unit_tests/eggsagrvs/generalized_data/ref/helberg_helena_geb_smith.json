@@ -1,0 +1,26 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Helberg",
+    "forenames": "Helena Maria"
+  },
+  "eventDate": {
+    "yearString": "1944"
+  },
+  "eventPlace": {
+    "placeString": "Modjadjiskloof / Duiwelskloof, Limpopo, South Africa"
+  },
+  "lastNameAtBirth": "Smith",
+  "lastNameAtDeath": "Helberg",
+  "birthDate": {
+    "yearString": "1911"
+  },
+  "deathDate": {
+    "yearString": "1944"
+  },
+  "ageAtEvent": 33,
+  "ageAtDeath": 33,
+  "hasValidData": true
+}

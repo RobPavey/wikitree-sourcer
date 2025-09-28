@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Purdon",
+    "forenames": "Kenneth Trevelyn"
+  },
+  "eventDate": {
+    "yearString": "2007"
+  },
+  "eventPlace": {
+    "placeString": "Bathurst, Eastern Cape, South Africa"
+  },
+  "lastNameAtDeath": "Purdon",
+  "birthDate": {
+    "yearString": "1919"
+  },
+  "deathDate": {
+    "yearString": "2007"
+  },
+  "ageAtEvent": 88,
+  "ageAtDeath": 88,
+  "primaryPersonOptions": [
+    "Kenneth Trevelyn Purdon",
+    "Sylvia Anne Purdon",
+    "Dorothy Merle Wiggin"
+  ],
+  "hasValidData": true
+}

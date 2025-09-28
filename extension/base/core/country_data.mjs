@@ -487,7 +487,7 @@ const CountryData = [
   },
   {
     stdName: "Union of South Africa",
-    matches: ["Union of South Africa", "Unie van Suid Afrika"],
+    matches: ["South Africa", "Union of South Africa", "Unie van Suid Afrika"],
     validDateRange: { startYear: 1910, endYear: 1961 },
   },
 ];

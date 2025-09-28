@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van der Meet",
+    "forenames": "Jan J"
+  },
+  "eventDate": {
+    "yearString": "1940"
+  },
+  "eventPlace": {
+    "placeString": "Bredasdorp, Western Cape, South Africa"
+  },
+  "lastNameAtDeath": "van der Meet",
+  "birthDate": {
+    "yearString": "1861"
+  },
+  "deathDate": {
+    "yearString": "1940"
+  },
+  "ageAtEvent": 79,
+  "ageAtDeath": 79,
+  "primaryPersonOptions": [
+    "Jan J van der Meet",
+    "F J J Huddlestone"
+  ],
+  "hasValidData": true
+}

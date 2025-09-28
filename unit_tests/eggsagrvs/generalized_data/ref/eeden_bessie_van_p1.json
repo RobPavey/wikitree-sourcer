@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "van Eeden",
+    "forenames": "Baby"
+  },
+  "eventDate": {
+    "yearString": "1971"
+  },
+  "eventPlace": {
+    "placeString": "Bredasdorp, Western Cape, South Africa"
+  },
+  "lastNameAtDeath": "van Eeden",
+  "birthDate": {
+    "yearString": "1897"
+  },
+  "deathDate": {
+    "yearString": "1971"
+  },
+  "ageAtEvent": 74,
+  "ageAtDeath": 74,
+  "primaryPersonOptions": [
+    "Bessie van Eeden",
+    "Baby van Eeden"
+  ],
+  "hasValidData": true
+}
