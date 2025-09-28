@@ -22,56 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import {
+  registerSubsectionForOptions,
+  registerOptionsGroup,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
 
-// The order should not matter since user facing lists are sorted
+const citationOptionsGroup = {
+  category: "citation",
+  subcategory: "dfgviewer",
+  tab: "citation",
+  subsection: "dfgviewer",
+  options: [],
+};
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "eggsagrvs",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nsvr",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "dfgviewer",
-];
+// registerSubsectionForOptions("search", "dfgviewer", "DFG Viewer");
+// registerSiteSearchPopupOptionsGroup("dfgviewer");
 
-export { siteNames };
+registerSubsectionForOptions("citation", "dfgviewer", "DFG Viewer");
+registerOptionsGroup(citationOptionsGroup);

@@ -22,56 +22,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+function extractData(document, url) {
+  var result = {};
 
-// The order should not matter since user facing lists are sorted
+  if (url) {
+    result.url = url;
+  }
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "eggsagrvs",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nsvr",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "dfgviewer",
-];
+  const page_selector = document.querySelector("select[name=\"tx_dlf[page]\"]");
+  let page_selected = page_selector.querySelector("option[selected=\"selected\"]").text;
+  
+  if (page_selected[0] == "[") {
+    page_selected = page_selected.substring(1, page_selected.length - 1)
+  }
+  
+  result.page_number = page_selected;
 
-export { siteNames };
+  result.success = true;
+
+  //console.log(result);
+
+  return result;
+}
+
+export { extractData };
