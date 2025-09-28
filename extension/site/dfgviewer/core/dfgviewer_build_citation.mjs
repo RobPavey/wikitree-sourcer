@@ -34,6 +34,10 @@ function buildSourceTitle(ed, gd, builder) {
 
 function buildSourceReference(ed, gd, builder) {
   builder.sourceReference = ed.signature;
+
+  if (ed.page_number) {
+    builder.addSourceReferenceField("Image", ed.page_number);
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {

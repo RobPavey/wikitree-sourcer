@@ -104,8 +104,6 @@ function parseStaatsarchivBayernMetadata(extractData) {
     return node ? node.textContent.trim() : null;
   };
 
-  alert(extractData.metadata_url);
-
   extractData.title = getText("//mods:mods/mods:titleInfo/mods:title");
   extractData.signature = getText("//mods:mods/mods:location/mods:shelfLocator");
 }
