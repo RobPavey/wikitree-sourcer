@@ -2,10 +2,9 @@
   "sourceType": "profile",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "Leonard Pavey",
-    "suffix": "IV",
     "lastName": "Pavey",
-    "forenames": "Leonard"
+    "forenames": "Leonard",
+    "suffix": "IV"
   },
   "birthDate": {
     "dateString": "1700"

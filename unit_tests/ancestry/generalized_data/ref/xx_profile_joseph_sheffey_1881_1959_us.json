@@ -2,10 +2,9 @@
   "sourceType": "profile",
   "sourceOfData": "ancestry",
   "name": {
-    "name": "Joseph Christopher Sheffey",
-    "suffix": "Sr",
     "lastName": "Sheffey",
-    "forenames": "Joseph Christopher"
+    "forenames": "Joseph Christopher",
+    "suffix": "Sr"
   },
   "birthDate": {
     "dateString": "25 SEP 1881"
