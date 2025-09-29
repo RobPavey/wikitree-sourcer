@@ -5,10 +5,7 @@
   "name": {
     "lastName": "Landsberg",
     "forenames": "E S A",
-    "otherLastNames": [
-      "Coetsee",
-      "Human"
-    ]
+    "otherLastNames": "Coetsee,Human"
   },
   "eventDate": {
     "yearString": "1993"

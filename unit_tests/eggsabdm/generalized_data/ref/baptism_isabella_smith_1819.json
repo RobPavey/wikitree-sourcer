@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Isabella"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "04 Jul 1819"
+  },
+  "primaryPersonOptions": [
+    "Isabella Smith",
+    "John Smith"
+  ],
+  "hasValidData": true
+}

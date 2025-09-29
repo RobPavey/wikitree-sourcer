@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "van den Berg",
+    "forenames": "Aletta"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "14 Mar 1762"
+  },
+  "lastNameAtBirth": "van den Berg",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "van den Berg",
+        "forenames": "Barend"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "van Wijk",
+        "forenames": "Johanna Sophia"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Aletta van den Berg",
+    "Barend van den Berg",
+    "Johanna Sophia van Wijk"
+  ],
+  "hasValidData": true
+}

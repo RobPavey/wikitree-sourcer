@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "Isabella",
+  "baptismDateStr": "04 July 1819",
+  "bornDateStr": "",
+  "father": "",
+  "mother": "",
+  "parentsStr": "John SMITH",
+  "witnessStr": "",
+  "source": "Source: Baptisms 1810-1821 involving British people, extracted from the Cape Town Gazette. Note: These transcribed extracts are taken from C. Graham Botha, Collected Works Vol 3, Chapter 11. Transcribed by C. Graham Botha. Contributed by Liz Eshmade.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Child with smith anywhere in the surname with isabella anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

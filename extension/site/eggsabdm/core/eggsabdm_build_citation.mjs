@@ -29,17 +29,18 @@ function buildEggsabdmUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle += `eGGSA ${ed.sourceTitle}, ${gd.inferFullName()}`;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.sourceReference = ed.source.replaceAll("<br>", " ").replaceAll(/\s+/g, " ");
 }
 
 function buildRecordLink(ed, gd, builder) {
   var eggsabdmUrl = buildEggsabdmUrl(ed, builder);
 
   let recordLink = "[" + eggsabdmUrl + " eGGSA BMD Record]";
+  if (ed.searchParameters) recordLink += " with search parameters " + ed.searchParameters;
   builder.recordLinkOrTemplate = recordLink;
 }
 

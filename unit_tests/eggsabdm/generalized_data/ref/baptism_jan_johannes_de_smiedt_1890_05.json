@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "de Smiedt",
+    "forenames": "Jan Johannes Petrus Jacobus"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "07 Jun 1890"
+  },
+  "birthDate": {
+    "dateString": "12 May 1890"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "de Smiedt",
+        "forenames": "Jan Johannes Petrus"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "de Smiedt",
+        "forenames": "Aletta Elizabeth"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Jan Johannes Petrus Jacobus de Smiedt",
+    "Jan Johannes Petrus de Smiedt",
+    "Aletta Elizabeth de Smiedt"
+  ],
+  "hasValidData": true
+}

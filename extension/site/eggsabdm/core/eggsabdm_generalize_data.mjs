@@ -27,7 +27,7 @@ import { EggsabdmEdReader } from "./eggsabdm_ed_reader.mjs";
 
 // This function generalizes the data extracted from the page content.
 function generalizeData(input) {
-  let edReader = new EggsabdmEdReader(input.extractedData);
+  let edReader = new EggsabdmEdReader(input.extractedData, input.primaryPersonIndex);
   return commonGeneralizeData("eggsabdm", edReader);
 }
 

@@ -1,0 +1,30 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "simpleNameFields": {
+        "what_firstname": "Debora",
+        "what_surname": "Merwe"
+      },
+      "selectFieldsByValue": {
+        "firstname_mode": "1",
+        "surname_mode": "1"
+      },
+      "options": {}
+    }
+  },
+  "fullFirst": {
+    "fieldData": {
+      "utf8": true,
+      "simpleNameFields": {
+        "what_firstname": "Debora Petronella Jacoba",
+        "what_surname": "Merwe"
+      },
+      "selectFieldsByValue": {
+        "firstname_mode": "4",
+        "surname_mode": "1"
+      },
+      "options": {}
+    }
+  }
+}

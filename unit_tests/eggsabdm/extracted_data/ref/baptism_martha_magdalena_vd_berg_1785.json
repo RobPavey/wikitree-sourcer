@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "Martha Magdalena",
+  "baptismDateStr": "1785, den 15 Maij",
+  "bornDateStr": "",
+  "father": "Jacobus van der Berg d'oude",
+  "mother": "Martha Diederiks",
+  "parentsStr": "",
+  "witnessStr": "Jacobus Petrus Rossouw, en Martha van den Bergh",
+  "source": "Source: Nederduits Gereformeerde Gemeente (NGK), Tulbagh,  Baptism register, 1743 to 2 Feb 1800, page 224, entry number 44. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G4 7/1. Transcribed by Lynn Couperthwaite, Trysie Joubert, Richard Ball  as part of the eGGSA Project, from VC 657, Cape Archives Repository.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Child with berg anywhere in the surname with Martha Magdalena anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Vosloo",
+    "forenames": "Maria Magdalena Elizabeth"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "1958"
+  },
+  "lastNameAtDeath": "Vosloo",
+  "deathDate": {
+    "dateString": "1958"
+  },
+  "ageAtEvent": "50",
+  "ageAtDeath": "50",
+  "hasValidData": true
+}

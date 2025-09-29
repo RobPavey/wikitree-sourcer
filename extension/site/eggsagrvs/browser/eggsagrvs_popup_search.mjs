@@ -91,8 +91,8 @@ function eggsagrvsDoSearch(input) {
       // this stores the search data in local storage which is then picked up by the
       // content script in the new tab/window
       chrome.storage.local.set({ eggsagrvsSearchData: eggsagrvsSearchData }, function () {
-        console.log("saved eggsagrvsSearchData, eggsagrvsSearchData is:");
-        console.log(eggsagrvsSearchData);
+        // console.log("saved eggsagrvsSearchData, eggsagrvsSearchData is:");
+        // console.log(eggsagrvsSearchData);
       });
     } catch (ex) {
       console.log("storeDataCache failed");

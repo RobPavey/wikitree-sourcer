@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// import { CD } from "../../../base/core/country_data.mjs";
-import { multiWordSurnamePrefix } from "./eggsagrvs_ed_reader.mjs";
+import { EggsaCommon } from "./eggsa_common.mjs";
 
 function buildSearchData(input) {
   // console.log("buildSearchData, input is:");
@@ -48,7 +47,7 @@ function buildSearchData(input) {
 
   let lastName = gd.inferLastName();
   if (lastName) {
-    const prefix = multiWordSurnamePrefix(lastName);
+    const prefix = EggsaCommon.multiWordSurnamePrefixAtStart(lastName);
     if (prefix) {
       // eGGSA recommends one searches only for the main part of a multi-word last name
       lastName = lastName.substring(prefix.length);

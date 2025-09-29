@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Anna Sophia"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "08 Apr 1838"
+  },
+  "lastNameAtBirth": "Smith",
+  "birthDate": {
+    "dateString": "04 Feb 1839"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Smith",
+        "forenames": "Petrus Erasmus Johannes"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "vd Merwe",
+        "forenames": "Anna Dorothea Willemina"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Anna Sophia Smith",
+    "Petrus Erasmus Johannes Smith",
+    "Anna Dorothea Willemina vd Merwe"
+  ],
+  "hasValidData": true
+}

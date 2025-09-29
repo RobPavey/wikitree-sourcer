@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Magdalena Johanna"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "25 Oct 1829"
+  },
+  "birthDate": {
+    "dateString": "18 Sep 1829"
+  },
+  "primaryPersonOptions": [
+    "Magdalena Johanna Smith",
+    "Anna Carolina Frederica Smith"
+  ],
+  "hasValidData": true
+}

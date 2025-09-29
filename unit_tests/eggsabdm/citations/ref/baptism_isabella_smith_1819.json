@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"eGGSA Baptism Registers, Isabella Smith\"<br/>\nSource: Baptisms 1810-1821 involving British people, extracted from the Cape Town Gazette. Note: These transcribed extracts are taken from C. Graham Botha, Collected Works Vol 3, Chapter 11. Transcribed by C. Graham Botha. Contributed by Liz Eshmade<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with isabella anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nIsabella Smith baptism on 4 Jul 1819.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Isabella was baptised on 4 July 1819.<ref>\n'''Baptism''':\n\"eGGSA Baptism Registers, Isabella Smith\"<br/>\nSource: Baptisms 1810-1821 involving British people, extracted from the Cape Town Gazette. Note: These transcribed extracts are taken from C. Graham Botha, Collected Works Vol 3, Chapter 11. Transcribed by C. Graham Botha. Contributed by Liz Eshmade<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with isabella anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nIsabella Smith baptism on 4 Jul 1819.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"eGGSA Baptism Registers, Isabella Smith\"<br/>Source: Baptisms 1810-1821 involving British people, extracted from the Cape Town Gazette. Note: These transcribed extracts are taken from C. Graham Botha, Collected Works Vol 3, Chapter 11. Transcribed by C. Graham Botha. Contributed by Liz Eshmade<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with isabella anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Isabella Smith baptism on 4 Jul 1819.",
+    "type": "source"
+  }
+}

@@ -5,9 +5,7 @@
   "name": {
     "lastName": "van der Lith",
     "forenames": "Martha Louisa",
-    "otherLastNames": [
-      "Olivier"
-    ]
+    "otherLastNames": "Olivier"
   },
   "eventDate": {
     "yearString": "1980"

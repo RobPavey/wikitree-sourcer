@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { multiWordSurnamePrefix } from "../../eggsagrvs/core/eggsagrvs_ed_reader.mjs";
+import { EggsaCommon } from "../../eggsagrvs/core/eggsa_common.mjs";
 
 const townCodes = new Map([
   ["All", "0"],
@@ -150,7 +150,7 @@ function addSelectEntry(entries, valueStr) {
 }
 
 function lastWordInSurname(surname) {
-  const prefix = multiWordSurnamePrefix(surname);
+  const prefix = EggsaCommon.multiWordSurnamePrefixAtStart(surname);
   if (prefix) {
     return surname.substring(prefix.length).trim();
   }
@@ -248,7 +248,7 @@ const EggsabdmData = {
     const firstNamesArray = [
       ...new Set(generalizedData.name.inferForenamesPlusPreferredAndNicknames().split(" ")).keys(),
     ];
-    if (firstNamesArray.length > 1) {
+    if (firstNamesArray.length > 0) {
       const firstNamesHeadingControl = {};
       firstNamesHeadingControl.type = "heading";
       firstNamesHeadingControl.label = "Select which first names should be used";

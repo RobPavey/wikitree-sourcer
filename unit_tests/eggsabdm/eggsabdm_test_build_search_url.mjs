@@ -26,13 +26,35 @@ import { buildSearchData } from "../../extension/site/eggsabdm/core/eggsabdm_bui
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+    caseName: "search_baptism_from_baptism_hilletje_aletta_1800",
+    inputPath: "eggsabdm/generalized_data/ref/baptism_hilletje_aletta_1800",
+    typeOfSearch: "Baptisms",
   },
-  */
+  {
+    caseName: "search_burials_from_baptism_hilletje_aletta_1800",
+    inputPath: "eggsabdm/generalized_data/ref/baptism_hilletje_aletta_1800",
+    typeOfSearch: "Burials",
+  },
+  {
+    caseName: "search_marriages_from_baptism_hilletje_aletta_1800",
+    inputPath: "eggsabdm/generalized_data/ref/baptism_hilletje_aletta_1800",
+    typeOfSearch: "Marriages",
+  },
+  {
+    caseName: "search_marriages_from_baptism_jan_johannes_de_smiedt_1890_05-mother",
+    inputPath: "eggsabdm/generalized_data/ref/baptism_jan_johannes_de_smiedt_1890_05-mother",
+    typeOfSearch: "Marriages",
+    optionVariants: [
+      {
+        variantName: "fullFirst",
+        optionOverrides: {
+          search_eggsabdm_fullFirstName: true,
+          search_eggsabdm_firstNameMode: "4",
+        },
+      },
+    ],
+  },
 ];
 
 async function runTests(testManager) {

@@ -24,6 +24,7 @@ SOFTWARE.
 
 import { buildDefaultParameters } from "./eggsabdm_search_menu_data.mjs";
 
+// The keys below are members of input.searchParameters
 const parameterToSearchFieldMap = {
   Baptisms: {
     firstName: { name: "Person_one_first_name", type: "input" },
@@ -71,7 +72,7 @@ function buildSearchData(input) {
 
   let thisCatagoryFields = parameterToSearchFieldMap[searchType];
   if (!thisCatagoryFields) {
-    console.error(`buildSearchData: unknown search type '${searchType}'`);
+    console.error(`buildSearchData: unknown search type '${searchType}', assuming Baptisms`);
     searchType = "Baptisms";
     thisCatagoryFields = parameterToSearchFieldMap[searchType];
   }

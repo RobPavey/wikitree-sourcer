@@ -22,6 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+//////////////////////////////////////////////////////////////////////////////////////////
+// Helper functions
+//////////////////////////////////////////////////////////////////////////////////////////
+
 async function setSearchData(key, data) {
   chrome.storage.local.set({ [key]: data }, function () {
     // console.log(eggsabdmSearchData);
@@ -56,6 +60,19 @@ async function clearSearchData(key) {
     //console.log(`cleared ${key}`);
   });
 }
+
+function selectByText(select, text) {
+  for (const option of select.options) {
+    if (option.text.trim() === text) {
+      select.value = option.value; // equivalent to option.selected = true
+      break;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Pendiing search processing
+//////////////////////////////////////////////////////////////////////////////////////////
 
 async function checkForPendingSearch() {
   //   console.log("checkForPendingSearch: called, URL is " + document.URL);
@@ -188,14 +205,120 @@ function populateForm(searchData) {
   }
 }
 
-function selectByText(select, text) {
-  for (const option of select.options) {
-    if (option.text.trim() === text) {
-      select.value = option.value; // equivalent to option.selected = true
-      break;
+//////////////////////////////////////////////////////////////////////////////////////////
+// Processing for selecting records for citation processing
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// We use the Row terminology here like elsewhere, but eGSSA BMD search results do not have
+// tables and rows, just paragraphs
+
+let EggsaBdmCommon;
+
+function highlightRow(selectedRow) {
+  selectedRow.setAttribute("style", EggsaBdmCommon.getHighlightStyle());
+}
+
+function unHighlightRow(selectedRows) {
+  selectedRows.removeAttribute("style");
+}
+
+function wrapSectionsUpToFirstHR(content) {
+  const children = Array.from(content.childNodes);
+  let firstNbspSeen = false;
+
+  const isNbspP = (node) =>
+    node &&
+    node.nodeType === Node.ELEMENT_NODE &&
+    node.tagName === "P" &&
+    /^[\s\u00A0]*$/.test(node.textContent) &&
+    /\u00A0/.test(node.textContent);
+
+  const isEmptyP = (node) =>
+    node && node.nodeType === Node.ELEMENT_NODE && node.tagName === "P" && /^[\s\u00A0]*$/.test(node.textContent);
+
+  for (let i = 0; i < children.length; i++) {
+    const node = children[i];
+    if (node.nodeType === Node.ELEMENT_NODE && node.tagName === "HR") break;
+
+    if (isNbspP(node)) {
+      if (!firstNbspSeen) {
+        // First &nbsp; seen → just mark previous non-empty <p>
+        firstNbspSeen = true;
+        const prev = children[i - 1];
+        if (prev && prev.tagName === "P" && !isEmptyP(prev)) {
+          prev.classList.add("wrapped-block");
+        }
+      }
+
+      // Find the matching empty <p> (closing)
+      let end = -1;
+      for (let k = i + 1; k < children.length; k++) {
+        const child = children[k];
+        if (child.nodeType === Node.ELEMENT_NODE && child.tagName === "HR") break;
+        if (isEmptyP(child)) {
+          end = k;
+          break;
+        }
+      }
+      if (end === -1) continue;
+
+      // Wrap content strictly between opener (i) and closer (end)
+      if (end > i + 1) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "wrapped-block";
+        const firstInner = children[i + 1];
+        firstInner.parentNode.insertBefore(wrapper, firstInner);
+
+        for (let idx = i + 1; idx < end; idx++) {
+          wrapper.appendChild(children[idx]);
+        }
+      }
+
+      i = end; // continue after closer
     }
   }
 }
+
+function addClickedRowListener() {
+  //console.log("addClickedRowListener");
+
+  const resultContainer = document.querySelector("#content");
+  if (resultContainer && !resultContainer.hasAttribute("listenerOnClick")) {
+    EggsaBdmCommon.stripUnknownTags(resultContainer);
+
+    resultContainer.setAttribute("listenerOnClick", "true");
+
+    resultContainer.addEventListener("click", function (ev) {
+      //console.log("clickedRowListener: ev is");
+      //console.log(ev);
+
+      // clear existing selected row if any
+      let selectedRow = EggsaBdmCommon.getSelectedRow(document);
+      if (selectedRow) {
+        unHighlightRow(selectedRow);
+      }
+      selectedRow = ev.target;
+      if (selectedRow) {
+        const [pageType] = EggsaBdmCommon.getPageType(document);
+        // const rowSelector = pageType === "Marriage" ? ".wrapped-block" : "p";
+        const rowSelector = EggsaBdmCommon.getRowSelector(pageType);
+        if (rowSelector) {
+          selectedRow = selectedRow.closest(rowSelector);
+          if (selectedRow && EggsaBdmCommon.isRecordOfType(selectedRow, pageType)) {
+            highlightRow(selectedRow);
+          }
+        }
+      }
+    });
+
+    // could highlight the first row here to give a hint that rows are selactable
+    // but that could be intrusive if user not intending to use sourcer on the page
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// On load processing
+//////////////////////////////////////////////////////////////////////////////////////////
 
 async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
@@ -206,6 +329,8 @@ async function checkForSearchThenInit() {
     populateForm(prevSearch);
     // clearSearchData(PREVIOUS_SEARCH);
   }
+  EggsaBdmCommon = await import(chrome.runtime.getURL("site/eggsabdm/core/eggsabdm_common.mjs"));
+  addClickedRowListener();
 }
 
 checkForSearchThenInit();

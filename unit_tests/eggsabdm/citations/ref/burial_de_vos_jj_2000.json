@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"eGGSA Burial, Cremation and Death Registers, J J de Vos\"<br/>\nSource: Forest Hill Cemetery, Port Elizabeth, Eastern Cape, burials register, 1955-2014, page . Repository: Forest Hill Cemetery, Port Elizabeth. Transcribed by Carol Beneke, from the original registers Note: The headstones in this Cemetery have been photographed and can be found in the <a href=\"https://www.graves.eggsa.org/\">eGGSA Gravestone collection</a><br/>\n[https://www.eggsa.org/cgi-bin/dosearchBurials.pl eGGSA BMD Record] with search parameters Surname: de vos, First Name: J. J. in all the registers. (accessed 6 May 2021)<br/>\nJ J de Vos burial (died on 28 Jan 2000 at age 40) on 3 Feb 2000. Born on 31 Jul 1959.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "J (age 40) died on 28 January 2000 and was buried on 3 February 2000.<ref>\n'''Burial''':\n\"eGGSA Burial, Cremation and Death Registers, J J de Vos\"<br/>\nSource: Forest Hill Cemetery, Port Elizabeth, Eastern Cape, burials register, 1955-2014, page . Repository: Forest Hill Cemetery, Port Elizabeth. Transcribed by Carol Beneke, from the original registers Note: The headstones in this Cemetery have been photographed and can be found in the <a href=\"https://www.graves.eggsa.org/\">eGGSA Gravestone collection</a><br/>\n[https://www.eggsa.org/cgi-bin/dosearchBurials.pl eGGSA BMD Record] with search parameters Surname: de vos, First Name: J. J. in all the registers. (accessed 6 May 2021)<br/>\nJ J de Vos burial (died on 28 Jan 2000 at age 40) on 3 Feb 2000. Born on 31 Jul 1959.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"eGGSA Burial, Cremation and Death Registers, J J de Vos\"<br/>Source: Forest Hill Cemetery, Port Elizabeth, Eastern Cape, burials register, 1955-2014, page . Repository: Forest Hill Cemetery, Port Elizabeth. Transcribed by Carol Beneke, from the original registers Note: The headstones in this Cemetery have been photographed and can be found in the <a href=\"https://www.graves.eggsa.org/\">eGGSA Gravestone collection</a><br/>[https://www.eggsa.org/cgi-bin/dosearchBurials.pl eGGSA BMD Record] with search parameters Surname: de vos, First Name: J. J. in all the registers. (accessed 6 May 2021)<br/>J J de Vos burial (died on 28 Jan 2000 at age 40) on 3 Feb 2000. Born on 31 Jul 1959.",
+    "type": "source"
+  }
+}

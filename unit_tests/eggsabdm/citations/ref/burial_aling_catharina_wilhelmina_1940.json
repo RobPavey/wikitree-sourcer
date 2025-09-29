@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Burial''':\n\"eGGSA Burial, Cremation and Death Registers, Catharina Wilhemena Jacoba Aling\"<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Stellenbosch, Western Cape, burial register, <a href=\"http://eggsa.org/transcriptions/stellenbosch/g2-8-4/StellG2-8-4-131.jpg\">1918-1946, page 131</a>, page . Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G2 8/4. Transcribed by Ockert and Sasa Malan<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBurials.pl eGGSA BMD Record] with search parameters Surname: Aling, First Name: catharina in all the registers. (accessed 6 May 2021)<br/>\nCatharina Wilhemena Jacoba Aling burial (died on 18 Nov 1940 at age 67 jaar) on 19 Nov 1940.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Catharina (age 67 Jaar) died on 18 November 1940 and was buried on 19 November 1940.<ref>\n'''Burial''':\n\"eGGSA Burial, Cremation and Death Registers, Catharina Wilhemena Jacoba Aling\"<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Stellenbosch, Western Cape, burial register, <a href=\"http://eggsa.org/transcriptions/stellenbosch/g2-8-4/StellG2-8-4-131.jpg\">1918-1946, page 131</a>, page . Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G2 8/4. Transcribed by Ockert and Sasa Malan<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBurials.pl eGGSA BMD Record] with search parameters Surname: Aling, First Name: catharina in all the registers. (accessed 6 May 2021)<br/>\nCatharina Wilhemena Jacoba Aling burial (died on 18 Nov 1940 at age 67 jaar) on 19 Nov 1940.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Burial''': \"eGGSA Burial, Cremation and Death Registers, Catharina Wilhemena Jacoba Aling\"<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Stellenbosch, Western Cape, burial register, <a href=\"http://eggsa.org/transcriptions/stellenbosch/g2-8-4/StellG2-8-4-131.jpg\">1918-1946, page 131</a>, page . Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G2 8/4. Transcribed by Ockert and Sasa Malan<br/>[https://www.eggsa.org/cgi-bin/dosearchBurials.pl eGGSA BMD Record] with search parameters Surname: Aling, First Name: catharina in all the registers. (accessed 6 May 2021)<br/>Catharina Wilhemena Jacoba Aling burial (died on 18 Nov 1940 at age 67 jaar) on 19 Nov 1940.",
+    "type": "source"
+  }
+}
