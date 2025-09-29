@@ -26,21 +26,14 @@ SOFTWARE.
 // Helper functions
 //////////////////////////////////////////////////////////////////////////////////////////
 
+const PENDING_SEARCH = "eggsabdmSearchData";
+const PREVIOUS_SEARCH = "eggsabdmPrevSearchData";
+const PREVIOUS_SUBMIT = "eggsabdmPrevSubmitData";
+
 async function setSearchData(key, data) {
   chrome.storage.local.set({ [key]: data }, function () {
     // console.log(eggsabdmSearchData);
   });
-}
-
-const PENDING_SEARCH = "eggsabdmSearchData";
-const PREVIOUS_SEARCH = "eggsabdmPrevSearchData";
-
-async function getPendingSearch() {
-  return getSearchData(PENDING_SEARCH);
-}
-
-async function getPreviousSearch() {
-  return getSearchData(PREVIOUS_SEARCH);
 }
 
 async function getSearchData(key) {
@@ -74,7 +67,7 @@ function selectByText(select, text) {
 // Pendiing search processing
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function checkForPendingSearch() {
+async function checkForAndProcessPendingSearch() {
   //   console.log("checkForPendingSearch: called, URL is " + document.URL);
   //   console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
@@ -88,9 +81,35 @@ async function checkForPendingSearch() {
     // console.log("checkForPendingSearch: URLs match");
 
     const searchData = await getSearchData(PENDING_SEARCH);
-
+    // Example searchData:
+    // {
+    //     "fieldData": {
+    //         "options": {},
+    //         "radioNameFields": {
+    //             "Result_order": "by_Surname"
+    //         },
+    //         "selectFieldsByText": {
+    //             "Role_of_Person_One": "Bride",
+    //             "Which_Town": "All"
+    //         },
+    //         "selectFieldsByValue": {
+    //             "firstname_mode": "1",
+    //             "surname_mode": "1"
+    //         },
+    //         "simpleNameFields": {
+    //             "Person_one_first_name": "Hilletje",
+    //             "Person_one_surname": "Smit"
+    //         },
+    //         "utf8": true
+    //     },
+    //     "search": "Marriages",
+    //     "timeStamp": 1759143391554,
+    //     "url": "https://www.eggsa.org/bdms/Marriages.html"
+    // }
     if (searchData) {
       console.log("checkForPendingSearch got searcData:", searchData);
+      // clear the search data
+      clearSearchData(PENDING_SEARCH);
 
       const searchUrl = searchData.url;
       const timeStamp = searchData.timeStamp;
@@ -124,17 +143,16 @@ async function checkForPendingSearch() {
 
           // now submit the form to do the search
           formElement.submit();
+          return true;
         }
       } else {
         console.log(`searchTarget mismatch: ${searchData.searchTarget}`);
       }
-
-      // clear the search data
-      clearSearchData(PENDING_SEARCH);
     } else {
       console.log("No search data found");
     }
   }
+  return false;
 }
 
 function populateForm(searchData) {
@@ -283,10 +301,10 @@ function addClickedRowListener() {
   //console.log("addClickedRowListener");
 
   const resultContainer = document.querySelector("#content");
-  if (resultContainer && !resultContainer.hasAttribute("listenerOnClick")) {
+  if (resultContainer && !resultContainer.hasAttribute("sourcerOnClick")) {
     EggsaBdmCommon.stripUnknownTags(resultContainer);
 
-    resultContainer.setAttribute("listenerOnClick", "true");
+    resultContainer.setAttribute("sourcerOnClick", "true");
 
     resultContainer.addEventListener("click", function (ev) {
       //console.log("clickedRowListener: ev is");
@@ -310,10 +328,58 @@ function addClickedRowListener() {
         }
       }
     });
-
-    // could highlight the first row here to give a hint that rows are selactable
-    // but that could be intrusive if user not intending to use sourcer on the page
   }
+}
+
+function getForm() {
+  const submitButton = document.querySelector('input[type="submit"][name="Search"]');
+  return submitButton.closest("form"); // gets the enclosing form
+}
+
+// Add a listener that will save all the form fields so we can restore them after the search.
+// We do this because eGGSA clears the form after a search, but we want to allow a user
+// to modify the search if they so wishes. Saving the values allows us to restore them
+// after the search.
+function addFormSaveListener() {
+  const form = getForm();
+  if (!form || form.hasAttribute("sourcerOnClick")) return;
+
+  const submitButton = document.querySelector('input[type="submit"][name="Search"]');
+  submitButton.value = "Submit";
+
+  form.setAttribute("sourcerOnClick", "true");
+
+  form.addEventListener("submit", function (event) {
+    const dataToSave = {};
+    Array.from(form.elements).forEach((el) => {
+      if (!el.name) return; // skip elements without name
+      if (el.type === "hidden") return; // skip hidden elements
+      if ((el.type === "radio" || el.type === "checkbox") && !el.checked) return;
+      dataToSave[el.name] = el.value;
+    });
+    // console.log("prevSubmit", dataToSave);
+    setSearchData(PREVIOUS_SUBMIT, dataToSave);
+  });
+}
+
+// Repopulate the form fields (which are cleared by eGGSA after a search) with the
+// values of the search, so it is easy for the user to modify something if they want
+async function restorePreviousSubmit() {
+  const saved = await getSearchData(PREVIOUS_SUBMIT);
+  if (!saved) return;
+  // console.log("previous submit", saved);
+
+  const form = getForm();
+  Array.from(form.elements).forEach((el) => {
+    if (!el.name || !(el.name in saved)) return;
+
+    if (el.type === "radio" || el.type === "checkbox") {
+      el.checked = el.value === saved[el.name];
+    } else {
+      el.value = saved[el.name];
+    }
+  });
+  clearSearchData(PREVIOUS_SUBMIT);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -322,15 +388,22 @@ function addClickedRowListener() {
 
 async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
-  await checkForPendingSearch();
+  // since the search will cause a reload of the page.
+  const hadPendingSearch = await checkForAndProcessPendingSearch();
+  if (hadPendingSearch) return;
+
   siteContentInit(`eggsabdm`, `site/eggsabdm/core/eggsabdm_extract_data.mjs`);
   const prevSearch = await getSearchData(PREVIOUS_SEARCH);
   if (prevSearch) {
+    // console.log("previous search", prevSearch);
     populateForm(prevSearch);
-    // clearSearchData(PREVIOUS_SEARCH);
+    clearSearchData(PREVIOUS_SEARCH);
+  } else {
+    await restorePreviousSubmit();
   }
   EggsaBdmCommon = await import(chrome.runtime.getURL("site/eggsabdm/core/eggsabdm_common.mjs"));
   addClickedRowListener();
+  addFormSaveListener();
 }
 
 checkForSearchThenInit();

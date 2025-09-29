@@ -94,8 +94,8 @@ function doEggsabdmSearch(input) {
       // this stores the search data in local storage which is then picked up by the
       // content script in the new tab/window
       chrome.storage.local.set({ eggsabdmSearchData: eggsabdmSearchData }, function () {
-        console.log("saved eggsabdmSearchData, eggsabdmSearchData is:");
-        console.log(eggsabdmSearchData);
+        // console.log("saved eggsabdmSearchData, eggsabdmSearchData is:");
+        // console.log(eggsabdmSearchData);
       });
     } catch (ex) {
       console.log("storeDataCache failed");
