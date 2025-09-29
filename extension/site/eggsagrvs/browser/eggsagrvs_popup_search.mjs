@@ -25,6 +25,7 @@ SOFTWARE.
 import {
   addBackMenuItem,
   addMenuItem,
+  addMenuItemWithSubMenu,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
@@ -37,8 +38,10 @@ import {
   openUrlInNewTab,
 } from "/base/browser/popup/popup_search.mjs";
 
+import { setupSearchWithParametersSubMenu } from "/base/browser/popup/popup_search_with_parameters.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
 import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
+import { EggsaGrvsCommon } from "../core/eggsagrvs_common.mjs";
 
 const eggsagrvsStartYear = 1600;
 
@@ -80,7 +83,7 @@ function eggsagrvsDoSearch(input) {
       return;
     }
 
-    const searchUrl = `https://graves.eggsa.org/Search/${input.urlPart}.htm`;
+    const searchUrl = `https://graves.eggsa.org/Search/${buildResult.urlPart}.htm`;
     try {
       const eggsagrvsSearchData = {
         timeStamp: Date.now(),
@@ -109,6 +112,18 @@ async function eggsagrvsSearch(generalizedData, urlPart) {
     generalizedData: generalizedData,
     options: options,
   };
+  // console.log("eggsagrvsSearch do input:", input);
+  eggsagrvsDoSearch(input);
+}
+
+async function eggsagrvsSearchWithParameters(generalizedData, parameters) {
+  const input = {
+    typeOfSearch: "SpecifiedParameters",
+    searchParameters: parameters,
+    generalizedData: generalizedData,
+    options: options,
+  };
+  // console.log("eggsagrvsSearchWithParameters do input:", input);
   eggsagrvsDoSearch(input);
 }
 
@@ -117,25 +132,19 @@ async function eggsagrvsSearch(generalizedData, urlPart) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addEggsagrvsDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search eGGSA Graves", function (element) {
-    setupEggsagrvsSearchSubMenu(data, backFunction, filter);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search eGGSA Graves",
+    function (element) {
+      setupEggsagrvsSearchSubMenu(data, backFunction, filter);
+    },
+    function (element) {
+      setupEggsagrvsSearchWithParametersSubMenu(data, backFunction);
+    }
+  );
 
   return true;
 }
-
-const searchAreas = [
-  { name: "Eastern Province", urlPart: "ecsearchGraves" },
-  { name: "Free State", urlPart: "fssearchGraves" },
-  { name: "Gauteng", urlPart: "ggsearchGraves" },
-  { name: "Kwazulu-Natal", urlPart: "kwasearchGraves" },
-  { name: "Limpopo", urlPart: "limsearchGraves" },
-  { name: "Mpumalanga", urlPart: "mpsearchGraves" },
-  { name: "Northern Cape", urlPart: "ncsearchGraves" },
-  { name: "Northwest", urlPart: "nwsearchGraves" },
-  { name: "Western Cape", urlPart: "wcsearchGraves" },
-  { name: "Worldwide", urlPart: "wosearchGraves" },
-];
 
 function addEggsagrvsAreaMenuItem(menu, generalizedData, item) {
   addMenuItem(menu, `Search eGSSA ${item.name} Graves`, function (element) {
@@ -151,10 +160,15 @@ async function setupEggsagrvsSearchSubMenu(data, backFunction, filter) {
   let menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
-  for (const item of searchAreas) {
+  for (const item of EggsaGrvsCommon.searchAreas) {
     addEggsagrvsAreaMenuItem(menu, data.generalizedData, item);
   }
   endMainMenu(menu);
+}
+
+async function setupEggsagrvsSearchWithParametersSubMenu(data, backFunction) {
+  let dataModule = await import(`../core/eggsagrvs_search_menu_data.mjs`);
+  setupSearchWithParametersSubMenu(data, backFunction, dataModule.EggsaGrvsData, eggsagrvsSearchWithParameters);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
