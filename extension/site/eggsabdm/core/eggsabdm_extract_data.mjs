@@ -73,6 +73,7 @@ const marriageFields = [
   { name: "groomStr", re: /(?:^|<br>)([^\d<]+)(?=<br>)/ }, // the first line without a digit
   { name: "marriageDateStr", re: /^(?:\s*<br>)*\s*([^<]+)\s*<br>/ }, // the first non-empty line
   { name: "occupation", re: /<br>[Oo]ccupation:\s*([^<]+)<br>/ },
+  { name: "witnessStr", re: /witnessed by:\s*([^<]+)\s*<br>/i },
 ];
 
 function parseMarriageRecord(recordHtml, result) {

@@ -33,13 +33,27 @@ function buildSourceTitle(ed, gd, builder) {
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.source.replaceAll("<br>", " ").replaceAll(/\s+/g, " ");
+  let srcRef = ed.source
+    .replaceAll("<br>", " ") // replace all <br> with a space
+    .replaceAll(/\s+/g, " "); // multiple spaces with a single space
+
+  if (builder.options.citation_general_target == "wikitree") {
+    srcRef = srcRef
+      .replaceAll(/\[\[([^\]]*)\]\]/g, "<nowiki>[[$1]]</nowiki>") // replace [[ ... ]] with <nowiki>[[ ... ]]</nowiki>
+      .replaceAll(/<a href="([^"]*)"[^[>]*>(.*?)<\/a>/g, "[$1 $2]"); // replace <a href="url" ..>text</a> with [link text]
+  } else {
+    srcRef = srcRef.replaceAll(/<a href="([^"]*)"[^[>]*>(.*?)<\/a>/g, "$1, $2"); // replace <a href="url" ..>text</a> with link, text
+  }
+  builder.sourceReference = srcRef;
 }
 
 function buildRecordLink(ed, gd, builder) {
   var eggsabdmUrl = buildEggsabdmUrl(ed, builder);
 
-  let recordLink = "[" + eggsabdmUrl + " eGGSA BMD Record]";
+  let recordLink =
+    builder.options.citation_general_target == "wikitree"
+      ? "[" + eggsabdmUrl + " eGGSA BMD Record]"
+      : "eGGSA BMD Record";
   if (ed.searchParameters) recordLink += " with search parameters " + ed.searchParameters;
   builder.recordLinkOrTemplate = recordLink;
 }
