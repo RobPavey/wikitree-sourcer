@@ -117,13 +117,18 @@ const EggsaGrvsData = {
     const surnamesArray = generalizedData.inferPersonLastNamesArray(generalizedData);
     if (surnamesArray.length > 0) {
       const surnameOptions = [];
+      const added = new Set();
       for (let surnameIndex = 0; surnameIndex < surnamesArray.length; ++surnameIndex) {
-        const surname = surnamesArray[surnameIndex];
+        const surname = surnamesArray[surnameIndex].trim();
         const lastWord = lastWordInSurname(surname);
-        if (lastWord !== surname) {
+        if (lastWord !== surname && !added.has(lastWord)) {
           addSelectEntry(surnameOptions, lastWord);
+          added.add(lastWord);
         }
-        addSelectEntry(surnameOptions, surname);
+        if (!added.has(surname)) {
+          addSelectEntry(surnameOptions, surname);
+          added.add(surname);
+        }
       }
 
       const surnameControl = {};
