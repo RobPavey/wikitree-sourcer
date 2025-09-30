@@ -9,8 +9,7 @@
       "selectFieldsByValue": {
         "firstname_mode": "1",
         "surname_mode": "1"
-      },
-      "options": {}
+      }
     }
   },
   "fullFirst": {
@@ -23,8 +22,7 @@
       "selectFieldsByValue": {
         "firstname_mode": "4",
         "surname_mode": "1"
-      },
-      "options": {}
+      }
     }
   }
 }

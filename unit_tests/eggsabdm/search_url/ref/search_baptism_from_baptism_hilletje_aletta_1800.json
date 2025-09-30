@@ -17,8 +17,7 @@
       },
       "radioNameFields": {
         "Result_order": "by_Surname"
-      },
-      "options": {}
+      }
     },
     "urlPart": "Baptisms"
   }

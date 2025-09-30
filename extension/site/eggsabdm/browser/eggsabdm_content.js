@@ -73,7 +73,7 @@ async function checkForAndProcessPendingSearch() {
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
-    return;
+    return false;
   }
 
   const lcUrl = document.URL.toLowerCase();
@@ -148,6 +148,7 @@ async function checkForAndProcessPendingSearch() {
       } else {
         console.log(`searchTarget mismatch: ${searchData.searchTarget}`);
       }
+      clearSearchData(PREVIOUS_SEARCH);
     } else {
       console.log("No search data found");
     }
@@ -344,6 +345,8 @@ function addFormSaveListener() {
   const form = getForm();
   if (!form || form.hasAttribute("sourcerOnClick")) return;
 
+  // We explicitely add the value "`sumbit" to the submit button because browsers don't
+  // always add the type as a label after we've messed woth the page.
   const submitButton = document.querySelector('input[type="submit"][name="Search"]');
   submitButton.value = "Submit";
 

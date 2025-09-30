@@ -22,22 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-async function setSearchData(key, data) {
-  chrome.storage.local.set({ [key]: data }, function () {
-    // console.log(eggsabdmSearchData);
-  });
-}
-
 const PENDING_SEARCH = "eggsagrvsSearchData";
 const PREVIOUS_SEARCH = "eggsagrvsPrevSearchData";
-
-async function getPendingSearch() {
-  return getSearchData(PENDING_SEARCH);
-}
-
-async function getPreviousSearch() {
-  return getSearchData(PREVIOUS_SEARCH);
-}
+const PREVIOUS_SUBMIT = "eggsagrvsPrevSubmitData";
 
 async function getSearchData(key) {
   return new Promise((resolve, reject) => {
@@ -51,19 +38,25 @@ async function getSearchData(key) {
   });
 }
 
+async function setSearchData(key, data) {
+  chrome.storage.local.set({ [key]: data }, function () {
+    // console.log(eggsabdmSearchData);
+  });
+}
+
 async function clearSearchData(key) {
   chrome.storage.local.remove([key], function () {
     //console.log(`cleared ${key}`);
   });
 }
 
-async function checkForPendingSearch() {
+async function checkForAndProcessPendingSearch() {
   //   console.log("checkForPendingSearch: called, URL is " + document.URL);
   //   console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
-    return;
+    return false;
   }
 
   const lcUrl = document.URL.toLowerCase();
@@ -108,6 +101,7 @@ async function checkForPendingSearch() {
 
           // Submit the form to do the search
           formElement.submit();
+          return true;
         }
       } else {
         console.log(`searcTarget mismatch: ${searchData.searchTarget}`);
@@ -118,6 +112,7 @@ async function checkForPendingSearch() {
       console.log("No search data found");
     }
   }
+  return false;
 }
 
 function populateForm(searchData) {
@@ -158,15 +153,74 @@ function populateForm(searchData) {
   return [firstName, lastName];
 }
 
+function getForm() {
+  const submitButton = document.querySelector('input[type="submit"][name="Search"]');
+  return submitButton.closest("form"); // gets the enclosing form
+}
+
+// Add a listener that will save all the form fields so we can restore them after the search.
+// We do this because eGGSA clears the form after a search, but we want to allow a user
+// to modify the search if they so wishes. Saving the values allows us to restore them
+// after the search.
+function addFormSaveListener() {
+  const form = getForm();
+  if (!form || form.hasAttribute("sourcerOnClick")) return;
+
+  // We explicitely add the value "`sumbit" to the submit button because browsers don't
+  // always add the type as a label after we've messed woth the page.
+  const submitButton = document.querySelector('input[type="submit"][name="Search"]');
+  submitButton.value = "Submit";
+
+  form.setAttribute("sourcerOnClick", "true");
+
+  form.addEventListener("submit", function (event) {
+    const dataToSave = {};
+    Array.from(form.elements).forEach((el) => {
+      if (!el.name) return; // skip elements without name
+      if (el.type === "hidden") return; // skip hidden elements
+      if ((el.type === "radio" || el.type === "checkbox") && !el.checked) return;
+      dataToSave[el.name] = el.value;
+    });
+    // console.log("prevSubmit", dataToSave);
+    setSearchData(PREVIOUS_SUBMIT, dataToSave);
+  });
+}
+
+// Repopulate the form fields (which are cleared by eGGSA after a search) with the
+// values of the search, so it is easy for the user to modify something if they want
+async function restorePreviousSubmit() {
+  const saved = await getSearchData(PREVIOUS_SUBMIT);
+  if (!saved) return;
+  // console.log("previous submit", saved);
+
+  const form = getForm();
+  Array.from(form.elements).forEach((el) => {
+    if (!el.name || !(el.name in saved)) return;
+
+    if (el.type === "radio" || el.type === "checkbox") {
+      el.checked = el.value === saved[el.name];
+    } else {
+      el.value = saved[el.name];
+    }
+  });
+  clearSearchData(PREVIOUS_SUBMIT);
+}
+
 async function checkForSearchThenInit() {
   // check for a pending search first, there is no need to do the site init if there is one
-  await checkForPendingSearch();
+  // since the search will cause a reload of the page.
+  const hadPendingSearch = await checkForAndProcessPendingSearch();
+  if (hadPendingSearch) return;
+
   siteContentInit(`eggsagrvs`, `site/eggsagrvs/core/eggsagrvs_extract_data.mjs`);
-  const prevSearch = await getSearchData(PREVIOUS_SEARCH);
-  if (prevSearch) {
-    populateForm(prevSearch);
-    // clearSearchData(PREVIOUS_SEARCH);
+  const prevSearchData = await getSearchData(PREVIOUS_SEARCH);
+  if (prevSearchData) {
+    populateForm(prevSearchData);
+    clearSearchData(PREVIOUS_SEARCH);
+  } else {
+    await restorePreviousSubmit();
   }
+  addFormSaveListener();
 }
 
 checkForSearchThenInit();

@@ -83,7 +83,6 @@ function buildSearchData(input) {
     selectFieldsByText: {},
     selectFieldsByValue: {},
     radioNameFields: {},
-    options: {},
   };
 
   const firstNames = Object.keys(parameters)
