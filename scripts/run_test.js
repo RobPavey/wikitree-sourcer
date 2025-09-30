@@ -33,6 +33,8 @@ const siteNames = [
   "baclac",
   "bg",
   "cwgc",
+  "eggsabdm",
+  "eggsagrvs",
   "fg",
   "fmp",
   "freebmd",
@@ -69,7 +71,6 @@ const siteNames = [
   "wikipedia",
   "wikitree",
   "dfgviewer",
-  "eggsagrvs",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

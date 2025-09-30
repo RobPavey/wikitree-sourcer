@@ -115,6 +115,11 @@
       "js": ["base/browser/content/content_common.js", "site/noda/browser/noda_content.js"]
     },
     {
+      "matches": ["*://*.eggsa.org/bdms/*", "*://www.eggsa.org/cgi-bin/*"],
+      "run_at": "document_end",
+      "js": ["base/browser/content/content_common.js", "site/eggsabdm/browser/eggsabdm_content.js"]
+    },
+    {
       "matches": ["*://graves.eggsa.org/*", "*://www.graves.eggsa.org/*"],
       "run_at": "document_end",
       "js": ["base/browser/content/content_common.js", "site/eggsagrvs/browser/eggsagrvs_content.js"]
@@ -377,6 +382,14 @@
         "*://www.arcinsys.niedersachsen.de/*",
         "*://arcinsys.hessen.de/*"
       ]
+    },
+    {
+      "resources": [
+        "base/core/string_utils.mjs",
+        "site/eggsabdm/core/eggsabdm_common.mjs",
+        "site/eggsabdm/core/eggsabdm_extract_data.mjs"
+      ],
+      "matches": ["*://www.eggsa.org/*"]
     },
     {
       "resources": ["site/eggsagrvs/core/eggsagrvs_extract_data.mjs"],

@@ -1,0 +1,40 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Vosloo",
+    "forenames": "Maria Magdalena"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "26 May 1844"
+  },
+  "eventPlace": {
+    "placeString": "Winburg (Vals River)"
+  },
+  "lastNameAtBirth": "Vosloo",
+  "birthDate": {
+    "dateString": "22 Nov 1842"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Vosloo",
+        "forenames": "Gerhardus Johannes"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Enslin",
+        "forenames": "Anna Maria Jacomina"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Maria Magdalena Vosloo",
+    "Gerhardus Johannes Vosloo",
+    "Anna Maria Jacomina Enslin"
+  ],
+  "hasValidData": true
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchMarriages.pl",
+  "success": true,
+  "brideAgeStr": "17",
+  "brideStr": "Maria Margaretha Wilhelmina Smith, Alius dochter",
+  "groomAgeStr": "20",
+  "groomStr": "Eduard Christiaan Hamman, Nicolaas zoon",
+  "marriageDateStr": "7 Dec 1834",
+  "occupation": "",
+  "witnessStr": "",
+  "source": "Source: Nederduits Gereformeerde Gemeente (NGK), Drakenstein, . marriage register, 1824-1839, page 56. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G3 5/2. Transcribed by Richard Ball, from photographs of Cape Archives VC 655<br>Note: Data in square brackets [ ] indicates unreadable or doubtful reading. Dates in ( ) are derived from the date of the previous entry. Dates in double square brackets [[ ]], usually [[01]] indicate that there was no day entered in the register.",
+  "sourceTitle": "Marriage Registers",
+  "searchParameters": "Groom with hamman anywhere in the surname with eduard anywhere in the first name, in all the registers.",
+  "eggsaPageType": "Marriage"
+}

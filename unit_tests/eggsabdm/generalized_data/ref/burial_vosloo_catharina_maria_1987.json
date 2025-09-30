@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Vosloo",
+    "forenames": "Catherina Maria"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "13 Oct 1987"
+  },
+  "lastNameAtDeath": "Vosloo",
+  "birthDate": {
+    "dateString": "25 Feb 1902"
+  },
+  "deathDate": {
+    "dateString": "09 Oct 1987"
+  },
+  "ageAtEvent": 85,
+  "hasValidData": true
+}

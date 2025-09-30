@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "Johannes",
+  "baptismDateStr": "14.5.1805",
+  "bornDateStr": "",
+  "father": "Pieter Meintjies VAN DEN BERG, De Oude",
+  "mother": "Nn NN",
+  "parentsStr": "",
+  "witnessStr": "",
+  "source": "Source: Nederduits Gereformeerde Gemeente (NGK), Graaff-Reinet,  Baptism register, 1792-1805, page 225, entry number 1813. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch. Transcribed by Cornel Viljoen, with consent of the NGK Archives, from <a href=\"https://www.familysearch.org/search/film/008121018?cat=993779\" target=\"_blank\">Family Search Film # 008121018</a>, image number 166.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Father with van den berg anywhere in the surname with pieter meintjies anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

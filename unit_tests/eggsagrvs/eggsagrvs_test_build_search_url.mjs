@@ -26,13 +26,27 @@ import { buildSearchData } from "../../extension/site/eggsagrvs/core/eggsagrvs_b
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "england_marriage_reg_handford-3_sc",
-    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
-    typeOfSearch: "SameCollection",
+    caseName: "conradie_jan_and_johanna_van_veyeren-jan",
+    inputPath: "eggsagrvs/generalized_data/ref/conradie_jan_and_johanna_van_veyeren",
   },
-  */
+  {
+    caseName: "merwe_wilhelmus_and_debore_and_bettie_p1",
+    inputPath: "eggsagrvs/generalized_data/ref/merwe_wilhelmus_and_debore_and_bettie_p1",
+    optionVariants: [
+      {
+        variantName: "fullFirst",
+        optionOverrides: {
+          search_eggsagrvs_fullFirstname: true,
+          search_eggsagrvs_firstNameMode: "4",
+        },
+      },
+    ],
+  },
+  {
+    caseName: "merwe_wilhelmus_and_debore_and_bettie_p2",
+    inputPath: "eggsagrvs/generalized_data/ref/merwe_wilhelmus_and_debore_and_bettie_p2",
+  },
 ];
 
 async function runTests(testManager) {

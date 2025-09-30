@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smit",
+    "forenames": "Engela Elisabeth Christina"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "5 Apr 1801"
+  },
+  "lastNameAtBirth": "Smit",
+  "birthDate": {
+    "dateString": "dn 20 Febr:"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Smit",
+        "forenames": "Maarten Johs"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Smit",
+        "forenames": "Adriana Beatrix"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Engela Elisabeth Christina Smit",
+    "Maarten Johs. Smit",
+    "Adriana Beatrix Smit"
+  ],
+  "hasValidData": true
+}

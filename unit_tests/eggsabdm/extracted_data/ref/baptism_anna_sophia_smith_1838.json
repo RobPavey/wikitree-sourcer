@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "Anna Sophia",
+  "baptismDateStr": "08 Apr 1838",
+  "bornDateStr": "04 Feb 1839",
+  "father": "Petrus Erasmus Johannes SMITH",
+  "mother": "Anna Dorothea Willemina MERWE vd",
+  "parentsStr": "",
+  "witnessStr": "MERWE Jan vd, VENTER Johanna Catharina, VENTER Herculaas Frederik, PLESSIS Hendrina Johanna du",
+  "source": "Source: Nederduits Gereformeerde Gemeente (NGK), Colesberg,  Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2.  Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Child with smith anywhere in the surname with anna sophia anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

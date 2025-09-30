@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "Jan Johannes Petrus Jacobus",
+  "baptismDateStr": "07 Jun 1890",
+  "bornDateStr": "12 May 1890",
+  "father": "",
+  "mother": "",
+  "parentsStr": "Jan Johannes Petrus and Aletta Elizabeth DE SMIEDT",
+  "witnessStr": "J B van der Merwe, E O van der Merwe and G J Marthinus",
+  "source": "Source: Christ Church, Adelaide (Anglican), Adelaide,  Baptism register, 1861-1909, page 58, entry number 572. Repository: Cory Library, Rhodes University, Grahamstown, MS 19 063.  Note: Images of the register can be found on the <a href=\"https://familysearch.org/pal:/MM9.3.1/TH-1942-23580-47398-31?cc=1468076&amp;wc=MCM6-Q2Q:44975801,44975802,950096901,49792902\" target=\"_blank\">FamilySearch.org web site</a>. Transcribed by Patricia Putter.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Child with smiedt anywhere in the surname with johannes petrus anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

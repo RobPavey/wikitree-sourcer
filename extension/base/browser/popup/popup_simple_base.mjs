@@ -271,7 +271,9 @@ async function setupSimplePopupMenu(input) {
 
   if (!extractedData || !extractedData.success) {
     let message = "WikiTree Sourcer doesn't know how to extract data from this page.";
-    message += "\n\n" + input.extractFailedMessage;
+    message +=
+      "\n\n" +
+      (extractedData.overrideFailureMessage ? extractedData.overrideFailureMessage : input.extractFailedMessage);
     let data = { extractedData: extractedData };
     buildMinimalMenuWithMessage(message, data, backFunction);
     return;

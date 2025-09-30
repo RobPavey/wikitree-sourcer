@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Smit",
+    "forenames": "Cath M Jac",
+    "otherLastNames": "Viljoen"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "06 Apr 1840"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Viljoen",
+        "forenames": "Jan Hendrik"
+      },
+      "marriageDate": {
+        "dateString": "06 Apr 1840"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Jan Hendrik Viljoen",
+    "Cath M. Jac. Smit"
+  ],
+  "hasValidData": true
+}

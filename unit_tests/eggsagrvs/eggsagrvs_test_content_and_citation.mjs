@@ -118,8 +118,8 @@ const regressionData = [
     url: "https://www.graves.eggsa.org/westerncape/Bredasdorp_Urban/Bredasdorp-nuwe-BP/M%20-%20Surnames%20__%20Vanne%20-%20M/Van+der+Meet_+Jan+J+en+Huddelstone_+FJJ.jpg",
   },
 
-  // Mixture of & and :: and multi-name surnames
   // MERWE Izak Wilhelmus, van der 1869-1942 & Debora Petronella Jacoba van der MERWE 1873-1951 :: van der MERWE Bettie 1909-2000
+  // Mixture of & and :: and multi-name surnames
   {
     caseName: "merwe_wilhelmus_and_debore_and_bettie_p0",
     url: "https://www.graves.eggsa.org/westerncape/CERES-Urban/abc/Ceres%20Owenstraat%20Oos%20Ljh_012/SA101359.JPG",

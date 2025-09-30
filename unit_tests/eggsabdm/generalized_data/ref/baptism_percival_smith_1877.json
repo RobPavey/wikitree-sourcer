@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Percival Frere"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "11 Oct 1877"
+  },
+  "birthDate": {
+    "dateString": "8 Sep 1877"
+  },
+  "primaryPersonOptions": [
+    "Percival Frere Smith",
+    "Charles Thomas, Julia Emily Smith"
+  ],
+  "hasValidData": true
+}

@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "vd Berg",
+    "forenames": "Elisabeth Louisa"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "11 Jul 1841"
+  },
+  "lastNameAtBirth": "vd Berg",
+  "birthDate": {
+    "dateString": "08 Oct 1840"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "vd Berg",
+        "forenames": "Abraham Paulus"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Steyn",
+        "forenames": "Cornelia Gertruida Margaritha"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Elisabeth Louisa vd Berg",
+    "Abraham Paulus vd Berg",
+    "Cornelia Gertruida Margaritha Steyn"
+  ],
+  "hasValidData": true
+}

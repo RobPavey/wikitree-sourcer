@@ -1,0 +1,40 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smit",
+    "forenames": "Martha Margaretha"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "3 Nov 1851"
+  },
+  "eventPlace": {
+    "placeString": "Smithfield"
+  },
+  "lastNameAtBirth": "Smit",
+  "birthDate": {
+    "dateString": "24 Mar 1851"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Smit",
+        "forenames": "Jacobus Johannes E"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "van Nimwegen",
+        "forenames": "Martha Maria"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Martha Margaretha Smit",
+    "Jacobus Johannes E Smit",
+    "Martha Maria van Nimwegen"
+  ],
+  "hasValidData": true
+}

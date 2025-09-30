@@ -1,0 +1,23 @@
+{
+  "std": {
+    "category": "Burials",
+    "fieldData": {
+      "utf8": true,
+      "simpleNameFields": {
+        "what_firstname": "Hilletje",
+        "what_surname": "Smit"
+      },
+      "selectFieldsByText": {
+        "Which_Town": "All"
+      },
+      "selectFieldsByValue": {
+        "firstname_mode": "1",
+        "surname_mode": "1"
+      },
+      "radioNameFields": {
+        "Result_order": "by_Surname"
+      }
+    },
+    "urlPart": "Burials"
+  }
+}
