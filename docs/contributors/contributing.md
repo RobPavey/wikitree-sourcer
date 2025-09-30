@@ -5,5 +5,3 @@ The best way for developers new to the project to contribute is by adding suppor
 It is preferred that you work in your own fork and in the develop branch.
 
 See the [README file](../readme.md) for help with setup and a guide on how to add support for a new site.
-
-
