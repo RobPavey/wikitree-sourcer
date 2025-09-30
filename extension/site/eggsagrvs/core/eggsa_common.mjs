@@ -33,6 +33,8 @@ const lastNamePrefixes = [
   "de ",
   "di ",
   "du ",
+  "dù ",
+  "dú ",
   "ibn ",
   "janse van ",
   "janse v ",

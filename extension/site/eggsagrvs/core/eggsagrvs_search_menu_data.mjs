@@ -107,7 +107,7 @@ const EggsaGrvsData = {
     placeControl.elementId = "province";
     placeControl.parameterName = "urlPart";
     placeControl.type = "select";
-    placeControl.label = "Where to search";
+    placeControl.label = "Search graveyards in";
     placeControl.values = EggsaGrvsCommon.searchAreas.map((e) => {
       return { value: e.urlPart, text: e.name };
     });
