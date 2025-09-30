@@ -66,7 +66,8 @@ async function checkForAndProcessPendingSearch() {
     const searchData = await getSearchData(PENDING_SEARCH);
 
     if (searchData) {
-      console.log("checkForPendingSearch got searcData:", searchData);
+      // console.log("checkForPendingSearch got searcData:", searchData);
+      clearSearchData(PENDING_SEARCH);
 
       const searchUrl = searchData.url;
       const timeStamp = searchData.timeStamp;
@@ -106,8 +107,6 @@ async function checkForAndProcessPendingSearch() {
       } else {
         console.log(`searcTarget mismatch: ${searchData.searchTarget}`);
       }
-      // clear the search data
-      clearSearchData(PENDING_SEARCH);
     } else {
       console.log("No search data found");
     }

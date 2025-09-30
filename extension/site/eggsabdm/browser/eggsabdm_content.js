@@ -107,7 +107,7 @@ async function checkForAndProcessPendingSearch() {
     //     "url": "https://www.eggsa.org/bdms/Marriages.html"
     // }
     if (searchData) {
-      console.log("checkForPendingSearch got searcData:", searchData);
+      // console.log("checkForPendingSearch got searcData:", searchData);
       // clear the search data
       clearSearchData(PENDING_SEARCH);
 
@@ -148,7 +148,6 @@ async function checkForAndProcessPendingSearch() {
       } else {
         console.log(`searchTarget mismatch: ${searchData.searchTarget}`);
       }
-      clearSearchData(PREVIOUS_SEARCH);
     } else {
       console.log("No search data found");
     }
