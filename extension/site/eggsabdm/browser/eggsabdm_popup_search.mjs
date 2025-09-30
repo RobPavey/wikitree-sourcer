@@ -25,6 +25,7 @@ SOFTWARE.
 import {
   addBackMenuItem,
   addMenuItem,
+  addMenuItemWithSubMenu,
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
@@ -130,9 +131,16 @@ async function eggsabdmSearchWithParameters(generalizedData, parameters) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addEggsabdmDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search eGGSA BDM", function (element) {
-    setupEggsabdmSearchSubMenu(data, backFunction, filter);
-  });
+  addMenuItemWithSubMenu(
+    menu,
+    "Search eGGSA BDM",
+    function (element) {
+      setupEggsabdmSearchSubMenu(data, backFunction, filter);
+    },
+    function (element) {
+      setupEggsabdmSearchWithParametersSubMenu(data, backFunction);
+    }
+  );
 
   return true;
 }

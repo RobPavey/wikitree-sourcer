@@ -152,17 +152,28 @@ function addEggsagrvsAreaMenuItem(menu, generalizedData, item) {
   });
 }
 
+function addEggsagrvsSearchWithParametersMenuItem(menu, data, backFunction) {
+  addMenuItem(menu, "Search with specified parameters...", function (element) {
+    setupEggsagrvsSearchWithParametersSubMenu(data, backFunction);
+  });
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 // Submenus
 //////////////////////////////////////////////////////////////////////////////////////////
 
 async function setupEggsagrvsSearchSubMenu(data, backFunction, filter) {
-  let menu = beginMainMenu();
+  const backToHereFunction = function () {
+    setupEggsagrvsSearchSubMenu(data, backFunction, filter);
+  };
+
+  const menu = beginMainMenu();
   addBackMenuItem(menu, backFunction);
 
   for (const item of EggsaGrvsCommon.searchAreas) {
     addEggsagrvsAreaMenuItem(menu, data.generalizedData, item);
   }
+  addEggsagrvsSearchWithParametersMenuItem(menu, data, backToHereFunction);
   endMainMenu(menu);
 }
 
