@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "Neeltje Johanna Maria",
+  "baptismDateStr": "1793, 3 November 1793",
+  "bornDateStr": "",
+  "father": "Johannes SMITH (Gideon zn:)",
+  "mother": "Huijbregtje VISSER",
+  "parentsStr": "",
+  "witnessStr": "Everhardus Johannes Smith, Maria Brand, Johannes Smith Pr. zn:",
+  "source": "Source: Nederduits Gereformeerde Gemeente (NGK), Swartland (Malmesbury),  Baptism register, 1783-1809, page 91. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G5 3/3. Transcribed by Lizette Svoboda, from photographs of Cape Archives VC 667.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Child with smith anywhere in the surname with Neeltje Johanna Maria anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

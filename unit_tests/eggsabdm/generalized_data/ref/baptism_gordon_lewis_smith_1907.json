@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Gordon Lewis"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "13 Oct"
+  },
+  "birthDate": {
+    "dateString": "17 Sep 1907"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Smith",
+        "forenames": "James Lewis"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Smith",
+        "forenames": "Emily May"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Gordon Lewis Smith",
+    "James Lewis Smith",
+    "Emily May Smith"
+  ],
+  "hasValidData": true
+}

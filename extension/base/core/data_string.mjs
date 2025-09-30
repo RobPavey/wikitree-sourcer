@@ -1139,6 +1139,17 @@ function getBirthString(gd, options) {
 function getDeathString(gd, options) {
   let dataString = getFullName(gd);
 
+  let parentNames = gd.inferParentNamesForDataString();
+  if (
+    gd.lastNameAtBirth &&
+    gd.lastNameAtDeath &&
+    gd.lastNameAtBirth != gd.lastNameAtDeath &&
+    !parentNames.fatherName &&
+    !parentNames.motherName
+  ) {
+    dataString += " (born " + gd.lastNameAtBirth + ")";
+  }
+
   let deathDate = gd.inferDeathDateObj();
   let placeObj = gd.inferDeathPlaceObj();
 
@@ -1168,7 +1179,6 @@ function getDeathString(gd, options) {
     }
   }
 
-  let parentNames = gd.inferParentNamesForDataString();
   if (parentNames.fatherName || parentNames.motherName) {
     dataString += getParentageString(parentNames.fatherName, parentNames.motherName, gd.inferPersonGender());
     dataString += ",";

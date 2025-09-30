@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Conradie",
+    "forenames": "Jan Hendrik"
+  },
+  "eventDate": {
+    "yearString": "1946"
+  },
+  "eventPlace": {
+    "placeString": "Aberdeen, Eastern Cape, South Africa"
+  },
+  "lastNameAtDeath": "Conradie",
+  "birthDate": {
+    "yearString": "1883"
+  },
+  "deathDate": {
+    "yearString": "1946"
+  },
+  "ageAtEvent": 63,
+  "ageAtDeath": 63,
+  "primaryPersonOptions": [
+    "Jan Hendrik Conradie",
+    "Johanna Elizabeth van Veyeren"
+  ],
+  "hasValidData": true
+}

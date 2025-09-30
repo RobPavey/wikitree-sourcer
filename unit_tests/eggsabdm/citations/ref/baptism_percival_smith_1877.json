@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"eGGSA Baptism Registers, Percival Frere Smith\"<br/>\nSource: Grahamstown - Christchurch (Anglican), Grahamstown, Baptism register, 1877-1894, page 3, entry number 10. Repository: Cory Library, MS 17 630/1. Transcribed by Eileen de Jager, Erna Buber-de Villiers, Esmé van der Westhuisen and Fay Lea as part of the eGGSA Project, from photographs by William Jervois<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with percival anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nPercival Frere Smith baptism on 11 Oct 1877 (born 8 Sep 1877).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Percival was born on 8 September 1877 and baptised on 11 October 1877.<ref>\n'''Baptism''':\n\"eGGSA Baptism Registers, Percival Frere Smith\"<br/>\nSource: Grahamstown - Christchurch (Anglican), Grahamstown, Baptism register, 1877-1894, page 3, entry number 10. Repository: Cory Library, MS 17 630/1. Transcribed by Eileen de Jager, Erna Buber-de Villiers, Esmé van der Westhuisen and Fay Lea as part of the eGGSA Project, from photographs by William Jervois<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with percival anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nPercival Frere Smith baptism on 11 Oct 1877 (born 8 Sep 1877).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"eGGSA Baptism Registers, Percival Frere Smith\"<br/>Source: Grahamstown - Christchurch (Anglican), Grahamstown, Baptism register, 1877-1894, page 3, entry number 10. Repository: Cory Library, MS 17 630/1. Transcribed by Eileen de Jager, Erna Buber-de Villiers, Esmé van der Westhuisen and Fay Lea as part of the eGGSA Project, from photographs by William Jervois<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with percival anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Percival Frere Smith baptism on 11 Oct 1877 (born 8 Sep 1877).",
+    "type": "source"
+  }
+}

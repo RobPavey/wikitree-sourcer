@@ -1,0 +1,27 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Landsberg",
+    "forenames": "E S A",
+    "otherLastNames": "Coetsee,Human"
+  },
+  "eventDate": {
+    "yearString": "1993"
+  },
+  "eventPlace": {
+    "placeString": "Modjadjiskloof / Duiwelskloof, Limpopo, South Africa"
+  },
+  "lastNameAtBirth": "Rautenbach",
+  "lastNameAtDeath": " Landsberg",
+  "birthDate": {
+    "yearString": "1908"
+  },
+  "deathDate": {
+    "yearString": "1993"
+  },
+  "ageAtEvent": 85,
+  "ageAtDeath": 85,
+  "hasValidData": true
+}

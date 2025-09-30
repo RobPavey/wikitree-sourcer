@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "Percival Frere",
+  "baptismDateStr": "1877, Oct. 11",
+  "bornDateStr": "Sept. 8 1877",
+  "father": "",
+  "mother": "",
+  "parentsStr": "Charles Thomas, Julia Emily SMITH",
+  "witnessStr": "Emily Gadd, Charles T. Smith proxy for J.B.S. Greathead, Octavius Greathead",
+  "source": "Source: Grahamstown - Christchurch (Anglican), Grahamstown,  Baptism register, 1877-1894, page 3, entry number 10. Repository: Cory Library, MS 17 630/1. Transcribed by Eileen de Jager, Erna Buber-de Villiers, Esmé van der Westhuisen and Fay Lea as part of the eGGSA Project, from photographs  by William Jervois.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Child with smith anywhere in the surname with percival anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

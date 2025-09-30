@@ -55,7 +55,10 @@ async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressi
       continue;
     }
 
-    const result = generalizeDataFunction({ extractedData: extractedData });
+    const result = generalizeDataFunction({
+      extractedData: extractedData,
+      primaryPersonIndex: testData.primaryPersonIndex,
+    });
 
     testManager.results.totalTestsRun++;
 

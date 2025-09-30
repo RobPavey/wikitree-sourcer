@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smit",
+    "forenames": "Hilletje Aletta"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "4 Oct 1801"
+  },
+  "lastNameAtBirth": "Smit",
+  "birthDate": {
+    "dateString": "dn 7 Julij"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Smit",
+        "forenames": "Jacobus Everhardus"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Smit",
+        "forenames": "Huijbrechtje Elisabeth"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Hilletje Aletta Smit",
+    "Jacobus Everhardus Smit",
+    "Huijbrechtje Elisabeth Smit"
+  ],
+  "hasValidData": true
+}

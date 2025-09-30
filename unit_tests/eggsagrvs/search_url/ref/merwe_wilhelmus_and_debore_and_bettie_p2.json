@@ -1,0 +1,15 @@
+{
+  "std": {
+    "fieldData": {
+      "utf8": true,
+      "simpleNameFields": {
+        "what_firstname": "Bettie",
+        "what_surname": "Merwe"
+      },
+      "selectFieldsByValue": {
+        "firstname_mode": "1",
+        "surname_mode": "1"
+      }
+    }
+  }
+}

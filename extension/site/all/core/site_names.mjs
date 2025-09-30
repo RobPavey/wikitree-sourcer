@@ -35,6 +35,8 @@ const siteNames = [
   "baclac",
   "bg",
   "cwgc",
+  "eggsabdm",
+  "eggsagrvs",
   "fmp",
   "fs",
   "fg",

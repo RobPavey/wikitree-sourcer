@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Frittelli",
+    "forenames": "Lena"
+  },
+  "eventDate": {
+    "yearString": "1945"
+  },
+  "eventPlace": {
+    "placeString": "Riversdale, Western Cape, South Africa"
+  },
+  "lastNameAtBirth": "Janse van Rensburg",
+  "lastNameAtDeath": "Frittelli",
+  "deathDate": {
+    "yearString": "1945"
+  },
+  "hasValidData": true
+}

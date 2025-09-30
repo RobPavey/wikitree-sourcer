@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Dillon",
+    "forenames": "Emma Valentine Eva"
+  },
+  "eventDate": {
+    "yearString": "1971"
+  },
+  "eventPlace": {
+    "placeString": "Johannesburg, Gauteng, South Africa"
+  },
+  "lastNameAtDeath": "Dillon",
+  "birthDate": {
+    "yearString": "1898"
+  },
+  "deathDate": {
+    "yearString": "1971"
+  },
+  "ageAtEvent": 73,
+  "ageAtDeath": 73,
+  "primaryPersonOptions": [
+    "Garrett Maurice Dillon",
+    "Emma Valentine Eva Dillon"
+  ],
+  "hasValidData": true
+}

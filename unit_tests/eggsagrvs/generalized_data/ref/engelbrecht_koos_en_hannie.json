@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Engelbrecht",
+    "forenames": "Koos"
+  },
+  "eventPlace": {
+    "country": "Kenya"
+  },
+  "lastNameAtDeath": "Engelbrecht",
+  "primaryPersonOptions": [
+    "Koos Engelbrecht",
+    "Hannie Engelbrecht"
+  ],
+  "hasValidData": true
+}

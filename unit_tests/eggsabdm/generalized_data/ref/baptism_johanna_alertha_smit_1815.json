@@ -1,0 +1,37 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smit",
+    "forenames": "Johanna Alertha Jordina"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "26 Mar 1815"
+  },
+  "lastNameAtBirth": "Smit",
+  "birthDate": {
+    "dateString": "8 Mar 1815"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Smit",
+        "forenames": "Jasper"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "van Zijl",
+        "forenames": "Hester"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Johanna Alertha Jordina Smit",
+    "Jasper Smit",
+    "Hester van Zijl"
+  ],
+  "hasValidData": true
+}
