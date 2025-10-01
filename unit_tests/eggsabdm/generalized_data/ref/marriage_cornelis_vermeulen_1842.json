@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Vermeulen",
+    "forenames": "Cornelis Frans"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "15 Aug 1842"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Smit",
+        "forenames": "Engela Helena"
+      },
+      "marriageDate": {
+        "dateString": "15 Aug 1842"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Cornelis Frans Vermeulen",
+    "Engela Helena Smit"
+  ],
+  "hasValidData": true
+}

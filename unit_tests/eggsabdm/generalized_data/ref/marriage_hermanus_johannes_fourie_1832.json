@@ -1,0 +1,29 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Fourie",
+    "forenames": "Hermanus Johannes Casparis"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "7 May 1832"
+  },
+  "spouses": [
+    {
+      "name": {
+        "lastName": "van Dyk",
+        "forenames": "Anna Johanna Maria"
+      },
+      "marriageDate": {
+        "dateString": "7 May 1832"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Hermanus Johannes Casparis Fourie",
+    "Anna Johanna Maria van Dyk"
+  ],
+  "hasValidData": true
+}

@@ -26,6 +26,7 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { StringUtils } from "../../../base/core/string_utils.mjs";
+import { EggsaCommon } from "./eggsa_common.mjs";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Helper functions
@@ -105,7 +106,7 @@ function extractNames(ed) {
         let rest;
         [lastName, rest] = shiftWord(originalName);
 
-        // check for formerly
+        // check for (and remove) formerly, adding those surnames to otherLastNames
         const indexOfFormerly = rest.indexOf("formerly ");
         if (indexOfFormerly >= 0) {
           person.otherLastNames = rest
@@ -123,10 +124,10 @@ function extractNames(ed) {
         if (indexOfCommaSpace >= 0) {
           firstNames = rest.substring(0, indexOfCommaSpace);
           const newRest = rest.substring(indexOfCommaSpace + 2).replaceAll(".", "");
-          const prefix = multiWordSurnamePrefix(newRest + " ");
+          const prefix = EggsaCommon.multiWordSurnamePrefixAtStart(newRest + " ");
           if (prefix && newRest.length > prefix.length) {
-            // The prefix is actually another multi-word last name
-            const [, correctedPrefix] = fixPrefixCapitalisation(` ${newRest} `, ` ${newRest.toLowerCase()} `);
+            // The prefix is actually another multi-word last name e.g. NEL Lena, VAN ROOYEN
+            const [, correctedPrefix] = EggsaCommon.splitAndFixLastnameCapitalisation(newRest);
             if (correctedPrefix)
               lastName = correctedPrefix + " " + NameUtils.convertNameFromAllCapsToMixedCase(lastName);
           } else {
@@ -144,32 +145,15 @@ function extractNames(ed) {
     } else {
       // Subsequent people
       if (hasSurname(originalName)) {
-        const lcName = originalName.toLowerCase();
         if (separator == "::") {
           // For :: separators, all but the first person's names are of the form "ALL CAPS LASTNAME First Names" (with
           // multi-word last names in the normal order)
           [firstNames, lastName] = extractLastNameAtFront(originalName);
         } else {
           // For & separators, all but the first person's names are of the form "First Names ALL CAPS LASTNAME" (with
-          // multi-word last names in the normal order), but  could also be just "First Name".
-          [firstNames, lastName] = fixPrefixCapitalisation(originalName, lcName);
-          // for (const prefix of lastNamePrefixes) {
-          //   // Make sure we know where the last name of multi-word last names start.
-          //   const lnIdx = lcName.indexOf(" " + prefix);
-          //   if (lnIdx >= 0) {
-          //     lastName =
-          //       (prefix.startsWith("janse") ? StringUtils.toInitialCaps(prefix) : prefix) +
-          //       NameUtils.convertNameFromAllCapsToMixedCase(originalName.substring(lnIdx + prefix.length + 1)); // don't include the leading space
-          //     firstNames = originalName.substring(0, lnIdx);
-          //     break;
-          //   }
-          // }
-          if (!lastName) {
-            // We don't have a multi-word last name
-            lastName = StringUtils.getLastWord(originalName);
-            firstNames = originalName.substring(0, originalName.indexOf(lastName) - 1);
-            lastName = NameUtils.convertNameFromAllCapsToMixedCase(lastName);
-          }
+          // multi-word last names in the normal order), but could also be just "First Name".
+          // Note, the last name could also be "van der MWERWE"
+          [firstNames, lastName] = EggsaCommon.getFirstAndLastNames(originalName);
         }
       } else {
         // No last name found, assume same last name as first person
@@ -204,33 +188,13 @@ function extractNames(ed) {
   ed.people = people;
 }
 
-function fixPrefixCapitalisation(name, lcName) {
-  // If name is "First Names ALL CAPS LASTNAME" (with multi-word last names in the normal order), lcName just
-  // the lower case version of name,
-  // return: { firstNames: First Names, lastName: all caps LastName } if "all caps" is a valid prefix,
-  // otherwise return undefined. We cater for "First Names" possibly being empty.
-  let firstNames, lastName;
-  for (const prefix of lastNamePrefixes) {
-    // Make sure we know where the last name of multi-word last names start.
-    const indexOfLastnameAfterPrefix = lcName.indexOf(" " + prefix);
-    if (indexOfLastnameAfterPrefix >= 0) {
-      lastName =
-        (prefix.startsWith("janse") ? StringUtils.toInitialCaps(prefix) : prefix) +
-        NameUtils.convertNameFromAllCapsToMixedCase(name.substring(indexOfLastnameAfterPrefix + prefix.length + 1)); // don't include the leading space
-      firstNames = name.substring(0, indexOfLastnameAfterPrefix).trim();
-      return [firstNames, lastName];
-    }
-  }
-  return [];
-}
-
 function extractLastNameAtFront(originalName) {
   // Extract last name and first names from "ALL CAPS LASTNAME First Names" (with multi-word last names in the normal order).
   // It is assumed there is a space after LASTNAME, even if there is no first name.
   let lastName;
   let firstNames;
   // Make sure we know where the last name of multi-word last names end.
-  const prefix = multiWordSurnamePrefix(originalName);
+  const prefix = EggsaCommon.multiWordSurnamePrefixAtStart(originalName);
   if (prefix) {
     const eofLastName = originalName.indexOf(" ", prefix.length);
     lastName =
@@ -300,46 +264,6 @@ function hasSurname(name) {
   return false;
 }
 
-// See https://en.wikipedia.org/wiki/List_of_family_name_affixes
-// To be better this could take country names into account
-const lastNamePrefixes = [
-  "ab ",
-  "ap ",
-  "da ",
-  "de ",
-  "di ",
-  "du ",
-  "ibn ",
-  "janse van ",
-  "la ",
-  "le ",
-  "lu ",
-  "te ",
-  "ter ",
-  "ten ",
-  "van den ",
-  "van der ",
-  "van de ",
-  "van ",
-  "von ",
-  "zu ",
-];
-
-/**
- * If str starts with a multi-word surname prefix, (e.g. "van der " of "van der Merwe"), return the prefix,
- * else return false
- * @param {*} str
- */
-function multiWordSurnamePrefix(str) {
-  const lcName = str.toLowerCase();
-  for (const prefix of lastNamePrefixes) {
-    if (lcName.startsWith(prefix)) {
-      return prefix;
-    }
-  }
-  return false;
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // The class
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -355,7 +279,7 @@ class EggsagrvsEdReader extends ExtractedDataReader {
     // console.log("EggsagrvsEdReader after", this.ed);
   }
 
-  getPerson() {
+  getSelectedPerson() {
     return this.ed.people[this.primaryPersonIndex];
   }
 
@@ -386,10 +310,10 @@ class EggsagrvsEdReader extends ExtractedDataReader {
   }
 
   getNameObj() {
-    const person = this.getPerson();
+    const person = this.getSelectedPerson();
     if (!person) return undefined;
     const nameObj = this.makeNameObjFromForenamesAndLastName(person.firstNames, person.lastName);
-    nameObj.otherLastNames = person.otherLastNames;
+    if (person.otherLastNames) nameObj.otherLastNames = person.otherLastNames.join(",");
     return nameObj;
   }
 
@@ -398,33 +322,33 @@ class EggsagrvsEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    const yearString = this.getPerson()?.death;
+    const yearString = this.getSelectedPerson()?.death;
     if (yearString) return this.makeDateObjFromYear(yearString);
     return undefined;
   }
 
   getEventPlaceObj() {
-    const text = this.ed.breadcrumb;
-    const parts = text.split(",");
-    let place;
     if (this.ed.country != "South Africa") {
       return this.makePlaceObjFromCountryName(this.ed.country);
     } else {
+      const text = this.ed.breadcrumb;
+      const parts = text.split(",");
+      let place;
       if (parts.length >= 2) {
         place = [parts[1].trim(), parts[0].trim(), this.ed.country].join(", ");
       } else {
         place = [parts[0].trim(), this.ed.country].join(", ");
       }
+      return this.makePlaceObjFromFullPlaceName(StringUtils.toInitialCapsEachWord(place));
     }
-    return this.makePlaceObjFromFullPlaceName(StringUtils.toInitialCapsEachWord(place));
   }
 
   getLastNameAtBirth() {
-    return this.getPerson()?.lnab || "";
+    return this.getSelectedPerson()?.lnab || "";
   }
 
   getLastNameAtDeath() {
-    return this.getPerson()?.lastName || "";
+    return this.getSelectedPerson()?.lastName || "";
   }
 
   getMothersMaidenName() {
@@ -432,7 +356,7 @@ class EggsagrvsEdReader extends ExtractedDataReader {
   }
 
   getBirthDateObj() {
-    const yearString = this.getPerson()?.birth;
+    const yearString = this.getSelectedPerson()?.birth;
     if (yearString) return this.makeDateObjFromYear(yearString);
     return undefined;
   }
@@ -442,7 +366,7 @@ class EggsagrvsEdReader extends ExtractedDataReader {
   }
 
   getDeathDateObj() {
-    const yearString = this.getPerson()?.death;
+    const yearString = this.getSelectedPerson()?.death;
     if (yearString) return this.makeDateObjFromYear(yearString);
     return undefined;
   }
@@ -452,7 +376,7 @@ class EggsagrvsEdReader extends ExtractedDataReader {
   }
 
   getAgeAtEvent() {
-    const person = this.getPerson();
+    const person = this.getSelectedPerson();
     if (person?.birth && person?.death && isNumeric(person.birth) && isNumeric(person.death)) {
       return parseInt(person.death, 10) - parseInt(person.birth, 10);
     }
@@ -464,4 +388,4 @@ class EggsagrvsEdReader extends ExtractedDataReader {
   }
 }
 
-export { EggsagrvsEdReader, multiWordSurnamePrefix };
+export { EggsagrvsEdReader };

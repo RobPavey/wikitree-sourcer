@@ -33,6 +33,8 @@ const siteNames = [
   "baclac",
   "bg",
   "cwgc",
+  "eggsabdm",
+  "eggsagrvs",
   "fg",
   "fmp",
   "freebmd",
@@ -68,7 +70,7 @@ const siteNames = [
   "wiewaswie",
   "wikipedia",
   "wikitree",
-  "eggsagrvs",
+  "dfgviewer",
   "basrhin",
 ];
 

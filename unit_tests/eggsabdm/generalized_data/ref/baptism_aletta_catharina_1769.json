@@ -1,0 +1,34 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Aletta Catharina"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "17 Sep 1769"
+  },
+  "lastNameAtBirth": "Smith",
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Smith",
+        "forenames": "Aleweijn"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "van Nieuwkerken",
+        "forenames": "Engela Helena"
+      }
+    }
+  },
+  "primaryPersonOptions": [
+    "Aletta Catharina Smith",
+    "Aleweijn Smith",
+    "Engela Helena van Nieuwkerken"
+  ],
+  "hasValidData": true
+}

@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Hamman",
+    "forenames": "Eduard Christiaan"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "7 Dec 1834"
+  },
+  "ageAtEvent": "20",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Smith",
+        "forenames": "Maria Margaretha Wilhelmina"
+      },
+      "marriageDate": {
+        "dateString": "7 Dec 1834"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Eduard Christiaan Hamman",
+    "Maria Margaretha Wilhelmina Smith"
+  ],
+  "hasValidData": true
+}

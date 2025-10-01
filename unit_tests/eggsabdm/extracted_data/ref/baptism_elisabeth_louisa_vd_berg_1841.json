@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "Elisabeth Louisa",
+  "baptismDateStr": "11 Jul 1841",
+  "bornDateStr": "08 Oct 1840",
+  "father": "Abraham Paulus BERG vd",
+  "mother": "Cornelia Gertruida Margaritha STEYN",
+  "parentsStr": "",
+  "witnessStr": "STEYN Hermanus, KUUN Elisabeth Louisa, PIETERSE Ferdinand Albertus, SLABBERT Hendrina Maria, BERG GN vd (as doop Vader), SLABBERT F. Jac. M. (as doop Moder)",
+  "source": "Source: Nederduits Gereformeerde Gemeente (NGK), Colesberg,  Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2.  Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Child with berg anywhere in the surname with Elisabeth Louisa anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

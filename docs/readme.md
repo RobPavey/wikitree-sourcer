@@ -10,6 +10,12 @@ that are not part of the shipping extension.
 
 The sub-folder "extension" is the extension itself.
 
+## Notes for Hacktoberfest 2025
+
+This project is participating in Hacktoberfest 2025. The preferred way to contribute is by adding support for a new site. The sites that have been requested have entries in the issues list for this project and can be seen with [this search](https://github.com/RobPavey/wikitree-sourcer/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Add%20new%20site%22). Issues that are already in progess are marked with the "In progress" label. Some [issues that seem good tasks for Hacktoberfest have the "hacktoberfest" label added](https://github.com/RobPavey/wikitree-sourcer/issues?q=is%3Aissue%20state%3Aopen%20label%3Ahacktoberfest).
+
+For guides on how to get setup and how to add a new site see below.
+
 ## Development environment
 
 The extension is being developed by Rob using VSCode on Mac but any editor and platform that supports javascript development can be used.
@@ -18,7 +24,7 @@ git and github are used for version control.
 
 Node.js is used for the unit test environment, this requires installing Node.js and some packages.
 
-Xcode is required to test and run the Safari version of the extension.
+Xcode is required to test and run the Safari version of the extension (not required for all developers).
 
 The extension uses manifest version 3 (MV3) for all browsers now.
 
@@ -45,5 +51,3 @@ There are three variants of the extension:
 ## More in depth descriptions or architecture and design choices
 
 - [How the extension handles startup and loading](dev_notes/startup_and_loading.md)
-
-  

@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "John",
+  "baptismDateStr": "1850, Decr 27",
+  "bornDateStr": "",
+  "father": "",
+  "mother": "",
+  "parentsStr": "John Caroline VERVORD SMITH",
+  "witnessStr": "William Clements, Charles Leonard",
+  "source": "Source: Grahamstown - St George (Anglican), Grahamstown,  Baptism register, 1849-1869, page 16, entry number 153. Repository: Cory Library, Ms 14 878-3. Transcribed by Lynn Couperthwaite as part of the eGGSA Project, from photographs by William Jervois.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Child with vervord anywhere in the surname with john anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

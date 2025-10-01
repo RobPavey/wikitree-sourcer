@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "de Vos",
+    "forenames": "J J"
+  },
+  "eventDate": {
+    "dateString": "03 Feb 2000"
+  },
+  "lastNameAtDeath": "de Vos",
+  "birthDate": {
+    "dateString": "31 Jul 1959"
+  },
+  "deathDate": {
+    "dateString": "28 Jan 2000"
+  },
+  "ageAtEvent": 40,
+  "hasValidData": true
+}

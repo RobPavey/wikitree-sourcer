@@ -42,6 +42,30 @@ const searchOptionsGroup = {
       label: "Use all first names in First name field",
       defaultValue: false,
     },
+    {
+      optionName: "firstNameMode",
+      type: "select",
+      label: "First Name(s) search mode",
+      values: [
+        { value: "1", text: "should appear anywhere in the first name" },
+        { value: "2", text: "should appear at the start of the first name" },
+        { value: "3", text: "should appear at the end of the first name " },
+        { value: "4", text: "should match exactly" },
+      ],
+      defaultValue: "1",
+    },
+    {
+      optionName: "surnameMode",
+      type: "select",
+      label: "Surname search mode",
+      values: [
+        { value: "1", text: "should appear anywhere in the  surname" },
+        { value: "2", text: "should appear at the start of the surname" },
+        { value: "3", text: "should appear at the end of the surname " },
+        { value: "4", text: "should match exactly" },
+      ],
+      defaultValue: "1",
+    },
   ],
 };
 

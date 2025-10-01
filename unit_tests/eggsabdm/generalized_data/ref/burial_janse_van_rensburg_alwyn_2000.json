@@ -1,0 +1,22 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Janse van Rensburg",
+    "forenames": "Alwyn P (Allie)"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "01 Mar 2000"
+  },
+  "lastNameAtDeath": "Janse van Rensburg",
+  "birthDate": {
+    "dateString": "03 Jun 1953"
+  },
+  "deathDate": {
+    "dateString": "26 Feb 2000"
+  },
+  "ageAtEvent": 46,
+  "hasValidData": true
+}

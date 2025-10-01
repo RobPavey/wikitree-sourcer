@@ -1,0 +1,30 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "name": {
+    "lastName": "Gildermeester",
+    "forenames": "Fredrik Willem Carel Emil"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "26 Oct 1857"
+  },
+  "occupation": "Onderwyser",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "van der Merwe",
+        "forenames": "Maria Aletta"
+      },
+      "marriageDate": {
+        "dateString": "26 Oct 1857"
+      }
+    }
+  ],
+  "primaryPersonOptions": [
+    "Fredrik Willem Carel Emil Gildermeester",
+    "Maria Aletta van der Merwe"
+  ],
+  "hasValidData": true
+}

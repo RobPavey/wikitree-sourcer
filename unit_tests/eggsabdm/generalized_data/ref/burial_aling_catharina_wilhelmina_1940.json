@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Burial",
+  "name": {
+    "lastName": "Aling",
+    "forenames": "Catharina Wilhemena Jacoba"
+  },
+  "personGender": "female",
+  "eventDate": {
+    "dateString": "19 Nov 1940"
+  },
+  "lastNameAtBirth": "de Vos",
+  "lastNameAtDeath": "Aling",
+  "deathDate": {
+    "dateString": "18 Nov 1940"
+  },
+  "ageAtEvent": "67 Jaar",
+  "ageAtDeath": "67 Jaar",
+  "hasValidData": true
+}

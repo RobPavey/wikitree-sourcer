@@ -14,7 +14,9 @@ I recommend VSCode as a dev environment. Here are some notes on using git in vsc
 
 On the [wikitree-sourcer](https://github.com/RobPavey/wikitree-sourcer) github page look at the top-right of the page for a button that says "Fork". This will create a fork of the repo on your own GitHub account.
 
-### Clone the forked repository
+It works best if you uncheck the checkbox that says "Copy the main branch only". This way you will be able to work in the `develop` branch locally and be able to sync changes from other developers working in that branch.
+
+### Clone the forked repository onto your local machine
 
 In a terminal window (Mac) or command window (PC) change directory to where you want to put your development folder. NOTE: you can use the terminal window in vscode also.
 
@@ -28,11 +30,9 @@ In vscode you can then do "Open Folder" on the new folder.
 
 ### Get the latest from the develop branch
 
-This is optional. You could just work in the main branch. But it is best to be up to date with the latest work in the develop branch of the main repo.
+It is best to be up to date with the latest work in the develop branch of the main repo. Significant changes are made in the develop branch and that is merged to the main branch before a release. Releases are always done from the main branch. So the main branch is kept clean for making bug fix releases without incuding work that is still in development.
 
 `git checkout develop`
-
-The main branch is used for making releases. The develop branch is where completed (or at least reviewed and tested) work resides.
 
 ### Install node.js
 
@@ -46,11 +46,25 @@ This is done using npm. Change directory to the project folder (the folder that 
 
 `npm ci`
 
-THis does an npm "clean install" it uses the versions of packages from the package-lock.json file.
+This does an npm "clean install" it uses the versions of packages from the package-lock.json file.
 
-You will get a lot of messages but towards the end you should see a line something like this:
+You will get a lot of messages but at the end you should see something like this:
 
-`added 510 packages from 467 contributors and audited 510 packages in 37.946s`
+```
+added 464 packages, and audited 465 packages in 3s
+
+125 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+```
+
+Note that these node.js packages are only used for the test harness, not in the extension itself. So we are not too concerned about some packages being unsupported versions.
 
 ### Run the unit tests
 

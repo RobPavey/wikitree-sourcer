@@ -1,0 +1,18 @@
+{
+  "sourceOfData": "eggsabdm",
+  "sourceType": "record",
+  "recordType": "Baptism",
+  "name": {
+    "lastName": "Vervord Smith",
+    "forenames": "John"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "27 Dec 1850"
+  },
+  "primaryPersonOptions": [
+    "John Vervord Smith",
+    "John Caroline Vervord Smith"
+  ],
+  "hasValidData": true
+}

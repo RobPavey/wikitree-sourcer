@@ -22,8 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// import { CD } from "../../../base/core/country_data.mjs";
-import { multiWordSurnamePrefix } from "./eggsagrvs_ed_reader.mjs";
+import { EggsaCommon } from "./eggsa_common.mjs";
 
 function buildSearchData(input) {
   // console.log("buildSearchData, input is:");
@@ -35,31 +34,64 @@ function buildSearchData(input) {
   const fieldData = {
     utf8: true,
     simpleNameFields: {},
-    options: {},
+    selectFieldsByValue: {},
   };
+  let result = {};
 
-  const optFullFirstname = options.search_eggsagrvs_fullFirstname;
-  const firstName = optFullFirstname ? gd.inferForenames() : gd.inferFirstName();
-  if (firstName) {
-    fieldData.simpleNameFields["what_firstname"] = firstName;
-  }
+  if (input.searchParameters) {
+    //
+    // Search with parameters
+    //
+    const parameters = input.searchParameters;
+    result.urlPart = parameters.urlPart;
+    // "lastName": "Toijt",
+    // "surnameMode": "1",
+    // "includeFirstName_Johannes": true,
+    // "firstNameMode": "1"
 
-  let lastName = gd.inferLastName();
-  if (lastName) {
-    const prefix = multiWordSurnamePrefix(lastName);
-    if (prefix) {
-      // eGGSA recommends one searches only for the main part of a multi-word last name
-      lastName = lastName.substring(prefix.length);
+    // First names and first name mode
+    const firstNames = Object.keys(parameters)
+      .filter((key) => key.startsWith("includeFirstName_") && parameters[key] === true)
+      .map((k) => k.split("_")[1])
+      .filter(Boolean);
+    if (firstNames.length) {
+      fieldData.simpleNameFields["what_firstname"] = firstNames.join(" ");
     }
-    fieldData.simpleNameFields["what_surname"] = lastName;
+    fieldData.selectFieldsByValue["firstname_mode"] = parameters.firstNameMode;
+
+    // Surname and surname mode
+    fieldData.simpleNameFields["what_surname"] = parameters.lastName;
+    fieldData.selectFieldsByValue["surname_mode"] = parameters.surnameMode;
+  } else {
+    //
+    // Default search
+    //
+    result.urlPart = input.urlPart;
+    // First name
+    const optFullFirstname = options.search_eggsagrvs_fullFirstname;
+    const firstName = optFullFirstname ? gd.inferForenames() : gd.inferFirstName();
+    if (firstName) {
+      fieldData.simpleNameFields["what_firstname"] = firstName;
+    }
+    fieldData.selectFieldsByValue["firstname_mode"] = options.search_eggsagrvs_firstNameMode;
+
+    // Surname
+    let lastName = gd.inferLastName();
+    if (lastName) {
+      const prefix = EggsaCommon.multiWordSurnamePrefixAtStart(lastName);
+      if (prefix) {
+        // eGGSA recommends one searches only for the main part of a multi-word last name
+        lastName = lastName.substring(prefix.length);
+      }
+      fieldData.simpleNameFields["what_surname"] = lastName;
+    }
+    fieldData.selectFieldsByValue["surname_mode"] = options.search_eggsagrvs_surnameMode;
   }
 
   //console.log("fieldData is:");
   //console.log(fieldData);
 
-  var result = {
-    fieldData: fieldData,
-  };
+  result.fieldData = fieldData;
 
   return result;
 }

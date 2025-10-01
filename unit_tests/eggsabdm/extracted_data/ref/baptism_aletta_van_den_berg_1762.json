@@ -1,0 +1,15 @@
+{
+  "url": "https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl",
+  "success": true,
+  "nameStr": "Aletta",
+  "baptismDateStr": "1762, den 14 Maert",
+  "bornDateStr": "",
+  "father": "Barend van den Berg",
+  "mother": "Johanna Sophia van Wijk",
+  "parentsStr": "",
+  "witnessStr": "Michiel de Plooij, en Aletta van Wijk",
+  "source": "Source: Nederduits Gereformeerde Gemeente (NGK), Tulbagh,  Baptism register, 1743 to 2 Feb 1800, page 57, entry number 9. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G4 7/1. Transcribed by Lynn Couperthwaite, Trysie Joubert, Richard Ball  as part of the eGGSA Project, from VC 657, Cape Archives Repository.",
+  "sourceTitle": "Baptism Registers",
+  "searchParameters": "Mother with van wijk anywhere in the surname with Johanna Sophia anywhere in the first name in all the registers.",
+  "eggsaPageType": "Baptism"
+}

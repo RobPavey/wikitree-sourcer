@@ -36,6 +36,7 @@ const siteNames = [
   "basrhin",
   "bg",
   "cwgc",
+  "eggsabdm",
   "eggsagrvs",
   "fmp",
   "fs",
@@ -72,6 +73,7 @@ const siteNames = [
   "wiewaswie",
   "wikitree",
   "wikipedia",
+  "dfgviewer",
 ];
 
 export { siteNames };
