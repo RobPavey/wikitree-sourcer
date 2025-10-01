@@ -13,6 +13,8 @@ This is so that I can merge a PR to the main repo without affecting the next rel
 The first decision is to choose a unique abbrevation for your new site. This will be all lower case with no spaces or underscores.
 For example FindMyPast is `fmp` and Scotlands People is `scotp`. Try to keep it to 10 characters or less since this name will be part of many folder, file and class names.
 
+Also, pick the "display name" for the site. This is the name/description that shows up on the Surcer menu for searching the site and also in the options page for the site. Examples are `FamilySearch` and `Probate Search/Find A Will (UK)`
+
 ## Use the create_new_site script to setup the files and folders for your new site
 
 This does many steps for you. The one thing it doesn't do is edit the manifest.json files.
