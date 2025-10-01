@@ -69,6 +69,7 @@ const siteNames = [
   "wikipedia",
   "wikitree",
   "eggsagrvs",
+  "basrhin",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {

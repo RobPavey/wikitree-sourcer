@@ -73,3 +73,4 @@ import "../../vicbdm/core/vicbdm_options.mjs";
 import "../../wiewaswie/core/wiewaswie_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
+import "../../basrhin/core/basrhin_options.mjs";

@@ -74,6 +74,11 @@
       "js": ["base/browser/content/content_common.js", "site/baclac/browser/baclac_content.js"]
     },
     {
+      "matches": ["*://archives.bas-rhin.fr/detail-document/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/basrhin/browser/basrhin_content.js"]
+    },
+    {
       "matches": ["*://*.bdm.nsw.gov.au/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/nswbdm/browser/nswbdm_content.js"]
@@ -336,6 +341,10 @@
     {
       "resources": ["site/baclac/core/baclac_extract_data.mjs"],
       "matches": ["*://*.bac-lac.gc.ca/*"]
+    },
+    {
+      "resources": ["site/basrhin/core/basrhin_extract_data.mjs"],
+      "matches": ["*://archives.bas-rhin.fr/detail-document/*"]
     },
     {
       "resources": ["site/nswbdm/core/nswbdm_extract_data.mjs"],
