@@ -44,3 +44,22 @@ Look at one of the existing ones as an example. There is a main file `<site>\_te
 ## It adds the site to scripts/run_test.js
 
 All that is needed is to add one import. This will register the site for testing.
+
+## It adds the site to the manifest.json file(s)
+
+In order for the popup to work on your site you need to add the site to the manifest files. Because there are four different manifest files (for Chrome, Firefox, Safari macOS and Safari iOS) the same changes need to made to each one. The four files are:
+* Chrome: `extension/manifest.json`
+* Firefox: `browser_variants/firefox/manifest.json`
+* Safari macOS: `browser_variants/safari/macos/manifest.json`
+* Safari: iOS: `browser_variants/safari/ios/manifest.json`
+
+There are actually two places in the manifest file that have to be changed to add a site.
+
+### Add a section under "content_scripts"
+
+This is the obvious one. This is what causes the extensions site-specific content script to be loaded when on this site. Pay close attention to the match section - not all web addresses start with www so make sure that the match string will match both record pages and the search page on your site.
+
+### Add a section under "web_accessible_resources"
+
+This is because the `<site>_extract_data.mjs` file is loaded dynamically. Any module loaded dynamically by a content script has to be specified in this section.
+
