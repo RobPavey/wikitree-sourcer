@@ -23,4 +23,4 @@ Occasionally we might import modules but is the exception rather than the rule. 
 ## Do not assume that the extract_data module is running within the content script enviroment
 
 The extract_data module is also loaded by the unit tests so it can't use APIs that are not available in the node.js environment.
-The extract data file is the the `core` subfolder, not the `browser` subfolder.
+The extract data file is in the `core` subfolder, not the `browser` subfolder.
