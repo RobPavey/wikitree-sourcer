@@ -40,7 +40,7 @@ There are three variants of the extension:
 
 ## Guides for developers
 
-- [Setting up the development envionment](contributors/setup_guide.md)
+- [Setting up the development environment](contributors/setup_guide.md)
 - [Guide to the folder structure](dev_notes/folder_structure.md)
 - [Adding support for a new site](dev_notes/adding_a_new_site.md)
 - [Running the extension locally in the Chrome browser](dev_notes/run_locally_chrome.md)
