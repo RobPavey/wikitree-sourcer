@@ -44,9 +44,9 @@ There are three variants of the extension:
 - [Guide to the folder structure](dev_notes/folder_structure.md)
 - [Adding support for a new site](dev_notes/adding_a_new_site.md)
 - [Running the extension locally in the Chrome browser](dev_notes/run_locally_chrome.md)
-- [Running and debugging the unit tests (outside the browser)](dev_notes/run_debug_unit_tests.md)
-- Running the extension locally in Firefox (TBD)
+- [Running the extension locally in Firefox](dev_notes/run_locally_firefox.md)
 - Running the extension locally in Safari (TBD)
+- [Running and debugging the unit tests (outside the browser)](dev_notes/run_debug_unit_tests.md)
 
 ## More in depth descriptions or architecture and design choices
 
