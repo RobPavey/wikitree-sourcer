@@ -16,7 +16,7 @@ The `freereg` is a good simple example to look at for this. `vicbdm` is a more c
 
 If you answered the question in the create_new_site script to say that the site does not support search by URL query then the `create_new_site` script will have created the file `core/<site>_build_search_data.mjs`. This is what you should use.
 
-If not you will have to make some changes:
+If you said yes to that question but the site doesn't actually support search by URL query then you will have to make some changes:
 * the `create_new_site` script will have created the file `core/<site>_build_search_url.mjs` and `<site>_url_builder.mjs`.
 * Delete the `<site>_uri_builder.mjs` file as it is not needed if not using a URL query.
 * Rename `core/<site>_build_search_url.mjs` to `core/<site>_build_search_data.mjs`. See an example like `freereg` to see what this file should contain. You can either delete the whole contents and copy the contents from another site or edit the functions that are there in which case the import of `<site>_uri_builder.mjs` should be removed.
