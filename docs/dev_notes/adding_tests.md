@@ -26,7 +26,7 @@ When you add a new test the ref files are created automatically since it is cons
 When you make a change that affects the output of a stage then the test will fail. What I usually do in this case is:
 
 1. In the error report it shows the pathnames of the ref and test files. In vscode I click on each of these to open them in the Explorer Open Editors list.
-2. I click on the first one in the oprn editors list and then ctrl or cmd + click on the second one so that the two files are selected
+2. I click on the first one in the open editors list and then ctrl or cmd + click on the second one so that the two files are selected
 3. I right-click on one of them and di `Compare Selected`
 4. This shows a side by side diff
 5. If it all looks good I select ALL in the test file and copy it, then select all in the ref file and paste.
