@@ -14,17 +14,17 @@ The `freereg` is a good simple example to look at for this. `vicbdm` is a more c
 
 # The `<site>_build_search_data.mjs` file
 
-The `create_new_site` script will have created the file `core/<site>_build_search_url.mjs` and `<site>_url_builder.mjs`.
+If you answered the question in the create_new_site script to say that the site does not support search by URL query then the `create_new_site` script will have created the file `core/<site>_build_search_data.mjs`. This is what you should use.
 
-Delete the `<site>_uri_builder.mjs` file as it is not needed if not using a URL query.
-
-Rename `core/<site>_build_search_url.mjs` to `core/<site>_build_search_data.mjs`. See an example like `freereg` to see what this file should contain. You can either delete the whole contents and copy the contents from another site or edit the functions that are there in which case the import of `<site>_uri_builder.mjs` should be removed.
-
+If not you will have to make some changes:
+* the `create_new_site` script will have created the file `core/<site>_build_search_url.mjs` and `<site>_url_builder.mjs`.
+* Delete the `<site>_uri_builder.mjs` file as it is not needed if not using a URL query.
+* Rename `core/<site>_build_search_url.mjs` to `core/<site>_build_search_data.mjs`. See an example like `freereg` to see what this file should contain. You can either delete the whole contents and copy the contents from another site or edit the functions that are there in which case the import of `<site>_uri_builder.mjs` should be removed.
 It should export a function named `buildSearchData` which returns an object. The properties of this object are site specific but usually it has a property named `fieldData`.
 
 # The `<site>_popup_search.mjs` file
 
-The default file will have an async function called `<site>Search` which loads the module `../core/<site>_build_search_url.mjs` and then passes this to the common helper function `doSearch`.
+The default file (if you did not answer the question correctly) will have an async function called `<site>Search` which loads the module `../core/<site>_build_search_url.mjs` and then passes this to the common helper function `doSearch`.
 
 To use local storage change `<site>Search`to call a local function which you will write called `<site>DoSearch`. This function will load the `<site>_build_search_data.mjs` module and use it to build the search data.
 
@@ -37,6 +37,8 @@ There are two different patterns you can use here:
 The second pattern allows for already open tabs on the site to be used for the search. This relies on the site content script registering open tabs and the content script gets complicated if the open page is not the search page. Most sites that use this have a search option so the user can choose whether to use an open tab or open a new one. This pattern is good to use for sites where it takes a long time to open a new page.
 
 # The `<site>_content.js` file
+
+If you answered the question in the create_new_site script to say that the site does support search by URL query but have now realized that it does not...
 
 The site's content script needs to be changed to check for the search data when the site's search page is loaded.
 
