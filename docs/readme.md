@@ -4,7 +4,7 @@ This is the development project for the WikiTree Sourcer browser extension. Wiki
 
 More info on the extension is on the WikiTree Free Space Page here: https://www.wikitree.com/wiki/Space:WikiTree_Sourcer
 
-The top level folder is can be named whetever you like but wikitree-sourcer is the convention.
+The top level folder can be named whatever you like, but wikitree-sourcer is the convention.
 This folder includes the unit tests and other files
 that are not part of the shipping extension.
 
