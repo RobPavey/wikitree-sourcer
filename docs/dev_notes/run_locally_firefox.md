@@ -23,7 +23,7 @@ You should now see the WikiTree Sourcer extension under the puzzle piece icon wh
 * Click the reload button in under WikiTree Sourcer in Temporary Extensions. This will reload the extension with your changes.
 * Go back to the record page you are testing and reload the page.
 
-## If you change other files (need confirmation this works)
+## If you change other files
 
 * Run the command `node scripts/build_firefox.js`
 * In Firefox just bring up the Sourcer menu on an page. It should have your changes.
