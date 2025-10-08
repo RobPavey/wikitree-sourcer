@@ -29,17 +29,49 @@ function buildBasrhinUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle = "Documents numérisés"; // default
+  if (ed.url.includes("ETAT-CIVIL")) {
+    builder.sourceTitle = "Registres paroissiaux et documents d'état civil";
+  }
+  if (ed.url.includes("REC-POP")) {
+    builder.sourceTitle = "Recensements de population";
+  }
+  if (ed.url.includes("LIGEO")) {
+    builder.sourceTitle = "Tables des successions et absences";
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.sourceReference = ed.repository;
+  if (ed.bureauPlace) {
+    builder.sourceReference += ", " + ed.bureauPlace;
+  }
+  builder.sourceReference += ", " + ed.sourceReference;
+  /* Per discussion in WikiTree France Project Discord channel, Lieu/Périodes info not needed in citation
+  if (ed.lieu) {
+    builder.sourceReference += ", Lieu: ";
+    let lieuPath = "";
+    for (let lieuItem of ed.lieu) {
+      lieuPath += " > " + lieuItem;
+    }
+    builder.sourceReference += lieuPath.substring(3);
+  }
+  if (ed.periods) {
+    builder.sourceReference += ", Périodes: ";
+    let periodsString = "";
+    for (let periodsItem of ed.periods) {
+      periodsString += ", " + periodsItem;
+    }
+    builder.sourceReference += periodsString.substring(2);
+  }
+  */
+  builder.sourceReference += ", image " + ed.imageNo + "/" + ed.imageMax;
 }
 
 function buildRecordLink(ed, gd, builder) {
   var basrhinUrl = buildBasrhinUrl(ed, builder);
 
-  let recordLink = "[" + basrhinUrl + " Bas-Rhin Archives Record]";
+  let recordLink = "[" + basrhinUrl + " image]";
   builder.recordLinkOrTemplate = recordLink;
 }
 
@@ -47,11 +79,32 @@ function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  // builder.addStandardDataString(gd);
+}
+
+function endCitationWithPeriod(inputCitation) {
+  // ensure that the actual citation text (not including a close ref tag with/without preceding newline char) ends with a period (.)
+  let newCitation = inputCitation;
+  if (inputCitation.endsWith("\n</ref>")) {
+    if (!inputCitation.endsWith(".\n</ref>")) {
+      newCitation = inputCitation.replace("\n</ref>", ".\n</ref>");
+    }
+  } else if (inputCitation.endsWith("</ref>")) {
+    if (!inputCitation.endsWith(".</ref>")) {
+      newCitation = inputCitation.replace("</ref>", ".</ref>");
+    }
+  } else {
+    if (!inputCitation.endsWith(".")) {
+      newCitation = inputCitation + ".";
+    }
+  }
+  return newCitation;
 }
 
 function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
+  let citationObject = simpleBuildCitationWrapper(input, buildCoreCitation);
+  citationObject.citation = endCitationWithPeriod(citationObject.citation);
+  return citationObject;
 }
 
 export { buildCitation };

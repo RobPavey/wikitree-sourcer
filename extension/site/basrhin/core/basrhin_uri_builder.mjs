@@ -26,7 +26,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class BasrhinUriBuilder {
   constructor() {
-    this.uri = "https://www.basrhin.org.uk/cgi/search.pl";
+    this.uri = "https://archives.bas-rhin.fr/rechercher/documents-numerises/";
     this.searchTermAdded = false;
   }
 

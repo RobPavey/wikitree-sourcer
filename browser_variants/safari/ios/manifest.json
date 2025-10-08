@@ -75,7 +75,11 @@
       "js": ["base/browser/content/content_common.js", "site/baclac/browser/baclac_content.js"]
     },
     {
-      "matches": ["*://archives.bas-rhin.fr/detail-document/*"],
+      "matches": [
+        "*://archives.bas-rhin.fr/detail-document/ETAT-CIVIL*",
+        "*://archives.bas-rhin.fr/detail-document/REC-POP*",
+        "*://archives.bas-rhin.fr/detail-document/LIGEO*"
+      ],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/basrhin/browser/basrhin_content.js"]
     },
@@ -368,7 +372,11 @@
     },
     {
       "resources": ["site/basrhin/core/basrhin_extract_data.mjs"],
-      "matches": ["*://archives.bas-rhin.fr/detail-document/*"]
+      "matches": [
+        "*://archives.bas-rhin.fr/detail-document/ETAT-CIVIL*",
+        "*://archives.bas-rhin.fr/detail-document/REC-POP*",
+        "*://archives.bas-rhin.fr/detail-document/LIGEO*"
+      ]
     },
     {
       "resources": ["site/nswbdm/core/nswbdm_extract_data.mjs"],

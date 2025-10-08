@@ -35,6 +35,7 @@ async function setupBasrhinPopupMenu(extractedData) {
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "basrhin",
+    doNotIncludeSearch: true,
   };
   setupSimplePopupMenu(input);
 }

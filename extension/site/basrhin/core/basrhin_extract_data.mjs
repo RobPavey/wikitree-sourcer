@@ -30,13 +30,34 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  /*
   const repository = document.querySelector("meta[name='description']");
   if (repository) {
     result.repository = repository.content;
   }
-  */
-  result.repository = "Archives départementales du Bas-Rhin";
+
+  let bureauPlace = "";
+  const rattachement = document.querySelector("ul[class='rattachement']");
+  if (rattachement) {
+    const rattachementAnchors = rattachement.querySelectorAll("a");
+    for (let rattachementAnchor of rattachementAnchors) {
+      if (
+        rattachementAnchor.href &&
+        rattachementAnchor.href.includes("detail-document") &&
+        rattachementAnchor.title &&
+        rattachementAnchor.title.includes("Bureau")
+      ) {
+        bureauPlace = rattachementAnchor.textContent;
+      }
+    }
+  }
+  if (bureauPlace != "") {
+    result.bureauPlace = bureauPlace;
+  }
+
+  const sourceReference = document.querySelector("h1[class='titre_rubrique no-print']");
+  if (sourceReference) {
+    result.sourceReference = sourceReference.textContent.replace(/(\r\n|\n|\r)/gm, "").trim();
+  }
 
   const imageNo = document.querySelector("div[class='pagination-min']");
   if (imageNo) {
@@ -48,28 +69,35 @@ function extractData(document, url) {
     result.imageMax = imageMax.textContent;
   }
 
-  /*
-  const title = document.querySelector("h1[class='titre_rubrique']");
-  if (title) {
-    result.title = title.textContent;
-  }
-
-  let pathComponents = [];
-  const ulRattachementList = document.querySelectorAll("ul.rattachement");
-	const ulRattachementAList = ulRattachementList[0].querySelector("a");
-  */
-
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
-    return result;
+  /* Per discussion in WikiTree France Project Discord channel, Lieu/Périodes info not needed in citation
+  const texte = document.querySelector("div[id='texte']");
+  let lieu = [];
+  let periods = [];
+  if (texte) {
+    const texteH3s = texte.querySelectorAll("h3");
+    for (let texteH3 of texteH3s) {
+      const texteH3Anchors = texteH3.querySelectorAll("a");
+      for (let texteH3Anchor of texteH3Anchors) {
+        if (texteH3.textContent.substr(0, 4) === 'Lieu') {
+          lieu.push(texteH3Anchor.textContent);
+        }
+        if (texteH3.textContent.substr(0, 3) === 'Pér') {
+          periods.push(texteH3Anchor.textContent);
+        }
+      }
+      if (lieu.length > 0) {
+        result.lieu = lieu;
+      }
+      if (periods.length > 0) {
+        result.periods = periods;
+      }
+    }
   }
   */
 
   result.success = true;
 
-  //console.log(result);
+  // console.log(result);
 
   return result;
 }
