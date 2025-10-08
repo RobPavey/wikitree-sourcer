@@ -4,7 +4,6 @@ node_modules
 .DS_Store
 ._*
 *.zip
-.DS_Store
 
 # Mac Time Machine files
 "* 2.*"
