@@ -22,4 +22,41 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`examplesite`, `site/examplesite/core/examplesite_extract_data.mjs`);
+import {
+  registerSubsectionForOptions,
+  registerSubheadingForOptions,
+  registerOptionsGroup,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
+
+const searchBehaviorOptionsGroup = {
+  category: "search",
+  subcategory: "examplesite",
+  tab: "search",
+  subsection: "examplesite",
+  subheading: "behavior",
+  options: [
+    {
+      optionName: "reuseExistingTab",
+      type: "checkbox",
+      label: "Do search in existing ExampleSite tab if present",
+      defaultValue: true,
+    },
+  ],
+};
+
+const citationOptionsGroup = {
+  category: "citation",
+  subcategory: "examplesite",
+  tab: "citation",
+  subsection: "examplesite",
+  options: [],
+};
+
+registerSubsectionForOptions("search", "examplesite", "ExampleSite");
+registerSiteSearchPopupOptionsGroup("examplesite");
+registerSubheadingForOptions("search", "examplesite", "behavior", "Search Behavior");
+registerOptionsGroup(searchBehaviorOptionsGroup);
+
+registerSubsectionForOptions("citation", "examplesite", "ExampleSite");
+registerOptionsGroup(citationOptionsGroup);

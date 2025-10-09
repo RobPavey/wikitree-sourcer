@@ -469,7 +469,7 @@ async function additionalMessageHandler(request, sender, sendResponse) {
     //console.log(document.URL);
 
     // We could try to check if this is the correct type of page (Births, Deaths etc)
-    // and clear the fields and refill them. But it is simpley to just load the desired URL
+    // and clear the fields and refill them. But it is simpler to just load the desired URL
     // into this existing tab.
 
     try {

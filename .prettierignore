@@ -3,3 +3,4 @@ unit_tests/*/*/test/
 unit_tests/*/*/ref/ 
 browser_variants/safari/xcode_project/
 unit_tests/fs/saved_fetch_objects
+*.json
