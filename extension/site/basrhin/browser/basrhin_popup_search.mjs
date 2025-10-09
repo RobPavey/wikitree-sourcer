@@ -36,7 +36,7 @@ function shouldShowSearchMenuItem(data, filter) {
     startYear: basrhinStartYear,
     endYear: basrhinEndYear,
     dateTestType: "bmd",
-    countryList: [],
+    countryList: ["France"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {
