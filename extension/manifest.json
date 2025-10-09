@@ -525,16 +525,6 @@
         "base/browser/content/content_common.js",
         "site/wikipedia/browser/wikipedia_content.js"
       ]
-    },
-    {
-      "matches": [
-        "*:foo.com/*"
-      ],
-      "run_at": "document_idle",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/foo/browser/foo_content.js"
-      ]
     }
   ],
   "options_ui": {
@@ -625,9 +615,7 @@
         "site/basrhin/core/basrhin_extract_data.mjs"
       ],
       "matches": [
-        "*://archives.bas-rhin.fr/detail-document/ETAT-CIVIL*",
-        "*://archives.bas-rhin.fr/detail-document/REC-POP*",
-        "*://archives.bas-rhin.fr/detail-document/LIGEO*"
+        "*://archives.bas-rhin.fr/*"
       ]
     },
     {
@@ -952,14 +940,6 @@
       ],
       "matches": [
         "*://*.wikipedia.org/*"
-      ]
-    },
-    {
-      "resources": [
-        "site/foo/core/foo_extract_data.mjs"
-      ],
-      "matches": [
-        "*:foo.com/*"
       ]
     }
   ],
