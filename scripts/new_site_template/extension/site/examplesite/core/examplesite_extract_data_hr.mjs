@@ -22,6 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// insert code here to do detect the selected row by looking for the styling that
+// was added in the content script when the row was clicked. Code below is an example.
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+function getSelectedRow(document) {
+  const highlightStyle = "font-weight: bold; font-style: italic";
+  const elResultsTable = document.querySelector("#form div.table-row");
+  if (elResultsTable) {
+    const selectedRow = elResultsTable.querySelector("div.detail-columns[style='" + highlightStyle + "']");
+    return selectedRow;
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -30,13 +43,10 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  /*
-  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
-  //console.log("entriesQuery size is: " + entriesQuery.length);
-  if (entries.length < 1) {
-    return result;
-  }
-  */
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // insert code here to extract the data from the selected search result on the page.
+  // See extension/site/nswbdm/core/nswbdm_extract_data.mjs for an example.
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   result.success = true;
 

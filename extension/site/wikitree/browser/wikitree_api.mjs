@@ -25,7 +25,10 @@ SOFTWARE.
 const appId = "Sourcer";
 
 function wtApiCall(body) {
-  body.appId = appId;
+  body.set("appId", appId);
+
+  //console.log("wtApiCall: body is:");
+  //console.log(body);
 
   return new Promise((resolve, reject) => {
     fetch("https://api.wikitree.com/api.php", {

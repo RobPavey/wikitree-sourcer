@@ -22,4 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`examplesite`, `site/examplesite/core/examplesite_extract_data.mjs`);
+function buildSearchData(input) {
+  const gd = input.generalizedData;
+
+  let fieldData = {};
+  let selectData = {};
+
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // Add code here to populate the search data that is used to fill out the search form
+  // The fieldData typically will be used for text fields
+  // while the selectData will be for select controls
+  // In these structures use the names of the elements in the search form that need to be
+  // filled
+  // For examples see:
+  // - extension/site/vicbdm/core/vicbdm_build_search_data.mjs
+  // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+  //console.log("fieldData is:");
+  //console.log(fieldData);
+
+  var result = {
+    fieldData: fieldData,
+    selectData: selectData,
+  };
+
+  return result;
+}
+
+export { buildSearchData };

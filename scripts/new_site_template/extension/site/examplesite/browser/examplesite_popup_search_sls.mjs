@@ -24,7 +24,13 @@ SOFTWARE.
 
 import { addMenuItem, doAsyncActionWithCatch } from "/base/browser/popup/popup_menu_building.mjs";
 
-import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "/base/browser/popup/popup_search.mjs";
+import {
+  doBackgroundSearchWithSearchData,
+  registerSearchMenuItemFunction,
+  shouldShowSiteSearch,
+} from "/base/browser/popup/popup_search.mjs";
+
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
@@ -53,8 +59,36 @@ function shouldShowSearchMenuItem(data, filter) {
 async function examplesiteSearch(generalizedData) {
   const input = { generalizedData: generalizedData, options: options };
   doAsyncActionWithCatch("ExampleSite Search", input, async function () {
-    let loadedModule = await import(`../core/examplesite_build_search_url.mjs`);
-    doSearch(loadedModule, input);
+    let loadedModule = await import(`../core/examplesite_build_search_data.mjs`);
+    let buildResult = loadedModule.buildSearchData(input);
+
+    const checkPermissionsOptions = {
+      reason: "To perform a search on ExampleSite a content script needs to be loaded on the ExampleSite search page.",
+    };
+    let allowed = await checkPermissionForSite("exampleSiteUrlMatchString", checkPermissionsOptions);
+    if (!allowed) {
+      closePopup();
+      return;
+    }
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // put URL of this site's search page here
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    let searchUrl = "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births";
+
+    const searchData = {
+      timeStamp: Date.now(),
+      url: searchUrl,
+      fieldData: buildResult.fieldData,
+      selectData: buildResult.selectData,
+    };
+
+    //console.log("examplesiteSearch, searchData is:");
+    //console.log(searchData);
+
+    let reuseTabIfPossible = options.search_examplesite_reuseExistingTab;
+
+    doBackgroundSearchWithSearchData("examplesite", searchData, reuseTabIfPossible);
   });
 }
 

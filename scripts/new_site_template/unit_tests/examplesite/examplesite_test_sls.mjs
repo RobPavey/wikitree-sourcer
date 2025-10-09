@@ -22,4 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`examplesite`, `site/examplesite/core/examplesite_extract_data.mjs`);
+import * as test_content_and_citation from "./examplesite_test_content_and_citation.mjs";
+import * as test_build_search_data from "./examplesite_test_build_search_data.mjs";
+
+async function runTests(testManager) {
+  await test_content_and_citation.runTests(testManager);
+  await test_build_search_data.runTests(testManager);
+}
+
+export { runTests };

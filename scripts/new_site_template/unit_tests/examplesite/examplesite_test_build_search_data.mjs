@@ -22,4 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`examplesite`, `site/examplesite/core/examplesite_extract_data.mjs`);
+import { buildSearchData } from "../../extension/site/examplesite/core/examplesite_build_search_data.mjs";
+import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
+
+const regressionData = [
+  /*
+  {
+    // has pref name
+    caseName: "wikitree_stanway-252_read",
+    inputPath: "wikitree/generalized_data/ref/stanway-252_read",
+    typeOfSearch: "Births",
+  },
+  */
+];
+
+async function runTests(testManager) {
+  await runBuildSearchUrlTests("examplesite", buildSearchData, regressionData, testManager);
+}
+
+export { runTests };
