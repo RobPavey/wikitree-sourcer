@@ -22,27 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractData(document, url) {
-  var result = {};
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/basrhin_generalize_data.mjs";
+import { buildCitation } from "../core/basrhin_build_citation.mjs";
 
-  if (url) {
-    result.url = url;
-  }
-
-  const page_selector = document.querySelector('select[name="tx_dlf[page]"]');
-  let page_selected = page_selector.querySelector('option[selected="selected"]').text;
-
-  if (page_selected[0] == "[") {
-    page_selected = page_selected.substring(1, page_selected.length - 1);
-  }
-
-  result.page_number = page_selected;
-
-  result.success = true;
-
-  //console.log(result);
-
-  return result;
+async function setupBasrhinPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage: "It looks like a Bas-Rhin Archives page but not a record page.",
+    generalizeFailedMessage: "It looks like a Bas-Rhin Archives page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "basrhin",
+    doNotIncludeSearch: true,
+  };
+  setupSimplePopupMenu(input);
 }
 
-export { extractData };
+initPopup("basrhin", setupBasrhinPopupMenu);

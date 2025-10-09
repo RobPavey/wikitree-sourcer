@@ -22,27 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractData(document, url) {
-  var result = {};
+import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
+import { BasrhinEdReader } from "./basrhin_ed_reader.mjs";
 
-  if (url) {
-    result.url = url;
-  }
-
-  const page_selector = document.querySelector('select[name="tx_dlf[page]"]');
-  let page_selected = page_selector.querySelector('option[selected="selected"]').text;
-
-  if (page_selected[0] == "[") {
-    page_selected = page_selected.substring(1, page_selected.length - 1);
-  }
-
-  result.page_number = page_selected;
-
-  result.success = true;
-
-  //console.log(result);
-
-  return result;
+// This function generalizes the data extracted from the page content.
+function generalizeData(input) {
+  let edReader = new BasrhinEdReader(input.extractedData);
+  return commonGeneralizeData("basrhin", edReader);
 }
 
-export { extractData };
+export { generalizeData };

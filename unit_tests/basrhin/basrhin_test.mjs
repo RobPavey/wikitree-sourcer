@@ -22,27 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractData(document, url) {
-  var result = {};
+import * as test_content_and_citation from "./basrhin_test_content_and_citation.mjs";
+import * as test_build_search_url from "./basrhin_test_build_search_url.mjs";
 
-  if (url) {
-    result.url = url;
-  }
-
-  const page_selector = document.querySelector('select[name="tx_dlf[page]"]');
-  let page_selected = page_selector.querySelector('option[selected="selected"]').text;
-
-  if (page_selected[0] == "[") {
-    page_selected = page_selected.substring(1, page_selected.length - 1);
-  }
-
-  result.page_number = page_selected;
-
-  result.success = true;
-
-  //console.log(result);
-
-  return result;
+async function runTests(testManager) {
+  await test_content_and_citation.runTests(testManager);
+  await test_build_search_url.runTests(testManager);
 }
 
-export { extractData };
+export { runTests };

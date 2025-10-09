@@ -33,6 +33,7 @@ const siteNames = [
   "archion",
   "archive",
   "baclac",
+  "basrhin",
   "bg",
   "cwgc",
   "eggsabdm",

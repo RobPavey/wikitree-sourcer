@@ -79,13 +79,7 @@ const nsResolver = (prefix) => {
 };
 
 const getText = (data, xpath) => {
-  const node = data.evaluate(
-    xpath,
-    data,
-    nsResolver,
-    XPathResult.FIRST_ORDERED_NODE_TYPE,
-    null
-  ).singleNodeValue;
+  const node = data.evaluate(xpath, data, nsResolver, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
   return node ? node.textContent.trim() : null;
 };
 

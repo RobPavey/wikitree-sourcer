@@ -51,5 +51,3 @@ There are three variants of the extension:
 ## More in depth descriptions or architecture and design choices
 
 - [How the extension handles startup and loading](dev_notes/startup_and_loading.md)
-
-  

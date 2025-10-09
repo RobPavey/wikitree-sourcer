@@ -22,27 +22,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractData(document, url) {
-  var result = {};
+import { BasrhinUriBuilder } from "./basrhin_uri_builder.mjs";
 
-  if (url) {
-    result.url = url;
-  }
+function buildSearchUrl(buildUrlInput) {
+  const gd = buildUrlInput.generalizedData;
 
-  const page_selector = document.querySelector('select[name="tx_dlf[page]"]');
-  let page_selected = page_selector.querySelector('option[selected="selected"]').text;
+  var builder = new BasrhinUriBuilder();
 
-  if (page_selected[0] == "[") {
-    page_selected = page_selected.substring(1, page_selected.length - 1);
-  }
+  // call methods on builder here
 
-  result.page_number = page_selected;
+  const url = builder.getUri();
 
-  result.success = true;
+  //console.log("URL is " + url);
 
-  //console.log(result);
+  var result = {
+    url: url,
+  };
 
   return result;
 }
 
-export { extractData };
+export { buildSearchUrl };

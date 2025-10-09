@@ -22,27 +22,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-function extractData(document, url) {
-  var result = {};
+import {
+  registerSubsectionForOptions,
+  registerOptionsGroup,
+  registerSiteSearchPopupOptionsGroup,
+} from "../../../base/core/options/options_registry.mjs";
 
-  if (url) {
-    result.url = url;
-  }
+const citationOptionsGroup = {
+  category: "citation",
+  subcategory: "basrhin",
+  tab: "citation",
+  subsection: "basrhin",
+  options: [],
+};
 
-  const page_selector = document.querySelector('select[name="tx_dlf[page]"]');
-  let page_selected = page_selector.querySelector('option[selected="selected"]').text;
+registerSubsectionForOptions("search", "basrhin", "Bas-Rhin Archives");
+registerSiteSearchPopupOptionsGroup("basrhin");
 
-  if (page_selected[0] == "[") {
-    page_selected = page_selected.substring(1, page_selected.length - 1);
-  }
-
-  result.page_number = page_selected;
-
-  result.success = true;
-
-  //console.log(result);
-
-  return result;
-}
-
-export { extractData };
+registerSubsectionForOptions("citation", "basrhin", "Bas-Rhin Archives");
+registerOptionsGroup(citationOptionsGroup);
