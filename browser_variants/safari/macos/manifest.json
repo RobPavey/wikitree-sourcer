@@ -111,10 +111,13 @@
         "*://archives.bas-rhin.fr/detail-document/LIGEO*"
       ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/basrhin/browser/basrhin_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/basrhin/browser/basrhin_content.js"
+      ]
     },
     {
-      "matches": ["*://*.bdm.nsw.gov.au/*"],
+      "matches": [
         "*://*.bdm.nsw.gov.au/*"
       ],
       "run_at": "document_idle",
@@ -614,7 +617,9 @@
       ]
     },
     {
-      "resources": ["site/basrhin/core/basrhin_extract_data.mjs"],
+      "resources": [
+        "site/basrhin/core/basrhin_extract_data.mjs"
+      ],
       "matches": [
         "*://archives.bas-rhin.fr/detail-document/ETAT-CIVIL*",
         "*://archives.bas-rhin.fr/detail-document/REC-POP*",
@@ -622,8 +627,6 @@
       ]
     },
     {
-      "resources": ["site/nswbdm/core/nswbdm_extract_data.mjs"],
-      "matches": ["*://*.bdm.nsw.gov.au/*"]
       "resources": [
         "site/nswbdm/core/nswbdm_extract_data.mjs"
       ],

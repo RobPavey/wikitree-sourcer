@@ -112,10 +112,13 @@
         "*://archives.bas-rhin.fr/detail-document/LIGEO*"
       ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/basrhin/browser/basrhin_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/basrhin/browser/basrhin_content.js"
+      ]
     },
     {
-      "matches": ["*://*.bdm.nsw.gov.au/*"],
+      "matches": [
         "*://*.bdm.nsw.gov.au/*"
       ],
       "run_at": "document_idle",
@@ -522,6 +525,16 @@
         "base/browser/content/content_common.js",
         "site/wikipedia/browser/wikipedia_content.js"
       ]
+    },
+    {
+      "matches": [
+        "*:foo.com/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/foo/browser/foo_content.js"
+      ]
     }
   ],
   "options_ui": {
@@ -608,7 +621,9 @@
       ]
     },
     {
-      "resources": ["site/basrhin/core/basrhin_extract_data.mjs"],
+      "resources": [
+        "site/basrhin/core/basrhin_extract_data.mjs"
+      ],
       "matches": [
         "*://archives.bas-rhin.fr/detail-document/ETAT-CIVIL*",
         "*://archives.bas-rhin.fr/detail-document/REC-POP*",
@@ -616,8 +631,6 @@
       ]
     },
     {
-      "resources": ["site/nswbdm/core/nswbdm_extract_data.mjs"],
-      "matches": ["*://*.bdm.nsw.gov.au/*"]
       "resources": [
         "site/nswbdm/core/nswbdm_extract_data.mjs"
       ],
@@ -939,6 +952,14 @@
       ],
       "matches": [
         "*://*.wikipedia.org/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/foo/core/foo_extract_data.mjs"
+      ],
+      "matches": [
+        "*:foo.com/*"
       ]
     }
   ],
