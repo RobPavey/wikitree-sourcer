@@ -44,34 +44,16 @@ function buildSourceTitle(ed, gd, builder) {
 function buildSourceReference(ed, gd, builder) {
   builder.sourceReference = ed.repository;
   if (ed.bureauPlace) {
-    builder.sourceReference += ", " + ed.bureauPlace;
+    builder.addSourceReferenceText(ed.bureauPlace);
   }
-  builder.sourceReference += ", " + ed.sourceReference;
-  /* Per discussion in WikiTree France Project Discord channel, Lieu/Périodes info not needed in citation
-  if (ed.lieu) {
-    builder.sourceReference += ", Lieu: ";
-    let lieuPath = "";
-    for (let lieuItem of ed.lieu) {
-      lieuPath += " > " + lieuItem;
-    }
-    builder.sourceReference += lieuPath.substring(3);
-  }
-  if (ed.periods) {
-    builder.sourceReference += ", Périodes: ";
-    let periodsString = "";
-    for (let periodsItem of ed.periods) {
-      periodsString += ", " + periodsItem;
-    }
-    builder.sourceReference += periodsString.substring(2);
-  }
-  */
-  builder.sourceReference += ", image " + ed.imageNo + "/" + ed.imageMax;
+  builder.addSourceReferenceText(ed.sourceReference);
+  builder.addSourceReferenceField("image", ed.imageNo + "/" + ed.imageMax);
 }
 
 function buildRecordLink(ed, gd, builder) {
   var basrhinUrl = buildBasrhinUrl(ed, builder);
 
-  let recordLink = "[" + basrhinUrl + " image]";
+  let recordLink = "[" + basrhinUrl + " Bas-Rhin Image]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

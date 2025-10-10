@@ -1,14 +1,26 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin, Bureau de l'enregistrement de Soultz-sous-Forêts, Tables des successions et absences, [volume 7] - 3 Q 26781, image 5/204<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103 image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin; Bureau de l'enregistrement de Soultz-sous-Forêts; Tables des successions et absences, [volume 7] - 3 Q 26781; image: 5/204<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin, Bureau de l'enregistrement de Soultz-sous-Forêts, Tables des successions et absences, [volume 7] - 3 Q 26781, image 5/204<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103 image] (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin; Bureau de l'enregistrement de Soultz-sous-Forêts; Tables des successions et absences, [volume 7] - 3 Q 26781; image: 5/204<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Tables des successions et absences\"<br/>Archives départementales du Bas-Rhin, Bureau de l'enregistrement de Soultz-sous-Forêts, Tables des successions et absences, [volume 7] - 3 Q 26781, image 5/204<br/>[https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103 image] (accessed 6 May 2021).",
+    "citation": "* '''Record''': \"Tables des successions et absences\"<br/>Archives départementales du Bas-Rhin; Bureau de l'enregistrement de Soultz-sous-Forêts; Tables des successions et absences, [volume 7] - 3 Q 26781; image: 5/204<br/>[https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103 Bas-Rhin Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin, Bureau de l'enregistrement de Soultz-sous-Forêts, Tables des successions et absences, [volume 7] - 3 Q 26781, image 5/204<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin, Bureau de l'enregistrement de Soultz-sous-Forêts, Tables des successions et absences, [volume 7] - 3 Q 26781, image 5/204<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Record''': \"Tables des successions et absences\"<br/>Archives départementales du Bas-Rhin, Bureau de l'enregistrement de Soultz-sous-Forêts, Tables des successions et absences, [volume 7] - 3 Q 26781, image 5/204<br/>[https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103 Bas-Rhin Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }
