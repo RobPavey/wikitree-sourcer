@@ -26,7 +26,10 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class ExamplesiteUriBuilder {
   constructor() {
-    this.uri = "https://www.examplesite.org.uk/cgi/search.pl";
+    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
+    // Change the URL below to the start of the search URL for your site
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    this.uri = "https://www.examplesite.org/search";
     this.searchTermAdded = false;
   }
 

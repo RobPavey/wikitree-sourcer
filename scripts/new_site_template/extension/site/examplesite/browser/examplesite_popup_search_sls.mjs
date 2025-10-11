@@ -71,10 +71,10 @@ async function examplesiteSearch(generalizedData) {
       return;
     }
 
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
     // put URL of this site's search page here
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    let searchUrl = "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/births";
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    let searchUrl = "https://www.examplesite.org/search";
 
     const searchData = {
       timeStamp: Date.now(),
