@@ -56,7 +56,9 @@ function extractData(document, url) {
 
   const sourceReference = document.querySelector("h1[class='titre_rubrique no-print']");
   if (sourceReference) {
-    result.sourceReference = sourceReference.textContent.replace(/(\r\n|\n|\r)/gm, "").trim();
+    const tempSourceReference = sourceReference.textContent.replace(/(\r\n|\n|\r)/gm, "").trim();
+    result.sourceReference = tempSourceReference.replace(/\s+/g, " ");
+    // result.sourceReference = sourceReference.textContent.replace(/(\r\n|\n|\r)/gm, "").trim();
   }
 
   const imageNo = document.querySelector("div[class='pagination-min']");
