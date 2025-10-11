@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin; Hatten - Registres Paroissiaux (Avant 1793) - Paroisse protestante (Avant 1793) - Registre de baptêmes 1736-1767 - 3 E 183/3; image: 150/257<br/>\n[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121884#visio/page:ETAT-CIVIL-C183-P2-R121884-644791 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin; Hatten - Registres Paroissiaux (Avant 1793) - Paroisse protestante (Avant 1793) - Registre de baptêmes 1736-1767 - 3 E 183/3; image: 150/257<br/>\n[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121884#visio/page:ETAT-CIVIL-C183-P2-R121884-644791 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Bas-Rhin; Hatten - Registres Paroissiaux (Avant 1793) - Paroisse protestante (Avant 1793) - Registre de baptêmes 1736-1767 - 3 E 183/3; image: 150/257<br/>[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121884#visio/page:ETAT-CIVIL-C183-P2-R121884-644791 Bas-Rhin Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin, Hatten - Registres Paroissiaux (Avant 1793) - Paroisse protestante (Avant 1793) - Registre de baptêmes 1736-1767 - 3 E 183/3, image 150/257<br/>\n[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121884#visio/page:ETAT-CIVIL-C183-P2-R121884-644791 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin, Hatten - Registres Paroissiaux (Avant 1793) - Paroisse protestante (Avant 1793) - Registre de baptêmes 1736-1767 - 3 E 183/3, image 150/257<br/>\n[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121884#visio/page:ETAT-CIVIL-C183-P2-R121884-644791 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Record''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Bas-Rhin, Hatten - Registres Paroissiaux (Avant 1793) - Paroisse protestante (Avant 1793) - Registre de baptêmes 1736-1767 - 3 E 183/3, image 150/257<br/>[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121884#visio/page:ETAT-CIVIL-C183-P2-R121884-644791 Bas-Rhin Image] (accessed 6 May 2021).",
+    "type": "source"
+  }
+}
