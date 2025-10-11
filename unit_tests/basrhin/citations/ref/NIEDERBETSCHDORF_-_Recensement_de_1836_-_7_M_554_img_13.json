@@ -1,14 +1,26 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Recensements de population\"<br/>\nArchives départementales du Bas-Rhin, NIEDERBETSCHDORF - Recensement de 1836 - 7 M 554, image 13/29<br/>\n[https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548 image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Recensements de population\"<br/>\nArchives départementales du Bas-Rhin; NIEDERBETSCHDORF - Recensement de 1836 - 7 M 554; image: 13/29<br/>\n[https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Recensements de population\"<br/>\nArchives départementales du Bas-Rhin, NIEDERBETSCHDORF - Recensement de 1836 - 7 M 554, image 13/29<br/>\n[https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548 image] (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Recensements de population\"<br/>\nArchives départementales du Bas-Rhin; NIEDERBETSCHDORF - Recensement de 1836 - 7 M 554; image: 13/29<br/>\n[https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Recensements de population\"<br/>Archives départementales du Bas-Rhin, NIEDERBETSCHDORF - Recensement de 1836 - 7 M 554, image 13/29<br/>[https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548 image] (accessed 6 May 2021).",
+    "citation": "* '''Record''': \"Recensements de population\"<br/>Archives départementales du Bas-Rhin; NIEDERBETSCHDORF - Recensement de 1836 - 7 M 554; image: 13/29<br/>[https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548 Bas-Rhin Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "sourceReferenceSeparator_commaSpace_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Recensements de population\"<br/>\nArchives départementales du Bas-Rhin, NIEDERBETSCHDORF - Recensement de 1836 - 7 M 554, image 13/29<br/>\n[https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "sourceReferenceSeparator_commaSpace_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Recensements de population\"<br/>\nArchives départementales du Bas-Rhin, NIEDERBETSCHDORF - Recensement de 1836 - 7 M 554, image 13/29<br/>\n[https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "sourceReferenceSeparator_commaSpace_source": {
+    "citation": "* '''Record''': \"Recensements de population\"<br/>Archives départementales du Bas-Rhin, NIEDERBETSCHDORF - Recensement de 1836 - 7 M 554, image 13/29<br/>[https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548 Bas-Rhin Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }

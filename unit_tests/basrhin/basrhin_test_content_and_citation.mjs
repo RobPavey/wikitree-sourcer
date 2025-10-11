@@ -32,32 +32,88 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    caseName: "Hatten_Registre_de_sépultures_1736-1767_-_3_E_183_3_img_150",
+    caseName: "Hatten_Registre_de_baptêmes_1736-1767_-_3_E_183_3_img_150",
     url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121884#visio/page:ETAT-CIVIL-C183-P2-R121884-644791",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
   },
   {
     caseName: "Oberbetschdorf_Registre_de_sépultures_1736-1774_3_E_339_15_img_171",
     url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C587-P2-R167746#visio/page:ETAT-CIVIL-C587-P2-R167746-2293545",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "Niederlauterbach_Registre_de_baptêmes_1683-1765_3_E_327_1_img_41",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C324-P3-R44977#visio/page:ETAT-CIVIL-C324-P3-R44977-2155357",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaColon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaColon" },
+      },
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
   },
   {
     caseName: "NIEDERBETSCHDORF_-_Recensement_de_1836_-_7_M_554_img_13",
     url: "https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
   },
   {
     caseName: "OBERBETSCHDORF_-_Recensement_de_1885_-_294_D_B_339_img_116",
     url: "https://archives.bas-rhin.fr/detail-document/REC-POP-C587-R5280#visio/page:REC-POP-C587-R5280-349733",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
   },
   {
     caseName: "Tables_des_successions_et_absences_volume_7_-_3_Q_26781_Soultz-sous-Forêts_img_5",
     url: "https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
   },
   {
     caseName: "Tables_des_successions_et_absences_Volume_27_-_3_Q_38237_d_Illkirch-Graffenstaden_img_72",
     url: "https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
   },
   {
     caseName: "Tables_des_successions_et_absences_3_Q_27763_de_Strasbourg_img_169",
     url: "https://archives.bas-rhin.fr/detail-document/LIGEO-1209595#visio/page:LIGEO-1209595-151126",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
   },
 ];
 

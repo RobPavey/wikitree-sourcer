@@ -69,32 +69,6 @@ function extractData(document, url) {
     result.imageMax = imageMax.textContent;
   }
 
-  /* Per discussion in WikiTree France Project Discord channel, Lieu/Périodes info not needed in citation
-  const texte = document.querySelector("div[id='texte']");
-  let lieu = [];
-  let periods = [];
-  if (texte) {
-    const texteH3s = texte.querySelectorAll("h3");
-    for (let texteH3 of texteH3s) {
-      const texteH3Anchors = texteH3.querySelectorAll("a");
-      for (let texteH3Anchor of texteH3Anchors) {
-        if (texteH3.textContent.substr(0, 4) === 'Lieu') {
-          lieu.push(texteH3Anchor.textContent);
-        }
-        if (texteH3.textContent.substr(0, 3) === 'Pér') {
-          periods.push(texteH3Anchor.textContent);
-        }
-      }
-      if (lieu.length > 0) {
-        result.lieu = lieu;
-      }
-      if (periods.length > 0) {
-        result.periods = periods;
-      }
-    }
-  }
-  */
-
   result.success = true;
 
   // console.log(result);
