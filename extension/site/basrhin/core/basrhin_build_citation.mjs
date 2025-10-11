@@ -64,6 +64,60 @@ function buildCoreCitation(ed, gd, builder) {
   // builder.addStandardDataString(gd);
 }
 
+function getRefTitle(ed, gd) {
+  let refTitle = "Document d'archive"; // default
+  if (ed.url.includes("ETAT-CIVIL")) {
+    refTitle = "Registre paroissial ou état civil";
+    let parishTypeCount = 0;
+    if (ed.sourceReference.includes("baptêmes")) {
+      refTitle = "Baptême";
+      parishTypeCount++;
+    }
+    if (ed.sourceReference.includes("mariages") && ed.sourceReference.includes("Paroisse")) {
+      refTitle = "Mariage";
+      parishTypeCount++;
+    }
+    if (ed.sourceReference.includes("sépultures")) {
+      refTitle = "Sépulture";
+      parishTypeCount++;
+    }
+    if (parishTypeCount > 1) {
+      refTitle = "Registre paroissial";
+    }
+    let civilTypeCount = 0;
+    if (ed.sourceReference.includes("naissances")) {
+      refTitle = "Naissance";
+      civilTypeCount++;
+    }
+    if (
+      ed.sourceReference.includes("mariages") &&
+      !ed.sourceReference.includes("publication de mariages") &&
+      ed.sourceReference.includes("civil")
+    ) {
+      refTitle = "Mariage";
+      civilTypeCount++;
+    }
+    if (ed.sourceReference.includes("publication de mariages")) {
+      refTitle = "Publication de mariage";
+      civilTypeCount++;
+    }
+    if (ed.sourceReference.includes("décès")) {
+      refTitle = "Décès";
+      civilTypeCount++;
+    }
+    if (civilTypeCount > 1) {
+      refTitle = "État civil";
+    }
+  }
+  if (ed.url.includes("REC-POP")) {
+    refTitle = "Recensement";
+  }
+  if (ed.url.includes("LIGEO")) {
+    refTitle = "Succession ou absence";
+  }
+  return refTitle;
+}
+
 function endCitationWithPeriod(inputCitation) {
   // ensure that the actual citation text (not including a close ref tag with/without preceding newline char) ends with a period (.)
   let newCitation = inputCitation;
@@ -84,7 +138,7 @@ function endCitationWithPeriod(inputCitation) {
 }
 
 function buildCitation(input) {
-  let citationObject = simpleBuildCitationWrapper(input, buildCoreCitation);
+  let citationObject = simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
   citationObject.citation = endCitationWithPeriod(citationObject.citation);
   return citationObject;
 }

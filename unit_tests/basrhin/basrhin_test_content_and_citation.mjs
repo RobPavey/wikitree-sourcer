@@ -42,6 +42,30 @@ const regressionData = [
     ],
   },
   {
+    caseName: "Hatten_Registre_de_baptêmes_mariages_sépultures_1707-1730_-_3_E_183_1_img_1",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121882#visio/page:ETAT-CIVIL-C183-P2-R121882-644390",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "Hatten_Registre_de_publication_de_mariages_1818_-_4_E_183_11_img_4",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P1-R122052#visio/page:ETAT-CIVIL-C183-P1-R122052-647035",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaColon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaColon" },
+      },
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
     caseName: "Oberbetschdorf_Registre_de_sépultures_1736-1774_3_E_339_15_img_171",
     url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C587-P2-R167746#visio/page:ETAT-CIVIL-C587-P2-R167746-2293545",
     optionVariants: [
