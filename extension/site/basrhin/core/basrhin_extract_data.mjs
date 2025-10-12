@@ -22,6 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function cleanText(inputText) {
+  let text = inputText;
+  if (text) {
+    text = text.replace(/\s+/g, " ");
+    text = text.replace(/(\r\n|\n|\r)/gm, "");
+    text = text.trim();
+  }
+  return text;
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -56,9 +66,7 @@ function extractData(document, url) {
 
   const sourceReference = document.querySelector("h1[class='titre_rubrique no-print']");
   if (sourceReference) {
-    const tempSourceReference = sourceReference.textContent.replace(/(\r\n|\n|\r)/gm, "").trim();
-    result.sourceReference = tempSourceReference.replace(/\s+/g, " ");
-    // result.sourceReference = sourceReference.textContent.replace(/(\r\n|\n|\r)/gm, "").trim();
+    result.sourceReference = cleanText(sourceReference.textContent);
   }
 
   const imageNo = document.querySelector("div[class='pagination-min']");
