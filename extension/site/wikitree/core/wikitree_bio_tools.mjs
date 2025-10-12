@@ -329,10 +329,16 @@ function censusTablesMatch(census, relativeCensus, relative) {
     // should be ignored. Page number is OK to be different by one or two
     let lineRegex = /;\s*Line\:\s+\d+/i;
     let pageRegex = /;\s*Page\:\s+\d+/i;
+    const trimStartRegex = /^[\s,\.\;]*/;
+    const trimEndRegex = /[\s,\.\;]*$/;
     sourceReference = sourceReference.replace(lineRegex, "");
     sourceReference = sourceReference.replace(pageRegex, "");
+    sourceReference = sourceReference.replace(trimStartRegex, "");
+    sourceReference = sourceReference.replace(trimEndRegex, "");
     relSourceReference = relSourceReference.replace(lineRegex, "");
     relSourceReference = relSourceReference.replace(pageRegex, "");
+    relSourceReference = relSourceReference.replace(trimStartRegex, "");
+    relSourceReference = relSourceReference.replace(trimEndRegex, "");
 
     if (sourceReference && sourceReference == relSourceReference) {
       matchingSourceReference = relSourceReference;
