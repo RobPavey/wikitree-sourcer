@@ -1,26 +1,26 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin; Bureau de l'enregistrement d'Illkirch-Graffenstaden; Tables des successions et absences, Volume 27 - 3 Q 38237; image: 72/106<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Succession ou absence''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin; Bureau de l'enregistrement d'Illkirch-Graffenstaden; Tables des successions et absences, Volume 27 - 3 Q 38237; image: 72/106<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin; Bureau de l'enregistrement d'Illkirch-Graffenstaden; Tables des successions et absences, Volume 27 - 3 Q 38237; image: 72/106<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Succession ou absence''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin; Bureau de l'enregistrement d'Illkirch-Graffenstaden; Tables des successions et absences, Volume 27 - 3 Q 38237; image: 72/106<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Tables des successions et absences\"<br/>Archives départementales du Bas-Rhin; Bureau de l'enregistrement d'Illkirch-Graffenstaden; Tables des successions et absences, Volume 27 - 3 Q 38237; image: 72/106<br/>[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).",
+    "citation": "* '''Succession ou absence''': \"Tables des successions et absences\"<br/>Archives départementales du Bas-Rhin; Bureau de l'enregistrement d'Illkirch-Graffenstaden; Tables des successions et absences, Volume 27 - 3 Q 38237; image: 72/106<br/>[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).",
     "type": "source"
   },
   "sourceReferenceSeparator_commaSpace_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin, Bureau de l'enregistrement d'Illkirch-Graffenstaden, Tables des successions et absences, Volume 27 - 3 Q 38237, image 72/106<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "<ref>\n'''Succession ou absence''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin, Bureau de l'enregistrement d'Illkirch-Graffenstaden, Tables des successions et absences, Volume 27 - 3 Q 38237, image 72/106<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "sourceReferenceSeparator_commaSpace_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin, Bureau de l'enregistrement d'Illkirch-Graffenstaden, Tables des successions et absences, Volume 27 - 3 Q 38237, image 72/106<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Succession ou absence''':\n\"Tables des successions et absences\"<br/>\nArchives départementales du Bas-Rhin, Bureau de l'enregistrement d'Illkirch-Graffenstaden, Tables des successions et absences, Volume 27 - 3 Q 38237, image 72/106<br/>\n[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "sourceReferenceSeparator_commaSpace_source": {
-    "citation": "* '''Record''': \"Tables des successions et absences\"<br/>Archives départementales du Bas-Rhin, Bureau de l'enregistrement d'Illkirch-Graffenstaden, Tables des successions et absences, Volume 27 - 3 Q 38237, image 72/106<br/>[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).",
+    "citation": "* '''Succession ou absence''': \"Tables des successions et absences\"<br/>Archives départementales du Bas-Rhin, Bureau de l'enregistrement d'Illkirch-Graffenstaden, Tables des successions et absences, Volume 27 - 3 Q 38237, image 72/106<br/>[https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498 Bas-Rhin Image] (accessed 6 May 2021).",
     "type": "source"
   }
 }
