@@ -48,7 +48,7 @@ So to add a new test for a typical site:
 
 1. In Chrome do `File > Save Page As...` and save the page to `unit_tests/<sitename>/saved_pages`. In the Chrom dialog there us a Format field at the botton. Make sure this is set to "Webpage, Complete". You should use a consistent naming convention for the saved test files for a given site. This becomes the test case name. **Remember to delete the files folder that is saved along with the HTML file. Note: On Windows it may delete both the file and the folder if you do this. You can avoid that by renaming the folder before deleting it.**. The files folder is not needed and we don't want it in git.
 2. Edit the file `unit_tests/<sitename>/<sitename>_test_content_and_citation.mjs` and add the test case into the `regressionData` array. If this is the first test case look at `fg` for an example.
-3. Run `node scripts/run_test.js <sitename>. This will run the extract, generalize and sitation stages.
+3. Run `node scripts/run_test.js <sitename>. This will run the extract, generalize and citation stages.
 
 If the site supports household tables look at a site like `fmp` for an example.
 
