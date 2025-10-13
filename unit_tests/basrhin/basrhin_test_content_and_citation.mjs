@@ -76,6 +76,48 @@ const regressionData = [
     ],
   },
   {
+    caseName: "Schweighouse_sur_Moder_Registre_de_publication_de_mariages_1873_-_4_E_458_3_img_6",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C454-P1-R247147#visio/page:ETAT-CIVIL-C454-P1-R247147-1363341",
+    optionVariants: [
+      {
+        variantName: "accessedDate_none",
+        optionOverrides: { citation_general_addAccessedDate: "none" },
+      },
+      {
+        variantName: "accessedDate_parenBeforeLink",
+        optionOverrides: { citation_general_addAccessedDate: "parenBeforeLink" },
+      },
+    ],
+  },
+  {
+    caseName: "Croettwiller_Registre_de_mariages_1793_An_IV_-_4_E_78_3_img_8",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C79-P1-R57093#visio/page:ETAT-CIVIL-C79-P1-R57093-339112",
+    optionVariants: [
+      {
+        variantName: "accessedDate_none",
+        optionOverrides: { citation_general_addAccessedDate: "none" },
+      },
+      {
+        variantName: "accessedDate_parenBeforeLink",
+        optionOverrides: { citation_general_addAccessedDate: "parenBeforeLink" },
+      },
+    ],
+  },
+  {
+    caseName: "Roeschwoog_Registre_de_mariages_1688-1732_-_3_E_405_5_img_34",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692",
+    optionVariants: [
+      {
+        variantName: "accessedDate_none",
+        optionOverrides: { citation_general_addAccessedDate: "none" },
+      },
+      {
+        variantName: "accessedDate_parenBeforeLink",
+        optionOverrides: { citation_general_addAccessedDate: "parenBeforeLink" },
+      },
+    ],
+  },
+  {
     caseName: "Niederlauterbach_Registre_de_baptêmes_1683-1765_3_E_327_1_img_41",
     url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C324-P3-R44977#visio/page:ETAT-CIVIL-C324-P3-R44977-2155357",
     optionVariants: [

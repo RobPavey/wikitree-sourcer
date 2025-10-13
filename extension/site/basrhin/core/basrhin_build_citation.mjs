@@ -69,32 +69,25 @@ function getRefTitle(ed, gd) {
   if (ed.url.includes("ETAT-CIVIL")) {
     refTitle = "Registre paroissial ou état civil";
     let parishTypeCount = 0;
+    let civilTypeCount = 0;
     if (ed.sourceReference.includes("baptêmes")) {
       refTitle = "Baptême";
       parishTypeCount++;
     }
-    if (ed.sourceReference.includes("mariages") && ed.sourceReference.includes("Paroisse")) {
-      refTitle = "Mariage";
+    if (ed.sourceReference.includes("mariages") && !ed.sourceReference.includes("publication de mariages")) {
+      refTitle = "Mariage"; // mariage could be parish or civil, so we increment both counts
       parishTypeCount++;
+      civilTypeCount++;
     }
     if (ed.sourceReference.includes("sépultures")) {
       refTitle = "Sépulture";
       parishTypeCount++;
     }
     if (parishTypeCount > 1) {
-      refTitle = "Registre paroissial";
+      refTitle = "Registre paroissial"; // if consolidated BMS volume (more than 1 acte type), use generic parish refTitle/label
     }
-    let civilTypeCount = 0;
     if (ed.sourceReference.includes("naissances")) {
       refTitle = "Naissance";
-      civilTypeCount++;
-    }
-    if (
-      ed.sourceReference.includes("mariages") &&
-      !ed.sourceReference.includes("publication de mariages") &&
-      ed.sourceReference.includes("civil")
-    ) {
-      refTitle = "Mariage";
       civilTypeCount++;
     }
     if (ed.sourceReference.includes("publication de mariages")) {
@@ -106,7 +99,7 @@ function getRefTitle(ed, gd) {
       civilTypeCount++;
     }
     if (civilTypeCount > 1) {
-      refTitle = "État civil";
+      refTitle = "État civil"; // if consolidated NMD volume (more than 1 acte type), use generic civil refTitle/label
     }
   }
   if (ed.url.includes("REC-POP")) {
