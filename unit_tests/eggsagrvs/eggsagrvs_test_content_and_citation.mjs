@@ -81,6 +81,22 @@ const regressionData = [
     caseName: "frittelli_nee_janse_van_rensburg",
     url: "https://www.graves.eggsa.org/westerncape/Riversdale_Urban/Riversdal-ou-begraafplaas/ou-NGK-begraafplaas/Block-B/WC-Riversale-TdV-0283.JPG",
   },
+  // 09. Gedenkmuur / Memorial wall _9
+  // Real information is a list of 61 people below the normal H2 names.
+  {
+    //VUREN Lettie, v. nee TRUTER 1908-1987
+    caseName: "gedenkmuur_lettie_van_vuuren",
+    url: "https://www.graves.eggsa.org/freestate/BLOEMFONTEIN_Urban/bloemf-memorium-concentration-camp/gedenkmuur/overview/P1760076.JPG",
+    pageFile: "./unit_tests/eggsagrvs/saved_pages/gedenkmuur.html",
+    primaryPersonIndex: 36,
+  },
+  {
+    // NIEKERK G., van 1931-1987 & M.L.M.
+    caseName: "gedenkmuur_mlm_van_niekerk",
+    url: "https://www.graves.eggsa.org/freestate/BLOEMFONTEIN_Urban/bloemf-memorium-concentration-camp/gedenkmuur/overview/P1760076.JPG",
+    pageFile: "./unit_tests/eggsagrvs/saved_pages/gedenkmuur.html",
+    primaryPersonIndex: 35,
+  },
   // HELBERG Helena Maria geb. SMITH 1911-1944
   // geb. in stead of nee
   {
@@ -98,6 +114,13 @@ const regressionData = [
   {
     caseName: "janse_van_rensburg",
     url: "https://www.graves.eggsa.org/westerncape/Riversdale_Urban/NuweBP/R%20-%20Vanne%20__%20Surnames%20-%20R/WC-Riversdale-nuweBP-ALouw-0026.JPG",
+  },
+  // KEYTER :: SMITH. (but real info is below it:
+  // KEYTER Petrus Ignatius 1884-1934 :: KEYTER Susanna Juliana Theodora 1875-1958 :: SMITH Susanna Juliana Dorothea nee KEYTER 1897-1968
+  {
+    caseName: "keyter_smith",
+    url: "https://www.graves.eggsa.org/easterncape/Port_Elizabeth_Urban/Northend_Cemetery_Port_Elizabeth/K/KE/KEYTER%20Petrus%20Ignatius%201884-1934%20_amp_%20Susanna%20Juliana%20Theodora%201875-1958%20_amp_%20SMITH%20Susanna%20Juliana%20Dorothea%20KEYTER%201897-1.JPG",
+    primaryPersonIndex: 2,
   },
   // LANDSBERG E.S.A., formerly COETSEE, formerly HUMAN nee RAUTENBACH 1908-1993
   // multiple formerly and nee
