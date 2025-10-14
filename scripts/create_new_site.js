@@ -25,7 +25,148 @@ SOFTWARE.
 import fs from "fs";
 import readline from "node:readline/promises";
 
+const siteFiles = [
+  // Extension files
+
+  //   browser
+  {
+    root: "extension/site",
+    mid: "browser",
+    end: "_content.js",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        needsHighlightRow: true,
+        templateFileEnd: "_content_sls_hr.js",
+      },
+      {
+        searchUsingLocalStorage: true,
+        templateFileEnd: "_content_sls.js",
+      },
+      {
+        needsHighlightRow: true,
+        templateFileEnd: "_content_hr.js",
+      },
+    ],
+  },
+  {
+    root: "extension/site",
+    mid: "browser",
+    end: "_popup_search.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        templateFileEnd: "_popup_search_sls.mjs",
+      },
+    ],
+  },
+  { root: "extension/site", mid: "browser", end: "_popup.html" },
+  { root: "extension/site", mid: "browser", end: "_popup.mjs" },
+
+  //   core
+  { root: "extension/site", mid: "core", end: "_build_citation.mjs" },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_build_search_data.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: false,
+        omit: true,
+      },
+    ],
+  },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_build_search_url.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        omit: true,
+      },
+    ],
+  },
+  { root: "extension/site", mid: "core", end: "_ed_reader.mjs" },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_extract_data.mjs",
+    variants: [
+      {
+        needsHighlightRow: true,
+        templateFileEnd: "_extract_data_hr.mjs",
+      },
+    ],
+  },
+  { root: "extension/site", mid: "core", end: "_generalize_data.mjs" },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_options.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        templateFileEnd: "_options_sls.mjs",
+      },
+    ],
+  },
+  { root: "extension/site", mid: "core", end: "_site_data.mjs" },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_uri_builder.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        omit: true,
+      },
+    ],
+  },
+
+  // Unit test files
+
+  {
+    root: "unit_tests",
+    mid: "",
+    end: "_test_build_search_data.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: false,
+        omit: true,
+      },
+    ],
+  },
+  {
+    root: "unit_tests",
+    mid: "",
+    end: "_test_build_search_url.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        omit: true,
+      },
+    ],
+  },
+  { root: "unit_tests", mid: "", end: "_test_content_and_citation.mjs" },
+  {
+    root: "unit_tests",
+    mid: "",
+    end: "_test.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        templateFileEnd: "_test_sls.mjs",
+      },
+    ],
+  },
+];
+
 function doesFolderExist(path) {
+  return fs.existsSync(path);
+}
+
+function doesFileExist(path) {
   return fs.existsSync(path);
 }
 
@@ -97,7 +238,41 @@ function checkParameters(parameters) {
     return false;
   }
 
+  const siteUrlMatch = parameters.siteUrlMatch;
+  if (!siteUrlMatch) {
+    console.log("Parameter check failed. siteUrlMatch missing.");
+    return false;
+  }
+
   return true;
+}
+
+function checkForExistingSiteFile(parameters, rootPath, midPath, fileEnd, variants) {
+  let sitePath = rootPath + "/" + parameters.siteName + "/";
+  if (midPath) {
+    sitePath += midPath + "/";
+  }
+  sitePath += parameters.siteName + fileEnd;
+
+  if (doesFileExist(sitePath)) {
+    return true;
+  }
+
+  return false;
+}
+
+function checkForExistingSite(parameters) {
+  // don't check for folders existing since, if they ran the script once
+  // and then reverted all files the folders would exist but be empty
+
+  for (let file of siteFiles) {
+    if (checkForExistingSiteFile(parameters, file.root, file.mid, file.end, file.variants)) {
+      console.log("The site '" + parameters.siteName + "' already exists. Cannot create new site.");
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function checkForRequiredFolders() {
@@ -203,144 +378,7 @@ function createSiteFileFromTemplate(parameters, rootPath, midPath, fileEnd, vari
 }
 
 function createSiteFilesFromTemplates(parameters) {
-  const files = [
-    // Extension files
-
-    //   browser
-    {
-      root: "extension/site",
-      mid: "browser",
-      end: "_content.js",
-      variants: [
-        {
-          searchUsingLocalStorage: true,
-          needsHighlightRow: true,
-          templateFileEnd: "_content_sls_hr.js",
-        },
-        {
-          searchUsingLocalStorage: true,
-          templateFileEnd: "_content_sls.js",
-        },
-        {
-          needsHighlightRow: true,
-          templateFileEnd: "_content_hr.js",
-        },
-      ],
-    },
-    {
-      root: "extension/site",
-      mid: "browser",
-      end: "_popup_search.mjs",
-      variants: [
-        {
-          searchUsingLocalStorage: true,
-          templateFileEnd: "_popup_search_sls.mjs",
-        },
-      ],
-    },
-    { root: "extension/site", mid: "browser", end: "_popup.html" },
-    { root: "extension/site", mid: "browser", end: "_popup.mjs" },
-
-    //   core
-    { root: "extension/site", mid: "core", end: "_build_citation.mjs" },
-    {
-      root: "extension/site",
-      mid: "core",
-      end: "_build_search_data.mjs",
-      variants: [
-        {
-          searchUsingLocalStorage: false,
-          omit: true,
-        },
-      ],
-    },
-    {
-      root: "extension/site",
-      mid: "core",
-      end: "_build_search_url.mjs",
-      variants: [
-        {
-          searchUsingLocalStorage: true,
-          omit: true,
-        },
-      ],
-    },
-    { root: "extension/site", mid: "core", end: "_ed_reader.mjs" },
-    {
-      root: "extension/site",
-      mid: "core",
-      end: "_extract_data.mjs",
-      variants: [
-        {
-          needsHighlightRow: true,
-          templateFileEnd: "_extract_data_hr.mjs",
-        },
-      ],
-    },
-    { root: "extension/site", mid: "core", end: "_generalize_data.mjs" },
-    {
-      root: "extension/site",
-      mid: "core",
-      end: "_options.mjs",
-      variants: [
-        {
-          searchUsingLocalStorage: true,
-          templateFileEnd: "_options_sls.mjs",
-        },
-      ],
-    },
-    { root: "extension/site", mid: "core", end: "_site_data.mjs" },
-    {
-      root: "extension/site",
-      mid: "core",
-      end: "_uri_builder.mjs",
-      variants: [
-        {
-          searchUsingLocalStorage: true,
-          omit: true,
-        },
-      ],
-    },
-
-    // Unit test files
-
-    {
-      root: "unit_tests",
-      mid: "",
-      end: "_test_build_search_data.mjs",
-      variants: [
-        {
-          searchUsingLocalStorage: false,
-          omit: true,
-        },
-      ],
-    },
-    {
-      root: "unit_tests",
-      mid: "",
-      end: "_test_build_search_url.mjs",
-      variants: [
-        {
-          searchUsingLocalStorage: true,
-          omit: true,
-        },
-      ],
-    },
-    { root: "unit_tests", mid: "", end: "_test_content_and_citation.mjs" },
-    {
-      root: "unit_tests",
-      mid: "",
-      end: "_test.mjs",
-      variants: [
-        {
-          searchUsingLocalStorage: true,
-          templateFileEnd: "_test_sls.mjs",
-        },
-      ],
-    },
-  ];
-
-  for (let file of files) {
+  for (let file of siteFiles) {
     if (!createSiteFileFromTemplate(parameters, file.root, file.mid, file.end, file.variants)) {
       return false;
     }
@@ -445,7 +483,18 @@ function updateManifestFile(siteName, urlMatch, path) {
     run_at: "document_idle",
     js: ["base/browser/content/content_common.js", siteContentPath],
   };
-  contentScripts.push(contentScriptsEntry);
+
+  let alreadyExists = false;
+  for (let entry of contentScripts) {
+    if (entry.matches == urlMatches) {
+      alreadyExists = true;
+    } else if (entry.js.includes(siteContentPath)) {
+      alreadyExists = true;
+    }
+  }
+  if (!alreadyExists) {
+    contentScripts.push(contentScriptsEntry);
+  }
 
   /*
     Example web_accessible_resources section:
@@ -459,7 +508,18 @@ function updateManifestFile(siteName, urlMatch, path) {
     resources: [siteExtractPath],
     matches: urlMatches,
   };
-  webAccessibleResources.push(warEntry);
+
+  alreadyExists = false;
+  for (let entry of webAccessibleResources) {
+    if (entry.resources.includes(siteExtractPath)) {
+      alreadyExists = true;
+    } else if (entry.matches == urlMatches) {
+      alreadyExists = true;
+    }
+  }
+  if (!alreadyExists) {
+    webAccessibleResources.push(warEntry);
+  }
 
   const newText = JSON.stringify(manifestData, null, 2);
 
@@ -551,6 +611,20 @@ async function createNewSite() {
     }
   }
 
+  // do some sanity checks
+  if (!checkParameters(parameters)) {
+    return;
+  }
+
+  // first double check that we are running in the correct folder
+  if (!checkForRequiredFolders()) {
+    return;
+  }
+
+  if (checkForExistingSite(parameters)) {
+    return;
+  }
+
   // Create a readline interface
   const rl = readline.createInterface({
     input: process.stdin,
@@ -590,16 +664,6 @@ async function createNewSite() {
 
   // Close the readline interface after getting the input
   rl.close();
-
-  // do some sanity checks
-  if (!checkParameters(parameters)) {
-    return;
-  }
-
-  // first double check that we are running in the correct folder
-  if (!checkForRequiredFolders()) {
-    return;
-  }
 
   // Now create all the folders for the new site
   if (!createSiteFolders(parameters.siteName)) {
