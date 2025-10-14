@@ -154,7 +154,7 @@ function populateForm(searchData) {
 
 function getForm() {
   const submitButton = document.querySelector('input[type="submit"][name="Search"]');
-  return submitButton.closest("form"); // gets the enclosing form
+  return submitButton?.closest("form"); // gets the enclosing form
 }
 
 // Add a listener that will save all the form fields so we can restore them after the search.
