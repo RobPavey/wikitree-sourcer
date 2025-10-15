@@ -503,17 +503,27 @@ function updateManifestFile(siteName, urlMatch, path) {
       "matches": ["*://*.bdm.vic.gov.au/*"]
     },
   */
+
+  // if the urlMatches string cotains any path after the domain that should be removed in the
+  // match for the web_accessible_resources
+  const urlWithPathRegEx = /^([^\/]+\:\/\/[^\/]+)\/.*\/\*$/;
+  let domainMatch = urlMatch;
+  if (urlWithPathRegEx.test(domainMatch)) {
+    domainMatch = domainMatch.replace(urlWithPathRegEx, "$1/*");
+  }
+  const domainMatches = [domainMatch];
+
   const siteExtractPath = "site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
   let warEntry = {
     resources: [siteExtractPath],
-    matches: urlMatches,
+    matches: domainMatches,
   };
 
   alreadyExists = false;
   for (let entry of webAccessibleResources) {
     if (entry.resources.includes(siteExtractPath)) {
       alreadyExists = true;
-    } else if (entry.matches == urlMatches) {
+    } else if (entry.matches == domainMatches) {
       alreadyExists = true;
     }
   }
