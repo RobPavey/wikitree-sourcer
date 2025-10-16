@@ -29,7 +29,9 @@ function buildDfgviewerUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += ed.title;
+  if (ed.title) {
+    builder.sourceTitle += ed.title;
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {

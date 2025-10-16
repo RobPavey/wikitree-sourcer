@@ -173,7 +173,8 @@
         "*://digitales-archiv.erzbistum-muenchen.de/*",
         "*://www.gda.bayern.de/*",
         "*://www.arcinsys.niedersachsen.de/*",
-        "*://arcinsys.hessen.de/*"
+        "*://arcinsys.hessen.de/*",
+        "*://www.landesarchiv-nrw.de/*"
       ],
       "run_at": "document_end",
       "js": [
@@ -667,7 +668,8 @@
         "*://digitales-archiv.erzbistum-muenchen.de/*",
         "*://www.gda.bayern.de/*",
         "*://www.arcinsys.niedersachsen.de/*",
-        "*://arcinsys.hessen.de/*"
+        "*://arcinsys.hessen.de/*",
+        "*://www.landesarchiv-nrw.de/*"
       ]
     },
     {
