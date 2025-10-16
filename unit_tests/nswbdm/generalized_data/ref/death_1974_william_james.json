@@ -1,0 +1,36 @@
+{
+  "sourceOfData": "nswbdm",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "James",
+    "forenames": "William"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "yearString": "1974"
+  },
+  "eventPlace": {
+    "placeString": "New South Wales, Australia"
+  },
+  "lastNameAtDeath": "James",
+  "registrationDistrict": "217",
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "James"
+      }
+    },
+    "mother": {
+      "name": {
+        "forenames": "May"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Deaths",
+    "registrationNumber": "54573",
+    "year": "1974"
+  },
+  "hasValidData": true
+}

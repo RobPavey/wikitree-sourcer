@@ -89,6 +89,11 @@ const regressionData = [
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?24",
   },
   {
+    // Uses district code 217 which was initially missing from table
+    caseName: "death_1974_william_james",
+    url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?1",
+  },
+  {
     // has a post-1974 district number
     // has hyphen in last name
     caseName: "death_1981_ian_mclaurin_smith",
