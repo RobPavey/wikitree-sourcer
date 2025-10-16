@@ -22,57 +22,33 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+function extractData(document, url) {
+  var result = {};
 
-// The order should not matter since user facing lists are sorted
+  if (url) {
+    result.url = url;
+  }
+  result.success = false;
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "eggsabdm",
-  "eggsagrvs",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nsvr",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "arolsenarchives",
-];
+  // only allow extract from documents for now
+  if (!url.match("/document/")) {
+    return;
+  }
 
-export { siteNames };
+  result.doc_id = url.substring(url.lastIndexOf("/") + 1);
+
+  const breadcrum_item = document.querySelector('div[class="fd-tree-path"]');
+  let breadcrum_string = "";
+  for (let breadcrum of breadcrum_item.querySelectorAll('a[class="ng-star-inserted"]')) {
+    breadcrum_string += ", " + breadcrum.text;
+  }
+  const title = document.querySelector('h1[class="title ng-tns-c171-3"');
+  breadcrum_string += ", " + title;
+  result.breadcrum = breadcrum_string.substring(2);
+
+  result.success = true;
+
+  return result;
+}
+
+export { extractData };
