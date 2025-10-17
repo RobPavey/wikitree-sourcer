@@ -69,6 +69,11 @@
       "js": ["base/browser/content/content_common.js", "site/archive/browser/archive_content.js"]
     },
     {
+      "matches": ["*://collections.arolsen-archives.org/*", "*://collections-server.arolsen-archives.org/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/arolsenarchives/browser/arolsenarchives_content.js"]
+    },
+    {
       "matches": ["*://*.bac-lac.gc.ca/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/baclac/browser/baclac_content.js"]
@@ -337,6 +342,10 @@
     {
       "resources": ["site/archive/core/archive_extract_data.mjs"],
       "matches": ["*://archive.org/*"]
+    },
+    {
+      "resources": ["site/arolsenarchives/core/arolsenarchives_extract_data.mjs"],
+      "matches": ["*://collections.arolsen-archives.org/*", "*://collections-server.arolsen-archives.org/*"]
     },
     {
       "resources": ["site/baclac/core/baclac_extract_data.mjs"],
