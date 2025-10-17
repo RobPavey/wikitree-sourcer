@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage''':.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Frederick married on 24 June 1878 in Dwelling house of Mr Nicholson, Baker Street, District of Auckland, New Zealand.<ref>\n'''Marriage''':.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage''':.",
+    "type": "source"
+  }
+}

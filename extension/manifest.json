@@ -97,6 +97,17 @@
     },
     {
       "matches": [
+        "*://collections.arolsen-archives.org/*",
+        "*://collections-server.arolsen-archives.org/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/arolsenarchives/browser/arolsenarchives_content.js"
+      ]
+    },
+    {
+      "matches": [
         "*://*.bac-lac.gc.ca/*"
       ],
       "run_at": "document_idle",
@@ -139,6 +150,16 @@
     },
     {
       "matches": [
+        "*://*.howison.co.nz/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/nzash/browser/nzash_content.js"
+      ]
+    },
+    {
+      "matches": [
         "*://*.billiongraves.com/*"
       ],
       "run_at": "document_idle",
@@ -173,7 +194,8 @@
         "*://digitales-archiv.erzbistum-muenchen.de/*",
         "*://www.gda.bayern.de/*",
         "*://www.arcinsys.niedersachsen.de/*",
-        "*://arcinsys.hessen.de/*"
+        "*://arcinsys.hessen.de/*",
+        "*://www.landesarchiv-nrw.de/*"
       ],
       "run_at": "document_end",
       "js": [
@@ -614,6 +636,15 @@
     },
     {
       "resources": [
+        "site/arolsenarchives/core/arolsenarchives_extract_data.mjs"
+      ],
+      "matches": [
+        "*://collections.arolsen-archives.org/*",
+        "*://collections-server.arolsen-archives.org/*"
+      ]
+    },
+    {
+      "resources": [
         "site/baclac/core/baclac_extract_data.mjs"
       ],
       "matches": [
@@ -634,6 +665,14 @@
       ],
       "matches": [
         "*://*.bdm.nsw.gov.au/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/nzash/core/nzash_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.howison.co.nz/*"
       ]
     },
     {
@@ -677,7 +716,8 @@
         "*://digitales-archiv.erzbistum-muenchen.de/*",
         "*://www.gda.bayern.de/*",
         "*://www.arcinsys.niedersachsen.de/*",
-        "*://arcinsys.hessen.de/*"
+        "*://arcinsys.hessen.de/*",
+        "*://www.landesarchiv-nrw.de/*"
       ]
     },
     {

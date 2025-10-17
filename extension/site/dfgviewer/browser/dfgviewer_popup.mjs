@@ -30,40 +30,36 @@ import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mj
 import { closePopup } from "/base/browser/popup/popup_menu_building.mjs";
 
 async function fetch_metadata(url, extractData) {
-  const checkPermissionsOptions = {
-    reason: "To fetch additional metadata, a content script needs to be loaded on the dfg-viewer.de page.",
-  };
-  let allowed = await checkPermissionForSite("*://digitales-archiv.erzbistum-muenchen.de/*", checkPermissionsOptions);
-  if (!allowed) {
-    closePopup();
-    return;
-  }
-
-  const url_parsed = new URLSearchParams(url);
-  const metadata_url = url_parsed.get("tx_dlf[id]");
+  url = url.toString();
+  const url_parsed = new URL(url);
+  const metadata_url = url_parsed.searchParams.get("tx_dlf[id]");
 
   extractData.metadata_url = metadata_url;
 
-  let request = await fetch(metadata_url, {
-    headers: {
-      accept: "*/*",
-      "accept-language": "en-US,en;q=0.9",
-      "sec-ch-ua": '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
-      "sec-ch-ua-mobile": "?0",
-      "sec-ch-ua-platform": '"Windows"',
-      "sec-fetch-dest": "empty",
-      "sec-fetch-mode": "cors",
-      "sec-fetch-site": "same-origin",
-      "x-requested-with": "XMLHttpRequest",
-    },
-    referrer: url,
-    referrerPolicy: "strict-origin-when-cross-origin",
-    method: "GET",
-    mode: "cors",
-    credentials: "include",
-  });
-  if (request.ok) {
-    extractData.metadata = await request.text();
+  try {
+    let request = await fetch(metadata_url, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"Windows"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "x-requested-with": "XMLHttpRequest",
+      },
+      referrer: url,
+      referrerPolicy: "strict-origin-when-cross-origin",
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    });
+    if (request.ok) {
+      extractData.metadata = await request.text();
+    }
+  } catch {
+    alert("Could not fetch metadata, metadata endpoint was " + metadata_url);
   }
 }
 
@@ -108,9 +104,89 @@ function parseArcinsysMetadata(extractData) {
   extractData.signature = signature_components.join(", ");
 }
 
+async function parseArchiveNrwApiMetadata(extractData, base_url) {
+  const api_url = "https://nina-suf.archive.nrw.de/sufservice/api/listContextByNodeId?nodeId=" + base_url.split("=")[1];
+
+  let request = null;
+  try {
+    request = await fetch(api_url, {
+      headers: {
+        accept: "*/*",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": '"Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"Windows"',
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "x-requested-with": "XMLHttpRequest",
+      },
+      referrer: extractData.url,
+      referrerPolicy: "strict-origin-when-cross-origin",
+      method: "GET",
+      mode: "cors",
+      credentials: "include",
+    });
+  } catch {
+    alert("Could not fetch extended metadata (api endpoint url was " + api_url + ")");
+    return;
+  }
+
+  // Special case: For some resources, we cannot access the entry at archive.nrw behind it, so we cannot get the title (at all)
+  const text = await request.text();
+  if (text == "") {
+    extractData.title = "Unknown";
+    return;
+  }
+
+  let data = null;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    alert("Could not parse json data");
+    alert(text);
+    alert(api_url);
+    alert(extractData.metadata_url);
+    return;
+  }
+  if (!data) return;
+  const node_data = data["selectedNode"];
+  if (!node_data) return;
+
+  const title = node_data["title"];
+  const date = node_data["unitDate"];
+
+  if (date && title) {
+    extractData.title = title + " (" + date + ")";
+  } else if (title) {
+    extractData.title = title;
+  } else if (data) {
+    extractData.title = "Unknown (" + date + ")";
+  }
+}
+
+async function parseArchiveNrwMetadata(extractData) {
+  const owner = getText(extractData.metadata, "//dv:rights/dv:owner");
+  const signature = getText(extractData.metadata, "//mods:mods/mods:titleInfo/mods:title");
+
+  if (owner && signature) {
+    extractData.signature = owner + ", " + signature;
+  } else if (owner) {
+    extractData.signature = owner;
+  } else if (signature) {
+    extractData.signature = signature;
+  }
+
+  const base_url = getAllTexts(extractData.metadata, "//dv:links/dv:reference")[0];
+
+  if (base_url.match("www.archive.nrw.de/archivsuche")) {
+    await parseArchiveNrwApiMetadata(extractData, base_url);
+  }
+}
+
 let domParser = new DOMParser();
 
-function parseMetadata(extractData) {
+async function parseMetadata(extractData) {
   let xmlDoc = domParser.parseFromString(extractData.metadata, "text/xml");
   extractData.metadata = xmlDoc;
 
@@ -122,6 +198,8 @@ function parseMetadata(extractData) {
     parseArcinsysMetadata(extractData);
   } else if (extractData.metadata_url.match("arcinsys.hessen.de")) {
     parseArcinsysMetadata(extractData);
+  } else if (extractData.metadata_url.match("www.landesarchiv-nrw.de")) {
+    await parseArchiveNrwMetadata(extractData);
   } else {
     alert("No support for side " + extractData.metadata_url + " yet");
   }
@@ -129,7 +207,7 @@ function parseMetadata(extractData) {
 
 async function setupDfgviewerPopupMenu(extractedData) {
   await fetch_metadata(extractedData.url, extractedData);
-  parseMetadata(extractedData);
+  await parseMetadata(extractedData);
 
   let input = {
     extractedData: extractedData,
@@ -139,6 +217,7 @@ async function setupDfgviewerPopupMenu(extractedData) {
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "dfgviewer",
   };
+
   setupSimplePopupMenu(input);
 }
 

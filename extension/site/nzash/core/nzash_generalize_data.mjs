@@ -22,42 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
+import { NzashEdReader } from "./nzash_ed_reader.mjs";
 
-function buildDfgviewerUrl(ed, builder) {
-  return ed.url;
+// This function generalizes the data extracted from the page content.
+function generalizeData(input) {
+  let edReader = new NzashEdReader(input.extractedData, input.primaryPersonIndex);
+  return commonGeneralizeData("nzash", edReader);
 }
 
-function buildSourceTitle(ed, gd, builder) {
-  if (ed.title) {
-    builder.sourceTitle += ed.title;
-  }
-}
-
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.signature;
-
-  if (ed.page_number) {
-    builder.addSourceReferenceField("Image", ed.page_number);
-  }
-}
-
-function buildRecordLink(ed, gd, builder) {
-  var dfgviewerUrl = buildDfgviewerUrl(ed, builder);
-
-  let recordLink = "[" + dfgviewerUrl + " DFG Viewer]";
-  builder.recordLinkOrTemplate = recordLink;
-}
-
-function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
-}
-
-function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
-}
-
-export { buildCitation };
+export { generalizeData };

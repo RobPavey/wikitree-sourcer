@@ -22,42 +22,42 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { ArolsenarchivesUriBuilder } from "./arolsenarchives_uri_builder.mjs";
 
-function buildDfgviewerUrl(ed, builder) {
-  return ed.url;
-}
+function buildSearchUrl(buildUrlInput) {
+  const gd = buildUrlInput.generalizedData;
 
-function buildSourceTitle(ed, gd, builder) {
-  if (ed.title) {
-    builder.sourceTitle += ed.title;
+  var builder = new ArolsenarchivesUriBuilder();
+
+  // call methods on builder here
+
+  let text = "";
+  if (gd.name && gd.name.forenames) {
+    text += " " + gd.name.forenames;
   }
-}
-
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.signature;
-
-  if (ed.page_number) {
-    builder.addSourceReferenceField("Image", ed.page_number);
+  if (gd.name && gd.name.firstNames) {
+    text += " " + gd.name.firstNames;
   }
+  if (gd.name && gd.name.lastName) {
+    text += " " + gd.name.lastName;
+  }
+  if (gd.birthDate && gd.birthDate.dateString) {
+    text += " " + gd.birthDate.dateString.substring(gd.birthDate.dateString.lastIndexOf(" ") + 1);
+  }
+
+  if (text) {
+    builder.addSearchTerm("s=" + text.substring(1));
+  }
+
+  const url = builder.getUri();
+
+  //console.log("URL is " + url);
+
+  var result = {
+    url: url,
+  };
+
+  return result;
 }
 
-function buildRecordLink(ed, gd, builder) {
-  var dfgviewerUrl = buildDfgviewerUrl(ed, builder);
-
-  let recordLink = "[" + dfgviewerUrl + " DFG Viewer]";
-  builder.recordLinkOrTemplate = recordLink;
-}
-
-function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
-}
-
-function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
-}
-
-export { buildCitation };
+export { buildSearchUrl };

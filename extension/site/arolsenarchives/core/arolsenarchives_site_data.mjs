@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2024 Robert M Pavey
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,42 +22,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { registerSite } from "../../../base/core/site_registry.mjs";
 
-function buildDfgviewerUrl(ed, builder) {
-  return ed.url;
+const siteData = {
+  repositoryName: "Arolsen Archives",
+  usPhoneNumber: "",
+  email: "",
+  address: "",
+  baseUrl: "",
+};
+
+function register() {
+  registerSite("arolsenarchives", siteData);
 }
 
-function buildSourceTitle(ed, gd, builder) {
-  if (ed.title) {
-    builder.sourceTitle += ed.title;
-  }
-}
-
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.signature;
-
-  if (ed.page_number) {
-    builder.addSourceReferenceField("Image", ed.page_number);
-  }
-}
-
-function buildRecordLink(ed, gd, builder) {
-  var dfgviewerUrl = buildDfgviewerUrl(ed, builder);
-
-  let recordLink = "[" + dfgviewerUrl + " DFG Viewer]";
-  builder.recordLinkOrTemplate = recordLink;
-}
-
-function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
-}
-
-function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
-}
-
-export { buildCitation };
+export { register };

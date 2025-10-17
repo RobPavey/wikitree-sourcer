@@ -74,6 +74,7 @@ const siteNames = [
   "wikitree",
   "wikipedia",
   "dfgviewer",
+  "arolsenarchives",
   "sosmogov",
 ];
 

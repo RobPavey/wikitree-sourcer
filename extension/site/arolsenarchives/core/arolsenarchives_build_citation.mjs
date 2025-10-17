@@ -24,28 +24,22 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
-function buildDfgviewerUrl(ed, builder) {
+function buildArolsenarchivesUrl(ed, builder) {
   return ed.url;
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  if (ed.title) {
-    builder.sourceTitle += ed.title;
-  }
+  builder.sourceTitle += ed.breadcrum;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.signature;
-
-  if (ed.page_number) {
-    builder.addSourceReferenceField("Image", ed.page_number);
-  }
+  builder.sourceReference = "Document #" + ed.doc_id;
 }
 
 function buildRecordLink(ed, gd, builder) {
-  var dfgviewerUrl = buildDfgviewerUrl(ed, builder);
+  var arolsenarchivesUrl = buildArolsenarchivesUrl(ed, builder);
 
-  let recordLink = "[" + dfgviewerUrl + " DFG Viewer]";
+  let recordLink = "[" + arolsenarchivesUrl + " Arolsen Archives Record]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

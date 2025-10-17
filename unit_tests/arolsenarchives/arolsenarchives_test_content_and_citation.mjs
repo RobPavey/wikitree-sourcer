@@ -22,12 +22,30 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import * as test_content_and_citation from "./nzash_test_content_and_citation.mjs";
-import * as test_build_search_url from "./nzash_test_build_search_url.mjs";
+import { extractData } from "../../extension/site/arolsenarchives/core/arolsenarchives_extract_data.mjs";
+import { generalizeData } from "../../extension/site/arolsenarchives/core/arolsenarchives_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/arolsenarchives/core/arolsenarchives_build_citation.mjs";
+
+import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
+
+const regressionData = [
+  /*
+  {
+    caseName: "b_1902_calvert_florence",
+    url: "https://www.arolsenarchives.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+  },
+  */
+];
 
 async function runTests(testManager) {
-  await test_content_and_citation.runTests(testManager);
-  await test_build_search_url.runTests(testManager);
+  await runExtractDataTests("arolsenarchives", extractData, regressionData, testManager);
+
+  await runGeneralizeDataTests("arolsenarchives", generalizeData, regressionData, testManager);
+
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("arolsenarchives", functions, regressionData, testManager);
 }
 
 export { runTests };

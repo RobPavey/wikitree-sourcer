@@ -22,42 +22,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { extractData } from "../../extension/site/nzash/core/nzash_extract_data.mjs";
+import { generalizeData } from "../../extension/site/nzash/core/nzash_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/nzash/core/nzash_build_citation.mjs";
 
-function buildDfgviewerUrl(ed, builder) {
-  return ed.url;
+import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
+
+const regressionData = [
+  {
+    caseName: "itm_1878_nicholson_jackson",
+    url: "https://itm.howison.co.nz/year/1878/page/8768",
+  },
+];
+
+async function runTests(testManager) {
+  await runExtractDataTests("nzash", extractData, regressionData, testManager);
+
+  await runGeneralizeDataTests("nzash", generalizeData, regressionData, testManager);
+
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("nzash", functions, regressionData, testManager);
 }
 
-function buildSourceTitle(ed, gd, builder) {
-  if (ed.title) {
-    builder.sourceTitle += ed.title;
-  }
-}
-
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.signature;
-
-  if (ed.page_number) {
-    builder.addSourceReferenceField("Image", ed.page_number);
-  }
-}
-
-function buildRecordLink(ed, gd, builder) {
-  var dfgviewerUrl = buildDfgviewerUrl(ed, builder);
-
-  let recordLink = "[" + dfgviewerUrl + " DFG Viewer]";
-  builder.recordLinkOrTemplate = recordLink;
-}
-
-function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
-}
-
-function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
-}
-
-export { buildCitation };
+export { runTests };

@@ -22,42 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { buildSearchUrl } from "../../extension/site/arolsenarchives/core/arolsenarchives_build_search_url.mjs";
+import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
-function buildDfgviewerUrl(ed, builder) {
-  return ed.url;
+const regressionData = [
+  /*
+  {
+    caseName: "england_marriage_reg_handford-3_sc",
+    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
+    typeOfSearch: "SameCollection",
+  },
+  */
+];
+
+async function runTests(testManager) {
+  await runBuildSearchUrlTests("arolsenarchives", buildSearchUrl, regressionData, testManager);
 }
 
-function buildSourceTitle(ed, gd, builder) {
-  if (ed.title) {
-    builder.sourceTitle += ed.title;
-  }
-}
-
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.signature;
-
-  if (ed.page_number) {
-    builder.addSourceReferenceField("Image", ed.page_number);
-  }
-}
-
-function buildRecordLink(ed, gd, builder) {
-  var dfgviewerUrl = buildDfgviewerUrl(ed, builder);
-
-  let recordLink = "[" + dfgviewerUrl + " DFG Viewer]";
-  builder.recordLinkOrTemplate = recordLink;
-}
-
-function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
-}
-
-function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
-}
-
-export { buildCitation };
+export { runTests };

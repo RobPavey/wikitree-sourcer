@@ -22,42 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/nzash_generalize_data.mjs";
+import { buildCitation } from "../core/nzash_build_citation.mjs";
 
-function buildDfgviewerUrl(ed, builder) {
-  return ed.url;
+async function setupNzashPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage: "It looks like a New Zealand BDM page but not a record page.",
+    generalizeFailedMessage: "It looks like a New Zealand BDM page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "nzash",
+  };
+  setupSimplePopupMenu(input);
 }
 
-function buildSourceTitle(ed, gd, builder) {
-  if (ed.title) {
-    builder.sourceTitle += ed.title;
-  }
-}
-
-function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = ed.signature;
-
-  if (ed.page_number) {
-    builder.addSourceReferenceField("Image", ed.page_number);
-  }
-}
-
-function buildRecordLink(ed, gd, builder) {
-  var dfgviewerUrl = buildDfgviewerUrl(ed, builder);
-
-  let recordLink = "[" + dfgviewerUrl + " DFG Viewer]";
-  builder.recordLinkOrTemplate = recordLink;
-}
-
-function buildCoreCitation(ed, gd, builder) {
-  buildSourceTitle(ed, gd, builder);
-  buildSourceReference(ed, gd, builder);
-  buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
-}
-
-function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
-}
-
-export { buildCitation };
+initPopup("nzash", setupNzashPopupMenu);
