@@ -22,12 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import * as test_content_and_citation from "./nzash_test_content_and_citation.mjs";
-import * as test_build_search_url from "./nzash_test_build_search_url.mjs";
+import { setupSimplePopupMenu } from "/base/browser/popup/popup_simple_base.mjs";
+import { initPopup } from "/base/browser/popup/popup_init.mjs";
+import { generalizeData } from "../core/nzash_generalize_data.mjs";
+import { buildCitation } from "../core/nzash_build_citation.mjs";
 
-async function runTests(testManager) {
-  await test_content_and_citation.runTests(testManager);
-  await test_build_search_url.runTests(testManager);
+async function setupNzashPopupMenu(extractedData) {
+  let input = {
+    extractedData: extractedData,
+    extractFailedMessage: "It looks like a New Zealand BDM page but not a record page.",
+    generalizeFailedMessage: "It looks like a New Zealand BDM page but does not contain the required data.",
+    generalizeDataFunction: generalizeData,
+    buildCitationFunction: buildCitation,
+    siteNameToExcludeFromSearch: "nzash",
+  };
+  setupSimplePopupMenu(input);
 }
 
-export { runTests };
+initPopup("nzash", setupNzashPopupMenu);

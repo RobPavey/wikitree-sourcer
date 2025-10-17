@@ -101,6 +101,7 @@ const RT = {
 
 const RecordSubtype = {
   Banns: `Banns`,
+  IntentionToMarry: `IntentionToMarry`,
   MarriageOrBanns: `MarriageOrBanns`,
   MemberRegistration: `MemberRegistration`,
   LdsCensus: `LdsCensus`,

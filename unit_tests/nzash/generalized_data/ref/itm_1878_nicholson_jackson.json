@@ -1,0 +1,21 @@
+{
+  "sourceOfData": "nzash",
+  "sourceType": "record",
+  "recordType": "Marriage",
+  "recordSubtype": "IntentionToMarry",
+  "name": {
+    "name": "Frederick Allen Nicholson"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "24 June 1878"
+  },
+  "eventPlace": {
+    "placeString": "Dwelling house of Mr Nicholson, Baker Street, District of Auckland, New Zealand"
+  },
+  "primaryPersonOptions": [
+    "Frederick Allen Nicholson (groom)",
+    "Lavinia Maria Jackson (bride)"
+  ],
+  "hasValidData": true
+}

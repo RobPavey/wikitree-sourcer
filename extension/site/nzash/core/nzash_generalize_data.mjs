@@ -22,12 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import * as test_content_and_citation from "./nzash_test_content_and_citation.mjs";
-import * as test_build_search_url from "./nzash_test_build_search_url.mjs";
+import { commonGeneralizeData } from "../../../base/core/generalize_data_creation.mjs";
+import { NzashEdReader } from "./nzash_ed_reader.mjs";
 
-async function runTests(testManager) {
-  await test_content_and_citation.runTests(testManager);
-  await test_build_search_url.runTests(testManager);
+// This function generalizes the data extracted from the page content.
+function generalizeData(input) {
+  let edReader = new NzashEdReader(input.extractedData, input.primaryPersonIndex);
+  return commonGeneralizeData("nzash", edReader);
 }
 
-export { runTests };
+export { generalizeData };
