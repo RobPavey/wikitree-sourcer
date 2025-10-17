@@ -22,6 +22,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function getSelectedRow(document) {
+  if (document.querySelector("yv-its-person-simple-grid") == null) {
+    return null;
+  }
+
+  const highlightStyle = "font-weight: bold; font-style: italic";
+  const resultsTable = document.querySelector("yv-its-person-simple-grid").querySelector('tbody[role="rowgroup"]');
+  if (resultsTable) {
+    const selectedRow = resultsTable.querySelector("mat-row[style='" + highlightStyle + "']");
+
+    if (selectedRow == null) {
+      return null;
+    }
+
+    let children = selectedRow.parentNode.children;
+    for (let i = 0; i < children.length; i++) {
+      if (children[i.toString()] == selectedRow) {
+        return i;
+      }
+    }
+  }
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -43,8 +66,13 @@ function extractData(document, url) {
     breadcrum_string += ", " + breadcrum.text;
   }
   const title = document.querySelector('h1[class="title ng-tns-c171-3"');
-  breadcrum_string += ", " + title;
+  breadcrum_string += ", " + title.text;
   result.breadcrum = breadcrum_string.substring(2);
+
+  const selected_index = getSelectedRow(document);
+  if (selected_index != null) {
+    result.person_index = selected_index;
+  }
 
   result.success = true;
 

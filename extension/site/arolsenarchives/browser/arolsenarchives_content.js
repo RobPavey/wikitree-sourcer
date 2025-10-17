@@ -22,4 +22,81 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function getHighlightStyle() {
+  const highlightStyle = "font-weight: bold; font-style: italic";
+  return highlightStyle;
+}
+
+function highlightRow(selectedRow) {
+  const cellHighlightStyle = "background-color: lightgreen";
+  selectedRow.setAttribute("style", getHighlightStyle());
+  const cells = selectedRow.querySelectorAll("mat-cell");
+  for (let cell of cells) {
+    cell.setAttribute("style", cellHighlightStyle);
+  }
+}
+
+function unHighlightRow(selectedRow) {
+  selectedRow.removeAttribute("style");
+  const cells = selectedRow.querySelectorAll("mat-cell");
+  for (let cell of cells) {
+    cell.removeAttribute("style");
+  }
+}
+
+function getClickedRow() {
+  const resultsTable = document.querySelector("yv-its-person-simple-grid").querySelector('tbody[role="rowgroup"]');
+  if (resultsTable) {
+    const selectedRow = resultsTable.querySelector("mat-row[style='" + getHighlightStyle() + "']");
+    return selectedRow;
+  }
+}
+
+function addClickedRowListener() {
+  //console.log("addClickedRowListener");
+
+  const resultsTable = document.querySelector("yv-its-person-simple-grid").querySelector('tbody[role="rowgroup"]');
+  if (resultsTable && !resultsTable.hasAttribute("listenerOnClick")) {
+    resultsTable.setAttribute("listenerOnClick", "true");
+    resultsTable.addEventListener("click", function (ev) {
+      //console.log("clickedRowListener: ev is");
+      //console.log(ev);
+
+      // clear existing selected row if any
+      let selectedRow = getClickedRow();
+      if (selectedRow) {
+        unHighlightRow(selectedRow);
+      }
+      selectedRow = ev.target;
+      if (selectedRow) {
+        //console.log("clickedRowListener: selectedRow is ");
+        //console.log(selectedRow);
+
+        selectedRow = selectedRow.closest("mat-row");
+        if (selectedRow) {
+          highlightRow(selectedRow);
+        }
+      }
+    });
+
+    // could highlight the first row here to give a hint that rows are selactable
+    // but that could be intrusive if user not intending to use sourcer on the page
+  }
+}
+
+function insertButtonHandler() {
+  let button = document.querySelector('button[class="its-button show-indexed-data ng-star-inserted"');
+
+  let onclick = button.onclick;
+  button.onclick = () => {
+    if (onclick != null) {
+      onclick();
+    }
+    addClickedRowListener();
+  };
+}
+
 siteContentInit(`arolsenarchives`, `site/arolsenarchives/core/arolsenarchives_extract_data.mjs`);
+setTimeout(() => {
+  insertButtonHandler();
+}, 1000);
