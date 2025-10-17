@@ -31,6 +31,24 @@ function buildSearchUrl(buildUrlInput) {
 
   // call methods on builder here
 
+  let text = "";
+  if (gd.name && gd.name.forenames) {
+    text += " " + gd.name.forenames;
+  }
+  if (gd.name && gd.name.firstNames) {
+    text += " " + gd.name.firstNames;
+  }
+  if (gd.name && gd.name.lastName) {
+    text += " " + gd.name.lastName;
+  }
+  if (gd.birthDate && gd.birthDate.dateString) {
+    text += " " + gd.birthDate.dateString.substring(gd.birthDate.dateString.lastIndexOf(" ") + 1);
+  }
+
+  if (text) {
+    builder.addSearchTerm("s=" + text.substring(1));
+  }
+
   const url = builder.getUri();
 
   //console.log("URL is " + url);

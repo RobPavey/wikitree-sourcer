@@ -26,7 +26,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class ArolsenarchivesUriBuilder {
   constructor() {
-    this.uri = "https://www.arolsenarchives.org.uk/cgi/search.pl";
+    this.uri = "https://collections.arolsen-archives.org/de/search";
     this.searchTermAdded = false;
   }
 

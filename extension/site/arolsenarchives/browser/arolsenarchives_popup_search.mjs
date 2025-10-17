@@ -28,8 +28,8 @@ import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const arolsenarchivesStartYear = 1800;
-const arolsenarchivesEndYear = 2000;
+const arolsenarchivesStartYear = 1840;
+const arolsenarchivesEndYear = 1960;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {

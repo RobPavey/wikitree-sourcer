@@ -87,6 +87,10 @@ function addClickedRowListener() {
 function insertButtonHandler() {
   let button = document.querySelector('button[class="its-button show-indexed-data ng-star-inserted"');
 
+  if (button == null) {
+    return;
+  }
+
   let onclick = button.onclick;
   button.onclick = () => {
     if (onclick != null) {
