@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 54573/1974; District: 217 (Bulli)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nWilliam James death registered 1974 in New South Wales, Australia, son of James & May.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "William's death was registered in 1974 in New South Wales, Australia. He was the son of James & May.<ref>\n'''Death Registration''':\n\"New South Wales Births, Deaths and Marriages\"<br/>\nDeath Registration Number: 54573/1974; District: 217 (Bulli)<br/>\n[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>\nWilliam James death registered 1974 in New South Wales, Australia, son of James & May.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"New South Wales Births, Deaths and Marriages\"<br/>Death Registration Number: 54573/1974; District: 217 (Bulli)<br/>[https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/deaths Deaths search page] (accessed 6 May 2021)<br/>William James death registered 1974 in New South Wales, Australia, son of James & May.",
+    "type": "source"
+  }
+}

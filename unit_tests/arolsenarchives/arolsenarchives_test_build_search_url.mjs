@@ -22,59 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { buildSearchUrl } from "../../extension/site/arolsenarchives/core/arolsenarchives_build_search_url.mjs";
+import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
-// The order should not matter since user facing lists are sorted
-
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "basrhin",
-  "bg",
-  "cwgc",
-  "eggsabdm",
-  "eggsagrvs",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nsvr",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "dfgviewer",
-  "arolsenarchives",
+const regressionData = [
+  /*
+  {
+    caseName: "england_marriage_reg_handford-3_sc",
+    inputPath: "ancestry/generalized_data/ref/england_marriage_reg_handford-3",
+    typeOfSearch: "SameCollection",
+  },
+  */
 ];
 
-export { siteNames };
+async function runTests(testManager) {
+  await runBuildSearchUrlTests("arolsenarchives", buildSearchUrl, regressionData, testManager);
+}
+
+export { runTests };

@@ -528,6 +528,7 @@ const lateDistrictCodes = {
   L214: "Nowra",
   L215: "Picton",
   L216: "Queanbeyan",
+  L217: "Bulli",
 };
 
 function convertDistrictCodeToName(code) {

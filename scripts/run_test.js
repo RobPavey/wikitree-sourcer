@@ -72,6 +72,7 @@ const siteNames = [
   "wikitree",
   "dfgviewer",
   "basrhin",
+  "arolsenarchives",
 ];
 
 function testSuiteEnabled(parameters, testSuiteName) {
