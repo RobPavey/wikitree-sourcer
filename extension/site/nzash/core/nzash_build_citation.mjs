@@ -25,79 +25,33 @@ import { RT } from "../../../base/core/record_type.mjs";
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { NzashEdReader } from "./nzash_ed_reader.mjs";
 
-function buildSourceTitle(ed, gd, builder) {
-  let format = builder.options.citation_nzash_sourceTitleFormat;
-
-  switch (format) {
-    case "nzasho":
-      builder.sourceTitle = "New Zealand Births, Deaths & Marriages Online";
-      break;
-    case "nzashdo":
-      builder.sourceTitle = "New Zealand Births, Deaths and Marriages - Online";
-      break;
-    case "bdmonzdia":
-      builder.sourceTitle = "Births, Deaths & Marriages Online, New Zealand Department of Internal Affairs";
-      break;
+function splitTwoLineValue(value) {
+  if (value) {
+    let results = value.split(/\s*\n\s*/);
+    for (let index = 0; index < results.length; index++) {
+      results[index] = results[index].trim();
+    }
+    return results;
   }
+  return [];
+}
+
+function buildSourceTitle(ed, gd, builder) {
+  builder.sourceTitle = ed.headerText;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  if (ed.recordData) {
-    let registrationNumber = ed.recordData["Registration Number"];
-    if (registrationNumber) {
-      let type = "";
-      if (gd.recordType == RT.BirthRegistration) {
-        type = "Birth ";
-      } else if (gd.recordType == RT.DeathRegistration) {
-        type = "Death ";
-      } else if (gd.recordType == RT.MarriageRegistration) {
-        type = "Marriage ";
-      }
-      builder.sourceReference = type + "Registration Number: " + registrationNumber;
-    }
+  if (ed.reference) {
+    builder.sourceReference = ed.reference;
   }
 }
 
 function buildRecordLink(ed, gd, builder) {
   let options = builder.getOptions();
-  let linkFormatOption = options.citation_nzash_linkFormat;
-
-  var nzashUrl = "";
-  if (linkFormatOption == "top") {
-    nzashUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/";
-  } else if (linkFormatOption == "search") {
-    nzashUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search";
-  } else if (linkFormatOption == "searchOfType") {
-    nzashUrl = "https://www.bdmhistoricalrecords.dia.govt.nz/search/search";
-    let type = "";
-    if (gd.recordType == RT.BirthRegistration) {
-      nzashUrl += "?path=%2FqueryEntry.m%3Ftype%3Dbirths";
-    } else if (gd.recordType == RT.DeathRegistration) {
-      nzashUrl += "?path=%2FqueryEntry.m%3Ftype%3Ddeaths";
-    } else if (gd.recordType == RT.MarriageRegistration) {
-      nzashUrl += "?path=%2FqueryEntry.m%3Ftype%3Dmarriages";
-    }
-  }
-  if (!nzashUrl) {
-    return;
-  }
-
-  let linkOption = options.citation_nzash_includeLink;
-
-  if (linkOption == "none") {
-    return;
-  }
 
   let recordLink = "";
 
-  if (linkOption == "inSourceTitle") {
-    builder.putRecordLinkInTitle = true;
-    recordLink = nzashUrl;
-  } else if (linkOption == "asNzashOnline") {
-    recordLink = "[" + nzashUrl + " New Zealand BDM Online]";
-  } else if (linkOption == "asLinkToSearchPage") {
-    recordLink = "[" + nzashUrl + " Link to search page]";
-  }
+  recordLink = "[" + ed.url + " New Zealand Ancestor Search Helper]";
 
   if (recordLink) {
     builder.recordLinkOrTemplate = recordLink;
@@ -105,20 +59,30 @@ function buildRecordLink(ed, gd, builder) {
 }
 
 function buildCuratedListDataString(ed, gd, builder) {
-  let edReader = new NzashEdReader(ed);
+  if (ed.recordData) {
+    let fields = [];
+    for (let key of Object.keys(ed.recordData)) {
+      let value = ed.recordData[key];
+      if (value) {
+        let parts = splitTwoLineValue(value);
+        if (value.length > 1) {
+          let valueString = "";
+          for (let index = 0; index < parts.length; index++) {
+            let cleanPart = parts[index].trim();
+            if (index != 0) {
+              valueString += " / ";
+            }
+            valueString += cleanPart;
+          }
+          fields.push({ key: key, value: valueString });
+        } else {
+          fields.push({ key: key, value: value });
+        }
+      }
+    }
 
-  let isStillBirth = ed.recordData["Still Birth"];
-
-  const fields = [
-    { key: "", value: edReader.getCitationName() },
-    { key: "Mother's Given Name(s)", value: edReader.getCitationMotherGivenNames() },
-    { key: "Father's Given Name(s)", value: edReader.getCitationFatherGivenNames() },
-    { key: "", value: isStillBirth ? "Still Birth" : "" },
-    { key: "Age at Death", value: edReader.getCitationAgeAtDeath() },
-    { key: "Date of Birth", value: edReader.getCitationDateOfBirth() },
-  ];
-
-  builder.addListDataString(fields);
+    builder.addListDataString(fields);
+  }
 }
 
 function buildOriginalListDataString(ed, gd, builder) {
@@ -128,15 +92,8 @@ function buildOriginalListDataString(ed, gd, builder) {
 
 function buildDataString(ed, gd, builder) {
   let options = builder.getOptions();
-  let dataStyleOption = options.citation_nzash_dataStyle;
 
-  if (dataStyleOption == "listCurated") {
-    buildCuratedListDataString(ed, gd, builder);
-  } else if (dataStyleOption == "sentence") {
-    builder.addStandardDataString(gd);
-  } else if (dataStyleOption == "listOriginal") {
-    buildOriginalListDataString(ed, gd, builder);
-  }
+  buildCuratedListDataString(ed, gd, builder);
 }
 
 function buildCoreCitation(ed, gd, builder) {
