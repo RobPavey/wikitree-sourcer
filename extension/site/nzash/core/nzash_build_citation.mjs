@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import { RT } from "../../../base/core/record_type.mjs";
+import { RecordSubtype, RT } from "../../../base/core/record_type.mjs";
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 import { NzashEdReader } from "./nzash_ed_reader.mjs";
 
@@ -51,7 +51,15 @@ function buildRecordLink(ed, gd, builder) {
 
   let recordLink = "";
 
-  recordLink = "[" + ed.url + " New Zealand Ancestor Search Helper]";
+  let linkText = "New Zealand Ancestor Search Helper";
+
+  if (gd.recordType == RT.Marriage) {
+    if (gd.recordSubtype == RecordSubtype.IntentionToMarry) {
+      linkText = "NZ Intention to Marry Project";
+    }
+  }
+
+  recordLink = "[" + ed.url + " " + linkText + "]";
 
   if (recordLink) {
     builder.recordLinkOrTemplate = recordLink;
@@ -85,15 +93,19 @@ function buildCuratedListDataString(ed, gd, builder) {
   }
 }
 
-function buildOriginalListDataString(ed, gd, builder) {
-  const fieldsToExclude = ["Registration Number"];
-  builder.addListDataStringFromRecordData(ed.recordData, fieldsToExclude);
-}
-
 function buildDataString(ed, gd, builder) {
   let options = builder.getOptions();
 
   buildCuratedListDataString(ed, gd, builder);
+}
+
+function buildRefTitle(ed, gd) {
+  if (gd.recordType == RT.Marriage) {
+    if (gd.recordSubtype == RecordSubtype.IntentionToMarry) {
+      return "Intention to Marry";
+    }
+  }
+  return gd.getRefTitle();
 }
 
 function buildCoreCitation(ed, gd, builder) {
@@ -104,7 +116,7 @@ function buildCoreCitation(ed, gd, builder) {
 }
 
 function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
+  return simpleBuildCitationWrapper(input, buildCoreCitation, buildRefTitle);
 }
 
 export { buildCitation };
