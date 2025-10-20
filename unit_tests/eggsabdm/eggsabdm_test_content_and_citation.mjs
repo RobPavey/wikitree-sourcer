@@ -425,13 +425,28 @@ const regressionData = [
   */
 ];
 
+const optionVariants = [
+  {
+    variantName: "std",
+    optionOverrides: {
+      citation_general_sourceTitleInItalics: false,
+    },
+  },
+  {
+    variantName: "title_in_italics",
+    optionOverrides: {
+      citation_general_sourceTitleInItalics: true,
+    },
+  },
+];
+
 async function runTests(testManager) {
   await runExtractDataTests("eggsabdm", extractData, regressionData, testManager);
 
   await runGeneralizeDataTests("eggsabdm", generalizeData, regressionData, testManager);
 
   const functions = { buildCitation: buildCitation };
-  await runBuildCitationTests("eggsabdm", functions, regressionData, testManager);
+  await runBuildCitationTests("eggsabdm", functions, regressionData, testManager, optionVariants);
 }
 
 export { runTests };

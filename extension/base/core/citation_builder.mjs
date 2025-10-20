@@ -444,7 +444,11 @@ class CitationBuilder {
         sourceTitle = "[" + this.recordLinkOrTemplate + " " + sourceTitle + "]";
         sourceTitle = addAccessedDateToRecordLink(sourceTitle);
       } else if (this.putSourceTitleInQuotes) {
-        sourceTitle = '"' + sourceTitle + '"';
+        if (options.citation_general_sourceTitleInItalics && target == "wikitree") {
+          sourceTitle = "''" + sourceTitle + "''";
+        } else {
+          sourceTitle = '"' + sourceTitle + '"';
+        }
       }
       citation += sourceTitle;
 
