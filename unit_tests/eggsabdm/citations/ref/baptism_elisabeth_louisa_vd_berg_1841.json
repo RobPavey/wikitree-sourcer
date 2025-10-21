@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"eGGSA Baptism Registers, Elisabeth Louisa vd Berg\"<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Elisabeth Louisa anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nElisabeth Louisa vd Berg baptism on 11 Jul 1841 (born 8 Oct 1840), daughter of Abraham Paulus vd Berg & Cornelia Gertruida Margaritha Steyn.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Elisabeth, daughter of Abraham Paulus vd Berg & Cornelia Gertruida Margaritha Steyn, was born on 8 October 1840 and baptised on 11 July 1841.<ref>\n'''Baptism''':\n\"eGGSA Baptism Registers, Elisabeth Louisa vd Berg\"<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Elisabeth Louisa anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nElisabeth Louisa vd Berg baptism on 11 Jul 1841 (born 8 Oct 1840), daughter of Abraham Paulus vd Berg & Cornelia Gertruida Margaritha Steyn.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"eGGSA Baptism Registers, Elisabeth Louisa vd Berg\"<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Elisabeth Louisa anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Elisabeth Louisa vd Berg baptism on 11 Jul 1841 (born 8 Oct 1840), daughter of Abraham Paulus vd Berg & Cornelia Gertruida Margaritha Steyn.",
+    "type": "source"
+  },
+  "title_in_italics_inline": {
+    "citation": "<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Elisabeth Louisa vd Berg''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Elisabeth Louisa anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nElisabeth Louisa vd Berg baptism on 11 Jul 1841 (born 8 Oct 1840), daughter of Abraham Paulus vd Berg & Cornelia Gertruida Margaritha Steyn.\n</ref>",
+    "type": "inline"
+  },
+  "title_in_italics_narrative": {
+    "citation": "Elisabeth, daughter of Abraham Paulus vd Berg & Cornelia Gertruida Margaritha Steyn, was born on 8 October 1840 and baptised on 11 July 1841.<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Elisabeth Louisa vd Berg''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Elisabeth Louisa anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nElisabeth Louisa vd Berg baptism on 11 Jul 1841 (born 8 Oct 1840), daughter of Abraham Paulus vd Berg & Cornelia Gertruida Margaritha Steyn.\n</ref>",
+    "type": "narrative"
+  },
+  "title_in_italics_source": {
+    "citation": "* '''Baptism''': ''eGGSA Baptism Registers, Elisabeth Louisa vd Berg''<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Elisabeth Louisa anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Elisabeth Louisa vd Berg baptism on 11 Jul 1841 (born 8 Oct 1840), daughter of Abraham Paulus vd Berg & Cornelia Gertruida Margaritha Steyn.",
+    "type": "source"
+  }
+}

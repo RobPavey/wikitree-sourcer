@@ -1,0 +1,26 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Baptism''':\n\"eGGSA Baptism Registers, Anna Sophia Smith\"<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with anna sophia anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nAnna Sophia Smith baptism on 8 Apr 1838 (born 4 Feb 1839), daughter of Petrus Erasmus Johannes Smith & Anna Dorothea Willemina vd Merwe.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Anna, daughter of Petrus Erasmus Johannes Smith & Anna Dorothea Willemina vd Merwe, was born on 4 February 1839 and baptised on 8 April 1838.<ref>\n'''Baptism''':\n\"eGGSA Baptism Registers, Anna Sophia Smith\"<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with anna sophia anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nAnna Sophia Smith baptism on 8 Apr 1838 (born 4 Feb 1839), daughter of Petrus Erasmus Johannes Smith & Anna Dorothea Willemina vd Merwe.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Baptism''': \"eGGSA Baptism Registers, Anna Sophia Smith\"<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with anna sophia anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Anna Sophia Smith baptism on 8 Apr 1838 (born 4 Feb 1839), daughter of Petrus Erasmus Johannes Smith & Anna Dorothea Willemina vd Merwe.",
+    "type": "source"
+  },
+  "title_in_italics_inline": {
+    "citation": "<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Anna Sophia Smith''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with anna sophia anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nAnna Sophia Smith baptism on 8 Apr 1838 (born 4 Feb 1839), daughter of Petrus Erasmus Johannes Smith & Anna Dorothea Willemina vd Merwe.\n</ref>",
+    "type": "inline"
+  },
+  "title_in_italics_narrative": {
+    "citation": "Anna, daughter of Petrus Erasmus Johannes Smith & Anna Dorothea Willemina vd Merwe, was born on 4 February 1839 and baptised on 8 April 1838.<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Anna Sophia Smith''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with anna sophia anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nAnna Sophia Smith baptism on 8 Apr 1838 (born 4 Feb 1839), daughter of Petrus Erasmus Johannes Smith & Anna Dorothea Willemina vd Merwe.\n</ref>",
+    "type": "narrative"
+  },
+  "title_in_italics_source": {
+    "citation": "* '''Baptism''': ''eGGSA Baptism Registers, Anna Sophia Smith''<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Colesberg, Baptism register, 1837-1843. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G16 3/2. Note: Colesberg established 1826 from Graaff-Reinet. Transcribed by Annelie Els, independently, from Pretoria Archives FK 2277<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smith anywhere in the surname with anna sophia anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Anna Sophia Smith baptism on 8 Apr 1838 (born 4 Feb 1839), daughter of Petrus Erasmus Johannes Smith & Anna Dorothea Willemina vd Merwe.",
+    "type": "source"
+  }
+}
