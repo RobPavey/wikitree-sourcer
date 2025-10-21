@@ -339,6 +339,12 @@ const citationStyleOptionsGroup = {
       defaultValue: true,
     },
     {
+      optionName: "sourceTitleInItalics",
+      type: "checkbox",
+      label: "Put the 'source title' part of the citation in italics rather than in quotes",
+      defaultValue: false,
+    },
+    {
       optionName: "dataStringInItalics",
       type: "checkbox",
       label: "Put the 'data string' part of the citation in italics",

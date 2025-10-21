@@ -10,5 +10,17 @@
   "std_source": {
     "citation": "* '''Baptism''': \"eGGSA Baptism Registers, Martha Magdalena van der Berg\"<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Tulbagh, Baptism register, 1743 to 2 Feb 1800, page 224, entry number 44. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G4 7/1. Transcribed by Lynn Couperthwaite, Trysie Joubert, Richard Ball as part of the eGGSA Project, from VC 657, Cape Archives Repository<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Martha Magdalena anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Martha Magdalena van der Berg baptism on 15 May 1785, daughter of Jacobus van der Berg & Martha Diederiks.",
     "type": "source"
+  },
+  "title_in_italics_inline": {
+    "citation": "<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Martha Magdalena van der Berg''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Tulbagh, Baptism register, 1743 to 2 Feb 1800, page 224, entry number 44. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G4 7/1. Transcribed by Lynn Couperthwaite, Trysie Joubert, Richard Ball as part of the eGGSA Project, from VC 657, Cape Archives Repository<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Martha Magdalena anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nMartha Magdalena van der Berg baptism on 15 May 1785, daughter of Jacobus van der Berg & Martha Diederiks.\n</ref>",
+    "type": "inline"
+  },
+  "title_in_italics_narrative": {
+    "citation": "Martha, daughter of Jacobus van der Berg & Martha Diederiks, was baptised on 15 May 1785.<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Martha Magdalena van der Berg''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Tulbagh, Baptism register, 1743 to 2 Feb 1800, page 224, entry number 44. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G4 7/1. Transcribed by Lynn Couperthwaite, Trysie Joubert, Richard Ball as part of the eGGSA Project, from VC 657, Cape Archives Repository<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Martha Magdalena anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nMartha Magdalena van der Berg baptism on 15 May 1785, daughter of Jacobus van der Berg & Martha Diederiks.\n</ref>",
+    "type": "narrative"
+  },
+  "title_in_italics_source": {
+    "citation": "* '''Baptism''': ''eGGSA Baptism Registers, Martha Magdalena van der Berg''<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Tulbagh, Baptism register, 1743 to 2 Feb 1800, page 224, entry number 44. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G4 7/1. Transcribed by Lynn Couperthwaite, Trysie Joubert, Richard Ball as part of the eGGSA Project, from VC 657, Cape Archives Repository<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with berg anywhere in the surname with Martha Magdalena anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Martha Magdalena van der Berg baptism on 15 May 1785, daughter of Jacobus van der Berg & Martha Diederiks.",
+    "type": "source"
   }
 }

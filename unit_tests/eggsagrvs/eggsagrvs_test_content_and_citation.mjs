@@ -212,6 +212,7 @@ const optionVariants = [
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: false,
       citation_general_dataStringInItalics: true,
+      citation_general_sourceTitleInItalics: true,
     },
   },
   {
@@ -232,6 +233,7 @@ const optionVariants = [
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: false,
       citation_general_dataStringInItalics: true,
+      citation_general_sourceTitleInItalics: true,
     },
   },
   {
@@ -242,6 +244,7 @@ const optionVariants = [
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: true,
       citation_general_dataStringInItalics: true,
+      citation_general_sourceTitleInItalics: true,
     },
   },
   {
@@ -252,6 +255,7 @@ const optionVariants = [
       citation_general_referencePosition: "afterSourceTitle",
       citation_eggsagrvs_includeImgPos: false,
       citation_general_dataStringInItalics: true,
+      citation_general_sourceTitleInItalics: true,
     },
   },
   {

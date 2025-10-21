@@ -10,5 +10,17 @@
   "std_source": {
     "citation": "* '''Baptism''': \"eGGSA Baptism Registers, John Vervord Smith\"<br/>Source: Grahamstown - St George (Anglican), Grahamstown, Baptism register, 1849-1869, page 16, entry number 153. Repository: Cory Library, Ms 14 878-3. Transcribed by Lynn Couperthwaite as part of the eGGSA Project, from photographs by William Jervois<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with vervord anywhere in the surname with john anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>John Vervord Smith baptism on 27 Dec 1850.",
     "type": "source"
+  },
+  "title_in_italics_inline": {
+    "citation": "<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, John Vervord Smith''<br/>\nSource: Grahamstown - St George (Anglican), Grahamstown, Baptism register, 1849-1869, page 16, entry number 153. Repository: Cory Library, Ms 14 878-3. Transcribed by Lynn Couperthwaite as part of the eGGSA Project, from photographs by William Jervois<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with vervord anywhere in the surname with john anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nJohn Vervord Smith baptism on 27 Dec 1850.\n</ref>",
+    "type": "inline"
+  },
+  "title_in_italics_narrative": {
+    "citation": "John was baptised on 27 December 1850.<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, John Vervord Smith''<br/>\nSource: Grahamstown - St George (Anglican), Grahamstown, Baptism register, 1849-1869, page 16, entry number 153. Repository: Cory Library, Ms 14 878-3. Transcribed by Lynn Couperthwaite as part of the eGGSA Project, from photographs by William Jervois<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with vervord anywhere in the surname with john anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nJohn Vervord Smith baptism on 27 Dec 1850.\n</ref>",
+    "type": "narrative"
+  },
+  "title_in_italics_source": {
+    "citation": "* '''Baptism''': ''eGGSA Baptism Registers, John Vervord Smith''<br/>Source: Grahamstown - St George (Anglican), Grahamstown, Baptism register, 1849-1869, page 16, entry number 153. Repository: Cory Library, Ms 14 878-3. Transcribed by Lynn Couperthwaite as part of the eGGSA Project, from photographs by William Jervois<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with vervord anywhere in the surname with john anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>John Vervord Smith baptism on 27 Dec 1850.",
+    "type": "source"
   }
 }

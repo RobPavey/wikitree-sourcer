@@ -10,5 +10,17 @@
   "std_source": {
     "citation": "* '''Marriage''': \"eGGSA Marriage Registers, Cath M Jac Smit\"<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Beaufort West, Western Cape. marriage index register, 1819-1842. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch. Transcribed by Kathleen Schulz, from Cape Archives VC 751. Note: VC 751 is a photocopy of a modern index to the original Beaufort West marriage register (date and indexer unknown) in the NG Kerkargief, Noordwal-Wes, Stellenbosch.<br/>[https://www.eggsa.org/cgi-bin/dosearchMarriages.pl eGGSA BMD Record] with search parameters Groom with viljoen anywhere in the surname with Jan hendrik anywhere in the first name, in all the registers. (accessed 6 May 2021)<br/>Cath M Jac Smit marriage to Jan Hendrik Viljoen on 6 Apr 1840.",
     "type": "source"
+  },
+  "title_in_italics_inline": {
+    "citation": "<ref>\n'''Marriage''':\n''eGGSA Marriage Registers, Cath M Jac Smit''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Beaufort West, Western Cape. marriage index register, 1819-1842. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch. Transcribed by Kathleen Schulz, from Cape Archives VC 751. Note: VC 751 is a photocopy of a modern index to the original Beaufort West marriage register (date and indexer unknown) in the NG Kerkargief, Noordwal-Wes, Stellenbosch.<br/>\n[https://www.eggsa.org/cgi-bin/dosearchMarriages.pl eGGSA BMD Record] with search parameters Groom with viljoen anywhere in the surname with Jan hendrik anywhere in the first name, in all the registers. (accessed 6 May 2021)<br/>\nCath M Jac Smit marriage to Jan Hendrik Viljoen on 6 Apr 1840.\n</ref>",
+    "type": "inline"
+  },
+  "title_in_italics_narrative": {
+    "citation": "Cath married Jan Hendrik Viljoen on 6 April 1840.<ref>\n'''Marriage''':\n''eGGSA Marriage Registers, Cath M Jac Smit''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Beaufort West, Western Cape. marriage index register, 1819-1842. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch. Transcribed by Kathleen Schulz, from Cape Archives VC 751. Note: VC 751 is a photocopy of a modern index to the original Beaufort West marriage register (date and indexer unknown) in the NG Kerkargief, Noordwal-Wes, Stellenbosch.<br/>\n[https://www.eggsa.org/cgi-bin/dosearchMarriages.pl eGGSA BMD Record] with search parameters Groom with viljoen anywhere in the surname with Jan hendrik anywhere in the first name, in all the registers. (accessed 6 May 2021)<br/>\nCath M Jac Smit marriage to Jan Hendrik Viljoen on 6 Apr 1840.\n</ref>",
+    "type": "narrative"
+  },
+  "title_in_italics_source": {
+    "citation": "* '''Marriage''': ''eGGSA Marriage Registers, Cath M Jac Smit''<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Beaufort West, Western Cape. marriage index register, 1819-1842. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch. Transcribed by Kathleen Schulz, from Cape Archives VC 751. Note: VC 751 is a photocopy of a modern index to the original Beaufort West marriage register (date and indexer unknown) in the NG Kerkargief, Noordwal-Wes, Stellenbosch.<br/>[https://www.eggsa.org/cgi-bin/dosearchMarriages.pl eGGSA BMD Record] with search parameters Groom with viljoen anywhere in the surname with Jan hendrik anywhere in the first name, in all the registers. (accessed 6 May 2021)<br/>Cath M Jac Smit marriage to Jan Hendrik Viljoen on 6 Apr 1840.",
+    "type": "source"
   }
 }
