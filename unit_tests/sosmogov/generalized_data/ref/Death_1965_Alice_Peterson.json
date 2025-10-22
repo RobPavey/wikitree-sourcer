@@ -1,0 +1,43 @@
+{
+  "sourceOfData": "sosmogov",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "Peterson",
+    "firstNames": "Alice"
+  },
+  "eventDate": {
+    "dateString": "April 23, 1965"
+  },
+  "deathDate": {
+    "dateString": "April 23, 1965"
+  },
+  "deathPlace": {
+    "placeString": "Jasper County, Missouri, United States of America"
+  },
+  "ageAtDeath": "80",
+  "spouses": [
+    {
+      "name": {
+        "lastName": "Peterson",
+        "middleName": "E",
+        "firstName": "Wm"
+      }
+    }
+  ],
+  "parents": {
+    "father": {
+      "name": {
+        "lastName": "Appleby",
+        "firstNames": "John"
+      }
+    },
+    "mother": {
+      "name": {
+        "lastName": "Peckett",
+        "firstNames": "Dorothy"
+      }
+    }
+  },
+  "hasValidData": true
+}

@@ -31,12 +31,14 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.sosmogov.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "Death_1965_Alice_Peterson",
+    url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
   },
-  */
+  {
+    caseName: "Death_1974_Alice_Ursula_Peterson",
+    url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
+  },
 ];
 
 async function runTests(testManager) {

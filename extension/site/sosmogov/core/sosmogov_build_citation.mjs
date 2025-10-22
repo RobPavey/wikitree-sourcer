@@ -24,34 +24,79 @@ SOFTWARE.
 
 import { simpleBuildCitationWrapper } from "../../../base/core/citation_builder.mjs";
 
+function cleanText(inputText) {
+  let text = inputText;
+  if (text) {
+    text = text.replace(/\s+/g, " ");
+    text = text.replace(/(\r\n|\n|\r)/gm, "");
+    text = text.trim();
+  }
+  return text;
+}
+
+function cleanEdRecordDataNameFields(edRecordData) {
+  // remove extraneous whitespace from ed/rd name fields
+  let edRecordDataCleaned = edRecordData;
+  if (edRecordData["Spouse"]) {
+    edRecordDataCleaned["Spouse"] = cleanText(edRecordData["Spouse"]);
+  }
+  if (edRecordData["Father"]) {
+    edRecordDataCleaned["Father"] = cleanText(edRecordData["Father"]);
+  }
+  if (edRecordData["Mother"]) {
+    edRecordDataCleaned["Mother"] = cleanText(edRecordData["Mother"]);
+  }
+  return edRecordDataCleaned;
+}
+
 function buildSosmogovUrl(ed, builder) {
-  return ed.url;
+  return ed.recordData["Image"];
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle = "Missouri State Archives"; // default
+  if (ed.url.includes("DeathCertificates")) {
+    builder.sourceTitle = ed.collectionName;
+  }
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  builder.sourceReference = "Missouri State Archives";
+  builder.addSourceReferenceField("Deceased", cleanText(ed.recordData["Deceased"]));
+  builder.addSourceReferenceField("Date of Death", ed.recordData["Date of Death"]);
+  builder.addSourceReferenceField("County", ed.recordData["County"]);
 }
 
 function buildRecordLink(ed, gd, builder) {
   var sosmogovUrl = buildSosmogovUrl(ed, builder);
-
-  let recordLink = "[" + sosmogovUrl + " Missouri State Archives Record]";
+  let recordLink = "[" + sosmogovUrl + " MO Death Certificate Image]";
   builder.recordLinkOrTemplate = recordLink;
+}
+
+function buildDataString(ed, gd, builder) {
+  const fieldsToExclude = ["Deceased", "Date of Death", "County", "Image"];
+  builder.addListDataStringFromRecordData(cleanEdRecordDataNameFields(ed.recordData), fieldsToExclude);
 }
 
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  buildDataString(ed, gd, builder);
+}
+
+function getRefTitle(ed, gd) {
+  // this is also referred to as label
+  if (ed.recordType) {
+    const refTitle = ed.recordType;
+    return refTitle;
+  } else {
+    return undefined;
+  }
 }
 
 function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
+  return simpleBuildCitationWrapper(input, buildCoreCitation, getRefTitle);
 }
 
 export { buildCitation };

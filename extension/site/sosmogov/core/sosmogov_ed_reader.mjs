@@ -23,11 +23,39 @@ SOFTWARE.
 */
 
 import { RT } from "../../../base/core/record_type.mjs";
+import { NameObj } from "../../../base/core/generalize_data_utils.mjs";
 import { ExtractedDataReader } from "../../../base/core/extracted_data_reader.mjs";
 
 class SosmogovEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
+    if (ed.collectionName && ed.collectionName.includes("Death")) {
+      this.recordType = RT.DeathRegistration;
+      this.isDeath = true;
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Helper functions
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  makeNameObjFromFirstNamesAndLastName(firstNames, lastName) {
+    if (firstNames || lastName) {
+      let nameObj = new NameObj();
+      nameObj.setLastName(lastName);
+      nameObj.setFirstNames(firstNames);
+      return nameObj;
+    }
+  }
+
+  makeNameObjFromFirstNameMiddleNameAndLastName(firstName, middleName, lastName) {
+    if (firstName || middleName || lastName) {
+      let nameObj = new NameObj();
+      nameObj.setLastName(lastName);
+      nameObj.setMiddleName(middleName);
+      nameObj.setFirstName(firstName);
+      return nameObj;
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,6 +67,10 @@ class SosmogovEdReader extends ExtractedDataReader {
       return false; //the extract failed, GeneralizedData is not even normally called in this case
     }
 
+    if (!this.ed.recordData) {
+      return false;
+    }
+
     return true;
   }
 
@@ -46,8 +78,41 @@ class SosmogovEdReader extends ExtractedDataReader {
     return "record";
   }
 
-  getNameObj() {
-    return undefined;
+  // getNameObj() {
+  getNameObj(inputRole) {
+    let role = "";
+    if (!inputRole) {
+      role = "Deceased";
+    } else {
+      role = inputRole;
+    }
+    //  ** chgd "Deceased" to role **
+    let nameParts = [];
+    if (this.ed.recordData[role]) {
+      /*
+      console.log('this.ed.recordData['+role+'] = ' + this.ed.recordData[role]);
+      console.log('this.ed.recordData['+role+'].indexOf("  ") = ' + this.ed.recordData[role].indexOf("  "));
+      console.log('this.ed.recordData['+role+'].split(" ") = ' + this.ed.recordData[role].split(" "));
+      console.log('this.ed.recordData['+role+'].split(" ").length = ' + this.ed.recordData[role].split(" ").length);
+      */
+      if (this.ed.recordData[role].indexOf("  ") >= 0) {
+        // if 2 consecutive spaces exist, that means there is no middle name, and it's a delimiter for the first and last name strings
+        nameParts = this.ed.recordData[role].split("  ");
+        // console.log('nameParts = ' + nameParts);
+        return this.makeNameObjFromFirstNamesAndLastName(nameParts[0], nameParts[1]);
+      } else if (this.ed.recordData[role].split(" ").length == 3) {
+        // if exactly 3 parts are separated by single spaces, then the parts are first, middle, and last names
+        nameParts = this.ed.recordData[role].split(" ");
+        // console.log('nameParts = ' + nameParts);
+        return this.makeNameObjFromFirstNameMiddleNameAndLastName(nameParts[0], nameParts[1], nameParts[2]);
+      } else {
+        // otherwise, just set full name
+        // console.log('set full name');
+        return this.makeNameObjFromFullName(this.ed.recordData[role]);
+      }
+    } else {
+      return undefined;
+    }
   }
 
   getGender() {
@@ -55,7 +120,11 @@ class SosmogovEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    return undefined;
+    if (this.ed.recordData["Date of Death"]) {
+      return this.makeDateObjFromDateString(this.ed.recordData["Date of Death"]);
+    } else {
+      return undefined;
+    }
   }
 
   getEventPlaceObj() {
@@ -83,11 +152,24 @@ class SosmogovEdReader extends ExtractedDataReader {
   }
 
   getDeathDateObj() {
-    return undefined;
+    if (this.ed.recordData["Date of Death"]) {
+      return this.makeDateObjFromDateString(this.ed.recordData["Date of Death"]);
+    } else {
+      return undefined;
+    }
   }
 
   getDeathPlaceObj() {
-    return undefined;
+    if (this.ed.recordData["County"]) {
+      let placeString = this.ed.recordData["County"];
+      if (placeString != "St. Louis City") {
+        placeString += " County";
+      }
+      placeString += ", Missouri, United States of America";
+      return this.makePlaceObjFromFullPlaceName(placeString);
+    } else {
+      return undefined;
+    }
   }
 
   getAgeAtEvent() {
@@ -95,7 +177,11 @@ class SosmogovEdReader extends ExtractedDataReader {
   }
 
   getAgeAtDeath() {
-    return "";
+    if (this.ed.recordData["Age"]) {
+      return this.ed.recordData["Age"];
+    } else {
+      return "";
+    }
   }
 
   getRegistrationDistrict() {
@@ -115,11 +201,36 @@ class SosmogovEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
-    return undefined;
+    let spouseNameObj = this.getNameObj("Spouse");
+    if (spouseNameObj) {
+      let spouseObj = this.makeSpouseObj(spouseNameObj);
+      if (spouseObj) {
+        return [spouseObj];
+      } else {
+        return undefined;
+      }
+    } else {
+      return undefined;
+    }
   }
 
   getParents() {
-    return undefined;
+    let parents = {};
+    let fatherNameObj = this.getNameObj("Father");
+    if (fatherNameObj) {
+      parents.father = {};
+      parents.father.name = fatherNameObj;
+    }
+    let motherNameObj = this.getNameObj("Mother");
+    if (motherNameObj) {
+      parents.mother = {};
+      parents.mother.name = motherNameObj;
+    }
+    if (fatherNameObj || motherNameObj) {
+      return parents;
+    } else {
+      return undefined;
+    }
   }
 
   getHousehold() {
