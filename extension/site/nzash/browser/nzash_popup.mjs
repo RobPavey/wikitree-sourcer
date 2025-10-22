@@ -30,8 +30,9 @@ import { buildCitation } from "../core/nzash_build_citation.mjs";
 async function setupNzashPopupMenu(extractedData) {
   let input = {
     extractedData: extractedData,
-    extractFailedMessage: "It looks like a New Zealand BDM page but not a record page.",
-    generalizeFailedMessage: "It looks like a New Zealand BDM page but does not contain the required data.",
+    extractFailedMessage: "It looks like a New Zealand Ancestor Search Helper page but not an Intention to Marry page.",
+    generalizeFailedMessage:
+      "It looks like a New Zealand Ancestor Search Helper page but does not contain the required data.",
     generalizeDataFunction: generalizeData,
     buildCitationFunction: buildCitation,
     siteNameToExcludeFromSearch: "nzash",

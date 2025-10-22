@@ -91,12 +91,14 @@ class NzashEdReader extends ExtractedDataReader {
 
     if (this.recordType == RT.Marriage) {
       let partiesString = this.ed.recordData["Names and Surnames of Parties"];
-      let parties = splitTwoLineValue(partiesString);
-      if (parties.length == 2) {
-        if (this.isPrimaryTheSecond()) {
-          fullName = parties[1];
-        } else {
-          fullName = parties[0];
+      if (partiesString) {
+        let parties = splitTwoLineValue(partiesString);
+        if (parties.length == 2) {
+          if (this.isPrimaryTheSecond()) {
+            fullName = parties[1];
+          } else {
+            fullName = parties[0];
+          }
         }
       }
     } else {
@@ -182,36 +184,18 @@ class NzashEdReader extends ExtractedDataReader {
   }
 
   getLastNameAtBirth() {
-    if (this.recordType == RT.BirthRegistration) {
-      let familyName = this.ed.recordData["Family Name"];
-      return familyName;
-    }
     return "";
   }
 
   getLastNameAtDeath() {
-    if (this.recordType == RT.DeathRegistration) {
-      let familyName = this.ed.recordData["Family Name"];
-      return familyName;
-    }
     return "";
   }
 
   getBirthDateObj() {
-    if (this.recordType == RT.DeathRegistration) {
-      let dobAge = this.ed.recordData["Date of Birth/Age at Death"];
-      if (/^\d+ \w+ \d\d\d\d$/.test(dobAge)) {
-        // it is a date of birth
-        return this.makeDateObjFromDateString(dobAge);
-      }
-    }
     return undefined;
   }
 
   getBirthPlaceObj() {
-    if (this.recordType == RT.BirthRegistration) {
-      return this.makePlaceObjFromCountryName("New Zealand");
-    }
     return undefined;
   }
 
@@ -220,54 +204,72 @@ class NzashEdReader extends ExtractedDataReader {
   }
 
   getDeathPlaceObj() {
-    if (this.recordType == RT.DeathRegistration) {
-      return this.makePlaceObjFromCountryName("New Zealand");
-    }
-
     return undefined;
   }
 
   getAgeAtEvent() {
-    if (this.recordType == RT.DeathRegistration) {
-      let dobAge = this.ed.recordData["Date of Birth/Age at Death"];
-      if (!/^\d+ \w+ \d\d\d\d$/.test(dobAge)) {
-        // it is an age
-        return dobAge;
+    let age = "";
+    if (this.recordType == RT.Marriage) {
+      let agesString = this.ed.recordData["Age"];
+      if (agesString) {
+        let ages = splitTwoLineValue(agesString);
+        if (ages.length == 2) {
+          if (this.isPrimaryTheSecond()) {
+            age = ages[1];
+          } else {
+            age = ages[0];
+          }
+        }
       }
     }
 
-    return "";
+    return age;
   }
 
   getAgeAtDeath() {
-    if (this.recordType == RT.DeathRegistration) {
-      let dobAge = this.ed.recordData["Date of Birth/Age at Death"];
-      if (!/^\d+ \w+ \d\d\d\d$/.test(dobAge)) {
-        // it is an age
-        return dobAge;
-      }
-    }
-
     return "";
   }
 
   getSpouses() {
-    if (this.recordType == RT.MarriageRegistration) {
-      let spouseGivenNames = this.ed.recordData["Groom's GivenName(s)"];
-      let spouseFamilyName = this.ed.recordData["Groom's Family Name"];
-      if (this.isPrimaryTheSecond()) {
-        spouseGivenNames = this.ed.recordData["Bride's GivenName(s)"];
-        spouseFamilyName = this.ed.recordData["Bride's Family Name"];
-      }
-      let spouseNameObj = this.makeNameObjFromForenamesAndLastName(spouseGivenNames, spouseFamilyName);
-      if (spouseNameObj) {
-        let spouse = { name: spouseNameObj };
-        spouse.personGender = "male";
-        let marriageDateObj = this.getEventDateObj();
-        if (marriageDateObj) {
-          spouse.marriageDate = marriageDateObj;
+    if (this.recordType == RT.Marriage) {
+      let partiesString = this.ed.recordData["Names and Surnames of Parties"];
+      if (partiesString) {
+        let parties = splitTwoLineValue(partiesString);
+        if (parties.length == 2) {
+          let spouseName = parties[1];
+          let spouseGender = "female";
+          if (this.isPrimaryTheSecond()) {
+            spouseName = parties[0];
+            spouseGender = "male";
+          }
+
+          let spouseAge = "";
+          let agesString = this.ed.recordData["Age"];
+          if (agesString) {
+            let ages = splitTwoLineValue(agesString);
+            if (ages.length == 2) {
+              if (this.isPrimaryTheSecond()) {
+                spouseAge = ages[0];
+              } else {
+                spouseAge = ages[1];
+              }
+            }
+          }
+
+          let spouseNameObj = this.makeNameObjFromFullName(spouseName);
+          if (spouseNameObj) {
+            let spouse = { name: spouseNameObj };
+            spouse.personGender = spouseGender;
+            let marriageDateObj = this.getEventDateObj();
+            if (marriageDateObj) {
+              spouse.marriageDate = marriageDateObj;
+            }
+            if (spouseAge) {
+              spouse.age = spouseAge;
+            }
+            return [spouse];
+          }
         }
-        return [spouse];
       }
     }
 
@@ -275,39 +277,9 @@ class NzashEdReader extends ExtractedDataReader {
   }
 
   getParents() {
-    if (this.recordType == RT.BirthRegistration) {
-      let familyName = this.ed.recordData["Family Name"];
-      let motherGivenNames = this.ed.recordData["Mother's GivenName(s)"];
-      let fatherGivenNames = this.ed.recordData["Father's GivenName(s)"];
-      if (motherGivenNames == "NR") {
-        motherGivenNames = "";
-      }
-      if (fatherGivenNames == "NR") {
-        fatherGivenNames = "";
-      }
-      let fatherNameObj = undefined;
-      let motherNameObj = undefined;
-
-      if (fatherGivenNames) {
-        fatherNameObj = this.makeNameObjFromForenamesAndLastName(fatherGivenNames, familyName);
-      }
-
-      if (motherGivenNames) {
-        motherNameObj = this.makeNameObjFromForenamesAndLastName(motherGivenNames, familyName);
-      }
-
-      if (fatherNameObj || motherNameObj) {
-        let parents = {};
-        if (fatherNameObj) {
-          parents.father = { name: fatherNameObj };
-        }
-        if (motherNameObj) {
-          parents.mother = { name: motherNameObj };
-        }
-        return parents;
-      }
-    }
-
+    // For intention to marry a parent name is sometimes in the consent field
+    // Only if one of the parties us under 21
+    // It could be hard to figure out whose parent it is
     return undefined;
   }
 
@@ -334,52 +306,6 @@ class NzashEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   // Functions to support build citation
   ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  getCitationName() {
-    let nameObj = this.getNameObj();
-    if (nameObj) {
-      let name = nameObj.inferFullName();
-      if (name) {
-        let spouses = this.getSpouses();
-        if (spouses && spouses.length == 1 && spouses[0].name) {
-          let spouseName = spouses[0].name.inferFullName();
-          if (spouseName) {
-            name = name + " and " + spouseName;
-          }
-        }
-        return name;
-      }
-    }
-
-    return "";
-  }
-
-  getCitationMotherGivenNames() {
-    let motherGivenNames = this.ed.recordData["Mother's GivenName(s)"];
-    if (motherGivenNames == "NR") {
-      motherGivenNames = "";
-    }
-    return motherGivenNames;
-  }
-
-  getCitationFatherGivenNames() {
-    let fatherGivenNames = this.ed.recordData["Father's GivenName(s)"];
-    if (fatherGivenNames == "NR") {
-      fatherGivenNames = "";
-    }
-    return fatherGivenNames;
-  }
-
-  getCitationAgeAtDeath() {
-    return this.getAgeAtDeath();
-  }
-
-  getCitationDateOfBirth() {
-    let birthDateObj = this.getBirthDateObj();
-    if (birthDateObj) {
-      return birthDateObj.getDateString();
-    }
-  }
 }
 
 export { NzashEdReader };

@@ -10,5 +10,17 @@
   "std_source": {
     "citation": "* '''Baptism''': \"eGGSA Baptism Registers, Engela Elisabeth Christina Smit\"<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Swartland (Malmesbury), Baptism register, 1783-1809, page 170. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G5 3/3. Transcribed by Lizette Svoboda, from photographs of Cape Archives VC 667<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smit anywhere in the surname with Engela Elisabeth Christina anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Engela Elisabeth Christina Smit baptism on 5 Apr 1801 (born dn 20 Febr:), daughter of Maarten Johs Smit & Adriana Beatrix Smit.",
     "type": "source"
+  },
+  "title_in_italics_inline": {
+    "citation": "<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Engela Elisabeth Christina Smit''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Swartland (Malmesbury), Baptism register, 1783-1809, page 170. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G5 3/3. Transcribed by Lizette Svoboda, from photographs of Cape Archives VC 667<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smit anywhere in the surname with Engela Elisabeth Christina anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nEngela Elisabeth Christina Smit baptism on 5 Apr 1801 (born dn 20 Febr:), daughter of Maarten Johs Smit & Adriana Beatrix Smit.\n</ref>",
+    "type": "inline"
+  },
+  "title_in_italics_narrative": {
+    "citation": "Engela, daughter of Maarten Johs Smit & Adriana Beatrix Smit, was born in dn 20 Febr: and baptised on 5 April 1801.<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Engela Elisabeth Christina Smit''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Swartland (Malmesbury), Baptism register, 1783-1809, page 170. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G5 3/3. Transcribed by Lizette Svoboda, from photographs of Cape Archives VC 667<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smit anywhere in the surname with Engela Elisabeth Christina anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>\nEngela Elisabeth Christina Smit baptism on 5 Apr 1801 (born dn 20 Febr:), daughter of Maarten Johs Smit & Adriana Beatrix Smit.\n</ref>",
+    "type": "narrative"
+  },
+  "title_in_italics_source": {
+    "citation": "* '''Baptism''': ''eGGSA Baptism Registers, Engela Elisabeth Christina Smit''<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Swartland (Malmesbury), Baptism register, 1783-1809, page 170. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G5 3/3. Transcribed by Lizette Svoboda, from photographs of Cape Archives VC 667<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smit anywhere in the surname with Engela Elisabeth Christina anywhere in the first name in all the registers. (accessed 6 May 2021)<br/>Engela Elisabeth Christina Smit baptism on 5 Apr 1801 (born dn 20 Febr:), daughter of Maarten Johs Smit & Adriana Beatrix Smit.",
+    "type": "source"
   }
 }
