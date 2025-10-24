@@ -339,6 +339,16 @@
     },
     {
       "matches": [
+        "*://*.howison.co.nz/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/nzash/browser/nzash_content.js"
+      ]
+    },
+    {
+      "matches": [
         "*://*.irishgenealogy.ie/*"
       ],
       "run_at": "document_end",
@@ -633,6 +643,14 @@
       ],
       "matches": [
         "*://*.bdm.nsw.gov.au/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/nzash/core/nzash_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.howison.co.nz/*"
       ]
     },
     {

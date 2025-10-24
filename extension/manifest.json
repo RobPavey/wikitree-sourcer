@@ -150,16 +150,6 @@
     },
     {
       "matches": [
-        "*://*.howison.co.nz/*"
-      ],
-      "run_at": "document_idle",
-      "js": [
-        "base/browser/content/content_common.js",
-        "site/nzash/browser/nzash_content.js"
-      ]
-    },
-    {
-      "matches": [
         "*://*.billiongraves.com/*"
       ],
       "run_at": "document_idle",
@@ -355,6 +345,16 @@
       "js": [
         "base/browser/content/content_common.js",
         "site/hathi/browser/hathi_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.howison.co.nz/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/nzash/browser/nzash_content.js"
       ]
     },
     {
