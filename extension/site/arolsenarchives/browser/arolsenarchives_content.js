@@ -103,4 +103,4 @@ function insertButtonHandler() {
 siteContentInit(`arolsenarchives`, `site/arolsenarchives/core/arolsenarchives_extract_data.mjs`);
 setTimeout(() => {
   insertButtonHandler();
-}, 1000);
+}, 500);
