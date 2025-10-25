@@ -22,57 +22,30 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+import { extractData } from "../../extension/site/mdz/core/mdz_extract_data.mjs";
+import { generalizeData } from "../../extension/site/mdz/core/mdz_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/mdz/core/mdz_build_citation.mjs";
 
-// The order should not matter since user facing lists are sorted
+import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "bg",
-  "cwgc",
-  "eggsabdm",
-  "eggsagrvs",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nsvr",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "mdz",
+const regressionData = [
+  /*
+  {
+    caseName: "b_1902_calvert_florence",
+    url: "https://www.mdz.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+  },
+  */
 ];
 
-export { siteNames };
+async function runTests(testManager) {
+  await runExtractDataTests("mdz", extractData, regressionData, testManager);
+
+  await runGeneralizeDataTests("mdz", generalizeData, regressionData, testManager);
+
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("mdz", functions, regressionData, testManager);
+}
+
+export { runTests };

@@ -207,6 +207,11 @@
       "js": ["base/browser/content/content_common.js", "site/matricula/browser/matricula_content.js"]
     },
     {
+      "matches": ["*://www.digitale-sammlungen.de/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/mdz/browser/mdz_content.js"]
+    },
+    {
       "matches": ["*://*.myheritage.com/*"],
       "run_at": "document_idle",
       "js": ["base/browser/content/content_common.js", "site/mh/browser/mh_content.js"]
@@ -457,6 +462,10 @@
     {
       "resources": ["site/matricula/core/matricula_extract_data.mjs"],
       "matches": ["*://data.matricula-online.eu/*"]
+    },
+    {
+      "resources": ["site/mdz/core/mdz_extract_data.mjs"],
+      "matches": ["*://www.digitale-sammlungen.de/*"]
     },
     {
       "resources": ["site/mh/core/mh_extract_data.mjs"],
