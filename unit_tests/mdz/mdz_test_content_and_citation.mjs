@@ -31,12 +31,14 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.mdz.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
+    caseName: "bsb10716142_1",
+    url: "https://www.digitale-sammlungen.de/de/view/bsb10716142?page=,1",
   },
-  */
+  {
+    caseName: "bsb10716142_20",
+    url: "https://www.digitale-sammlungen.de/de/view/bsb10716142?page=20,21",
+  },
 ];
 
 async function runTests(testManager) {
