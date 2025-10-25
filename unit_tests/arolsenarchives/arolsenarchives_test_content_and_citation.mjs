@@ -31,12 +31,10 @@ import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.arolsenarchives.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
-  },
-  */
+    caseName: "71022005",
+    url: "https://collections.arolsen-archives.org/de/document/71022005",
+  }
 ];
 
 async function runTests(testManager) {
