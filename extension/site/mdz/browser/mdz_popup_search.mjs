@@ -28,8 +28,8 @@ import { doSearch, registerSearchMenuItemFunction, shouldShowSiteSearch } from "
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const mdzStartYear = 1800;
-const mdzEndYear = 2000;
+const mdzStartYear = 1000;
+const mdzEndYear = 2050;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {

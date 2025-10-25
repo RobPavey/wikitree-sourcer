@@ -29,11 +29,22 @@ function buildSearchUrl(buildUrlInput) {
 
   var builder = new MdzUriBuilder();
 
-  // call methods on builder here
+  let text = "";
+  if (gd.name && gd.name.forenames) {
+    text += " " + gd.name.forenames;
+  }
+  if (gd.name && gd.name.firstNames) {
+    text += " " + gd.name.firstNames;
+  }
+  if (gd.name && gd.name.lastName) {
+    text += " " + gd.name.lastName;
+  }
+
+  if (text) {
+    builder.addSearchTerm("query=" + text.substring(1));
+  }
 
   const url = builder.getUri();
-
-  //console.log("URL is " + url);
 
   var result = {
     url: url,

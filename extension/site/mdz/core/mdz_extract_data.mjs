@@ -30,6 +30,10 @@ function extractData(document, url) {
   }
   result.success = false;
 
+  if (!url.match("/viewer/")) {
+    return result;
+  }
+
   const title = document.querySelector('h2[class="MuiTypography-root mirador32 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap"]');
   result.title = title ? title.textContent.trim() : "";
 

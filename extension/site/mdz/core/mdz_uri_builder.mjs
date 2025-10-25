@@ -26,7 +26,7 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class MdzUriBuilder {
   constructor() {
-    this.uri = "https://www.mdz.org.uk/cgi/search.pl";
+    this.uri = "https://www.digitale-sammlungen.de/de/search";
     this.searchTermAdded = false;
   }
 
@@ -55,46 +55,6 @@ class MdzUriBuilder {
     } else {
       this.uri = this.uri.concat("&", parameter, "=", encodedValue);
     }
-  }
-
-  addType(string) {
-    this.addSearchParameter("type", string);
-  }
-
-  addSurname(string) {
-    this.addSearchParameter("surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addGivenNames(string) {
-    this.addSearchParameter("given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherSurname(string) {
-    this.addSearchParameter("s_surname", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addOtherGivenNames(string) {
-    this.addSearchParameter("s_given", StringUtils.removeExtendedAsciiCharacters(string));
-  }
-
-  addStartYear(string) {
-    this.addSearchParameter("start", string);
-  }
-
-  addEndYear(string) {
-    this.addSearchParameter("end", string);
-  }
-
-  addAgeAtDeath(string) {
-    this.addSearchParameter("aad", string);
-  }
-
-  addVolume(string) {
-    this.addSearchParameter("vol", string);
-  }
-
-  addPage(string) {
-    this.addSearchParameter("pgno", string);
   }
 
   getUri() {
