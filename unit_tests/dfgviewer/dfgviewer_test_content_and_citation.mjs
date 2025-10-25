@@ -254,6 +254,11 @@ const regressionData = [
     url: "https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934",
     metadata_url: "https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934",
   },
+  {
+    caseName: "erzbistum_muenchen_Abens-Mariae Geburt",
+    url: "https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fdigitales-archiv.erzbistum-muenchen.de%2Factaproweb%2Fmets%3Fid%3DRep_7eba57ab-0512-4667-9c13-faf2efd08133_mets_actapro.xml&tx_dlf%5Bpage%5D=11&cHash=c023852b77a6571263faaa7b98c7e609",
+    metadata_url: "https://digitales-archiv.erzbistum-muenchen.de/actaproweb/mets?id=Rep_7eba57ab-0512-4667-9c13-faf2efd08133_mets_actapro.xml",
+  }
 ];
 
 async function runTests(testManager) {
