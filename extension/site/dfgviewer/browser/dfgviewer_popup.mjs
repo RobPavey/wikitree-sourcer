@@ -187,9 +187,10 @@ async function parseArchiveNrwMetadata(extractData) {
   }
 
   if (extractData.metadata != null) {
+    const base_url = getAllTexts(extractData.metadata, "//dv:links/dv:reference")[0];
+
     if (base_url.match("www.archive.nrw.de/archivsuche")) {
       await parseArchiveNrwApiMetadata(extractData, base_url);
-      extractData.catalogue_entry_url = base_url;
     }
   }
 }
