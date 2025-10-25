@@ -29,17 +29,22 @@ function buildMdzUrl(ed, builder) {
 }
 
 function buildSourceTitle(ed, gd, builder) {
-  builder.sourceTitle += "Put Source Title here";
+  builder.sourceTitle += ed.title;
 }
 
 function buildSourceReference(ed, gd, builder) {
-  builder.sourceReference = "Put Source Reference here";
+  if (ed.page_number) {
+    builder.sourceReference = "Page " + ed.page_number;
+  }
+  else if (ed.image_number) {
+    builder.sourceReference = "Image " + ed.image_number;
+  }
 }
 
 function buildRecordLink(ed, gd, builder) {
   var mdzUrl = buildMdzUrl(ed, builder);
 
-  let recordLink = "[" + mdzUrl + " Münchener Digitalisierungszentrum Record]";
+  let recordLink = "[" + mdzUrl + " MDZ Image]";
   builder.recordLinkOrTemplate = recordLink;
 }
 

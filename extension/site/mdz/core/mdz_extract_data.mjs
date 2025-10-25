@@ -30,22 +30,20 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  let title = document.querySelector('h2[class="MuiTypography-root mirador32 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap"]');
+  const title = document.querySelector('h2[class="MuiTypography-root mirador32 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap"]');
   result.title = title ? title.textContent.trim() : "";
 
-  let page_number = document.querySelector('div[class="mirador107"]');
+  const page_number = document.querySelector('div[class="mirador107"]');
   if (page_number != null) {
     result.page_number = page_number.textContent.trim();
     if (result.page_number.startsWith("Seite: ")) {
       result.page_number = result.page_number.substring("Seite: ".length).trim();
     }
   }
-  if (!result.page_number) {
-    // page_number = document.querySelector('label[class="mirador103 mirador-canvas-position"]');
-    let input = document.querySelector('input[class="mirador108 mirador109"]');
-    if (input != null) {
-      result.page_number = input.value.trim();
-    }
+
+  const image_input = document.querySelector('input[class="mirador108 mirador109"]');
+  if (image_input != null) {
+    result.image_number = image_input.value.trim();
   }
 
   /*
