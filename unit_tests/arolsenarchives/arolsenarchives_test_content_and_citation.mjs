@@ -70,6 +70,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     let result = undefined;
 
     let pageFile = testData.pageFile;
+    let metadataFile = testData.metadataFile;
     let fetchType = testData.fetchType;
     if (!fetchType) {
       fetchType = "record";
@@ -87,6 +88,10 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       }
     }
 
+    if (!metadataFile) {
+      metadataFile = "./unit_tests/" + siteName + "/saved_metadata/" + testData.caseName + "_person.json";
+    }
+
     let fetchObjPath = testData.fetchObjPath;
     if (!fetchObjPath) {
       let testFetchObjPath = "./unit_tests/" + siteName + "/saved_fetch_objects/" + testData.caseName + ".json";
@@ -96,6 +101,15 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     }
 
     fs.existsSync();
+
+    let metadata = undefined;
+    try {
+      metadata = JSON.parse(fs.readFileSync(metadataFile, "utf8"));
+    } catch (e) {
+      console.log("Error:", e.stack);
+      logger.logError(testData, "Failed to read input file");
+      continue;
+    }
 
     if (fetchObjPath && pageFile) {
       let dom = undefined;
@@ -123,6 +137,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
       try {
         result = extractDataFunction(doc, testData.url, dataObjects, fetchType, "", testManager.options);
+        result.person_data_list = metadata["d"];
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -154,6 +169,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
       try {
         result = extractDataFunction(doc, testData.url);
+        result.person_data_list = metadata["d"];
         releaseJsdomMemory();
       } catch (e) {
         console.log("Error:", e.stack);
@@ -177,6 +193,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
       try {
         result = extractDataFunction(undefined, testData.url, dataObjects, fetchType, "", testManager.options);
+        result.person_data_list = metadata["d"];
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -199,6 +216,13 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     // For example the clickedRowData in vicbdm
     if (testData.extraExtractedDataFields) {
       result = { ...result, ...testData.extraExtractedDataFields };
+    }
+
+    if (testData.index) {
+      result.person_data = result.person_data_list[testData.index];
+    }
+    else if (testData.person_data_list && testData.person_data_list.length == 1) {
+      result.person_data = result.person_data_list[0];
     }
 
     // write out result file.
@@ -227,6 +251,7 @@ const regressionData = [
   {
     caseName: "71022005",
     url: "https://collections.arolsen-archives.org/de/document/71022005",
+    index: 2,
   }
 ];
 
