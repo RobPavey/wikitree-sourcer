@@ -1,0 +1,31 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Smith",
+    "forenames": "Susanna Juliana Dorothea"
+  },
+  "eventDate": {
+    "yearString": "1968"
+  },
+  "eventPlace": {
+    "placeString": "Port Elizabeth / Gqeberha, Eastern Cape, South Africa"
+  },
+  "lastNameAtBirth": "Keyter",
+  "lastNameAtDeath": "Smith",
+  "birthDate": {
+    "yearString": "1897"
+  },
+  "deathDate": {
+    "yearString": "1968"
+  },
+  "ageAtEvent": 71,
+  "ageAtDeath": 71,
+  "primaryPersonOptions": [
+    "Petrus Ignatius Keyter",
+    "Susanna Juliana Theodora Keyter",
+    "Susanna Juliana Dorothea Smith"
+  ],
+  "hasValidData": true
+}

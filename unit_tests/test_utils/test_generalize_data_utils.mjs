@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 import fs from "fs";
-import { writeTestOutputFile, readInputFile } from "../test_utils/ref_file_utils.mjs";
+import { writeTestOutputFile, readInputFile, removeStaleOutputFiles } from "../test_utils/ref_file_utils.mjs";
 import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
 
@@ -33,7 +33,13 @@ function testEnabled(parameters, testName) {
 
 // The regressionData passed in must be an array of objects.
 // Each object having the keys: "testName", "extractedData" and "generalizedData"
-async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressionData, testManager) {
+async function runGeneralizeDataTests(
+  siteName,
+  generalizeDataFunction,
+  regressionData,
+  testManager,
+  cleanStaleFiles = true
+) {
   if (!testEnabled(testManager.parameters, "generalize")) {
     return;
   }
@@ -43,6 +49,13 @@ async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressi
   console.log("=== Starting test : " + testName + " ===");
 
   let logger = new LocalErrorLogger(testManager.results, testName);
+  let resultDir = "generalized_data";
+
+  // clear out any stale test or ref files so that old test data doesn't hang around after a test is renamed
+  // or removed. A file is considered stale if there is no longer a test case that generates it.
+  if (cleanStaleFiles) {
+    removeStaleOutputFiles(siteName, resultDir, [regressionData], logger);
+  }
 
   for (var testData of regressionData) {
     if (testManager.parameters.testCaseName != "" && testManager.parameters.testCaseName != testData.caseName) {
@@ -61,8 +74,6 @@ async function runGeneralizeDataTests(siteName, generalizeDataFunction, regressi
     });
 
     testManager.results.totalTestsRun++;
-
-    let resultDir = "generalized_data";
 
     // write out result file.
     if (!writeTestOutputFile(result, siteName, resultDir, testData, logger)) {

@@ -475,16 +475,14 @@ async function setupGroSearchSubMenu(data, backFunction, filter) {
   addGroSearchBirthsMenuItem(menu, data, filter);
   addGroSearchDeathsMenuItem(menu, data, filter);
 
-  if (options.search_gro_enableSmartSearch) {
-    if (data.generalizedData.spouses) {
-      for (let spouse of data.generalizedData.spouses) {
-        addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse);
-      }
+  if (data.generalizedData.spouses) {
+    for (let spouse of data.generalizedData.spouses) {
+      addGroSmartSearchChildBirthsMenuItem(menu, data, filter, spouse);
     }
-    addGroSmartSearchChildBirthsMenuItem(menu, data, filter);
-    addGroSmartSearchDeathsMenuItem(menu, data, filter);
-    addItalicMessageMenuItem(menu, "To search for births of siblings, do the search from a parent.");
   }
+  addGroSmartSearchChildBirthsMenuItem(menu, data, filter);
+  addGroSmartSearchDeathsMenuItem(menu, data, filter);
+  addItalicMessageMenuItem(menu, "To search for births of siblings, do the search from a parent.");
 
   endMainMenu(menu);
 }

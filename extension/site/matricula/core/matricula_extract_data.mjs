@@ -22,6 +22,70 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function extractTypeSet(text) {
+  text = text.trim().toLowerCase();
+
+  let typeSet = "";
+
+  if (text.includes("geburt")) {
+    typeSet += ", Birth";
+  }
+  if (text.includes("tauf")) {
+    typeSet += ", Baptism";
+  }
+  if (text.includes("trauu") || text.includes("heirat") || text.includes("eheschließung") || text.includes("ehebuch")) {
+    typeSet += ", Marriage";
+  }
+  if (text.includes("verlobung")) {
+    typeSet += ", Engagement";
+  }
+  if (
+    text.includes("sterbe") ||
+    text.includes("tod") ||
+    text.includes("tot") ||
+    text.includes("begräbnis") ||
+    text.includes("begraben") ||
+    text.includes("beerdigung")
+  ) {
+    typeSet += ", Death";
+  }
+  if (text.includes("kommunion")) {
+    typeSet += ", First Communion";
+  }
+  if (text.includes("firmung")) {
+    typeSet += ", Confirmation (Firmung)";
+  }
+  if (text.includes("notizen") || text.includes("anmerkung")) {
+    typeSet += ", Notes";
+  }
+  if (text.includes("register") || text.includes("index")) {
+    typeSet += ", Name Register";
+  }
+  if (text.includes("umschlag")) {
+    typeSet += ", Envelope";
+  }
+  if (text.includes("familie")) {
+    typeSet += ", Family Book";
+  }
+  if (text.includes("grundbuch")) {
+    typeSet += ", Land Register";
+  }
+  if (text.includes("lose blätter")) {
+    if (typeSet) {
+      typeSet += ", Loose Sheets";
+    } else {
+      typeSet += ", Loose Sheets (Church Records)";
+    }
+  }
+  if (text.includes("einband")) {
+    typeSet += ", Cover";
+  }
+  if (text.includes("sonstiges")) {
+    typeSet += ", Miscellaneous";
+  }
+  return typeSet.substring(2);
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -51,70 +115,97 @@ function extractData(document, url) {
   }
 
   result.book = book;
-  const bookTitle = components[0].split("-")[0].trim().toLowerCase();
+  const bookTitle = components[0].split("-")[0];
 
-  let typeSet = "";
-
-  if (bookTitle.includes("geburt")) {
-    typeSet += ", Birth";
-  }
-  if (bookTitle.includes("tauf")) {
-    typeSet += ", Baptism";
-  }
-  if (bookTitle.includes("trauu") || bookTitle.includes("heirat") || bookTitle.includes("eheschließung")) {
-    typeSet += ", Marriage";
-  }
-  if (bookTitle.includes("verlobung")) {
-    typeSet += ", Engagement";
-  }
+  // Format: <some text>_<page num>
   if (
-    bookTitle.includes("sterbe") ||
-    bookTitle.includes("tod") ||
-    bookTitle.includes("tot") ||
-    bookTitle.includes("begräbnis") ||
-    bookTitle.includes("begraben") ||
-    bookTitle.includes("beeerdigung")
+    url.match("/oesterreich/wien/") ||
+    url.match("/oesterreich/alt-ev/") ||
+    url.match("/oesterreich/burgenland-ab-hb/") ||
+    url.match("/oesterreich/burgenland/") ||
+    url.match("/oesterreich/metropolis/") ||
+    url.match("/oesterreich/st-poelten/") ||
+    url.match("/oesterreich/salzburg/") ||
+    url.match("/oesterreich/steiermark-ev-kirche-AB/") ||
+    url.match("/oesterreich/daw/") ||
+    url.match("/oesterreich/wien-evang-dioezese-AB/") ||
+    url.match("/oesterreich/wien-evang-dioezese-HB/") ||
+    url.match("/oesterreich/wien/") ||
+    url.match("/deutschland/osnabrueck/")
   ) {
-    typeSet += ", Death";
-  }
-  if (bookTitle.includes("kommunion")) {
-    typeSet += ", First Communion";
-  }
-  if (bookTitle.includes("firmung")) {
-    typeSet += ", Confirmation (Firmung)";
-  }
-  if (bookTitle.includes("notizen") || bookTitle.includes("anmerkung")) {
-    typeSet += ", Notes";
-  }
-  if (bookTitle.includes("register") || bookTitle.includes("index")) {
-    typeSet += ", Name Register";
-  }
-  if (bookTitle.includes("umschlag")) {
-    typeSet += ", Envelope";
-  }
-  if (bookTitle.includes("familie")) {
-    typeSet += ", Family Book";
-  }
-  if (bookTitle.includes("grundbuch")) {
-    typeSet += ", Land Register";
-  }
-  if (bookTitle.includes("lose blätter")) {
-    if (typeSet) {
-      typeSet += ", Loose Sheets";
-    } else {
-      typeSet += ", Loose Sheets (Church Records)";
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      const page = text.split("_")[1];
+      result.page = Number(page).toString();
+      result.sectionNumber = Number(text.split("-")[0]).toString();
+      result.typeSet = extractTypeSet(text);
+      if (result.typeSet == "") {
+        result.typeSet = extractTypeSet(bookTitle);
+      }
     }
   }
 
-  if (typeSet) {
-    // Remove the first ', '
-    result.typeSet = typeSet.substring(2);
+  if (url.match("/oesterreich/graz-seckau/")) {
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      const page = text.substring("Seite ".length);
+      result.page = page;
+      result.typeSet = extractTypeSet(bookTitle);
+    }
   }
 
-  const urlSplit = url.split("/");
-  const lastComponent = urlSplit[urlSplit.length - 1];
-  if (lastComponent.substring(0, 4) == "?pg=") {
-    result.page = lastComponent.substring(4).split("&")[0];
+  if (url.match("/oesterreich/vorarlberg/")) {
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      let page = text.substring(text.indexOf("-") + 1).trim();
+      if (page.match("^Seite")) {
+        page = page.substring("Seite".length).trim();
+      }
+      if (page.match("^fol.")) {
+        page = page.substring("fol.".length).trim();
+      }
+      result.page = page;
+      result.typeSet = extractTypeSet(text.split("-")[0]);
+      if (result.typeSet == "") {
+        result.typeSet = extractTypeSet(bookTitle);
+      }
+    }
+  }
+
+  if (url.match("/deutschland/fulda/")) {
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      const page = text.substring(text.lastIndexOf("-") + 1).trim();
+      result.page = Number(page).toString();
+      result.sectionNumber = Number(text.split("-")[0]).toString();
+      result.typeSet = extractTypeSet(text);
+      if (result.typeSet == "") {
+        result.typeSet = extractTypeSet(bookTitle);
+      }
+    }
+  }
+
+  if (url.match("/deutschland/hildesheim/")) {
+    const selectedComponent = document.querySelector(".docview-pagelink.list-group-item.active");
+    if (selectedComponent != null) {
+      const text = selectedComponent.text;
+      const page = text.split("_")[0].trim();
+      result.page = page;
+      result.typeSet = extractTypeSet(bookTitle);
+    }
+  }
+
+  if (result.page == null) {
+    const urlSplit = url.split("/");
+    const lastComponent = urlSplit[urlSplit.length - 1];
+    if (lastComponent.substring(0, 4) == "?pg=") {
+      result.page = lastComponent.substring(4).split("&")[0];
+    }
+    result.typeSet = extractTypeSet(bookTitle);
   }
 
   result.success = true;

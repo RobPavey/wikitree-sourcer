@@ -31,6 +31,9 @@ import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
 
+import { removeStaleOutputFiles } from "../test_utils/ref_file_utils.mjs";
+import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
+
 const regressionData = [
   {
     caseName: "arthur_cowling_marriage_reg_1937",
@@ -775,24 +778,38 @@ const optionVariants = [
   },
 ];
 
+function cleanStaleOutputFiles(testManager) {
+  //
+  let logger = new LocalErrorLogger(testManager.results, "fs_clean");
+  let testCaseSets = [regressionData, imageRegressionData, personRegressionData, bookRegressionData];
+  removeStaleOutputFiles("fs", "extracted_data", testCaseSets, logger);
+  removeStaleOutputFiles("fs", "generalized_data", testCaseSets, logger);
+  removeStaleOutputFiles("fs", "citations", testCaseSets, logger);
+  removeStaleOutputFiles("fs", "household_tables", testCaseSets, logger);
+}
+
 async function runTests(testManager) {
-  await runExtractDataTests("fs", extractDataFromFetch, regressionData, testManager);
-  await runGeneralizeDataTests("fs", generalizeData, regressionData, testManager);
+  // Normally this is done in the common run...Tests functions but because fs has multiple
+  // gets of regressionData that output into the same folders we have to do it here.
+  cleanStaleOutputFiles(testManager);
+
+  await runExtractDataTests("fs", extractDataFromFetch, regressionData, testManager, false);
+  await runGeneralizeDataTests("fs", generalizeData, regressionData, testManager, false);
 
   const functions = { buildCitation: buildCitation, buildTable: buildHouseholdTable };
 
-  await runBuildCitationTests("fs", functions, regressionData, testManager, optionVariants);
+  await runBuildCitationTests("fs", functions, regressionData, testManager, optionVariants, false);
 
-  await runExtractDataTests("fs", extractData, imageRegressionData, testManager);
-  await runGeneralizeDataTests("fs", generalizeData, imageRegressionData, testManager);
-  await runBuildCitationTests("fs", functions, imageRegressionData, testManager, optionVariants);
+  await runExtractDataTests("fs", extractData, imageRegressionData, testManager, false);
+  await runGeneralizeDataTests("fs", generalizeData, imageRegressionData, testManager, false);
+  await runBuildCitationTests("fs", functions, imageRegressionData, testManager, optionVariants, false);
 
-  await runExtractDataTests("fs", extractDataFromFetch, personRegressionData, testManager);
-  await runGeneralizeDataTests("fs", generalizeData, personRegressionData, testManager);
+  await runExtractDataTests("fs", extractDataFromFetch, personRegressionData, testManager, false);
+  await runGeneralizeDataTests("fs", generalizeData, personRegressionData, testManager, false);
 
-  await runExtractDataTests("fs", extractData, bookRegressionData, testManager);
-  await runGeneralizeDataTests("fs", generalizeData, bookRegressionData, testManager);
-  await runBuildCitationTests("fs", functions, bookRegressionData, testManager, optionVariants);
+  await runExtractDataTests("fs", extractData, bookRegressionData, testManager, false);
+  await runGeneralizeDataTests("fs", generalizeData, bookRegressionData, testManager, false);
+  await runBuildCitationTests("fs", functions, bookRegressionData, testManager, optionVariants, false);
 }
 
 export { runTests };

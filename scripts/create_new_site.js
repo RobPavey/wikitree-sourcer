@@ -23,8 +23,150 @@ SOFTWARE.
 */
 
 import fs from "fs";
+import readline from "node:readline/promises";
+
+const siteFiles = [
+  // Extension files
+
+  //   browser
+  {
+    root: "extension/site",
+    mid: "browser",
+    end: "_content.js",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        needsHighlightRow: true,
+        templateFileEnd: "_content_sls_hr.js",
+      },
+      {
+        searchUsingLocalStorage: true,
+        templateFileEnd: "_content_sls.js",
+      },
+      {
+        needsHighlightRow: true,
+        templateFileEnd: "_content_hr.js",
+      },
+    ],
+  },
+  {
+    root: "extension/site",
+    mid: "browser",
+    end: "_popup_search.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        templateFileEnd: "_popup_search_sls.mjs",
+      },
+    ],
+  },
+  { root: "extension/site", mid: "browser", end: "_popup.html" },
+  { root: "extension/site", mid: "browser", end: "_popup.mjs" },
+
+  //   core
+  { root: "extension/site", mid: "core", end: "_build_citation.mjs" },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_build_search_data.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: false,
+        omit: true,
+      },
+    ],
+  },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_build_search_url.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        omit: true,
+      },
+    ],
+  },
+  { root: "extension/site", mid: "core", end: "_ed_reader.mjs" },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_extract_data.mjs",
+    variants: [
+      {
+        needsHighlightRow: true,
+        templateFileEnd: "_extract_data_hr.mjs",
+      },
+    ],
+  },
+  { root: "extension/site", mid: "core", end: "_generalize_data.mjs" },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_options.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        templateFileEnd: "_options_sls.mjs",
+      },
+    ],
+  },
+  { root: "extension/site", mid: "core", end: "_site_data.mjs" },
+  {
+    root: "extension/site",
+    mid: "core",
+    end: "_uri_builder.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        omit: true,
+      },
+    ],
+  },
+
+  // Unit test files
+
+  {
+    root: "unit_tests",
+    mid: "",
+    end: "_test_build_search_data.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: false,
+        omit: true,
+      },
+    ],
+  },
+  {
+    root: "unit_tests",
+    mid: "",
+    end: "_test_build_search_url.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        omit: true,
+      },
+    ],
+  },
+  { root: "unit_tests", mid: "", end: "_test_content_and_citation.mjs" },
+  {
+    root: "unit_tests",
+    mid: "",
+    end: "_test.mjs",
+    variants: [
+      {
+        searchUsingLocalStorage: true,
+        templateFileEnd: "_test_sls.mjs",
+      },
+    ],
+  },
+];
 
 function doesFolderExist(path) {
+  return fs.existsSync(path);
+}
+
+function doesFileExist(path) {
   return fs.existsSync(path);
 }
 
@@ -96,7 +238,41 @@ function checkParameters(parameters) {
     return false;
   }
 
+  const siteUrlMatch = parameters.siteUrlMatch;
+  if (!siteUrlMatch) {
+    console.log("Parameter check failed. siteUrlMatch missing.");
+    return false;
+  }
+
   return true;
+}
+
+function checkForExistingSiteFile(parameters, rootPath, midPath, fileEnd, variants) {
+  let sitePath = rootPath + "/" + parameters.siteName + "/";
+  if (midPath) {
+    sitePath += midPath + "/";
+  }
+  sitePath += parameters.siteName + fileEnd;
+
+  if (doesFileExist(sitePath)) {
+    return true;
+  }
+
+  return false;
+}
+
+function checkForExistingSite(parameters) {
+  // don't check for folders existing since, if they ran the script once
+  // and then reverted all files the folders would exist but be empty
+
+  for (let file of siteFiles) {
+    if (checkForExistingSiteFile(parameters, file.root, file.mid, file.end, file.variants)) {
+      console.log("The site '" + parameters.siteName + "' already exists. Cannot create new site.");
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function checkForRequiredFolders() {
@@ -129,14 +305,42 @@ function createSiteFolders(siteName) {
   return true;
 }
 
-function createSiteFileFromTemplate(parameters, rootPath, midPath, fileEnd) {
+function createSiteFileFromTemplate(parameters, rootPath, midPath, fileEnd, variants) {
+  let variant = undefined;
+  if (variants) {
+    for (let testVariant of variants) {
+      if (testVariant.hasOwnProperty("searchUsingLocalStorage")) {
+        if (testVariant.searchUsingLocalStorage != parameters.searchUsingLocalStorage) {
+          continue;
+        }
+      }
+      if (testVariant.hasOwnProperty("needsHighlightRow")) {
+        if (testVariant.needsHighlightRow != parameters.needsHighlightRow) {
+          continue;
+        }
+      }
+      variant = testVariant;
+      break;
+    }
+  }
+
+  if (variant && variant.omit) {
+    return true;
+  }
+
   let templatePath = "scripts/new_site_template/" + rootPath + "/examplesite/";
   let sitePath = rootPath + "/" + parameters.siteName + "/";
   if (midPath) {
     templatePath += midPath + "/";
     sitePath += midPath + "/";
   }
-  templatePath += "examplesite" + fileEnd;
+
+  let templateFileEnd = fileEnd;
+  if (variant && variant.templateFileEnd) {
+    templateFileEnd = variant.templateFileEnd;
+  }
+
+  templatePath += "examplesite" + templateFileEnd;
   sitePath += parameters.siteName + fileEnd;
 
   // read template file
@@ -160,6 +364,7 @@ function createSiteFileFromTemplate(parameters, rootPath, midPath, fileEnd) {
   let regex = new RegExp(regexString, "g");
   outputText = outputText.replace(regex, parameters.siteName);
 
+  replaceAll("exampleSiteUrlMatchString", parameters.siteUrlMatch);
   replaceAll("examplesite", parameters.siteName);
   replaceAll("Examplesite", siteNameIc);
   replaceAll("ExampleSite", parameters.siteDisplayName);
@@ -173,28 +378,8 @@ function createSiteFileFromTemplate(parameters, rootPath, midPath, fileEnd) {
 }
 
 function createSiteFilesFromTemplates(parameters) {
-  const files = [
-    { root: "extension/site", mid: "browser", end: "_content.js" },
-    { root: "extension/site", mid: "browser", end: "_popup_search.mjs" },
-    { root: "extension/site", mid: "browser", end: "_popup.html" },
-    { root: "extension/site", mid: "browser", end: "_popup.mjs" },
-
-    { root: "extension/site", mid: "core", end: "_build_citation.mjs" },
-    { root: "extension/site", mid: "core", end: "_build_search_url.mjs" },
-    { root: "extension/site", mid: "core", end: "_ed_reader.mjs" },
-    { root: "extension/site", mid: "core", end: "_extract_data.mjs" },
-    { root: "extension/site", mid: "core", end: "_generalize_data.mjs" },
-    { root: "extension/site", mid: "core", end: "_options.mjs" },
-    { root: "extension/site", mid: "core", end: "_site_data.mjs" },
-    { root: "extension/site", mid: "core", end: "_uri_builder.mjs" },
-
-    { root: "unit_tests", mid: "", end: "_test_build_search_url.mjs" },
-    { root: "unit_tests", mid: "", end: "_test_content_and_citation.mjs" },
-    { root: "unit_tests", mid: "", end: "_test.mjs" },
-  ];
-
-  for (let file of files) {
-    if (!createSiteFileFromTemplate(parameters, file.root, file.mid, file.end)) {
+  for (let file of siteFiles) {
+    if (!createSiteFileFromTemplate(parameters, file.root, file.mid, file.end, file.variants)) {
       return false;
     }
   }
@@ -262,6 +447,108 @@ function updateSiteNamesFile(siteName) {
   return true;
 }
 
+function updateManifestFile(siteName, urlMatch, path) {
+  // read file
+  let text = readFile(path);
+  if (!text) {
+    return false;
+  }
+
+  let manifestData = JSON.parse(text);
+
+  // sanity checks
+  let contentScripts = manifestData.content_scripts;
+  let webAccessibleResources = manifestData.web_accessible_resources;
+
+  if (!(contentScripts && Array.isArray(contentScripts))) {
+    return false;
+  }
+
+  if (!(webAccessibleResources && Array.isArray(webAccessibleResources))) {
+    return false;
+  }
+
+  /*
+    Example content script entry
+    {
+      "matches": ["*://www.wiewaswie.nl/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/wiewaswie/browser/wiewaswie_content.js"]
+    },
+  */
+  const urlMatches = [urlMatch];
+  const siteContentPath = "site/" + siteName + "/browser/" + siteName + "_content.js";
+  let contentScriptsEntry = {
+    matches: urlMatches,
+    run_at: "document_idle",
+    js: ["base/browser/content/content_common.js", siteContentPath],
+  };
+
+  let alreadyExists = false;
+  for (let entry of contentScripts) {
+    if (entry.matches == urlMatches) {
+      alreadyExists = true;
+    } else if (entry.js.includes(siteContentPath)) {
+      alreadyExists = true;
+    }
+  }
+  if (!alreadyExists) {
+    contentScripts.push(contentScriptsEntry);
+  }
+
+  /*
+    Example web_accessible_resources section:
+    {
+      "resources": ["site/vicbdm/core/vicbdm_extract_data.mjs"],
+      "matches": ["*://*.bdm.vic.gov.au/*"]
+    },
+  */
+
+  // if the urlMatches string cotains any path after the domain that should be removed in the
+  // match for the web_accessible_resources
+  const urlWithPathRegEx = /^([^\/]+\:\/\/[^\/]+)\/.*\/\*$/;
+  let domainMatch = urlMatch;
+  if (urlWithPathRegEx.test(domainMatch)) {
+    domainMatch = domainMatch.replace(urlWithPathRegEx, "$1/*");
+  }
+  const domainMatches = [domainMatch];
+
+  const siteExtractPath = "site/" + siteName + "/core/" + siteName + "_extract_data.mjs";
+  let warEntry = {
+    resources: [siteExtractPath],
+    matches: domainMatches,
+  };
+
+  alreadyExists = false;
+  for (let entry of webAccessibleResources) {
+    if (entry.resources.includes(siteExtractPath)) {
+      alreadyExists = true;
+    } else if (entry.matches == domainMatches) {
+      alreadyExists = true;
+    }
+  }
+  if (!alreadyExists) {
+    webAccessibleResources.push(warEntry);
+  }
+
+  const newText = JSON.stringify(manifestData, null, 2);
+
+  // write site file
+  if (!writeFile(path, newText)) {
+    return false;
+  }
+
+  return true;
+}
+
+function updateManifestFiles(siteName, urlMatch) {
+  updateManifestFile(siteName, urlMatch, "extension/manifest.json");
+  updateManifestFile(siteName, urlMatch, "browser_variants/firefox/manifest.json");
+  updateManifestFile(siteName, urlMatch, "browser_variants/safari/ios/manifest.json");
+  updateManifestFile(siteName, urlMatch, "browser_variants/safari/macos/manifest.json");
+  return true;
+}
+
 function updateRegisterSiteOptions(siteName) {
   const path = "extension/site/all/core/register_site_options.mjs";
   const lineToAdd = 'import "../../' + siteName + "/core/" + siteName + '_options.mjs";';
@@ -319,7 +606,9 @@ async function createNewSite() {
   let parameters = {
     siteName: "",
     siteDisplayName: "",
-    siteUrl: "",
+    siteUrlMatch: "",
+    searchUsingLocalStorage: false,
+    needsHighlightRow: false,
   };
 
   if (process.argv.length > 2) {
@@ -327,14 +616,10 @@ async function createNewSite() {
     if (process.argv.length > 3) {
       parameters.siteDisplayName = process.argv[3];
       if (process.argv.length > 4) {
-        parameters.siteUrl = process.argv[4];
+        parameters.siteUrlMatch = process.argv[4];
       }
     }
   }
-
-  console.log("Creating new site folders/files.");
-  console.log("  siteName is '" + parameters.siteName + "'");
-  console.log("  siteDisplayName is '" + parameters.siteDisplayName + "'");
 
   // do some sanity checks
   if (!checkParameters(parameters)) {
@@ -345,6 +630,50 @@ async function createNewSite() {
   if (!checkForRequiredFolders()) {
     return;
   }
+
+  if (checkForExistingSite(parameters)) {
+    return;
+  }
+
+  // Create a readline interface
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  // Ask the user about search capabilities of site
+  let slsAnswer = await rl.question("Does this site support search using URL query? [y/n]: ");
+  //console.log("User entered: " + slsAnswer);
+  if (slsAnswer == "n") {
+    parameters.searchUsingLocalStorage = true;
+  }
+
+  // Ask the user about search capabilities of site
+  let hrAnswer = await rl.question(
+    "Does this site lack record pages and require selecting a row to cite from search results? [y/n]: "
+  );
+  //console.log("User entered: " + hrAnswer);
+  if (hrAnswer == "y") {
+    parameters.needsHighlightRow = true;
+  }
+
+  console.log("About to create the new site's folders and files.");
+  console.log("  siteName is '" + parameters.siteName + "'");
+  console.log("  siteDisplayName is '" + parameters.siteDisplayName + "'");
+  console.log("  siteUrlMatch is '" + parameters.siteUrlMatch + "'");
+  console.log("  searchUsingLocalStorage is '" + parameters.searchUsingLocalStorage + "'");
+  console.log("  needsHighlightRow is '" + parameters.needsHighlightRow + "'");
+
+  // Check with the user before continuing
+  let continueAnswer = await rl.question("Continue and create folders and files? [y/n]: ");
+  //console.log("User entered: " + continueAnswer);
+  if (continueAnswer != "y") {
+    rl.close();
+    return;
+  }
+
+  // Close the readline interface after getting the input
+  rl.close();
 
   // Now create all the folders for the new site
   if (!createSiteFolders(parameters.siteName)) {
@@ -361,6 +690,8 @@ async function createNewSite() {
   updateSiteNamesFile(parameters.siteName);
   updateRegisterSiteOptions(parameters.siteName);
   updateRunTest(parameters.siteName);
+
+  updateManifestFiles(parameters.siteName, parameters.siteUrlMatch);
 }
 
 createNewSite();

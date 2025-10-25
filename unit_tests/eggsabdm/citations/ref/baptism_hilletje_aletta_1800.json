@@ -10,5 +10,17 @@
   "std_source": {
     "citation": "* '''Baptism''': \"eGGSA Baptism Registers, Hilletje Aletta Johanna Smit\"<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Swartland (Malmesbury), Baptism register, 1783-1809, page 158. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G5 3/3. Transcribed by Lizette Svoboda, from photographs of Cape Archives VC 667<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smit exact match to the surname with Hilletje Aletta exact match to the first name in all the registers. (accessed 6 May 2021)<br/>Hilletje Aletta Johanna Smit baptism on 30 Mar 1800, daughter of Everhardus Johannis Smit & Maria Brand.",
     "type": "source"
+  },
+  "title_in_italics_inline": {
+    "citation": "<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Hilletje Aletta Johanna Smit''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Swartland (Malmesbury), Baptism register, 1783-1809, page 158. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G5 3/3. Transcribed by Lizette Svoboda, from photographs of Cape Archives VC 667<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smit exact match to the surname with Hilletje Aletta exact match to the first name in all the registers. (accessed 6 May 2021)<br/>\nHilletje Aletta Johanna Smit baptism on 30 Mar 1800, daughter of Everhardus Johannis Smit & Maria Brand.\n</ref>",
+    "type": "inline"
+  },
+  "title_in_italics_narrative": {
+    "citation": "Hilletje, daughter of Everhardus Johannis Smit & Maria Brand, was baptised on 30 March 1800.<ref>\n'''Baptism''':\n''eGGSA Baptism Registers, Hilletje Aletta Johanna Smit''<br/>\nSource: Nederduits Gereformeerde Gemeente (NGK), Swartland (Malmesbury), Baptism register, 1783-1809, page 158. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G5 3/3. Transcribed by Lizette Svoboda, from photographs of Cape Archives VC 667<br/>\n[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smit exact match to the surname with Hilletje Aletta exact match to the first name in all the registers. (accessed 6 May 2021)<br/>\nHilletje Aletta Johanna Smit baptism on 30 Mar 1800, daughter of Everhardus Johannis Smit & Maria Brand.\n</ref>",
+    "type": "narrative"
+  },
+  "title_in_italics_source": {
+    "citation": "* '''Baptism''': ''eGGSA Baptism Registers, Hilletje Aletta Johanna Smit''<br/>Source: Nederduits Gereformeerde Gemeente (NGK), Swartland (Malmesbury), Baptism register, 1783-1809, page 158. Repository: NG Kerkargief, Noordwal-Wes, Stellenbosch, G5 3/3. Transcribed by Lizette Svoboda, from photographs of Cape Archives VC 667<br/>[https://www.eggsa.org/cgi-bin/dosearchBaptisms.pl eGGSA BMD Record] with search parameters Child with smit exact match to the surname with Hilletje Aletta exact match to the first name in all the registers. (accessed 6 May 2021)<br/>Hilletje Aletta Johanna Smit baptism on 30 Mar 1800, daughter of Everhardus Johannis Smit & Maria Brand.",
+    "type": "source"
   }
 }

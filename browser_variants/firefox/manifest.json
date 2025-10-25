@@ -2,9 +2,14 @@
   "name": "WikiTree Sourcer",
   "version": "2.10.8",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
-  "permissions": ["storage", "contextMenus"],
+  "permissions": [
+    "storage",
+    "contextMenus"
+  ],
   "background": {
-    "scripts": ["base/browser/background/background_mv3.mjs"],
+    "scripts": [
+      "base/browser/background/background_mv3.mjs"
+    ],
     "type": "module"
   },
   "action": {
@@ -18,14 +23,24 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.wikitree.com/*"],
+      "matches": [
+        "*://*.wikitree.com/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/wikitree/browser/wikitree_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/wikitree/browser/wikitree_content.js"
+      ]
     },
     {
-      "matches": ["*://*.americanancestors.org/*"],
+      "matches": [
+        "*://*.americanancestors.org/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/ameranc/browser/ameranc_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/ameranc/browser/ameranc_content.js"
+      ]
     },
     {
       "matches": [
@@ -56,62 +71,149 @@
         "*://*.ancestryheritagequest.com/*"
       ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/ancestry/browser/ancestry_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/ancestry/browser/ancestry_content.js"
+      ]
     },
     {
-      "matches": ["*://www.archion.de/*"],
+      "matches": [
+        "*://www.archion.de/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/archion/browser/archion_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/archion/browser/archion_content.js"
+      ]
     },
     {
-      "matches": ["*://archive.org/*"],
+      "matches": [
+        "*://archive.org/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/archive/browser/archive_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/archive/browser/archive_content.js"
+      ]
     },
     {
-      "matches": ["*://*.bac-lac.gc.ca/*"],
+      "matches": [
+        "*://*.bac-lac.gc.ca/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/baclac/browser/baclac_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/baclac/browser/baclac_content.js"
+      ]
     },
     {
-      "matches": ["*://*.bdm.nsw.gov.au/*"],
+      "matches": [
+        "*://archives.bas-rhin.fr/detail-document/ETAT-CIVIL*",
+        "*://archives.bas-rhin.fr/detail-document/REC-POP*",
+        "*://archives.bas-rhin.fr/detail-document/LIGEO*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/nswbdm/browser/nswbdm_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/basrhin/browser/basrhin_content.js"
+      ]
     },
     {
-      "matches": ["*://*.bdmhistoricalrecords.dia.govt.nz/*"],
+      "matches": [
+        "*://*.bdm.nsw.gov.au/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/nzbdm/browser/nzbdm_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/nswbdm/browser/nswbdm_content.js"
+      ]
     },
     {
-      "matches": ["*://*.billiongraves.com/*"],
+      "matches": [
+        "*://*.bdmhistoricalrecords.dia.govt.nz/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/bg/browser/bg_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/nzbdm/browser/nzbdm_content.js"
+      ]
     },
     {
-      "matches": ["*://*.cornwall-opc-database.org/*"],
+      "matches": [
+        "*://*.billiongraves.com/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/bg/browser/bg_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.cornwall-opc-database.org/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/opccorn/browser/opccorn_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/opccorn/browser/opccorn_content.js"
+      ]
     },
     {
-      "matches": ["*://*.cwgc.org/*"],
+      "matches": [
+        "*://*.cwgc.org/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/cwgc/browser/cwgc_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/cwgc/browser/cwgc_content.js"
+      ]
     },
     {
-      "matches": ["*://*.digitalarkivet.no/*"],
+      "matches": [
+        "*://dfg-viewer.de/*",
+        "*://digitales-archiv.erzbistum-muenchen.de/*",
+        "*://www.gda.bayern.de/*",
+        "*://www.arcinsys.niedersachsen.de/*",
+        "*://arcinsys.hessen.de/*",
+        "*://www.landesarchiv-nrw.de/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/noda/browser/noda_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/dfgviewer/browser/dfgviewer_content.js"
+      ]
     },
     {
-      "matches": ["*://*.eggsa.org/bdms/*", "*://www.eggsa.org/cgi-bin/*"],
+      "matches": [
+        "*://*.digitalarkivet.no/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/eggsabdm/browser/eggsabdm_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/noda/browser/noda_content.js"
+      ]
     },
     {
-      "matches": ["*://graves.eggsa.org/*", "*://www.graves.eggsa.org/*"],
+      "matches": [
+        "*://*.eggsa.org/bdms/*",
+        "*://www.eggsa.org/cgi-bin/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/eggsagrvs/browser/eggsagrvs_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/eggsabdm/browser/eggsabdm_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://graves.eggsa.org/*",
+        "*://www.graves.eggsa.org/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/eggsagrvs/browser/eggsagrvs_content.js"
+      ]
     },
     {
       "matches": [
@@ -122,37 +224,70 @@
         "*://www-findmypast-co-uk.nls.idm.oclc.org/*"
       ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/fmp/browser/fmp_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/fmp/browser/fmp_content.js"
+      ]
     },
     {
-      "matches": ["*://www.findagrave.com/*"],
+      "matches": [
+        "*://www.findagrave.com/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/fg/browser/fg_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/fg/browser/fg_content.js"
+      ]
     },
     {
-      "matches": ["*://www.familysearch.org/*"],
+      "matches": [
+        "*://www.familysearch.org/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/fs/browser/fs_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/fs/browser/fs_content.js"
+      ]
     },
     {
-      "matches": ["*://www.freebmd.org.uk/*"],
+      "matches": [
+        "*://www.freebmd.org.uk/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/freebmd/browser/freebmd_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/freebmd/browser/freebmd_content.js"
+      ]
     },
     {
-      "matches": ["*://www.freecen.org.uk/*"],
+      "matches": [
+        "*://www.freecen.org.uk/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/freecen/browser/freecen_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/freecen/browser/freecen_content.js"
+      ]
     },
     {
-      "matches": ["*://www.freereg.org.uk/*"],
+      "matches": [
+        "*://www.freereg.org.uk/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/freereg/browser/freereg_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/freereg/browser/freereg_content.js"
+      ]
     },
     {
-      "matches": ["*://geneteka.genealodzy.pl/*"],
+      "matches": [
+        "*://geneteka.genealodzy.pl/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/geneteka/browser/geneteka_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/geneteka/browser/geneteka_content.js"
+      ]
     },
     {
       "matches": [
@@ -167,43 +302,90 @@
         "*://*.google.mx/books/*"
       ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/gbooks/browser/gbooks_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/gbooks/browser/gbooks_content.js"
+      ]
     },
     {
-      "matches": ["*://books.google.com/books*"],
+      "matches": [
+        "*://books.google.com/books*"
+      ],
       "run_at": "document_idle",
       "all_frames": true,
-      "js": ["site/gbooks/browser/gbooks_content_iframe.js"]
+      "js": [
+        "site/gbooks/browser/gbooks_content_iframe.js"
+      ]
     },
     {
-      "matches": ["*://www.gro.gov.uk/gro/content/certificates/*"],
+      "matches": [
+        "*://www.gro.gov.uk/gro/content/certificates/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/gro/browser/gro_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/gro/browser/gro_content.js"
+      ]
     },
     {
-      "matches": ["*://*.hathitrust.org/*"],
+      "matches": [
+        "*://*.hathitrust.org/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/hathi/browser/hathi_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/hathi/browser/hathi_content.js"
+      ]
     },
     {
-      "matches": ["*://*.irishgenealogy.ie/*"],
+      "matches": [
+        "*://*.howison.co.nz/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/nzash/browser/nzash_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.irishgenealogy.ie/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/irishg/browser/irishg_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/irishg/browser/irishg_content.js"
+      ]
     },
     {
-      "matches": ["*://*.jstor.org/*"],
+      "matches": [
+        "*://*.jstor.org/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/jstor/browser/jstor_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/jstor/browser/jstor_content.js"
+      ]
     },
     {
-      "matches": ["*://librariestas.ent.sirsidynix.net.au/*"],
+      "matches": [
+        "*://librariestas.ent.sirsidynix.net.au/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/taslib/browser/taslib_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/taslib/browser/taslib_content.js"
+      ]
     },
     {
-      "matches": ["*://data.matricula-online.eu/*"],
+      "matches": [
+        "*://data.matricula-online.eu/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/matricula/browser/matricula_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/matricula/browser/matricula_content.js"
+      ]
     },
     {
       "matches": ["*://www.digitale-sammlungen.de/*"],
@@ -211,79 +393,155 @@
       "js": ["base/browser/content/content_common.js", "site/mdz/browser/mdz_content.js"]
     },
     {
-      "matches": ["*://*.myheritage.com/*"],
+      "matches": [
+        "*://*.myheritage.com/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/mh/browser/mh_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/mh/browser/mh_content.js"
+      ]
     },
     {
-      "matches": ["*://*.nationalarchives.ie/*"],
+      "matches": [
+        "*://*.nationalarchives.ie/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/naie/browser/naie_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/naie/browser/naie_content.js"
+      ]
     },
     {
-      "matches": ["*://*.nli.ie/*"],
+      "matches": [
+        "*://*.nli.ie/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/nli/browser/nli_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/nli/browser/nli_content.js"
+      ]
     },
     {
-      "matches": ["*://*.newspaperarchive.com/*"],
+      "matches": [
+        "*://*.newspaperarchive.com/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/npa/browser/npa_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/npa/browser/npa_content.js"
+      ]
     },
     {
-      "matches": ["*://*.newspapers.com/*"],
+      "matches": [
+        "*://*.newspapers.com/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/np/browser/np_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/np/browser/np_content.js"
+      ]
     },
     {
-      "matches": ["*://archives.novascotia.ca/vital-statistics/*"],
+      "matches": [
+        "*://archives.novascotia.ca/vital-statistics/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/nsvr/browser/nsvr_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/nsvr/browser/nsvr_content.js"
+      ]
     },
     {
-      "matches": ["*://*.openarchieven.nl/*"],
+      "matches": [
+        "*://*.openarchieven.nl/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/openarch/browser/openarch_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/openarch/browser/openarch_content.js"
+      ]
     },
     {
-      "matches": ["*://paperspast.natlib.govt.nz/*"],
+      "matches": [
+        "*://paperspast.natlib.govt.nz/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/ppnz/browser/ppnz_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/ppnz/browser/ppnz_content.js"
+      ]
     },
     {
-      "matches": ["*://probatesearch.service.gov.uk/*"],
+      "matches": [
+        "*://probatesearch.service.gov.uk/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/psuk/browser/psuk_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/psuk/browser/psuk_content.js"
+      ]
     },
     {
-      "matches": ["*://www.scotlandspeople.gov.uk/*"],
+      "matches": [
+        "*://www.scotlandspeople.gov.uk/*"
+      ],
       "run_at": "document_end",
-      "js": ["base/browser/content/content_common.js", "site/scotp/browser/scotp_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/scotp/browser/scotp_content.js"
+      ]
     },
     {
-      "matches": ["*://*.thegenealogist.com/*", "*://*.thegenealogist.co.uk/*"],
+      "matches": [
+        "*://*.thegenealogist.com/*",
+        "*://*.thegenealogist.co.uk/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/thegen/browser/thegen_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/thegen/browser/thegen_content.js"
+      ]
     },
     {
-      "matches": ["*://trove.nla.gov.au/*"],
+      "matches": [
+        "*://trove.nla.gov.au/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/trove/browser/trove_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/trove/browser/trove_content.js"
+      ]
     },
     {
-      "matches": ["*://*.bdm.vic.gov.au/*"],
+      "matches": [
+        "*://*.bdm.vic.gov.au/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/vicbdm/browser/vicbdm_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/vicbdm/browser/vicbdm_content.js"
+      ]
     },
     {
-      "matches": ["*://www.wiewaswie.nl/*"],
+      "matches": [
+        "*://www.wiewaswie.nl/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/wiewaswie/browser/wiewaswie_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/wiewaswie/browser/wiewaswie_content.js"
+      ]
     },
     {
-      "matches": ["*://*.wikipedia.org/*"],
+      "matches": [
+        "*://*.wikipedia.org/*"
+      ],
       "run_at": "document_idle",
-      "js": ["base/browser/content/content_common.js", "site/wikipedia/browser/wikipedia_content.js"]
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/wikipedia/browser/wikipedia_content.js"
+      ]
     }
   ],
   "options_ui": {
@@ -305,15 +563,25 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["site/wikitree/core/wikitree_extract_data.mjs"],
-      "matches": ["*://*.wikitree.com/*"]
+      "resources": [
+        "site/wikitree/core/wikitree_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.wikitree.com/*"
+      ]
     },
     {
-      "resources": ["site/ameranc/core/ameranc_extract_data.mjs"],
-      "matches": ["*://*.americanancestors.org/*"]
+      "resources": [
+        "site/ameranc/core/ameranc_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.americanancestors.org/*"
+      ]
     },
     {
-      "resources": ["site/ancestry/core/ancestry_extract_data.mjs"],
+      "resources": [
+        "site/ancestry/core/ancestry_extract_data.mjs"
+      ],
       "matches": [
         "*://*.ancestry.com/*",
         "*://*.ancestry.co.uk/*",
@@ -343,40 +611,105 @@
       ]
     },
     {
-      "resources": ["site/archion/core/archion_extract_data.mjs"],
-      "matches": ["*://www.archion.de/*"]
+      "resources": [
+        "site/archion/core/archion_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.archion.de/*"
+      ]
     },
     {
-      "resources": ["site/archive/core/archive_extract_data.mjs"],
-      "matches": ["*://archive.org/*"]
+      "resources": [
+        "site/archive/core/archive_extract_data.mjs"
+      ],
+      "matches": [
+        "*://archive.org/*"
+      ]
     },
     {
-      "resources": ["site/baclac/core/baclac_extract_data.mjs"],
-      "matches": ["*://*.bac-lac.gc.ca/*"]
+      "resources": [
+        "site/baclac/core/baclac_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.bac-lac.gc.ca/*"
+      ]
     },
     {
-      "resources": ["site/nswbdm/core/nswbdm_extract_data.mjs"],
-      "matches": ["*://*.bdm.nsw.gov.au/*"]
+      "resources": [
+        "site/basrhin/core/basrhin_extract_data.mjs"
+      ],
+      "matches": [
+        "*://archives.bas-rhin.fr/*"
+      ]
     },
     {
-      "resources": ["site/nzbdm/core/nzbdm_extract_data.mjs"],
-      "matches": ["*://*.bdmhistoricalrecords.dia.govt.nz/*"]
+      "resources": [
+        "site/nswbdm/core/nswbdm_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.bdm.nsw.gov.au/*"
+      ]
     },
     {
-      "resources": ["site/bg/core/bg_extract_data.mjs"],
-      "matches": ["*://*.billiongraves.com/*"]
+      "resources": [
+        "site/nzash/core/nzash_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.howison.co.nz/*"
+      ]
     },
     {
-      "resources": ["site/opccorn/core/opccorn_extract_data.mjs"],
-      "matches": ["*://*.cornwall-opc-database.org/*"]
+      "resources": [
+        "site/nzbdm/core/nzbdm_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.bdmhistoricalrecords.dia.govt.nz/*"
+      ]
     },
     {
-      "resources": ["site/cwgc/core/cwgc_extract_data.mjs"],
-      "matches": ["*://*.cwgc.org/*"]
+      "resources": [
+        "site/bg/core/bg_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.billiongraves.com/*"
+      ]
     },
     {
-      "resources": ["site/noda/core/noda_extract_data.mjs"],
-      "matches": ["*://*.digitalarkivet.no/*"]
+      "resources": [
+        "site/opccorn/core/opccorn_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.cornwall-opc-database.org/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/cwgc/core/cwgc_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.cwgc.org/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/dfgviewer/core/dfgviewer_extract_data.mjs"
+      ],
+      "matches": [
+        "*://dfg-viewer.de/*",
+        "*://digitales-archiv.erzbistum-muenchen.de/*",
+        "*://www.gda.bayern.de/*",
+        "*://www.arcinsys.niedersachsen.de/*",
+        "*://arcinsys.hessen.de/*",
+        "*://www.landesarchiv-nrw.de/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/noda/core/noda_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.digitalarkivet.no/*"
+      ]
     },
     {
       "resources": [
@@ -384,18 +717,31 @@
         "site/eggsabdm/core/eggsabdm_common.mjs",
         "site/eggsabdm/core/eggsabdm_extract_data.mjs"
       ],
-      "matches": ["*://www.eggsa.org/*"]
+      "matches": [
+        "*://www.eggsa.org/*"
+      ]
     },
     {
-      "resources": ["site/eggsagrvs/core/eggsagrvs_extract_data.mjs"],
-      "matches": ["*://graves.eggsa.org/*", "*://www.graves.eggsa.org/*"]
+      "resources": [
+        "site/eggsagrvs/core/eggsagrvs_extract_data.mjs"
+      ],
+      "matches": [
+        "*://graves.eggsa.org/*",
+        "*://www.graves.eggsa.org/*"
+      ]
     },
     {
-      "resources": ["site/fg/core/fg_extract_data.mjs"],
-      "matches": ["*://www.findagrave.com/*"]
+      "resources": [
+        "site/fg/core/fg_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.findagrave.com/*"
+      ]
     },
     {
-      "resources": ["site/fmp/core/fmp_extract_data.mjs"],
+      "resources": [
+        "site/fmp/core/fmp_extract_data.mjs"
+      ],
       "matches": [
         "*://*.findmypast.com/*",
         "*://*.findmypast.co.uk/*",
@@ -405,27 +751,49 @@
       ]
     },
     {
-      "resources": ["site/freebmd/core/freebmd_extract_data.mjs"],
-      "matches": ["*://www.freebmd.org.uk/*"]
+      "resources": [
+        "site/freebmd/core/freebmd_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.freebmd.org.uk/*"
+      ]
     },
     {
-      "resources": ["site/freecen/core/freecen_extract_data.mjs"],
-      "matches": ["*://www.freecen.org.uk/*"]
+      "resources": [
+        "site/freecen/core/freecen_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.freecen.org.uk/*"
+      ]
     },
     {
-      "resources": ["site/freereg/core/freereg_extract_data.mjs"],
-      "matches": ["*://www.freereg.org.uk/*"]
+      "resources": [
+        "site/freereg/core/freereg_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.freereg.org.uk/*"
+      ]
     },
     {
-      "resources": ["site/fs/core/fs_extract_data.mjs"],
-      "matches": ["*://www.familysearch.org/*"]
+      "resources": [
+        "site/fs/core/fs_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.familysearch.org/*"
+      ]
     },
     {
-      "resources": ["site/geneteka/core/geneteka_extract_data.mjs"],
-      "matches": ["*://geneteka.genealodzy.pl/*"]
+      "resources": [
+        "site/geneteka/core/geneteka_extract_data.mjs"
+      ],
+      "matches": [
+        "*://geneteka.genealodzy.pl/*"
+      ]
     },
     {
-      "resources": ["site/gbooks/core/gbooks_extract_data.mjs"],
+      "resources": [
+        "site/gbooks/core/gbooks_extract_data.mjs"
+      ],
       "matches": [
         "*://*.google.com/*",
         "*://*.google.co.uk/*",
@@ -439,92 +807,177 @@
       ]
     },
     {
-      "resources": ["site/gro/core/gro_extract_data.mjs"],
-      "matches": ["*://www.gro.gov.uk/*"]
+      "resources": [
+        "site/gro/core/gro_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.gro.gov.uk/*"
+      ]
     },
     {
-      "resources": ["site/hathi/core/hathi_extract_data.mjs"],
-      "matches": ["*://*.hathitrust.org/*"]
+      "resources": [
+        "site/hathi/core/hathi_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.hathitrust.org/*"
+      ]
     },
     {
-      "resources": ["site/irishg/core/irishg_extract_data.mjs"],
-      "matches": ["*://*.irishgenealogy.ie/*"]
+      "resources": [
+        "site/irishg/core/irishg_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.irishgenealogy.ie/*"
+      ]
     },
     {
-      "resources": ["site/jstor/core/jstor_extract_data.mjs"],
-      "matches": ["*://*.jstor.org/*"]
+      "resources": [
+        "site/jstor/core/jstor_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.jstor.org/*"
+      ]
     },
     {
-      "resources": ["site/taslib/core/taslib_extract_data.mjs"],
-      "matches": ["*://librariestas.ent.sirsidynix.net.au/*"]
+      "resources": [
+        "site/taslib/core/taslib_extract_data.mjs"
+      ],
+      "matches": [
+        "*://librariestas.ent.sirsidynix.net.au/*"
+      ]
     },
     {
-      "resources": ["site/matricula/core/matricula_extract_data.mjs"],
-      "matches": ["*://data.matricula-online.eu/*"]
+      "resources": [
+        "site/matricula/core/matricula_extract_data.mjs"
+      ],
+      "matches": [
+        "*://data.matricula-online.eu/*"
+      ]
     },
     {
       "resources": ["site/mdz/core/mdz_extract_data.mjs"],
       "matches": ["*://www.digitale-sammlungen.de/*"]
     },
     {
-      "resources": ["site/mh/core/mh_extract_data.mjs"],
-      "matches": ["*://*.myheritage.com/*"]
+      "resources": [
+        "site/mh/core/mh_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.myheritage.com/*"
+      ]
     },
     {
-      "resources": ["site/naie/core/naie_extract_data.mjs"],
-      "matches": ["*://*.nationalarchives.ie/*"]
+      "resources": [
+        "site/naie/core/naie_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.nationalarchives.ie/*"
+      ]
     },
     {
-      "resources": ["site/nli/core/nli_extract_data.mjs"],
-      "matches": ["*://*.nli.ie/*"]
+      "resources": [
+        "site/nli/core/nli_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.nli.ie/*"
+      ]
     },
     {
-      "resources": ["site/npa/core/npa_extract_data.mjs"],
-      "matches": ["*://*.newspaperarchive.com/*"]
+      "resources": [
+        "site/npa/core/npa_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.newspaperarchive.com/*"
+      ]
     },
     {
-      "resources": ["site/np/core/np_extract_data.mjs"],
-      "matches": ["*://*.newspapers.com/*"]
+      "resources": [
+        "site/np/core/np_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.newspapers.com/*"
+      ]
     },
     {
-      "resources": ["site/nsvr/core/nsvr_extract_data.mjs"],
-      "matches": ["*://archives.novascotia.ca/*"]
+      "resources": [
+        "site/nsvr/core/nsvr_extract_data.mjs"
+      ],
+      "matches": [
+        "*://archives.novascotia.ca/*"
+      ]
     },
     {
-      "resources": ["site/openarch/core/openarch_extract_data.mjs"],
-      "matches": ["*://*.openarchieven.nl/*"]
+      "resources": [
+        "site/openarch/core/openarch_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.openarchieven.nl/*"
+      ]
     },
     {
-      "resources": ["site/ppnz/core/ppnz_extract_data.mjs"],
-      "matches": ["*://paperspast.natlib.govt.nz/*"]
+      "resources": [
+        "site/ppnz/core/ppnz_extract_data.mjs"
+      ],
+      "matches": [
+        "*://paperspast.natlib.govt.nz/*"
+      ]
     },
     {
-      "resources": ["site/psuk/core/psuk_extract_data.mjs"],
-      "matches": ["*://probatesearch.service.gov.uk/*"]
+      "resources": [
+        "site/psuk/core/psuk_extract_data.mjs"
+      ],
+      "matches": [
+        "*://probatesearch.service.gov.uk/*"
+      ]
     },
     {
-      "resources": ["site/scotp/core/scotp_extract_data.mjs"],
-      "matches": ["*://www.scotlandspeople.gov.uk/*"]
+      "resources": [
+        "site/scotp/core/scotp_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.scotlandspeople.gov.uk/*"
+      ]
     },
     {
-      "resources": ["site/thegen/core/thegen_extract_data.mjs"],
-      "matches": ["*://*.thegenealogist.com/*", "*://*.thegenealogist.co.uk/*"]
+      "resources": [
+        "site/thegen/core/thegen_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.thegenealogist.com/*",
+        "*://*.thegenealogist.co.uk/*"
+      ]
     },
     {
-      "resources": ["site/trove/core/trove_extract_data.mjs"],
-      "matches": ["*://trove.nla.gov.au/*"]
+      "resources": [
+        "site/trove/core/trove_extract_data.mjs"
+      ],
+      "matches": [
+        "*://trove.nla.gov.au/*"
+      ]
     },
     {
-      "resources": ["site/vicbdm/core/vicbdm_extract_data.mjs"],
-      "matches": ["*://*.bdm.vic.gov.au/*"]
+      "resources": [
+        "site/vicbdm/core/vicbdm_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.bdm.vic.gov.au/*"
+      ]
     },
     {
-      "resources": ["site/wiewaswie/core/wiewaswie_extract_data.mjs"],
-      "matches": ["*://www.wiewaswie.nl/*"]
+      "resources": [
+        "site/wiewaswie/core/wiewaswie_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.wiewaswie.nl/*"
+      ]
     },
     {
-      "resources": ["site/wikipedia/core/wikipedia_extract_data.mjs"],
-      "matches": ["*://*.wikipedia.org/*"]
+      "resources": [
+        "site/wikipedia/core/wikipedia_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.wikipedia.org/*"
+      ]
     }
   ],
   "browser_specific_settings": {

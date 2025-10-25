@@ -4,7 +4,7 @@ This is the development project for the WikiTree Sourcer browser extension. Wiki
 
 More info on the extension is on the WikiTree Free Space Page here: https://www.wikitree.com/wiki/Space:WikiTree_Sourcer
 
-The top level folder is can be named whetever you like but wikitree-sourcer is the convention.
+The top level folder can be named whatever you like, but wikitree-sourcer is the convention.
 This folder includes the unit tests and other files
 that are not part of the shipping extension.
 
@@ -40,16 +40,14 @@ There are three variants of the extension:
 
 ## Guides for developers
 
-- [Setting up the development envionment](contributors/setup_guide.md)
+- [Setting up the development environment](contributors/setup_guide.md)
 - [Guide to the folder structure](dev_notes/folder_structure.md)
 - [Adding support for a new site](dev_notes/adding_a_new_site.md)
 - [Running the extension locally in the Chrome browser](dev_notes/run_locally_chrome.md)
-- [Running and debugging the unit tests (outside the browser)](dev_notes/run_debug_unit_tests.md)
-- Running the extension locally in Firefox (TBD)
+- [Running the extension locally in Firefox](dev_notes/run_locally_firefox.md)
 - Running the extension locally in Safari (TBD)
+- [Running and debugging the unit tests (outside the browser)](dev_notes/run_debug_unit_tests.md)
 
 ## More in depth descriptions or architecture and design choices
 
 - [How the extension handles startup and loading](dev_notes/startup_and_loading.md)
-
-  

@@ -35,14 +35,7 @@ const searchOptionsGroup = {
   tab: "search",
   subsection: "gro",
   subheading: "features",
-  options: [
-    {
-      optionName: "enableSmartSearch",
-      type: "checkbox",
-      label: "Enable Smart Search (BETA)",
-      defaultValue: false,
-    },
-  ],
+  options: [],
 };
 
 const citationOptionsGroup = {

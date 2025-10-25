@@ -37,13 +37,24 @@ function extractData(document, url, siteSpecificInput) {
   result.peopleStr = peopleH2.textContent;
   result.topHeading = document.querySelector("#header h1")?.textContent || "";
   const breadcrumb = document.querySelector("#breadcrumb")?.textContent || "";
+  // clean up the breadcrumb:
+  // - skip newlines and tabs and extract text before any image position in parentheses
   const match = breadcrumb.match(/^[\n\t]*([^\n\t]+)[\n\t]*(\([^)]+\))?/);
   if (match) {
+    // remove any trailing spaces and slash and extract image position if present
     result.breadcrumb = match[1].replace(/\s*\/\s*$/, "");
     result.imagePos = match[2] ? match[2] : null;
   } else {
     result.breadcrumb = null;
     result.imagePos = null;
+  }
+  // Some pages have names and dates in the subsequent #object-desc div
+  const objDesc = document.querySelector("#object-desc");
+  if (objDesc) {
+    const text = objDesc.textContent;
+    if (/[\d?]{0,4}[- ][\d?]{0,4}/.test(text)) {
+      result.morePeopleStr = text;
+    }
   }
 
   result.success = true;

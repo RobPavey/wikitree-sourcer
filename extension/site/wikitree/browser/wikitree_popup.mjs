@@ -113,6 +113,7 @@ function apiDataStatusToQualifier(status) {
 }
 
 async function makeApiRequests(extractedData) {
+  //console.log("makeApiRequests called");
   if (haveValidApiResponse) {
     return;
   }

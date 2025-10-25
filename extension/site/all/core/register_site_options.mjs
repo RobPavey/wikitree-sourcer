@@ -75,3 +75,6 @@ import "../../wiewaswie/core/wiewaswie_options.mjs";
 import "../../wikitree/core/wikitree_options.mjs";
 import "../../wikipedia/core/wikipedia_options.mjs";
 import "../../mdz/core/mdz_options.mjs";
+import "../../basrhin/core/basrhin_options.mjs";
+import "../../dfgviewer/core/dfgviewer_options.mjs";
+import "../../arolsenarchives/core/arolsenarchives_options.mjs";

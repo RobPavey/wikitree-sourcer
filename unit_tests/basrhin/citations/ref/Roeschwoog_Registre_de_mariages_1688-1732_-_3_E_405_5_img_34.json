@@ -1,0 +1,38 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin; Roeschwoog - Registre de mariages 1688-1732 - 3 E 405/5; image: 34/73<br/>\n[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin; Roeschwoog - Registre de mariages 1688-1732 - 3 E 405/5; image: 34/73<br/>\n[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692 Bas-Rhin Image] (accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Bas-Rhin; Roeschwoog - Registre de mariages 1688-1732 - 3 E 405/5; image: 34/73<br/>[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692 Bas-Rhin Image] (accessed 6 May 2021).",
+    "type": "source"
+  },
+  "accessedDate_none_inline": {
+    "citation": "<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin; Roeschwoog - Registre de mariages 1688-1732 - 3 E 405/5; image: 34/73<br/>\n[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692 Bas-Rhin Image].\n</ref>",
+    "type": "inline"
+  },
+  "accessedDate_none_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin; Roeschwoog - Registre de mariages 1688-1732 - 3 E 405/5; image: 34/73<br/>\n[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692 Bas-Rhin Image].\n</ref>",
+    "type": "narrative"
+  },
+  "accessedDate_none_source": {
+    "citation": "* '''Mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Bas-Rhin; Roeschwoog - Registre de mariages 1688-1732 - 3 E 405/5; image: 34/73<br/>[https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692 Bas-Rhin Image].",
+    "type": "source"
+  },
+  "accessedDate_parenBeforeLink_inline": {
+    "citation": "<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin; Roeschwoog - Registre de mariages 1688-1732 - 3 E 405/5; image: 34/73<br/>\n([https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692 Bas-Rhin Image] : accessed 6 May 2021).\n</ref>",
+    "type": "inline"
+  },
+  "accessedDate_parenBeforeLink_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Mariage''':\n\"Registres paroissiaux et documents d'état civil\"<br/>\nArchives départementales du Bas-Rhin; Roeschwoog - Registre de mariages 1688-1732 - 3 E 405/5; image: 34/73<br/>\n([https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692 Bas-Rhin Image] : accessed 6 May 2021).\n</ref>",
+    "type": "narrative"
+  },
+  "accessedDate_parenBeforeLink_source": {
+    "citation": "* '''Mariage''': \"Registres paroissiaux et documents d'état civil\"<br/>Archives départementales du Bas-Rhin; Roeschwoog - Registre de mariages 1688-1732 - 3 E 405/5; image: 34/73<br/>([https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692 Bas-Rhin Image] : accessed 6 May 2021).",
+    "type": "source"
+  }
+}

@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,10 @@ import { StringUtils } from "../../../base/core/string_utils.mjs";
 
 class ExamplesiteUriBuilder {
   constructor() {
-    this.uri = "https://www.examplesite.org.uk/cgi/search.pl";
+    //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
+    // Change the URL below to the start of the search URL for your site
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    this.uri = "https://www.examplesite.org/search";
     this.searchTermAdded = false;
   }
 

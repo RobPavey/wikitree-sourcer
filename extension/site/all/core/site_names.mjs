@@ -33,6 +33,7 @@ const siteNames = [
   "archion",
   "archive",
   "baclac",
+  "basrhin",
   "bg",
   "cwgc",
   "eggsabdm",
@@ -73,6 +74,8 @@ const siteNames = [
   "wikitree",
   "wikipedia",
   "mdz",
+  "dfgviewer",
+  "arolsenarchives",
 ];
 
 export { siteNames };

@@ -94,15 +94,60 @@ function buildRecordLink(ed, gd, builder) {
   builder.recordLinkOrTemplate = recordLink;
 }
 
+function isMemorial(ed) {
+  return /memorial|wall|war|list|panel|soldiers|gedenk/i.test(ed.peopleStr);
+}
+
+function buildDataString(ed, gd) {
+  let dataString = gd.inferFullName();
+
+  if (gd.lastNameAtBirth && gd.lastNameAtDeath && gd.lastNameAtBirth != gd.lastNameAtDeath) {
+    dataString += " (born " + gd.lastNameAtBirth + ")";
+  }
+
+  const deathDate = gd.inferDeathDateObj();
+  if (deathDate) {
+    dataString += " death in " + (deathDate.getDataStringFormat(false) || "");
+  }
+
+  const birthDateObj = gd.birthDate;
+  if (birthDateObj && birthDateObj.dateString && birthDateObj.dateString.length > 4) {
+    dataString += " (born " + birthDateObj.dateString + ")";
+  } else {
+    if (gd.ageAtDeath) {
+      dataString += " (age " + gd.ageAtDeath + ")";
+    }
+  }
+
+  const placeObj = gd.inferDeathPlaceObj();
+  if (placeObj) {
+    let place = placeObj.inferFullPlaceString();
+    if (place) {
+      const word = isMemorial(ed) ? "memorial" : "grave";
+      dataString += ", " + word + " in " + place;
+    }
+  }
+
+  if (dataString.endsWith(",")) {
+    dataString = dataString.substring(0, dataString.length - 1);
+  }
+
+  return dataString;
+}
+
+function refTitleOverride(ed, gd) {
+  return isMemorial(ed) ? "Memorial" : "Grave";
+}
+
 function buildCoreCitation(ed, gd, builder) {
   buildSourceTitle(ed, gd, builder);
   buildSourceReference(ed, gd, builder);
   buildRecordLink(ed, gd, builder);
-  builder.addStandardDataString(gd);
+  builder.dataString = buildDataString(ed, gd);
 }
 
 function buildCitation(input) {
-  return simpleBuildCitationWrapper(input, buildCoreCitation);
+  return simpleBuildCitationWrapper(input, buildCoreCitation, refTitleOverride);
 }
 
 export { buildCitation };

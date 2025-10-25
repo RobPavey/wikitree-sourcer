@@ -1,0 +1,195 @@
+/*
+MIT License
+
+Copyright (c) 2020 Robert M Pavey
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+import { extractData } from "../../extension/site/basrhin/core/basrhin_extract_data.mjs";
+import { generalizeData } from "../../extension/site/basrhin/core/basrhin_generalize_data.mjs";
+import { buildCitation } from "../../extension/site/basrhin/core/basrhin_build_citation.mjs";
+
+import { runExtractDataTests } from "../test_utils/test_extract_data_utils.mjs";
+import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
+import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
+
+const regressionData = [
+  {
+    caseName: "Hatten_Registre_de_baptêmes_1736-1767_-_3_E_183_3_img_150",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121884#visio/page:ETAT-CIVIL-C183-P2-R121884-644791",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "Hatten_Registre_de_baptêmes_mariages_sépultures_1707-1730_-_3_E_183_1_img_1",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P2-R121882#visio/page:ETAT-CIVIL-C183-P2-R121882-644390",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "Hatten_Registre_de_publication_de_mariages_1818_-_4_E_183_11_img_4",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C183-P1-R122052#visio/page:ETAT-CIVIL-C183-P1-R122052-647035",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaColon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaColon" },
+      },
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "Oberbetschdorf_Registre_de_sépultures_1736-1774_3_E_339_15_img_171",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C587-P2-R167746#visio/page:ETAT-CIVIL-C587-P2-R167746-2293545",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "Schweighouse_sur_Moder_Registre_de_publication_de_mariages_1873_-_4_E_458_3_img_6",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C454-P1-R247147#visio/page:ETAT-CIVIL-C454-P1-R247147-1363341",
+    optionVariants: [
+      {
+        variantName: "accessedDate_none",
+        optionOverrides: { citation_general_addAccessedDate: "none" },
+      },
+      {
+        variantName: "accessedDate_parenBeforeLink",
+        optionOverrides: { citation_general_addAccessedDate: "parenBeforeLink" },
+      },
+    ],
+  },
+  {
+    caseName: "Croettwiller_Registre_de_mariages_1793_An_IV_-_4_E_78_3_img_8",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C79-P1-R57093#visio/page:ETAT-CIVIL-C79-P1-R57093-339112",
+    optionVariants: [
+      {
+        variantName: "accessedDate_none",
+        optionOverrides: { citation_general_addAccessedDate: "none" },
+      },
+      {
+        variantName: "accessedDate_parenBeforeLink",
+        optionOverrides: { citation_general_addAccessedDate: "parenBeforeLink" },
+      },
+    ],
+  },
+  {
+    caseName: "Roeschwoog_Registre_de_mariages_1688-1732_-_3_E_405_5_img_34",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C401-P3-R170181#visio/page:ETAT-CIVIL-C401-P3-R170181-2497692",
+    optionVariants: [
+      {
+        variantName: "accessedDate_none",
+        optionOverrides: { citation_general_addAccessedDate: "none" },
+      },
+      {
+        variantName: "accessedDate_parenBeforeLink",
+        optionOverrides: { citation_general_addAccessedDate: "parenBeforeLink" },
+      },
+    ],
+  },
+  {
+    caseName: "Niederlauterbach_Registre_de_baptêmes_1683-1765_3_E_327_1_img_41",
+    url: "https://archives.bas-rhin.fr/detail-document/ETAT-CIVIL-C324-P3-R44977#visio/page:ETAT-CIVIL-C324-P3-R44977-2155357",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaColon",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaColon" },
+      },
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "NIEDERBETSCHDORF_-_Recensement_de_1836_-_7_M_554_img_13",
+    url: "https://archives.bas-rhin.fr/detail-document/REC-POP-C593-R4787#visio/page:REC-POP-C593-R4787-58548",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "OBERBETSCHDORF_-_Recensement_de_1885_-_294_D_B_339_img_116",
+    url: "https://archives.bas-rhin.fr/detail-document/REC-POP-C587-R5280#visio/page:REC-POP-C587-R5280-349733",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "Tables_des_successions_et_absences_volume_7_-_3_Q_26781_Soultz-sous-Forêts_img_5",
+    url: "https://archives.bas-rhin.fr/detail-document/LIGEO-1196658#visio/page:LIGEO-1196658-196103",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "Tables_des_successions_et_absences_Volume_27_-_3_Q_38237_d_Illkirch-Graffenstaden_img_72",
+    url: "https://archives.bas-rhin.fr/detail-document/LIGEO-1151817#visio/page:LIGEO-1151817-149498",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+  {
+    caseName: "Tables_des_successions_et_absences_3_Q_27763_de_Strasbourg_img_169",
+    url: "https://archives.bas-rhin.fr/detail-document/LIGEO-1209595#visio/page:LIGEO-1209595-151126",
+    optionVariants: [
+      {
+        variantName: "sourceReferenceSeparator_commaSpace",
+        optionOverrides: { citation_general_sourceReferenceSeparator: "commaSpace" },
+      },
+    ],
+  },
+];
+
+async function runTests(testManager) {
+  await runExtractDataTests("basrhin", extractData, regressionData, testManager);
+
+  await runGeneralizeDataTests("basrhin", generalizeData, regressionData, testManager);
+
+  const functions = { buildCitation: buildCitation };
+  await runBuildCitationTests("basrhin", functions, regressionData, testManager);
+}
+
+export { runTests };

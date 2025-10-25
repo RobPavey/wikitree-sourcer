@@ -53,6 +53,13 @@ const regressionData = [
           citation_nswbdm_dataStyle: "listOriginal",
         },
       },
+      {
+        variantName: "dataStyle_listCurated_includeLink_inSourceTitle",
+        optionOverrides: {
+          citation_nswbdm_dataStyle: "listCurated",
+          citation_nswbdm_includeLink: "inSourceTitle",
+        },
+      },
     ],
   },
   {
@@ -87,6 +94,11 @@ const regressionData = [
   {
     caseName: "death_1888_francis_nicholson",
     url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?24",
+  },
+  {
+    // Uses district code 217 which was initially missing from table
+    caseName: "death_1974_william_james",
+    url: "https://familyhistory.bdm.nsw.gov.au/lifelink/familyhistory/search/result?1",
   },
   {
     // has a post-1974 district number

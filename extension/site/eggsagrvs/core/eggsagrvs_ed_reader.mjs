@@ -52,7 +52,7 @@ function isNumeric(str) {
   return !isNaN(str) && str.trim() !== "";
 }
 
-function extractNames(ed) {
+function extractNames(names) {
   // Construct an array of objects
   //   {
   //    originalName:
@@ -79,7 +79,7 @@ function extractNames(ed) {
   // Any name may have only either a surname or first name(s).
   // Any name could have "nee LNAB" or "geb. LNAB" at the end.
 
-  const peopleParts = splitWithSeparators(ed.peopleStr);
+  const peopleParts = splitWithSeparators(names);
 
   // split names and dates
   const people = [];
@@ -102,6 +102,8 @@ function extractNames(ed) {
       // The first person's name is in the format "LASTNAME First Names",
       // or, for multi-word last names: "MERWE First Name, van der"
       // or LITH Martha Louisa, van der formerly OLIVIER
+      // or sometimes (rarely) "ZYL van Andries" (!!) - but we ignore this because it becomes difficult to distinguish
+      // between that case and e.g. when the first name is for example "Van Zyl" (there are poeple with that name)
       if (hasSurname(originalName)) {
         let rest;
         [lastName, rest] = shiftWord(originalName);
@@ -185,7 +187,7 @@ function extractNames(ed) {
       people.push(person);
     }
   }
-  ed.people = people;
+  return people;
 }
 
 function extractLastNameAtFront(originalName) {
@@ -252,9 +254,15 @@ function getNameAndDates(str) {
 
 function hasSurname(name) {
   // All surnames (or at least their main parts) are given in all caps on graves.eggsa
-  let words = name.split(" ");
+
+  // remove commas and periods, split on space and discard 1-letter words
+  const words = name
+    .replaceAll(/[\.,]/g, " ")
+    .split(" ")
+    .filter((w) => w.trim().length > 1);
+
   for (const word of words) {
-    if (word.replaceAll(".", "").length > 1 && StringUtils.isAllUppercase(word)) {
+    if (StringUtils.isAllUppercase(word)) {
       return true;
     }
   }
@@ -274,8 +282,21 @@ class EggsagrvsEdReader extends ExtractedDataReader {
     this.ed.country = getCountry(ed.url);
     this.recordType = RT.Death;
 
-    // console.log("EggsagrvsEdReader before", this.ed);
-    extractNames(this.ed);
+    // Sometimes ed.peopleStr is something like "Gedenkmuur / Memorial wall" and the names are in morePeopleStr.
+    // In that case. split on newlines and treat each line as a separate peopleStr (it seems that is the formatting
+    // that is being followed).
+    if (ed.morePeopleStr) {
+      ed.people = [];
+      if (ed.morePeopleStr.includes("::")) {
+        ed.people = extractNames(this.ed.morePeopleStr.replaceAll("\n", " "));
+      } else {
+        for (const nameStr of ed.morePeopleStr.split(/\n/)) {
+          ed.people.push(...extractNames(nameStr));
+        }
+      }
+    } else {
+      ed.people = extractNames(this.ed.peopleStr);
+    }
     // console.log("EggsagrvsEdReader after", this.ed);
   }
 
