@@ -3,19 +3,7 @@
   "success": true,
   "page_number": "11",
   "metadata_url": "https://digitales-archiv.erzbistum-muenchen.de/actaproweb/mets?id=Rep_7eba57ab-0512-4667-9c13-faf2efd08133_mets_actapro.xml",
-  "metadata": {
-    "location": {
-      "href": "about:blank",
-      "origin": "null",
-      "protocol": "about:",
-      "host": "",
-      "hostname": "",
-      "port": "",
-      "pathname": "blank",
-      "search": "",
-      "hash": ""
-    }
-  },
+  "metadata": null,
   "title": "Taufen (1675-1771)",
   "signature": "Bestand: CB001 Abens-Mariä Geburt - 1675-1967"
 }

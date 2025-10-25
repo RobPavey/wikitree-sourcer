@@ -3,19 +3,7 @@
   "success": true,
   "page_number": "11",
   "metadata_url": "https://www.gda.bayern.de/mets/296ac728-06ea-4ae6-b10a-6a0f702b4f69",
-  "metadata": {
-    "location": {
-      "href": "about:blank",
-      "origin": "null",
-      "protocol": "about:",
-      "host": "",
-      "hostname": "",
-      "port": "",
-      "pathname": "blank",
-      "search": "",
-      "hash": ""
-    }
-  },
+  "metadata": null,
   "title": "Lateinische Weltchronik von Erschaffung der Welt bis 1276, wahrscheinlich im Egidienkloster zu Nürnberg geschrieben.",
   "signature": "StAN, Reichsstadt Nürnberg, Handschriften 1"
 }

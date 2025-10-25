@@ -3,19 +3,7 @@
   "success": true,
   "page_number": "1",
   "metadata_url": "https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934",
-  "metadata": {
-    "location": {
-      "href": "about:blank",
-      "origin": "null",
-      "protocol": "about:",
-      "host": "",
-      "hostname": "",
-      "port": "",
-      "pathname": "blank",
-      "search": "",
-      "hash": ""
-    }
-  },
+  "metadata": null,
   "title": "Kriminalitätsberichte",
   "signature": "HStAD Q 4 8/155-2/16, Hessisches Staatsarchiv Darmstadt"
 }

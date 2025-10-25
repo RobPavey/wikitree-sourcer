@@ -226,6 +226,8 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       result = { ...result, ...testData.extraExtractedDataFields };
     }
 
+    result.metadata = null;
+
     // write out result file.
     if (!writeTestOutputFile(result, siteName, resultDir, testData, logger)) {
       continue;

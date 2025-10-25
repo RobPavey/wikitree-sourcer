@@ -3,19 +3,7 @@
   "success": true,
   "page_number": "11",
   "metadata_url": "https://www.arcinsys.niedersachsen.de/arcinsys/mets?detailid=v2966431",
-  "metadata": {
-    "location": {
-      "href": "about:blank",
-      "origin": "null",
-      "protocol": "about:",
-      "host": "",
-      "hostname": "",
-      "port": "",
-      "pathname": "blank",
-      "search": "",
-      "hash": ""
-    }
-  },
+  "metadata": null,
   "title": "Armenwesen zu Nienburg",
   "signature": "NLA HA Hann. 80 Hannover Nr. 17130, Nds. Landesarchiv, Abt. Hannover"
 }
