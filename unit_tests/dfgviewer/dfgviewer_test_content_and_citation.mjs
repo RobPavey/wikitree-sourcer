@@ -250,11 +250,6 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
 const regressionData = [
   {
-    caseName: "arcinsys_hessen_HStAD_Q_4_8_155-2_16",
-    url: "https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934",
-    metadata_url: "https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934",
-  },
-  {
     caseName: "erzbistum_muenchen_Abens-Mariae Geburt",
     url: "https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fdigitales-archiv.erzbistum-muenchen.de%2Factaproweb%2Fmets%3Fid%3DRep_7eba57ab-0512-4667-9c13-faf2efd08133_mets_actapro.xml&tx_dlf%5Bpage%5D=11&cHash=c023852b77a6571263faaa7b98c7e609",
     metadata_url: "https://digitales-archiv.erzbistum-muenchen.de/actaproweb/mets?id=Rep_7eba57ab-0512-4667-9c13-faf2efd08133_mets_actapro.xml",
@@ -263,7 +258,17 @@ const regressionData = [
     caseName: "staatsarchiv_bayern_StAN, Reichsstadt Nürnberg, Handschriften 1",
     url: "https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fwww.gda.bayern.de%2Fmets%2F296ac728-06ea-4ae6-b10a-6a0f702b4f69&tx_dlf%5Bpage%5D=11&cHash=28cdd2daaf66b4f0c306af0af77bd666",
     metadata_url: "https://www.gda.bayern.de/mets/296ac728-06ea-4ae6-b10a-6a0f702b4f69",
-  }
+  },
+  {
+    caseName: "arcinsys_hessen_HStAD_Q_4_8_155-2_16",
+    url: "https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934",
+    metadata_url: "https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934",
+  },
+  {
+    caseName: "arcinsys_saxony_Armenwesen zu Nienburg",
+    url: "https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fwww.arcinsys.niedersachsen.de%2Farcinsys%2Fmets%3Fdetailid%3Dv2966431&tx_dlf%5Bpage%5D=11&cHash=f8cb1c505bb49ec09632b92c42001867",
+    metadata_url: "https://www.arcinsys.niedersachsen.de/arcinsys/mets?detailid=v2966431",
+  },
 ];
 
 async function runTests(testManager) {
