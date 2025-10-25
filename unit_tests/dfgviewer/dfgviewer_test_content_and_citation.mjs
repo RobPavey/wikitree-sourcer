@@ -30,6 +30,7 @@ import { LocalErrorLogger } from "../test_utils/error_log_utils.mjs";
 import { compareOrReplaceRefFileWithResult } from "../test_utils/helper_utils.mjs";
 
 import { extractData } from "../../extension/site/dfgviewer/core/dfgviewer_extract_data.mjs";
+import { parseMetadata } from "../../extension/site/dfgviewer/core/dfgviewer_metadata_parser.mjs";
 import { generalizeData } from "../../extension/site/dfgviewer/core/dfgviewer_generalize_data.mjs";
 import { buildCitation } from "../../extension/site/dfgviewer/core/dfgviewer_build_citation.mjs";
 
@@ -69,6 +70,7 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     let result = undefined;
 
     let pageFile = testData.pageFile;
+    let metadataFile = testData.metadataFile;
     let fetchType = testData.fetchType;
     if (!fetchType) {
       fetchType = "record";
@@ -86,6 +88,12 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       }
     }
 
+    // node:internal/modules/esm/resolve:274 throw new ERR_MODULE_NOT_FOUND( ^ Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\base\browser\popup\popup_simple_base.mjs' imported from C:\Projects\History\wikitree-sourcer\extension\site\dfgviewer\browser\dfgviewer_popup.mjs at finalizeResolution (node:internal/modules/esm/resolve:274:11) at moduleResolve (node:internal/modules/esm/resolve:864:10) at defaultResolve (node:internal/modules/esm/resolve:990:11) at #cachedDefaultResolve (node:internal/modules/esm/loader:768:20) at ModuleLoader.resolve (node:internal/modules/esm/loader:745:38) at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:318:38) at #link (node:internal/modules/esm/module_job:208:49) { code: 'ERR_MODULE_NOT_FOUND', url: 'file:///C:/base/browser/popup/popup_simple_base.mjs' } Node.js v24.8.0
+
+    if (!metadataFile) {
+      metadataFile = "./unit_tests/" + siteName + "/saved_metadata/" + testData.caseName + ".xml";
+    }
+
     let fetchObjPath = testData.fetchObjPath;
     if (!fetchObjPath) {
       let testFetchObjPath = "./unit_tests/" + siteName + "/saved_fetch_objects/" + testData.caseName + ".json";
@@ -95,6 +103,15 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     }
 
     fs.existsSync();
+
+    let metadata = undefined;
+    try {
+      metadata = fs.readFileSync(metadataFile, "utf-8");
+    } catch (e) {
+      console.log("Error:", e.stack);
+      logger.logError(testData, "Failed to read fetchObj file: " + fetchObj);
+      continue;
+    }
 
     if (fetchObjPath && pageFile) {
       let dom = undefined;
@@ -122,6 +139,9 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
       try {
         result = extractDataFunction(doc, testData.url, dataObjects, fetchType, "", testManager.options);
+        result.metadata_url = testData.metadata_url;
+        result.metadata = metadata;
+        await parseMetadata(result);
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -153,6 +173,9 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
       try {
         result = extractDataFunction(doc, testData.url);
+        result.metadata_url = testData.metadata_url;
+        result.metadata = metadata;
+        await parseMetadata(result);
         releaseJsdomMemory();
       } catch (e) {
         console.log("Error:", e.stack);
@@ -176,6 +199,9 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
       try {
         result = extractDataFunction(undefined, testData.url, dataObjects, fetchType, "", testManager.options);
+        result.metadata_url = testData.metadata_url;
+        result.metadata = metadata;
+        await parseMetadata(result);
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -225,8 +251,9 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 const regressionData = [
   {
     caseName: "arcinsys_hessen_HStAD_Q_4_8_155-2_16",
-    url: "https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934"
-  }
+    url: "https://dfg-viewer.de/show/?set[mets]=https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934",
+    metadata_url: "https://arcinsys.hessen.de/arcinsys/mets?detailid=v2843934",
+  },
 ];
 
 async function runTests(testManager) {
