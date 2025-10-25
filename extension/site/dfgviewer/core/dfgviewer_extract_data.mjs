@@ -29,6 +29,13 @@ function extractData(document, url) {
     result.url = url;
   }
 
+  result.success = false;
+
+  if (url.match("digitalMediaViewer")) {
+    alert("Please use the dfg-viewer page instead of the arcinsys page!");
+    return;
+  }
+
   const page_selector = document.querySelector('select[name="tx_dlf[page]"]');
   let page_selected = page_selector.querySelector('option[selected="selected"]').text;
 

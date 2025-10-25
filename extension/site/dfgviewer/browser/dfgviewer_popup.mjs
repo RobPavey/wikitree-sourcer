@@ -32,7 +32,16 @@ import { closePopup } from "/base/browser/popup/popup_menu_building.mjs";
 async function fetch_metadata(url, extractData) {
   url = url.toString();
   const url_parsed = new URL(url);
-  const metadata_url = url_parsed.searchParams.get("tx_dlf[id]");
+  var metadata_url = url_parsed.searchParams.get("tx_dlf[id]");
+
+  if (metadata_url == null) {
+    metadata_url = url_parsed.searchParams.get("set[mets]");
+  }
+
+  if (metadata_url == null) {
+    // Cannot fetch metadata
+    return;
+  }
 
   extractData.metadata_url = metadata_url;
 
@@ -177,10 +186,11 @@ async function parseArchiveNrwMetadata(extractData) {
     extractData.signature = signature;
   }
 
-  const base_url = getAllTexts(extractData.metadata, "//dv:links/dv:reference")[0];
-
-  if (base_url.match("www.archive.nrw.de/archivsuche")) {
-    await parseArchiveNrwApiMetadata(extractData, base_url);
+  if (extractData.metadata != null) {
+    if (base_url.match("www.archive.nrw.de/archivsuche")) {
+      await parseArchiveNrwApiMetadata(extractData, base_url);
+      extractData.catalogue_entry_url = base_url;
+    }
   }
 }
 
