@@ -33,15 +33,24 @@ function extractData(document, url) {
   const title = document.querySelector('h2[class="MuiTypography-root mirador32 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap"]');
   result.title = title ? title.textContent.trim() : "";
 
-  const page_number = document.querySelector('div[class="mirador107"]');
-  if (page_number != null) {
-    result.page_number = page_number.textContent.trim();
-    if (result.page_number.startsWith("Seite: ")) {
-      result.page_number = result.page_number.substring("Seite: ".length).trim();
+  const pageDiv = document.querySelector('div[class*="mirador"]:not([class*="mirador-companion"]):not([class*="mirador-osd"]):not([class*="mirador-canvas"]):not([class*="mirador-window"])');
+  const pageDivs = document.querySelectorAll('div');
+  let page_number = null;
+  for (let div of pageDivs) {
+    if (div.textContent && div.textContent.match(/^Seite:\s*\d+$/)) {
+      const match = div.textContent.match(/Seite:\s*(\d+)/);
+      if (match) {
+        page_number = match[1];
+        break;
+      }
     }
   }
 
-  const image_input = document.querySelector('input[class="mirador108 mirador109"]');
+  if (page_number != null) {
+    result.page_number = page_number;
+  }
+
+  const image_input = document.querySelector('input[type="number"][id*="canvas-idx"]');
   if (image_input != null) {
     result.image_number = image_input.value.trim();
   }
