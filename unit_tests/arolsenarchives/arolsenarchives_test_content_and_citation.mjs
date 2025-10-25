@@ -137,7 +137,6 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
       try {
         result = extractDataFunction(doc, testData.url, dataObjects, fetchType, "", testManager.options);
-        result.person_data_list = metadata["d"];
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -169,7 +168,6 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
       try {
         result = extractDataFunction(doc, testData.url);
-        result.person_data_list = metadata["d"];
         releaseJsdomMemory();
       } catch (e) {
         console.log("Error:", e.stack);
@@ -193,7 +191,6 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
       try {
         result = extractDataFunction(undefined, testData.url, dataObjects, fetchType, "", testManager.options);
-        result.person_data_list = metadata["d"];
       } catch (e) {
         console.log("Error:", e.stack);
         logger.logError(testData, "Exception occurred");
@@ -218,10 +215,11 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       result = { ...result, ...testData.extraExtractedDataFields };
     }
 
+    result.person_data_list = metadata.d;
     if (testData.index) {
       result.person_data = result.person_data_list[testData.index];
     }
-    else if (testData.person_data_list && testData.person_data_list.length == 1) {
+    else if (result.person_data_list.length == 1) {
       result.person_data = result.person_data_list[0];
     }
 
@@ -249,10 +247,14 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
 
 const regressionData = [
   {
+    caseName: "66384297",
+    url: "https://collections.arolsen-archives.org/de/document/66384297",
+  },
+  {
     caseName: "71022005",
     url: "https://collections.arolsen-archives.org/de/document/71022005",
     index: 2,
-  }
+  },
 ];
 
 async function runTests(testManager) {
