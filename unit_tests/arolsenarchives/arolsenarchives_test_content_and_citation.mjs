@@ -259,6 +259,10 @@ const regressionData = [
     index: 2,
   },
   {
+    caseName: "84594847",
+    url: "https://collections.arolsen-archives.org/en/document/84594847",
+  },
+  {
     caseName: "1-1-5-3_01010503-001-002-002",
     url: "https://collections.arolsen-archives.org/en/archive/1-1-5-3_01010503-001-002-002",
   },

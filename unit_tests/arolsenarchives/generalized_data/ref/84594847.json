@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "arolsenarchives",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "ABDULMANOW",
+    "forenames": "MANSURKIN"
+  },
+  "lastNameAtDeath": "ABDULMANOW",
+  "birthDate": {
+    "yearString": "1905"
+  },
+  "birthPlace": {
+    "placeString": "Mansurkin"
+  },
+  "deathDate": {
+    "dateString": "20 Nov 1944"
+  },
+  "hasValidData": true
+}
