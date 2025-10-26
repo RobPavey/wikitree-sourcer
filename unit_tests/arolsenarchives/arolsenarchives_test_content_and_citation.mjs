@@ -36,6 +36,7 @@ import { buildCitation } from "../../extension/site/arolsenarchives/core/arolsen
 
 import { runGeneralizeDataTests } from "../test_utils/test_generalize_data_utils.mjs";
 import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.mjs";
+import { url } from "inspector";
 
 function testEnabled(parameters, testName) {
   return parameters.testName == "" || parameters.testName == testName;
@@ -103,12 +104,14 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
     fs.existsSync();
 
     let metadata = undefined;
-    try {
-      metadata = JSON.parse(fs.readFileSync(metadataFile, "utf8"));
-    } catch (e) {
-      console.log("Error:", e.stack);
-      logger.logError(testData, "Failed to read input file");
-      continue;
+    if (fs.existsSync(metadataFile)) {
+      try {
+        metadata = JSON.parse(fs.readFileSync(metadataFile, "utf8"));
+      } catch (e) {
+        console.log("Error:", e.stack);
+        logger.logError(testData, "Failed to read input file");
+        continue;
+      }
     }
 
     if (fetchObjPath && pageFile) {
@@ -215,11 +218,11 @@ async function runExtractDataTests(siteName, extractDataFunction, regressionData
       result = { ...result, ...testData.extraExtractedDataFields };
     }
 
-    result.person_data_list = metadata.d;
+    result.person_data_list = metadata?.d;
     if (testData.index) {
       result.person_data = result.person_data_list[testData.index];
     }
-    else if (result.person_data_list.length == 1) {
+    else if (result.person_data_list && result.person_data_list.length == 1) {
       result.person_data = result.person_data_list[0];
     }
 
@@ -254,6 +257,22 @@ const regressionData = [
     caseName: "71022005",
     url: "https://collections.arolsen-archives.org/de/document/71022005",
     index: 2,
+  },
+  {
+    caseName: "1-1-5-3_01010503-001-002-002",
+    url: "https://collections.arolsen-archives.org/en/archive/1-1-5-3_01010503-001-002-002",
+  },
+  {
+    caseName: "1-1-5-3_01010503-001-002-003",
+    url: "https://collections.arolsen-archives.org/de/archive/1-1-5-3_01010503-001-002-003",
+  },
+  {
+    caseName: "3-2-1-1_32110000-001-002",
+    url: "https://collections.arolsen-archives.org/en/archive/3-2-1-1_32110000-001-002",
+  },
+  {
+    caseName: "3-2-1-1_32110000-001-004",
+    url: "https://collections.arolsen-archives.org/de/archive/3-2-1-1_32110000-001-004",
   },
 ];
 

@@ -103,7 +103,7 @@ function extractData(document, url) {
       title_text = title_text.substring(title_text.indexOf(first_name) + first_name.length + 1).trim();
       if (title_text.startsWith("born on ")) {
         title_text = title_text.substring("born on ".length).trim();
-        date_of_birth = title_text.substring(0, title_text.indexOf(",") + 1).trim();
+        date_of_birth = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") + 1 : title_text.length).trim();
         title_text = title_text.substring(title_text.indexOf(date_of_birth) + date_of_birth.length + 1).trim();
         const month = date_of_birth.split("-")[1];
         date_of_birth = date_of_birth.replace(month, ("0" + monthName2Number(month).toString()).slice(-2));
@@ -123,7 +123,7 @@ function extractData(document, url) {
       title_text = title_text.substring(title_text.indexOf(first_name) + first_name.length + 1).trim();
       if (title_text.startsWith("geboren am ")) {
         title_text = title_text.substring("geboren am ".length).trim();
-        date_of_birth = title_text.substring(0, title_text.indexOf(",") + 1).trim();
+        date_of_birth = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") + 1 : title_text.length).trim();
         title_text = title_text.substring(title_text.indexOf(date_of_birth) + date_of_birth.length + 1).trim();
         const month = date_of_birth.split("-")[1];
         date_of_birth = date_of_birth.replace(month, ("0" + monthName2Number(month).toString()).slice(-2));
@@ -142,7 +142,7 @@ function extractData(document, url) {
       title_text = title_text.substring(title_text.indexOf(first_name) + first_name.length + 1).trim();
       if (title_text.startsWith("geboren am ")) {
         title_text = title_text.substring("geboren am ".length).trim();
-        date_of_birth = title_text.substring(0, title_text.indexOf(",") + 1).trim();
+        date_of_birth = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") + 1 : title_text.length).trim();
         title_text = title_text.substring(title_text.indexOf(date_of_birth) + date_of_birth.length + 1).trim();
         const month = date_of_birth.split("-")[1];
         date_of_birth = date_of_birth.replace(month, ("0" + monthName2Number(month).toString()).slice(-2));
