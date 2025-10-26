@@ -128,7 +128,7 @@ class ArolsenarchivesEdReader extends ExtractedDataReader {
 
   getBirthDateObj() {
     if (this.ed.person_data == null) return undefined;
-    return this.makeDateObjFromMmddyyyyDate(this.ed.person_data["Dob"], "/");
+    return this.makeDateObjFromMmddyyyyDate(this.ed.person_data["Dob"], this.ed.date_sep ? this.ed.date_sep : "/");
   }
 
   getBirthPlaceObj() {
