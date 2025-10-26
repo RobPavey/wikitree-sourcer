@@ -1,0 +1,17 @@
+{
+  "sourceOfData": "arolsenarchives",
+  "sourceType": "record",
+  "recordType": "Unclassified",
+  "name": {
+    "lastName": "AABEN",
+    "forenames": "OSKAR"
+  },
+  "lastNameAtDeath": "AABEN",
+  "birthDate": {
+    "dateString": "1 16 1903"
+  },
+  "birthPlace": {
+    "placeString": "KURESARRE"
+  },
+  "hasValidData": true
+}
