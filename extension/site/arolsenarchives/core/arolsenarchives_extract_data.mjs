@@ -74,16 +74,7 @@ function extractData(document, url) {
   for (let breadcrum of breadcrum_item.querySelectorAll('a[class="ng-star-inserted"]')) {
     breadcrum_string += ", " + breadcrum.textContent.trim();
   }
-  let title = document.querySelector('h1[class="title ng-tns-c171-3"]');
-  if (title == null) {
-    title = document.querySelector('h1[class="title ng-tns-c171-4"]');
-  }
-  if (title == null) {
-    title = document.querySelector('h1[class="title ng-tns-c170-3"]');
-  }
-  if (title == null) {
-    title = document.querySelector('h1[class="title ng-tns-c170-4"]');
-  }
+  let title = document.querySelector('yv-its-full-details-metadata')?.querySelector("h1");
   if (title != null) {
     breadcrum_string += ", " + title.textContent.trim();
   }
@@ -100,8 +91,10 @@ function extractData(document, url) {
     let last_name = null;
     let first_name = null;
     let date_of_birth = null;
+    let place_of_birth = null;
     // Personal file of ABRAMOWICZ, JONAS
     // Personal file of ABRAMOWICZ, JOSEK, born on 21-Apr-1918
+    // Personal file of AABEN, OSKAR, born on 16-Jan-1903, born in KURESARRE and of further persons
     if (title_text.match(/^Personal file of /)) {
       title_text = title_text.substring(title_text.indexOf("Personal file of ") + "Personal file of ".length);
       last_name = title_text.substring(0, title_text.indexOf(",")).trim();
@@ -109,33 +102,63 @@ function extractData(document, url) {
       first_name = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") : title_text.length).trim();
       title_text = title_text.substring(title_text.indexOf(first_name) + first_name.length + 1).trim();
       if (title_text.startsWith("born on ")) {
-        date_of_birth = title_text.substring("born on ".length).trim();
+        title_text = title_text.substring("born on ".length).trim();
+        date_of_birth = title_text.substring(0, title_text.indexOf(",") + 1).trim();
+        title_text = title_text.substring(title_text.indexOf(date_of_birth) + date_of_birth.length + 1).trim();
         const month = date_of_birth.split("-")[1];
         date_of_birth = date_of_birth.replace(month, ("0" + monthName2Number(month).toString()).slice(-2));
+      }
+      if (title_text.startsWith("born in ")) {
+        place_of_birth = title_text.substring("born in ".length).trim().split("and")[0].trim();
       }
       result.date_sep = "-";
     }
     // Akte von ABRAMOWICZ, JONAS
     // Akte von ABRAMOWICZ, JOSEK, geboren am 21.04.1918
     else if (title_text.match(/^Akte von /)) {
-      title_text = title_text.substring(title_text.indexOf("Akte von  ") + "Akte von ".length);
+      title_text = title_text.substring(title_text.indexOf("Akte von ") + "Akte von ".length);
       last_name = title_text.substring(0, title_text.indexOf(",")).trim();
       title_text = title_text.substring(title_text.indexOf(",") + 1).trim();
       first_name = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") : title_text.length).trim();
       title_text = title_text.substring(title_text.indexOf(first_name) + first_name.length + 1).trim();
-      result.last_name = last_name;
-      result.first_name = first_name;
       if (title_text.startsWith("geboren am ")) {
-        date_of_birth = title_text.substring("geboren am ".length).trim();
+        title_text = title_text.substring("geboren am ".length).trim();
+        date_of_birth = title_text.substring(0, title_text.indexOf(",") + 1).trim();
+        title_text = title_text.substring(title_text.indexOf(date_of_birth) + date_of_birth.length + 1).trim();
+        const month = date_of_birth.split("-")[1];
+        date_of_birth = date_of_birth.replace(month, ("0" + monthName2Number(month).toString()).slice(-2));
+      }
+      if (title_text.startsWith("geboren in ")) {
+        place_of_birth = title_text.substring("geboren in ".length).trim().split("und")[0].trim();
+      }
+      result.date_sep = ".";
+    }
+    // Unterlagen von AABEN, OSKAR, geboren am 16.01.1903, geboren in KURESARRE und von weiteren Personen
+    else if (title_text.match(/^Unterlagen von /)) {
+      title_text = title_text.substring(title_text.indexOf("Unterlagen von ") + "Unterlagen von ".length);
+      last_name = title_text.substring(0, title_text.indexOf(",")).trim();
+      title_text = title_text.substring(title_text.indexOf(",") + 1).trim();
+      first_name = title_text.substring(0, title_text.indexOf(",") != -1 ? title_text.indexOf(",") : title_text.length).trim();
+      title_text = title_text.substring(title_text.indexOf(first_name) + first_name.length + 1).trim();
+      if (title_text.startsWith("geboren am ")) {
+        title_text = title_text.substring("geboren am ".length).trim();
+        date_of_birth = title_text.substring(0, title_text.indexOf(",") + 1).trim();
+        title_text = title_text.substring(title_text.indexOf(date_of_birth) + date_of_birth.length + 1).trim();
+        const month = date_of_birth.split("-")[1];
+        date_of_birth = date_of_birth.replace(month, ("0" + monthName2Number(month).toString()).slice(-2));
+      }
+      if (title_text.startsWith("geboren in ")) {
+        place_of_birth = title_text.substring("geboren in ".length).trim().split("und")[0].trim();
       }
       result.date_sep = ".";
     }
 
-    if (first_name || last_name || date_of_birth) {
+    if (first_name || last_name || date_of_birth || place_of_birth) {
       result.person_data = {
         FirstName: first_name,
         LastName: last_name,
-        Dob: date_of_birth
+        Dob: date_of_birth,
+        PlaceBirth: place_of_birth,
       };
     }
   }
