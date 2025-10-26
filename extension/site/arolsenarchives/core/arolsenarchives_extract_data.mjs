@@ -63,10 +63,15 @@ function extractData(document, url) {
   const breadcrum_item = document.querySelector('div[class="fd-tree-path"]');
   let breadcrum_string = "";
   for (let breadcrum of breadcrum_item.querySelectorAll('a[class="ng-star-inserted"]')) {
-    breadcrum_string += ", " + breadcrum.text.trim();
+    breadcrum_string += ", " + breadcrum.textContent.trim();
   }
-  const title = document.querySelector('h1[class="title ng-tns-c171-3"]');
-  breadcrum_string += ", " + title.textContent.trim();
+  let title = document.querySelector('h1[class="title ng-tns-c171-3"]');
+  if (title == null) {
+    title = document.querySelector('h1[class="title ng-tns-c171-4"]');
+  }
+  if (title != null) {
+    breadcrum_string += ", " + title.textContent.trim();
+  }
   result.breadcrum = breadcrum_string.substring(2);
 
   const selected_index = getSelectedRow(document);
