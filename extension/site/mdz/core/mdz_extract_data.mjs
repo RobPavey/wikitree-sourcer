@@ -30,7 +30,7 @@ function extractData(document, url) {
   }
   result.success = false;
 
-  if (!url.match("/viewer/")) {
+  if (!url.match("/viewer/") && !url.match("/view/")) {
     return result;
   }
 
@@ -43,6 +43,14 @@ function extractData(document, url) {
   for (let div of pageDivs) {
     if (div.textContent && div.textContent.match(/^Seite:\s*\d+$/)) {
       const match = div.textContent.match(/Seite:\s*(\d+)/);
+      if (match) {
+        page_number = match[1];
+        break;
+      }
+    }
+
+    if (div.textContent && div.textContent.match(/^Page:\s*\d+$/)) {
+      const match = div.textContent.match(/Page:\s*(\d+)/);
       if (match) {
         page_number = match[1];
         break;
