@@ -252,7 +252,8 @@
     },
     {
       "matches": [
-        "*://www.freebmd.org.uk/*"
+        "*://www.freebmd.org.uk/*",
+        "*://www.freebmd2.org.uk/*"
       ],
       "run_at": "document_idle",
       "js": [
@@ -751,7 +752,8 @@
         "site/freebmd/core/freebmd_extract_data.mjs"
       ],
       "matches": [
-        "*://www.freebmd.org.uk/*"
+        "*://www.freebmd.org.uk/*",
+        "*://www.freebmd2.org.uk/*"
       ]
     },
     {

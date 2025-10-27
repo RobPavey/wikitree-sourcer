@@ -46,40 +46,115 @@ function freebmdQuarterToGdQuarter(quarter) {
   }
 }
 
+function getRecordDataText(ed, label) {
+  if (ed.recordData) {
+    let value = ed.recordData[label];
+    if (value) {
+      return value.text;
+    }
+  }
+
+  return "";
+}
+
 class FreebmdEdReader extends ExtractedDataReader {
   constructor(ed) {
     super(ed);
 
-    switch (ed.eventType) {
-      case "birth":
-        this.recordType = RT.BirthRegistration;
-        break;
-      case "marriage":
-        this.recordType = RT.MarriageRegistration;
-        break;
-      case "death":
-        this.recordType = RT.DeathRegistration;
-        break;
+    if (ed.format == "v2025") {
+      let recordType = getRecordDataText(ed, "Record Type");
+      switch (recordType) {
+        case "Birth":
+          this.recordType = RT.BirthRegistration;
+          break;
+        case "Marriage":
+          this.recordType = RT.MarriageRegistration;
+          break;
+        case "Death":
+          this.recordType = RT.DeathRegistration;
+          break;
+      }
+    } else {
+      switch (ed.eventType) {
+        case "birth":
+          this.recordType = RT.BirthRegistration;
+          break;
+        case "marriage":
+          this.recordType = RT.MarriageRegistration;
+          break;
+        case "death":
+          this.recordType = RT.DeathRegistration;
+          break;
+      }
     }
+  }
+
+  getSurnameAndGivenNames(convertToMixedCase = true) {
+    let ed = this.ed;
+    let surname = ed.surname;
+    let givenNames = ed.givenNames;
+
+    if (surname || givenNames) {
+      if (StringUtils.isWordAllUpperCase(surname)) {
+        surname = NameUtils.convertNameFromAllCapsToMixedCase(surname);
+      }
+      givenNames = NameUtils.convertNameFromAllCapsToMixedCase(givenNames);
+    } else if (ed.name) {
+      surname = "";
+      givenNames = "";
+
+      let fullName = ed.name;
+      if (StringUtils.isWordAllUpperCase(fullName)) {
+        fullName = NameUtils.convertNameFromAllCapsToMixedCase(fullName);
+
+        let nameObj = this.makeNameObjFromFullName(fullName);
+        surname = nameObj.inferLastName();
+        givenNames = nameObj.inferForenames();
+      } else {
+        let nameParts = fullName.split(" ");
+        for (let index = nameParts.length - 1; index >= 0; index--) {
+          let namePart = nameParts[index].trim();
+          if (StringUtils.isWordAllUpperCase(namePart)) {
+            namePart = NameUtils.convertNameFromAllCapsToMixedCase(namePart);
+            if (surname) {
+              surname = " " + surname;
+            }
+            surname = namePart + surname;
+          } else {
+            // this part and previous ones are given names
+            for (let givenIndex = 0; givenIndex <= index; givenIndex++) {
+              namePart = nameParts[givenIndex].trim();
+              if (givenNames) {
+                givenNames += " ";
+              }
+              givenNames += namePart;
+            }
+            break;
+          }
+        }
+      }
+    }
+
+    return { surname: surname, givenNames: givenNames };
   }
 
   getCorrectlyCasedSurname() {
-    let surname = this.ed.surname;
-    if (StringUtils.isWordAllUpperCase(surname)) {
-      surname = NameUtils.convertNameFromAllCapsToMixedCase(surname);
-    }
-    return surname;
+    let parts = this.getSurnameAndGivenNames();
+    return parts.surname;
   }
 
   getCorrectlyCasedGivenNames() {
-    let givenNames = this.ed.givenNames;
-    givenNames = NameUtils.convertNameFromAllCapsToMixedCase(givenNames);
-    return givenNames;
+    let parts = this.getSurnameAndGivenNames();
+    return parts.givenNames;
   }
 
   getCorrectlyCasedRegistrationDistrict() {
     let rd = this.ed.registrationDistrict;
-    rd = NameUtils.convertNameFromAllCapsToMixedCase(rd);
+    if (rd) {
+      rd = NameUtils.convertNameFromAllCapsToMixedCase(rd);
+    } else {
+      rd = getRecordDataText(this.ed, "District");
+    }
     return rd;
   }
 
@@ -88,8 +163,21 @@ class FreebmdEdReader extends ExtractedDataReader {
   ////////////////////////////////////////////////////////////////////////////////////////////////////
 
   hasValidData() {
-    if (!this.ed.eventYear) {
-      return false; //the extract failed to get enough useful data
+    if (this.ed.format == "v2025") {
+      if (!this.ed.name) {
+        return false;
+      }
+      if (!this.ed.recordData) {
+        return false;
+      }
+      let date = getRecordDataText(this.ed, "Registration Date");
+      if (!date) {
+        return false;
+      }
+    } else {
+      if (!this.ed.eventYear) {
+        return false; //the extract failed to get enough useful data
+      }
     }
     return true;
   }
@@ -102,7 +190,18 @@ class FreebmdEdReader extends ExtractedDataReader {
   }
 
   getEventDateObj() {
-    return this.makeDateObjFromYearAndQuarter(this.ed.eventYear, freebmdQuarterToGdQuarter(this.ed.eventQuarter));
+    if (this.ed.eventYear) {
+      return this.makeDateObjFromYearAndQuarter(this.ed.eventYear, freebmdQuarterToGdQuarter(this.ed.eventQuarter));
+    }
+
+    let registrationDate = getRecordDataText(this.ed, "Registration Date");
+    let registered = getRecordDataText(this.ed, "Registered");
+
+    if (registered && registered.endsWith(registrationDate)) {
+      return this.makeDateObjFromDateString(registered);
+    } else if (registrationDate) {
+      return this.makeDateObjFromDateString(registrationDate);
+    }
   }
 
   getLastNameAtBirth() {
@@ -120,9 +219,17 @@ class FreebmdEdReader extends ExtractedDataReader {
   }
 
   getMothersMaidenName() {
-    if (this.ed.mother) {
+    if (this.ed.mothersMaidenName) {
       return this.ed.mothersMaidenName;
     }
+
+    let mmn = getRecordDataText(this.ed, "Mother's Maiden Name");
+    if (mmn) {
+      if (!mmn.startsWith("No data")) {
+        return mmn;
+      }
+    }
+
     return "";
   }
 
@@ -163,8 +270,19 @@ class FreebmdEdReader extends ExtractedDataReader {
   }
 
   getSpouses() {
+    let spouseName = undefined;
     if (this.ed.spouse) {
-      let spouseName = this.makeNameObjFromFullName(this.ed.spouse);
+      spouseName = this.makeNameObjFromFullName(this.ed.spouse);
+    } else {
+      let spouseSurname = getRecordDataText(this.ed, "Spouse Surname");
+      if (spouseSurname) {
+        if (!spouseSurname.startsWith("No data")) {
+          spouseName = this.makeNameObjFromForenamesAndLastName("", spouseSurname);
+        }
+      }
+    }
+
+    if (spouseName) {
       let marriageDateObj = this.getEventDateObj();
       let marriagePlaceObj = this.getEventPlaceObj();
       let spouse = this.makeSpouseObj(spouseName, marriageDateObj, marriagePlaceObj);
@@ -174,11 +292,11 @@ class FreebmdEdReader extends ExtractedDataReader {
 
   getCollectionData() {
     let collectionId = undefined;
-    if (this.ed.eventType == "birth") {
+    if (this.recordType == RT.BirthRegistration) {
       collectionId = "births";
-    } else if (this.ed.eventType == "marriage") {
+    } else if (this.recordType == RT.MarriageRegistration) {
       collectionId = "marriages";
-    } else if (this.ed.eventType == "death") {
+    } else if (this.recordType == RT.DeathRegistration) {
       collectionId = "deaths";
     }
 
@@ -187,11 +305,22 @@ class FreebmdEdReader extends ExtractedDataReader {
       let collectionData = {
         id: collectionId,
       };
-      if (this.ed.referenceVolume) {
-        collectionData.volume = this.ed.referenceVolume;
-      }
-      if (this.ed.referencePage) {
-        collectionData.page = this.ed.referencePage;
+      if (this.ed.format == "v2025") {
+        let referenceVolume = getRecordDataText(this.ed, "Volume");
+        if (referenceVolume) {
+          collectionData.volume = referenceVolume;
+        }
+        let referencePage = getRecordDataText(this.ed, "Page");
+        if (referencePage) {
+          collectionData.page = referencePage;
+        }
+      } else {
+        if (this.ed.referenceVolume) {
+          collectionData.volume = this.ed.referenceVolume;
+        }
+        if (this.ed.referencePage) {
+          collectionData.page = this.ed.referencePage;
+        }
       }
 
       return collectionData;
