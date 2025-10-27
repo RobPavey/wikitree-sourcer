@@ -153,12 +153,12 @@ function sleep(ms) {
 }
 
 async function doPendingSearch() {
-  console.log("##############################################################################");
-  console.log("doPendingSearch: called");
-  console.log("doPendingSearch: URL is");
-  console.log(document.URL);
-  console.log("doPendingSearch: pendingSearchData is");
-  console.log(pendingSearchData);
+  //console.log("##############################################################################");
+  //console.log("doPendingSearch: called");
+  //console.log("doPendingSearch: URL is");
+  //console.log(document.URL);
+  //console.log("doPendingSearch: pendingSearchData is");
+  //console.log(pendingSearchData);
 
   if (pendingSearchData) {
     let submitted = false;
@@ -168,27 +168,27 @@ async function doPendingSearch() {
     let selectData = pendingSearchData.selectData;
 
     let mainElement = document.querySelector("main.site__content");
-    console.log("doPendingSearch: mainElement is:");
-    console.log(mainElement);
+    //console.log("doPendingSearch: mainElement is:");
+    //console.log(mainElement);
     let formElement = document.querySelector("#new_search_query");
-    console.log("doPendingSearch: formElement is:");
-    console.log(formElement);
+    //console.log("doPendingSearch: formElement is:");
+    //console.log(formElement);
     if (formElement) {
       let searchButtonElement = formElement.querySelector("#search_form_submit");
 
       for (var key in fieldData) {
-        console.log("doPendingSearch: key is: " + key);
+        //console.log("doPendingSearch: key is: " + key);
 
         if (key) {
           let value = fieldData[key];
-          console.log("doPendingSearch: value is: " + value);
+          //console.log("doPendingSearch: value is: " + value);
 
           if (value !== undefined && value !== "") {
             let id = key;
 
             let inputElement = formElement.querySelector("#" + id);
-            console.log("doPendingSearch: inputElement is:");
-            console.log(inputElement);
+            //console.log("doPendingSearch: inputElement is:");
+            //console.log(inputElement);
 
             if (inputElement) {
               // just setting the value sometimes does not seem to register with the form
@@ -216,39 +216,20 @@ async function doPendingSearch() {
       }
 
       for (var key in selectData) {
-        console.log("doPendingSearch: selectData key is: " + key);
+        //console.log("doPendingSearch: selectData key is: " + key);
         if (key) {
           let value = selectData[key];
-          console.log("doPendingSearch: selectData value is: " + value);
+          //console.log("doPendingSearch: selectData value is: " + value);
 
           if (value !== undefined && value !== "") {
             let id = key;
 
             let inputElement = formElement.querySelector("#" + id);
-            console.log("doPendingSearch: inputElement is:");
-            console.log(inputElement);
+            //console.log("doPendingSearch: inputElement is:");
+            //console.log(inputElement);
 
             if (inputElement) {
-              // just setting the value sometimes does not seem to register with the form
               inputElement.focus();
-
-              if (false) {
-                let selector = 'option[value="' + value + '"]';
-
-                let optionElement = inputElement.querySelector(selector);
-                if (optionElement) {
-                  console.log("refineResults: optionElement found ");
-
-                  // we have found the element but it may take a few milliseconds to be working
-                  setTimeout(function () {
-                    var event = new Event("click");
-                    optionElement.dispatchEvent(event);
-                  }, 100);
-
-                  elementsFound = true;
-                }
-              }
-
               inputElement.value = value;
               if (searchButtonElement) {
                 // moves to another input so that this field gets processed
@@ -265,34 +246,28 @@ async function doPendingSearch() {
         }
       }
 
-      console.log("inputNotFound is:");
-      console.log(inputNotFound);
+      //console.log("inputNotFound is:");
+      //console.log(inputNotFound);
 
       if (!inputNotFound) {
         // A long sleep seems to be required sometimes,
         // otherwise it can say the family name or given names need to be filled out.
         // 1000 is not always enough here.
         // Test case - search for death from https://www.wikitree.com/wiki/Clarke-15954
-        let waitTime = 0;
-        while (waitTime < 2000) {
-          await sleep(200);
-          waitTime += 200;
-          setSearchingBanner();
-        }
-        console.log("doPendingSearch: completed wait for mutations, waitTime is: " + waitTime);
+        await sleep(100);
 
         // update this in case the HTML changed
         searchButtonElement = formElement.querySelector("#search_form_submit");
 
-        console.log("doPendingSearch: searchButtonElement is:");
-        console.log(searchButtonElement);
+        //console.log("doPendingSearch: searchButtonElement is:");
+        //console.log(searchButtonElement);
 
         // try to submit form
         if (searchButtonElement) {
-          console.log("about to click button");
+          //console.log("about to click button");
 
           // now submit the form to do the search
-          //searchButtonElement.click();
+          searchButtonElement.click();
 
           submitted = true;
         }
@@ -302,7 +277,7 @@ async function doPendingSearch() {
     if (!submitted) {
       console.log("not submitted");
     } else {
-      console.log("submitted");
+      //console.log("submitted");
     }
 
     // clear the pending data so that we don't use it again on refine search
@@ -311,8 +286,8 @@ async function doPendingSearch() {
 }
 
 async function checkForPendingSearch() {
-  console.log("checkForPendingSearch: called");
-  console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
+  //console.log("checkForPendingSearch: called");
+  //console.log("checkForPendingSearch: document.referrer is: " + document.referrer);
 
   if (document.referrer) {
     // when this page was opened by the extension referrer is an empty string
