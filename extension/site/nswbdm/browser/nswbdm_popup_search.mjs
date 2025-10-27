@@ -28,6 +28,7 @@ import {
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
