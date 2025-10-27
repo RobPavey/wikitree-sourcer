@@ -39,7 +39,21 @@ function buildFreebmdUrl(ed, builder) {
     let persistentUrlEntry = ed.recordData["Persistent URL for entry"];
     if (persistentUrlEntry) {
       if (persistentUrlEntry.href) {
-        return persistentUrlEntry.href;
+        let url = persistentUrlEntry.href;
+        if (!url.startsWith("http")) {
+          // url can be of form:
+          // /entry-information/hash?id=VTuTHg8Sx2jpPbxoXlMXhw&locale=en
+          // corresponding ed.url could be:
+          // https://www.freebmd2.org.uk/68fbebeb86557446cc1ef67f/entry-information/287998007/john-d-smith-marriage-lancashire-bolton-v38-p108?locale=en&search_entry=287998007
+          let domainRe = /^(https\:\/\/[^\/]+).*$/;
+          if (domainRe.test(ed.url)) {
+            let domain = ed.url.replace(domainRe, "$1");
+            if (domain) {
+              url = domain + url;
+            }
+          }
+        }
+        return url;
       }
     }
   }
