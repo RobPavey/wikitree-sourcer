@@ -1,0 +1,36 @@
+{
+    "d": [
+        {
+            "__type": "ITSPannel.classes.PersData",
+            "ObjId": 66384297,
+            "LastName": "AAB",
+            "FirstName": "Vaino",
+            "MaidenName": "",
+            "PlaceBirth": "",
+            "Dob": "03/26/1923",
+            "Year": null,
+            "MoreDob": false,
+            "PrisonerNumber": "",
+            "AUCode": null,
+            "DescId": "2735563",
+            "Counter": 0,
+            "TreePath": null,
+            "Signature": "3.1.1.1 - Namen in der \"phonetischen\" Sortierung ab A",
+            "Father": "",
+            "Mother": "",
+            "Religion": "",
+            "Nationality": "",
+            "Occupaton": "",
+            "Place_of_incarceration": "",
+            "Date_of_decease": "",
+            "Last_residence": "",
+            "Last_residence_country": "",
+            "Last_residence_district": "",
+            "Last_residence_province": "",
+            "Last_residence_town": "",
+            "Last_residence_part_of_town": "",
+            "Last_residence_street": "",
+            "Last_residence_house_number": ""
+        }
+    ]
+}

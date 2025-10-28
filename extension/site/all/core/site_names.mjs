@@ -73,6 +73,7 @@ const siteNames = [
   "wiewaswie",
   "wikitree",
   "wikipedia",
+  "mdz",
   "dfgviewer",
   "arolsenarchives",
 ];
