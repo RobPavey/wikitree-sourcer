@@ -98,6 +98,17 @@
     },
     {
       "matches": [
+        "*://collections.arolsen-archives.org/*",
+        "*://collections-server.arolsen-archives.org/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/arolsenarchives/browser/arolsenarchives_content.js"
+      ]
+    },
+    {
+      "matches": [
         "*://*.bac-lac.gc.ca/*"
       ],
       "run_at": "document_idle",
@@ -624,6 +635,15 @@
       ],
       "matches": [
         "*://archive.org/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/arolsenarchives/core/arolsenarchives_extract_data.mjs"
+      ],
+      "matches": [
+        "*://collections.arolsen-archives.org/*",
+        "*://collections-server.arolsen-archives.org/*"
       ]
     },
     {

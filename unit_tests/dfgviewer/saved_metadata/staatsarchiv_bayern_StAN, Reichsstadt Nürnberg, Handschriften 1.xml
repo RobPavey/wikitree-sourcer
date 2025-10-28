@@ -1,0 +1,1248 @@
+<mets:mets xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mets="http://www.loc.gov/METS/"
+  xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dv="http://dfg-viewer.de/"
+  xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/mets/mets.xsd http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-7.xsd">
+    <mets:dmdSec ID="dmd296ac728-06ea-4ae6-b10a-6a0f702b4f69">
+        <mets:mdWrap MDTYPE="MODS">
+            <mets:xmlData>
+                <mods:mods>
+                    <mods:location>
+                    	<mods:shelfLocator>
+                    		 StAN, Reichsstadt N&#252;rnberg, Handschriften 1
+                    	</mods:shelfLocator>
+                    </mods:location>                    
+                    <mods:titleInfo>
+                        <mods:title>
+                            Lateinische Weltchronik von Erschaffung der Welt bis 1276, wahrscheinlich im Egidienkloster zu N&#252;rnberg geschrieben.
+                        </mods:title>
+                        <mods:partName>
+                        	                        </mods:partName>
+                    </mods:titleInfo>                      
+                    <mods:originInfo>
+                        <mods:place>
+                            <mods:placeTerm type="text">
+                            	                            		Reichsstadt N&#252;rnberg, Handschriften
+                            	                            </mods:placeTerm>
+                        </mods:place>
+                        <mods:dateIssued encoding="iso8601">
+                        	                            	[um 1450]
+                        	                        </mods:dateIssued>
+                    </mods:originInfo>                       
+                </mods:mods>
+            </mets:xmlData>
+        </mets:mdWrap>
+    </mets:dmdSec>
+    <mets:amdSec ID="amd296ac728-06ea-4ae6-b10a-6a0f702b4f69">
+        <mets:rightsMD ID="rights296ac728-06ea-4ae6-b10a-6a0f702b4f69">
+            <mets:mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVRIGHTS">
+                <mets:xmlData>
+                    <dv:rights xmlns:dv="http://dfg-viewer.de/">
+                        <dv:owner>Archiv</dv:owner>
+                        <dv:ownerContact>mailto:poststelle@gda.bayern.de</dv:ownerContact>
+                        <dv:ownerLogo>https://www.gda.bayern.de/images/archive.gif</dv:ownerLogo>
+                        <dv:ownerSiteURL>https://www.gda.bayern.de/</dv:ownerSiteURL>
+                    </dv:rights>
+                </mets:xmlData>
+            </mets:mdWrap>
+        </mets:rightsMD>
+        <mets:digiprovMD ID="digiprov296ac728-06ea-4ae6-b10a-6a0f702b4f69">
+            <mets:mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVLINKS">
+                <mets:xmlData>
+                    <dv:links xmlns:dv="http://dfg-viewer.de/">
+                        <dv:reference>
+                            https://www.gda.bayern.de/findmittel/296ac728-06ea-4ae6-b10a-6a0f702b4f69
+                        </dv:reference>
+                        <dv:presentation>
+                            https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69
+                        </dv:presentation>
+                    </dv:links>
+                </mets:xmlData>
+            </mets:mdWrap>
+        </mets:digiprovMD>
+    </mets:amdSec>
+    <mets:fileSec>
+        <mets:fileGrp USE="DEFAULT">
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_1_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/1" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_2_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/2" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_3_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/3" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_4_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/4" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_5_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/5" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_6_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/6" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_7_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/7" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_8_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/8" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_9_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/9" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_10_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/10" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_11_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/11" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_12_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/12" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_13_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/13" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_14_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/14" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_15_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/15" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_16_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/16" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_17_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/17" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_18_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/18" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_19_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/19" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_20_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/20" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_21_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/21" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_22_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/22" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_23_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/23" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_24_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/24" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_25_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/25" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_26_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/26" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_27_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/27" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_28_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/28" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_29_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/29" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_30_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/30" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_31_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/31" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_32_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/32" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_33_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/33" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_34_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/34" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_35_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/35" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_36_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/36" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_37_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/37" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_38_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/38" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_39_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/39" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_40_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/40" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_41_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/41" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_42_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/42" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_43_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/43" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_44_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/44" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_45_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/45" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_46_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/46" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_47_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/47" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_48_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/48" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_49_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/49" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_50_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/50" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_51_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/51" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_52_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/52" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_53_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/53" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_54_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/54" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_55_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/55" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_56_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/56" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_57_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/57" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_58_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/58" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_59_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/59" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_60_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/60" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_61_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/61" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_62_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/62" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_63_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/63" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_64_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/64" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_65_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/65" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_66_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/66" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_67_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/67" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_68_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/68" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_69_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/69" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_70_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/70" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_71_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/71" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_72_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/72" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_73_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/73" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_74_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/74" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_75_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/75" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_76_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/76" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_77_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/77" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_78_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/78" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_79_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/79" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_80_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/80" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_81_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/81" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_82_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/82" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_83_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/83" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_84_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/84" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_85_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/85" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_86_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/86" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_87_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/87" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_88_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/88" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_89_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/89" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_90_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/90" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_91_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/91" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_92_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/92" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_93_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/93" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_94_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/94" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_95_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/95" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_96_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/96" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_97_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/97" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_98_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/98" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_99_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/99" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_100_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/100" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_101_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/101" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_102_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/102" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_103_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/103" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_104_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/104" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_105_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/105" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_106_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/106" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_107_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/107" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_108_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/108" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_109_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/109" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_110_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/110" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_111_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/111" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_112_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/112" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_113_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/113" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_114_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/114" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_115_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/115" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_116_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/116" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_117_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/117" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_118_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/118" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_119_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/119" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_120_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/120" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_121_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/121" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_122_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/122" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_123_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/123" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_124_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/124" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_125_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/125" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_126_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/126" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_127_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/127" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_128_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/128" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_129_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/129" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_130_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/130" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_131_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/131" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_132_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/132" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_133_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/133" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_134_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/134" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_135_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/135" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_136_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/136" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_137_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/137" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_138_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/138" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_139_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/139" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_140_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/140" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_141_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/141" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_142_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/142" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_143_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/143" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_144_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/144" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_145_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/145" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_146_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/146" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_147_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/147" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_148_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/148" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_149_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/149" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_150_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/150" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_151_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/151" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_152_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/152" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_153_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/153" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_154_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/154" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_155_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/155" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_156_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/156" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_157_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/157" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_158_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/158" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_159_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/159" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_160_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/160" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_161_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/161" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_162_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/162" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_163_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/163" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_164_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/164" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_165_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/165" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_166_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/166" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_167_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/167" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_168_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/168" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_169_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/169" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_170_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/170" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_171_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/171" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_172_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/172" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_173_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/173" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_174_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/174" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_175_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/175" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_176_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/176" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_177_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/177" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_178_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/178" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_179_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/179" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_180_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/180" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_181_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/181" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_182_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/182" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_183_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/183" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_184_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/184" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_185_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/185" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_186_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/186" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_187_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/187" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_188_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/188" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_189_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/189" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_190_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/190" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_191_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/191" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_192_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/192" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_193_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/193" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_194_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/194" />
+                </mets:file>
+                            <mets:file ID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_195_1000" MIMETYPE="application/vnd.kitodo.iiif">
+                    <mets:FLocat LOCTYPE="URL" xlink:href="https://www.gda.bayern.de/digitalisat/iiif/296ac728-06ea-4ae6-b10a-6a0f702b4f69/195" />
+                </mets:file>
+                    </mets:fileGrp>
+    </mets:fileSec>
+    <mets:structMap TYPE="PHYSICAL">
+        <mets:div TYPE="physSequence" ID="phys296ac728-06ea-4ae6-b10a-6a0f702b4f69">
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_1" ORDER="1" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/1">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_1_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_2" ORDER="2" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/2">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_2_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_3" ORDER="3" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/3">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_3_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_4" ORDER="4" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/4">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_4_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_5" ORDER="5" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/5">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_5_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_6" ORDER="6" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/6">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_6_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_7" ORDER="7" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/7">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_7_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_8" ORDER="8" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/8">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_8_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_9" ORDER="9" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/9">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_9_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_10" ORDER="10" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/10">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_10_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_11" ORDER="11" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/11">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_11_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_12" ORDER="12" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/12">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_12_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_13" ORDER="13" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/13">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_13_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_14" ORDER="14" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/14">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_14_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_15" ORDER="15" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/15">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_15_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_16" ORDER="16" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/16">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_16_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_17" ORDER="17" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/17">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_17_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_18" ORDER="18" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/18">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_18_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_19" ORDER="19" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/19">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_19_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_20" ORDER="20" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/20">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_20_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_21" ORDER="21" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/21">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_21_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_22" ORDER="22" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/22">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_22_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_23" ORDER="23" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/23">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_23_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_24" ORDER="24" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/24">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_24_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_25" ORDER="25" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/25">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_25_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_26" ORDER="26" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/26">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_26_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_27" ORDER="27" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/27">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_27_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_28" ORDER="28" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/28">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_28_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_29" ORDER="29" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/29">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_29_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_30" ORDER="30" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/30">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_30_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_31" ORDER="31" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/31">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_31_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_32" ORDER="32" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/32">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_32_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_33" ORDER="33" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/33">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_33_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_34" ORDER="34" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/34">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_34_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_35" ORDER="35" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/35">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_35_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_36" ORDER="36" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/36">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_36_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_37" ORDER="37" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/37">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_37_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_38" ORDER="38" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/38">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_38_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_39" ORDER="39" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/39">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_39_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_40" ORDER="40" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/40">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_40_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_41" ORDER="41" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/41">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_41_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_42" ORDER="42" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/42">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_42_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_43" ORDER="43" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/43">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_43_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_44" ORDER="44" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/44">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_44_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_45" ORDER="45" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/45">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_45_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_46" ORDER="46" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/46">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_46_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_47" ORDER="47" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/47">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_47_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_48" ORDER="48" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/48">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_48_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_49" ORDER="49" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/49">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_49_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_50" ORDER="50" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/50">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_50_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_51" ORDER="51" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/51">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_51_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_52" ORDER="52" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/52">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_52_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_53" ORDER="53" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/53">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_53_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_54" ORDER="54" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/54">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_54_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_55" ORDER="55" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/55">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_55_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_56" ORDER="56" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/56">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_56_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_57" ORDER="57" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/57">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_57_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_58" ORDER="58" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/58">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_58_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_59" ORDER="59" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/59">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_59_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_60" ORDER="60" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/60">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_60_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_61" ORDER="61" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/61">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_61_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_62" ORDER="62" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/62">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_62_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_63" ORDER="63" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/63">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_63_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_64" ORDER="64" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/64">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_64_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_65" ORDER="65" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/65">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_65_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_66" ORDER="66" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/66">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_66_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_67" ORDER="67" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/67">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_67_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_68" ORDER="68" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/68">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_68_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_69" ORDER="69" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/69">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_69_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_70" ORDER="70" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/70">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_70_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_71" ORDER="71" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/71">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_71_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_72" ORDER="72" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/72">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_72_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_73" ORDER="73" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/73">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_73_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_74" ORDER="74" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/74">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_74_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_75" ORDER="75" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/75">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_75_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_76" ORDER="76" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/76">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_76_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_77" ORDER="77" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/77">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_77_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_78" ORDER="78" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/78">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_78_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_79" ORDER="79" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/79">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_79_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_80" ORDER="80" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/80">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_80_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_81" ORDER="81" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/81">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_81_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_82" ORDER="82" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/82">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_82_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_83" ORDER="83" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/83">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_83_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_84" ORDER="84" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/84">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_84_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_85" ORDER="85" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/85">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_85_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_86" ORDER="86" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/86">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_86_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_87" ORDER="87" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/87">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_87_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_88" ORDER="88" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/88">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_88_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_89" ORDER="89" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/89">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_89_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_90" ORDER="90" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/90">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_90_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_91" ORDER="91" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/91">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_91_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_92" ORDER="92" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/92">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_92_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_93" ORDER="93" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/93">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_93_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_94" ORDER="94" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/94">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_94_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_95" ORDER="95" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/95">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_95_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_96" ORDER="96" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/96">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_96_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_97" ORDER="97" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/97">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_97_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_98" ORDER="98" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/98">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_98_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_99" ORDER="99" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/99">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_99_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_100" ORDER="100" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/100">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_100_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_101" ORDER="101" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/101">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_101_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_102" ORDER="102" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/102">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_102_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_103" ORDER="103" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/103">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_103_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_104" ORDER="104" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/104">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_104_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_105" ORDER="105" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/105">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_105_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_106" ORDER="106" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/106">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_106_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_107" ORDER="107" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/107">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_107_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_108" ORDER="108" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/108">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_108_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_109" ORDER="109" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/109">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_109_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_110" ORDER="110" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/110">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_110_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_111" ORDER="111" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/111">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_111_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_112" ORDER="112" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/112">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_112_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_113" ORDER="113" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/113">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_113_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_114" ORDER="114" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/114">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_114_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_115" ORDER="115" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/115">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_115_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_116" ORDER="116" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/116">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_116_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_117" ORDER="117" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/117">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_117_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_118" ORDER="118" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/118">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_118_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_119" ORDER="119" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/119">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_119_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_120" ORDER="120" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/120">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_120_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_121" ORDER="121" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/121">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_121_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_122" ORDER="122" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/122">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_122_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_123" ORDER="123" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/123">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_123_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_124" ORDER="124" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/124">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_124_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_125" ORDER="125" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/125">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_125_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_126" ORDER="126" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/126">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_126_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_127" ORDER="127" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/127">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_127_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_128" ORDER="128" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/128">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_128_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_129" ORDER="129" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/129">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_129_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_130" ORDER="130" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/130">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_130_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_131" ORDER="131" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/131">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_131_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_132" ORDER="132" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/132">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_132_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_133" ORDER="133" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/133">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_133_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_134" ORDER="134" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/134">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_134_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_135" ORDER="135" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/135">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_135_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_136" ORDER="136" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/136">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_136_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_137" ORDER="137" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/137">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_137_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_138" ORDER="138" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/138">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_138_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_139" ORDER="139" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/139">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_139_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_140" ORDER="140" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/140">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_140_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_141" ORDER="141" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/141">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_141_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_142" ORDER="142" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/142">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_142_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_143" ORDER="143" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/143">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_143_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_144" ORDER="144" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/144">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_144_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_145" ORDER="145" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/145">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_145_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_146" ORDER="146" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/146">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_146_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_147" ORDER="147" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/147">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_147_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_148" ORDER="148" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/148">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_148_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_149" ORDER="149" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/149">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_149_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_150" ORDER="150" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/150">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_150_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_151" ORDER="151" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/151">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_151_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_152" ORDER="152" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/152">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_152_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_153" ORDER="153" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/153">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_153_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_154" ORDER="154" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/154">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_154_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_155" ORDER="155" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/155">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_155_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_156" ORDER="156" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/156">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_156_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_157" ORDER="157" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/157">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_157_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_158" ORDER="158" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/158">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_158_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_159" ORDER="159" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/159">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_159_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_160" ORDER="160" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/160">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_160_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_161" ORDER="161" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/161">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_161_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_162" ORDER="162" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/162">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_162_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_163" ORDER="163" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/163">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_163_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_164" ORDER="164" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/164">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_164_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_165" ORDER="165" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/165">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_165_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_166" ORDER="166" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/166">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_166_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_167" ORDER="167" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/167">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_167_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_168" ORDER="168" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/168">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_168_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_169" ORDER="169" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/169">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_169_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_170" ORDER="170" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/170">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_170_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_171" ORDER="171" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/171">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_171_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_172" ORDER="172" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/172">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_172_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_173" ORDER="173" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/173">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_173_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_174" ORDER="174" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/174">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_174_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_175" ORDER="175" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/175">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_175_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_176" ORDER="176" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/176">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_176_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_177" ORDER="177" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/177">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_177_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_178" ORDER="178" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/178">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_178_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_179" ORDER="179" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/179">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_179_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_180" ORDER="180" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/180">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_180_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_181" ORDER="181" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/181">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_181_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_182" ORDER="182" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/182">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_182_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_183" ORDER="183" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/183">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_183_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_184" ORDER="184" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/184">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_184_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_185" ORDER="185" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/185">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_185_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_186" ORDER="186" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/186">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_186_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_187" ORDER="187" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/187">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_187_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_188" ORDER="188" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/188">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_188_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_189" ORDER="189" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/189">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_189_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_190" ORDER="190" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/190">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_190_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_191" ORDER="191" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/191">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_191_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_192" ORDER="192" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/192">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_192_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_193" ORDER="193" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/193">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_193_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_194" ORDER="194" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/194">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_194_1000" />
+                </mets:div>
+                            <mets:div TYPE="page" ID="div296ac728-06ea-4ae6-b10a-6a0f702b4f69_195" ORDER="195" CONTENTIDS="https://www.gda.bayern.de/show/296ac728-06ea-4ae6-b10a-6a0f702b4f69/195">
+                    <mets:fptr FILEID="F_296ac728-06ea-4ae6-b10a-6a0f702b4f69_195_1000" />
+                </mets:div>
+                    </mets:div>
+    </mets:structMap>
+    <mets:structMap TYPE="LOGICAL">
+        <mets:div TYPE="monograph" ID="log296ac728-06ea-4ae6-b10a-6a0f702b4f69" DMDID="dmd296ac728-06ea-4ae6-b10a-6a0f702b4f69" ADMID="amd296ac728-06ea-4ae6-b10a-6a0f702b4f69"
+          CONTENTIDS="urn:nbn:de:stab-296ac728-06ea-4ae6-b10a-6a0f702b4f691" />
+    </mets:structMap>
+    <mets:structLink>
+        <mets:smLink xlink:from="log296ac728-06ea-4ae6-b10a-6a0f702b4f69" xlink:to="phys296ac728-06ea-4ae6-b10a-6a0f702b4f69" />
+    </mets:structLink>
+</mets:mets>
