@@ -32,11 +32,11 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    caseName: "Death_1965_Alice_Peterson",
+    caseName: "death_1965_alice_peterson",
     url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
   },
   {
-    caseName: "Death_1974_Alice_Ursula_Peterson",
+    caseName: "death_1974_alice_ursula_peterson",
     url: "https://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/Results",
   },
 ];

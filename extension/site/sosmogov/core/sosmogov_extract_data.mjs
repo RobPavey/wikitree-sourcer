@@ -29,9 +29,9 @@ SOFTWARE.
 
 function getSelectedRow(document) {
   const highlightStyle = "font-weight: bold; font-style: italic";
-  const elResultsTable = document.querySelector("table#DeathCertTable");
-  if (elResultsTable) {
-    const selectedRow = elResultsTable.querySelector("tr[style='" + highlightStyle + "']");
+  const deathCertTable = document.querySelector("table#DeathCertTable");
+  if (deathCertTable) {
+    const selectedRow = deathCertTable.querySelector("tr[style='" + highlightStyle + "']");
     return selectedRow;
   }
 }
@@ -86,14 +86,34 @@ function extractData(document, url) {
     return result;
   }
 
-  const tableRows = deathCertTable.querySelectorAll("tr:not([data-sortable])"); // retrieve table result rows, excluding header row
+  const tableHeader = deathCertTable.querySelector("tr[data-sortable]"); // retrieve result table header row
+  if (!tableHeader) {
+    return result;
+  }
+  let headerKeyValuePairs = {};
+  let headerCells = tableHeader.querySelectorAll("th");
+  if (headerCells.length < 1) {
+    return result;
+  } else {
+    for (let headerCell of headerCells) {
+      let key = headerCell.className.trim();
+      if (key != "Image") {
+        let value = headerCell.querySelector("span").textContent.trim();
+        if (key && value) {
+          headerKeyValuePairs[key] = value;
+        }
+      }
+    }
+  }
+
+  const tableRows = deathCertTable.querySelectorAll("tr:not([data-sortable])"); // retrieve the rest of the result table rows
   if (tableRows.length < 1) {
     return result;
   }
 
-  // if user doesn't select a row, use the first row?
   let selectedRow = getSelectedRow(document);
   if (!selectedRow) {
+    // if user doesn't select a row, use the first row?
     selectedRow = tableRows[0];
   }
 
@@ -116,11 +136,9 @@ function extractData(document, url) {
       } else if (key == "Name") {
         // in addition to deceased, there may be names for spouse, father, and mother
         let allNames = extractAllNames(value);
-        console.log(allNames);
         for (const key in allNames) {
           if (allNames.hasOwnProperty(key)) {
             const value = allNames[key];
-            console.log(`${key}: ${value}`);
             if (key && value) {
               result.recordData[key] = value;
             }
@@ -128,7 +146,9 @@ function extractData(document, url) {
         }
       } else {
         if (key && value) {
-          result.recordData[key] = value;
+          // use the header text as record data key
+          let headerText = headerKeyValuePairs[key];
+          result.recordData[headerText] = value;
         }
       }
     }

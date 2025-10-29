@@ -1,0 +1,12 @@
+{
+  "std": {
+    "fieldData": {
+      "LastName": "Peterson",
+      "FirstName": "Alice",
+      "MiddleName": "",
+      "BeginYear": "1974",
+      "EndYear": "1974"
+    },
+    "selectData": {}
+  }
+}

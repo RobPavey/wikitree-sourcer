@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Alice Ursula Peterson; Date of Death: May 28, 1974; County: St. Louis City<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1974/1974_00204430.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nFather: Harry Watson; Age: 63; Certificate Number: 204430; Last Four SSN: 2114.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Alice, child of Harry Watson, died (age 63) on 28 May 1974 in St. Louis City, Missouri, United States of America.<ref>\n\"Missouri Death Certificates, 1910 - 1974\"<br/>\nMissouri State Archives; Deceased: Alice Ursula Peterson; Date of Death: May 28, 1974; County: St. Louis City<br/>\n[https://www.sos.mo.gov/images/archives/deathcerts/1974/1974_00204430.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>\nFather: Harry Watson; Age: 63; Certificate Number: 204430; Last Four SSN: 2114.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* \"Missouri Death Certificates, 1910 - 1974\"<br/>Missouri State Archives; Deceased: Alice Ursula Peterson; Date of Death: May 28, 1974; County: St. Louis City<br/>[https://www.sos.mo.gov/images/archives/deathcerts/1974/1974_00204430.PDF MO Death Certificate Image] (accessed 6 May 2021)<br/>Father: Harry Watson; Age: 63; Certificate Number: 204430; Last Four SSN: 2114.",
+    "type": "source"
+  }
+}

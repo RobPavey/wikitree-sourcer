@@ -26,14 +26,14 @@ import { buildSearchData } from "../../extension/site/sosmogov/core/sosmogov_bui
 import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_utils.mjs";
 
 const regressionData = [
-  /*
   {
-    // has pref name
-    caseName: "wikitree_stanway-252_read",
-    inputPath: "wikitree/generalized_data/ref/stanway-252_read",
-    typeOfSearch: "Births",
+    caseName: "wikitree_raymond-3037_read",
+    inputPath: "wikitree/generalized_data/ref/raymond-3037_read",
   },
-  */
+  {
+    caseName: "wikitree_orth-997_read",
+    inputPath: "wikitree/generalized_data/ref/orth-997_read",
+  },
 ];
 
 async function runTests(testManager) {

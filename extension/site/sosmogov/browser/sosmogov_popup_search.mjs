@@ -34,8 +34,8 @@ import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mj
 
 import { options } from "/base/browser/options/options_loader.mjs";
 
-const sosmogovStartYear = 1800;
-const sosmogovEndYear = 2000;
+const sosmogovStartYear = 1910;
+const sosmogovEndYear = 1974;
 
 function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
@@ -64,10 +64,10 @@ async function sosmogovSearch(generalizedData) {
 
     const checkPermissionsOptions = {
       reason:
-        "To perform a search on Missouri State Archives a content script needs to be loaded on the Missouri State Archives search page.",
+        "To perform a search of Missouri State Archives Death Certificates a content script needs to be loaded on the site's search page.",
     };
     let allowed = await checkPermissionForSite(
-      "*://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/*",
+      "*://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/*", // this is results page match pattern
       checkPermissionsOptions
     );
     if (!allowed) {
@@ -78,7 +78,7 @@ async function sosmogovSearch(generalizedData) {
     //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
     // put URL of this site's search page here
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    let searchUrl = "https://www.sosmogov.org/search";
+    let searchUrl = "https://s1.sos.mo.gov/records/archives/archivesmvc/deathcertificates#searchDB";
 
     const searchData = {
       timeStamp: Date.now(),
@@ -87,8 +87,8 @@ async function sosmogovSearch(generalizedData) {
       selectData: buildResult.selectData,
     };
 
-    //console.log("sosmogovSearch, searchData is:");
-    //console.log(searchData);
+    // console.log("sosmogovSearch, searchData is:");
+    // console.log(searchData);
 
     let reuseTabIfPossible = options.search_sosmogov_reuseExistingTab;
 
@@ -101,7 +101,18 @@ async function sosmogovSearch(generalizedData) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 function addSosmogovDefaultSearchMenuItem(menu, data, backFunction, filter) {
-  addMenuItem(menu, "Search Missouri State Archives", function (element) {
+  if (!filter) {
+    let maxLifespan = Number(options.search_general_maxLifespan);
+    let deathPossibleInRange = data.generalizedData.couldPersonHaveDiedInDateRange(
+      sosmogovStartYear,
+      sosmogovEndYear,
+      maxLifespan
+    );
+    if (!deathPossibleInRange) {
+      return;
+    }
+  }
+  addMenuItem(menu, "Search Death Certificates at Missouri State Archives", function (element) {
     sosmogovSearch(data.generalizedData);
   });
 

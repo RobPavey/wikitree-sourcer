@@ -550,7 +550,8 @@
     },
     {
       "matches": [
-        "*://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/*"
+        "*://s1.sos.mo.gov/Records/Archives/ArchivesMvc/DeathCertificates/*",
+        "*://s1.sos.mo.gov/records/archives/archivesmvc/deathcertificates*"
       ],
       "run_at": "document_idle",
       "js": [

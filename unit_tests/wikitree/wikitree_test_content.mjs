@@ -134,6 +134,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Sowerby-41",
   },
   {
+    // To test MO death cert search on sosmogov
+    caseName: "orth-997_read",
+    url: "https://www.wikitree.com/wiki/Orth-997",
+  },
+  {
     caseName: "pavey-342_edit",
     url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=22280837",
   },
@@ -186,6 +191,11 @@ const regressionData = [
     // To test search on cwgc
     caseName: "peffers-436_read",
     url: "https://www.wikitree.com/wiki/Peffers-436",
+  },
+  {
+    // To test MO death cert search on sosmogov
+    caseName: "raymond-3037_read",
+    url: "https://www.wikitree.com/wiki/Raymond-3037",
   },
   {
     // Has no mother which cased a bug extracting mother
