@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "2.10.8",
+  "version": "2.11.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": [
     "storage",
@@ -726,14 +726,6 @@
     },
     {
       "resources": [
-        "site/noda/core/noda_extract_data.mjs"
-      ],
-      "matches": [
-        "*://*.digitalarkivet.no/*"
-      ]
-    },
-    {
-      "resources": [
         "base/core/string_utils.mjs",
         "site/eggsabdm/core/eggsabdm_common.mjs",
         "site/eggsabdm/core/eggsabdm_extract_data.mjs"
@@ -749,6 +741,14 @@
       "matches": [
         "*://graves.eggsa.org/*",
         "*://www.graves.eggsa.org/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/noda/core/noda_extract_data.mjs"
+      ],
+      "matches": [
+        "*://*.digitalarkivet.no/*"
       ]
     },
     {
