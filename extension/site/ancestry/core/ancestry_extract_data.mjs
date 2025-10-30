@@ -622,6 +622,13 @@ function extractRecordSourceCitation(document, result) {
   }
 }
 
+function extractRecordCommentData(document, result) {
+  let commentInput = document.querySelector("#mainContent div.input div.addCommentArea textArea");
+  if (commentInput) {
+    result.hasCommentTextArea = true;
+  }
+}
+
 function extractImageSourceCitation(document, result) {
   // test is there is an info panel, this is the sidebar
   let infoPanelContainer = document.querySelector("div.info-panel-container");
@@ -2309,6 +2316,7 @@ function extractData(document, url) {
     extractRecordData(document, result);
     extractImageThumb(document, result);
     extractRecordSourceCitation(document, result);
+    extractRecordCommentData(document, result);
   } else if (result.pageType == "image") {
     extractImagePageTitle(document, result);
     extractImageTemplate(result, url);
