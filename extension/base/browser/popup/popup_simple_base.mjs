@@ -352,7 +352,11 @@ async function setupSimplePopupMenu(input) {
   }
 
   if (input.customMenuFunction) {
-    input.customMenuFunction(menu, data);
+    if (input.isCustomMenuFunctionAsync) {
+      await input.customMenuFunction(menu, data);
+    } else {
+      input.customMenuFunction(menu, data);
+    }
   }
 
   addStandardMenuEnd(menu, data, backFunction);
