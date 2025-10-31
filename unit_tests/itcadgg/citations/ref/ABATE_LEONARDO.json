@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death''':\n\"Albo dei Caduti Italiani della Grande Guerra, Sicilia III - (Vol XXII) (22), AG - CL - SR, [https://www.cadutigrandeguerra.it/https://www.cadutigrandeguerra.it/ShowImg.aspx?id=6%2fKY2bjdbhPMNoxKeVjibPCcqyMKp%2fi3Bvl7Li%2fI2LR9PHbhshRV8uFXQw7cQ%2f0mx%2bm89zKBMKgEqB3UsBonUQ%3d%3d img]\"<br/>\nPagina 1, Sub in Pagina 11<br/>\n[https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=SQ%2bRzkCbzdmuTr%2buc7TPaw%3d%3d Caduti Della Grande Guerra (Italian Fallen of the Great War) Record] (accessed 6 May 2021)<br/>\nLeonardo Abate death 30 Dicembre 1917 (born 17 Febbraio 1884), son of Domenico, in Caltanissetta.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Leonardo, son of Domenico, died on 30 Dicembre 1917 in Caltanissetta.<ref>\n'''Death''':\n\"Albo dei Caduti Italiani della Grande Guerra, Sicilia III - (Vol XXII) (22), AG - CL - SR, [https://www.cadutigrandeguerra.it/https://www.cadutigrandeguerra.it/ShowImg.aspx?id=6%2fKY2bjdbhPMNoxKeVjibPCcqyMKp%2fi3Bvl7Li%2fI2LR9PHbhshRV8uFXQw7cQ%2f0mx%2bm89zKBMKgEqB3UsBonUQ%3d%3d img]\"<br/>\nPagina 1, Sub in Pagina 11<br/>\n[https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=SQ%2bRzkCbzdmuTr%2buc7TPaw%3d%3d Caduti Della Grande Guerra (Italian Fallen of the Great War) Record] (accessed 6 May 2021)<br/>\nLeonardo Abate death 30 Dicembre 1917 (born 17 Febbraio 1884), son of Domenico, in Caltanissetta.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death''': \"Albo dei Caduti Italiani della Grande Guerra, Sicilia III - (Vol XXII) (22), AG - CL - SR, [https://www.cadutigrandeguerra.it/https://www.cadutigrandeguerra.it/ShowImg.aspx?id=6%2fKY2bjdbhPMNoxKeVjibPCcqyMKp%2fi3Bvl7Li%2fI2LR9PHbhshRV8uFXQw7cQ%2f0mx%2bm89zKBMKgEqB3UsBonUQ%3d%3d img]\"<br/>Pagina 1, Sub in Pagina 11<br/>[https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=SQ%2bRzkCbzdmuTr%2buc7TPaw%3d%3d Caduti Della Grande Guerra (Italian Fallen of the Great War) Record] (accessed 6 May 2021)<br/>Leonardo Abate death 30 Dicembre 1917 (born 17 Febbraio 1884), son of Domenico, in Caltanissetta.",
+    "type": "source"
+  }
+}

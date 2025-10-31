@@ -1,7 +1,7 @@
 /*
 MIT License
 
-Copyright (c) 2020 Robert M Pavey
+Copyright (c) 2020-2025 Robert M Pavey and the wikitree-sourcer contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,60 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-// in theory we could get all the site names by looking in the sites directory
-// but the code to do that would be different for in the extension/browser and in node.js
+function buildSearchData(input) {
+  const gd = input.generalizedData;
 
-// The order should not matter since user facing lists are sorted
+  let fieldData = {};
+  let selectData = {};
 
-const siteNames = [
-  "ameranc",
-  "ancestry",
-  "archion",
-  "archive",
-  "baclac",
-  "basrhin",
-  "bg",
-  "cwgc",
-  "eggsabdm",
-  "eggsagrvs",
-  "fmp",
-  "fs",
-  "fg",
-  "freebmd",
-  "freecen",
-  "freereg",
-  "geneteka",
-  "gro",
-  "gbooks",
-  "hathi",
-  "irishg",
-  "jstor",
-  "matricula",
-  "mh",
-  "naie",
-  "nli",
-  "noda",
-  "npa",
-  "np",
-  "nsvr",
-  "nswbdm",
-  "nzash",
-  "nzbdm",
-  "opccorn",
-  "openarch",
-  "ppnz",
-  "psuk",
-  "scotp",
-  "taslib",
-  "thegen",
-  "trove",
-  "vicbdm",
-  "wiewaswie",
-  "wikitree",
-  "wikipedia",
-  "dfgviewer",
-  "arolsenarchives",
-  "itcadgg",
-];
+  //!!!!!!!!!! CHANGES NEEDED HERE AFTER RUNNING create_new_site SCRIPT !!!!!!!!!!
+  // Add code here to populate the search data that is used to fill out the search form
+  // The fieldData typically will be used for text fields
+  // while the selectData will be for select controls
+  // In these structures use the names of the elements in the search form that need to be
+  // filled
+  // For examples see:
+  // - extension/site/vicbdm/core/vicbdm_build_search_data.mjs
+  // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-export { siteNames };
+  //console.log("fieldData is:");
+  //console.log(fieldData);
+
+  var result = {
+    fieldData: fieldData,
+    selectData: selectData,
+  };
+
+  return result;
+}
+
+export { buildSearchData };
