@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record of JOSEK ABRAMOWICZ''':\n\"1 Incarceration Documents, 1.1 Camps and Ghettos, 1.1.5 Buchenwald Concentration Camp, 1.1.5.3 Individual Documents male Buchenwald, Individual Files (male) - Concentration Camp Buchenwald, Files with names from A to SYS and further sub-structure, Files with names from ABRAMOWICZ, Personal file of ABRAMOWICZ, JOSEK, born on 21-Apr-1918\"<br/>\nDocument #1-1-5-3_01010503-001-002-002<br/>\n[https://collections.arolsen-archives.org/en/archive/1-1-5-3_01010503-001-002-002 Arolsen Archives Record] (accessed 6 May 2021)<br/>\nJOSEK ABRAMOWICZ.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Josek was in a record.<ref>\n'''Record of JOSEK ABRAMOWICZ''':\n\"1 Incarceration Documents, 1.1 Camps and Ghettos, 1.1.5 Buchenwald Concentration Camp, 1.1.5.3 Individual Documents male Buchenwald, Individual Files (male) - Concentration Camp Buchenwald, Files with names from A to SYS and further sub-structure, Files with names from ABRAMOWICZ, Personal file of ABRAMOWICZ, JOSEK, born on 21-Apr-1918\"<br/>\nDocument #1-1-5-3_01010503-001-002-002<br/>\n[https://collections.arolsen-archives.org/en/archive/1-1-5-3_01010503-001-002-002 Arolsen Archives Record] (accessed 6 May 2021)<br/>\nJOSEK ABRAMOWICZ.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record of JOSEK ABRAMOWICZ''': \"1 Incarceration Documents, 1.1 Camps and Ghettos, 1.1.5 Buchenwald Concentration Camp, 1.1.5.3 Individual Documents male Buchenwald, Individual Files (male) - Concentration Camp Buchenwald, Files with names from A to SYS and further sub-structure, Files with names from ABRAMOWICZ, Personal file of ABRAMOWICZ, JOSEK, born on 21-Apr-1918\"<br/>Document #1-1-5-3_01010503-001-002-002<br/>[https://collections.arolsen-archives.org/en/archive/1-1-5-3_01010503-001-002-002 Arolsen Archives Record] (accessed 6 May 2021)<br/>JOSEK ABRAMOWICZ.",
+    "type": "source"
+  }
+}

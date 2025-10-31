@@ -1845,7 +1845,14 @@ class NameObj {
       }
       let numWordsInName = StringUtils.countWords(this.name);
       if (numWordsInName > 1) {
-        return StringUtils.getWordsBeforeLastWord(this.name);
+        if (numWordsInName > 1) {
+          let parts = this.separateFullNameIntoForenamesAndLastName(this.name);
+          if (parts && parts.forenames) {
+            return parts.forenames;
+          } else {
+            return "";
+          }
+        }
       }
       // it is a single word name. Should it be considered first or last?
       // it may depend on the country or the event type, for now we consider it a

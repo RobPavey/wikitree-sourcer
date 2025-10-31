@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Record''':\n\"Werner, Carl: Schlaflosigkeit und Schlafmittel\"<br/>\nPage 14<br/>\n[https://www.digitale-sammlungen.de/de/view/bsb11873875?page=20,21 MDZ Image] (accessed 6 May 2021)\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Werner, Carl: Schlaflosigkeit und Schlafmittel\"<br/>\nPage 14<br/>\n[https://www.digitale-sammlungen.de/de/view/bsb11873875?page=20,21 MDZ Image] (accessed 6 May 2021)\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Record''': \"Werner, Carl: Schlaflosigkeit und Schlafmittel\"<br/>Page 14<br/>[https://www.digitale-sammlungen.de/de/view/bsb11873875?page=20,21 MDZ Image] (accessed 6 May 2021)",
+    "type": "source"
+  }
+}

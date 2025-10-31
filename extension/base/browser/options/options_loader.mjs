@@ -341,6 +341,31 @@ function convertOptionsFrom10To11(loadedOptions, optionsRegistry) {
   return convertedOptions;
 }
 
+function convertOptionsFrom11To12(loadedOptions, optionsRegistry) {
+  let convertedOptions = { ...loadedOptions };
+
+  console.log("convertOptionsFrom11To12, before:");
+  console.log(loadedOptions);
+
+  // remove any duplicates in search_general_siteListDraggable
+
+  let siteList = convertedOptions.search_general_priorityOrder;
+  let newSiteList = [];
+  for (let siteName of siteList) {
+    if (!newSiteList.includes(siteName)) {
+      newSiteList.push(siteName);
+    }
+  }
+  convertedOptions.search_general_priorityOrder = newSiteList;
+
+  convertedOptions.options_version = 12;
+
+  console.log("convertOptionsFrom11To12, after:");
+  console.log(convertedOptions);
+
+  return convertedOptions;
+}
+
 function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   let loadedVersion = loadedOptions.options_version;
   let currentVersion = defaultOptions.options_version;
@@ -382,6 +407,9 @@ function convertOptions(loadedOptions, defaultOptions, optionsRegistry) {
   }
   if (loadedVersion < 11) {
     loadedOptions = convertOptionsFrom10To11(loadedOptions, optionsRegistry);
+  }
+  if (loadedVersion < 12) {
+    loadedOptions = convertOptionsFrom11To12(loadedOptions, optionsRegistry);
   }
 
   return loadedOptions;

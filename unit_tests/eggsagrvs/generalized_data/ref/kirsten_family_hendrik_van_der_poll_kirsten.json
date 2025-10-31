@@ -1,0 +1,40 @@
+{
+  "sourceOfData": "eggsagrvs",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Kirsten",
+    "forenames": "Hendrik Van Der Poll"
+  },
+  "eventDate": {
+    "yearString": "1930"
+  },
+  "eventPlace": {
+    "placeString": "Cape Town, Western Cape, South Africa"
+  },
+  "lastNameAtDeath": "Kirsten",
+  "birthDate": {
+    "yearString": "1850"
+  },
+  "deathDate": {
+    "yearString": "1930"
+  },
+  "ageAtEvent": 80,
+  "ageAtDeath": 80,
+  "primaryPersonOptions": [
+    "Hendrik van der Poll",
+    "Johanna Jacomina van der Poll",
+    "Hendrik Van Der Poll Kirsten",
+    "Johanna Catherina Kirsten",
+    "William Ferdinand Kirsten",
+    "Johanna Jacoba Kirsten",
+    "William Ferdinand Kirsten",
+    "Edith Kirsten",
+    "Hendrik van der Poll Kirsten",
+    "John Frederick Kirsten",
+    "Friederike W E Kirsten",
+    "Alfred Walter Kirsten",
+    "John Peter Kirsten"
+  ],
+  "hasValidData": true
+}

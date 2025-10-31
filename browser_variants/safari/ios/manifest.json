@@ -1,6 +1,6 @@
 {
   "name": "WikiTree Sourcer",
-  "version": "2.10.8",
+  "version": "2.11.0",
   "description": "WikiTree Sourcer assists in finding and citing genealogy sources for use on wikitree.com.",
   "permissions": [
     "storage",
@@ -95,6 +95,17 @@
       "js": [
         "base/browser/content/content_common.js",
         "site/archive/browser/archive_content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://collections.arolsen-archives.org/*",
+        "*://collections-server.arolsen-archives.org/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/arolsenarchives/browser/arolsenarchives_content.js"
       ]
     },
     {
@@ -252,7 +263,8 @@
     },
     {
       "matches": [
-        "*://www.freebmd.org.uk/*"
+        "*://www.freebmd.org.uk/*",
+        "*://www.freebmd2.org.uk/*"
       ],
       "run_at": "document_idle",
       "js": [
@@ -387,6 +399,11 @@
         "base/browser/content/content_common.js",
         "site/matricula/browser/matricula_content.js"
       ]
+    },
+    {
+      "matches": ["*://www.digitale-sammlungen.de/*"],
+      "run_at": "document_idle",
+      "js": ["base/browser/content/content_common.js", "site/mdz/browser/mdz_content.js"]
     },
     {
       "matches": [
@@ -634,6 +651,15 @@
     },
     {
       "resources": [
+        "site/arolsenarchives/core/arolsenarchives_extract_data.mjs"
+      ],
+      "matches": [
+        "*://collections.arolsen-archives.org/*",
+        "*://collections-server.arolsen-archives.org/*"
+      ]
+    },
+    {
+      "resources": [
         "site/baclac/core/baclac_extract_data.mjs"
       ],
       "matches": [
@@ -761,7 +787,8 @@
         "site/freebmd/core/freebmd_extract_data.mjs"
       ],
       "matches": [
-        "*://www.freebmd.org.uk/*"
+        "*://www.freebmd.org.uk/*",
+        "*://www.freebmd2.org.uk/*"
       ]
     },
     {
@@ -859,6 +886,10 @@
       "matches": [
         "*://data.matricula-online.eu/*"
       ]
+    },
+    {
+      "resources": ["site/mdz/core/mdz_extract_data.mjs"],
+      "matches": ["*://www.digitale-sammlungen.de/*"]
     },
     {
       "resources": [

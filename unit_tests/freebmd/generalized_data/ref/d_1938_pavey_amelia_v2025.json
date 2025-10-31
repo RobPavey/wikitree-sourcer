@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "freebmd",
+  "sourceType": "record",
+  "recordType": "DeathRegistration",
+  "name": {
+    "lastName": "E Pavey",
+    "forenames": "Amelia"
+  },
+  "eventDate": {
+    "quarter": 1,
+    "yearString": "1938"
+  },
+  "registrationDistrict": "Leek",
+  "collectionData": {
+    "id": "deaths",
+    "volume": "6b",
+    "page": "327"
+  },
+  "hasValidData": true
+}

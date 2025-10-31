@@ -77,7 +77,7 @@ async function getPersonData(extractData) {
 }
 
 async function setupArolsenarchivesPopupMenu(extractedData) {
-  if (extractedData.person_data == null) {
+  if (extractedData.person_data == null && extractedData.url.match("/document/")) {
     await getPersonData(extractedData);
   }
 

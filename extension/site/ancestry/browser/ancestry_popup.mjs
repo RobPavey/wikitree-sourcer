@@ -695,6 +695,69 @@ function ancestryGoToImage(data) {
   }
 }
 
+async function ancestryAddLinkBuilderComment(data, personData, tabId) {
+  displayBusyMessage("Adding comment ...");
+
+  let personEd = personData.extractedData;
+  if (!personEd) {
+    return;
+  }
+  let wikiId = personEd.wikiId;
+  if (!wikiId) {
+    return;
+  }
+
+  // We want to add a comment like:
+  // Pavey-444 on WikiTree
+
+  let commentText = wikiId + " on WikiTree";
+
+  let fieldData = {
+    wikiId: wikiId,
+    commentText: commentText,
+  };
+
+  // send a message to content script
+  try {
+    //console.log("ancestryAddLinkBuilderComment");
+    //console.log(tabId);
+    //console.log(personData);
+
+    chrome.tabs.sendMessage(tabId, { type: "addComment", fieldData: fieldData }, function (response) {
+      displayBusyMessage("Adding comment ...");
+
+      //console.log("doSetFieldsFromPersonData, chrome.runtime.lastError is:");
+      //console.log(chrome.runtime.lastError);
+      //console.log("doSetFieldsFromPersonData, response is:");
+      //console.log(response);
+
+      // NOTE: must check lastError first in the if below so it doesn't report an unchecked error
+      if (chrome.runtime.lastError || !response) {
+        // possibly there is no content script loaded, this could be an error that should be reported
+        // By testing edge cases I have found the if you reload the page and immediately click the
+        // extension button sometimes this will happen. Presumably because the content script
+        // just got unloaded prior to the reload but we got here because the popup had not been reset.
+        // In this case we are seeing the response being undefined.
+        // What to do in this case? Don't want to leave the "Initializing menu..." up.
+        let message = "doSetFieldsFromPersonData failed";
+        if (chrome.runtime.lastError && chrome.runtime.lastError.message) {
+          message += ": " + chrome.runtime.lastError.message;
+        }
+        displayMessageWithIcon("warning", message);
+      } else if (response.success) {
+        // Used to display a message on success but that meant an extra click to close popup
+        //displayMessageWithIconThenClosePopup("check", "Fields updated");
+        closePopup();
+      } else {
+        let message = response.errorMessage;
+        console.log(message);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 function ancestryGoToFullSizeSharingImage(data) {
   let imageUrl = data.extractedData.fullSizeSharingImageUrl;
   if (imageUrl) {
@@ -1211,6 +1274,37 @@ function addAncestryGoToImageMenuItem(menu, data) {
   }
 }
 
+async function addAncestryAddCommentMenuItem(menu, data, tabId) {
+  let ed = data.extractedData;
+  if (ed.hasCommentTextArea) {
+    let personData = await getLatestPersonData();
+    if (!personData) {
+      return; // no saved data, do not add menu item
+    }
+
+    let personDataTimeText = convertTimestampDiffToText(personData.timeStamp);
+    if (!personDataTimeText) {
+      return;
+    }
+
+    if (personData.generalizedData) {
+      let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
+      personData.generalizedData = gd;
+      let menuText = "Add link builder comment to:";
+      let subtitleText = getPersonDataSubtitleText(gd, personDataTimeText);
+
+      addMenuItemWithSubtitle(
+        menu,
+        menuText,
+        function (element) {
+          ancestryAddLinkBuilderComment(data, personData, tabId);
+        },
+        subtitleText
+      );
+    }
+  }
+}
+
 function addAncestryImageBuildCitationMenuItems(menu, data) {
   addMenuItemWithSubtitle(
     menu,
@@ -1435,6 +1529,7 @@ async function setupAncestryPopupMenuWithLinkData(data, tabId) {
     addBuildCitationMenuItems(menu, data, ancestryBuildCitation, backFunction, generalizeDataGivenRecordType);
     addAncestryBuildHouseholdTableMenuItem(menu, data);
     addAncestryGoToImageMenuItem(menu, data);
+    await addAncestryAddCommentMenuItem(menu, data, tabId);
   } else if (extractedData.pageType == "image") {
     addAncestryImageBuildCitationMenuItems(menu, data);
     addAncestryBuildSharingTemplateMenuItem(menu, data);

@@ -31,6 +31,7 @@ import {
   beginMainMenu,
   endMainMenu,
   doAsyncActionWithCatch,
+  closePopup,
 } from "/base/browser/popup/popup_menu_building.mjs";
 
 import {
@@ -40,10 +41,12 @@ import {
   getReproductiveYearRangeForCouple,
   getPossibleDeathRange,
   getYearRangeAsText,
+  doBackgroundSearchWithSearchData,
 } from "/base/browser/popup/popup_search.mjs";
 
 import { RT } from "../../../base/core/record_type.mjs";
 import { options } from "/base/browser/options/options_loader.mjs";
+import { checkPermissionForSite } from "/base/browser/popup/popup_permissions.mjs";
 
 const freebmdStartYear = 1837;
 const freebmdEndYear = 1992;
@@ -76,7 +79,7 @@ function yearRangeOverlapsFreebmdRange(range) {
 // Menu actions
 //////////////////////////////////////////////////////////////////////////////////////////
 
-async function freebmdSearch(generalizedData, typeOfSearch, parameters) {
+async function doFreebmdSearchOnOldSite(generalizedData, typeOfSearch, parameters) {
   const input = {
     typeOfSearch: typeOfSearch,
     generalizedData: generalizedData,
@@ -87,6 +90,56 @@ async function freebmdSearch(generalizedData, typeOfSearch, parameters) {
     let loadedModule = await import(`../core/freebmd_build_search_url.mjs`);
     doSearch(loadedModule, input);
   });
+}
+
+async function doFreebmdSearchOnNewSite(generalizedData, typeOfSearch, parameters) {
+  const input = {
+    typeOfSearch: typeOfSearch,
+    generalizedData: generalizedData,
+    options: options,
+    parameters: parameters,
+  };
+  doAsyncActionWithCatch("FreeBMD (UK) Search", input, async function () {
+    let loadedModule = await import(`../core/freebmd_build_search_data.mjs`);
+    let buildResult = loadedModule.buildSearchData(input);
+
+    const checkPermissionsOptions = {
+      reason: "To perform a search on FreeBMD a content script needs to be loaded on the freebmd2.org.uk search page.",
+    };
+    let allowed = await checkPermissionForSite("*://www.freebmd2.org.uk/*", checkPermissionsOptions);
+    if (!allowed) {
+      closePopup();
+      return;
+    }
+
+    let searchUrl = "https://www.freebmd2.org.uk/search_queries/new?locale=en";
+
+    const searchData = {
+      timeStamp: Date.now(),
+      url: searchUrl,
+      fieldData: buildResult.fieldData,
+      selectData: buildResult.selectData,
+      searchType: typeOfSearch,
+      baseName: buildResult.baseName,
+    };
+
+    //console.log("doFreebmdSearchOnNewSite, searchData is:");
+    //console.log(searchData);
+
+    let reuseTabIfPossible = options.search_freebmd_reuseExistingTab;
+
+    doBackgroundSearchWithSearchData("freebmd", searchData, reuseTabIfPossible);
+  });
+}
+
+async function freebmdSearch(generalizedData, typeOfSearch, parameters) {
+  let useNewSite = options.search_freebmd_useNewSite;
+
+  if (useNewSite) {
+    doFreebmdSearchOnNewSite(generalizedData, typeOfSearch, parameters);
+  } else {
+    doFreebmdSearchOnOldSite(generalizedData, typeOfSearch, parameters);
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
