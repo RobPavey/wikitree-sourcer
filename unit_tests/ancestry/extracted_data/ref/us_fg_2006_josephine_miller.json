@@ -29,5 +29,6 @@
   "imageUrl": "https://www.findagrave.com/memorial/18816950/josephine-ann-miller",
   "sourceInformation": "Ancestry.com. U.S., Find a Grave® Index, 1600s-Current [database on-line]. Lehi, UT, USA: Ancestry.com Operations, Inc., 2012. Original data: Find a Grave. Find a Grave®. http://www.findagrave.com/cgi-bin/fg.cgi.",
   "originalData": "Find a Grave. Find a Grave®. http://www.findagrave.com/cgi-bin/fg.cgi.",
-  "sourceDescription": "This database contains an index to cemetery and burial details posted on Find a Grave® from the United States. The records are dated between the 1600s and the present. Find a Grave® provides users a virtual cemetery experience, with images of grave markers from around the world, photos, biographies, and other details uploaded by volunteers. Learn more..."
+  "sourceDescription": "This database contains an index to cemetery and burial details posted on Find a Grave® from the United States. The records are dated between the 1600s and the present. Find a Grave® provides users a virtual cemetery experience, with images of grave markers from around the world, photos, biographies, and other details uploaded by volunteers. Learn more...",
+  "hasCommentTextArea": true
 }
