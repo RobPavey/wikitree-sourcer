@@ -32,13 +32,13 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    caseName: "ABATE_LEONARDO",
+    caseName: "name_basic_abate_leonardo",
     url: "https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=SQ%2bRzkCbzdmuTr%2buc7TPaw%3d%3d",
   },
 
   {
     // Test for complicated name
-    caseName: "DI_FRANCESCO_GABRIELE_DONATO",
+    caseName: "name_advanced_di_francesco_gabriele_donato",
     url: "https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=iA8bcDG9Nw0JoD1jYId0aA%3d%3d",
     optionVariants: [
       {
