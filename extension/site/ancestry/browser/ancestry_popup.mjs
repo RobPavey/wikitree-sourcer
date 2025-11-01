@@ -1290,7 +1290,7 @@ async function addAncestryAddCommentMenuItem(menu, data, tabId) {
     if (personData.generalizedData) {
       let gd = GeneralizedData.createFromPlainObject(personData.generalizedData);
       personData.generalizedData = gd;
-      let menuText = "Add link builder comment to:";
+      let menuText = "Add link builder comment referencing:";
       let subtitleText = getPersonDataSubtitleText(gd, personDataTimeText);
 
       addMenuItemWithSubtitle(
