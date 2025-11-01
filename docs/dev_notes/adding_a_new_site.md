@@ -103,6 +103,12 @@ Each site can have its own option settings for searching the site and for buildi
 
 Simple sites will not need anything more but many sites have little extras like context menu support or menu items to build templates etc.
 
+## Add unit tests for the site
+
+See [adding tests](adding_tests.md).
+
+The unit tests can test each of the steps: extract, generalize, build citation and search.
+
 ## Problem cases
 
 Some sites present problems in searching or building citations. These may have been encountered for other sites. See [this list of problem cases](site_problem_cases.md) to see if you can follow an existing pattern.

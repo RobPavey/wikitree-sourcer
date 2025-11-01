@@ -202,6 +202,17 @@ function extractData(document, url) {
     result.hasImage = false;
   }
 
+  // check if the "Leave a Flower" dialog is displayed
+  let leaveFlowerModal = document.querySelector("div.modal.leaveFlower-modal.show");
+  if (leaveFlowerModal) {
+    let addButton = leaveFlowerModal.querySelector("#add-leave-flower");
+    if (addButton) {
+      if (!addButton.classList.contains("hidden")) {
+        result.isOnLeaveAFlowerNoteDialog = true;
+      }
+    }
+  }
+
   result.success = true;
 
   //console.log(result);
