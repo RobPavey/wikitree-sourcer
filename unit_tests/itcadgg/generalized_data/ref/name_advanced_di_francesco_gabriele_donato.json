@@ -1,0 +1,42 @@
+{
+  "sourceOfData": "itcadgg",
+  "sourceType": "record",
+  "recordType": "Death",
+  "name": {
+    "lastName": "Di Francesco",
+    "forenames": "Gabriele Donato"
+  },
+  "personGender": "male",
+  "eventDate": {
+    "dateString": "10 Gennaio 1916"
+  },
+  "eventPlace": {
+    "placeString": "Ospedaletto Da Campo N. 058"
+  },
+  "birthDate": {
+    "dateString": "7 Agosto 1894"
+  },
+  "birthPlace": {
+    "placeString": "Teramo, Teramo, Abruzzo"
+  },
+  "deathDate": {
+    "dateString": "10 Gennaio 1916"
+  },
+  "deathPlace": {
+    "placeString": "Ospedaletto Da Campo N. 058"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "forenames": "Angelo Antonio"
+      }
+    }
+  },
+  "collectionData": {
+    "id": "Death",
+    "collectionID": "itcadgg",
+    "title": "Albo dei Caduti Italiani della Grande Guerra",
+    "url": "https://www.cadutigrandeguerra.it/DettagliNominativi.aspx?id=iA8bcDG9Nw0JoD1jYId0aA%3d%3d"
+  },
+  "hasValidData": true
+}

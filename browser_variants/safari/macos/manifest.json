@@ -552,6 +552,16 @@
         "base/browser/content/content_common.js",
         "site/wikipedia/browser/wikipedia_content.js"
       ]
+    },
+    {
+      "matches": [
+        "*://www.cadutigrandeguerra.it/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "base/browser/content/content_common.js",
+        "site/itcadgg/browser/itcadgg_content.js"
+      ]
     }
   ],
   "options_ui": {
@@ -997,6 +1007,14 @@
       ],
       "matches": [
         "*://*.wikipedia.org/*"
+      ]
+    },
+    {
+      "resources": [
+        "site/itcadgg/core/itcadgg_extract_data.mjs"
+      ],
+      "matches": [
+        "*://www.cadutigrandeguerra.it/*"
       ]
     }
   ],

@@ -78,3 +78,4 @@ import "../../mdz/core/mdz_options.mjs";
 import "../../basrhin/core/basrhin_options.mjs";
 import "../../dfgviewer/core/dfgviewer_options.mjs";
 import "../../arolsenarchives/core/arolsenarchives_options.mjs";
+import "../../itcadgg/core/itcadgg_options.mjs";
