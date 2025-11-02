@@ -34,35 +34,54 @@ function copyFolder(src, dst) {
   fs.cpSync(src, dst, { recursive: true });
 }
 
-function createPackage() {
+function createPackage(compressor) {
+  if (compressor == "none") {
+    return;
+  }
+
   // from: https://stackoverflow.com/questions/15641243/need-to-zip-an-entire-directory-using-node-js
   const zipPath = "browser_variants/firefox.zip";
   if (fs.existsSync(zipPath)) {
     fs.rmSync(zipPath);
   }
-  child_process.execSync(`zip -r ../firefox.zip * -x "*.DS_Store"`, {
-    // child_process.execSync(`7z a -r ../firefox.zip * -xr!*.DS_Store`, {
+
+  let command = `zip -r ../firefox.zip * -x "*.DS_Store"`;
+  if (compressor == "7z") {
+    command = `7z a -r ../firefox.zip * -xr!*.DS_Store`;
+  }
+
+  child_process.execSync(command, {
     cwd: "browser_variants/firefox",
   });
 }
 
 function buildFirefox() {
+  let compressor = "zip";
+
+  if (process.argv.length > 2) {
+    compressor = process.argv[2];
+  }
+
   const firefoxPath = "browser_variants/firefox";
   const extensionPath = "extension";
 
   const ffBasePath = firefoxPath + "/" + "base";
   const ffSitePath = firefoxPath + "/" + "site";
+  const ffImagesPath = firefoxPath + "/" + "images";
 
   deleteFolder(ffBasePath);
   deleteFolder(ffSitePath);
+  deleteFolder(ffImagesPath);
 
   const extBasePath = extensionPath + "/" + "base";
   const extSitePath = extensionPath + "/" + "site";
+  const extImagesPath = extensionPath + "/" + "images";
 
   copyFolder(extBasePath, ffBasePath);
   copyFolder(extSitePath, ffSitePath);
+  copyFolder(extImagesPath, ffImagesPath);
 
-  createPackage();
+  createPackage(compressor);
 }
 
 buildFirefox();

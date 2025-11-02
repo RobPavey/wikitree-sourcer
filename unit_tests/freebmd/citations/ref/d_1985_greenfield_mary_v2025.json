@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Death Index\"<br/>\n[https://www.freebmd2.org.uk/entry-information/hash?id=aGzrr%252B%252BC02OpOvuJRw7OVw&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nGreenfield, Mary.<br/>\n''GRO Reference:'' September 1985 in Islington Volume 13 Page 1308.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Mary's death was registered in September 1985 in the Islington district.<ref>\n'''Death Registration''':\n\"England & Wales Death Index\"<br/>\n[https://www.freebmd2.org.uk/entry-information/hash?id=aGzrr%252B%252BC02OpOvuJRw7OVw&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nGreenfield, Mary.<br/>\n''GRO Reference:'' September 1985 in Islington Volume 13 Page 1308.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Death Index\"<br/>[https://www.freebmd2.org.uk/entry-information/hash?id=aGzrr%252B%252BC02OpOvuJRw7OVw&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>Greenfield, Mary.<br/>''GRO Reference:'' September 1985 in Islington Volume 13 Page 1308.",
+    "type": "source"
+  }
+}

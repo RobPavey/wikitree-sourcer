@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England & Wales Marriage Index\"<br/>\n[https://www.freebmd2.org.uk/entry-information/hash?id=psigab7TxEdItbIfSFiU2Q&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nPavey, Henry Alfred.<br/>\n''GRO Reference:'' 1870 Oct-Nov-Dec in Pancras Volume 1b Page 263.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Henry's marriage was registered in the Oct-Nov-Dec quarter of 1870 in the Pancras district.<ref>\n'''Marriage Registration''':\n\"England & Wales Marriage Index\"<br/>\n[https://www.freebmd2.org.uk/entry-information/hash?id=psigab7TxEdItbIfSFiU2Q&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nPavey, Henry Alfred.<br/>\n''GRO Reference:'' 1870 Oct-Nov-Dec in Pancras Volume 1b Page 263.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Marriage Registration''': \"England & Wales Marriage Index\"<br/>[https://www.freebmd2.org.uk/entry-information/hash?id=psigab7TxEdItbIfSFiU2Q&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>Pavey, Henry Alfred.<br/>''GRO Reference:'' 1870 Oct-Nov-Dec in Pancras Volume 1b Page 263.",
+    "type": "source"
+  }
+}

@@ -100,13 +100,13 @@ function extractNames(names) {
     if (separator === null) {
       // First person
       // The first person's name is in the format "LASTNAME First Names",
-      // or, for multi-word last names: "MERWE First Name, van der"
+      // or, for multi-word last names: "MERWE First Name, van der", but sometimes VAN DER POLL Hendrik
       // or LITH Martha Louisa, van der formerly OLIVIER
       // or sometimes (rarely) "ZYL van Andries" (!!) - but we ignore this because it becomes difficult to distinguish
       // between that case and e.g. when the first name is for example "Van Zyl" (there are poeple with that name)
       if (hasSurname(originalName)) {
         let rest;
-        [lastName, rest] = shiftWord(originalName);
+        [rest, lastName] = extractLastNameAtFront(originalName);
 
         // check for (and remove) formerly, adding those surnames to otherLastNames
         const indexOfFormerly = rest.indexOf("formerly ");

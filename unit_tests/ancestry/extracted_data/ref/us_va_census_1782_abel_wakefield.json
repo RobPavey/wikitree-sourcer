@@ -19,5 +19,6 @@
   },
   "sourceInformation": "Ancestry.com. Virginia, U.S., Compiled Census and Census Substitutes Index, 1607-1890 [database on-line]. Provo, UT, USA: Ancestry.com Operations Inc, 1999. Original data: Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes.",
   "originalData": "Jackson, Ron V., Accelerated Indexing Systems, comp.. Virginia Census, 1607-1890. Compiled and digitized by Mr. Jackson and AIS from microfilmed schedules of the U.S. Federal Decennial Census, territorial/state censuses, and/or census substitutes.",
-  "sourceDescription": "This database contains indexes to the Virginia (U.S.A.) portions of the 1800-1870 U.S. Federal Censuses as well as indexes to the 1840 Pensioners Lists, the 1850 and 1860 Slave Schedules, the 1890 Veterans Schedules, and other early censuses. Information contained in these indexes can include name, state, county, township, year of record, and name of record set. Learn more..."
+  "sourceDescription": "This database contains indexes to the Virginia (U.S.A.) portions of the 1800-1870 U.S. Federal Censuses as well as indexes to the 1840 Pensioners Lists, the 1850 and 1860 Slave Schedules, the 1890 Veterans Schedules, and other early censuses. Information contained in these indexes can include name, state, county, township, year of record, and name of record set. Learn more...",
+  "hasCommentTextArea": true
 }

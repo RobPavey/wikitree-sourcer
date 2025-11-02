@@ -22,6 +22,107 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function extractData2025(document, url) {
+  var result = {};
+
+  if (url) {
+    result.url = url;
+  }
+  result.success = false;
+
+  // get the line with the person's name on it
+  const heading = document.querySelector("main h1");
+  if (!heading) {
+    return result;
+  }
+
+  // heading should be of the form
+  //  Henry Alfred PAVEY's record
+  //  MARY GREENFIELD's record
+  let headingText = heading.textContent.trim();
+  if (!headingText) {
+    return result;
+  }
+
+  const headingRegEx = /^(.+)\'s\s+record$/;
+  if (!headingRegEx.test(headingText)) {
+    return result;
+  }
+
+  const nameText = headingText.replace(headingRegEx, "$1");
+  result.name = nameText;
+
+  const citationSection = document.querySelector("#citation_section");
+  if (citationSection) {
+    const inlineCitationSection = document.querySelector("#wikitree_inline_citation_container");
+    if (inlineCitationSection) {
+      let citationPara = inlineCitationSection.querySelector("p.citation_container");
+      if (citationPara) {
+        result.inlineCitationText = citationPara.textContent.trim();
+      }
+    }
+  }
+
+  const entries = document.querySelectorAll("table.table--data > tbody > tr");
+  if (entries.length < 1) {
+    return result;
+  }
+
+  result.recordData = {};
+
+  for (let entry of entries) {
+    let th = entry.querySelector("th");
+    let td = entry.querySelector("td");
+    if (th && td) {
+      let label = th.textContent.trim();
+      let value = {};
+      let link = td.querySelector("a");
+      let divs = td.querySelectorAll("div");
+      if (!link && divs.length == 0) {
+        // simple text value
+        value.text = td.textContent.trim();
+      } else if (link && divs.length == 0) {
+        value.text = link.textContent.trim();
+        value.href = link.getAttribute("href");
+        value.linkId = link.id;
+      } else {
+        if (label == "Page") {
+          // there should be three links if there are previous and next pages
+          let link = undefined;
+          let links = td.querySelectorAll("div > div > a");
+          if (links.length == 3) {
+            link = links[1];
+          } else if (links.length == 2) {
+            // there could be either a previous or next
+            let link0Text = links[0].textContent.trim();
+            if (link0Text.startsWith("Prev")) {
+              link = links[1];
+            } else {
+              link = links[0];
+            }
+          } else if (links.length == 1) {
+            link = links[0];
+          }
+          if (link) {
+            value.text = link.textContent.trim();
+            value.href = link.getAttribute("href");
+          }
+        }
+      }
+
+      result.recordData[label] = value;
+    }
+  }
+
+  result.success = true;
+
+  //console.log(result);
+
+  result.format = "v2025";
+
+  return result;
+}
+
 function extractData(document, url) {
   var result = {};
 
@@ -37,7 +138,7 @@ function extractData(document, url) {
   const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
   //console.log("entriesQuery size is: " + entriesQuery.length);
   if (entries.length < 1) {
-    return result;
+    return extractData2025(document, url);
   }
 
   let firstEntry = entries[0];

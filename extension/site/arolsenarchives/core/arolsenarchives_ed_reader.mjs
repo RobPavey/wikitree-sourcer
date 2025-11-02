@@ -128,7 +128,7 @@ class ArolsenarchivesEdReader extends ExtractedDataReader {
 
   getBirthDateObj() {
     if (this.ed.person_data == null) return undefined;
-    return this.makeDateObjFromMmddyyyyDate(this.ed.person_data["Dob"], "/");
+    return this.makeDateObjFromMmddyyyyDate(this.ed.person_data["Dob"], this.ed.date_sep ? this.ed.date_sep : "/");
   }
 
   getBirthPlaceObj() {
@@ -137,7 +137,14 @@ class ArolsenarchivesEdReader extends ExtractedDataReader {
   }
 
   getDeathDateObj() {
-    return undefined;
+    // "Date_of_decease": "19441120",
+    if (this.ed.person_data == null) return undefined;
+    if (!this.ed.person_data["Date_of_decease"]) return undefined;
+    const date = this.ed.person_data["Date_of_decease"];
+    const year = date.substring(0, 4);
+    const month = date.substring(4, 6);
+    const day = date.substring(6, 8);
+    return this.makeDateObjFromYyyymmddDate(year + "-" + month + "-" + day, "-");
   }
 
   getDeathPlaceObj() {

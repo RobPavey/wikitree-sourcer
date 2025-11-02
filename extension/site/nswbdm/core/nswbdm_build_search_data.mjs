@@ -248,7 +248,7 @@ function buildSearchData(input) {
       if (predictedGender) {
         gender = predictedGender;
       } else {
-        gender = male;
+        gender = "male";
       }
     }
   }

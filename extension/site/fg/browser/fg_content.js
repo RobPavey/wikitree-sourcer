@@ -22,4 +22,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-siteContentInit(`fg`, `site/fg/core/fg_extract_data.mjs`);
+function addFlowerNote(fieldData) {
+  let noteText = fieldData.noteText;
+  if (noteText) {
+    let textArea = document.querySelector("#add-flower-note");
+    if (textArea) {
+      textArea.value = noteText;
+    }
+  }
+}
+
+async function additionalMessageHandler(request, sender, sendResponse) {
+  if (request.type == "addFlowerNote") {
+    addFlowerNote(request.fieldData);
+    sendResponse({ success: true });
+    return { wasHandled: true, returnValue: false };
+  }
+
+  return { wasHandled: false };
+}
+
+siteContentInit(
+  `fg`,
+  `site/fg/core/fg_extract_data.mjs`,
+  undefined, // overrideExtractHandler
+  additionalMessageHandler
+);

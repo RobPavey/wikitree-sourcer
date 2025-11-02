@@ -24,9 +24,88 @@ SOFTWARE.
 
 import {
   registerSubsectionForOptions,
+  registerSubheadingForOptions,
   registerOptionsGroup,
   registerSiteSearchPopupOptionsGroup,
 } from "../../../base/core/options/options_registry.mjs";
+
+const searchBehaviorOptionsGroup = {
+  category: "search",
+  subcategory: "freebmd",
+  tab: "search",
+  subsection: "freebmd",
+  subheading: "behavior",
+  options: [
+    {
+      optionName: "useNewSite",
+      type: "checkbox",
+      label: "Do search using the new FreeBMD site (freebmd2)",
+      defaultValue: false,
+    },
+    {
+      optionName: "reuseExistingTab",
+      type: "checkbox",
+      label: "Do search in existing freebmd2 tab if present",
+      defaultValue: false,
+    },
+  ],
+};
+
+const searchParametersOptionsGroup = {
+  category: "search",
+  subcategory: "freebmd",
+  tab: "search",
+  subsection: "freebmd",
+  subheading: "parameters",
+  options: [
+    {
+      optionName: "fuzzyInDefault",
+      type: "checkbox",
+      label: "Use Name Soundex (when not searching same collection)",
+      defaultValue: true,
+    },
+    {
+      optionName: "fuzzyInSameCollection",
+      type: "checkbox",
+      label: "Use Name Soundex (when searching same collection)",
+      defaultValue: true,
+    },
+    {
+      optionName: "birthYearRangeDefault",
+      type: "select",
+      label: "Search range to use for birth year (when not searching same collection)",
+      values: [
+        { value: "none", text: "Do not specify a birth year" },
+        { value: "auto", text: "Set automatically based on source" },
+        { value: "exact", text: "Exact year only" },
+        { value: "2", text: "+/- 2 years" },
+        { value: "5", text: "+/- 5 years" },
+        { value: "10", text: "+/- 10 years" },
+      ],
+      defaultValue: "auto",
+    },
+    {
+      optionName: "birthYearRangeSameCollection",
+      type: "select",
+      label: "Search range to use for birth year (when searching same collection)",
+      values: [
+        { value: "none", text: "Do not specify a birth year" },
+        { value: "auto", text: "Set automatically based on source" },
+        { value: "exact", text: "Exact year only" },
+        { value: "2", text: "+/- 2 years" },
+        { value: "5", text: "+/- 5 years" },
+        { value: "10", text: "+/- 10 years" },
+      ],
+      defaultValue: "exact",
+    },
+    {
+      optionName: "includeCounty",
+      type: "checkbox",
+      label: "Include county in search (if known)",
+      defaultValue: true,
+    },
+  ],
+};
 
 const citationOptionsGroup = {
   category: "citation",
@@ -57,6 +136,10 @@ const citationOptionsGroup = {
 
 registerSubsectionForOptions("search", "freebmd", "FreeBMD (UK)");
 registerSiteSearchPopupOptionsGroup("freebmd");
+registerSubheadingForOptions("search", "freebmd", "behavior", "Search Parameters");
+registerOptionsGroup(searchBehaviorOptionsGroup);
+registerSubheadingForOptions("search", "freebmd", "parameters", "Search Behavior");
+registerOptionsGroup(searchParametersOptionsGroup);
 
 registerSubsectionForOptions("citation", "freebmd", "FreeBMD (UK)");
 registerOptionsGroup(citationOptionsGroup);

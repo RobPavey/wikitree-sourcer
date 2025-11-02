@@ -122,6 +122,26 @@ const regressionData = [
     url: "https://www.graves.eggsa.org/easterncape/Port_Elizabeth_Urban/Northend_Cemetery_Port_Elizabeth/K/KE/KEYTER%20Petrus%20Ignatius%201884-1934%20_amp_%20Susanna%20Juliana%20Theodora%201875-1958%20_amp_%20SMITH%20Susanna%20Juliana%20Dorothea%20KEYTER%201897-1.JPG",
     primaryPersonIndex: 2,
   },
+  // 5. KIRSTEN
+  // VAN DER POLL Hendrik 1817-1894 VAN DER POLL Johanna Jacomina nee KIRSTEN 1820-1893 KIRSTEN Hendrik Van Der Poll 1850-1930  etc.
+  {
+    caseName: "kirsten_family_hendrik_van_der_poll",
+    url: "https://www.graves.eggsa.org/westerncape/Cape-town-urban/Plumstead/Plumstead-MAIN/4Kirsten-familie/IMG_4044.JPG",
+    pageFile: "./unit_tests/eggsagrvs/saved_pages/kirsten_family.html",
+  },
+  {
+    caseName: "kirsten_family_hendrik_van_der_poll_kirsten",
+    url: "https://www.graves.eggsa.org/westerncape/Cape-town-urban/Plumstead/Plumstead-MAIN/4Kirsten-familie/IMG_4044.JPG",
+    pageFile: "./unit_tests/eggsagrvs/saved_pages/kirsten_family.html",
+    primaryPersonIndex: 2,
+  },
+  {
+    caseName: "kirsten_family_johanna_van_der_poll_nee_kirsten",
+    url: "https://www.graves.eggsa.org/westerncape/Cape-town-urban/Plumstead/Plumstead-MAIN/4Kirsten-familie/IMG_4044.JPG",
+    pageFile: "./unit_tests/eggsagrvs/saved_pages/kirsten_family.html",
+    primaryPersonIndex: 1,
+  },
+
   // LANDSBERG E.S.A., formerly COETSEE, formerly HUMAN nee RAUTENBACH 1908-1993
   // multiple formerly and nee
   {

@@ -53,8 +53,6 @@ function getClickedRow() {
 }
 
 function addClickedRowListener() {
-  //console.log("addClickedRowListener");
-
   const resultsTable = document.querySelector("yv-its-person-simple-grid").querySelector('tbody[role="rowgroup"]');
   if (resultsTable && !resultsTable.hasAttribute("listenerOnClick")) {
     resultsTable.setAttribute("listenerOnClick", "true");
@@ -86,21 +84,31 @@ function addClickedRowListener() {
 
 function insertButtonHandler() {
   let button = document.querySelector('button[class="its-button show-indexed-data ng-star-inserted"');
-
-  if (button == null) {
-    return;
+  if (button != null) {
+    let onclick = button.onclick;
+    button.onclick = () => {
+      if (onclick != null) {
+        onclick();
+      }
+      addClickedRowListener();
+    };
   }
 
-  let onclick = button.onclick;
-  button.onclick = () => {
-    if (onclick != null) {
-      onclick();
-    }
-    addClickedRowListener();
-  };
+  button = document.querySelector("yv-its-agree-protection-component")?.querySelector("button");
+  if (button != null) {
+    let onclick = button.onclick;
+    button.onclick = () => {
+      if (onclick != null) {
+        onclick();
+      }
+      setTimeout(() => {
+        addClickedRowListener();
+      }, 500);
+    };
+  }
 }
 
 siteContentInit(`arolsenarchives`, `site/arolsenarchives/core/arolsenarchives_extract_data.mjs`);
 setTimeout(() => {
   insertButtonHandler();
-}, 1000);
+}, 500);

@@ -1,0 +1,14 @@
+{
+  "std_inline": {
+    "citation": "<ref>\n'''Death Registration''':\n\"England & Wales Death Index\"<br/>\n[https://www.freebmd2.org.uk/entry-information/hash?id=r%252BTR0lyWnwMHak8jSNonaA&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nE Pavey, Amelia.<br/>\n''GRO Reference:'' 1938 Jan-Feb-Mar in Leek Volume 6b Page 327.\n</ref>",
+    "type": "inline"
+  },
+  "std_narrative": {
+    "citation": "Amelia's death was registered in the Jan-Feb-Mar quarter of 1938 in the Leek district.<ref>\n'''Death Registration''':\n\"England & Wales Death Index\"<br/>\n[https://www.freebmd2.org.uk/entry-information/hash?id=r%252BTR0lyWnwMHak8jSNonaA&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>\nE Pavey, Amelia.<br/>\n''GRO Reference:'' 1938 Jan-Feb-Mar in Leek Volume 6b Page 327.\n</ref>",
+    "type": "narrative"
+  },
+  "std_source": {
+    "citation": "* '''Death Registration''': \"England & Wales Death Index\"<br/>[https://www.freebmd2.org.uk/entry-information/hash?id=r%252BTR0lyWnwMHak8jSNonaA&locale=en FreeBMD Entry Information] (accessed 6 May 2021)<br/>E Pavey, Amelia.<br/>''GRO Reference:'' 1938 Jan-Feb-Mar in Leek Volume 6b Page 327.",
+    "type": "source"
+  }
+}

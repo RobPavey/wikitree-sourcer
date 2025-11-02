@@ -1,0 +1,20 @@
+{
+  "sourceOfData": "freebmd",
+  "sourceType": "record",
+  "recordType": "MarriageRegistration",
+  "name": {
+    "lastName": "Pavey",
+    "forenames": "Henry Alfred"
+  },
+  "eventDate": {
+    "quarter": 4,
+    "yearString": "1870"
+  },
+  "registrationDistrict": "Pancras",
+  "collectionData": {
+    "id": "marriages",
+    "volume": "1b",
+    "page": "263"
+  },
+  "hasValidData": true
+}

@@ -32,24 +32,40 @@ import { runBuildCitationTests } from "../test_utils/test_build_citation_utils.m
 
 const regressionData = [
   {
-    caseName: "b_1902_calvert_florence",
-    url: "https://www.freebmd.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
-  },
-  {
     caseName: "b_1902_calvert_florence_ora",
     url: "https://www.freebmd.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
   },
   {
-    caseName: "d_1938_littlemore_amelia",
-    url: "https://www.freebmd.org.uk/cgi/information.pl?r=176279640:9239&d=bmd_1630353886",
+    caseName: "b_1902_calvert_florence_v2025",
+    url: "https://www.freebmd2.org.uk/68fbb6e58655740ff9b81bd9/entry-information/107336072/florence-calvert-birth-co-durham-easington-v10a-p479?locale=en&search_entry=107336072",
+  },
+  {
+    caseName: "b_1902_calvert_florence",
+    url: "https://www.freebmd.org.uk/cgi/information.pl?r=107280059:7282&d=bmd_1649064119",
   },
   {
     caseName: "d_1980_dawson_ann",
     url: "https://www.freebmd.org.uk/cgi/information.pl?cite=BPWMD5euQCbaHxoApSv%2FbQ&scan=1",
   },
   {
+    caseName: "d_1985_greenfield_mary_v2025",
+    url: "https://www.freebmd2.org.uk/68fbb670865574100fb8196b/entry-information/275933132/mary-greenfield-death-greater-london-from-jun1965-islington-v13-p1308?locale=en&search_entry=275933132",
+  },
+  {
     caseName: "d_1985_greenfield_mary",
     url: "https://www.freebmd.org.uk/cgi/information.pl?cite=aGzrr%2B%2BC02OpOvuJRw7OVw&scan=1",
+  },
+  {
+    caseName: "d_1938_pavey_amelia_v2025",
+    url: "https://www.freebmd2.org.uk/68fec1248655743e63b9b5cb/entry-information/176457341/amelia-e-pavey-death-staffordshire-leek-v6b-p327?locale=en&search_entry=176457341",
+  },
+  {
+    caseName: "d_1938_pavey_amelia",
+    url: "https://www.freebmd.org.uk/cgi/information.pl?r=176279640:9239&d=bmd_1630353886",
+  },
+  {
+    caseName: "m_1870_pavey_henry_alfred_v2025",
+    url: "https://www.freebmd2.org.uk/68fbb74b8655740ff9b81be5/entry-information/48070378/henry-alfred-pavey-marriage-london-to-mar1965-pancras-v1b-p263?locale=en&search_entry=48070378",
   },
   {
     caseName: "m_1870_pavey_henry_alfred",
