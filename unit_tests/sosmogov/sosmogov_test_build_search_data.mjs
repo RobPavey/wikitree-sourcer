@@ -27,12 +27,16 @@ import { runBuildSearchUrlTests } from "../test_utils/test_build_search_url_util
 
 const regressionData = [
   {
-    caseName: "wikitree_raymond-3037_read",
-    inputPath: "wikitree/generalized_data/ref/raymond-3037_read",
+    caseName: "wikitree_haff-272_edit",
+    inputPath: "wikitree/generalized_data/ref/haff-272_edit",
   },
   {
     caseName: "wikitree_orth-997_read",
     inputPath: "wikitree/generalized_data/ref/orth-997_read",
+  },
+  {
+    caseName: "wikitree_raymond-3037_read",
+    inputPath: "wikitree/generalized_data/ref/raymond-3037_read",
   },
 ];
 

@@ -24,6 +24,75 @@ SOFTWARE.
 
 import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
+import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
+
+function constrainYearToSosmogovYearRange(yearToTest) {
+  // can we extract the following year range from the web site?
+  const sosmogovStartYear = 1910;
+  const sosmogovEndYear = 1974;
+  if (yearToTest < sosmogovStartYear) {
+    return sosmogovStartYear;
+  } else if (yearToTest > sosmogovEndYear) {
+    return sosmogovEndYear;
+  }
+  return yearToTest;
+}
+
+function getDateRangeFromWtsQualifier(yearNum, wtsQualifier) {
+  //console.log("getDateRangeFromWtsQualifier:");
+  //console.log("yearNum = " + yearNum);
+  //console.log("wtsQualifier = " + wtsQualifier);
+  var fromYear = yearNum;
+  var toYear = yearNum;
+
+  switch (wtsQualifier) {
+    case dateQualifiers.NONE:
+      fromYear = yearNum - 10;
+      toYear = yearNum + 10;
+      break;
+    case dateQualifiers.EXACT:
+      fromYear = yearNum;
+      toYear = yearNum;
+      break;
+    case dateQualifiers.ABOUT:
+      fromYear = yearNum - 10;
+      toYear = yearNum + 10;
+      break;
+    case dateQualifiers.BEFORE:
+      fromYear = yearNum - 25;
+      toYear = yearNum;
+      break;
+    case dateQualifiers.AFTER:
+      fromYear = yearNum;
+      toYear = yearNum + 25;
+      break;
+  }
+
+  fromYear = constrainYearToSosmogovYearRange(fromYear);
+  toYear = constrainYearToSosmogovYearRange(toYear);
+
+  //console.log("fromYear = " + fromYear);
+  //console.log("toYear = " + toYear);
+  return { fromYear: fromYear.toString(), toYear: toYear.toString() };
+}
+
+function getDateRange(yearString, wtsQualifier) {
+  //console.log("getDateRange:");
+  //console.log("yearString = " + yearString);
+  //console.log("wtsQualifier = " + wtsQualifier);
+  if (!yearString || yearString == "") {
+    return null;
+  }
+
+  var yearNum = parseInt(yearString);
+
+  //console.log("yearNum = " + yearNum);
+  if (isNaN(yearNum) || yearNum < 500) {
+    return null;
+  } else {
+    return getDateRangeFromWtsQualifier(yearNum, wtsQualifier);
+  }
+}
 
 function buildSearchData(input) {
   const gd = input.generalizedData;
@@ -42,11 +111,13 @@ function buildSearchData(input) {
   // - extension/site/nswbdm/core/nswbdm_build_search_data.mjs
   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-  // search page key fields are: input id=
+  // search page key fields are (input id=):
   //   LastName, FirstName, and MiddleName,
   //   BeginYear, BeginMonth (selectable options), EndYear, and EndMonth (selectable options),
-  //   CountyName (selectable options),
-  //   and input id=btnSearch click will submit the search
+  //   CountyName (selectable options)
+  // input id=btnSearch click would submit the search, but we let the user click the search
+  //   button so that the browser history is maintained and the user can click the browser
+  //   back arrow to refine/change the search criteria if desired
 
   let firstName = gd.inferFirstName();
   //  let middleName = gd.inferMiddleName();
@@ -80,13 +151,20 @@ function buildSearchData(input) {
   fieldData["MiddleName"] = middleName;
 
   // addDateRange(gd, fieldData, gd.inferDeathDate(), runDate, options, deathsDateRange);
-  if (yearString) {
-    fieldData["BeginYear"] = yearString;
-    fieldData["EndYear"] = yearString;
+  let deathDateRange = getDateRange(gd.inferDeathYear(), gd.inferDeathDateQualifier());
+
+  if (deathDateRange) {
+    //console.log("deathDateRange.fromYear = " + deathDateRange.fromYear);
+    //console.log("deathDateRange.toYear = " + deathDateRange.toYear);
+    fieldData["BeginYear"] = deathDateRange.fromYear;
+    fieldData["EndYear"] = deathDateRange.toYear;
   } else {
     fieldData["BeginYear"] = "";
     fieldData["EndYear"] = "";
   }
+
+  //console.log('fieldData["BeginYear"]' + fieldData["BeginYear"]);
+  //console.log('fieldData["EndYear"]' + fieldData["EndYear"]);
 
   //selectData["BeginMonth"] = 0;
   //selectData["EndMonth"] = 0;

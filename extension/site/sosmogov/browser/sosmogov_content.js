@@ -369,11 +369,11 @@ async function doPendingSearch() {
 
       //console.log("fieldData loop");
       for (var key in fieldData) {
-        console.log("doPendingSearch: key is: " + key);
+        //console.log("doPendingSearch: key is: " + key);
 
         if (key) {
           let value = fieldData[key];
-          console.log("doPendingSearch: value is: " + value);
+          //console.log("doPendingSearch: value is: " + value);
 
           //if (value !== undefined && value !== "") {
           if (value !== undefined) {
@@ -382,8 +382,8 @@ async function doPendingSearch() {
             //console.log("doPendingSearch: id is: " + id);
 
             let inputElement = document.querySelector("input[id='" + id + "']");
-            console.log("doPendingSearch: inputElement is:");
-            console.log(inputElement);
+            //console.log("doPendingSearch: inputElement is:");
+            //console.log(inputElement);
 
             if (inputElement) {
               //inputElement.value = value;
@@ -400,8 +400,8 @@ async function doPendingSearch() {
               addMutationObserver(inputElement);
               setSearchingBanner();
               await sleep(100);
-              console.log("after update: inputElement is:");
-              console.log(inputElement);
+              //console.log("after update: inputElement is:");
+              //console.log(inputElement);
             } else {
               inputNotFound = true;
               break;
@@ -490,7 +490,7 @@ async function doPendingSearch() {
     }
 
     if (!submitted) {
-      console.log("not submitted");
+      //console.log("not submitted");
     } else {
       //console.log("submitted");
     }

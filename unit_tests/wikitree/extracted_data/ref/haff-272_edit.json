@@ -1,0 +1,26 @@
+{
+  "hasValidData": true,
+  "firstNames": "Henry",
+  "prefNames": "Henry",
+  "middleNames": "B.",
+  "lnab": "Haff",
+  "currentLastName": "Huff",
+  "mothersMaidenName": "",
+  "birthDate": "May 1838",
+  "birthDateStatus": "guess",
+  "deathDate": "1910",
+  "deathDateStatus": "after",
+  "birthLocation": "Ohio, United States",
+  "deathLocation": "Springfield, Greene, Missouri, United States",
+  "personGender": "Male",
+  "spouses": [],
+  "url": "https://www.wikitree.com/index.php?title=Special:EditPerson&u=44579833",
+  "pageType": "edit",
+  "parents": {
+    "father": {
+      "name": "Lawrence Haff",
+      "wikiId": "Haff-271"
+    }
+  },
+  "wikiId": "Haff-272"
+}

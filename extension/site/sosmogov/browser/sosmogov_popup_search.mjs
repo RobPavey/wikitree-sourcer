@@ -41,8 +41,8 @@ function shouldShowSearchMenuItem(data, filter) {
   const siteConstraints = {
     startYear: sosmogovStartYear,
     endYear: sosmogovEndYear,
-    dateTestType: "bmd",
-    countryList: [],
+    dateTestType: "died",
+    countryList: ["United States"],
   };
 
   if (!shouldShowSiteSearch(data.generalizedData, filter, siteConstraints)) {

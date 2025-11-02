@@ -80,12 +80,27 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Gow-822",
   },
   {
+    // To test MO death cert search on sosmogov
+    caseName: "haff-272_edit",
+    url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=44579833",
+  },
+  {
+    // To test MO death cert search on sosmogov
+    caseName: "haff-272_read",
+    url: "https://www.wikitree.com/wiki/Haff-272",
+  },
+  {
     caseName: "handford-3_read",
     url: "https://www.wikitree.com/wiki/Handford-3",
   },
   {
     caseName: "harrington-1500_private_with_pub_bio",
     url: "https://www.wikitree.com/index.php?title=Harrington-1500",
+  },
+  {
+    // To test MO death cert search on sosmogov
+    caseName: "hooten-280_read",
+    url: "https://www.wikitree.com/wiki/Hooton-280",
   },
   {
     // Ireland example

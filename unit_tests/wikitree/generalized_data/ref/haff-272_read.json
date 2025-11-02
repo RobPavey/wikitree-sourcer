@@ -1,0 +1,40 @@
+{
+  "sourceOfData": "wikitree",
+  "sourceType": "profile",
+  "name": {
+    "firstNames": "Henry",
+    "middleNames": "B.",
+    "lastName": "Haff"
+  },
+  "lastNameAtBirth": "Haff",
+  "lastNameAtDeath": "Huff",
+  "personGender": "male",
+  "birthDate": {
+    "dateString": "May 1838",
+    "qualifier": 0
+  },
+  "deathDate": {
+    "dateString": "1910",
+    "qualifier": 0
+  },
+  "birthPlace": {
+    "placeString": "Ohio, United States"
+  },
+  "deathPlace": {
+    "placeString": "Springfield, Greene, Missouri, United States"
+  },
+  "parents": {
+    "father": {
+      "name": {
+        "name": "Lawrence Haff",
+        "lastName": "Haff",
+        "forenames": "Lawrence"
+      },
+      "lastNameAtBirth": "Haff",
+      "lastNameAtDeath": "Haff"
+    }
+  },
+  "spouses": [],
+  "hasValidData": true,
+  "personRepoRef": "Haff-272"
+}
