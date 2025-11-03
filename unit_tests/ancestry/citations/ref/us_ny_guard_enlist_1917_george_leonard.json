@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "George was in a military record (New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917) on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021)\n</ref>",
+    "citation": "George was in a military record (New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917) on 26 April 1917 in New York, USA.<ref>\n'''Military''':\n\"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>\nOriginal data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>\n{{Ancestry Record|2878|7162}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Military''': \"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>Original data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>{{Ancestry Record|2878|7162}} (accessed 6 May 2021)",
+    "citation": "* '''Military''': \"New York, U.S., 74th Infantry National Guard Enlistment Cards, 1889-1917\"<br/>Original data: 1889-1917 74th Inf enlistment cards; WW1; Span-Am. New York State Military Museum, Saratoga Springs, New York<br/>{{Ancestry Record|2878|7162}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

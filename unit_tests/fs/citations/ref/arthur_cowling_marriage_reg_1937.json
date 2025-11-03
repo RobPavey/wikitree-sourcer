@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Arthur's marriage to Florence K Penter was registered in the Apr-May-Jun quarter of 1937 in the Hull district.<ref>\n'''Marriage Registration''':\n\"England and Wales Marriage Registration Index, 1837-2005\"<br/>\nciting UK General Register Office. District: Hull; Volume: 9D; Page: 519<br/>\n{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Hull; Volume: 9D; Page: 519<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage Registration''': \"England and Wales Marriage Registration Index, 1837-2005\"<br/>citing UK General Register Office. District: Hull; Volume: 9D; Page: 519<br/>{{FamilySearch Record|QV8X-7L1V}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900\"<br/>\nciting Digital film/folder number: 107833282_001_M9VS-9X7; Image number: 368; Record number: 3<br/>\n{{FamilySearch Record|6ZGV-DXJ4}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHN-T3YN-TCNB}}\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900\"<br/>\nciting Digital film/folder number: 107833282_001_M9VS-9X7; Image number: 368; Record number: 3<br/>\n{{FamilySearch Record|6ZGV-DXJ4}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHN-T3YN-TCNB}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "M, daughter of J C Carrington & M E Carrington, was born in March 1892 in Smithville, Charlotte, Virginia, United States.<ref>\n'''Birth''':\n\"Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900\"<br/>\nciting Digital film/folder number: 107833282_001_M9VS-9X7; Image number: 368; Record number: 3<br/>\n{{FamilySearch Record|6ZGV-DXJ4}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHN-T3YN-TCNB}}\n</ref>",
+    "citation": "M, daughter of J C Carrington & M E Carrington, was born in March 1892 in Smithville, Charlotte, Virginia, United States.<ref>\n'''Birth''':\n\"Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900\"<br/>\nciting Digital film/folder number: 107833282_001_M9VS-9X7; Image number: 368; Record number: 3<br/>\n{{FamilySearch Record|6ZGV-DXJ4}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QHN-T3YN-TCNB}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Birth''': \"Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900\"<br/>citing Digital film/folder number: 107833282_001_M9VS-9X7; Image number: 368; Record number: 3<br/>{{FamilySearch Record|6ZGV-DXJ4}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHN-T3YN-TCNB}}",
+    "citation": "* '''Birth''': \"Virginia, Library of Virginia State Archive, Births, Marriages, and Deaths 1853-1900\"<br/>citing Digital film/folder number: 107833282_001_M9VS-9X7; Image number: 368; Record number: 3<br/>{{FamilySearch Record|6ZGV-DXJ4}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QHN-T3YN-TCNB}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

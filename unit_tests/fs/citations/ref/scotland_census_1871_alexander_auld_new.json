@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1871 Census''':\n\"Scotland Census, 1871\"<br/>\nciting Page: 2; Line: 20; Source Schedule Number: 14; Source Folio Number: 30; Digital film/folder number: 004549834; FHL microfilm: 104032; Image number: 625<br/>\n{{FamilySearch Record|VBPV-BM1}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-6S9F-LY}}\n</ref>",
+    "citation": "<ref>\n'''1871 Census''':\n\"Scotland Census, 1871\"<br/>\nciting Page: 2; Line: 20; Source Schedule Number: 14; Source Folio Number: 30; Digital film/folder number: 004549834; FHL microfilm: 104032; Image number: 625<br/>\n{{FamilySearch Record|VBPV-BM1}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-6S9F-LY}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1871 census Alexander (age 51), Pattern Designer For Calico Printer, was recorded as married in Tradeston, Lanarkshire, Scotland.<ref>\n'''1871 Census''':\n\"Scotland Census, 1871\"<br/>\nciting Page: 2; Line: 20; Source Schedule Number: 14; Source Folio Number: 30; Digital film/folder number: 004549834; FHL microfilm: 104032; Image number: 625<br/>\n{{FamilySearch Record|VBPV-BM1}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-6S9F-LY}}\n</ref>",
+    "citation": "In the 1871 census Alexander (age 51), Pattern Designer For Calico Printer, was recorded as married in Tradeston, Lanarkshire, Scotland.<ref>\n'''1871 Census''':\n\"Scotland Census, 1871\"<br/>\nciting Page: 2; Line: 20; Source Schedule Number: 14; Source Folio Number: 30; Digital film/folder number: 004549834; FHL microfilm: 104032; Image number: 625<br/>\n{{FamilySearch Record|VBPV-BM1}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-6S9F-LY}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1871 Census''': \"Scotland Census, 1871\"<br/>citing Page: 2; Line: 20; Source Schedule Number: 14; Source Folio Number: 30; Digital film/folder number: 004549834; FHL microfilm: 104032; Image number: 625<br/>{{FamilySearch Record|VBPV-BM1}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9398-6S9F-LY}}",
+    "citation": "* '''1871 Census''': \"Scotland Census, 1871\"<br/>citing Page: 2; Line: 20; Source Schedule Number: 14; Source Folio Number: 30; Digital film/folder number: 004549834; FHL microfilm: 104032; Image number: 625<br/>{{FamilySearch Record|VBPV-BM1}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9398-6S9F-LY}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

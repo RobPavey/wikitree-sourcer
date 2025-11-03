@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: Rg 9; Piece: 685; Folio: 88; Page: 23; GSU roll: 542684; ED, institution, or vessel: 5; Household schedule number: 1<br/>\n{{Ancestry Record|8767|8067946}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: Rg 9; Piece: 685; Folio: 88; Page: 23; GSU roll: 542684; ED, institution, or vessel: 5; Household schedule number: 1<br/>\n{{Ancestry Record|8767|8067946}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1861 census Rt (age 90) was the son-in-law of Viscount Palmerston in Romsey Extra, Hampshire, England.<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: Rg 9; Piece: 685; Folio: 88; Page: 23; GSU roll: 542684; ED, institution, or vessel: 5; Household schedule number: 1<br/>\n{{Ancestry Record|8767|8067946}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1861 census Rt (age 90) was the son-in-law of Viscount Palmerston in Romsey Extra, Hampshire, England.<ref>\n'''1861 Census''':\n\"1861 England Census\"<br/>\nClass: Rg 9; Piece: 685; Folio: 88; Page: 23; GSU roll: 542684; ED, institution, or vessel: 5; Household schedule number: 1<br/>\n{{Ancestry Record|8767|8067946}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1861 Census''': \"1861 England Census\"<br/>Class: Rg 9; Piece: 685; Folio: 88; Page: 23; GSU roll: 542684; ED, institution, or vessel: 5; Household schedule number: 1<br/>{{Ancestry Record|8767|8067946}} (accessed 6 May 2021)",
+    "citation": "* '''1861 Census''': \"1861 England Census\"<br/>Class: Rg 9; Piece: 685; Folio: 88; Page: 23; GSU roll: 542684; ED, institution, or vessel: 5; Household schedule number: 1<br/>{{Ancestry Record|8767|8067946}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

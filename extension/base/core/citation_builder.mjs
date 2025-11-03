@@ -561,17 +561,20 @@ class CitationBuilder {
       citation = citation.substring(0, citation.length - 1).trim();
     }
 
-    if (!(citation.endsWith(".") || citation.endsWith("}") || citation.endsWith(".''"))) {
-      // doesn't end with a period already and doesn't end in template or table
-      // However, it could end with accessed date if there is no data section, or just
-      // a bare link and we don't want a period then. There are various ways we could test
-      // for this
-      if (!(citation.endsWith("]") || citation.endsWith(">") || citation.endsWith("\n") || citation.endsWith("* "))) {
-        // if ends with accessed date then (for now) we don't add a period
-        // (accessed 6 May 2021)
-        if (!/accessed \d+ \w+ \d+\)$/.test(citation)) {
-          citation += ".";
-        }
+    // If the citation doesn't end with a period already we may want to add one
+    // It there is a period at the end but before a close quote then it counts.
+    const endsInPossQuotedPeriodRegEx = /.*\.['"]*$/;
+    let endsInPeriod = endsInPossQuotedPeriodRegEx.test(citation);
+    if (!endsInPeriod) {
+      const endsInUrlRegEx = /.*https?\:[^ ]+$/i;
+      const endsInBareUrl = endsInUrlRegEx.test(citation);
+      const endsInTable = citation.endsWith("|}");
+
+      // If it doesn't end with a period already and doesn't end in a bare URL then add one
+      // Some could also end in a table if the data style is set to table, don't add period
+      // in that case either.
+      if (!endsInBareUrl && !endsInTable) {
+        citation += ".";
       }
     }
 

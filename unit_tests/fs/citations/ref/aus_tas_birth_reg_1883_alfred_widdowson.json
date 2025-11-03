@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Australia, Tasmania, Civil Registration, 1803-1933\"<br/>\nciting Line: 149364; Digital film/folder number: 007368123; FHL microfilm: 007368123; Image number: 604<br/>\n{{FamilySearch Record|Q27M-LKVK}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-89CH-4CN}}\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Australia, Tasmania, Civil Registration, 1803-1933\"<br/>\nciting Line: 149364; Digital film/folder number: 007368123; FHL microfilm: 007368123; Image number: 604<br/>\n{{FamilySearch Record|Q27M-LKVK}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-89CH-4CN}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Alfred's birth on 28 July 1883 was registered in George Town, Tasmania, Australia. He was the son of Alfred Shepherd Widdowson & Wimble Emily Widdowson.<ref>\n'''Birth Registration''':\n\"Australia, Tasmania, Civil Registration, 1803-1933\"<br/>\nciting Line: 149364; Digital film/folder number: 007368123; FHL microfilm: 007368123; Image number: 604<br/>\n{{FamilySearch Record|Q27M-LKVK}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-89CH-4CN}}\n</ref>",
+    "citation": "Alfred's birth on 28 July 1883 was registered in George Town, Tasmania, Australia. He was the son of Alfred Shepherd Widdowson & Wimble Emily Widdowson.<ref>\n'''Birth Registration''':\n\"Australia, Tasmania, Civil Registration, 1803-1933\"<br/>\nciting Line: 149364; Digital film/folder number: 007368123; FHL microfilm: 007368123; Image number: 604<br/>\n{{FamilySearch Record|Q27M-LKVK}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QS7-89CH-4CN}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Birth Registration''': \"Australia, Tasmania, Civil Registration, 1803-1933\"<br/>citing Line: 149364; Digital film/folder number: 007368123; FHL microfilm: 007368123; Image number: 604<br/>{{FamilySearch Record|Q27M-LKVK}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-89CH-4CN}}",
+    "citation": "* '''Birth Registration''': \"Australia, Tasmania, Civil Registration, 1803-1933\"<br/>citing Line: 149364; Digital film/folder number: 007368123; FHL microfilm: 007368123; Image number: 604<br/>{{FamilySearch Record|Q27M-LKVK}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QS7-89CH-4CN}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

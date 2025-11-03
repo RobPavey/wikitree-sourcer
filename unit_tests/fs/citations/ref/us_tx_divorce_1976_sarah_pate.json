@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Sarah was divorced from John T Pate on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Sarah was divorced from John T Pate on 9 June 1976 in Lubbock, Texas, United States.<ref>\n'''Divorce''':\n\"Texas Divorce Index, 1968-2010\"<br/>\n{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021)",
+    "citation": "* '''Divorce''': \"Texas Divorce Index, 1968-2010\"<br/>{{FamilySearch Record|VYX9-KBH}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

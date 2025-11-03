@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Web: Ireland, Census, 1901\"<br/>\nClass: RG14; URL: http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/<br/>\n{{Ancestry Record|70667|10426199|uk}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Web: Ireland, Census, 1901\"<br/>\nClass: RG14; URL: http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/<br/>\n{{Ancestry Record|70667|10426199|uk}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1901 census Margaret (age 31), Wife, was the wife of James Kearney in Spring Garden, Waterford Urban No. 2, Waterford, Ireland.<ref>\n'''1901 Census''':\n\"Web: Ireland, Census, 1901\"<br/>\nClass: RG14; URL: http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/<br/>\n{{Ancestry Record|70667|10426199|uk}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1901 census Margaret (age 31), Wife, was the wife of James Kearney in Spring Garden, Waterford Urban No. 2, Waterford, Ireland.<ref>\n'''1901 Census''':\n\"Web: Ireland, Census, 1901\"<br/>\nClass: RG14; URL: http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/<br/>\n{{Ancestry Record|70667|10426199|uk}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1901 Census''': \"Web: Ireland, Census, 1901\"<br/>Class: RG14; URL: http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/<br/>{{Ancestry Record|70667|10426199|uk}} (accessed 6 May 2021)",
+    "citation": "* '''1901 Census''': \"Web: Ireland, Census, 1901\"<br/>Class: RG14; URL: http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/<br/>{{Ancestry Record|70667|10426199|uk}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {
@@ -48,15 +48,15 @@
     "type": "source"
   },
   "full_ee_style_inline": {
-    "citation": "<ref>\"Web: Ireland, Census, 1901,\" database, ({{Ancestry Record|70667|10426199|uk}} : accessed 6 May 2021), Margaret Kearney (31), wife, Wife, in household of James Kearney (33) in Spring Garden, Waterford Urban No. 2, Waterford, Ireland. Born in Spert Houel, Co Waterford; citing Class RG14, URL http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/.</ref>",
+    "citation": "<ref>\"Web: Ireland, Census, 1901,\" database, ({{Ancestry Record|70667|10426199|uk}} : accessed 6 May 2021), Margaret Kearney (31), wife, Wife, in household of James Kearney (33) in Spring Garden, Waterford Urban No. 2, Waterford, Ireland. Born in Spert Houel, Co Waterford; citing Class RG14, URL http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/</ref>",
     "type": "inline"
   },
   "full_ee_style_narrative": {
-    "citation": "In the 1901 census Margaret (age 31), Wife, was the wife of James Kearney in Spring Garden, Waterford Urban No. 2, Waterford, Ireland.<ref>\"Web: Ireland, Census, 1901,\" database, ({{Ancestry Record|70667|10426199|uk}} : accessed 6 May 2021), Margaret Kearney (31), wife, Wife, in household of James Kearney (33) in Spring Garden, Waterford Urban No. 2, Waterford, Ireland. Born in Spert Houel, Co Waterford; citing Class RG14, URL http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/.</ref>",
+    "citation": "In the 1901 census Margaret (age 31), Wife, was the wife of James Kearney in Spring Garden, Waterford Urban No. 2, Waterford, Ireland.<ref>\"Web: Ireland, Census, 1901,\" database, ({{Ancestry Record|70667|10426199|uk}} : accessed 6 May 2021), Margaret Kearney (31), wife, Wife, in household of James Kearney (33) in Spring Garden, Waterford Urban No. 2, Waterford, Ireland. Born in Spert Houel, Co Waterford; citing Class RG14, URL http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/</ref>",
     "type": "narrative"
   },
   "full_ee_style_source": {
-    "citation": "* \"Web: Ireland, Census, 1901,\" database, ({{Ancestry Record|70667|10426199|uk}} : accessed 6 May 2021), Margaret Kearney (31), wife, Wife, in household of James Kearney (33) in Spring Garden, Waterford Urban No. 2, Waterford, Ireland. Born in Spert Houel, Co Waterford; citing Class RG14, URL http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/.",
+    "citation": "* \"Web: Ireland, Census, 1901,\" database, ({{Ancestry Record|70667|10426199|uk}} : accessed 6 May 2021), Margaret Kearney (31), wife, Wife, in household of James Kearney (33) in Spring Garden, Waterford Urban No. 2, Waterford, Ireland. Born in Spert Houel, Co Waterford; citing Class RG14, URL http://www.census.nationalarchives.ie/pages/1901/Waterford/Waterford_Urban_No__2/Spring_Garden/1762025/",
     "type": "source"
   },
   "partial_ee_style_inline": {

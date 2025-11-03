@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1885 census M (age 34) was recorded as married in Richland, Cowley, Kansas.<ref>\n'''1885 Census''':\n\"Kansas, U.S., State Census Collection, 1855-1925\"<br/>\nKansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>\n{{Ancestry Record|1088|187423}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>{{Ancestry Record|1088|187423}} (accessed 6 May 2021)",
+    "citation": "* '''1885 Census''': \"Kansas, U.S., State Census Collection, 1855-1925\"<br/>Kansas State Historical Society; Topeka, Kansas; 1885 Kansas Territory Census; Roll: KS1885_30; Line: 11<br/>{{Ancestry Record|1088|187423}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

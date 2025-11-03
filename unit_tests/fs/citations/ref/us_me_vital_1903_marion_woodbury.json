@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Record number: 2902; Volume number: Witham - Woodsum; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Record number: 2902; Volume number: Witham - Woodsum; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Winthrop, Kennebec, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Record number: 2902; Volume number: Witham - Woodsum; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}\n</ref>",
+    "citation": "Marion, daughter of Geo H Woodbury & Bertha Miller, was born on 9 February 1903 in Winthrop, Kennebec, Maine, United States.<ref>\n'''Birth''':\n\"Maine Vital Records, 1670-1921\"<br/>\nciting Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Record number: 2902; Volume number: Witham - Woodsum; Packet letter: A; Indexing batch: I11420-7<br/>\n{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|939K-RR9F-MJ}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Record number: 2902; Volume number: Witham - Woodsum; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}",
+    "citation": "* '''Birth''': \"Maine Vital Records, 1670-1921\"<br/>citing Digital film/folder number: 004703991; FHL microfilm: 10065; Image number: 2902; Record number: 2902; Volume number: Witham - Woodsum; Packet letter: A; Indexing batch: I11420-7<br/>{{FamilySearch Record|KC67-F1Y}} (accessed 6 May 2021)<br/>{{FamilySearch Image|939K-RR9F-MJ}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

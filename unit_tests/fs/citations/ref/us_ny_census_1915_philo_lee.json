@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1915 Census''':\n\"New York State Census, 1915\"<br/>\nciting Page: 01; Line: 40<br/>\n{{FamilySearch Record|K9V2-YCS}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1915 Census''':\n\"New York State Census, 1915\"<br/>\nciting Page: 01; Line: 40<br/>\n{{FamilySearch Record|K9V2-YCS}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1915 census Philo (age 12) was the son of Phila Lee in Hempstead, Nassau, New York, United States.<ref>\n'''1915 Census''':\n\"New York State Census, 1915\"<br/>\nciting Page: 01; Line: 40<br/>\n{{FamilySearch Record|K9V2-YCS}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1915 census Philo (age 12) was the son of Phila Lee in Hempstead, Nassau, New York, United States.<ref>\n'''1915 Census''':\n\"New York State Census, 1915\"<br/>\nciting Page: 01; Line: 40<br/>\n{{FamilySearch Record|K9V2-YCS}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1915 Census''': \"New York State Census, 1915\"<br/>citing Page: 01; Line: 40<br/>{{FamilySearch Record|K9V2-YCS}} (accessed 6 May 2021)",
+    "citation": "* '''1915 Census''': \"New York State Census, 1915\"<br/>citing Page: 01; Line: 40<br/>{{FamilySearch Record|K9V2-YCS}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

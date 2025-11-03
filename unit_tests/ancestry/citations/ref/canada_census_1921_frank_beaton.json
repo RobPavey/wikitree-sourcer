@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1921 Census''':\n\"1921 Census of Canada\"<br/>\nReference Number: RG 31; Folder Number: 13; Census Place: 13, Cariboo, British Columbia; Page Number: 3; Line Number: 1<br/>\n{{Ancestry Record|8991|8614064}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1921 Census''':\n\"1921 Census of Canada\"<br/>\nReference Number: RG 31; Folder Number: 13; Census Place: 13, Cariboo, British Columbia; Page Number: 3; Line Number: 1<br/>\n{{Ancestry Record|8991|8614064}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1921 census Frank (age 57), Doctor, was the married head of household at 50 Tp 83 R 18 M 6, Cariboo, British Columbia, Canada.<ref>\n'''1921 Census''':\n\"1921 Census of Canada\"<br/>\nReference Number: RG 31; Folder Number: 13; Census Place: 13, Cariboo, British Columbia; Page Number: 3; Line Number: 1<br/>\n{{Ancestry Record|8991|8614064}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1921 census Frank (age 57), Doctor, was the married head of household at 50 Tp 83 R 18 M 6, Cariboo, British Columbia, Canada.<ref>\n'''1921 Census''':\n\"1921 Census of Canada\"<br/>\nReference Number: RG 31; Folder Number: 13; Census Place: 13, Cariboo, British Columbia; Page Number: 3; Line Number: 1<br/>\n{{Ancestry Record|8991|8614064}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1921 Census''': \"1921 Census of Canada\"<br/>Reference Number: RG 31; Folder Number: 13; Census Place: 13, Cariboo, British Columbia; Page Number: 3; Line Number: 1<br/>{{Ancestry Record|8991|8614064}} (accessed 6 May 2021)",
+    "citation": "* '''1921 Census''': \"1921 Census of Canada\"<br/>Reference Number: RG 31; Folder Number: 13; Census Place: 13, Cariboo, British Columbia; Page Number: 3; Line Number: 1<br/>{{Ancestry Record|8991|8614064}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

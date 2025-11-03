@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568302; FHL microfilm: 438182<br/>\n{{FamilySearch Record|JWCM-S2G}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568302; FHL microfilm: 438182<br/>\n{{FamilySearch Record|JWCM-S2G}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Thomas, son of Fred Day & Ann Christie Day, was born on 14 July 1876 and baptised on 13 August 1876 in Manchester, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568302; FHL microfilm: 438182<br/>\n{{FamilySearch Record|JWCM-S2G}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Thomas, son of Fred Day & Ann Christie Day, was born on 14 July 1876 and baptised on 13 August 1876 in Manchester, Lancashire, England, United Kingdom.<ref>\n'''Baptism''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007568302; FHL microfilm: 438182<br/>\n{{FamilySearch Record|JWCM-S2G}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007568302; FHL microfilm: 438182<br/>{{FamilySearch Record|JWCM-S2G}} (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007568302; FHL microfilm: 438182<br/>{{FamilySearch Record|JWCM-S2G}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

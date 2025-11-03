@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Lorraine was at school in 1935 in Bakersfield, California.<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Lorraine was at school in 1935 in Bakersfield, California.<ref>\n'''1935 School Yearbook''':\n\"U.S., School Yearbooks, 1900-1999\"<br/>\n\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>\n{{Ancestry Record|1265|90610650}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1935 School Yearbook''': \"U.S., School Yearbooks, 1900-1999\"<br/>\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>{{Ancestry Record|1265|90610650}} (accessed 6 May 2021)",
+    "citation": "* '''1935 School Yearbook''': \"U.S., School Yearbooks, 1900-1999\"<br/>\"U.S., School Yearbooks, 1880-2012\"; School Name: Kern County Union High School; Year: 1935<br/>{{Ancestry Record|1265|90610650}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

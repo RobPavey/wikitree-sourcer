@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1800 census Mical was in Cambridge, Middlesex, Massachusetts.<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1800 census Mical was in Cambridge, Middlesex, Massachusetts.<ref>\n'''1800 Census''':\n\"1800 United States Federal Census\"<br/>\nYear: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>\n{{Ancestry Record|7590|169250}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1800 Census''': \"1800 United States Federal Census\"<br/>Year: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>{{Ancestry Record|7590|169250}} (accessed 6 May 2021)",
+    "citation": "* '''1800 Census''': \"1800 United States Federal Census\"<br/>Year: 1800; Census Place: Cambridge, Middlesex, Massachusetts; Series: M32; Roll: 17; Page: 855; Image: 238; Family History Library Film: 205615<br/>{{Ancestry Record|7590|169250}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

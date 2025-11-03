@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\nCensus district: 001 Yksnøen<br/>\n[https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002 Digitalarkivet Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Record''':\nCensus district: 001 Yksnøen<br/>\n[https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002 Digitalarkivet Record] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\nCensus district: 001 Yksnøen<br/>\n[https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002 Digitalarkivet Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\nCensus district: 001 Yksnøen<br/>\n[https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002 Digitalarkivet Record] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': Census district: 001 Yksnøen<br/>[https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002 Digitalarkivet Record] (accessed 6 May 2021)",
+    "citation": "* '''Record''': Census district: 001 Yksnøen<br/>[https://www.digitalarkivet.no/en/census/rural-residence/bf01036754000002 Digitalarkivet Record] (accessed 6 May 2021).",
     "type": "source"
   }
 }

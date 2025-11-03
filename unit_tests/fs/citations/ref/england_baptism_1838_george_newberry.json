@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Baptism of son George Newberry''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007566545; FHL microfilm: 1470803; Record number: 260; Packet letter: N<br/>\n{{FamilySearch Record|J9VK-1JB}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism of son George Newberry''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007566545; FHL microfilm: 1470803; Record number: 260; Packet letter: N<br/>\n{{FamilySearch Record|J9VK-1JB}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "George's son George Newberry was baptised on 29 July 1838 in Carisbrooke, Hampshire, England, United Kingdom.<ref>\n'''Baptism of son George Newberry''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007566545; FHL microfilm: 1470803; Record number: 260; Packet letter: N<br/>\n{{FamilySearch Record|J9VK-1JB}} (accessed 6 May 2021)\n</ref>",
+    "citation": "George's son George Newberry was baptised on 29 July 1838 in Carisbrooke, Hampshire, England, United Kingdom.<ref>\n'''Baptism of son George Newberry''':\n\"England Births and Christenings, 1538-1975\"<br/>\nciting Digital film/folder number: 007566545; FHL microfilm: 1470803; Record number: 260; Packet letter: N<br/>\n{{FamilySearch Record|J9VK-1JB}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Baptism of son George Newberry''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007566545; FHL microfilm: 1470803; Record number: 260; Packet letter: N<br/>{{FamilySearch Record|J9VK-1JB}} (accessed 6 May 2021)",
+    "citation": "* '''Baptism of son George Newberry''': \"England Births and Christenings, 1538-1975\"<br/>citing Digital film/folder number: 007566545; FHL microfilm: 1470803; Record number: 260; Packet letter: N<br/>{{FamilySearch Record|J9VK-1JB}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

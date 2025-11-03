@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}\n</ref>",
+    "citation": "Donald died on 9 July 1973 and was buried in 1973 in Woodstock, Windsor, Vermont, United States of America.<ref>\n'''Burial''':\n\"Find A Grave Index\"<br/>\n{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>\n{{FindAGrave|97671970}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}",
+    "citation": "* '''Burial''': \"Find A Grave Index\"<br/>{{FamilySearch Record|QVLL-6F6T}} (accessed 6 May 2021)<br/>{{FindAGrave|97671970}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

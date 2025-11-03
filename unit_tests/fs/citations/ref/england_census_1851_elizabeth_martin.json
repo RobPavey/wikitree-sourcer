@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2176 / 122; Page: 53; Line: 12<br/>\n{{FamilySearch Record|SG5F-42W}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2176 / 122; Page: 53; Line: 12<br/>\n{{FamilySearch Record|SG5F-42W}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1851 census Elizabeth (age 38) was the wife of John Martin on Chancer Street, Liverpool, Lancashire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2176 / 122; Page: 53; Line: 12<br/>\n{{FamilySearch Record|SG5F-42W}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1851 census Elizabeth (age 38) was the wife of John Martin on Chancer Street, Liverpool, Lancashire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2176 / 122; Page: 53; Line: 12<br/>\n{{FamilySearch Record|SG5F-42W}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2176 / 122; Page: 53; Line: 12<br/>{{FamilySearch Record|SG5F-42W}} (accessed 6 May 2021)",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2176 / 122; Page: 53; Line: 12<br/>{{FamilySearch Record|SG5F-42W}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

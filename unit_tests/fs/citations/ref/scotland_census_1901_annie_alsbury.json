@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting District: NORTH LEITH; Piece/Folio: 14; Page: 17; Line: 14; Source Schedule Number: 97; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7YN6-17PZ}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting District: NORTH LEITH; Piece/Folio: 14; Page: 17; Line: 14; Source Schedule Number: 97; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7YN6-17PZ}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1901 census Annie (age 36) was the wife of John Alsbury in North Leith, Midlothian, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting District: NORTH LEITH; Piece/Folio: 14; Page: 17; Line: 14; Source Schedule Number: 97; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7YN6-17PZ}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1901 census Annie (age 36) was the wife of John Alsbury in North Leith, Midlothian, Scotland, United Kingdom.<ref>\n'''1901 Census''':\n\"Scotland Census, 1901\"<br/>\nciting District: NORTH LEITH; Piece/Folio: 14; Page: 17; Line: 14; Source Schedule Number: 97; Digital film/folder number: DI0001028<br/>\n{{FamilySearch Record|7YN6-17PZ}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing District: NORTH LEITH; Piece/Folio: 14; Page: 17; Line: 14; Source Schedule Number: 97; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7YN6-17PZ}} (accessed 6 May 2021)",
+    "citation": "* '''1901 Census''': \"Scotland Census, 1901\"<br/>citing District: NORTH LEITH; Piece/Folio: 14; Page: 17; Line: 14; Source Schedule Number: 97; Digital film/folder number: DI0001028<br/>{{FamilySearch Record|7YN6-17PZ}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

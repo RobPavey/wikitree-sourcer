@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1891 census Felix (age 37), Collectrparochialrates (employee), was the married head of household at 9 Courthope Road, St Pancras, Pancras, London (City), England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1891 census Felix (age 37), Collectrparochialrates (employee), was the married head of household at 9 Courthope Road, St Pancras, Pancras, London (City), England.<ref>\n'''1891 Census''':\n\"1891 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>\n[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1891 Census''': \"1891 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021)",
+    "citation": "* '''1891 Census''': \"1891 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13337 RG 12]; Piece: 137; Folio: 143; Page: 14; Schedule: 104<br/>[https://www.freecen.org.uk/search_records/5903c431e9379091b1ccfb4d FreeCen Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\"<br/>\nciting Affiliate Name: Historical Society of Pennsylvania; Digital film/folder number: 102535395; Image number: 240<br/>\n{{FamilySearch Record|6CYF-SMB5}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\"<br/>\nciting Affiliate Name: Historical Society of Pennsylvania; Digital film/folder number: 102535395; Image number: 240<br/>\n{{FamilySearch Record|6CYF-SMB5}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Henry, child of Judge Henry Ruby & Rebecca Senseny Ruby, married Susan S Ruby Ruby on 9 November 1858 in Pennsylvania, United States.<ref>\n'''Marriage''':\n\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\"<br/>\nciting Affiliate Name: Historical Society of Pennsylvania; Digital film/folder number: 102535395; Image number: 240<br/>\n{{FamilySearch Record|6CYF-SMB5}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}\n</ref>",
+    "citation": "Henry, child of Judge Henry Ruby & Rebecca Senseny Ruby, married Susan S Ruby Ruby on 9 November 1858 in Pennsylvania, United States.<ref>\n'''Marriage''':\n\"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\"<br/>\nciting Affiliate Name: Historical Society of Pennsylvania; Digital film/folder number: 102535395; Image number: 240<br/>\n{{FamilySearch Record|6CYF-SMB5}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage''': \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\"<br/>citing Affiliate Name: Historical Society of Pennsylvania; Digital film/folder number: 102535395; Image number: 240<br/>{{FamilySearch Record|6CYF-SMB5}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}",
+    "citation": "* '''Marriage''': \"Pennsylvania, Historical Society of Pennsylvania, Marriage Records, 1512-1989\"<br/>citing Affiliate Name: Historical Society of Pennsylvania; Digital film/folder number: 102535395; Image number: 240<br/>{{FamilySearch Record|6CYF-SMB5}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-CSZL-T3MY-1}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

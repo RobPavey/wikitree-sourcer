@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1895 Census''':\n\"Minnesota State Census, 1895\"<br/>\nciting Line: 29; Digital film/folder number: 4344705; FHL microfilm: 000565770; Image number: 00527; Record number: 16939; Packet letter: A<br/>\n{{FamilySearch Record|MQ67-PZS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6889-T6P}}\n</ref>",
+    "citation": "<ref>\n'''1895 Census''':\n\"Minnesota State Census, 1895\"<br/>\nciting Line: 29; Digital film/folder number: 4344705; FHL microfilm: 000565770; Image number: 00527; Record number: 16939; Packet letter: A<br/>\n{{FamilySearch Record|MQ67-PZS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6889-T6P}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1895 census Wm (age 29y) was in Delavan township, Faribault, Minnesota.<ref>\n'''1895 Census''':\n\"Minnesota State Census, 1895\"<br/>\nciting Line: 29; Digital film/folder number: 4344705; FHL microfilm: 000565770; Image number: 00527; Record number: 16939; Packet letter: A<br/>\n{{FamilySearch Record|MQ67-PZS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6889-T6P}}\n</ref>",
+    "citation": "In the 1895 census Wm (age 29y) was in Delavan township, Faribault, Minnesota.<ref>\n'''1895 Census''':\n\"Minnesota State Census, 1895\"<br/>\nciting Line: 29; Digital film/folder number: 4344705; FHL microfilm: 000565770; Image number: 00527; Record number: 16939; Packet letter: A<br/>\n{{FamilySearch Record|MQ67-PZS}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6889-T6P}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1895 Census''': \"Minnesota State Census, 1895\"<br/>citing Line: 29; Digital film/folder number: 4344705; FHL microfilm: 000565770; Image number: 00527; Record number: 16939; Packet letter: A<br/>{{FamilySearch Record|MQ67-PZS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6889-T6P}}",
+    "citation": "* '''1895 Census''': \"Minnesota State Census, 1895\"<br/>citing Line: 29; Digital film/folder number: 4344705; FHL microfilm: 000565770; Image number: 00527; Record number: 16939; Packet letter: A<br/>{{FamilySearch Record|MQ67-PZS}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6889-T6P}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1871 Census''':\n\"Scotland Census, 1871\"<br/>\nciting Page: 18; Line: 12; Source Schedule Number: 77; Source Folio Number: 5; Digital film/folder number: 004549787_005_M9QV-5FL; FHL microfilm: 103984; Image number: 104<br/>\n{{FamilySearch Record|VBGD-YPR}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-69SJ-T}}\n</ref>",
+    "citation": "<ref>\n'''1871 Census''':\n\"Scotland Census, 1871\"<br/>\nciting Page: 18; Line: 12; Source Schedule Number: 77; Source Folio Number: 5; Digital film/folder number: 004549787_005_M9QV-5FL; FHL microfilm: 103984; Image number: 104<br/>\n{{FamilySearch Record|VBGD-YPR}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-69SJ-T}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1871 census Janet (age 41) was recorded as married in Dunbar, Dunbar, Haddingtonshire, Scotland, United Kingdom.<ref>\n'''1871 Census''':\n\"Scotland Census, 1871\"<br/>\nciting Page: 18; Line: 12; Source Schedule Number: 77; Source Folio Number: 5; Digital film/folder number: 004549787_005_M9QV-5FL; FHL microfilm: 103984; Image number: 104<br/>\n{{FamilySearch Record|VBGD-YPR}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-69SJ-T}}\n</ref>",
+    "citation": "In the 1871 census Janet (age 41) was recorded as married in Dunbar, Dunbar, Haddingtonshire, Scotland, United Kingdom.<ref>\n'''1871 Census''':\n\"Scotland Census, 1871\"<br/>\nciting Page: 18; Line: 12; Source Schedule Number: 77; Source Folio Number: 5; Digital film/folder number: 004549787_005_M9QV-5FL; FHL microfilm: 103984; Image number: 104<br/>\n{{FamilySearch Record|VBGD-YPR}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|9398-69SJ-T}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1871 Census''': \"Scotland Census, 1871\"<br/>citing Page: 18; Line: 12; Source Schedule Number: 77; Source Folio Number: 5; Digital film/folder number: 004549787_005_M9QV-5FL; FHL microfilm: 103984; Image number: 104<br/>{{FamilySearch Record|VBGD-YPR}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9398-69SJ-T}}",
+    "citation": "* '''1871 Census''': \"Scotland Census, 1871\"<br/>citing Page: 18; Line: 12; Source Schedule Number: 77; Source Folio Number: 5; Digital film/folder number: 004549787_005_M9QV-5FL; FHL microfilm: 103984; Image number: 104<br/>{{FamilySearch Record|VBGD-YPR}} (accessed 6 May 2021)<br/>{{FamilySearch Image|9398-69SJ-T}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death Registration''':\n\"Virginia, Death Certificates, 1912-1987\"<br/>\nciting Digital film/folder number: 100936704; Image number: 65; Record number: 1744<br/>\n{{FamilySearch Record|QVRD-74QJ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C95D-78NZ}}\n</ref>",
+    "citation": "<ref>\n'''Death Registration''':\n\"Virginia, Death Certificates, 1912-1987\"<br/>\nciting Digital film/folder number: 100936704; Image number: 65; Record number: 1744<br/>\n{{FamilySearch Record|QVRD-74QJ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C95D-78NZ}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Elmer's death (age 44) on 6 January 1955 (husband of Evie Brunk Davis) was registered on 3 February 1955. He was the son of Emmett Davis & Willie Parcell.<ref>\n'''Death Registration''':\n\"Virginia, Death Certificates, 1912-1987\"<br/>\nciting Digital film/folder number: 100936704; Image number: 65; Record number: 1744<br/>\n{{FamilySearch Record|QVRD-74QJ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C95D-78NZ}}\n</ref>",
+    "citation": "Elmer's death (age 44) on 6 January 1955 (husband of Evie Brunk Davis) was registered on 3 February 1955. He was the son of Emmett Davis & Willie Parcell.<ref>\n'''Death Registration''':\n\"Virginia, Death Certificates, 1912-1987\"<br/>\nciting Digital film/folder number: 100936704; Image number: 65; Record number: 1744<br/>\n{{FamilySearch Record|QVRD-74QJ}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3Q9M-C95D-78NZ}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death Registration''': \"Virginia, Death Certificates, 1912-1987\"<br/>citing Digital film/folder number: 100936704; Image number: 65; Record number: 1744<br/>{{FamilySearch Record|QVRD-74QJ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C95D-78NZ}}",
+    "citation": "* '''Death Registration''': \"Virginia, Death Certificates, 1912-1987\"<br/>citing Digital film/folder number: 100936704; Image number: 65; Record number: 1744<br/>{{FamilySearch Record|QVRD-74QJ}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3Q9M-C95D-78NZ}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

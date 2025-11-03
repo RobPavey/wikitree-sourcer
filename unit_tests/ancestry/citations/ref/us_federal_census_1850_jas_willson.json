@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1850 census Jas (age 47), Farmer, was in Walker, Texas, USA.<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1850 census Jas (age 47), Farmer, was in Walker, Texas, USA.<ref>\n'''1850 Census''':\n\"1850 United States Federal Census\"<br/>\nYear: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>\n{{Ancestry Record|8054|1085066}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1850 Census''': \"1850 United States Federal Census\"<br/>Year: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>{{Ancestry Record|8054|1085066}} (accessed 6 May 2021)",
+    "citation": "* '''1850 Census''': \"1850 United States Federal Census\"<br/>Year: 1850; Census Place: Walker, Texas; Roll: 916; Page: 261a; Line Number: 25<br/>{{Ancestry Record|8054|1085066}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

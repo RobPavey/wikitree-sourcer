@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Alexander was buried on 30 August 1755 in Strichen, Aberdeenshire.<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "Alexander was buried on 30 August 1755 in Strichen, Aberdeenshire.<ref>\n'''Burial''':\n\"FreeReg UK Parish Register database\"<br/>\nAberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>\n[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Burial''': \"FreeReg UK Parish Register database\"<br/>Aberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021)",
+    "citation": "* '''Burial''': \"FreeReg UK Parish Register database\"<br/>Aberdeenshire; Strichen; Parish Church; Register of unspecified type; File line number: 185<br/>[https://www.freereg.org.uk/search_records/5817a8c1e93790ec753c2f1c FreeReg Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

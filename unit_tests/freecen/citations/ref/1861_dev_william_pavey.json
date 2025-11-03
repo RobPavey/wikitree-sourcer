@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1861 census William (age 73), Sawyer, was the married head of household at Village, Stockland, Chardstock, Devon, England.<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1861 census William (age 73), Sawyer, was the married head of household at Village, Stockland, Chardstock, Devon, England.<ref>\n'''1861 Census''':\n\"1861 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>\n[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1861 Census''': \"1861 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021)",
+    "citation": "* '''1861 Census''': \"1861 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13334 RG 9]; Piece: 1372; Folio: 60; Page: 21; Schedule: 112<br/>[https://www.freecen.org.uk/search_records/5a1466eaf4040b9d6e5d459a FreeCen Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

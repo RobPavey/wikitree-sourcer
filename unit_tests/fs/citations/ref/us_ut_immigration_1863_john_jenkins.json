@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660.\n</ref>",
+    "citation": "<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660.\n</ref>",
+    "citation": "John immigrated on 4 October 1863 in Deseret, United States.<ref>\n'''Immigration''':\n\"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>\n{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>\nhttps://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660.",
+    "citation": "* '''Immigration''': \"Utah Mormon Pioneer Overland Travel Database, 1847-1868\"<br/>{{FamilySearch Record|Q234-5Z3C}} (accessed 6 May 2021)<br/>https://history.lds.org/overlandtravels/pioneerDetail?pioneerId=15771343513857904660",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {
