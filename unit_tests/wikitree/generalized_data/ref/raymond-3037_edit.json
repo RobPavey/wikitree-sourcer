@@ -4,6 +4,7 @@
   "name": {
     "firstNames": "Alice",
     "middleNames": "Alberta Ursula",
+    "prefNames": "Alice",
     "otherLastNames": "Watson",
     "lastName": "Raymond"
   },
@@ -13,11 +14,11 @@
   "personGender": "female",
   "birthDate": {
     "dateString": "26 Nov 1910",
-    "qualifier": 0
+    "qualifier": 1
   },
   "deathDate": {
     "dateString": "28 May 1974",
-    "qualifier": 0
+    "qualifier": 1
   },
   "birthPlace": {
     "placeString": "St Francois County, Missouri, United States of America"
@@ -55,8 +56,7 @@
       "lastNameAtBirth": "Peterson",
       "lastNameAtDeath": "Peterson",
       "marriageDate": {
-        "qualifier": 2,
-        "dateString": "1925\n[uncertain]"
+        "dateString": "1925"
       }
     }
   ],

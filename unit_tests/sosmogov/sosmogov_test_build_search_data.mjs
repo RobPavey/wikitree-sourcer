@@ -31,12 +31,16 @@ const regressionData = [
     inputPath: "wikitree/generalized_data/ref/haff-272_edit",
   },
   {
+    caseName: "wikitree_hall-4352_read",
+    inputPath: "wikitree/generalized_data/ref/hall-4352_read",
+  },
+  {
     caseName: "wikitree_orth-997_read",
     inputPath: "wikitree/generalized_data/ref/orth-997_read",
   },
   {
-    caseName: "wikitree_raymond-3037_read",
-    inputPath: "wikitree/generalized_data/ref/raymond-3037_read",
+    caseName: "wikitree_raymond-3037_edit",
+    inputPath: "wikitree/generalized_data/ref/raymond-3037_edit",
   },
 ];
 

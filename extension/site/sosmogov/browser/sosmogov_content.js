@@ -262,68 +262,30 @@ function addMutationObserver(inputElement) {
   observer.observe(parentElement, config);
 }
 
-function resetSearchFormFields() {
-  //   radio buttons: DeathCertNameSearchType, LNSearchMethod, FNSearchMethod, MNSearchMethod
-  //   LastName, FirstName, and MiddleName,
-  //   BeginYear, BeginMonth (selectable options), EndYear, and EndMonth (selectable options),
-  //   CountyName (selectable options),
-  let resetFieldData = {};
-  document.querySelector("#BeginMonth").options[0].selected = true;
-  document.querySelector("#EndMonth").options[0].selected = true;
-  document.querySelector("#CountyName").options[0].selected = true;
-  resetFieldData["DeathCertNameSearchType_0"] = true;
-  resetFieldData["LNSearchMethod_0"] = true;
-  resetFieldData["FNSearchMethod_0"] = true;
-  resetFieldData["MNSearchMethod_0"] = true;
-  resetFieldData["LastName"] = "";
-  resetFieldData["FirstName"] = "";
-  resetFieldData["MiddleName"] = "";
-  // resetFieldData["BeginMonth"] = "0";
-  resetFieldData["BeginYear"] = "";
-  // resetFieldData["EndMonth"] = "0";
-  resetFieldData["EndYear"] = "";
-  // resetFieldData["CountyName"] = "-- Search All --";
-  for (var key in resetFieldData) {
-    console.log("resetSearchFormFields: key is: " + key);
-
-    if (key) {
-      let value = resetFieldData[key];
-      //console.log("resetSearchFormFields: value is: " + value);
-
-      // if (value !== undefined && value !== "") {
-      if (value !== undefined) {
-        let id = key;
-
-        //console.log("resetSearchFormFields: id is: " + id);
-
-        let inputElement = document.querySelector("input[id='" + id + "']");
-        inputElement.value = value;
-
-        //console.log("resetSearchFormFields: inputElement is:");
-        //console.log(inputElement);
-
-        /*
-        if (inputElement) {
-          // just setting the value sometimes does not seem to register with the form
-          inputElement.focus();
-          document.execCommand("selectAll", false);
-          document.execCommand("insertText", false, value);
-          if (searchButtonElement) {
-            // moves to another input so that this field gets processed
-            searchButtonElement.focus();
-          }
-          mainElement.scrollIntoView(); // so user can see the "WikiTree Sourcer" message
-          addMutationObserver(inputElement);
-          setSearchingBanner();
-          await sleep(100);
-        } else {
-          inputNotFound = true;
-          break;
-        }
-        */
-      }
-    }
+function getCollectionDateRange() {
+  // get the date range for this collection from the page title
+  var sosmogovStartYear = 1910; // earliest death records in the collection
+  const documentTitle = document.querySelector("title"); // date range is at end of title text
+  const textContentLast4 = documentTitle.textContent.trim().slice(-4);
+  var sosmogovEndYear = parseInt(textContentLast4);
+  if (isNaN(sosmogovEndYear) || sosmogovEndYear < 1974) {
+    // 1974 death certificates are already available
+    let today = new Date();
+    let thisYear = today.getFullYear();
+    sosmogovEndYear = thisYear - 50; // a death certificate can be available 50 years after the death
   }
+  return { sosmogovStartYear: sosmogovStartYear, sosmogovEndYear: sosmogovEndYear };
+}
+
+function constrainYearToSosmogovYearRange(yearToTest, sosmogovYearRange) {
+  const sosmogovStartYear = sosmogovYearRange.sosmogovStartYear;
+  const sosmogovEndYear = sosmogovYearRange.sosmogovEndYear;
+  if (yearToTest < sosmogovStartYear) {
+    return sosmogovStartYear;
+  } else if (yearToTest > sosmogovEndYear) {
+    return sosmogovEndYear;
+  }
+  return yearToTest;
 }
 
 async function doPendingSearch() {
@@ -364,10 +326,8 @@ async function doPendingSearch() {
     if (formElement) {
       let searchButtonElement = document.querySelector("input[id='btnSearch']");
 
-      // reset the search form fields before we start filling them in
-      // resetSearchFormFields();
-
       //console.log("fieldData loop");
+      const sosmogovDateRange = getCollectionDateRange();
       for (var key in fieldData) {
         //console.log("doPendingSearch: key is: " + key);
 
@@ -375,10 +335,15 @@ async function doPendingSearch() {
           let value = fieldData[key];
           //console.log("doPendingSearch: value is: " + value);
 
-          //if (value !== undefined && value !== "") {
+          // for the begin and end year fields, ensure the values are within the date range of the collection
           if (value !== undefined) {
+            if (key.includes("Year")) {
+              if (value !== "") {
+                var yearNum = parseInt(value);
+                value = constrainYearToSosmogovYearRange(yearNum, sosmogovDateRange).toString();
+              }
+            }
             let id = key;
-
             //console.log("doPendingSearch: id is: " + id);
 
             let inputElement = document.querySelector("input[id='" + id + "']");
@@ -410,37 +375,32 @@ async function doPendingSearch() {
         }
       }
 
-      /*
-      //console.log("selectData loop");
+      // process the radio button element values
       for (var key in selectData) {
-        //console.log("doPendingSearch: key is: " + key);
+        //console.log("doPendingSearch: selectData key is: " + key);
 
         if (key) {
-          let value = fieldData[key];
-          //console.log("doPendingSearch: value is: " + value);
+          let value = selectData[key];
+          //console.log("doPendingSearch: selectData value is: " + value);
 
-          if (value !== undefined && value !== "") {
+          if (value !== undefined) {
             let id = key;
-
             //console.log("doPendingSearch: id is: " + id);
 
-            let inputElement = document.querySelector("input[id='" + id + "']");
+            let inputElement = document.querySelector("#" + id);
             //console.log("doPendingSearch: inputElement is:");
             //console.log(inputElement);
 
             if (inputElement) {
               // just setting the value sometimes does not seem to register with the form
               inputElement.focus();
-              document.execCommand("selectAll", false);
-              document.execCommand("insertText", false, value);
-              if (searchButtonElement) {
-                // moves to another input so that this field gets processed
-                searchButtonElement.focus();
-              }
+              inputElement.checked = value;
               mainElement.scrollIntoView(); // so user can see the "WikiTree Sourcer" message
               addMutationObserver(inputElement);
               setSearchingBanner();
               await sleep(100);
+              //console.log("after update: inputElement is:");
+              //console.log(inputElement);
             } else {
               inputNotFound = true;
               break;
@@ -448,10 +408,6 @@ async function doPendingSearch() {
           }
         }
       }
-      */
-
-      //console.log("inputNotFound is:");
-      //console.log(inputNotFound);
 
       if (!inputNotFound) {
         // A long sleep seems to be required sometimes,
@@ -487,6 +443,7 @@ async function doPendingSearch() {
         }
         */
       }
+      searchButtonElement.focus();
     }
 
     if (!submitted) {
@@ -566,14 +523,10 @@ async function checkForPendingSearch() {
 
 async function additionalMessageHandler(request, sender, sendResponse) {
   if (request.type == "doSearchInExistingTab") {
-    //console.log("nswbdm: additionalMessageHandler, request is:");
+    //console.log("sosmogov: additionalMessageHandler, request is:");
     //console.log(request);
-    //console.log("nswbdm: additionalMessageHandler, document.URL is:");
+    //console.log("sosmogov: additionalMessageHandler, document.URL is:");
     //console.log(document.URL);
-
-    // We could try to check if this is the correct type of page (Births, Deaths etc)
-    // and clear the fields and refill them. But it is simpler to just load the desired URL
-    // into this existing tab.
 
     try {
       // this stores the search data in local storage which is then picked up by the

@@ -7,6 +7,11 @@
       "BeginYear": "1910",
       "EndYear": "1935"
     },
-    "selectData": {}
+    "selectData": {
+      "DeathCertNameSearchType_0": true,
+      "LNSearchMethod_0": true,
+      "FNSearchMethod_0": true,
+      "MNSearchMethod_0": true
+    }
   }
 }

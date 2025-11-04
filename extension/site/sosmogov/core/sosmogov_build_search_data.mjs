@@ -26,18 +26,6 @@ import { DateUtils } from "../../../base/core/date_utils.mjs";
 import { NameUtils } from "../../../base/core/name_utils.mjs";
 import { dateQualifiers } from "../../../base/core/generalize_data_utils.mjs";
 
-function constrainYearToSosmogovYearRange(yearToTest) {
-  // can we extract the following year range from the web site?
-  const sosmogovStartYear = 1910;
-  const sosmogovEndYear = 1974;
-  if (yearToTest < sosmogovStartYear) {
-    return sosmogovStartYear;
-  } else if (yearToTest > sosmogovEndYear) {
-    return sosmogovEndYear;
-  }
-  return yearToTest;
-}
-
 function getDateRangeFromWtsQualifier(yearNum, wtsQualifier) {
   //console.log("getDateRangeFromWtsQualifier:");
   //console.log("yearNum = " + yearNum);
@@ -67,9 +55,6 @@ function getDateRangeFromWtsQualifier(yearNum, wtsQualifier) {
       toYear = yearNum + 25;
       break;
   }
-
-  fromYear = constrainYearToSosmogovYearRange(fromYear);
-  toYear = constrainYearToSosmogovYearRange(toYear);
 
   //console.log("fromYear = " + fromYear);
   //console.log("toYear = " + toYear);
@@ -130,11 +115,6 @@ function buildSearchData(input) {
   let middleName = "";
   let countyName = "";
 
-  //fieldData["DeathCertNameSearchType_0"] = true;
-  //fieldData["LNSearchMethod_0"] = true;
-  //fieldData["FNSearchMethod_0"] = true;
-  //fieldData["MNSearchMethod_0"] = true;
-
   if (lastNameAtDeath) {
     fieldData["LastName"] = lastNameAtDeath;
   } else if (lastName) {
@@ -150,7 +130,6 @@ function buildSearchData(input) {
   }
   fieldData["MiddleName"] = middleName;
 
-  // addDateRange(gd, fieldData, gd.inferDeathDate(), runDate, options, deathsDateRange);
   let deathDateRange = getDateRange(gd.inferDeathYear(), gd.inferDeathDateQualifier());
 
   if (deathDateRange) {
@@ -163,12 +142,11 @@ function buildSearchData(input) {
     fieldData["EndYear"] = "";
   }
 
-  //console.log('fieldData["BeginYear"]' + fieldData["BeginYear"]);
-  //console.log('fieldData["EndYear"]' + fieldData["EndYear"]);
-
-  //selectData["BeginMonth"] = 0;
-  //selectData["EndMonth"] = 0;
-  //selectData["CountyName"] = 0;
+  // reset radio buttons
+  selectData["DeathCertNameSearchType_0"] = true;
+  selectData["LNSearchMethod_0"] = true;
+  selectData["FNSearchMethod_0"] = true;
+  selectData["MNSearchMethod_0"] = true;
 
   var result = {
     fieldData: fieldData,

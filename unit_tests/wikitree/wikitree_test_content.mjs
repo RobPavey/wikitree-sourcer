@@ -90,6 +90,11 @@ const regressionData = [
     url: "https://www.wikitree.com/wiki/Haff-272",
   },
   {
+    // To test MO death cert search on sosmogov
+    caseName: "hall-4352_read",
+    url: "https://www.wikitree.com/wiki/Hall-4352",
+  },
+  {
     caseName: "handford-3_read",
     url: "https://www.wikitree.com/wiki/Handford-3",
   },
@@ -209,8 +214,8 @@ const regressionData = [
   },
   {
     // To test MO death cert search on sosmogov
-    caseName: "raymond-3037_read",
-    url: "https://www.wikitree.com/wiki/Raymond-3037",
+    caseName: "raymond-3037_edit",
+    url: "https://www.wikitree.com/index.php?title=Special:EditPerson&u=19021974",
   },
   {
     // Has no mother which cased a bug extracting mother

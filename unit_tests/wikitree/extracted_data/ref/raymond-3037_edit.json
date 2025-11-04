@@ -1,38 +1,39 @@
 {
   "hasValidData": true,
   "firstNames": "Alice",
-  "prefNames": "",
+  "prefNames": "Alice",
   "middleNames": "Alberta Ursula",
   "lnab": "Raymond",
   "currentLastName": "Peterson",
   "mothersMaidenName": "Poirier",
   "birthDate": "26 Nov 1910",
-  "birthDateStatus": "none",
+  "birthDateStatus": "certain",
   "deathDate": "28 May 1974",
-  "deathDateStatus": "none",
+  "deathDateStatus": "certain",
   "birthLocation": "St Francois County, Missouri, United States of America",
   "deathLocation": "St Louis City, Missouri, United States of America",
-  "personGender": "female",
+  "personGender": "Female",
   "spouses": [
     {
-      "wikiId": "Peterson-9089",
       "name": "Courtney Charles Alexander Peterson",
-      "marriageDate": "about\n1925\n[uncertain]"
+      "wikiId": "Peterson-9089",
+      "marriageString": "1925 ",
+      "marriageDate": "1925",
+      "marriagePlace": ""
     }
   ],
-  "url": "https://www.wikitree.com/wiki/Raymond-3037",
-  "pageType": "read",
-  "wikiId": "Raymond-3037",
-  "name": "Alice Alberta Ursula (Raymond) Peterson",
+  "url": "https://www.wikitree.com/index.php?title=Special:EditPerson&u=19021974",
+  "pageType": "edit",
   "otherLastNames": "Watson",
   "parents": {
     "father": {
-      "wikiId": "Davis-55921",
-      "name": "James Albert Davis"
+      "name": "James Albert Davis",
+      "wikiId": "Davis-55921"
     },
     "mother": {
-      "wikiId": "Poirier-1999",
-      "name": "Helen Elisabeth (Poirier) Newman"
+      "name": "Helen Elisabeth (Poirier) Newman",
+      "wikiId": "Poirier-1999"
     }
-  }
+  },
+  "wikiId": "Raymond-3037"
 }
