@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Record number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}\n</ref>",
+    "citation": "<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Record number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Record number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}\n</ref>",
+    "citation": "In the 1905 census J (age 63) was in Stewart Township, Tripp, South Dakota, United States.<ref>\n'''1905 Census''':\n\"South Dakota State Census, 1905\"<br/>\nciting Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Record number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>\n{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|S3HY-6Q29-1XR}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Record number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}",
+    "citation": "* '''1905 Census''': \"South Dakota State Census, 1905\"<br/>citing Digital film/folder number: 004245279; FHL microfilm: 2281913; Image number: 2189; Record number: 2189; Sheet number: 282; Packet letter: A; Indexing batch: N01194-3<br/>{{FamilySearch Record|MMHS-3X7}} (accessed 6 May 2021)<br/>{{FamilySearch Image|S3HY-6Q29-1XR}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

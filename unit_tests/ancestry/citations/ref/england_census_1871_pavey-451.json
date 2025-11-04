@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1871 census Henry (age 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1871 census Henry (age 1 month) was the son of Harry A Pavey in St Pancras, London, England.<ref>\n'''1871 Census''':\n\"1871 England Census\"<br/>\nThe National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>\n{{Ancestry Record|7619|4576313}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>{{Ancestry Record|7619|4576313}} (accessed 6 May 2021)",
+    "citation": "* '''1871 Census''': \"1871 England Census\"<br/>The National Archives; Kew, London, England; 1871 England Census; Class: RG10; Piece: 240; Folio: 13; Page: 20; GSU roll: 824907; ED, institution, or vessel: 18a; Household schedule number: 122<br/>{{Ancestry Record|7619|4576313}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

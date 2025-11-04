@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Ruth (age 0) was buried on 3 December 1860 at Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Ruth (age 0) was buried on 3 December 1860 at Old Dalbeth Cemetery, Glasgow, Lanarkshire, Scotland.<ref>\n'''Burial''':\n\"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>\nNational Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Burial''': \"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>National Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Burial''': \"Catholic Parish Registers - Deaths, Burials and Funerals\"<br/>National Records of Scotland, Parish: Glasgow, Old Dalbeth Cemetery<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

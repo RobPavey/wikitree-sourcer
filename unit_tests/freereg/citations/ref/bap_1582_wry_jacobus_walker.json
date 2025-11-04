@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Jacobus, son of Francisci Walker, was baptised on 31 July 1582 in Sheffield, Yorkshire, West Riding, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "Jacobus, son of Francisci Walker, was baptised on 31 July 1582 in Sheffield, Yorkshire, West Riding, England.<ref>\n'''Baptism''':\n\"FreeReg UK Parish Register database\"<br/>\nYorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>\n[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Yorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"FreeReg UK Parish Register database\"<br/>Yorkshire, West Riding; Sheffield; St Peter and St Paul; Other Transcript; File line number: 285<br/>[https://www.freereg.org.uk/search_records/5817acf3e93790eca3aee203 FreeReg Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

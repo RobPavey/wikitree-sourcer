@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Birth of son Henry Green''':\n\"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>\nciting Digital film/folder number: 004402535; FHL microfilm: 1308830; Record number: 118; Certificate number: 17602; Packet letter: A<br/>\n{{FamilySearch Record|N7S6-GJ7}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth of son Henry Green''':\n\"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>\nciting Digital film/folder number: 004402535; FHL microfilm: 1308830; Record number: 118; Certificate number: 17602; Packet letter: A<br/>\n{{FamilySearch Record|N7S6-GJ7}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Alice's son Henry Green was born on 4 June 1918 in Chicago, Cook, Illinois, United States.<ref>\n'''Birth of son Henry Green''':\n\"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>\nciting Digital film/folder number: 004402535; FHL microfilm: 1308830; Record number: 118; Certificate number: 17602; Packet letter: A<br/>\n{{FamilySearch Record|N7S6-GJ7}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Alice's son Henry Green was born on 4 June 1918 in Chicago, Cook, Illinois, United States.<ref>\n'''Birth of son Henry Green''':\n\"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>\nciting Digital film/folder number: 004402535; FHL microfilm: 1308830; Record number: 118; Certificate number: 17602; Packet letter: A<br/>\n{{FamilySearch Record|N7S6-GJ7}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Birth of son Henry Green''': \"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>citing Digital film/folder number: 004402535; FHL microfilm: 1308830; Record number: 118; Certificate number: 17602; Packet letter: A<br/>{{FamilySearch Record|N7S6-GJ7}} (accessed 6 May 2021)",
+    "citation": "* '''Birth of son Henry Green''': \"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>citing Digital film/folder number: 004402535; FHL microfilm: 1308830; Record number: 118; Certificate number: 17602; Packet letter: A<br/>{{FamilySearch Record|N7S6-GJ7}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

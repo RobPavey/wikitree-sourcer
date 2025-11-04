@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Imprisonment''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Imprisonment''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Albert was imprisoned in 1891 in Perth Prison, Scotland.<ref>\n'''Imprisonment''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)\n</ref>",
+    "citation": "Albert was imprisoned in 1891 in Perth Prison, Scotland.<ref>\n'''Imprisonment''':\n\"Prison Registers\"<br/>\nNational Records of Scotland<br/>\n[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Imprisonment''': \"Prison Registers\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021)",
+    "citation": "* '''Imprisonment''': \"Prison Registers\"<br/>National Records of Scotland<br/>[https://www.scotlandspeople.gov.uk/ ScotlandsPeople] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

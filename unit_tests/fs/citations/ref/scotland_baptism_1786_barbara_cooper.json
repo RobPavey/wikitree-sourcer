@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 7; FHL microfilm: 1067783; Record number: 14633913<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 7; FHL microfilm: 1067783; Record number: 14633913<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 7; FHL microfilm: 1067783; Record number: 14633913<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Barbara, daughter of William Cooper & Barbara Cooper, was born on 14 April 1786 and baptised on 6 April 1786 in Liberton, Midlothian, Scotland.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 7; FHL microfilm: 1067783; Record number: 14633913<br/>\n{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing Digital film/folder number: 7; FHL microfilm: 1067783; Record number: 14633913<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing Digital film/folder number: 7; FHL microfilm: 1067783; Record number: 14633913<br/>{{FamilySearch Record|XTTZ-SQT}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

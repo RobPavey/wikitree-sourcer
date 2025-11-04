@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1841 census Zachariah (age 80), Pauper, was at Axminster Union Workhouse, Axminster, Devon, England.<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1841 census Zachariah (age 80), Pauper, was at Axminster Union Workhouse, Axminster, Devon, England.<ref>\n'''1841 Census''':\n\"1841 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>\n[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1841 Census''': \"1841 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021)",
+    "citation": "* '''1841 Census''': \"1841 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C8971 HO 107]; Piece: 200; Folio: 2; Page: 1<br/>[https://www.freecen.org.uk/search_records/5a1447aaf4040b9d6e39609c FreeCen Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

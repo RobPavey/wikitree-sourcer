@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1851 census John (age 56), Farmer Of 123 Acres, was the married head of household in Marston, Cheshire, England.<ref>\n'''1851 Census''':\n\"England and Wales Census, 1851\"<br/>\nciting The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>\n{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021)",
+    "citation": "* '''1851 Census''': \"England and Wales Census, 1851\"<br/>citing The National Archives of the UK Class: HO107; Piece/Folio: 2165 / 278; Page: 22; Line: 6<br/>{{FamilySearch Record|SG2X-CJX}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

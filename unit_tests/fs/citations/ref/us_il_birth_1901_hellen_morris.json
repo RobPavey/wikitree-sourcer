@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Birth Registration''':\n\"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>\nciting Digital film/folder number: 100713512; Image number: 388; Certificate number: 16881<br/>\n{{FamilySearch Record|QKDC-1YHM}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9LB-ZJGZ}}\n</ref>",
+    "citation": "<ref>\n'''Birth Registration''':\n\"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>\nciting Digital film/folder number: 100713512; Image number: 388; Certificate number: 16881<br/>\n{{FamilySearch Record|QKDC-1YHM}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9LB-ZJGZ}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Hellen's birth on 23 November 1901 was registered on 26 June 1925 in Cook, Illinois, United States. She was the daughter of Edward Morris & Helen Swift.<ref>\n'''Birth Registration''':\n\"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>\nciting Digital film/folder number: 100713512; Image number: 388; Certificate number: 16881<br/>\n{{FamilySearch Record|QKDC-1YHM}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9LB-ZJGZ}}\n</ref>",
+    "citation": "Hellen's birth on 23 November 1901 was registered on 26 June 1925 in Cook, Illinois, United States. She was the daughter of Edward Morris & Helen Swift.<ref>\n'''Birth Registration''':\n\"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>\nciting Digital film/folder number: 100713512; Image number: 388; Certificate number: 16881<br/>\n{{FamilySearch Record|QKDC-1YHM}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|3QSQ-G9LB-ZJGZ}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Birth Registration''': \"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>citing Digital film/folder number: 100713512; Image number: 388; Certificate number: 16881<br/>{{FamilySearch Record|QKDC-1YHM}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9LB-ZJGZ}}",
+    "citation": "* '''Birth Registration''': \"Illinois, Cook County, Birth Certificates, 1871-1949\"<br/>citing Digital film/folder number: 100713512; Image number: 388; Certificate number: 16881<br/>{{FamilySearch Record|QKDC-1YHM}} (accessed 6 May 2021)<br/>{{FamilySearch Image|3QSQ-G9LB-ZJGZ}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

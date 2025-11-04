@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Reference: Items 1-2; Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Reference: Items 1-2; Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Stephen married Susan B Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Reference: Items 1-2; Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Stephen married Susan B Newbury on 14 December 1853 in Wheatland, Kenosha, Wisconsin, United States.<ref>\n'''Marriage''':\n\"Wisconsin Marriages, 1836-1930\"<br/>\nciting Reference: Items 1-2; Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>\n{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Reference: Items 1-2; Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021)",
+    "citation": "* '''Marriage''': \"Wisconsin Marriages, 1836-1930\"<br/>citing Reference: Items 1-2; Digital film/folder number: 007619664; FHL microfilm: 1276050; Record number: 40; Packet letter: I<br/>{{FamilySearch Record|XRP7-LN5}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

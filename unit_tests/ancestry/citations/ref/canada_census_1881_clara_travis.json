@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"Raleigh Township, Kent County, Ontario Census, 1881\"<br/>\nOriginal data: 1881 Federal Census of Canada. Toronto, Canada: Government of Canada, 1881<br/>\n{{Ancestry Record|4628|2074}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"Raleigh Township, Kent County, Ontario Census, 1881\"<br/>\nOriginal data: 1881 Federal Census of Canada. Toronto, Canada: Government of Canada, 1881<br/>\n{{Ancestry Record|4628|2074}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1881 census Clara (age 7) was in Raleigh.<ref>\n'''1881 Census''':\n\"Raleigh Township, Kent County, Ontario Census, 1881\"<br/>\nOriginal data: 1881 Federal Census of Canada. Toronto, Canada: Government of Canada, 1881<br/>\n{{Ancestry Record|4628|2074}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1881 census Clara (age 7) was in Raleigh.<ref>\n'''1881 Census''':\n\"Raleigh Township, Kent County, Ontario Census, 1881\"<br/>\nOriginal data: 1881 Federal Census of Canada. Toronto, Canada: Government of Canada, 1881<br/>\n{{Ancestry Record|4628|2074}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1881 Census''': \"Raleigh Township, Kent County, Ontario Census, 1881\"<br/>Original data: 1881 Federal Census of Canada. Toronto, Canada: Government of Canada, 1881<br/>{{Ancestry Record|4628|2074}} (accessed 6 May 2021)",
+    "citation": "* '''1881 Census''': \"Raleigh Township, Kent County, Ontario Census, 1881\"<br/>Original data: 1881 Federal Census of Canada. Toronto, Canada: Government of Canada, 1881<br/>{{Ancestry Record|4628|2074}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

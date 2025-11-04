@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Charles died (age 73) on 24 May 1974 in San Diego, California, United States.<ref>\n'''Death''':\n\"California Death Index, 1940-1997\"<br/>\n{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021)",
+    "citation": "* '''Death''': \"California Death Index, 1940-1997\"<br/>{{FamilySearch Record|VPN6-4J4}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

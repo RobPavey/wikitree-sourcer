@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 8; FHL microfilm: 991204<br/>\n{{FamilySearch Record|XBQC-X9Q}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 8; FHL microfilm: 991204<br/>\n{{FamilySearch Record|XBQC-X9Q}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "David, son of Alexander Hunter & Ann Christie, was born on 1 November 1854 and baptised on 22 November 1854 in St Nicholas, Aberdeen, Aberdeenshire, Scotland, United Kingdom.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 8; FHL microfilm: 991204<br/>\n{{FamilySearch Record|XBQC-X9Q}} (accessed 6 May 2021)\n</ref>",
+    "citation": "David, son of Alexander Hunter & Ann Christie, was born on 1 November 1854 and baptised on 22 November 1854 in St Nicholas, Aberdeen, Aberdeenshire, Scotland, United Kingdom.<ref>\n'''Baptism''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting Digital film/folder number: 8; FHL microfilm: 991204<br/>\n{{FamilySearch Record|XBQC-X9Q}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing Digital film/folder number: 8; FHL microfilm: 991204<br/>{{FamilySearch Record|XBQC-X9Q}} (accessed 6 May 2021)",
+    "citation": "* '''Baptism''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing Digital film/folder number: 8; FHL microfilm: 991204<br/>{{FamilySearch Record|XBQC-X9Q}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

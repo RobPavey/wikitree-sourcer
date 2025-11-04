@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1881 census John (age 50), Farmer 20 Acres 15 Arable, was the married head of household in Halkirk, Caithness, Scotland.<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1881 census John (age 50), Farmer 20 Acres 15 Arable, was the married head of household in Halkirk, Caithness, Scotland.<ref>\n'''1881 Census''':\n\"1881 Census of England, Scotland and Wales\"<br/>\nThe National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>\n[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1881 Census''': \"1881 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021)",
+    "citation": "* '''1881 Census''': \"1881 Census of England, Scotland and Wales\"<br/>The National Archives of the UK, Kew, Surrey, England; Reference: [https://discovery.nationalarchives.gov.uk/details/r/C13336 RG 11]; Piece: 37; Folio: 0; Page: 1; Schedule: 2<br/>[https://www.freecen.org.uk/search_records/59028a7be9379091b15ccad9 FreeCen Transcription] (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

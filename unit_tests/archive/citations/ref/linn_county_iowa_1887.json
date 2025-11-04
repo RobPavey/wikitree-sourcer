@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Book''':\nChapman Brothers. pbl, ''[https://n2t.net/ark:/13960/t6j103h35 Portrait and biographical album of Linn County, Iowa]''<br/>\nChicago : Chapman brothers; 1887<br/>\n[https://archive.org/details/portraitbiolinn00chap Internet Archive] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Book''':\nChapman Brothers. pbl, ''[https://n2t.net/ark:/13960/t6j103h35 Portrait and biographical album of Linn County, Iowa]''<br/>\nChicago : Chapman brothers; 1887<br/>\n[https://archive.org/details/portraitbiolinn00chap Internet Archive] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was mentioned in the book ''Portrait and biographical album of Linn County, Iowa'' in 1887.<ref>\n'''Book''':\nChapman Brothers. pbl, ''[https://n2t.net/ark:/13960/t6j103h35 Portrait and biographical album of Linn County, Iowa]''<br/>\nChicago : Chapman brothers; 1887<br/>\n[https://archive.org/details/portraitbiolinn00chap Internet Archive] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was mentioned in the book ''Portrait and biographical album of Linn County, Iowa'' in 1887.<ref>\n'''Book''':\nChapman Brothers. pbl, ''[https://n2t.net/ark:/13960/t6j103h35 Portrait and biographical album of Linn County, Iowa]''<br/>\nChicago : Chapman brothers; 1887<br/>\n[https://archive.org/details/portraitbiolinn00chap Internet Archive] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Book''': Chapman Brothers. pbl, ''[https://n2t.net/ark:/13960/t6j103h35 Portrait and biographical album of Linn County, Iowa]''<br/>Chicago : Chapman brothers; 1887<br/>[https://archive.org/details/portraitbiolinn00chap Internet Archive] (accessed 6 May 2021)",
+    "citation": "* '''Book''': Chapman Brothers. pbl, ''[https://n2t.net/ark:/13960/t6j103h35 Portrait and biographical album of Linn County, Iowa]''<br/>Chicago : Chapman brothers; 1887<br/>[https://archive.org/details/portraitbiolinn00chap Internet Archive] (accessed 6 May 2021).",
     "type": "source"
   }
 }

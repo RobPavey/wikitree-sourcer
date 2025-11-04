@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nOriginal data: Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nOriginal data: Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Carol was recorded as a resident in 1993 in Rochester, NY.<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nOriginal data: Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Carol was recorded as a resident in 1993 in Rochester, NY.<ref>\n'''Residence''':\n\"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>\nOriginal data: Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>\n{{Ancestry Record|1788|90102600}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Residence''': \"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>Original data: Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>{{Ancestry Record|1788|90102600}} (accessed 6 May 2021)",
+    "citation": "* '''Residence''': \"U.S., Public Records Index, 1950-1993, Volume 1\"<br/>Original data: Voter Registration Lists, Public Record Filings, Historical Residential Records, and Other Household Database Listings<br/>{{Ancestry Record|1788|90102600}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

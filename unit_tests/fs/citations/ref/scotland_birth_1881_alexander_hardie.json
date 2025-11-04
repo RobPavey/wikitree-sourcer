@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting FHL microfilm: 232685; Record number: 190; Packet letter: A<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting FHL microfilm: 232685; Record number: 190; Packet letter: A<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting FHL microfilm: 232685; Record number: 190; Packet letter: A<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Alexander, son of Gordon Hardie & Mary Grant, was born on 10 January 1881 in Saint George, Edinburgh, Edinburghshire, Scotland, United Kingdom.<ref>\n'''Birth''':\n\"Scotland Births and Baptisms, 1564-1950\"<br/>\nciting FHL microfilm: 232685; Record number: 190; Packet letter: A<br/>\n{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Birth''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing FHL microfilm: 232685; Record number: 190; Packet letter: A<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021)",
+    "citation": "* '''Birth''': \"Scotland Births and Baptisms, 1564-1950\"<br/>citing FHL microfilm: 232685; Record number: 190; Packet letter: A<br/>{{FamilySearch Record|XTXN-PTY}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

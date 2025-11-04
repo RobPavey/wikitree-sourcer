@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}\n</ref>",
+    "citation": "<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}\n</ref>",
+    "citation": "Charlotte married James Wherry. The banns were read on 4 November 1860 in Cardinham, Cornwall, England, United Kingdom.<ref>\n'''Marriage Banns''':\n\"England, Cornwall, Parish Registers, 1538-2010\"<br/>\nciting Digital film/folder number: 004786778; Image number: 53<br/>\n{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9GFT-9FSX}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}",
+    "citation": "* '''Marriage Banns''': \"England, Cornwall, Parish Registers, 1538-2010\"<br/>citing Digital film/folder number: 004786778; Image number: 53<br/>{{FamilySearch Record|QJHB-239L}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9GFT-9FSX}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

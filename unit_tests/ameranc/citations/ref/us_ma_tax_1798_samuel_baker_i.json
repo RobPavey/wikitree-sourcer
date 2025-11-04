@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts and Maine: Direct Tax, 1798\"<br/>\nVolume: V.11<br/>\n[https://www.americanancestors.org/DB183/i/13142/206/235227325 American Ancestors Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Tax Record''':\n\"Massachusetts and Maine: Direct Tax, 1798\"<br/>\nVolume: V.11<br/>\n[https://www.americanancestors.org/DB183/i/13142/206/235227325 American Ancestors Record] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a tax record.<ref>\n'''Tax Record''':\n\"Massachusetts and Maine: Direct Tax, 1798\"<br/>\nVolume: V.11<br/>\n[https://www.americanancestors.org/DB183/i/13142/206/235227325 American Ancestors Record] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a tax record.<ref>\n'''Tax Record''':\n\"Massachusetts and Maine: Direct Tax, 1798\"<br/>\nVolume: V.11<br/>\n[https://www.americanancestors.org/DB183/i/13142/206/235227325 American Ancestors Record] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Tax Record''': \"Massachusetts and Maine: Direct Tax, 1798\"<br/>Volume: V.11<br/>[https://www.americanancestors.org/DB183/i/13142/206/235227325 American Ancestors Record] (accessed 6 May 2021)",
+    "citation": "* '''Tax Record''': \"Massachusetts and Maine: Direct Tax, 1798\"<br/>Volume: V.11<br/>[https://www.americanancestors.org/DB183/i/13142/206/235227325 American Ancestors Record] (accessed 6 May 2021).",
     "type": "source"
   }
 }

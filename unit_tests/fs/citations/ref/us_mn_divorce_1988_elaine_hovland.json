@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Elaine was divorced from Gerald D Hovland on 6 October 1988 in Hennepin, Minnesota.<ref>\n'''Divorce''':\n\"Minnesota, Divorce Index, 1970-1995\"<br/>\nciting Page: C11<br/>\n{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021)",
+    "citation": "* '''Divorce''': \"Minnesota, Divorce Index, 1970-1995\"<br/>citing Page: C11<br/>{{FamilySearch Record|VKSN-PTL}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

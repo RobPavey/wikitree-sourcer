@@ -1,14 +1,14 @@
 {
   "std_inline": {
-    "citation": "<ref>\n'''Record''':\n\"Lateinische Weltchronik von Erschaffung der Welt bis 1276, wahrscheinlich im Egidienkloster zu Nürnberg geschrieben.\"<br/>\nStAN, Reichsstadt Nürnberg, Handschriften 1; Image: 11<br/>\n[https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fwww.gda.bayern.de%2Fmets%2F296ac728-06ea-4ae6-b10a-6a0f702b4f69&tx_dlf%5Bpage%5D=11&cHash=28cdd2daaf66b4f0c306af0af77bd666 DFG Viewer] (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Record''':\n\"Lateinische Weltchronik von Erschaffung der Welt bis 1276, wahrscheinlich im Egidienkloster zu Nürnberg geschrieben.\"<br/>\nStAN, Reichsstadt Nürnberg, Handschriften 1; Image: 11<br/>\n[https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fwww.gda.bayern.de%2Fmets%2F296ac728-06ea-4ae6-b10a-6a0f702b4f69&tx_dlf%5Bpage%5D=11&cHash=28cdd2daaf66b4f0c306af0af77bd666 DFG Viewer] (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "std_narrative": {
-    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Lateinische Weltchronik von Erschaffung der Welt bis 1276, wahrscheinlich im Egidienkloster zu Nürnberg geschrieben.\"<br/>\nStAN, Reichsstadt Nürnberg, Handschriften 1; Image: 11<br/>\n[https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fwww.gda.bayern.de%2Fmets%2F296ac728-06ea-4ae6-b10a-6a0f702b4f69&tx_dlf%5Bpage%5D=11&cHash=28cdd2daaf66b4f0c306af0af77bd666 DFG Viewer] (accessed 6 May 2021)\n</ref>",
+    "citation": "This person was in a record.<ref>\n'''Record''':\n\"Lateinische Weltchronik von Erschaffung der Welt bis 1276, wahrscheinlich im Egidienkloster zu Nürnberg geschrieben.\"<br/>\nStAN, Reichsstadt Nürnberg, Handschriften 1; Image: 11<br/>\n[https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fwww.gda.bayern.de%2Fmets%2F296ac728-06ea-4ae6-b10a-6a0f702b4f69&tx_dlf%5Bpage%5D=11&cHash=28cdd2daaf66b4f0c306af0af77bd666 DFG Viewer] (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "std_source": {
-    "citation": "* '''Record''': \"Lateinische Weltchronik von Erschaffung der Welt bis 1276, wahrscheinlich im Egidienkloster zu Nürnberg geschrieben.\"<br/>StAN, Reichsstadt Nürnberg, Handschriften 1; Image: 11<br/>[https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fwww.gda.bayern.de%2Fmets%2F296ac728-06ea-4ae6-b10a-6a0f702b4f69&tx_dlf%5Bpage%5D=11&cHash=28cdd2daaf66b4f0c306af0af77bd666 DFG Viewer] (accessed 6 May 2021)",
+    "citation": "* '''Record''': \"Lateinische Weltchronik von Erschaffung der Welt bis 1276, wahrscheinlich im Egidienkloster zu Nürnberg geschrieben.\"<br/>StAN, Reichsstadt Nürnberg, Handschriften 1; Image: 11<br/>[https://dfg-viewer.de/show?tx_dlf%5Bdouble%5D=0&tx_dlf%5Bid%5D=https%3A%2F%2Fwww.gda.bayern.de%2Fmets%2F296ac728-06ea-4ae6-b10a-6a0f702b4f69&tx_dlf%5Bpage%5D=11&cHash=28cdd2daaf66b4f0c306af0af77bd666 DFG Viewer] (accessed 6 May 2021).",
     "type": "source"
   }
 }

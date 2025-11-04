@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1950 census William (age 28) was the married head of household in Millington, Shelby, Tennessee, USA.<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1950 census William (age 28) was the married head of household in Millington, Shelby, Tennessee, USA.<ref>\n'''1950 Census''':\n\"1950 United States Federal Census\"<br/>\nUnited States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>\n{{Ancestry Record|62308|106947163}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1950 Census''': \"1950 United States Federal Census\"<br/>United States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>{{Ancestry Record|62308|106947163}} (accessed 6 May 2021)",
+    "citation": "* '''1950 Census''': \"1950 United States Federal Census\"<br/>United States of America, Bureau of the Census; Washington, D.C.; Seventeenth Census of the United States, 1950; Record Group: Records of the Bureau of the Census, 1790-2007; Record Group Number: 29; Residence Date: 1950; Home in 1950: Millington, Shelby, Tennessee; Roll: 3661; Sheet Number: 14; Enumeration District: 79-4A<br/>{{Ancestry Record|62308|106947163}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

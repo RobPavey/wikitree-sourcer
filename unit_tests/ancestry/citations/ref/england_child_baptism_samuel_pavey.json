@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Birth or Baptism of child Leonard Pavey''':\n\"England, Select Births and Christenings, 1538-1975\"<br/>\nOriginal data: England, Births and Christenings, 1538-1975. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|9841|1071978}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth or Baptism of child Leonard Pavey''':\n\"England, Select Births and Christenings, 1538-1975\"<br/>\nOriginal data: England, Births and Christenings, 1538-1975. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|9841|1071978}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Samuel's child Leonard Pavey was born or baptised.<ref>\n'''Birth or Baptism of child Leonard Pavey''':\n\"England, Select Births and Christenings, 1538-1975\"<br/>\nOriginal data: England, Births and Christenings, 1538-1975. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|9841|1071978}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Samuel's child Leonard Pavey was born or baptised.<ref>\n'''Birth or Baptism of child Leonard Pavey''':\n\"England, Select Births and Christenings, 1538-1975\"<br/>\nOriginal data: England, Births and Christenings, 1538-1975. Salt Lake City, Utah: FamilySearch, 2013<br/>\n{{Ancestry Record|9841|1071978}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Birth or Baptism of child Leonard Pavey''': \"England, Select Births and Christenings, 1538-1975\"<br/>Original data: England, Births and Christenings, 1538-1975. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|9841|1071978}} (accessed 6 May 2021)",
+    "citation": "* '''Birth or Baptism of child Leonard Pavey''': \"England, Select Births and Christenings, 1538-1975\"<br/>Original data: England, Births and Christenings, 1538-1975. Salt Lake City, Utah: FamilySearch, 2013<br/>{{Ancestry Record|9841|1071978}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nOriginal data: State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nOriginal data: State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "Barbara was divorced from Robert A Johnson in June 1976 in Los Angeles.<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nOriginal data: State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Barbara was divorced from Robert A Johnson in June 1976 in Los Angeles.<ref>\n'''Divorce''':\n\"California, U.S., Divorce Index, 1966-1984\"<br/>\nOriginal data: State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>\n{{Ancestry Record|1141|3806392}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''Divorce''': \"California, U.S., Divorce Index, 1966-1984\"<br/>Original data: State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>{{Ancestry Record|1141|3806392}} (accessed 6 May 2021)",
+    "citation": "* '''Divorce''': \"California, U.S., Divorce Index, 1966-1984\"<br/>Original data: State of California. California Divorce Index, 1966-1984. Microfiche. Center for Health Statistics, California Department of Health Services, Sacramento, California<br/>{{Ancestry Record|1141|3806392}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

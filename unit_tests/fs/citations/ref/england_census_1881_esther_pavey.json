@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"England and Wales Census, 1881\"<br/>\nciting The National Archives of the UK Class: RG11; Piece/Folio: 693/71; Page: 72; Line: 21<br/>\n{{FamilySearch Record|Q277-QXTG}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"England and Wales Census, 1881\"<br/>\nciting The National Archives of the UK Class: RG11; Piece/Folio: 693/71; Page: 72; Line: 21<br/>\n{{FamilySearch Record|Q277-QXTG}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "In the 1881 census Esther (age 39) was the wife of Charles A Pavey on Albany Rd, Camberwell, London, Surrey, England.<ref>\n'''1881 Census''':\n\"England and Wales Census, 1881\"<br/>\nciting The National Archives of the UK Class: RG11; Piece/Folio: 693/71; Page: 72; Line: 21<br/>\n{{FamilySearch Record|Q277-QXTG}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1881 census Esther (age 39) was the wife of Charles A Pavey on Albany Rd, Camberwell, London, Surrey, England.<ref>\n'''1881 Census''':\n\"England and Wales Census, 1881\"<br/>\nciting The National Archives of the UK Class: RG11; Piece/Folio: 693/71; Page: 72; Line: 21<br/>\n{{FamilySearch Record|Q277-QXTG}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''1881 Census''': \"England and Wales Census, 1881\"<br/>citing The National Archives of the UK Class: RG11; Piece/Folio: 693/71; Page: 72; Line: 21<br/>{{FamilySearch Record|Q277-QXTG}} (accessed 6 May 2021)",
+    "citation": "* '''1881 Census''': \"England and Wales Census, 1881\"<br/>citing The National Archives of the UK Class: RG11; Piece/Folio: 693/71; Page: 72; Line: 21<br/>{{FamilySearch Record|Q277-QXTG}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

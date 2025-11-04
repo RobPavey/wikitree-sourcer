@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1881 census Francis (age 6), Scholar, was the son of John Maggs at Wilmot Farm, Easton in Gordano, Somerset, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1881 census Francis (age 6), Scholar, was the son of John Maggs at Wilmot Farm, Easton in Gordano, Somerset, England.<ref>\n'''1881 Census''':\n\"1881 England Census\"<br/>\nClass: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>\n{{Ancestry Record|7572|18899854}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>{{Ancestry Record|7572|18899854}} (accessed 6 May 2021)",
+    "citation": "* '''1881 Census''': \"1881 England Census\"<br/>Class: RG11; Piece: 2463; Folio: 45; Page: 10; GSU roll: 1341593; ED, institution, or vessel: 4<br/>{{Ancestry Record|7572|18899854}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

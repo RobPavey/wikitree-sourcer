@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Death of daughter Mary Denning''':\n\"Ohio Deaths, 1908-1953\"<br/>\nciting Reference: fn 18817; Digital film/folder number: 004020737; FHL microfilm: 2023493; Image number: 01180; Record number: 117; Packet letter: F<br/>\n{{FamilySearch Record|XZDY-NH9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9P2P-9D2F}}\n</ref>",
+    "citation": "<ref>\n'''Death of daughter Mary Denning''':\n\"Ohio Deaths, 1908-1953\"<br/>\nciting Reference: fn 18817; Digital film/folder number: 004020737; FHL microfilm: 2023493; Image number: 01180; Record number: 117; Packet letter: F<br/>\n{{FamilySearch Record|XZDY-NH9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9P2P-9D2F}}.\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Charles's daughter Mary Denning died on 7 March 1937 in Anderson, Hamilton, Ohio.<ref>\n'''Death of daughter Mary Denning''':\n\"Ohio Deaths, 1908-1953\"<br/>\nciting Reference: fn 18817; Digital film/folder number: 004020737; FHL microfilm: 2023493; Image number: 01180; Record number: 117; Packet letter: F<br/>\n{{FamilySearch Record|XZDY-NH9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9P2P-9D2F}}\n</ref>",
+    "citation": "Charles's daughter Mary Denning died on 7 March 1937 in Anderson, Hamilton, Ohio.<ref>\n'''Death of daughter Mary Denning''':\n\"Ohio Deaths, 1908-1953\"<br/>\nciting Reference: fn 18817; Digital film/folder number: 004020737; FHL microfilm: 2023493; Image number: 01180; Record number: 117; Packet letter: F<br/>\n{{FamilySearch Record|XZDY-NH9}} (accessed 6 May 2021)<br/>\n{{FamilySearch Image|33S7-9P2P-9D2F}}.\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Death of daughter Mary Denning''': \"Ohio Deaths, 1908-1953\"<br/>citing Reference: fn 18817; Digital film/folder number: 004020737; FHL microfilm: 2023493; Image number: 01180; Record number: 117; Packet letter: F<br/>{{FamilySearch Record|XZDY-NH9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9P2P-9D2F}}",
+    "citation": "* '''Death of daughter Mary Denning''': \"Ohio Deaths, 1908-1953\"<br/>citing Reference: fn 18817; Digital film/folder number: 004020737; FHL microfilm: 2023493; Image number: 01180; Record number: 117; Packet letter: F<br/>{{FamilySearch Record|XZDY-NH9}} (accessed 6 May 2021)<br/>{{FamilySearch Image|33S7-9P2P-9D2F}}.",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

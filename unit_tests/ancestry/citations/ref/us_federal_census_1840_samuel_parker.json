@@ -1,14 +1,14 @@
 {
   "dataStyle_none_inline": {
-    "citation": "<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_none_narrative": {
-    "citation": "In the 1840 census Samuel was in Gaines, Orleans, New York.<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)\n</ref>",
+    "citation": "In the 1840 census Samuel was in Gaines, Orleans, New York.<ref>\n'''1840 Census''':\n\"1840 United States Federal Census\"<br/>\nYear: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>\n{{Ancestry Record|8057|2464636}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_none_source": {
-    "citation": "* '''1840 Census''': \"1840 United States Federal Census\"<br/>Year: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>{{Ancestry Record|8057|2464636}} (accessed 6 May 2021)",
+    "citation": "* '''1840 Census''': \"1840 United States Federal Census\"<br/>Year: 1840; Census Place: Gaines, Orleans, New York; Roll: 321; Page: 372; Family History Library Film: 0017201<br/>{{Ancestry Record|8057|2464636}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_string_inline": {

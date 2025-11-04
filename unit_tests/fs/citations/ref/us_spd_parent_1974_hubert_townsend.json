@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Hubert's daughter Imogene Webb was in a Social Security record.<ref>\n'''Social Security record of daughter Imogene Webb''':\n\"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>\nciting Digital film/folder number: DI0001099<br/>\n{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Social Security record of daughter Imogene Webb''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021)",
+    "citation": "* '''Social Security record of daughter Imogene Webb''': \"United States, Social Security Numerical Identification Files (NUMIDENT), 1936-2007\"<br/>citing Digital film/folder number: DI0001099<br/>{{FamilySearch Record|6KW3-12J5}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {

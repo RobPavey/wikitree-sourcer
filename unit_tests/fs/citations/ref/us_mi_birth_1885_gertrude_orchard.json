@@ -60,15 +60,15 @@
     "type": "source"
   },
   "dataStyle_record_none_inline": {
-    "citation": "<ref>\n'''Birth''':\n\"Michigan Births and Christenings, 1775-1995\"<br/>\nciting Digital film/folder number: 005191148; FHL microfilm: 979465<br/>\n{{FamilySearch Record|F4P5-QX7}} (accessed 6 May 2021)\n</ref>",
+    "citation": "<ref>\n'''Birth''':\n\"Michigan Births and Christenings, 1775-1995\"<br/>\nciting Digital film/folder number: 005191148; FHL microfilm: 979465<br/>\n{{FamilySearch Record|F4P5-QX7}} (accessed 6 May 2021).\n</ref>",
     "type": "inline"
   },
   "dataStyle_record_none_narrative": {
-    "citation": "Gertrude, daughter of William Orchard & Ann Orchard, was born on 16 October 1885 in Elk Township, Sanilac, Michigan, United States.<ref>\n'''Birth''':\n\"Michigan Births and Christenings, 1775-1995\"<br/>\nciting Digital film/folder number: 005191148; FHL microfilm: 979465<br/>\n{{FamilySearch Record|F4P5-QX7}} (accessed 6 May 2021)\n</ref>",
+    "citation": "Gertrude, daughter of William Orchard & Ann Orchard, was born on 16 October 1885 in Elk Township, Sanilac, Michigan, United States.<ref>\n'''Birth''':\n\"Michigan Births and Christenings, 1775-1995\"<br/>\nciting Digital film/folder number: 005191148; FHL microfilm: 979465<br/>\n{{FamilySearch Record|F4P5-QX7}} (accessed 6 May 2021).\n</ref>",
     "type": "narrative"
   },
   "dataStyle_record_none_source": {
-    "citation": "* '''Birth''': \"Michigan Births and Christenings, 1775-1995\"<br/>citing Digital film/folder number: 005191148; FHL microfilm: 979465<br/>{{FamilySearch Record|F4P5-QX7}} (accessed 6 May 2021)",
+    "citation": "* '''Birth''': \"Michigan Births and Christenings, 1775-1995\"<br/>citing Digital film/folder number: 005191148; FHL microfilm: 979465<br/>{{FamilySearch Record|F4P5-QX7}} (accessed 6 May 2021).",
     "type": "source"
   },
   "dataStyle_fsShort_string_inline": {
