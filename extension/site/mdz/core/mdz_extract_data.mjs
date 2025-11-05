@@ -28,22 +28,44 @@ function extractData(document, url) {
   if (url) {
     result.url = url;
   }
-
   result.success = false;
 
-  if (url.match("digitalMediaViewer")) {
-    alert("Please use the dfg-viewer page instead of the arcinsys page!");
-    return;
+  if (!url.match("/viewer/")) {
+    return result;
   }
 
-  const page_selector = document.querySelector('select[name="tx_dlf[page]"]');
-  let page_selected = page_selector.querySelector('option[selected="selected"]').text;
+  const title = document.querySelector('h2[class="MuiTypography-root mirador32 MuiTypography-h2 MuiTypography-colorInherit MuiTypography-noWrap"]');
+  result.title = title ? title.textContent.trim() : "";
 
-  if (page_selected[0] == "[") {
-    page_selected = page_selected.substring(1, page_selected.length - 1);
+  const pageDiv = document.querySelector('div[class*="mirador"]:not([class*="mirador-companion"]):not([class*="mirador-osd"]):not([class*="mirador-canvas"]):not([class*="mirador-window"])');
+  const pageDivs = document.querySelectorAll('div');
+  let page_number = null;
+  for (let div of pageDivs) {
+    if (div.textContent && div.textContent.match(/^Seite:\s*\d+$/)) {
+      const match = div.textContent.match(/Seite:\s*(\d+)/);
+      if (match) {
+        page_number = match[1];
+        break;
+      }
+    }
   }
 
-  result.page_number = page_selected;
+  if (page_number != null) {
+    result.page_number = page_number;
+  }
+
+  const image_input = document.querySelector('input[type="number"][id*="canvas-idx"]');
+  if (image_input != null) {
+    result.image_number = image_input.value.trim();
+  }
+
+  /*
+  const entries = document.querySelectorAll("table > tbody > tr[class^=entrybmd_]");
+  //console.log("entriesQuery size is: " + entriesQuery.length);
+  if (entries.length < 1) {
+    return result;
+  }
+  */
 
   result.success = true;
 
