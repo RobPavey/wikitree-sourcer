@@ -69,10 +69,12 @@ function extractData(document, url) {
 
   result.doc_id = url.substring(url.lastIndexOf("/") + 1);
 
-  const breadcrum_item = document.querySelector('div[class="fd-tree-path"]');
   let breadcrum_string = "";
-  for (let breadcrum of breadcrum_item.querySelectorAll('a[class="ng-star-inserted"]')) {
-    breadcrum_string += ", " + breadcrum.textContent.trim();
+  const breadcrum_item = document.querySelector('div[class="fd-tree-path"]');
+  if (breadcrum_item != null) {
+    for (let breadcrum of breadcrum_item.querySelectorAll('a[class="ng-star-inserted"]')) {
+      breadcrum_string += ", " + breadcrum.textContent.trim();
+    }
   }
   let title = document.querySelector('yv-its-full-details-metadata')?.querySelector("h1");
   if (title != null) {
